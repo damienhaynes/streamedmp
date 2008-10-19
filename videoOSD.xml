@@ -30,10 +30,11 @@
       <description>TV Logo</description>
       <type>image</type>
       <id>102</id>
-      <posX>64</posX>
+      <posX>640</posX>
       <posY>557</posY>
-      <width>124</width>
-      <height>184</height>
+      <width>324</width>
+      <height>153</height>
+      <centered>yes</centered>
       <texture>#Play.Current.Thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
     </control>
@@ -41,8 +42,8 @@
       <description>Movie Name</description>
       <id>36</id>
       <type>fadelabel</type>
-      <width>755</width>
-      <posX>205</posX>
+      <width>600</width>
+      <posX>25</posX>
       <posY>555</posY>
       <font>mediastream14tc</font>
       <label>#Play.Current.Title</label>
@@ -52,14 +53,15 @@
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>1</id>
-      <posX>205</posX>
+      <posX>25</posX>
       <posY>585</posY>
-      <width>490</width>
-      <height>160</height>
+      <width>600</width>
+      <height>130</height>
       <seperator>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream12</font>
     </control>
+    
     <control>
       <description>Sub Menu Background (subtitles)</description>
       <type>image</type>
@@ -128,6 +130,8 @@
       <textureFocus>menu_list_focus.png</textureFocus>
       <textureNoFocus>menu_list_nofocus.png</textureNoFocus>
     </control>
+    
+    
     <control>
       <description>Subtitles</description>
       <type>togglebutton</type>
@@ -136,9 +140,9 @@
       <posY>605</posY>
       <width>50</width>
       <height>52</height>
-      <AltTextureFocus>osd_subtitles_focus.png</AltTextureFocus>
+      <AltTextureFocus>osdsubtitlesfo.png</AltTextureFocus>
       <AltTextureNoFocus>osdsubtitlesnf.png</AltTextureNoFocus>
-      <textureFocus>osd_subtitles_focus.png</textureFocus>
+      <textureFocus>osdsubtitlesfo.png</textureFocus>
       <textureNoFocus>osdsubtitlesnf.png</textureNoFocus>
       <label>-</label>
       <font>-</font>
@@ -204,6 +208,9 @@
       <onup>220</onup>
       <ondown>218</ondown>
     </control>
+    
+    
+    
     <control>
       <description>Sub Menu Background (volume)</description>
       <type>image</type>
@@ -517,20 +524,8 @@
       <id>0</id>
       <posX>1240</posX>
       <posY>670</posY>
-      <label>Mute</label>
-      <font>titlefont10b</font>
-      <align>right</align>
-      <textcolor>ff808080</textcolor>
-      <visible>Control.HasFocus(216)</visible>
-    </control>
-    <control>
-      <description>default label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>1240</posX>
-      <posY>670</posY>
       <label>Subtitles</label>
-      <font>titlefont10b</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(218)</visible>
@@ -542,7 +537,7 @@
       <posX>1240</posX>
       <posY>670</posY>
       <label>Bookmarks</label>
-      <font>titlefont10b</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(219)</visible>
@@ -554,7 +549,7 @@
       <posX>1240</posX>
       <posY>670</posY>
       <label>Video Menu</label>
-      <font>titlefont10b</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(220)</visible>
@@ -566,7 +561,7 @@
       <posX>1240</posX>
       <posY>670</posY>
       <label>Audio Menu</label>
-      <font>titlefont10b</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(221)</visible>
