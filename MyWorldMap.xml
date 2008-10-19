@@ -1,0 +1,71 @@
+<window>
+  <id>10234</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>yes</disabletopbar>
+  <controls>
+    <control>
+      <type>image</type>
+      <id>25</id>
+      <posX>158</posX>
+      <posY>0</posY>
+      <width>1055</width>
+      <height>96</height>
+      <texture>osd_bg.png</texture>
+    </control>
+    <control>
+      <description>Longitude</description>
+      <type>label</type>
+      <id>3</id>
+      <posX>180</posX>
+      <posY>10</posY>
+      <label>Longitude</label>
+      <font>font14</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
+      <description>Latitude</description>
+      <type>label</type>
+      <id>4</id>
+      <posX>180</posX>
+      <posY>50</posY>
+      <label>Latitude</label>
+      <font>font14</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
+      <description>MapType</description>
+      <type>label</type>
+      <id>2</id>
+      <posX>1185</posX>
+      <posY>10</posY>
+      <label>Map type</label>
+      <font>font14</font>
+      <align>right</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
+      <description>Zoom Mode</description>
+      <type>label</type>
+      <id>5</id>
+      <posX>1185</posX>
+      <posY>50</posY>
+      <label>Zoom Mode</label>
+      <font>font14</font>
+      <align>right</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
+      <description>Progressbar Placeholder (gives skinners the chance to define the position of the progressbar)</description>
+      <type>image</type>
+      <id>99</id>
+      <posX>400</posX>
+      <posY>20</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>WMprogressDummy.png</texture>
+    </control>
+  </controls>
+</window>

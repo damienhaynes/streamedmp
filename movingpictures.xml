@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the facade view and all gui
+elements that should remain on screen during all or
+multiple view modes. 
+-->
+<window>
+  <id>96742</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <!-- 
+  This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
+  are parameters to give the skinner a tiny bit more control over the presentation.
+  -->
+  <define>#largeicons.available:true</define>
+  <!-- true if this skin implements the largeicons view -->
+  <define>#largeicons.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#smallicons.available:true</define>
+  <!-- Set to true if this skin implements the smallicons view -->
+  <define>#smallicons.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#list.available:true</define>
+  <!-- Set to true if this skin implements the list view -->
+  <define>#list.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#filmstrip.available:true</define>
+  <!-- Set to true if this skin implements the filmstrip view -->
+  <define>#filmstrip.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#smalltitle.color:FF909090</define>
+  <controls>
+    <control>
+      <description>Movie Backdrop (Fan Art) - Plug-in sets to invisible, if no art.</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1366</width>
+      <height>768</height>
+      <texture>#MovingPictures.Backdrop</texture>
+    </control>
+    <control>
+      <description>Dummy Label for fanart</description>
+      <type>label</type>
+      <id>100</id>
+      <posX>-600</posX>
+      <posY>0</posY>
+      <width>10</width>
+      <height>10</height>
+      <visible>Control.IsVisible(1)</visible>
+    </control>
+    <control>
+      <description>Background to be displayed when there is no Movie Backdrop</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1366</width>
+      <height>768</height>
+      <visible>!Control.IsVisible(1)</visible>
+    </control>
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>500</posX>
+      <posY>20</posY>
+      <width>400</width>
+      <height>566</height>
+      <texture>#MovingPictures.Coverart</texture>
+      <visible>!Control.IsVisible(1)+Control.IsVisible(50)!facadeview.smallicons!facadeview.largeicons</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>133</posX>
+      <posY>120</posY>
+      <width>1100</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>40</posY>
+      <width>1366</width>
+      <font>font18</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <align>center</align>
+      <textcolor>ffffff</textcolor>
+      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Tagline</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>100</posY>
+      <width>1366</width>
+      <textcolor>ffffff</textcolor>
+      <font>font14</font>
+      <label>#MovingPictures.SelectedMovie.tagline</label>
+      <align>center</align>
+      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>580</posX>
+      <posY>60</posY>
+      <width>310</width>
+      <height>30</height>
+      <textureWidth>30</textureWidth>
+      <textureHeight>30</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starbest.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
+      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+    </control>
+    <!-- This is an alternate view button that brings up a menu for view 
+         selection, rather than just cycling the view. You can use both
+         if you want to. -->
+    <!--control>
+      <description>View Menu Button</description>
+      <type>button</type>
+      <id>3</id>
+      <onright>50</onright>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>81</width>
+      <height>81</height>
+      <textureFocus>moving_pictures_view_focus.png</textureFocus>
+      <textureNoFocus>moving_pictures_view.png</textureNoFocus>
+      <visible>Control.IsVisible(50)</visible>
+    </control-->
+    <!--Imported Facades-->
+    <import>movingpictures.details.xml</import>
+    <import>movingpictures.views.xml</import>
+    <import>movingpictures.common.facade.xml</import>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>645</posX>
+      <posY>415</posY>
+      <width>635</width>
+      <height>305</height>
+      <texture>mpinfo_filmbox.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>680</posX>
+      <posY>475</posY>
+      <width>310</width>
+      <height>25</height>
+      <textureWidth>25</textureWidth>
+      <textureHeight>25</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starbest.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+    </control>
+  </controls>
+</window>

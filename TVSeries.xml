@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9811</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#title.color:ffffffff</define>
+  <define>#smalltitle.color:FF909090</define>
+  <define>#text.color:ffffff</define>
+  <define>#default.color:ffffffff</define>
+  <define>#watched.color:ff808080</define>
+  <define>#notpresent.color:fff8bc70</define>
+  <controls>
+    <!-- ***************************** DUMMY LABELS ***************************** -->
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Fanart triggers</description>
+      <id>1232</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>620</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when a light fanart is loaded do this: <visible>Control.IsVisible(1234)</visible> -->
+      <!-- to make a control invisible when a light fanart is loaded do this: <visible>!Control.IsVisible(1234)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for dark Fanart triggers</description>
+      <id>1233</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>620</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when a light fanart is loaded do this: <visible>Control.IsVisible(1234)</visible> -->
+      <!-- to make a control invisible when a light fanart is loaded do this: <visible>!Control.IsVisible(1234)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for light Fanart triggers</description>
+      <id>1234</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>620</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when a light fanart is loaded do this: <visible>Control.IsVisible(1234)</visible> -->
+      <!-- to make a control invisible when a light fanart is loaded do this: <visible>!Control.IsVisible(1234)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for List triggers</description>
+      <id>1235</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1235)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1235)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Graphical View</description>
+      <id>1236</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1236)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1236)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Series View</description>
+      <id>1237</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1237)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1237)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Season View</description>
+      <id>1238</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1238)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1238)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Episode View</description>
+      <id>1239</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1239)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1239)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Grouped View</description>
+      <id>1240</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label></label>
+      <visible>false</visible>
+      <!-- to make a control visible only when the facade is in list mode do this: <visible>Control.IsVisible(1240)</visible> -->
+      <!-- to make a control invisible when the facade is in list mode do this: <visible>!Control.IsVisible(1240)</visible> -->
+    </control>
+    <!-- ***************************** BACKGROUNDS ***************************** -->
+    <control>
+      <description>LOOPING TV BACKGROUND ANIMATION</description>
+      <id>6661</id>
+      <type>multiimage</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1366</width>
+      <height>768</height>
+      <imagepath>tv</imagepath>
+      <timeperimage>60000</timeperimage>
+      <fadetime>800</fadetime>
+      <loop>yes</loop>
+      <randomize>true</randomize>
+      <visible>!Control.IsVisible(1232)</visible>
+    </control>
+    <control>
+      <description>Fan Art Image</description>
+      <type>image</type>
+      <id>524</id>
+      <animation effect="fade" time="400">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+      <animation effect="fade" time="1000">focus</animation>
+      <animation effect="fade" time="1000">unfocus</animation>
+      <posX>303</posX>
+      <posY>0</posY>
+      <width>1063</width>
+      <height>605</height>
+      <texture>-</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>streamed_overlay.png</texture>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <!-- *****************************************Main View ********************************************************** -->
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>120</posY>
+      <width>1200</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>900</posX>
+      <posY>295</posY>
+      <width>370</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>670</posY>
+      <width>1200</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>TVDB Series Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>900</posX>
+      <posY>270</posY>
+      <width>250</width>
+      <height>20</height>
+      <texture>#TVSeries.Series.RatingPath</texture>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description (graphical)-Main View</description>
+      <id>631</id>
+      <posX>900</posX>
+      <posY>390</posY>
+      <width>370</width>
+      <height>300</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <textcolor>ffffff</textcolor>
+      <font>mediastream11</font>
+      <label>#TVSeries.Description</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Small Title - Genre</description>
+      <type>label</type>
+      <id>666234</id>
+      <posX>900</posX>
+      <posY>300</posY>
+      <width>100</width>
+      <height>148</height>
+      <font>mediastream10tcb</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine1Value</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Text Label - Genre</description>
+      <type>fadelabel</type>
+      <id>666245</id>
+      <posX>1040</posX>
+      <posY>300</posY>
+      <width>230</width>
+      <font>mediastream10tcb</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine2Value</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Small Title - First Aired</description>
+      <type>label</type>
+      <id>666279</id>
+      <posX>900</posX>
+      <posY>330</posY>
+      <width>230</width>
+      <font>mediastream10tcb</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine5Value</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Text Label - First Aired</description>
+      <type>fadelabel</type>
+      <id>666287</id>
+      <posX>1040</posX>
+      <posY>330</posY>
+      <width>230</width>
+      <font>mediastream10tcb</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine6Value</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Small Title - Runtime</description>
+      <type>label</type>
+      <id>666295</id>
+      <posX>900</posX>
+      <posY>360</posY>
+      <width>100</width>
+      <font>mediastream10tcb</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>Runtime</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Text Label - Runtime</description>
+      <type>label</type>
+      <id>666301</id>
+      <posX>1040</posX>
+      <posY>360</posY>
+      <width>230</width>
+      <font>mediastream10tcb</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.Runtime min</label>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <!-- ***************************************** THUMB / SEASON DVD COVER ***************************************************************** -->
+    <control>
+      <description>Thumb/Cover background</description>
+      <type>image</type>
+      <id>70</id>
+      <posX>5</posX>
+      <posY>325</posY>
+      <width>205</width>
+      <height>253</height>
+      <texture>dvd_frame.png</texture>
+      <visible>Control.IsVisible(1238)+Control.HasThumb(46)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <description>Season image ( season image background )</description>
+      <id>46</id>
+      <posX>20</posX>
+      <posY>337</posY>
+      <width>175</width>
+      <height>223</height>
+      <texture>#TVSeries.SeasonBanner</texture>
+      <visible>Control.IsVisible(1238)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>10</posX>
+      <posY>400</posY>
+      <width>300</width>
+      <height>180</height>
+      <texture>tvseries_focusframe.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1240)+Control.HasThumb(67)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Big Episode Thumb</description>
+      <type>image</type>
+      <id>67</id>
+      <posX>27</posX>
+      <posY>415</posY>
+      <height>145</height>
+      <width>268</width>
+      <texture>#TVSeries.EpisodeImage</texture>
+      <visible>Control.IsVisible(1235)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Series Banner</description>
+      <type>image</type>
+      <id>66622</id>
+      <posX>790</posX>
+      <posY>570</posY>
+      <width>300</width>
+      <height>50</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesBanner</texture>
+      <visible>false</visible>
+    </control>
+    <!-- *****************************************INFORMATION IN LIST VIEW***************************************************************** -->
+    <control>
+      <type>fadelabel</type>
+      <description>Title (eplist)</description>
+      <id>640</id>
+      <posX>900</posX>
+      <posY>240</posY>
+      <width>300</width>
+      <font>mediastream16tcb</font>
+      <align>left</align>
+      <label>#TVSeries.Title</label>
+      <textcolor>FF006699</textcolor>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Title (eplist)</description>
+      <type>label</type>
+      <id>641</id>
+      <posX>10</posX>
+      <posY>575</posY>
+      <width>550</width>
+      <height>40</height>
+      <align>left</align>
+      <font>font16</font>
+      <label>#TVSeries.Title</label>
+      <textcolor>ffffff</textcolor>
+      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description (graphical)-Season View</description>
+      <id>631</id>
+      <posX>610</posX>
+      <posY>590</posY>
+      <width>710</width>
+      <height>130</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <textcolor>ffffff</textcolor>
+      <font>mediastream11</font>
+      <label>#TVSeries.Description</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description (eplist)</description>
+      <id>631</id>
+      <posX>610</posX>
+      <posY>590</posY>
+      <width>710</width>
+      <height>130</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <label>#TVSeries.Description</label>
+      <textcolor>ffffff</textcolor>
+      <font>mediastream11</font>
+      <visible>!Control.IsVisible(1238)+Control.IsVisible(1235)+!Control.IsVisible(1240)</visible>
+    </control>
+    <!--  ***************************** LOGOS ******************************** -->
+    <control>
+      <type>image</type>
+      <description>thumb Logos Main Menu</description>
+      <id>66</id>
+      <posX>900</posX>
+      <posY>160</posY>
+      <width>500</width>
+      <height>35</height>
+      <texture>#TVSeries.Logos</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <spaceBetweenItems>2</spaceBetweenItems>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>thumb Logos ( in textlist )</description>
+      <id>66</id>
+      <posX>610</posX>
+      <posY>725</posY>
+      <width>500</width>
+      <height>35</height>
+      <texture>#TVSeries.Logos</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <spaceBetweenItems>2</spaceBetweenItems>
+      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+    </control>
+    <!-- ~~~~~~~~~~~~~~~~~~~~ SERIES INFOS ~~~~~~~~~~~~~~~~~~~~ -->
+    <control>
+      <type>image</type>
+      <id>66</id>
+      <posX>600</posX>
+      <posY>600</posY>
+      <width>1</width>
+      <height>140</height>
+      <texture>vbar1white.png</texture>
+      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Small Title - Genre</description>
+      <type>label</type>
+      <id>66623</id>
+      <posX>10</posX>
+      <posY>640</posY>
+      <width>100</width>
+      <height>148</height>
+      <font>font13</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine1Value</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Text Label - Genre</description>
+      <type>fadelabel</type>
+      <id>66624</id>
+      <posX>150</posX>
+      <posY>640</posY>
+      <width>360</width>
+      <font>font13</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine2Value</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Small Title - First Aired</description>
+      <type>label</type>
+      <id>66627</id>
+      <posX>10</posX>
+      <posY>670</posY>
+      <width>200</width>
+      <font>font13</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine5Value</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Text Label - First Aired</description>
+      <type>label</type>
+      <id>66628</id>
+      <posX>150</posX>
+      <posY>670</posY>
+      <width>300</width>
+      <font>font13</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.InfoPanelLine6Value</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Small Title - Runtime</description>
+      <type>label</type>
+      <id>66629</id>
+      <posX>10</posX>
+      <posY>700</posY>
+      <width>100</width>
+      <font>font13</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>Runtime</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Text Label - Runtime</description>
+      <type>label</type>
+      <id>66630</id>
+      <posX>150</posX>
+      <posY>700</posY>
+      <width>360</width>
+      <font>font13</font>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Series.Runtime min</label>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>TVDB Series Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>10</posX>
+      <posY>610</posY>
+      <width>250</width>
+      <height>20</height>
+      <texture>#TVSeries.Series.RatingPath</texture>
+      <visible>Control.IsVisible(1238)</visible>
+    </control>
+    <!-- ~~~~~~~~~~~~~~~~~~~~ EPISODE INFOS ~~~~~~~~~~~~~~~~~~~~ -->
+    <control>
+      <description>TVDB Episode Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>10</posX>
+      <posY>610</posY>
+      <width>250</width>
+      <height>20</height>
+      <texture>#TVSeries.Episode.RatingPath</texture>
+      <visible>Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Small Title - Director</description>
+      <type>label</type>
+      <id>6668</id>
+      <posX>10</posX>
+      <posY>635</posY>
+      <width>360</width>
+      <font>font12</font>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine1Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <description>Text Label - Director</description>
+      <type>fadelabel</type>
+      <id>6669</id>
+      <posX>180</posX>
+      <posY>635</posY>
+      <width>360</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine2Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Small Title - Writer</description>
+      <type>label</type>
+      <id>66610</id>
+      <posX>10</posX>
+      <posY>635</posY>
+      <width>360</width>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine3Value</label>
+      <visible>false</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Text Label - Writer</description>
+      <type>fadelabel</type>
+      <id>66611</id>
+      <posX>180</posX>
+      <posY>635</posY>
+      <width>360</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine4Value</label>
+      <visible>false</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Small Title - First Aired</description>
+      <type>label</type>
+      <id>66612</id>
+      <posX>10</posX>
+      <posY>660</posY>
+      <width>360</width>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine5Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Text Label - First Aired</description>
+      <type>label</type>
+      <id>66613</id>
+      <posX>180</posX>
+      <posY>660</posY>
+      <width>360</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine6Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Small Title - Runtime</description>
+      <type>label</type>
+      <id>66614</id>
+      <posX>10</posX>
+      <posY>685</posY>
+      <width>140</width>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine7Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Text Label - Runtime</description>
+      <type>label</type>
+      <id>66615</id>
+      <posX>180</posX>
+      <posY>685</posY>
+      <width>140</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine8Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Small Title - Video</description>
+      <type>label</type>
+      <id>66616</id>
+      <posX>10</posX>
+      <posY>710</posY>
+      <width>360</width>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine9Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Text Label - Video</description>
+      <type>label</type>
+      <id>66617</id>
+      <posX>180</posX>
+      <posY>710</posY>
+      <width>360</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine10Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Small Title - Codecs</description>
+      <type>label</type>
+      <id>66618</id>
+      <posX>10</posX>
+      <posY>735</posY>
+      <width>360</width>
+      <textcolor>#smalltitle.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine11Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <control>
+      <description>Text Label - Codecs</description>
+      <type>fadelabel</type>
+      <id>66619</id>
+      <posX>180</posX>
+      <posY>735</posY>
+      <width>360</width>
+      <textcolor>#text.color</textcolor>
+      <label>#TVSeries.Episode.InfoPanelLine12Value</label>
+      <visible>Control.IsVisible(1239)</visible>
+      <font>font12</font>
+    </control>
+    <!-- ************************** VIEW SELECTION ***********************************-->
+    <control>
+      <type>label</type>
+      <description>cur_view</description>
+      <id>77</id>
+      <posX>1270</posX>
+      <posY>675</posY>
+      <label>#TVSeries.CurrentView</label>
+      <align>right</align>
+      <visible>!Control.IsVisible(1232)</visible>
+    </control>
+    <!-- *********************** LIST /GRAPHICAL VIEW*********************************** -->
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <id>28</id>
+      <layout>StackLayout</layout>
+      <posX>60</posX>
+      <posY>97</posY>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>graphical list (series and seasons if set)</description>
+          <type>listcontrol</type>
+          <subtype>album</subtype>
+          <id>50</id>
+          <posX>20</posX>
+          <posY>120</posY>
+          <width>1340</width>
+          <height>520</height>
+          <spinPosX>1273</spinPosX>
+          <spinPosY>574</spinPosY>
+          <!-- Textures -->
+          <imageFolder>tvseries_banner_nofocus.png</imageFolder>
+          <imageFolderFocus>tvseries_focusframe.png</imageFolderFocus>
+          <!-- Text -->
+          <downloadColor>#default.color</downloadColor>
+          <!-- not watched color (normal) -->
+          <remoteColor>#watched.color</remoteColor>
+          <!-- watched color -->
+          <textcolor>#notpresent.color</textcolor>
+          <!-- local file not present color -->
+          <textcolor2>#notpresent.color</textcolor2>
+          <!-- local file not present colorcolumn 2-->
+          <textcolor3>#notpresent.color</textcolor3>
+          <!-- local file not present color column 3-->
+          <itemWidthBig>444</itemWidthBig>
+          <itemHeightBig>102</itemHeightBig>
+          <!-- boxes -->
+          <textureWidthBig>442</textureWidthBig>
+          <textureHeightBig>102</textureHeightBig>
+          <!-- banners -->
+          <thumbWidthBig>420</thumbWidthBig>
+          <thumbHeightBig>78</thumbHeightBig>
+          <thumbPosXBig>8</thumbPosXBig>
+          <thumbPosYBig>8</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <!-- text (No banner) -->
+          <textXOff>10</textXOff>
+          <textYOff>-40</textYOff>
+          <keepaspectratio>no</keepaspectratio>
+          <!-- <unfocusedAlpha>200</unfocusedAlpha> -->
+          <enableFocusZoom>no</enableFocusZoom>
+        </control>
+        <control>
+          <description>graphical thumbpanel (series and seasons if set)</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <posX>50</posX>
+          <posY>230</posY>
+          <width>900</width>
+          <height>480</height>
+          <spinPosX>465</spinPosX>
+          <spinPosY>680</spinPosY>
+          <!-- Textures -->
+          <imageFolder>tvseries_banner_nofocus.png</imageFolder>
+          <imageFolderFocus>tvseries_focusframe.png</imageFolderFocus>
+          <!-- Text -->
+          <downloadColor>#default.color</downloadColor>
+          <!-- not watched color (normal) -->
+          <remoteColor>#watched.color</remoteColor>
+          <!-- watched color -->
+          <textcolor>#notpresent.color</textcolor>
+          <!-- local file not present color -->
+          <textcolor2>#notpresent.color</textcolor2>
+          <!-- local file not present colorcolumn 2-->
+          <textcolor3>#notpresent.color</textcolor3>
+          <!-- local file not present color column 3-->
+          <itemWidthBig>422</itemWidthBig>
+          <itemHeightBig>88</itemHeightBig>
+          <!-- boxes -->
+          <textureWidthBig>418</textureWidthBig>
+          <textureHeightBig>86</textureHeightBig>
+          <!-- banners -->
+          <thumbWidthBig>380</thumbWidthBig>
+          <thumbHeightBig>76</thumbHeightBig>
+          <thumbPosXBig>19</thumbPosXBig>
+          <thumbPosYBig>5</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <!-- text (No banner) -->
+          <textXOff>10</textXOff>
+          <textYOff>-40</textYOff>
+          <keepaspectratio>no</keepaspectratio>
+          <enableFocusZoom>no</enableFocusZoom>
+          <unfocusedAlpha>100</unfocusedAlpha>
+          <animation effect="fade" time="400">WindowOpen</animation>
+          <animation effect="fade" time="250">WindowClose</animation>
+        </control>
+        <!-- 10 lined version -->
+        <control>
+          <description>Text List</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>0</posX>
+          <posY>10</posY>
+          <spinPosX>1273</spinPosX>
+          <spinPosY>735</spinPosY>
+          <width>360</width>
+          <height>360</height>
+          <textXOff>-20</textXOff>
+          <textXOff2>400</textXOff2>
+          <textYOff2>-800</textYOff2>
+          <IconXOff>1980</IconXOff>
+          <textvisible1>false</textvisible1>
+          <textvisible2>false</textvisible2>
+          <textvisible3>false</textvisible3>
+          <textureFocus>menu_focus.png</textureFocus>
+          <textureNoFocus>menu_nofocus.png</textureNoFocus>
+          <!-- Text -->
+          <downloadColor>#default.color</downloadColor>
+          <!-- not watched color (normal) -->
+          <remoteColor>#watched.color</remoteColor>
+          <!-- watched color -->
+          <textcolor>#notpresent.color</textcolor>
+          <!-- local file not present color -->
+          <textcolor2>#notpresent.color</textcolor2>
+          <!-- local file not present colorcolumn 2-->
+          <textcolor3>#notpresent.color</textcolor3>
+          <!-- local file not present color column 3-->
+        </control>
+      </control>
+    </control>
+    <!-- ********************** IMPORT PROCESS *************************************** -->
+    <control>
+      <description>Import Animation</description>
+      <type>animation</type>
+      <id>51</id>
+      <posX>556</posX>
+      <posY>296</posY>
+      <width>128</width>
+      <height>128</height>
+      <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png</textures>
+      <Duration>0:0:01.5</Duration>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <import>common.window.xml</import>
+  </controls>
+</window>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>616</id>
+  <defaultcontrol>5</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:1200</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#itemcount:-</define>
+  <define>#selecteditem:200024</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+    <control>
+      <type>button</type>
+      <description>Next</description>
+      <id>5</id>
+      <onleft>25</onleft>
+      <onright>5</onright>
+      <onup>5</onup>
+      <ondown>5</ondown>
+      <label>200009</label>
+    </control>
+    <control>
+      <type>button</type>
+      <description>Back</description>
+      <id>25</id>
+      <onleft>25</onleft>
+      <onright>5</onright>
+      <onup>25</onup>
+      <ondown>25</ondown>
+      <label>200007</label>
+    </control>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Press the Next button to configure these cards</description>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>668</posY>
+      <label>200023</label>
+      <font>font12</font>
+    </control>
+    <control>
+      <type>label</type>
+      <description>MediaPortal has found the following tv-cards:</description>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>202</posY>
+      <label>200022</label>
+      <font>font12</font>
+    </control>
+    <control>
+      <type>textbox</type>
+      <id>24</id>
+      <posX>310</posX>
+      <posY>234</posY>
+      <width>693</width>
+      <height>141</height>
+      <text>Hauppauge PVR 350</text>
+      <SpinPosX>533</SpinPosX>
+      <SpinPosY>282</SpinPosY>
+      <SpinAlign>right</SpinAlign>
+    </control>
+  </controls>
+</window>

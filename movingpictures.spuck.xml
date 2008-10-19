@@ -1,0 +1,665 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the facade view and all gui
+elements that should remain on screen during all or
+multiple view modes. 
+-->
+<window>
+  <id>96742</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <!-- 
+  This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
+  are parameters to give the skinner a tiny bit more control over the presentation.
+  -->
+  <define>#largeicons.available:false</define>
+  <!-- true if this skin implements the largeicons view -->
+  <define>#largeicons.backdrop.used:false</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#smallicons.available:false</define>
+  <!-- Set to true if this skin implements the smallicons view -->
+  <define>#smallicons.backdrop.used:false</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#list.available:true</define>
+  <!-- Set to true if this skin implements the list view -->
+  <define>#list.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#filmstrip.available:true</define>
+  <!-- Set to true if this skin implements the filmstrip view -->
+  <define>#filmstrip.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#details.backdrop.used:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
+  <!-- Colors, attributes, etc -->
+  <define>#smalltitle.color:ff383838</define>
+  <controls>
+    <!-- ********************* Background /  Movie Backdrop (Fan-art) *************************** -->
+    <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+      <visible>!Control.IsVisible(1)</visible>
+    </control>
+    <control>
+      <description>Movie Backdrop (Fan Art) - Plug-in sets to invisible, if no art.</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#MovingPictures.Backdrop</texture>
+      <!-- Do not modify the visibility for this component. It is handled by the plug-in. Use the above 
+      defines for conditional visibility if you dont want to use fan-art only specific views. -->
+    </control>
+    <control>
+      <description>Backdrop Overlay - ListView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Filmstrip black background - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>499</posY>
+      <width>1280</width>
+      <height>221</height>
+      <texture>black.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Backdrop Overlay - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>-12</posY>
+      <width>1280</width>
+      <height>732</height>
+      <colordiffuse>ccffffff</colordiffuse>
+      <texture>movieviewbg.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Glasstitlebar - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>225</posX>
+      <posY>54</posY>
+      <width>512</width>
+      <height>43</height>
+      <colordiffuse>ccffffff</colordiffuse>
+      <texture>glasstitlebar.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <!-- ***************** All Views / Stuffs ***************************************** -->
+    <control>
+      <type>label</type>
+      <description>Top Title</description>
+      <id>1</id>
+      <posX>15</posX>
+      <posY>15</posY>
+      <font>mediastream11tc</font>
+      <label>Moving Pictures</label>
+    </control>
+    <control>
+      <description>Dummy for watched flag</description>
+      <type>label</type>
+      <id>9200</id>
+      <posX>-2000</posX>
+      <visible>#MovingPictures.SelectedMovie.watched</visible>
+      <!--
+      <visible>Control.IsVisible(9200)</visible>   =   unwatched
+      <visible>!Control.IsVisible(9200)</visible>  =   watched
+      -->
+    </control>
+    <!--********************* ListView Only **************************-->
+    <control>
+      <description>Lines between list items</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>720</posX>
+      <posY>240</posY>
+      <width>564</width>
+      <height>362</height>
+      <texture>listsplitter10.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>32</posX>
+      <posY>254</posY>
+      <width>256</width>
+      <height>380</height>
+      <texture>#MovingPictures.Coverart</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Watched Icon Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>256</posX>
+      <posY>280</posY>
+      <width>32</width>
+      <height>39</height>
+      <texture>overlaywubg.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>259</posX>
+      <posY>283</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>overlaywatched.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
+    </control>
+    <control>
+      <description>Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>259</posX>
+      <posY>283</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>overlayunwatched.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(9200)</visible>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>255</posY>
+      <width>950</width>
+      <font>mediastream14tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Year below the movie title</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>280</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>310</posY>
+      <width>415</width>
+      <height>190</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream10</font>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Runtime</label>
+      <posX>310</posX>
+      <posY>515</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.runtime minutes</label>
+      <posX>420</posX>
+      <posY>515</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Rating</label>
+      <posX>310</posX>
+      <posY>540</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.score / 10 (Rated: #MovingPictures.SelectedMovie.user_score)</label>
+      <posX>420</posX>
+      <posY>540</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Director</label>
+      <posX>310</posX>
+      <posY>565</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>420</posX>
+      <posY>565</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Writer</label>
+      <posX>310</posX>
+      <posY>590</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>420</posX>
+      <posY>590</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Genre</label>
+      <posX>310</posX>
+      <posY>615</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <posX>420</posX>
+      <posY>615</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <!--********************* FilmStripView Only **************************-->
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>70</posX>
+      <posY>62</posY>
+      <width>288</width>
+      <height>428</height>
+      <texture>#MovingPictures.Coverart</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Watched Icon Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>327</posX>
+      <posY>100</posY>
+      <width>32</width>
+      <height>39</height>
+      <texture>overlaywubg.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>330</posX>
+      <posY>103</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>overlaywatched.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
+    </control>
+    <control>
+      <description>Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>330</posX>
+      <posY>103</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>overlayunwatched.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9200)</visible>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>63</posY>
+      <width>850</width>
+      <font>mediastream16tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ffBBBBBB</textcolor>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>100</posY>
+      <width>850</width>
+      <height>160</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream10</font>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Movie Details Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>270</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>Movie Details</label>
+      <textcolor>ffBBBBBB</textcolor>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <posX>410</posX>
+      <posY>295</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.runtime mins</label>
+      <posX>410</posX>
+      <posY>315</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <posX>410</posX>
+      <posY>335</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>Rated #MovingPictures.SelectedMovie.certification</label>
+      <posX>410</posX>
+      <posY>355</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.score / 10 (Rated: #MovingPictures.SelectedMovie.user_score)</label>
+      <posX>410</posX>
+      <posY>375</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Director Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>850</posX>
+      <posY>270</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>Director</label>
+      <textcolor>ffBBBBBB</textcolor>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>850</posX>
+      <posY>295</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Writer Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>850</posX>
+      <posY>370</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>Writer</label>
+      <textcolor>ffBBBBBB</textcolor>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>850</posX>
+      <posY>395</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <!--***************** Details View Only **********************-->
+    <control>
+      <description>Play Button</description>
+      <type>button</type>
+      <id>6</id>
+      <onright>7</onright>
+      <posX>305</posX>
+      <posY>415</posY>
+      <width>35</width>
+      <height>35</height>
+      <textureFocus>moving_pictures_play_focus.png</textureFocus>
+      <textureNoFocus>moving_pictures_play.png</textureNoFocus>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <!--control>
+      <description>Cycle Details Button (not implemented yet)</description>
+      <type>button</type>
+      <id>7</id>
+      <onleft>6</onleft>
+      <posX>340</posX>
+      <posY>415</posY>
+      <width>35</width>
+      <height>35</height>
+      <textureFocus>moving_pictures_details_focus.png</textureFocus>
+      <textureNoFocus>moving_pictures_details.png</textureNoFocus>
+      <visible>!Control.IsVisible(50)</visible>
+    </control-->
+    <control>
+      <description>DVD Cover</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>60</posX>
+      <posY>435</posY>
+      <height>400</height>
+      <width>200</width>
+      <height>300</height>
+      <texture>#MovingPictures.Coverart</texture>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>DVD Frame</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>40</posX>
+      <posY>420</posY>
+      <height>340</height>
+      <width>240</width>
+      <texture>dvd_frame.png</texture>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>600</posY>
+      <width>900</width>
+      <height>150</height>
+      <textcolor>ffffff</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>font12</font>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Director Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>450</posY>
+      <textcolor>#smalltitle.color</textcolor>
+      <font>font14</font>
+      <label>DIRECTOR</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Director Value</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>480</posX>
+      <posY>450</posY>
+      <textcolor>ffffff</textcolor>
+      <font>font14</font>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Genre Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>480</posY>
+      <textcolor>#smalltitle.color</textcolor>
+      <font>font14</font>
+      <label>GENRE</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Genre Value</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>480</posX>
+      <posY>480</posY>
+      <width>1366</width>
+      <textcolor>ffffff</textcolor>
+      <font>font14</font>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Rating Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>540</posY>
+      <textcolor>#smalltitle.color</textcolor>
+      <font>font14</font>
+      <label>RATING</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Runtime Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>570</posY>
+      <textcolor>#smalltitle.color</textcolor>
+      <font>font14</font>
+      <label>RUNTIME</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Runtime</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>480</posX>
+      <posY>570</posY>
+      <textcolor>ffffff</textcolor>
+      <font>font14</font>
+      <label>#MovingPictures.SelectedMovie.extra.runtime.hour Hour(s), #MovingPictures.SelectedMovie.extra.runtime.minute Minutes</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    <!-- ****************** Facade *************************************** -->
+    <import>movingpictures.facade.xml</import>
+    <!-- ******************** Side Bar Buttons, Not Used. The Cycle Button is the only one currently Functional *******************-->
+    <!--control>
+      <description>Cycle View Button</description>
+      <type>button</type>
+      <id>2</id>
+      <onleft>50</onleft>
+      <posX>1280</posX>
+      <posY>150</posY>
+      <width>81</width>
+      <height>81</height>
+      <textureFocus>MovingPictures\moving_pictures_view_focus.png</textureFocus>
+      <textureNoFocus>MovingPictures\moving_pictures_view.png</textureNoFocus>
+      <visible>Control.IsVisible(50)</visible>
+    </control-->
+    <!-- This is an alternate view button that brings up a menu for view 
+         selection, rather than just cycling the view. You can use both
+         if you want to. -->
+    <!--control>
+      <description>View Menu Button</description>
+      <type>button</type>
+      <id>3</id>
+      <onright>50</onright>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>81</width>
+      <height>81</height>
+      <textureFocus>moving_pictures_view_focus.png</textureFocus>
+      <textureNoFocus>moving_pictures_view.png</textureNoFocus>
+      <visible>Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Filters Button</description>
+      <type>button</type>
+      <id>4</id>
+      <onright>50</onright>
+      <posX>1280</posX>
+      <posY>232</posY>
+      <width>81</width>
+      <height>81</height>
+      <textureFocus>MovingPictures\moving_pictures_filter_focus.png</textureFocus>
+      <textureNoFocus>MovingPictures\moving_pictures_filter.png</textureNoFocus>
+      <visible>Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Settings Button - Not sure what this will do...</description>
+      <type>button</type>
+      <id>5</id>
+      <onright>50</onright>
+      <posX>1280</posX>
+      <posY>313</posY>
+      <width>81</width>
+      <height>81</height>
+      <textureFocus>MovingPictures\moving_pictures_settings_focus.png</textureFocus>
+      <textureNoFocus>MovingPictures\moving_pictures_settings.png</textureNoFocus>
+      <visible>Control.IsVisible(50)</visible>
+    </control-->
+    <import>common.time.xml</import>
+  </controls>
+</window>

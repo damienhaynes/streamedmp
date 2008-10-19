@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>101</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <import>common.dialog.xml</import>
+    <control>
+      <type>image</type>
+      <id>100</id>
+      <posX>434</posX>
+      <posY>462</posY>
+      <width>502</width>
+      <height>12</height>
+      <texture>osd_progress_background.png</texture>
+    </control>
+    <control>
+      <description>progress control</description>
+      <type>progress</type>
+      <id>20</id>
+      <posX>424</posX>
+      <posY>462</posY>
+      <width>527</width>
+      <height>12</height>
+      <texturebg>-</texturebg>
+      <lefttexture>now_playing_progress_left.png</lefttexture>
+      <midtexture>now_playing_progress_mid.png</midtexture>
+      <righttexture>now_playing_progress_right.png</righttexture>
+    </control>
+    <control>
+      <description>Cancel button</description>
+      <type>button</type>
+      <id>10</id>
+      <posX>909</posX>
+      <posY>265</posY>
+      <width>43</width>
+      <height>17</height>
+      <textureFocus>dialogue_shutdown_focus.png</textureFocus>
+      <textureNoFocus>dialogue_shutdown_nofocus.png</textureNoFocus>
+      <label>-</label>
+      <onleft>10</onleft>
+      <onright>10</onright>
+      <onup>10</onup>
+      <ondown>10</ondown>
+    </control>
+  </controls>
+</window>

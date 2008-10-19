@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7986</id>
+  <defaultcontrol>1026</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:Films</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my films.png</define>
+  <define>#itemcount:-</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <import>MesFilms_Visible.xml</import>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>16</posX>
+      <posY>184</posY>
+      <width>276</width>
+      <height>408</height>
+      <texture>movie_preview_thumb_background.png</texture>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <id>12</id>
+      <posX>35</posX>
+      <posY>35</posY>
+      <label>label</label>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>-210</buttonX>
+      <buttonY>64</buttonY>
+      <buttonwidth>385</buttonwidth>
+      <buttonheight>515</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(1026)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(1026)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+        <control>
+          <type>button</type>
+          <description>Layout</description>
+          <id>6</id>
+          <onleft>6</onleft>
+          <onright>1026</onright>
+          <onup>17</onup>
+          <ondown>2</ondown>
+          <label>101</label>
+        </control>
+        <control>
+          <description>Sort button</description>
+          <type>sortbutton</type>
+          <id>2</id>
+          <onleft>2</onleft>
+          <onright>1026</onright>
+          <onup>6</onup>
+          <ondown>3</ondown>
+          <label>103</label>
+        </control>
+        <control>
+          <description>Switch view</description>
+          <type>button</type>
+          <id>3</id>
+          <onleft>2</onleft>
+          <onright>1026</onright>
+          <onup>2</onup>
+          <ondown>4</ondown>
+          <label>457</label>
+        </control>
+        <control>
+          <description>Search by Films</description>
+          <type>button</type>
+          <id>4</id>
+          <onleft>3</onleft>
+          <onright>1026</onright>
+          <onup>3</onup>
+          <ondown>5</ondown>
+          <label>137</label>
+        </control>
+        <control>
+          <description>Search by Actors</description>
+          <type>button</type>
+          <id>5</id>
+          <onleft>4</onleft>
+          <onright>1026</onright>
+          <onup>4</onup>
+          <ondown>99</ondown>
+          <label>137</label>
+        </control>
+      </control>
+    </control>
+    <import>MesFilms.common.facade.xml</import>
+    <control>
+      <description>Star Rating 1</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(24)+!control.isvisible(25)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star10.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 2</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(25)+!control.isvisible(26)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star20.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 3</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(26)+!control.isvisible(27)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star30.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 4</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(27)+!control.isvisible(28)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star40.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 5</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(28)+!control.isvisible(29)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star50.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 6</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(29)+!control.isvisible(30)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star60.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 7</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(30)+!control.isvisible(31)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star70.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 8</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(31)+!control.isvisible(32)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star80.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 9</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(32)+!control.isvisible(33)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star90.png</texture>
+    </control>
+    <control>
+      <description>Star Rating 10</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>648</posY>
+      <width>180</width>
+      <height>18</height>
+      <visible>control.isvisible(33)+control.hasfocus(1026)</visible>
+      <texture>TVSeries\star100.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>image</description>
+      <id>1</id>
+      <posX>504</posX>
+      <posY>648</posY>
+      <width>1</width>
+      <height>120</height>
+      <texture>vbar1.png</texture>
+      <visible>control.hasfocus(1026)</visible>
+    </control>
+    <control>
+      <description>Year txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>670</posY>
+      <label>201</label>
+      <font>font10</font>
+      <visible>control.hasfocus(1026)</visible>
+    </control>
+    <control>
+      <description>Year value</description>
+      <type>label</type>
+      <id>1022</id>
+      <posX>339</posX>
+      <posY>670</posY>
+      <label>6</label>
+      <visible>control.hasfocus(1026)</visible>
+      <font>font10</font>
+    </control>
+    <control>
+      <description>Genre txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>300</posX>
+      <posY>695</posY>
+      <label>174</label>
+      <visible>control.hasfocus(1026)</visible>
+      <font>font10</font>
+    </control>
+    <control>
+      <description>Genre value</description>
+      <type>label</type>
+      <id>1024</id>
+      <posX>355</posX>
+      <posY>695</posY>
+      <width>140</width>
+      <label>6</label>
+      <visible>control.hasfocus(1026)</visible>
+      <font>font10</font>
+    </control>
+    <control>
+      <type>label</type>
+      <id>2073</id>
+      <posX>35</posX>
+      <posY>35</posY>
+      <label>#nbobjects</label>
+    </control>
+    <control>
+      <description>Thumbnail with video playing</description>
+      <type>image</type>
+      <id>1020</id>
+      <posX>30</posX>
+      <posY>198</posY>
+      <width>245</width>
+      <height>373</height>
+      <texture>-</texture>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Thumbnail with no video playing</description>
+      <type>image</type>
+      <id>1021</id>
+      <posX>30</posX>
+      <posY>198</posY>
+      <width>245</width>
+      <height>373</height>
+      <visible>facadeview.list</visible>
+    </control>
+  </controls>
+</window>

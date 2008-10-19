@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7890</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <type>image</type>
+      <description>background image</description>
+      <id>0</id>
+      <texture>Background.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>background hover image</description>
+      <id>0</id>
+      <posX>1306</posX>
+      <posY>20</posY>
+      <width>40</width>
+      <height>40</height>
+      <texture>hover_lastFM.png</texture>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>1286</posX>
+      <posY>10</posY>
+      <label>2</label>
+      <font>font18</font>
+      <textcolor>20ffffff</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>1271</posX>
+      <posY>35</posY>
+      <width>950</width>
+      <font>font14</font>
+      <label>107890</label>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Date | Time</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1340</posX>
+      <posY>725</posY>
+      <label>#date | #time</label>
+      <align>right</align>
+    </control>
+    <control>
+      <type>image</type>
+      <description>cd case image</description>
+      <id>0</id>
+      <posX>300</posX>
+      <posY>130</posY>
+      <width>332</width>
+      <height>332</height>
+      <texture>nowplaying_background.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>artist art image</description>
+      <id>112</id>
+      <posX>320</posX>
+      <posY>150</posY>
+      <width>280</width>
+      <height>280</height>
+      <texture>#Play.Current.ArtistThumb</texture>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="350" start="-300,0">WindowOpen</animation>
+      <animation effect="slide" time="350" end="-300,0">WindowClose</animation>
+      <layout>StackLayout</layout>
+      <posX>10</posX>
+      <posY>128</posY>
+      <control>
+        <description>start a stream</description>
+        <type>button</type>
+        <id>10</id>
+        <label>34001</label>
+        <onleft>10</onleft>
+        <onright>50</onright>
+        <onup>666</onup>
+        <ondown>20</ondown>
+      </control>
+      <control>
+        <description>chose tag</description>
+        <type>button</type>
+        <id>20</id>
+        <label>Tags</label>
+        <onleft>20</onleft>
+        <onright>50</onright>
+        <onup>10</onup>
+        <ondown>30</ondown>
+      </control>
+      <control>
+        <description>chose friend</description>
+        <type>button</type>
+        <id>30</id>
+        <label>Friends</label>
+        <onleft>30</onleft>
+        <onright>50</onright>
+        <onup>20</onup>
+        <ondown>35</ondown>
+      </control>
+      <control>
+        <description>toggle submit mode</description>
+        <type>togglebutton</type>
+        <id>35</id>
+        <label>34014</label>
+        <onleft>35</onleft>
+        <onright>35</onright>
+        <onup>30</onup>
+        <ondown>40</ondown>
+        <visible>true</visible>
+      </control>
+      <control>
+        <description>toggle discovery mode</description>
+        <type>togglebutton</type>
+        <id>40</id>
+        <label>34013</label>
+        <onleft>40</onleft>
+        <onright>50</onright>
+        <onup>35</onup>
+        <ondown>40</ondown>
+        <visible>false</visible>
+      </control>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>track label</description>
+      <id>0</id>
+      <posX>625</posX>
+      <posY>140</posY>
+      <width>700</width>
+      <height>26</height>
+      <label>#Play.Current.Artist</label>
+      <font>font14</font>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>track label</description>
+      <id>0</id>
+      <posX>625</posX>
+      <posY>170</posY>
+      <width>660</width>
+      <height>26</height>
+      <label>#Play.Current.Title</label>
+      <font>font14</font>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>album label</description>
+      <id>0</id>
+      <posX>625</posX>
+      <posY>200</posY>
+      <width>660</width>
+      <height>26</height>
+      <label>#Play.Current.Album</label>
+      <font>font14</font>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>year label</description>
+      <id>0</id>
+      <posX>625</posX>
+      <posY>230</posY>
+      <width>660</width>
+      <height>26</height>
+      <label>#Play.Current.Lastfm.CurrentStream</label>
+      <font>font14</font>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>track label</description>
+      <id>0</id>
+      <posX>625</posX>
+      <posY>260</posY>
+      <width>660</width>
+      <height>26</height>
+      <label>#currentplaytime (#trackduration)</label>
+      <visible>Player.HasAudio</visible>
+      <font>font14</font>
+    </control>
+    <control>
+      <type>textbox</type>
+      <description>Similar artists box</description>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>500</posY>
+      <width>900</width>
+      <label>#Play.Current.Lastfm.SimilarArtists</label>
+    </control>
+    <control>
+      <type>textbox</type>
+      <description>Track tags box</description>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>570</posY>
+      <width>900</width>
+      <label>#Play.Current.Lastfm.TrackTags</label>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the facade view
+-->
+<window>
+  <controls>
+    <control>
+      <description>composite control consisting of a list control and a thumbnail panel</description>
+      <type>facadeview</type>
+      <id>50</id>
+      <control>
+        <description>Movie List</description>
+        <type>listcontrol</type>
+        <id>50</id>
+      </control>
+      <control>
+        <description>Filmstrip view</description>
+        <type>filmstrip</type>
+        <id>50</id>
+        <posX>0</posX>
+        <posY>530</posY>
+        <width>1280</width>
+        <scrollOffset>4</scrollOffset>
+        <spinPosX>1300</spinPosX>
+        <spinPosY>720</spinPosY>
+        <spinWidth>24</spinWidth>
+        <spinHeight>24</spinHeight>
+        <spinColor>ffcccccc</spinColor>
+        <itemWidth>142</itemWidth>
+        <itemHeight>156</itemHeight>
+        <textureWidth>106</textureWidth>
+        <textureHeight>156</textureHeight>
+        <thumbWidth>106</thumbWidth>
+        <thumbHeight>156</thumbHeight>
+        <thumbPosX>18</thumbPosX>
+        <thumbPosY>0</thumbPosY>
+        <thumbs>unfocus</thumbs>
+        <InfoImage></InfoImage>
+        <imageFolderFocus></imageFolderFocus>
+        <frame></frame>
+        <frameFocus></frameFocus>
+        <showFrame>no</showFrame>
+        <showFolder>no</showFolder>
+        <showBackGround>no</showBackGround>
+        <showInfoImage>no</showInfoImage>
+        <thumbAnimation effect="zoom" start="100,100" end="130,130" time="100">focus</thumbAnimation>
+        <thumbAnimation effect="zoom" start="130,130" end="100,100" time="100">unfocus</thumbAnimation>
+      </control>
+    </control>
+  </controls>
+</window>

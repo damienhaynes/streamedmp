@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>3000</id>
+  <defaultcontrol>2</defaultcontrol>
+  <controls>
+    <control>
+      <description>dialog bg</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>60</posY>
+      <width>512</width>
+      <height>152</height>
+      <texture>TVSeries\dialogprogressbg.png</texture>
+    </control>
+    
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>0</id>
+      <posX>18</posX>
+      <posY>78</posY>
+      <width>203</width>
+      <height>114</height>
+      <action>18</action>
+      <textureFocus>-</textureFocus>
+      <visible>Player.HasVideo</visible>
+    </control>
+    
+    <control>
+      <description>artist info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>250</width>
+      <height>40</height>
+      <posX>233</posX>
+      <posY>80</posY>
+      <label>#Play.Current.Title</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+    </control>
+    <control>
+      <description>title info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>340</width>
+      <height>40</height>
+      <posX>233</posX>
+      <posY>98</posY>
+      <label>#Play.Current.Year</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>340</width>
+      <height>40</height>
+      <posX>233</posX>
+      <posY>124</posY>
+      <label>#Play.Current.Genre</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>340</width>
+      <height>40</height>
+      <posX>233</posX>
+      <posY>144</posY>
+      <label>#Play.Current.Director</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+    </control>
+    <control>
+      <description>play time / duration label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>40</height>
+      <posX>233</posX>
+      <posY>164</posY>
+      <label>#currentplaytime / #duration</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+    </control>
+    
+    <!--
+    <control>
+      <description>play logo</description>
+      <type>image</type>
+      <id>3</id>
+      <posX>177</posX>
+      <posY>685</posY>
+      <texture>logo_play.png</texture>
+    </control>
+    <control>
+      <description>Pause logo</description>
+      <type>image</type>
+      <id>4</id>
+      <posX>177</posX>
+      <posY>685</posY>
+      <texture>logo_pause.png</texture>
+    </control>
+    <control>
+      <description>FF logo</description>
+      <type>image</type>
+      <id>7</id>
+      <posX>177</posX>
+      <posY>685</posY>
+      <texture>logo_fastforward.png</texture>
+    </control>
+    <control>
+      <description>RW logo</description>
+      <type>image</type>
+      <id>8</id>
+      <posX>177</posX>
+      <posY>685</posY>
+      <texture>logo_rewind.png</texture>
+    </control>
+    -->
+  </controls>
+</window>

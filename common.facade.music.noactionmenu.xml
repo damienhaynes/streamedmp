@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <scrollOffset>2</scrollOffset>
+        </control>
+        <control>
+          <description>album view listcontrol</description>
+          <type>listcontrol</type>
+          <subtype>album</subtype>
+          <id>50</id>
+          <font>font12</font>
+          <font2>font12</font2>
+          <selectedColor>FFFF6600</selectedColor>
+          <textcolor>ffffffff</textcolor>
+          <selectedColor2>FFFF6600</selectedColor2>
+          <textcolor2>ffffffff</textcolor2>
+          <textXOff>15</textXOff>
+          <textYOff>15</textYOff>
+          <textXOff2>1030</textXOff2>
+          <textYOff2>45</textYOff2>
+          <itemWidth>72</itemWidth>
+          <itemHeight>72</itemHeight>
+          <spaceBetweenItems>0</spaceBetweenItems>
+          <textureHeight>96</textureHeight>
+          <scrollOffset>1</scrollOffset>
+          <textureFocus>album_background_focus.png</textureFocus>
+          <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+          <spinPosY>560</spinPosY>
+          <onleft>2</onleft>
+          <onright>50</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <posX>300</posX>
+          <posY>80</posY>
+          <width>1100</width>
+          <height>600</height>
+          <spinWidth>16</spinWidth>
+          <spinHeight>16</spinHeight>
+          <spinPosX>1200</spinPosX>
+          <spinPosY>585</spinPosY>
+          <spinColor>ffffffff</spinColor>
+<textureUp>arrowupnf.png</textureUp>
+<textureDown>arrowdownnf.png</textureDown>
+<textureUpFocus>arrowupfo.png</textureUpFocus>
+<textureDownFocus>arrowdownfo.png</textureDownFocus>
+          <itemWidth>101</itemWidth>
+          <itemHeight>100</itemHeight>
+          <textureWidth>100</textureWidth>
+          <textureHeight>95</textureHeight>
+          <thumbWidth>70</thumbWidth>
+          <thumbHeight>70</thumbHeight>
+          <thumbPosX>13</thumbPosX>
+          <thumbPosY>11</thumbPosY>
+          <thumbZoom>no</thumbZoom>
+          <imageFolder>music_thumbnail_background_nofocus.png</imageFolder>
+          <imageFolderFocus>music_thumbnail_background_focus.png</imageFolderFocus>
+          <font>font12</font>
+          <suffix>|</suffix>
+          <textureWidthBig>165</textureWidthBig>
+          <textureHeightBig>155</textureHeightBig>
+          <itemWidthBig>165</itemWidthBig>
+          <itemHeightBig>165</itemHeightBig>
+          <thumbWidthBig>123</thumbWidthBig>
+          <thumbHeightBig>121</thumbHeightBig>
+          <thumbPosXBig>17</thumbPosXBig>
+          <thumbPosYBig>14</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <scrollOffset>1</scrollOffset>
+          <onleft>2</onleft>
+          <onright>50</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
+        </control>
+        <control>
+          <description>Filmstrip view</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <posX>60</posX>
+          <posY>170</posY>
+          <width>1300</width>
+          <onup>2</onup>
+          <spinPosY>630</spinPosY>
+          <spinPosX>1218</spinPosX>
+          <thumbWidth>245</thumbWidth>
+          <thumbHeight>245</thumbHeight>
+          <thumbPosX>12</thumbPosX>
+          <thumbPosY>11</thumbPosY>
+          <itemWidth>248</itemWidth>
+          <itemHeight>245</itemHeight>
+          <textureWidth>275</textureWidth>
+          <textureHeight>272</textureHeight>
+          <imageFolderFocus>Framefocus.png</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>music_filmstrip_frame.png</frameFocus>
+          <background>Coverbig.png</background>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
+          </InfoImage>
+          <showFrame>yes</showFrame>
+          <showFolder>no</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+        </control>
+        <control>
+          <description>playlist listcontrol</description>
+          <type>playlistcontrol</type>
+          <id>50</id>
+          <scrollOffset>2</scrollOffset>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>4673</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.image:-</define>
+  <define>#header.label:604</define>
+  <define>#header.hover:hover_my tv.png</define>
+  <define>#selecteditem:-</define>
+<controls>
+<import>common.time.xml</import>
+	
+<control>
+	<description>music background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>tvshows_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>music overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+</control>
+
+    <import>common.window.xml</import>
+	
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+        <control>
+        <description>Show Status Button</description>
+        <type>button</type>
+        <id>10</id>
+        <label>Status</label>
+        <onleft>10</onleft>
+        <onright>50</onright>
+        <onup>10</onup>
+        <ondown>11</ondown>
+      </control>
+      <control>
+        <description>Show Scheduled Recordings Button</description>
+        <type>button</type>
+        <id>11</id>
+        <label>Scheduled</label>
+        <onleft>11</onleft>
+        <onright>50</onright>
+        <onup>10</onup>
+        <ondown>12</ondown>
+      </control>
+      <control>
+        <description>Show Recordings Button</description>
+        <type>button</type>
+        <id>12</id>
+        <label>Recorded</label>
+        <onleft>12</onleft>
+        <onright>50</onright>
+        <onup>11</onup>
+        <ondown>13</ondown>
+      </control>
+      <control>
+        <description>Show Recordings Button</description>
+        <type>button</type>
+        <id>13</id>
+        <label>Suggestions</label>
+        <onleft>13</onleft>
+        <onright>50</onright>
+        <onup>12</onup>
+        <ondown>20</ondown>
+      </control>
+      <control>
+        <description>New Schedule Button</description>
+        <type>button</type>
+        <id>20</id>
+        <label>Schedule</label>
+        <onleft>20</onleft>
+        <onright>50</onright>
+        <onup>12</onup>
+        <ondown>20</ondown>
+      </control>
+    </control>
+    <control>
+      <description>Headline Label</description>
+      <type>label</type>
+      <id>49</id>
+      <posX>1271</posX>
+      <posY>35</posY>
+      <font>font14</font>
+      <label>headline</label>
+      <align>right</align>
+    </control>
+    <control>
+      <description>scheduler recordings listcontrol</description>
+      <type>listcontrol</type>
+      <id>50</id>
+      <width>1055</width>
+      <height>560</height>
+      <spinPosY>550</spinPosY>
+      <textXOff>10</textXOff>
+      <textYOff>2</textYOff>
+      <textXOff2>1035</textXOff2>
+      <textYOff2>25</textYOff2>
+      <textXOff3>100</textXOff3>
+      <textYOff3>29</textYOff3>
+      <PinIconXOff>62</PinIconXOff>
+      <PinIconYOff>27</PinIconYOff>
+      <IconXOff>8</IconXOff>
+      <IconYOff>8</IconYOff>
+      <itemWidth>43</itemWidth>
+      <itemHeight>43</itemHeight>
+      <textureFocus>recording_background_focus.png</textureFocus>
+      <textureNoFocus>recording_background_nofocus.png</textureNoFocus>
+      <spaceBetweenItems>0</spaceBetweenItems>
+      <textureHeight>66</textureHeight>
+      <keepaspectratio>yes</keepaspectratio>
+      <font2>font10</font2>
+      <font3>font10</font3>
+      <onleft>10</onleft>
+      <onright>50</onright>
+      <onup>50</onup>
+      <ondown>50</ondown>
+    </control>
+    <control>
+      <description>detail title</description>
+      <type>label</type>
+      <id>60</id>
+      <posX>310</posX>
+      <posY>590</posY>
+      <width>600</width>
+      <label>title</label>
+    </control>
+    <control>
+      <description>detail channel</description>
+      <type>label</type>
+      <id>61</id>
+      <posX>1346</posX>
+      <posY>590</posY>
+      <align>right</align>
+      <font>font13</font>
+      <label>channel</label>
+    </control>
+    <control>
+      <description>detail time</description>
+      <type>label</type>
+      <id>62</id>
+      <posX>310</posX>
+      <posY>620</posY>
+      <label>time</label>
+      <font>font13</font>
+      <textcolor>ffa9d0f7</textcolor>
+    </control>
+    <control>
+      <description>detail file</description>
+      <type>label</type>
+      <id>63</id>
+      <posX>1346</posX>
+      <posY>620</posY>
+      <align>right</align>
+      <font>font13</font>
+      <textcolor>ffa9d0f7</textcolor>
+      <label>file</label>
+    </control>
+    <control>
+      <description>detail description</description>
+      <type>textboxscrollup</type>
+      <id>64</id>
+      <posX>310</posX>
+      <posY>650</posY>
+      <width>650</width>
+      <height>94</height>
+      <font>font12</font>
+      <label>Text</label>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
+      <description>detail image</description>
+      <type>image</type>
+      <id>65</id>
+      <posX>-10</posX>
+      <posY>-10</posY>
+      <width>1</width>
+      <height>1</height>
+    </control>
+    <control>
+      <description>help label</description>
+      <type>label</type>
+      <id>90</id>
+      <posX>310</posX>
+      <posY>668</posY>
+      <label>
+      </label>
+      <textcolor>ffa9d0f7</textcolor>
+    </control>
+  </controls>
+</window>

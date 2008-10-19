@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the facade view
+-->
+<window>
+  <controls>
+    <control>
+      <description>composite control consisting of a list control and a thumbnail panel</description>
+      <type>facadeview</type>
+      <id>50</id>
+      <control>
+        <description>Movie List</description>
+        <type>listcontrol</type>
+        <id>50</id>
+        <posX>10</posX>
+        <posY>10</posY>
+        <scrollOffset>2</scrollOffset>
+        <textureFocus>menu_list_focus.png</textureFocus>
+        <textureNoFocus>streamed_listsplitter10.png</textureNoFocus>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <width>380</width>
+        <height>570</height>
+        <spinPosX>1300</spinPosX>
+        <spinPosY>730</spinPosY>
+        <textXOff>-20</textXOff>
+        <textXOff2>510</textXOff2>
+        <IconXOff>1980</IconXOff>
+        <textcolor>ffffff</textcolor>
+      </control>
+      <control>
+        <description>Thumbnail Panel</description>
+        <type>thumbnailpanel</type>
+        <id>50</id>
+        <onleft>2</onleft>
+        <posX>100</posX>
+        <posY>135</posY>
+        <width>1210</width>
+        <height>520</height>
+        <spinPosY>640</spinPosY>
+        <spinPosX>1230</spinPosX>
+        <spinColor>ffcccccc</spinColor>
+        <textureUp>page_up_nofocus.png</textureUp>
+        <textureDown>page_down_nofocus.png</textureDown>
+        <textureUpFocus>page_up_focus.png</textureUpFocus>
+        <textureDownFocus>page_down_focus.png</textureDownFocus>
+        <itemWidth>103</itemWidth>
+        <itemHeight>120</itemHeight>
+        <textureWidth>103</textureWidth>
+        <textureHeight>132</textureHeight>
+        <thumbWidth>79</thumbWidth>
+        <thumbHeight>117</thumbHeight>
+        <thumbPosX>12</thumbPosX>
+        <thumbPosY>5</thumbPosY>
+        <imageFolder>movie_preview_thumb_background_nofocus1.png</imageFolder>
+        <imageFolderFocus>dvd_frame.png</imageFolderFocus>
+        <!--imageFolder>movie_preview_thumb_background_nofocus.png</imageFolder>
+        <imageFolderFocus>movie_preview_thumb_background_focus.png</imageFolderFocus-->
+        <font>font12</font>
+        <suffix>|</suffix>
+        <textureWidthBig>185</textureWidthBig>
+        <textureHeightBig>238</textureHeightBig>
+        <itemWidthBig>195</itemWidthBig>
+        <itemHeightBig>250</itemHeightBig>
+        <thumbWidthBig>160</thumbWidthBig>
+        <thumbHeightBig>230</thumbHeightBig>
+        <thumbPosXBig>13</thumbPosXBig>
+        <thumbPosYBig>2</thumbPosYBig>
+        <thumbZoom>no</thumbZoom>
+        <enableFocusZoom>no</enableFocusZoom>
+        <unfocusedAlpha>100</unfocusedAlpha>
+        <onright>2</onright>
+      </control>
+      <control>
+        <description>Filmstrip view</description>
+        <type>filmstrip</type>
+        <id>50</id>
+        <posX>5</posX>
+        <posY>470</posY>
+        <onright>2</onright>
+        <width>1160</width>
+        <scrollOffset>3</scrollOffset>
+        <onleft>2</onleft>
+        <spinPosY>745</spinPosY>
+        <spinPosX>100</spinPosX>
+        <spinWidth>24</spinWidth>
+        <spinHeight>24</spinHeight>
+        <spinColor>ffcccccc</spinColor>
+        <itemWidth>160</itemWidth>
+        <itemHeight>205</itemHeight>
+        <textureWidth>150</textureWidth>
+        <textureHeight>207</textureHeight>
+        <thumbWidth>140</thumbWidth>
+        <thumbHeight>200</thumbHeight>
+        <thumbPosX>2</thumbPosX>
+        <thumbPosY>2</thumbPosY>
+        <thumbs flipY="false" diffuse="Thumb_Mask.png">unfocus</thumbs>
+        <InfoImage flipY="false" diffuse="Thumb_Mask.png"></InfoImage>
+        <imageFolderFocus>dvd_frame.png</imageFolderFocus>
+        <frame>mpdvd_cover.png</frame>
+        <frameFocus>mpdvd_cover.png</frameFocus>
+        <background>Coverbig.png</background>
+        <showFrame>yes</showFrame>
+        <showFolder>no</showFolder>
+        <showBackGround>no</showBackGround>
+        <showInfoImage>no</showInfoImage>
+        <thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
+        <thumbAnimation effect="zoom" start="140,140" end="100,100" time="100"></thumbAnimation>
+        <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
+        <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
+      </control>
+    </control>
+  </controls>
+</window>

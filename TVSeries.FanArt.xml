@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9812</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>yes</disabletopbar>
+  <define>#title.color:ffffffff</define>
+  <!-- Titles Color                       Default: ffdedede-->
+  <define>#text.color:ffffffff</define>
+  <!-- Text Color                         Default: ffffffff-->
+  <define>#default.color:ffffffff</define>
+  <!-- Normal List Color                  Default: ffffffff-->
+  <define>#watched.color:ff808080</define>
+  <!-- Watched List Color                 Default: ff666666 -->
+  <define>#notpresent.color:ffF87B72</define>
+  <!-- File Not Present in List Color     Default: ffef6d16 -->
+  <controls>
+    <!-- :::::::::::::: BACKGROUNDS :::::::::::::: -->
+    <control>
+      <description>preview</description>
+      <id>0</id>
+      <type>image</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#TVSeries.FanArt.SelectedPreview</texture>
+      <visible>true</visible>
+    </control>
+    <control>
+      <description>FanArt Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>tvfanartoverlay.png</texture>
+    </control>
+    <!-- :::::::::::::: TOP BAR :::::::::::::: -->
+    <control>
+      <description>Current View</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>15</posX>
+      <posY>15</posY>
+      <font>titlefont11b</font>
+      <label>#TVSeries.Fanart.PageTitle SELECTION</label>
+    </control>
+    <import>common.time.xml</import>
+    <!-- :::::::::::::: INFO LABELS :::::::::::::: -->
+    <control>
+      <description>Download Status</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>50</posX>
+      <posY>350</posY>
+      <font>titlefont11</font>
+      <label>#TVSeries.FanArt.DownloadingStatus</label>
+    </control>
+    <control>
+      <description>FanArt Resolution</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>50</posX>
+      <posY>380</posY>
+      <font>titlefont11</font>
+      <label>Resolution: #TVSeries.FanArt.SelectedFanartResolution</label>
+    </control>
+    <!-- :::::::::::::: THUMBNAILPANEL :::::::::::::: -->
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <id>28</id>
+      <layout>StackLayout</layout>
+      <posX>60</posX>
+      <posY>97</posY>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>Graphical Thumbpanel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <posX>37</posX>
+          <posY>470</posY>
+          <width>1340</width>
+          <height>300</height>
+          <font>titlefont10</font>
+          <spinWidth>16</spinWidth>
+          <spinHeight>16</spinHeight>
+          <spinPosX>630</spinPosX>
+          <spinPosY>440</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ffffffff</spinColor>
+          <textureUp>arrowupnf.png</textureUp>
+          <textureDown>arrowdownnf.png</textureDown>
+          <textureUpFocus>arrowupfo.png</textureUpFocus>
+          <textureDownFocus>arrowdownfo.png</textureDownFocus>
+          <textureFocus>mediaitemdetailfo.png</textureFocus>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>tvseries_fanart_focus.png</imageFolderFocus>
+          <downloadColor>#default.color</downloadColor>
+          <remoteColor>#watched.color</remoteColor>
+          <textcolor>#notpresent.color</textcolor>
+          <textcolor2>#notpresent.color</textcolor2>
+          <textcolor3>#notpresent.color</textcolor3>
+          <itemWidthBig>305</itemWidthBig>
+          <itemHeightBig>215</itemHeightBig>
+          <textureWidthBig>305</textureWidthBig>
+          <textureHeightBig>215</textureHeightBig>
+          <thumbWidthBig>270</thumbWidthBig>
+          <thumbHeightBig>168</thumbHeightBig>
+          <thumbPosXBig>14</thumbPosXBig>
+          <thumbPosYBig>6</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <textXOff>20</textXOff>
+          <textYOff>-43</textYOff>
+          <unfocusedAlpha>150</unfocusedAlpha>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>2700</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <import>common.time.xml</import>
+    <control>
+      <description>background image</description>
+      <type>image</type>
+      <id>1</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>1306</posX>
+      <posY>20</posY>
+      <width>40</width>
+      <height>40</height>
+      <texture>hover_my news.png</texture>
+    </control>
+    <control>
+      <description>Channel name label</description>
+      <type>label</type>
+      <id>12</id>
+      <posX>1286</posX>
+      <posY>10</posY>
+      <label>-</label>
+      <font>font18</font>
+      <textcolor>20ffffff</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Number of Files Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>35</posX>
+      <posY>35</posY>
+      <label>#itemcount</label>
+      <align>left</align>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>1271</posX>
+      <posY>35</posY>
+      <width>950</width>
+      <font>font14</font>
+      <label>#selecteditem</label>
+      <align>right</align>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>31</posX>
+      <posY>272</posY>
+      <width>231</width>
+      <height>231</height>
+      <texture>album_preview_thumb_background.png</texture>
+      <visible>control.hasthumb(101)</visible>
+    </control>
+    <control>
+      <description>Site Logo</description>
+      <type>image</type>
+      <id>101</id>
+      <posX>45</posX>
+      <posY>285</posY>
+      <width>199</width>
+      <height>199</height>
+      <texture>thumbs\ars_article.png</texture>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>-210</buttonX>
+      <buttonY>64</buttonY>
+      <buttonwidth>385</buttonwidth>
+      <buttonheight>515</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Refresh Button</description>
+          <type>button</type>
+          <id>2</id>
+          <label>184</label>
+          <onleft>2</onleft>
+          <onright>50</onright>
+          <onup>17</onup>
+          <ondown>4</ondown>
+        </control>
+        <control>
+          <description>RSS feed select</description>
+          <type>button</type>
+          <id>4</id>
+          <label>706</label>
+          <onleft>4</onleft>
+          <onright>50</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
+        </control>
+      </control>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <control>
+        <description>listcontrol</description>
+        <type>listcontrol</type>
+        <id>50</id>
+        <height>400</height>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <onup>50</onup>
+        <ondown>50</ondown>
+        <spinPosY>420</spinPosY>
+      </control>
+      <control>
+        <description>Chosen Story description</description>
+        <type>textboxscrollup</type>
+        <id>506</id>
+        <posX>320</posX>
+        <posY>430</posY>
+        <width>800</width>
+        <height>250</height>
+        <label>-</label>
+        <seperator>----------------------------------------------------------------------------------------------</seperator>
+        <font>font12</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+    </control>
+  </controls>
+</window>

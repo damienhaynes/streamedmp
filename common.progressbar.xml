@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>progressbar background</description>
+      <type>image</type>
+      <id>104</id>
+      <posX>43</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>60</height>
+      <texture>osd_bg_top.png</texture>
+      <visible>no</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>105</id>
+      <posX>364</posX>
+      <posY>19</posY>
+      <width>502</width>
+      <height>12</height>
+      <texture>now_playing_progress_back.png</texture>
+    </control>
+    <control>
+      <type>progress</type>
+      <description>track progress</description>
+      <id>1</id>
+      <posX>354</posX>
+      <posY>19</posY>
+      <width>527</width>
+      <height>12</height>
+      <label>#percentage</label>
+      <texturebg>-</texturebg>
+      <lefttexture>now_playing_progress_left.png</lefttexture>
+      <midtexture>now_playing_progress_mid.png</midtexture>
+      <righttexture>now_playing_progress_right.png</righttexture>
+    </control>
+    <control>
+      <description>Start Time Info</description>
+      <type>label</type>
+      <id>101</id>
+      <posX>344</posX>
+      <posY>15</posY>
+      <label>#currentplaytime</label>
+      <align>right</align>
+      <font>font10</font>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>End Time Info</description>
+      <type>label</type>
+      <id>102</id>
+      <posX>886</posX>
+      <posY>15</posY>
+      <label>#currentremaining</label>
+      <align>left</align>
+      <font>font10</font>
+      <visible>no</visible>
+    </control>
+  </controls>
+</window>

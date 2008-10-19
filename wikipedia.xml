@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>4711</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:2516</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_wikipedia.png</define>
+  <define>#selecteditem:-</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Search Button</description>
+        <type>button</type>
+        <id>10</id>
+        <onup>17</onup>
+        <label>137</label>
+      </control>
+      <control>
+        <description>Select local Wikipedia Button</description>
+        <type>button</type>
+        <id>11</id>
+        <label>200025</label>
+      </control>
+      <control>
+        <description>Back to the text (when viewing an image)</description>
+        <type>button</type>
+        <id>14</id>
+        <label>2514</label>
+        <visible>no</visible>
+      </control>
+      <control>
+        <description>Links Button</description>
+        <type>button</type>
+        <id>12</id>
+        <label>2511</label>
+      </control>
+      <control>
+        <description>Images Button</description>
+        <type>button</type>
+        <id>13</id>
+        <ondown>99</ondown>
+        <label>2515</label>
+      </control>
+    </control>
+    <control>
+      <description>Article title/searchterm</description>
+      <type>label</type>
+      <id>4</id>
+      <posX>1271</posX>
+      <posY>35</posY>
+      <width>950</width>
+      <font>font14</font>
+      <align>right</align>
+      <visible>no</visible>
+      <label>Article title/searchterm</label>
+    </control>
+    <control>
+      <description>Image description</description>
+      <type>label</type>
+      <id>5</id>
+      <posX>531</posX>
+      <posY>93</posY>
+      <visible>no</visible>
+      <label>Image description</label>
+      <font>font16</font>
+      <align>left</align>
+    </control>
+    <control>
+      <description>Here is the article text displayed</description>
+      <type>textbox</type>
+      <id>20</id>
+      <posX>531</posX>
+      <posY>113</posY>
+      <visible>no</visible>
+      <width>686</width>
+      <height>600</height>
+      <text />
+    </control>
+    <control>
+      <description>Article Image</description>
+      <type>image</type>
+      <id>25</id>
+      <posX>531</posX>
+      <posY>93</posY>
+      <visible>no</visible>
+      <width>686</width>
+      <height>621</height>
+      <texture />
+      <colorkey>00000000</colorkey>
+      <colordiffuse>White</colordiffuse>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+  </controls>
+</window>
