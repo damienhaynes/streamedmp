@@ -2,7 +2,7 @@
 <window>
   <id>0</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <autohidetopbar>yes</autohidetopbar>
   <controls>
     
@@ -131,5 +131,7 @@
       <onup>13</onup>
       <ondown>50</ondown>
     </control>
+    
+    <import>common.home.overlays.xml</import>
   </controls>
 </window>
