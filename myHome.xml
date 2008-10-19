@@ -37,8 +37,6 @@
       <onleft>10</onleft>
       <align>right</align>
     </control>
-    <!-- Date and Time -->
-    <import>common.time.xml</import>
     
     <control>
       <description>Homeblade</description>
@@ -132,6 +130,8 @@
       <ondown>50</ondown>
     </control>
     
-    <import>common.home.overlays.xml</import>
+    <import>common.home.overlays.xml</import><!-- Overlays for home menus -->
+    
+    <import>common.time.xml</import><!-- Date and Time -->
   </controls>
 </window>
