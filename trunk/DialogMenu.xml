@@ -7,12 +7,20 @@
     <control>
       <type>image</type>
       <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <colordiffuse>50ffffff</colordiffuse>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
       <posX>100</posX>
       <posY>100</posY>
       <width>512</width>
       <height>37</height>
       <texture>dialogmenutop.png</texture>
-      <colordiffuse>eeffffff</colordiffuse>
     </control>
     <control>
       <type>image</type>
@@ -22,7 +30,6 @@
       <width>512</width>
       <height>433</height>
       <texture>dialogmenumiddle.png</texture>
-      <colordiffuse>eeffffff</colordiffuse>
     </control>
     <control>
       <type>image</type>
@@ -32,7 +39,6 @@
       <width>512</width>
       <height>12</height>
       <texture>dialogmenubottom.png</texture>
-      <colordiffuse>eeffffff</colordiffuse>
     </control>
     <control>
       <description>GFX-Heading "menu" text label</description>
@@ -95,8 +101,8 @@
       <PinIconYOff>2227</PinIconYOff>
       <textureFocus>dialogmenubutton.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <textureHeight>40</textureHeight>
-      <spaceBetweenItems>0</spaceBetweenItems>
+    <textureHeight>40</textureHeight>
+    <spaceBetweenItems>0</spaceBetweenItems>
     </control>
   </controls>
 </window>

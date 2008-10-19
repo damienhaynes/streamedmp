@@ -4,18 +4,15 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <disabletopbar>yes</disabletopbar>
-  <define>#title.color:ffffffff</define>
-  <!-- Titles Color                       Default: ffdedede-->
-  <define>#text.color:ffffffff</define>
-  <!-- Text Color                         Default: ffffffff-->
-  <define>#default.color:ffffffff</define>
-  <!-- Normal List Color                  Default: ffffffff-->
-  <define>#watched.color:ff808080</define>
-  <!-- Watched List Color                 Default: ff666666 -->
-  <define>#notpresent.color:ffF87B72</define>
-  <!-- File Not Present in List Color     Default: ffef6d16 -->
+  <define>#title.color:ffffffff</define>        <!-- Titles Color                       Default: ffdedede-->
+  <define>#text.color:ffffffff</define>         <!-- Text Color                         Default: ffffffff-->
+  <define>#default.color:ffffffff</define>      <!-- Normal List Color                  Default: ffffffff-->
+  <define>#watched.color:ff808080</define>      <!-- Watched List Color                 Default: ff666666 -->
+  <define>#notpresent.color:ffF87B72</define>   <!-- File Not Present in List Color     Default: ffef6d16 -->
   <controls>
+    
     <!-- :::::::::::::: BACKGROUNDS :::::::::::::: -->
+    
     <control>
       <description>preview</description>
       <id>0</id>
@@ -27,6 +24,7 @@
       <texture>#TVSeries.FanArt.SelectedPreview</texture>
       <visible>true</visible>
     </control>
+    
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
@@ -37,7 +35,9 @@
       <height>720</height>
       <texture>tvfanartoverlay.png</texture>
     </control>
+    
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
+    
     <control>
       <description>Current View</description>
       <type>label</type>
@@ -47,8 +47,11 @@
       <font>titlefont11b</font>
       <label>#TVSeries.Fanart.PageTitle SELECTION</label>
     </control>
+    
     <import>common.time.xml</import>
+    
     <!-- :::::::::::::: INFO LABELS :::::::::::::: -->
+    
     <control>
       <description>Download Status</description>
       <type>label</type>
@@ -58,6 +61,7 @@
       <font>titlefont11</font>
       <label>#TVSeries.FanArt.DownloadingStatus</label>
     </control>
+    
     <control>
       <description>FanArt Resolution</description>
       <type>label</type>
@@ -67,7 +71,9 @@
       <font>titlefont11</font>
       <label>Resolution: #TVSeries.FanArt.SelectedFanartResolution</label>
     </control>
+    
     <!-- :::::::::::::: THUMBNAILPANEL :::::::::::::: -->
+    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -87,18 +93,18 @@
           <posY>470</posY>
           <width>1340</width>
           <height>300</height>
-          <font>titlefont10</font>
-          <spinWidth>16</spinWidth>
-          <spinHeight>16</spinHeight>
-          <spinPosX>630</spinPosX>
-          <spinPosY>440</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <spinColor>ffffffff</spinColor>
-          <textureUp>arrowupnf.png</textureUp>
-          <textureDown>arrowdownnf.png</textureDown>
-          <textureUpFocus>arrowupfo.png</textureUpFocus>
-          <textureDownFocus>arrowdownfo.png</textureDownFocus>
-          <textureFocus>mediaitemdetailfo.png</textureFocus>
+    <font>titlefont10</font>
+    <spinWidth>16</spinWidth>
+    <spinHeight>16</spinHeight>
+    <spinPosX>630</spinPosX>
+    <spinPosY>440</spinPosY>
+    <spinAlign>Right</spinAlign>
+    <spinColor>ffffffff</spinColor>
+    <textureUp>arrowupnf.png</textureUp>
+    <textureDown>arrowdownnf.png</textureDown>
+    <textureUpFocus>arrowupfo.png</textureUpFocus>
+    <textureDownFocus>arrowdownfo.png</textureDownFocus>
+    <textureFocus>mediaitemdetailfo.png</textureFocus>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>tvseries_fanart_focus.png</imageFolderFocus>
           <downloadColor>#default.color</downloadColor>
