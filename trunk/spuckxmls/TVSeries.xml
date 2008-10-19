@@ -3,21 +3,18 @@
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
-  <define>#title.color:ffFFFFFF</define>
-  <!-- Title Color                        Default: ffFFFFFF -->
-  <define>#text.color:ffFFFFFF</define>
-  <!-- Text Color                         Default: ffFFFFFF -->
-  <define>#default.color:ffFFFFFF</define>
-  <!-- Normal List Color                  Default: ffFFFFFF -->
-  <define>#watched.color:ff808080</define>
-  <!-- Watched List Color                 Default: ff808080 -->
-  <define>#notpresent.color:ffF87B72</define>
-  <!-- File Not Present in List Color     Default: ffF87B72 -->
+  <define>#title.color:ffFFFFFF</define>        <!-- Title Color                        Default: ffFFFFFF -->
+  <define>#text.color:ffFFFFFF</define>         <!-- Text Color                         Default: ffFFFFFF -->
+  <define>#default.color:ffFFFFFF</define>      <!-- Normal List Color                  Default: ffFFFFFF -->
+  <define>#watched.color:ff808080</define>      <!-- Watched List Color                 Default: ff808080 -->
+  <define>#notpresent.color:ffF87B72</define>   <!-- File Not Present in List Color     Default: ffF87B72 -->
   <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
   <controls>
-    <import>TVSeries.dummy.xml</import>
-    <!-- import dummy labels -->
+    
+    <import>TVSeries.dummy.xml</import> <!-- import dummy labels -->
+    
     <!-- :::::::::::::: FANART AND BACKGROUNDS :::::::::::::: -->
+    
     <control>
       <description>Default Background</description>
       <type>image</type>
@@ -29,6 +26,7 @@
       <texture>hover_my tv series.png</texture>
       <visible>!Control.IsVisible(1232)</visible>
     </control>
+    
     <control>
       <description>Fan Art Image (in "skin/FanArt/thetvdbID.jpg")</description>
       <type>image</type>
@@ -39,6 +37,7 @@
       <height>720</height>
       <texture>#TVSeries.Series.FanArt</texture>
     </control>
+    
     <control>
       <description>Fan Art Image</description>
       <type>image</type>
@@ -49,6 +48,7 @@
       <height>720</height>
       <texture>-</texture>
     </control>
+    
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
@@ -59,6 +59,7 @@
       <height>720</height>
       <texture>tvfanartoverlay.png</texture>
     </control>
+    
     <control>
       <description>Lines between list items</description>
       <type>image</type>
@@ -69,7 +70,9 @@
       <height>362</height>
       <texture>listsplitter10.png</texture>
     </control>
+    
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
+    
     <control>
       <description>Current View</description>
       <type>label</type>
@@ -79,8 +82,11 @@
       <font>mediastream11tc</font>
       <label>#TVSeries.CurrentView</label>
     </control>
+    
     <import>common.time.xml</import>
+    
     <!-- :::::::::::::: LOGOS :::::::::::::: -->
+    
     <!-- HAVE TO PUT THESE LOGOS SOMEWHERE
     <control>
       <type>image</type>
@@ -96,7 +102,9 @@
       <visible>Control.IsVisible(1235)</visible>
     </control>
     -->
+    
     <!-- :::::::::::::: VISIBLE WHEN IN GROUPED VIEW (CHANNELS/GENRES) :::::::::::::: -->
+    
     <control Style="smallTitleB">
       <description>Title Shadow</description>
       <textcolor>ff000000</textcolor>
@@ -115,6 +123,7 @@
       <posY>240</posY>
       <visible>Control.IsVisible(1240)</visible>
     </control>
+    
     <control>
       <description>Shows in this Group</description>
       <type>textboxscrollup</type>
@@ -129,7 +138,9 @@
       <visible>Control.IsVisible(1240)</visible>
       <label>#TVSeries.Description</label>
     </control>
+    
     <!-- :::::::::::::: VISIBLE WHEN IN SERIES SELECTION VIEW :::::::::::::: -->
+    
     <control>
       <description>Default Series Banner</description>
       <type>image</type>
@@ -141,6 +152,7 @@
       <texture>defaultwideicon.png</texture>
       <visible>Control.IsVisible(1237)</visible>
     </control>
+    
     <control>
       <description>Series Banner</description>
       <type>image</type>
@@ -152,6 +164,7 @@
       <texture>#TVSeries.SeriesBanner</texture>
       <visible>Control.IsVisible(1237)</visible>
     </control>
+    
     <control>
       <description>Series Banner Glass Overlay</description>
       <type>image</type>
@@ -163,6 +176,7 @@
       <texture>glassoverlay.png</texture>
       <visible>Control.IsVisible(46)</visible>
     </control>
+    
     <control>
       <description>Series Description</description>
       <type>textboxscrollup</type>
@@ -177,6 +191,7 @@
       <visible>Control.IsVisible(1237)</visible>
       <label>#TVSeries.Description</label>
     </control>
+    
     <control Style="smallTitleB">
       <type>label</type>
       <label>Genre</label>
@@ -205,6 +220,7 @@
       <posY>620</posY>
       <visible>Control.IsVisible(1237)</visible>
     </control>
+    
     <control Style="smallTitle">
       <type>label</type>
       <label>#TVSeries.Series.Genre</label>
@@ -234,7 +250,9 @@
       <posY>620</posY>
       <visible>Control.IsVisible(1237)</visible>
     </control>
+    
     <!-- :::::::::::::: VISIBLE WHEN IN SEASON SELECTION VIEW :::::::::::::: -->
+    
     <control>
       <description>Season Banner</description>
       <type>image</type>
@@ -246,6 +264,7 @@
       <texture>#TVSeries.SeasonBanner</texture>
       <visible>Control.IsVisible(1238)</visible>
     </control>
+    
     <control>
       <description>Season Banner Glass Overlay</description>
       <type>image</type>
@@ -257,12 +276,15 @@
       <texture>glassoverlay2.png</texture>
       <visible>Control.IsVisible(146)</visible>
     </control>
+    
     <!-- :::::::::::::: VISIBLE WHEN IN EPISODE SELECTION VIEW :::::::::::::: -->
+    
     <!--
     #################################
     # ADD EPISODE THUMB SHADOW HERE #
     #################################
     -->
+    
     <control>
       <description>Big Episode Thumb</description>
       <type>image</type>
@@ -275,6 +297,7 @@
       <zoom>yes</zoom>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.EpisodeImage</texture>
     </control>
+    
     <control>
       <description>Episode Plot</description>
       <type>textboxscrollup</type>
@@ -288,6 +311,7 @@
       <visible>Control.IsVisible(1239)</visible>
       <label>#TVSeries.Description</label>
     </control>
+    
     <control>
       <type>label</type>
       <label>Season #TVSeries.Episode.SeasonIndex</label>
@@ -310,6 +334,7 @@
       <textcolor>ffffffff</textcolor>
       <visible>Control.IsVisible(1239)</visible>
     </control>
+    
     <control Style="smallTitleB">
       <type>label</type>
       <label>Aired</label>
@@ -352,6 +377,7 @@
       <posY>455</posY>
       <visible>Control.IsVisible(1239)</visible>
     </control>
+    
     <control Style="smallTitle">
       <type>label</type>
       <label>#TVSeries.Episode.FirstAired</label>
@@ -394,7 +420,9 @@
       <posY>455</posY>
       <visible>Control.IsVisible(1239)</visible>
     </control>
+    
     <!-- :::::::::::::: LIST AND GRAPHICAL VIEW :::::::::::::: -->
+    
     <control>
       <type>group</type>
       <id>28</id>
@@ -503,7 +531,9 @@
         </control>
       </control>
     </control>
+    
     <!-- :::::::::::::: IMPORT PROCESS :::::::::::::: -->
+    
     <control>
       <description>Import Animation</description>
       <type>animation</type>
