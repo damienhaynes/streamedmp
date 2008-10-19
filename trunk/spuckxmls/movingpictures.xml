@@ -112,13 +112,25 @@ multiple view modes.
     <!-- ***************** All Views / Stuffs ***************************************** -->
     
     <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+    </control>
+    
+    <control>
       <type>label</type>
       <description>Top Title</description>
-      <id>1</id>
-      <posX>15</posX>
-      <posY>15</posY>
-      <font>mediastream11tc</font>
+      <id>0</id>
+      <posX>495</posX>
+      <posY>13</posY>
+      <font>mediastream12c</font>
       <label>Moving Pictures</label>
+      <align>right</align>
     </control>
     
     <control>
@@ -126,10 +138,11 @@ multiple view modes.
       <type>label</type>
       <id>9200</id>
       <posX>-2000</posX>
+      <label>#MovingPictures.SelectedMovie.watched</label>
       <visible>#MovingPictures.SelectedMovie.watched</visible>
       <!--
-      <visible>Control.IsVisible(9200)</visible>   =   unwatched
-      <visible>!Control.IsVisible(9200)</visible>  =   watched
+      <visible>Control.IsVisible(9200)</visible>   =   watched
+      <visible>!Control.IsVisible(9200)</visible>  =   unwatched
       -->
     </control>
     
@@ -180,7 +193,7 @@ multiple view modes.
       <width>24</width>
       <height>24</height>
       <texture>overlaywatched.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(9200)</visible>
     </control>
     
     <control>
@@ -192,7 +205,7 @@ multiple view modes.
       <width>24</width>
       <height>24</height>
       <texture>overlayunwatched.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(9200)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
     </control>
     
     <control>
@@ -370,7 +383,7 @@ multiple view modes.
       <width>850</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
-      <textcolor>ffBBBBBB</textcolor>
+      <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
@@ -398,7 +411,7 @@ multiple view modes.
       <width>300</width>
       <font>mediastream12tc</font>
       <label>Movie Details</label>
-      <textcolor>ffBBBBBB</textcolor>
+      <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
@@ -461,7 +474,7 @@ multiple view modes.
       <width>300</width>
       <font>mediastream12tc</font>
       <label>Director</label>
-      <textcolor>ffBBBBBB</textcolor>
+      <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
@@ -484,7 +497,7 @@ multiple view modes.
       <width>300</width>
       <font>mediastream12tc</font>
       <label>Writer</label>
-      <textcolor>ffBBBBBB</textcolor>
+      <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     

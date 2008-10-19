@@ -2,15 +2,24 @@
 <window>
   <controls>
     <control>
-      <description>Date | Time</description>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+    </control>
+    <control>
+      <description>Time</description>
       <type>label</type>
       <id>233</id>
-      <posX>1260</posX>
-      <posY>15</posY>
-      <textcolor>aaffffff</textcolor>
+      <posX>50</posX>
+      <posY>14</posY>
+      <textcolor>ffffffff</textcolor>
       <font>mediastream11c</font>
-      <label>#date | #time</label>
-      <align>right</align>
+      <label>#time</label>
     </control>
   </controls>
 </window>
