@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>508</id>
+  <defaultcontrol>20</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <description>background image</description>
+      <id>1</id>
+    </control>
+
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <type>button</type>
+        <description>Cancel button</description>
+        <id>21</id>
+        <onleft>21</onleft>
+        <onright>25</onright>
+        <onup>21</onup>
+        <ondown>20</ondown>
+        <label>222</label>
+      </control>
+      <control>
+        <type>button</type>
+        <description>Skip button</description>
+        <id>20</id>
+        <onleft>20</onleft>
+        <onright>25</onright>
+        <onup>21</onup>
+        <ondown>21</ondown>
+        <label>4520</label>
+      </control>
+    </control>
+    <control>
+      <type>image</type>
+      <description>Title image</description>
+      <id>1</id>
+      <posX>15</posX>
+      <posY>247</posY>
+      <width>280</width>
+      <height>280</height>>
+      <texture>album_preview_thumb_background.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>Album Art image</description>
+      <id>10</id>
+      <posX>30</posX>
+      <posY>261</posY>
+      <width>245</width>
+      <height>245</height>
+      <texture>-</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>Amazon Logo image</description>
+      <id>30</id>
+      <posX>121</posX>
+      <posY>661</posY>
+      <width>125</width>
+      <height>60</height>
+      <texture>-</texture>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <type>label</type>
+      <id>1</id>
+      <posX>1286</posX>
+      <posY>10</posY>
+      <label>2</label>
+      <font>font18</font>
+      <textcolor>20ffffff</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>11</id>
+      <posX>1271</posX>
+      <posY>35</posY>
+      <width>950</width>
+      <font>font14</font>
+      <label>4519</label>
+      <align>right</align>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>1306</posX>
+      <posY>20</posY>
+      <width>40</width>
+      <height>40</height>
+      <texture>hover_question.png</texture>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Artist value</description>
+      <id>12</id>
+      <posX>30</posX>
+      <posY>500</posY>
+      <width>250</width>
+      <label>-</label>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Album value</description>
+      <id>13</id>
+      <posX>30</posX>
+      <posY>530</posY>
+      <width>250</width>
+      <label>-</label>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Release year value</description>
+      <id>14</id>
+      <posX>30</posX>
+      <posY>560</posY>
+      <label>-</label>
+    </control>
+    <control>
+      <type>label</type>
+      <description>No matches label</description>
+      <id>15</id>
+      <posX>30</posX>
+      <posY>590</posY>
+      <label>4516</label>
+    </control>
+    <control>
+      <type>listcontrol</type>
+      <description>album view listcontrol</description>
+      <id>25</id>
+      <onleft>20</onleft>
+      <onright>25</onright>
+      <onup>25</onup>
+      <ondown>25</ondown>
+      <font>font12</font>
+      <font2>font12</font2>
+      <selectedColor>FFFF6600</selectedColor>
+      <textcolor>ffffffff</textcolor>
+      <selectedColor2>FFFF6600</selectedColor2>
+      <textcolor2>ffffffff</textcolor2>
+      <textXOff>15</textXOff>
+      <textYOff>15</textYOff>
+      <textXOff2>1030</textXOff2>
+      <textYOff2>45</textYOff2>
+      <itemWidth>72</itemWidth>
+      <itemHeight>72</itemHeight>
+      <spaceBetweenItems>0</spaceBetweenItems>
+      <textureHeight>96</textureHeight>
+      <scrollOffset>1</scrollOffset>
+      <textureFocus>album_background_focus.png</textureFocus>
+      <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+      <spinPosY>560</spinPosY>
+    </control>
+  </controls>
+</window>

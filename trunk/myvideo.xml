@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+<id>6</id>
+<defaultcontrol>2</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<define>#header.label:134</define>
+<define>#header.image:-</define>
+<define>#header.hover:hover_my videos.png</define>
+<controls>
+<import>common.time.xml</import>
+
+<control>
+	<description>movies background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>movies_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>movies overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+	<visible>!facadeview.filmstrip</visible>
+</control>
+	
+<control>
+	<description>movies overlay image2</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay2.png</texture>
+	<visible>facadeview.filmstrip</visible>
+</control>
+
+<import>common.window.xml</import>
+
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>-210</buttonX>
+      <buttonY>64</buttonY>
+      <buttonwidth>385</buttonwidth>
+      <buttonheight>515</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+        <control>
+          <description>View-As</description>
+          <type>button</type>
+          <id>2</id>
+          <label>100</label>
+          <onright>50</onright>
+          <onup>17</onup>
+          <ondown>3</ondown>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>3</id>
+          <label>103</label>
+          <onright>50</onright>
+          <onup>2</onup>
+          <ondown>5</ondown>
+        </control>
+        <control>
+          <description>Switch View</description>
+          <type>button</type>
+          <id>5</id>
+          <label>457</label>
+          <onright>50</onright>
+          <onup>3</onup>
+          <ondown>20</ondown>
+        </control>
+        <control>
+          <description>Current Playlist</description>
+          <type>button</type>
+          <id>20</id>
+          <label>4555</label>
+          <action>33</action>
+          <onright>50</onright>
+          <onup>5</onup>
+          <ondown>9</ondown>
+        </control>
+        <control>
+          <description>My Playlists</description>
+          <type>button</type>
+          <id>9</id>
+          <label>983</label>
+          <onright>50</onright>
+          <onup>20</onup>
+          <ondown>10</ondown>
+        </control>
+        <control>
+          <description>TV Shows</description>
+          <type>button</type>
+          <id>10</id>
+          <hyperlink>9811</hyperlink>
+          <label>1300</label>
+          <onright>50</onright>
+          <onup>9</onup>
+          <ondown>8</ondown>
+          <visible>plugin.isenabled(MP-TV Series)</visible>
+        </control>
+        <control>
+          <description>Trailers</description>
+          <type>button</type>
+          <id>8</id>
+          <label>5906</label>
+          <hyperlink>5900</hyperlink>
+          <onright>50</onright>
+          <onup>10</onup>
+          <ondown>99</ondown>
+          <visible>plugin.isenabled(My Trailers)</visible>
+        </control>
+      </control>
+    </control>
+    <control>
+      <id>1</id>
+      <type>image</type>
+      <posX>23</posX>
+      <posY>255</posY>
+      <width>256</width>
+      <height>380</height>
+      <texture>#selectedthumb</texture>
+      <visible>facadeview.list</visible>
+    </control>
+	
+    <control>
+      <id>1</id>
+      <type>image</type>
+      <posX>70</posX>
+      <posY>72</posY>
+      <width>285</width>
+      <height>417</height>
+      <texture>#selectedthumb</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>410</posX>
+      <posY>80</posY>
+      <width>950</width>
+      <label>#title</label>
+      <font>mediastream16tcb</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>image</description>
+      <id>1</id>
+      <posX>504</posX>
+      <posY>648</posY>
+      <width>1</width>
+      <height>120</height>
+      <texture>vbar1.png</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>409</posX>
+      <posY>52</posY>
+      <width>185</width>
+      <height>21</height>
+      <textureWidth>18</textureWidth>
+      <textureHeight>18</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starbest.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Movie Details label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>280</posY>
+      <label>Movie details</label>
+      <font>mediastream12tcb</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Director label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>875</posX>
+      <posY>280</posY>
+      <label>199</label>
+      <font>mediastream12tcb</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Writer label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>875</posX>
+      <posY>384</posY>
+      <label>200</label>
+      <font>mediastream12tcb</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>	
+	
+	<control>
+      <description>MPAA value</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>385</posY>
+	  <width>410</width>
+      <height>140</height>
+      <label>#mpaarating</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+
+    <control>
+      <description>Runtime value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>360</posY>
+      <label>#runtime min</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+
+    <control>
+      <description>Year value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>335</posY>
+      <label>#year</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Genre value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>310</posY>
+      <label>#genre</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Director value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>875</posX>
+      <posY>310</posY>
+      <label>#director</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Writer value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>875</posX>
+      <posY>414</posY>
+      <label>#writers</label>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+	
+    <control>
+      <description>Plot value</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>410</posX>
+      <posY>120</posY>
+      <width>840</width>
+      <height>116</height>
+      <label>#plot</label>
+      <font>mediastream11</font>
+      <seperator>---------------------------------------------------------------------------------------------------------</seperator>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>55</posX>
+      <posY>650</posY>
+      <width>185</width>
+      <height>21</height>
+      <textureWidth>18</textureWidth>
+      <textureHeight>18</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starbest.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Watched txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>480</posY>
+      <label>1010</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Watched value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>480</posY>
+      <width>560</width>
+      <label>#iswatched</label>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Runtime txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>505</posY>
+      <label>299</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Runtime value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>505</posY>
+      <label>#runtime min</label>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Year value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>280</posY>
+      <label>#year</label>
+      <font>mediastream14tcb</font>
+	  <textcolor>FF909090</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Director txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>530</posY>
+      <label>199</label>
+      <visible>no</visible>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Director value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>530</posY>
+      <width>255</width>
+      <label>#director</label>
+      <visible>no</visible>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Votes txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>555</posY>
+      <label>205</label>
+      <visible>no</visible>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Votes value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>555</posY>
+      <label>#votes</label>
+      <visible>no</visible>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Genre txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>580</posY>
+      <label>174</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Genre value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>580</posY>
+      <width>270</width>
+      <label>#genre</label>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>MPAA txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>605</posY>
+      <label>173</label>
+      <visible>no</visible>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>MPAA value</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>415</posX>
+      <posY>603</posY>
+      <width>270</width>
+	  <height>100</height>
+      <label>#mpaarating</label>
+      <font>mediastream10</font>
+      <visible>facadeview.list</visible>
+    </control>
+	
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>250</posY>
+      <width>410</width>
+      <font>mediastream16tcb</font>
+	  <visible>facadeview.list</visible>
+      <label>#title</label>
+    </control>
+	
+    <control>
+      <description>Plot value</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>320</posY>
+      <width>410</width>
+      <height>140</height>
+	  <visible>facadeview.list</visible>
+      <label>#plot</label>
+      <font>mediastream11</font>
+      <seperator>---------------------------------------------------------------------------------------------------------</seperator>
+      <visible>facadeview.list</visible>
+    </control>
+	
+	
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>755</posX>
+      <posY>650</posY>
+      <width>185</width>
+      <height>21</height>
+      <textureWidth>18</textureWidth>
+      <textureHeight>18</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starbest.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Watched txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>480</posY>
+      <label>1010</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Watched value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>480</posY>
+      <width>560</width>
+      <label>#iswatched</label>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Runtime txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>505</posY>
+      <label>299</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Runtime value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>505</posY>
+      <label>#runtime min</label>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Year value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>280</posY>
+      <label>#year</label>
+      <font>mediastream14tcb</font>
+	  <textcolor>FF909090</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Director txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>530</posY>
+      <label>199</label>
+      <visible>no</visible>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Director value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>530</posY>
+      <width>255</width>
+      <label>#director</label>
+      <visible>no</visible>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Votes txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>555</posY>
+      <label>205</label>
+      <visible>no</visible>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Votes value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>555</posY>
+      <label>#votes</label>
+      <visible>no</visible>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Genre txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>580</posY>
+      <label>174</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>Genre value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>580</posY>
+      <width>270</width>
+      <label>#genre</label>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>MPAA txt</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>605</posY>
+      <label>173</label>
+      <font>mediastream10c</font>
+	  <textcolor>FF006699</textcolor>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+    <control>
+      <description>MPAA value</description>
+	  <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>860</posX>
+      <posY>602</posY>
+      <width>300</width>
+	  <height>100</height>
+      <label>#mpaarating</label>
+      <font>mediastream10</font>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+	
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>250</posY>
+      <width>410</width>
+      <font>mediastream16tcb</font>
+	  <visible>facadeview.smallicons | facadeview.largeicons</visible>
+      <label>#title</label>
+    </control>
+	
+    <control>
+      <description>Plot value</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>755</posX>
+      <posY>320</posY>
+      <width>410</width>
+      <height>140</height>
+	  <visible>facadeview.smallicons | facadeview.largeicons</visible>
+      <label>#plot</label>
+      <font>mediastream11</font>
+      <seperator>---------------------------------------------------------------------------------------------------------</seperator>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
+    </control>
+	
+	
+	
+	
+	
+	
+    <import>common.facade.video.imdb.xml</import>
+  </controls>
+</window>

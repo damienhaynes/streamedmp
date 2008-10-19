@@ -1,0 +1,45 @@
+<window>
+  <id>6803</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:SBS Gemist</define>
+  <define>#header.hover:hover_tvgemist.png</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <posX>200</posX>
+      <posY>150</posY>
+      <description>SBS Gemist image</description>
+      <id>123</id>
+      <texture>i</texture>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Favorieten</description>
+        <type>button</type>
+        <id>2</id>
+        <label>Favorieten</label>
+        <onup>17</onup>
+        <ondown>3</ondown>
+      </control>
+      <control>
+        <description>Series</description>
+        <type>button</type>
+        <id>3</id>
+        <label>Series</label>
+        <onup>2</onup>
+        <ondown>50</ondown>
+      </control>
+    </control>
+    <import>common.facade2.xml</import>
+  </controls>
+</window>

@@ -1,0 +1,78 @@
+<window>
+  <id>6802</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:RTL Gemist</define>
+  <define>#header.hover:hover_tvgemist.png</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <posX>200</posX>
+      <posY>150</posY>
+      <description>RTL Gemist image</description>
+      <id>123</id>
+      <texture>i</texture>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Favorieten</description>
+        <type>button</type>
+        <id>2</id>
+        <label>Favorieten</label>
+        <onup>17</onup>
+        <ondown>3</ondown>
+      </control>
+      <control>
+        <description>Laatste Tien</description>
+        <type>button</type>
+        <id>3</id>
+        <label>Laatste Tien Video's</label>
+        <onup>2</onup>
+        <ondown>4</ondown>
+      </control>
+      <control>
+        <description>Programma's</description>
+        <type>button</type>
+        <id>4</id>
+        <label>Programma's</label>
+        <onup>3</onup>
+        <ondown>5</ondown>
+      </control>
+      <control>
+        <description>Programma's</description>
+        <type>button</type>
+        <id>5</id>
+        <label>Series</label>
+        <onup>4</onup>
+        <ondown>6</ondown>
+      </control>
+      <control>
+        <description>Programma's</description>
+        <type>button</type>
+        <id>6</id>
+        <label>Films</label>
+        <onup>5</onup>
+        <ondown>2</ondown>
+      </control>
+    </control>
+    <control>
+      <description>Navigation path</description>
+      <type>label</type>
+      <id>124</id>
+      <posX>485</posX>
+      <posY>675</posY>
+      <label>#navpath</label>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <import>common.facade2.xml</import>
+  </controls>
+</window>

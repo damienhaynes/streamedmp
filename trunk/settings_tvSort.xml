@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>702</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+   <define>#header.label:5</define>
+  <define>#header.image:-.png</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#itemcount:-</define>
+  <define>#selecteditem:6008</define>
+  <controls>
+<import>common.time.xml</import>
+	
+<control>
+	<description>settings background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>system_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>settings overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+</control>
+
+    <import>common.window.xml</import>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>31</posX>
+      <posY>272</posY>
+      <width>231</width>
+      <height>231</height>
+      <texture>album_preview_thumb_background.png</texture>
+    </control>
+    <control>
+      <id>1</id>
+      <type>image</type>
+      <posX>45</posX>
+      <posY>285</posY>
+      <width>199</width>
+      <height>199</height>
+      <texture>#selectedthumb</texture>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>-210</buttonX>
+      <buttonY>64</buttonY>
+      <buttonwidth>385</buttonwidth>
+      <buttonheight>515</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+    <control>
+      <type>button</type>
+      <id>24</id>
+      <label>971</label>
+      <ondown>25</ondown>
+      <onup>24</onup>
+      <onleft>10</onleft>
+      <onright>10</onright>
+    </control>
+    </control>
+    </control>
+    <control>
+      <description>tvchannels listcontrol</description>
+      <type>playlistcontrol</type>
+      <id>10</id>
+      <onleft>24</onleft>
+      <onright>24</onright>
+      <onup>2</onup>
+      <ondown>2</ondown>
+    </control>
+  </controls>
+</window>

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7334</id>
+  <defaultcontrol>67</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <control>
+      <type>image</type>
+      <description>BackGround</description>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <texture>background.png</texture>
+    </control>
+    <control>
+      <type>group</type>
+      <description>Time group</description>
+      <id>10</id>
+      <posX>8</posX>
+      <posY>176</posY>
+      <width>500</width>
+      <height>344</height>
+      <visible>true</visible>
+      <mpe>
+        <layout>Grid</layout>
+        <spring>no</spring>
+        <spacing>5</spacing>
+        <padding>
+          <top>0</top>
+          <right>0</right>
+          <bottom>0</bottom>
+          <left>0</left>
+        </padding>
+      </mpe>
+      <control>
+        <type>image</type>
+        <description>MenuBackgroundImage</description>
+        <id>11</id>
+        <posX>8</posX>
+        <posY>176</posY>
+        <width>704</width>
+        <height>344</height>
+        <visible>true</visible>
+        <texture>background_glass_menu_area.png</texture>
+      </control>
+      <control>
+        <type>label</type>
+        <description>DateLabel</description>
+        <id>35</id>
+        <posX>50</posX>
+        <posY>75</posY>
+        <label>Date:</label>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>DateSpin</description>
+        <id>36</id>
+        <posX>160</posX>
+        <posY>80</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>int</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>22</onright>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>MonthSpin</description>
+        <id>37</id>
+        <posX>240</posX>
+        <posY>80</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>4</digits>
+        <spintype>disc</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>24</onright>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>YearSpin</description>
+        <id>38</id>
+        <posX>340</posX>
+        <posY>80</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>int</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>24</onright>
+      </control>
+      <control>
+        <type>label</type>
+        <description>TimeLabel</description>
+        <id>20</id>
+        <posX>50</posX>
+        <posY>110</posY>
+        <label>Time   Start:</label>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>TimeHourSpin</description>
+        <id>21</id>
+        <posX>160</posX>
+        <posY>115</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>int</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>22</onright>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>TimeMinuteSpin</description>
+        <id>22</id>
+        <posX>240</posX>
+        <posY>115</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>disc</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>24</onright>
+      </control>
+      <control>
+        <type>label</type>
+        <description>Time End Label</description>
+        <id>30</id>
+        <posX>350</posX>
+        <posY>110</posY>
+        <label>Ends:</label>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>TimeEndHourSpin</description>
+        <id>31</id>
+        <posX>440</posX>
+        <posY>115</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>int</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>22</onright>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>TimeEndMinuteSpin</description>
+        <id>32</id>
+        <posX>520</posX>
+        <posY>115</posY>
+        <width>16</width>
+        <height>16</height>
+        <digits>2</digits>
+        <spintype>disc</spintype>
+        <showrange>no</showrange>
+        <onleft>21</onleft>
+        <onright>24</onright>
+      </control>
+      <control>
+        <type>label</type>
+        <description>Reminder</description>
+        <id>23</id>
+        <posX>50</posX>
+        <posY>135</posY>
+        <label>Reminder:</label>
+      </control>
+      <control>
+        <type>spincontrol</type>
+        <description>RemindSpin</description>
+        <id>24</id>
+        <posX>160</posX>
+        <posY>135</posY>
+        <width>16</width>
+        <height>16</height>
+        <spintype>text</spintype>
+        <!-- subitems> - Will not work since MediaPortal tries it as a number when it starts from one -
+          <subitem>None</subitem>
+          <subitem>0 min</subitem>
+          <subitem>5 min</subitem>
+          <subitem>10 min</subitem>
+          <subitem>15 min</subitem>
+          <subitem>30 min</subitem>
+          <subitem>1 hour</subitem>
+          <subitem>2 hours</subitem>
+          <subitem>3 hours</subitem>
+          <subitem>4 hours</subitem>
+          <subitem>5 hours</subitem>
+          <subitem>6 hours</subitem>
+          <subitem>7 hours</subitem>
+          <subitem>8 hours</subitem>
+          <subitem>9 hours</subitem>
+          <subitem>10 hours</subitem>
+          <subitem>11 hours</subitem>
+          <subitem>0.5 days</subitem>
+          <subitem>18 hours</subitem>
+          <subitem>1 day</subitem>
+          <subitem>2 days</subitem>
+          <subitem>3 days</subitem>
+          <subitem>4 days</subitem>
+          <subitem>5 days</subitem>
+          <subitem>6 days</subitem>
+          <subitem>1 week</subitem>
+          <subitem>2 weeks</subitem>
+        </subitems -->
+        <showrange>no</showrange>
+        <onleft>22</onleft>
+        <onright>50</onright>
+      </control>
+      <!-- control>
+        <type>togglebutton</type>
+        <description>ReccuringDateButton</description>
+        <id>26</id>
+        <posX>500</posX>
+        <posY>65</posY>
+        <onleft>8</onleft>
+        <onright>7</onright>
+        <onup>22</onup>
+        <ondown>24</ondown>
+        <label>Reccuring date</label>
+        <textcolor>ffffffff</textcolor>
+      </control>
+      <control>
+        <type>button</type>
+        <description>ShowAddedDatesButton</description>
+        <id>27</id>
+        <posX>500</posX>
+        <posY>100</posY>
+        <onleft>8</onleft>
+        <onright>7</onright>
+        <onup>23</onup>
+        <ondown>11</ondown>
+        <label>Show/add dates</label>
+        <textcolor>ff000000</textcolor>
+      </control -->
+    </control>
+    <control>
+      <type>group</type>
+      <description>Information group</description>
+      <id>50</id>
+      <posX>8</posX>
+      <posY>400</posY>
+      <width>500</width>
+      <height>128</height>
+      <visible>true</visible>
+      <mpe>
+        <layout>Grid</layout>
+        <spring>no</spring>
+        <spacing>5</spacing>
+        <padding>
+          <top>0</top>
+          <right>0</right>
+          <bottom>0</bottom>
+          <left>0</left>
+        </padding>
+      </mpe>
+      <control>
+        <type>image</type>
+        <description>MenuBackgroundImage</description>
+        <id>51</id>
+        <posX>16</posX>
+        <posY>48</posY>
+        <width>704</width>
+        <height>128</height>
+        <visible>true</visible>
+        <texture>album_background_nofocus.png</texture>
+      </control>
+      <control>
+        <type>label</type>
+        <description>SubjectLabel</description>
+        <id>65</id>
+        <posX>48</posX>
+        <posY>192</posY>
+        <label>Subject:</label>
+      </control>
+      <control>
+        <type>textbox</type>
+        <description>SubjectText</description>
+        <id>66</id>
+        <posX>48</posX>
+        <posY>224</posY>
+        <width>624</width>
+        <height>90</height>
+        <image>icon-folder.png</image>
+        <label>Subject</label>
+        <text>-</text>
+        <SpinPosX>48</SpinPosX>
+        <SpinPosY>314</SpinPosY>
+      </control>
+      <control>
+        <type>button</type>
+        <description>Subject Edit Button</description>
+        <id>67</id>
+        <posX>160</posX>
+        <posY>192</posY>
+        <onleft>10</onleft>
+        <onright>60</onright>
+        <onup>21</onup>
+        <ondown>60</ondown>
+        <label>Edit</label>
+        <width>75</width>
+        <height>32</height>
+      </control>
+      <control>
+        <type>label</type>
+        <description>DescriptionLabel</description>
+        <id>55</id>
+        <posX>48</posX>
+        <posY>282</posY>
+        <label>Description:</label>
+      </control>
+      <control>
+        <type>textbox</type>
+        <description>DescriptionText</description>
+        <id>56</id>
+        <posX>48</posX>
+        <posY>314</posY>
+        <width>624</width>
+        <height>90</height>
+        <image>icon-folder.png</image>
+        <label>Description</label>
+        <text>-</text>
+        <SpinPosX>48</SpinPosX>
+        <SpinPosY>314</SpinPosY>
+      </control>
+      <control>
+        <type>button</type>
+        <description>Description Edit Button</description>
+        <id>57</id>
+        <posX>160</posX>
+        <posY>282</posY>
+        <onleft>10</onleft>
+        <onright>60</onright>
+        <onup>66</onup>
+        <ondown>60</ondown>
+        <label>Edit</label>
+        <width>75</width>
+        <height>32</height>
+      </control>
+      <control>
+        <type>label</type>
+        <description>LocationLabel</description>
+        <id>58</id>
+        <posX>50</posX>
+        <posY>350</posY>
+        <label>Location:</label>
+      </control>
+      <control>
+        <type>textbox</type>
+        <description>Location Text</description>
+        <id>59</id>
+        <posX>200</posX>
+        <posY>350</posY>
+        <width>480</width>
+        <height>26</height>
+        <image>icon-folder.png</image>
+        <text>-</text>
+        <SpinPosX>200</SpinPosX>
+        <SpinPosY>376</SpinPosY>
+      </control>
+      <control>
+        <type>button</type>
+        <description>Location Edit Button</description>
+        <id>60</id>
+        <posX>48</posX>
+        <posY>376</posY>
+        <onleft>57</onleft>
+        <onright>200</onright>
+        <onup>57</onup>
+        <ondown>200</ondown>
+        <label>Edit</label>
+        <width>75</width>
+        <height>32</height>
+      </control>
+    </control>
+    <control>
+      <type>button</type>
+      <description>OKButton</description>
+      <id>200</id>
+      <posX>472</posX>
+      <posY>528</posY>
+      <onleft>8</onleft>
+      <onright>201</onright>
+      <onup>57</onup>
+      <ondown>21</ondown>
+      <label>OK</label>
+      <width>100</width>
+      <height>32</height>
+    </control>
+    <control>
+      <type>button</type>
+      <description>CancelButton</description>
+      <id>201</id>
+      <posX>584</posX>
+      <posY>528</posY>
+      <onleft>200</onleft>
+      <onright>21</onright>
+      <onup>57</onup>
+      <ondown>21</ondown>
+      <label>Cancel</label>
+      <width>100</width>
+      <height>32</height>
+    </control>
+  </controls>
+</window>

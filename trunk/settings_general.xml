@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>705</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#selecteditem:128</define>
+  <controls>
+<import>common.time.xml</import>
+	
+<control>
+	<description>settings background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>system_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>settings overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+</control>
+
+    <import>common.window.xml</import>
+
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Skin</description>
+        <type>selectbutton</type>
+        <id>10</id>
+        <label>166</label>
+        <onup>17</onup>
+      </control>
+      <control>
+        <description>Language</description>
+        <type>selectbutton</type>
+        <id>11</id>
+        <label>248</label>
+      </control>
+      <control>
+        <description>Start in fullscreen mode</description>
+        <type>togglebutton</type>
+        <id>12</id>
+        <label>Start in fullscreen</label>
+      </control>
+      <control>
+        <description>Screensaver</description>
+        <type>togglebutton</type>
+        <id>13</id>
+        <label>360</label>
+      </control>
+      <control>
+        <description>Skip steps screen button</description>
+        <type>button</type>
+        <id>21</id>
+        <label>6024</label>
+        <hyperlink>708</hyperlink>
+        <ondown>99</ondown>
+      </control>
+    </control>
+    <control>
+      <description>Skin Preview</description>
+      <type>image</type>
+      <id>20</id>
+      <posY>100</posY>
+      <posX>310</posX>
+      <width>1000</width>
+      <height>500</height>
+      <align>center</align>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture />
+    </control>
+  </controls>
+</window>

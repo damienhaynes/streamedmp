@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>4</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#itemcount:-</define>
+  <define>#selecteditem:#highlightedbutton</define>
+  <controls>
+<import>common.time.xml</import>
+	
+<control>
+	<description>settings background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>system_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>settings overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+</control>
+
+    <import>common.window.xml</import>
+	
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+        <control>
+        <description>Wizard</description>
+        <type>button</type>
+        <id>3</id>
+        <label>1200</label>
+        <hyperlink>615</hyperlink>
+        <onup>17</onup>
+      </control>
+      <control>
+        <description>General</description>
+        <type>button</type>
+        <id>4</id>
+        <label>128</label>
+        <hyperlink>705</hyperlink>
+      </control>
+      <control>
+        <description>Screen</description>
+        <type>button</type>
+        <id>5</id>
+        <label>6023</label>
+        <hyperlink>9</hyperlink>
+      </control>
+      <control>
+        <description>TV</description>
+        <type>button</type>
+        <id>10</id>
+        <label>605</label>
+        <hyperlink>700</hyperlink>
+      </control>
+      <control>
+        <description>My Pictures</description>
+        <type>button</type>
+        <id>7</id>
+        <label>1</label>
+        <hyperlink>12</hyperlink>
+      </control>
+      <control>
+        <description>Movies</description>
+        <type>button</type>
+        <id>8</id>
+        <label>3</label>
+        <hyperlink>703</hyperlink>
+      </control>
+      <control>
+        <description>My DVD</description>
+        <type>button</type>
+        <id>9</id>
+        <label>1027</label>
+        <hyperlink>704</hyperlink>
+      </control>
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      <control>
+        <description>My Music</description>
+        <type>button</type>
+        <id>6</id>
+        <label>2</label>
+        <hyperlink>14</hyperlink>
+      </control>
+      <control>
+        <description>My Music</description>
+        <type>button</type>
+        <id>11</id>
+        <label>Skin Info</label>
+        <hyperlink>88889</hyperlink>
+        <ondown>99</ondown>
+      </control>
+    </control>
+  </controls>
+</window>

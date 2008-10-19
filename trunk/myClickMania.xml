@@ -1,0 +1,138 @@
+<window>
+  <id>5555</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:Games</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my simon.png</define>
+  <define>#selecteditem:#cm_title</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <layout>StackLayout</layout>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <control>
+        <description>New Game</description>
+        <type>button</type>
+        <label>19002</label>
+        <id>2</id>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <onup>6</onup>
+        <ondown>8</ondown>
+      </control>
+      <control>
+        <type>button</type>
+        <description>Take back last move</description>
+        <id>8</id>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <label>Take back</label>
+      </control>
+      <control>
+        <type>togglebutton</type>
+        <description>Sounds</description>
+        <id>4</id>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <onup>8</onup>
+        <ondown>6</ondown>
+        <label>19004</label>
+      </control>
+      <control>
+        <type>togglebutton</type>
+        <description>Keyboard</description>
+        <id>6</id>
+        <onleft>10</onleft>
+        <onright>10</onright>
+        <onup>4</onup>
+        <ondown>2</ondown>
+        <label>101000</label>
+      </control>
+    </control>
+      <control>
+        <description>Scoreboard background</description>
+        <type>image</type>
+        <id>200</id>
+        <posX>305</posX>
+        <posY>540</posY>
+        <texture>scoreboard1.png</texture>
+      </control>
+    <control>
+      <type>label</type>
+      <description>Score: label</description>
+      <id>201</id>
+      <posX>315</posX>
+      <posY>550</posY>
+      <label>19005</label>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Score</description>
+      <id>202</id>
+      <posX>550</posX>
+      <posY>550</posY>
+      <label>#cm_score</label>
+      <align>right</align>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Highscore: label</description>
+      <id>203</id>
+      <posX>315</posX>
+      <posY>580</posY>
+      <label>19008</label>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Highscore</description>
+      <id>204</id>
+      <posX>550</posX>
+      <posY>580</posY>
+      <label>#cm_highscore</label>
+      <align>right</align>
+    </control>
+      <control>
+        <type>label</type>
+        <description>Time: label</description>
+        <id>25</id>
+        <posX>360</posX>
+        <posY>610</posY>
+        <label>#cm_time</label>
+        <font>font18</font>
+      </control>
+    <control>
+      <type>label</type>
+      <description>Status</description>
+      <id>28</id>
+      <posX>315</posX>
+      <posY>640</posY>
+      <label>#cm_status</label>
+      <font>font18</font>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <control>
+        <type>clickmania</type>
+        <description>ClickMania control</description>
+        <id>10</id>
+        <posX>290</posX>
+        <posY>100</posY>
+        <width>290</width>
+        <height>400</height>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <onup>2</onup>
+        <ondown>2</ondown>
+       </control>
+    </control>
+  </controls>
+</window>

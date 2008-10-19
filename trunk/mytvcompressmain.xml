@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>609</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:652</define>
+  <define>#selecteditem:894</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my tv.png</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>description line#1 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>100</posY>
+      <label>999</label>
+    </control>
+    <control>
+      <description>description line#2 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>130</posY>
+      <label>1000</label>
+    </control>
+    <control>
+      <description>description line#3 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>160</posY>
+      <label>1001</label>
+    </control>
+    <control>
+      <description>description line#4 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>190</posY>
+      <label>1002</label>
+    </control>
+    <control>
+      <description>description line#5 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>220</posY>
+      <label>1003</label>
+    </control>
+
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
+      <description>group element</description>
+      <control>
+        <description>Auto compress button</description>
+        <type>button</type>
+        <id>2</id>
+        <label>895</label>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <onup>17</onup>
+        <ondown>3</ondown>
+        <hyperlink>611</hyperlink>
+      </control>
+      <control>
+        <description>Compress</description>
+        <type>button</type>
+        <id>3</id>
+        <label>896</label>
+        <onleft>3</onleft>
+        <onright>3</onright>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <hyperlink>612</hyperlink>
+      </control>
+      <control>
+        <description>Settings button</description>
+        <type>button</type>
+        <id>4</id>
+        <label>897</label>
+        <hyperlink>610</hyperlink>
+        <onleft>4</onleft>
+        <onright>4</onright>
+        <onup>3</onup>
+        <ondown>5</ondown>
+      </control>
+      <control>
+        <description>Status</description>
+        <type>button</type>
+        <id>5</id>
+        <label>126</label>
+        <onleft>5</onleft>
+        <onright>5</onright>
+        <onup>4</onup>
+        <ondown>99</ondown>
+        <hyperlink>613</hyperlink>
+      </control>
+    </control>
+    <control>
+      <description>TV background</description>
+      <type>image</type>
+      <id>98</id>
+      <posX>17</posX>
+      <posY>615</posY>
+      <width>180</width>
+      <height>113</height>
+      <texture>video_overlay_background.png</texture>
+    </control>
+    <control>
+      <description>TV preview window</description>
+      <type>videowindow</type>
+      <id>99</id>
+      <posX>25</posX>
+      <posY>623</posY>
+      <width>160</width>
+      <height>90</height>
+      <action>18</action>
+      <onup>5</onup>
+      <textureFocus>tv_green_border.png</textureFocus>
+    </control>
+  </controls>
+</window>

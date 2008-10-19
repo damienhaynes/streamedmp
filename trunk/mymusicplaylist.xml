@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>500</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:136</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my music.png</define>
+<controls>
+<import>common.time.xml</import>
+	
+<control>
+	<description>music background image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>music_bg.jpg</texture>
+</control>
+	
+<control>
+	<description>music overlay image</description>
+	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+	<type>image</type>
+	<id>0</id>
+	<posX>0</posX>
+	<posY>0</posY>
+	<width>1280</width>
+	<height>720</height>
+	<texture>streamed_overlay.png</texture>
+</control>
+
+    <import>common.window.xml</import>
+
+      <control>
+        <type>image</type>
+        <posY>0</posY>
+        <width>220</width>
+        <height>720</height>
+        <texture>streamed_submenu_bg.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-220,0">visible</animation>
+        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" end="-280,0">hidden</animation>
+        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <posX>0</posX>
+        <posY>80</posY>
+        <layout>StackLayout</layout>
+      <control>
+        <description>View-As button</description>
+        <type>button</type>
+        <id>2</id>
+        <label>100</label>
+        <onright>50</onright>
+        <onup>17</onup>
+      </control>
+      <control>
+        <description>Shuffle button</description>
+        <type>button</type>
+        <id>20</id>
+        <label>191</label>
+        <onright>50</onright>
+      </control>
+      <control>
+        <description>Repeat on/off button</description>
+        <type>togglebutton</type>
+        <id>30</id>
+        <label>486</label>
+        <onright>50</onright>
+      </control>
+      <control>
+        <description>My Playlists</description>
+        <type>button</type>
+        <id>10</id>
+        <label>983</label>
+        <onright>50</onright>
+      </control>
+      <control>
+        <description>Save button</description>
+        <type>button</type>
+        <id>21</id>
+        <label>190</label>
+        <onright>50</onright>
+      </control>
+      <control>
+        <description>Clear button</description>
+        <type>button</type>
+        <id>22</id>
+        <label>192</label>
+        <onright>50</onright>
+      </control>
+      <control>
+        <description>Now playing</description>
+        <type>button</type>
+        <id>26</id>
+        <label>4540</label>
+        <hyperlink>510</hyperlink>
+        <onright>50</onright>
+        <ondown>28</ondown>
+      </control>
+      <control>
+        <description>scrobble mode button</description>
+        <type>button</type>
+        <id>28</id>
+        <label>33001</label>
+        <onright>50</onright>
+        <visible>plugin.isenabled(Audioscrobbler)</visible>
+      </control>
+      <control>
+        <description>scrobble on/off button</description>
+        <type>togglebutton</type>
+        <id>27</id>
+        <label>33000</label>
+        <onright>50</onright>
+        <visible>plugin.isenabled(Audioscrobbler)</visible>
+      </control>
+      <control>
+        <description>scrobble user button</description>
+        <type>button</type>
+        <id>29</id>
+        <label>Scrobbler: </label>
+        <onright>50</onright>
+        <visible>plugin.isenabled(Audioscrobbler)</visible>
+      </control>
+    </control>
+    <import>common.facade.music.noactionmenu.xml</import>
+  </controls>
+</window>
