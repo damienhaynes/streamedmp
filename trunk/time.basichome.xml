@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>Time</description>
+      <type>label</type>
+      <id>201</id>
+      <posX>66</posX>
+      <posY>693</posY>
+      <textcolor>FF025984</textcolor>
+      <font>mediastream13tc</font>
+      <label>#time</label>
+      <align>left</align>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+  </controls>
+</window>

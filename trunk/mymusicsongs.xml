@@ -2,7 +2,7 @@
 <window>
   <id>501</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#header.label:134</define>
   <define>#header.image:-</define>
   <define>#header.hover:hover_my music.png</define>
@@ -201,5 +201,6 @@
       <seperator>---------------------------------------------------------------------------------------------------------</seperator>
     </control>
     <import>common.facade.music.xml</import>
+    <import>common.overlays.xml</import>
   </controls>
 </window>
