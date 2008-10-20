@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
+    
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+    </control>
+    
+    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS :::::::::: -->
+    
+    <!--
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>256</width>
+      <height>36</height>
+      <texture>tvtitlebgshort.png</texture>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <description>Top Title Extension</description>
+      <id>0</id>
+      <posX>617</posX>
+      <posY>13</posY>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>LABEL</label>
+    </control>
+    -->
+    
+    <!--
+    
+    OLD STUFF REMOVE?
+    
 	
 <control>
 	<description>header background</description>
@@ -42,5 +96,6 @@
       <height>40</height>
       <texture>#header.hover</texture>
     </control>
+  -->
   </controls>
 </window>
