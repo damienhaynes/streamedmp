@@ -23,7 +23,7 @@ different overlays on home screens
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>1145</posX>
+      <posX>783</posX>
       <posY>558</posY>
       <width>114</width>
       <height>114</height>
@@ -37,14 +37,14 @@ different overlays on home screens
     </control>
     <control>
       <description>artist info label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>1135</posX>
-      <posY>560</posY>
+      <posX>908</posX>
+      <posY>563</posY>
       <label>#Play.Current.Artist</label>
-      <align>right</align>
+      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
       <visible>player.hasaudio</visible>
@@ -53,14 +53,14 @@ different overlays on home screens
     </control>
     <control>
       <description>title info label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>1135</posX>
+      <posX>908</posX>
       <posY>584</posY>
       <label>#Play.Current.Title</label>
-      <align>right</align>
+      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <visible>player.hasaudio</visible>
       <font>mediastream10tc</font>
@@ -69,14 +69,14 @@ different overlays on home screens
     </control>
     <control>
       <description>album info label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>1135</posX>
+      <posX>908</posX>
       <posY>603</posY>
       <label>#Play.Current.Album</label>
-      <align>right</align>
+      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
       <visible>player.hasaudio</visible>
@@ -89,9 +89,9 @@ different overlays on home screens
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>1135</posX>
+      <posX>908</posX>
       <posY>621</posY>
-      <align>right</align>
+      <align>left</align>
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
@@ -105,27 +105,27 @@ different overlays on home screens
       <id>0</id>
       <width>42</width>
       <height>40</height>
-      <posX>1135</posX>
-      <posY>637</posY>
+      <posX>908</posX>
+      <posY>647</posY>
       <label>Next</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <visible>player.hasaudio</visible>
-      <align>right</align>
+      <align>left</align>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>next song info label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
-      <posX>1135</posX>
-      <posY>657</posY>
+      <posX>939</posX>
+      <posY>647</posY>
       <width>300</width>
       <height>40</height>
-      <label>#Play.Next.Title by #Play.Next.Artist</label>
+      <label>: #Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
-      <align>right</align>
+      <align>left</align>
       <font>mediastream10</font>
       <visible>player.hasaudio</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
