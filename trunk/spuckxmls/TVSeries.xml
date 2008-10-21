@@ -50,7 +50,7 @@
     </control>
     
     <control>
-      <description>FanArt Overlay (only visible in list view)</description>
+      <description>FanArt Overlay</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -58,32 +58,6 @@
       <width>1280</width>
       <height>720</height>
       <texture>tvfanartoverlay.png</texture>
-      <visible>Control.IsVisible(1235)</visible>
-    </control>
-    
-    <control>
-      <description>Filmstrip black background - FilmStripView</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>500</posY>
-      <width>1280</width>
-      <height>221</height>
-      <texture>black.png</texture>
-      <visible>!Control.IsVisible(1235)</visible>
-    </control>
-    
-    <control>
-      <description>Backdrop Overlay - FilmStripView</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>-12</posY>
-      <width>1280</width>
-      <height>732</height>
-      <colordiffuse>ccffffff</colordiffuse>
-      <texture>movieviewbg.png</texture>
-      <visible>!Control.IsVisible(1235)</visible>
     </control>
     
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
@@ -340,7 +314,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>Control.HasThumb(146)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1238)+Control.IsVisible(1235)</visible>
     </control>
     
     <!-- :::::::::::::: VISIBLE WHEN IN EPISODE SELECTION VIEW (LIST VIEW ONLY) :::::::::::::: -->
@@ -362,7 +336,7 @@
       <keepaspectratio>yes</keepaspectratio>
       <zoom>yes</zoom>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.EpisodeImage</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1235)</visible>
     </control>
     
     <control>
@@ -556,7 +530,6 @@
           <textcolor>#notpresent.color</textcolor>
           <textcolor2>#notpresent.color</textcolor2>
           <textcolor3>#notpresent.color</textcolor3>
-          <unfocusedAlpha>150</unfocusedAlpha>
         </control>
       </control>
     </control>
