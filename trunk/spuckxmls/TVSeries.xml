@@ -28,14 +28,15 @@
     </control>
     
     <control>
-      <description>Fan Art Image (in "skin/FanArt/thetvdbID.jpg")</description>
+      <description>Fan Art Image (in "skin/FanArt/tv/thetvdbID.jpg")</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>#TVSeries.Series.FanArt</texture>
+      <texture>#TVSeries.Series.FanArtPath</texture>
+      <visible>!Control.IsVisible(1232)</visible>
     </control>
     
     <control>
@@ -520,10 +521,10 @@
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
           <id>50</id>
+          <posX>780</posX>
+          <textXOff2>380</textXOff2>
           <textXOff3>395</textXOff3>
           <textYOff3>11</textYOff3>
-          <textXOff>0</textXOff>
-          <textXOff2>410</textXOff2>
           <textureFocus>listbg_detail_fo.png</textureFocus>
           <downloadColor>#default.color</downloadColor>
           <remoteColor>#watched.color</remoteColor>
@@ -532,6 +533,30 @@
           <textcolor3>#notpresent.color</textcolor3>
         </control>
       </control>
+    </control>
+    
+    <control>
+      <description>Spin Control BG</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1108</posX>
+      <posY>656</posY>
+      <width>135</width>
+      <height>32</height>
+      <texture>mediacountbg.png</texture>
+      <visible>Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control>
+      <description>Spin Control Label</description>
+      <type>label</type>
+      <label>PAGE</label>
+      <id>0</id>
+      <posX>1118</posX>
+      <posY>658</posY>
+      <font>mediastream12c</font>
+      <textcolor>ff025984</textcolor>
+      <visible>Control.IsVisible(1235)</visible>
     </control>
     
     <!-- :::::::::::::: IMPORT PROCESS :::::::::::::: -->
