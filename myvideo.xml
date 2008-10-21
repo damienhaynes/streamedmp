@@ -7,7 +7,6 @@
 <define>#header.image:-</define>
 <define>#header.hover:hover_my videos.png</define>
 <controls>
-<import>common.time.xml</import>
 
 <control>
 	<description>movies background image</description>
@@ -18,34 +17,58 @@
 	<posY>0</posY>
 	<width>1280</width>
 	<height>720</height>
-	<texture>movies_bg.jpg</texture>
+	<texture>hover_my videos.png</texture>
 </control>
 	
 <control>
 	<description>movies overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
 	<type>image</type>
 	<id>0</id>
 	<posX>0</posX>
 	<posY>0</posY>
 	<width>1280</width>
 	<height>720</height>
-	<texture>streamed_overlay.png</texture>
+	<texture>tvfanartoverlay.png</texture>
 	<visible>!facadeview.filmstrip</visible>
 </control>
-	
-<control>
-	<description>movies overlay image2</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay2.png</texture>
-	<visible>facadeview.filmstrip</visible>
-</control>
+    
+    <control>
+      <description>Filmstrip black background - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>499</posY>
+      <width>1280</width>
+      <height>221</height>
+      <texture>black.png</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    
+    <control>
+      <description>Backdrop Overlay - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>-12</posY>
+      <width>1280</width>
+      <height>732</height>
+      <colordiffuse>ccffffff</colordiffuse>
+      <texture>movieviewbg.png</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    
+    <control>
+      <description>Glasstitlebar - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>225</posX>
+      <posY>54</posY>
+      <width>512</width>
+      <height>43</height>
+      <colordiffuse>ccffffff</colordiffuse>
+      <texture>glasstitlebar.png</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
 
 <import>common.window.xml</import>
 
@@ -726,6 +749,7 @@
 	
 	
 	
-    <import>common.facade.video.imdb.xml</import>
+    <import>common.facade.video.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>

@@ -12,6 +12,7 @@ This file should contain the facade view
         <description>Movie List</description>
         <type>listcontrol</type>
         <id>50</id>
+        <posX>780</posX>
       </control>
       <control>
         <description>Filmstrip view</description>
@@ -46,6 +47,30 @@ This file should contain the facade view
         <thumbAnimation effect="zoom" start="100,100" end="130,130" time="100">focus</thumbAnimation>
         <thumbAnimation effect="zoom" start="130,130" end="100,100" time="100">unfocus</thumbAnimation>
       </control>
+    </control>
+    
+    <control>
+      <description>Spin Control BG</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1108</posX>
+      <posY>656</posY>
+      <width>135</width>
+      <height>32</height>
+      <texture>mediacountbg.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Spin Control Label</description>
+      <type>label</type>
+      <label>PAGE</label>
+      <id>0</id>
+      <posX>1118</posX>
+      <posY>658</posY>
+      <font>mediastream12c</font>
+      <textcolor>ff025984</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>
