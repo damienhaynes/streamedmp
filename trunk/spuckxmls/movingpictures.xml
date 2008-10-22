@@ -131,6 +131,18 @@ multiple view modes.
     <!--********************* ListView Only **************************-->
     
     <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>32</posX>
+      <posY>254</posY>
+      <width>256</width>
+      <height>380</height>
+      <texture>defaultdvdcover.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
       <description>Cover Art</description>
       <type>image</type>
       <id>60</id>
@@ -139,6 +151,18 @@ multiple view modes.
       <width>256</width>
       <height>380</height>
       <texture>#MovingPictures.Coverart</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>32</posX>
+      <posY>254</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
@@ -297,6 +321,18 @@ multiple view modes.
     <!--********************* FilmStripView Only **************************-->
     
     <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>70</posX>
+      <posY>62</posY>
+      <width>288</width>
+      <height>428</height>
+      <texture>defaultdvdcover.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
       <description>Cover Art</description>
       <type>image</type>
       <id>60</id>
@@ -305,6 +341,18 @@ multiple view modes.
       <width>288</width>
       <height>428</height>
       <texture>#MovingPictures.Coverart</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>70</posX>
+      <posY>62</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
