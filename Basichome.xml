@@ -867,22 +867,24 @@
       <description>Rss Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>-5</posX>
-      <posY>680</posY>
+      <posX>75</posX>
+      <posY>685</posY>
       <width>1300</width>
-      <height>50</height>
-      <texture>streamed_rss_feed_bg.png</texture>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <height>45</height>
+      <texture>homerss.png</texture>
+      <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>1</posX>
-      <posY>688</posY>
-      <width>175</width>
-      <height>35</height>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>160</width>
+      <height>32</height>
       <texture>clockbackground.png</texture>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>RSS Items</description>
@@ -891,7 +893,7 @@
       <width>1250</width>
       <height>50</height>
       <posY>695</posY>
-      <posX>170</posX>
+      <posX>120</posX>
       <font>mediastream12tc</font>
       <label>#rssfeed</label>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
@@ -901,25 +903,11 @@
       <description>Weather image</description>
       <type>image</type>
       <id>1</id>
-      <posY>5</posY>
+      <posY>35</posY>
       <posX>0</posX>
-      <height>80</height>
-      <width>80</width>
+      <height>60</height>
+      <width>60</width>
       <texture>#weatherimg</texture>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-    </control>
-    <control>
-      <description>location</description>
-      <type>label</type>
-      <id>1</id>
-      <width>400</width>
-      <height>50</height>
-      <align>left</align>
-      <posY>15</posY>
-      <posX>100</posX>
-      <font>mediastream10tc</font>
-      <label>#location</label>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -930,8 +918,8 @@
       <width>400</width>
       <height>50</height>
       <align>left</align>
-      <posY>45</posY>
-      <posX>100</posX>
+      <posY>55</posY>
+      <posX>80</posX>
       <font>mediastream10tc</font>
       <label>#temp</label>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
@@ -944,8 +932,8 @@
       <width>400</width>
       <height>50</height>
       <align>left</align>
-      <posY>45</posY>
-      <posX>170</posX>
+      <posY>55</posY>
+      <posX>140</posX>
       <font>mediastream10tc</font>
       <label>#condition</label>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
