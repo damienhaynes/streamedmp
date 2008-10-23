@@ -134,10 +134,10 @@ multiple view modes.
       <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>32</posX>
-      <posY>254</posY>
-      <width>256</width>
-      <height>380</height>
+      <posX>27</posX>
+      <posY>272</posY>
+      <width>266</width>
+      <height>390</height>
       <texture>defaultdvdcover.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
@@ -147,7 +147,7 @@ multiple view modes.
       <type>image</type>
       <id>60</id>
       <posX>32</posX>
-      <posY>254</posY>
+      <posY>274</posY>
       <width>256</width>
       <height>380</height>
       <texture>#MovingPictures.Coverart</texture>
@@ -159,13 +159,14 @@ multiple view modes.
       <type>image</type>
       <id>0</id>
       <posX>32</posX>
-      <posY>254</posY>
+      <posY>274</posY>
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
+    <!-- NOT WORKING YET WAITING FOR 5.6 RELEASE
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -201,15 +202,16 @@ multiple view modes.
       <texture>overlayunwatched.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
     </control>
+    -->
     
     <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
       <posX>310</posX>
-      <posY>255</posY>
-      <width>950</width>
-      <font>mediastream14tc</font>
+      <posY>275</posY>
+      <width>390</width>
+      <font>mediastream13tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
@@ -218,12 +220,12 @@ multiple view modes.
     <control>
       <description>Year below the movie title</description>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.year</label>
+      <label>#MovingPictures.SelectedMovie.year | #MovingPictures.SelectedMovie.genres</label>
       <id>0</id>
       <posX>310</posX>
-      <posY>280</posY>
-      <width>300</width>
-      <font>mediastream12tc</font>
+      <posY>298</posY>
+      <width>390</width>
+      <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
@@ -233,9 +235,9 @@ multiple view modes.
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>310</posX>
-      <posY>310</posY>
+      <posY>318</posY>
       <width>415</width>
-      <height>190</height>
+      <height>235</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream10</font>
@@ -245,46 +247,16 @@ multiple view modes.
     
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Runtime</label>
-      <posX>310</posX>
-      <posY>515</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.runtime minutes</label>
-      <posX>420</posX>
-      <posY>515</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
-      <label>Rating</label>
-      <posX>310</posX>
-      <posY>540</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score / 10 (Rated: #MovingPictures.SelectedMovie.user_score)</label>
-      <posX>420</posX>
-      <posY>540</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
       <label>Director</label>
       <posX>310</posX>
-      <posY>565</posY>
+      <posY>560</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.directors</label>
       <posX>420</posX>
-      <posY>565</posY>
+      <posY>560</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
@@ -292,29 +264,44 @@ multiple view modes.
       <type>label</type>
       <label>Writer</label>
       <posX>310</posX>
-      <posY>590</posY>
+      <posY>585</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.writers</label>
       <posX>420</posX>
-      <posY>590</posY>
+      <posY>585</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Genre</label>
+      <label>Rating</label>
       <posX>310</posX>
-      <posY>615</posY>
+      <posY>610</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.genres</label>
+      <label>#MovingPictures.SelectedMovie.score / 10 (Rated: #MovingPictures.SelectedMovie.user_score)</label>
       <posX>420</posX>
-      <posY>615</posY>
+      <posY>610</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Runtime</label>
+      <posX>310</posX>
+      <posY>635</posY>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.runtime mins</label>
+      <posX>420</posX>
+      <posY>635</posY>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
