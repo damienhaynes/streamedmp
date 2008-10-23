@@ -136,5 +136,35 @@
       <!-- to make a control visible only when you are in GROUP VIEW (Genre/Channels) do this: <visible>Control.IsVisible(1240)</visible> -->
       <!-- to make a control invisible when you are in GROUP VIEW (Genre/Channels) do this: <visible>!Control.IsVisible(1240)</visible> -->
     </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for FanArt Colors</description>
+      <id>1241</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label>
+      </label>
+      <visible>false</visible>
+      <!-- to make a control visible when fanart colors are present do this: <visible>Control.IsVisible(1241)</visible> -->
+      <!-- to make a control invisible when fanart colors are present  do this: <visible>!Control.IsVisible(1241)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Series Posters</description>
+      <id>1242</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label>
+      </label>
+      <visible>false</visible>
+      <!-- to make a control visible only when Series Posters are enabled do this: <visible>Control.IsVisible(1242)</visible> -->
+      <!-- to make a control invisible only when Series Posters are enabled do this: <visible>!Control.IsVisible(1242)</visible> -->
+    </control>
   </controls>
 </window>
