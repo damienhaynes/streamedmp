@@ -1,37 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-<id>6</id>
-<defaultcontrol>2</defaultcontrol>
-<allowoverlay>yes</allowoverlay>
-<define>#header.label:134</define>
-<define>#header.image:-</define>
-<define>#header.hover:hover_my videos.png</define>
-<controls>
-
-<control>
-	<description>movies background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>hover_my videos.png</texture>
-</control>
-	
-<control>
-	<description>movies overlay image</description>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>tvfanartoverlay.png</texture>
-	<visible>!facadeview.filmstrip</visible>
-</control>
-    
+  <id>6</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:134</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my videos.png</define>
+  <controls>
+    <control>
+      <description>movies background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my videos.png</texture>
+    </control>
+    <control>
+      <description>movies overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>tvfanartoverlay.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+    </control>
     <control>
       <description>Filmstrip black background - FilmStripView</description>
       <type>image</type>
@@ -43,7 +40,6 @@
       <texture>black.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    
     <control>
       <description>Backdrop Overlay - FilmStripView</description>
       <type>image</type>
@@ -56,7 +52,6 @@
       <texture>movieviewbg.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    
     <control>
       <description>Glasstitlebar - FilmStripView</description>
       <type>image</type>
@@ -69,9 +64,7 @@
       <texture>glasstitlebar.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-
-<import>common.window.xml</import>
-
+    <import>common.window.xml</import>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -188,7 +181,6 @@
       <texture>#selectedthumb</texture>
       <visible>facadeview.list</visible>
     </control>
-	
     <control>
       <id>1</id>
       <type>image</type>
@@ -199,7 +191,6 @@
       <texture>#selectedthumb</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -241,7 +232,6 @@
       <percentage>#rating</percentage>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Movie Details label</description>
       <type>fadelabel</type>
@@ -252,7 +242,6 @@
       <font>mediastream12tcb</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Director label</description>
       <type>fadelabel</type>
@@ -263,7 +252,6 @@
       <font>mediastream12tcb</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Writer label</description>
       <type>fadelabel</type>
@@ -273,21 +261,19 @@
       <label>200</label>
       <font>mediastream12tcb</font>
       <visible>facadeview.filmstrip</visible>
-    </control>	
-	
-	<control>
+    </control>
+    <control>
       <description>MPAA value</description>
       <type>textboxscrollup</type>
       <id>1</id>
       <posX>409</posX>
       <posY>385</posY>
-	  <width>410</width>
+      <width>410</width>
       <height>140</height>
       <label>#mpaarating</label>
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-
     <control>
       <description>Runtime value</description>
       <type>label</type>
@@ -298,7 +284,6 @@
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-
     <control>
       <description>Year value</description>
       <type>label</type>
@@ -309,7 +294,6 @@
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Genre value</description>
       <type>fadelabel</type>
@@ -320,7 +304,6 @@
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Director value</description>
       <type>fadelabel</type>
@@ -331,7 +314,6 @@
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Writer value</description>
       <type>fadelabel</type>
@@ -342,7 +324,6 @@
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
     </control>
-	
     <control>
       <description>Plot value</description>
       <type>textboxscrollup</type>
@@ -383,7 +364,7 @@
       <posY>480</posY>
       <label>1010</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -405,7 +386,7 @@
       <posY>505</posY>
       <label>299</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -426,7 +407,7 @@
       <posY>280</posY>
       <label>#year</label>
       <font>mediastream14tcb</font>
-	  <textcolor>FF909090</textcolor>
+      <textcolor>FF909090</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -438,7 +419,7 @@
       <label>199</label>
       <visible>no</visible>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -462,7 +443,7 @@
       <label>205</label>
       <visible>no</visible>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -484,7 +465,7 @@
       <posY>580</posY>
       <label>174</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -507,7 +488,7 @@
       <label>173</label>
       <visible>no</visible>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.list</visible>
     </control>
     <control>
@@ -517,12 +498,11 @@
       <posX>415</posX>
       <posY>603</posY>
       <width>270</width>
-	  <height>100</height>
+      <height>100</height>
       <label>#mpaarating</label>
       <font>mediastream10</font>
       <visible>facadeview.list</visible>
     </control>
-	
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -531,10 +511,9 @@
       <posY>250</posY>
       <width>410</width>
       <font>mediastream16tcb</font>
-	  <visible>facadeview.list</visible>
+      <visible>facadeview.list</visible>
       <label>#title</label>
     </control>
-	
     <control>
       <description>Plot value</description>
       <type>textboxscrollup</type>
@@ -543,14 +522,12 @@
       <posY>320</posY>
       <width>410</width>
       <height>140</height>
-	  <visible>facadeview.list</visible>
+      <visible>facadeview.list</visible>
       <label>#plot</label>
       <font>mediastream11</font>
       <seperator>---------------------------------------------------------------------------------------------------------</seperator>
       <visible>facadeview.list</visible>
     </control>
-	
-	
     <control>
       <type>imagelist</type>
       <id>101</id>
@@ -578,7 +555,7 @@
       <posY>480</posY>
       <label>1010</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -600,7 +577,7 @@
       <posY>505</posY>
       <label>299</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -621,7 +598,7 @@
       <posY>280</posY>
       <label>#year</label>
       <font>mediastream14tcb</font>
-	  <textcolor>FF909090</textcolor>
+      <textcolor>FF909090</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -633,7 +610,7 @@
       <label>199</label>
       <visible>no</visible>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -657,7 +634,7 @@
       <label>205</label>
       <visible>no</visible>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -679,7 +656,7 @@
       <posY>580</posY>
       <label>174</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
@@ -701,22 +678,21 @@
       <posY>605</posY>
       <label>173</label>
       <font>mediastream10c</font>
-	  <textcolor>FF006699</textcolor>
+      <textcolor>FF006699</textcolor>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
     <control>
       <description>MPAA value</description>
-	  <type>textboxscrollup</type>
+      <type>textboxscrollup</type>
       <id>1</id>
       <posX>860</posX>
       <posY>602</posY>
       <width>300</width>
-	  <height>100</height>
+      <height>100</height>
       <label>#mpaarating</label>
       <font>mediastream10</font>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
-	
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -725,10 +701,9 @@
       <posY>250</posY>
       <width>410</width>
       <font>mediastream16tcb</font>
-	  <visible>facadeview.smallicons | facadeview.largeicons</visible>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
       <label>#title</label>
     </control>
-	
     <control>
       <description>Plot value</description>
       <type>textboxscrollup</type>
@@ -737,18 +712,22 @@
       <posY>320</posY>
       <width>410</width>
       <height>140</height>
-	  <visible>facadeview.smallicons | facadeview.largeicons</visible>
+      <visible>facadeview.smallicons | facadeview.largeicons</visible>
       <label>#plot</label>
       <font>mediastream11</font>
       <seperator>---------------------------------------------------------------------------------------------------------</seperator>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
-	
-	
-	
-	
-	
-	
+    <control>
+      <description>Number of Files Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>530</posY>
+      <label>#itemcount</label>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
     <import>common.facade.video.xml</import>
     <import>common.time.xml</import>
   </controls>
