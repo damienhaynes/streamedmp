@@ -166,7 +166,7 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
-    <!-- NOT WORKING YET WAITING FOR 5.6 RELEASE
+    <!-- NOT WORKING YET
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -323,10 +323,10 @@ multiple view modes.
       <description>Cover Art</description>
       <type>image</type>
       <id>60</id>
-      <posX>70</posX>
-      <posY>62</posY>
-      <width>288</width>
-      <height>428</height>
+      <posX>75</posX>
+      <posY>66</posY>
+      <width>278</width>
+      <height>418</height>
       <texture>#MovingPictures.Coverart</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
@@ -335,14 +335,15 @@ multiple view modes.
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>70</posX>
-      <posY>62</posY>
+      <posX>75</posX>
+      <posY>66</posY>
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
+    <!-- NOT WORKING YET 
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -378,7 +379,7 @@ multiple view modes.
       <texture>overlayunwatched.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9200)</visible>
     </control>
-    
+    -->
     <control>
       <description>Movie Title</description>
       <type>label</type>
