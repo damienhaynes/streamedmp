@@ -7,30 +7,34 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my pictures.png</define>
   <controls>
+    
+    <control>
+      <description>movies background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <description>movies overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>tvfanartoverlay.png</texture>
+    </control>
+    
     <import>common.time.xml</import>
-    <control>
-      <description>pictures background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_my pictures.png</texture>
-    </control>
-    <control>
-      <description>pictures overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>streamed_overlay.png</texture>
-    </control>
+    
     <import>common.window.xml</import>
+    
     <control>
       <id>204</id>
       <type>image</type>
@@ -42,6 +46,7 @@
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.list</visible>
     </control>
+    
     <control>
       <id>204</id>
       <type>image</type>
@@ -53,17 +58,12 @@
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
     </control>
+    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>-210</buttonX>
-      <buttonY>64</buttonY>
-      <buttonwidth>385</buttonwidth>
-      <buttonheight>515</buttonheight>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
       <posX>0</posX>
       <posY>0</posY>
       <width>100</width>
@@ -71,23 +71,25 @@
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
+        <posX>0</posX>
         <posY>0</posY>
-        <width>220</width>
+        <width>256</width>
         <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
+        <texture>hiddenmenu_left.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
-        <posY>80</posY>
+        <posY>220</posY>
+        <width>256</width>
+        <height>720</height>
         <layout>StackLayout</layout>
         <control>
           <description>View-As</description>
@@ -128,6 +130,8 @@
         </control>
       </control>
     </control>
+    
     <import>common.facade.pictures.xml</import>
+    
   </controls>
 </window>

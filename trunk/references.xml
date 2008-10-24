@@ -92,18 +92,18 @@
     <description>default button</description>
     <type>button</type>
     <id>1</id>
-    <posX>20</posX>
-    <posY>80</posY>
-    <width>215</width>
-    <height>26</height>
-    <textXOff>8</textXOff>
-    <textYOff>4</textYOff>
-    <textureFocus>menu_list_focus.png</textureFocus>
-    <textureNoFocus>menu_list_nofocus.png</textureNoFocus>
+    <posX>0</posX>
+    <posY>0</posY>
+    <width>243</width>
+    <height>32</height>
+    <textXOff>25</textXOff>
+    <textYOff>6</textYOff>
+    <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+    <textureNoFocus>-</textureNoFocus>
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
-    <disabledcolor>60ffffff</disabledcolor>
+    <disabledcolor>FF909090</disabledcolor>
     <textcolorNoFocus>FF909090</textcolorNoFocus>
   </control>
   <control>
@@ -166,20 +166,20 @@
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
-    <disabledcolor>60ffffff</disabledcolor>
+    <disabledcolor>FF909090</disabledcolor>
   </control>
   <control>
     <description>sort button</description>
     <type>sortbutton</type>
     <id>3</id>
-    <posX>20</posX>
-    <posY>80</posY>
-    <width>215</width>
-    <height>48</height>
-    <textXOff>16</textXOff>
-    <textYOff>8</textYOff>
-    <textureFocus>menu_list_focus.png</textureFocus>
-    <textureNoFocus>menu_list_nofocus.png</textureNoFocus>
+    <posX>0</posX>
+    <posY>0</posY>
+    <width>243</width>
+    <height>32</height>
+    <textXOff>25</textXOff>
+    <textYOff>6</textYOff>
+    <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+    <textureNoFocus>-</textureNoFocus>
     <textureAscending>sort_up_nofocus.png</textureAscending>
     <textureAscendingFocused>sort_up_focus.png</textureAscendingFocused>
     <textureDescending>sort_down_nofocus.png</textureDescending>
@@ -191,8 +191,9 @@
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
-    <disabledcolor>60ffffff</disabledcolor>
+    <disabledcolor>FF909090</disabledcolor>
     <label>103</label>
+    <textcolorNoFocus>FF909090</textcolorNoFocus>
   </control>
   <control>
     <description>playlist item button</description>
@@ -272,7 +273,7 @@
     <unfocusedAlpha>255</unfocusedAlpha>
     <textXOff>-30</textXOff>
     <textYOff>7</textYOff>
-    <textXOff2>540</textXOff2>
+    <textXOff2>570</textXOff2>
     <textYOff2>7</textYOff2>
     <IconXOff>1000</IconXOff>
     <IconYOff>1000</IconYOff>
@@ -281,6 +282,7 @@
     <spaceBetweenItems>0</spaceBetweenItems>
     <folderPrefix />
     <folderSuffix />
+    <scrollOffset>3</scrollOffset>
   </control>
   <control>
     <description>default checklistcontrol</description>
