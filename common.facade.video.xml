@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -14,7 +14,7 @@
           <id>50</id>
           <onleft>50</onleft>
           <onright>2</onright>
-	  <posX>685</posX>
+          <posX>685</posX>
         </control>
         <control>
           <description>Thumbnail Panel</description>
@@ -31,10 +31,10 @@
           <spinPosY>605</spinPosY>
           <spinPosX>1218</spinPosX>
           <spinColor>ffffffff</spinColor>
-<textureUp>arrowupnf.png</textureUp>
-<textureDown>arrowdownnf.png</textureDown>
-<textureUpFocus>arrowupfo.png</textureUpFocus>
-<textureDownFocus>arrowdownfo.png</textureDownFocus>
+          <textureUp>arrowupnf.png</textureUp>
+          <textureDown>arrowdownnf.png</textureDown>
+          <textureUpFocus>arrowupfo.png</textureUpFocus>
+          <textureDownFocus>arrowdownfo.png</textureDownFocus>
           <itemWidth>103</itemWidth>
           <itemHeight>132</itemHeight>
           <textureWidth>103</textureWidth>
@@ -61,35 +61,38 @@
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
+          <dimColor>90ffffff</dimColor>
           <id>50</id>
-          <posX>40</posX>
-          <posY>430</posY>
-          <width>1200</width>
+          <scrollOffset>2</scrollOffset>
+          <posX>0</posX>
+          <posY>220</posY>
+          <width>700</width>
+          <height>576</height>
           <onup>2</onup>
-          <spinPosY>630</spinPosY>
-          <spinPosX>1218</spinPosX>
-          <thumbWidth>106</thumbWidth>
-          <thumbHeight>156</thumbHeight>
-          <thumbPosX>13</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <itemWidth>120</itemWidth>
-          <itemHeight>180</itemHeight>
-          <textureWidth>275</textureWidth>
-          <textureHeight>395</textureHeight>
-          <imageFolderFocus>Framefocus.png</imageFolderFocus>
-          <frame>-</frame>
-          <frameFocus>video_filmstrip_frame.png</frameFocus>
+          <onleft>2</onleft>
+          <thumbWidth>115</thumbWidth>
+          <thumbHeight>180</thumbHeight>
+          <thumbPosX>2</thumbPosX>
+          <thumbPosY>2</thumbPosY>
+          <itemWidth>134</itemWidth>
+          <itemHeight>185</itemHeight>
+          <textureWidth>122</textureWidth>
+          <textureHeight>182</textureHeight>
+          <imageFolderFocus>Picture_cover.png</imageFolderFocus>
+          <frame>Picture_cover.png</frame>
+          <frameFocus>Picture_cover.png</frameFocus>
           <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png">
-          </thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
-          </InfoImage>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
           <showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
+          <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
+          <visible>facadeview.filmstrip</visible>
           <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+          <animation effect="rotatey" start="20" end="0" center="525,0" tween="back" ease="easeout" time="500" reversible="false">nofocus</animation>
+          <animation effect="rotatey" start="0" end="20" center="525,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
         </control>
         <control>
           <description>playlist listcontrol</description>
@@ -99,7 +102,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <description>Spin Control BG</description>
       <type>image</type>
@@ -111,7 +113,6 @@
       <texture>mediacountbg.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    
     <control>
       <description>Spin Control Label</description>
       <type>label</type>

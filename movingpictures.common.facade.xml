@@ -81,10 +81,10 @@ This file should contain the facade view
         <width>1160</width>
         <scrollOffset>3</scrollOffset>
         <onleft>2</onleft>
-        <spinPosY>745</spinPosY>
-        <spinPosX>100</spinPosX>
-        <spinWidth>24</spinWidth>
-        <spinHeight>24</spinHeight>
+        <spinPosY>30</spinPosY>
+        <spinPosX>1180</spinPosX>
+        <spinWidth>30</spinWidth>
+        <spinHeight>30</spinHeight>
         <spinColor>ffcccccc</spinColor>
         <itemWidth>160</itemWidth>
         <itemHeight>205</itemHeight>
@@ -94,11 +94,11 @@ This file should contain the facade view
         <thumbHeight>200</thumbHeight>
         <thumbPosX>2</thumbPosX>
         <thumbPosY>2</thumbPosY>
-        <thumbs flipY="false" diffuse="Thumb_Mask.png">unfocus</thumbs>
-        <InfoImage flipY="false" diffuse="Thumb_Mask.png"></InfoImage>
+        <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
+        <InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
         <imageFolderFocus>dvd_frame.png</imageFolderFocus>
-        <frame>mpdvd_cover.png</frame>
-        <frameFocus>mpdvd_cover.png</frameFocus>
+        <frame>dvd_frame.png</frame>
+        <frameFocus>dvd_frame.png</frameFocus>
         <background>Coverbig.png</background>
         <showFrame>yes</showFrame>
         <showFolder>no</showFolder>
