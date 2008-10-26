@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>101</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <import>common.dialog.xml</import>
+    <control>
+      <type>image</type>
+      <id>100</id>
+      <posX>434</posX>
+      <posY>462</posY>
+      <width>502</width>
+      <height>12</height>
+      <texture>osd_progress_background.png</texture>
+    </control>
+    <control>
+      <description>progress control</description>
+      <type>progress</type>
+      <id>20</id>
+      <posX>404</posX>
+      <posY>350</posY>
+      <width>472</width>
+      <height>12</height>
+      <texturebg>-</texturebg>
+      <lefttexture>osdprogressleft.png</lefttexture>
+      <midtexture>osdprogressmid.png</midtexture>
+      <righttexture>osdprogressright.png</righttexture>
+    </control>
+    <control>
+      <description>Cancel button</description>
+      <type>button</type>
+      <id>10</id>
+      <posX>909</posX>
+      <posY>400</posY>
+      <width>200</width>
+      <textXOff>80</textXOff>
+      <textYOff>5</textYOff>
+      <label>-</label>
+      <onleft>10</onleft>
+      <onright>10</onright>
+      <onup>10</onup>
+      <ondown>10</ondown>
+    </control>
+  </controls>
+</window>
