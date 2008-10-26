@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2600</id>
   <defaultcontrol>3</defaultcontrol>
@@ -9,46 +9,53 @@
   <define>#selecteditem:-</define>
   <controls>
     <import>common.time.xml</import>
-
-<control>
-	<description>weather background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>weather_bg.jpg</texture>
-</control>
-	
-<control>
-	<description>weather overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
+    <control>
+      <description>weather background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my weather.png</texture>
+    </control>
+    <control>
+      <description>weather overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>tvfanartoverlay.png</texture>
+    </control>
+    <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+    </control>
     <import>common.window.xml</import>
-	
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
       <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
+      <posX>5</posX>
+      <posY>210</posY>
       <layout>StackLayout</layout>
       <control>
         <description>Refresh Button</description>
         <type>button</type>
         <id>3</id>
         <label>184</label>
+        <height>20</height>
         <onup>17</onup>
       </control>
       <control>
@@ -56,18 +63,21 @@
         <type>button</type>
         <id>2</id>
         <label>716</label>
+        <height>20</height>
       </control>
       <control>
         <description>View Button</description>
         <type>button</type>
         <id>4</id>
         <label>185</label>
+        <height>20</height>
       </control>
       <control>
         <description>weather location select</description>
         <type>button</type>
         <id>5</id>
         <label>1028</label>
+        <height>20</height>
       </control>
     </control>
     <control>
@@ -81,103 +91,113 @@
       <texture>-</texture>
     </control>
     <control>
+      <description></description>
+      <type>label</type>
+      <id>0</id>
+      <posX>600</posX>
+      <posY>400</posY>
+      <label>Current Weather Conditions</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
       <description>Current Temp static label</description>
       <type>label</type>
       <id>223</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>460</posY>
       <label>Temp</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current feels like static label</description>
       <type>label</type>
       <id>224</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>490</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current UV Index static label</description>
       <type>label</type>
       <id>225</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>580</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current wind static label</description>
       <type>label</type>
       <id>226</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>610</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current dew static label</description>
       <type>label</type>
       <id>227</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>520</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current humidity static label</description>
       <type>label</type>
       <id>228</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>550</posY>
       <label>-</label>
-      <font>font13b</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun rise label</description>
-      <type>label</type>
-      <id>70</id>
-      <posX>218</posX>
-      <posY>637</posY>
-      <label>-</label>
-      <font>font13</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>sun rise static label</description>
       <type>label</type>
       <id>201</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>630</posY>
       <label>-</label>
-      <font>font13b</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun set label</description>
-      <type>label</type>
-      <id>202</id>
-      <posX>218</posX>
-      <posY>657</posY>
-      <label>-</label>
-      <font>font13</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>sun set static label</description>
       <type>label</type>
       <id>203</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>660</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>sun rise label</description>
+      <type>label</type>
+      <id>70</id>
+      <posX>770</posX>
+      <posY>637</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>sun set label</description>
+      <type>label</type>
+      <id>202</id>
+      <posX>770</posX>
+      <posY>657</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -185,26 +205,39 @@
       <type>label</type>
       <id>10</id>
       <posX>1271</posX>
-      <posY>35</posY>
-      <font>font14</font>
+      <posY>30</posY>
+      <font>mediastream11tc</font>
       <label>-</label>
       <align>right</align>
     </control>
     <control>
       <description>update time label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>600</posX>
+      <posY>695</posY>
+      <label>Last Refreshed:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>update time </description>
+      <type>label</type>
       <id>11</id>
-      <posX>35</posX>
-      <posY>35</posY>
+      <posX>770</posX>
+      <posY>695</posY>
       <label>-</label>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current weather icon</description>
       <type>image</type>
       <id>21</id>
-      <posX>34</posX>
-      <posY>243</posY>
+      <posX>970</posX>
+      <posY>450</posY>
+      <width>150</width>
+      <height>150</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
@@ -213,118 +246,140 @@
       <description>current condition label</description>
       <type>label</type>
       <id>22</id>
-      <posX>47</posX>
+      <posX>600</posX>
       <posY>383</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current temp label</description>
       <type>label</type>
       <id>23</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>457</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current feels like label</description>
       <type>label</type>
       <id>24</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>487</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current UV Index label</description>
       <type>label</type>
       <id>25</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>577</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current wind label</description>
       <type>label</type>
       <id>26</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>607</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current dew label</description>
       <type>label</type>
       <id>27</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>517</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>current humidity label</description>
       <type>label</type>
       <id>28</id>
-      <posX>218</posX>
+      <posX>770</posX>
       <posY>547</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 0 label</description>
       <type>label</type>
       <id>31</id>
-      <posX>470</posX>
-      <posY>460</posY>
+      <posX>600</posX>
+      <posY>245</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 0 Hi label</description>
       <type>label</type>
-      <id>32</id>
-      <posX>470</posX>
-      <posY>487</posY>
-      <label>-</label>
-      <font>font13</font>
+      <id>0</id>
+      <posX>700</posX>
+      <posY>310</posY>
+      <label>HIGH:</label>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
-      <description>day 0 low label</description>
+      <description>day 0 Hi value</description>
+      <type>label</type>
+      <id>32</id>
+      <posX>770</posX>
+      <posY>310</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 1 low label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>700</posX>
+      <posY>290</posY>
+      <label>LOW:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 0 low value</description>
       <type>label</type>
       <id>33</id>
-      <posX>470</posX>
-      <posY>517</posY>
+      <posX>770</posX>
+      <posY>290</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 0 general weather label</description>
       <type>label</type>
       <id>34</id>
-      <posX>470</posX>
-      <posY>640</posY>
+      <posX>130</posX>
+      <posY>280</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 0 icon</description>
       <type>image</type>
       <id>35</id>
-      <posX>470</posX>
-      <posY>540</posY>
+      <posX>600</posX>
+      <posY>270</posY>
+      <height>75</height>
+      <width>75</width>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
@@ -333,80 +388,120 @@
       <description>day 1 label</description>
       <type>label</type>
       <id>41</id>
-      <posX>630</posX>
-      <posY>460</posY>
+      <posX>130</posX>
+      <posY>330</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 1 Hi label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>130</posX>
+      <posY>355</posY>
+      <label>HIGH:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 1 Hi value</description>
+      <type>label</type>
       <id>42</id>
-      <posX>630</posX>
-      <posY>487</posY>
+      <posX>200</posX>
+      <posY>355</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 1 low label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>290</posX>
+      <posY>355</posY>
+      <label>LOW:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 1 low value</description>
+      <type>label</type>
       <id>43</id>
-      <posX>630</posX>
-      <posY>517</posY>
+      <posX>360</posX>
+      <posY>355</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 1 general weather label</description>
       <type>label</type>
       <id>44</id>
-      <posX>630</posX>
-      <posY>640</posY>
+      <posX>130</posX>
+      <posY>370</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 1 icon</description>
       <type>image</type>
       <id>45</id>
-      <posX>630</posX>
-      <posY>540</posY>
+      <posX>15</posX>
+      <posY>330</posY>
+      <height>75</height>
+      <width>75</width>
       <texture>-</texture>
-      <colorkey>FFFF00FF</colorkey>
-      <colordiffuse>White:#20</colordiffuse>
     </control>
     <control>
       <description>day 2 label</description>
       <type>label</type>
       <id>51</id>
-      <posX>790</posX>
-      <posY>460</posY>
+      <posX>130</posX>
+      <posY>430</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 2 Hi label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>130</posX>
+      <posY>455</posY>
+      <label>HIGH:</label>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 2 Hi label</description>
       <type>label</type>
       <id>52</id>
-      <posX>790</posX>
-      <posY>487</posY>
+      <posX>200</posX>
+      <posY>455</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 2 low label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>290</posX>
+      <posY>455</posY>
+      <label>LOW:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 2 low value</description>
+      <type>label</type>
       <id>53</id>
-      <posX>790</posX>
-      <posY>517</posY>
+      <posX>360</posX>
+      <posY>455</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -416,47 +511,67 @@
       <posX>790</posX>
       <posY>640</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 2 icon</description>
       <type>image</type>
       <id>55</id>
-      <posX>790</posX>
-      <posY>540</posY>
+      <posX>15</posX>
+      <posY>430</posY>
       <texture>-</texture>
-      <colorkey>FFFF00FF</colorkey>
-      <colordiffuse>White:#20</colordiffuse>
+      <height>75</height>
+      <width>75</width>
     </control>
     <control>
       <description>day 3 label</description>
       <type>label</type>
       <id>61</id>
-      <posX>950</posX>
-      <posY>460</posY>
+      <posX>130</posX>
+      <posY>530</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 3 Hi label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>130</posX>
+      <posY>555</posY>
+      <label>HIGH:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 3 Hi value</description>
+      <type>label</type>
       <id>62</id>
-      <posX>950</posX>
-      <posY>487</posY>
+      <posX>200</posX>
+      <posY>555</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 3 low label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>290</posX>
+      <posY>555</posY>
+      <label>LOW:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 3 low value</description>
+      <type>label</type>
       <id>63</id>
-      <posX>950</posX>
-      <posY>517</posY>
+      <posX>360</posX>
+      <posY>555</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -466,65 +581,87 @@
       <posX>950</posX>
       <posY>640</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 3 icon</description>
       <type>image</type>
       <id>65</id>
-      <posX>950</posX>
-      <posY>540</posY>
+      <posX>15</posX>
+      <posY>530</posY>
       <texture>-</texture>
-      <colorkey>FFFF00FF</colorkey>
-      <colordiffuse>White:#20</colordiffuse>
+      <height>75</height>
+      <width>75</width>
     </control>
     <control>
       <description>day 4 label</description>
       <type>label</type>
       <id>71</id>
-      <posX>1110</posX>
-      <posY>460</posY>
+      <posX>130</posX>
+      <posY>630</posY>
       <label>-</label>
-      <font>font13b</font>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 4 Hi label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>130</posX>
+      <posY>655</posY>
+      <label>HIGH:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 4 Hi value</description>
+      <type>label</type>
       <id>72</id>
-      <posX>1110</posX>
-      <posY>487</posY>
+      <posX>200</posX>
+      <posY>655</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 4 low label</description>
       <type>label</type>
+      <id>0</id>
+      <posX>290</posX>
+      <posY>655</posY>
+      <label>LOW:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>day 4 low value</description>
+      <type>label</type>
       <id>73</id>
-      <posX>1110</posX>
-      <posY>517</posY>
+      <posX>360</posX>
+      <posY>655</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 4 general weather label</description>
       <type>label</type>
       <id>74</id>
-      <posX>1110</posX>
-      <posY>640</posY>
+      <posX>15</posX>
+      <posY>680</posY>
       <label>-</label>
-      <font>font13</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
       <description>day 4 icon</description>
       <type>image</type>
       <id>75</id>
-      <posX>1110</posX>
-      <posY>540</posY>
+      <posX>15</posX>
+      <posY>630</posY>
+      <height>75</height>
+      <width>75</width>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
