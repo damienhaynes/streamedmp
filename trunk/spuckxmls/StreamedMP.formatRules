@@ -10,7 +10,7 @@
 <Enabled>1<Format><Episode.InfoPanelLine5Key><FormatAs>WRITER
 <Enabled>1<Format><Episode.InfoPanelLine5Value><FormatAs><Episode.Writer>
 <Enabled>1<Format><Episode.InfoPanelLine6Key><FormatAs>VIDEO INFO
-<Enabled>1<Format><Episode.InfoPanelLine6Value><FormatAs><Episode.videoWidth>x<Episode.videoHeight> (Eval(Round(<Episode.VideoAspectRatio>*100)/100)) Eval(Round(<Episode.VideoFrameRate>*1000)/1000)fps (<Episode.VideoCodec>) Eval(Round(PrettyBytes1000(<Episode.VideoBitrate>)*10)/10-> | Kbps| Mbps| Gbps) (<Episode.AudioCodec>) Eval(Round(PrettyBytes1000(<Episode.AudioBitrate>)*10)/10-> | Kbps| Mbps| Gbps)
+<Enabled>1<Format><Episode.InfoPanelLine6Value><FormatAs>[<Episode.videoWidth>x<Episode.videoHeight>] [Eval(Round(<Episode.VideoAspectRatio>*100)/100)] [Eval(Round(<Episode.VideoFrameRate>*1000)/1000)fps] [<Episode.VideoCodec>] [Eval(Round(PrettyBytes1000(<Episode.VideoBitrate>))-> | Kbps| Mbps| Gbps)] [<Episode.AudioCodec>] [Eval(Round(PrettyBytes1000(<Episode.AudioBitrate>))-> | Kbps| Mbps| Gbps)]
 <Enabled>1<Format><Series.InfoPanelLine1Key><FormatAs>GENRE
 <Enabled>1<Format><Series.InfoPanelLine1Value><FormatAs><Series.Genre>
 <Enabled>1<Format><Series.InfoPanelLine2Key><FormatAs>FIRST AIRED
@@ -19,8 +19,8 @@
 <Enabled>1<Format><Series.InfoPanelLine3Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10 (RATED: <Series.myRating>)
 <Enabled>1<Format><Series.InfoPanelLine4Key><FormatAs>RUNTIME
 <Enabled>1<Format><Series.InfoPanelLine4Value><FormatAs><Series.Runtime> mins
-<Enabled>1<Format>x () fps<FormatAs>N/A
-<Enabled>1<Format>()  ()<FormatAs>N/A
+<Enabled>1<Format>[x] [] [fps] [] [] [] []<FormatAs>N / A
+<Enabled>1<Format> [-1 ] <FormatAs> 
 <Enabled>1<Format>V_MPEG4/ISO/AVC<FormatAs>H264
 <Enabled>1<Format>MPA1L3<FormatAs>MP3
 <Enabled>1<Format>MPA2L3<FormatAs>MP3
