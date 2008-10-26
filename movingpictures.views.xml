@@ -273,14 +273,15 @@ This file should contain all items visible when the plug-in is in its various fa
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
+      <description>Overlay</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>468</posY>
+      <posY>0</posY>
       <width>1280</width>
-      <height>300</height>
-      <texture>mpoverlay_bottom.png</texture>
-      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+      <height>720</height>
+      <texture>movingpics_overlay.png</texture>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <!--**********************Images For list View********************-->
     <control>
@@ -316,12 +317,14 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Cover Art</description>
       <type>image</type>
       <id>60</id>
-      <posX>490</posX>
-      <posY>435</posY>
+      <posX>50</posX>
+      <posY>200</posY>
       <width>215</width>
       <height>308</height>
       <texture>#MovingPictures.Coverart</texture>
-      <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(100)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">hidden</animation>
+      <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
     </control>
     <control>
       <type>image</type>
