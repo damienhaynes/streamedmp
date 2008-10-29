@@ -112,6 +112,106 @@ multiple view modes.
     
     <!-- ***************** All Views / Stuffs ***************************************** -->
     
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>7</defaultcontrol>
+      <onexit>50</onexit>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+              <type>image</type>
+              <posX>0</posX>
+              <posY>0</posY>
+              <width>256</width>
+              <height>720</height>
+              <texture>hiddenmenu_left.png</texture>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+              <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+              <id>0</id>
+              <label>SWITCH</label>
+              <type>label</type>
+              <font>mediastream12tc</font>
+              <posX>15</posX>
+              <posY>226</posY>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+              <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+              <id>0</id>
+              <label>SETTINGS</label>
+              <type>label</type>
+              <font>mediastream12tc</font>
+              <posX>15</posX>
+              <posY>325</posY>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+              <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <posX>0</posX>
+        <posY>250</posY>
+        <width>256</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Cycle Text</description>
+          <type>button</type>
+          <id>7</id>
+          <label>Cycle text</label>
+          <onup>5</onup>
+          <ondown>2</ondown>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Toggle View</description>
+          <type>button</type>
+          <id>2</id>
+          <label>Toggle View</label>
+          <onup>7</onup>
+          <ondown>4</ondown>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Filters Menu</description>
+          <type>button</type>
+          <id>4</id>
+          <label>Filters</label>
+          <onup>2</onup>
+          <ondown>5</ondown>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Settings Menu</description>
+          <type>button</type>
+          <id>5</id>
+          <label>Settings</label>
+          <onup>4</onup>
+          <ondown>7</ondown>
+          <onright>50</onright>
+        </control>
+      </control>
+    </control>
+    
     <import>common.window.xml</import>
     
     <control>
@@ -119,9 +219,9 @@ multiple view modes.
       <description>Dummy for watched flag</description>
       <type>label</type>
       <id>9200</id>
-      <posX>-2000</posX>
-      <label>#MovingPictures.SelectedMovie.watched</label>
-      <visible>#MovingPictures.SelectedMovie.watched</visible>
+      <posX>100</posX>
+      <label>#MovingPictures.watched</label>
+      <visible>#MovingPictures.watched</visible>
       <!--
       <visible>Control.IsVisible(9200)</visible>   =   watched
       <visible>!Control.IsVisible(9200)</visible>  =   unwatched
@@ -166,7 +266,6 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
-    <!-- NOT WORKING YET
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -202,7 +301,6 @@ multiple view modes.
       <texture>overlayunwatched.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
     </control>
-    -->
     
     <control>
       <description>Movie Title</description>

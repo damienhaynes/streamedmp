@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>4</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#itemcount:-</define>
+  <define>#selecteditem:#highlightedbutton</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="100" start="-356,0">visible</animation>
+      <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      <posX>0</posX>
+      <posY>100</posY>
+      <width>256</width>
+      <height>720</height>
+      <layout>StackLayout</layout>
+      
+      <control>
+        <description>Wizard</description>
+        <type>button</type>
+        <id>3</id>
+        <label>1200</label>
+        <hyperlink>615</hyperlink>
+        <onup>17</onup>
+      </control>
+      
+      <control>
+        <description>General</description>
+        <type>button</type>
+        <id>4</id>
+        <label>128</label>
+        <hyperlink>705</hyperlink>
+      </control>
+      
+      <control>
+        <description>Screen</description>
+        <type>button</type>
+        <id>5</id>
+        <label>6023</label>
+        <hyperlink>9</hyperlink>
+      </control>
+      
+      <control>
+        <description>TV</description>
+        <type>button</type>
+        <id>10</id>
+        <label>605</label>
+        <hyperlink>700</hyperlink>
+      </control>
+      
+      <control>
+        <description>My Pictures</description>
+        <type>button</type>
+        <id>7</id>
+        <label>1</label>
+        <hyperlink>12</hyperlink>
+      </control>
+      
+      <control>
+        <description>Movies</description>
+        <type>button</type>
+        <id>8</id>
+        <label>3</label>
+        <hyperlink>703</hyperlink>
+      </control>
+      
+      <control>
+        <description>My DVD</description>
+        <type>button</type>
+        <id>9</id>
+        <label>1027</label>
+        <hyperlink>704</hyperlink>
+      </control>
+      
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      
+      <control>
+        <description>My Music</description>
+        <type>button</type>
+        <id>6</id>
+        <label>2</label>
+        <hyperlink>14</hyperlink>
+      </control>
+      
+      <control>
+        <description>Skin Info</description>
+        <type>button</type>
+        <id>11</id>
+        <label>Skin Info</label>
+        <hyperlink>88889</hyperlink>
+        <ondown>99</ondown>
+      </control>
+    </control>
+  </controls>
+</window>

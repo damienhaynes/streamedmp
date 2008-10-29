@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
+    
     <control>
       <type>image</type>
       <description>BG</description>
@@ -8,27 +9,64 @@
       <width>1280</width>
       <height>720</height>
     </control>
+    
     <control>
       <type>image</type>
       <id>1</id>
-      <posX>1306</posX>
-      <posY>20</posY>
-      <width>40</width>
-      <height>40</height>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
       <texture>#header.hover</texture>
     </control>
+    
     <control>
-      <type>label</type>
-      <description>e.g. Setup TV</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1286</posX>
-      <posY>10</posY>
-      <label>#header.label</label>
-      <font>font18</font>
-      <textcolor>20ffffff</textcolor>
-      <align>right</align>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
     </control>
+    
+    <control>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>hiddenmenu_left.png</texture>
+      <animation effect="slide" time="100" start="-356,0">visible</animation>
+      <animation effect="slide" time="100" end="-356,0">hidden</animation>
+    </control>
+    
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+    </control>
+    
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+    </control>
+    
+    <!--
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -39,6 +77,6 @@
       <font>font14</font>
       <label>#selecteditem</label>
       <align>right</align>
-    </control>
+    </control>-->
   </controls>
 </window>
