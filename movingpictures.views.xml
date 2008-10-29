@@ -17,7 +17,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>685</posX>
+      <posX>700</posX>
       <posY>435</posY>
       <width>650</width>
       <font>mediastream16tcb</font>
@@ -29,7 +29,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Genre Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>685</posX>
+      <posX>700</posX>
       <posY>495</posY>
       <textcolor>#smalltitle.color</textcolor>
       <font>mediastream12tc</font>
@@ -40,7 +40,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Genre Value</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>810</posX>
+      <posX>825</posX>
       <posY>495</posY>
       <width>300</width>
       <textcolor>ffffff</textcolor>
@@ -52,7 +52,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Year Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>685</posX>
+      <posX>700</posX>
       <posY>520</posY>
       <textcolor>#smalltitle.color</textcolor>
       <font>mediastream12tc</font>
@@ -63,7 +63,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Year Value</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>810</posX>
+      <posX>825</posX>
       <posY>520</posY>
       <width>300</width>
       <textcolor>ffffff</textcolor>
@@ -75,7 +75,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Runtime Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>685</posX>
+      <posX>700</posX>
       <posY>545</posY>
       <textcolor>#smalltitle.color</textcolor>
       <font>mediastream12tc</font>
@@ -86,7 +86,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Runtime</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>810</posX>
+      <posX>825</posX>
       <posY>545</posY>
       <width>300</width>
       <textcolor>ffffff</textcolor>
@@ -98,7 +98,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>685</posX>
+      <posX>700</posX>
       <posY>575</posY>
       <width>580</width>
       <height>130</height>
@@ -321,10 +321,9 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>200</posY>
       <width>215</width>
       <height>308</height>
-      <texture>#MovingPictures.Coverart</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
-      <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">hidden</animation>
-      <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
+      <animation effect="rotatey" start="10" end="10" center="10,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
     </control>
     <control>
       <type>image</type>
