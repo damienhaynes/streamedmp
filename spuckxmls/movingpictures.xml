@@ -214,20 +214,6 @@ multiple view modes.
     
     <import>common.window.xml</import>
     
-    <control>
-      <!-- This does not yet work with current version -->
-      <description>Dummy for watched flag</description>
-      <type>label</type>
-      <id>9200</id>
-      <posX>100</posX>
-      <label>#MovingPictures.watched</label>
-      <visible>#MovingPictures.watched</visible>
-      <!--
-      <visible>Control.IsVisible(9200)</visible>   =   watched
-      <visible>!Control.IsVisible(9200)</visible>  =   unwatched
-      -->
-    </control>
-    
     <!--********************* ListView Only **************************-->
     
     <control>
@@ -266,6 +252,8 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
+    <!-- Not working until 0.6.0 release..
+    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -301,6 +289,8 @@ multiple view modes.
       <texture>overlayunwatched.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9200)</visible>
     </control>
+    
+    -->
     
     <control>
       <description>Movie Title</description>
