@@ -4,18 +4,7 @@
   <defaultcontrol>218</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
-    <import>common.progressbar.xml</import>
-    <control>
-      <description>Current Time Info</description>
-      <type>label</type>
-      <id>110</id>
-      <posX>1250</posX>
-      <posY>555</posY>
-      <label>#date | #time</label>
-      <align>right</align>
-      <textcolor>ff808080</textcolor>
-      <font>mediastream11c</font>
-    </control>
+    <import>common.time.xml</import>
     <control>
       <description>background</description>
       <type>image</type>
@@ -26,15 +15,16 @@
       <height>197</height>
       <texture>osdbackground.png</texture>
     </control>
+    <import>common.progressbar.xml</import>
     <control>
       <description>TV Logo</description>
       <type>image</type>
       <id>102</id>
-      <posX>640</posX>
-      <posY>557</posY>
-      <width>324</width>
-      <height>153</height>
-      <centered>yes</centered>
+      <posX>60</posX>
+      <posY>555</posY>
+      <width>400</width>
+      <height>100</height>
+      <align>right</align>
       <texture>#Play.Current.Thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
     </control>
@@ -42,13 +32,14 @@
       <description>Movie Name</description>
       <id>36</id>
       <type>fadelabel</type>
-      <width>600</width>
-      <posX>25</posX>
-      <posY>555</posY>
-      <font>mediastream14tc</font>
-      <label>#Play.Current.Title</label>
-      <textcolor>ff808080</textcolor>
+      <width>700</width>
+      <posX>250</posX>
+      <posY>595</posY>
+      <font>mediastream12tc</font>
+      <label>#Play.Current.Title </label>
+      <textcolor>ffFFFFFF</textcolor>
     </control>
+    <!-- Who needs this when playing a movie?
     <control>
       <description>Plot</description>
       <type>textboxscrollup</type>
@@ -57,11 +48,11 @@
       <posY>585</posY>
       <width>600</width>
       <height>130</height>
-      <seperator>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
+      <seperator></seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream12</font>
     </control>
-    
+    -->
     <control>
       <description>Sub Menu Background (subtitles)</description>
       <type>image</type>
@@ -136,8 +127,8 @@
       <description>Subtitles</description>
       <type>togglebutton</type>
       <id>218</id>
-      <posX>1050</posX>
-      <posY>605</posY>
+      <posX>1028</posX>
+      <posY>565</posY>
       <width>50</width>
       <height>52</height>
       <AltTextureFocus>osdsubtitlesfo.png</AltTextureFocus>
@@ -155,8 +146,8 @@
       <description>Bookmarks Menu</description>
       <type>togglebutton</type>
       <id>219</id>
-      <posX>1100</posX>
-      <posY>605</posY>
+      <posX>1078</posX>
+      <posY>565</posY>
       <width>50</width>
       <height>52</height>
       <AltTextureFocus>osdbookmarksfo.png</AltTextureFocus>
@@ -174,8 +165,8 @@
       <description>Video Menu</description>
       <type>togglebutton</type>
       <id>220</id>
-      <posX>1150</posX>
-      <posY>605</posY>
+      <posX>1128</posX>
+      <posY>565</posY>
       <width>50</width>
       <height>52</height>
       <AltTextureFocus>osdvideofo.png</AltTextureFocus>
@@ -193,8 +184,8 @@
       <description>Audio Menu</description>
       <type>togglebutton</type>
       <id>221</id>
-      <posX>1200</posX>
-      <posY>605</posY>
+      <posX>1178</posX>
+      <posY>565</posY>
       <width>50</width>
       <height>52</height>
       <AltTextureFocus>osdaudiofo.png</AltTextureFocus>
@@ -522,8 +513,8 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1240</posX>
-      <posY>670</posY>
+      <posX>1220</posX>
+      <posY>630</posY>
       <label>Subtitles</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -534,8 +525,8 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1240</posX>
-      <posY>670</posY>
+      <posX>1220</posX>
+      <posY>630</posY>
       <label>Bookmarks</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -546,8 +537,8 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1240</posX>
-      <posY>670</posY>
+      <posX>1220</posX>
+      <posY>630</posY>
       <label>Video Menu</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -558,8 +549,8 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1240</posX>
-      <posY>670</posY>
+      <posX>1220</posX>
+      <posY>630</posY>
       <label>Audio Menu</label>
       <font>mediastream10tc</font>
       <align>right</align>
