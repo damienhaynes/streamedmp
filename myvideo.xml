@@ -6,7 +6,6 @@
   <define>#header.label:134</define>
   <define>#header.hover:hover_my videos.png</define>
   <controls>
-        
     <control>
       <description>movies background image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -18,7 +17,6 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
-    
     <control>
       <description>movies overlay image</description>
       <type>image</type>
@@ -30,7 +28,6 @@
       <texture>tvfanartoverlay.png</texture>
       <visible>!facadeview.filmstrip</visible>
     </control>
-    
     <control>
       <description>Filmstrip black background - FilmStripView</description>
       <type>image</type>
@@ -42,7 +39,6 @@
       <texture>black.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    
     <control>
       <description>Backdrop Overlay - FilmStripView</description>
       <type>image</type>
@@ -55,7 +51,6 @@
       <texture>movieviewbg.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    
     <control>
       <description>Glasstitlebar - FilmStripView</description>
       <type>image</type>
@@ -68,9 +63,7 @@
       <texture>glasstitlebar.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    
     <import>common.window.xml</import>
-    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -81,50 +74,50 @@
       <width>100</width>
       <height>568</height>
       <dimColor>00ffffff</dimColor>
-        <control>
-                <type>image</type>
-                <posX>0</posX>
-                <posY>0</posY>
-                <width>256</width>
-                <height>720</height>
-                <texture>hiddenmenu_left.png</texture>
-                <visible>!Control.HasFocus(50)</visible>
-                <animation effect="slide" time="100" start="-356,0">visible</animation>
-                <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        </control>
-        <control>
-                <id>0</id>
-                <label>VIEW OPTIONS</label>
-                <type>label</type>
-                <font>mediastream12tc</font>
-                <posX>15</posX>
-                <posY>226</posY>
-                <visible>!Control.HasFocus(50)</visible>
-                <animation effect="slide" time="100" start="-356,0">visible</animation>
-                <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        </control>
-        <control>
-                <id>0</id>
-                <label>PLAYLIST</label>
-                <type>label</type>
-                <font>mediastream12tc</font>
-                <posX>15</posX>
-                <posY>355</posY>
-                <visible>!Control.HasFocus(50)</visible>
-                <animation effect="slide" time="100" start="-356,0">visible</animation>
-                <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        </control>
-        <control>
-                <id>0</id>
-                <label>JUMP TO</label>
-                <type>label</type>
-                <font>mediastream12tc</font>
-                <posX>15</posX>
-                <posY>450</posY>
-                <visible>!Control.HasFocus(50)</visible>
-                <animation effect="slide" time="100" start="-356,0">visible</animation>
-                <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        </control>
+      <control>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>256</width>
+        <height>720</height>
+        <texture>hiddenmenu_left.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>VIEW OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>226</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>PLAYLIST</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>355</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>JUMP TO</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>450</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
       <control>
         <type>group</type>
         <description>group element</description>
@@ -209,7 +202,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <id>0</id>
       <type>image</type>
@@ -220,10 +212,7 @@
       <texture>#selectedthumb</texture>
       <visible>!facadeview.filmstrip</visible>
     </control>
-    
     <import>common.facade.video.xml</import>
-    
     <import>common.time.xml</import>
-    
   </controls>
 </window>

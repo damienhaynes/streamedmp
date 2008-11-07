@@ -6,7 +6,7 @@ multiple view modes.
 -->
 <window>
   <id>96742</id>
-  <defaultcontrol>50</defaultcontrol>
+  <defaultcontrol>69</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <!-- 
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
@@ -49,6 +49,20 @@ multiple view modes.
       <width>10</width>
       <height>10</height>
       <visible>Control.IsVisible(1)</visible>
+    </control>
+    <control>
+      <description>Dummy Label for Cover</description>
+      <type>button</type>
+      <id>69</id>
+      <posX>-600</posX>
+      <posY>0</posY>
+      <ondown>50</ondown>
+      <onleft>50</onleft>
+      <onright>50</onright>
+      <onup>50</onup>
+      <width>10</width>
+      <height>10</height>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
       <description>Background to be displayed when there is no Movie Backdrop</description>

@@ -4,30 +4,56 @@
     <control>
       <description>group element</description>
       <type>group</type>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="rotatey" start="15" end="0" center="600,0" tween="back" ease="easeout" time="500" reversible="false">hidden</animation>
+      <animation effect="rotatey" start="0" end="15" center="600,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
         <id>50</id>
-        <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-        <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
         <control>
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>720</posX>
           <posY>250</posY>
-          <font>font13</font>
-          <font2>mediastream10</font2>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <height>450</height>
+          <textureHeight>55</textureHeight>
+          <scrollOffset>2</scrollOffset>
+          <font>mediastream12tcb</font>
+          <font2>mediastream12tcb</font2>
+          <IconXOff>5</IconXOff>
+          <IconYOff>5</IconYOff>
+          <textXOff>25</textXOff>
+          <itemWidth>45</itemWidth>
+          <itemHeight>45</itemHeight>
+          <unfocusedAlpha>100</unfocusedAlpha>
         </control>
         <control>
           <description>album view listcontrol</description>
           <type>listcontrol</type>
           <subtype>album</subtype>
           <id>50</id>
-          <posX>720</posX>
-          <posY>250</posY>
           <font>font13</font>
-          <font2>mediastream10</font2>
+          <font2>font13</font2>
+          <selectedColor>80000000</selectedColor>
+          <textcolor>ffffffff</textcolor>
+          <selectedColor2>ffffffff</selectedColor2>
+          <textcolor2>ffffffff</textcolor2>
+          <textXOff2>420</textXOff2>
+          <textYOff2>60</textYOff2>
+          <itemWidth>72</itemWidth>
+          <itemHeight>72</itemHeight>
+          <spaceBetweenItems>14</spaceBetweenItems>
+          <textureHeight>90</textureHeight>
+          <scrollOffset>1</scrollOffset>
+          <textureFocus>album_background_focus.png</textureFocus>
+          <textureNoFocus>album_background_nofocus.png</textureNoFocus>
           <onleft>2</onleft>
           <onright>50</onright>
           <onup>2</onup>
@@ -37,82 +63,70 @@
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
-          <posX>0</posX>
-          <posY>225</posY>
-          <width>750</width>
-          <height>500</height>
-          <spinWidth>16</spinWidth>
-          <spinHeight>16</spinHeight>
-          <spinPosY>605</spinPosY>
-          <spinPosX>540</spinPosX>
-          <spinColor>ffffffff</spinColor>
-          <textureUp>arrowupnf.png</textureUp>
-          <textureDown>arrowdownnf.png</textureDown>
-          <textureUpFocus>arrowupfo.png</textureUpFocus>
-          <textureDownFocus>arrowdownfo.png</textureDownFocus>
-          <itemWidth>101</itemWidth>
-          <itemHeight>100</itemHeight>
-          <textureWidth>100</textureWidth>
-          <textureHeight>95</textureHeight>
-          <thumbWidth>70</thumbWidth>
-          <thumbHeight>70</thumbHeight>
-          <thumbPosX>13</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <thumbZoom>no</thumbZoom>
-          <imageFolder>-</imageFolder>
-          <imageFolderFocus>-</imageFolderFocus>
-          <suffix>|</suffix>
-          <textureWidthBig>165</textureWidthBig>
-          <textureHeightBig>155</textureHeightBig>
-          <itemWidthBig>165</itemWidthBig>
-          <itemHeightBig>165</itemHeightBig>
-          <thumbWidthBig>123</thumbWidthBig>
-          <thumbHeightBig>121</thumbHeightBig>
-          <thumbPosXBig>17</thumbPosXBig>
-          <thumbPosYBig>14</thumbPosYBig>
-          <thumbZoom>yes</thumbZoom>
-          <enableFocusZoom>yes</enableFocusZoom>
-          <scrollOffset>1</scrollOffset>
+          <posX>50</posX>
+          <posY>105</posY>
+          <width>660</width>
+          <height>471</height>
+          <scrollOffset>0</scrollOffset>
           <onleft>2</onleft>
-          <onright>50</onright>
-          <onup>2</onup>
-          <ondown>2</ondown>
+          <onright>2</onright>
+          <textureWidthBig>96</textureWidthBig>
+          <textureHeightBig>96</textureHeightBig>
+          <itemWidthBig>130</itemWidthBig>
+          <thumbWidthBig>100</thumbWidthBig>
+          <thumbWidthBig>82</thumbWidthBig>
+          <thumbHeightBig>82</thumbHeightBig>
+          <thumbPosXBig>6</thumbPosXBig>
+          <thumbPosYBig>6</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <zoomXPixels>30</zoomXPixels>
+          <zoomYPixels>30</zoomYPixels>
+          <hideUnfocusTexture>no</hideUnfocusTexture>
+          <renderFocusText>no</renderFocusText>
+          <renderUnfocusText>yes</renderUnfocusText>
         </control>
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
+          <dimColor>90ffffff</dimColor>
           <id>50</id>
-          <posX>60</posX>
-          <posY>170</posY>
-          <width>1300</width>
+          <scrollOffset>1</scrollOffset>
+          <posX>0</posX>
+          <posY>220</posY>
+          <width>700</width>
+          <height>576</height>
           <onup>2</onup>
-          <spinPosY>630</spinPosY>
-          <spinPosX>1218</spinPosX>
-          <thumbWidth>245</thumbWidth>
-          <thumbHeight>245</thumbHeight>
-          <thumbPosX>12</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <itemWidth>248</itemWidth>
-          <itemHeight>245</itemHeight>
-          <textureWidth>275</textureWidth>
-          <textureHeight>272</textureHeight>
-          <imageFolderFocus>Framefocus.png</imageFolderFocus>
-          <frame>-</frame>
-          <frameFocus>music_filmstrip_frame.png</frameFocus>
+          <onleft>2</onleft>
+          <thumbWidth>143</thumbWidth>
+          <thumbHeight>143</thumbHeight>
+          <thumbPosX>4</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <itemWidth>158</itemWidth>
+          <itemHeight>185</itemHeight>
+          <textureWidth>152</textureWidth>
+          <textureHeight>152</textureHeight>
+          <imageFolderFocus>Picture_cover.png</imageFolderFocus>
+          <frame>Picture_cover.png</frame>
+          <frameFocus>Picture_cover.png</frameFocus>
           <background>Coverbig.png</background>
           <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
           <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
           <showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
+          <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
           <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+          <animation effect="rotatey" start="20" end="0" center="525,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
+          <animation effect="rotatey" start="0" end="20" center="525,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
         </control>
         <control>
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
           <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
           <scrollOffset>2</scrollOffset>
         </control>
       </control>
