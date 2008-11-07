@@ -7,7 +7,6 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my music.png</define>
   <controls>
-    <import>common.time.xml</import>
     <control>
       <description>music background image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -234,5 +233,6 @@
     </control>
     <import>common.facade.music.xml</import>
     <import>common.overlays.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>
