@@ -62,63 +62,6 @@
       <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
     </control>
     <control>
-      <type>textboxscrollup</type>
-      <description>Description (graphical)-Main View</description>
-      <id>631</id>
-      <posX>890</posX>
-      <posY>350</posY>
-      <width>370</width>
-      <height>345</height>
-      <seperator>----------------------------------------------------------------------------------------------------</seperator>
-      <textcolor>ffffff</textcolor>
-      <font>mediastream10</font>
-      <label>#TVSeries.Description</label>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-    </control>
-    <control>
-      <description>Series Title</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <posX>890</posX>
-      <posY>220</posY>
-      <width>370</width>
-      <height>365</height>
-      <textcolor>ffffff</textcolor>
-      <font>mediastream16tc</font>
-      <label>#TVSeries.Title</label>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-    </control>
-    <control Style="TVSeriesTitle">
-      <label>#TVSeries.Series.InfoPanelLine1Key</label>
-      <type>fadelabel</type>
-      <posX>890</posX>
-      <posY>285</posY>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-    </control>
-    <control Style="TVSeriesLabel">
-      <label>#TVSeries.Series.InfoPanelLine1Value</label>
-      <type>fadelabel</type>
-      <posX>1040</posX>
-      <posY>285</posY>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-      <width>230</width>
-    </control>
-    <control Style="TVSeriesTitle">
-      <label>#TVSeries.Series.InfoPanelLine2Key</label>
-      <type>fadelabel</type>
-      <posX>890</posX>
-      <posY>315</posY>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-    </control>
-    <control Style="TVSeriesLabel">
-      <label>#TVSeries.Series.InfoPanelLine2Value</label>
-      <type>fadelabel</type>
-      <posX>1040</posX>
-      <posY>315</posY>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-      <width>230</width>
-    </control>
-    <control>
       <description>TVDB Series Rating Stars</description>
       <type>image</type>
       <id>1</id>
@@ -127,7 +70,7 @@
       <width>250</width>
       <height>20</height>
       <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+      <visible>false</visible>
     </control>
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
     <control>
@@ -518,16 +461,12 @@
           <description>graphical thumbpanel (series and seasons if set)</description>
           <type>thumbnailpanel</type>
           <id>50</id>
-          <posX>50</posX>
-          <posY>215</posY>
-          <width>900</width>
+          <posX>10</posX>
+          <posY>250</posY>
+          <width>1306</width>
           <height>480</height>
-          <spinPosX>465</spinPosX>
-          <spinPosY>680</spinPosY>
-          <textureUp>arrowupnf.png</textureUp>
-          <textureDown>arrowdownnf.png</textureDown>
-          <spinWidth>16</spinWidth>
-          <spinHeight>16</spinHeight>
+          <spinPosX>1273</spinPosX>
+          <spinPosY>735</spinPosY>
           <!-- Textures -->
           <imageFolder>tvseries_banner_nofocus.png</imageFolder>
           <imageFolderFocus>tvseries_focusframe.png</imageFolderFocus>
@@ -545,10 +484,10 @@
           <itemWidthBig>422</itemWidthBig>
           <itemHeightBig>88</itemHeightBig>
           <!-- boxes -->
-          <textureWidthBig>418</textureWidthBig>
+          <textureWidthBig>423</textureWidthBig>
           <textureHeightBig>86</textureHeightBig>
           <!-- banners -->
-          <thumbWidthBig>380</thumbWidthBig>
+          <thumbWidthBig>385</thumbWidthBig>
           <thumbHeightBig>76</thumbHeightBig>
           <thumbPosXBig>19</thumbPosXBig>
           <thumbPosYBig>5</thumbPosYBig>
@@ -559,6 +498,8 @@
           <keepaspectratio>no</keepaspectratio>
           <enableFocusZoom>no</enableFocusZoom>
           <unfocusedAlpha>100</unfocusedAlpha>
+          <animation effect="fade" time="400">WindowOpen</animation>
+          <animation effect="fade" time="250">WindowClose</animation>
         </control>
         <!-- 10 lined version -->
         <control>
@@ -620,5 +561,6 @@
       <Duration>0:0:01.5</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>
+    <import>TVSeries.infobox.xml</import>
   </controls>
 </window>

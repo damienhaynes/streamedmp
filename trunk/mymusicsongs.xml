@@ -28,7 +28,7 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>streamed_overlay.png</texture>
+      <texture>mainoverlay.png</texture>
     </control>
     <control>
       <id>204</id>
@@ -37,8 +37,18 @@
       <posY>250</posY>
       <width>348</width>
       <height>348</height>
+      <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-      <visible>facadeview.list|facadeview.album</visible>
+    </control>
+    <control>
+      <id>204</id>
+      <type>image</type>
+      <posX>170</posX>
+      <posY>250</posY>
+      <width>348</width>
+      <height>348</height>
+      <texture>albumnocover.png</texture>
+      <visible>facadeview.list+!control.hasthumb(204)|facadeview.album+!control.hasthumb(204)</visible>
     </control>
     <control>
       <id>204</id>
@@ -57,12 +67,6 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>-210</buttonX>
-      <buttonY>64</buttonY>
-      <buttonwidth>385</buttonwidth>
-      <buttonheight>515</buttonheight>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
       <posX>0</posX>
       <posY>0</posY>
       <width>100</width>
@@ -70,70 +74,139 @@
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
+        <posX>0</posX>
         <posY>0</posY>
-        <width>220</width>
+        <width>256</width>
         <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
+        <texture>hiddenmenu_left.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>VIEW OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>226</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>PLAYLIST</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>355</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>JUMP TO</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>450</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
-        <posY>80</posY>
+        <posY>250</posY>
+        <width>256</width>
+        <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <description>View-As button</description>
+          <description>View-As</description>
           <type>button</type>
           <id>2</id>
           <label>100</label>
+          <onup>10</onup>
           <onright>50</onright>
-          <onup>17</onup>
-          <ondown>3</ondown>
         </control>
         <control>
+          <description>Sort</description>
           <type>sortbutton</type>
           <id>3</id>
           <label>103</label>
-          <onright>50</onright>
-          <onup>2</onup>
-          <ondown>6</ondown>
         </control>
         <control>
           <description>Switch View</description>
           <type>button</type>
-          <id>6</id>
+          <id>5</id>
           <label>457</label>
           <onright>50</onright>
-          <onup>3</onup>
-          <ondown>11</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Current Playlist</description>
+          <type>button</type>
+          <id>20</id>
+          <label>4555</label>
+          <action>33</action>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>My Playlists</description>
+          <type>button</type>
+          <id>9</id>
+          <label>983</label>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
         </control>
         <control>
           <description>Now playing button</description>
           <type>button</type>
           <id>11</id>
           <label>4540</label>
+          <onup>9</onup>
+          <ondown>18</ondown>
           <onright>50</onright>
-          <onup>6</onup>
-          <ondown>14</ondown>
           <hyperlink>510</hyperlink>
+        </control>
+        <control>
+          <description>Radio</description>
+          <type>button</type>
+          <id>18</id>
+          <label>665</label>
+          <onright>50</onright>
+          <onup>11</onup>
+          <ondown>14</ondown>
+          <hyperlink>30</hyperlink>
         </control>
         <control>
           <description>Global Search</description>
           <type>button</type>
           <id>14</id>
-          <label>Global Search</label>
-          <onright>50</onright>
-          <onup>11</onup>
+          <onup>18</onup>
           <ondown>16</ondown>
-          <visible>plugin.isenabled(Global search)</visible>
+          <onright>50</onright>
+          <label>Global Search</label>
           <hyperlink>30885</hyperlink>
+          <visible>plugin.isenabled(Global search)</visible>
         </control>
         <control>
           <description>My Lyrics</description>
@@ -142,49 +215,8 @@
           <label>Lyrics</label>
           <onright>50</onright>
           <onup>14</onup>
-          <ondown>15</ondown>
-          <visible>plugin.isenabled(My Lyrics)</visible>
           <hyperlink>90478</hyperlink>
-        </control>
-        <control>
-          <description>Music Trivia</description>
-          <type>button</type>
-          <id>15</id>
-          <label>Music Trivia</label>
-          <onright>50</onright>
-          <onup>16</onup>
-          <ondown>18</ondown>
-          <visible>plugin.isenabled(Music Trivia)</visible>
-          <hyperlink>6622</hyperlink>
-        </control>
-        <control>
-          <description>Radio</description>
-          <type>button</type>
-          <id>18</id>
-          <label>665</label>
-          <onright>50</onright>
-          <onup>15</onup>
-          <ondown>9</ondown>
-          <hyperlink>30</hyperlink>
-        </control>
-        <control>
-          <description>Current Playlist</description>
-          <type>button</type>
-          <id>9</id>
-          <label>4555</label>
-          <onright>50</onright>
-          <onup>18</onup>
-          <ondown>10</ondown>
-          <action>33</action>
-        </control>
-        <control>
-          <description>My Playlists</description>
-          <type>button</type>
-          <id>10</id>
-          <label>983</label>
-          <onright>50</onright>
-          <onup>9</onup>
-          <ondown>99</ondown>
+          <visible>plugin.isenabled(My Lyrics)</visible>
         </control>
       </control>
     </control>
