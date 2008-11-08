@@ -73,6 +73,18 @@
         <type>image</type>
         <posX>0</posX>
         <posY>0</posY>
+        <width>1280</width>
+        <height>720</height>
+        <texture>black.png</texture>
+        <colordiffuse>50ffffff</colordiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="fade" time="200">visible</animation>
+        <animation effect="fade" time="200">hidden</animation>
+      </control>
+      <control>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
         <width>256</width>
         <height>720</height>
         <texture>hiddenmenu_left.png</texture>
