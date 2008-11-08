@@ -2,7 +2,7 @@
 <window>
   <id>34</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
+  <allowoverlay>yes</allowoverlay>
   <disabletopbar>yes</disabletopbar>
   <controls>
     
@@ -10,7 +10,7 @@
       <description>Menu</description>
       <type>menu</type>
       <id>50</id>
-      <posX>30</posX>
+      <posX>500</posX>
       <posY>79</posY>
       <width>320</width>
       <textcolor>ffffffff</textcolor>
@@ -33,16 +33,13 @@
       <scrollTime>90</scrollTime>
       <scrollTimeMin>45</scrollTimeMin>
       <textureBackground>-</textureBackground>
-      <onright>13</onright>
-      <onleft>10</onleft>
-      <align>right</align>
     </control>
     
     <control>
       <description>Homeblade</description>
       <type>image</type>
       <id>0</id>
-      <posX>-440</posX>
+      <posX>0</posX>
       <posY>0</posY>
       <width>846</width>
       <height>720</height>
@@ -59,8 +56,6 @@
       <height>720</height>
       <texture>homerightoverlay.png</texture>
     </control>
-    
-    <import>common.home.overlays.xml</import><!-- Overlays for home menus -->
     
     <import>common.time.xml</import><!-- Date and Time -->
   </controls>

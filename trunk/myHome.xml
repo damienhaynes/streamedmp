@@ -36,29 +36,7 @@
       <onright>10</onright>
     </control>
     
-    <control>
-      <description>Homeblade</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>846</width>
-      <height>720</height>
-      <texture>homebladeleft.png</texture>
-    </control>
-    
-    <control>
-      <description>right overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1045</posX>
-      <posY>0</posY>
-      <width>235</width>
-      <height>720</height>
-      <texture>homerightoverlay.png</texture>
-    </control>
-    
-    <!-- HIDDEN MENU -->
+    <!-- Hidden Menu -->
     
     <control>
       <type>actiongroup</type>
@@ -96,7 +74,7 @@
           <description>Back button</description>
           <type>button</type>
           <id>10</id>
-          <width>250</width>
+          <width>249</width>
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
@@ -109,7 +87,7 @@
           <description>videowallpaper button</description>
           <type>button</type>
           <id>11</id>
-          <width>250</width>
+          <width>249</width>
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
@@ -121,7 +99,7 @@
           <description>basichome button button</description>
           <type>button</type>
           <id>12</id>
-          <width>250</width>
+          <width>249</width>
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
@@ -133,7 +111,7 @@
           <description>Exit button</description>
           <type>button</type>
           <id>13</id>
-          <width>250</width>
+          <width>249</width>
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
@@ -143,6 +121,30 @@
           <ondown>10</ondown>
         </control>
       </control>
+    </control>
+    
+    <!-- Home Blade -->
+    
+    <control>
+      <description>Homeblade</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+    </control>
+    
+    <control>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
     </control>
     
     <import>common.time.xml</import><!-- Date and Time -->
