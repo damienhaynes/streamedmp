@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>14</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#selecteditem:2</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Shuffle Playlist on load</description>
+      <type>checkmark</type>
+      <id>2</id>
+      <posX>46</posX>
+      <posY>270</posY>
+      <label>228</label>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <onup>21</onup>
+      <ondown>6</ondown>
+    </control>
+    <control>
+      <description>Enable ID3  other tagformats</description>
+      <type>checkmark</type>
+      <id>6</id>
+      <posX>46</posX>
+      <posY>316</posY>
+      <label>258</label>
+      <onleft>6</onleft>
+      <onright>6</onright>
+      <onup>2</onup>
+      <ondown>8</ondown>
+    </control>
+    <control>
+      <description>Reorganize My Music Database button</description>
+      <type>button</type>
+      <id>8</id>
+      <posX>53</posX>
+      <posY>357</posY>
+      <width>500</width>
+      <label>334</label>
+      <onleft>8</onleft>
+      <onright>8</onright>
+      <onup>6</onup>
+      <ondown>13</ondown>
+      <font>mediastream10tc</font>
+      <textureFocus>-</textureFocus>
+    </control>
+    <control>
+      <description>delete album button</description>
+      <type>button</type>
+      <id>13</id>
+      <posX>53</posX>
+      <posY>402</posY>
+      <width>500</width>
+      <label>485</label>
+      <onup>8</onup>
+      <ondown>10</ondown>
+      <onleft>13</onleft>
+      <onright>13</onright>
+      <font>mediastream10tc</font>
+      <textureFocus>-</textureFocus>
+    </control>
+    <control>
+      <description>Delete Album Info</description>
+      <type>button</type>
+      <id>10</id>
+      <posX>53</posX>
+      <posY>448</posY>
+      <width>500</width>
+      <label>422</label>
+      <onleft>10</onleft>
+      <onright>10</onright>
+      <onup>13</onup>
+      <ondown>2</ondown>
+      <font>mediastream10tc</font>
+      <textureFocus>-</textureFocus>
+    </control>
+  </controls>
+</window>

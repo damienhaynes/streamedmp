@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>703</id>
+  <defaultcontrol>24</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#selecteditem:6022</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>0</posX>
+      <posY>100</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <type>button</type>
+        <description>MPEG-2 Video Codecs</description>
+        <id>24</id>
+        <label>6000</label>
+      </control>
+      <control>
+        <description>H.264 Video Codecs</description>
+        <type>button</type>
+        <id>29</id>
+        <label>6036</label>
+      </control>
+      <control>
+        <type>button</type>
+        <id>25</id>
+        <label>6001</label>
+      </control>
+      <control>
+        <type>button</type>
+        <id>27</id>
+        <label>6002</label>
+      </control>
+      <control>
+        <type>button</type>
+        <id>28</id>
+        <label>6004</label>
+      </control>
+    </control>
+  </controls>
+</window>
