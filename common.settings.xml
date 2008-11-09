@@ -21,6 +21,18 @@
     </control>
     
     <control>
+      <description>FanArt Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+      <visible>window.istopmost(14)|window.istopmost(31)|window.istopmost(708)|window.istopmost(12)</visible>
+    </control>
+    
+    <control>
       <description>right overlay</description>
       <type>image</type>
       <id>0</id>
@@ -29,6 +41,7 @@
       <width>235</width>
       <height>720</height>
       <texture>homerightoverlay.png</texture>
+      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
     
     <control>
@@ -38,8 +51,7 @@
       <width>256</width>
       <height>720</height>
       <texture>hiddenmenu_left.png</texture>
-      <animation effect="slide" time="100" start="-356,0">visible</animation>
-      <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
     
     <control>
