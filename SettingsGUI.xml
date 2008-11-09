@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>31</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#selecteditem:673</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Scroll Speed label horizontal</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>74</posX>
+      <posY>238</posY>
+      <label>1442</label>
+      <font>mediastream10tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>Speedselect Horizontal</description>
+      <type>spincontrol</type>
+      <id>2</id>
+      <posX>453</posX>
+      <posY>240</posY>
+      <onup>17</onup>
+      <ondown>4</ondown>
+      <onleft>2</onleft>
+      <onright>2</onright>
+    </control>
+    <control>
+      <description>Scroll Speed label vertical</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>74</posX>
+      <posY>274</posY>
+      <label>1443</label>
+      <font>mediastream10tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>Speedselect Vertical</description>
+      <type>spincontrol</type>
+      <id>4</id>
+      <posX>453</posX>
+      <posY>276</posY>
+      <onup>2</onup>
+      <ondown>3</ondown>
+      <onleft>4</onleft>
+      <onright>4</onright>
+    </control>
+    <control>
+      <description>FPS label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>74</posX>
+      <posY>310</posY>
+      <label>973</label>
+      <font>mediastream10tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>FPS select</description>
+      <type>spincontrol</type>
+      <id>3</id>
+      <posX>453</posX>
+      <posY>312</posY>
+      <onup>4</onup>
+      <ondown>2</ondown>
+      <onleft>3</onleft>
+      <onright>3</onright>
+    </control>
+    <control>
+      <description>currentFPS count</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>483</posX>
+      <posY>330</posY>
+      <label>#fps</label>
+      <font>mediastream10c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Example value</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>674</posX>
+      <posY>238</posY>
+      <width>533</width>
+      <label>675</label>
+      <font>mediastream10tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>TagLine value</description>
+      <type>fadelabel</type>
+      <id>25</id>
+      <posX>674</posX>
+      <posY>268</posY>
+      <width>450</width>
+      <label>-</label>
+      <font>mediastream12c</font>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>Description1</description>
+      <type>textboxscrollup</type>
+      <id>26</id>
+      <posX>674</posX>
+      <posY>308</posY>
+      <width>450</width>
+      <height>180</height>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+  </controls>
+</window>
