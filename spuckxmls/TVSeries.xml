@@ -201,7 +201,7 @@
       <label>#TVSeries.Description</label>
     </control>
     
-    <!-- :::::::::::::: VISIBLE WHEN IN POSTER SERIES SELECTION VIEW (GRAPHICAL VIEW ONLY) :::::::::::::: -->
+    <!-- :::::::::::::: VISIBLE WHEN IN POSTER SERIES SELECTION VIEW (GRAPHICAL POSTER VIEW ONLY) :::::::::::::: -->
     
     <control>
       <description>Default Cover Art</description>
@@ -212,7 +212,7 @@
       <width>288</width>
       <height>428</height>
       <texture>defaultdvdcover.png</texture>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -224,7 +224,7 @@
       <width>278</width>
       <height>418</height>
       <texture>#TVSeries.SeriesBanner</texture>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -236,7 +236,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -249,7 +249,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -264,7 +264,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream10</font>
       <label>#TVSeries.Description</label>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -277,7 +277,7 @@
       <font>mediastream12tc</font>
       <label>Series Details</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -287,7 +287,7 @@
       <posY>295</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -297,7 +297,7 @@
       <posY>315</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -307,7 +307,7 @@
       <posY>335</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -317,7 +317,7 @@
       <posY>355</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -330,7 +330,7 @@
       <font>mediastream12tc</font>
       <label>Actors</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -340,7 +340,7 @@
       <posY>295</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     
@@ -656,7 +656,7 @@
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.HasThumb(66)</visible>
     </control>
     
-    <!-- :::::::::::::: LIST AND GRAPHICAL VIEW :::::::::::::: -->
+    <!-- :::::::::::::: FACADEVIEW :::::::::::::: -->
     
     <control>
       <type>group</type>
@@ -707,6 +707,41 @@
           <keepaspectratio>no</keepaspectratio>
           <!-- <unfocusedAlpha>200</unfocusedAlpha> -->
           <enableFocusZoom>no</enableFocusZoom>
+        </control>
+        <control>
+          <description>Filmstrip view (only visible when posters and graphical is selected)</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <ondown>50</ondown>
+          <posX>12</posX>
+          <posY>512</posY>
+          <width>1280</width>
+          <scrollOffset>4</scrollOffset>
+          <spinPosX>1300</spinPosX>
+          <spinPosY>720</spinPosY>
+          <spinWidth>24</spinWidth>
+          <spinHeight>24</spinHeight>
+          <spinColor>ffcccccc</spinColor>
+          <itemWidth>142</itemWidth>
+          <itemHeight>156</itemHeight>
+          <textureWidth>120</textureWidth>
+          <textureHeight>170</textureHeight>
+          <thumbWidth>106</thumbWidth>
+          <thumbHeight>156</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+          <InfoImage></InfoImage>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>thumbborder.png</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>thumbborder.png</frameFocus>
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="120,120" time="110">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="120,120" end="100,100" time="110">unfocus</thumbAnimation>
         </control>
         <control>
           <description>Textlist (series and/or seasons if set and Episodes)</description>
