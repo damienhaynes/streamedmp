@@ -17,33 +17,45 @@
     </control>
     <import>common.progressbar.xml</import>
     <control>
-      <description>TV Logo</description>
+      <description>DVD Cover</description>
       <type>image</type>
-      <id>102</id>
-      <posX>60</posX>
-      <posY>555</posY>
-      <width>400</width>
-      <height>100</height>
-      <align>right</align>
+      <id>0</id>
       <texture>#Play.Current.Thumb</texture>
+      <posX>16</posX>
+      <posY>554</posY>
+      <width>160</width>
+      <height>160</height>
+      <align>left</align>
+      <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
     </control>
     <control>
       <description>Movie Name</description>
-      <id>36</id>
+      <id>0</id>
       <type>fadelabel</type>
       <width>700</width>
-      <posX>250</posX>
-      <posY>595</posY>
-      <font>mediastream12tc</font>
+      <posX>195</posX>
+      <posY>585</posY>
+      <font>mediastream14tc</font>
       <label>#Play.Current.Title </label>
       <textcolor>ffFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>Movie Year</description>
+      <id>0</id>
+      <type>fadelabel</type>
+      <width>700</width>
+      <posX>195</posX>
+      <posY>608</posY>
+      <font>mediastream11tc</font>
+      <label>#Play.Current.Year </label>
+      <textcolor>ff909090</textcolor>
     </control>
     <!-- Who needs this when playing a movie?
     <control>
       <description>Plot</description>
       <type>textboxscrollup</type>
-      <id>1</id>
+      <id>0</id>
       <posX>25</posX>
       <posY>585</posY>
       <width>600</width>

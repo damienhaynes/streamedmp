@@ -4,22 +4,21 @@
     <control>
       <description>progressbar background</description>
       <type>image</type>
-      <id>104</id>
-      <posX>49</posX>
+      <id>101</id>
+      <posX>187</posX>
       <posY>657</posY>
-      <width>1183</width>
+      <width>1044</width>
       <height>24</height>
       <texture>osdprogressback.png</texture>
-      <visible>no</visible>
       <colordiffuse>ffFFFFFF</colordiffuse>
     </control>
     <control>
       <type>progress</type>
       <description>track progress</description>
       <id>1</id>
-      <posX>37</posX>
+      <posX>175</posX>
       <posY>658</posY>
-      <width>1182</width>
+      <width>1079</width>
       <height>23</height>
       <label>#percentage</label>
       <texturebg>-</texturebg>
@@ -30,26 +29,24 @@
     <control>
       <description>Start Time Info</description>
       <type>label</type>
-      <id>101</id>
-      <posX>57</posX>
+      <id>102</id>
+      <posX>195</posX>
       <posY>679</posY>
       <label>#currentplaytime</label>
       <align>left</align>
       <font>mediastream12c</font>
       <textcolor>ff888888</textcolor>
-      <visible>no</visible>
     </control>
     <control>
       <description>End Time Info</description>
       <type>label</type>
-      <id>102</id>
+      <id>103</id>
       <posX>1221</posX>
       <posY>679</posY>
       <label>#duration</label>
       <align>right</align>
       <font>mediastream12c</font>
       <textcolor>ff888888</textcolor>
-      <visible>no</visible>
     </control>
   </controls>
 </window>
