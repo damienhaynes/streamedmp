@@ -5,21 +5,23 @@ This file should contain the facade view
 <window>
   <controls>
     <control>
-      <description>composite control consisting of a list control and a thumbnail panel</description>
       <type>facadeview</type>
       <id>50</id>
       <control>
         <description>Movie List</description>
         <type>listcontrol</type>
         <id>50</id>
-        <posX>780</posX>
-        <onleft>7</onleft>
+        <posX>756</posX>
+        <posY>317</posY>
+        <height>360</height>
+        <textXOff>0</textXOff>
+        <onleft>3</onleft>
       </control>
       <control>
         <description>Filmstrip view</description>
         <type>filmstrip</type>
         <id>50</id>
-        <onup>7</onup>
+        <onup>3</onup>
         <posX>12</posX>
         <posY>512</posY>
         <width>1280</width>
@@ -42,7 +44,7 @@ This file should contain the facade view
         <imageFolder>-</imageFolder>
         <imageFolderFocus>thumbborder.png</imageFolderFocus>
         <frame>-</frame>
-        <frameFocus>thumbborder.png</frameFocus>
+        <frameFocus>-</frameFocus>
         <showFrame>no</showFrame>
         <showFolder>yes</showFolder>
         <showBackGround>no</showBackGround>
