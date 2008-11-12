@@ -37,14 +37,14 @@
       <texture>osdbackground.png</texture>
       <visible>player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
     </control>
-    <import>common.progressbar.xml</import>
+    
     <control>
       <description>row 1 label</description>
       <type>label</type>
       <id>10</id>
-      <posX>0</posX>
+      <posX>124</posX>
       <posY>680</posY>
-      <width>1280</width>
+      <width>1032</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -55,9 +55,9 @@
       <description>row 2 label</description>
       <type>label</type>
       <id>11</id>
-      <posX>0</posX>
+      <posX>124</posX>
       <posY>680</posY>
-      <width>1280</width>
+      <width>1032</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -68,9 +68,9 @@
       <description>row 3 label</description>
       <type>label</type>
       <id>12</id>
-      <posX>0</posX>
+      <posX>124</posX>
       <posY>680</posY>
-      <width>1280</width>
+      <width>1032</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -81,9 +81,9 @@
       <description>pause label</description>
       <type>label</type>
       <id>16</id>
-      <posX>0</posX>
+      <posX>124</posX>
       <posY>680</posY>
-      <width>1280</width>
+      <width>1032</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -247,6 +247,7 @@
       <texture>osd32x.png</texture>
       <colordiffuse>White</colordiffuse>
     </control>
+    
     <control>
       <type>image</type>
       <id>500</id>
@@ -281,5 +282,46 @@
       <colordiffuse>White</colordiffuse>
       <visible>no</visible>
     </control>
+    
+    <control>
+      <description>DVD Cover</description>
+      <type>image</type>
+      <id>0</id>
+      <texture>#Play.Current.Thumb</texture>
+      <posX>16</posX>
+      <posY>554</posY>
+      <width>160</width>
+      <height>160</height>
+      <align>left</align>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+      <visible>player.rewinding|player.forwarding</visible>
+    </control>
+    <control>
+      <description>Movie Name</description>
+      <id>0</id>
+      <type>fadelabel</type>
+      <width>700</width>
+      <posX>195</posX>
+      <posY>585</posY>
+      <font>mediastream14tc</font>
+      <label>#Play.Current.Title </label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>player.rewinding|player.forwarding</visible>
+    </control>
+    <control>
+      <description>Movie Year</description>
+      <id>0</id>
+      <type>fadelabel</type>
+      <width>700</width>
+      <posX>195</posX>
+      <posY>608</posY>
+      <font>mediastream11tc</font>
+      <label>#Play.Current.Year </label>
+      <textcolor>ff909090</textcolor>
+      <visible>player.rewinding|player.forwarding</visible>
+    </control>
+    
+    <import>common.progressbar.xml</import>
   </controls>
 </window>
