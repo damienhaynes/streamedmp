@@ -13,47 +13,53 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>0</posX>
-      <posY>100</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>351</posY>
+      <width>211</width>
+      <height>379</height>
       <layout>StackLayout</layout>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Skin</description>
         <type>selectbutton</type>
         <id>10</id>
         <label>166</label>
         <onup>17</onup>
+        <onright>9994</onright>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Language</description>
         <type>selectbutton</type>
         <id>11</id>
         <label>248</label>
+        <onright>9994</onright>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Start in fullscreen mode</description>
         <type>togglebutton</type>
         <id>12</id>
         <label>Start in fullscreen</label>
+        <onright>9994</onright>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Screensaver</description>
         <type>togglebutton</type>
         <id>13</id>
         <label>360</label>
+        <onright>9994</onright>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Skip steps screen button</description>
         <type>button</type>
         <id>21</id>
         <label>6024</label>
         <hyperlink>708</hyperlink>
+        <onright>9994</onright>
         <ondown>99</ondown>
       </control>
     </control>
@@ -62,13 +68,15 @@
       <description>Skin Preview</description>
       <type>image</type>
       <id>20</id>
-      <posY>100</posY>
-      <posX>310</posX>
-      <width>1000</width>
-      <height>500</height>
+      <posY>30</posY>
+      <posX>224</posX>
+      <width>600</width>
+      <height>300</height>
       <align>center</align>
+      <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
       <texture />
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
