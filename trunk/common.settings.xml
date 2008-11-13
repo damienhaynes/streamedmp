@@ -5,19 +5,52 @@
     <control>
       <type>image</type>
       <description>BG</description>
-      <id>1</id>
+      <id>0</id>
       <width>1280</width>
       <height>720</height>
     </control>
     
     <control>
       <type>image</type>
-      <id>1</id>
+      <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>798</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>209</posX>
+      <posY>0</posY>
+      <width>631</width>
+      <height>720</height>
+      <texture>settingsbg.png</texture>
+      <animation effect="slide" time="200" start="-840,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>-620</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
     </control>
     
     <control>
@@ -29,7 +62,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
-      <visible>window.istopmost(14)|window.istopmost(31)|window.istopmost(708)|window.istopmost(12)</visible>
+      <visible>window.istopmost(14)|window.istopmost(31)|window.istopmost(708)</visible>
     </control>
     
     <control>
@@ -46,49 +79,101 @@
     
     <control>
       <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>256</width>
-      <height>720</height>
-      <texture>hiddenmenu_left.png</texture>
-      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
-    </control>
-    
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
+      <posX>906</posX>
+      <posY>144</posY>
+      <width>137</width>
+      <height>56</height>
+      <texture>mediastreamlogo.png</texture>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
     </control>
     
     <control>
-      <type>fadelabel</type>
-      <description>Top Title</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <visible>yes</visible>
-      <label>#currentmodule</label>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
+      <posX>834</posX>
+      <posY>201</posY>
+      <width>211</width>
+      <height>379</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsbutton">
+        <description>Wizard</description>
+        <type>button</type>
+        <id>9993</id>
+        <label>1200</label>
+        <hyperlink>615</hyperlink>
+        <onup>17</onup>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>General</description>
+        <type>button</type>
+        <id>9994</id>
+        <label>128</label>
+        <hyperlink>705</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>Screen</description>
+        <type>button</type>
+        <id>9995</id>
+        <label>6023</label>
+        <hyperlink>9</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>TV</description>
+        <type>button</type>
+        <id>9996</id>
+        <label>605</label>
+        <hyperlink>700</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>My Pictures</description>
+        <type>button</type>
+        <id>9997</id>
+        <label>1</label>
+        <hyperlink>12</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>Movies</description>
+        <type>button</type>
+        <id>9998</id>
+        <label>3</label>
+        <hyperlink>703</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>My DVD</description>
+        <type>button</type>
+        <id>9999</id>
+        <label>1027</label>
+        <hyperlink>704</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>My Music</description>
+        <type>button</type>
+        <id>99910</id>
+        <label>2</label>
+        <hyperlink>14</hyperlink>
+      </control>
+      
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      
+      <control Style="settingsbutton">
+        <description>Skin Info</description>
+        <type>button</type>
+        <id>99911</id>
+        <label>Skin Info</label>
+        <hyperlink>88889</hyperlink>
+        <ondown>99</ondown>
+      </control>
+      
     </control>
-    
-    <!--
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>1271</posX>
-      <posY>35</posY>
-      <width>950</width>
-      <font>font14</font>
-      <label>#selecteditem</label>
-      <align>right</align>
-    </control>-->
   </controls>
 </window>
