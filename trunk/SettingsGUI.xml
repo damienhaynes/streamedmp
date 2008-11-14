@@ -7,115 +7,211 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:673</define>
   <controls>
+    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
+    
+    <control>
+      <description>focus button 1</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>150</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(2)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 1</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>150</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(2)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 2</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>192</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(4)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 2</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>192</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(4)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 3</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>234</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(3)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 3</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>234</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(3)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    
     <control>
       <description>Scroll Speed label horizontal</description>
       <type>label</type>
       <id>1</id>
-      <posX>74</posX>
-      <posY>238</posY>
+      <posX>251</posX>
+      <posY>159</posY>
       <label>1442</label>
-      <font>mediastream10tc</font>
+      <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Speedselect Horizontal</description>
       <type>spincontrol</type>
       <id>2</id>
-      <posX>453</posX>
-      <posY>240</posY>
+      <posX>754</posX>
+      <posY>164</posY>
       <onup>17</onup>
       <ondown>4</ondown>
       <onleft>2</onleft>
-      <onright>2</onright>
+      <onright>9995</onright>
+      <font>mediastream12c</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Scroll Speed label vertical</description>
       <type>label</type>
       <id>1</id>
-      <posX>74</posX>
-      <posY>274</posY>
+      <posX>251</posX>
+      <posY>201</posY>
       <label>1443</label>
-      <font>mediastream10tc</font>
+      <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Speedselect Vertical</description>
       <type>spincontrol</type>
       <id>4</id>
-      <posX>453</posX>
-      <posY>276</posY>
+      <posX>754</posX>
+      <posY>206</posY>
       <onup>2</onup>
       <ondown>3</ondown>
       <onleft>4</onleft>
-      <onright>4</onright>
+      <onright>9995</onright>
+      <font>mediastream12c</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>FPS label</description>
       <type>label</type>
       <id>1</id>
-      <posX>74</posX>
-      <posY>310</posY>
+      <posX>251</posX>
+      <posY>243</posY>
       <label>973</label>
-      <font>mediastream10tc</font>
+      <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>FPS select</description>
       <type>spincontrol</type>
       <id>3</id>
-      <posX>453</posX>
-      <posY>312</posY>
+      <posX>754</posX>
+      <posY>248</posY>
       <onup>4</onup>
       <ondown>2</ondown>
       <onleft>3</onleft>
-      <onright>3</onright>
+      <onright>9995</onright>
+      <font>mediastream12c</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>currentFPS count</description>
       <type>label</type>
       <id>1</id>
-      <posX>483</posX>
-      <posY>330</posY>
-      <label>#fps</label>
-      <font>mediastream10c</font>
+      <posX>784</posX>
+      <posY>285</posY>
+      <label>(#fps)</label>
+      <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <align>right</align>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
+    
+    
     <control>
       <description>Example value</description>
       <type>label</type>
       <id>0</id>
-      <posX>674</posX>
-      <posY>238</posY>
+      <posX>251</posX>
+      <posY>367</posY>
       <width>533</width>
       <label>675</label>
       <font>mediastream10tc</font>
       <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>TagLine value</description>
       <type>fadelabel</type>
       <id>25</id>
-      <posX>674</posX>
-      <posY>268</posY>
+      <posX>251</posX>
+      <posY>404</posY>
       <width>450</width>
       <label>-</label>
       <font>mediastream12c</font>
       <textcolor>ffFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Description1</description>
       <type>textboxscrollup</type>
       <id>26</id>
-      <posX>674</posX>
-      <posY>308</posY>
+      <posX>251</posX>
+      <posY>451</posY>
       <width>450</width>
       <height>180</height>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>ffFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>

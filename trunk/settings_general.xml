@@ -7,17 +7,33 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:128</define>
   <controls>
+    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
+    
+    <control>
+      <description>Skin Preview</description>
+      <type>image</type>
+      <id>20</id>
+      <posY>80</posY>
+      <posX>224</posX>
+      <width>600</width>
+      <height>300</height>
+      <align>center</align>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture />
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
     
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>216</posX>
-      <posY>351</posY>
-      <width>211</width>
-      <height>379</height>
+      <posY>401</posY>
+      <width>595</width>
+      <height>500</height>
       <layout>StackLayout</layout>
       
       <control Style="settingsmainbutton">
@@ -25,8 +41,7 @@
         <type>selectbutton</type>
         <id>10</id>
         <label>166</label>
-        <onup>17</onup>
-        <onright>9994</onright>
+        <onup>9994</onup>
       </control>
       
       <control Style="settingsmainbutton">
@@ -34,10 +49,9 @@
         <type>selectbutton</type>
         <id>11</id>
         <label>248</label>
-        <onright>9994</onright>
       </control>
       
-      <control Style="settingsmainbutton">
+      <control Style="settingsmaintogglebutton">
         <description>Start in fullscreen mode</description>
         <type>togglebutton</type>
         <id>12</id>
@@ -45,7 +59,7 @@
         <onright>9994</onright>
       </control>
       
-      <control Style="settingsmainbutton">
+      <control Style="settingsmaintogglebutton">
         <description>Screensaver</description>
         <type>togglebutton</type>
         <id>13</id>
@@ -64,19 +78,5 @@
       </control>
     </control>
     
-    <control>
-      <description>Skin Preview</description>
-      <type>image</type>
-      <id>20</id>
-      <posY>30</posY>
-      <posX>224</posX>
-      <width>600</width>
-      <height>300</height>
-      <align>center</align>
-      <centered>yes</centered>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture />
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
   </controls>
 </window>

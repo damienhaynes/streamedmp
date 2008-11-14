@@ -7,76 +7,215 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:2</define>
   <controls>
+    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
+    
+    <control>
+      <description>focus button 1</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>150</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(2)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 1</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>150</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(2)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 2</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>192</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(6)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 2</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>192</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(6)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 3</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>234</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(8)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 3</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>234</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(8)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 4</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>276</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(13)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 4</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>276</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(13)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>focus button 5</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>318</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <visible>control.hasfocus(10)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>nofocus button 5</description>
+      <type>image</type>
+      <id>0</id>
+      <posY>318</posY>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <visible>!control.hasfocus(10)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    
     <control>
       <description>Shuffle Playlist on load</description>
       <type>checkmark</type>
       <id>2</id>
-      <posX>46</posX>
-      <posY>270</posY>
+      <posX>251</posX>
+      <posY>159</posY>
       <label>228</label>
       <onleft>2</onleft>
-      <onright>2</onright>
-      <onup>21</onup>
+      <onright>99910</onright>
+      <onup>17</onup>
       <ondown>6</ondown>
+      <font>mediastream12c</font>
     </control>
     <control>
       <description>Enable ID3  other tagformats</description>
       <type>checkmark</type>
       <id>6</id>
-      <posX>46</posX>
-      <posY>316</posY>
+      <posX>251</posX>
+      <posY>201</posY>
       <label>258</label>
       <onleft>6</onleft>
-      <onright>6</onright>
+      <onright>99910</onright>
       <onup>2</onup>
       <ondown>8</ondown>
+      <font>mediastream12c</font>
     </control>
     <control>
       <description>Reorganize My Music Database button</description>
       <type>button</type>
       <id>8</id>
-      <posX>53</posX>
-      <posY>357</posY>
+      <posX>251</posX>
+      <posY>237</posY>
       <width>500</width>
       <label>334</label>
-      <onleft>8</onleft>
-      <onright>8</onright>
+      <font>mediastream12c</font>
+      <textureFocus>-</textureFocus>
+      <textXOff>33</textXOff>
       <onup>6</onup>
       <ondown>13</ondown>
-      <font>mediastream10tc</font>
-      <textureFocus>-</textureFocus>
+      <onleft>8</onleft>
+      <onright>99910</onright>
     </control>
     <control>
       <description>delete album button</description>
       <type>button</type>
       <id>13</id>
-      <posX>53</posX>
-      <posY>402</posY>
+      <posX>251</posX>
+      <posY>279</posY>
       <width>500</width>
       <label>485</label>
+      <font>mediastream12c</font>
+      <textureFocus>-</textureFocus>
+      <textXOff>33</textXOff>
       <onup>8</onup>
       <ondown>10</ondown>
       <onleft>13</onleft>
-      <onright>13</onright>
-      <font>mediastream10tc</font>
-      <textureFocus>-</textureFocus>
+      <onright>99910</onright>
     </control>
     <control>
       <description>Delete Album Info</description>
       <type>button</type>
       <id>10</id>
-      <posX>53</posX>
-      <posY>448</posY>
+      <posX>251</posX>
+      <posY>323</posY>
       <width>500</width>
       <label>422</label>
-      <onleft>10</onleft>
-      <onright>10</onright>
+      <font>mediastream12c</font>
+      <textureFocus>-</textureFocus>
+      <textXOff>33</textXOff>
       <onup>13</onup>
       <ondown>2</ondown>
-      <font>mediastream10tc</font>
-      <textureFocus>-</textureFocus>
+      <onleft>10</onleft>
+      <onright>99910</onright>
     </control>
+    
   </controls>
 </window>

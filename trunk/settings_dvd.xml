@@ -7,46 +7,60 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:6015</define>
   <controls>
+    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
+    
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>0</posX>
-      <posY>100</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
       <layout>StackLayout</layout>
-      <control>
+      
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>24</id>
         <label>6000</label>
+        <onup>17</onup>
+        <onright>9999</onright>
       </control>
-      <control>
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>25</id>
         <label>6001</label>
+        <onright>9999</onright>
       </control>
-      <control>
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>27</id>
         <label>6002</label>
+        <onright>9999</onright>
       </control>
-      <control>
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>28</id>
         <label>6004</label>
+        <onright>9999</onright>
       </control>
-      <control>
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>29</id>
         <label>1029</label>
+        <onright>9999</onright>
       </control>
-      <control>
+      <control Style="settingsmainbutton">
         <type>button</type>
         <id>30</id>
         <label>492</label>
+        <onright>9999</onright>
+        <ondown>24</ondown>
       </control>
+      
     </control>
+    
   </controls>
 </window>
