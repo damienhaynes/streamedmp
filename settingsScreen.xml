@@ -14,46 +14,40 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>0</posX>
-      <posY>100</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
       <layout>StackLayout</layout>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>UI Calibration button</description>
         <type>button</type>
         <id>2</id>
         <label>213</label>
         <hyperlink>10</hyperlink>
-        <onleft>2</onleft>
-        <onright>2</onright>
-        <onup>4</onup>
-        <ondown>3</ondown>
+        <onright>9995</onright>
+        <onup>17</onup>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Screen Calibration button</description>
         <type>button</type>
         <id>3</id>
         <label>214</label>
         <hyperlink>11</hyperlink>
-        <onleft>3</onleft>
-        <onright>3</onright>
-        <onup>2</onup>
-        <ondown>4</ondown>
+        <onright>9995</onright>
       </control>
       
-      <control>
+      <control Style="settingsmainbutton">
         <description>Scroll speed button</description>
         <type>button</type>
         <id>4</id>
         <label>673</label>
         <hyperlink>31</hyperlink>
-        <onleft>4</onleft>
-        <onright>4</onright>
-        <onup>3</onup>
-        <ondown>2</ondown>
+        <onright>9995</onright>
+        <ondown>99</ondown>
       </control>
       
     </control>

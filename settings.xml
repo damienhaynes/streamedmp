@@ -8,7 +8,160 @@
   <define>#selecteditem:#highlightedbutton</define>
   <controls>
     
-    <import>common.settings.xml</import>
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>178</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="200" start="-434,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>-620</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <description>FanArt Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+      <visible>window.istopmost(14)|window.istopmost(31)|window.istopmost(708)</visible>
+    </control>
+    
+    <control>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
+      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>285</posX>
+      <posY>144</posY>
+      <width>137</width>
+      <height>56</height>
+      <texture>mediastreamlogo.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>201</posY>
+      <width>211</width>
+      <height>379</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsbutton">
+        <description>Wizard</description>
+        <type>button</type>
+        <id>9993</id>
+        <label>1200</label>
+        <hyperlink>615</hyperlink>
+        <onup>17</onup>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>General</description>
+        <type>button</type>
+        <id>9994</id>
+        <label>128</label>
+        <hyperlink>705</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>Screen</description>
+        <type>button</type>
+        <id>9995</id>
+        <label>6023</label>
+        <hyperlink>9</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>TV</description>
+        <type>button</type>
+        <id>9996</id>
+        <label>605</label>
+        <hyperlink>700</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>My Pictures</description>
+        <type>button</type>
+        <id>9997</id>
+        <label>1</label>
+        <hyperlink>12</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>Movies</description>
+        <type>button</type>
+        <id>9998</id>
+        <label>3</label>
+        <hyperlink>703</hyperlink>
+      </control>
+      
+      <control Style="settingsbutton">
+        <description>My DVD</description>
+        <type>button</type>
+        <id>9999</id>
+        <label>1027</label>
+        <hyperlink>704</hyperlink>
+      </control>
+      
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      
+      <control Style="settingsbutton">
+        <description>My Music</description>
+        <type>button</type>
+        <id>99910</id>
+        <label>2</label>
+        <hyperlink>14</hyperlink>
+        <ondown>99</ondown>
+      </control>
+    </control>
+    
     <import>common.time.xml</import>
     
   </controls>
