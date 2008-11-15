@@ -54,18 +54,6 @@
     </control>
     
     <control>
-      <description>FanArt Overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
-      <visible>window.istopmost(14)|window.istopmost(31)|window.istopmost(708)</visible>
-    </control>
-    
-    <control>
       <description>right overlay</description>
       <type>image</type>
       <id>0</id>
@@ -155,25 +143,29 @@
         <hyperlink>704</hyperlink>
       </control>
       
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      
       <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
         <id>99910</id>
         <label>2</label>
         <hyperlink>14</hyperlink>
-      </control>
-      
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-      
-      <control Style="settingsbutton">
-        <description>Skin Info</description>
-        <type>button</type>
-        <id>99911</id>
-        <label>Skin Info</label>
-        <hyperlink>88889</hyperlink>
         <ondown>99</ondown>
       </control>
-      
     </control>
+    
+    <control>
+      <description>Settings Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>25</posY>
+      <label>#currentmodule</label>
+      <font>mediastream16b</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    
   </controls>
 </window>
