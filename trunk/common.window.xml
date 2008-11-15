@@ -2,6 +2,10 @@
 <window>
   <controls>
     
+    <!--
+    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
+    -->
+    
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -11,8 +15,7 @@
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
-	<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="200" delay="0">WindowOpen</animation>
-	<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="100" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     
     <control>
@@ -26,8 +29,7 @@
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-	<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="200" delay="0">WindowOpen</animation>
-	<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="100" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     
     <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
