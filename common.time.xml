@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
+    
+    <!--
+    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
+    -->
+    
     <control>
       <description>Time Background</description>
       <type>image</type>
@@ -10,7 +15,9 @@
       <width>132</width>
       <height>32</height>
       <texture>clockbackground.png</texture>
+      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
+    
     <control>
       <description>Time</description>
       <type>label</type>
@@ -22,6 +29,8 @@
       <font>mediastream12c</font>
       <label>#time</label>
       <align>left</align>
+      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
+    
   </controls>
 </window>

@@ -34,6 +34,7 @@
       <scrollTimeMin>45</scrollTimeMin>
       <textureBackground>-</textureBackground>
       <onright>10</onright>
+	<animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <!-- Hidden Menu -->
@@ -147,6 +148,6 @@
       <texture>homerightoverlay.png</texture>
     </control>
     
-    <import>common.time.xml</import><!-- Date and Time -->
+    <import>common.time.xml</import>
   </controls>
 </window>
