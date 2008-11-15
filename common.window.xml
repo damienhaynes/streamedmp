@@ -11,6 +11,8 @@
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
+	<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="200" delay="0">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="100" delay="0">WindowClose</animation>
     </control>
     
     <control>
@@ -24,9 +26,11 @@
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
+	<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="200" delay="0">WindowOpen</animation>
+	<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="100" delay="0">WindowClose</animation>
     </control>
     
-    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS :::::::::: -->
+    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
     
     <!--
     <control>
@@ -52,51 +56,5 @@
     </control>
     -->
     
-    <!--
-    
-    OLD STUFF REMOVE?
-    
-	
-<control>
-	<description>header background</description>
-	<animation effect="slide" start="-430,0" end="0,0" tween="quadratic" easing="in" time="200" delay="0">WindowOpen</animation>
-	<animation effect="slide" end="-430,0" tween="quadratic" easing="in" time="300" delay="0">WindowClose</animation>
-	<type>image</type>
-	<id>1</id>
-	<posX>80</posX>
-	<posY>10</posY>
-	<width>429</width>
-	<height>35</height>
-	<texture>streamed_location_bar.png</texture>
-	<visible>yes</visible>
-</control>
-	
-
-    <control>
-	<animation effect="slide" start="-490,0" end="0,0" tween="quadratic" easing="in" time="300" delay="0">WindowOpen</animation>
-	<animation effect="slide" end="-490,0" tween="quadratic" easing="in" time="200" delay="0">WindowClose</animation>
-      <type>label</type>
-      <id>1</id>
-      <posX>490</posX>
-      <posY>16</posY>
-	  <width>300</width>
-	  <height>50</height>
-      <label>#currentmodule</label>
-      <font>mediastream12c</font>
-      <textcolor>ffffffff</textcolor>
-      <align>right</align>
-	  <visible>yes</visible>
-    </control>
-
-    <control>
-      <type>image</type>
-      <id>1</id>
-      <posX>1306</posX>
-      <posY>20</posY>
-      <width>40</width>
-      <height>40</height>
-      <texture>#header.hover</texture>
-    </control>
-  -->
   </controls>
 </window>

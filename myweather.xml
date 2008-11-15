@@ -4,10 +4,10 @@
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:8</define>
-  <define>#header.image:-</define>
   <define>#header.hover:hover_my weather.png</define>
   <define>#selecteditem:-</define>
   <controls>
+    
     <control>
       <description>weather background image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -30,13 +30,12 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
+    
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>5</posX>
-      <posY>240</posY>
+      <posX>25</posX>
+      <posY>245</posY>
       <layout>GridLayout(2,0,0,0)</layout>
       <control>
         <description>Refresh Button</description>
@@ -44,26 +43,39 @@
         <id>3</id>
         <label>184</label>
         <onup>17</onup>
+      <font>mediastream11tc</font>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
       </control>
       <control>
         <description>Switch Button</description>
         <type>button</type>
         <id>2</id>
         <label>716</label>
+      <font>mediastream11tc</font>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
       </control>
       <control>
         <description>View Button</description>
         <type>button</type>
         <id>4</id>
         <label>185</label>
+      <font>mediastream11tc</font>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
       </control>
       <control>
         <description>weather location select</description>
         <type>button</type>
         <id>5</id>
         <label>1028</label>
+      <font>mediastream11tc</font>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
       </control>
     </control>
+    
     <control>
       <description>TWC Logo</description>
       <type>image</type>
@@ -679,5 +691,9 @@
       <onup>3</onup>
       <ondown>3</ondown>
     </control>
+    
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    
   </controls>
 </window>
