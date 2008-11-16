@@ -135,7 +135,7 @@
     
     <control>
       <type>fadelabel</type>
-      <description>Series Name</description>
+      <description>Series Name Label</description>
       <id>0</id>
       <posX>688</posX>
       <posY>13</posY>
@@ -143,6 +143,20 @@
       <font>mediastream12c</font>
       <label>#TVSeries.Series.Pretty_Name</label>
       <align>right</align>
+      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+    </control>
+    
+    <control>
+      <type>fadelabel</type>
+      <description>TV SERIES Label</description>
+      <id>0</id>
+      <posX>688</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <label>#currentmodule</label>
+      <align>right</align>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
     </control>
     
     <control>
@@ -250,7 +264,7 @@
       <width>278</width>
       <height>418</height>
       <texture>#TVSeries.SeriesBanner</texture>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1236)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
@@ -992,7 +1006,7 @@
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
-          <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="100">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
         </control>
         <control>
           <description>Textlist (series and/or seasons if set and Episodes)</description>
@@ -1060,5 +1074,6 @@
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>
+    
   </controls>
 </window>
