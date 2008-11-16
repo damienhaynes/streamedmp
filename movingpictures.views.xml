@@ -98,7 +98,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>700</posX>
+      <posX>680</posX>
       <posY>575</posY>
       <width>580</width>
       <height>130</height>
@@ -109,14 +109,25 @@ This file should contain all items visible when the plug-in is in its various fa
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     <control>
-      <description>Overlay</description>
+      <description>Top Bar</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
-      <height>720</height>
-      <texture>movingpics_overlay.png</texture>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Bottom Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>400</posY>
+      <width>1280</width>
+      <height>320</height>
+      <texture>filmstrip_overlay.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     <!--*********************ListView**************************-->
@@ -163,7 +174,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posX>270</posX>
       <posY>675</posY>
       <width>300</width>
-      <font>mediastream12tcb</font>
+      <font>mediastream11tc</font>
       <label>#MovingPictures.SelectedMovie.extra.runtime.hour Hours, #MovingPictures.SelectedMovie.extra.runtime.minute Minutes</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
@@ -223,7 +234,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>movingpics_overlay.png</texture>
+      <texture>fanartoverlay.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <!--**********************Images For list View********************-->
@@ -234,8 +245,8 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>675</posY>
       <width>350</width>
       <height>35</height>
-      <textureWidth>22</textureWidth>
-      <textureHeight>22</textureHeight>
+      <textureWidth>25</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>greystar.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -256,7 +267,6 @@ This file should contain all items visible when the plug-in is in its various fa
       <texture flipY="true" diffuse="Thumb_Mask.png">#MovingPictures.Coverart</texture>
       <visible>facadeview.list+Control.HasFocus(50)</visible>
       <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
-      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">hidden</animation>
     </control>
     <control>
       <type>image</type>
