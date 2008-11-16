@@ -119,39 +119,6 @@ multiple view modes.
       <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
     </control>
-    <!--Top Bar-->
-    <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
-      <visible>Control.IsVisible(1239)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>15</posY>
-      <font>mediastream11c</font>
-      <label>Moving Pictures</label>
-      <align>right</align>
-    </control>
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-    </control>
-    <import>common.time.xml</import>
     <!-- This is an alternate view button that brings up a menu for view 
          selection, rather than just cycling the view. You can use both
          if you want to. -->
@@ -231,5 +198,38 @@ multiple view modes.
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
     </control>
+    <!--Top Bar-->
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>256</width>
+      <height>36</height>
+      <texture>tvtitlebgshort.png</texture>
+      <visible>Control.IsVisible(1239)</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Top Title Extension</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <label>Moving Pictures</label>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+    </control>
+    <import>common.time.xml</import>
   </controls>
 </window>
