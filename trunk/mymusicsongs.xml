@@ -63,7 +63,7 @@
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
-    <import>common.window.xml</import>
+    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -237,6 +237,7 @@
     </control>
     <import>common.facade.music.xml</import>
     <import>common.overlays.xml</import>
+    <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>

@@ -4,7 +4,6 @@
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <define>#header.label:1</define>
-  <define>#header.image:-</define>
   <define>#header.hover:hover_my pictures.png</define>
   <controls>
     
@@ -89,13 +88,46 @@
         <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
+        <id>0</id>
+        <label>VIEW OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>226</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>SLIDESHOW</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>355</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>SETTINGS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>450</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="-356,0">visible</animation>
         <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
-        <posY>220</posY>
+        <posY>250</posY>
         <width>256</width>
         <height>720</height>
         <layout>StackLayout</layout>
@@ -122,6 +154,13 @@
           <onright>50</onright>
         </control>
         <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
           <description>SlideShow button</description>
           <type>button</type>
           <id>6</id>
@@ -134,6 +173,13 @@
           <id>7</id>
           <label>361</label>
           <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
         </control>
         <control>
           <description>Slideshow Settings</description>

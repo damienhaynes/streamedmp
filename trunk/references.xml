@@ -56,13 +56,13 @@
   <style Name="TVSeriesTitle">
     <id>0</id>
     <width>200</width>
-    <font>mediastream12tcb</font>
+    <font>mediastream12tc</font>
     <textcolor>ff909090</textcolor>
   </style>
   <style Name="TVSeriesLabel">
     <id>0</id>
     <width>380</width>
-    <font>mediastream12tcb</font>
+    <font>mediastream12tc</font>
     <textcolor>ffffffff</textcolor>
   </style>
   <control>
@@ -442,11 +442,11 @@
     <textureDown>-</textureDown>
     <textureUpFocus>-</textureUpFocus>
     <textureDownFocus>-</textureDownFocus>
-    <textureFocus>listbg_fo.png</textureFocus>
-    <textureNoFocus>listbg_nf.png</textureNoFocus>
     <textureHeight>42</textureHeight>
-    <image>-</image>
+    <image>defaultFolder.png</image>
     <font>mediastream12c</font>
+    <font2>mediastream10c</font2>
+    <font3>mediastream10c</font3>
     <shadedColor>20ffffff</shadedColor>
     <selectedColor>FFF87B72</selectedColor>
     <playedColor>ff808080</playedColor>
@@ -465,28 +465,30 @@
     <IconYOff>1000</IconYOff>
     <itemWidth>0</itemWidth>
     <itemHeight>0</itemHeight>
+    <suffix>|</suffix>
     <spaceBetweenItems>0</spaceBetweenItems>
     <scrollOffset>3</scrollOffset>
-    <upBtnWidth>40</upBtnWidth>
-    <downBtnWidth>40</downBtnWidth>
-    <deleteBtnWidth>40</deleteBtnWidth>
-    <upBtnHeight>48</upBtnHeight>
-    <downBtnHeight>48</downBtnHeight>
-    <deleteBtnHeight>48</deleteBtnHeight>
-    <upBtnXOffset>930</upBtnXOffset>
-    <downBtnXOffset>970</downBtnXOffset>
-    <deleteBtnXOffset>1010</deleteBtnXOffset>
+    <upBtnWidth>18</upBtnWidth>
+    <downBtnWidth>18</downBtnWidth>
+    <deleteBtnWidth>18</deleteBtnWidth>
+    <upBtnHeight>42</upBtnHeight>
+    <downBtnHeight>42</downBtnHeight>
+    <deleteBtnHeight>42</deleteBtnHeight>
+    <upBtnXOffset>419</upBtnXOffset>
+    <downBtnXOffset>437</downBtnXOffset>
+    <deleteBtnXOffset>455</deleteBtnXOffset>
     <upBtnYOffset>0</upBtnYOffset>
     <downBtnYOffset>0</downBtnYOffset>
     <deleteBtnYOffset>0</deleteBtnYOffset>
-    <textureMoveUp>playlist_item_up_nofocus.png</textureMoveUp>
-    <textureMoveUpFocused>playlist_item_up_focus.png</textureMoveUpFocused>
-    <textureMoveDown>playlist_item_down_nofocus.png</textureMoveDown>
-    <textureMoveDownFocused>playlist_item_down_focus.png</textureMoveDownFocused>
-    <textureDelete>playlist_item_delete_nofocus.png</textureDelete>
-    <textureDeleteFocused>playlist_item_delete_focus.png</textureDeleteFocused>
-    <folderPrefix />
-    <folderSuffix />
+    <textureFocus>listbg_detailshort_fo.png</textureFocus>
+    <textureNoFocus>listbg_nf.png</textureNoFocus>
+    <textureMoveUp>playlist_up_nf.png</textureMoveUp>
+    <textureMoveUpFocused>playlist_up_fo.png</textureMoveUpFocused>
+    <textureMoveDown>playlist_down_nf.png</textureMoveDown>
+    <textureMoveDownFocused>playlist_down_fo.png</textureMoveDownFocused>
+    <textureDelete>playlist_delete_nf.png</textureDelete>
+    <textureDeleteFocused>playlist_delete_fo.png</textureDeleteFocused>
+    <keepaspectratio>yes</keepaspectratio>
   </control>
   <control>
     <description>default thumbnail panel</description>
