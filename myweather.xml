@@ -9,6 +9,27 @@
   <controls>
     
     <control>
+      <description>update time label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>25</posX>
+      <posY>265</posY>
+      <label>Last Refreshed:</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>update time </description>
+      <type>label</type>
+      <id>11</id>
+      <posX>175</posX>
+      <posY>265</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    
+    <control>
       <description>weather background image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
@@ -34,45 +55,52 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>25</posX>
-      <posY>245</posY>
-      <layout>GridLayout(2,0,0,0)</layout>
+      <posX>594</posX>
+      <posY>658</posY>
+      <layout>StackLayout(0,Horizontal)</layout>
       <control>
         <description>Refresh Button</description>
         <type>button</type>
         <id>3</id>
         <label>184</label>
         <onup>17</onup>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <font>mediastream11tc</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>140</width>
       </control>
       <control>
         <description>Switch Button</description>
         <type>button</type>
         <id>2</id>
         <label>716</label>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <onup>17</onup>
+        <font>mediastream11tc</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>130</width>
       </control>
       <control>
         <description>View Button</description>
         <type>button</type>
         <id>4</id>
         <label>185</label>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <onup>17</onup>
+        <font>mediastream11tc</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>220</width>
       </control>
       <control>
         <description>weather location select</description>
         <type>button</type>
         <id>5</id>
         <label>1028</label>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <onup>17</onup>
+        <font>mediastream11tc</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>100</width>
       </control>
     </control>
     
@@ -205,26 +233,6 @@
       <font>mediastream11tc</font>
       <label>-</label>
       <align>right</align>
-    </control>
-    <control>
-      <description>update time label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>600</posX>
-      <posY>675</posY>
-      <label>Last Refreshed:</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>update time </description>
-      <type>label</type>
-      <id>11</id>
-      <posX>770</posX>
-      <posY>675</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
     </control>
     <control>
       <description>current weather icon</description>
