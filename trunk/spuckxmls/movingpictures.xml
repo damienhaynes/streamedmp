@@ -166,21 +166,18 @@ multiple view modes.
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <description>Switch View</description>
-          <type>button</type>
-          <id>3</id>
-          <label>Switch View</label>
-          <onup>5</onup>
-          <ondown>2</ondown>
-          <onright>50</onright>
-        </control>
-        <control>
           <description>Toggle View</description>
           <type>button</type>
           <id>2</id>
           <label>Toggle View</label>
-          <onup>3</onup>
-          <ondown>4</ondown>
+          <onright>50</onright>
+          <onup>66610</onup>
+        </control>
+        <control>
+          <description>Switch View</description>
+          <type>button</type>
+          <id>3</id>
+          <label>Switch View</label>
           <onright>50</onright>
         </control>
         <control>
@@ -195,8 +192,6 @@ multiple view modes.
           <type>button</type>
           <id>4</id>
           <label>Filters</label>
-          <onup>2</onup>
-          <ondown>5</ondown>
           <onright>50</onright>
         </control>
         <control>
@@ -204,9 +199,15 @@ multiple view modes.
           <type>button</type>
           <id>5</id>
           <label>Settings</label>
-          <onup>4</onup>
-          <ondown>3</ondown>
           <onright>50</onright>
+        </control>
+        <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>66610</id>
+          <label>Video Settings</label>
+          <hyperlink>703</hyperlink>
+          <ondown>2</ondown>
         </control>
       </control>
     </control>

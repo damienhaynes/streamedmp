@@ -184,10 +184,16 @@
           <type>button</type>
           <id>11</id>
           <label>4540</label>
-          <onup>9</onup>
-          <ondown>18</ondown>
           <onright>50</onright>
           <hyperlink>510</hyperlink>
+        </control>
+        <control>
+          <description>music settings button</description>
+          <type>button</type>
+          <id>12</id>
+          <label>Music Settings</label>
+          <onright>50</onright>
+          <hyperlink>14</hyperlink>
         </control>
         <control>
           <description>Radio</description>
@@ -195,16 +201,12 @@
           <id>18</id>
           <label>665</label>
           <onright>50</onright>
-          <onup>11</onup>
-          <ondown>14</ondown>
           <hyperlink>30</hyperlink>
         </control>
         <control>
           <description>Global Search</description>
           <type>button</type>
           <id>14</id>
-          <onup>18</onup>
-          <ondown>16</ondown>
           <onright>50</onright>
           <label>Global Search</label>
           <hyperlink>30885</hyperlink>
@@ -216,7 +218,6 @@
           <id>16</id>
           <label>Lyrics</label>
           <onright>50</onright>
-          <onup>14</onup>
           <hyperlink>90478</hyperlink>
           <visible>plugin.isenabled(My Lyrics)</visible>
         </control>

@@ -188,12 +188,11 @@
           <visible>false</visible>
         </control>
         <control>
-          <description>Trailers</description>
+          <description>Video Settings</description>
           <type>button</type>
-          <id>8</id>
-          <label>5906</label>
-          <hyperlink>5900</hyperlink>
-          <visible>plugin.isenabled(My Trailers)</visible>
+          <id>0</id>
+          <label>Video Settings</label>
+          <hyperlink>703</hyperlink>
         </control>
         <control>
           <description>Moving Pictures</description>
@@ -211,6 +210,14 @@
           <label>1300</label>
           <ondown>2</ondown>
           <visible>plugin.isenabled(MP-TV Series)</visible>
+        </control>
+        <control>
+          <description>Trailers</description>
+          <type>button</type>
+          <id>8</id>
+          <label>5906</label>
+          <hyperlink>5900</hyperlink>
+          <visible>plugin.isenabled(My Trailers)</visible>
         </control>
       </control>
     </control>
