@@ -326,8 +326,8 @@
     <description>default checklistcontrol</description>
     <type>checklistcontrol</type>
     <id>10</id>
-    <posX>300</posX>
-    <posY>80</posY>
+    <posX>251</posX>
+    <posY>200</posY>
     <width>1055</width>
     <height>612</height>
     <spinWidth>37</spinWidth>
@@ -340,11 +340,13 @@
     <textureDown>page_down_nofocus.png</textureDown>
     <textureUpFocus>page_up_focus.png</textureUpFocus>
     <textureDownFocus>page_down_focus.png</textureDownFocus>
-    <textureFocus>list_sub_focus.png</textureFocus>
-    <textureNoFocus>list_sub_nofocus.png</textureNoFocus>
-    <textureHeight>48</textureHeight>
-    <image>folder_focus.png</image>
-    <font>font12</font>
+    <textureFocus>listbg_fo.png</textureFocus>
+    <textureNoFocus>listbg_nf.png</textureNoFocus>
+    <textureHeight>42</textureHeight>
+    <image>-</image>
+    <font>mediastream12c</font>
+    <font>mediastream10c</font>
+    <font>mediastream10c</font>
     <shadedColor>20ffffff</shadedColor>
     <selectedColor>FFF8BC70</selectedColor>
     <textcolor>ffffffff</textcolor>
@@ -353,12 +355,12 @@
     <colordiffuse>ffffffff</colordiffuse>
     <remoteColor>ffFFA075</remoteColor>
     <downloadColor>ff80ff80</downloadColor>
-    <textureCheckmark>check-box.png</textureCheckmark>
-    <textureCheckmarkNoFocus>check-boxNF.png</textureCheckmarkNoFocus>
-    <MarkWidth>21</MarkWidth>
-    <MarkHeight>21</MarkHeight>
-    <MarkOffsetX>30</MarkOffsetX>
-    <MarkOffsetY>21</MarkOffsetY>
+    <textureCheckmark>ledon.png</textureCheckmark>
+    <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+    <MarkWidth>26</MarkWidth>
+    <MarkHeight>26</MarkHeight>
+    <MarkOffsetX>0</MarkOffsetX>
+    <MarkOffsetY>0</MarkOffsetY>
     <textXOff>10</textXOff>
     <textYOff>6</textYOff>
     <textXOff2>1040</textXOff2>
@@ -420,42 +422,51 @@
     <description>default playlist item listcontrol</description>
     <type>playlistcontrol</type>
     <id>10</id>
-    <posX>300</posX>
-    <posY>80</posY>
-    <width>1055</width>
-    <height>612</height>
-    <spinWidth>37</spinWidth>
-    <spinHeight>37</spinHeight>
-    <spinPosX>1278</spinPosX>
-    <spinPosY>610</spinPosY>
+    <posX>685</posX>
+    <posY>275</posY>
+    <width>595</width>
+    <height>400</height>
+    <spinWidth>16</spinWidth>
+    <spinHeight>16</spinHeight>
+    <spinPosX>1220</spinPosX>
+    <spinPosY>679</spinPosY>
     <spinAlign>Right</spinAlign>
-    <spinColor>ffffffff</spinColor>
-    <textureUp>page_up_nofocus.png</textureUp>
-    <textureDown>page_down_nofocus.png</textureDown>
-    <textureUpFocus>page_up_focus.png</textureUpFocus>
-    <textureDownFocus>page_down_focus.png</textureDownFocus>
-    <textureFocus>list_sub_focus.png</textureFocus>
-    <textureNoFocus>list_sub_nofocus.png</textureNoFocus>
-    <textureHeight>48</textureHeight>
-    <image>folder_focus.png</image>
-    <font>font12</font>
+    <spinColor>ff999999</spinColor>
+    <!-- Who needs these annoying buttons anyway?
+    <textureUp>arrowupnf.png</textureUp>
+    <textureDown>arrowdownnf.png</textureDown>
+    <textureUpFocus>arrowupfo.png</textureUpFocus>
+    <textureDownFocus>arrowdownfo.png</textureDownFocus>
+    -->
+    <textureUp>-</textureUp>
+    <textureDown>-</textureDown>
+    <textureUpFocus>-</textureUpFocus>
+    <textureDownFocus>-</textureDownFocus>
+    <textureFocus>listbg_fo.png</textureFocus>
+    <textureNoFocus>listbg_nf.png</textureNoFocus>
+    <textureHeight>42</textureHeight>
+    <image>-</image>
+    <font>mediastream12c</font>
     <shadedColor>20ffffff</shadedColor>
-    <selectedColor>FFF8BC70</selectedColor>
+    <selectedColor>FFF87B72</selectedColor>
+    <playedColor>ff808080</playedColor>
     <textcolor>ffffffff</textcolor>
     <textcolor2>ffffffff</textcolor2>
     <textcolor3>ffffffff</textcolor3>
     <colordiffuse>ffffffff</colordiffuse>
     <remoteColor>ffFFA075</remoteColor>
     <downloadColor>ff80ff80</downloadColor>
-    <textXOff>10</textXOff>
-    <textYOff>6</textYOff>
-    <textXOff2>910</textXOff2>
-    <textYOff2>6</textYOff2>
-    <IconXOff>10</IconXOff>
-    <IconYOff>10</IconYOff>
-    <itemWidth>24</itemWidth>
-    <itemHeight>24</itemHeight>
+    <unfocusedAlpha>100</unfocusedAlpha>
+    <textXOff>-30</textXOff>
+    <textYOff>7</textYOff>
+    <textXOff2>570</textXOff2>
+    <textYOff2>7</textYOff2>
+    <IconXOff>1000</IconXOff>
+    <IconYOff>1000</IconYOff>
+    <itemWidth>0</itemWidth>
+    <itemHeight>0</itemHeight>
     <spaceBetweenItems>0</spaceBetweenItems>
+    <scrollOffset>3</scrollOffset>
     <upBtnWidth>40</upBtnWidth>
     <downBtnWidth>40</downBtnWidth>
     <deleteBtnWidth>40</deleteBtnWidth>
@@ -468,8 +479,6 @@
     <upBtnYOffset>0</upBtnYOffset>
     <downBtnYOffset>0</downBtnYOffset>
     <deleteBtnYOffset>0</deleteBtnYOffset>
-    <textureFocus>playlist_sub_focus.png</textureFocus>
-    <textureNoFocus>playlist_sub_nofocus.png</textureNoFocus>
     <textureMoveUp>playlist_item_up_nofocus.png</textureMoveUp>
     <textureMoveUpFocused>playlist_item_up_focus.png</textureMoveUpFocused>
     <textureMoveDown>playlist_item_down_nofocus.png</textureMoveDown>
