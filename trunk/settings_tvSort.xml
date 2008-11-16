@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>702</id>
+  <defaultcontrol>24</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:5</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#selecteditem:6008</define>
+  <controls>
+    
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>85</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <id>24</id>
+        <label>971</label>
+        <ondown>10</ondown>
+        <onright>9996</onright>
+      </control>
+      
+    </control>
+    
+    <control>
+      <description>tvchannels listcontrol</description>
+      <type>playlistcontrol</type>
+      <id>10</id>
+      <posX>251</posX>
+      <posY>200</posY>
+      <width>595</width>
+      <height>480</height>
+      <textXOff>0</textXOff>
+      <onup>24</onup>
+      <ondown>10</ondown>
+      <onright>9996</onright>
+    </control>
+    
+  </controls>
+</window>
