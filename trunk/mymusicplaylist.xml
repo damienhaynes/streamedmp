@@ -9,7 +9,6 @@
     
     <control>
       <description>music background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -21,7 +20,6 @@
     
     <control>
       <description>music overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -32,15 +30,52 @@
     </control>
     
     <control>
+      <id>204</id>
+      <type>image</type>
+      <posX>34</posX>
+      <posY>260</posY>
+      <width>347</width>
+      <height>347</height>
+      <texture>albumnocover.png</texture>
+      <visible>!control.hasthumb(204)</visible>
+    </control>
+    
+    <control>
+      <id>204</id>
+      <type>image</type>
+      <posX>34</posX>
+      <posY>260</posY>
+      <width>347</width>
+      <height>347</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>500</posX>
+      <posY>270</posY>
+      <width>300</width>
+      <label>#track</label>
+    </control>
+    
+    <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>100</width>
-      <height>568</height>
-      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>1280</width>
+        <height>720</height>
+        <texture>black.png</texture>
+        <colordiffuse>50ffffff</colordiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="fade" time="200">visible</animation>
+        <animation effect="fade" time="200">hidden</animation>
+      </control>
       <control>
         <type>image</type>
         <posX>0</posX>
@@ -229,11 +264,11 @@
       </control>
     </control>
     
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
-    
     <import>common.overlays.xml</import>
     <import>common.facade.music.xml</import>
+    
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
     
   </controls>
 </window>
