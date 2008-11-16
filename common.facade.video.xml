@@ -14,14 +14,12 @@
           <id>50</id>
           <onleft>50</onleft>
           <onleft>2</onleft>
-          <onright>2</onright>
         </control>
         <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
           <onleft>2</onleft>
-          <onright>2</onright>
           <posX>64</posX>
           <posY>80</posY>
           <width>1250</width>
@@ -98,10 +96,11 @@
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
           <id>50</id>
-          <scrollOffset>2</scrollOffset>
+          <onleft>2</onleft>
         </control>
       </control>
     </control>
+    
     <control>
       <description>Spin Control BG</description>
       <type>image</type>
@@ -111,8 +110,9 @@
       <width>180</width>
       <height>32</height>
       <texture>mediacountbg.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>facadeview.list|facadeview.playlist</visible>
     </control>
+    
     <control>
       <description>Spin Control Label</description>
       <type>label</type>
@@ -122,7 +122,8 @@
       <posY>673</posY>
       <font>mediastream12c</font>
       <textcolor>ff025984</textcolor>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>facadeview.list|facadeview.playlist</visible>
     </control>
+    
   </controls>
 </window>
