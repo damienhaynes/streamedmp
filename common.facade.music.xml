@@ -7,10 +7,8 @@
       <visible>!Control.HasFocus(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-      <animation effect="rotatey" start="15" end="0" center="600,0" tween="back" ease="easeout" time="500" reversible="false">hidden</animation>
-      <animation effect="rotatey" start="0" end="15" center="600,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
@@ -26,7 +24,7 @@
           <textureHeight>55</textureHeight>
           <scrollOffset>2</scrollOffset>
           <font>mediastream12tc</font>
-          <font2>mediastream12tcb</font2>
+          <font2>mediastream12tc</font2>
           <IconXOff>5</IconXOff>
           <IconYOff>5</IconYOff>
           <textXOff>25</textXOff>
@@ -52,8 +50,8 @@
           <spaceBetweenItems>14</spaceBetweenItems>
           <textureHeight>90</textureHeight>
           <scrollOffset>1</scrollOffset>
-          <textureFocus>album_background_focus.png</textureFocus>
-          <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+          <textureFocus>listbg_fo.png</textureFocus>
+          <textureNoFocus>listbg_nf.png</textureNoFocus>
           <onleft>2</onleft>
           <onright>50</onright>
           <onup>2</onup>
@@ -127,7 +125,6 @@
           <id>50</id>
           <onleft>2</onleft>
           <onright>2</onright>
-          <scrollOffset>2</scrollOffset>
         </control>
       </control>
     </control>
