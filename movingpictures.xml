@@ -31,13 +31,23 @@ multiple view modes.
   <define>#smalltitle.color:FF909090</define>
   <controls>
     <control>
+      <description>Background to be displayed when there is no Movie Backdrop</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+    </control>
+    <control>
       <description>Movie Backdrop (Fan Art) - Plug-in sets to invisible, if no art.</description>
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1366</width>
-      <height>768</height>
+      <width>1280</width>
+      <height>720</height>
       <texture>#MovingPictures.Backdrop</texture>
     </control>
     <control>
@@ -63,16 +73,6 @@ multiple view modes.
       <width>10</width>
       <height>10</height>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <description>Background to be displayed when there is no Movie Backdrop</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1366</width>
-      <height>768</height>
-      <visible>!Control.IsVisible(1)</visible>
     </control>
     <control>
       <description>Movie Title</description>
@@ -182,12 +182,12 @@ multiple view modes.
     <control>
       <type>imagelist</type>
       <id>101</id>
-      <posX>700</posX>
-      <posY>470</posY>
+      <posX>686</posX>
+      <posY>462</posY>
       <width>310</width>
       <height>25</height>
-      <textureWidth>25</textureWidth>
-      <textureHeight>25</textureHeight>
+      <textureWidth>17</textureWidth>
+      <textureHeight>15</textureHeight>
       <subitems>
         <subitem>greystar.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -200,27 +200,6 @@ multiple view modes.
     </control>
     <!--Top Bar-->
     <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
-      <visible>Control.IsVisible(1239)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>15</posY>
-      <font>mediastream11c</font>
-      <label>Moving Pictures</label>
-      <align>right</align>
-    </control>
-    <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
@@ -229,6 +208,18 @@ multiple view modes.
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>Moving Pictures</label>
     </control>
     <import>common.time.xml</import>
   </controls>
