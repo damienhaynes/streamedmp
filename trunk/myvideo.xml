@@ -6,6 +6,7 @@
   <define>#header.label:134</define>
   <define>#header.hover:hover_my videos.png</define>
   <controls>
+    
     <control>
       <description>movies background image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -17,6 +18,7 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
+    
     <control>
       <description>movies overlay image</description>
       <type>image</type>
@@ -28,6 +30,7 @@
       <texture>mainoverlay.png</texture>
       <visible>!facadeview.filmstrip</visible>
     </control>
+    
     <control>
       <description>Filmstrip black background - FilmStripView</description>
       <type>image</type>
@@ -39,6 +42,7 @@
       <texture>black.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
+    
     <control>
       <description>Backdrop Overlay - FilmStripView</description>
       <type>image</type>
@@ -51,6 +55,7 @@
       <texture>movieviewbg.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
+    
     <control>
       <description>Glasstitlebar - FilmStripView</description>
       <type>image</type>
@@ -63,17 +68,12 @@
       <texture>glasstitlebar.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-    <import>common.window.xml</import>
+    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>100</width>
-      <height>568</height>
-      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
         <posX>0</posX>
@@ -208,7 +208,6 @@
           <id>10</id>
           <hyperlink>9811</hyperlink>
           <label>1300</label>
-          <ondown>2</ondown>
           <visible>plugin.isenabled(MP-TV Series)</visible>
         </control>
         <control>
@@ -221,6 +220,7 @@
         </control>
       </control>
     </control>
+    
     <control>
       <id>0</id>
       <type>image</type>
@@ -231,7 +231,11 @@
       <texture>#selectedthumb</texture>
       <visible>!facadeview.filmstrip</visible>
     </control>
+    
     <import>common.facade.video.xml</import>
+    
+    <import>common.window.xml</import>
     <import>common.time.xml</import>
+    
   </controls>
 </window>
