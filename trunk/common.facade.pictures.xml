@@ -63,34 +63,36 @@
           <description>Filmstrip view</description>
           <type>filmstrip</type>
           <id>50</id>
-          <posX>60</posX>
-          <posY>220</posY>
-          <width>1300</width>
+          <posX>26</posX>
+          <posY>513</posY>
+          <width>1280</width>
           <onup>2</onup>
-          <spinPosY>630</spinPosY>
+          <spinPosY>1300</spinPosY>
           <spinPosX>1218</spinPosX>
-          <thumbWidth>245</thumbWidth>
-          <thumbHeight>185</thumbHeight>
-          <thumbPosX>12</thumbPosX>
-          <thumbPosY>9</thumbPosY>
-          <itemWidth>248</itemWidth>
-          <itemHeight>185</itemHeight>
-          <textureWidth>275</textureWidth>
-          <textureHeight>206</textureHeight>
-          <imageFolderFocus>Framefocus.png</imageFolderFocus>
-          <frame>-</frame>
-          <frameFocus>music_filmstrip_frame.png</frameFocus>
-          <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png">
-          </thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
-          </InfoImage>
-          <showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
+          <thumbWidth>140</thumbWidth>
+          <thumbHeight>140</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <itemWidth>179</itemWidth>
+          <itemHeight>154</itemHeight>
+          <textureWidth>154</textureWidth>
+          <textureHeight>154</textureHeight>
+          <imageFolderFocus>imagebg.png</imageFolderFocus>
+          <imageFolder>imagebg.png</imageFolder>
+          <frame>imagebg.png</frame>
+          <frameFocus>imagebg.png</frameFocus>
+          <background>imagebg.png</background>
+          <thumbs />
+          <InfoImage />
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
-          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="100,100" end="133,133" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="133,133" end="100,100" time="0">unfocus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,-18" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
+          <scrollOffset>3</scrollOffset>
         </control>
         <control>
           <description>playlist listcontrol</description>
