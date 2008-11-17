@@ -191,7 +191,7 @@
       <width>400</width>
       <height>40</height>
       <textcolor>ffffff</textcolor>
-      <font>mediastream16tc</font>
+      <font>mediastream16tcb</font>
       <label>#TVSeries.Title</label>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
@@ -220,7 +220,7 @@
       <height>60</height>
       <textcolor>ffffff</textcolor>
       <align>left</align>
-      <font>mediastream16tc</font>
+      <font>mediastream16tcb</font>
       <label>#TVSeries.Title</label>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
@@ -298,7 +298,7 @@
       <posX>570</posX>
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
-      <font>mediastream12tc</font>
+      <font>mediastream12tcb</font>
       <label>RATING</label>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
@@ -470,6 +470,7 @@
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
+          <scrollOffset>2</scrollOffset>
           <id>50</id>
           <posX>0</posX>
           <posY>280</posY>
