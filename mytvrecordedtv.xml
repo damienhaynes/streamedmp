@@ -1,38 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>603</id>
-  <defaultcontrol>2</defaultcontrol>
+  <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.image:-</define>
   <define>#header.label:604</define>
   <define>#header.hover:hover_my tv.png</define>
   <controls>
-<import>common.time.xml</import>
-	
-<control>
-	<description>music background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>tvshows_bg.jpg</texture>
-</control>
-	
-<control>
-	<description>music overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
+    <import>common.time.xml</import>
+    <control>
+      <description>music background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my tv series.png</texture>
+    </control>
+    <control>
+      <description>tv overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>movieviewbg.png</texture>
+    </control>
     <import>common.window.xml</import>
     <control>
       <description>Number of Files Label</description>
@@ -43,56 +40,174 @@
       <label>#itemcount</label>
       <visible>false</visible>
     </control>
-	
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
+        <posX>0</posX>
         <posY>0</posY>
-        <width>220</width>
+        <width>256</width>
         <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
+        <texture>hiddenmenu_left.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>VIEW OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>226</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>TV OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>355</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>JUMP TO</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>450</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
-        <posY>80</posY>
+        <posY>250</posY>
+        <width>256</width>
+        <height>720</height>
         <layout>StackLayout</layout>
         <control>
-        <description>View-As button</description>
-        <type>button</type>
-        <id>2</id>
-        <label>100</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>17</onup>
-        <ondown>3</ondown>
+          <description>View-As</description>
+          <type>button</type>
+          <id>2</id>
+          <label>100</label>
+          <onup>10</onup>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>3</id>
+          <label>103</label>
+        </control>
+        <control>
+          <description>Switch View</description>
+          <type>button</type>
+          <id>5</id>
+          <label>457</label>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Current Playlist</description>
+          <type>button</type>
+          <id>20</id>
+          <label>4555</label>
+          <action>33</action>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>My Playlists</description>
+          <type>button</type>
+          <id>9</id>
+          <label>983</label>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Now playing button</description>
+          <type>button</type>
+          <id>11</id>
+          <label>4540</label>
+          <onright>50</onright>
+          <hyperlink>510</hyperlink>
+        </control>
+        <control>
+          <description>music settings button</description>
+          <type>button</type>
+          <id>12</id>
+          <label>Music Settings</label>
+          <onright>50</onright>
+          <hyperlink>14</hyperlink>
+        </control>
+        <control>
+          <description>Radio</description>
+          <type>button</type>
+          <id>18</id>
+          <label>665</label>
+          <onright>50</onright>
+          <hyperlink>30</hyperlink>
+        </control>
+        <control>
+          <description>Global Search</description>
+          <type>button</type>
+          <id>14</id>
+          <onright>50</onright>
+          <label>Global Search</label>
+          <hyperlink>30885</hyperlink>
+          <visible>plugin.isenabled(Global search)</visible>
+        </control>
+        <control>
+          <description>My Lyrics</description>
+          <type>button</type>
+          <id>16</id>
+          <label>Lyrics</label>
+          <onright>50</onright>
+          <hyperlink>90478</hyperlink>
+          <visible>plugin.isenabled(My Lyrics)</visible>
+        </control>
       </control>
-      <control>
-        <type>sortbutton</type>
-        <id>3</id>
-        <label>620</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>5</ondown>
-      </control>
-      <control>
-        <description>All,Genre,Channel button</description>
-        <type>button</type>
-        <id>5</id>
-        <label>457</label>
-        <onleft>6</onleft>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>6</ondown>
-      </control>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="slide" time="100" end="-280,0">hidden</animation>
+      <animation effect="slide" time="100" start="-280,0">visible</animation>
+      <posX>0</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
       <control>
         <description>cleanup button</description>
         <type>button</type>
