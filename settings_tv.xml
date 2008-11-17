@@ -6,6 +6,8 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:6014</define>
+  <define>#defaultcontrol:24</define>
+  <define>#defaultcontrol.onright:9996</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -27,49 +29,49 @@
         <id>24</id>
         <label>6000</label>
         <onup>17</onup>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>H.264 Video Codecs</description>
         <type>button</type>
         <id>35</id>
         <label>6036</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <type>button</type>
         <description>Audio Codecs</description>
         <id>25</id>
         <label>6001</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <type>button</type>
         <description>LATM AAC Audio Codecs</description>
         <id>36</id>
         <label>6039</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Audio Renderer</description>
         <type>button</type>
         <id>33</id>
         <label>6002</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>De-interlacing</description>
         <type>button</type>
         <id>27</id>
         <label>6003</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Apect Ratio</description>
         <type>button</type>
         <id>28</id>
         <label>6004</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Rendering Options</description>
@@ -77,28 +79,28 @@
         <id>31</id>
         <label>6007</label>
         <hyperlink>701</hyperlink>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Automatically turn TV on</description>
         <type>button</type>
         <id>30</id>
         <label>6006</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Timeshift usage mode</description>
         <type>button</type>
         <id>26</id>
         <label>777</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Timeshift Buffer</description>
         <type>button</type>
         <id>29</id>
         <label>6005</label>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Channelsorting</description>
@@ -106,7 +108,7 @@
         <id>32</id>
         <label>6008</label>
         <hyperlink>702</hyperlink>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>DVB Guide</description>
@@ -114,7 +116,7 @@
         <id>34</id>
         <label>6009</label>
         <hyperlink>706</hyperlink>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>XMLTV EPG Grabber</description>
@@ -122,7 +124,7 @@
         <id>37</id>
         <label>6010</label>
         <hyperlink>707</hyperlink>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
         <ondown>99</ondown>
       </control>
       

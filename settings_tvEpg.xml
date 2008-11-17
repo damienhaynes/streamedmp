@@ -6,6 +6,8 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:6011</define>
+  <define>#defaultcontrol:10</define>
+  <define>#defaultcontrol.onright:9996</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -27,7 +29,7 @@
         <id>2</id>
         <label>188</label>
         <ondown>3</ondown>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       
       <control Style="settingsmainbutton">
@@ -37,7 +39,7 @@
         <label>1448</label>
         <onup>2</onup>
         <ondown>10</ondown>
-        <onright>9996</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       
     </control>
@@ -72,7 +74,7 @@
       <posY>225</posY>
       <onup>3</onup>
       <ondown>10</ondown>
-      <onright>9996</onright>
+      <onright>#defaultcontrol.onright</onright>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     

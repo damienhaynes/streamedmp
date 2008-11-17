@@ -6,6 +6,8 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:1</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9997</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -240,7 +242,7 @@
       <onup>17</onup>
       <ondown>3</ondown>
       <onleft>2</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <align>right</align>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -267,7 +269,7 @@
       <onup>2</onup>
       <ondown>4</ondown>
       <onleft>3</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <align>right</align>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -294,7 +296,7 @@
       <onup>3</onup>
       <ondown>5</ondown>
       <onleft>4</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <align>right</align>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -311,7 +313,7 @@
       <label>13010</label>
       <textcolor>FFFFFFFF</textcolor>
       <onleft>5</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <onup>4</onup>
       <ondown>6</ondown>
       <align>right</align>
@@ -326,7 +328,7 @@
       <label>13008</label>
       <textcolor>FFFFFFFF</textcolor>
       <onleft>6</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <onup>5</onup>
       <ondown>7</ondown>
       <align>right</align>
@@ -341,7 +343,7 @@
       <label>13009</label>
       <textcolor>FFFFFFFF</textcolor>
       <onleft>7</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <onup>6</onup>
       <ondown>8</ondown>
       <align>right</align>
@@ -357,7 +359,7 @@
       <label>6020</label>
       <textcolor>FFFFFFFF</textcolor>
       <onleft>8</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <onup>7</onup>
       <ondown>9</ondown>
       <align>right</align>
@@ -372,7 +374,7 @@
       <label>6021</label>
       <textcolor>FFFFFFFF</textcolor>
       <onleft>9</onleft>
-      <onright>9997</onright>
+      <onright>#defaultcontrol.onright</onright>
       <onup>8</onup>
       <ondown>9</ondown>
       <align>right</align>

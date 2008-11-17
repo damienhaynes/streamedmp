@@ -6,6 +6,8 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:673</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9995</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -110,7 +112,7 @@
       <onup>17</onup>
       <ondown>4</ondown>
       <onleft>2</onleft>
-      <onright>9995</onright>
+      <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
@@ -134,7 +136,7 @@
       <onup>2</onup>
       <ondown>3</ondown>
       <onleft>4</onleft>
-      <onright>9995</onright>
+      <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
@@ -158,7 +160,7 @@
       <onup>4</onup>
       <ondown>2</ondown>
       <onleft>3</onleft>
-      <onright>9995</onright>
+      <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
