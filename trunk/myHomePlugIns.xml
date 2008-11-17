@@ -37,6 +37,93 @@
 	<animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
+    <!-- Hidden Menu -->
+    
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>10</defaultcontrol>
+      <onexit>50</onexit>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <description>sub-blade</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>836</posX>
+        <posY>0</posY>
+        <width>256</width>
+        <height>720</height>
+        <texture>homebladesub.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="0" start="0,0">visible</animation>
+        <animation effect="slide" time="0" end="0,0">hidden</animation>
+        <posX>836</posX>
+        <posY>270</posY>
+        <width>256</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Back button</description>
+          <type>button</type>
+          <id>10</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>15</textYOff>
+          <label>SHUTDOWN</label>
+          <font>mediastream11tc</font>
+          <action>99</action>
+          <onup>13</onup>
+        </control>
+        <control>
+          <description>videowallpaper button</description>
+          <type>button</type>
+          <id>11</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>15</textYOff>
+          <label>VIDEO WALLPAPER</label>
+          <font>mediastream11tc</font>
+          <action>101</action>
+        </control>
+        <control>
+          <description>basichome button button</description>
+          <type>button</type>
+          <id>12</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>15</textYOff>
+          <label>BASIC HOME</label>
+          <font>mediastream11tc</font>
+          <action>115</action>
+        </control>
+        <control>
+          <description>Exit button</description>
+          <type>button</type>
+          <id>13</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>15</textYOff>
+          <label>EXIT</label>
+          <font>mediastream11tc</font>
+          <action>97</action>
+          <ondown>10</ondown>
+        </control>
+      </control>
+    </control>
+    
     <control>
       <description>Homeblade</description>
       <type>image</type>
