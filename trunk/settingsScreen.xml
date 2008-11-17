@@ -6,6 +6,8 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:#highlightedbutton</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9995</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -27,7 +29,7 @@
         <id>2</id>
         <label>213</label>
         <hyperlink>10</hyperlink>
-        <onright>9995</onright>
+        <onright>#defaultcontrol.onright</onright>
         <onup>17</onup>
       </control>
       
@@ -37,7 +39,7 @@
         <id>3</id>
         <label>214</label>
         <hyperlink>11</hyperlink>
-        <onright>9995</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       
       <control Style="settingsmainbutton">
@@ -46,7 +48,7 @@
         <id>4</id>
         <label>673</label>
         <hyperlink>31</hyperlink>
-        <onright>9995</onright>
+        <onright>#defaultcontrol.onright</onright>
         <ondown>99</ondown>
       </control>
       
