@@ -139,7 +139,7 @@ multiple view modes.
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>7</defaultcontrol>
+      <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
       <control>
               <type>image</type>
@@ -148,7 +148,7 @@ multiple view modes.
               <width>256</width>
               <height>720</height>
               <texture>hiddenmenu_left.png</texture>
-              <visible>!Control.HasFocus(50)</visible>
+              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
               <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
@@ -159,7 +159,7 @@ multiple view modes.
               <font>mediastream12tc</font>
               <posX>15</posX>
               <posY>226</posY>
-              <visible>!Control.HasFocus(50)</visible>
+              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
               <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
@@ -170,14 +170,14 @@ multiple view modes.
               <font>mediastream12tc</font>
               <posX>15</posX>
               <posY>325</posY>
-              <visible>!Control.HasFocus(50)</visible>
+              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
               <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
         <animation effect="slide" time="100" start="-356,0">visible</animation>
         <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
@@ -631,7 +631,9 @@ multiple view modes.
       <description>Play Button</description>
       <type>button</type>
       <id>6</id>
-      <onleft>3</onleft>
+      <onup>7</onup>
+      <ondown>7</ondown>
+      <onleft>7</onleft>
       <onright>7</onright>
       <posX>402</posX>
       <posY>390</posY>
@@ -649,7 +651,10 @@ multiple view modes.
       <description>Cycle Details Button (not implemented yet)</description>
       <type>button</type>
       <id>7</id>
+      <onup>6</onup>
+      <ondown>6</ondown>
       <onleft>6</onleft>
+      <onright>6</onright>
       <posX>502</posX>
       <posY>390</posY>
       <width>185</width>
