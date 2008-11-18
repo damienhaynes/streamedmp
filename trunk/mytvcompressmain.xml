@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>609</id>
   <defaultcontrol>2</defaultcontrol>
@@ -50,7 +50,17 @@
       <posY>220</posY>
       <label>1003</label>
     </control>
-
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>290</width>
+      <height>768</height>
+      <texture>menu_slide_background.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>

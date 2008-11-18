@@ -1,97 +1,102 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>606</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:652</define>
   <define>#header.image:-</define>
-  <define>#header.hover:hover_my tv.png</define>
+  <define>#header.hover:-</define>
   <controls>
-<import>common.time.xml</import>
-	
-<control>
-	<description>music background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>tvshows_bg.jpg</texture>
-</control>
-	
-<control>
-	<description>music overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
-    <import>common.window.xml</import>
+    <import>common.window.tv.xml</import>
+    <import>common.time.xml</import>
     <control>
-      <description>Number of Files Label</description>
       <type>label</type>
+      <description>Number of Files Label</description>
       <id>12</id>
       <posX>493</posX>
-      <posY>706</posY>
+      <posY>546</posY>
       <label>#itemcount</label>
+      <textcolor>ffffffff</textcolor>
       <visible>false</visible>
     </control>
-	
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>-210</buttonX>
+      <buttonY>64</buttonY>
+      <buttonwidth>385</buttonwidth>
+      <buttonheight>515</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>100</width>
+      <height>568</height>
+      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posY>0</posY>
-        <width>220</width>
-        <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
+        <posX>0</posX>
+        <posY>184</posY>
+        <width>360</width>
+        <height>412</height>
+        <texture>menu_slide_background.png</texture>
         <colorDiffuse>fffffffff</colorDiffuse>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+        <animation effect="slide" time="250" start="-360,0">visible</animation>
+        <animation effect="slide" time="250" end="-360,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <animation effect="slide" time="250" start="-360,0">visible</animation>
+        <animation effect="slide" time="250" end="-360,0">hidden</animation>
         <posX>0</posX>
-        <posY>80</posY>
+        <posY>194</posY>
         <layout>StackLayout</layout>
+        <id>24</id>
         <control>
-        <type>sortbutton</type>
-        <id>3</id>
-        <onleft>3</onleft>
-        <onright>10</onright>
-        <onup>5</onup>
-        <ondown>5</ondown>
-        <label>620</label>
-      </control>
-      <control>
-        <type>button</type>
-        <description>All,Genre,Channel button</description>
-        <id>5</id>
-        <onleft>6</onleft>
-        <onright>10</onright>
-        <onup>3</onup>
-        <ondown>6</ondown>
-        <label>457</label>
-      </control>
-      <control>
-        <type>button</type>
-        <description>cleanup button</description>
-        <id>6</id>
-        <onleft>3</onleft>
-        <onright>10</onright>
-        <onup>5</onup>
-        <ondown>99</ondown>
-        <label>624</label>
+          <type>sortbutton</type>
+          <id>3</id>
+          <onleft>3</onleft>
+          <onright>10</onright>
+          <onup>5</onup>
+          <ondown>5</ondown>
+          <label>620</label>
+        </control>
+        <control>
+          <type>button</type>
+          <description>All,Genre,Channel button</description>
+          <id>5</id>
+          <onleft>6</onleft>
+          <onright>10</onright>
+          <onup>3</onup>
+          <ondown>6</ondown>
+          <label>457</label>
+        </control>
+        <control>
+          <type>button</type>
+          <description>cleanup button</description>
+          <id>6</id>
+          <onleft>3</onleft>
+          <onright>10</onright>
+          <onup>5</onup>
+          <ondown>99</ondown>
+          <label>624</label>
+        </control>
       </control>
     </control>
     <control>
@@ -106,26 +111,21 @@
         <type>listcontrol</type>
         <description>scheduler recordings listcontrol</description>
         <id>10</id>
-        <width>1055</width>
-        <height>560</height>
-        <spinPosY>550</spinPosY>
-        <textXOff>10</textXOff>
-        <textYOff>2</textYOff>
-        <textXOff2>1035</textXOff2>
+        <itemWidth>48</itemWidth>
+        <itemHeight>48</itemHeight>
+        <IconYOff>10</IconYOff>
+        <spaceBetweenItems>0</spaceBetweenItems>
+        <textureHeight>66</textureHeight>
+        <scrollOffset>0</scrollOffset>
+        <textureFocus>album_background_focus.png</textureFocus>
+        <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+        <textYOff>5</textYOff>
+        <textXOff2>752</textXOff2>
         <textYOff2>25</textYOff2>
         <textXOff3>100</textXOff3>
         <textYOff3>29</textYOff3>
-        <PinIconXOff>62</PinIconXOff>
-        <PinIconYOff>27</PinIconYOff>
-        <IconXOff>8</IconXOff>
-        <IconYOff>8</IconYOff>
-        <itemWidth>43</itemWidth>
-        <itemHeight>43</itemHeight>
-        <textureFocus>recording_background_focus.png</textureFocus>
-        <textureNoFocus>recording_background_nofocus.png</textureNoFocus>
-        <spaceBetweenItems>0</spaceBetweenItems>
-        <textureHeight>66</textureHeight>
-        <keepaspectratio>no</keepaspectratio>
+        <PinIconXOff>80</PinIconXOff>
+        <PinIconYOff>33</PinIconYOff>
         <font2>font10</font2>
         <font3>font10</font3>
         <onleft>2</onleft>
@@ -146,55 +146,47 @@
         <type>fadelabel</type>
         <description>Current program title</description>
         <id>13</id>
-        <posX>310</posX>
-        <posY>590</posY>
-        <width>600</width>
-        <label>#TV.RecordedTV.Title</label>
+        <posX>960</posX>
+        <posY>133</posY>
+        <width>400</width>
         <font>font13</font>
+        <textcolor>ffcccccc</textcolor>
+        <label>#TV.RecordedTV.Title</label>
       </control>
       <control>
         <type>label</type>
         <description>Current program time</description>
         <id>14</id>
-        <posX>310</posX>
-        <posY>620</posY>
-        <label>#TV.RecordedTV.Time</label>
+        <posX>960</posX>
+        <posY>163</posY>
         <font>font13</font>
-        <textcolor>ffa9d0f7</textcolor>
-        <visible>false</visible>
+        <label>#TV.RecordedTV.Time</label>
       </control>
       <control>
         <type>textboxscrollup</type>
         <description>Description1</description>
         <id>15</id>
-        <posX>310</posX>
-        <posY>650</posY>
-        <width>650</width>
-        <height>94</height>
+        <posX>890</posX>
+        <posY>263</posY>
+        <width>460</width>
+        <height>360</height>
+        <font>font13</font>
+        <seperator>----------------------------------------------------------------------------------------------------</seperator>
         <label>#TV.RecordedTV.Description</label>
-        <font>font12</font>
       </control>
-    </control>
-    <control>
-      <description>TV background</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>17</posX>
-      <posY>615</posY>
-      <width>180</width>
-      <height>113</height>
-      <texture>video_overlay_background.png</texture>
-    </control>
-    <control>
-      <description>TV preview window</description>
-      <type>videowindow</type>
-      <id>99</id>
-      <posX>25</posX>
-      <posY>623</posY>
-      <width>160</width>
-      <height>90</height>
-      <action>18</action>
-      <textureFocus>tv_green_border.png</textureFocus>
+      <control>
+        <description>TV preview window</description>
+        <type>videowindow</type>
+        <id>99</id>
+        <posX>10</posX>
+        <posY>676</posY>
+        <width>146</width>
+        <height>82</height>
+        <action>18</action>
+        <textureFocus>tv_green_border.png</textureFocus>
+        <onup>5</onup>
+        <visible>Player.HasVideo</visible>
+      </control>
     </control>
   </controls>
 </window>

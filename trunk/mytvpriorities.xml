@@ -1,15 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>607</id>
   <defaultcontrol>10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:652</define>
+  <define>#header.label:877</define>
   <define>#header.image:-</define>
   <define>#header.hover:hover_my tv.png</define>
   <define>#selecteditem:877</define>
   <controls>
-    <import>common.window.xml</import>
+    <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
@@ -27,65 +38,56 @@
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>310</posX>
-      <posY>590</posY>
-      <width>600</width>
-      <label>#TV.Scheduled.Title</label>
+      <posX>960</posX>
+      <posY>133</posY>
+      <width>400</width>
       <font>font13</font>
+      <label>#TV.Scheduled.Title</label>
+      <textcolor>ffcccccc</textcolor>
     </control>
     <control>
       <description>Current program time</description>
       <type>label</type>
       <id>14</id>
-      <posX>310</posX>
-      <posY>620</posY>
-      <label>#TV.Scheduled.Time</label>
+      <posX>960</posX>
+      <posY>163</posY>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <label>#TV.Scheduled.Time</label>
+    </control>
+    <control>
+      <description>channel</description>
+      <type>label</type>
+      <id>17</id>
+      <posX>960</posX>
+      <posY>193</posY>
+      <label>#TV.Scheduled.Channel</label>
+      <font>font13</font>
+      <textcolor>ffcccccc</textcolor>
     </control>
     <control>
       <description>Description1</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>310</posX>
-      <posY>650</posY>
-      <width>650</width>
-      <height>94</height>
-      <label>#TV.Scheduled.Description</label>
-      <font>font12</font>
-    </control>
-    <control>
-      <description>genre</description>
-      <type>label</type>
-      <id>17</id>
-      <posX>1346</posX>
-      <posY>620</posY>
-      <label>#TV.Scheduled.Genre</label>
-      <align>right</align>
+      <posX>890</posX>
+      <posY>263</posY>
+      <width>460</width>
+      <height>360</height>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>TV background</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>17</posX>
-      <posY>615</posY>
-      <width>180</width>
-      <height>113</height>
-      <texture>video_overlay_background.png</texture>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <label>#TV.Scheduled.Description</label>
     </control>
     <control>
       <description>TV preview window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>25</posX>
-      <posY>623</posY>
-      <width>160</width>
-      <height>90</height>
+      <posX>10</posX>
+      <posY>676</posY>
+      <width>146</width>
+      <height>82</height>
       <action>18</action>
-      <onup>7</onup>
       <textureFocus>tv_green_border.png</textureFocus>
+      <onup>7</onup>
+      <visible>Player.HasVideo</visible>
     </control>
   </controls>
 </window>

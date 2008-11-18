@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>601</id>
   <defaultcontrol>2</defaultcontrol>
@@ -8,33 +8,19 @@
   <define>#header.hover:hover_my tv.png</define>
   <define>#selecteditem:652</define>
   <controls>
-<import>common.time.xml</import>
-	
-<control>
-	<description>music background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>tvshows_bg.jpg</texture>
-</control>
-	
-<control>
-	<description>music overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
     <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
     <control>
       <description>Number of Files Label</description>
       <type>label</type>
@@ -46,29 +32,26 @@
       <textcolor>White</textcolor>
       <visible>no</visible>
     </control>
-
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>290</width>
+      <height>768</height>
+      <texture>menu_slide_background.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
       <control>
-        <type>image</type>
-        <posY>0</posY>
-        <width>220</width>
-        <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
-      </control>
-	  
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
-        <posX>0</posX>
-        <posY>80</posY>
-        <layout>StackLayout</layout>
-        <control>
         <type>sortbutton</type>
         <id>2</id>
         <label>620</label>
@@ -173,7 +156,7 @@
       <posY>620</posY>
       <label>#TV.Scheduled.Time</label>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <textcolor>ff808080</textcolor>
     </control>
     <control>
       <description>Description1</description>

@@ -8,39 +8,8 @@
   <define>#header.hover:hover_my tv.png</define>
   <controls>
     <import>common.time.xml</import>
-    <control>
-      <description>tv background image</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_my tv series.png</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>tv overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>movieviewbg.png</texture>
-    </control>
+    <import>common.window.tv.xml</import>
     <!--***************Top Bar****************-->
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-    </control>
     <control>
       <description>Time Background</description>
       <type>image</type>
@@ -50,18 +19,6 @@
       <width>132</width>
       <height>32</height>
       <texture>clockbackground.png</texture>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Top Title</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <label>#currentmodule</label>
-      <align>right</align>
-      <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
     </control>
     <control>
       <type>group</type>
@@ -213,6 +170,17 @@
       <height>343</height>
       <texture>tv_frame.png</texture>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <description>video window</description>
