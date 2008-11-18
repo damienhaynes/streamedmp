@@ -5,6 +5,15 @@
     <height>720</height>
     <version>0.9.3.0</version>
   </skin>
+  <style Name="settingsbutton">
+    <width>211</width>
+    <height>43</height>
+    <textYOff>12</textYOff>
+    <font>mediastream10tc</font>
+    <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
+    <textureFocus>settingsbuttonfo.png</textureFocus>
+    <colordiffuse>aaffffff</colordiffuse>
+  </style>
   <style Name="settingsmainbutton">
     <width>595</width>
     <height>42</height>
@@ -32,14 +41,23 @@
     <AltTextureNoFocus>listbg_togglebutton_off_nf.png</AltTextureNoFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
-  <style Name="settingsbutton">
-    <width>211</width>
-    <height>43</height>
-    <textYOff>12</textYOff>
-    <font>mediastream10tc</font>
-    <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
-    <textureFocus>settingsbuttonfo.png</textureFocus>
-    <colordiffuse>aaffffff</colordiffuse>
+  <style Name="settingsmaintexturefo">
+      <id>0</id>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_fo.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+  </style>
+  <style Name="settingsmaintexturenf">
+      <id>0</id>
+      <posX>216</posX>
+      <width>595</width>
+      <height>42</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>listbg_nf.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
   <style Name="smallTitleB">
     <id>0</id>
