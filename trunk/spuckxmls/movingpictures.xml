@@ -27,13 +27,38 @@ multiple view modes.
   
   <define>#details.backdrop.used:true</define>   <!-- true if backdrop (fanart) should be displayed in this view -->
   
-  <!-- Colors, attributes, etc -->
-  <define>#smalltitle.color:ff383838</define>
-
-  
   <controls>
     
-    <!-- ********************* Background /  Movie Backdrop (Fan-art) *************************** -->
+    <!--            :: DUMMY CONTROLS ::             -->
+    
+    <control>
+      <description>Visibile when filtering by watched flag. Only unwatched movies are listed.</description>
+      <type>label</type>
+      <id>8</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+
+    <control>
+      <description>Visibile when the currently selected movie has been watched</description>
+      <type>label</type>
+      <id>9</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+
+    <control>
+      <description>Visibile when filtering by remote control searching.</description>
+      <type>label</type>
+      <id>10</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    
+    <!--            :: BACKGROUNDS :: MOVIE BACKDROP :: OVERLAYS ::            -->
     
     <control>
       <description>Default Background</description>
@@ -109,7 +134,7 @@ multiple view modes.
       <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
     </control>
     
-    <!-- ***************** All Views / Stuffs ***************************************** -->
+    <!--            :: ALL VIEWS ::            -->
     
     <control>
       <type>actiongroup</type>
@@ -207,7 +232,7 @@ multiple view modes.
       </control>
     </control>
     
-    <!--********************* ListView Only **************************-->
+    <!--            :: LIST VIEW ::            -->
     
     <control>
       <description>Default Cover Art</description>
@@ -257,8 +282,6 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
-    <!-- Not working until 0.6.0 release..
-    
     <control>
       <description>Watched Icon</description>
       <type>image</type>
@@ -268,10 +291,8 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlaywatched.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(9)</visible>
     </control>
-    
-    -->
     
     <control>
       <description>Un-Watched Icon</description>
@@ -282,7 +303,7 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlayunwatched.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9)</visible>
     </control>
     
     <control>
@@ -374,7 +395,8 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     -->
-    <!--********************* FilmStripView + DetailsView Only **************************-->
+    
+    <!--            :: DETAILS VIEW :: FILMSTRIP VIEW ::            -->
     
     <control>
       <description>Cover Art</description>
@@ -412,8 +434,6 @@ multiple view modes.
       <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
     </control>
     
-    <!-- Not working until 0.6.0 release..
-    
     <control>
       <description>Watched Icon</description>
       <type>image</type>
@@ -423,10 +443,8 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlaywatched.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>[facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9)]|[!Control.IsVisible(50)+Control.IsVisible(9)]</visible>
     </control>
-    
-    -->
     
     <control>
       <description>Un-Watched Icon</description>
@@ -437,7 +455,7 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlayunwatched.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>[facadeview.filmstrip+Control.IsVisible(50)+!Control.IsVisible(9)]|[!Control.IsVisible(50)+!Control.IsVisible(9)]</visible>
     </control>
     
     <control>
@@ -607,7 +625,7 @@ multiple view modes.
       <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
     </control>
     
-    <!--***************** Details View Only **********************-->
+    <!--            :: DETAILS VIEW ::            -->
     
     <control>
       <description>Play Button</description>
@@ -644,11 +662,12 @@ multiple view modes.
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
-    <!-- ****************** Facade *************************************** -->
+    <!--            :: OTHER ::            -->
     
     <import>movingpictures.facade.xml</import>
     
     <import>common.window.xml</import>
+    
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
@@ -661,6 +680,8 @@ multiple view modes.
       <visible>yes</visible>
       <label>MOVING PICTURES</label>
     </control>
+    
     <import>common.time.xml</import>
+    
   </controls>
 </window>

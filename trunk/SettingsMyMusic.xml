@@ -7,7 +7,7 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:2</define>
   <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:99910</define>
+  <define>#defaultcontrol.onright:9998</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -33,115 +33,69 @@
       <posY>192</posY>
       <visible>!control.hasfocus(6)</visible>
     </control>
-    <control Style="settingsmaintexturefo">
-      <type>image</type>
-      <posY>234</posY>
-      <visible>control.hasfocus(8)</visible>
-    </control>
-    <control Style="settingsmaintexturenf">
-      <type>image</type>
-      <posY>234</posY>
-      <visible>!control.hasfocus(8)</visible>
-    </control>
-    <control Style="settingsmaintexturefo">
-      <type>image</type>
-      <posY>276</posY>
-      <visible>control.hasfocus(13)</visible>
-    </control>
-    <control Style="settingsmaintexturenf">
-      <type>image</type>
-      <posY>276</posY>
-      <visible>!control.hasfocus(13)</visible>
-    </control>
-    <control Style="settingsmaintexturefo">
-      <type>image</type>
-      <posY>318</posY>
-      <visible>control.hasfocus(10)</visible>
-    </control>
-    <control Style="settingsmaintexturenf">
-      <type>image</type>
-      <posY>318</posY>
-      <visible>!control.hasfocus(10)</visible>
-    </control>
     
     <control>
-      <description>Shuffle Playlist on load</description>
-      <type>checkmark</type>
-      <id>2</id>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>251</posX>
       <posY>159</posY>
-      <label>228</label>
-      <onleft>2</onleft>
-      <onright>#defaultcontrol.onright</onright>
-      <onup>17</onup>
-      <ondown>6</ondown>
-      <font>mediastream12c</font>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-    <control>
-      <description>Enable ID3  other tagformats</description>
-      <type>checkmark</type>
-      <id>6</id>
-      <posX>251</posX>
-      <posY>201</posY>
-      <label>258</label>
-      <onleft>6</onleft>
-      <onright>#defaultcontrol.onright</onright>
-      <onup>2</onup>
-      <ondown>8</ondown>
-      <font>mediastream12c</font>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-    <control>
-      <description>Reorganize My Music Database button</description>
-      <type>button</type>
-      <id>8</id>
-      <posX>251</posX>
-      <posY>237</posY>
-      <width>500</width>
-      <label>334</label>
-      <font>mediastream12c</font>
-      <textureFocus>-</textureFocus>
-      <textXOff>33</textXOff>
-      <onup>6</onup>
-      <ondown>13</ondown>
-      <onleft>8</onleft>
-      <onright>#defaultcontrol.onright</onright>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-    <control>
-      <description>delete album button</description>
-      <type>button</type>
-      <id>13</id>
-      <posX>251</posX>
-      <posY>279</posY>
-      <width>500</width>
-      <label>485</label>
-      <font>mediastream12c</font>
-      <textureFocus>-</textureFocus>
-      <textXOff>33</textXOff>
-      <onup>8</onup>
-      <ondown>10</ondown>
-      <onleft>13</onleft>
-      <onright>#defaultcontrol.onright</onright>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-    <control>
-      <description>Delete Album Info</description>
-      <type>button</type>
-      <id>10</id>
-      <posX>251</posX>
-      <posY>323</posY>
-      <width>500</width>
-      <label>422</label>
-      <font>mediastream12c</font>
-      <textureFocus>-</textureFocus>
-      <textXOff>33</textXOff>
-      <onup>13</onup>
-      <ondown>2</ondown>
-      <onleft>10</onleft>
-      <onright>#defaultcontrol.onright</onright>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmaincheckmark">
+        <description>Shuffle Playlist on load</description>
+        <type>checkmark</type>
+        <id>2</id>
+        <label>228</label>
+        <onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>17</onup>
+        <ondown>6</ondown>
+      </control>
+      <control Style="settingsmaincheckmark">
+        <description>Enable ID3  other tagformats</description>
+        <type>checkmark</type>
+        <id>6</id>
+        <label>258</label>
+        <onleft>6</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>2</onup>
+        <ondown>8</ondown>
+      </control>
+        
+      <control Style="settingsmainbutton">
+        <description>Reorganize My Music Database button</description>
+        <type>button</type>
+        <id>8</id>
+        <label>334</label>
+        <onup>6</onup>
+        <ondown>13</ondown>
+        <onleft>8</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>delete album button</description>
+        <type>button</type>
+        <id>13</id>
+        <label>485</label>
+        <onup>8</onup>
+        <ondown>10</ondown>
+        <onleft>13</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Delete Album Info</description>
+        <type>button</type>
+        <id>10</id>
+        <label>422</label>
+        <onup>13</onup>
+        <ondown>2</ondown>
+        <onleft>10</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      
     </control>
     
   </controls>
