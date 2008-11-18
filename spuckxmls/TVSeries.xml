@@ -8,7 +8,6 @@
   <define>#default.color:ffFFFFFF</define>      <!-- Normal List Color                  Default: ffFFFFFF -->
   <define>#watched.color:ff999999</define>      <!-- Watched List Color                 Default: ff808080 -->
   <define>#notpresent.color:ffF87B72</define>   <!-- File Not Present in List Color     Default: ffF87B72 -->
-  <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
   <controls>
     
     <import>TVSeries.dummy.xml</import> <!-- import dummy labels -->
@@ -31,7 +30,7 @@
       <visible>!Control.IsVisible(1232)</visible>
     </control>
     
-    <control>
+    <!--control>
       <description>Fan Art Image (in "skin/FanArt/tv/thetvdbID.jpg")</description>
       <type>image</type>
       <id>0</id>
@@ -40,9 +39,8 @@
       <width>1280</width>
       <height>720</height>
       <texture>#TVSeries.Series.FanArtPath</texture>
-      <!-- not visible: widebanner graphical series view, regular fanart present -->
       <visible>!Control.IsVisible(1232)+![Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1236)]</visible>
-    </control>
+    </control--><!-- not visible: widebanner graphical series view, regular fanart present -->
     
     <control>
       <description>Fan Art Image</description>
@@ -102,7 +100,7 @@
       <description>Season Number BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>631</posX>
+      <posX>381</posX>
       <posY>10</posY>
       <width>256</width>
       <height>36</height>
@@ -114,7 +112,7 @@
       <type>label</type>
       <description>Season Number</description>
       <id>0</id>
-      <posX>867</posX>
+      <posX>616</posX>
       <posY>13</posY>
       <font>mediastream12c</font>
       <label>#TVSeries.Season.SeasonLabel</label>
@@ -126,7 +124,7 @@
       <description>Series Name BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>270</posX>
+      <posX>77</posX>
       <posY>11</posY>
       <width>437</width>
       <height>35</height>
@@ -135,22 +133,9 @@
     
     <control>
       <type>fadelabel</type>
-      <description>Series Name Label</description>
+      <description>TV Shows Label</description>
       <id>0</id>
-      <posX>688</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <label>#TVSeries.Series.Pretty_Name</label>
-      <align>right</align>
-      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
-    </control>
-    
-    <control>
-      <type>fadelabel</type>
-      <description>TV SERIES Label</description>
-      <id>0</id>
-      <posX>688</posX>
+      <posX>493</posX>
       <posY>13</posY>
       <width>350</width>
       <font>mediastream12c</font>
@@ -160,26 +145,29 @@
     </control>
     
     <control>
-      <description>Current View BG</description>
-      <type>image</type>
+      <type>fadelabel</type>
+      <description>Series Name in Season/Episode View</description>
       <id>0</id>
-      <posX>77</posX>
-      <posY>10</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <label>#TVSeries.Series.Pretty_Name</label>
+      <align>right</align>
+      <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
     </control>
     
     <control>
-      <type>fadelabel</type>
-      <description>Current View</description>
-      <id>0</id>
-      <posX>313</posX>
-      <posY>13</posY>
-      <width>170</width>
-      <font>mediastream12c</font>
+      <description>Current View Label</description>
+      <type>label</type>
       <label>#TVSeries.SimpleCurrentView</label>
+      <id>0</id>
+      <posX>1255</posX>
+      <posY>15</posY>
+      <width>500</width>
+      <font>mediastream10tc</font>
       <align>right</align>
+      <textcolor>ffFFFFFF</textcolor>
     </control>
     
     <import>common.time.xml</import>
@@ -1066,7 +1054,7 @@
       <description>Import Animation</description>
       <type>animation</type>
       <id>51</id>
-      <posX>1110</posX>
+      <posX>810</posX>
       <posY>15</posY>
       <width>157</width>
       <height>24</height>

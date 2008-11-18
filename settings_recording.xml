@@ -6,7 +6,7 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:6007</define>
   <define>#defaultcontrol:4</define>
-  <define>#defaultcontrol.onright:9996</define>
+  <define>#defaultcontrol.onright:9994</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -53,99 +53,91 @@
       <visible>!control.hasfocus(30)</visible>
     </control>
     
-    <control>
+    <control Style="settingsmaincheckmark">
       <type>checkmark</type>
       <id>4</id>
-      <posX>251</posX>
+      <posX>221</posX>
       <posY>159</posY>
       <label>6016</label>
-      <align>right</align>
       <onup>4</onup>
       <ondown>5</ondown>
       <onright>#defaultcontrol.onright</onright>
-      <font>mediastream11c</font>
-      <MarkWidth>23</MarkWidth>
-      <MarkHeight>23</MarkHeight>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
-    <control>
+    <control Style="settingsmaincheckmark">
       <type>checkmark</type>
       <id>5</id>
-      <posX>251</posX>
+      <posX>221</posX>
       <posY>201</posY>
       <label>6017</label>
-      <align>right</align>
       <onup>4</onup>
       <ondown>27</ondown>
       <onright>#defaultcontrol.onright</onright>
-      <font>mediastream11c</font>
-      <MarkWidth>23</MarkWidth>
-      <MarkHeight>23</MarkHeight>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
     <control>
       <type>label</type>
       <id>26</id>
-      <posX>251</posX>
+      <posX>231</posX>
       <posY>243</posY>
       <label>1444</label>
-      <font>mediastream11c</font>
+      <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>spincontrol</type>
       <id>27</id>
       <posX>420</posX>
-      <posY>247</posY>
+      <posY>249</posY>
       <spintype>int</spintype>
       <showrange>no</showrange>
       <onup>5</onup>
       <ondown>30</ondown>
       <onright>#defaultcontrol.onright</onright>
-      <font>mediastream11tc</font>
+      <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>label</type>
       <id>28</id>
-      <posX>500</posX>
+      <posX>480</posX>
       <posY>243</posY>
       <label>6018</label>
-      <font>mediastream11c</font>
+      <font>mediastream12</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
     <control>
       <type>label</type>
       <id>29</id>
-      <posX>251</posX>
+      <posX>231</posX>
       <posY>285</posY>
       <label>1445</label>
-      <font>mediastream11c</font>
+      <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>spincontrol</type>
       <id>30</id>
       <posX>420</posX>
-      <posY>289</posY>
+      <posY>291</posY>
       <spintype>int</spintype>
       <showrange>no</showrange>
       <onup>27</onup>
       <ondown>4</ondown>
       <onright>#defaultcontrol.onright</onright>
-      <font>mediastream11tc</font>
+      <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>label</type>
       <id>31</id>
-      <posX>500</posX>
+      <posX>480</posX>
       <posY>285</posY>
       <label>6019</label>
-      <font>mediastream11c</font>
+      <font>mediastream12</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     

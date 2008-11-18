@@ -12,27 +12,31 @@
     <font>mediastream10tc</font>
     <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
     <textureFocus>settingsbuttonfo.png</textureFocus>
-    <colordiffuse>aaffffff</colordiffuse>
+    <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
   <style Name="settingsmainbutton">
+    <posX>251</posX>
     <width>595</width>
     <height>42</height>
-    <textXOff>35</textXOff>
+    <textXOff>0</textXOff>
     <textYOff>8</textYOff>
-    <textXOff2>35</textXOff2>
+    <textXOff2>10</textXOff2>
     <textYOff2>8</textYOff2>
     <font>mediastream12c</font>
     <texturebg>listbg_fo.png</texturebg>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
     <textureFocus>listbg_fo.png</textureFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
+    <disabledcolor>ffFFFFFF</disabledcolor>
+    <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
   <style Name="settingsmaintogglebutton">
+    <posX>251</posX>
     <width>595</width>
     <height>42</height>
-    <textXOff>35</textXOff>
+    <textXOff>0</textXOff>
     <textYOff>8</textYOff>
-    <textXOff2>35</textXOff2>
+    <textXOff2>10</textXOff2>
     <textYOff2>8</textYOff2>
     <font>mediastream12c</font>
     <textureFocus>listbg_togglebutton_on_fo.png</textureFocus>
@@ -40,6 +44,20 @@
     <textureNoFocus>listbg_togglebutton_on_nf.png</textureNoFocus>
     <AltTextureNoFocus>listbg_togglebutton_off_nf.png</AltTextureNoFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
+    <disabledcolor>ffFFFFFF</disabledcolor>
+    <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
+  </style>
+  <style Name="settingsmaincheckmark">
+    <posX>251</posX>
+    <width>595</width>
+    <height>42</height>
+    <MarkWidth>26</MarkWidth>
+    <MarkHeight>26</MarkHeight>
+    <align>right</align>
+    <font>mediastream12c</font>
+    <textcolor>ffFFFFFF</textcolor>
+    <disabledcolor>ffFFFFFF</disabledcolor>
+    <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
   <style Name="settingsmaintexturefo">
       <id>0</id>

@@ -7,7 +7,7 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:1</define>
   <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9997</define>
+  <define>#defaultcontrol.onright:9995</define>
   <controls>
     
     <import>common.settings.xml</import>
@@ -69,7 +69,6 @@
       <visible>control.hasfocus(7)</visible>
     </control>
     <control Style="settingsmaintexturenf">
-      <description>nofocus button 6</description>
       <type>image</type>
       <posY>384</posY>
       <visible>!control.hasfocus(7)</visible>
@@ -177,81 +176,61 @@
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
-    <control Style="settingsmainbutton">
+    <control Style="settingsmaincheckmark">
       <description>X-fade transitions</description>
       <type>checkmark</type>
       <id>5</id>
-      <posX>251</posX>
       <posY>308</posY>
       <label>13010</label>
-      <textcolor>FFFFFFFF</textcolor>
       <onleft>5</onleft>
       <onright>#defaultcontrol.onright</onright>
       <onup>4</onup>
       <ondown>6</ondown>
-      <align>right</align>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control Style="settingsmainbutton">
+    <control Style="settingsmaincheckmark">
       <description>Ken Buns transitions</description>
       <type>checkmark</type>
       <id>6</id>
-      <posX>251</posX>
       <posY>350</posY>
       <label>13008</label>
-      <textcolor>FFFFFFFF</textcolor>
       <onleft>6</onleft>
       <onright>#defaultcontrol.onright</onright>
       <onup>5</onup>
       <ondown>7</ondown>
-      <align>right</align>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control Style="settingsmainbutton">
+    <control Style="settingsmaincheckmark">
       <description>Random transitions</description>
       <type>checkmark</type>
       <id>7</id>
-      <posX>251</posX>
       <posY>392</posY>
       <label>13009</label>
-      <textcolor>FFFFFFFF</textcolor>
       <onleft>7</onleft>
       <onright>#defaultcontrol.onright</onright>
       <onup>6</onup>
       <ondown>8</ondown>
-      <align>right</align>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
-    <control Style="settingsmainbutton">
+    <control Style="settingsmaincheckmark">
       <description>Repeat/loop slideshows</description>
       <type>checkmark</type>
       <id>8</id>
-      <posX>251</posX>
       <posY>460</posY>
       <label>6020</label>
-      <textcolor>FFFFFFFF</textcolor>
       <onleft>8</onleft>
       <onright>#defaultcontrol.onright</onright>
       <onup>7</onup>
       <ondown>9</ondown>
-      <align>right</align>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control Style="settingsmainbutton">
+    <control Style="settingsmaincheckmark">
       <description>Auto shuffle slideshow</description>
       <type>checkmark</type>
       <id>9</id>
-      <posX>251</posX>
       <posY>502</posY>
       <label>6021</label>
-      <textcolor>FFFFFFFF</textcolor>
       <onleft>9</onleft>
       <onright>#defaultcontrol.onright</onright>
       <onup>8</onup>
       <ondown>9</ondown>
-      <align>right</align>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
