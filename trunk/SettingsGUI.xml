@@ -13,83 +13,35 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
     
-    <control>
-      <description>focus button 1</description>
+    <control Style="settingsmaintexturefo">
       <type>image</type>
-      <id>0</id>
       <posY>150</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_fo.png</texture>
       <visible>control.hasfocus(2)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control>
-      <description>nofocus button 1</description>
+    <control Style="settingsmaintexturenf">
       <type>image</type>
-      <id>0</id>
       <posY>150</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_nf.png</texture>
       <visible>!control.hasfocus(2)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control>
-      <description>focus button 2</description>
+    <control Style="settingsmaintexturefo">
       <type>image</type>
-      <id>0</id>
       <posY>192</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_fo.png</texture>
       <visible>control.hasfocus(4)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control>
-      <description>nofocus button 2</description>
+    <control Style="settingsmaintexturenf">
       <type>image</type>
-      <id>0</id>
       <posY>192</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_nf.png</texture>
       <visible>!control.hasfocus(4)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control>
-      <description>focus button 3</description>
+    <control Style="settingsmaintexturefo">
       <type>image</type>
-      <id>0</id>
       <posY>234</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_fo.png</texture>
       <visible>control.hasfocus(3)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    <control>
-      <description>nofocus button 3</description>
+    <control Style="settingsmaintexturenf">
       <type>image</type>
-      <id>0</id>
       <posY>234</posY>
-      <posX>216</posX>
-      <width>595</width>
-      <height>42</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>listbg_nf.png</texture>
       <visible>!control.hasfocus(3)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
     <control>
