@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>611</id>
   <defaultcontrol>2</defaultcontrol>
@@ -8,7 +8,7 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my tv.png</define>
   <controls>
-    <import>common.window.xml</import>
+    <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
     <control>
       <description>Enable auto compress</description>
@@ -21,6 +21,17 @@
       <onright>2</onright>
       <onup>17</onup>
       <ondown>5</ondown>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <description>Auto compress label</description>

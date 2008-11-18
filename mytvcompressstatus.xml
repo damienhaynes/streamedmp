@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>613</id>
   <defaultcontrol>2</defaultcontrol>
@@ -18,6 +18,17 @@
       <posY>546</posY>
       <label>#itemcount</label>
       <visible>no</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>290</width>
+      <height>768</height>
+      <texture>menu_slide_background.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
     </control>
     <control>
       <type>group</type>
@@ -118,7 +129,7 @@
         <posY>620</posY>
         <label>#TV.RecordedTV.Time</label>
         <font>font13</font>
-        <textcolor>ffa9d0f7</textcolor>
+        <textcolor>ff808080</textcolor>
         <visible>false</visible>
       </control>
       <control>
@@ -141,7 +152,7 @@
         <label>#TV.RecordedTV.Genre</label>
         <align>right</align>
         <font>font13</font>
-        <textcolor>ffa9d0f7</textcolor>
+        <textcolor>ff808080</textcolor>
       </control>
     </control>
     <control>

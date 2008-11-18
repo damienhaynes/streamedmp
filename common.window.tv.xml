@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <!--
+    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
+    -->
+    <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>tv background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my tv series.png</texture>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>tv overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>movieviewbg.png</texture>
+    </control>
+    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
+    <!--
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>256</width>
+      <height>36</height>
+      <texture>tvtitlebgshort.png</texture>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <description>Top Title Extension</description>
+      <id>0</id>
+      <posX>617</posX>
+      <posY>13</posY>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>LABEL</label>
+    </control>
+    -->
+  </controls>
+</window>

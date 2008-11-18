@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>612</id>
   <defaultcontrol>2</defaultcontrol>
@@ -8,7 +8,7 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my tv.png</define>
   <controls>
-    <import>common.window.xml</import>
+    <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
     <control>
       <description>Number of Files Label</description>
@@ -20,6 +20,28 @@
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <visible>no</visible>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>290</width>
+      <height>768</height>
+      <texture>menu_slide_background.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
     </control>
     <control>
       <type>group</type>
@@ -140,7 +162,7 @@
         <posY>620</posY>
         <label>#TV.RecordedTV.Time</label>
         <font>font13</font>
-        <textcolor>ffa9d0f7</textcolor>
+        <textcolor>ff808080</textcolor>
         <visible>false</visible>
       </control>
       <control>
@@ -163,7 +185,7 @@
         <label>#TV.RecordedTV.Genre</label>
         <align>right</align>
         <font>font13</font>
-        <textcolor>ffa9d0f7</textcolor>
+        <textcolor>ff808080</textcolor>
       </control>
     </control>
     <control>

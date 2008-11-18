@@ -1,32 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>759</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:652</define>
   <define>#header.image:-</define>
-  <define>#header.hover:hover_my tv.png</define>
+  <define>#header.hover:-</define>
   <controls>
-    <import>common.window.xml</import>
+    <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
-
     <control>
-      <type>group</type>
-      <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
-      <layout>StackLayout</layout>
-      <control>
-        <type>button</type>
-        <description>Keep</description>
-        <id>2</id>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>2</ondown>
-        <label>1042</label>
-      </control>
+      <type>button</type>
+      <description>Keep</description>
+      <id>2</id>
+      <posX>0</posX>
+      <posY>194</posY>
+      <onright>10</onright>
+      <onup>2</onup>
+      <ondown>2</ondown>
+      <label>1042</label>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
@@ -44,7 +47,7 @@
       <posX>310</posX>
       <posY>620</posY>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <textcolor>ff808080</textcolor>
       <label>-</label>
     </control>
     <control>
@@ -66,7 +69,7 @@
       <posY>620</posY>
       <align>right</align>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <textcolor>ff808080</textcolor>
       <label>-</label>
     </control>
     <control>
@@ -108,7 +111,7 @@
       <posX>310</posX>
       <posY>620</posY>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <textcolor>ff808080</textcolor>
       <label>-</label>
     </control>
     <control>
@@ -130,7 +133,7 @@
       <posY>620</posY>
       <align>right</align>
       <font>font13</font>
-      <textcolor>ffa9d0f7</textcolor>
+      <textcolor>ff808080</textcolor>
       <label>-</label>
     </control>
   </controls>
