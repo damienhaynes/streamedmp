@@ -210,18 +210,6 @@
     <!-- :::::::::: SUBTITLES MENU :::::::::: -->
     
     <control>
-      <description>Menu Title Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>772</posX>
-      <posY>18</posY>
-      <label>SUBTITLES MENU</label><!-- no string available for this one? -->
-      <font>mediastream16c</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>control.isvisible(302)</visible>
-    </control>
-    
-    <control>
       <description>Sub Menu Background (subtitles)</description>
       <type>image</type>
       <id>302</id>
@@ -231,7 +219,22 @@
       <height>720</height>
       <texture>osdmenubg.png</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
+    
+    <control>
+      <description>Menu Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>772</posX>
+      <posY>18</posY>
+      <label>SUBTITLES MENU</label><!-- no string available for this one? -->
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <visible>control.isvisible(302)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    
     <control>
       <description>SubTitle Delay label</description>
       <type>label</type>
@@ -240,6 +243,7 @@
       <posY>64</posY>
       <label>303</label>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>SubTitle Delay Slider</description>
@@ -256,28 +260,32 @@
       <onleft>800</onleft>
       <onright>800</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>SubTitles On/Off Checkbox</description>
       <type>checkmark</type>
       <id>801</id>
       <posX>773</posX>
-      <posY>129</posY>
+      <posY>139</posY>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
       <label>305</label>
       <onup>800</onup>
       <ondown>802</ondown>
       <onleft>801</onleft>
       <onright>801</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Sub Titles List Control</description>
       <type>listcontrol</type>
       <id>802</id>
       <posX>749</posX>
-      <posY>194</posY>
+      <posY>174</posY>
       <width>531</width>
-      <height>460</height>
+      <height>480</height>
       <textXOff>25</textXOff>
       <onleft>802</onleft>
       <onright>802</onright>
@@ -286,21 +294,10 @@
       <spinPosX>1300</spinPosX>
       <spinPosY>515</spinPosY>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     
     <!-- :::::::::: VIDEO MENU :::::::::: -->
-    
-    <control>
-      <description>Menu Title Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>772</posX>
-      <posY>18</posY>
-      <label>VIDEO MENU</label><!-- no string available for this one? -->
-      <font>mediastream16c</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>control.isvisible(304)</visible>
-    </control>
     
     <control>
       <description>Sub Menu Background (video)</description>
@@ -312,6 +309,20 @@
       <height>720</height>
       <texture>osdmenubg.png</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    
+    <control>
+      <description>Menu Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>772</posX>
+      <posY>18</posY>
+      <label>VIDEO MENU</label><!-- no string available for this one? -->
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <visible>control.isvisible(304)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Video Position label</description>
@@ -322,6 +333,7 @@
       <label>298</label>
       <font>mediastream10tc</font>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Video Position Slider</description>
@@ -338,6 +350,7 @@
       <onleft>700</onleft>
       <onright>702</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Non-Interleaved Checkbox</description>
@@ -345,12 +358,15 @@
       <id>701</id>
       <posX>773</posX>
       <posY>124</posY>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
       <label>306</label>
       <onup>700</onup>
       <ondown>702</ondown>
       <onleft>701</onleft>
       <onright>701</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>No Cache Checkbox</description>
@@ -358,12 +374,15 @@
       <id>702</id>
       <posX>773</posX>
       <posY>154</posY>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
       <label>431</label>
       <onup>701</onup>
       <ondown>703</ondown>
       <onleft>702</onleft>
       <onright>702</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Adjust Framerate Checkbox</description>
@@ -371,12 +390,15 @@
       <id>703</id>
       <posX>773</posX>
       <posY>184</posY>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
       <label>343</label>
       <onup>702</onup>
       <ondown>704</ondown>
       <onleft>703</onleft>
       <onright>703</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>brightness label</description>
@@ -386,6 +408,7 @@
       <posY>214</posY>
       <label>464</label>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>brightness slider</description>
@@ -402,6 +425,7 @@
       <onleft>704</onleft>
       <onright>704</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>contrast label</description>
@@ -411,6 +435,7 @@
       <posY>274</posY>
       <label>465</label>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>contrast slider</description>
@@ -427,6 +452,7 @@
       <onleft>705</onleft>
       <onright>705</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>gamma label</description>
@@ -436,6 +462,7 @@
       <posY>334</posY>
       <label>466</label>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>gamma slider</description>
@@ -452,21 +479,10 @@
       <onleft>706</onleft>
       <onright>706</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     
     <!-- :::::::::: AUDIO MENU :::::::::: -->
-    
-    <control>
-      <description>Menu Title Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>772</posX>
-      <posY>18</posY>
-      <label>AUDIO MENU</label><!-- no string available for this one? -->
-      <font>mediastream16c</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>control.isvisible(305)</visible>
-    </control>
     
     <control>
       <description>Sub Menu Background (audio)</description>
@@ -478,7 +494,22 @@
       <height>720</height>
       <texture>osdmenubg.png</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
+    
+    <control>
+      <description>Menu Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>772</posX>
+      <posY>18</posY>
+      <label>AUDIO MENU</label><!-- no string available for this one? -->
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <visible>control.isvisible(305)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    
     <control>
       <description>A/v Delay label</description>
       <type>label</type>
@@ -488,6 +519,7 @@
       <label>297</label>
       <font>mediastream10tc</font>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>A/V Delay Slider</description>
@@ -502,6 +534,7 @@
       <onup>500</onup>
       <ondown>501</ondown>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Audio Stream List Control</description>
@@ -520,6 +553,7 @@
       <visible>no</visible>
       <spinPosX>1300</spinPosX>
       <spinPosY>515</spinPosY>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     
     <!-- :::::::::: VOLUME CONTROL :::::::::: -->
@@ -534,6 +568,7 @@
       <height>500</height>
       <texture>osd_dialog.png</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     
     <control>
@@ -542,6 +577,7 @@
       <id>350</id>
       <texture>-</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     
     <control>
@@ -558,6 +594,7 @@
       <onleft>400</onleft>
       <onright>400</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
   </controls>
 </window>
