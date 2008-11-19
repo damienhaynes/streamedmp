@@ -37,7 +37,7 @@ namespace streamedmp_editor
             this.label1 = new System.Windows.Forms.Label();
             this.txtBGFolder = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
-            this.lstWinddowsInMenu = new System.Windows.Forms.CheckedListBox();
+            this.chklstWinddowsInMenu = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@ namespace streamedmp_editor
             // btnAdd
             // 
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(339, 375);
+            this.btnAdd.Location = new System.Drawing.Point(136, 407);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 26);
             this.btnAdd.TabIndex = 5;
@@ -93,8 +93,9 @@ namespace streamedmp_editor
             // 
             this.lstAvailableWindows.Enabled = false;
             this.lstAvailableWindows.FormattingEnabled = true;
-            this.lstAvailableWindows.Location = new System.Drawing.Point(27, 169);
+            this.lstAvailableWindows.Location = new System.Drawing.Point(13, 150);
             this.lstAvailableWindows.Name = "lstAvailableWindows";
+            this.lstAvailableWindows.ScrollAlwaysVisible = true;
             this.lstAvailableWindows.Size = new System.Drawing.Size(198, 251);
             this.lstAvailableWindows.TabIndex = 30;
             this.lstAvailableWindows.SelectedIndexChanged += new System.EventHandler(this.lstAvailableWindows_SelectedIndexChanged);
@@ -103,9 +104,9 @@ namespace streamedmp_editor
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 542);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 521);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(780, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(764, 22);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -150,16 +151,18 @@ namespace streamedmp_editor
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
-            // lstWinddowsInMenu
+            // chklstWinddowsInMenu
             // 
-            this.lstWinddowsInMenu.ContextMenuStrip = this.contextMenuStrip1;
-            this.lstWinddowsInMenu.Enabled = false;
-            this.lstWinddowsInMenu.FormattingEnabled = true;
-            this.lstWinddowsInMenu.Location = new System.Drawing.Point(534, 169);
-            this.lstWinddowsInMenu.Name = "lstWinddowsInMenu";
-            this.lstWinddowsInMenu.Size = new System.Drawing.Size(198, 244);
-            this.lstWinddowsInMenu.TabIndex = 15;
-            this.lstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
+            this.chklstWinddowsInMenu.CheckOnClick = true;
+            this.chklstWinddowsInMenu.ContextMenuStrip = this.contextMenuStrip1;
+            this.chklstWinddowsInMenu.Enabled = false;
+            this.chklstWinddowsInMenu.FormattingEnabled = true;
+            this.chklstWinddowsInMenu.Location = new System.Drawing.Point(520, 157);
+            this.chklstWinddowsInMenu.Name = "chklstWinddowsInMenu";
+            this.chklstWinddowsInMenu.ScrollAlwaysVisible = true;
+            this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 244);
+            this.chklstWinddowsInMenu.TabIndex = 15;
+            this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
             // 
             // contextMenuStrip1
             // 
@@ -178,7 +181,7 @@ namespace streamedmp_editor
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(71, 153);
+            this.label4.Location = new System.Drawing.Point(13, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 16;
@@ -187,7 +190,7 @@ namespace streamedmp_editor
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(591, 153);
+            this.label5.Location = new System.Drawing.Point(517, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 17;
@@ -200,7 +203,7 @@ namespace streamedmp_editor
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(780, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(764, 24);
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -277,7 +280,7 @@ namespace streamedmp_editor
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtBGFolder);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Location = new System.Drawing.Point(240, 258);
+            this.groupBox2.Location = new System.Drawing.Point(226, 239);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(278, 111);
             this.groupBox2.TabIndex = 23;
@@ -305,7 +308,7 @@ namespace streamedmp_editor
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnGenerate);
-            this.groupBox1.Location = new System.Drawing.Point(27, 39);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(705, 99);
             this.groupBox1.TabIndex = 24;
@@ -355,7 +358,7 @@ namespace streamedmp_editor
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(339, 407);
+            this.btnRemove.Location = new System.Drawing.Point(520, 407);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 26);
             this.btnRemove.TabIndex = 25;
@@ -367,7 +370,7 @@ namespace streamedmp_editor
             // 
             this.groupBox3.Controls.Add(this.txtItemName);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(240, 169);
+            this.groupBox3.Location = new System.Drawing.Point(226, 150);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(278, 83);
             this.groupBox3.TabIndex = 26;
@@ -379,7 +382,7 @@ namespace streamedmp_editor
             this.txtItemName.Location = new System.Drawing.Point(97, 35);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(148, 20);
-            this.txtItemName.TabIndex = 1;            
+            this.txtItemName.TabIndex = 1;
             // 
             // label9
             // 
@@ -394,9 +397,9 @@ namespace streamedmp_editor
             // 
             this.groupBox4.Controls.Add(this.llRssTicker);
             this.groupBox4.Controls.Add(this.chkRssTicker);
-            this.groupBox4.Location = new System.Drawing.Point(27, 450);
+            this.groupBox4.Location = new System.Drawing.Point(12, 439);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(705, 75);
+            this.groupBox4.Size = new System.Drawing.Size(705, 72);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Plugin specific settings";
@@ -425,7 +428,7 @@ namespace streamedmp_editor
             // btMoveUp
             // 
             this.btMoveUp.Image = global::streamedmp_editor.Properties.Resources.up;
-            this.btMoveUp.Location = new System.Drawing.Point(738, 233);
+            this.btMoveUp.Location = new System.Drawing.Point(724, 214);
             this.btMoveUp.Name = "btMoveUp";
             this.btMoveUp.Size = new System.Drawing.Size(33, 23);
             this.btMoveUp.TabIndex = 32;
@@ -435,7 +438,7 @@ namespace streamedmp_editor
             // btMoveDown
             // 
             this.btMoveDown.Image = global::streamedmp_editor.Properties.Resources.down;
-            this.btMoveDown.Location = new System.Drawing.Point(738, 261);
+            this.btMoveDown.Location = new System.Drawing.Point(724, 242);
             this.btMoveDown.Name = "btMoveDown";
             this.btMoveDown.Size = new System.Drawing.Size(33, 23);
             this.btMoveDown.TabIndex = 33;
@@ -446,26 +449,26 @@ namespace streamedmp_editor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 564);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(764, 543);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btMoveDown);
             this.Controls.Add(this.btMoveUp);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.btnRemove);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.chklstWinddowsInMenu);
             this.Controls.Add(this.lstAvailableWindows);
-            this.Controls.Add(this.lstWinddowsInMenu);
+            this.Controls.Add(this.btnRemove);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(796, 600);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(796, 600);
+            this.MinimumSize = new System.Drawing.Size(780, 579);
             this.Name = "frmStreamedMPEditor";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "StreamedMP Menu Generator";
@@ -504,7 +507,7 @@ namespace streamedmp_editor
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBGFolder;
         private System.Windows.Forms.Button btnGenerate;
-        private System.Windows.Forms.CheckedListBox lstWinddowsInMenu;
+        private System.Windows.Forms.CheckedListBox chklstWinddowsInMenu;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MenuStrip menuStrip1;

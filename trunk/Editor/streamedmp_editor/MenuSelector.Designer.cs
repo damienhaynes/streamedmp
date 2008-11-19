@@ -60,7 +60,7 @@ namespace streamedmp_editor
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(271, 25);
+            this.checkBox1.Location = new System.Drawing.Point(12, 109);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(102, 17);
             this.checkBox1.TabIndex = 2;
@@ -69,25 +69,26 @@ namespace streamedmp_editor
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(282, 71);
+            this.btnAdd.Location = new System.Drawing.Point(154, 105);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Save";
+            this.btnAdd.Text = "&Save";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // menuselector
+            // MenuSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 115);
+            this.ClientSize = new System.Drawing.Size(240, 132);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lstAvailableWindows);
-            this.Name = "menuselector";
-            this.Text = "menuselector";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "MenuSelector";
+            this.Text = "Menu Selector";
             this.Load += new System.EventHandler(this.menuselector_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

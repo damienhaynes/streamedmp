@@ -10,7 +10,6 @@ namespace streamedmp_editor
     {
     public partial class MenuSelector : Form
     {
-
         public string xml = "";
         public string skindir = "";
 
