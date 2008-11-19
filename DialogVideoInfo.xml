@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>2003</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.hover:hover_moving pictures.png</define>
+  <define>#header.label:3</define>
+  <controls>
+    
+    <!--            :: BACKGROUNDS / OVERLAYS ::            -->
+    
+    <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <description>black background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>504</posY>
+      <width>1280</width>
+      <height>221</height>
+      <colordiffuse>ffFFFFFF</colordiffuse>
+      <texture>black.png</texture>
+    </control>
+    
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>movieviewbg.png</texture>
+    </control>
+    
+    <!--            :: MENU ::            -->
+    
+    <control>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>hiddenmenu_left.png</texture>
+    </control>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>0</posX>
+      <posY>150</posY>
+      <width>256</width>
+      <height>720</height>
+      <layout>StackLayout</layout>
+      
+      <control>
+        <description>Play Button</description>
+        <type>button</type>
+        <id>2</id>
+        <label>208</label>
+        <onright>10</onright>
+        <onup>17</onup>
+      </control>
+      <control>
+        <description>Plot</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <label>207</label>
+        <onright>10</onright>
+      </control>
+      <control>
+        <description>Cast</description>
+        <type>togglebutton</type>
+        <id>4</id>
+        <label>206</label>
+        <onright>10</onright>
+      </control>
+      <control>
+        <description>Refresh</description>
+        <type>button</type>
+        <id>5</id>
+        <label>184</label>
+        <onright>10</onright>
+      </control>
+      <control>
+        <description>Watched</description>
+        <type>togglebutton</type>
+        <id>6</id>
+        <label>1010</label>
+        <onright>10</onright>
+        <ondown>10</ondown>
+      </control>
+    </control>
+    
+    <!--            :: MAIN DETAILS ::            -->
+    
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>284</posX>
+      <posY>73</posY>
+      <width>288</width>
+      <height>422</height>
+      <texture>#thumb</texture>
+    </control>
+    
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>284</posX>
+      <posY>73</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+    </control>
+    
+    <control>
+      <description>Glasstitlebar</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>480</posX>
+      <posY>64</posY>
+      <width>512</width>
+      <height>43</height>
+      <texture>glasstitlebar.png</texture>
+    </control>
+    
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>610</posX>
+      <posY>70</posY>
+      <width>850</width>
+      <font>mediastream16tc</font>
+      <label>#title</label>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    
+    <control>
+      <description>Plot Textbox</description>
+      <type>textboxscrollup</type>
+      <id>20</id>
+      <posX>609</posX>
+      <posY>110</posY>
+      <width>640</width>
+      <height>360</height>
+      <label>#plot</label>
+      <font>mediastream11</font>
+      <seperator>-------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
+    </control>
+    <control>
+      <description>Cast Textbox</description>
+      <type>textbox</type>
+      <id>22</id>
+      <posX>609</posX>
+      <posY>110</posY>
+      <width>660</width>
+      <height>370</height>
+      <spinPosX>600</spinPosX>
+      <spinPosY>440</spinPosY>
+      <onleft>2</onleft>
+      <onright>10</onright>
+      <onup>2</onup>
+      <ondown>10</ondown>
+      <label>#cast</label>
+      <font>mediastream11</font>
+    </control>
+    
+    <!--            :: DETAILS ::            -->
+    
+    <control>
+      <description>image:</description>
+      <type>label</type>
+      <id>30</id>
+      <posX>40</posX>
+      <posY>440</posY>
+      <label>734</label>
+    </control>
+    <control>
+      <description>spin control</description>
+      <type>spincontrol</type>
+      <id>10</id>
+      <posX>170</posX>
+      <posY>443</posY>
+      <onup>6</onup>
+      <ondown>11</ondown>
+      <onleft>10</onleft>
+      <onright>10</onright>
+    </control>
+    
+    <control>
+      <description>disc:</description>
+      <type>label</type>
+      <id>100</id>
+      <posX>40</posX>
+      <posY>460</posY>
+      <label>427</label>
+    </control>
+    <control>
+      <description>disc select</description>
+      <type>spincontrol</type>
+      <id>11</id>
+      <posX>170</posX>
+      <posY>463</posY>
+      <onup>10</onup>
+      <ondown>6</ondown>
+      <onleft>11</onleft>
+      <onright>11</onright>
+      <buddycontrolid>100</buddycontrolid>
+      <showrange>no</showrange>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <posX>284</posX>
+      <posY>533</posY>
+      <width>200</width>
+      <font>mediastream10c</font>
+      <textcolor>ff909090</textcolor>
+      <label>DIRECTED BY</label>
+    </control>
+    <control>
+      <type>label</type>
+      <posX>386</posX>
+      <posY>527</posY>
+      <width>700</width>
+      <font>mediastream14c</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#director</label>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <posX>284</posX>
+      <posY>568</posY>
+      <width>200</width>
+      <font>mediastream10c</font>
+      <textcolor>ff909090</textcolor>
+      <label>GENRE</label>
+    </control>
+    <control>
+      <type>label</type>
+      <posX>344</posX>
+      <posY>564</posY>
+      <width>700</width>
+      <font>mediastream12c</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#genre</label>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <posX>284</posX>
+      <posY>603</posY>
+      <width>200</width>
+      <font>mediastream10c</font>
+      <textcolor>ff909090</textcolor>
+      <label>RUNTIME</label>
+    </control>
+    <control>
+      <type>label</type>
+      <posX>358</posX>
+      <posY>599</posY>
+      <width>700</width>
+      <font>mediastream12c</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#runtime minutes</label>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <posX>284</posX>
+      <posY>638</posY>
+      <width>200</width>
+      <font>mediastream10c</font>
+      <textcolor>ff909090</textcolor>
+      <label>RATING</label>
+    </control>
+    <control>
+      <type>label</type>
+      <posX>346</posX>
+      <posY>634</posY>
+      <width>700</width>
+      <font>mediastream12c</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#rating / 10 [#votes]</label>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <posX>284</posX>
+      <posY>673</posY>
+      <width>990</width>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream10c</font>
+      <label>#mpaarating</label>
+    </control>
+    
+    <import>common.time.xml</import>
+    
+  </controls>
+</window>
