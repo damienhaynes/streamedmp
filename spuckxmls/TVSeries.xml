@@ -914,40 +914,55 @@
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
       <control>
-              <type>image</type>
-              <posX>0</posX>
-              <posY>0</posY>
-              <width>256</width>
-              <height>720</height>
-              <texture>hiddenmenu_left.png</texture>
-              <visible>!Control.HasFocus(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>1280</width>
+        <height>720</height>
+        <texture>black.png</texture>
+        <colordiffuse>50ffffff</colordiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="fade" time="200">visiblechange</animation>
       </control>
       <control>
-              <id>0</id>
-              <label>SWITCH</label>
-              <type>label</type>
-              <font>mediastream12tc</font>
-              <posX>15</posX>
-              <posY>226</posY>
-              <visible>!Control.HasFocus(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>256</width>
+        <height>720</height>
+        <texture>hiddenmenu_left.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
       </control>
       <control>
-              <id>0</id>
-              <label>SETTINGS</label>
-              <type>label</type>
-              <font>mediastream12tc</font>
-              <posX>15</posX>
-              <posY>325</posY>
-              <visible>!Control.HasFocus(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <id>0</id>
+        <label>MENU</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>226</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>SETTINGS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>15</posX>
+        <posY>322</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
         <posX>0</posX>
         <posY>250</posY>
         <width>256</width>
@@ -957,7 +972,7 @@
           <description>Switch View</description>
           <type>button</type>
           <id>2</id>
-          <label>Switch View</label>
+          <label>457</label>
           <onright>50</onright>
         </control>
         <control>
@@ -973,24 +988,18 @@
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
-        </control>
-        <control>
-          <description>Options</description>
-          <type>button</type>
-          <id>90001</id>
-          <label>Options</label>
-          <onright>50</onright>
         </control>
         <control>
           <description>Video Settings</description>
           <type>button</type>
-          <id>90002</id>
+          <id>66608</id>
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
           <onright>50</onright>
         </control>
       </control>
     </control>
+    
     
     <!--      :: FACADEVIEWS ::      -->
     
@@ -1050,7 +1059,7 @@
           <description>Filmstrip view (only visible when posters and graphical is selected)</description>
           <type>filmstrip</type>
           <id>50</id>
-          <onleft>2</onleft>
+          <onup>2</onup>
           <posX>12</posX>
           <posY>512</posY>
           <width>1280</width>
