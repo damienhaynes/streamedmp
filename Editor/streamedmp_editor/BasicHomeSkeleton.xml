@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<window>
+	
+	<!-- BEGIN GENERATED ID CODE-->
+	
+	<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->
+	
+	<define>#labelFont:mediastream16tc</define>
+  <define>#selectedfont:mediastream28</define>
+	
+  <!-- BEGIN GENERATED DEFINITIONS -->
+	<allowoverlay>no</allowoverlay>
+	<disabletopbar>yes</disabletopbar>
+	<controls>
+		<control>
+			<description>DEFAULT BACKGROUND</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>background.png</texture>
+		</control>
+    <control>
+      <description>Exit Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Exit MediaPortal</label>
+      <visible>Control.HasFocus(7777)</visible>
+      <description>Restart Label</description>
+    </control>
+    <control>
+      <description>Restart Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Restart MediaPortal</label>
+      <visible>Control.HasFocus(7888)</visible>
+    </control>
+    <control>
+      <description>Shutdown Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Shutdown Menu</label>
+      <visible>Control.HasFocus(7999)</visible>
+    </control>
+    <control>
+      <description>Shutdown menu hbar</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>485</posX>
+      <posY>335</posY>
+      <width>381</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
+    </control>
+    <control>
+      <description>Shutdown menu hbar</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>485</posX>
+      <posY>438</posY>
+      <width>381</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
+    </control>
+
+    <!-- BEGIN GENERATED TOPBAR CODE -->
+    
+		<!-- BEGIN GENERATED BACKGROUND CODE-->
+		
+		<!-- BEGIN GENERATED MENUGRAPHICS CODE-->
+
+		<!-- BEGIN GENERATED RSS TICKER CODE-->
+		
+		<!-- BEGIN GENERATED WEATHER CODE-->
+		
+		<!-- BEGIN GENERATED BUTTON CODE-->
+
+		<!-- BEGIN CROWDING FIX CODE-->
+		<import>common.time.xml</import>
+    <import>common.home.overlays.xml</import>
+    <import>streamedmp.version.xml</import>
+	</controls>
+</window>
