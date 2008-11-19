@@ -1,0 +1,500 @@
+//===========================================================================
+//
+//  File Name:    Setup.rul
+//
+//  Description:  StreamedMP setup main script file
+//
+//  Comments:     
+//
+//===========================================================================
+
+// Included header files ----------------------------------------------------
+#include "ifx.h"
+
+#define SKIN_NAME					"StreamedMP"
+#define MEDIAPORTAL_REG_KEY  		"SOFTWARE\\Team MediaPortal\\MediaPortal"
+#define STREAMEDMP_REG_KEY  		"SOFTWARE\\StreamedMP" 
+
+#define MATT_FEATURE_TVSERIES		"Main\\mattsk88TVSeries"
+#define MATT_FEATURE_MOVINGPICS		"Main\\mattsk88MovingPictures"
+
+#define SPUCK_FEATURE_TVSERIES		"Main\\spuckTVSeries"
+#define SPUCK_FEATURE_MOVINGPICS	"Main\\spuckMovingPictures"
+
+#define STREAMEDMP_EDITOR_FILE		INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_generator.exe"
+
+// Dialogs
+#define RES_DLG_TVSERIESSELECT			13000
+#define RES_DLG_MOVINGPICSSELECT		13001
+
+// Dialog Controls
+#define RES_RADIO_CHOICE1				1325
+#define RES_RADIO_CHOICE2				1326
+
+// Common Dialog Controls
+#define RES_PBUT_NEXT         			1   			// ID of Next button
+#define RES_PBUT_CLOSE		  			2     			// ID of the (X) button
+#define RES_PBUT_CANCEL       			9   			// ID of Cancel button
+#define RES_PBUT_BACK        			12   			// ID of Back button
+         
+// Prototype Functions         
+prototype VOID CleanCache();
+prototype NUMBER GetMediaPortalProgramDir(BYREF STRING);
+prototype NUMBER GetMediaPortalConfigDir(BYREF STRING); 
+prototype VOID SetDefaults();
+prototype VOID UpdateSettings(); 
+
+prototype NUMBER ShowSelectTVSeries(BOOL);
+prototype NUMBER ShowSelectMovingPics(BOOL);
+
+// Global Variables
+BOOL g_bTVSeriesDefault;
+BOOL g_bMovingPicturesDefault;
+
+//---------------------------------------------------------------------------
+// OnBegin
+//
+// The OnBegin event is called directly by the framework after the setup
+// initializes.
+//---------------------------------------------------------------------------
+function OnBegin()	
+begin	
+	SetDefaults();			
+end;           
+
+function VOID SetDefaults()
+	STRING svValue;
+	NUMBER nvType, nvSize;
+begin
+ 	
+ 	// Set the installation directory to one currently used by MediaPortal
+	if (GetMediaPortalProgramDir(svValue) < 0) then
+		svValue = ProgramFilesFolder^"Team MediaPortal\\MediaPortal";	
+	endif;
+	INSTALLDIR = svValue;
+	
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	
+	// Read TVSeries Default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",nvType,svValue,nvSize) < 0) then
+		svValue = "1";		
+	endif;	 
+	if svValue = "1" then
+		g_bTVSeriesDefault = TRUE;			
+	endif;
+	
+	// Read Moving Pictures Default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",nvType,svValue,nvSize) < 0) then
+		svValue = "1";		
+	endif;	
+	if svValue = "1" then
+		g_bMovingPicturesDefault = TRUE;			
+	endif;
+	
+end;
+
+//---------------------------------------------------------------------------
+// OnFirstUIBefore
+//
+// The OnFirstUIBefore event is called by the framework when the setup is
+// running in first install mode. By default this event displays UI allowing
+// the end user to specify installation parameters.
+//---------------------------------------------------------------------------
+function OnFirstUIBefore()
+    NUMBER nResult, nSetupType, nvSize, nUser;
+    STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile;
+    STRING szLicenseFile;    
+	BOOL bCustom;
+begin						   
+
+	SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	   
+    
+	nSetupType = TYPICAL;	
+
+Dlg_SdWelcome:
+    szTitle = "";
+    szMsg   = "";
+    nResult = SdWelcome(szTitle, szMsg);
+    if (nResult = BACK) goto Dlg_SdWelcome;
+	
+	szTitle   = "";
+	svName    = "";
+    svCompany = "";
+   
+
+Dlg_SdFeatureTree: 
+    szTitle    = "";
+    szMsg      = "";
+    if (nSetupType = TYPICAL) then
+		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+		if (nResult = BACK) goto Dlg_SdWelcome;  
+    endif;
+
+Dlg_SelectTVSeries:
+	nResult = ShowSelectTVSeries(FALSE);
+	if (nResult = BACK) goto Dlg_SdFeatureTree;  
+
+Dlg_SelectMovingPictures:
+	nResult = ShowSelectMovingPics(FALSE);
+	if (nResult = BACK) goto Dlg_SelectTVSeries;  
+	
+Dlg_SdStartCopy:
+    szTitle = "";
+    szMsg   = "";      
+    nResult = SdStartCopy2( szTitle, szMsg );			    
+	
+	if (nResult = BACK) then
+    	goto Dlg_SelectMovingPictures;
+    endif;
+    
+    // setup default status
+    Enable(STATUSEX);
+ 
+    return 0;
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIBefore
+//
+// The OnMaintUIBefore event is called by the framework when the setup is
+// running in maintenance mode. By default this event displays UI that
+// allows the end user to add or remove features, repair currently
+// installed features or uninstall the application.
+//---------------------------------------------------------------------------
+function OnMaintUIBefore()
+	NUMBER nResult, nType;
+	STRING szTitle, szMsg, svDir, svResult, szCaption;
+begin				
+	
+Dlg_Start:
+
+    // Added in Version 9.5 - Support for REMOVEONLY option.
+    if( !REMOVEONLY ) then
+		// In standard mode show maintenance dialog
+		Disable(BACKBUTTON);
+		nType = SdWelcomeMaint(szTitle, szMsg, MODIFY);
+		Enable(BACKBUTTON);
+	else
+        // Hide the initial progress dialog as otherwise the user can
+        // click on it, and hide the MessageBox.
+        Disable( DIALOGCACHE );
+
+        // In RemoveOnly mode, set to remove.
+        nType = REMOVEALL;
+    endif;
+	
+	// Show Uninstall Confirmation Dialog
+    if ( nType = REMOVEALL ) then
+		nResult = MessageBox( SdLoadString( IFX_MAINTUI_MSG ), MB_YESNO );
+		if (nResult != IDYES ) then
+            
+            if( REMOVEONLY ) then
+                // In REMOVEONLY mode, abort the setup.
+                abort;
+            else
+                // In non-REMOVEONLY mode, redisplay the previous dialog.
+			    goto Dlg_Start;
+            endif;
+
+		endif;
+	endif;
+
+	nResult = NEXT;
+
+Dlg_SdFeatureTree:
+	if (nType = MODIFY) then
+		szTitle = "";
+		szMsg = "";		
+		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+		if (nResult = BACK) goto Dlg_Start;
+	endif;
+
+
+Dlg_SelectTVSeries:
+	if (nType = MODIFY) then
+		nResult = ShowSelectTVSeries(FALSE);
+		if (nResult = BACK) goto Dlg_SdFeatureTree;  
+	endif;
+	
+Dlg_SelectMovingPictures:
+	if (nType = MODIFY) then
+		nResult = ShowSelectMovingPics(FALSE);
+		if (nResult = BACK) goto Dlg_SelectTVSeries; 
+	endif;
+	
+	switch(nType)
+		case REMOVEALL: FeatureRemoveAll();
+		case REPAIR:    FeatureReinstall();
+		case MODIFY:	UpdateSettings();
+	endswitch;
+    
+	// setup default status 
+	SetStatusWindow(0, "");
+	Enable(STATUSEX);
+	StatusUpdate(ON, 100);
+end;
+//---------------------------------------------------------------------------
+// OnFirstUIAfter
+//
+// The OnFirstUIAfter event called by the framework after the file transfer
+// of the setup when the setup is running in first install mode. By default
+// this event displays UI that informs the end user that the setup has been
+// completed successfully.
+//---------------------------------------------------------------------------
+function OnFirstUIAfter()
+    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine;
+    NUMBER bOpt1, bOpt2;
+begin
+	
+ 	// Update Settings
+	UpdateSettings();
+	
+	// Clean Cache Folder
+    CleanCache();
+    
+	Disable(STATUSEX);
+
+	bOpt1  = FALSE;
+	bOpt2  = FALSE;
+	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
+	szOption1 = "Launch StreamedMP Basic Home Editor";
+	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+	
+	if (!BATCH_INSTALL && bOpt1) then
+		LaunchApp(STREAMEDMP_EDITOR_FILE, szCmdLine);
+	endif;
+	
+end;
+//---------------------------------------------------------------------------
+// OnMaintUIAfter
+//
+// The OnMaintUIAfter event called by the framework after the file transfer
+// of the setup when the setup is running in maintenance mode. By default
+// this event displays UI that informs the end user that the maintenance setup
+// has been completed successfully.
+//---------------------------------------------------------------------------
+function OnMaintUIAfter()
+	STRING szTitle, szMsg1, szMsg2, szOption1, szOption2;
+	NUMBER bOpt1, bOpt2;
+begin     
+
+    // Clean Cache Folder
+    CleanCache();
+    
+	Disable(STATUSEX);
+
+	bOpt1   = FALSE;
+	bOpt2   = FALSE;
+    	
+    // Uninstall.
+    if( REMOVEALLMODE ) then
+        szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
+        szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
+    else
+        szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
+        szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+    endif;
+
+	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+end; 
+
+function VOID CleanCache()
+	STRING svValue;	
+begin
+     
+    // Get Cache Folder
+    if GetMediaPortalConfigDir(svValue) < 0 then;
+    	return;
+    endif;
+    
+    // Delete Skin Cache Folder
+    SetStatusWindow(100, "Removing " + SKIN_NAME + " from MediaPortal cache.");
+    svValue = svValue ^ "Cache" ^ SKIN_NAME;
+    DeleteDir(svValue,ALLCONTENTS);
+    
+end;      
+
+function NUMBER GetMediaPortalProgramDir(svValue)	
+	NUMBER nvSize,nvType;
+begin
+
+   	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+		
+	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ApplicationDir",nvType,svValue,nvSize) < 0) then
+		return -1;	
+	endif;
+	
+	return 0;
+end;
+
+function NUMBER GetMediaPortalConfigDir(svValue)
+	NUMBER nvSize,nvType;
+begin
+
+   	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+		
+	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ConfigDir",nvType,svValue,nvSize) < 0) then
+		return -1;	
+	endif;
+	
+	return 0;
+end; 
+
+function number ShowSelectTVSeries(bModify)
+	STRING szDialogName;
+	NUMBER nCmdValue;
+	BOOL bDone;
+begin
+
+	szDialogName = "SelectionTVSeries";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_TVSERIESSELECT);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display TVSeries selection dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:	        	     			     			     			
+ 				// Read from Global Variables
+ 				if g_bTVSeriesDefault then
+ 					CtrlSetState(szDialogName,RES_RADIO_CHOICE1,BUTTON_CHECKED);
+ 				else
+ 					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
+ 				endif;
+ 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables
+	if (CtrlGetState(szDialogName,RES_RADIO_CHOICE1) = BUTTON_CHECKED) then
+		g_bTVSeriesDefault = TRUE;
+	else
+		g_bTVSeriesDefault = FALSE;
+	endif;
+	// Set Features
+	if (g_bTVSeriesDefault) then
+		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, TRUE );
+		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, FALSE );
+	else
+		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, TRUE );
+	endif;
+		
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
+
+function number ShowSelectMovingPics(bModify)
+	STRING szDialogName;
+	NUMBER nCmdValue;
+	BOOL bDone;
+begin
+
+	szDialogName = "SelectionMovingPictures";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_MOVINGPICSSELECT);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display Moving Pictures selection dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:	        	     			     			     			
+ 				// Read from Global Variables
+ 				if g_bMovingPicturesDefault then
+ 					CtrlSetState(szDialogName,RES_RADIO_CHOICE1,BUTTON_CHECKED);
+ 				else
+ 					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
+ 				endif;
+ 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables
+	if (CtrlGetState(szDialogName,RES_RADIO_CHOICE1) = BUTTON_CHECKED) then
+		g_bMovingPicturesDefault = TRUE;
+	else
+		g_bMovingPicturesDefault = FALSE;
+	endif;
+	
+	// Set Features
+	if (g_bMovingPicturesDefault) then
+		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_MOVINGPICS, TRUE );
+		FeatureSelectItem ( MEDIA, MATT_FEATURE_MOVINGPICS, FALSE );
+	else
+		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_MOVINGPICS, FALSE );
+		FeatureSelectItem ( MEDIA, MATT_FEATURE_MOVINGPICS, TRUE );
+	endif;		
+		
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
+
+function VOID UpdateSettings()
+	STRING svString;		
+begin
+	// Save configuration to registry
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	
+	NumToStr(svString,g_bTVSeriesDefault);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",REGDB_NUMBER,svString, -1);
+	NumToStr(svString,g_bMovingPicturesDefault);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
+	
+end;
