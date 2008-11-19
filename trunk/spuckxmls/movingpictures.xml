@@ -142,14 +142,26 @@ multiple view modes.
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
       <control>
-              <type>image</type>
-              <posX>0</posX>
-              <posY>0</posY>
-              <width>256</width>
-              <height>720</height>
-              <texture>hiddenmenu_left.png</texture>
-              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>1280</width>
+        <height>720</height>
+        <texture>black.png</texture>
+        <colordiffuse>50ffffff</colordiffuse>
+        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+        <animation effect="fade" time="200">visiblechange</animation>
+      </control>
+      <control>
+        <type>image</type>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>256</width>
+        <height>720</height>
+        <texture>hiddenmenu_left.png</texture>
+        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
       </control>
       <control>
               <id>0</id>
@@ -160,6 +172,7 @@ multiple view modes.
               <posY>226</posY>
               <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
+              <animation effect="slide" time="0" end="-356,0">hidden</animation>
       </control>
       <control>
               <id>0</id>
@@ -170,12 +183,14 @@ multiple view modes.
               <posY>325</posY>
               <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
+              <animation effect="slide" time="0" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
         <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <animation effect="slide" time="0" end="-356,0">hidden</animation>
         <posX>0</posX>
         <posY>250</posY>
         <width>256</width>

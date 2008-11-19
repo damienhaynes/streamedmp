@@ -8,14 +8,15 @@ This file should contain the facade view
       <type>facadeview</type>
       <id>50</id>
       <control>
+        <visible>Control.IsVisible(50)</visible>
         <description>Movie List</description>
         <type>listcontrol</type>
         <id>50</id>
+        <onleft>2</onleft>
         <posX>756</posX>
         <posY>317</posY>
         <height>360</height>
         <textXOff>0</textXOff>
-        <onleft>2</onleft>
         <spinPosX>1249</spinPosX>
         <spinPosY>690</spinPosY>
         <spinAlign>Right</spinAlign>
@@ -23,6 +24,7 @@ This file should contain the facade view
         <spinCanFocus>no</spinCanFocus>
       </control>
       <control>
+        <visible>Control.IsVisible(50)</visible>
         <description>Filmstrip view</description>
         <type>filmstrip</type>
         <id>50</id>
