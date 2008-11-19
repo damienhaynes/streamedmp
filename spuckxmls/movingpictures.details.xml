@@ -24,84 +24,37 @@ This file should contain the details view
       <font>mediastream12tc</font>
       <posX>15</posX>
       <posY>126</posY>
-      <visible>!Control.HasFocus(50)</visible>
+      <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <control>
-      <id>0</id>
-      <label>SETTINGS</label>
-      <type>label</type>
-      <font>mediastream12tc</font>
-      <posX>15</posX>
-      <posY>255</posY>
-      <visible>!Control.HasFocus(50)</visible>
-    </control>
-    
-    <control>
-      <type>group</type>
-      <description>group element</description>
+      <description>Play Button</description>
+      <type>button</type>
+      <id>6</id>
+      <label>PLAY</label>
       <posX>0</posX>
       <posY>150</posY>
-      <width>256</width>
-      <height>720</height>
+      <width>244</width>
       <visible>!Control.IsVisible(50)</visible>
-      <layout>StackLayout</layout>
-        
-        <control>
-          <description>Play Button</description>
-          <type>button</type>
-          <id>6</id>
-          <label>PLAY</label>
-          <onup>66610</onup>
-        </control>
-        
-        <control>
-          <description>Cycle Details Button (not implemented yet)</description>
-          <type>button</type>
-          <id>7</id>
-          <label>CYCLE DETAILS</label>
-        </control>
-        
-        <control>
-          <description>Switch View</description>
-          <type>button</type>
-          <id>3</id>
-          <label>Switch View</label>
-        </control>
-        
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        
-        <control>
-          <description>Filters Menu</description>
-          <type>button</type>
-          <id>4</id>
-          <label>Filters</label>
-        </control>
-        
-        <control>
-          <description>Settings Menu</description>
-          <type>button</type>
-          <id>5</id>
-          <label>Settings</label>
-          <ondown>66610</ondown>
-        </control>
-        
-        <control>
-          <description>Video Settings</description>
-          <type>button</type>
-          <id>66610</id>
-          <label>Video Settings</label>
-          <hyperlink>703</hyperlink>
-          <onup>5</onup>
-          <ondown>6</ondown>
-        </control>
-        
+      <onup>7</onup>
+      <ondown>7</ondown>
+      <onleft>6</onleft>
+      <onright>6</onright>
+    </control>
+    
+    <control>
+      <description>Cycle Details Button (not implemented yet)</description>
+      <type>button</type>
+      <id>7</id>
+      <label>CYCLE DETAILS</label>
+      <posX>0</posX>
+      <posY>180</posY>
+      <width>244</width>
+      <visible>!Control.IsVisible(50)</visible>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <onleft>7</onleft>
+      <onright>7</onright>
     </control>
     
     <!--            :: MAIN DETAILS ::            -->

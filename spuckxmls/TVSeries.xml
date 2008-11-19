@@ -906,11 +906,93 @@
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.HasThumb(66)</visible>
     </control>
     
-    <!--
-    ::::::::::::::::
-    :: FACADEVIEWS ::
-    ::::::::::::::::
-    -->
+    <!--      :: HIDDEN MENU ::      -->
+    
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <control>
+              <type>image</type>
+              <posX>0</posX>
+              <posY>0</posY>
+              <width>256</width>
+              <height>720</height>
+              <texture>hiddenmenu_left.png</texture>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+      </control>
+      <control>
+              <id>0</id>
+              <label>SWITCH</label>
+              <type>label</type>
+              <font>mediastream12tc</font>
+              <posX>15</posX>
+              <posY>226</posY>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+      </control>
+      <control>
+              <id>0</id>
+              <label>SETTINGS</label>
+              <type>label</type>
+              <font>mediastream12tc</font>
+              <posX>15</posX>
+              <posY>325</posY>
+              <visible>!Control.HasFocus(50)</visible>
+              <animation effect="slide" time="100" start="-356,0">visible</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="-356,0">visible</animation>
+        <posX>0</posX>
+        <posY>250</posY>
+        <width>256</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Switch View</description>
+          <type>button</type>
+          <id>2</id>
+          <label>Switch View</label>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Options</description>
+          <type>button</type>
+          <id>90001</id>
+          <label>Options</label>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>90002</id>
+          <label>Video Settings</label>
+          <hyperlink>703</hyperlink>
+          <onright>50</onright>
+        </control>
+      </control>
+    </control>
+    
+    <!--      :: FACADEVIEWS ::      -->
     
     <control>
       <type>group</type>
@@ -929,12 +1011,14 @@
           <description>graphical thumbpanel (series and/or seasons if set)</description>
           <type>thumbnailpanel</type>
           <id>50</id>
+          <onleft>2</onleft>
           <posX>13</posX>
           <posY>92</posY>
           <width>1280</width>
           <height>420</height>
           <spinPosX>1300</spinPosX>
           <spinPosY>720</spinPosY>
+          <spinCanFocus>no</spinCanFocus>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>widebannerborder.png</imageFolderFocus>
           <downloadColor>#default.color</downloadColor>   <!-- not watched color (normal) -->
@@ -966,7 +1050,7 @@
           <description>Filmstrip view (only visible when posters and graphical is selected)</description>
           <type>filmstrip</type>
           <id>50</id>
-          <ondown>50</ondown>
+          <onleft>2</onleft>
           <posX>12</posX>
           <posY>512</posY>
           <width>1280</width>
@@ -976,6 +1060,7 @@
           <spinWidth>24</spinWidth>
           <spinHeight>24</spinHeight>
           <spinColor>ffcccccc</spinColor>
+          <spinCanFocus>no</spinCanFocus>
           <itemWidth>142</itemWidth>
           <itemHeight>156</itemHeight>
           <textureWidth>120</textureWidth>
@@ -1000,6 +1085,7 @@
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
           <id>50</id>
+          <onleft>2</onleft>
           <posX>780</posX>
           <textXOff2>380</textXOff2>
           <textXOff3>395</textXOff3>
@@ -1014,6 +1100,7 @@
           <spinPosY>690</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
         </control>
       </control>
     </control>
