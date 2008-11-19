@@ -147,18 +147,21 @@
           <id>2</id>
           <label>100</label>
           <onup>10</onup>
+          <onright>50</onright>
         </control>
         <control>
           <description>Sort</description>
           <type>sortbutton</type>
           <id>3</id>
           <label>103</label>
+          <onright>50</onright>
         </control>
         <control>
           <description>Switch View</description>
           <type>button</type>
           <id>5</id>
           <label>457</label>
+          <onright>50</onright>
         </control>
         <control>
           <description>Empty button</description>
@@ -166,6 +169,7 @@
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
+          <onright>50</onright>
         </control>
         <control>
           <description>Current Playlist</description>
@@ -173,12 +177,14 @@
           <id>20</id>
           <label>4555</label>
           <action>33</action>
+          <onright>50</onright>
         </control>
         <control>
           <description>My Playlists</description>
           <type>button</type>
           <id>9</id>
           <label>983</label>
+          <onright>50</onright>
         </control>
         <control>
           <description>Empty button</description>
@@ -193,6 +199,7 @@
           <id>66608</id>
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
+          <onright>50</onright>
         </control>
         <control>
           <description>Moving Pictures</description>
@@ -201,6 +208,7 @@
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <visible>plugin.isenabled(Moving Pictures)</visible>
+          <onright>50</onright>
         </control>
         <control>
           <description>TV Shows</description>
@@ -209,6 +217,7 @@
           <hyperlink>9811</hyperlink>
           <label>1300</label>
           <visible>plugin.isenabled(MP-TV Series)</visible>
+          <onright>50</onright>
         </control>
         <control>
           <description>Trailers</description>
@@ -217,6 +226,7 @@
           <label>5906</label>
           <hyperlink>5900</hyperlink>
           <visible>plugin.isenabled(My Trailers)</visible>
+          <onright>50</onright>
         </control>
       </control>
     </control>

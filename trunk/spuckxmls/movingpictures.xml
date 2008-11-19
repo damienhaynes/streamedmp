@@ -148,9 +148,8 @@ multiple view modes.
               <width>256</width>
               <height>720</height>
               <texture>hiddenmenu_left.png</texture>
-              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
+              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
-              <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
               <id>0</id>
@@ -159,9 +158,8 @@ multiple view modes.
               <font>mediastream12tc</font>
               <posX>15</posX>
               <posY>226</posY>
-              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
+              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
-              <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
               <id>0</id>
@@ -170,16 +168,14 @@ multiple view modes.
               <font>mediastream12tc</font>
               <posX>15</posX>
               <posY>325</posY>
-              <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
+              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
               <animation effect="slide" time="100" start="-356,0">visible</animation>
-              <animation effect="slide" time="100" end="-356,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <visible>!Control.HasFocus(50)+[[facadeview.list|facadeview.filmstrip]+Control.IsVisible(50)]</visible>
+        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
         <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
         <posX>0</posX>
         <posY>250</posY>
         <width>256</width>
@@ -228,6 +224,7 @@ multiple view modes.
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
           <ondown>2</ondown>
+          <onright>50</onright>
         </control>
       </control>
     </control>
