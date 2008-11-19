@@ -162,7 +162,7 @@ This file should contain the details view
     
     <control>
       <type>label</type>
-      <posX>284</posX>
+      <posX>289</posX>
       <posY>533</posY>
       <width>200</width>
       <font>mediastream10c</font>
@@ -172,7 +172,7 @@ This file should contain the details view
     </control>
     <control>
       <type>label</type>
-      <posX>386</posX>
+      <posX>391</posX>
       <posY>527</posY>
       <width>700</width>
       <font>mediastream14c</font>
@@ -183,75 +183,79 @@ This file should contain the details view
     
     <control>
       <type>label</type>
-      <posX>284</posX>
+      <posX>289</posX>
       <posY>568</posY>
       <width>200</width>
       <font>mediastream10c</font>
       <textcolor>ff909090</textcolor>
-      <label>GENRE</label>
+      <label>WRITTEN BY</label>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     <control>
       <type>label</type>
-      <posX>344</posX>
-      <posY>564</posY>
+      <posX>384</posX>
+      <posY>562</posY>
       <width>700</width>
-      <font>mediastream12c</font>
+      <font>mediastream14c</font>
       <textcolor>ffffffff</textcolor>
-      <label>#MovingPictures.SelectedMovie.genres</label>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>textboxscrollup</type>
+      <posX>289</posX>
+      <posY>604</posY>
+      <width>700</width>
+      <height>700</height>
+      <font>mediastream11</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#MovingPictures.SelectedMovie.genres
+#MovingPictures.SelectedMovie.year
+#MovingPictures.SelectedMovie.runtime minutes
+Rated #MovingPictures.SelectedMovie.certification</label>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <control>
       <type>label</type>
-      <posX>284</posX>
-      <posY>603</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>RUNTIME</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>358</posX>
-      <posY>599</posY>
+      <posX>629</posX>
+      <posY>657</posY>
       <width>700</width>
-      <font>mediastream12c</font>
+      <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
-      <label>#MovingPictures.SelectedMovie.runtime minutes</label>
+      <label>STAR RATING:</label>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <control>
       <type>label</type>
-      <posX>284</posX>
-      <posY>638</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>RATING</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>346</posX>
-      <posY>634</posY>
+      <posX>789</posX>
+      <posY>678</posY>
       <width>700</width>
-      <font>mediastream12c</font>
+      <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
       <label>#MovingPictures.SelectedMovie.score / 10</label>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <control>
-      <type>label</type>
-      <posX>284</posX>
-      <posY>673</posY>
-      <width>990</width>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream10c</font>
-      <label>Rated #MovingPictures.SelectedMovie.certification</label>
+      <type>imagelist</type>
+      <id>0</id>
+      <posX>787</posX>
+      <posY>662</posY>
+      <width>115</width>
+      <height>13</height>
+      <textureWidth>13</textureWidth>
+      <textureHeight>13</textureHeight>
+      <subitems>
+        <subitem>-.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#MovingPictures.SelectedMovie.score</percentage>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     

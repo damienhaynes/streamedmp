@@ -31,6 +31,11 @@
           <itemWidth>45</itemWidth>
           <itemHeight>45</itemHeight>
           <unfocusedAlpha>100</unfocusedAlpha>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
         </control>
         <control>
           <description>album view listcontrol</description>
@@ -56,6 +61,11 @@
           <onright>50</onright>
           <onup>2</onup>
           <ondown>2</ondown>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
         </control>
         <control>
           <description>Thumbnail Panel</description>
@@ -124,32 +134,38 @@
           <type>playlistcontrol</type>
           <id>50</id>
           <onleft>2</onleft>
+          <onright>2</onright>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
         </control>
       </control>
     </control>
     
     <control>
-      <description>Spin Control BG</description>
+      <description>Media Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>671</posY>
-      <width>180</width>
-      <height>32</height>
-      <texture>mediacountbg.png</texture>
-      <visible>[facadeview.playlist|facadeview.list]+Control.IsVisible(50)</visible>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>facadeview.list|facadeview.playlist</visible>
     </control>
     
     <control>
-      <description>Spin Control Label</description>
+      <description>Media Count Label</description>
       <type>label</type>
-      <label>PAGE</label>
+      <label>PAGE:</label>
       <id>0</id>
-      <posX>1075</posX>
-      <posY>673</posY>
-      <font>mediastream12c</font>
-      <textcolor>ff025984</textcolor>
-      <visible>[facadeview.playlist|facadeview.list]+Control.IsVisible(50)</visible>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>facadeview.list|facadeview.playlist</visible>
     </control>
     
   </controls>

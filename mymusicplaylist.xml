@@ -66,59 +66,47 @@
       <onexit>50</onexit>
       <control>
         <type>image</type>
-        <posX>0</posX>
+        <posX>1002</posX>
         <posY>0</posY>
-        <width>1280</width>
+        <width>278</width>
         <height>720</height>
-        <texture>black.png</texture>
-        <colordiffuse>50ffffff</colordiffuse>
+        <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="fade" time="200">visible</animation>
-        <animation effect="fade" time="200">hidden</animation>
-      </control>
-      <control>
-        <type>image</type>
-        <posX>0</posX>
-        <posY>0</posY>
-        <width>256</width>
-        <height>720</height>
-        <texture>hiddenmenu_left.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>VIEW OPTIONS</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>226</posY>
+        <posX>1040</posX>
+        <posY>225</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>PLAYLIST</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>290</posY>
+        <posX>1040</posX>
+        <posY>287</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>JUMP TO</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>483</posY>
+        <posX>1040</posX>
+        <posY>421</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -128,18 +116,18 @@
         <posX>15</posX>
         <posY>579</posY>
         <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        <posX>0</posX>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
         <posY>250</posY>
-        <width>256</width>
+        <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
 	
@@ -148,7 +136,7 @@
 	  <type>button</type>
 	  <id>2</id>
 	  <label>100</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <onup>17</onup>
 	</control>
 	
@@ -165,7 +153,7 @@
 	  <type>button</type>
 	  <id>20</id>
 	  <label>191</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -173,7 +161,7 @@
 	  <type>togglebutton</type>
 	  <id>30</id>
 	  <label>486</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -181,7 +169,7 @@
 	  <type>button</type>
 	  <id>10</id>
 	  <label>983</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -189,7 +177,7 @@
 	  <type>button</type>
 	  <id>21</id>
 	  <label>190</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -197,7 +185,7 @@
 	  <type>button</type>
 	  <id>22</id>
 	  <label>192</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
         <control>
@@ -214,7 +202,7 @@
 	  <id>26</id>
 	  <label>4540</label>
 	  <hyperlink>510</hyperlink>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
         <control>
@@ -222,7 +210,7 @@
           <type>button</type>
           <id>12</id>
           <label>Music Settings</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
           <hyperlink>14</hyperlink>
         </control>
 	
@@ -239,7 +227,7 @@
 	  <type>button</type>
 	  <id>28</id>
 	  <label>33001</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <visible>plugin.isenabled(Audioscrobbler)</visible>
 	</control>
 	
@@ -248,7 +236,7 @@
 	  <type>togglebutton</type>
 	  <id>27</id>
 	  <label>33000</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <visible>plugin.isenabled(Audioscrobbler)</visible>
 	</control>
 	
@@ -257,7 +245,7 @@
 	  <type>button</type>
 	  <id>29</id>
 	  <label>Scrobbler: </label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <visible>plugin.isenabled(Audioscrobbler)</visible>
 	</control>
 	
