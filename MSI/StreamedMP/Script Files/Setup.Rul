@@ -21,7 +21,7 @@
 #define SPUCK_FEATURE_TVSERIES		"Main\\spuckTVSeries"
 #define SPUCK_FEATURE_MOVINGPICS	"Main\\spuckMovingPictures"
 
-#define STREAMEDMP_EDITOR_FILE		INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_generator.exe"
+#define STREAMEDMP_EDITOR_FILE		INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -38,14 +38,14 @@
 #define RES_PBUT_BACK        			12   			// ID of Back button
          
 // Prototype Functions         
-prototype VOID CleanCache();
-prototype NUMBER GetMediaPortalProgramDir(BYREF STRING);
-prototype NUMBER GetMediaPortalConfigDir(BYREF STRING); 
-prototype VOID SetDefaults();
-prototype VOID UpdateSettings(); 
+prototype VOID 		CleanCache();
+prototype NUMBER 	GetMediaPortalProgramDir(BYREF STRING);
+prototype NUMBER 	GetMediaPortalConfigDir(BYREF STRING); 
+prototype VOID 		SetDefaults();
+prototype VOID 		UpdateSettings(); 
 
-prototype NUMBER ShowSelectTVSeries(BOOL);
-prototype NUMBER ShowSelectMovingPics(BOOL);
+prototype NUMBER 	ShowSelectTVSeries(BOOL);
+prototype NUMBER 	ShowSelectMovingPics(BOOL);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;

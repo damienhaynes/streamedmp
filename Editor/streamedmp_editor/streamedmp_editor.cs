@@ -29,6 +29,7 @@ namespace streamedmp_editor
 
         private void frmStreamedMPEditor_Load(object sender, EventArgs e)
         {
+            // Load Skin folder on load
             RegistryKey MediaPortalKey = Registry.LocalMachine;
             MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
             string sMediaPortalDir = "";
@@ -42,14 +43,14 @@ namespace streamedmp_editor
             path = sMediaPortalDir + "\\skin\\StreamedMP";
             if (System.IO.Directory.Exists(path))
             {
-                if (loadIDs() == true)
+                if (loadIDs(true) == true)
                 {
                     txtBGFolder.Enabled = true;
                     txtItemName.Enabled = true;
                     txtBGTime.Enabled = true;
                     btnAdd.Enabled = true;
                     btnRemove.Enabled = true;
-                    lstWinddowsInMenu.Enabled = true;
+                    chklstWinddowsInMenu.Enabled = true;
                     chkBGRandom.Enabled = true;
                 }
             }  
@@ -65,15 +66,15 @@ namespace streamedmp_editor
                 item.name = txtItemName.Text;
                 item.hyperlink = ids[lstAvailableWindows.SelectedIndex];
                 item.bgFolder = txtBGFolder.Text;
-                //item.name = lstAvailableWindows.SelectedItem.ToString();
+                //item.name = chklstAvailableWindows.SelectedItem.ToString();
                 item.random = chkBGRandom.Checked;
                 item.timePerImage = int.Parse(txtBGTime.Text);
                 menuItems.Add(item);
-                lstWinddowsInMenu.Items.Add(item.name);
+                chklstWinddowsInMenu.Items.Add(item.name);
 
                 txtItemName.Text = "";
                 txtBGFolder.Text = "";
-                if (lstWinddowsInMenu.Items.Count > 2)
+                if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
                 lstAvailableWindows.SelectedIndex = -1;
             }
@@ -84,7 +85,7 @@ namespace streamedmp_editor
             
         }
 
-        private bool loadIDs()
+        private bool loadIDs(bool onLoad)
         {
             lstAvailableWindows.Enabled = true;
             string[] files = System.IO.Directory.GetFiles(path);
@@ -92,26 +93,221 @@ namespace streamedmp_editor
             {
                 try
                 {
-                    if (file.StartsWith("common") == false && file.Contains("Dialog") == false && file.Contains("dialog") == false && file.Contains("wizard") == false)
+                    if (file.ToLower().StartsWith("common") == false && file.ToLower().Contains("dialog") == false
+                        && file.ToLower().Contains("wizard") == false && file.ToLower().Contains("basichome") == false)
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(file);
                         XmlNode node = doc.DocumentElement.SelectSingleNode("/window/id");
                                                 
                         ids.Add(node.InnerText);
-                        lstAvailableWindows.Items.Add(file.Remove(0, file.LastIndexOf(@"\") + 1).Replace(".xml", ""));                          
+                        lstAvailableWindows.Items.Add(file.Remove(0, file.LastIndexOf(@"\") + 1).Replace(".xml", ""));                         
                     }
                 }
                 catch {}
             }
             //return true;
             if (lstAvailableWindows.Items.Count > 0)
+            {    
+                loadSkin("BasicHome.xml");
                 return true;
+            }
             else
             {
-                MessageBox.Show("Error reading directory.");
+                // Dont need to complain when first loading the app as its possible that the skin isnt installed
+                if (!onLoad)                
+                    MessageBox.Show("Error reading directory.");
                 return false;
+                 
             }
+        }
+        
+        private void showLoadError()
+        {
+            MessageBox.Show("Error loading menu, file seems invalid");
+            return;
+        }
+
+        public void loadSkin(string menu)
+        {
+
+            switch (menu)
+            {
+                case "BasicHome.xml":
+                    //loadedMenuID = 35;
+                    break;
+                case "ExtraMenu.xml":
+                    //loadedMenuID = 88884;
+                    break;
+                case "GameMenu.xml":
+                    //loadedMenuID = 888811;
+                    break;
+                case "MusicMenu.xml":
+                    //loadedMenuID = 8888;
+                    break;
+                case "WatchMenu.xml":
+                    //loadedMenuID = 88883;
+                    break;
+            }
+
+
+            XmlDocument doc = new XmlDocument();
+            if (!File.Exists(path + @"\" + menu))
+            {
+                MessageBox.Show("Selected menu not found\r\nSelect the StreamedMP folder first and make sure " + menu + " exists");
+                return;
+            }
+            menuItems.Clear();
+            chklstWinddowsInMenu.Items.Clear();
+
+            doc.Load(path + @"\" + menu);
+
+            // Get default control if it is set
+            XmlNode defaultControlNode = doc.DocumentElement.SelectSingleNode("/window/defaultcontrol");
+            string defaultcontrol = "";
+            if (defaultControlNode != null)
+            {
+                string innerText = defaultControlNode.InnerText;
+                if (innerText.Length > 3)
+                    defaultcontrol = defaultControlNode.InnerText.Substring(3);
+                else
+                {
+                    showLoadError();
+                    return;
+                }
+            }
+          
+            // Read menuitemFocus and menuitemNoFocus colour
+            XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/window/define");
+            bool foundFocus = false, foundNoFocus = false;
+            foreach (XmlNode node in nodeList)
+            {
+                string nodeValue = node.InnerText;
+
+                if (nodeValue.StartsWith("#menuitemFocus"))
+                {
+                    txtfocusColour.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    foundFocus = true;
+                }
+                if (nodeValue.StartsWith("#menuitemNoFocus"))
+                {
+                    txtNoFocusColour.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    foundNoFocus = true;
+                }
+            }
+            if (!foundFocus || !foundNoFocus)
+            {
+                showLoadError();
+                return;
+            }
+            nodeList = doc.DocumentElement.SelectNodes("/window/controls/control/texture");
+            bool rssTicker = false;
+            foreach (XmlNode node in nodeList)
+            {
+                if (node.InnerText.Equals("#weatherimg"))
+                    rssTicker = true;
+            }
+            chkRssTicker.Checked = rssTicker;
+
+            nodeList = doc.DocumentElement.SelectNodes("/window/controls/control");
+
+            string hyperlink = "";
+            string id = "";
+            foreach (XmlNode node in nodeList)
+            {
+                XmlNode innerNode = node.SelectSingleNode("type");
+                if (innerNode != null)
+                {
+                    if (innerNode.InnerText == "button")
+                    {
+                        innerNode = node.SelectSingleNode("id");
+                        if (innerNode != null)
+                        {
+                            string nodeText = innerNode.InnerText;
+                            if (nodeText.Length > 3)
+                                id = innerNode.InnerText.Substring(3);
+                            else
+                                id = "";
+                        }
+
+                        innerNode = node.SelectSingleNode("hyperlink");
+                        if (innerNode != null)
+                        {
+                            string nodeText = innerNode.InnerText;
+                            hyperlink = innerNode.InnerText;
+                        }
+                    }
+                    else if (innerNode.InnerText == "label")
+                    {
+                        innerNode = node.SelectSingleNode("textcolor");
+                        if (innerNode != null && innerNode.InnerText.Equals("#menuitemFocus"))
+                        {                         
+                            string nodeName = node.SelectSingleNode("label").InnerText;
+                            chklstWinddowsInMenu.Items.Add(nodeName, id.Equals(defaultcontrol));
+                            menuItem mnuItem = new menuItem();
+                            mnuItem.hyperlink = hyperlink;
+                            mnuItem.name = nodeName;
+                            mnuItem.isDefault = id.Equals(defaultcontrol);
+                            mnuItem.id = int.Parse(id);
+                            menuItems.Add(mnuItem);
+                        }
+                    }
+                }
+            }// End foreach node
+
+            if (menuItems.Count < 6)
+            {
+                showLoadError();
+                return;
+            }
+
+            // Remove double entries
+            int cnt = chklstWinddowsInMenu.Items.Count;
+            for (int i = 1; i < (cnt / 2) + 1; i++)
+            {
+                chklstWinddowsInMenu.Items.RemoveAt(i);
+                menuItems.RemoveAt(i);
+            }
+            cnt = chklstWinddowsInMenu.Items.Count - 1;
+            chklstWinddowsInMenu.Items.RemoveAt(cnt);
+            menuItems.RemoveAt(cnt);
+
+            // Load background image settings for menuitems
+            nodeList = doc.DocumentElement.SelectNodes("/window/controls/control");
+            foreach (XmlNode node in nodeList)
+            {
+                XmlNode innerNode = node.SelectSingleNode("type");
+                if (innerNode != null && innerNode.InnerText == "multiimage")
+                {
+                    string imagepath = "";
+                    string timeperimage = "";
+                    string randomize = "";
+                    string visible = "";
+
+                    innerNode = node.SelectSingleNode("imagepath");
+                    if (innerNode != null) imagepath = innerNode.InnerText;
+
+                    innerNode = node.SelectSingleNode("timeperimage");
+                    if (innerNode != null) timeperimage = innerNode.InnerText;
+
+                    innerNode = node.SelectSingleNode("randomize");
+                    if (innerNode != null) randomize = innerNode.InnerText;
+
+                    innerNode = node.SelectSingleNode("visible");
+                    if (innerNode != null) visible = innerNode.InnerText;
+
+                    foreach (menuItem mnuItem in menuItems)
+                    {
+                        if (visible.Contains(mnuItem.id + ")"))
+                        {
+                            mnuItem.random = randomize.Equals("true");
+                            mnuItem.bgFolder = imagepath;
+                            mnuItem.timePerImage = int.Parse(timeperimage.Substring(0, 2));
+                        }
+                    }
+                }
+            }          
+            btnGenerate.Enabled = true;
         }
 
         private void lstAvailableWindows_SelectedIndexChanged(object sender, EventArgs e)
@@ -520,15 +716,14 @@ namespace streamedmp_editor
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (lstWinddowsInMenu.CheckedItems.Count > 1 || lstWinddowsInMenu.CheckedItems.Count == 0)
-                MessageBox.Show("You must set 1 item as the default menu item.");
+            if (chklstWinddowsInMenu.CheckedItems.Count > 1 || chklstWinddowsInMenu.CheckedItems.Count == 0)
+                MessageBox.Show("You must set only one item as default.");
             else
             {
-
                 foreach (menuItem item in menuItems)
                 {
                     item.id = 1000 + menuItems.IndexOf(item);
-                    if (item.name == lstWinddowsInMenu.CheckedItems[0].ToString())
+                    if (item.name == chklstWinddowsInMenu.CheckedItems[0].ToString())
                     {
                         item.isDefault = true;
                         defaultId = menuItems.IndexOf(item);
@@ -550,17 +745,31 @@ namespace streamedmp_editor
                 
                 generateCrowdingFix();
                 toolStripStatusLabel1.Text = "Done!";
-                MenuSelector selector = new MenuSelector();
+                /*MenuSelector selector = new MenuSelector();
                 selector.xml = xml;
                 selector.skindir = path;
-                selector.ShowDialog();
+                selector.ShowDialog();*/
+                
+                // Backup current BasicHome.xml
+                if (File.Exists(path + @"\" + "Basichome.xml"))
+                    File.Copy(path + @"\" + "Basichome.xml", path + @"\" + "Basichome.xml.backup." + DateTime.Now.Ticks.ToString());
+
+                // Remove current BasicHome.xml
+                if (File.Exists(path + @"\" + "Basichome.xml"))
+                    File.Delete(path + @"\" + "Basichome.xml");
+
+                StreamWriter writer = File.CreateText(path + @"\" + "Basichome.xml");
+                xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
+                writer.Write(xml);
+
+                writer.Close();
 
                 // reset item id's as it is possible to generate again.
                 foreach (menuItem item in menuItems)
                 {
                     item.id = menuItems.IndexOf(item);
-                }
-
+                }                
+                MessageBox.Show("A new BasicHome.xml has been generated.","Success");
             }
         }
 
@@ -1018,10 +1227,10 @@ namespace streamedmp_editor
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (lstWinddowsInMenu.SelectedItem != null)
+            if (chklstWinddowsInMenu.SelectedItem != null)
             {
-                menuItems.RemoveAt(lstWinddowsInMenu.SelectedIndex);
-                lstWinddowsInMenu.Items.Remove(lstWinddowsInMenu.SelectedItem);
+                menuItems.RemoveAt(chklstWinddowsInMenu.SelectedIndex);
+                chklstWinddowsInMenu.Items.Remove(chklstWinddowsInMenu.SelectedItem);
             }
             else
                 MessageBox.Show("No item selected.");
@@ -1044,14 +1253,14 @@ namespace streamedmp_editor
             path = folderBrowserDialog1.SelectedPath;
             if (path != "")
             {
-                if (loadIDs() == true)
+                if (loadIDs(false))
                 {
                     txtBGFolder.Enabled = true;
                     txtItemName.Enabled = true;
                     txtBGTime.Enabled = true;
                     btnAdd.Enabled = true;
                     btnRemove.Enabled = true;
-                    lstWinddowsInMenu.Enabled = true;
+                    chklstWinddowsInMenu.Enabled = true;
                     chkBGRandom.Enabled = true;
                 }
             }
@@ -1076,27 +1285,27 @@ namespace streamedmp_editor
         private void btMoveDown_Click(object sender, EventArgs e)
         {
             // Do nothing if no item is selected or if already at bottom
-            if (lstWinddowsInMenu.SelectedItem != null && lstWinddowsInMenu.SelectedIndex < lstWinddowsInMenu.Items.Count-1)
+            if (chklstWinddowsInMenu.SelectedItem != null && chklstWinddowsInMenu.SelectedIndex < chklstWinddowsInMenu.Items.Count-1)
             {
-                int index = lstWinddowsInMenu.SelectedIndex;
+                int index = chklstWinddowsInMenu.SelectedIndex;
 
 
-                Object listItem = lstWinddowsInMenu.SelectedItem;
+                Object listItem = chklstWinddowsInMenu.SelectedItem;
                 menuItem mnuItem = menuItems[index];
 
-                lstWinddowsInMenu.Items.RemoveAt(index);
+                chklstWinddowsInMenu.Items.RemoveAt(index);
                 menuItems.RemoveAt(index);
-                if (index < lstWinddowsInMenu.Items.Count)
+                if (index < chklstWinddowsInMenu.Items.Count)
                 {
-                    lstWinddowsInMenu.Items.Insert(index + 1, listItem);
+                    chklstWinddowsInMenu.Items.Insert(index + 1, listItem);
                     menuItems.Insert(index + 1, mnuItem);
                 }
                 else
                 {
-                    lstWinddowsInMenu.Items.Add(listItem);
+                    chklstWinddowsInMenu.Items.Add(listItem);
                     menuItems.Add(mnuItem);
                 }
-                lstWinddowsInMenu.SelectedIndex = index+1;
+                chklstWinddowsInMenu.SelectedIndex = index+1;
                 
             }
 
@@ -1111,21 +1320,21 @@ namespace streamedmp_editor
         private void btMoveUp_Click(object sender, EventArgs e)
         {
             // Do nothing if no item is selected or if already at top
-            if (lstWinddowsInMenu.SelectedItem != null && lstWinddowsInMenu.SelectedIndex > 0)
+            if (chklstWinddowsInMenu.SelectedItem != null && chklstWinddowsInMenu.SelectedIndex > 0)
             {
-                int index = lstWinddowsInMenu.SelectedIndex;
+                int index = chklstWinddowsInMenu.SelectedIndex;
 
 
-                Object listItem = lstWinddowsInMenu.SelectedItem;
+                Object listItem = chklstWinddowsInMenu.SelectedItem;
                 menuItem mnuItem = menuItems[index];
 
-                lstWinddowsInMenu.Items.RemoveAt(index);
+                chklstWinddowsInMenu.Items.RemoveAt(index);
                 menuItems.RemoveAt(index);
 
-                lstWinddowsInMenu.Items.Insert(index - 1, listItem);
+                chklstWinddowsInMenu.Items.Insert(index - 1, listItem);
                 menuItems.Insert(index - 1, mnuItem);
 
-                lstWinddowsInMenu.SelectedIndex = index - 1;
+                chklstWinddowsInMenu.SelectedIndex = index - 1;
 
             }
             foreach (menuItem item in menuItems)
