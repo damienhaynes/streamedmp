@@ -7,7 +7,7 @@ multiple view modes.
 <window>
   <id>96742</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   
   <!-- 
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
@@ -107,7 +107,7 @@ multiple view modes.
       <height>221</height>
       <colordiffuse>ffFFFFFF</colordiffuse>
       <texture>black.png</texture>
-      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -131,7 +131,7 @@ multiple view modes.
       <width>512</width>
       <height>43</height>
       <texture>glasstitlebar.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <!--            :: ALL VIEWS ::            -->
@@ -396,7 +396,7 @@ multiple view modes.
     </control>
     -->
     
-    <!--            :: DETAILS VIEW :: FILMSTRIP VIEW ::            -->
+    <!--            :: FILMSTRIP VIEW ::            -->
     
     <control>
       <description>Cover Art</description>
@@ -407,7 +407,7 @@ multiple view modes.
       <width>288</width>
       <height>422</height>
       <texture>#MovingPictures.Coverart</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -419,7 +419,7 @@ multiple view modes.
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -431,7 +431,7 @@ multiple view modes.
       <width>32</width>
       <height>39</height>
       <texture>overlaywubg.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -443,7 +443,7 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlaywatched.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9)]|[!Control.IsVisible(50)+Control.IsVisible(9)]</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9)</visible>
     </control>
     
     <control>
@@ -455,7 +455,7 @@ multiple view modes.
       <width>23</width>
       <height>23</height>
       <texture>overlayunwatched.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)+!Control.IsVisible(9)]|[!Control.IsVisible(50)+!Control.IsVisible(9)]</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)+!Control.IsVisible(9)</visible>
     </control>
     
     <control>
@@ -468,7 +468,7 @@ multiple view modes.
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -483,7 +483,7 @@ multiple view modes.
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -496,7 +496,7 @@ multiple view modes.
       <font>mediastream12tc</font>
       <label>Movie Details</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -506,7 +506,7 @@ multiple view modes.
       <posY>305</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -516,7 +516,7 @@ multiple view modes.
       <posY>325</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -526,7 +526,7 @@ multiple view modes.
       <posY>345</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -536,7 +536,7 @@ multiple view modes.
       <posY>365</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -546,7 +546,7 @@ multiple view modes.
       <posY>425</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -566,7 +566,7 @@ multiple view modes.
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -576,7 +576,7 @@ multiple view modes.
       <posY>445</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -589,7 +589,7 @@ multiple view modes.
       <font>mediastream12tc</font>
       <label>Director</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -599,7 +599,7 @@ multiple view modes.
       <posY>305</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -612,7 +612,7 @@ multiple view modes.
       <font>mediastream12tc</font>
       <label>Writer</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -622,50 +622,12 @@ multiple view modes.
       <posY>395</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <!--            :: DETAILS VIEW ::            -->
     
-    <control>
-      <description>Play Button</description>
-      <type>button</type>
-      <id>6</id>
-      <onup>7</onup>
-      <ondown>7</ondown>
-      <onleft>7</onleft>
-      <onright>7</onright>
-      <posX>402</posX>
-      <posY>390</posY>
-      <width>100</width>
-      <textYOff>5</textYOff>
-      <textXOff>15</textXOff>
-      <label>PLAY</label>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
-      <description>Cycle Details Button (not implemented yet)</description>
-      <type>button</type>
-      <id>7</id>
-      <onup>6</onup>
-      <ondown>6</ondown>
-      <onleft>6</onleft>
-      <onright>6</onright>
-      <posX>502</posX>
-      <posY>390</posY>
-      <width>185</width>
-      <textYOff>5</textYOff>
-      <textXOff>15</textXOff>
-      <label>CYCLE DETAILS</label>
-      <font>mediastream11tc</font>
-      <textureFocus>dialogbigbuttonfo.png</textureFocus>
-      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
+    <import>movingpictures.details.xml</import>
     
     <!--            :: OTHER ::            -->
     

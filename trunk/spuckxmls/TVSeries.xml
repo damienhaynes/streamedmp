@@ -2,7 +2,7 @@
 <window>
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#title.color:ffFFFFFF</define>        <!-- Title Color                        Default: ffFFFFFF -->
   <define>#text.color:ffFFFFFF</define>         <!-- Text Color                         Default: ffFFFFFF -->
   <define>#default.color:ffFFFFFF</define>      <!-- Normal List Color                  Default: ffFFFFFF -->
@@ -10,7 +10,7 @@
   <define>#notpresent.color:ffF87B72</define>   <!-- File Not Present in List Color     Default: ffF87B72 -->
   <controls>
     
-    <import>TVSeries.dummy.xml</import> <!-- import dummy labels -->
+    <import>TVSeries.dummy.xml</import>
     
     <!--
     ::::::::::::::::::::::::::::
@@ -1010,6 +1010,10 @@
           <textcolor>#notpresent.color</textcolor>
           <textcolor2>#notpresent.color</textcolor2>
           <textcolor3>#notpresent.color</textcolor3>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
         </control>
       </control>
     </control>
@@ -1021,26 +1025,26 @@
     -->
     
     <control>
-      <description>Spin Control BG</description>
+      <description>Media Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>671</posY>
-      <width>180</width>
-      <height>32</height>
-      <texture>mediacountbg.png</texture>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
       <visible>Control.IsVisible(1235)</visible>
     </control>
     
     <control>
-      <description>Spin Control Label</description>
+      <description>Media Count Label</description>
       <type>label</type>
-      <label>PAGE</label>
+      <label>PAGE:</label>
       <id>0</id>
-      <posX>1075</posX>
-      <posY>673</posY>
-      <font>mediastream12c</font>
-      <textcolor>ff025984</textcolor>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
       <visible>Control.IsVisible(1235)</visible>
     </control>
     
