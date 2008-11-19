@@ -102,6 +102,48 @@
       </control>
     </control>
     
+    <control>
+      <description>image:</description>
+      <type>label</type>
+      <id>30</id>
+      <posX>40</posX>
+      <posY>440</posY>
+      <label>734</label>
+    </control>
+    <control>
+      <description>spin control</description>
+      <type>spincontrol</type>
+      <id>10</id>
+      <posX>170</posX>
+      <posY>443</posY>
+      <onup>6</onup>
+      <ondown>11</ondown>
+      <onleft>10</onleft>
+      <onright>10</onright>
+    </control>
+    
+    <control>
+      <description>disc:</description>
+      <type>label</type>
+      <id>100</id>
+      <posX>40</posX>
+      <posY>460</posY>
+      <label>427</label>
+    </control>
+    <control>
+      <description>disc select</description>
+      <type>spincontrol</type>
+      <id>11</id>
+      <posX>170</posX>
+      <posY>463</posY>
+      <onup>10</onup>
+      <ondown>6</ondown>
+      <onleft>11</onleft>
+      <onright>11</onright>
+      <buddycontrolid>100</buddycontrolid>
+      <showrange>no</showrange>
+    </control>
+    
     <!--            :: MAIN DETAILS ::            -->
     
     <control>
@@ -182,50 +224,8 @@
     <!--            :: DETAILS ::            -->
     
     <control>
-      <description>image:</description>
       <type>label</type>
-      <id>30</id>
-      <posX>40</posX>
-      <posY>440</posY>
-      <label>734</label>
-    </control>
-    <control>
-      <description>spin control</description>
-      <type>spincontrol</type>
-      <id>10</id>
-      <posX>170</posX>
-      <posY>443</posY>
-      <onup>6</onup>
-      <ondown>11</ondown>
-      <onleft>10</onleft>
-      <onright>10</onright>
-    </control>
-    
-    <control>
-      <description>disc:</description>
-      <type>label</type>
-      <id>100</id>
-      <posX>40</posX>
-      <posY>460</posY>
-      <label>427</label>
-    </control>
-    <control>
-      <description>disc select</description>
-      <type>spincontrol</type>
-      <id>11</id>
-      <posX>170</posX>
-      <posY>463</posY>
-      <onup>10</onup>
-      <ondown>6</ondown>
-      <onleft>11</onleft>
-      <onright>11</onright>
-      <buddycontrolid>100</buddycontrolid>
-      <showrange>no</showrange>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <posX>284</posX>
+      <posX>289</posX>
       <posY>533</posY>
       <width>200</width>
       <font>mediastream10c</font>
@@ -234,7 +234,7 @@
     </control>
     <control>
       <type>label</type>
-      <posX>386</posX>
+      <posX>391</posX>
       <posY>527</posY>
       <width>700</width>
       <font>mediastream14c</font>
@@ -243,70 +243,57 @@
     </control>
     
     <control>
-      <type>label</type>
-      <posX>284</posX>
-      <posY>568</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>GENRE</label>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>344</posX>
-      <posY>564</posY>
-      <width>700</width>
-      <font>mediastream12c</font>
+      <type>textboxscrollup</type>
+      <posX>289</posX>
+      <posY>574</posY>
+      <width>500</width>
+      <height>700</height>
+      <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
-      <label>#genre</label>
+      <label>#genre
+#year
+#runtime minutes
+#mpaarating</label>
+      <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <control>
       <type>label</type>
-      <posX>284</posX>
-      <posY>603</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>RUNTIME</label>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>358</posX>
-      <posY>599</posY>
+      <posX>989</posX>
+      <posY>657</posY>
       <width>700</width>
-      <font>mediastream12c</font>
+      <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
-      <label>#runtime minutes</label>
+      <label>STAR RATING:</label>
     </control>
     
     <control>
       <type>label</type>
-      <posX>284</posX>
-      <posY>638</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>RATING</label>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>346</posX>
-      <posY>634</posY>
+      <posX>1149</posX>
+      <posY>678</posY>
       <width>700</width>
-      <font>mediastream12c</font>
+      <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
-      <label>#rating / 10 [#votes]</label>
+      <label>#rating / 10</label>
     </control>
     
     <control>
-      <type>label</type>
-      <posX>284</posX>
-      <posY>673</posY>
-      <width>990</width>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream10c</font>
-      <label>#mpaarating</label>
+      <type>imagelist</type>
+      <id>0</id>
+      <posX>1147</posX>
+      <posY>662</posY>
+      <width>115</width>
+      <height>13</height>
+      <textureWidth>13</textureWidth>
+      <textureHeight>13</textureHeight>
+      <subitems>
+        <subitem>-.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
     </control>
     
     <import>common.time.xml</import>

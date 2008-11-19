@@ -76,69 +76,57 @@
       <onexit>50</onexit>
       <control>
         <type>image</type>
-        <posX>0</posX>
+        <posX>1002</posX>
         <posY>0</posY>
-        <width>1280</width>
+        <width>278</width>
         <height>720</height>
-        <texture>black.png</texture>
-        <colordiffuse>50ffffff</colordiffuse>
+        <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="fade" time="200">visible</animation>
-        <animation effect="fade" time="200">hidden</animation>
-      </control>
-      <control>
-        <type>image</type>
-        <posX>0</posX>
-        <posY>0</posY>
-        <width>256</width>
-        <height>720</height>
-        <texture>hiddenmenu_left.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>VIEW OPTIONS</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>226</posY>
+        <posX>1040</posX>
+        <posY>225</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>PLAYLIST</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>355</posY>
+        <posX>1040</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>JUMP TO</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>450</posY>
+        <posX>1040</posX>
+        <posY>421</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="100" end="-356,0">hidden</animation>
-        <posX>0</posX>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
         <posY>250</posY>
-        <width>256</width>
+        <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
@@ -147,21 +135,21 @@
           <id>2</id>
           <label>100</label>
           <onup>10</onup>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Sort</description>
           <type>sortbutton</type>
           <id>3</id>
           <label>103</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Switch View</description>
           <type>button</type>
           <id>5</id>
           <label>457</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -169,7 +157,6 @@
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
-          <onright>50</onright>
         </control>
         <control>
           <description>Current Playlist</description>
@@ -177,14 +164,14 @@
           <id>20</id>
           <label>4555</label>
           <action>33</action>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>My Playlists</description>
           <type>button</type>
           <id>9</id>
           <label>983</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -196,37 +183,37 @@
         <control>
           <description>Video Settings</description>
           <type>button</type>
-          <id>66608</id>
+          <id>66601</id>
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Moving Pictures</description>
           <type>button</type>
-          <id>4</id>
+          <id>66602</id>
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <visible>plugin.isenabled(Moving Pictures)</visible>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>TV Shows</description>
           <type>button</type>
-          <id>10</id>
+          <id>66603</id>
           <hyperlink>9811</hyperlink>
           <label>1300</label>
           <visible>plugin.isenabled(MP-TV Series)</visible>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Trailers</description>
           <type>button</type>
-          <id>8</id>
+          <id>66604</id>
           <label>5906</label>
           <hyperlink>5900</hyperlink>
           <visible>plugin.isenabled(My Trailers)</visible>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
       </control>
     </control>

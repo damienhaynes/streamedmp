@@ -15,7 +15,7 @@ This file should contain the facade view
         <posY>317</posY>
         <height>360</height>
         <textXOff2>500</textXOff2>
-        <onleft>2</onleft>
+        <onright>2</onright>
         <spinPosX>1249</spinPosX>
         <spinPosY>690</spinPosY>
         <spinAlign>Right</spinAlign>
@@ -27,6 +27,7 @@ This file should contain the facade view
         <type>filmstrip</type>
         <id>50</id>
         <onup>2</onup>
+        <onleft>50</onleft>
         <posX>12</posX>
         <posY>512</posY>
         <width>1280</width>
@@ -36,7 +37,6 @@ This file should contain the facade view
         <spinWidth>24</spinWidth>
         <spinHeight>24</spinHeight>
         <spinColor>ffcccccc</spinColor>
-        <spinCanFocus>no</spinCanFocus>
         <itemWidth>142</itemWidth>
         <itemHeight>156</itemHeight>
         <textureWidth>120</textureWidth>
@@ -106,7 +106,12 @@ This file should contain the facade view
           <type>playlistcontrol</type>
           <id>50</id>
           <scrollOffset>2</scrollOffset>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
           <spinCanFocus>no</spinCanFocus>
+          <onright>2</onright>
         </control>
     </control>
     
@@ -133,5 +138,6 @@ This file should contain the facade view
       <textcolor>ff909090</textcolor>
       <visible>facadeview.list|facadeview.playlist</visible>
     </control>
+    
   </controls>
 </window>
