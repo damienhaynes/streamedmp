@@ -136,64 +136,54 @@ multiple view modes.
     
     <!--            :: ALL VIEWS ::            -->
     
-    <control>
+    <!--control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>0</posX>
+        <posX>1002</posX>
         <posY>0</posY>
-        <width>1280</width>
+        <width>278</width>
         <height>720</height>
-        <texture>black.png</texture>
-        <colordiffuse>50ffffff</colordiffuse>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>SWITCH</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>226</posY>
         <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="fade" time="200">visiblechange</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-        <type>image</type>
-        <posX>0</posX>
-        <posY>0</posY>
-        <width>256</width>
-        <height>720</height>
-        <texture>hiddenmenu_left.png</texture>
+        <id>0</id>
+        <label>SETTINGS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>310</posY>
         <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
-      </control>
-      <control>
-              <id>0</id>
-              <label>SWITCH</label>
-              <type>label</type>
-              <font>mediastream12tc</font>
-              <posX>15</posX>
-              <posY>226</posY>
-              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
-              <animation effect="slide" time="0" end="-356,0">hidden</animation>
-      </control>
-      <control>
-              <id>0</id>
-              <label>SETTINGS</label>
-              <type>label</type>
-              <font>mediastream12tc</font>
-              <posX>15</posX>
-              <posY>325</posY>
-              <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-              <animation effect="slide" time="100" start="-356,0">visible</animation>
-              <animation effect="slide" time="0" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
-        <posX>0</posX>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
         <posY>250</posY>
-        <width>256</width>
+        <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
@@ -201,7 +191,7 @@ multiple view modes.
           <type>button</type>
           <id>2</id>
           <label>Toggle View</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
           <onup>66610</onup>
         </control>
         <control>
@@ -209,7 +199,7 @@ multiple view modes.
           <type>button</type>
           <id>3</id>
           <label>Switch View</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -223,14 +213,14 @@ multiple view modes.
           <type>button</type>
           <id>4</id>
           <label>Filters</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Settings Menu</description>
           <type>button</type>
           <id>5</id>
           <label>Settings</label>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Video Settings</description>
@@ -239,10 +229,10 @@ multiple view modes.
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
           <ondown>2</ondown>
-          <onright>50</onright>
+          <onleft>50</onleft>
         </control>
       </control>
-    </control>
+    </control-->
     
     <!--            :: LIST VIEW ::            -->
     
