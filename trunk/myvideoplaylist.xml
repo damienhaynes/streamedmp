@@ -31,7 +31,7 @@
       <id>204</id>
       <type>image</type>
       <posX>30</posX>
-      <posY>198</posY>
+      <posY>230</posY>
       <width>245</width>
       <height>373</height>
       <texture>#selectedthumb</texture>
@@ -45,68 +45,57 @@
       <onexit>50</onexit>
       <control>
         <type>image</type>
-        <posX>0</posX>
+        <posX>1002</posX>
         <posY>0</posY>
-        <width>1280</width>
+        <width>278</width>
         <height>720</height>
-        <texture>black.png</texture>
-        <colordiffuse>50ffffff</colordiffuse>
+        <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="fade" time="200">visiblechange</animation>
-      </control>
-      <control>
-        <type>image</type>
-        <posX>0</posX>
-        <posY>0</posY>
-        <width>256</width>
-        <height>720</height>
-        <texture>hiddenmenu_left.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>VIEW OPTIONS</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>226</posY>
+        <posX>1040</posX>
+        <posY>225</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
-        <label>PLAYLIST</label>
+        <label>PLAYLIST CONTROL</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>290</posY>
+        <posX>1040</posX>
+        <posY>281</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>JUMP TO</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>483</posY>
+        <posX>1040</posX>
+        <posY>449</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-356,0">visible</animation>
-        <animation effect="slide" time="0" end="-356,0">hidden</animation>
-        <posX>0</posX>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
         <posY>250</posY>
-        <width>256</width>
+        <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
 	
@@ -115,7 +104,7 @@
 	  <type>button</type>
 	  <id>2</id>
 	  <label>100</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <onup>17</onup>
 	</control>
 	
@@ -132,7 +121,7 @@
 	  <type>button</type>
 	  <id>20</id>
 	  <label>191</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -140,7 +129,7 @@
 	  <type>togglebutton</type>
 	  <id>30</id>
 	  <label>486</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -148,7 +137,7 @@
 	  <type>button</type>
 	  <id>21</id>
 	  <label>190</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -156,7 +145,7 @@
 	  <type>button</type>
 	  <id>22</id>
 	  <label>192</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -164,7 +153,7 @@
 	  <type>button</type>
 	  <id>23</id>
 	  <label>208</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
         <control>
@@ -180,7 +169,7 @@
 	  <type>button</type>
 	  <id>24</id>
 	  <label>209</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -188,7 +177,7 @@
 	  <type>button</type>
 	  <id>25</id>
 	  <label>210</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	</control>
 	
 	<control>
@@ -196,7 +185,7 @@
 	  <type>button</type>
 	  <id>9</id>
 	  <label>983</label>
-	  <onright>50</onright>
+	  <onleft>50</onleft>
 	  <ondown>99</ondown>
 	</control>
 	
