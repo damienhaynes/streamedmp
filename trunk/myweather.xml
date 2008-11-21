@@ -9,7 +9,6 @@
     
     <control>
       <description>weather background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -17,11 +16,11 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <control>
       <description>overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -272,7 +271,7 @@
       <type>label</type>
       <id>23</id>
       <posX>820</posX>
-      <posY>457</posY>
+      <posY>459</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -282,7 +281,7 @@
       <type>label</type>
       <id>24</id>
       <posX>820</posX>
-      <posY>487</posY>
+      <posY>489</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -292,7 +291,7 @@
       <type>label</type>
       <id>25</id>
       <posX>820</posX>
-      <posY>577</posY>
+      <posY>579</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -302,7 +301,7 @@
       <type>label</type>
       <id>26</id>
       <posX>820</posX>
-      <posY>607</posY>
+      <posY>609</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -312,7 +311,7 @@
       <type>label</type>
       <id>27</id>
       <posX>820</posX>
-      <posY>517</posY>
+      <posY>519</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -322,7 +321,7 @@
       <type>label</type>
       <id>28</id>
       <posX>820</posX>
-      <posY>547</posY>
+      <posY>549</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -723,6 +722,8 @@
       <ondown>3</ondown>
       <keepaspectratio>yes</keepaspectratio>
     </control>
+    
+    <import>common.overlays.xml</import>
     
     <import>common.window.xml</import>
     <import>common.time.xml</import>
