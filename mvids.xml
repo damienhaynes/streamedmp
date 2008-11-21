@@ -1,0 +1,421 @@
+<window>
+  <id>6623</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.hover:hover_my music.png</define>
+  <controls>
+    
+    <control>
+      <description>music background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <description>music overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    
+    <!-- DETAILS (THUMB/SELECTED LABEL/TITLE/DESCRIPTION) -->
+    
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>100</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>380</height>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    
+    <control>
+      <description>artist Label</description>
+      <type>label</type>
+      <id>8</id>
+      <posX>308</posX>
+      <posY>251</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label></label>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    
+    <control>
+      <description>Selected item Label</description>
+      <type>label</type>
+      <label></label>
+      <id>9</id>
+      <posX>308</posX>
+      <posY>278</posY>
+      <width>900</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+    </control>
+    
+    <control>
+      <description>Biography</description>
+      <type>textboxscrollup</type>
+      <id>5</id>
+      <posX>308</posX>
+      <posY>318</posY>
+      <width>415</width>
+      <height>315</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label></label>
+    </control>
+    
+    <control>
+      <description>mosaic</description>
+      <id>110</id>
+      <type>image</type>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>700</width>
+      <height>430</height>
+    </control>
+    
+    <!-- DETAILS (VIDEO DETAILS) -->
+    
+    <control Style="smallTitleB">
+      <description>Genre static</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>330</posY>
+      <label>Genre</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitle">
+      <description>Genre dynamic</description>
+      <type>label</type>
+      <id>20</id>
+      <posX>440</posX>
+      <posY>330</posY>
+      <label>-</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Playcount static</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>355</posY>
+      <label>Play Count</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitle">
+      <description>Playcount dynamic</description>
+      <type>label</type>
+      <id>21</id>
+      <posX>440</posX>
+      <posY>355</posY>
+      <label></label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Length static</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>380</posY>
+      <label>Length</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitle">
+      <description>Length dynamic</description>
+      <type>label</type>
+      <id>22</id>
+      <posX>440</posX>
+      <posY>380</posY>
+      <label></label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Rating static</description>
+      <type>label</type>
+      <id>99</id>
+      <posX>310</posX>
+      <posY>405</posY>
+      <label>Rating</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control>
+      <description>star1</description>
+      <id>101</id>
+      <type>image</type>
+      <posX>437</posX>
+      <posY>407</posY>
+      <height>15</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture>starwhite.png</texture>
+    </control>
+    
+     <control>
+      <description>star2</description>
+      <id>102</id>
+      <type>image</type>
+      <posX>453</posX>
+      <posY>407</posY>
+      <height>15</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture>starwhite.png</texture>
+    </control>
+    
+     <control>
+      <description>star3</description>
+      <id>103</id>
+      <type>image</type>
+      <posX>469</posX>
+      <posY>407</posY>
+      <height>15</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture>starwhite.png</texture>
+    </control>
+    
+     <control>
+      <description>star4</description>
+      <id>104</id>
+      <type>image</type>
+      <posX>485</posX>
+      <posY>407</posY>
+      <height>15</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture>starwhite.png</texture>
+    </control>
+    
+    <control>
+      <description>star5</description>
+      <id>105</id>
+      <type>image</type>
+      <posX>501</posX>
+      <posY>407</posY>
+      <height>15</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture>starwhite.png</texture>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Score static</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>430</posY>
+      <label>Score</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitle">
+      <description>Score dynamic</description>
+      <type>label</type>
+      <id>23</id>
+      <posX>440</posX>
+      <posY>430</posY>
+      <label></label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Rank static</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>310</posX>
+      <posY>455</posY>
+      <label>Rank</label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <control Style="smallTitle">
+      <description>Rank dynamic</description>
+      <type>label</type>
+      <id>24</id>
+      <posX>440</posX>
+      <posY>455</posY>
+      <label></label>
+      <visible>Control.IsVisible(101)</visible>
+    </control>
+    
+    <!-- SIDE MENU-->
+    
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>3</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>MENU</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        
+        <control>
+          <description>Random</description>
+          <type>button</type>
+          <id>3</id>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <label>Random</label>
+        </control>
+        <control>
+          <description>View</description>
+          <type>button</type>
+          <id>7</id>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <label></label>
+        </control>
+        <control>
+          <description>Playlist</description>
+          <type>button</type>
+          <id>4</id>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <label>Playlist</label>
+        </control>
+        
+     </control>
+    </control>
+  
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <onleft>3</onleft>
+          <onright>3</onright>
+          <posX>756</posX>
+          <posY>317</posY>
+          <height>360</height>
+          <textXOff>0</textXOff>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>3</onleft>
+          <onright>3</onright>
+        </control>
+        <control>
+          <description>Filmstrip view</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>3</onup>
+        </control>
+        <control>
+          <description>playlist listcontrol</description>
+          <type>playlistcontrol</type>
+          <id>50</id>
+          <onleft>3</onleft>
+          <onright>3</onright>
+        </control>
+      </control>
+    </control>
+    
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>facadeview.list|facadeview.playlist</visible>
+    </control>
+    
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>facadeview.list|facadeview.playlist</visible>
+    </control>
+    
+    <import>common.window.xml</import>
+    
+    <control>
+      <type>label</type>
+      <description>Top Title</description>
+      <id>6</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    
+    <import>common.time.xml</import>
+  </controls>
+</window>

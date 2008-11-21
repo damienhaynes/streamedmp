@@ -22,7 +22,6 @@
       <width>1280</width>
       <height>720</height>
       <texture>#TVSeries.FanArt.SelectedPreview</texture>
-      <visible>true</visible>
     </control>
     
     <control>
@@ -33,19 +32,22 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>tvfanartoverlay.png</texture>
+      <texture>mainoverlay.png</texture>
     </control>
     
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
     
     <control>
-      <description>Current View</description>
+      <description>Current View Label</description>
       <type>label</type>
+      <label>#TVSeries.Fanart.PageTitle</label>
       <id>0</id>
-      <posX>15</posX>
+      <posX>1255</posX>
       <posY>15</posY>
-      <font>titlefont11b</font>
-      <label>#TVSeries.Fanart.PageTitle SELECTION</label>
+      <width>500</width>
+      <font>mediastream10tc</font>
+      <align>right</align>
+      <textcolor>ffFFFFFF</textcolor>
     </control>
     
     <import>common.time.xml</import>
@@ -58,7 +60,7 @@
       <id>0</id>
       <posX>50</posX>
       <posY>350</posY>
-      <font>titlefont11</font>
+      <font>mediastream11</font>
       <label>#TVSeries.FanArt.DownloadingStatus</label>
     </control>
     
@@ -68,7 +70,7 @@
       <id>0</id>
       <posX>50</posX>
       <posY>380</posY>
-      <font>titlefont11</font>
+      <font>mediastream11</font>
       <label>Resolution: #TVSeries.FanArt.SelectedFanartResolution</label>
     </control>
     
@@ -100,10 +102,6 @@
     <spinPosY>440</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ffffffff</spinColor>
-    <textureUp>arrowupnf.png</textureUp>
-    <textureDown>arrowdownnf.png</textureDown>
-    <textureUpFocus>arrowupfo.png</textureUpFocus>
-    <textureDownFocus>arrowdownfo.png</textureDownFocus>
     <textureFocus>mediaitemdetailfo.png</textureFocus>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>tvseries_fanart_focus.png</imageFolderFocus>
