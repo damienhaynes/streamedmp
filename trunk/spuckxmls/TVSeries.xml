@@ -3,8 +3,6 @@
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#title.color:ffFFFFFF</define>        <!-- Title Color                        Default: ffFFFFFF -->
-  <define>#text.color:ffFFFFFF</define>         <!-- Text Color                         Default: ffFFFFFF -->
   <define>#default.color:ffFFFFFF</define>      <!-- Normal List Color                  Default: ffFFFFFF -->
   <define>#watched.color:ff999999</define>      <!-- Watched List Color                 Default: ff808080 -->
   <define>#notpresent.color:ffF87B72</define>   <!-- File Not Present in List Color     Default: ffF87B72 -->
@@ -913,6 +911,7 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
         <posX>1002</posX>
@@ -952,6 +951,7 @@
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="0" end="300,0">windowopen</animation>
         <posX>1040</posX>
         <posY>250</posY>
         <width>220</width>
