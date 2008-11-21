@@ -7,6 +7,7 @@
   <controls>
     <import>common.time.xml</import>
     <import>common.window.tv.xml</import>
+    <import>common.overlays.xml</import>
     <control>
       <type>image</type>
       <id>1</id>
@@ -30,14 +31,25 @@
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
+    </control>
+    <control>
       <type>label</type>
       <description>My Recorded TV Text Label</description>
       <id>1</id>
-      <posX>444</posX>
-      <posY>85</posY>
+      <posX>435</posX>
+      <posY>120</posY>
       <label>652</label>
-      <font>font16</font>
-      <align>right</align>
+      <font>mediastream14tc</font>
+      <align>left</align>
       <textcolor>ffffffff</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -57,13 +69,12 @@
       <type>fadelabel</type>
       <description>Selected item Label</description>
       <id>1</id>
-      <posX>1208</posX>
-      <posY>85</posY>
+      <posX>430</posX>
+      <posY>505</posY>
       <width>622</width>
       <label>#selecteditem</label>
-      <font>font14</font>
-      <align>right</align>
-      <disabledcolor>ff808080</disabledcolor>
+      <font>mediastream10tc</font>
+      <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -71,8 +82,8 @@
       <type>group</type>
       <description>group element</description>
       <id>24</id>
-      <posX>60</posX>
-      <posY>180</posY>
+      <posX>40</posX>
+      <posY>220</posY>
       <layout>StackLayout</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -199,16 +210,17 @@
         <type>listcontrol</type>
         <description>listcontrol</description>
         <id>11</id>
-        <height>437</height>
-        <posX>375</posX>
-        <posY>200</posY>
-        <width>500</width>
+        <height>320</height>
+        <posX>430</posX>
+        <posY>220</posY>
+        <width>850</width>
         <onleft>10</onleft>
         <onright>2</onright>
         <onup>2</onup>
         <ondown>2</ondown>
         <font>mediastream11tc</font>
         <textXOff>40</textXOff>
+        <textXOff2>750</textXOff2>
         <spinColor>FFFFFFFF</spinColor>
         <PinIconXOff>20</PinIconXOff>
         <PinIconYOff>10</PinIconYOff>
@@ -220,30 +232,29 @@
         <itemHeight>30</itemHeight>
       </control>
       <control>
-        <type>fadelabel</type>
+        <type>image</type>
         <description>Current program title</description>
         <id>13</id>
-        <posX>1422</posX>
-        <posY>750</posY>
-        <label>#TV.RecordedTV.Title</label>
-        <disabledcolor>808080</disabledcolor>
+        <posX>430</posX>
+        <posY>305</posY>
+        <label>#TV.Record.thumb</label>
       </control>
       <control>
         <type>label</type>
         <description>Current program time</description>
         <id>14</id>
-        <posX>462</posX>
-        <posY>575</posY>
+        <posX>430</posX>
+        <posY>530</posY>
         <label>#TV.RecordedTV.Time</label>
       </control>
       <control>
         <type>textboxscrollup</type>
         <description>Description1</description>
         <id>15</id>
-        <posX>471</posX>
-        <posY>535</posY>
+        <posX>430</posX>
+        <posY>555</posY>
         <width>741</width>
-        <height>125</height>
+        <height>160</height>
         <colordiffuse>ffffffff</colordiffuse>
         <font>mediastream10</font>
         <label>#TV.RecordedTV.Description</label>
