@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>4711</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:2516</define>
+  <define>#header.hover:hover_wikipedia.png</define>
+  <controls>
+    
+    <!--            :: BACKGROUND :: OVERLAY ::            -->
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <description>overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    
+    <!--            :: MENU ::            -->
+    
+    <control>
+      <type>image</type>
+      <posX>1002</posX>
+      <posY>0</posY>
+      <width>278</width>
+      <height>720</height>
+      <texture>hiddenmenu_right.png</texture>
+    </control>
+    
+    <control>
+      <id>0</id>
+      <label>MENU</label>
+      <type>label</type>
+      <font>mediastream12tc</font>
+      <posX>1040</posX>
+      <posY>225</posY>
+    </control>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>1040</posX>
+      <posY>250</posY>
+      <width>220</width>
+      <height>720</height>
+      <layout>StackLayout</layout>
+      
+      <control>
+        <description>Search Button</description>
+        <type>button</type>
+        <id>10</id>
+        <onup>17</onup>
+        <label>137</label>
+      </control>
+      <control>
+        <description>Select local Wikipedia Button</description>
+        <type>button</type>
+        <id>11</id>
+        <label>200025</label>
+      </control>
+      <control>
+        <description>Back to the text (when viewing an image)</description>
+        <type>button</type>
+        <id>14</id>
+        <label>2514</label>
+        <visible>no</visible>
+      </control>
+      <control>
+        <description>Links Button</description>
+        <type>button</type>
+        <id>12</id>
+        <label>2511</label>
+      </control>
+      <control>
+        <description>Images Button</description>
+        <type>button</type>
+        <id>13</id>
+        <ondown>99</ondown>
+        <label>2515</label>
+        
+      </control>
+    </control>
+    
+    <!--            :: MAIN ::            -->
+    <control>
+      <description>Article title/searchterm</description>
+      <type>label</type>
+      <id>4</id>
+      <posX>50</posX>
+      <posY>260</posY>
+      <width>950</width>
+      <font>mediastream16c</font>
+      <visible>no</visible>
+      <label>Article title/searchterm</label>
+    </control>
+    
+    <control>
+      <description>Here is the article text displayed</description>
+      <type>textbox</type>
+      <id>20</id>
+      <posX>50</posX>
+      <posY>300</posY>
+      <visible>no</visible>
+      <width>900</width>
+      <height>400</height>
+      <font>mediastream11</font>
+      <text />
+    </control>
+    
+    <control>
+      <description>Image description</description>
+      <type>label</type>
+      <id>5</id>
+      <posX>50</posX>
+      <posY>250</posY>
+      <visible>no</visible>
+      <label>Image description</label>
+      <font>mediastream10</font>
+      <align>left</align>
+    </control>
+    
+    <control>
+      <description>Article Image</description>
+      <type>image</type>
+      <id>25</id>
+      <posX>50</posX>
+      <posY>300</posY>
+      <visible>no</visible>
+      <width>900</width>
+      <height>400</height>
+      <texture />
+      <colorkey>00000000</colorkey>
+      <colordiffuse>White</colordiffuse>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    
+    <import>common.overlays.xml</import>
+    
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
+</window>
