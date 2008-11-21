@@ -4,52 +4,50 @@ different overlays on home screens
 -->
 <window>
   <controls>
-    <!-- ::::::::::::::::::: BACKGROUND ::::::::::::::::::: -->
     <control>
       <description>dialog bg</description>
       <type>image</type>
       <id>0</id>
-      <posX>765</posX>
+      <posX>0</posX>
       <posY>60</posY>
       <width>512</width>
       <height>152</height>
       <texture>dialogprogressbg.png</texture>
-      <visible>player.hasaudio|player.hasvideo</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
-    <!-- ::::::::::::::::::: MUSIC OVERLAY ::::::::::::::::::: -->
     <control>
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>783</posX>
+      <posX>18</posX>
       <posY>78</posY>
       <width>114</width>
       <height>114</height>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <zoom>yes</zoom>
+      <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasaudio</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
+    
     <control>
       <description>artist info label</description>
       <type>fadelabel</type>
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>908</posX>
+      <posX>143</posX>
       <posY>80</posY>
       <label>#Play.Current.Artist</label>
-      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasaudio</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
     <control>
       <description>title info label</description>
@@ -57,79 +55,74 @@ different overlays on home screens
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>908</posX>
+      <posX>143</posX>
       <posY>104</posY>
       <label>#Play.Current.Title</label>
-      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
-      <visible>player.hasaudio</visible>
       <font>mediastream10tc</font>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
     <control>
       <description>album info label</description>
       <type>fadelabel</type>
-      <id>0</id>
+      <id>666001</id>
       <width>340</width>
       <height>40</height>
-      <posX>908</posX>
+      <posX>143</posX>
       <posY>123</posY>
       <label>#Play.Current.Album</label>
-      <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
     <control>
       <description>play time / duration label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>340</width>
       <height>40</height>
-      <posX>908</posX>
+      <posX>143</posX>
       <posY>141</posY>
-      <align>left</align>
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
     <control>
       <description>next song label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>42</width>
       <height>40</height>
-      <posX>908</posX>
-      <posY>177</posY>
-      <label>Next</label>
+      <posX>143</posX>
+      <posY>167</posY>
+      <label>Next:</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasaudio</visible>
-      <align>left</align>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
     <control>
       <description>next song info label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
-      <posX>945</posX>
-      <posY>177</posY>
+      <posX>183</posX>
+      <posY>167</posY>
       <width>300</width>
       <height>40</height>
       <label>#Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
-      <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasaudio</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia</visible>
+      <animation effect="slide" start="-500,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <animation effect="slide" end="-500,0" tween="quadratic" easing="in" time="200">WindowClose</animation>
     </control>
   </controls>
 </window>
