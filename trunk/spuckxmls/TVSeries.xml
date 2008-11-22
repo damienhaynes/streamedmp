@@ -28,7 +28,7 @@
       <visible>!Control.IsVisible(1232)</visible>
     </control>
     
-    <!--control>
+    <control>
       <description>Fan Art Image (in "skin/FanArt/tv/thetvdbID.jpg")</description>
       <type>image</type>
       <id>0</id>
@@ -38,7 +38,7 @@
       <height>720</height>
       <texture>#TVSeries.Series.FanArtPath</texture>
       <visible>!Control.IsVisible(1232)+![Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1236)]</visible>
-    </control--><!-- not visible: widebanner graphical series view, regular fanart present -->
+    </control><!-- not visible: widebanner graphical series view, regular fanart present -->
     
     <control>
       <description>Fan Art Image</description>
@@ -1097,7 +1097,7 @@
           <textcolor2>#notpresent.color</textcolor2>
           <textcolor3>#notpresent.color</textcolor3>
           <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
+          <spinPosY>1690</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <spinCanFocus>no</spinCanFocus>
@@ -1120,19 +1120,45 @@
       <width>159</width>
       <height>28</height>
       <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
       <description>Media Count Label</description>
       <type>label</type>
-      <label>PAGE:</label>
+      <label>EPISODES:</label>
       <id>0</id>
       <posX>1123</posX>
       <posY>688</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+    </control>
+    
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.Series.EpisodeCount</label>
+      <id>0</id>
+      <posX>1245</posX>
+      <posY>687</posY>
+      <font>mediastream10c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1238)</visible>
+    </control>
+    
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.Season.EpisodeCount</label>
+      <id>0</id>
+      <posX>1245</posX>
+      <posY>687</posY>
+      <font>mediastream10c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1239)</visible>
     </control>
     
     <!--

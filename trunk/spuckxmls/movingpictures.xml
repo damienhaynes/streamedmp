@@ -13,11 +13,11 @@ multiple view modes.
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
   are parameters to give the skinner a tiny bit more control over the presentation.
   -->
-  <define>#largeicons.available:false</define>      <!-- true if this skin implements the largeicons view -->
-  <define>#largeicons.backdrop.used:false</define> <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#largeicons.available:true</define>      <!-- true if this skin implements the largeicons view -->
+  <define>#largeicons.backdrop.used:true</define> <!-- true if backdrop (fanart) should be displayed in this view -->
   
-  <define>#smallicons.available:false</define>      <!-- Set to true if this skin implements the smallicons view -->
-  <define>#smallicons.backdrop.used:false</define> <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#smallicons.available:true</define>      <!-- Set to true if this skin implements the smallicons view -->
+  <define>#smallicons.backdrop.used:true</define> <!-- true if backdrop (fanart) should be displayed in this view -->
   
   <define>#list.available:true</define>            <!-- Set to true if this skin implements the list view -->
   <define>#list.backdrop.used:true</define>        <!-- true if backdrop (fanart) should be displayed in this view -->
@@ -69,7 +69,6 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
-      <visible>!Control.IsVisible(1)</visible>
     </control>
     
     <control>
@@ -94,7 +93,7 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -397,6 +396,89 @@ multiple view modes.
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     -->
+    
+    <!--            :: THUMBNAIL VIEW ::            -->
+    
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>750</posX>
+      <posY>240</posY>
+      <width>500</width>
+      <font>mediastream14tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Year below the movie title</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <id>0</id>
+      <posX>750</posX>
+      <posY>265</posY>
+      <width>500</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>750</posX>
+      <posY>295</posY>
+      <width>500</width>
+      <height>315</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <label>STAR RATING:</label>
+      <posX>750</posX>
+      <posY>630</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>imagelist</type>
+      <id>1001</id>
+      <posX>919</posX>
+      <posY>635</posY>
+      <width>115</width>
+      <height>13</height>
+      <textureWidth>13</textureWidth>
+      <textureHeight>13</textureHeight>
+      <subitems>
+        <subitem>-.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.score / 10</label>
+      <posX>920</posX>
+      <posY>650</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
     
     <!--            :: FILMSTRIP VIEW ::            -->
     
