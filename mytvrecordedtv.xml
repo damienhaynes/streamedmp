@@ -43,19 +43,6 @@
     </control>
     <control>
       <type>label</type>
-      <description>My Recorded TV Text Label</description>
-      <id>1</id>
-      <posX>435</posX>
-      <posY>120</posY>
-      <label>652</label>
-      <font>mediastream14tc</font>
-      <align>left</align>
-      <textcolor>ffffffff</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
       <description>Number of Files Label</description>
       <id>12</id>
       <posX>462</posX>
@@ -69,7 +56,7 @@
       <type>fadelabel</type>
       <description>Selected item Label</description>
       <id>1</id>
-      <posX>430</posX>
+      <posX>50</posX>
       <posY>505</posY>
       <width>622</width>
       <label>#selecteditem</label>
@@ -210,17 +197,17 @@
         <type>listcontrol</type>
         <description>listcontrol</description>
         <id>11</id>
-        <height>320</height>
-        <posX>430</posX>
-        <posY>220</posY>
-        <width>850</width>
+        <height>460</height>
+        <posX>520</posX>
+        <posY>80</posY>
+        <width>800</width>
         <onleft>10</onleft>
         <onright>2</onright>
         <onup>2</onup>
         <ondown>2</ondown>
         <font>mediastream11tc</font>
         <textXOff>40</textXOff>
-        <textXOff2>750</textXOff2>
+        <textXOff2>650</textXOff2>
         <spinColor>FFFFFFFF</spinColor>
         <PinIconXOff>20</PinIconXOff>
         <PinIconYOff>10</PinIconYOff>
@@ -235,7 +222,7 @@
         <type>image</type>
         <description>Current program title</description>
         <id>13</id>
-        <posX>430</posX>
+        <posX>50</posX>
         <posY>305</posY>
         <label>#TV.Record.thumb</label>
       </control>
@@ -243,7 +230,7 @@
         <type>label</type>
         <description>Current program time</description>
         <id>14</id>
-        <posX>430</posX>
+        <posX>50</posX>
         <posY>530</posY>
         <label>#TV.RecordedTV.Time</label>
       </control>
@@ -251,9 +238,9 @@
         <type>textboxscrollup</type>
         <description>Description1</description>
         <id>15</id>
-        <posX>430</posX>
+        <posX>50</posX>
         <posY>555</posY>
-        <width>741</width>
+        <width>1150</width>
         <height>160</height>
         <colordiffuse>ffffffff</colordiffuse>
         <font>mediastream10</font>

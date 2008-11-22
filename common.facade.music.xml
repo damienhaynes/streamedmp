@@ -72,9 +72,9 @@
           <onleft>2</onleft>
           <onright>2</onright>
           <posX>50</posX>
-          <posY>105</posY>
+          <posY>250</posY>
           <width>660</width>
-          <height>471</height>
+          <height>470</height>
           <scrollOffset>0</scrollOffset>
           <textureWidthBig>96</textureWidthBig>
           <textureHeightBig>96</textureHeightBig>
@@ -97,20 +97,23 @@
           <type>filmstrip</type>
           <dimColor>90ffffff</dimColor>
           <id>50</id>
+          <posX>15</posX>
           <onleft>2</onleft>
           <onright>2</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
           <scrollOffset>1</scrollOffset>
           <posX>0</posX>
-          <posY>220</posY>
-          <width>700</width>
+          <posY>300</posY>
+          <width>1200</width>
           <height>576</height>
-          <thumbWidth>143</thumbWidth>
-          <thumbHeight>143</thumbHeight>
+          <thumbWidth>200</thumbWidth>
+          <thumbHeight>200</thumbHeight>
           <thumbPosX>4</thumbPosX>
           <thumbPosY>4</thumbPosY>
-          <itemWidth>158</itemWidth>
+          <itemWidth>220</itemWidth>
           <itemHeight>185</itemHeight>
-          <textureWidth>152</textureWidth>
+          <textureWidth>250</textureWidth>
           <textureHeight>152</textureHeight>
           <imageFolderFocus>Picture_cover.png</imageFolderFocus>
           <frame>Picture_cover.png</frame>
@@ -124,8 +127,8 @@
           <showInfoImage>no</showInfoImage>
           <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
-          <animation effect="rotatey" start="20" end="0" center="525,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
-          <animation effect="rotatey" start="0" end="20" center="525,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
+          <animation effect="rotatey" start="15" end="15" center="525,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
+          <animation effect="rotatey" start="15" end="15" center="525,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
         </control>
         <control>
           <description>playlist listcontrol</description>
@@ -141,7 +144,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <description>Media Count Background</description>
       <type>image</type>
@@ -153,7 +155,6 @@
       <texture>mediacountbackground.png</texture>
       <visible>facadeview.list|facadeview.playlist</visible>
     </control>
-    
     <control>
       <description>Media Count Label</description>
       <type>label</type>
@@ -165,6 +166,5 @@
       <textcolor>ff909090</textcolor>
       <visible>facadeview.list|facadeview.playlist</visible>
     </control>
-    
   </controls>
 </window>
