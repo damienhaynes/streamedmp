@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>5000</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:850</define>
+  <define>#header.hover:hover_my alarm.png</define>
+  <controls>
+    
+    <import>common.alarm.xml</import>
+    <import>common.time.xml</import>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>85</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmainbutton">
+        <description>New Button</description>
+        <type>button</type>
+        <id>3</id>
+        <label>617</label>
+        <onup>17</onup>
+        <textXOff>45</textXOff>
+      </control>
+      
+      <control Style="settingsmainbutton">
+        <description>Sleep Timer Button</description>
+        <type>button</type>
+        <id>4</id>
+        <label>859</label>
+        <ondown>50</ondown>
+        <textXOff>45</textXOff>
+      </control>
+      
+    </control>
+    
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <onup>4</onup>
+          <posX>251</posX>
+          <posY>200</posY>
+          <width>595</width>
+          <height>480</height>
+          <textXOff>0</textXOff>
+          <textXOff2>545</textXOff2>
+        </control>
+      </control>
+    </control>
+    
+  </controls>
+</window>

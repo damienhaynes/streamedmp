@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>209</posX>
+      <posY>0</posY>
+      <width>631</width>
+      <height>720</height>
+      <texture>settingsbg.png</texture>
+      <animation effect="slide" time="200" start="-840,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>-620</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+    </control>
+    
+    <control>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
+    </control>
+    
+    <control>
+      <description>Alarm Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>25</posY>
+      <label>#header.label</label>
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    
+  </controls>
+</window>

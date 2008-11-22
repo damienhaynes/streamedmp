@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>5001</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:861</define>
+  <define>#header.hover:hover_my alarm.png</define>
+  <controls>
+    
+    <import>common.alarm.xml</import>
+    <import>common.time.xml</import>
+    
+    <control Style="settingsmaintexturefo">
+      <type>image</type>
+      <posY>331</posY>
+      <visible>control.hasfocus(7)|control.hasfocus(8)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <type>image</type>
+      <posY>331</posY>
+      <visible>!control.hasfocus(7)+!control.hasfocus(8)</visible>
+    </control>
+    <control Style="settingsmaintexturefo">
+      <type>image</type>
+      <posY>373</posY>
+      <visible>control.hasfocus(10)|control.hasfocus(11)|control.hasfocus(12)|control.hasfocus(13)|control.hasfocus(14)|control.hasfocus(15)|control.hasfocus(16)|control.hasfocus(27)|control.hasfocus(28)|control.hasfocus(29)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <type>image</type>
+      <posY>373</posY>
+      <visible>![control.hasfocus(10)+control.hasfocus(11)+control.hasfocus(12)+control.hasfocus(13)+control.hasfocus(14)+control.hasfocus(15)+control.hasfocus(16)]|![control.hasfocus(27)+control.hasfocus(28)+control.hasfocus(29)]</visible>
+    </control>
+    <control Style="settingsmaintexturefo">
+      <type>image</type>
+      <posY>415</posY>
+      <visible>control.hasfocus(20)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <type>image</type>
+      <posY>415</posY>
+      <visible>!control.hasfocus(20)</visible>
+    </control>
+    <control Style="settingsmaintexturefo">
+      <type>image</type>
+      <posY>457</posY>
+      <visible>control.hasfocus(22)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <type>image</type>
+      <posY>457</posY>
+      <visible>!control.hasfocus(22)</visible>
+    </control>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>85</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmaintogglebutton">
+        <description>Alarm On/Off button</description>
+        <type>togglebutton</type>
+        <id>2</id>
+        <textXOff>35</textXOff>
+        <label>852</label>
+        <onup>17</onup>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Alarm Type</description>
+        <type>selectbutton</type>
+        <id>24</id>
+        <textXOff>55</textXOff>
+        <textXOff2>35</textXOff2>
+        <label>467</label>
+        <subitems>
+          <subitem>647</subitem>
+          <subitem>870</subitem>
+        </subitems>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Media Type</description>
+        <type>selectbutton</type>
+        <id>4</id>
+        <textXOff>55</textXOff>
+        <textXOff2>35</textXOff2>
+        <label>864</label>
+        <subitems>
+          <subitem>851</subitem>
+          <subitem>862</subitem>
+          <subitem>863</subitem>
+          <subitem>8019</subitem>
+        </subitems>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Rename Button</description>
+        <type>button</type>
+        <id>5</id>
+        <textXOff>35</textXOff>
+        <label>118</label>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Delete button</description>
+        <type>button</type>
+        <id>18</id>
+        <textXOff>35</textXOff>
+        <label>618</label>
+      </control>
+    </control>
+    
+    <!--      :: ALARM TIME ::      -->
+    
+    <control>
+      <description>Start Time Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>251</posX>
+      <posY>340</posY>
+      <label>142</label>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>alarm time hours</description>
+      <type>spincontrol</type>
+      <spintype>int</spintype>
+      <orientation>vertical</orientation>
+      <digits>2</digits>
+      <id>7</id>
+      <posX>510</posX>
+      <posY>345</posY>
+      <showrange>no</showrange>
+      <onup>20</onup>
+      <ondown>8</ondown>
+      <onleft>2</onleft>
+      <onright>8</onright>
+    </control>
+    <control>
+      <description>alarm time minutes</description>
+      <type>spincontrol</type>
+      <spintype>int</spintype>
+      <orientation>vertical</orientation>
+      <digits>2</digits>
+      <id>8</id>
+      <posX>610</posX>
+      <posY>345</posY>
+      <showrange>no</showrange>
+      <onup>20</onup>
+      <ondown>16</ondown>
+      <onleft>7</onleft>
+      <onright>16</onright>
+    </control>
+    
+    <!--      :: TYPE -> RECURRING ALARM :: ALARM DAYS ::      -->
+    
+    <!--control>
+      <description>Enabled Days</description>
+      <type>label</type>
+      <id>25</id>
+      <posX>310</posX>
+      <posY>230</posY>
+      <label>854</label>
+      <font>mediastream12c</font>
+    </control-->
+    <control>
+      <description>Sunday checkbox</description>
+      <type>checkmark</type>
+      <id>16</id>
+      <posX>251</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>663</label>
+      <onleft>8</onleft>
+      <onright>10</onright>
+      <onleft>2</onleft>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Monday checkbox</description>
+      <type>checkmark</type>
+      <id>10</id>
+      <posX>326</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>657</label>
+      <onleft>16</onleft>
+      <onright>11</onright>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Tuesday checkbox</description>
+      <type>checkmark</type>
+      <id>11</id>
+      <posX>401</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>658</label>
+      <onleft>10</onleft>
+      <onright>12</onright>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Wednesday checkbox</description>
+      <type>checkmark</type>
+      <id>12</id>
+      <posX>476</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>659</label>
+      <onleft>11</onleft>
+      <onright>13</onright>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Thursday checkbox</description>
+      <type>checkmark</type>
+      <id>13</id>
+      <posX>551</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>660</label>
+      <onleft>12</onleft>
+      <onright>14</onright>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Friday checkbox</description>
+      <type>checkmark</type>
+      <id>14</id>
+      <posX>626</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>661</label>
+      <onleft>13</onleft>
+      <onright>15</onright>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    <control>
+      <description>Saturday checkbox</description>
+      <type>checkmark</type>
+      <id>15</id>
+      <posX>701</posX>
+      <posY>385</posY>
+      <width>66</width>
+      <height>26</height>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>662</label>
+      <onleft>14</onleft>
+      <onright>27</onright>
+      <onup>14</onup>
+      <onup>7</onup>
+      <ondown>27</ondown>
+    </control>
+    
+    <!--      :: TYPE -> ONCE ALARM :: ALARM DATE ::      -->
+    
+    <control>
+      <description>Date</description>
+      <type>label</type>
+      <id>26</id>
+      <posX>310</posX>
+      <posY>382</posY>
+      <label>636</label>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>DD</description>
+      <type>spincontrol</type>
+      <spintype>int</spintype>
+      <orientation>vertical</orientation>
+      <digits>2</digits>
+      <id>27</id>
+      <posX>510</posX>
+      <posY>387</posY>
+      <showrange>no</showrange>
+      <onup>16</onup>
+      <ondown>20</ondown>
+      <onleft>16</onleft>
+      <onright>28</onright>
+    </control>
+    <control>
+      <description>MM</description>
+      <type>spincontrol</type>
+      <spintype>int</spintype>
+      <orientation>vertical</orientation>
+      <digits>2</digits>
+      <id>28</id>
+      <posX>610</posX>
+      <posY>387</posY>
+      <showrange>no</showrange>
+      <onup>16</onup>
+      <ondown>20</ondown>
+      <onleft>27</onleft>
+      <onright>29</onright>
+    </control>
+    <control>
+      <description>YYYY</description>
+      <type>spincontrol</type>
+      <spintype>int</spintype>
+      <orientation>vertical</orientation>
+      <digits>4</digits>
+      <id>29</id>
+      <posX>710</posX>
+      <posY>387</posY>
+      <showrange>no</showrange>
+      <onup>16</onup>
+      <ondown>20</ondown>
+      <onleft>28</onleft>
+      <onright>20</onright>
+    </control>
+    
+    <!--      :: CHECKMARKS ::      -->
+    
+    <control Style="settingsmaincheckmark">
+      <description>fade in volume</description>
+      <type>checkmark</type>
+      <id>20</id>
+      <posY>423</posY>
+      <label>860</label>
+      <onleft>2</onleft>
+      <onright>22</onright>
+      <onup>27</onup>
+      <ondown>22</ondown>
+    </control>
+    <control Style="settingsmaincheckmark">
+      <description>wake up pc</description>
+      <type>checkmark</type>
+      <id>22</id>
+      <posY>465</posY>
+      <label>871</label>
+      <onleft>2</onleft>
+      <onright>3</onright>
+      <onup>20</onup>
+      <ondown>3</ondown>
+    </control>
+    
+    <!--      :: MEDIA TYPE SELECTION ::      -->
+    
+    <control>
+      <description>media type image</description>
+      <type>image</type>
+      <id>31</id>
+      <posX>221</posX>
+      <posY>513</posY>
+      <height>24</height>
+      <width>24</width>
+    </control>
+    
+    <control>
+      <description>media type selection label</description>
+      <type>label</type>
+      <id>21</id>
+      <posX>251</posX>
+      <posY>513</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+    </control>
+    
+    <control>
+      <description>no media found label</description>
+      <type>label</type>
+      <id>23</id>
+      <posX>797</posX>
+      <posY>513</posY>
+      <label>872</label>
+      <font>mediastream11c</font>
+      <align>right</align>
+    </control>
+    
+    <control>
+      <description>sounds listcontrol</description>
+      <type>listcontrol</type>
+      <id>3</id>
+      <posX>251</posX>
+      <posY>541</posY>
+      <width>595</width>
+      <height>270</height>
+      <textXOff>0</textXOff>
+      <onright>2</onright>
+      <onleft>22</onleft>
+      <onup>22</onup>
+      <ondown>2</ondown>
+    </control>
+    
+  </controls>
+</window>
