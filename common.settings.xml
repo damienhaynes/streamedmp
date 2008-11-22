@@ -65,7 +65,7 @@
       <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
     
-    <control>
+    <!--control>
       <type>image</type>
       <id>0</id>
       <posX>906</posX>
@@ -73,6 +73,17 @@
       <width>137</width>
       <height>56</height>
       <texture>mediastreamlogo.png</texture>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
+    </control-->
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>878</posX>
+      <posY>167</posY>
+      <width>161</width>
+      <height>31</height>
+      <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
     </control>
     
@@ -169,7 +180,7 @@
       <id>0</id>
       <posX>250</posX>
       <posY>25</posY>
-      <label>#currentmodule</label>
+      <label>#header.label</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
