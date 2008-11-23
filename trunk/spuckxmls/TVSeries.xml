@@ -17,6 +17,15 @@
     -->
     
     <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
       <description>Default Background</description>
       <type>image</type>
       <id>0</id>
@@ -26,6 +35,7 @@
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
       <visible>!Control.IsVisible(1232)</visible>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <control>
@@ -38,6 +48,7 @@
       <height>720</height>
       <texture>#TVSeries.Series.FanArtPath</texture>
       <visible>!Control.IsVisible(1232)+![Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1236)]</visible>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control><!-- not visible: widebanner graphical series view, regular fanart present -->
     
     <control>
@@ -49,6 +60,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>-</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <control>
@@ -168,6 +180,7 @@
       <textcolor>ffFFFFFF</textcolor>
     </control>
     
+    <import>common.overlays2.xml</import>
     <import>common.time.xml</import>
     
     <!--

@@ -8,8 +8,16 @@
   <controls>
     
     <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
       <description>movies background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -17,6 +25,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <control>
@@ -232,6 +241,7 @@
     
     <import>common.facade.video.xml</import>
     
+    <import>common.overlays2.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     

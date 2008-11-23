@@ -10,6 +10,15 @@
     
     <control>
       <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
@@ -225,6 +234,7 @@
       <label>#Play.Current.Lastfm.TrackTags</label>
     </control>
     
+    <import>common.overlays.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     
