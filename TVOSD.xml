@@ -59,7 +59,6 @@
       <startlabel />
       <endlabel />
       <toplabel />
-      <font>font10</font>
       <textcolor>FF000000</textcolor>
     </control>
     <control>
@@ -111,9 +110,9 @@
       <id>36</id>
       <type>textbox</type>
       <width>474</width>
-      <height>24</height>
-      <posX>795</posX>
-      <posY>602</posY>
+      <height>25</height>
+      <posX>200</posX>
+      <posY>545</posY>
       <font>mediastream11tc</font>
     </control>
     <control>
@@ -122,18 +121,18 @@
       <type>textbox</type>
       <width>474</width>
       <height>24</height>
-      <posX>795</posX>
-      <posY>647</posY>
+      <posX>200</posX>
+      <posY>643</posY>
       <font>mediastream11tc</font>
     </control>
     <control>
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>38</id>
-      <posX>690</posX>
-      <posY>557</posY>
-      <width>550</width>
-      <height>96</height>
+      <posX>200</posX>
+      <posY>560</posY>
+      <width>700</width>
+      <height>80</height>
       <seperator>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
       <label>#TV.View.description</label>
       <font>mediastream11</font>
@@ -179,7 +178,7 @@
         <onleft>213</onleft>
         <onright>210</onright>
         <onup>34</onup>
-        <ondown>32</ondown>
+        <ondown>218</ondown>
       </control>
       <control>
         <description>Skip Bwd</description>
@@ -198,7 +197,7 @@
         <onleft>212</onleft>
         <onright>211</onright>
         <onup>34</onup>
-        <ondown>32</ondown>
+        <ondown>220</ondown>
       </control>
       <control>
         <description>Rewind</description>
@@ -217,7 +216,7 @@
         <onleft>210</onleft>
         <onright>214</onright>
         <onup>34</onup>
-        <ondown>32</ondown>
+        <ondown>221</ondown>
       </control>
       <control>
         <description>Fast Forward</description>
@@ -236,7 +235,7 @@
         <onleft>211</onleft>
         <onright>215</onright>
         <onup>34</onup>
-        <ondown>32</ondown>
+        <ondown>219</ondown>
       </control>
       <control>
         <description>Skip Fwd</description>
@@ -470,9 +469,9 @@
       <description>Current channel</description>
       <type>label</type>
       <id>35</id>
-      <posX>145</posX>
-      <posY>580</posY>
-      <font>font14</font>
+      <posX>20</posX>
+      <posY>560</posY>
+      <font>mediastream11</font>
       <label>-</label>
       <textcolor>white</textcolor>
     </control>
@@ -737,19 +736,18 @@
       <description>Audio Stream List Control</description>
       <type>listcontrol</type>
       <id>501</id>
-      <posX>58</posX>
+      <posX>749</posX>
       <posY>154</posY>
-      <width>261</width>
-      <height>440</height>
+      <width>531</width>
+      <height>500</height>
+      <textXOff>25</textXOff>
       <onleft>500</onleft>
       <onright>500</onright>
       <onup>501</onup>
       <ondown>501</ondown>
       <visible>no</visible>
-      <spinPosX>300</spinPosX>
+      <spinPosX>1300</spinPosX>
       <spinPosY>515</spinPosY>
-      <textureFocus>menu_list_focus.png</textureFocus>
-      <textureNoFocus>menu_list_nofocus.png</textureNoFocus>
     </control>
     <control>
       <description>Sub Menu Nib</description>
@@ -757,16 +755,17 @@
       <id>350</id>
       <texture>-</texture>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Volume Slider</description>
       <type>slider</type>
       <id>400</id>
-      <posX>73</posX>
-      <posY>99</posY>
-      <textureSliderBar>osd_slider_bg.png</textureSliderBar>
-      <textureSliderNib>osd_slider_nibNF.png</textureSliderNib>
-      <textureSliderNibFocus>osd_slider_nibFO.png</textureSliderNibFocus>
+      <posX>773</posX>
+      <posY>89</posY>
+      <textureSliderBar>osdprogressbackv.png</textureSliderBar>
+      <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
+      <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
       <onup>216</onup>
       <ondown>216</ondown>
       <onleft>400</onleft>
@@ -822,10 +821,10 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1300</posX>
-      <posY>670</posY>
+      <posX>1170</posX>
+      <posY>680</posY>
       <label>Mute</label>
-      <font>font10</font>
+      <font>mediastream11tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(216)</visible>
@@ -834,10 +833,10 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1300</posX>
-      <posY>670</posY>
+      <posX>1170</posX>
+      <posY>680</posY>
       <label>Subtitles</label>
-      <font>font10</font>
+      <font>mediastream11tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(218)</visible>
@@ -846,10 +845,10 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1300</posX>
-      <posY>670</posY>
+      <posX>1170</posX>
+      <posY>680</posY>
       <label>Bookmarks</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(219)</visible>
@@ -858,10 +857,10 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1300</posX>
-      <posY>670</posY>
+      <posX>1170</posX>
+      <posY>680</posY>
       <label>Video Menu</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(220)</visible>
@@ -870,10 +869,10 @@
       <description>default label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1300</posX>
-      <posY>670</posY>
+      <posX>1170</posX>
+      <posY>680</posY>
       <label>Audio Menu</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(221)</visible>

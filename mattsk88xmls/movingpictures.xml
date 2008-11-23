@@ -6,8 +6,8 @@ multiple view modes.
 -->
 <window>
   <id>96742</id>
-  <defaultcontrol>69</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
   <!-- 
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
   are parameters to give the skinner a tiny bit more control over the presentation.
@@ -30,6 +30,30 @@ multiple view modes.
   <!-- true if backdrop (fanart) should be displayed in this view -->
   <define>#smalltitle.color:FF909090</define>
   <controls>
+    <control>
+      <description>Visibile when filtering by watched flag. Only unwatched movies are listed.</description>
+      <type>label</type>
+      <id>8</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    <control>
+      <description>Visibile when the currently selected movie has been watched</description>
+      <type>label</type>
+      <id>9</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    <control>
+      <description>Visibile when filtering by remote control searching.</description>
+      <type>label</type>
+      <id>10</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
     <control>
       <description>Background to be displayed when there is no Movie Backdrop</description>
       <type>image</type>
@@ -221,6 +245,17 @@ multiple view modes.
       <visible>yes</visible>
       <label>Moving Pictures</label>
     </control>
+    <control>
+      <description>Watched Filtering Indicator - Watched</description>
+      <type>image</type>
+      <posX>350</posX>
+      <posY>450</posY>
+      <texture>overlayunwatched.png</texture>
+      <width>24</width>
+      <height>24</height>
+      <visible>Control.IsVisible(50)+Control.IsVisible(9)</visible>
+    </control>
+    <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
