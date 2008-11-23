@@ -4,6 +4,7 @@
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
+    <import>common.time.xml</import>
     <control>
       <description>BG</description>
       <type>image</type>
@@ -21,6 +22,40 @@
       <texture>tvguidebg.png</texture>
     </control>
     <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+    </control>
+    <control>
       <description>Date</description>
       <type>label</type>
       <id>0</id>
@@ -31,31 +66,6 @@
       <font>mediastream11tc</font>
       <animation effect="fade" time="200">WindowOpen</animation>
       <animation effect="fade" time="200">WindowClose</animation>
-    </control>
-    <control>
-      <description>Time</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>1233</posX>
-      <posY>10</posY>
-      <label>#time</label>
-      <align>right</align>
-      <font>mediastream11tc</font>
-      <animation effect="fade" time="200">WindowOpen</animation>
-      <animation effect="fade" time="200">WindowClose</animation>
-    </control>
-    <control>
-      <description>Guide Text Label</description>
-      <type>label</type>
-      <id>11</id>
-      <posX>374</posX>
-      <posY>39</posY>
-      <!-- <label>4</label> -->
-      <label>#TV.Guide.Group</label>
-      <font>font16</font>
-      <align>right</align>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>TVGUIDE Panel</description>
@@ -174,7 +184,7 @@
       <type>label</type>
       <id>18</id>
       <posX>50</posX>
-      <posY>14</posY>
+      <posY>5</posY>
       <width>86</width>
       <height>10</height>
       <font>mediastream10tc</font>
@@ -186,8 +196,8 @@
       <description>Current program time</description>
       <type>label</type>
       <id>14</id>
-      <posX>1020</posX>
-      <posY>560</posY>
+      <posX>700</posX>
+      <posY>585</posY>
       <label>#TV.Guide.Time</label>
       <align>left</align>
       <font>mediastream11tc</font>
@@ -198,9 +208,9 @@
       <description>Current program genre</description>
       <type>fadelabel</type>
       <id>27</id>
-      <posX>1020</posX>
-      <posY>590</posY>
-      <width>290</width>
+      <posX>1000</posX>
+      <posY>585</posY>
+      <width>280</width>
       <label>#TV.Guide.Genre</label>
       <align>left</align>
       <font>mediastream11tc</font>
@@ -225,7 +235,7 @@
       <id>15</id>
       <posX>50</posX>
       <posY>610</posY>
-      <width>950</width>
+      <width>1150</width>
       <height>100</height>
       <seperator>----------------------------------------------------------------------------------------------</seperator>
       <label>#TV.Guide.Description</label>
@@ -248,7 +258,7 @@
       <id>24</id>
       <visible>no</visible>
       <label>-</label>
-      <font>font14</font>
+      <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -270,7 +280,7 @@
       <visible>no</visible>
       <id>26</id>
       <label>-</label>
-      <font>font14</font>
+      <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -284,31 +294,6 @@
 		<font>font10</font>
 		<textcolor>FFDDDDDD</textcolor>
 	</control>-->
-    <control>
-      <description>video rectangle</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>48</posX>
-      <posY>540</posY>
-      <width>330</width>
-      <height>225</height>
-      <texture>playback_background.png</texture>
-      <animation effect="fade" time="500">WindowClose</animation>
-      <animation effect="fade" time="250">WindowOpen</animation>
-    </control>
-    <control>
-      <description>video preview window</description>
-      <type>videowindow</type>
-      <id>99</id>
-      <posX>96</posX>
-      <posY>568</posY>
-      <width>238</width>
-      <height>131</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <centered>yes</centered>
-      <action>18</action>
-      <textureFocus>tv_green_border.png</textureFocus>
-    </control>
     <control>
       <description>progress bar</description>
       <type>progress</type>
