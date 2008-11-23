@@ -104,7 +104,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>421</posY>
+        <posY>449</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -114,8 +114,8 @@
         <label>SCROBBLER</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>15</posX>
-        <posY>579</posY>
+        <posX>1040</posX>
+        <posY>533</posY>
         <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
