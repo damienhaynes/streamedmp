@@ -4,7 +4,18 @@ different overlays on home screens
 -->
 <window>
   <controls>
-    <!-- ::::::::::::::::::: BACKGROUND ::::::::::::::::::: -->
+    
+    <!--                                    :: DUMMY / BACKGROUND ::                                    -->
+    
+    <control>
+      <description>dummy (visible when music is playing)</description>
+      <type>label</type>
+      <id>3337</id>
+      <posX>2000</posX>
+      <label>#Play.Current.Album</label>
+      <visible>player.hasmedia+control.hastext(3337)</visible>
+    </control>
+    
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -14,11 +25,11 @@ different overlays on home screens
       <width>512</width>
       <height>152</height>
       <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]</visible><!-- Not visible in regular home and my plugins -->
     </control>
-    <!-- ::::::::::::::::::: MUSIC OVERLAY IN BASIC HOME ::::::::::::::::::: -->
+    
+    <!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->
+    
     <control>
       <description>music logo</description>
       <type>image</type>
@@ -31,10 +42,9 @@ different overlays on home screens
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>artist info label</description>
       <type>fadelabel</type>
@@ -47,10 +57,9 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>title info label</description>
       <type>fadelabel</type>
@@ -63,10 +72,9 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>album info label</description>
       <type>fadelabel</type>
@@ -79,10 +87,9 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>play time / duration label</description>
       <type>fadelabel</type>
@@ -95,10 +102,9 @@ different overlays on home screens
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>next song label</description>
       <type>fadelabel</type>
@@ -111,10 +117,9 @@ different overlays on home screens
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <align>left</align>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>next song info label</description>
       <type>fadelabel</type>
@@ -127,11 +132,119 @@ different overlays on home screens
       <textcolor>FF999999</textcolor>
       <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="1300,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
-    <!-- ::::::::::::::::::: MUSIC OVERLAY IN REGULAR HOME ::::::::::::::::::: -->
+    
+    <!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->
+    
+    <control>
+      <description>video preview window BACKGROUND</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>783</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <texture>black.png</texture>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>0</id>
+      <posX>783</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <action>18</action>
+      <textureFocus>-</textureFocus>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>artist info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>998</posX>
+      <posY>560</posY>
+      <width>250</width>
+      <height>40</height>
+      <label>#Play.Current.Title</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>title info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>998</posX>
+      <posY>578</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Year</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>998</posX>
+      <posY>604</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Genre</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>998</posX>
+      <posY>624</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Director</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>play time / duration label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>998</posX>
+      <posY>644</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#currentplaytime / #duration</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    
+    <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
+    
+    <control>
+      <description>Video Preview</description>
+      <type>videowindow</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>114</width>
+      <height>114</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <zoom>yes</zoom>
+      <texture>#Play.Current.Thumb</texture>
+      <action>18</action>
+      <textureFocus>tv_green_border.png</textureFocus>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    
     <control>
       <description>music logo</description>
       <type>image</type>
@@ -144,8 +257,7 @@ different overlays on home screens
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
     
     <control>
@@ -160,9 +272,9 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>title info label</description>
       <type>label</type>
@@ -175,13 +287,13 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>album info label</description>
       <type>label</type>
-      <id>666001</id>
+      <id>0</id>
       <width>320</width>
       <height>40</height>
       <posX>208</posX>
@@ -190,9 +302,9 @@ different overlays on home screens
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>play time / duration label</description>
       <type>label</type>
@@ -205,9 +317,9 @@ different overlays on home screens
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>next song label</description>
       <type>label</type>
@@ -220,9 +332,9 @@ different overlays on home screens
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <align>left</align>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]+control.hastext(666001)</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
     <control>
       <description>next song info label</description>
       <type>label</type>
@@ -235,8 +347,99 @@ different overlays on home screens
       <textcolor>FF999999</textcolor>
       <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasaudio+[window.istopmost(0)|window.istopmost(34)]+control.hastext(666001)</visible>
-      <animation effect="slide" start="-500,0" end="0,0" tween="quadratic" easing="in" time="200">WindowOpen</animation>
+      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
+    
+    <!--                                    :: VIDEO OVERLAY IN REGULAR HOME ::                                    -->
+    
+    <control>
+      <description>video preview window BACKGROUND</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <texture>black.png</texture>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <action>18</action>
+      <textureFocus>-</textureFocus>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>artist info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>560</posY>
+      <width>250</width>
+      <height>40</height>
+      <label>#Play.Current.Title</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>title info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>578</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Year</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>604</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Genre</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>624</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Director</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    <control>
+      <description>play time / duration label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>644</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#currentplaytime / #duration</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+    </control>
+    
   </controls>
 </window>
