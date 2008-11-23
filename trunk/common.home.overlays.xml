@@ -17,6 +17,15 @@ different overlays on home screens
     </control>
     
     <control>
+      <description>dummy (visible when there is a next track)</description>
+      <type>label</type>
+      <id>3338</id>
+      <posX>2000</posX>
+      <label>#Play.Next.Title</label>
+      <visible>player.hasmedia+control.hastext(3338)</visible>
+    </control>
+    
+    <control>
       <description>dialog bg</description>
       <type>image</type>
       <id>0</id>
@@ -117,7 +126,7 @@ different overlays on home screens
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <align>left</align>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
     
     <control>
@@ -132,7 +141,7 @@ different overlays on home screens
       <textcolor>FF999999</textcolor>
       <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
     
     <!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->
@@ -332,7 +341,7 @@ different overlays on home screens
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <align>left</align>
-      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
     
     <control>
@@ -347,7 +356,7 @@ different overlays on home screens
       <textcolor>FF999999</textcolor>
       <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+[window.istopmost(0)|window.istopmost(34)]</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+[window.istopmost(0)|window.istopmost(34)]</visible>
     </control>
     
     <!--                                    :: VIDEO OVERLAY IN REGULAR HOME ::                                    -->
