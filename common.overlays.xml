@@ -9,12 +9,21 @@ same location everywhere
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
     
     <control>
-      <description>dummy (visible when music is playing/invisible when no music is playing)</description>
+      <description>dummy (visible when music is playing)</description>
       <type>label</type>
       <id>3337</id>
       <posX>2000</posX>
       <label>#Play.Current.Album</label>
       <visible>player.hasmedia+control.hastext(3337)</visible>
+    </control>
+    
+    <control>
+      <description>dummy (visible when there is a next track)</description>
+      <type>label</type>
+      <id>3338</id>
+      <posX>1800</posX>
+      <label>#Play.Next.Title</label>
+      <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
     
     <control>
@@ -108,7 +117,7 @@ same location everywhere
       <label>Next:</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
     </control>
     <control>
       <description>next song info label</description>
@@ -121,7 +130,7 @@ same location everywhere
       <label>#Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
     </control>
     
     <!--                                    :: VIDEO OVERLAY ::                                    -->
