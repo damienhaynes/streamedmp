@@ -233,6 +233,18 @@
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
     <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>300</posY>
+      <width>215</width>
+      <height>360</height>
+      <texture>defaultdvdcover.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+    </control>
+    <control>
       <description>Cover Art</description>
       <type>image</type>
       <id>46</id>
@@ -770,15 +782,15 @@
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>770</posX>
+          <posX>780</posX>
           <posY>420</posY>
           <spinPosX>1210</spinPosX>
           <spinPosY>17</spinPosY>
-          <width>605</width>
+          <width>550</width>
           <height>340</height>
           <textXOff>20</textXOff>
-          <textXOff2>380</textXOff2>
-          <textXOff3>395</textXOff3>
+          <textXOff2>400</textXOff2>
+          <textXOff3>370</textXOff3>
           <textYOff3>11</textYOff3>
           <textcolor3>#notpresent.color</textcolor3>
           <textureFocus>listbg_detail_fo.png</textureFocus>
