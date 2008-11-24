@@ -6,7 +6,7 @@
 	<defaultcontrol>1903</defaultcontrol>
 	
 	<define>#labelFont:mediastream16tc</define>
-  <define>#selectedfont:mediastream28</define>
+  <define>#selectedfont:mediastream28tc</define>
 	
   <define>#menuitemFocus:ffffffff</define>
 	<define>#menuitemNoFocus:80ffffff</define>
@@ -169,7 +169,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1000)</visible>
 </control>
@@ -185,7 +185,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1001)</visible>
 </control>
@@ -201,7 +201,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1002)</visible>
 </control>
@@ -217,7 +217,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1003)|Control.IsVisible(1004)</visible>
 </control>
@@ -233,7 +233,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1005)</visible>
 </control>
@@ -249,7 +249,7 @@
 	<timeperimage>30000</timeperimage>
 	<fadetime>800</fadetime>
 	<loop>yes</loop>
-	<randomize>True</randomize>
+	<randomize>False</randomize>
 <animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 	<visible>Control.IsVisible(1006)</visible>
 </control>

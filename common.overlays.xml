@@ -5,9 +5,7 @@ same location everywhere
 -->
 <window>
   <controls>
-    
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-    
     <control>
       <description>dummy (visible when music is playing)</description>
       <type>label</type>
@@ -16,7 +14,6 @@ same location everywhere
       <label>#Play.Current.Album</label>
       <visible>player.hasmedia+control.hastext(3337)</visible>
     </control>
-    
     <control>
       <description>dummy (visible when there is a next track)</description>
       <type>label</type>
@@ -37,9 +34,7 @@ same location everywhere
       <texture>dialogprogressbg.png</texture>
       <visible>player.hasmedia</visible>
     </control>
-    
     <!--                                    :: MUSIC OVERLAY ::                                    -->
-    
     <control>
       <description>music logo</description>
       <type>image</type>
@@ -132,9 +127,7 @@ same location everywhere
       <font>mediastream10</font>
       <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
     </control>
-    
     <!--                                    :: VIDEO OVERLAY ::                                    -->
-    
     <control>
       <description>video preview window BACKGROUND</description>
       <type>image</type>
