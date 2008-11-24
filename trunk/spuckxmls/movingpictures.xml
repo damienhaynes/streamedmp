@@ -106,7 +106,7 @@ multiple view modes.
       <height>221</height>
       <colordiffuse>ffFFFFFF</colordiffuse>
       <texture>black.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -118,7 +118,7 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>movieviewbg.png</texture>
-      <visible>[facadeview.filmstrip+Control.IsVisible(50)]|!Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -133,9 +133,9 @@ multiple view modes.
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
-    <!--            :: ALL VIEWS ::            -->
+    <!--            :: HIDDEN MENU ::            -->
     
-    <!--control>
+    <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
@@ -231,7 +231,7 @@ multiple view modes.
           <onleft>50</onleft>
         </control>
       </control>
-    </control-->
+    </control>
     
     <!--            :: LIST VIEW ::            -->
     
