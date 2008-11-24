@@ -5,68 +5,86 @@ This file should contain the details view
 <window>
   <controls>
     
-    <!--            :: MENU ::            -->
-    
     <control>
+      <description>Backdrop Overlay</description>
       <type>image</type>
+      <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>256</width>
+      <width>1280</width>
       <height>720</height>
-      <texture>hiddenmenu_left.png</texture>
+      <texture>mainoverlay.png</texture>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
-    <control>
-      <id>0</id>
-      <label>MENU</label>
-      <type>label</type>
-      <font>mediastream12tc</font>
-      <posX>15</posX>
-      <posY>126</posY>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
     
     <control>
-      <description>Play Button</description>
+      <description>PLAY Button</description>
       <type>button</type>
       <id>6</id>
+      <posX>1075</posX>
+      <posY>270</posY>
+      <width>175</width>
+      <height>26</height>
       <label>PLAY</label>
-      <posX>0</posX>
-      <posY>150</posY>
-      <width>244</width>
-      <visible>!Control.IsVisible(50)</visible>
       <onup>7</onup>
       <ondown>7</ondown>
       <onleft>6</onleft>
       <onright>6</onright>
+      <textYOff>1</textYOff>
+      <font>mediastream11c</font>
+      <textalign>center</textalign>
+      <disabledcolor>ff909090</disabledcolor>
+      <textcolorNoFocus>ff909090</textcolorNoFocus>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+      <visible>!Control.IsVisible(50)</visible>
     </control>
-    
     <control>
       <description>Cycle Details Button (not implemented yet)</description>
       <type>button</type>
       <id>7</id>
+      <posX>1075</posX>
+      <posY>300</posY>
+      <width>175</width>
+      <height>26</height>
       <label>CYCLE DETAILS</label>
-      <posX>0</posX>
-      <posY>180</posY>
-      <width>244</width>
-      <visible>!Control.IsVisible(50)</visible>
       <onup>6</onup>
       <ondown>6</ondown>
       <onleft>7</onleft>
       <onright>7</onright>
+      <textYOff>1</textYOff>
+      <font>mediastream11c</font>
+      <textalign>center</textalign>
+      <disabledcolor>ff909090</disabledcolor>
+      <textcolorNoFocus>ff909090</textcolorNoFocus>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+      <visible>!Control.IsVisible(50)</visible>
     </control>
     
     <!--            :: MAIN DETAILS ::            -->
     
     <control>
-      <description>Cover Art</description>
+      <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>284</posX>
-      <posY>73</posY>
-      <width>288</width>
-      <height>422</height>
+      <posX>26</posX>
+      <posY>270</posY>
+      <width>267</width>
+      <height>390</height>
+      <texture>defaultdvdcover.png</texture>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>31</posX>
+      <posY>274</posY>
+      <width>257</width>
+      <height>380</height>
       <texture>#MovingPictures.Coverart</texture>
       <visible>!Control.IsVisible(50)</visible>
     </control>
@@ -75,8 +93,8 @@ This file should contain the details view
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>284</posX>
-      <posY>73</posY>
+      <posX>31</posX>
+      <posY>274</posY>
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
@@ -87,8 +105,8 @@ This file should contain the details view
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>540</posX>
-      <posY>130</posY>
+      <posX>256</posX>
+      <posY>304</posY>
       <width>32</width>
       <height>39</height>
       <texture>overlaywubg.png</texture>
@@ -99,8 +117,8 @@ This file should contain the details view
       <description>Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>547</posX>
-      <posY>134</posY>
+      <posX>263</posX>
+      <posY>308</posY>
       <width>23</width>
       <height>23</height>
       <texture>overlaywatched.png</texture>
@@ -111,8 +129,8 @@ This file should contain the details view
       <description>Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>547</posX>
-      <posY>134</posY>
+      <posX>263</posX>
+      <posY>308</posY>
       <width>23</width>
       <height>23</height>
       <texture>overlayunwatched.png</texture>
@@ -120,24 +138,12 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>Glasstitlebar</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>480</posX>
-      <posY>64</posY>
-      <width>512</width>
-      <height>43</height>
-      <texture>glasstitlebar.png</texture>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>610</posX>
-      <posY>70</posY>
-      <width>850</width>
+      <posX>308</posX>
+      <posY>271</posY>
+      <width>900</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -145,82 +151,39 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>Plot Textbox</description>
+      <description>Year below the movie title</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>298</posY>
+      <width>900</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>609</posX>
-      <posY>110</posY>
-      <width>640</width>
-      <height>360</height>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>515</width>
+      <height>315</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
-      <font>mediastream11</font>
-      <seperator>-------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
-    <!--            :: DETAILS ::            -->
+    <!--            :: SIDE DETAILS ::            -->
     
     <control>
       <type>label</type>
-      <posX>289</posX>
-      <posY>533</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>DIRECTED BY</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>391</posX>
-      <posY>527</posY>
-      <width>700</width>
-      <font>mediastream14c</font>
-      <textcolor>ffffffff</textcolor>
-      <label>#MovingPictures.SelectedMovie.directors</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <posX>289</posX>
-      <posY>568</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>WRITTEN BY</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>384</posX>
-      <posY>562</posY>
-      <width>700</width>
-      <font>mediastream14c</font>
-      <textcolor>ffffffff</textcolor>
-      <label>#MovingPictures.SelectedMovie.writers</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
-      <type>textboxscrollup</type>
-      <posX>289</posX>
-      <posY>604</posY>
-      <width>700</width>
-      <height>700</height>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
-      <label>#MovingPictures.SelectedMovie.genres
-#MovingPictures.SelectedMovie.year
-#MovingPictures.SelectedMovie.runtime minutes
-Rated #MovingPictures.SelectedMovie.certification</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <posX>629</posX>
-      <posY>657</posY>
+      <posX>875</posX>
+      <posY>340</posY>
       <width>700</width>
       <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
@@ -230,8 +193,8 @@ Rated #MovingPictures.SelectedMovie.certification</label>
     
     <control>
       <type>label</type>
-      <posX>789</posX>
-      <posY>678</posY>
+      <posX>1087</posX>
+      <posY>360</posY>
       <width>700</width>
       <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
@@ -242,8 +205,8 @@ Rated #MovingPictures.SelectedMovie.certification</label>
     <control>
       <type>imagelist</type>
       <id>0</id>
-      <posX>787</posX>
-      <posY>662</posY>
+      <posX>1085</posX>
+      <posY>343</posY>
       <width>115</width>
       <height>13</height>
       <textureWidth>13</textureWidth>
@@ -256,6 +219,80 @@ Rated #MovingPictures.SelectedMovie.certification</label>
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Director Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>400</posY>
+      <width>360</width>
+      <font>mediastream12tc</font>
+      <label>Director</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>875</posX>
+      <posY>424</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Writer Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>456</posY>
+      <width>360</width>
+      <font>mediastream12tc</font>
+      <label>Writer</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>textbox</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>875</posX>
+      <posY>480</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Movie Details Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>536</posY>
+      <width>360</width>
+      <font>mediastream12tc</font>
+      <label>MOVIE DETAILS</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>!Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <type>textboxscrollup</type>
+      <posX>875</posX>
+      <posY>560</posY>
+      <width>360</width>
+      <height>700</height>
+      <font>mediastream11</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#MovingPictures.SelectedMovie.genres
+#MovingPictures.SelectedMovie.year
+#MovingPictures.SelectedMovie.runtime minutes
+Rated #MovingPictures.SelectedMovie.certification</label>
       <visible>!Control.IsVisible(50)</visible>
     </control>
     
