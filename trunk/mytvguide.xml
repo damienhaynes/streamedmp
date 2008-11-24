@@ -86,7 +86,7 @@
       <id>32</id>
       <posX>436</posX>
       <posY>100</posY>
-      <font>font10</font>
+      <font>mediastream11tc</font>
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -162,7 +162,7 @@
       <posX>50</posX>
       <posY>105</posY>
       <width>256</width>
-      <height>40</height>
+      <height>35</height>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -170,10 +170,10 @@
       <description>Channel image template</description>
       <type>image</type>
       <id>7</id>
-      <width>49</width>
-      <height>49</height>
+      <width>30</width>
+      <height>30</height>
       <posX>3</posX>
-      <posY>3</posY>
+      <posY>2</posY>
       <zoom>no</zoom>
       <texture>defaultVideoBig.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -221,7 +221,7 @@
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>50</posX>
+      <posX>240</posX>
       <posY>585</posY>
       <width>640</width>
       <label>#TV.Guide.Title</label>
@@ -233,9 +233,9 @@
       <description>Description1</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>50</posX>
+      <posX>240</posX>
       <posY>610</posY>
-      <width>1150</width>
+      <width>1020</width>
       <height>100</height>
       <seperator>----------------------------------------------------------------------------------------------</seperator>
       <label>#TV.Guide.Description</label>
@@ -340,6 +340,17 @@
       <visible>no</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
+    </control>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>590</posY>
+      <width>200</width>
+      <height>110</height>
+      <action>18</action>
+      <textureFocus>-</textureFocus>
     </control>
   </controls>
 </window>
