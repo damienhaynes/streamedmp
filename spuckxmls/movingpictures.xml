@@ -308,6 +308,18 @@ multiple view modes.
     </control>
     
     <control>
+      <description>Movie Title Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>253</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
@@ -321,15 +333,113 @@ multiple view modes.
     </control>
     
     <control>
-      <description>Year below the movie title</description>
+      <description>Genres Shadow</description>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.year</label>
+      <label>#MovingPictures.SelectedMovie.genres</label>
       <id>0</id>
-      <posX>308</posX>
-      <posY>278</posY>
+      <posX>319</posX>
+      <posY>283</posY>
       <width>900</width>
-      <font>mediastream12tc</font>
+      <font>mediastream11tc</font>
+      <textcolor>ff000000</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Genres</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <id>0</id>
+      <posX>318</posX>
+      <posY>282</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Directors Label Shadow</description>
+      <type>label</type>
+      <label>Director</label>
+      <posX>309</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Directors Label</description>
+      <type>label</type>
+      <label>Director</label>
+      <posX>308</posX>
+      <posY>320</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Directors Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>309</posX>
+      <posY>341</posY>
+      <width>200</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Directors</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>308</posX>
+      <posY>340</posY>
+      <width>200</width>
+      <font>mediastream10</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    
+    <control>
+      <description>Writers Label Shadow</description>
+      <type>label</type>
+      <label>Writer</label>
+      <posX>509</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Writers Label</description>
+      <type>label</type>
+      <label>Writer</label>
+      <posX>508</posX>
+      <posY>320</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Writers Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>509</posX>
+      <posY>341</posY>
+      <width>255</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Writers</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>508</posX>
+      <posY>340</posY>
+      <width>255</width>
+      <font>mediastream10</font>
+      <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
@@ -338,8 +448,8 @@ multiple view modes.
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>308</posX>
-      <posY>318</posY>
-      <width>415</width>
+      <posY>378</posY>
+      <width>475</width>
       <height>315</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
@@ -347,55 +457,6 @@ multiple view modes.
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
-      <label>Director</label>
-      <posX>31</posX>
-      <posY>655</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.directors</label>
-      <posX>151</posX>
-      <posY>655</posY>
-      <width>350</width>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
-      <label>Writer</label>
-      <posX>31</posX>
-      <posY>680</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.writers</label>
-      <posX>151</posX>
-      <posY>680</posY>
-      <width>350</width>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <!--
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score / 10</label>
-      <posX>601</posX>
-      <posY>655</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.runtime min</label>
-      <posX>601</posX>
-      <posY>680</posY>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    -->
     
     <!--            :: THUMBNAIL VIEW ::            -->
     
