@@ -7,10 +7,7 @@
   <define>#header.label:3</define>
   <controls>
     
-    <!--            :: BACKGROUNDS / OVERLAYS ::            -->
-    
     <control>
-      <description>Default Background</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -18,18 +15,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-    </control>
-    
-    <control>
-      <description>black background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>504</posY>
-      <width>1280</width>
-      <height>221</height>
-      <colordiffuse>ffFFFFFF</colordiffuse>
-      <texture>black.png</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
     <control>
@@ -40,82 +26,174 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>movieviewbg.png</texture>
-    </control>
-    
-    <!--            :: MENU ::            -->
-    
-    <control>
-      <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>256</width>
-      <height>720</height>
-      <texture>hiddenmenu_left.png</texture>
+      <texture>mainoverlay.png</texture>
     </control>
     
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>0</posX>
-      <posY>150</posY>
+      <posX>29</posX>
+      <posY>230</posY>
       <width>256</width>
       <height>720</height>
-      <layout>StackLayout</layout>
+      <layout>GridLayout(6,0,0,0)</layout>
       
       <control>
         <description>Play Button</description>
         <type>button</type>
         <id>2</id>
         <label>208</label>
-        <onright>10</onright>
         <onup>17</onup>
+        <ondown>10</ondown>
+        <onleft>6</onleft>
+        <onright>3</onright>
       </control>
       <control>
         <description>Plot</description>
         <type>togglebutton</type>
         <id>3</id>
         <label>207</label>
-        <onright>10</onright>
+        <onup>17</onup>
+        <ondown>10</ondown>
+        <onleft>2</onleft>
+        <onright>4</onright>
       </control>
       <control>
         <description>Cast</description>
         <type>togglebutton</type>
         <id>4</id>
         <label>206</label>
-        <onright>10</onright>
+        <onup>17</onup>
+        <ondown>10</ondown>
+        <onleft>3</onleft>
+        <onright>5</onright>
       </control>
       <control>
         <description>Refresh</description>
         <type>button</type>
         <id>5</id>
         <label>184</label>
-        <onright>10</onright>
+        <onup>17</onup>
+        <ondown>10</ondown>
+        <onleft>4</onleft>
+        <onright>6</onright>
       </control>
       <control>
         <description>Watched</description>
         <type>togglebutton</type>
         <id>6</id>
         <label>1010</label>
-        <onright>10</onright>
+        <onup>17</onup>
         <ondown>10</ondown>
+        <onleft>5</onleft>
+        <onright>2</onright>
       </control>
     </control>
+    
+    <!--            :: MAIN DETAILS ::            -->
+    
+    <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>26</posX>
+      <posY>270</posY>
+      <width>267</width>
+      <height>390</height>
+      <texture>defaultdvdcover.png</texture>
+    </control>
+    
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>31</posX>
+      <posY>274</posY>
+      <width>257</width>
+      <height>380</height>
+      <texture>#thumb</texture>
+    </control>
+    
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>274</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+    </control>
+    
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>271</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#title</label>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    
+    <control>
+      <description>Year below the movie title</description>
+      <type>label</type>
+      <label>#year</label>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>298</posY>
+      <width>900</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+    </control>
+    
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>20</id>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>515</width>
+      <height>315</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#plot</label>
+    </control>
+    
+    <control>
+      <description>Cast</description>
+      <type>textbox</type>
+      <id>22</id>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>515</width>
+      <height>315</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#cast</label>
+    </control>
+    
+    <!--            :: SIDE DETAILS ::            -->
     
     <control>
       <description>image:</description>
       <type>label</type>
       <id>30</id>
-      <posX>40</posX>
-      <posY>440</posY>
+      <posX>875</posX>
+      <posY>300</posY>
       <label>734</label>
+      <font>mediastream11c</font>
     </control>
     <control>
       <description>spin control</description>
       <type>spincontrol</type>
       <id>10</id>
-      <posX>170</posX>
-      <posY>443</posY>
+      <posX>1110</posX>
+      <posY>303</posY>
       <onup>6</onup>
       <ondown>11</ondown>
       <onleft>10</onleft>
@@ -126,141 +204,28 @@
       <description>disc:</description>
       <type>label</type>
       <id>100</id>
-      <posX>40</posX>
-      <posY>460</posY>
+      <posX>875</posX>
+      <posY>320</posY>
       <label>427</label>
+      <font>mediastream11c</font>
     </control>
     <control>
       <description>disc select</description>
       <type>spincontrol</type>
       <id>11</id>
-      <posX>170</posX>
-      <posY>463</posY>
+      <posX>1110</posX>
+      <posY>323</posY>
       <onup>10</onup>
-      <ondown>6</ondown>
       <onleft>11</onleft>
       <onright>11</onright>
       <buddycontrolid>100</buddycontrolid>
       <showrange>no</showrange>
     </control>
     
-    <!--            :: MAIN DETAILS ::            -->
-    
-    <control>
-      <description>Cover Art</description>
-      <type>image</type>
-      <id>60</id>
-      <posX>284</posX>
-      <posY>73</posY>
-      <width>288</width>
-      <height>422</height>
-      <texture>#thumb</texture>
-    </control>
-    
-    <control>
-      <description>Cover Art Glass Overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>284</posX>
-      <posY>73</posY>
-      <width>228</width>
-      <height>177</height>
-      <texture>glassoverlay2.png</texture>
-    </control>
-    
-    <control>
-      <description>Glasstitlebar</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>480</posX>
-      <posY>64</posY>
-      <width>512</width>
-      <height>43</height>
-      <texture>glasstitlebar.png</texture>
-    </control>
-    
-    <control>
-      <description>Movie Title</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>610</posX>
-      <posY>70</posY>
-      <width>850</width>
-      <font>mediastream16tc</font>
-      <label>#title</label>
-      <textcolor>ffFFFFFF</textcolor>
-    </control>
-    
-    <control>
-      <description>Plot Textbox</description>
-      <type>textboxscrollup</type>
-      <id>20</id>
-      <posX>609</posX>
-      <posY>110</posY>
-      <width>640</width>
-      <height>360</height>
-      <label>#plot</label>
-      <font>mediastream11</font>
-      <seperator>-------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
-    </control>
-    <control>
-      <description>Cast Textbox</description>
-      <type>textbox</type>
-      <id>22</id>
-      <posX>609</posX>
-      <posY>110</posY>
-      <width>660</width>
-      <height>370</height>
-      <spinPosX>600</spinPosX>
-      <spinPosY>440</spinPosY>
-      <onleft>2</onleft>
-      <onright>10</onright>
-      <onup>2</onup>
-      <ondown>10</ondown>
-      <label>#cast</label>
-      <font>mediastream11</font>
-    </control>
-    
-    <!--            :: DETAILS ::            -->
-    
     <control>
       <type>label</type>
-      <posX>289</posX>
-      <posY>533</posY>
-      <width>200</width>
-      <font>mediastream10c</font>
-      <textcolor>ff909090</textcolor>
-      <label>DIRECTED BY</label>
-    </control>
-    <control>
-      <type>label</type>
-      <posX>391</posX>
-      <posY>527</posY>
-      <width>700</width>
-      <font>mediastream14c</font>
-      <textcolor>ffffffff</textcolor>
-      <label>#director</label>
-    </control>
-    
-    <control>
-      <type>textboxscrollup</type>
-      <posX>289</posX>
-      <posY>574</posY>
-      <width>500</width>
-      <height>700</height>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
-      <label>#genre
-#year
-#runtime minutes
-#mpaarating</label>
-      <visible>!Control.IsVisible(50)</visible>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <posX>989</posX>
-      <posY>657</posY>
+      <posX>875</posX>
+      <posY>340</posY>
       <width>700</width>
       <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
@@ -269,8 +234,8 @@
     
     <control>
       <type>label</type>
-      <posX>1149</posX>
-      <posY>678</posY>
+      <posX>1087</posX>
+      <posY>360</posY>
       <width>700</width>
       <font>mediastream11</font>
       <textcolor>ffffffff</textcolor>
@@ -280,8 +245,8 @@
     <control>
       <type>imagelist</type>
       <id>0</id>
-      <posX>1147</posX>
-      <posY>662</posY>
+      <posX>1085</posX>
+      <posY>343</posY>
       <width>115</width>
       <height>13</height>
       <textureWidth>13</textureWidth>
@@ -296,6 +261,56 @@
       <percentage>#rating</percentage>
     </control>
     
+    <control>
+      <description>Director Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>400</posY>
+      <width>360</width>
+      <font>mediastream12tc</font>
+      <label>Director</label>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    
+    <control>
+      <type>textbox</type>
+      <label>#director</label>
+      <posX>875</posX>
+      <posY>424</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+    </control>
+    
+    <control>
+      <description>Movie Details Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>456</posY>
+      <width>360</width>
+      <font>mediastream12tc</font>
+      <label>MOVIE DETAILS</label>
+      <textcolor>ffFFFFFF</textcolor>
+    </control>
+    
+    <control>
+      <type>textboxscrollup</type>
+      <posX>875</posX>
+      <posY>480</posY>
+      <width>360</width>
+      <height>700</height>
+      <font>mediastream11</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#genre
+#year
+#runtime minutes
+#mpaarating</label>
+    </control>
+    
+    <import>common.overlays.xml</import>
+    
+    <import>common.window.xml</import>
     <import>common.time.xml</import>
     
   </controls>
