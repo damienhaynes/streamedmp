@@ -23,13 +23,16 @@
 
 #define STREAMEDMP_EDITOR_FILE		INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
+#define MEDIAPORTAL_MINNOWARN_VERSION		"0.9.3.20755"		
+#define MEDIAPORTAL_MIN_VERSION				"0.9.3.20432"
+
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
 #define RES_DLG_MOVINGPICSSELECT		13001
 
 // Dialog Controls
-#define RES_RADIO_CHOICE1				1325
-#define RES_RADIO_CHOICE2				1326
+#define RES_RADIO_CHOICE1				1400
+#define RES_RADIO_CHOICE2				1401
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -43,6 +46,8 @@ prototype NUMBER 	GetMediaPortalProgramDir(BYREF STRING);
 prototype NUMBER 	GetMediaPortalConfigDir(BYREF STRING); 
 prototype VOID 		SetDefaults();
 prototype VOID 		UpdateSettings(); 
+prototype NUMBER	GetMPVersion(BYREF STRING);
+prototype VOID		CheckMPVersion();		
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -58,7 +63,7 @@ BOOL g_bMovingPicturesDefault;
 // initializes.
 //---------------------------------------------------------------------------
 function OnBegin()	
-begin	
+begin		
 	SetDefaults();			
 end;           
 
@@ -103,14 +108,17 @@ end;
 function OnFirstUIBefore()
     NUMBER nResult, nSetupType, nvSize, nUser;
     STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile;
-    STRING szLicenseFile;    
+    STRING svMPVersion;    
 	BOOL bCustom;
 begin						   
 
 	SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	   
     
 	nSetupType = TYPICAL;	
-
+    
+    // Check that MediaPortal is installed, also check version
+    CheckMPVersion();
+    
 Dlg_SdWelcome:
     szTitle = "";
     szMsg   = "";
@@ -121,7 +129,6 @@ Dlg_SdWelcome:
 	svName    = "";
     svCompany = "";
    
-
 Dlg_SdFeatureTree: 
     szTitle    = "";
     szMsg      = "";
@@ -497,4 +504,46 @@ begin
 	NumToStr(svString,g_bMovingPicturesDefault);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
+end;             
+
+function NUMBER	GetMPVersion(svVersionNumber)
+	STRING svValue,szFileName;	
+begin
+    
+    GetMediaPortalProgramDir(svValue);
+    szFileName = svValue^"MediaPortal.exe";
+    
+    return VerGetFileVersion(szFileName,svVersionNumber);
+    
+end;
+
+function VOID CheckMPVersion()
+	STRING svVersion2, svVersion1;  
+	NUMBER nResult;
+begin
+    
+    // Warn user of old version of MediaPortal
+    if (GetMPVersion(svVersion2) < 0) then    	
+    	MessageBox(@MPNOTFOUND,SEVERE);
+    	abort;                 	    	
+    endif;
+    
+    // 2 (Version1 = Version2)
+    // 1 (Version1 < Version2)
+    // 0 (Version1 > Version2)
+    
+    // Check Minimum requirements are met
+    svVersion1 = MEDIAPORTAL_MIN_VERSION;
+    if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+    	MessageBox(@MPMINREQNOTMET,SEVERE);
+    	abort; 
+    endif;
+    
+    // Check if warning should be prompted
+    svVersion1 = MEDIAPORTAL_MINNOWARN_VERSION;
+    if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+    	MessageBox(@MPOLDVERSION,WARNING);
+    endif;
+    
+    
 end;
