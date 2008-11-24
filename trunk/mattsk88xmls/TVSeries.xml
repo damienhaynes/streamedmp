@@ -45,17 +45,6 @@
       <visible>!Control.IsVisible(1232)+!Control.IsVisible(1236)</visible>
     </control>
     <control>
-      <description>dialog bg</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>60</posY>
-      <width>512</width>
-      <height>152</height>
-      <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia</visible>
-    </control>
-    <control>
       <description>Fan Art Image</description>
       <type>image</type>
       <id>524</id>
@@ -86,6 +75,17 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+    </control>
+    <control>
+      <description>dialog bg</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>60</posY>
+      <width>512</width>
+      <height>152</height>
+      <texture>dialogprogressbg.png</texture>
+      <visible>player.hasmedia</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -567,7 +567,7 @@
       <posX>15</posX>
       <posY>600</posY>
       <width>700</width>
-      <height>105</height>
+      <height>100</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
@@ -770,11 +770,11 @@
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>790</posX>
+          <posX>770</posX>
           <posY>420</posY>
           <spinPosX>1210</spinPosX>
           <spinPosY>17</spinPosY>
-          <width>585</width>
+          <width>605</width>
           <height>340</height>
           <textXOff>20</textXOff>
           <textXOff2>380</textXOff2>
