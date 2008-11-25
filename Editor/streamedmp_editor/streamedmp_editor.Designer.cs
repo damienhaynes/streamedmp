@@ -84,7 +84,7 @@ namespace streamedmp_editor
             this.btnAdd.Location = new System.Drawing.Point(136, 407);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 26);
-            this.btnAdd.TabIndex = 5;
+            this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "&Add >>";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -97,7 +97,7 @@ namespace streamedmp_editor
             this.lstAvailableWindows.Name = "lstAvailableWindows";
             this.lstAvailableWindows.ScrollAlwaysVisible = true;
             this.lstAvailableWindows.Size = new System.Drawing.Size(198, 251);
-            this.lstAvailableWindows.TabIndex = 30;
+            this.lstAvailableWindows.TabIndex = 3;
             this.lstAvailableWindows.SelectedIndexChanged += new System.EventHandler(this.lstAvailableWindows_SelectedIndexChanged);
             // 
             // statusStrip1
@@ -107,7 +107,7 @@ namespace streamedmp_editor
             this.statusStrip1.Location = new System.Drawing.Point(0, 521);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(764, 22);
-            this.statusStrip1.TabIndex = 6;
+            this.statusStrip1.TabIndex = 13;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
@@ -126,8 +126,8 @@ namespace streamedmp_editor
             this.label1.Location = new System.Drawing.Point(52, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Folder:";
+            this.label1.TabIndex = 1;
+            this.label1.Text = "&Folder:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtBGFolder
@@ -146,7 +146,7 @@ namespace streamedmp_editor
             this.btnGenerate.Location = new System.Drawing.Point(567, 29);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(106, 49);
-            this.btnGenerate.TabIndex = 16;
+            this.btnGenerate.TabIndex = 5;
             this.btnGenerate.Text = "&Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
@@ -161,7 +161,7 @@ namespace streamedmp_editor
             this.chklstWinddowsInMenu.Name = "chklstWinddowsInMenu";
             this.chklstWinddowsInMenu.ScrollAlwaysVisible = true;
             this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 244);
-            this.chklstWinddowsInMenu.TabIndex = 15;
+            this.chklstWinddowsInMenu.TabIndex = 9;
             this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
             // 
             // contextMenuStrip1
@@ -184,7 +184,7 @@ namespace streamedmp_editor
             this.label4.Location = new System.Drawing.Point(13, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
-            this.label4.TabIndex = 16;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Available Windows";
             // 
             // label5
@@ -193,7 +193,7 @@ namespace streamedmp_editor
             this.label5.Location = new System.Drawing.Point(517, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
-            this.label5.TabIndex = 17;
+            this.label5.TabIndex = 8;
             this.label5.Text = "Windows in Menu";
             // 
             // menuStrip1
@@ -204,7 +204,7 @@ namespace streamedmp_editor
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(764, 24);
-            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
@@ -250,8 +250,8 @@ namespace streamedmp_editor
             this.label6.Location = new System.Drawing.Point(7, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Time Per Image:";
+            this.label6.TabIndex = 0;
+            this.label6.Text = "&Time Per Image:";
             // 
             // txtBGTime
             // 
@@ -269,7 +269,7 @@ namespace streamedmp_editor
             this.label7.Location = new System.Drawing.Point(168, 51);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 21;
+            this.label7.TabIndex = 4;
             this.label7.Text = "Seconds";
             // 
             // groupBox2
@@ -283,7 +283,7 @@ namespace streamedmp_editor
             this.groupBox2.Location = new System.Drawing.Point(226, 239);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(278, 111);
-            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Background Images";
             // 
@@ -296,7 +296,7 @@ namespace streamedmp_editor
             this.chkBGRandom.Location = new System.Drawing.Point(99, 74);
             this.chkBGRandom.Name = "chkBGRandom";
             this.chkBGRandom.Size = new System.Drawing.Size(66, 17);
-            this.chkBGRandom.TabIndex = 4;
+            this.chkBGRandom.TabIndex = 5;
             this.chkBGRandom.Text = "Random";
             this.chkBGRandom.UseVisualStyleBackColor = true;
             // 
@@ -311,7 +311,7 @@ namespace streamedmp_editor
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(705, 99);
-            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Global settings";
             // 
@@ -320,14 +320,14 @@ namespace streamedmp_editor
             this.label11.Location = new System.Drawing.Point(234, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 23);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 4;
             // 
             // txtNoFocusColour
             // 
             this.txtNoFocusColour.Location = new System.Drawing.Point(135, 58);
             this.txtNoFocusColour.Name = "txtNoFocusColour";
             this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
-            this.txtNoFocusColour.TabIndex = 19;
+            this.txtNoFocusColour.TabIndex = 3;
             this.txtNoFocusColour.Text = "ffffff";
             // 
             // txtfocusColour
@@ -335,7 +335,7 @@ namespace streamedmp_editor
             this.txtfocusColour.Location = new System.Drawing.Point(135, 29);
             this.txtfocusColour.Name = "txtfocusColour";
             this.txtfocusColour.Size = new System.Drawing.Size(62, 20);
-            this.txtfocusColour.TabIndex = 18;
+            this.txtfocusColour.TabIndex = 1;
             this.txtfocusColour.Text = "ffffff";
             // 
             // label3
@@ -344,7 +344,7 @@ namespace streamedmp_editor
             this.label3.Location = new System.Drawing.Point(6, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 13);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 2;
             this.label3.Text = "No Focus item colour:";
             // 
             // label2
@@ -361,7 +361,7 @@ namespace streamedmp_editor
             this.btnRemove.Location = new System.Drawing.Point(520, 407);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 26);
-            this.btnRemove.TabIndex = 25;
+            this.btnRemove.TabIndex = 10;
             this.btnRemove.Text = "<< &Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -373,7 +373,7 @@ namespace streamedmp_editor
             this.groupBox3.Location = new System.Drawing.Point(226, 150);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(278, 83);
-            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Item properties";
             // 
@@ -391,7 +391,7 @@ namespace streamedmp_editor
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Item Name:";
+            this.label9.Text = "&Item Name:";
             // 
             // groupBox4
             // 
@@ -400,7 +400,7 @@ namespace streamedmp_editor
             this.groupBox4.Location = new System.Drawing.Point(12, 439);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(705, 72);
-            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Plugin specific settings";
             // 
@@ -410,7 +410,7 @@ namespace streamedmp_editor
             this.llRssTicker.Location = new System.Drawing.Point(8, 48);
             this.llRssTicker.Name = "llRssTicker";
             this.llRssTicker.Size = new System.Drawing.Size(59, 13);
-            this.llRssTicker.TabIndex = 28;
+            this.llRssTicker.TabIndex = 1;
             this.llRssTicker.TabStop = true;
             this.llRssTicker.Text = "Homepage";
             this.llRssTicker.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llRssTicker_LinkClicked);
@@ -421,8 +421,8 @@ namespace streamedmp_editor
             this.chkRssTicker.Location = new System.Drawing.Point(8, 28);
             this.chkRssTicker.Name = "chkRssTicker";
             this.chkRssTicker.Size = new System.Drawing.Size(133, 17);
-            this.chkRssTicker.TabIndex = 25;
-            this.chkRssTicker.Text = "RSS Ticker by Sambal";
+            this.chkRssTicker.TabIndex = 0;
+            this.chkRssTicker.Text = "R&SS Ticker by Sambal";
             this.chkRssTicker.UseVisualStyleBackColor = true;
             // 
             // btMoveUp
@@ -431,7 +431,7 @@ namespace streamedmp_editor
             this.btMoveUp.Location = new System.Drawing.Point(724, 214);
             this.btMoveUp.Name = "btMoveUp";
             this.btMoveUp.Size = new System.Drawing.Size(33, 23);
-            this.btMoveUp.TabIndex = 32;
+            this.btMoveUp.TabIndex = 11;
             this.btMoveUp.UseVisualStyleBackColor = true;
             this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
             // 
@@ -441,7 +441,7 @@ namespace streamedmp_editor
             this.btMoveDown.Location = new System.Drawing.Point(724, 242);
             this.btMoveDown.Name = "btMoveDown";
             this.btMoveDown.Size = new System.Drawing.Size(33, 23);
-            this.btMoveDown.TabIndex = 33;
+            this.btMoveDown.TabIndex = 12;
             this.btMoveDown.UseVisualStyleBackColor = true;
             this.btMoveDown.Click += new System.EventHandler(this.btMoveDown_Click);
             // 
@@ -466,7 +466,7 @@ namespace streamedmp_editor
             this.Controls.Add(this.btnRemove);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(796, 600);
+            this.MaximumSize = new System.Drawing.Size(780, 579);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(780, 579);
             this.Name = "frmStreamedMPEditor";

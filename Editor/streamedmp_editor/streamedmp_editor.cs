@@ -31,14 +31,22 @@ namespace streamedmp_editor
         {
             // Load Skin folder on load
             RegistryKey MediaPortalKey = Registry.LocalMachine;
-            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
+            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MediaPortal\", true);
             string sMediaPortalDir = "";
             if (MediaPortalKey != null)
             {
-                sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
+                sMediaPortalDir = MediaPortalKey.GetValue("InstallPath").ToString();
             }
             else
-                return;
+            {
+                MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
+                if (MediaPortalKey != null)
+                {
+                    sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
+                }
+                else
+                    return;
+            }
 
             path = sMediaPortalDir + "\\skin\\StreamedMP";
             if (System.IO.Directory.Exists(path))
@@ -80,7 +88,7 @@ namespace streamedmp_editor
             }
             else
             {
-                MessageBox.Show("All fields must be complete.");
+                MessageBox.Show("All fields must be complete.","Missing Fields",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
             
         }
@@ -88,6 +96,7 @@ namespace streamedmp_editor
         private bool loadIDs(bool onLoad)
         {
             lstAvailableWindows.Enabled = true;
+            lstAvailableWindows.Items.Clear();
             string[] files = System.IO.Directory.GetFiles(path);
             foreach (string file in files)
             {
@@ -716,8 +725,10 @@ namespace streamedmp_editor
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            if (chklstWinddowsInMenu.CheckedItems.Count > 1 || chklstWinddowsInMenu.CheckedItems.Count == 0)
-                MessageBox.Show("You must set only one item as default.");
+            if (chklstWinddowsInMenu.CheckedItems.Count == 0)
+                MessageBox.Show("You must set one menu item as default.","Default",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            else if (chklstWinddowsInMenu.CheckedItems.Count > 1 )
+                MessageBox.Show("You must set only one menu item as default.", "Default", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
                 foreach (menuItem item in menuItems)
@@ -752,7 +763,17 @@ namespace streamedmp_editor
                 
                 // Backup current BasicHome.xml
                 if (File.Exists(path + @"\" + "Basichome.xml"))
-                    File.Copy(path + @"\" + "Basichome.xml", path + @"\" + "Basichome.xml.backup." + DateTime.Now.Ticks.ToString());
+                {
+                    try
+                    {
+                        File.Copy(path + @"\" + "Basichome.xml", path + @"\" + "Basichome.xml.backup." + DateTime.Now.Ticks.ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(string.Format("Unable to make backup of BasicHome.xml ({0})",ex.Message),"Backup",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        return;
+                    }
+                }
 
                 // Remove current BasicHome.xml
                 if (File.Exists(path + @"\" + "Basichome.xml"))
@@ -769,7 +790,7 @@ namespace streamedmp_editor
                 {
                     item.id = menuItems.IndexOf(item);
                 }                
-                MessageBox.Show("A new BasicHome.xml has been generated.","Success");
+                MessageBox.Show("A new BasicHome.xml has been successfully generated.","Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1233,16 +1254,24 @@ namespace streamedmp_editor
                 chklstWinddowsInMenu.Items.Remove(chklstWinddowsInMenu.SelectedItem);
             }
             else
-                MessageBox.Show("No item selected.");
+                MessageBox.Show("No item is selected for removal", "Remove", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         private void openAeonFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegistryKey MediaPortalKey = Registry.LocalMachine;
-            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
+            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MediaPortal\", true);
             string sMediaPortalDir = "";
             if (MediaPortalKey != null)
-                sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
+            {
+                sMediaPortalDir = MediaPortalKey.GetValue("InstallPath").ToString();
+            }
+            else
+            {
+                MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
+                if (MediaPortalKey != null)                
+                    sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();                
+            }           
 
             folderBrowserDialog1.Description = "Select the skin Directory to load:";
             folderBrowserDialog1.SelectedPath = sMediaPortalDir + "\\skin\\StreamedMP";            
@@ -1348,11 +1377,6 @@ namespace streamedmp_editor
         private void llRssTicker_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("IExplore", "http://forum.team-mediaportal.com/plugins-47/rss-ticker-43603/");
-        }
-
-        private void llrssweather_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("IExplore", "http://forum.team-mediaportal.com/general-development-no-feature-request-here-48/rss-weather-basic-home-release-43190/");            
         }
 
     }
