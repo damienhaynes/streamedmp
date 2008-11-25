@@ -22,17 +22,6 @@
     ::::::::::::::::::::::::::::
     -->
     <control>
-      <description>Default Background Filmstrip</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_moving pictures.png</texture>
-      <visible>Control.IsVisible(1236)</visible>
-    </control>
-    <control>
       <description>Default Background</description>
       <type>image</type>
       <id>0</id>
@@ -41,7 +30,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
-      <visible>!Control.IsVisible(1232)+!Control.IsVisible(1236)</visible>
+      <visible>!Control.IsVisible(1232)</visible>
     </control>
     <control>
       <description>Fan Art Image</description>
@@ -62,7 +51,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>fanartoverlay.png</texture>
-      <visible>Control.IsVisible(1235)</visible>
+      <visible>!Control.IsVisible(1236)</visible>
     </control>
     <control>
       <description>FanArt Overlay - Other Views</description>
@@ -73,7 +62,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>tvviewbg.png</texture>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1236)</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -257,28 +246,6 @@
       <align>left</align>
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
-      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
-    </control>
-    <control>
-      <description>TVDB Series Rating Stars</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>570</posX>
-      <posY>675</posY>
-      <width>220</width>
-      <height>16</height>
-      <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
-    </control>
-    <control>
-      <description>Rating Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>570</posX>
-      <posY>650</posY>
-      <textcolor>ff989898</textcolor>
-      <font>mediastream12tc</font>
-      <label>RATING</label>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
     <control Style="TVSeriesTitle">
