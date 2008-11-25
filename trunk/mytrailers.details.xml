@@ -5,13 +5,13 @@
       <type>listcontrol</type>
       <description>videolist</description>
       <id>4</id>
-      <posX>875</posX>
-      <width>425</width>
-      <height>260</height>
+      <posX>800</posX>
+      <posY>300</posY>
+      <width>480</width>
+      <height>210</height>
       <textXOff2>0</textXOff2>
       <IconYOff>10</IconYOff>
       <textYOff>5</textYOff>
-      <font>font13</font>
       <textXOff>9</textXOff>
       <textureHeight>42</textureHeight>
       <IconXOff>15</IconXOff>
@@ -41,8 +41,6 @@
         <id>1</id>
         <description>Video Title</description>
         <type>label</type>
-        <textcolor>FFB2D4F5</textcolor>
-        <font>font13</font>
         <label>#MyTrailers.Video.Title</label>
       </control>
       <control>
@@ -51,7 +49,7 @@
         <width>475</width>
         <id>1</id>
         <label>Published on #MyTrailers.Video.Published</label>
-        <font>font13</font>
+        <font>mediastream11</font>
         <textcolor>FFFFFFFF</textcolor>
       </control>
       <control>
@@ -59,7 +57,6 @@
         <description>Video Description</description>
         <type>label</type>
         <textcolor>FFFFFFFF</textcolor>
-        <font>font13</font>
         <label>#MyTrailers.Video.Description</label>
       </control>
       <control>
@@ -76,13 +73,11 @@
       <description>MyTrailers.Details.Title</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>1271</posX>
-      <posY>80</posY>
+      <posX>800</posX>
+      <posY>220</posY>
+      <font>mediastream16tc</font>
       <width>750</width>
       <label>#MyTrailers.Details.Title</label>
-      <font>font18</font>
-      <textcolor>White</textcolor>
-      <align>right</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!Control.IsVisible(50)</visible>
@@ -106,8 +101,7 @@
         <id>1</id>
         <width>475</width>
         <label>Releasedate:</label>
-        <font>font13</font>
-        <textcolor>FFB2D4F5</textcolor>
+        <textcolor>ff909090</textcolor>
       </control>
       <control>
         <description>ReleaseDate value</description>
@@ -115,8 +109,6 @@
         <width>475</width>
         <id>1</id>
         <label>#MyTrailers.Details.ReleaseDate</label>
-        <font>font13</font>
-        <textcolor>FFFFFFFF</textcolor>
       </control>
       <control>
         <description>Genre txt</description>
@@ -124,8 +116,7 @@
         <id>1</id>
         <width>475</width>
         <label>Genre:</label>
-        <font>font13</font>
-        <textcolor>FFB2D4F5</textcolor>
+        <textcolor>ff909090</textcolor>
       </control>
       <control>
         <description>Genre value</description>
@@ -133,8 +124,6 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Genre</label>
-        <font>font13</font>
-        <textcolor>FFFFFFFF</textcolor>
       </control>
       <control>
         <description>Director txt</description>
@@ -142,8 +131,7 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Label.Director</label>
-        <font>font13</font>
-        <textcolor>FFB2D4F5</textcolor>
+        <textcolor>ff909090</textcolor>
       </control>
       <control>
         <description>Director value</description>
@@ -151,8 +139,6 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Director</label>
-        <font>font13</font>
-        <textcolor>FFFFFFFF</textcolor>
       </control>
       <control>
         <description>Studio txt</description>
@@ -160,8 +146,7 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Label.Studio</label>
-        <font>font13</font>
-        <textcolor>FFB2D4F5</textcolor>
+        <textcolor>ff909090</textcolor>
       </control>
       <control>
         <description>Studio value</description>
@@ -169,8 +154,6 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Studio</label>
-        <font>font13</font>
-        <textcolor>FFFFFFFF</textcolor>
       </control>
       <control>
         <description>Cast txt</description>
@@ -178,26 +161,26 @@
         <id>1</id>
         <width>475</width>
         <label>#MyTrailers.Details.Label.Cast</label>
-        <font>font13</font>
-        <textcolor>FFB2D4F5</textcolor>
+        <textcolor>ff909090</textcolor>
       </control>
       <control>
         <description>Cast value</description>
         <type>textboxscrollup</type>
         <id>1</id>
+        <posY>500</posY>
         <height>60</height>
-        <textcolor>ffffff</textcolor>
-        <font>font13</font>
+        <font>mediastream11</font>
         <label>#MyTrailers.Details.Cast</label>
       </control>
       <control>
         <description>Summary</description>
         <type>textboxscrollup</type>
         <id>1</id>
-        <height>300</height>
-        <textcolor>FFFFFFFF</textcolor>
+        <height>170</height>
+        <posY>530</posY>
+        <width>800</width>
         <seperator>-----------------------------------------------------------------------------------</seperator>
-        <font>font12</font>
+        <font>mediastream11</font>
         <label>#MyTrailers.Details.Description</label>
       </control>
     </control>
@@ -205,17 +188,16 @@
       <description>Trailer Poster</description>
       <type>image</type>
       <id>21</id>
-      <posX>113</posX>
-      <posY>129</posY>
+      <posX>40</posX>
+      <posY>220</posY>
       <width>260</width>
       <height>366</height>
-      <texture>#MyTrailers.Details.Poster</texture>
-      <colorkey>FFFF00FF</colorkey>
-      <colordiffuse>FFFFFFFF</colordiffuse>
       <keepaspectratio>yes</keepaspectratio>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Details.Poster</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!Control.IsVisible(50)</visible>
+      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
     </control>
   </controls>
 </window>
