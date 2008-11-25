@@ -16,7 +16,6 @@
   <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
   <controls>
     <import>TVSeries.dummy.xml</import>
-    <import>common.overlays.xml</import>
     <!--
     ::::::::::::::::::::::::::::
     :: FANART AND BACKGROUNDS ::
@@ -41,7 +40,7 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>tvfanarttest.jpg</texture>
+      <texture>hover_moving pictures.png</texture>
       <visible>!Control.IsVisible(1232)+!Control.IsVisible(1236)</visible>
     </control>
     <control>
@@ -73,19 +72,8 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>mainoverlay.png</texture>
+      <texture>tvviewbg.png</texture>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
-    </control>
-    <control>
-      <description>dialog bg</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>60</posY>
-      <width>512</width>
-      <height>152</height>
-      <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -353,89 +341,6 @@
     :::::::::::::::::::::::::::::::::: SERIES VIEW :: GRAPHICAL WIDE BANNER VIEW ::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
-    <control>
-      <description>Series Title</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>25</posX>
-      <posY>515</posY>
-      <width>1200</width>
-      <font>mediastream16tc</font>
-      <label>#TVSeries.Title</label>
-      <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control>
-      <description>Series Description</description>
-      <type>textboxscrollup</type>
-      <id>631</id>
-      <posX>25</posX>
-      <posY>549</posY>
-      <width>640</width>
-      <height>160</height>
-      <seperator>----------------------------------------</seperator>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream11</font>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-      <label>#TVSeries.Description</label>
-    </control>
-    <control Style="smallTitleB">
-      <label>#TVSeries.Series.InfoPanelLine1Key</label>
-      <type>label</type>
-      <posX>720</posX>
-      <posY>556</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitle">
-      <label>#TVSeries.Series.InfoPanelLine1Value</label>
-      <type>label</type>
-      <posX>870</posX>
-      <posY>556</posY>
-      <width>400</width>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitleB">
-      <label>#TVSeries.Series.InfoPanelLine2Key</label>
-      <type>label</type>
-      <posX>720</posX>
-      <posY>586</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitle">
-      <label>#TVSeries.Series.InfoPanelLine2Value</label>
-      <type>label</type>
-      <posX>870</posX>
-      <posY>586</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitleB">
-      <label>#TVSeries.Series.InfoPanelLine3Key</label>
-      <type>label</type>
-      <posX>720</posX>
-      <posY>616</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitle">
-      <label>#TVSeries.Series.InfoPanelLine3Value</label>
-      <type>label</type>
-      <posX>870</posX>
-      <posY>616</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitleB">
-      <label>#TVSeries.Series.InfoPanelLine4Key</label>
-      <type>label</type>
-      <posX>720</posX>
-      <posY>646</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control Style="smallTitle">
-      <label>#TVSeries.Series.InfoPanelLine4Value</label>
-      <type>label</type>
-      <posX>870</posX>
-      <posY>646</posY>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
-    </control>
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::::::::::::::::::::: SERIES VIEW :: LIST WIDE BANNER VIEW ::
@@ -748,7 +653,7 @@
           <scrollOffset>2</scrollOffset>
           <id>50</id>
           <posX>0</posX>
-          <posY>280</posY>
+          <posY>190</posY>
           <onright>2</onright>
           <width>1270</width>
           <onleft>2</onleft>
@@ -837,13 +742,14 @@
       <description>Import Animation</description>
       <type>animation</type>
       <id>51</id>
-      <posX>950</posX>
-      <posY>15</posY>
+      <posX>561</posX>
+      <posY>350</posY>
       <width>157</width>
       <height>24</height>
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>
+    <import>common.overlays.xml</import>
   </controls>
 </window>
