@@ -14,21 +14,23 @@
 #define SKIN_NAME						"StreamedMP"
 #define MEDIAPORTAL_REG_KEY  			"SOFTWARE\\Team MediaPortal\\MediaPortal"
 #define MEDIAPORTALUNINSTALL_REG_KEY    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
-#define STREAMEDMP_REG_KEY  			"SOFTWARE\\StreamedMP" 
+#define STREAMEDMP_REG_KEY  			"SOFTWARE\\StreamedMP"
 
-#define MATT_FEATURE_TVSERIES		"Main\\mattsk88TVSeries"
-#define MATT_FEATURE_MOVINGPICS		"Main\\mattsk88MovingPictures"
+#define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
-#define SPUCK_FEATURE_TVSERIES		"Main\\spuckTVSeries"
-#define SPUCK_FEATURE_MOVINGPICS	"Main\\spuckMovingPictures"
+#define MATT_FEATURE_TVSERIES			"Main\\mattsk88TVSeries"
+#define MATT_FEATURE_MOVINGPICS			"Main\\mattsk88MovingPictures"
 
-#define STREAMEDMP_EDITOR_FILE		INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
+#define SPUCK_FEATURE_TVSERIES			"Main\\spuckTVSeries"
+#define SPUCK_FEATURE_MOVINGPICS		"Main\\spuckMovingPictures"
 
-#define MEDIAPORTAL_MINNOWARN_VERSION		"0.9.3.20755"		
-#define MEDIAPORTAL_MIN_VERSION				"0.9.3.20432"
+#define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
-#define TVSERIES_MIN_VERSION				"2.0.3250.0"
-#define MOVINGPICTURES_MIN_VERSION			"0.6.0.280"
+#define MEDIAPORTAL_MINNOWARN_VERSION	"0.9.3.20755"		
+#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432"
+
+#define TVSERIES_MIN_VERSION			"2.0.3250.0"
+#define MOVINGPICTURES_MIN_VERSION		"0.6.1.293"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -53,11 +55,10 @@ prototype VOID 		UpdateSettings();
 prototype NUMBER	GetFileVersion(BYREF STRING, STRING);
 prototype VOID		CheckMPVersion();		
 prototype NUMBER	CheckPluginVersions(BYREF STRING);
+prototype NUMBER	LaunchBrowser(STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
-
-prototype NUMBER ConfigureXMLAttribute(BOOL, STRING, STRING, STRING, STRING, STRING, STRING, BYREF STRING);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
@@ -262,7 +263,7 @@ end;
 // completed successfully.
 //---------------------------------------------------------------------------
 function OnFirstUIAfter()
-    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine;
+    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine, szSite;
     NUMBER bOpt1, bOpt2;
 begin
 	
@@ -277,15 +278,22 @@ begin
 	bOpt1  = FALSE;
 	bOpt2  = FALSE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
-	szMsg2 = "";
+	szOption1 = "&Launch Home Page in default Browser";
 	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) then
-		szOption1 = "&Launch Streamed MP Basic Home Editor";
+		szOption2 = "Launch &Streamed MP Basic Home Editor";
 	endif;
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
 	
+	// If reboot not needed and option selected
 	if (!BATCH_INSTALL && bOpt1) then
+		// Launch webpage
+		szSite = STREAMEDMP_HOMEPAGE_URL;
+		LaunchBrowser(szSite);
+	endif;
+	if (!BATCH_INSTALL && bOpt2) then
 		LaunchApp(STREAMEDMP_EDITOR_FILE, szCmdLine);
 	endif;
+	        
 	
 end;
 //---------------------------------------------------------------------------
@@ -626,4 +634,47 @@ begin
     endif;
     
     return nReturn;
+end;
+
+function NUMBER LaunchBrowser(szSite)
+	STRING szKey, szDir;
+	STRING svValue, svReturnString1, svReturnString2;
+	NUMBER nvType, nvSize;
+begin
+    RegDBSetDefaultRoot(HKEY_CLASSES_ROOT); 
+    
+	// Find the value in the registry under "HKey_Classes_Root\.htm" file,
+	// to see where the browser address is kept.
+	RegDBGetKeyValueEx(".htm", "", nvType, svValue, nvSize);
+	
+	// Append the return value to Shell\open\command
+	// to get the path to executable of the browser
+	szKey = svValue+"\\shell\\open\\command";
+	RegDBGetKeyValueEx(szKey, "", nvType, svValue, nvSize);
+	
+	// Because the value in the command usually has %1 or other placeholders,
+	// we parse the path to get the directory first and then the file name
+	// (this way all the characters after the file name including the placeholder are removed)
+	ParsePath(svReturnString1, svValue, PATH);
+	ParsePath(svReturnString2, svValue, FILENAME_ONLY);
+	
+	// Now append the .exe extension to the file name.
+	// If the browser is IE, the path contains an extra quote("").
+	// By removing the placeholder, we also removed the ending close quote("),
+	// but it still has the beginning opening quote ("),
+	// so you have to put and ending quote (" to make if a correct path.
+	// Netscape does not have the extra "" in the path.
+	szDir=svReturnString1^svReturnString2+".exe";
+	if ( svReturnString2 = "iexplore" ) then
+		szDir=svReturnString1^svReturnString2+".exe\"";
+	endif;
+	
+	// Now the path to the browser is available.
+	// You can launch the browser and pass your .htm file as a parameter to it.
+	if LaunchAppAndWait(szDir, szSite, NOWAIT) < 0 then
+		return -1;
+	else
+		return 0;
+	endif;
+	
 end;
