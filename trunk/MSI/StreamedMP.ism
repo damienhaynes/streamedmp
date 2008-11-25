@@ -336,7 +336,7 @@
 		<row><td>pluginMovingPicturesDLL</td><td>{A3739C2D-3ADA-4751-ACD2-A7B1B7AFAB28}</td><td>WINDOWS</td><td>8</td><td/><td>movingpictures.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginRSSDLL</td><td>{F1322980-6692-46E0-B8DD-02B3566B0C81}</td><td>PROCESS</td><td>8</td><td/><td>mp_rssticker.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginTVSeriesLanguages</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginTVSeriesLanguages</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES</td><td>8</td><td/><td>en_us_.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1392,19 +1392,32 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
+		<row><td>da.xml</td><td>pluginTVSeriesLanguages</td><td>da.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\da.xml</td><td>1</td><td/></row>
+		<row><td>de.xml</td><td>pluginTVSeriesLanguages</td><td>de.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\de.xml</td><td>1</td><td/></row>
 		<row><td>default.ttf</td><td>fontFluidBody</td><td>Default.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\Default.ttf</td><td>1</td><td/></row>
 		<row><td>defaultcaps.ttf</td><td>fontFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>1</td><td/></row>
+		<row><td>en_us_.xml</td><td>pluginTVSeriesLanguages</td><td>en(us).xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\en(us).xml</td><td>1</td><td/></row>
+		<row><td>es.xml</td><td>pluginTVSeriesLanguages</td><td>es.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\es.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
+		<row><td>fr.xml</td><td>pluginTVSeriesLanguages</td><td>fr.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\fr.xml</td><td>1</td><td/></row>
+		<row><td>he.xml</td><td>pluginTVSeriesLanguages</td><td>he.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\he.xml</td><td>1</td><td/></row>
+		<row><td>heb.xml</td><td>pluginTVSeriesLanguages</td><td>heb.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\heb.xml</td><td>1</td><td/></row>
 		<row><td>home.url</td><td>webHome</td><td>Home.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Home.url</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
+		<row><td>it.xml</td><td>pluginTVSeriesLanguages</td><td>it.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\it.xml</td><td>1</td><td/></row>
 		<row><td>mediainfo.dll</td><td>pluginMediaInfoDLL</td><td>MEDIAI~1.DLL|MediaInfo.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MediaInfo.dll</td><td>1</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\movingpictures\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\rss\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
+		<row><td>nl_nl_.xml</td><td>pluginTVSeriesLanguages</td><td>nl(nl).xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\nl(nl).xml</td><td>1</td><td/></row>
+		<row><td>no.xml</td><td>pluginTVSeriesLanguages</td><td>no.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\no.xml</td><td>1</td><td/></row>
+		<row><td>pl.xml</td><td>pluginTVSeriesLanguages</td><td>pl.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\pl.xml</td><td>1</td><td/></row>
+		<row><td>pt_pt.xml</td><td>pluginTVSeriesLanguages</td><td>pt_pt.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\pt_pt.xml</td><td>1</td><td/></row>
 		<row><td>streamedmp.formatrules</td><td>tvseriesConfig</td><td>STREAM~1.FOR|StreamedMP.formatRules</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\StreamedMP.formatRules</td><td>1</td><td/></row>
 		<row><td>streamedmp.logorules</td><td>tvseriesConfig</td><td>STREAM~1.LOG|StreamedMP.logoRules</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\StreamedMP.logoRules</td><td>1</td><td/></row>
 		<row><td>streamedmp_editor.exe</td><td>menuEditor</td><td>STREAM~1.EXE|streamedmp_editor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\editor\streamedmp_editor\bin\release\streamedmp_editor.exe</td><td>1</td><td/></row>
 		<row><td>streamedmp_tvseries_logos.ps</td><td>photoshopPSD</td><td>STREAM~1.PSD|StreamedMP TVSeries Logos.psd</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\custom tvseries logos\StreamedMP TVSeries Logos.psd</td><td>1</td><td/></row>
+		<row><td>sv.xml</td><td>pluginTVSeriesLanguages</td><td>sv.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\sv.xml</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
 		<row><td>updates.url</td><td>webUpdates</td><td>Updates.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Updates.url</td><td>1</td><td/></row>
 		<row><td>wiki.url</td><td>webWiki</td><td>Wiki.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Wiki.url</td><td>1</td><td/></row>
@@ -1706,7 +1719,6 @@
 		<col def="I4">ISAttributes</col>
 		<row><td>mattsk88MovingPictures</td><td>&lt;SKINFILES&gt;\mattsk88xmls</td><td>4</td><td>movingpictures*.xml</td><td/><td>0</td></row>
 		<row><td>mattsk88TVSeries</td><td>&lt;SKINFILES&gt;\mattsk88xmls</td><td>4</td><td>TVSeries*.xml</td><td>TVSeries.mattsk88.xml</td><td>0</td></row>
-		<row><td>pluginTVSeriesLanguages</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>0</td></row>
 		<row><td>skinMedia</td><td>&lt;SKINFILES&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td/><td>2</td></row>
 		<row><td>skinSounds</td><td>&lt;SKINFILES&gt;\sounds</td><td>4</td><td>*.wav,*.mp3,*.wma</td><td/><td>2</td></row>
 		<row><td>skinXML</td><td>&lt;SKINFILES&gt;</td><td>4</td><td>*.xml</td><td/><td>0</td></row>
@@ -3570,6 +3582,7 @@
 		<row><td>NEW_STRING8</td><td>1033</td><td>Choose the skin layout you prefer to install for the TV Series plugin:</td><td>0</td><td/><td>-1919152361</td></row>
 		<row><td>NEW_STRING9</td><td>1033</td><td>&amp;Default Layout</td><td>0</td><td/><td>-1382224757</td></row>
 		<row><td>UNINST|Uninstall StreamedMP</td><td>1033</td><td>UNINST~1|Uninstall Streamed MP</td><td>0</td><td/><td>-845403284</td></row>
+		<row><td>WELCOME</td><td>1033</td><td>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC.\n\nThe Install Wizard will install Steamed MP skin on your computer. To continue, click Next.</td><td>0</td><td/><td>-845389133</td></row>
 	</table>
 
 	<table name="ISTargetImage">
