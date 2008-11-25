@@ -1,86 +1,142 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
-    
     <control>
       <description>Index Item Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>50</posX>
-      <posY>620</posY>
+      <posX>870</posX>
+      <posY>695</posY>
       <label>#itemcount</label>
-      <align>left</align>
       <textcolor>White</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>Control.IsVisible(50)</visible>
     </control>
-      
+    <control>
+      <description>Index Item Selected Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>215</posY>
+      <width>600</width>
+      <label>#selecteditem</label>
+      <font>mediastream14tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>Control.IsVisible(50)</visible>
+    </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>-210</buttonX>
-      <buttonY>64</buttonY>
-      <buttonwidth>385</buttonwidth>
-      <buttonheight>515</buttonheight>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>100</width>
-      <height>568</height>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>0</posX>
-        <posY>184</posY>
-        <width>360</width>
-        <height>412</height>
-        <texture>menu_slide_background.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="250" start="-360,0">visible</animation>
-        <animation effect="slide" time="250" end="-360,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-    <control>
-      <description>button group</description>
-      <type>group</type>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-300,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="0,-300">WindowClose</animation>
-        <posX>0</posX>
-        <posY>194</posY>
-      <layout>StackLayout</layout>
-      
       <control>
-        <description>View-As</description>
-        <type>button</type>
-        <id>2</id>
-        <label>100</label>
-        <onright>50</onright>
+        <id>0</id>
+        <label>VIEW OPTIONS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-      
       <control>
-        <description>Sort</description>
-        <type>sortbutton</type>
-        <id>3</id>
-        <label>268</label>
-        <onright>50</onright>
+        <id>0</id>
+        <label>JUMP TO</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>337</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-
       <control>
-        <description>Refresh</description>
-        <type>button</type>
-        <id>5</id>
-        <label>184</label>
-        <onright>50</onright>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>View-As</description>
+          <type>button</type>
+          <id>2</id>
+          <label>100</label>
+          <onup>10</onup>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>3</id>
+          <label>103</label>
+        </control>
+        <control>
+          <description>Refresh</description>
+          <type>button</type>
+          <id>5</id>
+          <label>184</label>
+          <onright>50</onright>
+          <ondown>76</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Moving Pictures</description>
+          <type>button</type>
+          <id>76</id>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
+          <onleft>50</onleft>
+          <ondown>77</ondown>
+          <onup>5</onup>
+        </control>
+        <control>
+          <description>MyVideos</description>
+          <type>button</type>
+          <id>77</id>
+          <label>My Videos</label>
+          <onright>50</onright>
+          <ondown>78</ondown>
+          <onup>76</onup>
+          <hyperlink>6</hyperlink>
+        </control>
+        <control>
+          <description>My Films</description>
+          <type>button</type>
+          <id>78</id>
+          <label>My Films</label>
+          <onleft>50</onleft>
+          <hyperlink>510</hyperlink>
+          <onup>77</onup>
+          <hyperlink>7986</hyperlink>
+        </control>
       </control>
-      
-      <visible>Control.IsVisible(50)</visible>
-    </control>
     </control>
     <control>
       <description>group element</description>
@@ -91,7 +147,6 @@
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
-        <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
         <id>50</id>
         <control>
@@ -99,100 +154,57 @@
           <type>listcontrol</type>
           <id>50</id>
           <scrollOffset>2</scrollOffset>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <textXOff2>630</textXOff2>
-          <width>650</width>
-          <onup>2</onup>
-          <spinPosX>1300</spinPosX>
-          <spinPosY>623</spinPosY>
-          <ondown>2</ondown>
+          <posX>670</posX>
+          <posY>215</posY>
+          <height>480</height>
+          <IconXOff>5</IconXOff>
+          <IconYOff>5</IconYOff>
+          <textXOff>40</textXOff>
+          <textureHeight>55</textureHeight>
+          <itemWidth>40</itemWidth>
+          <itemHeight>47</itemHeight>
         </control>
         <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
+          <!-- <scrollOffset>1</scrollOffset> -->
           <onleft>2</onleft>
           <onright>2</onright>
-          <posX>30</posX>
-          <posY>185</posY>
-          <width>1330</width>
-          <height>420</height>
-          <spinPosX>1300</spinPosX>
-          <spinPosY>623</spinPosY>
-          <spinColor>ffcccccc</spinColor>
-          <textureUp>page_up_nofocus.png</textureUp>
-          <textureDown>page_down_nofocus.png</textureDown>
-          <textureUpFocus>page_up_focus.png</textureUpFocus>
-          <textureDownFocus>page_down_focus.png</textureDownFocus>
-          <itemWidth>76</itemWidth>
-          <itemHeight>103</itemHeight>
-          <textureWidth>76</textureWidth>
-          <textureHeight>103</textureHeight>
-          <thumbWidth>54</thumbWidth>
-          <thumbHeight>81</thumbHeight>
-          <thumbPosX>11</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <imageFolder>movie_preview_thumb_background_nofocus.png</imageFolder>
-          <imageFolderFocus>movie_preview_thumb_background_focus.png</imageFolderFocus>
-          <font>font12</font>
-          <suffix>|</suffix>
-          <textureWidthBig>152</textureWidthBig>
-          <textureHeightBig>205</textureHeightBig>
-          <itemWidthBig>152</itemWidthBig>
-          <itemHeightBig>205</itemHeightBig>
-          <thumbWidthBig>110</thumbWidthBig>
-          <thumbHeightBig>164</thumbHeightBig>
-          <thumbPosXBig>21</thumbPosXBig>
-          <thumbPosYBig>20</thumbPosYBig>
-          <thumbZoom>no</thumbZoom>
-          <enableFocusZoom>no</enableFocusZoom>
-          <unfocusedAlpha>150</unfocusedAlpha>
+          <itemWidth>140</itemWidth>
+          <itemHeight>192</itemHeight>
+          <textureWidth>98</textureWidth>
+          <thumbWidth>70</thumbWidth>
+          <thumbPosX>14</thumbPosX>
+          <textureWidthBig>184</textureWidthBig>
+          <itemWidthBig>204</itemWidthBig>
+          <thumbWidthBig>140</thumbWidthBig>
+          <thumbPosXBig>20</thumbPosXBig>
         </control>
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
           <id>50</id>
-          <posX>80</posX>
-          <posY>288</posY>
-          <width>1360</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
           <onup>2</onup>
-          <spinPosX>1300</spinPosX>
-          <spinPosY>623</spinPosY>
-          <spinWidth>24</spinWidth>
-          <spinHeight>24</spinHeight>
-          <spinColor>ffcccccc</spinColor>
-          <itemWidth>152</itemWidth>
-          <itemHeight>205</itemHeight>
-          <textureWidth>152</textureWidth>
-          <textureHeight>205</textureHeight>
-          <thumbWidth>110</thumbWidth>
-          <thumbHeight>164</thumbHeight>
-          <thumbPosX>21</thumbPosX>
-          <thumbPosY>20</thumbPosY>
-          <imageFolderFocus>Framefocus.png</imageFolderFocus>
-          <frame>video_filmstrip_frame.png</frame>
-          <frameFocus>video_filmstrip_frame.png</frameFocus>
-          <background>Coverbig.png</background>
-          <showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <thumbAnimation effect="zoom" start="100,100" end="200,200" time="250">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="200,200" end="100,100" time="250">unfocus</thumbAnimation>
+          <ondown>2</ondown>
+          <posX>100</posX>
+          <posY>350</posY>
+          <width>1180</width>
+          <itemWidth>235</itemWidth>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
         </control>
         <control>
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
           <id>50</id>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <onup>2</onup>
-          <ondown>2</ondown>
           <scrollOffset>2</scrollOffset>
         </control>
       </control>
     </control>
-    
   </controls>
 </window>

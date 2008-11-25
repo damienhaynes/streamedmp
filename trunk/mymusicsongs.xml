@@ -63,7 +63,6 @@
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
-    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -219,7 +218,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -229,6 +227,19 @@
       <width>500</width>
       <font>mediastream16tc</font>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
+      <label>#selecteditem</label>
+      <seperator>---------------------------------------------------------------------------------------------------------</seperator>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>650</posY>
+      <width>1280</width>
+      <font>mediastream16tc</font>
+      <visible>facadeview.filmstrip</visible>
+      <align>center</align>
       <label>#selecteditem</label>
       <seperator>---------------------------------------------------------------------------------------------------------</seperator>
     </control>
