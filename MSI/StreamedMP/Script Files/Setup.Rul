@@ -11,9 +11,10 @@
 // Included header files ----------------------------------------------------
 #include "ifx.h"
 
-#define SKIN_NAME					"StreamedMP"
-#define MEDIAPORTAL_REG_KEY  		"SOFTWARE\\Team MediaPortal\\MediaPortal"
-#define STREAMEDMP_REG_KEY  		"SOFTWARE\\StreamedMP" 
+#define SKIN_NAME						"StreamedMP"
+#define MEDIAPORTAL_REG_KEY  			"SOFTWARE\\Team MediaPortal\\MediaPortal"
+#define MEDIAPORTALUNINSTALL_REG_KEY    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
+#define STREAMEDMP_REG_KEY  			"SOFTWARE\\StreamedMP" 
 
 #define MATT_FEATURE_TVSERIES		"Main\\mattsk88TVSeries"
 #define MATT_FEATURE_MOVINGPICS		"Main\\mattsk88MovingPictures"
@@ -25,6 +26,9 @@
 
 #define MEDIAPORTAL_MINNOWARN_VERSION		"0.9.3.20755"		
 #define MEDIAPORTAL_MIN_VERSION				"0.9.3.20432"
+
+#define TVSERIES_MIN_VERSION				"2.0.3250.0"
+#define MOVINGPICTURES_MIN_VERSION			"0.6.0.280"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -46,11 +50,14 @@ prototype NUMBER 	GetMediaPortalProgramDir(BYREF STRING);
 prototype NUMBER 	GetMediaPortalConfigDir(BYREF STRING); 
 prototype VOID 		SetDefaults();
 prototype VOID 		UpdateSettings(); 
-prototype NUMBER	GetMPVersion(BYREF STRING);
+prototype NUMBER	GetFileVersion(BYREF STRING, STRING);
 prototype VOID		CheckMPVersion();		
+prototype NUMBER	CheckPluginVersions(BYREF STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
+
+prototype NUMBER ConfigureXMLAttribute(BOOL, STRING, STRING, STRING, STRING, STRING, STRING, BYREF STRING);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
@@ -62,9 +69,9 @@ BOOL g_bMovingPicturesDefault;
 // The OnBegin event is called directly by the framework after the setup
 // initializes.
 //---------------------------------------------------------------------------
-function OnBegin()	
+function OnBegin()
 begin		
-	SetDefaults();			
+	SetDefaults();		
 end;           
 
 function VOID SetDefaults()
@@ -111,7 +118,7 @@ function OnFirstUIBefore()
     STRING svMPVersion;    
 	BOOL bCustom;
 begin						   
-
+  
 	SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	   
     
 	nSetupType = TYPICAL;	
@@ -136,7 +143,7 @@ Dlg_SdFeatureTree:
 		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
 		if (nResult = BACK) goto Dlg_SdWelcome;  
     endif;
-
+     
 Dlg_SelectTVSeries:
 	nResult = ShowSelectTVSeries(FALSE);
 	if (nResult = BACK) goto Dlg_SdFeatureTree;  
@@ -152,6 +159,13 @@ Dlg_SdStartCopy:
 	
 	if (nResult = BACK) then
     	goto Dlg_SelectMovingPictures;
+    else
+    	// Confirm Plugin versions are up to date if chosen not to install them    	   
+	    szQuestion = "";
+	    nResult = CheckPluginVersions(szQuestion);
+ 		if nResult < 0  then
+ 			if (AskYesNo ( szQuestion, YES ) = YES) goto Dlg_SdFeatureTree; 	
+ 		endif;
     endif;
     
     // setup default status
@@ -263,8 +277,11 @@ begin
 	bOpt1  = FALSE;
 	bOpt2  = FALSE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
-	szOption1 = "Launch StreamedMP Basic Home Editor";
-	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+	szMsg2 = "";
+	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) then
+		szOption1 = "&Launch Streamed MP Basic Home Editor";
+	endif;
+	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
 	
 	if (!BATCH_INSTALL && bOpt1) then
 		LaunchApp(STREAMEDMP_EDITOR_FILE, szCmdLine);
@@ -312,6 +329,7 @@ begin
     if GetMediaPortalConfigDir(svValue) < 0 then;
     	return;
     endif;
+    svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
     
     // Delete Skin Cache Folder
     SetStatusWindow(100, "Removing " + SKIN_NAME + " from MediaPortal cache.");
@@ -325,18 +343,26 @@ function NUMBER GetMediaPortalProgramDir(svValue)
 begin
 
    	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
-		
-	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ApplicationDir",nvType,svValue,nvSize) < 0) then
-		return -1;	
-	endif;
 	
+	// Get MediaPortal Install Directory from Uninstall path in registry
+	// This should exist if MediaPortal is correctly installed
+	if (RegDBGetKeyValueEx(MEDIAPORTALUNINSTALL_REG_KEY,"InstallPath",nvType,svValue,nvSize) < 0) then
+        // Fallback to this directory incase its a development build
+		if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ApplicationDir",nvType,svValue,nvSize) < 0) then
+			return -1;	
+		endif;
+		
+	endif;
+		
 	return 0;
 end;
 
 function NUMBER GetMediaPortalConfigDir(svValue)
 	NUMBER nvSize,nvType;
 begin
-
+    
+    // TODO: Read MediaPortalDirs.xml to get all Portal directories
+    
    	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
 		
 	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ConfigDir",nvType,svValue,nvSize) < 0) then
@@ -506,13 +532,25 @@ begin
 	
 end;             
 
-function NUMBER	GetMPVersion(svVersionNumber)
+function NUMBER	GetFileVersion(svVersionNumber,sType)
 	STRING svValue,szFileName;	
 begin
-    
-    GetMediaPortalProgramDir(svValue);
-    szFileName = svValue^"MediaPortal.exe";
-    
+	
+	GetMediaPortalProgramDir(svValue);
+	
+	switch (sType) 
+
+        case "MEDIAPORTAL": 
+            szFileName = svValue^"MediaPortal.exe";; 
+
+        case "TVSERIES": 
+            szFileName = svValue^"plugins\\windows\\MP-TVSeries.dll"; 
+
+        case "MOVINGPICTURES": 
+            szFileName = svValue^"plugins\\windows\\MovingPictures.dll";      
+
+    endswitch; 
+
     return VerGetFileVersion(szFileName,svVersionNumber);
     
 end;
@@ -523,7 +561,7 @@ function VOID CheckMPVersion()
 begin
     
     // Warn user of old version of MediaPortal
-    if (GetMPVersion(svVersion2) < 0) then    	
+    if (GetFileVersion(svVersion2,"MEDIAPORTAL") < 0) then    	
     	MessageBox(@MPNOTFOUND,SEVERE);
     	abort;                 	    	
     endif;
@@ -545,5 +583,47 @@ begin
     	MessageBox(@MPOLDVERSION,WARNING);
     endif;
     
+end;
+
+function NUMBER CheckPluginVersions(szQuestion)
+	STRING svVersion1, svVersion2;
+	STRING szMsg;
+	NUMBER nReturn;
+begin
     
+    nReturn = 0;
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\TVSeries")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"TVSERIES");
+		svVersion1 = TVSERIES_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+    		szQuestion = "Your current version of TV-Series plugin v" + svVersion2 + 
+    					" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+    					svVersion1;
+    		nReturn=nReturn-1;
+    		
+    	endif;
+    endif;
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\MovingPictures")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"MOVINGPICTURES");
+		svVersion1 = MOVINGPICTURES_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of Moving Pictures plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif;
+    
+    if nReturn < 0 then
+    	szQuestion = szQuestion + "\n\nDo you wish to go back to the select features dialog?";
+    endif;
+    
+    return nReturn;
 end;
