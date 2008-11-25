@@ -81,17 +81,6 @@
     :::::::::::::::::::::::::::::::::
     -->
     <control>
-      <type>label</type>
-      <description>Season Number</description>
-      <id>0</id>
-      <posX>867</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
-      <label>#TVSeries.Season.SeasonLabel</label>
-      <align>right</align>
-      <visible>Control.IsVisible(1239)</visible>
-    </control>
-    <control>
       <description>Series Name BG</description>
       <type>image</type>
       <id>0</id>
@@ -492,17 +481,6 @@
     </control>
     <control>
       <type>label</type>
-      <label>#TVSeries.Episode.SeasonLabel</label>
-      <id>0</id>
-      <posX>400</posX>
-      <posY>270</posY>
-      <width>300</width>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
-    </control>
-    <control>
-      <type>label</type>
       <label>#TVSeries.Episode.LocalEpisodeName</label>
       <id>0</id>
       <posX>300</posX>
@@ -514,14 +492,14 @@
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesTitle">
-      <label>#TVSeries.Episode.InfoPanelLine1Key</label>
+      <label>#TVSeries.Episode.InfoPanelLine3Key</label>
       <type>label</type>
       <posX>300</posX>
       <posY>490</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesLabel">
-      <label>#TVSeries.Episode.InfoPanelLine1Value</label>
+      <label>#TVSeries.Episode.InfoPanelLine3Value</label>
       <type>label</type>
       <posX>430</posX>
       <posY>490</posY>
@@ -542,28 +520,28 @@
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesTitle">
-      <label>#TVSeries.Episode.InfoPanelLine3Key</label>
+      <label>#TVSeries.Episode.InfoPanelLine4Key</label>
       <type>label</type>
       <posX>300</posX>
       <posY>520</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesLabel">
-      <label>#TVSeries.Episode.InfoPanelLine3Value</label>
+      <label>#TVSeries.Episode.InfoPanelLine4Value</label>
       <type>label</type>
       <posX>430</posX>
       <posY>520</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesTitle">
-      <label>#TVSeries.Episode.InfoPanelLine4Key</label>
+      <label>#TVSeries.Episode.InfoPanelLine5Key</label>
       <type>label</type>
       <posX>300</posX>
       <posY>550</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control Style="TVSeriesLabel">
-      <label>#TVSeries.Episode.InfoPanelLine4Value</label>
+      <label>#TVSeries.Episode.InfoPanelLine5Value</label>
       <type>label</type>
       <posX>430</posX>
       <posY>550</posY>
