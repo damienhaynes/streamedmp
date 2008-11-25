@@ -220,6 +220,9 @@
 	<table name="AppSearch">
 		<col key="yes" def="s72">Property</col>
 		<col key="yes" def="s72">Signature_</col>
+		<row><td>MEDIAPORTALDIRS</td><td>NewSignature11</td></row>
+		<row><td>MPFOLDER</td><td>NewSignature1</td></row>
+		<row><td>TEMP</td><td>NewSignature12</td></row>
 	</table>
 
 	<table name="BBControl">
@@ -247,6 +250,7 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
+		<row><td>ISXMLCFG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isxmlcfg.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
 		<row><td>NewBinary10</td><td/><td>&lt;ISPROJECTDIR&gt;\res\mattsk88-tvseries.bmp</td></row>
 		<row><td>NewBinary11</td><td/><td>&lt;ISPROJECTDIR&gt;\res\spuck-tvseries.bmp</td></row>
@@ -325,12 +329,14 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>IS_ININSTALL_SHORTCUT</td><td>{3B35284B-94A1-4A75-B3A1-D2EAB6852BB5}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontFluidBody</td><td>{762D6B85-A3AD-4634-8C8F-90B1350223C6}</td><td>FontsFolder</td><td>8</td><td/><td>default.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontFluidBodyCaps</td><td>{CFD69844-13BB-4712-BB24-B465CDD5271A}</td><td>FontsFolder</td><td>8</td><td/><td>defaultcaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontFluidTitleCaps</td><td>{D3D6626A-49B9-40AF-A2B6-D0C5AD8B7EB0}</td><td>FontsFolder</td><td>8</td><td/><td>titlecaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>mattsk88MovingPictures</td><td>{DB260C85-DD0E-4893-BD33-EF8CE98AA0C7}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>mattsk88TVSeries</td><td>{9A81948E-A894-4E44-BFA5-8D5462DFE795}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>menuEditor</td><td>{A5AEBB21-201D-4094-A115-C1D834D63A6E}</td><td>STREAMEDMP1</td><td>8</td><td/><td>streamedmp_editor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>photoshopPSD</td><td>{657E1C0D-D052-4F29-AA34-654BCC9FA6DD}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMediaInfoDLL</td><td>{D8BF4989-9653-4C6A-90FD-CFAB883B2197}</td><td>WINDOWS</td><td>8</td><td/><td>mediainfo.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMovingPicturesDLL</td><td>{A3739C2D-3ADA-4751-ACD2-A7B1B7AFAB28}</td><td>WINDOWS</td><td>8</td><td/><td>movingpictures.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginRSSDLL</td><td>{F1322980-6692-46E0-B8DD-02B3566B0C81}</td><td>PROCESS</td><td>8</td><td/><td>mp_rssticker.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -552,6 +558,7 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISRegistryComponent</td></row>
+		<row><td>INSTALLDIR</td><td>IS_ININSTALL_SHORTCUT</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -564,6 +571,7 @@
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td>Required for installations using InstallScript.</td></row>
+		<row><td>ISXmlAppSearch</td><td>257</td><td>ISXMLCFG.DLL</td><td>ISXmlAppSearch</td><td/></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/></row>
 		<row><td>setAllUsersProfile2K</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%ALLUSERSPROFILE]</td><td/></row>
@@ -667,6 +675,7 @@
 		<col key="yes" def="S72">Parent</col>
 		<col key="yes" def="S255">Path</col>
 		<col def="I2">Depth</col>
+		<row><td>NewSignature11</td><td>NewSignature1</td><td></td><td>10</td></row>
 	</table>
 
 	<table name="DuplicateFile">
@@ -1329,7 +1338,9 @@
 		<col def="S255">ISComments</col>
 		<col def="S255">ISFeatureCabName</col>
 		<col def="S255">ISProFeatureName</col>
+		<row><td>LogosPSD</td><td>Tools</td><td>##ID_STRING37##</td><td>##ID_STRING39##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
+		<row><td>MenuEditor</td><td>Tools</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>RELEASE_PLUGINS</td><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>RSS</td><td>Plugins</td><td>##ID_STRING15##</td><td>##ID_STRING34##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1344,7 +1355,9 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>LogosPSD</td><td>photoshopPSD</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
+		<row><td>Main</td><td>IS_ININSTALL_SHORTCUT</td></row>
 		<row><td>Main</td><td>fontFluidBody</td></row>
 		<row><td>Main</td><td>fontFluidBodyCaps</td></row>
 		<row><td>Main</td><td>fontFluidTitleCaps</td></row>
@@ -1352,12 +1365,12 @@
 		<row><td>Main</td><td>skinSounds</td></row>
 		<row><td>Main</td><td>skinXML</td></row>
 		<row><td>Main</td><td>tvseriesConfig</td></row>
+		<row><td>MenuEditor</td><td>menuEditor</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
 		<row><td>RSS</td><td>pluginRSSDLL</td></row>
 		<row><td>TVSeries</td><td>pluginMediaInfoDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
-		<row><td>Tools</td><td>menuEditor</td></row>
 		<row><td>mattsk88MovingPictures</td><td>mattsk88MovingPictures</td></row>
 		<row><td>mattsk88TVSeries</td><td>mattsk88TVSeries</td></row>
 		<row><td>spuckMovingPictures</td><td>spuckMovingPictures</td></row>
@@ -1385,6 +1398,7 @@
 		<row><td>streamedmp.formatrules</td><td>tvseriesConfig</td><td>STREAM~1.FOR|StreamedMP.formatRules</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\StreamedMP.formatRules</td><td>1</td><td/></row>
 		<row><td>streamedmp.logorules</td><td>tvseriesConfig</td><td>STREAM~1.LOG|StreamedMP.logoRules</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\StreamedMP.logoRules</td><td>1</td><td/></row>
 		<row><td>streamedmp_editor.exe</td><td>menuEditor</td><td>STREAM~1.EXE|streamedmp_editor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\editor\streamedmp_editor\bin\release\streamedmp_editor.exe</td><td>1</td><td/></row>
+		<row><td>streamedmp_tvseries_logos.ps</td><td>photoshopPSD</td><td>STREAM~1.PSD|StreamedMP TVSeries Logos.psd</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\custom tvseries logos\StreamedMP TVSeries Logos.psd</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
 	</table>
 
@@ -1414,6 +1428,7 @@
 		<row><td>BiildInternetEnabled</td><td/></row>
 		<row><td>BiildSingleExeEnabled</td><td/></row>
 		<row><td>BiildSingleMSIEnabled</td><td/></row>
+		<row><td>PROJECT_ASSISTANT_DEFAULT_FEATURE</td><td>Main</td></row>
 	</table>
 
 	<table name="ISCEApp">
@@ -1601,12 +1616,14 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>IS_ININSTALL_SHORTCUT</td><td/><td/><td>_0F479C37_81BF_405D_9F25_E77F38189391_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontFluidBody</td><td/><td/><td>_AC0D793F_2670_49FC_803D_5C94EB482EDD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontFluidBodyCaps</td><td/><td/><td>_BC32B391_5B7D_4BBD_8E0A_FE5120529351_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontFluidTitleCaps</td><td/><td/><td>_3464E48E_06B3_4855_9692_669CE6E69953_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>mattsk88MovingPictures</td><td/><td/><td>_DF22B257_E2F6_4632_82EE_8DBF18C286CC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>mattsk88TVSeries</td><td/><td/><td>_4F4EF1A9_904B_43F9_8025_20E70600CAE1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>menuEditor</td><td/><td/><td>_82B4A157_DF26_4AD7_BB6C_19BCF8DB57AB_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>photoshopPSD</td><td/><td/><td>_99CAA059_AF29_4792_8370_3D2DE31BCF10_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMediaInfoDLL</td><td/><td/><td>_C9529F64_24E4_4F66_A8E8_1FDDA4FDD6DF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMovingPicturesDLL</td><td/><td/><td>_D229F38C_9C25_4A94_BEF9_43F6BFE7C56E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginRSSDLL</td><td/><td/><td>_DC8C6009_F483_4811_B31F_C3A49E5AC5A4_FILTER</td><td/><td/><td/><td/></row>
@@ -1699,7 +1716,9 @@
 		<col def="S255">Password</col>
 		<col def="S50">CDRomFolder</col>
 		<col def="S50">Moniker</col>
+		<row><td>LogosPSD</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MenuEditor</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>RSS</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2240,7 +2259,9 @@
 	<table name="ISSetupTypeFeatures">
 		<col key="yes" def="s38">ISSetupType_</col>
 		<col key="yes" def="s38">Feature_</col>
+		<row><td>Custom</td><td>LogosPSD</td></row>
 		<row><td>Custom</td><td>Main</td></row>
+		<row><td>Custom</td><td>MenuEditor</td></row>
 		<row><td>Custom</td><td>MovingPictures</td></row>
 		<row><td>Custom</td><td>Plugins</td></row>
 		<row><td>Custom</td><td>RSS</td></row>
@@ -2250,11 +2271,14 @@
 		<row><td>Custom</td><td>mattsk88TVSeries</td></row>
 		<row><td>Custom</td><td>spuckMovingPictures</td></row>
 		<row><td>Custom</td><td>spuckTVSeries</td></row>
+		<row><td>Minimal</td><td>LogosPSD</td></row>
 		<row><td>Minimal</td><td>Main</td></row>
+		<row><td>Minimal</td><td>MenuEditor</td></row>
 		<row><td>Minimal</td><td>Tools</td></row>
 		<row><td>Minimal</td><td>spuckMovingPictures</td></row>
 		<row><td>Minimal</td><td>spuckTVSeries</td></row>
 		<row><td>Typical</td><td>Main</td></row>
+		<row><td>Typical</td><td>MenuEditor</td></row>
 		<row><td>Typical</td><td>MovingPictures</td></row>
 		<row><td>Typical</td><td>Plugins</td></row>
 		<row><td>Typical</td><td>RSS</td></row>
@@ -3472,8 +3496,8 @@
 		<row><td>ID_MP_TITLE</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919121321</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td>Team-MediaPortal</td><td>0</td><td/><td>-1919100115</td></row>
 		<row><td>ID_STRING10</td><td>1033</td><td>MEDIAP~2|MediaPortal Skins</td><td>0</td><td/><td>-1919121298</td></row>
-		<row><td>ID_STRING11</td><td>1033</td><td>STREAM~1|StreamedMP</td><td>0</td><td/><td>-1784890454</td></row>
-		<row><td>ID_STRING12</td><td>1033</td><td>The MediaStream Menu Generator is used to customize MediaPortal's Basic Home screen</td><td>0</td><td/><td>-1919137618</td></row>
+		<row><td>ID_STRING11</td><td>1033</td><td>STREAM~1|Streamed MP</td><td>0</td><td/><td>-845372724</td></row>
+		<row><td>ID_STRING12</td><td>1033</td><td>Tools and Utilities that can be used to customise Steamed MP skin</td><td>0</td><td/><td>-979580656</td></row>
 		<row><td>ID_STRING13</td><td>1033</td><td>TV Series</td><td>0</td><td/><td>-1919153970</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919145778</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
@@ -3491,19 +3515,24 @@
 		<row><td>ID_STRING26</td><td>1033</td><td>Spuck's MediaStream skins</td><td>0</td><td/><td>-1919120082</td></row>
 		<row><td>ID_STRING27</td><td>1033</td><td>Mattsk88 MediaStream skins</td><td>0</td><td/><td>-1919103698</td></row>
 		<row><td>ID_STRING28</td><td>1033</td><td>Main</td><td>0</td><td/><td>-1919138226</td></row>
-		<row><td>ID_STRING29</td><td>1033</td><td>The MediaStream skin has been ported from XBMC for use with-in MediaPortal</td><td>0</td><td/><td>-1919135567</td></row>
+		<row><td>ID_STRING29</td><td>1033</td><td>The Streamed MP skin has been ported from XBMC for use with-in MediaPortal media center application</td><td>0</td><td/><td>-979598704</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>http://code.google.com/p/streamedmp/</td><td>0</td><td/><td>-1919108243</td></row>
-		<row><td>ID_STRING30</td><td>1033</td><td>MediaPortal plugins compatible with this version of MediaStream skin</td><td>0</td><td/><td>-1919142226</td></row>
-		<row><td>ID_STRING31</td><td>1033</td><td>STREAM~1|StreamedMP Editor</td><td>0</td><td/><td>-1784884310</td></row>
-		<row><td>ID_STRING32</td><td>1033</td><td>MP-TVSeries is a popular TV Series plug-in for MediaPortal, a open-source media center application. It focuses on organizing the user's TV Series library with minimal user interaction, allowing for a more user friendly and ease of use experience.</td><td>0</td><td/><td>-1919121392</td></row>
+		<row><td>ID_STRING30</td><td>1033</td><td>MediaPortal plugins compatible with this version of Streamed MP skin</td><td>0</td><td/><td>-979596976</td></row>
+		<row><td>ID_STRING31</td><td>1033</td><td>STREAM~1|Streamed MP Editor</td><td>0</td><td/><td>-845409556</td></row>
+		<row><td>ID_STRING32</td><td>1033</td><td>MP-TVSeries is a TV Series plug-in for MediaPorta media center application. It focuses on organizing the user's TV Series library with minimal user interaction, allowing for a more user friendly and ease of use experience.</td><td>0</td><td/><td>-979626384</td></row>
 		<row><td>ID_STRING33</td><td>1033</td><td>Moving Pictures is a movies plug-in for the MediaPortal media center application. The goal of the plug-in is to create a very focused and refined experience that requires minimal user interaction.</td><td>0</td><td/><td>-1919117264</td></row>
-		<row><td>ID_STRING34</td><td>1033</td><td>RSS Ticker displays news from your favourite news feed. It also has the ability to display the latest weather on the home screen</td><td>0</td><td/><td>-1919151984</td></row>
-		<row><td>ID_STRING35</td><td>1033</td><td>STREAM~1|StreamedMP Editor</td><td>0</td><td/><td>-1784908080</td></row>
+		<row><td>ID_STRING34</td><td>1033</td><td>RSS Ticker displays news from your favourite news feed. It also has the ability to display the latest weather on the Basic Home screen</td><td>0</td><td/><td>-979576528</td></row>
+		<row><td>ID_STRING35</td><td>1033</td><td>STREAM~1|Streamed MP Editor</td><td>0</td><td/><td>-845354164</td></row>
+		<row><td>ID_STRING36</td><td>1033</td><td>Menu Editor</td><td>0</td><td/><td>-979617776</td></row>
+		<row><td>ID_STRING37</td><td>1033</td><td>Logos PSD</td><td>0</td><td/><td>-979584976</td></row>
+		<row><td>ID_STRING38</td><td>1033</td><td>The MediaStream Menu Editor used to customize MediaPortal's Basic Home screen</td><td>0</td><td/><td>-979601392</td></row>
+		<row><td>ID_STRING39</td><td>1033</td><td>The Photoshop PSD project that is used to create logos for Streamed MP</td><td>0</td><td/><td>-979615664</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>http://code.google.com/p/streamedmp/downloads/list</td><td>0</td><td/><td>-1919124627</td></row>
+		<row><td>ID_STRING40</td><td>1033</td><td>UNINST|Uninstall Streamed MP</td><td>0</td><td/><td>-845362292</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>MediaPortal Forums</td><td>0</td><td/><td>-1919143027</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>http://forum.team-mediaportal.com/hot-skins-248/</td><td>0</td><td/><td>-1919116403</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
-		<row><td>ID_STRING8</td><td>1033</td><td>Menu Generator</td><td>0</td><td/><td>-1919127410</td></row>
+		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING9</td><td>1033</td><td>TEAMME~1|Team MediaPortal</td><td>0</td><td/><td>-1919133586</td></row>
 		<row><td>ID_TVSERIES_DESC</td><td>1033</td><td>Select your TV Series layout</td><td>0</td><td/><td>-1919115081</td></row>
 		<row><td>ID_TVSERIES_TITLE</td><td>1033</td><td>TV Series</td><td>0</td><td/><td>-1919131465</td></row>
@@ -3520,6 +3549,7 @@
 		<row><td>NEW_STRING5</td><td>1033</td><td>Choice 2</td><td>0</td><td/><td>-1919127305</td></row>
 		<row><td>NEW_STRING8</td><td>1033</td><td>Choose the skin layout you prefer to install for the TV Series plugin:</td><td>0</td><td/><td>-1919152361</td></row>
 		<row><td>NEW_STRING9</td><td>1033</td><td>&amp;Default Layout</td><td>0</td><td/><td>-1382224757</td></row>
+		<row><td>UNINST|Uninstall StreamedMP</td><td>1033</td><td>UNINST~1|Uninstall Streamed MP</td><td>0</td><td/><td>-845403284</td></row>
 	</table>
 
 	<table name="ISTargetImage">
@@ -3645,6 +3675,7 @@
 		<col def="S255">Element</col>
 		<col def="S255">Attribute</col>
 		<col def="I2">ISAttributes</col>
+		<row><td>NewSignature12</td><td>NewSignature11</td><td>Config/Dir</td><td/><td>1</td></row>
 	</table>
 
 	<table name="Icon">
@@ -3698,6 +3729,7 @@
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISXmlAppSearch</td><td/><td>401</td><td>This action is required for the XMLAppSearch action to function properly.</td><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -3810,6 +3842,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>ISSetupFilesCleanup</td><td/><td>1301</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>NOT AFTERREBOOT AND NOT ISSETUPDRIVEN</td><td>1</td><td>ISVerifyScriptingRuntime</td><td/></row>
+		<row><td>ISXmlAppSearch</td><td/><td>401</td><td>This action is required for the XMLAppSearch action to function properly.</td><td/></row>
 		<row><td>IsolateComponents</td><td/><td>950</td><td>IsolateComponents</td><td/></row>
 		<row><td>LaunchConditions</td><td>Not Installed</td><td>410</td><td>LaunchConditions</td><td/></row>
 		<row><td>MigrateFeatureStates</td><td/><td>1200</td><td>MigrateFeatureStates</td><td/></row>
@@ -4041,13 +4074,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>IS_SQLSERVER_PASSWORD</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_SERVER</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
+		<row><td>MPFOLDER</td><td>TEST</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
 		<row><td>MsiLogging</td><td>voicewarmupx</td><td/></row>
-		<row><td>NewProperty1</td><td>0</td><td/></row>
-		<row><td>NewProperty2</td><td>1</td><td/></row>
-		<row><td>NewProperty21</td><td>1</td><td/></row>
-		<row><td>NewProperty22</td><td>1</td><td/></row>
-		<row><td>NewProperty3</td><td>0</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOLS</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEVROOT</td><td>##IDS_PROGMSG_IIS_CREATEVROOT##</td><td/></row>
@@ -4073,7 +4102,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>ProductVersion</td><td>0.1.0.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MPFOLDER;MEDIAPORTALDIRS;TEMP</td><td/></row>
 		<row><td>UpgradeCode</td><td>{D916AD64-452C-4231-BD7A-AA2CB92B1A01}</td><td/></row>
 		<row><td>Yes__I_want_to_launch__p_now.</td><td>Yes, I want to launch %p now.</td><td/></row>
 		<row><td>Yes__I_want_to_restart_my_computer_now.</td><td>Yes, I want to restart my computer now.</td><td/></row>
@@ -4120,6 +4149,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<col def="s255">Key</col>
 		<col def="S255">Name</col>
 		<col def="I2">Type</col>
+		<row><td>NewSignature1</td><td>2</td><td>SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MediaPortal</td><td>InstallPath</td><td>0</td></row>
 	</table>
 
 	<table name="Registry">
@@ -4229,8 +4259,8 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>menuGeneratorShortcut</td><td>newfolder3</td><td>##ID_STRING31##</td><td>menuEditor</td><td>Tools</td><td/><td/><td/><td>menuGeneratorShort_13A09A7F7A0F4040AE5EDF9245AED116.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>menuGeneratorShortcut2</td><td>DesktopFolder</td><td>##ID_STRING35##</td><td>menuEditor</td><td>Tools</td><td/><td/><td>0</td><td>menuGeneratorShort_A48F662FBCB6429BBFD9C18A100BF59F.exe</td><td>0</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>menuGeneratorShortcut</td><td>newfolder3</td><td>##ID_STRING31##</td><td>menuEditor</td><td>MenuEditor</td><td/><td/><td/><td>menuGeneratorShort_13A09A7F7A0F4040AE5EDF9245AED116.exe</td><td>0</td><td>1</td><td>STREAMEDMP1</td><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>menuGeneratorShortcut2</td><td>DesktopFolder</td><td>##ID_STRING35##</td><td>menuEditor</td><td>MenuEditor</td><td/><td/><td>0</td><td>menuGeneratorShort_A48F662FBCB6429BBFD9C18A100BF59F.exe</td><td>0</td><td>1</td><td>STREAMEDMP1</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
@@ -4243,6 +4273,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<col def="I4">MinDate</col>
 		<col def="I4">MaxDate</col>
 		<col def="S255">Languages</col>
+		<row><td>NewSignature11</td><td>MediaPortalDirs.xml</td><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="TextStyle">
