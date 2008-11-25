@@ -75,8 +75,8 @@
       <id>1</id>
       <posX>800</posX>
       <posY>220</posY>
-      <font>mediastream16tc</font>
-      <width>750</width>
+      <font>mediastream14tc</font>
+      <width>420</width>
       <label>#MyTrailers.Details.Title</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -87,8 +87,8 @@
       <id>1</id>
       <type>group</type>
       <layout>StackLayout(30)</layout>
-      <posX>380</posX>
-      <posY>129</posY>
+      <posX>350</posX>
+      <posY>220</posY>
       <width>475</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -168,7 +168,6 @@
         <type>textboxscrollup</type>
         <id>1</id>
         <posY>500</posY>
-        <height>60</height>
         <font>mediastream11</font>
         <label>#MyTrailers.Details.Cast</label>
       </control>
@@ -176,9 +175,9 @@
         <description>Summary</description>
         <type>textboxscrollup</type>
         <id>1</id>
-        <height>170</height>
-        <posY>530</posY>
-        <width>800</width>
+        <posY>12</posY>
+        <height>150</height>
+        <width>850</width>
         <seperator>-----------------------------------------------------------------------------------</seperator>
         <font>mediastream11</font>
         <label>#MyTrailers.Details.Description</label>
