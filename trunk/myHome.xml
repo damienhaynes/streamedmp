@@ -4,7 +4,19 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <autohidetopbar>yes</autohidetopbar>
+  <define>#header.hover:hover_my plugins.png</define>
   <controls>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
     
     <control>
       <description>Menu</description>
