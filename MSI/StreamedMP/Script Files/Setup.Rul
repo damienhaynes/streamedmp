@@ -29,7 +29,7 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION	"0.9.3.20755"		
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432"
 
-#define TVSERIES_MIN_VERSION			"2.0.3250.0"
+#define TVSERIES_MIN_VERSION			"2.0.3251.0"
 #define MOVINGPICTURES_MIN_VERSION		"0.6.1.293"
 
 // Dialogs
@@ -129,7 +129,7 @@ begin
     
 Dlg_SdWelcome:
     szTitle = "";
-    szMsg   = "";
+    szMsg   = @WELCOME;
     nResult = SdWelcome(szTitle, szMsg);
     if (nResult = BACK) goto Dlg_SdWelcome;
 	
@@ -275,7 +275,7 @@ begin
     
 	Disable(STATUSEX);
 
-	bOpt1  = FALSE;
+	bOpt1  = TRUE;
 	bOpt2  = FALSE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
 	szOption1 = "&Launch Home Page in default Browser";
