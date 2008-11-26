@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>1</id>
   <defaultcontrol>2</defaultcontrol>
@@ -6,56 +6,53 @@
   <define>#header.image:-</define>
   <define>#header.label:605</define>
   <define>#header.hover:hover_my tv.png</define>
-<controls>
-<import>common.time.xml</import>
-	
-<control>
-	<description>music background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>tvshows_bg.jpg</texture>
-</control>
-	
-<control>
-	<description>music overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
+  <controls>
+    <import>common.time.xml</import>
+    <import>common.window.tv.xml</import>
+    <control>
+      <description>music background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>tvshows_bg.jpg</texture>
+    </control>
+    <control>
+      <description>music overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>streamed_overlay.png</texture>
+    </control>
     <import>common.window.xml</import>
-	
+    <control>
+      <type>image</type>
+      <posY>0</posY>
+      <width>220</width>
+      <height>720</height>
+      <texture>streamed_submenu_bg.png</texture>
+      <colorDiffuse>fffffffff</colorDiffuse>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="slide" time="100" start="-220,0">visible</animation>
+      <animation effect="slide" time="100" end="-220,0">hidden</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="slide" time="100" end="-280,0">hidden</animation>
+      <animation effect="slide" time="100" start="-280,0">visible</animation>
+      <posX>0</posX>
+      <posY>80</posY>
+      <layout>StackLayout</layout>
       <control>
-        <type>image</type>
-        <posY>0</posY>
-        <width>220</width>
-        <height>720</height>
-        <texture>streamed_submenu_bg.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
-        <posX>0</posX>
-        <posY>80</posY>
-        <layout>StackLayout</layout>
-        <control>
         <description>TVGuide</description>
         <type>button</type>
         <id>2</id>

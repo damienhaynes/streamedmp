@@ -4,52 +4,79 @@
   <defaultcontrol>13</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#percentage:#TV.View.Percentage</define>
-  <define>#currentplaytime:#TV.View.start</define>
   <define>#currentremaining:#TV.View.stop</define>
+  <define>#currentplaytime:#TV.View.start</define>
   <controls>
     <control>
-      <description>bar image</description>
+      <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
-      <posX>43</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>60</height>
-      <texture>osd_bg_top.png</texture>
-      <visible>no</visible>
+      <posX>2000</posX>
+      <posY>2000</posY>
+      <width>10</width>
+      <height>10</height>
+      <texture>-</texture>
+      <visible>player.forwarding|player.rewinding</visible>
     </control>
-    <import>common.progressbar.xml</import>
+    <control>
+      <description>background (default)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>523</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>player.forwarding|player.rewinding</visible>
+    </control>
+    <control>
+      <description>background (paused)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>613</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
+    </control>
     <control>
       <description>row 1 label</description>
       <type>label</type>
       <id>10</id>
-      <posX>1255</posX>
-      <posY>15</posY>
-      <label>-</label>
-      <font>font10</font>
+      <posX>124</posX>
+      <posY>680</posY>
+      <width>1032</width>
+      <height>25</height>
+      <align>center</align>
       <visible>no</visible>
-      <align>right</align>
+      <label>-</label>
+      <font>mediastream10tc</font>
     </control>
     <control>
       <description>row 2 label</description>
       <type>label</type>
       <id>11</id>
-      <posX>1255</posX>
-      <posY>15</posY>
+      <posX>124</posX>
+      <posY>680</posY>
+      <width>1032</width>
+      <height>25</height>
       <label>-</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <visible>no</visible>
     </control>
     <control>
       <description>row 3 label</description>
       <type>label</type>
       <id>12</id>
-      <posX>1255</posX>
-      <posY>15</posY>
-      <label>-</label>
-      <font>font10</font>
+      <posX>124</posX>
+      <posY>680</posY>
+      <width>1032</width>
+      <height>25</height>
+      <align>center</align>
       <visible>no</visible>
-      <align>right</align>
+      <label>-</label>
+      <font>mediastream10tc</font>
     </control>
     <control>
       <description>channelname</description>
@@ -58,8 +85,58 @@
       <posX>80</posX>
       <posY>15</posY>
       <label>-</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <visible>no</visible>
+    </control>
+    <control>
+      <description>pause label</description>
+      <type>label</type>
+      <id>16</id>
+      <posX>124</posX>
+      <posY>680</posY>
+      <width>1032</width>
+      <height>25</height>
+      <align>center</align>
+      <visible>no</visible>
+      <label>paused</label>
+      <font>mediastream10tc</font>
+      <colordiffuse>White</colordiffuse>
+    </control>
+    <control>
+      <description>OSD Seek Frame Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1095</posX>
+      <posY>569</posY>
+      <width>126</width>
+      <height>78</height>
+      <visible>player.forwarding|player.rewinding</visible>
+      <texture>osdseekframe.png</texture>
+      <colordiffuse>White</colordiffuse>
+    </control>
+    <control>
+      <description>FastForward Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1212</posX>
+      <posY>580</posY>
+      <width>23</width>
+      <height>54</height>
+      <visible>player.forwarding</visible>
+      <texture>osdseekforward.png</texture>
+      <colordiffuse>White</colordiffuse>
+    </control>
+    <control>
+      <description>Rewind Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1081</posX>
+      <posY>580</posY>
+      <width>22</width>
+      <height>55</height>
+      <visible>player.rewinding</visible>
+      <texture>osdseekrewind.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>skip steps</description>
@@ -68,7 +145,7 @@
       <posX>1255</posX>
       <posY>15</posY>
       <label>-</label>
-      <font>font10</font>
+      <font>mediastream10tc</font>
       <visible>no</visible>
       <align>right</align>
     </control>
@@ -87,111 +164,121 @@
       <description>2x image</description>
       <type>image</type>
       <id>17</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1103</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video+2x.png</texture>
+      <texture>osd2x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>4x image</description>
       <type>image</type>
       <id>18</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1115</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video+4x.png</texture>
+      <texture>osd4x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>8x image</description>
       <type>image</type>
       <id>19</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1127</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video+8x.png</texture>
+      <texture>osd8x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>16x image</description>
       <type>image</type>
       <id>20</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1139</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video+16x.png</texture>
+      <texture>osd16x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>32x image</description>
       <type>image</type>
       <id>21</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1151</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video+32x.png</texture>
+      <texture>osd32x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>- 2x image</description>
       <type>image</type>
       <id>23</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1103</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video-2x.png</texture>
+      <texture>osd2x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>- 4x image</description>
       <type>image</type>
       <id>24</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1115</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video-4x.png</texture>
+      <texture>osd4x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>- 8x image</description>
       <type>image</type>
       <id>25</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1127</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video-8x.png</texture>
+      <texture>osd8x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>- 16x image</description>
       <type>image</type>
       <id>26</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1139</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video-16x.png</texture>
+      <texture>osd16x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>- 32x image</description>
       <type>image</type>
       <id>27</id>
-      <posX>1187</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1151</posX>
+      <posY>577</posY>
+      <width>62</width>
+      <height>62</height>
       <visible>no</visible>
-      <texture>video-32x.png</texture>
+      <texture>osd32x.png</texture>
+      <colordiffuse>White</colordiffuse>
     </control>
     <control>
       <description>TV Progress Bar</description>
@@ -222,7 +309,7 @@
       <startlabel />
       <endlabel />
       <toplabel />
-      <font>font12</font>
+      <font>mediastream11</font>
       <textcolor>FF000000</textcolor>
     </control>
     <control>
@@ -256,7 +343,7 @@
       <width>866</width>
       <label>-</label>
       <align>left</align>
-      <font>dingbats</font>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>yes</visible>
     </control>
@@ -269,7 +356,7 @@
       <width>866</width>
       <label>-</label>
       <align>left</align>
-      <font>dingbats</font>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>yes</visible>
     </control>
@@ -282,7 +369,7 @@
       <width>866</width>
       <label>-</label>
       <align>left</align>
-      <font>dingbats</font>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>yes</visible>
     </control>
@@ -295,7 +382,7 @@
       <width>866</width>
       <label>-</label>
       <align>left</align>
-      <font>dingbats</font>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>yes</visible>
     </control>
@@ -310,14 +397,15 @@
     <control>
       <type>volumebar</type>
       <id>501</id>
-      <posX>1252</posX>
-      <posY>80</posY>
+      <posX>1075</posX>
+      <posY>19</posY>
       <align>right</align>
-      <height>21</height>
+      <height>13</height>
       <imageHeight>3</imageHeight>
       <texture>volume.states.png</texture>
       <colordiffuse>White</colordiffuse>
       <visible>no</visible>
     </control>
+    <import>common.progressbar.xml</import>
   </controls>
 </window>
