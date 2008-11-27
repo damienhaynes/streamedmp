@@ -1,0 +1,297 @@
+﻿<window>
+   <id>510</id>
+   <defaultcontrol>11</defaultcontrol>
+   <allowoverlay>no</allowoverlay>
+   <define>#header.label:Global Search</define>
+   <define>#header.hover:hover_my music.png</define>
+   <controls>
+    
+      <control>
+        <type>image</type>
+        <id>0</id>
+        <posX>0</posX>
+        <posY>0</posY>
+        <width>1280</width>
+        <height>720</height>
+        <texture>#header.hover</texture>
+        <animation effect="fade" time="200">windowopen</animation>
+      </control>
+      
+      <control>
+        <type>image</type>
+        <id>0</id>
+        <posX>144</posX>
+        <posY>63</posY>
+        <width>985</width>
+        <height>594</height>
+        <texture>dialoginfobg.png</texture>
+      </control>
+      
+      <control>
+         <type>label</type>
+         <id>24</id>
+         <posX>885</posX>
+         <posY>99</posY>
+         <label>Album information</label>
+         <font>mediastream14tc</font>
+         <align>center</align>
+      </control>
+    
+      <control Style="settingsmainbutton">
+         <type>button</type>
+         <description>Play now</description>
+         <id>11</id>
+         <posX>640</posX>
+         <posY>265</posY>
+         <label>4552</label>
+         <width>479</width>
+         <textXOff>30</textXOff>
+      </control>
+      <control Style="settingsmainbutton">
+         <type>button</type>
+         <description>Add to favorites</description>
+         <id>15</id>
+         <posX>640</posX>
+         <posY>307</posY>
+         <label>930</label>
+         <width>479</width>
+         <textXOff>30</textXOff>
+      </control>
+      <control Style="settingsmainbutton">
+         <type>button</type>
+         <description>Add album to playlist</description>
+         <id>14</id>
+         <posX>640</posX>
+         <posY>349</posY>
+         <label>33041</label>
+         <width>479</width>
+         <textXOff>30</textXOff>
+      </control>
+      <control Style="settingsmainbutton">
+         <type>button</type>
+         <description>Add to playlist</description>
+         <id>13</id>
+         <posX>640</posX>
+         <posY>391</posY>
+         <label>926</label>
+         <width>479</width>
+         <textXOff>30</textXOff>
+      </control>
+      <control Style="settingsmainbutton">
+         <type>button</type>
+         <description>Play next</description>
+         <id>12</id>
+         <posX>640</posX>
+         <posY>433</posY>
+         <label>4551</label>
+         <width>479</width>
+         <textXOff>30</textXOff>
+         <ondown>11</ondown>
+      </control>
+      
+      <control>
+         <type>image</type>
+         <description>album art image</description>
+         <id>7</id>
+         <posX>272</posX>
+         <posY>101</posY>
+         <width>249</width>
+         <height>249</height>
+         <zoom>yes</zoom>
+         <texture />
+         <keepaspectratio>yes</keepaspectratio>
+         <centered>yes</centered>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>25</id>
+         <posX>180</posX>
+         <posY>385</posY>
+         <label>Artist</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>1</id>
+         <posX>320</posX>
+         <posY>385</posY>
+         <label>#artist</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>26</id>
+         <posX>180</posX>
+         <posY>410</posY>
+         <label>Album</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>2</id>
+         <posX>320</posX>
+         <posY>410</posY>
+         <label>#album</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>27</id>
+         <posX>180</posX>
+         <posY>435</posY>
+         <label>Songname</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>3</id>
+         <posX>320</posX>
+         <posY>435</posY>
+         <label>#songname</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>0</id>
+         <posX>180</posX>
+         <posY>460</posY>
+         <label>Duration</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>9</id>
+         <posX>320</posX>
+         <posY>460</posY>
+         <label>#duration</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>28</id>
+         <posX>180</posX>
+         <posY>485</posY>
+         <label>Genre</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>4</id>
+         <posX>320</posX>
+         <posY>485</posY>
+         <label>#genre</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>29</id>
+         <posX>180</posX>
+         <posY>510</posY>
+         <label>Year</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>5</id>
+         <posX>320</posX>
+         <posY>510</posY>
+         <label>#year</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>30</id>
+         <posX>180</posX>
+         <posY>535</posY>
+         <label>Filename</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>6</id>
+         <posX>320</posX>
+         <posY>535</posY>
+         <label>#filename</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>31</id>
+         <posX>180</posX>
+         <posY>560</posY>
+         <label>Rating</label>
+      </control>
+      <control>
+         <type>imagelist</type>
+         <description>-</description>
+         <id>1337</id>
+         <posX>320</posX>
+         <posY>560</posY>
+         <width>100</width>
+         <height>30</height>
+         <colordiffuse>ffffffff</colordiffuse>
+         <percentage>#Play.Current.Rating</percentage>
+         <textureHeight>20</textureHeight>
+         <orientation>horizontal</orientation>
+         <textureWidth>20</textureWidth>
+	 <subitems>
+	    <subitem>-.png</subitem>
+	    <subitem>starwhite.png</subitem>
+	 </subitems>		 
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>37</id>
+         <posX>180</posX>
+         <posY>585</posY>
+         <label>Last played</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>10</id>
+         <posX>320</posX>
+         <posY>585</posY>
+         <label>#last_played</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+      
+      <control Style="smallTitleB">
+         <type>label</type>
+         <id>35</id>
+         <posX>180</posX>
+         <posY>610</posY>
+         <label>Playcount</label>
+      </control>
+      <control Style="smallTitle">
+         <type>fadelabel</type>
+         <id>8</id>
+         <posX>320</posX>
+         <posY>610</posY>
+         <label>#tp</label>
+         <textcolor>ffffffff</textcolor>
+         <disabledcolor>ff808080</disabledcolor>
+      </control>
+    
+      <control>
+         <type>image</type>
+         <description>nowplaying background</description>
+         <id>32</id>
+         <posX>389</posX>
+         <posY>58</posY>
+         <width>307</width>
+         <height>320</height>
+         <animation>WindowOpen</animation>
+         <texture>nowplaying_background.png</texture>
+      </control>
+   </controls>
+</window>
