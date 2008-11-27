@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>30885</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:Global Search</define>
+  <define>#header.hover:hover_my music.png</define>
+  <controls>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="200">windowopen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <posX>50</posX>
+      <posY>270</posY>
+      <layout>StackLayout</layout>
+      
+      <control Style="leftmenubutton">
+        <description>Searchphrase to use</description>
+        <type>button</type>
+        <id>2</id>
+        <label>Searchphrase</label>
+      </control>
+      
+      <control Style="leftmenubutton">
+        <description>Last searches</description>
+        <type>button</type>
+        <id>7</id>
+        <label>Search history</label>
+      </control>
+      
+      <control Style="leftmenubutton">
+        <description>Search fields (Song, Album, Artist, etc.)</description>
+        <type>button</type>
+        <id>6</id>
+        <label>Search fields</label>
+      </control>
+      
+      <control Style="leftmenubutton">
+        <description>Searchtype (start, contain, end)</description>
+        <type>selectbutton</type>
+        <id>5</id>
+        <label>Searchtype</label>
+	<subitems>
+	  <subitem>Equals</subitem>
+	  <subitem>Starts with</subitem>
+	  <subitem>Contains</subitem>
+	  <subitem>Ends with</subitem>
+	</subitems>
+        <selected>2</selected>
+      </control>
+      
+      <control Style="leftmenubutton">
+        <description>Case sensitivity</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <label>Case sensitive</label>
+      </control>
+      
+    </control>
+    
+    <import>common.facade.xml</import>
+    
+    <import>common.overlays.xml</import>
+    <import>common.window.xml</import>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <import>common.time.xml</import>
+    
+  </controls>
+</window>
