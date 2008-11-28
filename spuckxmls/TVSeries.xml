@@ -360,7 +360,7 @@
     </control>
     
     <control>
-      <description>Director Label</description>
+      <description>Actors Label</description>
       <type>label</type>
       <id>0</id>
       <posX>850</posX>
@@ -373,11 +373,13 @@
     </control>
     
     <control>
-      <type>textbox</type>
+      <type>textboxscrollup</type>
       <label>#TVSeries.Series.Actors</label>
       <posX>850</posX>
       <posY>295</posY>
       <width>360</width>
+      <height>180</height>
+      <seperator>==========================================</seperator>
       <font>mediastream10</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
@@ -964,7 +966,6 @@
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <animation effect="slide" time="0" end="300,0">windowopen</animation>
         <posX>1040</posX>
         <posY>250</posY>
         <width>220</width>
