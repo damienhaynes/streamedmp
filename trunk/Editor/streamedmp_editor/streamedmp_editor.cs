@@ -837,13 +837,14 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t<description>Weather Background</description>");
             rawXML.AppendLine("\t<type>image</type>");
             rawXML.AppendLine("\t<id>1</id>");
-            rawXML.AppendLine("\t<posX>1080</posX>");
+            rawXML.AppendLine("\t<posX>1050</posX>");
             rawXML.AppendLine("\t<posY>-5</posY>");
-            rawXML.AppendLine("\t<width>200</width>");
+            rawXML.AppendLine("\t<width>230</width>");
             rawXML.AppendLine("\t<height>75</height>");
             rawXML.AppendLine("\t<texture>homeweatheroverlaybg.png</texture>");
             rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
             rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+            rawXML.AppendLine("<visible>plugin.isenabled(MP-RSSTicker)</visible>");
             rawXML.AppendLine("</control>");
 
             xml = xml.Replace("<!-- BEGIN GENERATED MENUGRAPHICS CODE-->", rawXML.ToString());
@@ -854,32 +855,19 @@ namespace streamedmp_editor
             StringBuilder rawXML = new StringBuilder();
             const string quote = "\"";
 
-            /**rawXML.AppendLine("<control>");
-            rawXML.AppendLine("\t<description>RSS image</description>");
-            rawXML.AppendLine("\t<type>image</type>");
-            rawXML.AppendLine("\t<id>1</id>");
-            rawXML.AppendLine("\t<width>100</width>");
-            rawXML.AppendLine("\t<height>36</height>");
-            rawXML.AppendLine("\t<posY>600</posY>");
-            rawXML.AppendLine("\t<posX>0</posX>");
-            rawXML.AppendLine("\t<keepaspectratio>no</keepaspectratio>");
-            rawXML.AppendLine("\t<texture>#rssimg</texture>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-            rawXML.AppendLine("</control>");**/
-
             rawXML.AppendLine("<control>");
-            rawXML.AppendLine("\t<description>RSS Items</description>");
-            rawXML.AppendLine("\t<type>fadelabel</type>");
-            rawXML.AppendLine("\t<id>1</id>");
-            rawXML.AppendLine("\t<width>1250</width>");
-            rawXML.AppendLine("\t<height>50</height>");
-            rawXML.AppendLine("\t<posY>695</posY>");
+                rawXML.AppendLine("\t<description>RSS Items</description>");
+                rawXML.AppendLine("\t<type>fadelabel</type>");
+                rawXML.AppendLine("\t<id>1</id>");
+                rawXML.AppendLine("\t<width>1250</width>");
+                rawXML.AppendLine("\t<height>50</height>");
+                rawXML.AppendLine("\t<posY>695</posY>");
                 rawXML.AppendLine("\t<posX>120</posX>");
                 rawXML.AppendLine("\t<font>mediastream12tc</font>");
                 rawXML.AppendLine("\t<label>#rssfeed</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,100" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("<visible>plugin.isenabled(MP-RSSTicker)</visible>");
             rawXML.AppendLine("</control>");
 
 	        rawXML.AppendLine("<control>");
@@ -893,6 +881,7 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<texture>#weatherimg</texture>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("<visible>plugin.isenabled(MP-RSSTicker)</visible>");
             rawXML.AppendLine("</control>");
             
             rawXML.AppendLine("<control>");
@@ -908,6 +897,7 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<label>#temp</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("<visible>plugin.isenabled(MP-RSSTicker)</visible>");
             rawXML.AppendLine("</control>");
             
             rawXML.AppendLine("<control>");
@@ -923,6 +913,7 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<label>#condition</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("<visible>plugin.isenabled(MP-RSSTicker)</visible>");
             rawXML.AppendLine("</control>");
             xml = xml.Replace("<!-- BEGIN GENERATED RSS TICKER CODE-->", rawXML.ToString());
 
@@ -931,70 +922,7 @@ namespace streamedmp_editor
         private void generateWeather()
         {
             StringBuilder rawXML = new StringBuilder();
-            const string quote = "\"";
-
-            rawXML.AppendLine("<control>");
-	        rawXML.AppendLine("\t<description>Weather Icon Image</description>");
-	        rawXML.AppendLine("\t<type>image</type>");
-	        rawXML.AppendLine("\t<id>21</id>");
-	        rawXML.AppendLine("\t<posX>10</posX>");
-	        rawXML.AppendLine("\t<posY>10</posY>");
-	        rawXML.AppendLine("\t<texture></texture>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-            rawXML.AppendLine("</control>");
-
-	        rawXML.AppendLine("<control>");
-	        rawXML.AppendLine("\t<description>Location Label</description>");
-	        rawXML.AppendLine("\t<type>label</type>");
-	        rawXML.AppendLine("\t<id>23</id>");
-	        rawXML.AppendLine("\t<posX>105</posX>");
-	        rawXML.AppendLine("\t<posY>15</posY>");
-	        rawXML.AppendLine("\t<label>-</label>");
-	        rawXML.AppendLine("\t<align>left</align>");
-			rawXML.AppendLine("\t<textcolor>79CDCD</textcolor>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-            rawXML.AppendLine("</control>");
-
-            rawXML.AppendLine("<control>");
-	        rawXML.AppendLine("\t<description>Temp Label</description>");
-	        rawXML.AppendLine("\t<type>label</type>");
-	        rawXML.AppendLine("\t<id>20</id>");
-	        rawXML.AppendLine("\t<posX>105</posX>");
-	        rawXML.AppendLine("\t<posY>35</posY>");
-	        rawXML.AppendLine("\t<label>-</label>");
-	        rawXML.AppendLine("\t<align>right</align>");
-			rawXML.AppendLine("\t<font>font13</font>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-			rawXML.AppendLine("\t<visible>no</visible>");
-            rawXML.AppendLine("</control>");
-
-            rawXML.AppendLine("<control>");
-	        rawXML.AppendLine("\t<description>Current Weather Label</description>");
-	        rawXML.AppendLine("\t<type>label</type>");
-	        rawXML.AppendLine("\t<id>22</id>");
-	        rawXML.AppendLine("\t<posX>105</posX>");
-	        rawXML.AppendLine("\t<posY>35</posY>");
-	        rawXML.AppendLine("\t<label>-</label>");
-            rawXML.AppendLine("\t<align>right</align>"); rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-			rawXML.AppendLine("\t<visible>no</visible>");
-            rawXML.AppendLine("</control>");
-
-	        rawXML.AppendLine("<control>");
-	        rawXML.AppendLine("\t<description>Description and Temperature Label</description>");
-	        rawXML.AppendLine("\t<type>label</type>");
-	        rawXML.AppendLine("\t<id>24</id>");
-	        rawXML.AppendLine("\t<posX>105</posX>");
-	        rawXML.AppendLine("\t<posY>45</posY>");
-	        rawXML.AppendLine("\t<label>-</label>");
-	        rawXML.AppendLine("\t<align>left</align>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-            rawXML.AppendLine("</control>");
-           
+                    
             xml = xml.Replace("<!-- BEGIN GENERATED WEATHER CODE-->", rawXML.ToString());
         }
 
@@ -1235,6 +1163,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t<loop>yes</loop>");
                 rawXML.AppendLine("\t<randomize>" + item.random.ToString() + "</randomize>");
                 rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "0" + quote + " time=" + quote + "500" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "400" + quote + ">VisibleChange</animation>");
                 rawXML.Append("\t<visible>");
                 //Control.HasFocus(98703)|Control.HasFocus(98803)|Control.HasFocus(98705)|Control.HasFocus(98805)</visible>");
 
