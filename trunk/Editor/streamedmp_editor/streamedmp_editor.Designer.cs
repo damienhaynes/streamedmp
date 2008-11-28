@@ -55,7 +55,8 @@ namespace streamedmp_editor
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.chkBGRandom = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtMenuXPos = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtNoFocusColour = new System.Windows.Forms.TextBox();
             this.txtfocusColour = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -146,7 +147,7 @@ namespace streamedmp_editor
             this.btnGenerate.Location = new System.Drawing.Point(567, 29);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(106, 49);
-            this.btnGenerate.TabIndex = 5;
+            this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "&Generate";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
@@ -221,7 +222,7 @@ namespace streamedmp_editor
             this.openOpenFolderToolStripMenuItem.Name = "openOpenFolderToolStripMenuItem";
             this.openOpenFolderToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.openOpenFolderToolStripMenuItem.Text = "&Open Skin Folder";
-            this.openOpenFolderToolStripMenuItem.Click += new System.EventHandler(this.openAeonFolderToolStripMenuItem_Click);
+            this.openOpenFolderToolStripMenuItem.Click += new System.EventHandler(this.openStreamedMPFolderToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -302,7 +303,8 @@ namespace streamedmp_editor
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.txtMenuXPos);
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtNoFocusColour);
             this.groupBox1.Controls.Add(this.txtfocusColour);
             this.groupBox1.Controls.Add(this.label3);
@@ -315,27 +317,37 @@ namespace streamedmp_editor
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Global settings";
             // 
-            // label11
+            // txtMenuXPos
             // 
-            this.label11.Location = new System.Drawing.Point(234, 68);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 23);
-            this.label11.TabIndex = 4;
+            this.txtMenuXPos.Location = new System.Drawing.Point(314, 29);
+            this.txtMenuXPos.Name = "txtMenuXPos";
+            this.txtMenuXPos.Size = new System.Drawing.Size(62, 20);
+            this.txtMenuXPos.TabIndex = 6;
+            this.txtMenuXPos.Text = "320";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(221, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Menu X-Position:";
             // 
             // txtNoFocusColour
             // 
-            this.txtNoFocusColour.Location = new System.Drawing.Point(135, 58);
+            this.txtNoFocusColour.Location = new System.Drawing.Point(122, 58);
             this.txtNoFocusColour.Name = "txtNoFocusColour";
             this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
-            this.txtNoFocusColour.TabIndex = 3;
+            this.txtNoFocusColour.TabIndex = 4;
             this.txtNoFocusColour.Text = "ffffff";
             // 
             // txtfocusColour
             // 
-            this.txtfocusColour.Location = new System.Drawing.Point(135, 29);
+            this.txtfocusColour.Location = new System.Drawing.Point(122, 29);
             this.txtfocusColour.Name = "txtfocusColour";
             this.txtfocusColour.Size = new System.Drawing.Size(62, 20);
-            this.txtfocusColour.TabIndex = 1;
+            this.txtfocusColour.TabIndex = 2;
             this.txtfocusColour.Text = "ffffff";
             // 
             // label3
@@ -343,18 +355,18 @@ namespace streamedmp_editor
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "No Focus item colour:";
+            this.label3.Size = new System.Drawing.Size(112, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "No Focus Item Colour:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Focus item colour:";
+            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Focus Item Colour:";
             // 
             // btnRemove
             // 
@@ -538,7 +550,8 @@ namespace streamedmp_editor
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkRssTicker;
         private System.Windows.Forms.LinkLabel llRssTicker;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtMenuXPos;
+        private System.Windows.Forms.Label label8;
     }
 }
 
