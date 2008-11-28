@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :::::::::::::::::::::::::::::::::: GROUPED VIEW :: LIST VIEW :: CHANNELS/GENRES ::
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    
+    <control Style="smallTitleB">
+      <description>Title Shadow</description>
+      <textcolor>#shadow.light</textcolor>
+      <type>label</type>
+      <label>#selecteditem Series</label>
+      <posX>72</posX>
+      <posY>242</posY>
+      <visible>Control.IsVisible(1240)</visible>
+    </control>
+    
+    <!--
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: LIST POSTER VIEW ::
+    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    
+    <control>
+      <description>Series Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>311</posX>
+      <posY>276</posY>
+      <width>390</width>
+      <font>mediastream13tc</font>
+      <label>#TVSeries.Title</label>
+      <textcolor>#shadow.light</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    
+    <control>
+      <description>Genre below the series title</description>
+      <type>label</type>
+      <label>#TVSeries.Series.Genre</label>
+      <id>0</id>
+      <posX>311</posX>
+      <posY>299</posY>
+      <width>390</width>
+      <font>mediastream10tc</font>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine2Key</label>
+      <posX>311</posX>
+      <posY>586</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine2Value</label>
+      <posX>441</posX>
+      <posY>587</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine3Key</label>
+      <posX>311</posX>
+      <posY>611</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine3Value</label>
+      <posX>441</posX>
+      <posY>612</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine4Key</label>
+      <posX>311</posX>
+      <posY>636</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine4Value</label>
+      <posX>441</posX>
+      <posY>637</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
+    </control>
+    
+    <!--
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :::::::::::::::::::::::::::::::::: EPISODE VIEW :: LIST VIEW ::
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    
+    <control>
+      <type>label</type>
+      <label>#TVSeries.Episode.SeasonLabel</label>
+      <id>0</id>
+      <posX>401</posX>
+      <posY>271</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control>
+      <type>textbox</type>
+      <label>#TVSeries.Episode.LocalEpisodeName</label>
+      <id>0</id>
+      <posX>401</posX>
+      <posY>291</posY>
+      <width>325</width>
+      <height>50</height>
+      <font>mediastream12tc</font>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Episode.InfoPanelLine1Key</label>
+      <type>label</type>
+      <posX>401</posX>
+      <posY>362</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Episode.InfoPanelLine1Value</label>
+      <type>label</type>
+      <posX>501</posX>
+      <posY>363</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Episode.InfoPanelLine2Key</label>
+      <type>label</type>
+      <posX>401</posX>
+      <posY>385</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Episode.InfoPanelLine2Value</label>
+      <type>label</type>
+      <posX>501</posX>
+      <posY>386</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Episode.InfoPanelLine3Key</label>
+      <type>label</type>
+      <posX>401</posX>
+      <posY>408</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Episode.InfoPanelLine3Value</label>
+      <type>label</type>
+      <posX>501</posX>
+      <posY>409</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Episode.InfoPanelLine4Key</label>
+      <type>label</type>
+      <posX>401</posX>
+      <posY>431</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Episode.InfoPanelLine4Value</label>
+      <type>label</type>
+      <posX>501</posX>
+      <posY>432</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Episode.InfoPanelLine5Key</label>
+      <type>label</type>
+      <posX>401</posX>
+      <posY>454</posY>
+      <textcolor>#shadow.dark</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Episode.InfoPanelLine5Value</label>
+      <type>label</type>
+      <posX>501</posX>
+      <posY>455</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    
+  </controls>
+</window>

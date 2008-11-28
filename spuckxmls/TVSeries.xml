@@ -3,9 +3,11 @@
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#default.color:ffFFFFFF</define>      <!-- Normal List Color                  Default: ffFFFFFF (White) -->
-  <define>#watched.color:ff909090</define>      <!-- Watched List Color                 Default: ff909090 (Grey) -->
-  <define>#notpresent.color:ffEB9E17</define>   <!-- File Not Present in List Color     Default: ffEB9E17 (Orange) -->
+  <define>#default.color:ffFFFFFF</define>    <!-- Normal List Color                  Default: ffFFFFFF (White)   -->
+  <define>#watched.color:ff909090</define>    <!-- Watched List Color                 Default: ff909090 (Grey)    -->
+  <define>#notpresent.color:ffEB9E17</define> <!-- File Not Present in List Color     Default: ffEB9E17 (Orange)  -->
+  <define>#shadow.dark:ff111111</define>      <!-- Shadows under blue/grey text       Default: ff111111           -->
+  <define>#shadow.light:ff222222</define>     <!-- Shadows under wite text            Default: ff222222           -->
   <controls>
     
     <import>TVSeries.dummy.xml</import>
@@ -33,23 +35,10 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_moving pictures.png</texture>
+      <texture>hover_my tv series.png</texture>
       <visible>!Control.IsVisible(1232)</visible>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
-    
-    <control>
-      <description>Fan Art Image (in "skin/FanArt/tv/thetvdbID.jpg")</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#TVSeries.Series.FanArtPath</texture>
-      <visible>!Control.IsVisible(1232)+![Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1236)]</visible>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control><!-- not visible: widebanner graphical series view, regular fanart present -->
     
     <control>
       <description>Fan Art Image</description>
@@ -182,6 +171,7 @@
     
     <import>common.overlays2.xml</import>
     <import>common.time.xml</import>
+    <import>TVSeries.shadows.xml</import>
     
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -218,7 +208,7 @@
       <height>350</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1240)+Control.IsVisible(1235)</visible>
       <label>#TVSeries.Description</label>
     </control>
@@ -301,7 +291,7 @@
       <height>160</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <label>#TVSeries.Description</label>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
@@ -320,42 +310,42 @@
     </control>
     
     <control>
-      <type>textbox</type>
+      <type>label</type>
       <label>#TVSeries.Series.InfoPanelLine1Value</label>
       <posX>410</posX>
-      <posY>295</posY>
+      <posY>297</posY>
       <width>360</width>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
-      <type>textbox</type>
+      <type>label</type>
       <label>#TVSeries.Series.InfoPanelLine2Value</label>
       <posX>410</posX>
-      <posY>315</posY>
+      <posY>321</posY>
       <width>360</width>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
-      <type>textbox</type>
+      <type>label</type>
       <label>#TVSeries.Series.InfoPanelLine3Value</label>
       <posX>410</posX>
-      <posY>335</posY>
+      <posY>345</posY>
       <width>360</width>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
     <control>
-      <type>textbox</type>
+      <type>label</type>
       <label>#TVSeries.Series.InfoPanelLine4Value</label>
       <posX>410</posX>
-      <posY>355</posY>
+      <posY>369</posY>
       <width>360</width>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
@@ -380,7 +370,7 @@
       <width>360</width>
       <height>180</height>
       <seperator>==========================================</seperator>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
     </control>
     
@@ -474,7 +464,7 @@
       <height>255</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <label>#TVSeries.Description</label>
       <visible>[!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1235)+Control.IsVisible(1242)]|[Control.IsVisible(1238)+Control.IsVisible(1235)]</visible>
     </control>
@@ -668,7 +658,7 @@
       <height>150</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)</visible>
       <label>#TVSeries.Description</label>
     </control>
@@ -772,7 +762,7 @@
       <width>670</width>
       <height>150</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
       <label>#TVSeries.Description</label>
     </control>
