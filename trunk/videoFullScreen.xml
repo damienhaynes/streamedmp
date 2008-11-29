@@ -3,7 +3,7 @@
   <id>2005</id>
   <defaultcontrol>13</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <controls>
+  <controls>    
     <control>
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
@@ -24,10 +24,10 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>player.forwarding|player.rewinding</visible>
+      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible</visible>
     </control>
     <control>
-      <description>background (paused)</description>
+      <description>background (small)</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -35,16 +35,16 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
+      <visible>control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
     </control>
     
     <control>
       <description>row 1 label</description>
       <type>label</type>
       <id>10</id>
-      <posX>124</posX>
+      <posX>192</posX>
       <posY>680</posY>
-      <width>1032</width>
+      <width>1030</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -55,9 +55,9 @@
       <description>row 2 label</description>
       <type>label</type>
       <id>11</id>
-      <posX>124</posX>
+      <posX>192</posX>
       <posY>680</posY>
-      <width>1032</width>
+      <width>1030</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -68,9 +68,9 @@
       <description>row 3 label</description>
       <type>label</type>
       <id>12</id>
-      <posX>124</posX>
+      <posX>192</posX>
       <posY>680</posY>
-      <width>1032</width>
+      <width>1030</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -81,9 +81,9 @@
       <description>pause label</description>
       <type>label</type>
       <id>16</id>
-      <posX>124</posX>
+      <posX>192</posX>
       <posY>680</posY>
-      <width>1032</width>
+      <width>1030</width>
       <height>25</height>
       <align>center</align>
       <visible>no</visible>
@@ -251,10 +251,10 @@
     <control>
       <type>image</type>
       <id>500</id>
-      <posX>1100</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>590</posX>
+      <posY>40</posY>
+      <width>99</width>
+      <height>44</height>
       <texture>volume.states.mute.png</texture>
       <colordiffuse>White</colordiffuse>
       <visible>no</visible>
@@ -262,10 +262,11 @@
     <control>
       <type>volumebar</type>
       <id>501</id>
-      <posX>1075</posX>
+      <posX>477</posX>
       <posY>19</posY>
-      <align>right</align>
-      <height>13</height>
+      <align>left</align>
+      <height>24</height>
+      <width>10</width>
       <imageHeight>3</imageHeight>
       <texture>volume.states.png</texture>
       <colordiffuse>White</colordiffuse>
@@ -295,7 +296,7 @@
       <align>left</align>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>player.rewinding|player.forwarding</visible>
+      <visible>player.paused|player.rewinding|player.forwarding</visible>
     </control>
     <control>
       <description>Movie Name</description>
@@ -307,7 +308,7 @@
       <font>mediastream14tc</font>
       <label>#Play.Current.Title </label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>player.rewinding|player.forwarding</visible>
+      <visible>player.paused|player.rewinding|player.forwarding</visible>
     </control>
     <control>
       <description>Movie Year</description>
@@ -319,7 +320,20 @@
       <font>mediastream11tc</font>
       <label>#Play.Current.Year </label>
       <textcolor>ff909090</textcolor>
-      <visible>player.rewinding|player.forwarding</visible>
+      <visible>player.paused|player.rewinding|player.forwarding</visible>
+    </control>
+    <control>
+      <description>Plot</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>690</posX>
+      <posY>557</posY>
+      <width>550</width>
+      <height>96</height>
+      <seperator>------------------------------------</seperator>
+      <label>#Play.Current.Plot</label>
+      <font>mediastream11</font>
+      <visible>player.paused+!window.isosdvisible</visible>
     </control>
     
     <import>common.progressbar.xml</import>
