@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>10</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <description>background image</description>
+      <type>image</type>
+      <id>1</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    <control>
+      <description>calibration image</description>
+      <type>image</type>
+      <id>1</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>settingsUICalibration.png</texture>
+    </control>
+    <control>
+      <description>Settings text label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>330</posY>
+      <width>1280</width>
+      <font>mediastream16c</font>
+      <label>213</label>
+      <align>center</align>
+    </control>
+    <control>
+      <description>coordinates label</description>
+      <type>label</type>
+      <id>2</id>
+      <posX>0</posX>
+      <posY>360</posY>
+      <width>1280</width>
+      <align>center</align>
+      <label>5</label>
+      <font>mediastream12c</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+  </controls>
+</window>
