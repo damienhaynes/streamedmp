@@ -199,14 +199,23 @@ namespace streamedmp_editor
 
                 if (nodeValue.StartsWith("#menuitemFocus"))
                 {
-                    txtfocusColour.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    string RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    Color col = ColorFromRGB(RGB);
+                    txtfocusColour.BackColor = col;
+                    txtfocusColour.ForeColor = ColorInvert(col);
+                    txtfocusColour.Text = RGB;
                     foundFocus = true;
                 }
                 if (nodeValue.StartsWith("#menuitemNoFocus"))
                 {
-                    txtNoFocusColour.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    string RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
+                    Color col = ColorFromRGB(RGB);
+                    txtNoFocusColour.BackColor = col;
+                    txtNoFocusColour.ForeColor = ColorInvert(col);
+                    txtNoFocusColour.Text = RGB;
                     foundNoFocus = true;
                 }
+
             }
             if (!foundFocus || !foundNoFocus)
             {
@@ -1315,6 +1324,45 @@ namespace streamedmp_editor
         private void llRssTicker_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("IExplore", "http://forum.team-mediaportal.com/plugins-47/rss-ticker-43603/");
+        }
+
+        private Color ColorFromRGB(string RGB)
+        {
+            byte R = ColorTranslator.FromHtml("#" + RGB).R;
+            byte G = ColorTranslator.FromHtml("#" + RGB).G;
+            byte B = ColorTranslator.FromHtml("#" + RGB).B;
+
+            return System.Drawing.Color.FromArgb(int.Parse(R.ToString()),
+                                                 int.Parse(G.ToString()),
+                                                 int.Parse(B.ToString()));
+        }
+
+        public Color ColorInvert(Color colorIn)
+        {
+            return Color.FromArgb(colorIn.A, Color.White.R - colorIn.R,
+                   Color.White.G - colorIn.G, Color.White.B - colorIn.B);
+        }
+
+        private void txtfocusColour_MouseClick(object sender, MouseEventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();            
+            if (colorDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                txtfocusColour.BackColor = colorDialog.Color;
+                txtfocusColour.ForeColor = ColorInvert(colorDialog.Color);
+                txtfocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
+            }
+        }
+
+        private void txtNoFocusColour_MouseClick(object sender, MouseEventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            if (colorDialog.ShowDialog() != DialogResult.Cancel)
+            {
+                txtNoFocusColour.BackColor = colorDialog.Color;
+                txtNoFocusColour.ForeColor = ColorInvert(colorDialog.Color);
+                txtNoFocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
+            }
         }
 
     }

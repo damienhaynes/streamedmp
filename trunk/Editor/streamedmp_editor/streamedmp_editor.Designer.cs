@@ -70,6 +70,7 @@ namespace streamedmp_editor
             this.chkRssTicker = new System.Windows.Forms.CheckBox();
             this.btMoveUp = new System.Windows.Forms.Button();
             this.btMoveDown = new System.Windows.Forms.Button();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -323,7 +324,7 @@ namespace streamedmp_editor
             this.txtMenuXPos.Name = "txtMenuXPos";
             this.txtMenuXPos.Size = new System.Drawing.Size(62, 20);
             this.txtMenuXPos.TabIndex = 6;
-            this.txtMenuXPos.Text = "320";
+            this.txtMenuXPos.Text = "350";
             // 
             // label8
             // 
@@ -341,6 +342,7 @@ namespace streamedmp_editor
             this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
             this.txtNoFocusColour.TabIndex = 4;
             this.txtNoFocusColour.Text = "ffffff";
+            this.txtNoFocusColour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtNoFocusColour_MouseClick);
             // 
             // txtfocusColour
             // 
@@ -349,6 +351,7 @@ namespace streamedmp_editor
             this.txtfocusColour.Size = new System.Drawing.Size(62, 20);
             this.txtfocusColour.TabIndex = 2;
             this.txtfocusColour.Text = "ffffff";
+            this.txtfocusColour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtfocusColour_MouseClick);
             // 
             // label3
             // 
@@ -552,6 +555,7 @@ namespace streamedmp_editor
         private System.Windows.Forms.LinkLabel llRssTicker;
         private System.Windows.Forms.TextBox txtMenuXPos;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }
 
