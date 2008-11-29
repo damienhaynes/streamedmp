@@ -190,7 +190,7 @@ namespace streamedmp_editor
                 }
             }
           
-            // Read menuitemFocus and menuitemNoFocus colour
+            // Read menuitemFocus, menuitemNoFocus & menuXPos
             XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/window/define");
             bool foundFocus = false, foundNoFocus = false;
             foreach (XmlNode node in nodeList)
@@ -215,7 +215,11 @@ namespace streamedmp_editor
                     txtNoFocusColour.Text = RGB;
                     foundNoFocus = true;
                 }
-
+                if (nodeValue.StartsWith("#menuXPos"))
+                {        
+                    // Just dummy define for storing position
+                    txtMenuXPos.Text = nodeValue.Substring(nodeValue.IndexOf(":")+1);                    
+                }
             }
             if (!foundFocus || !foundNoFocus)
             {
@@ -428,8 +432,9 @@ namespace streamedmp_editor
             const string quote = "\"";
 
             xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
-                            , "<define>#menuitemFocus:ff" + txtfocusColour.Text + "</define>\n\t"
-                            + "<define>#menuitemNoFocus:80" + txtNoFocusColour.Text + "</define>");
+                            , "\t<define>#menuitemFocus:ff" + txtfocusColour.Text + "</define>\n"
+                            + "\t<define>#menuitemNoFocus:80" + txtNoFocusColour.Text + "</define>\n"
+                            + "\t<define>#menuXPos:" + txtMenuXPos.Text + "</define>");
 
             StringBuilder rawXML = new StringBuilder();
             int onleft = 0;
