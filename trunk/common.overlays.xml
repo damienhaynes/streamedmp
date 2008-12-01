@@ -12,7 +12,7 @@ same location everywhere
       <id>3337</id>
       <posX>2000</posX>
       <label>#Play.Current.Album</label>
-      <visible>player.hasmedia+control.hastext(3337)</visible>
+      <visible>player.hasmedia+control.hastext(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>dummy (visible when there is a next track)</description>
@@ -20,9 +20,8 @@ same location everywhere
       <id>3338</id>
       <posX>1800</posX>
       <label>#Play.Next.Title</label>
-      <visible>player.hasmedia+control.hastext(3338)</visible>
+      <visible>player.hasmedia+control.hastext(3338)+!control.isvisible(1236)</visible>
     </control>
-    
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -32,7 +31,7 @@ same location everywhere
       <width>512</width>
       <height>152</height>
       <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia</visible>
+      <visible>player.hasmedia+!control.isvisible(1236)</visible>
     </control>
     <!--                                    :: MUSIC OVERLAY ::                                    -->
     <control>
@@ -47,7 +46,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>artist info label</description>
@@ -60,7 +59,7 @@ same location everywhere
       <label>#Play.Current.Artist</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -73,7 +72,7 @@ same location everywhere
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -86,7 +85,7 @@ same location everywhere
       <label>#Play.Current.Album</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -99,7 +98,7 @@ same location everywhere
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>next song label</description>
@@ -112,7 +111,7 @@ same location everywhere
       <label>Next:</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>next song info label</description>
@@ -125,19 +124,24 @@ same location everywhere
       <label>#Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+!control.isvisible(1236)</visible>
     </control>
     <!--                                    :: VIDEO OVERLAY ::                                    -->
     <control>
       <description>video preview window BACKGROUND</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>18</posX>
-      <posY>78</posY>
+      <type>button</type>
+      <id>17</id>
+      <posX>10</posX>
+      <posY>70</posY>
       <width>203</width>
-      <height>114</height>
-      <texture>black.png</texture>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <height>116</height>
+      <textureFocus>video_window_focus.png</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <action>18</action>
+      <onright>7777</onright>
+      <ondown>50</ondown>
+      <onleft>1903</onleft>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>video preview window</description>
@@ -145,11 +149,11 @@ same location everywhere
       <id>0</id>
       <posX>18</posX>
       <posY>78</posY>
-      <width>203</width>
-      <height>114</height>
+      <width>180</width>
+      <height>103</height>
       <action>18</action>
       <textureFocus>-</textureFocus>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>artist info label</description>
@@ -162,7 +166,7 @@ same location everywhere
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -175,7 +179,7 @@ same location everywhere
       <label>#Play.Current.Year</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -188,7 +192,7 @@ same location everywhere
       <label>#Play.Current.Genre</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -201,7 +205,7 @@ same location everywhere
       <label>#Play.Current.Director</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -214,7 +218,7 @@ same location everywhere
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+!control.isvisible(1236)</visible>
     </control>
   </controls>
 </window>
