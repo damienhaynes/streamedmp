@@ -33,6 +33,16 @@
       <visible>!Control.IsVisible(1232)</visible>
     </control>
     <control>
+      <description>Number of Files Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>50</posY>
+      <label>#itemcount</label>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+    <control>
       <description>Fan Art Image</description>
       <type>image</type>
       <id>524</id>
@@ -62,7 +72,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>tvviewbg.png</texture>
-      <visible>Control.IsVisible(1236)</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -164,7 +174,7 @@
     </control>
     <!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL POSTER VIEW ::
+    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL POSTER FILMSTRIP:
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
     <control>
@@ -177,7 +187,35 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
+    </control>
+    <control>
+      <description>Current View BG</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>370</posY>
+      <width>1280</width>
+      <height>350</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+    </control>
+    <!--
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL BANNER VIEW ::
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+    <control>
+      <description>TV Show Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>545</posY>
+      <width>850</width>
+      <font>mediastream16tc</font>
+      <label>#TVSeries.Title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -191,7 +229,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -235,6 +273,16 @@
       <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
     </control>
     <control>
+      <description>TVDB Series Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>570</posX>
+      <posY>675</posY>
+      <width>220</width>
+      <height>16</height>
+      <texture>#TVSeries.Series.RatingPath</texture>
+    </control>
+    <control>
       <description>Series Title</description>
       <type>label</type>
       <id>0</id>
@@ -246,6 +294,17 @@
       <align>left</align>
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+    </control>
+    <control>
+      <description>Rating Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>570</posX>
+      <posY>650</posY>
+      <textcolor>ff989898</textcolor>
+      <font>mediastream12tc</font>
+      <label>RATING</label>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
     <control Style="TVSeriesTitle">
@@ -294,13 +353,8 @@
     </control>
     <!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES VIEW :: GRAPHICAL WIDE BANNER VIEW ::
+    :::::::::::::::::::::::::::::::::: SERIES VIEW :: TEXT WIDE BANNER VIEW ::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    -->
-    <!--
-    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES VIEW :: LIST WIDE BANNER VIEW ::
-    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
     <control>
       <description>Default Series Banner</description>
@@ -681,23 +735,23 @@
           <type>filmstrip</type>
           <scrollOffset>2</scrollOffset>
           <id>50</id>
-          <posX>0</posX>
-          <posY>190</posY>
+          <posX>50</posX>
+          <posY>400</posY>
           <onup>2</onup>
           <ondown>2</ondown>
-          <width>1270</width>
+          <width>1150</width>
           <onleft>2</onleft>
           <spinPosY>30</spinPosY>
           <spinPosX>1180</spinPosX>
           <spinWidth>30</spinWidth>
           <spinHeight>30</spinHeight>
           <spinColor>ffcccccc</spinColor>
-          <itemWidth>160</itemWidth>
+          <itemWidth>130</itemWidth>
           <itemHeight>205</itemHeight>
           <textureWidth>150</textureWidth>
           <textureHeight>207</textureHeight>
-          <thumbWidth>139</thumbWidth>
-          <thumbHeight>207</thumbHeight>
+          <thumbWidth>120</thumbWidth>
+          <thumbHeight>186</thumbHeight>
           <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
           <InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
           <imageFolderFocus>-</imageFolderFocus>
@@ -709,7 +763,7 @@
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
           <thumbAnimation effect="zoom" start="100,100" end="130,130" time="100">focus</thumbAnimation>
-          <thumbAnimation effect="z" start="130,130" end="100,100" time="100"></thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="100"></thumbAnimation>
           <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
           <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
         </control>
