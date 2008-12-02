@@ -4,20 +4,13 @@
     
     <control>
       <type>image</type>
-      <description>BG</description>
-      <id>0</id>
-      <width>1280</width>
-      <height>720</height>
-    </control>
-    
-    <control>
-      <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
+      <animation effect="fade" time="200">windowopen</animation>
     </control>
     
     <control>
