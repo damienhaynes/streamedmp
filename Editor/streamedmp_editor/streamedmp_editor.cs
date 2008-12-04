@@ -18,40 +18,52 @@ namespace streamedmp_editor
         List<string> ids = new List<string>();
         List<menuItem> menuItems = new List<menuItem>();
         List<backgroundItem> bgItems = new List<backgroundItem>();
+        
         string path;
         string xml;
+        string defFocus = "FFFFFF";
+        string defUnFocus = "FFFFFF";
+
         int defaultId = 0;
         int textXOffset = -25;
         int maxXPosition = 400;
         int minXPosition = 200;
-        //int defXPosition = 320;
-
+        
         public frmStreamedMPEditor()
         {
             InitializeComponent();
         }
 
-        private void frmStreamedMPEditor_Load(object sender, EventArgs e)
+        private string GetMediaPortalPath()
         {
-            // Load Skin folder on load
-            RegistryKey MediaPortalKey = Registry.LocalMachine;
-            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MediaPortal\", true);
-            string sMediaPortalDir = "";
+            string sRegRoot = "SOFTWARE";
+            if (IntPtr.Size > 4)
+                sRegRoot += "\\Wow6432Node";
+            
+            RegistryKey MediaPortalKey = Registry.LocalMachine.OpenSubKey(sRegRoot + "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal\\", true);
             if (MediaPortalKey != null)
             {
-                sMediaPortalDir = MediaPortalKey.GetValue("InstallPath").ToString();
+                return MediaPortalKey.GetValue("InstallPath").ToString();
             }
             else
             {
-                MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
+                MediaPortalKey = MediaPortalKey.OpenSubKey(sRegRoot + "\\Team MediaPortal\\MediaPortal\\", true);
                 if (MediaPortalKey != null)
                 {
-                    sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
+                    return MediaPortalKey.GetValue("ApplicationDir").ToString();
                 }
                 else
-                    return;
+                    return null;
             }
+        }
 
+        private void frmStreamedMPEditor_Load(object sender, EventArgs e)
+        {
+            // Load Skin folder on load
+            string sMediaPortalDir = GetMediaPortalPath();
+            if (sMediaPortalDir == null)
+                return;
+            
             path = sMediaPortalDir + "\\skin\\StreamedMP";
             if (System.IO.Directory.Exists(path))
             {
@@ -199,26 +211,44 @@ namespace streamedmp_editor
 
                 if (nodeValue.StartsWith("#menuitemFocus"))
                 {
-                    string RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
-                    Color col = ColorFromRGB(RGB);
-                    txtfocusColour.BackColor = col;
-                    txtfocusColour.ForeColor = ColorInvert(col);
-                    txtfocusColour.Text = RGB;
+                    try
+                    {
+                        string RGB = defFocus;
+                        if (nodeValue.Contains(":"))
+                            RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3).ToUpper();
+                        Color col = ColorFromRGB(RGB);
+                        txtfocusColour.BackColor = col;
+                        txtfocusColour.ForeColor = ColorInvert(col);
+                        txtfocusColour.Text = RGB;
+                    }
+                    catch
+                    {
+                        txtfocusColour.Text = defFocus;
+                    }
                     foundFocus = true;
                 }
                 if (nodeValue.StartsWith("#menuitemNoFocus"))
                 {
-                    string RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3);
-                    Color col = ColorFromRGB(RGB);
-                    txtNoFocusColour.BackColor = col;
-                    txtNoFocusColour.ForeColor = ColorInvert(col);
-                    txtNoFocusColour.Text = RGB;
+                    try
+                    {
+                        string RGB = defUnFocus;
+                        if (nodeValue.Contains(":"))
+                            RGB = nodeValue.Substring(nodeValue.IndexOf(":") + 3).ToUpper();
+                        Color col = ColorFromRGB(RGB);
+                        txtNoFocusColour.BackColor = col;
+                        txtNoFocusColour.ForeColor = ColorInvert(col);
+                        txtNoFocusColour.Text = RGB;
+                    }                     
+                    catch
+                    {
+                        txtfocusColour.Text = defUnFocus;
+                    }
                     foundNoFocus = true;
                 }
                 if (nodeValue.StartsWith("#menuXPos"))
                 {        
                     // Just dummy define for storing position
-                    txtMenuXPos.Text = nodeValue.Substring(nodeValue.IndexOf(":")+1);                    
+                    txtMenuXPos.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 1);                    
                 }
             }
             if (!foundFocus || !foundNoFocus)
@@ -1222,22 +1252,13 @@ namespace streamedmp_editor
 
         private void openStreamedMPFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistryKey MediaPortalKey = Registry.LocalMachine;
-            MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\MediaPortal\", true);
-            string sMediaPortalDir = "";
-            if (MediaPortalKey != null)
-            {
-                sMediaPortalDir = MediaPortalKey.GetValue("InstallPath").ToString();
-            }
-            else
-            {
-                MediaPortalKey = MediaPortalKey.OpenSubKey(@"SOFTWARE\Team MediaPortal\MediaPortal\", true);
-                if (MediaPortalKey != null)                
-                    sMediaPortalDir = MediaPortalKey.GetValue("ApplicationDir").ToString();                
-            }           
+            string sMediaPortalDir = GetMediaPortalPath();
+
+            
+            if (sMediaPortalDir != null)
+                folderBrowserDialog1.SelectedPath = sMediaPortalDir + "\\skin\\StreamedMP";
 
             folderBrowserDialog1.Description = "Select the skin Directory to load:";
-            folderBrowserDialog1.SelectedPath = sMediaPortalDir + "\\skin\\StreamedMP";            
             DialogResult dlgResult = folderBrowserDialog1.ShowDialog();
             if (dlgResult == DialogResult.Cancel)
                 return;
@@ -1344,6 +1365,9 @@ namespace streamedmp_editor
 
         private Color ColorFromRGB(string RGB)
         {
+            if (RGB.Length != 6)
+                return System.Drawing.Color.FromArgb(255, 255, 255);
+
             byte R = ColorTranslator.FromHtml("#" + RGB).R;
             byte G = ColorTranslator.FromHtml("#" + RGB).G;
             byte B = ColorTranslator.FromHtml("#" + RGB).B;
