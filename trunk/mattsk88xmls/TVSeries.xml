@@ -33,16 +33,6 @@
       <visible>!Control.IsVisible(1232)</visible>
     </control>
     <control>
-      <description>Number of Files Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>260</posX>
-      <posY>50</posY>
-      <label>#itemcount</label>
-      <align>left</align>
-      <textcolor>ffffffff</textcolor>
-    </control>
-    <control>
       <description>Fan Art Image</description>
       <type>image</type>
       <id>524</id>
@@ -505,7 +495,7 @@
       <label>#TVSeries.Episode.LocalEpisodeName</label>
       <id>0</id>
       <posX>300</posX>
-      <posY>420</posY>
+      <posY>422</posY>
       <width>450</width>
       <height>50</height>
       <font>mediastream14tc</font>
@@ -729,6 +719,7 @@
           <!-- text (when there is no banner) -->
           <textXOff>60</textXOff>
           <textYOff>25</textYOff>
+          <spinCanFocus>no</spinCanFocus>
         </control>
         <control>
           <description>Filmstrip view</description>
@@ -762,6 +753,7 @@
           <showFolder>no</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
+          <spinCanFocus>no</spinCanFocus>
           <thumbAnimation effect="zoom" start="100,100" end="130,130" time="100">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="130,130" end="100,100" time="100"></thumbAnimation>
           <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
@@ -775,8 +767,8 @@
           <posY>420</posY>
           <onleft>2</onleft>
           <onright>2</onright>
-          <spinPosX>1210</spinPosX>
-          <spinPosY>17</spinPosY>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>1600</spinPosY>
           <width>550</width>
           <height>340</height>
           <textXOff>20</textXOff>
@@ -789,6 +781,7 @@
           <remoteColor>#watched.color</remoteColor>
           <textcolor>#notpresent.color</textcolor>
           <textcolor2>#notpresent.color</textcolor2>
+          <spinCanFocus>no</spinCanFocus>
         </control>
       </control>
     </control>
@@ -798,16 +791,50 @@
     :::::::::::::::::::::::::::::::
     -->
     <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>13</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>EPISODES:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+    </control>
+    <control>
       <description>Media Count Label</description>
       <type>label</type>
       <label>#TVSeries.Series.EpisodeCount</label>
       <id>0</id>
-      <posX>1200</posX>
-      <posY>10</posY>
-      <font>mediastream10c</font>
-      <align>right</align>
+      <posX>1215</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <align>left</align>
       <textcolor>ff006698</textcolor>
       <visible>Control.IsVisible(1235)+Control.IsVisible(1238)</visible>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <id>0</id>
+      <label>#TVSeries.Season.EpisodeCount</label>
+      <posX>1215</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <align>left</align>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1239)</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::
