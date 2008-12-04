@@ -217,7 +217,7 @@ multiple view modes.
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>530</posY>
+      <posY>50</posY>
       <label>#itemcount</label>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
@@ -269,10 +269,20 @@ multiple view modes.
       <type>image</type>
       <posX>350</posX>
       <posY>450</posY>
-      <texture>overlayunwatched.png</texture>
+      <texture>overlaywatched.png</texture>
       <width>24</width>
       <height>24</height>
       <visible>Control.IsVisible(50)+Control.IsVisible(9)</visible>
+    </control>
+    <control>
+      <description>Watched Filtering Indicator - UnWatched</description>
+      <type>image</type>
+      <posX>350</posX>
+      <posY>450</posY>
+      <texture>overlayunwatched.png</texture>
+      <width>24</width>
+      <height>24</height>
+      <visible>Control.IsVisible(50)+!Control.IsVisible(9)</visible>
     </control>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
