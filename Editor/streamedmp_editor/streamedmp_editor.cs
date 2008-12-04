@@ -1054,7 +1054,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t<posy>0</posy>");
             rawXML.AppendLine("\t<width>1280</width>");
             rawXML.AppendLine("\t<height>720</height>");
-            rawXML.AppendLine("\t<texture>tv_black.png</texture>");
+            rawXML.AppendLine("\t<texture>black.png</texture>");
             rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
             rawXML.AppendLine("\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>");
             rawXML.AppendLine("</control>");
