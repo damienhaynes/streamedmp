@@ -36,7 +36,7 @@
       <posX>204</posX>
       <posY>570</posY>
       <width>959</width>
-      <height>12</height>
+      <height>40</height>
       <texture>dialogmenubottom.png</texture>
     </control>
     <control>
@@ -44,11 +44,11 @@
       <type>button</type>
       <id>34</id>
       <posX>1124</posX>
-      <posY>145</posY>
+      <posY>115</posY>
       <width>25</width>
       <height>25</height>
-      <textureFocus>dialogue_shutdown_focus.png</textureFocus>
-      <textureNoFocus>dialogue_shutdown_nofocus.png</textureNoFocus>
+      <textureFocus>button_close_focus.png</textureFocus>
+      <textureNoFocus>button_close_nofocus.png</textureNoFocus>
       <label>-</label>
       <onleft>36</onleft>
       <onright>34</onright>
@@ -65,6 +65,9 @@
       <height>450</height>
       <spinPosY>580</spinPosY>
       <spinPosX>1082</spinPosX>
+      <font>mediastream10</font>
+      <font2>mediastream10c</font2>
+      <font3>mediastream12</font3>
       <textcolor>ffffffff</textcolor>
       <textcolor2>ffffffff</textcolor2>
       <textcolor3>ffffffff</textcolor3>
@@ -137,15 +140,16 @@
       <description>groups spin control</description>
       <type>spincontrol</type>
       <id>36</id>
-      <posX>220</posX>
-      <posY>575</posY>
+      <posX>320</posX>
+      <posY>580</posY>
       <showrange>no</showrange>
       <orientation>horizontal</orientation>
-      <font>font12</font>
-      <textureUp>arrow_round_right_nofocus.png</textureUp>
-      <textureDown>arrow_round_left_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+      <font>mediastream12tc</font>
+      <textcolor>FF025984</textcolor>
+      <textureUp>arrowrightnf.png</textureUp>
+      <textureDown>arrowleftnf.png</textureDown>
+      <textureUpFocus>arrowrightfo.png</textureUpFocus>
+      <textureDownFocus>arrowleftfo.png</textureDownFocus>
       <ondown>35</ondown>
       <onup>36</onup>
       <onright>34</onright>
