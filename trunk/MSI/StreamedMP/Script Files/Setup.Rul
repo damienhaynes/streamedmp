@@ -18,16 +18,22 @@
 
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
+// Feature Defines
 #define MATT_FEATURE_TVSERIES			"Main\\mattsk88TVSeries"
 #define MATT_FEATURE_MOVINGPICS			"Main\\mattsk88MovingPictures"
 
 #define SPUCK_FEATURE_TVSERIES			"Main\\spuckTVSeries"
 #define SPUCK_FEATURE_MOVINGPICS		"Main\\spuckMovingPictures"
 
+#define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
+#define TVGUIDE12_FEATURE_OPTIONS		"Main\\tvguide12Options"
+
+// Program executable defines
 #define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
-#define MEDIAPORTAL_MINNOWARN_VERSION	"0.9.3.20755"		
-#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432"
+// Version Defines
+#define MEDIAPORTAL_MINNOWARN_VERSION	"0.9.4.20955" 	// RC4 Base
+#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
 #define TVSERIES_MIN_VERSION			"2.0.3251.0"
 #define MOVINGPICTURES_MIN_VERSION		"0.6.1.293"
@@ -35,10 +41,14 @@
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
 #define RES_DLG_MOVINGPICSSELECT		13001
+#define RES_DLG_OPTIONS					13002
 
 // Dialog Controls
 #define RES_RADIO_CHOICE1				1400
-#define RES_RADIO_CHOICE2				1401
+#define RES_RADIO_CHOICE2				1401    
+
+#define RES_RADIO_TVGUIDE08ROWS 		1325
+#define RES_RADIO_TVGUIDE12ROWS       	1326
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -59,10 +69,12 @@ prototype NUMBER	LaunchBrowser(STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
+prototype NUMBER 	ShowSelectOptions(BOOL);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
 BOOL g_bMovingPicturesDefault;
+STRING g_sTVGuideSize;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -103,6 +115,11 @@ begin
 	if svValue = "1" then
 		g_bMovingPicturesDefault = TRUE;			
 	endif;
+	
+	// Read TVGuide Size default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",nvType,g_sTVGuideSize,nvSize) < 0) then
+		g_sTVGuideSize = "12";		
+	endif;	
 	
 end;
 
@@ -152,6 +169,10 @@ Dlg_SelectTVSeries:
 Dlg_SelectMovingPictures:
 	nResult = ShowSelectMovingPics(FALSE);
 	if (nResult = BACK) goto Dlg_SelectTVSeries;  
+
+Dlg_SelectOptions:
+	nResult = ShowSelectOptions(FALSE);
+	if (nResult = BACK) goto Dlg_SelectMovingPictures;  
 	
 Dlg_SdStartCopy:
     szTitle = "";
@@ -159,7 +180,7 @@ Dlg_SdStartCopy:
     nResult = SdStartCopy2( szTitle, szMsg );			    
 	
 	if (nResult = BACK) then
-    	goto Dlg_SelectMovingPictures;
+    	goto Dlg_SelectOptions;
     else
     	// Confirm Plugin versions are up to date if chosen not to install them    	   
 	    szQuestion = "";
@@ -242,7 +263,13 @@ Dlg_SelectMovingPictures:
 		nResult = ShowSelectMovingPics(FALSE);
 		if (nResult = BACK) goto Dlg_SelectTVSeries; 
 	endif;
-	
+
+Dlg_SelectOptions:
+	if (nType = MODIFY) then
+		nResult = ShowSelectOptions(FALSE);
+		if (nResult = BACK) goto Dlg_SelectMovingPictures; 
+	endif;
+		
 	switch(nType)
 		case REMOVEALL: FeatureRemoveAll();
 		case REPAIR:    FeatureReinstall();
@@ -527,6 +554,81 @@ Dlg_Wait:
    	return nCmdValue;
 end;
 
+function number ShowSelectOptions(bModify)
+	STRING szDialogName;
+	NUMBER nCmdValue;
+	BOOL bDone;
+begin
+
+	szDialogName = "SelectionOptions";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_OPTIONS);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display Options dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:	        	     			     			     			
+ 				// Read from Global Variables
+ 				if g_sTVGuideSize = "8" then
+ 					CtrlSetState(szDialogName,RES_RADIO_TVGUIDE08ROWS,BUTTON_CHECKED);
+ 				else
+ 					CtrlSetState(szDialogName,RES_RADIO_TVGUIDE12ROWS,BUTTON_CHECKED);
+ 				endif;
+ 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables
+	if (CtrlGetState(szDialogName,RES_RADIO_TVGUIDE08ROWS) = BUTTON_CHECKED) then
+		g_sTVGuideSize = "8";
+	else
+		g_sTVGuideSize = "12";
+	endif;                   
+	
+	// Set Features
+	if (g_sTVGuideSize = "8") then
+		FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, TRUE );
+		FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, FALSE );
+	else
+		FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
+		FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, TRUE );
+	endif;
+		
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
+
+
 function VOID UpdateSettings()
 	STRING svString;		
 begin
@@ -537,6 +639,8 @@ begin
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",REGDB_NUMBER,svString, -1);
 	NumToStr(svString,g_bMovingPicturesDefault);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
+	
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
 	
 end;             
 

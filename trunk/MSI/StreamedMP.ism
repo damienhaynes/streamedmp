@@ -54,7 +54,7 @@
 		<title>Installation Database</title>
 		<subject>##ID_STRING2##</subject>
 		<author>##ID_STRING1##</author>
-		<keywords>Installer,MSI,Database,streamedMP,MediaPortal</keywords>
+		<keywords>Installer,MSI,Database,StreamedMP,MediaPortal</keywords>
 		<comments>Contact:  Your local administrator</comments>
 		<template>Intel;1033</template>
 		<lastauthor>Administrator</lastauthor>
@@ -342,6 +342,8 @@
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>spuckMovingPictures</td><td>{BACFB03F-33E0-4FE1-8147-DF08BB8F5F7E}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>spuckTVSeries</td><td>{08BFDAEC-37C5-4A9E-B009-CFB7CD6E97D9}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tvguide08Rows</td><td>{5EEF4565-0B33-496C-8A5F-DE13ACC3D2C1}</td><td>STREAMEDMP1</td><td>8</td><td/><td>mytvguide.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tvguide12Rows</td><td>{999C0F49-93AA-4B78-8A22-F1BAD0193F0F}</td><td>STREAMEDMP1</td><td>8</td><td/><td>mytvguide.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvseriesConfig</td><td>{FEECD87F-90EE-4116-83D8-F41376EB39F0}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>webForums</td><td>{BFB829BE-DE1B-4B14-9633-1C855AC57F33}</td><td>WEB</td><td>8</td><td/><td>forums.url</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>webHome</td><td>{B0A46A2B-37F5-4B76-BCC4-88B05F4C0945}</td><td>WEB</td><td>8</td><td/><td>home.url</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -516,9 +518,23 @@
 		<row><td>SelectionMovingPictures</td><td>ControlId_7</td><td>Text</td><td>3</td><td>222</td><td>45</td><td>13</td><td>2</td><td/><td/><td>ControlId_50</td><td/><td>131072</td><td>7</td><td/><td/></row>
 		<row><td>SelectionMovingPictures</td><td>ControlId_9</td><td>PushButton</td><td>306</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_9##</td><td>ControlId_12</td><td/><td>0</td><td>9</td><td/><td/></row>
 		<row><td>SelectionMovingPictures</td><td>GroupBox1</td><td>GroupBox</td><td>7</td><td>59</td><td>361</td><td>151</td><td>3</td><td/><td>##NEW_STRING11##</td><td>Bitmap3</td><td/><td>0</td><td>1326</td><td/><td/></row>
-		<row><td>SelectionMovingPictures</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>74</td><td>338</td><td>22</td><td>16777219</td><td>NewProperty22</td><td/><td>GroupBox1</td><td/><td>0</td><td>1305</td><td/><td/></row>
+		<row><td>SelectionMovingPictures</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>75</td><td>338</td><td>22</td><td>16777219</td><td>NewProperty22</td><td/><td>GroupBox1</td><td/><td>0</td><td>1305</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>Bitmap1</td><td>Bitmap</td><td>152</td><td>5</td><td>219</td><td>32</td><td>1048577</td><td/><td/><td>GroupBox1</td><td/><td>0</td><td>1302</td><td/><td>NewBinary9</td></row>
+		<row><td>SelectionOptions</td><td>ControlId_1</td><td>PushButton</td><td>242</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_1##</td><td>ControlId_9</td><td/><td>131072</td><td>1</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_12</td><td>PushButton</td><td>187</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_12##</td><td>ControlId_1300</td><td/><td>0</td><td>12</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_1300</td><td>Line</td><td>48</td><td>227</td><td>325</td><td>2</td><td>3</td><td/><td/><td>ControlId_7</td><td/><td>131079</td><td>1300</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_1301</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>2</td><td>3</td><td/><td/><td>Bitmap1</td><td/><td>131088</td><td>1301</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_2</td><td>PushButton</td><td>185</td><td>275</td><td>57</td><td>17</td><td>2</td><td/><td>##IDS__NewDialog_ControlId_2##</td><td/><td/><td>0</td><td>2</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_50</td><td>Text</td><td>12</td><td>4</td><td>248</td><td>10</td><td>65539</td><td/><td>##IDS_OPTIONS_TITLE##</td><td>ControlId_51</td><td/><td>131072</td><td>50</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_51</td><td>Text</td><td>19</td><td>19</td><td>240</td><td>24</td><td>65539</td><td/><td>##IDS_OPTIONS_DESC##</td><td>ControlId_1301</td><td/><td>131072</td><td>51</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_52</td><td>Text</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>ControlId_1</td><td/><td>131072</td><td>52</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_7</td><td>Text</td><td>3</td><td>222</td><td>45</td><td>13</td><td>2</td><td/><td/><td>ControlId_50</td><td/><td>131072</td><td>7</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>ControlId_9</td><td>PushButton</td><td>306</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_9##</td><td>ControlId_12</td><td/><td>0</td><td>9</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>GroupBox1</td><td>GroupBox</td><td>31</td><td>64</td><td>310</td><td>49</td><td>3</td><td/><td>##NEW_STRING6##</td><td>Text1</td><td/><td>0</td><td>1303</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>100</td><td>80</td><td>230</td><td>24</td><td>16777219</td><td>NewProperty3</td><td/><td>ControlId_52</td><td/><td>0</td><td>1399</td><td/><td/></row>
+		<row><td>SelectionOptions</td><td>Text1</td><td>Text</td><td>42</td><td>83</td><td>70</td><td>16</td><td>65539</td><td/><td>##NEW_STRING7##</td><td>RadioButtonGroup1</td><td/><td>0</td><td>1304</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>Bitmap1</td><td>Bitmap</td><td>152</td><td>5</td><td>219</td><td>32</td><td>1048577</td><td/><td/><td>Bitmap3</td><td/><td>0</td><td>1302</td><td/><td>NewBinary9</td></row>
-		<row><td>SelectionTVSeries</td><td>Bitmap2</td><td>Bitmap</td><td>16</td><td>103</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>RadioButtonGroup1</td><td/><td>0</td><td>1303</td><td/><td>NewBinary11</td></row>
+		<row><td>SelectionTVSeries</td><td>Bitmap2</td><td>Bitmap</td><td>16</td><td>103</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>GroupBox1</td><td/><td>0</td><td>1303</td><td/><td>NewBinary11</td></row>
 		<row><td>SelectionTVSeries</td><td>Bitmap3</td><td>Bitmap</td><td>190</td><td>103</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>Bitmap2</td><td/><td>0</td><td>1304</td><td/><td>NewBinary10</td></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_1</td><td>PushButton</td><td>242</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_1##</td><td>ControlId_9</td><td/><td>131072</td><td>1</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_12</td><td>PushButton</td><td>187</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_12##</td><td>ControlId_1300</td><td/><td>0</td><td>12</td><td/><td/></row>
@@ -530,8 +546,8 @@
 		<row><td>SelectionTVSeries</td><td>ControlId_52</td><td>Text</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>ControlId_1</td><td/><td>131072</td><td>52</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_7</td><td>Text</td><td>3</td><td>222</td><td>45</td><td>13</td><td>2</td><td/><td/><td>ControlId_50</td><td/><td>131072</td><td>7</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_9</td><td>PushButton</td><td>306</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_9##</td><td>ControlId_12</td><td/><td>0</td><td>9</td><td/><td/></row>
-		<row><td>SelectionTVSeries</td><td>GroupBox1</td><td>GroupBox</td><td>7</td><td>59</td><td>361</td><td>151</td><td>3</td><td/><td>##NEW_STRING8##</td><td>ControlId_52</td><td/><td>0</td><td>1328</td><td/><td/></row>
-		<row><td>SelectionTVSeries</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>74</td><td>338</td><td>22</td><td>16777219</td><td>NewProperty2</td><td/><td>GroupBox1</td><td/><td>0</td><td>1305</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>GroupBox1</td><td>GroupBox</td><td>7</td><td>59</td><td>361</td><td>151</td><td>3</td><td/><td>##NEW_STRING8##</td><td>RadioButtonGroup1</td><td/><td>0</td><td>1328</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>75</td><td>338</td><td>22</td><td>16777219</td><td>NewProperty4</td><td/><td>ControlId_52</td><td/><td>0</td><td>1305</td><td/><td/></row>
 	</table>
 
 	<table name="ControlCondition">
@@ -602,6 +618,7 @@
 		<row><td>DialogId_12071</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__DialogId_12071##</td><td>ControlId_1</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>12071</td></row>
 		<row><td>STATUSEX</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__DialogId_10305##</td><td>ControlId_710</td><td/><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>10305</td></row>
 		<row><td>SelectionMovingPictures</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13001</td></row>
+		<row><td>SelectionOptions</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13002</td></row>
 		<row><td>SelectionTVSeries</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13000</td></row>
 	</table>
 
@@ -1349,6 +1366,8 @@
 		<row><td>mattsk88TVSeries</td><td>Main</td><td>##ID_STRING20##</td><td>##ID_STRING25##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>spuckMovingPictures</td><td>Main</td><td>##ID_STRING19##</td><td>##ID_STRING23##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>spuckTVSeries</td><td>Main</td><td>##ID_STRING21##</td><td>##ID_STRING22##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>tvguide08Options</td><td>Main</td><td>##ID_STRING49##</td><td>##ID_STRING51##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>tvguide12Options</td><td>Main</td><td>##ID_STRING50##</td><td>##ID_STRING52##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="FeatureComponents">
@@ -1378,6 +1397,8 @@
 		<row><td>mattsk88TVSeries</td><td>mattsk88TVSeries</td></row>
 		<row><td>spuckMovingPictures</td><td>spuckMovingPictures</td></row>
 		<row><td>spuckTVSeries</td><td>spuckTVSeries</td></row>
+		<row><td>tvguide08Options</td><td>tvguide08Rows</td></row>
+		<row><td>tvguide12Options</td><td>tvguide12Rows</td></row>
 	</table>
 
 	<table name="File">
@@ -1409,8 +1430,11 @@
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\movingpictures\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\rss\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
+		<row><td>mytvguide.xml</td><td>tvguide08Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\8 rows\mytvguide.xml</td><td>1</td><td/></row>
+		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>nl_nl_.xml</td><td>pluginTVSeriesLanguages</td><td>nl(nl).xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\nl(nl).xml</td><td>1</td><td/></row>
 		<row><td>no.xml</td><td>pluginTVSeriesLanguages</td><td>no.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\no.xml</td><td>1</td><td/></row>
+		<row><td>no_nb_.xml</td><td>pluginTVSeriesLanguages</td><td>no(nb).xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\no(nb).xml</td><td>1</td><td/></row>
 		<row><td>pl.xml</td><td>pluginTVSeriesLanguages</td><td>pl.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\pl.xml</td><td>1</td><td/></row>
 		<row><td>pt_pt.xml</td><td>pluginTVSeriesLanguages</td><td>pt_pt.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\pt_pt.xml</td><td>1</td><td/></row>
 		<row><td>streamedmp.formatrules</td><td>tvseriesConfig</td><td>STREAM~1.FOR|StreamedMP.formatRules</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\StreamedMP.formatRules</td><td>1</td><td/></row>
@@ -1654,6 +1678,8 @@
 		<row><td>skinXML</td><td/><td/><td>_DC47D95D_6D31_4780_896D_85C92FF14D4C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>spuckMovingPictures</td><td/><td/><td>_40FA0A44_1D9F_4F9A_8144_837EAE8EE45B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>spuckTVSeries</td><td/><td/><td>_EA1C0095_D842_4F4F_BE06_692251692B7C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tvguide08Rows</td><td/><td/><td>_C6BBB571_592A_48D2_A9D8_97ED33AB1060_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tvguide12Rows</td><td/><td/><td>_C7A964A7_35DA_4B67_8EAB_D06F631BDA1C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>tvseriesConfig</td><td/><td/><td>_A118CAF5_9735_45DB_AF7F_0C83C1226FC5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>webForums</td><td/><td/><td>_C8EEF662_2096_4B1C_BCE3_BDEE6E931A43_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>webHome</td><td/><td/><td>_8D6F212C_C490_4E22_AE85_FA4A9E581BEF_FILTER</td><td/><td/><td/><td/></row>
@@ -1752,6 +1778,8 @@
 		<row><td>mattsk88TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>spuckMovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>spuckTVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>tvguide08Options</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>tvguide12Options</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISFeatureMergeModuleExcludes">
@@ -2027,10 +2055,10 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.1.167</td></row>
+		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.2.200</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 		<row><td>ReleasePlugins</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.1.167</td></row>
+		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.2.200</td></row>
 		<row><td>ReleasePlugins</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2295,12 +2323,15 @@
 		<row><td>Custom</td><td>mattsk88TVSeries</td></row>
 		<row><td>Custom</td><td>spuckMovingPictures</td></row>
 		<row><td>Custom</td><td>spuckTVSeries</td></row>
+		<row><td>Custom</td><td>tvguide08Options</td></row>
+		<row><td>Custom</td><td>tvguide12Options</td></row>
 		<row><td>Minimal</td><td>LogosPSD</td></row>
 		<row><td>Minimal</td><td>Main</td></row>
 		<row><td>Minimal</td><td>MenuEditor</td></row>
 		<row><td>Minimal</td><td>Tools</td></row>
 		<row><td>Minimal</td><td>spuckMovingPictures</td></row>
 		<row><td>Minimal</td><td>spuckTVSeries</td></row>
+		<row><td>Minimal</td><td>tvguide12Options</td></row>
 		<row><td>Typical</td><td>Main</td></row>
 		<row><td>Typical</td><td>MenuEditor</td></row>
 		<row><td>Typical</td><td>MovingPictures</td></row>
@@ -2310,6 +2341,8 @@
 		<row><td>Typical</td><td>Tools</td></row>
 		<row><td>Typical</td><td>spuckMovingPictures</td></row>
 		<row><td>Typical</td><td>spuckTVSeries</td></row>
+		<row><td>Typical</td><td>tvguide08Options</td></row>
+		<row><td>Typical</td><td>tvguide12Options</td></row>
 	</table>
 
 	<table name="ISStorages">
@@ -3094,6 +3127,8 @@
 		<row><td>IDS_ISSCRIPT_VERSION_OLD</td><td>1033</td><td>The InstallScript engine on this machine is older than the version required to run this setup.  If available, please install the latest version of ISScript.msi, or contact your support personnel for further assistance.</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_NEXT</td><td>1033</td><td>&amp;Next &gt;</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_OK</td><td>1033</td><td>OK</td><td>0</td><td/><td>-1843706412</td></row>
+		<row><td>IDS_OPTIONS_DESC</td><td>1033</td><td>Selection your skin options</td><td>0</td><td/><td>773643308</td></row>
+		<row><td>IDS_OPTIONS_TITLE</td><td>1033</td><td>Options</td><td>0</td><td/><td>773624876</td></row>
 		<row><td>IDS_PREVENT_DOWNGRADE_EXIT</td><td>1033</td><td>A newer version of this application is already installed on this computer. If you wish to install this version, please uninstall the newer version first. Click OK to exit the wizard.</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_PRINT_BUTTON</td><td>1033</td><td>&amp;Print</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_PRODUCTNAME_INSTALLSHIELD</td><td>1033</td><td>[ProductName] - InstallShield Wizard</td><td>0</td><td/><td>-1843706412</td></row>
@@ -3561,7 +3596,11 @@
 		<row><td>ID_STRING46</td><td>1033</td><td>Wiki</td><td>0</td><td/><td>-845397327</td></row>
 		<row><td>ID_STRING47</td><td>1033</td><td>PHOTOS~1|Photoshop</td><td>0</td><td/><td>-845412975</td></row>
 		<row><td>ID_STRING48</td><td>1033</td><td>PHOTOS~1|Photoshop</td><td>0</td><td/><td>-845380207</td></row>
+		<row><td>ID_STRING49</td><td>1033</td><td>TV Guide #1</td><td>0</td><td/><td>773638157</td></row>
 		<row><td>ID_STRING5</td><td>1033</td><td>MediaPortal Forums</td><td>0</td><td/><td>-1919143027</td></row>
+		<row><td>ID_STRING50</td><td>1033</td><td>TV Guide #2</td><td>0</td><td/><td>773591085</td></row>
+		<row><td>ID_STRING51</td><td>1033</td><td>TV Guide with 8 rows</td><td>0</td><td/><td>773646349</td></row>
+		<row><td>ID_STRING52</td><td>1033</td><td>TV Guide with 12 rows</td><td>0</td><td/><td>773597229</td></row>
 		<row><td>ID_STRING6</td><td>1033</td><td>http://forum.team-mediaportal.com/hot-skins-248/</td><td>0</td><td/><td>-1919116403</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
@@ -3575,10 +3614,20 @@
 		<row><td>NEW_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-1919128137</td></row>
 		<row><td>NEW_STRING10</td><td>1033</td><td>&amp;Fanart Orientated</td><td>0</td><td/><td>-1382280021</td></row>
 		<row><td>NEW_STRING11</td><td>1033</td><td>Choose the skin layout you prefer to install for the Moving Pictures plugin:</td><td>0</td><td/><td>-1784892276</td></row>
+		<row><td>NEW_STRING12</td><td>1033</td><td>8 Rows</td><td>0</td><td/><td>773641325</td></row>
+		<row><td>NEW_STRING13</td><td>1033</td><td>12 Rows</td><td>0</td><td/><td>773641325</td></row>
+		<row><td>NEW_STRING14</td><td>1033</td><td>RadioButton</td><td>0</td><td/><td>773610669</td></row>
+		<row><td>NEW_STRING15</td><td>1033</td><td>RadioButton</td><td>0</td><td/><td>773614765</td></row>
+		<row><td>NEW_STRING16</td><td>1033</td><td>8 Rows</td><td>0</td><td/><td>773602957</td></row>
+		<row><td>NEW_STRING17</td><td>1033</td><td>12 Rows</td><td>0</td><td/><td>773607053</td></row>
+		<row><td>NEW_STRING18</td><td>1033</td><td>Default Layout</td><td>0</td><td/><td>773637741</td></row>
+		<row><td>NEW_STRING19</td><td>1033</td><td>Fanart Orientated</td><td>0</td><td/><td>773619309</td></row>
 		<row><td>NEW_STRING2</td><td>1033</td><td>&amp;Default Layout</td><td>0</td><td/><td>-1382251381</td></row>
 		<row><td>NEW_STRING3</td><td>1033</td><td>&amp;Fanart Orientated</td><td>0</td><td/><td>-1382241141</td></row>
 		<row><td>NEW_STRING4</td><td>1033</td><td>Choice 1</td><td>0</td><td/><td>-1919127305</td></row>
 		<row><td>NEW_STRING5</td><td>1033</td><td>Choice 2</td><td>0</td><td/><td>-1919127305</td></row>
+		<row><td>NEW_STRING6</td><td>1033</td><td>Options</td><td>0</td><td/><td>773647468</td></row>
+		<row><td>NEW_STRING7</td><td>1033</td><td>TV Guide Size:</td><td>0</td><td/><td>773610636</td></row>
 		<row><td>NEW_STRING8</td><td>1033</td><td>Choose the skin layout you prefer to install for the TV Series plugin:</td><td>0</td><td/><td>-1919152361</td></row>
 		<row><td>NEW_STRING9</td><td>1033</td><td>&amp;Default Layout</td><td>0</td><td/><td>-1382224757</td></row>
 		<row><td>UNINST|Uninstall StreamedMP</td><td>1033</td><td>UNINST~1|Uninstall Streamed MP</td><td>0</td><td/><td>-845403284</td></row>
@@ -3831,8 +3880,8 @@
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>ApplicationType</td><td>Standard Windows Application</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d0d78a65c62cff7dd6db134f9be46ab">
-UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="024bc1a28d9c5b76af78862322d41c69">
+UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 			</td></row>
 		<row><td>DoMaintenance</td><td>1</td></row>
 		<row><td>ISCompilerOption_CompileBeforeBuild</td><td>1</td></row>
@@ -3850,7 +3899,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>MsiExecCmdLineOptions</td><td/></row>
 		<row><td>MsiLogFile</td><td/></row>
 		<row><td>OnUpgrade</td><td>0</td></row>
-		<row><td>Owner</td><td>Team MediaPortal</td></row>
+		<row><td>Owner</td><td>mattsk88, spuck &amp; ltfearme</td></row>
 		<row><td>PatchFamily</td><td>MyPatchFamily1</td></row>
 		<row><td>PatchSequence</td><td>1.0.0</td></row>
 		<row><td>SaveAsSchema</td><td/></row>
@@ -4111,6 +4160,10 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
 		<row><td>MsiLogging</td><td>voicewarmupx</td><td/></row>
+		<row><td>NewProperty1</td><td>0</td><td/></row>
+		<row><td>NewProperty2</td><td>1</td><td/></row>
+		<row><td>NewProperty3</td><td>1</td><td/></row>
+		<row><td>NewProperty4</td><td>1</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOLS</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEVROOT</td><td>##IDS_PROGMSG_IIS_CREATEVROOT##</td><td/></row>
@@ -4131,9 +4184,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{7A7760CC-256A-4ECD-BE3F-E7644FAD5DA8}</td><td/></row>
+		<row><td>ProductCode</td><td>{437C996D-2A3D-4809-89F7-E25A66A463B1}</td><td/></row>
 		<row><td>ProductName</td><td>StreamedMP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.1.167.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.2.200.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR</td><td/></row>
@@ -4164,10 +4217,12 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<col def="L64">Text</col>
 		<col def="L50">Help</col>
 		<col def="I4">ISControlId</col>
-		<row><td>NewProperty2</td><td>1</td><td>1</td><td>15</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING2##</td><td/><td>1400</td></row>
-		<row><td>NewProperty2</td><td>2</td><td>2</td><td>180</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING3##</td><td/><td>1401</td></row>
 		<row><td>NewProperty22</td><td>1</td><td>1</td><td>15</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING9##</td><td/><td>1400</td></row>
 		<row><td>NewProperty22</td><td>2</td><td>2</td><td>180</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING10##</td><td/><td>1401</td></row>
+		<row><td>NewProperty3</td><td>1</td><td>1</td><td>32</td><td>3</td><td>73</td><td>13</td><td>##NEW_STRING16##</td><td/><td>1325</td></row>
+		<row><td>NewProperty3</td><td>2</td><td>2</td><td>142</td><td>3</td><td>73</td><td>13</td><td>##NEW_STRING17##</td><td/><td>1326</td></row>
+		<row><td>NewProperty4</td><td>1</td><td>1</td><td>15</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING18##</td><td/><td>1400</td></row>
+		<row><td>NewProperty4</td><td>2</td><td>2</td><td>180</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING19##</td><td/><td>1401</td></row>
 		<row><td>Yes__I_want_to_restart_my_computer_now.</td><td>1</td><td>Yes, I want to restart my computer now.</td><td>0</td><td>0</td><td>223</td><td>15</td><td>##IDS__DialogId_12031_ControlId_502_1##</td><td/><td>502</td></row>
 		<row><td>Yes__I_want_to_restart_my_computer_now.</td><td>2</td><td>No, I will restart my computer later.</td><td>0</td><td>26</td><td>223</td><td>15</td><td>##IDS__DialogId_12031_ControlId_502_2##</td><td/><td>503</td></row>
 		<row><td>_Automatically_close_and_attempt_to_restart_applications.</td><td>1</td><td>&amp;Automatically close and attempt to restart applications.</td><td>0</td><td>0</td><td>334</td><td>10</td><td>##IDS__DialogId_12071_ControlId_1322_1##</td><td/><td>1322</td></row>
