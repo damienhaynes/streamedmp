@@ -6,7 +6,29 @@
 //
 //  Comments:     
 //
-//===========================================================================
+//===========================================================================    
+
+/////////////////////////////////////////////////////////////////////////////
+//   INSTALLATION    	 MAINTENANCE           PATCH          RESUME/UPGRADE
+//       |                   |                   |                   |
+//       '-------------------'---------,---------'-------------------'
+//                                     |
+//                                 OnBegin()
+//                                     |
+//       ,-------------------,---------'---------,-------------------,
+//       |                   |                   |                   |
+// OnFirstUIBefore()  OnMaintUIBefore()  OnPatchUIBefore()  OnResumeUIBefore()
+//       |                   |                   |                   |
+//      ...                 ...                 ...                 ...
+//       |                   |                   |                   |
+//  OnFirstUIAfter()  OnMaintUIAfter()    OnPatchUIAfter()   OnResumeUIAfter()
+//       |                   |                   |                   |
+//       '-------------------'---------,---------'-------------------'
+//                                     |
+//                                   OnEnd()
+//
+/////////////////////////////////////////////////////////////////////////////
+
 
 // Included header files ----------------------------------------------------
 #include "ifx.h"
@@ -65,7 +87,11 @@ prototype VOID 		UpdateSettings();
 prototype NUMBER	GetFileVersion(BYREF STRING, STRING);
 prototype VOID		CheckMPVersion();		
 prototype NUMBER	CheckPluginVersions(BYREF STRING);
-prototype NUMBER	LaunchBrowser(STRING);
+prototype NUMBER	LaunchBrowser(STRING);   
+prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING);
+prototype VOID		MajorUpgradeCleanup();
+prototype VOID		GetCachedInstallDir();  
+prototype VOID		UninstallCleanup();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -74,7 +100,11 @@ prototype NUMBER 	ShowSelectOptions(BOOL);
 // Global Variables
 BOOL g_bTVSeriesDefault;
 BOOL g_bMovingPicturesDefault;
+BOOL g_bMajorUpgrade;
+
+STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;
+STRING g_sDownloadInstallDir;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -83,15 +113,29 @@ STRING g_sTVGuideSize;
 // initializes.
 //---------------------------------------------------------------------------
 function OnBegin()
-begin		
+	STRING szVersion, szUpgradeMessage;
+	NUMBER nResult; 
+begin
+	
+	// See if older version is installed
+	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID);
+	if g_bMajorUpgrade then
+		szUpgradeMessage = "Setup is about to perform a Major Upgrade from: v" + szVersion + "\nThe previous installation will " +
+						   "be removed, Do you wish to continue?";
+		nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);
+		if (nResult != IDYES) then
+			abort;
+		endif;
+	endif; 
+	
 	SetDefaults();		
 end;           
 
 function VOID SetDefaults()
 	STRING svValue;
 	NUMBER nvType, nvSize;
-begin
- 	
+begin 
+	 	
  	// Set the installation directory to one currently used by MediaPortal
 	if (GetMediaPortalProgramDir(svValue) < 0) then
 		svValue = ProgramFilesFolder^"Team MediaPortal\\MediaPortal";	
@@ -123,6 +167,29 @@ begin
 	
 end;
 
+function BOOL IsMajorUpgrade(sMajorUpgradeVersion, sMajorUpgradeGUID)
+	STRING szKey;
+	NUMBER nvBufferSize, nResult;
+	BOOL bUpgrade;
+begin
+    nvBufferSize = 256;
+    bUpgrade = TRUE;
+    
+    // Get Properties for MajorUpgrade
+    // Returns the GUID in svMajorUpgrade of previous install
+ 	MsiGetProperty(ISMSI_HANDLE,"MAJORUPGRADE_01",sMajorUpgradeGUID,nvBufferSize);
+ 		
+	// Version 0.1.167
+	if sMajorUpgradeGUID = "{7A7760CC-256A-4ECD-BE3F-E7644FAD5DA8}" then
+		
+		sMajorUpgradeVersion = "0.1.167";		
+		return TRUE;
+		
+	endif;   
+		
+ 	return FALSE;
+end;
+    
 //---------------------------------------------------------------------------
 // OnFirstUIBefore
 //
@@ -133,7 +200,7 @@ end;
 function OnFirstUIBefore()
     NUMBER nResult, nSetupType, nvSize, nUser;
     STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile;
-    STRING svMPVersion;    
+    STRING svMPVersion, svValue;    
 	BOOL bCustom;
 begin						   
   
@@ -189,6 +256,13 @@ Dlg_SdStartCopy:
  			if (AskYesNo ( szQuestion, YES ) = YES) goto Dlg_SdFeatureTree; 	
  		endif;
     endif;
+    
+    /*if g_bMajorUpgrade then
+    	// Remove old Editor backups (these are no longer compatible)
+	    if GetMediaPortalConfigDir(svValue) != -1 then;
+	    	DeleteFile(svValue^"skin"^SKIN_NAME^"Basichome.xml.backup.*");
+	    endif;
+    endif;*/
     
     // setup default status
     Enable(STATUSEX);
@@ -271,7 +345,9 @@ Dlg_SelectOptions:
 	endif;
 		
 	switch(nType)
-		case REMOVEALL: FeatureRemoveAll();
+		case REMOVEALL: 
+			FeatureRemoveAll();
+			GetCachedInstallDir();
 		case REPAIR:    FeatureReinstall();
 		case MODIFY:	UpdateSettings();
 	endswitch;
@@ -299,6 +375,11 @@ begin
 	
 	// Clean Cache Folder
     CleanCache();
+    
+    // Major Upgrade Cleanup
+    if g_bMajorUpgrade then
+    	MajorUpgradeCleanup();
+    endif;
     
 	Disable(STATUSEX);
 
@@ -339,6 +420,10 @@ begin
     // Clean Cache Folder
     CleanCache();
     
+    if ( REMOVEALLMODE ) then
+    	UninstallCleanup();
+    endif;
+    
 	Disable(STATUSEX);
 
 	bOpt1   = FALSE;
@@ -368,6 +453,7 @@ begin
     
     // Delete Skin Cache Folder
     SetStatusWindow(100, "Removing " + SKIN_NAME + " from MediaPortal cache.");
+    Delay(1);
     svValue = svValue ^ "Cache" ^ SKIN_NAME;
     DeleteDir(svValue,ALLCONTENTS);
     
@@ -781,4 +867,60 @@ begin
 		return 0;
 	endif;
 	
+end;
+
+function VOID MajorUpgradeCleanup()
+	STRING szUninstallKey, svSubStr, svValue;
+	NUMBER nvSize, nvType;
+begin 
+	// For some reason InstallShield doesnt cleanup files/settings properly
+	// after upgrade, this function removes them manually
+
+    // Check if old Uninstall Entry exists
+   	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+   	
+   	szUninstallKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\InstallShield_"+g_sMajorUpgradeGUID;
+   	if (RegDBKeyExist(szUninstallKey) < 0) then
+   		// Nothing to remove
+   		return;
+   	endif;
+   	
+   	// Get Path 
+	RegDBGetKeyValueEx(szUninstallKey,"LogFile",nvType,svValue,nvSize);
+	// Remove filename 'Setup.ilg' to path
+	StrSub ( svSubStr, svValue, 0, (StrLength(svValue) - 9) );	
+	
+	// Remove leftover files/folder from previous install
+	DeleteDir(svSubStr,ALLCONTENTS);
+	
+	RegDBGetKeyValueEx(szUninstallKey,"InstallSource",nvType,svValue,nvSize);
+	DeleteDir(svValue,ALLCONTENTS);
+
+    // Remove Uninstall entry in Add/Remove programs
+    RegDBDeleteKey(szUninstallKey);
+                       
+end;
+
+function VOID GetCachedInstallDir()
+	STRING	szUninstallKey;
+	NUMBER 	nvSize, nvType;
+begin                           
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+    szUninstallKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\InstallShield_"+PRODUCT_GUID;
+    RegDBGetKeyValueEx(szUninstallKey,"InstallSource",nvType,g_sDownloadInstallDir,nvSize);	
+end; 
+
+function VOID UninstallCleanup()
+	STRING szDir;
+begin 
+	// Remove cached downloaded install files                                           
+	if (Is(PATH_EXISTS,g_sDownloadInstallDir)) then
+    	DeleteDir(g_sDownloadInstallDir,ALLCONTENTS);    	
+    endif;
+    
+    // Remove any rouge XML files from skin directory
+    szDir = INSTALLDIR^"skin"^SKIN_NAME;
+    DeleteFile(szDir^"*.xml");
+    DeleteDir(szDir,ONLYDIR);
+    
 end;

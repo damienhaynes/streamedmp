@@ -259,6 +259,7 @@
 		<row><td>NewBinary7</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
 		<row><td>NewBinary8</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
 		<row><td>NewBinary9</td><td/><td>&lt;ISPROJECTDIR&gt;\res\logo.bmp</td></row>
+		<row><td>SetAllUsers.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SetAllUsers.dll</td></row>
 	</table>
 
 	<table name="BindImage">
@@ -583,6 +584,7 @@
 		<col def="S0">Target</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td>Required for installations using InstallScript.</td></row>
@@ -3601,7 +3603,7 @@
 		<row><td>ID_STRING50</td><td>1033</td><td>TV Guide #2</td><td>0</td><td/><td>773591085</td></row>
 		<row><td>ID_STRING51</td><td>1033</td><td>TV Guide with 8 rows</td><td>0</td><td/><td>773646349</td></row>
 		<row><td>ID_STRING52</td><td>1033</td><td>TV Guide with 12 rows</td><td>0</td><td/><td>773597229</td></row>
-		<row><td>ID_STRING6</td><td>1033</td><td>http://forum.team-mediaportal.com/hot-skins-248/</td><td>0</td><td/><td>-1919116403</td></row>
+		<row><td>ID_STRING6</td><td>1033</td><td>http://forum.team-mediaportal.com/streamedmp-301/</td><td>0</td><td/><td>907806336</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING9</td><td>1033</td><td>TEAMME~1|Team MediaPortal</td><td>0</td><td/><td>-1919133586</td></row>
@@ -3813,6 +3815,7 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
@@ -3924,6 +3927,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td/><td>430</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>1301</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>NOT AFTERREBOOT AND NOT ISSETUPDRIVEN</td><td>1</td><td>ISVerifyScriptingRuntime</td><td/></row>
@@ -4160,10 +4164,6 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
 		<row><td>Manufacturer</td><td>##COMPANY_NAME##</td><td/></row>
 		<row><td>MsiLogging</td><td>voicewarmupx</td><td/></row>
-		<row><td>NewProperty1</td><td>0</td><td/></row>
-		<row><td>NewProperty2</td><td>1</td><td/></row>
-		<row><td>NewProperty3</td><td>1</td><td/></row>
-		<row><td>NewProperty4</td><td>1</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOLS</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEVROOT</td><td>##IDS_PROGMSG_IIS_CREATEVROOT##</td><td/></row>
@@ -4185,11 +4185,11 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{437C996D-2A3D-4809-89F7-E25A66A463B1}</td><td/></row>
-		<row><td>ProductName</td><td>StreamedMP</td><td/></row>
+		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
 		<row><td>ProductVersion</td><td>0.2.200.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
-		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR</td><td/></row>
+		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
 		<row><td>UpgradeCode</td><td>{D916AD64-452C-4231-BD7A-AA2CB92B1A01}</td><td/></row>
 		<row><td>Yes__I_want_to_launch__p_now.</td><td>Yes, I want to launch %p now.</td><td/></row>
 		<row><td>Yes__I_want_to_restart_my_computer_now.</td><td>Yes, I want to restart my computer now.</td><td/></row>
@@ -4254,6 +4254,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>Registry4</td><td>2</td><td>SOFTWARE\StreamedMP</td><td>VERSION</td><td>[ProductVersion]</td><td>ISRegistryComponent</td><td>0</td></row>
 		<row><td>Registry5</td><td>2</td><td>SOFTWARE\StreamedMP</td><td>DEFAULTTVSERIES</td><td>#1</td><td>ISRegistryComponent</td><td>0</td></row>
 		<row><td>Registry6</td><td>2</td><td>SOFTWARE\StreamedMP</td><td>DEFAULTMOVINGPICS</td><td>#1</td><td>ISRegistryComponent</td><td>0</td></row>
+		<row><td>Registry7</td><td>2</td><td>SOFTWARE\StreamedMP</td><td>TVGUIDESIZE</td><td>#12</td><td>ISRegistryComponent</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
@@ -4474,6 +4475,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<col def="S255">Remove</col>
 		<col def="s72">ActionProperty</col>
 		<col def="S72">ISDisplayName</col>
+		<row><td>{D916AD64-452C-4231-BD7A-AA2CB92B1A01}</td><td></td><td>***ALL_VERSIONS***</td><td></td><td>257</td><td/><td>MAJORUPGRADE_01</td><td>MajorUpgrade</td></row>
 	</table>
 
 	<table name="Verb">
