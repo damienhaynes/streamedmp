@@ -8,6 +8,16 @@
 <controls>
     
     <control>
+      <description>dummy label for imdb info</description>
+      <type>label</type>
+      <id>4441</id>
+      <posX>1300</posX>
+      <posY>800</posY>
+      <label>#title</label>
+      <visible>control.hastext(4441)</visible>
+    </control>
+    
+    <control>
       <type>image</type>
       <description>BG</description>
       <id>0</id>
@@ -215,7 +225,7 @@
       <width>257</width>
       <height>380</height>
       <texture>#selectedthumb</texture>
-      <visible>facadeview.list</visible>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -227,9 +237,21 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>facadeview.list</visible>
+      <visible>facadeview.list+Control.HasThumb(60)</visible>
     </control>
     
+    <control>
+      <description>Movie Title Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>253</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#title</label>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -240,20 +262,143 @@
       <font>mediastream16tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.list</visible>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
-      <description>Year below the movie title</description>
+      <description>Selected Item Shadow</description>
       <type>label</type>
-      <label>#year</label>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>253</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+!Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Selected Item</description>
+      <type>label</type>
       <id>0</id>
       <posX>308</posX>
-      <posY>278</posY>
+      <posY>251</posY>
       <width>900</width>
-      <font>mediastream12tc</font>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+!Control.IsVisible(4441)</visible>
+    </control>
+    
+    <control>
+      <description>Genres Shadow</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>283</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff000000</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Genres</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>282</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>facadeview.list</visible>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    
+    <control>
+      <description>Directors Label Shadow</description>
+      <type>label</type>
+      <label>Director</label>
+      <posX>309</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Directors Label</description>
+      <type>label</type>
+      <label>Director</label>
+      <posX>308</posX>
+      <posY>320</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Directors Shadow</description>
+      <type>label</type>
+      <label>#director</label>
+      <posX>309</posX>
+      <posY>341</posY>
+      <width>200</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Directors</description>
+      <type>label</type>
+      <label>#director</label>
+      <posX>308</posX>
+      <posY>340</posY>
+      <width>200</width>
+      <font>mediastream10</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    
+    <control>
+      <description>Year Label Shadow</description>
+      <type>label</type>
+      <label>Year</label>
+      <posX>509</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Year Label</description>
+      <type>label</type>
+      <label>Year</label>
+      <posX>508</posX>
+      <posY>320</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Year Shadow</description>
+      <type>label</type>
+      <label>#year</label>
+      <posX>509</posX>
+      <posY>341</posY>
+      <width>255</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
+    </control>
+    <control>
+      <description>Year</description>
+      <type>label</type>
+      <label>#year</label>
+      <posX>508</posX>
+      <posY>340</posY>
+      <width>255</width>
+      <font>mediastream10</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -261,46 +406,14 @@
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>308</posX>
-      <posY>318</posY>
-      <width>415</width>
+      <posY>378</posY>
+      <width>410</width>
       <height>315</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#plot</label>
-      <visible>facadeview.list</visible>
-    </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
-      <label>Director</label>
-      <posX>31</posX>
-      <posY>655</posY>
-      <visible>facadeview.list</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#director</label>
-      <posX>151</posX>
-      <posY>655</posY>
-      <width>350</width>
-      <visible>facadeview.list</visible>
-    </control>
-    
-    <control Style="smallTitleB">
-      <type>label</type>
-      <label>Genre</label>
-      <posX>31</posX>
-      <posY>680</posY>
-      <visible>facadeview.list</visible>
-    </control>
-    <control Style="smallTitle">
-      <type>label</type>
-      <label>#genre</label>
-      <posX>151</posX>
-      <posY>680</posY>
-      <width>350</width>
-      <visible>facadeview.list</visible>
+      <visible>facadeview.list+Control.IsVisible(4441)</visible>
     </control>
     
     <!--            :: FILMSTRIP VIEW ::            -->
@@ -363,7 +476,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.HasThumb(60)</visible>
     </control>
     
     <control>
@@ -376,7 +489,20 @@
       <font>mediastream16tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
+    </control>
+    
+    <control>
+      <description>Selected Item Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>70</posY>
+      <width>850</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.filmstrip+!Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -391,7 +517,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#plot</label>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -404,7 +530,7 @@
       <font>mediastream12tc</font>
       <label>Movie Details</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -414,7 +540,7 @@
       <posY>305</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -424,7 +550,7 @@
       <posY>325</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -434,7 +560,7 @@
       <posY>345</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -445,7 +571,7 @@
       <width>360</width>
       <height>50</height>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -455,7 +581,7 @@
       <posY>425</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -475,7 +601,7 @@
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#rating</percentage>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -485,7 +611,7 @@
       <posY>445</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -498,7 +624,7 @@
       <font>mediastream12tc</font>
       <label>Director</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -508,7 +634,7 @@
       <posY>305</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -521,7 +647,7 @@
       <font>mediastream12tc</font>
       <label>Cast</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -532,7 +658,7 @@
       <width>360</width>
       <height>90</height>
       <font>mediastream11</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>facadeview.filmstrip+Control.IsVisible(4441)</visible>
     </control>
     
     <!--            :: ICON VIEWS ::            -->
@@ -547,7 +673,20 @@
       <font>mediastream14tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+    </control>
+    
+    <control>
+      <description>Selected Item Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>750</posX>
+      <posY>240</posY>
+      <width>500</width>
+      <font>mediastream14tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+!Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -560,7 +699,7 @@
       <width>500</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -575,7 +714,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#plot</label>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -585,7 +724,7 @@
       <posY>630</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -605,7 +744,7 @@
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#rating</percentage>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
     </control>
     
     <control>
@@ -615,7 +754,7 @@
       <posY>650</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>facadeview.smallicons|facadeview.largeicons</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
     </control>
     
     <!--            :: OTHER ::            -->
