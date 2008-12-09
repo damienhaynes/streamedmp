@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <id>748</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.image:-</define>
-  <define>#header.label:1041</define>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.image:television_logo.png</define>
+  <define>#header.label:1037</define>
   <define>#header.hover:-</define>
-  <define>#selecteditem:-</define>
+  <define>#selecteditem:</define>
   <controls>
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
-    <import>common.overlays.xml</import>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -24,21 +24,22 @@
     </control>
     <control>
       <type>group</type>
-      <description>group element</description>
-      <posX>40</posX>
-      <posY>220</posY>
       <layout>StackLayout</layout>
+      <description>group element</description>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <posX>71</posX>
+      <posY>121</posY>
       <control>
         <description>Record</description>
         <type>button</type>
         <id>2</id>
-        <label />
         <onup>17</onup>
         <ondown>3</ondown>
         <onright>10</onright>
-        <font>mediastream10tc</font>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream10tc</font>
       </control>
       <control>
         <description>Advanced Record</description>
@@ -48,9 +49,9 @@
         <onup>2</onup>
         <ondown>4</ondown>
         <onright>10</onright>
-        <font>mediastream10tc</font>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream10tc</font>
       </control>
       <control>
         <description>Keep</description>
@@ -69,6 +70,10 @@
         <type>togglebutton</type>
         <id>5</id>
         <label>1040</label>
+        <font>font13</font>
+        <textcolor>White</textcolor>
+        <colordiffuse>White</colordiffuse>
+        <disabledcolor>60ffffff</disabledcolor>
         <onup>4</onup>
         <ondown>6</ondown>
         <onright>10</onright>
@@ -131,11 +136,13 @@
       <description>upcoming episodes label</description>
       <type>label</type>
       <id>11</id>
-      <posX>1271</posX>
+      <posX>1300</posX>
       <posY>35</posY>
-      <font>font14</font>
-      <label>-</label>
-      <align>right</align>
+      <label>1041</label>
+      <font>font13</font>
+      <textcolor>FFB2D4F5</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>upcoming episodes listcontrol</description>
@@ -161,6 +168,37 @@
       <onright>2</onright>
       <onup>2</onup>
       <ondown>2</ondown>
+      <!--
+      <posX>520</posX>
+      <posY>80</posY>
+      <width>760</width>
+      <height>362</height>
+      <textXOff>88</textXOff>
+      <textYOff>2</textYOff>
+      <textXOff2>743</textXOff2>
+      <textYOff2>36</textYOff2>
+      <textXOff3>177</textXOff3>
+      <textYOff3>36</textYOff3>
+      <IconXOff>21</IconXOff>
+      <PinIconXOff>110</PinIconXOff>
+      <PinIconYOff>15</PinIconYOff>
+      <spinPosX>1031</spinPosX>
+      <itemWidth>74</itemWidth>
+      <itemHeight>52</itemHeight>
+      <textureFocus>album_background_focus.png</textureFocus>
+      <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+      <spaceBetweenItems>8</spaceBetweenItems>
+      <textureHeight>62</textureHeight>
+      <keepaspectratio>no</keepaspectratio>
+      <font2>font10</font2>
+      <font3>font10</font3>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <onup>2</onup>
+      <ondown>2</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+-->
     </control>
     <control>
       <description>Current program title</description>
@@ -169,7 +207,8 @@
       <posX>50</posX>
       <posY>505</posY>
       <width>400</width>
-      <label />
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program time</description>
@@ -177,16 +216,8 @@
       <id>14</id>
       <posX>50</posX>
       <posY>530</posY>
-      <label />
-    </control>
-    <control>
-      <description>Current program channel</description>
-      <type>fadelabel</type>
-      <id>16</id>
-      <posX>50</posX>
-      <posY>555</posY>
-      <width>400</width>
-      <label></label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Description1</description>
@@ -196,9 +227,30 @@
       <posY>580</posY>
       <width>1150</width>
       <height>135</height>
-      <font>mediastream11</font>
-      <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <label>#TV.RecordedTV.Description</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current program channel</description>
+      <type>fadelabel</type>
+      <id>16</id>
+      <posX>50</posX>
+      <posY>555</posY>
+      <width>400</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>genre</description>
+      <type>label</type>
+      <id>17</id>
+      <posX>1250</posX>
+      <posY>505</posY>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
