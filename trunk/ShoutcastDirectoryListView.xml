@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>2345</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+<define>#header.label:260</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_shoutcast.png</define>
+  <controls>
+
+
+    <!--            :: BACKGROUND :: OVERLAY ::            -->
+    
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <description>overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+
+
+
+    <control>
+
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="500">WindowClose</animation>
+      <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <posX>23</posX>
+      <posY>255</posY>
+      <layout>StackLayout</layout>
+
+      <control>
+        <description>Sort Button</description>
+        <type>sortbutton</type>
+        <id>2</id>
+        <label></label>
+        <onright>50</onright>
+        <onup>2</onup>
+        <ondown>3</ondown>
+      </control>
+
+      <control>
+        <description>Starts with Button</description>
+        <type>selectbutton</type>
+        <id>3</id>
+        <label></label>
+        <onright>50</onright>
+        <onup>2</onup>
+        <ondown>4</ondown>
+      </control>
+
+      <control>
+        <description>Bitrate Button</description>
+        <type>selectbutton</type>
+        <id>4</id>
+        <label></label>
+        <onright>50</onright>
+        <onup>3</onup>
+        <ondown>5</ondown>
+      </control>
+
+      <control>
+        <description>Search Button</description>
+        <type>button</type>
+        <id>5</id>
+        <label></label>
+        <onright>50</onright>
+        <onup>4</onup>
+        <ondown>6</ondown>
+      </control>
+
+      <control>
+        <description>Favorites Button</description>
+        <type>button</type>
+        <id>6</id>
+        <label></label>
+        <onright>50</onright>
+        <onup>5</onup>
+        <ondown>99</ondown>
+      </control>
+    </control>
+
+    <control>
+      <description>genre label</description>
+      <type>label</type>
+      <id>47</id>
+      <posX>25</posX>
+      <posY>450</posY>
+      <label>#genre</label>
+      <font>mediastream12</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+
+    <control>
+      <description>meta label</description>
+      <type>label</type>
+      <id>48</id>
+      <posX>25</posX>
+      <posY>485</posY>
+      <label>#meta</label>
+      <font>mediastream12</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+
+    <control>
+      <description>listeners label</description>
+      <type>label</type>
+      <id>48</id>
+      <posX>25</posX>
+      <posY>520</posY>
+      <label>#listeners</label>
+      <font>mediastream12</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+
+    <control>
+      <description>track label</description>
+      <type>textboxscrollup</type>
+      <id>49</id>
+      <posX>25</posX>
+      <posY>555</posY>
+      <width>465</width>
+      <height>80</height>
+      <label>#track</label>
+      <font>mediastream12</font>
+      <align>left</align>
+      <textcolor>ffffffff</textcolor>
+    </control>
+
+    <control>
+      <description>listcontrol</description>
+      <type>listcontrol</type>
+      <id>50</id>
+      <onleft>2</onleft>
+      <onright>50</onright>
+      <onup>2</onup>
+      <ondown>2</ondown>
+    </control>
+  <import>common.overlays.xml</import>
+ <import>common.window.default.xml</import>
+  <import>common.time.xml</import>
+  </controls>
+</window>
