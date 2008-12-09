@@ -15,5 +15,29 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="fade" time="250">WindowOpen</animation>
     </control>
+    <control>
+      <type>image</type>
+      <id>500</id>
+      <posX>590</posX>
+      <posY>40</posY>
+      <width>99</width>
+      <height>44</height>
+      <texture>volume.states.mute.png</texture>
+      <colordiffuse>White</colordiffuse>
+      <visible>no</visible>
+    </control>
+    <control>
+      <type>volumebar</type>
+      <id>501</id>
+      <posX>477</posX>
+      <posY>19</posY>
+      <align>left</align>
+      <height>24</height>
+      <width>10</width>
+      <imageHeight>3</imageHeight>
+      <texture>volume.states.png</texture>
+      <colordiffuse>White</colordiffuse>
+      <visible>no</visible>
+    </control>
   </controls>
 </window>
