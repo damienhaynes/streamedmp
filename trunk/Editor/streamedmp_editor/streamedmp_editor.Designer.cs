@@ -63,6 +63,8 @@ namespace streamedmp_editor
             this.label2 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cboContextLabels = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -155,7 +157,6 @@ namespace streamedmp_editor
             // 
             // chklstWinddowsInMenu
             // 
-            this.chklstWinddowsInMenu.CheckOnClick = true;
             this.chklstWinddowsInMenu.ContextMenuStrip = this.contextMenuStrip1;
             this.chklstWinddowsInMenu.Enabled = false;
             this.chklstWinddowsInMenu.FormattingEnabled = true;
@@ -163,8 +164,8 @@ namespace streamedmp_editor
             this.chklstWinddowsInMenu.Name = "chklstWinddowsInMenu";
             this.chklstWinddowsInMenu.ScrollAlwaysVisible = true;
             this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 244);
-            this.chklstWinddowsInMenu.TabIndex = 9;
-            this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
+            this.chklstWinddowsInMenu.TabIndex = 9;            
+            this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);            
             // 
             // contextMenuStrip1
             // 
@@ -383,6 +384,8 @@ namespace streamedmp_editor
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cboContextLabels);
+            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtItemName);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(226, 150);
@@ -392,9 +395,34 @@ namespace streamedmp_editor
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Item properties";
             // 
+            // cboContextLabels
+            // 
+            this.cboContextLabels.FormattingEnabled = true;
+            this.cboContextLabels.Items.AddRange(new object[] {
+            "Watch Your",
+            "Watch",
+            "Check The",
+            "Listen To",
+            "View Your",
+            "Browse Your",
+            "Configure"});
+            this.cboContextLabels.Location = new System.Drawing.Point(97, 49);
+            this.cboContextLabels.Name = "cboContextLabels";
+            this.cboContextLabels.Size = new System.Drawing.Size(148, 21);
+            this.cboContextLabels.TabIndex = 3;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(55, 52);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Label:";
+            // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(97, 35);
+            this.txtItemName.Location = new System.Drawing.Point(97, 22);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(148, 20);
             this.txtItemName.TabIndex = 1;
@@ -402,7 +430,7 @@ namespace streamedmp_editor
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 38);
+            this.label9.Location = new System.Drawing.Point(30, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 0;
@@ -556,6 +584,8 @@ namespace streamedmp_editor
         private System.Windows.Forms.TextBox txtMenuXPos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.ComboBox cboContextLabels;
+        private System.Windows.Forms.Label label10;
     }
 }
 

@@ -76,6 +76,7 @@ namespace streamedmp_editor
                     btnRemove.Enabled = true;
                     chklstWinddowsInMenu.Enabled = true;
                     chkBGRandom.Enabled = true;
+                    cboContextLabels.Enabled = true;
                 }
             }  
         }
@@ -83,21 +84,25 @@ namespace streamedmp_editor
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (lstAvailableWindows.SelectedItem != null &&  txtBGFolder.Text != "" && txtItemName.Text != "")
+            if (lstAvailableWindows.SelectedItem != null && txtBGFolder.Text != "" 
+                                                         && txtItemName.Text != "")
+                                                         
             {                               
                 toolStripStatusLabel1.Text = lstAvailableWindows.SelectedItem.ToString() + " added to menu";
                 menuItem item = new menuItem();
                 item.name = txtItemName.Text;
+                item.contextLabel = cboContextLabels.Text;
                 item.hyperlink = ids[lstAvailableWindows.SelectedIndex];
-                item.bgFolder = txtBGFolder.Text;
-                //item.name = chklstAvailableWindows.SelectedItem.ToString();
+                item.bgFolder = txtBGFolder.Text;                
                 item.random = chkBGRandom.Checked;
                 item.timePerImage = int.Parse(txtBGTime.Text);
                 menuItems.Add(item);
                 chklstWinddowsInMenu.Items.Add(item.name);
 
+                // Clear items
                 txtItemName.Text = "";
                 txtBGFolder.Text = "";
+                cboContextLabels.Text = "";
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
                 lstAvailableWindows.SelectedIndex = -1;
@@ -300,6 +305,7 @@ namespace streamedmp_editor
                         {                         
                             string nodeName = node.SelectSingleNode("label").InnerText;
                             chklstWinddowsInMenu.Items.Add(nodeName, id.Equals(defaultcontrol));
+                            
                             menuItem mnuItem = new menuItem();
                             mnuItem.hyperlink = hyperlink;
                             mnuItem.name = nodeName;
@@ -362,7 +368,34 @@ namespace streamedmp_editor
                         }
                     }
                 }
-            }          
+            }
+            // Load Context Labels
+            nodeList = doc.DocumentElement.SelectNodes("/window/controls/control");
+            foreach (XmlNode node in nodeList)
+            {
+                XmlNode innerNode = node.SelectSingleNode("description");
+                if (innerNode != null && innerNode.InnerText.Contains(" Label")
+                                      && !innerNode.InnerText.Contains(" Label (Default)"))
+                {
+                    string contextLabel = "";
+                    string visible = "";
+
+                    innerNode = node.SelectSingleNode("label");
+                    if (innerNode != null) contextLabel = innerNode.InnerText;
+
+                    innerNode = node.SelectSingleNode("visible");
+                    if (innerNode != null) visible = innerNode.InnerText;
+                   
+                    foreach (menuItem mnuItem in menuItems)
+                    {
+                        if (visible.Contains(mnuItem.id + ")"))
+                        {
+                            mnuItem.contextLabel = contextLabel;
+                        }
+                    }
+                }
+            }
+
             btnGenerate.Enabled = true;
         }
 
@@ -408,6 +441,8 @@ namespace streamedmp_editor
                 generateBg();
                 generateTopBar();
                 generateMenuGraphics();
+                GenerateContextLabels();
+
                 if (chkRssTicker.Checked)
                 {
                     generateRSSTicker();
@@ -415,6 +450,7 @@ namespace streamedmp_editor
                 
                 generateCrowdingFix();
                 toolStripStatusLabel1.Text = "Done!";
+
                 /*MenuSelector selector = new MenuSelector();
                 selector.xml = xml;
                 selector.skindir = path;
@@ -856,6 +892,56 @@ namespace streamedmp_editor
 
             xml = xml.Replace("<!-- BEGIN GENERATED BUTTON CODE-->", rawXML.ToString());
 
+        }
+
+        private void GenerateContextLabels()
+        {
+            StringBuilder rawXML = new StringBuilder();
+            const string quote = "\"";         
+
+            rawXML.AppendLine("<!-- Menu Context Labels -->");
+            foreach (menuItem menItem in menuItems)
+            {
+                if (menItem.isDefault)
+                {
+                    // Add default label
+                    rawXML.AppendLine("<control>");
+                    rawXML.AppendLine("\t<description>" + menItem.name + " Label (Default)</description>");
+                    rawXML.AppendLine("\t<type>label</type>");
+                    rawXML.AppendLine("\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
+                    rawXML.AppendLine("\t<posY>322</posY>");
+                    rawXML.AppendLine("\t<width>320</width>");
+                    rawXML.AppendLine("\t<height>72</height>");
+                    rawXML.AppendLine("\t<label>" + menItem.contextLabel + "</label>");
+                    rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
+                    rawXML.AppendLine("\t<font>#labelFont</font>");
+                    rawXML.AppendLine("\t<align>right</align>");
+                    rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+                    rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")</visible>");
+                    rawXML.AppendLine("</control>");
+                }
+
+                rawXML.AppendLine("<control>");
+                rawXML.AppendLine("\t<description>" + menItem.name + " Label</description>");
+                rawXML.AppendLine("\t<type>label</type>");
+                rawXML.AppendLine("\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
+                rawXML.AppendLine("\t<posY>322</posY>");
+                rawXML.AppendLine("\t<width>320</width>");
+                rawXML.AppendLine("\t<height>72</height>");
+                rawXML.AppendLine("\t<label>" + menItem.contextLabel + "</label>");
+                rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
+                rawXML.AppendLine("\t<font>#labelFont</font>");                
+                rawXML.AppendLine("\t<align>right</align>");
+                rawXML.AppendLine("\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "500" + quote + ">Visible</animation>");
+                rawXML.AppendLine("\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " delay=" + quote + "0" + quote + " time=" + quote + "50" + quote + ">Hidden</animation>");
+                rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+                rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");                                
+                rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
+                rawXML.AppendLine("</control>");
+            } 
+            
+            xml = xml.Replace("<!-- BEGIN CONTEXT LABELS CODE-->", rawXML.ToString());
         }
 
         private void generateMenuGraphics()
@@ -1415,7 +1501,8 @@ namespace streamedmp_editor
         public string name;
         public int id;
         public int timePerImage;
-        public bool random;            
+        public bool random;
+        public string contextLabel;    
     }
 
     public class backgroundItem
@@ -1424,6 +1511,6 @@ namespace streamedmp_editor
         public string folder;
         public List<string> ids = new List<string>();
         public bool random;
-        public string timeperimage;
+        public string timeperimage;        
     }
 }

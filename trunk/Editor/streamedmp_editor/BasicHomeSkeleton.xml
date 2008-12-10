@@ -5,15 +5,15 @@
 	
 	<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->
 	
-	<define>#labelFont:mediastream16tc</define>
+  <define>#labelFont:mediastream16tc</define>
   <define>#selectedfont:mediastream28tc</define>
 	
   <!-- BEGIN GENERATED DEFINITIONS -->
-	<allowoverlay>no</allowoverlay>
-	<disabletopbar>yes</disabletopbar>
-	<controls>
-		<control>
-			<description>DEFAULT BACKGROUND</description>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>yes</disabletopbar>
+  <controls>
+    <control>
+      <description>DEFAULT BACKGROUND</description>
 			<type>image</type>
 			<id>0</id>
 			<posX>0</posX>
@@ -98,8 +98,10 @@
 		<!-- BEGIN GENERATED BUTTON CODE-->
 
 		<!-- BEGIN CROWDING FIX CODE-->
-		<import>common.time.xml</import>
+    
+    <!-- BEGIN CONTEXT LABELS CODE-->    
+    <import>common.time.xml</import>
     <import>common.overlay.basichome.xml</import>
-    <import>streamedmp.version.xml</import>
-	</controls>
+    <import>streamedmp.version.xml</import>    
+  </controls>
 </window>
