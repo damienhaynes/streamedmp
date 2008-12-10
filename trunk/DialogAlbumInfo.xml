@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
+<window>
+  <id>2001</id>
+  <defaultcontrol>5</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <colordiffuse>90ffffff</colordiffuse>
+      <animation effect="fade" time="200">windowopen</animation>
+      <animation effect="fade" time="200">windowclose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>100</posX>
+      <posY>230</posY>
+      <width>1080</width>
+      <height>37</height>
+      <texture>dialogmenutop.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>100</posX>
+      <posY>267</posY>
+      <width>1080</width>
+      <height>403</height>
+      <texture>dialogmenumiddle.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>100</posX>
+      <posY>670</posY>
+      <width>1080</width>
+      <height>12</height>
+      <texture>dialogmenubottom.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>106</posX>
+      <posY>25</posY>
+      <texture>info_logo.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Album value</description>
+      <type>label</type>
+      <id>20</id>
+      <posX>350</posX>
+      <posY>230</posY>
+      <label>-</label>
+      <font>mediastream16tc</font>
+      <width>600</width>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Artist</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>280</posY>
+      <label>171</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Date of Release</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>310</posY>
+      <label>201</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Rating</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>340</posY>
+      <label>173</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Genre</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>370</posY>
+      <label>174</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Tones</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>430</posY>
+      <label>175</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Styles</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>850</posX>
+      <posY>400</posY>
+      <label>176</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+    </control>
+    <control>
+      <description>Artist value</description>
+      <type>label</type>
+      <id>21</id>
+      <posX>925</posX>
+      <posY>280</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Date of Release value</description>
+      <type>label</type>
+      <id>22</id>
+      <posX>925</posX>
+      <posY>310</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating value</description>
+      <type>label</type>
+      <id>23</id>
+      <posX>925</posX>
+      <posY>340</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genre value</description>
+      <type>label</type>
+      <id>24</id>
+      <posX>925</posX>
+      <posY>370</posY>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Tones value</description>
+      <type>fadelabel</type>
+      <id>25</id>
+      <posX>925</posX>
+      <posY>430</posY>
+      <width>210</width>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Styles value</description>
+      <type>fadelabel</type>
+      <id>26</id>
+      <posX>925</posX>
+      <posY>400</posY>
+      <width>200</width>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Album Art</description>
+      <type>image</type>
+      <id>3</id>
+      <posX>120</posX>
+      <posY>280</posY>
+      <width>220</width>
+      <height>220</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+      <keepaspectratio>yes</keepaspectratio>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>textarea</description>
+      <type>textbox</type>
+      <id>4</id>
+      <posY>280</posY>
+      <posX>350</posX>
+      <width>450</width>
+      <height>400</height>
+      <onleft>5</onleft>
+      <onright>5</onright>
+      <onup>5</onup>
+      <ondown>5</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Tracks/Review</description>
+      <type>button</type>
+      <id>5</id>
+      <posX>120</posX>
+      <posY>530</posY>
+      <width>160</width>
+      <font>mediastream10tc</font>
+      <label>182</label>
+      <onleft>4</onleft>
+      <textureFocus>tv_buttonfocus.png</textureFocus>
+      <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+      <onright>4</onright>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Refresh</description>
+      <type>button</type>
+      <id>6</id>
+      <posX>120</posX>
+      <posY>570</posY>
+      <width>160</width>
+      <label>184</label>
+      <textureFocus>tv_buttonfocus.png</textureFocus>
+      <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+      <font>mediastream10tc</font>
+      <onleft>4</onleft>
+      <onright>4</onright>
+      <onup>5</onup>
+      <ondown>5</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+  </controls>
+</window>
