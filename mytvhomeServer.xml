@@ -27,6 +27,7 @@
       <posY>170</posY>
       <width>150</width>
       <layout>StackLayout</layout>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <control>
         <description>TVGuide</description>
         <type>button</type>
@@ -216,6 +217,7 @@
       <width>502</width>
       <height>12</height>
       <texture>osd_progress_background.png</texture>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>progress bar</description>
@@ -227,6 +229,7 @@
       <height>12</height>
       <label>#TV.View.Percentage</label>
       <visible>yes</visible>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program title</description>
@@ -237,6 +240,7 @@
       <width>800</width>
       <label>#TV.View.title</label>
       <font>mediastream12tc</font>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Channel label</description>
@@ -247,6 +251,7 @@
       <label>602</label>
       <font>font13</font>
       <align>right</align>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program time</description>
@@ -257,6 +262,7 @@
       <label>#TV.View.start-#TV.View.stop</label>
       <font>mediastream12tc</font>
       <align>right</align>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channelname</description>
@@ -268,6 +274,7 @@
       <label>#TV.View.channel</label>
       <font>mediastream12tc</font>
       <align>left</align>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Description1</description>
@@ -280,6 +287,7 @@
       <seperator>----------------------------------------------------------------------------------------------</seperator>
       <label>#TV.View.description</label>
       <font>mediastream10</font>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channel Thumb Dummy</description>
@@ -291,6 +299,7 @@
       <height>50</height>
       <texture>hover_info.png</texture>
       <visible>!control.hasthumb(204)</visible>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channel Thumb</description>
@@ -301,6 +310,7 @@
       <width>50</width>
       <height>50</height>
       <texture>#TV.View.thumb</texture>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <!--     <control>
       <description>rectangle</description>
@@ -322,6 +332,7 @@
       <width>100</width>
       <height>100</height>
       <texture>#TV.Record.thumb</texture>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>record info label</description>
@@ -332,6 +343,7 @@
       <posY>245</posY>
       <label>#TV.Record.channel\r#TV.Record.title\r#TV.Record.start-#TV.Record.stop</label>
       <font>font12</font>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>record pin</description>
@@ -344,6 +356,7 @@
       <keepaspectratio>yes</keepaspectratio>
       <width>46</width>
       <height>24</height>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
