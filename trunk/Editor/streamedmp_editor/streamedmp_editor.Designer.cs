@@ -130,7 +130,7 @@ namespace streamedmp_editor
             this.label1.Location = new System.Drawing.Point(52, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "&Folder:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -244,7 +244,7 @@ namespace streamedmp_editor
             this.label6.Location = new System.Drawing.Point(7, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 13);
-            this.label6.TabIndex = 0;
+            this.label6.TabIndex = 2;
             this.label6.Text = "&Time Per Image:";
             // 
             // txtBGTime
@@ -288,16 +288,17 @@ namespace streamedmp_editor
             "movies",
             "tv",
             "music",
+            "weather",
             "pictures",
             "settings",
             "pluginsbg",
             "radio",
             "emulator",
             "games"});
-            this.cboBGFolder.Location = new System.Drawing.Point(99, 17);
+            this.cboBGFolder.Location = new System.Drawing.Point(97, 17);
             this.cboBGFolder.Name = "cboBGFolder";
             this.cboBGFolder.Size = new System.Drawing.Size(146, 21);
-            this.cboBGFolder.TabIndex = 6;
+            this.cboBGFolder.TabIndex = 1;
             this.cboBGFolder.MouseEnter += new System.EventHandler(this.cboBGFolder_MouseEnter);
             // 
             // chkBGRandom
@@ -416,34 +417,34 @@ namespace streamedmp_editor
             "View Your",
             "Browse Your",
             "Configure"});
-            this.cboContextLabels.Location = new System.Drawing.Point(97, 49);
+            this.cboContextLabels.Location = new System.Drawing.Point(97, 19);
             this.cboContextLabels.Name = "cboContextLabels";
             this.cboContextLabels.Size = new System.Drawing.Size(148, 21);
-            this.cboContextLabels.TabIndex = 3;
+            this.cboContextLabels.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(55, 52);
+            this.label10.Location = new System.Drawing.Point(55, 27);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(36, 13);
-            this.label10.TabIndex = 2;
+            this.label10.TabIndex = 0;
             this.label10.Text = "Label:";
             // 
             // txtItemName
             // 
-            this.txtItemName.Location = new System.Drawing.Point(97, 22);
+            this.txtItemName.Location = new System.Drawing.Point(97, 49);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(148, 20);
-            this.txtItemName.TabIndex = 1;
+            this.txtItemName.TabIndex = 3;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 25);
+            this.label9.Location = new System.Drawing.Point(30, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 0;
+            this.label9.TabIndex = 2;
             this.label9.Text = "&Item Name:";
             // 
             // groupBox4
