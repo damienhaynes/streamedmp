@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    
+    <!--                                    :: DUMMY / STUFF ::                                    -->
+    
+    <control>
+      <description>dummy (visible when music is playing)</description>
+      <type>label</type>
+      <id>3337</id>
+      <posX>2000</posX>
+      <label>#Play.Current.Album</label>
+      <visible>player.hasmedia+control.hastext(3337)</visible>
+    </control>
+    
+    <control>
+      <description>dummy (visible when there is a next track)</description>
+      <type>label</type>
+      <id>3338</id>
+      <posX>2000</posX>
+      <label>#Play.Next.Title</label>
+      <visible>player.hasmedia+control.hastext(3338)</visible>
+    </control>
+    
+    <control>
+      <description>Selectable Button (video preview window)</description>
+      <type>button</type>
+      <id>17</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <textureFocus>-</textureFocus><!-- maybe needs a texture (203x114) -->
+      <textureNoFocus>-</textureNoFocus>
+      <action>18</action>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onright>50</onright>
+      <onleft>50</onleft>
+      <visible>player.hasmedia</visible>
+    </control>
+    
+    <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
+    
+    <control>
+      <description>music logo</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>114</width>
+      <height>114</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <zoom>no</zoom>
+      <texture>#Play.Current.Thumb</texture>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+    
+    <control>
+      <description>artist info label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>320</width>
+      <height>40</height>
+      <posX>208</posX>
+      <posY>563</posY>
+      <label>#Play.Current.Artist</label>
+      <align>left</align>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream12tc</font>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+    
+    <control>
+      <description>title info label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>320</width>
+      <height>40</height>
+      <posX>208</posX>
+      <posY>585</posY>
+      <label>#Play.Current.Title</label>
+      <align>left</align>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+    
+    <control>
+      <description>album info label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>320</width>
+      <height>40</height>
+      <posX>208</posX>
+      <posY>603</posY>
+      <label>#Play.Current.Album</label>
+      <align>left</align>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+    
+    <control>
+      <description>play time / duration label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>320</width>
+      <height>40</height>
+      <posX>208</posX>
+      <posY>623</posY>
+      <align>left</align>
+      <label>#currentplaytime / #duration</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+    
+    <control>
+      <description>next song label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>42</width>
+      <height>40</height>
+      <posX>208</posX>
+      <posY>647</posY>
+      <label>Next</label>
+      <textcolor>FF025984</textcolor>
+      <font>mediastream10</font>
+      <align>left</align>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+    </control>
+    
+    <control>
+      <description>next song info label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>240</posX>
+      <posY>647</posY>
+      <width>300</width>
+      <height>40</height>
+      <label>: #Play.Next.Title by #Play.Next.Artist</label>
+      <textcolor>FF999999</textcolor>
+      <align>left</align>
+      <font>mediastream10</font>
+      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+    </control>
+    
+    <!--                                    :: VIDEO OVERLAY IN REGULAR HOME ::                                    -->
+    
+    <control>
+      <description>video preview window BACKGROUND</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <texture>black.png</texture>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>17</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>203</width>
+      <height>114</height>
+      <action>18</action>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <onright>50</onright>
+      <onleft>50</onleft>
+      <textureFocus>video_window_focus.png</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>artist info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>560</posY>
+      <width>250</width>
+      <height>40</height>
+      <label>#Play.Current.Title</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>title info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>578</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Year</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10tc</font>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>604</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Genre</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>album info label</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>624</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#Play.Current.Director</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    <control>
+      <description>play time / duration label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>298</posX>
+      <posY>644</posY>
+      <width>340</width>
+      <height>40</height>
+      <label>#currentplaytime / #duration</label>
+      <textcolor>FFFFFFFF</textcolor>
+      <font>mediastream10c</font>
+      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+    </control>
+    
+  </controls>
+</window>
