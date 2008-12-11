@@ -35,7 +35,6 @@ namespace streamedmp_editor
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtBGFolder = new System.Windows.Forms.TextBox();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.chklstWinddowsInMenu = new System.Windows.Forms.CheckedListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -53,6 +52,7 @@ namespace streamedmp_editor
             this.txtBGTime = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cboBGFolder = new System.Windows.Forms.ComboBox();
             this.chkBGRandom = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMenuXPos = new System.Windows.Forms.TextBox();
@@ -134,15 +134,6 @@ namespace streamedmp_editor
             this.label1.Text = "&Folder:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtBGFolder
-            // 
-            this.txtBGFolder.Enabled = false;
-            this.txtBGFolder.Location = new System.Drawing.Point(97, 22);
-            this.txtBGFolder.Name = "txtBGFolder";
-            this.txtBGFolder.Size = new System.Drawing.Size(148, 20);
-            this.txtBGFolder.TabIndex = 2;
-            this.txtBGFolder.MouseEnter += new System.EventHandler(this.txtBGFolder_MouseEnter);
-            // 
             // btnGenerate
             // 
             this.btnGenerate.Enabled = false;
@@ -164,8 +155,8 @@ namespace streamedmp_editor
             this.chklstWinddowsInMenu.Name = "chklstWinddowsInMenu";
             this.chklstWinddowsInMenu.ScrollAlwaysVisible = true;
             this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 244);
-            this.chklstWinddowsInMenu.TabIndex = 9;            
-            this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);            
+            this.chklstWinddowsInMenu.TabIndex = 9;
+            this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
             // 
             // contextMenuStrip1
             // 
@@ -277,11 +268,11 @@ namespace streamedmp_editor
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cboBGFolder);
             this.groupBox2.Controls.Add(this.chkBGRandom);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtBGTime);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtBGFolder);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(226, 239);
             this.groupBox2.Name = "groupBox2";
@@ -289,6 +280,25 @@ namespace streamedmp_editor
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Background Images";
+            // 
+            // cboBGFolder
+            // 
+            this.cboBGFolder.FormattingEnabled = true;
+            this.cboBGFolder.Items.AddRange(new object[] {
+            "movies",
+            "tv",
+            "music",
+            "pictures",
+            "settings",
+            "pluginsbg",
+            "radio",
+            "emulator",
+            "games"});
+            this.cboBGFolder.Location = new System.Drawing.Point(99, 17);
+            this.cboBGFolder.Name = "cboBGFolder";
+            this.cboBGFolder.Size = new System.Drawing.Size(146, 21);
+            this.cboBGFolder.TabIndex = 6;
+            this.cboBGFolder.MouseEnter += new System.EventHandler(this.cboBGFolder_MouseEnter);
             // 
             // chkBGRandom
             // 
@@ -548,7 +558,6 @@ namespace streamedmp_editor
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtBGFolder;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.CheckedListBox chklstWinddowsInMenu;
         private System.Windows.Forms.Label label4;
@@ -586,6 +595,7 @@ namespace streamedmp_editor
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.ComboBox cboContextLabels;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cboBGFolder;
     }
 }
 

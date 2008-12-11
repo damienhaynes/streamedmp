@@ -69,7 +69,7 @@ namespace streamedmp_editor
             {
                 if (loadIDs(true) == true)
                 {
-                    txtBGFolder.Enabled = true;
+                    cboBGFolder.Enabled = true;
                     txtItemName.Enabled = true;
                     txtBGTime.Enabled = true;
                     btnAdd.Enabled = true;
@@ -84,7 +84,7 @@ namespace streamedmp_editor
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            if (lstAvailableWindows.SelectedItem != null && txtBGFolder.Text != "" 
+            if (lstAvailableWindows.SelectedItem != null && cboBGFolder.Text != "" 
                                                          && txtItemName.Text != "")
                                                          
             {                               
@@ -93,7 +93,7 @@ namespace streamedmp_editor
                 item.name = txtItemName.Text;
                 item.contextLabel = cboContextLabels.Text;
                 item.hyperlink = ids[lstAvailableWindows.SelectedIndex];
-                item.bgFolder = txtBGFolder.Text;                
+                item.bgFolder = cboBGFolder.Text;                
                 item.random = chkBGRandom.Checked;
                 item.timePerImage = int.Parse(txtBGTime.Text);
                 menuItems.Add(item);
@@ -101,7 +101,7 @@ namespace streamedmp_editor
 
                 // Clear items
                 txtItemName.Text = "";
-                txtBGFolder.Text = "";
+                cboBGFolder.Text = "";
                 cboContextLabels.Text = "";
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
@@ -1354,7 +1354,7 @@ namespace streamedmp_editor
             {
                 if (loadIDs(false))
                 {
-                    txtBGFolder.Enabled = true;
+                    cboBGFolder.Enabled = true;
                     txtItemName.Enabled = true;
                     txtBGTime.Enabled = true;
                     btnAdd.Enabled = true;
@@ -1365,7 +1365,7 @@ namespace streamedmp_editor
             }
         }
 
-        void txtBGFolder_MouseEnter(object sender, System.EventArgs e)
+        void cboBGFolder_MouseEnter(object sender, System.EventArgs e)
         {
             toolStripStatusLabel1.Text = "Default folders are emulator, games, music, pictures, tv, movies, weatherbg, radio, settings, and pluginsbg";
         }
