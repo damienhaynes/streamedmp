@@ -88,7 +88,7 @@ prototype NUMBER	GetFileVersion(BYREF STRING, STRING);
 prototype VOID		CheckMPVersion();		
 prototype NUMBER	CheckPluginVersions(BYREF STRING);
 prototype NUMBER	LaunchBrowser(STRING);   
-prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING);
+prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
 prototype VOID		UninstallCleanup();
@@ -114,17 +114,26 @@ STRING g_sDownloadInstallDir;
 //---------------------------------------------------------------------------
 function OnBegin()
 	STRING szVersion, szUpgradeMessage;
-	NUMBER nResult; 
+	NUMBER nResult;
+	BOOL bUpgradeSupported; 
 begin
 	
 	// See if older version is installed
-	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID);
+	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID, bUpgradeSupported);
 	if g_bMajorUpgrade then
-		szUpgradeMessage = "Setup is about to perform a Major Upgrade from: v" + szVersion + "\nThe previous installation will " +
-						   "be removed, Do you wish to continue?";
-		nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);
-		if (nResult != IDYES) then
-			abort;
+		// check if version supports upgrades
+		if bUpgradeSupported then
+			szUpgradeMessage = "Setup is about to perform a Major Upgrade from: v" + szVersion + "\nThe previous installation will " +
+							   "be removed, Do you wish to continue?";
+			nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);
+			if (nResult != IDYES) then
+				abort;
+			endif;
+		else
+		 	szUpgradeMessage = "Setup cannot perform an Upgrade from: v" + szVersion + "\nPlease uninstall from the Add\\Remove programs " +
+							   "and run setup again.";
+			MessageBox(szUpgradeMessage,INFORMATION);
+			abort;							   
 		endif;
 	endif; 
 	
@@ -167,7 +176,7 @@ begin
 	
 end;
 
-function BOOL IsMajorUpgrade(sMajorUpgradeVersion, sMajorUpgradeGUID)
+function BOOL IsMajorUpgrade(sMajorUpgradeVersion, sMajorUpgradeGUID, bUpgradeSupported)
 	STRING szKey;
 	NUMBER nvBufferSize, nResult;
 	BOOL bUpgrade;
@@ -182,7 +191,13 @@ begin
 	// Version 0.1.167
 	if sMajorUpgradeGUID = "{7A7760CC-256A-4ECD-BE3F-E7644FAD5DA8}" then
 		
-		sMajorUpgradeVersion = "0.1.167";		
+		sMajorUpgradeVersion = "0.1.167";
+		bUpgradeSupported = FALSE;		
+		return TRUE;
+	
+	elseif sMajorUpgradeGUID = "{437C996D-2A3D-4809-89F7-E25A66A463B1}" then
+		sMajorUpgradeVersion = "0.2.215";
+		bUpgradeSupported = FALSE;		
 		return TRUE;
 		
 	endif;   
