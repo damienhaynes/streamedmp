@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
+<window>
+  <id>3002</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <description>rec logo</description>
+      <type>image</type>
+      <id>4</id>
+      <posX>100</posX>
+      <posY>15</posY>
+      <width>20</width>
+      <height>20</height>
+      <texture>tvguide_record_button.png</texture>
+       <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+
+  </controls>
+</window>
