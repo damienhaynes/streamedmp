@@ -256,6 +256,7 @@ namespace streamedmp_editor
             this.txtBGTime.TabIndex = 3;
             this.txtBGTime.Text = "30";
             this.txtBGTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBGTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBGTime_KeyPress);
             // 
             // label7
             // 
@@ -337,6 +338,7 @@ namespace streamedmp_editor
             this.txtMenuXPos.Size = new System.Drawing.Size(62, 20);
             this.txtMenuXPos.TabIndex = 6;
             this.txtMenuXPos.Text = "350";
+            this.txtMenuXPos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMenuXPos_KeyPress);
             // 
             // label8
             // 
@@ -349,20 +351,22 @@ namespace streamedmp_editor
             // 
             // txtNoFocusColour
             // 
+            this.txtNoFocusColour.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNoFocusColour.Location = new System.Drawing.Point(122, 58);
             this.txtNoFocusColour.Name = "txtNoFocusColour";
             this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
             this.txtNoFocusColour.TabIndex = 4;
-            this.txtNoFocusColour.Text = "ffffff";
+            this.txtNoFocusColour.Text = "FFFFFF";
             this.txtNoFocusColour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtNoFocusColour_MouseClick);
             // 
             // txtfocusColour
             // 
+            this.txtfocusColour.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtfocusColour.Location = new System.Drawing.Point(122, 29);
             this.txtfocusColour.Name = "txtfocusColour";
             this.txtfocusColour.Size = new System.Drawing.Size(62, 20);
             this.txtfocusColour.TabIndex = 2;
-            this.txtfocusColour.Text = "ffffff";
+            this.txtfocusColour.Text = "FFFFFF";
             this.txtfocusColour.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtfocusColour_MouseClick);
             // 
             // label3

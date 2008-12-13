@@ -95,7 +95,7 @@ namespace streamedmp_editor
                 item.hyperlink = ids[lstAvailableWindows.SelectedIndex];
                 item.bgFolder = cboBGFolder.Text;                
                 item.random = chkBGRandom.Checked;
-                item.timePerImage = int.Parse(txtBGTime.Text);
+                item.timePerImage = int.Parse(txtBGTime.Text)*1000; //milliseconds
                 menuItems.Add(item);
                 chklstWinddowsInMenu.Items.Add(item.name);
 
@@ -364,7 +364,7 @@ namespace streamedmp_editor
                         {
                             mnuItem.random = randomize.Equals("true");
                             mnuItem.bgFolder = imagepath;
-                            mnuItem.timePerImage = int.Parse(timeperimage.Substring(0, 2));
+                            mnuItem.timePerImage = int.Parse(timeperimage);
                         }
                     }
                 }
@@ -978,9 +978,9 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t<description>Weather Background</description>");
             rawXML.AppendLine("\t<type>image</type>");
             rawXML.AppendLine("\t<id>1</id>");
-            rawXML.AppendLine("\t<posX>1050</posX>");
-            rawXML.AppendLine("\t<posY>-5</posY>");
-            rawXML.AppendLine("\t<width>230</width>");
+            rawXML.AppendLine("\t<posX>976</posX>");
+            rawXML.AppendLine("\t<posY>-3</posY>");
+            rawXML.AppendLine("\t<width>306</width>");
             rawXML.AppendLine("\t<height>75</height>");
             rawXML.AppendLine("\t<texture>homeweatheroverlaybg.png</texture>");
             rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1015,9 +1015,9 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<description>Weather image</description>");
 	            rawXML.AppendLine("\t<type>image</type>");
 	            rawXML.AppendLine("\t<id>1</id>");
-	            rawXML.AppendLine("\t<posY>5</posY>");
+	            rawXML.AppendLine("\t<posY>8</posY>");
 	            rawXML.AppendLine("\t<posX>1215</posX>");
-                rawXML.AppendLine("\t<height>55</height>");
+                rawXML.AppendLine("\t<height>54</height>");
                 rawXML.AppendLine("\t<width>55</width>");
 	            rawXML.AppendLine("\t<texture>#weatherimg</texture>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1032,8 +1032,8 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<width>400</width>");
 	            rawXML.AppendLine("\t<height>50</height>");
                 rawXML.AppendLine("\t<align>right</align>");
-	            rawXML.AppendLine("\t<posY>35</posY>");
-	            rawXML.AppendLine("\t<posX>1200</posX>");
+	            rawXML.AppendLine("\t<posY>34</posY>");
+	            rawXML.AppendLine("\t<posX>1210</posX>");
                 rawXML.AppendLine("\t<font>mediastream10tc</font>");
 	            rawXML.AppendLine("\t<label>#temp</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1048,8 +1048,8 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<width>400</width>");
 	            rawXML.AppendLine("\t<height>50</height>");
                 rawXML.AppendLine("\t<align>right</align>");
-	            rawXML.AppendLine("\t<posY>15</posY>");
-	            rawXML.AppendLine("\t<posX>1200</posX>");
+	            rawXML.AppendLine("\t<posY>17</posY>");
+	            rawXML.AppendLine("\t<posX>1190</posX>");
                 rawXML.AppendLine("\t<font>mediastream10tc</font>");
 	            rawXML.AppendLine("\t<label>#condition</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1299,7 +1299,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t<width>1280</width>");
                 rawXML.AppendLine("\t<height>720</height>");
                 rawXML.AppendLine("\t<imagepath>" + item.folder + "</imagepath>");
-                rawXML.AppendLine("\t<timeperimage>" + (int.Parse(item.timeperimage) * 2000).ToString() + "</timeperimage>");
+                rawXML.AppendLine("\t<timeperimage>" + int.Parse(item.timeperimage).ToString() + "</timeperimage>");
                 rawXML.AppendLine("\t<fadetime>800</fadetime>");
                 rawXML.AppendLine("\t<loop>yes</loop>");
                 rawXML.AppendLine("\t<randomize>" + item.random.ToString() + "</randomize>");
@@ -1464,7 +1464,7 @@ namespace streamedmp_editor
         }
 
         public Color ColorInvert(Color colorIn)
-        {
+        {            
             return Color.FromArgb(colorIn.A, Color.White.R - colorIn.R,
                    Color.White.G - colorIn.G, Color.White.B - colorIn.B);
         }
@@ -1491,6 +1491,19 @@ namespace streamedmp_editor
             }
         }
 
+        private void txtMenuXPos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow numbers
+            if ((!Char.IsDigit(e.KeyChar)) && (e.KeyChar != Convert.ToChar(Keys.Back)))
+                e.Handled = true;
+        }
+
+        private void txtBGTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow numbers
+            if ((!Char.IsDigit(e.KeyChar)) && (e.KeyChar != Convert.ToChar(Keys.Back)))
+                e.Handled = true;
+        }       
     }
 
     public class menuItem
