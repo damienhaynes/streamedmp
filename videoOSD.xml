@@ -18,21 +18,7 @@
       <texture>osdbackground.png</texture>
     </control>
     
-    <control>
-      <description>pause label</description>
-      <type>label</type>
-      <id>16</id>
-      <posX>192</posX>
-      <posY>680</posY>
-      <width>1030</width>
-      <height>25</height>
-      <align>center</align>
-      <visible>no</visible>
-      <label>paused</label>
-      <font>mediastream10tc</font>
-      <colordiffuse>White</colordiffuse>
-      <visible>player.paused</visible>
-    </control>
+
     
     <control>
       <description>DVD Cover</description>
@@ -86,7 +72,7 @@
       <seperator>------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream11</font>
-      <visible>!control.hasfocus(218)+!control.hasfocus(219)+!control.hasfocus(220)+!control.hasfocus(221)+!control.isvisible(300)+!control.isvisible(301)+!control.isvisible(302)+!control.isvisible(303)+!control.isvisible(304)+!control.isvisible(305)</visible>
+      <visible>!control.hasfocus(218)+!control.hasfocus(219)+!control.hasfocus(220)+!control.hasfocus(221)+!control.isvisible(300)+!control.isvisible(301)+!control.isvisible(302)+!control.isvisible(303)+!control.isvisible(304)+!control.isvisible(305)+!player.rewinding+!player.forwarding</visible>
     </control>
     
     <!-- :::::::::: MENU (BECOMES VISIBLE WHEN YOU PRESS AN ARROW KEY) :::::::::: -->
@@ -613,7 +599,7 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-    
+     <import>common.player.xml</import>      
     <import>common.progressbar.xml</import>
   </controls>
 </window>

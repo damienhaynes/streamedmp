@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <id>3007</id>
   <defaultcontrol>213</defaultcontrol>
@@ -8,106 +8,105 @@
       <description>background</description>
       <type>image</type>
       <id>0</id>
-      <posX>15</posX>
-      <posY>609</posY>
-      <width>695</width>
-      <height>150</height>
-      <texture>zaposd_background_wide.png</texture>
+      <posX>0</posX>
+      <posY>503</posY>
+      <width>1280</width>
+      <height>217</height>
+      <texture>osdbackground.png</texture>
     </control>
+
+    <control>
+      <description>TV Logo background</description>
+      <type>image</type>
+      <posX>6</posX>
+      <posY>470</posY>
+      <width>170</width>
+      <height>170</height>
+      <texture>imagebg.png</texture>
+      <keepaspectratio>no</keepaspectratio>
+    </control>     
+
     <control>
       <description>TV Logo</description>
       <type>image</type>
-      <id>10</id>
-      <posX>35</posX>
-      <posY>629</posY>
-      <width>70</width>
-      <height>70</height>
+      <id>1</id>
+      <posX>16</posX>
+      <posY>480</posY>
+      <width>150</width>
+      <height>150</height>
       <texture>#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
-      <centered>yes</centered>
-    </control>
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>179</posX>
-      <posY>720</posY>
-      <width>452</width>
-      <height>12</height>
-      <texture>osd_progress_background_medium.png</texture>
-    </control>
-    <control>
-      <description>Progress Bar</description>
-      <type>progress</type>
-      <id>1</id>
-      <posX>169</posX>
-      <posY>720</posY>
-      <width>477</width>
-      <height>12</height>
-      <texturebg>-</texturebg>
-      <lefttexture>now_playing_progress_left.png</lefttexture>
-      <midtexture>now_playing_progress_mid.png</midtexture>
-      <righttexture>now_playing_progress_right.png</righttexture>
-      <visible>yes</visible>
-      <label>#TV.View.Percentage</label>
-    </control>
-    <control>
-      <description>Start Time Info</description>
-      <type>label</type>
-      <id>101</id>
-      <posX>169</posX>
-      <posY>715</posY>
-      <label>#TV.View.start</label>
-      <align>right</align>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>End Time Info</description>
-      <type>label</type>
-      <id>102</id>
-      <posX>641</posX>
-      <posY>715</posY>
-      <label>#TV.View.stop</label>
-      <font>font10</font>
-    </control>
+    </control>         
+
+
+
+
+
     <control>
       <description>rec logo</description>
       <type>image</type>
       <id>39</id>
-      <posX>41</posX>
-      <posY>713</posY>
-      <width>58</width>
-      <height>24</height>
-      <texture>rec.png</texture>
-    </control>
-    <control>
+      <posX>100</posX>
+      <posY>15</posY>
+      <width>20</width>
+      <height>20</height>
+      <texture>tvguide_record_button.png</texture>
+      <keepaspectratio>yes</keepaspectratio>
+     </control>       
+
+    
+    <control>  
       <description>On tv NOW</description>
       <id>36</id>
       <type>textbox</type>
-      <width>300</width>
-      <height>30</height>
-      <posX>120</posX>
-      <posY>650</posY>
-      <font>font12</font>
-    </control>
+      <width>474</width>
+      <height>25</height>
+      <posX>200</posX>
+      <posY>540</posY>      
+      <label>#TV.View.start #TV.View.title</label>
+      <font>mediastream14tc</font>
+    </control>      
+
     <control>
       <description>On tv NEXT</description>
       <id>37</id>
       <type>textbox</type>
-      <width>300</width>
-      <height>30</height>
-      <posX>120</posX>
-      <posY>680</posY>
-      <textcolor>ff808080</textcolor>
-      <font>font12</font>
-    </control>
+      <width>474</width>
+      <height>24</height>
+      <posX>200</posX>
+      <posY>660</posY>      
+      <label>#TV.Next.start #TV.Next.title</label>
+      <font>mediastream11tc</font>
+      <textcolor>ff888888</textcolor>
+    </control>         
+
     <control>
+      <description>Plot</description>
+      <type>textboxscrollup</type>
+      <id>38</id>
+      <posX>280</posX>
+      <posY>570</posY>
+      <width>780</width>
+      <height>75</height>
+      <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
+      <label>#TV.View.description</label>
+      <font>mediastream12</font>
+    </control>      
+
+     <control>
       <description>Current channel</description>
       <type>label</type>
       <id>35</id>
-      <posX>120</posX>
-      <posY>620</posY>
+      <posX>16</posX>
+      <posY>650</posY>       
+      <width>170</width>
       <label>-</label>
-      <font>font14</font>
-    </control>
+      <align>left</align>
+      <font>mediastream11tc</font>
+      <textcolor>ff888888</textcolor>
+    </control>        
+
+    <import>common.progressbar.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>

@@ -1,52 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <controls>
+
+
     <control>
-      <description>progressbar background</description>
-      <type>image</type>
-      <id>101</id>
-      <posX>187</posX>
-      <posY>657</posY>
-      <width>1044</width>
-      <height>24</height>
-      <texture>osdprogressback.png</texture>
-      <colordiffuse>ffFFFFFF</colordiffuse>
-    </control>
-    <control>
+      <description>Progress Bar</description>
       <type>progress</type>
-      <description>track progress</description>
-      <id>1</id>
-      <posX>175</posX>
-      <posY>658</posY>
-      <width>1079</width>
-      <height>23</height>
+      <id>0</id>
+      <posX>187</posX>
+      <posY>683</posY>
+      <width>906</width>
       <label>#percentage</label>
-      <texturebg>-</texturebg>
-      <lefttexture>osdprogressleft.png</lefttexture>
-      <midtexture>osdprogressmid.png</midtexture>
-      <righttexture>osdprogressright.png</righttexture>
+      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
     </control>
+
     <control>
       <description>Start Time Info</description>
       <type>label</type>
-      <id>102</id>
+      <id>101</id>
       <posX>195</posX>
-      <posY>679</posY>
+      <posY>695</posY>
       <label>#currentplaytime</label>
       <align>left</align>
-      <font>mediastream12c</font>
-      <textcolor>ff888888</textcolor>
+      <font>mediastream10c</font>
+      <textcolor>ff888888</textcolor>      
+      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
     </control>
     <control>
       <description>End Time Info</description>
       <type>label</type>
-      <id>103</id>
-      <posX>1221</posX>
-      <posY>679</posY>
-      <label>#duration</label>
+      <id>102</id>
+      <posX>1100</posX>
+      <posY>695</posY>
+      <label>#currentremaining</label>
       <align>right</align>
-      <font>mediastream12c</font>
-      <textcolor>ff888888</textcolor>
+      <font>mediastream10c</font>
+      <textcolor>ff888888</textcolor>       
+      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
     </control>
+
+
+
   </controls>
 </window>
