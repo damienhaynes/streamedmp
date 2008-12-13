@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <id>3002</id>
@@ -9,35 +9,14 @@
       <description>rec logo</description>
       <type>image</type>
       <id>4</id>
-      <posX>35</posX>
-      <posY>12</posY>
-      <texture>remote_red.png</texture>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <posX>100</posX>
+      <posY>15</posY>
+      <width>20</width>
+      <height>20</height>
+      <texture>tvguide_record_button.png</texture>
+       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="fade" time="250">WindowOpen</animation>
     </control>
-    <control>
-      <type>image</type>
-      <id>500</id>
-      <posX>590</posX>
-      <posY>40</posY>
-      <width>99</width>
-      <height>44</height>
-      <texture>volume.states.mute.png</texture>
-      <colordiffuse>White</colordiffuse>
-      <visible>no</visible>
-    </control>
-    <control>
-      <type>volumebar</type>
-      <id>501</id>
-      <posX>477</posX>
-      <posY>19</posY>
-      <align>left</align>
-      <height>24</height>
-      <width>10</width>
-      <imageHeight>3</imageHeight>
-      <texture>volume.states.png</texture>
-      <colordiffuse>White</colordiffuse>
-      <visible>no</visible>
-    </control>
+
   </controls>
 </window>
