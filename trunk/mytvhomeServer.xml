@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <id>1</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,7 +7,7 @@
   <define>#header.label:605</define>
   <define>#header.hover:hover_my tv.png</define>
   <controls>
-    <import>common.time.xml</import>
+
     <import>common.window.tv.xml</import>
     <!--***************Top Bar****************-->
     <control>
@@ -27,7 +27,6 @@
       <posY>170</posY>
       <width>150</width>
       <layout>StackLayout</layout>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <control>
         <description>TVGuide</description>
         <type>button</type>
@@ -172,6 +171,7 @@
       <texture>tv_frame.png</texture>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
+
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -208,39 +208,28 @@
       <texture>tv_black.png</texture>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
-    <control>
-      <description>Progress background</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>385</posX>
-      <posY>501</posY>
-      <width>502</width>
-      <height>12</height>
-      <texture>osd_progress_background.png</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
+
+
+
     <control>
       <description>progress bar</description>
       <type>progress</type>
       <id>20</id>
-      <posX>375</posX>
-      <posY>501</posY>
-      <width>527</width>
-      <height>12</height>
-      <label>#TV.View.Percentage</label>
+      <posX>410</posX>
+      <posY>480</posY>
+      <width>546</width>
+       <label>#TV.View.Percentage</label>
       <visible>yes</visible>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>120</posX>
+      <posX>170</posX>
       <posY>510</posY>
       <width>800</width>
       <label>#TV.View.title</label>
-      <font>mediastream12tc</font>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <font>mediastream14tc</font>
     </control>
     <control>
       <description>Channel label</description>
@@ -251,7 +240,6 @@
       <label>602</label>
       <font>font13</font>
       <align>right</align>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program time</description>
@@ -262,7 +250,6 @@
       <label>#TV.View.start-#TV.View.stop</label>
       <font>mediastream12tc</font>
       <align>right</align>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channelname</description>
@@ -274,20 +261,18 @@
       <label>#TV.View.channel</label>
       <font>mediastream12tc</font>
       <align>left</align>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Description1</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>120</posX>
+      <posX>170</posX>
       <posY>540</posY>
       <width>1100</width>
       <height>105</height>
-      <seperator>----------------------------------------------------------------------------------------------</seperator>
+      <seperator>_______________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
-      <font>mediastream10</font>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <font>mediastream12</font>
     </control>
     <control>
       <description>Current Channel Thumb Dummy</description>
@@ -295,11 +280,10 @@
       <id>1</id>
       <posX>20</posX>
       <posY>505</posY>
-      <width>50</width>
-      <height>50</height>
+      <width>100</width>
+      <height>100</height>
       <texture>hover_info.png</texture>
       <visible>!control.hasthumb(204)</visible>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channel Thumb</description>
@@ -307,10 +291,9 @@
       <id>204</id>
       <posX>35</posX>
       <posY>510</posY>
-      <width>50</width>
-      <height>50</height>
+      <width>100</width>
+      <height>100</height>
       <texture>#TV.View.thumb</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <!--     <control>
       <description>rectangle</description>
@@ -323,40 +306,8 @@
       <texture>tv_background.png</texture>
       <colordiffuse>White</colordiffuse>
     </control> -->
-    <control>
-      <description>Recording Channel</description>
-      <type>image</type>
-      <id>22</id>
-      <posX>983</posX>
-      <posY>122</posY>
-      <width>100</width>
-      <height>100</height>
-      <texture>#TV.Record.thumb</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>record info label</description>
-      <type>fadelabel</type>
-      <id>23</id>
-      <width>346</width>
-      <posX>1000</posX>
-      <posY>245</posY>
-      <label>#TV.Record.channel\r#TV.Record.title\r#TV.Record.start-#TV.Record.stop</label>
-      <font>font12</font>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>record pin</description>
-      <type>image</type>
-      <id>24</id>
-      <posX>255</posX>
-      <posY>590</posY>
-      <texture>tvguide_record_button.png</texture>
-      <visible>no</visible>
-      <keepaspectratio>yes</keepaspectratio>
-      <width>46</width>
-      <height>24</height>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
+
+
+    <import>common.time.xml</import>
   </controls>
 </window>

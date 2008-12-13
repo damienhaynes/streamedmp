@@ -18,7 +18,6 @@ namespace streamedmp_editor
         List<string> ids = new List<string>();
         List<menuItem> menuItems = new List<menuItem>();
         List<backgroundItem> bgItems = new List<backgroundItem>();
-        List<prettyItem> prettyItems = new List<prettyItem>();
         
         string path;
         string xml;
@@ -96,13 +95,17 @@ namespace streamedmp_editor
                 item.hyperlink = ids[lstAvailableWindows.SelectedIndex];
                 item.bgFolder = cboBGFolder.Text;                
                 item.random = chkBGRandom.Checked;
-                item.timePerImage = int.Parse(txtBGTime.Text)*1000; //milliseconds
+                item.timePerImage = int.Parse(txtBGTime.Text);
                 menuItems.Add(item);
                 chklstWinddowsInMenu.Items.Add(item.name);
-         
+
+                // Clear items
+                txtItemName.Text = "";
+                cboBGFolder.Text = "";
+                cboContextLabels.Text = "";
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
-         
+                lstAvailableWindows.SelectedIndex = -1;
             }
             else
             {
@@ -120,13 +123,8 @@ namespace streamedmp_editor
             {
                 try
                 {
-                    // TODO: Add a Junk Filter XML
-                    if (file.ToLower().Contains("basichome") == false
-                        && file.ToLower().StartsWith("common") == false 
-                        && file.ToLower().Contains("dialog") == false                        
-                        && file.ToLower().Contains("myhomeplugins") == false
-                        && file.ToLower().Contains("mytvhomeserver") == false
-                        && file.ToLower().Contains("wizard") == false)
+                    if (file.ToLower().StartsWith("common") == false && file.ToLower().Contains("dialog") == false
+                        && file.ToLower().Contains("wizard") == false && file.ToLower().Contains("basichome") == false)
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(file);
@@ -142,7 +140,6 @@ namespace streamedmp_editor
             if (lstAvailableWindows.Items.Count > 0)
             {    
                 loadSkin("BasicHome.xml");
-                LoadPrettyItems();
                 return true;
             }
             else
@@ -154,68 +151,7 @@ namespace streamedmp_editor
                  
             }
         }
-
-        private void LoadPrettyItems()
-        {
-            XmlDocument doc = new XmlDocument();
-            Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("streamedmp_editor.QuickSelectList.xml");
-            doc.Load(stream);                      
-
-            XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/items/item");
-            foreach (XmlNode node in nodeList)
-            {
-                prettyItem pItem = new prettyItem();                
-                
-                XmlNode innerNode = node.SelectSingleNode("name");
-                if (innerNode != null) pItem.name = innerNode.InnerText;
-                innerNode = node.SelectSingleNode("name2");
-                if (innerNode != null) pItem.name2 = innerNode.InnerText;
-
-                innerNode = node.SelectSingleNode("context");
-                if (innerNode != null) pItem.contextlabel = innerNode.InnerText;
-
-                innerNode = node.SelectSingleNode("folder");
-                if (innerNode != null) pItem.folder = innerNode.InnerText;
-
-                innerNode = node.SelectSingleNode("xmlfile");
-                if (innerNode != null) pItem.xmlfile = innerNode.InnerText;
-
-                innerNode = node.SelectSingleNode("id");
-                if (innerNode != null) pItem.id = innerNode.InnerText;
-
-                // Dont Add item if its not available
-                if (ids.Contains(pItem.id))
-                    prettyItems.Add(pItem);
-
-            }
-                                                
-            // Load list
-            foreach (prettyItem p in prettyItems)
-            {                
-                if (p.name2 != null)
-                    cboQuickSelect.Items.Add(p.name + " " + p.name2);
-                else
-                    cboQuickSelect.Items.Add(p.name);
-            }
-            cboQuickSelect.SelectedIndex = 0;
-
-        }
-
-        private void QuickSelect(int index)
-        {            
-            lstAvailableWindows.SelectedItem = prettyItems[index].xmlfile;
-            cboContextLabels.Text = prettyItems[index].contextlabel;
-            txtItemName.Text = prettyItems[index].name;
-            cboBGFolder.Text = prettyItems[index].folder;
-        }
-
-        private void ClearItems()
-        {
-            txtItemName.Text = "";
-            cboBGFolder.Text = "";
-            cboContextLabels.Text = "";            
-        }
-
+        
         private void showLoadError()
         {
             MessageBox.Show("Error loading menu, file seems invalid");
@@ -428,7 +364,7 @@ namespace streamedmp_editor
                         {
                             mnuItem.random = randomize.Equals("true");
                             mnuItem.bgFolder = imagepath;
-                            mnuItem.timePerImage = int.Parse(timeperimage);
+                            mnuItem.timePerImage = int.Parse(timeperimage.Substring(0, 2));
                         }
                     }
                 }
@@ -465,32 +401,8 @@ namespace streamedmp_editor
 
         private void lstAvailableWindows_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstAvailableWindows.SelectedIndex >= 0)
-            {
-                toolStripStatusLabel1.Text = "Window ID: " + ids[lstAvailableWindows.SelectedIndex];
-
-                // Populate / Clear items bases on selection
-                int i = 0;
-                bool bFound = false;
-                string selectedID = ids[lstAvailableWindows.SelectedIndex];
-                foreach (prettyItem p in prettyItems)
-                {
-                    if (p.id == selectedID)
-                    {
-                        // Populate
-                        QuickSelect(i);
-                        cboQuickSelect.SelectedIndex = i;
-                        bFound = true;
-                        break;
-                    }
-                    i++;
-                }
-                if (!bFound)
-                {
-                    // Clear Items
-                    ClearItems();
-                }
-            }
+            if( lstAvailableWindows.SelectedIndex >= 0)
+                toolStripStatusLabel1.Text = "Window ID: "+ids[lstAvailableWindows.SelectedIndex];           
         }        
 
         void lstWinddowsInMenu_MouseEnter(object sender, System.EventArgs e)
@@ -1066,9 +978,9 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t<description>Weather Background</description>");
             rawXML.AppendLine("\t<type>image</type>");
             rawXML.AppendLine("\t<id>1</id>");
-            rawXML.AppendLine("\t<posX>976</posX>");
-            rawXML.AppendLine("\t<posY>-3</posY>");
-            rawXML.AppendLine("\t<width>306</width>");
+            rawXML.AppendLine("\t<posX>1050</posX>");
+            rawXML.AppendLine("\t<posY>-5</posY>");
+            rawXML.AppendLine("\t<width>230</width>");
             rawXML.AppendLine("\t<height>75</height>");
             rawXML.AppendLine("\t<texture>homeweatheroverlaybg.png</texture>");
             rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1103,9 +1015,9 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<description>Weather image</description>");
 	            rawXML.AppendLine("\t<type>image</type>");
 	            rawXML.AppendLine("\t<id>1</id>");
-	            rawXML.AppendLine("\t<posY>8</posY>");
+	            rawXML.AppendLine("\t<posY>5</posY>");
 	            rawXML.AppendLine("\t<posX>1215</posX>");
-                rawXML.AppendLine("\t<height>54</height>");
+                rawXML.AppendLine("\t<height>55</height>");
                 rawXML.AppendLine("\t<width>55</width>");
 	            rawXML.AppendLine("\t<texture>#weatherimg</texture>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1120,8 +1032,8 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<width>400</width>");
 	            rawXML.AppendLine("\t<height>50</height>");
                 rawXML.AppendLine("\t<align>right</align>");
-	            rawXML.AppendLine("\t<posY>34</posY>");
-	            rawXML.AppendLine("\t<posX>1210</posX>");
+	            rawXML.AppendLine("\t<posY>35</posY>");
+	            rawXML.AppendLine("\t<posX>1200</posX>");
                 rawXML.AppendLine("\t<font>mediastream10tc</font>");
 	            rawXML.AppendLine("\t<label>#temp</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1136,8 +1048,8 @@ namespace streamedmp_editor
 	            rawXML.AppendLine("\t<width>400</width>");
 	            rawXML.AppendLine("\t<height>50</height>");
                 rawXML.AppendLine("\t<align>right</align>");
-	            rawXML.AppendLine("\t<posY>17</posY>");
-	            rawXML.AppendLine("\t<posX>1190</posX>");
+	            rawXML.AppendLine("\t<posY>15</posY>");
+	            rawXML.AppendLine("\t<posX>1200</posX>");
                 rawXML.AppendLine("\t<font>mediastream10tc</font>");
 	            rawXML.AppendLine("\t<label>#condition</label>");
                 rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1387,7 +1299,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t<width>1280</width>");
                 rawXML.AppendLine("\t<height>720</height>");
                 rawXML.AppendLine("\t<imagepath>" + item.folder + "</imagepath>");
-                rawXML.AppendLine("\t<timeperimage>" + int.Parse(item.timeperimage).ToString() + "</timeperimage>");
+                rawXML.AppendLine("\t<timeperimage>" + (int.Parse(item.timeperimage) * 2000).ToString() + "</timeperimage>");
                 rawXML.AppendLine("\t<fadetime>800</fadetime>");
                 rawXML.AppendLine("\t<loop>yes</loop>");
                 rawXML.AppendLine("\t<randomize>" + item.random.ToString() + "</randomize>");
@@ -1552,7 +1464,7 @@ namespace streamedmp_editor
         }
 
         public Color ColorInvert(Color colorIn)
-        {            
+        {
             return Color.FromArgb(colorIn.A, Color.White.R - colorIn.R,
                    Color.White.G - colorIn.G, Color.White.B - colorIn.B);
         }
@@ -1579,25 +1491,6 @@ namespace streamedmp_editor
             }
         }
 
-        private void txtMenuXPos_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Only allow numbers
-            if ((!Char.IsDigit(e.KeyChar)) && (e.KeyChar != Convert.ToChar(Keys.Back)))
-                e.Handled = true;
-        }
-
-        private void txtBGTime_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Only allow numbers
-            if ((!Char.IsDigit(e.KeyChar)) && (e.KeyChar != Convert.ToChar(Keys.Back)))
-                e.Handled = true;
-        }
-
-        private void cboQuickSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Auto fill items on new selection for quicker add
-            QuickSelect(cboQuickSelect.SelectedIndex);            
-        }       
     }
 
     public class menuItem
@@ -1619,15 +1512,5 @@ namespace streamedmp_editor
         public List<string> ids = new List<string>();
         public bool random;
         public string timeperimage;        
-    }
-
-    public class prettyItem
-    {
-        public string name;
-        public string name2;
-        public string folder;
-        public string contextlabel;
-        public string xmlfile;
-        public string id;
     }
 }
