@@ -18,6 +18,7 @@ namespace streamedmp_editor
         List<string> ids = new List<string>();
         List<menuItem> menuItems = new List<menuItem>();
         List<backgroundItem> bgItems = new List<backgroundItem>();
+        List<prettyItem> prettyItems = new List<prettyItem>();
         
         string path;
         string xml;
@@ -98,14 +99,10 @@ namespace streamedmp_editor
                 item.timePerImage = int.Parse(txtBGTime.Text)*1000; //milliseconds
                 menuItems.Add(item);
                 chklstWinddowsInMenu.Items.Add(item.name);
-
-                // Clear items
-                txtItemName.Text = "";
-                cboBGFolder.Text = "";
-                cboContextLabels.Text = "";
+         
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
-                lstAvailableWindows.SelectedIndex = -1;
+         
             }
             else
             {
@@ -123,8 +120,13 @@ namespace streamedmp_editor
             {
                 try
                 {
-                    if (file.ToLower().StartsWith("common") == false && file.ToLower().Contains("dialog") == false
-                        && file.ToLower().Contains("wizard") == false && file.ToLower().Contains("basichome") == false)
+                    // TODO: Add a Junk Filter XML
+                    if (file.ToLower().Contains("basichome") == false
+                        && file.ToLower().StartsWith("common") == false 
+                        && file.ToLower().Contains("dialog") == false                        
+                        && file.ToLower().Contains("myhomeplugins") == false
+                        && file.ToLower().Contains("mytvhomeserver") == false
+                        && file.ToLower().Contains("wizard") == false)
                     {
                         XmlDocument doc = new XmlDocument();
                         doc.Load(file);
@@ -140,6 +142,7 @@ namespace streamedmp_editor
             if (lstAvailableWindows.Items.Count > 0)
             {    
                 loadSkin("BasicHome.xml");
+                LoadPrettyItems();
                 return true;
             }
             else
@@ -151,7 +154,68 @@ namespace streamedmp_editor
                  
             }
         }
-        
+
+        private void LoadPrettyItems()
+        {
+            XmlDocument doc = new XmlDocument();
+            Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("streamedmp_editor.QuickSelectList.xml");
+            doc.Load(stream);                      
+
+            XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/items/item");
+            foreach (XmlNode node in nodeList)
+            {
+                prettyItem pItem = new prettyItem();                
+                
+                XmlNode innerNode = node.SelectSingleNode("name");
+                if (innerNode != null) pItem.name = innerNode.InnerText;
+                innerNode = node.SelectSingleNode("name2");
+                if (innerNode != null) pItem.name2 = innerNode.InnerText;
+
+                innerNode = node.SelectSingleNode("context");
+                if (innerNode != null) pItem.contextlabel = innerNode.InnerText;
+
+                innerNode = node.SelectSingleNode("folder");
+                if (innerNode != null) pItem.folder = innerNode.InnerText;
+
+                innerNode = node.SelectSingleNode("xmlfile");
+                if (innerNode != null) pItem.xmlfile = innerNode.InnerText;
+
+                innerNode = node.SelectSingleNode("id");
+                if (innerNode != null) pItem.id = innerNode.InnerText;
+
+                // Dont Add item if its not available
+                if (ids.Contains(pItem.id))
+                    prettyItems.Add(pItem);
+
+            }
+                                                
+            // Load list
+            foreach (prettyItem p in prettyItems)
+            {                
+                if (p.name2 != null)
+                    cboQuickSelect.Items.Add(p.name + " " + p.name2);
+                else
+                    cboQuickSelect.Items.Add(p.name);
+            }
+            cboQuickSelect.SelectedIndex = 0;
+
+        }
+
+        private void QuickSelect(int index)
+        {            
+            lstAvailableWindows.SelectedItem = prettyItems[index].xmlfile;
+            cboContextLabels.Text = prettyItems[index].contextlabel;
+            txtItemName.Text = prettyItems[index].name;
+            cboBGFolder.Text = prettyItems[index].folder;
+        }
+
+        private void ClearItems()
+        {
+            txtItemName.Text = "";
+            cboBGFolder.Text = "";
+            cboContextLabels.Text = "";            
+        }
+
         private void showLoadError()
         {
             MessageBox.Show("Error loading menu, file seems invalid");
@@ -401,8 +465,32 @@ namespace streamedmp_editor
 
         private void lstAvailableWindows_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if( lstAvailableWindows.SelectedIndex >= 0)
-                toolStripStatusLabel1.Text = "Window ID: "+ids[lstAvailableWindows.SelectedIndex];           
+            if (lstAvailableWindows.SelectedIndex >= 0)
+            {
+                toolStripStatusLabel1.Text = "Window ID: " + ids[lstAvailableWindows.SelectedIndex];
+
+                // Populate / Clear items bases on selection
+                int i = 0;
+                bool bFound = false;
+                string selectedID = ids[lstAvailableWindows.SelectedIndex];
+                foreach (prettyItem p in prettyItems)
+                {
+                    if (p.id == selectedID)
+                    {
+                        // Populate
+                        QuickSelect(i);
+                        cboQuickSelect.SelectedIndex = i;
+                        bFound = true;
+                        break;
+                    }
+                    i++;
+                }
+                if (!bFound)
+                {
+                    // Clear Items
+                    ClearItems();
+                }
+            }
         }        
 
         void lstWinddowsInMenu_MouseEnter(object sender, System.EventArgs e)
@@ -1503,6 +1591,12 @@ namespace streamedmp_editor
             // Only allow numbers
             if ((!Char.IsDigit(e.KeyChar)) && (e.KeyChar != Convert.ToChar(Keys.Back)))
                 e.Handled = true;
+        }
+
+        private void cboQuickSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Auto fill items on new selection for quicker add
+            QuickSelect(cboQuickSelect.SelectedIndex);            
         }       
     }
 
@@ -1525,5 +1619,15 @@ namespace streamedmp_editor
         public List<string> ids = new List<string>();
         public bool random;
         public string timeperimage;        
+    }
+
+    public class prettyItem
+    {
+        public string name;
+        public string name2;
+        public string folder;
+        public string contextlabel;
+        public string xmlfile;
+        public string id;
     }
 }
