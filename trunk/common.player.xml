@@ -159,9 +159,59 @@
       <visible>player.rewinding2x</visible>
       <texture>osd2x.png</texture>
       <colordiffuse>ff888888</colordiffuse>
-    </control>        
-
-
+    </control>  
+      
+    <control>
+      <description>row 1 label</description>
+      <type>label</type>
+      <id>10</id>
+      <posX>0</posX>
+      <posY>700</posY>
+      <width>1280</width>
+      <height>25</height>
+      <align>center</align>
+      <visible>no</visible>
+      <label>-</label>
+      <font>mediastream10tc</font>
+    </control>
+    <control>
+      <description>row 2 label</description>
+      <type>label</type>
+      <id>11</id>
+      <posX>0</posX>
+      <posY>700</posY>
+      <width>1280</width>
+      <height>25</height>
+      <label>-</label>
+      <font>mediastream10tc</font>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>row 3 label</description>
+      <type>label</type>
+      <id>12</id>
+      <posX>0</posX>
+      <posY>700</posY>
+      <width>1280</width>
+      <height>25</height>
+      <align>center</align>
+      <visible>no</visible>
+      <label>-</label>
+      <font>mediastream10tc</font>
+    </control>
+    <control>
+      <description>skip steps</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>0</posX>
+      <posY>700</posY>
+      <width>1280</width>
+      <height>25</height>
+      <label>-</label>
+      <font>mediastream10tc</font>
+      <visible>no</visible>
+      <align>center</align>
+    </control>
 
     <control>
       <description>pause label</description>
