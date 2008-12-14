@@ -309,10 +309,11 @@
       <description>Weather image</description>
       <type>image</type>
       <id>1</id>
-      <posY>8</posY>
-      <posX>1215</posX>
-      <height>54</height>
+      <posX>987</posX>
+      <posY>9</posY>
+      <height>53</height>
       <width>55</width>
+      <centered>yes</centered>      
       <texture>#weatherimg</texture>
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
@@ -322,12 +323,12 @@
       <description>Temperature</description>
       <type>label</type>
       <id>1</id>
+      <posX>1250</posX>
+      <posY>22</posY>
       <width>400</width>
       <height>50</height>
       <align>right</align>
-      <posY>34</posY>
-      <posX>1210</posX>
-      <font>mediastream10tc</font>
+      <font>mediastream14c</font>      
       <label>#temp</label>
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
@@ -335,13 +336,12 @@
     </control>
     <control>
       <description>condition</description>
-      <type>label</type>
+      <type>textbox</type>
       <id>1</id>
+      <posX>1048</posX>
+      <posY>15</posY>
       <width>400</width>
       <height>50</height>
-      <align>right</align>
-      <posY>17</posY>
-      <posX>1190</posX>
       <font>mediastream10tc</font>
       <label>#condition</label>
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
