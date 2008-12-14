@@ -172,7 +172,7 @@
       <width>1205</width>
       <height>42</height>
       <texture>homerss.png</texture>
-      <visible>plugin.isenabled(MP-RSSFeeds)|player.hasmedia</visible>
+      <visible>plugin.isenabled(MP-RSSTicker)|player.hasmedia</visible>
     </control>
     <control>
       <description>RSS Items</description>
@@ -184,7 +184,7 @@
       <posY>689</posY>
       <font>mediastream12tc</font>
       <label>#rssfeed</label>
-      <visible>plugin.isenabled(MP-RSSFeeds)</visible>
+      <visible>plugin.isenabled(MP-RSSTicker)</visible>
     </control>
     
     <!-- Weather -->
