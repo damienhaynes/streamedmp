@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <window>
-	<!-- BEGIN GENERATED ID CODE-->	
-	<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->
+<!-- BEGIN GENERATED ID CODE-->	
+<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->
 	<define>#labelFont:mediastream16tc</define>
 	<define>#selectedfont:mediastream28tc</define>
-	<!-- BEGIN GENERATED DEFINITIONS -->
+<!-- BEGIN GENERATED DEFINITIONS -->
 	<allowoverlay>no</allowoverlay>
 	<disabletopbar>yes</disabletopbar>
 	<controls>
@@ -29,8 +29,7 @@
 			<align>center</align>
 			<font>mediastream12tc</font>
 			<label>Exit MediaPortal</label>
-			<visible>Control.HasFocus(7777)</visible>
-			<description>Restart Label</description>
+			<visible>Control.HasFocus(7777)</visible>			
 		</control>
 		<control>
 			<description>Restart Label</description>
@@ -68,35 +67,15 @@
 			<height>1</height>
 			<texture>hbar1white.png</texture>
 			<visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
-		</control>
-	    <control>
-			<description>Shutdown menu hbar</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>485</posX>
-			<posY>438</posY>
-			<width>381</width>
-			<height>1</height>
-			<texture>hbar1white.png</texture>
-			<visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
-	    </control>
-
-	    <!-- BEGIN GENERATED TOPBAR CODE -->
-	    
-		<!-- BEGIN GENERATED BACKGROUND CODE-->
-			
-		<!-- BEGIN GENERATED MENUGRAPHICS CODE-->
-
-		<!-- BEGIN GENERATED RSS TICKER CODE-->
-			
-		<!-- BEGIN GENERATED WEATHER CODE-->
-			
-		<!-- BEGIN GENERATED BUTTON CODE-->
-
-		<!-- BEGIN CROWDING FIX CODE-->
-	    
-	    <!-- BEGIN CONTEXT LABELS CODE-->  
-		
+		</control>	    
+<!-- BEGIN GENERATED TOPBAR CODE -->
+<!-- BEGIN GENERATED BACKGROUND CODE-->
+<!-- BEGIN GENERATED MENUGRAPHICS CODE-->
+<!-- BEGIN GENERATED RSS TICKER CODE-->
+<!-- BEGIN GENERATED WEATHER CODE-->
+<!-- BEGIN GENERATED BUTTON CODE-->
+<!-- BEGIN CROWDING FIX CODE-->
+<!-- BEGIN CONTEXT LABELS CODE-->		
 	    <import>common.time.xml</import>
 	    <import>common.overlay.basichome.xml</import>
 	    <import>streamedmp.version.xml</import>    
