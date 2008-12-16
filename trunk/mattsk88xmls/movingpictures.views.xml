@@ -15,11 +15,11 @@ This file should contain all items visible when the plug-in is in its various fa
     <define>#filmstrip.available:true</define>
     <control>
       <description>Movie Title</description>
-      <type>label</type>
+      <type>fadelabel</type>
       <id>0</id>
       <posX>686</posX>
-      <posY>425</posY>
-      <width>650</width>
+      <posY>420</posY>
+      <width>570</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>FFffffff</textcolor>
@@ -241,7 +241,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <height>360</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MovingPictures.Coverart</texture>
       <visible>facadeview.list+Control.HasFocus(50)</visible>
-      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+      <animation effect="rotatey" start="-60" end="-60" center="15,10" time="0" reversible="false">visible</animation>
     </control>
     <control>
       <type>image</type>

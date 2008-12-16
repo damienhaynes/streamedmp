@@ -13,12 +13,13 @@ This file should contain the facade view
         <type>listcontrol</type>
         <id>50</id>
         <posY>420</posY>
-        <posX>880</posX>
+        <posX>860</posX>
         <height>340</height>
         <width>400</width>
-        <spinPosY>17</spinPosY>
+        <spinPosY>18</spinPosY>
         <spinPosX>1217</spinPosX>
         <textXOff>15</textXOff>
+        <spinColor>ffcccccc</spinColor>
       </control>
       <control>
         <description>Thumbnail Panel</description>
@@ -67,20 +68,18 @@ This file should contain the facade view
         <description>Filmstrip view</description>
         <type>filmstrip</type>
         <id>50</id>
-        <posX>-5</posX>
-        <posY>470</posY>
+        <posX>25</posX>
+        <posY>465</posY>
         <onright>2</onright>
-        <width>1160</width>
+        <width>1155</width>
         <scrollOffset>3</scrollOffset>
         <onleft>2</onleft>
-        <spinPosY>30</spinPosY>
-        <spinPosX>1180</spinPosX>
-        <spinWidth>30</spinWidth>
-        <spinHeight>30</spinHeight>
+        <spinPosY>8</spinPosY>
+        <spinPosX>1210</spinPosX>
         <spinColor>ffcccccc</spinColor>
-        <itemWidth>160</itemWidth>
+        <itemWidth>145</itemWidth>
         <itemHeight>205</itemHeight>
-        <textureWidth>150</textureWidth>
+        <textureWidth>145</textureWidth>
         <textureHeight>207</textureHeight>
         <thumbWidth>140</thumbWidth>
         <thumbHeight>200</thumbHeight>
@@ -88,9 +87,9 @@ This file should contain the facade view
         <thumbPosY>2</thumbPosY>
         <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
         <InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
-        <imageFolderFocus>dvd_frame.png</imageFolderFocus>
-        <frame>dvd_frame.png</frame>
-        <frameFocus>dvd_frame.png</frameFocus>
+        <imageFolderFocus>-</imageFolderFocus>
+        <frame>-</frame>
+        <frameFocus>-</frameFocus>
         <background>Coverbig.png</background>
         <showFrame>yes</showFrame>
         <showFolder>no</showFolder>
@@ -98,8 +97,6 @@ This file should contain the facade view
         <showInfoImage>no</showInfoImage>
         <thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
         <thumbAnimation effect="zoom" start="140,140" end="100,100" time="100"></thumbAnimation>
-        <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
-        <animation effect="rotatey" start="5" end="5" center="700,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
       </control>
     </control>
   </controls>

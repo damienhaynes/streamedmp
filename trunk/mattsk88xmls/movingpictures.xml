@@ -208,29 +208,19 @@ multiple view modes.
       <label>PAGE</label>
       <id>0</id>
       <posX>1118</posX>
-      <posY>12</posY>
+      <posY>13</posY>
       <font>mediastream12c</font>
       <textcolor>ff025984</textcolor>
     </control>
     <control>
-      <description>Number of Files Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>260</posX>
-      <posY>50</posY>
-      <label>#itemcount</label>
-      <align>left</align>
-      <textcolor>ffffffff</textcolor>
-    </control>
-    <control>
       <type>imagelist</type>
       <id>101</id>
-      <posX>686</posX>
-      <posY>462</posY>
+      <posX>730</posX>
+      <posY>456</posY>
       <width>310</width>
       <height>25</height>
       <textureWidth>17</textureWidth>
-      <textureHeight>15</textureHeight>
+      <textureHeight>17</textureHeight>
       <subitems>
         <subitem>greystar.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -272,7 +262,7 @@ multiple view modes.
       <texture>overlaywatched.png</texture>
       <width>24</width>
       <height>24</height>
-      <visible>Control.IsVisible(50)+Control.IsVisible(9)</visible>
+      <visible>Control.IsVisible(50)+Control.IsVisible(9)+facadeview.list</visible>
     </control>
     <control>
       <description>Watched Filtering Indicator - UnWatched</description>
@@ -282,7 +272,27 @@ multiple view modes.
       <texture>overlayunwatched.png</texture>
       <width>24</width>
       <height>24</height>
-      <visible>Control.IsVisible(50)+!Control.IsVisible(9)</visible>
+      <visible>Control.IsVisible(50)+!Control.IsVisible(9)+facadeview.list</visible>
+    </control>
+    <control>
+      <description>Watched Filtering Indicator - Watched</description>
+      <type>image</type>
+      <posX>686</posX>
+      <posY>453</posY>
+      <texture>overlaywatched.png</texture>
+      <width>24</width>
+      <height>24</height>
+      <visible>Control.IsVisible(50)+Control.IsVisible(9)+facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <description>Watched Filtering Indicator - UnWatched</description>
+      <type>image</type>
+      <posX>686</posX>
+      <posY>453</posY>
+      <texture>overlayunwatched.png</texture>
+      <width>24</width>
+      <height>24</height>
+      <visible>Control.IsVisible(50)+!Control.IsVisible(9)+facadeview.filmstrip</visible>
     </control>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
