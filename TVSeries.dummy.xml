@@ -166,5 +166,35 @@
       <!-- to make a control visible only when Series Posters are enabled do this: <visible>Control.IsVisible(1242)</visible> -->
       <!-- to make a control invisible only when Wide Banners are enabled do this: <visible>!Control.IsVisible(1242)</visible> -->
     </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Series/Season/Episode Watched Flag</description>
+      <id>1243</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label>
+      </label>
+      <visible>false</visible>
+      <!-- to make a control visible only when Series/Season/Episode is watched do this: <visible>Control.IsVisible(1243)</visible> -->
+      <!-- to make a control invisible only when Series/Season/Episode is not watched do this: <visible>!Control.IsVisible(1243)</visible> -->
+    </control>
+    <control>
+      <type>label</type>
+      <description>Dummy Label for Series/Season/Episode being Available</description>
+      <id>1244</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+      <textcolor>d4d2d2</textcolor>
+      <font>font14</font>
+      <label>
+      </label>
+      <visible>false</visible>
+      <!-- to make a control visible only when Series/Season/Episode is available (file local) do this: <visible>Control.IsVisible(1244)</visible> -->
+      <!-- to make a control invisible only when Series/Season/Episode is not available (file not local) do this: <visible>!Control.IsVisible(1244)</visible> -->
+    </control>
   </controls>
 </window>
