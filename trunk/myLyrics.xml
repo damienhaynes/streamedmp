@@ -1,281 +1,176 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>90478</id>
-  <defaultcontrol>3</defaultcontrol>
+  <defaultcontrol>20</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-<define>#header.label:Lyrics</define>
+  <define>#header.label:Lyrics</define>
   <define>#header.hover:hover_my music.png</define>
   <controls>
-
-
-<control>
-	<description>music background image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>hover_my music.png</texture>
-</control>
-	
-<control>
-	<description>music overlay image</description>
-	<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-	<type>image</type>
-	<id>0</id>
-	<posX>0</posX>
-	<posY>0</posY>
-	<width>1280</width>
-	<height>720</height>
-	<texture>streamed_overlay.png</texture>
-</control>
-
-
-
-
-    <control>
+   <control>
+      <description>Background Image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
-      <description>album art image</description>
-      <id>112</id>
-	<posX>23</posX>
-	<posY>255</posY>
-	<width>250</width>
-	<height>250</height>
-      <texture>#Play.Current.Thumb</texture>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my music.png</texture>
     </control>
-	
     <control>
+      <description>Overlay Image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
-      <id>117</id>
-      <posX>49</posX>
-      <posY>515</posY>
-      <width>200</width>
-      <height>28</height>
-      <texture>osdprogressbackv.png</texture>
-    </control>
-	
-    <control>
-      <type>progress</type>
-      <description>track progress</description>
-      <id>118</id>
-      <posX>37</posX>
-      <posY>520</posY>
-      <width>229</width>
-      <height>23</height>
-      <texturebg>-</texturebg>
-      <lefttexture>osdprogressleft.png</lefttexture>
-      <midtexture>osdprogressmid.png</midtexture>
-      <righttexture>osdprogressright.png</righttexture>
-    </control>
-	
-    <control>
-      <type>label</type>
-      <description>track progress label</description>
       <id>0</id>
-      <posX>47</posX>
-      <posY>520</posY>
-	  <width>30</width>
-      <label>#currentplaytime</label>
-      <align>right</align>
-	  <font>mediastream10</font>
-    </control>
-	
-    <control>
-      <type>label</type>
-      <description>track duration label</description>
-      <id>0</id>
-      <posX>248</posX>
-      <posY>520</posY>
-	  <font>mediastream10</font>
-      <label>#duration</label>
-    </control>
-	
-    <control>
-      <type>fadelabel</type>
-      <description>track label</description>
-      <id>30</id>
-      <posX>310</posX>
-      <posY>250</posY>
-      <width>600</width>
-      <height>26</height>
-	  <font>mediastream14tc</font>
-      <label>#Play.Current.Title</label>
-      <visible>Control.IsVisible(26)</visible>
-    </control>
-	
-    <control>
-      <type>fadelabel</type>
-      <description>track label</description>
-      <id>32</id>
-      <posX>310</posX>
-      <posY>280</posY>
-      <width>600</width>
-	  <font>mediastream12tc</font>
-      <label>#Play.Current.Artist</label>
-      <visible>Control.IsVisible(26)</visible>
-    </control>
-		
-    <control>
-      <type>label</type>
-      <description>album label</description>
-      <id>26</id>
-      <posX>933</posX>
-      <posY>540</posY>
-      <width>410</width>
-      <label>#Play.Current.Album</label>
-    </control>
-	
-    <control>
-      <type>fadelabel</type>
-      <description>year label</description>
-      <id>27</id>
-      <posX>1077</posX>
-      <posY>470</posY>
-      <width>410</width>
-      <label>-</label>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>track label</description>
-      <id>33</id>
-      <posX>1356</posX>
-      <posY>470</posY>
-      <width>410</width>
-      <height>20</height>
-      <label>-</label>
-      <align>right</align>
-      <visible>Player.HasMedia</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <description>up next label</description>
-      <id>22</id>
-      <posX>933</posX>
-      <posY>570</posY>
-      <label>4541</label>
-      <font>mediastream12tc</font>
-      <textcolor>ffa9d0f7</textcolor>
-      <visible>Control.IsVisible(26)</visible>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>next track label</description>
-      <id>121</id>
-      <posX>933</posX>
-      <posY>595</posY>
-      <width>269</width>
-      <label>#Play.Next.Title</label>
-      <font>mediastream10</font>
-      <textcolor>ffa9d0f7</textcolor>
-      <visible>Control.IsVisible(26)</visible>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>next artist label</description>
-      <id>123</id>
-      <posX>933</posX>
-      <posY>620</posY>
-      <width>269</width>
-      <label>#Play.Next.Artist</label>
-      <visible>Control.IsVisible(26)</visible>
-      <font>mediastream10</font>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-	
-    <control>
-      <type>textbox</type>
-      <description>The Lyric area</description>
-      <id>21</id>
-      <posX>310</posX>
-      <posY>310</posY>
-      <width>800</width>
-      <height>400</height>
-      <onleft>2</onleft>
-      <onright>2</onright>
-      <onup>2</onup>
-      <ondown>2</ondown>
-      <image>icon-folder.png</image>
-      <label>-</label>
-      <seperator>----------------------------------------------------------------------------------------------</seperator>
-      <text>6</text>
-      <font>mediastream11</font>
-     <textcolor>ffa9d0f7</textcolor>
-      <spinPosX>700</spinPosX>
-      <spinPosY>620</spinPosY>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>streamed_overlay.png</texture>
     </control>
     <control>
       <type>label</type>
       <description>Status</description>
       <id>11</id>
-      <posX>310</posX>
-      <posY>310</posY>
+      <posX>356</posX>
+      <posY>220</posY>
       <label>No media playing</label>
-      <font>mediastream11</font>
+      <font>font12</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
-      <type>image</type>
-      <description>menu background image</description>
-      <id>34</id>
-      <posX>58</posX>
-      <posY>566</posY>
-      <width>1250</width>
-      <height>189</height>
-      <texture>-</texture>
+      <type>textbox</type>
+      <description>The Lyric area</description>
+      <id>21</id>
+      <posX>110</posX>
+      <posY>220</posY>
+      <width>1160</width>
+      <height>530</height>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <onup>2</onup>
+      <ondown>2</ondown>
+      <image>icon-folder.png</image>
+      <label>-</label>
+      <seperator>______________________________________________________________________________________________</seperator>
+      <text>6</text>
+      <font>font14</font>
+      <spinPosX>1219</spinPosX>
+      <spinPosY>680</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <spinCanFocus>no</spinCanFocus>
     </control>
     <control>
       <type>textbox</type>
       <description>The Lyric area</description>
       <id>20</id>
-      <posX>310</posX>
-      <posY>310</posY>
-      <width>800</width>
-      <height>400</height>
+      <posX>356</posX>
+      <posY>220</posY>
+      <width>760</width>
+      <height>530</height>
       <onleft>2</onleft>
       <onright>2</onright>
       <onup>2</onup>
       <ondown>2</ondown>
-	  <font>mediastream11</font>
       <image>icon-folder.png</image>
       <label>-</label>
-      <seperator>----------------------------------------------------------------------------------------------</seperator>
+      <seperator>______________________________________________________________________________________________</seperator>
       <text>6</text>
-      <font>mediastream11</font>
-      <textcolor>ffa9d0f7</textcolor>
-      <spinPosX>700</spinPosX>
-      <spinPosY>620</spinPosY>
+      <font>font14</font>
+      <spinPosX>1219</spinPosX>
+      <spinPosY>680</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <spinCanFocus>no</spinCanFocus>
     </control>
-	
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>facadeview.list|facadeview.playlist</visible>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+    </control>
     <control>
       <type>image</type>
-      <description>title image</description>
-      <id>35</id>
-      <posX>113</posX>
-      <posY>26</posY>
+      <description>Album Art Image</description>
+      <id>112</id>
+      <posX>26</posX>
+      <posY>290</posY>
+      <width>300</width>
+      <height>300</height>
       <texture>-</texture>
+      <centered>yes</centered>
+      <zoom>yes</zoom>
     </control>
-	
+    <control>
+      <type>progress</type>
+      <description>track progress</description>
+      <id>118</id>
+      <posX>26</posX>
+      <posY>615</posY>
+      <width>300</width>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Track Progress Label</description>
+      <id>24</id>
+      <posX>26</posX>
+      <posY>630</posY>
+      <label>#currentplaytime</label>
+      <font>mediastream11</font>
+      <align>left</align>
+      <textcolor>80ffffff</textcolor>
+      <animation effect="fade" time="150">WindowOpen</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Track Duration Label</description>
+      <id>25</id>
+      <posX>326</posX>
+      <posY>630</posY>
+      <label>#duration</label>
+      <font>mediastream11</font>
+      <align>right</align>
+      <textcolor>80ffffff</textcolor>
+    </control>
+ 
     <control>
       <type>label</type>
       <description>line 0</description>
       <id>400</id>
-      <posX>310</posX>
-      <posY>120</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>220</posY>
       <colordiffuse>80ffffff</colordiffuse>
       <label>line 0</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
       <disabledcolor>ffffffff</disabledcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 0</description>
       <id>500</id>
-      <posX>310</posX>
-      <posY>120</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>220</posY>
       <label>line 0</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ffffffff</disabledcolor>
     </control>
@@ -283,262 +178,290 @@
       <type>label</type>
       <description>line 1</description>
       <id>401</id>
-      <posX>310</posX>
-      <posY>152</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>252</posY>
       <label>line 1</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 1</description>
       <id>501</id>
-      <posX>310</posX>
-      <posY>152</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>252</posY>
       <label>line 1</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 2</description>
       <id>402</id>
-      <posX>310</posX>
-      <posY>184</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>284</posY>
       <label>line 2</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 2</description>
       <id>502</id>
-      <posX>310</posX>
-      <posY>184</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>284</posY>
       <label>line 2</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 3</description>
       <id>403</id>
-      <posX>310</posX>
-      <posY>216</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>316</posY>
       <label>line 3</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 3</description>
       <id>503</id>
-      <posX>310</posX>
-      <posY>216</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>316</posY>
       <label>line 3</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 4</description>
       <id>404</id>
-      <posX>310</posX>
-      <posY>248</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>348</posY>
       <label>line 4</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 4</description>
       <id>504</id>
-      <posX>310</posX>
-      <posY>248</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>348</posY>
       <label>line 4</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 5</description>
       <id>405</id>
-      <posX>310</posX>
-      <posY>280</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>380</posY>
       <label>line 5</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 5</description>
       <id>505</id>
-      <posX>310</posX>
-      <posY>280</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>380</posY>
       <label>line 5</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 6</description>
       <id>406</id>
-      <posX>310</posX>
-      <posY>312</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>412</posY>
       <label>line 6</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 6</description>
       <id>506</id>
-      <posX>310</posX>
-      <posY>312</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>412</posY>
       <label>line 6</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 7</description>
       <id>407</id>
-      <posX>310</posX>
-      <posY>344</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>444</posY>
       <label>line 7</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 7</description>
       <id>507</id>
-      <posX>310</posX>
-      <posY>344</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>444</posY>
       <label>line 7</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 8</description>
       <id>408</id>
-      <posX>310</posX>
-      <posY>376</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>476</posY>
       <label>line 8</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 8</description>
       <id>508</id>
-      <posX>310</posX>
-      <posY>376</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>476</posY>
       <label>line 8</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 9</description>
       <id>409</id>
-      <posX>310</posX>
-      <posY>408</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>508</posY>
       <label>line 9</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 9</description>
       <id>509</id>
-      <posX>310</posX>
-      <posY>408</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>508</posY>
       <label>line 9</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 10</description>
       <id>410</id>
-      <posX>310</posX>
-      <posY>440</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>540</posY>
       <label>line 10</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 10</description>
       <id>510</id>
-      <posX>310</posX>
-      <posY>440</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>540</posY>
       <label>line 10</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 11</description>
       <id>411</id>
-      <posX>310</posX>
-      <posY>472</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>572</posY>
       <label>line 11</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 11</description>
       <id>511</id>
-      <posX>310</posX>
-      <posY>472</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>572</posY>
       <label>line 11</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 12</description>
       <id>412</id>
-      <posX>310</posX>
-      <posY>504</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>604</posY>
       <label>line 12</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 12</description>
       <id>512</id>
-      <posX>310</posX>
-      <posY>504</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>604</posY>
       <label>line 12</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
+
+
     <control>
       <type>label</type>
       <description>line 0</description>
       <id>200</id>
-      <posX>310</posX>
-      <posY>120</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>220</posY>
       <colordiffuse>80ffffff</colordiffuse>
       <label>line 0</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
       <disabledcolor>ffffffff</disabledcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 0</description>
       <id>300</id>
-      <posX>310</posX>
-      <posY>120</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>220</posY>
       <label>line 0</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ffffffff</disabledcolor>
     </control>
@@ -546,375 +469,413 @@
       <type>label</type>
       <description>line 1</description>
       <id>201</id>
-      <posX>310</posX>
-      <posY>152</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>252</posY>
       <label>line 1</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 1</description>
       <id>301</id>
-      <posX>310</posX>
-      <posY>152</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>252</posY>
       <label>line 1</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 2</description>
       <id>202</id>
-      <posX>310</posX>
-      <posY>184</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>284</posY>
       <label>line 2</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 2</description>
       <id>302</id>
-      <posX>310</posX>
-      <posY>184</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>284</posY>
       <label>line 2</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 3</description>
       <id>203</id>
-      <posX>310</posX>
-      <posY>216</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>316</posY>
       <label>line 3</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 3</description>
       <id>303</id>
-      <posX>310</posX>
-      <posY>216</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>316</posY>
       <label>line 3</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 4</description>
       <id>204</id>
-      <posX>310</posX>
-      <posY>248</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>348</posY>
       <label>line 4</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 4</description>
       <id>304</id>
-      <posX>310</posX>
-      <posY>248</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>348</posY>
       <label>line 4</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 5</description>
       <id>205</id>
-      <posX>310</posX>
-      <posY>280</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>380</posY>
       <label>line 5</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 5</description>
       <id>305</id>
-      <posX>310</posX>
-      <posY>280</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>380</posY>
       <label>line 5</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 6</description>
       <id>206</id>
-      <posX>310</posX>
-      <posY>312</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>412</posY>
       <label>line 6</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 6</description>
       <id>306</id>
-      <posX>310</posX>
-      <posY>312</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>412</posY>
       <label>line 6</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 7</description>
       <id>207</id>
-      <posX>310</posX>
-      <posY>344</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>444</posY>
       <label>line 7</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 7</description>
       <id>307</id>
-      <posX>310</posX>
-      <posY>344</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>444</posY>
       <label>line 7</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 8</description>
       <id>208</id>
-      <posX>310</posX>
-      <posY>376</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>476</posY>
       <label>line 8</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 8</description>
       <id>308</id>
-      <posX>310</posX>
-      <posY>376</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>476</posY>
       <label>line 8</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 9</description>
       <id>209</id>
-      <posX>310</posX>
-      <posY>408</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>508</posY>
       <label>line 9</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 9</description>
       <id>309</id>
-      <posX>310</posX>
-      <posY>408</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>508</posY>
       <label>line 9</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 10</description>
       <id>210</id>
-      <posX>310</posX>
-      <posY>440</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>540</posY>
       <label>line 10</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 10</description>
       <id>310</id>
-      <posX>310</posX>
-      <posY>440</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>540</posY>
       <label>line 10</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 11</description>
       <id>211</id>
-      <posX>310</posX>
-      <posY>472</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>572</posY>
       <label>line 11</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 11</description>
       <id>311</id>
-      <posX>310</posX>
-      <posY>472</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>572</posY>
       <label>line 11</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 12</description>
       <id>212</id>
-      <posX>310</posX>
-      <posY>504</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>604</posY>
       <label>line 12</label>
-      <font>mediastream11</font>
-      <textcolor>ffffffff</textcolor>
+      <font>font14</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>line 12</description>
       <id>312</id>
-      <posX>310</posX>
-      <posY>504</posY>
+      <width>1160</width>
+      <posX>112</posX>
+      <posY>604</posY>
       <label>line 12</label>
-      <font>mediastream11</font>
+      <font>font14</font>
       <textcolor>ffffffff</textcolor>
     </control>
+
+
     <control>
       <type>label</type>
       <description>time 0</description>
       <id>600</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>124</posY>
+      <posY>224</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 1</description>
       <id>601</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>156</posY>
+      <posY>256</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 2</description>
       <id>602</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>188</posY>
+      <posY>288</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 3</description>
       <id>603</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>220</posY>
+      <posY>320</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 4</description>
       <id>604</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>252</posY>
+      <posY>352</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 5</description>
       <id>605</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>284</posY>
+      <posY>384</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 6</description>
       <id>606</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>316</posY>
+      <posY>416</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 7</description>
       <id>607</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>348</posY>
+      <posY>448</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 8</description>
       <id>608</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>380</posY>
+      <posY>480</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 9</description>
       <id>609</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>412</posY>
+      <posY>512</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 10</description>
       <id>610</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>444</posY>
+      <posY>544</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 11</description>
       <id>611</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>476</posY>
+      <posY>676</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
     <control>
       <type>label</type>
       <description>time 12</description>
       <id>612</id>
+      <width>100</width>
       <posX>16</posX>
-      <posY>508</posY>
+      <posY>608</posY>
       <label>(xx:xx:xx)</label>
-      <font>font10</font>
-      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <textcolor>80ffffff</textcolor>
     </control>
-   <import>common.overlays.xml</import>
-   <import>common.window.default.xml</import>    
+    <import>common.overlays.xml</import>
+    <import>common.window.default.xml</import>    
     <import>common.time.xml</import>
   </controls>
- 
 </window>

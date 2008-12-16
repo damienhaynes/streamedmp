@@ -7,9 +7,7 @@
   <define>#header.label:605</define>
   <define>#header.hover:hover_my tv.png</define>
   <controls>
-
     <import>common.window.tv.xml</import>
-    <!--***************Top Bar****************-->
     <control>
       <description>Time Background</description>
       <type>image</type>
@@ -65,16 +63,7 @@
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
-      <!--       <control>
-        <description>Group button</description>
-        <type>button</type>
-        <id>6</id>
-        <label>971</label>
-        <onup>3</onup>
-        <ondown>7</ondown>
-        <onright>99</onright>
-      </control> -->
-      <control>
+       <control>
         <description>Channel button</description>
         <type>button</type>
         <id>7</id>
@@ -150,67 +139,54 @@
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
-      <!--       <control>
-        <description>TuningDetails</description>
-        <type>button</type>
-        <id>14</id>
-        <label>200041</label>
-        <onup>13</onup>
-        <ondown>2</ondown>
-        <onright>99</onright>
-      </control> -->
     </control>
     <control>
-      <description>TV background</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>383</posX>
-      <posY>147</posY>
-      <width>600</width>
-      <height>343</height>
-      <texture>tv_frame.png</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+     <description>TV background</description>
+     <type>image</type>
+     <id>1</id>
+     <posX>383</posX>
+     <posY>147</posY>
+     <width>600</width>
+     <height>343</height>
+     <texture>tv_frame.png</texture>
+     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
-
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+  <control>
+    <description>Top Title Background</description>
+    <type>image</type>
+    <id>0</id>
+    <posX>77</posX>
+    <posY>11</posY>
+    <width>437</width>
+    <height>35</height>
+    <texture>tvtitlebg.png</texture>
+    <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+  </control>
+  <control>
+    <description>video window</description>
+    <type>videowindow</type>
+    <id>99</id>
+    <posX>413</posX>
+    <posY>160</posY>
+    <width>540</width>
+    <height>296</height>
+    <onup>8</onup>
+    <ondown>10</ondown>
+    <action>18</action>
+    <textureFocus>tv_green_border.png</textureFocus>
+    <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+   </control>
+   <control>
+     <description>video window</description>
+     <type>image</type>
+     <id>0</id>
+     <posX>410</posX>
+     <posY>156</posY>
+     <width>546</width>
+     <height>304</height>
+     <texture>tv_black.png</texture>
+     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
-    <control>
-      <description>video window</description>
-      <type>videowindow</type>
-      <id>99</id>
-      <posX>413</posX>
-      <posY>160</posY>
-      <width>540</width>
-      <height>296</height>
-      <onup>8</onup>
-      <ondown>10</ondown>
-      <action>18</action>
-      <textureFocus>tv_green_border.png</textureFocus>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>video window</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>410</posX>
-      <posY>156</posY>
-      <width>546</width>
-      <height>304</height>
-      <texture>tv_black.png</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-
-
-
     <control>
       <description>progress bar</description>
       <type>progress</type>
@@ -220,26 +196,17 @@
       <width>546</width>
        <label>#TV.View.Percentage</label>
       <visible>yes</visible>
-    </control>
-    <control>
-      <description>Current program title</description>
-      <type>fadelabel</type>
-      <id>13</id>
-      <posX>170</posX>
-      <posY>510</posY>
-      <width>800</width>
-      <label>#TV.View.title</label>
-      <font>mediastream14tc</font>
-    </control>
+    </control>    
     <control>
       <description>Channel label</description>
       <type>label</type>
       <id>13</id>
-      <posX>1346</posX>
+      <posX>1280</posX>
       <posY>590</posY>
       <label>602</label>
-      <font>font13</font>
-      <align>right</align>
+      <font>mediastream12tc</font>
+      <align>right</align>       
+      <visible>false</visible>
     </control>
     <control>
       <description>Current program time</description>
@@ -252,6 +219,18 @@
       <align>right</align>
     </control>
     <control>
+      <description>Current Channelname Shadow</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>412</posX>
+      <posY>125</posY>
+      <width>400</width>
+      <label>#TV.View.channel</label>
+      <font>mediastream12tc</font>
+      <align>left</align>      
+      <textcolor>ff222222</textcolor>
+    </control>        
+     <control>
       <description>Current Channelname</description>
       <type>fadelabel</type>
       <id>13</id>
@@ -261,12 +240,33 @@
       <label>#TV.View.channel</label>
       <font>mediastream12tc</font>
       <align>left</align>
-    </control>
+    </control> 
     <control>
+      <description>Current program title Shadow</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>222</posX>
+      <posY>512</posY>
+      <width>800</width>
+      <label>#TV.View.title</label>
+      <font>mediastream14tc</font>      
+      <textcolor>ff222222</textcolor>
+    </control>       
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>220</posX>
+      <posY>510</posY>
+      <width>800</width>
+      <label>#TV.View.title</label>
+      <font>mediastream14tc</font>
+    </control>    
+     <control>
       <description>Description1</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>170</posX>
+      <posX>220</posX>
       <posY>540</posY>
       <width>1100</width>
       <height>105</height>
@@ -278,10 +278,10 @@
       <description>Current Channel Thumb Dummy</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>505</posY>
-      <width>100</width>
-      <height>100</height>
+      <posX>35</posX>
+      <posY>510</posY>
+      <width>150</width>
+      <height>150</height>
       <texture>hover_info.png</texture>
       <visible>!control.hasthumb(204)</visible>
     </control>
@@ -291,9 +291,9 @@
       <id>204</id>
       <posX>35</posX>
       <posY>510</posY>
-      <width>100</width>
-      <height>100</height>
-      <texture>#TV.View.thumb</texture>
+      <width>150</width>
+      <height>150</height>
+      <texture>#TV.View.thumb</texture>      
     </control>     
     <control>
       <description>record pin</description>
@@ -306,20 +306,6 @@
       <texture>tvguide_record_button.png</texture>
       <visible>no</visible>
     </control>
-
-    <!--     <control>
-      <description>rectangle</description>
-      <type>image</type>
-      <id>21</id>
-      <posX>970</posX>
-      <posY>109</posY>
-      <width>130</width>
-      <height>135</height>
-      <texture>tv_background.png</texture>
-      <colordiffuse>White</colordiffuse>
-    </control> -->
-
-
     <import>common.time.xml</import>
   </controls>
 </window>

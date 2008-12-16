@@ -18,7 +18,6 @@
       <height>217</height>
       <texture>osdbackground.png</texture>
     </control>
-
     <control>
       <description>TV Logo background</description>
       <type>image</type>
@@ -29,7 +28,6 @@
       <texture>imagebg.png</texture>
       <keepaspectratio>no</keepaspectratio>
     </control>     
-
     <control>
       <description>TV Logo</description>
       <type>image</type>
@@ -41,7 +39,6 @@
       <texture>#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
     </control>         
-
     <control>
       <description>rec logo</description>
       <type>image</type>
@@ -53,8 +50,7 @@
       <texture>tvguide_record_button.png</texture>
       <keepaspectratio>yes</keepaspectratio>
      </control>
-
-    <control>
+     <control>
       <description>Program Button Up</description>
       <type>button</type>
       <id>33</id>
@@ -62,8 +58,8 @@
       <posY>600</posY>
       <width>37</width>
       <height>37</height>
-      <textureFocus>arrow_round_up_focus.png</textureFocus>
-      <textureNoFocus>arrow_round_up_nofocus.png</textureNoFocus>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
       <label>-</label>
       <onleft>31</onleft>
       <onright>210</onright>
@@ -79,8 +75,8 @@
       <posY>645</posY>
       <width>37</width>
       <height>37</height>
-      <textureFocus>arrow_round_down_focus.png</textureFocus>
-      <textureNoFocus>arrow_round_down_nofocus.png</textureNoFocus>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
       <label>-</label>
       <onleft>31</onleft>
       <onright>210</onright>
@@ -98,7 +94,7 @@
       <align>right</align>
       <font>mediastream10</font>
       <textcolor>ff888888</textcolor>
-    </control>     
+    </control>
     <control>
       <description>Channel Name</description>
       <id>35</id>
@@ -109,7 +105,7 @@
       <posY>535</posY>
       <font>mediastream16tc</font>
       <label>#TV.View.channel</label>
-    </control>
+    </control>     
     <control>
       <description>On tv NOW</description>
       <id>36</id>
@@ -121,7 +117,6 @@
       <font>mediastream12tc</font>      
       <textcolor>ff888888</textcolor>
     </control>      
-
     <control>
       <description>On tv NEXT</description>
       <id>37</id>
@@ -133,14 +128,14 @@
       <font>mediastream11tc</font>
       <textcolor>ff888888</textcolor>
     </control> 
-     <import>common.progressbar.xml</import>           
+    <import>common.progressbar.xml</import>           
     <control>
       <description>TV Progress Bar</description>
       <type>tvprogress</type>
       <id>101</id>
-      <posX>195</posX>
+      <posX>205</posX>
       <posY>683</posY>
-      <width>908</width>      
+      <width>882</width>      
       <toptexture>osd_progress_indicatorTV.png</toptexture>
       <TextureOffsetY>16</TextureOffsetY>
       <bottomtexture>-</bottomtexture>
@@ -223,10 +218,7 @@
         <animation effect="fade" time="250">visiblechange</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control> 
-
- 
-    <control>
-
+      <control>
         <description>Subtitles</description>
         <type>togglebutton</type>
         <id>218</id>
@@ -245,7 +237,6 @@
         <onup>213</onup>
         <ondown>213</ondown>
       </control>        
-
       <control>
         <description>Video Menu</description>
         <type>togglebutton</type>
@@ -286,44 +277,41 @@
       </control>
 
     <!-- :::::::::: SUBTITLES MENU :::::::::: -->
-    <control>
-      <description>Sub Menu Background (subtitles)</description>
-      <type>image</type>
-      <id>302</id>
-      <posX>909</posX>
-      <posY>0</posY>
-      <width>371</width>
-      <height>527</height>
-      <texture>osdmenubg.png</texture>      
-      <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-    </control>
-
-    <control>
-      <description>Menu Title Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>948</posX>
-      <posY>18</posY>
-      <label>SUBTITLES MENU</label>
-      <font>mediastream16c</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>control.isvisible(302)</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-    </control>
-
-    <control>
-      <description>SubTitle Delay label</description>
-      <type>label</type>
-      <id>850</id>
-      <posX>948</posX>
-      <posY>64</posY>
-      <label>303</label>
-      <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-    </control>
-
-    <control>
+      <control>
+        <description>Sub Menu Background (subtitles)</description>
+        <type>image</type>
+        <id>302</id>
+        <posX>909</posX>
+        <posY>0</posY>
+        <width>371</width>
+        <height>527</height>
+        <texture>osdmenubg.png</texture>      
+        <visible>no</visible>
+        <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+     </control>
+     <control>
+       <description>Menu Title Label</description>
+       <type>label</type>
+       <id>0</id>
+       <posX>948</posX>
+       <posY>18</posY>
+       <label>SUBTITLES MENU</label>
+       <font>mediastream16c</font>
+       <textcolor>FFFFFFFF</textcolor>
+       <visible>control.isvisible(302)</visible>
+       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+     </control>
+     <control>
+       <description>SubTitle Delay label</description>
+       <type>label</type>
+       <id>850</id>
+       <posX>948</posX>
+       <posY>64</posY>
+       <label>303</label>
+       <visible>no</visible>
+       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+     </control>
+     <control>
       <description>SubTitle Delay Slider</description>
       <type>slider</type>
       <id>800</id>
@@ -340,7 +328,6 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-
     <control>
       <description>SubTitles On/Off Checkbox</description>
       <type>checkmark</type>
@@ -357,7 +344,6 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-
     <control>
       <description>Sub Titles List Control</description>
       <type>listcontrol</type>
@@ -377,7 +363,6 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-
     <control>
       <description>Channel Button Down</description>
       <type>button</type>
@@ -395,7 +380,6 @@
       <ondown>210</ondown>
       <visible>no</visible>
     </control>
-
     <control>
       <description>Channel Button Up</description>
       <type>button</type>
@@ -457,7 +441,6 @@
       <posX>948</posX>
       <posY>18</posY>
       <label>VIDEO MENU</label>
-  
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(304)</visible>
@@ -710,10 +693,6 @@
       <onright>400</onright>
       <visible>no</visible>
     </control>
-
- 
- 
-
     <control>
       <description>subtitles label</description>
       <type>label</type>
@@ -727,7 +706,6 @@
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(218)+!player.rewinding+!player.forwarding</visible>
     </control>
-
     <control>
       <description>video menu label</description>
       <type>label</type>
@@ -754,10 +732,6 @@
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(221)+!player.rewinding+!player.forwarding</visible>
     </control>
-
     <import>common.player.xml</import>
-      
-
-
   </controls>
 </window>
