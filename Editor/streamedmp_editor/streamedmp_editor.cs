@@ -1013,7 +1013,7 @@ namespace streamedmp_editor
                     rawXML.AppendLine("\t\t\t<width>320</width>");
                     rawXML.AppendLine("\t\t\t<height>72</height>");
                     rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
-                    rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
+                    rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
                     rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
                     rawXML.AppendLine("\t\t\t<align>right</align>");
                     rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1030,10 +1030,10 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
-                rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
+                rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
                 rawXML.AppendLine("\t\t\t<font>#labelFont</font>");                
                 rawXML.AppendLine("\t\t\t<align>right</align>");
-                rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "500" + quote + ">Visible</animation>");
+                rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "300" + quote + ">Visible</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " delay=" + quote + "0" + quote + " time=" + quote + "50" + quote + ">Hidden</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");                                
