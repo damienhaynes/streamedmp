@@ -37,11 +37,6 @@
       <texture>osdbackground.png</texture>
       <visible>control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
     </control>
-    
-
-
-
-    
 
     <control>
       <type>image</type>
@@ -107,7 +102,7 @@
       <visible>player.paused+!window.isosdvisible</visible>
     </control>
     <import>common.player.xml</import>   
-    <import>common.volume.xml</import>
+    <import>common.play.fullscreen.xml</import>
     <import>common.progressbar.xml</import>
   </controls>
 </window>

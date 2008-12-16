@@ -12,9 +12,10 @@
       <posY>503</posY>
       <width>1280</width>
       <height>217</height>
-      <texture>osdbackground.png</texture>
+      <texture>osdbackground.png</texture>      
+     <animation effect="slide" start="0,720" time="100">WindowOpen</animation>     
+     <animation effect="slide" end="0,720" time="100">WindowClose</animation>
     </control>
-
     <control>
       <description>Date</description>
       <type>label</type>
@@ -24,9 +25,9 @@
       <label>#date</label>
       <align>right</align>
       <font>mediastream10</font>
-      <textcolor>ff888888</textcolor>
+      <textcolor>ff888888</textcolor>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>     
-
     <control>
       <description>TV Logo background</description>
       <type>image</type>
@@ -35,9 +36,9 @@
       <width>170</width>
       <height>170</height>
       <texture>imagebg.png</texture>
-      <keepaspectratio>no</keepaspectratio>
+      <keepaspectratio>no</keepaspectratio>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>     
-
     <control>
       <description>TV Logo</description>
       <type>image</type>
@@ -47,9 +48,9 @@
       <width>150</width>
       <height>150</height>
       <texture>#TV.View.thumb</texture>
-      <keepaspectratio>yes</keepaspectratio>
+      <keepaspectratio>yes</keepaspectratio>      
+     <animation effect="slide" start="0,720" time="100">WindowOpen</animation>     
     </control>        
-
     <control>
       <description>Progress Bar</description>
       <type>progress</type>
@@ -58,9 +59,9 @@
       <posY>683</posY>
       <width>914</width>
       <visible>yes</visible>
-      <label>#TV.View.Percentage</label>
+      <label>#TV.View.Percentage</label>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>
-
     <control>
       <description>Start Time Info</description>
       <type>label</type>
@@ -70,7 +71,8 @@
       <label>#TV.View.start</label>
       <align>left</align>
       <font>mediastream10c</font>
-      <textcolor>ff888888</textcolor>      
+      <textcolor>ff888888</textcolor>
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>            
     </control>
     <control>
       <description>End Time Info</description>
@@ -81,9 +83,9 @@
       <label>#TV.View.stop</label>
       <align>right</align>
       <font>mediastream10c</font>
-      <textcolor>ff888888</textcolor>       
+      <textcolor>ff888888</textcolor>
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>             
     </control>
-
     <control>
       <description>rec logo</description>
       <type>image</type>
@@ -92,10 +94,9 @@
       <posY>15</posY>
       <width>20</width>
       <height>20</height>
-      <texture>tvguide_record_button.png</texture>
+      <texture>tvguide_record_button.png</texture>      
       <keepaspectratio>yes</keepaspectratio>
      </control> 
-      
     <control>
       <description>Channel Name</description>
       <id>35</id>
@@ -105,9 +106,9 @@
       <posX>195</posX>
       <posY>535</posY>
       <font>mediastream16tc</font>
-      <label>#TV.View.channel</label>
+      <label>#TV.View.channel</label>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>
-    
     <control>
       <description>On tv NOW</description>
       <id>36</id>
@@ -117,9 +118,9 @@
       <posX>195</posX>
       <posY>565</posY>
       <font>mediastream12tc</font>      
-      <textcolor>ff888888</textcolor>
+      <textcolor>ff888888</textcolor>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>      
-
     <control>
       <description>On tv NEXT</description>
       <id>37</id>
@@ -129,12 +130,9 @@
       <posX>195</posX>
       <posY>640</posY>
       <font>mediastream11tc</font>
-      <textcolor>ff888888</textcolor>
+      <textcolor>ff888888</textcolor>      
+      <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
     </control>         
-
-
-
-
     <import>common.time.xml</import>
   </controls>
 </window>
