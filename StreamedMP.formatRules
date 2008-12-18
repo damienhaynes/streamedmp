@@ -11,7 +11,6 @@
 <Enabled>1<Format><Episode.InfoPanelLine6Key><FormatAs>VIDEO INFO
 <Enabled>1<Format><Episode.InfoPanelLine6Value><FormatAs>[<Episode.VideoCodec> <Episode.videoWidth>x<Episode.videoHeight> Eval(Round(<Episode.VideoAspectRatio>*100)/100) Eval(Round(<Episode.VideoFrameRate>*1000)/1000)fps Eval(Round(PrettyBytes1000(<Episode.VideoBitrate>)*10)/10-> |Kbps|Mbps|Gbps)]  [<Episode.AudioCodec> <Episode.AudioChannels>channels Eval(Round(PrettyBytes1000(<Episode.AudioBitrate>)*10)/10-> |Kbps|Mbps|Gbps)]  [<Episode.FileSize>]
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
-<Enabled>1<Format><Episode.RatingPath><FormatAs>TVSeries\starEval(10*Round(<Episode.Rating>*2)/2).png
 <Enabled>1<Format><Season.SeasonLabel><FormatAs>Season <Season.SeasonIndex>
 <Enabled>1<Format><Series.InfoPanelLine1Key><FormatAs>GENRE
 <Enabled>1<Format><Series.InfoPanelLine1Value><FormatAs><Series.Genre>
@@ -21,7 +20,6 @@
 <Enabled>1<Format><Series.InfoPanelLine3Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10 (RATED: <Series.myRating>)
 <Enabled>1<Format><Series.InfoPanelLine4Key><FormatAs>RUNTIME
 <Enabled>1<Format><Series.InfoPanelLine4Value><FormatAs><Series.Runtime> minutes
-<Enabled>1<Format><Series.RatingPath><FormatAs>TVSeries\starEval(10*Round(<Series.Rating>*2)/2).png
 <Enabled>1<Format>[ x  fps ]  [ channels ]  [0 bytes]<FormatAs>N / A
 <Enabled>1<Format> / 10 (RATED: )<FormatAs> / 10
 <Enabled>1<Format>2channels <FormatAs>2.0 
@@ -37,3 +35,11 @@
 <Enabled>1<Format>A_AAC/MPEG4/LC/SBR<FormatAs>AAC
 <Enabled>1<Format>A_AAC<FormatAs>AAC
 <Enabled>1<Format>A_AC3<FormatAs>AC3
+<Enabled>0<Format><Series.RatingPath><FormatAs>TVSeries\starEval(10*Round(<Series.Rating>*2)/2).png
+<Enabled>0<Format><Series.EpisodesWatched><FormatAs>Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
+<Enabled>0<Format><Season.EpisodesWatched><FormatAs>Eval(<Season.EpisodeCount>-<Season.EpisodesUnWatched>)
+<Enabled>0<Format>11SPACES<FormatAs>           
+<Enabled>0<Format>SeriesCol2<FormatAs>Eval(PrettyNumber10(<Series.EpisodesUnWatched>))           Eval(PrettyNumber10(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
+<Enabled>0<Format>SeriesCol3<FormatAs><Series.EpisodeCount> Episodes
+<Enabled>0<Format>SeasonCol2<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))           Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
+<Enabled>0<Format>SeasonCol3<FormatAs><Season.EpisodeCount> Episodes
