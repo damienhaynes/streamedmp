@@ -1,11 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <controls>
-    
     <!--
     WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
     -->
-    
+   <control>
+      <description>Background Image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+    </control>    
+    <control>
+      <description>Overlay Image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.BG.overlay</texture>
+    </control>        
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -17,7 +38,6 @@
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
@@ -31,34 +51,5 @@
       <label>#header.label</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-    
-    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
-    
-    <!--
-    <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>617</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <label>LABEL</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    -->
-    
   </controls>
 </window>
