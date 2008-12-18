@@ -4,31 +4,12 @@
   <defaultcontrol>20</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:Lyrics</define>
-  <define>#header.hover:hover_my music.png</define>
- <controls>
-   <control>
-      <description>Background Image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_my lyrics.png</texture>
-      <colordiffuse>70ffffff</colordiffuse>
-    </control>
-    <control>
-      <description>Overlay Image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>tvguidebg.png</texture>
-    </control>
+  <define>#header.hover:hover_my lyrics.png</define>  
+  <define>#header.BG.colordiffuse:70ffffff</define> <!--Default ffffffff-->  
+  <define>#header.BG.overlay:tvguidebg.png</define>       <!--Default tvguidebg.png-->
+  <controls>
+    <import>common.window.default.xml</import>    
+    <import>common.time.xml</import>
     <control>
       <description>The Lyric area wide</description>
       <type>textbox</type>
@@ -173,9 +154,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>605</posY>
+      <posY>603</posY>
       <width>159</width>
-      <height>28</height>
+      <height>32</height>
       <texture>mediacountbackground.png</texture>
       <visible>control.isvisible(20)|control.isvisible(21)</visible>
     </control>     
@@ -185,8 +166,8 @@
       <label>PAGE:</label>
       <id>0</id>
       <posX>10</posX>
-      <posY>609</posY>
-      <font>mediastream10tc</font>
+      <posY>607</posY>
+      <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>      
       <visible>control.isvisible(20)|control.isvisible(21)</visible>
     </control>
@@ -207,7 +188,7 @@
       <posY>112</posY>
       <width>360</width>
       <height>360</height>
-      <texture>imagebg.png</texture>
+      <texture>-</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
     </control>
     <control>     
@@ -1045,7 +1026,5 @@
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
     </control>
-    <import>common.window.default.xml</import>    
-    <import>common.time.xml</import>
   </controls>
 </window>

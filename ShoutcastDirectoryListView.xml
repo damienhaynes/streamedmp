@@ -1,51 +1,38 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <id>2345</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
-<define>#header.label:260</define>
-  <define>#header.image:-</define>
-  <define>#header.hover:hover_shoutcast.png</define>
+  <define>#header.label:260</define>
+  <define>#header.hover:hover_shoutcast.png</define>  
+  <define>#header.BG.colordiffuse:ffffffff</define>   <!--Default ffffffff-->  
+  <define>#header.BG.overlay:mainoverlay.png</define> <!--Default tvguidebg.png-->
   <controls>
-
-
-    <!--            :: BACKGROUND :: OVERLAY ::            -->
-    
+    <import>common.window.default.xml</import>    
+    <import>common.time.xml</import>
+    <import>common.overlays.xml</import>    
     <control>
-      <type>image</type>
-      <description>BG</description>
-      <id>0</id>
-      <width>1280</width>
-      <height>720</height>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
+      <description>Media Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+      <posX>1113</posX>
+      <posY>683</posY>
+      <width>159</width>
+      <height>30</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>yes</visible>
     </control>
-    
     <control>
-      <description>overlay image</description>
-      <type>image</type>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
       <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
     </control>
-
-
-
     <control>
-
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -55,7 +42,6 @@
       <posX>23</posX>
       <posY>255</posY>
       <layout>StackLayout</layout>
-
       <control>
         <description>Sort Button</description>
         <type>sortbutton</type>
@@ -65,7 +51,6 @@
         <onup>2</onup>
         <ondown>3</ondown>
       </control>
-
       <control>
         <description>Starts with Button</description>
         <type>selectbutton</type>
@@ -75,7 +60,6 @@
         <onup>2</onup>
         <ondown>4</ondown>
       </control>
-
       <control>
         <description>Bitrate Button</description>
         <type>selectbutton</type>
@@ -85,7 +69,6 @@
         <onup>3</onup>
         <ondown>5</ondown>
       </control>
-
       <control>
         <description>Search Button</description>
         <type>button</type>
@@ -95,7 +78,6 @@
         <onup>4</onup>
         <ondown>6</ondown>
       </control>
-
       <control>
         <description>Favorites Button</description>
         <type>button</type>
@@ -106,7 +88,6 @@
         <ondown>99</ondown>
       </control>
     </control>
-
     <control>
       <description>genre label</description>
       <type>label</type>
@@ -118,7 +99,6 @@
       <align>left</align>
       <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>meta label</description>
       <type>label</type>
@@ -130,7 +110,6 @@
       <align>left</align>
       <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>listeners label</description>
       <type>label</type>
@@ -142,7 +121,6 @@
       <align>left</align>
       <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>track label</description>
       <type>textboxscrollup</type>
@@ -156,7 +134,6 @@
       <align>left</align>
       <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>listcontrol</description>
       <type>listcontrol</type>
@@ -166,8 +143,5 @@
       <onup>2</onup>
       <ondown>2</ondown>
     </control>
-  <import>common.overlays.xml</import>
- <import>common.window.default.xml</import>
-  <import>common.time.xml</import>
   </controls>
 </window>
