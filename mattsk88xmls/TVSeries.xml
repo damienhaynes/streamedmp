@@ -274,9 +274,9 @@
       <type>image</type>
       <id>146</id>
       <posX>20</posX>
-      <posY>300</posY>
-      <width>215</width>
-      <height>360</height>
+      <posY>330</posY>
+      <width>185</width>
+      <height>314</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonBanner</texture>
       <visible>Control.IsVisible(1238)</visible>
       <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
@@ -313,7 +313,7 @@
       <posX>535</posX>
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
-      <font>mediastream12tc</font>
+      <font>mediastream11tc</font>
       <label>RATING</label>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
@@ -503,9 +503,9 @@
       <id>631</id>
       <posX>15</posX>
       <posY>600</posY>
-      <width>700</width>
+      <width>680</width>
       <height>100</height>
-      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <seperator>--------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
       <label>#TVSeries.Description</label>
@@ -535,6 +535,7 @@
       <posX>430</posX>
       <posY>490</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <width>230</width>
     </control>
     <control Style="TVSeriesTitle">
       <label>#TVSeries.Episode.InfoPanelLine2Key</label>
@@ -549,6 +550,7 @@
       <posX>430</posX>
       <posY>460</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <width>230</width>
     </control>
     <control Style="TVSeriesTitle">
       <label>#TVSeries.Episode.InfoPanelLine4Key</label>
@@ -563,6 +565,7 @@
       <posX>430</posX>
       <posY>520</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <width>200</width>
     </control>
     <control Style="TVSeriesTitle">
       <label>#TVSeries.Episode.InfoPanelLine5Key</label>
@@ -577,6 +580,7 @@
       <posX>430</posX>
       <posY>550</posY>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <width>230</width>
     </control>
     <!--
     :::::::::::::::::::::::::::
@@ -595,6 +599,107 @@
       <keepaspectratio>yes</keepaspectratio>
       <spaceBetweenItems>2</spaceBetweenItems>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1240)</visible>
+    </control>
+    <!--**********Watched/Unwatched Icons Season/Series*************-->
+    <control>
+      <description>Series Watched Icon Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>185</posX>
+      <posY>350</posY>
+      <width>32</width>
+      <height>39</height>
+      <texture>overlaywubg.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+    </control>
+    <control>
+      <description>Series Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>191</posX>
+      <posY>353</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_Watched.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>191</posX>
+      <posY>353</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatched.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Not Available and Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>191</posX>
+      <posY>353</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_WatchedNA.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Not Available and Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>191</posX>
+      <posY>353</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatchedNA.png</texture>
+      <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+    </control>
+    <!--**********Watched/Unwatched Icons Episodes*************-->
+    <control>
+      <description>Episode Watched Icon Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>450</posY>
+      <width>32</width>
+      <height>39</height>
+      <texture>overlaywubg.png</texture>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+    </control>
+    <control>
+      <description>Episode Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>256</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_Watched.png</texture>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Episode Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>256</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatched.png</texture>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Episode Not Available and Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>256</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_WatchedNA.png</texture>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <!--      :: HIDDEN MENU ::      -->
     <control>
@@ -783,18 +888,19 @@
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>750</posX>
+          <posX>760</posX>
           <posY>420</posY>
           <onleft>2</onleft>
           <onright>2</onright>
           <spinPosX>1249</spinPosX>
           <spinPosY>1600</spinPosY>
-          <width>600</width>
+          <width>590</width>
           <height>340</height>
           <textXOff>-60</textXOff>
           <textXOff2>367</textXOff2>
           <textXOff3>415</textXOff3>
           <textYOff3>11</textYOff3>
+          <font>mediastream11tc</font>
           <textcolor3>#notpresent.color</textcolor3>
           <textureFocus>listbg_detail_fo.png</textureFocus>
           <downloadColor>#default.color</downloadColor>
