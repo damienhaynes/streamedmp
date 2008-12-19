@@ -98,7 +98,7 @@ namespace streamedmp_editor
                 item.random = chkBGRandom.Checked;
                 item.timePerImage = int.Parse(txtBGTime.Text)*1000; //milliseconds
                 menuItems.Add(item);
-                chklstWinddowsInMenu.Items.Add(item.name);
+                chklstWinddowsInMenu.Items.Add(item.name.ToUpper());
          
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
@@ -365,17 +365,22 @@ namespace streamedmp_editor
                     else if (innerNode.InnerText == "label")
                     {
                         innerNode = node.SelectSingleNode("textcolor");
+                        
                         if (innerNode != null && innerNode.InnerText.Equals("#menuitemFocus"))
-                        {                         
-                            string nodeName = node.SelectSingleNode("label").InnerText;
-                            chklstWinddowsInMenu.Items.Add(nodeName, id.Equals(defaultcontrol));
-                            
-                            menuItem mnuItem = new menuItem();
-                            mnuItem.hyperlink = hyperlink;
-                            mnuItem.name = nodeName;
-                            mnuItem.isDefault = id.Equals(defaultcontrol);
-                            mnuItem.id = int.Parse(id);
-                            menuItems.Add(mnuItem);
+                        {
+                            bool bIsContextLabel = node.SelectSingleNode("description").InnerText.Contains(" Label");
+                            if (!bIsContextLabel)
+                            {
+                                string nodeName = node.SelectSingleNode("label").InnerText;
+                                chklstWinddowsInMenu.Items.Add(nodeName, id.Equals(defaultcontrol));
+
+                                menuItem mnuItem = new menuItem();
+                                mnuItem.hyperlink = hyperlink;
+                                mnuItem.name = nodeName;
+                                mnuItem.isDefault = id.Equals(defaultcontrol);
+                                mnuItem.id = int.Parse(id);
+                                menuItems.Add(mnuItem);
+                            }
                         }
                     }
                 }
