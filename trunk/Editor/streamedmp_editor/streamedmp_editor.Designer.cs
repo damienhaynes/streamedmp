@@ -236,7 +236,7 @@ namespace streamedmp_editor
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "Abo&ut";
             // 
             // label6
@@ -427,6 +427,7 @@ namespace streamedmp_editor
             "BROWSE YOUR",
             "CONFIGURE",
             "USE YOUR",
+            "PLAY",
             "PLAY YOUR",
             "SEARCH"});
             this.cboContextLabels.Location = new System.Drawing.Point(97, 19);
