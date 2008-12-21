@@ -1,357 +1,357 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>88889</id>
-  <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.label:Indigo</define>
-  <define>#header.image:-</define>
-  <define>#itemcount:-</define>
-  <define>#header.hover:hover_skin info.png</define>
-  <define>#selecteditem:Release Information</define>
-  <controls>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
-      <layout>StackLayout</layout>
-      <control>
-        <type>button</type>
-        <description>Back</description>
-        <id>2</id>
-        <action>10</action>
-        <label>712</label>
-      </control>
-    </control>
-    <control>
-      <description>auth txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>80</posY>
-      <label>Author:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>auth value</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>80</posY>
-      <label> Psycho Reptile</label>
-    </control>
-    <control>
-      <description>vers txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>110</posY>
-      <label>Version:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>vers value</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>110</posY>
-      <label> 2.2</label>
-    </control>
-    <control>
-      <description>vers txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>140</posY>
-      <label>Resolution:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>vers value</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>140</posY>
-      <label> 16:9 (1366x768)</label>
-    </control>
-    <control>
-      <description>desc txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>210</posY>
-      <label>Description:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>desc value line 1</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>210</posY>
-      <label> Indigo is based on the 1.0.0 RC1 B2 Wide xmls. It should be overscan friendly. This skin was</label>
-    </control>
-    <control>
-      <description>desc value line 2</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>240</posY>
-      <label> by MCE and my original Monochrome skin. No unneccessary animations are</label>
-    </control>
-    <control>
-      <description>desc value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>270</posY>
-      <label> included, so the skin should be quite responsive on slower systems. MediaPortal v1.0.0 RC1</label>
-    </control>
-    <control>
-      <description>desc value line 4</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>300</posY>
-      <label> (SVN Rev19574) or later is required for Indigo to run correctly ;-).</label>
-    </control>
-    <control>
-      <description>plug txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>360</posY>
-      <label>Supported Plugins:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>plug value line 1</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>360</posY>
-      <label> MediaSlayer v0.8c</label>
-    </control>
-    <control>
-      <description>plug value line 2</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>390</posY>
-      <label> MP-TVSeries v2.0.3112</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>420</posY>
-      <label> MyClickMania v1.1</label>
-    </control>
-    <control>
-      <description>plug value line 4</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>450</posY>
-      <label> MyConnect4 v0.3</label>
-    </control>
-    <control>
-      <description>plug value line 5</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>480</posY>
-      <label> MyEmulators v1.7</label>
-    </control>
-    <control>
-      <description>plug value line 12</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>510</posY>
-      <label> MyFilms v4.5</label>
-    </control>
-    <control>
-      <description>plug value line 6</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>540</posY>
-      <label> MyGlobalSearch v0.1.1b</label>
-    </control>
-    <control>
-      <description>plug value line 6</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>570</posY>
-      <label> MyShowTimes v2.0</label>
-    </control>
-    <control>
-      <description>plug value line 6</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>600</posY>
-      <label> ForTheRecord v1.2.0.0</label>
-    </control>
-    <control>
-      <description>plug value line 7</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>360</posY>
-      <label> MyLyrics v1.00</label>
-    </control>
-    <control>
-      <description>plug value line 8</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>390</posY>
-      <label> MyMastermind v2.10</label>
-    </control>
-    <control>
-      <description>plug value line 9</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>420</posY>
-      <label> MyMinesweeper v0.2</label>
-    </control>
-    <control>
-      <description>plug value line 10</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>450</posY>
-      <label> MyMusic Trivia v0.3.1</label>
-    </control>
-    <control>
-      <description>plug value line 11</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>480</posY>
-      <label> MyOnlineVideos v0.34</label>
-    </control>
-    <control>
-      <description>plug value line 11</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>510</posY>
-      <label> MyOrganizer v2.0</label>
-    </control>
-    <control>
-      <description>plug value line 2</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>540</posY>
-      <label> MySimonSays v0.5</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>570</posY>
-      <label> wwITV v0.7</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>600</posY>
-      <label> MyPrograms v1.0.0.0</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>360</posY>
-      <label> MyUsenet v0.5</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>390</posY>
-      <label> MyWorldMap v0.5</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>420</posY>
-      <label> My XM Radio v0.2.3.0</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>450</posY>
-      <label> NetflixManager v2.0</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>480</posY>
-      <label> Shoutcast Directory v0.9</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>510</posY>
-      <label> TVGemist v2.0</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>540</posY>
-      <label> TVRecordings v0.3</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>570</posY>
-      <label> MyUKTop40 v0.1</label>
-    </control>
-    <control>
-      <description>hist txt</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>310</posX>
-      <posY>660</posY>
-      <label>History:</label>
-      <textcolor>ffa9d0f7</textcolor>
-    </control>
-    <control>
-      <description>desc value line 1</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>660</posY>
-      <label> PLEASE read the included "Installation and Readme.txt"</label>
-    </control>
-  </controls>
+	<id>88889</id>
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<define>#header.label:Indigo</define>
+	<define>#header.image:-</define>
+	<define>#itemcount:-</define>
+	<define>#header.hover:hover_skin info.png</define>
+	<define>#selecteditem:Release Information</define>
+	<controls>
+		<import>common.window.xml</import>
+		<import>common.time.xml</import>
+		<control>
+			<type>group</type>
+			<description>group element</description>
+			<animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+			<animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+			<posX>20</posX>
+			<posY>80</posY>
+			<layout>StackLayout</layout>
+			<control>
+				<type>button</type>
+				<description>Back</description>
+				<id>2</id>
+				<action>10</action>
+				<label>712</label>
+			</control>
+		</control>
+		<control>
+			<description>auth txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>80</posY>
+			<label>Author:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>auth value</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>80</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>vers txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>110</posY>
+			<label>Version:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>vers value</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>110</posY>
+			<label>-</label>
+		</control>
+		<control>
+			<description>vers txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>140</posY>
+			<label>Resolution:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>vers value</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>140</posY>
+			<label>16:9 (1280x720)</label>
+		</control>
+		<control>
+			<description>desc txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>210</posY>
+			<label>Description:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>desc value line 1</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>210</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>desc value line 2</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>240</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>desc value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>270</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>desc value line 4</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>300</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>360</posY>
+			<label>Supported Plugins:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>plug value line 1</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>360</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 2</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>390</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>420</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 4</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>450</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 5</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>480</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 12</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>510</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 6</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>540</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 6</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>570</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 6</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>600</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 7</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>360</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 8</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>390</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 9</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>420</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 10</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>450</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 11</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>480</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 11</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>510</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 2</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>540</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>570</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>840</posX>
+			<posY>600</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>360</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>390</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>420</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>450</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>480</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>510</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>540</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>plug value line 3</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1070</posX>
+			<posY>570</posY>
+			<label>*</label>
+		</control>
+		<control>
+			<description>hist txt</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>310</posX>
+			<posY>660</posY>
+			<label>History:</label>
+			<textcolor>ffa9d0f7</textcolor>
+		</control>
+		<control>
+			<description>desc value line 1</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>470</posX>
+			<posY>660</posY>
+			<label>*</label>
+		</control>
+	</controls>
 </window>
