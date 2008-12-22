@@ -81,7 +81,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>tvviewbg.png</texture>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -186,29 +186,6 @@
     :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL POSTER FILMSTRIP:
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
-    <control>
-      <description>TV Show Title</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>30</posX>
-      <posY>545</posY>
-      <width>850</width>
-      <font>mediastream16tc</font>
-      <label>#TVSeries.Title</label>
-      <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
-    </control>
-    <control>
-      <description>Current View BG</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>370</posY>
-      <width>1280</width>
-      <height>350</height>
-      <texture>filmstrip_overlay.png</texture>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
-    </control>
     <!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL BANNER VIEW ::
@@ -219,26 +196,26 @@
       <type>label</type>
       <id>0</id>
       <posX>30</posX>
-      <posY>545</posY>
+      <posY>525</posY>
       <width>850</width>
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
     <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>30</posX>
-      <posY>580</posY>
+      <posY>560</posY>
       <width>1200</width>
       <height>120</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -278,7 +255,7 @@
       <width>185</width>
       <height>314</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonBanner</texture>
-      <visible>Control.IsVisible(1238)</visible>
+      <visible>Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
       <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
     </control>
     <control>
@@ -386,7 +363,7 @@
       <width>531</width>
       <height>98</height>
       <texture>#TVSeries.SeriesBanner</texture>
-      <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)+Control.IsVisible(1238)</visible>
     </control>
     <control>
       <description>Series Banner Glass Overlay</description>
@@ -605,7 +582,7 @@
       <description>Series Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>185</posX>
+      <posX>184</posX>
       <posY>350</posY>
       <width>32</width>
       <height>39</height>
@@ -852,7 +829,7 @@
           <scrollOffset>2</scrollOffset>
           <id>50</id>
           <posX>50</posX>
-          <posY>400</posY>
+          <posY>250</posY>
           <onup>2</onup>
           <ondown>2</ondown>
           <width>1150</width>
