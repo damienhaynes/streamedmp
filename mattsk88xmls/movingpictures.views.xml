@@ -240,8 +240,8 @@ This file should contain all items visible when the plug-in is in its various fa
       <width>215</width>
       <height>360</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MovingPictures.Coverart</texture>
-      <visible>facadeview.list+Control.HasFocus(50)</visible>
       <animation effect="rotatey" start="-60" end="-60" center="15,10" time="0" reversible="false">visible</animation>
+      <visible>facadeview.list+Control.HasFocus(50)</visible>
     </control>
     <control>
       <type>image</type>
@@ -254,19 +254,28 @@ This file should contain all items visible when the plug-in is in its various fa
       <visible>false</visible>
       <animation effect="rotatey" start="-55" end="-55" center="15,0" tween="back" ease="easeout" time="500" reversible="false">visible</animation>
     </control>
-    <!--******************Large Icon View*************************************-->
+    <control>
+      <type>label</type>
+      <id>69</id>
+      <posX>1400</posX>
+      <posY>900</posY>
+      <width>100</width>
+      <height>1</height>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <!--******************Icon View*************************************-->
     <define>#largeicons.available:true</define>
     <control>
+      <description>Backdrop Overlay - FilmStripView</description>
       <type>image</type>
       <id>0</id>
-      <posX>133</posX>
-      <posY>630</posY>
-      <width>1100</width>
-      <height>1</height>
-      <texture>hbar1white.png</texture>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>movieviewbg.png</texture>
       <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
-    <!--******************Small Icon View*************************************-->
     <define>#smallicons.available:true</define>
     <control>
       <description>View Info</description>
@@ -279,6 +288,33 @@ This file should contain all items visible when the plug-in is in its various fa
       <label>facadeview.smallicons</label>
       <align>left</align>
       <visible>false</visible>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>35</posX>
+      <posY>505</posY>
+      <width>500</width>
+      <font>mediastream16tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <align>left</align>
+      <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>35</posX>
+      <posY>540</posY>
+      <width>1250</width>
+      <height>150</height>
+      <textcolor>ffffff</textcolor>
+      <seperator>-------------------------------</seperator>
+      <font>mediastream11</font>
+      <textalign>left</textalign>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>

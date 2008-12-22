@@ -117,51 +117,6 @@ multiple view modes.
       <height>10</height>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    <control>
-      <description>Movie Title</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>40</posY>
-      <width>1366</width>
-      <font>font18</font>
-      <label>#MovingPictures.SelectedMovie.title</label>
-      <align>center</align>
-      <textcolor>ffffff</textcolor>
-      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <description>Tagline</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>100</posY>
-      <width>1366</width>
-      <textcolor>ffffff</textcolor>
-      <font>font14</font>
-      <label>#MovingPictures.SelectedMovie.tagline</label>
-      <align>center</align>
-      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <type>imagelist</type>
-      <id>101</id>
-      <posX>580</posX>
-      <posY>60</posY>
-      <width>310</width>
-      <height>30</height>
-      <textureWidth>30</textureWidth>
-      <textureHeight>30</textureHeight>
-      <subitems>
-        <subitem>greystar.png</subitem>
-        <subitem>starbest.png</subitem>
-      </subitems>
-      <orientation>horizontal</orientation>
-      <align>left</align>
-      <imagesToDraw>10</imagesToDraw>
-      <visible>!facadeview.filmstrip+!facadeview.list+Control.IsVisible(50)</visible>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
-    </control>
     <!-- This is an alternate view button that brings up a menu for view 
          selection, rather than just cycling the view. You can use both
          if you want to. -->
@@ -196,20 +151,20 @@ multiple view modes.
       <description>Spin Control BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>1108</posX>
+      <posX>1096</posX>
       <posY>10</posY>
-      <width>135</width>
-      <height>32</height>
+      <width>147</width>
+      <height>31</height>
       <texture>mediacountbg.png</texture>
     </control>
     <control>
       <description>Spin Control Label</description>
       <type>label</type>
-      <label>PAGE</label>
+      <label>MOVIES:</label>
       <id>0</id>
-      <posX>1118</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
+      <posX>1100</posX>
+      <posY>14</posY>
+      <font>mediastream11tc</font>
       <textcolor>ff025984</textcolor>
     </control>
     <control>
@@ -219,8 +174,8 @@ multiple view modes.
       <posY>456</posY>
       <width>310</width>
       <height>25</height>
-      <textureWidth>17</textureWidth>
-      <textureHeight>17</textureHeight>
+      <textureWidth>20</textureWidth>
+      <textureHeight>20</textureHeight>
       <subitems>
         <subitem>greystar.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -228,8 +183,8 @@ multiple view modes.
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>10</imagesToDraw>
-      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     <!--Top Bar-->
     <control>
@@ -293,6 +248,16 @@ multiple view modes.
       <width>24</width>
       <height>24</height>
       <visible>Control.IsVisible(50)+!Control.IsVisible(9)+facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1180</posX>
+      <posY>14</posY>
+      <width>350</width>
+      <font>mediastream11tc</font>
+      <align>left</align>
+      <label>#MovingPictures.general.filteredmoviecount</label>
     </control>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>

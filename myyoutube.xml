@@ -96,37 +96,71 @@
       <type>label</type>
       <id>101</id>
       <posX>55</posX>
-      <posY>460</posY>
+      <posY>350</posY>
       <label></label>
-      <font>font13</font>
+      <font>mediastream11tc</font>
       <align>right</align>
-      <textcolor>White</textcolor>
+      <visible>!facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <id>101</id>
+      <posX>780</posX>
+      <posY>250</posY>
+      <label></label>
+      <font>mediastream11tc</font>
+      <align>right</align>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <id>112</id>
+      <posX>780</posX>
+      <posY>250</posY>
+      <width>150</width>
+      <height>45</height>
+      <label></label>
+      <font>mediastream11tc</font>
+      <align>Left</align>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <description>Biography</description>
+      <type>textboxscrollup</type>
+      <id>113</id>
+      <posX>780</posX>
+      <posY>280</posY>
+      <width>450</width>
+      <height>100</height>
+      <label></label>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip</visible>
     </control>
     <control>
       <type>label</type>
       <id>112</id>
       <posX>55</posX>
-      <posY>460</posY>
+      <posY>350</posY>
       <width>150</width>
       <height>45</height>
       <label></label>
-      <font>font10</font>
+      <font>mediastream11tc</font>
       <align>Left</align>
-      <textcolor>White</textcolor>
+      <visible>!facadeview.filmstrip</visible>
     </control>
     <control>
       <description>Biography</description>
       <type>textboxscrollup</type>
       <id>113</id>
       <posX>55</posX>
-      <posY>295</posY>
+      <posY>400</posY>
       <width>320</width>
       <height>170</height>
       <label></label>
-      <font>font10</font>
+      <font>mediastream11</font>
+      <visible>!facadeview.filmstrip</visible>
     </control>
     <import>common.time.xml</import>
-    <import>common.window.xml</import>
     <import>myyoutube.facade.xml</import>
   </controls>
 </window>
