@@ -54,11 +54,11 @@
 #define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION	"0.9.4.20955" 	// RC4 Base
+#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.0" 		// 1.0 Base
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.0.3260.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.6.1.293"
+#define TVSERIES_MIN_VERSION			"2.0.3279.0"
+#define MOVINGPICTURES_MIN_VERSION		"0.6.3.381"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -187,8 +187,7 @@ begin
     // Get Properties for MajorUpgrade
     // Returns the GUID in svMajorUpgrade of previous install
  	MsiGetProperty(ISMSI_HANDLE,"MAJORUPGRADE_01",sMajorUpgradeGUID,nvBufferSize);
- 		
-	// Version 0.1.167
+ 			
 	if sMajorUpgradeGUID = "{7A7760CC-256A-4ECD-BE3F-E7644FAD5DA8}" then
 		
 		sMajorUpgradeVersion = "0.1.167";
@@ -198,6 +197,11 @@ begin
 	elseif sMajorUpgradeGUID = "{437C996D-2A3D-4809-89F7-E25A66A463B1}" then
 		sMajorUpgradeVersion = "0.2.215";
 		bUpgradeSupported = FALSE;		
+		return TRUE;
+	
+	elseif sMajorUpgradeGUID = "{E8B2D59B-84CD-4817-961B-BEA89324BAB3}" then
+		sMajorUpgradeVersion = "0.2.219";
+		bUpgradeSupported = TRUE;		
 		return TRUE;
 		
 	endif;   
