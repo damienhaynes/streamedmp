@@ -160,7 +160,7 @@ multiple view modes.
     <control>
       <description>Spin Control Label</description>
       <type>label</type>
-      <label>MOVIES:</label>
+      <label>PAGE:</label>
       <id>0</id>
       <posX>1100</posX>
       <posY>14</posY>
@@ -248,16 +248,6 @@ multiple view modes.
       <width>24</width>
       <height>24</height>
       <visible>Control.IsVisible(50)+!Control.IsVisible(9)+facadeview.filmstrip</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <id>0</id>
-      <posX>1180</posX>
-      <posY>14</posY>
-      <width>350</width>
-      <font>mediastream11tc</font>
-      <align>left</align>
-      <label>#MovingPictures.general.filteredmoviecount</label>
     </control>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
