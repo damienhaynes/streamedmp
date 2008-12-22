@@ -128,7 +128,16 @@
 			<font>mediastream11tc</font>
 			<textcolor>ff888888</textcolor>
 		</control>
-		<import>common.progressbar.xml</import>
+    <control>
+      <description>Progress Bar</description>
+      <type>progress</type>
+      <id>1</id>
+      <posX>187</posX>
+      <posY>683</posY>
+      <width>918</width>
+      <label>#percentage</label>
+      <visible>yes</visible>
+    </control>
 		<control>
 			<description>TV Progress Bar</description>
 			<type>tvprogress</type>
@@ -136,6 +145,7 @@
 			<posX>205</posX>
 			<posY>683</posY>
 			<width>882</width>
+			<height>12</height>
 			<toptexture>osd_progress_indicatorTV.png</toptexture>
 			<TextureOffsetY>16</TextureOffsetY>
 			<bottomtexture>-</bottomtexture>
@@ -145,12 +155,12 @@
 			<righttexture>-</righttexture>
 			<logotexture>-</logotexture>
 			<fillbackgroundtexture>-</fillbackgroundtexture>
-			<fillbgxoff>-</fillbgxoff>
-			<fillbgyoff>-</fillbgyoff>
+      <fillbgxoff>0</fillbgxoff>
+      <fillbgyoff>20</fillbgyoff>
 			<filltexture1>-</filltexture1>
 			<filltexture2>-</filltexture2>
 			<filltexture3>-</filltexture3>
-			<fillheight>0</fillheight>
+			<fillheight>12</fillheight>
 			<label>#TV.Record.percent1</label>
 			<label1>#TV.Record.percent2</label1>
 			<label2>#TV.Record.percent3</label2>
