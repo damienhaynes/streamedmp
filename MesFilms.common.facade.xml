@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -12,29 +12,32 @@
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>1026</id>
-          <textXOff>6</textXOff>
-          <itemWidth>16</itemWidth>
+          <onleft>1026</onleft>
+          <posX>770</posX>
+          <textXOff2>470</textXOff2>
+          <width>510</width>
+          <onright>6</onright>
+          <unfocusedAlpha>100</unfocusedAlpha>
         </control>
         <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>1026</id>
-          <!--<scrollOffset>1</scrollOffset> -->
-          <onleft>6</onleft>
+          <onleft>1026</onleft>
           <onright>6</onright>
-          <posX>64</posX>
-          <posY>80</posY>
-          <width>1250</width>
-          <height>550</height>
+          <posX>0</posX>
+          <posY>225</posY>
+          <width>750</width>
+          <height>500</height>
           <spinWidth>16</spinWidth>
           <spinHeight>16</spinHeight>
-          <spinPosY>605</spinPosY>
-          <spinPosX>1218</spinPosX>
+          <spinPosY>680</spinPosY>
+          <spinPosX>810</spinPosX>
           <spinColor>ffffffff</spinColor>
-<textureUp>arrowupnf.png</textureUp>
-<textureDown>arrowdownnf.png</textureDown>
-<textureUpFocus>arrowupfo.png</textureUpFocus>
-<textureDownFocus>arrowdownfo.png</textureDownFocus>
+          <textureUp>arrowupnf.png</textureUp>
+          <textureDown>arrowdownnf.png</textureDown>
+          <textureUpFocus>arrowupfo.png</textureUpFocus>
+          <textureDownFocus>arrowdownfo.png</textureDownFocus>
           <itemWidth>103</itemWidth>
           <itemHeight>132</itemHeight>
           <textureWidth>103</textureWidth>
@@ -43,51 +46,49 @@
           <thumbHeight>117</thumbHeight>
           <thumbPosX>12</thumbPosX>
           <thumbPosY>5</thumbPosY>
-          <imageFolder>movie_preview_thumb_background_nofocus.png</imageFolder>
-          <imageFolderFocus>movie_preview_thumb_background_focus.png</imageFolderFocus>
-          <font>font12</font>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>-</imageFolderFocus>
+          <font>mediastream12</font>
           <suffix>|</suffix>
           <textureWidthBig>206</textureWidthBig>
           <textureHeightBig>263</textureHeightBig>
-          <itemWidthBig>206</itemWidthBig>
-          <itemHeightBig>263</itemHeightBig>
-          <thumbWidthBig>158</thumbWidthBig>
-          <thumbHeightBig>233</thumbHeightBig>
+          <itemWidthBig>180</itemWidthBig>
+          <itemHeightBig>245</itemHeightBig>
+          <thumbWidthBig>148</thumbWidthBig>
+          <thumbHeightBig>220</thumbHeightBig>
           <thumbPosXBig>24</thumbPosXBig>
           <thumbPosYBig>10</thumbPosYBig>
-          <thumbZoom>no</thumbZoom>
-          <enableFocusZoom>no</enableFocusZoom>
+          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+          <thumbZoom>yes</thumbZoom>
+          <enableFocusZoom>yes</enableFocusZoom>
         </control>
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
           <id>1026</id>
-          <onleft>6</onleft>
-          <onright>6</onright>
+          <posX>25</posX>
+          <posY>520</posY>
+          <width>1280</width>
           <onup>6</onup>
-          <ondown>6</ondown>
-          <posX>60</posX>
-          <posY>130</posY>
-          <width>1300</width>
-          <spinPosY>630</spinPosY>
+          <spinPosY>730</spinPosY>
           <spinPosX>1218</spinPosX>
-          <thumbWidth>243</thumbWidth>
-          <thumbHeight>360</thumbHeight>
-          <thumbPosX>13</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <itemWidth>245</itemWidth>
-          <itemHeight>360</itemHeight>
-          <textureWidth>275</textureWidth>
-          <textureHeight>395</textureHeight>
-          <imageFolderFocus>Framefocus.png</imageFolderFocus>
+          <thumbWidth>106</thumbWidth>
+          <thumbHeight>156</thumbHeight>
+          <thumbPosX>5</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <itemWidth>139</itemWidth>
+          <itemHeight>185</itemHeight>
+          <textureWidth>119</textureWidth>
+          <textureHeight>172</textureHeight>
+          <imageFolderFocus>-</imageFolderFocus>
           <frame>-</frame>
-          <frameFocus>video_filmstrip_frame.png</frameFocus>
-          <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png">
-          </thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
-          </InfoImage>
-          <showFrame>yes</showFrame>
+          <frameFocus>-</frameFocus>
+          <background>-</background>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
+          <showFrame>no</showFrame>
+          <scrollOffset>4</scrollOffset>
           <showFolder>no</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
@@ -97,42 +98,10 @@
         <control>
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
-          <id>1026</id>
-          <scrollOffset>2</scrollOffset>
+          <id>50</id>
+          <onleft>50</onleft>
+          <onright>2</onright>
         </control>
-      </control>
-      <control>
-        <type>fadelabel</type>
-        <description>Title (during Icons and List)</description>
-        <id>1027</id>
-        <onleft>6</onleft>
-        <onright>1026</onright>
-        <onup>1026</onup>
-        <ondown>1026</ondown>
-        <posX>300</posX>
-        <posY>610</posY>
-        <width>950</width>
-        <font>font16</font>
-        <visible>!player.hasmedia+!control.isvisible(34)+control.hasfocus(1026)</visible>
-        <label>#selecteditem</label>
-      </control>
-      <control>
-        <type>textboxscrollup</type>
-        <description>Biography value</description>
-        <id>1025</id>
-      <posX>514</posX>
-      <posY>648</posY>
-      <width>550</width>
-      <height>116</height>
-      <label>#plot</label>
-      <font>font13</font>
-      <seperator>---------------------------------------------------------------------------------------------------------</seperator>
-        <onleft>1026</onleft>
-        <onright>1026</onright>
-        <onup>1026</onup>
-        <ondown>1026</ondown>
-        <visible>!control.isvisible(34)+control.hasfocus(1026)</visible>
-        <label>-</label>
       </control>
     </control>
   </controls>
