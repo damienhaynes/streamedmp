@@ -50,6 +50,9 @@
 #define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
 #define TVGUIDE12_FEATURE_OPTIONS		"Main\\tvguide12Options"
 
+#define FONTSDEF_FEATURE_OPTIONS		"Main\\fontsDefOptions"
+#define FONTSLGE_FEATURE_OPTIONS		"Main\\fontsLgeOptions"
+
 // Program executable defines
 #define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 
@@ -57,7 +60,7 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.0" 		// 1.0 Base
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.0.3279.0"
+#define TVSERIES_MIN_VERSION			"2.0.3286.0"
 #define MOVINGPICTURES_MIN_VERSION		"0.6.3.381"
 
 // Dialogs
@@ -70,7 +73,9 @@
 #define RES_RADIO_CHOICE2				1401    
 
 #define RES_RADIO_TVGUIDE08ROWS 		1325
-#define RES_RADIO_TVGUIDE12ROWS       	1326
+#define RES_RADIO_TVGUIDE12ROWS       	1326  
+
+#define RES_COMBO_FONTS					1401
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -103,7 +108,8 @@ BOOL g_bMovingPicturesDefault;
 BOOL g_bMajorUpgrade;
 
 STRING g_sMajorUpgradeGUID;
-STRING g_sTVGuideSize;
+STRING g_sTVGuideSize;  
+STRING g_sFontSize;
 STRING g_sDownloadInstallDir;
 
 //---------------------------------------------------------------------------
@@ -172,6 +178,11 @@ begin
 	// Read TVGuide Size default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",nvType,g_sTVGuideSize,nvSize) < 0) then
 		g_sTVGuideSize = "12";		
+	endif;	 
+	
+	// Read Font Size default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",nvType,g_sFontSize,nvSize) < 0) then
+		g_sFontSize = "Default";		
 	endif;	
 	
 end;
@@ -201,6 +212,11 @@ begin
 	
 	elseif sMajorUpgradeGUID = "{E8B2D59B-84CD-4817-961B-BEA89324BAB3}" then
 		sMajorUpgradeVersion = "0.2.219";
+		bUpgradeSupported = TRUE;		
+		return TRUE;
+	
+	elseif sMajorUpgradeGUID = "{F7D803B1-6557-4B12-A4B1-CE42A00E3F21}" then
+		sMajorUpgradeVersion = "0.3.270";
 		bUpgradeSupported = TRUE;		
 		return TRUE;
 		
@@ -663,6 +679,7 @@ function number ShowSelectOptions(bModify)
 	STRING szDialogName;
 	NUMBER nCmdValue;
 	BOOL bDone;
+	LIST listFonts;
 begin
 
 	szDialogName = "SelectionOptions";
@@ -685,13 +702,24 @@ Dlg_Wait:
 	            MessageBox ("Unable to display Options dialog. Setup canceled.", SEVERE);
 	            abort;
 	            
-	        case DLG_INIT:	        	     			     			     			
+	        case DLG_INIT:
+	        	// Populate font size list                               
+	        	listFonts = ListCreate(STRINGLIST);
+	        	
+	        	ListAddString(listFonts,"Default",AFTER);
+	        	ListAddString(listFonts,"Large",AFTER);
+	        	// Add Font sizes to list
+	        	CtrlSetList(szDialogName,RES_COMBO_FONTS,listFonts);
+	        	        	     			     			     			
  				// Read from Global Variables
  				if g_sTVGuideSize = "8" then
  					CtrlSetState(szDialogName,RES_RADIO_TVGUIDE08ROWS,BUTTON_CHECKED);
  				else
  					CtrlSetState(szDialogName,RES_RADIO_TVGUIDE12ROWS,BUTTON_CHECKED);
  				endif;
+ 				 				
+ 				CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize); 				
+ 				ListDestroy(listFonts);
  				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -718,6 +746,8 @@ Dlg_Wait:
 		g_sTVGuideSize = "12";
 	endif;                   
 	
+	CtrlGetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize);	
+		
 	// Set Features
 	if (g_sTVGuideSize = "8") then
 		FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, TRUE );
@@ -726,6 +756,15 @@ Dlg_Wait:
 		FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
 		FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, TRUE );
 	endif;
+	
+	if (g_sFontSize = "Default") then
+		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, TRUE );
+		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, FALSE );
+	else
+		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, FALSE );
+		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, TRUE );
+	endif;
+	
 		
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -746,6 +785,7 @@ begin
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
 	
 end;             
 
