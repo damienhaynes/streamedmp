@@ -274,7 +274,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <width>1280</width>
       <height>720</height>
       <texture>movieviewbg.png</texture>
-      <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
+      <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
     <define>#smallicons.available:true</define>
     <control>
@@ -299,7 +299,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <align>left</align>
-      <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
+      <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -314,7 +314,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <font>mediastream11</font>
       <textalign>left</textalign>
       <label>#MovingPictures.SelectedMovie.summary</label>
-      <visible>facadeview.smallicons|facadeview.largeicons+Control.IsVisible(50)</visible>
+      <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>

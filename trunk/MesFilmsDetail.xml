@@ -1,32 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>7987</id>
   <defaultcontrol>101</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
+  <allowoverlay>yes</allowoverlay>
   <define>#header.label:Films</define>
-  <define>#header.image:-</define>
-  <define>#header.hover:hover_my films.png</define>
   <define>#itemcount:-</define>
   <controls>
+    <control>
+      <description>movies background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+      <visible>!control.hasthumb(1000)</visible>
+    </control>
+    <control>
+      <description>movies overlay image2</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>-12</posY>
+      <width>1280</width>
+      <height>732</height>
+      <texture>tvguidebg.png</texture>
+    </control>
+    <control>
+      <description>Glasstitlebar - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>225</posX>
+      <posY>54</posY>
+      <width>512</width>
+      <height>43</height>
+      <colordiffuse>ccffffff</colordiffuse>
+      <texture>glasstitlebar.png</texture>
+    </control>
+    <control>
+      <description>fanart</description>
+      <type>image</type>
+      <id>1000</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <colordiffuse>66ffffff</colordiffuse>
+      <texture>C:\Documents and Settings\All Users\Application Data\Team MediaPortal\MediaPortal\Thumbs\MovingPictures\Backdrops\FullSize\#Fanart</texture>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+      <imagepath>C:\Documents and Settings\All Users\Application Data\Team MediaPortal\MediaPortal\Thumbs\MovingPictures\Backdrops\FullSize</imagepath>
+    </control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>256</width>
+      <height>36</height>
+      <texture>tvtitlebgshort.png</texture>
+      <visible>Control.IsVisible(34)</visible>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title Extension</description>
+      <id>12</id>
+      <posX>616</posX>
+      <posY>14</posY>
+      <width>100</width>
+      <font>mediastream12c</font>
+      <label>#select</label>
+      <align>right</align>
+    </control>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     <control>
-      <type>image</type>
-      <description>cd case image</description>
       <id>1</id>
-      <posX>300</posX>
-      <posY>80</posY>
-      <width>295</width>
-      <height>430</height>
-      <texture>video_thumb_background.png</texture>
+      <type>image</type>
+      <posX>1012</posX>
+      <posY>0</posY>
+      <width>268</width>
+      <height>720</height>
+      <texture>streamed_right_menu.png</texture>
+      <colorDiffuse>fffffffff</colorDiffuse>
+      <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">WindowOpen</animation>
+      <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">WindowClose</animation>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
+      <posX>1040</posX>
+      <posY>220</posY>
+      <width>230</width>
+      <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="135,0" end="0,0">WindowOpen</animation>
+      <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="135,0">WindowClose</animation>
+      <height>600</height>
       <layout>StackLayout</layout>
       <control>
         <type>button</type>
@@ -35,6 +107,9 @@
         <onleft>103</onleft>
         <onright>102</onright>
         <label>208</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
       </control>
       <control>
         <type>button</type>
@@ -43,95 +118,133 @@
         <onleft>101</onleft>
         <onright>107</onright>
         <label>712</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
       </control>
       <control>
         <type>button</type>
         <description>Update</description>
         <id>107</id>
         <onleft>102</onleft>
-        <onright>103</onright>
-        <ondown>103</ondown>
+        <onright>106</onright>
+        <ondown>106</ondown>
         <label>184</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
       </control>
       <control>
-        <type>group</type>
-        <description>group element</description>
-        <id>1234</id>
-        <layout>GridLayout(4,0,0,0)</layout>
-        <control>
-          <type>button</type>
-          <description>first</description>
-          <id>106</id>
-          <onleft>107</onleft>
-          <onright>104</onright>
-          <ondown>319</ondown>
-          <onup>107</onup>
-          <label>-</label>
-          <height>48</height>
-          <width>10</width>
-          <textureFocus>Films_first_focus.png</textureFocus>
-          <textureNoFocus>Films_first_nofocus.png</textureNoFocus>
-        </control>
-        <control>
-          <type>button</type>
-          <description>prior</description>
-          <id>104</id>
-          <onleft>106</onleft>
-          <onright>103</onright>
-          <ondown>319</ondown>
-          <onup>107</onup>
-          <label>-</label>
-          <height>48</height>
-          <width>10</width>
-          <textureFocus>Films_prior_focus.png</textureFocus>
-          <textureNoFocus>Films_prior_nofocus.png</textureNoFocus>
-        </control>
-        <control>
-          <type>button</type>
-          <description>next</description>
-          <id>103</id>
-          <onleft>104</onleft>
-          <onright>105</onright>
-          <ondown>319</ondown>
-          <onup>107</onup>
-          <label>-</label>
-          <height>48</height>
-          <width>10</width>
-          <textureFocus>Films_next_focus.png</textureFocus>
-          <textureNoFocus>Films_next_nofocus.png</textureNoFocus>
-        </control>
-        <control>
-          <type>button</type>
-          <description>last</description>
-          <id>105</id>
-          <onleft>103</onleft>
-          <onright>106</onright>
-          <ondown>319</ondown>
-          <onup>107</onup>
-          <label>-</label>
-          <height>48</height>
-          <width>10</width>
-          <textureFocus>Films_last_focus.png</textureFocus>
-          <textureNoFocus>Films_last_nofocus.png</textureNoFocus>
-        </control>
+        <type>button</type>
+        <description>first</description>
+        <id>106</id>
+        <onleft>107</onleft>
+        <onright>104</onright>
+        <ondown>104</ondown>
+        <onup>107</onup>
+        <label>First</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
+      </control>
+      <control>
+        <type>button</type>
+        <description>prior</description>
+        <id>104</id>
+        <onleft>106</onleft>
+        <onright>103</onright>
+        <ondown>103</ondown>
+        <onup>106</onup>
+        <label>Previous</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
+      </control>
+      <control>
+        <type>button</type>
+        <description>next</description>
+        <id>103</id>
+        <onleft>104</onleft>
+        <onright>105</onright>
+        <ondown>105</ondown>
+        <onup>104</onup>
+        <label>Next</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
+      </control>
+      <control>
+        <type>button</type>
+        <description>last</description>
+        <id>105</id>
+        <onleft>103</onleft>
+        <onright>106</onright>
+        <ondown>101</ondown>
+        <onup>103</onup>
+        <label>Last</label>
+        <textureFocus>tv_buttonfocus.png</textureFocus>
+        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+        <font>mediastream11tc</font>
       </control>
     </control>
     <control>
+      <type>image</type>
+      <description>thumb Logos ID 2001</description>
+      <id>2001</id>
+      <posX>400</posX>
+      <posY>580</posY>
+      <width>450</width>
+      <height>25</height>
+      <texture>#Logos_ID2001</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <spaceBetweenItems>2</spaceBetweenItems>
+      <visible>yes</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>thumb Logos ID 2002</description>
+      <id>2002</id>
+      <posX>400</posX>
+      <posY>580</posY>
+      <width>450</width>
+      <height>25</height>
+      <texture>#Logos_ID2002</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <spaceBetweenItems>2</spaceBetweenItems>
+      <visible>yes</visible>
+    </control>
+    <control>
       <type>fadelabel</type>
-      <id>2025</id>
-      <posX>1271</posX>
-      <posY>35</posY>
-      <width>950</width>
-      <font>font14</font>
+      <posX>410</posX>
+      <posY>60</posY>
+      <width>860</width>
+      <font>mediastream16tc</font>
       <label>#Title</label>
-      <align>right</align>
+    </control>
+    <control>
+      <description>Rating Stars</description>
+      <type>imagelist</type>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>90</posY>
+      <width>185</width>
+      <height>21</height>
+      <textureWidth>18</textureWidth>
+      <textureHeight>18</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>star.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <percentage>#rating</percentage>
+      <imagesToDraw>10</imagesToDraw>
     </control>
     <control>
       <description>RecordNumberValue</description>
       <type>fadelabel</type>
       <id>2026</id>
-      <posX>310</posX>
-      <posY>1100</posY>
+      <posX>80</posX>
+      <posY>600</posY>
       <label>#OTitle</label>
       <width>250</width>
       <font>font10</font>
@@ -140,167 +253,208 @@
       <type>label</type>
       <description>YearPrompt</description>
       <id>2031</id>
-      <posX>310</posX>
-      <posY>495</posY>
+      <posX>409</posX>
+      <posY>306</posY>
       <label>201</label>
-      <font>font10</font>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>YearValue</description>
       <type>label</type>
       <id>2061</id>
-      <posX>420</posX>
-      <posY>495</posY>
+      <posX>570</posX>
+      <posY>305</posY>
       <label>#year</label>
-      <font>font10</font>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>CategoryPrompt</description>
       <type>label</type>
       <id>2032</id>
-      <posX>310</posX>
-      <posY>520</posY>
+      <posX>409</posX>
+      <posY>331</posY>
       <label>174</label>
-      <font>font10</font>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>CategoryValue</description>
       <type>fadelabel</type>
       <id>2062</id>
-      <posX>420</posX>
-      <posY>520</posY>
+      <posX>570</posX>
+      <posY>330</posY>
       <label>#genre</label>
       <width>410</width>
-      <font>font10</font>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>CountryPrompt</description>
       <type>label</type>
       <id>2033</id>
-      <posX>310</posX>
-      <posY>545</posY>
+      <posX>409</posX>
+      <posY>356</posY>
       <label>200026</label>
-      <font>font10</font>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>CountryValue</description>
       <type>fadelabel</type>
       <id>2063</id>
-      <posX>420</posX>
-      <posY>545</posY>
+      <posX>570</posX>
+      <posY>355</posY>
       <label>#pays</label>
       <width>410</width>
-      <font>font10</font>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>DirectorPrompt</description>
       <type>label</type>
       <id>2034</id>
-      <posX>310</posX>
-      <posY>570</posY>
+      <posX>409</posX>
+      <posY>381</posY>
       <label>199</label>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>DirectorValue</description>
       <type>fadelabel</type>
       <id>2064</id>
-      <posX>420</posX>
-      <posY>570</posY>
+      <posX>570</posX>
+      <posY>380</posY>
       <label>#director</label>
       <width>410</width>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>RatingPrompt</description>
       <type>label</type>
       <id>2030</id>
-      <posX>310</posX>
-      <posY>595</posY>
+      <posX>409</posX>
+      <posY>406</posY>
       <label>204</label>
-      <font>font10</font>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>RatingValue</description>
       <type>label</type>
       <id>2060</id>
-      <posX>420</posX>
-      <posY>595</posY>
+      <posX>570</posX>
+      <posY>405</posY>
       <label>#rating</label>
-      <font>font10</font>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>DurationPrompt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>620</posY>
+      <posX>409</posX>
+      <posY>431</posY>
       <label>180</label>
-      <font>font10</font>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>DurationValue</description>
       <type>label</type>
       <id>2068</id>
-      <posX>420</posX>
-      <posY>620</posY>
+      <posX>570</posX>
+      <posY>430</posY>
       <label>#duree</label>
-      <font>font10</font>
+      <font>mediastream10</font>
     </control>
     <control>
-      <description>Video/Audio Format</description>
-      <type>fadelabel</type>
-      <id>2069</id>
-      <posX>310</posX>
-      <posY>645</posY>
-      <label>#format</label>
-      <width>410</width>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>Optional Display Field 1 Prompt</description>
+      <description>MediaTypePrompt</description>
       <type>label</type>
-      <id>2010</id>
-      <posX>310</posX>
-      <posY>670</posY>
-      <label>#label1</label>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>Optional Display Field 1 Value</description>
-      <type>fadelabel</type>
-      <id>2011</id>
-      <posX>420</posX>
-      <posY>670</posY>
-      <label>#item1</label>
-      <width>410</width>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>Optional Display Field 2 Prompt</description>
-      <type>label</type>
-      <id>2035</id>
-      <posX>310</posX>
-      <posY>695</posY>
-      <label>#label2</label>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>Optional Display Field 2 Value</description>
-      <type>fadelabel</type>
-      <id>2065</id>
-      <posX>420</posX>
-      <posY>695</posY>
-      <label>#item2</label>
-      <width>410</width>
-      <font>font10</font>
+      <id>1</id>
+      <posX>409</posX>
+      <posY>456</posY>
+      <label>864</label>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
     </control>
     <control>
       <description>MediaTypeValue</description>
       <type>fadelabel</type>
       <id>2070</id>
-      <posX>310</posX>
-      <posY>720</posY>
+      <posX>570</posX>
+      <posY>455</posY>
       <label>#support</label>
-      <font>font10</font>
+      <font>mediastream10</font>
+    </control>
+    <control>
+      <description>ActorsPrompt</description>
+      <type>fadelabel</type>
+      <id>2065</id>
+      <posX>409</posX>
+      <posY>481</posY>
+      <label>344</label>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
+    </control>
+    <control>
+      <description>Actors value</description>
+      <type>textboxscrollup</type>
+      <id>2040</id>
+      <posX>570</posX>
+      <posY>478</posY>
+      <width>500</width>
+      <height>185</height>
+      <label>#acteurs</label>
+      <font>mediastream10</font>
+    </control>
+    <control>
+      <description>Video/Audio Format</description>
+      <type>fadelabel</type>
+      <id>2069</id>
+      <posX>570</posX>
+      <posY>555</posY>
+      <label>#format</label>
+      <width>410</width>
+      <font>mediastream10</font>
+    </control>
+    <control>
+      <description>Optional Display Field 1 Prompt</description>
+      <type>label</type>
+      <id>2010</id>
+      <posX>409</posX>
+      <posY>506</posY>
+      <label>#label1</label>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
+    </control>
+    <control>
+      <description>Optional Display Field 1 Value</description>
+      <type>fadelabel</type>
+      <id>2011</id>
+      <posX>570</posX>
+      <posY>505</posY>
+      <label>#item1</label>
+      <width>410</width>
+      <font>mediastream10</font>
+    </control>
+    <control>
+      <description>Optional Display Field 2 Prompt</description>
+      <type>label</type>
+      <id>2035</id>
+      <posX>409</posX>
+      <posY>531</posY>
+      <label>#label2</label>
+      <textcolor>FF006699</textcolor>
+      <font>mediastream10tcb</font>
+    </control>
+    <control>
+      <description>Optional Display Field 2 Value</description>
+      <type>fadelabel</type>
+      <id>2065</id>
+      <posX>570</posX>
+      <posY>530</posY>
+      <label>#item2</label>
+      <width>410</width>
+      <font>mediastream10</font>
     </control>
     <control>
       <type>image</type>
@@ -315,41 +469,21 @@
       <description>Video/Audio Format with video playing</description>
       <type>fadelabel</type>
       <id>2071</id>
-      <posX>310</posX>
-      <posY>745</posY>
+      <posX>409</posX>
+      <posY>555</posY>
       <label>#item3</label>
       <width>650</width>
-      <font>font10</font>
-    </control>
-    <control>
-      <description>ActorsPrompt</description>
-      <type>fadelabel</type>
-      <id>2065</id>
-      <posX>850</posX>
-      <posY>495</posY>
-      <label>344</label>
-      <font>font12</font>
-    </control>
-    <control>
-      <description>Actors value</description>
-      <type>textboxscrollup</type>
-      <id>2040</id>
-      <posX>850</posX>
-      <posY>520</posY>
-      <width>500</width>
-      <height>185</height>
-      <label>#acteurs</label>
-      <font>font12</font>
+      <font>mediastream10</font>
     </control>
     <control>
       <description>description value</description>
       <type>textboxscrollup</type>
       <id>2050</id>
-      <posX>600</posX>
-      <posY>90</posY>
-      <width>750</width>
-      <height>375</height>
-      <font>font14</font>
+      <posX>410</posX>
+      <posY>120</posY>
+      <width>550</width>
+      <height>140</height>
+      <font>mediastream11</font>
       <seperator>-------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
       <label>#description</label>
     </control>
@@ -362,34 +496,69 @@
       <ondown>103</ondown>
     </control>
     <control>
+      <type>button</type>
+      <description>Image button</description>
+      <id>2000</id>
+      <posX>92</posX>
+      <posY>382</posY>
+      <width>190</width>
+      <onleft>1234</onleft>
+      <onright>1234</onright>
+      <height>260</height>
+      <align>center</align>
+      <texture>-</texture>
+    </control>
+    <control>
       <description>Thumbnail with no video playing</description>
       <type>image</type>
       <id>2024</id>
-      <posX>317</posX>
-      <posY>100</posY>
-      <width>250</width>
-      <height>375</height>
-      <texture>-</texture>
+      <posX>70</posX>
+      <posY>151</posY>
+      <width>285</width>
+      <height>417</height>
+      <texture>#Picture</texture>
     </control>
     <control>
       <description>Thumbnail with video playing</description>
       <type>image</type>
       <id>2023</id>
-      <posX>317</posX>
-      <posY>100</posY>
-      <width>250</width>
-      <height>375</height>
-      <visible>no</visible>
-      <texture>-</texture>
+      <posX>70</posX>
+      <posY>151</posY>
+      <width>285</width>
+      <height>417</height>
+      <visible>yes</visible>
+      <texture>#Picture</texture>
     </control>
     <control>
-      <description>Selection text</description>
-      <type>fadelabel</type>
-      <id>12</id>
-      <posX>35</posX>
-      <posY>35</posY>
-      <label>#select</label>
-      <width>300</width>
+      <description>DVD Frame</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>50</posX>
+      <posY>136</posY>
+      <height>457</height>
+      <width>325</width>
+      <texture>dvd_frame.png</texture>
     </control>
+    <control>
+      <type>image</type>
+      <id>2072</id>
+      <posX>-1250</posX>
+      <posY>42</posY>
+      <width>42</width>
+      <height>42</height>
+      <texture>defaultHardDisk.png</texture>
+    </control>
+    <control>
+      <type>animation</type>
+      <id>2080</id>
+      <posX>120</posX>
+      <posY>290</posY>
+      <width>64</width>
+      <height>64</height>
+      <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png</textures>
+      <Duration>0:0:01.5</Duration>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <import>common.overlay.xml</import>
   </controls>
 </window>
