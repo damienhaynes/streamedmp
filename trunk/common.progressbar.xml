@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-  <controls>
-
-
-    <control>
-      <description>Progress Bar</description>
-      <type>progress</type>
-      <id>1</id>
-      <posX>187</posX>
-      <posY>683</posY>
-      <width>918</width>
-      <label>#percentage</label>
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
-    </control>
-
-    <control>
-      <description>Start Time Info</description>
-      <type>label</type>
-      <id>101</id>
-      <posX>195</posX>
-      <posY>695</posY>
-      <label>#currentplaytime</label>
-      <align>left</align>
-      <font>mediastream10c</font>
-      <textcolor>ff888888</textcolor>      
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
-    </control>
-    <control>
-      <description>End Time Info</description>
-      <type>label</type>
-      <id>102</id>
-      <posX>1093</posX>
-      <posY>695</posY>
-      <label>#currentremaining</label>
-      <align>right</align>
-      <font>mediastream10c</font>
-      <textcolor>ff888888</textcolor>       
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
-    </control>
-
-
-
-  </controls>
+        <controls>
+                <control>
+                        <description>Progress Bar</description>
+                        <type>progress</type>
+                        <id>1</id>
+                        <posX>187</posX>
+                        <posY>683</posY>
+                        <width>918</width>
+                        <label>#percentage</label>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>
+                <control>
+                        <description>Start Time Info</description>
+                        <type>label</type>
+                        <id>101</id>
+                        <posX>195</posX>
+                        <posY>695</posY>
+                        <label>#currentplaytime</label>
+                        <align>left</align>
+                        <font>mediastream10c</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>
+                <control>
+                        <description>End Time Info</description>
+                        <type>label</type>
+                        <id>102</id>
+                        <posX>1093</posX>
+                        <posY>695</posY>
+                        <label>#currentremaining</label>
+                        <align>right</align>
+                        <font>mediastream10c</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>
+        </controls>
 </window>

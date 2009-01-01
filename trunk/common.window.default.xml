@@ -1,55 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-  <controls>
-    <!--
-    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
-    -->
-   <control>
-      <description>Background Image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
-    </control>    
-    <control>
-      <description>Overlay Image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.BG.overlay</texture>
-    </control>        
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Top Title</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <visible>yes</visible>
-      <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-  </controls>
+        <controls>
+                <!--
+                 WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
+                -->
+                <control>
+                        <description>Background Image</description>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                        <type>image</type>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>#header.hover</texture>
+                        <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+                </control>
+                <control>
+                        <description>Overlay Image</description>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <type>image</type>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>#header.BG.overlay</texture>
+                </control>
+                <control>
+                        <description>Top Title Background</description>
+                        <type>image</type>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Top Title</description>
+                        <posX>493</posX>
+                        <posY>13</posY>
+                        <width>350</width>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <visible>yes</visible>
+                        <label>#header.label</label>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+        </controls>
 </window>
