@@ -5,9 +5,7 @@
   <allowoverlay>no</allowoverlay>
   <define>#header.hover:hover_my music.png</define>
   <controls>
-    
     <!--            :: BACKGROUND :: OVERLAY ::            -->
-    
     <control>
       <type>image</type>
       <description>BG</description>
@@ -16,7 +14,6 @@
       <height>720</height>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -27,7 +24,6 @@
       <texture>#header.hover</texture>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
-    
     <control>
       <description>overlay image</description>
       <type>image</type>
@@ -38,9 +34,7 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-    
     <!--            :: MENU ::            -->
-    
     <control>
       <type>image</type>
       <posX>1002</posX>
@@ -49,7 +43,6 @@
       <height>720</height>
       <texture>hiddenmenu_right.png</texture>
     </control>
-    
     <control>
       <id>0</id>
       <label>MENU</label>
@@ -58,7 +51,6 @@
       <posX>1040</posX>
       <posY>225</posY>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -67,77 +59,57 @@
       <width>220</width>
       <height>720</height>
       <layout>StackLayout</layout>
-      
       <control>
         <description>start a stream</description>
         <type>button</type>
         <id>10</id>
         <label>34001</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
       </control>
-      
       <control>
         <description>choose artist</description>
         <type>button</type>
         <id>15</id>
         <label>Artists</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
       </control>
-      
       <control>
         <description>chose tag</description>
         <type>button</type>
         <id>20</id>
         <label>Tags</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
       </control>
-      
       <control>
         <description>chose friend</description>
         <type>button</type>
         <id>30</id>
         <label>Friends</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
       </control>
-      
       <control>
         <description>toggle submit mode</description>
         <type>togglebutton</type>
         <id>35</id>
         <label>34014</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
         <visible>true</visible>
       </control>
-      
       <control>
         <description>toggle discovery mode</description>
         <type>togglebutton</type>
         <id>40</id>
         <label>34013</label>
-        <onleft>50</onleft>
-        <onright>50</onright>
+        <onleft>123</onleft>
+        <!--<onright>50</onright>-->
         <visible>false</visible>
       </control>
-      
     </control>
-    
-    <!-- what's this?
-    <control>
-      <type>fadelabel</type>
-      <id>0</id>
-      <posX>100</posX>
-      <posY>100</posY>
-      <label>2</label>
-      <font>font18</font>
-      <textcolor>20ffffff</textcolor>
-      <align>right</align>
-    </control-->
-    
     <control>
       <type>image</type>
       <description>artist art image</description>
@@ -150,7 +122,6 @@
       <texture>#Play.Current.ArtistThumb</texture>
       <visible>Player.HasAudio</visible>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>ARTIST label</description>
@@ -162,7 +133,6 @@
       <label>#Play.Current.Artist</label>
       <font>mediastream16tc</font>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>TRACK TITLE label</description>
@@ -174,7 +144,6 @@
       <label>#Play.Current.Title</label>
       <font>mediastream14tc</font>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>ALBUM label</description>
@@ -186,7 +155,6 @@
       <label>#Play.Current.Album</label>
       <font>mediastream12c</font>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>CURRENT STREAM label</description>
@@ -198,7 +166,6 @@
       <label>#Play.Current.Lastfm.CurrentStream</label>
       <font>mediastream11</font>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>PLAYTIME DURATION label</description>
@@ -211,32 +178,67 @@
       <visible>Player.HasAudio</visible>
       <font>mediastream12c</font>
     </control>
-    
     <control>
       <type>textbox</type>
       <description>Similar artists box</description>
       <id>0</id>
       <posX>36</posX>
       <posY>580</posY>
-      <width>900</width>
+      <width>564</width>
       <font>mediastream12</font>
       <label>#Play.Current.Lastfm.SimilarArtists</label>
     </control>
-    
     <control>
       <type>textbox</type>
       <description>Track tags box</description>
       <id>0</id>
       <posX>36</posX>
       <posY>630</posY>
-      <width>900</width>
+      <width>564</width>
       <font>mediastream12</font>
       <label>#Play.Current.Lastfm.TrackTags</label>
     </control>
-    
+    <control>
+      <id>0</id>
+      <label>136</label>
+      <type>label</type>
+      <font>mediastream12tc</font>
+      <posX>600</posX>
+      <posY>362</posY>
+      <visible>control.isvisible(123)</visible>
+    </control>
+    <control>
+      <type>listcontrol</type>
+      <description>current playlist control</description>
+      <id>123</id>
+      <posX>600</posX>
+      <posY>392</posY>
+      <height>356</height>
+      <width>402</width>
+      <font>mediastream12</font>
+      <font2>mediastream12</font2>
+      <font3>mediastream12</font3>
+      <textcolor2>80ffffff</textcolor2>
+      <textXOff>5</textXOff>
+      <textXOff2>75</textXOff2>
+      <textXOff3>222</textXOff3>
+      <textYOff>14</textYOff>
+      <textYOff2>22</textYOff2>
+      <textYOff3>22</textYOff3>
+      <IconXOff>0</IconXOff>
+      <IconYOff>5</IconYOff>
+      <onright>10</onright>
+      <textureFocus>listbg_fo.png</textureFocus>
+      <keepaspectratio>no</keepaspectratio>
+      <textureHeight>50</textureHeight>
+      <itemHeight>45</itemHeight>
+      <itemWidth>45</itemWidth>
+      <textureNoFocus>listbg_nf.png</textureNoFocus>
+      <spaceBetweenItems>0</spaceBetweenItems>
+      <visible>player.hasmedia</visible>
+    </control>
     <import>common.overlays.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-    
   </controls>
 </window>
