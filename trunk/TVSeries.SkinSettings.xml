@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-	<!--
+	<!-- TODO: List of supported layouts in skin
 	<layouts>
 		<group />
 		<series filmstrip="true" widebannerthumbs="true" widebannerlist="true" listposters="true" />
@@ -9,13 +9,13 @@
 	</layouts>
 	-->
 	<views import="true">
-		<group></group>
-		<series>
+		<group layout="List"></group>
+		<series layout="ListPosters">
 			<item1><![CDATA[SeriesCol2]]></item1>
 			<item2><![CDATA[<Series.Pretty_Name>]]></item2>
 			<item3><![CDATA[SeriesCol3]]></item3>
 		</series>
-		<season>	
+		<season layout="List">	
 			<item1><![CDATA[SeasonCol2]]></item1>
 			<item2><![CDATA[Season <Season.SeasonIndex>]]></item2>
 			<item3><![CDATA[SeasonCol3]]></item3>

@@ -56,7 +56,8 @@
 #define FONTSLGE_FEATURE_OPTIONS		"Main\\fontsLgeOptions"
 
 // Program executable defines
-#define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
+#define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"                  
+#define STREAMEDMP_SKIN_TVSETTINGS		INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
 #define MEDIAPORTAL_CONFIG_FILE			CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
 
 // Version Defines
@@ -73,7 +74,8 @@
 
 // Dialog Controls
 #define RES_RADIO_CHOICE1				1400
-#define RES_RADIO_CHOICE2				1401    
+#define RES_RADIO_CHOICE2				1401             
+#define RES_COMBO_SERIESLAYOUT			1402
 
 #define RES_RADIO_TVGUIDE08ROWS 		1325
 #define RES_RADIO_TVGUIDE12ROWS       	1326  
@@ -101,7 +103,8 @@ prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
 prototype VOID		UninstallCleanup();       
-prototype NUMBER	SetDefaultSkin(STRING);
+prototype NUMBER	SetDefaultSkin(STRING);   
+prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -116,7 +119,8 @@ BOOL g_bSetAsDefaultSkin;
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
 STRING g_sFontSize;
-STRING g_sDownloadInstallDir;
+STRING g_sDownloadInstallDir;   
+STRING g_sSeriesLayout;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -153,7 +157,7 @@ begin
 end;           
 
 function VOID SetDefaults()
-	STRING svValue;
+	STRING svValue, svString;
 	NUMBER nvType, nvSize;
 begin 
 	 	
@@ -189,6 +193,26 @@ begin
 	// Read Font Size default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",nvType,g_sFontSize,nvSize) < 0) then
 		g_sFontSize = "Default";		
+	endif;
+	
+	// Read Series Layout default	
+	if (TVSeriesLayout(svValue,FALSE) < 0) then
+		g_sSeriesLayout = "List Posters";		
+	else
+		StrToLower(svString,svValue);	
+		switch (svString)
+			case "listbanners":
+				g_sSeriesLayout = "List Banners";
+			case "listposters":
+				g_sSeriesLayout = "List Posters";
+			case "widebanners":
+				g_sSeriesLayout = "Wide Banners";
+			case "filmstrip":
+				g_sSeriesLayout = "Filmstrip";
+			default:
+				g_sSeriesLayout = "List Posters";	
+		endswitch;
+			
 	endif;
 	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
@@ -539,7 +563,8 @@ end;
 function number ShowSelectTVSeries(bModify)
 	STRING szDialogName;
 	NUMBER nCmdValue;
-	BOOL bDone;
+	BOOL bDone; 
+	LIST listSeriesLayout;
 begin
 
 	szDialogName = "SelectionTVSeries";
@@ -569,6 +594,18 @@ Dlg_Wait:
  				else
  					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
  				endif;
+ 			
+ 				// Populate series layout list                               
+	        	listSeriesLayout = ListCreate(STRINGLIST);
+	        	
+	        	ListAddString(listSeriesLayout,"List Posters",AFTER);
+	        	ListAddString(listSeriesLayout,"List Banners",AFTER);
+	        	ListAddString(listSeriesLayout,"Wide Banners",AFTER);
+	        	ListAddString(listSeriesLayout,"Filmstrip",AFTER);
+	        	// Add Series Layouts to list
+	        	CtrlSetList(szDialogName,RES_COMBO_SERIESLAYOUT,listSeriesLayout);
+	        	CtrlSetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 				
+	        	ListDestroy(listSeriesLayout);        	     			     			     		
  				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -594,6 +631,9 @@ Dlg_Wait:
 	else
 		g_bTVSeriesDefault = FALSE;
 	endif;
+	
+	CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout);
+	
 	// Set Features
 	if (g_bTVSeriesDefault) then
 		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, TRUE );
@@ -601,7 +641,7 @@ Dlg_Wait:
 	else
 		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, FALSE );
 		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, TRUE );
-	endif;
+	endif;	
 		
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -804,6 +844,20 @@ begin
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
+	
+	svString = g_sSeriesLayout;	               
+	switch (svString)
+		case "List Banners":
+			svString = "ListBanners";
+		case "List Posters":
+			svString = "ListPosters";
+		case "Wide Banners":
+			svString = "WideBanners";
+		case "Filmstrip":
+			svString = "Filmstrip";		
+	endswitch;
+		
+	TVSeriesLayout(svString,TRUE);
 	
 	if g_bSetAsDefaultSkin then
 		SetDefaultSkin(SKIN_NAME);
@@ -1067,6 +1121,52 @@ begin
 	    set oXMLdoc = NOTHING;
 	    set oNodeListRoot = NOTHING;
 	    set oNodeListSkin = NOTHING;	    	    
+	    
+	catch                  
+		
+	    return -1;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return 0;
+    
+end; 
+
+function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
+	OBJECT oXMLdoc, oNode; 
+	STRING sNode, sFile;
+begin
+    
+    sFile = STREAMEDMP_SKIN_TVSETTINGS;        	 
+    Disable(LOGGING);
+    
+    try
+	    // Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);
+		
+		sNode = "/settings/views/series";	    
+	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode); 	    	    
+		
+		if bSet then				       		    	  
+		
+			oNode.Attributes.getNamedItem("layout").Text = g_sSeriesLayout;
+		    // save the xml	    
+		    oXMLdoc.Save (sFile);		   
+		
+		else
+			g_sSeriesLayout = oNode.Attributes.getNamedItem("layout").Text;			
+		endif;
+	 		 	
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNode = NOTHING;  	    
 	    
 	catch                  
 		
