@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-	<!-- TODO: List of supported layouts in skin
+	<!--
+		The purpose of TVSeries.SkinSettings.xml is to allow the skinner to control the presentation of the TVSeries plugin to the user
+		Advanced users may disable this by removing the file or by setting the import attribute  to false in the relevant XML element.
+		
+		The TVSeries plugin reads this file on load and will import settings into its database.
+		IMPORTANT: Ensure that all settings are wrapped in a CDATA type otherwise this docment will not get parsed as proper XML.
+	-->
+
+	<!-- TODO: Layouts that are supported by skin, TVSeries will only allow these layouts to be toggled
 	<layouts>
-		<group />
-		<series filmstrip="true" widebannerthumbs="true" widebannerlist="true" listposters="true" />
-		<season />
+		<group list="true" bigicons="false" />
+		<series filmstrip="true" widebanners="true" listbanners="true" listposters="true" />
+		<season list="true" bigicons="false" />
 		<episode />		
 	</layouts>
 	-->
-	<views import="true">
+	
+	<!-- 
+		Possible Layout Types supported by the plugin, the defined layout will be what is loaded by default for the corresponding view:
+		
+			Groups:
+				layout="List"
+				layout="BigIcons"
+			Series:
+				layout="ListPosters"
+				layout="ListBanners"
+				layout="Filmstrip"
+				layout="WideBanners"
+			Season:
+				layout="List"
+				layout="BigIcons"
+			Episode:
+				layout="List"
+				
+	-->
+	<views import="true">		
 		<group layout="List"></group>
 		<series layout="ListPosters">
 			<item1><![CDATA[SeriesCol2]]></item1>
