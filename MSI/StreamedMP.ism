@@ -326,6 +326,7 @@
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MEDIAPORTAL1</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBody</td><td>{9EA046A9-057C-4709-A693-48E897DABE22}</td><td>FontsFolder</td><td>24</td><td/><td>default.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBodyCaps</td><td>{36288623-8C1A-4A9F-9976-D81B86EC052C}</td><td>FontsFolder</td><td>24</td><td/><td>defaultcaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidTitleCaps</td><td>{B255FFB2-692B-4579-9DD8-EB6C1C7FB99D}</td><td>FontsFolder</td><td>24</td><td/><td>titlecaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -541,20 +542,22 @@
 		<row><td>SelectionOptions</td><td>Text2</td><td>Text</td><td>42</td><td>108</td><td>81</td><td>16</td><td>65603</td><td/><td>##NEW_STRING20##</td><td>ComboBox1</td><td/><td>0</td><td>1400</td><td/><td/></row>
 		<row><td>SelectionOptions</td><td>Text3</td><td>Text</td><td>41</td><td>133</td><td>81</td><td>16</td><td>65603</td><td/><td>##NEW_STRING22##</td><td>CheckBox1</td><td/><td>0</td><td>1403</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>Bitmap1</td><td>Bitmap</td><td>152</td><td>5</td><td>219</td><td>32</td><td>1048577</td><td/><td/><td>Bitmap3</td><td/><td>0</td><td>1302</td><td/><td>NewBinary9</td></row>
-		<row><td>SelectionTVSeries</td><td>Bitmap2</td><td>Bitmap</td><td>16</td><td>103</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>GroupBox1</td><td/><td>0</td><td>1303</td><td/><td>NewBinary11</td></row>
-		<row><td>SelectionTVSeries</td><td>Bitmap3</td><td>Bitmap</td><td>190</td><td>103</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>Bitmap2</td><td/><td>0</td><td>1304</td><td/><td>NewBinary10</td></row>
+		<row><td>SelectionTVSeries</td><td>Bitmap2</td><td>Bitmap</td><td>16</td><td>85</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>GroupBox1</td><td/><td>0</td><td>1303</td><td/><td>NewBinary11</td></row>
+		<row><td>SelectionTVSeries</td><td>Bitmap3</td><td>Bitmap</td><td>190</td><td>85</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>Bitmap2</td><td/><td>0</td><td>1304</td><td/><td>NewBinary10</td></row>
+		<row><td>SelectionTVSeries</td><td>ComboBox1</td><td>ComboBox</td><td>17</td><td>196</td><td>113</td><td>16</td><td>196611</td><td/><td/><td>Text1</td><td/><td>0</td><td>1402</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_1</td><td>PushButton</td><td>242</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_1##</td><td>ControlId_9</td><td/><td>131072</td><td>1</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_12</td><td>PushButton</td><td>187</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_12##</td><td>ControlId_1300</td><td/><td>0</td><td>12</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_1300</td><td>Line</td><td>48</td><td>227</td><td>325</td><td>2</td><td>3</td><td/><td/><td>ControlId_7</td><td/><td>131079</td><td>1300</td><td/><td/></row>
-		<row><td>SelectionTVSeries</td><td>ControlId_1301</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>2</td><td>3</td><td/><td/><td>Bitmap1</td><td/><td>131088</td><td>1301</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>ControlId_1301</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>2</td><td>1</td><td/><td/><td>Bitmap1</td><td/><td>131088</td><td>1301</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_2</td><td>PushButton</td><td>185</td><td>275</td><td>57</td><td>17</td><td>2</td><td/><td>##IDS__NewDialog_ControlId_2##</td><td/><td/><td>0</td><td>2</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_50</td><td>Text</td><td>12</td><td>4</td><td>248</td><td>10</td><td>65539</td><td/><td>##ID_TVSERIES_TITLE##</td><td>ControlId_51</td><td/><td>131072</td><td>50</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_51</td><td>Text</td><td>19</td><td>19</td><td>240</td><td>24</td><td>65539</td><td/><td>##ID_TVSERIES_DESC##</td><td>ControlId_1301</td><td/><td>131072</td><td>51</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_52</td><td>Text</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>ControlId_1</td><td/><td>131072</td><td>52</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_7</td><td>Text</td><td>3</td><td>222</td><td>45</td><td>13</td><td>2</td><td/><td/><td>ControlId_50</td><td/><td>131072</td><td>7</td><td/><td/></row>
 		<row><td>SelectionTVSeries</td><td>ControlId_9</td><td>PushButton</td><td>306</td><td>239</td><td>57</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_9##</td><td>ControlId_12</td><td/><td>0</td><td>9</td><td/><td/></row>
-		<row><td>SelectionTVSeries</td><td>GroupBox1</td><td>GroupBox</td><td>7</td><td>59</td><td>361</td><td>151</td><td>3</td><td/><td>##NEW_STRING8##</td><td>RadioButtonGroup1</td><td/><td>0</td><td>1328</td><td/><td/></row>
-		<row><td>SelectionTVSeries</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>75</td><td>338</td><td>22</td><td>16777219</td><td>NewProperty4</td><td/><td>ControlId_52</td><td/><td>0</td><td>1305</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>GroupBox1</td><td>GroupBox</td><td>7</td><td>52</td><td>361</td><td>170</td><td>3</td><td/><td>##NEW_STRING8##</td><td>RadioButtonGroup1</td><td/><td>0</td><td>1328</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>13</td><td>61</td><td>338</td><td>21</td><td>16777219</td><td>NewProperty4</td><td/><td>ComboBox1</td><td/><td>0</td><td>1305</td><td/><td/></row>
+		<row><td>SelectionTVSeries</td><td>Text1</td><td>Text</td><td>18</td><td>184</td><td>109</td><td>13</td><td>65539</td><td/><td>##NEW_STRING23##</td><td>ControlId_52</td><td/><td>0</td><td>1403</td><td/><td/></row>
 	</table>
 
 	<table name="ControlCondition">
@@ -654,6 +657,7 @@
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MEDIA</td><td>STREAMEDMP1</td><td>Media</td><td/><td>0</td><td/></row>
 		<row><td>MEDIAPORTAL</td><td>TEAM_MEDIAPORTAL1</td><td>MEDIAP~1|MediaPortal</td><td/><td>0</td><td/></row>
+		<row><td>MEDIAPORTAL1</td><td>TEAM_MEDIAPORTAL2</td><td>MEDIAP~1|MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM</td><td>SKINS</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM1</td><td>SKINS1</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM2</td><td>SKINS2</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
@@ -682,6 +686,7 @@
 		<row><td>TARGETDIR</td><td/><td>SourceDir</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL</td><td>ProgramFilesFolder</td><td>TEAM-M~1|Team-MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL1</td><td>ProgramFilesFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
+		<row><td>TEAM_MEDIAPORTAL2</td><td>CommonAppDataFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
@@ -1386,6 +1391,7 @@
 		<col key="yes" def="s72">Component_</col>
 		<row><td>LogosPSD</td><td>photoshopPSD</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
+		<row><td>Main</td><td>MediaPortal.xml</td></row>
 		<row><td>Main</td><td>skinMedia</td></row>
 		<row><td>Main</td><td>skinSounds</td></row>
 		<row><td>Main</td><td>skinXML</td></row>
@@ -1442,6 +1448,7 @@
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
 		<row><td>it.xml</td><td>pluginTVSeriesLanguages</td><td>it.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries\it.xml</td><td>1</td><td/></row>
 		<row><td>mediainfo.dll</td><td>pluginMediaInfoDLL</td><td>MEDIAI~1.DLL|MediaInfo.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MediaInfo.dll</td><td>1</td><td/></row>
+		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\movingpictures\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\rss\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
@@ -1676,6 +1683,7 @@
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBody</td><td/><td/><td>_AC0D793F_2670_49FC_803D_5C94EB482EDD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBodyCaps</td><td/><td/><td>_BC32B391_5B7D_4BBD_8E0A_FE5120529351_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidTitleCaps</td><td/><td/><td>_3464E48E_06B3_4855_9692_669CE6E69953_FILTER</td><td/><td/><td/><td/></row>
@@ -3660,6 +3668,7 @@
 		<row><td>NEW_STRING20</td><td>1033</td><td>&amp;Font Size:</td><td>0</td><td/><td>-31696402</td></row>
 		<row><td>NEW_STRING21</td><td>1033</td><td/><td>0</td><td/><td>-31680370</td></row>
 		<row><td>NEW_STRING22</td><td>1033</td><td>&amp;Set as Default Skin:</td><td>0</td><td/><td>-31659538</td></row>
+		<row><td>NEW_STRING23</td><td>1033</td><td>Series Layout:</td><td>0</td><td/><td>412976556</td></row>
 		<row><td>NEW_STRING3</td><td>1033</td><td>&amp;Fanart Orientated</td><td>0</td><td/><td>-1382241141</td></row>
 		<row><td>NEW_STRING4</td><td>1033</td><td>Choice 1</td><td>0</td><td/><td>-1919127305</td></row>
 		<row><td>NEW_STRING5</td><td>1033</td><td>Choice 2</td><td>0</td><td/><td>-1919127305</td></row>
@@ -4203,6 +4212,8 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>NewProperty2</td><td>0</td><td/></row>
 		<row><td>NewProperty3</td><td>0</td><td/></row>
 		<row><td>NewProperty4</td><td>0</td><td/></row>
+		<row><td>NewProperty5</td><td>0</td><td/></row>
+		<row><td>NewProperty6</td><td>0</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOLS</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEVROOT</td><td>##IDS_PROGMSG_IIS_CREATEVROOT##</td><td/></row>
