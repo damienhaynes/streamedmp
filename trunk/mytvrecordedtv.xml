@@ -36,6 +36,17 @@
                         <animation effect="fade" time="200" delay="100">WindowOpen</animation>
                 </control>
                 <control>
+                        <description>Top Title Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>  
+                <control>
                         <type>label</type>
                         <description>Number of Files Label</description>
                         <id>12</id>
@@ -247,28 +258,7 @@
                                 <align>right</align>
                                 <textcolor>ffb2d4f5</textcolor>
                         </control>-->
-                        <control>
-                                <description>Media Count Background</description>
-                                <type>image</type>
-                                <id>1</id>
-                                <posX>1113</posX>
-                                <posY>683</posY>
-                                <width>159</width>
-                                <height>30</height>
-                                <texture>mediacountbackground.png</texture>
-                                <visible>yes</visible>
-                        </control>
-                        <control>
-                                <description>Media Count Label</description>
-                                <type>label</type>
-                                <label>PAGE:</label>
-                                <id>1</id>
-                                <posX>1123</posX>
-                                <posY>688</posY>
-                                <font>mediastream10tc</font>
-                                <textcolor>ff909090</textcolor>
-                        </control>
-                </control>
+                 </control>
                 <import>common.overlays.xml</import>
         </controls>
 </window>
