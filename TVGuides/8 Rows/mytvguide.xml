@@ -84,13 +84,25 @@
                         <description>Single Channel Label</description>
                         <type>label</type>
                         <id>32</id>
-                        <posX>436</posX>
-                        <posY>115</posY>
-                        <font>mediastream11tc</font>
+                        <posX>395</posX>
+                        <posY>75</posY>
+                        <font>mediastream16tc</font>
                         <align>left</align>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>
                 </control>
+				<control>
+                        <description>Single Channel Image</description>
+                        <type>image</type>
+                        <id>33</id>
+                        <posX>330</posX>
+                        <posY>67</posY>
+                        <width>45</width>
+                        <height>45</height>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <zoom>yes</zoom>
+                        <texture>defaultVideoBig.png</texture>
+                        </control>
                 <!-- Timeheader background must be dedfined before Timeheader label template -->
                 <!-- b/c Timeheader is on the background and will be rendered first -->
                 <control>
@@ -244,6 +256,7 @@
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>
                 </control>
+
                 <!--for program genre-->
                 <!--<control>
                         <description>template for program genre light area</description>
