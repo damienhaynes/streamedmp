@@ -50,7 +50,7 @@
 		<episode>	
 			<item1><![CDATA[<Episode.FirstAired>]]></item1>
 			<item2><![CDATA[<Episode.EpisodeIndex>: <Episode.LocalEpisodeName>]]></item2>
-			<item3><![CDATA[<Episode.Rating> / 10]]></item3>
+			<item3><![CDATA[SPACE]]></item3>
 		</episode>
 	</views>
 	<formatting import="true">
@@ -95,7 +95,8 @@
 <Enabled>1<Format>SeriesCol2<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
 <Enabled>1<Format>SeriesCol3<FormatAs><Series.EpisodeCount> Episodes
 <Enabled>1<Format>SeasonCol2<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
-<Enabled>1<Format>SeasonCol3<FormatAs><Season.EpisodeCount> Episodes]]>
+<Enabled>1<Format>SeasonCol3<FormatAs><Season.EpisodeCount> Episodes
+<Enabled>1<Format>SPACE<FormatAs> ]]>
 	</formatting>
 	<logos import="true">
 		<![CDATA[skin\StreamedMP\Media\TVSeries\Logos\Misc\SD 43.png;-;<Episode.videoWidth>;-;<;-;960;-;AND;-;<Episode.VideoAspectRatio>;-;<;-;1.5;-;AND;-;<Episode.VideoAspectRatio>;-;>;-;1.2;-;<Restrict:Episode>
