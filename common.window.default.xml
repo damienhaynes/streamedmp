@@ -5,6 +5,7 @@
                  WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
                 -->
                 <control>
+                        <id>1</id>
                         <description>Background Image</description>
                         <animation effect="fade" time="500">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>
@@ -17,6 +18,7 @@
                         <colordiffuse>#header.BG.colordiffuse</colordiffuse>
                 </control>
                 <control>
+                        <id>1</id>
                         <description>Overlay Image</description>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -28,6 +30,7 @@
                         <texture>#header.BG.overlay</texture>
                 </control>
                 <control>
+                        <id>1</id>
                         <description>Top Title Background</description>
                         <type>image</type>
                         <posX>77</posX>
@@ -38,6 +41,7 @@
                         <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
                 </control>
                 <control>
+                        <id>1</id>
                         <type>fadelabel</type>
                         <description>Top Title</description>
                         <posX>493</posX>
