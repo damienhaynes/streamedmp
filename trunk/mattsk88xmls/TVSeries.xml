@@ -678,6 +678,17 @@
       <texture>tvseries_WatchedNA.png</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
+	 <control>
+      <description>Episode Not Available and Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>256</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatchedNA.png</texture>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+    </control>
     <!--      :: HIDDEN MENU ::      -->
     <control>
       <type>actiongroup</type>
