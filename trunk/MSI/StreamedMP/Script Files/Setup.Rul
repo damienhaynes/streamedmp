@@ -65,7 +65,7 @@
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
 #define TVSERIES_MIN_VERSION			"2.0.3286.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.6.3.381"
+#define MOVINGPICTURES_MIN_VERSION		"0.6.4.390"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -561,9 +561,9 @@ begin
 end; 
 
 function number ShowSelectTVSeries(bModify)
-	STRING szDialogName;
+	STRING szDialogName, szErrorMsg;
 	NUMBER nCmdValue;
-	BOOL bDone; 
+	BOOL bDone, bValidate; 
 	LIST listSeriesLayout;
 begin
 
@@ -598,7 +598,7 @@ Dlg_Wait:
  				// Populate series layout list                               
 	        	listSeriesLayout = ListCreate(STRINGLIST);
 	        	
-	        	ListAddString(listSeriesLayout,"List Posters",AFTER);
+	        	ListAddString(listSeriesLayout,"List Posters",AFTER);	        	
 	        	ListAddString(listSeriesLayout,"List Banners",AFTER);
 	        	ListAddString(listSeriesLayout,"Wide Banners",AFTER);
 	        	ListAddString(listSeriesLayout,"Filmstrip",AFTER);
@@ -633,6 +633,20 @@ Dlg_Wait:
 	endif;
 	
 	CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout);
+	
+	bValidate = TRUE;
+	if (nCmdValue = RES_PBUT_NEXT) then
+		if (!g_bTVSeriesDefault && (g_sSeriesLayout = "List Banners")) then 
+			// This Layout is not supported by Fanart Orientated style currently
+			bValidate = FALSE;
+			szErrorMsg = "List Banners Layout is currently not supported by the Fanart Orientated style.\nPlease try another layout.";
+		endif;		
+	endif;
+		
+	if !bValidate then 
+	 	MessageBox(szErrorMsg,INFORMATION);	
+		goto Dlg_Wait;
+	endif;
 	
 	// Set Features
 	if (g_bTVSeriesDefault) then
