@@ -76,6 +76,7 @@
 #define RES_RADIO_CHOICE1				1400
 #define RES_RADIO_CHOICE2				1401             
 #define RES_COMBO_SERIESLAYOUT			1402
+#define RES_CHECK_SERIESEPCOUNT			1404
 
 #define RES_RADIO_TVGUIDE08ROWS 		1325
 #define RES_RADIO_TVGUIDE12ROWS       	1326  
@@ -105,6 +106,7 @@ prototype VOID		GetCachedInstallDir();
 prototype VOID		UninstallCleanup();       
 prototype NUMBER	SetDefaultSkin(STRING);   
 prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
+prototype NUMBER	ShowEpisodeCount(BOOL);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -115,6 +117,7 @@ BOOL g_bTVSeriesDefault;
 BOOL g_bMovingPicturesDefault;
 BOOL g_bMajorUpgrade;
 BOOL g_bSetAsDefaultSkin;
+BOOL g_bShowSeriesEpisodeCount;
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -213,6 +216,10 @@ begin
 				g_sSeriesLayout = "List Posters";	
 		endswitch;
 			
+	endif;
+	
+	if (ShowEpisodeCount(FALSE) < 0) then
+		g_bShowSeriesEpisodeCount = TRUE;
 	endif;
 	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
@@ -605,7 +612,12 @@ Dlg_Wait:
 	        	// Add Series Layouts to list
 	        	CtrlSetList(szDialogName,RES_COMBO_SERIESLAYOUT,listSeriesLayout);
 	        	CtrlSetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 				
-	        	ListDestroy(listSeriesLayout);        	     			     			     		
+	        	ListDestroy(listSeriesLayout); 
+	        	
+	        	// Show TVSeries Episode Counts in Series View       	     			     			     		
+	        	if g_bShowSeriesEpisodeCount then
+	        		CtrlSetState(szDialogName,RES_CHECK_SERIESEPCOUNT,BUTTON_CHECKED);
+	        	endif;
  				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -634,12 +646,18 @@ Dlg_Wait:
 	
 	CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout);
 	
+	if CtrlGetState(szDialogName,RES_CHECK_SERIESEPCOUNT) = BUTTON_CHECKED then
+		g_bShowSeriesEpisodeCount = TRUE;
+	else
+		g_bShowSeriesEpisodeCount = FALSE;
+	endif;
+	
 	bValidate = TRUE;
 	if (nCmdValue = RES_PBUT_NEXT) then
 		if (!g_bTVSeriesDefault && (g_sSeriesLayout = "List Banners")) then 
 			// This Layout is not supported by Fanart Orientated style currently
 			bValidate = FALSE;
-			szErrorMsg = "List Banners Layout is currently not supported by the Fanart Orientated style.\nPlease try another layout.";
+			szErrorMsg = "List Banners Layout is currently not supported by the Fanart Orientated style. Please try another layout.";
 		endif;		
 	endif;
 		
@@ -872,6 +890,8 @@ begin
 	endswitch;
 		
 	TVSeriesLayout(svString,TRUE);
+	ShowEpisodeCount(TRUE);
+	
 	
 	if g_bSetAsDefaultSkin then
 		SetDefaultSkin(SKIN_NAME);
@@ -1176,6 +1196,60 @@ begin
 		
 		else
 			g_sSeriesLayout = oNode.Attributes.getNamedItem("layout").Text;			
+		endif;
+	 		 	
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNode = NOTHING;  	    
+	    
+	catch                  
+		
+	    return -1;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return 0;
+    
+end;
+         
+function NUMBER ShowEpisodeCount(bSet)
+	OBJECT oXMLdoc, oNode; 
+	STRING sNode, sFile;
+begin
+    
+    sFile = STREAMEDMP_SKIN_TVSETTINGS;        	 
+    Disable(LOGGING);
+    
+    try
+	    // Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);
+		
+		sNode = "/settings/views/series/item3";	    
+	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode); 	    	    
+		
+		if bSet then				       		    	  
+		    
+		    if g_bShowSeriesEpisodeCount then
+				oNode.Text = "SeriesCol3"; 	// formatting rule to define Episode Count on Series
+			else
+				oNode.Text = "SPACE"; 		// formatting rule representing a space char
+			endif;
+		    // save the xml	    
+		    oXMLdoc.Save (sFile);		   
+		
+		else
+			if (oNode.Text != "SPACE") then
+				g_bShowSeriesEpisodeCount = TRUE;
+			else
+				g_bShowSeriesEpisodeCount = FALSE;
+			endif;
 		endif;
 	 		 	
 	    // release objects used
