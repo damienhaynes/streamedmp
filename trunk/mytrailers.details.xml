@@ -8,66 +8,19 @@
       <posX>800</posX>
       <posY>300</posY>
       <width>480</width>
-      <height>210</height>
-      <textXOff2>0</textXOff2>
-      <IconYOff>10</IconYOff>
-      <textYOff>5</textYOff>
+      <height>210</height>      
+      <!--<IconXOff>15</IconXOff>-->
+	  <!--<IconYOff>10</IconYOff>-->
       <textXOff>9</textXOff>
-      <textureHeight>42</textureHeight>
-      <IconXOff>15</IconXOff>
-      <spinPosX>1215</spinPosX>
-      <spinPosY>355</spinPosY>
-      <textYOff2>5</textYOff2>
+	  <textYOff>5</textYOff>      
+      <textXOff2>0</textXOff2>
+	  <textYOff2>5</textYOff2>
+	  <textureHeight>42</textureHeight>            
       <onup>4</onup>
       <ondown>4</ondown>
       <onright>4</onright>
       <onleft>4</onleft>
       <visible>!Control.IsVisible(50)</visible>
-    </control>
-    <control>
-      <description>group element</description>
-      <id>1</id>
-      <type>group</type>
-      <layout>StackLayout(30)</layout>
-      <posX>875</posX>
-      <posY>400</posY>
-      <width>425</width>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <dimColor>FFFFFFFF</dimColor>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
-      <control>
-        <id>1</id>
-        <description>Video Title</description>
-        <type>label</type>
-        <label>#MyTrailers.Video.Title</label>
-      </control>
-      <control>
-        <description>Video Published</description>
-        <type>label</type>
-        <width>475</width>
-        <id>1</id>
-        <label>Published on #MyTrailers.Video.Published</label>
-        <font>mediastream11</font>
-        <textcolor>FFFFFFFF</textcolor>
-      </control>
-      <control>
-        <id>1</id>
-        <description>Video Description</description>
-        <type>label</type>
-        <textcolor>FFFFFFFF</textcolor>
-        <label>#MyTrailers.Video.Description</label>
-      </control>
-      <control>
-        <description>Video image</description>
-        <type>image</type>
-        <id>1</id>
-        <width>425</width>
-        <height>200</height>
-        <texture>#MyTrailers.Video.Image</texture>
-        <keepaspectratio>yes</keepaspectratio>
-      </control>
     </control>
     <control>
       <description>MyTrailers.Details.Title</description>
@@ -82,12 +35,53 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!Control.IsVisible(50)</visible>
     </control>
+	<control>
+        <description>Video Published</description>
+        <type>label</type>
+		<id>1</id>
+		<posX>1050</posX>
+        <posY>275</posY>
+        <width>420</width>        
+        <label>Published on #MyTrailers.Video.Published</label>
+        <font>mediastream11</font>
+        <textcolor>FFFFFFFF</textcolor>
+		<animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+		<visible>!Control.IsVisible(50)</visible>
+    </control>
+	<control>       
+        <description>Video Description</description>
+        <type>label</type>
+		<id>1</id>
+		<posX>800</posX>
+        <posY>250</posY>
+        <width>420</width>        
+        <textcolor>FFFFFFFF</textcolor>
+		<label>#MyTrailers.Video.Description</label>
+		<animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+		<visible>!Control.IsVisible(50)</visible>        
+    </control>
+    <control>
+        <description>Video image</description>
+        <type>image</type>
+        <id>1</id>
+		<posX>800</posX>
+        <posY>480</posY>
+        <width>400</width>
+        <height>225</height>
+        <texture>#MyTrailers.Video.Image</texture>
+		<animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+		<visible>!Control.IsVisible(50)</visible> 
+        <keepaspectratio>yes</keepaspectratio>
+    </control>	
     <control>
       <description>group element</description>
       <id>1</id>
       <type>group</type>
       <layout>StackLayout(30)</layout>
-      <posX>350</posX>
+      <posX>310</posX>
       <posY>220</posY>
       <width>475</width>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -159,7 +153,7 @@
         <description>Cast txt</description>
         <type>label</type>
         <id>1</id>
-        <width>475</width>
+        <width>330</width>
         <label>#MyTrailers.Details.Label.Cast</label>
         <textcolor>ff909090</textcolor>
       </control>
@@ -168,6 +162,8 @@
         <type>textboxscrollup</type>
         <id>1</id>
         <posY>500</posY>
+		<height>50</height>
+		<width>330</width>
         <font>mediastream11</font>
         <label>#MyTrailers.Details.Cast</label>
       </control>
@@ -175,9 +171,9 @@
         <description>Summary</description>
         <type>textboxscrollup</type>
         <id>1</id>
-        <posY>12</posY>
-        <height>150</height>
-        <width>850</width>
+        <posY>100</posY>
+        <height>130</height>
+        <width>330</width>
         <seperator>-----------------------------------------------------------------------------------</seperator>
         <font>mediastream11</font>
         <label>#MyTrailers.Details.Description</label>
