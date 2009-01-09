@@ -131,7 +131,7 @@ namespace streamedmp_editor
                         XmlDocument doc = new XmlDocument();
                         doc.Load(file);
                         XmlNode node = doc.DocumentElement.SelectSingleNode("/window/id");
-                                                
+                                               
                         ids.Add(node.InnerText);
                         lstAvailableWindows.Items.Add(file.Remove(0, file.LastIndexOf(@"\") + 1).Replace(".xml", ""));                         
                     }
@@ -158,10 +158,12 @@ namespace streamedmp_editor
         private void LoadPrettyItems()
         {
             XmlDocument doc = new XmlDocument();
+           
             Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("streamedmp_editor.QuickSelectList.xml");
-            doc.Load(stream);                      
+            doc.Load(stream);
 
             XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/items/item");
+            
             foreach (XmlNode node in nodeList)
             {
                 prettyItem pItem = new prettyItem();                
