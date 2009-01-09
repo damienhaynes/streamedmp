@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>9811</id>
   <defaultcontrol>2</defaultcontrol>
@@ -14,6 +14,14 @@
   <define>#notpresent.color:ffF87B72</define>
   <!-- File Not Present in List Color     Default: ffF87B72 -->
   <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
+  
+   <!-- Setup will replace the *.png with a '-' if user does not want them -->
+  <define>#overlaywubg:overlaywubg.png</define>
+  <define>#tvseries_Watched:tvseries_Watched.png</define>
+  <define>#tvseries_UnWatched:tvseries_UnWatched.png</define>
+  <define>#tvseries_WatchedNA:tvseries_WatchedNA.png</define>
+  <define>#tvseries_UnWatchedNA:tvseries_UnWatchedNA.png</define>
+  
   <controls>
     <import>TVSeries.dummy.xml</import>
     <!--
@@ -586,7 +594,7 @@
       <posY>350</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
     </control>
     <control>
@@ -597,7 +605,7 @@
       <posY>353</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -608,7 +616,7 @@
       <posY>353</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -619,7 +627,7 @@
       <posY>353</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -630,7 +638,7 @@
       <posY>353</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1239)+!Control.IsVisible(1240)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <!--**********Watched/Unwatched Icons Episodes*************-->
@@ -642,7 +650,7 @@
       <posY>450</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control>
@@ -653,7 +661,7 @@
       <posY>453</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -664,7 +672,7 @@
       <posY>453</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -675,7 +683,7 @@
       <posY>453</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	 <control>
@@ -686,7 +694,7 @@
       <posY>453</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <!--      :: HIDDEN MENU ::      -->

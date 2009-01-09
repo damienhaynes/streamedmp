@@ -8,6 +8,14 @@
   <define>#notpresent.color:ffEB9E17</define> <!-- File Not Present in List Color     Default: ffEB9E17 (Orange)  -->
   <define>#shadow.dark:ff111111</define>      <!-- Shadows under blue/grey text       Default: ff111111           -->
   <define>#shadow.light:ff222222</define>     <!-- Shadows under wite text            Default: ff222222           -->
+  
+  <!-- Setup will replace the *.png with a '-' if user does not want them -->
+  <define>#overlaywubg:overlaywubg.png</define>
+  <define>#tvseries_Watched:tvseries_Watched.png</define>
+  <define>#tvseries_UnWatched:tvseries_UnWatched.png</define>
+  <define>#tvseries_WatchedNA:tvseries_WatchedNA.png</define>
+  <define>#tvseries_UnWatchedNA:tvseries_UnWatchedNA.png</define>
+  
   <controls>
     
     <import>TVSeries.dummy.xml</import>
@@ -282,7 +290,7 @@
       <posY>130</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+Control.IsVisible(1242)</visible>
     </control>
     
@@ -294,7 +302,7 @@
       <posY>133</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+Control.IsVisible(1242)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     
@@ -306,7 +314,7 @@
       <posY>133</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+Control.IsVisible(1242)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
 	
@@ -318,7 +326,7 @@
       <posY>133</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+Control.IsVisible(1242)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     
@@ -330,7 +338,7 @@
       <posY>133</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1236)+Control.IsVisible(1242)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
@@ -492,7 +500,7 @@
       <posY>284</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+Control.IsVisible(1242)</visible>
     </control>
     
@@ -504,7 +512,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+Control.IsVisible(1242)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     
@@ -516,7 +524,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+Control.IsVisible(1242)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
 	
@@ -528,7 +536,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+Control.IsVisible(1242)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     
@@ -540,7 +548,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+Control.IsVisible(1242)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
@@ -577,7 +585,7 @@
       <posY>284</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)</visible>
     </control>
     
@@ -589,7 +597,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     
@@ -601,7 +609,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
 	
@@ -613,7 +621,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     
@@ -625,7 +633,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
@@ -846,7 +854,7 @@
       <posY>284</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)</visible>
     </control>
     
@@ -858,7 +866,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     
@@ -870,7 +878,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
 	
@@ -882,7 +890,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     
@@ -894,7 +902,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1237)+Control.IsVisible(1235)+!Control.IsVisible(1242)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
@@ -1024,7 +1032,7 @@
       <posY>284</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     
@@ -1036,7 +1044,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     
@@ -1048,7 +1056,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
 	
@@ -1060,7 +1068,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     
@@ -1072,7 +1080,7 @@
       <posY>287</posY>
       <width>96</width>
       <height>24</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
