@@ -151,18 +151,7 @@
 			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
 			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
 		</control>
-		<control>
-			<description>skip steps</description>
-			<type>label</type>
-			<id>15</id>
-			<posX>1255</posX>
-			<posY>15</posY>
-			<label>-</label>
-			<font>mediastream10tc</font>
-			<visible>no</visible>
-			<align>right</align>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
+
 		<control>
 			<description>pause image</description>
 			<type>image</type>
