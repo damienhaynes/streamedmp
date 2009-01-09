@@ -55,28 +55,36 @@
 #define FONTSDEF_FEATURE_OPTIONS		"Main\\fontsDefOptions"
 #define FONTSLGE_FEATURE_OPTIONS		"Main\\fontsLgeOptions"
 
+#define TVSERIES_MULTIIMAGE_OPTION		"Main\\tvseriesMultiImageIcons"
+
 // Program executable defines
-#define STREAMEDMP_EDITOR_FILE			INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"                  
-#define STREAMEDMP_SKIN_TVSETTINGS		INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
-#define MEDIAPORTAL_CONFIG_FILE			CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
+#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
+#define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.xml"
+#define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
+#define MEDIAPORTAL_CONFIG_FILE				CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
 
 // Version Defines
 #define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.0" 		// 1.0 Base
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
 #define TVSERIES_MIN_VERSION			"2.0.3294.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.6.5.410"
+#define MOVINGPICTURES_MIN_VERSION		"0.6.5.418"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
 #define RES_DLG_MOVINGPICSSELECT		13001
 #define RES_DLG_OPTIONS					13002
+#define RES_DLG_TVSERIESADVANCED		13003
 
 // Dialog Controls
 #define RES_RADIO_CHOICE1				1400
 #define RES_RADIO_CHOICE2				1401             
-#define RES_COMBO_SERIESLAYOUT			1402
-#define RES_CHECK_SERIESEPCOUNT			1404
+#define RES_COMBO_SERIESLAYOUT			1402 
+#define RES_BUTTON_TVSERIESADVANCED		1404	
+
+#define RES_CHECK_TOTALEPCOUNT			1304
+#define RES_CHECK_LISTIMAGES			1305
+#define RES_CHECK_ARTWORKICONS			1307
 
 #define RES_RADIO_TVGUIDE08ROWS 		1325
 #define RES_RADIO_TVGUIDE12ROWS       	1326  
@@ -111,20 +119,25 @@ prototype VOID		GetCachedInstallDir();
 prototype VOID		UninstallCleanup();       
 prototype NUMBER	SetDefaultSkin(STRING);   
 prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
-prototype NUMBER	ShowEpisodeCount(BOOL);
 prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRING);
 prototype VOID		CleanVirtualStoreDir();
+prototype NUMBER	GetXMLProperty(STRING,STRING,BYREF STRING);
+prototype NUMBER	SetXMLProperty(STRING,STRING,STRING);
+prototype VOID		TVSeriesIcons(BOOL);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
 prototype NUMBER 	ShowSelectOptions(BOOL);
+prototype NUMBER 	ShowTVSeriesAdvanced(BOOL);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
 BOOL g_bMovingPicturesDefault;
 BOOL g_bMajorUpgrade;
 BOOL g_bSetAsDefaultSkin;
-BOOL g_bShowSeriesEpisodeCount;
+BOOL g_bShowTotalEpisodeCount;
+BOOL g_bShowArtworkIcons;
+BOOL g_bShowIconsInListView;
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -225,8 +238,32 @@ begin
 			
 	endif;
 	
-	if (ShowEpisodeCount(FALSE) < 0) then
-		g_bShowSeriesEpisodeCount = TRUE;
+	// Determine if 'Total Episode Count' fields are added to List View
+	// Just Check Series, but set for both Series & Season
+	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", svValue) < 0) then
+		g_bShowTotalEpisodeCount = TRUE;
+	else
+		if svValue = "SeriesEpCount" then
+			g_bShowTotalEpisodeCount = TRUE;	
+		endif;
+	endif;
+	
+	// Determine if 'Watched/Unwatched' Icons are added to List View
+	// Just Check Series, but set for both Series & Season
+	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", svValue) < 0) then
+		g_bShowIconsInListView = TRUE;
+	else
+		if svValue = "SeriesIcons" then
+			g_bShowIconsInListView = TRUE;		
+		endif;
+	endif;		
+	
+	// Read Icons in Artwork default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ICONSINARTWORK",nvType,svValue,nvSize) < 0) then
+		svValue = "1";		
+	endif;	
+	if svValue = "1" then
+		g_bShowArtworkIcons = TRUE;			
 	endif;
 	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
@@ -630,10 +667,9 @@ Dlg_Wait:
 	        	CtrlSetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 				
 	        	ListDestroy(listSeriesLayout); 
 	        	
-	        	// Show TVSeries Episode Counts in Series View       	     			     			     		
-	        	if g_bShowSeriesEpisodeCount then
-	        		CtrlSetState(szDialogName,RES_CHECK_SERIESEPCOUNT,BUTTON_CHECKED);
-	        	endif;
+ 			
+ 			case RES_BUTTON_TVSERIESADVANCED:
+ 				ShowTVSeriesAdvanced(bModify);
  				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -659,15 +695,7 @@ Dlg_Wait:
 	else
 		g_bTVSeriesDefault = FALSE;
 	endif;
-	
-	CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout);
-	
-	if CtrlGetState(szDialogName,RES_CHECK_SERIESEPCOUNT) = BUTTON_CHECKED then
-		g_bShowSeriesEpisodeCount = TRUE;
-	else
-		g_bShowSeriesEpisodeCount = FALSE;
-	endif;
-	
+		
 	bValidate = TRUE;
 	if (nCmdValue = RES_PBUT_NEXT) then
 		if (!g_bTVSeriesDefault && (g_sSeriesLayout = "List Banners")) then 
@@ -690,6 +718,91 @@ Dlg_Wait:
 		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, FALSE );
 		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, TRUE );
 	endif;	
+		
+	if (g_bShowIconsInListView) then
+		FeatureSelectItem ( MEDIA, TVSERIES_MULTIIMAGE_OPTION, TRUE );		
+	else
+		FeatureSelectItem ( MEDIA, TVSERIES_MULTIIMAGE_OPTION, FALSE );		
+	endif;
+		
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
+
+function number ShowTVSeriesAdvanced(bModify)
+	STRING szDialogName, szErrorMsg;
+	NUMBER nCmdValue;
+	BOOL bDone, bValidate;
+begin
+
+	szDialogName = "SelectionTVSeriesAdvanced";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_TVSERIESADVANCED);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display TVSeries Advanced dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:	        	     			     			     			
+ 				// Read from Global Variables
+ 				if g_bShowTotalEpisodeCount then
+ 					CtrlSetState(szDialogName,RES_CHECK_TOTALEPCOUNT,BUTTON_CHECKED); 			
+ 				endif;
+ 				if g_bShowIconsInListView then
+ 					CtrlSetState(szDialogName,RES_CHECK_LISTIMAGES,BUTTON_CHECKED); 			
+ 				endif;
+ 				if g_bShowArtworkIcons then
+ 					CtrlSetState(szDialogName,RES_CHECK_ARTWORKICONS,BUTTON_CHECKED); 			
+ 				endif; 			
+ 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables	
+	if CtrlGetState(szDialogName,RES_CHECK_TOTALEPCOUNT) = BUTTON_CHECKED then
+		g_bShowTotalEpisodeCount = TRUE;
+	else
+		g_bShowTotalEpisodeCount = FALSE;
+	endif;       
+	if CtrlGetState(szDialogName,RES_CHECK_LISTIMAGES) = BUTTON_CHECKED then
+		g_bShowIconsInListView = TRUE;
+	else
+		g_bShowIconsInListView = FALSE;
+	endif;
+	if CtrlGetState(szDialogName,RES_CHECK_ARTWORKICONS) = BUTTON_CHECKED then
+		g_bShowArtworkIcons = TRUE;
+	else
+		g_bShowArtworkIcons = FALSE;
+	endif;			
 		
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -891,7 +1004,7 @@ begin
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);	
 	
 	svString = g_sSeriesLayout;	               
 	switch (svString)
@@ -906,8 +1019,31 @@ begin
 	endswitch;
 		
 	TVSeriesLayout(svString,TRUE);
-	ShowEpisodeCount(TRUE);
 	
+	// Set Total Episode Count Field to Series/Season List View
+	if g_bShowTotalEpisodeCount then
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SeriesEpCount");
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item3", "SeasonEpCount");
+	else
+		// Display nothing for Season List
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SPACE");
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item3", "SPACE");
+	endif;
+	
+	// Set Watched/Unwatched Icons to Series/Season List View
+	if g_bShowIconsInListView then
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SeriesIcons");
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item1", "SeasonIcons");
+	else
+		// Display the Series Air Day and nothing for Season List
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SeriesAirsDay");
+		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item1", "SPACE");
+	endif;
+	
+	NumToStr(svString,g_bShowArtworkIcons);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ICONSINARTWORK",REGDB_NUMBER,svString, -1);
+	// Update Skin to add/remove TVSeries Icons from artwork
+	TVSeriesIcons(g_bShowArtworkIcons);
 	
 	if g_bSetAsDefaultSkin then
 		SetDefaultSkin(SKIN_NAME);
@@ -1191,7 +1327,7 @@ function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
 	STRING sNode, sFile;
 begin
     
-    sFile = STREAMEDMP_SKIN_TVSETTINGS;        	 
+    sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;        	 
     Disable(LOGGING);
     
     try
@@ -1230,47 +1366,26 @@ begin
     Enable(LOGGING);         
     return 0;
     
-end;
-         
-function NUMBER ShowEpisodeCount(bSet)
+end;        
+
+function NUMBER GetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
-	STRING sNode, sFile;
 begin
-    
-    sFile = STREAMEDMP_SKIN_TVSETTINGS;        	 
-    Disable(LOGGING);
-    
-    try
-	    // Prepare XML parser object
+		
+	try		
+		// Prepare XML parser object
 	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
 	    
 		oXMLdoc.async = FALSE;
 		oXMLdoc.preserveWhiteSpace = TRUE;
 	    
 	    // Load the document 	    
-		oXMLdoc.Load (sFile);
-		
-		sNode = "/settings/views/series/item3";	    
-	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode); 	    	    
-		
-		if bSet then				       		    	  
-		    
-		    if g_bShowSeriesEpisodeCount then
-				oNode.Text = "SeriesCol3"; 	// formatting rule to define Episode Count on Series
-			else
-				oNode.Text = "SPACE"; 		// formatting rule representing a space char
-			endif;
-		    // save the xml	    
-		    oXMLdoc.Save (sFile);		   
-		
-		else
-			if (oNode.Text != "SPACE") then
-				g_bShowSeriesEpisodeCount = TRUE;
-			else
-				g_bShowSeriesEpisodeCount = FALSE;
-			endif;
-		endif;
-	 		 	
+		oXMLdoc.Load (sFile);	
+	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode);
+	    
+	    // return property
+	    sPropertyValue = oNode.Text;
+					 	
 	    // release objects used
 	    set oXMLdoc = NOTHING;	    
 	    set oNode = NOTHING;  	    
@@ -1286,20 +1401,58 @@ begin
     
 end;
 
+function NUMBER SetXMLProperty(sFile, sNode, sPropertyValue)
+	OBJECT oXMLdoc, oNode; 
+begin
+		
+	try		
+		// Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);	
+	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode);
+	    
+	    // Set property
+	    oNode.Text = sPropertyValue;
+		
+		// Save XML
+		oXMLdoc.Save (sFile);		
+		
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNode = NOTHING;  	    
+	    
+	catch                  
+		
+	    return -1;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return 0;
+    
+end;
+       
 function VOID CleanVirtualStoreDir()
 	STRING szValue, szVirtualStore;
 	NUMBER nResult;
-begin
-    
+begin    
     // Remove Vista's Virtual Store directory for the StreamedMP Skin
-    // We do this just incase a user with UAC enabled manually updated settings!
-    
+    // We do this just incase a user with UAC enabled manually updated settings!    
     Disable(LOGGING);
     
  	try   
 		nResult = SHFolder.SHGetFolderPathA(NULL, CSIDL_PROFILE, NULL, 0, szValue);
 	    if nResult = 0 then
 	    	szVirtualStore = szValue ^ "AppData\\Local\\VirtualStore\\Program Files\\Team MediaPortal\\MediaPortal\\Skin\\StreamedMP";
+	    	if Is(PATH_EXISTS,szVirtualStore) then
+	    		DeleteDir(szVirtualStore,ALLCONTENTS);
+	    	endif;   
+	    	szVirtualStore = szValue ^ "AppData\\Local\\VirtualStore\\Program Files (x86)\\Team MediaPortal\\MediaPortal\\Skin\\StreamedMP";
 	    	if Is(PATH_EXISTS,szVirtualStore) then
 	    		DeleteDir(szVirtualStore,ALLCONTENTS);
 	    	endif;
@@ -1315,3 +1468,114 @@ begin
 	Enable(LOGGING);
 	
 end;
+
+function VOID TVSeriesIcons(bAdd)
+	OBJECT oXMLdoc, oNodeList;
+	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
+	INT i;
+begin   
+
+	sFile = STREAMEDMP_SKIN_TVSERIES;        	 
+    Disable(LOGGING);
+    
+    try
+	    // Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);	
+		
+	    sNode = "/window/define";	    
+	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
+	    
+	    // Examine all <defines> and set texture
+	    for i=0 to oNodeList.length - 1
+		 	
+		 	szString = oNodeList.Item(i).Text;
+		 	
+		 	szFindStr = "#overlaywubg:";
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "overlaywubg.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;
+		    
+		    szFindStr = "#tvseries_Watched:";
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "tvseries_Watched.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;
+		    
+		    szFindStr = "#tvseries_UnWatched:";
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "tvseries_UnWatched.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;  
+		    
+		   	szFindStr = "#tvseries_WatchedNA:";
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "tvseries_WatchedNA.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;
+		    
+		    szFindStr = "#tvseries_UnWatchedNA:";
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "tvseries_UnWatchedNA.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;  		    		   
+		    
+		endfor;   		    
+	    
+	    // save the xml	    
+	    oXMLdoc.Save (sFile);
+	    
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNodeList = NOTHING;	    	    
+	    
+	catch                  
+		
+	    return;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return;
+	
+	
+end;
+
+
+
