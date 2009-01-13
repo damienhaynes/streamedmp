@@ -72,9 +72,21 @@
       <posX>195</posX>
       <posY>585</posY>
       <font>mediastream14tc</font>
+      <label>#Play.Current.Title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>player.rewinding|player.forwarding</visible>
+    </control>
+    <control>
+      <description>Movie Name</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>195</posX>
+      <posY>585</posY>
+      <width>480</width>
+      <font>mediastream14tc</font>
       <label>#Play.Current.Title </label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>player.paused|player.rewinding|player.forwarding</visible>
+      <visible>player.paused</visible>
     </control>
     <control>
       <description>Movie Year</description>
