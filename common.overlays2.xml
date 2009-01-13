@@ -35,7 +35,7 @@ on a different location if filmstrip view is active
       <width>512</width>
       <height>152</height>
       <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia+!facadeview.filmstrip</visible>
+      <visible>player.hasmedia+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
     </control>
     
     <!--                                    :: MUSIC OVERLAY ::                                    -->
@@ -52,7 +52,7 @@ on a different location if filmstrip view is active
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3337)</visible>
     </control>
     <control>
       <description>artist info label</description>
@@ -65,7 +65,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Artist</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3337)</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -78,7 +78,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3337)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -91,7 +91,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Album</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3337)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -104,7 +104,7 @@ on a different location if filmstrip view is active
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3337)</visible>
     </control>
     <control>
       <description>next song label</description>
@@ -117,7 +117,7 @@ on a different location if filmstrip view is active
       <label>Next:</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3338)+control.isvisible(3339)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3338)+control.isvisible(3339)</visible>
     </control>
     <control>
       <description>next song info label</description>
@@ -130,7 +130,7 @@ on a different location if filmstrip view is active
       <label>#Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+control.isvisible(3338)+control.isvisible(3339)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+control.isvisible(3338)+control.isvisible(3339)</visible>
     </control>
     
     <!--                                    :: VIDEO OVERLAY ::                                    -->
@@ -144,7 +144,7 @@ on a different location if filmstrip view is active
       <width>203</width>
       <height>114</height>
       <texture>black.png</texture>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>video preview window</description>
@@ -156,7 +156,7 @@ on a different location if filmstrip view is active
       <height>114</height>
       <action>18</action>
       <textureFocus>-</textureFocus>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>artist info label</description>
@@ -169,7 +169,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -182,7 +182,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Year</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -195,7 +195,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Genre</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -208,7 +208,7 @@ on a different location if filmstrip view is active
       <label>#Play.Current.Director</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -221,7 +221,7 @@ on a different location if filmstrip view is active
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!facadeview.filmstrip+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
     </control>
   </controls>
 </window>
