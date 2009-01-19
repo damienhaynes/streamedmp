@@ -3,7 +3,7 @@
 <window>
   <id>748</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#header.image:television_logo.png</define>
   <define>#header.label:1037</define>
   <define>#header.hover:-</define>
@@ -29,7 +29,9 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <posX>71</posX>
-      <posY>121</posY>
+      <posY>141</posY>
+	  <width>280</width>
+      <height>80</height>
       <control>
         <description>Record</description>
         <type>button</type>
@@ -40,6 +42,8 @@
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
       </control>
       <control>
         <description>Advanced Record</description>
@@ -52,6 +56,8 @@
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
       </control>
       <control>
         <description>Keep</description>
@@ -62,6 +68,8 @@
         <ondown>5</ondown>
         <onright>10</onright>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
@@ -78,6 +86,8 @@
         <ondown>6</ondown>
         <onright>10</onright>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
         <textureFocus>tv_buttonfocus_ledon.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_buttonfocus_ledoff.png</AltTextureFocus>
@@ -92,6 +102,8 @@
         <ondown>7</ondown>
         <onright>10</onright>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
@@ -116,6 +128,8 @@
         <ondown>9</ondown>
         <onright>10</onright>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
@@ -128,6 +142,8 @@
         <ondown>99</ondown>
         <onright>10</onright>
         <font>mediastream10tc</font>
+		<width>260</width>
+        <height>30</height>
         <textureFocus>tv_buttonfocus.png</textureFocus>
         <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
       </control>
