@@ -128,18 +128,18 @@
 			<font>mediastream11tc</font>
 			<textcolor>ff888888</textcolor>
 		</control>
-    <control>
-      <description>Progress Bar</description>
-      <type>progress</type>
-      <id>1</id>
-      <posX>187</posX>
-      <posY>683</posY>
-      <width>918</width>
-      <label>#percentage</label>
-      <visible>yes</visible>
-    </control>
+        <control>
+             <description>Progress Bar</description>
+             <type>progress</type>
+             <id>1</id>
+             <posX>187</posX>
+             <posY>683</posY>
+             <width>918</width>
+             <label>#percentage</label>
+             <visible>yes</visible>
+         </control>
 		<control>
-			<description>TV Progress Bar</description>
+	        <description>TV Progress Bar</description>
 			<type>tvprogress</type>
 			<id>101</id>
 			<posX>205</posX>
@@ -155,8 +155,8 @@
 			<righttexture>-</righttexture>
 			<logotexture>-</logotexture>
 			<fillbackgroundtexture>-</fillbackgroundtexture>
-      <fillbgxoff>0</fillbgxoff>
-      <fillbgyoff>20</fillbgyoff>
+            <fillbgxoff>0</fillbgxoff>
+            <fillbgyoff>20</fillbgyoff>
 			<filltexture1>-</filltexture1>
 			<filltexture2>-</filltexture2>
 			<filltexture3>-</filltexture3>
@@ -353,11 +353,11 @@
 			<description>Sub Titles List Control</description>
 			<type>listcontrol</type>
 			<id>802</id>
-			<posX>749</posX>
+			<posX>910</posX>
 			<posY>174</posY>
-			<width>531</width>
+			<width>370</width>
 			<textXOff>25</textXOff>
-			<height>295</height>
+			<height>351</height>
 			<onleft>802</onleft>
 			<onright>802</onright>
 			<onup>801</onup>
@@ -679,7 +679,7 @@
 			<texture>-</texture>
 			<visible>no</visible>
 			<animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-		</control>
+        </control>
 		<control>
 			<description>Volume Slider</description>
 			<type>slider</type>
