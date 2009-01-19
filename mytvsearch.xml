@@ -52,6 +52,8 @@
                         <description>group element</description>
                         <posX>40</posX>
                         <posY>220</posY>
+						<width>120</width>
+                        <height>80</height>
                         <layout>StackLayout</layout>
                         <control>
                                 <type>sortbutton</type>
@@ -63,6 +65,8 @@
                                 <ondown>4</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <font>mediastream10tc</font>
+								<width>120</width>
+                                <height>30</height>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
                         </control>
                         <control>
@@ -79,6 +83,8 @@
                                 <AltTextureFocus>tv_buttonfocus_ledoff.png</AltTextureFocus>
                                 <AltTextureNoFocus>tv_buttonnofocus_ledoff.png</AltTextureNoFocus>
                                 <font>mediastream10tc</font>
+								<width>120</width>
+                                <height>30</height>
                         </control>
                         <control>
                                 <description>Search by Title</description>
@@ -94,6 +100,8 @@
                                 <AltTextureFocus>tv_buttonfocus_ledoff.png</AltTextureFocus>
                                 <AltTextureNoFocus>tv_buttonnofocus_ledoff.png</AltTextureNoFocus>
                                 <font>mediastream10tc</font>
+								<width>120</width>
+                                <height>30</height>
                         </control>
                         <control>
                                 <description>Search by Description</description>
@@ -109,6 +117,8 @@
                                 <AltTextureFocus>tv_buttonfocus_ledoff.png</AltTextureFocus>
                                 <AltTextureNoFocus>tv_buttonnofocus_ledoff.png</AltTextureNoFocus>
                                 <font>mediastream10tc</font>
+								<width>120</width>
+                                <height>30</height>
                         </control>
                         <control>
                                 <description>sms input</description>
@@ -149,6 +159,8 @@
                                 <ondown>2</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <font>mediastream10tc</font>
+								<width>120</width>
+                                <height>30</height>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
                         </control>
                 </control>
@@ -176,9 +188,9 @@
                                         <id>10</id>
                                         <posY>80</posY>
                                         <onleft>2</onleft>
-                                        <onright>11</onright>
+                                        <!--<onright>11</onright>
                                         <onup>2</onup>
-                                        <ondown>2</ondown>
+                                        <ondown>2</ondown>-->
                                         <spinPosX>1249</spinPosX>
                                         <spinPosY>690</spinPosY>
                                 </control>
@@ -199,7 +211,7 @@
                                 <textYOff2>25</textYOff2>
                                 <textXOff3>100</textXOff3>
                                 <textYOff3>29</textYOff3>
-                                <PinIconXOff>62</PinIconXOff>
+                                <PinIconXOff>0</PinIconXOff>
                                 <PinIconYOff>27</PinIconYOff>
                                 <IconXOff>8</IconXOff>
                                 <IconYOff>8</IconYOff>
@@ -209,9 +221,6 @@
                                 <textureHeight>66</textureHeight>
                                 <keepaspectratio>no</keepaspectratio>
                                 <onleft>10</onleft>
-                                <onright>2</onright>
-                                <onup>2</onup>
-                                <ondown>2</ondown>
                                 <spinPosX>1249</spinPosX>
                                 <spinPosY>690</spinPosY>
                         </control>
@@ -225,6 +234,17 @@
                         <width>400</width>
                         <label>#selecteditem</label>
                         <visible>Control.isvisible(14)</visible>
+                </control>
+				<control>
+                        <description>Current program channel</description>
+                        <type>label</type>
+                        <id>16</id>
+                        <posX>50</posX>
+                        <posY>480</posY>
+                        <width>400</width>
+                        <label>#TV.Search.Channel</label>
+						<font>mediastream14tc</font>
+						<textcolor>ff006698</textcolor>
                 </control>
                 <control>
                         <description>Current program title</description>
@@ -251,7 +271,7 @@
                         <posY>585</posY>
                         <width>1100</width>
                         <height>120</height>
-                        <font>mediastream11</font>
+                        <font>mediastream12</font>
                         <seperator>----------------------------------------------------------------------------------------------------</seperator>
                         <label>#TV.Search.Description</label>
                 </control>
