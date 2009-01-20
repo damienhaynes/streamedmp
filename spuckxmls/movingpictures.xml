@@ -50,9 +50,18 @@ multiple view modes.
     </control>
 
     <control>
-      <description>Visibile when filtering by remote control searching.</description>
+      <description>Visibile when filtering by remote control searching</description>
       <type>label</type>
       <id>10</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+	
+	<control>
+      <description>Visible when the importer is working</description>
+      <type>label</type>
+      <id>13</id>
       <posX>-50</posX>
       <posY>-50</posY>
       <width>0</width>
@@ -81,7 +90,7 @@ multiple view modes.
       <height>720</height>
       <texture>#MovingPictures.Backdrop</texture>
       <!-- Do not modify the visibility for this component. It is handled by the plug-in. Use the above 
-      defines for conditional visibility if you dont want to use fan-art only specific views. -->
+		defines for conditional visibility if you dont want to use fan-art only specific views. -->
     </control>
     
     <control>
@@ -806,6 +815,20 @@ multiple view modes.
       <label>MOVING PICTURES</label>
     </control>
     
+    <control>
+      <description>Working Graphic</description>
+      <type>animation</type>
+      <id>0</id>
+      <posX>810</posX>
+      <posY>15</posY>
+      <width>157</width>
+      <height>24</height>
+      <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
+      <Duration>0:0:03</Duration>
+      <keepaspectratio>yes</keepaspectratio>
+	  <visible>Control.IsVisible(13)</visible>
+    </control>
+	
     <import>common.time.xml</import>
     
   </controls>
