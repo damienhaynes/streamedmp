@@ -10,17 +10,17 @@
                 <import>common.window.tv.xml</import>
                 <import>common.time.xml</import>
                 <!--<control>
-			        <description>TV background</description>
-			        <type>image</type>
-			        <id>1</id>
-			        <posX>40</posX>
-			        <posY>78</posY>
-			        <width>206</width>
-			        <height>129</height>
-			        <texture>tv_frame.png</texture>
-			        <animation effect="fade" time="250">WindowOpen</animation>
-			        <animation effect="fade" time="250">WindowClose</animation>
-		       </control>-->
+                   <description>TV background</description>
+                   <type>image</type>
+                  <id>1</id>
+                  <posX>40</posX>
+                  <posY>78</posY>
+                  <width>206</width>
+                  <height>129</height>
+                  <texture>tv_frame.png</texture>
+                  <animation effect="fade" time="250">WindowOpen</animation>
+                  <animation effect="fade" time="250">WindowClose</animation>
+                  </control>-->
                 <control>
                         <type>videowindow</type>
                         <description>TV preview window</description>
@@ -66,7 +66,9 @@
                         <description>group element</description>
                         <id>24</id>
                         <posX>40</posX>
-                        <posY>220</posY>
+                        <posY>280</posY>
+                        <width>250</width>
+                        <height>80</height>
                         <layout>StackLayout</layout>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -80,7 +82,9 @@
                                 <ondown>11</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                         </control>
                         <control>
                                 <description>Toggle button series</description>
@@ -92,7 +96,9 @@
                                 <onup>2</onup>
                                 <ondown>6</ondown>
                                 <textureFocus>tv_buttonfocus_ledon.png</textureFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                                 <textureNoFocus>tv_buttonnofocus_ledon.png</textureNoFocus>
                                 <AltTextureFocus>tv_buttonfocus_ledoff.png</AltTextureFocus>
                                 <AltTextureNoFocus>tv_buttonnofocus_ledoff.png</AltTextureNoFocus>
@@ -108,7 +114,9 @@
                                 <ondown>7</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                         </control>
                         <control>
                                 <description>Cleanup</description>
@@ -121,7 +129,9 @@
                                 <ondown>8</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                         </control>
                         <control>
                                 <description>Priorities</description>
@@ -135,7 +145,9 @@
                                 <ondown>9</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                         </control>
                         <control>
                                 <description>Conflicts</description>
@@ -149,7 +161,9 @@
                                 <ondown>99</ondown>
                                 <textureFocus>tv_buttonfocus.png</textureFocus>
                                 <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <font>mediastream11tc</font>
+                                <height>40</height>
+                                <width>250</width>
                         </control>
                 </control>
                 <control>
@@ -163,19 +177,23 @@
                                 <posY>80</posY>
                                 <width>800</width>
                                 <height>460</height>
-                                <itemWidth>48</itemWidth>
-                                <itemHeight>48</itemHeight>
-                                <IconYOff>10</IconYOff>
+                                <itemWidth>35</itemWidth>
+                                <itemHeight>35</itemHeight>
+                                <IconXOff>30</IconXOff>
+                                <IconYOff>5</IconYOff>
                                 <spaceBetweenItems>0</spaceBetweenItems>
                                 <textureHeight>50</textureHeight>
                                 <scrollOffset>0</scrollOffset>
+                                <textXOff>60</textXOff>
                                 <textYOff>5</textYOff>
                                 <textXOff2>752</textXOff2>
-                                <textYOff2>25</textYOff2>
+                                <textYOff2>5</textYOff2>
                                 <textXOff3>100</textXOff3>
                                 <textYOff3>29</textYOff3>
-                                <PinIconXOff>1300</PinIconXOff>
-                                <PinIconYOff>1300</PinIconYOff>
+                                <PinIconXOff>0</PinIconXOff>
+                                <PinIconYOff>10</PinIconYOff>
+                                <PinIconWidth>20</PinIconWidth>
+                                <PinIconHeight>20</PinIconHeight>
                                 <font2>mediastream12</font2>
                                 <font3>mediastream12</font3>
                                 <onleft>2</onleft>
@@ -190,7 +208,7 @@
                         <id>13</id>
                         <posX>50</posX>
                         <posY>505</posY>
-                        <font>mediastream12tc</font>
+                        <font>mediastream11tc</font>
                         <label>#TV.Scheduled.Title</label>
                         <textcolor>ffcccccc</textcolor>
                 </control>
@@ -199,29 +217,29 @@
                         <type>label</type>
                         <id>14</id>
                         <posX>50</posX>
-                        <posY>530</posY>
-                        <font>mediastream12tc</font>
+                        <posY>525</posY>
+                        <font>mediastream11tc</font>
                         <label>#TV.Scheduled.Time</label>
                 </control>
                 <control>
                         <description>channel</description>
                         <type>label</type>
                         <id>17</id>
-                        <posX>960</posX>
-                        <posY>193</posY>
+                        <posX>50</posX>
+                        <posY>545</posY>
                         <label>#TV.Scheduled.Channel</label>
                         <font>mediastream12tc</font>
-                        <textcolor>ffcccccc</textcolor>
+                        <textcolor>ff006698</textcolor>
                 </control>
                 <control>
                         <description>Description1</description>
                         <type>textboxscrollup</type>
                         <id>15</id>
                         <posX>50</posX>
-                        <posY>555</posY>
+                        <posY>565</posY>
                         <width>1150</width>
-                        <height>125</height>
-                        <font>mediastream11</font>
+                        <height>120</height>
+                        <font>mediastream12</font>
                         <seperator>----------------------------------------------------------------------------------------------------</seperator>
                         <label>#TV.Scheduled.Description</label>
                 </control>

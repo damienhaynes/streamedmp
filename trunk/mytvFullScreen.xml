@@ -19,6 +19,32 @@
 			<visible>player.forwarding|player.rewinding</visible>
 		</control>
 		<control>
+            <description>Time Background</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>6</posX>
+            <posY>10</posY>
+            <width>132</width>
+            <height>32</height>
+            <texture>clockbackground.png</texture>
+            <animation effect="fade" time="200" delay="100">WindowOpen</animation> 
+			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+        </control>
+        <control>
+            <description>Time</description>
+            <type>label</type>
+            <id>233</id>
+            <posX>47</posX>
+            <posY>12</posY>
+            <width>120</width>
+            <textcolor>ffffffff</textcolor>
+            <font>mediastream12c</font>
+            <label>#time</label>
+            <align>left</align>
+            <animation effect="fade" time="200" delay="100">WindowOpen</animation>
+			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+        </control>
+		<control>
 			<description>background (paused)</description>
 			<type>image</type>
 			<id>0</id>
@@ -169,8 +195,8 @@
 			<id>39</id>
 			<posX>100</posX>
 			<posY>15</posY>
-			<width>58</width>
-			<height>24</height>
+			<width>20</width>
+			<height>20</height>
 			<texture>tvguide_record_button.png</texture>
 		</control>
 		<control>
