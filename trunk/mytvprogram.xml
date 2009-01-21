@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
         <id>748</id>
         <defaultcontrol>2</defaultcontrol>
@@ -27,8 +28,8 @@
                         <description>group element</description>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
-                        <posX>71</posX>
-                        <posY>141</posY>
+                        <posX>40</posX>
+                        <posY>220</posY>
                         <width>280</width>
                         <height>80</height>
                         <control>
@@ -184,36 +185,36 @@
                         <onup>2</onup>
                         <ondown>2</ondown>
                         <!--
-                              <posX>520</posX>
-                              <posY>80</posY>
-                              <width>760</width>
-                              <height>362</height>
-                              <textXOff>88</textXOff>
-                              <textYOff>2</textYOff>
-                              <textXOff2>743</textXOff2>
-                              <textYOff2>36</textYOff2>
-                              <textXOff3>177</textXOff3>
-                              <textYOff3>36</textYOff3>
-                              <IconXOff>21</IconXOff>
-                              <PinIconXOff>110</PinIconXOff>
-                              <PinIconYOff>15</PinIconYOff>
-                              <spinPosX>1031</spinPosX>
-                              <itemWidth>74</itemWidth>
-                              <itemHeight>52</itemHeight>
-                              <textureFocus>album_background_focus.png</textureFocus>
-                              <textureNoFocus>album_background_nofocus.png</textureNoFocus>
-                              <spaceBetweenItems>8</spaceBetweenItems>
-                              <textureHeight>62</textureHeight>
-                              <keepaspectratio>no</keepaspectratio>
-                              <font2>font10</font2>
-                              <font3>font10</font3>
-                              <onleft>2</onleft>
-                              <onright>2</onright>
-                              <onup>2</onup>
-                              <ondown>2</ondown>
-                              <animation effect="fade" time="250">WindowOpen</animation>
-                              <animation effect="fade" time="250">WindowClose</animation>
--->
+						 <posX>520</posX>
+						 <posY>80</posY>
+						 <width>760</width>
+						 <height>362</height>
+						 <textXOff>88</textXOff>
+						 <textYOff>2</textYOff>
+						 <textXOff2>743</textXOff2>
+						 <textYOff2>36</textYOff2>
+						 <textXOff3>177</textXOff3>
+						 <textYOff3>36</textYOff3>
+						 <IconXOff>21</IconXOff>
+						 <PinIconXOff>110</PinIconXOff>
+						 <PinIconYOff>15</PinIconYOff>
+						 <spinPosX>1031</spinPosX>
+						 <itemWidth>74</itemWidth>
+						 <itemHeight>52</itemHeight>
+						 <textureFocus>album_background_focus.png</textureFocus>
+						 <textureNoFocus>album_background_nofocus.png</textureNoFocus>
+						 <spaceBetweenItems>8</spaceBetweenItems>
+						 <textureHeight>62</textureHeight>
+						 <keepaspectratio>no</keepaspectratio>
+						 <font2>font10</font2>
+						 <font3>font10</font3>
+						 <onleft>2</onleft>
+						 <onright>2</onright>
+						 <onup>2</onup>
+						 <ondown>2</ondown>
+						 <animation effect="fade" time="250">WindowOpen</animation>
+						 <animation effect="fade" time="250">WindowClose</animation>
+						 -->
                 </control>
                 <control>
                         <description>Current program title</description>
@@ -221,7 +222,7 @@
                         <id>13</id>
                         <posX>50</posX>
                         <posY>505</posY>
-                        <width>700</width>
+                        <width>400</width>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                 </control>
@@ -267,17 +268,6 @@
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                 </control>
-                <control>
-                        <description>video preview window</description>
-                        <type>videowindow</type>
-                        <id>99</id>
-                        <posX>20</posX>
-                        <posY>590</posY>
-                        <width>200</width>
-                        <height>110</height>
-                        <action>18</action>
-                        <textureFocus>-</textureFocus>
-                        <visible>no</visible>
-                </control>
+                <import>common.overlays.xml</import>
         </controls>
 </window>
