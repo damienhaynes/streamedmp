@@ -13,6 +13,39 @@
                 <import>common.window.default.xml</import>
                 <import>common.time.xml</import>
                 <control>
+                        <description>Top Title Extension Background</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>381</posX>
+                        <posY>11</posY>
+                        <width>286</width>
+                        <height>36</height>
+                        <texture>tvtitlebgshort.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+                </control>
+                <control>
+                        <id>1</id>
+                        <description>Top Title Background</description>
+                        <type>image</type>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>Top Title Extension</description>
+                        <id>2</id>
+                        <posX>647</posX>
+                        <posY>13</posY>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <label>Titel</label>
+                        <animation effect="slide" start="-53,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+               </control>
+                <control>
                         <description>The Lyric area wide</description>
                         <type>textbox</type>
                         <id>21</id>
@@ -218,7 +251,7 @@
                 </control>
                 <control>
                         <description>album info label</description>
-                        <type>label</type>
+                        <type>fadelabel</type>
                         <id>26</id>
                         <posX>908</posX>
                         <posY>86</posY>
