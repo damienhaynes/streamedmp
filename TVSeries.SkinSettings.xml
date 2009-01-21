@@ -33,24 +33,28 @@
 				layout="BigIcons"
 			Episode:
 				layout="List"
-				
-	-->
+			
+		Notes:
+		item1 = <text3> (left aligned)
+		item3 = <text2> (right aligned)
+	-->		
+	
 	<views import="true">		
 		<group layout="List"></group>
-		<series layout="ListPosters">
-			<item1><![CDATA[SeriesIcons]]></item1>
-			<item2><![CDATA[<Series.Pretty_Name>]]></item2>
-			<item3><![CDATA[SeriesEpCount]]></item3>
+		<series layout="ListPosters">			
+			<item1><![CDATA[SeriesWatchedAndUnWatched]]></item1>
+			<item2><![CDATA[<Series.Pretty_Name>]]></item2>			
+			<item3><![CDATA[SeriesTotalEpisodes_1]]></item3>
 		</series>
 		<season layout="List">	
-			<item1><![CDATA[SeasonIcons]]></item1>
-			<item2><![CDATA[Season <Season.SeasonIndex>]]></item2>
-			<item3><![CDATA[SeasonEpCount]]></item3>
+			<item1><![CDATA[SeasonWatchedAndUnWatched]]></item1>
+			<item2><![CDATA[Season <Season.SeasonIndex>]]></item2>		
+			<item3><![CDATA[SeasonTotalEpisodes_1]]></item3>
 		</season>
 		<episode>	
 			<item1><![CDATA[<Episode.FirstAired>]]></item1>
-			<item2><![CDATA[<Episode.EpisodeIndex>: <Episode.LocalEpisodeName>]]></item2>
-			<item3><![CDATA[SPACE]]></item3>
+			<item2><![CDATA[<Episode.EpisodeIndex>: <Episode.LocalEpisodeName>]]></item2>			
+			<item3><![CDATA[SMALLSPACE]]></item3>
 		</episode>
 	</views>
 	<formatting import="true">
@@ -92,12 +96,18 @@
 <Enabled>1<Format>A_AAC<FormatAs>AAC
 <Enabled>1<Format>A_AC3<FormatAs>AC3
 <Enabled>1<Format><Series.RatingPath><FormatAs>TVSeries\starEval(10*Round(<Series.Rating>*2)/2).png
-<Enabled>1<Format>SeriesIcons<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
-<Enabled>1<Format>SeriesEpCount<FormatAs><Series.EpisodeCount> Episodes
-<Enabled>1<Format>SeasonIcons<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
-<Enabled>1<Format>SeasonEpCount<FormatAs><Season.EpisodeCount> Episodes
-<Enabled>1<Format>SPACE<FormatAs> 
-<Enabled>1<Format>SeriesAirsDay<FormatAs><Series.AirsDay>]]>
+<Enabled>1<Format>SeriesUnWatched<FormatAs><Series.EpisodesUnWatched>
+<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
+<Enabled>1<Format>SeriesTotalEpisodes_1<FormatAs><Series.EpisodeCount> Episodes
+<Enabled>1<Format>SeriesTotalEpisodes_2<FormatAs>                    <Series.EpisodeCount> Episodes
+<Enabled>1<Format>SeasonUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))
+<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
+<Enabled>1<Format>SeasonTotalEpisodes_1<FormatAs><Season.EpisodeCount> Episodes
+<Enabled>1<Format>SeasonTotalEpisodes_2<FormatAs>                    <Season.EpisodeCount> Episodes
+<Enabled>1<Format>SMALLSPACE<FormatAs> 
+<Enabled>1<Format>LARGESPACE<FormatAs>                                        
+<Enabled>1<Format>SeriesAirsDay_1<FormatAs><Series.AirsDay>
+<Enabled>1<Format>SeriesAirsDay_2<FormatAs>                        <Series.AirsDay>]]>
 	</formatting>
 	<logos import="true">
 		<![CDATA[skin\StreamedMP\Media\TVSeries\Logos\Misc\SD 43.png;-;<Episode.videoWidth>;-;<;-;960;-;AND;-;<Episode.VideoAspectRatio>;-;<;-;1.5;-;AND;-;<Episode.VideoAspectRatio>;-;>;-;1.2;-;<Restrict:Episode>
