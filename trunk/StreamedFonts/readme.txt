@@ -1,0 +1,1 @@
+Either Large or Default fonts.xml will be installed depending on choice by user in setup
