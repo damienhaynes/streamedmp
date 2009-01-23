@@ -60,8 +60,7 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_my tv series.png</texture>
-      <visible>!Control.IsVisible(1232)</visible>
+      <texture>hover_my tv series.png</texture>      
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     
@@ -76,7 +75,7 @@
       <texture>#TVSeries.Fanart</texture>
       <animation effect="fade" start="0" end="100" time="3000">WindowOpen</animation>
       <animation effect="fade" start="0" end="100" time="200">Visible</animation>
-      <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+      <animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
     </control>
 
     <control>
@@ -88,11 +87,10 @@
       <width>1280</width>
       <height>720</height>
       <texture>#TVSeries.Fanart2</texture>
-      <animation effect="fade" start="0" end="100" time="200">Visible</animation>
-      <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+      <animation effect="fade" start="0" end="100" time="350">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
     </control>
-
-    
+   
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
