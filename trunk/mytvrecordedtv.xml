@@ -44,12 +44,11 @@
                         <type>fadelabel</type>
                         <description>Selected item Label</description>
                         <id>1</id>
-                        <posX>50</posX>
+                        <posX>28</posX>
                         <posY>505</posY>
-                        <width>622</width>
+                        <width>437</width>
                         <label>#selecteditem</label>
-                        <font>mediastream10tc</font>
-                        <align>left</align>
+                        <font>mediastream12tc</font>
                         <visible>false</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -73,7 +72,8 @@
                         </control>
                         <control>
                                 <id>0</id>
-                                <label>VIEW OPTIONS</label>
+                                <description>label SWITCH VIEW</description>
+                                <label>457</label>
                                 <type>label</type>
                                 <font>mediastream12tc</font>
                                 <posX>1040</posX>
@@ -84,11 +84,24 @@
                         </control>
                         <control>
                                 <id>0</id>
-                                <label>SETINGS</label>
+                                <description>label SETTINGS</description>
+                                <label>1048</label>
                                 <type>label</type>
                                 <font>mediastream12tc</font>
                                 <posX>1040</posX>
                                 <posY>337</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <description>label JUMP TO</description>
+                                <label>1065</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>421</posY>
                                 <visible>!Control.HasFocus(50)</visible>
                                 <animation effect="slide" time="100" start="300,0">visible</animation>
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -109,9 +122,7 @@
                                         <description>View-As button</description>
                                         <id>2</id>
                                         <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <onup>17</onup>
-                                        <ondown>3</ondown>
+                                        <onright>50</onright> 
                                         <label>100</label>
 
                                 </control>
@@ -120,7 +131,6 @@
                                         <id>3</id>
                                         <onleft>50</onleft>
                                         <onright>50</onright>
-                                        <onup>2</onup>
                                         <label>620</label>
                                 </control>
                                 <control>
@@ -129,8 +139,6 @@
                                         <id>5</id>
                                         <onleft>50</onleft>
                                         <onright>50</onright>
-                                        <onup>2</onup>
-                                        <ondown>6</ondown>
                                         <label>457</label>
 
                                 </control>
@@ -147,8 +155,6 @@
                                         <id>6</id>
                                         <onleft>50</onleft>
                                         <onright>50</onright>
-                                        <onup>5</onup>
-                                        <ondown>7</ondown>
                                         <label>624</label>
                                 </control>
                                 <control>
@@ -157,10 +163,46 @@
                                         <id>7</id>
                                         <onleft>50</onleft>
                                         <onright>50</onright>
-                                        <onup>6</onup>
-                                        <ondown>99</ondown>
                                         <hyperlink>609</hyperlink>
                                         <label>896</label>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Moving Pictures</description>
+                                        <type>button</type>
+                                        <id>66602</id>
+                                        <label>Moving Pictures</label>
+                                        <hyperlink>96742</hyperlink>
+                                        <visible>plugin.isenabled(Moving Pictures)</visible>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                </control>
+                                <control>
+                                        <description>TV Shows</description>
+                                        <type>button</type>
+                                        <id>66603</id>
+                                        <hyperlink>9811</hyperlink>
+                                        <label>1300</label>
+                                        <visible>plugin.isenabled(MP-TV Series)</visible>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                </control>
+                                <control>
+                                        <description>Trailers</description>
+                                        <type>button</type>
+                                        <id>66604</id>
+                                        <label>5906</label>
+                                        <hyperlink>5900</hyperlink>
+                                        <visible>plugin.isenabled(My Trailers)</visible>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <ondown>2</ondown>
                                 </control>
                         </control>
                 </control>
@@ -262,7 +304,7 @@
                         <posX>28</posX>
                         <posY>240</posY>
                         <width>475</width>
-                        <font>mediastream14tc</font>
+                        <font>mediastream16tc</font>
                         <textcolor>ff909090</textcolor>
                         <label>#TV.RecordedTV.Title</label>
                         <visible>facadeview.largeicons | facadeview.smallicons</visible>
@@ -305,11 +347,11 @@
                         <description>Description1</description>
                         <id>15</id>
                         <posX>28</posX>
-                        <posY>350</posY>
+                        <posY>370</posY>
                         <width>475</width>
-                        <height>310</height>
+                        <height>290</height>
                         <seperator>-----------------------------------------------------------------------------------------------</seperator>
-                        <font>mediastream11</font>
+                        <font>mediastream12</font>
                         <label>#TV.RecordedTV.Description</label>
                         <visible>facadeview.largeicons | facadeview.smallicons</visible>
                 </control>
@@ -335,7 +377,7 @@
                         <textcolor>ff909090</textcolor>
                         <visible>yes</visible>
                 </control>
-                <control>
+                <!--<control>
                         <type>videowindow</type>
                         <description>TV preview window</description>
                         <id>99</id>
@@ -352,7 +394,7 @@
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <visible>no</visible>
-                </control>
+                </control>-->
                 <import>common.facade.recordings.xml</import>
                 <import>common.overlays.xml</import>
         </controls>
