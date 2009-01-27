@@ -3,7 +3,7 @@
   <skin>
     <width>1280</width>
     <height>720</height>
-    <version>1.0.0.0</version>
+    <version>1.0.0.3</version>
   </skin>
   <style Name="leftmenubutton">
     <width>200</width>
@@ -235,9 +235,9 @@
     <textXOff>11</textXOff>
     <textYOff>5</textYOff>
     <textureFocus>hiddenmenu_togglebutton_on.png</textureFocus>
-    <textureNoFocus>-</textureNoFocus>
+    <textureNoFocus>hiddenmenu_togglebutton_nof_on.png</textureNoFocus>
     <AltTextureFocus>hiddenmenu_togglebutton_off.png</AltTextureFocus>
-    <AltTextureNoFocus>-</AltTextureNoFocus>
+    <AltTextureNoFocus>hiddenmenu_togglebutton_nof_off.png</AltTextureNoFocus>
     <label>-</label>
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
@@ -436,44 +436,49 @@
     <description>default up/downlistcontrol</description>
     <type>updownlistcontrol</type>
     <id>10</id>
-    <posX>300</posX>
-    <posY>80</posY>
-    <width>1055</width>
-    <height>560</height>
-    <spinWidth>37</spinWidth>
-    <spinHeight>37</spinHeight>
-    <spinPosX>1278</spinPosX>
-    <spinPosY>550</spinPosY>
+    <posX>620</posX>
+    <posY>240</posY>
+    <height>450</height>
+    <width>660</width>
+    <spinWidth>16</spinWidth>
+    <spinHeight>16</spinHeight>
+    <spinPosX>1249</spinPosX>
+    <spinPosY>692</spinPosY>
     <spinAlign>Right</spinAlign>
-    <spinColor>ffffffff</spinColor>
-    <textureUp>sort_up_nofocus.png</textureUp>
-    <textureDown>sort_down_nofocus.png</textureDown>
-    <textureUpFocus>sort_up_focus.png</textureUpFocus>
-    <textureDownFocus>sort_down_focus.png</textureDownFocus>
-    <textureFocus>recording_background_focus.png</textureFocus>
-    <textureNoFocus>recording_background_nofocus.png</textureNoFocus>
-    <textureHeight>66</textureHeight>
+    <spinColor>ff006698</spinColor>
+    <spinCanFocus>no</spinCanFocus>
+    <textureUp>arrowupnf.png</textureUp>
+    <textureDown>arrowdownnf.png</textureDown>
+    <textureUpFocus>arrowupfo.png</textureUpFocus>
+    <textureDownFocus>arrowdownfo.png</textureDownFocus>
+    <textureFocus>listbg_fo.png</textureFocus>
+    <textureNoFocus>listbg_nf.png</textureNoFocus>
+    <textureHeight>44</textureHeight>
     <image>folder_focus.png</image>
-    <font>font12</font>
+    <font>mediastream12</font>
     <shadedColor>20ffffff</shadedColor>
-    <selectedColor>ffEB9E17</selectedColor>
+    <selectedColor>80000000</selectedColor>
     <textcolor>ffffffff</textcolor>
     <textcolor2>ffffffff</textcolor2>
     <textcolor3>ffffffff</textcolor3>
     <colordiffuse>ffffffff</colordiffuse>
     <remoteColor>ffFFA075</remoteColor>
     <downloadColor>ff80ff80</downloadColor>
-    <textXOff>10</textXOff>
-    <textYOff>2</textYOff>
-    <textXOff2>1035</textXOff2>
-    <textYOff2>25</textYOff2>
-    <IconXOff>8</IconXOff>
-    <IconYOff>8</IconYOff>
+    <textXOff>50</textXOff>
+    <textYOff>5</textYOff>
+    <textXOff2>650</textXOff2>
+    <textYOff2>4</textYOff2>
+    <IconXOff>3</IconXOff>
+    <IconYOff>2</IconYOff>
+    <PinIconWidth>48</PinIconWidth>
+    <PinIconHeight>20</PinIconHeight>
+    <PinIconXOff>47</PinIconXOff>
+    <PinIconYOff>13</PinIconYOff>
     <suffix>|</suffix>
-    <itemWidth>43</itemWidth>
-    <itemHeight>43</itemHeight>
+    <itemWidth>40</itemWidth>
+    <itemHeight>40</itemHeight>
     <spaceBetweenItems>0</spaceBetweenItems>
-    <keepaspectratio>no</keepaspectratio>
+    <keepaspectratio>yes</keepaspectratio>
     <folderPrefix />
     <folderSuffix />
   </control>
