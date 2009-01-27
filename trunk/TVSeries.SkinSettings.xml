@@ -39,7 +39,7 @@
 		item3 = <text2> (right aligned)
 	-->		
 	
-	<views import="true">		
+	<views import="true"  AppendlmageToList="false">		
 		<group layout="List"></group>
 		<series layout="ListPosters">			
 			<item1><![CDATA[SeriesWatchedAndUnWatched]]></item1>
@@ -129,5 +129,14 @@ skin\StreamedMP\Media\TVSeries\Logos\Misc\DTS 51.png;-;<Episode.AudioCodec>;-;=;
 skin\StreamedMP\Media\TVSeries\Logos\Misc\FLAC 51.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\TVSeries\Logos\Misc\MP3 20.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;<Restrict:Episode>
 skin\StreamedMP\Media\TVSeries\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;]]>
-	</logos>	
+	</logos>
+	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
+	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
+	<!-- Should use highest of both Default/Fanart tvseries xmls , the settings below are configured for best quality, any higher will result in a drop in performance -->
+	<graphicsquality import="true">
+		<seriesbanners>55</seriesbanners> <!-- 400/758*100 -->
+		<seriesposters>20</seriesposters> <!-- 120/680*100 -->
+		<seasonbanners>75</seasonbanners> <!-- N/A No Thumb View supported-->
+		<episodethumbs>90</episodethumbs> <!-- 354/400*100 -->
+	</graphicsquality>
 </settings>
