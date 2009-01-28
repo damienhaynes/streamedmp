@@ -132,11 +132,11 @@ skin\StreamedMP\Media\TVSeries\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubt
 	</logos>
 	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
 	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
-	<!-- Should use highest of both Default/Fanart tvseries xmls , the settings below are configured for best quality, any higher will result in a drop in performance -->
+	<!-- Should use highest of both Default/Fanart tvseries xmls , the settings below are configured for best quality, any higher will result in a drop in performance with no visual benefit-->
 	<graphicsquality import="true">
 		<seriesbanners>55</seriesbanners> <!-- 400/758*100 -->
 		<seriesposters>20</seriesposters> <!-- 120/680*100 -->
-		<seasonbanners>75</seasonbanners> <!-- N/A No Thumb View supported-->
+		<seasonbanners>30</seasonbanners> <!-- N/A No Thumb View supported, use Filmstrip as a template 120/400*100 this may be added later-->
 		<episodethumbs>90</episodethumbs> <!-- 354/400*100 -->
 	</graphicsquality>
 </settings>
