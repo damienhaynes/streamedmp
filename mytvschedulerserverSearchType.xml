@@ -11,22 +11,100 @@
                 <import>common.window.tv.xml</import>
                 <import>common.time.xml</import>
                 <control>
+                        <description>right overlay</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>1052</posX>
+                        <posY>0</posY>
+                        <width>235</width>
+                        <height>720</height>
+                        <texture>homerightoverlay.png</texture>
+                </control>
+                <control>
+                        <description>Top Title Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Top Title</description>
+                        <id>0</id>
+                        <posX>493</posX>
+                        <posY>13</posY>
+                        <width>350</width>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <visible>yes</visible>
+                        <label>#header.label</label>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>954</posX>
+                        <posY>0</posY>
+                        <width>326</width>
+                        <height>720</height>
+                        <texture>hiddenmenu_right.png</texture>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                </control>
+                <control>
+                        <id>0</id>
+                        <description>label RECORDINGS OPTIONS</description>
+                        <label>6007</label>
+                        <type>label</type>
+                        <font>mediastream12tc</font>
+                        <posX>990</posX>
+                        <posY>225</posY>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                </control>
+                <control>
+                        <id>0</id>
+                        <label>137</label>
+                        <type>label</type>
+                        <font>mediastream12tc</font>
+                        <posX>990</posX>
+                        <posY>307</posY>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                </control>
+                <control>
+                        <id>0</id>
+                        <label>1065</label>
+                        <type>label</type>
+                        <font>mediastream12tc</font>
+                        <posX>990</posX>
+                        <posY>422</posY>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                </control>
+                
+                <control>
                         <type>group</type>
                         <description>group element</description>
-                        <posX>40</posX>
-                        <posY>220</posY>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                        <posX>990</posX>
+                        <posY>250</posY>
+                        <width>270</width>
+                        <height>720</height>
                         <layout>StackLayout</layout>
                         <control>
                                 <description>Quick Record</description>
                                 <type>button</type>
                                 <id>2</id>
                                 <label>781</label>
-                                <onup>17</onup>
                                 <ondown>3</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <onleft>99</onleft>
+                                <width>270</width>
                         </control>
                         <control>
                                 <description>Advanced record</description>
@@ -34,35 +112,26 @@
                                 <id>3</id>
                                 <label>782</label>
                                 <onup>2</onup>
-                                <ondown>6</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <ondown>7</ondown>
+                                <onleft>99</onleft>
+                                <width>270</width>
                         </control>
                         <control>
-                                <description>TvGuide</description>
+                                <description>Empty button</description>
                                 <type>button</type>
-                                <id>6</id>
-                                <label>4</label>
-                                <onup>3</onup>
-                                <ondown>7</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <id>0</id>
+                                <label>-</label>
+                                <visible>false</visible>
                         </control>
                         <control>
                                 <description>Search by title</description>
                                 <type>button</type>
                                 <id>7</id>
                                 <label>6032</label>
-                                <onup>6</onup>
+                                <onup>3</onup>
                                 <ondown>8</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <onleft>99</onleft>
+                                <width>270</width>
                         </control>
                         <control>
                                 <description>Search by keyword</description>
@@ -71,24 +140,37 @@
                                 <label>6033</label>
                                 <onup>7</onup>
                                 <ondown>9</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <onleft>99</onleft>
+                                <width>270</width>
                         </control>
                         <control>
                                 <description>Search by genre</description>
                                 <type>button</type>
                                 <id>9</id>
-                                <font>font13</font>
                                 <label>6034</label>
                                 <onup>8</onup>
-                                <ondown>10</ondown>
-                                <onright>99</onright>
-                                <textureFocus>tv_buttonfocus.png</textureFocus>
-                                <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-                                <font>mediastream10tc</font>
+                                <ondown>6</ondown>
+                                <onleft>99</onleft>
+                                <width>270</width>
+                        </control>
+                        <control>
+                                <description>Empty button</description>
+                                <type>button</type>
+                                <id>0</id>
+                                <label>-</label>
+                                <visible>false</visible>
+                        </control>
+                        <control>
+                                <description>TvGuide</description>
+                                <type>button</type>
+                                <id>6</id>
+                                <label>4</label>
+                                <onup>9</onup>
+                                <ondown>2</ondown>
+                                <onleft>99</onleft>
+                                <width>270</width>
                         </control>
                 </control>
+                <import>common.overlays2.xml</import>
         </controls>
 </window>
