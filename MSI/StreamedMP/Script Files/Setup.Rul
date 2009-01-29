@@ -119,7 +119,6 @@ prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
 prototype VOID		UninstallCleanup();       
-prototype NUMBER	SetDefaultSkin(STRING);   
 prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
 prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRING);
 prototype VOID		CleanVirtualStoreDir();
@@ -128,6 +127,7 @@ prototype NUMBER	SetXMLProperty(STRING,STRING,STRING);
 prototype VOID		TVSeriesIcons(BOOL);
 prototype VOID		TVSeriesImageStyle(BOOL);    
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
+prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -1147,11 +1147,17 @@ begin
 		TVSeriesImageStyle(g_bShowUnWatchedOnlyInListImage);
 	endif;
 	
+	// Set Default Skin
 	if g_bSetAsDefaultSkin then
-		SetDefaultSkin(SKIN_NAME);
+		SetMPXMLProperty("skin","name",SKIN_NAME);
 	else
-		SetDefaultSkin(DEFAULT_SKIN);		
-	endif;
+		SetMPXMLProperty("skin","name",DEFAULT_SKIN);		
+	endif;             
+	
+	// Enable Animations & Transistions, this is required for skin 
+	// Dont need to worry about 1st time installs of mediaportal with XML
+	// as this is setting is enabled by default for MediaPortal
+	SetMPXMLProperty("general","animations","yes");
 	
 end;             
 
@@ -1351,14 +1357,15 @@ begin
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
-    // Finially set default skin back to Blue3wide
-    SetDefaultSkin(DEFAULT_SKIN);
+    // Finially set default skin back to Blue3wide    
+    SetMPXMLProperty("skin","name",DEFAULT_SKIN);
+    
     
 end; 
 
-function NUMBER SetDefaultSkin(sSkin)
+function NUMBER SetMPXMLProperty(sSectionAttribute,sEntryAttribute, sValue)
 	STRING sFile, sNode, svString;
-	OBJECT oXMLdoc, oNodeListRoot, oNodeListSkin;
+	OBJECT oXMLdoc, oNodeListRoot, oNodeListElements;
 	INT i, j;
 begin
    	
@@ -1379,22 +1386,21 @@ begin
 	    set oNodeListRoot = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
 	    
 	    // Traverse all section elements in xml until 
-	    // we reach the the configuraton for the skin    
+	    // we reach the the required configuration section    
 	    for i=0 to oNodeListRoot.length - 1
 		
-			if oNodeListRoot(i).Attributes(0).Text = "skin" then                
-                // retrieve the list of configurable elements for the skin
-                // we only need the 'name'
-            	set oNodeListSkin = oNodeListRoot(i).childNodes;
+			if oNodeListRoot(i).Attributes(0).Text = sSectionAttribute then                
+                // retrieve the list of configurable elements for the section
+            	set oNodeListElements = oNodeListRoot(i).childNodes;
             
-            	for j = 0 to oNodeListSkin.length - 1
+            	for j = 0 to oNodeListElements.length - 1
                     
                     // we are only interested in the 'entry' elements
-	                if oNodeListSkin(j).baseName = "entry" then
-	                
-	                    if oNodeListSkin(j).Attributes(0).Text = "name" then
-	                		// set the default skin
-	                        oNodeListSkin(j).Text = sSkin;	                       
+	                if oNodeListElements(j).baseName = "entry" then
+	                    
+	                    if oNodeListElements(j).Attributes(0).Text = sEntryAttribute then
+	                		// set the MediaPortal property
+	                        oNodeListElements(j).Text = sValue;	                       
 	                    endif;
                 
                 	endif;	                               
@@ -1411,7 +1417,7 @@ begin
 	    // release objects used
 	    set oXMLdoc = NOTHING;
 	    set oNodeListRoot = NOTHING;
-	    set oNodeListSkin = NOTHING;	    	    
+	    set oNodeListElements = NOTHING;	    	    
 	    
 	catch                  
 		
@@ -1422,7 +1428,7 @@ begin
     Enable(LOGGING);         
     return 0;
     
-end; 
+end;
 
 function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
 	OBJECT oXMLdoc, oNode; 
