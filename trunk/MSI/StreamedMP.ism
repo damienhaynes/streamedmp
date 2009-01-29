@@ -325,6 +325,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>AllOtherFiles</td><td>{EACE1F49-C161-4939-A9BD-F08BFD4C86E4}</td><td>TVLOGOSDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MEDIAPORTAL1</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBody</td><td>{9EA046A9-057C-4709-A693-48E897DABE22}</td><td>FontsFolder</td><td>24</td><td/><td>default.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -602,6 +603,7 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISRegistryComponent</td></row>
+		<row><td>TVLOGOSDIR</td><td>AllOtherFiles</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -706,6 +708,7 @@
 		<row><td>TEAM_MEDIAPORTAL</td><td>ProgramFilesFolder</td><td>TEAM-M~1|Team-MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL1</td><td>ProgramFilesFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL2</td><td>CommonAppDataFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
+		<row><td>TVLOGOSDIR</td><td>TARGETDIR</td><td>TVLOGO~1|TVLOGOSDIR</td><td/><td>0</td><td/></row>
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
@@ -1428,6 +1431,7 @@
 		<row><td>TVSeries</td><td>pluginMediaInfoDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
+		<row><td>fonts</td><td>AllOtherFiles</td></row>
 		<row><td>fonts</td><td>fontsFluidBody</td></row>
 		<row><td>fonts</td><td>fontsFluidBodyCaps</td></row>
 		<row><td>fonts</td><td>fontsFluidTitleCaps</td></row>
@@ -1710,6 +1714,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>AllOtherFiles</td><td/><td/><td>_F4E0B538_9AAB_4DA8_8ADC_FAE7376A8F07_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBody</td><td/><td/><td>_AC0D793F_2670_49FC_803D_5C94EB482EDD_FILTER</td><td/><td/><td/><td/></row>
@@ -3690,6 +3695,8 @@
 		<row><td>ID_STRING6</td><td>1033</td><td>http://forum.team-mediaportal.com/streamedmp-301/</td><td>0</td><td/><td>907806336</td></row>
 		<row><td>ID_STRING60</td><td>1033</td><td>TV Series SingleImage</td><td>0</td><td/><td>-1600281551</td></row>
 		<row><td>ID_STRING61</td><td>1033</td><td>TV Series SingleImage for Watched / Unwatched states</td><td>0</td><td/><td>-1600265167</td></row>
+		<row><td>ID_STRING62</td><td>1033</td><td>Global Search</td><td>0</td><td/><td>-1331856629</td></row>
+		<row><td>ID_STRING63</td><td>1033</td><td>This plugin allows you to search through your complete music library (including lyrics if available) and provides functionality to control what you want to do with the search results.</td><td>0</td><td/><td>-1331827925</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING9</td><td>1033</td><td>TEAMME~1|Team MediaPortal</td><td>0</td><td/><td>-1919133586</td></row>
