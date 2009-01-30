@@ -1,269 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<id>602</id>
-	<defaultcontrol>13</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<define>#percentage:#TV.View.Percentage</define>
-	<define>#currentremaining:#TV.View.stop</define>
-	<define>#currentplaytime:#TV.View.start</define>
-	<controls>
-		<control>
-			<description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>2000</posX>
-			<posY>2000</posY>
-			<width>10</width>
-			<height>10</height>
-			<texture>-</texture>
-			<visible>player.forwarding|player.rewinding</visible>
-		</control>
-		<control>
-            <description>Time Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>6</posX>
-            <posY>10</posY>
-            <width>132</width>
-            <height>32</height>
-            <texture>clockbackground.png</texture>
-            <animation effect="fade" time="200" delay="100">WindowOpen</animation> 
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-        </control>
-        <control>
-            <description>Time</description>
-            <type>label</type>
-            <id>233</id>
-            <posX>47</posX>
-            <posY>12</posY>
-            <width>120</width>
-            <textcolor>ffffffff</textcolor>
-            <font>mediastream12c</font>
-            <label>#time</label>
-            <align>left</align>
-            <animation effect="fade" time="200" delay="100">WindowOpen</animation>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-        </control>
-		<control>
-			<description>background (paused)</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>503</posY>
-			<width>1280</width>
-			<height>217</height>
-			<texture>osdbackground.png</texture>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<import>common.progressbar.xml</import>
-		<control>
-			<description>TV Progress Bar</description>
-			<type>tvprogress</type>
-			<id>100</id>
-			<posX>205</posX>
-			<posY>683</posY>
-			<width>882</width>
-			<toptexture>osd_progress_indicatortv.png</toptexture>
-			<TextureOffsetY>16</TextureOffsetY>
-			<bottomtexture>-</bottomtexture>
-			<texturetick>-</texturetick>
-			<lefttexture>-</lefttexture>
-			<midtexture>-</midtexture>
-			<righttexture>-</righttexture>
-			<logotexture>-</logotexture>
-			<fillbackgroundtexture>-</fillbackgroundtexture>
-			<fillbgxoff>-</fillbgxoff>
-			<fillbgyoff>-</fillbgyoff>
-			<filltexture1>-</filltexture1>
-			<filltexture2>-</filltexture2>
-			<filltexture3>-</filltexture3>
-			<fillheight>0</fillheight>
-			<label>#TV.Record.percent1</label>
-			<label1>#TV.Record.percent2</label1>
-			<label2>#TV.Record.percent3</label2>
-			<font>mediastream10c</font>
-			<textcolor>ff888888</textcolor>
-		</control>
-		<control>
-			<description>TV Logo background</description>
-			<type>image</type>
-			<posX>6</posX>
-			<posY>470</posY>
-			<width>170</width>
-			<height>170</height>
-			<texture>imagebg.png</texture>
-			<keepaspectratio>no</keepaspectratio>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<control>
-			<description>TV Logo</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>16</posX>
-			<posY>480</posY>
-			<width>150</width>
-			<height>150</height>
-			<texture>#TV.View.thumb</texture>
-			<keepaspectratio>yes</keepaspectratio>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="500">WindowOpen</animation>
-		</control>
-		<control>
-			<description>Date</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>1255</posX>
-			<posY>533</posY>
-			<label>#date</label>
-			<align>right</align>
-			<font>mediastream10</font>
-			<textcolor>ff888888</textcolor>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<control>
-			<description>Channel Name</description>
-			<id>14</id>
-			<type>label</type>
-			<width>474</width>
-			<height>25</height>
-			<posX>195</posX>
-			<posY>535</posY>
-			<font>mediastream16tc</font>
-			<label>#TV.View.channel</label>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<control>
-			<description>On tv NOW</description>
-			<id>36</id>
-			<type>textbox</type>
-			<width>474</width>
-			<height>25</height>
-			<posX>195</posX>
-			<posY>565</posY>
-			<label>#TV.View.title</label>
-			<font>mediastream12tc</font>
-			<textcolor>ff888888</textcolor>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<control>
-			<description>On tv NEXT</description>
-			<type>textbox</type>
-			<width>474</width>
-			<height>24</height>
-			<posX>195</posX>
-			<posY>663</posY>
-			<label>#TV.Next.title</label>
-			<font>mediastream11tc</font>
-			<textcolor>ff888888</textcolor>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-		<control>
-			<description>Plot</description>
-			<type>textboxscrollup</type>
-			<id>38</id>
-			<posX>230</posX>
-			<posY>590</posY>
-			<width>820</width>
-			<height>72</height>
-			<seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
-			<label>#TV.View.description</label>
-			<font>mediastream12</font>
-			<visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-			<animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-		</control>
-
-		<control>
-			<description>pause image</description>
-			<type>image</type>
-			<id>16</id>
-			<posX>1187</posX>
-			<posY>12</posY>
-			<width>81</width>
-			<height>30</height>
-			<visible>no</visible>
-			<texture>-</texture>
-		</control>
-		<control>
-			<description>rec logo</description>
-			<type>image</type>
-			<id>39</id>
-			<posX>100</posX>
-			<posY>15</posY>
-			<width>20</width>
-			<height>20</height>
-			<texture>tvguide_record_button.png</texture>
-		</control>
-		<control>
-			<description>MSGBox</description>
-			<type>button</type>
-			<id>2</id>
-			<posX>0</posX>
-			<posY>462</posY>
-			<width>1280</width>
-			<height>225</height>
-			<label>-</label>
-			<textureFocus>bar_hor.png</textureFocus>
-			<textureNoFocus>bar_hor.png</textureNoFocus>
-		</control>
-		<control>
-			<description>MSGBox label 1</description>
-			<type>label</type>
-			<id>3</id>
-			<posX>88</posX>
-			<posY>475</posY>
-			<width>1155</width>
-			<label>-</label>
-			<align>left</align>
-			<font>mediastream28tc</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<visible>yes</visible>
-		</control>
-		<control>
-			<description>MSGBox label 2</description>
-			<type>label</type>
-			<id>4</id>
-			<posX>88</posX>
-			<posY>525</posY>
-			<width>1155</width>
-			<label>-</label>
-			<align>left</align>
-			<font>mediastream28tc</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<visible>yes</visible>
-		</control>
-		<control>
-			<description>MSGBox label 3</description>
-			<type>label</type>
-			<id>5</id>
-			<posX>88</posX>
-			<posY>575</posY>
-			<width>1155</width>
-			<label>-</label>
-			<align>left</align>
-			<font>mediastream28tc</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<visible>yes</visible>
-		</control>
-		<control>
-			<description>MSGBox label 4</description>
-			<type>label</type>
-			<id>6</id>
-			<posX>88</posX>
-			<posY>625</posY>
-			<width>1155</width>
-			<label>-</label>
-			<align>left</align>
-			<font>mediastream28tc</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<visible>yes</visible>
-		</control>
-		<import>common.play.fullscreen.xml</import>
-		<import>common.player.xml</import>
-	</controls>
+        <id>602</id>
+        <defaultcontrol>13</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <define>#percentage:#TV.View.Percentage</define>
+        <define>#currentremaining:#TV.View.stop</define>
+        <define>#currentplaytime:#TV.View.start</define>
+        <controls>
+                <control>
+                        <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>2000</posX>
+                        <posY>2000</posY>
+                        <width>10</width>
+                        <height>10</height>
+                        <texture>-</texture>
+                        <visible>player.forwarding|player.rewinding</visible>
+                </control>
+                <control>
+                        <description>background (paused)</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>503</posY>
+                        <width>1280</width>
+                        <height>217</height>
+                        <texture>osdbackground.png</texture>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <import>common.progressbar.xml</import>
+                <control>
+                        <description>TV Progress Bar</description>
+                        <type>tvprogress</type>
+                        <id>100</id>
+                        <posX>205</posX>
+                        <posY>683</posY>
+                        <width>882</width>
+                        <toptexture>osd_progress_indicatortv.png</toptexture>
+                        <TextureOffsetY>16</TextureOffsetY>
+                        <bottomtexture>-</bottomtexture>
+                        <texturetick>-</texturetick>
+                        <lefttexture>-</lefttexture>
+                        <midtexture>-</midtexture>
+                        <righttexture>-</righttexture>
+                        <logotexture>-</logotexture>
+                        <fillbackgroundtexture>-</fillbackgroundtexture>
+                        <fillbgxoff>-</fillbgxoff>
+                        <fillbgyoff>-</fillbgyoff>
+                        <filltexture1>-</filltexture1>
+                        <filltexture2>-</filltexture2>
+                        <filltexture3>-</filltexture3>
+                        <fillheight>0</fillheight>
+                        <label>#TV.Record.percent1</label>
+                        <label1>#TV.Record.percent2</label1>
+                        <label2>#TV.Record.percent3</label2>
+                        <font>mediastream10c</font>
+                        <textcolor>ff888888</textcolor>
+                </control>
+                <control>
+                        <description>TV Logo background</description>
+                        <type>image</type>
+                        <posX>6</posX>
+                        <posY>470</posY>
+                        <width>170</width>
+                        <height>170</height>
+                        <texture>imagebg.png</texture>
+                        <keepaspectratio>no</keepaspectratio>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>TV Logo</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>16</posX>
+                        <posY>480</posY>
+                        <width>150</width>
+                        <height>150</height>
+                        <texture>#TV.View.thumb</texture>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="500">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>Date</description>
+                        <type>label</type>
+                        <id>1</id>
+                        <posX>1255</posX>
+                        <posY>533</posY>
+                        <label>#date</label>
+                        <align>right</align>
+                        <font>mediastream10</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>Channel Name</description>
+                        <id>14</id>
+                        <type>label</type>
+                        <width>474</width>
+                        <height>25</height>
+                        <posX>195</posX>
+                        <posY>535</posY>
+                        <font>mediastream16tc</font>
+                        <label>#TV.View.channel</label>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>On tv NOW</description>
+                        <id>36</id>
+                        <type>textbox</type>
+                        <width>474</width>
+                        <height>25</height>
+                        <posX>195</posX>
+                        <posY>563</posY>
+                        <label>#TV.View.title</label>
+                        <font>mediastream14tc</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>On tv NEXT</description>
+                        <type>textbox</type>
+                        <width>474</width>
+                        <height>24</height>
+                        <posX>195</posX>
+                        <posY>663</posY>
+                        <label>#TV.Next.title</label>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>Plot</description>
+                        <type>textboxscrollup</type>
+                        <id>38</id>
+                        <posX>230</posX>
+                        <posY>590</posY>
+                        <width>820</width>
+                        <height>72</height>
+                        <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
+                        <label>#TV.View.description</label>
+                        <font>mediastream12</font>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
+                        <description>pause image</description>
+                        <type>image</type>
+                        <id>16</id>
+                        <posX>58</posX>
+                        <posY>650</posY>
+                        <width>60</width>
+                        <height>60</height>>
+                        <visible>no</visible>
+                        <texture>osdpausefo.png</texture>
+                </control>
+                <control>
+                        <description>MSGBox</description>
+                        <type>button</type>
+                        <id>2</id>
+                        <posX>0</posX>
+                        <posY>462</posY>
+                        <width>1280</width>
+                        <height>225</height>
+                        <label>-</label>
+                        <textureFocus>bar_hor.png</textureFocus>
+                        <textureNoFocus>bar_hor.png</textureNoFocus>
+                </control>
+                <control>
+                        <description>MSGBox label 1</description>
+                        <type>label</type>
+                        <id>3</id>
+                        <posX>88</posX>
+                        <posY>475</posY>
+                        <width>1155</width>
+                        <label>-</label>
+                        <align>left</align>
+                        <font>mediastream28tc</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <visible>yes</visible>
+                </control>
+                <control>
+                        <description>MSGBox label 2</description>
+                        <type>label</type>
+                        <id>4</id>
+                        <posX>88</posX>
+                        <posY>525</posY>
+                        <width>1155</width>
+                        <label>-</label>
+                        <align>left</align>
+                        <font>mediastream28tc</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <visible>yes</visible>
+                </control>
+                <control>
+                        <description>MSGBox label 3</description>
+                        <type>label</type>
+                        <id>5</id>
+                        <posX>88</posX>
+                        <posY>575</posY>
+                        <width>1155</width>
+                        <label>-</label>
+                        <align>left</align>
+                        <font>mediastream28tc</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <visible>yes</visible>
+                </control>
+                <control>
+                        <description>MSGBox label 4</description>
+                        <type>label</type>
+                        <id>6</id>
+                        <posX>88</posX>
+                        <posY>625</posY>
+                        <width>1155</width>
+                        <label>-</label>
+                        <align>left</align>
+                        <font>mediastream28tc</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <visible>yes</visible>
+                </control>
+                <control>
+                        <description>rec logo</description>
+                        <type>image</type>
+                        <id>39</id>
+                        <posX>100</posX>
+                        <posY>15</posY>
+                        <width>20</width>
+                        <height>20</height>
+                        <texture>tvguide_record_button.png</texture>
+                </control>
+                <import>common.play.fullscreen.xml</import>
+                <import>common.player.xml</import>
+        </controls>
 </window>

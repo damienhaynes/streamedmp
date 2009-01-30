@@ -2,9 +2,37 @@
 <window>
         <controls>
                 <control>
-                        <description>Progress Bar</description>
+                        <description>Progress Bar ID</description>
                         <type>progress</type>
                         <id>1</id>
+                        <posX>1281</posX>
+                        <posY>721</posY>
+                        <width>918</width>
+                        <label>-</label>
+                        <visible>no</visible>
+                </control>   
+                <control>
+                        <description>Start Time Info ID</description>
+                        <type>label</type>
+                        <id>101</id>
+                        <posX>1281</posX>
+                        <posY>721</posY>
+                        <label>-</label>
+                        <visible>no</visible>
+                </control>
+                <control>
+                        <description>End Time Info ID</description>
+                        <type>label</type>
+                        <id>102</id>
+                        <posX>1281</posX>
+                        <posY>721</posY>
+                        <label>-</label>
+                        <visible>no</visible>
+                </control>
+                <control>
+                        <description>Progress Bar</description>
+                        <type>progress</type>
+                        <id>0</id>
                         <posX>187</posX>
                         <posY>683</posY>
                         <width>918</width>
@@ -14,24 +42,24 @@
                 <control>
                         <description>Start Time Info</description>
                         <type>label</type>
-                        <id>101</id>
+                        <id>0</id>
                         <posX>195</posX>
                         <posY>695</posY>
                         <label>#currentplaytime</label>
                         <align>left</align>
-                        <font>mediastream10c</font>
+                        <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
                         <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
                 </control>
                 <control>
                         <description>End Time Info</description>
                         <type>label</type>
-                        <id>102</id>
+                        <id>0</id>
                         <posX>1093</posX>
                         <posY>695</posY>
                         <label>#currentremaining</label>
                         <align>right</align>
-                        <font>mediastream10c</font>
+                        <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
                         <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
                 </control>

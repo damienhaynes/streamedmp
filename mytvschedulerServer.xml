@@ -21,17 +21,6 @@
                         <visible>false</visible>
                 </control>
                 <control>
-                        <description>Top Title Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>77</posX>
-                        <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                </control>
-                <control>
                         <type>actiongroup</type>
                         <description>action menu</description>
                         <onexit>10</onexit>
@@ -156,6 +145,10 @@
                 <control>
                         <type>group</type>
                         <description>group element</description>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                         <control>
                                 <description>scheduler recordings listcontrol</description>
                                 <type>listcontrol</type>
@@ -207,6 +200,10 @@
                         <font>mediastream16tc</font>
                         <textcolor>ff909090</textcolor>
                         <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <type>fadelabel</type>
@@ -221,6 +218,8 @@
                         <textcolor>ff909090</textcolor>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Current program title</description>
@@ -235,6 +234,8 @@
                         <visible>false</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Current program time</description>
@@ -244,6 +245,10 @@
                         <posY>302</posY>
                         <font>mediastream12tc</font>
                         <label>#TV.Scheduled.Time</label>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Description1</description>
@@ -256,6 +261,10 @@
                         <font>mediastream12</font>
                         <seperator>----------------------------------------------------------------------------------------------------</seperator>
                         <label>#TV.Scheduled.Description</label>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Number of Files Label</description>
@@ -278,7 +287,10 @@
                         <width>159</width>
                         <height>30</height>
                         <texture>mediacountbackground.png</texture>
-                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Media Count Label</description>
@@ -286,9 +298,13 @@
                         <label>PAGE:</label>
                         <id>0</id>
                         <posX>1123</posX>
-                        <posY>688</posY>
-                        <font>mediastream10tc</font>
+                        <posY>686</posY>
+                        <font>mediastream12tc</font>
                         <textcolor>ff909090</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <!--<control>
                         <type>videowindow</type>

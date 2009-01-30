@@ -39,6 +39,8 @@
                         <height>35</height>
                         <texture>tvtitlebg.png</texture>
                         <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+                        <animation effect="fade" time="150">WindowClose</animation>
                 </control>
                 <control>
                         <id>1</id>
@@ -52,6 +54,8 @@
                         <visible>yes</visible>
                         <label>#header.label</label>
                         <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+                        <animation effect="fade" time="150">WindowClose</animation>
                 </control>
         </controls>
 </window>
