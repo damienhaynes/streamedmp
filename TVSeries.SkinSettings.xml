@@ -44,7 +44,7 @@
 		<series layout="ListPosters">			
 			<item1><![CDATA[SeriesWatchedAndUnWatched]]></item1>
 			<item2><![CDATA[<Series.Pretty_Name>]]></item2>			
-			<item3><![CDATA[SeriesTotalEpisodes_1]]></item3>
+			<item3><![CDATA[SMALLSPACE]]></item3>
 		</series>
 		<season layout="List">	
 			<item1><![CDATA[SeasonWatchedAndUnWatched]]></item1>
@@ -132,11 +132,11 @@ skin\StreamedMP\Media\TVSeries\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubt
 	</logos>
 	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
 	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
-	<!-- Should use highest of both Default/Fanart tvseries xmls , the settings below are configured for best quality, any higher will result in a drop in performance with no visual benefit-->
+	<!-- Should use highest of both Default/Fanart tvseries xmls (let setup handle this), the settings below are for optimal performance without too much loss to visual quality -->
 	<graphicsquality import="true">
-		<seriesbanners>55</seriesbanners> <!-- 400/758*100 -->
-		<seriesposters>20</seriesposters> <!-- 120/680*100 -->
-		<seasonbanners>30</seasonbanners> <!-- N/A No Thumb View supported, use Filmstrip as a template 120/400*100 this may be added later-->
-		<episodethumbs>90</episodethumbs> <!-- 354/400*100 -->
+		<seriesbanners>60</seriesbanners>
+		<seriesposters>20</seriesposters> <!-- 20% for Default, 35% for Fanart style-->
+		<seasonbanners>75</seasonbanners>
+		<episodethumbs>90</episodethumbs>
 	</graphicsquality>
 </settings>
