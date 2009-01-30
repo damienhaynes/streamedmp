@@ -25,28 +25,54 @@
                         <visible>no</visible>
                 </control>
                 <control>
+                        <description>Time Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>6</posX>
+                        <posY>10</posY>
+                        <width>132</width>
+                        <height>32</height>
+                        <texture>clockbackground.png</texture>
+                        <animation effect="fade" time="200" delay="100">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                </control>
+                <control>
+                        <description>Time</description>
+                        <type>label</type>
+                        <id>233</id>
+                        <posX>47</posX>
+                        <posY>12</posY>
+                        <width>120</width>
+                        <textcolor>ffffffff</textcolor>
+                        <font>mediastream12c</font>
+                        <label>#time</label>
+                        <align>left</align>
+                        <animation effect="fade" time="200" delay="100">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                </control>
+                <control>
                         <description>row 1 label</description>
                         <type>label</type>
                         <id>10</id>
                         <posX>0</posX>
-                        <posY>700</posY>
+                        <posY>695</posY>
                         <width>1280</width>
                         <height>25</height>
                         <align>center</align>
                         <visible>no</visible>
                         <label>-</label>
-                        <font>mediastream10tc</font>
+                        <font>mediastream12tc</font>
                 </control>
                 <control>
                         <description>row 2 label</description>
                         <type>label</type>
                         <id>11</id>
                         <posX>0</posX>
-                        <posY>700</posY>
+                        <posY>695</posY>
                         <width>1280</width>
                         <height>25</height>
                         <label>-</label>
-                        <font>mediastream10tc</font>
+                        <font>mediastream12tc</font>
                         <visible>no</visible>
                 </control>
                 <control>
@@ -54,13 +80,13 @@
                         <type>label</type>
                         <id>12</id>
                         <posX>0</posX>
-                        <posY>700</posY>
+                        <posY>695</posY>
                         <width>1280</width>
                         <height>25</height>
                         <align>center</align>
                         <visible>no</visible>
                         <label>-</label>
-                        <font>mediastream10tc</font>
+                        <font>mediastream12tc</font>
                 </control>
         </controls>
 </window>

@@ -10,17 +10,6 @@
                 <import>common.window.tv.xml</import>
                 <import>common.time.xml</import>
                 <control>
-                        <description>Top Title Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>77</posX>
-                        <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                </control>
-                <control>
                         <description>Number of Files Label</description>
                         <type>label</type>
                         <id>12</id>
@@ -129,6 +118,10 @@
                 <control>
                         <type>group</type>
                         <description>group element</description>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                         <control>
                                 <description>listcontrol</description>
                                 <type>listcontrol</type>
@@ -310,20 +303,18 @@
                         <width>169</width>
                         <height>30</height>
                         <texture>mediacountbackground.png</texture>
-                        <visible>yes</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <description>Media Count Label</description>
                         <type>label</type>
-                        <label>PAGES:</label>
+                        <label>PAGE:</label>
                         <id>0</id>
                         <posX>1113</posX>
                         <posY>686</posY>
                         <font>mediastream12tc</font>
                         <textcolor>ff909090</textcolor>
-                        <visible>yes</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                 </control>

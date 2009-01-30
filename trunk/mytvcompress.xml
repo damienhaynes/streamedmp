@@ -1,213 +1,345 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>612</id>
-  <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.label:652</define>
-  <define>#selecteditem:896</define>
-  <define>#header.image:-</define>
-  <define>#header.hover:hover_my tv.png</define>
-  <controls>
-    <import>common.window.tv.xml</import>
-    <import>common.time.xml</import>
-    <control>
-      <description>Number of Files Label</description>
-      <type>label</type>
-      <id>12</id>
-      <posX>493</posX>
-      <posY>546</posY>
-      <label>#itemcount</label>
-      <align>left</align>
-      <textcolor>FFFFFFFF</textcolor>
-      <visible>no</visible>
-    </control>
-    <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    <control>
-      <type>image</type>
-      <id>1</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>290</width>
-      <height>768</height>
-      <texture>menu_slide_background.png</texture>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-    </control>
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
-      <layout>StackLayout</layout>
-      <control>
-        <description>View-As button</description>
-        <type>button</type>
-        <id>2</id>
-        <label>100</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>17</onup>
-        <ondown>3</ondown>
-      </control>
-      <control>
-        <type>sortbutton</type>
-        <id>3</id>
-        <label>620</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>5</ondown>
-      </control>
-      <control>
-        <description>Select all button</description>
-        <type>button</type>
-        <id>5</id>
-        <label>188</label>
-        <onleft>6</onleft>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>6</ondown>
-      </control>
-      <control>
-        <description>Select None button</description>
-        <type>button</type>
-        <id>6</id>
-        <label>805</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>5</onup>
-        <ondown>7</ondown>
-      </control>
-      <control>
-        <description>OK button</description>
-        <type>button</type>
-        <id>7</id>
-        <label>186</label>
-        <onleft>2</onleft>
-        <onright>10</onright>
-        <onup>6</onup>
-        <ondown>99</ondown>
-      </control>
-    </control>
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <control>
-        <description>scheduler recordings listcontrol</description>
-        <type>checklistcontrol</type>
-        <id>10</id>
-        <width>1055</width>
-        <height>560</height>
-        <spinPosY>550</spinPosY>
-        <textXOff>10</textXOff>
-        <textYOff>2</textYOff>
-        <textXOff2>1035</textXOff2>
-        <textYOff2>25</textYOff2>
-        <textXOff3>100</textXOff3>
-        <textYOff3>29</textYOff3>
-        <PinIconXOff>62</PinIconXOff>
-        <PinIconYOff>27</PinIconYOff>
-        <IconXOff>8</IconXOff>
-        <IconYOff>8</IconYOff>
-        <itemWidth>43</itemWidth>
-        <itemHeight>43</itemHeight>
-        <textureFocus>recording_background_focus.png</textureFocus>
-        <textureNoFocus>recording_background_nofocus.png</textureNoFocus>
-        <spaceBetweenItems>0</spaceBetweenItems>
-        <textureHeight>66</textureHeight>
-        <keepaspectratio>no</keepaspectratio>
-        <font2>font10</font2>
-        <font3>font10</font3>
-        <onleft>2</onleft>
-        <onright>11</onright>
-        <onup>2</onup>
-        <ondown>2</ondown>
-      </control>
-      <control>
-        <description>listcontrol</description>
-        <type>listcontrol</type>
-        <id>11</id>
-        <onleft>10</onleft>
-        <onright>2</onright>
-        <onup>2</onup>
-        <ondown>2</ondown>
-      </control>
-      <control>
-        <type>fadelabel</type>
-        <description>Current program title</description>
-        <id>13</id>
-        <posX>310</posX>
-        <posY>590</posY>
-        <width>600</width>
-        <label>#TV.RecordedTV.Title</label>
-        <font>font13</font>
-      </control>
-      <control>
-        <type>label</type>
-        <description>Current program time</description>
-        <id>14</id>
-        <posX>310</posX>
-        <posY>620</posY>
-        <label>#TV.RecordedTV.Time</label>
-        <font>font13</font>
-        <textcolor>ff808080</textcolor>
-        <visible>false</visible>
-      </control>
-      <control>
-        <type>textboxscrollup</type>
-        <description>Description1</description>
-        <id>15</id>
-        <posX>310</posX>
-        <posY>650</posY>
-        <width>650</width>
-        <height>94</height>
-        <label>#TV.RecordedTV.Description</label>
-        <font>font12</font>
-      </control>
-      <control>
-        <description>genre</description>
-        <type>label</type>
-        <id>17</id>
-        <posX>1346</posX>
-        <posY>620</posY>
-        <label>#TV.RecordedTV.Genre</label>
-        <align>right</align>
-        <font>font13</font>
-        <textcolor>ff808080</textcolor>
-      </control>
-    </control>
-    <control>
-      <type>image</type>
-      <id>98</id>
-      <posX>17</posX>
-      <posY>615</posY>
-      <width>180</width>
-      <height>113</height>
-      <texture>video_overlay_background.png</texture>
-    </control>
-    <control>
-      <description>video preview window</description>
-      <type>videowindow</type>
-      <id>99</id>
-      <posX>25</posX>
-      <posY>623</posY>
-      <width>160</width>
-      <height>90</height>
-      <action>18</action>
-      <onup>5</onup>
-      <textureFocus>tv_green_border.png</textureFocus>
-    </control>
-  </controls>
+        <id>612</id>
+        <defaultcontrol>2</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <define>#header.label:652</define>
+        <define>#selecteditem:896</define>
+        <define>#header.image:-</define>
+        <define>#header.hover:hover_my tv.png</define>
+        <controls>
+                <import>common.window.tv.xml</import>
+                <import>common.time.xml</import>
+                <control>
+                        <description>Number of Files Label</description>
+                        <type>label</type>
+                        <id>12</id>
+                        <posX>493</posX>
+                        <posY>546</posY>
+                        <label>#itemcount</label>
+                        <align>left</align>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <visible>no</visible>
+                </control>
+                <control>
+                        <description>Top Title Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>actiongroup</type>
+                        <description>action menu</description>
+                        <onexit>10</onexit>
+                        <dimColor>00ffffff</dimColor>
+                        <control>
+                                <type>image</type>
+                                <posX>1002</posX>
+                                <posY>0</posY>
+                                <width>278</width>
+                                <height>720</height>
+                                <texture>hiddenmenu_right.png</texture>
+                                <visible>!Control.HasFocus(10)+!Control.HasFocus(11)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <description>label SWITCH VIEW</description>
+                                <label>457</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>225</posY>
+                                <visible>!Control.HasFocus(10)+!Control.HasFocus(11)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <type>group</type>
+                                <description>group element</description>
+                                <visible>!Control.HasFocus(10)+!Control.HasFocus(11)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posX>1040</posX>
+                                <posY>250</posY>
+                                <width>220</width>
+                                <height>720</height>
+                                <layout>StackLayout</layout>
+                                <control>
+                                        <description>View-As button</description>
+                                        <type>button</type>
+                                        <id>2</id>
+                                        <label>100</label>
+                                        <onleft>10</onleft>
+                                        <onright>11</onright>
+                                </control>
+                                <control>
+                                        <type>sortbutton</type>
+                                        <id>3</id>
+                                        <label>620</label>
+                                        <onleft>10</onleft>
+                                        <onright>11</onright>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Select all button</description>
+                                        <type>button</type>
+                                        <id>5</id>
+                                        <label>188</label>
+                                        <onleft>10</onleft>
+                                        <onright>11</onright>
+                                </control>
+                                <control>
+                                        <description>Select None button</description>
+                                        <type>button</type>
+                                        <id>6</id>
+                                        <label>805</label>
+                                        <onleft>10</onleft>
+                                        <onright>11</onright>
+                                </control>
+                                <control>
+                                        <description>OK button</description>
+                                        <type>button</type>
+                                        <id>7</id>
+                                        <label>186</label>
+                                        <onleft>10</onleft>
+                                        <onright>11</onright>
+                                        <ondown>2</ondown>
+                                </control>
+                        </control>
+                </control>
+                <!--<control>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>290</width>
+                        <height>768</height>
+                        <texture>menu_slide_background.png</texture>
+                        <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+                        <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>group</type>
+                        <description>group element</description>
+                        <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+                        <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+                        <posX>20</posX>
+                        <posY>80</posY>
+                        <layout>StackLayout</layout>
+                        <control>
+                                <description>View-As button</description>
+                                <type>button</type>
+                                <id>2</id>
+                                <label>100</label>
+                                <onleft>2</onleft>
+                                <onright>10</onright>
+                                <onup>17</onup>
+                                <ondown>3</ondown>
+                        </control>
+                        <control>
+                                <type>sortbutton</type>
+                                <id>3</id>
+                                <label>620</label>
+                                <onleft>2</onleft>
+                                <onright>10</onright>
+                                <onup>2</onup>
+                                <ondown>5</ondown>
+                        </control>
+                        <control>
+                                <description>Select all button</description>
+                                <type>button</type>
+                                <id>5</id>
+                                <label>188</label>
+                                <onleft>6</onleft>
+                                <onright>10</onright>
+                                <onup>2</onup>
+                                <ondown>6</ondown>
+                        </control>
+                        <control>
+                                <description>Select None button</description>
+                                <type>button</type>
+                                <id>6</id>
+                                <label>805</label>
+                                <onleft>2</onleft>
+                                <onright>10</onright>
+                                <onup>5</onup>
+                                <ondown>7</ondown>
+                        </control>
+                        <control>
+                                <description>OK button</description>
+                                <type>button</type>
+                                <id>7</id>
+                                <label>186</label>
+                                <onleft>2</onleft>
+                                <onright>10</onright>
+                                <onup>6</onup>
+                                <ondown>99</ondown>
+                        </control>
+                </control>-->
+                <control>
+                        <type>group</type>
+                        <description>group element</description>
+                        <control>
+                                <description>scheduler recordings listcontrol</description>
+                                <type>checklistcontrol</type>
+                                <id>10</id>
+                                <posX>620</posX>
+                                <posY>240</posY>
+                                <height>450</height>
+                                <width>660</width>
+                                <spinPosY>550</spinPosY>
+                                <textXOff>10</textXOff>
+                                <textYOff>2</textYOff>
+                                <textXOff2>1035</textXOff2>
+                                <textYOff2>25</textYOff2>
+                                <textXOff3>100</textXOff3>
+                                <textYOff3>29</textYOff3>
+                                <PinIconXOff>62</PinIconXOff>
+                                <PinIconYOff>27</PinIconYOff>
+                                <IconXOff>8</IconXOff>
+                                <IconYOff>8</IconYOff>
+                                <itemWidth>43</itemWidth>
+                                <itemHeight>43</itemHeight>
+                                <textureFocus>recording_background_focus.png</textureFocus>
+                                <textureNoFocus>recording_background_nofocus.png</textureNoFocus>
+                                <spaceBetweenItems>0</spaceBetweenItems>
+                                <textureHeight>66</textureHeight>
+                                <keepaspectratio>yes</keepaspectratio>
+                                <font2>font10</font2>
+                                <font3>font10</font3>
+                                <onleft>2</onleft>
+                                <onright>11</onright>
+                                <onup>2</onup>
+                                <ondown>2</ondown>
+                        </control>
+                        <control>
+                                <description>listcontrol</description>
+                                <type>listcontrol</type>
+                                <id>11</id>
+                                <description>listcontrol</description>
+                                <type>listcontrol</type>
+                                <id>10</id>
+                                <posX>620</posX>
+                                <posY>240</posY>
+                                <height>450</height>
+                                <width>660</width>
+                                <scrollOffset>2</scrollOffset>
+                                <PinIconWidth>20</PinIconWidth>
+                                <PinIconHeight>20</PinIconHeight>
+                                <PinIconXOff>72</PinIconXOff>
+                                <PinIconYOff>22</PinIconYOff>
+                                <itemWidth>60</itemWidth>
+                                <itemHeight>60</itemHeight>
+                                <IconXOff>5</IconXOff>
+                                <IconYOff>2</IconYOff>
+                                <textXOff>50</textXOff>
+                                <textXOff2>650</textXOff2>
+                                <textYOff2>37</textYOff2>
+                                <textureHeight>64</textureHeight>
+                                <font2>mediastream10c</font2>
+                                <keepaspectratio>yes</keepaspectratio>
+                                <unfocusedAlpha>0xFF</unfocusedAlpha>
+                                <spinPosX>1249</spinPosX>
+                                <spinPosY>691</spinPosY>
+                                <spinAlign>Right</spinAlign>
+                                <onleft>99</onleft>
+                                <onright>2</onright>
+                                <suffix>|</suffix>
+                        </control>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Current program title</description>
+                        <id>13</id>
+                        <posX>28</posX>
+                        <posY>273</posY>
+                        <width>570</width>
+                        <font>mediastream14tc</font>
+                        <label>#TV.RecordedTV.Title</label>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>Current program time</description>
+                        <id>14</id>
+                        <posX>28</posX>
+                        <posY>302</posY>
+                        <font>mediastream12tc</font>
+                        <label>#TV.RecordedTV.Time</label>
+                        <visible>false</visible>
+                </control>
+                <control>
+                        <description>Genre Label</description>
+                        <type>label</type>
+                        <label>GENERE : </label>
+                        <id>0</id>
+                        <posX>28</posX>
+                        <posY>331</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff006698</textcolor>
+                        <visible>Control.isvisible(14)</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>genre</description>
+                        <id>17</id>
+                        <posX>130</posX>
+                        <posY>330</posY>
+                        <width>468</width>
+                        <font>mediastream12c</font>
+                        <label>#TV.RecordedTV.Genre</label>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <type>textboxscrollup</type>
+                        <description>Description1</description>
+                        <id>15</id>
+                        <posX>28</posX>
+                        <posY>370</posY>
+                        <width>570</width>
+                        <height>260</height>
+                        <seperator>-----------------------------------------------------------------------------------------------</seperator>
+                        <font>mediastream12</font>
+                        <label>#TV.RecordedTV.Description</label>
+                </control>
+                <control>
+                        <type>image</type>
+                        <id>98</id>
+                        <posX>17</posX>
+                        <posY>615</posY>
+                        <width>180</width>
+                        <height>113</height>
+                        <texture>-</texture>
+                        <visible>false</visible>
+                </control>
+
+                <!--<control>
+                      <description>video preview window</description>
+                      <type>videowindow</type>
+                      <id>99</id>
+                      <posX>25</posX>
+                      <posY>623</posY>
+                      <width>160</width>
+                      <height>90</height>
+                      <action>18</action>
+                      <onup>5</onup>
+                      <textureFocus>-</textureFocus>
+                    </control>-->
+                <import>common.overlays2.xml</import>
+        </controls>
 </window>

@@ -4,6 +4,10 @@
                 <control>
                         <description>group element</description>
                         <type>group</type>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                         <control>
                                 <description>composite control consisting of a list control and a thumbnail panel</description>
                                 <type>facadeview</type>
@@ -108,9 +112,9 @@
                                         <thumbPosYBig>5</thumbPosYBig>
                                         <zoomXPixels>0</zoomXPixels>
                                         <zoomYPixels>0</zoomYPixels>
-                                        <thumbZoom>yes</thumbZoom>
+                                        <thumbZoom>no</thumbZoom>
                                         <enableFocusZoom>yes</enableFocusZoom>
-                                        <keepaspectratio>no</keepaspectratio>
+                                        <keepaspectratio>yes</keepaspectratio>
                                         <hideUnfocusTexture>no</hideUnfocusTexture>
                                         <renderFocusText>yes</renderFocusText>
                                         <renderUnfocusText>yes</renderUnfocusText>
@@ -120,10 +124,11 @@
                                         <spinPosY>691</spinPosY>
                                         <spinAlign>Right</spinAlign>
                                         <spinColor>ff006698</spinColor>
+                                        <font>mediastream10c</font>
                                         <textureUp>-</textureUp>
                                         <textureDown>-</textureDown>
                                         <textureUpFocus>-</textureUpFocus>
-                                        <textureDownFocus>-</textureDownFocus>                               
+                                        <textureDownFocus>-</textureDownFocus>
                                 </control>
                         </control>
                 </control>

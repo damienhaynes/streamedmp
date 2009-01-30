@@ -155,32 +155,18 @@
                         <texture>osd2x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
                 </control>
-
-               <control>
-                        <description>skip steps</description>
-                        <type>label</type>
-                        <id>15</id>
-                        <posX>0</posX>
-                        <posY>700</posY>
-                        <width>1280</width>
-                        <height>25</height>
-                        <label>-</label>
-                        <font>mediastream10tc</font>
-                        <visible>no</visible>
-                        <align>center</align>
-                </control>
                 <control>
                         <description>pause label</description>
                         <type>label</type>
                         <id>16</id>
                         <posX>0</posX>
-                        <posY>700</posY>
+                        <posY>695</posY>
                         <width>1280</width>
                         <height>25</height>
                         <align>center</align>
                         <visible>no</visible>
                         <label>paused</label>
-                        <font>mediastream10tc</font>
+                        <font>mediastream12tc</font>
                         <colordiffuse>White</colordiffuse>
                         <visible>player.paused</visible>
                 </control>

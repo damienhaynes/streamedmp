@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
         <id>748</id>
-        <defaultcontrol>2</defaultcontrol>
+        <defaultcontrol>10</defaultcontrol>
         <allowoverlay>yes</allowoverlay>
         <define>#header.label:1037</define>
         <define>#header.hover:-</define>
@@ -10,15 +10,33 @@
                 <import>common.window.tv.xml</import>
                 <import>common.time.xml</import>
                 <control>
-                        <description>Top Title Background</description>
+                        <description>Top Title Extension Background</description>
                         <type>image</type>
-                        <id>0</id>
-                        <posX>77</posX>
+                        <id>1</id>
+                        <posX>381</posX>
                         <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                        <width>686</width>
+                        <height>36</height>
+                        <texture>tvtitlebgshort.png</texture>
+                        <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                        <animation effect="fade" time="300" delay="0">WindowClose</animation>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>upcoming episodes label</description>
+                        <type>label</type>
+                        <id>11</id>
+                        <posX>1027</posX>
+                        <posY>13</posY>
+                        <align>right</align>
+                        <label>1041</label>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                        <animation effect="fade" time="230" delay="0">WindowClose</animation>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
                 </control>
                 <control>
                         <type>actiongroup</type>
@@ -127,18 +145,6 @@
                         </control>
                 </control>
                 <control>
-                        <description>upcoming episodes label</description>
-                        <type>label</type>
-                        <id>11</id>
-                        <posX>1300</posX>
-                        <posY>35</posY>
-                        <label>1041</label>
-                        <font>font13</font>
-                        <textcolor>FFB2D4F5</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
                         <description>upcoming episodes listcontrol</description>
                         <type>listcontrol</type>
                         <id>10</id>
@@ -168,6 +174,10 @@
                         <onleft>99</onleft>
                         <onright>2</onright>
                         <suffix>|</suffix>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Current program channel</description>
@@ -180,6 +190,8 @@
                         <textcolor>ff909090</textcolor>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
 
                 <control>
@@ -192,6 +204,8 @@
                         <font>mediastream14tc</font>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Current program time</description>
@@ -202,6 +216,8 @@
                         <font>mediastream12tc</font>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Genre Label</description>
@@ -215,6 +231,8 @@
                         <visible>Control.isvisible(14)</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>genre</description>
@@ -226,6 +244,8 @@
                         <font>mediastream12c</font>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Description1</description>
@@ -240,6 +260,8 @@
                         <label>#TV.RecordedTV.Description</label>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Media Count Background</description>
@@ -252,7 +274,9 @@
                         <texture>mediacountbackground.png</texture>
                         <visible>yes</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation> 
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Media Count Label</description>
@@ -266,6 +290,8 @@
                         <visible>yes</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <import>common.overlays.xml</import>
         </controls>
