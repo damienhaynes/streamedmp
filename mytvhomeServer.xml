@@ -423,7 +423,7 @@
                         <label>#TV.View.description</label>
                         <font>font14</font>
                         <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" end="1300,0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Current Channel Thumb</description>
@@ -435,7 +435,7 @@
                         <height>150</height>
                         <texture flipY="true" diffuse="diffusemirrorwide.png">#TV.View.thumb</texture>
                         <keepaspectratio>yes</keepaspectratio>
-                        <animation effect="rotatey" start="49" end="0" center="15,0" time="200" reversible="false">WindowOpen</animation>
+                        <animation effect="slide" start="0,-50" tween="bounce" time="700" delay="100">WindowOpen</animation>
                         <animation effect="rotatey" start="0" end="-131" center="15,0" time="500" reversible="false">WindowClose</animation>
                 </control>
                 <control>
