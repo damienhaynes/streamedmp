@@ -93,6 +93,7 @@
 
 #define RES_COMBO_FONTS					1401 
 #define RES_CHECK_SKINDEFAULT			1402
+#define RES_CHECK_USEBASICHOME			1405
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -128,6 +129,7 @@ prototype VOID		TVSeriesIcons(BOOL);
 prototype VOID		TVSeriesImageStyle(BOOL);    
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
+prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -142,7 +144,8 @@ BOOL g_bSetAsDefaultSkin;
 BOOL g_bShowTotalEpisodeCount;
 BOOL g_bShowArtworkIcons;
 BOOL g_bShowIconsInListView;   
-BOOL g_bShowUnWatchedOnlyInListImage;
+BOOL g_bShowUnWatchedOnlyInListImage; 
+BOOL g_bStartBasicHome;
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -278,6 +281,15 @@ begin
 	if svValue = "1" then
 		g_bShowUnWatchedOnlyInListImage = TRUE;			
 	endif;
+	
+	// Get Start With Basic Home property
+	if GetMPXMLProperty("general","startbasichome", svValue) < 0 then
+		g_bStartBasicHome = FALSE;
+	else
+		if svValue = "yes" then
+			g_bStartBasicHome = TRUE;
+		endif;
+	endif;	
 		
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
 	
@@ -536,7 +548,7 @@ begin
 	bOpt2  = FALSE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
 	szOption1 = "&Launch Home Page in default Browser";
-	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) then
+	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) && g_bStartBasicHome then
 		szOption2 = "Launch &Streamed MP Basic Home Editor";
 	endif;
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
@@ -1007,6 +1019,10 @@ Dlg_Wait:
  				if g_bSetAsDefaultSkin then
  					CtrlSetState(szDialogName,RES_CHECK_SKINDEFAULT,BUTTON_CHECKED);
  				endif;
+ 				
+ 				if g_bStartBasicHome then
+ 					CtrlSetState(szDialogName,RES_CHECK_USEBASICHOME,BUTTON_CHECKED);
+ 				endif;
  				 				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -1040,6 +1056,12 @@ Dlg_Wait:
 	else
 		g_bSetAsDefaultSkin = FALSE;
 	endif;  
+	
+	if (CtrlGetState(szDialogName,RES_CHECK_USEBASICHOME) = BUTTON_CHECKED) then
+		g_bStartBasicHome = TRUE;
+	else
+		g_bStartBasicHome = FALSE;
+	endif;  	
 		
 	// Set Features
 	if (g_sTVGuideSize = "8") then
@@ -1168,7 +1190,14 @@ begin
 	// Enable Animations & Transistions, this is required for skin 
 	// Dont need to worry about 1st time installs of mediaportal with XML
 	// as this is setting is enabled by default for MediaPortal
-	SetMPXMLProperty("general","animations","yes");	
+	SetMPXMLProperty("general","animations","yes");
+	
+	// Start with Basic Home or Standard Home
+	if g_bStartBasicHome then
+		SetMPXMLProperty("general","startbasichome","yes");
+	else
+		SetMPXMLProperty("general","startbasichome","no");
+	endif;
 	
 end;             
 
@@ -1412,6 +1441,73 @@ begin
 	                    if oNodeListElements(j).Attributes(0).Text = sEntryAttribute then
 	                		// set the MediaPortal property
 	                        oNodeListElements(j).Text = sValue;	                       
+	                    endif;
+                
+                	endif;	                               
+                	
+            	endfor;	       
+            	
+	        endif;
+		
+		endfor;   		    
+	    
+	    // save the xml	    
+	    oXMLdoc.Save (sFile);
+	    
+	    // release objects used
+	    set oXMLdoc = NOTHING;
+	    set oNodeListRoot = NOTHING;
+	    set oNodeListElements = NOTHING;	    	    
+	    
+	catch                  
+		
+	    return -1;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return 0;
+    
+end;
+
+function NUMBER GetMPXMLProperty(sSectionAttribute, sEntryAttribute, sValue)
+	STRING sFile, sNode, svString;
+	OBJECT oXMLdoc, oNodeListRoot, oNodeListElements;
+	INT i, j;
+begin
+   	
+   	sFile = MEDIAPORTAL_CONFIG_FILE;        	 
+    Disable(LOGGING);
+    
+    try
+	    // Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);
+		
+		sNode = "/profile/section";	    
+	    set oNodeListRoot = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
+	    
+	    // Traverse all section elements in xml until 
+	    // we reach the the required configuration section    
+	    for i=0 to oNodeListRoot.length - 1
+		
+			if oNodeListRoot(i).Attributes(0).Text = sSectionAttribute then                
+                // retrieve the list of configurable elements for the section
+            	set oNodeListElements = oNodeListRoot(i).childNodes;
+            
+            	for j = 0 to oNodeListElements.length - 1
+                    
+                    // we are only interested in the 'entry' elements
+	                if oNodeListElements(j).baseName = "entry" then
+	                    
+	                    if oNodeListElements(j).Attributes(0).Text = sEntryAttribute then
+	                		// Get the MediaPortal property
+	                        sValue = oNodeListElements(j).Text;	                       
 	                    endif;
                 
                 	endif;	                               
