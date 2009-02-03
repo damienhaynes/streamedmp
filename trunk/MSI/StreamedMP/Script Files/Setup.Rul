@@ -130,6 +130,7 @@ prototype VOID		TVSeriesImageStyle(BOOL);
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
 prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
+prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -309,7 +310,11 @@ begin
     // Get Properties for MajorUpgrade
     // Returns the GUID in svMajorUpgrade of previous install             
  	MsiGetProperty(ISMSI_HANDLE,"MAJORUPGRADE_01",sMajorUpgradeGUID,nvBufferSize);
- 			
+ 	if StrLength(sMajorUpgradeGUID) = 0 then
+ 		return FALSE;
+ 	endif;
+ 	
+ 	// Check if there is any versions we dont want to support upgrades on		
 	if sMajorUpgradeGUID = "{7A7760CC-256A-4ECD-BE3F-E7644FAD5DA8}" then
 		
 		sMajorUpgradeVersion = "0.1.167";
@@ -326,20 +331,38 @@ begin
 		bUpgradeSupported = TRUE;		
 		return TRUE;
 	
-	elseif sMajorUpgradeGUID = "{F7D803B1-6557-4B12-A4B1-CE42A00E3F21}" then
-		sMajorUpgradeVersion = "0.3.270";
-		bUpgradeSupported = TRUE;		
-		return TRUE;
-	
-	elseif sMajorUpgradeGUID = "{8B0A35A2-9FE4-4A64-A5BC-2D58AACD6709}" then
-		sMajorUpgradeVersion = "0.4.298";
-		bUpgradeSupported = TRUE;		
-		return TRUE;
-	
-		
+	else
+		// Return the previous product version if GUID matches
+	 	bUpgradeSupported = GetInstalledVersion(sMajorUpgradeGUID,sMajorUpgradeVersion);
+		return bUpgradeSupported;
+			
 	endif;   
 		
  	return FALSE;
+end;
+
+function BOOL GetInstalledVersion(sGUID, sMajorUpgradeVersion)
+	NUMBER nvType, nvSize;
+	STRING svValue;
+begin
+    
+    RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+        
+    if RegDBKeyExist(STREAMEDMP_REG_KEY) < 0 then
+    	return FALSE;
+    endif;
+    
+    if RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"PRODUCTGUID",nvType,svValue,nvSize) < 0 then
+    	return FALSE;
+    else
+        if svValue != sGUID then
+        	return FALSE;
+        endif;
+        
+        RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"VERSION",nvType,sMajorUpgradeVersion,nvSize)        	;
+    endif;
+    
+    return TRUE;
 end;
     
 //---------------------------------------------------------------------------
@@ -1517,10 +1540,7 @@ begin
 	        endif;
 		
 		endfor;   		    
-	    
-	    // save the xml	    
-	    oXMLdoc.Save (sFile);
-	    
+	    	    
 	    // release objects used
 	    set oXMLdoc = NOTHING;
 	    set oNodeListRoot = NOTHING;
