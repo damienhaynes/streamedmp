@@ -235,25 +235,25 @@
       <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
+      <posX>15</posX>
       <posY>330</posY>
-      <width>185</width>
-      <height>314</height>
+      <width>206</width>
+      <height>298</height>
       <texture>defaultdvdcover.png</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
-      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+      <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
       <description>Cover Art</description>
       <type>image</type>
       <id>46</id>
-      <posX>20</posX>
+      <posX>10</posX>
       <posY>330</posY>
-      <width>185</width>
-      <height>314</height>
+      <width>206</width>
+      <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesBanner</texture>
       <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
-      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+      <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
       <description>Season Banner</description>
