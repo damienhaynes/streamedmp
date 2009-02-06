@@ -37,14 +37,22 @@
       <texture>dialogbottom.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
     </control>
-    
+	<control>
+      <type>image</type>
+      <id>100</id>
+      <posX>405</posX>
+      <posY>350</posY>
+      <width>472</width>
+      <height>12</height>
+      <texture>osdprogressback.png</texture>
+    </control>	
     <control>
       <description>progress control</description>
       <type>progress</type>
       <id>20</id>
-      <posX>574</posX>
+      <posX>390</posX>
       <posY>350</posY>
-      <width>472</width>
+      <width>490</width>
       <height>12</height>
       <texturebg>-</texturebg>
       <lefttexture>osdprogressleft.png</lefttexture>
