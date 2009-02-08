@@ -65,11 +65,11 @@
 #define MEDIAPORTAL_CONFIG_FILE				CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.0" 		// 1.0 Base
+#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.21527" 	// 1.0.1 SVN
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.0.3308.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.6.5.418"
+#define TVSERIES_MIN_VERSION			"2.1.3321.0"
+#define MOVINGPICTURES_MIN_VERSION		"0.7.0.485"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -252,7 +252,7 @@ begin
 	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", svValue) < 0) then
 		g_bShowTotalEpisodeCount = TRUE;
 	else
-		if svValue = "SeriesTotalEpisodes_1" || svValue = "SeriesTotalEpisodes_2" then
+		if svValue = "SeriesTotalEpisodes_1" || svValue = "SeriesTotalEpisodes_2" || svValue = "SeriesEpCount" then
 			g_bShowTotalEpisodeCount = TRUE;	
 		endif;
 	endif;
@@ -262,7 +262,7 @@ begin
 	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", svValue) < 0) then
 		g_bShowIconsInListView = TRUE;
 	else
-		if svValue = "SeriesWatchedAndUnWatched" || svValue = "SeriesUnWatched" then
+		if svValue = "SeriesWatchedAndUnWatched" || svValue = "SeriesUnWatched" || svValue = "SeriesIcons" then
 			g_bShowIconsInListView = TRUE;		
 		endif;
 	endif;		
