@@ -23,41 +23,12 @@
                         <type>image</type>
                         <id>0</id>
                         <posX>0</posX>
-                        <posY>503</posY>
+                        <posY>523</posY>
                         <width>1280</width>
-                        <height>217</height>
-                        <texture>osdbackground.png</texture>
+                        <height>197</height>
+                        <texture>osdbackground1.png</texture>
                         <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
                         <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
-                </control>
-                <import>common.progressbar.xml</import>
-                <control>
-                        <description>TV Progress Bar</description>
-                        <type>tvprogress</type>
-                        <id>100</id>
-                        <posX>205</posX>
-                        <posY>683</posY>
-                        <width>882</width>
-                        <toptexture>osd_progress_indicatortv.png</toptexture>
-                        <TextureOffsetY>16</TextureOffsetY>
-                        <bottomtexture>-</bottomtexture>
-                        <texturetick>-</texturetick>
-                        <lefttexture>-</lefttexture>
-                        <midtexture>-</midtexture>
-                        <righttexture>-</righttexture>
-                        <logotexture>-</logotexture>
-                        <fillbackgroundtexture>-</fillbackgroundtexture>
-                        <fillbgxoff>-</fillbgxoff>
-                        <fillbgyoff>-</fillbgyoff>
-                        <filltexture1>-</filltexture1>
-                        <filltexture2>-</filltexture2>
-                        <filltexture3>-</filltexture3>
-                        <fillheight>0</fillheight>
-                        <label>#TV.Record.percent1</label>
-                        <label1>#TV.Record.percent2</label1>
-                        <label2>#TV.Record.percent3</label2>
-                        <font>mediastream10c</font>
-                        <textcolor>ff888888</textcolor>
                 </control>
                 <control>
                         <description>TV Logo background</description>
@@ -125,12 +96,26 @@
                         <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
                 </control>
                 <control>
+                        <description>Plot</description>
+                        <type>textboxscrollup</type>
+                        <id>38</id>
+                        <posX>230</posX>
+                        <posY>590</posY>
+                        <width>820</width>
+                        <height>59</height>
+                        <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
+                        <label>#TV.View.description</label>
+                        <font>mediastream12</font>
+                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
+                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                </control>
+                <control>
                         <description>On tv NEXT</description>
                         <type>textbox</type>
                         <width>474</width>
                         <height>24</height>
                         <posX>195</posX>
-                        <posY>663</posY>
+                        <posY>650</posY>
                         <label>#TV.Next.title</label>
                         <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
@@ -138,19 +123,84 @@
                         <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
                 </control>
                 <control>
-                        <description>Plot</description>
-                        <type>textboxscrollup</type>
-                        <id>38</id>
-                        <posX>230</posX>
-                        <posY>590</posY>
-                        <width>820</width>
-                        <height>72</height>
-                        <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
-                        <label>#TV.View.description</label>
-                        <font>mediastream12</font>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <description>Progress Bar Background</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>190</posX>
+                        <posY>676</posY>
+                        <width>912</width>
+                        <height>20</height>
+                        <texture>osdprogressback.png</texture>
+                        <keepaspectratio>no</keepaspectratio>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
                 </control>
+                <control>
+                        <description>Progress Bar</description>
+                        <type>progress</type>
+                        <id>1</id>
+                        <posX>183</posX>
+                        <posY>676</posY>
+                        <width>928</width>
+                        <height>20</height>
+                        <lefttexture>osdprogressleft_e.png</lefttexture>
+                        <midtexture>osdprogressmid_e.png</midtexture>
+                        <righttexture>-</righttexture>
+                        <label>#TV.Record.percent1</label>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>
+                <control>
+                        <description>TV Progress Bar</description>
+                        <type>tvprogress</type>
+                        <id>101</id>
+                        <posX>183</posX>
+                        <posY>676</posY>
+                        <width>926</width>
+                        <height>20</height>
+                        <toptexture>osd_progress_indicatorTV.png</toptexture>
+                        <TextureOffsetY>21</TextureOffsetY>
+                        <bottomtexture>-</bottomtexture>
+                        <texturetick>-</texturetick>
+                        <lefttexture>-</lefttexture>
+                        <midtexture>-</midtexture>
+                        <righttexture>-</righttexture>
+                        <logotexture>-</logotexture>
+                        <fillbackgroundtexture>-</fillbackgroundtexture>
+                        <fillbgxoff>12</fillbgxoff>
+                        <fillbgyoff>9</fillbgyoff>
+                        <filltexture1>-</filltexture1>
+                        <filltexture2>osdprogressmid_blue.png</filltexture2>
+                        <filltexture3>osdprogressmid_blue.png</filltexture3>
+                        <fillheight>10</fillheight>
+                        <label>#TV.Record.percent1</label>
+                        <label1>#TV.Record.percent2</label1>
+                        <label2>#TV.Record.percent3</label2>
+                        <font>mediastream10c</font>
+                        <textcolor>ff888888</textcolor>
+                </control>
+                <control>
+                        <description>Start Time Info</description>
+                        <type>label</type>
+                        <id>0</id>
+                        <posX>195</posX>
+                        <posY>695</posY>
+                        <label>#currentplaytime</label>
+                        <align>left</align>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>
+                <control>
+                        <description>End Time Info</description>
+                        <type>label</type>
+                        <id>0</id>
+                        <posX>1093</posX>
+                        <posY>695</posY>
+                        <label>#currentremaining</label>
+                        <align>right</align>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff888888</textcolor>
+                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                </control>  
                 <control>
                         <description>pause image</description>
                         <type>image</type>

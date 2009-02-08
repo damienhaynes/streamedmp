@@ -13,16 +13,16 @@
                         <type>image</type>
                         <id>0</id>
                         <posX>0</posX>
-                        <posY>503</posY>
+                        <posY>473</posY>
                         <width>1280</width>
-                        <height>217</height>
-                        <texture>osdbackground.png</texture>
+                        <height>247</height>
+                        <texture>osdbackground1.png</texture>
                 </control>
                 <control>
                         <description>TV Logo background</description>
                         <type>image</type>
                         <posX>6</posX>
-                        <posY>470</posY>
+                        <posY>440</posY>
                         <width>170</width>
                         <height>170</height>
                         <texture>imagebg.png</texture>
@@ -33,7 +33,7 @@
                         <type>image</type>
                         <id>1</id>
                         <posX>16</posX>
-                        <posY>480</posY>
+                        <posY>450</posY>
                         <width>150</width>
                         <height>150</height>
                         <texture>#TV.View.thumb</texture>
@@ -78,7 +78,7 @@
                         <type>label</type>
                         <id>1</id>
                         <posX>1255</posX>
-                        <posY>533</posY>
+                        <posY>483</posY>
                         <label>#date</label>
                         <align>right</align>
                         <font>mediastream10</font>
@@ -91,7 +91,7 @@
                         <width>474</width>
                         <height>25</height>
                         <posX>195</posX>
-                        <posY>535</posY>
+                        <posY>485</posY>
                         <font>mediastream16tc</font>
                         <label>#TV.View.channel</label>
                 </control>
@@ -102,9 +102,21 @@
                         <width>474</width>
                         <height>25</height>
                         <posX>195</posX>
-                        <posY>563</posY>
+                        <posY>513</posY>
                         <font>mediastream14tc</font>
                         <textcolor>ff888888</textcolor>
+                </control>
+                <control>
+                        <description>Plot</description>
+                        <type>textboxscrollup</type>
+                        <id>38</id>
+                        <posX>230</posX>
+                        <posY>540</posY>
+                        <width>820</width>
+                        <height>109</height>
+                        <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
+                        <label>#TV.View.description</label>
+                        <font>mediastream12</font>
                 </control>
                 <control>
                         <description>On tv NEXT</description>
@@ -113,30 +125,45 @@
                         <width>474</width>
                         <height>24</height>
                         <posX>195</posX>
-                        <posY>663</posY>
+                        <posY>650</posY>
                         <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
+                </control>
+                <control>
+                        <description>Progress Bar Background</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>190</posX>
+                        <posY>676</posY>
+                        <width>912</width>
+                        <height>20</height>
+                        <texture>osdprogressback.png</texture>
+                        <keepaspectratio>no</keepaspectratio>
                 </control>
                 <control>
                         <description>Progress Bar</description>
                         <type>progress</type>
                         <id>1</id>
-                        <posX>187</posX>
-                        <posY>683</posY>
-                        <width>918</width>
-                        <label>#percentage</label>
+                        <posX>183</posX>
+                        <posY>676</posY>
+                        <width>928</width>
+                        <height>20</height> 
+                        <lefttexture>osdprogressleft_e.png</lefttexture>
+                        <midtexture>osdprogressmid_e.png</midtexture>
+                        <righttexture>-</righttexture>
+                        <label>#TV.Record.percent1</label>
                         <visible>yes</visible>
                 </control>
                 <control>
                         <description>TV Progress Bar</description>
                         <type>tvprogress</type>
                         <id>101</id>
-                        <posX>205</posX>
-                        <posY>683</posY>
-                        <width>882</width>
-                        <height>12</height>
+                        <posX>183</posX>
+                        <posY>676</posY>
+                        <width>926</width>
+                        <height>20</height>
                         <toptexture>osd_progress_indicatorTV.png</toptexture>
-                        <TextureOffsetY>16</TextureOffsetY>
+                        <TextureOffsetY>21</TextureOffsetY>
                         <bottomtexture>-</bottomtexture>
                         <texturetick>-</texturetick>
                         <lefttexture>-</lefttexture>
@@ -144,29 +171,17 @@
                         <righttexture>-</righttexture>
                         <logotexture>-</logotexture>
                         <fillbackgroundtexture>-</fillbackgroundtexture>
-                        <fillbgxoff>0</fillbgxoff>
-                        <fillbgyoff>20</fillbgyoff>
+                        <fillbgxoff>12</fillbgxoff>
+                        <fillbgyoff>9</fillbgyoff>
                         <filltexture1>-</filltexture1>
-                        <filltexture2>-</filltexture2>
-                        <filltexture3>-</filltexture3>
-                        <fillheight>12</fillheight>
+                        <filltexture2>osdprogressmid_blue.png</filltexture2>
+                        <filltexture3>osdprogressmid_blue.png</filltexture3>
+                        <fillheight>10</fillheight>
                         <label>#TV.Record.percent1</label>
                         <label1>#TV.Record.percent2</label1>
                         <label2>#TV.Record.percent3</label2>
                         <font>mediastream10c</font>
                         <textcolor>ff888888</textcolor>
-                </control>
-                <control>
-                        <description>Plot</description>
-                        <type>textboxscrollup</type>
-                        <id>38</id>
-                        <posX>230</posX>
-                        <posY>590</posY>
-                        <width>820</width>
-                        <height>72</height>
-                        <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
-                        <label>#TV.View.description</label>
-                        <font>mediastream12</font>
                 </control>
                 <control>
                         <description>Start Time Info</description>
@@ -217,7 +232,7 @@
                         <type>togglebutton</type>
                         <id>218</id>
                         <posX>1115</posX>
-                        <posY>560</posY>
+                        <posY>510</posY>
                         <width>40</width>
                         <height>40</height>
                         <AltTextureFocus>osdvizfo.png</AltTextureFocus>
@@ -236,7 +251,7 @@
                         <type>togglebutton</type>
                         <id>220</id>
                         <posX>1165</posX>
-                        <posY>560</posY>
+                        <posY>510</posY>
                         <width>40</width>
                         <height>40</height>
                         <AltTextureFocus>osdvideofo.png</AltTextureFocus>
@@ -255,7 +270,7 @@
                         <type>togglebutton</type>
                         <id>221</id>
                         <posX>1215</posX>
-                        <posY>560</posY>
+                        <posY>510</posY>
                         <width>40</width>
                         <height>40</height>
                         <AltTextureFocus>osdaudiofo.png</AltTextureFocus>
@@ -278,7 +293,7 @@
                         <posX>909</posX>
                         <posY>0</posY>
                         <width>371</width>
-                        <height>527</height>
+                        <height>473</height>
                         <texture>osdmenubg.png</texture>
                         <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -346,7 +361,7 @@
                         <posY>174</posY>
                         <width>370</width>
                         <textXOff>25</textXOff>
-                        <height>351</height>
+                        <height>299</height>
                         <onleft>802</onleft>
                         <onright>802</onright>
                         <onup>801</onup>
@@ -396,7 +411,7 @@
                         <posX>48</posX>
                         <posY>49</posY>
                         <width>285</width>
-                        <height>527</height>
+                        <height>473</height>
                         <texture>osdmenubg.png</texture>
                         <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -408,7 +423,7 @@
                         <posX>48</posX>
                         <posY>49</posY>
                         <width>285</width>
-                        <height>527</height>
+                        <height>473</height>
                         <texture>osdmenubg.png</texture>
                         <visible>no</visible>
                 </control>
@@ -420,7 +435,7 @@
                         <posX>909</posX>
                         <posY>0</posY>
                         <width>371</width>
-                        <height>527</height>
+                        <height>473</height>
                         <texture>osdmenubg.png</texture>
                         <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -598,7 +613,7 @@
                         <posX>909</posX>
                         <posY>0</posY>
                         <width>371</width>
-                        <height>527</height>
+                        <height>473</height>
                         <texture>osdmenubg.png</texture>
                         <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>

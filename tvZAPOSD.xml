@@ -10,10 +10,10 @@
                         <type>image</type>
                         <id>0</id>
                         <posX>0</posX>
-                        <posY>503</posY>
+                        <posY>523</posY>
                         <width>1280</width>
-                        <height>217</height>
-                        <texture>osdbackground.png</texture>
+                        <height>197</height>
+                        <texture>osdbackground1.png</texture>
                         <animation effect="slide" start="0,720" time="100">WindowOpen</animation>
                         <animation effect="slide" end="0,720" time="100">WindowClose</animation>
                 </control>
@@ -53,12 +53,23 @@
                         <animation effect="slide" start="0,720" time="100">WindowOpen</animation>
                 </control>
                 <control>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>190</posX>
+                        <posY>683</posY>
+                        <width>912</width>
+                        <height>20</height>
+                        <texture>osdprogressback.png</texture>
+                        <keepaspectratio>no</keepaspectratio>
+                        <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
+                </control>
+                <control>
                         <description>Progress Bar</description>
                         <type>progress</type>
                         <id>1</id>
-                        <posX>187</posX>
+                        <posX>183</posX>
                         <posY>683</posY>
-                        <width>914</width>
+                        <width>928</width>
                         <visible>yes</visible>
                         <label>#TV.View.Percentage</label>
                         <animation effect="slide" end="0,0" start="0,720" time="100">WindowOpen</animation>
