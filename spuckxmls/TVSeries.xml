@@ -989,7 +989,7 @@
       <posY>276</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#overlaywubg</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
     </control>
     <control>
@@ -1000,7 +1000,7 @@
       <posY>280</posY>
       <width>88</width>
       <height>22</height>
-      <texture>tvseries_Watched.png</texture>
+      <texture>#tvseries_Watched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -1011,7 +1011,7 @@
       <posY>280</posY>
       <width>88</width>
       <height>22</height>
-      <texture>tvseries_UnWatched.png</texture>
+      <texture>#tvseries_UnWatched</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -1022,7 +1022,7 @@
       <posY>280</posY>
       <width>88</width>
       <height>22</height>
-      <texture>tvseries_WatchedNA.png</texture>
+      <texture>#tvseries_WatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <control>
@@ -1033,7 +1033,7 @@
       <posY>280</posY>
       <width>88</width>
       <height>22</height>
-      <texture>tvseries_UnWatchedNA.png</texture>
+      <texture>#tvseries_UnWatchedNA</texture>
       <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <!-- Watched Icons for Episode View-->
@@ -1230,7 +1230,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>309</posY>
+        <posY>336</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -1254,11 +1254,18 @@
           <onleft>50</onleft>
         </control>
         <control>
-          <description>Empty button</description>
+          <description>Run Import</description>
           <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
+          <id>5</id>
+          <label>Run Import</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Change Layout</description>
+          <type>button</type>
+          <id>3</id>
+          <label>Change Layout</label>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -1266,6 +1273,13 @@
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
+        </control>
+        <control>
+          <description>Options</description>
+          <type>button</type>
+          <id>4</id>
+          <label>496</label>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Video Settings</description>
