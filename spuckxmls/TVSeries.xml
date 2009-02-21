@@ -1235,6 +1235,17 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
+	  <control>
+        <id>0</id>
+        <label>PLAYLIST</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>420</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
       <control>
         <type>group</type>
         <description>group element</description>
@@ -1289,6 +1300,28 @@
           <hyperlink>703</hyperlink>
           <onleft>50</onleft>
         </control>
+		<control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+		<control>
+            <description>Current Playlist</description>
+            <type>button</type>
+            <id>20</id>
+            <label>4555</label>
+            <action>33</action>
+			<onleft>50</onleft>
+        </control>	
+        <control>
+            <description>My Playlists</description>
+            <type>button</type>
+            <id>9</id>
+            <label>983</label>
+			<onleft>50</onleft>
+        </control>		  
       </control>
     </control>
     
