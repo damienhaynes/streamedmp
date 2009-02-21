@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+	<id>9813</id>
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<define>#header.label:136</define>
+	<define>#header.hover:hover_my tv series.png</define>
+	<controls>   
+	    <control>
+			<type>image</type>
+			<description>BG</description>
+			<id>0</id>
+			<width>1280</width>
+			<height>720</height>
+			<animation effect="fade" time="400" delay="0">WindowOpen</animation>
+		</control>	
+	    <control>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>#header.hover</texture>
+			<animation effect="fade" time="400" delay="0">WindowOpen</animation>
+	    </control>   
+	    <control>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>mainoverlay.png</texture>
+	    </control>
+	    <control>
+			<id>204</id>
+			<type>image</type>
+			<posX>30</posX>
+			<posY>255</posY>
+			<width>400</width>
+			<height>225</height>
+			<texture>#selectedthumb</texture>
+			<visible>facadeview.playlist | facadeview.filmstrip</visible>
+	    </control>   
+	    <control>
+			<description>TVSeries Title</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>410</posX>
+			<posY>400</posY>
+			<width>850</width>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Title</label>
+			<textcolor>ffFFFFFF</textcolor>     
+	    </control>		
+	    <control>
+			<type>actiongroup</type>
+			<description>action menu</description>
+			<defaultcontrol>2</defaultcontrol>
+			<onexit>50</onexit>
+			<dimColor>00ffffff</dimColor>
+			<control>
+				<type>image</type>
+				<posX>1002</posX>
+				<posY>0</posY>
+				<width>278</width>
+				<height>720</height>
+				<texture>hiddenmenu_right.png</texture>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>
+				<id>0</id>
+				<label>VIEW OPTIONS</label>
+				<type>label</type>
+				<font>mediastream12tc</font>
+				<posX>1040</posX>
+				<posY>225</posY>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>
+				<id>0</id>
+				<label>PLAYLIST CONTROL</label>
+				<type>label</type>
+				<font>mediastream12tc</font>
+				<posX>1040</posX>
+				<posY>281</posY>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>
+				<id>0</id>
+				<label>JUMP TO</label>
+				<type>label</type>
+				<font>mediastream12tc</font>
+				<posX>1040</posX>
+				<posY>480</posY>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>
+				<type>group</type>
+				<description>group element</description>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+				<posX>1040</posX>
+				<posY>250</posY>
+				<width>220</width>
+				<height>720</height>
+				<layout>StackLayout</layout>	
+				<control>
+					<description>View-As button</description>
+					<type>button</type>
+					<id>2</id>
+					<label>100</label>
+					<onleft>50</onleft>
+					<onup>17</onup>
+				</control>	
+				<control>
+					<description>Empty button</description>
+					<type>button</type>
+					<id>0</id>
+					<label>-</label>
+					<visible>false</visible>
+				</control>	
+				<control>
+					<description>Shuffle button</description>
+					<type>button</type>
+					<id>20</id>
+					<label>191</label>
+					<onleft>50</onleft>
+				</control>	
+				<control>
+					<description>Repeat on/off button</description>
+					<type>togglebutton</type>
+					<id>30</id>
+					<label>486</label>
+					<onleft>50</onleft>
+				</control>
+				<control>
+					<description>AutoPlay on/off button</description>
+					<type>togglebutton</type>
+					<id>40</id>
+					<label>Auto Play</label>
+					<onleft>50</onleft>
+				</control>				
+				<control>
+					<description>Save button</description>
+					<type>button</type>
+					<id>21</id>
+					<label>190</label>
+					<onleft>50</onleft>
+				</control>	
+				<control>
+					<description>Clear button</description>
+					<type>button</type>
+					<id>22</id>
+					<label>192</label>
+					<onleft>50</onleft>
+				</control>	
+				<control>
+					<description>Play button</description>
+					<type>button</type>
+					<id>23</id>
+					<label>208</label>
+					<onleft>50</onleft>
+					</control>	
+				<control>
+					<description>Empty button</description>
+					<type>button</type>
+					<id>0</id>
+					<label>-</label>
+					<visible>false</visible>
+				</control>	
+				<control>
+					<description>Next button</description>
+					<type>button</type>
+					<id>24</id>
+					<label>209</label>
+					<onleft>50</onleft>
+				</control>	
+				<control>
+					<description>Previous button</description>
+					<type>button</type>
+					<id>25</id>
+					<label>210</label>
+					<onleft>50</onleft>
+				</control>
+				<control>
+					<description>My Playlists</description>
+					<type>button</type>
+					<id>9</id>
+					<label>983</label>
+					<onleft>50</onleft>
+					<ondown>99</ondown>
+				</control>	
+			</control>
+		</control>   
+		<control>
+			<type>facadeview</type>
+			<id>50</id>			
+			<control>
+				<description>List Layout</description>
+				<type>listcontrol</type>
+				<id>50</id>
+				<onleft>2</onleft>
+				<onright>2</onright>
+				<posX>756</posX>
+				<posY>317</posY>
+				<height>360</height>
+				<textXOff2>500</textXOff2>
+				<spinPosX>1249</spinPosX>
+				<spinPosY>690</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<spinColor>ff006698</spinColor>
+				<spinCanFocus>no</spinCanFocus>				
+			</control>
+			<control>
+				<description>Filmstrip Layout</description>
+				<type>filmstrip</type>
+				<id>50</id>
+				<onup>2</onup>
+				<onleft>50</onleft>
+				<posX>12</posX>
+				<posY>512</posY>
+				<width>1280</width>
+				<scrollOffset>4</scrollOffset>
+				<spinPosX>1300</spinPosX>
+				<spinPosY>720</spinPosY>
+				<spinWidth>24</spinWidth>
+				<spinHeight>24</spinHeight>
+				<spinColor>ffcccccc</spinColor>
+				<itemWidth>290</itemWidth>
+				<itemHeight>100</itemHeight>
+				<textureWidth>277</textureWidth>
+				<textureHeight>156</textureHeight>
+				<thumbWidth>247</thumbWidth>
+				<thumbHeight>144</thumbHeight>
+				<thumbPosX>16</thumbPosX>
+				<thumbPosY>6</thumbPosY>
+				<thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+				<InfoImage></InfoImage>
+				<imageFolder>-</imageFolder>
+				<imageFolderFocus>thumbborder.png</imageFolderFocus>
+				<frame>-</frame>
+				<frameFocus>-</frameFocus>
+				<showFrame>no</showFrame>
+				<showFolder>yes</showFolder>
+				<showBackGround>no</showBackGround>
+				<showInfoImage>no</showInfoImage>
+				<thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
+			</control>
+			<control>
+				<description>Thumbnail Layout</description>
+				<type>thumbnailpanel</type>
+				<id>50</id>
+				<posX>20</posX>
+				<posY>250</posY>				
+				<width>1260</width>
+				<height>500</height>
+				<spinPosX>1230</spinPosX>
+				<spinPosY>690</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<spinColor>ff006698</spinColor>
+				<spinCanFocus>no</spinCanFocus>	
+				<imageFolder>-</imageFolder>
+				<imageFolderFocus>thumbborder.png</imageFolderFocus>
+				<!-- smallicons -->
+				<itemWidth>250</itemWidth>
+				<itemHeight>145</itemHeight>
+				<textureWidth>250</textureWidth>
+				<textureHeight>145</textureHeight>
+				<thumbWidth>231</thumbWidth>
+				<thumbHeight>133</thumbHeight>
+				<thumbPosX>9</thumbPosX>
+				<thumbPosY>6</thumbPosY>
+				<!-- largeicons -->
+				<itemWidthBig>315</itemWidthBig>
+				<itemHeightBig>183</itemHeightBig>
+				<textureWidthBig>315</textureWidthBig>
+				<textureHeightBig>183</textureHeightBig>
+				<thumbWidthBig>291</thumbWidthBig>
+				<thumbHeightBig>169</thumbHeightBig>
+				<thumbPosXBig>11</thumbPosXBig>
+				<thumbPosYBig>6</thumbPosYBig>
+				<thumbZoom>yes</thumbZoom>
+				<enableFocusZoom>no</enableFocusZoom>
+				<onleft>2</onleft>
+				<onright>2</onright>
+			</control>
+			<control>
+				<description>Playlist Layout</description>
+				<type>playlistcontrol</type>
+				<id>50</id>
+				<scrollOffset>2</scrollOffset>
+				<spinPosX>1249</spinPosX>
+				<spinPosY>690</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<spinColor>ff006698</spinColor>
+				<spinCanFocus>no</spinCanFocus>
+				<onleft>2</onleft>
+				<onright>2</onright>
+			</control>
+		</control> 
+		<control>
+			<type>fadelabel</type>
+			<description>Selected item Label</description>
+			<id>0</id>
+			<posX>493</posX>
+			<posY>13</posY>
+			<width>350</width>
+			<font>mediastream12c</font>
+			<align>right</align>
+			<visible>yes</visible>
+			<label>#selecteditem</label>
+			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+		</control>
+		<control>
+			<description>Media Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1113</posX>
+			<posY>684</posY>
+			<width>159</width>
+			<height>28</height>
+			<texture>mediacountbackground.png</texture>
+			<visible>facadeview.list|facadeview.playlist</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>PAGE:</label>
+		     <id>0</id>
+			<posX>1123</posX>
+			<posY>688</posY>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>facadeview.list|facadeview.playlist</visible>
+		</control>
+		<import>common.overlays2.xml</import>
+		<import>common.window.xml</import>
+		<import>common.time.xml</import>
+	</controls>
+</window>
