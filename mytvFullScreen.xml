@@ -21,14 +21,13 @@
                 <control>
                         <description>background (paused)</description>
                         <type>image</type>
-                        <id>0</id>
+                        <id>1</id>
                         <posX>0</posX>
                         <posY>523</posY>
                         <width>1280</width>
                         <height>197</height>
                         <texture>osdbackground1.png</texture>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                 </control>
                 <control>
                         <description>TV Logo background</description>
@@ -39,8 +38,8 @@
                         <height>170</height>
                         <texture>imagebg.png</texture>
                         <keepaspectratio>no</keepaspectratio>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>TV Logo</description>
@@ -52,8 +51,8 @@
                         <height>150</height>
                         <texture>#TV.View.thumb</texture>
                         <keepaspectratio>yes</keepaspectratio>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="500">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>Date</description>
@@ -65,35 +64,35 @@
                         <align>right</align>
                         <font>mediastream10</font>
                         <textcolor>ff888888</textcolor>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>Channel Name</description>
                         <id>14</id>
                         <type>label</type>
-                        <width>474</width>
+                        <width>900</width>
                         <height>25</height>
                         <posX>195</posX>
                         <posY>535</posY>
                         <font>mediastream16tc</font>
                         <label>#TV.View.channel</label>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>On tv NOW</description>
                         <id>36</id>
                         <type>textbox</type>
-                        <width>474</width>
+                        <width>900</width>
                         <height>25</height>
                         <posX>195</posX>
                         <posY>563</posY>
                         <label>#TV.View.title</label>
                         <font>mediastream14tc</font>
                         <textcolor>ff888888</textcolor>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>Plot</description>
@@ -106,21 +105,21 @@
                         <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
                         <label>#TV.View.description</label>
                         <font>mediastream12</font>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>On tv NEXT</description>
                         <type>textbox</type>
-                        <width>474</width>
+                        <width>900</width>
                         <height>24</height>
                         <posX>195</posX>
                         <posY>650</posY>
                         <label>#TV.Next.title</label>
                         <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
-                        <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]</visible>
-                        <animation effect="slide" end="0,0" start="0,720" time="10">WindowOpen</animation>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>Progress Bar Background</description>
@@ -132,7 +131,7 @@
                         <height>20</height>
                         <texture>osdprogressback.png</texture>
                         <keepaspectratio>no</keepaspectratio>
-                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                 </control>
                 <control>
                         <description>Progress Bar</description>
@@ -146,7 +145,8 @@
                         <midtexture>osdprogressmid_e.png</midtexture>
                         <righttexture>-</righttexture>
                         <label>#TV.Record.percent1</label>
-                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>TV Progress Bar</description>
@@ -176,6 +176,7 @@
                         <label2>#TV.Record.percent3</label2>
                         <font>mediastream10c</font>
                         <textcolor>ff888888</textcolor>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                 </control>
                 <control>
                         <description>Start Time Info</description>
@@ -187,7 +188,8 @@
                         <align>left</align>
                         <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
-                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>
                 <control>
                         <description>End Time Info</description>
@@ -199,7 +201,8 @@
                         <align>right</align>
                         <font>mediastream12tc</font>
                         <textcolor>ff888888</textcolor>
-                        <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
+                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+                        
                 </control>  
                 <control>
                         <description>pause image</description>
@@ -210,7 +213,7 @@
                         <width>60</width>
                         <height>60</height>>
                         <visible>no</visible>
-                        <texture>osdpausefo.png</texture>
+                        
                 </control>
                 <control>
                         <description>MSGBox</description>
