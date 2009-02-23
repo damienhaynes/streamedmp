@@ -12,10 +12,10 @@
                         <description>tele-text rendering image</description>
                         <type>image</type>
                         <id>500</id>
-                        <posX>180</posX>
-                        <posY>218</posY>
-                        <width>680</width>
-                        <height>510</height>
+                        <posX>80</posX>
+                        <posY>68</posY>
+                        <width>880</width>
+                        <height>660</height>
                         <texture>button_small_settings_nofocus.png</texture>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -24,10 +24,10 @@
                         <description>tele-text rendering image 2</description>
                         <type>image</type>
                         <id>501</id>
-                        <posX>180</posX>
-                        <posY>218</posY>
-                        <width>680</width>
-                        <height>510</height>
+                        <posX>80</posX>
+                        <posY>68</posY>
+                        <width>880</width>
+                        <height>660</height>
                         <texture>button_small_settings_nofocus.png</texture>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -59,7 +59,6 @@
                 <control>
                         <type>actiongroup</type>
                         <description>action menu</description>
-                        <onexit>10</onexit>
                         <dimColor>00ffffff</dimColor>
                         <control>
                                 <type>image</type>
@@ -68,28 +67,35 @@
                                 <width>278</width>
                                 <height>720</height>
                                 <texture>hiddenmenu_right.png</texture>
-                                <visible>!Control.HasFocus(500)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
                         </control>
                         <control>
-                                <id>0</id>
+                                <id>1</id>
+                                <description>label OPTIONS</description>
+                                <label>496</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>225</posY>
+                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                        </control>
+                        <control>
+                                <id>1</id>
                                 <description>label JUMP TO</description>
                                 <label>1065</label>
                                 <type>label</type>
                                 <font>mediastream12tc</font>
                                 <posX>1040</posX>
-                                <posY>225</posY>
-                                <visible>!Control.HasFocus(500)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posY>423</posY>
+                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
                         </control>
                         <control>
                                 <type>group</type>
-                                <description>group element</description>
-                                <visible>!Control.HasFocus(500)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                 <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
                                 <posX>1040</posX>
                                 <posY>250</posY>
                                 <width>220</width>
@@ -102,8 +108,7 @@
                                         <posX>106</posX>
                                         <posY>121</posY>
                                         <label>590</label>
-                                        <ondown>503</ondown>
-                                        <onright>502</onright>
+                                        
                                 </control>
                                 <control>
                                         <description>Page200</description>
@@ -112,9 +117,7 @@
                                         <posX>106</posX>
                                         <posY>163</posY>
                                         <label>591</label>
-                                        <onup>502</onup>
-                                        <ondown>504</ondown>
-                                        <onright>503</onright>
+                                       
                                 </control>
                                 <control>
                                         <description>Page300</description>
@@ -123,9 +126,7 @@
                                         <posX>106</posX>
                                         <posY>206</posY>
                                         <label>592</label>
-                                        <onup>503</onup>
-                                        <ondown>505</ondown>
-                                        <onright>504</onright>
+                                       
                                 </control>
                                 <control>
                                         <description>hidden mode</description>
@@ -137,9 +138,7 @@
                                         <textYOff>1</textYOff>
                                         <textcolor>ffffffff</textcolor>
                                         <colordiffuse>ffffffff</colordiffuse>
-                                        <onup>504</onup>
-                                        <ondown>506</ondown>
-                                        <onright>505</onright>
+                                        
                                 </control>
                                 <control>
                                         <description>subpage</description>
@@ -148,9 +147,7 @@
                                         <posX>106</posX>
                                         <posY>291</posY>
                                         <label>594</label>
-                                        <onup>505</onup>
-                                        <ondown>507</ondown>
-                                        <onright>506</onright>
+                                        
                                         <subitems>
                                                 <subitem>./1</subitem>
                                                 <subitem>./2</subitem>
@@ -197,37 +194,47 @@
                                         <posX>106</posX>
                                         <posY>333</posY>
                                         <label>595</label>
-                                        <onup>506</onup>
-                                        <ondown>502</ondown>
-                                        <onright>507</onright>
+                                        
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>TVGuide</description>
+                                        <type>button</type>
+                                        <id>66602</id>
+                                        <label>600</label>
+                                        <hyperlink>600</hyperlink>
+                                       
                                 </control>
                         </control>
                 </control>
-                <control>
+                <!--<control>
                         <description>video rectangle</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>35</posX>
+                        <posX>1015</posX>
                         <posY>555</posY>
                         <width>210</width>
                         <height>135</height>
                         <texture>tv_frame.png</texture>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                </control>
-                <!--<control>
+                </control>-->
+                <control>
                         <description>video preview window</description>
                         <type>videowindow</type>
                         <id>508</id>
-                        <posX>50</posX>
-                        <posY>570</posY>
+                        <posX>10</posX>
+                        <posY>1030</posY>
                         <width>180</width>
                         <height>103</height>
                         <action>18</action>
                         <textureFocus>tv_blue_border.png</textureFocus>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                </control>-->
-                <import>common.overlays.xml</import>
+                        <visible>no</visible>
+                </control>            
+                
         </controls>
 </window>
