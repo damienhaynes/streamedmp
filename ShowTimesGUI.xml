@@ -1,0 +1,545 @@
+<window>
+<id>7111992</id>
+<defaultcontrol>2</defaultcontrol>
+<allowoverlay>yes</allowoverlay>
+<define>#header.label:7111992</define>
+<define>#header.hover:hover_moving pictures.png</define>
+<controls>
+	<control>
+		<description>movie background image</description>
+		<!--<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>-->
+		<type>image</type>
+		<id>0</id>
+		<posX>0</posX>
+		<posY>0</posY>
+		<width>1280</width>
+		<height>720</height>
+		<texture>hover_moving pictures.png</texture>
+	</control>
+	<control>
+		<description>fanart</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>0</posX>
+		<posY>0</posY>
+		<texture>#backdrop</texture>
+		<width>1280</width>
+		<height>720</height>
+		<visible>Control.IsVisible(24)</visible>
+	</control>	
+	<control>
+		<description>main overlay image</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>0</posX>
+		<posY>0</posY>
+		<texture>mainoverlay.png</texture>
+	</control>
+	<control>
+      		<type>actiongroup</type>
+      		<description>action menu</description>
+      		<defaultcontrol>2</defaultcontrol>
+      		<onexit>50</onexit>
+      		<dimColor>00ffffff</dimColor>
+      		<control>
+        		<type>image</type>
+        		<posX>1002</posX>
+        		<posY>0</posY>
+        		<width>278</width>
+        		<height>720</height>
+        		<texture>hiddenmenu_right.png</texture>
+        		<visible>!Control.HasFocus(50)</visible>
+        		<animation effect="slide" time="100" start="300,0">visible</animation>
+        		<animation effect="slide" time="0" end="300,0">hidden</animation>
+      		</control>
+      		<control>
+        		<id>0</id>
+        		<label>VIEW OPTIONS</label>
+        		<type>label</type>
+        		<font>mediastream12tc</font>
+        		<posX>1040</posX>
+        		<posY>225</posY>
+        		<visible>!Control.HasFocus(50)</visible>
+        		<animation effect="slide" time="100" start="300,0">visible</animation>
+        		<animation effect="slide" time="0" end="300,0">hidden</animation>
+      		</control>
+      		<control>
+        		<id>0</id>
+        		<label>JUMP TO</label>
+        		<type>label</type>
+        		<font>mediastream12tc</font>
+        		<posX>1040</posX>
+        		<posY>440</posY>
+        		<visible>!Control.HasFocus(50)</visible>
+        		<animation effect="slide" time="100" start="300,0">visible</animation>
+        		<animation effect="slide" time="0" end="300,0">hidden</animation>
+      		</control>
+
+      		<control>
+        		<type>group</type>
+        		<description>group element</description>
+        		<visible>!Control.HasFocus(50)</visible>
+        		<animation effect="slide" time="100" start="300,0">visible</animation>
+        		<animation effect="slide" time="0" end="300,0">hidden</animation>
+        		<posX>1040</posX>
+        		<posY>250</posY>
+        		<width>220</width>
+        		<height>720</height>
+        		<layout>StackLayout</layout>
+      			<control>
+        			<type>button</type>
+        			<description>Change View</description>
+        			<id>2</id>
+       				<label>417</label>
+        			<onup>43</onup>
+        			<ondown>3</ondown>
+      			</control>
+      			<control>
+        			<type>button</type>
+        			<description>Show Theaters</description>
+        			<id>3</id>
+        			<label>-</label>
+        			<onup>2</onup>
+        			<ondown>40</ondown>
+      			</control>
+      			<control>
+        			<type>button</type>
+        			<description>ShowTimes</description>
+       				<id>40</id>
+        			<label>-</label>
+        			<visible>no</visible>
+        			<onup>3</onup>
+        			<ondown>41</ondown>
+      			</control>
+      			<control>
+        			<type>button</type>
+        			<description>Play Trailer</description>
+        			<id>41</id>
+        			<label>-</label>
+        			<visible>no</visible>
+        			<onup>40</onup>
+        			<ondown>42</ondown>
+      			</control>
+      			<control>
+        			<type>button</type>
+        			<description>Next</description>
+        			<id>42</id>
+       				<label>209</label>
+        			<visible>no</visible>
+        			<onup>41</onup>
+        			<ondown>43</ondown>
+      			</control>
+      			<control>
+        			<type>button</type>
+        			<description>Previous</description>
+       		 		<id>43</id>
+        			<label>210</label>
+        			<visible>no</visible>
+        			<onup>42</onup>
+        			<ondown>66602</ondown>
+      			</control>
+        		<control>
+          			<description>Empty button</description>
+          			<type>button</type>
+          			<id>0</id>
+          			<label>-</label>
+          			<visible>false</visible>
+        		</control>
+        		<control>
+          			<description>Empty button</description>
+          			<type>button</type>
+          			<id>0</id>
+          			<label>-</label>
+          			<visible>false</visible>
+        		</control>
+        		<control>
+          			<description>Moving Pictures</description>
+          			<type>button</type>
+          			<id>66602</id>
+          			<label>Moving Pictures</label>
+          			<hyperlink>96742</hyperlink>
+          			<visible>plugin.isenabled(Moving Pictures)</visible>
+          			<onleft>50</onleft>
+        			<onup>43</onup>
+        			<ondown>66603</ondown>
+        		</control>
+        		<control>
+          			<description>TV Shows</description>
+          			<type>button</type>
+          			<id>66603</id>
+          			<hyperlink>9811</hyperlink>
+          			<label>1300</label>
+          			<visible>plugin.isenabled(MP-TV Series)</visible>
+          			<onleft>50</onleft>
+        			<onup>66602</onup>
+        			<ondown>66604</ondown>
+        		</control>
+        		<control>
+          			<description>Trailers</description>
+          			<type>button</type>
+          			<id>66604</id>
+          			<label>5906</label>
+          			<hyperlink>5900</hyperlink>
+          			<visible>plugin.isenabled(My Trailers)</visible>
+          			<onleft>50</onleft>
+        			<onup>66603</onup>
+        			<ondown>2</ondown>
+        		</control>
+        		<control>
+          			<description>Empty button</description>
+          			<type>button</type>
+          			<id>0</id>
+          			<label>-</label>
+          			<visible>false</visible>
+        		</control>
+        		<control>
+          			<description>Empty button</description>
+          			<type>button</type>
+          			<id>0</id>
+          			<label>-</label>
+          			<visible>false</visible>
+        		</control>
+        		<control>
+          			<description>Empty button</description>
+          			<type>button</type>
+          			<id>0</id>
+          			<label>-</label>
+          			<visible>false</visible>
+        		</control>
+    			<control>
+      				<type>label</type>
+      				<description>Next Refresh</description>
+      				<id>45</id>
+	  			<width>220</width>
+      				<label>#showtimes_nextupdate</label>
+    			</control>
+       		</control>
+	</control>
+     	<control>
+        	<type>button</type>
+        	<description>Hidden Button</description>
+       	 	<id>200</id>
+		<posX>650</posX>
+      		<posY>750</posY>
+        	<label></label>        		
+        	<onup>2</onup>
+        	<ondown>2</ondown>
+		<visible>Control.IsVisible(24)</visible>
+      	</control>
+	<control>
+	  	<description>movie poster</description>
+      		<id>24</id>
+      		<type>image</type>
+      		<keepaspectratio>yes</keepaspectratio>
+      		<posX>25</posX>
+      		<posY>350</posY>
+     		<width>257</width>
+      		<height>380</height>
+      		<texture flipY="true" diffuse="diffusemirrorwide.png">-</texture>
+	  	<visible>no</visible>  
+    	</control>
+	<control>
+      		<description>poster glass overlay</description>
+      		<type>image</type>
+      		<id>23</id>
+	  	<posX>25</posX>
+      		<posY>350</posY>
+      		<width>228</width>
+      		<height>177</height>
+      		<texture>glassoverlay2.png</texture>
+	  	<visible>Control.IsVisible(24)</visible>
+    	</control>
+   	<control>
+      		<type>label</type>
+      		<description>Rating txt</description>
+      		<id>1</id>
+      		<posX>310</posX>
+      		<posY>572</posY>
+      		<visible>control.isvisible(25)</visible>
+      		<label>Rating</label>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Rating value</description>
+      		<id>25</id>
+      		<posX>450</posX>
+      		<posY>571</posY>
+      		<visible>no</visible>
+	  	<font>mediastream10</font>
+      		<label>#st_rating</label>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Genre txt</description>
+      		<id>35</id>
+      		<posX>695</posX>
+      		<posY>596</posY>
+      		<visible>no</visible>
+      		<label>174</label>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>	
+    	<control>
+      		<type>fadelabel</type>
+      		<description>genre value</description>
+      		<id>36</id>
+      		<posX>790</posX>
+      		<posY>595</posY>
+	  	<font>mediastream10</font>
+      		<label>#genre</label>
+      		<width>270</width>
+      		<visible>no</visible>
+   	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Director txt</description>
+      		<id>30</id>
+      		<posX>310</posX>
+      		<posY>597</posY>
+     		<label>199</label>
+      		<visible>no</visible>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>	
+    	<control>
+      		<type>textbox</type>
+      		<id>31</id>
+      		<posX>450</posX>
+     		 <posY>594</posY>
+      		<width>550</width>
+      		<visible>no</visible>
+      		<text>#st_directed</text>
+      		<font>mediastream10</font>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Rating txt</description>
+      		<id>1</id>
+      		<posX>310</posX>
+      		<posY>622</posY>
+      		<visible>control.isvisible(32)</visible>
+      		<label>177</label>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>
+	<control>
+      		<type>label</type>
+      		<description>IMDB Rating</description>
+      		<id>32</id>
+      		<posX>450</posX>
+      		<posY>621</posY>
+	  	<width>550</width>
+	  	<font>mediastream10</font>
+      		<visible>no</visible>
+      		<label>#st_imdb_rating</label>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Runtime txt</description>
+      		<id>1</id>
+      		<posX>695</posX>
+      		<posY>622</posY>
+      		<visible>control.isvisible(26)</visible>
+      		<label>299</label>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Runtime</description>
+      		<id>26</id>
+      		<posX>790</posX>
+      		<posY>621</posY>
+	  	<font>mediastream10</font>
+	  	<width>280</width>
+      		<visible>no</visible>
+      		<label>#st_runtime</label>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Starring txt</description>
+      		<id>28</id>
+      		<posX>310</posX>
+      		<posY>646</posY>
+      		<visible>no</visible>
+      		<label>344</label>
+      		<font>mediastream10tc</font>
+	  	<textcolor>FF006699</textcolor>
+    	</control>	
+    	<control>
+      		<type>textbox</type>
+      		<id>29</id>
+      		<posX>450</posX>
+      		<posY>643</posY>
+      		<width>600</width>
+	  	<height>150</height>
+      		<visible>no</visible>
+	  	<font>mediastream10</font>
+      		<text>#st_starring</text>
+    	</control>	
+    	<control>
+      		<type>fadelabel</type>
+      		<description>Theater txt</description>
+      		<id>44</id>
+      		<posX>520</posX>
+      		<posY>13</posY>
+      		<width>700</width>
+      		<label>#st_theater</label>
+	  	<font>mediastream12tc</font>
+      		<visible>no</visible>
+    	</control>	
+    	<control>
+      		<type>textboxscrollup</type>
+      		<description>Plot value</description>
+      		<id>34</id>
+      		<posX>310</posX>
+      		<posY>447</posY>
+      		<width>750</width>
+      		<height>120</height>
+     		<label>#plot</label>
+      		<font>mediastream10</font>
+      		<seperator>-------------------------------------------------------------------------------------------------------------------------------------------------------------------</seperator>
+      		<visible>no</visible>
+      		<label>#st_plot</label>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Plot</description>
+      		<id>33</id>
+      		<posX>550</posX>
+      		<posY>120</posY>
+      		<visible>no</visible>
+      		<label>-</label>
+    	</control>		
+	<control>
+      		<description>Main Movie Label</description>
+      		<type>fadelabel</type>
+      		<id>1</id>
+      		<posX>13</posX>
+      		<posY>217</posY>
+      		<width>1020</width>
+      		<label>#selecteditem</label>
+      		<textcolor>ffffffff</textcolor>
+      		<font>mediastream16tc</font>
+      		<visible>!Control.IsVisible(24)</visible>
+    	</control>	
+	<control>
+      		<description>Details Movie Label</description>
+      		<type>fadelabel</type>
+      		<id>1</id>
+      		<posX>310</posX>
+      		<posY>423</posY>
+      		<width>750</width>
+      		<label>#selecteditem</label>
+      		<textcolor>ffffffff</textcolor>
+		<font>mediastream16tc</font>
+      		<visible>Control.IsVisible(24)</visible>
+    	</control>	
+    	<control>
+      		<type>label</type>
+      		<description>Trailer</description>
+      		<id>27</id>
+      		<posX>35</posX>
+      		<posY>36</posY>
+      		<visible>no</visible>
+      		<label>#st_trailer</label>
+    	</control>
+	<control>
+		<description>group element</description>
+		<type>group</type>
+		<control>
+			<description>composite control consisting of a list control and a thumbnail panel</description>
+			<type>facadeview</type>
+			<id>50</id>
+			
+		      	<control>
+				<type>listcontrol</type>
+			        <id>50</id>
+			        <onleft>2</onleft>
+			        <onright>2</onright>
+			        <posX>10</posX>
+			        <posY>275</posY>
+				<height>360</height>
+				<textXOff>0</textXOff>
+				<spinPosX>1220</spinPosX>
+				<spinPosY>684</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<spinColor>ff006698</spinColor>
+				<spinCanFocus>no</spinCanFocus>
+		      	</control>			
+			<control>
+				<description>Thumbnail Panel</description>
+				<type>thumbnailpanel</type>
+				<id>50</id>
+				<onleft>2</onleft>
+				<onright>2</onright>
+				<posX>30</posX>
+				<posY>250</posY>
+				<width>1200</width>
+				<height>500</height>
+				<spinWidth>16</spinWidth>
+				<spinHeight>16</spinHeight>
+				<spinPosY>684</spinPosY>
+				<spinPosX>1185</spinPosX>				
+				<spinColor>ff006698</spinColor>
+				<textureUp>arrowupnf.png</textureUp>
+				<textureDown>arrowdownnf.png</textureDown>
+				<textureUpFocus>arrowupfo.png</textureUpFocus>
+				<textureDownFocus>arrowdownfo.png</textureDownFocus>
+				<itemWidth>95</itemWidth>
+				<itemHeight>122</itemHeight>
+				<textureWidth>95</textureWidth>
+				<textureHeight>122</textureHeight>
+				<thumbWidth>72</thumbWidth>
+				<thumbHeight>108</thumbHeight>
+				<thumbPosX>12</thumbPosX>
+				<thumbPosY>5</thumbPosY>
+				<imageFolder>-</imageFolder>
+				<imageFolderFocus>-</imageFolderFocus>
+				<font>mediastream12</font>
+				<suffix>|</suffix>
+				<textureWidthBig>210</textureWidthBig>
+				<textureHeightBig>253</textureHeightBig>
+				<itemWidthBig>180</itemWidthBig>
+				<itemHeightBig>233</itemHeightBig>
+				<thumbWidthBig>147</thumbWidthBig>
+				<thumbHeightBig>208</thumbHeightBig>
+				<thumbPosXBig>24</thumbPosXBig>
+				<thumbPosYBig>10</thumbPosYBig>
+				<thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+				<thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+				<thumbZoom>yes</thumbZoom>
+				<enableFocusZoom>yes</enableFocusZoom>
+			</control>				
+		</control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>678</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>Control.HasFocus(50)</visible>
+    </control>
+    
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>682</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>Control.HasFocus(50)</visible>
+    </control>
+	</control>
+	<import>common.overlays2.xml</import>	
+    	<import>common.window.xml</import>
+	<import>common.time.xml</import>
+</controls>
+</window>
