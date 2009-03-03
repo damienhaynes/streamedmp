@@ -1081,14 +1081,15 @@
       <type>label</type>
       <posX>400</posX>
       <posY>361</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10001)</visible>
     </control>
     <control Style="smallTitle">
+	  <id>10001</id>
       <label>#TVSeries.Episode.InfoPanelLine1Value</label>
       <type>label</type>
       <posX>500</posX>
       <posY>362</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.HasText(10001)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -1096,14 +1097,15 @@
       <type>label</type>
       <posX>400</posX>
       <posY>384</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10002)</visible>
     </control>
     <control Style="smallTitle">
+	  <id>10002</id>
       <label>#TVSeries.Episode.InfoPanelLine2Value</label>
       <type>label</type>
       <posX>500</posX>
       <posY>385</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.HasText(10002)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -1111,14 +1113,15 @@
       <type>label</type>
       <posX>400</posX>
       <posY>407</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10003)</visible>
     </control>
     <control Style="smallTitle">
+	  <id>10003</id>
       <label>#TVSeries.Episode.InfoPanelLine3Value</label>
       <type>label</type>
       <posX>500</posX>
       <posY>408</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.HasText(10003)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -1126,14 +1129,15 @@
       <type>label</type>
       <posX>400</posX>
       <posY>430</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10004)</visible>
     </control>
     <control Style="smallTitle">
+	  <id>10004</id>
       <label>#TVSeries.Episode.InfoPanelLine4Value</label>
       <type>label</type>
       <posX>500</posX>
       <posY>431</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.HasText(10004)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -1141,14 +1145,15 @@
       <type>label</type>
       <posX>400</posX>
       <posY>453</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10005)</visible>
     </control>
     <control Style="smallTitle">
+	  <id>10005</id>
       <label>#TVSeries.Episode.InfoPanelLine5Value</label>
       <type>label</type>
       <posX>500</posX>
       <posY>454</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.HasText(10005)</visible>
     </control>
     
     <!--
@@ -1226,7 +1231,7 @@
       </control>
       <control>
         <id>0</id>
-        <label>SETTINGS</label>
+        <label>PLAYLIST</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
@@ -1237,7 +1242,7 @@
       </control>
 	  <control>
         <id>0</id>
-        <label>PLAYLIST</label>
+        <label>SETTINGS</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
@@ -1278,28 +1283,6 @@
           <label>Change Layout</label>
           <onleft>50</onleft>
         </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Options</description>
-          <type>button</type>
-          <id>4</id>
-          <label>496</label>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>Video Settings</description>
-          <type>button</type>
-          <id>66608</id>
-          <label>Video Settings</label>
-          <hyperlink>703</hyperlink>
-          <onleft>50</onleft>
-        </control>
 		<control>
           <description>Empty button</description>
           <type>button</type>
@@ -1321,7 +1304,29 @@
             <id>9</id>
             <label>983</label>
 			<onleft>50</onleft>
-        </control>		  
+        </control>	
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Options</description>
+          <type>button</type>
+          <id>4</id>
+          <label>496</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>66608</id>
+          <label>Video Settings</label>
+          <hyperlink>703</hyperlink>
+          <onleft>50</onleft>
+        </control>	  
       </control>
     </control>
     
