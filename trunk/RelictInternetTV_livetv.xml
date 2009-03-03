@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+        <id>23458123</id>
+        <defaultcontrol>52</defaultcontrol>
+        <allowoverlay>yes</allowoverlay>
+        <define>#header.label:RelictInternetTV LiveTV</define>
+        <define>#header.hover:hover_my videos.png</define>
+        <define>#header.BG.colordiffuse:ffffffff</define>
+        <define>#header.BG.overlay:mainoverlay.png</define>
+        <controls>
+                <import>common.window.default.xml</import>
+                <import>common.overlays.xml</import>
+                <import>common.time.xml</import>
+
+
+                <control>
+                        <type>actiongroup</type>
+                        <description>action menu</description>
+                        <defaultcontrol>2</defaultcontrol>
+                        <onexit>50</onexit>
+                        <dimColor>00ffffff</dimColor>
+                        <control>
+                                <type>image</type>
+                                <posX>1002</posX>
+                                <posY>0</posY>
+                                <width>278</width>
+                                <height>720</height>
+                                <texture>hiddenmenu_right.png</texture>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <description>label OPTIONS</description>
+                                <label>496</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>225</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <type>group</type>
+                                <description>group element</description>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posX>1040</posX>
+                                <posY>250</posY>
+                                <width>220</width>
+                                <height>720</height>
+                                <layout>StackLayout</layout>
+                                <control>
+                                        <description>Radio Guide</description>
+                                        <type>button</type>
+                                        <id>2</id>
+                                        <label>600</label>
+                                        <hyperlink>23458124</hyperlink>
+                                </control>
+                                <control>
+                                        <type>sortbutton</type>
+                                        <subitems>
+                                                <subitem>103</subitem>
+                                                <subitem>668</subitem>
+                                                <subitem>669</subitem>
+                                                <subitem>670</subitem>
+                                                <subitem>620</subitem>
+                                        </subitems>
+                                </control>
+                                <control>
+                                        <description>Previous button</description>
+                                        <type>button</type>
+                                        <id>6</id>
+                                        <label>210</label>
+                                        <action>15</action>
+                                </control>
+                                <control>
+                                        <description>Next</description>
+                                        <type>button</type>
+                                        <id>7</id>
+                                        <label>209</label>
+                                        <action>14</action>
+                                        <ondown>2</ondown>
+                                </control>
+                                <control>
+                                        <type>button</type>
+                                        <description>Stream Recorder</description>
+                                        <id>23458113</id>
+                                        <ondown>2</ondown>
+                                        <label>Stream Recorder</label>
+                                        <visible>no</visible>
+                                </control>
+                        </control>
+                </control>
+
+                <control>
+                        <type>group</type>
+                        <description>group element</description>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                        <control>
+                                <description>listcontrol</description>
+                                <type>listcontrol</type>
+                                <id>52</id>
+                        </control>
+                        <control>
+                                <description>Thumbnail Panel</description>
+                                <type>thumbnailpanel</type>
+                                <id>51</id>
+                        </control>
+                </control>
+        </controls>
+</window>
+
