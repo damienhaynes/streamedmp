@@ -303,7 +303,7 @@
       <width>278</width>
       <height>418</height>
       <texture>#TVSeries.SeasonBanner</texture>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control> 
     
     <!-- Watched Icons for Series View in Graphical Filmstrip Layout-->
@@ -389,7 +389,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -404,7 +404,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -417,7 +417,7 @@
       <font>mediastream12tc</font>
       <label>Series Details</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -427,7 +427,7 @@
       <posY>297</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -437,7 +437,7 @@
       <posY>321</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -447,7 +447,7 @@
       <posY>345</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -457,7 +457,7 @@
       <posY>369</posY>
       <width>360</width>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -470,7 +470,7 @@
       <font>mediastream12tc</font>
       <label>Actors</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <control>
@@ -482,7 +482,7 @@
       <height>180</height>
       <seperator>==========================================</seperator>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)</visible>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     
     <!--
