@@ -173,21 +173,21 @@
       <type>label</type>
       <label>#selecteditem Series</label>
       <posX>70</posX>
-      <posY>240</posY>
-      <visible>Control.IsVisible(1240)+Control.IsVisible(1235)</visible>
+      <posY>430</posY>
+      <visible>Control.IsVisible(1240)</visible>
     </control>
     <control>
       <description>Shows in this Group</description>
       <type>textboxscrollup</type>
       <id>631</id>
       <posX>70</posX>
-      <posY>260</posY>
+      <posY>450</posY>
       <width>540</width>
-      <height>350</height>
+      <height>200</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1240)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1240)</visible>
       <label>#TVSeries.Description</label>
     </control>
     <!--
@@ -210,7 +210,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1236)+[Control.IsVisible(1238)|Control.IsVisible(1237)]</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -224,7 +224,7 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1238)+!Control.IsVisible(1239)+!Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1236)+[Control.IsVisible(1238)|Control.IsVisible(1237)]</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -264,7 +264,7 @@
       <width>185</width>
       <height>314</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonBanner</texture>
-      <visible>Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+      <visible>Control.IsVisible(1238)+Control.IsVisible(1235)</visible>
       <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
     </control>
     <control>
@@ -949,7 +949,7 @@
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
-          <scrollOffset>2</scrollOffset>
+          <scrollOffset>4</scrollOffset>
           <id>50</id>
           <posX>50</posX>
           <posY>250</posY>
