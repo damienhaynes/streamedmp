@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Streamed MP Editor")]
-[assembly: AssemblyDescription("A Basic Home menu editor for the MediaPortal Streamed MP skin\r\n\r\nAuthors:\r\n   jburnette\r\n   Sambal   Mattsk88")]
+[assembly: AssemblyDescription("A Basic Home menu editor for the MediaPortal Streamed MP skin")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("StreamedMP Menu Editor")]
-[assembly: AssemblyCopyright("Copyright ©  2008")]
+[assembly: AssemblyCopyright("Copyright ©  2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.5.361.0")]
-[assembly: AssemblyFileVersion("0.5.361.0")]
+[assembly: AssemblyVersion("0.6.384.0")]
+[assembly: AssemblyFileVersion("0.6.384.0")]

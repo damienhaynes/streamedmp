@@ -8,21 +8,15 @@
 		IMPORTANT: Ensure that all settings are wrapped in a CDATA type otherwise this docment will not get parsed as proper XML.
 	-->
 
-	<!-- TODO: Layouts that are supported by skin, TVSeries will only allow these layouts to be toggled
-	<layouts>
-		<group list="true" bigicons="false" />
-		<series filmstrip="true" widebanners="true" listbanners="true" listposters="true" />
-		<season list="true" bigicons="false" />
-		<episode />		
-	</layouts>
-	-->
+	<!-- version may be useful for logging purposes and/or future upgrades -->
+	<version>1.1.0.0</version>
 	
 	<!-- 
 		Possible Layout Types supported by the plugin, the defined layout will be what is loaded by default for the corresponding view:
 		
 			Groups:
 				layout="List"
-				layout="BigIcons"
+				layout="SmallIcons" <not supported>
 			Series:
 				layout="ListPosters"
 				layout="ListBanners"
@@ -30,7 +24,7 @@
 				layout="WideBanners"
 			Season:
 				layout="List"
-				layout="BigIcons"
+				layout="Filmstrip"
 			Episode:
 				layout="List"
 			
