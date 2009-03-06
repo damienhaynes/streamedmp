@@ -325,9 +325,11 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>AllOtherFiles</td><td>{EACE1F49-C161-4939-A9BD-F08BFD4C86E4}</td><td>TVLOGOSDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MEDIAPORTAL1</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>TVLogosAustralia</td><td>{62C0BB8F-F383-4966-96D7-5D10B9F80C32}</td><td>LOGOS</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>TVLogosCanada</td><td>{BB3C3452-EBBB-475A-91B6-B7D407269AA7}</td><td>LOGOS</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>TVLogosGermany</td><td>{C7FEC917-EB4D-45DF-AE49-58AC2FA4C6E6}</td><td>LOGOS</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBody</td><td>{9EA046A9-057C-4709-A693-48E897DABE22}</td><td>FontsFolder</td><td>24</td><td/><td>default.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBodyCaps</td><td>{36288623-8C1A-4A9F-9976-D81B86EC052C}</td><td>FontsFolder</td><td>24</td><td/><td>defaultcaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidTitleCaps</td><td>{B255FFB2-692B-4579-9DD8-EB6C1C7FB99D}</td><td>FontsFolder</td><td>24</td><td/><td>titlecaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -602,7 +604,6 @@
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
 		<row><td>INSTALLDIR</td><td>ISRegistryComponent</td></row>
-		<row><td>TVLOGOSDIR</td><td>AllOtherFiles</td></row>
 	</table>
 
 	<table name="CustomAction">
@@ -674,6 +675,7 @@
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>LANGUAGE</td><td>INSTALLDIR</td><td>Language</td><td/><td>0</td><td/></row>
+		<row><td>LOGOS</td><td>TV1</td><td>logos</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MEDIA</td><td>STREAMEDMP1</td><td>Media</td><td/><td>0</td><td/></row>
 		<row><td>MEDIAPORTAL</td><td>TEAM_MEDIAPORTAL1</td><td>MEDIAP~1|MediaPortal</td><td/><td>0</td><td/></row>
@@ -707,7 +709,8 @@
 		<row><td>TEAM_MEDIAPORTAL</td><td>ProgramFilesFolder</td><td>TEAM-M~1|Team-MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL1</td><td>ProgramFilesFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>TEAM_MEDIAPORTAL2</td><td>CommonAppDataFolder</td><td>TEAMME~1|Team MediaPortal</td><td/><td>0</td><td/></row>
-		<row><td>TVLOGOSDIR</td><td>TARGETDIR</td><td>TVLOGO~1|TVLOGOSDIR</td><td/><td>0</td><td/></row>
+		<row><td>THUMBS</td><td>MEDIAPORTAL1</td><td>Thumbs</td><td/><td>0</td><td/></row>
+		<row><td>TV1</td><td>THUMBS</td><td>tv</td><td/><td>0</td><td/></row>
 		<row><td>TempFolder</td><td>TARGETDIR</td><td>.:Temp</td><td/><td>0</td><td/></row>
 		<row><td>TemplateFolder</td><td>TARGETDIR</td><td>.:ShellNew</td><td/><td>0</td><td/></row>
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
@@ -1388,14 +1391,18 @@
 		<col def="S255">ISComments</col>
 		<col def="S255">ISFeatureCabName</col>
 		<col def="S255">ISProFeatureName</col>
+		<row><td>Australia</td><td>TVLogos</td><td>##ID_STRING65##</td><td>##ID_STRING67##</td><td>2</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Canada</td><td>TVLogos</td><td>##ID_STRING68##</td><td>##ID_STRING69##</td><td>4</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Germany</td><td>TVLogos</td><td>##ID_STRING70##</td><td>##ID_STRING71##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>LogosPSD</td><td>Tools</td><td>##ID_STRING37##</td><td>##ID_STRING39##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>MenuEditor</td><td>Tools</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>RELEASE_PLUGINS</td><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>RSS</td><td>Plugins</td><td>##ID_STRING15##</td><td>##ID_STRING34##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>RELEASE_PLUGINS</td><td/><td/><td/></row>
-		<row><td>Tools</td><td/><td>##ID_STRING8##</td><td>##ID_STRING12##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Tools</td><td/><td>##ID_STRING8##</td><td>##ID_STRING12##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td>Main</td><td>##ID_STRING53##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>fontsDefOptions</td><td>Main</td><td>##ID_STRING54##</td><td>##ID_STRING56##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fontsLgeOptions</td><td>Main</td><td>##ID_STRING55##</td><td>##ID_STRING57##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1412,6 +1419,9 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>Australia</td><td>TVLogosAustralia</td></row>
+		<row><td>Canada</td><td>TVLogosCanada</td></row>
+		<row><td>Germany</td><td>TVLogosGermany</td></row>
 		<row><td>LogosPSD</td><td>photoshopPSD</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
 		<row><td>Main</td><td>MediaPortal.xml</td></row>
@@ -1429,7 +1439,6 @@
 		<row><td>TVSeries</td><td>pluginMediaInfoDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
-		<row><td>fonts</td><td>AllOtherFiles</td></row>
 		<row><td>fonts</td><td>fontsFluidBody</td></row>
 		<row><td>fonts</td><td>fontsFluidBodyCaps</td></row>
 		<row><td>fonts</td><td>fontsFluidTitleCaps</td></row>
@@ -1710,9 +1719,11 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>AllOtherFiles</td><td/><td/><td>_F4E0B538_9AAB_4DA8_8ADC_FAE7376A8F07_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>TVLogosAustralia</td><td/><td/><td>_A428B1BD_0846_477D_AC7C_DD32B988C50B_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>TVLogosCanada</td><td/><td/><td>_F35AA11F_4BE2_4307_BE0E_E0923CF76093_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>TVLogosGermany</td><td/><td/><td>_5E437FEF_0A87_47CD_AB40_5E7A273AFF85_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBody</td><td/><td/><td>_AC0D793F_2670_49FC_803D_5C94EB482EDD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBodyCaps</td><td/><td/><td>_BC32B391_5B7D_4BBD_8E0A_FE5120529351_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidTitleCaps</td><td/><td/><td>_3464E48E_06B3_4855_9692_669CE6E69953_FILTER</td><td/><td/><td/><td/></row>
@@ -1798,6 +1809,9 @@
 		<col def="S0">IncludeFiles</col>
 		<col def="S0">ExcludeFiles</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>TVLogosAustralia</td><td>&lt;PLUGINS&gt;\tv\logos\australia</td><td>4</td><td>*.png</td><td/><td>0</td></row>
+		<row><td>TVLogosCanada</td><td>&lt;PLUGINS&gt;\tv\logos\canada</td><td>4</td><td>*.png</td><td/><td>0</td></row>
+		<row><td>TVLogosGermany</td><td>&lt;PLUGINS&gt;\tv\logos\germany</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>mattsk88MovingPictures</td><td>&lt;SKINFILES&gt;\mattsk88xmls</td><td>4</td><td>movingpictures*.xml</td><td/><td>0</td></row>
 		<row><td>mattsk88TVSeries</td><td>&lt;SKINFILES&gt;\mattsk88xmls</td><td>4</td><td>TVSeries*.xml</td><td>TVSeries.mattsk88.xml</td><td>0</td></row>
 		<row><td>skinMedia</td><td>&lt;SKINFILES&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td>tvseries_SeriesListIcon.png,tvseries_SeasonListIcon.png</td><td>2</td></row>
@@ -1821,12 +1835,16 @@
 		<col def="S255">Password</col>
 		<col def="S50">CDRomFolder</col>
 		<col def="S50">Moniker</col>
+		<row><td>Australia</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Canada</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Germany</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>LogosPSD</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MenuEditor</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>RSS</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>TVLogos</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Tools</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2115,10 +2133,10 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.6.0</td></row>
+		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.6.384</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 		<row><td>ReleasePlugins</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.6.0</td></row>
+		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.6.384</td></row>
 		<row><td>ReleasePlugins</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2371,12 +2389,16 @@
 	<table name="ISSetupTypeFeatures">
 		<col key="yes" def="s38">ISSetupType_</col>
 		<col key="yes" def="s38">Feature_</col>
+		<row><td>Custom</td><td>Australia</td></row>
+		<row><td>Custom</td><td>Canada</td></row>
+		<row><td>Custom</td><td>Germany</td></row>
 		<row><td>Custom</td><td>LogosPSD</td></row>
 		<row><td>Custom</td><td>Main</td></row>
 		<row><td>Custom</td><td>MenuEditor</td></row>
 		<row><td>Custom</td><td>MovingPictures</td></row>
 		<row><td>Custom</td><td>Plugins</td></row>
 		<row><td>Custom</td><td>RSS</td></row>
+		<row><td>Custom</td><td>TVLogos</td></row>
 		<row><td>Custom</td><td>TVSeries</td></row>
 		<row><td>Custom</td><td>Tools</td></row>
 		<row><td>Custom</td><td>fonts</td></row>
@@ -2390,9 +2412,13 @@
 		<row><td>Custom</td><td>tvguide12Options</td></row>
 		<row><td>Custom</td><td>tvseriesMultiImageIcons</td></row>
 		<row><td>Custom</td><td>tvseriesSingleImageIcons</td></row>
+		<row><td>Minimal</td><td>Australia</td></row>
+		<row><td>Minimal</td><td>Canada</td></row>
+		<row><td>Minimal</td><td>Germany</td></row>
 		<row><td>Minimal</td><td>LogosPSD</td></row>
 		<row><td>Minimal</td><td>Main</td></row>
 		<row><td>Minimal</td><td>MenuEditor</td></row>
+		<row><td>Minimal</td><td>TVLogos</td></row>
 		<row><td>Minimal</td><td>Tools</td></row>
 		<row><td>Minimal</td><td>fonts</td></row>
 		<row><td>Minimal</td><td>fontsDefOptions</td></row>
@@ -2402,11 +2428,15 @@
 		<row><td>Minimal</td><td>tvguide12Options</td></row>
 		<row><td>Minimal</td><td>tvseriesMultiImageIcons</td></row>
 		<row><td>Minimal</td><td>tvseriesSingleImageIcons</td></row>
+		<row><td>Typical</td><td>Australia</td></row>
+		<row><td>Typical</td><td>Canada</td></row>
+		<row><td>Typical</td><td>Germany</td></row>
 		<row><td>Typical</td><td>Main</td></row>
 		<row><td>Typical</td><td>MenuEditor</td></row>
 		<row><td>Typical</td><td>MovingPictures</td></row>
 		<row><td>Typical</td><td>Plugins</td></row>
 		<row><td>Typical</td><td>RSS</td></row>
+		<row><td>Typical</td><td>TVLogos</td></row>
 		<row><td>Typical</td><td>TVSeries</td></row>
 		<row><td>Typical</td><td>Tools</td></row>
 		<row><td>Typical</td><td>fonts</td></row>
@@ -3692,7 +3722,15 @@
 		<row><td>ID_STRING61</td><td>1033</td><td>TV Series SingleImage for Watched / Unwatched states</td><td>0</td><td/><td>-1600265167</td></row>
 		<row><td>ID_STRING62</td><td>1033</td><td>Global Search</td><td>0</td><td/><td>-1331856629</td></row>
 		<row><td>ID_STRING63</td><td>1033</td><td>This plugin allows you to search through your complete music library (including lyrics if available) and provides functionality to control what you want to do with the search results.</td><td>0</td><td/><td>-1331827925</td></row>
+		<row><td>ID_STRING64</td><td>1033</td><td>TV Logos</td><td>0</td><td/><td>832381807</td></row>
+		<row><td>ID_STRING65</td><td>1033</td><td>Australia</td><td>0</td><td/><td>832406383</td></row>
+		<row><td>ID_STRING66</td><td>1033</td><td>TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832400239</td></row>
+		<row><td>ID_STRING67</td><td>1033</td><td>Australian TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832416623</td></row>
+		<row><td>ID_STRING68</td><td>1033</td><td>Canada</td><td>0</td><td/><td>832426863</td></row>
+		<row><td>ID_STRING69</td><td>1033</td><td>Canadian TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832433007</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
+		<row><td>ID_STRING70</td><td>1033</td><td>Germany</td><td>0</td><td/><td>832406895</td></row>
+		<row><td>ID_STRING71</td><td>1033</td><td>German TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832417135</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING9</td><td>1033</td><td>TEAMME~1|Team MediaPortal</td><td>0</td><td/><td>-1919133586</td></row>
 		<row><td>ID_TVSERIES_DESC</td><td>1033</td><td>Select your TV Series layout</td><td>0</td><td/><td>-1919115081</td></row>
@@ -4292,7 +4330,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{46301D3B-47B5-4177-B1CA-3DD890111459}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.6.0.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.6.384.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
