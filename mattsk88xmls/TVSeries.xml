@@ -1030,7 +1030,7 @@
       <width>159</width>
       <height>28</height>
       <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+      <visible>Control.IsVisible(1235)</visible>
     </control>
     <control>
       <description>Media Count Label</description>
@@ -1043,6 +1043,28 @@
       <textcolor>ff909090</textcolor>
       <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
     </control>
+	<control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>SERIES:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)</visible>
+    </control>
+	<control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>GROUPS:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1240)</visible>
+    </control>
     <control>
       <description>Media Count Label</description>
       <type>label</type>
@@ -1054,7 +1076,7 @@
       <align>left</align>
       <textcolor>ff006698</textcolor>
       <visible>Control.IsVisible(1235)+Control.IsVisible(1238)</visible>
-    </control>
+    </control>	
     <control>
       <description>Media Count Label</description>
       <type>label</type>
@@ -1066,6 +1088,30 @@
       <align>left</align>
       <textcolor>ff006698</textcolor>
       <visible>Control.IsVisible(1235)+Control.IsVisible(1239)</visible>
+    </control>
+	<control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.SeriesCount</label>
+      <id>0</id>
+      <posX>1215</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <align>left</align>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)</visible>
+    </control>
+	<control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.GroupCount</label>
+      <id>0</id>
+      <posX>1215</posX>
+      <posY>17</posY>
+      <font>mediastream10tc</font>
+      <align>left</align>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.IsVisible(1235)+Control.IsVisible(1240)</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::
