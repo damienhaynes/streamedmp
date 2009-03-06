@@ -418,7 +418,25 @@ multiple view modes.
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    
+    <control>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>30</posX>
+      <posY>650</posY>
+      <width>310</width>
+      <height>23</height>
+      <textureWidth>20</textureWidth>
+      <textureHeight>18</textureHeight>
+      <subitems>
+        <subitem>greystar.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>10</imagesToDraw>
+      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
     <control>
       <description>Writers Label Shadow</description>
       <type>label</type>

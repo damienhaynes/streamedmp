@@ -18,8 +18,8 @@ This file should contain the facade view
         <posY>317</posY>
         <height>360</height>
         <textXOff>0</textXOff>
-        <spinPosX>1249</spinPosX>
-        <spinPosY>690</spinPosY>
+        <spinPosX>-50</spinPosX>
+        <spinPosY>-50</spinPosY>
         <spinAlign>Right</spinAlign>
         <spinColor>ff006698</spinColor>
         <spinCanFocus>no</spinCanFocus>
@@ -106,18 +106,29 @@ This file should contain the facade view
       <height>28</height>
       <texture>mediacountbackground.png</texture>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-    
+    </control>    
     <control>
       <description>Media Count Label</description>
       <type>label</type>
-      <label>PAGE:</label>
+      <label>MOVIES:</label>
       <id>0</id>
       <posX>1123</posX>
       <posY>688</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+	<control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1246</posX>
+      <posY>686</posY>
+      <width>350</width>
+      <font>mediastream11c</font>
+	  <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <label>#MovingPictures.general.filteredmoviecount</label>
+	  <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>
