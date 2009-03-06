@@ -65,11 +65,11 @@
 #define MEDIAPORTAL_CONFIG_FILE				CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.21527" 	// 1.0.1 SVN
+#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.21688" 	// 1.0.1 SVN
 #define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.1.3321.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.7.0.485"
+#define TVSERIES_MIN_VERSION			"2.2.3352.0"
+#define MOVINGPICTURES_MIN_VERSION		"0.7.2.545"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -120,7 +120,7 @@ prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
 prototype VOID		UninstallCleanup();       
-prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
+//prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
 prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRING);
 prototype VOID		CleanVirtualStoreDir();
 prototype NUMBER	GetXMLProperty(STRING,STRING,BYREF STRING);
@@ -152,7 +152,7 @@ STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
 STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
-STRING g_sSeriesLayout;
+//STRING g_sSeriesLayout;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -228,7 +228,7 @@ begin
 	endif;
 	
 	// Read Series Layout default	
-	if (TVSeriesLayout(svValue,FALSE) < 0) then
+	/*if (TVSeriesLayout(svValue,FALSE) < 0) then
 		g_sSeriesLayout = "List Posters";		
 	else
 		StrToLower(svString,svValue);	
@@ -245,7 +245,7 @@ begin
 				g_sSeriesLayout = "List Posters";	
 		endswitch;
 			
-	endif;
+	endif;*/
 	
 	// Determine if 'Total Episode Count' fields are added to List View
 	// Just Check Series, but set for both Series & Season
@@ -713,7 +713,7 @@ Dlg_Wait:
  				endif;
  			
  				// Populate series layout list                               
-	        	listSeriesLayout = ListCreate(STRINGLIST);
+	        	/*listSeriesLayout = ListCreate(STRINGLIST);
 	        	
 	        	ListAddString(listSeriesLayout,"List Posters",AFTER);	        	
 	        	ListAddString(listSeriesLayout,"List Banners",AFTER);
@@ -722,7 +722,7 @@ Dlg_Wait:
 	        	// Add Series Layouts to list
 	        	CtrlSetList(szDialogName,RES_COMBO_SERIESLAYOUT,listSeriesLayout);
 	        	CtrlSetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 				
-	        	ListDestroy(listSeriesLayout); 
+	        	ListDestroy(listSeriesLayout);*/
 	        	
  			
  			case RES_BUTTON_TVSERIESADVANCED:
@@ -753,16 +753,9 @@ Dlg_Wait:
 		g_bTVSeriesDefault = FALSE;
 	endif;
 	
-	CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 
+	//CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 
 		
-	bValidate = TRUE;
-	if (nCmdValue = RES_PBUT_NEXT) then
-		if (!g_bTVSeriesDefault && (g_sSeriesLayout = "List Banners")) then 
-			// This Layout is not supported by Fanart Orientated style currently
-			bValidate = FALSE;
-			szErrorMsg = "List Banners Layout is currently not supported by the Fanart Orientated style. Please try another layout.";
-		endif;		
-	endif;
+	bValidate = TRUE;	
 	
 	if !bValidate then 
 	 	MessageBox(szErrorMsg,INFORMATION);	 	
@@ -1133,7 +1126,7 @@ begin
 		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/graphicsquality/seriesposters", "35");
 	endif;
 	
-	svString = g_sSeriesLayout;	               
+	/*svString = g_sSeriesLayout;	               
 	switch (svString)
 		case "List Banners":
 			svString = "ListBanners";
@@ -1143,9 +1136,9 @@ begin
 			svString = "WideBanners";
 		case "Filmstrip":
 			svString = "Filmstrip";		
-	endswitch;
+	endswitch;*/
 		
-	TVSeriesLayout(svString,TRUE);
+	//TVSeriesLayout(svString,TRUE);
 	
 	// Set Total Episode Count Field to Series/Season List View
 	if g_bShowTotalEpisodeCount then
@@ -1557,7 +1550,7 @@ begin
     
 end;
 
-function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
+/*function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
 	OBJECT oXMLdoc, oNode; 
 	STRING sNode, sFile;
 begin
@@ -1601,7 +1594,7 @@ begin
     Enable(LOGGING);         
     return 0;
     
-end;        
+end;*/
 
 function NUMBER GetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
@@ -1639,6 +1632,8 @@ end;
 function NUMBER SetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
 begin
+	
+	Disable(LOGGING);
 		
 	try		
 		// Prepare XML parser object
