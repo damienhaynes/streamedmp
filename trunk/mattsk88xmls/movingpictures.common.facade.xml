@@ -20,12 +20,15 @@ This file should contain the facade view
         <spinPosX>1400</spinPosX>
         <textXOff>17</textXOff>
         <spinColor>ffcccccc</spinColor>
+		<onleft>2</onleft>
+        <onright>2</onright>
       </control>
       <control>
         <description>Thumbnail Panel</description>
         <type>thumbnailpanel</type>
         <id>50</id>
         <onleft>2</onleft>
+        <onright>2</onright>
         <posX>25</posX>
         <posY>70</posY>
         <width>1280</width>
@@ -60,8 +63,7 @@ This file should contain the facade view
 		<thumbPosYBig>5</thumbPosYBig>
         <thumbZoom>no</thumbZoom>
         <enableFocusZoom>yes</enableFocusZoom>
-        <unfocusedAlpha>150</unfocusedAlpha>
-        <onright>2</onright>
+        <unfocusedAlpha>150</unfocusedAlpha>        
       </control>
       <control>
         <description>Filmstrip view</description>
@@ -69,10 +71,9 @@ This file should contain the facade view
         <id>50</id>
         <posX>40</posX>
         <posY>465</posY>
-        <onright>2</onright>
+        <onup>2</onup>
         <width>700</width>
-        <scrollOffset>3</scrollOffset>
-        <onleft>2</onleft>
+        <scrollOffset>3</scrollOffset>      
         <spinPosY>900</spinPosY>
         <spinPosX>1400</spinPosX>
         <spinColor>ffcccccc</spinColor>

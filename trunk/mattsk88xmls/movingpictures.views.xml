@@ -241,7 +241,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <height>342</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MovingPictures.Coverart</texture>
       <!--<animation effect="rotatey" start="-60" end="-60" center="15,10" time="0" reversible="false">visible</animation>-->
-      <visible>facadeview.list+Control.HasFocus(50)</visible>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
       <type>image</type>
