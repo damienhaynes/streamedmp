@@ -1000,7 +1000,7 @@
           <textXOff2>367</textXOff2>
           <textXOff3>415</textXOff3>
           <textYOff3>11</textYOff3>
-          <font>mediastream11tc</font>
+          <font>mediastream11c</font>
           <font3>mediastream9c</font3>
           <textcolor3>#notpresent.color</textcolor3>
           <textureFocus>listbg_detail_fo.png</textureFocus>
@@ -1029,8 +1029,7 @@
       <posY>13</posY>
       <width>159</width>
       <height>28</height>
-      <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(1235)</visible>
+      <texture>mediacountbackground.png</texture>      
     </control>
     <control>
       <description>Media Count Label</description>
@@ -1039,9 +1038,10 @@
       <id>0</id>
       <posX>1123</posX>
       <posY>17</posY>
+	  <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>Control.IsVisible(1235)+[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+      <visible>[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
     </control>
 	<control>
       <description>Media Count Label</description>
@@ -1050,9 +1050,10 @@
       <id>0</id>
       <posX>1123</posX>
       <posY>17</posY>
+	  <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)</visible>
+      <visible>Control.IsVisible(1237)</visible>
     </control>
 	<control>
       <description>Media Count Label</description>
@@ -1061,57 +1062,58 @@
       <id>0</id>
       <posX>1123</posX>
       <posY>17</posY>
+	  <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1240)</visible>
     </control>
     <control>
       <description>Media Count Label</description>
       <type>label</type>
       <label>#TVSeries.Series.EpisodeCount</label>
       <id>0</id>
-      <posX>1215</posX>
-      <posY>17</posY>
-      <font>mediastream10tc</font>
-      <align>left</align>
+      <posX>1245</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <align>right</align>    
       <textcolor>ff006698</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1238)</visible>
+      <visible>Control.IsVisible(1238)</visible>
     </control>	
     <control>
       <description>Media Count Label</description>
       <type>label</type>
       <id>0</id>
       <label>#TVSeries.Season.EpisodeCount</label>
-      <posX>1215</posX>
-      <posY>17</posY>
-      <font>mediastream10tc</font>
-      <align>left</align>
+      <posX>1245</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
       <textcolor>ff006698</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1239)</visible>
+      <visible>Control.IsVisible(1239)</visible>
     </control>
 	<control>
       <description>Media Count Label</description>
       <type>label</type>
       <label>#TVSeries.SeriesCount</label>
       <id>0</id>
-      <posX>1215</posX>
-      <posY>17</posY>
-      <font>mediastream10tc</font>
-      <align>left</align>
+      <posX>1245</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
       <textcolor>ff006698</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)</visible>
+      <visible>Control.IsVisible(1237)</visible>
     </control>
 	<control>
       <description>Media Count Label</description>
       <type>label</type>
       <label>#TVSeries.GroupCount</label>
       <id>0</id>
-      <posX>1215</posX>
-      <posY>17</posY>
-      <font>mediastream10tc</font>
-      <align>left</align>
+      <posX>1245</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
       <textcolor>ff006698</textcolor>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1240)</visible>
+      <visible>Control.IsVisible(1240)</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::
