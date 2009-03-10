@@ -51,6 +51,7 @@
                         <height>150</height>
                         <texture>#TV.View.thumb</texture>
                         <keepaspectratio>yes</keepaspectratio>
+                        <centered>yes</centered>
                         <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                         
                 </control>

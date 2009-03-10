@@ -2,7 +2,7 @@
 <window>
         <id>1</id>
         <defaultcontrol>2</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
+        <allowoverlay>yes</allowoverlay>
         <define>#header.label:605</define>
         <define>#header.hover:hover_my tv series.png</define>
         <define>#header.BG.colordiffuse:ffffffff</define>
@@ -275,8 +275,6 @@
                         <ondown>10</ondown>
                         <action>18</action>
                         <textureFocus>tv_blue_border.png</textureFocus>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <type>image</type>
