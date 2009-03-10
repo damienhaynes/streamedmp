@@ -61,9 +61,9 @@
                         <id>0</id>
                         <posX>431</posX>
                         <posY>11</posY>
-                        <width>356</width>
+                        <width>456</width>
                         <height>36</height>
-                        <texture>tvtitlebgshort.png</texture>
+                        <texture>tvtitlebg.png</texture>
                         <animation effect="fade" time="300" delay="300">WindowOpen</animation>
                         <animation effect="fade" time="300" delay="0">WindowClose</animation>
                         <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
@@ -73,15 +73,16 @@
                         <type>label</type>
                         <description>Guide Group Label</description>
                         <id>11</id>
-                        <posX>762</posX>
+                        <posX>852</posX>
                         <posY>13</posY>
+                        <width>300</width>
                         <font>mediastream12c</font>
                         <align>right</align>
-                        <label>#TV.Guide.Group</label>
+                        <label>#TV.Guide.ChangeGroup</label>
                         <animation effect="fade" time="300" delay="300">WindowOpen</animation>
                         <animation effect="fade" time="230" delay="0">WindowClose</animation>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
                 </control>
                 <control>
                         <description>Time Background</description>
@@ -123,7 +124,7 @@
                         <font>mediastream16tc</font>
                         <align>left</align>
                 </control>
-				<control>
+                <control>
                         <description>Single Channel Image</description>
                         <type>image</type>
                         <id>33</id>
@@ -134,7 +135,7 @@
                         <keepaspectratio>yes</keepaspectratio>
                         <zoom>yes</zoom>
                         <texture>defaultVideoBig.png</texture>
-                        </control>
+                </control>
                 <!-- Timeheader background must be dedfined before Timeheader label template -->
                 <!-- b/c Timeheader is on the background and will be rendered first -->
                 <control>
@@ -190,13 +191,13 @@
                         <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
                         <onleft>6</onleft>
                         <onright>8</onright>
-                 </control>
+                </control>
                 <control>
                         <description>Channel template</description>
                         <type>image</type>
                         <id>20</id>
                         <posX>50</posX>
-                        <posY>115</posY>
+                        <posY>120</posY>
                         <width>251</width>
                         <height>55</height>
                 </control>
@@ -216,7 +217,7 @@
                         <description>channel Label template</description>
                         <type>label</type>
                         <id>18</id>
-                        <posX>70</posX>
+                        <posX>50</posX>
                         <posY>5</posY>
                         <width>86</width>
                         <height>10</height>
@@ -229,7 +230,7 @@
                         <id>13</id>
                         <posX>240</posX>
                         <posY>585</posY>
-                        <width>450</width>
+                        <width>455</width>
                         <label>#TV.Guide.Title</label>
                         <font>mediastream11tc</font>
                 </control>
@@ -254,7 +255,7 @@
                         <align>left</align>
                         <font>mediastream11tc</font>
                 </control>
-                 <control>
+                <control>
                         <description>Description1</description>
                         <type>textboxscrollup</type>
                         <id>15</id>
@@ -303,7 +304,7 @@
                         <font>mediastream13</font>
                         <textcolor>FFFFFFFF</textcolor>
                 </control>
-                <!--for program genre-->                
+                <!--for program genre-->
                 <!--<control>
                         <description>template for genre	dark area</description>
                         <type>label</type>
@@ -313,7 +314,36 @@
                         <font>mediastream10</font>
                         <textcolor>FF101010</textcolor>
                 </control>-->
-                 <control>
+                <control>
+                        <description>TvGroup button</description>
+                        <type>button</type>
+                        <id>60</id>
+                        <posX>15</posX>
+                        <posY>115</posY>
+                        <width>30</width>
+                        <height>435</height>
+                        <textureFocus>tvguide_button_selected_middle.png</textureFocus>
+                        <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
+                        <label></label>
+                        <onleft>60</onleft>
+                        <onright>6</onright>
+                        <onup>6</onup>
+                        <ondown>6</ondown>
+                        <animation effect="zoom" start="100,100" end="100,100" time="0">focus</animation>
+                        <animation effect="zoom" start="100,100" end="100,100" time="0">unfocus</animation>
+                </control>
+                <control>
+                        <description>TvGroup button label</description>
+                        <type>label</type>
+                        <id>61</id>
+                        <posX>40</posX>
+                        <posY>125</posY>
+                        <label>#TV.Guide.ChangeGroup</label>
+                        <font>mediastream12c</font>
+                        <textcolor>FFFFFFFF</textcolor>
+                        <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
+                </control>
+                <control>
                         <description>record pin</description>
                         <type>image</type>
                         <id>31</id>
