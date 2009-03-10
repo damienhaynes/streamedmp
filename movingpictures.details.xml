@@ -167,7 +167,7 @@ This file should contain the details view
       <id>0</id>
       <posX>363</posX>
       <posY>608</posY>
-      <width>840</width>
+      <width>100</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -175,12 +175,12 @@ This file should contain the details view
     
     <control>
       <description>director</description>
-      <type>label</type>
+      <type>fadelabel</type>
       <label>#MovingPictures.SelectedMovie.directors</label>
       <id>0</id>
-      <posX>463</posX>
+      <posX>473</posX>
       <posY>608</posY>
-      <width>840</width>
+      <width>800</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -193,7 +193,7 @@ This file should contain the details view
       <id>0</id>
       <posX>363</posX>
       <posY>632</posY>
-      <width>840</width>
+      <width>100</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -201,12 +201,12 @@ This file should contain the details view
     
     <control>
       <description>writer</description>
-      <type>label</type>
+      <type>fadelabel</type>
       <label>#MovingPictures.SelectedMovie.writers</label>
       <id>0</id>
-      <posX>463</posX>
+      <posX>473</posX>
       <posY>632</posY>
-      <width>840</width>
+      <width>390</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -217,9 +217,10 @@ This file should contain the details view
       <type>label</type>
       <label>year</label>
       <id>0</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>632</posY>
       <width>840</width>
+	  <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -230,9 +231,10 @@ This file should contain the details view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
       <id>0</id>
-      <posX>965</posX>
+      <posX>950</posX>
       <posY>632</posY>
-      <width>840</width>
+      <width>50</width>
+	  <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -243,9 +245,10 @@ This file should contain the details view
       <type>label</type>
       <label>runtime</label>
       <id>0</id>
-      <posX>1060</posX>
+      <posX>1110</posX>
       <posY>632</posY>
       <width>840</width>
+	  <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)</visible>
@@ -256,10 +259,10 @@ This file should contain the details view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.runtime mins</label>
       <id>0</id>
-      <posX>1210</posX>
+      <posX>1120</posX>
       <posY>632</posY>
-      <width>840</width>
-      <align>right</align>
+      <width>80</width>
+      <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)</visible>
