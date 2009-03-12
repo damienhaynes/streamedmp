@@ -35,7 +35,7 @@
       <type>label</type>
       <id>10</id>
       <posX>70</posX>
-      <posY>238</posY>
+      <posY>230</posY>
       <font>mediastream11</font>
       <label>-</label>
       <align>left</align>
@@ -50,7 +50,7 @@
       <label>Last Refreshed:</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+     <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
     </control>
     <control>
       <description>update time </description>
@@ -68,8 +68,8 @@
       <type>group</type>
       <description>group element</description>
       <posX>62</posX>
-      <posY>268</posY>
-      <layout>StackLayout(0,Horizontal)</layout>
+      <posY>260</posY>
+      <layout>StackLayout(0,Horizontal)</layout>	  
       <control>
         <description>Refresh Button</description>
         <type>button</type>
@@ -86,7 +86,7 @@
         <disabledcolor>ff909090</disabledcolor>
         <textcolorNoFocus>ff909090</textcolorNoFocus>
       </control>
-      <control>
+	  <control>
         <description>Switch Button</description>
         <type>button</type>
         <id>2</id>
@@ -101,8 +101,24 @@
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
         <textcolorNoFocus>ff909090</textcolorNoFocus>
-      </control>
+      </control>	  
       <control>
+        <description>View Button</description>
+        <type>button</type>
+        <id>4</id>
+        <label>185</label>
+		<onup>17</onup>
+        <font>mediastream11c</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+		<textalign>center</textalign>
+        <textYOff>1</textYOff>
+        <disabledcolor>ff909090</disabledcolor>
+        <textcolorNoFocus>ff909090</textcolorNoFocus>
+		<width>200</width>
+        <height>26</height>		
+      </control>
+	  <control>
         <description>weather location select</description>
         <type>button</type>
         <id>5</id>
@@ -118,9 +134,9 @@
         <disabledcolor>ff909090</disabledcolor>
         <textcolorNoFocus>ff909090</textcolorNoFocus>
         <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
-      </control>
+      </control>      
     </control>
-    
+
     <control>
       <description>TWC Logo</description>
       <type>image</type>
@@ -345,7 +361,7 @@
       <label>HIGH :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(32)</visible>
     </control>
     <control>
       <description>day 0 Hi value</description>
@@ -366,7 +382,7 @@
       <label>LOW :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(33)</visible>
     </control>
     <control>
       <description>day 0 low value</description>
@@ -419,7 +435,7 @@
       <label>HIGH :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(42)</visible>
     </control>
     <control>
       <description>day 1 Hi value</description>
@@ -440,7 +456,7 @@
       <label>LOW :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(43)</visible>
     </control>
     <control>
       <description>day 1 low value</description>
@@ -491,7 +507,7 @@
       <label>HIGH :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(52)</visible>
     </control>
     <control>
       <description>day 2 Hi label</description>
@@ -512,7 +528,7 @@
       <label>LOW :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(53)</visible>
     </control>
     <control>
       <description>day 2 low value</description>
@@ -563,7 +579,7 @@
       <label>HIGH :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(62)</visible>
     </control>
     <control>
       <description>day 3 Hi value</description>
@@ -584,7 +600,7 @@
       <label>LOW :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(63)</visible>
     </control>
     <control>
       <description>day 3 low value</description>
@@ -635,7 +651,7 @@
       <label>HIGH :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(72)</visible>
     </control>
     <control>
       <description>day 4 Hi value</description>
@@ -656,7 +672,7 @@
       <label>LOW :</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(73)</visible>
     </control>
     <control>
       <description>day 4 low value</description>
@@ -695,9 +711,9 @@
       <description>Satellite image</description>
       <type>image</type>
       <id>1000</id>
-      <posX>503</posX>
+      <posX>600</posX>
       <posY>217</posY>
-      <width>774</width>
+      <width>677</width>
       <height>500</height>
       <texture />
       <visible>no</visible>
@@ -723,8 +739,7 @@
       <keepaspectratio>yes</keepaspectratio>
     </control>
     
-    <import>common.overlays.xml</import>
-    
+    <import>common.overlays.xml</import>    
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     
