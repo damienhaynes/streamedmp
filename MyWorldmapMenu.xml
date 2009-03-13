@@ -12,6 +12,7 @@
 			<onexit>50</onexit>
 			<dimColor>00ffffff</dimColor>
 			<control>
+				<id>0</id>
 				<type>image</type>
 				<posX>1002</posX>
 				<posY>0</posY>
@@ -20,10 +21,20 @@
 				<texture>hiddenmenu_right.png</texture>				
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>			
+			<control>
+				<id>1</id>
+				<label>SEARCH...</label>
+				<type>label</type>
+				<font>mediastream12tc</font>
+				<posX>-50</posX>
+				<posY>-50</posY>				
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
 			<control>
 				<id>0</id>
-				<label>SEARCH</label>
+				<label>137</label>
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
@@ -33,7 +44,7 @@
 			</control>
 			<control>
 				<id>0</id>
-				<label>SETTINGS</label>
+				<label>897</label>
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
