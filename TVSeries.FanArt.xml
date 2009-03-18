@@ -36,24 +36,56 @@
     </control>
     
     <!-- :::::::::::::: TOP BAR :::::::::::::: -->
-    
-    <control>
-      <description>Current View Label</description>
-      <type>label</type>
+       
+	<control>
+      <description>Page Title BG</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+    </control>
+	<control>
+      <type>fadelabel</type>
+      <description>Page Title Lable</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
       <label>#TVSeries.Fanart.PageTitle</label>
+      <align>right</align>      
+    </control>
+	
+	<control>
+      <description>CURRENT FILTER Label</description>
+      <type>label</type>      
       <id>0</id>
       <posX>1255</posX>
       <posY>15</posY>
-      <width>500</width>
+      <width>200</width>
       <font>mediastream10tc</font>
       <align>right</align>
       <textcolor>ffFFFFFF</textcolor>
+	  <label>#TVSeries.FanArt.FilterResolution</label>
     </control>
-    
-    <import>common.time.xml</import>
+	
+    <import>common.time.xml</import>	
     
     <!-- :::::::::::::: INFO LABELS :::::::::::::: -->
     
+	<control>
+      <description>Loading Status</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>50</posX>
+      <posY>328</posY>
+      <font>mediastream11</font>
+      <label>#TVSeries.FanArt.LoadingStatus</label>
+    </control>
+	
     <control>
       <description>Download Status</description>
       <type>label</type>
@@ -64,17 +96,130 @@
       <label>#TVSeries.FanArt.DownloadingStatus</label>
     </control>
     
-    <control>
-      <description>FanArt Resolution</description>
+	<control Style="smallTitleB">
+      <description>FanArt Resolution Label</description>
       <type>label</type>
-      <id>0</id>
+      <id>11</id>
       <posX>50</posX>
       <posY>380</posY>
-      <font>mediastream11</font>
-      <label>Resolution: #TVSeries.FanArt.SelectedFanartResolution</label>
+      <label>Resolution:</label>
+	  <align>left</align>	  
     </control>
+    <control Style="smallTitle">
+      <description>FanArt Resolution Value</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>200</posX>
+      <posY>381</posY>     
+      <label>#TVSeries.FanArt.SelectedFanartResolution</label>
+	  <align>left</align>
+    </control>
+	
+	<control Style="smallTitleB">
+      <description>FanArt Disabled</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>50</posX>
+      <posY>403</posY>
+      <label>Disabled:</label>
+	  <align>left</align>	  
+    </control>
+    <control Style="smallTitle">
+      <description>FanArt Disabled</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>200</posX>
+      <posY>404</posY>     
+      <label>#TVSeries.FanArt.SelectedFanartIsDisabled</label>
+	  <align>left</align>
+    </control>
+	
+    <control Style="smallTitleB">
+      <description>FanArt Chosen</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>50</posX>
+      <posY>425</posY>
+      <label>Chosen:</label>
+	  <align>left</align>	  
+    </control>
+    <control Style="smallTitle">
+      <description>FanArt Chosen</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>200</posX>
+      <posY>426</posY>     
+      <label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
+	  <align>left</align>
+    </control>
+	    
+	<!--      :: HIDDEN MENU ::      -->
     
-    <!-- :::::::::::::: THUMBNAILPANEL :::::::::::::: -->
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>MENU</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>     
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Change Layout</description>
+          <type>button</type>
+          <id>2</id>
+          <label>Change Layout</label>
+          <onleft>50</onleft>
+        </control>
+		<control>
+          <description>Resolution Filter</description>
+          <type>button</type>
+          <id>12</id>
+          <label>Filter</label>
+          <onleft>50</onleft>
+        </control>		
+        <control>
+          <description>Random Fanart</description>
+          <type>togglebutton</type>
+          <id>13</id>
+          <label>Random Fanart</label>
+          <onleft>50</onleft>
+        </control>		  
+      </control>
+    </control>
+	
+	
+    <!-- :::::::::::::: FACADE :::::::::::::: -->
     
     <control>
       <type>group</type>
@@ -95,36 +240,118 @@
           <posY>470</posY>
           <width>1340</width>
           <height>300</height>
-    <font>titlefont10</font>
-    <spinWidth>16</spinWidth>
-    <spinHeight>16</spinHeight>
-    <spinPosX>630</spinPosX>
-    <spinPosY>440</spinPosY>
-    <spinAlign>Right</spinAlign>
-    <spinColor>ffffffff</spinColor>
-    <textureFocus>mediaitemdetailfo.png</textureFocus>
+		  <onleft>2</onleft>
+		  <onright>2</onright>
+	      <font>titlefont10</font>
+	      <spinWidth>16</spinWidth>
+	      <spinHeight>16</spinHeight>
+	      <spinPosX>630</spinPosX>
+	      <spinPosY>440</spinPosY>
+	      <spinAlign>Right</spinAlign>
+	      <spinColor>ffffffff</spinColor>
+	      <textureFocus>mediaitemdetailfo.png</textureFocus>
           <imageFolder>-</imageFolder>
-          <imageFolderFocus>tvseries_fanart_focus.png</imageFolderFocus>
+          <imageFolderFocus>thumbborder.png</imageFolderFocus>
           <downloadColor>#default.color</downloadColor>
           <remoteColor>#watched.color</remoteColor>
           <textcolor>#notpresent.color</textcolor>
           <textcolor2>#notpresent.color</textcolor2>
           <textcolor3>#notpresent.color</textcolor3>
-          <itemWidthBig>305</itemWidthBig>
+		  <!-- Small Thumbnails -->
+		  <itemWidth>305</itemWidth>
+          <itemHeight>215</itemHeight>
+          <textureWidth>283</textureWidth>
+          <textureHeight>158</textureHeight>
+          <thumbWidth>263</thumbWidth>
+          <thumbHeight>148</thumbHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>5</thumbPosY>
+          <!-- Large Thumbnails -->
+		  <itemWidthBig>305</itemWidthBig>
           <itemHeightBig>215</itemHeightBig>
-          <textureWidthBig>305</textureWidthBig>
-          <textureHeightBig>215</textureHeightBig>
-          <thumbWidthBig>270</thumbWidthBig>
-          <thumbHeightBig>168</thumbHeightBig>
-          <thumbPosXBig>14</thumbPosXBig>
-          <thumbPosYBig>6</thumbPosYBig>
+          <textureWidthBig>283</textureWidthBig>
+          <textureHeightBig>158</textureHeightBig>
+          <thumbWidthBig>263</thumbWidthBig>
+          <thumbHeightBig>148</thumbHeightBig>
+          <thumbPosXBig>10</thumbPosXBig>
+          <thumbPosYBig>5</thumbPosYBig>
           <thumbZoom>no</thumbZoom>
           <enableFocusZoom>no</enableFocusZoom>
           <textXOff>20</textXOff>
-          <textYOff>-43</textYOff>
+          <textYOff>10</textYOff>
           <unfocusedAlpha>150</unfocusedAlpha>
+        </control>
+		<control>
+	        <description>Filmstrip view</description>
+	        <type>filmstrip</type>
+	        <id>50</id>
+	        <onup>2</onup>
+	        <onleft>50</onleft>
+	        <posX>40</posX>
+	        <posY>512</posY>
+	        <width>1280</width>
+	        <scrollOffset>4</scrollOffset>
+	        <spinPosX>1300</spinPosX>
+	        <spinPosY>720</spinPosY>
+	        <spinWidth>24</spinWidth>
+	        <spinHeight>24</spinHeight>
+	        <spinColor>ffcccccc</spinColor>
+	        <itemWidth>305</itemWidth>
+            <itemHeight>215</itemHeight>
+            <textureWidth>283</textureWidth>
+            <textureHeight>158</textureHeight>
+            <thumbWidth>263</thumbWidth>
+            <thumbHeight>148</thumbHeight>
+            <thumbPosX>10</thumbPosX>
+            <thumbPosY>5</thumbPosY>
+	        <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+	        <InfoImage></InfoImage>
+	        <imageFolder>-</imageFolder>
+	        <imageFolderFocus>thumbborder.png</imageFolderFocus>
+	        <frame>-</frame>
+	        <frameFocus>-</frameFocus>
+	        <showFrame>no</showFrame>
+	        <showFolder>yes</showFolder>
+	        <showBackGround>no</showBackGround>
+	        <showInfoImage>no</showInfoImage>
+	        <thumbAnimation effect="zoom" start="100,100" end="120,120" time="110">focus</thumbAnimation>
+	        <thumbAnimation effect="zoom" start="120,120" end="100,100" time="110">unfocus</thumbAnimation>
         </control>
       </control>
     </control>
+	
+	<control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>      
+    </control>    
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>FANARTS:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>      
+    </control>
+		
+	<control>
+      <description>Media Count Value</description>
+      <type>label</type>      
+      <id>0</id>
+      <posX>1245</posX>
+      <posY>687</posY>
+      <font>mediastream10c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+	  <label>#TVSeries.FanArt.Count</label>
+    </control>
+	
   </controls>
 </window>
