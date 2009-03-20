@@ -236,7 +236,7 @@
       <width>206</width>
       <height>298</height>
       <texture>defaultdvdcover.png</texture>
-      <visible>Control.IsVisible(1235)+[Control.IsVisible(1237)+Control.IsVisible(1242)]</visible>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1235)</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
@@ -248,20 +248,32 @@
       <width>206</width>
       <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesBanner</texture>
-      <visible>Control.IsVisible(1235)+[Control.IsVisible(1237)+Control.IsVisible(1242)]</visible>
+      <visible>[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1235)+Control.IsVisible(1242)</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
-    </control>
+    </control>	
     <control>
       <description>Season Banner</description>
       <type>image</type>
       <id>146</id>
-      <posX>20</posX>
+      <posX>10</posX>
       <posY>330</posY>
-      <width>185</width>
-      <height>314</height>
+      <width>206</width>
+      <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonBanner</texture>
       <visible>Control.IsVisible(1238)+Control.IsVisible(1235)</visible>
-      <animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+      <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
+    </control>
+	<control>
+      <description>Rounded cover edges</description>
+      <type>image</type>
+      <id>246</id>
+      <posX>00</posX>
+      <posY>317</posY>
+      <width>229</width>
+      <height>324</height>
+      <texture>round.poster.frame.png</texture>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|[Control.IsVisible(1242)+Control.HasThumb(46)]]]+Control.IsVisible(1235)</visible>
+      <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
       <description>TVDB Series Rating Stars</description>
@@ -362,7 +374,7 @@
     <control>
       <description>Series Banner</description>
       <type>image</type>
-      <id>46</id>
+      <id>47</id>
       <posX>72</posX>
       <posY>366</posY>
       <width>531</width>
