@@ -826,6 +826,7 @@ multiple view modes.
       <height>35</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+	  <visible>Control.IsVisible(50)</visible>
     </control>
     
     <control>
@@ -839,6 +840,7 @@ multiple view modes.
       <align>right</align>
       <visible>yes</visible>
       <label>MOVING PICTURES</label>
+	  <visible>Control.IsVisible(50)</visible>
     </control>
     
     <control>

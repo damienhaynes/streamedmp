@@ -295,6 +295,7 @@ multiple view modes.
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
+	  <visible>Control.IsVisible(50)</visible>
     </control>
     <control>
       <type>fadelabel</type>
@@ -307,6 +308,7 @@ multiple view modes.
       <align>right</align>
       <visible>yes</visible>
       <label>Moving Pictures</label>
+	  <visible>Control.IsVisible(50)</visible>
     </control>
     <control>
       <description>Watched Filtering Indicator - Watched</description>
