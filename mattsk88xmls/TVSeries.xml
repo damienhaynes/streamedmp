@@ -90,7 +90,30 @@
       <width>1280</width>
       <height>720</height>
       <texture>tvviewbg.png</texture>
-      <visible>Control.IsVisible(1236)</visible>
+      <visible>Control.IsVisible(1236)+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
+    </control>
+	<!--Overlays Filmstrip -->
+	<control>
+      <description>Top Bar</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+    </control>
+	<control>
+      <description>Bottom Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>400</posY>
+      <width>1280</width>
+      <height>320</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -193,7 +216,7 @@
 
 	<!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL  VIEW  (FILMSTRIP/WIDEBANNERS)::
+    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL  VIEW  (WIDEBANNERS)::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
     <control>
@@ -206,7 +229,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+[Control.IsVisible(1238)|Control.IsVisible(1237)]</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1242)+Control.IsVisible(1237)</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -220,8 +243,10 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-      <visible>Control.IsVisible(1236)+[Control.IsVisible(1238)|Control.IsVisible(1237)]</visible>
+      <visible>Control.IsVisible(1236)+!Control.IsVisible(1242)+Control.IsVisible(1237)</visible>
     </control>
+	
+	
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: LIST POSTER LAYOUT ::
@@ -955,43 +980,38 @@
           <spinCanFocus>no</spinCanFocus>
         </control>
         <control>
-          <description>Filmstrip view</description>
-          <type>filmstrip</type>
-          <scrollOffset>4</scrollOffset>
-          <id>50</id>
-          <posX>50</posX>
-          <posY>250</posY>
-          <onup>2</onup>
-          <ondown>2</ondown>
-          <width>1150</width>
-          <onleft>2</onleft>
-          <spinPosY>30</spinPosY>
-          <spinPosX>1180</spinPosX>
-          <spinWidth>30</spinWidth>
-          <spinHeight>30</spinHeight>
-          <spinColor>ffcccccc</spinColor>
-          <itemWidth>130</itemWidth>
-          <itemHeight>205</itemHeight>
-          <textureWidth>150</textureWidth>
-          <textureHeight>207</textureHeight>
-          <thumbWidth>120</thumbWidth>
-          <thumbHeight>186</thumbHeight>
-          <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
-          <InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
-          <imageFolderFocus>-</imageFolderFocus>
-          <frame>-</frame>
-          <frameFocus>-</frameFocus>
-          <background>Coverbig.png</background>
-          <showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <spinCanFocus>no</spinCanFocus>
-          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="100">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="100"></thumbAnimation>
-          <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
-          <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">unfocus</animation>
-        </control>
+        <description>Filmstrip view</description>
+        <type>filmstrip</type>
+        <id>50</id>
+        <posX>40</posX>
+        <posY>465</posY>
+        <onup>2</onup>
+        <width>700</width>
+        <scrollOffset>3</scrollOffset>      
+        <spinPosY>900</spinPosY>
+        <spinPosX>1400</spinPosX>
+        <spinColor>ffcccccc</spinColor>
+        <itemWidth>145</itemWidth>
+        <itemHeight>205</itemHeight>
+        <textureWidth>145</textureWidth>
+        <textureHeight>207</textureHeight>
+        <thumbWidth>140</thumbWidth>
+        <thumbHeight>200</thumbHeight>
+        <thumbPosX>2</thumbPosX>
+        <thumbPosY>2</thumbPosY>
+        <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
+        <InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
+        <imageFolderFocus>-</imageFolderFocus>
+        <frame>-</frame>
+        <frameFocus>-</frameFocus>
+        <background>Coverbig.png</background>
+        <showFrame>yes</showFrame>
+        <showFolder>no</showFolder>
+        <showBackGround>no</showBackGround>
+        <showInfoImage>no</showInfoImage>
+        <thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
+        <thumbAnimation effect="zoom" start="140,140" end="100,100" time="100"></thumbAnimation>
+      </control>
         <control>
           <description>Textlist (series and/or seasons if set and Episodes)</description>
           <type>listcontrol</type>
@@ -1024,6 +1044,156 @@
         </control>
       </control>
     </control>
+	
+	<!--
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL  VIEW  (FILMSTRIP)::
+    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    -->
+	<control>
+      <type>image</type>
+      <id>1</id>
+      <posX>665</posX>
+      <posY>405</posY>
+      <width>616</width>
+      <height>325</height>
+      <texture>mpinfo_filmbox.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+	<control>
+      <description>Movie Title</description>
+      <type>fadelabel</type>	  
+      <id>0</id>
+      <posX>686</posX>
+      <posY>420</posY>
+      <width>570</width>
+      <font>mediastream16tc</font>
+      <label>#TVSeries.Title</label>
+      <textcolor>FFffffff</textcolor>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+	<control>
+      <description>TVDB Series Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>730</posX>
+      <posY>456</posY>
+      <width>180</width>
+      <height>18</height>
+      <texture>#TVSeries.Series.RatingPath</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+	<control Style="smallTitleB">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine1Key</label>
+      <posX>686</posX>
+      <posY>485</posY>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control Style="smallTitle">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine1Value</label>
+      <posX>825</posX>
+      <posY>485</posY>
+      <width>580</width>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control Style="smallTitleB">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine2Key</label>
+      <posX>686</posX>
+      <posY>510</posY>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control Style="smallTitle">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine2Value</label>
+      <posX>825</posX>
+      <posY>510</posY>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control Style="smallTitleB">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine4Key</label>
+      <posX>686</posX>
+      <posY>535</posY>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control Style="smallTitle">
+	  <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.InfoPanelLine4Value</label>
+      <posX>825</posX>
+      <posY>535</posY>
+      <width>580</width>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>686</posX>
+      <posY>560</posY>
+      <width>580</width>
+      <height>130</height>
+      <textcolor>ffffff</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#TVSeries.Description</label>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+    </control>
+	
+	<!--**********Watched/Unwatched Icons Series/Seaosn Filmstrip*************-->	
+	<control>
+      <description>Series Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>686</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_Watched.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>686</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatched.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Not Available and Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>686</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_WatchedNA.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+    </control>
+    <control>
+      <description>Series Not Available and Un-Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>686</posX>
+      <posY>453</posY>
+      <width>96</width>
+      <height>24</height>
+      <texture>tvseries_UnWatchedNA.png</texture>
+      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+    </control>
+	
     <!--
     :::::::::::::::::::::::::::::::
     :: LIST VIEW :: SPIN CONTROL ::
