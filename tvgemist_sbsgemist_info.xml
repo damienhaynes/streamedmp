@@ -1,0 +1,60 @@
+<window>
+  <id>6804</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:SBS Gemist</define>
+  <define>#header.hover:hover_my tvgemist.png</define>
+  <define>#currentmodule:TV Gemist</define>
+  <define>#extended:SBS Gemist - #emissionTitle</define>
+  <controls>
+    <import>common.window.tvgemist.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>50</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <control>
+        <description>Naam van gekozen programma</description>
+        <type>label</type>
+        <posX>310</posX>
+        <posY>490</posY>
+        <align>left</align>
+        <label>#emissionTitle</label>
+        <font>mediastream14tc</font>
+      </control>
+      <control>
+        <description>Naam + datum van gekozen programma</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>310</posX>
+        <posY>540</posY>
+        <align>left</align>
+        <label>#selecteditem - #selecteditem2</label>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>textboxscrollup</type>
+        <description>Programma-info</description>
+        <id>6</id>
+        <posX>310</posX>
+        <posY>570</posY>
+        <width>800</width>
+        <height>180</height>
+        <label>#description</label>
+        <font>mediastream12tc</font>
+        <textcolor>ffffffff</textcolor>
+      </control>
+    </control>
+    <import>common.facade3.xml</import>
+  </controls>
+</window>

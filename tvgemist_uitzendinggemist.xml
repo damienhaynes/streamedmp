@@ -1,0 +1,161 @@
+<window>
+  <id>6800</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:UitzendingGemist.nl</define>
+  <define>#header.hover:hover_my tvgemist.png</define>
+  <define>#currentmodule:TV Gemist</define>
+  <define>#extended:Uitzending Gemist</define>
+  <controls>
+    <import>common.window.tvgemist.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>50</posY>
+      <width>256</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <posX>200</posX>
+      <posY>150</posY>
+      <description>RTL Gemist image</description>
+      <id>123</id>
+      <texture>-</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>290</width>
+      <height>768</height>
+      <texture>menu_slide_background.png</texture>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
+      <posX>20</posX>
+      <posY>300</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Favorieten</description>
+        <type>button</type>
+        <id>2</id>
+        <label>Favorieten</label>
+        <onup>17</onup>
+        <ondown>3</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>selectbutton</type>
+        <description>Letter button</description>
+        <id>3</id>
+        <label>Titel</label>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>selectbutton</type>
+        <description>Letter button</description>
+        <id>4</id>
+        <label>Dag</label>
+        <onup>3</onup>
+        <ondown>5</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>selectbutton</type>
+        <description>Letter button</description>
+        <id>5</id>
+        <label>Net/zender</label>
+        <onup>4</onup>
+        <ondown>6</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>selectbutton</type>
+        <description>Letter button</description>
+        <id>6</id>
+        <label>Omroep</label>
+        <onup>5</onup>
+        <ondown>7</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>selectbutton</type>
+        <description>Letter button</description>
+        <id>7</id>
+        <label>Genre</label>
+        <onup>6</onup>
+        <ondown>8</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <description>Moet je Zien</description>
+        <type>button</type>
+        <id>8</id>
+        <label>Moet je zien</label>
+        <onup>7</onup>
+        <onright>50</onright>
+        <ondown>50</ondown>
+        <font>mediastream12tc</font>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <control>
+          <type>imagelist</type>
+          <id>11</id>
+          <posX>600</posX>
+          <posY>230</posY>
+          <width>120</width>
+          <height>32</height>
+          <textureWidth>24</textureWidth>
+          <textureHeight>24</textureHeight>
+          <subitems>
+            <subitem>greystar.png</subitem>
+            <subitem>starbest.png</subitem>
+          </subitems>
+          <imagesToDraw>5</imagesToDraw>
+          <orientation>horizontal</orientation>
+          <align>left</align>
+          <percentage>#rating</percentage>
+          <imagesToDraw>5</imagesToDraw>
+        </control>
+        <control>
+          <type>textboxscrollup</type>
+          <description>Programma-info</description>
+          <id>12</id>
+          <posX>310</posX>
+          <posY>250</posY>
+          <width>790</width>
+          <height>100</height>
+          <label>#plot</label>
+          <textcolor>ffffffff</textcolor>
+          <font>mediastream12tc</font>
+        </control>
+        <control>
+          <description>Bekeken</description>
+          <type>label</type>
+          <id>13</id>
+          <posX>310</posX>
+          <posY>230</posY>
+          <label>#votes keer bekeken</label>
+          <textcolor>ffffffff</textcolor>
+        </control>
+      </control>
+    </control>
+    <import>common.facade2.xml</import>
+  </controls>
+</window>
