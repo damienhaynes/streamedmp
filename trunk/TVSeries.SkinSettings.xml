@@ -128,7 +128,9 @@ skin\StreamedMP\Media\TVSeries\Logos\Misc\DD 51.png;-;<Episode.AudioCodec>;-;=;-
 skin\StreamedMP\Media\TVSeries\Logos\Misc\DTS 51.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\TVSeries\Logos\Misc\FLAC 51.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\TVSeries\Logos\Misc\MP3 20.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;<Restrict:Episode>
-skin\StreamedMP\Media\TVSeries\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;]]>
+skin\StreamedMP\Media\TVSeries\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;
+skin\StreamedMP\Media\TVSeries\Logos\Misc\AAC.png;-;<Episode.AudioCodec>;-;contains;-;AAC;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\TVSeries\Logos\Misc\VORBIS.png;-;<Episode.AudioCodec>;-;contains;-;VORBIS;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>]]>
 	</logos>
 	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
 	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
