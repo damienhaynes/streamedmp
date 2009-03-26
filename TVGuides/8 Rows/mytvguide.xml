@@ -70,19 +70,19 @@
                         <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
                 </control>
                 <control>
-                        <type>label</type>
+                        <type>fadelabel</type>
                         <description>Guide Group Label</description>
                         <id>11</id>
                         <posX>852</posX>
                         <posY>13</posY>
-                        <width>300</width>
+                        <width>340</width>
                         <font>mediastream12c</font>
                         <align>right</align>
                         <label>#TV.Guide.ChangeGroup</label>
                         <animation effect="fade" time="300" delay="300">WindowOpen</animation>
                         <animation effect="fade" time="230" delay="0">WindowClose</animation>
                         <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
+                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
                 </control>
                 <control>
                         <description>Time Background</description>
@@ -119,22 +119,28 @@
                         <description>Single Channel Label</description>
                         <type>label</type>
                         <id>32</id>
-                        <posX>395</posX>
-                        <posY>75</posY>
-                        <font>mediastream16tc</font>
-                        <align>left</align>
+                        <posX>852</posX>
+                        <posY>13</posY>
+                        <width>300</width>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <animation effect="fade" time="300" delay="300">VisibleChange</animation>
+                        <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">VisibleChange</animation>
                 </control>
                 <control>
                         <description>Single Channel Image</description>
                         <type>image</type>
                         <id>33</id>
-                        <posX>330</posX>
-                        <posY>67</posY>
+                        <posX>305</posX>
+                        <posY>69</posY>
                         <width>45</width>
                         <height>45</height>
                         <keepaspectratio>yes</keepaspectratio>
-                        <zoom>yes</zoom>
+                        <zoom>no</zoom>
+                        <centered>yes</centered>
                         <texture>defaultVideoBig.png</texture>
+                        <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">VisibleChange</animation>
+                        <animation effect="fade" time="300">VisibleChange</animation>
                 </control>
                 <!-- Timeheader background must be dedfined before Timeheader label template -->
                 <!-- b/c Timeheader is on the background and will be rendered first -->
@@ -210,6 +216,7 @@
                         <posX>3</posX>
                         <posY>2</posY>
                         <zoom>no</zoom>
+                        <centered>yes</centered>
                         <keepaspectratio>yes</keepaspectratio>
                         <texture>defaultVideoBig.png</texture>
                 </control>
@@ -217,7 +224,7 @@
                         <description>channel Label template</description>
                         <type>label</type>
                         <id>18</id>
-                        <posX>50</posX>
+                        <posX>55</posX>
                         <posY>5</posY>
                         <width>86</width>
                         <height>10</height>
@@ -319,7 +326,7 @@
                         <type>button</type>
                         <id>60</id>
                         <posX>15</posX>
-                        <posY>115</posY>
+                        <posY>120</posY>
                         <width>30</width>
                         <height>435</height>
                         <textureFocus>tvguide_button_selected_middle.png</textureFocus>
@@ -371,9 +378,9 @@
                         <type>videowindow</type>
                         <id>99</id>
                         <posX>20</posX>
-                        <posY>590</posY>
+                        <posY>595</posY>
                         <width>200</width>
-                        <height>110</height>
+                        <height>105</height>
                         <action>18</action>
                         <textureFocus>tv_green_border.png</textureFocus>
                         <visible>Player.HasVideo</visible>
