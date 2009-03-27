@@ -8,7 +8,7 @@
   <define>#currentmodule:Uitzending gemist</define>
   <define>#extended:#title</define>
   <controls>
-    <import>common.window.tvgemist.xml</import>
+    <import>tvgemist.window.xml</import>
     <import>common.time.xml</import>
     <control>
       <type>group</type>
@@ -115,6 +115,21 @@
         <spinPosY>660</spinPosY>
         <height>300</height>
         <onup>17</onup>
+          <textureHeight>35</textureHeight>
+          <scrollOffset>2</scrollOffset>
+          <font>mediastream10tc</font>
+          <font2>mediastream10tc</font2>
+          <IconXOff>5</IconXOff>
+          <IconYOff>5</IconYOff>
+          <textXOff>25</textXOff>
+          <itemWidth>30</itemWidth>
+          <itemHeight>30</itemHeight>
+          <unfocusedAlpha>100</unfocusedAlpha>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
       </control>
       <control>
         <type>textboxscrollup</type>

@@ -89,12 +89,18 @@
         <type>button</type>
         <id>3</id>
         <label>-</label>
-      </control>
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+	</control>
       <control Style="settingsbutton">
         <description>SBS Gemist</description>
         <type>button</type>
         <id>4</id>
+        <label>-</label>
+      </control>
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      <control Style="settingsbutton">
+        <description>Live TV</description>
+        <type>button</type>
+        <id>5</id>
         <label>-</label>
         <ondown>99</ondown>
       </control>
@@ -121,12 +127,18 @@
         <id>3</id>
         <texture>tvgemist_rtlgemist_logo.png</texture>
       </control>
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
       <control Style="settingsbutton">
         <description>SBS Gemist</description>
         <type>image</type>
         <id>4</id>
         <texture>tvgemist_sbsgemist_logo.png</texture>
+      </control>
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      <control Style="settingsbutton">
+        <description>Live TV</description>
+        <type>image</type>
+        <id>5</id>
+        <texture>tvgemist_livetv_logo.png</texture>
         <ondown>99</ondown>
       </control>
     </control>
