@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posY>250</posY>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <height>450</height>
+          <textureHeight>55</textureHeight>
+          <scrollOffset>2</scrollOffset>
+          <font>mediastream12tc</font>
+          <font2>mediastream12tc</font2>
+          <IconXOff>5</IconXOff>
+          <IconYOff>5</IconYOff>
+          <textXOff>25</textXOff>
+          <itemWidth>45</itemWidth>
+          <itemHeight>45</itemHeight>
+          <unfocusedAlpha>100</unfocusedAlpha>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+        </control>
+        <control>
+          <description>album view listcontrol</description>
+          <type>listcontrol</type>
+          <subtype>album</subtype>
+          <id>50</id>
+          <font>font13</font>
+          <font2>font13</font2>
+          <selectedColor>80000000</selectedColor>
+          <textcolor>ffffffff</textcolor>
+          <selectedColor2>ffffffff</selectedColor2>
+          <textcolor2>ffffffff</textcolor2>
+          <textXOff2>420</textXOff2>
+          <textYOff2>60</textYOff2>
+          <itemWidth>72</itemWidth>
+          <itemHeight>72</itemHeight>
+          <spaceBetweenItems>14</spaceBetweenItems>
+          <textureHeight>90</textureHeight>
+          <scrollOffset>1</scrollOffset>
+          <textureFocus>listbg_fo.png</textureFocus>
+          <textureNoFocus>listbg_nf.png</textureNoFocus>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+		  <ondown>2</ondown>
+          <onup>2</onup>
+          <posX>310</posX>
+          <posY>480</posY>
+          <width>900</width>
+          <height>500</height>            
+          <itemWidth>90</itemWidth>
+          <itemHeight>90</itemHeight>
+          <textureWidth>91</textureWidth>
+          <textureHeight>90</textureHeight>
+          <thumbWidth>80</thumbWidth>
+          <thumbHeight>80</thumbHeight>
+          <thumbPosX>5</thumbPosX>
+          <thumbPosY>5</thumbPosY>      
+          <imageFolderFocus>thumbborder.png</imageFolderFocus>
+          <font>font12</font>
+          <suffix>|</suffix>
+          <textureWidthBig>150</textureWidthBig>
+          <textureHeightBig>150</textureHeightBig>
+          <itemWidthBig>150</itemWidthBig>
+          <itemHeightBig>150</itemHeightBig>
+          <thumbWidthBig>140</thumbWidthBig>
+          <thumbHeightBig>140</thumbHeightBig>
+          <thumbPosXBig>5</thumbPosXBig>
+          <thumbPosYBig>5</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+        </control>  
+        <control>
+          <description>Filmstrip view</description>
+
+          <type>filmstrip</type>
+          <dimColor>90ffffff</dimColor>
+          <id>50</id>
+          <posX>120</posX>
+          <posY>300</posY>
+          <spinPosX>1200</spinPosX>
+          <spinPosY>550</spinPosY>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <onup>2</onup>
+          <ondown>2</ondown>
+          <scrollOffset>2</scrollOffset>
+          <width>1200</width>
+          <height>576</height>
+          <thumbWidth>200</thumbWidth>
+          <thumbHeight>200</thumbHeight>
+          <thumbPosX>4</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <itemWidth>220</itemWidth>
+          <itemHeight>185</itemHeight>
+          <textureWidth>250</textureWidth>
+          <textureHeight>152</textureHeight>
+          <imageFolderFocus>Picture_cover.png</imageFolderFocus>
+          <frame>Picture_cover.png</frame>
+          <frameFocus>Picture_cover.png</frameFocus>
+          <background>Coverbig.png</background>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
+          <showFrame>yes</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
+        </control>
+        <control>
+          <description>playlist listcontrol</description>
+          <type>playlistcontrol</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <spinPosX>1249</spinPosX>
+          <spinPosY>690</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+        </control>
+      </control>
+    </control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>facadeview.list|facadeview.playlist</visible>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>facadeview.list|facadeview.playlist</visible>
+    </control>
+  </controls>
+</window>
