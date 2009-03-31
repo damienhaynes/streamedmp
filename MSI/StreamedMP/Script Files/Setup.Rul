@@ -62,6 +62,7 @@
 // Program executable defines
 #define STREAMEDMP_EDITOR_FILE				INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
 #define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.xml"
+#define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^"skin"^SKIN_NAME^"MovingPictures.xml"
 #define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
 #define MEDIAPORTAL_CONFIG_FILE				CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
 
@@ -93,6 +94,7 @@
 #define RES_CHECK_SKINDEFAULT			1402
 #define RES_CHECK_USEBASICHOME			1405
 #define RES_COMBO_TVGUIDE				1406
+#define RES_CHECK_ROUNDEDCOVERS			1408
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -130,6 +132,7 @@ prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
 prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
+prototype VOID		RoundedCovers(BOOL, STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -145,7 +148,8 @@ BOOL g_bShowTotalEpisodeCount;
 BOOL g_bShowArtworkIcons;
 BOOL g_bShowIconsInListView;   
 BOOL g_bShowUnWatchedOnlyInListImage; 
-BOOL g_bStartBasicHome;
+BOOL g_bStartBasicHome; 
+BOOL g_bShowRoundedCovers;
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -290,6 +294,14 @@ begin
 			g_bStartBasicHome = TRUE;
 		endif;
 	endif;	
+	
+	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",nvType,svValue,nvSize) < 0) then
+		svValue = "1";		
+	endif;	
+	if svValue = "1" then
+		g_bShowRoundedCovers = TRUE;			
+	endif;
 		
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
 	
@@ -1035,7 +1047,7 @@ Dlg_Wait:
 	        	CtrlSetList(szDialogName,RES_COMBO_TVGUIDE,listTVGuides);
 	    
  				// Select Last/Default TVGuide size
- 				switch (g_sTVGuideSize 				)
+ 				switch (g_sTVGuideSize)
  					case "8":
 	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"8 Rows");
 	    			case "10":
@@ -1052,6 +1064,15 @@ Dlg_Wait:
  				
  				if g_bStartBasicHome then
  					CtrlSetState(szDialogName,RES_CHECK_USEBASICHOME,BUTTON_CHECKED);
+ 				endif;  
+ 				
+ 				if g_bShowRoundedCovers then
+ 					CtrlSetState(szDialogName,RES_CHECK_ROUNDEDCOVERS,BUTTON_CHECKED);
+ 				endif;
+ 				
+ 				// Disable rounded cover checkbox if Fanart Style is not chosen
+ 				if (g_bTVSeriesDefault && g_bMovingPicturesDefault) then
+ 				      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
  				endif;
  				 				         		      
 			case RES_PBUT_BACK:
@@ -1121,7 +1142,12 @@ Dlg_Wait:
 		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, FALSE );
 		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, TRUE );
 	endif;
-		
+	
+	if (CtrlGetState(szDialogName,RES_CHECK_ROUNDEDCOVERS) = BUTTON_CHECKED) then
+		g_bShowRoundedCovers = TRUE;
+	else
+		g_bShowRoundedCovers = FALSE;
+	endif;  
 		
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -1240,6 +1266,12 @@ begin
 	else
 		SetMPXMLProperty("general","startbasichome","no");
 	endif;
+	
+	NumToStr(svString,g_bShowRoundedCovers);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",REGDB_NUMBER,svString, -1);
+	// Update Skin to show/hide rounded covers
+	RoundedCovers(g_bShowRoundedCovers, "TVSeries");
+	RoundedCovers(g_bShowRoundedCovers, "MovingPictures");
 	
 end;             
 
@@ -1832,6 +1864,70 @@ begin
 		
 end;
 
+function VOID RoundedCovers(bAdd, sSkin)
+	OBJECT oXMLdoc, oNodeList;
+	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
+	INT i;
+begin   
+    
+    if sSkin = "TVSeries" then
+		sFile = STREAMEDMP_SKIN_TVSERIES;  
+		szFindStr = "#tvseries_RoundedPosters:";
+	else
+		sFile = STREAMEDMP_SKIN_MOVINGPICTURES;
+		szFindStr = "#movingpictures_RoundedPosters:";
+	endif;
+	
+    Disable(LOGGING);
+    
+    try
+	    // Prepare XML parser object
+	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+	    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (sFile);	
+		
+	    sNode = "/window/define";	    
+	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
+	    
+	    // Examine all <defines> and set texture
+	    for i=0 to oNodeList.length - 1
+		 	
+		 	szString = oNodeList.Item(i).Text;
+		 	
+		 	if StrFind(szString,szFindStr) = 0 then
+				
+				if bAdd then
+					szReplaceStr = szFindStr + "round.poster.frame.png";
+				else
+					szReplaceStr = szFindStr + "-";              
+				endif;
+				oNodeList.Item(i).Text = szReplaceStr;
+				
+		    endif;		      	    		   
+		    
+		endfor;   		    
+	    
+	    // save the xml	    
+	    oXMLdoc.Save (sFile);
+	    
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNodeList = NOTHING;	    	    
+	    
+	catch                  
+		
+	    return;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return;
+		
+end;
 
 function VOID TVSeriesImageStyle(bShowUnWatchedOnly)
 	OBJECT oXMLdoc, oNodeList;

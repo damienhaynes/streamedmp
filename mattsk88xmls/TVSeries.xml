@@ -3,16 +3,13 @@
   <id>9811</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#title.color:ffFFFFFF</define>
-  <!-- Title Color                        Default: ffFFFFFF -->
-  <define>#text.color:ffFFFFFF</define>
-  <!-- Text Color                         Default: ffFFFFFF -->
-  <define>#default.color:ffFFFFFF</define>
-  <!-- Normal List Color                  Default: ffFFFFFF -->
-  <define>#watched.color:ffFFFFFF</define>
-  <!-- Watched List Color                 Default: ff808080 -->
-  <define>#notpresent.color:ffF87B72</define>
-  <!-- File Not Present in List Color     Default: ffF87B72 -->
+  
+  <define>#title.color:ffFFFFFF</define>		<!-- Title Color	 			Default: ffFFFFFF -->  
+  <define>#text.color:ffFFFFFF</define>			<!-- Text Color				Default: ffFFFFFF -->  
+  <define>#default.color:ffFFFFFF</define>		<!-- Normal List Color                  	Default: ffFFFFFF -->  
+  <define>#watched.color:ffFFFFFF</define>		<!-- Watched List Color                 	Default: ff808080 --> 
+  <define>#notpresent.color:ffF87B72</define>	<!-- File Not Present in List Color     	Default: ffF87B72 -->
+  
   <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
   
    <!-- Setup will replace the *.png with a '-' if user does not want them -->
@@ -21,6 +18,7 @@
   <define>#tvseries_UnWatched:tvseries_UnWatched.png</define>
   <define>#tvseries_WatchedNA:tvseries_WatchedNA.png</define>
   <define>#tvseries_UnWatchedNA:tvseries_UnWatchedNA.png</define>
+  <define>#tvseries_RoundedPosters:round.poster.frame.png</define>
   
   <controls>
     <import>TVSeries.dummy.xml</import>
@@ -296,7 +294,7 @@
       <posY>317</posY>
       <width>229</width>
       <height>324</height>
-      <texture>round.poster.frame.png</texture>
+      <texture>#tvseries_RoundedPosters</texture>
       <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|[Control.IsVisible(1242)+Control.HasThumb(46)]]]+Control.IsVisible(1235)</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
@@ -855,6 +853,7 @@
           <id>2</id>
           <label>457</label>
           <onleft>50</onleft>
+		  <onup>66608</onup>
         </control>
         <control>
           <description>Run Import</description>
@@ -913,6 +912,7 @@
           <label>Video Settings</label>
           <hyperlink>703</hyperlink>
           <onleft>50</onleft>
+		  <ondown>2</ondown>
         </control>	  
       </control>
     </control>
@@ -1029,13 +1029,13 @@
           <textXOff3>415</textXOff3>
           <textYOff3>11</textYOff3>
           <font>mediastream11c</font>
-          <font3>mediastream9c</font3>
-          <textcolor3>#notpresent.color</textcolor3>
-          <textureFocus>listbg_detail_fo.png</textureFocus>
-          <downloadColor>#default.color</downloadColor>
+          <font3>mediastream9c</font3>          
+          <textureFocus>listbg_detail_fo.png</textureFocus>	
+		  <downloadColor>#default.color</downloadColor>
           <remoteColor>#watched.color</remoteColor>
           <textcolor>#notpresent.color</textcolor>
           <textcolor2>#notpresent.color</textcolor2>
+		  <textcolor3>#notpresent.color</textcolor3>
           <spinCanFocus>no</spinCanFocus>
           <IconYOff>12</IconYOff>
           <IconXOff>390</IconXOff>
