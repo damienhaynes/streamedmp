@@ -12,23 +12,28 @@ multiple view modes.
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
   are parameters to give the skinner a tiny bit more control over the presentation.
   -->
-  <define>#largeicons.available:true</define>
   <!-- true if this skin implements the largeicons view -->
+  <define>#largeicons.available:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
   <define>#largeicons.backdrop.used:true</define>
-  <!-- true if backdrop (fanart) should be displayed in this view -->
-  <define>#smallicons.available:true</define>
   <!-- Set to true if this skin implements the smallicons view -->
+  <define>#smallicons.available:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
   <define>#smallicons.backdrop.used:true</define>
-  <!-- true if backdrop (fanart) should be displayed in this view -->
-  <define>#list.available:true</define>
   <!-- Set to true if this skin implements the list view -->
+  <define>#list.available:true</define>
+  <!-- true if backdrop (fanart) should be displayed in this view -->
   <define>#list.backdrop.used:true</define>
-  <!-- true if backdrop (fanart) should be displayed in this view -->
-  <define>#filmstrip.available:true</define>
   <!-- Set to true if this skin implements the filmstrip view -->
-  <define>#filmstrip.backdrop.used:true</define>
+  <define>#filmstrip.available:true</define>
   <!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#filmstrip.backdrop.used:true</define>
+  
   <define>#smalltitle.color:FF909090</define>
+  
+  <!-- Setup will replace the *.png with a '-' if user does not want them -->
+  <define>#movingpictures_RoundedPosters:round.poster.frame.png</define>
+  
   <controls>
     <control>
       <description>Visibile when filtering by watched flag. Only unwatched movies are listed.</description>
