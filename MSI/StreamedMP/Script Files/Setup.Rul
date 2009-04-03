@@ -60,17 +60,17 @@
 #define TVSERIES_SINGLEIMAGE_OPTION		"Main\\tvseriesSingleImageIcons"
 
 // Program executable defines
-#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^"skin"^SKIN_NAME^"streamedmp_editor.exe"
-#define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.xml"
-#define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^"skin"^SKIN_NAME^"MovingPictures.xml"
-#define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^"skin"^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
-#define MEDIAPORTAL_CONFIG_FILE				CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\MediaPortal.xml"
+#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^SKIN_NAME^"streamedmp_editor.exe"
+#define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^SKIN_NAME^"TVSeries.xml"
+#define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
+#define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.22056" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
-#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
+#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
+#define MEDIAPORTAL_MIN_VERSION			"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
+//#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.2.3367.0"
+#define TVSERIES_MIN_VERSION			"2.2.3380.0"
 #define MOVINGPICTURES_MIN_VERSION		"0.7.2.545"
 
 // Dialogs
@@ -111,6 +111,7 @@
 prototype VOID 		CleanCache();
 prototype NUMBER 	GetMediaPortalProgramDir(BYREF STRING);
 prototype NUMBER 	GetMediaPortalConfigDir(BYREF STRING); 
+prototype NUMBER	GetMediaPortalDirs(STRING, BYREF STRING);
 prototype VOID 		SetDefaults();
 prototype VOID 		UpdateSettings(); 
 prototype NUMBER	GetFileVersion(BYREF STRING, STRING);
@@ -132,7 +133,8 @@ prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
 prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
-prototype VOID		RoundedCovers(BOOL, STRING);
+prototype VOID		RoundedCovers(BOOL, STRING);   
+prototype VOID		SetInstallationDirectories();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -156,6 +158,14 @@ STRING g_sTVGuideSize;
 STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
 //STRING g_sSeriesLayout;
+
+STRING g_sMediaPortalProgramDir;
+STRING g_sLanguageDir;
+STRING g_sThumbsDir;
+STRING g_sTVLogosDir;
+STRING g_sCacheDir; 
+STRING g_sPluginsDir;
+STRING g_sConfigDir;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -191,17 +201,68 @@ begin
 	SetDefaults();		
 end;           
 
-function VOID SetDefaults()
-	STRING svValue, svString;
-	NUMBER nvType, nvSize;
-begin 
-	 	
- 	// Set the installation directory to one currently used by MediaPortal
-	if (GetMediaPortalProgramDir(svValue) < 0) then
-		svValue = ProgramFilesFolder^"Team MediaPortal\\MediaPortal";	
+function void SetInstallationDirectories()
+	STRING svValue;	
+begin
+	// Set the installation directory to one currently used by MediaPortal
+	if (GetMediaPortalProgramDir(g_sMediaPortalProgramDir) < 0) then
+		g_sMediaPortalProgramDir = ProgramFilesFolder^"Team MediaPortal\\MediaPortal";	
+	endif;	
+	
+	// Get any custom defined paths from MediaPortalDirs.xml	
+	if GetMediaPortalDirs("Skin",svValue) < 0 then
+		svValue = g_sMediaPortalProgramDir^"skin";
 	endif;
 	INSTALLDIR = svValue;
 	
+	if GetMediaPortalDirs("Language",g_sLanguageDir) < 0 then
+		g_sLanguageDir = g_sMediaPortalProgramDir^"language";
+	endif;
+	if GetMediaPortalDirs("Plugins",g_sPluginsDir) < 0 then
+		g_sPluginsDir = g_sMediaPortalProgramDir^"plugins";
+	endif;               
+	if GetMediaPortalDirs("Config",g_sConfigDir) < 0 then
+		if GetMediaPortalConfigDir(g_sConfigDir) < 0 then;
+		    g_sConfigDir = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
+		endif;		
+	endif;                                                             	
+	if GetMediaPortalDirs("Thumbs",g_sThumbsDir) < 0 then
+		if GetMediaPortalConfigDir(svValue) < 0 then;
+	    	svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
+	    endif;    
+		g_sThumbsDir = svValue^"thumbs";
+	endif;
+	g_sTVLogosDir = g_sThumbsDir^"tv\\logos";
+	
+	if GetMediaPortalDirs("Cache",g_sCacheDir) < 0 then
+		if GetMediaPortalConfigDir(svValue) < 0 then;
+	    	svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
+	    endif;
+		g_sCacheDir = svValue^"Cache";
+	endif;
+   	
+   	// Set MSI Dirs as properties   	
+   	MsiSetProperty(ISMSI_HANDLE,"MPTVLOGOSDIR",g_sTVLogosDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPLANGUAGESDIR",g_sLanguageDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPPLUGINSDIR",g_sPluginsDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPCONFIGDIR",g_sConfigDir);
+   	
+	// Set Installation Directories used by MSI	
+	FeatureSetTarget(MEDIA,"<MPTVLOGOSDIR>",g_sTVLogosDir);
+	FeatureSetTarget(MEDIA,"<MPLANGUAGESDIR>",g_sLanguageDir);
+	FeatureSetTarget(MEDIA,"<MPPLUGINSDIR>",g_sPluginsDir);
+	FeatureSetTarget(MEDIA,"<MPCONFIGDIR>",g_sConfigDir);
+
+end;
+
+function VOID SetDefaults()
+	STRING svValue, svString, sFile;
+	NUMBER nvType, nvSize;
+begin 
+	
+	// Set Installation Directories
+	SetInstallationDirectories();
+	 
 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
 	
 	// Read TVSeries Default
@@ -252,8 +313,9 @@ begin
 	
 	// Determine if 'Total Episode Count' fields are added to List View
 	// Just Check Series, but set for both Series & Season
-	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", svValue) < 0) then
-		g_bShowTotalEpisodeCount = TRUE;
+	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
+	if (GetXMLProperty(sFile, "/settings/views/series/item3", svValue) < 0) then
+		g_bShowTotalEpisodeCount = FALSE;
 	else
 		if svValue = "SeriesTotalEpisodes_1" || svValue = "SeriesTotalEpisodes_2" || svValue = "SeriesEpCount" then
 			g_bShowTotalEpisodeCount = TRUE;	
@@ -261,8 +323,8 @@ begin
 	endif;
 	
 	// Determine if 'Watched/Unwatched' Icons are added to List View
-	// Just Check Series, but set for both Series & Season
-	if (GetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", svValue) < 0) then
+	// Just Check Series, but set for both Series & Season	
+	if (GetXMLProperty(sFile, "/settings/views/series/item1", svValue) < 0) then
 		g_bShowIconsInListView = TRUE;
 	else
 		if svValue = "SeriesWatchedAndUnWatched" || svValue = "SeriesUnWatched" || svValue = "SeriesIcons" then
@@ -288,7 +350,7 @@ begin
 	
 	// Get Start With Basic Home property
 	if GetMPXMLProperty("general","startbasichome", svValue) < 0 then
-		g_bStartBasicHome = FALSE;
+		g_bStartBasicHome = TRUE;
 	else
 		if svValue = "yes" then
 			g_bStartBasicHome = TRUE;
@@ -639,17 +701,11 @@ end;
 function VOID CleanCache()
 	STRING svValue;	
 begin
-     
-    // Get Cache Folder
-    if GetMediaPortalConfigDir(svValue) < 0 then;
-    	return;
-    endif;
-    svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
     
     // Delete Skin Cache Folder
     SetStatusWindow(100, "Removing " + SKIN_NAME + " from MediaPortal cache.");
     Delay(1);
-    svValue = svValue ^ "Cache" ^ SKIN_NAME;
+    svValue = g_sCacheDir ^ SKIN_NAME;
     DeleteDir(svValue,ALLCONTENTS);
     
 end;      
@@ -687,6 +743,68 @@ begin
 	
 	return 0;
 end; 
+
+function NUMBER GetMediaPortalDirs(sType, sValue)
+	OBJECT oXMLdoc, oNodeList, oDirID;
+	STRING sNode, sPath, sDisk;
+	INT i;
+begin                        
+    
+    try 
+	   	set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+		    
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+	    
+	    // Load the document 	    
+		oXMLdoc.Load (g_sMediaPortalProgramDir^"MediaPortalDirs.xml");	
+		
+	    sNode = "/Config/Dir";	    
+	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
+	    
+	    // Examine all <Dir> nodes to find id
+	    for i=0 to oNodeList.length - 1
+		 	
+		 	// The id attribute hold the path identifier e.g. Config, Plugins, Skin
+		 	set oDirID = oNodeList.Item(i).Attributes.GetNamedItem("id");
+		 	
+		 	// Get Path Property value
+		 	if oDirID.Text = sType then
+		 		sPath = oNodeList.Item(i).SelectSingleNode("Path").Text;		 		
+		 	endif;
+		
+		endfor;
+		
+		// Replace path variables
+		StrToLower(sPath,sPath);
+		StrReplace(sPath,"%programdata%\\","%programdata%",0);
+		StrReplace(sPath,"%programdata%",CommonAppDataFolder,0);
+		
+		// Check if Path is valid, otherwise append MediaPortal root directory
+		if (GetDisk(sPath, sDisk) < 0) then
+		     sPath = g_sMediaPortalProgramDir^sPath;
+		endif;
+		
+		StrAddLastSlash(sPath);
+		
+		// Return value
+		sValue = sPath;
+		    
+	    // release objects used
+	    set oXMLdoc = NOTHING;	    
+	    set oNodeList = NOTHING;
+	    set oDirID = NOTHING;	    	    
+	    
+	catch                  
+		
+	    return -1;    
+	    
+	endcatch;	       
+
+    Enable(LOGGING);         
+    return 0;
+    	 	
+end;
 
 function number ShowSelectTVSeries(bModify)
 	STRING szDialogName, szErrorMsg;
@@ -1157,7 +1275,7 @@ end;
 
 
 function VOID UpdateSettings()
-	STRING svString;		
+	STRING svString, sFile;		
 begin
 	// Save configuration to registry
 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
@@ -1172,10 +1290,11 @@ begin
 	
 	// Update Graphics Quality for SeriesPosters, Default style does not require as much details
 	// as it uses a much smaller Filmstrip and also contains a 100% Image on item selected       
+	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
 	if g_bTVSeriesDefault then
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/graphicsquality/seriesposters", "20");
+		SetXMLProperty(sFile, "/settings/graphicsquality/seriesposters", "20");
 	else
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/graphicsquality/seriesposters", "35");
+		SetXMLProperty(sFile, "/settings/graphicsquality/seriesposters", "35");
 	endif;
 	
 	/*svString = g_sSeriesLayout;	               
@@ -1193,47 +1312,48 @@ begin
 	//TVSeriesLayout(svString,TRUE);
 	
 	// Set Total Episode Count Field to Series/Season List View
+	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
 	if g_bShowTotalEpisodeCount then
 		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SeriesTotalEpisodes_1");
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item3", "SeasonTotalEpisodes_1");
+			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesTotalEpisodes_1");
+			SetXMLProperty(sFile, "/settings/views/season/item3", "SeasonTotalEpisodes_1");
 		else
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SeriesTotalEpisodes_2");
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item3", "SeasonTotalEpisodes_2");
+			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesTotalEpisodes_2");
+			SetXMLProperty(sFile, "/settings/views/season/item3", "SeasonTotalEpisodes_2");
 		endif;
 	else
 		// Display nothing for Season List
 		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SMALLSPACE");
+			SetXMLProperty(sFile, "/settings/views/series/item3", "SMALLSPACE");
 		else
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item3", "SeriesAirsDay_2");
+			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesAirsDay_2");
 		endif;
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item3", "SMALLSPACE");
+		SetXMLProperty(sFile, "/settings/views/season/item3", "SMALLSPACE");
 	endif;
 	
 	// Set Watched/Unwatched counts to Series/Season List View
 	if g_bShowIconsInListView then
 		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SeriesWatchedAndUnWatched");
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item1", "SeasonWatchedAndUnWatched");
+			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesWatchedAndUnWatched");
+			SetXMLProperty(sFile, "/settings/views/season/item1", "SeasonWatchedAndUnWatched");
 		else
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SeriesUnWatched");
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item1", "SeasonUnWatched");
+			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesUnWatched");
+			SetXMLProperty(sFile, "/settings/views/season/item1", "SeasonUnWatched");
 		endif;
 	else		
 		if !g_bShowUnWatchedOnlyInListImage then
 			// Display the Series Air Day and nothing for Season List
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SeriesAirsDay_1");
+			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesAirsDay_1");
 		else
-			SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/series/item1", "SMALLSPACE");
+			SetXMLProperty(sFile, "/settings/views/series/item1", "SMALLSPACE");
 		endif;
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/season/item1", "SMALLSPACE");
+		SetXMLProperty(sFile, "/settings/views/season/item1", "SMALLSPACE");
 	endif;
 	
 	if !g_bShowUnWatchedOnlyInListImage then
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/episode/item3", "SMALLSPACE");	
+		SetXMLProperty(sFile, "/settings/views/episode/item3", "SMALLSPACE");	
 	else		
-		SetXMLProperty(STREAMEDMP_SKIN_TVSERIESSETTINGS, "/settings/views/episode/item3", "LARGESPACE");
+		SetXMLProperty(sFile, "/settings/views/episode/item3", "LARGESPACE");
 	endif; 
 		
 	NumToStr(svString,g_bShowArtworkIcons);
@@ -1483,7 +1603,7 @@ function NUMBER SetMPXMLProperty(sSectionAttribute,sEntryAttribute, sValue)
 	INT i, j;
 begin
    	
-   	sFile = MEDIAPORTAL_CONFIG_FILE;        	 
+   	sFile = g_sConfigDir^"MediaPortal.xml";        	 
     Disable(LOGGING);
     
     try
@@ -1550,7 +1670,7 @@ function NUMBER GetMPXMLProperty(sSectionAttribute, sEntryAttribute, sValue)
 	INT i, j;
 begin
    	
-   	sFile = MEDIAPORTAL_CONFIG_FILE;        	 
+   	sFile = g_sConfigDir^"MediaPortal.xml";        	 
     Disable(LOGGING);
     
     try
@@ -1763,7 +1883,7 @@ function VOID TVSeriesIcons(bAdd)
 	INT i;
 begin   
 
-	sFile = STREAMEDMP_SKIN_TVSERIES;        	 
+	sFile = STREAMEDMP_SKIN_TVSERIES;
     Disable(LOGGING);
     
     try
@@ -1869,12 +1989,12 @@ function VOID RoundedCovers(bAdd, sSkin)
 	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
 	INT i;
 begin   
-    
+       
     if sSkin = "TVSeries" then
-		sFile = STREAMEDMP_SKIN_TVSERIES;  
+    	sFile = STREAMEDMP_SKIN_TVSERIES;		
 		szFindStr = "#tvseries_RoundedPosters:";
 	else
-		sFile = STREAMEDMP_SKIN_MOVINGPICTURES;
+		sFile = STREAMEDMP_SKIN_MOVINGPICTURES;    
 		szFindStr = "#movingpictures_RoundedPosters:";
 	endif;
 	
