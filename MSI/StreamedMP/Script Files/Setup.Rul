@@ -432,7 +432,7 @@ begin
         	return FALSE;
         endif;
         
-        RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"VERSION",nvType,sMajorUpgradeVersion,nvSize)        	;
+        RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"VERSION",nvType,sMajorUpgradeVersion,nvSize);
     endif;
     
     return TRUE;
@@ -731,10 +731,8 @@ end;
 
 function NUMBER GetMediaPortalConfigDir(svValue)
 	NUMBER nvSize,nvType;
-begin
-    
-    // TODO: Read MediaPortalDirs.xml to get all Portal directories
-    
+begin    
+	// Fallback incase MediaPortalDirs.xml fails us
    	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
 		
 	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ConfigDir",nvType,svValue,nvSize) < 0) then
@@ -794,7 +792,7 @@ begin
 	    set oXMLdoc = NOTHING;	    
 	    set oNodeList = NOTHING;
 	    set oDirID = NOTHING;	    	    
-	    
+	 	   
 	catch                  
 		
 	    return -1;    
@@ -802,6 +800,11 @@ begin
 	endcatch;	       
 
     Enable(LOGGING);         
+    
+    if !Is(VALID_PATH,sValue) then
+    	return -1;
+    endif;
+    
     return 0;
     	 	
 end;
@@ -1398,19 +1401,17 @@ end;
 function NUMBER	GetFileVersion(svVersionNumber,sType)
 	STRING svValue,szFileName;	
 begin
-	
-	GetMediaPortalProgramDir(svValue);
-	
+		
 	switch (sType) 
 
         case "MEDIAPORTAL": 
-            szFileName = svValue^"MediaPortal.exe";; 
+            szFileName = g_sMediaPortalProgramDir^"MediaPortal.exe";; 
 
         case "TVSERIES": 
-            szFileName = svValue^"plugins\\windows\\MP-TVSeries.dll"; 
+            szFileName = g_sPluginsDir^"windows\\MP-TVSeries.dll"; 
 
         case "MOVINGPICTURES": 
-            szFileName = svValue^"plugins\\windows\\MovingPictures.dll";      
+            szFileName = g_sPluginsDir^"windows\\MovingPictures.dll";      
 
     endswitch; 
 
