@@ -36,11 +36,13 @@
 	    <control>
 			<id>204</id>
 			<type>image</type>
-			<posX>30</posX>
-			<posY>255</posY>
-			<width>400</width>
-			<height>225</height>
-			<texture>#selectedthumb</texture>
+			<posX>28</posX>
+			<posY>270</posY>
+			<height>200</height>
+			<width>354</width>
+			<keepaspectratio>yes</keepaspectratio>
+			<zoom>yes</zoom>
+			<texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>			
 			<visible>facadeview.playlist | facadeview.filmstrip</visible>
 	    </control>   	
 	    <control>
@@ -209,7 +211,7 @@
 				<spinPosY>690</spinPosY>
 				<spinAlign>Right</spinAlign>
 				<spinColor>ff006698</spinColor>
-				<spinCanFocus>no</spinCanFocus>				
+				<spinCanFocus>no</spinCanFocus>							
 			</control>
 			<control>
 				<description>Filmstrip Layout</description>
@@ -295,9 +297,161 @@
 				<spinColor>ff006698</spinColor>
 				<spinCanFocus>no</spinCanFocus>
 				<onleft>2</onleft>
-				<onright>2</onright>
+				<onright>2</onright>	
+				<posX>756</posX>
+				<posY>260</posY>					
+				<textXOff>0</textXOff>
+				<textXOff2>430</textXOff2>
+				<upBtnXOffset>449</upBtnXOffset>
+				<downBtnXOffset>467</downBtnXOffset>
+				<deleteBtnXOffset>485</deleteBtnXOffset>				
 			</control>
 		</control> 
+		
+	    <control>
+			<description>Episode Description</description>
+			<type>textboxscrollup</type>
+			<id>1</id>
+			<posX>30</posX>
+		    <posY>500</posY>
+		    <width>670</width>
+		    <height>150</height>
+			<seperator>----------------------------------------------------------------------------------------------------</seperator>
+			<textcolor>ffffffff</textcolor>
+			<font>mediastream11</font>
+			<visible>facadeview.list|facadeview.playlist</visible>
+			<label>#TVSeries.Description</label>
+		</control>
+		<control>
+			<description>Episode Description</description>
+			<type>textboxscrollup</type>
+			<id>1</id>
+			<posX>750</posX>
+		    <posY>260</posY>
+		    <width>500</width>
+		    <height>220</height>
+			<seperator>----------------------------------------------------------------------------------------------------</seperator>
+			<textcolor>ffffffff</textcolor>
+			<font>mediastream11</font>
+			<visible>facadeview.filmstrip</visible>
+			<label>#TVSeries.Description</label>
+		</control>
+		
+		<control>
+			<type>label</type>
+			<label>#TVSeries.Episode.SeasonLabel</label>
+			<id>0</id>
+			<posX>400</posX>
+			<posY>270</posY>
+			<width>300</width>
+			<font>mediastream12tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	    <control>
+			<type>textboxscrollup</type>
+			<label>#TVSeries.Episode.LocalEpisodeName</label>
+			<id>0</id>
+			<posX>400</posX>
+			<posY>290</posY>
+			<width>325</width>
+			<height>75</height>
+			<font>mediastream12tc</font>
+			<textcolor>ffffffff</textcolor>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+		<control>
+			<type>label</type>
+			<label>#TVSeries.Episode.LocalEpisodeName</label>
+			<id>0</id>
+			<posX>30</posX>
+			<posY>225</posY>
+			<width>1200</width>			
+			<font>mediastream12tc</font>
+			<textcolor>ffffffff</textcolor>
+			<visible>facadeview.smallicons|facadeview.largeicons</visible>
+	    </control>
+	    
+	    <control Style="smallTitleB">
+			<label>#TVSeries.Episode.InfoPanelLine1Key</label>
+			<type>label</type>
+			<posX>400</posX>
+			<posY>361</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	    <control Style="smallTitle">
+			<id>10001</id>
+			<label>#TVSeries.Episode.InfoPanelLine1Value</label>
+			<type>label</type>
+			<posX>500</posX>
+			<posY>362</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip|facadeview.filmstrip</visible>
+	    </control>
+	    
+	    <control Style="smallTitleB">
+			<label>#TVSeries.Episode.InfoPanelLine2Key</label>
+			<type>label</type>
+			<posX>400</posX>
+			<posY>384</posY>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10002)</visible>
+	    </control>
+	    <control Style="smallTitle">
+			<id>10002</id>
+			<label>#TVSeries.Episode.InfoPanelLine2Value</label>
+			<type>label</type>
+			<posX>500</posX>
+			<posY>385</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	    
+	    <control Style="smallTitleB">
+			<label>#TVSeries.Episode.InfoPanelLine3Key</label>
+			<type>label</type>
+			<posX>400</posX>
+			<posY>407</posY>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10003)</visible>
+	    </control>
+	    <control Style="smallTitle">
+			<id>10003</id>
+			<label>#TVSeries.Episode.InfoPanelLine3Value</label>
+			<type>label</type>
+			<posX>500</posX>
+			<posY>408</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	    
+	    <control Style="smallTitleB">
+			<label>#TVSeries.Episode.InfoPanelLine4Key</label>
+			<type>label</type>
+			<posX>400</posX>
+			<posY>430</posY>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10004)</visible>
+	    </control>
+	    <control Style="smallTitle">
+			<id>10004</id>
+			<label>#TVSeries.Episode.InfoPanelLine4Value</label>
+			<type>label</type>
+			<posX>500</posX>
+			<posY>431</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	    
+	    <control Style="smallTitleB">
+			<label>#TVSeries.Episode.InfoPanelLine5Key</label>
+			<type>label</type>
+			<posX>400</posX>
+			<posY>453</posY>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10005)</visible>
+	    </control>
+	    <control Style="smallTitle">
+			<id>10005</id>
+			<label>#TVSeries.Episode.InfoPanelLine5Value</label>
+			<type>label</type>
+			<posX>500</posX>
+			<posY>454</posY>
+			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+	    </control>
+	
 		<control>
 			<type>fadelabel</type>
 			<description>Selected item Label</description>
@@ -308,7 +462,7 @@
 			<font>mediastream12c</font>
 			<align>right</align>
 			<visible>yes</visible>
-			<label>#selecteditem</label>
+			<label>#header.label</label>
 			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
 		</control>
 		<control>
@@ -326,7 +480,7 @@
 			<description>Media Count Label</description>
 			<type>label</type>
 			<label>PAGE:</label>
-		     <id>0</id>
+		    <id>0</id>
 			<posX>1123</posX>
 			<posY>688</posY>
 			<font>mediastream10tc</font>
