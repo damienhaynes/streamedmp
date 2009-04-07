@@ -66,12 +66,12 @@
 #define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION	"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
-#define MEDIAPORTAL_MIN_VERSION			"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
-//#define MEDIAPORTAL_MIN_VERSION			"0.9.3.20432" 	// RC3 Base
+#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
+//#define MEDIAPORTAL_MIN_VERSION			"1.0.0.22162" 	// 1.0.1 SVN (NO CRASH IN BASIC HOME)
+#define MEDIAPORTAL_MIN_VERSION				"0.9.3.20432" 	// RC3 Base
 
-#define TVSERIES_MIN_VERSION			"2.2.3380.0"
-#define MOVINGPICTURES_MIN_VERSION		"0.7.2.545"
+#define TVSERIES_MIN_VERSION				"2.2.3384.0"
+#define MOVINGPICTURES_MIN_VERSION			"0.7.2.545"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -1405,7 +1405,7 @@ begin
 	switch (sType) 
 
         case "MEDIAPORTAL": 
-            szFileName = g_sMediaPortalProgramDir^"MediaPortal.exe";; 
+            szFileName = g_sMediaPortalProgramDir^"MediaPortal.exe"; 
 
         case "TVSERIES": 
             szFileName = g_sPluginsDir^"windows\\MP-TVSeries.dll"; 
