@@ -116,7 +116,7 @@
       <width>300</width>
       <font>mediastream12tc</font>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)</visible>
     </control>
     
     <control>
@@ -129,7 +129,7 @@
       <height>75</height>
       <font>mediastream12tc</font>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -138,7 +138,7 @@
       <posX>401</posX>
       <posY>362</posY>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10001)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10001)</visible>
     </control>
     <control Style="smallTitle">
 	  <id>20001</id>
@@ -147,7 +147,7 @@
       <posX>501</posX>
       <posY>363</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10001)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10001)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -156,7 +156,7 @@
       <posX>401</posX>
       <posY>385</posY>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10002)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10002)</visible>
     </control>
     <control Style="smallTitle">
       <label>#TVSeries.Episode.InfoPanelLine2Value</label>
@@ -164,7 +164,7 @@
       <posX>501</posX>
       <posY>386</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10002)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10002)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -173,7 +173,7 @@
       <posX>401</posX>
       <posY>408</posY>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10003)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10003)</visible>
     </control>
     <control Style="smallTitle">
       <label>#TVSeries.Episode.InfoPanelLine3Value</label>
@@ -181,7 +181,7 @@
       <posX>501</posX>
       <posY>409</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10003)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10003)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -190,7 +190,7 @@
       <posX>401</posX>
       <posY>431</posY>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10004)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10004)</visible>
     </control>
     <control Style="smallTitle">
       <label>#TVSeries.Episode.InfoPanelLine4Value</label>
@@ -198,7 +198,7 @@
       <posX>501</posX>
       <posY>432</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10004)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10004)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -207,7 +207,7 @@
       <posX>401</posX>
       <posY>454</posY>
       <textcolor>#shadow.dark</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10005)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10005)</visible>
     </control>
     <control Style="smallTitle">
       <label>#TVSeries.Episode.InfoPanelLine5Value</label>
@@ -215,7 +215,7 @@
       <posX>501</posX>
       <posY>455</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(10005)</visible>
+      <visible>[[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)]+Control.IsVisible(10005)</visible>
     </control>
     
   </controls>
