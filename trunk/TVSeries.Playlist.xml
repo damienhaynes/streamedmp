@@ -5,6 +5,8 @@
 	<allowoverlay>no</allowoverlay>
 	<define>#header.label:136</define>
 	<define>#header.hover:hover_my tv series.png</define>
+	<define>#shadow.dark:ff111111</define>      <!-- Shadows under blue/grey text       Default: ff111111           -->
+	<define>#shadow.light:ff222222</define>     <!-- Shadows under wite text            Default: ff222222           -->
 	<controls>   
 	    <control>
 			<type>image</type>
@@ -308,6 +310,8 @@
 			</control>
 		</control> 
 		
+		<import>TVSeries.shadows.xml</import>
+		
 	    <control>
 			<description>Episode Description</description>
 			<type>textboxscrollup</type>
@@ -377,7 +381,7 @@
 			<type>label</type>
 			<posX>400</posX>
 			<posY>361</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.IsVisible(10001)</visible>
 	    </control>
 	    <control Style="smallTitle">
 			<id>10001</id>
@@ -385,7 +389,7 @@
 			<type>label</type>
 			<posX>500</posX>
 			<posY>362</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10001)</visible>
 	    </control>
 	    
 	    <control Style="smallTitleB">
@@ -393,7 +397,7 @@
 			<type>label</type>
 			<posX>400</posX>
 			<posY>384</posY>
-			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10002)</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.IsVisible(10002)</visible>
 	    </control>
 	    <control Style="smallTitle">
 			<id>10002</id>
@@ -401,7 +405,7 @@
 			<type>label</type>
 			<posX>500</posX>
 			<posY>385</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10002)</visible>
 	    </control>
 	    
 	    <control Style="smallTitleB">
@@ -409,7 +413,7 @@
 			<type>label</type>
 			<posX>400</posX>
 			<posY>407</posY>
-			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10003)</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.IsVisible(10003)</visible>
 	    </control>
 	    <control Style="smallTitle">
 			<id>10003</id>
@@ -417,7 +421,7 @@
 			<type>label</type>
 			<posX>500</posX>
 			<posY>408</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10003)</visible>
 	    </control>
 	    
 	    <control Style="smallTitleB">
@@ -425,7 +429,7 @@
 			<type>label</type>
 			<posX>400</posX>
 			<posY>430</posY>
-			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10004)</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.IsVisible(10004)</visible>
 	    </control>
 	    <control Style="smallTitle">
 			<id>10004</id>
@@ -433,7 +437,7 @@
 			<type>label</type>
 			<posX>500</posX>
 			<posY>431</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10004)</visible>
 	    </control>
 	    
 	    <control Style="smallTitleB">
@@ -441,7 +445,7 @@
 			<type>label</type>
 			<posX>400</posX>
 			<posY>453</posY>
-			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10005)</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.IsVisible(10005)</visible>
 	    </control>
 	    <control Style="smallTitle">
 			<id>10005</id>
@@ -449,7 +453,7 @@
 			<type>label</type>
 			<posX>500</posX>
 			<posY>454</posY>
-			<visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10005)</visible>
 	    </control>
 	
 		<control>
