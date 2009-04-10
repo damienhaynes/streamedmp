@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>6</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  
+  <define>#header.hover:hover_my videos.png</define>
+  <controls>
+     
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <description>movies background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+
+	<control>
+      <description>Heading</description>
+      <type>label</type>
+      <id>2</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <label>Media Slayer</label>
+      <align>right</align>
+	  <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>	 
+    </control>
+	
+	<control>
+      <description>movies overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+	
+	<control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+	
+    <control>
+      <type>image</type>
+      <posX>1002</posX>
+      <posY>0</posY>
+      <width>278</width>
+      <height>720</height>
+      <texture>hiddenmenu_right.png</texture>
+    </control>
+
+    <control>
+      <id>0</id>
+      <label>MENU</label>
+      <type>label</type>
+      <font>mediastream12tc</font>
+      <posX>1040</posX>
+      <posY>225</posY>
+    </control>
+    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>1040</posX>
+      <posY>250</posY>
+      <width>220</width>
+      <height>720</height>
+      <layout>StackLayout</layout>
+      
+      <control>
+        <description>Rip Disc</description>
+        <type>button</type>
+        <id>3</id>
+        <label>Rip Disc</label>
+        <onup>17</onup>
+      </control>
+      <control>
+        <description>About</description>
+        <type>button</type>
+        <id>4</id>
+        <label>About</label>        
+      </control>
+      <control>
+        <description>hidden</description>
+        <type>button</type>
+        <id>100</id>
+        <label></label>
+        <visible>no</visible>
+      </control>
+      <control>
+        <description>art</description>
+        <type>togglebutton</type>
+        <id>10</id>
+        <label>Get Cover Art</label>
+      </control>
+      <control>
+        <description>eject</description>
+        <type>togglebutton</type>
+        <id>19</id>
+        <label>Eject Disc</label>
+      </control>      
+      <control>
+        <description>target</description>
+        <type>button</type>
+        <id>9</id>
+        <label>Music</label>
+      </control>
+      <control>
+        <description>format</description>
+        <type>button</type>
+        <id>14</id>
+        <label>Ogg Vorbis</label>
+      </control>
+      <control>
+      <description>target</description>
+        <type>button</type>
+        <id>24</id>
+        <label>Video</label>
+      </control>
+      <control>
+        <description>DVD mode</description>
+        <type>button</type>
+        <id>18</id>
+        <label>Full Disc</label>
+        <ondown>3</ondown>
+      </control>
+    </control>
+
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>340</posX>
+      <posY>245</posY>
+      <width>470</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+      <visible>Control.IsVisible(8)</visible>
+    </control>
+    <control>
+      <type>progress</type>
+      <description>track progress</description>
+      <id>8</id>
+      <posX>330</posX>
+      <posY>245</posY>
+      <width>490</width>
+      <height>20</height>
+			<texturebg>-</texturebg>
+			<lefttexture>osdprogressleft.png</lefttexture>
+			<midtexture>osdprogressmid.png</midtexture>
+			<righttexture>osdprogressright.png</righttexture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>1</id>
+      <posX>340</posX>
+      <posY>285</posY>
+      <width>470</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+      <visible>Control.IsVisible(12)</visible>
+    </control>
+    <control>
+      <type>progress</type>
+      <description>tot progress</description>
+      <id>12</id>
+      <posX>330</posX>
+      <posY>285</posY>
+      <width>490</width>
+      <height>20</height>
+			<texturebg>-</texturebg>
+			<lefttexture>osdprogressleft.png</lefttexture>
+			<midtexture>osdprogressmid.png</midtexture>
+			<righttexture>osdprogressright.png</righttexture>
+    </control>
+
+    <control>
+      <description>Artist header</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>340</posX>
+      <posY>325</posY>
+      <label>171</label>
+      <textcolor>99ffffff</textcolor>
+    </control>
+    <control>
+      <description>Artist name</description>
+      <type>label</type>
+      <id>6</id>
+      <posX>410</posX>
+      <posY>325</posY>
+      <label></label>
+	  
+    </control>
+
+    <control>
+      <description>Album header</description>
+      <type>label</type>
+      <id>16</id>
+      <posX>340</posX>
+      <posY>305</posY>
+      <label>170</label>
+      <textcolor>99ffffff</textcolor>
+    </control>
+    <control>
+      <description>Album name</description>
+      <type>label</type>
+      <id>7</id>
+      <posX>410</posX>
+      <posY>305</posY>
+      <label></label>
+    </control>
+
+    <control>
+      <description>text label - STATUS</description>
+      <type>label</type>
+      <id>5</id>
+      <posX>340</posX>
+      <posY>225</posY>
+      <font>mediastream12tc</font>
+      <label></label>
+    </control>
+    <control>
+      <description>text label - TOTAL STATUS</description>
+      <type>label</type>
+      <id>13</id>
+      <posX>340</posX>
+      <posY>265</posY>
+      <font>mediastream12tc</font>
+      <label></label>
+    </control>
+
+    <control>
+      <description>Movie image background</description>
+      <type>image</type>
+      <id>23</id>
+      <posX>36</posX>
+      <posY>264</posY>
+      <width>286</width>
+      <height>406</height>
+      <texture>defaultdvdcover.png</texture>
+      <animation effect="fade" time="1000">WindowOpen</animation>
+      <animation effect="fade" time="1000">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie image</description>
+      <type>image</type>
+      <id>22</id>
+      <posX>36</posX>
+      <posY>264</posY>
+      <width>286</width>
+      <height>406</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">-</texture>
+      <animation effect="fade" time="1000">WindowOpen</animation>
+      <animation effect="fade" time="1000">WindowClose</animation>
+    </control>
+
+
+    <control>
+      <description>Album image background</description>
+      <type>image</type>
+      <id>21</id>
+      <posX>36</posX>
+      <posY>264</posY>
+      <width>286</width>
+      <height>286</height>
+      <texture>albumcover.png</texture>
+      <animation effect="fade" time="1000">WindowOpen</animation>
+      <animation effect="fade" time="1000">WindowClose</animation>
+    </control>
+    <control>
+      <description>Album Art</description>
+      <type>image</type>
+      <id>20</id>
+      <posX>36</posX>
+      <posY>264</posY>
+      <width>286</width>
+      <height>286</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">-</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+	  <description>textarea</description> 
+	  <type>textbox</type> 
+	  <id>25</id> 
+	  <posX>340</posX>
+	  <posY>355</posY>
+	  <width>520</width>
+	  <height>360</height>  
+	</control>
+
+    <control>
+      <description>spin control</description>
+      <type>spincontrol</type>
+      <id>26</id>
+      <posX>180</posX>
+      <posY>670</posY>
+      <onup>26</onup>
+      <ondown>26</ondown>
+      <onleft>3</onleft>
+      <onright>25</onright>
+      <align>right</align>
+    </control>
+
+    <import>common.overlays.xml</import>
+    <import>common.time.xml</import>
+  </controls>
+</window>
