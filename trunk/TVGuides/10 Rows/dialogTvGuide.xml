@@ -50,9 +50,21 @@
                         <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
                 </control>
                 <control>
-                        <type>fadelabel</type>
+                        <type>label</type>
                         <description>Guide Group Label</description>
                         <id>11</id>
+                        <posX>852</posX>
+                        <posY>13</posY>
+                        <width>340</width>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <label>#TV.Guide.Group</label>
+                        <visible>no</visible>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Guide Group Label</description>
+                        <id>0</id>
                         <posX>852</posX>
                         <posY>13</posY>
                         <width>340</width>
@@ -298,7 +310,7 @@
                 <control>
                         <description>TvGroup button</description>
                         <type>button</type>
-                        <id>60</id>
+                        <id>100</id>
                         <posX>15</posX>
                         <posY>120</posY>
                         <width>30</width>
@@ -316,7 +328,7 @@
                 <control>
                         <description>TvGroup button label</description>
                         <type>label</type>
-                        <id>61</id>
+                        <id>0</id>
                         <posX>40</posX>
                         <posY>125</posY>
                         <label>#TV.Guide.ChangeGroup</label>
