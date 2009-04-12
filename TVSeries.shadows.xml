@@ -2,6 +2,8 @@
 <window>
   <controls>
     
+	<!-- This XML is used to generate Shadows in TVseries (Default style)  and in Playlist view -->	
+	
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::::::::::::::::::::: GROUPED VIEW :: LIST VIEW :: CHANNELS/GENRES ::
@@ -116,7 +118,7 @@
       <width>300</width>
       <font>mediastream12tc</font>
       <textcolor>#shadow.dark</textcolor>
-      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)</visible>
+      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|[window.istopmost(9813)+[facadeview.playlist|facadeview.filmstrip]]</visible>
     </control>
     
     <control>
@@ -129,7 +131,7 @@
       <height>75</height>
       <font>mediastream12tc</font>
       <textcolor>#shadow.light</textcolor>
-      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|window.istopmost(9813)</visible>
+      <visible>[Control.IsVisible(1239)+Control.IsVisible(1235)]|[window.istopmost(9813)+[facadeview.playlist|facadeview.filmstrip]]</visible>
     </control>
     
     <control Style="smallTitleB">
