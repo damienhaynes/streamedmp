@@ -35,6 +35,17 @@
 			<height>720</height>
 			<texture>mainoverlay.png</texture>
 	    </control>
+		<control>
+			<description>Default Episode Thumb</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>23</posX>
+			<posY>266</posY>
+			<width>364</width>
+			<height>208</height>
+			<texture>defaultepisodethumb.png</texture>
+			<visible>facadeview.playlist</visible>
+		</control>
 	    <control>
 			<id>204</id>
 			<type>image</type>
@@ -245,7 +256,7 @@
 				<frame>-</frame>
 				<frameFocus>-</frameFocus>
 				<showFrame>no</showFrame>
-				<showFolder>yes</showFolder>
+				<showFolder>yes</showFolder>				
 				<showBackGround>no</showBackGround>
 				<showInfoImage>no</showInfoImage>
 				<thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
@@ -258,8 +269,10 @@
 				<posY>250</posY>				
 				<width>1260</width>
 				<height>500</height>
-				<spinPosX>1230</spinPosX>
-				<spinPosY>690</spinPosY>
+				<spinPosX>1245</spinPosX>
+				<spinPosY>689</spinPosY>
+				<textureUp>-</textureUp>
+				<textureDown>-</textureDown>
 				<spinAlign>Right</spinAlign>
 				<spinColor>ff006698</spinColor>
 				<spinCanFocus>no</spinCanFocus>	
@@ -283,7 +296,7 @@
 				<thumbHeightBig>169</thumbHeightBig>
 				<thumbPosXBig>11</thumbPosXBig>
 				<thumbPosYBig>6</thumbPosYBig>
-				<thumbZoom>yes</thumbZoom>
+				<thumbZoom>yes</thumbZoom>				
 				<enableFocusZoom>no</enableFocusZoom>
 				<onleft>2</onleft>
 				<onright>2</onright>
@@ -293,8 +306,8 @@
 				<type>playlistcontrol</type>
 				<id>50</id>
 				<scrollOffset>2</scrollOffset>
-				<spinPosX>1249</spinPosX>
-				<spinPosY>690</spinPosY>
+				<spinPosX>-50</spinPosX>
+				<spinPosY>-50</spinPosY>
 				<spinAlign>Right</spinAlign>
 				<spinColor>ff006698</spinColor>
 				<spinCanFocus>no</spinCanFocus>
@@ -492,19 +505,42 @@
 			<width>159</width>
 			<height>28</height>
 			<texture>mediacountbackground.png</texture>
-			<visible>facadeview.list|facadeview.playlist</visible>
+			<visible>!facadeview.filmstrip</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>EPISODES:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>688</posY>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>facadeview.playlist</visible>
 		</control>
 		<control>
 			<description>Media Count Label</description>
 			<type>label</type>
 			<label>PAGE:</label>
-		    <id>0</id>
+			<id>0</id>
 			<posX>1123</posX>
 			<posY>688</posY>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>facadeview.list|facadeview.playlist</visible>
+			<visible>facadeview.smallicons|facadeview.largeicons</visible>
 		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>#TVSeries.Playlist.Count</label>
+			<id>0</id>
+			<posX>1245</posX>
+			<posY>687</posY>
+			<font>mediastream10c</font>
+			<align>right</align>
+			<textcolor>ff006698</textcolor>
+			<visible>facadeview.playlist</visible>
+	    </control>
 		<import>common.overlays2.xml</import>
 		<import>common.window.xml</import>
 		<import>common.time.xml</import>
