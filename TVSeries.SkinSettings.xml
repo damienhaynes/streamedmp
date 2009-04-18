@@ -33,10 +33,10 @@
 		item3 = <text2> (right aligned)
 	-->		
 	<layouts>
-		<group List="true" SmallIcons="false" />
-		<series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true" />
-		<season List="true" Filmstrip="true" />
-		<episode List="true" />
+		<group List="true" SmallIcons="false"/>
+		<series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true"/>
+		<season List="true" Filmstrip="true"/>
+		<episode List="true"/>
 	</layouts>
 	
 	<views import="true" AppendlmageToList="false">		
@@ -49,7 +49,7 @@
 		<season layout="List">	
 			<item1>SeasonWatchedAndUnWatched</item1>
 			<item2><![CDATA[Season <Season.SeasonIndex>]]></item2>		
-			<item3>SeasonTotalEpisodes_1</item3>
+			<item3>SMALLSPACE</item3>
 		</season>
 		<episode>	
 			<item1><![CDATA[<Episode.FirstAired>]]></item1>
@@ -71,6 +71,7 @@
 <Enabled>1<Format><Episode.InfoPanelLine6Key><FormatAs>VIDEO INFO
 <Enabled>1<Format><Episode.InfoPanelLine6Value><FormatAs>[<Episode.VideoCodec> <Episode.videoWidth>x<Episode.videoHeight> Eval(Round(<Episode.VideoAspectRatio>*100)/100) Eval(Round(<Episode.VideoFrameRate>*1000)/1000)fps Eval(Round(PrettyBytes1000(<Episode.VideoBitrate>)*10)/10-> |Kbps|Mbps|Gbps)]  [<Episode.AudioCodec> <Episode.AudioChannels>channels Eval(Round(PrettyBytes1000(<Episode.AudioBitrate>)*10)/10-> |Kbps|Mbps|Gbps)]  [<Episode.FileSize>]
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
+<Enabled>1<Format><Episode.SeriesName><FormatAs><Series.Pretty_Name>
 <Enabled>1<Format><Season.SeasonLabel><FormatAs>Season <Season.SeasonIndex>
 <Enabled>1<Format><Series.InfoPanelLine1Key><FormatAs>GENRE
 <Enabled>1<Format><Series.InfoPanelLine1Value><FormatAs><Series.Genre>

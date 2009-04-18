@@ -35,6 +35,53 @@
 			<height>720</height>
 			<texture>mainoverlay.png</texture>
 	    </control>
+		
+		<control>
+			<description>Season Number BG</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>381</posX>
+			<posY>11</posY>
+			<width>256</width>
+			<height>36</height>
+			<texture>tvtitlebgshort.png</texture>
+			<visible>true</visible>
+		</control>
+	    <control>
+			<type>label</type>
+			<description>Season Number</description>
+			<id>0</id>
+			<posX>616</posX>
+			<posY>16</posY>
+			<font>mediastream11c</font>
+			<label>#TVSeries.Episode.SeasonLabel</label>
+			<align>right</align>
+			<visible>true</visible>
+	    </control>
+    
+	    <control>
+			<description>Series Name BG</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>77</posX>
+			<posY>11</posY>
+			<width>437</width>
+			<height>35</height>
+			<texture>tvtitlebg.png</texture>
+	    </control>
+	    <control>
+			<type>fadelabel</type>
+			<description>TV Shows Label</description>
+			<id>0</id>
+			<posX>493</posX>
+			<posY>13</posY>
+			<width>350</width>
+			<font>mediastream12c</font>
+			<label>#TVSeries.Episode.SeriesName</label>
+			<align>right</align>
+			<visible>true</visible>
+	    </control>
+		
 		<control>
 			<description>Default Episode Thumb</description>
 			<type>image</type>
@@ -44,7 +91,7 @@
 			<width>364</width>
 			<height>208</height>
 			<texture>defaultepisodethumb.png</texture>
-			<visible>facadeview.playlist</visible>
+			<visible>facadeview.playlist|facadeview.filmstrip</visible>
 		</control>
 	    <control>
 			<id>204</id>
@@ -485,16 +532,16 @@
 	
 		<control>
 			<type>fadelabel</type>
-			<description>Selected item Label</description>
+			<description>Current View</description>
 			<id>0</id>
-			<posX>493</posX>
-			<posY>13</posY>
-			<width>350</width>
-			<font>mediastream12c</font>
+			<posX>1255</posX>
+			<posY>15</posY>
+			<width>500</width>
+			<font>mediastream10tc</font>
 			<align>right</align>
-			<visible>yes</visible>
+			<textcolor>ffFFFFFF</textcolor>
 			<label>#header.label</label>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+			<!--<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>-->
 		</control>
 		<control>
 			<description>Media Count Background</description>
@@ -504,8 +551,7 @@
 			<posY>684</posY>
 			<width>159</width>
 			<height>28</height>
-			<texture>mediacountbackground.png</texture>
-			<visible>!facadeview.filmstrip</visible>
+			<texture>mediacountbackground.png</texture>			
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -516,7 +562,7 @@
 			<posY>688</posY>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>facadeview.playlist</visible>
+			<visible>facadeview.playlist|facadeview.filmstrip</visible>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -539,10 +585,10 @@
 			<font>mediastream10c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
-			<visible>facadeview.playlist</visible>
+			<visible>facadeview.playlist|facadeview.filmstrip</visible>
 	    </control>
 		<import>common.overlays2.xml</import>
-		<import>common.window.xml</import>
+		<!--<import>common.window.xml</import>-->
 		<import>common.time.xml</import>
 	</controls>
 </window>
