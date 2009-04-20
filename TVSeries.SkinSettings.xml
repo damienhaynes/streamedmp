@@ -80,7 +80,7 @@
 <Enabled>1<Format><Series.InfoPanelLine3Key><FormatAs>RATING
 <Enabled>1<Format><Series.InfoPanelLine3Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10 (RATED: <Series.myRating>)
 <Enabled>1<Format><Series.InfoPanelLine4Key><FormatAs>RUNTIME
-<Enabled>1<Format><Series.InfoPanelLineValue><FormatAs><Series.Runtime> minutes
+<Enabled>1<Format><Series.InfoPanelLine4Value><FormatAs><Series.Runtime> minutes
 <Enabled>1<Format><Series.InfoPanelLine5Key><FormatAs>NETWORK
 <Enabled>1<Format><Series.InfoPanelLine5Value><FormatAs><Series.Network>
 <Enabled>1<Format>[ x  fps ]  [ channels ]  [0 bytes]<FormatAs>N / A
@@ -140,7 +140,7 @@ skin\StreamedMP\Media\TVSeries\Logos\Misc\VORBIS.png;-;<Episode.AudioCodec>;-;co
 	<!-- Should use highest of both Default/Fanart tvseries xmls (let setup handle this), the settings below are for optimal performance without too much loss to visual quality -->
 	<graphicsquality import="true">
 		<seriesbanners>60</seriesbanners>
-		<seriesposters>35</seriesposters> <!-- 20% for Default, 35% for Fanart style-->
+		<seriesposters>20</seriesposters> <!-- 20% for Default, 35% for Fanart style-->
 		<seasonbanners>75</seasonbanners>
 		<episodethumbs>90</episodethumbs>
 	</graphicsquality>
