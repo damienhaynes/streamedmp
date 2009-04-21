@@ -40,13 +40,23 @@
       </control>
       
       <control Style="settingsmainbutton">
+	    <description>Audio Codecs</description>
         <type>button</type>
         <id>25</id>
         <label>6001</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
       
+	  <control Style="settingsmainbutton">
+        <description>AAC Audio Codecs</description>
+        <type>button</type>
+        <id>30</id>
+        <label>6039</label>
+		<onright>#defaultcontrol.onright</onright>
+      </control>  
+	  
       <control Style="settingsmainbutton">
+	    <description>Audio Renderer</description>
         <type>button</type>
         <id>27</id>
         <label>6002</label>
@@ -54,12 +64,37 @@
       </control>
       
       <control Style="settingsmainbutton">
+	    <description>Apect Ratio</description>
         <type>button</type>
         <id>28</id>
         <label>6004</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
       
+	  <control Style="settingsmaintogglebutton">
+        <description>Subtitles On/Off</description>
+        <type>togglebutton</type>
+        <id>31</id>
+        <label>1196</label>
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+	  
+      <control Style="settingsmainbutton">
+        <description>Subtitle Language</description>
+        <type>button</type>
+        <id>32</id>
+        <label>1029</label>
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+	  
+      <control Style="settingsmainbutton">
+        <description>Audio Language</description>
+        <type>button</type>
+        <id>33</id>
+        <label>492</label>        
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+	  
       <control Style="settingsmainbutton">
         <description>Skip steps screen button</description>
         <type>button</type>
@@ -67,6 +102,7 @@
         <label>6024</label>
         <hyperlink>708</hyperlink>
         <onright>#defaultcontrol.onright</onright>
+		<ondown>24</ondown>
       </control>
       
     </control>
