@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>4</id>
-  <defaultcontrol>9991</defaultcontrol>
+  <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
@@ -84,7 +84,7 @@
       <control Style="settingsbutton">
         <description>Wizard</description>
         <type>button</type>
-        <id>9991</id>
+        <id>3</id>
         <label>1200</label>
         <hyperlink>615</hyperlink>
         <onup>17</onup>
@@ -93,7 +93,7 @@
       <control Style="settingsbutton">
         <description>General</description>
         <type>button</type>
-        <id>9992</id>
+        <id>4</id>
         <label>128</label>
         <hyperlink>705</hyperlink>
       </control>
@@ -101,7 +101,7 @@
       <control Style="settingsbutton">
         <description>Screen</description>
         <type>button</type>
-        <id>9993</id>
+        <id>5</id>
         <label>6023</label>
         <hyperlink>9</hyperlink>
       </control>
@@ -109,7 +109,7 @@
       <control Style="settingsbutton">
         <description>TV</description>
         <type>button</type>
-        <id>9994</id>
+        <id>10</id>
         <label>605</label>
         <hyperlink>700</hyperlink>
       </control>
@@ -117,7 +117,7 @@
       <control Style="settingsbutton">
         <description>My Pictures</description>
         <type>button</type>
-        <id>9995</id>
+        <id>7</id>
         <label>1</label>
         <hyperlink>12</hyperlink>
       </control>
@@ -125,7 +125,7 @@
       <control Style="settingsbutton">
         <description>Movies</description>
         <type>button</type>
-        <id>9996</id>
+        <id>8</id>
         <label>3</label>
         <hyperlink>703</hyperlink>
       </control>
@@ -133,23 +133,32 @@
       <control Style="settingsbutton">
         <description>My DVD</description>
         <type>button</type>
-        <id>9997</id>
+        <id>9</id>
         <label>1027</label>
         <hyperlink>704</hyperlink>
       </control>
-      
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-      
+            
       <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
-        <id>9998</id>
+        <id>6</id>
         <label>2</label>
-        <hyperlink>14</hyperlink>
+        <hyperlink>14</hyperlink>        
+      </control>
+	  
+	  <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+	  
+	  <control Style="settingsbutton">
+        <description>MiniDisplay</description>
+        <type>button</type>
+        <id>11</id>        
+        <label>9100</label>
+        <hyperlink>9000</hyperlink>
         <ondown>99</ondown>
       </control>
-    </control>
-    
+
+	</control>
+ 
     <import>common.time.xml</import>
     
   </controls>
