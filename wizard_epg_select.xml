@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>635</id>
+  <defaultcontrol>24</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+  
+   <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+    </control>
+    
+    <control>
+      <description>FanArt Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+	
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+
+    <control>
+      <type>label</type>
+      <description>Please select your EPG grabber. Note if your country is</description>
+      <id>2</id>
+      <posX>150</posX>
+      <posY>250</posY>
+      <label>200000</label>
+      <font>mediastream12</font>
+    </control>
+    <control>
+      <type>label</type>
+      <description>not listed then you will need to supply the EPG manually</description>
+      <id>3</id>
+      <posX>150</posX>
+      <posY>275</posY>
+      <label>200001</label>
+      <font>mediastream12</font>
+    </control>
+	
+    <control>
+      <type>listcontrol</type>
+      <description>countryList</description>
+      <id>24</id>
+      <posY>150</posY>
+      <height>300</height>
+      <onleft>5</onleft>
+      <onright>5</onright>
+      <onup>5</onup>
+      <ondown>5</ondown>
+    </control>
+	
+	<control Style="settingsmainbutton">
+      <type>button</type>
+      <description>Next</description>
+      <id>5</id>
+      <posX>150</posX>
+      <posY>550</posY>
+      <width>400</width>
+      <onup>24</onup>
+      <ondown>27</ondown>    
+      <label>200009</label>
+      <font>mediastream12tc</font>
+    </control>
+	<control Style="settingsmainbutton">
+      <type>button</type>
+      <description>Manual</description>
+      <id>27</id>
+      <posX>150</posX>
+      <posY>600</posY>           
+      <onup>5</onup>
+      <ondown>25</ondown>
+      <label>Manual XML TV</label>
+      <width>224</width>
+	  <font>mediastream12tc</font>
+    </control>
+	<control Style="settingsmainbutton">
+      <type>button</type>
+      <description>Back</description>
+      <id>25</id>
+      <posX>150</posX>
+      <posY>650</posY>
+      <width>400</width>
+      <onup>27</onup>      
+      <label>200007</label>
+      <font>mediastream12tc</font>
+	  <hyperlink>616</hyperlink> 
+    </control>
+	
+  </controls>
+</window>
