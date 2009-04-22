@@ -67,6 +67,18 @@
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
                         </control>
                         <control>
+                                <id>0</id>
+                                <description>label SETTINGS</description>
+                                <label>1048</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>337</posY>
+                                <visible>!Control.HasFocus(10)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
                                 <type>group</type>
                                 <description>group element</description>
                                 <visible>!Control.HasFocus(10)</visible>
@@ -82,6 +94,7 @@
                                         <id>2</id>
                                         <type>button</type>
                                         <label>264</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                 </control>
@@ -90,14 +103,7 @@
                                         <id>3</id>
                                         <type>button</type>
                                         <label>1038</label>
-                                        <onleft>10</onleft>
-                                        <onright>10</onright>
-                                </control>
-                                <control>
-                                        <description>Keep</description>
-                                        <id>4</id>
-                                        <type>button</type>
-                                        <label>1042</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                 </control>
@@ -106,6 +112,7 @@
                                         <id>5</id>
                                         <type>togglebutton</type>
                                         <label>1040</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                 </control>
@@ -116,12 +123,23 @@
                                         <label>882</label>
                                         <onleft>19</onleft>
                                         <onright>10</onright>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Keep</description>
+                                        <id>4</id>
+                                        <type>button</type>
+                                        <label>1042</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
+                                        <onleft>10</onleft>
+                                        <onright>10</onright>
                                 </control>
                                 <control>
                                         <description>Episodes</description>
                                         <type>button</type>
                                         <id>7</id>
                                         <label>888</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                 </control>
@@ -130,6 +148,7 @@
                                         <type>button</type>
                                         <id>8</id>
                                         <label>1444</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                 </control>
@@ -138,6 +157,7 @@
                                         <type>button</type>
                                         <id>9</id>
                                         <label>1445</label>
+                                        <disabledcolor>60ffffff</disabledcolor>
                                         <onleft>10</onleft>
                                         <onright>10</onright>
                                         <ondown>2</ondown>
@@ -188,6 +208,7 @@
                         <width>570</width>
                         <font>mediastream16tc</font>
                         <textcolor>ff909090</textcolor>
+                        <visible>false</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -199,9 +220,24 @@
                         <type>fadelabel</type>
                         <id>13</id>
                         <posX>28</posX>
-                        <posY>273</posY>
+                        <posY>240</posY>
                         <width>570</width>
-                        <font>mediastream14tc</font>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Current program genre</description>
+                        <type>label</type>
+                        <id>17</id>
+                        <posX>28</posX>
+                        <posY>265</posY>
+                        <width>468</width>
+                        <font>mediastream11tc</font>
+                        <textcolor>ff006698</textcolor>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -212,36 +248,8 @@
                         <type>label</type>
                         <id>14</id>
                         <posX>28</posX>
-                        <posY>302</posY>
-                        <font>mediastream12tc</font>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Genre Label</description>
-                        <type>label</type>
-                        <label>GENERE : </label>
-                        <id>0</id>
-                        <posX>28</posX>
-                        <posY>331</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff006698</textcolor>
-                        <visible>Control.isvisible(14)</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>genre</description>
-                        <type>label</type>
-                        <id>17</id>
-                        <posX>130</posX>
-                        <posY>330</posY>
-                        <width>468</width>
-                        <font>mediastream12c</font>
+                        <posY>287</posY>
+                        <font>mediastream11tc</font>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -252,9 +260,9 @@
                         <type>textboxscrollup</type>
                         <id>15</id>
                         <posX>28</posX>
-                        <posY>370</posY>
+                        <posY>312</posY>
                         <width>570</width>
-                        <height>260</height>
+                        <height>348</height>
                         <seperator>-----------------------------------------------------------------------------------------------</seperator>
                         <font>mediastream12</font>
                         <label>#TV.RecordedTV.Description</label>
