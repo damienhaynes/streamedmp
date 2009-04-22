@@ -190,48 +190,29 @@
                         </control>
                 </control>
                 <control>
-                        <description>channel</description>
-                        <type>label</type>
-                        <id>17</id>
-                        <posX>28</posX>
-                        <posY>240</posY>
-                        <width>570</width>
-                        <label>#TV.Scheduled.Channel</label>
-                        <font>mediastream16tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <visible>yes</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Selected item Label</description>
-                        <id>1</id>
-                        <posX>28</posX>
-                        <posY>273</posY>
-                        <width>570</width>
-                        <label>#selecteditem</label>
-                        <font>mediastream12tc</font>
-                        <visible>Control.IsVisible(14)</visible>
-                        <textcolor>ff909090</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
                         <description>Current program title</description>
                         <type>fadelabel</type>
                         <id>13</id>
                         <posX>28</posX>
-                        <posY>273</posY>
+                        <posY>240</posY>
                         <width>570</width>
                         <font>mediastream12tc</font>
-                        <label>#TV.Scheduled.Title</label>
                         <textcolor>ff909090</textcolor>
-                        <visible>false</visible>
+                        <label>#TV.Scheduled.Title</label>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Current program genre</description>
+                        <type>label</type>
+                        <id>14</id>
+                        <posX>28</posX>
+                        <posY>265</posY>
+                        <font>mediastream11tc</font>
+                        <textcolor>ff006698</textcolor>
+                        <label>#TV.Scheduled.Genre</label>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -242,8 +223,8 @@
                         <type>label</type>
                         <id>14</id>
                         <posX>28</posX>
-                        <posY>302</posY>
-                        <font>mediastream12tc</font>
+                        <posY>287</posY>
+                        <font>mediastream11tc</font>
                         <label>#TV.Scheduled.Time</label>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
@@ -255,9 +236,9 @@
                         <type>textboxscrollup</type>
                         <id>15</id>
                         <posX>28</posX>
-                        <posY>370</posY>
+                        <posY>312</posY>
                         <width>570</width>
-                        <height>290</height>
+                        <height>348</height>
                         <font>mediastream12</font>
                         <seperator>----------------------------------------------------------------------------------------------------</seperator>
                         <label>#TV.Scheduled.Description</label>
@@ -306,24 +287,6 @@
                         <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
-                <!--<control>
-                        <type>videowindow</type>
-                        <description>TV preview window</description>
-                        <id>99</id>
-                        <posX>53</posX>
-                        <posY>91</posY>
-                        <width>180</width>
-                        <height>103</height>
-                        <onleft>10</onleft>
-                        <onright>10</onright>
-                        <onup>17</onup>
-                        <ondown>2</ondown>
-                        <textureFocus>tv_green_border.png</textureFocus>
-                        <action>18</action>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <visible>no</visible>
-                </control>-->
                 <import>common.overlays.xml</import>
         </controls>
 </window>

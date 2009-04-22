@@ -99,7 +99,7 @@
                                         <description>View-As button</description>
                                         <id>2</id>
                                         <onleft>50</onleft>
-                                        <onright>50</onright> 
+                                        <onright>50</onright>
                                         <label>100</label>
                                 </control>
                                 <control>
@@ -210,7 +210,6 @@
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                        
                 </control>
                 <control>
                         <description>Glass Overlay</description>
@@ -228,7 +227,7 @@
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>       
+                </control>
                 <control>
                         <type>fadelabel</type>
                         <description>Current program title</description>
@@ -250,10 +249,10 @@
                         <description>genre</description>
                         <id>17</id>
                         <posX>28</posX>
-                        <posY>490</posY>
+                        <posY>485</posY>
                         <width>495</width>
-                        <label>   #TV.RecordedTV.Genre</label>
-                        <font>mediastream10tc</font>
+                        <label>#TV.RecordedTV.Genre</label>
+                        <font>mediastream11tc</font>
                         <textcolor>ff006698</textcolor>
                         <align>left</align>
                         <visible>facadeview.list | facadeview.album</visible>
@@ -267,7 +266,7 @@
                         <description>Current program time</description>
                         <id>14</id>
                         <posX>28</posX>
-                        <posY>517</posY>
+                        <posY>507</posY>
                         <label>#TV.RecordedTV.Time</label>
                         <visible>facadeview.list | facadeview.album</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
@@ -280,9 +279,9 @@
                         <description>Description1</description>
                         <id>15</id>
                         <posX>28</posX>
-                        <posY>540</posY>
+                        <posY>532</posY>
                         <width>600</width>
-                        <height>120</height>
+                        <height>160</height>
                         <seperator>----------------------------------------------------------------------------------------</seperator>
                         <font>mediastream11</font>
                         <label>#TV.RecordedTV.Description</label>
@@ -304,7 +303,7 @@
                         <posX>28</posX>
                         <posY>240</posY>
                         <width>475</width>
-                        <font>mediastream16tc</font>
+                        <font>mediastream12tc</font>
                         <textcolor>ff909090</textcolor>
                         <label>#TV.RecordedTV.Title</label>
                         <visible>facadeview.largeicons | facadeview.smallicons</visible>
@@ -318,10 +317,10 @@
                         <description>genre</description>
                         <id>17</id>
                         <posX>28</posX>
-                        <posY>278</posY>
+                        <posY>265</posY>
                         <width>315</width>
-                        <label>   #TV.RecordedTV.Genre</label>
-                        <font>mediastream12tc</font>
+                        <label>#TV.RecordedTV.Genre</label>
+                        <font>mediastream11tc</font>
                         <textcolor>ff006698</textcolor>
                         <align>left</align>
                         <visible>facadeview.largeicons | facadeview.smallicons</visible>
@@ -335,8 +334,8 @@
                         <description>Current program time</description>
                         <id>14</id>
                         <posX>28</posX>
-                        <posY>310</posY>
-                        <font>mediastream12tc</font>
+                        <posY>287</posY>
+                        <font>mediastream11tc</font>
                         <label>#TV.RecordedTV.Time</label>
                         <visible>facadeview.largeicons | facadeview.smallicons</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
@@ -349,9 +348,9 @@
                         <description>Description1</description>
                         <id>15</id>
                         <posX>28</posX>
-                        <posY>370</posY>
+                        <posY>312</posY>
                         <width>475</width>
-                        <height>290</height>
+                        <height>348</height>
                         <seperator>----------------------------------------------------------------------------------------</seperator>
                         <font>mediastream12</font>
                         <label>#TV.RecordedTV.Description</label>
@@ -391,24 +390,6 @@
                         <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
-                <!--<control>
-                        <type>videowindow</type>
-                        <description>TV preview window</description>
-                        <id>99</id>
-                        <posX>53</posX>
-                        <posY>91</posY>
-                        <width>180</width>
-                        <height>103</height>
-                        <onleft>10</onleft>
-                        <onright>10</onright>
-                        <onup>17</onup>
-                        <ondown>2</ondown>
-                        <textureFocus>tv_green_border.png</textureFocus>
-                        <action>18</action>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <visible>no</visible>
-                </control>-->
                 <import>common.facade.recordings.xml</import>
                 <import>common.overlays.xml</import>
         </controls>
