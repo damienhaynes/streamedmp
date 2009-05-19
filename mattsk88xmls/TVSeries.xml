@@ -257,8 +257,8 @@
       <posY>330</posY>
       <width>206</width>
       <height>298</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesBanner</texture>
-      <visible>[Control.IsVisible(1237)|[Control.IsVisible(1238)+!Control.HasThumb(146)]]+Control.IsVisible(1235)+Control.IsVisible(1242)</visible>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesPoster</texture>
+      <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)|[Control.IsVisible(1238)+!Control.HasThumb(146)]]+Control.IsVisible(1235)</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>	
     <control>
@@ -282,7 +282,7 @@
       <width>229</width>
       <height>324</height>
       <texture>#tvseries_RoundedPosters</texture>
-      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|[Control.IsVisible(1242)+Control.HasThumb(46)]]]+Control.IsVisible(1235)</visible>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+Control.IsVisible(1235)</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>

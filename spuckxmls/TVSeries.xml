@@ -290,7 +290,7 @@
       <posY>66</posY>
       <width>278</width>
       <height>418</height>
-      <texture>#TVSeries.SeriesBanner</texture>
+      <texture>#TVSeries.SeriesPoster</texture>
       <visible>Control.IsVisible(1236)+!Control.IsVisible(1240)+Control.IsVisible(1242)+!Control.IsVisible(1238)</visible>
     </control>
    
@@ -511,8 +511,8 @@
       <posY>274</posY>
       <width>256</width>
       <height>380</height>
-      <texture>#TVSeries.SeriesBanner</texture>
-      <visible>[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1235)+Control.IsVisible(1242)</visible>
+      <texture>#TVSeries.SeriesPoster</texture>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1235)</visible>
     </control>
     
     <control>
