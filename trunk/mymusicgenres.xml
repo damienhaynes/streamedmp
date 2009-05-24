@@ -205,16 +205,7 @@
           <label>665</label>
           <onleft>50</onleft>
           <hyperlink>30</hyperlink>
-        </control>
-        <control>
-          <description>Global Search</description>
-          <type>button</type>
-          <id>14</id>
-          <onleft>50</onleft>
-          <label>Global Search</label>
-          <hyperlink>30885</hyperlink>
-          <visible>plugin.isenabled(Global search)</visible>
-        </control>
+        </control>        
         <control>
           <description>My Lyrics</description>
           <type>button</type>
@@ -223,6 +214,15 @@
           <onleft>50</onleft>
           <hyperlink>90478</hyperlink>
           <visible>plugin.isenabled(My Lyrics)</visible>
+        </control>
+		<control>
+          <description>Global Search</description>
+          <type>button</type>
+          <id>14</id>
+          <onleft>50</onleft>
+          <label>Global Search</label>
+          <hyperlink>30885</hyperlink>
+          <visible>plugin.isenabled(Global search)</visible>
         </control>
         <control>
           <description>Music Trivia</description>
