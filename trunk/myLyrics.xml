@@ -164,7 +164,7 @@
                         <posX>110</posX>
                         <posY>120</posY>
                         <label>No media playing</label>
-                        <font>font12</font>
+                        <font>mediastream12</font>
                         <textcolor>80ffffff</textcolor>
                 </control>
                 <control>
@@ -175,9 +175,22 @@
                         <posY>570</posY>
                         <width>1225</width>
                         <height>160</height>
-                        <texture>osd_bg.png</texture>
+                        <texture>-</texture>
                         <animation effect="fade" time="150">WindowOpen</animation>
                         <visible>no</visible>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>track label shadow</description>
+                        <id>33</id>
+                        <posX>172</posX>
+                        <posY>672</posY>
+                        <width>600</width>
+                        <height>28</height>
+                        <label>#Play.Current.Track</label>
+                        <font>mediastream12</font>
+                        <textcolor>ff222222</textcolor>
+                        <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
                         <type>fadelabel</type>
@@ -193,7 +206,20 @@
                 </control>
                 <control>
                         <type>fadelabel</type>
-                        <description>track label</description>
+                        <description>Current Artist label shadow</description>
+                        <id>32</id>
+                        <posX>172</posX>
+                        <posY>636</posY>
+                        <width>600</width>
+                        <height>26</height>
+                        <label>#Play.Current.Artist</label>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff222222</textcolor>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Current Artist label</description>
                         <id>32</id>
                         <posX>170</posX>
                         <posY>634</posY>
@@ -205,7 +231,20 @@
                 </control>
                 <control>
                         <type>fadelabel</type>
-                        <description>track label</description>
+                        <description>Current title label shadow</description>
+                        <id>30</id>
+                        <posX>172</posX>
+                        <posY>592</posY>
+                        <width>600</width>
+                        <height>26</height>
+                        <label>#Play.Current.Title</label>
+                        <font>mediastream16tc</font>
+                        <textcolor>ff222222</textcolor>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Current title label</description>
                         <id>30</id>
                         <posX>170</posX>
                         <posY>590</posY>
@@ -213,27 +252,6 @@
                         <height>26</height>
                         <label>#Play.Current.Title</label>
                         <font>mediastream16tc</font>
-                        <animation effect="fade" time="150">WindowOpen</animation>
-                </control>
-
-                <!--<control>
-      <type>image</type>
-      <description>title image</description>
-      <id>35</id>
-      <posX>113</posX>
-      <posY>26</posY>
-      <texture flipY="true" diffuse="Thumb_Mask.png">music_logo.png</texture>
-      <animation effect="fade" time="150">WindowOpen</animation>
-    </control>-->
-                <control>
-                        <type>image</type>
-                        <description>nowplaying background</description>
-                        <id>31</id>
-                        <posX>886</posX>
-                        <posY>56</posY>
-                        <width>400</width>
-                        <height>484</height>
-                        <texture>nowplaying_background.png</texture>
                         <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
@@ -247,36 +265,62 @@
                         <texture>-</texture>
                         <centered>yes</centered>
                         <zoom>yes</zoom>
+                        <animation effect="fade" time="900">WindowOpen</animation>
+                        <animation effect="fade" time="900">VisibleChange</animation>
+                </control>
+                <control>
+                        <type>image</type>
+                        <description>nowplaying background</description>
+                        <id>31</id>
+                        <posX>896</posX>
+                        <posY>102</posY>
+                        <width>373</width>
+                        <height>390</height>
+                        <texture>tvseries_focusframe.png</texture>
+                        <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
                         <type>fadelabel</type>
                         <description>year label</description>
                         <id>27</id>
                         <posX>1258</posX>
-                        <posY>86</posY>
+                        <posY>89</posY>
                         <width>150</width>
                         <label>#Play.Current.Year</label>
                         <font>mediastream12c</font>
                         <align>right</align>
                 </control>
                 <control>
-                        <type>label</type>
+                        <type>fadelabel</type>
+                        <description>album label shadow</description>
+                        <id>26</id>
+                        <posX>910</posX>
+                        <posY>88</posY>
+                        <width>230</width>
+                        <label>#Play.Current.Album</label>
+                        <font>mediastream14c</font>
+                        <align>left</align>
+                        <textcolor>ff222222</textcolor>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
                         <description>album label</description>
                         <id>26</id>
                         <posX>908</posX>
                         <posY>86</posY>
                         <width>230</width>
                         <label>#Play.Current.Album</label>
-                        <font>mediastream12c</font>
+                        <font>mediastream14c</font>
                         <align>left</align>
                         <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
                         <type>image</type>
                         <id>117</id>
-                        <posX>971</posX>
-                        <posY>480</posY>
-                        <width>220</width>
+                        <posX>941</posX>
+                        <posY>500</posY>
+                        <width>280</width>
                         <height>21</height>
                         <texture>osdprogressbackv.png</texture>
                         <keepaspectratio>no</keepaspectratio>
@@ -286,16 +330,16 @@
                         <type>progress</type>
                         <description>track progress</description>
                         <id>118</id>
-                        <posX>960</posX>
-                        <posY>482</posY>
-                        <width>240</width>
+                        <posX>930</posX>
+                        <posY>502</posY>
+                        <width>300</width>
                 </control>
                 <control>
                         <type>label</type>
                         <description>track progress label</description>
                         <id>24</id>
-                        <posX>908</posX>
-                        <posY>482</posY>
+                        <posX>895</posX>
+                        <posY>497</posY>
                         <label>#currentplaytime</label>
                         <font>font14</font>
                         <align>left</align>
@@ -306,8 +350,8 @@
                         <type>label</type>
                         <description>track duration label</description>
                         <id>25</id>
-                        <posX>1258</posX>
-                        <posY>482</posY>
+                        <posX>1268</posX>
+                        <posY>497</posY>
                         <label>#duration</label>
                         <font>font14</font>
                         <align>right</align>
@@ -315,10 +359,21 @@
                 </control>
                 <control>
                         <type>label</type>
+                        <description>up next label shadow</description>
+                        <id>20</id>
+                        <posX>1111</posX>
+                        <posY>595</posY>
+                        <label>4541</label>
+                        <font>mediastream12tc</font>
+                        <align>right</align>
+                        <textcolor>ff222222</textcolor>
+                </control>
+                <control>
+                        <type>label</type>
                         <description>up next label</description>
                         <id>20</id>
-                        <posX>1189</posX>
-                        <posY>597</posY>
+                        <posX>1109</posX>
+                        <posY>593</posY>
                         <label>4541</label>
                         <font>mediastream12tc</font>
                         <align>right</align>
@@ -326,9 +381,21 @@
                 </control>
                 <control>
                         <type>fadelabel</type>
+                        <description>next track label shadow</description>
+                        <id>121</id>
+                        <posX>1109</posX>
+                        <posY>672</posY>
+                        <width>300</width>
+                        <label>#Play.Next.Title</label>
+                        <font>mediastream12</font>
+                        <align>right</align>
+                        <textcolor>ff222222</textcolor>
+                </control>
+                <control>
+                        <type>fadelabel</type>
                         <description>next track label</description>
                         <id>121</id>
-                        <posX>1187</posX>
+                        <posX>1108</posX>
                         <posY>670</posY>
                         <width>300</width>
                         <label>#Play.Next.Title</label>
@@ -338,15 +405,50 @@
                 </control>
                 <control>
                         <type>fadelabel</type>
+                        <description>next artist label shadow</description>
+                        <id>123</id>
+                        <posX>1107</posX>
+                        <posY>636</posY>
+                        <width>300</width>
+                        <label>#Play.Next.Artist</label>
+                        <font>mediastream12tc</font>
+                        <align>right</align>
+                        <textcolor>ff111111</textcolor>
+                </control>
+                <control>
+                        <type>fadelabel</type>
                         <description>next artist label</description>
                         <id>123</id>
-                        <posX>1185</posX>
+                        <posX>1105</posX>
                         <posY>634</posY>
                         <width>300</width>
                         <label>#Play.Next.Artist</label>
                         <font>mediastream12tc</font>
                         <align>right</align>
                         <textcolor>80ffffff</textcolor>
+                </control>
+                <control>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>1135</posX>
+                        <posY>593</posY>
+                        <width>100</width>
+                        <height>100</height>
+                        <texture>#Play.Next.Thumb</texture>
+                        <centered>yes</centered>
+                        <zoom>yes</zoom>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                </control>
+                <control>
+                        <type>image</type>
+                        <description>next playing background</description>
+                        <id>0</id>
+                        <posX>1132</posX>
+                        <posY>588</posY>
+                        <width>105</width>
+                        <height>110</height>
+                        <texture>tvseries_focusframe.png</texture>
+                        <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
                         <type>label</type>
