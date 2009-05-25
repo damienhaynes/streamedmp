@@ -1,453 +1,584 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>2497</id>
+        <id>2497</id>
+        <defaultcontrol>50</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <define>#header.label:myEmulators</define>
+        <define>#header.hover:hover_myEmulators.png</define>
+        <controls>
+        <!--::::::::::::::::::::::::
+        :: FANART AND BACKGROUNDS ::
+        :::::::::::::::::::::::::-->
+                <control>
+                        <description>FanArt Background</description>
+                        <type>multiimage</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <imagepath>emulator</imagepath>
+                        <timeperimage>30000</timeperimage>
+                        <fadetime>800</fadetime>
+                        <loop>yes</loop>
+                        <randomize>True</randomize>
+                        <visible>!Control.IsVisible(1232)</visible>
+                </control>
+                <control>
+                        <description>screenshot background large icons</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\myEmulators\screenshots\#selecteditem.jpg</texture>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <zoom>yes</zoom>
+                        <visible>yes</visible>
+                </control>
+                <control>
+                        <description>FanArt Overlay - List View</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>fanartoverlay.png</texture>
+                        <visible>!Control.IsVisible(1236)</visible>
+                </control>
+                <import>common.time.xml</import>
+                <control>
+                        <description>My Emulators Title Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>77</posX>
+                        <posY>11</posY>
+                        <width>437</width>
+                        <height>35</height>
+                        <texture>tvtitlebg.png</texture>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>My Emulators Title</description>
+                        <id>0</id>
+                        <posX>493</posX>
+                        <posY>13</posY>
+                        <width>350</width>
+                        <font>mediastream12c</font>
+                        <align>right</align>
+                        <visible>yes</visible>
+                        <label>Emulators</label>
+                </control>
 
-  <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
-  <define>#header.label:Emulators</define>
-  <define>#header.hover:hover_myEmulators.png</define>
+                <!--:::::::::::
+               :: LIST VIEW ::
+               ::::::::::::-->
 
-  <controls>
-    <control>
-      <description>Default Background</description>
-      <type>multiimage</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <imagepath>emulator</imagepath>
-<timeperimage>30000</timeperimage>
-<fadetime>800</fadetime>
-<loop>yes</loop>
-<randomize>True</randomize>
-      <visible>!Control.IsVisible(1232)</visible>
-    </control>
+                <control>
+                        <id>46</id>
+                        <description>Game poster or flyer</description>
+                        <type>image</type>
+                        <posX>15</posX>
+                        <posY>300</posY>
+                        <width>242</width>
+                        <height>343</height>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
 
-<control>
-      <description>Streamed Overlay - List View</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>streamed_overlay.png</texture>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
+                <control>
+                        <description>Game Title</description>
+                        <type>fadelabel</type>
+                        <id>1</id>
+                        <posX>270</posX>
+                        <posY>420</posY>
+                        <width>500</width>
+                        <label>#selecteditem</label>
+                        <font>mediastream16tc</font>
+                        <align>left</align>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <description>Year Value</description>
+                        <type>label</type>
+                        <id>41</id>
+                        <posX>270</posX>
+                        <posY>450</posY>
+                        <width>300</width>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff989898</textcolor>
+                        <label>#Year</label>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <type>label</type>
+                        <description>Makers name</description>
+                        <id>43</id>
+                        <posX>350</posX>
+                        <posY>450</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff989898</textcolor>
+                        <align>left</align>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <animation effect="slide" time="400" end="-300,0" >WindowClose</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                        <type>textboxscrollup</type>
+                        <description>Game description</description>
+                        <id>40</id>
+                        <posX>270</posX>
+                        <posY>480</posY>
+                        <width>500</width>
+                        <height>160</height>
+                        <seperator>-------------------------------------------------</seperator>
+                        <font>mediastream11</font>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <description>Genre Label</description>
+                        <type>label</type>
+                        <id>0</id>
+                        <posX>270</posX>
+                        <posY>650</posY>
+                        <textcolor>ff989898</textcolor>
+                        <font>mediastream12tc</font>
+                        <label>Genre</label>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <description>Genre value</description>
+                        <type>label</type>
+                        <id>42</id>
+                        <posX>270</posX>
+                        <posY>675</posY>
+                        <width>500</width>
+                        <font>mediastream11tc</font>
+                        <textcolor>ff006698</textcolor>
+                        <align>left</align>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+
+                <control>
+                        <description>Grade Label</description>
+                        <type>label</type>
+                        <id>0</id>
+                        <posX>570</posX>
+                        <posY>650</posY>
+                        <textcolor>ff989898</textcolor>
+                        <font>mediastream12tc</font>
+                        <label>Grade</label>
+                        <visible>facadeview.list+Control.IsVisible(50)</visible>
+                </control>
+                <!--:::::::::::
+                :: Thumbnail small VIEW ::
+                ::::::::::::-->
+                <control>
+                        <id>1</id>
+                        <description>background</description>
+                        <type>image</type>
+                        <posX>0</posX>
+                        <posY>50</posY>
+                        <width>260</width>
+                        <height>670</height>
+                        <texture>hiddenmenu_left.png</texture>
+                        <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                </control>
+                <control>
+                        <description>Game Title</description>
+                        <type>fadelabel</type>
+                        <id>1</id>
+                        <posX>260</posX>
+                        <posY>660</posY>
+                        <width>760</width>
+                        <label>#selecteditem</label>
+                        <font>mediastream16tc</font>
+                        <align>center</align>
+                        <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                </control>
+                <control>
+                        <id>46</id>
+                        <description>Game poster or flyer</description>
+                        <type>image</type>
+                        <posX>950</posX>
+                        <posY>200</posY>
+                        <width>292</width>
+                        <height>393</height>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                        <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                </control>
+                
+                <!--:::::::::::
+                :: Thumbnail VIEW ::
+                ::::::::::::-->
+                <control>
+                        <id>1</id>
+                        <description>background</description>
+                        <type>image</type>
+                        <posX>0</posX>
+                        <posY>50</posY>
+                        <width>160</width>
+                        <height>670</height>
+                        <texture>hiddenmenu_left.png</texture>
+                        <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                </control>
+                <control>
+                        <id>46</id>
+                        <description>Game poster or flyer</description>
+                        <type>image</type>
+                        <posX>950</posX>
+                        <posY>200</posY>
+                        <width>292</width>
+                        <height>393</height>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                        <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                </control>
+                <control>
+                        <description>Game Title</description>
+                        <type>fadelabel</type>
+                        <id>1</id>
+                        <posX>160</posX>
+                        <posY>660</posY>
+                        <width>960</width>
+                        <label>#selecteditem</label>
+                        <font>mediastream28tc</font>
+                        <align>center</align>
+                        <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                </control>
+
+                <!--:::::::::::
+                :: Filmstrip VIEW ::
+                ::::::::::::-->
+                <control>
+                        <description>Game Title</description>
+                        <type>fadelabel</type>
+                        <id>1</id>
+                        <posX>0</posX>
+                        <posY>660</posY>
+                        <width>1280</width>
+                        <label>#selecteditem</label>
+                        <font>mediastream28tc</font>
+                        <align>center</align>
+                        <visible>facadeview.Filmstrip+Control.IsVisible(50)</visible>
+                </control>
 
 
-    <import>common.time.xml</import>
+                <!--::::::::::::::
+               :: SIDE BUTTONS :: (Not visible)
+                ::::::::::::::::::-->
+                <control>
+                        <type>actiongroup</type>
+                        <description>action menu</description>
+                        <defaultcontrol>2</defaultcontrol>
+                        <onexit>50</onexit>
+                        <dimColor>00ffffff</dimColor>
+                        <control>
+                                <type>image</type>
+                                <posX>1002</posX>
+                                <posY>0</posY>
+                                <width>278</width>
+                                <height>720</height>
+                                <texture>hiddenmenu_right.png</texture>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <description>label SWITCH VIEW</description>
+                                <label>457</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>225</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <type>group</type>
+                                <description>group element</description>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posX>1040</posX>
+                                <posY>250</posY>
+                                <width>220</width>
+                                <height>720</height>
+                                <layout>StackLayout</layout>
+                                <control>
+                                        <type>button</type>
+                                        <description>View-As button</description>
+                                        <id>10</id>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <label></label>
+                                </control>
+                                <control>
+                                        <type>button</type>
+                                        <description>Most played button</description>
+                                        <id>11</id>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <label></label>
+                                </control>
+                                <control>
+                                        <type>button</type>
+                                        <description>Recently played button</description>
+                                        <id>12</id>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <label></label>
+                                </control>
+                                <control>
+                                        <type>button</type>
+                                        <description>Top graded button</description>
+                                        <id>13</id>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <label></label>
+                                </control>
+                                <control>
+                                        <type>button</type>
+                                        <description>More views button</description>
+                                        <id>14</id>
+                                        <onleft>50</onleft>
+                                        <onright>50</onright>
+                                        <label></label>
+                                </control>
 
-<control>
-      <description>Missing poster background</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>162</posX>
-      <posY>216</posY>
-      <width>350</width>
-      <height>500</height>
-      <texture>defaultdvdcover.png</texture>
-      <visible>facadeview.list</visible>
-    </control>
-    
-<control>
-      <id>1</id>
-      <description>Game poster or flyer</description>
-      <type>image</type>
-      <posX>175</posX>
-      <posY>226</posY>
-      <width>325</width>
-      <height>475</height>
-      <texture>#selectedthumb</texture>
-      <visible>facadeview.list</visible>
-    </control>
-    
-<control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>10</defaultcontrol>
-      <onexit>50</onexit>
-      <buttonX>-210</buttonX>
-      <buttonY>64</buttonY>
-      <buttonwidth>385</buttonwidth>
-      <buttonheight>515</buttonheight>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>100</width>
-      <height>568</height>
-      <dimColor>00ffffff</dimColor>
-      
+                        </control>
+                </control>
 
-<control>
-      <description>action menu background</description>
-        <type>image</type>
-        <posY>0</posY>
-        <width>290</width>
-        <height>768</height>
-        <texture>hiddenmenu_left.png</texture>
-        <colorDiffuse>fffffffff</colorDiffuse>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="10" start="-300,0">visible</animation>
-        <animation effect="slide" time="10" end="-300,0">hidden</animation>
-      </control>
-      
+                <!--::::::::::::::::::::::::::::
+               :: LIST OF ROMS AND EMULATORS ::
+                :::::::::::::::::::::::::::::-->
+                <control>
+                        <type>group</type>
+                        <description>group element</description>
+                        <control>
+                                <description>composite control consisting of a list control and a thumbnail panel</description>
+                                <type>facadeview</type>
+                                <id>50</id>
+                                <onleft>50</onleft>
+                                <onright>10</onright>
+                                <onup>50</onup>
+                                <ondown>50</ondown>
+                                <control>
+                                        <description>listcontrol</description>
+                                        <type>listcontrol</type>
+                                        <id>50</id>
+                                        <posX>850</posX>
+                                        <posY>420</posY>
+                                        <height>340</height>
+                                </control>
+                                <control>
+                                        <description>Thumbnail Panel</description>
+                                        <type>thumbnailpanel</type>
+                                        <id>50</id>
+                                        <posX>15</posX>
+                                        <posY>60</posY>
+                                        <width>210</width>
+                                        <height>710</height>
+                                        <spinWidth>40</spinWidth>
+                                        <spinHeight>40</spinHeight>
+                                        <spinPosX>1300</spinPosX>
+                                        <spinPosY>730</spinPosY>
+                                        <spinColor>ffffffff</spinColor>
+                                        <textureUp>-</textureUp>
+                                        <textureDown>-</textureDown>
+                                        <textureUpFocus>-</textureUpFocus>
+                                        <textureDownFocus>-</textureDownFocus>
+                                        <itemWidth>50</itemWidth>
+                                        <itemHeight>70</itemHeight>
+                                        <textureWidth>195</textureWidth>
+                                        <textureHeight>115</textureHeight>
+                                        <thumbWidth>40</thumbWidth>
+                                        <thumbHeight>60</thumbHeight>
+                                        <thumbPosX>0</thumbPosX>
+                                        <thumbPosY>8</thumbPosY>
+                                        <thumbZoom>yes</thumbZoom>
+                                        <imageFolder>-</imageFolder>
+                                        <imageFolderFocus>-</imageFolderFocus>
+                                        <font>mediastream10c</font>
+                                        <suffix>|</suffix>
+                                        <textureWidthBig>105</textureWidthBig>
+                                        <textureHeightBig>185</textureHeightBig>
+                                        <itemWidthBig>135</itemWidthBig>
+                                        <itemHeightBig>160</itemHeightBig>
+                                        <thumbWidthBig>120</thumbWidthBig>
+                                        <thumbHeightBig>140</thumbHeightBig>
+                                        <thumbPosXBig>2</thumbPosXBig>
+                                        <thumbPosYBig>13</thumbPosYBig>
+                                        <thumbZoom>no</thumbZoom>
+                                        <enableFocusZoom>yes</enableFocusZoom>
+                                        <scrollOffset>1</scrollOffset>
+                                        <onleft>10</onleft>
+                                </control>
+                                <control>
+                                        <description>Filmstrip view</description>
+                                        <type>filmstrip</type>
+                                        <dimColor>90ffffff</dimColor>
+                                        <id>50</id>
+                                        <posX>60</posX>
+                                        <posY>330</posY>
+                                        <spinPosX>1400</spinPosX>
+                                        <spinPosY>680</spinPosY>
+                                        <onup>10</onup>
+                                        <ondown>10</ondown>
+                                        <scrollOffset>4</scrollOffset>
+                                        <width>1280</width>
+                                        <height>576</height>
+                                        <thumbWidth>160</thumbWidth>
+                                        <thumbHeight>235</thumbHeight>
+                                        <thumbPosX>0</thumbPosX>
+                                        <thumbPosY>8</thumbPosY>
+                                        <itemWidth>180</itemWidth>
+                                        <itemHeight>251</itemHeight>
+                                        <textureWidth>173</textureWidth>
+                                        <textureHeight>251</textureHeight>
+                                        <frame flipY="true" diffuse="diffusemirrorwide.png"></frame>
+                                        <frameFocus flipY="true" diffuse="diffusemirrorwide.png"></frameFocus>
+                                        <thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
+                                        <showFrame>no</showFrame>
+                                        <showFolder>no</showFolder>
+                                        <showBackGround>yes</showBackGround>
+                                        <showInfoImage>no</showInfoImage>
+                                        <enableFocusZoom>yes</enableFocusZoom>
+                                        <animation effect="rotatey" start="0" end="-4" center="480,10" tween="back" ease="easeout" time="0" reversible="false">focus</animation>
+                                        <animation effect="slide" end="-30,0" time="0">unfocus</animation>
+                                        <thumbAnimation effect="rotatey" start="0" end="4" center="480,10" tween="back" ease="easeout" time="100" reversible="false">focus</thumbAnimation>
+                                        <thumbAnimation effect="zoom" start="100,100" end="140,140" time="0">focus</thumbAnimation>
+                                        <thumbAnimation effect="zoom" start="140,140" end="100,100" time="0">unfocus</thumbAnimation>
+                                        <thumbAnimation effect="slide" end="-20,0" time="0">focus</thumbAnimation>
+                                        <thumbAnimation effect="slide" end="0,-14" time="0">focus</thumbAnimation>
+                                        <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
+                                        <thumbAnimation effect="rotatex" start="0" end="3" center="720,0" tween="back" ease="easeout" time="0" reversible="false">focus</thumbAnimation>
+                                        <thumbAnimation effect="rotatex" start="3" end="0" center="720,0" tween="back" ease="easeout" time="0" reversible="false">unfocus</thumbAnimation>
+                                </control>
+                        </control>
+                </control>
 
-<control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="10" start="-300,0">visible</animation>
-        <animation effect="slide" time="10" end="-300,0">hidden</animation>
-        <posX>20</posX>
-        <posY>80</posY>
-        <layout>StackLayout</layout>
-        
-<control>
-          <description>View-As button</description>
-          <type>button</type>
-          <id>10</id>
-          <label>
-          </label>
-          <onleft>10</onleft>
-          <onright>50</onright>
-          <onup>10</onup>
-          <ondown>11</ondown>
-        </control>
-        
+                <!--:::::::::::::::
+                :: STARS / GRADE ::
+                ::::::::::::::::-->
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 1</description>
+                        <id>101</id>
+                        <posX>570</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 2</description>
+                        <id>102</id>
+                        <posX>585</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 3</description>
+                        <id>103</id>
+                        <posX>600</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 4</description>
+                        <id>104</id>
+                        <posX>615</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 5</description>
+                        <id>105</id>
+                        <posX>630</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 6</description>
+                        <id>106</id>
+                        <posX>645</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 7</description>
+                        <id>107</id>
+                        <posX>660</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 8</description>
+                        <id>108</id>
+                        <posX>675</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 9</description>
+                        <id>109</id>
+                        <posX>690</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+                <control>
+                        <animation effect="fade" time="400">WindowClose</animation>
+                        <type>image</type>
+                        <description>star image 10</description>
+                        <id>110</id>
+                        <posX>705</posX>
+                        <posY>680</posY>
+                        <width>14</width>
+                        <height>14</height>
+                        <texture></texture>
+                </control>
+        </controls>
 
-<control>
-          <description>Most played button</description>
-          <type>button</type>
-          <id>11</id>
-          <label>
-          </label>
-          <onleft>11</onleft>
-          <onright>50</onright>
-          <onup>10</onup>
-          <ondown>12</ondown>
-        </control>
-        
-
-<control>
-          <description>Recently played button</description>
-          <type>button</type>
-          <id>12</id>
-          <label>
-          </label>
-          <onleft>12</onleft>
-          <onright>50</onright>
-          <onup>11</onup>
-          <ondown>13</ondown>
-        </control>
-        
-
-<control>
-          <description>Top graded button</description>
-          <type>button</type>
-          <id>13</id>
-          <label>
-          </label>
-          <onleft>13</onleft>
-          <onright>50</onright>
-          <onup>12</onup>
-          <ondown>14</ondown>
-        </control>
-        
-
-<control>
-          <description>More views button</description>
-          <type>button</type>
-          <id>14</id>
-          <label>
-          </label>
-          <onleft>14</onleft>
-          <onright>50</onright>
-          <onup>13</onup>
-          <ondown>14</ondown>
-        </control>
-      </control>
-    </control>
-    
-<!-- LIST OF EMULATOR AND ROMS -->
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      
-
-<control>
-        <description>composite control consisting of a list control and a thumbnail panel</description>
-        <type>facadeview</type>
-        <id>50</id>
-        <onleft>50</onleft>
-        <onright>10</onright>
-        <onup>50</onup>
-        <ondown>50</ondown>
-        
-
-<control>
-          <description>listcontrol</description>
-          <type>listcontrol</type>
-          <id>50</id>
-          <scrollOffset>2</scrollOffset>
-        </control>
-        
-
-<control>
-          <description>Thumbnail Panel</description>
-          <type>thumbnailpanel</type>
-          <id>50</id>
-          <posX>12</posX>
-          <posY>216</posY>
-          <width>1250</width>
-          <height>600</height>
-          <spinWidth>37</spinWidth>
-          <spinHeight>37</spinHeight>
-          <spinPosX>1253</spinPosX>
-          <spinPosY>580</spinPosY>
-          <spinColor>ffffffff</spinColor>
-          <textureUp>-</textureUp>
-          <textureDown>-</textureDown>
-          <textureUpFocus>-</textureUpFocus>
-          <textureDownFocus>-</textureDownFocus>
-          <itemWidth>101</itemWidth>
-          <itemHeight>100</itemHeight>
-          <textureWidth>100</textureWidth>
-          <textureHeight>95</textureHeight>
-          <thumbWidth>70</thumbWidth>
-          <thumbHeight>70</thumbHeight>
-          <thumbPosX>13</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <thumbZoom>no</thumbZoom>
-          <imageFolder>dvd_frame.png</imageFolder>
-          <imageFolderFocus>music_filmstrip_frame.png</imageFolderFocus>
-          <font>mediastream10c</font>
-          <suffix>|</suffix>
-          <textureWidthBig>165</textureWidthBig>
-          <textureHeightBig>155</textureHeightBig>
-          <itemWidthBig>165</itemWidthBig>
-          <itemHeightBig>165</itemHeightBig>
-          <thumbWidthBig>123</thumbWidthBig>
-          <thumbHeightBig>121</thumbHeightBig>
-          <thumbPosXBig>17</thumbPosXBig>
-          <thumbPosYBig>14</thumbPosYBig>
-          <thumbZoom>no</thumbZoom>
-          <enableFocusZoom>no</enableFocusZoom>
-          <scrollOffset>1</scrollOffset>
-          <onleft>10</onleft>
-          <onright>10</onright>
-          <onup>10</onup>
-          <ondown>50</ondown>
-        </control>
-        
-
-        <control>
-          <description>Filmstrip view</description>
-          <type>filmstrip</type>
-	  <scrollOffset>2</scrollOffset>
-          <id>50</id>
-          <posX>20</posX>
-          <posY>256</posY>
-          <width>1300</width>
-          <onup>10</onup>
-          <spinPosY>630</spinPosY>
-          <spinPosX>1218</spinPosX>
-          <thumbWidth>233</thumbWidth>
-          <thumbHeight>350</thumbHeight>
-          <thumbPosX>13</thumbPosX>
-          <thumbPosY>11</thumbPosY>
-          <itemWidth>235</itemWidth>
-          <itemHeight>350</itemHeight>
-          <textureWidth>265</textureWidth>
-          <textureHeight>390</textureHeight>
-          <imageFolderFocus>dvd_frame_exp.png</imageFolderFocus>
-          <frame>dvd_frame.png</frame>
-          <frameFocus>dvd_frame_exp.png</frameFocus>
-          <background>DefaultFolderBig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png">
-          </thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
-          </InfoImage>
-          <showFrame>no</showFrame>
-          <showFolder>no</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <thumbAnimation effect="zoom" start="100,100" end="120,120" time="200">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="120,120" end="100,100" time="200">unfocus</thumbAnimation>
-        </control>
-      </control>
-    </control>
-    
-
-<!-- DESCRIPTION OF GAME -->
-    <control>
-      <type>image</type>
-      <description>description background</description>
-      <id>39</id>
-      <posX>647</posX>
-      <posY>60</posY>
-      <width>620</width>
-      <height>154</height>
-      <texture>dialogprogressbg.png</texture>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
-    
-
-<control>
-      <type>textboxscrollup</type>
-      <description>description</description>
-      <id>40</id>
-      <font>mediastream11c</font>
-      <posX>670</posX>
-      <posY>75</posY>
-      <width>570</width>
-      <height>105</height>
-      <seperator>----------------------------------------------------------------------------------------------</seperator>
-      <font>mediastream16tc</font>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
-
-    <control>
-      <type>label</type>
-      <description>Year - label</description>
-      <id>41</id>
-      <posX>670</posX>
-      <posY>176</posY>
-      <width>200</width>
-      <font>mediastream11tc</font>
-      <label>Year:</label>
-      <align>left</align>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
-
-    <control>
-      <type>label</type>
-      <description>Maker - ID</description>
-      <id>43</id>
-      <posX>720</posX>
-      <posY>176</posY>
-      <width>350</width>
-      <font>mediastream11tc</font>
-      <label>#currentmodule</label>
-      <align>left</align>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
-
-    <!-- ALL THE STARS -->
-    
-<control>
-      <type>image</type>
-      <description>star image 1</description>
-      <id>101</id>
-      <posX>310</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-      <visible>!Control.IsVisible(1236)</visible>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 2</description>
-      <id>102</id>
-      <posX>350</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 3</description>
-      <id>103</id>
-      <posX>390</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 4</description>
-      <id>104</id>
-      <posX>430</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 5</description>
-      <id>105</id>
-      <posX>470</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 6</description>
-      <id>106</id>
-      <posX>510</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 7</description>
-      <id>107</id>
-      <posX>550</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 8</description>
-      <id>108</id>
-      <posX>590</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 9</description>
-      <id>109</id>
-      <posX>630</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>star image 10</description>
-      <id>110</id>
-      <posX>670</posX>
-      <posY>610</posY>
-      <width>34</width>
-      <height>34</height>
-      <texture>
-      </texture>
-    </control>
-    <import>common.overlays.xml</import>
-  </controls>
 </window>
