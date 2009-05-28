@@ -151,106 +151,7 @@ multiple view modes.
     </control>
     
     <!--            :: HIDDEN MENU ::            -->
-    
-    <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <control>
-        <type>image</type>
-        <posX>1002</posX>
-        <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>SWITCH</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>226</posY>
-        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>SETTINGS</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>310</posY>
-        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-        <control>
-          <description>Toggle View</description>
-          <type>button</type>
-          <id>2</id>
-          <label>Toggle View</label>
-          <onleft>50</onleft>
-          <onup>66610</onup>
-        </control>
-        <control>
-          <description>Switch View</description>
-          <type>button</type>
-          <id>3</id>
-          <label>Switch View</label>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Filters Menu</description>
-          <type>button</type>
-          <id>4</id>
-          <label>Filters</label>
-          <onleft>50</onleft>
-          <visible>false</visible><!-- Not implemented yet -->
-        </control>
-        <control>
-          <description>Settings Menu</description>
-          <type>button</type>
-          <id>5</id>
-          <label>Settings</label>
-          <onleft>50</onleft>
-          <visible>false</visible><!-- Not implemented yet -->
-        </control>
-        <control>
-          <description>Video Settings</description>
-          <type>button</type>
-          <id>66610</id>
-          <label>Video Settings</label>
-          <hyperlink>703</hyperlink>
-          <ondown>2</ondown>
-          <onleft>50</onleft>
-        </control>
-      </control>
-    </control>
+    <import>movingpictures.hiddenmenu.xml</import>
     
     <!--            :: LIST VIEW ::            -->
     
@@ -418,17 +319,27 @@ multiple view modes.
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    <control>
+	
+	<control>
+      <type>label</type>
+      <label>STAR RATING:</label>
+      <posX>30</posX>
+      <posY>670</posY>
+      <width>150</width>
+      <font>mediastream11</font>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+	<control>
       <type>imagelist</type>
       <id>101</id>
       <posX>30</posX>
-      <posY>650</posY>
-      <width>310</width>
+      <posY>645</posY>
+      <width>130</width>
       <height>23</height>
-      <textureWidth>20</textureWidth>
-      <textureHeight>18</textureHeight>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
       <subitems>
-        <subitem>greystar.png</subitem>
+        <subitem>-.png</subitem>
         <subitem>starwhite.png</subitem>
       </subitems>
       <orientation>horizontal</orientation>
@@ -437,6 +348,17 @@ multiple view modes.
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
+	<control>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.score / 10</label>
+      <posX>210</posX>
+      <posY>670</posY>
+      <width>100</width>
+	  <align>right</align>
+      <font>mediastream11</font>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+	
     <control>
       <description>Writers Label Shadow</description>
       <type>label</type>
@@ -551,19 +473,19 @@ multiple view modes.
     <control>
       <type>imagelist</type>
       <id>1001</id>
-      <posX>919</posX>
-      <posY>635</posY>
+      <posX>920</posX>
+      <posY>628</posY>
       <width>115</width>
       <height>13</height>
-      <textureWidth>13</textureWidth>
-      <textureHeight>13</textureHeight>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
       <subitems>
         <subitem>-.png</subitem>
         <subitem>starwhite.png</subitem>
       </subitems>
       <orientation>horizontal</orientation>
       <align>left</align>
-      <imagesToDraw>5</imagesToDraw>
+      <imagesToDraw>10</imagesToDraw>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
@@ -571,8 +493,8 @@ multiple view modes.
     <control>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.score / 10</label>
-      <posX>920</posX>
-      <posY>650</posY>
+      <posX>921</posX>
+      <posY>656</posY>
       <width>360</width>
       <font>mediastream11</font>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -735,18 +657,18 @@ multiple view modes.
       <type>imagelist</type>
       <id>1001</id>
       <posX>579</posX>
-      <posY>430</posY>
+      <posY>423</posY>
       <width>115</width>
       <height>13</height>
-      <textureWidth>13</textureWidth>
-      <textureHeight>13</textureHeight>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
       <subitems>
         <subitem>-.png</subitem>
         <subitem>starwhite.png</subitem>
       </subitems>
       <orientation>horizontal</orientation>
       <align>left</align>
-      <imagesToDraw>5</imagesToDraw>
+      <imagesToDraw>10</imagesToDraw>
       <percentage>#MovingPictures.SelectedMovie.score</percentage>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
@@ -755,7 +677,7 @@ multiple view modes.
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.score / 10</label>
       <posX>580</posX>
-      <posY>445</posY>
+      <posY>448</posY>
       <width>360</width>
       <font>mediastream11</font>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
