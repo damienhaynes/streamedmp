@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the details view
+-->
+<window>
+	<controls>
+		
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>MENU</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>PLAYLIST</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>336</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+	  <control>
+        <id>0</id>
+        <label>SETTINGS</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>420</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Switch View</description>
+          <type>button</type>
+          <id>2</id>
+          <label>457</label>
+		  <onup>21</onup>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Run Import</description>
+          <type>button</type>
+          <id>5</id>
+          <label>Run Import</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Change Layout</description>
+          <type>button</type>
+          <id>3</id>
+          <label>Change Layout</label>
+          <onleft>50</onleft>
+        </control>
+		<control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+		<control>
+            <description>Current Playlist</description>
+            <type>button</type>
+            <id>20</id>
+            <label>4555</label>
+            <action>33</action>
+			<onleft>50</onleft>
+        </control>	
+        <control>
+            <description>My Playlists</description>
+            <type>button</type>
+            <id>9</id>
+            <label>983</label>
+			<onleft>50</onleft>
+        </control>	
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Options</description>
+          <type>button</type>
+          <id>4</id>
+          <label>496</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>66608</id>
+          <label>Video Settings</label>
+          <hyperlink>703</hyperlink>
+          <onleft>50</onleft>
+		  <ondown>50</ondown>
+        </control>	  
+      </control>
+    </control>
+	</controls>
+</window>
