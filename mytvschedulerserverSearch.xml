@@ -11,7 +11,7 @@
         <controls>
                 <import>common.window.tv.xml</import>
                 <import>common.time.xml</import>
-                <control>
+                <!--<control>
                         <type>fadelabel</type>
                         <description>Top Title</description>
                         <id>0</id>
@@ -24,7 +24,7 @@
                         <label>#header.label</label>
                         <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
                         <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-                </control>
+                </control>-->
                 <control>
                         <type>image</type>
                         <id>1</id>
@@ -44,6 +44,52 @@
                         <textcolor>ff626d73</textcolor>
                         <align>right</align>
                         <label>6035</label>
+                </control>
+                <control>
+                        <description>sms input</description>
+                        <type>smsinput</type>
+                        <id>51</id>
+                        <posX>1281</posX>
+                        <posY>721</posY>
+                        <width>400</width>
+                        <height>125</height>
+                        
+                        <font>font14</font>
+                        <font2>font14</font2>
+                        <textcolor2>ff222222</textcolor2>
+                        <textboxFont>mediastream16c</textboxFont>
+                        <textboxXpos>10</textboxXpos>
+                        <textboxYpos>618</textboxYpos>
+                        <textboxWidth>600</textboxWidth>
+                        <textboxHeight>37</textboxHeight>
+                        <textboxColor>FFFFFF00</textboxColor>
+                        <textboxBgColor>ffffffff</textboxBgColor>
+                        <onleft>50</onleft>
+                        <onright>50</onright>
+                        <onup>99</onup>
+                        <ondown>50</ondown>
+                </control>
+                <control>
+                        <description>Media Count Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>1013</posX>
+                        <posY>684</posY>
+                        <width>260</width>
+                        <height>32</height>
+                        <texture>mediacountbg_Spin.png</texture>
+                        <visible>Control.isvisible(50)</visible>
+                </control>
+                <control>
+                        <description>Media Count Label</description>
+                        <type>label</type>
+                        <label>PAGE:</label>
+                        <id>0</id>
+                        <posX>1023</posX>
+                        <posY>689</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <visible>Control.isvisible(50)</visible>
                 </control>
                 <control>
                         <description>listcontrol</description>
@@ -71,62 +117,20 @@
                         <font2>mediastream11</font2>
                         <keepaspectratio>yes</keepaspectratio>
                         <unfocusedAlpha>0xFF</unfocusedAlpha>
-                        <spinPosX>1249</spinPosX>
-                        <spinPosY>691</spinPosY>
+                        <spinPosX>1175</spinPosX>
+                        <spinPosY>682</spinPosY>
                         <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
                         <suffix>|</suffix>
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>sms input</description>
-                        <type>smsinput</type>
-                        <id>51</id>
-                        <posX>1281</posX>
-                        <posY>721</posY>
-                        <width>400</width>
-                        <height>125</height>
-                        
-                        <font>font14</font>
-                        <font2>font14</font2>
-                        <textcolor2>ff222222</textcolor2>
-                        <textboxFont>mediastream16c</textboxFont>
-                        <textboxXpos>10</textboxXpos>
-                        <textboxYpos>618</textboxYpos>
-                        <textboxWidth>600</textboxWidth>
-                        <textboxHeight>37</textboxHeight>
-                        <textboxColor>FFFFFF00</textboxColor>
-                        <textboxBgColor>ffffffff</textboxBgColor>
-                        <onleft>50</onleft>
-                        <onright>50</onright>
-                        <onup>99</onup>
-                        <ondown>50</ondown>
-                        
-                        
-                </control>
-                <control>
-                        <description>Media Count Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>1103</posX>
-                        <posY>684</posY>
-                        <width>169</width>
-                        <height>30</height>
-                        <texture>mediacountbackground.png</texture>
-                        <visible>Control.isvisible(50)</visible>
-                </control>
-                <control>
-                        <description>Media Count Label</description>
-                        <type>label</type>
-                        <label>PAGE:</label>
-                        <id>0</id>
-                        <posX>1113</posX>
-                        <posY>686</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <visible>Control.isvisible(50)</visible>
                 </control>
                 <import>common.overlays.xml</import>
         </controls>
