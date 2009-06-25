@@ -210,25 +210,30 @@ begin
 	
 	// Get any custom defined paths from MediaPortalDirs.xml	
 	if GetMediaPortalDirs("Skin",svValue) < 0 then
-		svValue = g_sMediaPortalProgramDir^"skin";
+		svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal\\skin";
 	endif;
 	INSTALLDIR = svValue;
 	
-	if GetMediaPortalDirs("Language",g_sLanguageDir) < 0 then
-		g_sLanguageDir = g_sMediaPortalProgramDir^"language";
-	endif;
 	if GetMediaPortalDirs("Plugins",g_sPluginsDir) < 0 then
 		g_sPluginsDir = g_sMediaPortalProgramDir^"plugins";
 	endif;               
 	if GetMediaPortalDirs("Config",g_sConfigDir) < 0 then
-		if GetMediaPortalConfigDir(g_sConfigDir) < 0 then;
+		if GetMediaPortalConfigDir(g_sConfigDir) < 0 then
 		    g_sConfigDir = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
 		endif;		
-	endif;                                                             	
+	endif;               
+	if GetMediaPortalDirs("Language",g_sLanguageDir) < 0 then
+		if GetMediaPortalConfigDir(svValue) < 0 then
+			svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";			
+		endif;
+		// Append Language to program data dir
+		g_sLanguageDir = svValue^"language";
+	endif;                                              	           	
 	if GetMediaPortalDirs("Thumbs",g_sThumbsDir) < 0 then
-		if GetMediaPortalConfigDir(svValue) < 0 then;
+		if GetMediaPortalConfigDir(svValue) < 0 then
 	    	svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
-	    endif;    
+	    endif;
+	    // Append thumbs to program data dir    
 		g_sThumbsDir = svValue^"thumbs";
 	endif;
 	g_sTVLogosDir = g_sThumbsDir^"tv\\logos";
@@ -719,6 +724,7 @@ begin
 	// This should exist if MediaPortal is correctly installed
 	if (RegDBGetKeyValueEx(MEDIAPORTALUNINSTALL_REG_KEY,"InstallPath",nvType,svValue,nvSize) < 0) then
         // Fallback to this directory incase its a development build
+        // Note: This Key is no longer created in MediaPortal 1.1.0+
 		if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ApplicationDir",nvType,svValue,nvSize) < 0) then
 			return -1;	
 		endif;
@@ -731,9 +737,11 @@ end;
 function NUMBER GetMediaPortalConfigDir(svValue)
 	NUMBER nvSize,nvType;
 begin    
-	// Fallback incase MediaPortalDirs.xml fails us
+	// Fallback incase MediaPortalDirs.xml fails us  
+	// Note: This key no longer creted in MediaPortal 1.1.0+
    	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
-		
+	
+	// Note: This Key is no longer created in MediaPortal 1.1.0+	
 	if (RegDBGetKeyValueEx(MEDIAPORTAL_REG_KEY,"ConfigDir",nvType,svValue,nvSize) < 0) then
 		return -1;	
 	endif;
@@ -743,7 +751,7 @@ end;
 
 function NUMBER GetMediaPortalDirs(sType, sValue)
 	OBJECT oXMLdoc, oNodeList, oDirID;
-	STRING sNode, sPath, sDisk;
+	STRING sNode, sPath, sDisk, sFileName;
 	INT i;
 begin                        
     
@@ -753,8 +761,15 @@ begin
 		oXMLdoc.async = FALSE;
 		oXMLdoc.preserveWhiteSpace = TRUE;
 	    
-	    // Load the document 	    
-		oXMLdoc.Load (g_sMediaPortalProgramDir^"MediaPortalDirs.xml");	
+	    // Load the document 	
+	    // MediaPortalDirs.xml contains a reference to all Paths used by MediaPortal
+	    // Currently this file lives in the main program files directory
+	    sFileName = g_sMediaPortalProgramDir^"MediaPortalDirs.xml";
+	    if !Is(FILE_EXISTS,sFileName) then
+	    	// If the file does not exist check the program data directory
+	    	sFileName = CommonAppDataFolder ^ "Team MediaPortal\\MediaPortal\\MediaPortalDirs.xml";
+	    endif;
+		oXMLdoc.Load (sFileName);	
 		
 	    sNode = "/Config/Dir";	    
 	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
@@ -762,7 +777,7 @@ begin
 	    // Examine all <Dir> nodes to find id
 	    for i=0 to oNodeList.length - 1
 		 	
-		 	// The id attribute hold the path identifier e.g. Config, Plugins, Skin
+		 	// The id attribute holds the path identifier e.g. Config, Plugins, Skin
 		 	set oDirID = oNodeList.Item(i).Attributes.GetNamedItem("id");
 		 	
 		 	// Get Path Property value
@@ -1429,9 +1444,10 @@ begin
     	abort;                 	    	
     endif;
     
-    // 2 (Version1 = Version2)
-    // 1 (Version1 < Version2)
-    // 0 (Version1 > Version2)
+    // VerCompare Return Codes:
+    // Return Code = 2 (Version1 = Version2)
+    // Return Code = 1 (Version1 < Version2)
+    // Return Code = 0 (Version1 > Version2)
     
     // Check Minimum requirements are met
     svVersion1 = MEDIAPORTAL_MIN_VERSION;
@@ -1584,7 +1600,7 @@ begin
     endif;
     
     // Remove any rouge XML files from skin directory
-    szDir = INSTALLDIR^"skin"^SKIN_NAME;
+    szDir = INSTALLDIR^SKIN_NAME;
     DeleteFile(szDir^"*.xml");
     DeleteDir(szDir,ONLYDIR); 
     
@@ -1593,8 +1609,7 @@ begin
     
     // Finially set default skin back to Blue3wide    
     SetMPXMLProperty("skin","name",DEFAULT_SKIN);
-    
-    
+        
 end; 
 
 function NUMBER SetMPXMLProperty(sSectionAttribute,sEntryAttribute, sValue)

@@ -675,13 +675,14 @@
 		<row><td>FavoritesFolder</td><td>TARGETDIR</td><td>.:FAVORI~1|Favorites</td><td/><td>0</td><td/></row>
 		<row><td>FontsFolder</td><td>TARGETDIR</td><td>.:Fonts</td><td/><td>0</td><td/></row>
 		<row><td>GlobalAssemblyCache</td><td>TARGETDIR</td><td>.:Global~1|GlobalAssemblyCache</td><td/><td>0</td><td/></row>
-		<row><td>INSTALLDIR</td><td>MEDIAPORTAL</td><td>.</td><td/><td>0</td><td/></row>
+		<row><td>INSTALLDIR</td><td>SKIN</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>LOGOS</td><td>TV1</td><td>logos</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MEDIA1</td><td>STREAMEDMP</td><td>Media</td><td/><td>0</td><td/></row>
 		<row><td>MEDIAPORTAL</td><td>TEAM_MEDIAPORTAL1</td><td>MEDIAP~1|MediaPortal</td><td/><td>0</td><td/></row>
+		<row><td>MEDIAPORTAL1</td><td>TEAM_MEDIAPORTAL2</td><td>MEDIAP~1|MediaPortal</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM</td><td>SKINS</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM1</td><td>SKINS1</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
 		<row><td>MEDIASTREAM2</td><td>SKINS2</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
@@ -704,6 +705,7 @@
 		<row><td>ProgramFiles64Folder</td><td>TARGETDIR</td><td>.:Prog64~1|Program Files 64</td><td/><td>0</td><td/></row>
 		<row><td>ProgramFilesFolder</td><td>TARGETDIR</td><td>.:PROGRA~1|program files</td><td/><td>0</td><td/></row>
 		<row><td>ProgramMenuFolder</td><td>TARGETDIR</td><td>.:Programs</td><td/><td>3</td><td/></row>
+		<row><td>SKIN</td><td>MEDIAPORTAL1</td><td>skin</td><td/><td>0</td><td/></row>
 		<row><td>SKINS</td><td>TEAM_MEDIAPORTAL</td><td>Skins</td><td/><td>0</td><td/></row>
 		<row><td>SKINS1</td><td>TEAM_MEDIAPORTAL1</td><td>Skins</td><td/><td>0</td><td/></row>
 		<row><td>SKINS2</td><td>MEDIAPORTAL</td><td>Skins</td><td/><td>0</td><td/></row>
@@ -2192,10 +2194,10 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.8.448</td></row>
+		<row><td>Release</td><td>ProductName</td><td>Streamed MP Skin 0.9.0</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 		<row><td>ReleasePlugins</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.8.448</td></row>
+		<row><td>ReleasePlugins</td><td>ProductName</td><td>Streamed MP Skin 0.9.0</td></row>
 		<row><td>ReleasePlugins</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2230,7 +2232,7 @@
 		<col def="S255">DotNetBuildConfiguration</col>
 		<col def="S255">MsiCommandLine</col>
 		<col def="I4">ISSetupPrerequisiteLocation</col>
-		<row><td>StreamedMP</td><td>Release</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>2</td><td>0</td><td>1</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>42706957</td><td/><td/><td/><td/></row>
+		<row><td>StreamedMP</td><td>Release</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>2</td><td>0</td><td>1</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>42706957</td><td/><td/><td/><td>2</td></row>
 		<row><td>StreamedMP</td><td>ReleasePlugins</td><td>&lt;ISProjectDataFolder&gt;</td><td>PackageName</td><td>4</td><td>1033</td><td>2</td><td>1</td><td>Intel</td><td/><td>1033</td><td>2</td><td>0</td><td>1</td><td>0</td><td/><td>0</td><td/><td>MediaLocation</td><td/><td>http://</td><td/><td/><td/><td/><td>42706957</td><td/><td/><td/><td/></row>
 	</table>
 
@@ -4098,8 +4100,8 @@
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>ApplicationType</td><td>Standard Windows Application</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="024bc1a28d9c5b76af78862322d41c69">
-UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d0d78a65c62cff7dd6db134f9be46ab">
+UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 			</td></row>
 		<row><td>DoMaintenance</td><td>1</td></row>
 		<row><td>ISCompilerOption_CompileBeforeBuild</td><td>1</td></row>
@@ -4429,9 +4431,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{FCB09CFA-9AB1-4958-BB63-3F2A1BA5BF7E}</td><td/></row>
+		<row><td>ProductCode</td><td>{636A0E41-4298-414F-A0ED-E166C13E8F52}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.8.448.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.0.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
