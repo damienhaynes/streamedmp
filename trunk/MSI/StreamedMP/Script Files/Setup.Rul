@@ -69,8 +69,8 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.1.22244" 	// 1.0.1 STABLE
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0" 	
 
-#define TVSERIES_MIN_VERSION				"2.2.3389.0"
-#define MOVINGPICTURES_MIN_VERSION			"0.7.2.545"
+#define TVSERIES_MIN_VERSION				"2.3.3463.0"
+#define MOVINGPICTURES_MIN_VERSION			"0.7.3.623"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -134,6 +134,9 @@ prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 prototype VOID		RoundedCovers(BOOL, STRING);   
 prototype VOID		SetInstallationDirectories();
+prototype BOOL		AdjustForScreenSize();
+prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
+prototype VOID		ModifySkinFiles(BOOL);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -1292,7 +1295,8 @@ end;
 
 
 function VOID UpdateSettings()
-	STRING svString, sFile;		
+	STRING svString, sFile;
+	BOOL bReturn;		
 begin
 	// Save configuration to registry
 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
@@ -1409,6 +1413,10 @@ begin
 	// Update Skin to show/hide rounded covers
 	RoundedCovers(g_bShowRoundedCovers, "TVSeries");
 	RoundedCovers(g_bShowRoundedCovers, "MovingPictures");
+	
+	// Adjust Skin to support 1920x1080 resolution
+	bReturn = AdjustForScreenSize();
+	ModifySkinFiles(bReturn);	
 	
 end;             
 
@@ -2212,6 +2220,95 @@ function VOID EnableControl(szDialogName, nControl, bState)
 begin
 	hwndDlg = CmdGetHwndDlg( szDialogName );
 	EnableWindow( GetDlgItem( hwndDlg, nControl), bState);	
+end; 
+
+function NUMBER ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr)
+	NUMBER nResult, nIndex;
+	STRING svString;
+	LIST listID;	
+begin    
+ 	
+ 	Disable(LOGGING);
+
+	listID = ListCreate(STRINGLIST);
+	ListReadFromFile ( listID, szFileName );
+	
+	nResult = ListGetFirstString(listID, svString);
+	
+	while (nResult != END_OF_LIST)		
+		if (svString % szSearchStr) then		
+			// Replace Line
+			ListSetCurrentString ( listID, szReplaceStr );			
+		endif;
+		nResult = ListGetNextString(listID, svString);		
+	endwhile;
+	
+	// Delete old file
+	DeleteFile(szFileName);
+	// Create new file
+	ListWriteToFile(listID,szFileName);
+	
+	ListDestroy(listID);
+	
+	Enable(LOGGING);
+	return 0;
+	   
+end;
+
+function BOOL AdjustForScreenSize()
+	NUMBER nvDx, nvDy;
+	STRING sValue;
+begin
+	
+	// Get Screen Dimmensions
+	if GetExtents ( nvDx, nvDy ) < 0 then
+		return FALSE;
+	endif;
+	
+	// Dont Adjust if not 1920 wide, we dont want to support any other resolution at this time
+	if nvDx != 1920 then
+		return FALSE;	
+	endif;
+	
+	// Check if MediaPortal is Running in Full Screen
+	// If not then it will run in Windowed Mode using default resolution
+	GetMPXMLProperty("general","startfullscreen", sValue);
+	if sValue = "yes" then
+		return TRUE;
+	else
+		return FALSE;
+	endif;	
+	
+end; 
+
+function VOID ModifySkinFiles(b1920)
+	STRING szFileName, szSearchStr, szReplaceStr;
+begin
+    
+    // Adjust TVSeries Watched / Unwatched string
+    // Using 1920 wide the watched value is displaced further from the watched icon...dont ask me why!    
+    szFileName = STREAMEDMP_SKIN_TVSERIESSETTINGS;
+    
+    // String replacement will only occur if a match ie. currently has the wrong value
+    if b1920 then
+	    // Needs adjustments by 2 pixls to the left
+	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
+	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
+	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+	    
+	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
+	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
+	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+	else        
+	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
+	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
+	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+	    
+	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
+	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
+	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);    
+    endif;
+    
 end;
 
 
