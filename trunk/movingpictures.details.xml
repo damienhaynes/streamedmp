@@ -283,59 +283,15 @@ This file should contain the details view
     
 	<!-- Certification -->
 	<control>
-	  <description>Rated R</description>
+	  <description>Certification</description>
 	  <type>image</type>
 	  <id>0</id>
 	  <posX>950</posX>
 	  <posY>400</posY>
 	  <width>259</width>
 	  <height>57</height>
-	  <texture>Logos\Certification\R.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.SelectedMovie.certification,R)</visible>
-	</control>
-	<control>
-	  <description>Rated NC-17</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>950</posX>
-	  <posY>400</posY>
-	  <width>259</width>
-	  <height>57</height>
-	  <texture>Logos\Certification\NC-17.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.SelectedMovie.certification,NC17)</visible>
-	</control>
-	<control>
-	  <description>Rated PG</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>950</posX>
-	  <posY>400</posY>
-	  <width>259</width>
-	  <height>57</height>
-	  <texture>Logos\Certification\PG.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.SelectedMovie.certification,PG)</visible>
-	</control>
-	<control>
-	  <description>Rated PG-13</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>950</posX>
-	  <posY>400</posY>
-	  <width>259</width>
-	  <height>57</height>
-	  <texture>Logos\Certification\PG-13.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.SelectedMovie.certification,PG-13)</visible>
-	</control>
-	<control>
-	  <description>Rated G</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>950</posX>
-	  <posY>400</posY>
-	  <width>259</width>
-	  <height>57</height>
-	  <texture>Logos\Certification\G.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.SelectedMovie.certification,G)</visible>
+	  <texture>Logos\Certification\#MovingPictures.SelectedMovie.certification.png</texture>
+	  <visible>!Control.IsVisible(50)</visible>
 	</control>
 	
 	<!-- MediaInfo Logos (Details View)-->
