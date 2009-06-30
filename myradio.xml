@@ -10,25 +10,6 @@
         <controls>
                 <import>common.window.default.xml</import>
                 <import>common.time.xml</import>
-                <!--<control>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>0</posX>
-                        <posY>0</posY>
-                        <width>1280</width>
-                        <height>720</height>
-                        <texture>#header.hover</texture>
-                        <animation effect="fade" time="200" delay="200">windowopen</animation>
-                </control>
-                <control>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>0</posX>
-                        <posY>0</posY>
-                        <width>1280</width>
-                        <height>720</height>
-                        <texture>mainoverlay.png</texture>
-                </control>-->
                  <control>
                         <type>actiongroup</type>
                         <description>action menu</description>
@@ -165,16 +146,23 @@
                                 <control>
                                         <description>My Lyrics</description>
                                         <type>button</type>
-                                        <id>16</id>
+                                        <id>1142</id>
                                         <label>Lyrics</label>
                                         <onleft>50</onleft>
                                         <hyperlink>90478</hyperlink>
                                         <visible>plugin.isenabled(My Lyrics)</visible>
                                 </control>
+                                <control>
+                                        <description>Last.FM</description>
+                                        <type>button</type>
+                                        <id>1143</id>
+                                        <label>Last.Fm Radio</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>7890</hyperlink>
+                                        <visible>plugin.isenabled(Last.fm Radio)</visible>
+                                </control>
                         </control>
                 </control>
-                
-               
                 <control>
                         <description>Media Count Background</description>
                         <type>image</type>
@@ -240,9 +228,7 @@
                         <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                         <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
                 </control>
-                
                 <import>common.facade.radio.xml</import>
-                 
                 <import>common.overlays.xml</import>         
         </controls>
 </window>
