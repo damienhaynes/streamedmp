@@ -3,10 +3,14 @@
         <id>30</id>
         <defaultcontrol>2</defaultcontrol>
         <allowoverlay>no</allowoverlay>
-        <define>#header.label:666</define>
-        <define>#header.hover:hover_my music.png</define>
+        <define>#header.label:862</define>
+        <define>#header.hover:hover_my radio.png</define>
+        <define>#header.BG.colordiffuse:ffffffff</define>
+        <define>#header.BG.overlay:mainoverlay.png</define>
         <controls>
-                <control>
+                <import>common.window.default.xml</import>
+                <import>common.time.xml</import>
+                <!--<control>
                         <type>image</type>
                         <id>0</id>
                         <posX>0</posX>
@@ -24,23 +28,18 @@
                         <width>1280</width>
                         <height>720</height>
                         <texture>mainoverlay.png</texture>
-                </control>
-                <control>
-                        <id>204</id>
-                        <type>image</type>
-                        <posX>45</posX>
-                        <posY>285</posY>
-                        <width>199</width>
-                        <height>199</height>
-                        <keepaspectratio>yes</keepaspectratio>
-                        <texture>#selectedthumb</texture>
-                        <visible>facadeview.list</visible>
-                </control>
-                <control>
+                </control>-->
+                 <control>
                         <type>actiongroup</type>
                         <description>action menu</description>
-                        <defaultcontrol>7</defaultcontrol>
+                        <defaultcontrol>2</defaultcontrol>
                         <onexit>50</onexit>
+                        <buttonX>1231</buttonX>
+                        <buttonY>55</buttonY>
+                        <buttonwidth>49</buttonwidth>
+                        <buttonheight>153</buttonheight>
+                        <textureFocus>Action_menu.png</textureFocus>
+                        <textureNoFocus>Action_menu.png</textureNoFocus>
                         <dimColor>00ffffff</dimColor>
                         <control>
                                 <type>image</type>
@@ -102,6 +101,7 @@
                                         <type>button</type>
                                         <id>2</id>
                                         <label>100</label>
+                                        <onup>21</onup>
                                         <onleft>50</onleft>
                                 </control>
                                 <control>
@@ -173,9 +173,76 @@
                                 </control>
                         </control>
                 </control>
-                <import>common.facade.music.xml</import>
-                <import>common.overlays.xml</import>
-                <import>common.window.xml</import>
-                <import>common.time.xml</import>
+                
+               
+                <control>
+                        <description>Media Count Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>1013</posX>
+                        <posY>684</posY>
+                        <width>260</width>
+                        <height>32</height>
+                        <texture>mediacountbg_Spin.png</texture>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Media Count Label</description>
+                        <type>label</type>
+                        <label>PAGE:</label>
+                        <id>0</id>
+                        <posX>1023</posX>
+                        <posY>689</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Radio Thumb</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>28</posX>
+                        <posY>240</posY>
+                        <height>200</height>
+                        <width>354</width>
+                        <zoom>no</zoom>
+                        <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+                        <visible>[facadeview.list|facadeview.album]+[Control.HasFocus(50)]</visible>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <centered>yes</centered>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Current program</description>
+                        <id>1</id>
+                        <posX>28</posX>
+                        <posY>680</posY>
+                        <width>785</width>
+                        <font>mediastream14tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <label>#selecteditem</label>
+                        <visible>no</visible>
+                        <visible>[facadeview.list|facadeview.album]+[Control.HasFocus(50)]</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                
+                <import>common.facade.radio.xml</import>
+                 
+                <import>common.overlays.xml</import>         
         </controls>
 </window>
