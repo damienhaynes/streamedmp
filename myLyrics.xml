@@ -5,7 +5,6 @@
         <allowoverlay>no</allowoverlay>
         <define>#header.label:Lyrics</define>
         <define>#header.hover:hover_my lyrics.png</define>
-        <!-- cheat a little, we don't use two of the items in the imported file to blank their labels -->
         <define>#header.BG.colordiffuse:90ffffff</define>
         <!--Default ffffffff-->
         <define>#header.BG.overlay:tvguidebg.png</define>
@@ -47,11 +46,39 @@
                         <animation effect="slide" start="-53,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
                 </control>
                 <control>
+                        <description>Media Count Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>628</posX>
+                        <posY>544</posY>
+                        <width>260</width>
+                        <height>32</height>
+                        <texture>mediacountbg_Spin.png</texture>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <visible>control.isvisible(20)|control.isvisible(21)</visible>
+                </control>
+                <control>
+                        <description>Media Count Label</description>
+                        <type>label</type>
+                        <label>PAGE:</label>
+                        <id>0</id>
+                        <posX>638</posX>
+                        <posY>549</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <visible>control.isvisible(20)|control.isvisible(21)</visible>
+                </control>
+                <control>
                         <type>textbox</type>
                         <description>The Lyric area</description>
                         <id>20</id>
                         <posX>110</posX>
-                        <posY>125</posY>
+                        <posY>115</posY>
                         <width>760</width>
                         <height>490</height>
                         <onleft>2</onleft>
@@ -62,16 +89,23 @@
                         <seperator>----------------------------------------------------------------------------------------------</seperator>
                         <text>6</text>
                         <font>font12</font>
-                        <spinPosX>106</spinPosX>
-                        <spinPosY>600</spinPosY>
+                        <spinPosX>761</spinPosX>
+                        <spinPosY>542</spinPosY>
                         <spinColor>ff006698</spinColor>
+                        <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
                 </control>
                 <control>
                         <type>textbox</type>
                         <description>The Lyric area wide</description>
                         <id>21</id>
                         <posX>110</posX>
-                        <posY>125</posY>
+                        <posY>115</posY>
                         <width>1160</width>
                         <height>490</height>
                         <onleft>2</onleft>
@@ -82,16 +116,23 @@
                         <seperator>----------------------------------------------------------------------------------------------</seperator>
                         <text>6</text>
                         <font>font12</font>
-                        <spinPosX>106</spinPosX>
-                        <spinPosY>600</spinPosY>
+                        <spinPosX>761</spinPosX>
+                        <spinPosY>542</spinPosY>
                         <spinColor>ff006698</spinColor>
+                        <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
                 </control>
                 <control>
                         <type>textboxscrollup</type>
                         <description>The Lyric area</description>
                         <id>1020</id>
                         <posX>110</posX>
-                        <posY>125</posY>
+                        <posY>115</posY>
                         <width>760</width>
                         <height>450</height>
                         <onleft>2</onleft>
@@ -102,16 +143,23 @@
                         <seperator>----------------------------------------------------------------------------------------------</seperator>
                         <text>6</text>
                         <font>font12</font>
-                        <spinPosX>106</spinPosX>
-                        <spinPosY>600</spinPosY>
+                        <spinPosX>761</spinPosX>
+                        <spinPosY>542</spinPosY>
                         <spinColor>ff006698</spinColor>
+                        <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
                 </control>
                 <control>
                         <type>textboxscrollup</type>
                         <description>The Lyric area wide</description>
                         <id>1021</id>
                         <posX>110</posX>
-                        <posY>125</posY>
+                        <posY>115</posY>
                         <width>1160</width>
                         <height>450</height>
                         <onleft>2</onleft>
@@ -122,9 +170,16 @@
                         <seperator>----------------------------------------------------------------------------------------------</seperator>
                         <text>6</text>
                         <font>font12</font>
-                        <spinPosX>106</spinPosX>
-                        <spinPosY>600</spinPosY>
+                        <spinPosX>761</spinPosX>
+                        <spinPosY>542</spinPosY>
                         <spinColor>ff006698</spinColor>
+                        <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
                 </control>
                 <control>
                         <type>label</type>
@@ -135,29 +190,7 @@
                         <label></label>
                         <textcolor>ffdddddd</textcolor>
                 </control>
-                <control>
-                        <description>Media Count Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>0</posX>
-                        <posY>603</posY>
-                        <width>159</width>
-                        <height>32</height>
-                        <texture>mediacountbackground.png</texture>
-                        <visible>control.isvisible(20)|control.isvisible(21)</visible>
-                </control>
-                <control>
-                        <description>Media Count Label</description>
-                        <type>label</type>
-                        <label>PAGE:</label>
-                        <id>0</id>
-                        <posX>10</posX>
-                        <posY>607</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <visible>control.isvisible(20)|control.isvisible(21)</visible>
-                </control>
-                <control>
+                 <control>
                         <type>label</type>
                         <description>Status</description>
                         <id>11</id>
@@ -183,7 +216,7 @@
                         <type>fadelabel</type>
                         <description>track label shadow</description>
                         <id>33</id>
-                        <posX>172</posX>
+                        <posX>112</posX>
                         <posY>672</posY>
                         <width>600</width>
                         <height>28</height>
@@ -196,7 +229,7 @@
                         <type>fadelabel</type>
                         <description>track label</description>
                         <id>33</id>
-                        <posX>170</posX>
+                        <posX>110</posX>
                         <posY>670</posY>
                         <width>600</width>
                         <height>28</height>
@@ -208,7 +241,7 @@
                         <type>fadelabel</type>
                         <description>Current Artist label shadow</description>
                         <id>32</id>
-                        <posX>172</posX>
+                        <posX>112</posX>
                         <posY>636</posY>
                         <width>600</width>
                         <height>26</height>
@@ -221,7 +254,7 @@
                         <type>fadelabel</type>
                         <description>Current Artist label</description>
                         <id>32</id>
-                        <posX>170</posX>
+                        <posX>110</posX>
                         <posY>634</posY>
                         <width>600</width>
                         <height>26</height>
@@ -233,7 +266,7 @@
                         <type>fadelabel</type>
                         <description>Current title label shadow</description>
                         <id>30</id>
-                        <posX>172</posX>
+                        <posX>112</posX>
                         <posY>592</posY>
                         <width>600</width>
                         <height>26</height>
@@ -246,7 +279,7 @@
                         <type>fadelabel</type>
                         <description>Current title label</description>
                         <id>30</id>
-                        <posX>170</posX>
+                        <posX>110</posX>
                         <posY>590</posY>
                         <width>600</width>
                         <height>26</height>
@@ -325,6 +358,7 @@
                         <texture>osdprogressbackv.png</texture>
                         <keepaspectratio>no</keepaspectratio>
                         <animation effect="fade" time="150">WindowOpen</animation>
+                        <visible>player.hasmedia+!string.equals(#duration,)</visible>
                 </control>
                 <control>
                         <type>progress</type>
@@ -333,6 +367,7 @@
                         <posX>930</posX>
                         <posY>502</posY>
                         <width>300</width>
+                        <visible>player.hasmedia+!string.equals(#duration,)</visible>
                 </control>
                 <control>
                         <type>label</type>
@@ -341,10 +376,11 @@
                         <posX>895</posX>
                         <posY>497</posY>
                         <label>#currentplaytime</label>
-                        <font>font14</font>
+                        <font>mediastream12c</font>
                         <align>left</align>
                         <textcolor>80ffffff</textcolor>
                         <animation effect="fade" time="150">WindowOpen</animation>
+                        <visible>player.hasmedia+!string.equals(#duration,)</visible>
                 </control>
                 <control>
                         <type>label</type>
@@ -353,7 +389,7 @@
                         <posX>1268</posX>
                         <posY>497</posY>
                         <label>#duration</label>
-                        <font>font14</font>
+                        <font>mediastream12c</font>
                         <align>right</align>
                         <textcolor>80ffffff</textcolor>
                 </control>
@@ -367,6 +403,7 @@
                         <font>mediastream12tc</font>
                         <align>right</align>
                         <textcolor>ff222222</textcolor>
+                        <visible>player.hasmedia+!string.equals(#Play.Next.Title,)</visible>
                 </control>
                 <control>
                         <type>label</type>
@@ -378,6 +415,7 @@
                         <font>mediastream12tc</font>
                         <align>right</align>
                         <textcolor>ff006698</textcolor>
+                        <visible>player.hasmedia+!string.equals(#Play.Next.Title,)</visible>
                 </control>
                 <control>
                         <type>fadelabel</type>
@@ -448,6 +486,8 @@
                         <width>105</width>
                         <height>110</height>
                         <texture>tvseries_focusframe.png</texture>
+                        <visible>player.hasmedia+!string.equals(#Play.Next.Thumb,)</visible>
+                        
                         <animation effect="fade" time="150">WindowOpen</animation>
                 </control>
                 <control>
