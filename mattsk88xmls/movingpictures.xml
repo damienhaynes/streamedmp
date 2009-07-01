@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 This file should contain the facade view and all gui
 elements that should remain on screen during all or
@@ -15,11 +15,11 @@ multiple view modes.
   <!-- true if this skin implements the largeicons view -->
   <define>#largeicons.available:true</define>
   <!-- true if backdrop (fanart) should be displayed in this view -->
-  <define>#largeicons.backdrop.used:true</define>
+  <define>#largeicons.backdrop.used:false</define>
   <!-- Set to true if this skin implements the smallicons view -->
   <define>#smallicons.available:true</define>
   <!-- true if backdrop (fanart) should be displayed in this view -->
-  <define>#smallicons.backdrop.used:true</define>
+  <define>#smallicons.backdrop.used:false</define>
   <!-- Set to true if this skin implements the list view -->
   <define>#list.available:true</define>
   <!-- true if backdrop (fanart) should be displayed in this view -->
@@ -269,6 +269,7 @@ multiple view modes.
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>    
+	<import>movingpictures.mediainfo.xml</import>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
   </controls>
