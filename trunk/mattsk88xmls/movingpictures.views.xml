@@ -63,7 +63,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.extra.runtime.hour hour(s), #MovingPictures.SelectedMovie.extra.runtime.minute minutes</label>
+      <label>#MovingPictures.LocalMedia.extra.runtime.hour hour(s), #MovingPictures.LocalMedia.extra.runtime.minute minutes</label>
       <posX>825</posX>
       <posY>535</posY>
       <width>580</width>
@@ -150,7 +150,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>675</posY>
       <width>300</width>
       <font>mediastream11tc</font>
-      <label>#MovingPictures.SelectedMovie.extra.runtime.hour Hours, #MovingPictures.SelectedMovie.extra.runtime.minute Minutes</label>
+      <label>#MovingPictures.LocalMedia.extra.runtime.hour Hours, #MovingPictures.LocalMedia.extra.runtime.minute Minutes</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
@@ -312,7 +312,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <align>left</align>
-      <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -320,14 +320,88 @@ This file should contain all items visible when the plug-in is in its various fa
       <id>0</id>
       <posX>35</posX>
       <posY>540</posY>
-      <width>1250</width>
+      <width>750</width>
       <height>150</height>
       <textcolor>ffffff</textcolor>
       <seperator>-------------------------------</seperator>
       <font>mediastream11</font>
       <textalign>left</textalign>
       <label>#MovingPictures.SelectedMovie.summary</label>
-      <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+	<control Style="smallTitleB">
+      <type>label</type>
+      <label>Genre</label>
+      <posX>800</posX>
+      <posY>530</posY>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <posX>910</posX>
+      <posY>530</posY>
+      <width>350</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Year</label>
+      <posX>800</posX>
+      <posY>555</posY>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <posX>910</posX>
+      <posY>555</posY>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+	<control Style="smallTitleB">
+      <type>label</type>
+      <label>Writers</label>
+      <posX>800</posX>
+      <posY>580</posY>	  
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>910</posX>
+      <posY>580</posY>
+	  <width>350</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+	<control Style="smallTitleB">
+      <type>label</type>
+      <label>Directors</label>
+      <posX>800</posX>
+      <posY>605</posY>	  
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>910</posX>
+      <posY>605</posY>
+	  <width>350</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <label>Runtime</label>
+      <posX>800</posX>
+      <posY>630</posY>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <label>#MovingPictures.LocalMedia.extra.runtime.hour hour(s), #MovingPictures.LocalMedia.extra.runtime.minute minutes</label>
+      <posX>910</posX>
+      <posY>630</posY>
+      <width></width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>
