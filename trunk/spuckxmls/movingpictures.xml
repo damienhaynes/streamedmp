@@ -573,7 +573,7 @@ multiple view modes.
       <id>0</id>
       <posX>410</posX>
       <posY>70</posY>
-      <width>850</width>
+      <width>840</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -586,7 +586,7 @@ multiple view modes.
       <id>0</id>
       <posX>410</posX>
       <posY>110</posY>
-      <width>850</width>
+      <width>840</width>
       <height>160</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
@@ -783,6 +783,37 @@ multiple view modes.
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>	  
+    </control>
+	
+	<control>
+      <description>Parental Controls Lock Indicator (Dummy)</description>
+      <type>image</type>
+      <id>16</id>
+      <posX>1400</posX>
+      <posY>1400</posY>  
+      <texture>-</texture>
+    </control>
+	<control>
+      <description>Parental Controls Lock Indicator</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>1240</posX>
+      <posY>5</posY>
+      <width>36</width>
+      <height>36</height>
+      <texture>parentallock.png</texture>
+	  <visible>Control.IsVisible(16)+Control.IsVisible(50)+!facadeview.filmstrip</visible>
+    </control>
+	<control>
+      <description>Parental Controls Lock Indicator</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>1240</posX>
+      <posY>70</posY>
+      <width>36</width>
+      <height>36</height>
+      <texture>parentallock.png</texture>
+	  <visible>Control.IsVisible(16)+Control.IsVisible(50)+facadeview.filmstrip</visible>
     </control>
 	
 	<import>movingpictures.mediainfo.xml</import>
