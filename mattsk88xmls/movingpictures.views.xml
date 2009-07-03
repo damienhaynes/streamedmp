@@ -161,7 +161,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
-      <label>RATING</label>
+      <label>RATING: #MovingPictures.SelectedMovie.score.localized/10</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
@@ -218,8 +218,6 @@ This file should contain all items visible when the plug-in is in its various fa
       <id>101</id>
       <posX>570</posX>
       <posY>675</posY>
-      <width>350</width>
-      <height>35</height>
       <textureWidth>17</textureWidth>
       <textureHeight>17</textureHeight>
       <subitems>
@@ -228,9 +226,9 @@ This file should contain all items visible when the plug-in is in its various fa
       </subitems>
       <orientation>horizontal</orientation>
       <align>left</align>
-      <imagesToDraw>10</imagesToDraw>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <imagesToDraw>10</imagesToDraw>      
+      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
+	  <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
       <id>60</id>
@@ -360,14 +358,14 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>Writers</label>
+      <label>Rating</label>
       <posX>800</posX>
       <posY>580</posY>	  
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.writers</label>
+      <label>#MovingPictures.SelectedMovie.score.localized/10</label>
       <posX>910</posX>
       <posY>580</posY>
 	  <width>350</width>

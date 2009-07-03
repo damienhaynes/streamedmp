@@ -338,9 +338,7 @@ multiple view modes.
       <type>imagelist</type>
       <id>101</id>
       <posX>30</posX>
-      <posY>645</posY>
-      <width>130</width>
-      <height>23</height>
+      <posY>645</posY>      
       <textureWidth>23</textureWidth>
       <textureHeight>22</textureHeight>
       <subitems>
@@ -350,12 +348,12 @@ multiple view modes.
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>10</imagesToDraw>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
 	<control>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score / 10</label>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
       <posX>210</posX>
       <posY>670</posY>
       <width>100</width>
@@ -479,9 +477,7 @@ multiple view modes.
       <type>imagelist</type>
       <id>1001</id>
       <posX>920</posX>
-      <posY>628</posY>
-      <width>115</width>
-      <height>13</height>
+      <posY>628</posY>      
       <textureWidth>23</textureWidth>
       <textureHeight>22</textureHeight>
       <subitems>
@@ -491,13 +487,13 @@ multiple view modes.
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>10</imagesToDraw>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     
     <control>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score / 10</label>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
       <posX>921</posX>
       <posY>656</posY>
       <width>360</width>
@@ -674,13 +670,13 @@ multiple view modes.
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>10</imagesToDraw>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     
     <control>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score / 10</label>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
       <posX>580</posX>
       <posY>448</posY>
       <width>360</width>
