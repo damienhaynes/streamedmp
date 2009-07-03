@@ -178,8 +178,6 @@ multiple view modes.
       <id>101</id>
       <posX>730</posX>
       <posY>456</posY>
-      <width>310</width>
-      <height>25</height>
       <textureWidth>20</textureWidth>
       <textureHeight>20</textureHeight>
       <subitems>
@@ -189,7 +187,7 @@ multiple view modes.
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>10</imagesToDraw>
-      <percentage>#MovingPictures.SelectedMovie.score</percentage>
+      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     <!--Top Bar-->
