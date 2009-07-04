@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1141</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <vumeter>yes</vumeter>
+  <allowoverlay>no</allowoverlay>  
   <define>#header.hover:hover_my music.png</define>
   <controls>
     
@@ -40,7 +39,7 @@
       <height>221</height>
       <colordiffuse>ffFFFFFF</colordiffuse>
       <texture>black.png</texture>
-    </control>   
+    </control>
     
     <control>
       <type>image</type>
@@ -52,21 +51,52 @@
       <height>280</height>
       <texture>-</texture>
     </control>
+	
+	<!-- VU Meter: LED -->
     <control>
-      <type>multiimage</type>
-      <id>9990</id>
-      <posX>525</posX>
+      <type>image</type>
+      <id>0</id>
+      <posX>510</posX>
       <posY>400</posY>
-      <width>109</width>
-      <height>81</height>
-      <imagepath>Play</imagepath>
-      <timeperimage>50</timeperimage>
-      <fadetime>10</fadetime>
-      <loop>yes</loop>
-      <randomize>yes</randomize>
-      <visible>Player.HasAudio + Player.playing</visible>
-      <animation effect="fade" time="10">VisibleChange</animation>
+      <width>398</width>
+      <height>20</height>
+      <texture>VU aus led.png</texture>
+      <visible>!Player.playing</visible>
     </control>
+    <control>
+      <type>image</type>
+      <id>999</id>
+      <posX>510</posX>
+      <posY>400</posY>
+      <width>398</width>
+      <height>20</height>
+      <imagepath>Animations\LedVu</imagepath>
+      <texture>#VUMeterL</texture>
+      <visible>Player.HasAudio + Player.playing</visible>      
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>510</posX>
+      <posY>418</posY>
+      <width>398</width>
+      <height>20</height>
+      <texture>VU aus led.png</texture>
+      <visible>!Player.playing</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>998</id>
+      <posX>510</posX>
+      <posY>418</posY>
+      <width>398</width>
+      <height>20</height>
+	  <imagepath>Animations\LedVu</imagepath>
+      <texture>#VUMeterR</texture>
+      <visible>Player.HasAudio + Player.playing</visible>      
+    </control>
+	
+	
     <control>
       <type>fadelabel</type>
       <description>track label</description>
@@ -161,10 +191,10 @@
       <type>label</type>
       <description>track progress label</description>
       <id>0</id>
-      <posX>880</posX>
-      <posY>413</posY>
+      <posX>895</posX>
+      <posY>435</posY>
       <label>#currentplaytime / #duration</label>
-      <font>mediastream16c</font>
+      <font>mediastream14c</font>
       <visible>Player.HasMedia</visible>
     </control>
     <control>
