@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -336,8 +337,6 @@
 		<row><td>mattsk88TVSeries</td><td>{9A81948E-A894-4E44-BFA5-8D5462DFE795}</td><td>STREAMEDMP</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>menuEditor</td><td>{A5AEBB21-201D-4094-A115-C1D834D63A6E}</td><td>STREAMEDMP</td><td>8</td><td/><td>streamedmp_editor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>photoshopPSD</td><td>{657E1C0D-D052-4F29-AA34-654BCC9FA6DD}</td><td>STREAMEDMP</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginICSharpCodeSharpZipLibDLL</td><td>{D9B9E42E-3704-44C2-BCED-FD3FE1E04CD2}</td><td>WINDOWS1</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginMediaInfoDLL</td><td>{D8BF4989-9653-4C6A-90FD-CFAB883B2197}</td><td>WINDOWS1</td><td>8</td><td/><td>mediainfo.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMovingPicturesDLL</td><td>{A3739C2D-3ADA-4751-ACD2-A7B1B7AFAB28}</td><td>WINDOWS1</td><td>8</td><td/><td>movingpictures.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMovingPicturesLanguages</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginRSSDLL</td><td>{F1322980-6692-46E0-B8DD-02B3566B0C81}</td><td>PROCESS1</td><td>8</td><td/><td>mp_rssticker.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -619,9 +618,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1454,8 +1457,6 @@
 		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesLanguages</td></row>
 		<row><td>RSS</td><td>pluginRSSDLL</td></row>
-		<row><td>TVSeries</td><td>pluginICSharpCodeSharpZipLibDLL</td></row>
-		<row><td>TVSeries</td><td>pluginMediaInfoDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
 		<row><td>fonts</td><td>fontsFluidBody</td></row>
@@ -1495,9 +1496,7 @@
 		<row><td>fonts.xml1</td><td>fontsXMLLarge</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\large\fonts.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
 		<row><td>home.url</td><td>webHome</td><td>Home.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Home.url</td><td>1</td><td/></row>
-		<row><td>icsharpcode.sharpziplib.dll</td><td>pluginICSharpCodeSharpZipLibDLL</td><td>ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\ICSharpCode.SharpZipLib.dll</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
-		<row><td>mediainfo.dll</td><td>pluginMediaInfoDLL</td><td>MEDIAI~1.DLL|MediaInfo.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MediaInfo.dll</td><td>1</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\movingpictures\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\rss\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
@@ -1775,8 +1774,6 @@
 		<row><td>mattsk88TVSeries</td><td/><td/><td>_4F4EF1A9_904B_43F9_8025_20E70600CAE1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>menuEditor</td><td/><td/><td>_82B4A157_DF26_4AD7_BB6C_19BCF8DB57AB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>photoshopPSD</td><td/><td/><td>_99CAA059_AF29_4792_8370_3D2DE31BCF10_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pluginICSharpCodeSharpZipLibDLL</td><td/><td/><td>_71BC15A9_9798_445C_ADC4_1E1628E584F1_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pluginMediaInfoDLL</td><td/><td/><td>_C9529F64_24E4_4F66_A8E8_1FDDA4FDD6DF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMovingPicturesDLL</td><td/><td/><td>_D229F38C_9C25_4A94_BEF9_43F6BFE7C56E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMovingPicturesLanguages</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginRSSDLL</td><td/><td/><td>_DC8C6009_F483_4811_B31F_C3A49E5AC5A4_FILTER</td><td/><td/><td/><td/></row>
@@ -4027,9 +4024,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>

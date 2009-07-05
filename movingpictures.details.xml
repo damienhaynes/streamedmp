@@ -400,7 +400,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\DIVX.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)</visible>
+	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
 	</control>
 
 	<!-- XVID -->
@@ -519,7 +519,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DD 51.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
 	</control>
 
 	<!-- Dolby Digital 2.0 -->
@@ -563,7 +563,7 @@ This file should contain the details view
 
 	<!-- WMA -->
 	<control>
-	  <description>AAC</description>
+	  <description>WMA</description>
 	  <type>image</type>
 	  <id>0</id>
 	  <posX>545</posX>
