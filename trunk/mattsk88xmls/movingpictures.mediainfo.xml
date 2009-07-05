@@ -106,7 +106,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\DIVX.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
 		</control>
 
 		<!-- XVID -->
@@ -215,7 +215,7 @@
 		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiochannels,mono)</visible>
 		</control>
 
-		<!-- Dolby Digital 5.1 -->
+		<!-- Dolby Digital 5.1/5.0 -->
 		<control>
 		  <description>DD 5.1</description>
 		  <type>image</type>
@@ -225,7 +225,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DD 51.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
 		</control>
 
 		<!-- Dolby Digital 2.0 -->
@@ -516,7 +516,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\DIVX.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
 		</control>
 
 		<!-- XVID -->
@@ -625,7 +625,7 @@
 		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.audiochannels,mono)</visible>
 		</control>
 
-		<!-- Dolby Digital 5.1 -->
+		<!-- Dolby Digital 5.1 /5.0-->
 		<control>
 		  <description>DD 5.1</description>
 		  <type>image</type>
@@ -635,7 +635,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DD 51.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
 		</control>
 
 		<!-- Dolby Digital 2.0 -->
