@@ -93,7 +93,8 @@
 #define RES_CHECK_SKINDEFAULT			1402
 #define RES_CHECK_USEBASICHOME			1405
 #define RES_COMBO_TVGUIDE				1406
-#define RES_CHECK_ROUNDEDCOVERS			1408
+#define RES_CHECK_ROUNDEDCOVERS			1408 
+#define RES_COMBO_VUMETERS				1410
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -159,7 +160,7 @@ STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
 STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
-//STRING g_sSeriesLayout;
+STRING g_sVUMeter;
 
 STRING g_sMediaPortalProgramDir;
 STRING g_sLanguageDir;
@@ -298,26 +299,6 @@ begin
 		g_sFontSize = "Default";		
 	endif;
 	
-	// Read Series Layout default	
-	/*if (TVSeriesLayout(svValue,FALSE) < 0) then
-		g_sSeriesLayout = "List Posters";		
-	else
-		StrToLower(svString,svValue);	
-		switch (svString)
-			case "listbanners":
-				g_sSeriesLayout = "List Banners";
-			case "listposters":
-				g_sSeriesLayout = "List Posters";
-			case "widebanners":
-				g_sSeriesLayout = "Wide Banners";
-			case "filmstrip":
-				g_sSeriesLayout = "Filmstrip";
-			default:
-				g_sSeriesLayout = "List Posters";	
-		endswitch;
-			
-	endif;*/
-	
 	// Determine if 'Total Episode Count' fields are added to List View
 	// Just Check Series, but set for both Series & Season
 	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
@@ -371,6 +352,11 @@ begin
 	if svValue = "1" then
 		g_bShowRoundedCovers = TRUE;			
 	endif;
+	
+	// My Music VU Meters
+	if GetMPXMLProperty("musicmisc","vumeter", svValue) < 0 then
+		g_sVUMeter = "led";	
+	endif;	
 		
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
 	
@@ -1139,7 +1125,7 @@ function number ShowSelectOptions(bModify)
 	STRING szDialogName, sValue;
 	NUMBER nCmdValue;
 	BOOL bDone;
-	LIST listFonts, listTVGuides;
+	LIST listFonts, listTVGuides, listVUMeters;
 begin
 
 	szDialogName = "SelectionOptions";
@@ -1195,7 +1181,27 @@ Dlg_Wait:
 	   			endswitch; 		
 					    			 				
  				ListDestroy(listFonts);
- 				 			
+
+ 				// Select Now Playing Music VU Meters
+ 				listVUMeters = ListCreate(STRINGLIST);
+				
+				ListAddString(listVUMeters,"Analog",AFTER);
+				ListAddString(listVUMeters,"Digital",AFTER);
+				ListAddString(listVUMeters,"None (Fake)",AFTER);
+				// Add VUMeter types to list
+	        	CtrlSetList(szDialogName,RES_COMBO_VUMETERS,listVUMeters);
+	    		
+	    		// Select current VUMeter type    		      		
+	    		switch (g_sVUMeter)
+ 					case "analog":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Analog");
+	    			case "led":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Digital");
+	    			default:
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"None (Fake)");
+	   			endswitch; 		 				
+ 				ListDestroy(listVUMeters);	        
+ 				 				 				 		
  				if g_bSetAsDefaultSkin then
  					CtrlSetState(szDialogName,RES_CHECK_SKINDEFAULT,BUTTON_CHECKED);
  				endif;
@@ -1211,7 +1217,7 @@ Dlg_Wait:
  				// Disable rounded cover checkbox if Fanart Style is not chosen
  				if (g_bTVSeriesDefault && g_bMovingPicturesDefault) then
  				      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
- 				endif;
+ 				endif; 			 		
  				 				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -1244,6 +1250,16 @@ Dlg_Wait:
 	endswitch;
 
 	CtrlGetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize);	
+	
+	CtrlGetCurSel(szDialogName,RES_COMBO_VUMETERS,sValue);
+	switch (sValue)
+		case "Analog":
+			g_sVUMeter = "analog"; 
+		case "Digital":
+			g_sVUMeter = "led";
+		default:
+			g_sVUMeter = "none";
+	endswitch;
 	
 	if (CtrlGetState(szDialogName,RES_CHECK_SKINDEFAULT) = BUTTON_CHECKED) then
 		g_bSetAsDefaultSkin = TRUE;
@@ -1318,20 +1334,6 @@ begin
 		SetXMLProperty(sFile, "/settings/graphicsquality/seriesposters", "35");
 	endif;
 	
-	/*svString = g_sSeriesLayout;	               
-	switch (svString)
-		case "List Banners":
-			svString = "ListBanners";
-		case "List Posters":
-			svString = "ListPosters";
-		case "Wide Banners":
-			svString = "WideBanners";
-		case "Filmstrip":
-			svString = "Filmstrip";		
-	endswitch;*/
-		
-	//TVSeriesLayout(svString,TRUE);
-	
 	// Set Total Episode Count Field to Series/Season List View
 	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
 	if g_bShowTotalEpisodeCount then
@@ -1400,6 +1402,9 @@ begin
 	// Dont need to worry about 1st time installs of mediaportal with XML
 	// as this is setting is enabled by default for MediaPortal
 	SetMPXMLProperty("general","animations","yes");
+	
+	// Now Playing Music VUMeter support
+	SetMPXMLProperty("musicmisc","vumeter", g_sVUMeter);
 	
 	// Start with Basic Home or Standard Home
 	if g_bStartBasicHome then
