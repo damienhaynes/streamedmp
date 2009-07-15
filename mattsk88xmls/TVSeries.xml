@@ -77,7 +77,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>fanartoverlay.png</texture>
-      <visible>!Control.IsVisible(1236)</visible>
+      <visible>facadeview.list</visible>
     </control>
     <control>
       <description>FanArt Overlay - Other Views</description>
@@ -88,7 +88,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>fanartoverlay2.png</texture>
-      <visible>Control.IsVisible(1236)+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
+      <visible>!facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
     </control>
 	<!--Overlays Filmstrip -->
 	<control>
@@ -100,7 +100,7 @@
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
 	<control>
       <description>Bottom Overlay</description>
@@ -111,7 +111,7 @@
       <width>1280</width>
       <height>320</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <!--
     :::::::::::::::::::::::::::::::::
@@ -229,7 +229,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>Control.IsVisible(1236)+!Control.IsVisible(1242)+Control.IsVisible(1237)</visible>
+      <visible>!facadeview.list+!Control.IsVisible(1242)+Control.IsVisible(1237)</visible>
     </control>
 
     <!--
@@ -246,7 +246,7 @@
       <width>206</width>
       <height>298</height>
       <texture>defaultdvdcover.png</texture>
-      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1235)</visible>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
@@ -258,7 +258,7 @@
       <width>206</width>
       <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesPoster</texture>
-      <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)|[Control.IsVisible(1238)+!Control.HasThumb(146)]]+Control.IsVisible(1235)</visible>
+      <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)|[Control.IsVisible(1238)+!Control.HasThumb(146)]]+facadeview.list</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>	
     <control>
@@ -270,7 +270,7 @@
       <width>206</width>
       <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonBanner</texture>
-      <visible>Control.IsVisible(1238)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1238)+facadeview.list</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
 	<control>
@@ -282,7 +282,7 @@
       <width>229</width>
       <height>324</height>
       <texture>#tvseries_RoundedPosters</texture>
-      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+Control.IsVisible(1235)</visible>
+      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+facadeview.list</visible>
       <!--<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>-->
     </control>
     <control>
@@ -294,7 +294,7 @@
       <width>220</width>
       <height>16</height>
       <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control>
       <description>Series Title</description>
@@ -308,7 +308,7 @@
       <align>left</align>
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control>
       <description>Rating Label</description>
@@ -319,7 +319,7 @@
       <textcolor>ff989898</textcolor>
       <font>mediastream11tc</font>
       <label>#TVSeries.Series.InfoPanelLine3Key</label>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="TVSeriesTitle">
 	  <id>0</id>
@@ -327,7 +327,7 @@
       <type>fadelabel</type>
       <posX>235</posX>
       <posY>455</posY>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>
@@ -336,7 +336,7 @@
       <posX>375</posX>
       <posY>455</posY>
       <width>300</width>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -344,7 +344,7 @@
       <type>fadelabel</type>
       <posX>235</posX>
       <posY>650</posY>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -353,7 +353,7 @@
       <posX>235</posX>
       <posY>675</posY>
       <width>250</width>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control>
       <description>Series Description</description>
@@ -368,7 +368,7 @@
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
 	  <scrollStartDelaySec>8</scrollStartDelaySec>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -384,7 +384,7 @@
       <width>543</width>
       <height>110</height>
       <texture>defaultwideicon.png</texture>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
     <control>
       <description>Series Banner</description>
@@ -395,7 +395,7 @@
       <width>531</width>
       <height>98</height>
       <texture>#TVSeries.SeriesBanner</texture>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
     <control>
       <description>Series Banner Glass Overlay</description>
@@ -406,7 +406,7 @@
       <width>128</width>
       <height>68</height>
       <texture>glassoverlay.png</texture>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>	
 	<control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -414,7 +414,7 @@
       <type>fadelabel</type>
       <posX>70</posX>
       <posY>660</posY>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -423,7 +423,7 @@
       <posX>70</posX>
       <posY>685</posY>
       <width>340</width>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>	
     <control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -431,7 +431,7 @@
       <type>fadelabel</type>
       <posX>70</posX>
       <posY>465</posY>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -440,7 +440,7 @@
       <posX>210</posX>
       <posY>465</posY>
       <width>300</width>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>    
     <control>
       <description>Rating Label</description>
@@ -451,7 +451,7 @@
       <textcolor>ff989898</textcolor>
       <font>mediastream11tc</font>
       <label>#TVSeries.Series.InfoPanelLine3Key</label>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
 	<control>
       <description>TVDB Series Rating Stars</description>
@@ -462,7 +462,7 @@
       <width>220</width>
       <height>16</height>
       <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
     </control>
     <control>
       <description>Series Description</description>
@@ -476,7 +476,7 @@
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
 	  <scrollStartDelaySec>8</scrollStartDelaySec>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
       <label>#TVSeries.Description</label>
     </control>
       <!--
@@ -490,7 +490,7 @@
       <type>fadelabel</type>
       <posX>22</posX>
       <posY>650</posY>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -500,7 +500,7 @@
       <posY>650</posY>
       <width>245</width>
 	  <scrollStartDelaySec>5</scrollStartDelaySec>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
 	<control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -509,7 +509,7 @@
       <type>label</type>
       <posX>22</posX>
       <posY>675</posY>            
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
 	<control>
       <description>TVDB Series Rating Stars</description>
@@ -520,7 +520,7 @@
       <width>180</width>
       <height>18</height>
       <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
 	<control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -528,7 +528,7 @@
       <type>fadelabel</type>
       <posX>440</posX>
       <posY>650</posY>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -537,7 +537,7 @@
       <posX>593</posX>
       <posY>650</posY>
       <width>600</width>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>	
 	<control Style="TVSeriesTitle">
 	  <id>0</id>	
@@ -545,7 +545,7 @@
       <type>fadelabel</type>
       <posX>440</posX>
       <posY>675</posY>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>
     <control Style="TVSeriesLabel">
 	  <id>0</id>	
@@ -554,7 +554,7 @@
       <posX>593</posX>
       <posY>675</posY>
       <width>500</width>
-      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+!facadeview.list</visible>
     </control>	
 	
     <!--
@@ -570,7 +570,7 @@
       <posY>430</posY>
       <height>145</height>
       <width>250</width>
-      <visible>Control.IsVisible(1235)</visible>
+      <visible>facadeview.list</visible>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#TVSeries.EpisodeImage</texture>
     </control>
     <control>
@@ -582,7 +582,7 @@
       <width>282</width>
       <height>170</height>
       <texture>tvseries_focusframe.png</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1239)+Control.HasThumb(67)</visible>
+      <visible>facadeview.list+Control.IsVisible(1239)+Control.HasThumb(67)</visible>
     </control>
     <control>
       <description>Episode Plot</description>
@@ -594,7 +594,7 @@
       <height>100</height>
       <seperator>--------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
 	  <scrollStartDelaySec>8</scrollStartDelaySec>
       <label>#TVSeries.Description</label>
     </control>
@@ -608,7 +608,7 @@
       <height>50</height>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control Style="smallTitleB">
 	  <id>0</id>	
@@ -616,7 +616,7 @@
       <type>label</type>
       <posX>300</posX>
       <posY>490</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>	
@@ -624,7 +624,7 @@
       <type>label</type>
       <posX>430</posX>
       <posY>490</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
       <width>230</width>
     </control>
     <control Style="smallTitleB">
@@ -633,7 +633,7 @@
       <type>label</type>
       <posX>300</posX>
       <posY>460</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>	
@@ -641,7 +641,7 @@
       <type>label</type>
       <posX>430</posX>
       <posY>460</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
       <width>230</width>
     </control>
     <control Style="smallTitleB">
@@ -650,7 +650,7 @@
       <type>label</type>
       <posX>300</posX>
       <posY>520</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>	
@@ -658,7 +658,7 @@
       <type>label</type>
       <posX>430</posX>
       <posY>520</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
       <width>300</width>
     </control>
     <control Style="smallTitleB">
@@ -667,7 +667,7 @@
       <type>label</type>
       <posX>300</posX>
       <posY>550</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>	
@@ -675,7 +675,7 @@
       <type>label</type>
       <posX>430</posX>
       <posY>550</posY>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
       <width>300</width>
     </control>
     <!--
@@ -694,7 +694,7 @@
       <texture>#TVSeries.Logos</texture>
       <keepaspectratio>yes</keepaspectratio>
       <spaceBetweenItems>2</spaceBetweenItems>
-      <visible>Control.IsVisible(1235)+!Control.IsVisible(1238)+!Control.IsVisible(1240)</visible>
+      <visible>facadeview.list+!Control.IsVisible(1238)+!Control.IsVisible(1240)</visible>
     </control>
     
 	<!--**********Watched/Unwatched Icons Season/SeriesPoster View*************-->
@@ -707,7 +707,7 @@
       <width>32</width>
       <height>39</height>
       <texture>#overlaywubg</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
     <control>
       <description>Series Watched Icon</description>
@@ -718,7 +718,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_Watched</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Un-Watched Icon</description>
@@ -729,7 +729,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatched</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Not Available and Watched Icon</description>
@@ -740,7 +740,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_WatchedNA</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Not Available and Un-Watched Icon</description>
@@ -751,7 +751,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatchedNA</texture>
-      <visible>Control.IsVisible(1235)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
 	<!--**********Watched/Unwatched Icons SeriesBanner List Layout*************-->
@@ -764,7 +764,7 @@
       <width>32</width>
       <height>39</height>
       <texture>#overlaywubg</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
+      <visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
     </control>
     <control>
       <description>Series Watched Icon</description>
@@ -775,7 +775,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_Watched</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)+Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
+      <visible>facadeview.list+Control.IsVisible(1237)+Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
     </control>
     <control>
       <description>Series Un-Watched Icon</description>
@@ -786,7 +786,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatched</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)+!Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
+      <visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
     </control>
     <control>
       <description>Series Not Available and Watched Icon</description>
@@ -797,7 +797,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_WatchedNA</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)+Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
+      <visible>facadeview.list+Control.IsVisible(1237)+Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
     </control>
     <control>
       <description>Series Not Available and Un-Watched Icon</description>
@@ -808,7 +808,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatchedNA</texture>
-      <visible>Control.IsVisible(1235)+Control.IsVisible(1237)+!Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
+      <visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)</visible>
     </control>
 	
     <!--**********Watched/Unwatched Icons Episodes*************-->
@@ -821,7 +821,7 @@
       <width>32</width>
       <height>39</height>
       <texture>#overlaywubg</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control>
       <description>Episode Watched Icon</description>
@@ -832,7 +832,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_Watched</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Episode Un-Watched Icon</description>
@@ -843,7 +843,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatched</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Episode Not Available and Watched Icon</description>
@@ -854,7 +854,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_WatchedNA</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	 <control>
       <description>Episode Not Available and Un-Watched Icon</description>
@@ -865,7 +865,7 @@
       <width>96</width>
       <height>24</height>
       <texture>#tvseries_UnWatchedNA</texture>
-      <visible>Control.IsVisible(1239)+Control.IsVisible(1235)+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
      <!--      :: HIDDEN MENU ::      -->
     <import>TVSeries.HiddenMenu.xml</import>
@@ -963,8 +963,7 @@
 			<showFolder>no</showFolder>
 			<showBackGround>no</showBackGround>
 			<showInfoImage>no</showInfoImage>
-			<thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
-			<thumbAnimation effect="zoom" start="140,140" end="100,100" time="100"></thumbAnimation>
+			<thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>			
 		</control>
         <control>
           <description>Textlist (series and/or seasons if set and Episodes)</description>
@@ -1012,7 +1011,7 @@
       <width>616</width>
       <height>325</height>
       <texture>mpinfo_filmbox.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
 	<control>
       <description>Movie Title</description>
@@ -1024,7 +1023,7 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>FFffffff</textcolor>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
 	<control>
       <description>TVDB Series Rating Stars</description>
@@ -1035,7 +1034,7 @@
       <width>180</width>
       <height>18</height>
       <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
 	<control Style="smallTitleB">
 	  <id>0</id>
@@ -1043,7 +1042,7 @@
       <label>#TVSeries.Series.InfoPanelLine1Key</label>
       <posX>686</posX>
       <posY>485</posY>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>
@@ -1052,7 +1051,7 @@
       <posX>825</posX>
       <posY>485</posY>
       <width>580</width>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="smallTitleB">
 	  <id>0</id>
@@ -1060,7 +1059,7 @@
       <label>#TVSeries.Series.InfoPanelLine2Key</label>
       <posX>686</posX>
       <posY>510</posY>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>
@@ -1068,7 +1067,7 @@
       <label>#TVSeries.Series.InfoPanelLine2Value</label>
       <posX>825</posX>
       <posY>510</posY>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="smallTitleB">
 	  <id>0</id>
@@ -1076,7 +1075,7 @@
       <label>#TVSeries.Series.InfoPanelLine4Key</label>
       <posX>686</posX>
       <posY>535</posY>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control Style="smallTitle">
 	  <id>0</id>
@@ -1085,7 +1084,7 @@
       <posX>825</posX>
       <posY>535</posY>
       <width>580</width>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
     <control>
       <description>Summary</description>
@@ -1100,7 +1099,7 @@
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
 	  <scrollStartDelaySec>8</scrollStartDelaySec>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1242)+Control.IsVisible(1237)]|Control.IsVisible(1238)]</visible>
     </control>
 	
 	<!--**********Watched/Unwatched Icons Series/Seaosn Filmstrip*************-->	
@@ -1113,7 +1112,7 @@
       <width>96</width>
       <height>24</height>
       <texture>tvseries_Watched.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Un-Watched Icon</description>
@@ -1124,7 +1123,7 @@
       <width>96</width>
       <height>24</height>
       <texture>tvseries_UnWatched.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Not Available and Watched Icon</description>
@@ -1135,7 +1134,7 @@
       <width>96</width>
       <height>24</height>
       <texture>tvseries_WatchedNA.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
     <control>
       <description>Series Not Available and Un-Watched Icon</description>
@@ -1146,7 +1145,7 @@
       <width>96</width>
       <height>24</height>
       <texture>tvseries_UnWatchedNA.png</texture>
-      <visible>Control.IsVisible(1236)+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+      <visible>!facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
     </control>
 	
     <!--
