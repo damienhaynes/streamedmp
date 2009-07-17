@@ -3,11 +3,14 @@
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#default.color:ffFFFFFF</define>    <!-- Normal List Color                  Default: ffFFFFFF (White)   -->
-  <define>#watched.color:ffFFFFFF</define>    <!-- Watched List Color                 Default: ffFFFFFF (White)    -->
-  <define>#notpresent.color:ffCCCCCC</define> <!-- File Not Present in List Color     Default: ffCCCCCC (Light Grey)  -->
-  <define>#shadow.dark:ff111111</define>      <!-- Shadows under blue/grey text       Default: ff111111           -->
-  <define>#shadow.light:ff222222</define>     <!-- Shadows under wite text            Default: ff222222           -->
+  
+  <define>#shadow.dark:ff111111</define>      	<!-- Shadows under blue/grey text       	Default: ff111111           -->
+  <define>#shadow.light:ff222222</define>     	<!-- Shadows under wite text            		Default: ff222222           -->
+  
+  <!-- List Colors -->
+  <define>#default.color:ffFFFFFF</define>    	<!-- Normal List Color                  		Default: ffFFFFFF (White)   -->
+  <define>#watched.color:ff808080</define>    	<!-- Watched List Color                 		Default: ff808080 (Light Grey)    -->
+  <define>#notpresent.color:ffFFA075</define> 	<!-- File not Present in List Color     		Default: ffFFA075     -->
   
   <!-- Setup will replace the *.png with a '-' if user does not want Icons on Artwork -->
   <define>#overlaywubg:overlaywubg.png</define>
@@ -1232,11 +1235,11 @@
           <spinCanFocus>no</spinCanFocus>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>widebannerborder.png</imageFolderFocus>
-          <downloadColor>#default.color</downloadColor>   <!-- not watched color (normal) -->
-          <remoteColor>#watched.color</remoteColor>       <!-- watched color -->
-          <textcolor>#notpresent.color</textcolor>        <!-- local file not present color -->
-          <textcolor2>#default.color</textcolor2>         <!-- local file not present color column 2-->
-          <textcolor3>#default.color</textcolor3>         <!-- local file not present color column 3-->
+          <playedColor>#watched.color</playedColor>   			<!-- not watched color (normal) -->
+          <remoteColor>#notpresent.color</remoteColor>       	<!-- file not local color -->
+          <textcolor>#default.color</textcolor>        			<!-- not watched color (normal) -->
+          <textcolor2>#default.color</textcolor2>         
+          <textcolor3>#default.color</textcolor3>         
           <keepaspectratio>no</keepaspectratio>
           <enableFocusZoom>no</enableFocusZoom>
           <scrollOffset>1</scrollOffset>
@@ -1312,12 +1315,12 @@
           <font>mediastream12c</font>
           <font2>mediastream9c</font2>
 		  <font3>mediastream9c</font3>
-          <textureFocus>#textureFocus</textureFocus>
-          <downloadColor>#default.color</downloadColor>
-          <remoteColor>#watched.color</remoteColor>
-          <textcolor>#notpresent.color</textcolor>
-          <textcolor2>#notpresent.color</textcolor2>
-          <textcolor3>#notpresent.color</textcolor3>
+          <textureFocus>#textureFocus</textureFocus>          
+          <playedColor>#watched.color</playedColor>
+		  <remoteColor>#notpresent.color</remoteColor>
+          <textcolor>#default.color</textcolor>
+          <textcolor2>#default.color</textcolor2>
+          <textcolor3>#default.color</textcolor3>
           <spinPosX>1249</spinPosX>
           <spinPosY>1690</spinPosY>
           <spinAlign>Right</spinAlign>
