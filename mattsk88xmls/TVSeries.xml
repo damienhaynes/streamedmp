@@ -6,9 +6,11 @@
   
   <define>#title.color:ffFFFFFF</define>		<!-- Title Color	 			Default: ffFFFFFF -->  
   <define>#text.color:ffFFFFFF</define>			<!-- Text Color				Default: ffFFFFFF -->  
-  <define>#default.color:ffFFFFFF</define>		<!-- Normal List Color                  	Default: ffFFFFFF -->  
-  <define>#watched.color:ffFFFFFF</define>		<!-- Watched List Color                 	Default: ff808080 --> 
-  <define>#notpresent.color:ffF87B72</define>	<!-- File Not Present in List Color     	Default: ffF87B72 -->
+  
+  <!-- List Colors -->
+  <define>#default.color:ffFFFFFF</define>    	<!-- Normal List Color                  	Default: ffFFFFFF (White)   -->
+  <define>#watched.color:ff808080</define>    	<!-- Watched List Color                 	Default: ff808080 (Light Grey)    -->
+  <define>#notpresent.color:ffFFA075</define> 	<!-- File not Present in List Color     	Default: ffFFA075     -->
   
   <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
   
@@ -902,11 +904,12 @@
           <spinPosY>720</spinPosY>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>widebannerborder.png</imageFolderFocus>
-          <downloadColor>#default.color</downloadColor>
-          <!-- not watched color (normal) -->
-          <remoteColor>#watched.color</remoteColor>
           <!-- watched color -->
-          <textcolor>#notpresent.color</textcolor>
+		  <playedColor>#watched.color</playedColor>
+          <!-- file not local color (normal) -->
+          <remoteColor>#notpresent.color</remoteColor>
+          <!-- unwatched color -->
+          <textcolor>#default.color</textcolor>
           <!-- local file not present color -->
           <textcolor2>#default.color</textcolor2>
           <!-- local file not present color column 2-->
@@ -984,11 +987,11 @@
           <font>mediastream11c</font>
           <font3>mediastream9c</font3>          
           <textureFocus>listbg_detail_fo.png</textureFocus>	
-		  <downloadColor>#default.color</downloadColor>
-          <remoteColor>#watched.color</remoteColor>
-          <textcolor>#notpresent.color</textcolor>
-          <textcolor2>#notpresent.color</textcolor2>
-		  <textcolor3>#notpresent.color</textcolor3>
+		  <playedColor>#watched.color</playedColor>
+          <remoteColor>#notpresent.color</remoteColor>
+          <textcolor>#default.color</textcolor>
+          <textcolor2>#default.color</textcolor2>
+		  <textcolor3>#default.color</textcolor3>
           <spinCanFocus>no</spinCanFocus>
           <IconYOff>12</IconYOff>
           <IconXOff>390</IconXOff>
