@@ -1,167 +1,258 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>508</id>
-  <defaultcontrol>20</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <controls>
-    <import>common.time.xml</import>
-    <control>
-      <type>image</type>
-      <description>background image</description>
-      <id>1</id>
-    </control>
+        <id>508</id>
+        <defaultcontrol>20</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <controls>
+                <control>
+                        <description>music background image</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>hover_my music.png</texture>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250" delay="300">WindowClose</animation>
+                </control>
+                <control>
+                        <description>music overlay image</description>
+                        <type>image</type>
+                        <id>1</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>mainoverlay.png</texture>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250" delay="300">WindowClose</animation>
+                </control>
+                <control>
+                        <type>image</type>
+                        <description>Album Art image</description>
+                        <id>10</id>
+                        <posX>45</posX>
+                        <posY>260</posY>
+                        <width>250</width>
+                        <height>250</height>
+                        <texture>-</texture>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
 
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
-      <layout>StackLayout</layout>
-      <control>
-        <type>button</type>
-        <description>Cancel button</description>
-        <id>21</id>
-        <onleft>21</onleft>
-        <onright>25</onright>
-        <onup>21</onup>
-        <ondown>20</ondown>
-        <label>222</label>
-      </control>
-      <control>
-        <type>button</type>
-        <description>Skip button</description>
-        <id>20</id>
-        <onleft>20</onleft>
-        <onright>25</onright>
-        <onup>21</onup>
-        <ondown>21</ondown>
-        <label>4520</label>
-      </control>
-    </control>
-    <control>
-      <type>image</type>
-      <description>Title image</description>
-      <id>1</id>
-      <posX>15</posX>
-      <posY>247</posY>
-      <width>280</width>
-      <height>280</height>>
-      <texture>album_preview_thumb_background.png</texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>Album Art image</description>
-      <id>10</id>
-      <posX>30</posX>
-      <posY>261</posY>
-      <width>245</width>
-      <height>245</height>
-      <texture>-</texture>
-    </control>
-    <control>
-      <type>image</type>
-      <description>Amazon Logo image</description>
-      <id>30</id>
-      <posX>121</posX>
-      <posY>661</posY>
-      <width>125</width>
-      <height>60</height>
-      <texture>-</texture>
-      <centered>yes</centered>
-      <keepaspectratio>yes</keepaspectratio>
-    </control>
-    <control>
-      <type>label</type>
-      <id>1</id>
-      <posX>1286</posX>
-      <posY>10</posY>
-      <label>2</label>
-      <font>font18</font>
-      <textcolor>20ffffff</textcolor>
-      <align>right</align>
-    </control>
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>11</id>
-      <posX>1271</posX>
-      <posY>35</posY>
-      <width>950</width>
-      <font>font14</font>
-      <label>4519</label>
-      <align>right</align>
-    </control>
-    <control>
-      <type>image</type>
-      <id>1</id>
-      <posX>1306</posX>
-      <posY>20</posY>
-      <width>40</width>
-      <height>40</height>
-      <texture>hover_question.png</texture>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Artist value</description>
-      <id>12</id>
-      <posX>30</posX>
-      <posY>500</posY>
-      <width>250</width>
-      <label>-</label>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Album value</description>
-      <id>13</id>
-      <posX>30</posX>
-      <posY>530</posY>
-      <width>250</width>
-      <label>-</label>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Release year value</description>
-      <id>14</id>
-      <posX>30</posX>
-      <posY>560</posY>
-      <label>-</label>
-    </control>
-    <control>
-      <type>label</type>
-      <description>No matches label</description>
-      <id>15</id>
-      <posX>30</posX>
-      <posY>590</posY>
-      <label>4516</label>
-    </control>
-    <control>
-      <type>listcontrol</type>
-      <description>album view listcontrol</description>
-      <id>25</id>
-      <onleft>20</onleft>
-      <onright>25</onright>
-      <onup>25</onup>
-      <ondown>25</ondown>
-      <font>font12</font>
-      <font2>font12</font2>
-      <selectedColor>FFFF6600</selectedColor>
-      <textcolor>ffffffff</textcolor>
-      <selectedColor2>FFFF6600</selectedColor2>
-      <textcolor2>ffffffff</textcolor2>
-      <textXOff>15</textXOff>
-      <textYOff>15</textYOff>
-      <textXOff2>1030</textXOff2>
-      <textYOff2>45</textYOff2>
-      <itemWidth>72</itemWidth>
-      <itemHeight>72</itemHeight>
-      <spaceBetweenItems>0</spaceBetweenItems>
-      <textureHeight>96</textureHeight>
-      <scrollOffset>1</scrollOffset>
-      <textureFocus>album_background_focus.png</textureFocus>
-      <textureNoFocus>album_background_nofocus.png</textureNoFocus>
-      <spinPosY>560</spinPosY>
-    </control>
-  </controls>
+                <control>
+                        <type>image</type>
+                        <description>Amazon Logo image</description>
+                        <id>3</id>
+                        <posX>113</posX>
+                        <posY>620</posY>
+                        <width>167</width>
+                        <height>56</height>
+                        <texture>amazonlogo.png</texture>
+                        <centered>yes</centered>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>Album Cover Art Label</description>
+                        <id>11</id>
+                        <posX>25</posX>
+                        <posY>260</posY>
+                        <label>4519</label>
+                        <font>mediastream10c</font>
+                        <textcolor>ffb2d4f5</textcolor>
+                        <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Artist value</description>
+                        <id>12</id>
+                        <posX>320</posX>
+                        <posY>260</posY>
+                        <width>300</width>
+                        <label>-</label>
+                        <font>mediastream10tc</font>
+                        <textcolor>ffffffff</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>fadelabel</type>
+                        <description>Album value</description>
+                        <id>13</id>
+                        <posX>320</posX>
+                        <posY>290</posY>
+                        <width>300</width>
+                        <label>-</label>
+                        <font>mediastream10tc</font>
+                        <textcolor>ffffffff</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>Release year value</description>
+                        <id>14</id>
+                        <posX>320</posX>
+                        <posY>320</posY>
+                        <label>-</label>
+                        <font>mediastream10tc</font>
+                        <textcolor>ffffffff</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <description>No matches label</description>
+                        <id>15</id>
+                        <posX>320</posX>
+                        <posY>260</posY>
+                        <label>4516</label>
+                        <font>mediastream16tc</font>
+                        <textcolor>ffffffff</textcolor>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Media Count Background</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>1013</posX>
+                        <posY>684</posY>
+                        <width>260</width>
+                        <height>32</height>
+                        <texture>mediacountbg_Spin.png</texture>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Media Count Label</description>
+                        <type>label</type>
+                        <label>PAGE:</label>
+                        <id>0</id>
+                        <posX>1023</posX>
+                        <posY>689</posY>
+                        <font>mediastream12tc</font>
+                        <textcolor>ff909090</textcolor>
+                        <visible>yes</visible>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <description>album view listcontrol</description>
+                        <type>listcontrol</type>
+                        <id>25</id>
+                        <posX>620</posX>
+                        <posY>240</posY>
+                        <height>480</height>
+                        <width>660</width>
+                        <selectedColor>80000000</selectedColor>
+                        <textcolor>ffffffff</textcolor>
+                        <selectedColor2>ffffffff</selectedColor2>
+                        <textcolor2>ffffffff</textcolor2>
+                        <textXOff>25</textXOff>
+                        <textXOff2>650</textXOff2>
+                        <textXOff3>158</textXOff3>
+                        <textYOff2>45</textYOff2>
+                        <textYOff3>47</textYOff3>
+                        <font>font14</font>
+                        <font2>mediastream10c</font2>
+                        <font3>mediastream10c</font3>
+                        <itemWidth>80</itemWidth>
+                        <itemHeight>80</itemHeight>
+                        <IconXOff>3</IconXOff>
+                        <IconYOff>2</IconYOff>
+                        <PinIconWidth>20</PinIconWidth>
+                        <PinIconHeight>20</PinIconHeight>
+                        <PinIconXOff>97</PinIconXOff>
+                        <PinIconYOff>32</PinIconYOff>
+                        <spaceBetweenItems>0</spaceBetweenItems>
+                        <textureHeight>84</textureHeight>
+                        <scrollOffset>1</scrollOffset>
+                        <spinPosX>1175</spinPosX>
+                        <spinPosY>682</spinPosY>
+                        <spinAlign>Right</spinAlign>
+                        <textureUp>arrow_round_up_nofocus.png</textureUp>
+                        <textureDown>arrow_round_down_nofocus.png</textureDown>
+                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                        <spinWidth>50</spinWidth>
+                        <spinHeight>37</spinHeight>
+                        <onleft>21</onleft>
+                        <onright>21</onright>
+                        <unfocusedAlpha>0xFF</unfocusedAlpha>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>button</type>
+                        <description>Skip button</description>
+                        <id>20</id>
+                        <posX>45</posX>
+                        <posY>520</posY>
+                        <onleft>20</onleft>
+                        <onright>25</onright>
+                        <onup>20</onup>
+                        <ondown>21</ondown>
+                        <label>4520</label>
+                        <width>234</width>
+                        <height>35</height>
+                        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+                        <textYOff>1</textYOff>
+                        <textalign>center</textalign>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <control>
+                        <type>button</type>
+                        <description>Cancel button</description>
+                        <id>21</id>
+                        <posX>45</posX>
+                        <posY>560</posY>
+                        <onleft>21</onleft>
+                        <onright>25</onright>
+                        <onup>20</onup>
+                        <ondown>21</ondown>
+                        <label>222</label>
+                        <width>234</width>
+                        <height>35</height>
+                        <textYOff>1</textYOff>
+                        
+                        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
+                        <textalign>center</textalign>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
+                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                </control>
+                <import>common.window.xml</import>
+                <import>common.overlays.xml</import>
+                <import>common.time.xml</import>
+        </controls>
 </window>
