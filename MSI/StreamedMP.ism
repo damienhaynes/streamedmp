@@ -345,8 +345,8 @@
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>spuckMovingPictures</td><td>{BACFB03F-33E0-4FE1-8147-DF08BB8F5F7E}</td><td>STREAMEDMP</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>spuckTVSeries</td><td>{08BFDAEC-37C5-4A9E-B009-CFB7CD6E97D9}</td><td>STREAMEDMP</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>spuckMovingPictures</td><td>{BACFB03F-33E0-4FE1-8147-DF08BB8F5F7E}</td><td>STREAMEDMP</td><td>8</td><td/><td>movingpictures.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>spuckTVSeries</td><td>{08BFDAEC-37C5-4A9E-B009-CFB7CD6E97D9}</td><td>STREAMEDMP</td><td>8</td><td/><td>tvseries.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvguide08Rows</td><td>{8D503798-43EA-4AA4-8E11-A51BD601EEB9}</td><td>STREAMEDMP</td><td>8</td><td/><td>mytvguide.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvguide10Rows</td><td>{F7F3E5B1-4467-4E28-A535-672F0453A272}</td><td>STREAMEDMP</td><td>8</td><td/><td>mytvguide.xml2</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvguide12Rows</td><td>{EBFB3D80-FCD9-4049-9A41-77C278802010}</td><td>STREAMEDMP</td><td>8</td><td/><td>mytvguide.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1491,27 +1491,32 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>default.ttf</td><td>fontsFluidBody</td><td>Default.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\Default.ttf</td><td>1</td><td/></row>
 		<row><td>defaultcaps.ttf</td><td>fontsFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>1</td><td/></row>
-		<row><td>dialogtvguide.xml</td><td>tvguide10Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\10 rows\dialogTvGuide.xml</td><td>1</td><td/></row>
+		<row><td>dialogtvguide.xml</td><td>tvguide10Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\dialogTvGuide.xml</td><td>1</td><td/></row>
 		<row><td>dialogtvguide.xml1</td><td>tvguide08Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\8 rows\dialogTvGuide.xml</td><td>1</td><td/></row>
 		<row><td>dialogtvguide.xml2</td><td>tvguide12Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\dialogTvGuide.xml</td><td>1</td><td/></row>
-		<row><td>fonts.xml</td><td>fontsXMLDefault</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\default\fonts.xml</td><td>1</td><td/></row>
+		<row><td>fonts.xml</td><td>fontsXMLDefault</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fonts.xml</td><td>1</td><td/></row>
 		<row><td>fonts.xml1</td><td>fontsXMLLarge</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\large\fonts.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
 		<row><td>home.url</td><td>webHome</td><td>Home.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Home.url</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\movingpictures\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
+		<row><td>movingpictures.facade.xml</td><td>spuckMovingPictures</td><td>MOVING~1.XML|movingpictures.facade.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.facade.xml</td><td>1</td><td/></row>
+		<row><td>movingpictures.mediainfo.xml</td><td>spuckMovingPictures</td><td>MOVING~1.XML|movingpictures.mediainfo.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.mediainfo.xml</td><td>1</td><td/></row>
+		<row><td>movingpictures.overlay.xml</td><td>spuckMovingPictures</td><td>MOVING~1.XML|movingpictures.overlay.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.overlay.xml</td><td>1</td><td/></row>
+		<row><td>movingpictures.xml</td><td>spuckMovingPictures</td><td>MOVING~1.XML|movingpictures.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.xml</td><td>1</td><td/></row>
 		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\rss\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;PLUGINS&gt;\tvseries\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml</td><td>tvguide08Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\8 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
-		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\10 rows\mytvguide.xml</td><td>1</td><td/></row>
+		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>streamedmp_editor.exe</td><td>menuEditor</td><td>STREAM~1.EXE|streamedmp_editor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\editor\streamedmp_editor\bin\release\streamedmp_editor.exe</td><td>1</td><td/></row>
 		<row><td>streamedmp_tvseries_logos.ps</td><td>photoshopPSD</td><td>STREAM~1.PSD|StreamedMP TVSeries Logos.psd</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\custom tvseries logos\StreamedMP TVSeries Logos.psd</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
-		<row><td>tvseries_seasonlisticon.png</td><td>tvseriesMultiImageIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvserieslisticons\multiicon\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
+		<row><td>tvseries.xml</td><td>spuckTVSeries</td><td>TVSeries.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\TVSeries.xml</td><td>1</td><td/></row>
+		<row><td>tvseries_seasonlisticon.png</td><td>tvseriesMultiImageIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
 		<row><td>tvseries_seasonlisticon.png1</td><td>tvseriesSingleImageIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvserieslisticons\singleicon\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
-		<row><td>tvseries_serieslisticon.png</td><td>tvseriesMultiImageIcons</td><td>TVSERI~1.PNG|tvseries_SeriesListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvserieslisticons\multiicon\tvseries_SeriesListIcon.png</td><td>1</td><td/></row>
+		<row><td>tvseries_serieslisticon.png</td><td>tvseriesMultiImageIcons</td><td>TVSERI~1.PNG|tvseries_SeriesListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvseries_SeriesListIcon.png</td><td>1</td><td/></row>
 		<row><td>tvseries_serieslisticon.png1</td><td>tvseriesSingleImageIcons</td><td>TVSERI~1.PNG|tvseries_SeriesListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\tvserieslisticons\singleicon\tvseries_SeriesListIcon.png</td><td>1</td><td/></row>
 		<row><td>updates.url</td><td>webUpdates</td><td>Updates.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Updates.url</td><td>1</td><td/></row>
 		<row><td>wiki.url</td><td>webWiki</td><td>Wiki.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Wiki.url</td><td>1</td><td/></row>
@@ -1862,9 +1867,7 @@
 		<row><td>pluginTVSeriesLanguages</td><td>&lt;PLUGINS&gt;\tvseries\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>skinMedia</td><td>&lt;SKINFILES&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td>tvseries_SeriesListIcon.png,tvseries_SeasonListIcon.png</td><td>2</td></row>
 		<row><td>skinSounds</td><td>&lt;SKINFILES&gt;\sounds</td><td>4</td><td>*.wav,*.mp3,*.wma</td><td/><td>2</td></row>
-		<row><td>skinXML</td><td>&lt;SKINFILES&gt;</td><td>4</td><td>*.xml</td><td/><td>0</td></row>
-		<row><td>spuckMovingPictures</td><td>&lt;SKINFILES&gt;\spuckxmls</td><td>4</td><td>movingpictures*.xml</td><td/><td>0</td></row>
-		<row><td>spuckTVSeries</td><td>&lt;SKINFILES&gt;\spuckxmls</td><td>4</td><td>TVSeries*.xml</td><td/><td>0</td></row>
+		<row><td>skinXML</td><td>&lt;SKINFILES&gt;</td><td>4</td><td>*.xml</td><td>fonts.xml, movingpictures.xml,movingpictures.overlay.xml, movingpictures.mediainfo.xml, movingpictures.facade.xml,tvseries.xml, mytvguide.xml, dialogTvGuide,xml</td><td>0</td></row>
 		<row><td>tvlogosAustralia</td><td>&lt;PLUGINS&gt;\tv\logos\australia</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>tvlogosCanada</td><td>&lt;PLUGINS&gt;\tv\logos\canada</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>tvlogosGermany</td><td>&lt;PLUGINS&gt;\tv\logos\germany</td><td>4</td><td>*.png</td><td/><td>0</td></row>
@@ -4432,9 +4435,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUAUABsAHUAZwBpAG4AcwA=
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{636A0E41-4298-414F-A0ED-E166C13E8F52}</td><td/></row>
+		<row><td>ProductCode</td><td>{D32D29DC-97E5-4CB6-A2F8-0A683BBBC2E5}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.0.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.522.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
