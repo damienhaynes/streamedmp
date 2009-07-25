@@ -1,227 +1,233 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>501</id>
-  <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.label:134</define>
-  <define>#header.image:-</define>
-  <define>#header.hover:hover_my music.png</define>
-  <controls>
-    <control>
-      <description>music background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_my music.png</texture>
-    </control>
-    <control>
-      <description>music overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
-    </control>
-    <control>
-      <id>204</id>
-      <type>image</type>
-      <posX>170</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
-      <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
-      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <id>204</id>
-      <type>image</type>
-      <posX>170</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
-      <texture>albumnocover.png</texture>
-      <visible>facadeview.list+!control.hasthumb(204)|facadeview.album+!control.hasthumb(204)</visible>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <id>204</id>
-      <type>image</type>
-      <posX>755</posX>
-      <posY>280</posY>
-      <width>348</width>
-      <height>348</height>
-      <keepaspectratio>true</keepaspectratio>
-      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-      <visible>facadeview.smallicons | facadeview.largeicons</visible>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <control>
-        <type>image</type>
-        <posX>1002</posX>
-        <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>VIEW OPTIONS</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>PLAYLIST</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>337</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>JUMP TO</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>421</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-        <control>
-          <description>View-As</description>
-          <type>button</type>
-          <id>2</id>
-          <label>100</label>
-          <onup>21</onup>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>Sort</description>
-          <type>sortbutton</type>
-          <id>3</id>
-          <label>103</label>
-        </control>
-        <control>
-          <description>Switch View</description>
-          <type>button</type>
-          <id>6</id>
-          <label>457</label>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Current Playlist</description>
-          <type>button</type>
-          <id>20</id>
-          <label>4555</label>
-          <action>33</action>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>My Playlists</description>
-          <type>button</type>
-          <id>10</id>
-          <label>983</label>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Now playing button</description>
-          <type>button</type>
-          <id>11</id>
-          <label>4540</label>
-          <onleft>50</onleft>
-          <hyperlink>510</hyperlink>
-        </control>
-        <control>
-          <description>music settings button</description>
-          <type>button</type>
-          <id>12</id>
-          <label>Music Settings</label>
-          <onleft>50</onleft>
-          <hyperlink>14</hyperlink>
-        </control>
-        <control>
-          <description>Radio</description>
-          <type>button</type>
-          <id>18</id>
-          <label>665</label>
-          <onleft>50</onleft>
-          <hyperlink>30</hyperlink>
-        </control>
-        <control>
-          <description>My Lyrics</description>
-          <type>button</type>
-          <id>16</id>
-          <label>Lyrics</label>
-          <onleft>50</onleft>
-          <hyperlink>90478</hyperlink>
-          <visible>plugin.isenabled(My Lyrics)</visible>
-        </control>
-		<control>
-          <description>Global Search</description>
-          <type>button</type>
-          <id>14</id>
-          <onleft>50</onleft>
-          <label>Global Search</label>
-          <hyperlink>30885</hyperlink>
-          <visible>plugin.isenabled(Global search)</visible>
-        </control>        
-      </control>
-    </control>
-    
-    <import>common.facade.music.xml</import>
-    <import>common.overlays.xml</import>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
-  </controls>
+        <id>501</id>
+        <defaultcontrol>2</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <define>#header.label:134</define>
+        <define>#header.image:-</define>
+        <define>#header.hover:hover_my music.png</define>
+        <controls>
+                <control>
+                        <description>music background image</description>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>hover_my music.png</texture>
+                </control>
+                <control>
+                        <description>music overlay image</description>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>mainoverlay.png</texture>
+                </control>
+                <control>
+                        <id>204</id>
+                        <type>image</type>
+                        <posX>170</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <id>204</id>
+                        <type>image</type>
+                        <posX>170</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <texture>albumnocover.png</texture>
+                        <visible>facadeview.list+!control.hasthumb(204)|facadeview.album+!control.hasthumb(204)</visible>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <id>204</id>
+                        <type>image</type>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <keepaspectratio>true</keepaspectratio>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                        <visible>facadeview.smallicons | facadeview.largeicons</visible>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <type>actiongroup</type>
+                        <description>action menu</description>
+                        <defaultcontrol>2</defaultcontrol>
+                        <onexit>50</onexit>
+                        <buttonX>1231</buttonX>
+                        <buttonY>55</buttonY>
+                        <buttonwidth>49</buttonwidth>
+                        <buttonheight>153</buttonheight>
+                        <textureFocus>Action_menu.png</textureFocus>
+                        <textureNoFocus>Action_menu.png</textureNoFocus>
+                        <dimColor>00ffffff</dimColor>
+                        <control>
+                                <type>image</type>
+                                <posX>1002</posX>
+                                <posY>0</posY>
+                                <width>278</width>
+                                <height>720</height>
+                                <texture>hiddenmenu_right.png</texture>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>VIEW OPTIONS</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>225</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>PLAYLIST</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>337</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>JUMP TO</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>421</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <type>group</type>
+                                <description>group element</description>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posX>1040</posX>
+                                <posY>250</posY>
+                                <width>220</width>
+                                <height>720</height>
+                                <layout>StackLayout</layout>
+                                <control>
+                                        <description>View-As</description>
+                                        <type>button</type>
+                                        <id>2</id>
+                                        <label>100</label>
+                                        <onup>21</onup>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Sort</description>
+                                        <type>sortbutton</type>
+                                        <id>3</id>
+                                        <label>103</label>
+                                </control>
+                                <control>
+                                        <description>Switch View</description>
+                                        <type>button</type>
+                                        <id>6</id>
+                                        <label>457</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Current Playlist</description>
+                                        <type>button</type>
+                                        <id>20</id>
+                                        <label>4555</label>
+                                        <action>33</action>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>My Playlists</description>
+                                        <type>button</type>
+                                        <id>10</id>
+                                        <label>983</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Now playing button</description>
+                                        <type>button</type>
+                                        <id>11</id>
+                                        <label>4540</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>510</hyperlink>
+                                </control>
+                                <control>
+                                        <description>music settings button</description>
+                                        <type>button</type>
+                                        <id>12</id>
+                                        <label>Music Settings</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>14</hyperlink>
+                                </control>
+                                <control>
+                                        <description>Radio</description>
+                                        <type>button</type>
+                                        <id>18</id>
+                                        <label>665</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>30</hyperlink>
+                                </control>
+                                <control>
+                                        <description>My Lyrics</description>
+                                        <type>button</type>
+                                        <id>16</id>
+                                        <label>Lyrics</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>90478</hyperlink>
+                                        <visible>plugin.isenabled(My Lyrics)</visible>
+                                </control>
+                                <control>
+                                        <description>Global Search</description>
+                                        <type>button</type>
+                                        <id>14</id>
+                                        <onleft>50</onleft>
+                                        <label>Global Search</label>
+                                        <hyperlink>30885</hyperlink>
+                                        <visible>plugin.isenabled(Global search)</visible>
+                                </control>
+                        </control>
+                </control>
+
+                <import>common.facade.music.xml</import>
+                <import>common.overlays.xml</import>
+                <import>common.window.xml</import>
+                <import>common.time.xml</import>
+        </controls>
 </window>
