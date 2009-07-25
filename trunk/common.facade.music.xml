@@ -73,7 +73,7 @@
           <id>50</id>
           <onleft>2</onleft>
           <onright>2</onright>
-		  <ondown>2</ondown>
+		  <ondown>2</ondown>		  
           <onup>2</onup>
 		  <spinWidth>16</spinWidth>
 	      <spinHeight>16</spinHeight>
@@ -121,12 +121,14 @@
           <spinPosY>6</spinPosY>
 		  <spinAlign>Right</spinAlign>
 		  <spinColor>ff006698</spinColor>
+		  <spinCanFocus>no</spinCanFocus>
 		  <textureUp>-</textureUp>
-		  <textureDown>-</textureDown>		  
+		  <textureDown>-</textureDown>	
+		  <textureUpFocus>-</textureUpFocus>
+		  <textureDownFocus>-</textureDownFocus>		  
           <onleft>2</onleft>
-          <onright>2</onright>
-          <onup>2</onup>
-          <ondown>2</ondown>		  
+          <onright>2</onright> 
+		  <onup>2</onup>		  
           <scrollOffset>2</scrollOffset>
           <width>1200</width>
           <height>576</height>
@@ -155,8 +157,7 @@
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
           <id>50</id>
-          <onleft>2</onleft>
-          <onright>2</onright>
+          <onleft>2</onleft>        
           <spinPosX>1249</spinPosX>
           <spinPosY>690</spinPosY>
           <spinAlign>Right</spinAlign>
