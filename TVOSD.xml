@@ -148,7 +148,7 @@
                         <posX>183</posX>
                         <posY>676</posY>
                         <width>928</width>
-                        <height>20</height> 
+                        <height>20</height>
                         <lefttexture>osdprogressleft_e.png</lefttexture>
                         <midtexture>osdprogressmid_e.png</midtexture>
                         <righttexture>-</righttexture>
@@ -187,7 +187,7 @@
                 <control>
                         <description>Start Time Info</description>
                         <type>label</type>
-                        <id>101</id>
+                        <!--<id>101</id>-->
                         <posX>195</posX>
                         <posY>695</posY>
                         <label>#currentplaytime</label>
@@ -198,7 +198,7 @@
                 <control>
                         <description>End Time Info</description>
                         <type>label</type>
-                        <id>102</id>
+                        <!--<id>102</id>-->
                         <posX>1093</posX>
                         <posY>695</posY>
                         <label>#currentremaining</label>
@@ -208,84 +208,101 @@
                 </control>
                 <!-- :::::::::: MENU  :::::::::: -->
                 <control>
-                        <description>Play</description>
-                        <type>togglebutton</type>
-                        <id>213</id>
-                        <posX>58</posX>
-                        <posY>650</posY>
-                        <width>60</width>
-                        <height>60</height>
-                        <AltTextureFocus>osdpausefo.png</AltTextureFocus>
-                        <AltTextureNoFocus>osdpausenf.png</AltTextureNoFocus>
-                        <textureFocus>osdplayfo.png</textureFocus>
-                        <textureNoFocus>osdplaynf.png</textureNoFocus>
-                        <label>-</label>
-                        <font>-</font>
-                        <onleft>218</onleft>
-                        <onright>218</onright>
-                        <onup>218</onup>
-                        <ondown>218</ondown>
-                        <animation effect="fade" time="250">visiblechange</animation>
-                        <animation effect="fade" time="250">windowopen</animation>
+                        <type>group</type>
+                        <description>group element</description>
+                        <posX>1027</posX>
+                        <posY>560</posY>
+                        <width>200</width>
+                        <height>52</height>
+                        <control>
+                                <description>Play</description>
+                                <type>togglebutton</type>
+                                <id>213</id>
+                                <posX>58</posX>
+                                <posY>650</posY>
+                                <width>60</width>
+                                <height>60</height>
+                                <AltTextureFocus>osdpausefo.png</AltTextureFocus>
+                                <AltTextureNoFocus>osdpausenf.png</AltTextureNoFocus>
+                                <textureFocus>osdplayfo.png</textureFocus>
+                                <textureNoFocus>osdplaynf.png</textureNoFocus>
+                                <label>-</label>
+                                <font>-</font>
+                                <onleft>218</onleft>
+                                <onright>218</onright>
+                                <onup>218</onup>
+                                <ondown>218</ondown>
+                                <visible>yes</visible>
+                                <animation effect="fade" time="250">visiblechange</animation>
+                                <animation effect="fade" time="250">windowopen</animation>
+                        </control>
+                        <control>
+                                <description>Subtitles</description>
+                                <type>togglebutton</type>
+                                <id>218</id>
+                                <posX>1115</posX>
+                                <posY>510</posY>
+                                <width>40</width>
+                                <height>40</height>
+                                <AltTextureFocus>osdvizfo.png</AltTextureFocus>
+                                <AltTextureNoFocus>osdviznf.png</AltTextureNoFocus>
+                                <textureFocus>osdvizfo.png</textureFocus>
+                                <textureNoFocus>osdviznf.png</textureNoFocus>
+                                <label>-</label>
+                                <font>-</font>
+                                <onleft>213</onleft>
+                                <onright>220</onright>
+                                <onup>213</onup>
+                                <ondown>213</ondown>
+                                <visible>yes</visible>
+                                <animation effect="fade" time="250">visiblechange</animation>
+                                <animation effect="fade" time="250">windowopen</animation>
+                        </control>
+                        <control>
+                                <description>Video Menu</description>
+                                <type>togglebutton</type>
+                                <id>220</id>
+                                <posX>1165</posX>
+                                <posY>510</posY>
+                                <width>40</width>
+                                <height>40</height>
+                                <AltTextureFocus>osdvideofo.png</AltTextureFocus>
+                                <AltTextureNoFocus>osdvideonf.png</AltTextureNoFocus>
+                                <textureFocus>osdvideofo.png</textureFocus>
+                                <textureNoFocus>osdvideonf.png</textureNoFocus>
+                                <label>-</label>
+                                <font>-</font>
+                                <onleft>218</onleft>
+                                <onright>221</onright>
+                                <onup>213</onup>
+                                <ondown>213</ondown>
+                                <visible>yes</visible>
+                                <animation effect="fade" time="250">visiblechange</animation>
+                                <animation effect="fade" time="250">windowopen</animation>
+                        </control>
+                        <control>
+                                <description>Audio Menu</description>
+                                <type>togglebutton</type>
+                                <id>221</id>
+                                <posX>1215</posX>
+                                <posY>510</posY>
+                                <width>40</width>
+                                <height>40</height>
+                                <AltTextureFocus>osdaudiofo.png</AltTextureFocus>
+                                <AltTextureNoFocus>osdaudionf.png</AltTextureNoFocus>
+                                <textureFocus>osdaudiofo.png</textureFocus>
+                                <textureNoFocus>osdaudionf.png</textureNoFocus>
+                                <label>-</label>
+                                <font>-</font>
+                                <onleft>220</onleft>
+                                <onright>218</onright>
+                                <onup>213</onup>
+                                <ondown>213</ondown>
+                                <visible>yes</visible>
+                                <animation effect="fade" time="250">visiblechange</animation>
+                                <animation effect="fade" time="250">windowopen</animation>
+                        </control>
                 </control>
-                <control>
-                        <description>Subtitles</description>
-                        <type>togglebutton</type>
-                        <id>218</id>
-                        <posX>1115</posX>
-                        <posY>510</posY>
-                        <width>40</width>
-                        <height>40</height>
-                        <AltTextureFocus>osdvizfo.png</AltTextureFocus>
-                        <AltTextureNoFocus>osdviznf.png</AltTextureNoFocus>
-                        <textureFocus>osdvizfo.png</textureFocus>
-                        <textureNoFocus>osdviznf.png</textureNoFocus>
-                        <label>-</label>
-                        <font>-</font>
-                        <onleft>219</onleft>
-                        <onright>220</onright>
-                        <onup>213</onup>
-                        <ondown>213</ondown>
-                </control>
-                <control>
-                        <description>Video Menu</description>
-                        <type>togglebutton</type>
-                        <id>220</id>
-                        <posX>1165</posX>
-                        <posY>510</posY>
-                        <width>40</width>
-                        <height>40</height>
-                        <AltTextureFocus>osdvideofo.png</AltTextureFocus>
-                        <AltTextureNoFocus>osdvideonf.png</AltTextureNoFocus>
-                        <textureFocus>osdvideofo.png</textureFocus>
-                        <textureNoFocus>osdvideonf.png</textureNoFocus>
-                        <label>-</label>
-                        <font>-</font>
-                        <onleft>218</onleft>
-                        <onright>221</onright>
-                        <onup>213</onup>
-                        <ondown>213</ondown>
-                </control>
-                <control>
-                        <description>Audio Menu</description>
-                        <type>togglebutton</type>
-                        <id>221</id>
-                        <posX>1215</posX>
-                        <posY>510</posY>
-                        <width>40</width>
-                        <height>40</height>
-                        <AltTextureFocus>osdaudiofo.png</AltTextureFocus>
-                        <AltTextureNoFocus>osdaudionf.png</AltTextureNoFocus>
-                        <textureFocus>osdaudiofo.png</textureFocus>
-                        <textureNoFocus>osdaudionf.png</textureNoFocus>
-                        <label>-</label>
-                        <font>-</font>
-                        <onleft>220</onleft>
-                        <onright>218</onright>
-                        <onup>213</onup>
-                        <ondown>213</ondown>
-                </control>
-
                 <!-- :::::::::: SUBTITLES MENU :::::::::: -->
                 <control>
                         <description>Sub Menu Background (subtitles)</description>
@@ -296,7 +313,7 @@
                         <width>371</width>
                         <height>473</height>
                         <texture>osdmenubg.png</texture>
-                        <visible>no</visible>
+                        <visible>control.isvisible(800)</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -308,7 +325,7 @@
                         <label>SUBTITLES MENU</label>
                         <font>mediastream16c</font>
                         <textcolor>FFFFFFFF</textcolor>
-                        <visible>control.isvisible(302)</visible>
+                        <visible>control.isvisible(800)</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -328,9 +345,9 @@
                         <posX>948</posX>
                         <posY>89</posY>
                         <spintype>float</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>800</onup>
                         <ondown>801</ondown>
                         <onleft>800</onleft>
@@ -438,8 +455,8 @@
                         <width>371</width>
                         <height>473</height>
                         <texture>osdmenubg.png</texture>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>control.isvisible(700)</visible>
                 </control>
                 <control>
                         <description>Menu Title Label</description>
@@ -450,7 +467,7 @@
                         <label>VIDEO MENU</label>
                         <font>mediastream16c</font>
                         <textcolor>FFFFFFFF</textcolor>
-                        <visible>control.isvisible(304)</visible>
+                        <visible>control.isvisible(700)</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -461,8 +478,8 @@
                         <posY>64</posY>
                         <label>298</label>
                         <font>mediastream10tc</font>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>Video Position Slider</description>
@@ -471,15 +488,15 @@
                         <posX>948</posX>
                         <posY>89</posY>
                         <spintype>int</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>700</onup>
                         <ondown>701</ondown>
                         <onleft>700</onleft>
                         <onright>702</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>Non-Interleaved Checkbox</description>
@@ -494,8 +511,8 @@
                         <ondown>702</ondown>
                         <onleft>701</onleft>
                         <onright>701</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>No Cache Checkbox</description>
@@ -504,12 +521,14 @@
                         <posX>948</posX>
                         <posY>154</posY>
                         <label>431</label>
+                        <MarkWidth>20</MarkWidth>
+                        <MarkHeight>20</MarkHeight>
                         <onup>701</onup>
                         <ondown>703</ondown>
                         <onleft>702</onleft>
                         <onright>702</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>Adjust Framerate Checkbox</description>
@@ -522,8 +541,8 @@
                         <ondown>704</ondown>
                         <onleft>703</onleft>
                         <onright>703</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>brightness label</description>
@@ -532,8 +551,8 @@
                         <posX>948</posX>
                         <posY>214</posY>
                         <label>464</label>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>brightness</description>
@@ -542,15 +561,15 @@
                         <posX>948</posX>
                         <posY>239</posY>
                         <spintype>int</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>703</onup>
                         <ondown>705</ondown>
                         <onleft>704</onleft>
                         <onright>704</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>contrast label</description>
@@ -559,8 +578,8 @@
                         <posX>948</posX>
                         <posY>274</posY>
                         <label>465</label>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>contrast</description>
@@ -569,15 +588,15 @@
                         <posX>948</posX>
                         <posY>299</posY>
                         <spintype>int</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>704</onup>
                         <ondown>706</ondown>
                         <onleft>705</onleft>
                         <onright>705</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+                        <visible>no</visible>
                 </control>
                 <control>
                         <description>gamma label</description>
@@ -586,7 +605,6 @@
                         <posX>948</posX>
                         <posY>334</posY>
                         <label>466</label>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -596,16 +614,16 @@
                         <posX>948</posX>
                         <posY>359</posY>
                         <spintype>int</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>705</onup>
-                        <ondown>706</ondown>
+                        <ondown>750</ondown>
                         <onleft>706</onleft>
                         <onright>706</onright>
-                        <visible>no</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
+
                 <!-- :::::::::: AUDIO MENU :::::::::: -->
                 <control>
                         <description>Sub Menu Background (audio)</description>
@@ -616,7 +634,7 @@
                         <width>371</width>
                         <height>473</height>
                         <texture>osdmenubg.png</texture>
-                        <visible>no</visible>
+                        <visible>control.isvisible(500)</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -629,7 +647,7 @@
                         <!-- no string available for this one? -->
                         <font>mediastream16c</font>
                         <textcolor>FFFFFFFF</textcolor>
-                        <visible>control.isvisible(305)</visible>
+                        <visible>control.isvisible(500)</visible>
                         <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
                 </control>
                 <control>
@@ -650,9 +668,9 @@
                         <posX>948</posX>
                         <posY>89</posY>
                         <spintype>float</spintype>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>500</onup>
                         <ondown>501</ondown>
                         <onleft>501</onleft>
@@ -691,15 +709,16 @@
                         <id>400</id>
                         <posX>948</posX>
                         <posY>89</posY>
-                        <textureSliderBar>osdprogressbackv.png</textureSliderBar>
-                        <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
-                        <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
+                        <textureSliderBar>sliderbackground.png</textureSliderBar>
+                        <textureSliderNib>slidernibnf.png</textureSliderNib>
+                        <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
                         <onup>216</onup>
                         <ondown>216</ondown>
                         <onleft>400</onleft>
                         <onright>400</onright>
-                        <visible>no</visible>
+                        <visible>yes</visible>
                 </control>
+
                 <control>
                         <description>subtitles label</description>
                         <type>label</type>
