@@ -51,6 +51,19 @@ same location everywhere
                         <animation effect="fade" time="900">VisibleChange</animation>
                 </control>-->
                 <control>
+                        <description>Selectable Button</description>
+                        <type>button</type>
+                        <id>1701</id>
+                        <posX>13</posX>
+                        <posY>73</posY>
+                        <width>124</width>
+                        <height>124</height>
+                        <textureFocus>tv_blue_border.png</textureFocus>
+                        <textureNoFocus>-</textureNoFocus>
+                        <action>18</action>
+                        <visible>player.hasmedia</visible>
+                </control>
+                <control>
                         <description>music logo</description>
                         <type>image</type>
                         <id>0</id>
@@ -96,7 +109,7 @@ same location everywhere
                         <description>artist info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
                         <posX>143</posX>
                         <posY>80</posY>
@@ -109,7 +122,7 @@ same location everywhere
                         <description>title info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
                         <posX>143</posX>
                         <posY>104</posY>
@@ -122,7 +135,7 @@ same location everywhere
                         <description>album info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
                         <posX>143</posX>
                         <posY>123</posY>
