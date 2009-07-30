@@ -26,36 +26,35 @@
       <description>Selectable Button (video preview window)</description>
       <type>button</type>
       <id>17</id>
-      <posX>83</posX>
-      <posY>558</posY>
-      <width>203</width>
-      <height>114</height>
-      <textureFocus>-</textureFocus><!-- maybe needs a texture (203x114) -->
+      <posX>78</posX>
+      <posY>553</posY>
+      <width>124</width>
+      <height>124</height>
+      <textureFocus>tv_blue_border.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <action>18</action>
       <onup>50</onup>
       <ondown>50</ondown>
       <onright>50</onright>
       <onleft>50</onleft>
-      <visible>player.hasmedia</visible>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
     
     <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
-    
-    <control>
-      <description>music logo</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>83</posX>
-      <posY>558</posY>
-      <width>114</width>
-      <height>114</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <centered>yes</centered>
-      <zoom>no</zoom>
-      <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
-    </control>
+          <control>
+                  <description>music logo</description>
+                  <type>image</type>
+                  <id>0</id>
+                  <posX>83</posX>
+                  <posY>558</posY>
+                  <width>114</width>
+                  <height>114</height>
+                  <keepaspectratio>no</keepaspectratio>
+                  <centered>yes</centered>
+                  <zoom>yes</zoom>
+                  <texture>defaultAudioBig.png</texture>
+                  <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+          </control>  
           <control>
                   <description>music logo</description>
                   <type>image</type>
@@ -70,6 +69,21 @@
                   <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
                   <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
           </control>
+    <control>
+      <description>music logo</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>83</posX>
+      <posY>558</posY>
+      <width>114</width>
+      <height>114</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <zoom>no</zoom>
+      <texture>#Play.Current.Thumb</texture>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+    </control>
+          
     
     <control>
       <description>artist info label</description>
@@ -186,11 +200,12 @@
       <onup>50</onup>
       <ondown>50</ondown>
       <onright>50</onright>
-      <onleft>50</onleft>
-      <textureFocus>video_window_focus.png</textureFocus>
+      <onleft>17</onleft>
+      <textureFocus>tv_blue_border.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <visible>player.hasmedia+!control.isvisible(3337)</visible>
     </control>
+ 
     <control>
       <description>artist info label</description>
       <type>fadelabel</type>
