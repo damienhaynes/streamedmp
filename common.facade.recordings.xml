@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
         <controls>
+                
                 <control>
                         <description>group element</description>
                         <type>group</type>
@@ -37,7 +38,7 @@
                                         <textYOff2>5</textYOff2>
                                         <font2>mediastream11</font2>
                                         <keepaspectratio>yes</keepaspectratio>
-                                        <unfocusedAlpha>0xFF</unfocusedAlpha>
+                                        <!--<unfocusedAlpha>200</unfocusedAlpha>-->
                                         <spinPosX>1175</spinPosX>
                                         <spinPosY>682</spinPosY>
                                         <spinAlign>Right</spinAlign>
@@ -92,7 +93,7 @@
                                         <spinHeight>37</spinHeight>
                                         <onleft>99</onleft>
                                         <onright>2</onright>
-                                        <unfocusedAlpha>0xFF</unfocusedAlpha>
+                                        <!--<unfocusedAlpha>200</unfocusedAlpha>-->
                                         <keepaspectratio>yes</keepaspectratio>
                                 </control>
                                 <control>
@@ -125,7 +126,7 @@
                                         <zoomXPixels>0</zoomXPixels>
                                         <zoomYPixels>0</zoomYPixels>
                                         <thumbZoom>no</thumbZoom>
-                                        <enableFocusZoom>yes</enableFocusZoom>
+                                        <enableFocusZoom>no</enableFocusZoom>
                                         <keepaspectratio>yes</keepaspectratio>
                                         <hideUnfocusTexture>no</hideUnfocusTexture>
                                         <renderFocusText>yes</renderFocusText>
@@ -144,6 +145,7 @@
                                         <spinColor>ff006698</spinColor>
                                         <spinCanFocus>yes</spinCanFocus>
                                         <font>mediastream10c</font>
+                                        <imageFolderFocus>thumbborder4.png</imageFolderFocus>
                                 </control>
                         </control>
                 </control>
