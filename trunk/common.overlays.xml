@@ -33,25 +33,85 @@ same location everywhere
                         <texture>dialogprogressbg.png</texture>
                         <visible>player.hasmedia</visible>
                 </control>
-                <control>
-                        <description>video preview window</description>
-                        <type>videowindow</type>
-                        <id>99</id>
-                        <posX>20</posX>
-                        <posY>79</posY>
-                        <width>203</width>
+
+                <!--<control>
+                        <description>Music logo Animation</description>
+                        <type>animation</type>
+                        <id>1</id>
+                        <posX>18</posX>
+                        <posY>78</posY>
+                        <width>114</width>
                         <height>114</height>
-                        <action>18</action>
+                        <textures>#Play.Current.Thumb;C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
+                        <Duration>0:1:30</Duration>
+                        <keepaspectratio>no</keepaspectratio>
+                        <centered>yes</centered>
+                        <zoom>yes</zoom>
+                        <visible>player.hasmedia+control.isvisible(3337)+!string.equals(#Play.Current.Thumb,)</visible>
+                        <animation effect="fade" time="900">VisibleChange</animation>
+                </control>-->
+                <control>
+                        <description>Selectable Button</description>
+                        <type>button</type>
+                        <id>1701</id>
+                        <posX>13</posX>
+                        <posY>73</posY>
+                        <width>124</width>
+                        <height>124</height>
                         <textureFocus>tv_blue_border.png</textureFocus>
-                        <visible>player.hasmedia</visible>
+                        <textureNoFocus>-</textureNoFocus>
+                        <action>18</action>
+                        <visible>player.hasmedia+control.isvisible(3337)</visible>
+                </control>
+                <control>
+                        <description>music logo</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>18</posX>
+                        <posY>78</posY>
+                        <width>114</width>
+                        <height>114</height>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <centered>yes</centered>
+                        <zoom>yes</zoom>
+                        <texture>defaultAudioBig.png</texture>
+                        <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                </control>
+                <control>
+                        <description>music logo</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>18</posX>
+                        <posY>78</posY>
+                        <width>114</width>
+                        <height>114</height>
+                        <keepaspectratio>no</keepaspectratio>
+                        <centered>yes</centered>
+                        <zoom>yes</zoom>
+                        <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
+                        <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                </control>
+                <control>
+                        <description>music logo</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>18</posX>
+                        <posY>78</posY>
+                        <width>114</width>
+                        <height>114</height>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <centered>yes</centered>
+                        <zoom>no</zoom>
+                        <texture>#Play.Current.Thumb</texture>
+                        <visible>player.hasmedia+control.isvisible(3337)</visible>
                 </control>
                 <control>
                         <description>artist info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
-                        <posX>233</posX>
+                        <posX>143</posX>
                         <posY>80</posY>
                         <label>#Play.Current.Artist</label>
                         <textcolor>FFFFFFFF</textcolor>
@@ -62,9 +122,9 @@ same location everywhere
                         <description>title info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
-                        <posX>233</posX>
+                        <posX>143</posX>
                         <posY>104</posY>
                         <label>#Play.Current.Title</label>
                         <textcolor>FFFFFFFF</textcolor>
@@ -75,9 +135,9 @@ same location everywhere
                         <description>album info label</description>
                         <type>fadelabel</type>
                         <id>0</id>
-                        <width>250</width>
+                        <width>340</width>
                         <height>40</height>
-                        <posX>233</posX>
+                        <posX>143</posX>
                         <posY>123</posY>
                         <label>#Play.Current.Album</label>
                         <textcolor>FFFFFFFF</textcolor>
@@ -90,7 +150,7 @@ same location everywhere
                         <id>0</id>
                         <width>340</width>
                         <height>40</height>
-                        <posX>233</posX>
+                        <posX>143</posX>
                         <posY>141</posY>
                         <label>#currentplaytime / #duration</label>
                         <textcolor>FFFFFFFF</textcolor>
@@ -103,7 +163,7 @@ same location everywhere
                         <id>0</id>
                         <width>42</width>
                         <height>40</height>
-                        <posX>233</posX>
+                        <posX>143</posX>
                         <posY>167</posY>
                         <label>Next:</label>
                         <textcolor>FF025984</textcolor>
@@ -112,11 +172,11 @@ same location everywhere
                 </control>
                 <control>
                         <description>next song info label</description>
-                        <type>fadelabel</type>
+                        <type>label</type>
                         <id>0</id>
-                        <posX>273</posX>
+                        <posX>183</posX>
                         <posY>167</posY>
-                        <width>220</width>
+                        <width>300</width>
                         <height>40</height>
                         <label>#Play.Next.Title by #Play.Next.Artist</label>
                         <textcolor>FF999999</textcolor>
@@ -124,7 +184,19 @@ same location everywhere
                         <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
                 </control>
                 <!--                                    :: VIDEO OVERLAY ::                                    -->
-                
+                <control>
+                        <description>video preview window</description>
+                        <type>videowindow</type>
+                        <id>99</id>
+                        <posX>20</posX>
+                        <posY>79</posY>
+                        <width>203</width>
+                        <height>114</height>
+                        <action>18</action>
+                        <onleft>1701</onleft>
+                        <textureFocus>tv_blue_border.png</textureFocus>
+                        <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                </control>
                 <control>
                         <description>artist info label</description>
                         <type>fadelabel</type>
