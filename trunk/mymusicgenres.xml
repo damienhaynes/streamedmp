@@ -32,10 +32,11 @@
     <control>
       <id>204</id>
       <type>image</type>
-      <posX>170</posX>
+      <posX>90</posX>
       <posY>250</posY>
       <width>348</width>
       <height>348</height>
+      <keepaspectratio>yes</keepaspectratio>
       <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -43,7 +44,7 @@
     <control>
       <id>204</id>
       <type>image</type>
-      <posX>170</posX>
+      <posX>90</posX>
       <posY>250</posY>
       <width>348</width>
       <height>348</height>
@@ -58,7 +59,7 @@
       <posY>250</posY>
       <width>348</width>
       <height>348</height>
-      <keepaspectratio>true</keepaspectratio>
+      <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.smallicons | facadeview.largeicons</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
