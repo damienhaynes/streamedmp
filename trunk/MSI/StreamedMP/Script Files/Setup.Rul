@@ -74,8 +74,20 @@
 #define MOVINGPICTURES_MIN_VERSION			"0.8.0.0"
 
 // XML Path Defines
-#define REFERENCES_LISTALPHA_PATH			"/controls/control[type='listcontrol']/unfocusedAlpha"
-#define REFERENCES_THUMBALPHA_PATH			"/controls/control[type='thumbnailpanel']/unfocusedAlpha"
+#define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
+#define REFERENCES_PLAYLISTALPHA_PATH			"/controls/control[type='playlistcontrol']/unfocusedAlpha"
+#define REFERENCES_THUMBALPHA_PATH				"/controls/control[type='thumbnailpanel']/unfocusedAlpha"
+
+#define REFERENCES_LISTCOLORTEXT_PATH			"/controls/control[type='listcontrol']/textcolor"
+#define REFERENCES_LISTCOLORTEXT2_PATH			"/controls/control[type='listcontrol']/textcolor2"
+#define REFERENCES_LISTCOLORTEXT3_PATH			"/controls/control[type='listcontrol']/textcolor3"
+#define REFERENCES_LISTCOLORWATCHED_PATH		"/controls/control[type='listcontrol']/playedColor"
+#define REFERENCES_LISTCOLORREMOTE_PATH			"/controls/control[type='listcontrol']/remoteColor"
+#define REFERENCES_PLAYLISTCOLORTEXT_PATH		"/controls/control[type='playlistcontrol']/textcolor"
+#define REFERENCES_PLAYLISTCOLORTEXT2_PATH		"/controls/control[type='playlistcontrol']/textcolor2"
+#define REFERENCES_PLAYLISTCOLORTEXT3_PATH		"/controls/control[type='playlistcontrol']/textcolor3"
+#define REFERENCES_PLAYLISTCOLORWATCHED_PATH	"/controls/control[type='playlistcontrol']/playedColor"
+#define REFERENCES_PLAYLISTCOLORREMOTE_PATH		"/controls/control[type='playlistcontrol']/remoteColor"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -100,6 +112,7 @@
 #define RES_COMBO_TVGUIDE				1406
 #define RES_CHECK_ROUNDEDCOVERS			1408 
 #define RES_COMBO_VUMETERS				1410
+#define RES_BUTTON_LISTCOLOURS			1412
 #define RES_CHECK_UNFOCUSEDALPHALIST	1413
 #define RES_CHECK_UNFOCUSEDALPHATHUMBS	1415
 
@@ -145,6 +158,7 @@ prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
 prototype VOID		ModifySkinFiles(BOOL);
+prototype VOID		GetListFacadeColors();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -179,6 +193,13 @@ STRING g_sCacheDir;
 STRING g_sPluginsDir;
 STRING g_sConfigDir;
 
+// Colour Variables
+STRING g_sTextColor;
+STRING g_sText2Color;
+STRING g_sText3Color;
+STRING g_sWatchedColor;
+STRING g_sRemoteColor;
+
 //---------------------------------------------------------------------------
 // OnBegin
 //
@@ -189,7 +210,19 @@ function OnBegin()
 	STRING szVersion, szUpgradeMessage;
 	NUMBER nResult;
 	BOOL bUpgradeSupported; 
-begin 
+	
+	//OBJECT myObject;
+	//BOOL bResult;
+begin  	
+    	
+	//set myObject = CoCreateObjectDotNet("D:\\Development\\StreamedMP\\MSI\\StreamedMP\\SetupHelper\\FacadeProperties\\bin\\Release\\FacadeProperties.dll", "FacadeProperties.Colors" );
+	//bResult = myObject.ShowColors(); 
+	
+	//if bResult then
+	
+		//MessageBox(myObject.GetTextColor,INFORMATION);
+	
+	//endif;
  	
 	// See if older version is installed
 	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID, bUpgradeSupported);
@@ -379,7 +412,49 @@ begin
 		g_bSetUnfocusedAlphaThumbs = TRUE;
 	endif;
 	
+	// Get List Facade Colors
+	GetListFacadeColors();
+	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
+	
+end;
+
+function VOID GetListFacadeColors()
+	STRING svValue, szString, sFile;
+begin
+	
+	// Get ListControl Colors
+	sFile = STREAMEDMP_SKIN_REFERENCES;
+	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT_PATH, svValue) < 0 then
+		svValue = "ffFFFFFF";
+	endif;
+	StrToUpper(szString, svValue);
+	StrSub(g_sTextColor, szString, 2, 6);
+	
+	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT2_PATH, svValue) < 0 then
+		svValue = "ffFFFFFF";
+	endif;
+	StrToUpper(szString, svValue);
+	StrSub(g_sText2Color, szString, 2, 6);
+	
+	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT3_PATH, svValue) < 0 then
+		svValue = "ffFFFFFF";
+	endif;
+	StrToUpper(szString, svValue);
+	StrSub(g_sText3Color, szString, 2, 6);
+	
+	if GetXMLProperty(sFile, REFERENCES_LISTCOLORWATCHED_PATH, svValue) < 0 then
+		svValue = "ff808080";
+	endif;
+	StrToUpper(szString, svValue);
+	StrSub(g_sWatchedColor, szString, 2, 6);
+	
+	
+	if GetXMLProperty(sFile, REFERENCES_LISTCOLORREMOTE_PATH, svValue) < 0 then
+		svValue = "ffFFA075";
+	endif;
+	StrToUpper(szString, svValue);
+	StrSub(g_sRemoteColor, szString, 2, 6);
 	
 end;
 
@@ -1145,8 +1220,9 @@ end;
 function number ShowSelectOptions(bModify)
 	STRING szDialogName, sValue;
 	NUMBER nCmdValue;
-	BOOL bDone;
+	BOOL bDone, bResult;
 	LIST listFonts, listTVGuides, listVUMeters;
+	OBJECT objColors;
 begin
 
 	szDialogName = "SelectionOptions";
@@ -1248,7 +1324,34 @@ Dlg_Wait:
  					CtrlSetState(szDialogName,RES_CHECK_UNFOCUSEDALPHATHUMBS,BUTTON_CHECKED);
  				endif;
  				
- 				 				         		      
+ 			case RES_BUTTON_LISTCOLOURS:
+ 				// Create Instance of Colors Class
+ 				set objColors = CoCreateObjectDotNet(SUPPORTDIR^"FacadeProperties.dll", "FacadeProperties.Colors" );
+				
+				// Update Defaults
+				objColors.SetTextColor(g_sTextColor);
+				objColors.SetText2Color(g_sText2Color);
+				objColors.SetText3Color(g_sText3Color);
+				objColors.SetWatchedColor(g_sWatchedColor);
+				objColors.SetRemoteColor(g_sRemoteColor);
+								
+				// Display Color Choice Dialog
+				bResult = objColors.ShowColors(); 
+	            
+	            // Save Colors
+				if bResult then
+				
+					g_sTextColor = objColors.GetTextColor();
+					g_sText2Color = objColors.GetText2Color();
+					g_sText3Color = objColors.GetText3Color();
+					g_sWatchedColor = objColors.GetWatchedColor();
+					g_sRemoteColor = objColors.GetRemoteColor();
+				
+				endif;
+ 			    
+ 			    // Destroy Object
+ 			    set objColors = NOTHING;
+ 			     				 				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
 	   	        	   	        	   	        
@@ -1468,12 +1571,31 @@ begin
 		SetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, "100");
 	else
 		SetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, "255");
+	endif;  
+	if g_bSetUnfocusedAlphaList then
+		SetXMLProperty(sFile, REFERENCES_PLAYLISTALPHA_PATH, "100");
+	else
+		SetXMLProperty(sFile, REFERENCES_PLAYLISTALPHA_PATH, "255");
 	endif;
+	
 	if g_bSetUnfocusedAlphaThumbs then
 		SetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, "100");
 	else
 		SetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, "255");
 	endif;
+	
+	// Set List Facade Colors
+	SetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT_PATH, "FF"+g_sTextColor);
+	SetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT2_PATH, "FF"+g_sText2Color);
+	SetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT3_PATH, "FF"+g_sText3Color);
+	SetXMLProperty(sFile, REFERENCES_LISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
+	SetXMLProperty(sFile, REFERENCES_LISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
+	
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT_PATH, "FF"+g_sTextColor);
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT2_PATH, "FF"+g_sText2Color);
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT3_PATH, "FF"+g_sText3Color);
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
 	
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
