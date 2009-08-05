@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-
-<!-- StreamedMP skin for OnlineVideos plugin Version 1.1.3 -->
-
 <window>
-
 	<controls>
-    
+	
 		<!-- *** BACKGROUND *** -->
     
 		<control>
@@ -31,7 +27,7 @@
 			<width>203</width>
 			<height>114</height>
 			<texture>black.png</texture>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 	
 		<control>
@@ -43,8 +39,8 @@
 			<width>203</width>
 			<height>114</height>
 			<action>18</action>
-                                                      <textureFocus>tv_blue_border.png</textureFocus>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<textureFocus>tv_blue_border.png</textureFocus>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
 		<control>
@@ -58,7 +54,7 @@
 			<label>#Play.Current.Title</label>
 			<textcolor>FFFFFFFF</textcolor>
 			<font>mediastream10tc</font>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
 		<control>
@@ -72,7 +68,7 @@
 			<label>#Play.Current.Year</label>
 			<textcolor>FFFFFFFF</textcolor>
 			<font>mediastream10tc</font>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
 		<control>
@@ -86,7 +82,7 @@
 			<label>#Play.Current.Genre</label>
 			<textcolor>FFFFFFFF</textcolor>
 			<font>mediastream10c</font>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
 		<control>
@@ -100,7 +96,7 @@
 			<label>#Play.Current.Director</label>
 			<textcolor>FFFFFFFF</textcolor>
 			<font>mediastream10c</font>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
 		<control>
@@ -114,7 +110,7 @@
 			<label>#currentplaytime / #duration</label>
 			<textcolor>FFFFFFFF</textcolor>
 			<font>mediastream10c</font>
-			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.isvisible(3337)</visible>
+			<visible>player.hasmedia+![facadeview.filmstrip|Control.IsVisible(1236)]+!control.IsVisible(3337)</visible>
 		</control>
 		
   </controls>
