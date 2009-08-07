@@ -58,8 +58,7 @@ This file should contain the facade view
         <showFolder>yes</showFolder>
         <showBackGround>no</showBackGround>
         <showInfoImage>no</showInfoImage>
-        <thumbAnimation effect="zoom" start="100,100" end="120,120" time="110">focus</thumbAnimation>
-        <thumbAnimation effect="zoom" start="120,120" end="100,100" time="110">unfocus</thumbAnimation>
+        <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
       </control>
         <control>
           <description>Thumbnail Panel</description>
