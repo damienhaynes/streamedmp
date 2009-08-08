@@ -43,11 +43,15 @@
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
 // Feature Defines
-#define MATT_FEATURE_TVSERIES			"Main\\mattsk88TVSeries"
-#define MATT_FEATURE_MOVINGPICS			"Main\\mattsk88MovingPictures"
+#define FANART_FEATURE_TVSERIES			"Main\\fanartTVSeries"
+#define FANART_FEATURE_TVSERIES_5x2		"Main\\fanartTVSeries5x2"
+#define FANART_FEATURE_TVSERIES_5x3		"Main\\fanartTVSeries5x3"
+#define FANART_FEATURE_MOVINGPICS		"Main\\fanartMovingPictures"
 
-#define SPUCK_FEATURE_TVSERIES			"Main\\spuckTVSeries"
-#define SPUCK_FEATURE_MOVINGPICS		"Main\\spuckMovingPictures"
+#define DEFAULT_FEATURE_TVSERIES		"Main\\defaultTVSeries"
+#define DEFAULT_FEATURE_TVSERIES_5x2	"Main\\defaultTVSeries5x2"
+#define DEFAULT_FEATURE_TVSERIES_5x3	"Main\\defaultTVSeries5x3"
+#define DEFAULT_FEATURE_MOVINGPICS		"Main\\defaultMovingPictures"
 
 #define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
 #define TVGUIDE10_FEATURE_OPTIONS		"Main\\tvguide10Options"
@@ -99,7 +103,8 @@
 #define RES_RADIO_CHOICE1				1400
 #define RES_RADIO_CHOICE2				1401             
 #define RES_COMBO_SERIESLAYOUT			1402 
-#define RES_BUTTON_TVSERIESADVANCED		1404	
+#define RES_BUTTON_TVSERIESADVANCED		1404
+#define RES_COMBO_WIDEBANNERLAYOUT		1406	
 
 #define RES_CHECK_TOTALEPCOUNT			1304
 #define RES_CHECK_LISTIMAGES			1305
@@ -177,13 +182,14 @@ BOOL g_bShowUnWatchedOnlyInListImage;
 BOOL g_bStartBasicHome; 
 BOOL g_bShowRoundedCovers;
 BOOL g_bSetUnfocusedAlphaList;
-BOOL g_bSetUnfocusedAlphaThumbs;
+BOOL g_bSetUnfocusedAlphaThumbs; 
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
 STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
 STRING g_sVUMeter;
+STRING g_sWideBannerLayout;
 
 STRING g_sMediaPortalProgramDir;
 STRING g_sLanguageDir;
@@ -322,6 +328,11 @@ begin
 	if svValue = "1" then
 		g_bTVSeriesDefault = TRUE;			
 	endif;
+	
+	// Read TVSeries widebanner layout
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVSERIESWIDEBANNERLAYOUT",nvType,g_sWideBannerLayout,nvSize) < 0) then
+		g_sWideBannerLayout = "0";		
+	endif;	 
 	
 	// Read Moving Pictures Default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",nvType,svValue,nvSize) < 0) then
@@ -912,7 +923,7 @@ function number ShowSelectTVSeries(bModify)
 	STRING szDialogName, szErrorMsg;
 	NUMBER nCmdValue;
 	BOOL bDone, bValidate; 
-	LIST listSeriesLayout;
+	LIST listWideBannerLayout;
 begin
 
 	szDialogName = "SelectionTVSeries";
@@ -943,18 +954,24 @@ Dlg_Wait:
  					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
  				endif;
  			
- 				// Populate series layout list                               
-	        	/*listSeriesLayout = ListCreate(STRINGLIST);
+ 				// Populate WideBanner layout list                               
+	        	listWideBannerLayout = ListCreate(STRINGLIST);
 	        	
-	        	ListAddString(listSeriesLayout,"List Posters",AFTER);	        	
-	        	ListAddString(listSeriesLayout,"List Banners",AFTER);
-	        	ListAddString(listSeriesLayout,"Wide Banners",AFTER);
-	        	ListAddString(listSeriesLayout,"Filmstrip",AFTER);
-	        	// Add Series Layouts to list
-	        	CtrlSetList(szDialogName,RES_COMBO_SERIESLAYOUT,listSeriesLayout);
-	        	CtrlSetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 				
-	        	ListDestroy(listSeriesLayout);*/
-	        	
+	        	ListAddString(listWideBannerLayout,"Default",AFTER);	        	
+	        	ListAddString(listWideBannerLayout,"5x2 Grid + Poster",AFTER);
+	        	ListAddString(listWideBannerLayout,"5x3 Grid",AFTER);
+	        		        	
+	        	// Add Layouts to list
+	        	CtrlSetList(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,listWideBannerLayout);	        	
+	        	switch (g_sWideBannerLayout)
+	        		case "0":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"Default");
+	        		case "1":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"5x2 Grid + Poster");
+	        		case "2":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"5x3 Grid");
+	        	endswitch;	        	
+	        	ListDestroy(listWideBannerLayout);	        	
  			
  			case RES_BUTTON_TVSERIESADVANCED:
  				ShowTVSeriesAdvanced(bModify);
@@ -984,8 +1001,16 @@ Dlg_Wait:
 		g_bTVSeriesDefault = FALSE;
 	endif;
 	
-	//CtrlGetCurSel(szDialogName,RES_COMBO_SERIESLAYOUT,g_sSeriesLayout); 
-		
+	CtrlGetCurSel(szDialogName, RES_COMBO_WIDEBANNERLAYOUT, g_sWideBannerLayout); 
+	switch (g_sWideBannerLayout)
+		case "Default":
+			g_sWideBannerLayout = "0";
+		case "5x2 Grid + Poster":
+			g_sWideBannerLayout = "1";
+		case "5x3 Grid":
+			g_sWideBannerLayout = "2";
+	endswitch;
+			
 	bValidate = TRUE;	
 	
 	if !bValidate then 
@@ -1001,11 +1026,41 @@ Dlg_Wait:
 	
 	// Set Features
 	if (g_bTVSeriesDefault) then
-		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, TRUE );
-		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, FALSE );
+		
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, FALSE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, FALSE );
+		// only enable the corresonding default layout		
+		switch (g_sWideBannerLayout)
+			case "0":
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );				
+			case "1":                                                     
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, TRUE );
+			case "2":                                                     
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, TRUE );
+		endswitch;
+				
 	else
-		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_TVSERIES, FALSE );
-		FeatureSelectItem ( MEDIA, MATT_FEATURE_TVSERIES, TRUE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, FALSE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, FALSE );
+		
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, FALSE );
+		// only enable the corresonding fanart layout
+		switch (g_sWideBannerLayout)
+			case "0":
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );				
+			case "1":                                                     
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, TRUE );
+			case "2":                                                     
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, TRUE );
+		endswitch;   
+		
 	endif;	
 		
 	if (g_bShowIconsInListView) then
@@ -1204,11 +1259,11 @@ Dlg_Wait:
 	
 	// Set Features
 	if (g_bMovingPicturesDefault) then
-		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_MOVINGPICS, TRUE );
-		FeatureSelectItem ( MEDIA, MATT_FEATURE_MOVINGPICS, FALSE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, TRUE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, FALSE );
 	else
-		FeatureSelectItem ( MEDIA, SPUCK_FEATURE_MOVINGPICS, FALSE );
-		FeatureSelectItem ( MEDIA, MATT_FEATURE_MOVINGPICS, TRUE );
+		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, FALSE );
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, TRUE );
 	endif;		
 		
     EndDialog (szDialogName);
@@ -1326,31 +1381,33 @@ Dlg_Wait:
  				
  			case RES_BUTTON_LISTCOLOURS:
  				// Create Instance of Colors Class
- 				set objColors = CoCreateObjectDotNet(SUPPORTDIR^"FacadeProperties.dll", "FacadeProperties.Colors" );
-				
-				// Update Defaults
-				objColors.SetTextColor(g_sTextColor);
-				objColors.SetText2Color(g_sText2Color);
-				objColors.SetText3Color(g_sText3Color);
-				objColors.SetWatchedColor(g_sWatchedColor);
-				objColors.SetRemoteColor(g_sRemoteColor);
-								
-				// Display Color Choice Dialog
-				bResult = objColors.ShowColors(); 
-	            
-	            // Save Colors
-				if bResult then
-				
-					g_sTextColor = objColors.GetTextColor();
-					g_sText2Color = objColors.GetText2Color();
-					g_sText3Color = objColors.GetText3Color();
-					g_sWatchedColor = objColors.GetWatchedColor();
-					g_sRemoteColor = objColors.GetRemoteColor();
-				
-				endif;
- 			    
- 			    // Destroy Object
- 			    set objColors = NOTHING;
+ 				try
+	 				set objColors = CoCreateObjectDotNet(SUPPORTDIR^"FacadeProperties.dll", "FacadeProperties.Colors" );
+					
+					// Update Defaults
+					objColors.SetTextColor(g_sTextColor);
+					objColors.SetText2Color(g_sText2Color);
+					objColors.SetText3Color(g_sText3Color);
+					objColors.SetWatchedColor(g_sWatchedColor);
+					objColors.SetRemoteColor(g_sRemoteColor);
+									
+					// Display Color Choice Dialog
+					bResult = objColors.ShowColors(); 
+		            
+		            // Save Colors
+					if bResult then					
+						g_sTextColor = objColors.GetTextColor();
+						g_sText2Color = objColors.GetText2Color();
+						g_sText3Color = objColors.GetText3Color();
+						g_sWatchedColor = objColors.GetWatchedColor();
+						g_sRemoteColor = objColors.GetRemoteColor();					
+					endif;
+	 			    
+	 			    // Destroy Object
+	 			    set objColors = NOTHING;
+	 			 catch
+	 			 	MessageBox("Error: unable to display\read colours",INFORMATION);
+	 			 endcatch;
  			     				 				         		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -1464,6 +1521,8 @@ begin
 	
 	NumToStr(svString,g_bTVSeriesDefault);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",REGDB_NUMBER,svString, -1);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVSERIESWIDEBANNERLAYOUT",REGDB_NUMBER,g_sWideBannerLayout, -1);
+		
 	NumToStr(svString,g_bMovingPicturesDefault);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
