@@ -37,7 +37,7 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_moving pictures.png</texture> 
+      <texture>hover_my tv series.png</texture> 
     </control>
 	
     <control>
@@ -81,16 +81,40 @@
       <texture>fanartoverlay.png</texture>
       <visible>facadeview.list</visible>
     </control>
+	<!-- Dont show backdrops behind the Wide Banners Layout -->
+	<!-- Configurable in setup, set visble property to false to remove -->
+	<control>
+      <type>image</type>
+      <description>hidebackground</description>
+      <id>0</id>	  
+      <width>1280</width>
+      <height>720</height>
+	  <texture>black.png</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>	 
+	  <visible>facadeview.largeicons</visible>
+    </control>
     <control>
-      <description>FanArt Overlay - Other Views</description>
+      <description>FanArt Overlay (Graphical View) - black background</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>0</posY>
+      <posY>499</posY>
       <width>1280</width>
-      <height>720</height>
-      <texture>fanartoverlay2.png</texture>
-      <visible>!facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1242)</visible>
+      <height>221</height>
+      <texture>black.png</texture>
+      <visible>facadeview.largeicons</visible>
+    </control>    
+    <control>
+      <description>FanArt Overlay (Graphical View)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>-12</posY>
+      <width>1280</width>
+      <height>732</height>
+      <colordiffuse>ffffffff</colordiffuse>
+      <texture>movieviewbg.png</texture>
+      <visible>facadeview.largeicons</visible>
     </control>
 	<!--Overlays Filmstrip -->
 	<control>
@@ -218,20 +242,93 @@
 
 	<!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: GRAPHICAL  VIEW  (WIDEBANNERS)::
+    :::::::::::::::::::::::::::::::::: SERIES:: GRAPHICAL  VIEW  (WIDEBANNERS)::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
     <control>
-      <description>TV Show Title</description>
+      <description>Series Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>30</posX>
-      <posY>340</posY>
-      <width>850</width>
+      <posX>25</posX>
+      <posY>515</posY>
+      <width>1200</width>
       <font>mediastream16tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    
+    <control>
+      <description>Series Description</description>
+      <type>textboxscrollup</type>
+      <id>631</id>
+      <posX>25</posX>
+      <posY>549</posY>
+      <width>640</width>
+      <height>160</height>
+      <seperator>----------------------------------------</seperator>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream11</font>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+      <label>#TVSeries.Description</label>
+    </control>
+    
+    <control Style="smallTitleB">
+      <label>#TVSeries.Series.InfoPanelLine1Key</label>
+      <type>label</type>
+      <posX>720</posX>
+      <posY>556</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Series.InfoPanelLine1Value</label>
+      <type>label</type>
+      <posX>870</posX>
+      <posY>557</posY>
+      <width>400</width>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitleB">
+      <label>#TVSeries.Series.InfoPanelLine2Key</label>
+      <type>label</type>
+      <posX>720</posX>
+      <posY>586</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Series.InfoPanelLine2Value</label>
+      <type>label</type>
+      <posX>870</posX>
+      <posY>587</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitleB">
+      <label>#TVSeries.Series.InfoPanelLine3Key</label>
+      <type>label</type>
+      <posX>720</posX>
+      <posY>616</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Series.InfoPanelLine3Value</label>
+      <type>label</type>
+      <posX>870</posX>
+      <posY>617</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitleB">
+      <label>#TVSeries.Series.InfoPanelLine4Key</label>
+      <type>label</type>
+      <posX>720</posX>
+      <posY>646</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+    </control>
+    <control Style="smallTitle">
+      <label>#TVSeries.Series.InfoPanelLine4Value</label>
+      <type>label</type>
+      <posX>870</posX>
+      <posY>647</posY>
+      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
     </control>
 
     <!--
@@ -481,84 +578,7 @@
       <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
       <label>#TVSeries.Description</label>
     </control>
-      <!--
-    ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    :::::::::::::::::::::::::::::::::: SERIES VIEW :: WIDE BANNER LAYOUT ::
-    :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    -->
-	<control Style="TVSeriesTitle">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine2Key</label>
-      <type>fadelabel</type>
-      <posX>22</posX>
-      <posY>650</posY>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-    <control Style="TVSeriesLabel">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine2Value</label>
-      <type>fadelabel</type>	  
-      <posX>175</posX>
-      <posY>650</posY>
-      <width>245</width>
-	  <scrollStartDelaySec>5</scrollStartDelaySec>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-	<control Style="TVSeriesTitle">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine3Key</label>
-	  <description>Rating Label</description>
-      <type>label</type>
-      <posX>22</posX>
-      <posY>675</posY>            
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-	<control>
-      <description>TVDB Series Rating Stars</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>173</posX>
-      <posY>675</posY>
-      <width>180</width>
-      <height>18</height>
-      <texture>#TVSeries.Series.RatingPath</texture>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-	<control Style="TVSeriesTitle">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine1Key</label>
-      <type>fadelabel</type>
-      <posX>440</posX>
-      <posY>650</posY>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-    <control Style="TVSeriesLabel">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine1Value</label>
-      <type>fadelabel</type>
-      <posX>593</posX>
-      <posY>650</posY>
-      <width>600</width>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>	
-	<control Style="TVSeriesTitle">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine5Key</label>
-      <type>fadelabel</type>
-      <posX>440</posX>
-      <posY>675</posY>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>
-    <control Style="TVSeriesLabel">
-	  <id>0</id>	
-      <label>#TVSeries.Series.InfoPanelLine5Value</label>
-      <type>fadelabel</type>
-      <posX>593</posX>
-      <posY>675</posY>
-      <width>500</width>
-      <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-    </control>	
-	
+  	
     <!--
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     :::::::::::::::::::::::::::::::::: EPISODE VIEW :: LIST VIEW ::
@@ -896,45 +916,39 @@
           <id>50</id>
           <onleft>2</onleft>
           <onright>2</onright>
-          <posX>13</posX>
-          <posY>370</posY>
-          <width>1280</width>
-          <height>350</height>
+          <posX>25</posX>
+		  <posY>66</posY>
+          <width>1270</width>
+		  <height>450</height>
           <spinPosX>1300</spinPosX>
           <spinPosY>720</spinPosY>
+          <spinCanFocus>no</spinCanFocus>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>widebannerborder.png</imageFolderFocus>
-          <!-- watched color -->
-		  <playedColor>#watched.color</playedColor>
-          <!-- file not local color (normal) -->
-          <remoteColor>#notpresent.color</remoteColor>
-          <!-- unwatched color -->
-          <textcolor>#default.color</textcolor>
-          <!-- local file not present color -->
-          <textcolor2>#default.color</textcolor2>
-          <!-- local file not present color column 2-->
-          <textcolor3>#default.color</textcolor3>
-          <!-- local file not present color column 3-->
+          <playedColor>#watched.color</playedColor>   			<!-- not watched color (normal) -->
+          <remoteColor>#notpresent.color</remoteColor>       	<!-- file not local color -->
+          <textcolor>#default.color</textcolor>        			<!-- not watched color (normal) -->
+          <textcolor2>#default.color</textcolor2>         
+          <textcolor3>#default.color</textcolor3>         
           <keepaspectratio>no</keepaspectratio>
           <enableFocusZoom>no</enableFocusZoom>
-          <scrollOffset>1</scrollOffset>
-          <!--<unfocusedAlpha>200</unfocusedAlpha>-->
+          <!--<unfocusedAlpha>100</unfocusedAlpha>-->
+		  <scrollOffset>2</scrollOffset>          
           <!-- margin -->
-          <itemWidthBig>420</itemWidthBig>
-          <itemHeightBig>94</itemHeightBig>
+          <itemWidthBig>414</itemWidthBig>
+		  <itemHeightBig>85</itemHeightBig>
           <!-- frame texture -->
-          <textureWidthBig>414</textureWidthBig>
-          <textureHeightBig>88</textureHeightBig>
+          <textureWidthBig>405</textureWidthBig>
+		  <textureHeightBig>85</textureHeightBig>
           <!-- wide banners -->
-          <thumbWidthBig>400</thumbWidthBig>
-          <thumbHeightBig>74</thumbHeightBig>
-          <thumbPosXBig>7</thumbPosXBig>
-          <thumbPosYBig>7</thumbPosYBig>
+          <thumbWidthBig>390</thumbWidthBig>
+		  <thumbHeightBig>74</thumbHeightBig>
+		  <thumbPosXBig>7</thumbPosXBig>
+		  <thumbPosYBig>5</thumbPosYBig>
           <thumbZoom>no</thumbZoom>
           <!-- text (when there is no banner) -->
           <textXOff>60</textXOff>
           <textYOff>25</textYOff>
-          <spinCanFocus>no</spinCanFocus>
         </control>
         <control>
 			<description>Filmstrip view</description>
