@@ -319,6 +319,19 @@
 		  <visible>Control.IsVisible(50)+!facadeview.filmstrip+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+!string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
 		</control>
 
+		<!-- DTS 2.0 -->
+		<control>
+		  <description>DTS 2.0</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 20.png</texture>
+		  <visible>Control.IsVisible(50)+!facadeview.filmstrip+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+		</control>
+		
 		<!-- DTS 5.1 -->
 		<control>
 		  <description>DTS 5.1</description>
@@ -728,7 +741,20 @@
 		  <texture>Logos\Audio\FLAC.png</texture>
 		  <visible>Control.IsVisible(50)+facadeview.filmstrip+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+!string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
 		</control>
-
+		
+		<!-- DTS 2.0 -->
+		<control>
+		  <description>DTS 2.0</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>740</posX>
+		  <posY>10</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DTS 20.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.filmstrip+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+		</control>
+		
 		<!-- DTS 5.1 -->
 		<control>
 		  <description>DTS 5.1</description>
