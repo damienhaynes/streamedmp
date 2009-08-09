@@ -168,7 +168,7 @@
                         <label>paused</label>
                         <font>mediastream12tc</font>
                         <colordiffuse>White</colordiffuse>
-                        <visible>player.paused</visible>
+                        <visible>player.paused+!control.isvisible(10)</visible>
                 </control>
         </controls>
 </window>
