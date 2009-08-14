@@ -43,12 +43,14 @@
             this.txtText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.linkReset = new System.Windows.Forms.LinkLabel();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(123, 170);
+            this.btnOK.Location = new System.Drawing.Point(273, 154);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(62, 23);
             this.btnOK.TabIndex = 0;
@@ -58,6 +60,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnText3);
             this.groupBox1.Controls.Add(this.txtText3);
             this.groupBox1.Controls.Add(this.label5);
@@ -75,14 +78,13 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(8, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(177, 161);
+            this.groupBox1.Size = new System.Drawing.Size(327, 145);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Choose Colours:";
             // 
             // btnText3
             // 
-            this.btnText3.Location = new System.Drawing.Point(130, 125);
+            this.btnText3.Location = new System.Drawing.Point(282, 75);
             this.btnText3.Name = "btnText3";
             this.btnText3.Size = new System.Drawing.Size(27, 22);
             this.btnText3.TabIndex = 14;
@@ -95,7 +97,7 @@
             // 
             this.txtText3.BackColor = System.Drawing.Color.Black;
             this.txtText3.ForeColor = System.Drawing.Color.White;
-            this.txtText3.Location = new System.Drawing.Point(75, 127);
+            this.txtText3.Location = new System.Drawing.Point(227, 77);
             this.txtText3.Name = "txtText3";
             this.txtText3.Size = new System.Drawing.Size(49, 20);
             this.txtText3.TabIndex = 13;
@@ -105,7 +107,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(28, 130);
+            this.label5.Location = new System.Drawing.Point(180, 80);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 12;
@@ -114,7 +116,7 @@
             // 
             // btnText2
             // 
-            this.btnText2.Location = new System.Drawing.Point(130, 99);
+            this.btnText2.Location = new System.Drawing.Point(282, 49);
             this.btnText2.Name = "btnText2";
             this.btnText2.Size = new System.Drawing.Size(27, 22);
             this.btnText2.TabIndex = 11;
@@ -128,7 +130,7 @@
             // 
             this.txtText2.BackColor = System.Drawing.Color.Black;
             this.txtText2.ForeColor = System.Drawing.Color.White;
-            this.txtText2.Location = new System.Drawing.Point(75, 101);
+            this.txtText2.Location = new System.Drawing.Point(227, 51);
             this.txtText2.Name = "txtText2";
             this.txtText2.Size = new System.Drawing.Size(49, 20);
             this.txtText2.TabIndex = 10;
@@ -138,7 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 104);
+            this.label4.Location = new System.Drawing.Point(180, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 9;
@@ -147,7 +149,7 @@
             // 
             // btnRemote
             // 
-            this.btnRemote.Location = new System.Drawing.Point(130, 73);
+            this.btnRemote.Location = new System.Drawing.Point(130, 101);
             this.btnRemote.Name = "btnRemote";
             this.btnRemote.Size = new System.Drawing.Size(27, 22);
             this.btnRemote.TabIndex = 8;
@@ -160,7 +162,7 @@
             // 
             this.txtRemote.BackColor = System.Drawing.Color.Black;
             this.txtRemote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.txtRemote.Location = new System.Drawing.Point(75, 75);
+            this.txtRemote.Location = new System.Drawing.Point(75, 103);
             this.txtRemote.Name = "txtRemote";
             this.txtRemote.Size = new System.Drawing.Size(49, 20);
             this.txtRemote.TabIndex = 7;
@@ -170,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 78);
+            this.label3.Location = new System.Drawing.Point(21, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
@@ -179,7 +181,7 @@
             // 
             // btnWatched
             // 
-            this.btnWatched.Location = new System.Drawing.Point(130, 47);
+            this.btnWatched.Location = new System.Drawing.Point(130, 75);
             this.btnWatched.Name = "btnWatched";
             this.btnWatched.Size = new System.Drawing.Size(27, 22);
             this.btnWatched.TabIndex = 5;
@@ -192,7 +194,7 @@
             // 
             this.txtWatched.BackColor = System.Drawing.Color.Black;
             this.txtWatched.ForeColor = System.Drawing.Color.LightGray;
-            this.txtWatched.Location = new System.Drawing.Point(75, 49);
+            this.txtWatched.Location = new System.Drawing.Point(75, 77);
             this.txtWatched.Name = "txtWatched";
             this.txtWatched.Size = new System.Drawing.Size(49, 20);
             this.txtWatched.TabIndex = 4;
@@ -202,7 +204,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 52);
+            this.label2.Location = new System.Drawing.Point(15, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 3;
@@ -211,7 +213,7 @@
             // 
             // btnText
             // 
-            this.btnText.Location = new System.Drawing.Point(130, 21);
+            this.btnText.Location = new System.Drawing.Point(130, 49);
             this.btnText.Name = "btnText";
             this.btnText.Size = new System.Drawing.Size(27, 22);
             this.btnText.TabIndex = 2;
@@ -225,7 +227,7 @@
             // 
             this.txtText.BackColor = System.Drawing.SystemColors.WindowText;
             this.txtText.ForeColor = System.Drawing.Color.White;
-            this.txtText.Location = new System.Drawing.Point(75, 23);
+            this.txtText.Location = new System.Drawing.Point(75, 51);
             this.txtText.Name = "txtText";
             this.txtText.Size = new System.Drawing.Size(49, 20);
             this.txtText.TabIndex = 1;
@@ -235,11 +237,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 26);
+            this.label1.Location = new System.Drawing.Point(25, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Text:";
+            this.label1.Text = "Default:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // toolTip
@@ -251,12 +253,33 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Colour Help";
             // 
+            // linkReset
+            // 
+            this.linkReset.AutoSize = true;
+            this.linkReset.Location = new System.Drawing.Point(12, 159);
+            this.linkReset.Name = "linkReset";
+            this.linkReset.Size = new System.Drawing.Size(35, 13);
+            this.linkReset.TabIndex = 2;
+            this.linkReset.TabStop = true;
+            this.linkReset.Text = "Reset";
+            this.linkReset.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkReset_LinkClicked);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(291, 26);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Choose the colours that you want items on the list facade to \r\nbe displayed as:";
+            // 
             // ListColorDialog
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(193, 197);
+            this.ClientSize = new System.Drawing.Size(343, 182);
+            this.Controls.Add(this.linkReset);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -270,6 +293,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,5 +317,7 @@
         private System.Windows.Forms.Button btnText;
         private System.Windows.Forms.TextBox txtText;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.LinkLabel linkReset;
+        private System.Windows.Forms.Label label6;
     }
 }
