@@ -118,8 +118,7 @@
 #define RES_CHECK_ROUNDEDCOVERS			1408 
 #define RES_COMBO_VUMETERS				1410
 #define RES_BUTTON_LISTCOLOURS			1412
-#define RES_CHECK_UNFOCUSEDALPHALIST	1413
-#define RES_CHECK_UNFOCUSEDALPHATHUMBS	1415
+#define RES_BUTTON_UNFOCUSEDALPHA		1413
 
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -181,8 +180,6 @@ BOOL g_bShowIconsInListView;
 BOOL g_bShowUnWatchedOnlyInListImage; 
 BOOL g_bStartBasicHome; 
 BOOL g_bShowRoundedCovers;
-BOOL g_bSetUnfocusedAlphaList;
-BOOL g_bSetUnfocusedAlphaThumbs; 
 
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -190,7 +187,9 @@ STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
 STRING g_sVUMeter;
 STRING g_sWideBannerLayout;
-
+STRING g_sUnfocusedAlphaListItems;
+STRING g_sUnfocusedAlphaThumbs;
+  
 STRING g_sMediaPortalProgramDir;
 STRING g_sLanguageDir;
 STRING g_sThumbsDir;
@@ -410,17 +409,15 @@ begin
 	if GetMPXMLProperty("musicmisc","vumeter", g_sVUMeter) < 0 then
 		g_sVUMeter = "led";	
 	endif;	
-	
+
 	// Unfocused Alpha List Layout               
 	sFile = STREAMEDMP_SKIN_REFERENCES;	
-	GetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, svValue);
-	if svValue != "255" then
-		g_bSetUnfocusedAlphaList = TRUE;
+	if GetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, g_sUnfocusedAlphaListItems) < 0 then
+		g_sUnfocusedAlphaListItems = "100";
 	endif;		
 	// Unfocused Alpha Thumbs Layout
-	GetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, svValue);
-	if svValue != "255" then
-		g_bSetUnfocusedAlphaThumbs = TRUE;
+	if GetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, g_sUnfocusedAlphaThumbs) < 0 then
+		g_sUnfocusedAlphaThumbs = "100";
 	endif;
 	
 	// Get List Facade Colors
@@ -1277,7 +1274,7 @@ function number ShowSelectOptions(bModify)
 	NUMBER nCmdValue;
 	BOOL bDone, bResult;
 	LIST listFonts, listTVGuides, listVUMeters;
-	OBJECT objColors;
+	OBJECT objColors, objUnfocusedAlpha;
 begin
 
 	szDialogName = "SelectionOptions";
@@ -1371,13 +1368,6 @@ Dlg_Wait:
  				      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
  				endif; 			 		
  				
- 				// Unfocused Alpha
- 				if g_bSetUnfocusedAlphaList then
- 					CtrlSetState(szDialogName,RES_CHECK_UNFOCUSEDALPHALIST,BUTTON_CHECKED);
- 				endif; 
- 				if g_bSetUnfocusedAlphaThumbs then
- 					CtrlSetState(szDialogName,RES_CHECK_UNFOCUSEDALPHATHUMBS,BUTTON_CHECKED);
- 				endif;
  				
  			case RES_BUTTON_LISTCOLOURS:
  				// Create Instance of Colors Class
@@ -1401,6 +1391,30 @@ Dlg_Wait:
 						g_sText3Color = objColors.GetText3Color();
 						g_sWatchedColor = objColors.GetWatchedColor();
 						g_sRemoteColor = objColors.GetRemoteColor();					
+					endif;
+	 			    
+	 			    // Destroy Object
+	 			    set objColors = NOTHING;
+	 			 catch
+	 			 	MessageBox("Error: unable to display\read colours",INFORMATION);
+	 			 endcatch;
+ 			
+ 			case RES_BUTTON_UNFOCUSEDALPHA:
+ 				 // Create Instance of UnfocusedAlpha Class
+ 				try
+	 				set objUnfocusedAlpha = CoCreateObjectDotNet(SUPPORTDIR^"FacadeProperties.dll", "FacadeProperties.UnfocusedAlpha" );
+					
+					// Update Defaults
+					objUnfocusedAlpha.SetUnfocusedAlphaListItems(g_sUnfocusedAlphaListItems);
+					objUnfocusedAlpha.SetUnfocusedAlphaThumbs(g_sUnfocusedAlphaThumbs);
+														
+					// Display Color Choice Dialog
+					bResult = objUnfocusedAlpha.ShowUnfocusedAlpha(); 
+		            
+		            // Save Colors
+					if bResult then					
+                    	g_sUnfocusedAlphaListItems =  objUnfocusedAlpha.GetUnfocusedAlphaListItems;
+                    	g_sUnfocusedAlphaThumbs = objUnfocusedAlpha.GetUnfocusedAlphaThumbs;
 					endif;
 	 			    
 	 			    // Destroy Object
@@ -1493,7 +1507,7 @@ Dlg_Wait:
 		g_bShowRoundedCovers = FALSE;
 	endif;  
 	
-	if (CtrlGetState(szDialogName,RES_CHECK_UNFOCUSEDALPHALIST) = BUTTON_CHECKED) then
+	/*if (CtrlGetState(szDialogName,RES_CHECK_UNFOCUSEDALPHALIST) = BUTTON_CHECKED) then
 		g_bSetUnfocusedAlphaList = TRUE;
 	else
 		g_bSetUnfocusedAlphaList = FALSE;
@@ -1502,7 +1516,7 @@ Dlg_Wait:
 		g_bSetUnfocusedAlphaThumbs = TRUE;
 	else
 		g_bSetUnfocusedAlphaThumbs = FALSE;
-	endif;
+	endif;*/
 	
 
     EndDialog (szDialogName);
@@ -1626,22 +1640,9 @@ begin
 	// Update Unfocused Alpha in references.xml
 	// Valid values from 0 - 255 (Tranparent - Solid);
 	sFile = STREAMEDMP_SKIN_REFERENCES;
-	if g_bSetUnfocusedAlphaList then
-		SetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, "100");
-	else
-		SetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, "255");
-	endif;  
-	if g_bSetUnfocusedAlphaList then
-		SetXMLProperty(sFile, REFERENCES_PLAYLISTALPHA_PATH, "100");
-	else
-		SetXMLProperty(sFile, REFERENCES_PLAYLISTALPHA_PATH, "255");
-	endif;
-	
-	if g_bSetUnfocusedAlphaThumbs then
-		SetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, "100");
-	else
-		SetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, "255");
-	endif;
+	SetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, g_sUnfocusedAlphaListItems);	
+	SetXMLProperty(sFile, REFERENCES_PLAYLISTALPHA_PATH, g_sUnfocusedAlphaListItems);
+	SetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, g_sUnfocusedAlphaThumbs);
 	
 	// Set List Facade Colors
 	SetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT_PATH, "FF"+g_sTextColor);

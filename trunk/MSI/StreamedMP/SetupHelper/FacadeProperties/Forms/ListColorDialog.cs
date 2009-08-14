@@ -99,7 +99,8 @@ namespace FacadeProperties {
             Close();
         }
 
-        private void UpdateColors() {            
+        private void UpdateColors() {
+            // Reflect current colours in controls
             txtText.Text = ColorText;            
             txtText.ForeColor = ColorFromRGB(ColorText);
             
@@ -114,6 +115,16 @@ namespace FacadeProperties {
 
             txtRemote.Text = ColorRemote;
             txtRemote.ForeColor = ColorFromRGB(ColorRemote);
+        }
+
+        private void linkReset_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            // reset colours to defaults
+            ColorText = "FFFFFF";
+            ColorText2 = "FFFFFF";
+            ColorText3 = "FFFFFF";
+            ColorWatched = "808080";
+            ColorRemote = "FFA075";
+            UpdateColors();
         }
     }
 }
