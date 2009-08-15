@@ -15,12 +15,12 @@
 		<width>280</width>
 		<height>389</height>
 		<visible>no</visible>
-		<texture>onlinevideos_clip_backdrop.png</texture>
+		<texture>-</texture>
     </control>
 
 	<!-- *** TITLE *** -->
 
-	<control>
+	<!--<control>
 		<description>Category Text Shadow</description>
 		<type>fadelabel</type>
 		<id>0</id>
@@ -30,7 +30,7 @@
 		<font>mediastream16tc</font>
 		<label>#header.label</label>
 		<textcolor>ff222222</textcolor>
-		<visible>Control.IsVisible(51)</visible>
+		<visible>no</visible>
 		<animation effect="fade" time="250">VisibleChange</animation>
 	</control>
 		
@@ -46,7 +46,7 @@
 		<textcolor>ffFFFFFF</textcolor>
 		<visible>Control.IsVisible(51)</visible>
 		<animation effect="fade" time="250">VisibleChange</animation>
-	</control>
+	</control>-->
 
 	<!-- *** POSTER *** -->
 
@@ -56,8 +56,8 @@
 		<id>24</id>
 		<posX>40</posX>
 		<posY>315</posY>
-		<width>260</width>
-		<height>368</height>
+		<width>220</width>
+		<height>328</height>
 		<visible>no</visible>
 		<texture>#OnlineVideos.movieposter</texture>
 	</control>
@@ -70,9 +70,12 @@
 		<id>54</id>
 		<posX>320</posX>
 		<posY>312</posY>
+        <shadowAngle>45</shadowAngle>
+        <shadowDistance>4</shadowDistance>
+        <shadowColor>ff111111</shadowColor>
 		<label>172</label>
 		<visible>no</visible>
-		<textcolor>ffb2d4f5</textcolor>
+		<textcolor>ff909090</textcolor>
 	</control>
 
     <control>
@@ -96,9 +99,12 @@
 		<id>56</id>
 		<posX>320</posX>
 		<posY>362</posY>
+        <shadowAngle>45</shadowAngle>
+        <shadowDistance>4</shadowDistance>
+        <shadowColor>ff111111</shadowColor>
 		<label>135</label>
 		<visible>no</visible>
-		<textcolor>ffb2d4f5</textcolor>
+		<textcolor>ff909090</textcolor>
     </control>
 	
     <control>
@@ -122,9 +128,12 @@
 		<id>52</id>
 		<posX>320</posX>
 		<posY>412</posY>
+        <shadowAngle>45</shadowAngle>
+        <shadowDistance>4</shadowDistance>
+        <shadowColor>ff111111</shadowColor>
 		<label>206</label>
 		<visible>no</visible>
-		<textcolor>ffb2d4f5</textcolor>
+		<textcolor>ff909090</textcolor>
     </control>
 
     <control>
@@ -147,13 +156,16 @@
 		<description>Plot Label</description>
 		<id>58</id>
 		<posX>320</posX>
-		<posY>462</posY>
+		<posY>452</posY>
 		<visible>no</visible>
+        <shadowAngle>45</shadowAngle>
+        <shadowDistance>4</shadowDistance>
+        <shadowColor>ff111111</shadowColor>
 		<label>Plot:</label>
-		<textcolor>ffb2d4f5</textcolor>
+		<textcolor>ff909090</textcolor>
     </control>
 	
-    <control>
+    <!--<control>
 		<type>image</type>
 		<description>Plot Background</description>
 		<id>0</id>
@@ -162,20 +174,20 @@
 		<width>404</width>
 		<height>209</height>
 		<visible>control.IsVisible(24)</visible>
-		<texture>pic_preview_thumb_background_nofocus.png</texture>
-    </control>
+		<texture>-</texture>
+    </control>-->
     
     <control>
 		<type>textboxscrollup</type>
 		<description>Plot</description>
 		<id>59</id>
 		<posX>349</posX>
-		<posY>495</posY>
+		<posY>485</posY>
 		<width>375</width>
 		<height>186</height>
 		<colordiffuse>ffffffff</colordiffuse>
 		<visible>no</visible>
-		<font>mediastream10</font>
+		<font>mediastream11</font>
 		<label>#OnlineVideos.trailerdesc</label>
 		<textcolor>FFFFFFFF</textcolor>
     </control>
