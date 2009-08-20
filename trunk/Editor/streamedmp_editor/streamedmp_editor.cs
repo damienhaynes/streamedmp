@@ -20,7 +20,7 @@ namespace streamedmp_editor
         List<backgroundItem> bgItems = new List<backgroundItem>();
         List<prettyItem> prettyItems = new List<prettyItem>();
         
-        string path;
+        string skinBasePath;
         string xml;
         string defFocus = "FFFFFF";
         string defUnFocus = "FFFFFF";
@@ -58,14 +58,56 @@ namespace streamedmp_editor
             }
         }
 
+        private string GetMediaPortalSkinPath()
+        {
+            string sMPbaseDir = GetMediaPortalPath();
+            if (sMPbaseDir == null)
+                return null;
+            
+            string fMPdirs = sMPbaseDir + "\\MediaPortalDirs.xml";
+            XmlDocument doc = new XmlDocument();
+            if (!File.Exists(fMPdirs))
+            {
+                MessageBox.Show("Can't find MediaPortalDirs.xml " + fMPdirs);
+                return null;
+            }
+
+            doc.Load(fMPdirs);
+            XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/Config/Dir");
+            if (nodeList == null) return null;
+           
+            foreach (XmlNode node in nodeList)
+            {                
+                XmlNode innerNode = node.Attributes.GetNamedItem("id");
+                if (innerNode.InnerText == "Skin")
+                {
+                    XmlNode path = node.SelectSingleNode("Path");
+                    if (path != null)
+                    {
+                        skinBasePath = path.InnerText;
+                    }
+                }
+            }
+            
+            // replace string for default skin path defined in MP 1.1.0
+            string CommonData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+            skinBasePath = skinBasePath.Replace("%PROGRAMDATA%", CommonData);
+            skinBasePath = skinBasePath.Replace("%ProgramData%", CommonData);
+
+            // check for earlier release of MP or custom directory
+            if (!skinBasePath.Contains("%") && !Directory.Exists(skinBasePath))
+                skinBasePath = sMPbaseDir + "\\" + skinBasePath;
+            
+            skinBasePath = skinBasePath + "StreamedMP\\";
+            return skinBasePath;
+        }
+
         private void frmStreamedMPEditor_Load(object sender, EventArgs e)
         {
             // Load Skin folder on load
-            string sMediaPortalDir = GetMediaPortalPath();
-            if (sMediaPortalDir == null)
-                return;
-            
-            path = sMediaPortalDir + "\\skin\\StreamedMP";
+            string path = GetMediaPortalSkinPath();
+            if (path == null) return;
+
             if (System.IO.Directory.Exists(path))
             {
                 if (loadIDs(true) == true)
@@ -115,7 +157,7 @@ namespace streamedmp_editor
         {
             lstAvailableWindows.Enabled = true;
             lstAvailableWindows.Items.Clear();
-            string[] files = System.IO.Directory.GetFiles(path);
+            string[] files = System.IO.Directory.GetFiles(skinBasePath);
             foreach (string file in files)
             {
                 try
@@ -248,7 +290,7 @@ namespace streamedmp_editor
 
 
             XmlDocument doc = new XmlDocument();
-            if (!File.Exists(path + @"\" + menu))
+            if (!File.Exists(skinBasePath + @"\" + menu))
             {
                 MessageBox.Show("Selected menu not found\r\nSelect the StreamedMP folder first and make sure " + menu + " exists");
                 return;
@@ -256,7 +298,7 @@ namespace streamedmp_editor
             menuItems.Clear();
             chklstWinddowsInMenu.Items.Clear();
 
-            doc.Load(path + @"\" + menu);
+            doc.Load(skinBasePath + @"\" + menu);
 
             // Get default control if it is set
             XmlNode defaultControlNode = doc.DocumentElement.SelectSingleNode("/window/defaultcontrol");
@@ -553,11 +595,11 @@ namespace streamedmp_editor
                 selector.ShowDialog();*/
                 
                 // Backup current BasicHome.xml
-                if (File.Exists(path + @"\" + "Basichome.xml"))
+                if (File.Exists(skinBasePath + @"\" + "Basichome.xml"))
                 {
                     try
                     {
-                        File.Copy(path + @"\" + "Basichome.xml", path + @"\" + "Basichome.xml.backup." + DateTime.Now.Ticks.ToString());
+                        File.Copy(skinBasePath + @"\" + "Basichome.xml", skinBasePath + @"\" + "Basichome.xml.backup." + DateTime.Now.Ticks.ToString());
                     }
                     catch (Exception ex)
                     {
@@ -567,10 +609,10 @@ namespace streamedmp_editor
                 }
 
                 // Remove current BasicHome.xml
-                if (File.Exists(path + @"\" + "Basichome.xml"))
-                    File.Delete(path + @"\" + "Basichome.xml");
+                if (File.Exists(skinBasePath + @"\" + "Basichome.xml"))
+                    File.Delete(skinBasePath + @"\" + "Basichome.xml");
 
-                StreamWriter writer = File.CreateText(path + @"\" + "Basichome.xml");
+                StreamWriter writer = File.CreateText(skinBasePath + @"\" + "Basichome.xml");
                 xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "\t<id>35</id>");              
                 writer.Write(xml);
                 writer.Close();
@@ -1451,20 +1493,14 @@ namespace streamedmp_editor
         }
 
         private void openStreamedMPFolderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string sMediaPortalDir = GetMediaPortalPath();
-
-            
-            if (sMediaPortalDir != null)
-                folderBrowserDialog1.SelectedPath = sMediaPortalDir + "\\skin\\StreamedMP";
-
+        {            
             folderBrowserDialog1.Description = "Select the skin Directory to load:";
             DialogResult dlgResult = folderBrowserDialog1.ShowDialog();
             if (dlgResult == DialogResult.Cancel)
                 return;
-            
-            path = folderBrowserDialog1.SelectedPath;
-            if (path != "")
+
+            skinBasePath = folderBrowserDialog1.SelectedPath;
+            if (skinBasePath != "")
             {
                 if (loadIDs(false))
                 {
