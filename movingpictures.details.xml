@@ -14,7 +14,7 @@ This file should contain the details view
       <width>1280</width>
       <height>720</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -28,7 +28,7 @@ This file should contain the details view
       <onright>6</onright>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <!--            :: MAIN DETAILS ::            -->
@@ -42,7 +42,7 @@ This file should contain the details view
       <width>267</width>
       <height>390</height>
       <texture>defaultdvdcover.png</texture>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -54,7 +54,7 @@ This file should contain the details view
       <width>257</width>
       <height>380</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -66,7 +66,7 @@ This file should contain the details view
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>!Control.IsVisible(50)+Control.HasThumb(60)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.HasThumb(60)</visible>
     </control>
     
 	<!--<control>
@@ -78,7 +78,7 @@ This file should contain the details view
       <width>282</width>
       <height>413</height>
       <texture>round.poster.frame.png</texture>
-      <visible>Control.HasThumb(60)+!Control.IsVisible(50)</visible>      
+      <visible>Control.HasThumb(60)+!Control.IsVisible(50)+!Control.IsVisible(51)</visible>      
     </control>-->
 	
     <control>
@@ -90,7 +90,7 @@ This file should contain the details view
       <width>32</width>
       <height>39</height>
       <texture>overlaywubg.png</texture>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -102,7 +102,7 @@ This file should contain the details view
       <width>23</width>
       <height>23</height>
       <texture>overlaywatched.png</texture>
-      <visible>!Control.IsVisible(50)+Control.IsVisible(9)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.IsVisible(9)</visible>
     </control>
     
     <control>
@@ -114,7 +114,7 @@ This file should contain the details view
       <width>23</width>
       <height>23</height>
       <texture>overlayunwatched.png</texture>
-      <visible>!Control.IsVisible(50)+!Control.IsVisible(9)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+!Control.IsVisible(9)</visible>
     </control>
     
     <!-- Details Box -->
@@ -128,7 +128,7 @@ This file should contain the details view
       <width>896</width>
       <height>337</height>
       <texture>detailsbg.png</texture>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -141,7 +141,7 @@ This file should contain the details view
       <font>mediastream14tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -154,7 +154,7 @@ This file should contain the details view
       <width>840</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -169,7 +169,7 @@ This file should contain the details view
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -182,7 +182,7 @@ This file should contain the details view
       <width>100</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -195,7 +195,7 @@ This file should contain the details view
       <width>800</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -208,7 +208,7 @@ This file should contain the details view
       <width>100</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -221,7 +221,7 @@ This file should contain the details view
       <width>730</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -235,7 +235,7 @@ This file should contain the details view
 	  <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -249,7 +249,7 @@ This file should contain the details view
 	  <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -263,7 +263,7 @@ This file should contain the details view
 	  <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
     <control>
@@ -277,7 +277,7 @@ This file should contain the details view
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!Control.IsVisible(50)</visible>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
 	<!-- Certification -->
@@ -290,7 +290,7 @@ This file should contain the details view
 	  <width>259</width>
 	  <height>57</height>
 	  <texture>Logos\Certification\#MovingPictures.SelectedMovie.certification.png</texture>
-	  <visible>!Control.IsVisible(50)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
 	</control>
 	
 	<!-- MediaInfo Logos (Details View)-->
@@ -306,7 +306,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\HD 720P.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videoresolution,720p)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videoresolution,720p)</visible>
 	</control>
 
 	<!-- HD 1080p -->
@@ -319,7 +319,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\HD 1080P.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videoresolution,1080p)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videoresolution,1080p)</visible>
 	</control>
 
 	<!-- HD 1080i -->
@@ -332,7 +332,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\HD 1080i.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videoresolution,1080i)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videoresolution,1080i)</visible>
 	</control>
 
 	<!-- HD Widescren ie not 720p, 1080i or 1080p -->
@@ -345,7 +345,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\HD 169.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.videoresolution,HD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videoresolution,HD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
 	</control>
 
 	<!-- SD Widescreen -->
@@ -358,7 +358,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\SD 169.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
 	</control>
 
 	<!-- SD Fullscreen -->
@@ -371,7 +371,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\SD 43.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,fullscreen)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,fullscreen)]</visible>
 	</control>
 
 	<!-- Video Codecs -->
@@ -386,7 +386,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\H264.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,H264)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,H264)</visible>
 	</control>
 
 	<!-- DIVX -->
@@ -399,7 +399,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\DIVX.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
 	</control>
 
 	<!-- XVID -->
@@ -412,7 +412,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\XVID.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,XVID)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,XVID)</visible>
 	</control>
 
 	<!-- MPEG -->
@@ -425,7 +425,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\MPEG.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,MP1V)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,MP1V)</visible>
 	</control>
 
 	<!-- MPEG 2 -->
@@ -438,7 +438,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\MPEG2.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
 	</control>
 
 	<!-- MPEG 4 -->
@@ -451,7 +451,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\MPEG4.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.videocodec,MP4V)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,MP4V)</visible>
 	</control>
 
 	<!-- WMV -->
@@ -464,7 +464,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\WMV.png</texture>
-	  <visible>!Control.IsVisible(50)+string.contains(#MovingPictures.LocalMedia.videocodec,WMV)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.contains(#MovingPictures.LocalMedia.videocodec,WMV)</visible>
 	</control>
 
 	<!-- REAL VIDEO -->
@@ -477,7 +477,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\REAL.png</texture>
-	  <visible>!Control.IsVisible(50)+string.contains(#MovingPictures.LocalMedia.videocodec,REAL)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.contains(#MovingPictures.LocalMedia.videocodec,REAL)</visible>
 	</control>
 
 	<!-- FLASH VIDEO -->
@@ -490,7 +490,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\FLASH.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.contains(#MovingPictures.LocalMedia.videocodec,FLASH)|string.equals(#MovingPictures.LocalMedia.videocodec,FLV)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.contains(#MovingPictures.LocalMedia.videocodec,FLASH)|string.equals(#MovingPictures.LocalMedia.videocodec,FLV)]</visible>
 	</control>
 
 	<!-- Audio Channels / Codecs-->
@@ -505,7 +505,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\MONO.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.audiochannels,mono)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.audiochannels,mono)</visible>
 	</control>
 
 	<!-- Dolby Digital 5.1 -->
@@ -518,7 +518,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DD 51.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
 	</control>
 
 	<!-- Dolby Digital 2.0 -->
@@ -531,7 +531,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DD 20.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
 	</control>
 
 	<!-- MP3 2.0 -->
@@ -544,7 +544,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\MP3 20.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,MP3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,MP3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
 	</control>
 
 	<!-- AAC -->
@@ -557,7 +557,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\AAC.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)</visible>
 	</control>
 
 	<!-- WMA -->
@@ -570,7 +570,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\WMA.png</texture>
-	  <visible>!Control.IsVisible(50)+string.contains(#MovingPictures.LocalMedia.audiocodec,WMA)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.contains(#MovingPictures.LocalMedia.audiocodec,WMA)</visible>
 	</control>
 
 	<!-- Vorbis OGG -->
@@ -583,7 +583,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\VORBIS.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.contains(#MovingPictures.LocalMedia.audiocodec,VORBIS)|string.contains(#MovingPictures.LocalMedia.audiocodec,OGG)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.contains(#MovingPictures.LocalMedia.audiocodec,VORBIS)|string.contains(#MovingPictures.LocalMedia.audiocodec,OGG)]</visible>
 	</control>
 
 	<!-- FLAC 5.1 -->
@@ -596,7 +596,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\FLAC 51.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
 	</control>
 
 	<!-- FLAC -->
@@ -609,7 +609,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\FLAC.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+!string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+!string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
 	</control>
 	
 	<!-- DTS 2.1 -->
@@ -622,7 +622,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 20.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
 	</control>
 	
 	<!-- DTS 5.1 -->
@@ -635,7 +635,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 51.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
 	</control>
 
 	<!-- DTS 6.1 -->
@@ -648,7 +648,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 61.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,7)|string.equals(#MovingPictures.LocalMedia.audiochannels,6.1)]]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,7)|string.equals(#MovingPictures.LocalMedia.audiochannels,6.1)]]</visible>
 	</control>
 
 	<!-- DTS 7.1 -->
@@ -661,7 +661,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 71.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
 	</control>
 
 	<!-- PCM -->
@@ -674,7 +674,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\PCM.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.audiocodec,PCM)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.audiocodec,PCM)</visible>
 	</control>
 
 	<!-- MP2A -->
@@ -687,7 +687,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\MP2A.png</texture>
-	  <visible>!Control.IsVisible(50)+string.equals(#MovingPictures.LocalMedia.audiocodec,MP2A)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.audiocodec,MP2A)</visible>
 	</control>
 
 	<!-- REAL AUDIO -->
@@ -700,7 +700,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\REAL.png</texture>
-	  <visible>!Control.IsVisible(50)+string.contains(#MovingPictures.LocalMedia.audiocodec,REAL)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.contains(#MovingPictures.LocalMedia.audiocodec,REAL)</visible>
 	</control>
 
 	<!-- Has Subtitles -->
@@ -713,7 +713,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\SUBTITLES.png</texture>
-	  <visible>!Control.IsVisible(50)+[string.equals(#MovingPictures.LocalMedia.hassubtitles,true)|string.equals(#MovingPictures.LocalMedia.hassubtitles,1)]</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.hassubtitles,true)|string.equals(#MovingPictures.LocalMedia.hassubtitles,1)]</visible>
 	</control>
 		
   </controls>
