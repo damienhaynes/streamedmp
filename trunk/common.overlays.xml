@@ -32,38 +32,11 @@ same location everywhere
                         <height>152</height>
                         <texture>dialogprogressbg.png</texture>
                         <visible>player.hasmedia</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
-
-                <!--<control>
-                        <description>Music logo Animation</description>
-                        <type>animation</type>
-                        <id>1</id>
-                        <posX>18</posX>
-                        <posY>78</posY>
-                        <width>114</width>
-                        <height>114</height>
-                        <textures>#Play.Current.Thumb;C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
-                        <Duration>0:1:30</Duration>
-                        <keepaspectratio>no</keepaspectratio>
-                        <centered>yes</centered>
-                        <zoom>yes</zoom>
-                        <visible>player.hasmedia+control.isvisible(3337)+!string.equals(#Play.Current.Thumb,)</visible>
-                        <animation effect="fade" time="900">VisibleChange</animation>
-                </control>-->
-                <control>
-                        <description>Selectable Button</description>
-                        <type>button</type>
-                        <id>1701</id>
-                        <posX>13</posX>
-                        <posY>73</posY>
-                        <width>124</width>
-                        <height>124</height>
-                        <textureFocus>tv_blue_border.png</textureFocus>
-                        <textureNoFocus>-</textureNoFocus>
-                        <action>18</action>
-                        <visible>player.hasmedia+control.isvisible(3337)</visible>
-                </control>
-                <control>
+                <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
+                  <control>
                         <description>music logo</description>
                         <type>image</type>
                         <id>0</id>
@@ -76,11 +49,13 @@ same location everywhere
                         <zoom>yes</zoom>
                         <texture>defaultAudioBig.png</texture>
                         <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>music logo</description>
                         <type>image</type>
-                        <id>0</id>
+                        <id>722</id>
                         <posX>18</posX>
                         <posY>78</posY>
                         <width>114</width>
@@ -90,11 +65,13 @@ same location everywhere
                         <zoom>yes</zoom>
                         <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
                         <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
-                </control>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                 </control>
                 <control>
                         <description>music logo</description>
                         <type>image</type>
-                        <id>0</id>
+                        <id>723</id>
                         <posX>18</posX>
                         <posY>78</posY>
                         <width>114</width>
@@ -103,7 +80,45 @@ same location everywhere
                         <centered>yes</centered>
                         <zoom>no</zoom>
                         <texture>#Play.Current.Thumb</texture>
+                        <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                </control>
+                <control>
+                        <description>Music logo Animation</description>
+                        <type>animation</type>
+                        <id>721</id>
+                        <posX>18</posX>
+                        <posY>78</posY>
+                        <width>114</width>
+                        <height>114</height>
+                        <textures>#Play.Current.Thumb;C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
+                        <Duration>0:0:45</Duration>
+                        <randomize>no</randomize>
+                        <keepaspectratio>no</keepaspectratio>
+                        <centered>yes</centered>
+                        <zoom>yes</zoom>
+                        <visible>!player.hasmedia+control.isvisible(3337)+control.hasthumb(722)+control.hasthumb(723)</visible>
+                        <animation effect="fade" time="500" reversible="true">VisibleChange</animation>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
+                        
+                </control>
+                <control>
+                        <description>Selectable Button</description>
+                        <type>button</type>
+                        <id>1701</id>
+                        <posX>13</posX>
+                        <posY>73</posY>
+                        <width>124</width>
+                        <height>124</height>
+                        <textureFocus>thumbborder5.png</textureFocus>
+                        <textureNoFocus>-</textureNoFocus>
+                        <action>18</action>
+                        <colordiffuse>f1ffffff</colordiffuse>
                         <visible>player.hasmedia+control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>artist info label</description>
@@ -117,6 +132,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream12tc</font>
                         <visible>player.hasmedia+control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>title info label</description>
@@ -130,6 +147,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10tc</font>
                         <visible>player.hasmedia+control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>album info label</description>
@@ -143,6 +162,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10c</font>
                         <visible>player.hasmedia+control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>play time / duration label</description>
@@ -156,6 +177,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10c</font>
                         <visible>player.hasmedia+control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>next song label</description>
@@ -169,6 +192,8 @@ same location everywhere
                         <textcolor>FF025984</textcolor>
                         <font>mediastream10</font>
                         <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>next song info label</description>
@@ -182,6 +207,8 @@ same location everywhere
                         <textcolor>FF999999</textcolor>
                         <font>mediastream10</font>
                         <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <!--                                    :: VIDEO OVERLAY ::                                    -->
                 <control>
@@ -195,7 +222,9 @@ same location everywhere
                         <action>18</action>
                         <onleft>1701</onleft>
                         <textureFocus>tv_blue_border.png</textureFocus>
-                        <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>artist info label</description>
@@ -209,6 +238,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10tc</font>
                         <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>title info label</description>
@@ -222,6 +253,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10tc</font>
                         <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>album info label</description>
@@ -235,6 +268,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10c</font>
                         <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>album info label</description>
@@ -248,6 +283,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10c</font>
                         <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
                 <control>
                         <description>play time / duration label</description>
@@ -261,6 +298,8 @@ same location everywhere
                         <textcolor>FFFFFFFF</textcolor>
                         <font>mediastream10c</font>
                         <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                        <animation effect="fade" time="500">WindowOpen</animation>
+                        <animation effect="fade" time="500">WindowClose</animation>
                 </control>
         </controls>
 </window>
