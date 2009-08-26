@@ -222,7 +222,7 @@ same location everywhere
                         <action>18</action>
                         <onleft>1701</onleft>
                         <textureFocus>tv_blue_border.png</textureFocus>
-                        <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                        <visible>player.hasmedia+!control.isvisible(3337)</visible>
                         <animation effect="fade" time="500">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>
                 </control>

@@ -203,7 +203,7 @@
                         <width>203</width>
                         <height>114</height>
                         <texture>black.png</texture>
-                        <visible>player.hasmedia+!control.isvisible(3337)+player.hasvideo</visible>
+                        <visible>player.hasmedia+!control.isvisible(3337)</visible>
                 </control>
                 <control>
                         <description>video preview window</description>
@@ -220,7 +220,7 @@
                         <onleft>17</onleft>
                         <textureFocus>tv_blue_border.png</textureFocus>
                         <textureNoFocus>-</textureNoFocus>
-                        <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+                        <visible>player.hasmedia+!control.isvisible(3337)</visible>
                 </control>
 
                 <control>
