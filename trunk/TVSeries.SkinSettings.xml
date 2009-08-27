@@ -122,18 +122,26 @@ skin\StreamedMP\Media\Logos\Video\H264.png;-;<Episode.VideoCodec>;-;contains;-;A
 skin\StreamedMP\Media\Logos\Video\MPEG2.png;-;<Episode.VideoCodec>;-;contains;-;MPEG;-;AND;-;<Episode.VideoCodec>;-;!contains;-;AVC;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\DIVX.png;-;<Episode.VideoCodec>;-;contains;-;DIVX;-;OR;-;<Episode.VideoCodec>;-;contains;-;DX50;-;OR;-;<Episode.VideoCodec>;-;contains;-;DIV3;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\XVID.png;-;<Episode.VideoCodec>;-;contains;-;XVID;-;OR;-;<Episode.VideoCodec>;-;contains;-;MPG4;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\WMV.png;-;<Episode.VideoCodec>;-;contains;-;WMV;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\REAL.png;-;<Episode.VideoCodec>;-;contains;-;REAL;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DD 20.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DD 51.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 51.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 61.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 71.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\FLAC.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;<;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\FLAC 51.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\MP3 20.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\MP2A.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L2;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AAC.png;-;<Episode.AudioCodec>;-;contains;-;AAC;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\VORBIS.png;-;<Episode.AudioCodec>;-;contains;-;VORBIS;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\WMA.png;-;<Episode.AudioCodec>;-;contains;-;WMA;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\REAL.png;-;<Episode.AudioCodec>;-;contains;-;REAL;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\DVD.png;-;<Episode.EpisodeFilename>;-;contains;-;DVD;-;AND;-;<Episode.EpisodeFilename>;-;!contains;-;HDDVD;-;AND;-;<Episode.EpisodeFilename>;-;!contains;-;HD-DVD;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\HDTV.png;-;<Episode.EpisodeFilename>;-;contains;-;HDTV;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\HDDVD.png;-;<Episode.EpisodeFilename>;-;contains;-;HDDVD;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;HD-DVD;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\BLURAY.png;-;<Episode.EpisodeFilename>;-;contains;-;BLURAY;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;BLU-RAY;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;
-skin\StreamedMP\Media\Logos\Audio\DD 20.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DD 51.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTS 51.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\FLAC 51.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP3 20.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AAC.png;-;<Episode.AudioCodec>;-;contains;-;AAC;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\VORBIS.png;-;<Episode.AudioCodec>;-;contains;-;VORBIS;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>]]>
+skin\StreamedMP\Media\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;]]>
 	</logos>
 	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
 	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
