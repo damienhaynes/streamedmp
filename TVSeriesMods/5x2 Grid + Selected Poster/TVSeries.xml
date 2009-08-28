@@ -226,7 +226,7 @@
     
     <import>common.overlays2.xml</import>
     <import>common.time.xml</import>
-    <import>TVSeries.shadows.xml</import>
+    <!--<import>TVSeries.shadows.xml</import>-->
     
     <!--
     ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -235,21 +235,13 @@
     -->
     
     <control Style="smallTitleB">
-      <description>Title Shadow</description>
-      <textcolor>ff000000</textcolor>
-      <type>label</type>
-      <label>#selecteditem Series</label>
-      <posX>71</posX>
-      <posY>241</posY>
-      <visible>Control.IsVisible(1240)</visible>
-    </control>
-    <control Style="smallTitleB">
       <description>Title</description>
       <textcolor>ffffffff</textcolor>
       <type>label</type>
       <label>#selecteditem Series</label>
       <posX>70</posX>
       <posY>240</posY>
+	  <shadowColor>ff000000</shadowColor>
       <visible>Control.IsVisible(1240)+facadeview.list</visible>
     </control>
     
@@ -563,6 +555,9 @@
       <font>mediastream14tc</font>
       <label>#TVSeries.Title</label>
       <textcolor>ffFFFFFF</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>2</shadowDistance>
+	  <shadowColor>#shadow.light</shadowColor>
       <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list</visible>
     </control>
     
@@ -576,6 +571,9 @@
       <width>390</width>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>2</shadowDistance>
+	  <shadowColor>#shadow.dark</shadowColor>
       <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list</visible>
     </control>
     
@@ -1102,6 +1100,9 @@
       <width>300</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>2</shadowDistance>
+	  <shadowColor>#shadow.dark</shadowColor>
       <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     <control>
@@ -1114,6 +1115,9 @@
       <height>75</height>
       <font>mediastream12tc</font>
       <textcolor>ffffffff</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>2</shadowDistance>
+	  <shadowColor>#shadow.light</shadowColor>
       <visible>Control.IsVisible(1239)+facadeview.list</visible>
     </control>
     
