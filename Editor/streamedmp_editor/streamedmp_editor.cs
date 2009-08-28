@@ -1160,6 +1160,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<posX>120</posX>");
             rawXML.AppendLine("\t\t\t<font>mediastream12tc</font>");
             rawXML.AppendLine("\t\t\t<label>#rssfeed</label>");
+            rawXML.AppendLine("\t\t\t<wrapString> #rssseparator </wrapString>");
             rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
             rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,100" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
             rawXML.AppendLine("\t\t\t<visible>plugin.isenabled(MP-RSSTicker)</visible>");
