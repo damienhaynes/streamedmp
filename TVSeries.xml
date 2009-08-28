@@ -168,7 +168,7 @@
       <width>350</width>
       <font>mediastream12c</font>
       <label>#currentmodule</label>
-      <align>right</align>
+      <align>right</align>	  
       <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
     </control>
     
@@ -182,6 +182,7 @@
       <font>mediastream12c</font>
       <label>#TVSeries.Series.Pretty_Name</label>
       <align>right</align>
+	  <wrapString> |  </wrapString> <!-- No idea why this extra space is required! -->
       <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
     </control>
     
