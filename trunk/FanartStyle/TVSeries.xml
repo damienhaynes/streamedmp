@@ -141,6 +141,7 @@
       <label>#TVSeries.Series.Pretty_Name</label>
       <align>right</align>
       <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+	  <wrapString> |  </wrapString> <!-- No idea why this extra space is required! -->
     </control>
     <control>
       <type>fadelabel</type>
