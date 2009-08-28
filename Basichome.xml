@@ -9,6 +9,7 @@
 	<define>#menuXPos:340</define>
 	<allowoverlay>no</allowoverlay>
 	<disabletopbar>yes</disabletopbar>
+	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
 	<controls>
 	    <control>
 			<description>DEFAULT BACKGROUND</description>
@@ -284,6 +285,7 @@
 			<texture>homerss.png</texture>
 			<animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<visible>plugin.isenabled(MP-RSSTicker)</visible>
 		</control>
 		<control>
 			<description>Weather Background</description>
@@ -296,7 +298,7 @@
 			<texture>homeweatheroverlaybg.png</texture>
 			<animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>plugin.isenabled(MP-RSSTicker)</visible>
+			<visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
 		</control>
 
 		<control>
@@ -317,7 +319,7 @@
 		<control>
 			<description>Weather image</description>
 			<type>image</type>
-			<id>1</id>
+			<id>43001</id>
 			<posX>987</posX>
 			<posY>9</posY>
 			<height>53</height>

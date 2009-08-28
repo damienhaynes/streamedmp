@@ -1125,6 +1125,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t\t\t<texture>homerss.png</texture>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,100" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+                rawXML.AppendLine("\t\t\t<visible>plugin.isenabled(MP-RSSTicker)</visible>");
                 rawXML.AppendLine("\t\t</control>");
                 rawXML.AppendLine("\t\t<control>");
                 rawXML.AppendLine("\t\t\t<description>Weather Background</description>");
@@ -1137,7 +1138,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t\t\t<texture>homeweatheroverlaybg.png</texture>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-                rawXML.AppendLine("\t\t\t<visible>plugin.isenabled(MP-RSSTicker)</visible>");
+                rawXML.AppendLine("\t\t\t<visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>");
                 rawXML.AppendLine("\t\t</control>");
             }
 
@@ -1176,7 +1177,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t<control>");
             rawXML.AppendLine("\t\t\t<description>Weather image</description>");
             rawXML.AppendLine("\t\t\t<type>image</type>");
-            rawXML.AppendLine("\t\t\t<id>1</id>");
+            rawXML.AppendLine("\t\t\t<id>43001</id>");
             rawXML.AppendLine("\t\t\t<posX>987</posX>");
             rawXML.AppendLine("\t\t\t<posY>9</posY>");            
             rawXML.AppendLine("\t\t\t<height>53</height>");
