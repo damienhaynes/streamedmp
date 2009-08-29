@@ -68,14 +68,17 @@
 #define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
 #define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
-#define STREAMEDMP_SKIN_REFERENCES			INSTALLDIR^SKIN_NAME^"references.xml"
+#define STREAMEDMP_SKIN_REFERENCES			INSTALLDIR^SKIN_NAME^"references.xml"       
+#define STREAMEDMP_SKIN_COMMOVERLAYHOME		INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
+#define STREAMEDMP_SKIN_COMMOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlays.xml"
+#define STREAMEDMP_SKIN_EMULATORS			INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.3.23143" 	// 1.1.0 Alpha, SVN 7th April
+#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.0" 	// 1.1.0 Beta
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
 #define TVSERIES_MIN_VERSION				"2.3.0.0"
-#define MOVINGPICTURES_MIN_VERSION			"0.8.0.0"
+#define MOVINGPICTURES_MIN_VERSION			"0.7.5.0"
 
 // XML Path Defines
 #define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
@@ -92,6 +95,11 @@
 #define REFERENCES_PLAYLISTCOLORTEXT3_PATH		"/controls/control[type='playlistcontrol']/textcolor3"
 #define REFERENCES_PLAYLISTCOLORWATCHED_PATH	"/controls/control[type='playlistcontrol']/playedColor"
 #define REFERENCES_PLAYLISTCOLORREMOTE_PATH		"/controls/control[type='playlistcontrol']/remoteColor"
+
+#define MUSIC_ARTIST_OVERLAY					"/window/controls/control[id='722']/texture"
+#define MUSIC_ARTIST_ANIM_OVERLAY				"/window/controls/control[id='721']/textures"
+
+#define EMULATORS_SCREENSHOT					"/window/controls/control[id='1001']/texture"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT			13000
@@ -1527,7 +1535,7 @@ end;
 
 
 function VOID UpdateSettings()
-	STRING svString, sFile;
+	STRING svString, sFile, sArtistImage;
 	BOOL bReturn;		
 begin
 	// Save configuration to registry
@@ -1656,6 +1664,20 @@ begin
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT3_PATH, "FF"+g_sText3Color);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
+	
+	// Update Hard Coded Paths
+	sArtistImage = g_sThumbsDir^"Music\\Artists\\#Play.Current.ArtistL.jpg";
+	
+	sFile = STREAMEDMP_SKIN_COMMOVERLAYHOME;
+	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage );
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	
+	sFile = STREAMEDMP_SKIN_COMMOVERLAY;
+	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	
+	sFile = STREAMEDMP_SKIN_EMULATORS;
+	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");
 	
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
