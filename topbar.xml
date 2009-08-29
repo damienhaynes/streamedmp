@@ -54,10 +54,10 @@
                         <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
                 </control>
                 <control>
-                        <description>back button</description>
+                        <description>skip back button</description>
                         <type>button</type>
                         <id>22</id>
-                        <posX>434</posX>
+                        <posX>389</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -76,7 +76,7 @@
                         <description>rewind button</description>
                         <type>button</type>
                         <id>23</id>
-                        <posX>511</posX>
+                        <posX>466</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -95,7 +95,7 @@
                         <description>play button</description>
                         <type>button</type>
                         <id>24</id>
-                        <posX>585</posX>
+                        <posX>540</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -114,7 +114,7 @@
                         <description>pause button</description>
                         <type>button</type>
                         <id>25</id>
-                        <posX>660</posX>
+                        <posX>615</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -133,7 +133,7 @@
                         <description>stop button</description>
                         <type>button</type>
                         <id>27</id>
-                        <posX>735</posX>
+                        <posX>690</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -152,7 +152,7 @@
                         <description>fast forward button</description>
                         <type>button</type>
                         <id>28</id>
-                        <posX>810</posX>
+                        <posX>765</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -171,7 +171,7 @@
                         <description>next button</description>
                         <type>button</type>
                         <id>29</id>
-                        <posX>885</posX>
+                        <posX>840</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -180,17 +180,57 @@
                         <action>14</action>
                         <label>-</label>
                         <onleft>28</onleft>
-                        <onright>30</onright>
+                        <onright>1102</onright>
+                        <onup>29</onup>
+                        <ondown>2</ondown>
+                        <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
+                        <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
+                </control>
+
+                <control>
+                        <description>Volume- button</description>
+                        <type>button</type>
+                        <id>1102</id>
+                        <posX>1005</posX>
+                        <posY>15</posY>
+                        <width>40</width>
+                        <height>40</height>
+                        <textureFocus>top_volume-_enabled.png</textureFocus>
+                        <textureNoFocus>top_volume-_disabled.png</textureNoFocus>
+                        <action>102</action>
+                        <label>-</label>
+                        <onleft>29</onleft>
+                        <onright>1103</onright>
                         <onup>29</onup>
                         <ondown>2</ondown>
                         <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
                         <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
                 </control>
                 <control>
+                        <description>Volume+ button</description>
+                        <type>button</type>
+                        <id>1103</id>
+                        <posX>1075</posX>
+                        <posY>15</posY>
+                        <width>40</width>
+                        <height>40</height>
+                        <textureFocus>top_volume+_enabled.png</textureFocus>
+                        <textureNoFocus>top_volume+_disabled.png</textureNoFocus>
+                        <action>103</action>
+                        <label>-</label>
+                        <onleft>1102</onleft>
+                        <onright>30</onright>
+                        <onup>29</onup>
+                        <ondown>2</ondown>
+                        <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
+                        <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
+                </control>
+                
+                <control>
                         <description>Minimize button</description>
                         <type>button</type>
                         <id>30</id>
-                        <posX>1145</posX>
+                        <posX>1165</posX>
                         <posY>3</posY>
                         <width>50</width>
                         <height>52</height>
@@ -198,7 +238,7 @@
                         <textureNoFocus>top_full_screen_disabled.png</textureNoFocus>
                         <label>-</label>
                         <action>18</action>
-                        <onleft>29</onleft>
+                        <onleft>1103</onleft>
                         <onright>31</onright>
                         <onup>30</onup>
                         <ondown>2</ondown>
