@@ -50,6 +50,7 @@
                         <keepaspectratio>no</keepaspectratio>
                         <centered>yes</centered>
                         <zoom>yes</zoom>
+						<!-- Updated by Setup (Ensure ID is unique)-->
                         <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
                         <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
                 </control>
@@ -71,11 +72,12 @@
                 <control>
                         <description>Music logo Animation</description>
                         <type>animation</type>
-                        <id>1</id>
+                        <id>721</id>
                         <posX>83</posX>
                         <posY>558</posY>
                         <width>114</width>
                         <height>114</height>
+						<!-- Updated by setup (Ensure ID is unique)-->
                         <textures>#Play.Current.Thumb;C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
                         <Duration>0:0:45</Duration>
                         <randomize>no</randomize>

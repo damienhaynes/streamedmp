@@ -63,6 +63,7 @@ same location everywhere
                         <keepaspectratio>no</keepaspectratio>
                         <centered>yes</centered>
                         <zoom>yes</zoom>
+						<!-- Update by Setup (Ensure ID is unique)-->
                         <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
                         <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
                         <animation effect="fade" time="500">WindowOpen</animation>
@@ -92,6 +93,7 @@ same location everywhere
                         <posY>78</posY>
                         <width>114</width>
                         <height>114</height>
+						<!-- Updated by setup (Ensure ID is unique)-->
                         <textures>#Play.Current.Thumb;C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
                         <Duration>0:0:45</Duration>
                         <randomize>no</randomize>
@@ -101,8 +103,7 @@ same location everywhere
                         <visible>!player.hasmedia+control.isvisible(3337)+control.hasthumb(722)+control.hasthumb(723)</visible>
                         <animation effect="fade" time="500" reversible="true">VisibleChange</animation>
                         <animation effect="fade" time="500">WindowOpen</animation>
-                        <animation effect="fade" time="500">WindowClose</animation>
-                        
+                        <animation effect="fade" time="500">WindowClose</animation>                        
                 </control>
                 <control>
                         <description>Selectable Button</description>
