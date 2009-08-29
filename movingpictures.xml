@@ -240,6 +240,18 @@ multiple view modes.
     </control>
     
     <control>
+      <description>Movie Title Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>252</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
@@ -249,12 +261,21 @@ multiple view modes.
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
+    <control>
+      <description>Genres Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>283</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff000000</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
     <control>
       <description>Genres</description>
       <type>label</type>
@@ -265,12 +286,20 @@ multiple view modes.
       <width>900</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff000000</shadowColor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     
+    <control>
+	  <id>0</id>	
+      <description>Directors Label Shadow</description>
+      <type>label</type>
+      <label>Director</label>
+      <posX>309</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
     <control>
 	  <id>0</id>	
       <description>Directors Label</description>
@@ -280,9 +309,18 @@ multiple view modes.
       <posY>320</posY>
       <font>mediastream11tc</font>
       <textcolor>ffFFFFFF</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff222222</shadowColor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
+	  <id>0</id>	
+      <description>Directors Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
+      <posX>309</posX>
+      <posY>341</posY>
+      <width>200</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
@@ -295,9 +333,6 @@ multiple view modes.
       <width>200</width>
       <font>mediastream10</font>
       <textcolor>ffFFFFFF</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
 	
@@ -340,6 +375,16 @@ multiple view modes.
     </control>
 	
     <control>
+      <description>Writers Label Shadow</description>
+      <type>label</type>
+      <label>Writer</label>
+      <posX>509</posX>
+      <posY>321</posY>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
+    <control>
       <description>Writers Label</description>
       <type>label</type>
       <label>Writer</label>
@@ -347,12 +392,19 @@ multiple view modes.
       <posY>320</posY>
       <font>mediastream11tc</font>
       <textcolor>ffFFFFFF</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-
+    <control>
+      <description>Writers Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <posX>509</posX>
+      <posY>341</posY>
+      <width>255</width>
+      <font>mediastream10</font>
+      <textcolor>ff222222</textcolor>
+      <visible>facadeview.list+Control.IsVisible(50)</visible>
+    </control>
     <control>
       <description>Writers</description>
       <type>label</type>
@@ -362,9 +414,6 @@ multiple view modes.
       <width>255</width>
       <font>mediastream10</font>
       <textcolor>ffFFFFFF</textcolor>
-	  <shadowAngle>45</shadowAngle>
-	  <shadowDistance>2</shadowDistance>
-	  <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     

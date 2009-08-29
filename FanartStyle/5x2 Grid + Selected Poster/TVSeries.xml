@@ -208,13 +208,22 @@
     -->
     <control Style="smallTitleB">
 	  <id>0</id>
+      <description>Title Shadow</description>
+      <textcolor>ff000000</textcolor>
+      <type>label</type>
+      <label>#selecteditem Series</label>
+      <posX>71</posX>
+      <posY>241</posY>
+      <visible>Control.IsVisible(1240)</visible>
+    </control>
+    <control Style="smallTitleB">
+	  <id>0</id>
       <description>Title</description>
       <textcolor>ffffffff</textcolor>
       <type>label</type>
       <label>#selecteditem Series</label>
       <posX>70</posX>
       <posY>430</posY>
-	  <shadowColor>ff000000</shadowColor>
       <visible>Control.IsVisible(1240)</visible>
     </control>
     <control>
