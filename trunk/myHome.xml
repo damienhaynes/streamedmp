@@ -219,6 +219,8 @@
       <height>42</height>
       <texture>homerss.png</texture>
       <visible>plugin.isenabled(MP-RSSTicker)|player.hasmedia</visible>
+	  <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>RSS Items</description>
@@ -231,6 +233,8 @@
       <font>mediastream12tc</font>
       <label>#rssfeed</label>
       <visible>plugin.isenabled(MP-RSSTicker)</visible>
+	  <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     
     <!-- Weather -->
@@ -245,6 +249,8 @@
       <height>75</height>
       <texture>homeweatheroverlaybg.png</texture>
       <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>Weather image</description>
@@ -257,6 +263,8 @@
       <centered>yes</centered>
       <texture>#weatherimg</texture>
       <visible>plugin.isenabled(MP-RSSTicker)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>condition</description>
@@ -269,6 +277,8 @@
       <font>mediastream10tc</font>
       <label>#condition</label>
       <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>Temperature</description>
@@ -282,6 +292,8 @@
       <font>mediastream14c</font>
       <label>#temp</label>
       <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     
     <!-- imports -->
