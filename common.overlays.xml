@@ -100,7 +100,7 @@ same location everywhere
                         <keepaspectratio>no</keepaspectratio>
                         <centered>yes</centered>
                         <zoom>yes</zoom>
-                        <visible>!player.hasmedia+control.isvisible(3337)+control.hasthumb(722)+control.hasthumb(723)</visible>
+                        <visible>player.hasmedia+control.isvisible(3337)+control.hasthumb(722)+control.hasthumb(723)</visible>
                         <animation effect="fade" time="500" reversible="true">VisibleChange</animation>
                         <animation effect="fade" time="500">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>                        
