@@ -71,10 +71,12 @@
 #define STREAMEDMP_SKIN_REFERENCES			INSTALLDIR^SKIN_NAME^"references.xml"       
 #define STREAMEDMP_SKIN_COMMOVERLAYHOME		INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
 #define STREAMEDMP_SKIN_COMMOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlays.xml"
+#define STREAMEDMP_SKIN_COMMOVERLAY2		INSTALLDIR^SKIN_NAME^"common.overlays2.xml"
+#define STREAMEDMP_SKIN_MOVPICSOVERLAY		INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
 #define STREAMEDMP_SKIN_EMULATORS			INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.0" 	// 1.1.0 Beta
+#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.23477" 	// 1.1.0 Beta
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
 #define TVSERIES_MIN_VERSION				"2.3.3517.1"
@@ -1673,6 +1675,14 @@ begin
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAY;
+	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	
+	sFile = STREAMEDMP_SKIN_MOVPICSOVERLAY;
+	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	
+	sFile = STREAMEDMP_SKIN_COMMOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
 	
