@@ -194,7 +194,7 @@ different overlays on home screens
                   <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]</visible>
             </control>
             <!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->
-            <!--<control>
+            <control>
                   <description>video preview window BACKGROUND</description>
                   <type>button</type>
                   <id>17</id>
@@ -209,7 +209,7 @@ different overlays on home screens
                   <onright>7777</onright>
                   <onleft>1903</onleft>
                   <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]</visible>
-            </control>-->
+            </control>
             <control>
                   <description>video preview window</description>
                   <type>videowindow</type>
