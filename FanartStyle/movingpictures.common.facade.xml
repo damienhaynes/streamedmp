@@ -4,6 +4,26 @@ This file should contain the facade view
 -->
 <window>
   <controls>
+  <control>
+      <description>composite control consisting of a list control and a thumbnail panel</description>
+      <type>facadeview</type>
+      <id>51</id>
+      <control>
+        <description>Movie List</description>
+        <type>listcontrol</type>
+        <id>51</id>
+        <posY>420</posY>
+        <posX>780</posX>
+        <height>340</height>
+        <width>465</width>
+        <spinPosY>900</spinPosY>
+        <spinPosX>1400</spinPosX>
+        <textXOff>17</textXOff>
+        <spinColor>ffcccccc</spinColor>
+		<onleft>51</onleft>
+        <onright>51</onright>
+      </control>
+	</control>
     <control>
       <description>composite control consisting of a list control and a thumbnail panel</description>
       <type>facadeview</type>
