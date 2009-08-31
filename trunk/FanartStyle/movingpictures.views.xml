@@ -107,6 +107,17 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <!--*********************ListView**************************-->
     <define>#list.available:true</define>
+	<control>
+      <description>Categories Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>fanartoverlay.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+    </control>
     <control>
       <description>Movie Title</description>
       <type>label</type>

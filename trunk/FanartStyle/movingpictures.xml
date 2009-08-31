@@ -200,7 +200,7 @@ multiple view modes.
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
-	  <visible>Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
     </control>
     <control>
       <type>fadelabel</type>
@@ -213,7 +213,7 @@ multiple view modes.
       <align>right</align>
       <visible>yes</visible>
       <label>#MovingPictures.Settings.HomeScreenName</label>
-	  <visible>Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
     </control>
     <control>
       <description>Watched Filtering Indicator - Watched</description>
@@ -288,7 +288,7 @@ multiple view modes.
       <width>36</width>
       <height>36</height>
       <texture>parentallock.png</texture>
-	  <visible>Control.IsVisible(16)+Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(16)+[Control.IsVisible(50)|Control.IsVisible(51)]</visible>
     </control>	
 	
   </controls>

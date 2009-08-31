@@ -810,7 +810,7 @@ multiple view modes.
       <width>36</width>
       <height>36</height>
       <texture>parentallock.png</texture>
-	  <visible>Control.IsVisible(16)+Control.IsVisible(50)+!facadeview.filmstrip</visible>
+	  <visible>Control.IsVisible(16)+[Control.IsVisible(50)|Control.IsVisible(51)]+!facadeview.filmstrip</visible>
     </control>
 	<control>
       <description>Parental Controls Lock Indicator</description>
