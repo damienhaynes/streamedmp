@@ -285,7 +285,7 @@
 			<texture>homerss.png</texture>
 			<animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>plugin.isenabled(MP-RSSTicker)</visible>
+			<visible>plugin.isenabled(MP-RSSTicker)+!string.equals(#rssfeed,)</visible>
 		</control>
 		<control>
 			<description>Weather Background</description>
@@ -311,7 +311,7 @@
 			<posX>120</posX>
 			<font>mediastream12tc</font>
 			<label>#rssfeed</label>
-			<wrapString> #rssseparator </wrapString>
+			<wrapString> :: </wrapString>
 			<animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<visible>plugin.isenabled(MP-RSSTicker)</visible>
