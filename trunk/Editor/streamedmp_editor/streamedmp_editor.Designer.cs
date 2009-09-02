@@ -29,6 +29,7 @@ namespace streamedmp_editor
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStreamedMPEditor));
             this.btnAdd = new System.Windows.Forms.Button();
             this.lstAvailableWindows = new System.Windows.Forms.ListBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -52,9 +53,12 @@ namespace streamedmp_editor
             this.txtBGTime = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDefaultImage = new System.Windows.Forms.Label();
+            this.textBoxDefaultImage = new System.Windows.Forms.TextBox();
             this.cboBGFolder = new System.Windows.Forms.ComboBox();
             this.chkBGRandom = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxMultiImage = new System.Windows.Forms.CheckBox();
             this.txtMenuXPos = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNoFocusColour = new System.Windows.Forms.TextBox();
@@ -68,12 +72,12 @@ namespace streamedmp_editor
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.llRssTicker = new System.Windows.Forms.LinkLabel();
             this.chkRssTicker = new System.Windows.Forms.CheckBox();
             this.btMoveUp = new System.Windows.Forms.Button();
             this.btMoveDown = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.cboQuickSelect = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -101,7 +105,7 @@ namespace streamedmp_editor
             this.lstAvailableWindows.Location = new System.Drawing.Point(13, 189);
             this.lstAvailableWindows.Name = "lstAvailableWindows";
             this.lstAvailableWindows.ScrollAlwaysVisible = true;
-            this.lstAvailableWindows.Size = new System.Drawing.Size(198, 238);
+            this.lstAvailableWindows.Size = new System.Drawing.Size(198, 264);
             this.lstAvailableWindows.TabIndex = 4;
             this.lstAvailableWindows.SelectedIndexChanged += new System.EventHandler(this.lstAvailableWindows_SelectedIndexChanged);
             // 
@@ -139,11 +143,11 @@ namespace streamedmp_editor
             // 
             this.btnGenerate.Enabled = false;
             this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(567, 29);
+            this.btnGenerate.Location = new System.Drawing.Point(538, 29);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(106, 49);
+            this.btnGenerate.Size = new System.Drawing.Size(135, 49);
             this.btnGenerate.TabIndex = 0;
-            this.btnGenerate.Text = "&Generate";
+            this.btnGenerate.Text = "&Generate Menu";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
@@ -152,10 +156,10 @@ namespace streamedmp_editor
             this.chklstWinddowsInMenu.ContextMenuStrip = this.contextMenuStrip1;
             this.chklstWinddowsInMenu.Enabled = false;
             this.chklstWinddowsInMenu.FormattingEnabled = true;
-            this.chklstWinddowsInMenu.Location = new System.Drawing.Point(520, 157);
+            this.chklstWinddowsInMenu.Location = new System.Drawing.Point(520, 158);
             this.chklstWinddowsInMenu.Name = "chklstWinddowsInMenu";
             this.chklstWinddowsInMenu.ScrollAlwaysVisible = true;
-            this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 274);
+            this.chklstWinddowsInMenu.Size = new System.Drawing.Size(198, 289);
             this.chklstWinddowsInMenu.TabIndex = 10;
             this.chklstWinddowsInMenu.MouseEnter += new System.EventHandler(this.lstWinddowsInMenu_MouseEnter);
             // 
@@ -229,6 +233,7 @@ namespace streamedmp_editor
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Enabled = false;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -236,13 +241,13 @@ namespace streamedmp_editor
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "Abo&ut";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 51);
+            this.label6.Location = new System.Drawing.Point(7, 76);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 13);
             this.label6.TabIndex = 2;
@@ -251,7 +256,7 @@ namespace streamedmp_editor
             // txtBGTime
             // 
             this.txtBGTime.Enabled = false;
-            this.txtBGTime.Location = new System.Drawing.Point(97, 48);
+            this.txtBGTime.Location = new System.Drawing.Point(97, 73);
             this.txtBGTime.Name = "txtBGTime";
             this.txtBGTime.Size = new System.Drawing.Size(68, 20);
             this.txtBGTime.TabIndex = 3;
@@ -262,7 +267,7 @@ namespace streamedmp_editor
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(168, 51);
+            this.label7.Location = new System.Drawing.Point(168, 76);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 4;
@@ -270,6 +275,8 @@ namespace streamedmp_editor
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblDefaultImage);
+            this.groupBox2.Controls.Add(this.textBoxDefaultImage);
             this.groupBox2.Controls.Add(this.cboBGFolder);
             this.groupBox2.Controls.Add(this.chkBGRandom);
             this.groupBox2.Controls.Add(this.label7);
@@ -278,15 +285,36 @@ namespace streamedmp_editor
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(226, 317);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(278, 111);
+            this.groupBox2.Size = new System.Drawing.Size(278, 136);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Background Images";
+            // 
+            // lblDefaultImage
+            // 
+            this.lblDefaultImage.AutoSize = true;
+            this.lblDefaultImage.Location = new System.Drawing.Point(14, 51);
+            this.lblDefaultImage.Name = "lblDefaultImage";
+            this.lblDefaultImage.Size = new System.Drawing.Size(76, 13);
+            this.lblDefaultImage.TabIndex = 7;
+            this.lblDefaultImage.Text = "Default Image:";
+            this.lblDefaultImage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxDefaultImage
+            // 
+            this.textBoxDefaultImage.Enabled = false;
+            this.textBoxDefaultImage.Location = new System.Drawing.Point(97, 45);
+            this.textBoxDefaultImage.Name = "textBoxDefaultImage";
+            this.textBoxDefaultImage.Size = new System.Drawing.Size(146, 20);
+            this.textBoxDefaultImage.TabIndex = 6;
+            this.textBoxDefaultImage.Text = "default.jpg";
+            this.toolTip1.SetToolTip(this.textBoxDefaultImage, "The image to display in the selected folder when not using Multiple images");
             // 
             // cboBGFolder
             // 
             this.cboBGFolder.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboBGFolder.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboBGFolder.DropDownWidth = 146;
             this.cboBGFolder.FormattingEnabled = true;
             this.cboBGFolder.Items.AddRange(new object[] {
             "movies",
@@ -303,6 +331,7 @@ namespace streamedmp_editor
             this.cboBGFolder.Name = "cboBGFolder";
             this.cboBGFolder.Size = new System.Drawing.Size(146, 21);
             this.cboBGFolder.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.cboBGFolder, resources.GetString("cboBGFolder.ToolTip"));
             this.cboBGFolder.MouseEnter += new System.EventHandler(this.cboBGFolder_MouseEnter);
             // 
             // chkBGRandom
@@ -311,7 +340,7 @@ namespace streamedmp_editor
             this.chkBGRandom.Checked = true;
             this.chkBGRandom.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkBGRandom.Enabled = false;
-            this.chkBGRandom.Location = new System.Drawing.Point(99, 74);
+            this.chkBGRandom.Location = new System.Drawing.Point(99, 99);
             this.chkBGRandom.Name = "chkBGRandom";
             this.chkBGRandom.Size = new System.Drawing.Size(66, 17);
             this.chkBGRandom.TabIndex = 5;
@@ -320,6 +349,7 @@ namespace streamedmp_editor
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBoxMultiImage);
             this.groupBox1.Controls.Add(this.txtMenuXPos);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtNoFocusColour);
@@ -333,6 +363,20 @@ namespace streamedmp_editor
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Global settings";
+            // 
+            // checkBoxMultiImage
+            // 
+            this.checkBoxMultiImage.AutoSize = true;
+            this.checkBoxMultiImage.Checked = true;
+            this.checkBoxMultiImage.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxMultiImage.Location = new System.Drawing.Point(224, 60);
+            this.checkBoxMultiImage.Name = "checkBoxMultiImage";
+            this.checkBoxMultiImage.Size = new System.Drawing.Size(205, 17);
+            this.checkBoxMultiImage.TabIndex = 7;
+            this.checkBoxMultiImage.Text = "Use Multiple Images per selected Item";
+            this.toolTip1.SetToolTip(this.checkBoxMultiImage, resources.GetString("checkBoxMultiImage.ToolTip"));
+            this.checkBoxMultiImage.UseVisualStyleBackColor = true;
+            this.checkBoxMultiImage.CheckedChanged += new System.EventHandler(this.checkBoxMultiImage_CheckedChanged);
             // 
             // txtMenuXPos
             // 
@@ -463,34 +507,22 @@ namespace streamedmp_editor
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.llRssTicker);
             this.groupBox4.Controls.Add(this.chkRssTicker);
-            this.groupBox4.Location = new System.Drawing.Point(12, 439);
+            this.groupBox4.Location = new System.Drawing.Point(12, 463);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(705, 72);
+            this.groupBox4.Size = new System.Drawing.Size(200, 48);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Plugin Settings";
             // 
-            // llRssTicker
-            // 
-            this.llRssTicker.AutoSize = true;
-            this.llRssTicker.Location = new System.Drawing.Point(8, 48);
-            this.llRssTicker.Name = "llRssTicker";
-            this.llRssTicker.Size = new System.Drawing.Size(59, 13);
-            this.llRssTicker.TabIndex = 1;
-            this.llRssTicker.TabStop = true;
-            this.llRssTicker.Text = "Homepage";
-            this.llRssTicker.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llRssTicker_LinkClicked);
-            // 
             // chkRssTicker
             // 
             this.chkRssTicker.AutoSize = true;
-            this.chkRssTicker.Location = new System.Drawing.Point(8, 28);
+            this.chkRssTicker.Location = new System.Drawing.Point(6, 19);
             this.chkRssTicker.Name = "chkRssTicker";
-            this.chkRssTicker.Size = new System.Drawing.Size(262, 17);
+            this.chkRssTicker.Size = new System.Drawing.Size(182, 17);
             this.chkRssTicker.TabIndex = 0;
-            this.chkRssTicker.Text = "Enable R&SS Ticker (Includes Weather) by Sambal";
+            this.chkRssTicker.Text = "Enable R&SS Ticker and Weather";
             this.chkRssTicker.UseVisualStyleBackColor = true;
             // 
             // btMoveUp
@@ -522,6 +554,15 @@ namespace streamedmp_editor
             this.cboQuickSelect.Size = new System.Drawing.Size(199, 21);
             this.cboQuickSelect.TabIndex = 3;
             this.cboQuickSelect.SelectedIndexChanged += new System.EventHandler(this.cboQuickSelect_SelectedIndexChanged);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 10000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ReshowDelay = 100;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Basic Home Editor";
             // 
             // frmStreamedMPEditor
             // 
@@ -615,7 +656,6 @@ namespace streamedmp_editor
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.CheckBox chkRssTicker;
-        private System.Windows.Forms.LinkLabel llRssTicker;
         private System.Windows.Forms.TextBox txtMenuXPos;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ColorDialog colorDialog;
@@ -623,6 +663,10 @@ namespace streamedmp_editor
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboBGFolder;
         private System.Windows.Forms.ComboBox cboQuickSelect;
+        private System.Windows.Forms.CheckBox checkBoxMultiImage;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label lblDefaultImage;
+        private System.Windows.Forms.TextBox textBoxDefaultImage;
     }
 }
 

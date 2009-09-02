@@ -186,6 +186,7 @@
       <posY>689</posY>
       <font>mediastream12tc</font>
       <label>#rssfeed</label>
+	  <wrapString> :: </wrapString>
       <visible>plugin.isenabled(MP-RSSTicker)</visible>
 	  <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>

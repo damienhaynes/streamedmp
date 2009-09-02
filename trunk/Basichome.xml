@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <window>
 	<id>35</id>	
-	<defaultcontrol>1903</defaultcontrol>
+	<defaultcontrol>1905</defaultcontrol>
 	<define>#labelFont:mediastream16tc</define>
 	<define>#selectedfont:mediastream28tc</define>
 	<define>#menuitemFocus:FFFFFFFF</define>
 	<define>#menuitemNoFocus:80FFFFFF</define>
 	<define>#menuXPos:340</define>
+	<define>#multiimage:false</define>
 	<allowoverlay>no</allowoverlay>
 	<disabletopbar>yes</disabletopbar>
 	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
@@ -77,7 +78,7 @@
 			<id>7777</id>
 			<posX>493</posX>
 			<posY>350</posY>
-			<onleft>1903</onleft>
+			<onleft>1905</onleft>
 			<onright>7888</onright>
 			<width>80</width>
 			<height>80</height>
@@ -116,7 +117,7 @@
 			<posX>773</posX>
 			<posY>350</posY>
 			<onleft>7888</onleft>
-			<onright>1903</onright>
+			<onright>1905</onright>
 			<width>80</width>
 			<height>80</height>
 			<textureNoFocus>shutdown_button.png</textureNoFocus>
@@ -144,12 +145,13 @@
 		<control>
 			<description>SETTINGS BACKGROUND</description>
 			<id>1200</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>settings</imagepath>
+			<texture>animations\settings\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
@@ -161,12 +163,13 @@
 		<control>
 			<description>WEATHER BACKGROUND</description>
 			<id>1201</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>weatherbg</imagepath>
+			<texture>animations\weatherbg\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
@@ -176,65 +179,69 @@
 			<visible>Control.IsVisible(1001)</visible>
 		</control>
 		<control>
-			<description>MOVIES VIDEOS DVD BACKGROUND</description>
+			<description>VIDEOS MOVIES DVD BACKGROUND</description>
 			<id>1202</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>movies</imagepath>
+			<texture>animations\movies\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
 			<randomize>False</randomize>
 			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 			<animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-			<visible>Control.IsVisible(1002)|Control.IsVisible(1006)|Control.IsVisible(1007)</visible>
-		</control>
-		<control>
-			<description>TV SHOWS TV BACKGROUND</description>
-			<id>1203</id>
-			<type>multiimage</type>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<imagepath>tv</imagepath>
-			<timeperimage>30000</timeperimage>
-			<fadetime>800</fadetime>
-			<loop>yes</loop>
-			<randomize>False</randomize>
-			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
-			<animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-			<visible>Control.IsVisible(1003)|Control.IsVisible(1005)</visible>
+			<visible>Control.IsVisible(1002)|Control.IsVisible(1004)|Control.IsVisible(1007)</visible>
 		</control>
 		<control>
 			<description>MUSIC BACKGROUND</description>
-			<id>1204</id>
-			<type>multiimage</type>
+			<id>1203</id>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>music</imagepath>
+			<texture>animations\music\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
 			<randomize>False</randomize>
 			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 			<animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-			<visible>Control.IsVisible(1004)</visible>
+			<visible>Control.IsVisible(1003)</visible>
+		</control>
+		<control>
+			<description>TV SHOWS TV BACKGROUND</description>
+			<id>1205</id>
+			<type>image</type>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<imagepath>tv</imagepath>
+			<texture>animations\tv\default.jpg</texture>
+			<timeperimage>30000</timeperimage>
+			<fadetime>800</fadetime>
+			<loop>yes</loop>
+			<randomize>False</randomize>
+			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
+			<animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
+			<visible>Control.IsVisible(1005)|Control.IsVisible(1006)</visible>
 		</control>
 		<control>
 			<description>PICTURES BACKGROUND</description>
 			<id>1208</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>pictures</imagepath>
+			<texture>animations\pictures\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
@@ -246,16 +253,17 @@
 		<control>
 			<description>PLUGINS BACKGROUND</description>
 			<id>1209</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
 			<imagepath>pluginsbg</imagepath>
+			<texture>animations\pluginsbg\default.jpg</texture>
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
-			<randomize>True</randomize>
+			<randomize>False</randomize>
 			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
 			<animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
 			<visible>Control.IsVisible(1009)</visible>
@@ -841,7 +849,7 @@
 			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
 		</control>
 		<control>
-			<description>Dummy label indicating MOVIES visibility</description>
+			<description>Dummy label indicating VIDEOS visibility</description>
 			<id>1002</id>
 			<type>label</type>
 			<posX>100</posX>
@@ -852,7 +860,7 @@
 			<visible>Control.HasFocus(1702)|Control.HasFocus(1802)|Control.HasFocus(1902)|Control.IsVisible(1102)</visible>
 		</control>
 		<control>
-			<description>MOVIES0</description>
+			<description>VIDEOS0</description>
 			<type>button</type>
 			<id>1702</id>
 			<posX>0</posX>
@@ -861,7 +869,7 @@
 			<height>72</height>
 			<textureFocus>-</textureFocus>
 			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>96742</hyperlink>
+			<hyperlink>6</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
 			<onright>17</onright>
@@ -870,7 +878,7 @@
 			<visible>Control.IsVisible(1702)</visible>
 		</control>
 		<control>
-			<description>MOVIES1</description>
+			<description>VIDEOS1</description>
 			<type>button</type>
 			<id>1802</id>
 			<posX>0</posX>
@@ -879,969 +887,13 @@
 			<height>72</height>
 			<textureFocus>-</textureFocus>
 			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>96742</hyperlink>
+			<hyperlink>6</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
 			<onright>17</onright>
 			<onup>1801</onup>
 			<ondown>1703</ondown>
 			<visible>Control.IsVisible(1802)</visible>
-		</control>
-		<control>
-			<description>MOVIES2</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES3</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES4</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES5</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES6</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES7</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES8</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1809)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES9</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1800)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES10</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1801)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES11</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1802)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES12</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1803)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MOVIES13</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MOVIES</label>
-			<visible>Control.HasFocus(1804)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>Dummy label indicating TV SHOWS visibility</description>
-			<id>1003</id>
-			<type>label</type>
-			<posX>100</posX>
-			<posY>-100</posY>
-			<width>500</width>
-			<height>0</height>
-			<label>Movies</label>
-			<visible>Control.HasFocus(1703)|Control.HasFocus(1803)|Control.HasFocus(1903)|Control.IsVisible(1103)</visible>
-		</control>
-		<control>
-			<description>TV SHOWS0</description>
-			<type>button</type>
-			<id>1703</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>9811</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1802</onup>
-			<ondown>1704</ondown>
-			<visible>Control.IsVisible(1703)</visible>
-		</control>
-		<control>
-			<description>TV SHOWS1</description>
-			<type>button</type>
-			<id>1803</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>9811</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1802</onup>
-			<ondown>1704</ondown>
-			<visible>Control.IsVisible(1803)</visible>
-		</control>
-		<control>
-			<description>TV SHOWS2</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS3</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS4</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS5</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS6</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS7</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS8</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1800)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS9</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1801)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS10</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1802)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS11</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1803)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS12</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1804)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV SHOWS13</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV SHOWS</label>
-			<visible>Control.HasFocus(1805)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>Dummy label indicating MUSIC visibility</description>
-			<id>1004</id>
-			<type>label</type>
-			<posX>100</posX>
-			<posY>-100</posY>
-			<width>500</width>
-			<height>0</height>
-			<label>Movies</label>
-			<visible>Control.HasFocus(1704)|Control.HasFocus(1804)|Control.HasFocus(1904)|Control.IsVisible(1104)</visible>
-		</control>
-		<control>
-			<description>MUSIC0</description>
-			<type>button</type>
-			<id>1704</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>501</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1803</onup>
-			<ondown>1705</ondown>
-			<visible>Control.IsVisible(1704)</visible>
-		</control>
-		<control>
-			<description>MUSIC1</description>
-			<type>button</type>
-			<id>1804</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>501</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1803</onup>
-			<ondown>1705</ondown>
-			<visible>Control.IsVisible(1804)</visible>
-		</control>
-		<control>
-			<description>MUSIC2</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC3</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC4</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC5</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC6</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC7</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC8</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1801)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC9</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1802)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC10</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1803)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC11</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1804)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC12</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1805)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>MUSIC13</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>MUSIC</label>
-			<visible>Control.HasFocus(1806)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>Dummy label indicating TV visibility</description>
-			<id>1005</id>
-			<type>label</type>
-			<posX>100</posX>
-			<posY>-100</posY>
-			<width>500</width>
-			<height>0</height>
-			<label>Movies</label>
-			<visible>Control.HasFocus(1705)|Control.HasFocus(1805)|Control.HasFocus(1905)|Control.IsVisible(1105)</visible>
-		</control>
-		<control>
-			<description>TV0</description>
-			<type>button</type>
-			<id>1705</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>1</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1804</onup>
-			<ondown>1706</ondown>
-			<visible>Control.IsVisible(1705)</visible>
-		</control>
-		<control>
-			<description>TV1</description>
-			<type>button</type>
-			<id>1805</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>1</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1804</onup>
-			<ondown>1706</ondown>
-			<visible>Control.IsVisible(1805)</visible>
-		</control>
-		<control>
-			<description>TV2</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV3</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV4</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV5</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV6</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV7</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV8</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>-24</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1802)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV9</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>542</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1803)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV10</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1804)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV11</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>342</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#selectedfont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1805)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV12</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>242</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1806)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>TV13</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>142</posY>
-			<width>320</width>
-			<height>72</height>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<label>TV</label>
-			<visible>Control.HasFocus(1807)</visible>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-		</control>
-		<control>
-			<description>Dummy label indicating VIDEOS visibility</description>
-			<id>1006</id>
-			<type>label</type>
-			<posX>100</posX>
-			<posY>-100</posY>
-			<width>500</width>
-			<height>0</height>
-			<label>Movies</label>
-			<visible>Control.HasFocus(1706)|Control.HasFocus(1806)|Control.HasFocus(1906)|Control.IsVisible(1106)</visible>
-		</control>
-		<control>
-			<description>VIDEOS0</description>
-			<type>button</type>
-			<id>1706</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>6</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1805</onup>
-			<ondown>1707</ondown>
-			<visible>Control.IsVisible(1706)</visible>
-		</control>
-		<control>
-			<description>VIDEOS1</description>
-			<type>button</type>
-			<id>1806</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>320</width>
-			<height>72</height>
-			<textureFocus>-</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<hyperlink>6</hyperlink>
-			<hover>-</hover>
-			<onleft>-</onleft>
-			<onright>17</onright>
-			<onup>1805</onup>
-			<ondown>1707</ondown>
-			<visible>Control.IsVisible(1806)</visible>
 		</control>
 		<control>
 			<description>VIDEOS2</description>
@@ -1854,7 +906,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
+			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1870,7 +922,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1886,7 +938,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1902,7 +954,7 @@
 			<font>#selectedfont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1918,7 +970,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
+			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1934,7 +986,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1708)|Control.IsVisible(1108)</visible>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1950,7 +1002,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1803)</visible>
+			<visible>Control.HasFocus(1809)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1966,7 +1018,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1804)</visible>
+			<visible>Control.HasFocus(1800)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1982,7 +1034,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1805)</visible>
+			<visible>Control.HasFocus(1801)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -1998,7 +1050,7 @@
 			<font>#selectedfont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1806)</visible>
+			<visible>Control.HasFocus(1802)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2014,7 +1066,7 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
-			<visible>Control.HasFocus(1807)</visible>
+			<visible>Control.HasFocus(1803)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2030,6 +1082,962 @@
 			<font>#labelFont</font>
 			<align>right</align>
 			<label>VIDEOS</label>
+			<visible>Control.HasFocus(1804)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>Dummy label indicating MUSIC visibility</description>
+			<id>1003</id>
+			<type>label</type>
+			<posX>100</posX>
+			<posY>-100</posY>
+			<width>500</width>
+			<height>0</height>
+			<label>Movies</label>
+			<visible>Control.HasFocus(1703)|Control.HasFocus(1803)|Control.HasFocus(1903)|Control.IsVisible(1103)</visible>
+		</control>
+		<control>
+			<description>MUSIC0</description>
+			<type>button</type>
+			<id>1703</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>501</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1802</onup>
+			<ondown>1704</ondown>
+			<visible>Control.IsVisible(1703)</visible>
+		</control>
+		<control>
+			<description>MUSIC1</description>
+			<type>button</type>
+			<id>1803</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>501</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1802</onup>
+			<ondown>1704</ondown>
+			<visible>Control.IsVisible(1803)</visible>
+		</control>
+		<control>
+			<description>MUSIC2</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC3</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC4</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC5</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC6</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC7</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC8</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1800)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC9</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1801)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC10</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1802)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC11</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1803)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC12</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1804)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MUSIC13</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MUSIC</label>
+			<visible>Control.HasFocus(1805)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>Dummy label indicating MOVIES visibility</description>
+			<id>1004</id>
+			<type>label</type>
+			<posX>100</posX>
+			<posY>-100</posY>
+			<width>500</width>
+			<height>0</height>
+			<label>Movies</label>
+			<visible>Control.HasFocus(1704)|Control.HasFocus(1804)|Control.HasFocus(1904)|Control.IsVisible(1104)</visible>
+		</control>
+		<control>
+			<description>MOVIES0</description>
+			<type>button</type>
+			<id>1704</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>96742</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1803</onup>
+			<ondown>1705</ondown>
+			<visible>Control.IsVisible(1704)</visible>
+		</control>
+		<control>
+			<description>MOVIES1</description>
+			<type>button</type>
+			<id>1804</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>96742</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1803</onup>
+			<ondown>1705</ondown>
+			<visible>Control.IsVisible(1804)</visible>
+		</control>
+		<control>
+			<description>MOVIES2</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES3</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES4</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES5</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES6</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES7</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES8</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1801)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES9</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1802)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES10</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1803)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES11</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1804)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES12</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1805)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>MOVIES13</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>MOVIES</label>
+			<visible>Control.HasFocus(1806)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>Dummy label indicating TV SHOWS visibility</description>
+			<id>1005</id>
+			<type>label</type>
+			<posX>100</posX>
+			<posY>-100</posY>
+			<width>500</width>
+			<height>0</height>
+			<label>Movies</label>
+			<visible>Control.HasFocus(1705)|Control.HasFocus(1805)|Control.HasFocus(1905)|Control.IsVisible(1105)</visible>
+		</control>
+		<control>
+			<description>TV SHOWS0</description>
+			<type>button</type>
+			<id>1705</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>9811</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1804</onup>
+			<ondown>1706</ondown>
+			<visible>Control.IsVisible(1705)</visible>
+		</control>
+		<control>
+			<description>TV SHOWS1</description>
+			<type>button</type>
+			<id>1805</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>9811</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1804</onup>
+			<ondown>1706</ondown>
+			<visible>Control.IsVisible(1805)</visible>
+		</control>
+		<control>
+			<description>TV SHOWS2</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS3</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS4</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS5</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS6</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS7</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS8</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1802)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS9</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1803)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS10</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1804)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS11</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1805)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS12</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1806)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV SHOWS13</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV SHOWS</label>
+			<visible>Control.HasFocus(1807)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>Dummy label indicating TV visibility</description>
+			<id>1006</id>
+			<type>label</type>
+			<posX>100</posX>
+			<posY>-100</posY>
+			<width>500</width>
+			<height>0</height>
+			<label>Movies</label>
+			<visible>Control.HasFocus(1706)|Control.HasFocus(1806)|Control.HasFocus(1906)|Control.IsVisible(1106)</visible>
+		</control>
+		<control>
+			<description>TV0</description>
+			<type>button</type>
+			<id>1706</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>1</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1805</onup>
+			<ondown>1707</ondown>
+			<visible>Control.IsVisible(1706)</visible>
+		</control>
+		<control>
+			<description>TV1</description>
+			<type>button</type>
+			<id>1806</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>320</width>
+			<height>72</height>
+			<textureFocus>-</textureFocus>
+			<textureNoFocus>-</textureNoFocus>
+			<hyperlink>1</hyperlink>
+			<hover>-</hover>
+			<onleft>-</onleft>
+			<onright>17</onright>
+			<onup>1805</onup>
+			<ondown>1707</ondown>
+			<visible>Control.IsVisible(1806)</visible>
+		</control>
+		<control>
+			<description>TV2</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV3</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV4</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV5</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV6</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1707)|Control.IsVisible(1107)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV7</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1708)|Control.IsVisible(1108)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV8</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>-24</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1803)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV9</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1804)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV10</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>442</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1805)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV11</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>342</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#selectedfont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1806)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV12</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>242</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
+			<visible>Control.HasFocus(1807)</visible>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+		</control>
+		<control>
+			<description>TV13</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>142</posY>
+			<width>320</width>
+			<height>72</height>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<label>TV</label>
 			<visible>Control.HasFocus(1808)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
@@ -2756,7 +2764,7 @@
 		<control>
 			<description>home TV SHOWS</description>
 			<type>button</type>
-			<id>1903</id>
+			<id>1905</id>
 			<posX>0</posX>
 			<posY>0</posY>
 			<width>320</width>
@@ -2767,22 +2775,22 @@
 			<hover>-</hover>
 			<onleft>-</onleft>
 			<onright>17</onright>
-			<onup>1802</onup>
-			<ondown>1704</ondown>
-			<visible>Control.IsVisible(1903)|Control.HasFocus(656)</visible>
+			<onup>1804</onup>
+			<ondown>1706</ondown>
+			<visible>Control.IsVisible(1905)|Control.HasFocus(656)</visible>
 		</control>
 		<control>
-			<description>home WEATHER</description>
+			<description>home MUSIC</description>
 			<type>label</type>
 			<posX>315</posX>
 			<posY>142</posY>
 			<width>320</width>
 			<height>72</height>
-			<label>WEATHER</label>
+			<label>MUSIC</label>
 			<textcolor>#menuitemNoFocus</textcolor>
 			<font>#labelFont</font>
 			<align>right</align>
-			<visible>Control.HasFocus(1903)|Control.HasFocus(656)</visible>
+			<visible>Control.HasFocus(1905)|Control.HasFocus(656)</visible>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
 		</control>
@@ -2799,7 +2807,7 @@
 			<align>right</align>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1903)|Control.HasFocus(656)</visible>
+			<visible>Control.HasFocus(1905)|Control.HasFocus(656)</visible>
 		</control>
 		<control>
 			<description>home TV SHOWS</description>
@@ -2814,28 +2822,13 @@
 			<align>right</align>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1903)|Control.HasFocus(656)</visible>
-		</control>
-		<control>
-			<description>home MUSIC</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>442</posY>
-			<width>320</width>
-			<height>72</height>
-			<label>MUSIC</label>
-			<textcolor>#menuitemNoFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1903)|Control.HasFocus(656)</visible>
+			<visible>Control.HasFocus(1905)|Control.HasFocus(656)</visible>
 		</control>
 		<control>
 			<description>home TV</description>
 			<type>label</type>
 			<posX>315</posX>
-			<posY>542</posY>
+			<posY>442</posY>
 			<width>320</width>
 			<height>72</height>
 			<label>TV</label>
@@ -2844,7 +2837,22 @@
 			<align>right</align>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1903)|Control.HasFocus(656)</visible>
+			<visible>Control.HasFocus(1905)|Control.HasFocus(656)</visible>
+		</control>
+		<control>
+			<description>home DVD</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>542</posY>
+			<width>320</width>
+			<height>72</height>
+			<label>DVD</label>
+			<textcolor>#menuitemNoFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+			<visible>Control.HasFocus(1905)|Control.HasFocus(656)</visible>
 		</control>
 
 		<!-- Menu Context Labels -->
@@ -2883,7 +2891,7 @@
 			<visible>Control.HasFocus(1701)|Control.HasFocus(1801)</visible>
 		</control>
 		<control>
-			<description>MOVIES Label</description>
+			<description>VIDEOS Label</description>
 			<type>label</type>
 			<posX>315</posX>
 			<posY>322</posY>
@@ -2900,6 +2908,40 @@
 			<visible>Control.HasFocus(1702)|Control.HasFocus(1802)</visible>
 		</control>
 		<control>
+			<description>MUSIC Label</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>322</posY>
+			<width>320</width>
+			<height>72</height>
+			<label>LISTEN TO</label>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<animation effect="fade" start="0" end="100" delay="500" time="300">Visible</animation>
+			<animation effect="fade" start="0" end="0" delay="0" time="50">Hidden</animation>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+			<visible>Control.HasFocus(1703)|Control.HasFocus(1803)</visible>
+		</control>
+		<control>
+			<description>MOVIES Label</description>
+			<type>label</type>
+			<posX>315</posX>
+			<posY>322</posY>
+			<width>320</width>
+			<height>72</height>
+			<label>WATCH YOUR</label>
+			<textcolor>#menuitemFocus</textcolor>
+			<font>#labelFont</font>
+			<align>right</align>
+			<animation effect="fade" start="0" end="100" delay="500" time="300">Visible</animation>
+			<animation effect="fade" start="0" end="0" delay="0" time="50">Hidden</animation>
+			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+			<visible>Control.HasFocus(1704)|Control.HasFocus(1804)</visible>
+		</control>
+		<control>
 			<description>TV SHOWS Label (Default)</description>
 			<type>label</type>
 			<posX>315</posX>
@@ -2912,7 +2954,7 @@
 			<align>right</align>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1903)</visible>
+			<visible>Control.HasFocus(1905)</visible>
 		</control>
 		<control>
 			<description>TV SHOWS Label</description>
@@ -2929,24 +2971,7 @@
 			<animation effect="fade" start="0" end="0" delay="0" time="50">Hidden</animation>
 			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
 			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1703)|Control.HasFocus(1803)</visible>
-		</control>
-		<control>
-			<description>MUSIC Label</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>322</posY>
-			<width>320</width>
-			<height>72</height>
-			<label>LISTEN TO</label>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<animation effect="fade" start="0" end="100" delay="500" time="300">Visible</animation>
-			<animation effect="fade" start="0" end="0" delay="0" time="50">Hidden</animation>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1704)|Control.HasFocus(1804)</visible>
+			<visible>Control.HasFocus(1705)|Control.HasFocus(1805)</visible>
 		</control>
 		<control>
 			<description>TV Label</description>
@@ -2956,23 +2981,6 @@
 			<width>320</width>
 			<height>72</height>
 			<label>WATCH</label>
-			<textcolor>#menuitemFocus</textcolor>
-			<font>#labelFont</font>
-			<align>right</align>
-			<animation effect="fade" start="0" end="100" delay="500" time="300">Visible</animation>
-			<animation effect="fade" start="0" end="0" delay="0" time="50">Hidden</animation>
-			<animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
-			<animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-			<visible>Control.HasFocus(1705)|Control.HasFocus(1805)</visible>
-		</control>
-		<control>
-			<description>VIDEOS Label</description>
-			<type>label</type>
-			<posX>315</posX>
-			<posY>322</posY>
-			<width>320</width>
-			<height>72</height>
-			<label>WATCH YOUR</label>
 			<textcolor>#menuitemFocus</textcolor>
 			<font>#labelFont</font>
 			<align>right</align>

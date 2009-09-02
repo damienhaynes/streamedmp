@@ -132,6 +132,24 @@
   <metadata name="folderBrowserDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>543, 17</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>826, 17</value>
+  </metadata>
+  <data name="cboBGFolder.ToolTip" xml:space="preserve">
+    <value>Each folder entered here should exist in the skins Media\Animation folder.
+If another location is entered then it should be a fully qualified path e.g.
+
+c:\programdata\team mediaportal\mediaportal\thumbs\movingpictures\backdrops\fullsize
+
+Note: If Multiple Images is disabled, ensure you have a default.jpg file in this folder!</value>
+  </data>
+  <data name="checkBoxMultiImage.ToolTip" xml:space="preserve">
+    <value>If enabled, the selected menu item will cycle through all images in the selected folder.
+If disabled, the selected menu item will display the default image in the folder (default.jpg).
+
+Warning: The Multiimage control in MediaPortal was not designed to support Fanart Images so you may
+experience unexpected behaviour e.g. High Memory Use and impacts to performance.</value>
+  </data>
   <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>712, 17</value>
   </metadata>

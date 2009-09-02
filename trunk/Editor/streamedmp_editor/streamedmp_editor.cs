@@ -29,7 +29,9 @@ namespace streamedmp_editor
         int textXOffset = -25;
         int maxXPosition = 400;
         int minXPosition = 200;
-        
+
+        bool bMultiImage = true;
+
         public frmStreamedMPEditor()
         {
             InitializeComponent();
@@ -113,12 +115,10 @@ namespace streamedmp_editor
                 if (loadIDs(true) == true)
                 {
                     cboBGFolder.Enabled = true;
-                    txtItemName.Enabled = true;
-                    txtBGTime.Enabled = true;
+                    txtItemName.Enabled = true;                    
                     btnAdd.Enabled = true;
                     btnRemove.Enabled = true;
-                    chklstWinddowsInMenu.Enabled = true;
-                    chkBGRandom.Enabled = true;
+                    chklstWinddowsInMenu.Enabled = true;                    
                     cboContextLabels.Enabled = true;
                 }
             }  
@@ -139,12 +139,22 @@ namespace streamedmp_editor
                 item.bgFolder = cboBGFolder.Text;                
                 item.random = chkBGRandom.Checked;
                 item.timePerImage = int.Parse(txtBGTime.Text)*1000; //milliseconds
+                if (cboBGFolder.Text.Contains("\\")) {
+                    item.defaultImage = cboBGFolder.Text + "\\default.jpg"; // "c:\thumbs\default.jpg"
+                }
+                else {
+                    item.defaultImage = "animations\\" + cboBGFolder.Text + "\\default.jpg"; // "animations\tv\default.jpg"
+                }
                 menuItems.Add(item);
                 chklstWinddowsInMenu.Items.Add(item.name.ToUpper());
          
                 if (chklstWinddowsInMenu.Items.Count > 2)
                     btnGenerate.Enabled = true;
-         
+                
+                // Add any new entered BG Paths to the list
+                if (!cboBGFolder.Items.Contains(cboBGFolder.Text))
+                    cboBGFolder.Items.Add(cboBGFolder.Text);
+
             }
             else
             {
@@ -340,7 +350,7 @@ namespace streamedmp_editor
                     }
                     foundFocus = true;
                 }
-                if (nodeValue.StartsWith("#menuitemNoFocus"))
+                else if (nodeValue.StartsWith("#menuitemNoFocus"))
                 {
                     try
                     {
@@ -358,19 +368,31 @@ namespace streamedmp_editor
                     }
                     foundNoFocus = true;
                 }
-                if (nodeValue.StartsWith("#menuXPos"))
+                else if (nodeValue.StartsWith("#menuXPos"))
                 {        
                     // Just dummy define for storing position
                     txtMenuXPos.Text = nodeValue.Substring(nodeValue.IndexOf(":") + 1);                    
                 }
+                else if (nodeValue.StartsWith("#multiimage")) {
+                    if (nodeValue.Substring(nodeValue.IndexOf(":") + 1).ToLower() == "true") {
+                        checkBoxMultiImage.Checked = true;
+                    }
+                    else {
+                        checkBoxMultiImage.Checked = false;
+                    }
+                    UpdateImageControlVisibility();
+                }
             }
+            
             if (!foundFocus || !foundNoFocus)
             {
                 showLoadError();
                 return;
             }
+
             nodeList = doc.DocumentElement.SelectNodes("/window/controls/control/texture");
             bool rssTicker = false;
+
             foreach (XmlNode node in nodeList)
             {
                 if (node.InnerText.Equals("#weatherimg"))
@@ -452,35 +474,100 @@ namespace streamedmp_editor
             foreach (XmlNode node in nodeList)
             {
                 XmlNode innerNode = node.SelectSingleNode("type");
-                if (innerNode != null && innerNode.InnerText == "multiimage")
-                {
-                    string imagepath = "";
-                    string timeperimage = "";
-                    string randomize = "";
-                    string visible = "";
 
-                    innerNode = node.SelectSingleNode("imagepath");
-                    if (innerNode != null) imagepath = innerNode.InnerText;
+                if (bMultiImage) {
+                    // Multi-Image Control Type
+                    if (innerNode != null && innerNode.InnerText == "multiimage") {
+                        string imagepath = "";
+                        string timeperimage = "30000";
+                        string randomize = "False";
+                        string visible = "";
+                        string defaultimage = "";
 
-                    innerNode = node.SelectSingleNode("timeperimage");
-                    if (innerNode != null) timeperimage = innerNode.InnerText;
+                        innerNode = node.SelectSingleNode("imagepath");
+                        if (innerNode != null) imagepath = innerNode.InnerText;
 
-                    innerNode = node.SelectSingleNode("randomize");
-                    if (innerNode != null) randomize = innerNode.InnerText;
+                        // Add new BGFolder to list
+                        if (imagepath.Length > 0 && !cboBGFolder.Items.Contains(imagepath))
+                            cboBGFolder.Items.Add(imagepath);
 
-                    innerNode = node.SelectSingleNode("visible");
-                    if (innerNode != null) visible = innerNode.InnerText;
+                        innerNode = node.SelectSingleNode("timeperimage");
+                        if (innerNode != null) timeperimage = innerNode.InnerText;
 
-                    foreach (menuItem mnuItem in menuItems)
-                    {
-                        if (visible.Contains(mnuItem.id + ")"))
-                        {
-                            mnuItem.random = randomize.Equals("true");
-                            mnuItem.bgFolder = imagepath;
-                            mnuItem.timePerImage = int.Parse(timeperimage);
+                        innerNode = node.SelectSingleNode("randomize");
+                        if (innerNode != null) randomize = innerNode.InnerText;
+
+                        innerNode = node.SelectSingleNode("visible");
+                        if (innerNode != null) visible = innerNode.InnerText;
+
+                        innerNode = node.SelectSingleNode("texture");
+                        if (innerNode != null) defaultimage = innerNode.InnerText;
+
+                        foreach (menuItem mnuItem in menuItems) {
+                            if (visible.Contains(mnuItem.id + ")") && visible.Contains("(10")) {
+                                mnuItem.random = randomize.Equals("true");
+                                mnuItem.bgFolder = imagepath;
+                                mnuItem.timePerImage = int.Parse(timeperimage);
+                                if (defaultimage.Contains("default.jpg"))
+                                    mnuItem.defaultImage = defaultimage;
+                                else {
+                                    if (!imagepath.Contains("\\"))
+                                        mnuItem.defaultImage = "animations\\" + imagepath + "\\default.jpg";
+                                    else
+                                        mnuItem.defaultImage = imagepath + "\\default.jpg";
+                                }
+                            }
                         }
                     }
                 }
+                else {
+                    // Standard Image Control
+                    if (innerNode != null && innerNode.InnerText == "image") {
+                        string imagepath = "";
+                        string timeperimage = "30000";
+                        string randomize = "False";
+                        string visible = "";
+                        string defaultimage = "";
+
+                        innerNode = node.SelectSingleNode("imagepath");
+                        if (innerNode != null) imagepath = innerNode.InnerText;
+
+                        // Add new BGFolder to list
+                        if (imagepath.Length > 0 && !cboBGFolder.Items.Contains(imagepath))
+                            cboBGFolder.Items.Add(imagepath);
+
+                        innerNode = node.SelectSingleNode("timeperimage");
+                        if (innerNode != null) timeperimage = innerNode.InnerText;
+
+                        innerNode = node.SelectSingleNode("randomize");
+                        if (innerNode != null) randomize = innerNode.InnerText;
+
+                        innerNode = node.SelectSingleNode("texture");
+                        if (innerNode != null) defaultimage = innerNode.InnerText;                                                
+
+                        innerNode = node.SelectSingleNode("visible");
+                        if (innerNode != null) visible = innerNode.InnerText;
+
+                        foreach (menuItem mnuItem in menuItems) {
+                            if (visible.Contains(mnuItem.id + ")") && visible.Contains("(10")) {
+                                mnuItem.random = randomize.Equals("true");
+                                mnuItem.bgFolder = imagepath;
+                                mnuItem.timePerImage = int.Parse(timeperimage);
+                                if (defaultimage.StartsWith("animations"))
+                                    mnuItem.defaultImage = defaultimage;
+                                else {
+                                    if (!imagepath.Contains("\\"))
+                                        mnuItem.defaultImage = "animations\\" + imagepath + "\\default.jpg";
+                                    else
+                                        mnuItem.defaultImage = imagepath + "\\default.jpg";
+                                }
+                                    
+                            }
+                        }
+                    }
+
+                }
+
             }
             // Load Context Labels
             nodeList = doc.DocumentElement.SelectNodes("/window/controls/control");
@@ -639,11 +726,13 @@ namespace streamedmp_editor
             StreamReader reader = new StreamReader(stream);
             xml = reader.ReadToEnd();
             const string quote = "\"";
+            string multiimage = bMultiImage ? "true":"false";
 
             xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
                             , "\t<define>#menuitemFocus:FF" + txtfocusColour.Text + "</define>\n"
                             + "\t<define>#menuitemNoFocus:80" + txtNoFocusColour.Text + "</define>\n"
-                            + "\t<define>#menuXPos:" + txtMenuXPos.Text + "</define>");
+                            + "\t<define>#menuXPos:" + txtMenuXPos.Text + "</define>\n"
+                            + "\t<define>#multiimage:" + multiimage + "</define>");
 
             StringBuilder rawXML = new StringBuilder();
             int onleft = 0;
@@ -668,6 +757,7 @@ namespace streamedmp_editor
                     newbgItem.folder = menItem.bgFolder;
                     newbgItem.ids.Add(menItem.id.ToString());
                     newbgItem.name = menItem.name;
+                    newbgItem.image = menItem.defaultImage;
                     newbgItem.random = menItem.random;
                     newbgItem.timeperimage = menItem.timePerImage.ToString();
                     bgItems.Add(newbgItem);
@@ -1451,12 +1541,18 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t\t<control>");
                 rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND</description>");
                 rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
-                rawXML.AppendLine("\t\t\t<type>multiimage</type>");
+                if (bMultiImage) {
+                    rawXML.AppendLine("\t\t\t<type>multiimage</type>");
+                }
+                else {
+                    rawXML.AppendLine("\t\t\t<type>image</type>");
+                }
                 rawXML.AppendLine("\t\t\t<posx>0</posx>");
                 rawXML.AppendLine("\t\t\t<posy>0</posy>");
                 rawXML.AppendLine("\t\t\t<width>1280</width>");
                 rawXML.AppendLine("\t\t\t<height>720</height>");
                 rawXML.AppendLine("\t\t\t<imagepath>" + item.folder + "</imagepath>");
+                rawXML.AppendLine("\t\t\t<texture>" + item.image + "</texture>");
                 rawXML.AppendLine("\t\t\t<timeperimage>" + int.Parse(item.timeperimage).ToString() + "</timeperimage>");
                 rawXML.AppendLine("\t\t\t<fadetime>800</fadetime>");
                 rawXML.AppendLine("\t\t\t<loop>yes</loop>");
@@ -1663,6 +1759,27 @@ namespace streamedmp_editor
             QuickSelect(cboQuickSelect.SelectedIndex);            
         }
 
+        private void checkBoxMultiImage_CheckedChanged(object sender, EventArgs e) {
+            UpdateImageControlVisibility();
+        }
+
+        private void UpdateImageControlVisibility() {
+
+            bMultiImage = checkBoxMultiImage.Checked;
+
+            if (checkBoxMultiImage.Checked) {
+                //textBoxDefaultImage.Enabled = false;
+                txtBGTime.Enabled = true;
+                chkBGRandom.Enabled = true;
+            }
+            else {
+                //textBoxDefaultImage.Enabled = true;
+                txtBGTime.Enabled = false;
+                chkBGRandom.Enabled = false;
+            }
+        }
+
+
     }
 
     public class menuItem
@@ -1674,13 +1791,15 @@ namespace streamedmp_editor
         public int id;
         public int timePerImage;
         public bool random;
-        public string contextLabel;    
+        public string contextLabel;
+        public string defaultImage;
     }
 
     public class backgroundItem
     {
         public string name;
         public string folder;
+        public string image;
         public List<string> ids = new List<string>();
         public bool random;
         public string timeperimage;        
