@@ -80,7 +80,7 @@ same location everywhere
                         <centered>yes</centered>
                         <zoom>no</zoom>
                         <texture>#Play.Current.Thumb</texture>
-                        <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
+                        <visible>player.hasmedia+control.isvisible(3337)!string.equals(#Play.Current.Thumb,)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
                         <animation effect="fade" time="500">WindowOpen</animation>
                         <animation effect="fade" time="500">WindowClose</animation>
                 </control>
@@ -114,7 +114,8 @@ same location everywhere
                         <height>124</height>
                         <textureFocus>thumbborder5.png</textureFocus>
                         <textureNoFocus>-</textureNoFocus>
-                        <action>18</action>
+                        <!--<action>18</action>-->
+                        <hyperlink>510</hyperlink>
                         <colordiffuse>f1ffffff</colordiffuse>
                         <visible>player.hasmedia+control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
                         <animation effect="fade" time="500">WindowOpen</animation>

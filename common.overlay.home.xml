@@ -87,7 +87,7 @@
                         <visible>player.hasmedia+control.isvisible(3337)+control.hasthumb(722)+control.hasthumb(723)</visible>
                 </control>
                 <control>
-                        <description>Selectable Button (video preview window)</description>
+                        <description>Selectable Button (Cover preview window)</description>
                         <type>button</type>
                         <id>17</id>
                         <posX>78</posX>
@@ -96,7 +96,8 @@
                         <height>124</height>
                         <textureFocus>thumbborder5.png</textureFocus>
                         <textureNoFocus>-</textureNoFocus>
-                        <action>18</action>
+                        <!--<action>18</action>-->
+                        <hyperlink>510</hyperlink>
                         <onup>50</onup>
                         <ondown>50</ondown>
                         <onright>50</onright>
