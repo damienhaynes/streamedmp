@@ -746,7 +746,7 @@ namespace streamedmp_editor
                     if (bgitem.folder == menItem.bgFolder)
                     {
                         bgitem.ids.Add(menItem.id.ToString());
-                        bgitem.name = bgitem.name + " " + menItem.name;
+                        bgitem.name = bgitem.name + ", " + menItem.name;
                         newBG = false;
                     }
 
@@ -790,8 +790,14 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<id>" + (menItem.id + 700).ToString() + "</id>");
                             rawXML.AppendLine("\t\t\t<posX>0</posX>");
                             rawXML.AppendLine("\t\t\t<posY>0</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
-                            rawXML.AppendLine("\t\t\t<height>72</height>");
+							if (menItem.isDefault == true) {
+								rawXML.AppendLine("\t\t\t<width>1280</width>");
+								rawXML.AppendLine("\t\t\t<height>720</height>");
+							}
+							else {
+								rawXML.AppendLine("\t\t\t<width>380</width>");
+								rawXML.AppendLine("\t\t\t<height>72</height>");
+							}
                             rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
                             rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
                             rawXML.AppendLine("\t\t\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -820,7 +826,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<id>" + (menItem.id + 800).ToString() + "</id>");
                             rawXML.AppendLine("\t\t\t<posX>0</posX>");
                             rawXML.AppendLine("\t\t\t<posY>0</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
                             rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
@@ -849,7 +855,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>-24</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -876,7 +882,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>542</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -901,7 +907,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>442</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -924,7 +930,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>342</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#selectedfont</font>");
@@ -942,7 +948,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>242</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -965,7 +971,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>142</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -990,7 +996,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>-24</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -1017,7 +1023,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>542</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -1042,7 +1048,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>442</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -1065,7 +1071,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>342</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#selectedfont</font>");
@@ -1083,7 +1089,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>242</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -1106,7 +1112,7 @@ namespace streamedmp_editor
                             rawXML.AppendLine("\t\t\t<type>label</type>");
                             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                             rawXML.AppendLine("\t\t\t<posY>142</posY>");
-                            rawXML.AppendLine("\t\t\t<width>320</width>");
+                            rawXML.AppendLine("\t\t\t<width>380</width>");
                             rawXML.AppendLine("\t\t\t<height>72</height>");
                             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
                             rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
@@ -1149,7 +1155,7 @@ namespace streamedmp_editor
                     rawXML.AppendLine("\t\t\t<type>label</type>");
                     rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                     rawXML.AppendLine("\t\t\t<posY>322</posY>");
-                    rawXML.AppendLine("\t\t\t<width>320</width>");
+                    rawXML.AppendLine("\t\t\t<width>380</width>");
                     rawXML.AppendLine("\t\t\t<height>72</height>");
                     rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
                     rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
@@ -1166,7 +1172,7 @@ namespace streamedmp_editor
                 rawXML.AppendLine("\t\t\t<type>label</type>");
                 rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
                 rawXML.AppendLine("\t\t\t<posY>322</posY>");
-                rawXML.AppendLine("\t\t\t<width>320</width>");
+                rawXML.AppendLine("\t\t\t<width>380</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
@@ -1414,24 +1420,24 @@ namespace streamedmp_editor
 
             const string quote = "\"";
 
-            rawXML.AppendLine("\t\t<control>");
-              rawXML.AppendLine("\t\t\t<description>home "+menuItems[defaultId].name+"</description>");
-              rawXML.AppendLine("\t\t\t<type>button</type>");
-              rawXML.AppendLine("\t\t\t<id>"+(menuItems[defaultId].id + 900).ToString()+"</id>");
-              rawXML.AppendLine("\t\t\t<posX>0</posX>");
-              rawXML.AppendLine("\t\t\t<posY>0</posY>");
-              rawXML.AppendLine("\t\t\t<width>320</width>");
-              rawXML.AppendLine("\t\t\t<height>72</height>");
-	          rawXML.AppendLine("\t\t\t<hyperlink>"+menuItems[defaultId].hyperlink+"</hyperlink>");
-              rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
-              rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
-              rawXML.AppendLine("\t\t\t<hover>-</hover>");
-              rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-              rawXML.AppendLine("\t\t\t<onright>17</onright>");
-              rawXML.AppendLine("\t\t\t<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
-              rawXML.AppendLine("\t\t\t<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
-              rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menuItems[defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-            rawXML.AppendLine("\t\t</control>");
+			rawXML.AppendLine("\t\t<control>");
+			rawXML.AppendLine("\t\t\t<description>home "+menuItems[defaultId].name+"</description>");
+			rawXML.AppendLine("\t\t\t<type>button</type>");
+			rawXML.AppendLine("\t\t\t<id>"+(menuItems[defaultId].id + 900).ToString()+"</id>");
+			rawXML.AppendLine("\t\t\t<posX>0</posX>");
+			rawXML.AppendLine("\t\t\t<posY>0</posY>");
+			rawXML.AppendLine("\t\t\t<width>380</width>");
+			rawXML.AppendLine("\t\t\t<height>72</height>");
+			rawXML.AppendLine("\t\t\t<hyperlink>"+menuItems[defaultId].hyperlink+"</hyperlink>");
+			rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
+			rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
+			rawXML.AppendLine("\t\t\t<hover>-</hover>");
+			rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
+			rawXML.AppendLine("\t\t\t<onright>17</onright>");
+			rawXML.AppendLine("\t\t\t<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
+			rawXML.AppendLine("\t\t\t<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
+			rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menuItems[defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
+			rawXML.AppendLine("\t\t</control>");
                     // ************ FIRST
 
 
@@ -1440,7 +1446,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<type>label</type>");
             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
             rawXML.AppendLine("\t\t\t<posY>142</posY>");
-            rawXML.AppendLine("\t\t\t<width>320</width>");
+            rawXML.AppendLine("\t\t\t<width>380</width>");
             rawXML.AppendLine("\t\t\t<height>72</height>");
             rawXML.AppendLine("\t\t\t<label>"+menuItems[first].name+"</label>");
             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
@@ -1460,7 +1466,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<type>label</type>");
             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
             rawXML.AppendLine("\t\t\t<posY>242</posY>");
-            rawXML.AppendLine("\t\t\t<width>320</width>");
+            rawXML.AppendLine("\t\t\t<width>380</width>");
             rawXML.AppendLine("\t\t\t<height>72</height>");
             rawXML.AppendLine("\t\t\t<label>"+menuItems[second].name+"</label>");
             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
@@ -1478,7 +1484,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<type>label</type>");
             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
             rawXML.AppendLine("\t\t\t<posY>342</posY>");
-            rawXML.AppendLine("\t\t\t<width>320</width>");
+            rawXML.AppendLine("\t\t\t<width>380</width>");
             rawXML.AppendLine("\t\t\t<height>72</height>");
             rawXML.AppendLine("\t\t\t<label>"+menuItems[defaultId].name+"</label>");
             rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
@@ -1497,7 +1503,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<type>label</type>");
             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
             rawXML.AppendLine("\t\t\t<posY>442</posY>");
-            rawXML.AppendLine("\t\t\t<width>320</width>");
+            rawXML.AppendLine("\t\t\t<width>380</width>");
             rawXML.AppendLine("\t\t\t<height>72</height>");
             rawXML.AppendLine("\t\t\t<label>"+menuItems[third].name+"</label>");
             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
@@ -1516,7 +1522,7 @@ namespace streamedmp_editor
             rawXML.AppendLine("\t\t\t<type>label</type>");
             rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuXPos.Text) + textXOffset) + "</posX>");
             rawXML.AppendLine("\t\t\t<posY>542</posY>");
-            rawXML.AppendLine("\t\t\t<width>320</width>");
+            rawXML.AppendLine("\t\t\t<width>380</width>");
             rawXML.AppendLine("\t\t\t<height>72</height>");
             rawXML.AppendLine("\t\t\t<label>"+menuItems[fourth].name+"</label>");
             rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
