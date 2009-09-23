@@ -103,11 +103,11 @@
 			<posX>100</posX>
 			<posY>225</posY>			
 			<height>400</height>
+			<width>400</width>
 			<keepaspectratio>yes</keepaspectratio>			
 			<texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+			<animation effect="fade" time="250">WindowClose</animation>			
 			<visible>facadeview.list+Control.IsVisible(50)</visible>
 		</control>		
 		<control>

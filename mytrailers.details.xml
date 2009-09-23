@@ -79,11 +79,11 @@
 			<posY>480</posY>
 			<width>400</width>
 			<height>225</height>
+			<keepaspectratio>yes</keepaspectratio>
 			<texture>#MyTrailers.Video.Image</texture>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>!Control.IsVisible(50)</visible> 
-			<keepaspectratio>yes</keepaspectratio>
+			<visible>!Control.IsVisible(50)</visible> 			
 		</control>	
 		<control>
 			<description>group element</description>
@@ -192,14 +192,14 @@
 			<description>Trailer Poster</description>
 			<type>image</type>
 			<id>21</id>
-			<posX>40</posX>
-			<posY>220</posY>			
+			<posX>20</posX>
+			<posY>225</posY>			
 			<height>400</height>
+			<width>400</width>
 			<keepaspectratio>yes</keepaspectratio>
 			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Details.Poster</texture>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
-			<animation effect="rotatey" start="-55" end="-55" center="15,0" time="0" reversible="false">visible</animation>
+			<animation effect="fade" time="250">WindowClose</animation>						
 			<visible>!Control.IsVisible(50)</visible>
 		</control>
 	</controls>
