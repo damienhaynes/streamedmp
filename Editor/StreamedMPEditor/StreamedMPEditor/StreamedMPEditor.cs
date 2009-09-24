@@ -260,11 +260,27 @@ namespace StreamedMPEditor
         item.random = randomChk.Checked;
         item.isWeather = isWeather.Checked;
         item.timePerImage = int.Parse(timeBox.Text);
+
+        // Set default image....
+        if (!item.bgFolder.Contains("\\"))
+          item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
+        else
+          item.defaultImage = item.bgFolder + "\\default.jpg";
+        // And check if it exists and create if not.
+        if (!System.IO.File.Exists((imageDir(item.defaultImage))))
+        {
+
+          string[] fileList = getFileListing(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
+          createDefaultJpg(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
+        }
+
+
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
 
         itemName.Text = "";
         bgBox.Text = "";
+
         if (itemsOnMenubar.Items.Count > 2)
           generateMenu.Enabled = true;
         xmlFiles.SelectedIndex = -1;
@@ -394,26 +410,7 @@ namespace StreamedMPEditor
       }
     }
 
-    private void btnClearCache_Click(object sender, EventArgs e)
-    {
 
-      DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin("name") + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
-      if (result == DialogResult.No)
-      {
-        return;
-      }
-      try
-      {
-        System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin("name"), true);
-        showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
-      }
-      catch (Exception ex)
-      {
-        showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
-
-      }
-
-    }
 
     private void xmlFiles_Click(object sender, EventArgs e)
     {
@@ -543,6 +540,8 @@ namespace StreamedMPEditor
           writeMenu(menuType.vertical);
         }
       }
+      if (cboClearCache.Checked)
+        clearCacheDir();
     }
 
     private void writeMenu(menuType direction)
@@ -621,6 +620,7 @@ namespace StreamedMPEditor
         randomChk.Visible = true;
         timePerImageL.Visible = true;
         secondsL.Visible = true;
+
       }
       else
       {
@@ -631,6 +631,8 @@ namespace StreamedMPEditor
         randomChk.Visible = false;
         timePerImageL.Visible = false;
         secondsL.Visible = false;
+
+
       }
     }
 

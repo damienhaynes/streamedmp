@@ -613,6 +613,32 @@ namespace StreamedMPEditor
       }
     }
 
+    private void btnClearCache_Click(object sender, EventArgs e)
+    {
+
+      DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin("name") + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
+      if (result == DialogResult.No)
+      {
+        return;
+      }
+      clearCacheDir();
+    }
+
+    private void clearCacheDir()
+    {
+      try
+      {
+        System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin("name"), true);
+        showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
+      }
+      catch (Exception ex)
+      {
+        showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
+
+      }
+
+    }
+
     public class getAsmVersion
     {
       #region Private Variables

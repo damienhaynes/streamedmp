@@ -113,23 +113,23 @@ namespace StreamedMPEditor
       weatherBGlink.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "weatherBGlink", nodelist));
       fiveDayWeatherCheckBox.Checked  = bool.Parse(readEntryValue("StreamedMP Options", "fiveDayWeatherCheckBox", nodelist));
       summaryWeatherCheckBox.Checked  = bool.Parse(readEntryValue("StreamedMP Options", "summaryWeatherCheckBox", nodelist));
-
+      cboClearCache.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "cboClearCache", nodelist));
       //
       // Read in the menu items
       //
-      for (int i = 0; i < Convert.ToInt64(readEntryValue("Menu Items", "count", nodelist)); i++)
+      for (int i = 0; i < Convert.ToInt64(readEntryValue("StreamedMP Menu Items", "count", nodelist)); i++)
       {
         menuItem mnuItem = new menuItem();
-        mnuItem.name          = readEntryValue("Menu Items", "menuitem" + i.ToString() + "name", nodelist);
-        mnuItem.contextLabel  = readEntryValue("Menu Items", "menuitem" + i.ToString() + "label", nodelist);
-        mnuItem.bgFolder      = readEntryValue("Menu Items", "menuitem" + i.ToString() + "folder", nodelist);
-        mnuItem.hyperlink     = readEntryValue("Menu Items", "menuitem" + i.ToString() + "hyperlink", nodelist);
-        mnuItem.isDefault     = bool.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "isdefault", nodelist));
-        mnuItem.isWeather     = bool.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "isweather", nodelist));
-        mnuItem.random        = bool.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "random", nodelist));
-        mnuItem.updateStatus  = bool.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "updatestatus", nodelist));
-        mnuItem.id            = int.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "id", nodelist));
-        mnuItem.timePerImage  = int.Parse(readEntryValue("Menu Items", "menuitem" + i.ToString() + "timeonpage", nodelist));
+        mnuItem.name          = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "name", nodelist);
+        mnuItem.contextLabel  = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "label", nodelist);
+        mnuItem.bgFolder      = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "folder", nodelist);
+        mnuItem.hyperlink     = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "hyperlink", nodelist);
+        mnuItem.isDefault     = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "isdefault", nodelist));
+        mnuItem.isWeather     = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "isweather", nodelist));
+        mnuItem.random        = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "random", nodelist));
+        mnuItem.updateStatus  = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "updatestatus", nodelist));
+        mnuItem.id            = int.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "id", nodelist));
+        mnuItem.timePerImage  = int.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "timeonpage", nodelist));
 
         isWeather.Checked = mnuItem.isWeather;
         randomChk.Checked = mnuItem.random;
@@ -141,7 +141,8 @@ namespace StreamedMPEditor
         itemsOnMenubar.Items.Add(mnuItem.name, id.Equals(defaultcontrol)); 
 
         // If user decides not to use multiimage backgrounds then we need a default image, lets check and set if one is required
-        defaultImage = readEntryValue("Menu Items", "menuitem" + i.ToString() + "defaultimage", nodelist);
+        defaultImage = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "defaultimage", nodelist);
+
         if (defaultImage.StartsWith("animations"))
           mnuItem.defaultImage = defaultImage;
         else
@@ -151,6 +152,7 @@ namespace StreamedMPEditor
           else
             mnuItem.defaultImage = mnuItem.bgFolder + "\\default.jpg";
         }
+
      
         menuItems.Add(mnuItem);
       }
