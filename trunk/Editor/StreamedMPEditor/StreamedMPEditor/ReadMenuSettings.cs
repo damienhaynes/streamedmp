@@ -154,6 +154,7 @@ namespace StreamedMPEditor
      
         menuItems.Add(mnuItem);
       }
+      fillBackgroundItems();
       UpdateImageControlVisibility();
       generateMenu.Enabled = true;
     }

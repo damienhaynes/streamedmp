@@ -357,19 +357,19 @@ namespace StreamedMPEditor
     private void setBasicHomeValues()
     {
 
-      basicHomeValues.offsetMymenu = 0;
+      basicHomeValues.offsetMymenu = -33;
       basicHomeValues.textYOffset = 6;
       basicHomeValues.offsetSubmenu = 72;
       basicHomeValues.offsetRssImage = 72;
       basicHomeValues.offsetRssText = 73;
-      basicHomeValues.offsetTwitter = 30;
+      basicHomeValues.offsetTwitter = 51;
       basicHomeValues.offsetTwitterImage = 32;
-      basicHomeValues.offsetButtons = 50;
-      basicHomeValues.menuHeight = 72;
-      basicHomeValues.subMenuHeight = 30;
+      basicHomeValues.offsetButtons = 42;
+      basicHomeValues.menuHeight = 155;
+      basicHomeValues.subMenuHeight = 60;
       basicHomeValues.subMenuXpos = 0;
       basicHomeValues.subMenuWidth = 1280;
-      basicHomeValues.subMenuTopHeight = 30;
+      basicHomeValues.subMenuTopHeight = 60;
       basicHomeValues.Button3Slide = 55; 
       
       if (useAeonGraphics.Checked)
@@ -580,6 +580,39 @@ namespace StreamedMPEditor
       txtNoFocusColour.SelectionStart = start;
     }
 
+    private void fillBackgroundItems()
+    {
+      foreach (menuItem menItem in menuItems)
+      {
+        bool newBG = true;
+        foreach (backgroundItem bgitem in bgItems)
+        {
+          if (bgitem.folder == menItem.bgFolder)
+          {
+            bgitem.ids.Add(menItem.id.ToString());
+            bgitem.mname.Add(menItem.name.ToString());
+            bgitem.name = bgitem.name + " " + menItem.name;
+            newBG = false;
+          }
+
+        }
+        if (newBG == true)
+        {
+          backgroundItem newbgItem = new backgroundItem();
+          newbgItem.folder = menItem.bgFolder;
+          newbgItem.ids.Add(menItem.id.ToString());
+          newbgItem.mname.Add(menItem.name.ToString());
+          newbgItem.name = menItem.name;
+          newbgItem.image = menItem.defaultImage;
+          newbgItem.random = menItem.random;
+          newbgItem.timeperimage = menItem.timePerImage.ToString();
+          newbgItem.isWeather = menItem.isWeather;
+          bgItems.Add(newbgItem);
+
+        }
+      }
+    }
+
     public class getAsmVersion
     {
       #region Private Variables
@@ -763,6 +796,18 @@ namespace StreamedMPEditor
       public bool isWeather;
     }
 
+    public class defaultImages
+    {
+      public int count;
+      public int activeBGItem;
+      public int activePicBox;
+      public int activeSelectPbox;
+      public string activeDir;
+      public string[] newDefault = new string[3];
+      public PictureBox[] NewPicBoxes = new PictureBox[3];
+      public PictureBox[] picBoxes = new PictureBox[24];
+    }
+
     public class prettyItem
     {
       public string name;
@@ -782,6 +827,7 @@ namespace StreamedMPEditor
       public string configBasePath;
       public string streamedMPpath;
       public string pluginPath;
+      public string backgroundPath;
     }
 
     public struct editorValues
