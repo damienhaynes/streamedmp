@@ -119,8 +119,7 @@
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
       this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-      this.checkBox1 = new System.Windows.Forms.CheckBox();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
+      this.cboClearCache = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.basicHomeDesign.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -133,7 +132,6 @@
       this.groupBox2.SuspendLayout();
       this.basichomeStyle.SuspendLayout();
       this.statusStrip1.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -149,7 +147,6 @@
       // 
       // basicHomeDesign
       // 
-      this.basicHomeDesign.Controls.Add(this.pictureBox1);
       this.basicHomeDesign.Controls.Add(this.groupBox3);
       this.basicHomeDesign.Controls.Add(this.label20);
       this.basicHomeDesign.Controls.Add(this.label19);
@@ -191,7 +188,7 @@
       // selectedWindowID
       // 
       this.selectedWindowID.AutoSize = true;
-      this.selectedWindowID.Location = new System.Drawing.Point(114, 39);
+      this.selectedWindowID.Location = new System.Drawing.Point(123, 39);
       this.selectedWindowID.Name = "selectedWindowID";
       this.selectedWindowID.Size = new System.Drawing.Size(41, 13);
       this.selectedWindowID.TabIndex = 104;
@@ -200,7 +197,7 @@
       // selectedWindowIDL
       // 
       this.selectedWindowIDL.AutoSize = true;
-      this.selectedWindowIDL.Location = new System.Drawing.Point(38, 39);
+      this.selectedWindowIDL.Location = new System.Drawing.Point(58, 39);
       this.selectedWindowIDL.Name = "selectedWindowIDL";
       this.selectedWindowIDL.Size = new System.Drawing.Size(68, 13);
       this.selectedWindowIDL.TabIndex = 103;
@@ -209,7 +206,7 @@
       // selectedWindow
       // 
       this.selectedWindow.AutoSize = true;
-      this.selectedWindow.Location = new System.Drawing.Point(114, 17);
+      this.selectedWindow.Location = new System.Drawing.Point(123, 17);
       this.selectedWindow.Name = "selectedWindow";
       this.selectedWindow.Size = new System.Drawing.Size(12, 13);
       this.selectedWindow.TabIndex = 102;
@@ -218,7 +215,7 @@
       // selectedWindowL
       // 
       this.selectedWindowL.AutoSize = true;
-      this.selectedWindowL.Location = new System.Drawing.Point(12, 17);
+      this.selectedWindowL.Location = new System.Drawing.Point(32, 17);
       this.selectedWindowL.Name = "selectedWindowL";
       this.selectedWindowL.Size = new System.Drawing.Size(94, 13);
       this.selectedWindowL.TabIndex = 101;
@@ -1081,30 +1078,22 @@
       this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
       this.toolTip1.ToolTipTitle = "Basic Home Editor";
       // 
-      // checkBox1
+      // cboClearCache
       // 
-      this.checkBox1.AutoSize = true;
-      this.checkBox1.Location = new System.Drawing.Point(629, 79);
-      this.checkBox1.Name = "checkBox1";
-      this.checkBox1.Size = new System.Drawing.Size(145, 17);
-      this.checkBox1.TabIndex = 49;
-      this.checkBox1.Text = "Clear cache on Generate";
-      this.checkBox1.UseVisualStyleBackColor = true;
-      // 
-      // pictureBox1
-      // 
-      this.pictureBox1.Location = new System.Drawing.Point(21, 233);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-      this.pictureBox1.TabIndex = 122;
-      this.pictureBox1.TabStop = false;
+      this.cboClearCache.AutoSize = true;
+      this.cboClearCache.Location = new System.Drawing.Point(629, 79);
+      this.cboClearCache.Name = "cboClearCache";
+      this.cboClearCache.Size = new System.Drawing.Size(145, 17);
+      this.cboClearCache.TabIndex = 49;
+      this.cboClearCache.Text = "Clear cache on Generate";
+      this.cboClearCache.UseVisualStyleBackColor = true;
       // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(784, 662);
-      this.Controls.Add(this.checkBox1);
+      this.Controls.Add(this.cboClearCache);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.statusStrip1);
       this.Controls.Add(this.basichomeStyle);
@@ -1138,7 +1127,6 @@
       this.basichomeStyle.PerformLayout();
       this.statusStrip1.ResumeLayout(false);
       this.statusStrip1.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1235,8 +1223,7 @@
     private System.Windows.Forms.Label menuItemLabel;
     private System.Windows.Forms.Label menuItemLabelL;
     private System.Windows.Forms.TabPage defaultBackgrounds;
-    private System.Windows.Forms.CheckBox checkBox1;
-    private System.Windows.Forms.PictureBox pictureBox1;
+    private System.Windows.Forms.CheckBox cboClearCache;
   }
 }
 

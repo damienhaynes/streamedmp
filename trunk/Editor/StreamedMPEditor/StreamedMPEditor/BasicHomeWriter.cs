@@ -48,9 +48,9 @@ namespace StreamedMPEditor
       string multiimage = bMultiImage ? "true" : "false";
 
       xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
-                      , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>\n\t"
-                      + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>\n\t"
-                      + "<define>#" + menuPos + "</define>\n\t"
+                      , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>\n"
+                      + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>\n"
+                      + "<define>#" + menuPos + "</define>\n"
                       + "<define>#multiimage:" + multiimage + "</define>");
 
 
@@ -2383,15 +2383,7 @@ namespace StreamedMPEditor
       string settingWeatherBGlink = weatherBGlink.Checked ? "true" : "false";
       string settingFiveDayWeatherCheckBox = fiveDayWeatherCheckBox.Checked ? "true" : "false";
       string settingSummaryWeatherCheckBox = summaryWeatherCheckBox.Checked ? "true" : "false";
-      System.IO.StreamWriter writer;
-
-      Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.usermenuprofile.xml");
-      StreamReader reader = new StreamReader(stream);
-      xml = reader.ReadToEnd();
-
-
-
-
+      string settingClearCacheOnGenerate = cboClearCache.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -2405,8 +2397,8 @@ namespace StreamedMPEditor
       }
 
 
-      xml = xml.Replace("<!-- BEGIN GENERATED MENU OPTIONS DATA -->"
-                , "\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
+      xml =     ("<profile>\n"
+                + "\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
                 + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2,true)
                 + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 2, true)
                 + generateEntry("menuType", menuOrientation, 2, true)
@@ -2421,6 +2413,7 @@ namespace StreamedMPEditor
                 + generateEntry("weatherBGlink",settingWeatherBGlink,2,true)
                 + generateEntry("fiveDayWeatherCheckBox", settingFiveDayWeatherCheckBox,2,true)
                 + generateEntry("summaryWeatherCheckBox", settingSummaryWeatherCheckBox,2,true)
+                + generateEntry("cboClearCache", settingClearCacheOnGenerate, 2, true)
                 + "\t</section>");
 
       
@@ -2428,13 +2421,13 @@ namespace StreamedMPEditor
 
 
 
-      rawXML.AppendLine("\t<!-- End Of Menu Options -->\n\t<section name=" + quote + "Menu Items" + quote + ">");
+            rawXML.AppendLine("\n\t<!-- End Of Menu Options -->\n\t<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
 
       int menuIndex = 0;
       rawXML.AppendLine(generateEntry("count",menuItems.Count.ToString(),2,false));
       foreach (menuItem menItem in menuItems)
       {
-        rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " -->");
+        rawXML.AppendLine("\t\t<!-- Menu Entry : " + menuIndex.ToString() + " -->");
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name,2,false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 2, false));
@@ -2450,15 +2443,17 @@ namespace StreamedMPEditor
         menuIndex += 1;
       }
       rawXML.AppendLine("\t</section>");
+      rawXML.AppendLine("</profile>");
 
-      xml = xml.Replace("<!-- BEGIN GENERATED MENU DATA -->", rawXML.ToString());
-
+      xml += rawXML.ToString();
 
       if (System.IO.File.Exists(mpPaths.configBasePath + "usermenuprofile.xml"))
         System.IO.File.Copy(mpPaths.configBasePath + "usermenuprofile.xml", mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
       
       if (System.IO.File.Exists(mpPaths.configBasePath + "usermenuprofile.xml"))
         System.IO.File.Delete(mpPaths.configBasePath + "usermenuprofile.xml");
+
+      StreamWriter writer;
       writer = System.IO.File.CreateText(mpPaths.configBasePath + "usermenuprofile.xml");
       writer.Write(xml);
       writer.Close();
