@@ -21,19 +21,21 @@ namespace StreamedMPEditor
       string menuPos;
       string skeletonFile;
 
-      writeMenuProfile(direction);
+      int onleft = 0;
+      int onright = 0;
 
+      writeMenuProfile(direction);
       bgItems.Clear();
 
       if (direction == menuType.horizontal)
       {
         menuPos = "menuYPos:" + txtMenuPos.Text;
-        skeletonFile = "StreamedMPEditor.xmlFiles.AeonBasicHomeSkeleton.xml";
+        skeletonFile = "StreamedMPEditor.xmlFiles.HBasicHomeSkeleton.xml";
       }
       else
       {
         menuPos = "menuXPos:" + txtMenuPos.Text;
-        skeletonFile = "StreamedMPEditor.xmlFiles.StreamedMPBasicHomeSkeleton.xml";
+        skeletonFile = "StreamedMPEditor.xmlFiles.VBasicHomeSkeleton.xml";
       }
 
       Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(skeletonFile);
@@ -53,10 +55,6 @@ namespace StreamedMPEditor
 
 
       StringBuilder rawXML = new StringBuilder();
-
-
-      int onleft = 0;
-      int onright = 0;
       foreach (menuItem menItem in menuItems)
       {
         bool newBG = true;
@@ -1192,12 +1190,8 @@ namespace StreamedMPEditor
     {
       int twitterHeight = 0;
       if (enableTwitter.Checked && infoserviceOptions.Enabled)
-      {
-        if (useAeonGraphics.Checked)
-          twitterHeight = 28;
-        else
-          twitterHeight = 33;
-      }
+        twitterHeight = 28;
+
       StringBuilder rawXML = new StringBuilder();
 
       foreach (menuItem menItem in menuItems)
@@ -1488,7 +1482,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\n\n<control>");
       rawXML.AppendLine("\t<description>home " + menuItems[basicHomeValues.defaultId].name + "</description>");
       rawXML.AppendLine("\t<type>button</type>");
-      rawXML.AppendLine("\t<label>" + menuItems[basicHomeValues.defaultId].name + "</label>");
+      rawXML.AppendLine("\t\t\t<id>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</id>");
       rawXML.AppendLine("\t<posX>0</posX>");
       rawXML.AppendLine("\t<posY>0</posY>");
       rawXML.AppendLine("\t<width>320</width>");
@@ -2412,8 +2406,7 @@ namespace StreamedMPEditor
 
 
       xml = xml.Replace("<!-- BEGIN GENERATED MENU OPTIONS DATA -->"
-                ,"<profile>\n"
-                + "\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
+                , "\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
                 + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2,true)
                 + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 2, true)
                 + generateEntry("menuType", menuOrientation, 2, true)
@@ -2457,7 +2450,6 @@ namespace StreamedMPEditor
         menuIndex += 1;
       }
       rawXML.AppendLine("\t</section>");
-      rawXML.AppendLine("</profile>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED MENU DATA -->", rawXML.ToString());
 

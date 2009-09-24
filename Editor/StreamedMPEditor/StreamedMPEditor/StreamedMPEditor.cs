@@ -15,11 +15,19 @@ namespace StreamedMPEditor
   {
     editorPaths mpPaths = new editorPaths();
     editorValues basicHomeValues = new editorValues();
+    defaultImages defImgs = new defaultImages();
 
     List<string> ids = new List<string>();
     List<menuItem> menuItems = new List<menuItem>();
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<prettyItem> prettyItems = new List<prettyItem>();
+    Panel selectPanel = new Panel();
+    Button nextBatch = new Button();
+    Button prevBatch = new Button();
+    Button imgCancel = new Button();
+
+
+    
 
     enum errorCode
     {
@@ -61,16 +69,13 @@ namespace StreamedMPEditor
     int maxXPosition = 400;
     int minXPosition = 200;
 
+
+
     const string quote = "\"";
 
     public streamedMpEditor()
     {
       InitializeComponent();
-    }
-
-    private void streamedMpEditor_Load(object sender, EventArgs e)
-    {
-
     }
 
 
@@ -79,7 +84,6 @@ namespace StreamedMPEditor
       base.OnLoad(e);
 
       GetMediaPortalSkinPath();
-      GetDefaultBackgroundImages();
 
       if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
       {
@@ -119,6 +123,7 @@ namespace StreamedMPEditor
           selectedWindowID.Text = null;
         }
         loadMenuSettings();
+        GetDefaultBackgroundImages();
         if (basicHomeLoadError)
         {
           DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
@@ -136,17 +141,6 @@ namespace StreamedMPEditor
         showError(mpPaths.skinBasePath + "BasicHome.xml Not Found", errorCode.major);
     }
 
-    private void GetDefaultBackgroundImages()
-    {
-      Image workingImage = null;
-
-      workingImage = Image.FromFile(mpPaths.streamedMPpath + "\\Media\\Animations\\music\\default.jpg");
-      musicBGImage.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
-
-      workingImage = Image.FromFile(mpPaths.streamedMPpath + "\\Media\\Animations\\movies\\default.jpg");
-      moviesBGImage.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
-
-    }
 
 
     private bool loadIDs()
@@ -639,6 +633,13 @@ namespace StreamedMPEditor
         secondsL.Visible = false;
       }
     }
+
+
+
+
+
+
+
 
   }
 }

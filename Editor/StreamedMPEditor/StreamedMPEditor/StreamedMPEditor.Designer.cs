@@ -83,12 +83,6 @@
       this.enableTwitter = new System.Windows.Forms.CheckBox();
       this.enableRssfeed = new System.Windows.Forms.CheckBox();
       this.defaultBackgrounds = new System.Windows.Forms.TabPage();
-      this.button1 = new System.Windows.Forms.Button();
-      this.moviesBGImageL = new System.Windows.Forms.Label();
-      this.moviesBGImage = new System.Windows.Forms.PictureBox();
-      this.changeMusicBGImage = new System.Windows.Forms.Button();
-      this.label5 = new System.Windows.Forms.Label();
-      this.musicBGImage = new System.Windows.Forms.PictureBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
       this.checkBoxMultiImage = new System.Windows.Forms.CheckBox();
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
@@ -125,6 +119,8 @@
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
       this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
       this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+      this.checkBox1 = new System.Windows.Forms.CheckBox();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.StreamedMPMenu.SuspendLayout();
       this.basicHomeDesign.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -133,13 +129,11 @@
       this.itemProperties.SuspendLayout();
       this.basicHomeOptions.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
-      this.defaultBackgrounds.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.moviesBGImage)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.musicBGImage)).BeginInit();
       this.globalSettings.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.basichomeStyle.SuspendLayout();
       this.statusStrip1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -155,6 +149,7 @@
       // 
       // basicHomeDesign
       // 
+      this.basicHomeDesign.Controls.Add(this.pictureBox1);
       this.basicHomeDesign.Controls.Add(this.groupBox3);
       this.basicHomeDesign.Controls.Add(this.label20);
       this.basicHomeDesign.Controls.Add(this.label19);
@@ -181,7 +176,7 @@
       // 
       // groupBox3
       // 
-      this.groupBox3.BackColor = System.Drawing.Color.LightGray;
+      this.groupBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.groupBox3.Controls.Add(this.selectedWindowID);
       this.groupBox3.Controls.Add(this.selectedWindowIDL);
       this.groupBox3.Controls.Add(this.selectedWindow);
@@ -310,7 +305,7 @@
       // 
       // groupBox1
       // 
-      this.groupBox1.BackColor = System.Drawing.Color.LightGray;
+      this.groupBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
       this.groupBox1.Controls.Add(this.menuItemLabel);
       this.groupBox1.Controls.Add(this.menuItemLabelL);
       this.groupBox1.Controls.Add(this.menuitemWindow);
@@ -654,7 +649,7 @@
       this.infoserviceOptions.Controls.Add(this.enableRssfeed);
       this.infoserviceOptions.Location = new System.Drawing.Point(6, 16);
       this.infoserviceOptions.Name = "infoserviceOptions";
-      this.infoserviceOptions.Size = new System.Drawing.Size(757, 95);
+      this.infoserviceOptions.Size = new System.Drawing.Size(738, 95);
       this.infoserviceOptions.TabIndex = 105;
       this.infoserviceOptions.TabStop = false;
       this.infoserviceOptions.Text = "InfoService Options";
@@ -721,78 +716,13 @@
       // 
       // defaultBackgrounds
       // 
-      this.defaultBackgrounds.Controls.Add(this.button1);
-      this.defaultBackgrounds.Controls.Add(this.moviesBGImageL);
-      this.defaultBackgrounds.Controls.Add(this.moviesBGImage);
-      this.defaultBackgrounds.Controls.Add(this.changeMusicBGImage);
-      this.defaultBackgrounds.Controls.Add(this.label5);
-      this.defaultBackgrounds.Controls.Add(this.musicBGImage);
       this.defaultBackgrounds.Location = new System.Drawing.Point(4, 22);
       this.defaultBackgrounds.Name = "defaultBackgrounds";
       this.defaultBackgrounds.Size = new System.Drawing.Size(750, 386);
       this.defaultBackgrounds.TabIndex = 2;
       this.defaultBackgrounds.Text = "Default Background Images";
+      this.toolTip1.SetToolTip(this.defaultBackgrounds, resources.GetString("defaultBackgrounds.ToolTip"));
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
-      // 
-      // button1
-      // 
-      this.button1.Location = new System.Drawing.Point(282, 25);
-      this.button1.Name = "button1";
-      this.button1.Size = new System.Drawing.Size(91, 20);
-      this.button1.TabIndex = 5;
-      this.button1.Text = "Change";
-      this.button1.UseVisualStyleBackColor = true;
-      // 
-      // moviesBGImageL
-      // 
-      this.moviesBGImageL.AutoSize = true;
-      this.moviesBGImageL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.moviesBGImageL.Location = new System.Drawing.Point(210, 25);
-      this.moviesBGImageL.Name = "moviesBGImageL";
-      this.moviesBGImageL.Size = new System.Drawing.Size(58, 17);
-      this.moviesBGImageL.TabIndex = 4;
-      this.moviesBGImageL.Text = "Movies";
-      // 
-      // moviesBGImage
-      // 
-      this.moviesBGImage.Location = new System.Drawing.Point(213, 51);
-      this.moviesBGImage.MaximumSize = new System.Drawing.Size(160, 80);
-      this.moviesBGImage.MinimumSize = new System.Drawing.Size(160, 80);
-      this.moviesBGImage.Name = "moviesBGImage";
-      this.moviesBGImage.Size = new System.Drawing.Size(160, 80);
-      this.moviesBGImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.moviesBGImage.TabIndex = 3;
-      this.moviesBGImage.TabStop = false;
-      // 
-      // changeMusicBGImage
-      // 
-      this.changeMusicBGImage.Location = new System.Drawing.Point(85, 25);
-      this.changeMusicBGImage.Name = "changeMusicBGImage";
-      this.changeMusicBGImage.Size = new System.Drawing.Size(91, 20);
-      this.changeMusicBGImage.TabIndex = 2;
-      this.changeMusicBGImage.Text = "Change";
-      this.changeMusicBGImage.UseVisualStyleBackColor = true;
-      // 
-      // label5
-      // 
-      this.label5.AutoSize = true;
-      this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label5.Location = new System.Drawing.Point(13, 25);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(49, 17);
-      this.label5.TabIndex = 1;
-      this.label5.Text = "Music";
-      // 
-      // musicBGImage
-      // 
-      this.musicBGImage.Location = new System.Drawing.Point(16, 51);
-      this.musicBGImage.MaximumSize = new System.Drawing.Size(160, 80);
-      this.musicBGImage.MinimumSize = new System.Drawing.Size(160, 80);
-      this.musicBGImage.Name = "musicBGImage";
-      this.musicBGImage.Size = new System.Drawing.Size(160, 80);
-      this.musicBGImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.musicBGImage.TabIndex = 0;
-      this.musicBGImage.TabStop = false;
       // 
       // globalSettings
       // 
@@ -983,7 +913,8 @@
       // 
       // groupBox2
       // 
-      this.groupBox2.BackColor = System.Drawing.Color.LightGray;
+      this.groupBox2.BackColor = System.Drawing.Color.GhostWhite;
+      this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
       this.groupBox2.Controls.Add(this.infoConfigpath);
       this.groupBox2.Controls.Add(this.infoInstallPath);
       this.groupBox2.Controls.Add(this.infoSkinpath);
@@ -1033,9 +964,9 @@
       // 
       // generateMenu
       // 
-      this.generateMenu.Location = new System.Drawing.Point(656, 13);
+      this.generateMenu.Location = new System.Drawing.Point(629, 10);
       this.generateMenu.Name = "generateMenu";
-      this.generateMenu.Size = new System.Drawing.Size(116, 26);
+      this.generateMenu.Size = new System.Drawing.Size(138, 26);
       this.generateMenu.TabIndex = 1;
       this.generateMenu.Text = "Generate";
       this.generateMenu.UseVisualStyleBackColor = true;
@@ -1043,9 +974,9 @@
       // 
       // btnClearCache
       // 
-      this.btnClearCache.Location = new System.Drawing.Point(657, 53);
+      this.btnClearCache.Location = new System.Drawing.Point(629, 45);
       this.btnClearCache.Name = "btnClearCache";
-      this.btnClearCache.Size = new System.Drawing.Size(114, 27);
+      this.btnClearCache.Size = new System.Drawing.Size(138, 27);
       this.btnClearCache.TabIndex = 2;
       this.btnClearCache.Text = "Clear Skin Cache";
       this.btnClearCache.UseVisualStyleBackColor = true;
@@ -1055,7 +986,7 @@
       // 
       this.verticalStyle.AutoSize = true;
       this.verticalStyle.Checked = true;
-      this.verticalStyle.Location = new System.Drawing.Point(6, 19);
+      this.verticalStyle.Location = new System.Drawing.Point(16, 19);
       this.verticalStyle.Name = "verticalStyle";
       this.verticalStyle.Size = new System.Drawing.Size(160, 17);
       this.verticalStyle.TabIndex = 3;
@@ -1067,7 +998,7 @@
       // horizontalStyle
       // 
       this.horizontalStyle.AutoSize = true;
-      this.horizontalStyle.Location = new System.Drawing.Point(6, 55);
+      this.horizontalStyle.Location = new System.Drawing.Point(16, 55);
       this.horizontalStyle.Name = "horizontalStyle";
       this.horizontalStyle.Size = new System.Drawing.Size(129, 17);
       this.horizontalStyle.TabIndex = 4;
@@ -1150,23 +1081,41 @@
       this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
       this.toolTip1.ToolTipTitle = "Basic Home Editor";
       // 
+      // checkBox1
+      // 
+      this.checkBox1.AutoSize = true;
+      this.checkBox1.Location = new System.Drawing.Point(629, 79);
+      this.checkBox1.Name = "checkBox1";
+      this.checkBox1.Size = new System.Drawing.Size(145, 17);
+      this.checkBox1.TabIndex = 49;
+      this.checkBox1.Text = "Clear cache on Generate";
+      this.checkBox1.UseVisualStyleBackColor = true;
+      // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Location = new System.Drawing.Point(21, 233);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+      this.pictureBox1.TabIndex = 122;
+      this.pictureBox1.TabStop = false;
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(784, 662);
+      this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.groupBox2);
-      this.Controls.Add(this.globalSettings);
       this.Controls.Add(this.statusStrip1);
       this.Controls.Add(this.basichomeStyle);
       this.Controls.Add(this.btnClearCache);
       this.Controls.Add(this.generateMenu);
       this.Controls.Add(this.StreamedMPMenu);
+      this.Controls.Add(this.globalSettings);
       this.MaximumSize = new System.Drawing.Size(800, 700);
       this.MinimumSize = new System.Drawing.Size(800, 700);
       this.Name = "streamedMpEditor";
-      this.Text = "StreamedMP Skin Editor";
-      this.Load += new System.EventHandler(this.streamedMpEditor_Load);
+      this.Text = "StreamedMP Menu Editor";
       this.StreamedMPMenu.ResumeLayout(false);
       this.basicHomeDesign.ResumeLayout(false);
       this.basicHomeDesign.PerformLayout();
@@ -1181,10 +1130,6 @@
       this.basicHomeOptions.ResumeLayout(false);
       this.infoserviceOptions.ResumeLayout(false);
       this.infoserviceOptions.PerformLayout();
-      this.defaultBackgrounds.ResumeLayout(false);
-      this.defaultBackgrounds.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.moviesBGImage)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.musicBGImage)).EndInit();
       this.globalSettings.ResumeLayout(false);
       this.globalSettings.PerformLayout();
       this.groupBox2.ResumeLayout(false);
@@ -1193,6 +1138,7 @@
       this.basichomeStyle.PerformLayout();
       this.statusStrip1.ResumeLayout(false);
       this.statusStrip1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1289,12 +1235,8 @@
     private System.Windows.Forms.Label menuItemLabel;
     private System.Windows.Forms.Label menuItemLabelL;
     private System.Windows.Forms.TabPage defaultBackgrounds;
-    private System.Windows.Forms.Button changeMusicBGImage;
-    private System.Windows.Forms.Label label5;
-    private System.Windows.Forms.PictureBox musicBGImage;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Label moviesBGImageL;
-    private System.Windows.Forms.PictureBox moviesBGImage;
+    private System.Windows.Forms.CheckBox checkBox1;
+    private System.Windows.Forms.PictureBox pictureBox1;
   }
 }
 
