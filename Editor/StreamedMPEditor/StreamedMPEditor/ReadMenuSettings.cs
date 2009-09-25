@@ -68,6 +68,10 @@ namespace StreamedMPEditor
           optionsTag = "StreamedMP Options";
           menuTag = "StreamedMP Menu Items";
           break;
+        default:
+          optionsTag = "StreamedMP Options";
+          menuTag = "StreamedMP Menu Items";
+          break;
       }
 
       // Now read the file
