@@ -51,14 +51,34 @@ namespace StreamedMPEditor
         showError("Exception while loading usermenuprofile.xml\n\n" + e.Message, errorCode.loadError);
         basicHomeLoadError = true;
       }
-      XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/section");
+
+      //
+      // Get the version of usermenuprofile
+      //
+      XmlNode versionControlNode = doc.DocumentElement.SelectSingleNode("/profile/version");
+      string versionNum = null, optionsTag = null, menuTag = null;
+
+      if (versionControlNode != null)
+      {
+        versionNum = versionControlNode.InnerText;
+      }
+      switch (versionNum)
+      {
+        case "1.0":
+          optionsTag = "StreamedMP Options";
+          menuTag = "StreamedMP Menu Items";
+          break;
+      }
+
+      // Now read the file
+      XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
 
       // Get the Focus Colour and set the background on the control
-      focusAlpha.Text = readEntryValue("StreamedMP Options", "menuitemFocus", nodelist).Substring(0, 2);
+      focusAlpha.Text = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
       try
       {
         string RGB = defFocus;
-        RGB = readEntryValue("StreamedMP Options", "menuitemFocus", nodelist).Substring(2);
+        RGB = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(2);
         Color col = ColorFromRGB(RGB);
         txtFocusColour.BackColor = col;
         txtFocusColour.ForeColor = ColorInvert(col);
@@ -70,11 +90,11 @@ namespace StreamedMPEditor
       }
 
       // Get the NoFocus Colour and set the background on the control
-      noFocusAlpha.Text = readEntryValue("StreamedMP Options", "menuitemNoFocus", nodelist).Substring(0, 2);
+      noFocusAlpha.Text = readEntryValue(optionsTag, "menuitemNoFocus", nodelist).Substring(0, 2);
       try
       {
         string RGB = defUnFocus;
-        RGB = readEntryValue("StreamedMP Options", "menuitemNoFocus", nodelist).Substring(2);
+        RGB = readEntryValue(optionsTag, "menuitemNoFocus", nodelist).Substring(2);
         Color col = ColorFromRGB(RGB);
         txtNoFocusColour.BackColor = col;
         txtNoFocusColour.ForeColor = ColorInvert(col);
@@ -86,50 +106,59 @@ namespace StreamedMPEditor
       }
 
       // Check menu orientation
-      if (readEntryValue("StreamedMP Options", "menuType", nodelist) == "Vertical")
+      if (readEntryValue(optionsTag, "menuType", nodelist) == "Vertical")
       {
           verticalStyle.Checked = true;
           horizontalStyle.Checked = false;
           menuPosLabel.Text = "Menu X Position:";
-          txtMenuPos.Text = readEntryValue("StreamedMP Options", "menuXPos", nodelist);
+          txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
       }
       else
       {
           verticalStyle.Checked = false;
           horizontalStyle.Checked = true;
           menuPosLabel.Text = "Menu Y Position:";
-          txtMenuPos.Text = readEntryValue("StreamedMP Options", "menuYPos", nodelist);
+          txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
       }
       //
       // Check and set the Global and Plugin options
       //
-      checkBoxMultiImage.Checked      = bool.Parse(readEntryValue("StreamedMP Options", "multiimage", nodelist));
-      tbAcceleration.Text             = readEntryValue("StreamedMP Options", "acceleration", nodelist);
-      tbDuration.Text                 = readEntryValue("StreamedMP Options", "duration", nodelist);
-      cbDropShadow.Checked            = bool.Parse(readEntryValue("StreamedMP Options", "dropShadow", nodelist));
-      enableRssfeed.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "enableRssfeed", nodelist));
-      enableTwitter.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "enableTwitter", nodelist));
-      wrapString.Checked              = bool.Parse(readEntryValue("StreamedMP Options", "wrapString", nodelist));
-      weatherBGlink.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "weatherBGlink", nodelist));
-      fiveDayWeatherCheckBox.Checked  = bool.Parse(readEntryValue("StreamedMP Options", "fiveDayWeatherCheckBox", nodelist));
-      summaryWeatherCheckBox.Checked  = bool.Parse(readEntryValue("StreamedMP Options", "summaryWeatherCheckBox", nodelist));
-      cboClearCache.Checked           = bool.Parse(readEntryValue("StreamedMP Options", "cboClearCache", nodelist));
+      try
+      {
+        checkBoxMultiImage.Checked = bool.Parse(readEntryValue(optionsTag, "multiimage", nodelist));
+        tbAcceleration.Text = readEntryValue(optionsTag, "acceleration", nodelist);
+        tbDuration.Text = readEntryValue(optionsTag, "duration", nodelist);
+        cbDropShadow.Checked = bool.Parse(readEntryValue(optionsTag, "dropShadow", nodelist));
+        enableRssfeed.Checked = bool.Parse(readEntryValue(optionsTag, "enableRssfeed", nodelist));
+        enableTwitter.Checked = bool.Parse(readEntryValue(optionsTag, "enableTwitter", nodelist));
+        wrapString.Checked = bool.Parse(readEntryValue(optionsTag, "wrapString", nodelist));
+        weatherBGlink.Checked = bool.Parse(readEntryValue(optionsTag, "weatherBGlink", nodelist));
+        fiveDayWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "fiveDayWeatherCheckBox", nodelist));
+        summaryWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "summaryWeatherCheckBox", nodelist));
+        cboClearCache.Checked = bool.Parse(readEntryValue(optionsTag, "cboClearCache", nodelist));
+      }
+      catch 
+      { 
+        // Most likley a new option added but not written to file yet - just continue
+      }
+
+
       //
       // Read in the menu items
       //
-      for (int i = 0; i < Convert.ToInt64(readEntryValue("StreamedMP Menu Items", "count", nodelist)); i++)
+      for (int i = 0; i < Convert.ToInt64(readEntryValue(menuTag, "count", nodelist)); i++)
       {
         menuItem mnuItem = new menuItem();
-        mnuItem.name          = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "name", nodelist);
-        mnuItem.contextLabel  = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "label", nodelist);
-        mnuItem.bgFolder      = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "folder", nodelist);
-        mnuItem.hyperlink     = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "hyperlink", nodelist);
-        mnuItem.isDefault     = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "isdefault", nodelist));
-        mnuItem.isWeather     = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "isweather", nodelist));
-        mnuItem.random        = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "random", nodelist));
-        mnuItem.updateStatus  = bool.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "updatestatus", nodelist));
-        mnuItem.id            = int.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "id", nodelist));
-        mnuItem.timePerImage  = int.Parse(readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "timeonpage", nodelist));
+        mnuItem.name          = readEntryValue(menuTag, "menuitem" + i.ToString() + "name", nodelist);
+        mnuItem.contextLabel  = readEntryValue(menuTag, "menuitem" + i.ToString() + "label", nodelist);
+        mnuItem.bgFolder      = readEntryValue(menuTag, "menuitem" + i.ToString() + "folder", nodelist);
+        mnuItem.hyperlink     = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlink", nodelist);
+        mnuItem.isDefault     = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isdefault", nodelist));
+        mnuItem.isWeather     = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isweather", nodelist));
+        mnuItem.random        = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "random", nodelist));
+        mnuItem.updateStatus  = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
+        mnuItem.id            = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
+        mnuItem.timePerImage  = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "timeonpage", nodelist));
 
         isWeather.Checked = mnuItem.isWeather;
         randomChk.Checked = mnuItem.random;
@@ -141,7 +170,7 @@ namespace StreamedMPEditor
         itemsOnMenubar.Items.Add(mnuItem.name, id.Equals(defaultcontrol)); 
 
         // If user decides not to use multiimage backgrounds then we need a default image, lets check and set if one is required
-        defaultImage = readEntryValue("StreamedMP Menu Items", "menuitem" + i.ToString() + "defaultimage", nodelist);
+        defaultImage = readEntryValue(menuTag, "menuitem" + i.ToString() + "defaultimage", nodelist);
 
         if (defaultImage.StartsWith("animations"))
           mnuItem.defaultImage = defaultImage;
