@@ -208,22 +208,22 @@ This file should contain the facade view
 		<description>Default Image</description>
 		<type>image</type>
 		<id>1</id>
-		<posX>100</posX>
-		<posY>150</posY>
+		<posX>125</posX>
+		<posY>175</posY>
 		<width>454</width>
 		<height>455</height>
 		<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
 		<keepaspectratio>yes</keepaspectratio>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>			
-		<visible>Control.IsVisible(51)</visible>
+		<visible>Control.IsVisible(51)+!Control.HasThumb(100)</visible>
 	</control>
 	<control>
 		<description>Default Image</description>
 		<type>image</type>
-		<id>1</id>
-		<posX>100</posX>
-		<posY>150</posY>
+		<id>100</id>
+		<posX>125</posX>
+		<posY>175</posY>
 		<width>454</width>
 		<height>455</height>
 		<texture flipY="true" diffuse="Thumb_Mask.png">Categories\#MovingPictures.SelectedNode.name.png</texture>	
