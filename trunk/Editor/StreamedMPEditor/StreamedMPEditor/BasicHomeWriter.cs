@@ -2397,7 +2397,9 @@ namespace StreamedMPEditor
       }
 
 
-      xml =     ("<profile>\n"
+      xml       = ("<profile>\n\t"
+                + "<version>1.0</version>\n\t"
+                + "<skin name=\"StreamedMP\">\n\t"
                 + "\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
                 + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2,true)
                 + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 2, true)
@@ -2443,6 +2445,7 @@ namespace StreamedMPEditor
         menuIndex += 1;
       }
       rawXML.AppendLine("\t</section>");
+      rawXML.AppendLine("</skin>");
       rawXML.AppendLine("</profile>");
 
       xml += rawXML.ToString();

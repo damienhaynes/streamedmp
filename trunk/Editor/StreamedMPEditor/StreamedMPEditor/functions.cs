@@ -374,15 +374,15 @@ namespace StreamedMPEditor
       
       if (useAeonGraphics.Checked)
       {
-        basicHomeValues.mymenu = "mymenu_bg-a.png";
-        basicHomeValues.mymenu_submenu = "mymenu_submenu-a.png";
-        basicHomeValues.mymenu_submenutop = "mymenu_submenutop-a.png";
+        basicHomeValues.mymenu = "vmenu_main-a.png";
+        basicHomeValues.mymenu_submenu = "vmenu_submenu-a.png";
+        basicHomeValues.mymenu_submenutop = "vmenu_submenutop-a.png";
       }
       else
       {
-        basicHomeValues.mymenu = "mymenu_bg.png";
-        basicHomeValues.mymenu_submenu = "mymenu_submenu.png";
-        basicHomeValues.mymenu_submenutop = "mymenu_submenutop.png";
+        basicHomeValues.mymenu = "vmenu_main.png";
+        basicHomeValues.mymenu_submenu = "vmenu_submenu.png";
+        basicHomeValues.mymenu_submenutop = "vmenu_submenutop.png";
       }
     }
 
@@ -548,22 +548,26 @@ namespace StreamedMPEditor
 
       foreach (XmlNode node in unodeList)
       {
-
         XmlNode innerNode = node.Attributes.GetNamedItem("name");
-
-        // get the currently configured Skin name
-        if (innerNode.InnerText == section)
+        if (innerNode.InnerText == "StreamedMP")
         {
-
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
-          if (path != null)
+          XmlNodeList skinNodeList = node.SelectNodes("section");
+          foreach (XmlNode skinNode in skinNodeList)
           {
-            entryValue = path.InnerText;
-            return entryValue;
+            XmlNode skinNodeSection = skinNode.Attributes.GetNamedItem("name");
+            if (skinNodeSection.InnerText == section)
+            {
+              XmlNode path = skinNode.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
+              if (path != null)
+              {
+                entryValue = path.InnerText;
+                return entryValue;
+              }
+            }
           }
         }
       }
-      return null;
+      return "false";
     }
 
     private void txtFocusColour_TextChanged(object sender, EventArgs e)
