@@ -8,6 +8,8 @@ This file should contain the facade view
       <description>composite control consisting of a list control and a thumbnail panel</description>
       <type>facadeview</type>
       <id>51</id>
+	  <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
+	  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
       <control>
         <description>Movie List</description>
         <type>listcontrol</type>

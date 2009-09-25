@@ -291,5 +291,34 @@ multiple view modes.
 	  <visible>Control.IsVisible(16)+[Control.IsVisible(50)|Control.IsVisible(51)]</visible>
     </control>	
 	
+	<control>
+		<description>Default Category Image</description>
+		<type>image</type>
+		<id>1</id>
+		<posX>150</posX>
+		<posY>330</posY>
+		<width>341</width>
+		<height>341</height>
+		<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
+		<keepaspectratio>yes</keepaspectratio>
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>			
+		<visible>Control.IsVisible(51)+!Control.HasThumb(100)</visible>
+	</control>
+	<control>
+		<description>Category Image</description>
+		<type>image</type>
+		<id>100</id>
+		<posX>150</posX>
+		<posY>330</posY>
+		<width>341</width>
+		<height>341</height>
+		<texture flipY="true" diffuse="Thumb_Mask.png">Categories\#MovingPictures.SelectedNode.name.png</texture>	
+		<keepaspectratio>yes</keepaspectratio>
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>			
+		<visible>Control.IsVisible(51)</visible>
+	</control>
+	
   </controls>
 </window>
