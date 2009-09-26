@@ -77,6 +77,41 @@ namespace StreamedMPEditor
       // Now read the file
       XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
 
+      // Get the last selected Menu...
+      try
+      {
+        string activeMenuStyle = readEntryValue(optionsTag, "menustyle", nodelist);
+        switch (activeMenuStyle)
+        {
+          case "verticalStyle":
+            menuStyle = chosenMenuStyle.verticalStyle;
+            verticalStyle.Checked = true;
+            break;
+          case "MenuStyle1":
+            menuStyle = chosenMenuStyle.MenuStyle1;
+            horizontalStyle.Checked = true;
+            break;
+          case "MenuStyle2":
+            menuStyle = chosenMenuStyle.MenuStyle2;
+            horizontalStyle2.Checked = true;
+            break;
+        }
+        //...and Weather styles
+        string activeWeatherStyle = readEntryValue(optionsTag, "weatherstyle", nodelist);
+        if (activeWeatherStyle == "bottom")
+        {
+          weatherStyle = chosenWeatherStyle.bottom;
+          stdWeatherStyle.Checked = true;
+        }
+        else if (activeWeatherStyle == "middle")
+        {
+          weatherStyle = chosenWeatherStyle.middle;
+          animatedWeatherStyle.Checked = true;
+        }
+
+      }
+      catch { }
+
       // Get the Focus Colour and set the background on the control
       focusAlpha.Text = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
       try
@@ -113,14 +148,12 @@ namespace StreamedMPEditor
       if (readEntryValue(optionsTag, "menuType", nodelist) == "Vertical")
       {
           verticalStyle.Checked = true;
-          horizontalStyle.Checked = false;
           menuPosLabel.Text = "Menu X Position:";
           txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
       }
       else
       {
           verticalStyle.Checked = false;
-          horizontalStyle.Checked = true;
           menuPosLabel.Text = "Menu Y Position:";
           txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
       }
@@ -140,6 +173,10 @@ namespace StreamedMPEditor
         fiveDayWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "fiveDayWeatherCheckBox", nodelist));
         summaryWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "summaryWeatherCheckBox", nodelist));
         cboClearCache.Checked = bool.Parse(readEntryValue(optionsTag, "cboClearCache", nodelist));
+        animatedWeather.Checked = bool.Parse(readEntryValue(optionsTag, "animatedWeather", nodelist));
+        horizontalContextLabels.Checked = bool.Parse(readEntryValue(optionsTag, "horizontalContextLabels", nodelist));
+        fullWeatherSummaryBottom.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
+        fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
       }
       catch 
       { 
