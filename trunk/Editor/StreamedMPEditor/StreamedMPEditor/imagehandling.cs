@@ -304,7 +304,7 @@ namespace StreamedMPEditor
       string fcompare;
       totalImages = 0;
       //get list of files from directory
-      foreach (string fileName in Directory.GetFiles(imageDir, "*.jpg"))
+      foreach (string fileName in Directory.GetFiles(imageDir, "*.*"))
       {
         fcompare = fileName.ToLower();
         if (!fcompare.Contains("default.jpg"))
