@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("StreamedMPEditor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Menu Editor for MediaPortal StreamedMP Skin")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("StreamedMPEditor")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.0.1.127")]
-[assembly: AssemblyFileVersion("0.0.1.127")]
+[assembly: AssemblyVersion("0.0.1.147")]
+[assembly: AssemblyFileVersion("0.0.1.147")]

@@ -21,7 +21,7 @@ namespace StreamedMPEditor
       infoserviceOptions.Enabled = false;
       fiveDayWeatherCheckBox.Enabled = false;
       summaryWeatherCheckBox.Enabled = false;
-    
+
       GetMediaPortalPath(ref mpPaths);
       if (mpPaths.sMPbaseDir == null)
         return;
@@ -29,23 +29,66 @@ namespace StreamedMPEditor
       readMediaPortalDirs();
 
       string infoServiceVer = getInfoServiceVersion();
+      string rssTickerVer = getRSSTickerVersion();
 
       if (infoServiceVer == "InfoService Not Installed")
-        infoserviceOptions.Enabled = false;
-      else if (infoServiceVer.CompareTo(baseISVer) < 0)
       {
-        showError("    Version " + infoServiceVer + " of InfoService Plugin detected\r\r           Version 0.9.9.3 or greater required\n\nRSS and Weather Tags changed from version 0.9.9.3\n\n          InfoService Options will be disabled", errorCode.info);
+        useInfoService.Text += "         (Disabled : Not Installed)";
+        useInfoService.Enabled = false;
+        useInfoService.Checked = false;
         infoserviceOptions.Enabled = false;
       }
-      else
+      else if (infoServiceVer.CompareTo(baseISVer) < 0)
+      {
+        showError("Version " + infoServiceVer + " of InfoService Plugin detected\r\r           Version 0.9.9.3 or greater required\n\nRSS and Weather Tags changed from version 0.9.9.3\n\n          InfoService Options will be disabled", errorCode.info);
+        infoserviceOptions.Enabled = false;
+      }
+      else if (pluginEnabled("InfoService"))
       {
         infoserviceOptions.Enabled = true;
         fiveDayWeatherCheckBox.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
+        useInfoService.Text += "         (Version " + infoServiceVer + " Installed)";
         if (infoServiceVer.CompareTo(isSeperatorVer) >= 0)
           useInfoServiceSeperator = true;
       }
+      else
+      {
+        useInfoService.Text += "         (Disabled : Not Enabled)";
+        useInfoService.Enabled = false;
+        useInfoService.Checked = false;
+        infoserviceOptions.Enabled = false;
+      }
 
+
+      if (rssTickerVer == "MP-RSSTicker Not Installed")
+      {
+        rssTickerOptions.Enabled = false;
+        useRSSTicker.Enabled = false;
+        useRSSTicker.Checked = false;
+        useRSSTicker.Text += "   (Disabled : Not Installed)";
+      }
+      else
+      {
+        if (pluginEnabled("MP-RSSTicker"))
+        {
+          useRSSTicker.Enabled = true;
+          useRSSTicker.Text += "   (Version " + rssTickerVer + " Installed)";
+        }
+        else
+        {
+          rssTickerOptions.Enabled = false;
+          useRSSTicker.Enabled = false;
+          useRSSTicker.Checked = false;
+          useRSSTicker.Text += "   (Disabled : Not Enabled)";
+        }
+      }
+
+      if (!useInfoService.Enabled && useRSSTicker.Enabled)
+        useRSSTicker.Checked = true;
+
+      if (useInfoService.Checked && !useRSSTicker.Enabled)
+        useInfoService.Checked = true;
 
 
       // Display some Info
@@ -166,12 +209,44 @@ namespace StreamedMPEditor
       {
         mpPaths.pluginPath = mpPaths.pluginPath.Replace("%PROGRAMDATA%", CommonmData);
         mpPaths.pluginPath = mpPaths.pluginPath.Replace("%ProgramData%", CommonmData);
-      } 
+      }
       else if (!mpPaths.pluginPath.Contains(":"))
         mpPaths.pluginPath = mpPaths.sMPbaseDir + "\\" + mpPaths.pluginPath;
 
       mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin("name") + "\\";
 
+    }
+
+    private bool pluginEnabled(string pluginName)
+    {
+      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
+      string entryValue;
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(fMPdirs))
+      {
+        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
+        return false; ;
+      }
+      doc.Load(fMPdirs);
+      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+      foreach (XmlNode node in nodeList)
+      {
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+
+        // get the currently configured plugins
+        if (innerNode.InnerText == "plugins")
+        {
+          XmlNode path = node.SelectSingleNode("entry[@name=\"" + pluginName + "\"]");
+          if (path != null)
+          {
+            if (path.InnerText.ToLower() == "no")
+              return false;
+            else
+              return true;
+          }
+        }
+      }
+      return false;
     }
 
     private string configuredSkin(string elementName)
@@ -212,7 +287,7 @@ namespace StreamedMPEditor
     private void GetMediaPortalPath(ref editorPaths mpPaths)
     {
       string sRegRoot = "SOFTWARE";
- 
+
 
       if (IntPtr.Size > 4)
         sRegRoot += "\\Wow6432Node";
@@ -345,14 +420,64 @@ namespace StreamedMPEditor
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
-      //Ok, so we have chosen the Aeon style..set a few things, if switching between styles set default Y value
+      //Ok, so we have chosen the Horizontal style..set a few things, if switching between styles set default Y value
       if (menuPosLabel.Text == "Menu X Position:")
       {
         txtMenuPos.Text = "433";
-       }
+      }
       menuPosLabel.Text = "Menu Y Position:";
     }
 
+    private void horizontalStyle2_Click(object sender, EventArgs e)
+    {
+      //Ok, so we have chosen the Horizontal style 2..set a few things, if switching between styles set default Y value
+      if (menuPosLabel.Text == "Menu X Position:")
+      {
+        txtMenuPos.Text = "620";
+        horizontalContextLabels.Checked = true;
+      }
+      menuPosLabel.Text = "Menu Y Position:";
+    }
+
+    private void stdWeatherIcons_Click(object sender, EventArgs e)
+    {
+
+    }
+
+
+    private void animatedWeatherIcons_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    private void UpdateImageControlVisibility()
+    {
+      bMultiImage = checkBoxMultiImage.Checked;
+
+      if (checkBoxMultiImage.Checked)
+      {
+        //textBoxDefaultImage.Enabled = false;
+        timeBox.Enabled = true;
+        randomChk.Enabled = true;
+        timeBox.Visible = true;
+        randomChk.Visible = true;
+        timePerImageL.Visible = true;
+        secondsL.Visible = true;
+
+      }
+      else
+      {
+        //textBoxDefaultImage.Enabled = true;
+        timeBox.Enabled = false;
+        randomChk.Enabled = false;
+        timeBox.Visible = false;
+        randomChk.Visible = false;
+        timePerImageL.Visible = false;
+        secondsL.Visible = false;
+
+
+      }
+    }
 
     private void setBasicHomeValues()
     {
@@ -370,8 +495,8 @@ namespace StreamedMPEditor
       basicHomeValues.subMenuXpos = 0;
       basicHomeValues.subMenuWidth = 1280;
       basicHomeValues.subMenuTopHeight = 60;
-      basicHomeValues.Button3Slide = 55; 
-      
+      basicHomeValues.Button3Slide = 55;
+
       if (useAeonGraphics.Checked)
       {
         basicHomeValues.mymenu = "vmenu_main-a.png";
@@ -384,6 +509,26 @@ namespace StreamedMPEditor
         basicHomeValues.mymenu_submenu = "vmenu_submenu.png";
         basicHomeValues.mymenu_submenutop = "vmenu_submenutop.png";
       }
+      // Now adjust depending on Mene Style chosen
+      int mHeight = basicHomeValues.menuHeight;
+      int mYpos = (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu);
+      switch (menuStyle)
+      {
+        case horizontalBasicHomeStyle.Aeon2:
+          break;
+        case horizontalBasicHomeStyle.StreamedMP:
+          break;
+        case horizontalBasicHomeStyle.StreamedMP2:
+          basicHomeValues.menuHeight += 28;
+          basicHomeValues.offsetMymenu -= 24;
+          basicHomeValues.offsetButtons += 16;
+          txtMenuPos.Text = "620";
+          break;
+        default:
+          break;
+      }
+
+
     }
 
     private string getInfoServiceVersion()
@@ -391,13 +536,35 @@ namespace StreamedMPEditor
 
       if (!File.Exists(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
       {
-        showError("Can't find InfoService Plugin\r\r" + mpPaths.pluginPath + "\\windows\\infoservice.dll\n\nInfoService Options will be Disabled", errorCode.info);
+        //showError("Can't find InfoService Plugin\r\r" + mpPaths.pluginPath + "windows\\infoservice.dll\n\nInfoService Options will be Disabled", errorCode.info);
         return "InfoService Not Installed";
       }
 
 
       getAsmVersion ver = new getAsmVersion();
       if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
+      {
+        AssemblyInformation info = ver.CurrentAssemblyInfo;
+        return info.Version;
+      }
+      else
+        showError(ver.ErrorMessage, errorCode.major);
+      return "";
+
+    }
+
+    private string getRSSTickerVersion()
+    {
+
+      if (!File.Exists(mpPaths.pluginPath + "\\process\\MP-RSSTicker.dll"))
+      {
+        //showError("Can't find MP-RSSTicker Plugin\r\r" + mpPaths.pluginPath + "process\\MP-RSSTicker.dll\n\nMP-RSSTicker Options will be Disabled", errorCode.info);
+        return "MP-RSSTicker Not Installed";
+      }
+
+
+      getAsmVersion ver = new getAsmVersion();
+      if (ver.GetVersion(mpPaths.pluginPath + "\\process\\MP-RSSTicker.dll"))
       {
         AssemblyInformation info = ver.CurrentAssemblyInfo;
         return info.Version;

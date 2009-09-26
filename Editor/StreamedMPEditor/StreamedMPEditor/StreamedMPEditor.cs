@@ -26,8 +26,7 @@ namespace StreamedMPEditor
     Button prevBatch = new Button();
     Button imgCancel = new Button();
 
-
-    
+  
 
     enum errorCode
     {
@@ -42,6 +41,7 @@ namespace StreamedMPEditor
     {
       Aeon2,
       StreamedMP,
+      StreamedMP2
     };
 
     enum menuType
@@ -49,6 +49,8 @@ namespace StreamedMPEditor
       vertical,
       horizontal,
     };
+
+
 
     bool basicHomeLoadError = false;
     bool useInfoServiceSeperator = false;
@@ -68,6 +70,8 @@ namespace StreamedMPEditor
     int textXOffset = -25;
     int maxXPosition = 400;
     int minXPosition = 200;
+
+    horizontalBasicHomeStyle menuStyle = horizontalBasicHomeStyle.Aeon2;
 
 
 
@@ -124,6 +128,13 @@ namespace StreamedMPEditor
         }
         loadMenuSettings();
         GetDefaultBackgroundImages();
+        if (useRSSTicker.Checked)
+        {
+          if (!pluginEnabled("MP-RSSTicker"))
+          {
+            showError("The plugin MP-RSSTicker is installed but not enabled\r\n in the MediaPortal Configuration.\r\nRSS and Weather functions will be disabled until configuration of MP-RSSTicker is complete.", errorCode.info);
+          }
+        }
         if (basicHomeLoadError)
         {
           DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
@@ -137,6 +148,7 @@ namespace StreamedMPEditor
             showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
         }
       }
+
       else
         showError(mpPaths.skinBasePath + "BasicHome.xml Not Found", errorCode.major);
     }
@@ -555,13 +567,15 @@ namespace StreamedMPEditor
         generateTopBarH();
         generateMenuGraphicsH();
         generateCrowdingFixH();
+        if (menuStyle == horizontalBasicHomeStyle.StreamedMP2)
+          GenerateContextLabelsH();
       }
       else
       {
         generateTopBarV();
         generateMenuGraphicsV();
         generateCrowdingFixV(); 
-        GenerateContextLabels();
+        GenerateContextLabelsV();
       }
 
       if (enableRssfeed.Checked && infoserviceOptions.Enabled)
@@ -606,43 +620,6 @@ namespace StreamedMPEditor
     {
       UpdateImageControlVisibility();
     }
-
-    private void UpdateImageControlVisibility()
-    {
-      bMultiImage = checkBoxMultiImage.Checked;
-
-      if (checkBoxMultiImage.Checked)
-      {
-        //textBoxDefaultImage.Enabled = false;
-        timeBox.Enabled = true;
-        randomChk.Enabled = true;
-        timeBox.Visible = true;
-        randomChk.Visible = true;
-        timePerImageL.Visible = true;
-        secondsL.Visible = true;
-
-      }
-      else
-      {
-        //textBoxDefaultImage.Enabled = true;
-        timeBox.Enabled = false;
-        randomChk.Enabled = false;
-        timeBox.Visible = false;
-        randomChk.Visible = false;
-        timePerImageL.Visible = false;
-        secondsL.Visible = false;
-
-
-      }
-    }
-
-
-
-
-
-
-
-
   }
 }
 
