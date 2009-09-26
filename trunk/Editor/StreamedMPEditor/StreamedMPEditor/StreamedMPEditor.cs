@@ -37,12 +37,18 @@ namespace StreamedMPEditor
       major,
     };
 
-    enum horizontalBasicHomeStyle
+    enum chosenMenuStyle
     {
-      Aeon2,
-      StreamedMP,
-      StreamedMP2
+      verticalStyle,
+      MenuStyle1,
+      MenuStyle2,
     };
+
+    enum chosenWeatherStyle
+    {
+      bottom,
+      middle
+    }
 
     enum menuType
     {
@@ -51,6 +57,7 @@ namespace StreamedMPEditor
     };
 
 
+    const string quote = "\"";
 
     bool basicHomeLoadError = false;
     bool useInfoServiceSeperator = false;
@@ -71,11 +78,11 @@ namespace StreamedMPEditor
     int maxXPosition = 400;
     int minXPosition = 200;
 
-    horizontalBasicHomeStyle menuStyle = horizontalBasicHomeStyle.Aeon2;
+    //Default Style to StreamedMp standard
+    chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
+    chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
 
 
-
-    const string quote = "\"";
 
     public streamedMpEditor()
     {
@@ -541,15 +548,15 @@ namespace StreamedMPEditor
             }
         }
 
-        if (horizontalStyle.Checked)
+        setBasicHomeValues(); 
+        if (menuStyle == chosenMenuStyle.verticalStyle)
         {
           // Calc the offsets depending on if StreamedMP or Aeon Graphics/Font
-          setBasicHomeValues();
-          writeMenu(menuType.horizontal);
+          writeMenu(menuType.vertical); 
         }
         else
         {
-          writeMenu(menuType.vertical);
+          writeMenu(menuType.horizontal);
         }
       }
       if (cboClearCache.Checked)
@@ -567,10 +574,10 @@ namespace StreamedMPEditor
         generateTopBarH();
         generateMenuGraphicsH();
         generateCrowdingFixH();
-        if (menuStyle == horizontalBasicHomeStyle.StreamedMP2)
+        if (horizontalContextLabels.Checked)
           GenerateContextLabelsH();
       }
-      else
+      else if (direction == menuType.vertical)
       {
         generateTopBarV();
         generateMenuGraphicsV();
@@ -583,16 +590,14 @@ namespace StreamedMPEditor
         if (direction == menuType.horizontal)
         {
           generateRSSButton();
+          if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitter();
         }
-        else
+        else if (direction == menuType.vertical)
         {
           generateRSSTickerV();
-          generateWeatherV();
+          generateWeathersummary();
         }         
       }
-
-
-      if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitter();
 
       toolStripStatusLabel1.Text = "Done!";
 

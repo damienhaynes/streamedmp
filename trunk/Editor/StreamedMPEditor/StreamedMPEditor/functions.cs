@@ -410,6 +410,8 @@ namespace StreamedMPEditor
 
     private void verticalStyle_Click(object sender, EventArgs e)
     {
+      menuStyle = chosenMenuStyle.verticalStyle;
+      
       //Ok, so we have chosen the default style..set a few things, if switching between styles set default X value
       if (menuPosLabel.Text == "Menu Y Position:")
       {
@@ -420,6 +422,9 @@ namespace StreamedMPEditor
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
+      menuStyle = chosenMenuStyle.MenuStyle1;
+      horizontalContextLabels.Checked = false;
+
       //Ok, so we have chosen the Horizontal style..set a few things, if switching between styles set default Y value
       if (menuPosLabel.Text == "Menu X Position:")
       {
@@ -430,6 +435,9 @@ namespace StreamedMPEditor
 
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
+      menuStyle = chosenMenuStyle.MenuStyle2;
+      horizontalContextLabels.Checked = true;
+
       //Ok, so we have chosen the Horizontal style 2..set a few things, if switching between styles set default Y value
       if (menuPosLabel.Text == "Menu X Position:")
       {
@@ -439,15 +447,20 @@ namespace StreamedMPEditor
       menuPosLabel.Text = "Menu Y Position:";
     }
 
-    private void stdWeatherIcons_Click(object sender, EventArgs e)
+    private void stdWeatherStyle_Click(object sender, EventArgs e)
     {
-
+      fullWeatherSummaryBottom.Checked = true;
+      fullWeatherSummaryMiddle.Checked = false;
+      animatedWeatherStyle.Checked = false;
+      weatherStyle = chosenWeatherStyle.bottom;
     }
 
-
-    private void animatedWeatherIcons_Click(object sender, EventArgs e)
+    private void animatedWeatherStyle_Click(object sender, EventArgs e)
     {
-
+      fullWeatherSummaryBottom.Checked = false;
+      fullWeatherSummaryMiddle.Checked = true;
+      animatedWeather.Checked = true;
+      weatherStyle = chosenWeatherStyle.middle;
     }
 
     private void UpdateImageControlVisibility()
@@ -509,24 +522,23 @@ namespace StreamedMPEditor
         basicHomeValues.mymenu_submenu = "vmenu_submenu.png";
         basicHomeValues.mymenu_submenutop = "vmenu_submenutop.png";
       }
-      // Now adjust depending on Mene Style chosen
-      int mHeight = basicHomeValues.menuHeight;
-      int mYpos = (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu);
+
+      // Now adjust depending on Menu Style chosen
       switch (menuStyle)
       {
-        case horizontalBasicHomeStyle.Aeon2:
+        case chosenMenuStyle.verticalStyle:
           break;
-        case horizontalBasicHomeStyle.StreamedMP:
+        case chosenMenuStyle.MenuStyle1:
           break;
-        case horizontalBasicHomeStyle.StreamedMP2:
+        case chosenMenuStyle.MenuStyle2:
           basicHomeValues.menuHeight += 28;
           basicHomeValues.offsetMymenu -= 24;
           basicHomeValues.offsetButtons += 16;
           txtMenuPos.Text = "620";
           break;
-        default:
-          break;
       }
+
+
 
 
     }
@@ -809,6 +821,19 @@ namespace StreamedMPEditor
       }
 
     }
+
+    private string weatherIcon(string theDay)
+    {
+      if (animatedWeather.Checked)
+      {
+        return mpPaths.streamedMPpath + "media\\animations\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
+      }
+      else
+      {
+        return "#infoservice.weather." + theDay + ".img.small.fullpath";
+      }
+    }
+
 
     public class getAsmVersion
     {
