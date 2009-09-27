@@ -70,7 +70,7 @@ namespace StreamedMPEditor
           break;
         default:
           optionsTag = "StreamedMP Options";
-          menuTag = "StreamedMP Menu Items";
+          menuTag = "Menu Items";
           break;
       }
 
@@ -95,6 +95,10 @@ namespace StreamedMPEditor
             menuStyle = chosenMenuStyle.MenuStyle2;
             horizontalStyle2.Checked = true;
             break;
+          default:
+            menuStyle = chosenMenuStyle.verticalStyle;
+            verticalStyle.Checked = true;
+            break;
         }
         //...and Weather styles
         string activeWeatherStyle = readEntryValue(optionsTag, "weatherstyle", nodelist);
@@ -107,6 +111,11 @@ namespace StreamedMPEditor
         {
           weatherStyle = chosenWeatherStyle.middle;
           animatedWeatherStyle.Checked = true;
+        }
+        else
+        {
+          weatherStyle = chosenWeatherStyle.bottom;
+          stdWeatherStyle.Checked = true;
         }
 
       }
@@ -188,7 +197,7 @@ namespace StreamedMPEditor
       //
       // Read in the menu items
       //
-      for (int i = 0; i < Convert.ToInt64(readEntryValue(menuTag, "count", nodelist)); i++)
+      for (int i = 0; i < int.Parse(readEntryValue(menuTag, "count", nodelist)); i++)
       {
         menuItem mnuItem = new menuItem();
         mnuItem.name          = readEntryValue(menuTag, "menuitem" + i.ToString() + "name", nodelist);
