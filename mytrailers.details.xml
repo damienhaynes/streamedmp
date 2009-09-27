@@ -8,7 +8,7 @@
 			<posX>800</posX>
 			<posY>300</posY>
 			<width>480</width>
-			<height>210</height>      
+			<height>450</height>      
 			<textXOff>9</textXOff>
 			<textYOff>5</textYOff>      
 			<textXOff2>0</textXOff2>
@@ -18,7 +18,7 @@
 			<ondown>4</ondown>
 			<onright>4</onright>
 			<onleft>99</onleft>
-			<scrollOffset>1</scrollOffset>
+			<scrollOffset>4</scrollOffset>
 			<spinPosX>1175</spinPosX>
 			<spinPosY>681</spinPosY>
 			<spinAlign>Right</spinAlign>
@@ -75,12 +75,12 @@
 			<description>Video image</description>
 			<type>image</type>
 			<id>1</id>
-			<posX>800</posX>
-			<posY>480</posY>
-			<width>400</width>
+			<posX>15</posX>
+			<posY>240</posY>
+			<width>280</width>
 			<height>225</height>
 			<keepaspectratio>yes</keepaspectratio>
-			<texture>#MyTrailers.Video.Image</texture>
+			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Video.Image</texture>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 			<visible>!Control.IsVisible(50)</visible> 			
