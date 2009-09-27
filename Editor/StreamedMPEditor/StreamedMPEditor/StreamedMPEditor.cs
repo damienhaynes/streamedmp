@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using System.Reflection;
 
 namespace StreamedMPEditor
 {
@@ -82,11 +83,15 @@ namespace StreamedMPEditor
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
     chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
 
-
-
     public streamedMpEditor()
     {
       InitializeComponent();
+
+      releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+      DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
+      compileTime.Text += buildDate.ToString() + " GMT";
+
+
     }
 
 
@@ -621,10 +626,8 @@ namespace StreamedMPEditor
       }
     }
 
-    private void checkBoxMultiImage_CheckedChanged(object sender, EventArgs e)
-    {
-      UpdateImageControlVisibility();
-    }
+
+
   }
 }
 

@@ -198,6 +198,8 @@ namespace StreamedMPEditor
         mpPaths.skinBasePath = mpPaths.skinBasePath.Replace("%PROGRAMDATA%", CommonmData);
         mpPaths.skinBasePath = mpPaths.skinBasePath.Replace("%ProgramData%", CommonmData);
       }
+      else
+        mpPaths.skinBasePath = mpPaths.sMPbaseDir + "\\" + mpPaths.skinBasePath;
 
       if (mpPaths.cacheBasePath.Contains("%"))
       {
@@ -220,7 +222,6 @@ namespace StreamedMPEditor
     private bool pluginEnabled(string pluginName)
     {
       string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      string entryValue;
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
       {
@@ -833,6 +834,23 @@ namespace StreamedMPEditor
         return "#infoservice.weather." + theDay + ".img.small.fullpath";
       }
     }
+
+    private static DateTime getLinkerTimeStamp(string filePath)
+    {
+      const int PeHeaderOffset = 60;
+      const int LinkerTimestampOffset = 8;
+
+      byte[] b = new byte[2047];
+      using (System.IO.Stream s = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+      {
+        s.Read(b, 0, 2047);
+      }
+
+      int secondsSince1970 = BitConverter.ToInt32(b, BitConverter.ToInt32(b, PeHeaderOffset) + LinkerTimestampOffset);
+
+      return new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(secondsSince1970);
+    }
+
 
 
     public class getAsmVersion

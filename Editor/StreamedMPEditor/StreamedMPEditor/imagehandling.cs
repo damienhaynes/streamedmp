@@ -20,14 +20,6 @@ namespace StreamedMPEditor
     int totalImages;
     int pBoxElement;
 
-    private string imageDir(string image)
-    {
-      if (!image.StartsWith("Animations\\"))
-        return mpPaths.streamedMPpath + "media\\" + image;
-      else
-        return image;
-
-    }
 
     private void GetDefaultBackgroundImages()
     {
@@ -113,8 +105,8 @@ namespace StreamedMPEditor
       }
 
       // Create Panel
-      selectPanel.Size = new Size(760, 120);
-      selectPanel.Location = new Point(13, 101);
+      selectPanel.Size = new Size(756, 120);
+      selectPanel.Location = new Point(12, 101);
       selectPanel.BackColor = Color.White;
       selectPanel.BorderStyle = BorderStyle.FixedSingle;
       this.Controls.Add(selectPanel);
@@ -298,18 +290,29 @@ namespace StreamedMPEditor
       System.IO.File.Copy(getFileListing(imageDir)[0], imageDir + "default.jpg");
     }
 
+    private string imageDir(string image)
+    {
+      if (!image.StartsWith("Animations\\"))
+        return mpPaths.streamedMPpath + "media\\" + image;
+      else
+        return image;
+
+    }
+
 
     private string[] getFileListing(string imageDir)
     {
       string fcompare;
       totalImages = 0;
+      fileResults.Clear();
+      DirectoryInfo dInfo = new DirectoryInfo(imageDir);
       //get list of files from directory
-      foreach (string fileName in Directory.GetFiles(imageDir, "*.*"))
+      foreach (FileInfo fInfo in dInfo.GetFiles("*.*"))
       {
-        fcompare = fileName.ToLower();
+        fcompare = fInfo.Name.ToLower();
         if (!fcompare.Contains("default.jpg"))
         {
-          fileResults.Add(fileName);
+          fileResults.Add(fInfo.FullName);
           totalImages++;
         }
       }

@@ -92,6 +92,7 @@
       this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
       this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
+      this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
       this.animatedWeather = new System.Windows.Forms.CheckBox();
       this.rssTickerOptions = new System.Windows.Forms.GroupBox();
@@ -104,7 +105,6 @@
       this.enableRssfeed = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
       this.checkBoxMultiImage = new System.Windows.Forms.CheckBox();
-      this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.noFocusAlphaLabel = new System.Windows.Forms.Label();
       this.focusAlphaLabel = new System.Windows.Forms.Label();
       this.noFocusAlpha = new System.Windows.Forms.TextBox();
@@ -122,6 +122,10 @@
       this.label17 = new System.Windows.Forms.Label();
       this.defaultBackgrounds = new System.Windows.Forms.TabPage();
       this.editingInfo = new System.Windows.Forms.TabPage();
+      this.aboutBoxGroup = new System.Windows.Forms.GroupBox();
+      this.compileTime = new System.Windows.Forms.Label();
+      this.releaseVersion = new System.Windows.Forms.Label();
+      this.richTextBox1 = new System.Windows.Forms.RichTextBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.infoConfigpath = new System.Windows.Forms.Label();
       this.infoInstallPath = new System.Windows.Forms.Label();
@@ -145,6 +149,8 @@
       this.pluginSelectionGroup = new System.Windows.Forms.GroupBox();
       this.useInfoService = new System.Windows.Forms.RadioButton();
       this.useRSSTicker = new System.Windows.Forms.RadioButton();
+      this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+      this.pictureBox3 = new System.Windows.Forms.PictureBox();
       this.StreamedMPMenu.SuspendLayout();
       this.basicHomeDesign.SuspendLayout();
       this.groupBox3.SuspendLayout();
@@ -164,9 +170,12 @@
       this.weatherSummaryGroup.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
       this.globalSettings.SuspendLayout();
+      this.defaultBackgrounds.SuspendLayout();
       this.editingInfo.SuspendLayout();
+      this.aboutBoxGroup.SuspendLayout();
       this.groupBox2.SuspendLayout();
       this.pluginSelectionGroup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -176,6 +185,7 @@
       this.StreamedMPMenu.Controls.Add(this.basicHomeOptions);
       this.StreamedMPMenu.Controls.Add(this.defaultBackgrounds);
       this.StreamedMPMenu.Controls.Add(this.editingInfo);
+      this.StreamedMPMenu.ImageList = this.imageList1;
       this.StreamedMPMenu.Location = new System.Drawing.Point(12, 130);
       this.StreamedMPMenu.Name = "StreamedMPMenu";
       this.StreamedMPMenu.SelectedIndex = 0;
@@ -870,6 +880,16 @@
       this.fullWeatherSummaryMiddle.Text = "Center of Screen";
       this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
       // 
+      // useAeonGraphics
+      // 
+      this.useAeonGraphics.AutoSize = true;
+      this.useAeonGraphics.Location = new System.Drawing.Point(506, 26);
+      this.useAeonGraphics.Name = "useAeonGraphics";
+      this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
+      this.useAeonGraphics.TabIndex = 25;
+      this.useAeonGraphics.Text = "Use Aeon 2  Graphics and Font";
+      this.useAeonGraphics.UseVisualStyleBackColor = true;
+      // 
       // horizontalContextLabels
       // 
       this.horizontalContextLabels.AutoSize = true;
@@ -1011,17 +1031,6 @@
       this.checkBoxMultiImage.Text = "Use Multiple Images per selected Item";
       this.toolTip1.SetToolTip(this.checkBoxMultiImage, resources.GetString("checkBoxMultiImage.ToolTip"));
       this.checkBoxMultiImage.UseVisualStyleBackColor = true;
-      this.checkBoxMultiImage.CheckedChanged += new System.EventHandler(this.checkBoxMultiImage_CheckedChanged);
-      // 
-      // useAeonGraphics
-      // 
-      this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(506, 26);
-      this.useAeonGraphics.Name = "useAeonGraphics";
-      this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
-      this.useAeonGraphics.TabIndex = 25;
-      this.useAeonGraphics.Text = "Use Aeon 2  Graphics and Font";
-      this.useAeonGraphics.UseVisualStyleBackColor = true;
       // 
       // noFocusAlphaLabel
       // 
@@ -1158,23 +1167,69 @@
       // 
       // defaultBackgrounds
       // 
-      this.defaultBackgrounds.Location = new System.Drawing.Point(4, 22);
+      this.defaultBackgrounds.Controls.Add(this.pictureBox3);
+      this.defaultBackgrounds.Location = new System.Drawing.Point(4, 23);
       this.defaultBackgrounds.Name = "defaultBackgrounds";
-      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 421);
+      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 420);
       this.defaultBackgrounds.TabIndex = 2;
       this.defaultBackgrounds.Text = "Default Background Images";
-      this.toolTip1.SetToolTip(this.defaultBackgrounds, resources.GetString("defaultBackgrounds.ToolTip"));
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
       // 
       // editingInfo
       // 
+      this.editingInfo.Controls.Add(this.aboutBoxGroup);
       this.editingInfo.Controls.Add(this.groupBox2);
-      this.editingInfo.Location = new System.Drawing.Point(4, 22);
+      this.editingInfo.ImageIndex = 0;
+      this.editingInfo.Location = new System.Drawing.Point(4, 23);
       this.editingInfo.Name = "editingInfo";
-      this.editingInfo.Size = new System.Drawing.Size(750, 421);
+      this.editingInfo.Size = new System.Drawing.Size(750, 420);
       this.editingInfo.TabIndex = 3;
-      this.editingInfo.Text = "Help/About";
+      this.editingInfo.Text = "About";
       this.editingInfo.UseVisualStyleBackColor = true;
+      // 
+      // aboutBoxGroup
+      // 
+      this.aboutBoxGroup.Controls.Add(this.compileTime);
+      this.aboutBoxGroup.Controls.Add(this.releaseVersion);
+      this.aboutBoxGroup.Controls.Add(this.richTextBox1);
+      this.aboutBoxGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.aboutBoxGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.aboutBoxGroup.Location = new System.Drawing.Point(21, 13);
+      this.aboutBoxGroup.Name = "aboutBoxGroup";
+      this.aboutBoxGroup.Size = new System.Drawing.Size(692, 134);
+      this.aboutBoxGroup.TabIndex = 49;
+      this.aboutBoxGroup.TabStop = false;
+      this.aboutBoxGroup.Text = "About StreamedMPEditor";
+      // 
+      // compileTime
+      // 
+      this.compileTime.AutoSize = true;
+      this.compileTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.compileTime.Location = new System.Drawing.Point(33, 108);
+      this.compileTime.Name = "compileTime";
+      this.compileTime.Size = new System.Drawing.Size(33, 13);
+      this.compileTime.TabIndex = 2;
+      this.compileTime.Text = "Built: ";
+      // 
+      // releaseVersion
+      // 
+      this.releaseVersion.AutoSize = true;
+      this.releaseVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.releaseVersion.Location = new System.Drawing.Point(21, 91);
+      this.releaseVersion.Name = "releaseVersion";
+      this.releaseVersion.Size = new System.Drawing.Size(45, 13);
+      this.releaseVersion.TabIndex = 1;
+      this.releaseVersion.Text = "Version:";
+      // 
+      // richTextBox1
+      // 
+      this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.richTextBox1.Location = new System.Drawing.Point(24, 28);
+      this.richTextBox1.Name = "richTextBox1";
+      this.richTextBox1.Size = new System.Drawing.Size(648, 55);
+      this.richTextBox1.TabIndex = 0;
+      this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
       // 
       // groupBox2
       // 
@@ -1184,9 +1239,9 @@
       this.groupBox2.Controls.Add(this.infoInstallPath);
       this.groupBox2.Controls.Add(this.infoSkinpath);
       this.groupBox2.Controls.Add(this.infoSkinName);
-      this.groupBox2.Location = new System.Drawing.Point(10, 277);
+      this.groupBox2.Location = new System.Drawing.Point(21, 277);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(720, 87);
+      this.groupBox2.Size = new System.Drawing.Size(692, 87);
       this.groupBox2.TabIndex = 48;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Editing....";
@@ -1377,6 +1432,23 @@
       this.useRSSTicker.Text = "MP-RSSTicker";
       this.useRSSTicker.UseVisualStyleBackColor = true;
       // 
+      // imageList1
+      // 
+      this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+      this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+      this.imageList1.Images.SetKeyName(0, "help.png");
+      // 
+      // pictureBox3
+      // 
+      this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+      this.pictureBox3.Location = new System.Drawing.Point(731, 3);
+      this.pictureBox3.Name = "pictureBox3";
+      this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+      this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.pictureBox3.TabIndex = 0;
+      this.pictureBox3.TabStop = false;
+      this.toolTip1.SetToolTip(this.pictureBox3, resources.GetString("pictureBox3.ToolTip"));
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1423,11 +1495,16 @@
       this.infoserviceOptions.PerformLayout();
       this.globalSettings.ResumeLayout(false);
       this.globalSettings.PerformLayout();
+      this.defaultBackgrounds.ResumeLayout(false);
+      this.defaultBackgrounds.PerformLayout();
       this.editingInfo.ResumeLayout(false);
+      this.aboutBoxGroup.ResumeLayout(false);
+      this.aboutBoxGroup.PerformLayout();
       this.groupBox2.ResumeLayout(false);
       this.groupBox2.PerformLayout();
       this.pluginSelectionGroup.ResumeLayout(false);
       this.pluginSelectionGroup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -1550,6 +1627,12 @@
     private System.Windows.Forms.GroupBox weatherSummaryGroup;
     private System.Windows.Forms.RadioButton fullWeatherSummaryBottom;
     private System.Windows.Forms.RadioButton fullWeatherSummaryMiddle;
+    private System.Windows.Forms.GroupBox aboutBoxGroup;
+    private System.Windows.Forms.RichTextBox richTextBox1;
+    private System.Windows.Forms.Label compileTime;
+    private System.Windows.Forms.Label releaseVersion;
+    private System.Windows.Forms.ImageList imageList1;
+    private System.Windows.Forms.PictureBox pictureBox3;
   }
 }
 
