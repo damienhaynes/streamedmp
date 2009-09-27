@@ -157,6 +157,7 @@ namespace StreamedMPEditor
           menuPosLabel.Text = "Menu Y Position:";
           txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
       }
+      menuOffset = int.Parse(txtMenuPos.Text);
       //
       // Check and set the Global and Plugin options
       //

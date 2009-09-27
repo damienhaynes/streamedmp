@@ -57,7 +57,6 @@ namespace StreamedMPEditor
       horizontal,
     };
 
-
     const string quote = "\"";
 
     bool basicHomeLoadError = false;
@@ -78,6 +77,8 @@ namespace StreamedMPEditor
     int textXOffset = -25;
     int maxXPosition = 400;
     int minXPosition = 200;
+    int menuOffset = 0;
+
 
     //Default Style to StreamedMp standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
@@ -525,6 +526,8 @@ namespace StreamedMPEditor
     private void generateMenu_Click(object sender, EventArgs e)
     {
 
+      validateMenuOffset();
+
       if (itemsOnMenubar.CheckedItems.Count > 1 || itemsOnMenubar.CheckedItems.Count == 0)
       {
         if (itemsOnMenubar.CheckedItems.Count == 0) showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
@@ -625,9 +628,6 @@ namespace StreamedMPEditor
         item.id = menuItems.IndexOf(item);
       }
     }
-
-
-
   }
 }
 

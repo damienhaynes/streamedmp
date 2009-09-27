@@ -40,7 +40,7 @@ namespace StreamedMPEditor
       }
       else if (infoServiceVer.CompareTo(baseISVer) < 0)
       {
-        showError("Version " + infoServiceVer + " of InfoService Plugin detected\r\r           Version 0.9.9.3 or greater required\n\nRSS and Weather Tags changed from version 0.9.9.3\n\n          InfoService Options will be disabled", errorCode.info);
+        showError("Version " + infoServiceVer + " of InfoService Plugin detected\r\r          Version 0.9.9.3 or greater required\n\nRSS and Weather Tags changed from version 0.9.9.3\n\n          InfoService Options will be disabled", errorCode.info);
         infoserviceOptions.Enabled = false;
       }
       else if (pluginEnabled("InfoService"))
@@ -851,6 +851,42 @@ namespace StreamedMPEditor
       return new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(secondsSince1970);
     }
 
+    private void txtMenuPos_Leave(object sender, EventArgs e)
+    {
+      validateMenuOffset();
+
+    }
+
+    private void validateMenuOffset()
+    {
+      // Check if the new value will result in context lable not being displayed
+      if (menuStyle != chosenMenuStyle.verticalStyle) return;
+      int minXPos = 0;
+      menuOffset = int.Parse(txtMenuPos.Text);
+
+      int maxContextSize = 0;
+      int maxMenuItemSize = 0;
+      // find the longest Context and Menu items
+      foreach (menuItem menItem in menuItems)
+      {
+        if (maxContextSize < menItem.contextLabel.Length)
+          maxContextSize = menItem.contextLabel.Length;
+        if (maxMenuItemSize < menItem.name.Length)
+          maxMenuItemSize = menItem.name.Length;
+      }
+      // now calc the minimum xpos based on longest sring in context and menu labels
+      minXPos = (maxContextSize * 17);
+      if ((maxMenuItemSize * 41) > minXPos)
+        minXPos = (maxMenuItemSize * 41);
+
+
+      if (menuOffset < minXPos)
+      {
+        txtMenuPos.Text = minXPos.ToString();
+        menuOffset = int.Parse(txtMenuPos.Text);
+        showError("The Menu X Position value will result in blank Context or Menu labels. \n\nMenu X Position reset to calculated minium value of " + txtMenuPos.Text, errorCode.info);
+      }
+    }
 
 
     public class getAsmVersion
