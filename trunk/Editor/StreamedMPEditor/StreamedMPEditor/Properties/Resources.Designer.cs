@@ -60,6 +60,20 @@ namespace StreamedMPEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap menuStyle1 {
+            get {
+                object obj = ResourceManager.GetObject("menuStyle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap menuStyle2 {
+            get {
+                object obj = ResourceManager.GetObject("menuStyle2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap menuStyle3 {
             get {
                 object obj = ResourceManager.GetObject("menuStyle3", resourceCulture);
