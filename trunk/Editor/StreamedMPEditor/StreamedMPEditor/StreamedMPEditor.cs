@@ -61,7 +61,7 @@ namespace StreamedMPEditor
 
     bool basicHomeLoadError = false;
     bool useInfoServiceSeperator = false;
-    bool bMultiImage = true;
+
 
     string xml;
     string xmlTemplate;
@@ -140,6 +140,10 @@ namespace StreamedMPEditor
           selectedWindowID.Text = null;
         }
         loadMenuSettings();
+        itemsOnMenubar.SelectedIndex = 0;
+        screenReset();
+        setScreenProperties(itemsOnMenubar.SelectedIndex);
+        editButton.Enabled = true;
         GetDefaultBackgroundImages();
         if (useRSSTicker.Checked)
         {
@@ -292,17 +296,19 @@ namespace StreamedMPEditor
         else
           item.defaultImage = item.bgFolder + "\\default.jpg";
         // And check if it exists and create if not.
+
         if (!System.IO.File.Exists((imageDir(item.defaultImage))))
         {
 
           string[] fileList = getFileListing(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
           createDefaultJpg(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
         }
-
+        
 
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
-
+        reloadBackgroundItems();
+        GetDefaultBackgroundImages();
         itemName.Text = "";
         bgBox.Text = "";
 

@@ -45,7 +45,7 @@ namespace StreamedMPEditor
       const string quote = "\"";
       string acceleration = tbAcceleration.Text;
       string duration = tbDuration.Text;
-      string multiimage = bMultiImage ? "true" : "false";
+      string multiimage = checkBoxMultiImage.Checked ? "true" : "false";
 
       xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
                       , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>\n"
@@ -57,32 +57,9 @@ namespace StreamedMPEditor
       StringBuilder rawXML = new StringBuilder();
       foreach (menuItem menItem in menuItems)
       {
-        bool newBG = true;
-        foreach (backgroundItem bgitem in bgItems)
-        {
-          if (bgitem.folder == menItem.bgFolder)
-          {
-            bgitem.ids.Add(menItem.id.ToString());
-            bgitem.mname.Add(menItem.name.ToString());
-            bgitem.name = bgitem.name + " " + menItem.name;
-            newBG = false;
-          }
-
-        }
-        if (newBG == true)
-        {
-          backgroundItem newbgItem = new backgroundItem();
-          newbgItem.folder = menItem.bgFolder;
-          newbgItem.ids.Add(menItem.id.ToString());
-          newbgItem.mname.Add(menItem.name.ToString());
-          newbgItem.name = menItem.name;
-          newbgItem.image = menItem.defaultImage;
-          newbgItem.random = menItem.random;
-          newbgItem.timeperimage = menItem.timePerImage.ToString();
-          newbgItem.isWeather = menItem.isWeather;
-          bgItems.Add(newbgItem);
-
-        }
+        
+        fillBackgroundItem(menItem);
+        
         if (menItem.isDefault == true)
           xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");
 
@@ -1185,7 +1162,8 @@ namespace StreamedMPEditor
       int twitterHeight = 0;
       if (enableTwitter.Checked && infoserviceOptions.Enabled)
         twitterHeight = 28;
-
+      basicHomeValues.offsetButtons = int.Parse(txtMenuPos.Text) - 2;
+      
       StringBuilder rawXML = new StringBuilder();
 
       foreach (menuItem menItem in menuItems)
@@ -1314,7 +1292,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t\t<ondown>" + (menItem.id + 700).ToString() + "</ondown>");
         rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")</visible>");
         rawXML.AppendLine("\t</control>");
-        rawXML.AppendLine("\t<animation effect=\"slide\" start=\"0," + basicHomeValues.Button3Slide.ToString() + "\" time=\"600\" acceleration=\"-0.1\" reversible=\"false\">visiblechange</animation>");
+        rawXML.AppendLine("\t<animation effect=\"slide\" start=\"0,-" + basicHomeValues.Button3Slide.ToString() + "\" time=\"600\" acceleration=\"-0.1\" reversible=\"false\">visiblechange</animation>");
 
         rawXML.AppendLine("</control> <!-- /Topbar buttons " + menItem.name + " -->\n\n");
       }
@@ -1600,7 +1578,6 @@ namespace StreamedMPEditor
     {
 
       StringBuilder rawXML = new StringBuilder();
-
       foreach (backgroundItem item in bgItems)
       {
         if (item.isWeather && infoserviceOptions.Enabled && (direction == menuType.horizontal))
@@ -1623,7 +1600,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\n<control>");
             rawXML.AppendLine("\t<description>" + item.name + " BACKGROUND</description>");
             rawXML.AppendLine("\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
-            if (bMultiImage)
+            if (checkBoxMultiImage.Checked)
             {
               rawXML.AppendLine("\t<type>multiimage</type>");
               rawXML.AppendLine("\t<imagepath>" + item.folder + "</imagepath>");
@@ -1649,13 +1626,11 @@ namespace StreamedMPEditor
           {
             basicHomeValues.weatherControl = (int.Parse(item.ids[0]) + 200);
 
-            if (menuStyle == chosenMenuStyle.MenuStyle1)
+            if (weatherStyle == chosenWeatherStyle.bottom)
               generateFiveDayWeatherStyle1(basicHomeValues.weatherControl);
-            else if (menuStyle == chosenMenuStyle.MenuStyle2)
+            else if (weatherStyle == chosenWeatherStyle.middle)
               generateFiveDayWeatherStyle2(basicHomeValues.weatherControl);
           }
-
-
           rawXML.Append("Control.IsVisible(" + item.ids[0] + ")");
         }
         else
@@ -1663,7 +1638,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\n<control>");
           rawXML.AppendLine("\t<description>" + item.name + " BACKGROUND</description>");
           rawXML.AppendLine("\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
-          if (bMultiImage)
+          if (checkBoxMultiImage.Checked)
           {
             rawXML.AppendLine("\t<type>multiimage</type>");
             rawXML.AppendLine("\t<imagepath>" + item.folder + "</imagepath>");
@@ -2792,21 +2767,38 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<texture>homeweatheroverlaybg.png</texture>");
       rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\t<control>");
-      rawXML.AppendLine("\t\t<description>Todays weather image (Animated Version)</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>993</posX>");
-      rawXML.AppendLine("\t\t<posY>9</posY>");
-      rawXML.AppendLine("\t\t<height>54</height>");
-      rawXML.AppendLine("\t\t<width>54</width>");
-      rawXML.AppendLine("\t\t<centered>no</centered>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
-      rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("today") + "</imagepath>");
-      rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
-      rawXML.AppendLine("\t\t<loop>True</loop>");
-      rawXML.AppendLine("\t</control>");
+      if (animatedWeather.Checked)
+      {
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Todays weather image (Animated Version)</description>");
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>993</posX>");
+        rawXML.AppendLine("\t\t<posY>9</posY>");
+        rawXML.AppendLine("\t\t<height>54</height>");
+        rawXML.AppendLine("\t\t<width>54</width>");
+        rawXML.AppendLine("\t\t<centered>no</centered>");
+        rawXML.AppendLine("\t\t<texture>-</texture>");
+        rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("today") + "</imagepath>");
+        rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
+        rawXML.AppendLine("\t\t<loop>True</loop>");
+        rawXML.AppendLine("\t</control>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Todays weather image (Animated Version)</description>");
+        rawXML.AppendLine("\t\t<type>image</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>993</posX>");
+        rawXML.AppendLine("\t\t<posY>9</posY>");
+        rawXML.AppendLine("\t\t<height>54</height>");
+        rawXML.AppendLine("\t\t<width>54</width>");
+        rawXML.AppendLine("\t\t<centered>no</centered>");
+        rawXML.AppendLine("\t\t<texture>" + weatherIcon("today") + "</texture>");
+        rawXML.AppendLine("\t</control>");
 
+      }
       rawXML.AppendLine("\t<control>");
       rawXML.AppendLine("\t\t<description>Temperature</description>");
       rawXML.AppendLine("\t\t<type>label</type>");
@@ -2922,7 +2914,7 @@ namespace StreamedMPEditor
       string acceleration = tbAcceleration.Text;
       string duration = tbDuration.Text;
 
-      string multiimage = bMultiImage ? "true" : "false";
+      string multiimage = checkBoxMultiImage.Checked ? "true" : "false";
       string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
       string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
       string settingEnableTwitter = enableTwitter.Checked ? "true" : "false";

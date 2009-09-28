@@ -86,18 +86,22 @@ namespace StreamedMPEditor
           case "verticalStyle":
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
+            weatherIconsGroup.Enabled = false;
             break;
           case "MenuStyle1":
             menuStyle = chosenMenuStyle.MenuStyle1;
             horizontalStyle.Checked = true;
+            weatherIconsGroup.Enabled = true;
             break;
           case "MenuStyle2":
             menuStyle = chosenMenuStyle.MenuStyle2;
             horizontalStyle2.Checked = true;
+            weatherIconsGroup.Enabled = true;
             break;
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
+            weatherIconsGroup.Enabled = false;
             break;
         }
         //...and Weather styles
