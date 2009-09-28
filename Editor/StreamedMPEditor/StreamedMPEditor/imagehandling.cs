@@ -16,9 +16,9 @@ namespace StreamedMPEditor
     // Image handling declares
     List<string> fileResults = new List<string>();
   
-    int imagePointer;
-    int totalImages;
-    int pBoxElement;
+    int imagePointer =0;
+    int totalImages = 0;
+    int pBoxElement = 0;
 
 
     private void GetDefaultBackgroundImages()
@@ -30,7 +30,8 @@ namespace StreamedMPEditor
       
       defImgs.count = bgItems.Count;
       selectPanel.Visible = false;
-
+      pBoxElement = 0;
+      defaultBackgrounds.Controls.Clear();
       //
       // Set the default base directory for backgrounds (need to work out how to handle custom directories)
       //

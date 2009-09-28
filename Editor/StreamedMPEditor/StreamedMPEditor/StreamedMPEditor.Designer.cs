@@ -89,6 +89,8 @@
       this.verticalStyle = new System.Windows.Forms.RadioButton();
       this.basicHomeOptions = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+      this.weatherBGlink = new System.Windows.Forms.CheckBox();
+      this.fiveDayWeatherCheckBox = new System.Windows.Forms.CheckBox();
       this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
       this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
@@ -97,16 +99,14 @@
       this.animatedWeather = new System.Windows.Forms.CheckBox();
       this.rssTickerOptions = new System.Windows.Forms.GroupBox();
       this.infoserviceOptions = new System.Windows.Forms.GroupBox();
-      this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
-      this.fiveDayWeatherCheckBox = new System.Windows.Forms.CheckBox();
-      this.weatherBGlink = new System.Windows.Forms.CheckBox();
-      this.wrapString = new System.Windows.Forms.CheckBox();
       this.enableTwitter = new System.Windows.Forms.CheckBox();
       this.enableRssfeed = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
+      this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
       this.checkBoxMultiImage = new System.Windows.Forms.CheckBox();
       this.noFocusAlphaLabel = new System.Windows.Forms.Label();
       this.focusAlphaLabel = new System.Windows.Forms.Label();
+      this.wrapString = new System.Windows.Forms.CheckBox();
       this.noFocusAlpha = new System.Windows.Forms.TextBox();
       this.focusAlpha = new System.Windows.Forms.TextBox();
       this.tbAcceleration = new System.Windows.Forms.TextBox();
@@ -836,22 +836,44 @@
       // 
       // styleOptionsGroup
       // 
+      this.styleOptionsGroup.Controls.Add(this.weatherBGlink);
+      this.styleOptionsGroup.Controls.Add(this.fiveDayWeatherCheckBox);
       this.styleOptionsGroup.Controls.Add(this.weatherSummaryGroup);
       this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
       this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
       this.styleOptionsGroup.Controls.Add(this.animatedWeather);
-      this.styleOptionsGroup.Location = new System.Drawing.Point(13, 148);
+      this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 119);
+      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 118);
       this.styleOptionsGroup.TabIndex = 107;
       this.styleOptionsGroup.TabStop = false;
-      this.styleOptionsGroup.Text = "Style Options";
+      this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
+      // 
+      // weatherBGlink
+      // 
+      this.weatherBGlink.AutoSize = true;
+      this.weatherBGlink.Location = new System.Drawing.Point(281, 36);
+      this.weatherBGlink.Name = "weatherBGlink";
+      this.weatherBGlink.Size = new System.Drawing.Size(157, 17);
+      this.weatherBGlink.TabIndex = 3;
+      this.weatherBGlink.Text = "Link BG to Current Weather";
+      this.weatherBGlink.UseVisualStyleBackColor = true;
+      // 
+      // fiveDayWeatherCheckBox
+      // 
+      this.fiveDayWeatherCheckBox.AutoSize = true;
+      this.fiveDayWeatherCheckBox.Location = new System.Drawing.Point(281, 13);
+      this.fiveDayWeatherCheckBox.Name = "fiveDayWeatherCheckBox";
+      this.fiveDayWeatherCheckBox.Size = new System.Drawing.Size(163, 17);
+      this.fiveDayWeatherCheckBox.TabIndex = 4;
+      this.fiveDayWeatherCheckBox.Text = "Full 5 Day Weather Summary";
+      this.fiveDayWeatherCheckBox.UseVisualStyleBackColor = true;
       // 
       // weatherSummaryGroup
       // 
       this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
       this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
-      this.weatherSummaryGroup.Location = new System.Drawing.Point(281, 21);
+      this.weatherSummaryGroup.Location = new System.Drawing.Point(469, 14);
       this.weatherSummaryGroup.Name = "weatherSummaryGroup";
       this.weatherSummaryGroup.Size = new System.Drawing.Size(178, 75);
       this.weatherSummaryGroup.TabIndex = 2;
@@ -883,7 +905,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(506, 26);
+      this.useAeonGraphics.Location = new System.Drawing.Point(15, 72);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 25;
@@ -893,7 +915,7 @@
       // horizontalContextLabels
       // 
       this.horizontalContextLabels.AutoSize = true;
-      this.horizontalContextLabels.Location = new System.Drawing.Point(15, 61);
+      this.horizontalContextLabels.Location = new System.Drawing.Point(15, 49);
       this.horizontalContextLabels.Name = "horizontalContextLabels";
       this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
       this.horizontalContextLabels.TabIndex = 1;
@@ -912,71 +934,28 @@
       // 
       // rssTickerOptions
       // 
-      this.rssTickerOptions.Location = new System.Drawing.Point(394, 286);
+      this.rssTickerOptions.Location = new System.Drawing.Point(412, 160);
       this.rssTickerOptions.Name = "rssTickerOptions";
-      this.rssTickerOptions.Size = new System.Drawing.Size(348, 95);
+      this.rssTickerOptions.Size = new System.Drawing.Size(326, 79);
       this.rssTickerOptions.TabIndex = 106;
       this.rssTickerOptions.TabStop = false;
       this.rssTickerOptions.Text = "RSSTicker Options";
       // 
       // infoserviceOptions
       // 
-      this.infoserviceOptions.Controls.Add(this.summaryWeatherCheckBox);
-      this.infoserviceOptions.Controls.Add(this.fiveDayWeatherCheckBox);
-      this.infoserviceOptions.Controls.Add(this.weatherBGlink);
-      this.infoserviceOptions.Controls.Add(this.wrapString);
       this.infoserviceOptions.Controls.Add(this.enableTwitter);
       this.infoserviceOptions.Controls.Add(this.enableRssfeed);
-      this.infoserviceOptions.Location = new System.Drawing.Point(6, 286);
+      this.infoserviceOptions.Location = new System.Drawing.Point(9, 160);
       this.infoserviceOptions.Name = "infoserviceOptions";
-      this.infoserviceOptions.Size = new System.Drawing.Size(382, 95);
+      this.infoserviceOptions.Size = new System.Drawing.Size(382, 79);
       this.infoserviceOptions.TabIndex = 105;
       this.infoserviceOptions.TabStop = false;
       this.infoserviceOptions.Text = "InfoService Options";
       // 
-      // summaryWeatherCheckBox
-      // 
-      this.summaryWeatherCheckBox.AutoSize = true;
-      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(167, 65);
-      this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
-      this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
-      this.summaryWeatherCheckBox.TabIndex = 5;
-      this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
-      this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
-      // 
-      // fiveDayWeatherCheckBox
-      // 
-      this.fiveDayWeatherCheckBox.AutoSize = true;
-      this.fiveDayWeatherCheckBox.Location = new System.Drawing.Point(167, 42);
-      this.fiveDayWeatherCheckBox.Name = "fiveDayWeatherCheckBox";
-      this.fiveDayWeatherCheckBox.Size = new System.Drawing.Size(163, 17);
-      this.fiveDayWeatherCheckBox.TabIndex = 4;
-      this.fiveDayWeatherCheckBox.Text = "Full 5 Day Weather Summary";
-      this.fiveDayWeatherCheckBox.UseVisualStyleBackColor = true;
-      // 
-      // weatherBGlink
-      // 
-      this.weatherBGlink.AutoSize = true;
-      this.weatherBGlink.Location = new System.Drawing.Point(167, 19);
-      this.weatherBGlink.Name = "weatherBGlink";
-      this.weatherBGlink.Size = new System.Drawing.Size(157, 17);
-      this.weatherBGlink.TabIndex = 3;
-      this.weatherBGlink.Text = "Link BG to Current Weather";
-      this.weatherBGlink.UseVisualStyleBackColor = true;
-      // 
-      // wrapString
-      // 
-      this.wrapString.AutoSize = true;
-      this.wrapString.Location = new System.Drawing.Point(15, 65);
-      this.wrapString.Name = "wrapString";
-      this.wrapString.Size = new System.Drawing.Size(126, 17);
-      this.wrapString.TabIndex = 2;
-      this.wrapString.Text = "Enable Text Wraping";
-      this.wrapString.UseVisualStyleBackColor = true;
-      // 
       // enableTwitter
       // 
       this.enableTwitter.AutoSize = true;
+      this.enableTwitter.Enabled = false;
       this.enableTwitter.Location = new System.Drawing.Point(14, 42);
       this.enableTwitter.Name = "enableTwitter";
       this.enableTwitter.Size = new System.Drawing.Size(94, 17);
@@ -996,9 +975,11 @@
       // 
       // globalSettings
       // 
+      this.globalSettings.Controls.Add(this.summaryWeatherCheckBox);
       this.globalSettings.Controls.Add(this.checkBoxMultiImage);
       this.globalSettings.Controls.Add(this.noFocusAlphaLabel);
       this.globalSettings.Controls.Add(this.focusAlphaLabel);
+      this.globalSettings.Controls.Add(this.wrapString);
       this.globalSettings.Controls.Add(this.noFocusAlpha);
       this.globalSettings.Controls.Add(this.focusAlpha);
       this.globalSettings.Controls.Add(this.tbAcceleration);
@@ -1012,12 +993,22 @@
       this.globalSettings.Controls.Add(this.txtFocusColour);
       this.globalSettings.Controls.Add(this.label16);
       this.globalSettings.Controls.Add(this.label17);
-      this.globalSettings.Location = new System.Drawing.Point(11, 19);
+      this.globalSettings.Location = new System.Drawing.Point(9, 19);
       this.globalSettings.Name = "globalSettings";
-      this.globalSettings.Size = new System.Drawing.Size(732, 118);
+      this.globalSettings.Size = new System.Drawing.Size(729, 118);
       this.globalSettings.TabIndex = 25;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
+      // 
+      // summaryWeatherCheckBox
+      // 
+      this.summaryWeatherCheckBox.AutoSize = true;
+      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(455, 90);
+      this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
+      this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
+      this.summaryWeatherCheckBox.TabIndex = 5;
+      this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
+      this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
       // 
       // checkBoxMultiImage
       // 
@@ -1049,6 +1040,18 @@
       this.focusAlphaLabel.Size = new System.Drawing.Size(107, 13);
       this.focusAlphaLabel.TabIndex = 30;
       this.focusAlphaLabel.Text = "Alpha (transparency):";
+      // 
+      // wrapString
+      // 
+      this.wrapString.AutoSize = true;
+      this.wrapString.Location = new System.Drawing.Point(455, 66);
+      this.wrapString.Name = "wrapString";
+      this.wrapString.Size = new System.Drawing.Size(226, 17);
+      this.wrapString.TabIndex = 2;
+      this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
+      this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
+              " is not installed this option will be disabled.\r\n");
+      this.wrapString.UseVisualStyleBackColor = true;
       // 
       // noFocusAlpha
       // 
@@ -1319,6 +1322,7 @@
       this.btnClearCache.TabIndex = 2;
       this.btnClearCache.Text = "Clear Skin Cache";
       this.btnClearCache.UseVisualStyleBackColor = true;
+      this.btnClearCache.Click += new System.EventHandler(this.btnClearCache_Click);
       // 
       // label1
       // 
@@ -1466,6 +1470,7 @@
       this.Name = "streamedMpEditor";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "StreamedMP Menu Editor";
+      this.Click += new System.EventHandler(this.btnClearCache_Click);
       this.StreamedMPMenu.ResumeLayout(false);
       this.basicHomeDesign.ResumeLayout(false);
       this.basicHomeDesign.PerformLayout();

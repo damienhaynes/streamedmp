@@ -118,7 +118,6 @@ namespace StreamedMPEditor
       return node.InnerText;
     }
 
-
     private void readMediaPortalDirs()
     {
       string fMPdirs = mpPaths.sMPbaseDir + "\\MediaPortalDirs.xml";
@@ -143,7 +142,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.skinBasePath = path.InnerText;
+            mpPaths.skinBasePath = GetMediaPortalDir(path.InnerText);
           }
         }
 
@@ -153,7 +152,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.cacheBasePath = path.InnerText;
+            mpPaths.cacheBasePath = GetMediaPortalDir(path.InnerText);
           }
 
         }
@@ -164,7 +163,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.configBasePath = path.InnerText;
+            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);
           }
         }
 
@@ -174,50 +173,42 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.pluginPath = path.InnerText;
+            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);
+            
           }
         }
       }
-
-
-      string CommonmData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
-
-      if (!mpPaths.configBasePath.Contains("%"))
-      {
-        if (!mpPaths.configBasePath.Contains("\\"))
-          mpPaths.configBasePath = mpPaths.sMPbaseDir + "\\" + mpPaths.configBasePath;
-      }
-      else
-      {
-        mpPaths.configBasePath = mpPaths.configBasePath.Replace("%PROGRAMDATA%", CommonmData);
-        mpPaths.configBasePath = mpPaths.configBasePath.Replace("%ProgramData%", CommonmData);
-      }
-
-      if (mpPaths.skinBasePath.Contains("%"))
-      {
-        mpPaths.skinBasePath = mpPaths.skinBasePath.Replace("%PROGRAMDATA%", CommonmData);
-        mpPaths.skinBasePath = mpPaths.skinBasePath.Replace("%ProgramData%", CommonmData);
-      }
-      else
-        mpPaths.skinBasePath = mpPaths.sMPbaseDir + "\\" + mpPaths.skinBasePath;
-
-      if (mpPaths.cacheBasePath.Contains("%"))
-      {
-        mpPaths.cacheBasePath = mpPaths.cacheBasePath.Replace("%PROGRAMDATA%", CommonmData);
-        mpPaths.cacheBasePath = mpPaths.cacheBasePath.Replace("%ProgramData%", CommonmData);
-      }
-
-      if (mpPaths.pluginPath.Contains("%"))
-      {
-        mpPaths.pluginPath = mpPaths.pluginPath.Replace("%PROGRAMDATA%", CommonmData);
-        mpPaths.pluginPath = mpPaths.pluginPath.Replace("%ProgramData%", CommonmData);
-      }
-      else if (!mpPaths.pluginPath.Contains(":"))
-        mpPaths.pluginPath = mpPaths.sMPbaseDir + "\\" + mpPaths.pluginPath;
-
       mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin("name") + "\\";
-
     }
+
+    private string GetMediaPortalDir(string path)
+    {
+      string CommonAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+      string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+      // Replace special folder variables if they exist
+      // MediaPortal currently only uses two types
+      path = path.ToLower();
+      path = path.Replace("%appdata%", AppData);
+      path = path.Replace("%programdata%", CommonAppData);
+
+      // Check if the path is not rooted ie. a custom directory (including UNC)
+      // If directory is relative e.g. 'skin\', prefix with Base Dir
+      if (!Path.IsPathRooted(path))
+      {
+        path = Path.Combine(mpPaths.sMPbaseDir, path);
+      }
+
+      // Check if there is a trailing backslash
+      if (!path.EndsWith(@"\"))
+      {
+        path += @"\";
+      }
+
+      return path;
+    }
+ 
+
 
     private bool pluginEnabled(string pluginName)
     {
@@ -412,6 +403,10 @@ namespace StreamedMPEditor
     private void verticalStyle_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.verticalStyle;
+      weatherIconsGroup.Enabled = false;
+      fiveDayWeatherCheckBox.Checked = false;
+      summaryWeatherCheckBox.Checked = true;
+      styleOptionsGroup.Visible = false;
       
       //Ok, so we have chosen the default style..set a few things, if switching between styles set default X value
       if (menuPosLabel.Text == "Menu Y Position:")
@@ -424,7 +419,19 @@ namespace StreamedMPEditor
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.MenuStyle1;
+      weatherStyle = chosenWeatherStyle.bottom;
       horizontalContextLabels.Checked = false;
+      weatherIconsGroup.Enabled = true;
+      fiveDayWeatherCheckBox.Checked = true;
+      summaryWeatherCheckBox.Checked = true;
+      animatedWeather.Checked = false;
+      animatedWeatherStyle.Checked = false;
+      stdWeatherStyle.Checked = true;
+      styleOptionsGroup.Visible = true;
+      txtMenuPos.Text = "430";
+
+
+
 
       //Ok, so we have chosen the Horizontal style..set a few things, if switching between styles set default Y value
       if (menuPosLabel.Text == "Menu X Position:")
@@ -437,7 +444,16 @@ namespace StreamedMPEditor
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.MenuStyle2;
+      weatherStyle = chosenWeatherStyle.middle;
       horizontalContextLabels.Checked = true;
+      weatherIconsGroup.Enabled = true;
+      fiveDayWeatherCheckBox.Checked = true;
+      summaryWeatherCheckBox.Checked = true;
+      animatedWeather.Checked = true;
+      animatedWeatherStyle.Checked = true;
+      stdWeatherStyle.Checked = false;
+      styleOptionsGroup.Visible = true;
+      txtMenuPos.Text = "620";
 
       //Ok, so we have chosen the Horizontal style 2..set a few things, if switching between styles set default Y value
       if (menuPosLabel.Text == "Menu X Position:")
@@ -453,6 +469,7 @@ namespace StreamedMPEditor
       fullWeatherSummaryBottom.Checked = true;
       fullWeatherSummaryMiddle.Checked = false;
       animatedWeatherStyle.Checked = false;
+      weatherIconsGroup.Enabled = true;
       weatherStyle = chosenWeatherStyle.bottom;
     }
 
@@ -466,8 +483,6 @@ namespace StreamedMPEditor
 
     private void UpdateImageControlVisibility()
     {
-      bMultiImage = checkBoxMultiImage.Checked;
-
       if (checkBoxMultiImage.Checked)
       {
         //textBoxDefaultImage.Enabled = false;
@@ -491,6 +506,43 @@ namespace StreamedMPEditor
 
 
       }
+    }
+    private void reloadBackgroundItems()
+    {
+      bgItems.Clear();
+      foreach (menuItem menItem in menuItems)
+      {
+        fillBackgroundItem(menItem);
+      }
+    }
+
+    private void fillBackgroundItem(menuItem menItem)
+    {
+        bool newBG = true;
+        foreach (backgroundItem bgitem in bgItems)
+        {
+          if (bgitem.folder == menItem.bgFolder)
+          {
+            bgitem.ids.Add(menItem.id.ToString());
+            bgitem.mname.Add(menItem.name.ToString());
+            bgitem.name = bgitem.name + " " + menItem.name;
+            newBG = false;
+          }
+
+        }
+        if (newBG == true)
+        {
+          backgroundItem newbgItem = new backgroundItem();
+          newbgItem.folder = menItem.bgFolder;
+          newbgItem.ids.Add(menItem.id.ToString());
+          newbgItem.mname.Add(menItem.name.ToString());
+          newbgItem.name = menItem.name;
+          newbgItem.image = menItem.defaultImage;
+          newbgItem.random = menItem.random;
+          newbgItem.timeperimage = menItem.timePerImage.ToString();
+          newbgItem.isWeather = menItem.isWeather;
+          bgItems.Add(newbgItem);
+        }
     }
 
     private void setBasicHomeValues()
@@ -535,7 +587,6 @@ namespace StreamedMPEditor
           basicHomeValues.menuHeight += 28;
           basicHomeValues.offsetMymenu -= 24;
           basicHomeValues.offsetButtons += 16;
-          txtMenuPos.Text = "620";
           break;
       }
 
@@ -796,10 +847,8 @@ namespace StreamedMPEditor
         }
       }
     }
-
     private void btnClearCache_Click(object sender, EventArgs e)
     {
-
       DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin("name") + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
       if (result == DialogResult.No)
       {
@@ -813,13 +862,13 @@ namespace StreamedMPEditor
       try
       {
         System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin("name"), true);
-        showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
+        //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
       catch (Exception ex)
       {
-        showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
-
+        //showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
       }
+
 
     }
 
