@@ -101,7 +101,7 @@ namespace StreamedMPEditor
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
-            weatherIconsGroup.Enabled = false;
+            weatherIconsGroup.Enabled = true;
             break;
         }
         //...and Weather styles
@@ -114,7 +114,7 @@ namespace StreamedMPEditor
         else if (activeWeatherStyle == "middle")
         {
           weatherStyle = chosenWeatherStyle.middle;
-          animatedWeatherStyle.Checked = true;
+          centeredWeatherStyle.Checked = true;
         }
         else
         {
