@@ -424,10 +424,10 @@ namespace StreamedMPEditor
       weatherIconsGroup.Enabled = true;
       fiveDayWeatherCheckBox.Checked = true;
       summaryWeatherCheckBox.Checked = true;
-      animatedWeather.Checked = false;
-      animatedWeatherStyle.Checked = false;
+      centeredWeatherStyle.Checked = false;
       stdWeatherStyle.Checked = true;
       styleOptionsGroup.Visible = true;
+      fullWeatherSummaryBottom.Checked = true;
       txtMenuPos.Text = "430";
 
 
@@ -449,10 +449,10 @@ namespace StreamedMPEditor
       weatherIconsGroup.Enabled = true;
       fiveDayWeatherCheckBox.Checked = true;
       summaryWeatherCheckBox.Checked = true;
-      animatedWeather.Checked = true;
-      animatedWeatherStyle.Checked = true;
+      centeredWeatherStyle.Checked = true;
       stdWeatherStyle.Checked = false;
       styleOptionsGroup.Visible = true;
+      fullWeatherSummaryMiddle.Checked = true;
       txtMenuPos.Text = "620";
 
       //Ok, so we have chosen the Horizontal style 2..set a few things, if switching between styles set default Y value
@@ -468,16 +468,14 @@ namespace StreamedMPEditor
     {
       fullWeatherSummaryBottom.Checked = true;
       fullWeatherSummaryMiddle.Checked = false;
-      animatedWeatherStyle.Checked = false;
       weatherIconsGroup.Enabled = true;
       weatherStyle = chosenWeatherStyle.bottom;
     }
 
-    private void animatedWeatherStyle_Click(object sender, EventArgs e)
+    private void centeredWeatherStyle_Click(object sender, EventArgs e)
     {
       fullWeatherSummaryBottom.Checked = false;
       fullWeatherSummaryMiddle.Checked = true;
-      animatedWeather.Checked = true;
       weatherStyle = chosenWeatherStyle.middle;
     }
 
