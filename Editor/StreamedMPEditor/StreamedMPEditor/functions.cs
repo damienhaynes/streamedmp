@@ -523,7 +523,7 @@ namespace StreamedMPEditor
           {
             bgitem.ids.Add(menItem.id.ToString());
             bgitem.mname.Add(menItem.name.ToString());
-            bgitem.name = bgitem.name + " " + menItem.name;
+            bgitem.name = bgitem.name + ", " + menItem.name;
             newBG = false;
           }
 
