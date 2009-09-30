@@ -89,8 +89,17 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<id>" + (menItem.id + 700).ToString() + "</id>");
                 rawXML.AppendLine("\t<posX>0</posX>");
                 rawXML.AppendLine("\t<posY>0</posY>");
-                rawXML.AppendLine("\t<width>320</width>");
-                rawXML.AppendLine("\t<height>72</height>");
+                if (menItem.isDefault)
+                {
+                  rawXML.AppendLine("\t<width>320</width>");
+                  rawXML.AppendLine("\t<height>72</height>");
+                }
+                else
+                {
+                  rawXML.AppendLine("\t<width>1280</width>");
+                  rawXML.AppendLine("\t<height>720</height>");
+
+                }
                 rawXML.AppendLine("\t<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("\t<textureNoFocus>-</textureNoFocus>");
                 rawXML.AppendLine("\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -448,8 +457,17 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<id>" + (menItem.id + 700).ToString() + "</id>");
                 rawXML.AppendLine("\t\t\t<posX>0</posX>");
                 rawXML.AppendLine("\t\t\t<posY>0</posY>");
-                rawXML.AppendLine("\t\t\t<width>320</width>");
-                rawXML.AppendLine("\t\t\t<height>72</height>");
+                if (menItem.isDefault)
+                {
+                  rawXML.AppendLine("\t<width>320</width>");
+                  rawXML.AppendLine("\t<height>72</height>");
+                }
+                else
+                {
+                  rawXML.AppendLine("\t<width>1280</width>");
+                  rawXML.AppendLine("\t<height>720</height>");
+
+                }
                 rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
                 rawXML.AppendLine("\t\t\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
