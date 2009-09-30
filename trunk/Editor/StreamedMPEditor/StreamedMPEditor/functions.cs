@@ -406,7 +406,7 @@ namespace StreamedMPEditor
       weatherIconsGroup.Enabled = false;
       fiveDayWeatherCheckBox.Checked = false;
       summaryWeatherCheckBox.Checked = true;
-      styleOptionsGroup.Visible = false;
+      styleOptionsGroup.Visible = true;
       
       //Ok, so we have chosen the default style..set a few things, if switching between styles set default X value
       if (menuPosLabel.Text == "Menu Y Position:")
