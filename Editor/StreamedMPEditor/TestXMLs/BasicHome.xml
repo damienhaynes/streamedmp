@@ -5,9 +5,9 @@
   <define>#labelFont:mediastream28tc</define>
   <define>#selectedfont:mediastream28tc</define>
   <define>#menuitemFocus:FFFFFFFF</define>
-<define>#menuitemNoFocus:80C0C0C0</define>
-<define>#menuYPos:433</define>
-<define>#multiimage:true</define>
+	<define>#menuitemNoFocus:80C0C0C0</define>
+	<define>#menuYPos:433</define>
+	<define>#multiimage:true</define>
   <allowoverlay>no</allowoverlay>
   <disabletopbar>yes</disabletopbar>
   <controls>
@@ -90,17 +90,12 @@
 <control>
 	<description>WEATHER BACKGROUND</description>
 	<id>1205</id>
-	<type>multiimage</type>
-	<imagepath>weatherbg</imagepath>
-	<timeperimage>30000</timeperimage>
-	<randomize>True</randomize>
-	<type>multiimage</type>
+	<type>image</type>
 	<posx>0</posx>
 	<posy>0</posy>
-	<width>1366</width>
-	<height>768</height>
-	<fadetime>800</fadetime>
-	<loop>yes</loop>
+	<width>1280</width>
+	<height>720</height>
+	<texture>#infoservice.weather.today.img.big.fullpath</texture>
 	<visible>Control.IsVisible(1005)</visible>
 </control>
 
@@ -121,7 +116,19 @@
 </control>
 
 
-    <!-- BEGIN GENERATED INFOSERVICE CODE -->
+    
+<control>
+	<description>Infoservice Background</description>
+	<id>1206</id>
+	<type>image</type>
+	<posx>0</posx>
+	<posy>0</posy>
+	<width>1280</width>
+	<height>720</height>
+	<texture>infoservicerssbg.png</texture>
+	<visible><visible>Control.IsVisible(1300)|Control.IsVisible(1301)|Control.IsVisible(1302)|Control.IsVisible(1303)|Control.IsVisible(1304)|Control.IsVisible(1305)|Control.IsVisible(1306)</visible></visible>
+</control>
+
 
     
 <control>
@@ -142,17 +149,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1000)+Control.HasFocus(160001)|Control.HasFocus(160002)|Control.HasFocus(160003)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -162,7 +169,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -172,7 +179,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -183,7 +190,7 @@
 		<type>button</type>
 		<id>160001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -201,7 +208,7 @@
 		<type>button</type>
 		<id>160002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -219,7 +226,7 @@
 		<type>button</type>
 		<id>160003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -255,17 +262,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1001)+Control.HasFocus(160101)|Control.HasFocus(160102)|Control.HasFocus(160103)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -275,7 +282,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -285,7 +292,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -296,7 +303,7 @@
 		<type>button</type>
 		<id>160101</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -314,7 +321,7 @@
 		<type>button</type>
 		<id>160102</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -332,7 +339,7 @@
 		<type>button</type>
 		<id>160103</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -368,17 +375,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1002)+Control.HasFocus(160201)|Control.HasFocus(160202)|Control.HasFocus(160203)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -388,7 +395,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -398,7 +405,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -409,7 +416,7 @@
 		<type>button</type>
 		<id>160201</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -427,7 +434,7 @@
 		<type>button</type>
 		<id>160202</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -445,7 +452,7 @@
 		<type>button</type>
 		<id>160203</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -481,17 +488,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1003)+Control.HasFocus(160301)|Control.HasFocus(160302)|Control.HasFocus(160303)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -501,7 +508,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -511,7 +518,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -522,7 +529,7 @@
 		<type>button</type>
 		<id>160301</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -540,7 +547,7 @@
 		<type>button</type>
 		<id>160302</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -558,7 +565,7 @@
 		<type>button</type>
 		<id>160303</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -594,17 +601,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1004)+Control.HasFocus(160401)|Control.HasFocus(160402)|Control.HasFocus(160403)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -614,7 +621,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -624,7 +631,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -635,7 +642,7 @@
 		<type>button</type>
 		<id>160401</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -653,7 +660,7 @@
 		<type>button</type>
 		<id>160402</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -671,7 +678,7 @@
 		<type>button</type>
 		<id>160403</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -707,17 +714,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1005)+Control.HasFocus(160501)|Control.HasFocus(160502)|Control.HasFocus(160503)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -727,7 +734,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -737,7 +744,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -748,7 +755,7 @@
 		<type>button</type>
 		<id>160501</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -766,7 +773,7 @@
 		<type>button</type>
 		<id>160502</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -784,7 +791,7 @@
 		<type>button</type>
 		<id>160503</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -820,17 +827,17 @@
 		<type>image</type>
 		<id>18000</id>
 		<posX>490</posX>
-		<posY>389</posY>
+		<posY>361</posY>
 		<height>55</height>
 		<width>300</width>
-		<texture>3buttonbar.png</texture>
+		<texture>3buttonbar-a.png</texture>
 		<visible>Control.IsVisible(1006)+Control.HasFocus(160601)|Control.HasFocus(160602)|Control.HasFocus(160603)</visible>
 	</control>
 	<control>
 		<type>image</type>
 		<id>18001</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>Basic_nofocus.png</texture>
@@ -840,7 +847,7 @@
 		<type>image</type>
 		<id>18002</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_close_nofocus.png</texture>
@@ -850,7 +857,7 @@
 		<type>image</type>
 		<id>18003</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<height>50</height>
 		<width>50</width>
 		<texture>button_shutdown_nofocus.png</texture>
@@ -861,7 +868,7 @@
 		<type>button</type>
 		<id>160601</id>
 		<posX>545</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>Basic_focus.png</textureFocus>
@@ -879,7 +886,7 @@
 		<type>button</type>
 		<id>160602</id>
 		<posX>615</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_close_focus.png</textureFocus>
@@ -897,7 +904,7 @@
 		<type>button</type>
 		<id>160603</id>
 		<posX>685</posX>
-		<posY>391</posY>
+		<posY>363</posY>
 		<width>50</width>
 		<height>50</height>
 		<textureFocus>button_shutdown_focus.png</textureFocus>
@@ -916,7 +923,259 @@
 
 
 
-    <!-- BEGIN GENERATED RSS BUTTON CODE -->
+    
+<control>
+	<description>RSS Button PLUGINS</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating PLUGINS menu visibility</description>
+	<id>1300</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>PLUGINS</label>
+	<visible>Control.HasFocus(170001)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170001</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1700</onup>
+	<onleft>170001</onleft>
+	<onright>170001</onright>
+	<ondown>170001</ondown>
+	<visible>Control.IsVisible(1000)</visible>
+</control>
+</control> <!-- /RSS button PLUGINS -->
+
+
+
+<control>
+	<description>RSS Button MUSIC</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating MUSIC menu visibility</description>
+	<id>1301</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>MUSIC</label>
+	<visible>Control.HasFocus(170101)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170101</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1701</onup>
+	<onleft>170101</onleft>
+	<onright>170101</onright>
+	<ondown>170101</ondown>
+	<visible>Control.IsVisible(1001)</visible>
+</control>
+</control> <!-- /RSS button MUSIC -->
+
+
+
+<control>
+	<description>RSS Button MOVIES</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating MOVIES menu visibility</description>
+	<id>1302</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>MOVIES</label>
+	<visible>Control.HasFocus(170201)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170201</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1702</onup>
+	<onleft>170201</onleft>
+	<onright>170201</onright>
+	<ondown>170201</ondown>
+	<visible>Control.IsVisible(1002)</visible>
+</control>
+</control> <!-- /RSS button MOVIES -->
+
+
+
+<control>
+	<description>RSS Button TV</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating TV menu visibility</description>
+	<id>1303</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>TV</label>
+	<visible>Control.HasFocus(170301)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170301</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1703</onup>
+	<onleft>170301</onleft>
+	<onright>170301</onright>
+	<ondown>170301</ondown>
+	<visible>Control.IsVisible(1003)</visible>
+</control>
+</control> <!-- /RSS button TV -->
+
+
+
+<control>
+	<description>RSS Button SERIES</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating SERIES menu visibility</description>
+	<id>1304</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>SERIES</label>
+	<visible>Control.HasFocus(170401)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170401</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1704</onup>
+	<onleft>170401</onleft>
+	<onright>170401</onright>
+	<ondown>170401</ondown>
+	<visible>Control.IsVisible(1004)</visible>
+</control>
+</control> <!-- /RSS button SERIES -->
+
+
+
+<control>
+	<description>RSS Button WEATHER</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating WEATHER menu visibility</description>
+	<id>1305</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>WEATHER</label>
+	<visible>Control.HasFocus(170501)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170501</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1705</onup>
+	<onleft>170501</onleft>
+	<onright>170501</onright>
+	<ondown>170501</ondown>
+	<visible>Control.IsVisible(1005)</visible>
+</control>
+</control> <!-- /RSS button WEATHER -->
+
+
+
+<control>
+	<description>RSS Button SETTINGS</description>
+	<type>group</type>
+	<control>
+	<description>Dummy label indicating SETTINGS menu visibility</description>
+	<id>1306</id>
+	<type>label</type>
+	<posX>100</posX>
+	<posY>-100</posY>
+	<width>500</width>
+	<height>0</height>
+	<label>SETTINGS</label>
+	<visible>Control.HasFocus(170601)</visible>
+</control>
+<control>
+	<description>RSS Highlight Button</description>
+	<type>button</type>
+	<id>170601</id>
+	<posX>60</posX>
+	<posY>505</posY>
+	<width>70</width>
+	<height>28</height>
+	<textureFocus>-</textureFocus>
+	<textureNoFocus>-</textureNoFocus>
+	<label>-</label>
+	<hyperlink>16001</hyperlink>
+	<onup>1706</onup>
+	<onleft>170601</onleft>
+	<onright>170601</onright>
+	<ondown>170601</ondown>
+	<visible>Control.IsVisible(1006)</visible>
+</control>
+</control> <!-- /RSS button SETTINGS -->
+
+
+
 
     
 <control>
@@ -927,14 +1186,101 @@
 	<posY>400</posY>
 	<width>1280</width>
 	<height>155</height>
-	<texture>vmenu_main.png</texture>
+	<texture>mymenu_bg-a.png</texture>
+</control>
+<control>
+	<description>Menu Sub Menu</description>
+	<type>image</type>
+	<id>99004</id>
+	<posX>0</posX>
+	<posY>505</posY>
+	<width>1280</width>
+	<height>60</height>
+	<texture>mymenu_submenu-a.png</texture>
 </control>
 
 
-    <!-- BEGIN GENERATED RSS TICKER CODE-->
+    
+<control>
+	<description>RSS Feed image</description>
+	<type>image</type>
+	<id>1</id>
+	<width>70</width>
+	<height>28</height>
+	<posY>505</posY>
+	<posX>60</posX>
+	<texture>#infoservice.feed.img</texture>
+	<visible>plugin.isenabled(InfoService)</visible>
+</control>
+
+<control>
+	<description>RSS Highlight Feed image</description>
+	<type>image</type>
+	<id>1</id>
+	<width>70</width>
+	<height>15</height>
+	<posY>505</posY>
+	<posX>60</posX>
+	<texture>rsshlt.png</texture>
+	<visible>plugin.isenabled(InfoService)+Control.HasFocus(170001)|Control.HasFocus(170101)|Control.HasFocus(170201)|Control.HasFocus(170301)|Control.HasFocus(170401)|Control.HasFocus(170501)|Control.HasFocus(170601)</visible>
+</control>
+<control>
+	<description>RSS Items</description>
+	<type>fadelabel</type>
+	<id>1</id>
+	<width>1160</width>
+	<height>50</height>
+	<posY>506</posY>
+	<posX>130</posX>
+	<font>mediastream12</font>
+	<textcolor>ff000000</textcolor>
+	<label>#infoservice.feed.titles</label>
+	<wrapString> | </wrapString>
+</control>
 
 
-    <!-- BEGIN GENERATED TWITTER CODE-->
+
+    
+<control>
+	<description>Menu Twitter Sub Menu</description>
+	<type>image</type>
+	<id>99004</id>
+	<posX>280</posX>
+	<posY>400</posY>
+	<posY>382</posY>
+	<width>1000</width>
+	<height>60</height>
+	<texture>mymenu_submenutop-a.png</texture>
+	<visible>plugin.isenabled(InfoService)</visible>
+	<wrapString> | </wrapString>
+</control>
+
+<control>
+	<description>Twitter image</description>
+	<type>image</type>
+	<id>0</id>
+	<width>30</width>
+	<posY>406</posY>
+	<posX>330</posX>
+	<texture>twitter.png</texture>
+	<keepaspectratio>yes</keepaspectratio>
+	<visible>plugin.isenabled(InfoService)</visible>
+</control>
+
+<control>
+	<description>Twitter Items</description>
+	<type>fadelabel</type>
+	<id>1</id>
+	<width>1160</width>
+	<height>50</height>
+	<posY>407</posY>
+	<posX>360</posX>
+	<font>mediastream12</font>
+	<textcolor>ff000000</textcolor>
+	<label>#infoservice.twitter.messages</label>
+	<visible>plugin.isenabled(InfoService)</visible>
+</control>
+
 
     
 <control>
@@ -2750,7 +3096,446 @@
     <import>common.time.xml</import>
     <import>common.overlay.basichome.xml</import>
 
-    <!-- BEGIN GENERATED FIVE DAY WEATHER CODE -->
+    
+<control>
+	<description>GROUP: Forecast BGs</description>
+	<type>group</type>
+	<posX>120</posX>
+	<posY>544</posY>
+	<layout>StackLayout(10,Horizontal)</layout>
+	<dimColor>0xffffffff</dimColor>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1205)</visible>
+	<animation effect="fade" time="300">Hidden</animation>
+
+	<control>
+		<description>DAY 0 BG</description>
+		<type>image</type>
+		<id>0</id>
+		<width>200</width>
+		<height>170</height>
+		<texture>weather.png</texture>
+		<animation effect="fade" delay="600" time="200">Visible</animation>
+	</control>
+
+	<control>
+		<description>DAY 1 BG</description>
+		<type>image</type>
+		<id>0</id>
+		<width>200</width>
+		<height>170</height>
+		<texture>weather.png</texture>
+		<animation effect="fade" delay="700" time="200">Visible</animation>
+	</control>
+
+	<control>
+		<description>DAY 2 BG</description>
+		<type>image</type>
+		<id>0</id>
+		<width>200</width>
+		<height>170</height>
+		<texture>weather.png</texture>
+		<animation effect="fade" delay="800" time="200">Visible</animation>
+	</control>
+
+	<control>
+		<description>DAY 3 BG</description>
+		<type>image</type>
+		<id>0</id>
+		<width>200</width>
+		<height>170</height>
+		<texture>weather.png</texture>
+		<animation effect="fade" delay="900" time="200">Visible</animation>
+	</control>
+
+	<control>
+		<description>DAY 4 BG</description>
+		<type>image</type>
+		<id>0</id>
+		<width>200</width>
+		<height>170</height>
+		<texture>weather.png</texture>
+		<animation effect="fade" delay="1000" time="200">Visible</animation>
+	</control>
+</control>
+
+	<control>
+		<description>GROUP: FULL WEATHER</description>
+		<type>group</type>
+		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+		<dimColor>0xffffffff</dimColor>
+		<visible>plugin.isenabled(InfoService)+control.isvisible(1205)</visible>
+
+	<control>
+		<description>DAY 1 LABEL</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>120</posX>
+		<posY>556</posY>
+		<width>200</width>
+		<align>center</align>
+		<label>TODAY</label>
+		<font>mediastream11tc</font>
+		<textcolor>White</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 1 ICON</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>140</posX>
+		<posY>569</posY>
+		<height>80</height>
+		<width>80</width>
+		<texture>#infoservice.weather.today.img.small.fullpath</texture>
+	</control>
+
+	<control>
+		<description>DAY 1 TEMP</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>300</posX>
+		<posY>684</posY>
+		<align>right</align>
+		<label>#infoservice.weather.today.temp</label>
+		<font>mediastream11tc</font>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 1 MAX VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>300</posX>
+		<posY>589</posY>
+		<align>right</align>
+		<label>#infoservice.weather.today.maxtemp</label>
+		<font>mediastream11</font>
+		<textcolor>red</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 1 MIN VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>300</posX>
+		<posY>614</posY>
+		<align>right</align>
+		<label>#infoservice.weather.today.mintemp</label>
+		<font>mediastream11</font>
+		<textcolor>blue</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 1 GENERAL WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>140</posX>
+		<posY>654</posY>
+		<width>160</width>
+		<height>50</height>
+		<label>#infoservice.weather.today.condition</label>
+		<font>mediastream11</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 2 LABEL</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>330</posX>
+		<posY>556</posY>
+		<width>200</width>
+		<align>center</align>
+		<label>#infoservice.weather.day2.weekday</label>
+		<font>mediastream11tc</font>
+		<textcolor>White</textcolor>
+	</control>
+
+		<control>
+		<description>DAY 2 ICON</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>350</posX>
+		<posY>569</posY>
+		<height>80</height>
+		<width>80</width>
+		<texture>#infoservice.weather.day2.img.small.fullpath</texture>
+	</control>
+
+	<control>
+		<description>DAY 2 MAX VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>510</posX>
+		<posY>589</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day2.maxtemp</label>
+		<font>mediastream11</font>
+		<textcolor>red</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 2 MIN VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>510</posX>
+		<posY>614</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day2.mintemp</label>
+		<font>mediastream11</font>
+		<textcolor>blue</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 2 AM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>350</posX>
+		<posY>664</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day2.daycondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 2 PM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>350</posX>
+		<posY>684</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day2.nightcondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 3 LABEL</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>540</posX>
+		<posY>556</posY>
+		<width>200</width>
+		<align>center</align>
+		<label>#infoservice.weather.day3.weekday</label>
+		<font>mediastream11tc</font>
+		<textcolor>White</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 3 ICON</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>560</posX>
+		<posY>569</posY>
+		<height>80</height>
+		<width>80</width>
+		<texture>#infoservice.weather.day3.img.small.fullpath</texture>
+	</control>
+
+	<control>
+		<description>DAY 3 MAX VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>720</posX>
+		<posY>589</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day3.maxtemp</label>
+		<font>mediastream11</font>
+		<textcolor>red</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 3 MIN VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>720</posX>
+		<posY>614</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day3.mintemp</label>
+		<font>mediastream11</font>
+		<textcolor>blue</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 3 AM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>560</posX>
+		<posY>664</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day3.daycondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 3 PM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>560</posX>
+		<posY>684</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day3.nightcondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 4 LABEL</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>750</posX>
+		<posY>556</posY>
+		<width>200</width>
+		<align>center</align>
+		<label>#infoservice.weather.day4.weekday</label>
+		<font>mediastream11tc</font>
+		<textcolor>White</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 4 ICON</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>770</posX>
+		<posY>569</posY>
+		<height>80</height>
+		<width>80</width>
+		<texture>#infoservice.weather.day2.img.small.fullpath</texture>
+	</control>
+
+	<control>
+		<description>DAY 4 MAX VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>930</posX>
+		<posY>589</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day4.maxtemp</label>
+		<font>mediastream11</font>
+		<textcolor>red</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 4 MIN VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>930</posX>
+		<posY>614</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day4.mintemp</label>
+		<font>mediastream11</font>
+		<textcolor>blue</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 4 AM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>770</posX>
+		<posY>664</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day4.daycondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 4 PM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>770</posX>
+		<posY>684</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day4.nightcondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 5 LABEL</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>960</posX>
+		<posY>556</posY>
+		<width>200</width>
+		<align>center</align>
+		<label>#infoservice.weather.day5.weekday</label>
+		<font>mediastream11tc</font>
+		<textcolor>White</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 5 ICON</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>980</posX>
+		<posY>569</posY>
+		<height>80</height>
+		<width>80</width>
+		<texture>#infoservice.weather.day5.img.small.fullpath</texture>
+	</control>
+
+	<control>
+		<description>DAY 5 MAX VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>1140</posX>
+		<posY>589</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day5.maxtemp</label>
+		<font>mediastream11</font>
+		<textcolor>red</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 5 MIN VALUE</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>1140</posX>
+		<posY>614</posY>
+		<align>right</align>
+		<label>#infoservice.weather.day5.mintemp</label>
+		<font>mediastream11</font>
+		<textcolor>blue</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 5 AM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>980</posX>
+		<posY>664</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day5.daycondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+
+	<control>
+		<description>DAY 5 PM WEATHER</description>
+		<type>label</type>
+		<id>0</id>
+		<posX>980</posX>
+		<posY>684</posY>
+		<width>160</width>
+		<label>#infoservice.weather.day5.nightcondition</label>
+		<font>mediastream10</font>
+		<align>left</align>
+		<textcolor>white</textcolor>
+	</control>
+</control>
+
 
     <!-- BEGIN GENERATED WEATHER SUMMARY CODE-->
 
