@@ -57,6 +57,12 @@ namespace StreamedMPEditor
       horizontal,
     };
 
+    enum sync
+    {
+      OnLoad,
+      editing,
+    };
+
     const string quote = "\"";
 
     bool basicHomeLoadError = false;
@@ -99,7 +105,8 @@ namespace StreamedMPEditor
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
-
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
       GetMediaPortalSkinPath();
 
       if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
@@ -633,6 +640,42 @@ namespace StreamedMPEditor
       {
         item.id = menuItems.IndexOf(item);
       }
+    }
+
+    private void style1Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style1.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style2Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style2.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style3Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style3.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style1Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style2Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style3Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
     }
   }
 }

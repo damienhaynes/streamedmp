@@ -403,65 +403,19 @@ namespace StreamedMPEditor
     private void verticalStyle_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.verticalStyle;
-      weatherIconsGroup.Enabled = false;
-      fiveDayWeatherCheckBox.Checked = false;
-      summaryWeatherCheckBox.Checked = true;
-      styleOptionsGroup.Visible = true;
-      
-      //Ok, so we have chosen the default style..set a few things, if switching between styles set default X value
-      if (menuPosLabel.Text == "Menu Y Position:")
-      {
-        txtMenuPos.Text = "350";
-      }
-      menuPosLabel.Text = "Menu X Position:";
+      syncEditor(sync.editing);
     }
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.MenuStyle1;
-      weatherStyle = chosenWeatherStyle.bottom;
-      horizontalContextLabels.Checked = false;
-      weatherIconsGroup.Enabled = true;
-      fiveDayWeatherCheckBox.Checked = true;
-      summaryWeatherCheckBox.Checked = true;
-      centeredWeatherStyle.Checked = false;
-      stdWeatherStyle.Checked = true;
-      styleOptionsGroup.Visible = true;
-      fullWeatherSummaryBottom.Checked = true;
-      txtMenuPos.Text = "430";
-
-
-
-
-      //Ok, so we have chosen the Horizontal style..set a few things, if switching between styles set default Y value
-      if (menuPosLabel.Text == "Menu X Position:")
-      {
-        txtMenuPos.Text = "433";
-      }
-      menuPosLabel.Text = "Menu Y Position:";
+      syncEditor(sync.editing);
     }
 
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
       menuStyle = chosenMenuStyle.MenuStyle2;
-      weatherStyle = chosenWeatherStyle.middle;
-      horizontalContextLabels.Checked = true;
-      weatherIconsGroup.Enabled = true;
-      fiveDayWeatherCheckBox.Checked = true;
-      summaryWeatherCheckBox.Checked = true;
-      centeredWeatherStyle.Checked = true;
-      stdWeatherStyle.Checked = false;
-      styleOptionsGroup.Visible = true;
-      fullWeatherSummaryMiddle.Checked = true;
-      txtMenuPos.Text = "620";
-
-      //Ok, so we have chosen the Horizontal style 2..set a few things, if switching between styles set default Y value
-      if (menuPosLabel.Text == "Menu X Position:")
-      {
-        txtMenuPos.Text = "620";
-        horizontalContextLabels.Checked = true;
-      }
-      menuPosLabel.Text = "Menu Y Position:";
+      syncEditor(sync.editing);
     }
 
     private void stdWeatherStyle_Click(object sender, EventArgs e)
@@ -874,11 +828,11 @@ namespace StreamedMPEditor
     {
       if (animatedWeather.Checked)
       {
-        return mpPaths.streamedMPpath + "media\\animations\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
+        return mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
       }
       else
       {
-        return "#infoservice.weather." + theDay + ".img.small.fullpath";
+        return mpPaths.streamedMPpath + "media\\animations\\weathericons\\static\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext.png";
       }
     }
 
@@ -935,6 +889,90 @@ namespace StreamedMPEditor
       }
     }
 
+    private void syncEditor(sync syncType)
+    {
+      summaryWeatherCheckBox.Checked = true;
+      menuPosLabel.Text = "Menu Y Position:";
+      if (syncType == sync.OnLoad)
+      {
+        switch (menuStyle)
+        {
+          case chosenMenuStyle.verticalStyle:
+            verticalStyle.Checked = true;
+            break;
+          case chosenMenuStyle.MenuStyle1:
+            horizontalStyle.Checked = true;
+            verticalStyle.Checked = true;
+            menuPosLabel.Text = "Menu X Position:";
+            break;
+          case chosenMenuStyle.MenuStyle2:
+            horizontalStyle2.Checked = true;
+            verticalStyle.Checked = false;
+
+            break;
+          default:
+            menuStyle = chosenMenuStyle.verticalStyle;
+            verticalStyle.Checked = true;
+            verticalStyle.Checked = false;
+            break;
+        }
+        //...and Weather styles
+
+        if (weatherStyle == chosenWeatherStyle.bottom)
+        {
+          stdWeatherStyle.Checked = true;
+        }
+        else if (weatherStyle == chosenWeatherStyle.middle)
+        {
+          centeredWeatherStyle.Checked = true;
+        }
+        else
+        {
+          stdWeatherStyle.Checked = true;
+        }
+        menuOffset = int.Parse(txtMenuPos.Text);
+      }
+      else
+      {
+
+        menuPosLabel.Text = "Menu Y Position:";
+        txtMenuPos.Text = "350"; 
+        switch (menuStyle)
+        {
+          case chosenMenuStyle.verticalStyle:
+            fiveDayWeatherCheckBox.Checked = false;
+            styleOptionsGroup.Visible = true;
+            break;
+
+          case chosenMenuStyle.MenuStyle1:
+            weatherStyle = chosenWeatherStyle.bottom;
+            horizontalContextLabels.Checked = false;
+            fiveDayWeatherCheckBox.Checked = true;
+            centeredWeatherStyle.Checked = false;
+            stdWeatherStyle.Checked = true;
+            styleOptionsGroup.Visible = true;
+            fullWeatherSummaryBottom.Checked = true;
+            txtMenuPos.Text = "430";
+            menuPosLabel.Text = "Menu X Position:";
+            break;
+
+          case chosenMenuStyle.MenuStyle2:
+            weatherStyle = chosenWeatherStyle.middle;
+            horizontalContextLabels.Checked = true;
+            fiveDayWeatherCheckBox.Checked = true;
+            centeredWeatherStyle.Checked = true;
+            stdWeatherStyle.Checked = false;
+            styleOptionsGroup.Visible = true;
+            fullWeatherSummaryMiddle.Checked = true;
+            txtMenuPos.Text = "620";
+            menuPosLabel.Text = "Menu X Position:";
+            break;
+        }
+
+      }
+
+
+    }
 
     public class getAsmVersion
     {
