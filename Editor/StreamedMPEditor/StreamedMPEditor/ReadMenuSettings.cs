@@ -85,12 +85,12 @@ namespace StreamedMPEditor
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
             break;
-          case "MenuStyle1":
-            menuStyle = chosenMenuStyle.MenuStyle1;
+          case "horizontalStandardStyle":
+            menuStyle = chosenMenuStyle.horizontalStandardStyle;
             horizontalStyle.Checked = true;
             break;
-          case "MenuStyle2":
-            menuStyle = chosenMenuStyle.MenuStyle2;
+          case "horizontalContextStyle":
+            menuStyle = chosenMenuStyle.horizontalContextStyle;
             horizontalStyle2.Checked = true;
             break;
           default:
@@ -103,17 +103,14 @@ namespace StreamedMPEditor
         if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "bottom")
         {
           weatherStyle = chosenWeatherStyle.bottom;
-          stdWeatherStyle.Checked = true;
         }
         else if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "middle")
         {
           weatherStyle = chosenWeatherStyle.middle;
-          centeredWeatherStyle.Checked = true;
         }
         else
         {
           weatherStyle = chosenWeatherStyle.bottom;
-          stdWeatherStyle.Checked = true;
         }
       }
       catch { }
@@ -154,10 +151,7 @@ namespace StreamedMPEditor
       {
         txtNoFocusColour.Text = defUnFocus;
       }
-
-      // Line up all the options
-      syncEditor(sync.OnLoad);
-
+      
       //
       // Check and set the Global and Plugin options
       //
@@ -184,6 +178,8 @@ namespace StreamedMPEditor
         // Most likley a new option added but not written to file yet - just continue
       }
 
+      // Line up all the options
+      syncEditor(sync.OnLoad);
 
       //
       // Read in the menu items

@@ -41,7 +41,7 @@ namespace StreamedMPEditor
       Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(skeletonFile);
       StreamReader reader = new StreamReader(stream);
       xml = reader.ReadToEnd();
-
+      
       const string quote = "\"";
       string acceleration = tbAcceleration.Text;
       string duration = tbDuration.Text;
@@ -3467,11 +3467,11 @@ namespace StreamedMPEditor
         case chosenMenuStyle.verticalStyle:
           activeMenuStyle = "verticalStyle";
           break;
-        case chosenMenuStyle.MenuStyle1:
-          activeMenuStyle = "MenuStyle1";
+        case chosenMenuStyle.horizontalStandardStyle:
+          activeMenuStyle = "horizontalStandardStyle";
           break;
-        case chosenMenuStyle.MenuStyle2:
-          activeMenuStyle = "MenuStyle2";
+        case chosenMenuStyle.horizontalContextStyle:
+          activeMenuStyle = "horizontalContextStyle";
           break;
       }
 

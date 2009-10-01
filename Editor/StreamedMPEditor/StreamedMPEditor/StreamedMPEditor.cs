@@ -41,8 +41,8 @@ namespace StreamedMPEditor
     enum chosenMenuStyle
     {
       verticalStyle,
-      MenuStyle1,
-      MenuStyle2,
+      horizontalStandardStyle,
+      horizontalContextStyle,
     };
 
     enum chosenWeatherStyle
@@ -85,7 +85,6 @@ namespace StreamedMPEditor
     int minXPosition = 200;
     int menuOffset = 0;
 
-
     //Default Style to StreamedMp standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
     chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
@@ -93,7 +92,7 @@ namespace StreamedMPEditor
     public streamedMpEditor()
     {
       InitializeComponent();
-
+       
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
       compileTime.Text += buildDate.ToString() + " GMT";
@@ -548,7 +547,6 @@ namespace StreamedMPEditor
       }
       else
       {
-
         foreach (menuItem item in menuItems)
         {
           item.id = 1000 + menuItems.IndexOf(item);
@@ -568,11 +566,9 @@ namespace StreamedMPEditor
               return;
             }
         }
-
         setBasicHomeValues(); 
         if (menuStyle == chosenMenuStyle.verticalStyle)
         {
-          // Calc the offsets depending on if StreamedMP or Aeon Graphics/Font
           writeMenu(menuType.vertical); 
         }
         else
@@ -589,9 +585,9 @@ namespace StreamedMPEditor
       System.IO.StreamWriter writer;
       generateXML(direction);
       generateBg(direction);
+      if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled) generateWeathersummary();
       if (direction == menuType.horizontal)
       {
-        if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled) generateWeathersummary();
         generateTopBarH();
         generateMenuGraphicsH();
         generateCrowdingFixH();
@@ -640,42 +636,6 @@ namespace StreamedMPEditor
       {
         item.id = menuItems.IndexOf(item);
       }
-    }
-
-    private void style1Description_MouseEnter(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style1.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
-    }
-
-    private void style2Description_MouseEnter(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style2.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
-    }
-
-    private void style3Description_MouseEnter(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style3.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
-    }
-
-    private void style1Description_MouseLeave(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
-    }
-
-    private void style2Description_MouseLeave(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
-    }
-
-    private void style3Description_MouseLeave(object sender, EventArgs e)
-    {
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
-      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
     }
   }
 }

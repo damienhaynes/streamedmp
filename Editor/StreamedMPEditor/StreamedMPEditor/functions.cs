@@ -408,13 +408,13 @@ namespace StreamedMPEditor
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
-      menuStyle = chosenMenuStyle.MenuStyle1;
+      menuStyle = chosenMenuStyle.horizontalStandardStyle;
       syncEditor(sync.editing);
     }
 
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
-      menuStyle = chosenMenuStyle.MenuStyle2;
+      menuStyle = chosenMenuStyle.horizontalContextStyle;
       syncEditor(sync.editing);
     }
 
@@ -533,9 +533,9 @@ namespace StreamedMPEditor
       {
         case chosenMenuStyle.verticalStyle:
           break;
-        case chosenMenuStyle.MenuStyle1:
+        case chosenMenuStyle.horizontalStandardStyle:
           break;
-        case chosenMenuStyle.MenuStyle2:
+        case chosenMenuStyle.horizontalContextStyle:
           basicHomeValues.menuHeight += 28;
           basicHomeValues.offsetMymenu -= 24;
           basicHomeValues.offsetButtons += 16;
@@ -898,37 +898,32 @@ namespace StreamedMPEditor
         switch (menuStyle)
         {
           case chosenMenuStyle.verticalStyle:
-            verticalStyle.Checked = true;
-            break;
-          case chosenMenuStyle.MenuStyle1:
-            horizontalStyle.Checked = true;
-            verticalStyle.Checked = true;
+            verticalStyle.Checked = true;            
+            weatherSummaryGroup.Visible = false;
+            horizontalContextLabels.Enabled = false;
             menuPosLabel.Text = "Menu X Position:";
             break;
-          case chosenMenuStyle.MenuStyle2:
-            horizontalStyle2.Checked = true;
-            verticalStyle.Checked = false;
-
+          case chosenMenuStyle.horizontalStandardStyle:
+            horizontalStyle.Checked = true;            
+            break;
+          case chosenMenuStyle.horizontalContextStyle:
+            horizontalStyle2.Checked = true;          
             break;
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
-            verticalStyle.Checked = true;
-            verticalStyle.Checked = false;
+            verticalStyle.Checked = true;            
             break;
         }
         //...and Weather styles
 
         if (weatherStyle == chosenWeatherStyle.bottom)
         {
-          stdWeatherStyle.Checked = true;
         }
         else if (weatherStyle == chosenWeatherStyle.middle)
         {
-          centeredWeatherStyle.Checked = true;
         }
         else
         {
-          stdWeatherStyle.Checked = true;
         }
         menuOffset = int.Parse(txtMenuPos.Text);
       }
@@ -942,37 +937,134 @@ namespace StreamedMPEditor
           case chosenMenuStyle.verticalStyle:
             fiveDayWeatherCheckBox.Checked = false;
             styleOptionsGroup.Visible = true;
+            weatherSummaryGroup.Visible = false;
+            horizontalContextLabels.Enabled = false;
+            verticalStyle.Checked = true;
+            menuPosLabel.Text = "Menu X Position:";
             break;
 
-          case chosenMenuStyle.MenuStyle1:
+          case chosenMenuStyle.horizontalStandardStyle:
             weatherStyle = chosenWeatherStyle.bottom;
             horizontalContextLabels.Checked = false;
             fiveDayWeatherCheckBox.Checked = true;
-            centeredWeatherStyle.Checked = false;
-            stdWeatherStyle.Checked = true;
             styleOptionsGroup.Visible = true;
             fullWeatherSummaryBottom.Checked = true;
-            txtMenuPos.Text = "430";
-            menuPosLabel.Text = "Menu X Position:";
+            weatherSummaryGroup.Visible = true;
+            horizontalContextLabels.Enabled = true;
+            horizontalStyle.Checked = true;
+            txtMenuPos.Text = "430";            
             break;
 
-          case chosenMenuStyle.MenuStyle2:
+          case chosenMenuStyle.horizontalContextStyle:
             weatherStyle = chosenWeatherStyle.middle;
             horizontalContextLabels.Checked = true;
             fiveDayWeatherCheckBox.Checked = true;
-            centeredWeatherStyle.Checked = true;
-            stdWeatherStyle.Checked = false;
             styleOptionsGroup.Visible = true;
             fullWeatherSummaryMiddle.Checked = true;
-            txtMenuPos.Text = "620";
-            menuPosLabel.Text = "Menu X Position:";
+            weatherSummaryGroup.Visible = true;
+            horizontalContextLabels.Enabled = true;
+            horizontalStyle2.Checked = true;
+            txtMenuPos.Text = "620";            
             break;
         }
 
       }
 
+      WeatherIconsAnimated.Checked = animatedWeather.Checked;
+      weatherIconsStatic.Checked = !animatedWeather.Checked;
 
     }
+
+    private void style1Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style1.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style2Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style2.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style3Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style3.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style1Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style2Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style3Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void horizontalContextLabels_CheckedChanged(object sender, EventArgs e)
+    {
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+        return;
+
+      if (horizontalContextLabels.Checked)
+      {
+        menuStyle = chosenMenuStyle.horizontalContextStyle;
+      }
+      else
+      {
+        menuStyle = chosenMenuStyle.horizontalStandardStyle;
+      }
+      syncEditor(sync.editing);
+    }
+
+    private void fullWeatherSummaryMiddle_CheckedChanged(object sender, EventArgs e)
+    {
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+        return;
+
+      if (fullWeatherSummaryMiddle.Checked)
+      {
+        menuStyle = chosenMenuStyle.horizontalContextStyle;
+      }
+      else
+      {
+        menuStyle = chosenMenuStyle.horizontalStandardStyle;
+      }
+      syncEditor(sync.editing);
+    }
+
+    private void animatedWeather_CheckedChanged(object sender, EventArgs e)
+    {
+      if (animatedWeather.Checked)
+      {
+        WeatherIconsAnimated.Checked = true;
+      }
+      else
+      {
+        weatherIconsStatic.Checked = true;
+      }
+    }
+
+    private void WeatherIconsAnimated_CheckedChanged(object sender, EventArgs e)
+    {
+      animatedWeather.Checked = WeatherIconsAnimated.Checked;
+    }
+
+    private void weatherIconsStatic_CheckedChanged(object sender, EventArgs e)
+    {
+      animatedWeather.Checked = !weatherIconsStatic.Checked;
+    }
+
 
     public class getAsmVersion
     {
