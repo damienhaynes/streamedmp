@@ -49,7 +49,7 @@ namespace StreamedMPEditor
         if (!System.IO.File.Exists((imageDir(bgItem.image))))
         {
 
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
+          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))), "*.*");
           createDefaultJpg(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
         }
         workingImage = Image.FromFile(imageDir(bgItem.image));
@@ -180,7 +180,7 @@ namespace StreamedMPEditor
         if (bgItem.mname[0] == ctrlName)
         {
           defImgs.activeDir = imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11)));
-          string[] fileList = getFileListing(defImgs.activeDir);
+          string[] fileList = getFileListing(defImgs.activeDir,"*.*");
           for (imagePointer = 0; imagePointer < 3; imagePointer++)
           {
             if (imagePointer >= totalImages) break;
@@ -249,7 +249,7 @@ namespace StreamedMPEditor
       {
         if (bgItem.mname[0] == ctrlName)
         {
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
+          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
           for (int i = 0; i < 3; i++)
           {
             workingImage = Image.FromFile(fileList[imagePointer]);
@@ -273,7 +273,7 @@ namespace StreamedMPEditor
       {
         if (bgItem.mname[0] == ctrlName)
         {
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
+          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
           for (int i = 0; i < 3; i++)
           {
             workingImage = Image.FromFile(fileList[imagePointer]);
@@ -288,7 +288,7 @@ namespace StreamedMPEditor
     private void createDefaultJpg(string imageDir)
     {
       // Take the first file in the directoy and copy to default.jpg
-      System.IO.File.Copy(getFileListing(imageDir)[0], imageDir + "default.jpg");
+      System.IO.File.Copy(getFileListing(imageDir,"*.*")[0], imageDir + "default.jpg");
     }
 
     private string imageDir(string image)
@@ -301,14 +301,14 @@ namespace StreamedMPEditor
     }
 
 
-    private string[] getFileListing(string imageDir)
+    private string[] getFileListing(string imageDir, string fileMask)
     {
       string fcompare;
       totalImages = 0;
       fileResults.Clear();
       DirectoryInfo dInfo = new DirectoryInfo(imageDir);
       //get list of files from directory
-      foreach (FileInfo fInfo in dInfo.GetFiles("*.*"))
+      foreach (FileInfo fInfo in dInfo.GetFiles(fileMask))
       {
         fcompare = fInfo.Name.ToLower();
         if (!fcompare.Contains("default.jpg"))

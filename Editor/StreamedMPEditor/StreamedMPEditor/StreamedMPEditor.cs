@@ -84,6 +84,7 @@ namespace StreamedMPEditor
     int maxXPosition = 400;
     int minXPosition = 200;
     int menuOffset = 0;
+    int lastActiveTab = 0;
 
     //Default Style to StreamedMp standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
@@ -95,7 +96,19 @@ namespace StreamedMPEditor
        
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
-      compileTime.Text += buildDate.ToString() + " GMT";
+      compileTime.Text += " " + buildDate.ToString() + " GMT";
+
+      lastUsedTab.Checked = Properties.Settings.Default.rememberLastUsedTab;
+      if (Properties.Settings.Default.rememberLastUsedTab)
+      {
+        StreamedMPMenu.SelectedIndex = Properties.Settings.Default.lastUsedTab;
+      }
+      backupVersionsToKeep.Text = Properties.Settings.Default.keepVersions.ToString();
+      if (Properties.Settings.Default.autoPurge)
+      {
+       autoPurgeBackups.Checked = true;
+      }
+
 
 
     }
@@ -107,6 +120,7 @@ namespace StreamedMPEditor
       Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
       GetMediaPortalSkinPath();
+      getBackupFileTotals();
 
       if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
       {
@@ -306,7 +320,7 @@ namespace StreamedMPEditor
         if (!System.IO.File.Exists((imageDir(item.defaultImage))))
         {
 
-          string[] fileList = getFileListing(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
+          string[] fileList = getFileListing(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))),"*.*");
           createDefaultJpg(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
         }
         
@@ -612,7 +626,6 @@ namespace StreamedMPEditor
         else if (direction == menuType.vertical)
         {
           generateRSSTickerV();
-          generateWeathersummary();
         }         
       }
 
@@ -627,6 +640,7 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
       writer.Write(xml);
       writer.Close();
+      getBackupFileTotals();
       DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
       if (result == DialogResult.No)
         this.Close();
