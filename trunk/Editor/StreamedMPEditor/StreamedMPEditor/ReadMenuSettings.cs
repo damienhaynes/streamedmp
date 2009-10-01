@@ -76,42 +76,36 @@ namespace StreamedMPEditor
 
       // Now read the file
       XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
-
       // Get the last selected Menu...
       try
       {
-        string activeMenuStyle = readEntryValue(optionsTag, "menustyle", nodelist);
-        switch (activeMenuStyle)
+        switch (readEntryValue(optionsTag, "menustyle", nodelist))
         {
           case "verticalStyle":
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
-            weatherIconsGroup.Enabled = false;
             break;
           case "MenuStyle1":
             menuStyle = chosenMenuStyle.MenuStyle1;
             horizontalStyle.Checked = true;
-            weatherIconsGroup.Enabled = true;
             break;
           case "MenuStyle2":
             menuStyle = chosenMenuStyle.MenuStyle2;
             horizontalStyle2.Checked = true;
-            weatherIconsGroup.Enabled = true;
             break;
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
-            weatherIconsGroup.Enabled = true;
             break;
         }
+        
         //...and Weather styles
-        string activeWeatherStyle = readEntryValue(optionsTag, "weatherstyle", nodelist);
-        if (activeWeatherStyle == "bottom")
+        if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "bottom")
         {
           weatherStyle = chosenWeatherStyle.bottom;
           stdWeatherStyle.Checked = true;
         }
-        else if (activeWeatherStyle == "middle")
+        else if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "middle")
         {
           weatherStyle = chosenWeatherStyle.middle;
           centeredWeatherStyle.Checked = true;
@@ -121,9 +115,13 @@ namespace StreamedMPEditor
           weatherStyle = chosenWeatherStyle.bottom;
           stdWeatherStyle.Checked = true;
         }
-
       }
       catch { }
+
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+      else
+        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
       // Get the Focus Colour and set the background on the control
       focusAlpha.Text = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
@@ -157,20 +155,9 @@ namespace StreamedMPEditor
         txtNoFocusColour.Text = defUnFocus;
       }
 
-      // Check menu orientation
-      if (readEntryValue(optionsTag, "menuType", nodelist) == "Vertical")
-      {
-          verticalStyle.Checked = true;
-          menuPosLabel.Text = "Menu X Position:";
-          txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
-      }
-      else
-      {
-          verticalStyle.Checked = false;
-          menuPosLabel.Text = "Menu Y Position:";
-          txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
-      }
-      menuOffset = int.Parse(txtMenuPos.Text);
+      // Line up all the options
+      syncEditor(sync.OnLoad);
+
       //
       // Check and set the Global and Plugin options
       //
