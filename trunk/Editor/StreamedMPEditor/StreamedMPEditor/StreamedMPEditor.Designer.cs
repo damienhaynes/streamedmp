@@ -93,11 +93,8 @@
       this.pictureBox6 = new System.Windows.Forms.PictureBox();
       this.pictureBox2 = new System.Windows.Forms.PictureBox();
       this.weatherIconsGroup = new System.Windows.Forms.GroupBox();
-      this.groupBox4 = new System.Windows.Forms.GroupBox();
       this.menuStyle4 = new System.Windows.Forms.PictureBox();
       this.pictureBox4 = new System.Windows.Forms.PictureBox();
-      this.stdWeatherStyle = new System.Windows.Forms.RadioButton();
-      this.centeredWeatherStyle = new System.Windows.Forms.RadioButton();
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
       this.fiveDayWeatherCheckBox = new System.Windows.Forms.CheckBox();
       this.basicHomeOptions = new System.Windows.Forms.TabPage();
@@ -182,7 +179,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       this.weatherIconsGroup.SuspendLayout();
-      this.groupBox4.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -868,6 +864,7 @@
       this.weatherIconsStatic.TabStop = true;
       this.weatherIconsStatic.Text = "Static";
       this.weatherIconsStatic.UseVisualStyleBackColor = true;
+      this.weatherIconsStatic.CheckedChanged += new System.EventHandler(this.weatherIconsStatic_CheckedChanged);
       // 
       // WeatherIconsAnimated
       // 
@@ -879,6 +876,7 @@
       this.WeatherIconsAnimated.TabStop = true;
       this.WeatherIconsAnimated.Text = "Animated";
       this.WeatherIconsAnimated.UseVisualStyleBackColor = true;
+      this.WeatherIconsAnimated.CheckedChanged += new System.EventHandler(this.WeatherIconsAnimated_CheckedChanged);
       // 
       // pictureBox6
       // 
@@ -902,7 +900,8 @@
       // 
       // weatherIconsGroup
       // 
-      this.weatherIconsGroup.Controls.Add(this.groupBox4);
+      this.weatherIconsGroup.Controls.Add(this.pictureBox4);
+      this.weatherIconsGroup.Controls.Add(this.menuStyle4);
       this.weatherIconsGroup.Controls.Add(this.pictureBox5);
       this.weatherIconsGroup.Controls.Add(this.fiveDayWeatherCheckBox);
       this.weatherIconsGroup.Location = new System.Drawing.Point(42, 25);
@@ -912,23 +911,10 @@
       this.weatherIconsGroup.TabStop = false;
       this.weatherIconsGroup.Text = "Display 5 Day Weather Summary When Weather Menu Item";
       // 
-      // groupBox4
-      // 
-      this.groupBox4.Controls.Add(this.menuStyle4);
-      this.groupBox4.Controls.Add(this.pictureBox4);
-      this.groupBox4.Controls.Add(this.stdWeatherStyle);
-      this.groupBox4.Controls.Add(this.centeredWeatherStyle);
-      this.groupBox4.Location = new System.Drawing.Point(249, 22);
-      this.groupBox4.Name = "groupBox4";
-      this.groupBox4.Size = new System.Drawing.Size(406, 156);
-      this.groupBox4.TabIndex = 12;
-      this.groupBox4.TabStop = false;
-      this.groupBox4.Text = "Horizontal Menu Layout";
-      // 
       // menuStyle4
       // 
       this.menuStyle4.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
-      this.menuStyle4.Location = new System.Drawing.Point(17, 19);
+      this.menuStyle4.Location = new System.Drawing.Point(246, 41);
       this.menuStyle4.Name = "menuStyle4";
       this.menuStyle4.Size = new System.Drawing.Size(175, 110);
       this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -938,36 +924,12 @@
       // pictureBox4
       // 
       this.pictureBox4.Image = global::StreamedMPEditor.Properties.Resources.style6;
-      this.pictureBox4.Location = new System.Drawing.Point(221, 19);
+      this.pictureBox4.Location = new System.Drawing.Point(475, 41);
       this.pictureBox4.Name = "pictureBox4";
       this.pictureBox4.Size = new System.Drawing.Size(175, 110);
       this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
       this.pictureBox4.TabIndex = 10;
       this.pictureBox4.TabStop = false;
-      // 
-      // stdWeatherStyle
-      // 
-      this.stdWeatherStyle.AutoSize = true;
-      this.stdWeatherStyle.Location = new System.Drawing.Point(17, 135);
-      this.stdWeatherStyle.Name = "stdWeatherStyle";
-      this.stdWeatherStyle.Size = new System.Drawing.Size(147, 17);
-      this.stdWeatherStyle.TabIndex = 8;
-      this.stdWeatherStyle.TabStop = true;
-      this.stdWeatherStyle.Text = "Standard Weather Layout";
-      this.stdWeatherStyle.UseVisualStyleBackColor = true;
-      this.stdWeatherStyle.Click += new System.EventHandler(this.stdWeatherStyle_Click);
-      // 
-      // centeredWeatherStyle
-      // 
-      this.centeredWeatherStyle.AutoSize = true;
-      this.centeredWeatherStyle.Location = new System.Drawing.Point(221, 135);
-      this.centeredWeatherStyle.Name = "centeredWeatherStyle";
-      this.centeredWeatherStyle.Size = new System.Drawing.Size(147, 17);
-      this.centeredWeatherStyle.TabIndex = 9;
-      this.centeredWeatherStyle.TabStop = true;
-      this.centeredWeatherStyle.Text = "Centered Weather Layout";
-      this.centeredWeatherStyle.UseVisualStyleBackColor = true;
-      this.centeredWeatherStyle.Click += new System.EventHandler(this.centeredWeatherStyle_Click);
       // 
       // pictureBox5
       // 
@@ -982,9 +944,10 @@
       // fiveDayWeatherCheckBox
       // 
       this.fiveDayWeatherCheckBox.AutoSize = true;
-      this.fiveDayWeatherCheckBox.Location = new System.Drawing.Point(17, 161);
+      this.fiveDayWeatherCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.fiveDayWeatherCheckBox.Location = new System.Drawing.Point(247, 163);
       this.fiveDayWeatherCheckBox.Name = "fiveDayWeatherCheckBox";
-      this.fiveDayWeatherCheckBox.Size = new System.Drawing.Size(139, 17);
+      this.fiveDayWeatherCheckBox.Size = new System.Drawing.Size(179, 21);
       this.fiveDayWeatherCheckBox.TabIndex = 4;
       this.fiveDayWeatherCheckBox.Text = "Enable 5 Day Summary ";
       this.fiveDayWeatherCheckBox.UseVisualStyleBackColor = true;
@@ -1038,6 +1001,7 @@
       this.animatedWeather.TabIndex = 0;
       this.animatedWeather.Text = "Use Animated Weather Icons";
       this.animatedWeather.UseVisualStyleBackColor = true;
+      this.animatedWeather.CheckedChanged += new System.EventHandler(this.animatedWeather_CheckedChanged);
       // 
       // weatherBGlink
       // 
@@ -1068,6 +1032,7 @@
       this.horizontalContextLabels.TabIndex = 1;
       this.horizontalContextLabels.Text = "Use Context Labels on Horizontal Menu";
       this.horizontalContextLabels.UseVisualStyleBackColor = true;
+      this.horizontalContextLabels.CheckedChanged += new System.EventHandler(this.horizontalContextLabels_CheckedChanged);
       // 
       // weatherSummaryGroup
       // 
@@ -1101,6 +1066,7 @@
       this.fullWeatherSummaryMiddle.TabStop = true;
       this.fullWeatherSummaryMiddle.Text = "Center of Screen";
       this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
+      this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
       // 
       // rssTickerOptions
       // 
@@ -1656,8 +1622,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
       this.weatherIconsGroup.ResumeLayout(false);
       this.weatherIconsGroup.PerformLayout();
-      this.groupBox4.ResumeLayout(false);
-      this.groupBox4.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -1792,8 +1756,6 @@
     private System.Windows.Forms.PictureBox menuStyle2;
     private System.Windows.Forms.PictureBox menuStyle4;
     private System.Windows.Forms.PictureBox pictureBox2;
-    private System.Windows.Forms.RadioButton centeredWeatherStyle;
-    private System.Windows.Forms.RadioButton stdWeatherStyle;
     private System.Windows.Forms.RadioButton horizontalStyle2;
     private System.Windows.Forms.RadioButton horizontalStyle;
     private System.Windows.Forms.RadioButton verticalStyle;
@@ -1815,7 +1777,6 @@
     private System.Windows.Forms.PictureBox pictureBox6;
     private System.Windows.Forms.RadioButton weatherIconsStatic;
     private System.Windows.Forms.RadioButton WeatherIconsAnimated;
-    private System.Windows.Forms.GroupBox groupBox4;
     private System.Windows.Forms.RichTextBox menuDescription;
     private System.Windows.Forms.PictureBox style3Description;
     private System.Windows.Forms.PictureBox style2Description;
