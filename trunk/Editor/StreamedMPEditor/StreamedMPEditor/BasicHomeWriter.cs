@@ -1014,7 +1014,7 @@ namespace StreamedMPEditor
       if (wrapString.Checked)
       {
         if (useInfoServiceSeperator)
-          rawXML.AppendLine("\t\t<wrapString>#infoservice.feed.separator</wrapString>");
+          rawXML.AppendLine("\t\t<wrapString> #infoservice.feed.separator </wrapString>");
         else
           rawXML.AppendLine("\t\t<wrapString> :: </wrapString>");
       }

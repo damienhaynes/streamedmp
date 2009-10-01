@@ -940,6 +940,7 @@ namespace StreamedMPEditor
           weatherStyle = chosenWeatherStyle.bottom;
           horizontalContextLabels.Checked = false;
           fiveDayWeatherCheckBox.Checked = true;
+          fullWeatherSummaryBottom.Enabled = true;
           fullWeatherSummaryBottom.Checked = true;
           horizontalContextLabels.Enabled = true;
           horizontalStyle.Checked = true;
@@ -955,6 +956,7 @@ namespace StreamedMPEditor
           horizontalContextLabels.Checked = true;
           fiveDayWeatherCheckBox.Checked = true;
           fullWeatherSummaryMiddle.Checked = true;
+          fullWeatherSummaryBottom.Enabled = false;
           horizontalContextLabels.Enabled = true;
           horizontalStyle2.Checked = true;
           weatherIconsStatic.Checked = true;
