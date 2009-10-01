@@ -921,6 +921,8 @@ namespace StreamedMPEditor
       // for the previous selected style
       summaryWeatherCheckBox.Checked = true;
       menuPosLabel.Text = "Menu Y Position:";
+      if (!animatedIconsInstalled())
+        WeatherIconsAnimated.Enabled = false;
 
       switch (menuStyle)
       {
@@ -1111,6 +1113,14 @@ namespace StreamedMPEditor
       if (System.IO.Directory.Exists(mpPaths.streamedMPpath))
         System.Diagnostics.Process.Start(mpPaths.streamedMPpath);
       else MessageBox.Show("The directory/file does not exist.");
+    }
+
+    private bool animatedIconsInstalled()
+    {
+      if (Directory.Exists(mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128"))
+        return true;
+      else
+        return false;
     }
 
     public class getAsmVersion

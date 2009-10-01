@@ -300,7 +300,6 @@ namespace StreamedMPEditor
 
     }
 
-
     private string[] getFileListing(string imageDir, string fileMask)
     {
       string fcompare;
