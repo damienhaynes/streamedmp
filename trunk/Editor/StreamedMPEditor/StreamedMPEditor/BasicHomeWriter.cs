@@ -2813,7 +2813,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<layout>StackLayout(10,Horizontal)</layout>");
       rawXML.AppendLine("\t<dimColor>0xffffffff</dimColor>");
       rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
-      rawXML.AppendLine("\t<animation effect=\"fade\" time=\"300\">Hidden</animation>");
+      rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 0 BG</description>");
@@ -2822,11 +2822,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<width>200</width>");
       rawXML.AppendLine("\t\t<height>170</height>");
       rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
-      rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"600\" time=\"200\">Visible</animation>");
       rawXML.AppendLine("\t</control>");
-
-
-
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 BG</description>");
@@ -2835,7 +2831,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<width>200</width>");
       rawXML.AppendLine("\t\t<height>170</height>");
       rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
-      rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"700\" time=\"200\">Visible</animation>");
       rawXML.AppendLine("\t</control>");
 
       rawXML.AppendLine("\n\t<control>");
@@ -2845,7 +2840,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<width>200</width>");
       rawXML.AppendLine("\t\t<height>170</height>");
       rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
-      rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"800\" time=\"200\">Visible</animation>");
       rawXML.AppendLine("\t</control>");
 
       rawXML.AppendLine("\n\t<control>");
@@ -2855,7 +2849,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<width>200</width>");
       rawXML.AppendLine("\t\t<height>170</height>");
       rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
-      rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"900\" time=\"200\">Visible</animation>");
       rawXML.AppendLine("\t</control>");
 
       rawXML.AppendLine("\n\t<control>");
@@ -2865,9 +2858,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<width>200</width>");
       rawXML.AppendLine("\t\t<height>170</height>");
       rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
-      rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"200\">Visible</animation>");
       rawXML.AppendLine("\t</control>");
-
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("\n\t<control>");
