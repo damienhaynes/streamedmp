@@ -93,8 +93,8 @@
       this.pictureBox6 = new System.Windows.Forms.PictureBox();
       this.pictureBox2 = new System.Windows.Forms.PictureBox();
       this.weatherIconsGroup = new System.Windows.Forms.GroupBox();
-      this.menuStyle4 = new System.Windows.Forms.PictureBox();
       this.pictureBox4 = new System.Windows.Forms.PictureBox();
+      this.menuStyle4 = new System.Windows.Forms.PictureBox();
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
       this.fiveDayWeatherCheckBox = new System.Windows.Forms.CheckBox();
       this.basicHomeOptions = new System.Windows.Forms.TabPage();
@@ -179,8 +179,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       this.weatherIconsGroup.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
       this.basicHomeOptions.SuspendLayout();
       this.styleOptionsGroup.SuspendLayout();
@@ -197,9 +197,9 @@
       // 
       // StreamedMPMenu
       // 
-      this.StreamedMPMenu.Controls.Add(this.basicHomeDesign);
       this.StreamedMPMenu.Controls.Add(this.menuStyleTab);
       this.StreamedMPMenu.Controls.Add(this.weatherStyleTab);
+      this.StreamedMPMenu.Controls.Add(this.basicHomeDesign);
       this.StreamedMPMenu.Controls.Add(this.basicHomeOptions);
       this.StreamedMPMenu.Controls.Add(this.defaultBackgrounds);
       this.StreamedMPMenu.Controls.Add(this.editingInfo);
@@ -911,16 +911,6 @@
       this.weatherIconsGroup.TabStop = false;
       this.weatherIconsGroup.Text = "Display 5 Day Weather Summary When Weather Menu Item";
       // 
-      // menuStyle4
-      // 
-      this.menuStyle4.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
-      this.menuStyle4.Location = new System.Drawing.Point(246, 41);
-      this.menuStyle4.Name = "menuStyle4";
-      this.menuStyle4.Size = new System.Drawing.Size(175, 110);
-      this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.menuStyle4.TabIndex = 3;
-      this.menuStyle4.TabStop = false;
-      // 
       // pictureBox4
       // 
       this.pictureBox4.Image = global::StreamedMPEditor.Properties.Resources.style6;
@@ -930,6 +920,16 @@
       this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
       this.pictureBox4.TabIndex = 10;
       this.pictureBox4.TabStop = false;
+      // 
+      // menuStyle4
+      // 
+      this.menuStyle4.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
+      this.menuStyle4.Location = new System.Drawing.Point(246, 41);
+      this.menuStyle4.Name = "menuStyle4";
+      this.menuStyle4.Size = new System.Drawing.Size(175, 110);
+      this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.menuStyle4.TabIndex = 3;
+      this.menuStyle4.TabStop = false;
       // 
       // pictureBox5
       // 
@@ -1622,8 +1622,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
       this.weatherIconsGroup.ResumeLayout(false);
       this.weatherIconsGroup.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
       this.basicHomeOptions.ResumeLayout(false);
       this.styleOptionsGroup.ResumeLayout(false);
