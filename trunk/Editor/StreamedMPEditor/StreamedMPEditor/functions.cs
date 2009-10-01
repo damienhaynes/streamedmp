@@ -92,10 +92,10 @@ namespace StreamedMPEditor
 
 
       // Display some Info
-      infoSkinName.Text = "Skin: " + configuredSkin("name") + " (" + getStreamedMPVer() + ")";
+      infoSkinName.Text = configuredSkin("name") + " (" + getStreamedMPVer() + ")";
       infoSkinpath.Text = mpPaths.streamedMPpath;
-      infoInstallPath.Text = "MP Path: " + mpPaths.sMPbaseDir + "  (Version: " + getMediaPortalVersion() + ")";
-      infoConfigpath.Text = "Config Path: " + mpPaths.configBasePath;
+      infoInstallPath.Text = mpPaths.sMPbaseDir + "  (Version: " + getMediaPortalVersion() + ")";
+      infoConfigpath.Text = mpPaths.configBasePath;
 
 
       if (infoServiceVer == "InfoService Not Installed")
@@ -500,15 +500,15 @@ namespace StreamedMPEditor
     private void setBasicHomeValues()
     {
 
-      basicHomeValues.offsetMymenu = -33;
+      basicHomeValues.offsetMymenu = -39;
       basicHomeValues.textYOffset = 6;
-      basicHomeValues.offsetSubmenu = 72;
-      basicHomeValues.offsetRssImage = 72;
-      basicHomeValues.offsetRssText = 73;
+      basicHomeValues.offsetSubmenu = 76;
+      basicHomeValues.offsetRssImage = 76;
+      basicHomeValues.offsetRssText = 75;
       basicHomeValues.offsetTwitter = 51;
       basicHomeValues.offsetTwitterImage = 32;
       basicHomeValues.offsetButtons = 42;
-      basicHomeValues.menuHeight = 155;
+      basicHomeValues.menuHeight = 165;
       basicHomeValues.subMenuHeight = 60;
       basicHomeValues.subMenuXpos = 0;
       basicHomeValues.subMenuWidth = 1280;
@@ -534,9 +534,15 @@ namespace StreamedMPEditor
         case chosenMenuStyle.verticalStyle:
           break;
         case chosenMenuStyle.horizontalStandardStyle:
+          if (horizontalContextLabels.Checked)
+          {
+            basicHomeValues.menuHeight += 34;
+            basicHomeValues.offsetMymenu -= 25;
+            basicHomeValues.offsetButtons += 16;
+          }
           break;
         case chosenMenuStyle.horizontalContextStyle:
-          basicHomeValues.menuHeight += 28;
+          basicHomeValues.menuHeight += 33;
           basicHomeValues.offsetMymenu -= 24;
           basicHomeValues.offsetButtons += 16;
           break;
@@ -826,7 +832,7 @@ namespace StreamedMPEditor
 
     private string weatherIcon(string theDay)
     {
-      if (animatedWeather.Checked)
+      if (WeatherIconsAnimated.Checked)
       {
         return mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
       }
@@ -860,119 +866,104 @@ namespace StreamedMPEditor
 
     private void validateMenuOffset()
     {
-      // Check if the new value will result in context lable not being displayed
-      if (menuStyle != chosenMenuStyle.verticalStyle) return;
-      int minXPos = 0;
-      menuOffset = int.Parse(txtMenuPos.Text);
-
-      int maxContextSize = 0;
-      int maxMenuItemSize = 0;
-      // find the longest Context and Menu items
-      foreach (menuItem menItem in menuItems)
+      // Don't allow users to select 5 day weather postions that conflicts with menu bar position
+      if (menuStyle != chosenMenuStyle.verticalStyle)
       {
-        if (maxContextSize < menItem.contextLabel.Length)
-          maxContextSize = menItem.contextLabel.Length;
-        if (maxMenuItemSize < menItem.name.Length)
-          maxMenuItemSize = menItem.name.Length;
+        if (int.Parse(txtMenuPos.Text) > 433)
+        {
+          weatherStyle = chosenWeatherStyle.middle;
+          fullWeatherSummaryBottom.Enabled = false;
+          return;
+        }
+        else
+        {
+          fullWeatherSummaryBottom.Enabled = true;
+          return;
+        }
       }
-      // now calc the minimum xpos based on longest sring in context and menu labels
-      minXPos = (maxContextSize * 17);
-      if ((maxMenuItemSize * 41) > minXPos)
-        minXPos = (maxMenuItemSize * 41);
-
-
-      if (menuOffset < minXPos)
+      else
       {
-        txtMenuPos.Text = minXPos.ToString();
+        // Check if the new value will result in context lable not being displayed
+        int minXPos = 0;
         menuOffset = int.Parse(txtMenuPos.Text);
-        showError("The Menu X Position value will result in blank Context or Menu labels. \n\nMenu X Position reset to calculated minium value of " + txtMenuPos.Text, errorCode.info);
+
+        int maxContextSize = 0;
+        int maxMenuItemSize = 0;
+        // find the longest Context and Menu items
+        foreach (menuItem menItem in menuItems)
+        {
+          if (maxContextSize < menItem.contextLabel.Length)
+            maxContextSize = menItem.contextLabel.Length;
+          if (maxMenuItemSize < menItem.name.Length)
+            maxMenuItemSize = menItem.name.Length;
+        }
+        // now calc the minimum xpos based on longest sring in context and menu labels
+        minXPos = (maxContextSize * 17);
+        if ((maxMenuItemSize * 41) > minXPos)
+          minXPos = (maxMenuItemSize * 41);
+
+
+        if (menuOffset < minXPos)
+        {
+          txtMenuPos.Text = minXPos.ToString();
+          menuOffset = int.Parse(txtMenuPos.Text);
+          showError("The Menu X Position value will result in blank Context or Menu labels. \n\nMenu X Position reset to calculated minium value of " + txtMenuPos.Text, errorCode.info);
+        }
       }
     }
 
     private void syncEditor(sync syncType)
     {
+      // Here we setup the editor for the chosen style, this is an inital setup and will configure the editor 
+      // for the default options for that style. This is call after the inital load of the menu setting and the defaults set
+      // will be overridden by the options that are read next.
+      // If called because a user has clicked a style button the editor will reset to that style overiding any custom settings set by the user
+      // for the previous selected style
       summaryWeatherCheckBox.Checked = true;
       menuPosLabel.Text = "Menu Y Position:";
-      if (syncType == sync.OnLoad)
+
+      switch (menuStyle)
       {
-        switch (menuStyle)
-        {
-          case chosenMenuStyle.verticalStyle:
-            verticalStyle.Checked = true;            
-            weatherSummaryGroup.Visible = false;
-            horizontalContextLabels.Enabled = false;
-            menuPosLabel.Text = "Menu X Position:";
-            break;
-          case chosenMenuStyle.horizontalStandardStyle:
-            horizontalStyle.Checked = true;            
-            break;
-          case chosenMenuStyle.horizontalContextStyle:
-            horizontalStyle2.Checked = true;          
-            break;
-          default:
-            menuStyle = chosenMenuStyle.verticalStyle;
-            verticalStyle.Checked = true;            
-            break;
-        }
-        //...and Weather styles
+        case chosenMenuStyle.verticalStyle:
+          fiveDayWeatherCheckBox.Checked = true;
+          horizontalContextLabels.Enabled = false;
+          weatherSummaryGroup.Visible = false;
+          verticalStyle.Checked = true;
+          weatherIconsStatic.Checked = true;
+          weatherBGlink.Checked = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "350";
+          menuPosLabel.Text = "Menu X Position:";
+          break;
 
-        if (weatherStyle == chosenWeatherStyle.bottom)
-        {
-        }
-        else if (weatherStyle == chosenWeatherStyle.middle)
-        {
-        }
-        else
-        {
-        }
-        menuOffset = int.Parse(txtMenuPos.Text);
+        case chosenMenuStyle.horizontalStandardStyle:
+          weatherStyle = chosenWeatherStyle.bottom;
+          horizontalContextLabels.Checked = false;
+          fiveDayWeatherCheckBox.Checked = true;
+          fullWeatherSummaryBottom.Checked = true;
+          horizontalContextLabels.Enabled = true;
+          horizontalStyle.Checked = true;
+          weatherIconsStatic.Checked = true;
+          weatherSummaryGroup.Visible = true;
+          weatherBGlink.Checked = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "430";
+          break;
+
+        case chosenMenuStyle.horizontalContextStyle:
+          weatherStyle = chosenWeatherStyle.middle;
+          horizontalContextLabels.Checked = true;
+          fiveDayWeatherCheckBox.Checked = true;
+          fullWeatherSummaryMiddle.Checked = true;
+          horizontalContextLabels.Enabled = true;
+          horizontalStyle2.Checked = true;
+          weatherIconsStatic.Checked = true;
+          weatherSummaryGroup.Visible = true;
+          weatherBGlink.Checked = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "620";
+          break;
       }
-      else
-      {
-
-        menuPosLabel.Text = "Menu Y Position:";
-        txtMenuPos.Text = "350"; 
-        switch (menuStyle)
-        {
-          case chosenMenuStyle.verticalStyle:
-            fiveDayWeatherCheckBox.Checked = false;
-            styleOptionsGroup.Visible = true;
-            weatherSummaryGroup.Visible = false;
-            horizontalContextLabels.Enabled = false;
-            verticalStyle.Checked = true;
-            menuPosLabel.Text = "Menu X Position:";
-            break;
-
-          case chosenMenuStyle.horizontalStandardStyle:
-            weatherStyle = chosenWeatherStyle.bottom;
-            horizontalContextLabels.Checked = false;
-            fiveDayWeatherCheckBox.Checked = true;
-            styleOptionsGroup.Visible = true;
-            fullWeatherSummaryBottom.Checked = true;
-            weatherSummaryGroup.Visible = true;
-            horizontalContextLabels.Enabled = true;
-            horizontalStyle.Checked = true;
-            txtMenuPos.Text = "430";            
-            break;
-
-          case chosenMenuStyle.horizontalContextStyle:
-            weatherStyle = chosenWeatherStyle.middle;
-            horizontalContextLabels.Checked = true;
-            fiveDayWeatherCheckBox.Checked = true;
-            styleOptionsGroup.Visible = true;
-            fullWeatherSummaryMiddle.Checked = true;
-            weatherSummaryGroup.Visible = true;
-            horizontalContextLabels.Enabled = true;
-            horizontalStyle2.Checked = true;
-            txtMenuPos.Text = "620";            
-            break;
-        }
-
-      }
-
-      WeatherIconsAnimated.Checked = animatedWeather.Checked;
-      weatherIconsStatic.Checked = !animatedWeather.Checked;
-
     }
 
     private void style1Description_MouseEnter(object sender, EventArgs e)
@@ -1011,22 +1002,6 @@ namespace StreamedMPEditor
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
     }
 
-    private void horizontalContextLabels_CheckedChanged(object sender, EventArgs e)
-    {
-      if (menuStyle == chosenMenuStyle.verticalStyle)
-        return;
-
-      if (horizontalContextLabels.Checked)
-      {
-        menuStyle = chosenMenuStyle.horizontalContextStyle;
-      }
-      else
-      {
-        menuStyle = chosenMenuStyle.horizontalStandardStyle;
-      }
-      syncEditor(sync.editing);
-    }
-
     private void fullWeatherSummaryMiddle_CheckedChanged(object sender, EventArgs e)
     {
       if (menuStyle == chosenMenuStyle.verticalStyle)
@@ -1034,37 +1009,107 @@ namespace StreamedMPEditor
 
       if (fullWeatherSummaryMiddle.Checked)
       {
-        menuStyle = chosenMenuStyle.horizontalContextStyle;
+        weatherStyle = chosenWeatherStyle.middle;
       }
       else
       {
-        menuStyle = chosenMenuStyle.horizontalStandardStyle;
+        weatherStyle = chosenWeatherStyle.bottom;
       }
-      syncEditor(sync.editing);
+
     }
 
-    private void animatedWeather_CheckedChanged(object sender, EventArgs e)
+    private void getBackupFileTotals()
     {
-      if (animatedWeather.Checked)
+      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*");
+      numUPBackups.Text = totalImages.ToString();
+      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+      numBHBackups.Text = totalImages.ToString();
+    }
+
+    private void StreamedMPMenu_Selected(object sender, TabControlEventArgs e)
+    {
+      if (lastUsedTab.Checked)
       {
-        WeatherIconsAnimated.Checked = true;
+        Properties.Settings.Default.rememberLastUsedTab = true;
+        Properties.Settings.Default.lastUsedTab = StreamedMPMenu.SelectedIndex;
       }
-      else
+    }
+
+    private void streamedMpEditor_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      int versionCount = 0;
+      Properties.Settings.Default.autoPurge = autoPurgeBackups.Checked;
+      if (autoPurgeBackups.Checked)
       {
-        weatherIconsStatic.Checked = true;
+        Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
+        Properties.Settings.Default.autoPurge = true;
+
+        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*");
+        foreach (string file in filesToDelete)
+        {
+          if (versionCount >= int.Parse(backupVersionsToKeep.Text))
+            System.IO.File.Delete(file);
+          versionCount++;
+        }
+        versionCount = 0;
+
+        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+        foreach (string file in filesToDelete2)
+        {
+          if (versionCount >= int.Parse(backupVersionsToKeep.Text))
+            System.IO.File.Delete(file);
+          versionCount++;
+        }
       }
+      Properties.Settings.Default.Save();
     }
 
-    private void WeatherIconsAnimated_CheckedChanged(object sender, EventArgs e)
+    private void purgeUPBackups_Click(object sender, EventArgs e)
     {
-      animatedWeather.Checked = WeatherIconsAnimated.Checked;
+      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*");
+      foreach (string file in filesToDelete)
+      {
+        System.IO.File.Delete(file);
+      }
+      getBackupFileTotals();
     }
 
-    private void weatherIconsStatic_CheckedChanged(object sender, EventArgs e)
+    private void purgeBHBackups_Click(object sender, EventArgs e)
     {
-      animatedWeather.Checked = !weatherIconsStatic.Checked;
+      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+      foreach (string file in filesToDelete)
+      {
+        System.IO.File.Delete(file);
+      }
+      getBackupFileTotals();
     }
 
+    private void lastUsedTab_CheckedChanged(object sender, EventArgs e)
+    {
+      Properties.Settings.Default.rememberLastUsedTab = lastUsedTab.Checked;
+    }
+
+    private void showConfigPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if (System.IO.Directory.Exists(mpPaths.configBasePath))
+        System.Diagnostics.Process.Start(mpPaths.configBasePath);
+      else MessageBox.Show("The directory/file does not exist.");
+    }
+
+    private void showMPDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if (System.IO.Directory.Exists(mpPaths.sMPbaseDir))
+        System.Diagnostics.Process.Start(mpPaths.sMPbaseDir);
+      else MessageBox.Show("The directory/file does not exist.");
+
+    }
+
+    private void showSkinDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      if (System.IO.Directory.Exists(mpPaths.streamedMPpath))
+        System.Diagnostics.Process.Start(mpPaths.streamedMPpath);
+      else MessageBox.Show("The directory/file does not exist.");
+    }
 
     public class getAsmVersion
     {

@@ -151,9 +151,14 @@ namespace StreamedMPEditor
       {
         txtNoFocusColour.Text = defUnFocus;
       }
-      
+
+      // Line up all the options this also sets the defaults for the style
+      // which can be overidden by user settings below
+      syncEditor(sync.OnLoad);
+
+
       //
-      // Check and set the Global and Plugin options
+      // Check and set the Global and Plugin options and apply any customization by user
       //
       try
       {
@@ -168,7 +173,7 @@ namespace StreamedMPEditor
         fiveDayWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "fiveDayWeatherCheckBox", nodelist));
         summaryWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "summaryWeatherCheckBox", nodelist));
         cboClearCache.Checked = bool.Parse(readEntryValue(optionsTag, "cboClearCache", nodelist));
-        animatedWeather.Checked = bool.Parse(readEntryValue(optionsTag, "animatedWeather", nodelist));
+        WeatherIconsAnimated.Checked = bool.Parse(readEntryValue(optionsTag, "animatedWeather", nodelist));
         horizontalContextLabels.Checked = bool.Parse(readEntryValue(optionsTag, "horizontalContextLabels", nodelist));
         fullWeatherSummaryBottom.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
         fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
@@ -177,9 +182,10 @@ namespace StreamedMPEditor
       { 
         // Most likley a new option added but not written to file yet - just continue
       }
+      // As only saving the animated state set the static state true if animimated state is false
+      if (!WeatherIconsAnimated.Checked)
+        weatherIconsStatic.Checked = true;
 
-      // Line up all the options
-      syncEditor(sync.OnLoad);
 
       //
       // Read in the menu items

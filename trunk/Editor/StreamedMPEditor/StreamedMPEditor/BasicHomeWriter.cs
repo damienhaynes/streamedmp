@@ -3290,7 +3290,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<texture>homeweatheroverlaybg.png</texture>");
       rawXML.AppendLine("\t</control>");
 
-      if (animatedWeather.Checked)
+      if (WeatherIconsAnimated.Checked)
       {
         rawXML.AppendLine("\t<control>");
         rawXML.AppendLine("\t\t<description>Todays weather image (Animated Version)</description>");
@@ -3446,7 +3446,7 @@ namespace StreamedMPEditor
       string settingFiveDayWeatherCheckBox = fiveDayWeatherCheckBox.Checked ? "true" : "false";
       string settingSummaryWeatherCheckBox = summaryWeatherCheckBox.Checked ? "true" : "false";
       string settingClearCacheOnGenerate = cboClearCache.Checked ? "true" : "false";
-      string settingAnimatedWeather = animatedWeather.Checked ? "true" : "false";
+      string settingAnimatedWeather = WeatherIconsAnimated.Checked ? "true" : "false";
       string settingHorizontalContextLabels = horizontalContextLabels.Checked ? "true" : "false";
       string settingFullWeatherSummaryBottom = fullWeatherSummaryBottom.Checked ? "true" : "false";
       string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
