@@ -1631,17 +1631,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t<width>1280</width>");
           rawXML.AppendLine("\t<height>720</height>");
           rawXML.AppendLine("\t<texture>#infoservice.weather.today.img.big.fullpath</texture>");
-          rawXML.Append("\t<visible>");
-          if (fiveDayWeatherCheckBox.Checked == true)
-          {
-            basicHomeValues.weatherControl = (int.Parse(item.ids[0]) + 200);
-            if (menuStyle == chosenMenuStyle.verticalStyle)
-              generateFiveDayWeatherVertical(basicHomeValues.weatherControl);
-            else if (weatherStyle == chosenWeatherStyle.bottom)
-              generateFiveDayWeatherStyle1(basicHomeValues.weatherControl);
-            else if (weatherStyle == chosenWeatherStyle.middle)
-              generateFiveDayWeatherStyle2(basicHomeValues.weatherControl);
-          }
+          rawXML.Append("\t<visible>");          
         }
         else
         {
@@ -1669,6 +1659,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t<loop>yes</loop>");
           rawXML.Append("\t<visible>");
         }
+        
         for (int i = 0; i < item.ids.Count; i++)
         {
           if (i == 0)
@@ -1680,6 +1671,26 @@ namespace StreamedMPEditor
         rawXML.Append("\n</control>");
       }
       xml = xml.Replace("<!-- BEGIN GENERATED BACKGROUND CODE-->", rawXML.ToString());
+    }
+
+    private void GenerateFiveDayWeather() 
+    {
+      if (fiveDayWeatherCheckBox.Checked == true) 
+      {
+        foreach (backgroundItem item in bgItems) 
+        {
+          if (item.isWeather) 
+          {
+            basicHomeValues.weatherControl = (int.Parse(item.ids[0]) + 200);
+            if (menuStyle == chosenMenuStyle.verticalStyle)
+              generateFiveDayWeatherVertical(basicHomeValues.weatherControl);
+            else if (weatherStyle == chosenWeatherStyle.bottom)
+              generateFiveDayWeatherStyle1(basicHomeValues.weatherControl);
+            else if (weatherStyle == chosenWeatherStyle.middle)
+              generateFiveDayWeatherStyle2(basicHomeValues.weatherControl);
+          }
+        }       
+      }
     }
 
     private void GenerateContextLabelsH()
