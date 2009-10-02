@@ -1893,13 +1893,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t<posX>120</posX>");
       rawXML.AppendLine("\t<posY>60</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("today") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("today") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -1907,13 +1914,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 2 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t<posX>330</posX>");
       rawXML.AppendLine("\t<posY>60</posY>"); 
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day2") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day2") + "</imagepath>"); 
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -1921,13 +1935,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 3 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t<posX>540</posX>");
       rawXML.AppendLine("\t<posY>60</posY>"); 
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day3") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day3") + "</imagepath>"); 
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -1935,13 +1956,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 4 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t<posX>750</posX>");
       rawXML.AppendLine("\t<posY>60</posY>"); 
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day4") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day4") + "</imagepath>"); 
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -1949,13 +1977,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 5 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t<posX>960</posX>");
       rawXML.AppendLine("\t<posY>60</posY>"); 
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day5") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day5") + "</imagepath>"); 
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2387,13 +2422,20 @@ namespace StreamedMPEditor
       // ********************* Weather Icons **************************************
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>" + xPos1.ToString() + "</posX>");
       rawXML.AppendLine("\t\t<posY>" + (yPos1 - 70).ToString() + "</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("today") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("today") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2403,13 +2445,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 2 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>" + (xPos1 + 210).ToString() + "</posX>");
       rawXML.AppendLine("\t\t<posY>" + (yPos1 - 70).ToString() + "</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day2") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day2") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2419,13 +2468,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 3 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>" + xPos2.ToString() + "</posX>");
       rawXML.AppendLine("\t\t<posY>" + (yPos2 - 70).ToString() + "</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day3") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day3") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2435,13 +2491,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 4 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>" + (xPos2 + 210).ToString() + "</posX>");
       rawXML.AppendLine("\t\t<posY>" + (yPos2 - 70).ToString() + "</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day4") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day4") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2451,13 +2514,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 5 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>" + (xPos2 + 420).ToString() + "</posX>");
       rawXML.AppendLine("\t\t<posY>" + (yPos2 - 70).ToString() + "</posY>");
       rawXML.AppendLine("\t\t<height>180</height>");
       rawXML.AppendLine("\t\t<width>180</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day5") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day5") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2468,7 +2538,7 @@ namespace StreamedMPEditor
 
 
       rawXML.AppendLine("\n<control>");
-      rawXML.AppendLine("\t<description>GROUP: FULL WEATHER ICONS (Animated)</description>");
+      rawXML.AppendLine("\t<description>GROUP: FULL WEATHER DETAILS</description>");
       rawXML.AppendLine("\t<type>group</type>");
       rawXML.AppendLine("\t<dimColor>0xffffffff</dimColor>");
       rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
@@ -2895,13 +2965,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>140</posX>");
       rawXML.AppendLine("\t\t<posY>540</posY>");
       rawXML.AppendLine("\t\t<height>80</height>");
       rawXML.AppendLine("\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("today") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("today") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -2972,13 +3049,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 2 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>350</posX>");
       rawXML.AppendLine("\t\t<posY>540</posY>");
       rawXML.AppendLine("\t\t<height>80</height>");
       rawXML.AppendLine("\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day2") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day2") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>");
@@ -3049,13 +3133,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 3 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>560</posX>");
       rawXML.AppendLine("\t\t<posY>540</posY>");
       rawXML.AppendLine("\t\t<height>80</height>");
       rawXML.AppendLine("\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day3") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day3") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>"); rawXML.AppendLine("\t</control>");
@@ -3125,13 +3216,20 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 4 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>770</posX>");
       rawXML.AppendLine("\t\t<posY>540</posY>");
       rawXML.AppendLine("\t\t<height>80</height>");
       rawXML.AppendLine("\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day4") + "</texture>");
       rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day4") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>"); rawXML.AppendLine("\t</control>");
@@ -3201,14 +3299,21 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 5 ICON</description>");
-      rawXML.AppendLine("\t\t<type>multiimage</type>");
+      if (WeatherIconsAnimated.Checked)
+      {
+        rawXML.AppendLine("\t\t<type>multiimage</type>");
+      }
+      else
+      {
+        rawXML.AppendLine("\t\t<type>image</type>");
+      }
       rawXML.AppendLine("\t\t<id>0</id>");
       rawXML.AppendLine("\t\t<posX>980</posX>");
       rawXML.AppendLine("\t\t<posY>540</posY>");
       rawXML.AppendLine("\t\t<height>80</height>");
       rawXML.AppendLine("\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t<texture>-</texture>");
-      rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day4") + "</imagepath>");
+      rawXML.AppendLine("\t\t<texture>" + weatherIcon("day5") + "</texture>");
+      rawXML.AppendLine("\t\t<imagepath>" + weatherIcon("day5") + "</imagepath>");
       rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
       rawXML.AppendLine("\t\t<loop>True</loop>"); rawXML.AppendLine("\t</control>");
 
