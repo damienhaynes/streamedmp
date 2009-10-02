@@ -834,11 +834,13 @@ namespace StreamedMPEditor
     {
       if (WeatherIconsAnimated.Checked)
       {
-        return mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
+        // relative from Animations folder
+        return "weathericons\\animated\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
       }
       else
       {
-        return mpPaths.streamedMPpath + "media\\animations\\weathericons\\static\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext.png";
+        // relative from Media folder
+        return "animations\\weathericons\\static\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext.png";
       }
     }
 
