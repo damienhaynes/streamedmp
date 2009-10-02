@@ -3446,10 +3446,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<description>Todays Weather Condition</description>");
       rawXML.AppendLine("\t\t<type>textbox</type>");
       rawXML.AppendLine("\t\t<id>1</id>");
-      rawXML.AppendLine("\t\t<width>400</width>");
+      rawXML.AppendLine("\t\t<width>150</width>");
       rawXML.AppendLine("\t\t<height>50</height>");
       rawXML.AppendLine("\t\t<align>right</align>");
-      rawXML.AppendLine("\t\t<posX>1048</posX>");
+      rawXML.AppendLine("\t\t<posX>1055</posX>");
       rawXML.AppendLine("\t\t<posY>15</posY>");
       rawXML.AppendLine("\t\t<font>mediastream10tc</font>");
       rawXML.AppendLine("\t\t<label>#infoservice.weather.today.condition</label>");
