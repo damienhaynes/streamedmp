@@ -599,6 +599,7 @@ namespace StreamedMPEditor
       System.IO.StreamWriter writer;
       generateXML(direction);
       generateBg(direction);
+      GenerateFiveDayWeather();
       if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled) generateWeathersummary();
       if (direction == menuType.horizontal)
       {
