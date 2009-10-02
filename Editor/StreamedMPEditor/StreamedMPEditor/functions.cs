@@ -933,8 +933,7 @@ namespace StreamedMPEditor
           horizontalContextLabels.Enabled = false;
           weatherSummaryGroup.Visible = false;
           verticalStyle.Checked = true;
-          weatherIconsStatic.Checked = true;
-          weatherBGlink.Checked = true;
+          weatherIconsStatic.Checked = true;          
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "350";
           menuPosLabel.Text = "Menu X Position:";
@@ -949,8 +948,7 @@ namespace StreamedMPEditor
           horizontalContextLabels.Enabled = true;
           horizontalStyle.Checked = true;
           weatherIconsStatic.Checked = true;
-          weatherSummaryGroup.Visible = true;
-          weatherBGlink.Checked = true;
+          weatherSummaryGroup.Visible = true;          
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "430";
           break;
@@ -964,8 +962,7 @@ namespace StreamedMPEditor
           horizontalContextLabels.Enabled = true;
           horizontalStyle2.Checked = true;
           weatherIconsStatic.Checked = true;
-          weatherSummaryGroup.Visible = true;
-          weatherBGlink.Checked = true;
+          weatherSummaryGroup.Visible = true;          
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "620";
           break;
