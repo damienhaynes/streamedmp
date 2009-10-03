@@ -64,7 +64,7 @@
 #define TVSERIES_SINGLEIMAGE_OPTION		"Main\\tvseriesSingleImageIcons"
 
 // Program executable defines
-#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^SKIN_NAME^"streamedmp_editor.exe"
+#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^SKIN_NAME^"streamedmpeditor.exe"
 #define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
 #define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
@@ -749,8 +749,8 @@ begin
     
 	Disable(STATUSEX);
 
-	bOpt1  = TRUE;
-	bOpt2  = FALSE;
+	bOpt1  = FALSE;
+	bOpt2  = TRUE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
 	szOption1 = "&Launch Home Page in default Browser";
 	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) && g_bStartBasicHome then
