@@ -132,8 +132,7 @@
       this.pictureBox3 = new System.Windows.Forms.PictureBox();
       this.editingInfo = new System.Windows.Forms.TabPage();
       this.editorOptionsGroup = new System.Windows.Forms.GroupBox();
-      this.groupBox5 = new System.Windows.Forms.GroupBox();
-      this.backupVersionsToKeep = new System.Windows.Forms.Label();
+      this.autoBackupGroup = new System.Windows.Forms.GroupBox();
       this.label5 = new System.Windows.Forms.Label();
       this.autoPurgeBackups = new System.Windows.Forms.CheckBox();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -179,6 +178,7 @@
       this.pluginSelectionGroup = new System.Windows.Forms.GroupBox();
       this.useInfoService = new System.Windows.Forms.RadioButton();
       this.useRSSTicker = new System.Windows.Forms.RadioButton();
+      this.backupVersionsToKeep = new System.Windows.Forms.TextBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -210,7 +210,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
       this.editingInfo.SuspendLayout();
       this.editorOptionsGroup.SuspendLayout();
-      this.groupBox5.SuspendLayout();
+      this.autoBackupGroup.SuspendLayout();
       this.groupBox4.SuspendLayout();
       this.aboutBoxGroup.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -1337,7 +1337,7 @@
       // 
       // editorOptionsGroup
       // 
-      this.editorOptionsGroup.Controls.Add(this.groupBox5);
+      this.editorOptionsGroup.Controls.Add(this.autoBackupGroup);
       this.editorOptionsGroup.Controls.Add(this.groupBox4);
       this.editorOptionsGroup.Controls.Add(this.lastUsedTab);
       this.editorOptionsGroup.Location = new System.Drawing.Point(28, 158);
@@ -1347,27 +1347,17 @@
       this.editorOptionsGroup.TabStop = false;
       this.editorOptionsGroup.Text = "Editor Options";
       // 
-      // groupBox5
+      // autoBackupGroup
       // 
-      this.groupBox5.Controls.Add(this.backupVersionsToKeep);
-      this.groupBox5.Controls.Add(this.label5);
-      this.groupBox5.Controls.Add(this.autoPurgeBackups);
-      this.groupBox5.Location = new System.Drawing.Point(216, 19);
-      this.groupBox5.Name = "groupBox5";
-      this.groupBox5.Size = new System.Drawing.Size(206, 77);
-      this.groupBox5.TabIndex = 58;
-      this.groupBox5.TabStop = false;
-      this.groupBox5.Text = "Backup AutoPurge Options";
-      // 
-      // backupVersionsToKeep
-      // 
-      this.backupVersionsToKeep.AutoSize = true;
-      this.backupVersionsToKeep.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-      this.backupVersionsToKeep.Location = new System.Drawing.Point(13, 46);
-      this.backupVersionsToKeep.Name = "backupVersionsToKeep";
-      this.backupVersionsToKeep.Size = new System.Drawing.Size(33, 15);
-      this.backupVersionsToKeep.TabIndex = 2;
-      this.backupVersionsToKeep.Text = "5      ";
+      this.autoBackupGroup.Controls.Add(this.backupVersionsToKeep);
+      this.autoBackupGroup.Controls.Add(this.label5);
+      this.autoBackupGroup.Controls.Add(this.autoPurgeBackups);
+      this.autoBackupGroup.Location = new System.Drawing.Point(216, 19);
+      this.autoBackupGroup.Name = "autoBackupGroup";
+      this.autoBackupGroup.Size = new System.Drawing.Size(206, 77);
+      this.autoBackupGroup.TabIndex = 58;
+      this.autoBackupGroup.TabStop = false;
+      this.autoBackupGroup.Text = "Backup AutoPurge Options";
       // 
       // label5
       // 
@@ -1811,6 +1801,14 @@
       this.useRSSTicker.Text = "MP-RSSTicker";
       this.useRSSTicker.UseVisualStyleBackColor = true;
       // 
+      // backupVersionsToKeep
+      // 
+      this.backupVersionsToKeep.Location = new System.Drawing.Point(13, 42);
+      this.backupVersionsToKeep.Name = "backupVersionsToKeep";
+      this.backupVersionsToKeep.Size = new System.Drawing.Size(32, 20);
+      this.backupVersionsToKeep.TabIndex = 2;
+      this.backupVersionsToKeep.Text = "5";
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1873,8 +1871,8 @@
       this.editingInfo.ResumeLayout(false);
       this.editorOptionsGroup.ResumeLayout(false);
       this.editorOptionsGroup.PerformLayout();
-      this.groupBox5.ResumeLayout(false);
-      this.groupBox5.PerformLayout();
+      this.autoBackupGroup.ResumeLayout(false);
+      this.autoBackupGroup.PerformLayout();
       this.groupBox4.ResumeLayout(false);
       this.groupBox4.PerformLayout();
       this.aboutBoxGroup.ResumeLayout(false);
@@ -2028,8 +2026,7 @@
     private System.Windows.Forms.Button purgeUPBackups;
     private System.Windows.Forms.GroupBox editorOptionsGroup;
     private System.Windows.Forms.GroupBox groupBox4;
-    private System.Windows.Forms.GroupBox groupBox5;
-    private System.Windows.Forms.Label backupVersionsToKeep;
+    private System.Windows.Forms.GroupBox autoBackupGroup;
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.CheckBox autoPurgeBackups;
     private System.Windows.Forms.LinkLabel showSkinDir;
@@ -2039,6 +2036,7 @@
     private System.Windows.Forms.Label label10;
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label6;
+    private System.Windows.Forms.TextBox backupVersionsToKeep;
   }
 }
 
