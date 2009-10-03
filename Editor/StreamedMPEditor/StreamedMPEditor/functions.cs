@@ -60,6 +60,13 @@ namespace StreamedMPEditor
         infoserviceOptions.Enabled = false;
       }
 
+      // Only support Verion 1.2.0.0 and greater for Twitter
+      if (infoServiceVer.CompareTo(baseISVerTwitter) < 0)
+      {
+        enableTwitter.Checked = false;
+        enableTwitter.Enabled = false;
+        enableTwitter.Text += " (Disabled - Version 1.2.0.0 or greater required)";
+     }
 
       if (rssTickerVer == "MP-RSSTicker Not Installed")
       {
@@ -505,8 +512,8 @@ namespace StreamedMPEditor
       basicHomeValues.offsetSubmenu = 76;
       basicHomeValues.offsetRssImage = 76;
       basicHomeValues.offsetRssText = 75;
-      basicHomeValues.offsetTwitter = 51;
-      basicHomeValues.offsetTwitterImage = 32;
+      basicHomeValues.offsetTwitter = 55;
+      basicHomeValues.offsetTwitterImage = 28;
       basicHomeValues.offsetButtons = 42;
       basicHomeValues.menuHeight = 165;
       basicHomeValues.subMenuHeight = 60;
@@ -532,6 +539,8 @@ namespace StreamedMPEditor
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
+          basicHomeValues.mymenu_submenutop = "hometwitter.png";
+          basicHomeValues.offsetTwitter = 0;
           break;
         case chosenMenuStyle.horizontalStandardStyle:
           if (horizontalContextLabels.Checked)
@@ -545,6 +554,9 @@ namespace StreamedMPEditor
           basicHomeValues.menuHeight += 33;
           basicHomeValues.offsetMymenu -= 24;
           basicHomeValues.offsetButtons += 16;
+          basicHomeValues.offsetTwitter += 15;
+          basicHomeValues.offsetTwitterImage += 15;
+
           break;
       }
 
@@ -830,17 +842,22 @@ namespace StreamedMPEditor
 
     }
 
-    private string weatherIcon(string theDay)
+    private string weatherIcon(int theDay)
     {
+      string day;
+      if (theDay == 0)
+        day = "today";
+      else
+        day = "day" + (theDay + 1).ToString();
       if (WeatherIconsAnimated.Checked)
       {
         // relative from Animations folder
-        return "weathericons\\animated\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext"; 
+        return "weathericons\\animated\\128x128\\#infoservice.weather." + day + ".img.big.filenamewithoutext"; 
       }
       else
       {
         // relative from Media folder
-        return "animations\\weathericons\\static\\128x128\\#infoservice.weather." + theDay + ".img.big.filenamewithoutext.png";
+        return "animations\\weathericons\\static\\128x128\\#infoservice.weather." + day + ".img.big.filenamewithoutext.png";
       }
     }
 
