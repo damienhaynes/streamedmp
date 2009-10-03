@@ -115,11 +115,6 @@ namespace StreamedMPEditor
       }
       catch { }
 
-      if (menuStyle == chosenMenuStyle.verticalStyle)
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
-      else
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
-
       // Get the Focus Colour and set the background on the control
       focusAlpha.Text = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
       try
@@ -183,6 +178,12 @@ namespace StreamedMPEditor
         // Most likley a new option added but not written to file yet - just continue
       }
       // As only saving the animated state set the static state true if animimated state is false
+
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+      else
+        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+
       if (!WeatherIconsAnimated.Checked)
         weatherIconsStatic.Checked = true;
 

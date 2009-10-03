@@ -74,6 +74,7 @@ namespace StreamedMPEditor
 
     string dropShadowColor = "1d1f1b";
     string baseISVer = "0.9.9.3";
+    string baseISVerTwitter = "1.2.0.0";
     string isSeperatorVer = "1.1.0.0";
     string mpReleaseVersion = "1.0.2.22555";
 
@@ -151,20 +152,29 @@ namespace StreamedMPEditor
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
 
-          string mpVersion = getMediaPortalVersion();
-          if (mpVersion.CompareTo(mpReleaseVersion) > 0)
-            wrapString.Enabled = true;
-          else
-            wrapString.Enabled = false;
+
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
         }
+
         loadMenuSettings();
         itemsOnMenubar.SelectedIndex = 0;
         screenReset();
         setScreenProperties(itemsOnMenubar.SelectedIndex);
         editButton.Enabled = true;
         GetDefaultBackgroundImages();
+
+        string mpVersion = getMediaPortalVersion();
+        if (mpVersion.CompareTo(mpReleaseVersion) > 0)
+          wrapString.Enabled = true;
+        else
+        {
+          wrapString.Enabled = false;
+          WeatherIconsAnimated.Enabled = false;
+          WeatherIconsAnimated.Checked = false;
+          weatherIconsStatic.Checked = true;
+        }
+
         if (useRSSTicker.Checked)
         {
           if (!pluginEnabled("MP-RSSTicker"))
@@ -627,6 +637,7 @@ namespace StreamedMPEditor
         else if (direction == menuType.vertical)
         {
           generateRSSTickerV();
+          if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitterV();
         }         
       }
 

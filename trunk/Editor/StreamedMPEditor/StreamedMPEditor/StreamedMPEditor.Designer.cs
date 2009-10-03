@@ -415,10 +415,10 @@
       this.WeatherIconsAnimated.AutoSize = true;
       this.WeatherIconsAnimated.Location = new System.Drawing.Point(279, 135);
       this.WeatherIconsAnimated.Name = "WeatherIconsAnimated";
-      this.WeatherIconsAnimated.Size = new System.Drawing.Size(168, 17);
+      this.WeatherIconsAnimated.Size = new System.Drawing.Size(162, 17);
       this.WeatherIconsAnimated.TabIndex = 6;
       this.WeatherIconsAnimated.TabStop = true;
-      this.WeatherIconsAnimated.Text = "Animated (Optional Download)";
+      this.WeatherIconsAnimated.Text = "Animated (MP 1.1 or Greater)";
       this.WeatherIconsAnimated.UseVisualStyleBackColor = true;
       // 
       // pictureBox2
@@ -1099,7 +1099,6 @@
       // enableTwitter
       // 
       this.enableTwitter.AutoSize = true;
-      this.enableTwitter.Enabled = false;
       this.enableTwitter.Location = new System.Drawing.Point(14, 42);
       this.enableTwitter.Name = "enableTwitter";
       this.enableTwitter.Size = new System.Drawing.Size(94, 17);
