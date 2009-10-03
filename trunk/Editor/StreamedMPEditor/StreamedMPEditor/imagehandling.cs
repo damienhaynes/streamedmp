@@ -25,6 +25,7 @@ namespace StreamedMPEditor
     {
       Image workingImage = null;
       Label[] bgLabels = new Label[bgItems.Count];
+      Label[] bgCount = new Label[bgItems.Count];
       Button[] bgButtons = new Button[bgItems.Count];
       ToolTip labelsToolTip; 
       
@@ -40,6 +41,7 @@ namespace StreamedMPEditor
       {
         PictureBox newPBox = new PictureBox();
         Label newBGlabel = new Label();
+        Label newBGCount = new Label();
         Button newBGButton = new Button();
         labelsToolTip = new ToolTip(new System.ComponentModel.Container());
 
@@ -52,6 +54,9 @@ namespace StreamedMPEditor
           string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))), "*.*");
           createDefaultJpg(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
         }
+
+        totalImages = Directory.GetFiles(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11)))).Length;
+
         workingImage = Image.FromFile(imageDir(bgItem.image));
         newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
         defImgs.picBoxes[pBoxElement] = newPBox;
@@ -63,7 +68,7 @@ namespace StreamedMPEditor
         if (bgItem.mname.Count > 1)
         {
           string toolTipString = "This is a shared background Folder\nbetween these menu entries\n\n";
-          for (int i = 0 ; i < bgItem.mname.Count; ++i)
+          for (int i = 0; i < bgItem.mname.Count; ++i)
           {
             toolTipString += "Menu Item: " + bgItem.mname[i] + "\n";
           }
@@ -74,25 +79,38 @@ namespace StreamedMPEditor
           newBGlabel.Text = bgItem.mname[0] + " +";
         }
         else
-        newBGlabel.Text = bgItem.mname[0];
+          newBGlabel.Text = bgItem.mname[0];
+
         newBGlabel.Font = new Font(newBGlabel.Font, FontStyle.Bold);
         bgLabels[pBoxElement] = newBGlabel;
         defaultBackgrounds.Controls.Add(bgLabels[pBoxElement]);
 
+        //Create numbe of files label
+        newBGCount.Location = new Point(xPos, (yPos + 82));
+        newBGCount.Size = new Size(160, 15);
+        newBGCount.Text = "Images Avaiable: " + (totalImages - 1).ToString();
+        //newBGCount.Font = new Font(newBGCount.Font, FontStyle.Bold);
+        bgCount[pBoxElement] = newBGCount;
+        defaultBackgrounds.Controls.Add(bgCount[pBoxElement]);
+
         //Create change button
-        newBGButton.Size = new Size(61,21);
-        newBGButton.Location = new Point((xPos +97) , (yPos - 24));
+        newBGButton.Size = new Size(61, 21);
+        newBGButton.Location = new Point((xPos + 97), (yPos - 24));
         newBGButton.Text = "Change";
         newBGButton.Tag = pBoxElement.ToString();
         newBGButton.Click += new System.EventHandler(bgChangeButton_Click);
         newBGButton.Name = bgItem.mname[0];
+        if (totalImages < 3)
+          newBGButton.Enabled = false;
+        else
+          newBGButton.Enabled = true;
 
         bgButtons[pBoxElement] = newBGButton;
         defaultBackgrounds.Controls.Add(bgButtons[pBoxElement]);
 
         // Increment the position and pointer counters - currently supports 12 backgrounds
         pBoxElement++;
-        xPos+= 185;
+        xPos += 185;
         if (pBoxElement == 4)
         {
           yPos += 126;
@@ -131,6 +149,7 @@ namespace StreamedMPEditor
       }
 
       //add the next and previous buttons
+      nextBatch.Enabled = false;
       nextBatch.Location = new Point(500, 90);
       nextBatch.Size = new Size(60, 20);
       nextBatch.Text = "Next";
@@ -138,11 +157,14 @@ namespace StreamedMPEditor
       nextBatch.Click += new System.EventHandler(nextButton_Click);
       selectPanel.Controls.Add(nextBatch);
 
+      prevBatch.Enabled = false;
       prevBatch.Location = new Point(200, 90);
       prevBatch.Size = new Size(60, 20);
       prevBatch.UseVisualStyleBackColor = true;
       prevBatch.Text = "Previous";
       prevBatch.Click += new System.EventHandler(prevButton_Click);
+      if (totalImages > 3)
+        prevBatch.Enabled = true;
       selectPanel.Controls.Add(prevBatch);
   
       imgCancel.Location = new Point(350, 90);
@@ -189,9 +211,12 @@ namespace StreamedMPEditor
             defImgs.newDefault[imagePointer] = fileList[imagePointer];
             defImgs.NewPicBoxes[imagePointer].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
           }
-
         }
       }
+
+      if (totalImages > 3)
+        nextBatch.Enabled = true;
+      prevBatch.Enabled = false; 
       selectPanel.Visible = true;
     }
 
@@ -252,10 +277,28 @@ namespace StreamedMPEditor
           string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
           for (int i = 0; i < 3; i++)
           {
-            workingImage = Image.FromFile(fileList[imagePointer]);
-            defImgs.newDefault[i] = fileList[imagePointer];
-            defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+            if (imagePointer < fileList.Length)
+            {
+              workingImage = Image.FromFile(fileList[imagePointer]);
+              defImgs.newDefault[i] = fileList[imagePointer];
+              defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+              defImgs.NewPicBoxes[i].Visible = true;
+
+            }
+            else
+            {
+              defImgs.NewPicBoxes[i].Image = null;
+              defImgs.NewPicBoxes[i].Visible = false;
+              nextBatch.Enabled = false;
+            }
             imagePointer++;
+            if (imagePointer > 3)
+              prevBatch.Enabled = true;
+            else
+              prevBatch.Enabled = false; 
+
+            if (fileList.Length == imagePointer)
+              nextBatch.Enabled = false; ;
           }
         }
       }
@@ -265,9 +308,13 @@ namespace StreamedMPEditor
       Image workingImage = null;
       string ctrlName = ((Button)sender).Name.Substring(6, ((Button)sender).Name.Length - 6);
       if ((imagePointer - 6) >= 0)
+      {
         imagePointer -= 6;
+      }
       else
+      {
         imagePointer = 0;
+      }
 
       foreach (backgroundItem bgItem in bgItems)
       {
@@ -276,6 +323,8 @@ namespace StreamedMPEditor
           string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
           for (int i = 0; i < 3; i++)
           {
+            defImgs.NewPicBoxes[i].Visible = true;
+            nextBatch.Enabled = true;
             workingImage = Image.FromFile(fileList[imagePointer]);
             defImgs.newDefault[i] = fileList[imagePointer];
             defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
@@ -283,6 +332,8 @@ namespace StreamedMPEditor
           }
         }
       }
+      if (imagePointer <= 3)
+        prevBatch.Enabled = false;
     }
 
     private void createDefaultJpg(string imageDir)
