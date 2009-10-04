@@ -133,6 +133,7 @@
       this.editingInfo = new System.Windows.Forms.TabPage();
       this.editorOptionsGroup = new System.Windows.Forms.GroupBox();
       this.autoBackupGroup = new System.Windows.Forms.GroupBox();
+      this.backupVersionsToKeep = new System.Windows.Forms.TextBox();
       this.label5 = new System.Windows.Forms.Label();
       this.autoPurgeBackups = new System.Windows.Forms.CheckBox();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -178,7 +179,6 @@
       this.pluginSelectionGroup = new System.Windows.Forms.GroupBox();
       this.useInfoService = new System.Windows.Forms.RadioButton();
       this.useRSSTicker = new System.Windows.Forms.RadioButton();
-      this.backupVersionsToKeep = new System.Windows.Forms.TextBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -769,7 +769,7 @@
       this.removeButton.TabIndex = 110;
       this.removeButton.Text = "<< Remove";
       this.removeButton.UseVisualStyleBackColor = true;
-			this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+      this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
       // 
       // addButton
       // 
@@ -1360,6 +1360,14 @@
       this.autoBackupGroup.TabStop = false;
       this.autoBackupGroup.Text = "Backup AutoPurge Options";
       // 
+      // backupVersionsToKeep
+      // 
+      this.backupVersionsToKeep.Location = new System.Drawing.Point(13, 42);
+      this.backupVersionsToKeep.Name = "backupVersionsToKeep";
+      this.backupVersionsToKeep.Size = new System.Drawing.Size(32, 20);
+      this.backupVersionsToKeep.TabIndex = 2;
+      this.backupVersionsToKeep.Text = "5";
+      // 
       // label5
       // 
       this.label5.AutoSize = true;
@@ -1794,21 +1802,12 @@
       // useRSSTicker
       // 
       this.useRSSTicker.AutoSize = true;
-      this.useRSSTicker.Enabled = false;
       this.useRSSTicker.Location = new System.Drawing.Point(21, 55);
       this.useRSSTicker.Name = "useRSSTicker";
       this.useRSSTicker.Size = new System.Drawing.Size(96, 17);
       this.useRSSTicker.TabIndex = 0;
       this.useRSSTicker.Text = "MP-RSSTicker";
       this.useRSSTicker.UseVisualStyleBackColor = true;
-      // 
-      // backupVersionsToKeep
-      // 
-      this.backupVersionsToKeep.Location = new System.Drawing.Point(13, 42);
-      this.backupVersionsToKeep.Name = "backupVersionsToKeep";
-      this.backupVersionsToKeep.Size = new System.Drawing.Size(32, 20);
-      this.backupVersionsToKeep.TabIndex = 2;
-      this.backupVersionsToKeep.Text = "5";
       // 
       // streamedMpEditor
       // 
