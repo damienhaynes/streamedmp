@@ -116,7 +116,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<onleft>" + (onleft + 800).ToString() + "</onleft>");
                 rawXML.AppendLine("\t<onright>" + (onright + 700).ToString() + "</onright>");
                 rawXML.AppendLine("\t<onup>" + (menItem.id + 600).ToString() + "01</onup>");
-                rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
+                //rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
                 rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menItem.id + 700).ToString() + ")</visible>");
                 rawXML.AppendLine("</control>");
                 break;
@@ -146,7 +146,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<onleft>" + (onleft + 800).ToString() + "</onleft>");
                 rawXML.AppendLine("\t<onright>" + (onright + 700).ToString() + "</onright>");
                 rawXML.AppendLine("\t<onup>" + (menItem.id + 600).ToString() + "01</onup>");
-                rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
+                //rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
                 rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menItem.id + 800).ToString() + ")</visible>");
                 rawXML.AppendLine("</control>");
                 break;
@@ -945,7 +945,7 @@ namespace StreamedMPEditor
 
 
 
-    private void generateRSSTicker(string visibleTag)
+    private void generateRSSTicker()
     {
       StringBuilder rawXML = new StringBuilder();
 
@@ -959,18 +959,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<posX>60</posX>");
       rawXML.AppendLine("\t<texture>#infoservice.feed.img</texture>");
       rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
-      rawXML.AppendLine("</control>");
-
-      rawXML.AppendLine("\n<control>");
-      rawXML.AppendLine("\t<description>RSS Highlight Feed image</description>");
-      rawXML.AppendLine("\t<type>image</type>");
-      rawXML.AppendLine("\t<id>1</id>");
-      rawXML.AppendLine("\t<width>70</width>");
-      rawXML.AppendLine("\t<height>15</height>");
-      rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage).ToString() + "</posY>");
-      rawXML.AppendLine("\t<posX>60</posX>");
-      rawXML.AppendLine("\t<texture>rsshlt.png</texture>");
-      rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+" + visibleTag + "</visible>");
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
@@ -1024,79 +1012,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED RSS TICKER CODE-->", rawXML.ToString());
-
-    }
-
-    private void generateRSSButton()
-    {
-      StringBuilder rawXML = new StringBuilder();
-
-      string infoserviceVisiblebackground = "<visible>";
-      string infoserviceRssButtonHighlight = null;
-
-      foreach (menuItem menItem in menuItems)
-      {
-        String topMenuId = (menItem.id + 700).ToString();
-
-        rawXML.AppendLine("\n<control>\n\t<description>RSS Button " + menItem.name + "</description>");
-        rawXML.AppendLine("\t<type>group</type>");
-        rawXML.AppendLine("\t<control>");
-        rawXML.AppendLine("\t<description>Dummy label indicating " + menItem.name + " menu visibility</description>");
-        rawXML.AppendLine("\t<id>" + (menItem.id + 300).ToString() + "</id>");
-        rawXML.AppendLine("\t<type>label</type>");
-        rawXML.AppendLine("\t<posX>100</posX>");
-        rawXML.AppendLine("\t<posY>-100</posY>");
-        rawXML.AppendLine("\t<width>500</width>");
-        rawXML.AppendLine("\t<height>0</height>");
-        rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
-        rawXML.AppendLine("\t<visible>Control.HasFocus(" + topMenuId + "01)</visible>");
-        rawXML.AppendLine("</control>");
-
-        rawXML.AppendLine("<control>");
-        rawXML.AppendLine("\t<description>RSS Highlight Button</description>");
-        rawXML.AppendLine("\t<type>button</type>");
-        rawXML.AppendLine("\t<id>" + topMenuId + "01</id>");
-        rawXML.AppendLine("\t<posX>60</posX>");
-        rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage).ToString() + "</posY>");
-        rawXML.AppendLine("\t<width>70</width>");
-        rawXML.AppendLine("\t<height>28</height>");
-        rawXML.AppendLine("\t<textureFocus>-</textureFocus>");
-        rawXML.AppendLine("\t<textureNoFocus>-</textureNoFocus>");
-        rawXML.AppendLine("\t<label>-</label>");
-        rawXML.AppendLine("\t<hyperlink>16001</hyperlink>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-
-        rawXML.AppendLine("\t<onup>" + (menItem.id + 700).ToString() + "</onup>");
-        rawXML.AppendLine("\t<onleft>" + topMenuId + "01</onleft>");
-        rawXML.AppendLine("\t<onright>" + topMenuId + "01</onright>");
-        rawXML.AppendLine("\t<ondown>" + topMenuId + "01</ondown>");
-
-        rawXML.AppendLine("\t<visible>Control.IsVisible(" + menItem.id + ")</visible>");
-        ;
-        if (((int)menItem.id - 1000) < (menuItems.Count - 1))
-        {
-          infoserviceVisiblebackground = infoserviceVisiblebackground + "Control.IsVisible(" + (menItem.id + 300).ToString() + ")|";
-          infoserviceRssButtonHighlight = infoserviceRssButtonHighlight + "Control.HasFocus(" + topMenuId + "01)|";
-        }
-        else
-        {
-          infoserviceVisiblebackground = infoserviceVisiblebackground + "Control.IsVisible(" + (menItem.id + 300).ToString() + ")</visible>";
-          infoserviceRssButtonHighlight = infoserviceRssButtonHighlight + "Control.HasFocus(" + topMenuId + "01)";
-        }
-
-        rawXML.AppendLine("</control>");
-
-
-        rawXML.AppendLine("</control> <!-- /RSS button " + menItem.name + " -->\n\n");
-      }
-      generateInfoservice(infoserviceVisiblebackground);
-      generateRSSTicker(infoserviceRssButtonHighlight);
-
-      xml = xml.Replace("<!-- BEGIN GENERATED RSS BUTTON CODE -->", rawXML.ToString());
     }
 
     private void generateTopBarV()
@@ -1504,7 +1419,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<onleft>" + (menuItems[second].id + 800).ToString() + "</onleft>");
       rawXML.AppendLine("\t<onright>" + (menuItems[third].id + 700).ToString() + "</onright>");
       rawXML.AppendLine("\t<onup>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onup>");
-      rawXML.AppendLine("\t<ondown>" + (menuItems[basicHomeValues.defaultId].id + 700).ToString() + "01</ondown>");
+      //rawXML.AppendLine("\t<ondown>" + (menuItems[basicHomeValues.defaultId].id + 700).ToString() + "01</ondown>");
       rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("</control>	");
       // ************ FIRST
@@ -3111,27 +3026,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED WEATHER SUMMARY CODE-->", rawXML.ToString());
-    }
-
-    private void generateInfoservice(string visibleTag)
-    {
-      StringBuilder rawXML = new StringBuilder();
-
-      rawXML.AppendLine("\n<control>");
-      rawXML.AppendLine("\t<description>Infoservice Background</description>");
-      rawXML.AppendLine("\t<id>1206</id>");
-      rawXML.AppendLine("\t<type>image</type>");
-      rawXML.AppendLine("\t<posx>0</posx>");
-      rawXML.AppendLine("\t<posy>0</posy>");
-      rawXML.AppendLine("\t<width>1280</width>");
-      rawXML.AppendLine("\t<height>720</height>");
-      rawXML.AppendLine("\t<texture>infoservicerssbg.png</texture>");
-      rawXML.AppendLine("\t<visible>" + visibleTag + "</visible>");
-      rawXML.AppendLine("</control>");
-
-
-      xml = xml.Replace("<!-- BEGIN GENERATED INFOSERVICE CODE -->", rawXML.ToString());
-
     }
 
     private void generateTwitter()

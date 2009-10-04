@@ -631,7 +631,7 @@ namespace StreamedMPEditor
       {
         if (direction == menuType.horizontal)
         {
-          generateRSSButton();
+          generateRSSTicker();
           if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitter();
         }
         else if (direction == menuType.vertical)
