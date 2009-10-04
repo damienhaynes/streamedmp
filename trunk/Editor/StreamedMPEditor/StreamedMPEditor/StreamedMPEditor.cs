@@ -77,6 +77,7 @@ namespace StreamedMPEditor
     string baseISVerTwitter = "1.2.0.0";
     string isSeperatorVer = "1.1.0.0";
     string mpReleaseVersion = "1.0.2.22555";
+    string ticker = "#rssticker";
 
     string defFocus = "FFFFFF";
     string defUnFocus = "C0C0C0";
