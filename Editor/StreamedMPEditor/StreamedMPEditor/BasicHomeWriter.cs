@@ -1642,19 +1642,18 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<imagepath>" + item.folder + "</imagepath>");
             rawXML.AppendLine("\t\t\t<timeperimage>" + (int.Parse(item.timeperimage) * 1000).ToString() + "</timeperimage>");
             rawXML.AppendLine("\t\t\t<randomize>" + item.random.ToString() + "</randomize>");
+			rawXML.AppendLine("\t\t\t<fadetime>800</fadetime>");
+			rawXML.AppendLine("\t\t\t<loop>yes</loop>");
           }
           else
           {
             rawXML.AppendLine("\t\t\t<type>image</type>");
             rawXML.AppendLine("\t\t\t<texture>" + item.image + "</texture>");
-          }
-          rawXML.AppendLine("\t\t\t<type>multiimage</type>");
+          }          
           rawXML.AppendLine("\t\t\t<posx>0</posx>");
           rawXML.AppendLine("\t\t\t<posy>0</posy>");
-          rawXML.AppendLine("\t\t\t<width>1366</width>");
-          rawXML.AppendLine("\t\t\t<height>768</height>");
-          rawXML.AppendLine("\t\t\t<fadetime>800</fadetime>");
-          rawXML.AppendLine("\t\t\t<loop>yes</loop>");
+          rawXML.AppendLine("\t\t\t<width>1280</width>");
+          rawXML.AppendLine("\t\t\t<height>720</height>");          
           rawXML.Append("\t\t\t<visible>");
         }
         
