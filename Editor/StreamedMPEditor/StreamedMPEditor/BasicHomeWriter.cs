@@ -2299,9 +2299,9 @@ namespace StreamedMPEditor
         {
           rawXML.AppendLine("\t\t<type>image</type>");
           rawXML.AppendLine("\t\t<texture>" + weatherIcon(i) + "</texture>");
-          rawXML.AppendLine("\t\t<posX>" + (xPos1 + 20 + (spacing * i)).ToString() + "</posX>");
-          rawXML.AppendLine("\t\t<posY>" + (yPos1 - 4).ToString() + "</posY>");
         }
+        rawXML.AppendLine("\t\t<posX>" + (xPos1 + 20 + (spacing * i)).ToString() + "</posX>");
+        rawXML.AppendLine("\t\t<posY>" + (yPos1 - 4).ToString() + "</posY>");
         rawXML.AppendLine("\t\t<height>80</height>");
         rawXML.AppendLine("\t\t<width>80</width>");
         rawXML.AppendLine("\t\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
@@ -2692,9 +2692,9 @@ namespace StreamedMPEditor
         {
           rawXML.AppendLine("\t\t<type>image</type>");
           rawXML.AppendLine("\t\t<texture>" + weatherIcon(i) + "</texture>");
-          rawXML.AppendLine("\t\t<posX>" + (xPos1 + (spacing * i)).ToString() + "</posX>");
-          rawXML.AppendLine("\t\t<posY>" + (yPos1 - 70).ToString() + "</posY>");
         }
+        rawXML.AppendLine("\t\t<posX>" + (xPos1 + (spacing * i)).ToString() + "</posX>");
+        rawXML.AppendLine("\t\t<posY>" + (yPos1 - 70).ToString() + "</posY>");
         rawXML.AppendLine("\t\t<height>180</height>");
         rawXML.AppendLine("\t\t<width>180</width>");
         rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
