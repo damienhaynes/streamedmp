@@ -66,7 +66,7 @@ namespace StreamedMPEditor
     const string quote = "\"";
 
     bool basicHomeLoadError = false;
-    bool useInfoServiceSeperator = false;
+    bool useInfoServiceSeparator  = false;
 
 
     string xml;
@@ -75,7 +75,7 @@ namespace StreamedMPEditor
     string dropShadowColor = "1d1f1b";
     string baseISVer = "0.9.9.3";
     string baseISVerTwitter = "1.2.0.0";
-    string isSeperatorVer = "1.1.0.0";
+    string isSeparatorVer = "1.1.0.0";
     string mpReleaseVersion = "1.0.2.22555";
     string ticker = "#rssticker";
 
