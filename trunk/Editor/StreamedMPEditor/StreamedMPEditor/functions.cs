@@ -49,8 +49,8 @@ namespace StreamedMPEditor
         fiveDayWeatherCheckBox.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
         useInfoService.Text += "         (Version " + infoServiceVer + " Installed)";
-        if (infoServiceVer.CompareTo(isSeperatorVer) >= 0)
-          useInfoServiceSeperator = true;
+        if (infoServiceVer.CompareTo(isSeparatorVer) >= 0)
+          useInfoServiceSeparator  = true;
       }
       else
       {
@@ -1359,7 +1359,7 @@ namespace StreamedMPEditor
     public struct editorValues
     {
       public bool basicHomeLoadError;
-      public bool useInfoServiceSeperator;
+      public bool useInfoServiceSeparator ;
       public int defaultId;
       public int textYOffset;
       public int weatherControl;

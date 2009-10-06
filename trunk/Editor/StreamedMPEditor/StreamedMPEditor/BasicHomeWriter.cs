@@ -978,7 +978,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<label>" + ticker + ".feed.titles</label>");
       if (wrapString.Checked)
       {
-        if (useInfoServiceSeperator)
+        if (useInfoServiceSeparator )
           rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
@@ -1005,7 +1005,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<label>" + ticker + ".feed.titles</label>");
       if (wrapString.Checked)
       {
-        if (useInfoServiceSeperator)
+        if (useInfoServiceSeparator )
           rawXML.AppendLine("\t\t\t<wrapString> " + ticker + ".feed.separator </wrapString>");
         else
           rawXML.AppendLine("\t\t\t<wrapString> :: </wrapString>");
@@ -3049,7 +3049,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
       if (wrapString.Checked)
       {
-        if (useInfoServiceSeperator)
+        if (useInfoServiceSeparator )
           rawXML.AppendLine("\t<wrapString> " + ticker + ".twitter.separator </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
@@ -3102,7 +3102,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
       if (wrapString.Checked)
       {
-        if (useInfoServiceSeperator)
+        if (useInfoServiceSeparator )
           rawXML.AppendLine("\t<wrapString> " + ticker + ".twitter.separator </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
