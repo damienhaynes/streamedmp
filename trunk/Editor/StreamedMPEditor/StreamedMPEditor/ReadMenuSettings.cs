@@ -22,6 +22,8 @@ namespace StreamedMPEditor
       string defaultImage = null;
       string usermenuprofile = mpPaths.configBasePath + "usermenuprofile.xml";
       string id = null;
+      string _selectedFont = null;
+      string _labelFont = null; 
    
       menuItems.Clear();
       itemsOnMenubar.Items.Clear();
@@ -84,6 +86,10 @@ namespace StreamedMPEditor
           case "verticalStyle":
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
+            cboLabelFont.Enabled = false;
+            cboSelectedFont.Enabled = false;
+            cboSelectedFont.Text = "mediastream16tc";
+            cboLabelFont.Text = "mediastream28tc";
             break;
           case "horizontalStandardStyle":
             menuStyle = chosenMenuStyle.horizontalStandardStyle;
@@ -96,6 +102,10 @@ namespace StreamedMPEditor
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
+            cboLabelFont.Enabled = false;
+            cboSelectedFont.Enabled = false;
+            cboSelectedFont.Text = "mediastream16tc";
+            cboLabelFont.Text = "mediastream28tc";
             break;
         }
         
@@ -157,6 +167,8 @@ namespace StreamedMPEditor
       //
       try
       {
+        _selectedFont = readEntryValue(optionsTag, "labelfont", nodelist);
+        _labelFont = readEntryValue(optionsTag, "selectedfont", nodelist);
         checkBoxMultiImage.Checked = bool.Parse(readEntryValue(optionsTag, "multiimage", nodelist));
         tbAcceleration.Text = readEntryValue(optionsTag, "acceleration", nodelist);
         tbDuration.Text = readEntryValue(optionsTag, "duration", nodelist);
@@ -178,7 +190,15 @@ namespace StreamedMPEditor
       { 
         // Most likley a new option added but not written to file yet - just continue
       }
-      // As only saving the animated state set the static state true if animimated state is false
+
+      if (_selectedFont != "false")
+      {
+        cboSelectedFont.Text = _selectedFont;
+      }
+      if (_labelFont != "false")
+      {
+        cboLabelFont.Text = _labelFont;
+      }
 
       if (menuStyle == chosenMenuStyle.verticalStyle)
         txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
@@ -192,6 +212,7 @@ namespace StreamedMPEditor
         ticker = "#rssticker";
       }
 
+      // As only saving the animated state set the static state true if animimated state is false
       if (!WeatherIconsAnimated.Checked)
         weatherIconsStatic.Checked = true;
 

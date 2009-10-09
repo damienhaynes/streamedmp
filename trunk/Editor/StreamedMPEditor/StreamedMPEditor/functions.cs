@@ -731,6 +731,7 @@ namespace StreamedMPEditor
     }
 
 
+
     private string generateEntry(string entry, string value, int tabs, bool addcr)
     {
       string entryLine = null;
@@ -954,6 +955,10 @@ namespace StreamedMPEditor
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "350";
           menuPosLabel.Text = "Menu X Position:";
+          cboLabelFont.Enabled = false;
+          cboSelectedFont.Enabled = false;
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream16tc";
           break;
 
         case chosenMenuStyle.horizontalStandardStyle:
@@ -968,6 +973,10 @@ namespace StreamedMPEditor
           weatherSummaryGroup.Visible = true;          
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "430";
+          cboLabelFont.Enabled = true;
+          cboSelectedFont.Enabled = true;
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream28tc";
           break;
 
         case chosenMenuStyle.horizontalContextStyle:
@@ -982,6 +991,10 @@ namespace StreamedMPEditor
           weatherSummaryGroup.Visible = true;          
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "620";
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream28tc";
+          cboLabelFont.Enabled = false;
+          cboSelectedFont.Enabled = false;
           break;
       }
     }

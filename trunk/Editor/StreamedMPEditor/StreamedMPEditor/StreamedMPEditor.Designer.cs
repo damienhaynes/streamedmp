@@ -99,6 +99,10 @@
       this.xmlFiles = new System.Windows.Forms.ListBox();
       this.basicHomeOptions = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+      this.cboLabelFont = new System.Windows.Forms.ComboBox();
+      this.cboSelectedFont = new System.Windows.Forms.ComboBox();
+      this.label15 = new System.Windows.Forms.Label();
+      this.label21 = new System.Windows.Forms.Label();
       this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
       this.weatherBGlink = new System.Windows.Forms.CheckBox();
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
@@ -991,6 +995,10 @@
       // 
       // styleOptionsGroup
       // 
+      this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
+      this.styleOptionsGroup.Controls.Add(this.cboSelectedFont);
+      this.styleOptionsGroup.Controls.Add(this.label15);
+      this.styleOptionsGroup.Controls.Add(this.label21);
       this.styleOptionsGroup.Controls.Add(this.summaryWeatherCheckBox);
       this.styleOptionsGroup.Controls.Add(this.weatherBGlink);
       this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
@@ -998,15 +1006,89 @@
       this.styleOptionsGroup.Controls.Add(this.weatherSummaryGroup);
       this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 102);
+      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 128);
       this.styleOptionsGroup.TabIndex = 107;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
       // 
+      // cboLabelFont
+      // 
+      this.cboLabelFont.FormattingEnabled = true;
+      this.cboLabelFont.Items.AddRange(new object[] {
+            "font12",
+            "font14",
+            "font18",
+            "mediastream10",
+            "mediastream11",
+            "mediastream12",
+            "mediastream14",
+            "mediastream9c",
+            "mediastream10c",
+            "mediastream11c",
+            "mediastream12c",
+            "mediastream14c",
+            "mediastream16c",
+            "mediastream10tc",
+            "mediastream11tc",
+            "mediastream12tc",
+            "mediastream14tc",
+            "mediastream16tc",
+            "mediastream28tc"});
+      this.cboLabelFont.Location = new System.Drawing.Point(363, 52);
+      this.cboLabelFont.Name = "cboLabelFont";
+      this.cboLabelFont.Size = new System.Drawing.Size(121, 21);
+      this.cboLabelFont.TabIndex = 42;
+      // 
+      // cboSelectedFont
+      // 
+      this.cboSelectedFont.FormattingEnabled = true;
+      this.cboSelectedFont.Items.AddRange(new object[] {
+            "font12",
+            "font14",
+            "font18",
+            "mediastream10",
+            "mediastream11",
+            "mediastream12",
+            "mediastream14",
+            "mediastream9c",
+            "mediastream10c",
+            "mediastream11c",
+            "mediastream12c",
+            "mediastream14c",
+            "mediastream16c",
+            "mediastream10tc",
+            "mediastream11tc",
+            "mediastream12tc",
+            "mediastream14tc",
+            "mediastream16tc",
+            "mediastream28tc"});
+      this.cboSelectedFont.Location = new System.Drawing.Point(363, 24);
+      this.cboSelectedFont.Name = "cboSelectedFont";
+      this.cboSelectedFont.Size = new System.Drawing.Size(121, 21);
+      this.cboSelectedFont.TabIndex = 41;
+      // 
+      // label15
+      // 
+      this.label15.AutoSize = true;
+      this.label15.Location = new System.Drawing.Point(252, 52);
+      this.label15.Name = "label15";
+      this.label15.Size = new System.Drawing.Size(109, 13);
+      this.label15.TabIndex = 40;
+      this.label15.Text = "Unfocused Item Font:";
+      // 
+      // label21
+      // 
+      this.label21.AutoSize = true;
+      this.label21.Location = new System.Drawing.Point(263, 27);
+      this.label21.Name = "label21";
+      this.label21.Size = new System.Drawing.Size(98, 13);
+      this.label21.TabIndex = 39;
+      this.label21.Text = "Focused Item Font:";
+      // 
       // summaryWeatherCheckBox
       // 
       this.summaryWeatherCheckBox.AutoSize = true;
-      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(247, 49);
+      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(20, 50);
       this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
       this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
       this.summaryWeatherCheckBox.TabIndex = 5;
@@ -1016,7 +1098,7 @@
       // weatherBGlink
       // 
       this.weatherBGlink.AutoSize = true;
-      this.weatherBGlink.Location = new System.Drawing.Point(247, 26);
+      this.weatherBGlink.Location = new System.Drawing.Point(20, 27);
       this.weatherBGlink.Name = "weatherBGlink";
       this.weatherBGlink.Size = new System.Drawing.Size(200, 17);
       this.weatherBGlink.TabIndex = 3;
@@ -1026,7 +1108,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(14, 49);
+      this.useAeonGraphics.Location = new System.Drawing.Point(20, 95);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 25;
@@ -1036,7 +1118,7 @@
       // horizontalContextLabels
       // 
       this.horizontalContextLabels.AutoSize = true;
-      this.horizontalContextLabels.Location = new System.Drawing.Point(14, 26);
+      this.horizontalContextLabels.Location = new System.Drawing.Point(20, 72);
       this.horizontalContextLabels.Name = "horizontalContextLabels";
       this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
       this.horizontalContextLabels.TabIndex = 1;
@@ -1047,7 +1129,7 @@
       // 
       this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
       this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
-      this.weatherSummaryGroup.Location = new System.Drawing.Point(482, 19);
+      this.weatherSummaryGroup.Location = new System.Drawing.Point(532, 19);
       this.weatherSummaryGroup.Name = "weatherSummaryGroup";
       this.weatherSummaryGroup.Size = new System.Drawing.Size(178, 69);
       this.weatherSummaryGroup.TabIndex = 2;
@@ -1079,9 +1161,9 @@
       // 
       // rssTickerOptions
       // 
-      this.rssTickerOptions.Location = new System.Drawing.Point(412, 160);
+      this.rssTickerOptions.Location = new System.Drawing.Point(407, 160);
       this.rssTickerOptions.Name = "rssTickerOptions";
-      this.rssTickerOptions.Size = new System.Drawing.Size(326, 79);
+      this.rssTickerOptions.Size = new System.Drawing.Size(331, 79);
       this.rssTickerOptions.TabIndex = 106;
       this.rssTickerOptions.TabStop = false;
       this.rssTickerOptions.Text = "RSSTicker Options";
@@ -1092,7 +1174,7 @@
       this.infoserviceOptions.Controls.Add(this.enableRssfeed);
       this.infoserviceOptions.Location = new System.Drawing.Point(9, 160);
       this.infoserviceOptions.Name = "infoserviceOptions";
-      this.infoserviceOptions.Size = new System.Drawing.Size(382, 79);
+      this.infoserviceOptions.Size = new System.Drawing.Size(331, 79);
       this.infoserviceOptions.TabIndex = 105;
       this.infoserviceOptions.TabStop = false;
       this.infoserviceOptions.Text = "InfoService Options";
@@ -1177,6 +1259,7 @@
       // wrapString
       // 
       this.wrapString.AutoSize = true;
+      this.wrapString.Enabled = false;
       this.wrapString.Location = new System.Drawing.Point(455, 66);
       this.wrapString.Name = "wrapString";
       this.wrapString.Size = new System.Drawing.Size(226, 17);
@@ -2037,6 +2120,10 @@
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.TextBox backupVersionsToKeep;
+    private System.Windows.Forms.ComboBox cboLabelFont;
+    private System.Windows.Forms.ComboBox cboSelectedFont;
+    private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.Label label21;
   }
 }
 
