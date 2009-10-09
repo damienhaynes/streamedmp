@@ -167,7 +167,9 @@ namespace StreamedMPEditor
 
         string mpVersion = getMediaPortalVersion();
         if (mpVersion.CompareTo(mpReleaseVersion) > 0)
+        {
           wrapString.Enabled = true;
+        }
         else
         {
           wrapString.Enabled = false;

@@ -54,6 +54,8 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
                       , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>\n"
                       + "\t<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>\n"
+                      + "\t<define>#labelfont:" + cboLabelFont.Text + "</define>\n"
+                      + "\t<define>#selectedfont:" + cboSelectedFont.Text + "</define>\n"
                       + "\t<define>#" + menuPos + "</define>\n"
                       + "\t<define>#multiimage:" + multiimage + "</define>");
 
@@ -164,7 +166,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -188,7 +190,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -210,7 +212,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -232,7 +234,7 @@ namespace StreamedMPEditor
                   rawXML.AppendLine("\t<width>320</width>");
                   rawXML.AppendLine("\t<height>72</height>");
                   rawXML.AppendLine("\t<textcolor>" + dropShadowColor + "</textcolor>");
-                  rawXML.AppendLine("\t<font>#labelFont</font>");
+                  rawXML.AppendLine("\t<font>#selectedfont</font>");
                   rawXML.AppendLine("\t<align>center</align>");
                   rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -250,7 +252,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#selectedfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -268,7 +270,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -288,7 +290,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -311,7 +313,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -335,7 +337,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -357,7 +359,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -379,7 +381,7 @@ namespace StreamedMPEditor
                   rawXML.AppendLine("\t<width>320</width>");
                   rawXML.AppendLine("\t<height>72</height>");
                   rawXML.AppendLine("\t<textcolor>" + dropShadowColor + "</textcolor>");
-                  rawXML.AppendLine("\t<font>#labelFont</font>");
+                  rawXML.AppendLine("\t<font>#selectedfont</font>");
                   rawXML.AppendLine("\t<align>center</align>");
                   rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
                   rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
@@ -395,7 +397,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#selectedfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
                 rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
@@ -411,7 +413,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -432,7 +434,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>320</width>");
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t<align>center</align>");
                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
@@ -532,7 +534,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -559,7 +561,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -584,7 +586,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -625,7 +627,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -648,7 +650,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -673,7 +675,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -700,7 +702,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -725,7 +727,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -766,7 +768,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -789,7 +791,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-                rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+                rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
                 rawXML.AppendLine("\t\t\t<align>right</align>");
                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
@@ -979,7 +981,8 @@ namespace StreamedMPEditor
       if (wrapString.Checked)
       {
         if (useInfoServiceSeparator )
-          rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          //rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          rawXML.AppendLine("\t<wrapString> :: </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
       }
@@ -1006,7 +1009,8 @@ namespace StreamedMPEditor
       if (wrapString.Checked)
       {
         if (useInfoServiceSeparator )
-          rawXML.AppendLine("\t\t\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          //rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          rawXML.AppendLine("\t<wrapString> :: </wrapString>");
         else
           rawXML.AppendLine("\t\t\t<wrapString> :: </wrapString>");
       }
@@ -1305,7 +1309,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>72</height>");
       rawXML.AppendLine("\t\t\t<label>" + menuItems[first].name + "</label>");
       rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
       rawXML.AppendLine("\t\t\t<align>right</align>");
       rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
@@ -1325,7 +1329,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>72</height>");
       rawXML.AppendLine("\t\t\t<label>" + menuItems[second].name + "</label>");
       rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
       rawXML.AppendLine("\t\t\t<align>right</align>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -1362,7 +1366,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>72</height>");
       rawXML.AppendLine("\t\t\t<label>" + menuItems[third].name + "</label>");
       rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
       rawXML.AppendLine("\t\t\t<align>right</align>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -1381,7 +1385,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>72</height>");
       rawXML.AppendLine("\t\t\t<label>" + menuItems[fourth].name + "</label>");
       rawXML.AppendLine("\t\t\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
       rawXML.AppendLine("\t\t\t<align>right</align>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -1438,7 +1442,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<height>72</height>");
       rawXML.AppendLine("\t<label>" + menuItems[first].name + "</label>");
       rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t<font>#labelfont</font>");
       rawXML.AppendLine("\t<align>center</align>");
       rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("\t<animation effect=\"slide\" start=\"-160,0\" end=\"-160,0\" time=\"4\" acceleration=\"-0.0\" reversible=\"false\">WindowOpen</animation><!-- needed to display item at negative offset -->");
@@ -1457,7 +1461,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<height>72</height>");
       rawXML.AppendLine("\t<label>" + menuItems[second].name + "</label>");
       rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t<font>#labelfont</font>");
       rawXML.AppendLine("\t<align>center</align>");
       rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("</control>	");
@@ -1474,7 +1478,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t<height>72</height>");
         rawXML.AppendLine("\t<label>" + menuItems[basicHomeValues.defaultId].name + "</label>");
         rawXML.AppendLine("\t<textcolor>black</textcolor>");
-        rawXML.AppendLine("\t<font>#labelFont</font>");
+        rawXML.AppendLine("\t<font>#labelfont</font>");
         rawXML.AppendLine("\t<align>center</align>");
         rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
         rawXML.AppendLine("</control>	");
@@ -1489,7 +1493,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<height>72</height>");
       rawXML.AppendLine("\t<label>" + menuItems[basicHomeValues.defaultId].name + "</label>");
       rawXML.AppendLine("\t<textcolor>#menuitemFocus</textcolor>");
-      rawXML.AppendLine("\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t<font>#labelfont</font>");
       rawXML.AppendLine("\t<align>center</align>");
       rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("</control>	");
@@ -1506,7 +1510,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<height>72</height>");
       rawXML.AppendLine("\t<label>" + menuItems[third].name + "</label>");
       rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t<font>#labelfont</font>");
       rawXML.AppendLine("\t<align>center</align>");
       rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("</control>	");
@@ -1523,7 +1527,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t<height>72</height>");
       rawXML.AppendLine("\t<label>" + menuItems[fourth].name + "</label>");
       rawXML.AppendLine("\t<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("\t<font>#labelFont</font>");
+      rawXML.AppendLine("\t<font>#labelfont</font>");
       rawXML.AppendLine("\t<align>center</align>");
       rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
       rawXML.AppendLine("</control>	");
@@ -1709,7 +1713,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t\t\t<height>72</height>");
           rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
           rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
-          rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+          rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
           rawXML.AppendLine("\t\t\t<align>right</align>");
           rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
           rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -1726,7 +1730,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t\t\t<height>72</height>");
         rawXML.AppendLine("\t\t\t<label>" + menItem.contextLabel + "</label>");
         rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
-        rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
+        rawXML.AppendLine("\t\t\t<font>#labelfont</font>");
         rawXML.AppendLine("\t\t\t<align>right</align>");
         rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "300" + quote + ">Visible</animation>");
         rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " delay=" + quote + "0" + quote + " time=" + quote + "50" + quote + ">Hidden</animation>");
@@ -3050,7 +3054,8 @@ namespace StreamedMPEditor
       if (wrapString.Checked)
       {
         if (useInfoServiceSeparator )
-          rawXML.AppendLine("\t<wrapString> " + ticker + ".twitter.separator </wrapString>");
+          //rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          rawXML.AppendLine("\t<wrapString> :: </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
       }
@@ -3103,7 +3108,8 @@ namespace StreamedMPEditor
       if (wrapString.Checked)
       {
         if (useInfoServiceSeparator )
-          rawXML.AppendLine("\t<wrapString> " + ticker + ".twitter.separator </wrapString>");
+          //rawXML.AppendLine("\t<wrapString> " + ticker + ".feed.separator </wrapString>");
+          rawXML.AppendLine("\t<wrapString> :: </wrapString>");
         else
           rawXML.AppendLine("\t<wrapString> :: </wrapString>");
       }
@@ -3201,6 +3207,8 @@ namespace StreamedMPEditor
                 + generateEntry("weatherstyle", activeWeatherStyle, 2, true)
                 + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2,true)
                 + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 2, true)
+                + generateEntry("labelfont", cboLabelFont.Text, 2, true)
+                + generateEntry("selectedfont", cboSelectedFont.Text, 2, true)
                 + generateEntry("menuType", menuOrientation, 2, true)
                 + generateEntry(menuPos, txtMenuPos.Text, 2, true)
                 + generateEntry("multiimage", multiimage, 2, true)
