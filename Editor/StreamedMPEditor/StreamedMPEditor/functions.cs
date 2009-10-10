@@ -941,9 +941,20 @@ namespace StreamedMPEditor
       // for the previous selected style
       summaryWeatherCheckBox.Checked = true;
       menuPosLabel.Text = "Menu Y Position:";
+
       if (!animatedIconsInstalled())
         WeatherIconsAnimated.Enabled = false;
 
+      if (!weatherBackgoundsInstalled())
+      {
+        weatherBGlink.Enabled = false;
+        weatherBGlink.Checked = false;
+      }
+      else
+      {
+        weatherBGlink.Enabled = true;
+      }
+      
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
@@ -1151,6 +1162,15 @@ namespace StreamedMPEditor
       else
         return false;
     }
+
+    private bool weatherBackgoundsInstalled()
+    {
+      if (Directory.Exists(mpPaths.streamedMPpath + "media\\animations\\linkedweather"))
+        return true;
+      else
+        return false;
+    }
+
 
     private void readFonts()
     {

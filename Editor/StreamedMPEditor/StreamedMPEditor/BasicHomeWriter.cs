@@ -1558,7 +1558,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t\t\t<posy>0</posy>");
           rawXML.AppendLine("\t\t\t<width>1280</width>");
           rawXML.AppendLine("\t\t\t<height>720</height>");
-          rawXML.AppendLine("\t\t<texture>" + ticker + ".weather.today.img.big.fullpath</texture>");
+          rawXML.AppendLine("\t\t<texture>animations\\linkedweather\\" + ticker + ".weather.today.img.big.filenamewithoutext.jpg</texture>");
           rawXML.Append("\t\t\t<visible>");          
         }
         else
