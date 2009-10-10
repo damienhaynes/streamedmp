@@ -23,7 +23,8 @@ namespace StreamedMPEditor
       string usermenuprofile = mpPaths.configBasePath + "usermenuprofile.xml";
       string id = null;
       string _selectedFont = null;
-      string _labelFont = null; 
+      string _labelFont = null;
+
    
       menuItems.Clear();
       itemsOnMenubar.Items.Clear();
@@ -94,10 +95,15 @@ namespace StreamedMPEditor
           case "horizontalStandardStyle":
             menuStyle = chosenMenuStyle.horizontalStandardStyle;
             horizontalStyle.Checked = true;
+            cboSelectedFont.Text = "mediastream28tc";
+            cboLabelFont.Text = "mediastream28tc";
+
             break;
           case "horizontalContextStyle":
             menuStyle = chosenMenuStyle.horizontalContextStyle;
             horizontalStyle2.Checked = true;
+            cboSelectedFont.Text = "mediastream28tc";
+            cboLabelFont.Text = "mediastream28tc";
             break;
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
@@ -167,8 +173,8 @@ namespace StreamedMPEditor
       //
       try
       {
-        _selectedFont = readEntryValue(optionsTag, "labelfont", nodelist);
-        _labelFont = readEntryValue(optionsTag, "selectedfont", nodelist);
+        _selectedFont = readEntryValue(optionsTag, "selectedFont", nodelist);
+        _labelFont = readEntryValue(optionsTag, "labelFont", nodelist);
         checkBoxMultiImage.Checked = bool.Parse(readEntryValue(optionsTag, "multiimage", nodelist));
         tbAcceleration.Text = readEntryValue(optionsTag, "acceleration", nodelist);
         tbDuration.Text = readEntryValue(optionsTag, "duration", nodelist);

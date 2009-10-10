@@ -22,6 +22,9 @@ namespace StreamedMPEditor
     List<menuItem> menuItems = new List<menuItem>();
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<prettyItem> prettyItems = new List<prettyItem>();
+    List<string> skinFontsFocused = new List<string>();
+    List<string> skinFontsUnFocused = new List<string>();
+
     Panel selectPanel = new Panel();
     Button nextBatch = new Button();
     Button prevBatch = new Button();
@@ -122,6 +125,7 @@ namespace StreamedMPEditor
       Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
       GetMediaPortalSkinPath();
+      readFonts();
       getBackupFileTotals();
 
       if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
