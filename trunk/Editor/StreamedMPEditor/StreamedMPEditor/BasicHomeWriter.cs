@@ -1548,24 +1548,18 @@ namespace StreamedMPEditor
 
       foreach (backgroundItem item in bgItems)
       {
+		rawXML.AppendLine("\n\t\t<control>");
+		rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND</description>");
+		rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
+
         if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
-        {
-          rawXML.AppendLine("\n\t\t<control>");
-          rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND</description>");
-          rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
-          rawXML.AppendLine("\t\t\t<type>image</type>");
-          rawXML.AppendLine("\t\t\t<posx>0</posx>");
-          rawXML.AppendLine("\t\t\t<posy>0</posy>");
-          rawXML.AppendLine("\t\t\t<width>1280</width>");
-          rawXML.AppendLine("\t\t\t<height>720</height>");
-          rawXML.AppendLine("\t\t<texture>animations\\linkedweather\\" + ticker + ".weather.today.img.big.filenamewithoutext.jpg</texture>");
-          rawXML.Append("\t\t\t<visible>");          
+        {        
+          rawXML.AppendLine("\t\t\t<type>image</type>");          
+          rawXML.AppendLine("\t\t\t<texture>animations\\linkedweather\\" + ticker + ".weather.today.img.big.filenamewithoutext.jpg</texture>");          
         }
         else
         {
-          rawXML.AppendLine("\n\t\t<control>");
-          rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND</description>");
-          rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
+          
           if (checkBoxMultiImage.Checked)
           {
             rawXML.AppendLine("\t\t\t<type>multiimage</type>");
@@ -1580,13 +1574,15 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<type>image</type>");
             rawXML.AppendLine("\t\t\t<texture>" + item.image + "</texture>");
           }          
-          rawXML.AppendLine("\t\t\t<posx>0</posx>");
-          rawXML.AppendLine("\t\t\t<posy>0</posy>");
-          rawXML.AppendLine("\t\t\t<width>1280</width>");
-          rawXML.AppendLine("\t\t\t<height>720</height>");          
-          rawXML.Append("\t\t\t<visible>");
+          
         }
-        
+
+		rawXML.AppendLine("\t\t\t<posx>0</posx>");
+		rawXML.AppendLine("\t\t\t<posy>0</posy>");
+		rawXML.AppendLine("\t\t\t<width>1280</width>");
+		rawXML.AppendLine("\t\t\t<height>720</height>");
+		rawXML.Append("\t\t\t<visible>");
+
         for (int i = 0; i < item.ids.Count; i++)
         {
           if (i == 0)
@@ -1594,8 +1590,11 @@ namespace StreamedMPEditor
           else
             rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
         }
-        rawXML.Append("</visible>");
-        rawXML.Append("\n\t\t</control>");
+
+        rawXML.Append("</visible>\n");
+		rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"200\" end=\"0\" time=\"500\">WindowClose</animation>");
+		rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
+        rawXML.AppendLine("\t\t</control>");
       }
       xml = xml.Replace("<!-- BEGIN GENERATED BACKGROUND CODE-->", rawXML.ToString());
     }
