@@ -1152,6 +1152,41 @@ namespace StreamedMPEditor
         return false;
     }
 
+    private void readFonts()
+    {
+      string tempFontName = null;
+
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(mpPaths.streamedMPpath + "Fonts.xml"))
+      {
+        showError("Fonts.xml Not Found in \r\r" + mpPaths.streamedMPpath + " \r\rPlease make sure fonts.xml exists", errorCode.major);
+        return;
+      }
+      try
+      {
+        doc.Load(mpPaths.streamedMPpath + "Fonts.xml");
+      }
+      catch (Exception e)
+      {
+        showError("Exception while loading Fonts.xml\n\n" + e.Message, errorCode.loadError);
+        return;
+      }
+
+      XmlNodeList fonts = doc.DocumentElement.SelectNodes("/fonts/font");
+
+      foreach (XmlNode font in fonts)
+      {
+        XmlNode innerNode = font.SelectSingleNode("name");
+        skinFontsFocused.Add(innerNode.InnerText);
+        skinFontsUnFocused.Add(innerNode.InnerText);
+      }
+
+      cboSelectedFont.DataSource = skinFontsFocused;
+      cboLabelFont.DataSource = skinFontsUnFocused;
+
+    }
+
+
     public class getAsmVersion
     {
       #region Private Variables

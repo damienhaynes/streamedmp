@@ -1006,7 +1006,7 @@
       this.styleOptionsGroup.Controls.Add(this.weatherSummaryGroup);
       this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 128);
+      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 145);
       this.styleOptionsGroup.TabIndex = 107;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
@@ -1014,27 +1014,7 @@
       // cboLabelFont
       // 
       this.cboLabelFont.FormattingEnabled = true;
-      this.cboLabelFont.Items.AddRange(new object[] {
-            "font12",
-            "font14",
-            "font18",
-            "mediastream10",
-            "mediastream11",
-            "mediastream12",
-            "mediastream14",
-            "mediastream9c",
-            "mediastream10c",
-            "mediastream11c",
-            "mediastream12c",
-            "mediastream14c",
-            "mediastream16c",
-            "mediastream10tc",
-            "mediastream11tc",
-            "mediastream12tc",
-            "mediastream14tc",
-            "mediastream16tc",
-            "mediastream28tc"});
-      this.cboLabelFont.Location = new System.Drawing.Point(363, 52);
+      this.cboLabelFont.Location = new System.Drawing.Point(363, 53);
       this.cboLabelFont.Name = "cboLabelFont";
       this.cboLabelFont.Size = new System.Drawing.Size(121, 21);
       this.cboLabelFont.TabIndex = 42;
@@ -1042,26 +1022,6 @@
       // cboSelectedFont
       // 
       this.cboSelectedFont.FormattingEnabled = true;
-      this.cboSelectedFont.Items.AddRange(new object[] {
-            "font12",
-            "font14",
-            "font18",
-            "mediastream10",
-            "mediastream11",
-            "mediastream12",
-            "mediastream14",
-            "mediastream9c",
-            "mediastream10c",
-            "mediastream11c",
-            "mediastream12c",
-            "mediastream14c",
-            "mediastream16c",
-            "mediastream10tc",
-            "mediastream11tc",
-            "mediastream12tc",
-            "mediastream14tc",
-            "mediastream16tc",
-            "mediastream28tc"});
       this.cboSelectedFont.Location = new System.Drawing.Point(363, 24);
       this.cboSelectedFont.Name = "cboSelectedFont";
       this.cboSelectedFont.Size = new System.Drawing.Size(121, 21);
@@ -1070,7 +1030,7 @@
       // label15
       // 
       this.label15.AutoSize = true;
-      this.label15.Location = new System.Drawing.Point(252, 52);
+      this.label15.Location = new System.Drawing.Point(252, 57);
       this.label15.Name = "label15";
       this.label15.Size = new System.Drawing.Size(109, 13);
       this.label15.TabIndex = 40;
@@ -1079,7 +1039,7 @@
       // label21
       // 
       this.label21.AutoSize = true;
-      this.label21.Location = new System.Drawing.Point(263, 27);
+      this.label21.Location = new System.Drawing.Point(263, 28);
       this.label21.Name = "label21";
       this.label21.Size = new System.Drawing.Size(98, 13);
       this.label21.TabIndex = 39;
@@ -1088,7 +1048,7 @@
       // summaryWeatherCheckBox
       // 
       this.summaryWeatherCheckBox.AutoSize = true;
-      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(20, 50);
+      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(20, 53);
       this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
       this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
       this.summaryWeatherCheckBox.TabIndex = 5;
@@ -1108,7 +1068,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(20, 95);
+      this.useAeonGraphics.Location = new System.Drawing.Point(20, 105);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 25;
@@ -1118,7 +1078,7 @@
       // horizontalContextLabels
       // 
       this.horizontalContextLabels.AutoSize = true;
-      this.horizontalContextLabels.Location = new System.Drawing.Point(20, 72);
+      this.horizontalContextLabels.Location = new System.Drawing.Point(20, 79);
       this.horizontalContextLabels.Name = "horizontalContextLabels";
       this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
       this.horizontalContextLabels.TabIndex = 1;
