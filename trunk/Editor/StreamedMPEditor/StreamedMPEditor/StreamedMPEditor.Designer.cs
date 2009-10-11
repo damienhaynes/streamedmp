@@ -53,7 +53,7 @@
       this.pictureBox4 = new System.Windows.Forms.PictureBox();
       this.menuStyle4 = new System.Windows.Forms.PictureBox();
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
-      this.fiveDayWeatherCheckBox = new System.Windows.Forms.CheckBox();
+      this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.selectedWindowID = new System.Windows.Forms.Label();
@@ -98,6 +98,10 @@
       this.itemsOnMenubar = new System.Windows.Forms.CheckedListBox();
       this.xmlFiles = new System.Windows.Forms.ListBox();
       this.basicHomeOptions = new System.Windows.Forms.TabPage();
+      this.gbRssImageType = new System.Windows.Forms.GroupBox();
+      this.rbRssInfoServiceImage = new System.Windows.Forms.RadioButton();
+      this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
+      this.rbRssNoImage = new System.Windows.Forms.RadioButton();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
       this.cboLabelFont = new System.Windows.Forms.ComboBox();
       this.cboSelectedFont = new System.Windows.Forms.ComboBox();
@@ -110,7 +114,6 @@
       this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
       this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
-      this.rssTickerOptions = new System.Windows.Forms.GroupBox();
       this.infoserviceOptions = new System.Windows.Forms.GroupBox();
       this.enableTwitter = new System.Windows.Forms.CheckBox();
       this.enableRssfeed = new System.Windows.Forms.CheckBox();
@@ -206,6 +209,7 @@
       this.backgroundImages.SuspendLayout();
       this.itemProperties.SuspendLayout();
       this.basicHomeOptions.SuspendLayout();
+      this.gbRssImageType.SuspendLayout();
       this.styleOptionsGroup.SuspendLayout();
       this.weatherSummaryGroup.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
@@ -450,7 +454,7 @@
       this.weatherIconsGroup.Controls.Add(this.pictureBox4);
       this.weatherIconsGroup.Controls.Add(this.menuStyle4);
       this.weatherIconsGroup.Controls.Add(this.pictureBox5);
-      this.weatherIconsGroup.Controls.Add(this.fiveDayWeatherCheckBox);
+      this.weatherIconsGroup.Controls.Add(this.enableFiveDayWeather);
       this.weatherIconsGroup.Location = new System.Drawing.Point(37, 25);
       this.weatherIconsGroup.Name = "weatherIconsGroup";
       this.weatherIconsGroup.Size = new System.Drawing.Size(675, 190);
@@ -488,16 +492,16 @@
       this.pictureBox5.TabIndex = 11;
       this.pictureBox5.TabStop = false;
       // 
-      // fiveDayWeatherCheckBox
+      // enableFiveDayWeather
       // 
-      this.fiveDayWeatherCheckBox.AutoSize = true;
-      this.fiveDayWeatherCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.fiveDayWeatherCheckBox.Location = new System.Drawing.Point(247, 163);
-      this.fiveDayWeatherCheckBox.Name = "fiveDayWeatherCheckBox";
-      this.fiveDayWeatherCheckBox.Size = new System.Drawing.Size(179, 21);
-      this.fiveDayWeatherCheckBox.TabIndex = 4;
-      this.fiveDayWeatherCheckBox.Text = "Enable 5 Day Summary ";
-      this.fiveDayWeatherCheckBox.UseVisualStyleBackColor = true;
+      this.enableFiveDayWeather.AutoSize = true;
+      this.enableFiveDayWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.enableFiveDayWeather.Location = new System.Drawing.Point(247, 163);
+      this.enableFiveDayWeather.Name = "enableFiveDayWeather";
+      this.enableFiveDayWeather.Size = new System.Drawing.Size(179, 21);
+      this.enableFiveDayWeather.TabIndex = 4;
+      this.enableFiveDayWeather.Text = "Enable 5 Day Summary ";
+      this.enableFiveDayWeather.UseVisualStyleBackColor = true;
       // 
       // basicHomeDesign
       // 
@@ -981,8 +985,8 @@
       // basicHomeOptions
       // 
       this.basicHomeOptions.BackColor = System.Drawing.Color.Transparent;
+      this.basicHomeOptions.Controls.Add(this.gbRssImageType);
       this.basicHomeOptions.Controls.Add(this.styleOptionsGroup);
-      this.basicHomeOptions.Controls.Add(this.rssTickerOptions);
       this.basicHomeOptions.Controls.Add(this.infoserviceOptions);
       this.basicHomeOptions.Controls.Add(this.globalSettings);
       this.basicHomeOptions.Location = new System.Drawing.Point(4, 23);
@@ -992,6 +996,54 @@
       this.basicHomeOptions.TabIndex = 1;
       this.basicHomeOptions.Text = "Menu/Plugin Options";
       this.basicHomeOptions.UseVisualStyleBackColor = true;
+      // 
+      // gbRssImageType
+      // 
+      this.gbRssImageType.Controls.Add(this.rbRssInfoServiceImage);
+      this.gbRssImageType.Controls.Add(this.rbRssSkinImage);
+      this.gbRssImageType.Controls.Add(this.rbRssNoImage);
+      this.gbRssImageType.Location = new System.Drawing.Point(280, 143);
+      this.gbRssImageType.Name = "gbRssImageType";
+      this.gbRssImageType.Size = new System.Drawing.Size(148, 112);
+      this.gbRssImageType.TabIndex = 2;
+      this.gbRssImageType.TabStop = false;
+      this.gbRssImageType.Text = "RSS Image Selection";
+      // 
+      // rbRssInfoServiceImage
+      // 
+      this.rbRssInfoServiceImage.AutoSize = true;
+      this.rbRssInfoServiceImage.Location = new System.Drawing.Point(7, 64);
+      this.rbRssInfoServiceImage.Name = "rbRssInfoServiceImage";
+      this.rbRssInfoServiceImage.Size = new System.Drawing.Size(131, 17);
+      this.rbRssInfoServiceImage.TabIndex = 2;
+      this.rbRssInfoServiceImage.TabStop = true;
+      this.rbRssInfoServiceImage.Text = "Ticker Supplied Image";
+      this.rbRssInfoServiceImage.UseVisualStyleBackColor = true;
+      this.rbRssInfoServiceImage.CheckedChanged += new System.EventHandler(this.rbRssInfoServiceImage_CheckedChanged);
+      // 
+      // rbRssSkinImage
+      // 
+      this.rbRssSkinImage.AutoSize = true;
+      this.rbRssSkinImage.Location = new System.Drawing.Point(7, 42);
+      this.rbRssSkinImage.Name = "rbRssSkinImage";
+      this.rbRssSkinImage.Size = new System.Drawing.Size(115, 17);
+      this.rbRssSkinImage.TabIndex = 1;
+      this.rbRssSkinImage.TabStop = true;
+      this.rbRssSkinImage.Text = "Default Skin Image";
+      this.rbRssSkinImage.UseVisualStyleBackColor = true;
+      this.rbRssSkinImage.CheckedChanged += new System.EventHandler(this.rbRssSkinImage_CheckedChanged);
+      // 
+      // rbRssNoImage
+      // 
+      this.rbRssNoImage.AutoSize = true;
+      this.rbRssNoImage.Location = new System.Drawing.Point(7, 20);
+      this.rbRssNoImage.Name = "rbRssNoImage";
+      this.rbRssNoImage.Size = new System.Drawing.Size(71, 17);
+      this.rbRssNoImage.TabIndex = 0;
+      this.rbRssNoImage.TabStop = true;
+      this.rbRssNoImage.Text = "No Image";
+      this.rbRssNoImage.UseVisualStyleBackColor = true;
+      this.rbRssNoImage.CheckedChanged += new System.EventHandler(this.rbRssNoImage_CheckedChanged);
       // 
       // styleOptionsGroup
       // 
@@ -1119,30 +1171,21 @@
       this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
       this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
       // 
-      // rssTickerOptions
-      // 
-      this.rssTickerOptions.Location = new System.Drawing.Point(407, 160);
-      this.rssTickerOptions.Name = "rssTickerOptions";
-      this.rssTickerOptions.Size = new System.Drawing.Size(331, 79);
-      this.rssTickerOptions.TabIndex = 106;
-      this.rssTickerOptions.TabStop = false;
-      this.rssTickerOptions.Text = "RSSTicker Options";
-      // 
       // infoserviceOptions
       // 
       this.infoserviceOptions.Controls.Add(this.enableTwitter);
       this.infoserviceOptions.Controls.Add(this.enableRssfeed);
-      this.infoserviceOptions.Location = new System.Drawing.Point(9, 160);
+      this.infoserviceOptions.Location = new System.Drawing.Point(9, 143);
       this.infoserviceOptions.Name = "infoserviceOptions";
-      this.infoserviceOptions.Size = new System.Drawing.Size(331, 79);
+      this.infoserviceOptions.Size = new System.Drawing.Size(265, 112);
       this.infoserviceOptions.TabIndex = 105;
       this.infoserviceOptions.TabStop = false;
-      this.infoserviceOptions.Text = "InfoService Options";
+      this.infoserviceOptions.Text = "InfoService/MP-RSSTicker Options";
       // 
       // enableTwitter
       // 
       this.enableTwitter.AutoSize = true;
-      this.enableTwitter.Location = new System.Drawing.Point(14, 42);
+      this.enableTwitter.Location = new System.Drawing.Point(17, 50);
       this.enableTwitter.Name = "enableTwitter";
       this.enableTwitter.Size = new System.Drawing.Size(94, 17);
       this.enableTwitter.TabIndex = 1;
@@ -1152,7 +1195,7 @@
       // enableRssfeed
       // 
       this.enableRssfeed.AutoSize = true;
-      this.enableRssfeed.Location = new System.Drawing.Point(14, 19);
+      this.enableRssfeed.Location = new System.Drawing.Point(17, 27);
       this.enableRssfeed.Name = "enableRssfeed";
       this.enableRssfeed.Size = new System.Drawing.Size(117, 17);
       this.enableRssfeed.TabIndex = 0;
@@ -1900,6 +1943,8 @@
       this.itemProperties.ResumeLayout(false);
       this.itemProperties.PerformLayout();
       this.basicHomeOptions.ResumeLayout(false);
+      this.gbRssImageType.ResumeLayout(false);
+      this.gbRssImageType.PerformLayout();
       this.styleOptionsGroup.ResumeLayout(false);
       this.styleOptionsGroup.PerformLayout();
       this.weatherSummaryGroup.ResumeLayout(false);
@@ -1997,7 +2042,7 @@
     private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     private System.Windows.Forms.GroupBox infoserviceOptions;
     private System.Windows.Forms.CheckBox summaryWeatherCheckBox;
-    private System.Windows.Forms.CheckBox fiveDayWeatherCheckBox;
+    private System.Windows.Forms.CheckBox enableFiveDayWeather;
     private System.Windows.Forms.CheckBox weatherBGlink;
     private System.Windows.Forms.CheckBox wrapString;
     private System.Windows.Forms.CheckBox enableTwitter;
@@ -2019,7 +2064,6 @@
     private System.Windows.Forms.TabPage defaultBackgrounds;
     private System.Windows.Forms.CheckBox cboClearCache;
     private System.Windows.Forms.TabPage editingInfo;
-    private System.Windows.Forms.GroupBox rssTickerOptions;
     private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenu;
@@ -2084,6 +2128,10 @@
     private System.Windows.Forms.ComboBox cboSelectedFont;
     private System.Windows.Forms.Label label15;
     private System.Windows.Forms.Label label21;
+    private System.Windows.Forms.GroupBox gbRssImageType;
+    private System.Windows.Forms.RadioButton rbRssInfoServiceImage;
+    private System.Windows.Forms.RadioButton rbRssSkinImage;
+    private System.Windows.Forms.RadioButton rbRssNoImage;
   }
 }
 

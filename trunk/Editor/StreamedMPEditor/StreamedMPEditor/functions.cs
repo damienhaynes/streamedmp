@@ -19,7 +19,7 @@ namespace StreamedMPEditor
     private void GetMediaPortalSkinPath()
     {
       infoserviceOptions.Enabled = false;
-      fiveDayWeatherCheckBox.Enabled = false;
+      enableFiveDayWeather.Enabled = false;
       summaryWeatherCheckBox.Enabled = false;
 
       GetMediaPortalPath(ref mpPaths);
@@ -46,7 +46,7 @@ namespace StreamedMPEditor
       else if (pluginEnabled("InfoService"))
       {
         infoserviceOptions.Enabled = true;
-        fiveDayWeatherCheckBox.Enabled = true;
+        enableFiveDayWeather.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
         useInfoService.Text += "         (Version " + infoServiceVer + " Installed)";
         if (infoServiceVer.CompareTo(isSeparatorVer) >= 0)
@@ -70,7 +70,6 @@ namespace StreamedMPEditor
 
       if (rssTickerVer == "MP-RSSTicker Not Installed")
       {
-        rssTickerOptions.Enabled = false;
         useRSSTicker.Enabled = false;
         useRSSTicker.Checked = false;
         useRSSTicker.Text += "   (Disabled : Not Installed)";
@@ -84,7 +83,6 @@ namespace StreamedMPEditor
         }
         else
         {
-          rssTickerOptions.Enabled = false;
           useRSSTicker.Enabled = false;
           useRSSTicker.Checked = false;
           useRSSTicker.Text += "   (Disabled : Not Enabled)";
@@ -835,12 +833,10 @@ namespace StreamedMPEditor
         System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin("name"), true);
         //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
-      catch (Exception ex)
+      catch
       {
         //showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
       }
-
-
     }
 
     private string weatherIcon(int theDay)
@@ -941,6 +937,7 @@ namespace StreamedMPEditor
       // for the previous selected style
       summaryWeatherCheckBox.Checked = true;
       menuPosLabel.Text = "Menu Y Position:";
+      enableRssfeed.Checked = true;
 
       if (!animatedIconsInstalled())
         WeatherIconsAnimated.Enabled = false;
@@ -958,7 +955,7 @@ namespace StreamedMPEditor
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
-          fiveDayWeatherCheckBox.Checked = true;
+          enableFiveDayWeather.Checked = true;
           horizontalContextLabels.Enabled = false;
           weatherSummaryGroup.Visible = false;
           verticalStyle.Checked = true;
@@ -975,7 +972,7 @@ namespace StreamedMPEditor
         case chosenMenuStyle.horizontalStandardStyle:
           weatherStyle = chosenWeatherStyle.bottom;
           horizontalContextLabels.Checked = false;
-          fiveDayWeatherCheckBox.Checked = true;
+          enableFiveDayWeather.Checked = true;
           fullWeatherSummaryBottom.Enabled = true;
           fullWeatherSummaryBottom.Checked = true;
           horizontalContextLabels.Enabled = true;
@@ -993,7 +990,7 @@ namespace StreamedMPEditor
         case chosenMenuStyle.horizontalContextStyle:
           weatherStyle = chosenWeatherStyle.middle;
           horizontalContextLabels.Checked = true;
-          fiveDayWeatherCheckBox.Checked = true;
+          enableFiveDayWeather.Checked = true;
           fullWeatherSummaryMiddle.Checked = true;
           fullWeatherSummaryBottom.Enabled = false;
           horizontalContextLabels.Enabled = true;
@@ -1174,8 +1171,6 @@ namespace StreamedMPEditor
 
     private void readFonts()
     {
-      string tempFontName = null;
-
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(mpPaths.streamedMPpath + "Fonts.xml"))
       {

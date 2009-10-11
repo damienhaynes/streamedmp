@@ -24,6 +24,7 @@ namespace StreamedMPEditor
       string id = null;
       string _selectedFont = null;
       string _labelFont = null;
+      string activeRssImageType = null;
 
    
       menuItems.Clear();
@@ -163,6 +164,7 @@ namespace StreamedMPEditor
         txtNoFocusColour.Text = defUnFocus;
       }
 
+
       // Line up all the options this also sets the defaults for the style
       // which can be overidden by user settings below
       syncEditor(sync.OnLoad);
@@ -183,7 +185,7 @@ namespace StreamedMPEditor
         enableTwitter.Checked = bool.Parse(readEntryValue(optionsTag, "enableTwitter", nodelist));
         wrapString.Checked = bool.Parse(readEntryValue(optionsTag, "wrapString", nodelist));
         weatherBGlink.Checked = bool.Parse(readEntryValue(optionsTag, "weatherBGlink", nodelist));
-        fiveDayWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "fiveDayWeatherCheckBox", nodelist));
+        enableFiveDayWeather.Checked = bool.Parse(readEntryValue(optionsTag, "fiveDayWeatherCheckBox", nodelist));
         summaryWeatherCheckBox.Checked = bool.Parse(readEntryValue(optionsTag, "summaryWeatherCheckBox", nodelist));
         cboClearCache.Checked = bool.Parse(readEntryValue(optionsTag, "cboClearCache", nodelist));
         WeatherIconsAnimated.Checked = bool.Parse(readEntryValue(optionsTag, "animatedWeather", nodelist));
@@ -191,11 +193,34 @@ namespace StreamedMPEditor
         fullWeatherSummaryBottom.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
         fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
         useRSSTicker.Checked = bool.Parse(readEntryValue(optionsTag, "useRSSTicker", nodelist));
+        activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
+
       }
       catch 
       { 
         // Most likley a new option added but not written to file yet - just continue
       }
+
+      switch (activeRssImageType)
+      {
+        case "infoservice":
+          rssImage = rssImageType.infoserviceImage;
+          rbRssInfoServiceImage.Checked = true;
+          break;
+        case "noimage":
+          rssImage = rssImageType.noImage;
+          rbRssNoImage.Checked = true;
+          break;
+        case "skin":
+          rssImage = rssImageType.skinImage;
+          rbRssSkinImage.Checked = true;
+          break;
+        default:
+          rssImage = rssImageType.skinImage;
+          rbRssSkinImage.Checked = true;
+          break;
+      }
+
 
       if (_selectedFont != "false")
       {
