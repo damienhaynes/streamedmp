@@ -66,6 +66,13 @@ namespace StreamedMPEditor
       editing,
     };
 
+    enum rssImageType
+    {
+      noImage,
+      skinImage,
+      infoserviceImage,
+    };
+
     const string quote = "\"";
 
     bool basicHomeLoadError = false;
@@ -94,6 +101,7 @@ namespace StreamedMPEditor
     //Default Style to StreamedMp standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
     chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
+    rssImageType rssImage = rssImageType.skinImage;
 
     public streamedMpEditor()
     {
@@ -142,6 +150,10 @@ namespace StreamedMPEditor
           removeButton.Enabled = true;
           itemsOnMenubar.Enabled = true;
           randomChk.Enabled = true;
+
+          rbRssInfoServiceImage.Checked = false;
+          rbRssNoImage.Checked = false;
+          rbRssSkinImage.Checked = true;
 
           menuitemName.Text = null;
           menuItemLabel.Text = null;
@@ -616,8 +628,10 @@ namespace StreamedMPEditor
       System.IO.StreamWriter writer;
       generateXML(direction);
       generateBg(direction);
-      GenerateFiveDayWeather();
-      if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled) generateWeathersummary();
+      if (enableFiveDayWeather.Checked)
+        GenerateFiveDayWeather();
+      if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
+        generateWeathersummary();
       if (direction == menuType.horizontal)
       {
         generateTopBarH();
@@ -670,6 +684,27 @@ namespace StreamedMPEditor
         item.id = menuItems.IndexOf(item);
       }
     }
+
+    private void rbRssNoImage_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbRssNoImage.Checked)
+        rssImage = rssImageType.noImage;
+    }
+
+    private void rbRssSkinImage_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbRssSkinImage.Checked)
+        rssImage = rssImageType.skinImage;
+    }
+
+    private void rbRssInfoServiceImage_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbRssInfoServiceImage.Checked)
+        rssImage = rssImageType.infoserviceImage;
+    }
+
+
+
   }
 }
 

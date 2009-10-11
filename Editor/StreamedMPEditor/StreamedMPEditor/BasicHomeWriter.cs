@@ -959,26 +959,49 @@ namespace StreamedMPEditor
     {
       StringBuilder rawXML = new StringBuilder();
 
-      rawXML.AppendLine("\n<control>");
-      rawXML.AppendLine("\t<description>RSS Feed image</description>");
-      rawXML.AppendLine("\t<type>image</type>");
-      rawXML.AppendLine("\t<id>1</id>");
-      rawXML.AppendLine("\t<keepaspectratio>yes</keepaspectratio>");
-      rawXML.AppendLine("\t<height>26</height>");
-      rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage).ToString() + "</posY>");
-      rawXML.AppendLine("\t<posX>60</posX>");
-      rawXML.AppendLine("\t<texture>" + ticker + ".feed.img</texture>");
-      rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
-      rawXML.AppendLine("</control>");
+      switch (rssImage)
+      {
+        case rssImageType.infoserviceImage:
+          rawXML.AppendLine("\n<control>");
+          rawXML.AppendLine("\t<description>RSS Feed image (InfoService)</description>");
+          rawXML.AppendLine("\t<type>image</type>");
+          rawXML.AppendLine("\t<id>1</id>");
+          rawXML.AppendLine("\t<keepaspectratio>yes</keepaspectratio>");
+          rawXML.AppendLine("\t<height>26</height>");
+          rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage).ToString() + "</posY>");
+          rawXML.AppendLine("\t<posX>60</posX>");
+          rawXML.AppendLine("\t<texture>" + ticker + ".feed.img</texture>");
+          rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
+          rawXML.AppendLine("</control>");
+          break;
+        case rssImageType.skinImage:
+          rawXML.AppendLine("\n<control>");
+          rawXML.AppendLine("\t<description>RSS Feed image (Default Skin Image)</description>");
+          rawXML.AppendLine("\t<type>image</type>");
+          rawXML.AppendLine("\t<id>1</id>");
+          rawXML.AppendLine("\t<width>24</width>");
+          rawXML.AppendLine("\t<height>24</height>");
+          rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4).ToString() + "</posY>");
+          rawXML.AppendLine("\t<posX>60</posX>");
+          rawXML.AppendLine("\t<texture>defaultFeedRSS.png</texture>");
+          rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
+          rawXML.AppendLine("</control>");
+          break;
+      }
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("\t<description>RSS Items</description>");
       rawXML.AppendLine("\t<type>fadelabel</type>");
       rawXML.AppendLine("\t<id>1</id>");
-      rawXML.AppendLine("\t<width>1160</width>");
+      rawXML.AppendLine("\t<width>1280</width>");
       rawXML.AppendLine("\t<height>50</height>");
       rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssText).ToString() + "</posY>");
-      rawXML.AppendLine("\t<posX>130</posX>");
+      if (rssImage == rssImageType.skinImage)
+        rawXML.AppendLine("\t<posX>90</posX>");
+      else if (rssImage == rssImageType.infoserviceImage)
+        rawXML.AppendLine("\t<posX>120</posX>");
+      else
+        rawXML.AppendLine("\t<posX>60</posX>");
       rawXML.AppendLine("\t<font>mediastream12</font>");
       rawXML.AppendLine("\t<textcolor>ff000000</textcolor>");
       rawXML.AppendLine("\t<label>" + ticker + ".feed.titles</label>");
@@ -1601,7 +1624,7 @@ namespace StreamedMPEditor
 
     private void GenerateFiveDayWeather() 
     {
-      if (fiveDayWeatherCheckBox.Checked == true) 
+      if (enableFiveDayWeather.Checked == true) 
       {
         foreach (backgroundItem item in bgItems) 
         {
@@ -3159,14 +3182,15 @@ namespace StreamedMPEditor
       string activeWeatherStyle = null;
       string acceleration = tbAcceleration.Text;
       string duration = tbDuration.Text;
+      string activeRssImageType = null;
 
       string multiimage = checkBoxMultiImage.Checked ? "true" : "false";
       string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
-      string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
+      string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false"; 
       string settingEnableTwitter = enableTwitter.Checked ? "true" : "false";
       string settingWrapString = wrapString.Checked ? "true" : "false";
       string settingWeatherBGlink = weatherBGlink.Checked ? "true" : "false";
-      string settingFiveDayWeatherCheckBox = fiveDayWeatherCheckBox.Checked ? "true" : "false";
+      string settingFiveDayWeatherCheckBox = enableFiveDayWeather.Checked ? "true" : "false";
       string settingSummaryWeatherCheckBox = summaryWeatherCheckBox.Checked ? "true" : "false";
       string settingClearCacheOnGenerate = cboClearCache.Checked ? "true" : "false";
       string settingAnimatedWeather = WeatherIconsAnimated.Checked ? "true" : "false";
@@ -3196,6 +3220,19 @@ namespace StreamedMPEditor
           break;
         case chosenMenuStyle.horizontalContextStyle:
           activeMenuStyle = "horizontalContextStyle";
+          break;
+      }
+
+      switch (rssImage)
+      {
+        case rssImageType.infoserviceImage:
+          activeRssImageType = "infoservice";
+          break;
+        case rssImageType.noImage:
+          activeRssImageType = "noimage";
+          break;
+        case rssImageType.skinImage:
+          activeRssImageType = "skin";
           break;
       }
 
@@ -3233,6 +3270,7 @@ namespace StreamedMPEditor
                 + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 2, true)
                 + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 2, true)
                 + generateEntry("useRSSTicker", settingUseRSSTicker, 2, true)
+                + generateEntry("activeRssImageType", activeRssImageType, 2, true)
                 + "\t</section>");
 
       
