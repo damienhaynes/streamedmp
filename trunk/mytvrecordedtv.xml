@@ -1,403 +1,416 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>603</id>
-        <defaultcontrol>50</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <control>
-                        <type>label</type>
-                        <description>Number of Files Label</description>
-                        <id>12</id>
-                        <posX>1281</posX>
-                        <posY>721</posY>
-                        <label>#itemcount</label>
-                        <visible>false</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Selected item Label</description>
-                        <id>1</id>
-                        <posX>28</posX>
-                        <posY>505</posY>
-                        <width>437</width>
-                        <label>#selecteditem</label>
-                        <font>mediastream12tc</font>
-                        <visible>false</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <type>actiongroup</type>
-                        <description>action menu</description>
-                        <defaultcontrol>2</defaultcontrol>
-                        <onexit>50</onexit>
-                        <buttonX>1231</buttonX>
-                        <buttonY>55</buttonY>
-                        <buttonwidth>49</buttonwidth>
-                        <buttonheight>153</buttonheight>
-                        <textureFocus>Action_menu.png</textureFocus>
-                        <textureNoFocus>Action_menu.png</textureNoFocus>
-                        <dimColor>00ffffff</dimColor>
-                        <control>
-                                <type>image</type>
-                                <posX>1002</posX>
-                                <posY>0</posY>
-                                <width>278</width>
-                                <height>720</height>
-                                <texture>hiddenmenu_right.png</texture>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <id>0</id>
-                                <description>label SWITCH VIEW</description>
-                                <label>457</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>225</posY>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <id>0</id>
-                                <description>label OPTIONS</description>
-                                <label>496</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>337</posY>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <id>0</id>
-                                <description>label JUMP TO</description>
-                                <label>1065</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>391</posY>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <type>group</type>
-                                <description>group element</description>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                                <posX>1040</posX>
-                                <posY>250</posY>
-                                <width>220</width>
-                                <height>720</height>
-                                <layout>StackLayout</layout>
-                                <control>
-                                        <type>button</type>
-                                        <description>View-As button</description>
-                                        <id>2</id>
-                                        <onup>21</onup>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <label>100</label>
-                                </control>
-                                <control>
-                                        <type>sortbutton</type>
-                                        <id>3</id>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <label>620</label>
-                                </control>
-                                <control>
-                                        <type>button</type>
-                                        <description>All,Genre,Channel button</description>
-                                        <id>5</id>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <label>457</label>
-                                </control>
-                                <control>
-                                        <description>Empty button</description>
-                                        <type>button</type>
-                                        <id>0</id>
-                                        <label>-</label>
-                                        <visible>false</visible>
-                                </control>
-                                <control>
-                                        <type>button</type>
-                                        <description>cleanup button</description>
-                                        <id>6</id>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <label>624</label>
-                                </control>
-                                <control>
-                                        <type>button</type>
-                                        <description>compress button</description>
-                                        <id>7</id>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <hyperlink>609</hyperlink>
-                                        <label>896</label>
-                                        <visible>false</visible>
-                                </control>
-                                <control>
-                                        <description>Moving Pictures</description>
-                                        <type>button</type>
-                                        <id>66602</id>
-                                        <label>Moving Pictures</label>
-                                        <hyperlink>96742</hyperlink>
-                                        <visible>plugin.isenabled(Moving Pictures)</visible>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                </control>
-                                <control>
-                                        <description>TV Shows</description>
-                                        <type>button</type>
-                                        <id>66603</id>
-                                        <hyperlink>9811</hyperlink>
-                                        <label>1300</label>
-                                        <visible>plugin.isenabled(MP-TV Series)</visible>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                </control>
-                                <control>
-                                        <description>Trailers</description>
-                                        <type>button</type>
-                                        <id>66604</id>
-                                        <label>5906</label>
-                                        <hyperlink>5900</hyperlink>
-                                        <visible>plugin.isenabled(My Trailers)</visible>
-                                        <onleft>50</onleft>
-                                        <onright>50</onright>
-                                        <ondown>2</ondown>
-                                </control>
-                        </control>
-                </control>
-                <!--
+       <id>603</id>
+       <defaultcontrol>50</defaultcontrol>
+       <allowoverlay>no</allowoverlay>
+       <controls>
+              <import>common.window.tv.xml</import>
+              <import>common.time.xml</import>
+              <control>
+                     <type>label</type>
+                     <description>Number of Files Label</description>
+                     <id>12</id>
+                     <posX>1281</posX>
+                     <posY>721</posY>
+                     <label>#itemcount</label>
+                     <visible>false</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <type>fadelabel</type>
+                     <description>Selected item Label</description>
+                     <id>1</id>
+                     <posX>28</posX>
+                     <posY>505</posY>
+                     <width>437</width>
+                     <label>#selecteditem</label>
+                     <font>mediastream12tc</font>
+                     <visible>false</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <type>actiongroup</type>
+                     <description>action menu</description>
+                     <defaultcontrol>2</defaultcontrol>
+                     <onexit>50</onexit>
+                     <buttonX>1231</buttonX>
+                     <buttonY>55</buttonY>
+                     <buttonwidth>49</buttonwidth>
+                     <buttonheight>153</buttonheight>
+                     <textureFocus>Action_menu.png</textureFocus>
+                     <textureNoFocus>Action_menu.png</textureNoFocus>
+                     <dimColor>00ffffff</dimColor>
+                     <control>
+                            <type>image</type>
+                            <posX>1002</posX>
+                            <posY>0</posY>
+                            <width>278</width>
+                            <height>720</height>
+                            <texture>hiddenmenu_right.png</texture>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>dummy button</description>
+                            <label>-</label>
+                            <type>button</type>
+                            <posX>1002</posX>
+                            <posY>0</posY>
+                            <width>278</width>
+                            <height>720</height>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>label SWITCH VIEW</description>
+                            <label>457</label>
+                            <type>label</type>
+                            <font>mediastream12tc</font>
+                            <posX>1040</posX>
+                            <posY>225</posY>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>label OPTIONS</description>
+                            <label>496</label>
+                            <type>label</type>
+                            <font>mediastream12tc</font>
+                            <posX>1040</posX>
+                            <posY>337</posY>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>label JUMP TO</description>
+                            <label>1065</label>
+                            <type>label</type>
+                            <font>mediastream12tc</font>
+                            <posX>1040</posX>
+                            <posY>391</posY>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <type>group</type>
+                            <description>group element</description>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                            <posX>1040</posX>
+                            <posY>250</posY>
+                            <width>220</width>
+                            <height>720</height>
+                            <layout>StackLayout</layout>
+                            <control>
+                                   <type>button</type>
+                                   <description>View-As button</description>
+                                   <id>2</id>
+                                   <onup>21</onup>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <label>100</label>
+                            </control>
+                            <control>
+                                   <type>sortbutton</type>
+                                   <id>3</id>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <label>620</label>
+                            </control>
+                            <control>
+                                   <type>button</type>
+                                   <description>All,Genre,Channel button</description>
+                                   <id>5</id>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <label>457</label>
+                            </control>
+                            <control>
+                                   <description>Empty button</description>
+                                   <type>button</type>
+                                   <id>0</id>
+                                   <label>-</label>
+                                   <visible>false</visible>
+                            </control>
+                            <control>
+                                   <type>button</type>
+                                   <description>cleanup button</description>
+                                   <id>6</id>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <label>624</label>
+                            </control>
+                            <control>
+                                   <type>button</type>
+                                   <description>compress button</description>
+                                   <id>7</id>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <hyperlink>609</hyperlink>
+                                   <label>896</label>
+                                   <visible>false</visible>
+                            </control>
+                            <control>
+                                   <description>Moving Pictures</description>
+                                   <type>button</type>
+                                   <id>66602</id>
+                                   <label>Moving Pictures</label>
+                                   <hyperlink>96742</hyperlink>
+                                   <visible>plugin.isenabled(Moving Pictures)</visible>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                            </control>
+                            <control>
+                                   <description>TV Shows</description>
+                                   <type>button</type>
+                                   <id>66603</id>
+                                   <hyperlink>9811</hyperlink>
+                                   <label>1300</label>
+                                   <visible>plugin.isenabled(MP-TV Series)</visible>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                            </control>
+                            <control>
+                                   <description>Trailers</description>
+                                   <type>button</type>
+                                   <id>66604</id>
+                                   <label>5906</label>
+                                   <hyperlink>5900</hyperlink>
+                                   <visible>plugin.isenabled(My Trailers)</visible>
+                                   <onleft>50</onleft>
+                                   <onright>50</onright>
+                                   <ondown>2</ondown>
+                            </control>
+                     </control>
+              </control>
+              <!--
                 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 :::::::::::::::::::::::::::::::::: LIST VIEW and ALBUM VIEW::::::::::::::::::
                 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 -->
-                <control>
-                        <description>Default Thumb</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>27</posX>
-                        <posY>237</posY>
-                        <width>357</width>
-                        <height>206</height>
-                        <texture>defaultepisodethumb.png</texture>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Recording Thumb</description>
-                        <type>image</type>
-                        <id>1</id>
-                        <posX>28</posX>
-                        <posY>240</posY>
-                        <height>200</height>
-                        <width>354</width>
-                        <zoom>no</zoom>
-                        <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Glass Overlay</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>23</posX>
-                        <posY>232</posY>
-                        <height>206</height>
-                        <width>360</width>
-                        <keepaspectratio>no</keepaspectratio>
-                        <zoom>yes</zoom>
-                        <texture>glassoverlay.png</texture>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Current program title</description>
-                        <id>13</id>
-                        <posX>28</posX>
-                        <posY>460</posY>
-                        <width>600</width>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <label>#TV.RecordedTV.Title</label>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>genre</description>
-                        <id>17</id>
-                        <posX>28</posX>
-                        <posY>485</posY>
-                        <width>495</width>
-                        <label>#TV.RecordedTV.Genre</label>
-                        <font>mediastream11tc</font>
-                        <textcolor>ff006698</textcolor>
-                        <align>left</align>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>Current program time</description>
-                        <id>14</id>
-                        <posX>28</posX>
-                        <posY>507</posY>
-                        <label>#TV.RecordedTV.Time</label>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>textboxscrollup</type>
-                        <description>Description1</description>
-                        <id>15</id>
-                        <posX>28</posX>
-                        <posY>532</posY>
-                        <width>600</width>
-                        <height>160</height>
-                        <seperator>----------------------------------------------------------------------------------------</seperator>
-                        <font>mediastream11</font>
-                        <label>#TV.RecordedTV.Description</label>
-                        <visible>facadeview.list | facadeview.album</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <!--
+              <control>
+                     <description>Default Thumb</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>27</posX>
+                     <posY>237</posY>
+                     <width>357</width>
+                     <height>206</height>
+                     <texture>defaultepisodethumb.png</texture>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Recording Thumb</description>
+                     <type>image</type>
+                     <id>1</id>
+                     <posX>28</posX>
+                     <posY>240</posY>
+                     <height>200</height>
+                     <width>354</width>
+                     <zoom>no</zoom>
+                     <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Glass Overlay</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>23</posX>
+                     <posY>232</posY>
+                     <height>206</height>
+                     <width>360</width>
+                     <keepaspectratio>no</keepaspectratio>
+                     <zoom>yes</zoom>
+                     <texture>glassoverlay.png</texture>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>fadelabel</type>
+                     <description>Current program title</description>
+                     <id>13</id>
+                     <posX>28</posX>
+                     <posY>460</posY>
+                     <width>600</width>
+                     <font>mediastream12tc</font>
+                     <textcolor>ff909090</textcolor>
+                     <label>#TV.RecordedTV.Title</label>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>genre</description>
+                     <id>17</id>
+                     <posX>28</posX>
+                     <posY>485</posY>
+                     <width>495</width>
+                     <label>#TV.RecordedTV.Genre</label>
+                     <font>mediastream11tc</font>
+                     <textcolor>ff006698</textcolor>
+                     <align>left</align>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>Current program time</description>
+                     <id>14</id>
+                     <posX>28</posX>
+                     <posY>507</posY>
+                     <label>#TV.RecordedTV.Time</label>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>textboxscrollup</type>
+                     <description>Description1</description>
+                     <id>15</id>
+                     <posX>28</posX>
+                     <posY>532</posY>
+                     <width>600</width>
+                     <height>160</height>
+                     <seperator>----------------------------------------------------------------------------------------</seperator>
+                     <font>mediastream11</font>
+                     <label>#TV.RecordedTV.Description</label>
+                     <visible>facadeview.list | facadeview.album</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <!--
                 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 ::::::::::::::::::::::::::::::::::     THUMBNAIL VIEW      ::::::::::::::::::
                 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 -->
-                <control>
-                        <type>fadelabel</type>
-                        <description>Current program title</description>
-                        <id>13</id>
-                        <posX>28</posX>
-                        <posY>240</posY>
-                        <width>475</width>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <label>#TV.RecordedTV.Title</label>
-                        <visible>facadeview.largeicons | facadeview.smallicons</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>genre</description>
-                        <id>17</id>
-                        <posX>28</posX>
-                        <posY>265</posY>
-                        <width>315</width>
-                        <label>#TV.RecordedTV.Genre</label>
-                        <font>mediastream11tc</font>
-                        <textcolor>ff006698</textcolor>
-                        <align>left</align>
-                        <visible>facadeview.largeicons | facadeview.smallicons</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>Current program time</description>
-                        <id>14</id>
-                        <posX>28</posX>
-                        <posY>287</posY>
-                        <font>mediastream11tc</font>
-                        <label>#TV.RecordedTV.Time</label>
-                        <visible>facadeview.largeicons | facadeview.smallicons</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>textboxscrollup</type>
-                        <description>Description1</description>
-                        <id>15</id>
-                        <posX>28</posX>
-                        <posY>312</posY>
-                        <width>475</width>
-                        <height>348</height>
-                        <seperator>----------------------------------------------------------------------------------------</seperator>
-                        <font>mediastream12</font>
-                        <label>#TV.RecordedTV.Description</label>
-                        <visible>facadeview.largeicons | facadeview.smallicons</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Media Count Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>1013</posX>
-                        <posY>684</posY>
-                        <width>260</width>
-                        <height>32</height>
-                        <texture>mediacountbg_Spin.png</texture>
-                        <visible>yes</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Media Count Label</description>
-                        <type>label</type>
-                        <label>PAGE:</label>
-                        <id>0</id>
-                        <posX>1023</posX>
-                        <posY>689</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <visible>yes</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-                </control>
-                <import>common.facade.recordings.xml</import>
-                <import>common.overlays.xml</import>
-        </controls>
+              <control>
+                     <type>fadelabel</type>
+                     <description>Current program title</description>
+                     <id>13</id>
+                     <posX>28</posX>
+                     <posY>240</posY>
+                     <width>475</width>
+                     <font>mediastream12tc</font>
+                     <textcolor>ff909090</textcolor>
+                     <label>#TV.RecordedTV.Title</label>
+                     <visible>facadeview.largeicons | facadeview.smallicons</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>genre</description>
+                     <id>17</id>
+                     <posX>28</posX>
+                     <posY>265</posY>
+                     <width>315</width>
+                     <label>#TV.RecordedTV.Genre</label>
+                     <font>mediastream11tc</font>
+                     <textcolor>ff006698</textcolor>
+                     <align>left</align>
+                     <visible>facadeview.largeicons | facadeview.smallicons</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>Current program time</description>
+                     <id>14</id>
+                     <posX>28</posX>
+                     <posY>287</posY>
+                     <font>mediastream11tc</font>
+                     <label>#TV.RecordedTV.Time</label>
+                     <visible>facadeview.largeicons | facadeview.smallicons</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>textboxscrollup</type>
+                     <description>Description1</description>
+                     <id>15</id>
+                     <posX>28</posX>
+                     <posY>312</posY>
+                     <width>475</width>
+                     <height>348</height>
+                     <seperator>----------------------------------------------------------------------------------------</seperator>
+                     <font>mediastream12</font>
+                     <label>#TV.RecordedTV.Description</label>
+                     <visible>facadeview.largeicons | facadeview.smallicons</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Media Count Background</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>1013</posX>
+                     <posY>684</posY>
+                     <width>260</width>
+                     <height>32</height>
+                     <texture>mediacountbg_Spin.png</texture>
+                     <visible>yes</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Media Count Label</description>
+                     <type>label</type>
+                     <label>PAGE:</label>
+                     <id>0</id>
+                     <posX>1023</posX>
+                     <posY>689</posY>
+                     <font>mediastream12tc</font>
+                     <textcolor>ff909090</textcolor>
+                     <visible>yes</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+              </control>
+              <import>common.facade.recordings.xml</import>
+              <import>common.overlays.xml</import>
+       </controls>
 </window>

@@ -39,7 +39,7 @@
                 <control>
                         <description>Thumb</description>
                         <type>image</type>
-                        <id>1</id>
+                        <id>0</id>
                         <posX>28</posX>
                         <posY>242</posY>
                         <height>198</height>
@@ -340,7 +340,20 @@
                                 <animation effect="slide" time="200" start="300,0">visible</animation>
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
                         </control>
-                        <control>
+                       <control>
+                              <id>0</id>
+                              <description>dummy button</description>
+                              <label>-</label>
+                              <type>button</type>
+                              <posX>1002</posX>
+                              <posY>0</posY>
+                              <width>278</width>
+                              <height>720</height>
+                              <visible>!Control.HasFocus(50)</visible>
+                              <animation effect="slide" time="100" start="300,0">visible</animation>
+                              <animation effect="slide" time="0" end="300,0">hidden</animation>
+                       </control>
+                       <control>
                                 <description>OPTIONS Header</description>
                                 <type>label</type>
                                 <id>0</id>
