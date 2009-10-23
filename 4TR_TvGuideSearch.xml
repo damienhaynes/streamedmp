@@ -1,125 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>49850</id>
-        <defaultcontrol>2</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <define>#header.image:-</define>
-        <define>#header.label:724</define>
-        <define>#header.hover:-</define>
-	<define>#currentmodule:TV/Search</define>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <control>
-                        <description>Number of Files Label</description>
-                        <type>label</type>
-                        <id>12</id>
-                        <posX>493</posX>
-                        <posY>706</posY>
-                        <label>#itemcount</label>
-                        <visible>false</visible>
-                </control>
-                <control>
-                        <type>actiongroup</type>
-                        <description>action menu</description>
-                        <onexit>10</onexit>
-                        <dimColor>00ffffff</dimColor>
-                        <control>
-                                <type>image</type>
-                                <posX>1002</posX>
-                                <posY>0</posY>
-                                <width>278</width>
-                                <height>720</height>
-                                <texture>hiddenmenu_right.png</texture>
-                                <visible>!Control.HasFocus(10)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <id>0</id>
-                                <description>label OPTIONS</description>
-                                <label>496</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>225</posY>
-                                <visible>!Control.HasFocus(10)</visible>
-                                <animation effect="slide" time="150" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <type>group</type>
-                                <description>group element</description>
-                                <visible>!Control.HasFocus(10)</visible>
-                                <animation effect="slide" time="200" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                                <posX>1040</posX>
-                                <posY>250</posY>
-                                <width>220</width>
-                                <height>720</height>
-                                <layout>StackLayout</layout>
-                                <control>
-                                        <description>Search by Title</description>
-                                        <type>button</type>
-                                        <id>2</id>
-                                        <label>6032</label>
-                                        <onleft>10</onleft>
-                                </control>
-                                <control>
-                                        <description>Clear</description>
-                                        <type>button</type>
-                                        <id>3</id>
-                                        <label>192</label>
-                                        <onleft>10</onleft>
-                                </control>
-                                <control>
-                                        <id>4</id>
-                                        <type>sortbutton</type>
-                                        <label>620</label>
-                                        <onleft>10</onleft>
-                                </control>
-                        </control>
-                </control>
-                <control>
-                        <type>group</type>
-                        <description>group element</description>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-                        <control>
-                                <description>listcontrol</description>
-                                <type>listcontrol</type>
-                                <id>10</id>
-                                <posX>620</posX>
-                                <posY>240</posY>
-                                <height>450</height>
-                                <width>660</width>
-                                <scrollOffset>2</scrollOffset>
-                                <PinIconWidth>20</PinIconWidth>
-                                <PinIconHeight>20</PinIconHeight>
-                                <PinIconXOff>72</PinIconXOff>
-                                <PinIconYOff>22</PinIconYOff>
-                                <itemWidth>60</itemWidth>
-                                <itemHeight>60</itemHeight>
-                                <IconXOff>5</IconXOff>
-                                <IconYOff>2</IconYOff>
-                                <textXOff>50</textXOff>
-                                <textXOff2>650</textXOff2>
-                                <textYOff2>37</textYOff2>
-                                <textureHeight>64</textureHeight>
-                                <font2>mediastream10c</font2>
-                                <keepaspectratio>yes</keepaspectratio>
-                                <!--<unfocusedAlpha>200</unfocusedAlpha>-->
-                                <spinPosX>1249</spinPosX>
-                                <spinPosY>691</spinPosY>
-                                <spinAlign>Right</spinAlign>
-                                <onleft>99</onleft>
-                                <onright>2</onright>
-                                <suffix>|</suffix>
-                        </control>
-                </control>
-                <!--<control>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.image:-</define>
+  <define>#header.label:724</define>
+  <define>#header.hover:-</define>
+  <define>#currentmodule:TV/Search</define>
+  <controls>
+    <import>common.window.tv.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Number of Files Label</description>
+      <type>label</type>
+      <id>12</id>
+      <posX>493</posX>
+      <posY>706</posY>
+      <label>#itemcount</label>
+      <visible>false</visible>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <onexit>10</onexit>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>label OPTIONS</description>
+        <label>496</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="150" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Search by Title</description>
+          <type>button</type>
+          <id>2</id>
+          <label>6032</label>
+          <onleft>10</onleft>
+        </control>
+        <control>
+          <description>Clear</description>
+          <type>button</type>
+          <id>3</id>
+          <label>192</label>
+          <onleft>10</onleft>
+        </control>
+        <control>
+          <id>4</id>
+          <type>sortbutton</type>
+          <label>620</label>
+          <onleft>10</onleft>
+        </control>
+      </control>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <control>
+        <description>listcontrol</description>
+        <type>listcontrol</type>
+        <id>10</id>
+        <posX>620</posX>
+        <posY>240</posY>
+        <height>450</height>
+        <width>660</width>
+        <scrollOffset>2</scrollOffset>
+        <PinIconWidth>20</PinIconWidth>
+        <PinIconHeight>20</PinIconHeight>
+        <PinIconXOff>72</PinIconXOff>
+        <PinIconYOff>22</PinIconYOff>
+        <itemWidth>60</itemWidth>
+        <itemHeight>60</itemHeight>
+        <IconXOff>5</IconXOff>
+        <IconYOff>2</IconYOff>
+        <textXOff>50</textXOff>
+        <textXOff2>650</textXOff2>
+        <textYOff2>37</textYOff2>
+        <textureHeight>64</textureHeight>
+        <font2>mediastream10c</font2>
+        <keepaspectratio>yes</keepaspectratio>
+        <unfocusedAlpha>0xFF</unfocusedAlpha>
+        <spinPosX>1249</spinPosX>
+        <spinPosY>691</spinPosY>
+        <spinAlign>Right</spinAlign>
+        <onleft>99</onleft>
+        <onright>2</onright>
+        <suffix>|</suffix>
+      </control>
+    </control>
+    <!--<control>
                         <description>Current program channel</description>
                         <type>label</type>
                         <id>16</id>
@@ -132,126 +132,126 @@
                         <animation effect="fade" time="250">WindowOpen</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                 </control>-->
-                <control>
-                        <type>fadelabel</type>
-                        <description>Selected item Label</description>
-                        <id>1</id>
-                        <posX>28</posX>
-                        <posY>273</posY>
-                        <width>570</width>
-                        <label>#selecteditem</label>
-                        <font>mediastream16tc</font>
-                        <visible>!Control.IsVisible(14)</visible>
-                        <textcolor>ff909090</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Current program title</description>
-                        <type>fadelabel</type>
-                        <id>13</id>
-                        <posX>28</posX>
-                        <posY>273</posY>
-                        <width>570</width>
-                        <font>mediastream14tc</font>
-                        <label>#TV.Search.Title</label>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Current program time</description>
-                        <type>label</type>
-                        <id>14</id>
-                        <posX>28</posX>
-                        <posY>302</posY>
-                        <font>mediastream12tc</font>
-                        <label>#TV.Search.Time</label>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Genre Label</description>
-                        <type>label</type>
-                        <label>GENERE : </label>
-                        <id>0</id>
-                        <posX>28</posX>
-                        <posY>331</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff006698</textcolor>
-                        <visible>Control.isvisible(14)</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>genre</description>
-                        <id>17</id>
-                        <posX>130</posX>
-                        <posY>330</posY>
-                        <width>468</width>
-                        <font>mediastream12c</font>
-                        <label>#TV.Search.Genre</label>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Description1</description>
-                        <type>textboxscrollup</type>
-                        <id>15</id>
-                        <posX>28</posX>
-                        <posY>370</posY>
-                        <width>570</width>
-                        <height>260</height>
-                        <seperator>-----------------------------------------------------------------------------------------------</seperator>
-                        <font>mediastream12</font>
-                        <label>#TV.Search.Description</label>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <type>image</type>
-                        <id>18</id>
-                        <posX>17</posX>
-                        <posY>615</posY>
-                        <width>180</width>
-                        <height>113</height>
-                        <texture>-</texture>
-                </control>
-                <control>
-                        <description>Media Count Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>1103</posX>
-                        <posY>684</posY>
-                        <width>169</width>
-                        <height>30</height>
-                        <texture>mediacountbackground.png</texture>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Media Count Label</description>
-                        <type>label</type>
-                        <label>PAGE:</label>
-                        <id>0</id>
-                        <posX>1113</posX>
-                        <posY>686</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff909090</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>Search by Description</description>
-                        <type>togglebutton</type>
-                        <id>6</id>
-                        <label>922</label>
-                        <onleft>6</onleft>
-                        <onright>10</onright>
-                        <onup>5</onup>
-                        <ondown>7</ondown>
-                        <visible>no</visible>
-                </control>
-                <import>common.overlays.xml</import>
-        </controls>
+    <control>
+      <type>fadelabel</type>
+      <description>Selected item Label</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>273</posY>
+      <width>570</width>
+      <label>#selecteditem</label>
+      <font>mediastream16tc</font>
+      <visible>!Control.IsVisible(14)</visible>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>28</posX>
+      <posY>273</posY>
+      <width>570</width>
+      <font>mediastream14tc</font>
+      <label>#TV.Search.Title</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current program time</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>28</posX>
+      <posY>302</posY>
+      <font>mediastream12tc</font>
+      <label>#TV.Search.Time</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genre Label</description>
+      <type>label</type>
+      <label>GENERE : </label>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>331</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.isvisible(14)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>genre</description>
+      <id>17</id>
+      <posX>130</posX>
+      <posY>330</posY>
+      <width>468</width>
+      <font>mediastream12c</font>
+      <label>#TV.Search.Genre</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Description1</description>
+      <type>textboxscrollup</type>
+      <id>15</id>
+      <posX>28</posX>
+      <posY>370</posY>
+      <width>570</width>
+      <height>260</height>
+      <seperator>-----------------------------------------------------------------------------------------------</seperator>
+      <font>mediastream12</font>
+      <label>#TV.Search.Description</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>18</id>
+      <posX>17</posX>
+      <posY>615</posY>
+      <width>180</width>
+      <height>113</height>
+      <texture>-</texture>
+    </control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1103</posX>
+      <posY>684</posY>
+      <width>169</width>
+      <height>30</height>
+      <texture>mediacountbackground.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>686</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Search by Description</description>
+      <type>togglebutton</type>
+      <id>6</id>
+      <label>922</label>
+      <onleft>6</onleft>
+      <onright>10</onright>
+      <onup>5</onup>
+      <ondown>7</ondown>
+      <visible>no</visible>
+    </control>
+    <import>common.overlays.xml</import>
+  </controls>
 </window>
