@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>49848</id>
-  <defaultcontrol>10</defaultcontrol>
+  <id>49851</id>
+  <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:646</define>
   <define>#header.image:-</define>
-  <define>#header.hover:-</define>
-  <define>#currentmodule:TV/Upcoming</define>
+  <define>#header.label:724</define>
+  <define>#header.hover:hover_my radio.png</define>
+  <define>#currentmodule:Radio/Search</define>
   <controls>
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
@@ -14,11 +14,9 @@
       <description>Number of Files Label</description>
       <type>label</type>
       <id>12</id>
-      <posX>25</posX>
-      <posY>618</posY>
-      <font>font14</font>
+      <posX>493</posX>
+      <posY>706</posY>
       <label>#itemcount</label>
-      <textcolor>ffcccccc</textcolor>
       <visible>false</visible>
     </control>
     <control>
@@ -39,8 +37,8 @@
       </control>
       <control>
         <id>0</id>
-        <description>label SWITCH VIEW</description>
-        <label>457</label>
+        <description>label OPTIONS</description>
+        <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
@@ -61,13 +59,27 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
+          <description>Search by Title</description>
           <type>button</type>
-          <description>Program type button</description>
           <id>2</id>
+          <label>6032</label>
           <onleft>10</onleft>
-          <onright>2</onright>
+          <ondown>3</ondown>
+        </control>
+        <control>
+          <description>Clear</description>
+          <type>button</type>
+          <id>3</id>
+          <label>192</label>
+          <onleft>10</onleft>
+          <ondown>5</ondown>
+        </control>
+        <control>
+          <id>5</id>
+          <type>sortbutton</type>
+          <label>620</label>
+          <onleft>10</onleft>
           <ondown>2</ondown>
-          <label>Type:</label>
         </control>
       </control>
     </control>
@@ -79,43 +91,35 @@
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
       <control>
-        <description>scheduler recordings listcontrol</description>
+        <description>listcontrol</description>
         <type>listcontrol</type>
         <id>10</id>
         <posX>620</posX>
         <posY>240</posY>
         <height>450</height>
         <width>660</width>
-        <selectedColor>80000000</selectedColor>
-        <textcolor>ffffffff</textcolor>
-        <selectedColor2>ffffffff</selectedColor2>
-        <textcolor2>ffffffff</textcolor2>
+        <scrollOffset>2</scrollOffset>
+        <PinIconWidth>20</PinIconWidth>
+        <PinIconHeight>20</PinIconHeight>
+        <PinIconXOff>72</PinIconXOff>
+        <PinIconYOff>22</PinIconYOff>
+        <itemWidth>60</itemWidth>
+        <itemHeight>60</itemHeight>
+        <IconXOff>5</IconXOff>
+        <IconYOff>2</IconYOff>
         <textXOff>50</textXOff>
         <textXOff2>650</textXOff2>
-        <textXOff3>158</textXOff3>
-        <textYOff2>45</textYOff2>
-        <textYOff3>47</textYOff3>
-        <font>font14</font>
+        <textYOff2>37</textYOff2>
+        <textureHeight>64</textureHeight>
         <font2>mediastream10c</font2>
-        <font3>mediastream10c</font3>
-        <itemWidth>80</itemWidth>
-        <itemHeight>80</itemHeight>
-        <IconXOff>3</IconXOff>
-        <IconYOff>2</IconYOff>
-        <PinIconWidth>48</PinIconWidth>
-        <PinIconHeight>20</PinIconHeight>
-        <PinIconXOff>87</PinIconXOff>
-        <PinIconYOff>32</PinIconYOff>
-        <spaceBetweenItems>0</spaceBetweenItems>
-        <textureHeight>84</textureHeight>
-        <scrollOffset>1</scrollOffset>
+        <keepaspectratio>yes</keepaspectratio>
+        <unfocusedAlpha>0xFF</unfocusedAlpha>
         <spinPosX>1249</spinPosX>
-        <spinPosY>692</spinPosY>
+        <spinPosY>691</spinPosY>
         <spinAlign>Right</spinAlign>
         <onleft>99</onleft>
         <onright>2</onright>
-        <unfocusedAlpha>0xFF</unfocusedAlpha>
-        <keepaspectratio>yes</keepaspectratio>
+        <suffix>|</suffix>
       </control>
     </control>
     <control>
@@ -126,13 +130,23 @@
       <posY>273</posY>
       <width>570</width>
       <label>#selecteditem</label>
-      <font>mediastream12tc</font>
-      <visible>Control.IsVisible(14)</visible>
+      <font>mediastream16tc</font>
+      <visible>!Control.IsVisible(14)</visible>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>28</posX>
+      <posY>273</posY>
+      <width>570</width>
+      <font>mediastream14tc</font>
+      <label>#Radio.Search.Title</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current program time</description>
@@ -141,11 +155,34 @@
       <posX>28</posX>
       <posY>302</posY>
       <font>mediastream12tc</font>
-      <label>#TV.Upcoming.Time</label>
+      <label>#Radio.Search.Time</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genre Label</description>
+      <type>label</type>
+      <label>GENERE : </label>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>331</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff006698</textcolor>
+      <visible>Control.isvisible(14)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>genre</description>
+      <id>17</id>
+      <posX>130</posX>
+      <posY>330</posY>
+      <width>468</width>
+      <font>mediastream12c</font>
+      <label>#Radio.Search.Genre</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Description1</description>
@@ -154,42 +191,56 @@
       <posX>28</posX>
       <posY>370</posY>
       <width>570</width>
-      <height>290</height>
+      <height>260</height>
+      <seperator>-----------------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
-      <seperator>----------------------------------------------------------------------------------------------------</seperator>
-      <label>#TV.Upcoming.Description</label>
+      <label>#Radio.Search.Description</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>18</id>
+      <posX>17</posX>
+      <posY>615</posY>
+      <width>180</width>
+      <height>113</height>
+      <texture>-</texture>
     </control>
     <control>
       <description>Media Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1113</posX>
+      <posX>1103</posX>
       <posY>684</posY>
-      <width>159</width>
+      <width>169</width>
       <height>30</height>
       <texture>mediacountbackground.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
     <control>
       <description>Media Count Label</description>
       <type>label</type>
       <label>PAGE:</label>
       <id>0</id>
-      <posX>1123</posX>
+      <posX>1113</posX>
       <posY>686</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Search by Description</description>
+      <type>togglebutton</type>
+      <id>6</id>
+      <label>922</label>
+      <onleft>6</onleft>
+      <onright>10</onright>
+      <onup>5</onup>
+      <ondown>7</ondown>
+      <visible>no</visible>
     </control>
     <import>common.overlays.xml</import>
   </controls>
