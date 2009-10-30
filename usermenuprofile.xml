@@ -6,6 +6,8 @@
 		<entry name="weatherstyle">bottom</entry>
 		<entry name="menuitemFocus">FFFFFFFF</entry>
 		<entry name="menuitemNoFocus">80C0C0C0</entry>
+		<entry name="labelFont">mediastream16tc</entry>
+		<entry name="selectedFont">mediastream28tc</entry>
 		<entry name="menuType">Vertical</entry>
 		<entry name="menuXPos">350</entry>
 		<entry name="multiimage">false</entry>
@@ -15,18 +17,20 @@
 		<entry name="enableRssfeed">true</entry>
 		<entry name="enableTwitter">false</entry>
 		<entry name="wrapString">true</entry>
-		<entry name="weatherBGlink">false</entry>
+		<entry name="weatherBGlink">true</entry>
 		<entry name="fiveDayWeatherCheckBox">true</entry>
 		<entry name="summaryWeatherCheckBox">true</entry>
 		<entry name="cboClearCache">false</entry>
 		<entry name="animatedWeather">false</entry>
-		<entry name="horizontalContextLabels">true</entry>
+		<entry name="horizontalContextLabels">false</entry>
 		<entry name="fullWeatherSummaryBottom">true</entry>
 		<entry name="fullWeatherSummaryMiddle">false</entry>
+		<entry name="useRSSTicker">false</entry>
+		<entry name="activeRssImageType">noimage</entry>
 	</section>
 	<!-- End Of Menu Options -->
 	<section name="StreamedMP Menu Items">
-		<entry name="count">9</entry>
+		<entry name="count">10</entry>
 		<!-- Menu Entry : 0 -->
 		<entry name="menuitem0name">PLUGINS</entry>
 		<entry name="menuitem0label">BROWSE YOUR</entry>
@@ -52,23 +56,23 @@
 		<entry name="menuitem1updatestatus">False</entry>
 		<entry name="menuitem1defaultimage">animations\music\default.jpg</entry>
 		<!-- Menu Entry : 2 -->
-		<entry name="menuitem2name">MOVIES</entry>
+		<entry name="menuitem2name">TV</entry>
 		<entry name="menuitem2label">WATCH</entry>
-		<entry name="menuitem2folder">movies</entry>
-		<entry name="menuitem2hyperlink">96742</entry>
+		<entry name="menuitem2folder">tv</entry>
+		<entry name="menuitem2hyperlink">1</entry>
 		<entry name="menuitem2isdefault">False</entry>
 		<entry name="menuitem2isweather">False</entry>
 		<entry name="menuitem2id">1002</entry>
 		<entry name="menuitem2timeonpage">30</entry>
 		<entry name="menuitem2random">True</entry>
 		<entry name="menuitem2updatestatus">False</entry>
-		<entry name="menuitem2defaultimage">animations\movies\default.jpg</entry>
+		<entry name="menuitem2defaultimage">animations\tv\default.jpg</entry>
 		<!-- Menu Entry : 3 -->
-		<entry name="menuitem3name">TV</entry>
-		<entry name="menuitem3label">WATCH</entry>
+		<entry name="menuitem3name">SERIES</entry>
+		<entry name="menuitem3label">WATCH YOUR</entry>
 		<entry name="menuitem3folder">tv</entry>
-		<entry name="menuitem3hyperlink">1</entry>
-		<entry name="menuitem3isdefault">False</entry>
+		<entry name="menuitem3hyperlink">9811</entry>
+		<entry name="menuitem3isdefault">True</entry>
 		<entry name="menuitem3isweather">False</entry>
 		<entry name="menuitem3id">1003</entry>
 		<entry name="menuitem3timeonpage">30</entry>
@@ -76,17 +80,17 @@
 		<entry name="menuitem3updatestatus">False</entry>
 		<entry name="menuitem3defaultimage">animations\tv\default.jpg</entry>
 		<!-- Menu Entry : 4 -->
-		<entry name="menuitem4name">SERIES</entry>
-		<entry name="menuitem4label">WATCH YOUR</entry>
-		<entry name="menuitem4folder">tv</entry>
-		<entry name="menuitem4hyperlink">9811</entry>
-		<entry name="menuitem4isdefault">True</entry>
+		<entry name="menuitem4name">MOVIES</entry>
+		<entry name="menuitem4label">WATCH</entry>
+		<entry name="menuitem4folder">movies</entry>
+		<entry name="menuitem4hyperlink">96742</entry>
+		<entry name="menuitem4isdefault">False</entry>
 		<entry name="menuitem4isweather">False</entry>
 		<entry name="menuitem4id">1004</entry>
 		<entry name="menuitem4timeonpage">30</entry>
 		<entry name="menuitem4random">True</entry>
 		<entry name="menuitem4updatestatus">False</entry>
-		<entry name="menuitem4defaultimage">animations\tv\default.jpg</entry>
+		<entry name="menuitem4defaultimage">animations\movies\default.jpg</entry>
 		<!-- Menu Entry : 5 -->
 		<entry name="menuitem5name">TRAILERS</entry>
 		<entry name="menuitem5label">WATCH</entry>
@@ -100,41 +104,53 @@
 		<entry name="menuitem5updatestatus">False</entry>
 		<entry name="menuitem5defaultimage">animations\movies\default.jpg</entry>
 		<!-- Menu Entry : 6 -->
-		<entry name="menuitem6name">WEATHER</entry>
-		<entry name="menuitem6label">CHECK THE</entry>
-		<entry name="menuitem6folder">weatherbg</entry>
-		<entry name="menuitem6hyperlink">2600</entry>
+		<entry name="menuitem6name">VIDEOS</entry>
+		<entry name="menuitem6label">WATCH YOUR</entry>
+		<entry name="menuitem6folder">movies</entry>
+		<entry name="menuitem6hyperlink">6</entry>
 		<entry name="menuitem6isdefault">False</entry>
-		<entry name="menuitem6isweather">True</entry>
+		<entry name="menuitem6isweather">False</entry>
 		<entry name="menuitem6id">1006</entry>
 		<entry name="menuitem6timeonpage">30</entry>
 		<entry name="menuitem6random">True</entry>
 		<entry name="menuitem6updatestatus">False</entry>
-		<entry name="menuitem6defaultimage">animations\weatherbg\default.jpg</entry>
+		<entry name="menuitem6defaultimage">animations\movies\default.jpg</entry>
 		<!-- Menu Entry : 7 -->
-		<entry name="menuitem7name">SETTINGS</entry>
-		<entry name="menuitem7label">CONFIGURE</entry>
-		<entry name="menuitem7folder">settings</entry>
-		<entry name="menuitem7hyperlink">4</entry>
+		<entry name="menuitem7name">WEATHER</entry>
+		<entry name="menuitem7label">CHECK THE</entry>
+		<entry name="menuitem7folder">weatherbg</entry>
+		<entry name="menuitem7hyperlink">2600</entry>
 		<entry name="menuitem7isdefault">False</entry>
-		<entry name="menuitem7isweather">False</entry>
+		<entry name="menuitem7isweather">True</entry>
 		<entry name="menuitem7id">1007</entry>
 		<entry name="menuitem7timeonpage">30</entry>
 		<entry name="menuitem7random">True</entry>
 		<entry name="menuitem7updatestatus">False</entry>
-		<entry name="menuitem7defaultimage">animations\settings\default.jpg</entry>
+		<entry name="menuitem7defaultimage">animations\weatherbg\default.jpg</entry>
 		<!-- Menu Entry : 8 -->
-		<entry name="menuitem8name">NEWS</entry>
-		<entry name="menuitem8label">READ THE</entry>
-		<entry name="menuitem8folder">news</entry>
-		<entry name="menuitem8hyperlink">16001</entry>
+		<entry name="menuitem8name">SETTINGS</entry>
+		<entry name="menuitem8label">CONFIGURE</entry>
+		<entry name="menuitem8folder">settings</entry>
+		<entry name="menuitem8hyperlink">4</entry>
 		<entry name="menuitem8isdefault">False</entry>
 		<entry name="menuitem8isweather">False</entry>
 		<entry name="menuitem8id">1008</entry>
 		<entry name="menuitem8timeonpage">30</entry>
 		<entry name="menuitem8random">True</entry>
 		<entry name="menuitem8updatestatus">False</entry>
-		<entry name="menuitem8defaultimage">animations\news\default.jpg</entry>
+		<entry name="menuitem8defaultimage">animations\settings\default.jpg</entry>
+		<!-- Menu Entry : 9 -->
+		<entry name="menuitem9name">NEWS</entry>
+		<entry name="menuitem9label">READ THE</entry>
+		<entry name="menuitem9folder">news</entry>
+		<entry name="menuitem9hyperlink">16001</entry>
+		<entry name="menuitem9isdefault">False</entry>
+		<entry name="menuitem9isweather">False</entry>
+		<entry name="menuitem9id">1009</entry>
+		<entry name="menuitem9timeonpage">30</entry>
+		<entry name="menuitem9random">True</entry>
+		<entry name="menuitem9updatestatus">False</entry>
+		<entry name="menuitem9defaultimage">animations\news\default.jpg</entry>
 	</section>
 </skin>
 </profile>

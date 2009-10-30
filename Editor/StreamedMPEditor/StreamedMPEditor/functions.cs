@@ -841,11 +841,11 @@ namespace StreamedMPEditor
 
     private string weatherIcon(int theDay)
     {
-      string day;
-      if (theDay == 0)
+      string day;      
+	  if (theDay == 0)
         day = "today";
       else
-        day = "day" + (theDay + 1).ToString();
+        day = "day" + (theDay + 1).ToString() + ".day";
       if (WeatherIconsAnimated.Checked)
       {
         // relative from Animations folder
