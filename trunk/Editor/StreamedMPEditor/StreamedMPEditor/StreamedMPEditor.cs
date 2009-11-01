@@ -94,9 +94,7 @@ namespace StreamedMPEditor
 
     int textXOffset = -25;
     int maxXPosition = 400;
-    int minXPosition = 200;
     int menuOffset = 0;
-    int lastActiveTab = 0;
 
     //Default Style to StreamedMp standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
