@@ -217,6 +217,11 @@ namespace StreamedMPEditor
 
     private bool pluginEnabled(string pluginName)
     {
+      // check if plugin is enabled/disabled
+      // if we dont find they entry then we assume enabled as we know it
+      // is installed so most likley configuration has not yet been run
+      // to write the entry to MediaPortal.xml
+
       string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
@@ -237,10 +242,13 @@ namespace StreamedMPEditor
           if (path != null)
           {
             if (path.InnerText.ToLower() == "no")
+              // only return false if we have found the entry and it is set to No
               return false;
             else
               return true;
           }
+          else
+            return true;
         }
       }
       return false;
