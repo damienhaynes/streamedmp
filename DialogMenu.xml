@@ -21,6 +21,7 @@
 			<width>512</width>
 			<height>37</height>
 			<texture>dialogmenutop.png</texture>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
             <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
             <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -32,6 +33,7 @@
 			<width>512</width>
 			<height>433</height>
 			<texture>dialogmenumiddle.png</texture>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -43,6 +45,7 @@
 			<width>512</width>
 			<height>12</height>
 			<texture>dialogmenubottom.png</texture>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -57,6 +60,7 @@
 			<font>mediastream12tc</font>
 			<textcolor>White</textcolor>
 			<align>center</align>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -71,6 +75,7 @@
 			<font>mediastream11c</font>
 			<align>left</align>
 			<textcolor>FF025984</textcolor>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -89,6 +94,7 @@
 			<onright>3</onright>
 			<onup>3</onup>
 			<ondown>3</ondown>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
@@ -104,6 +110,7 @@
 			<onright>2</onright>
 			<font2>mediastream12c</font2>
 			<textXOff2>500</textXOff2>
+            <textYOff2>5</textYOff2>
 			<spinPosX>2873</spinPosX>
 			<spinPosY>2495</spinPosY>
 			<textXOff>10</textXOff>
@@ -120,6 +127,7 @@
 			<IconXOff>5</IconXOff>
 			<IconYOff>3</IconYOff>
 			<spaceBetweenItems>0</spaceBetweenItems>
+               <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
                 <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
                 <animation effect="slide" time="300" end="-700,-700">windowclose</animation>
 		</control>
