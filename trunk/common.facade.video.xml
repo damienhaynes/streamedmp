@@ -3,7 +3,7 @@
 This file should contain the facade view
 -->
 <window>
-	<controls>
+	<controls>		
 		<control>
 			<type>facadeview</type>
 			<id>50</id>
@@ -15,13 +15,19 @@ This file should contain the facade view
 				<onright>2</onright>
 				<posX>756</posX>
 				<posY>317</posY>
-				<height>360</height>
+				<height>400</height>
 				<textXOff2>500</textXOff2>
-				<spinPosX>1249</spinPosX>
-				<spinPosY>690</spinPosY>
+				<spinPosX>1175</spinPosX>
+				<spinPosY>681</spinPosY>
 				<spinAlign>Right</spinAlign>
 				<spinColor>ff006698</spinColor>
+				<spinWidth>50</spinWidth>
+				<spinHeight>37</spinHeight>
 				<spinCanFocus>no</spinCanFocus>
+				<textureUp>arrow_round_up_nofocus.png</textureUp>
+				<textureDown>arrow_round_down_nofocus.png</textureDown>
+				<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+				<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>				
 			</control>
 			<control>
 				<description>Filmstrip view</description>
@@ -89,6 +95,17 @@ This file should contain the facade view
 				<thumbPosYBig>5</thumbPosYBig>
 				<thumbZoom>yes</thumbZoom>
 				<enableFocusZoom>no</enableFocusZoom>
+				<spinPosX>1175</spinPosX>
+				<spinPosY>681</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<spinColor>ff006698</spinColor>
+				<spinWidth>50</spinWidth>
+				<spinHeight>37</spinHeight>
+				<spinCanFocus>no</spinCanFocus>
+				<textureUp>arrow_round_up_nofocus.png</textureUp>
+				<textureDown>arrow_round_down_nofocus.png</textureDown>
+				<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+				<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>		
 				<onleft>2</onleft>
 				<onright>2</onright>
 			</control>
@@ -107,28 +124,27 @@ This file should contain the facade view
 			</control>
 		</control>
     
-	    <control>
+		<control>
 			<description>Media Count Background</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>1113</posX>
+			<posX>1013</posX>
 			<posY>684</posY>
-			<width>159</width>
-			<height>28</height>
-			<texture>mediacountbackground.png</texture>
-			<visible>facadeview.list|facadeview.playlist</visible>
-	    </control>    
-	    <control>
+			<width>260</width>
+			<height>30</height>
+			<texture>mediacountbg_Spin.png</texture>
+			<visible>!facadeview.filmstrip</visible>			
+        </control>
+		<control>
 			<description>Media Count Label</description>
 			<type>label</type>
 			<label>PAGE:</label>
 			<id>0</id>
-			<posX>1123</posX>
+			<posX>1023</posX>
 			<posY>688</posY>
-			<font>mediastream10tc</font>
+			<font>mediastream12tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>facadeview.list|facadeview.playlist</visible>
-	    </control>
-    
+			<visible>!facadeview.filmstrip</visible>			
+		</control>
 	</controls>
 </window>
