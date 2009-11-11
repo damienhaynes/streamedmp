@@ -101,6 +101,7 @@
                                 <onright>99</onright>
                                 <textureFocus>tv_button_focus.png</textureFocus>
                                 <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+                                <scrollWrapString></scrollWrapString>
                                 <animation effect="fade" time="250">WindowOpen</animation>
                                 <animation effect="fade" time="250">WindowClose</animation>
                                 <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
@@ -458,6 +459,7 @@
                         <height>18</height>
                         <visible>no</visible>
                         <texture>tvguide_record_button.png</texture>
+                        <animation effect="fade" start="20" time="2000" condition="true" pulse="true">Conditional</animation>
                         <animation effect="fade" time="250">WindowClose</animation>
                         <animation effect="fade" time="250">WindowOpen</animation>
                 </control>
