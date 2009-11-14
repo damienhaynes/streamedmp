@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the details view
+-->
+<window>
+	<controls>
+		
+		<control>
+		  <description>Movie Title</description>
+		  <type>label</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>240</posY>
+		  <width>500</width>
+		  <font>mediastream14tc</font>
+		  <label>#selecteditem</label>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>
+		
+		<control>
+		  <description>Genres</description>
+		  <type>label</type>
+		  <label>#genre</label>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>265</posY>
+		  <width>500</width>
+		  <font>mediastream12tc</font>
+		  <textcolor>ff909090</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>
+		
+		<control>
+		  <description>Directors Label</description>
+		  <type>label</type>
+		  <label>199</label>
+		  <posX>20</posX>
+		  <posY>320</posY>
+		  <font>mediastream11tc</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+Control.HasText(1003)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+		  <description>Directors</description>
+		  <id>1003</id>
+		  <type>label</type>
+		  <label>#director</label>
+		  <posX>20</posX>
+		  <posY>340</posY>
+		  <width>200</width>
+		  <font>mediastream10</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<control>
+		  <description>Year Label</description>
+		  <type>label</type>
+		  <label>201</label>
+		  <posX>300</posX>
+		  <posY>320</posY>
+		  <font>mediastream11tc</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+Control.HasText(1004)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+		  <description>Year</description>
+		  <id>1004</id>
+		  <type>label</type>
+		  <label>#year</label>
+		  <posX>300</posX>
+		  <posY>340</posY>
+		  <width>255</width>
+		  <font>mediastream10</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		
+		
+		<control>
+		  <description>Summary</description>
+		  <type>textboxscrollup</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>378</posY>
+		  <width>500</width>
+		  <height>238</height>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <seperator>-----------------------------------------------------------------------------------</seperator>
+		  <font>mediastream11</font>
+		  <label>#plot</label>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+!string.starts(#plot,unknown)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>
+		
+		<control>
+		  <type>label</type>
+		  <label>173</label>
+		  <posX>20</posX>
+		  <posY>630</posY>
+		  <width>360</width>
+		  <font>mediastream11tc</font>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>		
+		<control>
+		  <type>imagelist</type>
+		  <id>1001</id>
+		  <posX>189</posX>
+		  <posY>628</posY>
+		  <width>115</width>
+		  <height>13</height>
+		  <textureWidth>23</textureWidth>
+		  <textureHeight>22</textureHeight>
+		  <subitems>
+			<subitem>-.png</subitem>
+			<subitem>starwhite.png</subitem>
+		  </subitems>
+		  <orientation>horizontal</orientation>
+		  <align>left</align>
+		  <imagesToDraw>10</imagesToDraw>
+		  <percentage>#rating</percentage>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>		
+		<control>
+		  <type>label</type>
+		  <label>#rating / 10</label>
+		  <posX>190</posX>
+		  <posY>653</posY>
+		  <width>360</width>
+		  <font>mediastream11</font>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>	  
+		</control>
+		
+	</controls>
+</window>
