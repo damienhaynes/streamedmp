@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+This file should contain the thumbs view
+-->
+<window>
+	<controls>
+	
+		<control>
+		  <description>Movie Title</description>
+		  <type>label</type>
+		  <id>0</id>
+		  <posX>750</posX>
+		  <posY>240</posY>
+		  <width>500</width>
+		  <font>mediastream14tc</font>
+		  <label>#MovingPictures.SelectedMovie.title</label>
+		  <textcolor>ffFFFFFF</textcolor>		  
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+		  <description>Year</description>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.year</label>
+		  <id>0</id>
+		  <posX>750</posX>
+		  <posY>265</posY>
+		  <width>500</width>
+		  <font>mediastream12tc</font>
+		  <textcolor>ff909090</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+		  <description>Summary</description>
+		  <type>textboxscrollup</type>
+		  <id>0</id>
+		  <posX>750</posX>
+		  <posY>295</posY>
+		  <width>500</width>
+		  <height>315</height>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <seperator>-----------------------------------------------------------------------------------</seperator>
+		  <font>mediastream11</font>
+		  <label>#MovingPictures.SelectedMovie.summary</label>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.StarRating:</label>
+		  <posX>750</posX>
+		  <posY>630</posY>
+		  <width>360</width>
+		  <font>mediastream11c</font>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>		
+		<control>
+		  <type>imagelist</type>
+		  <id>1001</id>
+		  <posX>920</posX>
+		  <posY>628</posY>      
+		  <textureWidth>23</textureWidth>
+		  <textureHeight>22</textureHeight>
+		  <subitems>
+			<subitem>-.png</subitem>
+			<subitem>starwhite.png</subitem>
+		  </subitems>
+		  <orientation>horizontal</orientation>
+		  <align>left</align>
+		  <imagesToDraw>10</imagesToDraw>
+		  <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>		
+		<control>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+		  <posX>921</posX>
+		  <posY>656</posY>
+		  <width>360</width>
+		  <font>mediastream11</font>		  
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		
+	</controls>
+</window>

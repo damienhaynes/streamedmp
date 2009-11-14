@@ -5,7 +5,9 @@ This file should contain the details view
 <window>
   <controls>
     
-    <control>
+    <!--            :: Artwork ::            -->
+    
+	<control>
       <description>background overlay</description>
       <type>image</type>
       <id>0</id>
@@ -16,23 +18,6 @@ This file should contain the details view
       <texture>filmstrip_overlay.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
-    
-    <control>
-      <description>PLAY Button</description>
-      <type>button</type>
-      <id>6</id>
-      <label>-</label>
-      <onup>6</onup>
-      <ondown>6</ondown>
-      <onleft>6</onleft>
-      <onright>6</onright>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
-    <!--            :: MAIN DETAILS ::            -->
-    
     <control>
       <description>Default Cover Art</description>
       <type>image</type>
@@ -43,8 +28,7 @@ This file should contain the details view
       <height>390</height>
       <texture>defaultdvdcover.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
       <description>Cover Art</description>
       <type>image</type>
@@ -55,8 +39,7 @@ This file should contain the details view
       <height>380</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
@@ -67,19 +50,7 @@ This file should contain the details view
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.HasThumb(60)</visible>
-    </control>
-    
-	<!--<control>
-      <description>Rounded cover edges</description>
-      <type>image</type>
-      <id>246</id>
-      <posX>34</posX>
-      <posY>293</posY>
-      <width>282</width>
-      <height>413</height>
-      <texture>round.poster.frame.png</texture>
-      <visible>Control.HasThumb(60)+!Control.IsVisible(50)+!Control.IsVisible(51)</visible>      
-    </control>-->
+    </control>   
 	
     <control>
       <description>Watched Icon Background</description>
@@ -91,8 +62,7 @@ This file should contain the details view
       <height>39</height>
       <texture>overlaywubg.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
       <description>Watched Icon</description>
       <type>image</type>
@@ -103,8 +73,7 @@ This file should contain the details view
       <height>23</height>
       <texture>overlaywatched.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.IsVisible(9)</visible>
-    </control>
-    
+    </control>    
     <control>
       <description>Un-Watched Icon</description>
       <type>image</type>
@@ -145,7 +114,7 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>genre below the movie title</description>
+      <description>Genres</description>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.genres</label>
       <id>0</id>
@@ -173,9 +142,9 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>director</description>
+      <description>Director Label</description>
       <type>label</type>
-      <label>director</label>
+      <label>#MovingPictures.Translation.Director</label>
       <id>0</id>
       <posX>363</posX>
       <posY>608</posY>
@@ -183,12 +152,11 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
-      <description>director</description>
+      <description>Director</description>
       <type>fadelabel</type>
-      <label>#MovingPictures.SelectedMovie.directors</label>
+      <label>#MovingPictures.SelectedMovie.extra.directors.1</label>
       <id>0</id>
       <posX>473</posX>
       <posY>608</posY>
@@ -199,9 +167,9 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>actors</description>
+      <description>Actors Label</description>
       <type>label</type>
-      <label>actors</label>
+      <label>#MovingPictures.Translation.Actors</label>
       <id>0</id>
       <posX>363</posX>
       <posY>632</posY>
@@ -209,10 +177,9 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
-      <description>actors</description>
+      <description>Actors</description>
       <type>fadelabel</type>
       <label>#MovingPictures.SelectedMovie.actors</label>
       <id>0</id>
@@ -225,9 +192,9 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>year</description>
+      <description>Year Label</description>
       <type>label</type>
-      <label>year</label>
+      <label>#MovingPictures.Translation.Year</label>
       <id>0</id>
       <posX>990</posX>
       <posY>608</posY>
@@ -236,10 +203,9 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
-      <description>year</description>
+      <description>Year</description>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
       <id>0</id>
@@ -253,9 +219,9 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>runtime</description>
+      <description>Runtime Label</description>
       <type>label</type>
-      <label>runtime</label>
+      <label>#MovingPictures.Translation.Runtime</label>
       <id>0</id>
       <posX>1160</posX>
       <posY>608</posY>
@@ -264,10 +230,9 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
     <control>
-      <description>runtime</description>
+      <description>Runtime</description>
       <type>label</type>      
 	  <label>#MovingPictures.SelectedMovie.runtime.localized.short</label>
       <id>0</id>
