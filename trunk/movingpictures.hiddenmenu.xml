@@ -21,9 +21,10 @@ This file should contain the details view
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
-				<control>
+			<control>				
+				<description>Views Menu</description>
 				<id>0</id>
-				<label>VIEW OPTIONS</label>
+				<label>499</label>
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
@@ -32,20 +33,33 @@ This file should contain the details view
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
-			<control>
+			<control>				
+				<description>Settings</description>
 				<id>0</id>
-				<label>SETTINGS</label>
+				<label>897</label>
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
-				<posY>365</posY>
+				<posY>370</posY>
+				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>								
+				<id>0</id>
+				<description>JUMP TO</description>
+				<type>label</type>
+				<label>1065</label>
+				<font>mediastream12tc</font>
+				<posX>1040</posX>
+				<posY>425</posY>
 				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
 			<control>
 				<id>0</id>
-				<label>Sort Direction</label>
+				<description>Sort Direction</description>
 				<type>image</type>
 				<width>16</width>
 				<height>16</height>
@@ -68,10 +82,10 @@ This file should contain the details view
 				<height>720</height>
 				<layout>StackLayout</layout>
 				<control>
-					<description>Cycle Layout</description>
+					<description>Cycle Layout/View</description>
 					<type>button</type>
 					<id>2</id>
-					<label>Cycle Layout</label>
+					<label>#MovingPictures.Translation.CycleView</label>
 					<onleft>50</onleft>					
 					<onup>21</onup>
 				</control>
@@ -79,21 +93,21 @@ This file should contain the details view
 					<description>Sort Menu</description>
 					<type>button</type>
 					<id>14</id>
-					<label>Sort By: #MovingPictures.Sort.Field</label>	
+					<label>#MovingPictures.Translation.SortBy: #MovingPictures.Sort.Field</label>	
 					<onleft>50</onleft>
 				</control>
 				<control>
 					<description>Filters Menu</description>
 					<type>button</type>
 					<id>4</id>
-					<label>Filter Menu ...</label>	
+					<label>#MovingPictures.Translation.FilterBy ...</label>	
 					<onleft>50</onleft>
 				</control>
 				<control>
 					<description>Parental Controls</description>
 					<type>button</type>
 					<id>15</id>
-					<label>Parental Controls</label>					
+					<label>Toggle Parental Lock</label>					
 					<onleft>50</onleft>
 				</control>
 				<control>
@@ -107,10 +121,47 @@ This file should contain the details view
 					<description>Video Settings</description>
 					<type>button</type>
 					<id>66610</id>
-					<label>Video Settings</label>
+					<label>100006</label>
 					<hyperlink>703</hyperlink>
-					<ondown>2</ondown>					
+					<ondown>76</ondown>					
 					<onleft>50</onleft>
+				</control>
+				<control>
+					<description>Empty button</description>
+					<type>button</type>
+					<id>0</id>
+					<label>-</label>
+					<visible>false</visible>
+				</control>				
+				<control>
+					<description>My TVSeries</description>
+					<type>button</type>
+					<id>76</id>
+					<label>My TVSeries</label>					
+					<onup>66610</onup>
+					<ondown>77</ondown>
+					<onleft>50</onleft>
+					<hyperlink>9811</hyperlink>
+				</control>
+				<control>
+					<description>My Videos</description>
+					<type>button</type>
+					<id>77</id>
+					<label>100006</label>					
+					<ondown>78</ondown>
+					<onup>76</onup>
+					<onleft>50</onleft>
+					<hyperlink>6</hyperlink>
+				</control>
+				<control>
+					<description>My Trailers</description>
+					<type>button</type>
+					<id>78</id>
+					<label>5900</label>										
+					<ondown>50</ondown>
+					<onup>77</onup>
+					<onleft>50</onleft>
+					<hyperlink>5900</hyperlink>
 				</control>
 			</control>
 		</control>
