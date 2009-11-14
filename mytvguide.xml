@@ -244,34 +244,36 @@
                         <textcolor>FFFFFFFF</textcolor>
                 </control>
                 <control>
-                        <description>Current program title</description>
-                        <type>fadelabel</type>
-                        <id>13</id>
-                        <posX>240</posX>
-                        <posY>585</posY>
-                        <width>455</width>
-                        <label>#TV.Guide.Title</label>
-                        <font>mediastream11tc</font>
-                </control>
-                <control>
                         <description>Current program time</description>
                         <type>label</type>
                         <id>14</id>
-                        <posX>700</posX>
+                        <posX>240</posX>
                         <posY>585</posY>
+                        <width>110</width>
                         <label>#TV.Guide.Time</label>
-                        <align>left</align>
                         <font>mediastream11tc</font>
+                </control>
+                <control>
+                        <description>Current program title</description>
+                        <type>fadelabel</type>
+                        <id>13</id>
+                        <posX>360</posX>
+                        <posY>585</posY>
+                        <width>690</width>
+                        <label>#TV.Guide.CompositeTitle</label>
+                        <font>mediastream11tc</font>
+                        <textcolor>ff888888</textcolor>
                 </control>
                 <control>
                         <description>Current program genre</description>
                         <type>fadelabel</type>
                         <id>27</id>
-                        <posX>1000</posX>
+                        <posX>1270</posX>
                         <posY>585</posY>
-                        <width>280</width>
+                        <width>200</width>
                         <label>#TV.Guide.Genre</label>
-                        <align>left</align>
+                        <align>right</align>
+                        <textcolor>ff888888</textcolor>
                         <font>mediastream11tc</font>
                 </control>
                 <control>
