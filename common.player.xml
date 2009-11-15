@@ -6,9 +6,9 @@
                         <type>image</type>
                         <id>0</id>
                         <posX>1095</posX>
-                        <posY>604</posY>
-                        <width>126</width>
-                        <height>78</height>
+                        <posY>607</posY>
+                        <width>111</width>
+                        <height>53</height>
                         <visible>player.forwarding|player.rewinding</visible>
                         <texture>osdseekframe.png</texture>
                 </control>
@@ -16,32 +16,34 @@
                         <description>FastForward Image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1212</posX>
-                        <posY>615</posY>
-                        <width>23</width>
-                        <height>54</height>
+                        <posX>1200</posX>
+                        <posY>609</posY>
+                        <width>16</width>
+                        <height>50</height>
                         <visible>player.forwarding</visible>
+                        <animation effect="fade" start="20" time="100" condition="true" pulse="true">Conditional</animation>
                         <texture>osdseekforward.png</texture>
                 </control>
                 <control>
                         <description>Rewind Image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1081</posX>
-                        <posY>615</posY>
-                        <width>22</width>
-                        <height>55</height>
+                        <posX>1085</posX>
+                        <posY>609</posY>
+                        <width>16</width>
+                        <height>50</height>
                         <visible>player.rewinding</visible>
+                        <animation effect="fade" start="20" time="100" condition="true" pulse="true">Conditional</animation>
                         <texture>osdseekrewind.png</texture>
                 </control>
                 <control>
                         <description>2x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1103</posX>
+                        <posX>1138</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.forwarding2x</visible>
                         <texture>osd2x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -50,10 +52,10 @@
                         <description>4x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1115</posX>
+                        <posX>1143</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.forwarding4x</visible>
                         <texture>osd4x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -62,10 +64,10 @@
                         <description>8x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1127</posX>
+                        <posX>1148</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.forwarding8x</visible>
                         <texture>osd8x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -74,10 +76,10 @@
                         <description>16x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1139</posX>
+                        <posX>1153</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.forwarding16x</visible>
                         <texture>osd16x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -86,10 +88,10 @@
                         <description>32x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1151</posX>
+                        <posX>1158</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.forwarding32x</visible>
                         <texture>osd32x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -99,10 +101,10 @@
                         <description>-32x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1103</posX>
+                        <posX>1100</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.rewinding32x</visible>
                         <texture>osd32x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -111,10 +113,10 @@
                         <description>-16x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1115</posX>
+                        <posX>1105</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.rewinding16x</visible>
                         <texture>osd16x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -123,10 +125,10 @@
                         <description>-8x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1127</posX>
+                        <posX>1110</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.rewinding8x</visible>
                         <texture>osd8x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -135,10 +137,10 @@
                         <description>-4x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1139</posX>
+                        <posX>1115</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.rewinding4x</visible>
                         <texture>osd4x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
@@ -147,10 +149,10 @@
                         <description>-2x image</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1151</posX>
+                        <posX>1120</posX>
                         <posY>613</posY>
-                        <width>62</width>
-                        <height>62</height>
+                        <width>42</width>
+                        <height>42</height>
                         <visible>player.rewinding2x</visible>
                         <texture>osd2x.png</texture>
                         <colordiffuse>ff888888</colordiffuse>
