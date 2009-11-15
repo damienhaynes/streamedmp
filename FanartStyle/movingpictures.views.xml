@@ -27,7 +27,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Genre</label>
+      <label>#MovingPictures.Translation.Genre</label>
       <posX>686</posX>
       <posY>485</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -42,7 +42,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Year</label>
+      <label>#MovingPictures.Translation.Year</label>
       <posX>686</posX>
       <posY>510</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -56,7 +56,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Runtime</label>
+      <label>#MovingPictures.Translation.Runtime</label>
       <posX>686</posX>
       <posY>535</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -150,7 +150,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
-      <label>RUNTIME</label>
+      <label>#MovingPictures.Translation.Runtime</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
@@ -168,35 +168,14 @@ This file should contain all items visible when the plug-in is in its various fa
       <description>Rating Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>570</posX>
+      <posX>560</posX>
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
-      <label>RATING: #MovingPictures.SelectedMovie.score.localized/10</label>
+      <label>#MovingPictures.Translation.StarRating: #MovingPictures.SelectedMovie.score.localized/10</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
-    <control>
-      <description>Genre Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>20</posX>
-      <posY>655</posY>
-      <textcolor>#smalltitle.color</textcolor>
-      <font>font14</font>
-      <label>GENRE:</label>
-      <visible>false</visible>
-    </control>
-    <control>
-      <description>Genre Value</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <posX>180</posX>
-      <posY>655</posY>
-      <width>300</width>
-      <font>font14</font>
-      <label>#MovingPictures.SelectedMovie.genres</label>
-      <visible>false</visible>
-    </control>
+   
     <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
@@ -227,10 +206,10 @@ This file should contain all items visible when the plug-in is in its various fa
     <control>
       <type>imagelist</type>
       <id>101</id>
-      <posX>570</posX>
+      <posX>560</posX>
       <posY>675</posY>
-      <textureWidth>17</textureWidth>
-      <textureHeight>17</textureHeight>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
       <subitems>
         <subitem>greystar.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -299,18 +278,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <visible>facadeview.smallicons+Control.IsVisible(50)|facadeview.largeicons+Control.IsVisible(50)</visible>
     </control>
     <define>#smallicons.available:true</define>
-    <control>
-      <description>View Info</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>920</posX>
-      <posY>100</posY>
-      <width>486</width>
-      <font>font14</font>
-      <label>facadeview.smallicons</label>
-      <align>left</align>
-      <visible>false</visible>
-    </control>
+    
     <control>
       <description>Movie Title</description>
       <type>fadelabel</type>
@@ -340,7 +308,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>Genre</label>
+      <label>#MovingPictures.Translation.Genre</label>
       <posX>800</posX>
       <posY>530</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -348,14 +316,14 @@ This file should contain all items visible when the plug-in is in its various fa
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.genres</label>
-      <posX>910</posX>
+      <posX>940</posX>
       <posY>530</posY>
-      <width>350</width>
+      <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Year</label>
+      <label>#MovingPictures.Translation.Year</label>
       <posX>800</posX>
       <posY>555</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -363,43 +331,43 @@ This file should contain all items visible when the plug-in is in its various fa
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
-      <posX>910</posX>
+      <posX>940</posX>
       <posY>555</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>Rating</label>
+      <label>#MovingPictures.Translation.StarRating</label>
       <posX>800</posX>
       <posY>580</posY>	  
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score.localized/10</label>
-      <posX>910</posX>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <posX>940</posX>
       <posY>580</posY>
 	  <width>350</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>Directors</label>
+      <label>#MovingPictures.Translation.Director</label>
       <posX>800</posX>
       <posY>605</posY>	  
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.directors</label>
-      <posX>910</posX>
+      <label>#MovingPictures.SelectedMovie.extra.directors.1</label>
+      <posX>940</posX>
       <posY>605</posY>
 	  <width>350</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>Runtime</label>
+      <label>#MovingPictures.Translation.Runtime</label>
       <posX>800</posX>
       <posY>630</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -407,7 +375,7 @@ This file should contain all items visible when the plug-in is in its various fa
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.runtime.localized.long</label>
-      <posX>910</posX>
+      <posX>940</posX>
       <posY>630</posY>
       <width></width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
