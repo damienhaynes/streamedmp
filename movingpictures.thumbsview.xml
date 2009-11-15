@@ -5,11 +5,12 @@ This file should contain the thumbs view
 <window>
 	<controls>
 	
+		<!-- Movie Details -->
 		<control>
 		  <description>Movie Title</description>
 		  <type>label</type>
 		  <id>0</id>
-		  <posX>750</posX>
+		  <posX>20</posX>
 		  <posY>240</posY>
 		  <width>500</width>
 		  <font>mediastream14tc</font>
@@ -19,11 +20,11 @@ This file should contain the thumbs view
 		</control>
 		
 		<control>
-		  <description>Year</description>
+		  <description>Genres</description>
 		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.year</label>
+		  <label>#MovingPictures.SelectedMovie.genres</label>
 		  <id>0</id>
-		  <posX>750</posX>
+		  <posX>20</posX>
 		  <posY>265</posY>
 		  <width>500</width>
 		  <font>mediastream12tc</font>
@@ -32,13 +33,71 @@ This file should contain the thumbs view
 		</control>
 		
 		<control>
+		  <description>Directors Label</description>
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Director</label>
+		  <posX>20</posX>
+		  <posY>300</posY>
+		  <font>mediastream11tc</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control>
+		  <description>Director</description>
+		  <id>1003</id>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.extra.directors.1</label>
+		  <posX>20</posX>
+		  <posY>320</posY>
+		  <width>200</width>
+		  <font>mediastream10</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+
+		<control>
+		  <description>Writer Label</description>
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Writer</label>
+		  <posX>300</posX>
+		  <posY>300</posY>
+		  <font>mediastream11tc</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>		  
+		</control>
+		<control>
+		  <description>Year</description>
+		  <id>1004</id>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.extra.writers.1</label>
+		  <posX>300</posX>
+		  <posY>320</posY>
+		  <width>255</width>
+		  <font>mediastream10</font>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>		
+		</control>
+		
+		<control>
 		  <description>Summary</description>
 		  <type>textboxscrollup</type>
 		  <id>0</id>
-		  <posX>750</posX>
-		  <posY>295</posY>
+		  <posX>20</posX>
+		  <posY>360</posY>
 		  <width>500</width>
-		  <height>315</height>
+		  <height>220</height>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <seperator>-----------------------------------------------------------------------------------</seperator>
 		  <font>mediastream11</font>
@@ -46,11 +105,12 @@ This file should contain the thumbs view
 		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
 		</control>
 		
+		<!-- Star Rating -->
 		<control>
 		  <type>label</type>
 		  <label>#MovingPictures.Translation.StarRating:</label>
-		  <posX>750</posX>
-		  <posY>630</posY>
+		  <posX>20</posX>
+		  <posY>640</posY>
 		  <width>360</width>
 		  <font>mediastream11c</font>
 		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -58,8 +118,9 @@ This file should contain the thumbs view
 		<control>
 		  <type>imagelist</type>
 		  <id>1001</id>
-		  <posX>920</posX>
-		  <posY>628</posY>      
+		  <posX>189</posX>
+		  <posY>638</posY>
+		  <width>115</width>
 		  <textureWidth>23</textureWidth>
 		  <textureHeight>22</textureHeight>
 		  <subitems>
@@ -75,11 +136,434 @@ This file should contain the thumbs view
 		<control>
 		  <type>label</type>
 		  <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
-		  <posX>921</posX>
-		  <posY>656</posY>
+		  <posX>190</posX>
+		  <posY>663</posY>
 		  <width>360</width>
 		  <font>mediastream11</font>		  
 		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>		
+		
+		<!-- MediaInfo Logos -->
+
+		<!--Video Resolutions-->	
+		<!-- HD 720p -->
+		<control>
+		  <description>HD 720p</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\HD 720P.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videoresolution,720p)</visible>
+		</control>
+
+		<!-- HD 1080p -->
+		<control>
+		  <description>HD 1080p</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\HD 1080P.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videoresolution,1080p)</visible>
+		</control>
+
+		<!-- HD 1080i -->
+		<control>
+		  <description>HD 1080i</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\HD 1080i.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videoresolution,1080i)</visible>
+		</control>
+
+		<!-- HD Widescren ie not 720p, 1080i or 1080p -->
+		<control>
+		  <description>HD Widescreen</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\HD 169.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.videoresolution,HD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
+		</control>
+
+		<!-- SD Widescreen -->
+		<control>
+		  <description>SD Widescreen</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\SD 169.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,widescreen)]</visible>
+		</control>
+
+		<!-- SD Fullscreen -->
+		<control>
+		  <description>SD Fullscreen</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\SD 43.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.videoresolution,SD)+string.equals(#MovingPictures.LocalMedia.videoaspectratio,fullscreen)]</visible>
+		</control>
+
+		<!-- Video Codecs -->
+
+		<!-- H264 -->
+		<control>
+		  <description>H264</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\H264.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,H264)</visible>
+		</control>
+
+		<!-- DIVX -->
+		<control>
+		  <description>DIVX</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\DIVX.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
+		</control>
+
+		<!-- XVID -->
+		<control>
+		  <description>XVID</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\XVID.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,XVID)</visible>
+		</control>
+
+		<!-- MPEG -->
+		<control>
+		  <description>MP1V</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\MPEG.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,MP1V)</visible>
+		</control>
+
+		<!-- MPEG 2 -->
+		<control>
+		  <description>MP2V</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\MPEG2.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
+		</control>
+
+		<!-- MPEG 4 -->
+		<control>
+		  <description>MP4V</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\MPEG4.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.videocodec,MP4V)</visible>
+		</control>
+
+		<!-- WMV -->
+		<control>
+		  <description>WMV</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\WMV.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.contains(#MovingPictures.LocalMedia.videocodec,WMV)</visible>
+		</control>
+
+		<!-- REAL VIDEO -->
+		<control>
+		  <description>Real Video</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\REAL.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.contains(#MovingPictures.LocalMedia.videocodec,REAL)</visible>
+		</control>
+
+		<!-- FLASH VIDEO -->
+		<control>
+		  <description>Flash Video</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>120</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Video\FLASH.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.contains(#MovingPictures.LocalMedia.videocodec,FLASH)|string.equals(#MovingPictures.LocalMedia.videocodec,FLV)]</visible>
+		</control>
+
+		<!-- Audio Channels / Codecs-->
+			
+		<!-- Mono -->
+		<control>
+		  <description>Mono</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\MONO.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiochannels,mono)</visible>
+		</control>
+
+		<!-- Dolby Digital 5.1 -->
+		<control>
+		  <description>DD 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DD 51.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.starts(#MovingPictures.LocalMedia.audiochannels,5)]</visible>
+		</control>
+
+		<!-- Dolby Digital 2.0 -->
+		<control>
+		  <description>DD 2.0</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DD 20.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,AC3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+		</control>
+
+		<!-- MP3 2.0 -->
+		<control>
+		  <description>MP3 2.0</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\MP3 20.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,MP3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+		</control>
+
+		<!-- AAC -->
+		<control>
+		  <description>AAC</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\AAC.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)</visible>
+		</control>
+
+		<!-- WMA -->
+		<control>
+		  <description>WMA</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\WMA.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.contains(#MovingPictures.LocalMedia.audiocodec,WMA)</visible>
+		</control>
+
+		<!-- Vorbis OGG -->
+		<control>
+		  <description>VORBIS</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\VORBIS.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.contains(#MovingPictures.LocalMedia.audiocodec,VORBIS)|string.contains(#MovingPictures.LocalMedia.audiocodec,OGG)]</visible>
+		</control>
+
+		<!-- FLAC 5.1 -->
+		<control>
+		  <description>FLAC 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\FLAC 51.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		</control>
+
+		<!-- FLAC -->
+		<control>
+		  <description>FLAC</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\FLAC.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.contains(#MovingPictures.LocalMedia.audiocodec,FLAC)+!string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		</control>
+
+		<!-- DTS 2.0 -->
+		<control>
+		  <description>DTS 2.0</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DTS 20.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
+		</control>
+		
+		<!-- DTS 5.1 -->
+		<control>
+		  <description>DTS 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DTS 51.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		</control>
+
+		<!-- DTS 6.1 -->
+		<control>
+		  <description>DTS 6.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DTS 61.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,7)|string.equals(#MovingPictures.LocalMedia.audiochannels,6.1)]]</visible>
+		</control>
+
+		<!-- DTS 7.1 -->
+		<control>
+		  <description>DTS 7.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\DTS 71.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
+		</control>
+
+		<!-- PCM -->
+		<control>
+		  <description>PCM</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\PCM.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,PCM)</visible>
+		</control>
+
+		<!-- MP2A -->
+		<control>
+		  <description>MP2A</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\MP2A.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,MP2A)</visible>
+		</control>
+
+		<!-- REAL AUDIO -->
+		<control>
+		  <description>Real Audio</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>220</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\REAL.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.contains(#MovingPictures.LocalMedia.audiocodec,REAL)</visible>
+		</control>
+
+		<!-- Has Subtitles -->
+		<control>
+		  <description>Subtitles</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>320</posX>
+		  <posY>595</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Misc\SUBTITLES.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.hassubtitles,true)|string.equals(#MovingPictures.LocalMedia.hassubtitles,1)]</visible>
 		</control>
 		
 	</controls>

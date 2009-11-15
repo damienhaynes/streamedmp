@@ -13,8 +13,8 @@ multiple view modes.
   This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
   are parameters to give the skinner a tiny bit more control over the presentation.
   -->
-  <define>#largeicons.available:false</define>      <!-- true if this skin implements the largeicons view -->
-  <define>#largeicons.backdrop.used:false</define> 	<!-- true if backdrop (fanart) should be displayed in this view -->
+  <define>#largeicons.available:true</define>      	<!-- true if this skin implements the largeicons view -->
+  <define>#largeicons.backdrop.used:true</define> 	<!-- true if backdrop (fanart) should be displayed in this view -->
   
   <define>#smallicons.available:true</define>      	<!-- Set to true if this skin implements the smallicons view -->
   <define>#smallicons.backdrop.used:true</define> 	<!-- true if backdrop (fanart) should be displayed in this view -->
@@ -228,33 +228,8 @@ multiple view modes.
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>	  
-    </control>
-	
-	<!-- Parental Controls Indicator -->
-	<control>
-      <description>Parental Controls Lock Indicator</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>1240</posX>
-      <posY>5</posY>
-      <width>36</width>
-      <height>36</height>
-      <texture>parentallock.png</texture>
-	  <visible>Control.IsVisible(16)+[Control.IsVisible(50)|Control.IsVisible(51)]+!facadeview.filmstrip</visible>
-    </control>
-	<control>
-      <description>Parental Controls Lock Indicator</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>1240</posX>
-      <posY>70</posY>
-      <width>36</width>
-      <height>36</height>
-      <texture>parentallock.png</texture>
-	  <visible>Control.IsVisible(16)+Control.IsVisible(50)+facadeview.filmstrip</visible>
-    </control>
-	
-	<import>movingpictures.mediainfo.xml</import>
+    </control>	
+		
     <import>common.time.xml</import>
     
   </controls>
