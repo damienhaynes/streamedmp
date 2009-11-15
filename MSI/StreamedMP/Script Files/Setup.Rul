@@ -81,7 +81,7 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.23477" 	// 1.1.0 Beta
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
-#define TVSERIES_MIN_VERSION				"2.3.3517.1"
+#define TVSERIES_MIN_VERSION				"2.3.3589.3"
 #define MOVINGPICTURES_MIN_VERSION			"0.8.0.874"
 
 // XML Path Defines
@@ -227,20 +227,7 @@ function OnBegin()
 	STRING szVersion, szUpgradeMessage;
 	NUMBER nResult;
 	BOOL bUpgradeSupported; 
-	
-	//OBJECT myObject;
-	//BOOL bResult;
-begin  	
-    	
-	//set myObject = CoCreateObjectDotNet("D:\\Development\\StreamedMP\\MSI\\StreamedMP\\SetupHelper\\FacadeProperties\\bin\\Release\\FacadeProperties.dll", "FacadeProperties.Colors" );
-	//bResult = myObject.ShowColors(); 
-	
-	//if bResult then
-	
-		//MessageBox(myObject.GetTextColor,INFORMATION);
-	
-	//endif;
- 	
+begin 
 	// See if older version is installed
 	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID, bUpgradeSupported);
 	if g_bMajorUpgrade then
@@ -263,6 +250,11 @@ begin
 	SetDefaults();		
 end;           
 
+
+/// *******************************************************
+/// Sets the Installation Directories used by MediaPortal
+/// Reads MediaPortalDirs.xml and if fails returns defaults
+///
 function void SetInstallationDirectories()
 	STRING svValue;	
 begin
@@ -313,12 +305,14 @@ begin
    	MsiSetProperty(ISMSI_HANDLE,"MPLANGUAGESDIR",g_sLanguageDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPPLUGINSDIR",g_sPluginsDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPCONFIGDIR",g_sConfigDir);
-   	
+   	MsiSetProperty(ISMSI_HANDLE,"MPBINDIR",g_sMediaPortalProgramDir);
+   	   	
 	// Set Installation Directories used by MSI	
 	FeatureSetTarget(MEDIA,"<MPTVLOGOSDIR>",g_sTVLogosDir);
 	FeatureSetTarget(MEDIA,"<MPLANGUAGESDIR>",g_sLanguageDir);
 	FeatureSetTarget(MEDIA,"<MPPLUGINSDIR>",g_sPluginsDir);
 	FeatureSetTarget(MEDIA,"<MPCONFIGDIR>",g_sConfigDir);
+	FeatureSetTarget(MEDIA,"<MPBINDIR>",g_sMediaPortalProgramDir);
 
 end;
 
