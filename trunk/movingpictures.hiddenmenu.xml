@@ -5,6 +5,15 @@ This file should contain the details view
 <window>
 	<controls>
 		<control>
+			<type>image</type>
+			<posX>1220</posX>
+			<posY>190</posY>
+			<width>59</width>
+			<height>153</height>
+			<texture>Action_menu.png</texture>
+			<visible>Control.IsVisible(50)</visible>				
+		</control>			
+		<control>
 			<type>actiongroup</type>
 			<description>action menu</description>
 			<defaultcontrol>2</defaultcontrol>
@@ -13,9 +22,7 @@ This file should contain the details view
 			<buttonX>1231</buttonX>
 			<buttonY>55</buttonY>
 			<buttonwidth>49</buttonwidth>
-			<buttonheight>153</buttonheight>
-			<textureFocus>Action_menu.png</textureFocus>
-			<textureNoFocus>Action_menu.png</textureNoFocus>
+			<buttonheight>253</buttonheight>						
 			<control>
 				<type>image</type>
 				<posX>1002</posX>

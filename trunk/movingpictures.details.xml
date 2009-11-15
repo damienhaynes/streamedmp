@@ -4,7 +4,7 @@ This file should contain the details view
 -->
 <window>
   <controls>
-    
+
     <!--            :: Artwork ::            -->
     
 	<control>
@@ -86,8 +86,21 @@ This file should contain the details view
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+!Control.IsVisible(9)</visible>
     </control>
     
+	<!-- Play Button / Click in Details area-->	
+	<control>
+      <description>Play Movie</description>
+      <type>button</type>
+      <id>6</id>
+      <posX>340</posX>
+      <posY>380</posY>
+      <width>896</width>
+      <height>337</height>
+	  <textureFocus>-</textureFocus>
+	  <textureNoFocus>-</textureNoFocus>
+    </control>
+	
     <!-- Details Box -->
-    
+	
     <control>
       <description>details background</description>
       <type>image</type>
