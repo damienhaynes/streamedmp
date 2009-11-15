@@ -68,9 +68,9 @@ This file should contain the facade view
 					<thumbAnimation effect="zoom" start="120,120" end="100,100" time="110">unfocus</thumbAnimation>
 					<!-- Spin Controls -->
 					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>					
-					<spinPosX>565</spinPosX>
-					<spinPosY>463</spinPosY>
+					<spinHeight>37</spinHeight>
+					<spinPosX>1175</spinPosX>
+					<spinPosY>681</spinPosY>
 					<spinAlign>Right</spinAlign>
 					<spinColor>ff006698</spinColor>					
 					<textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -117,7 +117,7 @@ This file should contain the facade view
 					<enableFocusZoom>no</enableFocusZoom>
 					<!-- Spin Controls -->
 					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>					
+					<spinHeight>37</spinHeight>
 					<spinPosX>1175</spinPosX>
 					<spinPosY>681</spinPosY>
 					<spinAlign>Right</spinAlign>
@@ -158,7 +158,6 @@ This file should contain the facade view
 			<width>260</width>
 			<height>30</height>
 			<texture>mediacountbg_Spin.png</texture>
-			<visible>!facadeview.filmstrip</visible>
 			<animation effect="fade" time="250">WindowOpen</animation>
 		    <animation effect="fade" time="250">WindowClose</animation>				
         </control>
@@ -170,13 +169,12 @@ This file should contain the facade view
 			<posX>1023</posX>
 			<posY>688</posY>
 			<font>mediastream12tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>!facadeview.filmstrip</visible>	
+			<textcolor>ff909090</textcolor>			
 			<animation effect="fade" time="250">WindowOpen</animation>
 		    <animation effect="fade" time="250">WindowClose</animation>					
 		</control>
 		
-		<control>
+		<!--<control>
 			<description>Media Count Background</description>
 			<type>image</type>
 			<id>0</id>
@@ -201,7 +199,7 @@ This file should contain the facade view
 			<visible>facadeview.filmstrip</visible>	
 			<animation effect="fade" time="250">WindowOpen</animation>
 		    <animation effect="fade" time="250">WindowClose</animation>					
-		</control>
+		</control>-->
 		
 	</controls>
 </window>
