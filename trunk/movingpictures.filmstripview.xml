@@ -92,14 +92,14 @@ This file should contain the thumbs view
 		
 		<control>
 		  <!-- No localised Equivalent -->
-		  <description>Movie Details/Information Label</description>
+		  <description>Movie Details Label</description>
 		  <type>label</type>
 		  <id>0</id>
 		  <posX>410</posX>
 		  <posY>280</posY>
 		  <width>300</width>
 		  <font>mediastream12tc</font>
-		  <label>1020</label>
+		  <label>#MovingPictures.Translation.MovieDetails.Label</label>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
@@ -148,7 +148,7 @@ This file should contain the thumbs view
 		
 		<control>
 		  <type>label</type>
-		  <label>#MovingPictures.Translation.Rated #MovingPictures.SelectedMovie.certification</label>
+		  <label>#MovingPictures.Translation.Rated.Label #MovingPictures.SelectedMovie.certification</label>
 		  <posX>410</posX>
 		  <posY>365</posY>
 		  <width>360</width>
@@ -156,7 +156,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+Control.IsVisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
 		</control>
 		
 		<control>		  
@@ -167,7 +167,7 @@ This file should contain the thumbs view
 		  <posY>410</posY>
 		  <width>300</width>
 		  <font>mediastream12tc</font>
-		  <label>#MovingPictures.Translation.StarRating</label>
+		  <label>#MovingPictures.Translation.StarRating.Label</label>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
@@ -214,7 +214,7 @@ This file should contain the thumbs view
 		  <posY>280</posY>
 		  <width>300</width>
 		  <font>mediastream12tc</font>
-		  <label>#MovingPictures.Translation.Director</label>
+		  <label>#MovingPictures.Translation.Director.Label</label>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
@@ -243,7 +243,7 @@ This file should contain the thumbs view
 		  <posY>335</posY>
 		  <width>300</width>
 		  <font>mediastream12tc</font>
-		  <label>#MovingPictures.Translation.Writer</label>
+		  <label>#MovingPictures.Translation.Writer.Label</label>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
@@ -272,7 +272,7 @@ This file should contain the thumbs view
 		  <posY>410</posY>
 		  <width>300</width>
 		  <font>mediastream12tc</font>
-		  <label>#MovingPictures.Translation.Actors</label>
+		  <label>#MovingPictures.Translation.Actors.Label</label>
 		  <textcolor>ffFFFFFF</textcolor>
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
