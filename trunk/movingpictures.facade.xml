@@ -35,6 +35,66 @@ This file should contain the facade view
 			<visible>Control.IsVisible(51)</visible>
 		</control>
 	
+		<!-- Facade Spin Background -->
+		<control>
+			<description>Page Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1013</posX>
+			<posY>684</posY>
+			<width>260</width>
+			<height>30</height>
+			<texture>mediacountbg_Spin.png</texture>
+			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+		</control>
+		<control>
+			<description>Page Label</description>
+			<type>label</type>
+			<label>30009</label>
+			<id>0</id>
+			<posX>1023</posX>
+			<posY>688</posY>
+			<font>mediastream12tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+		</control>
+		
+		<!-- Movie Counts -->
+		<control>
+			<description>Movie Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1113</posX>
+			<posY>10</posY>
+			<width>159</width>
+			<height>28</height>
+			<texture>mediacountbackground.png</texture>
+			<visible>Control.IsVisible(50)</visible>
+		</control>    
+		<control>
+			<description>Movie Count Label</description>
+			<type>label</type>
+			<label>#MovingPictures.Translation.Movies:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>14</posY>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>Control.IsVisible(50)</visible>
+		</control>
+		<control>
+			<type>label</type>
+			<id>0</id>
+			<posX>1246</posX>
+			<posY>12</posY>
+			<width>350</width>
+			<font>mediastream11c</font>
+			<textcolor>ff006698</textcolor>
+			<align>right</align>
+			<label>#MovingPictures.general.filteredmoviecount</label>
+			<visible>Control.IsVisible(50)</visible>
+		</control>
+		
 		<control>
 			<type>facadeview</type>
 			<id>51</id>
@@ -206,42 +266,6 @@ This file should contain the facade view
 		  <height>36</height>
 		  <texture>parentallock.png</texture>
 		  <visible>Control.IsVisible(16)+Control.IsVisible(51)</visible>
-		</control>		
-
-		<!-- Movie Counts -->
-		<control>
-			<description>Movie Count Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1113</posX>
-			<posY>10</posY>
-			<width>159</width>
-			<height>28</height>
-			<texture>mediacountbackground.png</texture>
-			<visible>Control.IsVisible(50)</visible>
-		</control>    
-		<control>
-			<description>Movie Count Label</description>
-			<type>label</type>
-			<label>#MovingPictures.Translation.Movies:</label>
-			<id>0</id>
-			<posX>1123</posX>
-			<posY>14</posY>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(50)</visible>
-		</control>
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>1246</posX>
-			<posY>12</posY>
-			<width>350</width>
-			<font>mediastream11c</font>
-			<textcolor>ff006698</textcolor>
-			<align>right</align>
-			<label>#MovingPictures.general.filteredmoviecount</label>
-			<visible>Control.IsVisible(50)</visible>
 		</control>			
 		
 		<!-- Selected Category Image -->
@@ -274,29 +298,7 @@ This file should contain the facade view
 			<visible>Control.IsVisible(51)</visible>
 		</control>	
 		
-		<!-- Facade Spin Background -->
-		<control>
-			<description>Page Count Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1013</posX>
-			<posY>684</posY>
-			<width>260</width>
-			<height>30</height>
-			<texture>mediacountbg_Spin.png</texture>
-			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
-		</control>
-		<control>
-			<description>Page Label</description>
-			<type>label</type>
-			<label>30009</label>
-			<id>0</id>
-			<posX>1023</posX>
-			<posY>688</posY>
-			<font>mediastream12tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
-		</control>
+		
 		
 	</controls>
 </window>
