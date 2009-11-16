@@ -37,8 +37,8 @@
                      <width>348</width>
                      <height>348</height>
                      <keepaspectratio>yes</keepaspectratio>
-                     <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
                      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                     <visible>!facadeview.filmstrip</visible>
                      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
               </control>
               <control>
@@ -48,23 +48,10 @@
                      <posY>250</posY>
                      <width>348</width>
                      <height>348</height>
-                     <texture>albumnocover.png</texture>
-                     <visible>facadeview.list+!control.hasthumb(204)|facadeview.album+!control.hasthumb(204)</visible>
+                     <texture>defaultAlbum.png</texture>
+                     <visible>!facadeview.filmstrip+!control.hasthumb(204)</visible>
                      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
               </control>
-              <control>
-                     <id>204</id>
-                     <type>image</type>
-                     <posX>90</posX>
-                     <posY>250</posY>
-                     <width>348</width>
-                     <height>348</height>
-                     <keepaspectratio>yes</keepaspectratio>
-                     <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                     <visible>facadeview.smallicons | facadeview.largeicons</visible>
-                     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-              </control>
-
               <control>
                      <type>actiongroup</type>
                      <description>action menu</description>

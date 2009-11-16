@@ -27,23 +27,25 @@
                         <texture>mainoverlay.png</texture>
                 </control>
                 <control>
-                        <id>204</id>
+                        <id>0</id>
                         <type>image</type>
-                        <posX>34</posX>
-                        <posY>260</posY>
-                        <width>347</width>
-                        <height>347</height>
-                        <texture>albumnocover.png</texture>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <texture>defaultAlbum.png</texture>
                         <visible>!control.hasthumb(204)</visible>
+						<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <id>204</id>
                         <type>image</type>
-                        <posX>34</posX>
-                        <posY>260</posY>
-                        <width>347</width>
-                        <height>347</height>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
                         <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+						<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <type>label</type>
@@ -76,6 +78,19 @@
                                 <animation effect="slide" time="100" start="300,0">visible</animation>
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
                         </control>
+						<control>
+								<description>Dummy Button (for Mouse)</description>
+								<id>0</id>								
+								<label>-</label>
+								<type>button</type>
+								<posX>1002</posX>
+								<posY>0</posY>
+								<width>278</width>
+								<height>720</height>
+								<visible>!Control.HasFocus(50)</visible>
+								<animation effect="slide" time="100" start="300,0">visible</animation>
+								<animation effect="slide" time="0" end="300,0">hidden</animation>
+						</control>
                         <control>
                                 <id>0</id>
                                 <label>VIEW OPTIONS</label>

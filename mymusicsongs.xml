@@ -28,29 +28,7 @@
                         <width>1280</width>
                         <height>720</height>
                         <texture>mainoverlay.png</texture>
-                </control>
-                <control>
-                        <id>204</id>
-                        <type>image</type>
-                        <posX>90</posX>
-                        <posY>250</posY>
-                        <width>348</width>
-                        <height>348</height>
-                        <visible>facadeview.list|facadeview.album+Control.HasFocus(50)</visible>
-                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <id>204</id>
-                        <type>image</type>
-                        <posX>170</posX>
-                        <posY>250</posY>
-                        <width>348</width>
-                        <height>348</height>
-                        <texture>albumnocover.png</texture>
-                        <visible>facadeview.list+!control.hasthumb(204)|facadeview.album+!control.hasthumb(204)</visible>
-                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-                </control>
+                </control>               
                 <control>
                         <id>204</id>
                         <type>image</type>
@@ -60,7 +38,18 @@
                         <height>348</height>
                         <keepaspectratio>yes</keepaspectratio>
                         <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                        <visible>facadeview.smallicons | facadeview.largeicons</visible>
+                        <visible>!facadeview.filmstrip</visible>
+                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+				<control>
+                        <id>204</id>
+                        <type>image</type>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <texture>defaultAlbum.png</texture>
+                        <visible>!facadeview.filmstrip+!control.hasthumb(204)</visible>
                         <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
                 </control>
                 <control>
