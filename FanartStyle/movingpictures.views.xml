@@ -27,7 +27,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Genre</label>
+      <label>#MovingPictures.Translation.Genre.Label</label>
       <posX>686</posX>
       <posY>485</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -42,7 +42,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Year</label>
+      <label>#MovingPictures.Translation.Year.Label</label>
       <posX>686</posX>
       <posY>510</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -56,7 +56,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Runtime</label>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
       <posX>686</posX>
       <posY>535</posY>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
@@ -150,7 +150,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
-      <label>#MovingPictures.Translation.Runtime</label>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
     <control>
@@ -172,7 +172,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <posY>650</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
-      <label>#MovingPictures.Translation.StarRating: #MovingPictures.SelectedMovie.score.localized/10</label>
+      <label>#MovingPictures.Translation.StarRating.Label: #MovingPictures.SelectedMovie.score.localized/10</label>
       <visible>facadeview.list+Control.IsVisible(50)</visible>
     </control>
    
@@ -308,7 +308,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Genre</label>
+      <label>#MovingPictures.Translation.Genre.Label</label>
       <posX>800</posX>
       <posY>530</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -323,7 +323,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Year</label>
+      <label>#MovingPictures.Translation.Year.Label</label>
       <posX>800</posX>
       <posY>555</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -337,7 +337,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.StarRating</label>
+      <label>#MovingPictures.Translation.StarRating.Label</label>
       <posX>800</posX>
       <posY>580</posY>	  
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -352,7 +352,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Director</label>
+      <label>#MovingPictures.Translation.Director.Label</label>
       <posX>800</posX>
       <posY>605</posY>	  
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
@@ -367,7 +367,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Runtime</label>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
       <posX>800</posX>
       <posY>630</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
