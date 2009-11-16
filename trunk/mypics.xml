@@ -32,30 +32,30 @@
                   <animation effect="fade" time="250">WindowClose</animation>
             </control>
 
-            <control>
-                  <id>204</id>
-                  <type>image</type>
-                  <posX>90</posX>
-                  <posY>260</posY>
-                  <width>348</width>
-                  <height>348</height>
-                  <keepaspectratio>true</keepaspectratio>
-                  <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                  <visible>facadeview.list</visible>
-            </control>
-
-            <control>
-                  <id>204</id>
-                  <type>image</type>
-                  <posX>90</posX>
-                  <posY>260</posY>
-                  <width>348</width>
-                  <height>348</height>
-                  <keepaspectratio>true</keepaspectratio>
-                  <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                  <visible>facadeview.smallicons | facadeview.largeicons</visible>
-            </control>
-
+			 <control>
+                     <id>204</id>
+                     <type>image</type>
+                     <posX>90</posX>
+                     <posY>250</posY>
+                     <width>348</width>
+                     <height>348</height>
+                     <keepaspectratio>yes</keepaspectratio>
+                     <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+                     <visible>!facadeview.filmstrip</visible>
+                     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <id>204</id>
+                     <type>image</type>
+                     <posX>90</posX>
+                     <posY>250</posY>
+                     <width>348</width>
+                     <height>348</height>
+                     <texture>defaultPictureBig.png</texture>
+                     <visible>!facadeview.filmstrip+!control.hasthumb(204)</visible>
+                     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+              </control>
+			  
             <!-- FILMSTRIP VIEW -->
 
             <control>
