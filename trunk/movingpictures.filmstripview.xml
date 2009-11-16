@@ -400,7 +400,7 @@ This file should contain the thumbs view
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\DIVX.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.filmstrip+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)string.starts(#MovingPictures.LocalMedia.videocodec,DX)]|</visible>
+		  <visible>Control.IsVisible(50)+facadeview.filmstrip+[string.equals(#MovingPictures.LocalMedia.videocodec,DIVX)|string.starts(#MovingPictures.LocalMedia.videocodec,DX)]</visible>
 		</control>
 
 		<!-- XVID -->
