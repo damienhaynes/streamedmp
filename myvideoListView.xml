@@ -159,7 +159,7 @@ This file should contain the details view
 		  <seperator>-----------------------------------------------------------------------------------</seperator>
 		  <font>mediastream11</font>
 		  <label>#plot</label>
-		  <visible>facadeview.list+Control.IsVisible(4441)+!string.starts(#mpaarating,unknown)</visible>
+		  <visible>facadeview.list+Control.IsVisible(4441)+!string.starts(#plot,unknown)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
