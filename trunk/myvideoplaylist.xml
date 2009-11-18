@@ -1,226 +1,277 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<!-- Note: MyVideos DB fields do not work in Playlist view -->
+
 <window>
-<id>28</id>
-<defaultcontrol>2</defaultcontrol>
-<allowoverlay>no</allowoverlay>
-<define>#header.label:136</define>
-<define>#header.hover:hover_my videos.png</define>
-<controls>
-    
-    <control>
-      <type>image</type>
-      <description>BG</description>
-      <id>0</id>
-      <width>1280</width>
-      <height>720</height>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
-    </control>
-
-    <control>
-      <id>204</id>
-      <type>image</type>
-      <posX>30</posX>
-      <posY>230</posY>
-      <width>245</width>
-      <height>373</height>
-      <texture>#selectedthumb</texture>
-      <visible>facadeview.playlist</visible>
-    </control>
-    
-    <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <control>
-        <type>image</type>
-        <posX>1002</posX>
-        <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-	  <control>
-		<id>0</id>
-		<description>Dummy Button (for Mouse)</description>
-		<label>-</label>
-		<type>button</type>
-		<posX>1002</posX>
-		<posY>0</posY>
-		<width>278</width>
-		<height>720</height>
-		<visible>!Control.HasFocus(50)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
-	  </control>
-      <control>
-        <id>0</id>
-        <label>VIEW OPTIONS</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>PLAYLIST CONTROL</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>281</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>JUMP TO</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>449</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-	
-	<control>
-	  <description>View-As button</description>
-	  <type>button</type>
-	  <id>2</id>
-	  <label>100</label>
-	  <onleft>50</onleft>
-	  <onup>17</onup>
-	</control>
-	
+    <id>28</id>
+    <defaultcontrol>2</defaultcontrol>
+    <allowoverlay>no</allowoverlay>
+    <define>#header.label:136</define>
+    <define>#header.hover:hover_my videos.png</define>
+    <controls>
         <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
+            <type>image</type>
+            <description>BG</description>
+            <id>0</id>
+            <width>1280</width>
+            <height>720</height>
+            <animation effect="fade" time="400" delay="0">WindowOpen</animation>
         </control>
-	
-	<control>
-	  <description>Shuffle button</description>
-	  <type>button</type>
-	  <id>20</id>
-	  <label>191</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>Repeat on/off button</description>
-	  <type>togglebutton</type>
-	  <id>30</id>
-	  <label>486</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>Save button</description>
-	  <type>button</type>
-	  <id>21</id>
-	  <label>190</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>Clear button</description>
-	  <type>button</type>
-	  <id>22</id>
-	  <label>192</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>Play button</description>
-	  <type>button</type>
-	  <id>23</id>
-	  <label>208</label>
-	  <onleft>50</onleft>
-	</control>
-	
         <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
+            <type>image</type>
+            <id>0</id>
+            <posX>0</posX>
+            <posY>0</posY>
+            <width>1280</width>
+            <height>720</height>
+            <texture>#header.hover</texture>
+            <animation effect="fade" time="400" delay="0">WindowOpen</animation>
         </control>
-	
-	<control>
-	  <description>Next button</description>
-	  <type>button</type>
-	  <id>24</id>
-	  <label>209</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>Previous button</description>
-	  <type>button</type>
-	  <id>25</id>
-	  <label>210</label>
-	  <onleft>50</onleft>
-	</control>
-	
-	<control>
-	  <description>My Playlists</description>
-	  <type>button</type>
-	  <id>9</id>
-	  <label>983</label>
-	  <onleft>50</onleft>
-	  <ondown>99</ondown>
-	</control>
-	
-      </control>
-    </control>
-    
-    <import>common.facade.video.xml</import>
-    
-    <import>common.overlays2.xml</import>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
+        <control>
+            <type>image</type>
+            <id>0</id>
+            <posX>0</posX>
+            <posY>0</posY>
+            <width>1280</width>
+            <height>720</height>
+            <texture>mainoverlay.png</texture>
+        </control>
+		
+        <control>
+		  <description>Default Cover Art</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>26</posX>
+		  <posY>250</posY>
+		  <width>267</width>
+		  <height>390</height>
+		  <texture>defaultdvdcover.png</texture>
+		  <visible>!facadeview.filmstrip</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>		
+		<control>
+		  <description>Cover Art</description>
+		  <type>image</type>
+		  <id>60</id>
+		  <posX>31</posX>
+		  <posY>254</posY>
+		  <width>257</width>
+		  <height>380</height>
+		  <texture>#selectedthumb</texture>
+		  <visible>!facadeview.filmstrip</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>		
+		<control>
+		  <description>Cover Art Glass Overlay</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>31</posX>
+		  <posY>254</posY>
+		  <width>228</width>
+		  <height>177</height>
+		  <texture>glassoverlay2.png</texture>
+		  <visible>!facadeview.filmstrip+Control.HasThumb(60)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		
+        <control>
+            <type>actiongroup</type>
+            <description>action menu</description>
+            <defaultcontrol>2</defaultcontrol>
+            <onexit>50</onexit>
+			<buttonX>1231</buttonX>
+			<buttonY>55</buttonY>
+			<buttonwidth>49</buttonwidth>
+			<buttonheight>153</buttonheight>
+			<textureFocus>Action_menu.png</textureFocus>
+			<textureNoFocus>Action_menu.png</textureNoFocus>
+			<dimColor>00ffffff</dimColor>
+            <control>
+                <type>image</type>
+                <posX>1002</posX>
+                <posY>0</posY>
+                <width>278</width>
+                <height>720</height>
+                <texture>hiddenmenu_right.png</texture>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+            </control>
+            <control>
+                <id>0</id>
+                <description>Dummy Button (for Mouse)</description>
+                <label>-</label>
+                <type>button</type>
+                <posX>1002</posX>
+                <posY>0</posY>
+                <width>278</width>
+                <height>720</height>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+            </control>
+            <control>
+				<description>View Options</description>
+                <id>0</id>
+                <label>499</label>
+                <type>label</type>
+                <font>mediastream12tc</font>
+                <posX>1040</posX>
+                <posY>225</posY>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+            </control>
+            <control>
+				<description>Playlist Options</description>
+                <id>0</id>
+                <label>851</label>
+                <type>label</type>
+                <font>mediastream12tc</font>
+                <posX>1040</posX>
+                <posY>281</posY>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+            </control>			
+            <control>
+				<description>Jump To</description>
+                <id>0</id>
+                <label>1065</label>
+                <type>label</type>
+                <font>mediastream12tc</font>
+                <posX>1040</posX>
+                <posY>449</posY>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+            </control>
+            <control>
+                <type>group</type>
+                <description>group element</description>
+                <visible>!Control.HasFocus(50)</visible>
+                <animation effect="slide" time="100" start="300,0">visible</animation>
+                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                <posX>1040</posX>
+                <posY>250</posY>
+                <width>220</width>
+                <height>720</height>
+                <layout>StackLayout</layout>
+                <control>
+                    <description>View-As button</description>
+                    <type>button</type>
+                    <id>2</id>
+                    <label>100</label>
+                    <onleft>50</onleft>
+                    <onup>17</onup>
+                </control>
+                <control>
+                    <description>Empty button</description>
+                    <type>button</type>
+                    <id>0</id>
+                    <label>-</label>
+                    <visible>false</visible>
+                </control>
+                <control>
+                    <description>Shuffle button</description>
+                    <type>button</type>
+                    <id>20</id>
+                    <label>191</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Repeat on/off button</description>
+                    <type>togglebutton</type>
+                    <id>30</id>
+                    <label>486</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Save button</description>
+                    <type>button</type>
+                    <id>21</id>
+                    <label>190</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Clear button</description>
+                    <type>button</type>
+                    <id>22</id>
+                    <label>192</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Play button</description>
+                    <type>button</type>
+                    <id>23</id>
+                    <label>208</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Empty button</description>
+                    <type>button</type>
+                    <id>0</id>
+                    <label>-</label>
+                    <visible>false</visible>
+                </control>
+                <control>
+                    <description>Next button</description>
+                    <type>button</type>
+                    <id>24</id>
+                    <label>209</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>Previous button</description>
+                    <type>button</type>
+                    <id>25</id>
+                    <label>210</label>
+                    <onleft>50</onleft>
+                </control>
+                <control>
+                    <description>My Playlists</description>
+                    <type>button</type>
+                    <id>9</id>
+                    <label>983</label>
+                    <onleft>50</onleft>
+                    <ondown>99</ondown>
+                </control>
+            </control>
+        </control>
+		
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>675</posY>
+			<width>1280</width>
+			<height>47</height>
+			<texture>imagestreamtitle.png</texture>
+			<visible>!facadeview.filmstrip</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		 <control>
+			<description>Selected item Label</description>
+			<type>fadelabel</type>
+			<id>1</id>
+			<posX>25</posX>
+			<posY>684</posY>
+			<width>950</width>
+			<font>mediastream16tc</font>
+			<visible>!facadeview.filmstrip</visible>
+			<label>#selecteditem</label>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		
+        <import>common.window.xml</import>
+        <import>common.time.xml</import>		
+        <import>common.overlays2.xml</import>
+        <import>common.facade.video.xml</import>
 
-  </controls>
+    </controls>
 </window>
