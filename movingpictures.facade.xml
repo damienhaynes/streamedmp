@@ -46,6 +46,8 @@ This file should contain the facade view
 			<height>30</height>
 			<texture>mediacountbg_Spin.png</texture>
 			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+		    <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
 		<control>
 			<description>Page Label</description>
@@ -57,6 +59,8 @@ This file should contain the facade view
 			<font>mediastream12tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+		    <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
 		
 		<!-- Movie Counts -->
@@ -246,26 +250,30 @@ This file should contain the facade view
 	
 		<!-- Parental Controls Indicator -->
 		<control>
-		  <description>Parental Controls Lock Indicator</description>
-		  <type>image</type>
-		  <id>1</id>
-		  <posX>1075</posX>
-		  <posY>8</posY>
-		  <width>36</width>
-		  <height>36</height>
-		  <texture>parentallock.png</texture>
-		  <visible>Control.IsVisible(16)+Control.IsVisible(50)</visible>
+			<description>Parental Controls Lock Indicator</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>1075</posX>
+			<posY>8</posY>
+			<width>36</width>
+			<height>36</height>
+			<texture>parentallock.png</texture>
+			<visible>Control.IsVisible(16)+Control.IsVisible(50)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
 		</control>		
 		<control>
-		  <description>Parental Controls Lock Indicator</description>
-		  <type>image</type>
-		  <id>1</id>
-		  <posX>1240</posX>
-		  <posY>8</posY>
-		  <width>36</width>
-		  <height>36</height>
-		  <texture>parentallock.png</texture>
-		  <visible>Control.IsVisible(16)+Control.IsVisible(51)</visible>
+			<description>Parental Controls Lock Indicator</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>1240</posX>
+			<posY>8</posY>
+			<width>36</width>
+			<height>36</height>
+			<texture>parentallock.png</texture>
+			<visible>Control.IsVisible(16)+Control.IsVisible(51)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>		
 		</control>			
 		
 		<!-- Selected Category Image -->
@@ -297,8 +305,6 @@ This file should contain the facade view
 			<animation effect="fade" time="250">WindowClose</animation>			
 			<visible>Control.IsVisible(51)</visible>
 		</control>	
-		
-		
 		
 	</controls>
 </window>
