@@ -10,15 +10,32 @@
               <import>common.window.tv.xml</import>
               <import>common.time.xml</import>
               <control>
-                     <description>Number of Files Label</description>
+                     <description>Item Count Background</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>1113</posX>
+                     <posY>12</posY>
+                     <width>159</width>
+                     <height>27</height>
+                     <texture>mediacountbackground.png</texture>
+                     <visible>Control.IsVisible(10)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
                      <type>label</type>
+                     <description>Number of Files Label</description>
                      <id>12</id>
-                     <posX>25</posX>
-                     <posY>618</posY>
-                     <font>font14</font>
+                     <posX>1246</posX>
+                     <posY>14</posY>
+                     <width>350</width>
+                     <font>mediastream10c</font>
+                     <textcolor>ff006698</textcolor>
+                     <align>right</align>
                      <label>#itemcount</label>
-                     <textcolor>ffcccccc</textcolor>
-                     <visible>false</visible>
+                     <visible>Control.IsVisible(10)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
               </control>
               <control>
                      <type>actiongroup</type>
@@ -250,7 +267,7 @@
               <control>
                      <description>Media Count Label</description>
                      <type>label</type>
-                     <label>PAGE:</label>
+                     <label>30009</label>
                      <id>0</id>
                      <posX>1023</posX>
                      <posY>689</posY>
@@ -274,7 +291,7 @@
                             <id>10</id>
                             <posX>620</posX>
                             <posY>240</posY>
-                            <height>450</height>
+                            <height>480</height>
                             <width>660</width>
                             <selectedColor>80000000</selectedColor>
                             <selectedColor2>ffffffff</selectedColor2>

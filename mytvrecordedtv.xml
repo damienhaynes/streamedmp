@@ -7,17 +7,6 @@
               <import>common.window.tv.xml</import>
               <import>common.time.xml</import>
               <control>
-                     <type>label</type>
-                     <description>Number of Files Label</description>
-                     <id>12</id>
-                     <posX>1281</posX>
-                     <posY>721</posY>
-                     <label>#itemcount</label>
-                     <visible>false</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-              </control>
-              <control>
                      <type>fadelabel</type>
                      <description>Selected item Label</description>
                      <id>1</id>
@@ -379,36 +368,6 @@
                      <animation effect="fade" time="250">WindowClose</animation>
                      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Media Count Background</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>1013</posX>
-                     <posY>684</posY>
-                     <width>260</width>
-                     <height>32</height>
-                     <texture>mediacountbg_Spin.png</texture>
-                     <visible>yes</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Media Count Label</description>
-                     <type>label</type>
-                     <label>PAGE:</label>
-                     <id>0</id>
-                     <posX>1023</posX>
-                     <posY>689</posY>
-                     <font>mediastream12tc</font>
-                     <textcolor>ff909090</textcolor>
-                     <visible>yes</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
               </control>
               <import>common.facade.recordings.xml</import>
               <import>common.overlays.xml</import>
