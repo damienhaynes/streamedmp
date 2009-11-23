@@ -1,222 +1,320 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>16001</id>
-  <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <disabletopbar>no</disabletopbar>
-  <define>#header.hover:Animations\news\default.jpg</define>
-  <controls>
-    <import>common.time.xml</import>
+       <id>16001</id>
+       <defaultcontrol>50</defaultcontrol>
+       <allowoverlay>no</allowoverlay>
+       <disabletopbar>no</disabletopbar>
+       <define>#header.hover:Animations\news\default.jpg</define>
+       <controls>
+              <import>common.time.xml</import>
 
-    <control>
-      <type>image</type>
-      <description>BG</description>
-      <id>0</id>
-      <width>1280</width>
-      <height>720</height>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <description>Overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
-    </control>
+              <control>
+                     <type>image</type>
+                     <description>BG</description>
+                     <id>0</id>
+                     <width>1280</width>
+                     <height>720</height>
+                     <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+              </control>
 
-    <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <control>
-        <type>image</type>
-        <posX>1002</posX>
-        <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>MENU</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-        <control>
-          <description>Refresh Button</description>
-          <type>button</type>
-          <id>2</id>
-          <label>184</label>
-          <onleft>50</onleft>
-          <onup>17</onup>
-        </control>
-        <control>
-          <description>RSS feed select</description>
-          <type>button</type>
-          <id>4</id>
-          <label>706</label>
-          <onleft>50</onleft>
-          <ondown>5</ondown>
-        </control>
-		<control>
-          <description>All feeds</description>
-          <type>button</type>
-          <id>5</id>
-          <label>Show all feeds on home</label>
-          <onleft>5</onleft>
-          <onright>50</onright>
-          <onup>4</onup>
-          <ondown>2</ondown>
-        </control>
-      </control>
-    </control>
-    
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <control>
-        <description>listcontrol</description>
-        <type>listcontrol</type>
-        <id>50</id>
-        <posY>260</posY>
-        <height>400</height>
-        <onleft>2</onleft>
-      </control>
-      <control>
-        <description>Chosen Story description</description>
-        <type>textboxscrollup</type>
-        <id>506</id>
-        <posX>50</posX>
-        <posY>400</posY>
-        <width>600</width>
-        <height>300</height>
-        <label>-</label>
-        <seperator>----------------------------------------------------------------------------------------------</seperator>
-        <font>font12</font>
-        <textcolor>FFFFFFFF</textcolor>
-      </control>
-      <control>
-		  <description>Site Logo</description>
-		  <type>image</type>
-		  <id>101</id>
-		  <posX>320</posX>
-		  <posY>580</posY>
-		  <width>400</width>
-		  <height>140</height>
-		  <texture>#infoservice.feed.itemimg</texture>
-		  <centered>yes</centered>
-		  <keepaspectratio>yes</keepaspectratio>
-       </control>
-    </control>
+              <control>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>0</posX>
+                     <posY>0</posY>
+                     <width>1280</width>
+                     <height>720</height>
+                     <texture>#header.hover</texture>
+                     <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+              </control>
 
-    <control>
-      <description>Media Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1113</posX>
-      <posY>684</posY>
-      <width>159</width>
-      <height>28</height>
-      <texture>mediacountbackground.png</texture>
-    </control>
+              <control>
+                     <description>Overlay</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>0</posX>
+                     <posY>0</posY>
+                     <width>1280</width>
+                     <height>720</height>
+                     <texture>mainoverlay.png</texture>
 
-   <control>
-      <description>Site Logo</description>
-      <type>image</type>
-      <id>101</id>
-      <posX>50</posX>
-      <posY>260</posY>
-      <width>400</width>
-      <height>140</height>
-      <texture>#infoservice.feed.img</texture>
-      <centered>yes</centered>
-      <keepaspectratio>yes</keepaspectratio>
-    </control>
+              </control>
+              <control>
+                     <description>Top Title Extension Background</description>
+                     <type>image</type>
+                     <id>1</id>
+                     <posX>381</posX>
+                     <posY>11</posY>
+                     <width>486</width>
+                     <height>36</height>
+                     <texture>tvtitlebg.png</texture>
+                     <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                     <animation effect="fade" time="300" delay="0">WindowClose</animation>
+                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Current Feed</description>
+                     <type>fadelabel</type>
+                     <id>11</id>
+                     <posX>839</posX>
+                     <posY>13</posY>
+                     <width>320</width>
+                     <align>right</align>
+                     <label>#infoservice.feed.selectedfeed</label>
+                     <font>mediastream12c</font>
+                     <align>right</align>
+                     <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                     <animation effect="fade" time="230" delay="0">WindowClose</animation>
+                     <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Page Count Background</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>1013</posX>
+                     <posY>684</posY>
+                     <width>260</width>
+                     <height>32</height>
+                     <texture>mediacountbg_Spin.png</texture>
+                     <visible>yes</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Page Count Label</description>
+                     <type>label</type>
+                     <label>30009</label>
+                     <id>0</id>
+                     <posX>1023</posX>
+                     <posY>689</posY>
+                     <font>mediastream12tc</font>
+                     <textcolor>ff909090</textcolor>
+                     <visible>yes</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Item Count Background</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>1113</posX>
+                     <posY>12</posY>
+                     <width>159</width>
+                     <height>27</height>
+                     <texture>mediacountbackground.png</texture>
+                     <visible>Control.IsVisible(50)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>Number of Files Label</description>
+                     <id>1</id>
+                     <posX>1246</posX>
+                     <posY>14</posY>
+                     <width>350</width>
+                     <font>mediastream10c</font>
+                     <textcolor>ff006698</textcolor>
+                     <align>right</align>
+                     <label>#infoservice.feed.itemcount</label>
+                     <visible>Control.IsVisible(50)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <type>actiongroup</type>
+                     <description>action menu</description>
+                     <defaultcontrol>2</defaultcontrol>
+                     <onexit>50</onexit>
+                     <buttonX>1231</buttonX>
+                     <buttonY>55</buttonY>
+                     <buttonwidth>49</buttonwidth>
+                     <buttonheight>153</buttonheight>
+                     <textureFocus>Action_menu.png</textureFocus>
+                     <textureNoFocus>Action_menu.png</textureNoFocus>
+                     <dimColor>00ffffff</dimColor>
+                     <control>
+                            <type>image</type>
+                            <posX>1002</posX>
+                            <posY>0</posY>
+                            <width>278</width>
+                            <height>720</height>
+                            <texture>hiddenmenu_right.png</texture>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <label>496</label>
+                            <type>label</type>
+                            <font>mediastream12tc</font>
+                            <posX>1040</posX>
+                            <posY>225</posY>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>dummy button</description>
+                            <label>-</label>
+                            <type>button</type>
+                            <posX>1002</posX>
+                            <posY>0</posY>
+                            <width>278</width>
+                            <height>720</height>
+                            <visible>!Control.HasFocus(10)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <type>group</type>
+                            <description>group element</description>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                            <posX>1040</posX>
+                            <posY>250</posY>
+                            <width>220</width>
+                            <height>720</height>
+                            <layout>StackLayout</layout>
+                            <control>
+                                   <description>Refresh Button</description>
+                                   <type>button</type>
+                                   <id>2</id>
+                                   <label>184</label>
+                                   <onleft>50</onleft>
+                                   <onup>17</onup>
+                            </control>
+                            <control>
+                                   <description>RSS feed select</description>
+                                   <type>button</type>
+                                   <id>4</id>
+                                   <label>706</label>
+                                   <onleft>50</onleft>
+                                   <ondown>5</ondown>
+                            </control>
+                            <control>
+                                   <description>All feeds</description>
+                                   <type>button</type>
+                                   <id>5</id>
+                                   <label>Show all feeds on home</label>
+                                   <onleft>5</onleft>
+                                   <onright>50</onright>
+                                   <onup>4</onup>
+                                   <ondown>2</ondown>
+                            </control>
+                     </control>
+              </control>
 
-    <control>
-      <description>Channel name label</description>
-      <type>label</type>
-      <id>12</id>
-      <posX>1286</posX>
-      <posY>10</posY>
-      <label>-</label>
-      <font>font18</font>
-      <textcolor>20ffffff</textcolor>
-      <align>right</align>
-    </control>
-    <control>
-      <description>Number of Files Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1125</posX>
-      <posY>688</posY>
-      <font>mediastream9c</font>
-      <label>#infoservice.feed.itemcount</label>
-      <align>left</align>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>50</posX>
-      <posY>230</posY>
-      <width>950</width>
-      <font>mediastream12tc</font>
-      <label>#infoservice.feed.selectedtitle</label>
-    </control>
-
-    <control>
-      <description>Current Feed</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>1255</posX>
-      <posY>15</posY>
-      <width>500</width>
-      <font>mediastream10tc</font>
-      <align>right</align>
-      <textcolor>ffFFFFFF</textcolor>      
-      <label>#infoservice.feed.selectedfeed</label>	 
-      <visible>Control.HasFocus(50)</visible>
-    </control>
-
-    <import>common.overlays.xml</import>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>  </controls>
+              <control>
+                     <description>listcontrol</description>
+                     <type>listcontrol</type>
+                     <id>50</id>
+                     <posY>260</posY>
+                     <height>460</height>
+                     <onleft>2</onleft>
+                     <spinPosX>1175</spinPosX>
+                     <spinPosY>682</spinPosY>
+                     <spinAlign>Right</spinAlign>
+                     <textureUp>arrow_round_up_nofocus.png</textureUp>
+                     <textureDown>arrow_round_down_nofocus.png</textureDown>
+                     <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+                     <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+                     <spinWidth>50</spinWidth>
+                     <spinHeight>37</spinHeight>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Chosen Story description</description>
+                     <type>textboxscrollup</type>
+                     <id>506</id>
+                     <posX>50</posX>
+                     <posY>400</posY>
+                     <width>600</width>
+                     <height>300</height>
+                     <label>-</label>
+                     <seperator>----------------------------------------------------------------------------------------------</seperator>
+                     <font>font12</font>
+                     <textcolor>FFFFFFFF</textcolor>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Site Logo</description>
+                     <type>image</type>
+                     <id>101</id>
+                     <posX>320</posX>
+                     <posY>580</posY>
+                     <width>400</width>
+                     <height>140</height>
+                     <texture>#infoservice.feed.itemimg</texture>
+                     <centered>yes</centered>
+                     <keepaspectratio>yes</keepaspectratio>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Site Logo</description>
+                     <type>image</type>
+                     <id>101</id>
+                     <posX>50</posX>
+                     <posY>260</posY>
+                     <width>400</width>
+                     <height>140</height>
+                     <texture>#infoservice.feed.img</texture>
+                     <centered>yes</centered>
+                     <keepaspectratio>yes</keepaspectratio>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Channel name label</description>
+                     <type>label</type>
+                     <id>12</id>
+                     <posX>1286</posX>
+                     <posY>10</posY>
+                     <label>-</label>
+                     <font>font18</font>
+                     <textcolor>20ffffff</textcolor>
+                     <align>right</align>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Selected item Label</description>
+                     <type>fadelabel</type>
+                     <id>1</id>
+                     <posX>50</posX>
+                     <posY>230</posY>
+                     <width>950</width>
+                     <font>mediastream12tc</font>
+                     <label>#infoservice.feed.selectedtitle</label>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <import>common.overlays.xml</import>
+              <import>common.window.xml</import>
+              <import>common.time.xml</import>
+       </controls>
 </window>
