@@ -174,20 +174,14 @@ multiple view modes.
 	  <visible>Control.IsVisible(50)</visible>
     </control>
     <control>
-      <type>imagelist</type>
+      <type>image</type>
       <id>101</id>
       <posX>730</posX>
       <posY>454</posY>
-      <textureWidth>23</textureWidth>
-      <textureHeight>22</textureHeight>
-      <subitems>
-        <subitem>greystar.png</subitem>
-        <subitem>starwhite.png</subitem>
-      </subitems>
-      <orientation>horizontal</orientation>
-      <align>left</align>
-      <imagesToDraw>10</imagesToDraw>
-      <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
+      <width>115</width>
+      <height>22</height>      
+      <align>left</align>      
+      <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
     <!--Top Bar-->
