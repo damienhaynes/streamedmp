@@ -47,45 +47,40 @@ This file should contain the facade view
       </control>
       <control>
         <description>Thumbnail Panel</description>
-        <type>thumbnailpanel</type>
-        <id>50</id>
-        <onleft>2</onleft>
-        <onright>2</onright>
-        <posX>25</posX>
-        <posY>70</posY>
-        <width>1280</width>
-        <height>480</height>
-        <spinPosY>900</spinPosY>
-        <spinPosX>1400</spinPosX>
-        <spinColor>ffcccccc</spinColor>
-        <textureUp>page_up_nofocus.png</textureUp>
-        <textureDown>page_down_nofocus.png</textureDown>
-        <textureUpFocus>page_up_focus.png</textureUpFocus>
-        <textureDownFocus>page_down_focus.png</textureDownFocus>
-        <itemWidth>103</itemWidth>
-		<itemHeight>132</itemHeight>
-		<textureWidth>91</textureWidth>
-		<textureHeight>127</textureHeight>
-		<thumbWidth>80</thumbWidth>
-		<thumbHeight>117</thumbHeight>
+		<type>thumbnailpanel</type>
+		<id>50</id>
+		<onleft>2</onleft>
+		<onright>2</onright>				
+		<textureUp>-</textureUp>
+		<textureDown>-</textureDown>
+		<posX>30</posX>
+		<posY>66</posY>
+		<width>1200</width>
+		<height>480</height>
+		<!--<scrollOffset>1</scrollOffset>-->
+		<!-- Small Icons 0.66 aspect ratio -->
+		<itemWidth>100</itemWidth>
+		<itemHeight>145</itemHeight>
+		<textureWidth>100</textureWidth>
+		<textureHeight>144</textureHeight>
+		<thumbWidth>90</thumbWidth>
+		<thumbHeight>135</thumbHeight>
 		<thumbPosX>5</thumbPosX>
-		<thumbPosY>5</thumbPosY>
-        <imageFolder>-</imageFolder>
-        <imageFolderFocus>-</imageFolderFocus>
-        <!--imageFolder>movie_preview_thumb_background_nofocus.png</imageFolder>
-        <imageFolderFocus>movie_preview_thumb_background_focus.png</imageFolderFocus-->
-        <suffix>|</suffix>
-		<textureWidthBig>150</textureWidthBig>
-		<textureHeightBig>212</textureHeightBig>
-		<itemWidthBig>155</itemWidthBig>
-		<itemHeightBig>220</itemHeightBig>
-		<thumbWidthBig>140</thumbWidthBig>
-		<thumbHeightBig>202</thumbHeightBig>
-		<thumbPosXBig>5</thumbPosXBig>
-		<thumbPosYBig>5</thumbPosYBig>
-        <thumbZoom>no</thumbZoom>
-        <enableFocusZoom>yes</enableFocusZoom>
-        <!--<unfocusedAlpha>200</unfocusedAlpha>-->        
+		<thumbPosY>5</thumbPosY>				
+		<!-- Large Icons 0.66 aspect ratio -->
+		<textureWidthBig>148</textureWidthBig>
+		<textureHeightBig>217</textureHeightBig>
+		<itemWidthBig>147</itemWidthBig>
+		<itemHeightBig>215</itemHeightBig>
+		<thumbWidthBig>132</thumbWidthBig>
+		<thumbHeightBig>200</thumbHeightBig>
+		<thumbPosXBig>8</thumbPosXBig>
+		<thumbPosYBig>8</thumbPosYBig>
+		<imageFolderFocus>thumbborder3.png</imageFolderFocus>
+		<font>font12</font>
+		<suffix>|</suffix>
+		<thumbZoom>yes</thumbZoom>
+		<enableFocusZoom>no</enableFocusZoom>      
       </control>
       <control>
         <description>Filmstrip view</description>
