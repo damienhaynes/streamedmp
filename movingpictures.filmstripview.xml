@@ -90,8 +90,7 @@ This file should contain the thumbs view
 		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
 		</control>
 		
-		<control>
-		  <!-- No localised Equivalent -->
+		<control>		  
 		  <description>Movie Details Label</description>
 		  <type>label</type>
 		  <id>0</id>
@@ -175,22 +174,14 @@ This file should contain the thumbs view
 		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
 		</control>	
 		<control>
-		  <type>imagelist</type>
+		  <type>image</type>
 		  <id>1001</id>
 		  <posX>410</posX>
 		  <posY>432</posY>
 		  <width>115</width>
-		  <height>13</height>
-		  <textureWidth>23</textureWidth>
-		  <textureHeight>22</textureHeight>
-		  <subitems>
-			<subitem>-.png</subitem>
-			<subitem>starwhite.png</subitem>
-		  </subitems>
-		  <orientation>horizontal</orientation>
-		  <align>left</align>
-		  <imagesToDraw>10</imagesToDraw>
-		  <percentage>#MovingPictures.SelectedMovie.score.rounded</percentage>
+		  <height>23</height>		  
+		  <align>left</align>		  
+		  <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
 		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
 		</control>		
 		<control>
