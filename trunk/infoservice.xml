@@ -229,8 +229,9 @@
                      <description>listcontrol</description>
                      <type>listcontrol</type>
                      <id>50</id>
-                     <posY>260</posY>
-                     <height>460</height>
+                     <posY>240</posY>
+                     <posX>685</posX>
+                     <height>500</height>
                      <onleft>2</onleft>
                      <spinPosX>1175</spinPosX>
                      <spinPosY>682</spinPosY>
@@ -251,7 +252,7 @@
                      <type>textboxscrollup</type>
                      <id>506</id>
                      <posX>50</posX>
-                     <posY>400</posY>
+                     <posY>380</posY>
                      <width>600</width>
                      <height>250</height>
                      <label>-</label>
@@ -267,10 +268,10 @@
                      <description>Site Logo</description>
                      <type>image</type>
                      <id>101</id>
-                     <posX>320</posX>
-                     <posY>580</posY>
-                     <width>400</width>
-                     <height>140</height>
+                     <posX>470</posX>
+                     <posY>270</posY>
+                     <width>180</width>
+                     <height>80</height>
                      <texture>#infoservice.feed.itemimg</texture>
                      <centered>yes</centered>
                      <keepaspectratio>yes</keepaspectratio>
@@ -284,7 +285,7 @@
                      <type>image</type>
                      <id>101</id>
                      <posX>50</posX>
-                     <posY>260</posY>
+                     <posY>240</posY>
                      <width>400</width>
                      <height>140</height>
                      <texture>#infoservice.feed.img</texture>
@@ -294,6 +295,23 @@
                      <animation effect="fade" time="250">WindowClose</animation>
                      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Default Site Logo</description>
+                     <type>image</type>
+                     <id>1</id>
+                     <posX>50</posX>
+                     <posY>240</posY>
+                     <width>400</width>
+                     <height>140</height>
+                     <texture>news.png</texture>
+                     <centered>yes</centered>
+                     <keepaspectratio>yes</keepaspectratio>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+                     <visible>control.hasthumb(101)</visible>
               </control>
               <control>
                      <description>Channel name label</description>
