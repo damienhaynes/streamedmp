@@ -146,6 +146,8 @@
                      <buttonheight>153</buttonheight>
                      <textureFocus>Action_menu.png</textureFocus>
                      <textureNoFocus>Action_menu.png</textureNoFocus>
+					 <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
                      <dimColor>00ffffff</dimColor>
                      <control>
                             <type>image</type>
@@ -250,7 +252,7 @@
                      <posX>50</posX>
                      <posY>400</posY>
                      <width>600</width>
-                     <height>300</height>
+                     <height>250</height>
                      <label>-</label>
                      <seperator>----------------------------------------------------------------------------------------------</seperator>
                      <font>font12</font>
