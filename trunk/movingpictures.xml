@@ -66,7 +66,16 @@ multiple view modes.
       <posY>-50</posY>
       <width>0</width>
     </control>
-    
+	
+	<control>
+      <description>Visibile when Filtering is enabled</description>
+      <type>image</type>
+      <id>17</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+	
     <!--            :: BACKGROUNDS :: MOVIE BACKDROP :: OVERLAYS ::            -->
     
     <control>
@@ -79,24 +88,22 @@ multiple view modes.
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
-    
+   
+   <!-- Fading Fanart Controls -->
    <control>
-      <description>Movie Backdrop (Fan Art) - Plug-in sets to invisible, if no art.</description>
+      <description>Movie Backdrop (Fan Art)</description>
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>#MovingPictures.Backdrop</texture>
-      <animation effect="fade" start="0" end="100" time="3000">WindowOpen</animation>
-      <animation effect="fade" start="0" end="100" time="200">Visible</animation>
-      <animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-      <!-- Do not modify the visibility for this component. It is handled by the plug-in. Use the above
-           defines for conditional visibility if you dont want to use fan-art only specific views. -->
+      <texture>#MovingPictures.Backdrop</texture>      
+	  <animation effect="fade" time="300">visible</animation>
+      <animation effect="fade" time="300" delay="300">hidden</animation>
     </control>
     <control>
-      <description>Alternate Movie Backdrop - Toggles Load with Component 1 for animations on visibiltiy</description>
+      <description>Alternate Movie Backdrop</description>
       <type>image</type>
       <id>11</id>
       <posX>0</posX>
@@ -104,14 +111,12 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>#MovingPictures.Backdrop2</texture>
-      <animation effect="fade" start="0" end="100" time="350">Visible</animation>
-      <animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
-      <!-- Do not modify the visibility for this component. It is handled by the plug-in. Use the above
-           defines for conditional visibility if you dont want to use fan-art only specific views. -->
+      <animation effect="fade" time="300">visible</animation>
+      <animation effect="fade" time="300" delay="300">hidden</animation>
     </control>
     
     <control>
-      <description>Backdrop Overlay - ListView</description>
+      <description>Backdrop Overlay</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -119,23 +124,11 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
-      <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons]+[Control.IsVisible(50)|Control.IsVisible(51)]</visible>
-    </control>
-    
-	<control>
-      <description>Backdrop Overlay - ListView</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
-      <visible>Control.IsVisible(51)</visible>
-    </control>
+      <visible>!facadeview.filmstrip+[Control.IsVisible(50)|Control.IsVisible(51)]</visible>
+    </control>    
 	
     <control>
-      <description>Filmstrip black background - FilmStripView</description>
+      <description>Filmstrip Black Background</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -148,7 +141,7 @@ multiple view modes.
     </control>
     
     <control>
-      <description>Backdrop Overlay - FilmStripView</description>
+      <description>Backdrop Overlay - FilmStrip</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -160,7 +153,7 @@ multiple view modes.
     </control>
     
     <control>
-      <description>Glasstitlebar - FilmStripView</description>
+      <description>Glasstitlebar - FilmStrip</description>
       <type>image</type>
       <id>0</id>
       <posX>280</posX>
@@ -190,44 +183,75 @@ multiple view modes.
     <import>movingpictures.facade.xml</import>
     <import>common.overlays2.xml</import>
     
+	<control>
+		<description>Top Title Extension Background</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>381</posX>
+		<posY>11</posY>
+		<width>486</width>
+		<height>35</height>
+		<texture>tvtitlebg.png</texture>		
+		<animation effect="fade" time="150" delay="0">WindowClose</animation>		
+		<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+		<!--<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="150" delay="0">Hidden</animation>-->
+		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+Control.IsVisible(17)</visible>
+	</control>
+	<control>
+		<description>Current Filter</description>
+		<type>fadelabel</type>
+		<id>0</id>
+		<posX>839</posX>
+		<posY>13</posY>
+		<width>320</width>
+		<align>right</align>
+		<label>#MovingPictures.Filter.Combined</label>
+		<font>mediastream12c</font>
+		<align>right</align>		
+		<animation effect="fade" time="150" delay="0">WindowClose</animation>
+		<animation effect="fade" time="150" delay="200">Visible</animation>
+		<!--<animation effect="slide" start="-160,0" end="0,0" tween="bounce" time="350" delay="200">Visible</animation>-->
+		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+Control.IsVisible(17)</visible>
+	</control>
+			  
     <control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-	  <visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+		<description>Top Title Background</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>77</posX>
+		<posY>11</posY>
+		<width>437</width>
+		<height>35</height>
+		<texture>tvtitlebg.png</texture>		
+		<animation effect="fade" time="150" delay="0">WindowClose</animation>
+		<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+    </control>    
+    <control>
+		<description>Plugin Name / Current Category</description>
+		<type>fadelabel</type>      
+		<id>0</id>
+		<posX>493</posX>
+		<posY>13</posY>
+		<width>350</width>
+		<font>mediastream12c</font>
+		<align>right</align>
+		<visible>yes</visible>
+		<label>#MovingPictures.CurrentNode.name</label>		
+		<animation effect="fade" time="150" delay="0">WindowClose</animation>
+		<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>	  
     </control>
-    
+	     
     <control>
-      <type>fadelabel</type>
-      <description>Top Title</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <visible>yes</visible>
-      <label>#MovingPictures.Settings.HomeScreenName</label>
-	  <visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>	  
-    </control>
-    
-    <control>
-      <description>Working Animation</description>
-      <type>animation</type>
-      <id>13</id>
-      <posX>810</posX>
-      <posY>15</posY>
-      <width>157</width>
-      <height>24</height>
-      <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
-      <Duration>0:0:03</Duration>
-      <keepaspectratio>yes</keepaspectratio>	  
+		<description>Working Animation</description>
+		<type>animation</type>
+		<id>13</id>
+		<posX>890</posX>
+		<posY>15</posY>
+		<width>157</width>
+		<height>24</height>
+		<textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
+		<Duration>0:0:03</Duration>
+		<keepaspectratio>yes</keepaspectratio>	  
     </control>	
 		
     <import>common.time.xml</import>
