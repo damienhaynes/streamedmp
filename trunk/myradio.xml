@@ -49,7 +49,8 @@
                         </control>
                         <control>
                                 <id>0</id>
-                                <label>SWITCH</label>
+                                <description>label SWITCH VIEW</description>
+                                <label>457</label>
                                 <type>label</type>
                                 <font>mediastream12tc</font>
                                 <posX>1040</posX>
@@ -60,22 +61,12 @@
                         </control>
                         <control>
                                 <id>0</id>
-                                <label>SETTINGS</label>
+                                <description>label JUMP TO</description>
+                                <label>1065</label>
                                 <type>label</type>
                                 <font>mediastream12tc</font>
                                 <posX>1040</posX>
-                                <posY>393</posY>
-                                <visible>!Control.HasFocus(50)</visible>
-                                <animation effect="slide" time="100" start="300,0">visible</animation>
-                                <animation effect="slide" time="0" end="300,0">hidden</animation>
-                        </control>
-                        <control>
-                                <id>0</id>
-                                <label>JUMP TO</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>449</posY>
+                                <posY>311</posY>
                                 <visible>!Control.HasFocus(50)</visible>
                                 <animation effect="slide" time="100" start="300,0">visible</animation>
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -103,6 +94,13 @@
                                         <type>sortbutton</type>
                                         <onleft>50</onleft>
                                 </control>
+                               <control>
+                                      <description>Empty button</description>
+                                      <type>button</type>
+                                      <id>0</id>
+                                      <label>-</label>
+                                      <visible>false</visible>
+                               </control>
                                 <control>
                                         <description>Previous button</description>
                                         <type>button</type>
@@ -126,28 +124,6 @@
                                         <label>533</label>
                                         <onleft>50</onleft>
                                         <hyperlink>762</hyperlink>
-                                </control>
-                                <control>
-                                        <description>Empty button</description>
-                                        <type>button</type>
-                                        <id>0</id>
-                                        <label>-</label>
-                                        <visible>false</visible>
-                                </control>
-                                <control>
-                                        <description>music settings button</description>
-                                        <type>button</type>
-                                        <id>12</id>
-                                        <label>Music Settings</label>
-                                        <onleft>50</onleft>
-                                        <hyperlink>14</hyperlink>
-                                </control>
-                                <control>
-                                        <description>Empty button</description>
-                                        <type>button</type>
-                                        <id>0</id>
-                                        <label>-</label>
-                                        <visible>false</visible>
                                 </control>
                                 <control>
                                         <description>Now playing button</description>
