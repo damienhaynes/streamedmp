@@ -116,22 +116,23 @@
                         <animation effect="slide" time="100" start="300,0">visible</animation>
                         <animation effect="slide" time="0" end="300,0">hidden</animation>
                   </control>
-                   <control>
-                          <id>0</id>
-                          <description>dummy button</description>
-                          <label>-</label>
-                          <type>button</type>
-                          <posX>1002</posX>
-                          <posY>0</posY>
-                          <width>278</width>
-                          <height>720</height>
-                          <visible>!Control.HasFocus(50)</visible>
-                          <animation effect="slide" time="100" start="300,0">visible</animation>
-                          <animation effect="slide" time="0" end="300,0">hidden</animation>
-                   </control>
                   <control>
+						<id>0</id>
+						<description>dummy button</description>
+						<label>-</label>
+						<type>button</type>
+						<posX>1002</posX>
+						<posY>0</posY>
+						<width>278</width>
+						<height>720</height>
+						<visible>!Control.HasFocus(50)</visible>
+						<animation effect="slide" time="100" start="300,0">visible</animation>
+						<animation effect="slide" time="0" end="300,0">hidden</animation>
+                  </control>
+                  <control>
+						<description>View Options</description>
                         <id>0</id>
-                        <label>VIEW OPTIONS</label>
+                        <label>499</label>
                         <type>label</type>
                         <font>mediastream12tc</font>
                         <posX>1040</posX>
@@ -141,8 +142,9 @@
                         <animation effect="slide" time="0" end="300,0">hidden</animation>
                   </control>
                   <control>
+						<description>Slideshow</description>
                         <id>0</id>
-                        <label>SLIDESHOW</label>
+                        <label>108</label>
                         <type>label</type>
                         <font>mediastream12tc</font>
                         <posX>1040</posX>
@@ -152,8 +154,9 @@
                         <animation effect="slide" time="0" end="300,0">hidden</animation>
                   </control>
                   <control>
+						<description>Settings</description>
                         <id>0</id>
-                        <label>SETTINGS</label>
+                        <label>897</label>
                         <type>label</type>
                         <font>mediastream12tc</font>
                         <posX>1040</posX>
@@ -227,7 +230,7 @@
                               <description>Slideshow Settings</description>
                               <type>button</type>
                               <id>8</id>
-                              <label>Slideshow Settings</label>
+                              <label>108</label>
                               <hyperlink>12</hyperlink>
                               <onleft>50</onleft>
                               <ondown>99</ondown>
