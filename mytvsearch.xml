@@ -184,13 +184,24 @@
               <control>
                      <description>Current program title</description>
                      <type>fadelabel</type>
-                     <id>14</id>
+                     <id>13</id>
+                     <posX>28</posX>
+                     <posY>273</posY>
+                     <width>570</width>
+                     <font>mediastream12tc</font>
+                     <label>-</label>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Current program title</description>
+                     <type>fadelabel</type>
+                     <id>1</id>
                      <posX>28</posX>
                      <posY>273</posY>
                      <width>570</width>
                      <font>mediastream12tc</font>
                      <label>#TV.Search.Title</label>
-                     <visible>yes</visible>
                      <animation effect="fade" time="250">WindowOpen</animation>
                      <animation effect="fade" time="250">WindowClose</animation>
               </control>
