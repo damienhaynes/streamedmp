@@ -267,7 +267,7 @@
               <control>
                      <description>Site Logo</description>
                      <type>image</type>
-                     <id>101</id>
+                     <id>102</id>
                      <posX>470</posX>
                      <posY>270</posY>
                      <width>180</width>
@@ -311,7 +311,7 @@
                      <animation effect="fade" time="250">WindowClose</animation>
                      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
                      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                     <visible>control.hasthumb(101)</visible>
+                     <visible>!Control.HasThumb(101)</visible>
               </control>
               <control>
                      <description>Channel name label</description>
