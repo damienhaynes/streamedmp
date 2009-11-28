@@ -1759,8 +1759,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("\t\t\t<font>#labelFont</font>");
         rawXML.AppendLine("\t\t\t<align>right</align>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "300" + quote + ">Visible</animation>");
-        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " delay=" + quote + "0" + quote + " time=" + quote + "50" + quote + ">Hidden</animation>");
+        rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " delay=" + quote + "350" + quote + " time=" + quote + "250" + quote + ">Visible</animation>");        
         rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
         rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
@@ -1780,8 +1779,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t\t\t<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("\t\t\t<font>mediastream10tc</font>");
           rawXML.AppendLine("\t\t\t<align>right</align>");
-          rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "500" + quote + " time=" + quote + "300" + quote + ">Visible</animation>");
-          rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " delay=" + quote + "0" + quote + " time=" + quote + "50" + quote + ">Hidden</animation>");
+          rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " delay=" + quote + "350" + quote + " time=" + quote + "250" + quote + ">Visible</animation>");          
           rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
           rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
           rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
