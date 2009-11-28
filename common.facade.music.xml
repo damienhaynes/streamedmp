@@ -22,7 +22,7 @@
                         <visible>facadeview.filmstrip</visible>
                 </control>
                 <control>
-                        <description>Media Count Background</description>
+                        <description>Page Count Background</description>
                         <type>image</type>
                         <id>0</id>
                         <posX>1013</posX>
@@ -37,7 +37,7 @@
                         <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                 </control>
                 <control>
-                        <description>Media Count Label</description>
+                        <description>Page Count Label</description>
                         <type>label</type>
                         <label>30009</label>
                         <id>0</id>
@@ -167,9 +167,7 @@
                                         <type>thumbnailpanel</type>
                                         <id>50</id>
                                         <onleft>2</onleft>
-                                        <onright>2</onright>
-                                        <ondown>2</ondown>
-                                        <onup>2</onup>
+                                        <onright>2</onright>                                        
                                         <textureUp>-</textureUp>
                                         <textureDown>-</textureDown>
                                         <posX>530</posX>
@@ -239,9 +237,7 @@
                                         <showFrame>yes</showFrame>
                                         <showFolder>yes</showFolder>
                                         <showBackGround>no</showBackGround>
-                                        <showInfoImage>no</showInfoImage>
-                                        <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout" >focus</thumbAnimation>
-                                        <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
+                                        <showInfoImage>no</showInfoImage>                                        
                                         <spinPosX>565</spinPosX>
                                         <spinPosY>685</spinPosY>
                                         <spinAlign>center</spinAlign>
@@ -252,6 +248,8 @@
                                         <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
                                         <spinWidth>50</spinWidth>
                                         <spinHeight>37</spinHeight>
+										<thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout" >focus</thumbAnimation>
+                                        <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
                                 </control>
                                 <control>
                                         <description>playlist listcontrol</description>

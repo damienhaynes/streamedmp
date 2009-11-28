@@ -30,7 +30,7 @@
                   <animation effect="slide" time="250" end="800,0">WindowClose</animation>
             </control>
             <control>
-                  <description>Media Count Background</description>
+                  <description>Page Count Background</description>
                   <type>image</type>
                   <id>0</id>
                   <posX>1013</posX>
@@ -45,7 +45,7 @@
                   <animation effect="slide" time="250" end="800,0">WindowClose</animation>
             </control>
             <control>
-                  <description>Media Count Label</description>
+                  <description>Page Count Label</description>
                   <type>label</type>
                   <label>30009</label>
                   <id>0</id>
@@ -58,7 +58,38 @@
                   <animation effect="fade" time="250">WindowClose</animation>
                   <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
                   <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-            </control>
+            </control>			
+			<control>
+				  <description>Item Count Background</description>
+				  <type>image</type>
+				  <id>0</id>
+				  <posX>1113</posX>
+				  <posY>10</posY>
+				  <width>159</width>
+				  <height>28</height>
+				  <texture>mediacountbg.png</texture>
+				  <animation effect="fade" time="250">WindowOpen</animation>
+				  <animation effect="fade" time="250">WindowClose</animation>
+				  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+				  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+				  <visible>Control.IsVisible(50)</visible>
+			</control>
+			<control>
+				  <description>Item Count Label</description>
+				  <type>label</type>
+				  <label>#itemcount</label>
+				  <id>0</id>
+				  <posX>1245</posX>
+				  <posY>12</posY>
+				  <font>mediastream11c</font>
+				  <textcolor>ff006698</textcolor>
+				  <align>right</align>
+				  <animation effect="fade" time="250">WindowOpen</animation>
+				  <animation effect="fade" time="250">WindowClose</animation>
+				  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+				  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+				  <visible>Control.IsVisible(50)</visible>
+			</control>  
             <control>
                   <description>Selected item Label</description>
                   <type>fadelabel</type>
@@ -111,6 +142,7 @@
                               <width>660</width>
                               <onleft>99</onleft>
                               <onright>2</onright>
+							  <onleft>2</onleft>
                               <scrollOffset>5</scrollOffset>
                               <PinIconWidth>15</PinIconWidth>
                               <PinIconHeight>15</PinIconHeight>
@@ -145,9 +177,7 @@
                               <type>thumbnailpanel</type>
                               <id>50</id>
                               <onleft>2</onleft>
-                              <onright>2</onright>
-                              <ondown>2</ondown>
-                              <onup>2</onup>
+                              <onright>2</onright>                              
                               <textureUp>-</textureUp>
                               <textureDown>-</textureDown>
                               <posX>530</posX>

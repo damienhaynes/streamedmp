@@ -51,16 +51,17 @@ This file should contain the facade view
 			<type>label</type>
 			<label>#itemcount</label>
 			<id>0</id>
-			<posX>1123</posX>
-			<posY>14</posY>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(50)</visible>
+			<posX>1245</posX>
+			<posY>12</posY>
+			<font>mediastream11c</font>
+			<textcolor>ff006698</textcolor>
+			<align>right</align>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 			<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
 			<animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		</control>
+			<visible>Control.IsVisible(50)</visible>
+		</control>    
 		
 		<control>
 			<description>group element</description>
@@ -141,9 +142,7 @@ This file should contain the facade view
 					<type>thumbnailpanel</type>
 					<id>50</id>
 					<onleft>2</onleft>
-					<onright>2</onright>
-					<ondown>2</ondown>
-					<onup>2</onup>
+					<onright>2</onright>				
 					<textureUp>-</textureUp>
 					<textureDown>-</textureDown>
 					<posX>530</posX>

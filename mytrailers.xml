@@ -19,8 +19,7 @@
 			<timeperimage>30000</timeperimage>
 			<fadetime>800</fadetime>
 			<loop>yes</loop>
-			<randomize>True</randomize>
-			<animation effect="fade" start="200" end="0" time="500">WindowClose</animation>
+			<randomize>True</randomize>			
 		</control>
 		<control>
 			<description>BG</description>
@@ -95,7 +94,7 @@
 			<visible>facadeview.filmstrip+Control.IsVisible(50)</visible>			
 		</control>
 		<!-- Comment this Control (ID:11) out if you want faster initial response time  in List -->
-		<!-- Doesnt seem MyTrailers caches images so can be slow/sluggish displaying big Poster-->		
+		<!-- Doesnt seem MyTrailers caches images so can be slow/sluggish displaying big Poster -->		
 		<control>
 			<description>Selected Poster</description>
 			<type>image</type>
@@ -186,7 +185,7 @@
 		
 		<!-- Facade Item Counts -->		
 		<control>
-			<description>Spin Control BG</description>
+			<description>Item Count Background</description>
 			<type>image</type>
 			<id>0</id>
 			<posX>1113</posX>
@@ -201,14 +200,15 @@
 			<visible>Control.IsVisible(50)</visible>
 		</control>
 		<control>
-			<description>Spin Control Label</description>
+			<description>Item Count Label</description>
 			<type>label</type>
 			<label>#itemcount</label>
 			<id>0</id>
-			<posX>1123</posX>
-			<posY>14</posY>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
+			<posX>1245</posX>
+			<posY>12</posY>
+			<font>mediastream11c</font>
+			<textcolor>ff006698</textcolor>
+			<align>right</align>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 			<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -371,6 +371,8 @@
 					<description>listcontrol</description>
 					<type>listcontrol</type>
 					<id>50</id>
+					<onleft>2</onleft>
+					<onright>2</onright>
 					<scrollOffset>4</scrollOffset>
 					<posX>670</posX>
 					<posY>230</posY>
@@ -397,55 +399,61 @@
 					<type>thumbnailpanel</type>
 					<id>50</id>
 					<onleft>2</onleft>
-					<onright>2</onright>
-					<posX>20</posX>
-					<posY>250</posY>
-					<width>1240</width>
-					<height>500</height>					
-					<itemWidth>103</itemWidth>
-					<itemHeight>132</itemHeight>
-					<textureWidth>91</textureWidth>
-					<textureHeight>127</textureHeight>
-					<thumbWidth>80</thumbWidth>
-					<thumbHeight>117</thumbHeight>
+					<onright>2</onright>				
+					<textureUp>-</textureUp>
+					<textureDown>-</textureDown>
+					<posX>60</posX>
+					<posY>230</posY>
+					<width>1200</width>
+					<height>480</height>
+					<!--<scrollOffset>1</scrollOffset>-->
+					<!-- Small Icons 0.66 aspect ratio -->
+					<itemWidth>100</itemWidth>
+					<itemHeight>145</itemHeight>
+					<textureWidth>100</textureWidth>
+					<textureHeight>144</textureHeight>
+					<thumbWidth>90</thumbWidth>
+					<thumbHeight>135</thumbHeight>
 					<thumbPosX>5</thumbPosX>
-					<thumbPosY>5</thumbPosY>
-					<imageFolder>-</imageFolder>
+					<thumbPosY>5</thumbPosY>				
+					<!-- Large Icons 0.66 aspect ratio -->
+					<textureWidthBig>148</textureWidthBig>
+					<textureHeightBig>217</textureHeightBig>
+					<itemWidthBig>147</itemWidthBig>
+					<itemHeightBig>215</itemHeightBig>
+					<thumbWidthBig>132</thumbWidthBig>
+					<thumbHeightBig>200</thumbHeightBig>
+					<thumbPosXBig>8</thumbPosXBig>
+					<thumbPosYBig>8</thumbPosYBig>
 					<imageFolderFocus>thumbborder3.png</imageFolderFocus>
 					<font>font12</font>
 					<suffix>|</suffix>
-					<textureWidthBig>150</textureWidthBig>
-					<textureHeightBig>212</textureHeightBig>
-					<itemWidthBig>155</itemWidthBig>
-					<itemHeightBig>220</itemHeightBig>
-					<thumbWidthBig>140</thumbWidthBig>
-					<thumbHeightBig>202</thumbHeightBig>
-					<thumbPosXBig>5</thumbPosXBig>
-					<thumbPosYBig>5</thumbPosYBig>
-					<thumbZoom>no</thumbZoom>
+					<thumbZoom>yes</thumbZoom>
 					<enableFocusZoom>no</enableFocusZoom>
+					<!-- Spin Controls -->
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>					
 					<spinPosX>1175</spinPosX>
 					<spinPosY>681</spinPosY>
 					<spinAlign>Right</spinAlign>
-					<spinColor>ff006698</spinColor>
-					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>
+					<spinColor>ff006698</spinColor>				
 					<textureUp>arrow_round_up_nofocus.png</textureUp>
 					<textureDown>arrow_round_down_nofocus.png</textureDown>
 					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>					
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>	
 				</control>    
-				<control>
+				<control>				                                  										
 					<description>Filmstrip view</description>
 					<type>filmstrip</type>
 					<scrollOffset>4</scrollOffset>
+					<dimColor>90ffffff</dimColor>
 					<id>50</id>
 					<posX>50</posX>
 					<posY>325</posY>
 					<onup>2</onup>
 					<ondown>2</ondown>
-					<width>1150</width>
-					<onleft>2</onleft>					
+					<onleft>2</onleft>
+					<width>1150</width>										
 					<itemWidth>130</itemWidth>
 					<itemHeight>205</itemHeight>
 					<textureWidth>150</textureWidth>
@@ -466,13 +474,13 @@
 					<spinPosX>565</spinPosX>
 					<spinPosY>685</spinPosY>
 					<spinAlign>center</spinAlign>
-					<spinColor>9f006698</spinColor>					
-					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>
+					<spinColor>ff006698</spinColor>
 					<textureUp>arrow_round_right_nofocus.png</textureUp>
 					<textureDown>arrow_round_left_nofocus.png</textureDown>
 					<textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
 					<textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>
 					<thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout" >focus</thumbAnimation>
                     <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
 					<animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
