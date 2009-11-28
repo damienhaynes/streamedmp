@@ -32,7 +32,7 @@ This file should contain the facade view
 			<textcolor>White</textcolor>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>Control.IsVisible(51)</visible>
+			<visible>Control.IsVisible(51)+facadeview.list</visible>
 		</control>
 	
 		<!-- Facade Spin Background -->
@@ -45,7 +45,7 @@ This file should contain the facade view
 			<width>260</width>
 			<height>30</height>
 			<texture>mediacountbg_Spin.png</texture>
-			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+			<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
 			<animation effect="fade" time="250">WindowOpen</animation>
 		    <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
@@ -58,7 +58,7 @@ This file should contain the facade view
 			<posY>688</posY>
 			<font>mediastream12tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(50)|Control.IsVisible(51)</visible>
+			<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
 			<animation effect="fade" time="250">WindowOpen</animation>
 		    <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
@@ -73,7 +73,7 @@ This file should contain the facade view
 			<width>159</width>
 			<height>28</height>
 			<texture>mediacountbackground.png</texture>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
 		</control>    
 		<control>
 			<description>Movie Count Label</description>
@@ -84,7 +84,7 @@ This file should contain the facade view
 			<posY>14</posY>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
 		</control>
 		<control>
 			<type>label</type>
@@ -96,7 +96,7 @@ This file should contain the facade view
 			<textcolor>ff006698</textcolor>
 			<align>right</align>
 			<label>#MovingPictures.general.filteredmoviecount</label>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
 		</control>
 		
 		<control>
@@ -256,7 +256,7 @@ This file should contain the facade view
 			<width>36</width>
 			<height>36</height>
 			<texture>parentallock.png</texture>
-			<visible>Control.IsVisible(16)+Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible(16)+!Control.IsVisible(51)+Control.IsVisible(50)</visible>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 		</control>		
@@ -269,7 +269,7 @@ This file should contain the facade view
 			<width>36</width>
 			<height>36</height>
 			<texture>parentallock.png</texture>
-			<visible>Control.IsVisible(16)+Control.IsVisible(51)</visible>
+			<visible>Control.IsVisible(16)+Control.IsVisible(51)+!Control.IsVisible(50)</visible>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>		
 		</control>			
@@ -286,9 +286,10 @@ This file should contain the facade view
 			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
 			<keepaspectratio>yes</keepaspectratio>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
-			<visible>Control.IsVisible(51)+!Control.HasThumb(100)</visible>
-		</control>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<!--<animation effect="fade" time="250">visible</animation>-->
+			<visible>Control.IsVisible(51)+!Control.IsVisible(50)+!Control.HasThumb(100)</visible>
+		</control>		
 		<control>
 			<description>Selected Category Image</description>
 			<type>image</type>
@@ -301,7 +302,7 @@ This file should contain the facade view
 			<keepaspectratio>yes</keepaspectratio>
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>			
-			<visible>Control.IsVisible(51)</visible>
+			<visible>Control.IsVisible(51)+!Control.IsVisible(50)</visible>
 		</control>	
 		
 	</controls>

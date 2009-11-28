@@ -11,7 +11,7 @@ This file should contain the details view
 			<width>59</width>
 			<height>153</height>
 			<texture>Action_menu.png</texture>
-			<visible>Control.IsVisible(50)</visible>				
+			<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>				
 		</control>			
 		<control>
 			<type>actiongroup</type>
