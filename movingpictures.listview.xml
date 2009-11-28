@@ -74,6 +74,18 @@ This file should contain the list view
 		</control>
 		
 		<control>
+		  <description>Movie Title Shadow</description>
+		  <type>label</type>
+		  <id>0</id>
+		  <posX>309</posX>
+		  <posY>252</posY>
+		  <width>900</width>
+		  <font>mediastream16tc</font>
+		  <label>#MovingPictures.SelectedMovie.title</label>
+		  <textcolor>ff222222</textcolor>		 
+		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		</control>
+		<control>
 		  <description>Movie Title</description>
 		  <type>label</type>
 		  <id>0</id>
@@ -82,10 +94,7 @@ This file should contain the list view
 		  <width>900</width>
 		  <font>mediastream16tc</font>
 		  <label>#MovingPictures.SelectedMovie.title</label>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
+		  <textcolor>ffFFFFFF</textcolor>		 
 		  <visible>facadeview.list+Control.IsVisible(50)</visible>
 		</control>
 
