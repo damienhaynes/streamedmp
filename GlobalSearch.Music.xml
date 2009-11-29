@@ -23,7 +23,7 @@
                      <height>153</height>
                      <visible>true</visible>
               </control>
-
+			  
               <control>
                      <type>actiongroup</type>
                      <description>action menu</description>
@@ -44,6 +44,8 @@
                             <height>720</height>
                             <texture>hiddenmenu_right.png</texture>
                             <visible>!Control.HasFocus(50)</visible>
+							<animation effect="slide" time="100" start="300,0">visible</animation>
+							<animation effect="slide" time="0" end="300,0">hidden</animation>
                      </control>
                      <control>
                             <id>0</id>
@@ -55,6 +57,8 @@
                             <width>278</width>
                             <height>720</height>
                             <visible>!Control.HasFocus(50)</visible>
+							<animation effect="slide" time="100" start="300,0">visible</animation>
+							<animation effect="slide" time="0" end="300,0">hidden</animation>
                      </control>
                      <control>
                             <id>0</id>
@@ -64,6 +68,8 @@
                             <posX>1040</posX>
                             <posY>225</posY>
                             <visible>!Control.HasFocus(50)</visible>
+							<animation effect="slide" time="100" start="300,0">visible</animation>
+							<animation effect="slide" time="0" end="300,0">hidden</animation>							
                      </control>
                      <control>
                             <type>group</type>
@@ -74,6 +80,8 @@
                             <width>220</width>
                             <height>720</height>
                             <layout>StackLayout</layout>
+							<animation effect="slide" time="100" start="300,0">visible</animation>
+							<animation effect="slide" time="0" end="300,0">hidden</animation>							
                             <control>
                                    <description>Searchphrase to use</description>
                                    <type>button</type>
@@ -109,6 +117,7 @@
                                           <subitem>Contains</subitem>
                                           <subitem>Ends with</subitem>
                                    </subitems>
+								   <selected>2</selected>
                                    <onup>6</onup>
                                    <selected>2</selected>
                             </control>
@@ -173,12 +182,18 @@
                      <width>950</width>
                      <font>mediastream16tc</font>
                      <label>#selecteditem</label>
+					 <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
               </control>
               
                      <control>
                             <description>composite control consisting of a list control and a thumbnail panel</description>
                             <type>facadeview</type>
                             <id>50</id>
+							<animation effect="fade" time="250">WindowOpen</animation>
+                            <animation effect="fade" time="250">WindowClose</animation>
+                            <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                            <animation effect="slide" time="250" end="800,0">WindowClose</animation>
                             <control>
                                    <description>listcontrol</description>
                                    <type>listcontrol</type>
@@ -216,14 +231,8 @@
                                    <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
                                    <spinWidth>50</spinWidth>
                                    <spinHeight>37</spinHeight>
-                                   <suffix>|</suffix>
-                                   <animation effect="fade" time="250">WindowOpen</animation>
-                                   <animation effect="fade" time="250">WindowClose</animation>
-                                   <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                                   <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-                            </control>
-                           
-                           
+                                   <suffix>|</suffix>                                   
+                            </control>                                                     
                      </control>
               <import>common.overlays.xml</import>
        </controls>
