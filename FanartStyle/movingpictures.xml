@@ -35,6 +35,8 @@ multiple view modes.
   <define>#movingpictures_RoundedPosters:round.poster.frame.png</define>
   
   <controls>
+  
+	<!--            :: DUMMY CONTROLS ::            -->
     <control>
       <description>Visibile when filtering by watched flag. Only unwatched movies are listed.</description>
       <type>label</type>
@@ -58,8 +60,10 @@ multiple view modes.
       <posX>-50</posX>
       <posY>-50</posY>
       <width>0</width>
-    </control>
-    <control>
+    </control>    
+	
+	<!--            :: BACKDROPS ::            -->
+	<control>
       <description>Background to be displayed when there is no Movie Backdrop</description>
       <type>image</type>
       <id>0</id>
@@ -69,6 +73,7 @@ multiple view modes.
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
+	
     <control>
       <description>Movie Backdrop (Fan Art) - Plug-in sets to invisible, if no art.</description>
       <type>image</type>
@@ -98,31 +103,7 @@ multiple view modes.
       <!-- Do not modify the visibility for this component. It is handled by the plug-in. Use the above
            defines for conditional visibility if you dont want to use fan-art only specific views. -->
     </control>
-    <control>
-      <description>Dummy Label for fanart</description>
-      <type>label</type>
-      <id>100</id>
-      <posX>-600</posX>
-      <posY>0</posY>
-      <width>10</width>
-      <height>10</height>
-      <visible>Control.IsVisible(1)</visible>
-    </control>
-    <control>
-      <description>Dummy Label for Cover</description>
-      <type>button</type>
-      <id>69</id>
-      <posX>-600</posX>
-      <posY>0</posY>
-      <ondown>50</ondown>
-      <onleft>50</onleft>
-      <onright>50</onright>
-      <onup>50</onup>
-      <width>10</width>
-      <height>10</height>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
-    </control>
-   
+    
 	<!--            :: HIDDEN MENU ::            -->
     <import>movingpictures.hiddenmenu.xml</import>
    
@@ -130,6 +111,7 @@ multiple view modes.
     <import>movingpictures.details.xml</import>
     <import>movingpictures.views.xml</import>
     <import>movingpictures.common.facade.xml</import>
+	
     <control>
       <type>image</type>
       <id>0</id>
@@ -150,7 +132,7 @@ multiple view modes.
       <height>31</height>
       <texture>mediacountbg.png</texture>
 	  <visible>Control.IsVisible(50)</visible>
-    </control>
+    </control>	
     <control>
       <description>Movies Label</description>
       <type>label</type>
@@ -173,7 +155,8 @@ multiple view modes.
       <label>#MovingPictures.general.filteredmoviecount</label>
 	  <visible>Control.IsVisible(50)</visible>
     </control>
-    <control>
+	
+    <control>	  
       <type>image</type>
       <id>101</id>
       <posX>730</posX>
@@ -184,6 +167,7 @@ multiple view modes.
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
+	
     <!--Top Bar-->
     <control>
       <description>Top Title Background</description>
