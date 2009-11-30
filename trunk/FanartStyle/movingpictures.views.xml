@@ -24,7 +24,7 @@ This file should contain all items visible when the plug-in is in its various fa
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>FFffffff</textcolor>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
-    </control>
+    </control>	
     <control Style="smallTitleB">
       <type>label</type>
       <label>#MovingPictures.Translation.Genre.Label</label>
@@ -348,7 +348,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
 	<control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.StarRating.Label</label>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
       <posX>800</posX>
       <posY>580</posY>
 	  <width>135</width>
@@ -356,7 +356,7 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <label>#MovingPictures.SelectedMovie.runtime.localized.long</label>
       <posX>940</posX>
       <posY>580</posY>
 	  <width>350</width>
@@ -378,9 +378,9 @@ This file should contain all items visible when the plug-in is in its various fa
 	  <width>350</width>	 
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
-    <control Style="smallTitleB">
+	<control Style="smallTitleB">
       <type>label</type>
-      <label>#MovingPictures.Translation.Runtime.Label</label>
+      <label>#MovingPictures.Translation.StarRating.Label</label>
       <posX>800</posX>
       <posY>630</posY>
 	  <width>135</width>
@@ -388,11 +388,22 @@ This file should contain all items visible when the plug-in is in its various fa
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.runtime.localized.long</label>
-      <posX>940</posX>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <posX>1070</posX>
       <posY>630</posY>
-      <width></width>
+      <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+    </control>
+	<control>
+      <type>image</type>
+      <id>101</id>
+      <posX>940</posX>
+      <posY>628</posY>
+      <width>115</width>
+      <height>22</height>
+      <align>left</align>
+      <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
+	  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
     </control>
   </controls>
 </window>
