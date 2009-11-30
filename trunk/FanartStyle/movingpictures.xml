@@ -131,7 +131,7 @@ multiple view modes.
       <width>147</width>
       <height>31</height>
       <texture>mediacountbg.png</texture>
-	  <visible>Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>	
     <control>
       <description>Movies Label</description>
@@ -142,7 +142,7 @@ multiple view modes.
       <posY>14</posY>
       <font>mediastream11tc</font>
       <textcolor>ff025984</textcolor>
-	  <visible>Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
 	<control>
       <type>label</type>
@@ -153,7 +153,7 @@ multiple view modes.
       <font>mediastream11c</font>
       <align>right</align>
       <label>#MovingPictures.general.filteredmoviecount</label>
-	  <visible>Control.IsVisible(50)</visible>
+	  <visible>Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
 	
     <control>	  
@@ -281,7 +281,7 @@ multiple view modes.
 		<keepaspectratio>yes</keepaspectratio>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>			
-		<visible>Control.IsVisible(51)+!Control.HasThumb(100)</visible>
+		<visible>Control.IsVisible(51)+!Control.IsVisible(50)+!Control.HasThumb(100)</visible>
 	</control>
 	<control>
 		<description>Category Image</description>
