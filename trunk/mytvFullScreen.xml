@@ -102,14 +102,14 @@
                         <posX>230</posX>
                         <posY>590</posY>
                         <width>820</width>
-                        <height>59</height>
+                        <height>79</height>
                         <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
                         <label>#TV.View.description</label>
                         <font>mediastream12</font>
                         <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                         
                 </control>
-                <control>
+                <!--<control>
                         <description>On tv NEXT</description>
                         <id>0</id>
                         <type>textbox</type>
@@ -122,7 +122,7 @@
                         <textcolor>ff888888</textcolor>
                         <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
                         
-                </control>
+                </control>-->
                 <control>
                         <description>Progress Bar Background</description>
                         <type>image</type>
