@@ -741,7 +741,7 @@ This file should contain the details view
 	<control>
 	  <description>Subtitles</description>
 	  <type>image</type>
-	  <id>0</id>
+	  <id>77</id>
 	  <posX>645</posX>
 	  <posY>665</posY>
 	  <width>100</width>
@@ -749,6 +749,30 @@ This file should contain the details view
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\SUBTITLES.png</texture>
 	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.hassubtitles,true)|string.equals(#MovingPictures.LocalMedia.hassubtitles,1)]</visible>
 	</control>
-		
+	
+	<!-- Video Format -->
+	<control>
+	  <description>Video Format</description>
+	  <type>image</type>
+	  <id>78</id>
+	  <posX>645</posX>
+	  <posY>665</posY>
+	  <width>100</width>
+	  <height>32</height>
+	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+!Control.IsVisible(77)</visible>
+	</control>
+	<control>
+	  <description>Video Format</description>
+	  <type>image</type>
+	  <id>78</id>
+	  <posX>745</posX>
+	  <posY>665</posY>
+	  <width>100</width>
+	  <height>32</height>
+	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.IsVisible(77)</visible>
+	</control>
+	
   </controls>
 </window>
