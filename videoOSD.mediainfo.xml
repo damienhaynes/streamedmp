@@ -198,6 +198,19 @@
 		  <visible>[string.contains(#Play.Current.VideoCodec,FLASH)|string.equals(#Play.Current.VideoCodec,FLV)]</visible>
 		</control>
 
+		<!-- VC-1 -->
+		<control>
+		  <description>VC-1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>290</posX>
+		  <posY>650</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
+		  <visible>string.equals(#Play.Current.VideoCodec,VC-1)</visible>
+		</control>
+	
 		<!-- Audio Channels / Codecs-->
 			
 		<!-- Mono -->
@@ -252,17 +265,30 @@
 		  <visible>[string.equals(#Play.Current.AudioCodec,MP3)|string.contains(#Play.Current.AudioCodec,MPEG-1 AUDIO LAYER 3)]+string.equals(#Play.Current.AudioChannels,stereo)</visible>
 		</control>
 
-		<!-- AAC -->
+		<!-- AAC 2.0 -->
 		<control>
-		  <description>AAC</description>
+		  <description>AAC 2.0</description>
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>390</posX>
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\AAC.png</texture>
-		  <visible>string.contains(#Play.Current.AudioCodec,AAC)</visible>
+		  <texture>Logos\Audio\AAC 20.png</texture>
+		  <visible>string.contains(#Play.Current.AudioCodec,AAC)+string.equals(#Play.Current.AudioChannels,stereo)</visible>
+		</control>
+		
+		<!-- AAC 5.1 -->
+		<control>
+		  <description>AAC 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>390</posX>
+		  <posY>650</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\AAC 51.png</texture>
+		  <visible>string.contains(#Play.Current.AudioCodec,AAC)+string.equals(#Play.Current.AudioChannels,5.1)</visible>
 		</control>
 
 		<!-- WMA -->
