@@ -199,6 +199,19 @@
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\FLASH.png</texture>
 		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.contains(#MovingPictures.LocalMedia.videocodec,FLASH)|string.equals(#MovingPictures.LocalMedia.videocodec,FLV)]</visible>
 		</control>
+		
+		<!-- VC-1 VIDEO -->
+		<control>
+		  <description>VC-1 Video</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>900</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.contains(#MovingPictures.LocalMedia.videocodec,VC-1)</visible>
+		</control>
 
 		<!-- Audio Channels / Codecs-->
 			
@@ -254,17 +267,30 @@
 		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+[string.equals(#MovingPictures.LocalMedia.audiocodec,MP3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
 		</control>
 
-		<!-- AAC -->
+		<!-- AAC 2.0 -->
 		<control>
-		  <description>AAC</description>
+		  <description>AAC 2.0</description>
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>1000</posX>
 		  <posY>665</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\AAC.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)</visible>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\AAC 20.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)</visible>
+		</control>
+		
+		<!-- AAC 5.1 -->
+		<control>
+		  <description>AAC 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>1000</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\AAC 51.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)</visible>
 		</control>
 
 		<!-- WMA -->
@@ -623,6 +649,19 @@
 		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.contains(#MovingPictures.LocalMedia.videocodec,FLASH)|string.equals(#MovingPictures.LocalMedia.videocodec,FLV)]</visible>
 		</control>
 
+		<!-- VC-1 -->
+		<control>
+		  <description>VC-1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>640</posX>
+		  <posY>10</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)</visible>
+		</control>
+	
 		<!-- Audio Channels / Codecs-->
 			
 		<!-- Mono -->
@@ -677,17 +716,30 @@
 		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.audiocodec,MP3)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)]</visible>
 		</control>
 
-		<!-- AAC -->
+		<!-- AAC 2.0 -->
 		<control>
-		  <description>AAC</description>
+		  <description>AAC 2.0</description>
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>740</posX>
 		  <posY>10</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\AAC.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)</visible>
+		  <texture>Logos\Audio\AAC 20.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,stereo)</visible>
+		</control>
+		
+		<!-- AAC 5.1 -->
+		<control>
+		  <description>AAC 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>740</posX>
+		  <posY>10</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture>Logos\Audio\AAC 51.png</texture>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.audiocodec,AAC)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)</visible>
 		</control>
 
 		<!-- WMA -->
