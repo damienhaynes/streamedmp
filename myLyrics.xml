@@ -12,41 +12,49 @@
         <controls>
                 <import>common.window.default.xml</import>
                 <import>common.time.xml</import>
+               <control>
+                      <description>Top Title Extension Background</description>
+                      <type>image</type>
+                      <id>1</id>
+                      <posX>381</posX>
+                      <posY>11</posY>
+                      <width>386</width>
+                      <height>36</height>
+                      <texture>tvtitlebg.png</texture>
+                      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                      <animation effect="fade" time="300" delay="0">WindowClose</animation>
+                      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+                      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+               </control>
+               <control>
+                      <id>1</id>
+                      <description>Top Title Background</description>
+                      <type>image</type>
+                      <posX>77</posX>
+                      <posY>11</posY>
+                      <width>437</width>
+                      <height>35</height>
+                      <texture>tvtitlebg.png</texture>
+                      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+                      <animation effect="fade" time="150">WindowClose</animation>
+               </control>
+               <control>
+                      <type>label</type>
+                      <description>Top Title Extension</description>
+                      <id>2</id>
+                      <posX>739</posX>
+                      <posY>13</posY>
+                      <width>320</width>
+                      <font>mediastream12c</font>
+                      <align>right</align>
+                      <label>Titel</label>
+                      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+                      <animation effect="fade" time="230" delay="0">WindowClose</animation>
+                      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+                      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+               </control>
                 <control>
-                        <description>Top Title Extension Background</description>
-                        <type>image</type>
-                        <id>1</id>
-                        <posX>381</posX>
-                        <posY>11</posY>
-                        <width>286</width>
-                        <height>36</height>
-                        <texture>tvtitlebgshort.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-                </control>
-                <control>
-                        <id>1</id>
-                        <description>Top Title Background</description>
-                        <type>image</type>
-                        <posX>77</posX>
-                        <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>Top Title Extension</description>
-                        <id>2</id>
-                        <posX>647</posX>
-                        <posY>13</posY>
-                        <font>mediastream12c</font>
-                        <align>right</align>
-                        <label>Titel</label>
-                        <animation effect="slide" start="-53,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-                </control>
-                <control>
-                        <description>Media Count Background</description>
+                        <description>Page Count Background</description>
                         <type>image</type>
                         <id>0</id>
                         <posX>628</posX>
@@ -60,7 +68,7 @@
                         <visible>control.isvisible(20)|control.isvisible(21)</visible>
                 </control>
                 <control>
-                        <description>Media Count Label</description>
+                        <description>Page Count Label</description>
                         <type>label</type>
                         <label>30009</label>
                         <id>0</id>
@@ -101,66 +109,12 @@
                         <spinHeight>37</spinHeight>
                 </control>
                 <control>
-                        <type>textbox</type>
-                        <description>The Lyric area wide</description>
-                        <id>21</id>
-                        <posX>110</posX>
-                        <posY>115</posY>
-                        <width>1160</width>
-                        <height>490</height>
-                        <onleft>2</onleft>
-                        <onright>2</onright>
-                        <onup>2</onup>
-                        <ondown>2</ondown>
-                        <image>icon-folder.png</image>
-                        <seperator>----------------------------------------------------------------------------------------------</seperator>
-                        <text>6</text>
-                        <font>font12</font>
-                        <spinPosX>761</spinPosX>
-                        <spinPosY>542</spinPosY>
-                        <spinColor>ff006698</spinColor>
-                        <spinAlign>Right</spinAlign>
-                        <textureUp>arrow_round_up_nofocus.png</textureUp>
-                        <textureDown>arrow_round_down_nofocus.png</textureDown>
-                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-                        <spinWidth>50</spinWidth>
-                        <spinHeight>37</spinHeight>
-                </control>
-                <control>
                         <type>textboxscrollup</type>
                         <description>The Lyric area</description>
                         <id>1020</id>
                         <posX>110</posX>
                         <posY>115</posY>
                         <width>760</width>
-                        <height>450</height>
-                        <onleft>2</onleft>
-                        <onright>2</onright>
-                        <onup>2</onup>
-                        <ondown>2</ondown>
-                        <image>icon-folder.png</image>
-                        <seperator>----------------------------------------------------------------------------------------------</seperator>
-                        <text>6</text>
-                        <font>font12</font>
-                        <spinPosX>761</spinPosX>
-                        <spinPosY>542</spinPosY>
-                        <spinColor>ff006698</spinColor>
-                        <spinAlign>Right</spinAlign>
-                        <textureUp>arrow_round_up_nofocus.png</textureUp>
-                        <textureDown>arrow_round_down_nofocus.png</textureDown>
-                        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-                        <spinWidth>50</spinWidth>
-                        <spinHeight>37</spinHeight>
-                </control>
-                <control>
-                        <type>textboxscrollup</type>
-                        <description>The Lyric area wide</description>
-                        <id>1021</id>
-                        <posX>110</posX>
-                        <posY>115</posY>
-                        <width>1160</width>
                         <height>450</height>
                         <onleft>2</onleft>
                         <onright>2</onright>
