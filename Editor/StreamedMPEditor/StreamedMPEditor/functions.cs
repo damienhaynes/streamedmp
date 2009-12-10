@@ -921,11 +921,10 @@ namespace StreamedMPEditor
           if (maxMenuItemSize < menItem.name.Length)
             maxMenuItemSize = menItem.name.Length;
         }
-        // now calc the minimum xpos based on longest sring in context and menu labels
+        // now calc the minimum xpos based on longest string in context and menu labels
         minXPos = (maxContextSize * 17);
         if ((maxMenuItemSize * 41) > minXPos)
           minXPos = (maxMenuItemSize * 41);
-
 
         if (menuOffset < minXPos)
         {
