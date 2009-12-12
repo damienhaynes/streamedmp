@@ -32,94 +32,12 @@ This file should contain the thumbs view
 		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
 		</control>
 		
-		<control>
-		  <description>Directors Label</description>
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Director.Label</label>
-		  <posX>20</posX>
-		  <posY>300</posY>
-		  <font>mediastream11tc</font>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
-		</control>
-		<control>
-		  <description>Director</description>
-		  <id>1003</id>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.extra.directors.1</label>
-		  <posX>20</posX>
-		  <posY>320</posY>
-		  <width>200</width>
-		  <font>mediastream10</font>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
-		</control>
-
-		<control>
-		  <description>Writer Label</description>
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Writer.Label</label>
-		  <posX>300</posX>
-		  <posY>300</posY>
-		  <font>mediastream11tc</font>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>		  
-		</control>
-		<control>
-		  <description>Year</description>
-		  <id>1004</id>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.extra.writers.1</label>
-		  <posX>300</posX>
-		  <posY>320</posY>
-		  <width>255</width>
-		  <font>mediastream10</font>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>		
-		</control>
-		
-		<control>
-		  <description>Summary</description>
-		  <type>textboxscrollup</type>
-		  <id>0</id>
-		  <posX>20</posX>
-		  <posY>360</posY>
-		  <width>500</width>
-		  <height>220</height>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <seperator>-----------------------------------------------------------------------------------</seperator>
-		  <font>mediastream11</font>
-		  <label>#MovingPictures.SelectedMovie.summary</label>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
-		</control>
-		
-		<!-- Star Rating -->
-		<control>
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.StarRating.Label:</label>		  
-		  <posX>20</posX>
-		  <posY>640</posY>
-		  <width>360</width>
-		  <font>mediastream11c</font>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
-		</control>
+		<!-- Star Rating -->		
 		<control>
 		  <type>image</type>
 		  <id>1001</id>
-		  <posX>210</posX>
-		  <posY>638</posY>
+		  <posX>20</posX>
+		  <posY>287</posY>
 		  <width>115</width>
 		  <height>22</height>		  
 		  <align>left</align>		  
@@ -129,12 +47,163 @@ This file should contain the thumbs view
 		<control>
 		  <type>label</type>
 		  <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
-		  <posX>211</posX>
-		  <posY>663</posY>
+		  <posX>150</posX>
+		  <posY>288</posY>
 		  <width>360</width>
 		  <font>mediastream11</font>		  
 		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
 		</control>
+		
+		<control>
+		  <description>Summary</description>
+		  <type>textboxscrollup</type>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>320</posY>
+		  <width>500</width>
+		  <height>215</height>
+		  <textcolor>ffFFFFFF</textcolor>
+		  <seperator>-----------------------------------------------------------------------------------</seperator>
+		  <font>mediastream11</font>
+		  <label>#MovingPictures.SelectedMovie.summary</label>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>	
+
+		<!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
+		<control Style="smallTitleB">
+		  <description>Certification Label Shadow</description>		  
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Certification.Label</label>
+		  <posX>21</posX>
+		  <posY>552</posY>
+		  <textcolor>ff111111</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>		
+		<control Style="smallTitleB">	  
+		  <description>Certification Label</description>
+		  <id>0</id>
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Certification.Label</label>
+		  <posX>20</posX>
+		  <posY>551</posY>
+		  <width>140</width>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Certification</description>
+		  <id>1004</id>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.certification</label>
+		  <posX>180</posX>
+		  <posY>552</posY>
+		  <width>200</width>		  
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Certification N/A</description>
+		  <id>0</id>
+		  <type>label</type>
+		  <label>N/A</label>
+		  <posX>180</posX>
+		  <posY>552</posY>
+		  <width>200</width>		  
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)+!Control.HasText(1004)</visible>
+		</control>
+		
+		<control Style="smallTitleB">
+		  <description>Runtime Label Shadow</description>		  
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Runtime.Label</label>
+		  <posX>21</posX>
+		  <posY>574</posY>
+		  <textcolor>ff111111</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitleB">	  
+		  <description>Runtime Label</description>
+		  <id>0</id>
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Runtime.Label</label>
+		  <posX>20</posX>
+		  <posY>573</posY>
+		  <width>140</width>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Runtime</description>
+		  <id>1005</id>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
+		  <posX>180</posX>
+		  <posY>574</posY>
+		  <width>200</width>		  
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Runtime N/A</description>
+		  <id>0</id>
+		  <type>label</type>
+		  <label>N/A</label>
+		  <posX>180</posX>
+		  <posY>574</posY>
+		  <width>200</width>		  
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)+!Control.HasText(1005)</visible>
+		</control>
+		
+		<control Style="smallTitleB">
+		  <description>Year Label Shadow</description>		  
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Year.Label</label>
+		  <posX>21</posX>
+		  <posY>596</posY>
+		  <textcolor>ff111111</textcolor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitleB">
+		  <description>Year Label</description>		  
+		  <type>label</type>
+		  <label>#MovingPictures.Translation.Year.Label</label>
+		  <posX>20</posX>
+		  <posY>595</posY>
+		  <width>140</width>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Year</description>
+		  <id>1006</id>
+		  <type>label</type>
+		  <label>#MovingPictures.SelectedMovie.year</label>
+		  <posX>180</posX>
+		  <posY>596</posY>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+		  <description>Year N/A</description>
+		  <id>0</id>
+		  <type>label</type>
+		  <label>N/A</label>
+		  <posX>180</posX>
+		  <posY>596</posY>
+		  <shadowAngle>45</shadowAngle>
+		  <shadowDistance>2</shadowDistance>
+		  <shadowColor>ff222222</shadowColor>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(50)+!Control.HasText(1006)</visible>
+		</control>		
 		
 		<!-- MediaInfo Logos -->
 
@@ -145,7 +214,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\HD 720P.png</texture>
@@ -158,7 +227,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\HD 1080P.png</texture>
@@ -171,7 +240,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\HD 1080i.png</texture>
@@ -184,7 +253,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\HD 169.png</texture>
@@ -197,7 +266,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\SD 169.png</texture>
@@ -210,7 +279,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>20</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\SD 43.png</texture>
@@ -225,7 +294,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\H264.png</texture>
@@ -238,7 +307,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\DIVX.png</texture>
@@ -251,7 +320,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\XVID.png</texture>
@@ -264,7 +333,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG.png</texture>
@@ -277,7 +346,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG2.png</texture>
@@ -290,7 +359,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG4.png</texture>
@@ -303,7 +372,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\WMV.png</texture>
@@ -316,7 +385,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\REAL.png</texture>
@@ -329,7 +398,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\FLASH.png</texture>
@@ -342,7 +411,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>120</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\VC-1.png</texture>
@@ -357,7 +426,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\MONO.png</texture>
@@ -370,7 +439,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DD 51.png</texture>
@@ -383,7 +452,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DD 20.png</texture>
@@ -396,7 +465,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\MP3 20.png</texture>
@@ -409,7 +478,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\AAC 20.png</texture>
@@ -422,7 +491,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\AAC 51.png</texture>
@@ -435,7 +504,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\WMA.png</texture>
@@ -448,7 +517,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\VORBIS.png</texture>
@@ -461,7 +530,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\FLAC 51.png</texture>
@@ -474,7 +543,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\FLAC.png</texture>
@@ -487,7 +556,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DTS 20.png</texture>
@@ -500,7 +569,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DTS 51.png</texture>
@@ -513,7 +582,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DTS 61.png</texture>
@@ -526,7 +595,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\DTS 71.png</texture>
@@ -539,7 +608,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\PCM.png</texture>
@@ -552,7 +621,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\MP2A.png</texture>
@@ -565,7 +634,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>220</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\REAL.png</texture>
@@ -578,7 +647,7 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>320</posX>
-		  <posY>595</posY>
+		  <posY>625</posY>
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Misc\SUBTITLES.png</texture>
