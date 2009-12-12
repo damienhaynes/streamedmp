@@ -195,7 +195,7 @@ This file should contain the details view
       <posX>363</posX>
       <posY>480</posY>
       <width>860</width>
-      <height>120</height>
+      <height>100</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -205,9 +205,9 @@ This file should contain the details view
     </control>
     
     <control>
-      <description>Director Label</description>
+      <description>Directors Label</description>
       <type>label</type>
-      <label>#MovingPictures.Translation.Director.Label</label>
+      <label>#MovingPictures.Translation.Directors.Label</label>
       <id>0</id>
       <posX>363</posX>
       <posY>608</posY>
@@ -217,18 +217,43 @@ This file should contain the details view
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>    
     <control>
-      <description>Director</description>
-      <type>fadelabel</type>
-      <label>#MovingPictures.SelectedMovie.extra.directors.1</label>
+      <description>Directors</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.directors</label>
       <id>0</id>
       <posX>488</posX>
       <posY>608</posY>
-      <width>400</width>
+      <width>370</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>
-    
+    </control>    
+	
+	<control>
+      <description>Writers Label</description>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Writers.Label</label>
+      <id>0</id>
+      <posX>363</posX>
+      <posY>584</posY>
+      <width>120</width>
+      <font>mediastream11c</font>
+      <textcolor>ff909090</textcolor>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
+    </control>   
+	<control>
+      <description>Writer</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.writers</label>
+      <id>0</id>
+      <posX>488</posX>
+      <posY>584</posY>
+      <width>370</width>
+      <font>mediastream11c</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
+    </control> 	
+	
     <control>
       <description>Actors Label</description>
       <type>label</type>
@@ -248,7 +273,7 @@ This file should contain the details view
       <id>0</id>
       <posX>488</posX>
       <posY>632</posY>
-      <width>715</width>
+      <width>706</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
@@ -259,8 +284,8 @@ This file should contain the details view
       <type>label</type>
       <label>#MovingPictures.Translation.Year.Label</label>
       <id>0</id>
-      <posX>990</posX>
-      <posY>608</posY>
+      <posX>960</posX>
+      <posY>584</posY>
       <width>840</width>
 	  <align>right</align>
       <font>mediastream11c</font>
@@ -272,8 +297,8 @@ This file should contain the details view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
       <id>0</id>
-      <posX>1000</posX>
-      <posY>608</posY>
+      <posX>980</posX>
+      <posY>584</posY>
       <width>50</width>
 	  <align>left</align>
       <font>mediastream11c</font>
@@ -286,7 +311,7 @@ This file should contain the details view
       <type>label</type>
       <label>#MovingPictures.Translation.Runtime.Label</label>
       <id>0</id>
-      <posX>1160</posX>
+      <posX>960</posX>
       <posY>608</posY>
       <width>840</width>
 	  <align>right</align>
@@ -297,11 +322,11 @@ This file should contain the details view
     <control>
       <description>Runtime</description>
       <type>label</type>      
-	  <label>#MovingPictures.SelectedMovie.runtime.localized.short</label>
+	  <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
       <id>0</id>
-      <posX>1170</posX>
+      <posX>980</posX>
       <posY>608</posY>
-      <width>80</width>
+      <width>220</width>
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
