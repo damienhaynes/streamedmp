@@ -615,14 +615,25 @@
       <visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
     </control>
     
+	<control>
+		<type>image</type>
+		<id>0</id>
+		<width>115</width>
+		<height>22</height>
+		<posX>310</posX>
+		<posY>320</posY>		
+		<texture>#TVSeries.Series.Rating5StarPath</texture>		  
+		<visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
+	</control>
+	
     <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>310</posX>
-      <posY>318</posY>
+      <posY>350</posY>
       <width>415</width>
-      <height>255</height>
+      <height>220</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -667,11 +678,21 @@
       <posY>635</posY>
       <visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
     </control>
+	<!--<control>
+		<type>image</type>
+		<id>0</id>
+		<width>115</width>
+		<height>22</height>
+		<posX>438</posX>
+		<posY>659</posY>		
+		<texture>#TVSeries.Series.Rating5StarPath</texture>		  
+		<visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
+	</control>-->
     <control Style="smallTitle">
       <type>label</type>
       <label>#TVSeries.Series.InfoPanelLine4Value</label>
       <posX>440</posX>
-      <posY>636</posY>
+      <posY>636</posY>	  
       <visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
     </control>
     
