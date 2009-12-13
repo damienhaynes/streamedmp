@@ -340,56 +340,68 @@
 	
 	<!-- :::::::::::::: INFO :::::::::::::: -->
 	<control Style="smallTitleB">
-		<description>Default Label</description>
+		<description>Disabled Label</description>
 		<type>label</type>
 		<label>Default:</label>
-		<id>0</id>
+		<id>14</id>
 		<posX>28</posX>
-		<posY>645</posY>		
+		<posY>630</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
-		<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		<animation effect="slide" time="250" end="800,0">WindowClose</animation>	
-		<visible>!facadeview.filmstrip</visible>
 	</control>
 	<control Style="smallTitle">
-		<description>Default Label</description>
+		<description>Disabled Value</description>
 		<type>label</type>
-		<label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
+		<label>#TVSeries.FanArt.SelectedFanartIsDisabled</label>
 		<id>0</id>
 		<posX>135</posX>
-		<posY>646</posY>		
+		<posY>631</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-		<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		<animation effect="slide" time="250" end="800,0">WindowClose</animation>	
-		<visible>!facadeview.filmstrip</visible>		
+		<animation effect="fade" time="250">WindowClose</animation>		
 	</control>
 	<control Style="smallTitleB">
 		<description>Default Label</description>
 		<type>label</type>
 		<label>Default:</label>
-		<id>0</id>
+		<id>15</id>
 		<posX>28</posX>
-		<posY>660</posY>		
+		<posY>655</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
-		<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		<animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		<visible>facadeview.filmstrip</visible>		
+		<visible>!facadeview.filmstrip</visible>
 	</control>
 	<control Style="smallTitle">
-		<description>Default Label</description>
+		<description>Default Value</description>
 		<type>label</type>
 		<label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
 		<id>0</id>
 		<posX>135</posX>
-		<posY>661</posY>		
+		<posY>656</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
-		<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		<animation effect="slide" time="250" end="800,0">WindowClose</animation>	
-		<visible>facadeview.filmstrip</visible>		
+		<visible>!facadeview.filmstrip</visible>
+	</control>
+	<control Style="smallTitleB">
+		<description>Default Label</description>
+		<type>label</type>
+		<label>Default:</label>
+		<id>15</id>
+		<posX>28</posX>
+		<posY>605</posY>		
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>
+		<visible>facadeview.filmstrip</visible>
+	</control>
+	<control Style="smallTitle">
+		<description>Default Value</description>
+		<type>label</type>
+		<label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
+		<id>0</id>
+		<posX>135</posX>
+		<posY>606</posY>		
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>
+		<visible>facadeview.filmstrip</visible>
 	</control>
 	
     <!-- :::::::::::::: FACADE :::::::::::::: -->
@@ -401,6 +413,10 @@
       <layout>StackLayout</layout>
       <posX>60</posX>
       <posY>97</posY>
+	  <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
