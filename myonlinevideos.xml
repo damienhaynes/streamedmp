@@ -123,6 +123,7 @@
                         <id>5001</id>
                         <posX>28</posX>
                         <posY>510</posY>
+                        <width>100</width>
                         <label>#OnlineVideos.length</label>
                         <visible>facadeview.list+!string.contains(#header.image,Apple Trailers.png)</visible>
                         <animation effect="fade" time="250">WindowOpen</animation>
@@ -204,6 +205,7 @@
                         <id>1</id>
                         <posX>28</posX>
                         <posY>337</posY>
+                        <width>100</width>
                         <font>mediastream11tc</font>
                         <label>#OnlineVideos.length</label>
                         <visible>[facadeview.largeicons | facadeview.smallicons]+!string.contains(#header.image,Apple Trailers.png)</visible>
@@ -361,7 +363,7 @@
                                 <posX>1040</posX>
                                 <posY>230</posY>
                                 <visible>!Control.HasFocus(50)</visible>
-                                <label>496</label>
+                                <label>499</label>
                                 <animation effect="slide" time="200" start="300,0">visible</animation>
                                 <animation effect="slide" time="0" end="300,0">hidden</animation>
                         </control>
