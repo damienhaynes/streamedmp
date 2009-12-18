@@ -41,9 +41,11 @@
       <hoverY>0</hoverY>
       <hoverWidth>1280</hoverWidth>
       <hoverHeight>720</hoverHeight>
-      <hoverKeepAspectratio>yes</hoverKeepAspectratio>
+      <hoverKeepAspectratio>no</hoverKeepAspectratio>
       <scrollTime>90</scrollTime>
       <scrollTimeMin>45</scrollTimeMin>
+      <mouseScrollTime>900</mouseScrollTime>
+       <mouseScrollTimeMin>450</mouseScrollTimeMin>
       <textureBackground>-</textureBackground>
       <!--<onleft>17</onleft>-->
       <onright>10</onright>
@@ -57,6 +59,12 @@
       <description>action menu</description>
       <defaultcontrol>10</defaultcontrol>
       <onexit>50</onexit>
+      <buttonX>836</buttonX>
+      <buttonY>284</buttonY>
+      <buttonwidth>444</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
       <posX>0</posX>
       <posY>0</posY>
       <width>256</width>
@@ -166,6 +174,7 @@
       <width>846</width>
       <height>720</height>
       <texture>homebladeleft.png</texture>
+     <colordiffuse>eaffffff</colordiffuse>
     </control>
     
     <control>
@@ -218,7 +227,7 @@
       <width>1205</width>
       <height>42</height>
       <texture>homerss.png</texture>
-      <visible>plugin.isenabled(MP-RSSTicker)+!string.equals(#rssfeed,)</visible>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.titles,)</visible>
 	  <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -231,9 +240,9 @@
       <posX>114</posX>
       <posY>689</posY>
       <font>mediastream12tc</font>
-      <label>#rssfeed</label>
-	  <wrapString> :: </wrapString>
-      <visible>plugin.isenabled(MP-RSSTicker)</visible>
+      <label>#infoservice.feed.titles</label>
+	  <wrapString> #infoservice.feed.separator </wrapString>
+      <visible>plugin.isenabled(InfoService)</visible>
 	  <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -249,7 +258,7 @@
       <width>306</width>
       <height>75</height>
       <texture>homeweatheroverlaybg.png</texture>
-      <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
 	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -262,8 +271,8 @@
       <height>53</height>
       <width>55</width>
       <centered>yes</centered>
-      <texture>#weatherimg</texture>
-      <visible>plugin.isenabled(MP-RSSTicker)</visible>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.today.img.big.filenamewithoutext.png</texture>
+      <visible>plugin.isenabled(InfoService)</visible>
 	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -273,11 +282,11 @@
       <id>0</id>
       <posX>1048</posX>
       <posY>15</posY>
-      <width>400</width>
+      <width>150</width>
       <height>50</height>
       <font>mediastream10tc</font>
-      <label>#condition</label>
-      <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+      <label>#infoservice.weather.today.condition</label>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
 	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
@@ -291,8 +300,8 @@
       <height>50</height>
       <align>right</align>
       <font>mediastream14c</font>
-      <label>#temp</label>
-      <visible>plugin.isenabled(MP-RSSTicker)+control.hasthumb(43001)</visible>
+      <label>#infoservice.weather.today.temp</label>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
 	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
 	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
