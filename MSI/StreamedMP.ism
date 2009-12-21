@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -354,7 +355,6 @@
 		<row><td>pluginMovingPicturesLanguages</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyLyricsDLL</td><td>{3225823B-6960-4E52-A9DA-FE9BBD426E11}</td><td>WINDOWS1</td><td>8</td><td/><td>mylyrics.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyTrailersDLL</td><td>{2B3B7BCE-0D8E-4840-ABF6-FC3BEADC9BAA}</td><td>WINDOWS1</td><td>8</td><td/><td>mytrailers.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginRSSDLL</td><td>{F1322980-6692-46E0-B8DD-02B3566B0C81}</td><td>PROCESS1</td><td>8</td><td/><td>mp_rssticker.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesLanguages</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -639,9 +639,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1490,7 +1494,6 @@
 		<row><td>MyLyrics</td><td>libLyricsEngine</td></row>
 		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
 		<row><td>MyTrailers</td><td>pluginMyTrailersDLL</td></row>
-		<row><td>RSS</td><td>pluginRSSDLL</td></row>
 		<row><td>TVSeries</td><td>libICSharpCodeSharpZipLib</td></row>
 		<row><td>TVSeries</td><td>libSubtitleDownloader</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
@@ -1559,7 +1562,6 @@
 		<row><td>movingpictures.views.xml</td><td>fanartMovingPictures</td><td>MOVING~1.XML|movingpictures.views.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanartstyle\movingpictures.views.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.xml</td><td>defaultMovingPictures</td><td>MOVING~1.XML|movingpictures.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.xml1</td><td>fanartMovingPictures</td><td>MOVING~1.XML|movingpictures.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanartstyle\movingpictures.xml</td><td>1</td><td/></row>
-		<row><td>mp_rssticker.dll</td><td>pluginRSSDLL</td><td>MP-RSS~1.DLL|MP-RSSTicker.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\process\MP-RSSTicker.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
 		<row><td>mylyrics.dll</td><td>pluginMyLyricsDLL</td><td>MyLyrics.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MyLyrics.dll</td><td>1</td><td/></row>
 		<row><td>mytrailers.dll</td><td>pluginMyTrailersDLL</td><td>MYTRAI~1.DLL|MyTrailers.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MyTrailers.dll</td><td>1</td><td/></row>
@@ -1863,7 +1865,6 @@
 		<row><td>pluginMovingPicturesLanguages</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyLyricsDLL</td><td/><td/><td>_73146477_AF9B_495D_8B51_E0961E3602E5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyTrailersDLL</td><td/><td/><td>_EE3A3D2F_4BF2_4EDD_B49C_62C527A58857_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pluginRSSDLL</td><td/><td/><td>_DC8C6009_F483_4811_B31F_C3A49E5AC5A4_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesLanguages</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
@@ -2273,7 +2274,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.773</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.791</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4159,9 +4160,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4569,9 +4574,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{CCBB1FB0-0C38-468B-A62E-2A976E4B5FF1}</td><td/></row>
+		<row><td>ProductCode</td><td>{8CD77175-4676-4DE4-8A49-4FF4E25EDD7F}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.773.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.791.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
