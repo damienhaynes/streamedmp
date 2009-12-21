@@ -156,7 +156,19 @@
             <font>mediastream12c</font>
             <label>#TVSeries.Season.SeasonLabel</label>
             <align>right</align>
-            <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+            <visible>Control.IsVisible(1238)</visible>
+        </control>
+		<control>
+            <description>Current Season Number</description>
+            <type>label</type>
+            <id>0</id>
+            <posX>739</posX>
+            <posY>13</posY>
+            <width>220</width>
+            <font>mediastream12c</font>
+            <label>#TVSeries.Episode.SeasonLabel</label>
+            <align>right</align>
+            <visible>Control.IsVisible(1239)</visible>
         </control>
 
         <control>
@@ -560,12 +572,27 @@
             <posY>251</posY>
             <width>900</width>
             <font>mediastream16tc</font>
-            <label>#TVSeries.Title</label>
+            <label>#TVSeries.Series.Pretty_Name</label>
             <textcolor>ffFFFFFF</textcolor>
             <shadowAngle>45</shadowAngle>
             <shadowDistance>4</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
-            <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]</visible>
+            <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)]+facadeview.list</visible>
+        </control>
+		<control>
+            <description>Season Title - ListPoster</description>
+            <type>label</type>
+            <id>0</id>
+            <posX>310</posX>
+            <posY>251</posY>
+            <width>900</width>
+            <font>mediastream16tc</font>
+            <label>#TVSeries.Season.SeasonTitle</label>
+            <textcolor>ffFFFFFF</textcolor>
+            <shadowAngle>45</shadowAngle>
+            <shadowDistance>4</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>Control.IsVisible(1238)+facadeview.list</visible>
         </control>
 
         <control>
@@ -576,7 +603,7 @@
             <posY>252</posY>
             <width>460</width>
             <font>mediastream16tc</font>
-            <label>#TVSeries.Title</label>
+            <label>#TVSeries.Series.Pretty_Name</label>
             <textcolor>#shadow.light</textcolor>
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
         </control>
@@ -588,7 +615,7 @@
             <posY>251</posY>
             <width>460</width>
             <font>mediastream16tc</font>
-            <label>#TVSeries.Title</label>
+            <label>#TVSeries.Series.Pretty_Name</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
         </control>
@@ -656,7 +683,7 @@
             <textcolor>ffFFFFFF</textcolor>
             <seperator>-----------------------------------------------------------------------------------</seperator>
             <font>mediastream11</font>
-            <label>#TVSeries.Description</label>
+            <label>#TVSeries.Series.Summary</label>
             <visible>[[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list]|[facadeview.largeicons+Control.IsVisible(1237)]</visible>
         </control>
 
