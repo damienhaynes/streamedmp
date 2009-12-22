@@ -1802,6 +1802,17 @@ namespace StreamedMPEditor
       int yPos2 = 415;
       int i = 0;
       int spacing = 210;
+      
+      // Create dummy label to be used with basichome nowplaying overlay
+      rawXML.AppendLine("\n<control>");
+      rawXML.AppendLine("\t<description>5-Day Weather Dummy Label</description>");
+      rawXML.AppendLine("\t<type>label</type>");
+      rawXML.AppendLine("\t<id>6767</id>");
+      rawXML.AppendLine("\t<posX>-50</posX>");
+      rawXML.AppendLine("\t<posY>-50</posY>");
+      rawXML.AppendLine("\t<label></label>");
+      rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+      rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("\n<control>");
       rawXML.AppendLine("\t<description>GROUP: Forecast BGs</description>");
@@ -1826,7 +1837,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t\t<posY>" + yPos2.ToString() + "</posY>");
         }
         rawXML.AppendLine("\t\t<type>image</type>");
-        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<id>6777</id>");
         rawXML.AppendLine("\t\t<width>180</width>");
         rawXML.AppendLine("\t\t<height>270</height>");
         rawXML.AppendLine("\t\t<texture>weather2.png</texture>");
