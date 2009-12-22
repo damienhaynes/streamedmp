@@ -660,7 +660,7 @@
             <textcolor>ffFFFFFF</textcolor>
             <seperator>-----------------------------------------------------------------------------------</seperator>
             <font>mediastream11</font>
-            <label>#TVSeries.Description</label>
+            <label>#TVSeries.Series.Summary</label>
             <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list</visible>
         </control>
 
@@ -920,7 +920,7 @@
             <textcolor>ffffffff</textcolor>
             <font>mediastream11</font>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
-            <label>#TVSeries.Description</label>
+            <label>#TVSeries.Series.Summary</label>
         </control>
 
         <control Style="smallTitleB">
@@ -1076,7 +1076,7 @@
             <seperator>----------------------------------------------------------------------------------------------------</seperator>
             <font>mediastream11</font>
             <visible>Control.IsVisible(1239)+facadeview.list</visible>
-            <label>#TVSeries.Description</label>
+            <label>#TVSeries.Episode.Summary</label>
         </control>
 
         <control>
