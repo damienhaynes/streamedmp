@@ -417,7 +417,8 @@ begin
 	
 	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",nvType,svValue,nvSize) < 0) then
-		svValue = "1";		
+		// Default=OFF
+		svValue = "0";		
 	endif;	
 	if svValue = "1" then
 		g_bShowRoundedCovers = TRUE;			
