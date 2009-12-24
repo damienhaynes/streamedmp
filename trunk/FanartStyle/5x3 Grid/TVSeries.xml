@@ -3,17 +3,7 @@
   <id>9811</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  
-  <define>#title.color:ffFFFFFF</define>		<!-- Title Color	 			Default: ffFFFFFF -->  
-  <define>#text.color:ffFFFFFF</define>			<!-- Text Color				Default: ffFFFFFF -->  
-  
-  <!-- List Colors -->
-  <define>#default.color:ffFFFFFF</define>    	<!-- Normal List Color                  	Default: ffFFFFFF (White)   -->
-  <define>#watched.color:ff808080</define>    	<!-- Watched List Color                 	Default: ff808080 (Light Grey)    -->
-  <define>#notpresent.color:ffFFA075</define> 	<!-- File not Present in List Color     	Default: ffFFA075     -->
-  
-  <define>#iswatched:#TVSeries.Episode.WatchedFlag</define>
-  
+   
    <!-- Setup will replace the *.png with a '-' if user does not want them -->
   <define>#overlaywubg:overlaywubg.png</define>
   <define>#tvseries_Watched:tvseries_Watched.png</define>
@@ -21,6 +11,11 @@
   <define>#tvseries_WatchedNA:tvseries_WatchedNA.png</define>
   <define>#tvseries_UnWatchedNA:tvseries_UnWatchedNA.png</define>
   <define>#tvseries_RoundedPosters:-</define>
+  
+   <!-- Shadows under blue/grey text -->
+  <define>#shadow.dark:ff111111</define>
+  <!-- Shadows under white text -->
+  <define>#shadow.light:ff222222</define>
   
   <controls>
     <import>TVSeries.dummy.xml</import>
@@ -278,12 +273,13 @@
       <posX>25</posX>
       <posY>549</posY>
       <width>640</width>
-      <height>160</height>
+      <height>150</height>
       <seperator>----------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
       <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
       <label>#TVSeries.Series.Summary</label>
+	  <scrollStartDelaySec>12</scrollStartDelaySec>
     </control>
     
     <control Style="smallTitleB">
@@ -298,7 +294,7 @@
       <type>label</type>
       <posX>870</posX>
       <posY>557</posY>
-      <width>400</width>
+      <width>380</width>
       <visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
     </control>
     <control Style="smallTitleB">
@@ -349,35 +345,35 @@
     :::::::::::::::::::::::::::::::::: SERIES/SEASON VIEW :: LIST POSTER LAYOUT ::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
-    <!--<control>
-      <description>Default Cover Art</description>
+   <control>	
+      <description>Series Poster</description>
       <type>image</type>
-      <id>0</id>
-      <posX>15</posX>
+      <id>46</id>
+      <posX>13</posX>
       <posY>330</posY>
-      <width>206</width>
+      <width>205</width>
       <height>298</height>
-      <texture>defaultdvdcover.png</texture>
-      <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+facadeview.list</visible>    
-    </control>-->
+      <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesPoster</texture>
+      <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)]+facadeview.list</visible>      
+    </control>	
     <control>
       <description>Series Poster</description>
       <type>image</type>
       <id>46</id>
-      <posX>12</posX>
+      <posX>13</posX>
       <posY>330</posY>
-      <width>206</width>
+      <width>205</width>
       <height>298</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeriesPoster</texture>
-      <visible>[Control.IsVisible(1237)+Control.IsVisible(1242)|[Control.IsVisible(1238)]]+facadeview.list</visible>      
-    </control>	
+      <texture>#TVSeries.SeriesPoster</texture>
+      <visible>Control.IsVisible(1238)+facadeview.list</visible>      
+    </control>
     <control>
       <description>Season Poster</description>
       <type>image</type>
       <id>146</id>
-      <posX>12</posX>
+      <posX>13</posX>
       <posY>330</posY>
-      <width>206</width>
+      <width>205</width>
       <height>298</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#TVSeries.SeasonPoster</texture>
       <visible>Control.IsVisible(1238)+facadeview.list</visible>      
@@ -386,14 +382,25 @@
       <description>Rounded cover edges</description>
       <type>image</type>
       <id>246</id>
-      <posX>00</posX>
-      <posY>317</posY>
-      <width>229</width>
-      <height>324</height>
+      <posX>-4</posX>
+      <posY>316</posY>
+      <width>236</width>
+      <height>325</height>
       <texture>#tvseries_RoundedPosters</texture>
       <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+facadeview.list</visible>      
     </control>
-    
+	<control>
+	  <description>Cover Art Glass Overlay</description>
+	  <type>image</type>
+	  <id>0</id>
+	  <posX>13</posX>
+	  <posY>330</posY>
+	  <width>205</width>
+	  <height>150</height>
+	  <texture>glassoverlay2.png</texture>			
+	  <visible>[[Control.IsVisible(1237)+Control.IsVisible(1242)+Control.HasThumb(46)]|Control.IsVisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+facadeview.list+!Control.HasThumb(246)</visible>
+	</control>
+	
 	<control>
       <description>Series Title</description>
       <type>label</type>
@@ -507,7 +514,7 @@
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
       <label>#TVSeries.Series.Summary</label>
-	  <scrollStartDelaySec>8</scrollStartDelaySec>
+	  <scrollStartDelaySec>12</scrollStartDelaySec>
       <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
     </control>
 	
@@ -597,7 +604,7 @@
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
-	  <scrollStartDelaySec>8</scrollStartDelaySec>
+	  <scrollStartDelaySec>12</scrollStartDelaySec>
       <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
       <label>#TVSeries.Series.Summary</label>
     </control>
@@ -607,28 +614,7 @@
     :::::::::::::::::::::::::::::::::: EPISODE VIEW :: LIST VIEW ::
     :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     -->
-    <!--<control>
-      <description>Big Episode Thumb</description>
-      <type>image</type>
-      <id>67</id>
-      <posX>22</posX>
-      <posY>430</posY>
-      <height>145</height>
-      <width>250</width>
-      <visible>facadeview.list</visible>
-      <texture flipY="true" diffuse="diffusemirrorwide.png">#TVSeries.EpisodeImage</texture>
-    </control>
-    <control>
-      <description>Episode Thumb Border</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>5</posX>
-      <posY>415</posY>
-      <width>282</width>
-      <height>170</height>
-      <texture>tvseries_focusframe.png</texture>
-      <visible>facadeview.list+Control.IsVisible(1239)+Control.HasThumb(67)</visible>
-    </control>-->
+    
 	<control>
       <description>Big Episode Thumb</description>
       <type>image</type>
@@ -654,7 +640,7 @@
       <seperator>--------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <visible>Control.IsVisible(1239)+facadeview.list</visible>
-	  <scrollStartDelaySec>10</scrollStartDelaySec>
+	  <scrollStartDelaySec>15</scrollStartDelaySec>
       <label>#TVSeries.Episode.Summary</label>
     </control>
 	
@@ -665,7 +651,7 @@
       <id>0</id>
       <posX>301</posX>
       <posY>423</posY>
-      <width>325</width>
+      <width>350</width>
       <height>80</height>
       <font>mediastream14tc</font>
       <textcolor>#shadow.light</textcolor>
@@ -677,7 +663,7 @@
       <id>0</id>
       <posX>300</posX>
       <posY>422</posY>
-      <width>325</width>
+      <width>350</width>
       <height>80</height>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
@@ -996,6 +982,34 @@
      <!--      :: HIDDEN MENU ::      -->
     <import>TVSeries.HiddenMenu.xml</import>
 	
+	<!-- Facade Spin Background -->
+	<control>
+		<description>Page Count Background</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>1013</posX>
+		<posY>684</posY>
+		<width>260</width>
+		<height>30</height>
+		<texture>mediacountbg_Spin.png</texture>
+		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>	
+	</control>
+	<control>
+		<description>Page Label</description>
+		<type>label</type>
+		<label>30009</label>
+		<id>0</id>
+		<posX>1023</posX>
+		<posY>688</posY>
+		<font>mediastream12tc</font>
+		<textcolor>ff909090</textcolor>
+		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
+		<animation effect="fade" time="250">WindowOpen</animation>
+		<animation effect="fade" time="250">WindowClose</animation>	
+	</control>
+	
     <!--
     ::::::::::::::::
     :: FACADEVIEWS ::
@@ -1023,17 +1037,9 @@
           <posX>25</posX>
 		  <posY>66</posY>
           <width>1270</width>
-		  <height>450</height>
-          <spinPosX>1300</spinPosX>
-          <spinPosY>720</spinPosY>
-          <spinCanFocus>no</spinCanFocus>
+		  <height>450</height>          
           <imageFolder>-</imageFolder>
-          <imageFolderFocus>widebannerborder.png</imageFolderFocus>
-          <playedColor>#watched.color</playedColor>   			<!-- not watched color (normal) -->
-          <remoteColor>#notpresent.color</remoteColor>       	<!-- file not local color -->
-          <textcolor>#default.color</textcolor>        			<!-- not watched color (normal) -->
-          <textcolor2>#default.color</textcolor2>         
-          <textcolor3>#default.color</textcolor3>         
+          <imageFolderFocus>widebannerborder.png</imageFolderFocus>            
           <keepaspectratio>no</keepaspectratio>
           <enableFocusZoom>no</enableFocusZoom>
           <!--<unfocusedAlpha>100</unfocusedAlpha>-->
@@ -1053,6 +1059,17 @@
           <!-- text (when there is no banner) -->
           <textXOff>60</textXOff>
           <textYOff>25</textYOff>
+		  <!-- Spin Controls -->
+		  <spinWidth>50</spinWidth>
+		  <spinHeight>37</spinHeight>					
+		  <spinPosX>1175</spinPosX>
+		  <spinPosY>681</spinPosY>
+		  <spinAlign>Right</spinAlign>
+		  <spinColor>ff006698</spinColor>				
+		  <textureUp>arrow_round_up_nofocus.png</textureUp>
+		  <textureDown>arrow_round_down_nofocus.png</textureDown>
+		  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+		  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
         </control>
         <control>
 			<description>Filmstrip view</description>
@@ -1062,15 +1079,12 @@
 			<posY>465</posY>
 			<onup>2</onup>
 			<width>700</width>
-			<scrollOffset>3</scrollOffset>      
-			<spinPosY>900</spinPosY>
-			<spinPosX>1400</spinPosX>
-			<spinColor>ffcccccc</spinColor>
+			<scrollOffset>3</scrollOffset>      			
 			<itemWidth>145</itemWidth>
 			<itemHeight>205</itemHeight>
 			<textureWidth>145</textureWidth>
 			<textureHeight>207</textureHeight>
-			<thumbWidth>140</thumbWidth>
+			<thumbWidth>132</thumbWidth>
 			<thumbHeight>200</thumbHeight>
 			<thumbPosX>2</thumbPosX>
 			<thumbPosY>2</thumbPosY>
@@ -1084,7 +1098,18 @@
 			<showFolder>no</showFolder>
 			<showBackGround>no</showBackGround>
 			<showInfoImage>no</showInfoImage>
-			<thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>			
+			<thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
+			<!-- Spin Controls -->
+		    <spinWidth>50</spinWidth>
+		    <spinHeight>37</spinHeight>					
+		    <spinPosX>1175</spinPosX>
+		    <spinPosY>681</spinPosY>
+		    <spinAlign>Right</spinAlign>
+		    <spinColor>ff006698</spinColor>				
+		    <textureUp>arrow_round_up_nofocus.png</textureUp>
+		    <textureDown>arrow_round_down_nofocus.png</textureDown>
+		    <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+		    <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>			
 		</control>
         <control>
           <description>Textlist (series and/or seasons if set and Episodes)</description>
@@ -1093,28 +1118,32 @@
           <posX>760</posX>
           <posY>420</posY>
           <onleft>2</onleft>
-          <onright>2</onright>
-          <spinPosX>1249</spinPosX>
-          <spinPosY>1600</spinPosY>
+          <onright>2</onright>         
           <width>590</width>
-          <height>340</height>
+          <height>300</height>
           <textXOff>-60</textXOff>
           <textXOff2>367</textXOff2>
           <textXOff3>415</textXOff3>
           <textYOff3>11</textYOff3>
           <font>mediastream11c</font>
           <font3>mediastream9c</font3>          
-          <textureFocus>listbg_detail_fo.png</textureFocus>	
-		  <!--<playedColor>#watched.color</playedColor>-->
-          <!--<remoteColor>#notpresent.color</remoteColor>-->
-          <!--<textcolor>#default.color</textcolor>-->
-          <!--<textcolor2>#default.color</textcolor2>-->
-		  <!--<textcolor3>#default.color</textcolor3>-->
+          <textureFocus>listbg_detail_fo.png</textureFocus>			  
           <spinCanFocus>no</spinCanFocus>
           <IconYOff>12</IconYOff>
           <IconXOff>390</IconXOff>
           <itemHeight>18</itemHeight>
           <itemWidth>72</itemWidth>
+		  <!-- Spin Controls -->
+		  <spinWidth>50</spinWidth>
+		  <spinHeight>37</spinHeight>					
+		  <spinPosX>1175</spinPosX>
+		  <spinPosY>681</spinPosY>
+		  <spinAlign>Right</spinAlign>
+		  <spinColor>ff006698</spinColor>				
+		  <textureUp>arrow_round_up_nofocus.png</textureUp>
+		  <textureDown>arrow_round_down_nofocus.png</textureDown>
+		  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+		  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
         </control>
       </control>
     </control>
@@ -1130,7 +1159,7 @@
       <posX>665</posX>
       <posY>405</posY>
       <width>616</width>
-      <height>325</height>
+      <height>290</height>
       <texture>mpinfo_filmbox.png</texture>
       <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
     </control>
@@ -1150,13 +1179,13 @@
       <description>TVDB Series Rating Stars</description>
       <type>image</type>
       <id>1</id>
-      <posX>730</posX>
-      <posY>456</posY>
-      <width>180</width>
-      <height>18</height>
-      <texture>#TVSeries.Series.RatingPath</texture>
+      <posX>725</posX>
+      <posY>452</posY>
+      <width>115</width>
+      <height>22</height>
+      <texture>#TVSeries.Series.Rating5StarPath</texture>
       <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
-    </control>
+    </control>	
 	<control Style="smallTitleB">
 	  <id>0</id>
       <type>label</type>
@@ -1214,16 +1243,16 @@
       <posX>686</posX>
       <posY>560</posY>
       <width>580</width>
-      <height>130</height>
+      <height>100</height>
       <textcolor>ffffff</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TVSeries.Description</label>
-	  <scrollStartDelaySec>8</scrollStartDelaySec>
+	  <scrollStartDelaySec>12</scrollStartDelaySec>
       <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
     </control>
 	
-	<!--**********Watched/Unwatched Icons Series/Seaosn Filmstrip*************-->	
+	<!--**********Watched/Unwatched Icons Series/Season Filmstrip*************-->	
 	<control>
       <description>Series Watched Icon</description>
       <type>image</type>
@@ -1378,7 +1407,7 @@
       <type>animation</type>
       <id>51</id>
       <posX>561</posX>
-      <posY>350</posY>
+      <posY>250</posY>
       <width>157</width>
       <height>24</height>
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>

@@ -18,38 +18,39 @@ This file should contain the details view
       <texture>filmstrip_overlay.png</texture>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
+    
     <control>
-      <description>Default Cover Art</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>42</posX>
-      <posY>305</posY>
-      <width>267</width>
-      <height>390</height>
-      <texture>defaultdvdcover.png</texture>
-      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>    
+		<description>Cover Art</description>
+		<type>image</type>
+		<id>60</id>
+		<posX>47</posX>
+		<posY>309</posY>
+		<width>257</width>
+		<height>380</height>
+		<texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
+		<visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
+    </control>
+	<control>
+		<description>Rounded cover edges</description>
+		<type>image</type>
+		<id>61</id>
+		<posX>25</posX>
+		<posY>292</posY>
+		<width>297</width>
+		<height>414</height>
+		<texture>#movingpictures_RoundedPosters</texture>			
+		<visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.HasThumb(60)</visible>      
+	</control>
     <control>
-      <description>Cover Art</description>
-      <type>image</type>
-      <id>60</id>
-      <posX>47</posX>
-      <posY>309</posY>
-      <width>257</width>
-      <height>380</height>
-      <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
-      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
-    </control>    
-    <control>
-      <description>Cover Art Glass Overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>47</posX>
-      <posY>309</posY>
-      <width>228</width>
-      <height>177</height>
-      <texture>glassoverlay2.png</texture>
-      <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.HasThumb(60)</visible>
+		<description>Cover Art Glass Overlay</description>
+		<type>image</type>
+		<id>0</id>
+		<posX>47</posX>
+		<posY>309</posY>
+		<width>228</width>
+		<height>177</height>
+		<texture>glassoverlay2.png</texture>
+		<visible>!Control.IsVisible(50)+!Control.IsVisible(51)+Control.HasThumb(60)+!Control.HasThumb(61)</visible>
     </control>   
 	
     <control>
@@ -200,7 +201,7 @@ This file should contain the details view
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
-	  <scrollStartDelaySec>10</scrollStartDelaySec>
+	  <scrollStartDelaySec>15</scrollStartDelaySec>
       <visible>!Control.IsVisible(50)+!Control.IsVisible(51)</visible>
     </control>
     
