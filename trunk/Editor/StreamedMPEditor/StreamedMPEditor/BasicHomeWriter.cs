@@ -37,10 +37,7 @@ namespace StreamedMPEditor
         menuPos = "menuXPos:" + txtMenuPos.Text;
         skeletonFile = "StreamedMPEditor.xmlFiles.VBasicHomeSkeleton.xml";
       }
-      if (useInfoService.Checked)
-        ticker = "#infoservice";
-      else if (useRSSTicker.Checked)
-        ticker = "#rssticker";
+      ticker = "#infoservice";
 
       Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(skeletonFile);
       StreamReader reader = new StreamReader(stream);
@@ -3204,7 +3201,6 @@ namespace StreamedMPEditor
       string settingHorizontalContextLabels = horizontalContextLabels.Checked ? "true" : "false";
       string settingFullWeatherSummaryBottom = fullWeatherSummaryBottom.Checked ? "true" : "false";
       string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
-      string settingUseRSSTicker = useRSSTicker.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -3276,7 +3272,6 @@ namespace StreamedMPEditor
                 + generateEntry("horizontalContextLabels", settingHorizontalContextLabels, 2, true)
                 + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 2, true)
                 + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 2, true)
-                + generateEntry("useRSSTicker", settingUseRSSTicker, 2, true)
                 + generateEntry("activeRssImageType", activeRssImageType, 2, true)
                 + "\t</section>");
 
