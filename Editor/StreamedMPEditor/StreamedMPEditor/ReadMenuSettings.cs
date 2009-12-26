@@ -192,7 +192,6 @@ namespace StreamedMPEditor
         horizontalContextLabels.Checked = bool.Parse(readEntryValue(optionsTag, "horizontalContextLabels", nodelist));
         fullWeatherSummaryBottom.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
         fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
-        useRSSTicker.Checked = bool.Parse(readEntryValue(optionsTag, "useRSSTicker", nodelist));
         activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
 
       }
@@ -237,11 +236,6 @@ namespace StreamedMPEditor
         txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
       ticker = "#infoservice";
-      if (useRSSTicker.Checked)
-      {
-        useInfoService.Checked = false;
-        ticker = "#rssticker";
-      }
 
       // As only saving the animated state set the static state true if animimated state is false
       if (!WeatherIconsAnimated.Checked)

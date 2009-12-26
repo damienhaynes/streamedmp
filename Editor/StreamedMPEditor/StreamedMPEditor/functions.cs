@@ -29,13 +29,9 @@ namespace StreamedMPEditor
       readMediaPortalDirs();
 
       string infoServiceVer = getInfoServiceVersion();
-      string rssTickerVer = getRSSTickerVersion();
 
       if (infoServiceVer == "InfoService Not Installed")
       {
-        useInfoService.Text += "         (Disabled : Not Installed)";
-        useInfoService.Enabled = false;
-        useInfoService.Checked = false;
         infoserviceOptions.Enabled = false;
       }
       else if (infoServiceVer.CompareTo(baseISVer) < 0)
@@ -48,15 +44,11 @@ namespace StreamedMPEditor
         infoserviceOptions.Enabled = true;
         enableFiveDayWeather.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
-        useInfoService.Text += "         (Version " + infoServiceVer + " Installed)";
         if (infoServiceVer.CompareTo(isSeparatorVer) >= 0)
           useInfoServiceSeparator  = true;
       }
       else
       {
-        useInfoService.Text += "         (Disabled : Not Enabled)";
-        useInfoService.Enabled = false;
-        useInfoService.Checked = false;
         infoserviceOptions.Enabled = false;
       }
 
@@ -67,34 +59,6 @@ namespace StreamedMPEditor
         enableTwitter.Enabled = false;
         enableTwitter.Text += " (Disabled - Version 1.2.0.0 or greater required)";
      }
-
-      if (rssTickerVer == "MP-RSSTicker Not Installed")
-      {
-        useRSSTicker.Enabled = false;
-        useRSSTicker.Checked = false;
-        useRSSTicker.Text += "   (Disabled : Not Installed)";
-      }
-      else
-      {
-        if (pluginEnabled("MP-RSSTicker"))
-        {
-          useRSSTicker.Enabled = true;
-          useRSSTicker.Text += "   (Version " + rssTickerVer + " Installed)";
-        }
-        else
-        {
-          useRSSTicker.Enabled = false;
-          useRSSTicker.Checked = false;
-          useRSSTicker.Text += "   (Disabled : Not Enabled)";
-        }
-      }
-
-      if (!useInfoService.Enabled && useRSSTicker.Enabled)
-        useRSSTicker.Checked = true;
-
-      if (useInfoService.Checked && !useRSSTicker.Enabled)
-        useInfoService.Checked = true;
-
 
       // Display some Info
       infoSkinName.Text = configuredSkin("name") + " (" + getStreamedMPVer() + ")";
@@ -593,27 +557,6 @@ namespace StreamedMPEditor
 
     }
 
-    private string getRSSTickerVersion()
-    {
-
-      if (!File.Exists(mpPaths.pluginPath + "\\process\\MP-RSSTicker.dll"))
-      {
-        //showError("Can't find MP-RSSTicker Plugin\r\r" + mpPaths.pluginPath + "process\\MP-RSSTicker.dll\n\nMP-RSSTicker Options will be Disabled", errorCode.info);
-        return "MP-RSSTicker Not Installed";
-      }
-
-
-      getAsmVersion ver = new getAsmVersion();
-      if (ver.GetVersion(mpPaths.pluginPath + "\\process\\MP-RSSTicker.dll"))
-      {
-        AssemblyInformation info = ver.CurrentAssemblyInfo;
-        return info.Version;
-      }
-      else
-        showError(ver.ErrorMessage, errorCode.major);
-      return "";
-
-    }
 
     private string getMediaPortalVersion()
     {

@@ -192,13 +192,6 @@ namespace StreamedMPEditor
           weatherIconsStatic.Checked = true;
         }
 
-        if (useRSSTicker.Checked)
-        {
-          if (!pluginEnabled("MP-RSSTicker"))
-          {
-            showError("The plugin MP-RSSTicker is installed but not enabled\r\n in the MediaPortal Configuration.\r\nRSS and Weather functions will be disabled until configuration of MP-RSSTicker is complete.", errorCode.info);
-          }
-        }
         if (basicHomeLoadError)
         {
           DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
