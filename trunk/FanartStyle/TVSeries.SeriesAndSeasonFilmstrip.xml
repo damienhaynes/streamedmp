@@ -10,7 +10,7 @@
 			<width>616</width>
 			<height>290</height>
 			<texture>mpinfo_filmbox.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.HasThumb(991)</visible>
 		</control>
 		<control>
 			<description>Movie Title</description>
@@ -27,7 +27,7 @@
 		<control>
 			<description>TVDB Series Rating Stars</description>
 			<type>image</type>
-			<id>1</id>
+			<id>991</id>
 			<posX>725</posX>
 			<posY>452</posY>
 			<width>115</width>
@@ -111,7 +111,7 @@
 			<width>96</width>
 			<height>24</height>
 			<texture>tvseries_Watched.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(991)</visible>
 		</control>
 		<control>
 			<description>Series Un-Watched Icon</description>
@@ -122,7 +122,7 @@
 			<width>96</width>
 			<height>24</height>
 			<texture>tvseries_UnWatched.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(991)</visible>
 		</control>
 		<control>
 			<description>Series Not Available and Watched Icon</description>
@@ -133,7 +133,7 @@
 			<width>96</width>
 			<height>24</height>
 			<texture>tvseries_WatchedNA.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(991)</visible>
 		</control>
 		<control>
 			<description>Series Not Available and Un-Watched Icon</description>
@@ -144,7 +144,7 @@
 			<width>96</width>
 			<height>24</height>
 			<texture>tvseries_UnWatchedNA.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(991)</visible>
 		</control>
 		
 	</controls>
