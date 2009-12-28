@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+
+		<!--
+		::::::::::::::
+		:: OVERLAYS ::
+		::::::::::::::
+		-->
+		<control>
+			<description>Top Bar Overlay</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>51</height>
+			<texture>overlay_topbar.png</texture>
+		</control>
+
+		<control>
+			<description>FanArt Overlay - List View</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>fanartoverlaylist.png</texture>
+			<visible>facadeview.list</visible>
+		</control>
+		
+		<control>
+			<description>Bottom Filmstrip Overlay</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>400</posY>
+			<width>1280</width>
+			<height>320</height>
+			<texture>filmstrip_overlay.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		
+		<control>
+			<description>FanArt Overlay - WideBanners</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>fanartoverlaywidebanners.png</texture>
+			<visible>facadeview.largeicons</visible>
+		</control>
+		
+		<!--
+		::::::::::::::::::
+		:: MEDIA COUNTS ::
+		::::::::::::::::::
+		-->
+		<control>
+			<description>Media Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1113</posX>
+			<posY>13</posY>
+			<width>159</width>
+			<height>28</height>
+			<texture>mediacountbackground.png</texture>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>EPISODES:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>17</posY>
+			<align>left</align>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>SERIES:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>17</posY>
+			<align>left</align>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>Control.IsVisible(1237)</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>GROUPS:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>17</posY>
+			<align>left</align>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>#TVSeries.Series.EpisodeCount</label>
+			<id>0</id>
+			<posX>1245</posX>
+			<posY>15</posY>
+			<font>mediastream11c</font>
+			<align>right</align>    
+			<textcolor>ff006698</textcolor>
+			<visible>Control.IsVisible(1238)</visible>
+		</control>	
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<id>0</id>
+			<label>#TVSeries.FilteredEpisodeCount</label>
+			<posX>1245</posX>
+			<posY>15</posY>
+			<font>mediastream11c</font>
+			<align>right</align>
+			<textcolor>ff006698</textcolor>
+			<visible>Control.IsVisible(1239)</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>#TVSeries.SeriesCount</label>
+			<id>0</id>
+			<posX>1245</posX>
+			<posY>15</posY>
+			<font>mediastream11c</font>
+			<align>right</align>
+			<textcolor>ff006698</textcolor>
+			<visible>Control.IsVisible(1237)</visible>
+		</control>
+		<control>
+			<description>Media Count Label</description>
+			<type>label</type>
+			<label>#TVSeries.GroupCount</label>
+			<id>0</id>
+			<posX>1245</posX>
+			<posY>15</posY>
+			<font>mediastream11c</font>
+			<align>right</align>
+			<textcolor>ff006698</textcolor>
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
+		
+		<!--
+		:::::::::::::::::
+		:: PAGE COUNTS ::
+		:::::::::::::::::
+		-->
+		<control>
+			<description>Page Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1013</posX>
+			<posY>684</posY>
+			<width>260</width>
+			<height>30</height>
+			<texture>mediacountbg_Spin.png</texture>
+		</control>
+		<control>
+			<description>Page Label</description>
+			<type>label</type>
+			<label>30009</label>
+			<id>0</id>
+			<posX>1023</posX>
+			<posY>688</posY>
+			<font>mediastream12tc</font>
+			<textcolor>ff909090</textcolor>			
+		</control>
+		
+		<control>
+			<type>group</type>
+			<id>28</id>
+			<layout>StackLayout</layout>
+			<control>
+				<type>facadeview</type>
+				<id>50</id>
+				<control>					
+					<type>listcontrol</type>
+					<subtype>album</subtype>
+					<id>50</id>
+				</control>
+				<control>
+					<description>Wide Banners (3x3) View</description>
+					<type>thumbnailpanel</type>
+					<id>50</id>
+					<onleft>2</onleft>
+					<onright>2</onright>
+					<posX>13</posX>
+					<posY>370</posY>
+					<width>1280</width>
+					<height>350</height>
+					<imageFolder>-</imageFolder>
+					<imageFolderFocus>widebannerborder.png</imageFolderFocus>         					
+					<keepaspectratio>no</keepaspectratio>
+					<enableFocusZoom>no</enableFocusZoom>
+					<scrollOffset>1</scrollOffset>
+					<dimColor>30ffffff</dimColor>
+					<!-- margin -->
+					<itemWidthBig>420</itemWidthBig>
+					<itemHeightBig>94</itemHeightBig>
+					<!-- frame texture -->
+					<textureWidthBig>414</textureWidthBig>
+					<textureHeightBig>88</textureHeightBig>
+					<!-- wide banners -->
+					<thumbWidthBig>400</thumbWidthBig>
+					<thumbHeightBig>74</thumbHeightBig>
+					<thumbPosXBig>7</thumbPosXBig>
+					<thumbPosYBig>7</thumbPosYBig>
+					<thumbZoom>no</thumbZoom>
+					<!-- text (when there is no banner) -->
+					<textXOff>60</textXOff>
+					<textYOff>25</textYOff>					
+					<!-- Spin Controls -->
+					<spinCanFocus>no</spinCanFocus>
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>					
+					<spinPosX>1175</spinPosX>
+					<spinPosY>681</spinPosY>
+					<spinAlign>Right</spinAlign>
+					<spinColor>ff006698</spinColor>				
+					<textureUp>arrow_round_up_nofocus.png</textureUp>
+					<textureDown>arrow_round_down_nofocus.png</textureDown>
+					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				</control>
+				<control>
+					<description>Filmstrip view</description>
+					<type>filmstrip</type>
+					<id>50</id>
+					<posX>40</posX>
+					<posY>465</posY>
+					<onup>2</onup>
+					<width>700</width>
+					<scrollOffset>3</scrollOffset>			
+					<itemWidth>145</itemWidth>
+					<itemHeight>205</itemHeight>
+					<textureWidth>145</textureWidth>
+					<textureHeight>207</textureHeight>
+					<thumbWidth>132</thumbWidth>
+					<thumbHeight>200</thumbHeight>
+					<thumbPosX>2</thumbPosX>
+					<thumbPosY>2</thumbPosY>
+					<thumbs flipY="true" diffuse="diffusemirrorwide.png"></thumbs>
+					<InfoImage flipY="true" diffuse="diffusemirrorwide.png"></InfoImage>
+					<imageFolderFocus>-</imageFolderFocus>
+					<frame>-</frame>
+					<frameFocus>-</frameFocus>
+					<background>Coverbig.png</background>
+					<showFrame>yes</showFrame>
+					<showFolder>no</showFolder>
+					<showBackGround>no</showBackGround>
+					<showInfoImage>no</showInfoImage>
+					<thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
+					<!-- Spin Controls -->
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>					
+					<spinPosX>1175</spinPosX>
+					<spinPosY>681</spinPosY>
+					<spinAlign>Right</spinAlign>
+					<spinColor>ff006698</spinColor>				
+					<textureUp>arrow_round_up_nofocus.png</textureUp>
+					<textureDown>arrow_round_down_nofocus.png</textureDown>
+					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				</control>
+				<control>
+					<description>List View</description>
+					<type>listcontrol</type>
+					<id>50</id>
+					<posX>760</posX>
+					<posY>420</posY>
+					<onleft>2</onleft>
+					<onright>2</onright>					
+					<width>590</width>
+					<height>300</height>
+					<textXOff>-60</textXOff>
+					<textXOff2>367</textXOff2>
+					<textXOff3>415</textXOff3>
+					<textYOff3>11</textYOff3>
+					<font>mediastream11c</font>
+					<font3>mediastream9c</font3>          
+					<textureFocus>listbg_detail_fo.png</textureFocus>
+					<IconYOff>12</IconYOff>
+					<IconXOff>390</IconXOff>
+					<itemHeight>18</itemHeight>
+					<itemWidth>72</itemWidth>
+					<dimColor>50ffffff</dimColor>
+					<!-- Spin Controls -->
+					<spinCanFocus>no</spinCanFocus>
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>					
+					<spinPosX>1175</spinPosX>
+					<spinPosY>681</spinPosY>
+					<spinAlign>Right</spinAlign>
+					<spinColor>ff006698</spinColor>				
+					<textureUp>arrow_round_up_nofocus.png</textureUp>
+					<textureDown>arrow_round_down_nofocus.png</textureDown>
+					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				</control>
+			</control>
+		</control>
+	
+	</controls>
+</window>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+
+		<control>
+			<type>image</type>
+			<id>1</id>
+			<posX>665</posX>
+			<posY>405</posY>
+			<width>616</width>
+			<height>290</height>
+			<texture>mpinfo_filmbox.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control>
+			<description>Movie Title</description>
+			<type>fadelabel</type>	  
+			<id>0</id>
+			<posX>686</posX>
+			<posY>420</posY>
+			<width>570</width>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Title</label>
+			<textcolor>FFffffff</textcolor>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control>
+			<description>TVDB Series Rating Stars</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>725</posX>
+			<posY>452</posY>
+			<width>115</width>
+			<height>22</height>
+			<texture>#TVSeries.Series.Rating5StarPath</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>	
+		<control Style="smallTitleB">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine1Key</label>
+			<posX>686</posX>
+			<posY>485</posY>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control Style="smallTitle">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine1Value</label>
+			<posX>825</posX>
+			<posY>485</posY>
+			<width>580</width>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control Style="smallTitleB">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine2Key</label>
+			<posX>686</posX>
+			<posY>510</posY>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control Style="smallTitle">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine2Value</label>
+			<posX>825</posX>
+			<posY>510</posY>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control Style="smallTitleB">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine4Key</label>
+			<posX>686</posX>
+			<posY>535</posY>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control Style="smallTitle">
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine4Value</label>
+			<posX>825</posX>
+			<posY>535</posY>
+			<width>580</width>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		<control>
+			<description>Summary</description>
+			<type>textboxscrollup</type>
+			<id>0</id>
+			<posX>686</posX>
+			<posY>560</posY>
+			<width>580</width>
+			<height>100</height>
+			<textcolor>ffffff</textcolor>
+			<seperator>-----------------------------------------------------------------------------------</seperator>
+			<font>mediastream11</font>
+			<label>#TVSeries.Description</label>
+			<scrollStartDelaySec>12</scrollStartDelaySec>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		
+		<!--**********Watched/Unwatched Icons Series/Seaosn Filmstrip*************-->	
+		<control>
+			<description>Series Watched Icon</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>686</posX>
+			<posY>453</posY>
+			<width>96</width>
+			<height>24</height>
+			<texture>tvseries_Watched.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+		</control>
+		<control>
+			<description>Series Un-Watched Icon</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>686</posX>
+			<posY>453</posY>
+			<width>96</width>
+			<height>24</height>
+			<texture>tvseries_UnWatched.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+		</control>
+		<control>
+			<description>Series Not Available and Watched Icon</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>686</posX>
+			<posY>453</posY>
+			<width>96</width>
+			<height>24</height>
+			<texture>tvseries_WatchedNA.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+		</control>
+		<control>
+			<description>Series Not Available and Un-Watched Icon</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>686</posX>
+			<posY>453</posY>
+			<width>96</width>
+			<height>24</height>
+			<texture>tvseries_UnWatchedNA.png</texture>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+		</control>
+		
+	</controls>
+</window>
