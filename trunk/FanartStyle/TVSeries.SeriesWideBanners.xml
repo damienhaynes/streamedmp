@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+
+		<control>
+			<description>TV Show Title</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>30</posX>
+			<posY>340</posY>
+			<width>850</width>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Series.Pretty_Name</label>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
+		</control>
+			
+		<control Style="TVSeriesTitle">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine2Key</label>
+			<type>fadelabel</type>
+			<posX>22</posX>
+			<posY>650</posY>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		<control Style="TVSeriesLabel">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine2Value</label>
+			<type>label</type>	  
+			<posX>175</posX>
+			<posY>650</posY>
+			<width>245</width>	  
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		
+		<control Style="TVSeriesTitle">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine1Key</label>
+			<type>fadelabel</type>
+			<posX>440</posX>
+			<posY>650</posY>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		<control Style="TVSeriesLabel">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine1Value</label>
+			<type>fadelabel</type>
+			<posX>593</posX>
+			<posY>650</posY>
+			<width>600</width>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>	
+		<control Style="TVSeriesTitle">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine5Key</label>
+			<type>fadelabel</type>
+			<posX>22</posX>
+			<posY>675</posY>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		<control Style="TVSeriesLabel">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine5Value</label>
+			<type>fadelabel</type>
+			<posX>175</posX>
+			<posY>675</posY>
+			<width>500</width>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>	
+		
+		<control Style="TVSeriesTitle">
+			<id>0</id>	
+			<label>#TVSeries.Series.InfoPanelLine4Key</label>
+			<description>Rating Label</description>
+			<type>label</type>
+			<posX>440</posX>
+			<posY>675</posY>            
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		<control>
+			<description>TVDB Series Rating Stars</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>593</posX>
+			<posY>672</posY>
+			<width>115</width>
+			<height>22</height>
+			<texture>#TVSeries.Series.Rating5StarPath</texture>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+		<control>
+			<description>TVDB Series Rating Stars</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>725</posX>
+			<posY>674</posY>
+			<width>250</width>
+			<label>#TVSeries.Series.InfoPanelLine4Value</label>
+			<font>mediastream10</font>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+		</control>
+	
+	</controls>
+</window>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+	
+		<control>
+            <description>Group Title</description>
+            <type>label</type>
+            <font>mediastream16tc</font>
+            <label>#selecteditem Series</label>
+            <posX>70</posX>
+            <posY>240</posY>
+            <textcolor>ffffffff</textcolor>
+            <shadowAngle>45</shadowAngle>
+            <shadowDistance>4</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>Control.IsVisible(1240)+facadeview.list</visible>
+        </control>
+
+        <control>
+            <description>Shows in this Group</description>
+            <type>textboxscrollup</type>
+            <id>631</id>
+            <posX>70</posX>
+            <posY>280</posY>
+            <width>540</width>
+            <height>355</height>
+            <seperator>----------------------------------------------------------------------------------------------------</seperator>
+            <textcolor>ffffffff</textcolor>
+            <font>mediastream12</font>
+			<label>#TVSeries.Description</label>
+            <visible>Control.IsVisible(1240)+facadeview.list</visible>            
+        </control>
+		
+	
+	</controls>
+</window>

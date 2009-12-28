@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+
+		<control Style="smallTitleB">
+			<id>0</id>
+			<description>Title Shadow</description>
+			<textcolor>ff000000</textcolor>
+			<type>label</type>
+			<label>#selecteditem Series</label>
+			<posX>71</posX>
+			<posY>431</posY>
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
+		<control Style="smallTitleB">
+			<id>0</id>
+			<description>Title</description>
+			<textcolor>ffffffff</textcolor>
+			<type>label</type>
+			<label>#selecteditem Series</label>
+			<posX>70</posX>
+			<posY>430</posY>
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
+		<control>
+			<description>Shows in this Group</description>
+			<type>textboxscrollup</type>
+			<id>631</id>
+			<posX>70</posX>
+			<posY>450</posY>
+			<width>540</width>
+			<height>200</height>
+			<seperator>----------------------------------------------------------------------------------------------------</seperator>
+			<textcolor>ffffffff</textcolor>
+			<font>mediastream11</font>
+			<visible>Control.IsVisible(1240)</visible>
+			<label>#TVSeries.Description</label>
+		</control>
+	
+	</controls>
+</window>

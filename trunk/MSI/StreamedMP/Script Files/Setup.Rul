@@ -43,15 +43,17 @@
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
 // Feature Defines
-#define FANART_FEATURE_TVSERIES			"Main\\fanartTVSeries"
-#define FANART_FEATURE_TVSERIES_5x2		"Main\\fanartTVSeries5x2"
-#define FANART_FEATURE_TVSERIES_5x3		"Main\\fanartTVSeries5x3"
-#define FANART_FEATURE_MOVINGPICS		"Main\\fanartMovingPictures"
+#define FANART_FEATURE_TVSERIES						"Main\\fanartTVSeries"
+#define FANART_FEATURE_TVSERIES_WIDEBANNERS			"Main\\fanartTVSeriesWideBanners"
+#define FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS		"Main\\fanartTVSeries5x2WideBanners"
+#define FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS		"Main\\fanartTVSeries5x3WideBanners"
+#define FANART_FEATURE_MOVINGPICS					"Main\\fanartMovingPictures"
 
-#define DEFAULT_FEATURE_TVSERIES		"Main\\defaultTVSeries"
-#define DEFAULT_FEATURE_TVSERIES_5x2	"Main\\defaultTVSeries5x2"
-#define DEFAULT_FEATURE_TVSERIES_5x3	"Main\\defaultTVSeries5x3"
-#define DEFAULT_FEATURE_MOVINGPICS		"Main\\defaultMovingPictures"
+#define DEFAULT_FEATURE_TVSERIES					"Main\\defaultTVSeries"
+#define DEFAULT_FEATURE_TVSERIES_WIDEBANNERS		"Main\\defaultTVSeriesWideBanners"
+#define DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS	"Main\\defaultTVSeries5x2WideBanners"
+#define DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS	"Main\\defaultTVSeries5x3WideBanners"
+#define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
 
 #define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
 #define TVGUIDE10_FEATURE_OPTIONS		"Main\\tvguide10Options"
@@ -417,8 +419,8 @@ begin
 	
 	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",nvType,svValue,nvSize) < 0) then
-		// Default=OFF
-		svValue = "0";		
+		// Default=ON
+		svValue = "1";		
 	endif;	
 	if svValue = "1" then
 		g_bShowRoundedCovers = TRUE;			
@@ -1040,41 +1042,42 @@ Dlg_Wait:
 		g_bShowUnWatchedOnlyInListImage = FALSE;
 	endif;				
 	
-	// Set Features
-	if (g_bTVSeriesDefault) then
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, FALSE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, FALSE );
-		
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, FALSE );
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, FALSE );
+	// Set TVSeries Features
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
+	
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
+	if (g_bTVSeriesDefault) then		
 		// only enable the corresonding default layout		
 		switch (g_sWideBannerLayout)
 			case "0":
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );				
-			case "1":                                                     
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, TRUE );
-			case "2":                                                     
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, TRUE );
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_WIDEBANNERS, TRUE );
+			case "1":                                                    
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE ); 
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS, TRUE );
+			case "2":                                                          
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
 		endswitch;
 				
-	else
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2, FALSE );
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3, FALSE );
-		
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, FALSE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, FALSE );
+	else		
 		// only enable the corresonding fanart layout
 		switch (g_sWideBannerLayout)
 			case "0":
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );				
-			case "1":                                                     
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2, TRUE );
-			case "2":                                                     
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3, TRUE );
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_WIDEBANNERS, TRUE );
+			case "1":
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS, TRUE );
+			case "2":                                                          
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
 		endswitch;   
 		
 	endif;	

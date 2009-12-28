@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+	
+		 <control>
+            <description>Default Series Banner</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>66</posX>
+            <posY>270</posY>
+            <width>543</width>
+            <height>110</height>
+            <texture>defaultwideicon.png</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+
+        <control>
+            <description>Series Banner</description>
+            <type>image</type>
+            <id>46</id>
+            <posX>72</posX>
+            <posY>276</posY>
+            <width>531</width>
+            <height>98</height>
+            <texture>#TVSeries.SeriesBanner</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+
+        <control>
+            <description>Series Watched Icon Background</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>572</posX>
+            <posY>284</posY>
+            <width>32</width>
+            <height>39</height>
+            <texture>#overlaywubg</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.HasThumb(46)</visible>
+        </control>
+        <control>
+            <description>Series Watched Icon</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>578</posX>
+            <posY>287</posY>
+            <width>96</width>
+            <height>24</height>
+            <texture>#tvseries_Watched</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(46)</visible>
+        </control>
+        <control>
+            <description>Series Un-Watched Icon</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>578</posX>
+            <posY>287</posY>
+            <width>96</width>
+            <height>24</height>
+            <texture>#tvseries_UnWatched</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+!Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(46)</visible>
+        </control>
+        <control>
+            <description>Series Not Available and Watched Icon</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>578</posX>
+            <posY>287</posY>
+            <width>96</width>
+            <height>24</height>
+            <texture>#tvseries_WatchedNA</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(46)</visible>
+        </control>
+        <control>
+            <description>Series Not Available and Un-Watched Icon</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>578</posX>
+            <posY>287</posY>
+            <width>96</width>
+            <height>24</height>
+            <texture>#tvseries_UnWatchedNA</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+!Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(46)</visible>
+        </control>
+
+        <control>
+            <description>Series Banner Glass Overlay</description>
+            <type>image</type>
+            <id>0</id>
+            <posX>70</posX>
+            <posY>273</posY>
+            <width>128</width>
+            <height>68</height>
+            <texture>glassoverlay.png</texture>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.HasThumb(46)</visible>
+        </control>
+
+        <control>
+            <description>Series Description</description>
+            <type>textboxscrollup</type>
+            <id>631</id>
+            <posX>70</posX>
+            <posY>393</posY>
+            <width>540</width>
+            <height>150</height>
+            <seperator>----------------------------------------------------------------------------------------------------</seperator>
+            <textcolor>ffffffff</textcolor>
+            <font>mediastream11</font>
+			<label>#TVSeries.Series.Summary</label>
+			<scrollStartDelaySec>12</scrollStartDelaySec>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>            
+        </control>
+
+        <control Style="smallTitleB">
+            <label>#TVSeries.Series.InfoPanelLine1Key</label>
+            <type>label</type>
+            <posX>70</posX>
+            <posY>563</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitle">
+            <label>#TVSeries.Series.InfoPanelLine1Value</label>
+            <type>label</type>
+            <posX>200</posX>
+            <posY>564</posY>
+            <width>350</width>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitleB">
+            <label>#TVSeries.Series.InfoPanelLine2Key</label>
+            <type>label</type>
+            <posX>70</posX>
+            <posY>593</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitle">
+            <label>#TVSeries.Series.InfoPanelLine2Value</label>
+            <type>label</type>
+            <posX>200</posX>
+            <posY>594</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitleB">
+            <label>#TVSeries.Series.InfoPanelLine3Key</label>
+            <type>label</type>
+            <posX>70</posX>
+            <posY>623</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitle">
+            <label>#TVSeries.Series.InfoPanelLine3Value</label>
+            <type>label</type>
+            <posX>200</posX>
+            <posY>624</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitleB">
+            <label>#TVSeries.Series.InfoPanelLine4Key</label>
+            <type>label</type>
+            <posX>70</posX>
+            <posY>653</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+        <control Style="smallTitle">
+            <label>#TVSeries.Series.InfoPanelLine4Value</label>
+            <type>label</type>
+            <posX>200</posX>
+            <posY>654</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+	
+	</controls>
+</window>
