@@ -1,6 +1,223 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
 	<controls>
+	
+		<control>
+			<description>Game Trailer Thumb</description>
+			<type>image</type>
+			<id>60</id>
+			<posX>31</posX>
+			<posY>254</posY>
+			<width>257</width>
+			<height>380</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Video.Image</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible> 			
+		</control>	
+		
+		<control>
+			<description>Movie Trailer Poster</description>
+			<type>image</type>
+			<id>21</id>
+			<posX>31</posX>
+			<posY>254</posY>			
+			<width>257</width>
+			<height>380</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Details.Poster</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>						
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		<control>
+		  <description>Movie Trailer Glass Overlay</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>31</posX>
+		  <posY>254</posY>
+		  <width>228</width>
+		  <height>177</height>
+		  <texture>glassoverlay2.png</texture>
+		  <visible>!Control.IsVisible(50)+Control.HasThumb(21)</visible>
+		</control>
+		
+		<control>
+			<description>Trailer Title Shadow</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>309</posX>
+			<posY>252</posY>
+			<width>900</width>
+			<font>mediastream16tc</font>
+			<label>#MyTrailers.Details.Title</label>
+			<textcolor>ff222222</textcolor>		 
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		<control>
+			<description>Trailer Title</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>308</posX>
+			<posY>251</posY>
+			<width>900</width>
+			<font>mediastream16tc</font>
+			<label>#MyTrailers.Details.Title</label>
+			<textcolor>ffFFFFFF</textcolor>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Genres</description>
+			<type>label</type>
+			<label>#MyTrailers.Details.Genre</label>
+			<id>0</id>
+			<posX>309</posX>
+			<posY>282</posY>
+			<width>900</width>
+			<font>mediastream11tc</font>
+			<textcolor>ff909090</textcolor>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff222222</shadowColor>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Summary</description>
+			<type>textboxscrollup</type>
+			<id>0</id>
+			<posX>308</posX>
+			<posY>315</posY>
+			<width>475</width>
+			<height>223</height>
+			<textcolor>ffFFFFFF</textcolor>
+			<seperator>-----------------------------------------------------------------------------------</seperator>
+			<font>mediastream11</font>
+			<label>#MyTrailers.Details.Description</label>
+			<scrollStartDelaySec>12</scrollStartDelaySec>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+				
+		<control Style="smallTitleB">	  
+			<description>Release Date Label</description>
+			<id>0</id>
+			<type>label</type>
+			<label>Release Date</label>
+			<posX>310</posX>
+			<posY>557</posY>
+			<width>140</width>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff111111</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+			<description>Release Date</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#MyTrailers.Details.ReleaseDate</label>
+			<posX>490</posX>
+			<posY>558</posY>
+			<width>200</width>		  
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff222222</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control Style="smallTitleB">	  
+			<description>Director Label</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#MyTrailers.Details.Label.Director</label>
+			<posX>310</posX>
+			<posY>579</posY>
+			<width>140</width>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff111111</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+			<description>Director</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#MyTrailers.Details.Director</label>
+			<posX>490</posX>
+			<posY>580</posY>
+			<width>200</width>		  
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff222222</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control Style="smallTitleB">
+			<description>Studio Label</description>		  
+			<type>label</type>
+			<label>#MyTrailers.Details.Label.Studio</label>
+			<posX>310</posX>
+			<posY>601</posY>
+			<width>140</width>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff111111</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		<control Style="smallTitle">
+			<description>Studio</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#MyTrailers.Details.Studio</label>
+			<posX>490</posX>
+			<posY>602</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff222222</shadowColor>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Selected Video/Trailer Published Date</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>1250</posX>
+			<posY>275</posY>
+			<width>420</width>        
+			<label>Published on #MyTrailers.Video.Published</label>
+			<font>mediastream10</font>
+			<align>right</align>
+			<textcolor>FFFFFFFF</textcolor>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Selected Video Description</description>
+			<type>fadelabel</type>
+			<id>1</id>
+			<posX>40</posX>
+			<posY>684</posY>
+			<width>930</width>
+			<label>#MyTrailers.Video.Description</label>
+			<font>mediastream16tc</font>
+			<textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<visible>!Control.IsVisible(50)</visible>
+		</control>
+		
 		<control>
 			<type>listcontrol</type>
 			<description>Trailer List</description>
@@ -17,7 +234,8 @@
 			<onup>4</onup>
 			<ondown>4</ondown>
 			<onright>4</onright>
-			<onleft>99</onleft>
+			<onleft>4</onleft>
+			<onright>4</onright>
 			<scrollOffset>4</scrollOffset>
 			<spinPosX>1175</spinPosX>
 			<spinPosY>681</spinPosY>
@@ -31,176 +249,6 @@
 			<spinHeight>37</spinHeight>
 			<visible>!Control.IsVisible(50)</visible>
 		</control>
-		<control>
-			<description>MyTrailers.Details.Title</description>
-			<type>fadelabel</type>
-			<id>1</id>
-			<posX>800</posX>
-			<posY>220</posY>
-			<font>mediastream12tc</font>
-			<width>420</width>
-			<label>#MyTrailers.Details.Title</label>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>!Control.IsVisible(50)</visible>
-		</control>
-		<control>
-			<description>Video Published</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>1050</posX>
-			<posY>275</posY>
-			<width>420</width>        
-			<label>Published on #MyTrailers.Video.Published</label>
-			<font>mediastream11</font>
-			<textcolor>FFFFFFFF</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>!Control.IsVisible(50)</visible>
-		</control>
-		<control>       
-			<description>Video Description</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>800</posX>
-			<posY>250</posY>
-			<width>420</width>        
-			<textcolor>FFFFFFFF</textcolor>
-			<label>#MyTrailers.Video.Description</label>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>!Control.IsVisible(50)</visible>        
-		</control>
-		<control>
-			<description>Video image</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>15</posX>
-			<posY>240</posY>
-			<width>280</width>
-			<height>225</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Video.Image</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<visible>!Control.IsVisible(50)</visible> 			
-		</control>	
-		<control>
-			<description>group element</description>
-			<id>1</id>
-			<type>group</type>
-			<layout>StackLayout(30)</layout>
-			<posX>310</posX>
-			<posY>220</posY>
-			<width>475</width>
-			<dimColor>FFFFFFFF</dimColor>
-			<textcolor>FFFFFFFF</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
-			<visible>!Control.IsVisible(50)</visible>
-			<control>
-				<description>ReleaseDate txt</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>172</label>
-				<textcolor>ff909090</textcolor>
-			</control>
-			<control>
-				<description>ReleaseDate value</description>
-				<type>label</type>
-				<width>475</width>
-				<id>1</id>
-				<label>#MyTrailers.Details.ReleaseDate</label>
-			</control>
-			<control>
-				<description>Genre txt</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>174</label>
-				<textcolor>ff909090</textcolor>
-			</control>
-			<control>
-				<description>Genre value</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>#MyTrailers.Details.Genre</label>
-			</control>
-			<control>
-				<description>Director/Developer txt</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>#MyTrailers.Details.Label.Director:</label>
-				<textcolor>ff909090</textcolor>
-			</control>
-			<control>
-				<description>Director/Developer value</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>#MyTrailers.Details.Director</label>
-			</control>
-			<control>
-				<description>Studio/Publisher txt</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>#MyTrailers.Details.Label.Studio:</label>
-				<textcolor>ff909090</textcolor>
-			</control>
-			<control>
-				<description>Studio/Publisher value</description>
-				<type>label</type>
-				<id>1</id>
-				<width>475</width>
-				<label>#MyTrailers.Details.Studio</label>
-			</control>
-			<control>
-				<description>Cast/Platform txt</description>
-				<type>label</type>
-				<id>1</id>
-				<width>330</width>
-				<label>#MyTrailers.Details.Label.Cast:</label>
-				<textcolor>ff909090</textcolor>				
-			</control>
-			<control>
-				<description>Cast/Platform value</description>
-				<type>textboxscrollup</type>
-				<id>1</id>
-				<posY>500</posY>
-				<height>50</height>
-				<width>330</width>
-				<font>mediastream11</font>
-				<label>#MyTrailers.Details.Cast</label>
-			</control>
-			<control>
-				<description>Summary</description>
-				<type>textboxscrollup</type>
-				<id>1</id>
-				<posY>100</posY>
-				<height>130</height>
-				<width>330</width>
-				<seperator>-----------------------------------------------------------------------------------</seperator>
-				<font>mediastream11</font>
-				<label>#MyTrailers.Details.Description</label>
-			</control>
-		</control>
-		<control>
-			<description>Trailer Poster</description>
-			<type>image</type>
-			<id>21</id>
-			<posX>20</posX>
-			<posY>225</posY>			
-			<height>400</height>
-			<width>400</width>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Details.Poster</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>						
-			<visible>!Control.IsVisible(50)</visible>
-		</control>
+		
 	</controls>
 </window>

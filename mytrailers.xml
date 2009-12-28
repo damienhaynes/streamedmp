@@ -123,7 +123,6 @@
 			<visible>facadeview.list+!Control.HasThumb(11)+Control.IsVisible(50)</visible>
 		</control>
 		
-		<!-- Facade Page Count -->
 		<control>
 			<type>image</type>
 			<id>0</id>
@@ -132,7 +131,7 @@
 			<width>1280</width>
 			<height>47</height>
 			<texture>imagestreamtitle.png</texture>
-			<visible>!facadeview.filmstrip+Control.IsVisible(50)</visible>
+			<visible>[!facadeview.filmstrip+Control.IsVisible(50)]|[!Control.IsVisible(50)+!string.equals(#MyTrailers.Video.Description,)]</visible>
 			<animation effect="fade" time="150">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 			<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -152,6 +151,8 @@
 			<animation effect="slide" time="250" end="800,0">WindowClose</animation>
 			<visible>facadeview.filmstrip+Control.IsVisible(50)</visible>			
 		</control>
+		
+		<!-- Facade Page Count -->
 		<control>
 			<description>Page Count Background</description>
 			<type>image</type>
