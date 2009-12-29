@@ -630,6 +630,8 @@ namespace StreamedMPEditor
         generateCrowdingFixH();
         if (horizontalContextLabels.Checked)
           GenerateContextLabelsH();
+        GenerateOverlayImport();
+
       }
       else if (direction == menuType.vertical)
       {

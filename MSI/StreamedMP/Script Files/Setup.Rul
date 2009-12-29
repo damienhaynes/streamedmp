@@ -77,6 +77,7 @@
 #define STREAMEDMP_SKIN_COMMOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlays.xml"
 #define STREAMEDMP_SKIN_COMMOVERLAY2		INSTALLDIR^SKIN_NAME^"common.overlays2.xml"
 #define STREAMEDMP_SKIN_BASICHOMEOVERLAY	INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
+#define STREAMEDMP_SKIN_BASICHOMEOVERLAY2	INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
 #define STREAMEDMP_SKIN_MOVPICSOVERLAY		INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
 #define STREAMEDMP_SKIN_EMULATORS			INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
@@ -1699,6 +1700,9 @@ begin
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
 	
 	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY;
+	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);   
+	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
 	

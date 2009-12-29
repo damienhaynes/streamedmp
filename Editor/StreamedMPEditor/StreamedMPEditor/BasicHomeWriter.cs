@@ -1789,6 +1789,21 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN CONTEXT LABELS CODE-->", rawXML.ToString());
     }
 
+    private void GenerateOverlayImport() {
+        StringBuilder rawXML = new StringBuilder();
+
+        // Place Now Playing above horizontal menu if placed at bottom of screen
+        // Note: this is not taking into consideration manual y-Position
+        if (horizontalContextLabels.Checked) {
+            rawXML.AppendLine("\t<import>common.overlay.basichome2.xml</import>"); 
+        }
+        else {
+            rawXML.AppendLine("\t<import>common.overlay.basichome.xml</import>");            
+        }
+        
+        xml = xml.Replace("<!-- BEGIN GENERATED OVERLAY CODE -->", rawXML.ToString());
+    }
+
     private void generateFiveDayWeatherVertical(int weatherId)
     {
       StringBuilder rawXML = new StringBuilder();
@@ -2209,6 +2224,17 @@ namespace StreamedMPEditor
 
       StringBuilder rawXML = new StringBuilder();
 
+      // Create dummy label to be used with basichome nowplaying overlay
+      rawXML.AppendLine("\n<control>");
+      rawXML.AppendLine("\t<description>5-Day Weather Dummy Label</description>");
+      rawXML.AppendLine("\t<type>label</type>");
+      rawXML.AppendLine("\t<id>6767</id>");
+      rawXML.AppendLine("\t<posX>-50</posX>");
+      rawXML.AppendLine("\t<posY>-50</posY>");
+      rawXML.AppendLine("\t<label></label>");
+      rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+      rawXML.AppendLine("</control>");
+
       // Group for Weater Backgrounds
       rawXML.AppendLine("\n<control>");
       rawXML.AppendLine("\t<description>GROUP: FIVE DAY WEATHER BACKGROUNDS</description>");
@@ -2233,7 +2259,7 @@ namespace StreamedMPEditor
 
       //Group for weather Icons
       rawXML.AppendLine("\n<control>");
-      rawXML.AppendLine("\t<description>GROUP: FIVE DAY WEATHER ICONS (Animated)</description>");
+      rawXML.AppendLine("\t<description>GROUP: FIVE DAY WEATHER ICONS</description>");
       rawXML.AppendLine("\t<type>group</type>");
       rawXML.AppendLine("\t<dimColor>0xffffffff</dimColor>");
       rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
@@ -2600,7 +2626,7 @@ namespace StreamedMPEditor
       int xPos1 = 120;
       int yPos1 = 150;
       int spacing = 210;
-      StringBuilder rawXML = new StringBuilder();
+      StringBuilder rawXML = new StringBuilder();      
 
       // Group for Weather Backgrounds
       rawXML.AppendLine("\n<control>");
