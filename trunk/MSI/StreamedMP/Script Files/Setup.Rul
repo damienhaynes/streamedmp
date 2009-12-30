@@ -875,15 +875,22 @@ begin
 		    
 		oXMLdoc.async = FALSE;
 		oXMLdoc.preserveWhiteSpace = TRUE;
-	    
-	    // Load the document 	
+	    	    
 	    // MediaPortalDirs.xml contains a reference to all Paths used by MediaPortal
 	    // Currently this file lives in the main program files directory
-	    sFileName = g_sMediaPortalProgramDir^"MediaPortalDirs.xml";
+	    // But we should first check the personal directory as user can override there as well	   
+	    sFileName = PersonalFolder ^ "Team MediaPortal\\MediaPortalDirs.xml";
 	    if !Is(FILE_EXISTS,sFileName) then
-	    	// If the file does not exist check the program data directory
-	    	sFileName = CommonAppDataFolder ^ "Team MediaPortal\\MediaPortal\\MediaPortalDirs.xml";
-	    endif;
+	        
+	        // Check Default location
+		    sFileName = g_sMediaPortalProgramDir^"MediaPortalDirs.xml";
+		    if !Is(FILE_EXISTS,sFileName) then
+		    	// If the file does not exist check the program data directory
+		    	sFileName = CommonAppDataFolder ^ "Team MediaPortal\\MediaPortal\\MediaPortalDirs.xml";
+		    endif;   
+		
+		endif;
+		// Load the document	
 		oXMLdoc.Load (sFileName);	
 		
 	    sNode = "/Config/Dir";	    
