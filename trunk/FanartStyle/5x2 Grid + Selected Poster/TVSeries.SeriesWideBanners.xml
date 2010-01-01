@@ -109,14 +109,15 @@
 			<type>label</type>
 			<posX>720</posX>
 			<posY>556</posY>
+			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine1Value</label>
 			<type>label</type>
-			<posX>870</posX>
+			<posX>890</posX>
 			<posY>557</posY>
-			<width>380</width>
+			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitleB">
@@ -124,13 +125,15 @@
 			<type>label</type>
 			<posX>720</posX>
 			<posY>586</posY>
+			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine2Value</label>
 			<type>label</type>
-			<posX>870</posX>
+			<posX>890</posX>
 			<posY>587</posY>
+			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitleB">
@@ -138,13 +141,15 @@
 			<type>label</type>
 			<posX>720</posX>
 			<posY>616</posY>
+			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine3Value</label>
 			<type>label</type>
-			<posX>870</posX>
+			<posX>890</posX>
 			<posY>617</posY>
+			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="smallTitleB">
@@ -152,15 +157,54 @@
 			<type>label</type>
 			<posX>720</posX>
 			<posY>646</posY>
+			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
-		<control Style="smallTitle">
-			<label>#TVSeries.Series.InfoPanelLine4Value</label>
-			<type>label</type>
-			<posX>870</posX>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+        </control>
+        <control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>890</posX>
 			<posY>647</posY>
-			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-		</control>
+			<width>345</width>
+            <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>890</posX>
+			<posY>647</posY>
+			<width>345</width>
+            <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>890</posX>
+			<posY>647</posY>
+			<width>345</width>
+            <visible>facadeview.largeicons+Control.IsVisible(1237)+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
 	
 	</controls>
 </window>

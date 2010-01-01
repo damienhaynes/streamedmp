@@ -7,7 +7,7 @@
 			<type>label</type>
 			<id>0</id>
 			<posX>30</posX>
-			<posY>340</posY>
+			<posY>343</posY>
 			<width>850</width>
 			<font>mediastream16tc</font>
 			<label>#TVSeries.Series.Pretty_Name</label>
@@ -18,9 +18,10 @@
 		<control Style="TVSeriesTitle">
 			<id>0</id>	
 			<label>#TVSeries.Series.InfoPanelLine2Key</label>
-			<type>fadelabel</type>
+			<type>label</type>
 			<posX>22</posX>
 			<posY>650</posY>
+			<width>135</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="TVSeriesLabel">
@@ -29,42 +30,44 @@
 			<type>label</type>	  
 			<posX>175</posX>
 			<posY>650</posY>
-			<width>245</width>	  
+			<width>245</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		
 		<control Style="TVSeriesTitle">
 			<id>0</id>	
 			<label>#TVSeries.Series.InfoPanelLine1Key</label>
-			<type>fadelabel</type>
+			<type>label</type>
 			<posX>440</posX>
 			<posY>650</posY>
+			<width>135</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="TVSeriesLabel">
 			<id>0</id>	
 			<label>#TVSeries.Series.InfoPanelLine1Value</label>
-			<type>fadelabel</type>
+			<type>label</type>
 			<posX>593</posX>
 			<posY>650</posY>
-			<width>600</width>
+			<width>620</width>			
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>	
 		<control Style="TVSeriesTitle">
 			<id>0</id>	
 			<label>#TVSeries.Series.InfoPanelLine5Key</label>
-			<type>fadelabel</type>
+			<type>label</type>
 			<posX>22</posX>
 			<posY>675</posY>
+			<width>135</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control Style="TVSeriesLabel">
 			<id>0</id>	
 			<label>#TVSeries.Series.InfoPanelLine5Value</label>
-			<type>fadelabel</type>
+			<type>label</type>
 			<posX>175</posX>
 			<posY>675</posY>
-			<width>500</width>
+			<width>245</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>	
 		
@@ -74,7 +77,8 @@
 			<description>Rating Label</description>
 			<type>label</type>
 			<posX>440</posX>
-			<posY>675</posY>            
+			<posY>675</posY>
+			<width>135</width>			
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control>
@@ -89,16 +93,47 @@
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 		</control>
 		<control>
-			<description>TVDB Series Rating Stars</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>725</posX>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+        </control>
+        <control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>720</posX>
 			<posY>674</posY>
-			<width>250</width>
-			<label>#TVSeries.Series.InfoPanelLine4Value</label>
-			<font>mediastream10</font>
-			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
-		</control>
+            <visible>Control.IsVisible(1237)+facadeview.largeicons+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>720</posX>
+			<posY>674</posY>
+            <visible>Control.IsVisible(1237)+facadeview.largeicons+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>720</posX>
+			<posY>674</posY>
+            <visible>Control.IsVisible(1237)+facadeview.largeicons+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
 	
 	</controls>
 </window>

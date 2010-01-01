@@ -59,6 +59,20 @@
 		</control>
 		
 		<control>
+			<description>Series Title Shadow</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>237</posX>
+			<posY>422</posY>
+			<width>500</width>
+			<height>60</height>
+			<textcolor>#shadow.light</textcolor>
+			<align>left</align>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Series.Pretty_Name</label>
+			<visible>facadeview.list+[Control.IsVisible(1237)+Control.IsVisible(1242)]</visible>
+		</control>
+		<control>
 			<description>Series Title</description>
 			<type>label</type>
 			<id>0</id>
@@ -71,6 +85,20 @@
 			<font>mediastream16tc</font>
 			<label>#TVSeries.Series.Pretty_Name</label>
 			<visible>facadeview.list+[Control.IsVisible(1237)+Control.IsVisible(1242)]</visible>
+		</control>
+		<control>
+			<description>Season Title Shadow</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>237</posX>
+			<posY>422</posY>
+			<width>500</width>
+			<height>60</height>
+			<textcolor>#shadow.light</textcolor>
+			<align>left</align>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Series.Pretty_Name #TVSeries.Season.SeasonLabel</label>
+			<visible>facadeview.list+Control.IsVisible(1238)</visible>
 		</control>
 		<control>
 			<description>Season Title</description>
@@ -87,6 +115,17 @@
 			<visible>facadeview.list+Control.IsVisible(1238)</visible>
 		</control>
 		
+		<control Style="TVSeriesTitle">
+			<description>Genres Shadow</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>237</posX>
+			<posY>450</posY>
+			<width>490</width>
+			<textcolor>#shadow.dark</textcolor>
+			<label>#TVSeries.Series.InfoPanelLine1Value</label>
+			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
+		</control>
 		<control Style="TVSeriesTitle">
 			<description>Genres</description>
 			<type>label</type>
@@ -110,53 +149,92 @@
 			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
 		</control>
 		<control>
-			<description>TVDB Series Rating + MyRating</description>
-			<type>label</type>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+        </control>
+        <control Style="smallTitle">
 			<id>0</id>
-			<posX>360</posX>
-			<posY>468</posY>
-			<width>500</width>
-			<height>60</height>
-			<textcolor>ffffff</textcolor>
-			<align>left</align>
-			<font>mediastream10</font>
-			<label>#TVSeries.Series.InfoPanelLine4Value</label>
-			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
-		</control>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>360</posX>
+			<posY>471</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>360</posX>
+			<posY>471</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>360</posX>
+			<posY>471</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>		
 		
-		<control Style="TVSeriesTitle">
-			<description>First Aired Label</description>
+		<control Style="TVSeriesTitle">			
 			<type>label</type>
 			<id>0</id>
-			<posX>500</posX>
-			<posY>650</posY>      
-			<label>#TVSeries.Series.InfoPanelLine2Key</label>
+			<posX>585</posX>
+			<posY>650</posY>
+			<width>185</width>
+			<label>#TVSeries.Series.InfoPanelLine5Key</label>			
 			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
 		</control>    
 		<control Style="TVSeriesLabel">
 			<id>0</id>
-			<label>#TVSeries.Series.InfoPanelLine2Value</label>
-			<type>fadelabel</type>
-			<posX>500</posX>
+			<label>#TVSeries.Series.InfoPanelLine5Value</label>
+			<type>label</type>
+			<posX>585</posX>
 			<posY>670</posY>
-			<width>300</width>
+			<width>185</width>
 			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
 		</control>
+		
 		<control Style="TVSeriesTitle">
 			<id>0</id>	
-			<label>#TVSeries.Series.InfoPanelLine5Key</label>
-			<type>fadelabel</type>
+			<label>#TVSeries.Series.InfoPanelLine2Key</label>
+			<type>label</type>
 			<posX>235</posX>
 			<posY>650</posY>
+			<width>335</width>
 			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
 		</control>
 		<control Style="TVSeriesLabel">
 			<id>0</id>	
-			<label>#TVSeries.Series.InfoPanelLine5Value</label>
-			<type>fadelabel</type>
+			<label>#TVSeries.Series.InfoPanelLine2Value</label>
+			<type>label</type>
 			<posX>235</posX>
 			<posY>670</posY>
-			<width>250</width>
+			<width>335</width>
 			<visible>facadeview.list+[[Control.IsVisible(1237)+Control.IsVisible(1242)]|Control.IsVisible(1238)]</visible>
 		</control>
 		<control>

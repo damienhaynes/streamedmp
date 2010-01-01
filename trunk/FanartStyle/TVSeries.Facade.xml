@@ -54,6 +54,17 @@
 			<visible>facadeview.largeicons</visible>
 		</control>
 		
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>675</posY>
+			<width>1280</width>
+			<height>47</height>
+			<texture>imagestreamtitle.png</texture>
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
+		
 		<!--
 		::::::::::::::::::
 		:: MEDIA COUNTS ::
@@ -72,10 +83,11 @@
 		<control>
 			<description>Media Count Label</description>
 			<type>label</type>
-			<label>EPISODES:</label>
+			<label>#TVSeries.Translation.Episodes.Label</label>
 			<id>0</id>
 			<posX>1123</posX>
-			<posY>17</posY>
+			<posY>16</posY>
+			<width>91</width>
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
@@ -84,10 +96,10 @@
 		<control>
 			<description>Media Count Label</description>
 			<type>label</type>
-			<label>SERIES:</label>
+			<label>#TVSeries.Translation.Series.Label</label>
 			<id>0</id>
 			<posX>1123</posX>
-			<posY>17</posY>
+			<posY>16</posY>
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
@@ -96,10 +108,10 @@
 		<control>
 			<description>Media Count Label</description>
 			<type>label</type>
-			<label>GROUPS:</label>
+			<label>#TVSeries.Translation.Groups.Label</label>
 			<id>0</id>
 			<posX>1123</posX>
-			<posY>17</posY>
+			<posY>16</posY>
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
@@ -110,8 +122,8 @@
 			<type>label</type>
 			<label>#TVSeries.Series.EpisodeCount</label>
 			<id>0</id>
-			<posX>1245</posX>
-			<posY>15</posY>
+			<posX>1246</posX>
+			<posY>14</posY>
 			<font>mediastream11c</font>
 			<align>right</align>    
 			<textcolor>ff006698</textcolor>
@@ -122,8 +134,8 @@
 			<type>label</type>
 			<id>0</id>
 			<label>#TVSeries.FilteredEpisodeCount</label>
-			<posX>1245</posX>
-			<posY>15</posY>
+			<posX>1246</posX>
+			<posY>14</posY>
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
@@ -134,8 +146,8 @@
 			<type>label</type>
 			<label>#TVSeries.SeriesCount</label>
 			<id>0</id>
-			<posX>1245</posX>
-			<posY>15</posY>
+			<posX>1246</posX>
+			<posY>14</posY>
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
@@ -146,8 +158,8 @@
 			<type>label</type>
 			<label>#TVSeries.GroupCount</label>
 			<id>0</id>
-			<posX>1245</posX>
-			<posY>15</posY>
+			<posX>1246</posX>
+			<posY>14</posY>
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>

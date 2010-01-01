@@ -3,18 +3,17 @@
 	<controls>
 	
 		<control>
-            <description>Group Title</description>
-            <type>label</type>
-            <font>mediastream16tc</font>
-            <label>#selecteditem Series</label>
-            <posX>70</posX>
-            <posY>240</posY>
-            <textcolor>ffffffff</textcolor>
-            <shadowAngle>45</shadowAngle>
-            <shadowDistance>4</shadowDistance>
-            <shadowColor>#shadow.light</shadowColor>
-            <visible>Control.IsVisible(1240)+facadeview.list</visible>
-        </control>
+			<description>Selected Category Label</description>
+			<type>fadelabel</type>
+			<id>1</id>
+			<posX>40</posX>
+			<posY>684</posY>
+			<width>900</width>
+			<label>#selecteditem #TVSeries.Translation.Series_Plural.Label</label>
+			<font>mediastream16tc</font>
+			<textcolor>White</textcolor>			
+			<visible>Control.IsVisible(1240)</visible>
+		</control>
 
         <control>
             <description>Shows in this Group</description>
