@@ -22,6 +22,10 @@
               <control>
                      <type>actiongroup</type>
                      <description>action menu</description>
+                     <posX>1002</posX>
+                     <posY>0</posY>
+                     <width>278</width>
+                     <height>720</height>
                      <defaultcontrol>2</defaultcontrol>
                      <onexit>50</onexit>
                      <buttonX>1231</buttonX>
@@ -40,19 +44,6 @@
                             <width>278</width>
                             <height>720</height>
                             <texture>hiddenmenu_right.png</texture>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <id>0</id>
-                            <description>dummy button</description>
-                            <label>-</label>
-                            <type>button</type>
-                            <posX>1002</posX>
-                            <posY>0</posY>
-                            <width>278</width>
-                            <height>720</height>
                             <visible>!Control.HasFocus(50)</visible>
                             <animation effect="slide" time="100" start="300,0">visible</animation>
                             <animation effect="slide" time="0" end="300,0">hidden</animation>
