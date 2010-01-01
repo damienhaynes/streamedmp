@@ -110,6 +110,7 @@
             <width>220</width>
             <align>right</align>
             <font>mediastream12c</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
             <visible>Control.IsVisible(1240)|Control.IsVisible(1237)</visible>
             <wrapString> |  </wrapString>
         </control>
@@ -170,7 +171,8 @@
             <font>mediastream12c</font>
             <label>#TVSeries.Series.Pretty_Name</label>
             <align>right</align>
-            <wrapString> |  </wrapString>            
+            <wrapString> |  </wrapString>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
             <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
         </control>
 		
