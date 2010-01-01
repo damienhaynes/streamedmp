@@ -99,8 +99,9 @@
 			<font>mediastream12c</font>
 			<label>#TVSeries.Series.Pretty_Name</label>
 			<align>right</align>
-			<visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
 			<wrapString> |  </wrapString>
+			<visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>			
 		</control>
 		<control>
 			<type>fadelabel</type>
@@ -112,6 +113,8 @@
 			<font>mediastream12c</font>
 			<label>#currentmodule</label>
 			<align>right</align>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+			<wrapString> |  </wrapString>
 			<visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
 		</control>
 		<control>
@@ -134,6 +137,7 @@
 			<font>mediastream12c</font>
 			<label>#TVSeries.SimpleCurrentView</label>
 			<align>right</align>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
 			<wrapString> |  </wrapString>
 		</control>
 

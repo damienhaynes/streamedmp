@@ -126,25 +126,7 @@
 			<posY>528</posY>
 			<width>150</width>
 			<visible>Control.IsVisible(1239)+facadeview.list</visible>
-		</control>
-		<control>
-			<description>Dummy label for Rating Display</description>
-			<id>5557</id>
-            <type>label</type>
-            <label></label>
-            <posX>-50</posX>
-            <posY>-50</posY>          
-            <visible>!string.starts(#TVSeries.Episode.InfoPanelLine31Value, / 10)</visible>
-        </control>
-		<control>
-			<description>Dummy label for Rating Display</description>
-			<id>5558</id>
-            <type>label</type>
-            <label></label>
-            <posX>-50</posX>
-            <posY>-50</posY>          
-            <visible>!string.contains(#TVSeries.Episode.InfoPanelLine32Value,: ))</visible>
-        </control>
+		</control>		
         <control Style="smallTitle">
 			<id>0</id>
             <type>label</type>
