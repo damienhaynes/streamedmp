@@ -58,20 +58,48 @@
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
 		</control>
 		<control>
-			<description>TVDB Series Rating + MyRating</description>
-			<type>label</type>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+        </control>
+        <control Style="smallTitle">
 			<id>0</id>
-			<posX>200</posX>
-			<posY>490</posY>
-			<width>500</width>
-			<height>60</height>
-			<textcolor>ffffff</textcolor>
-			<align>left</align>
-			<font>mediastream10</font>
-			<label>#TVSeries.Series.InfoPanelLine4Value</label>
-			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
-		</control>			
-	   
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>200</posX>
+			<posY>493</posY>
+            <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>200</posX>
+			<posY>493</posY>
+            <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>200</posX>
+			<posY>493</posY>
+            <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		
 		<control>
 			<description>Series Description</description>
 			<type>textboxscrollup</type>

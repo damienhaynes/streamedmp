@@ -115,12 +115,13 @@
             <type>label</type>
             <posX>70</posX>
             <posY>563</posY>
+			<width>150</width>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
         </control>
         <control Style="smallTitle">
             <label>#TVSeries.Series.InfoPanelLine1Value</label>
             <type>label</type>
-            <posX>200</posX>
+            <posX>235</posX>
             <posY>564</posY>
             <width>350</width>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
@@ -130,12 +131,13 @@
             <type>label</type>
             <posX>70</posX>
             <posY>593</posY>
+			<width>150</width>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
         </control>
         <control Style="smallTitle">
             <label>#TVSeries.Series.InfoPanelLine2Value</label>
             <type>label</type>
-            <posX>200</posX>
+            <posX>235</posX>
             <posY>594</posY>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
         </control>
@@ -144,12 +146,13 @@
             <type>label</type>
             <posX>70</posX>
             <posY>623</posY>
+			<width>150</width>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
         </control>
         <control Style="smallTitle">
             <label>#TVSeries.Series.InfoPanelLine3Value</label>
             <type>label</type>
-            <posX>200</posX>
+            <posX>235</posX>
             <posY>624</posY>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
         </control>
@@ -158,15 +161,51 @@
             <type>label</type>
             <posX>70</posX>
             <posY>653</posY>
+			<width>150</width>
             <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
         </control>
         <control Style="smallTitle">
-            <label>#TVSeries.Series.InfoPanelLine4Value</label>
+			<id>0</id>
             <type>label</type>
-            <posX>200</posX>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>235</posX>
             <posY>654</posY>
-            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)</visible>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
         </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>235</posX>
+            <posY>654</posY>
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>235</posX>
+            <posY>654</posY> 
+            <visible>Control.IsVisible(1237)+facadeview.list+!Control.IsVisible(1242)+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>		
 	
 	</controls>
 </window>

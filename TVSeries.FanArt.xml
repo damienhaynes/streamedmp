@@ -156,7 +156,8 @@
 		</control>
 		<control>
 			<id>0</id>
-			<label>MENU</label>
+			<description>MENU</description>
+			<label>924</label>
 			<type>label</type>
 			<font>mediastream12tc</font>
 			<posX>1040</posX>
@@ -205,10 +206,10 @@
 		<description>Media Count Background</description>
 		<type>image</type>
 		<id>0</id>
-		<posX>1130</posX>
-		<posY>10</posY>
-		<width>147</width>
-		<height>31</height>
+		<posX>1090</posX>
+		<posY>13</posY>
+		<width>182</width>
+        <height>28</height>
 		<texture>mediacountbackground.png</texture>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
@@ -219,10 +220,11 @@
 	<control>
 		<description>Media Count Label</description>
 		<type>label</type>
-		<label>FANARTS:</label>
+		<label>#TVSeries.Translation.FanArt.Label</label>
 		<id>0</id>
-		<posX>1137</posX>
-		<posY>15</posY>
+		<width>110</width>
+		<posX>1102</posX>
+		<posY>16</posY>
 		<font>mediastream10tc</font>
 		<textcolor>ff909090</textcolor>
 		<animation effect="fade" time="250">WindowOpen</animation>
@@ -235,8 +237,8 @@
 		<description>Media Count Value</description>
 		<type>label</type>      
 		<id>0</id>
-		<posX>1254</posX>
-		<posY>13</posY>
+		<posX>1245</posX>
+		<posY>14</posY>
 		<font>mediastream12c</font>
 		<align>right</align>
 		<textcolor>ff006698</textcolor>
@@ -345,7 +347,8 @@
 		<label>Default:</label>
 		<id>14</id>
 		<posX>28</posX>
-		<posY>630</posY>		
+		<posY>630</posY>
+		<width>140</width>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</control>
@@ -354,7 +357,7 @@
 		<type>label</type>
 		<label>#TVSeries.FanArt.SelectedFanartIsDisabled</label>
 		<id>0</id>
-		<posX>135</posX>
+		<posX>180</posX>
 		<posY>631</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>		
@@ -362,10 +365,11 @@
 	<control Style="smallTitleB">
 		<description>Default Label</description>
 		<type>label</type>
-		<label>Default:</label>
+		<label>#TVSeries.Translation.LabelChosen.Label</label>
 		<id>15</id>
 		<posX>28</posX>
-		<posY>655</posY>		
+		<posY>655</posY>
+		<width>140</width>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 		<visible>!facadeview.filmstrip</visible>
@@ -375,7 +379,7 @@
 		<type>label</type>
 		<label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
 		<id>0</id>
-		<posX>135</posX>
+		<posX>180</posX>
 		<posY>656</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
@@ -384,10 +388,11 @@
 	<control Style="smallTitleB">
 		<description>Default Label</description>
 		<type>label</type>
-		<label>Default:</label>
+		<label>#TVSeries.Translation.LabelChosen.Label</label>
 		<id>15</id>
 		<posX>28</posX>
-		<posY>605</posY>		
+		<posY>605</posY>
+		<width>140</width>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 		<visible>facadeview.filmstrip</visible>
@@ -397,7 +402,7 @@
 		<type>label</type>
 		<label>#TVSeries.FanArt.SelectedFanartIsChosen</label>
 		<id>0</id>
-		<posX>135</posX>
+		<posX>180</posX>
 		<posY>606</posY>		
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>

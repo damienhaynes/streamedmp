@@ -12,6 +12,19 @@
 			<texture>mpinfo_filmbox.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.HasThumb(991)</visible>
 		</control>
+		
+		<control>
+			<description>Movie Title SHADOW</description>
+			<type>fadelabel</type>	  
+			<id>0</id>
+			<posX>688</posX>
+			<posY>422</posY>
+			<width>570</width>
+			<font>mediastream16tc</font>
+			<label>#TVSeries.Title</label>
+			<textcolor>#shadow.light</textcolor>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
 		<control>
 			<description>Movie Title</description>
 			<type>fadelabel</type>	  
@@ -24,32 +37,109 @@
 			<textcolor>FFffffff</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
+		
 		<control>
 			<description>TVDB Series Rating Stars</description>
 			<type>image</type>
 			<id>991</id>
-			<posX>725</posX>
+			<posX>718</posX>
 			<posY>452</posY>
 			<width>115</width>
 			<height>22</height>
 			<texture>#TVSeries.Series.Rating5StarPath</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
-		</control>	
+		</control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5555</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+        </control>
+		<control>
+			<description>Dummy label for Rating Display</description>
+			<id>5556</id>
+            <type>label</type>
+            <label></label>
+            <posX>-50</posX>
+            <posY>-50</posY>          
+            <visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+        </control>
+        <control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>843</posX>
+			<posY>456</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>843</posX>
+			<posY>456</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>843</posX>
+			<posY>456</posY>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		
+		<control Style="smallTitleB">
+			<description>InfoPanelLine1Key SHADOW</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine1Key</label>
+			<posX>687</posX>
+			<posY>481</posY>
+			<width>145</width>
+			<textcolor>shadow.dark</textcolor>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>		
 		<control Style="smallTitleB">
 			<id>0</id>
 			<type>label</type>
 			<label>#TVSeries.Series.InfoPanelLine1Key</label>
 			<posX>686</posX>
-			<posY>485</posY>
+			<posY>480</posY>
+			<width>580</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
-		</control>
+		</control>		
 		<control Style="smallTitle">
 			<id>0</id>
 			<type>label</type>
 			<label>#TVSeries.Series.InfoPanelLine1Value</label>
-			<posX>825</posX>
-			<posY>485</posY>
-			<width>580</width>
+			<posX>843</posX>
+			<posY>480</posY>
+			<width>410</width>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		
+		<control Style="smallTitleB">
+			<description>InfoPanelLine2Key SHADOW</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine2Key</label>
+			<posX>687</posX>
+			<posY>506</posY>
+			<width>145</width>
+			<textcolor>shadow.dark</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
 		<control Style="smallTitleB">
@@ -57,40 +147,56 @@
 			<type>label</type>
 			<label>#TVSeries.Series.InfoPanelLine2Key</label>
 			<posX>686</posX>
-			<posY>510</posY>
+			<posY>505</posY>
+			<width>145</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
 		<control Style="smallTitle">
 			<id>0</id>
 			<type>label</type>
 			<label>#TVSeries.Series.InfoPanelLine2Value</label>
-			<posX>825</posX>
-			<posY>510</posY>
+			<posX>843</posX>
+			<posY>505</posY>
+			<width>410</width>
+			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+		</control>
+		
+		<control Style="smallTitleB">
+			<description>InfoPanelLine5Key SHADOW</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#TVSeries.Series.InfoPanelLine5Key</label>
+			<posX>567</posX>
+			<posY>531</posY>
+			<width>145</width>
+			<textcolor>shadow.dark</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
 		<control Style="smallTitleB">
 			<id>0</id>
 			<type>label</type>
-			<label>#TVSeries.Series.InfoPanelLine4Key</label>
+			<label>#TVSeries.Series.InfoPanelLine5Key</label>
 			<posX>686</posX>
-			<posY>535</posY>
+			<posY>530</posY>
+			<width>145</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
 		<control Style="smallTitle">
 			<id>0</id>
 			<type>label</type>
-			<label>#TVSeries.Series.InfoPanelLine4Value</label>
-			<posX>825</posX>
-			<posY>535</posY>
-			<width>580</width>
+			<label>#TVSeries.Series.InfoPanelLine5Value</label>
+			<posX>843</posX>
+			<posY>530</posY>
+			<width>410</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
 		</control>
+		
 		<control>
 			<description>Summary</description>
 			<type>textboxscrollup</type>
 			<id>0</id>
 			<posX>686</posX>
-			<posY>560</posY>
+			<posY>555</posY>
 			<width>580</width>
 			<height>100</height>
 			<textcolor>ffffff</textcolor>
