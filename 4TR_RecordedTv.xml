@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>603</id>
+  <define>#currentmodule:TV/RECORDED TV</define>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
@@ -32,6 +33,12 @@
     </control>
     <control>
       <type>actiongroup</type>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>Action_menu.png</textureFocus>
+      <textureNoFocus>Action_menu.png</textureNoFocus>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
@@ -261,36 +268,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Media Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1113</posX>
-      <posY>684</posY>
-      <width>159</width>
-      <height>30</height>
-      <texture>mediacountbackground.png</texture>
-      <visible>yes</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Media Count Label</description>
-      <type>label</type>
-      <label>PAGE:</label>
-      <id>0</id>
-      <posX>1123</posX>
-      <posY>686</posY>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <visible>yes</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
     <import>common.facade.recordings.xml</import>
     <import>common.overlays.xml</import>
