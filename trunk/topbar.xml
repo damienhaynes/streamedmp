@@ -16,10 +16,10 @@
                         <description>Back button</description>
                         <type>button</type>
                         <id>21</id>
-                        <posX>67</posX>
+                        <posX>10</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_back_enabled.png</textureFocus>
                         <textureNoFocus>top_back_disabled.png</textureNoFocus>
                         <action>10</action>
@@ -38,21 +38,40 @@
                         <description>basichome button button</description>
                         <type>button</type>
                         <id>26</id>
-                        <posX>147</posX>
+                        <posX>90</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_home_enabled.png</textureFocus>
                         <textureNoFocus>top_home_disabled.png</textureNoFocus>
                         <label>-</label>
                         <action>115</action>
                         <onleft>21</onleft>
-                        <onright>22</onright>
+                        <onright>1105</onright>
                         <onup>26</onup>
                         <ondown>2</ondown>
                         <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
                         <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
                 </control>
+               <control>
+                      <description>Video wallpaper button</description>
+                      <type>button</type>
+                      <id>1105</id>
+                      <posX>170</posX>
+                      <posY>3</posY>
+                      <width>50</width>
+                      <height>50</height>
+                      <textureFocus>top_wallpaper_enabled.png</textureFocus>
+                      <textureNoFocus>top_wallpaper_disabled.png</textureNoFocus>
+                      <label>-</label>
+                      <action>101</action>
+                      <onleft>26</onleft>
+                      <onright>22</onright>
+                      <onup>26</onup>
+                      <ondown>2</ondown>
+                      <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
+                      <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
+               </control>
                 <control>
                         <description>skip back button</description>
                         <type>button</type>
@@ -60,12 +79,12 @@
                         <posX>389</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_skipback_enabled.png</textureFocus>
                         <textureNoFocus>top_skipback_disabled.png</textureNoFocus>
                         <action>15</action>
                         <label>-</label>
-                        <onleft>26</onleft>
+                        <onleft>1105</onleft>
                         <onright>23</onright>
                         <onup>22</onup>
                         <ondown>2</ondown>
@@ -79,7 +98,7 @@
                         <posX>466</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_rew_enabled.png</textureFocus>
                         <textureNoFocus>top_rew_disabled.png</textureNoFocus>
                         <action>78</action>
@@ -96,9 +115,9 @@
                         <type>button</type>
                         <id>24</id>
                         <posX>540</posX>
-                        <posY>3</posY>
+                        <posY>5</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_play_enabled.png</textureFocus>
                         <textureNoFocus>top_play_disabled.png</textureNoFocus>
                         <action>79</action>
@@ -117,7 +136,7 @@
                         <posX>615</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_pause_enabled.png</textureFocus>
                         <textureNoFocus>top_pause_disabled.png</textureNoFocus>
                         <action>12</action>
@@ -136,7 +155,7 @@
                         <posX>690</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_stop_enabled.png</textureFocus>
                         <textureNoFocus>top_stop_disabled.png</textureNoFocus>
                         <action>13</action>
@@ -155,7 +174,7 @@
                         <posX>765</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_fastforward_enabled.png</textureFocus>
                         <textureNoFocus>top_fastforward_disabled.png</textureNoFocus>
                         <action>77</action>
@@ -174,7 +193,7 @@
                         <posX>840</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_skipforward_enabled.png</textureFocus>
                         <textureNoFocus>top_skipforward_disabled.png</textureNoFocus>
                         <action>14</action>
@@ -191,7 +210,7 @@
                         <description>Volume- button</description>
                         <type>button</type>
                         <id>1102</id>
-                        <posX>1005</posX>
+                        <posX>955</posX>
                         <posY>15</posY>
                         <width>40</width>
                         <height>40</height>
@@ -206,11 +225,30 @@
                         <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
                         <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
                 </control>
+               <control>
+                      <description>Mute button</description>
+                      <type>button</type>
+                      <id>1103</id>
+                      <posX>1005</posX>
+                      <posY>15</posY>
+                      <width>40</width>
+                      <height>40</height>
+                      <textureFocus>top_mute_enabled.png</textureFocus>
+                      <textureNoFocus>top_mute_disabled.png</textureNoFocus>
+                      <action>9982</action>
+                      <label>-</label>
+                      <onleft>1102</onleft>
+                      <onright>1104</onright>
+                      <onup>29</onup>
+                      <ondown>2</ondown>
+                      <animation effect="zoom" start="100,100" end="120,120" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
+                      <animation effect="zoom" start="120,120" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
+               </control>
                 <control>
                         <description>Volume+ button</description>
                         <type>button</type>
-                        <id>1103</id>
-                        <posX>1075</posX>
+                        <id>1104</id>
+                        <posX>1055</posX>
                         <posY>15</posY>
                         <width>40</width>
                         <height>40</height>
@@ -218,7 +256,7 @@
                         <textureNoFocus>top_volume+_disabled.png</textureNoFocus>
                         <action>103</action>
                         <label>-</label>
-                        <onleft>1102</onleft>
+                        <onleft>1103</onleft>
                         <onright>30</onright>
                         <onup>29</onup>
                         <ondown>2</ondown>
@@ -227,18 +265,18 @@
                 </control>
                 
                 <control>
-                        <description>Minimize button</description>
+                        <description>Full screen button</description>
                         <type>button</type>
                         <id>30</id>
                         <posX>1165</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_full_screen_enabled.png</textureFocus>
                         <textureNoFocus>top_full_screen_disabled.png</textureNoFocus>
                         <label>-</label>
                         <action>18</action>
-                        <onleft>1103</onleft>
+                        <onleft>1104</onleft>
                         <onright>31</onright>
                         <onup>30</onup>
                         <ondown>2</ondown>
@@ -252,7 +290,7 @@
                         <posX>1220</posX>
                         <posY>3</posY>
                         <width>50</width>
-                        <height>52</height>
+                        <height>50</height>
                         <textureFocus>top_exit_enabled.png</textureFocus>
                         <textureNoFocus>top_exit_disabled.png</textureNoFocus>
                         <action>97</action>
