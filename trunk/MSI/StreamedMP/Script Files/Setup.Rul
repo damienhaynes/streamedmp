@@ -47,12 +47,14 @@
 #define FANART_FEATURE_TVSERIES_WIDEBANNERS			"Main\\fanartTVSeriesWideBanners"
 #define FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS		"Main\\fanartTVSeries5x2WideBanners"
 #define FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS		"Main\\fanartTVSeries5x3WideBanners"
+#define FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS		"Main\\fanartTVSeries7x3WideBanners"
 #define FANART_FEATURE_MOVINGPICS					"Main\\fanartMovingPictures"
 
 #define DEFAULT_FEATURE_TVSERIES					"Main\\defaultTVSeries"
 #define DEFAULT_FEATURE_TVSERIES_WIDEBANNERS		"Main\\defaultTVSeriesWideBanners"
 #define DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS	"Main\\defaultTVSeries5x2WideBanners"
 #define DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS	"Main\\defaultTVSeries5x3WideBanners"
+#define DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS	"Main\\defaultTVSeries7x3WideBanners"
 #define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
 
 #define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
@@ -986,6 +988,7 @@ Dlg_Wait:
 	        	ListAddString(listWideBannerLayout,"Default",AFTER);	        	
 	        	ListAddString(listWideBannerLayout,"5x2 Grid + Poster",AFTER);
 	        	ListAddString(listWideBannerLayout,"5x3 Grid",AFTER);
+	        	ListAddString(listWideBannerLayout,"7x3 Grid",AFTER);
 	        		        	
 	        	// Add Layouts to list
 	        	CtrlSetList(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,listWideBannerLayout);	        	
@@ -996,6 +999,8 @@ Dlg_Wait:
 	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"5x2 Grid + Poster");
 	        		case "2":
 	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"5x3 Grid");
+	        		case "3":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"7x3 Grid");
 	        	endswitch;	        	
 	        	ListDestroy(listWideBannerLayout);	        	
  			
@@ -1035,6 +1040,8 @@ Dlg_Wait:
 			g_sWideBannerLayout = "1";
 		case "5x3 Grid":
 			g_sWideBannerLayout = "2";
+		case "7x3 Grid":
+			g_sWideBannerLayout = "3";
 	endswitch;
 			
 	bValidate = TRUE;	
@@ -1055,11 +1062,14 @@ Dlg_Wait:
 	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
 	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
 	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS, FALSE );
 	
 	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
 	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
 	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
 	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS, FALSE );
+	
 	if (g_bTVSeriesDefault) then		
 		// only enable the corresonding default layout		
 		switch (g_sWideBannerLayout)
@@ -1072,6 +1082,9 @@ Dlg_Wait:
 			case "2":                                                          
 				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
 				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
+			case "3":                                                          
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS, TRUE );
 		endswitch;
 				
 	else		
@@ -1086,6 +1099,9 @@ Dlg_Wait:
 			case "2":                                                          
 				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
 				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
+			case "3":                                                          
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS, TRUE );
 		endswitch;   
 		
 	endif;	
