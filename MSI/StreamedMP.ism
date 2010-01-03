@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -374,6 +373,7 @@
 		<row><td>tvlogosAustralia</td><td>{31C78148-96E6-4BB3-BCC1-9883BF119A51}</td><td>MPTVLOGOSDIR</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvlogosCanada</td><td>{EE9F8EFC-B7BE-4BFF-801E-77367119084A}</td><td>MPTVLOGOSDIR</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvlogosGermany</td><td>{E394D730-D170-4A24-A35D-B515F6632584}</td><td>MPTVLOGOSDIR</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>tvlogosUK</td><td>{812FF2AC-27B9-456A-8652-A2063896B9B2}</td><td>MPTVLOGOSDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvseriesMultiImageIcons</td><td>{EAE91B73-7F0D-4F5C-A007-7AFE2B48823C}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>tvseriesSingleImageIcons</td><td>{546ED9CA-3D84-4AF6-97AA-0ED515540EC0}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>webForums</td><td>{BFB829BE-DE1B-4B14-9633-1C855AC57F33}</td><td>WEB1</td><td>0</td><td/><td>forums.url</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -647,13 +647,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1451,10 +1447,11 @@
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailers</td><td>Plugins</td><td>##ID_STRING82##</td><td>##ID_STRING83##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>Tools</td><td/><td>##ID_STRING8##</td><td>##ID_STRING12##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Tools</td><td/><td>##ID_STRING8##</td><td>##ID_STRING12##</td><td>9</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>defaultMovingPictures</td><td>Main</td><td>##ID_STRING19##</td><td>##ID_STRING23##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeries</td><td>Main</td><td>##ID_STRING88##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeries10x4WideBanners</td><td>Main</td><td>##ID_STRING93##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1513,6 +1510,7 @@
 		<row><td>TVSeries</td><td>libSubtitleDownloader</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
+		<row><td>UK</td><td>tvlogosUK</td></row>
 		<row><td>defaultMovingPictures</td><td>defaultMovingPictures</td></row>
 		<row><td>defaultTVSeries</td><td>defaultTVSeries</td></row>
 		<row><td>defaultTVSeries10x4WideBanners</td><td>defaultTVSeries10x4WideBanners</td></row>
@@ -1940,6 +1938,7 @@
 		<row><td>tvlogosAustralia</td><td/><td/><td>_38673495_B0EF_42B6_B579_71F5036BC0F3_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>tvlogosCanada</td><td/><td/><td>_F6B67D84_DFD3_4443_A872_975A07663D77_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>tvlogosGermany</td><td/><td/><td>_AF3A6E0C_5EDB_4A37_AFB7_3C61FF31B7A7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>tvlogosUK</td><td/><td/><td>_5857B758_E2FE_4295_8B5A_BA36380B370B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>tvseriesMultiImageIcons</td><td/><td/><td>_C64B2321_C79E_4578_9DF7_ACF4C499405E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>tvseriesSingleImageIcons</td><td/><td/><td>_041D86FB_9E9A_44B0_AC27_2F6390EB84E1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>webForums</td><td/><td/><td>_C8EEF662_2096_4B1C_BCE3_BDEE6E931A43_FILTER</td><td/><td/><td/><td/></row>
@@ -2012,6 +2011,7 @@
 		<row><td>tvlogosAustralia</td><td>&lt;SKINFILES&gt;\tvlogos\australia</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>tvlogosCanada</td><td>&lt;SKINFILES&gt;\tvlogos\canada</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>tvlogosGermany</td><td>&lt;SKINFILES&gt;\tvlogos\germany</td><td>4</td><td>*.png</td><td/><td>0</td></row>
+		<row><td>tvlogosUK</td><td>&lt;SKINFILES&gt;\tvlogos\uk</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 	</table>
 
 	<table name="ISFeatureExtended">
@@ -2043,6 +2043,7 @@
 		<row><td>TVLogos</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Tools</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>UK</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>defaultMovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeries10x4WideBanners</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2343,7 +2344,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.818</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.824</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2611,6 +2612,7 @@
 		<row><td>Custom</td><td>TVLogos</td></row>
 		<row><td>Custom</td><td>TVSeries</td></row>
 		<row><td>Custom</td><td>Tools</td></row>
+		<row><td>Custom</td><td>UK</td></row>
 		<row><td>Custom</td><td>defaultMovingPictures</td></row>
 		<row><td>Custom</td><td>defaultTVSeries</td></row>
 		<row><td>Custom</td><td>defaultTVSeries10x4WideBanners</td></row>
@@ -2646,6 +2648,7 @@
 		<row><td>Minimal</td><td>MyTrailers</td></row>
 		<row><td>Minimal</td><td>TVLogos</td></row>
 		<row><td>Minimal</td><td>Tools</td></row>
+		<row><td>Minimal</td><td>UK</td></row>
 		<row><td>Minimal</td><td>defaultMovingPictures</td></row>
 		<row><td>Minimal</td><td>defaultTVSeries</td></row>
 		<row><td>Minimal</td><td>defaultTVSeries10x4WideBanners</td></row>
@@ -2680,6 +2683,7 @@
 		<row><td>Typical</td><td>TVLogos</td></row>
 		<row><td>Typical</td><td>TVSeries</td></row>
 		<row><td>Typical</td><td>Tools</td></row>
+		<row><td>Typical</td><td>UK</td></row>
 		<row><td>Typical</td><td>defaultMovingPictures</td></row>
 		<row><td>Typical</td><td>defaultTVSeries</td></row>
 		<row><td>Typical</td><td>defaultTVSeries10x4WideBanners</td></row>
@@ -3984,12 +3988,12 @@
 		<row><td>ID_STRING64</td><td>1033</td><td>TV Logos</td><td>0</td><td/><td>832381807</td></row>
 		<row><td>ID_STRING65</td><td>1033</td><td>Australia</td><td>0</td><td/><td>832406383</td></row>
 		<row><td>ID_STRING66</td><td>1033</td><td>TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832400239</td></row>
-		<row><td>ID_STRING67</td><td>1033</td><td>Australian TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832416623</td></row>
+		<row><td>ID_STRING67</td><td>1033</td><td>Australian TV Channel Logos to be used in MyTV section of StreamedMP Skin</td><td>0</td><td/><td>413017454</td></row>
 		<row><td>ID_STRING68</td><td>1033</td><td>Canada</td><td>0</td><td/><td>832426863</td></row>
-		<row><td>ID_STRING69</td><td>1033</td><td>Canadian TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832433007</td></row>
+		<row><td>ID_STRING69</td><td>1033</td><td>Canadian TV Channel Logos to be used in MyTV section of StreamedMP Skin</td><td>0</td><td/><td>413011310</td></row>
 		<row><td>ID_STRING7</td><td>1033</td><td>Plugins</td><td>0</td><td/><td>-1919131474</td></row>
 		<row><td>ID_STRING70</td><td>1033</td><td>Germany</td><td>0</td><td/><td>832406895</td></row>
-		<row><td>ID_STRING71</td><td>1033</td><td>German TV Channel Logos specifically designed for the StreamedMP Skin</td><td>0</td><td/><td>832417135</td></row>
+		<row><td>ID_STRING71</td><td>1033</td><td>German TV Channel Logos to be used in MyTV section of StreamedMP Skin</td><td>0</td><td/><td>413068622</td></row>
 		<row><td>ID_STRING72</td><td>1033</td><td>TV Guide #2</td><td>0</td><td/><td>-643992628</td></row>
 		<row><td>ID_STRING73</td><td>1033</td><td>TV Guide with 10 rows</td><td>0</td><td/><td>-643982388</td></row>
 		<row><td>ID_STRING74</td><td>1033</td><td>Default TV Series</td><td>0</td><td/><td>1142802733</td></row>
@@ -4014,11 +4018,13 @@
 		<row><td>ID_STRING91</td><td>1033</td><td>Default TV Series</td><td>0</td><td/><td>278845676</td></row>
 		<row><td>ID_STRING92</td><td>1033</td><td>Fanart TV Series</td><td>0</td><td/><td>278846573</td></row>
 		<row><td>ID_STRING93</td><td>1033</td><td>Default TV Series</td><td>0</td><td/><td>278838381</td></row>
+		<row><td>ID_STRING94</td><td>1033</td><td>UK</td><td>0</td><td/><td>413062446</td></row>
+		<row><td>ID_STRING95</td><td>1033</td><td>UK TV Channel Logos to be used in MyTV section of StreamedMP Skin</td><td>0</td><td/><td>413060430</td></row>
 		<row><td>ID_TVSERIES_DESC</td><td>1033</td><td>Select your TV Series layout</td><td>0</td><td/><td>-1919115081</td></row>
 		<row><td>ID_TVSERIES_TITLE</td><td>1033</td><td>TV Series</td><td>0</td><td/><td>-1919131465</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-1843706412</td></row>
-		<row><td>MPMINREQNOTMET</td><td>1033</td><td>It appears you are not running a version of MediaPortal that is supported by StreamedMP, Please upgrade to MP 1.0 RC3 or greater and try again.\n\nSetup is now aborting.</td><td>0</td><td/><td>-979582772</td></row>
-		<row><td>MPNOTFOUND</td><td>1033</td><td>MediaPortal could not be found or is not installed correctly, please Install MP 1.0RC3 or greater and try again.\n\nSetup is now aborting.</td><td>0</td><td/><td>-979629556</td></row>
+		<row><td>MPMINREQNOTMET</td><td>1033</td><td>It appears you are not running a version of MediaPortal that is supported by StreamedMP, Please upgrade to MP 1.1.0  or greater and try again.\n\nSetup is now aborting.</td><td>0</td><td/><td>413050542</td></row>
+		<row><td>MPNOTFOUND</td><td>1033</td><td>MediaPortal could not be found or is not installed correctly, please Install MP 1.1.0 or greater and try again.\n\nSetup is now aborting.</td><td>0</td><td/><td>413060782</td></row>
 		<row><td>MPOLDVERSION</td><td>1033</td><td>It appears your MediaPortal version is out of date, some features of StreamedMP may not be available or not work correctly.</td><td>0</td><td/><td>-845377970</td></row>
 		<row><td>NEW_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-1919128137</td></row>
 		<row><td>NEW_STRING10</td><td>1033</td><td>&amp;Fanart Orientated</td><td>0</td><td/><td>-1382280021</td></row>
@@ -4251,13 +4257,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4665,9 +4667,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{8952D843-7149-4718-92AC-8AF0F2B81C5B}</td><td/></row>
+		<row><td>ProductCode</td><td>{0ACD644B-749A-4140-9F1B-3E16563DFC05}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.818.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.824.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
