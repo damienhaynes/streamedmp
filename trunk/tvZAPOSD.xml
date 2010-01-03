@@ -29,15 +29,29 @@
                         <visible>!control.isvisible(10)</visible>
                 </control>
                 <control>
-                        <description>TV Logo background</description>
+                        <description>TV Logo border</description>
                         <type>image</type>
                         <posX>6</posX>
                         <posY>470</posY>
                         <width>170</width>
                         <height>170</height>
                         <texture>imagebg.png</texture>
-                        <keepaspectratio>no</keepaspectratio>
+                        <keepaspectratio>yes</keepaspectratio>
+                        <centered>yes</centered>
                         <visible>!control.isvisible(10)</visible>
+                </control>
+                <control>
+                       <description>TV background</description>
+                       <type>image</type>
+                       <id>10</id>
+                       <posX>16</posX>
+                       <posY>480</posY>
+                       <width>150</width>
+                       <height>150</height>
+                       <texture>logo_BG.png</texture>
+                       <keepaspectratio>yes</keepaspectratio>
+                       <centered>yes</centered>
+                       <visible>!control.isvisible(10)</visible>
                 </control>
                 <control>
                         <description>TV Logo</description>

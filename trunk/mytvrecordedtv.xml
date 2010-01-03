@@ -22,10 +22,6 @@
               <control>
                      <type>actiongroup</type>
                      <description>action menu</description>
-                     <posX>1002</posX>
-                     <posY>0</posY>
-                     <width>278</width>
-                     <height>720</height>
                      <defaultcontrol>2</defaultcontrol>
                      <onexit>50</onexit>
                      <buttonX>1231</buttonX>
@@ -44,6 +40,19 @@
                             <width>278</width>
                             <height>720</height>
                             <texture>hiddenmenu_right.png</texture>
+                            <visible>!Control.HasFocus(50)</visible>
+                            <animation effect="slide" time="100" start="300,0">visible</animation>
+                            <animation effect="slide" time="0" end="300,0">hidden</animation>
+                     </control>
+                     <control>
+                            <id>0</id>
+                            <description>dummy button</description>
+                            <label>-</label>
+                            <type>button</type>
+                            <posX>1002</posX>
+                            <posY>0</posY>
+                            <width>278</width>
+                            <height>720</height>
                             <visible>!Control.HasFocus(50)</visible>
                             <animation effect="slide" time="100" start="300,0">visible</animation>
                             <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -182,6 +191,22 @@
                 :::::::::::::::::::::::::::::::::: LIST VIEW and ALBUM VIEW::::::::::::::::::
                 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                 -->
+
+              <control>
+                     <description>Folder Thumb</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>127</posX>
+                     <posY>237</posY>
+                     <width>256</width>
+                     <height>256</height>
+                     <texture>DefaultFolderBackBig.png</texture>
+                     <visible>Control.HasFocus(50)+string.equals(#selectedindex,)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
               <control>
                      <description>Default Thumb</description>
                      <type>image</type>
@@ -191,7 +216,7 @@
                      <width>357</width>
                      <height>206</height>
                      <texture>defaultepisodethumb.png</texture>
-                     <visible>facadeview.list | facadeview.album</visible>
+                     <visible>[facadeview.list | facadeview.album]+!string.equals(#selectedindex,)</visible>
                      <animation effect="fade" time="250">WindowOpen</animation>
                      <animation effect="fade" time="250">WindowClose</animation>
                      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -224,7 +249,8 @@
                      <keepaspectratio>no</keepaspectratio>
                      <zoom>yes</zoom>
                      <texture>glassoverlay.png</texture>
-                     <visible>facadeview.list | facadeview.album</visible>
+                     <colordiffuse>69ffffff</colordiffuse>
+                     <visible>[facadeview.list | facadeview.album]+!string.equals(#selectedindex,)</visible>
                      <animation effect="fade" time="250">WindowOpen</animation>
                      <animation effect="fade" time="250">WindowClose</animation>
                      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
