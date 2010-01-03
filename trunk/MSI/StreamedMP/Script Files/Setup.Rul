@@ -580,7 +580,10 @@ begin
 	nSetupType = TYPICAL;	
     
     // Check that MediaPortal is installed, also check version
-    CheckMPVersion();
+    CheckMPVersion();  
+    
+    // UnCheck TV-Logos, user only needs one set
+    FeatureSelectItem ( MEDIA, "TVLogos", FALSE );
     
 Dlg_SdWelcome:
     szTitle = "";
