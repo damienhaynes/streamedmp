@@ -19,15 +19,28 @@
                         <texture>osdbackground1.png</texture>
                 </control>
                 <control>
-                        <description>TV Logo background</description>
+                        <description>TV Logo border</description>
                         <type>image</type>
                         <posX>6</posX>
                         <posY>440</posY>
                         <width>170</width>
                         <height>170</height>
                         <texture>imagebg.png</texture>
-                        <keepaspectratio>no</keepaspectratio>
+                        <centered>yes</centered>
+                        <keepaspectratio>yes</keepaspectratio>
                 </control>
+               <control>
+                      <description>TV background</description>
+                      <type>image</type>
+                      <id>1</id>
+                      <posX>16</posX>
+                      <posY>450</posY>
+                      <width>150</width>
+                      <height>150</height>
+                      <texture>logo_BG.png</texture>
+                      <keepaspectratio>yes</keepaspectratio>
+                      <centered>yes</centered>
+               </control>
                 <control>
                         <description>TV Logo</description>
                         <type>image</type>
