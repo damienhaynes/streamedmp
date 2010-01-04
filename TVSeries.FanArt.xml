@@ -53,20 +53,22 @@
 		<id>0</id>
 		<posX>381</posX>
 		<posY>11</posY>
-		<width>256</width>
+		<width>290</width>
 		<height>36</height>
 		<texture>tvtitlebgshort.png</texture>      
     </control>
 	<control>
 		<description>CURRENT FILTER Label</description>
-		<type>label</type>      
+		<type>fadelabel</type>      
 		<id>0</id>
-		<posX>620</posX>
-		<posY>13</posY>
-		<width>200</width>
+		<posX>652</posX>
+		<posY>14</posY>
+		<width>150</width>
 		<font>mediastream12c</font>
 		<align>right</align>
 		<textcolor>ffFFFFFF</textcolor>
+		<scrollStartDelaySec>30</scrollStartDelaySec>
+		<wrapString> |  </wrapString>
 		<label>#TVSeries.FanArt.FilterResolution</label>
     </control>
 	
@@ -85,11 +87,13 @@
 		<description>Page Title Lable</description>
 		<id>0</id>
 		<posX>493</posX>
-		<posY>13</posY>
+		<posY>14</posY>
 		<width>350</width>
 		<font>mediastream12c</font>
 		<label>#TVSeries.FanArt.PageTitle</label>
-		<align>right</align>      
+		<align>right</align>
+		<scrollStartDelaySec>30</scrollStartDelaySec>
+		<wrapString> |  </wrapString>
     </control>
 
     <import>common.time.xml</import>	
