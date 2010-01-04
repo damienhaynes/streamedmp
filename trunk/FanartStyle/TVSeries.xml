@@ -61,7 +61,6 @@
 			<animation effect="fade" start="0" end="100" time="350">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="200" delay="200">Hidden</animation>
 		</control>		
-
 		
 		<import>TVSeries.HiddenMenu.xml</import>
 		<import>TVSeries.Facade.xml</import>
@@ -72,75 +71,8 @@
 		<import>TVSeries.EpisodeList.xml</import>
 		<import>TVSeries.GroupList.xml</import>		
 		
-		<!--
-		:::::::::::::::::::::::::::::::::
-		:: TOP BAR :: TIME :: LOCATION ::
-		:::::::::::::::::::::::::::::::::
-		-->
-		<import>common.time.xml</import>
+		<import>TVSeries.TopBar.xml</import>
 		
-		<control>
-			<description>Series Name BG</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>270</posX>
-			<posY>11</posY>
-			<width>410</width>
-			<height>35</height>
-			<texture>tvtitlebg.png</texture>
-		</control>
-		<control>
-			<type>fadelabel</type>
-			<description>Series Name Label</description>
-			<id>0</id>
-			<posX>661</posX>
-			<posY>13</posY>
-			<width>330</width>
-			<font>mediastream12c</font>
-			<label>#TVSeries.Series.Pretty_Name</label>
-			<align>right</align>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-			<wrapString> |  </wrapString>
-			<visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>			
-		</control>
-		<control>
-			<type>fadelabel</type>
-			<description>Series Name Label</description>
-			<id>0</id>
-			<posX>661</posX>
-			<posY>13</posY>
-			<width>350</width>
-			<font>mediastream12c</font>
-			<label>#currentmodule</label>
-			<align>right</align>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-			<wrapString> |  </wrapString>
-			<visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
-		</control>
-		<control>
-			<description>Current View BG</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>77</posX>
-			<posY>10</posY>
-			<width>256</width>
-			<height>36</height>
-			<texture>tvtitlebgshort.png</texture>
-		</control>
-		<control>
-			<type>fadelabel</type>
-			<description>Current View</description>
-			<id>0</id>
-			<posX>313</posX>
-			<posY>13</posY>
-			<width>170</width>
-			<font>mediastream12c</font>
-			<label>#TVSeries.SimpleCurrentView</label>
-			<align>right</align>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-			<wrapString> |  </wrapString>
-		</control>
-
 		<!--
 		::::::::::::::::::::::::::::::
 		:: IMPORT PROCESS ANIMATION ::
