@@ -88,6 +88,8 @@
 <Enabled>1<Format><Series.InfoPanelLine42Value><FormatAs>(Trans(Rated): <Series.myRating>)
 <Enabled>1<Format><Series.InfoPanelLine5Key><FormatAs>Trans(Network)
 <Enabled>1<Format><Series.InfoPanelLine5Value><FormatAs><Series.Network>
+<Enabled>1<Format><Series.InfoPanelLine6Value><FormatAs>Eval(<Series.EpisodeCount>-<Series.EpisodesUnWatched>) Trans(Watched)
+<Enabled>1<Format><Series.InfoPanelLine7Value><FormatAs><Series.EpisodesUnWatched> Trans(Unwatched)
 <Enabled>1<Format><Series.Rating5StarPath><FormatAs>starEval(Round(<Series.Rating>)).png
 <Enabled>1<Format>star.png<FormatAs>star0.png
 <Enabled>1<Format>SeriesUnWatched<FormatAs><Series.EpisodesUnWatched>
