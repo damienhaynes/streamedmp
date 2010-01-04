@@ -196,9 +196,9 @@
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip</visible>
         </control>
-        <control>			
+        <control>
             <type>label</type>
-            <label>#TVSeries.Series.InfoPanelLine4Value</label>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
             <posX>410</posX>
             <posY>369</posY>
             <width>360</width>
@@ -206,9 +206,71 @@
 			<shadowAngle>45</shadowAngle>
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
-            <visible>facadeview.filmstrip</visible>
+            <visible>facadeview.filmstrip+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+        </control>
+		<control>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>410</posX>
+            <posY>369</posY>
+            <width>360</width>
+            <font>mediastream10</font>
+			<shadowAngle>45</shadowAngle>
+            <shadowDistance>2</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+        </control>
+		<control>
+            <type>label</type>
+            <label>#TVSeries.Translation.Rating.Label: N/A</label>
+            <posX>410</posX>
+            <posY>369</posY>
+            <width>360</width>
+            <font>mediastream10</font>
+			<shadowAngle>45</shadowAngle>
+            <shadowDistance>2</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
         </control>
 
+		<control>
+            <description>TVSeries Episodes Label</description>
+            <type>label</type>
+            <id>0</id>
+            <posX>410</posX>
+            <posY>400</posY>
+            <width>300</width>
+            <font>mediastream12tc</font>
+            <label>#TVSeries.Translation.Episodes.Label</label>
+            <textcolor>ffFFFFFF</textcolor>
+            <visible>facadeview.filmstrip+!string.equals(#TVSeries.Series.Pretty_Name,)</visible>
+        </control>
+		
+		<control>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine6Value</label>
+            <posX>410</posX>
+            <posY>425</posY>
+            <width>360</width>
+            <font>mediastream10</font>
+			<shadowAngle>45</shadowAngle>
+            <shadowDistance>2</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip</visible>
+        </control>
+		<control>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine7Value</label>
+            <posX>410</posX>
+            <posY>449</posY>
+            <width>360</width>
+            <font>mediastream10</font>
+			<shadowAngle>45</shadowAngle>
+            <shadowDistance>2</shadowDistance>
+            <shadowColor>#shadow.light</shadowColor>
+            <visible>facadeview.filmstrip</visible>
+        </control>
+		
         <control>
             <description>Actors Label</description>
             <type>label</type>
