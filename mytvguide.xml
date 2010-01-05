@@ -249,20 +249,31 @@
                         <id>14</id>
                         <posX>240</posX>
                         <posY>585</posY>
-                        <width>110</width>
+                        <width>220</width>
                         <label>#TV.Guide.Time</label>
                         <font>mediastream11tc</font>
                 </control>
+               <control>
+                      <description>record pin</description>
+                      <type>image</type>
+                      <id>31</id>
+                      <posX>465</posX>
+                      <posY>587</posY>
+                      <width>45</width>
+                      <height>17</height>
+                      <texture>tvguide_record_button.png</texture>
+                      <keepaspectratio>yes</keepaspectratio>
+                      <visible>no</visible>
+               </control>
                 <control>
                         <description>Current program title</description>
                         <type>fadelabel</type>
                         <id>13</id>
-                        <posX>360</posX>
+                        <posX>500</posX>
                         <posY>585</posY>
-                        <width>690</width>
+                        <width>560</width>
                         <label>#TV.Guide.CompositeTitle</label>
                         <font>mediastream11tc</font>
-                        <textcolor>ff888888</textcolor>
                 </control>
                 <control>
                         <description>Current program genre</description>
@@ -273,7 +284,6 @@
                         <width>200</width>
                         <label>#TV.Guide.Genre</label>
                         <align>right</align>
-                        <textcolor>ff888888</textcolor>
                         <font>mediastream11tc</font>
                 </control>
                 <control>
@@ -363,18 +373,6 @@
                         <font>mediastream12c</font>
                         <textcolor>FFFFFFFF</textcolor>
                         <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
-                </control>
-                <control>
-                        <description>record pin</description>
-                        <type>image</type>
-                        <id>31</id>
-                        <posX>950</posX>
-                        <posY>585</posY>
-                        <width>45</width>
-                        <height>20</height>
-                        <texture>tvguide_record_button.png</texture>
-                        <keepaspectratio>yes</keepaspectratio>
-                        <visible>no</visible>
                 </control>
                 <control>
                         <description>TV background</description>
