@@ -89,7 +89,13 @@ namespace StreamedMPEditor
 
     private void readMediaPortalDirs()
     {
-      string fMPdirs = mpPaths.sMPbaseDir + "\\MediaPortalDirs.xml";
+      // Check if user MediaPortalDirs.xml exists in Personal Directory
+      string PersonalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+      string fMPdirs = Path.Combine(PersonalFolder, @"Team MediaPortal\MediaPortalDirs.xml");
+
+      if (!File.Exists(fMPdirs))
+        fMPdirs = mpPaths.sMPbaseDir + "\\MediaPortalDirs.xml";
+
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
       {
