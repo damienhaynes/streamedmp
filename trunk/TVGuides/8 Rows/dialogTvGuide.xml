@@ -209,32 +209,46 @@
                       <id>14</id>
                       <posX>50</posX>
                       <posY>585</posY>
-                      <width>110</width>
+                      <width>220</width>
                       <label>#TV.Guide.Time</label>
                       <align>left</align>
                       <font>mediastream11tc</font>
                </control>
                <control>
+                      <description>record pin</description>
+                      <type>image</type>
+                      <id>31</id>
+                      <posX>275</posX>
+                      <posY>587</posY>
+                      <width>45</width>
+                      <height>17</height>
+                      <texture>tvguide_record_button.png</texture>
+                      <keepaspectratio>yes</keepaspectratio>
+                      <visible>no</visible>
+                      <animation effect="fade" time="250">WindowOpen</animation>
+                      <animation effect="fade" time="500">WindowClose</animation>
+               </control>
+               <control>
                       <description>Current program title</description>
                       <type>fadelabel</type>
                       <id>13</id>
-                      <posX>170</posX>
+                      <posX>310</posX>
                       <posY>585</posY>
-                      <width>900</width>
+                      <width>760</width>
                       <label>#TV.Guide.CompositeTitle</label>
                       <font>mediastream11tc</font>
                </control>
-                <control>
-                        <description>Current program genre</description>
-                        <type>fadelabel</type>
-                        <id>27</id>
-                        <posX>1000</posX>
-                        <posY>585</posY>
-                        <width>280</width>
-                        <label>#TV.Guide.Genre</label>
-                        <align>left</align>
-                        <font>mediastream11tc</font>
-                </control>
+               <control>
+                      <description>Current program genre</description>
+                      <type>fadelabel</type>
+                      <id>27</id>
+                      <posX>1270</posX>
+                      <posY>585</posY>
+                      <width>200</width>
+                      <label>#TV.Guide.Genre</label>
+                      <align>right</align>
+                      <font>mediastream11tc</font>
+               </control>
                 <control>
                         <description>Description1</description>
                         <type>textboxscrollup</type>
@@ -295,19 +309,6 @@
                         <font>mediastream10</font>
                         <textcolor>FF101010</textcolor>
                 </control>-->
-                <control>
-                        <description>record pin</description>
-                        <type>image</type>
-                        <id>31</id>
-                        <posX>950</posX>
-                        <posY>585</posY>
-                        <height>20</height>
-                        <texture>tvguide_record_button.png</texture>
-                        <keepaspectratio>yes</keepaspectratio>
-                        <visible>no</visible>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="500">WindowClose</animation>
-                </control>
                 <control>
                         <description>TvGroup button</description>
                         <type>button</type>
