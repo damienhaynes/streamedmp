@@ -1215,7 +1215,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t\t<textureFocus>restart_button.png</textureFocus>");
         rawXML.AppendLine("\t\t<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("\t\t<label>-</label>");
-        rawXML.AppendLine("\t\t<action>115</action>");
+        rawXML.AppendLine("\t\t<action>98</action> ");
         rawXML.AppendLine("\t\t<onleft>" + topMenuId + "03</onleft>");
         rawXML.AppendLine("\t\t<onright>" + topMenuId + "02</onright>");
         rawXML.AppendLine("\t\t<onup>" + topMenuId + "01</onup>");
