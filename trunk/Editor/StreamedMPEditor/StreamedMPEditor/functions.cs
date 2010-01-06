@@ -496,7 +496,7 @@ namespace StreamedMPEditor
       basicHomeValues.subMenuXpos = 0;
       basicHomeValues.subMenuWidth = 1280;
       basicHomeValues.subMenuTopHeight = 60;
-      basicHomeValues.Button3Slide = 55;
+      basicHomeValues.Button3Slide = 70;
 
       if (useAeonGraphics.Checked)
       {
