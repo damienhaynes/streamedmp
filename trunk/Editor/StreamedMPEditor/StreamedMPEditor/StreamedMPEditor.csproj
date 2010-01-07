@@ -12,7 +12,7 @@
     <AssemblyName>StreamedMPEditor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ApplicationIcon>SMPEditor.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Configuration_32512.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,6 +100,7 @@
     <EmbeddedResource Include="xmlFiles\HBasicHomeSkeleton.xml" />
     <EmbeddedResource Include="xmlFiles\QuickSelectList.xml" />
     <EmbeddedResource Include="xmlFiles\VBasicHomeSkeleton.xml" />
+    <Content Include="Resources\Configuration_32512.ico" />
     <Content Include="Resources\down.png" />
     <None Include="Resources\menuStyle31.jpg" />
     <None Include="Resources\menuStyle41.jpg" />
