@@ -1880,6 +1880,7 @@
         this.Controls.Add(this.statusStrip1);
         this.Controls.Add(this.StreamedMPMenu);
         this.Controls.Add(this.groupBox5);
+        this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.MaximumSize = new System.Drawing.Size(800, 650);
         this.MinimumSize = new System.Drawing.Size(800, 650);
         this.Name = "streamedMpEditor";
