@@ -172,37 +172,46 @@
 		<description>Dummy label for Rating Display</description>
 		<id>5555</id>
 		<type>label</type>
-		<label></label>
+		<label>#TVSeries.Series.Rating</label>
 		<posX>-50</posX>
 		<posY>-50</posY>          
-		<visible>!string.starts(#TVSeries.Series.InfoPanelLine41Value, / 10)</visible>
+		<visible>Control.HasText(5555)</visible>
 	</control>
 	<control>
 		<description>Dummy label for Rating Display</description>
 		<id>5556</id>
 		<type>label</type>
-		<label></label>
+		<label>#TVSeries.Series.myRating</label>
 		<posX>-50</posX>
 		<posY>-50</posY>          
-		<visible>!string.contains(#TVSeries.Series.InfoPanelLine42Value,: ))</visible>
+		<visible>Control.HasText(5556)</visible>
 	</control>
 	<control>
 		<description>Dummy label for Rating Display</description>
 		<id>5557</id>
 		<type>label</type>
-		<label></label>
+		<label>#TVSeries.Episode.Rating</label>
 		<posX>-50</posX>
 		<posY>-50</posY>          
-		<visible>!string.starts(#TVSeries.Episode.InfoPanelLine31Value, / 10)</visible>
+		<visible>Control.HasText(5557)</visible>
 	</control>
 	<control>
 		<description>Dummy label for Rating Display</description>
 		<id>5558</id>
 		<type>label</type>
-		<label></label>
+		<label>#TVSeries.Episode.myRating</label>
 		<posX>-50</posX>
 		<posY>-50</posY>          
-		<visible>!string.contains(#TVSeries.Episode.InfoPanelLine32Value,: ))</visible>
+		<visible>Control.HasText(5558)</visible>
+	</control>
+	<control>
+		<description>Dummy label for Series Title has Loaded</description>
+		<id>5559</id>
+		<type>label</type>
+		<label>#TVSeries.Series.Pretty_Name</label>
+		<posX>-50</posX>
+		<posY>-50</posY>          
+		<visible>Control.HasText(5559)</visible>
 	</control>
   </controls>
 </window>

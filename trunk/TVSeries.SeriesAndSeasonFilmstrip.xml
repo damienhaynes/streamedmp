@@ -160,7 +160,7 @@
             <font>mediastream12tc</font>
             <label>#TVSeries.Translation.SeriesDetails.Label</label>
             <textcolor>ffFFFFFF</textcolor>
-            <visible>facadeview.filmstrip+!string.equals(#TVSeries.Series.Pretty_Name,)</visible>
+            <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
         </control>
 
         <control>			
@@ -243,7 +243,7 @@
             <font>mediastream12tc</font>
             <label>#TVSeries.Translation.Episodes.Label</label>
             <textcolor>ffFFFFFF</textcolor>
-            <visible>facadeview.filmstrip+!string.equals(#TVSeries.Series.Pretty_Name,)</visible>
+            <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
         </control>
 		
 		<control>
@@ -281,7 +281,7 @@
             <font>mediastream12tc</font>
             <label>#TVSeries.Translation.Actors.Label</label>
             <textcolor>ffFFFFFF</textcolor>
-            <visible>facadeview.filmstrip+!string.equals(#TVSeries.Series.Pretty_Name,)</visible>
+            <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
         </control>
         <control>
             <type>textboxscrollup</type>
