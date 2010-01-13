@@ -7,7 +7,7 @@
 	<define>#header.hover:hover_my tv series.png</define>
 	<define>#shadow.dark:ff111111</define>
 	<define>#shadow.light:ff222222</define>
-	<controls>   
+	<controls>		
 	    <control>
 			<type>image</type>
 			<description>BG</description>
@@ -589,25 +589,25 @@
 			<posY>407</posY>
 			<width>130</width>
 			<visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]</visible>
-	    </control>
+	    </control>		
 		<control>
 			<description>Dummy label for Rating Display</description>
 			<id>5557</id>
-            <type>label</type>
-            <label></label>
-            <posX>-50</posX>
-            <posY>-50</posY>          
-            <visible>!string.starts(#TVSeries.Episode.InfoPanelLine31Value, / 10)</visible>
-        </control>
+			<type>label</type>
+			<label>#TVSeries.Episode.Rating</label>
+			<posX>-50</posX>
+			<posY>-50</posY>          
+			<visible>Control.HasText(5557)</visible>
+		</control>
 		<control>
 			<description>Dummy label for Rating Display</description>
 			<id>5558</id>
-            <type>label</type>
-            <label></label>
-            <posX>-50</posX>
-            <posY>-50</posY>          
-            <visible>!string.contains(#TVSeries.Episode.InfoPanelLine32Value,: ))</visible>
-        </control>
+			<type>label</type>
+			<label>#TVSeries.Episode.myRating</label>
+			<posX>-50</posX>
+			<posY>-50</posY>          
+			<visible>Control.HasText(5558)</visible>
+		</control>
 	    <control Style="smallTitle">
 			<id>0</id>
 			<label>#TVSeries.Episode.InfoPanelLine31Value #TVSeries.Episode.InfoPanelLine32Value</label>
@@ -753,7 +753,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>			
 	    </control>		
-		<import>common.overlays.xml</import>		
+		<import>common.overlays.xml</import>
 		<import>common.time.xml</import>
 	</controls>
 </window>
