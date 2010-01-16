@@ -2,8 +2,21 @@
 	<id>10234</id>
 	<defaultcontrol>2</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<disabletopbar>yes</disabletopbar>
+	<disabletopbar>no</disabletopbar>
 	<controls>
+        <control>
+            <description>Menu</description>
+            <type>button</type>
+            <id>1</id>
+            <posX>1231</posX>
+            <posY>55</posY>
+            <width>49</width>
+            <height>153</height>
+            <textureFocus>Action_menu.png</textureFocus>
+            <textureNoFocus>Action_menu.png</textureNoFocus>
+            <label>-</label>
+            <hyperlink>10235</hyperlink>
+        </control>
 		<control>
 			<type>image</type>
 			<id>25</id>
