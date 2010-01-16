@@ -411,6 +411,7 @@ namespace StreamedMPEditor
 
         menuItems[index] = item;
         itemsOnMenubar.Items.Insert(index, item.name);
+        reloadBackgroundItems();
         screenReset();
       }
     }
