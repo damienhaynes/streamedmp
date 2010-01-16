@@ -456,7 +456,7 @@ namespace StreamedMPEditor
         bool newBG = true;
         foreach (backgroundItem bgitem in bgItems)
         {
-          if (bgitem.folder == menItem.bgFolder)
+          if ((bgitem.folder == menItem.bgFolder) && (bgitem.timeperimage.Equals(menItem.timePerImage)) && (bgitem.random.Equals(menItem.random)))
           {
             bgitem.ids.Add(menItem.id.ToString());
             bgitem.mname.Add(menItem.name.ToString());
