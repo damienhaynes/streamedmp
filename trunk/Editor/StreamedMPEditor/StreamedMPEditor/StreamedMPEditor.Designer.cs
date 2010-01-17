@@ -82,6 +82,7 @@
         this.removeButton = new System.Windows.Forms.Button();
         this.addButton = new System.Windows.Forms.Button();
         this.backgroundImages = new System.Windows.Forms.GroupBox();
+        this.disableBGSharing = new System.Windows.Forms.CheckBox();
         this.folderBrowse = new System.Windows.Forms.Button();
         this.randomChk = new System.Windows.Forms.CheckBox();
         this.bgBox = new System.Windows.Forms.ComboBox();
@@ -608,9 +609,9 @@
         // btMoveDown
         // 
         this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
-        this.btMoveDown.Location = new System.Drawing.Point(714, 137);
+        this.btMoveDown.Location = new System.Drawing.Point(713, 159);
         this.btMoveDown.Name = "btMoveDown";
-        this.btMoveDown.Size = new System.Drawing.Size(33, 23);
+        this.btMoveDown.Size = new System.Drawing.Size(33, 108);
         this.btMoveDown.TabIndex = 116;
         this.btMoveDown.UseVisualStyleBackColor = true;
         this.btMoveDown.Click += new System.EventHandler(this.btMoveDown_Click);
@@ -618,16 +619,16 @@
         // btMoveUp
         // 
         this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
-        this.btMoveUp.Location = new System.Drawing.Point(714, 109);
+        this.btMoveUp.Location = new System.Drawing.Point(713, 38);
         this.btMoveUp.Name = "btMoveUp";
-        this.btMoveUp.Size = new System.Drawing.Size(33, 23);
+        this.btMoveUp.Size = new System.Drawing.Size(33, 116);
         this.btMoveUp.TabIndex = 115;
         this.btMoveUp.UseVisualStyleBackColor = true;
         this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
         // 
         // cancleButton
         // 
-        this.cancleButton.Location = new System.Drawing.Point(602, 241);
+        this.cancleButton.Location = new System.Drawing.Point(602, 274);
         this.cancleButton.Name = "cancleButton";
         this.cancleButton.Size = new System.Drawing.Size(49, 21);
         this.cancleButton.TabIndex = 114;
@@ -637,7 +638,7 @@
         // 
         // editButton
         // 
-        this.editButton.Location = new System.Drawing.Point(540, 240);
+        this.editButton.Location = new System.Drawing.Point(540, 273);
         this.editButton.Name = "editButton";
         this.editButton.Size = new System.Drawing.Size(52, 21);
         this.editButton.TabIndex = 113;
@@ -648,7 +649,7 @@
         // saveButton
         // 
         this.saveButton.Enabled = false;
-        this.saveButton.Location = new System.Drawing.Point(661, 240);
+        this.saveButton.Location = new System.Drawing.Point(661, 273);
         this.saveButton.Name = "saveButton";
         this.saveButton.Size = new System.Drawing.Size(48, 23);
         this.saveButton.TabIndex = 112;
@@ -669,7 +670,7 @@
         this.groupBox1.Controls.Add(this.menuItemBGFolderL);
         this.groupBox1.Controls.Add(this.menuItemNameL);
         this.groupBox1.Controls.Add(this.menuitemBGFolder);
-        this.groupBox1.Location = new System.Drawing.Point(538, 267);
+        this.groupBox1.Location = new System.Drawing.Point(538, 302);
         this.groupBox1.Name = "groupBox1";
         this.groupBox1.Size = new System.Drawing.Size(209, 112);
         this.groupBox1.TabIndex = 111;
@@ -769,27 +770,28 @@
         // 
         // removeButton
         // 
-        this.removeButton.Location = new System.Drawing.Point(332, 352);
+        this.removeButton.Location = new System.Drawing.Point(211, 390);
         this.removeButton.Name = "removeButton";
-        this.removeButton.Size = new System.Drawing.Size(75, 26);
+        this.removeButton.Size = new System.Drawing.Size(321, 26);
         this.removeButton.TabIndex = 110;
-        this.removeButton.Text = "<< Remove";
+        this.removeButton.Text = "<< Remove Menu Item";
         this.removeButton.UseVisualStyleBackColor = true;
         this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
         // 
         // addButton
         // 
         this.addButton.Enabled = false;
-        this.addButton.Location = new System.Drawing.Point(332, 319);
+        this.addButton.Location = new System.Drawing.Point(211, 357);
         this.addButton.Name = "addButton";
-        this.addButton.Size = new System.Drawing.Size(75, 26);
+        this.addButton.Size = new System.Drawing.Size(321, 26);
         this.addButton.TabIndex = 109;
-        this.addButton.Text = "Add >>";
+        this.addButton.Text = "Add Menu Item>>";
         this.addButton.UseVisualStyleBackColor = true;
         this.addButton.Click += new System.EventHandler(this.addButton_Click);
         // 
         // backgroundImages
         // 
+        this.backgroundImages.Controls.Add(this.disableBGSharing);
         this.backgroundImages.Controls.Add(this.folderBrowse);
         this.backgroundImages.Controls.Add(this.randomChk);
         this.backgroundImages.Controls.Add(this.bgBox);
@@ -799,10 +801,21 @@
         this.backgroundImages.Controls.Add(this.label12);
         this.backgroundImages.Location = new System.Drawing.Point(211, 213);
         this.backgroundImages.Name = "backgroundImages";
-        this.backgroundImages.Size = new System.Drawing.Size(321, 92);
+        this.backgroundImages.Size = new System.Drawing.Size(321, 129);
         this.backgroundImages.TabIndex = 108;
         this.backgroundImages.TabStop = false;
-        this.backgroundImages.Text = "Background Images";
+        this.backgroundImages.Text = "Background Image Options";
+        // 
+        // disableBGSharing
+        // 
+        this.disableBGSharing.AutoSize = true;
+        this.disableBGSharing.Location = new System.Drawing.Point(10, 103);
+        this.disableBGSharing.Name = "disableBGSharing";
+        this.disableBGSharing.Size = new System.Drawing.Size(161, 17);
+        this.disableBGSharing.TabIndex = 48;
+        this.disableBGSharing.Text = "Disable Background Sharing";
+        this.toolTip1.SetToolTip(this.disableBGSharing, resources.GetString("disableBGSharing.ToolTip"));
+        this.disableBGSharing.UseVisualStyleBackColor = true;
         // 
         // folderBrowse
         // 
@@ -935,7 +948,7 @@
         // isWeather
         // 
         this.isWeather.AutoSize = true;
-        this.isWeather.Location = new System.Drawing.Point(236, 59);
+        this.isWeather.Location = new System.Drawing.Point(231, 57);
         this.isWeather.Name = "isWeather";
         this.isWeather.Size = new System.Drawing.Size(78, 17);
         this.isWeather.TabIndex = 39;
@@ -965,7 +978,7 @@
         this.itemsOnMenubar.FormattingEnabled = true;
         this.itemsOnMenubar.Location = new System.Drawing.Point(540, 38);
         this.itemsOnMenubar.Name = "itemsOnMenubar";
-        this.itemsOnMenubar.Size = new System.Drawing.Size(170, 199);
+        this.itemsOnMenubar.Size = new System.Drawing.Size(170, 229);
         this.itemsOnMenubar.TabIndex = 106;
         this.itemsOnMenubar.Click += new System.EventHandler(this.itemsOnMenubar_Click);
         // 
@@ -975,7 +988,7 @@
         this.xmlFiles.FormattingEnabled = true;
         this.xmlFiles.Location = new System.Drawing.Point(3, 60);
         this.xmlFiles.Name = "xmlFiles";
-        this.xmlFiles.Size = new System.Drawing.Size(198, 316);
+        this.xmlFiles.Size = new System.Drawing.Size(198, 355);
         this.xmlFiles.TabIndex = 105;
         this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
         this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
@@ -2105,6 +2118,7 @@
     private System.Windows.Forms.RadioButton rbRssSkinImage;
     private System.Windows.Forms.RadioButton rbRssNoImage;
     private System.Windows.Forms.GroupBox groupBox5;
+    private System.Windows.Forms.CheckBox disableBGSharing;
   }
 }
 

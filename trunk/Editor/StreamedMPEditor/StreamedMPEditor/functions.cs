@@ -427,6 +427,7 @@ namespace StreamedMPEditor
         randomChk.Visible = true;
         timePerImageL.Visible = true;
         secondsL.Visible = true;
+        disableBGSharing.Visible = true;
 
       }
       else
@@ -438,8 +439,7 @@ namespace StreamedMPEditor
         randomChk.Visible = false;
         timePerImageL.Visible = false;
         secondsL.Visible = false;
-
-
+        disableBGSharing.Visible = false;
       }
     }
     private void reloadBackgroundItems()
@@ -449,34 +449,41 @@ namespace StreamedMPEditor
       {
         fillBackgroundItem(menItem);
       }
+      GetDefaultBackgroundImages();
     }
+
 
     private void fillBackgroundItem(menuItem menItem)
     {
         bool newBG = true;
-        foreach (backgroundItem bgitem in bgItems)
-        {
-          if ((bgitem.folder == menItem.bgFolder) && (bgitem.timeperimage.Equals(menItem.timePerImage)) && (bgitem.random.Equals(menItem.random)))
-          {
-            bgitem.ids.Add(menItem.id.ToString());
-            bgitem.mname.Add(menItem.name.ToString());
-            bgitem.name = bgitem.name + ", " + menItem.name;
-            newBG = false;
-          }
 
-        }
+            foreach (backgroundItem bgitem in bgItems)
+            {
+
+                if ((bgitem.folder == menItem.bgFolder) && (bgitem.timeperimage.Equals(menItem.timePerImage.ToString())) && (bgitem.random.Equals(menItem.random)) && bgitem.disableBGSharing.Equals(menItem.disableBGSharing))
+                {
+                    bgitem.ids.Add(menItem.id.ToString());
+                    bgitem.mname.Add(menItem.name.ToString());
+                    bgitem.name = bgitem.name + ", " + menItem.name;
+                    newBG = false;
+                }
+            }
+
+
+
         if (newBG == true)
         {
-          backgroundItem newbgItem = new backgroundItem();
-          newbgItem.folder = menItem.bgFolder;
-          newbgItem.ids.Add(menItem.id.ToString());
-          newbgItem.mname.Add(menItem.name.ToString());
-          newbgItem.name = menItem.name;
-          newbgItem.image = menItem.defaultImage;
-          newbgItem.random = menItem.random;
-          newbgItem.timeperimage = menItem.timePerImage.ToString();
-          newbgItem.isWeather = menItem.isWeather;
-          bgItems.Add(newbgItem);
+            backgroundItem newbgItem = new backgroundItem();
+            newbgItem.folder = menItem.bgFolder;
+            newbgItem.ids.Add(menItem.id.ToString());
+            newbgItem.mname.Add(menItem.name.ToString());
+            newbgItem.name = menItem.name;
+            newbgItem.image = menItem.defaultImage;
+            newbgItem.random = menItem.random;
+            newbgItem.timeperimage = menItem.timePerImage.ToString();
+            newbgItem.isWeather = menItem.isWeather;
+            newbgItem.disableBGSharing = menItem.disableBGSharing;
+            bgItems.Add(newbgItem);
         }
     }
 
@@ -741,38 +748,7 @@ namespace StreamedMPEditor
       txtNoFocusColour.SelectionStart = start;
     }
 
-    private void fillBackgroundItems()
-    {
-      foreach (menuItem menItem in menuItems)
-      {
-        bool newBG = true;
-        foreach (backgroundItem bgitem in bgItems)
-        {
-          if (bgitem.folder == menItem.bgFolder)
-          {
-            bgitem.ids.Add(menItem.id.ToString());
-            bgitem.mname.Add(menItem.name.ToString());
-            bgitem.name = bgitem.name + " " + menItem.name;
-            newBG = false;
-          }
 
-        }
-        if (newBG == true)
-        {
-          backgroundItem newbgItem = new backgroundItem();
-          newbgItem.folder = menItem.bgFolder;
-          newbgItem.ids.Add(menItem.id.ToString());
-          newbgItem.mname.Add(menItem.name.ToString());
-          newbgItem.name = menItem.name;
-          newbgItem.image = menItem.defaultImage;
-          newbgItem.random = menItem.random;
-          newbgItem.timeperimage = menItem.timePerImage.ToString();
-          newbgItem.isWeather = menItem.isWeather;
-          bgItems.Add(newbgItem);
-
-        }
-      }
-    }
     private void btnClearCache_Click(object sender, EventArgs e)
     {
       DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin("name") + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
@@ -1327,18 +1303,20 @@ namespace StreamedMPEditor
       public bool updateStatus;
       public string contextLabel;
       public string defaultImage;
+      public bool disableBGSharing;
     }
 
     public class backgroundItem
     {
-      public string name;
-      public string folder;
-      public string image;
-      public List<string> ids = new List<string>();
-      public List<string> mname = new List<string>();
-      public bool random;
-      public string timeperimage;
-      public bool isWeather;
+        public string name;
+        public string folder;
+        public string image;
+        public List<string> ids = new List<string>();
+        public List<string> mname = new List<string>();
+        public bool random;
+        public string timeperimage;
+        public bool isWeather;
+        public bool disableBGSharing;
     }
 
     public class defaultImages
