@@ -33,11 +33,11 @@ namespace StreamedMPEditor
       defImgs.count = bgItems.Count;
       selectPanel.Visible = false;
       pBoxElement = 0;
-      //imagePointer = 0;
-      //totalImages = 0;
-      //pBoxElement = 0;
+      imagePointer = 0;
+      totalImages = 0;
+      pBoxElement = 0;
       defaultBackgrounds.Controls.Clear();
-      //fileResults.Clear();
+      fileResults.Clear();
 
 
  
