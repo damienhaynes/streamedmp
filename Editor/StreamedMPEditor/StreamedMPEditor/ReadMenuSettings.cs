@@ -241,26 +241,28 @@ namespace StreamedMPEditor
       if (!WeatherIconsAnimated.Checked)
         weatherIconsStatic.Checked = true;
 
-
       //
       // Read in the menu items
       //
       for (int i = 0; i < int.Parse(readEntryValue(menuTag, "count", nodelist)); i++)
       {
         menuItem mnuItem = new menuItem();
-        mnuItem.name          = readEntryValue(menuTag, "menuitem" + i.ToString() + "name", nodelist);
-        mnuItem.contextLabel  = readEntryValue(menuTag, "menuitem" + i.ToString() + "label", nodelist);
-        mnuItem.bgFolder      = readEntryValue(menuTag, "menuitem" + i.ToString() + "folder", nodelist);
-        mnuItem.hyperlink     = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlink", nodelist);
-        mnuItem.isDefault     = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isdefault", nodelist));
-        mnuItem.isWeather     = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isweather", nodelist));
-        mnuItem.random        = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "random", nodelist));
-        mnuItem.updateStatus  = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
-        mnuItem.id            = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
-        mnuItem.timePerImage  = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "timeonpage", nodelist));
+        mnuItem.disableBGSharing = true;
+        mnuItem.name           = readEntryValue(menuTag, "menuitem" + i.ToString() + "name", nodelist);
+        mnuItem.contextLabel   = readEntryValue(menuTag, "menuitem" + i.ToString() + "label", nodelist);
+        mnuItem.bgFolder       = readEntryValue(menuTag, "menuitem" + i.ToString() + "folder", nodelist);
+        mnuItem.hyperlink      = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlink", nodelist);
+        mnuItem.isDefault      = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isdefault", nodelist));
+        mnuItem.isWeather      = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isweather", nodelist));
+        mnuItem.random         = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "random", nodelist));
+        mnuItem.updateStatus   = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
+        mnuItem.id             = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
+        mnuItem.timePerImage   = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "timeonpage", nodelist));
+        mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
 
         isWeather.Checked = mnuItem.isWeather;
         randomChk.Checked = mnuItem.random;
+        disableBGSharing.Checked = mnuItem.disableBGSharing;
         
         // Set the default control
         if (mnuItem.isDefault)
@@ -284,7 +286,7 @@ namespace StreamedMPEditor
      
         menuItems.Add(mnuItem);
       }
-      fillBackgroundItems();
+      reloadBackgroundItems();
       UpdateImageControlVisibility();
       generateMenu.Enabled = true;
     }

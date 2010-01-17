@@ -148,6 +148,7 @@ namespace StreamedMPEditor
           removeButton.Enabled = true;
           itemsOnMenubar.Enabled = true;
           randomChk.Enabled = true;
+          disableBGSharing.Enabled = true;
 
           rbRssInfoServiceImage.Checked = false;
           rbRssNoImage.Checked = false;
@@ -177,7 +178,7 @@ namespace StreamedMPEditor
         screenReset();
         setScreenProperties(itemsOnMenubar.SelectedIndex);
         editButton.Enabled = true;
-        GetDefaultBackgroundImages();
+
 
         string mpVersion = getMediaPortalVersion();
         if (mpVersion.CompareTo(mpReleaseVersion) > 0)
@@ -200,6 +201,7 @@ namespace StreamedMPEditor
             BasicHomeFromTemplate();
             basicHomeLoadError = false;
             loadMenuSettings();
+            GetDefaultBackgroundImages();
           }
           else
             showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
@@ -329,6 +331,7 @@ namespace StreamedMPEditor
         item.random = randomChk.Checked;
         item.isWeather = isWeather.Checked;
         item.timePerImage = int.Parse(timeBox.Text);
+        item.disableBGSharing = disableBGSharing.Checked;
 
         // Set default image....
         if (!item.bgFolder.Contains("\\"))
@@ -379,6 +382,7 @@ namespace StreamedMPEditor
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
       randomChk.Checked = mnuItem.random;
+      disableBGSharing.Checked = mnuItem.disableBGSharing;
       timeBox.Text = mnuItem.timePerImage.ToString();
       isWeather.Checked = mnuItem.isWeather;
       selectedWindow.Text = xmlFiles.Text;
@@ -388,6 +392,7 @@ namespace StreamedMPEditor
 
       saveButton.Enabled = true;
       cancleButton.Enabled = true;
+      editButton.Enabled = false;
     }
 
 
@@ -406,8 +411,10 @@ namespace StreamedMPEditor
         item.bgFolder = bgBox.Text;
         item.hyperlink = ids[xmlFiles.SelectedIndex];
         item.random = randomChk.Checked;
+        item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
         item.timePerImage = int.Parse(timeBox.Text);
+
 
         menuItems[index] = item;
         itemsOnMenubar.Items.Insert(index, item.name);
@@ -435,6 +442,7 @@ namespace StreamedMPEditor
         bgBox.SelectedIndex = -1;
         saveButton.Enabled = false;
         cancleButton.Enabled = false;
+        editButton.Enabled = true;
       }
       selectedWindow.Text = null;
       selectedWindowID.Text = null;
@@ -462,6 +470,7 @@ namespace StreamedMPEditor
       setXMLFilesIndex(mnuItem.hyperlink);
       timeBox.Text = mnuItem.timePerImage.ToString();
       randomChk.Checked = mnuItem.random;
+      disableBGSharing.Checked = mnuItem.disableBGSharing;
 
       menuitemName.Text = mnuItem.name;
       menuItemLabel.Text = mnuItem.contextLabel;
@@ -696,9 +705,6 @@ namespace StreamedMPEditor
       if (rbRssInfoServiceImage.Checked)
         rssImage = rssImageType.infoserviceImage;
     }
-
-
-
   }
 }
 
