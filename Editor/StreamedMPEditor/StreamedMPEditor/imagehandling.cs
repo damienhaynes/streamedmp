@@ -36,6 +36,10 @@ namespace StreamedMPEditor
       imagePointer = 0;
       totalImages = 0;
       pBoxElement = 0;
+      defImgs.activePicBox = 0;
+      defImgs.activeSelectPbox = 0;
+      defImgs.activeBGItem = 0;
+      imagePointer = 0;
       defaultBackgrounds.Controls.Clear();
       fileResults.Clear();
 

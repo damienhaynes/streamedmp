@@ -71,7 +71,7 @@
       <posY>54</posY>
       <width>305</width>
       <height>307</height>
-      <texture>-</texture>
+      <texture flipY="true" diffuse="Thumb_Mask.png">-</texture>
     </control>
     <control>
       <type>image</type>
@@ -82,7 +82,7 @@
       <width>350</width>
       <height>316</height>
       <colordiffuse>FFFFFFFF</colordiffuse>
-      <texture>playingnow_cdcase.png</texture>
+      <texture flipY="true" diffuse="Thumb_Mask.png">playingnow_cdcase.png</texture>
     </control>
 
     
@@ -261,22 +261,22 @@
       <type>image</type>
       <id>600</id>
       <posX>1170</posX>
-      <posY>610</posY>
+      <posY>595</posY>
       <width>100</width>
       <height>100</height>
       <keepaspectratio>yes</keepaspectratio>
-      <texture>#Play.Next.Thumb</texture>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#Play.Next.Thumb</texture>
     </control>
     <control>
       <description>music overlay</description>
       <type>image</type>
       <id>0</id>
       <posX>1155</posX>
-      <posY>605</posY>
+      <posY>590</posY>
       <width>120</width>
       <height>120</height>
       <keepaspectratio>yes</keepaspectratio>
-      <texture>playingnow_cdcase.png</texture>
+      <texture flipY="true" diffuse="Thumb_Mask.png">playingnow_cdcase.png</texture>
     </control>    
     <!-- BOTTOM PART -->
     
