@@ -14,7 +14,6 @@
                      <width>1280</width>
                      <height>197</height>
                      <texture>osdbackground1.png</texture>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Date</description>
@@ -26,7 +25,6 @@
                      <align>right</align>
                      <font>mediastream10</font>
                      <textcolor>ff888888</textcolor>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>TV Logo border</description>
@@ -38,7 +36,6 @@
                      <texture>imagebg.png</texture>
                      <keepaspectratio>yes</keepaspectratio>
                      <centered>yes</centered>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>TV background</description>
@@ -51,20 +48,18 @@
                      <texture>logo_BG.png</texture>
                      <keepaspectratio>yes</keepaspectratio>
                      <centered>yes</centered>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>TV Logo</description>
                      <type>image</type>
                      <id>10</id>
-                     <posX>16</posX>
-                     <posY>480</posY>
-                     <width>150</width>
-                     <height>150</height>
+                     <posX>21</posX>
+                     <posY>485</posY>
+                     <width>140</width>
+                     <height>140</height>
                      <texture>#TV.View.thumb</texture>
                      <keepaspectratio>yes</keepaspectratio>
                      <centered>yes</centered>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Progress Bar Background</description>
@@ -76,7 +71,6 @@
                      <height>20</height>
                      <texture>osdprogressback.png</texture>
                      <keepaspectratio>no</keepaspectratio>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Progress Bar</description>
@@ -87,7 +81,6 @@
                      <width>928</width>
                      <visible>yes</visible>
                      <label>#TV.View.Percentage</label>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Start Time Info</description>
@@ -99,7 +92,6 @@
                      <align>left</align>
                      <font>mediastream12tc</font>
                      <textcolor>ff888888</textcolor>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>End Time Info</description>
@@ -111,7 +103,6 @@
                      <align>right</align>
                      <font>mediastream12tc</font>
                      <textcolor>ff888888</textcolor>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Channel Name</description>
@@ -123,7 +114,6 @@
                      <posY>535</posY>
                      <font>mediastream16tc</font>
                      <label>#TV.View.channel</label>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>On tv NOW</description>
@@ -135,7 +125,6 @@
                      <posY>563</posY>
                      <font>mediastream14tc</font>
                      <textcolor>ff888888</textcolor>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>Zap to channel no</description>
@@ -149,7 +138,6 @@
                      <font>mediastream12tc</font>
                      <label>-</label>
                      <textcolor>white</textcolor>
-                     <visible>!control.isvisible(10)</visible>
               </control>
               <control>
                      <description>On tv NEXT</description>
