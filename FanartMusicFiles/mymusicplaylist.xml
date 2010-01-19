@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+        <id>500</id>
+        <defaultcontrol>2</defaultcontrol>
+        <allowoverlay>no</allowoverlay>
+        <define>#header.label:136</define>
+        <define>#header.hover:hover_my music.png</define>
+        <controls>
+                <control>
+                        <description>music background image</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>#header.hover</texture>
+                </control>
+          	<import>music.selected.autofanart.xml</import>
+                <control>
+                        <description>music overlay image</description>
+                        <type>image</type>
+                        <id>0</id>
+                        <posX>0</posX>
+                        <posY>0</posY>
+                        <width>1280</width>
+                        <height>720</height>
+                        <texture>mainoverlay.png</texture>
+                </control>
+                <control>
+                        <id>0</id>
+                        <type>image</type>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <texture>defaultAlbum.png</texture>
+                        <visible>!control.hasthumb(204)</visible>
+						<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <id>204</id>
+                        <type>image</type>
+                        <posX>90</posX>
+                        <posY>250</posY>
+                        <width>348</width>
+                        <height>348</height>
+                        <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+						<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+                </control>
+                <control>
+                        <type>label</type>
+                        <id>0</id>
+                        <posX>500</posX>
+                        <posY>270</posY>
+                        <width>300</width>
+                        <label>#track</label>
+                </control>
+                <control>
+                        <type>actiongroup</type>
+                        <description>action menu</description>
+                        <defaultcontrol>2</defaultcontrol>
+                        <onexit>50</onexit>
+                        <buttonX>1231</buttonX>
+                        <buttonY>55</buttonY>
+                        <buttonwidth>49</buttonwidth>
+                        <buttonheight>153</buttonheight>
+                        <textureFocus>Action_menu.png</textureFocus>
+                        <textureNoFocus>Action_menu.png</textureNoFocus>
+                        <dimColor>00ffffff</dimColor>
+                        <control>
+                                <type>image</type>
+                                <posX>1002</posX>
+                                <posY>0</posY>
+                                <width>278</width>
+                                <height>720</height>
+                                <texture>hiddenmenu_right.png</texture>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+						<control>
+								<description>Dummy Button (for Mouse)</description>
+								<id>0</id>								
+								<label>-</label>
+								<type>button</type>
+								<posX>1002</posX>
+								<posY>0</posY>
+								<width>278</width>
+								<height>720</height>
+								<visible>!Control.HasFocus(50)</visible>
+								<animation effect="slide" time="100" start="300,0">visible</animation>
+								<animation effect="slide" time="0" end="300,0">hidden</animation>
+						</control>
+                        <control>
+                                <id>0</id>
+                                <label>VIEW OPTIONS</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>230</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>PLAYLIST</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>287</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>JUMP TO</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>449</posY>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <id>0</id>
+                                <label>SCROBBLER</label>
+                                <type>label</type>
+                                <font>mediastream12tc</font>
+                                <posX>1040</posX>
+                                <posY>563</posY>
+                                <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                        </control>
+                        <control>
+                                <type>group</type>
+                                <description>group element</description>
+                                <visible>!Control.HasFocus(50)</visible>
+                                <animation effect="slide" time="100" start="300,0">visible</animation>
+                                <animation effect="slide" time="0" end="300,0">hidden</animation>
+                                <posX>1040</posX>
+                                <posY>250</posY>
+                                <width>220</width>
+                                <height>720</height>
+                                <layout>StackLayout</layout>
+                                <control>
+                                        <description>View-As button</description>
+                                        <type>button</type>
+                                        <id>2</id>
+                                        <label>100</label>
+                                        <onleft>50</onleft>
+                                        <onup>17</onup>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Shuffle button</description>
+                                        <type>button</type>
+                                        <id>20</id>
+                                        <label>191</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Repeat on/off button</description>
+                                        <type>togglebutton</type>
+                                        <id>30</id>
+                                        <label>486</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>My Playlists</description>
+                                        <type>button</type>
+                                        <id>10</id>
+                                        <label>983</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Save button</description>
+                                        <type>button</type>
+                                        <id>21</id>
+                                        <label>190</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Clear button</description>
+                                        <type>button</type>
+                                        <id>22</id>
+                                        <label>192</label>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>Empty button</description>
+                                        <type>button</type>
+                                        <id>0</id>
+                                        <label>-</label>
+                                        <visible>false</visible>
+                                </control>
+                                <control>
+                                        <description>Now playing</description>
+                                        <type>button</type>
+                                        <id>26</id>
+                                        <label>4540</label>
+                                        <hyperlink>510</hyperlink>
+                                        <onleft>50</onleft>
+                                </control>
+                                <control>
+                                        <description>music settings button</description>
+                                        <type>button</type>
+                                        <id>12</id>
+                                        <label>Music Settings</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>14</hyperlink>
+                                </control>
+                                <control>
+                                        <description>My Lyrics</description>
+                                        <type>button</type>
+                                        <id>16</id>
+                                        <label>Lyrics</label>
+                                        <onleft>50</onleft>
+                                        <hyperlink>90478</hyperlink>
+                                        <visible>plugin.isenabled(My Lyrics)</visible>
+                                </control>
+                                <control>
+                                        <description>Music Search</description>
+                                        <type>button</type>
+                                        <id>14</id>
+                                        <onleft>50</onleft>
+                                        <label>137</label>
+                                        <hyperlink>30885</hyperlink>
+                                        <visible>plugin.isenabled(Search music)</visible>
+                                </control>
+                                <control>
+                                        <description>scrobble mode button</description>
+                                        <type>button</type>
+                                        <id>28</id>
+                                        <label>33001</label>
+                                        <onleft>50</onleft>
+                                        <visible>plugin.isenabled(Audioscrobbler)</visible>
+                                </control>
+                                <control>
+                                        <description>scrobble on/off button</description>
+                                        <type>togglebutton</type>
+                                        <id>27</id>
+                                        <label>33000</label>
+                                        <onleft>50</onleft>
+                                        <visible>plugin.isenabled(Audioscrobbler)</visible>
+                                </control>
+                                <control>
+                                        <description>scrobble user button</description>
+                                        <type>button</type>
+                                        <id>29</id>
+                                        <label>Scrobbler: </label>
+                                        <onleft>50</onleft>
+                                        <visible>plugin.isenabled(Audioscrobbler)</visible>
+                                </control>
+                        </control>
+                </control>
+                <import>common.overlays.xml</import>
+                <import>common.facade.music.xml</import>
+                <import>common.window.xml</import>
+                <import>common.time.xml</import>
+        </controls>
+</window>
