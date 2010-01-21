@@ -1,44 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>759</id>
-        <defaultcontrol>2</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <define>#header.label:652</define>
-        <define>#header.image:-</define>
-        <define>#header.hover:-</define>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <control Style= "settingsbutton">
-                        <type>button</type>
-                        <description>Keep</description>
-                        <id>2</id>
-                        <posX>1000</posX>
-                        <posY>250</posY>
-                        <onright>99</onright>
-                        <onup>2</onup>
-                        <ondown>2</ondown>
-                        <width>261</width>
-                        <height>43</height>
-                        <textXOff>43</textXOff>
-                        <textYOff>8</textYOff>
-                        <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
-                        <textureFocus>settingsbuttonfo.png</textureFocus>
-                        <font>mediastream12c</font>
-                        <label>1042</label>
-                </control>
-                <control>
-                        <description>Top Title Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>77</posX>
-                        <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                </control>
-                <control>
+       <id>759</id>
+       <defaultcontrol>2</defaultcontrol>
+       <allowoverlay>no</allowoverlay>
+       <define>#header.label:652</define>
+       <define>#header.image:-</define>
+       <define>#header.hover:-</define>
+       <define>#useRandomTVSeriesFanart:Yes</define>
+       <controls>
+              <import>common.window.tv.xml</import>
+              <import>common.time.xml</import>
+              <control Style= "settingsbutton">
+                     <type>button</type>
+                     <description>Keep</description>
+                     <id>2</id>
+                     <posX>1000</posX>
+                     <posY>250</posY>
+                     <onright>99</onright>
+                     <onup>2</onup>
+                     <ondown>2</ondown>
+                     <width>261</width>
+                     <height>43</height>
+                     <textYOff>2</textYOff>
+                     <textalign>center</textalign>
+                     <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
+                     <textureFocus>settingsbuttonfo.png</textureFocus>
+                     <font>mediastream12c</font>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+                     <label>1042</label>
+              </control>
+              <control>
+                     <description>Top Title Background</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>77</posX>
+                     <posY>11</posY>
+                     <width>437</width>
+                     <height>35</height>
+                     <texture>tvtitlebg.png</texture>
+                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+              </control>
+              <!--<control>
                         <type>fadelabel</type>
                         <description>Current program title</description>
                         <id>27</id>
@@ -47,19 +52,23 @@
                         <width>570</width>
                         <font>mediastream16tc</font>
                         <label>-</label>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Current program title</description>
-                        <id>13</id>
-                        <posX>28</posX>
-                        <posY>273</posY>
-                        <width>570</width>
-                        <label>-</label>
-                        <font>font13</font>
-                        <font>mediastream16tc</font>
-                </control>
-                <control>
+                </control>-->
+              <control>
+                     <type>fadelabel</type>
+                     <description>Current program title</description>
+                     <id>13</id>
+                     <posX>28</posX>
+                     <posY>273</posY>
+                     <width>570</width>
+                     <label>-</label>
+                     <font>font13</font>
+                     <font>mediastream16tc</font>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <!--<control>
                         <type>label</type>
                         <description>Current program time</description>
                         <id>26</id>
@@ -68,8 +77,8 @@
                         <font>mediastream12tc</font>
                         <textcolor>ff808080</textcolor>
                         <label>-</label>
-                </control>
-                <control>
+                </control>-->
+              <!--<control>
                         <type>label</type>
                         <description>genre</description>
                         <id>24</id>
@@ -79,39 +88,51 @@
                         <font>font13</font>
                         <textcolor>ff808080</textcolor>
                         <label>-</label>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>Current program time</description>
-                        <id>14</id>
-                        <posX>28</posX>
-                        <posY>302</posY>
-                        <font>mediastream12tc</font>
-                        <label>-</label>
-                </control>
-                <control>
-                        <description>Genre Label</description>
-                        <type>label</type>
-                        <label>GENERE : </label>
-                        <id>0</id>
-                        <posX>28</posX>
-                        <posY>331</posY>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff006698</textcolor>
-                        <visible>Control.isvisible(14)</visible>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>genre</description>
-                        <id>17</id>
-                        <posX>130</posX>
-                        <posY>330</posY>
-                        <width>468</width>
-                        <font>mediastream12c</font>
-                        <textcolor>ff808080</textcolor>
-                        <label>-</label>
-                </control>
-                <control>
+                </control>-->
+              <control>
+                     <type>label</type>
+                     <description>Current program time</description>
+                     <id>14</id>
+                     <posX>28</posX>
+                     <posY>302</posY>
+                     <font>mediastream12tc</font>
+                     <label>-</label>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <description>Genre Label</description>
+                     <type>label</type>
+                     <label>GENERE : </label>
+                     <id>0</id>
+                     <posX>28</posX>
+                     <posY>331</posY>
+                     <font>mediastream12tc</font>
+                     <textcolor>ff006698</textcolor>
+                     <visible>Control.isvisible(14)</visible>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <control>
+                     <type>label</type>
+                     <description>genre</description>
+                     <id>17</id>
+                     <posX>130</posX>
+                     <posY>330</posY>
+                     <width>468</width>
+                     <font>mediastream12c</font>
+                     <textcolor>ff808080</textcolor>
+                     <label>-</label>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <!--<control>
                         <type>textboxscrollup</type>
                         <description>Description1</description>
                         <id>25</id>
@@ -121,41 +142,23 @@
                         <height>290</height>
                         <font>mediastream12</font>
                         <label>#TV.RecordedTV.Description</label>
-                </control>
-                <control>
-                        <type>textboxscrollup</type>
-                        <description>Description1</description>
-                        <id>15</id>
-                        <posX>28</posX>
-                        <posY>370</posY>
-                        <width>770</width>
-                        <height>290</height>
-                        <label>-</label>
-                        <font>mediastream12</font>
-                </control>
-                <control>
-                        <description>TV background</description>
-                        <type>image</type>
-                        <id>300</id>
-                        <posX>17</posX>
-                        <posY>615</posY>
-                        <width>180</width>
-                        <height>113</height>
-                        <texture>video_overlay_background.png</texture>
-                        <visible>no</visible>
-                </control>
-                <!--<control>
-                        <description>TV preview window</description>
-                        <type>videowindow</type>
-                        <id>99</id>
-                        <posX>25</posX>
-                        <posY>623</posY>
-                        <width>160</width>
-                        <height>90</height>
-                        <action>18</action>
-                        <onup>5</onup>
-                        <textureFocus>tv_green_border.png</textureFocus>
                 </control>-->
-                <import>common.overlays.xml</import>
-        </controls>
+              <control>
+                     <type>textboxscrollup</type>
+                     <description>Description1</description>
+                     <id>15</id>
+                     <posX>28</posX>
+                     <posY>370</posY>
+                     <width>870</width>
+                     <height>290</height>
+                     <label>-</label>
+                     <font>mediastream12</font>
+                     <seperator>----------------------------------------------------------------------------------------------------------------</seperator>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
+              <import>common.overlays.xml</import>
+       </controls>
 </window>
