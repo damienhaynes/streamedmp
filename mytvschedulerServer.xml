@@ -6,6 +6,7 @@
        <define>#header.label:646</define>
        <define>#header.image:-</define>
        <define>#header.hover:-</define>
+       <define>#useRandomTVSeriesFanart:Yes</define>
        <controls>
               <import>common.window.tv.xml</import>
               <import>common.time.xml</import>
@@ -179,13 +180,27 @@
                             </control>
                      </control>
               </control>
-
+              <control>
+                     <description>Current program channel</description>
+                     <type>fadelabel</type>
+                     <id>16</id>
+                     <posX>28</posX>
+                     <posY>240</posY>
+                     <width>570</width>
+                     <font>mediastream16tc</font>
+                     <textcolor>ff909090</textcolor>
+                     <label>#TV.Scheduled.Channel</label>
+                     <animation effect="fade" time="250">WindowOpen</animation>
+                     <animation effect="fade" time="250">WindowClose</animation>
+                     <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+                     <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+              </control>
               <control>
                      <description>Current program title</description>
                      <type>fadelabel</type>
                      <id>13</id>
                      <posX>28</posX>
-                     <posY>240</posY>
+                     <posY>275</posY>
                      <width>570</width>
                      <font>mediastream12tc</font>
                      <textcolor>ff909090</textcolor>
@@ -198,9 +213,9 @@
               <control>
                      <description>Current program genre</description>
                      <type>label</type>
-                     <id>14</id>
+                     <id>17</id>
                      <posX>28</posX>
-                     <posY>265</posY>
+                     <posY>300</posY>
                      <font>mediastream11tc</font>
                      <textcolor>ff006698</textcolor>
                      <label>#TV.Scheduled.Genre</label>
@@ -214,7 +229,7 @@
                      <type>label</type>
                      <id>14</id>
                      <posX>28</posX>
-                     <posY>287</posY>
+                     <posY>322</posY>
                      <font>mediastream11tc</font>
                      <label>#TV.Scheduled.Time</label>
                      <animation effect="fade" time="250">WindowOpen</animation>
@@ -227,9 +242,9 @@
                      <type>textboxscrollup</type>
                      <id>15</id>
                      <posX>28</posX>
-                     <posY>312</posY>
+                     <posY>347</posY>
                      <width>570</width>
-                     <height>348</height>
+                     <height>313</height>
                      <font>mediastream12</font>
                      <seperator>----------------------------------------------------------------------------------------------------</seperator>
                      <label>#TV.Scheduled.Description</label>

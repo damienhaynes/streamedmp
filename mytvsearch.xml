@@ -6,6 +6,7 @@
        <define>#header.image:-</define>
        <define>#header.label:724</define>
        <define>#header.hover:-</define>
+       <define>#useRandomTVSeriesFanart:Yes</define>
        <controls>
               <import>common.window.tv.xml</import>
               <import>common.time.xml</import>
@@ -163,7 +164,7 @@
                      <posY>240</posY>
                      <width>570</width>
                      <label>#TV.Search.Channel</label>
-                     <font>mediastream14tc</font>
+                     <font>mediastream16tc</font>
                      <textcolor>ff909090</textcolor>
                      <animation effect="fade" time="250">WindowOpen</animation>
                      <animation effect="fade" time="250">WindowClose</animation>
@@ -173,7 +174,7 @@
                      <description>Selected item Label</description>
                      <id>1</id>
                      <posX>28</posX>
-                     <posY>273</posY>
+                     <posY>275</posY>
                      <width>570</width>
                      <label>#selecteditem</label>
                      <font>mediastream12tc</font>
@@ -186,7 +187,7 @@
                      <type>fadelabel</type>
                      <id>13</id>
                      <posX>28</posX>
-                     <posY>273</posY>
+                     <posY>275</posY>
                      <width>570</width>
                      <font>mediastream12tc</font>
                      <label>-</label>
@@ -198,7 +199,7 @@
                      <type>fadelabel</type>
                      <id>1</id>
                      <posX>28</posX>
-                     <posY>273</posY>
+                     <posY>275</posY>
                      <width>570</width>
                      <font>mediastream12tc</font>
                      <label>#TV.Search.Title</label>
@@ -221,7 +222,7 @@
                      <description>genre</description>
                      <id>17</id>
                      <posX>28</posX>
-                     <posY>302</posY>
+                     <posY>300</posY>
                      <width>468</width>
                      <font>mediastream11tc</font>
                      <label>#TV.Search.Genre</label>
