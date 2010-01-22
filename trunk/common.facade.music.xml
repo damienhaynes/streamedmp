@@ -10,6 +10,8 @@
                         <height>47</height>
                         <texture>imagestreamtitle.png</texture>
                         <visible>!facadeview.filmstrip</visible>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <type>image</type>
@@ -20,6 +22,8 @@
                         <height>42</height>
                         <texture>imagestreamtitle.png</texture>
                         <visible>facadeview.filmstrip</visible>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <description>Page Count Background</description>
@@ -61,6 +65,8 @@
                         <font>mediastream16tc</font>
                         <visible>!facadeview.filmstrip</visible>
                         <label>#selecteditem</label>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <description>Selected item Label</description>
@@ -73,6 +79,8 @@
                         <visible>facadeview.filmstrip</visible>
                         <align>center</align>
                         <label>#selecteditem</label>
+                        <animation effect="fade" time="150">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <description>group element</description>
