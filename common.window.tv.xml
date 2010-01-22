@@ -34,8 +34,10 @@
                      <height>720</height>
                      <texture>#fanarthandler.tvseries.backdrop1.any</texture>
                      <visible>control.isvisible(91919297)</visible>
-                     <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-                     <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+                     <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
+                     <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
+                     <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" >Visible</animation>
+                     <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
               </control>
               <control>
                      <description>FANART IMAGE 2</description>
@@ -47,8 +49,10 @@
                      <height>720</height>
                      <texture>#fanarthandler.tvseries.backdrop2.any</texture>
                      <visible>control.isvisible(91919298)</visible>
-                     <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-                     <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+                     <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
+                     <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
+                     <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0" >Visible</animation>
+                     <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
               </control>
               <control>
                      <description>tv background image</description>
@@ -116,29 +120,5 @@
                      <texture>clockbackground.png</texture>
                      <animation effect="fade" time="50">WindowClose</animation>
               </control>
-              <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
-              <!--
-    <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>617</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <label>LABEL</label>
-    </control>
-    -->
        </controls>
 </window>
