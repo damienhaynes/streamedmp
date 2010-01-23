@@ -219,7 +219,9 @@ STRING g_sThumbsDir;
 STRING g_sTVLogosDir;
 STRING g_sCacheDir; 
 STRING g_sPluginsDir;
-STRING g_sConfigDir;
+STRING g_sConfigDir;    
+STRING g_sFanartDir;    
+STRING g_sDatabaseDir;
 
 // Colour Variables
 STRING g_sTextColor;
@@ -302,13 +304,21 @@ begin
 	    // Append thumbs to program data dir    
 		g_sThumbsDir = svValue^"thumbs";
 	endif;
-	g_sTVLogosDir = g_sThumbsDir^"tv\\logos";
+	g_sTVLogosDir = g_sThumbsDir^"tv\\logos";    
+	g_sFanartDir = g_sThumbsDir^"Skin Fanart";
 	
 	if GetMediaPortalDirs("Cache",g_sCacheDir) < 0 then
 		if GetMediaPortalConfigDir(svValue) < 0 then;
 	    	svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
 	    endif;
 		g_sCacheDir = svValue^"Cache";
+	endif;  
+	
+	if GetMediaPortalDirs("Database",g_sDatabaseDir) < 0 then
+		if GetMediaPortalConfigDir(svValue) < 0 then;
+	    	svValue = CommonAppDataFolder^"Team MediaPortal\\MediaPortal";
+	    endif;
+		g_sDatabaseDir = svValue^"Database";
 	endif;
    	
    	// Set MSI Dirs as properties   	
@@ -317,6 +327,8 @@ begin
    	MsiSetProperty(ISMSI_HANDLE,"MPPLUGINSDIR",g_sPluginsDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPCONFIGDIR",g_sConfigDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPBINDIR",g_sMediaPortalProgramDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPFANARTDIR",g_sFanartDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPDATABASEDIR",g_sDatabaseDir);
    	   	
 	// Set Installation Directories used by MSI	
 	FeatureSetTarget(MEDIA,"<MPTVLOGOSDIR>",g_sTVLogosDir);
@@ -324,6 +336,8 @@ begin
 	FeatureSetTarget(MEDIA,"<MPPLUGINSDIR>",g_sPluginsDir);
 	FeatureSetTarget(MEDIA,"<MPCONFIGDIR>",g_sConfigDir);
 	FeatureSetTarget(MEDIA,"<MPBINDIR>",g_sMediaPortalProgramDir);
+	FeatureSetTarget(MEDIA,"<MPFANARTDIR>",g_sFanartDir);
+	FeatureSetTarget(MEDIA,"<MPDATABASEDIR>",g_sDatabaseDir);
 
 end;
 
