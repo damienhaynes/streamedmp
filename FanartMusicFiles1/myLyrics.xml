@@ -17,9 +17,21 @@
                       <width>1280</width>
                       <height>720</height>
                       <texture>hover_my lyrics.png</texture>
-                      <colordiffuse>90ffffff</colordiffuse>
                </control>
                <import>mymusic.autofanart.xml</import>
+               <control>
+                      <id>1</id>
+                      <description>Overlay Image</description>
+                      <animation effect="fade" time="250">WindowOpen</animation>
+                      <animation effect="fade" time="250">WindowClose</animation>
+                      <type>image</type>
+                      <posX>0</posX>
+                      <posY>0</posY>
+                      <width>1281</width>
+                      <height>720</height>
+                      <colordiffuse>60ffffff</colordiffuse>
+                      <texture>black.png</texture>
+               </control>
                <control>
                       <id>1</id>
                       <description>Overlay Image</description>
