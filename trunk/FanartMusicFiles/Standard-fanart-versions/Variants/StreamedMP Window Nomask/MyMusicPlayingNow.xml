@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>510</id>
+  <defaultcontrol>1141</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <vumeter>yes</vumeter>
+  <define>#header.hover:hover_my music.png</define>
+  <!--
+  	The next two <define> statments select the overlay
+  	Choices
+  		1.	No overlay mask
+  		 						<define>#overlay.album:-</define>
+  								<define>#overlay.fanart:-</define>
+  										
+  		2.	Rounded mask with fade - window style
+  		 						<define>#overlay.album:music.album.round.faded.png</define>
+  								<define>#overlay.fanart:music.fanart.round.win.faded.png</define>
+  								  							
+  		3.	Rounded mask without fade - window style
+  		 						<define>#overlay.album:music.album.round.nofade.png</define>
+  								<define>#overlay.fanart:music.fanart.round.win.nofade.png</define  								
+  				NOTE: This requires the mymusic.nowplaying.fanart.and.overlay.win.xml overlay file - see below.
+
+  		4.	Rounded mask with fade - Edge style
+  		 						<define>#overlay.album:music.album.round.faded.png</define>
+  								<define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
+  								   
+  		4.	Rounded mask without fade - Edge style
+  		 						<define>#overlay.album:music.album.round.nofade.png</define>
+  								<define>#overlay.fanart:music.fanart.round.edge.nofade.png</define>   
+  		    NOTE: This requires the mymusic.nowplaying.fanart.and.overlay.edge.xml overlay file - see below.
+  -->
+  <define>#overlay.album:-</define>
+  <define>#overlay.fanart:-</define>
+<!--
+				The next 2 <define> statments control how the cdcover/artist is displayed
+				
+				#use.cd.and.artist
+				Default : yes 
+				This is the standard for MediaPortal and swaps between cdcover and artist image
+				
+				#use.cdcover.only
+				Default : no
+				Set this to yes if you want a static cd cover only
+				
+				NOTE: Both can not be yes or no
+				
+-->
+  <define>#use.cd.and.artist:no</define>
+  <define>#use.cdcover.only:yes</define>
+  <controls>
+  	 <control>
+      <description>music background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+    </control>  	
+    <control>
+      <type>image</type>
+      <description>album art image (rotating)</description>
+      <id>112</id>
+      <posX>20</posX>
+      <posY>45</posY>
+      <width>370</width>
+      <height>347</height>
+      <texture>-</texture>
+      <visible>#use.cd.and.artist</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>album art image (Fixed)</description>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>45</posY>
+      <width>370</width>
+      <height>347</height>
+      <texture>-</texture>
+      <texture>#Play.Current.Thumb</texture>
+      <visible>#use.cdover.only</visible>
+    </control>
+<!--
+    There are two overlay import files
+    
+    	1.	Display fanart in a window mask in the top right of the sceen, use this file
+    		mymusic.nowplaying.fanart.and.overlay.win.xml
+    		
+    	2.	Display fanart to the top and right edge, use this file
+    		mymusic.nowplaying.fanart.and.overlay.edge.xml
+    	
+-->   
+    <import>mymusic.nowplaying.fanart.and.overlay.win.xml</import>
+    
+    <control>
+      <type>multiimage</type>
+      <id>9990</id>
+      <posX>25</posX>
+      <posY>620</posY>
+      <width>170</width>
+      <height>60</height>
+      <imagepath>Play</imagepath>
+      <timeperimage>50</timeperimage>
+      <fadetime>10</fadetime>
+      <loop>yes</loop>
+      <randomize>yes</randomize>
+      <visible>Player.HasAudio + Player.playing</visible>
+      <animation effect="fade" time="10">VisibleChange</animation>
+    </control>
+    <import>music.nowplaying.common.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
+</window>
