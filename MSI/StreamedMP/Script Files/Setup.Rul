@@ -59,38 +59,48 @@
 #define DEFAULT_FEATURE_TVSERIES_10x4_WIDEBANNERS	"Main\\defaultTVSeries10x4WideBanners"
 #define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
 
-#define TVGUIDE08_FEATURE_OPTIONS		"Main\\tvguide08Options"
-#define TVGUIDE10_FEATURE_OPTIONS		"Main\\tvguide10Options"
-#define TVGUIDE12_FEATURE_OPTIONS		"Main\\tvguide12Options"
+#define TVGUIDE08_FEATURE_OPTIONS					"Main\\tvguide08Options"
+#define TVGUIDE10_FEATURE_OPTIONS					"Main\\tvguide10Options"
+#define TVGUIDE12_FEATURE_OPTIONS					"Main\\tvguide12Options"
 
-#define FONTSDEF_FEATURE_OPTIONS		"Main\\fontsDefOptions"
-#define FONTSLGE_FEATURE_OPTIONS		"Main\\fontsLgeOptions"
+#define FONTSDEF_FEATURE_OPTIONS					"Main\\fontsDefOptions"
+#define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"
 
-#define TVSERIES_MULTIIMAGE_OPTION		"Main\\tvseriesMultiImageIcons"
-#define TVSERIES_SINGLEIMAGE_OPTION		"Main\\tvseriesSingleImageIcons"
+#define TVSERIES_MULTIIMAGE_OPTION					"Main\\tvseriesMultiImageIcons"
+#define TVSERIES_SINGLEIMAGE_OPTION					"Main\\tvseriesSingleImageIcons"
 
-#define HIDDENMENU_IMAGE_OPTION			"Main\\hiddenMenuImage"
+#define HIDDENMENU_IMAGE_OPTION						"Main\\hiddenMenuImage"
+
+#define NOWPLAYING_DEFAULT							"Main\\nowPlayingDefault"
+#define NOWPLAYING_FULLSCREEN_HIDDENMENU            "Main\\nowPlayingFullscreenHiddenMenu"
+#define NOWPLAYING_EDGE_FADE                        "Main\\nowPlayingEdgeFade"
+#define NOWPLAYING_EDGE_NOFADE                      "Main\\nowPlayingEdgeNoFade"
+#define NOWPLAYING_EDGE_NOMASK                      "Main\\nowPlayingEdgeNoMask"
+#define NOWPLAYING_WINDOW_FADE                      "Main\\nowPlayingWindowFade"
+#define NOWPLAYING_WINDOW_NOFADE                    "Main\\nowPlayingWindowNoFade"
+#define NOWPLAYING_WINDOW_NOMASK                    "Main\\nowPlayingWindowNoMask"
+
 
 // Program executable defines
-#define STREAMEDMP_EDITOR_FILE				INSTALLDIR^SKIN_NAME^"streamedmpeditor.exe"
-#define STREAMEDMP_SKIN_TVSERIES			INSTALLDIR^SKIN_NAME^"TVSeries.xml"
-#define STREAMEDMP_SKIN_MOVINGPICTURES		INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
-#define STREAMEDMP_SKIN_TVSERIESSETTINGS	INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
-#define STREAMEDMP_SKIN_REFERENCES			INSTALLDIR^SKIN_NAME^"references.xml"       
-#define STREAMEDMP_SKIN_COMMOVERLAYHOME		INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
-#define STREAMEDMP_SKIN_COMMOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlays.xml"
-#define STREAMEDMP_SKIN_COMMOVERLAY2		INSTALLDIR^SKIN_NAME^"common.overlays2.xml"
-#define STREAMEDMP_SKIN_BASICHOMEOVERLAY	INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
-#define STREAMEDMP_SKIN_BASICHOMEOVERLAY2	INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
-#define STREAMEDMP_SKIN_MOVPICSOVERLAY		INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
-#define STREAMEDMP_SKIN_EMULATORS			INSTALLDIR^SKIN_NAME^"myEmulators.xml"
+#define STREAMEDMP_EDITOR_FILE						INSTALLDIR^SKIN_NAME^"streamedmpeditor.exe"
+#define STREAMEDMP_SKIN_TVSERIES					INSTALLDIR^SKIN_NAME^"TVSeries.xml"
+#define STREAMEDMP_SKIN_MOVINGPICTURES				INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
+#define STREAMEDMP_SKIN_TVSERIESSETTINGS			INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
+#define STREAMEDMP_SKIN_REFERENCES					INSTALLDIR^SKIN_NAME^"references.xml"       
+#define STREAMEDMP_SKIN_COMMOVERLAYHOME				INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
+#define STREAMEDMP_SKIN_COMMOVERLAY					INSTALLDIR^SKIN_NAME^"common.overlays.xml"
+#define STREAMEDMP_SKIN_COMMOVERLAY2				INSTALLDIR^SKIN_NAME^"common.overlays2.xml"
+#define STREAMEDMP_SKIN_BASICHOMEOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
+#define STREAMEDMP_SKIN_BASICHOMEOVERLAY2			INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
+#define STREAMEDMP_SKIN_MOVPICSOVERLAY				INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
+#define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 
 // Version Defines
 #define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.23477" 	// 1.1.0 Beta
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
-#define TVSERIES_MIN_VERSION				"2.3.3642.4"
+#define TVSERIES_MIN_VERSION				"2.5.0.0"
 #define MOVINGPICTURES_MIN_VERSION			"1.0.1.1001"
 
 // XML Path Defines
@@ -119,6 +129,7 @@
 #define RES_DLG_MOVINGPICSSELECT		13001
 #define RES_DLG_OPTIONS					13002
 #define RES_DLG_TVSERIESADVANCED		13003
+#define RES_DLG_MUSICNOWPLAYING			13004
 
 // Dialog Controls
 #define RES_RADIO_CHOICE1				1400
@@ -142,6 +153,18 @@
 #define RES_BUTTON_UNFOCUSEDALPHA		1413
 #define RES_CHECK_SHOWHIDDENMENUIMAGE	1414
 
+#define RES_BMP_NOWPLAYINGDEFAULT					1400
+#define RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU		1401
+#define RES_BMP_NOWPLAYINGEDGEFADE					1402
+#define RES_BMP_NOWPLAYINGEDGENOFADE				1403
+#define RES_BMP_NOWPLAYINGEDGENOMASK				1404
+#define RES_BMP_NOWPLAYINGWINDOWFADE				1405
+#define RES_BMP_NOWPLAYINGWINDOWNOFADE				1406
+#define RES_BMP_NOWPLAYINGWINDOWNOMASK				1407
+
+#define RES_COMBO_NOWPLAYINGCHOICE					1420
+    
+    
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
 #define RES_PBUT_CLOSE		  			2     			// ID of the (X) button
@@ -184,12 +207,16 @@ prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
 prototype VOID		ModifySkinFiles(BOOL);
-prototype VOID		GetListFacadeColors();
+prototype VOID		GetListFacadeColors(); 
+prototype VOID 		ShowNowPlayingPreviewImage(STRING);
+prototype VOID 		HideControl(STRING, NUMBER);   
+prototype VOID 		ShowControl(STRING, NUMBER);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
 prototype NUMBER 	ShowSelectOptions(BOOL);
-prototype NUMBER 	ShowTVSeriesAdvanced(BOOL);
+prototype NUMBER 	ShowTVSeriesAdvanced(BOOL); 
+prototype NUMBER	ShowSelectNowPlaying(BOOL);
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
@@ -211,7 +238,8 @@ STRING g_sDownloadInstallDir;
 STRING g_sVUMeter;
 STRING g_sWideBannerLayout;
 STRING g_sUnfocusedAlphaListItems;
-STRING g_sUnfocusedAlphaThumbs;
+STRING g_sUnfocusedAlphaThumbs;  
+STRING g_sNowPlayingChoice;
   
 STRING g_sMediaPortalProgramDir;
 STRING g_sLanguageDir;
@@ -460,6 +488,11 @@ begin
 		g_sUnfocusedAlphaThumbs = "100";
 	endif;
 	
+	// Read NowPlaying Style default
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"NOWPLAYINGSTYLE",nvType,g_sNowPlayingChoice,nvSize) < 0) then
+		g_sNowPlayingChoice = "Default";							
+	endif;
+		
 	// Get List Facade Colors
 	GetListFacadeColors();
 	
@@ -625,9 +658,13 @@ Dlg_SelectMovingPictures:
 	nResult = ShowSelectMovingPics(FALSE);
 	if (nResult = BACK) goto Dlg_SelectTVSeries;  
 
+Dlg_SelectNowPlaying:
+	nResult = ShowSelectNowPlaying(FALSE);
+	if (nResult = BACK) goto Dlg_SelectMovingPictures;
+	
 Dlg_SelectOptions:
 	nResult = ShowSelectOptions(FALSE);
-	if (nResult = BACK) goto Dlg_SelectMovingPictures;  
+	if (nResult = BACK) goto Dlg_SelectNowPlaying;  
 	
 Dlg_SdStartCopy:
     szTitle = "";
@@ -727,12 +764,18 @@ Dlg_SelectMovingPictures:
 	if (nType = MODIFY) then
 		nResult = ShowSelectMovingPics(FALSE);
 		if (nResult = BACK) goto Dlg_SelectTVSeries; 
+	endif;  
+	
+Dlg_SelectNowPlaying:
+	if (nType = MODIFY) then
+		nResult = ShowSelectNowPlaying(FALSE);
+		if (nResult = BACK) goto Dlg_SelectMovingPictures; 
 	endif;
 
 Dlg_SelectOptions:
 	if (nType = MODIFY) then
 		nResult = ShowSelectOptions(FALSE);
-		if (nResult = BACK) goto Dlg_SelectMovingPictures; 
+		if (nResult = BACK) goto Dlg_SelectNowPlaying; 
 	endif;
 		
 	switch(nType)
@@ -1381,19 +1424,21 @@ Dlg_Wait:
 	        	
 	        	ListAddString(listFonts,"Default",AFTER);
 	        	ListAddString(listFonts,"Large",AFTER);
+	        
 	        	// Add Font sizes to list
 	        	CtrlSetList(szDialogName,RES_COMBO_FONTS,listFonts);
 	      		
-	      		// Select Last/Default Font size  
-	      		listTVGuides = ListCreate(STRINGLIST);
-	      		
-	    		CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize); 				
+	      		// Select Last/Default Font size                                      
+				CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize); 				
  				ListDestroy(listFonts);
-	        	        	     			     			     			
- 				// Populate TVGuide size list
+	      		                                      
+	      		// Populate TVGuide size list
+	      		listTVGuides = ListCreate(STRINGLIST);	      			    	
+	        	        	     			     			     			 				
  				ListAddString(listTVGuides,"8 Rows",AFTER);
 	        	ListAddString(listTVGuides,"10 Rows",AFTER);
 	        	ListAddString(listTVGuides,"12 Rows",AFTER);
+	        	
 	        	// Add TVGuide sizes to list
 	        	CtrlSetList(szDialogName,RES_COMBO_TVGUIDE,listTVGuides);
 	    
@@ -1605,6 +1650,208 @@ Dlg_Wait:
 end;
 
 
+function number ShowSelectNowPlaying(bModify)
+	STRING szDialogName, sValue;
+	NUMBER nCmdValue;
+	BOOL bDone, bResult;
+	LIST listNowPlaying;	
+begin
+
+	szDialogName = "SelectionNowPlaying";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_MUSICNOWPLAYING);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display Now Playing dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:
+	        	// Populate font size list                               
+	        	listNowPlaying = ListCreate(STRINGLIST);
+	        	
+	        	ListAddString(listNowPlaying,"Default",AFTER);
+	        	ListAddString(listNowPlaying,"Fullscreen",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Edge Fade",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Edge No Fade",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Edge No Mask",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Window Fade",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Window No Fade",AFTER);
+	        	ListAddString(listNowPlaying,"Default - Window No Mask",AFTER);
+	        	
+	        	// Add Now Playing styles to list
+	        	CtrlSetList(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,listNowPlaying);
+	      		
+	      		// Set current selection			  
+	    		CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,g_sNowPlayingChoice); 				
+ 				ListDestroy(listNowPlaying);
+	       		
+	       		// Show corresponding Preview image
+	       		ShowNowPlayingPreviewImage(szDialogName); 				 				 			
+ 			     				 				         		      
+			case RES_COMBO_NOWPLAYINGCHOICE:
+				ShowNowPlayingPreviewImage(szDialogName);
+			  			     				 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables	
+	CtrlGetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,g_sNowPlayingChoice);
+    
+    // Set Feature Selection
+    FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_FADE, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, FALSE );
+        
+    switch (g_sNowPlayingChoice)	
+		case "Default":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );
+		
+		case "Fullscreen":
+		    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, TRUE );
+		    
+		case "Default - Edge Fade":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, TRUE );  
+			
+		case "Default - Edge No Fade":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, TRUE );
+		
+		case "Default - Edge No Mask":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, TRUE );
+		
+		case "Default - Window Fade":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_FADE, TRUE );
+		
+		case "Default - Window No Fade":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, TRUE );
+		
+		case "Default - Window No Mask":
+			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, TRUE );
+						
+		default:
+			FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );	
+		
+	endswitch;
+    
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
+
+function void ShowNowPlayingPreviewImage(szDlg)
+	STRING svSelection;
+begin
+			
+	// Hide all controls
+	HideControl(szDlg, RES_BMP_NOWPLAYINGDEFAULT);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGEFADE);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGENOFADE);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGENOMASK);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGWINDOWFADE);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGWINDOWNOFADE);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGWINDOWNOMASK);
+		
+	// Show Selected Preview image
+	CtrlGetCurSel(szDlg, RES_COMBO_NOWPLAYINGCHOICE, svSelection);
+	
+	switch (svSelection)	
+		case "Default":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGDEFAULT);
+		
+		case "Fullscreen":
+		    ShowControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU);
+		    
+		case "Default - Edge Fade":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGEDGEFADE);  
+			
+		case "Default - Edge No Fade":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGEDGENOFADE);
+		
+		case "Default - Edge No Mask":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGEDGENOMASK);
+		
+		case "Default - Window Fade":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGWINDOWFADE);
+		
+		case "Default - Window No Fade":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGWINDOWNOFADE);
+		
+		case "Default - Window No Mask":
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGWINDOWNOMASK);
+						
+		default:
+			ShowControl(szDlg, RES_BMP_NOWPLAYINGDEFAULT);	
+		
+	endswitch;	
+	
+end;
+
+function void HideControl(szDlg, controlID)
+	HWND  	hwndDlg, hCtrl;
+	NUMBER	nResult;
+begin
+      
+    // Get Handle of Dialog
+	hwndDlg = CmdGetHwndDlg( szDlg );
+	
+	// Get Handle of Control
+	hCtrl = GetDlgItem(hwndDlg, controlID); 
+	
+	// Hide Control
+	nResult = ShowWindow(hCtrl, SW_HIDE);
+	
+end;
+
+function void ShowControl(szDlg, controlID)
+	HWND  	hwndDlg, hCtrl;
+	NUMBER	nResult;
+begin
+      
+    // Get Handle of Dialog
+	hwndDlg = CmdGetHwndDlg( szDlg );
+	
+	// Get Handle of Control
+	hCtrl = GetDlgItem(hwndDlg, controlID); 
+	
+	// Hide Control
+	nResult = ShowWindow(hCtrl, SW_SHOW);
+	
+end;
+
+
 function VOID UpdateSettings()
 	STRING svString, sFile, sArtistImage;
 	BOOL bReturn;		
@@ -1620,7 +1867,9 @@ begin
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);	
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
+	
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"NOWPLAYINGSTYLE",REGDB_STRING,g_sNowPlayingChoice, -1);	
 	
 	// Update Graphics Quality for SeriesPosters, Default style does not require as much details
 	// as it uses a much smaller Filmstrip and also contains a 100% Image on item selected       
