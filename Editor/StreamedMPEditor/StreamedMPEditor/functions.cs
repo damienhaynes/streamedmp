@@ -335,6 +335,7 @@ namespace StreamedMPEditor
       cboContextLabel.Text = prettyItems[index].contextlabel;
       itemName.Text = prettyItems[index].name;
       bgBox.Text = prettyItems[index].folder;
+      cboFanartProperty.Text = prettyItems[index].fanartProperty;
       isWeather.Checked = prettyItems[index].isweather;
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;
@@ -344,6 +345,9 @@ namespace StreamedMPEditor
     {
       itemName.Text = "";
       bgBox.Text = "";
+      cboFanartProperty.Text = "";
+      cbItemFanartHandlerEnable.Checked = false;
+      cbEnableMusicNowPlayingFanart.Checked = false;
       cboContextLabel.Text = "";
       isWeather.Checked = false;
 
@@ -353,6 +357,9 @@ namespace StreamedMPEditor
     {
       // Auto fill items on new selection for quicker add
       QuickSelect(cboQuickSelect.SelectedIndex);
+      enableItemControls();
+      buttonCancelCreate.Visible = true;
+      editButton.Enabled = false;
     }
 
 
@@ -416,32 +423,51 @@ namespace StreamedMPEditor
       weatherStyle = chosenWeatherStyle.middle;
     }
 
-    private void UpdateImageControlVisibility()
+    private void UpdateImageControlVisibility(bool fanartHandlerEnabled)
     {
-      if (checkBoxMultiImage.Checked)
-      {
-        //textBoxDefaultImage.Enabled = false;
-        timeBox.Enabled = true;
-        randomChk.Enabled = true;
-        timeBox.Visible = true;
-        randomChk.Visible = true;
-        timePerImageL.Visible = true;
-        secondsL.Visible = true;
-        disableBGSharing.Visible = true;
 
-      }
-      else
-      {
-        //textBoxDefaultImage.Enabled = true;
-        timeBox.Enabled = false;
-        randomChk.Enabled = false;
-        timeBox.Visible = false;
-        randomChk.Visible = false;
-        timePerImageL.Visible = false;
-        secondsL.Visible = false;
-        disableBGSharing.Visible = false;
-      }
+        if (fanartHandlerEnabled)
+        {
+            cboFanartProperty.Visible = true;
+            labelFanartProperty.Visible = true;
+            cbEnableMusicNowPlayingFanart.Visible = true;
+            labelImageFolder.Visible = false;
+            bgBox.Visible = false;
+            folderBrowse.Visible = false;
+        }
+        else
+        {
+            // Hide the fanart selection
+            cboFanartProperty.Visible = false;
+            labelFanartProperty.Visible = false;
+            cbEnableMusicNowPlayingFanart.Visible = false;
+            //set the x,y of the skin image settings and display
+            labelImageFolder.Location = new Point(12, 52);
+            bgBox.Location = new Point(113, 49);
+            folderBrowse.Location = new Point(255, 49);
+            labelImageFolder.Visible = true;
+            bgBox.Visible = true;
+            folderBrowse.Visible = true;
+        }
     }
+
+    private void disableItemControls()
+    {
+        itemProperties.Enabled = false;
+        backgroundImages.Enabled = false;
+        addButton.Enabled = false;
+        removeButton.Enabled = true;
+        buttonCancelCreate.Visible = false;
+    }
+
+    private void enableItemControls()
+    {
+        itemProperties.Enabled = true;
+        backgroundImages.Enabled = true;
+        addButton.Enabled = true;
+        removeButton.Enabled = false;
+    }
+
     private void reloadBackgroundItems()
     {
       bgItems.Clear();
@@ -460,7 +486,9 @@ namespace StreamedMPEditor
             foreach (backgroundItem bgitem in bgItems)
             {
 
-                if ((bgitem.folder == menItem.bgFolder) && (bgitem.timeperimage.Equals(menItem.timePerImage.ToString())) && (bgitem.random.Equals(menItem.random)) && bgitem.disableBGSharing.Equals(menItem.disableBGSharing))
+                if (bgitem.folder == menItem.bgFolder && 
+                    bgitem.disableBGSharing.Equals(menItem.disableBGSharing) && 
+                    bgitem.fanartHandlerEnabled.Equals(menItem.fanartHandlerEnabled))
                 {
                     bgitem.ids.Add(menItem.id.ToString());
                     bgitem.mname.Add(menItem.name.ToString());
@@ -475,12 +503,13 @@ namespace StreamedMPEditor
         {
             backgroundItem newbgItem = new backgroundItem();
             newbgItem.folder = menItem.bgFolder;
+            newbgItem.fanartPropery = menItem.fanartProperty;
+            newbgItem.fanartHandlerEnabled = menItem.fanartHandlerEnabled;
+            newbgItem.EnableMusicNowPlayingFanart = menItem.EnableMusicNowPlayingFanart;
             newbgItem.ids.Add(menItem.id.ToString());
             newbgItem.mname.Add(menItem.name.ToString());
             newbgItem.name = menItem.name;
             newbgItem.image = menItem.defaultImage;
-            newbgItem.random = menItem.random;
-            newbgItem.timeperimage = menItem.timePerImage.ToString();
             newbgItem.isWeather = menItem.isWeather;
             newbgItem.disableBGSharing = menItem.disableBGSharing;
             bgItems.Add(newbgItem);
@@ -876,8 +905,9 @@ namespace StreamedMPEditor
 
       if (!weatherBackgoundsInstalled())
       {
-        weatherBGlink.Enabled = false;
-        weatherBGlink.Checked = false;
+          weatherBGlink.Checked = false; 
+          weatherBGlink.Enabled = false;
+
       }
       else
       {
@@ -1134,6 +1164,58 @@ namespace StreamedMPEditor
     }
 
 
+    public void checkAndSetRandomFanart(string fanartProperty)
+    {
+        // Check and set random fanart
+        if (fanartProperty.ToLower().Contains("games"))
+            randomFanart.fanartGames = true;
+        if (fanartProperty.ToLower().Contains("plugins"))
+            randomFanart.fanartPlugins = true;
+        if (fanartProperty.ToLower().Contains("picture"))
+            randomFanart.fanartPictures = true;
+        if (fanartProperty.ToLower().Contains("tv"))
+            randomFanart.fanartTv = true;
+        if (fanartProperty.ToLower().Contains("music"))
+            randomFanart.fanartMusic = true;
+        if (fanartProperty.ToLower().Contains("tvseries"))
+            randomFanart.fanartTVSeries = true;
+        if (fanartProperty.ToLower().Contains("movingpicture"))
+            randomFanart.fanartMovingPictures = true;
+        if (fanartProperty.ToLower().Contains("movie"))
+            randomFanart.fanartMovies = true;
+    }
+
+
+    private void rbRssNoImage_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbRssNoImage.Checked)
+            rssImage = rssImageType.noImage;
+    }
+
+    private void rbRssSkinImage_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbRssSkinImage.Checked)
+            rssImage = rssImageType.skinImage;
+    }
+
+    private void rbRssInfoServiceImage_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbRssInfoServiceImage.Checked)
+            rssImage = rssImageType.infoserviceImage;
+    }
+
+    private void cbItemFanartHandlerEnable_CheckedChanged(object sender, EventArgs e)
+    {
+        UpdateImageControlVisibility(cbItemFanartHandlerEnable.Checked);
+    }
+
+    private void buttonCancelCreate_Click(object sender, EventArgs e)
+    {
+        screenReset();
+        setScreenProperties(itemsOnMenubar.SelectedIndex);
+        disableItemControls();
+    }
+
     public class getAsmVersion
     {
       #region Private Variables
@@ -1296,10 +1378,11 @@ namespace StreamedMPEditor
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
+      public bool fanartHandlerEnabled;
+      public bool EnableMusicNowPlayingFanart;
+      public string fanartProperty;
       public string name;
       public int id;
-      public int timePerImage;
-      public bool random;
       public bool updateStatus;
       public string contextLabel;
       public string defaultImage;
@@ -1310,11 +1393,12 @@ namespace StreamedMPEditor
     {
         public string name;
         public string folder;
+        public string fanartPropery;
+        public bool fanartHandlerEnabled;
+        public bool EnableMusicNowPlayingFanart;
         public string image;
         public List<string> ids = new List<string>();
         public List<string> mname = new List<string>();
-        public bool random;
-        public string timeperimage;
         public bool isWeather;
         public bool disableBGSharing;
     }
@@ -1336,6 +1420,8 @@ namespace StreamedMPEditor
       public string name;
       public string name2;
       public string folder;
+      public string fanartProperty;
+      public bool fanartHandlerEnabled;
       public string contextlabel;
       public string xmlfile;
       public bool isweather;
@@ -1352,6 +1438,18 @@ namespace StreamedMPEditor
       public string pluginPath;
       public string backgroundPath;
     }
+
+      public struct randomFanartSetting
+      {
+          public bool fanartGames;
+          public bool fanartTVSeries;
+          public bool fanartPlugins;
+          public bool fanartMovingPictures;
+          public bool fanartMusic;
+          public bool fanartPictures;
+          public bool fanartTv;
+          public bool fanartMovies;
+      }
 
     public struct editorValues
     {

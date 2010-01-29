@@ -51,6 +51,10 @@ namespace StreamedMPEditor
       int xPos = 16, yPos = 51;
       foreach (backgroundItem bgItem in bgItems)
       {
+
+          if (bgItem.fanartHandlerEnabled)
+              goto abortpbox;
+
         PictureBox newPBox = new PictureBox();
         Label newBGlabel = new Label();
         Label newBGCount = new Label();
@@ -133,6 +137,7 @@ namespace StreamedMPEditor
           yPos += 126;
           xPos = 16;
         }
+    abortpbox: ;
       }
 
       // Create Panel

@@ -55,6 +55,7 @@
         this.pictureBox5 = new System.Windows.Forms.PictureBox();
         this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
         this.basicHomeDesign = new System.Windows.Forms.TabPage();
+        this.richTextBox2 = new System.Windows.Forms.RichTextBox();
         this.groupBox3 = new System.Windows.Forms.GroupBox();
         this.selectedWindowID = new System.Windows.Forms.Label();
         this.selectedWindowIDL = new System.Windows.Forms.Label();
@@ -65,7 +66,7 @@
         this.cboQuickSelect = new System.Windows.Forms.ComboBox();
         this.btMoveDown = new System.Windows.Forms.Button();
         this.btMoveUp = new System.Windows.Forms.Button();
-        this.cancleButton = new System.Windows.Forms.Button();
+        this.cancelButton = new System.Windows.Forms.Button();
         this.editButton = new System.Windows.Forms.Button();
         this.saveButton = new System.Windows.Forms.Button();
         this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -82,15 +83,16 @@
         this.removeButton = new System.Windows.Forms.Button();
         this.addButton = new System.Windows.Forms.Button();
         this.backgroundImages = new System.Windows.Forms.GroupBox();
+        this.cbEnableMusicNowPlayingFanart = new System.Windows.Forms.CheckBox();
+        this.cbItemFanartHandlerEnable = new System.Windows.Forms.CheckBox();
+        this.cboFanartProperty = new System.Windows.Forms.ComboBox();
+        this.labelFanartProperty = new System.Windows.Forms.Label();
         this.disableBGSharing = new System.Windows.Forms.CheckBox();
         this.folderBrowse = new System.Windows.Forms.Button();
-        this.randomChk = new System.Windows.Forms.CheckBox();
         this.bgBox = new System.Windows.Forms.ComboBox();
-        this.secondsL = new System.Windows.Forms.Label();
-        this.timeBox = new System.Windows.Forms.TextBox();
-        this.timePerImageL = new System.Windows.Forms.Label();
-        this.label12 = new System.Windows.Forms.Label();
+        this.labelImageFolder = new System.Windows.Forms.Label();
         this.itemProperties = new System.Windows.Forms.GroupBox();
+        this.buttonCancelCreate = new System.Windows.Forms.Button();
         this.cboContextLabel = new System.Windows.Forms.ComboBox();
         this.label18 = new System.Windows.Forms.Label();
         this.isWeather = new System.Windows.Forms.CheckBox();
@@ -119,7 +121,6 @@
         this.enableTwitter = new System.Windows.Forms.CheckBox();
         this.enableRssfeed = new System.Windows.Forms.CheckBox();
         this.globalSettings = new System.Windows.Forms.GroupBox();
-        this.checkBoxMultiImage = new System.Windows.Forms.CheckBox();
         this.noFocusAlphaLabel = new System.Windows.Forms.Label();
         this.focusAlphaLabel = new System.Windows.Forms.Label();
         this.wrapString = new System.Windows.Forms.CheckBox();
@@ -504,13 +505,14 @@
         // 
         // basicHomeDesign
         // 
+        this.basicHomeDesign.Controls.Add(this.richTextBox2);
         this.basicHomeDesign.Controls.Add(this.groupBox3);
         this.basicHomeDesign.Controls.Add(this.label20);
         this.basicHomeDesign.Controls.Add(this.label19);
         this.basicHomeDesign.Controls.Add(this.cboQuickSelect);
         this.basicHomeDesign.Controls.Add(this.btMoveDown);
         this.basicHomeDesign.Controls.Add(this.btMoveUp);
-        this.basicHomeDesign.Controls.Add(this.cancleButton);
+        this.basicHomeDesign.Controls.Add(this.cancelButton);
         this.basicHomeDesign.Controls.Add(this.editButton);
         this.basicHomeDesign.Controls.Add(this.saveButton);
         this.basicHomeDesign.Controls.Add(this.groupBox1);
@@ -528,6 +530,18 @@
         this.basicHomeDesign.Text = "BasicHome Design";
         this.basicHomeDesign.UseVisualStyleBackColor = true;
         // 
+        // richTextBox2
+        // 
+        this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+        this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+        this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.richTextBox2.Location = new System.Drawing.Point(3, 357);
+        this.richTextBox2.Name = "richTextBox2";
+        this.richTextBox2.Size = new System.Drawing.Size(197, 56);
+        this.richTextBox2.TabIndex = 122;
+        this.richTextBox2.Text = "To create new menu item\n  1. Select Menu Item from Dropdown.\n  2. Select Skin fil" +
+            "e from List.";
+        // 
         // groupBox3
         // 
         this.groupBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -535,7 +549,7 @@
         this.groupBox3.Controls.Add(this.selectedWindowIDL);
         this.groupBox3.Controls.Add(this.selectedWindow);
         this.groupBox3.Controls.Add(this.selectedWindowL);
-        this.groupBox3.Location = new System.Drawing.Point(211, 139);
+        this.groupBox3.Location = new System.Drawing.Point(211, 122);
         this.groupBox3.Name = "groupBox3";
         this.groupBox3.Size = new System.Drawing.Size(321, 59);
         this.groupBox3.TabIndex = 121;
@@ -581,7 +595,7 @@
         // label20
         // 
         this.label20.AutoSize = true;
-        this.label20.Location = new System.Drawing.Point(537, 13);
+        this.label20.Location = new System.Drawing.Point(537, 6);
         this.label20.Name = "label20";
         this.label20.Size = new System.Drawing.Size(77, 13);
         this.label20.TabIndex = 120;
@@ -590,7 +604,7 @@
         // label19
         // 
         this.label19.AutoSize = true;
-        this.label19.Location = new System.Drawing.Point(6, 13);
+        this.label19.Location = new System.Drawing.Point(6, 6);
         this.label19.Name = "label19";
         this.label19.Size = new System.Drawing.Size(78, 13);
         this.label19.TabIndex = 119;
@@ -600,7 +614,7 @@
         // 
         this.cboQuickSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
         this.cboQuickSelect.FormattingEnabled = true;
-        this.cboQuickSelect.Location = new System.Drawing.Point(3, 38);
+        this.cboQuickSelect.Location = new System.Drawing.Point(3, 22);
         this.cboQuickSelect.Name = "cboQuickSelect";
         this.cboQuickSelect.Size = new System.Drawing.Size(198, 21);
         this.cboQuickSelect.TabIndex = 117;
@@ -619,22 +633,21 @@
         // btMoveUp
         // 
         this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
-        this.btMoveUp.Location = new System.Drawing.Point(713, 38);
+        this.btMoveUp.Location = new System.Drawing.Point(713, 23);
         this.btMoveUp.Name = "btMoveUp";
         this.btMoveUp.Size = new System.Drawing.Size(33, 116);
         this.btMoveUp.TabIndex = 115;
         this.btMoveUp.UseVisualStyleBackColor = true;
         this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
         // 
-        // cancleButton
+        // cancelButton
         // 
-        this.cancleButton.Location = new System.Drawing.Point(602, 274);
-        this.cancleButton.Name = "cancleButton";
-        this.cancleButton.Size = new System.Drawing.Size(49, 21);
-        this.cancleButton.TabIndex = 114;
-        this.cancleButton.Text = "Cancel";
-        this.cancleButton.UseVisualStyleBackColor = true;
-        this.cancleButton.Click += new System.EventHandler(this.cancleButton_Click);
+        this.cancelButton.Location = new System.Drawing.Point(602, 274);
+        this.cancelButton.Name = "cancelButton";
+        this.cancelButton.Size = new System.Drawing.Size(49, 21);
+        this.cancelButton.TabIndex = 114;
+        this.cancelButton.Text = "Cancel";
+        this.cancelButton.UseVisualStyleBackColor = true;
         // 
         // editButton
         // 
@@ -791,54 +804,94 @@
         // 
         // backgroundImages
         // 
+        this.backgroundImages.Controls.Add(this.cbEnableMusicNowPlayingFanart);
+        this.backgroundImages.Controls.Add(this.cbItemFanartHandlerEnable);
+        this.backgroundImages.Controls.Add(this.cboFanartProperty);
+        this.backgroundImages.Controls.Add(this.labelFanartProperty);
         this.backgroundImages.Controls.Add(this.disableBGSharing);
         this.backgroundImages.Controls.Add(this.folderBrowse);
-        this.backgroundImages.Controls.Add(this.randomChk);
         this.backgroundImages.Controls.Add(this.bgBox);
-        this.backgroundImages.Controls.Add(this.secondsL);
-        this.backgroundImages.Controls.Add(this.timeBox);
-        this.backgroundImages.Controls.Add(this.timePerImageL);
-        this.backgroundImages.Controls.Add(this.label12);
-        this.backgroundImages.Location = new System.Drawing.Point(211, 213);
+        this.backgroundImages.Controls.Add(this.labelImageFolder);
+        this.backgroundImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.backgroundImages.Location = new System.Drawing.Point(211, 189);
         this.backgroundImages.Name = "backgroundImages";
-        this.backgroundImages.Size = new System.Drawing.Size(321, 129);
+        this.backgroundImages.Size = new System.Drawing.Size(321, 161);
         this.backgroundImages.TabIndex = 108;
         this.backgroundImages.TabStop = false;
         this.backgroundImages.Text = "Background Image Options";
         // 
+        // cbEnableMusicNowPlayingFanart
+        // 
+        this.cbEnableMusicNowPlayingFanart.AutoSize = true;
+        this.cbEnableMusicNowPlayingFanart.Location = new System.Drawing.Point(10, 46);
+        this.cbEnableMusicNowPlayingFanart.Name = "cbEnableMusicNowPlayingFanart";
+        this.cbEnableMusicNowPlayingFanart.Size = new System.Drawing.Size(223, 17);
+        this.cbEnableMusicNowPlayingFanart.TabIndex = 50;
+        this.cbEnableMusicNowPlayingFanart.Text = "Enable Music Now Playing Fanart for Item";
+        this.cbEnableMusicNowPlayingFanart.UseVisualStyleBackColor = true;
+        // 
+        // cbItemFanartHandlerEnable
+        // 
+        this.cbItemFanartHandlerEnable.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+        this.cbItemFanartHandlerEnable.AutoSize = true;
+        this.cbItemFanartHandlerEnable.Location = new System.Drawing.Point(10, 22);
+        this.cbItemFanartHandlerEnable.Name = "cbItemFanartHandlerEnable";
+        this.cbItemFanartHandlerEnable.Size = new System.Drawing.Size(187, 17);
+        this.cbItemFanartHandlerEnable.TabIndex = 49;
+        this.cbItemFanartHandlerEnable.Text = "Enable Fanart Hander for this Item";
+        this.cbItemFanartHandlerEnable.UseVisualStyleBackColor = true;
+        this.cbItemFanartHandlerEnable.CheckedChanged += new System.EventHandler(this.cbItemFanartHandlerEnable_CheckedChanged);
+        // 
+        // cboFanartProperty
+        // 
+        this.cboFanartProperty.FormattingEnabled = true;
+        this.cboFanartProperty.Items.AddRange(new object[] {
+            "games",
+            "movie",
+            "movingpicture",
+            "music",
+            "picture",
+            "plugins",
+            "scoresentre",
+            "tv",
+            "tvseries"});
+        this.cboFanartProperty.Location = new System.Drawing.Point(113, 72);
+        this.cboFanartProperty.Name = "cboFanartProperty";
+        this.cboFanartProperty.Size = new System.Drawing.Size(201, 21);
+        this.cboFanartProperty.TabIndex = 0;
+        this.toolTip1.SetToolTip(this.cboFanartProperty, "games                  - Random Fanart From Skin Fart/Games\r\nmovie               " +
+                "    - Random Fanart From SkinFanart/Movie\r\nmovingpicture\r\nmusic\r\npicture\r\nplugin" +
+                "s\r\nscoresentre\r\ntv\r\ntvseries");
+        // 
+        // labelFanartProperty
+        // 
+        this.labelFanartProperty.AutoSize = true;
+        this.labelFanartProperty.Location = new System.Drawing.Point(6, 75);
+        this.labelFanartProperty.Name = "labelFanartProperty";
+        this.labelFanartProperty.Size = new System.Drawing.Size(109, 13);
+        this.labelFanartProperty.TabIndex = 1;
+        this.labelFanartProperty.Text = "Fanart Base Property:";
+        // 
         // disableBGSharing
         // 
         this.disableBGSharing.AutoSize = true;
-        this.disableBGSharing.Location = new System.Drawing.Point(10, 103);
+        this.disableBGSharing.Location = new System.Drawing.Point(15, 134);
         this.disableBGSharing.Name = "disableBGSharing";
-        this.disableBGSharing.Size = new System.Drawing.Size(161, 17);
+        this.disableBGSharing.Size = new System.Drawing.Size(218, 17);
         this.disableBGSharing.TabIndex = 48;
-        this.disableBGSharing.Text = "Disable Background Sharing";
+        this.disableBGSharing.Text = "Disable Background Sharing for this Item";
         this.toolTip1.SetToolTip(this.disableBGSharing, resources.GetString("disableBGSharing.ToolTip"));
         this.disableBGSharing.UseVisualStyleBackColor = true;
         // 
         // folderBrowse
         // 
-        this.folderBrowse.Location = new System.Drawing.Point(248, 27);
+        this.folderBrowse.Location = new System.Drawing.Point(255, 103);
         this.folderBrowse.Name = "folderBrowse";
         this.folderBrowse.Size = new System.Drawing.Size(59, 21);
         this.folderBrowse.TabIndex = 47;
         this.folderBrowse.Text = "Browse..";
         this.folderBrowse.UseVisualStyleBackColor = true;
         this.folderBrowse.Click += new System.EventHandler(this.browseButton_Click);
-        // 
-        // randomChk
-        // 
-        this.randomChk.AutoSize = true;
-        this.randomChk.Checked = true;
-        this.randomChk.CheckState = System.Windows.Forms.CheckState.Checked;
-        this.randomChk.Enabled = false;
-        this.randomChk.Location = new System.Drawing.Point(248, 62);
-        this.randomChk.Name = "randomChk";
-        this.randomChk.Size = new System.Drawing.Size(66, 17);
-        this.randomChk.TabIndex = 4;
-        this.randomChk.Text = "Random";
-        this.randomChk.UseVisualStyleBackColor = true;
         // 
         // bgBox
         // 
@@ -854,62 +907,45 @@
             "settings",
             "tv",
             "weatherbg"});
-        this.bgBox.Location = new System.Drawing.Point(47, 26);
+        this.bgBox.Location = new System.Drawing.Point(113, 103);
         this.bgBox.Name = "bgBox";
-        this.bgBox.Size = new System.Drawing.Size(194, 21);
+        this.bgBox.Size = new System.Drawing.Size(136, 21);
         this.bgBox.TabIndex = 38;
         // 
-        // secondsL
+        // labelImageFolder
         // 
-        this.secondsL.AutoSize = true;
-        this.secondsL.Location = new System.Drawing.Point(168, 62);
-        this.secondsL.Name = "secondsL";
-        this.secondsL.Size = new System.Drawing.Size(49, 13);
-        this.secondsL.TabIndex = 21;
-        this.secondsL.Text = "Seconds";
-        // 
-        // timeBox
-        // 
-        this.timeBox.Enabled = false;
-        this.timeBox.Location = new System.Drawing.Point(97, 59);
-        this.timeBox.Name = "timeBox";
-        this.timeBox.Size = new System.Drawing.Size(68, 20);
-        this.timeBox.TabIndex = 3;
-        this.timeBox.Text = "30";
-        this.timeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-        // 
-        // timePerImageL
-        // 
-        this.timePerImageL.AutoSize = true;
-        this.timePerImageL.Location = new System.Drawing.Point(7, 62);
-        this.timePerImageL.Name = "timePerImageL";
-        this.timePerImageL.Size = new System.Drawing.Size(84, 13);
-        this.timePerImageL.TabIndex = 19;
-        this.timePerImageL.Text = "Time Per Image:";
-        // 
-        // label12
-        // 
-        this.label12.AutoSize = true;
-        this.label12.Location = new System.Drawing.Point(7, 26);
-        this.label12.Name = "label12";
-        this.label12.Size = new System.Drawing.Size(39, 13);
-        this.label12.TabIndex = 12;
-        this.label12.Text = "Folder:";
-        this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+        this.labelImageFolder.AutoSize = true;
+        this.labelImageFolder.Location = new System.Drawing.Point(12, 107);
+        this.labelImageFolder.Name = "labelImageFolder";
+        this.labelImageFolder.Size = new System.Drawing.Size(103, 13);
+        this.labelImageFolder.TabIndex = 12;
+        this.labelImageFolder.Text = "Single Image Folder:";
+        this.labelImageFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
         // 
         // itemProperties
         // 
+        this.itemProperties.Controls.Add(this.buttonCancelCreate);
         this.itemProperties.Controls.Add(this.cboContextLabel);
         this.itemProperties.Controls.Add(this.label18);
         this.itemProperties.Controls.Add(this.isWeather);
         this.itemProperties.Controls.Add(this.label9);
         this.itemProperties.Controls.Add(this.itemName);
-        this.itemProperties.Location = new System.Drawing.Point(209, 38);
+        this.itemProperties.Location = new System.Drawing.Point(211, 22);
         this.itemProperties.Name = "itemProperties";
         this.itemProperties.Size = new System.Drawing.Size(323, 95);
         this.itemProperties.TabIndex = 107;
         this.itemProperties.TabStop = false;
         this.itemProperties.Text = "Item properties";
+        // 
+        // buttonCancelCreate
+        // 
+        this.buttonCancelCreate.Location = new System.Drawing.Point(231, 19);
+        this.buttonCancelCreate.Name = "buttonCancelCreate";
+        this.buttonCancelCreate.Size = new System.Drawing.Size(86, 22);
+        this.buttonCancelCreate.TabIndex = 51;
+        this.buttonCancelCreate.Text = "Cancel";
+        this.buttonCancelCreate.UseVisualStyleBackColor = true;
+        this.buttonCancelCreate.Click += new System.EventHandler(this.buttonCancelCreate_Click);
         // 
         // cboContextLabel
         // 
@@ -976,9 +1012,9 @@
         // 
         this.itemsOnMenubar.Enabled = false;
         this.itemsOnMenubar.FormattingEnabled = true;
-        this.itemsOnMenubar.Location = new System.Drawing.Point(540, 38);
+        this.itemsOnMenubar.Location = new System.Drawing.Point(540, 23);
         this.itemsOnMenubar.Name = "itemsOnMenubar";
-        this.itemsOnMenubar.Size = new System.Drawing.Size(170, 229);
+        this.itemsOnMenubar.Size = new System.Drawing.Size(170, 244);
         this.itemsOnMenubar.TabIndex = 106;
         this.itemsOnMenubar.Click += new System.EventHandler(this.itemsOnMenubar_Click);
         // 
@@ -986,9 +1022,9 @@
         // 
         this.xmlFiles.Enabled = false;
         this.xmlFiles.FormattingEnabled = true;
-        this.xmlFiles.Location = new System.Drawing.Point(3, 60);
+        this.xmlFiles.Location = new System.Drawing.Point(3, 47);
         this.xmlFiles.Name = "xmlFiles";
-        this.xmlFiles.Size = new System.Drawing.Size(198, 355);
+        this.xmlFiles.Size = new System.Drawing.Size(198, 303);
         this.xmlFiles.TabIndex = 105;
         this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
         this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
@@ -1215,7 +1251,6 @@
         // 
         // globalSettings
         // 
-        this.globalSettings.Controls.Add(this.checkBoxMultiImage);
         this.globalSettings.Controls.Add(this.noFocusAlphaLabel);
         this.globalSettings.Controls.Add(this.focusAlphaLabel);
         this.globalSettings.Controls.Add(this.wrapString);
@@ -1239,19 +1274,6 @@
         this.globalSettings.TabStop = false;
         this.globalSettings.Text = "Global settings";
         // 
-        // checkBoxMultiImage
-        // 
-        this.checkBoxMultiImage.AutoSize = true;
-        this.checkBoxMultiImage.Checked = true;
-        this.checkBoxMultiImage.CheckState = System.Windows.Forms.CheckState.Checked;
-        this.checkBoxMultiImage.Location = new System.Drawing.Point(455, 41);
-        this.checkBoxMultiImage.Name = "checkBoxMultiImage";
-        this.checkBoxMultiImage.Size = new System.Drawing.Size(205, 17);
-        this.checkBoxMultiImage.TabIndex = 32;
-        this.checkBoxMultiImage.Text = "Use Multiple Images per selected Item";
-        this.toolTip1.SetToolTip(this.checkBoxMultiImage, resources.GetString("checkBoxMultiImage.ToolTip"));
-        this.checkBoxMultiImage.UseVisualStyleBackColor = true;
-        // 
         // noFocusAlphaLabel
         // 
         this.noFocusAlphaLabel.AutoSize = true;
@@ -1274,7 +1296,7 @@
         // 
         this.wrapString.AutoSize = true;
         this.wrapString.Enabled = false;
-        this.wrapString.Location = new System.Drawing.Point(455, 66);
+        this.wrapString.Location = new System.Drawing.Point(455, 42);
         this.wrapString.Name = "wrapString";
         this.wrapString.Size = new System.Drawing.Size(226, 17);
         this.wrapString.TabIndex = 2;
@@ -1982,18 +2004,14 @@
     private System.Windows.Forms.ListBox xmlFiles;
     private System.Windows.Forms.GroupBox backgroundImages;
     private System.Windows.Forms.Button folderBrowse;
-    private System.Windows.Forms.CheckBox randomChk;
     private System.Windows.Forms.ComboBox bgBox;
-    private System.Windows.Forms.Label secondsL;
-    private System.Windows.Forms.TextBox timeBox;
-    private System.Windows.Forms.Label timePerImageL;
-    private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.Label labelImageFolder;
     private System.Windows.Forms.GroupBox itemProperties;
     private System.Windows.Forms.CheckBox isWeather;
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.TextBox itemName;
     private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
-    private System.Windows.Forms.Button cancleButton;
+    private System.Windows.Forms.Button cancelButton;
     private System.Windows.Forms.Button editButton;
     private System.Windows.Forms.Button saveButton;
     private System.Windows.Forms.GroupBox groupBox1;
@@ -2046,7 +2064,6 @@
     private System.Windows.Forms.Label selectedWindow;
     private System.Windows.Forms.Label selectedWindowL;
     private System.Windows.Forms.ToolTip toolTip1;
-    private System.Windows.Forms.CheckBox checkBoxMultiImage;
     private System.Windows.Forms.Label menuItemLabel;
     private System.Windows.Forms.Label menuItemLabelL;
     private System.Windows.Forms.TabPage defaultBackgrounds;
@@ -2119,6 +2136,12 @@
     private System.Windows.Forms.RadioButton rbRssNoImage;
     private System.Windows.Forms.GroupBox groupBox5;
     private System.Windows.Forms.CheckBox disableBGSharing;
+    private System.Windows.Forms.ComboBox cboFanartProperty;
+    private System.Windows.Forms.Label labelFanartProperty;
+    private System.Windows.Forms.CheckBox cbItemFanartHandlerEnable;
+    private System.Windows.Forms.CheckBox cbEnableMusicNowPlayingFanart;
+    private System.Windows.Forms.RichTextBox richTextBox2;
+    private System.Windows.Forms.Button buttonCancelCreate;
   }
 }
 

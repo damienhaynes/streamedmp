@@ -5,6 +5,7 @@
     <context>WATCH YOUR</context>
     <name>SERIES</name>
     <folder>tv</folder>
+    <fanartproperty>tvseries</fanartproperty>
     <xmlfile>TVSeries</xmlfile>
     <id>9811</id>
   </item>
@@ -13,6 +14,7 @@
     <context>WATCH YOUR</context>
     <name>MOVIES</name>
     <folder>movies</folder>
+    <fanartproperty>movingpicture</fanartproperty>
     <xmlfile>movingpictures</xmlfile>
     <id>96742</id>
   </item>
@@ -21,6 +23,7 @@
     <context>WATCH</context>
     <name>TV</name>
     <folder>tv</folder>
+    <fanartproperty>tv</fanartproperty>
     <xmlfile>mytvhome</xmlfile>
     <id>1</id>
   </item>
@@ -30,6 +33,7 @@
     <name>DVD</name>
     <name2>(SHORTCUT)</name2>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>playDVD</xmlfile>
     <id>3001</id>
   </item>
@@ -38,6 +42,7 @@
     <context>PLAY</context>
     <name>BLURAY</name>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>arcsoftplayer</xmlfile>
     <id>8080</id>
   </item>
@@ -46,6 +51,7 @@
     <context>WATCH</context>
     <name>TRAILERS</name>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>mytrailers</xmlfile>
     <id>5900</id>
   </item>
@@ -53,7 +59,8 @@
   <item>
     <context>WATCH YOUR</context>
     <name>WEBVIDEOS</name>
-	<name2>(ONLINE VIDEOS)</name2>    
+	  <name2>(ONLINE VIDEOS)</name2>
+    <fanartproperty>movie</fanartproperty>
     <folder>movies</folder>
     <xmlfile>myonlinevideos</xmlfile>
     <id>4755</id>
@@ -63,6 +70,7 @@
     <context>WATCH YOUR</context>
     <name>FILMS</name>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>MesFilms</xmlfile>
     <id>7986</id>
   </item>
@@ -71,6 +79,7 @@
     <context>WATCH YOUR</context>
     <name>VIDEOS</name>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>myvideo</xmlfile>
     <id>6</id>
   </item>
@@ -80,6 +89,7 @@
     <name>VIDEOS</name>
     <name2>(DATABASE TITLES)</name2>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>myvideoTitle</xmlfile>
     <id>25</id>
   </item>
@@ -88,6 +98,7 @@
     <context>CHECK THE</context>
     <name>WEATHER</name>
     <folder>weatherbg</folder>
+    <fanartproperty>-</fanartproperty>
     <xmlfile>myweather</xmlfile>
     <isweather>true</isweather>
     <id>2600</id>
@@ -97,6 +108,7 @@
     <context>CONFIGURE</context>
     <name>SETTINGS</name>
     <folder>settings</folder>
+    <fanartproperty>-</fanartproperty>
     <xmlfile>settings</xmlfile>
     <id>4</id>
   </item>
@@ -113,14 +125,25 @@
     <context>LISTEN TO</context>
     <name>RADIO</name>
     <folder>radio</folder>
+    <fanartproperty>music</fanartproperty>
     <xmlfile>myradio</xmlfile>
     <id>30</id>
   </item>
-
+  
+  <item>
+    <context>LISTEN TO</context>
+    <name>LAST.FM</name>
+    <folder>radio</folder>
+    <fanartproperty>music</fanartproperty>
+    <xmlfile>MyRadioLastFM</xmlfile>
+    <id>7890</id>
+  </item>
+  
   <item>
     <context>BROWSE YOUR</context>
     <name>PLUGINS</name>
     <folder>pluginsbg</folder>
+    <fanartproperty>plugins</fanartproperty>
     <xmlfile>myplugins</xmlfile>
     <id>34</id>
   </item>
@@ -129,6 +152,7 @@
     <context>VIEW YOUR</context>
     <name>PICTURES</name>
     <folder>pictures</folder>
+    <fanartproperty>picture</fanartproperty>
     <xmlfile>mypics</xmlfile>
     <id>2</id>
   </item>
@@ -137,6 +161,7 @@
     <context>RIP YOUR</context>
     <name>DISKS</name>
     <folder>pluginsbg</folder>
+    <fanartproperty>plugins</fanartproperty>
     <xmlfile>MediaSlayer</xmlfile>
     <id>8765</id>
   </item>
@@ -145,6 +170,7 @@
     <context>CHECK</context>
     <name>SHOWTIMES</name>
     <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
     <xmlfile>ShowTimesGUI</xmlfile>
     <id>7111992</id>
   </item>
@@ -153,6 +179,7 @@
     <context>DOWNLOAD</context>
     <name>NZBS</name>
     <folder>pluginsbg</folder>
+    <fanartproperty>plugins</fanartproperty>
     <xmlfile>myNZB</xmlfile>
     <id>3847</id>
   </item>
@@ -162,6 +189,7 @@
     <name>GAMES</name>
     <name2>(EMULATORS)</name2>
     <folder>emulator</folder>
+    <fanartproperty>games</fanartproperty>
     <xmlfile>myEmulators</xmlfile>
     <id>2497</id>
   </item>
@@ -170,6 +198,7 @@
     <context>CONFIGURE</context>
     <name>ALARM</name>
     <folder>settings</folder>
+    <fanartproperty>plugins</fanartproperty>
     <xmlfile>myalarm</xmlfile>
     <id>5000</id>
   </item>
@@ -178,6 +207,7 @@
     <context>SEARCH</context>
     <name>WIKIPEDIA</name>
     <folder>settings</folder>
+    <fanartproperty>plugins</fanartproperty>
     <xmlfile>wikipedia</xmlfile>
     <id>4711</id>
   </item>
@@ -186,6 +216,7 @@
     <context>READ THE</context>
     <name>NEWS</name>
     <folder>news</folder>
+    <fanartproperty>-</fanartproperty>
     <xmlfile>infoservice</xmlfile>
     <id>16001</id>
   </item>	
