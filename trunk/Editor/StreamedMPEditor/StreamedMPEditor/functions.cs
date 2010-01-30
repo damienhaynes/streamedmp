@@ -336,6 +336,7 @@ namespace StreamedMPEditor
       itemName.Text = prettyItems[index].name;
       bgBox.Text = prettyItems[index].folder;
       cboFanartProperty.Text = prettyItems[index].fanartProperty;
+      cbItemFanartHandlerEnable.Checked = prettyItems[index].fanartHandlerEnabled;
       isWeather.Checked = prettyItems[index].isweather;
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;

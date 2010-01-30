@@ -306,6 +306,11 @@ namespace StreamedMPEditor
                 innerNode = node.SelectSingleNode("fanartproperty");
                 if (innerNode != null) pItem.fanartProperty = innerNode.InnerText;
 
+                innerNode = node.SelectSingleNode("fanarthandlerenabled");
+                if (innerNode != null) pItem.fanartHandlerEnabled = bool.Parse(innerNode.InnerText);
+
+                
+
                 innerNode = node.SelectSingleNode("xmlfile");
                 if (innerNode != null) pItem.xmlfile = innerNode.InnerText;
 
