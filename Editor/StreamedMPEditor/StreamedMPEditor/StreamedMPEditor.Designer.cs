@@ -859,9 +859,7 @@
         this.cboFanartProperty.Name = "cboFanartProperty";
         this.cboFanartProperty.Size = new System.Drawing.Size(201, 21);
         this.cboFanartProperty.TabIndex = 0;
-        this.toolTip1.SetToolTip(this.cboFanartProperty, "games                  - Random Fanart From Skin Fart/Games\r\nmovie               " +
-                "    - Random Fanart From SkinFanart/Movie\r\nmovingpicture\r\nmusic\r\npicture\r\nplugin" +
-                "s\r\nscoresentre\r\ntv\r\ntvseries");
+        this.toolTip1.SetToolTip(this.cboFanartProperty, resources.GetString("cboFanartProperty.ToolTip"));
         // 
         // labelFanartProperty
         // 

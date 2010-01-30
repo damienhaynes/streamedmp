@@ -1614,7 +1614,10 @@ namespace StreamedMPEditor
                 //
                 rawXML.AppendLine("\n\t\t<control>");
                 rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND 1</description>");
-                rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "1</id>");
+                if (item.isWeather || !item.fanartHandlerEnabled)
+                    rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
+                else
+                    rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "1</id>");
 
                 if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
                 {
