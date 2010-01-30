@@ -5,6 +5,15 @@
   <allowoverlay>no</allowoverlay>
   <vumeter>yes</vumeter>
   <define>#header.hover:hover_my music.png</define>
+  <!-- 
+  This is the define that adjusts the Personal Star Rating
+  the imagelist does not scale correctly, set the following
+  value for the #star.rating.size as below.
+  For 1280x720           - <define>#star.rating.size:32</define>
+  For 1920x1080(Full HD) - <define>#star.rating.size:48</define>  
+  Default setting is for 1280x720
+  -->
+  <define>#star.rating.size:32</define>
   <!--
   	The next two <define> statments select the overlay
   	Choices
