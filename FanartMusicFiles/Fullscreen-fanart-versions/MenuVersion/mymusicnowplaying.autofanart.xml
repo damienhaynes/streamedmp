@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 This file should contain the details view
 -->
@@ -30,13 +30,12 @@ This file should contain the details view
 <posY>0</posY>
 <width>1</width>
 </control>
-
     <control>
       <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
       <id>0</id>
       <type>multiimage</type>
-      <posX>0</posX>
-      <posY>0</posY>
+      <posx>0</posx>
+      <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <imagepath>music</imagepath>
@@ -44,11 +43,11 @@ This file should contain the details view
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>True</randomize>
-      <visible>!control.isvisible(91919294)</visible>
+      <visible>!control.isvisible(91919293)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
-
+    
     <control>
       <description>FANART IMAGE 1</description>
       <id>897688</id>
@@ -58,7 +57,7 @@ This file should contain the details view
       <width>1280</width>
       <height>720</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
-      <visible>control.isvisible(91919295)</visible>
+      <visible>control.isvisible(91919295)+control.isvisible(91919294)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
@@ -72,7 +71,7 @@ This file should contain the details view
       <width>1280</width>
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
-      <visible>control.isvisible(91919296)</visible>
+      <visible>control.isvisible(91919296)+control.isvisible(91919294)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
