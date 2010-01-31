@@ -4,8 +4,19 @@
  Its the same as the common.overlay.basichome.xml with a y-offset of -90
  -->
 <window>
+
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
+	
+	 <control>
+      <description>dummy (To enable fanart set this control to visible)</description>
+      <type>label</type>
+      <id>3339</id>
+      <posX>2000</posX>
+      <label></label>
+      <visible>no</visible>
+    </control>    
+         
     <control>
       <description>DUMMY CONTROL FOR FANART 1 RANDOM VISIBILITY CONDITION</description>
       <type>label</type>
@@ -63,42 +74,40 @@
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-
-
-    
-    <control>
-      <description>PICTURES NOW PLAYING BACKGROUND 1</description>
-      <id>0</id>
-      <type>image</type>
-      <posX>998</posX>
-      <posY>468</posY>
-      <width>270</width>
-      <height>114</height>
-      <texture>#fanarthandler.music.backdrop1.play</texture>
-      <visible>Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
-    </control>
+         
     <control>
       <description>dialog bg</description>
       <type>image</type>
       <id>0</id>
       <posX>765</posX>
-      <posY>448</posY>
-      <width>519</width>
+      <posY>450</posY>
+      <width>512</width>
       <height>152</height>
       <texture>dialogprogressbg.png</texture>
       <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
       <!-- Not visible in regular home and my plugins -->
     </control>
     <control>
+      <description>PICTURES NOW PLAYING BACKGROUND 1</description>
+      <id>0</id>
+      <type>image</type>
+      <posX>990</posX>
+      <posY>468</posY>
+      <width>270</width>
+      <height>114</height>
+      <texture>#fanarthandler.music.backdrop1.play</texture>
+      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+    </control>
+    <control>
       <description>PICTURES NOW PLAYING BACKGROUND 2</description>
       <id>0</id>
       <type>image</type>
-      <posX>998</posX>
+      <posX>990</posX>
       <posY>468</posY>
       <width>270</width>
       <height>114</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
-      <visible>Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
     </control>
     <control>
       <description>Overlay Mask</description>
@@ -108,9 +117,9 @@
       <posY>468</posY>
       <width>512</width>
       <height>114</height>
-      <colordiffuse>EFFFFFFF</colordiffuse>
+      <colordiffuse>FFFFFFFF</colordiffuse>
       <texture>overlayfanartmask.png</texture>
-      <visible>Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
     </control>
 
     <!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->

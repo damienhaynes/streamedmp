@@ -6,6 +6,16 @@ same location everywhere
 <window>
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
+
+	 <control>
+      <description>dummy (To enable fanart set this control to visible)</description>
+      <type>label</type>
+      <id>3339</id>
+      <posX>2000</posX>
+      <label></label>
+      <visible>no</visible>
+    </control> 
+
     <control>
       <description>DUMMY CONTROL FOR FANART 1 PLAY VISIBILITY CONDITION</description>
       <type>label</type>
@@ -69,9 +79,9 @@ same location everywhere
       <posX>233</posX>
       <posY>78</posY>
       <width>270</width>
-      <height>115</height>
+      <height>114</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
-      <visible>player.hasmedia+control.isvisible(91919295)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
+      <visible>control.isvisible(3339)+player.hasmedia+control.isvisible(91919295)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
     </control>
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 2</description>
@@ -80,9 +90,9 @@ same location everywhere
       <posX>233</posX>
       <posY>78</posY>
       <width>270</width>
-      <height>115</height>
+      <height>114</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
-      <visible>player.hasmedia+control.isvisible(91919296)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
+      <visible>control.isvisible(3339)+player.hasmedia+control.isvisible(91919296)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
     </control>
     <control>
       <description>Overlay Mask</description>
@@ -91,10 +101,10 @@ same location everywhere
       <posX>18</posX>
       <posY>78</posY>
       <width>512</width>
-      <height>115</height>
+      <height>114</height>
       <colordiffuse>EFFFFFFF</colordiffuse>
       <texture>overlayfanartmask.png</texture>
-      <visible>player.hasmedia+control.isvisible(91919294)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
+      <visible>control.isvisible(3339)+player.hasmedia+control.isvisible(91919294)+![[facadeview.filmstrip|Control.IsVisible(1236)]|Control.IsVisible(1236)]</visible>
     </control>
     <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
     <control>
