@@ -700,7 +700,7 @@ This file should contain the list view
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\MP2A.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list+string.equals(#MovingPictures.LocalMedia.audiocodec,MP2A)</visible>
+		  <visible>Control.IsVisible(50)+facadeview.list+string.equals(#Play.Current.AudioCodec,MP2A)|string.equals(#Play.Current.AudioCodec,MPA1L2)|string.equals(#Play.Current.AudioCodec,MPA2L2)|string.equals(#Play.Current.AudioCodec,MPEG-1 AUDIO LAYER 2)</visible>
 		</control>
 
 		<!-- REAL AUDIO -->
