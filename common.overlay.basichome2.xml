@@ -64,18 +64,7 @@
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
 
-    <control>
-      <description>dialog bg</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>765</posX>
-      <posY>448</posY>
-      <width>519</width>
-      <height>152</height>
-      <texture>dialogprogressbg.png</texture>
-      <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
-      <!-- Not visible in regular home and my plugins -->
-    </control>
+
     
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 1</description>
@@ -87,6 +76,18 @@
       <height>114</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
       <visible>Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+    </control>
+    <control>
+      <description>dialog bg</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>765</posX>
+      <posY>448</posY>
+      <width>519</width>
+      <height>152</height>
+      <texture>dialogprogressbg.png</texture>
+      <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+      <!-- Not visible in regular home and my plugins -->
     </control>
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 2</description>
@@ -109,7 +110,7 @@
       <height>114</height>
       <colordiffuse>EFFFFFFF</colordiffuse>
       <texture>overlayfanartmask.png</texture>
-      <visible>Player.HasMedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+      <visible>Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
     </control>
 
     <!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->
