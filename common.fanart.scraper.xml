@@ -1,87 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?> 
-<window> 
-  <controls> 
-   
-                <control> 
-                        <description>DUMMY CONTROL FOR FANART HANDLER IS SCRAPING VISIBILITY CONDITION</description> 
-                        <type>label</type> 
-                        <id>91919280</id> 
-                        <posX>0</posX> 
-                        <posY>0</posY> 
-                        <width>1</width> 
-                </control>       
-                 <control> 
-                        <description>music background image</description> 
-                        <id>0</id> 
-                        <type>image</type> 
-                        <posX>540</posX> 
-                        <posY>-3</posY> 
-                        <width>200</width> 
-                        <height>50</height> 
-                        <texture>homeweatheroverlaybg.png</texture> 
-                        <visible>control.isvisible(91919280)</visible> 
-                </control>                  
-                <control> 
-                        <description>Scraping Header Shadow</description> 
-                        <type>label</type> 
-                        <id>0</id> 
-                        <posX>506</posX> 
-                        <posY>25</posY> 
-                        <width>200</width> 
-                        <textcolor>ff000000</textcolor> 
-                        <font>mediastream12tc</font> 
-                        <label>scraping</label> 
-                        <align>center</align> 
-                        <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation> 
-                        <visible>control.isvisible(91919280)</visible> 
-                </control> 
-                 
-                <control> 
-                        <description>Scraping Header</description> 
-                        <type>label</type> 
-                        <id>0</id> 
-                        <posX>505</posX> 
-                        <posY>23</posY> 
-                        <width>200</width> 
-                        <textcolor>ffffffff</textcolor> 
-                        <font>mediastream12tc</font> 
-                        <label>scraping</label> 
-                        <align>center</align> 
-                        <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation> 
-                        <visible>control.isvisible(91919280)</visible> 
-                </control> 
-                             
-         
-                <control> 
-                        <description>Scraping Percent Complete Shadow</description> 
-                        <type>label</type> 
-                        <id>0</id> 
-                        <posX>639</posX> 
-                        <posY>22</posY> 
-                        <width>96</width> 
-                        <textcolor>ff000000</textcolor> 
-                        <font>mediastream12tc</font> 
-                        <label>#fanarthandler.scraper.percent.completed %</label> 
-                        <align>center</align> 
-                        <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation> 
-                        <visible>control.isvisible(91919280)</visible> 
-                </control> 
-                 
-                <control> 
-                        <description>Scraping Percent Complete</description> 
-                        <type>label</type> 
-                        <id>0</id> 
-                        <posX>640</posX> 
-                        <posY>23</posY> 
-                        <width>96</width> 
-                        <textcolor>ffffffff</textcolor> 
-                        <font>mediastream12tc</font> 
-                        <label>#fanarthandler.scraper.percent.completed %</label> 
-                        <align>center</align> 
-                        <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation> 
-                        <visible>control.isvisible(91919280)</visible> 
-                </control> 
-         
-        </controls> 
-         
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>DUMMY CONTROL FOR FANART HANDLER IS SCRAPING VISIBILITY CONDITION</description>
+      <type>label</type>
+      <id>91919280</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1</width>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>music background image</description>
+      <id>0</id>
+      <type>image</type>
+      <posX>540</posX>
+      <posY>-3</posY>
+      <width>200</width>
+      <height>50</height>
+      <texture>homeweatheroverlaybg.png</texture>
+      <visible>control.isvisible(91919280)</visible>
+    </control>
+    <control>
+      <description>Scraping Header Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>506</posX>
+      <posY>25</posY>
+      <width>200</width>
+      <textcolor>ff000000</textcolor>
+      <font>mediastream12tc</font>
+      <label>scraping</label>
+      <align>center</align>
+      <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation>
+      <visible>control.isvisible(91919280)</visible>
+    </control>
+    <control>
+      <description>Scraping Header</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>505</posX>
+      <posY>23</posY>
+      <width>200</width>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream12tc</font>
+      <label>scraping</label>
+      <align>center</align>
+      <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation>
+      <visible>control.isvisible(91919280)</visible>
+    </control>
+    <control>
+      <description>Scraping Percent Complete Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>639</posX>
+      <posY>22</posY>
+      <width>96</width>
+      <textcolor>ff000000</textcolor>
+      <font>mediastream12tc</font>
+      <label>#fanarthandler.scraper.percent.completed %</label>
+      <align>center</align>
+      <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation>
+      <visible>control.isvisible(91919280)</visible>
+    </control>
+    <control>
+      <description>Scraping Percent Complete</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>640</posX>
+      <posY>23</posY>
+      <width>96</width>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream12tc</font>
+      <label>#fanarthandler.scraper.percent.completed %</label>
+      <align>center</align>
+      <animation effect="fade" start="0" end="50" time="10" reversible="false">WindowOpen</animation>
+      <visible>control.isvisible(91919280)</visible>
+    </control>
+  </controls>
 </window>
