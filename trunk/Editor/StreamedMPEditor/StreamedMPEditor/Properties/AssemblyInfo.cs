@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // StreamedMP SVN revision
-[assembly: AssemblyVersion("0.9.808.0")]
-[assembly: AssemblyFileVersion("0.9.808.0")]
+[assembly: AssemblyVersion("0.9.885.0")]
+[assembly: AssemblyFileVersion("0.9.885.0")]
