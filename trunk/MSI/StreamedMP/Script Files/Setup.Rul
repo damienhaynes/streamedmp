@@ -93,7 +93,10 @@
 #define STREAMEDMP_SKIN_BASICHOMEOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
 #define STREAMEDMP_SKIN_BASICHOMEOVERLAY2			INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
 #define STREAMEDMP_SKIN_MOVPICSOVERLAY				INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
-#define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
+#define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml" 
+#define STREAMEDMP_SKIN_MUSICNOWPLAYING             INSTALLDIR^SKIN_NAME^"MyMusicPlayingNow.xml"
+#define STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU			INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowAnVU.xml"
+#define STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU        INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowLedVU.xml"
 
 
 // Version Defines
@@ -200,13 +203,14 @@ prototype VOID		TVSeriesIcons(BOOL);
 prototype VOID		TVSeriesImageStyle(BOOL);    
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
-prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING);
+prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING); 
+prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 prototype VOID		RoundedCovers(BOOL, STRING);   
 prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
-prototype VOID		ModifySkinFiles(BOOL);
+prototype VOID		ModifySkinFilesForFULLHD(BOOL);
 prototype VOID		GetListFacadeColors(); 
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
@@ -994,7 +998,7 @@ begin
 	    set oDirID = NOTHING;	    	    
 	 	   
 	catch                  
-		
+				
 	    return -1;    
 	    
 	endcatch;	       
@@ -2019,7 +2023,7 @@ begin
 	
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
-	ModifySkinFiles(bReturn);	
+	ModifySkinFilesForFULLHD(bReturn);	
 	
 end;             
 
@@ -2281,6 +2285,7 @@ begin
 	    
 	catch                  
 		
+		Enable(LOGGING);
 	    return -1;    
 	    
 	endcatch;	       
@@ -2296,8 +2301,7 @@ function NUMBER GetMPXMLProperty(sSectionAttribute, sEntryAttribute, sValue)
 	INT i, j;
 begin
    	
-   	sFile = g_sConfigDir^"MediaPortal.xml";        	 
-    Disable(LOGGING);
+   	sFile = g_sConfigDir^"MediaPortal.xml";    
     
     try
 	    // Prepare XML parser object
@@ -2344,12 +2348,11 @@ begin
 	    set oNodeListElements = NOTHING;	    	    
 	    
 	catch                  
-		
+			
 	    return -1;    
 	    
 	endcatch;	       
-
-    Enable(LOGGING);         
+    
     return 0;
     
 end;
@@ -2427,8 +2430,7 @@ begin
 	    return -1;    
 	    
 	endcatch;	       
-
-    Enable(LOGGING);         
+  
     return 0;
     
 end;
@@ -2462,6 +2464,7 @@ begin
 	    
 	catch                  
 		
+		Enable(LOGGING);
 	    return -1;    
 	    
 	endcatch;	       
@@ -2496,6 +2499,7 @@ begin
 	    	endif;
 	    endif;	    
 	catch
+		Enable(LOGGING);
 		return;
 	endcatch;	
 	
@@ -2601,6 +2605,7 @@ begin
 	    
 	catch                  
 		
+		Enable(LOGGING);
 	    return;    
 	    
 	endcatch;	       
@@ -2666,6 +2671,7 @@ begin
 	    
 	catch                  
 		
+		Enable(LOGGING);
 	    return;    
 	    
 	endcatch;	       
@@ -2809,6 +2815,7 @@ begin
 	    
 	catch                  
 		
+		Enable(LOGGING);
 	    return;    
 	    
 	endcatch;	       
@@ -2825,6 +2832,56 @@ begin
 	EnableWindow( GetDlgItem( hwndDlg, nControl), bState);	
 end; 
 
+function NUMBER SetSkinDefine(szFile, szDefine, szValue)
+	OBJECT oXMLdoc, oNodes;
+	STRING sNode;
+	INT i;
+begin
+	Disable(LOGGING);
+	
+	try
+		// Prepare XML parser object
+		set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+		
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+		
+		// Load the document 	    
+		oXMLdoc.Load (szFile);
+		
+		sNode = "/window/define";	    
+	    set oNodes = oXMLdoc.DocumentElement.SelectNodes(sNode);
+		
+		// Traverse all defines in xml until 
+	    // we reach 'szDefine'
+	    for i=0 to oNodes.length - 1
+		
+			if oNodes(i).Text % szDefine then                
+                // Match found
+                oNodes(i).Text = szDefine + ":" + szValue;
+	        endif;
+		
+		endfor;   		    
+	    
+	    // save the xml	    
+	    oXMLdoc.Save (szFile);
+	    
+	    // release objects used
+	    set oXMLdoc = NOTHING;
+	    set oNodes = NOTHING;	   
+	    
+	catch
+	    
+	    Enable(LOGGING);
+		return -1;
+		
+	endcatch;
+	
+	Enable(LOGGING);
+	return 0;
+
+end;
+    
 function NUMBER ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr)
 	NUMBER nResult, nIndex;
 	STRING svString;
@@ -2857,7 +2914,7 @@ begin
 	return 0;
 	   
 end;
-
+  
 function BOOL AdjustForScreenSize()
 	NUMBER nvDx, nvDy;
 	STRING sValue;
@@ -2884,8 +2941,11 @@ begin
 	
 end; 
 
-function VOID ModifySkinFiles(b1920)
+// This function will modify skin files that runing 1920x1080 screen resolution
+// and are also running MediaPortal in Fullscreen
+function VOID ModifySkinFilesForFULLHD(b1920)
 	STRING szFileName, szSearchStr, szReplaceStr;
+	STRING szDefine, szValue;
 begin
     
     // Adjust TVSeries Watched / Unwatched string
@@ -2910,7 +2970,23 @@ begin
 	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
 	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
 	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);    
-    endif;
+    endif; 
+    
+    // Modify ImageList controls in MyMusic
+    // ImageList Controls do not scale
+    if b1920 then
+    	szDefine = "#star.rating.size";
+    	szValue = "48";
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYING, szDefine, szValue);
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU, szDefine, szValue);
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU, szDefine, szValue);
+    else
+    	szDefine = "#star.rating.size";
+    	szValue = "32";
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYING, szDefine, szValue);
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU, szDefine, szValue);
+    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU, szDefine, szValue);          
+    endif;   
     
 end;
 
