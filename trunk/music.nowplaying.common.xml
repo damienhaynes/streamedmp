@@ -70,11 +70,11 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>year label</description>
       <id>0</id>
-      <posX>130</posX>
+      <posX>125</posX>
       <posY>485</posY>
       <width>755</width>
       <height>26</height>
-      <label>| #Play.Current.Year</label>
+      <label>|     #Play.Current.Year</label>
       <font>mediastream12c</font>
     </control>      
     <control>
@@ -199,6 +199,17 @@ This file should contain the details view
       <font>mediastream12</font>
       <textcolor>ff909090</textcolor>
     </control>
+    <control>
+      <description>music logo</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>23</posX>
+      <posY>518</posY>
+      <width>65</width>
+      <height>65</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>missing_coverart.png</texture>
+    </control>    
     <control>
       <description>music logo</description>
       <type>image</type>
