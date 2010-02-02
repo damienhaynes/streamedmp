@@ -11,6 +11,7 @@
 			<height>290</height>
 			<texture>mpinfo_filmbox.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.HasThumb(991)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -24,6 +25,7 @@
 			<label>#TVSeries.Title</label>
 			<textcolor>#shadow.light</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Movie Title</description>
@@ -36,6 +38,7 @@
 			<label>#TVSeries.Title</label>
 			<textcolor>FFffffff</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -48,39 +51,67 @@
 			<height>22</height>
 			<texture>#TVSeries.Series.FiveStarPath</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
-		</control>		
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+		</control>
+		<control Style="smallTitle">
+			<description>Rating Shadow</description>
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
+            <posX>844</posX>
+			<posY>457</posY>		
+			<textcolor>#shadow.light</textcolor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+        </control>
         <control Style="smallTitle">
 			<id>0</id>
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
             <posX>843</posX>
-			<posY>456</posY>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>2</shadowDistance>
-			<shadowColor>#shadow.light</shadowColor>
+			<posY>456</posY>			
             <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+        </control>
+		<control Style="smallTitle">
+			<description>Rating Shadow</description>
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine41Value</label>
+            <posX>844</posX>
+			<posY>457</posY>
+			<textcolor>#shadow.light</textcolor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine41Value</label>
             <posX>843</posX>
-			<posY>456</posY>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>2</shadowDistance>
-			<shadowColor>#shadow.light</shadowColor>
+			<posY>456</posY>			
             <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+        </control>
+		<control Style="smallTitle">
+			<description>Rating Shadow</description>
+			<id>0</id>
+            <type>label</type>
+            <label> / 10</label>
+            <posX>844</posX>
+			<posY>457</posY>			
+			<textcolor>#shadow.light</textcolor>
+            <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
             <type>label</type>
             <label> / 10</label>
             <posX>843</posX>
-			<posY>456</posY>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>2</shadowDistance>
-			<shadowColor>#shadow.light</shadowColor>
+			<posY>456</posY>			
             <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 		<control Style="smallTitleB">
@@ -93,6 +124,7 @@
 			<width>145</width>
 			<textcolor>shadow.dark</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>		
 		<control Style="smallTitleB">
 			<id>0</id>
@@ -102,6 +134,7 @@
 			<posY>480</posY>
 			<width>580</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>		
 		<control Style="smallTitle">
 			<id>0</id>
@@ -111,6 +144,7 @@
 			<posY>480</posY>
 			<width>410</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control Style="smallTitleB">
@@ -123,6 +157,7 @@
 			<width>145</width>
 			<textcolor>shadow.dark</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
 			<id>0</id>
@@ -132,6 +167,7 @@
 			<posY>505</posY>
 			<width>145</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -141,6 +177,7 @@
 			<posY>505</posY>
 			<width>410</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control Style="smallTitleB">
@@ -153,6 +190,7 @@
 			<width>145</width>
 			<textcolor>shadow.dark</textcolor>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
 			<id>0</id>
@@ -162,6 +200,7 @@
 			<posY>530</posY>
 			<width>145</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -171,6 +210,7 @@
 			<posY>530</posY>
 			<width>410</width>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -187,6 +227,7 @@
 			<label>#TVSeries.Description</label>
 			<scrollStartDelaySec>12</scrollStartDelaySec>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<!--**********Watched/Unwatched Icons Series/Seaosn Filmstrip*************-->	
@@ -200,6 +241,7 @@
 			<height>24</height>
 			<texture>tvseries_Watched.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(991)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Un-Watched Icon</description>
@@ -211,6 +253,7 @@
 			<height>24</height>
 			<texture>tvseries_UnWatched.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(991)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Not Available and Watched Icon</description>
@@ -222,6 +265,7 @@
 			<height>24</height>
 			<texture>tvseries_WatchedNA.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(991)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Not Available and Un-Watched Icon</description>
@@ -233,6 +277,7 @@
 			<height>24</height>
 			<texture>tvseries_UnWatchedNA.png</texture>
 			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]+!Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(991)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 	</controls>

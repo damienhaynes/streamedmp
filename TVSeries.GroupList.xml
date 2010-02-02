@@ -13,6 +13,7 @@
 			<font>mediastream16tc</font>
 			<textcolor>White</textcolor>			
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
         <control>
@@ -27,7 +28,8 @@
             <textcolor>ffffffff</textcolor>
             <font>mediastream12</font>
 			<label>#TVSeries.Description</label>
-            <visible>Control.IsVisible(1240)+facadeview.list</visible>            
+            <visible>Control.IsVisible(1240)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 	

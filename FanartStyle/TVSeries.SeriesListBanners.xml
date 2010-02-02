@@ -12,6 +12,7 @@
 			<height>110</height>
 			<texture>defaultwideicon.png</texture>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Banner</description>
@@ -23,6 +24,7 @@
 			<height>98</height>
 			<texture>#TVSeries.SeriesBanner</texture>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Banner Glass Overlay</description>
@@ -34,6 +36,7 @@
 			<height>68</height>
 			<texture>glassoverlay.png</texture>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control Style="TVSeriesTitle">
@@ -44,6 +47,7 @@
 			<posY>468</posY>
 			<width>500</width>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>	
 			
 		<control>
@@ -56,6 +60,7 @@
 			<height>22</height>
 			<texture>#TVSeries.Series.FiveStarPath</texture>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>		
         <control Style="smallTitle">
 			<id>0</id>
@@ -65,6 +70,7 @@
 			<posY>491</posY>
 			<font>mediastream11c</font>
             <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -74,6 +80,7 @@
 			<posY>491</posY>
 			<font>mediastream11c</font>
             <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -83,6 +90,7 @@
 			<posY>491</posY>
 			<font>mediastream11c</font>
             <visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 		<control>
@@ -99,6 +107,7 @@
 			<scrollStartDelaySec>15</scrollStartDelaySec>
 			<visible>Control.IsVisible(1237)+!Control.IsVisible(1242)+facadeview.list</visible>
 			<label>#TVSeries.Series.Summary</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<!--**********Watched/Unwatched Icons SeriesBanner List Layout*************-->
@@ -112,6 +121,7 @@
 			<height>39</height>
 			<texture>#overlaywubg</texture>
 			<visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1242)+Control.HasThumb(47)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Watched Icon</description>
@@ -123,6 +133,7 @@
 			<height>24</height>
 			<texture>#tvseries_Watched</texture>
 			<visible>facadeview.list+Control.IsVisible(1237)+Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)+Control.HasThumb(47)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Un-Watched Icon</description>
@@ -134,6 +145,7 @@
 			<height>24</height>
 			<texture>#tvseries_UnWatched</texture>
 			<visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1243)+Control.IsVisible(1244)+!Control.IsVisible(1242)+Control.HasThumb(47)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Not Available and Watched Icon</description>
@@ -145,6 +157,7 @@
 			<height>24</height>
 			<texture>#tvseries_WatchedNA</texture>
 			<visible>facadeview.list+Control.IsVisible(1237)+Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)+Control.HasThumb(47)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Not Available and Un-Watched Icon</description>
@@ -156,6 +169,7 @@
 			<height>24</height>
 			<texture>#tvseries_UnWatchedNA</texture>
 			<visible>facadeview.list+Control.IsVisible(1237)+!Control.IsVisible(1243)+!Control.IsVisible(1244)+!Control.IsVisible(1242)+Control.HasThumb(47)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 	
 	</controls>
