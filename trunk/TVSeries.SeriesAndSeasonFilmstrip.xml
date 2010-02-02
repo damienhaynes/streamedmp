@@ -13,6 +13,7 @@
             <colordiffuse>ccffffff</colordiffuse>
             <texture>glasstitlebar.png</texture>
             <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>        
 
 		<!-- Display Series Poster in Season View so we dont see empty Poster if season poster does not exist -->
@@ -26,6 +27,7 @@
             <height>418</height>
             <texture>#TVSeries.SeriesPoster</texture>
             <visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <control>
@@ -38,6 +40,7 @@
             <height>418</height>
             <texture>#TVSeries.SeasonPoster</texture>
             <visible>facadeview.filmstrip+Control.IsVisible(1238)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 		<control>
@@ -50,6 +53,7 @@
             <height>177</height>
             <texture>glassoverlay2.png</texture>
             <visible>facadeview.filmstrip+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <!-- Watched Icons for Series/Season View in Filmstrip Layout -->
@@ -63,6 +67,7 @@
             <height>39</height>
             <texture>#overlaywubg</texture>
             <visible>facadeview.filmstrip+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Series Watched Icon</description>
@@ -74,6 +79,7 @@
             <height>24</height>
             <texture>#tvseries_Watched</texture>
             <visible>facadeview.filmstrip+Control.IsVisible(1243)+Control.IsVisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Series Un-Watched Icon</description>
@@ -85,6 +91,7 @@
             <height>24</height>
             <texture>#tvseries_UnWatched</texture>
             <visible>facadeview.filmstrip+!Control.IsVisible(1243)+Control.IsVisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Series Not Available and Watched Icon</description>
@@ -96,6 +103,7 @@
             <height>24</height>
             <texture>#tvseries_WatchedNA</texture>
             <visible>facadeview.filmstrip+Control.IsVisible(1243)+!Control.IsVisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Series Not Available and Un-Watched Icon</description>
@@ -107,6 +115,7 @@
             <height>24</height>
             <texture>#tvseries_UnWatchedNA</texture>
             <visible>facadeview.filmstrip+!Control.IsVisible(1243)+!Control.IsVisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>        
 
         <control>
@@ -120,6 +129,7 @@
             <label>#TVSeries.Series.Pretty_Name</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.filmstrip+Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
             <description>Season Title</description>
@@ -132,6 +142,7 @@
             <label>#TVSeries.Series.Pretty_Name #TVSeries.Season.SeasonLabel</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.filmstrip+Control.IsVisible(1238)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <control>
@@ -148,6 +159,7 @@
             <label>#TVSeries.Series.Summary</label>
 			<scrollStartDelaySec>12</scrollStartDelaySec>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <control>
@@ -161,6 +173,7 @@
             <label>#TVSeries.Translation.SeriesDetails.Label</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <control>			
@@ -171,6 +184,7 @@
             <width>350</width>
             <font>mediastream10</font>			
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <type>label</type>
@@ -183,6 +197,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <type>label</type>
@@ -195,6 +210,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <type>label</type>
@@ -207,6 +223,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
             <type>label</type>
@@ -219,6 +236,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
             <type>label</type>
@@ -231,6 +249,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
 		<control>
@@ -244,6 +263,7 @@
             <label>#TVSeries.Translation.Episodes.Label</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 		<control>
@@ -257,6 +277,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
             <type>label</type>
@@ -269,6 +290,7 @@
             <shadowDistance>2</shadowDistance>
             <shadowColor>#shadow.light</shadowColor>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
         <control>
@@ -282,6 +304,7 @@
             <label>#TVSeries.Translation.Actors.Label</label>
             <textcolor>ffFFFFFF</textcolor>
             <visible>facadeview.filmstrip+Control.IsVisible(5559)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <type>textboxscrollup</type>
@@ -293,6 +316,7 @@
             <seperator>==========================================</seperator>
             <font>mediastream10</font>
             <visible>facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		
 	</controls>

@@ -63,6 +63,7 @@
 			<height>47</height>
 			<texture>imagestreamtitle.png</texture>
 			<visible>Control.IsVisible(1240)|[Control.IsVisible(1237)+facadeview.largeicons]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<!--
@@ -79,6 +80,7 @@
 			<width>159</width>
 			<height>28</height>
 			<texture>mediacountbackground.png</texture>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -92,6 +94,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -104,6 +107,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -116,6 +120,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -128,6 +133,7 @@
 			<align>right</align>    
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1238)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>	
 		<control>
 			<description>Media Count Label</description>
@@ -140,6 +146,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1239)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -152,6 +159,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Media Count Label</description>
@@ -164,6 +172,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<!--
@@ -179,7 +188,8 @@
 			<posY>684</posY>
 			<width>260</width>
 			<height>30</height>
-			<texture>mediacountbg_Spin.png</texture>			
+			<texture>mediacountbg_Spin.png</texture>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Page Label</description>
@@ -189,13 +199,15 @@
 			<posX>1023</posX>
 			<posY>688</posY>
 			<font>mediastream12tc</font>
-			<textcolor>ff909090</textcolor>			
+			<textcolor>ff909090</textcolor>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>		
 		
 		<control>
 			<type>group</type>
 			<id>28</id>
 			<layout>StackLayout</layout>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 			<control>
 				<type>facadeview</type>
 				<id>50</id>

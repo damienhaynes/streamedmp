@@ -10,6 +10,7 @@
             <height>35</height>
             <texture>tvtitlebgshort.png</texture>
             <visible>true</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Current View/Category Label</description>
@@ -24,6 +25,7 @@
 			<scrollStartDelaySec>30</scrollStartDelaySec>
             <visible>Control.IsVisible(1240)|Control.IsVisible(1237)</visible>
             <wrapString> |  </wrapString>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Current Season Number</description>
@@ -36,6 +38,7 @@
             <label>#TVSeries.Season.SeasonLabel</label>
             <align>right</align>
             <visible>Control.IsVisible(1238)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
             <description>Current Season Number</description>
@@ -48,6 +51,7 @@
             <label>#TVSeries.Episode.SeasonLabel</label>
             <align>right</align>
             <visible>Control.IsVisible(1239)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
         <control>
@@ -59,6 +63,7 @@
             <width>437</width>
             <height>35</height>
             <texture>tvtitlebg.png</texture>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>MP-TVSeries Plugin Name</description>
@@ -71,6 +76,7 @@
             <label>#currentmodule</label>
             <align>right</align>
             <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
             <description>Series Name</description>
@@ -85,6 +91,7 @@
             <wrapString> |  </wrapString>
 			<scrollStartDelaySec>30</scrollStartDelaySec>
             <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 	</controls>
 </window>

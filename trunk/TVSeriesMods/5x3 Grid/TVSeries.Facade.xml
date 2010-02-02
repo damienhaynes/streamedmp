@@ -64,6 +64,7 @@
 			<height>47</height>
 			<texture>imagestreamtitle.png</texture>
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<!--
@@ -80,6 +81,7 @@
 			<width>182</width>
             <height>28</height>
 			<texture>mediacountbackground.png</texture>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -94,6 +96,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Episode Count</description>
@@ -106,6 +109,7 @@
 			<align>right</align>    
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1238)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Filtered Episode Count</description>
@@ -118,6 +122,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1239)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -132,6 +137,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Series Count</description>
@@ -144,6 +150,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
@@ -158,6 +165,7 @@
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Group Count</description>
@@ -170,6 +178,7 @@
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 					
 		<!--
@@ -187,6 +196,7 @@
 			<height>30</height>
 			<texture>mediacountbg_Spin.png</texture>
 			<visible>!facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Page Label</description>
@@ -198,6 +208,7 @@
 			<font>mediastream12tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>!facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Page Count Background</description>
@@ -209,6 +220,7 @@
 			<height>30</height>
 			<texture>mediacountbg_Spin.png</texture>
 			<visible>facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Page Label</description>
@@ -220,12 +232,14 @@
 			<font>mediastream12tc</font>
 			<textcolor>ff909090</textcolor>
 			<visible>facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
 		<control>
 			<type>group</type>
 			<id>28</id>
 			<layout>StackLayout</layout>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 			<control>
 				<type>facadeview</type>
 				<id>50</id>

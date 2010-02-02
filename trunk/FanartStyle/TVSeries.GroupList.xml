@@ -13,6 +13,7 @@
 			<font>mediastream16tc</font>
 			<textcolor>White</textcolor>			
 			<visible>Control.IsVisible(1240)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
 			<description>Shows in this Group</description>
@@ -27,6 +28,7 @@
 			<font>mediastream11</font>
 			<visible>Control.IsVisible(1240)</visible>
 			<label>#TVSeries.Description</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 	
 	</controls>

@@ -12,6 +12,7 @@
 			<height>418</height>
 			<texture>#TVSeries.SeriesPoster</texture>
 			<visible>facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 	
 		<!-- Watched Icons -->
@@ -25,6 +26,7 @@
 			<height>39</height>
 			<texture>#overlaywubg</texture>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control>
@@ -37,6 +39,7 @@
 			<height>24</height>
 			<texture>#tvseries_Watched</texture>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons+Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control>
@@ -49,6 +52,7 @@
 			<height>24</height>
 			<texture>#tvseries_UnWatched</texture>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons+!Control.IsVisible(1243)+Control.IsVisible(1244)+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control>
@@ -61,6 +65,7 @@
 			<height>24</height>
 			<texture>#tvseries_WatchedNA</texture>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons+Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control>
@@ -73,6 +78,7 @@
 			<height>24</height>
 			<texture>#tvseries_UnWatchedNA</texture>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons+!Control.IsVisible(1243)+!Control.IsVisible(1244)+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>	
 	
 		<control>
@@ -86,6 +92,7 @@
 			<label>#TVSeries.Series.Pretty_Name</label>
 			<textcolor>ffFFFFFF</textcolor>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control>
@@ -102,6 +109,7 @@
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
 			<label>#TVSeries.Series.Summary</label>
 			<scrollStartDelaySec>12</scrollStartDelaySec>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
 		<control Style="smallTitleB">
@@ -111,6 +119,7 @@
 			<posY>556</posY>
 			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine1Value</label>
@@ -119,6 +128,7 @@
 			<posY>557</posY>
 			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
 			<label>#TVSeries.Series.InfoPanelLine2Key</label>
@@ -127,6 +137,7 @@
 			<posY>586</posY>
 			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine2Value</label>
@@ -135,6 +146,7 @@
 			<posY>587</posY>
 			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
 			<label>#TVSeries.Series.InfoPanelLine3Key</label>
@@ -143,6 +155,7 @@
 			<posY>616</posY>
 			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitle">
 			<label>#TVSeries.Series.InfoPanelLine3Value</label>
@@ -151,6 +164,7 @@
 			<posY>617</posY>
 			<width>345</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
 			<label>#TVSeries.Series.InfoPanelLine4Key</label>
@@ -159,6 +173,7 @@
 			<posY>646</posY>
 			<width>150</width>
 			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>		
         <control Style="smallTitle">
 			<id>0</id>
@@ -168,6 +183,7 @@
 			<posY>647</posY>
 			<width>345</width>
             <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -177,6 +193,7 @@
 			<posY>647</posY>
 			<width>345</width>
             <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<id>0</id>
@@ -186,6 +203,7 @@
 			<posY>647</posY>
 			<width>345</width>
             <visible>facadeview.largeicons+Control.IsVisible(1237)+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 	
 	</controls>
