@@ -5,16 +5,14 @@ different overlays on home screens
 <window>
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-
-	 <control>
+    <control>
       <description>dummy (To enable fanart set this control to visible)</description>
       <type>label</type>
       <id>3339</id>
       <posX>2000</posX>
       <label></label>
       <visible>no</visible>
-    </control>    
-
+    </control>
     <control>
       <description>DUMMY CONTROL FOR FANART 1 RANDOM VISIBILITY CONDITION</description>
       <type>label</type>
@@ -72,7 +70,6 @@ different overlays on home screens
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -84,8 +81,7 @@ different overlays on home screens
       <texture>dialogprogressbg.png</texture>
       <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
       <!-- Not visible in regular home and my plugins -->
-    </control>    
-    
+    </control>
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 1</description>
       <id>0</id>
@@ -119,8 +115,7 @@ different overlays on home screens
       <colordiffuse>EFFFFFFF</colordiffuse>
       <texture>overlayfanartmask.png</texture>
       <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
-    </control>   
-
+    </control>
     <!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->
     <control>
       <description>music logo</description>

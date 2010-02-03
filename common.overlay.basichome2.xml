@@ -4,19 +4,16 @@
  Its the same as the common.overlay.basichome.xml with a y-offset of -90
  -->
 <window>
-
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-	
-	 <control>
+    <control>
       <description>dummy (To enable fanart set this control to visible)</description>
       <type>label</type>
       <id>3339</id>
       <posX>2000</posX>
       <label></label>
       <visible>no</visible>
-    </control>    
-         
+    </control>
     <control>
       <description>DUMMY CONTROL FOR FANART 1 RANDOM VISIBILITY CONDITION</description>
       <type>label</type>
@@ -74,7 +71,6 @@
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-         
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -119,9 +115,8 @@
       <height>114</height>
       <colordiffuse>FFFFFFFF</colordiffuse>
       <texture>overlayfanartmask.png</texture>
-      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
+      <visible>control.isvisible(3339)+Player.HasMedia+[control.isvisible(91919294)|control.isvisible(91919295)|control.isvisible(91919296)]+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
     </control>
-
     <!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->
     <control>
       <description>music logo</description>

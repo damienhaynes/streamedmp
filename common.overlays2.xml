@@ -6,16 +6,14 @@ same location everywhere
 <window>
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-
-	 <control>
+    <control>
       <description>dummy (To enable fanart set this control to visible)</description>
       <type>label</type>
       <id>3339</id>
       <posX>2000</posX>
       <label></label>
       <visible>no</visible>
-    </control> 
-
+    </control>
     <control>
       <description>DUMMY CONTROL FOR FANART 1 PLAY VISIBILITY CONDITION</description>
       <type>label</type>
@@ -57,7 +55,6 @@ same location everywhere
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-    
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -71,7 +68,6 @@ same location everywhere
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
-    
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 1</description>
       <id>0</id>

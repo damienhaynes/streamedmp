@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 This file should contain the details view
 -->
 <window>
   <controls>
-    <!-- ************************************* -->
-    <!-- Now Playing Fanart Visibilty Controls -->
-    <!-- ************************************* -->
+    <!-- ********************************** -->
+    <!-- Selected Fanart Visibilty Controls -->
+    <!-- ********************************** -->
     <control>
-      <description>DUMMY CONTROLL FOR PLAYING FANART 1 VISIBILITY CONDITION</description>
+      <description>DUMMY CONTROLL FOR SELECTED FANART 1 VISIBILITY CONDITION</description>
       <type>label</type>
-      <id>91919295</id>
+      <id>91919291</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1</width>
     </control>
     <control>
-      <description>DUMMY CONTROLL FOR PLAYING FANART 2 VISIBILITY CONDITION</description>
+      <description>DUMMY CONTROLL FOR SELECTED FANART 2 VISIBILITY CONDITION</description>
       <type>label</type>
-      <id>91919296</id>
+      <id>91919292</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1</width>
     </control>
     <control>
-      <description>DUMMY CONTROLL FOR PLAYING FANART AVAILABILITY CONDITION</description>
+      <description>DUMMY CONTROLL FOR SELECTED FANART AVAILABILITY CONDITION</description>
       <type>label</type>
-      <id>91919294</id>
+      <id>91919293</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1</width>
       <visible>no</visible>
     </control>
-    <!-- *************************** -->
-    <!-- Now Playing Fanart Controls -->
-    <!-- *************************** -->
+    <!-- ************************ -->
+    <!-- Selected Fanart Controls -->
+    <!-- ************************ -->
     <control>
-      <description>Hover</description>
+      <description>music background image</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -44,18 +44,18 @@ This file should contain the details view
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-      <visible>!control.isvisible(91919294)</visible>
+      <visible>!control.isvisible(91919293)</visible>
     </control>
     <control>
       <description>FANART IMAGE 1</description>
       <id>897688</id>
       <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
+      <posx>0</posx>
+      <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>#fanarthandler.music.backdrop1.play</texture>
-      <visible>control.isvisible(91919295)+control.isvisible(91919294)</visible>
+      <texture>#fanarthandler.music.backdrop1.selected </texture>
+      <visible>control.isvisible(91919291)+control.isvisible(91919293)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
@@ -63,12 +63,12 @@ This file should contain the details view
       <description>FANART IMAGE 2</description>
       <id>897689</id>
       <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
+      <posx>0</posx>
+      <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>#fanarthandler.music.backdrop2.play</texture>
-      <visible>control.isvisible(91919296)+control.isvisible(91919294)</visible>
+      <texture>#fanarthandler.music.backdrop2.selected</texture>
+      <visible>control.isvisible(91919292)+control.isvisible(91919293)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
