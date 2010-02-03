@@ -44,75 +44,91 @@
                 <width>1</width>
          </control>
          <control>
+                <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
+                <id>0</id>
+                <type>multiimage</type>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <imagepath>music</imagepath>
+                <timeperimage>30000</timeperimage>
+                <fadetime>800</fadetime>
+                <loop>yes</loop>
+                <randomize>True</randomize>
+                <visible>string.equals(#fanarthandler.music.backdrop1.any,) | string.equals(#fanarthandler.music.backdrop2.any,)</visible>
+                <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
+         </control>
+         
+         <control>
                 <description>FANART Random Image 1</description>
-                <id>897688</id>
+                <id>0</id>
                 <type>image</type>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop1.any</texture>
-                <visible>control.isvisible(91919297)+string.equals(#fanarthandler.music.backdrop1.play,)</visible>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">Visible</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
+                <visible>control.isvisible(91919297)+!string.equals(#fanarthandler.music.backdrop1.any,)+!string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)</visible>
+                <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
 
          <control>
                 <description>FANART Random Image 2</description>
-                <id>897689</id>
+                <id>0</id>
                 <type>image</type>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop2.any</texture>
-                <visible>control.isvisible(91919298)+string.equals(#fanarthandler.music.backdrop2.play,)</visible>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0">Visible</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" reversible="false">Hidden</animation>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">WindowOpen</animation>
-                <animation effect="fade" start="100" end="0" time="900">WindowClose</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">WindowOpen</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">WindowClose</animation>
+                <visible>control.isvisible(91919298)+!string.equals(#fanarthandler.music.backdrop1.any,)+!string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)</visible>
+                <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
-
+         <control>
+                <description>FANART BACKGROUND</description>
+                <id>0</id>
+                <type>image</type>
+                <posx>0</posx>
+                <posy>0</posy>
+                <width>1280</width>
+                <height>720</height>
+                <texture>black.png</texture>
+                <visible>control.isvisible(91919295)+!string.equals(#fanarthandler.music.backdrop1.play,)+control.isvisible(91919294)</visible>
+                <animation effect="fade" start="10" end="100" time="700">Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
+         </control>
          <control>
                 <description>FANART IMAGE 1</description>
-                <id>897688</id>
+                <id>0</id>
                 <type>image</type>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop1.play</texture>
-                <visible>control.isvisible(91919295)+control.isvisible(91919294)</visible>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">Visible</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
+                <visible>control.isvisible(91919295)+!string.equals(#fanarthandler.music.backdrop1.play,)+control.isvisible(91919294)</visible>
+                <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
 
          <control>
                 <description>FANART IMAGE 2</description>
-                <id>897689</id>
+                <id>0</id>
                 <type>image</type>
                 <posx>0</posx>
                 <posy>0</posy>
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop2.play</texture>
-                <visible>control.isvisible(91919296)+control.isvisible(91919294)</visible>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0">Visible</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
-                <animation effect="fade" start="10" end="100" time="1000" delay="80">WindowOpen</animation>
-                <animation effect="fade" start="100" end="0" time="900">WindowClose</animation>
-                <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">WindowOpen</animation>
-                <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">WindowClose</animation>
+                <visible>control.isvisible(91919296)+!string.equals(#fanarthandler.music.backdrop2.play,)+control.isvisible(91919294)</visible>
+                <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                <animation effect="fade" start="100" end="10" time="700" delay="100" >Hidden</animation>
          </control>
+
+         
   </controls>
 </window>

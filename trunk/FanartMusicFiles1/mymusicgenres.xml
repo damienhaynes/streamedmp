@@ -6,7 +6,8 @@
        <define>#header.label:#view</define>
        <define>#header.image:-</define>
        <define>#header.hover:hover_my music.png</define>
-       <define>#useRandomMusicFanart:Yes</define>
+       <define>#useRandomMusicFanart:No</define>
+       <define>#useSelectedFanart:Yes</define>
        <controls>
               <control>
                      <description>music background image</description>
@@ -19,7 +20,7 @@
                      <height>720</height>
                      <texture>hover_my music.png</texture>
               </control>
-              <import>mymusic.autofanart.xml</import>
+              <import>mymusic.selected.fanart.xml</import>
               <control>
                      <description>music overlay image</description>
                      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -31,6 +32,7 @@
                      <height>720</height>
                      <texture>mainoverlay.png</texture>
               </control>
+              <!---->
               <control>
                      <id>204</id>
                      <type>image</type>
