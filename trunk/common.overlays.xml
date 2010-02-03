@@ -6,16 +6,14 @@ same location everywhere
 <window>
   <controls>
     <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-
-	 <control>
+    <control>
       <description>dummy (To enable fanart set this control to visible)</description>
       <type>label</type>
       <id>3339</id>
       <posX>2000</posX>
       <label></label>
       <visible>no</visible>
-    </control> 
-
+    </control>
     <control>
       <description>DUMMY CONTROL FOR FANART 1 RANDOM VISIBILITY CONDITION</description>
       <type>label</type>
@@ -57,7 +55,6 @@ same location everywhere
       <width>1</width>
       <visible>no</visible>
     </control>
-
     <control>
       <description>dummy (visible when music is playing)</description>
       <type>label</type>
@@ -74,7 +71,6 @@ same location everywhere
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -88,7 +84,6 @@ same location everywhere
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
-
     <control>
       <description>PICTURES NOW PLAYING BACKGROUND 1</description>
       <id>0</id>
@@ -123,7 +118,6 @@ same location everywhere
       <texture>overlayfanartmask.png</texture>
       <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)</visible>
     </control>
-
     <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
     <control>
       <description>music logo</description>
