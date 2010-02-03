@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
        <id>510</id>
        <defaultcontrol>1141</defaultcontrol>
@@ -109,46 +109,46 @@
                             <percentage>#Play.Current.Rating</percentage>
                             <visible>Player.HasMedia</visible>
                      </control>
-                     <!-- VU Meter: LED -->
+                     <!-- VU Meter: Analog -->
                      <control>
                             <type>image</type>
                             <id>0</id>
-                            <posX>540</posX>
-                            <posY>404</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <texture>VU aus led.png</texture>
-                            <visible>!Player.playing</visible>
+                            <posX>560</posX>
+                            <posY>374</posY>
+                            <width>60</width>
+                            <height>60</height>
+                            <texture>VU aus.png</texture>
+
                      </control>
                      <control>
                             <type>image</type>
                             <id>999</id>
-                            <posX>540</posX>
-                            <posY>404</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <imagepath>Animations\LedVu</imagepath>
+                            <posX>560</posX>
+                            <posY>374</posY>
+                            <width>60</width>
+                            <height>60</height>
+                            <imagepath>Animations\AnVu</imagepath>
                             <texture>#VUMeterL</texture>
                             <visible>Player.HasAudio + Player.playing</visible>
                      </control>
                      <control>
                             <type>image</type>
                             <id>0</id>
-                            <posX>540</posX>
-                            <posY>424</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <texture>VU aus led.png</texture>
-                            <visible>!Player.playing</visible>
+                            <posX>660</posX>
+                            <posY>374</posY>
+                            <width>60</width>
+                            <height>60</height>
+                            <texture>VU aus.png</texture>
+
                      </control>
                      <control>
                             <type>image</type>
                             <id>998</id>
-                            <posX>540</posX>
-                            <posY>424</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <imagepath>Animations\LedVu</imagepath>
+                            <posX>660</posX>
+                            <posY>374</posY>
+                            <width>60</width>
+                            <height>60</height>
+                            <imagepath>Animations\AnVu</imagepath>
                             <texture>#VUMeterR</texture>
                             <visible>Player.HasAudio + Player.playing</visible>
                      </control>

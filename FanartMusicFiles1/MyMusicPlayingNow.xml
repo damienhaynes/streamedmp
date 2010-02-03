@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
        <id>510</id>
        <defaultcontrol>1141</defaultcontrol>
@@ -109,48 +109,20 @@
                             <percentage>#Play.Current.Rating</percentage>
                             <visible>Player.HasMedia</visible>
                      </control>
-                     <!-- VU Meter: LED -->
+                     <!-- Animation -->
                      <control>
-                            <type>image</type>
-                            <id>0</id>
-                            <posX>540</posX>
-                            <posY>404</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <texture>VU aus led.png</texture>
-                            <visible>!Player.playing</visible>
-                     </control>
-                     <control>
-                            <type>image</type>
-                            <id>999</id>
-                            <posX>540</posX>
-                            <posY>404</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <imagepath>Animations\LedVu</imagepath>
-                            <texture>#VUMeterL</texture>
-                            <visible>Player.HasAudio + Player.playing</visible>
-                     </control>
-                     <control>
-                            <type>image</type>
-                            <id>0</id>
-                            <posX>540</posX>
-                            <posY>424</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <texture>VU aus led.png</texture>
-                            <visible>!Player.playing</visible>
-                     </control>
-                     <control>
-                            <type>image</type>
-                            <id>998</id>
-                            <posX>540</posX>
-                            <posY>424</posY>
-                            <width>200</width>
-                            <height>15</height>
-                            <imagepath>Animations\LedVu</imagepath>
-                            <texture>#VUMeterR</texture>
-                            <visible>Player.HasAudio + Player.playing</visible>
+                            <type>multiimage</type>
+                            <id>9990</id>
+                            <posX>560</posX>
+                            <posY>384</posY>
+                            <width>140</width>
+                            <height>50</height>
+                            <imagepath>Play</imagepath>
+                            <timeperimage>50</timeperimage>
+                            <fadetime>10</fadetime>
+                            <loop>yes</loop>
+                            <randomize>yes</randomize>
+                            
                      </control>
 
                      <control>
@@ -698,7 +670,7 @@
                             <height>40</height>
                             <hyperlink>500</hyperlink>
                      </control>
-
+                     
                      <control>
                             <description>Lyrics Button</description>
                             <type>button</type>
