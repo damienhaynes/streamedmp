@@ -336,7 +336,7 @@
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
 		<row><td>Fanart</td><td>{A478EEC7-DCD1-4DAE-AD86-A4592B928AC0}</td><td>MPFANARTDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>FanartHandler.org</td><td>{214833FB-7EBC-4914-8AAE-87B1A1D238C8}</td><td>MPDATABASEDIR</td><td>152</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>FanartHandler.xml</td><td>{BFA1D198-1FCB-48B0-B997-FEF480B1F2A3}</td><td>MPCONFIGDIR</td><td>152</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>FanartHandlerConfig</td><td>{BFA1D198-1FCB-48B0-B997-FEF480B1F2A3}</td><td>MPCONFIGDIR</td><td>152</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>commonMovingPictures</td><td>{755A65DE-18FD-4078-A070-C52D64FA5E55}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1547,7 +1547,7 @@
 		<row><td>Classical</td><td>tvlogosGermanyClassical</td></row>
 		<row><td>FanartHandler</td><td>Fanart</td></row>
 		<row><td>FanartHandler</td><td>FanartHandler.org</td></row>
-		<row><td>FanartHandler</td><td>FanartHandler.xml</td></row>
+		<row><td>FanartHandler</td><td>FanartHandlerConfig</td></row>
 		<row><td>FanartHandler</td><td>pluginFanartHandlerDLL</td></row>
 		<row><td>GlobalMusicSearch</td><td>pluginGlobalMusicSearchDLL</td></row>
 		<row><td>InfoService</td><td>libWebBrowserDependencies</td></row>
@@ -1633,8 +1633,8 @@
 		<row><td>dialogtvguide.xml1</td><td>tvguide08Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\8 rows\dialogTvGuide.xml</td><td>1</td><td/></row>
 		<row><td>dialogtvguide.xml2</td><td>tvguide12Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\dialogTvGuide.xml</td><td>1</td><td/></row>
 		<row><td>fanarthandler.dll</td><td>pluginFanartHandlerDLL</td><td>FANART~1.DLL|FanartHandler.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\process\FanartHandler.dll</td><td>1</td><td/></row>
-		<row><td>fanarthandler.org</td><td>FanartHandler.org</td><td>FANART~1.ORG|FanartHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\FanartHandler.org</td><td>1</td><td/></row>
-		<row><td>fanarthandler.xml</td><td>FanartHandler.xml</td><td>FANART~1.XML|FanartHandler.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\FanartHandler.xml</td><td>1</td><td/></row>
+		<row><td>fanarthandler.org</td><td>FanartHandler.org</td><td>FANART~1.ORG|FanartHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\database\FanartHandler.org</td><td>1</td><td/></row>
+		<row><td>fanarthandler.org1</td><td>FanartHandlerConfig</td><td>FANART~1.ORG|FanartHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\config\FanartHandler.org</td><td>1</td><td/></row>
 		<row><td>fonts.xml</td><td>fontsXMLDefault</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fonts.xml</td><td>1</td><td/></row>
 		<row><td>fonts.xml1</td><td>fontsXMLLarge</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\large\fonts.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
@@ -1996,7 +1996,7 @@
 		<col def="S0">Miscellaneous</col>
 		<row><td>Fanart</td><td/><td/><td>_1F02904E_5AF5_4721_A515_D57A35937C6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>FanartHandler.org</td><td/><td/><td>_4C539A3F_6A91_48F8_8315_7030FD0FF2EB_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>FanartHandler.xml</td><td/><td/><td>_A5B9AED9_62EA_4BB8_B272_A084E77AE59F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>FanartHandlerConfig</td><td/><td/><td>_A5B9AED9_62EA_4BB8_B272_A084E77AE59F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>commonMovingPictures</td><td/><td/><td>_8C6F6878_5060_4AF3_A120_48B2213248A2_FILTER</td><td/><td/><td/><td/></row>
@@ -2474,7 +2474,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.891</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.898</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4842,9 +4842,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{BFB7DF19-04D4-4F3F-A85D-693F8D735126}</td><td/></row>
+		<row><td>ProductCode</td><td>{E54DE743-99B0-4549-AFD6-2A5AC773625A}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.891.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.898.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
