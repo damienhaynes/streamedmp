@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
        <id>510</id>
-       <defaultcontrol>1141</defaultcontrol>
+       <defaultcontrol>200010</defaultcontrol>
        <allowoverlay>no</allowoverlay>
        <vumeter>no</vumeter>
        <define>#header.hover:hover_my lyrics.png</define>
@@ -24,37 +24,38 @@
 
               <import>mymusic.autofanart.xml</import>
               <control>
+                     <id>200010</id>
+                     <description>dummy button</description>
+                     <label>-</label>
+                     <type>button</type>
+                     <posX>0</posX>
+                     <posY>0</posY>
+                     <width>1280</width>
+                     <height>449</height>
+                     <onup>1141</onup>
+                     <ondown>1141</ondown>
+                     <onleft>200010</onleft>
+                     <onright>200010</onright>
+                     <textureFocus>-</textureFocus>
+                     <textureNoFocus>-</textureNoFocus>
+                     <visible>yes</visible>
+              </control>
+              <control>
                      <type>actiongroup</type>
                      <description>group element</description>
                      <defaultcontrol>155</defaultcontrol>
-                     <animation effect="slide" start="0,0" end="0,120" time="500" reversible="false">visible</animation>
-                     <animation effect="slide" start="0,120" end="0,0" time="500" delay="700">hidden</animation>
+                     <animation effect="slide" start="0,0" end="0,120" time="500" tween="quadratic" delay="100">unfocus</animation>
                      <animation effect="fade" time="250" delay="0">WindowClose</animation>
                      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
                      <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1270</width>
-                     <height>720</height>
-                     <buttonwidth>0</buttonwidth>
-                     <buttonheight>0</buttonheight>
-                     <visible allowhiddenfocus="true">Control.HasFocus(200010)</visible>
-                     <control>
-                            <id>200010</id>
-                            <description>dummy button</description>
-                            <label>-</label>
-                            <type>button</type>
-                            <posX>0</posX>
-                            <posY>0</posY>
-                            <width>1280</width>
-                            <height>540</height>
-                            <onup>1141</onup>
-                            <ondown>1141</ondown>
-                            <onleft>200010</onleft>
-                            <onright>200010</onright>
-                            <textureFocus>-</textureFocus>
-                            <textureNoFocus>-</textureNoFocus>
-                            <visible>yes</visible>
-                     </control>
+                     <posY>250</posY>
+                     <width>1280</width>
+                     <height>470</height>
+                     <buttonwidth>1280</buttonwidth>
+                     <buttonheight>470</buttonheight>
+                     <buttonX>0</buttonX>
+                     <buttonY>350</buttonY>
+                     <dimColor>ffffffff</dimColor>
                      <control>
 
                             <description>bottom black bg</description>
@@ -65,6 +66,7 @@
                             <width>1280</width>
                             <height>470</height>
                             <texture>osdbackground1.png</texture>
+                            <dimColor>ffffffff</dimColor>
                      </control>
                      <control>
                             <type>image</type>
@@ -75,6 +77,7 @@
                             <width>250</width>
                             <height>250</height>
                             <texture flipY="true" diffuse="diffusemirrorwide.png">-</texture>
+                            
                      </control>
                      <control>
                             <type>image</type>
@@ -85,6 +88,7 @@
                             <width>317</width>
                             <height>305</height>
                             <texture>round.cover.frame.png</texture>
+                            <dimColor>ffffffff</dimColor>
                      </control>
                      <control>
                             <type>imagelist</type>
@@ -242,7 +246,7 @@
                             <lefttexture>osdprogressleft.png</lefttexture>
                             <midtexture>osdprogressmid.png</midtexture>
                             <righttexture>osdprogressright.png</righttexture>
-                            <visible>player.hasmedia</visible>
+                            <visible>yes</visible>
                      </control>
                      <control>
                             <type>label</type>
@@ -314,12 +318,12 @@
                      <!-- BOTTOM PART -->
 
 
-                     <!--causes problems with windows visibility-->
-                     <!--<control>
+                     
+                     <control>
                             <description>unknown rating1</description>
                             <type>imagelist</type>
                             <id>77</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>570</posY>
                             <width>130</width>
                             <height>32</height>
@@ -331,7 +335,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue1.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -343,7 +347,7 @@
                             <description>unknown rating2</description>
                             <type>imagelist</type>
                             <id>78</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>605</posY>
                             <width>130</width>
                             <height>32</height>
@@ -355,7 +359,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue1.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -367,7 +371,7 @@
                             <description>unknown rating3</description>
                             <type>imagelist</type>
                             <id>79</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>640</posY>
                             <width>130</width>
                             <height>32</height>
@@ -379,7 +383,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue1.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -391,7 +395,7 @@
                             <description>existent rating1</description>
                             <type>imagelist</type>
                             <id>80</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>570</posY>
                             <width>130</width>
                             <height>32</height>
@@ -403,7 +407,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue2.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -415,7 +419,7 @@
                             <description>existent rating2</description>
                             <type>imagelist</type>
                             <id>81</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>605</posY>
                             <width>130</width>
                             <height>32</height>
@@ -427,7 +431,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue2.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -439,7 +443,7 @@
                             <description>existent rating3</description>
                             <type>imagelist</type>
                             <id>82</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>640</posY>
                             <width>130</width>
                             <height>32</height>
@@ -451,7 +455,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue2.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -463,7 +467,7 @@
                             <description>known rating1</description>
                             <type>imagelist</type>
                             <id>83</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>570</posY>
                             <width>130</width>
                             <height>32</height>
@@ -475,7 +479,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue3.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -487,7 +491,7 @@
                             <description>known rating2</description>
                             <type>imagelist</type>
                             <id>84</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>605</posY>
                             <width>130</width>
                             <height>32</height>
@@ -499,7 +503,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue3.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -511,7 +515,7 @@
                             <description>known rating3</description>
                             <type>imagelist</type>
                             <id>85</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>640</posY>
                             <width>130</width>
                             <height>32</height>
@@ -523,7 +527,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue3.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -535,7 +539,7 @@
                             <description>famous rating1</description>
                             <type>imagelist</type>
                             <id>87</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>570</posY>
                             <width>130</width>
                             <height>32</height>
@@ -547,7 +551,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue4.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -559,7 +563,7 @@
                             <description>famous rating2</description>
                             <type>imagelist</type>
                             <id>88</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>605</posY>
                             <width>130</width>
                             <height>32</height>
@@ -571,7 +575,7 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue4.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
@@ -583,7 +587,7 @@
                             <description>famous rating3</description>
                             <type>imagelist</type>
                             <id>89</id>
-                            <posX>508</posX>
+                            <posX>428</posX>
                             <posY>640</posY>
                             <width>130</width>
                             <height>32</height>
@@ -595,14 +599,14 @@
                             <textureHeight>22</textureHeight>
                             <subitems>
                                    <subitem>-.png</subitem>
-                                   <subitem>starwhite.png</subitem>
+                                   <subitem>star_blue4.png</subitem>
                             </subitems>
                             <orientation>horizontal</orientation>
                             <align>left</align>
                             <imagesToDraw>5</imagesToDraw>
                             <percentage>#Lastfm.Rating.AlbumTrack3</percentage>
                             <visible>no</visible>
-                     </control>-->
+                     </control>
                      <control>
                             <type>fadelabel</type>
                             <description>best album tracks label</description>
@@ -622,16 +626,17 @@
                             <onleft>166</onleft>
                             <onright>155</onright>
                             <ondown>1143</ondown>
-                            <posX>10</posX>
+                            <posX>0</posX>
                             <posY>560</posY>
                             <width>550</width>
                             <height>130</height>
                             <textYOff>2</textYOff>
-                            <textXOff>60</textXOff>
+                            <textXOff>40</textXOff>
                             <IconXOff>10</IconXOff>
                             <spinColor>-</spinColor>#
                             <font>mediastream12</font>
                             <textureHeight>35</textureHeight>
+                            <unfocusedAlpha>100</unfocusedAlpha>
                             <image>-</image>
                      </control>
                      <control>
@@ -662,22 +667,23 @@
                             <spinColor>-</spinColor>
                             <font>mediastream12</font>
                             <textureHeight>35</textureHeight>
+                            <unfocusedAlpha>100</unfocusedAlpha>
                             <image>-</image>
                      </control>
                      <control>
                             <description>Music Search Button</description>
                             <type>button</type>
                             <id>1143</id>
-                            <posX>560</posX>
-                            <posY>675</posY>
+                            <posX>525</posX>
+                            <posY>660</posY>
                             <onup>166</onup>
                             <ondown>200010</ondown>
                             <onleft>166</onleft>
                             <onright>1141</onright>
                             <textureFocus>top_search_enabled.png</textureFocus>
                             <textureNoFocus>top_search_disabled.png</textureNoFocus>
-                            <width>40</width>
-                            <height>40</height>
+                            <width>50</width>
+                            <height>50</height>
                             <hyperlink>30885</hyperlink>
                             <visible>plugin.isenabled(Search music)</visible>
                      </control>
@@ -685,8 +691,8 @@
                             <description>Playlist Button</description>
                             <type>button</type>
                             <id>1141</id>
-                            <posX>620</posX>
-                            <posY>675</posY>
+                            <posX>615</posX>
+                            <posY>660</posY>
                             <label>-</label>
                             <onup>200010</onup>
                             <ondown>200010</ondown>
@@ -694,8 +700,8 @@
                             <onright>1142</onright>
                             <textureFocus>top_playlist_enabled.png</textureFocus>
                             <textureNoFocus>top_playlist_disabled.png</textureNoFocus>
-                            <width>40</width>
-                            <height>40</height>
+                            <width>50</width>
+                            <height>50</height>
                             <hyperlink>500</hyperlink>
                      </control>
 
@@ -703,19 +709,29 @@
                             <description>Lyrics Button</description>
                             <type>button</type>
                             <id>1142</id>
-                            <posX>680</posX>
-                            <posY>675</posY>
+                            <posX>705</posX>
+                            <posY>660</posY>
                             <onup>155</onup>
                             <ondown>200010</ondown>
                             <onleft>1141</onleft>
                             <onright>155</onright>
                             <textureFocus>top_lyrics_enabled.png</textureFocus>
                             <textureNoFocus>top_lyrics_disabled.png</textureNoFocus>
-                            <width>40</width>
-                            <height>40</height>
+                            <width>50</width>
+                            <height>50</height>
                             <hyperlink>90478</hyperlink>
                             <visible>plugin.isenabled(My Lyrics)</visible>
                      </control>
+              </control>
+              <control>
+                     <description>video preview window</description>
+                     <type>videowindow</type>
+                     <id>99</id>
+                     <posX>20</posX>
+                     <posY>79</posY>
+                     <width>203</width>
+                     <height>114</height>
+                     <visible>no</visible>
               </control>
               <import>common.window.xml</import>
               <import>common.time.xml</import>
