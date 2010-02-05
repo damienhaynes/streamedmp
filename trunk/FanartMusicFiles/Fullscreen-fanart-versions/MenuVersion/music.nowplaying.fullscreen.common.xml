@@ -61,9 +61,20 @@ This file should contain the details view
       <id>0</id>
       <posX>150</posX>
       <posY>660</posY>
-      <width>755</width>
+      <width>150</width>
       <height>26</height>
-      <label>#Play.Current.Track    |    #Play.Current.Year</label>
+      <label>#Play.Current.Track</label>
+      <font>mediastream10c</font>
+    </control>
+    <control>
+      <type>label</type>
+      <description>year label</description>
+      <id>0</id>
+      <posX>240</posX>
+      <posY>660</posY>
+      <width>150</width>
+      <height>26</height>
+      <label>|    #Play.Current.Year</label>
       <font>mediastream10c</font>
     </control>
     <control>
@@ -169,7 +180,7 @@ This file should contain the details view
       <height>65</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>missing_coverart.png</texture>
-    </control>
+    </control>    
     <control>
       <description>music logo</description>
       <type>image</type>
