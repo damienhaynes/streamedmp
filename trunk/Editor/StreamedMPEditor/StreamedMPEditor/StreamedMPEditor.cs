@@ -190,7 +190,7 @@ namespace StreamedMPEditor
                 screenReset();
                 setScreenProperties(itemsOnMenubar.SelectedIndex);
                 disableItemControls();
-                buttonCancelCreate.Visible = false;
+                cancelCreateButton.Visible = false;
                 editButton.Enabled = true;
 
 
@@ -255,7 +255,7 @@ namespace StreamedMPEditor
             {
                 LoadPrettyItems();
                 disableItemControls();
-                buttonCancelCreate.Visible = false;
+                cancelCreateButton.Visible = false;
                 return true;
             }
             else
@@ -410,6 +410,8 @@ namespace StreamedMPEditor
             cboContextLabel.Text = mnuItem.contextLabel;
             bgBox.Text = mnuItem.bgFolder;
             cboFanartProperty.Text = mnuItem.fanartProperty;
+            if (cboFanartProperty.Text.ToLower() == "false")
+                cboFanartProperty.Text = "";
             cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
             cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
             disableBGSharing.Checked = mnuItem.disableBGSharing;
@@ -427,7 +429,7 @@ namespace StreamedMPEditor
             editButton.Enabled = false;
             enableItemControls();
             addButton.Enabled = false;
-            buttonCancelCreate.Visible = false;
+            cancelCreateButton.Visible = false;
         }
 
 
@@ -459,7 +461,7 @@ namespace StreamedMPEditor
                 reloadBackgroundItems();
                 screenReset();
                 disableItemControls();
-                buttonCancelCreate.Visible = false;
+                cancelCreateButton.Visible = false;
             }
         }
 
@@ -546,7 +548,7 @@ namespace StreamedMPEditor
             selectedWindowID.Text = ids[xmlFiles.SelectedIndex];
             enableItemControls();
             editButton.Enabled = false;
-            buttonCancelCreate.Visible = true;
+            cancelCreateButton.Visible = true;
         }
 
 
@@ -679,6 +681,8 @@ namespace StreamedMPEditor
             System.IO.StreamWriter writer;
             generateXML(direction);
             generateBg(direction);
+            if (!cbDisableClock.Checked)
+                generateClock();
             if (enableFiveDayWeather.Checked)
                 GenerateFiveDayWeather();
             if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
@@ -737,7 +741,6 @@ namespace StreamedMPEditor
                 item.id = menuItems.IndexOf(item);
             }
         }
-
     }
 }
 

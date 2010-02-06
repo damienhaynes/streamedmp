@@ -3181,6 +3181,14 @@ namespace StreamedMPEditor
             xml = xml.Replace("<!-- BEGIN GENERATED FIVE DAY WEATHER CODE -->", rawXML.ToString());
         }
 
+        private void generateClock()
+        {
+            StringBuilder rawXML = new StringBuilder();
+            rawXML.AppendLine("<import>common.time.xml</import>");
+            xml = xml.Replace("<!-- BEGIN COMMON TIME CODE-->", rawXML.ToString());
+
+        }
+
         private void generateWeathersummary()
         {
 
@@ -3402,6 +3410,7 @@ namespace StreamedMPEditor
             string settingHorizontalContextLabels = horizontalContextLabels.Checked ? "true" : "false";
             string settingFullWeatherSummaryBottom = fullWeatherSummaryBottom.Checked ? "true" : "false";
             string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
+            string disableOnScreenClock = cbDisableClock.Checked ? "true" : "false";
 
             if (direction == menuType.horizontal)
             {
@@ -3473,6 +3482,7 @@ namespace StreamedMPEditor
                       + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 2, true)
                       + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 2, true)
                       + generateEntry("activeRssImageType", activeRssImageType, 2, true)
+                      + generateEntry("disableOnScreenClock", disableOnScreenClock, 2, true)
                       + "\t</section>");
 
 
