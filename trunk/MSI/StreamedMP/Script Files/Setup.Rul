@@ -73,6 +73,7 @@
 
 #define NOWPLAYING_DEFAULT							"Main\\nowPlayingDefault"
 #define NOWPLAYING_FULLSCREEN_HIDDENMENU            "Main\\nowPlayingFullscreenHiddenMenu"
+#define NOWPLAYING_FULLSCREEN_SLIDINGMENU           "Main\\nowPlayingFullscreenSlidingMenu"
 #define NOWPLAYING_EDGE_FADE                        "Main\\nowPlayingEdgeFade"
 #define NOWPLAYING_EDGE_NOFADE                      "Main\\nowPlayingEdgeNoFade"
 #define NOWPLAYING_EDGE_NOMASK                      "Main\\nowPlayingEdgeNoMask"
@@ -164,6 +165,7 @@
 #define RES_BMP_NOWPLAYINGWINDOWFADE				1405
 #define RES_BMP_NOWPLAYINGWINDOWNOFADE				1406
 #define RES_BMP_NOWPLAYINGWINDOWNOMASK				1407
+#define RES_BMP_NOWPLAYINGFULLSCREENSLIDINGMENU		1408
 
 #define RES_COMBO_NOWPLAYINGCHOICE					1420
     
@@ -1686,7 +1688,8 @@ Dlg_Wait:
 	        	listNowPlaying = ListCreate(STRINGLIST);
 	        	
 	        	ListAddString(listNowPlaying,"Default",AFTER);
-	        	ListAddString(listNowPlaying,"Fullscreen",AFTER);
+	        	ListAddString(listNowPlaying,"Fullscreen - Standard Hidden Menu",AFTER);
+	        	ListAddString(listNowPlaying,"Fullscreen - Top/Down Sliding Menu",AFTER);
 	        	ListAddString(listNowPlaying,"Default - Edge Fade",AFTER);
 	        	ListAddString(listNowPlaying,"Default - Edge No Fade",AFTER);
 	        	ListAddString(listNowPlaying,"Default - Edge No Mask",AFTER);
@@ -1731,6 +1734,7 @@ Dlg_Wait:
     // Set Feature Selection
     FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, FALSE );
     FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, FALSE );
+    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_SLIDINGMENU, FALSE );
     FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, FALSE );
     FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, FALSE );
     FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, FALSE );
@@ -1742,8 +1746,11 @@ Dlg_Wait:
 		case "Default":
 			FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );
 		
-		case "Fullscreen":
+		case "Fullscreen - Standard Hidden Menu":
 		    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, TRUE );
+		    
+		case "Fullscreen - Top/Down Sliding Menu":
+		    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_SLIDINGMENU, TRUE );
 		    
 		case "Default - Edge Fade":
 			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, TRUE );  
@@ -1781,6 +1788,7 @@ begin
 	// Hide all controls
 	HideControl(szDlg, RES_BMP_NOWPLAYINGDEFAULT);
 	HideControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU);
+	HideControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENSLIDINGMENU);
 	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGEFADE);
 	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGENOFADE);
 	HideControl(szDlg, RES_BMP_NOWPLAYINGEDGENOMASK);
@@ -1795,8 +1803,11 @@ begin
 		case "Default":
 			ShowControl(szDlg, RES_BMP_NOWPLAYINGDEFAULT);
 		
-		case "Fullscreen":
+		case "Fullscreen - Standard Hidden Menu":
 		    ShowControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU);
+		    
+		case "Fullscreen - Top/Down Sliding Menu":
+		    ShowControl(szDlg, RES_BMP_NOWPLAYINGFULLSCREENSLIDINGMENU);
 		    
 		case "Default - Edge Fade":
 			ShowControl(szDlg, RES_BMP_NOWPLAYINGEDGEFADE);  
