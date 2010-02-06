@@ -192,6 +192,7 @@ namespace StreamedMPEditor
                 fullWeatherSummaryBottom.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
                 fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
                 activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
+                cbDisableClock.Checked = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
 
             }
             catch

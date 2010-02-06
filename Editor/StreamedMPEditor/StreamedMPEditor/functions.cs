@@ -139,6 +139,7 @@ namespace StreamedMPEditor
           if (path != null)
           {
             mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);
+            mpPaths.fanartBasePath = mpPaths.configBasePath + "thumbs\\Skin Fanart\\";
           }
         }
 
@@ -359,7 +360,7 @@ namespace StreamedMPEditor
       // Auto fill items on new selection for quicker add
       QuickSelect(cboQuickSelect.SelectedIndex);
       enableItemControls();
-      buttonCancelCreate.Visible = true;
+      cancelCreateButton.Visible = true;
       editButton.Enabled = false;
     }
 
@@ -458,7 +459,7 @@ namespace StreamedMPEditor
         backgroundImages.Enabled = false;
         addButton.Enabled = false;
         removeButton.Enabled = true;
-        buttonCancelCreate.Visible = false;
+        cancelCreateButton.Visible = false;
     }
 
     private void enableItemControls()
@@ -1438,6 +1439,7 @@ namespace StreamedMPEditor
       public string streamedMPpath;
       public string pluginPath;
       public string backgroundPath;
+      public string fanartBasePath;
     }
 
       public struct randomFanartSetting

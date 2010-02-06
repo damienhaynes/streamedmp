@@ -92,7 +92,7 @@
         this.bgBox = new System.Windows.Forms.ComboBox();
         this.labelImageFolder = new System.Windows.Forms.Label();
         this.itemProperties = new System.Windows.Forms.GroupBox();
-        this.buttonCancelCreate = new System.Windows.Forms.Button();
+        this.cancelCreateButton = new System.Windows.Forms.Button();
         this.cboContextLabel = new System.Windows.Forms.ComboBox();
         this.label18 = new System.Windows.Forms.Label();
         this.isWeather = new System.Windows.Forms.CheckBox();
@@ -186,6 +186,7 @@
         this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
         this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         this.groupBox5 = new System.Windows.Forms.GroupBox();
+        this.cbDisableClock = new System.Windows.Forms.CheckBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -648,6 +649,7 @@
         this.cancelButton.TabIndex = 114;
         this.cancelButton.Text = "Cancel";
         this.cancelButton.UseVisualStyleBackColor = true;
+        this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
         // 
         // editButton
         // 
@@ -922,7 +924,7 @@
         // 
         // itemProperties
         // 
-        this.itemProperties.Controls.Add(this.buttonCancelCreate);
+        this.itemProperties.Controls.Add(this.cancelCreateButton);
         this.itemProperties.Controls.Add(this.cboContextLabel);
         this.itemProperties.Controls.Add(this.label18);
         this.itemProperties.Controls.Add(this.isWeather);
@@ -935,15 +937,15 @@
         this.itemProperties.TabStop = false;
         this.itemProperties.Text = "Item properties";
         // 
-        // buttonCancelCreate
+        // cancelCreateButton
         // 
-        this.buttonCancelCreate.Location = new System.Drawing.Point(231, 19);
-        this.buttonCancelCreate.Name = "buttonCancelCreate";
-        this.buttonCancelCreate.Size = new System.Drawing.Size(86, 22);
-        this.buttonCancelCreate.TabIndex = 51;
-        this.buttonCancelCreate.Text = "Cancel";
-        this.buttonCancelCreate.UseVisualStyleBackColor = true;
-        this.buttonCancelCreate.Click += new System.EventHandler(this.buttonCancelCreate_Click);
+        this.cancelCreateButton.Location = new System.Drawing.Point(231, 19);
+        this.cancelCreateButton.Name = "cancelCreateButton";
+        this.cancelCreateButton.Size = new System.Drawing.Size(86, 22);
+        this.cancelCreateButton.TabIndex = 51;
+        this.cancelCreateButton.Text = "Cancel";
+        this.cancelCreateButton.UseVisualStyleBackColor = true;
+        this.cancelCreateButton.Click += new System.EventHandler(this.buttonCancelCreate_Click);
         // 
         // cboContextLabel
         // 
@@ -1249,6 +1251,7 @@
         // 
         // globalSettings
         // 
+        this.globalSettings.Controls.Add(this.cbDisableClock);
         this.globalSettings.Controls.Add(this.noFocusAlphaLabel);
         this.globalSettings.Controls.Add(this.focusAlphaLabel);
         this.globalSettings.Controls.Add(this.wrapString);
@@ -1905,6 +1908,16 @@
         this.groupBox5.TabStop = false;
         this.groupBox5.Text = "StreamedMP BasicHome Editor";
         // 
+        // cbDisableClock
+        // 
+        this.cbDisableClock.AutoSize = true;
+        this.cbDisableClock.Location = new System.Drawing.Point(455, 66);
+        this.cbDisableClock.Name = "cbDisableClock";
+        this.cbDisableClock.Size = new System.Drawing.Size(140, 17);
+        this.cbDisableClock.TabIndex = 32;
+        this.cbDisableClock.Text = "Disable on screen clock";
+        this.cbDisableClock.UseVisualStyleBackColor = true;
+        // 
         // streamedMpEditor
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2139,7 +2152,8 @@
     private System.Windows.Forms.CheckBox cbItemFanartHandlerEnable;
     private System.Windows.Forms.CheckBox cbEnableMusicNowPlayingFanart;
     private System.Windows.Forms.RichTextBox richTextBox2;
-    private System.Windows.Forms.Button buttonCancelCreate;
+    private System.Windows.Forms.Button cancelCreateButton;
+    private System.Windows.Forms.CheckBox cbDisableClock;
   }
 }
 

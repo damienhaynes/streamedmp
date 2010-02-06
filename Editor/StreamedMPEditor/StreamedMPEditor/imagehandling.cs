@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using System.Threading;
 
 namespace StreamedMPEditor
 {
@@ -67,16 +68,19 @@ namespace StreamedMPEditor
         if (!System.IO.File.Exists((imageDir(bgItem.image))))
         {
 
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))), "*.*");
-          createDefaultJpg(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))));
+          string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
+          createDefaultJpg(Path.GetDirectoryName(imageDir(bgItem.image)));
         }
 
-        totalImages = Directory.GetFiles(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11)))).Length;
+        totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
+        string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
+        mpPaths.fanartBasePath = dirParent;
 
         workingImage = Image.FromFile(imageDir(bgItem.image));
         newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
         defImgs.picBoxes[pBoxElement] = newPBox;
         defaultBackgrounds.Controls.Add(defImgs.picBoxes[pBoxElement]);
+        workingImage.Dispose();
 
         //Create the label
         newBGlabel.Size = new Size(90, 15);
@@ -104,7 +108,7 @@ namespace StreamedMPEditor
         //Create numbe of files label
         newBGCount.Location = new Point(xPos, (yPos + 82));
         newBGCount.Size = new Size(160, 15);
-        newBGCount.Text = "Images Avaiable: " + (totalImages - 1).ToString();
+        newBGCount.Text = "Images Avaiable: " + (totalImages).ToString();
         //newBGCount.Font = new Font(newBGCount.Font, FontStyle.Bold);
         bgCount[pBoxElement] = newBGCount;
         defaultBackgrounds.Controls.Add(bgCount[pBoxElement]);
@@ -116,7 +120,7 @@ namespace StreamedMPEditor
         newBGButton.Tag = pBoxElement.ToString();
         newBGButton.Click += new System.EventHandler(bgChangeButton_Click);
         newBGButton.Name = bgItem.mname[0];
-        if (totalImages < 3)
+        if (totalImages < 2)
           newBGButton.Enabled = false;
         else
           newBGButton.Enabled = true;
@@ -218,7 +222,7 @@ namespace StreamedMPEditor
       {
         if (bgItem.mname[0] == ctrlName)
         {
-          defImgs.activeDir = imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11)));
+          defImgs.activeDir = Path.GetDirectoryName(imageDir(bgItem.image));
           string[] fileList = getFileListing(defImgs.activeDir,"*.*");
           for (imagePointer = 0; imagePointer < 3; imagePointer++)
           {
@@ -227,6 +231,7 @@ namespace StreamedMPEditor
             defImgs.NewPicBoxes[imagePointer].Visible = true;
             defImgs.newDefault[imagePointer] = fileList[imagePointer];
             defImgs.NewPicBoxes[imagePointer].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+            workingImage.Dispose();
           }
         }
       }
@@ -239,27 +244,31 @@ namespace StreamedMPEditor
 
     private void pBox_Click(object sender, EventArgs e)
     {
-      string ctrlName = ((PictureBox)sender).Name;
-      string tag = ((PictureBox)sender).Tag.ToString();
-      
-      switch (ctrlName)
-      {
-        case "pBox0":
-          defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
-          break;
-        case "pBox1":
-          defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
-          break;
-        case "pBox2":
-          defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
-          break;
-      }
-      // Set the default pic for chosen background image and clean up/reset
-      string fromFile = defImgs.newDefault[int.Parse(tag)];
-      string toFile = defImgs.activeDir + "default.jpg";
-      imageReset(true);
-      File.Delete(toFile);
-      File.Copy(fromFile, toFile);
+        string ctrlName = ((PictureBox)sender).Name;
+        string tag = ((PictureBox)sender).Tag.ToString();
+
+        switch (ctrlName)
+        {
+            case "pBox0":
+                defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
+                break;
+            case "pBox1":
+                defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
+                break;
+            case "pBox2":
+                defImgs.picBoxes[defImgs.activePicBox].Image = defImgs.NewPicBoxes[int.Parse(tag)].Image;
+                break;
+        }
+        // Set the default pic for chosen background image and clean up/reset
+        string fromFile = defImgs.newDefault[int.Parse(tag)];
+        string defaultFile = defImgs.activeDir + "\\default.jpg";
+        string saveFile = defImgs.activeDir + "\\default2.jpg";
+        string tempFile = defImgs.activeDir + "\\temp.jpg"; 
+        imageReset(true);
+        File.Copy(defaultFile, tempFile, true);
+        File.Copy(fromFile, defaultFile, true);
+        File.Copy(tempFile, fromFile, true);
+        File.Delete(tempFile);
     }
 
     private void imageReset(bool fullReset)
@@ -378,11 +387,8 @@ namespace StreamedMPEditor
       foreach (FileInfo fInfo in dInfo.GetFiles(fileMask))
       {
         fcompare = fInfo.Name.ToLower();
-        if (!fcompare.Contains("default.jpg"))
-        {
-          fileResults.Add(fInfo.FullName);
-          totalImages++;
-        }
+        fileResults.Add(fInfo.FullName);
+        totalImages++;
       }
       return fileResults.ToArray();
     }
