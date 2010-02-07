@@ -51,6 +51,20 @@
                      <posX>0</posX>
                      <posY>0</posY>
                      <width>1</width>
+                     <visible>no</visible>
+              </control>
+              <control>
+                     <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
+                     <id>0</id>
+                     <type>image</type>
+                     <posx>0</posx>
+                     <posy>0</posy>
+                     <width>1280</width>
+                     <height>720</height>
+                     <texture>Animations\music\default.jpg</texture>
+                     <visible>string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)</visible>
+                     <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+                     <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
               </control>
               <control>
                      <description>FANART IMAGE 1</description>
@@ -61,7 +75,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.music.backdrop1.selected </texture>
-                     <visible>control.isvisible(91919291)+control.isvisible(91919293)+[string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)]+plugin.isenabled(Fanart Handler)</visible>
+                     <visible>control.isvisible(91919291)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
                      <animation effect="fade" start="100" end="10" time="700" delay="100" >Hidden</animation>
               </control>
@@ -74,7 +88,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.music.backdrop2.selected</texture>
-                     <visible>control.isvisible(91919292)+control.isvisible(91919293)+[string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)]+plugin.isenabled(Fanart Handler)</visible>
+                     <visible>control.isvisible(91919292)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="40" end="100" time="700" >Visible</animation>
                      <animation effect="fade" start="100" end="40" time="700" delay="100">Hidden</animation>
               </control>
@@ -87,7 +101,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.music.backdrop1.play</texture>
-                     <visible>control.isvisible(91919295)+!string.equals(#fanarthandler.music.backdrop1.play,)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
+                     <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
                      <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
               </control>
@@ -100,7 +114,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.music.backdrop2.play</texture>
-                     <visible>control.isvisible(91919296)+!string.equals(#fanarthandler.music.backdrop2.play,)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
+                     <visible>control.isvisible(91919296)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
                      <animation effect="fade" start="100" end="10" time="700" delay="100" >Hidden</animation>
               </control>
