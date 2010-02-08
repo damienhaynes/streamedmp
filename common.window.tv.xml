@@ -33,7 +33,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.tvseries.backdrop1.any</texture>
-                     <visible>control.isvisible(91919297)</visible>
+                     <visible>control.isvisible(91919297)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
                      <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
                      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" >Visible</animation>
@@ -48,11 +48,24 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>#fanarthandler.tvseries.backdrop2.any</texture>
-                     <visible>control.isvisible(91919298)</visible>
+                     <visible>control.isvisible(91919298)+plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
                      <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
                      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0" >Visible</animation>
                      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
+              </control>
+              <control>
+                     <description>standard background image with FH</description>
+                     <type>image</type>
+                     <id>0</id>
+                     <posX>0</posX>
+                     <posY>0</posY>
+                     <width>1280</width>
+                     <height>720</height>
+                     <texture>animations\tv\default.jpg</texture>
+                     <visible>string.equals(#fanarthandler.tvseries.backdrop1.any,)+string.equals(#fanarthandler.tvseries.backdrop2.any,)+plugin.isenabled(Fanart Handler)</visible>
+                     <animation effect="fade" time="500" start="10">WindowOpen</animation>
+                     <animation effect="fade" time="500" end="10" >WindowClose</animation>
               </control>
               <control>
                      <description>tv background image</description>
@@ -63,7 +76,7 @@
                      <width>1280</width>
                      <height>720</height>
                      <texture>hover_my tv.png</texture>
-                     <visible>[string.equals(#fanarthandler.tvseries.backdrop1.any,)+string.equals(#fanarthandler.tvseries.backdrop2.any,)] | !plugin.isenabled(Fanart Handler)</visible>
+                     <visible>!plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" time="500" start="10">WindowOpen</animation>
                      <animation effect="fade" time="500" end="10" >WindowClose</animation>
               </control>
