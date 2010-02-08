@@ -13,7 +13,6 @@
     <import>mymusic.selected.fanart.xml</import>
     <control>
       <description>music overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -21,6 +20,8 @@
       <width>1280</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -31,7 +32,8 @@
       <height>348</height>
       <texture>defaultAlbum.png</texture>
       <visible>!control.hasthumb(204)</visible>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <id>204</id>
@@ -41,7 +43,8 @@
       <width>348</width>
       <height>348</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -50,6 +53,8 @@
       <posY>270</posY>
       <width>300</width>
       <label>#track</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>actiongroup</type>
@@ -63,6 +68,8 @@
       <textureFocus>Action_menu.png</textureFocus>
       <textureNoFocus>Action_menu.png</textureNoFocus>
       <dimColor>00ffffff</dimColor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <type>image</type>
         <posX>1002</posX>
@@ -126,7 +133,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>563</posY>
+        <posY>591</posY>
         <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -232,6 +239,13 @@
           <label>137</label>
           <hyperlink>30885</hyperlink>
           <visible>plugin.isenabled(Search music)</visible>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
         </control>
         <control>
           <description>scrobble mode button</description>

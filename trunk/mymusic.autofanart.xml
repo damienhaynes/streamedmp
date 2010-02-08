@@ -42,7 +42,6 @@
                 <posX>0</posX>
                 <posY>0</posY>
                 <width>1</width>
-                <visible>no</visible>
          </control>
          <control>
                 <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
@@ -53,11 +52,10 @@
                 <width>1280</width>
                 <height>720</height>
                 <texture>Animations\music\default.jpg</texture>
-                <visible>string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)</visible>
+                <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)] | !plugin.isenabled(Fanart Handler)</visible>
                 <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
                 <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
-         
          <control>
                 <description>FANART Random Image 1</description>
                 <id>0</id>
@@ -67,7 +65,7 @@
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop1.any</texture>
-                <visible>control.isvisible(91919297)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
+                <visible>control.isvisible(91919297)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)+plugin.isenabled(Fanart Handler)</visible>
                 <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
                 <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
@@ -81,21 +79,8 @@
                 <width>1280</width>
                 <height>720</height>
                 <texture>#fanarthandler.music.backdrop2.any</texture>
-                <visible>control.isvisible(91919298)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
+                <visible>control.isvisible(91919298)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)+plugin.isenabled(Fanart Handler)</visible>
                 <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
-                <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
-         </control>
-         <control>
-                <description>FANART BACKGROUND</description>
-                <id>0</id>
-                <type>image</type>
-                <posx>0</posx>
-                <posy>0</posy>
-                <width>1280</width>
-                <height>720</height>
-                <texture>black.png</texture>
-                <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-                <animation effect="fade" start="10" end="100" time="700">Visible</animation>
                 <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
          </control>
          <control>

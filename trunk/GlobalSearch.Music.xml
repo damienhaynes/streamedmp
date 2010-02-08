@@ -12,9 +12,18 @@
   <define>#header.BG.overlay:mainoverlay.png</define>
   <!--Default tvguidebg.png-->
   <controls>
-    <import>common.window.default.xml</import>
-    <import>common.time.xml</import>
     <import>mymusic.autofanart.xml</import>
+    <control>
+       <description>music overlay image</description>
+       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+       <type>image</type>
+       <id>0</id>
+       <posX>0</posX>
+       <posY>0</posY>
+       <width>1280</width>
+       <height>720</height>
+       <texture>mainoverlay.png</texture>
+    </control>
     <control>
       <id>0</id>
       <description>dummy button</description>
@@ -233,6 +242,8 @@
         <suffix>|</suffix>
       </control>
     </control>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
     <import>common.overlays.xml</import>
   </controls>
 </window>
