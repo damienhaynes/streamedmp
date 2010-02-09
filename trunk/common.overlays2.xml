@@ -80,7 +80,7 @@ same location everywhere
                      <centered>yes</centered>
                      <zoom>no</zoom>
                      <texture>#Play.Current.Thumb</texture>
-                     <visible>player.hasmedia+control.isvisible(3337)!string.equals(#Play.Current.Thumb,)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
+                     <visible>player.hasmedia+control.isvisible(3337)+!string.equals(#Play.Current.Thumb,)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
