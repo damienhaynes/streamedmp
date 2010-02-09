@@ -7,9 +7,9 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my music.png</define>
   <define>#usePlayFanart:Yes</define>
-  <define>#useRandomMusicFanart:Yes</define>
+  <define>#useSelectedFanart:Yes</define>
   <controls>
-    <import>mymusic.autofanart.xml</import>
+    <import>mymusic.selected.fanart.xml</import>
     <control>
       <description>music overlay image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
