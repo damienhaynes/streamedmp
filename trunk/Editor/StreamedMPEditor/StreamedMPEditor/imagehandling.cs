@@ -54,7 +54,7 @@ namespace StreamedMPEditor
       {
 
           if (bgItem.fanartHandlerEnabled)
-              goto abortpbox;
+              continue;
 
         PictureBox newPBox = new PictureBox();
         Label newBGlabel = new Label();
@@ -141,7 +141,6 @@ namespace StreamedMPEditor
           yPos += 126;
           xPos = 16;
         }
-    abortpbox: ;
       }
 
       // Create Panel
