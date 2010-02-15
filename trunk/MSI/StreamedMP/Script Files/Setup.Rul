@@ -104,8 +104,13 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.23477" 	// 1.1.0 Beta
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
-#define TVSERIES_MIN_VERSION				"2.5.0.0"
-#define MOVINGPICTURES_MIN_VERSION			"1.0.1.1001"
+#define TVSERIES_MIN_VERSION				"2.5.0.924"
+#define MOVINGPICTURES_MIN_VERSION			"1.0.2.1048"
+#define FANARTHANDLER_MIN_VERSION			"1.3.3697.204"
+#define MYLYRICS_MIN_VERSION				"1.42.0.0"
+#define GLOBALSEARCH_MIN_VERSION			"1.7.0.0"
+#define INFOSERVICE_MIN_VERSION				"1.3.2.0"
+#define TRAILERS_MIN_VERSION				"2.0.3.40"
 
 // XML Path Defines
 #define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
@@ -2051,7 +2056,22 @@ begin
             szFileName = g_sPluginsDir^"windows\\MP-TVSeries.dll"; 
 
         case "MOVINGPICTURES": 
-            szFileName = g_sPluginsDir^"windows\\MovingPictures.dll";      
+            szFileName = g_sPluginsDir^"windows\\MovingPictures.dll";
+            
+		case "LYRICS": 
+            szFileName = g_sPluginsDir^"windows\\MyLyrics.dll";       
+     
+     	case "INFOSERVICE": 
+            szFileName = g_sPluginsDir^"windows\\InfoService.dll"; 
+            
+        case "TRAILERS": 
+            szFileName = g_sPluginsDir^"windows\\MyTrailers.dll"; 
+            
+        case "GLOBALSEARCH": 
+            szFileName = g_sPluginsDir^"windows\\GUIGlobalSearch.dll"; 
+            
+        case "FANARTHANDLER": 
+            szFileName = g_sPluginsDir^"process\\FanartHandler.dll";     
 
     endswitch; 
 
@@ -2124,8 +2144,83 @@ begin
 	    				svVersion1;
 	        nReturn = nReturn - 1;
     	endif;
-    endif;
+    endif; 
     
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\MyLyrics")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"LYRICS");
+		svVersion1 = MYLYRICS_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of My Lyrics plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif; 
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\MyTrailers")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"TRAILERS");
+		svVersion1 = TRAILERS_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of My Trailers plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif; 
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\InfoService")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"INFOSERVICE");
+		svVersion1 = INFOSERVICE_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of InfoService plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif;  
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\GlobalMusicSearch")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"GLOBALSEARCH");
+		svVersion1 = GLOBALSEARCH_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of Global Search plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif;    
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\FanartHandler")) then
+		// Check that compatible version of plugin is used
+		GetFileVersion(svVersion2,"FANARTHANDLER");
+		svVersion1 = FANARTHANDLER_MIN_VERSION;
+    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+	    	if nReturn < 0 then
+	    		szQuestion = szQuestion + "\n\n";
+	    	endif;
+	    	szQuestion = szQuestion + "Your current version of Fanart-Handler plugin v" + svVersion2 + 
+	    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    				svVersion1;
+	        nReturn = nReturn - 1;
+    	endif;
+    endif;
+
     if nReturn < 0 then
     	szQuestion = szQuestion + "\n\nDo you wish to go back to the select features dialog?";
     endif;
