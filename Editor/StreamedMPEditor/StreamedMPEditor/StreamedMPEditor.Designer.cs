@@ -121,6 +121,7 @@
         this.enableTwitter = new System.Windows.Forms.CheckBox();
         this.enableRssfeed = new System.Windows.Forms.CheckBox();
         this.globalSettings = new System.Windows.Forms.GroupBox();
+        this.cbDisableClock = new System.Windows.Forms.CheckBox();
         this.noFocusAlphaLabel = new System.Windows.Forms.Label();
         this.focusAlphaLabel = new System.Windows.Forms.Label();
         this.wrapString = new System.Windows.Forms.CheckBox();
@@ -186,7 +187,6 @@
         this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
         this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         this.groupBox5 = new System.Windows.Forms.GroupBox();
-        this.cbDisableClock = new System.Windows.Forms.CheckBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -240,6 +240,7 @@
         this.StreamedMPMenu.SelectedIndex = 0;
         this.StreamedMPMenu.Size = new System.Drawing.Size(758, 447);
         this.StreamedMPMenu.TabIndex = 0;
+        this.StreamedMPMenu.TabStop = false;
         this.StreamedMPMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.StreamedMPMenu_Selected);
         // 
         // menuStyleTab
@@ -267,7 +268,7 @@
         this.menuStylesGroup.Location = new System.Drawing.Point(12, 9);
         this.menuStylesGroup.Name = "menuStylesGroup";
         this.menuStylesGroup.Size = new System.Drawing.Size(726, 411);
-        this.menuStylesGroup.TabIndex = 10;
+        this.menuStylesGroup.TabIndex = 4;
         this.menuStylesGroup.TabStop = false;
         this.menuStylesGroup.Text = "Menu Styles";
         // 
@@ -316,6 +317,7 @@
         this.menuDescription.Name = "menuDescription";
         this.menuDescription.Size = new System.Drawing.Size(691, 245);
         this.menuDescription.TabIndex = 8;
+        this.menuDescription.TabStop = false;
         this.menuDescription.Text = "";
         // 
         // pictureBox1
@@ -414,7 +416,7 @@
         this.weatherIconsStatic.Location = new System.Drawing.Point(30, 135);
         this.weatherIconsStatic.Name = "weatherIconsStatic";
         this.weatherIconsStatic.Size = new System.Drawing.Size(52, 17);
-        this.weatherIconsStatic.TabIndex = 7;
+        this.weatherIconsStatic.TabIndex = 5;
         this.weatherIconsStatic.TabStop = true;
         this.weatherIconsStatic.Text = "Static";
         this.weatherIconsStatic.UseVisualStyleBackColor = true;
@@ -540,6 +542,7 @@
         this.richTextBox2.Name = "richTextBox2";
         this.richTextBox2.Size = new System.Drawing.Size(197, 56);
         this.richTextBox2.TabIndex = 122;
+        this.richTextBox2.TabStop = false;
         this.richTextBox2.Text = "To create new menu item\n  1. Select Menu Item from Dropdown.\n  2. Select Skin fil" +
             "e from List.";
         // 
@@ -553,7 +556,7 @@
         this.groupBox3.Location = new System.Drawing.Point(211, 122);
         this.groupBox3.Name = "groupBox3";
         this.groupBox3.Size = new System.Drawing.Size(321, 59);
-        this.groupBox3.TabIndex = 121;
+        this.groupBox3.TabIndex = 0;
         this.groupBox3.TabStop = false;
         this.groupBox3.Text = "Selected Window Properties";
         // 
@@ -618,7 +621,7 @@
         this.cboQuickSelect.Location = new System.Drawing.Point(3, 22);
         this.cboQuickSelect.Name = "cboQuickSelect";
         this.cboQuickSelect.Size = new System.Drawing.Size(198, 21);
-        this.cboQuickSelect.TabIndex = 117;
+        this.cboQuickSelect.TabIndex = 4;
         this.cboQuickSelect.SelectedIndexChanged += new System.EventHandler(this.cboQuickSelect_SelectedIndexChanged);
         // 
         // btMoveDown
@@ -628,6 +631,7 @@
         this.btMoveDown.Name = "btMoveDown";
         this.btMoveDown.Size = new System.Drawing.Size(33, 108);
         this.btMoveDown.TabIndex = 116;
+        this.btMoveDown.TabStop = false;
         this.btMoveDown.UseVisualStyleBackColor = true;
         this.btMoveDown.Click += new System.EventHandler(this.btMoveDown_Click);
         // 
@@ -638,6 +642,7 @@
         this.btMoveUp.Name = "btMoveUp";
         this.btMoveUp.Size = new System.Drawing.Size(33, 116);
         this.btMoveUp.TabIndex = 115;
+        this.btMoveUp.TabStop = false;
         this.btMoveUp.UseVisualStyleBackColor = true;
         this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
         // 
@@ -646,7 +651,7 @@
         this.cancelButton.Location = new System.Drawing.Point(602, 274);
         this.cancelButton.Name = "cancelButton";
         this.cancelButton.Size = new System.Drawing.Size(49, 21);
-        this.cancelButton.TabIndex = 114;
+        this.cancelButton.TabIndex = 21;
         this.cancelButton.Text = "Cancel";
         this.cancelButton.UseVisualStyleBackColor = true;
         this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -656,7 +661,7 @@
         this.editButton.Location = new System.Drawing.Point(540, 273);
         this.editButton.Name = "editButton";
         this.editButton.Size = new System.Drawing.Size(52, 21);
-        this.editButton.TabIndex = 113;
+        this.editButton.TabIndex = 7;
         this.editButton.Text = "Edit";
         this.editButton.UseVisualStyleBackColor = true;
         this.editButton.Click += new System.EventHandler(this.editButton_Click);
@@ -667,7 +672,7 @@
         this.saveButton.Location = new System.Drawing.Point(661, 273);
         this.saveButton.Name = "saveButton";
         this.saveButton.Size = new System.Drawing.Size(48, 23);
-        this.saveButton.TabIndex = 112;
+        this.saveButton.TabIndex = 20;
         this.saveButton.Text = "Save";
         this.saveButton.UseVisualStyleBackColor = true;
         this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -688,7 +693,7 @@
         this.groupBox1.Location = new System.Drawing.Point(538, 302);
         this.groupBox1.Name = "groupBox1";
         this.groupBox1.Size = new System.Drawing.Size(209, 112);
-        this.groupBox1.TabIndex = 111;
+        this.groupBox1.TabIndex = 0;
         this.groupBox1.TabStop = false;
         this.groupBox1.Text = "Menu Item Properties";
         // 
@@ -788,7 +793,8 @@
         this.removeButton.Location = new System.Drawing.Point(211, 390);
         this.removeButton.Name = "removeButton";
         this.removeButton.Size = new System.Drawing.Size(321, 26);
-        this.removeButton.TabIndex = 110;
+        this.removeButton.TabIndex = 51;
+        this.removeButton.TabStop = false;
         this.removeButton.Text = "<< Remove Menu Item";
         this.removeButton.UseVisualStyleBackColor = true;
         this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
@@ -799,7 +805,8 @@
         this.addButton.Location = new System.Drawing.Point(211, 357);
         this.addButton.Name = "addButton";
         this.addButton.Size = new System.Drawing.Size(321, 26);
-        this.addButton.TabIndex = 109;
+        this.addButton.TabIndex = 50;
+        this.addButton.TabStop = false;
         this.addButton.Text = "Add Menu Item>>";
         this.addButton.UseVisualStyleBackColor = true;
         this.addButton.Click += new System.EventHandler(this.addButton_Click);
@@ -818,7 +825,7 @@
         this.backgroundImages.Location = new System.Drawing.Point(211, 189);
         this.backgroundImages.Name = "backgroundImages";
         this.backgroundImages.Size = new System.Drawing.Size(321, 161);
-        this.backgroundImages.TabIndex = 108;
+        this.backgroundImages.TabIndex = 13;
         this.backgroundImages.TabStop = false;
         this.backgroundImages.Text = "Background Image Options";
         // 
@@ -828,7 +835,7 @@
         this.cbEnableMusicNowPlayingFanart.Location = new System.Drawing.Point(10, 46);
         this.cbEnableMusicNowPlayingFanart.Name = "cbEnableMusicNowPlayingFanart";
         this.cbEnableMusicNowPlayingFanart.Size = new System.Drawing.Size(223, 17);
-        this.cbEnableMusicNowPlayingFanart.TabIndex = 50;
+        this.cbEnableMusicNowPlayingFanart.TabIndex = 15;
         this.cbEnableMusicNowPlayingFanart.Text = "Enable Music Now Playing Fanart for Item";
         this.cbEnableMusicNowPlayingFanart.UseVisualStyleBackColor = true;
         // 
@@ -839,7 +846,7 @@
         this.cbItemFanartHandlerEnable.Location = new System.Drawing.Point(10, 22);
         this.cbItemFanartHandlerEnable.Name = "cbItemFanartHandlerEnable";
         this.cbItemFanartHandlerEnable.Size = new System.Drawing.Size(187, 17);
-        this.cbItemFanartHandlerEnable.TabIndex = 49;
+        this.cbItemFanartHandlerEnable.TabIndex = 14;
         this.cbItemFanartHandlerEnable.Text = "Enable Fanart Hander for this Item";
         this.cbItemFanartHandlerEnable.UseVisualStyleBackColor = true;
         this.cbItemFanartHandlerEnable.CheckedChanged += new System.EventHandler(this.cbItemFanartHandlerEnable_CheckedChanged);
@@ -860,7 +867,7 @@
         this.cboFanartProperty.Location = new System.Drawing.Point(113, 72);
         this.cboFanartProperty.Name = "cboFanartProperty";
         this.cboFanartProperty.Size = new System.Drawing.Size(201, 21);
-        this.cboFanartProperty.TabIndex = 0;
+        this.cboFanartProperty.TabIndex = 16;
         this.toolTip1.SetToolTip(this.cboFanartProperty, resources.GetString("cboFanartProperty.ToolTip"));
         // 
         // labelFanartProperty
@@ -878,7 +885,7 @@
         this.disableBGSharing.Location = new System.Drawing.Point(15, 134);
         this.disableBGSharing.Name = "disableBGSharing";
         this.disableBGSharing.Size = new System.Drawing.Size(218, 17);
-        this.disableBGSharing.TabIndex = 48;
+        this.disableBGSharing.TabIndex = 19;
         this.disableBGSharing.Text = "Disable Background Sharing for this Item";
         this.toolTip1.SetToolTip(this.disableBGSharing, resources.GetString("disableBGSharing.ToolTip"));
         this.disableBGSharing.UseVisualStyleBackColor = true;
@@ -888,7 +895,7 @@
         this.folderBrowse.Location = new System.Drawing.Point(255, 103);
         this.folderBrowse.Name = "folderBrowse";
         this.folderBrowse.Size = new System.Drawing.Size(59, 21);
-        this.folderBrowse.TabIndex = 47;
+        this.folderBrowse.TabIndex = 18;
         this.folderBrowse.Text = "Browse..";
         this.folderBrowse.UseVisualStyleBackColor = true;
         this.folderBrowse.Click += new System.EventHandler(this.browseButton_Click);
@@ -906,11 +913,12 @@
             "radio",
             "settings",
             "tv",
-            "weatherbg"});
+            "weatherbg",
+            "infoservice"});
         this.bgBox.Location = new System.Drawing.Point(113, 103);
         this.bgBox.Name = "bgBox";
         this.bgBox.Size = new System.Drawing.Size(136, 21);
-        this.bgBox.TabIndex = 38;
+        this.bgBox.TabIndex = 17;
         // 
         // labelImageFolder
         // 
@@ -933,7 +941,7 @@
         this.itemProperties.Location = new System.Drawing.Point(211, 22);
         this.itemProperties.Name = "itemProperties";
         this.itemProperties.Size = new System.Drawing.Size(323, 95);
-        this.itemProperties.TabIndex = 107;
+        this.itemProperties.TabIndex = 8;
         this.itemProperties.TabStop = false;
         this.itemProperties.Text = "Item properties";
         // 
@@ -943,6 +951,7 @@
         this.cancelCreateButton.Name = "cancelCreateButton";
         this.cancelCreateButton.Size = new System.Drawing.Size(86, 22);
         this.cancelCreateButton.TabIndex = 51;
+        this.cancelCreateButton.TabStop = false;
         this.cancelCreateButton.Text = "Cancel";
         this.cancelCreateButton.UseVisualStyleBackColor = true;
         this.cancelCreateButton.Click += new System.EventHandler(this.buttonCancelCreate_Click);
@@ -967,7 +976,7 @@
         this.cboContextLabel.Location = new System.Drawing.Point(69, 19);
         this.cboContextLabel.Name = "cboContextLabel";
         this.cboContextLabel.Size = new System.Drawing.Size(148, 21);
-        this.cboContextLabel.TabIndex = 102;
+        this.cboContextLabel.TabIndex = 10;
         this.toolTip1.SetToolTip(this.cboContextLabel, "The lable used above the menu item in the vertical default menu style.\r\n\r\nUsed in" +
                 ": Default Horizontal Menu");
         this.cboContextLabel.TextChanged += new System.EventHandler(this.cboContextLabels_TextChanged);
@@ -987,7 +996,7 @@
         this.isWeather.Location = new System.Drawing.Point(231, 57);
         this.isWeather.Name = "isWeather";
         this.isWeather.Size = new System.Drawing.Size(78, 17);
-        this.isWeather.TabIndex = 39;
+        this.isWeather.TabIndex = 12;
         this.isWeather.Text = "Is Weather";
         this.isWeather.UseVisualStyleBackColor = true;
         // 
@@ -1005,7 +1014,7 @@
         this.itemName.Location = new System.Drawing.Point(69, 57);
         this.itemName.Name = "itemName";
         this.itemName.Size = new System.Drawing.Size(148, 20);
-        this.itemName.TabIndex = 100;
+        this.itemName.TabIndex = 11;
         this.itemName.TextChanged += new System.EventHandler(this.itemName_TextChanged);
         // 
         // itemsOnMenubar
@@ -1015,7 +1024,7 @@
         this.itemsOnMenubar.Location = new System.Drawing.Point(540, 23);
         this.itemsOnMenubar.Name = "itemsOnMenubar";
         this.itemsOnMenubar.Size = new System.Drawing.Size(170, 244);
-        this.itemsOnMenubar.TabIndex = 106;
+        this.itemsOnMenubar.TabIndex = 6;
         this.itemsOnMenubar.Click += new System.EventHandler(this.itemsOnMenubar_Click);
         // 
         // xmlFiles
@@ -1025,7 +1034,7 @@
         this.xmlFiles.Location = new System.Drawing.Point(3, 47);
         this.xmlFiles.Name = "xmlFiles";
         this.xmlFiles.Size = new System.Drawing.Size(198, 303);
-        this.xmlFiles.TabIndex = 105;
+        this.xmlFiles.TabIndex = 5;
         this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
         this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
         // 
@@ -1052,7 +1061,7 @@
         this.gbRssImageType.Location = new System.Drawing.Point(280, 143);
         this.gbRssImageType.Name = "gbRssImageType";
         this.gbRssImageType.Size = new System.Drawing.Size(148, 112);
-        this.gbRssImageType.TabIndex = 2;
+        this.gbRssImageType.TabIndex = 18;
         this.gbRssImageType.TabStop = false;
         this.gbRssImageType.Text = "RSS Image Selection";
         // 
@@ -1062,7 +1071,7 @@
         this.rbRssInfoServiceImage.Location = new System.Drawing.Point(7, 64);
         this.rbRssInfoServiceImage.Name = "rbRssInfoServiceImage";
         this.rbRssInfoServiceImage.Size = new System.Drawing.Size(131, 17);
-        this.rbRssInfoServiceImage.TabIndex = 2;
+        this.rbRssInfoServiceImage.TabIndex = 21;
         this.rbRssInfoServiceImage.TabStop = true;
         this.rbRssInfoServiceImage.Text = "Ticker Supplied Image";
         this.rbRssInfoServiceImage.UseVisualStyleBackColor = true;
@@ -1074,7 +1083,7 @@
         this.rbRssSkinImage.Location = new System.Drawing.Point(7, 42);
         this.rbRssSkinImage.Name = "rbRssSkinImage";
         this.rbRssSkinImage.Size = new System.Drawing.Size(115, 17);
-        this.rbRssSkinImage.TabIndex = 1;
+        this.rbRssSkinImage.TabIndex = 20;
         this.rbRssSkinImage.TabStop = true;
         this.rbRssSkinImage.Text = "Default Skin Image";
         this.rbRssSkinImage.UseVisualStyleBackColor = true;
@@ -1086,7 +1095,7 @@
         this.rbRssNoImage.Location = new System.Drawing.Point(7, 20);
         this.rbRssNoImage.Name = "rbRssNoImage";
         this.rbRssNoImage.Size = new System.Drawing.Size(71, 17);
-        this.rbRssNoImage.TabIndex = 0;
+        this.rbRssNoImage.TabIndex = 19;
         this.rbRssNoImage.TabStop = true;
         this.rbRssNoImage.Text = "No Image";
         this.rbRssNoImage.UseVisualStyleBackColor = true;
@@ -1106,7 +1115,7 @@
         this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
         this.styleOptionsGroup.Name = "styleOptionsGroup";
         this.styleOptionsGroup.Size = new System.Drawing.Size(729, 145);
-        this.styleOptionsGroup.TabIndex = 107;
+        this.styleOptionsGroup.TabIndex = 22;
         this.styleOptionsGroup.TabStop = false;
         this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
         // 
@@ -1116,7 +1125,7 @@
         this.cboLabelFont.Location = new System.Drawing.Point(363, 53);
         this.cboLabelFont.Name = "cboLabelFont";
         this.cboLabelFont.Size = new System.Drawing.Size(121, 21);
-        this.cboLabelFont.TabIndex = 42;
+        this.cboLabelFont.TabIndex = 28;
         // 
         // cboSelectedFont
         // 
@@ -1124,7 +1133,7 @@
         this.cboSelectedFont.Location = new System.Drawing.Point(363, 24);
         this.cboSelectedFont.Name = "cboSelectedFont";
         this.cboSelectedFont.Size = new System.Drawing.Size(121, 21);
-        this.cboSelectedFont.TabIndex = 41;
+        this.cboSelectedFont.TabIndex = 24;
         // 
         // label15
         // 
@@ -1150,7 +1159,7 @@
         this.summaryWeatherCheckBox.Location = new System.Drawing.Point(20, 53);
         this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
         this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
-        this.summaryWeatherCheckBox.TabIndex = 5;
+        this.summaryWeatherCheckBox.TabIndex = 24;
         this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
         this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
         // 
@@ -1160,7 +1169,7 @@
         this.weatherBGlink.Location = new System.Drawing.Point(20, 27);
         this.weatherBGlink.Name = "weatherBGlink";
         this.weatherBGlink.Size = new System.Drawing.Size(200, 17);
-        this.weatherBGlink.TabIndex = 3;
+        this.weatherBGlink.TabIndex = 23;
         this.weatherBGlink.Text = "Link Background to Current Weather";
         this.weatherBGlink.UseVisualStyleBackColor = true;
         // 
@@ -1170,7 +1179,7 @@
         this.useAeonGraphics.Location = new System.Drawing.Point(20, 105);
         this.useAeonGraphics.Name = "useAeonGraphics";
         this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
-        this.useAeonGraphics.TabIndex = 25;
+        this.useAeonGraphics.TabIndex = 26;
         this.useAeonGraphics.Text = "Use Aeon 2  Graphics and Font";
         this.useAeonGraphics.UseVisualStyleBackColor = true;
         // 
@@ -1180,7 +1189,7 @@
         this.horizontalContextLabels.Location = new System.Drawing.Point(20, 79);
         this.horizontalContextLabels.Name = "horizontalContextLabels";
         this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
-        this.horizontalContextLabels.TabIndex = 1;
+        this.horizontalContextLabels.TabIndex = 25;
         this.horizontalContextLabels.Text = "Use Context Labels on Horizontal Menu";
         this.horizontalContextLabels.UseVisualStyleBackColor = true;
         // 
@@ -1191,7 +1200,7 @@
         this.weatherSummaryGroup.Location = new System.Drawing.Point(532, 19);
         this.weatherSummaryGroup.Name = "weatherSummaryGroup";
         this.weatherSummaryGroup.Size = new System.Drawing.Size(178, 69);
-        this.weatherSummaryGroup.TabIndex = 2;
+        this.weatherSummaryGroup.TabIndex = 29;
         this.weatherSummaryGroup.TabStop = false;
         this.weatherSummaryGroup.Text = "Five Day Weather Position";
         // 
@@ -1201,7 +1210,7 @@
         this.fullWeatherSummaryBottom.Location = new System.Drawing.Point(14, 44);
         this.fullWeatherSummaryBottom.Name = "fullWeatherSummaryBottom";
         this.fullWeatherSummaryBottom.Size = new System.Drawing.Size(107, 17);
-        this.fullWeatherSummaryBottom.TabIndex = 1;
+        this.fullWeatherSummaryBottom.TabIndex = 31;
         this.fullWeatherSummaryBottom.TabStop = true;
         this.fullWeatherSummaryBottom.Text = "Bottom of Screen";
         this.fullWeatherSummaryBottom.UseVisualStyleBackColor = true;
@@ -1212,7 +1221,7 @@
         this.fullWeatherSummaryMiddle.Location = new System.Drawing.Point(14, 20);
         this.fullWeatherSummaryMiddle.Name = "fullWeatherSummaryMiddle";
         this.fullWeatherSummaryMiddle.Size = new System.Drawing.Size(105, 17);
-        this.fullWeatherSummaryMiddle.TabIndex = 0;
+        this.fullWeatherSummaryMiddle.TabIndex = 30;
         this.fullWeatherSummaryMiddle.TabStop = true;
         this.fullWeatherSummaryMiddle.Text = "Center of Screen";
         this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
@@ -1225,7 +1234,7 @@
         this.infoserviceOptions.Location = new System.Drawing.Point(9, 143);
         this.infoserviceOptions.Name = "infoserviceOptions";
         this.infoserviceOptions.Size = new System.Drawing.Size(265, 112);
-        this.infoserviceOptions.TabIndex = 105;
+        this.infoserviceOptions.TabIndex = 15;
         this.infoserviceOptions.TabStop = false;
         this.infoserviceOptions.Text = "InfoService/MP-RSSTicker Options";
         // 
@@ -1235,7 +1244,7 @@
         this.enableTwitter.Location = new System.Drawing.Point(17, 50);
         this.enableTwitter.Name = "enableTwitter";
         this.enableTwitter.Size = new System.Drawing.Size(94, 17);
-        this.enableTwitter.TabIndex = 1;
+        this.enableTwitter.TabIndex = 17;
         this.enableTwitter.Text = "Enable Twitter";
         this.enableTwitter.UseVisualStyleBackColor = true;
         // 
@@ -1245,7 +1254,7 @@
         this.enableRssfeed.Location = new System.Drawing.Point(17, 27);
         this.enableRssfeed.Name = "enableRssfeed";
         this.enableRssfeed.Size = new System.Drawing.Size(117, 17);
-        this.enableRssfeed.TabIndex = 0;
+        this.enableRssfeed.TabIndex = 16;
         this.enableRssfeed.Text = "Enable RSS Ticker";
         this.enableRssfeed.UseVisualStyleBackColor = true;
         // 
@@ -1271,9 +1280,19 @@
         this.globalSettings.Location = new System.Drawing.Point(9, 19);
         this.globalSettings.Name = "globalSettings";
         this.globalSettings.Size = new System.Drawing.Size(729, 118);
-        this.globalSettings.TabIndex = 25;
+        this.globalSettings.TabIndex = 4;
         this.globalSettings.TabStop = false;
         this.globalSettings.Text = "Global settings";
+        // 
+        // cbDisableClock
+        // 
+        this.cbDisableClock.AutoSize = true;
+        this.cbDisableClock.Location = new System.Drawing.Point(455, 66);
+        this.cbDisableClock.Name = "cbDisableClock";
+        this.cbDisableClock.Size = new System.Drawing.Size(140, 17);
+        this.cbDisableClock.TabIndex = 14;
+        this.cbDisableClock.Text = "Disable on screen clock";
+        this.cbDisableClock.UseVisualStyleBackColor = true;
         // 
         // noFocusAlphaLabel
         // 
@@ -1300,7 +1319,7 @@
         this.wrapString.Location = new System.Drawing.Point(455, 42);
         this.wrapString.Name = "wrapString";
         this.wrapString.Size = new System.Drawing.Size(226, 17);
-        this.wrapString.TabIndex = 2;
+        this.wrapString.TabIndex = 13;
         this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
         this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
                 " is not installed this option will be disabled.\r\n");
@@ -1311,7 +1330,7 @@
         this.noFocusAlpha.Location = new System.Drawing.Point(130, 87);
         this.noFocusAlpha.Name = "noFocusAlpha";
         this.noFocusAlpha.Size = new System.Drawing.Size(20, 20);
-        this.noFocusAlpha.TabIndex = 29;
+        this.noFocusAlpha.TabIndex = 8;
         this.noFocusAlpha.Text = "80";
         // 
         // focusAlpha
@@ -1319,7 +1338,7 @@
         this.focusAlpha.Location = new System.Drawing.Point(130, 39);
         this.focusAlpha.Name = "focusAlpha";
         this.focusAlpha.Size = new System.Drawing.Size(18, 20);
-        this.focusAlpha.TabIndex = 28;
+        this.focusAlpha.TabIndex = 6;
         this.focusAlpha.Text = "FF";
         // 
         // tbAcceleration
@@ -1327,7 +1346,7 @@
         this.tbAcceleration.Location = new System.Drawing.Point(331, 38);
         this.tbAcceleration.Name = "tbAcceleration";
         this.tbAcceleration.Size = new System.Drawing.Size(46, 20);
-        this.tbAcceleration.TabIndex = 24;
+        this.tbAcceleration.TabIndex = 10;
         this.tbAcceleration.Text = "-0.1";
         // 
         // tbDuration
@@ -1335,7 +1354,7 @@
         this.tbDuration.Location = new System.Drawing.Point(331, 61);
         this.tbDuration.Name = "tbDuration";
         this.tbDuration.Size = new System.Drawing.Size(46, 20);
-        this.tbDuration.TabIndex = 22;
+        this.tbDuration.TabIndex = 11;
         this.tbDuration.Text = "300";
         // 
         // label13
@@ -1364,7 +1383,7 @@
         this.cbDropShadow.Location = new System.Drawing.Point(455, 19);
         this.cbDropShadow.Name = "cbDropShadow";
         this.cbDropShadow.Size = new System.Drawing.Size(155, 17);
-        this.cbDropShadow.TabIndex = 20;
+        this.cbDropShadow.TabIndex = 12;
         this.cbDropShadow.Text = "Drop shadow on focus item";
         this.cbDropShadow.UseVisualStyleBackColor = true;
         // 
@@ -1373,7 +1392,7 @@
         this.txtMenuPos.Location = new System.Drawing.Point(331, 15);
         this.txtMenuPos.Name = "txtMenuPos";
         this.txtMenuPos.Size = new System.Drawing.Size(62, 20);
-        this.txtMenuPos.TabIndex = 17;
+        this.txtMenuPos.TabIndex = 9;
         this.txtMenuPos.Text = "552";
         this.txtMenuPos.Leave += new System.EventHandler(this.txtMenuPos_Leave);
         // 
@@ -1391,7 +1410,7 @@
         this.txtNoFocusColour.Location = new System.Drawing.Point(130, 63);
         this.txtNoFocusColour.Name = "txtNoFocusColour";
         this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
-        this.txtNoFocusColour.TabIndex = 19;
+        this.txtNoFocusColour.TabIndex = 7;
         this.txtNoFocusColour.Text = "636363";
         // 
         // txtFocusColour
@@ -1399,7 +1418,7 @@
         this.txtFocusColour.Location = new System.Drawing.Point(130, 15);
         this.txtFocusColour.Name = "txtFocusColour";
         this.txtFocusColour.Size = new System.Drawing.Size(62, 20);
-        this.txtFocusColour.TabIndex = 18;
+        this.txtFocusColour.TabIndex = 5;
         this.txtFocusColour.Text = "FFFFFF";
         this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
                 "olour choser.\r\n");
@@ -1464,7 +1483,7 @@
         this.editorOptionsGroup.Location = new System.Drawing.Point(28, 158);
         this.editorOptionsGroup.Name = "editorOptionsGroup";
         this.editorOptionsGroup.Size = new System.Drawing.Size(691, 111);
-        this.editorOptionsGroup.TabIndex = 57;
+        this.editorOptionsGroup.TabIndex = 4;
         this.editorOptionsGroup.TabStop = false;
         this.editorOptionsGroup.Text = "Editor Options";
         // 
@@ -1476,7 +1495,7 @@
         this.autoBackupGroup.Location = new System.Drawing.Point(216, 19);
         this.autoBackupGroup.Name = "autoBackupGroup";
         this.autoBackupGroup.Size = new System.Drawing.Size(206, 77);
-        this.autoBackupGroup.TabIndex = 58;
+        this.autoBackupGroup.TabIndex = 6;
         this.autoBackupGroup.TabStop = false;
         this.autoBackupGroup.Text = "Backup AutoPurge Options";
         // 
@@ -1485,7 +1504,7 @@
         this.backupVersionsToKeep.Location = new System.Drawing.Point(13, 42);
         this.backupVersionsToKeep.Name = "backupVersionsToKeep";
         this.backupVersionsToKeep.Size = new System.Drawing.Size(32, 20);
-        this.backupVersionsToKeep.TabIndex = 2;
+        this.backupVersionsToKeep.TabIndex = 8;
         this.backupVersionsToKeep.Text = "5";
         // 
         // label5
@@ -1503,7 +1522,7 @@
         this.autoPurgeBackups.Location = new System.Drawing.Point(13, 19);
         this.autoPurgeBackups.Name = "autoPurgeBackups";
         this.autoPurgeBackups.Size = new System.Drawing.Size(134, 17);
-        this.autoPurgeBackups.TabIndex = 0;
+        this.autoPurgeBackups.TabIndex = 7;
         this.autoPurgeBackups.Text = "Purge Backups on Exit";
         this.autoPurgeBackups.UseVisualStyleBackColor = true;
         // 
@@ -1518,7 +1537,7 @@
         this.groupBox4.Location = new System.Drawing.Point(428, 19);
         this.groupBox4.Name = "groupBox4";
         this.groupBox4.Size = new System.Drawing.Size(244, 77);
-        this.groupBox4.TabIndex = 57;
+        this.groupBox4.TabIndex = 9;
         this.groupBox4.TabStop = false;
         this.groupBox4.Text = "Number of Backup Files";
         // 
@@ -1545,7 +1564,7 @@
         this.purgeBHBackups.Location = new System.Drawing.Point(144, 45);
         this.purgeBHBackups.Name = "purgeBHBackups";
         this.purgeBHBackups.Size = new System.Drawing.Size(75, 23);
-        this.purgeBHBackups.TabIndex = 56;
+        this.purgeBHBackups.TabIndex = 11;
         this.purgeBHBackups.Text = "Purge All";
         this.purgeBHBackups.UseVisualStyleBackColor = true;
         this.purgeBHBackups.Click += new System.EventHandler(this.purgeBHBackups_Click);
@@ -1564,7 +1583,7 @@
         this.purgeUPBackups.Location = new System.Drawing.Point(144, 20);
         this.purgeUPBackups.Name = "purgeUPBackups";
         this.purgeUPBackups.Size = new System.Drawing.Size(75, 23);
-        this.purgeUPBackups.TabIndex = 55;
+        this.purgeUPBackups.TabIndex = 10;
         this.purgeUPBackups.Text = "Purge All";
         this.purgeUPBackups.UseVisualStyleBackColor = true;
         this.purgeUPBackups.Click += new System.EventHandler(this.purgeUPBackups_Click);
@@ -1584,7 +1603,7 @@
         this.lastUsedTab.Location = new System.Drawing.Point(14, 29);
         this.lastUsedTab.Name = "lastUsedTab";
         this.lastUsedTab.Size = new System.Drawing.Size(190, 17);
-        this.lastUsedTab.TabIndex = 50;
+        this.lastUsedTab.TabIndex = 5;
         this.lastUsedTab.Text = "Remember Last Active Tab on Exit";
         this.lastUsedTab.UseVisualStyleBackColor = true;
         this.lastUsedTab.CheckedChanged += new System.EventHandler(this.lastUsedTab_CheckedChanged);
@@ -1599,7 +1618,7 @@
         this.aboutBoxGroup.Location = new System.Drawing.Point(27, 13);
         this.aboutBoxGroup.Name = "aboutBoxGroup";
         this.aboutBoxGroup.Size = new System.Drawing.Size(692, 134);
-        this.aboutBoxGroup.TabIndex = 49;
+        this.aboutBoxGroup.TabIndex = 0;
         this.aboutBoxGroup.TabStop = false;
         this.aboutBoxGroup.Text = "About StreamedMPEditor";
         // 
@@ -1631,6 +1650,7 @@
         this.richTextBox1.Name = "richTextBox1";
         this.richTextBox1.Size = new System.Drawing.Size(648, 55);
         this.richTextBox1.TabIndex = 0;
+        this.richTextBox1.TabStop = false;
         this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
         // 
         // groupBox2
@@ -1651,7 +1671,7 @@
         this.groupBox2.Location = new System.Drawing.Point(27, 280);
         this.groupBox2.Name = "groupBox2";
         this.groupBox2.Size = new System.Drawing.Size(692, 129);
-        this.groupBox2.TabIndex = 48;
+        this.groupBox2.TabIndex = 12;
         this.groupBox2.TabStop = false;
         this.groupBox2.Text = "Editing....";
         // 
@@ -1701,7 +1721,7 @@
         this.showMPDir.Location = new System.Drawing.Point(581, 103);
         this.showMPDir.Name = "showMPDir";
         this.showMPDir.Size = new System.Drawing.Size(44, 13);
-        this.showMPDir.TabIndex = 7;
+        this.showMPDir.TabIndex = 15;
         this.showMPDir.TabStop = true;
         this.showMPDir.Text = "show....";
         this.showMPDir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.showMPDir_LinkClicked);
@@ -1712,7 +1732,7 @@
         this.showConfigPath.Location = new System.Drawing.Point(581, 77);
         this.showConfigPath.Name = "showConfigPath";
         this.showConfigPath.Size = new System.Drawing.Size(44, 13);
-        this.showConfigPath.TabIndex = 6;
+        this.showConfigPath.TabIndex = 14;
         this.showConfigPath.TabStop = true;
         this.showConfigPath.Text = "show....";
         this.showConfigPath.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.showConfigPath_LinkClicked);
@@ -1723,7 +1743,7 @@
         this.showSkinDir.Location = new System.Drawing.Point(581, 51);
         this.showSkinDir.Name = "showSkinDir";
         this.showSkinDir.Size = new System.Drawing.Size(44, 13);
-        this.showSkinDir.TabIndex = 5;
+        this.showSkinDir.TabIndex = 13;
         this.showSkinDir.TabStop = true;
         this.showSkinDir.Text = "show....";
         this.showSkinDir.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.showSkinDir_LinkClicked);
@@ -1864,7 +1884,7 @@
         this.cboClearCache.Location = new System.Drawing.Point(582, 60);
         this.cboClearCache.Name = "cboClearCache";
         this.cboClearCache.Size = new System.Drawing.Size(145, 17);
-        this.cboClearCache.TabIndex = 49;
+        this.cboClearCache.TabIndex = 3;
         this.cboClearCache.Text = "Clear cache on Generate";
         this.cboClearCache.UseVisualStyleBackColor = true;
         // 
@@ -1907,16 +1927,6 @@
         this.groupBox5.TabIndex = 50;
         this.groupBox5.TabStop = false;
         this.groupBox5.Text = "StreamedMP BasicHome Editor";
-        // 
-        // cbDisableClock
-        // 
-        this.cbDisableClock.AutoSize = true;
-        this.cbDisableClock.Location = new System.Drawing.Point(455, 66);
-        this.cbDisableClock.Name = "cbDisableClock";
-        this.cbDisableClock.Size = new System.Drawing.Size(140, 17);
-        this.cbDisableClock.TabIndex = 32;
-        this.cbDisableClock.Text = "Disable on screen clock";
-        this.cbDisableClock.UseVisualStyleBackColor = true;
         // 
         // streamedMpEditor
         // 
