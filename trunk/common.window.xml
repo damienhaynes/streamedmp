@@ -27,8 +27,21 @@
       <width>350</width>
       <font>mediastream12c</font>
       <align>right</align>
-      <visible>yes</visible>
+      <visible>!string.equals(#currentmodule,)</visible>
       <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+<control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>string.equals(#currentmodule,)</visible>
+      <label>#header.label</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     
