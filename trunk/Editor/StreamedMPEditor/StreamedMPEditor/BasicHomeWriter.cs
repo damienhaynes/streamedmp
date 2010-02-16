@@ -2079,7 +2079,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t<posX>" + (xPos1 + (180 / 2)).ToString() + "</posX>");
             rawXML.AppendLine("\t\t<posY>" + (yPos1 + 245).ToString() + "</posY>");
             rawXML.AppendLine("\t\t<align>center</align>");
-            rawXML.AppendLine("\t\t<label>Currently</label>");
+            rawXML.AppendLine("\t\t<label>6030</label>");
             rawXML.AppendLine("\t\t<font>mediastream11tc</font>");
             rawXML.AppendLine("\t\t<textcolor>White</textcolor>");
             rawXML.AppendLine("\t</control>");
@@ -2872,7 +2872,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t<posX>210</posX>");
             rawXML.AppendLine("\t\t<posY>394</posY>");
             rawXML.AppendLine("\t\t<align>center</align>");
-            rawXML.AppendLine("\t\t<label>Currently</label>");
+            rawXML.AppendLine("\t\t<label>6030</label>");
             rawXML.AppendLine("\t\t<font>mediastream11tc</font>");
             rawXML.AppendLine("\t\t<textcolor>White</textcolor>");
             rawXML.AppendLine("\t</control>");
