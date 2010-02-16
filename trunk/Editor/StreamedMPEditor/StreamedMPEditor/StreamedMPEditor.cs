@@ -365,11 +365,13 @@ namespace StreamedMPEditor
                     item.defaultImage = item.bgFolder + "\\default.jpg";
                 // And check if it exists and create if not.
 
-                if (!System.IO.File.Exists((imageDir(item.defaultImage))))
+                string filetotest = imageDir(item.defaultImage);
+                if (!System.IO.File.Exists(filetotest))
                 {
 
-                    string[] fileList = getFileListing(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))), "*.*");
-                    createDefaultJpg(imageDir(item.defaultImage.Substring(0, (item.defaultImage.Length - 11))));
+                    string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*");
+                    createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
+
                 }
 
                 if (item.fanartHandlerEnabled)
@@ -406,6 +408,8 @@ namespace StreamedMPEditor
             int index = itemsOnMenubar.SelectedIndex;
             menuItem mnuItem = menuItems[index];
 
+            setXMLFilesIndex(mnuItem.hyperlink);
+
             itemName.Text = mnuItem.name;
             cboContextLabel.Text = mnuItem.contextLabel;
             bgBox.Text = mnuItem.bgFolder;
@@ -422,7 +426,7 @@ namespace StreamedMPEditor
             if (mnuItem.fanartHandlerEnabled)
                 checkAndSetRandomFanart(mnuItem.fanartProperty);
 
-            setXMLFilesIndex(mnuItem.hyperlink);
+
 
             saveButton.Enabled = true;
             cancelButton.Enabled = true;
@@ -453,9 +457,31 @@ namespace StreamedMPEditor
                 item.disableBGSharing = disableBGSharing.Checked;
                 item.isWeather = isWeather.Checked;
 
+
+
+
                 if (item.fanartHandlerEnabled)
                     checkAndSetRandomFanart(item.fanartProperty);
+                else
+                {
+                    // Set default image....
+                    if (!item.bgFolder.Contains("\\"))
+                        item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
+                    else
+                        item.defaultImage = item.bgFolder + "\\default.jpg";
+                    // And check if it exists and create if not.
 
+                    string filetotest = imageDir(item.defaultImage);
+                    if (!System.IO.File.Exists(filetotest))
+                    {
+
+                        string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage),"*.*");
+                        createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
+
+                    }
+                }
+
+                
                 menuItems[index] = item;
                 itemsOnMenubar.Items.Insert(index, item.name);
                 reloadBackgroundItems();
@@ -523,6 +549,7 @@ namespace StreamedMPEditor
             menuitemName.Text = mnuItem.name;
             menuItemLabel.Text = mnuItem.contextLabel;
             menuitemBGFolder.Text = mnuItem.bgFolder;
+            bgBox.Text = mnuItem.bgFolder;
             menuitemWindow.Text = xmlFiles.Text;
 
             UpdateImageControlVisibility(mnuItem.fanartHandlerEnabled);
@@ -532,7 +559,6 @@ namespace StreamedMPEditor
         {
             folderBrowserDialog.ShowNewFolderButton = false;
             folderBrowserDialog.Description = "Select the folder containing the images for this menu item";
-            //folderBrowserDialog.SelectedPath = streamedMPpath + "\\Media\\Animations";
             folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
             {
