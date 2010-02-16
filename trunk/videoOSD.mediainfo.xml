@@ -143,7 +143,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG2.png</texture>
-		  <visible>string.equals(#Play.Current.VideoCodec,MP2V)|string.equals(#Play.Current.VideoCodec,MPEG-2V)</visible>
+		  <visible>string.equals(#Play.Current.VideoCodec,MP2V)|string.equals(#Play.Current.VideoCodec,MPEG-2V)|string.contains(#Play.Current.VideoCodec,MPEG2)</visible>
 		</control>
 
 		<!-- MPEG 4 -->
@@ -208,7 +208,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
-		  <visible>string.equals(#Play.Current.VideoCodec,VC-1)</visible>
+		  <visible>string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)|string.contains(#MovingPictures.LocalMedia.videocodec,VC1)</visible>
 		</control>
 	
 		<!-- Audio Channels / Codecs-->

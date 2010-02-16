@@ -360,7 +360,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG2.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)|string.contains(#MovingPictures.LocalMedia.videocodec,MPEG2)]</visible>
 		</control>
 
 		<!-- MPEG 4 -->
@@ -425,7 +425,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)</visible>
+		  <visible>Control.IsVisible(50)+[facadeview.filmstrip|facadeview.list]+[string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)|string.contains(#MovingPictures.LocalMedia.videocodec,VC1)]</visible>
 		</control>
 	
 		<!-- Audio Channels / Codecs-->
