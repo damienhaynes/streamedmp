@@ -3280,6 +3280,7 @@ namespace StreamedMPEditor
         {
             StringBuilder rawXML = new StringBuilder();
 
+
             rawXML.AppendLine("\n<control>");
             rawXML.AppendLine("\t<description>Menu Twitter Sub Menu</description>");
             rawXML.AppendLine("\t<type>image</type>");
@@ -3307,7 +3308,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<description>Twitter image</description>");
             rawXML.AppendLine("\t<type>image</type>");
             rawXML.AppendLine("\t<id>0</id>");
-            rawXML.AppendLine("\t<width>30</width>");
+            rawXML.AppendLine("\t<width>28</width>");
             rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) - (basicHomeValues.offsetTwitterImage - 5)).ToString() + "</posY>");
             rawXML.AppendLine("\t<posX>330</posX>");
             rawXML.AppendLine("\t<texture>defaultTwitter.png</texture>");
