@@ -387,7 +387,7 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -400,7 +400,7 @@
         <posY>0</posY>
         <width>278</width>
         <height>720</height>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -411,7 +411,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>230</posY>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
         <label>499</label>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -421,7 +421,7 @@
         <type>label</type>
         <id>0</id>
         <font>mediastream12tc</font>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
         <posX>1040</posX>
         <posY>340</posY>
         <label>5907</label>
@@ -436,7 +436,7 @@
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
-        <visible>!Control.HasFocus(50)</visible>
+        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>
