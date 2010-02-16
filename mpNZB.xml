@@ -1,0 +1,336 @@
+<window>
+  <id>3847</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+
+    <control>
+      <description>BackGround</description>
+      <type>image</type>
+      <id>100</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my videos.png</texture>
+    </control>
+
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>101</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+
+    <control>
+      <description>Refresh</description>
+      <type>button</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>250</posY>
+      <label>Refresh</label>
+      <onright>50</onright>
+      <ondown>2</ondown>
+    </control>
+
+    <control>
+      <description>Feeds</description>
+      <type>button</type>
+      <id>2</id>
+      <posX>60</posX>
+      <posY>280</posY>
+      <label>Feeds</label>
+      <onright>50</onright>
+      <onup>1</onup>
+      <ondown>3</ondown>
+    </control>
+
+    <control>
+      <description>Groups</description>
+      <type>button</type>
+      <id>3</id>
+      <posX>60</posX>
+      <posY>310</posY>
+      <label>Groups</label>
+      <onright>50</onright>
+      <onup>2</onup>
+      <ondown>4</ondown>
+    </control>
+
+    <control>
+      <description>Search</description>
+      <type>button</type>
+      <id>4</id>
+      <posX>60</posX>
+      <posY>340</posY>
+      <label>Search</label>
+      <onright>50</onright>
+      <onup>3</onup>
+      <ondown>5</ondown>
+    </control>
+
+    <control>
+      <description>Job Queue</description>
+      <type>button</type>
+      <id>5</id>
+      <posX>60</posX>
+      <posY>380</posY>
+      <label>Job Queue</label>
+      <onright>50</onright>
+      <onup>4</onup>
+      <ondown>7</ondown>
+    </control>
+
+    <control>
+      <description>History</description>
+      <type>button</type>
+      <id>7</id>
+      <posX>60</posX>
+      <posY>410</posY>
+      <label>History</label>
+      <onright>50</onright>
+      <onup>5</onup>
+      <ondown>6</ondown>
+    </control>
+
+    <control>
+      <description>Pause Queue</description>
+      <type>togglebutton</type>
+      <id>6</id>
+      <posX>60</posX>
+      <posY>440</posY>
+      <label>Pause Queue</label>
+      <onright>50</onright>
+      <onup>7</onup>
+      <ondown>2</ondown>
+    </control>
+
+    <control>
+      <description>Paused</description>
+      <type>label</type>
+      <id>6</id>
+      <posX>120</posX>
+      <posY>500</posY>
+      <label>Paused:</label>
+      <align>Right</align> 
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Paused</description>
+      <type>label</type>
+      <id>7</id>
+      <posX>127</posX>
+      <posY>500</posY>
+      <label>#Paused</label>
+      <align>Left</align> 
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Speed</description>
+      <type>label</type>
+      <id>8</id>
+      <posX>120</posX>
+      <posY>520</posY>
+      <label>Speed:</label>
+      <align>Right</align> 
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Speed</description>
+      <type>label</type>
+      <id>9</id>
+      <posX>127</posX>
+      <posY>520</posY>
+      <label>#KBps</label>
+      <align>Left</align> 
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Queued</description>
+      <type>label</type>
+      <id>10</id>
+      <posX>120</posX>
+      <posY>540</posY>
+      <label>Queued:</label>
+      <align>Right</align> 
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Queued</description>
+      <type>label</type>
+      <id>11</id>
+      <posX>127</posX>
+      <posY>540</posY>
+      <label>#MBStatus</label>
+      <align>Left</align> 
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Job Count</description>
+      <type>label</type>
+      <id>12</id>
+      <posX>120</posX>
+      <posY>560</posY>
+      <label>Count:</label>
+      <align>Right</align>
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Job Count</description>
+      <type>label</type>
+      <id>13</id>
+      <posX>127</posX>
+      <posY>560</posY>
+      <label>#JobCount</label>
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Disk Space 1</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>120</posX>
+      <posY>580</posY>
+      <label>D/L DIR:</label>
+      <align>Right</align>
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Disk Space 1</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>127</posX>
+      <posY>580</posY>
+      <label>#DiskSpace1</label>
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Disk Space 2</description>
+      <type>label</type>
+      <id>16</id>
+      <posX>120</posX>
+      <posY>600</posY>
+      <label>Temp DIR:</label>
+      <align>Right</align> 
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Disk Space 2</description>
+      <type>label</type>
+      <id>17</id>
+      <posX>127</posX>
+      <posY>600</posY>
+      <label>#DiskSpace2</label>
+      <align>Left</align> 
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <description>Time Left</description>
+      <type>label</type>
+      <id>18</id>
+      <posX>120</posX>
+      <posY>620</posY>
+      <label>ETA:</label>
+      <align>Right</align> 
+      <textcolor>FF006699</textcolor>
+    </control>
+
+    <control>
+      <description>Time Left</description>
+      <type>label</type>
+      <id>19</id>
+      <posX>127</posX>
+      <posY>620</posY>
+      <label>#TimeLeft</label>
+      <align>Left</align> 
+      <textcolor>ffffffff</textcolor> 
+    </control>
+
+    <control>
+      <type>group</type>
+      <description>Content</description>
+
+      <control>
+        <description>Title</description>
+        <type>listcontrol</type>
+        <id>50</id>
+        <width>850</width>
+        <height>430</height>
+        <textXOff2>850</textXOff2>
+        <posX>350</posX>
+        <posY>250</posY>
+        <onleft>2</onleft>
+        <onright>2</onright>
+      </control>
+
+      <control>
+        <description>Status</description>
+        <type>label</type>
+        <id>51</id>
+        <posX>395</posX>
+        <posY>670</posY>
+        <label>Status:</label>
+        <align>Right</align>
+        <textcolor>FF006699</textcolor>
+      </control>
+
+      <control>
+        <description>Status</description>
+        <type>label</type>
+        <id>52</id>
+        <posX>402</posX>
+        <posY>670</posY>
+        <label>#Status</label>
+        <align>Left</align>
+        <textcolor>ffffffff</textcolor>
+      </control>
+    </control>
+
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>97</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>98</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#PageTitle</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+
+    <import>common.time.xml</import>
+    <import>common.overlays.xml</import>
+
+  </controls>
+</window>
