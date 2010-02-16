@@ -363,13 +363,18 @@ namespace StreamedMPEditor
 
     private void createDefaultJpg(string imageDir)
     {
-      // Take the first file in the directoy and copy to default.jpg
-      System.IO.File.Copy(getFileListing(imageDir,"*.*")[0], imageDir + "default.jpg");
+        // Check if there is a trailing backslash
+        if (!imageDir.EndsWith(@"\"))
+        {
+            imageDir += @"\";
+        }
+      // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
+      System.IO.File.Copy(getFileListing(imageDir,"*.*")[0], imageDir + "default.jpg",true);
     }
 
     private string imageDir(string image)
     {
-      if (!image.StartsWith("Animations\\"))
+      if (!image.StartsWith("Animations\\") && !image.Contains(":"))
         return mpPaths.streamedMPpath + "media\\" + image;
       else
         return image;

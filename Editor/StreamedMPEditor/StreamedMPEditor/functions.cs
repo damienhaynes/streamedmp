@@ -78,7 +78,7 @@ namespace StreamedMPEditor
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(mpPaths.streamedMPpath + "streamedmp.version.xml"))
       {
-        showError("Can't find StreamedMP version information\r\r" + mpPaths.streamedMPpath + "streamedmp.version.xml\r\rThis editor is for StreamedMP skin", errorCode.major);
+        showError("Unable to find StreamedMP version information in the following path:\r\r" + mpPaths.streamedMPpath + "streamedmp.version.xml\r\rIt seems you have another skin selected in Mediaportal configuration.\rThis editor is for StreamedMP skin.\rGo to General->Skin and select StreamedMP to be able to open this editor.", errorCode.major);
         return null;
       }
 
@@ -621,7 +621,7 @@ namespace StreamedMPEditor
       {
         case errorCode.info:
           MessageBox.Show(errorText,
-              "OK to Continue",
+              "Click OK to continue.",
               MessageBoxButtons.OK,
               MessageBoxIcon.Information,
               MessageBoxDefaultButton.Button1);
@@ -634,21 +634,21 @@ namespace StreamedMPEditor
               MessageBoxDefaultButton.Button1);
         case errorCode.loadError:
           MessageBox.Show("Error loading menu, file seems invalid\r\rReason: " + errorText + "  ",
-              "OK to Continue",
+              "Click OK to continue.",
               MessageBoxButtons.OK,
               MessageBoxIcon.Error,
               MessageBoxDefaultButton.Button1);
           break;
         case errorCode.readError:
           MessageBox.Show("Error loading menu, file seems invalid\r\rReason: " + errorText + "  ",
-              "OK to Continue",
+              "Click OK to continue.",
               MessageBoxButtons.OK,
               MessageBoxIcon.Error,
               MessageBoxDefaultButton.Button1);
           break;
         case errorCode.major:
-          MessageBox.Show(errorText + "\r\rEditor will now Terminate",
-              "OK to Exit",
+          MessageBox.Show(errorText + "\r\rEditor will now terminate.",
+              "Click OK to Exit",
               MessageBoxButtons.OK,
               MessageBoxIcon.Error,
               MessageBoxDefaultButton.Button1);
@@ -915,59 +915,62 @@ namespace StreamedMPEditor
       {
         weatherBGlink.Enabled = true;
       }
-      
+
       switch (menuStyle)
       {
-        case chosenMenuStyle.verticalStyle:
-          enableFiveDayWeather.Checked = true;
-          horizontalContextLabels.Enabled = false;
-          weatherSummaryGroup.Visible = false;
-          verticalStyle.Checked = true;
-          weatherIconsStatic.Checked = true;          
-          useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "350";
-          menuPosLabel.Text = "Menu X Position:";
-          cboLabelFont.Enabled = false;
-          cboSelectedFont.Enabled = false;
-          cboSelectedFont.Text = "mediastream28tc";
-          cboLabelFont.Text = "mediastream16tc";
-          break;
+          case chosenMenuStyle.verticalStyle:
+              enableFiveDayWeather.Checked = true;
+              horizontalContextLabels.Enabled = false;
+              weatherSummaryGroup.Visible = false;
+              verticalStyle.Checked = true;
+              if (!WeatherIconsAnimated.Checked) 
+                  weatherIconsStatic.Checked = true;
+              useAeonGraphics.Visible = false;
+              txtMenuPos.Text = "350";
+              menuPosLabel.Text = "Menu X Position:";
+              cboLabelFont.Enabled = false;
+              cboSelectedFont.Enabled = false;
+              cboSelectedFont.Text = "mediastream28tc";
+              cboLabelFont.Text = "mediastream16tc";
+              break;
 
-        case chosenMenuStyle.horizontalStandardStyle:
-          weatherStyle = chosenWeatherStyle.bottom;
-          horizontalContextLabels.Checked = false;
-          enableFiveDayWeather.Checked = true;
-          fullWeatherSummaryBottom.Enabled = true;
-          fullWeatherSummaryBottom.Checked = true;
-          horizontalContextLabels.Enabled = true;
-          horizontalStyle.Checked = true;
-          weatherIconsStatic.Checked = true;
-          weatherSummaryGroup.Visible = true;          
-          useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "430";
-          cboLabelFont.Enabled = true;
-          cboSelectedFont.Enabled = true;
-          cboSelectedFont.Text = "mediastream28tc";
-          cboLabelFont.Text = "mediastream28tc";
-          break;
+          case chosenMenuStyle.horizontalStandardStyle:
+              weatherStyle = chosenWeatherStyle.bottom;
+              horizontalContextLabels.Checked = false;
+              enableFiveDayWeather.Checked = true;
+              fullWeatherSummaryBottom.Enabled = true;
+              fullWeatherSummaryBottom.Checked = true;
+              horizontalContextLabels.Enabled = true;
+              horizontalStyle.Checked = true;
+              if (!WeatherIconsAnimated.Checked) 
+                  weatherIconsStatic.Checked = true;
+              weatherSummaryGroup.Visible = true;
+              useAeonGraphics.Visible = false;
+              txtMenuPos.Text = "430";
+              cboLabelFont.Enabled = true;
+              cboSelectedFont.Enabled = true;
+              cboSelectedFont.Text = "mediastream28tc";
+              cboLabelFont.Text = "mediastream28tc";
+              break;
 
-        case chosenMenuStyle.horizontalContextStyle:
-          weatherStyle = chosenWeatherStyle.middle;
-          horizontalContextLabels.Checked = true;
-          enableFiveDayWeather.Checked = true;
-          fullWeatherSummaryMiddle.Checked = true;
-          fullWeatherSummaryBottom.Enabled = false;
-          horizontalContextLabels.Enabled = true;
-          horizontalStyle2.Checked = true;
-          weatherIconsStatic.Checked = true;
-          weatherSummaryGroup.Visible = true;          
-          useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "620";
-          cboSelectedFont.Text = "mediastream28tc";
-          cboLabelFont.Text = "mediastream28tc";
-          cboLabelFont.Enabled = false;
-          cboSelectedFont.Enabled = false;
-          break;
+          case chosenMenuStyle.horizontalContextStyle:
+              weatherStyle = chosenWeatherStyle.middle;
+              horizontalContextLabels.Checked = true;
+              enableFiveDayWeather.Checked = true;
+              fullWeatherSummaryMiddle.Checked = true;
+              fullWeatherSummaryBottom.Enabled = false;
+              horizontalContextLabels.Enabled = true;
+              horizontalStyle2.Checked = true;
+              if (!WeatherIconsAnimated.Checked)
+                  weatherIconsStatic.Checked = true;
+              weatherSummaryGroup.Visible = true;
+              useAeonGraphics.Visible = false;
+              txtMenuPos.Text = "620";
+              cboSelectedFont.Text = "mediastream28tc";
+              cboLabelFont.Text = "mediastream28tc";
+              cboLabelFont.Enabled = false;
+              cboSelectedFont.Enabled = false;
+              break;
       }
     }
 
