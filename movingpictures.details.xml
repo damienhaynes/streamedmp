@@ -492,7 +492,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\MPEG2.png</texture>
-	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)|string.contains(#MovingPictures.LocalMedia.videocodec,MPEG2)]</visible>
 	</control>
 
 	<!-- MPEG 4 -->
@@ -557,7 +557,7 @@ This file should contain the details view
 	  <width>100</width>
 	  <height>32</height>
 	  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\VC-1.png</texture>
-	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)</visible>
+	  <visible>!Control.IsVisible(50)+!Control.IsVisible(51)+[string.equals(#MovingPictures.LocalMedia.videocodec,VC-1)|string.contains(#MovingPictures.LocalMedia.videocodec,VC1)]</visible>
 	</control>
 
 	<!-- Audio Channels / Codecs-->

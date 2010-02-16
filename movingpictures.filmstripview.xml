@@ -431,7 +431,7 @@ This file should contain the thumbs view
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\MPEG2.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.filmstrip+string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)</visible>
+		  <visible>Control.IsVisible(50)+facadeview.filmstrip+[string.equals(#MovingPictures.LocalMedia.videocodec,MP2V)|string.contains(#MovingPictures.LocalMedia.videocodec,MPEG2)]</visible>
 		</control>
 
 		<!-- MPEG 4 -->
