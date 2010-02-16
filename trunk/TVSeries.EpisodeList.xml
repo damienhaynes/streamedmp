@@ -169,7 +169,7 @@
             <type>label</type>
             <posX>401</posX>
             <posY>370</posY>
-			<width>130</width>
+			<width>150</width>
             <textcolor>#shadow.dark</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -177,9 +177,9 @@
         <control Style="smallTitleB">
             <label>#TVSeries.Episode.InfoPanelLine2Key</label>
             <type>label</type>
-            <posX>400</posX>
+            <posX>401</posX>
             <posY>369</posY>
-			<width>130</width>
+			<width>150</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -188,7 +188,7 @@
             <id>10002</id>
             <label>#TVSeries.Episode.InfoPanelLine2Value</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>371</posY>          
             <textcolor>#shadow.light</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10002)</visible>
@@ -198,7 +198,7 @@
             <id>10002</id>
             <label>#TVSeries.Episode.InfoPanelLine2Value</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>370</posY>          
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -210,7 +210,7 @@
             <type>label</type>
             <posX>401</posX>
             <posY>393</posY>
-			<width>130</width>
+			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -220,7 +220,7 @@
             <type>label</type>
             <posX>400</posX>
             <posY>392</posY>
-			<width>130</width>
+			<width>150</width>
             <visible>Control.IsVisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -229,7 +229,7 @@
             <id>0</id>
             <label>#TVSeries.Episode.InfoPanelLine31Value #TVSeries.Episode.InfoPanelLine32Value</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>394</posY>           
             <textcolor>#shadow.light</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+Control.IsVisible(5558)</visible>
@@ -239,7 +239,7 @@
             <id>0</id>
             <label>#TVSeries.Episode.InfoPanelLine31Value #TVSeries.Episode.InfoPanelLine32Value</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>393</posY>          
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+Control.IsVisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -249,7 +249,7 @@
             <id>0</id>
             <label>#TVSeries.Episode.InfoPanelLine31Value</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>394</posY>        
             <textcolor>#shadow.light</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
@@ -259,7 +259,7 @@
             <id>0</id>
             <label>#TVSeries.Episode.InfoPanelLine31Value</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>393</posY>           
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -269,7 +269,7 @@
             <id>0</id>
             <label> / 10</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>394</posY>          
             <textcolor>#shadow.light</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
@@ -279,7 +279,7 @@
             <id>0</id>
             <label> / 10</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>393</posY>            
             <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -291,7 +291,7 @@
             <type>label</type>
             <posX>402</posX>
             <posY>416</posY>
-			<width>130</width>
+			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -301,17 +301,17 @@
             <type>label</type>
             <posX>400</posX>
             <posY>415</posY>
-			<width>130</width>
+			<width>150</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <label>#TVSeries.Episode.InfoPanelLine4Value</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>417</posY>
             <textcolor>#shadow.light</textcolor>
-			<width>190</width>
+			<width>180</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -319,9 +319,9 @@
             <id>10004</id>
             <label>#TVSeries.Episode.InfoPanelLine4Value</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>416</posY>
-			<width>190</width>
+			<width>180</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -332,7 +332,7 @@
             <type>label</type>
             <posX>401</posX>
             <posY>439</posY>
-			<width>130</width>
+			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -342,16 +342,16 @@
             <type>label</type>
             <posX>400</posX>
             <posY>438</posY>
-			<width>130</width>
+			<width>150</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <label>#TVSeries.Episode.InfoPanelLine5Value</label>
             <type>label</type>
-            <posX>541</posX>
+            <posX>561</posX>
             <posY>440</posY>
-			<width>190</width>
+			<width>180</width>
             <textcolor>#shadow.light</textcolor>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -360,9 +360,9 @@
             <id>10005</id>
             <label>#TVSeries.Episode.InfoPanelLine5Value</label>
             <type>label</type>
-            <posX>540</posX>
+            <posX>560</posX>
             <posY>439</posY>
-			<width>190</width>
+			<width>180</width>
             <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>

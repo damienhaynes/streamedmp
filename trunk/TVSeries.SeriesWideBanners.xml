@@ -178,15 +178,15 @@
             <label>#TVSeries.Series.InfoPanelLine2Key</label>
             <posX>310</posX>
             <posY>573</posY>
-			<width>150</width>
+			<width>190</width>
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine2Value</label>
-            <posX>475</posX>
-            <posY>574</posY>            
+            <posX>510</posX>
+            <posY>574</posY>           
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -196,15 +196,15 @@
             <label>#TVSeries.Series.InfoPanelLine3Key</label>
             <posX>310</posX>
             <posY>595</posY>
-			<width>150</width>            
+			<width>190</width>            
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine3Value</label>
-            <posX>475</posX>
-            <posY>596</posY>            
+            <posX>510</posX>
+            <posY>596</posY>           
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -214,7 +214,7 @@
             <label>#TVSeries.Series.InfoPanelLine4Key</label>
             <posX>310</posX>
             <posY>617</posY>
-			<width>150</width>            
+			<width>190</width>            
             <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>		
@@ -222,8 +222,8 @@
 			<id>0</id>
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine41Value #TVSeries.Series.InfoPanelLine42Value</label>
-            <posX>475</posX>
-            <posY>618</posY>            
+            <posX>510</posX>
+            <posY>618</posY>           
             <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+Control.IsVisible(5556)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -231,8 +231,8 @@
 			<id>0</id>
             <type>label</type>
             <label>#TVSeries.Series.InfoPanelLine41Value</label>
-            <posX>475</posX>
-            <posY>618</posY>            
+            <posX>510</posX>
+            <posY>618</posY>           
             <visible>facadeview.largeicons+Control.IsVisible(1237)+Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -240,11 +240,11 @@
 			<id>0</id>
             <type>label</type>
             <label> / 10</label>
-            <posX>475</posX>
-            <posY>618</posY>           
+            <posX>510</posX>
+            <posY>618</posY>        
             <visible>facadeview.largeicons+Control.IsVisible(1237)+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
+        </control>        
 	
 	</controls>
 </window>
