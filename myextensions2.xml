@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>801</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:14001</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:-</define>
+  <controls>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>0</buttonX>
+      <buttonY>0</buttonY>
+      <buttonwidth>106</buttonwidth>
+      <buttonheight>720</buttonheight>
+      <textureFocus>Action_focus.png</textureFocus>
+      <textureNoFocus>Action_nofocus.png</textureNoFocus>
+      <width>320</width>
+      <height>720</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>26</posX>
+        <posY>78</posY>
+        <width>367</width>
+        <height>591</height>
+        <texture>Backslide.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="300" start="-300,0" reversible="false">visible</animation>
+        <animation effect="slide" time="300" end="-300,0" reversible="false">hidden</animation>
+      </control>
+      <control>
+        <description>group element</description>
+        <type>group</type>
+        <animation effect="slide" time="300" start="-300,0" reversible="false">visible</animation>
+        <animation effect="slide" time="300" end="-300,0" reversible="false">hidden</animation>
+        <posX>60</posX>
+        <posY>117</posY>
+        <layout>StackLayout</layout>
+        <visible>!Control.HasFocus(50)</visible>
+        <control>
+          <description>View-As</description>
+          <type>button</type>
+          <id>2</id>
+          <label>100</label>
+          <onright>50</onright>
+          <onup>17</onup>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>3</id>
+          <onright>50</onright>
+        </control>
+
+        <control>
+          <description>Views</description>
+          <type>button</type>
+          <id>6</id>
+          <label>14002</label>
+          <onright>50</onright>
+        </control>
+
+		<control>
+          <description>Restart</description>
+          <type>button</type>
+          <id>5</id>
+          <label>Restart MP</label>
+          <onright>50</onright>
+        </control>
+
+<!-- 	    <control>
+          <description>Update list</description>
+          <type>button</type>
+          <id>7</id>
+          <label>Update Info</label>
+          <onright>50</onright>
+        </control> -->
+
+		<control>
+          <description>Update all</description>
+          <type>button</type>
+          <id>8</id>
+          <label>Update all</label>
+          <onright>50</onright>
+        </control>
+		
+      </control>
+    </control>
+	 <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>26</posX>
+      <posY>90</posY>
+      <width>367</width>
+      <height>300</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>---------------------------------------------------</seperator>
+      <font>font11</font>
+      <label>#MPE.Selected.Description</label>
+      <visible>facadeview.list+Control.HasFocus(50)</visible>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>26</posX>
+      <posY>390</posY>
+      <width>367</width>
+      <height>300</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>---------------------------------------------------</seperator>
+      <font>font11</font>
+      <label>#MPE.Selected.VersionDescription</label>
+      <visible>facadeview.list+Control.HasFocus(50)</visible>
+    </control>
+
+    <import>common.facade.music.xml</import>
+  </controls>
+</window>
