@@ -219,7 +219,8 @@ prototype VOID		ModifySkinFilesForFULLHD(BOOL);
 prototype VOID		GetListFacadeColors(); 
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
-prototype VOID 		ShowControl(STRING, NUMBER);
+prototype VOID 		ShowControl(STRING, NUMBER);    
+prototype VOID		DetectWinLargeFonts();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -277,7 +278,10 @@ function OnBegin()
 	STRING szVersion, szUpgradeMessage;
 	NUMBER nResult;
 	BOOL bUpgradeSupported; 
-begin 
+begin
+	
+	DetectWinLargeFonts();
+ 
 	// See if older version is installed
 	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID, bUpgradeSupported);
 	if g_bMajorUpgrade then
@@ -3092,6 +3096,32 @@ begin
     	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU, szDefine, szValue);          
     endif;   
     
+end; 
+
+function void DetectWinLargeFonts()
+	STRING szKey, svValue, szMessage;
+	NUMBER nvType, nvSize, nvValue;
+begin
+	// Detect Windows Font Size
+	RegDBSetDefaultRoot(HKEY_CURRENT_USER);
+	
+	szKey = "Control Panel\\Desktop\\WindowMetrics";
+	if RegDBGetKeyValueEx(szKey,"AppliedDPI", nvType, svValue, nvSize) < 0 then
+		svValue = "96";
+	endif;
+	StrToNum(nvValue, svValue);
+	
+	// StreamedMP does not support Windows Fonts > 96dpi
+	if nvValue > 96 then
+			
+		szMessage = "WARNING: Large Fonts setting has been detected in windows,\n";
+		szMessage = szMessage + "this is not supported by StreamedMP. We recommend you set\n";
+		szMessage = szMessage + "your font setting back to Default before starting\n";
+		szMessage = szMessage + "MediaPortal.";
+		
+		MessageBox(szMessage,WARNING);
+		
+	endif;
 end;
 
 
