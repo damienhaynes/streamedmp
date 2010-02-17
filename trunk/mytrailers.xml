@@ -8,18 +8,14 @@
 		<!-- Header -->
 		<import>common.time.xml</import>
 		<control>
-			<description>Movies BACKGROUND</description>
+			<description>Default BACKGROUND</description>
 			<id>0</id>
-			<type>multiimage</type>
+			<type>image</type>
 			<posx>0</posx>
 			<posy>0</posy>
 			<width>1280</width>
 			<height>720</height>
-			<imagepath>movies</imagepath>
-			<timeperimage>30000</timeperimage>
-			<fadetime>800</fadetime>
-			<loop>yes</loop>
-			<randomize>True</randomize>			
+			<texture>animations\movies\default.jpg</texture>
 		</control>
 		<control>
 			<description>BG</description>
