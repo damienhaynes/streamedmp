@@ -712,7 +712,18 @@ namespace StreamedMPEditor
             if (enableFiveDayWeather.Checked)
                 GenerateFiveDayWeather();
             if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
-                generateWeathersummary();
+            {
+                foreach (backgroundItem item in bgItems)
+                {
+                    if (item.isWeather)
+                    {
+                        basicHomeValues.weatherControl = (int.Parse(item.ids[0]) + 200);
+                        generateWeathersummary(basicHomeValues.weatherControl);
+                    }
+                }
+
+            }
+
             if (direction == menuType.horizontal)
             {
                 generateTopBarH();
