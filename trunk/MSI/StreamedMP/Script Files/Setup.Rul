@@ -2122,7 +2122,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\TVSeries")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"TVSERIES") > 0 then
+		if GetFileVersion(svVersion2,"TVSERIES") = 0 then
 			svVersion1 = TVSERIES_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 	    		szQuestion = "Your current version of TV-Series plugin v" + svVersion2 + 
@@ -2136,7 +2136,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\MovingPictures")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"MOVINGPICTURES") > 0 then
+		if GetFileVersion(svVersion2,"MOVINGPICTURES") = 0 then
 			svVersion1 = MOVINGPICTURES_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
@@ -2152,7 +2152,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\MyLyrics")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"LYRICS") > 0 then
+		if GetFileVersion(svVersion2,"LYRICS") = 0 then
 			svVersion1 = MYLYRICS_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
@@ -2168,7 +2168,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\MyTrailers")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"TRAILERS") > 0 then
+		if GetFileVersion(svVersion2,"TRAILERS") = 0 then
 			svVersion1 = TRAILERS_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
@@ -2184,7 +2184,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\InfoService")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"INFOSERVICE") > 0 then
+		if GetFileVersion(svVersion2,"INFOSERVICE") = 0 then
 			svVersion1 = INFOSERVICE_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
@@ -2200,7 +2200,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\GlobalMusicSearch")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"GLOBALSEARCH") > 0 then
+		if GetFileVersion(svVersion2,"GLOBALSEARCH") = 0 then
 			svVersion1 = GLOBALSEARCH_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
@@ -2216,7 +2216,7 @@ begin
     
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\FanartHandler")) then
 		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"FANARTHANDLER") > 0 then
+		if GetFileVersion(svVersion2,"FANARTHANDLER") = 0 then
 			svVersion1 = FANARTHANDLER_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 		    	if nReturn < 0 then
