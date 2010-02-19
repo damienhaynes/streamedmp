@@ -2048,14 +2048,14 @@ namespace StreamedMPEditor
             if (WeatherIconsAnimated.Checked)
             {
                 rawXML.AppendLine("\t\t<type>multiimage</type>");
-                rawXML.AppendLine("\t\t<imagepath>" + weatherIcon(i) + "</imagepath>");
+                rawXML.AppendLine("\t\t<imagepath>" + weatherIcon(0) + "</imagepath>");
                 rawXML.AppendLine("\t\t<timeperimage>33</timeperimage>");
                 rawXML.AppendLine("\t\t<loop>True</loop>");
             }
             else
             {
                 rawXML.AppendLine("\t\t<type>image</type>");
-                rawXML.AppendLine("\t\t<texture>" + weatherIcon(i) + "</texture>");
+                rawXML.AppendLine("\t\t<texture>" + weatherIcon(0) + "</texture>");
             }
             rawXML.AppendLine("\t\t<posX>" + (xPos1 - 200).ToString() + "</posX>");
             rawXML.AppendLine("\t\t<posY>" + ((yPos1 + 155) - 70).ToString() + "</posY>");

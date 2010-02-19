@@ -45,6 +45,7 @@
         this.verticalStyle = new System.Windows.Forms.RadioButton();
         this.weatherStyleTab = new System.Windows.Forms.TabPage();
         this.aninmatedIconBox = new System.Windows.Forms.GroupBox();
+        this.installAnimatedIcons = new System.Windows.Forms.LinkLabel();
         this.weatherIconsStatic = new System.Windows.Forms.RadioButton();
         this.WeatherIconsAnimated = new System.Windows.Forms.RadioButton();
         this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -101,6 +102,13 @@
         this.itemsOnMenubar = new System.Windows.Forms.CheckedListBox();
         this.xmlFiles = new System.Windows.Forms.ListBox();
         this.basicHomeOptions = new System.Windows.Forms.TabPage();
+        this.weatherOptions = new System.Windows.Forms.GroupBox();
+        this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
+        this.weatherBGlink = new System.Windows.Forms.CheckBox();
+        this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
+        this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
+        this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
+        this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
         this.gbRssImageType = new System.Windows.Forms.GroupBox();
         this.rbRssInfoServiceImage = new System.Windows.Forms.RadioButton();
         this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
@@ -110,13 +118,8 @@
         this.cboSelectedFont = new System.Windows.Forms.ComboBox();
         this.label15 = new System.Windows.Forms.Label();
         this.label21 = new System.Windows.Forms.Label();
-        this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
-        this.weatherBGlink = new System.Windows.Forms.CheckBox();
         this.useAeonGraphics = new System.Windows.Forms.CheckBox();
         this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
-        this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
-        this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
-        this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
         this.infoserviceOptions = new System.Windows.Forms.GroupBox();
         this.enableTwitter = new System.Windows.Forms.CheckBox();
         this.enableRssfeed = new System.Windows.Forms.CheckBox();
@@ -210,9 +213,10 @@
         this.backgroundImages.SuspendLayout();
         this.itemProperties.SuspendLayout();
         this.basicHomeOptions.SuspendLayout();
+        this.weatherOptions.SuspendLayout();
+        this.weatherSummaryGroup.SuspendLayout();
         this.gbRssImageType.SuspendLayout();
         this.styleOptionsGroup.SuspendLayout();
-        this.weatherSummaryGroup.SuspendLayout();
         this.infoserviceOptions.SuspendLayout();
         this.globalSettings.SuspendLayout();
         this.defaultBackgrounds.SuspendLayout();
@@ -399,16 +403,28 @@
         // 
         // aninmatedIconBox
         // 
+        this.aninmatedIconBox.Controls.Add(this.installAnimatedIcons);
         this.aninmatedIconBox.Controls.Add(this.weatherIconsStatic);
         this.aninmatedIconBox.Controls.Add(this.WeatherIconsAnimated);
         this.aninmatedIconBox.Controls.Add(this.pictureBox2);
         this.aninmatedIconBox.Controls.Add(this.pictureBox6);
-        this.aninmatedIconBox.Location = new System.Drawing.Point(132, 236);
+        this.aninmatedIconBox.Location = new System.Drawing.Point(132, 233);
         this.aninmatedIconBox.Name = "aninmatedIconBox";
-        this.aninmatedIconBox.Size = new System.Drawing.Size(484, 165);
+        this.aninmatedIconBox.Size = new System.Drawing.Size(484, 181);
         this.aninmatedIconBox.TabIndex = 52;
         this.aninmatedIconBox.TabStop = false;
         this.aninmatedIconBox.Text = "Weather Icon Style (Skin Supplied)";
+        // 
+        // installAnimatedIcons
+        // 
+        this.installAnimatedIcons.AutoSize = true;
+        this.installAnimatedIcons.Location = new System.Drawing.Point(276, 155);
+        this.installAnimatedIcons.Name = "installAnimatedIcons";
+        this.installAnimatedIcons.Size = new System.Drawing.Size(110, 13);
+        this.installAnimatedIcons.TabIndex = 7;
+        this.installAnimatedIcons.TabStop = true;
+        this.installAnimatedIcons.Text = "Install Animated Icons";
+        this.installAnimatedIcons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installAnimatedIcons_LinkClicked);
         // 
         // weatherIconsStatic
         // 
@@ -426,10 +442,10 @@
         this.WeatherIconsAnimated.AutoSize = true;
         this.WeatherIconsAnimated.Location = new System.Drawing.Point(279, 135);
         this.WeatherIconsAnimated.Name = "WeatherIconsAnimated";
-        this.WeatherIconsAnimated.Size = new System.Drawing.Size(162, 17);
+        this.WeatherIconsAnimated.Size = new System.Drawing.Size(137, 17);
         this.WeatherIconsAnimated.TabIndex = 6;
         this.WeatherIconsAnimated.TabStop = true;
-        this.WeatherIconsAnimated.Text = "Animated (MP 1.1 or Greater)";
+        this.WeatherIconsAnimated.Text = "Animated (Not Installed)";
         this.WeatherIconsAnimated.UseVisualStyleBackColor = true;
         // 
         // pictureBox2
@@ -1041,6 +1057,7 @@
         // basicHomeOptions
         // 
         this.basicHomeOptions.BackColor = System.Drawing.Color.Transparent;
+        this.basicHomeOptions.Controls.Add(this.weatherOptions);
         this.basicHomeOptions.Controls.Add(this.gbRssImageType);
         this.basicHomeOptions.Controls.Add(this.styleOptionsGroup);
         this.basicHomeOptions.Controls.Add(this.infoserviceOptions);
@@ -1053,12 +1070,90 @@
         this.basicHomeOptions.Text = "Menu/Plugin Options";
         this.basicHomeOptions.UseVisualStyleBackColor = true;
         // 
+        // weatherOptions
+        // 
+        this.weatherOptions.Controls.Add(this.installWeatherBackgrounds);
+        this.weatherOptions.Controls.Add(this.weatherBGlink);
+        this.weatherOptions.Controls.Add(this.summaryWeatherCheckBox);
+        this.weatherOptions.Controls.Add(this.weatherSummaryGroup);
+        this.weatherOptions.Location = new System.Drawing.Point(362, 143);
+        this.weatherOptions.Name = "weatherOptions";
+        this.weatherOptions.Size = new System.Drawing.Size(375, 111);
+        this.weatherOptions.TabIndex = 23;
+        this.weatherOptions.TabStop = false;
+        this.weatherOptions.Text = "Weather Options";
+        // 
+        // installWeatherBackgrounds
+        // 
+        this.installWeatherBackgrounds.AutoSize = true;
+        this.installWeatherBackgrounds.Location = new System.Drawing.Point(269, 44);
+        this.installWeatherBackgrounds.Name = "installWeatherBackgrounds";
+        this.installWeatherBackgrounds.Size = new System.Drawing.Size(100, 13);
+        this.installWeatherBackgrounds.TabIndex = 30;
+        this.installWeatherBackgrounds.TabStop = true;
+        this.installWeatherBackgrounds.Text = "Install Backgrounds";
+        this.installWeatherBackgrounds.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installWeatherBackgrounds_LinkClicked);
+        // 
+        // weatherBGlink
+        // 
+        this.weatherBGlink.AutoSize = true;
+        this.weatherBGlink.Location = new System.Drawing.Point(6, 43);
+        this.weatherBGlink.Name = "weatherBGlink";
+        this.weatherBGlink.Size = new System.Drawing.Size(268, 17);
+        this.weatherBGlink.TabIndex = 23;
+        this.weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+        this.weatherBGlink.UseVisualStyleBackColor = true;
+        // 
+        // summaryWeatherCheckBox
+        // 
+        this.summaryWeatherCheckBox.AutoSize = true;
+        this.summaryWeatherCheckBox.Location = new System.Drawing.Point(6, 20);
+        this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
+        this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
+        this.summaryWeatherCheckBox.TabIndex = 24;
+        this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
+        this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
+        // 
+        // weatherSummaryGroup
+        // 
+        this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
+        this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
+        this.weatherSummaryGroup.Location = new System.Drawing.Point(5, 65);
+        this.weatherSummaryGroup.Name = "weatherSummaryGroup";
+        this.weatherSummaryGroup.Size = new System.Drawing.Size(364, 41);
+        this.weatherSummaryGroup.TabIndex = 29;
+        this.weatherSummaryGroup.TabStop = false;
+        this.weatherSummaryGroup.Text = "Five Day Weather Position";
+        // 
+        // fullWeatherSummaryBottom
+        // 
+        this.fullWeatherSummaryBottom.AutoSize = true;
+        this.fullWeatherSummaryBottom.Location = new System.Drawing.Point(125, 20);
+        this.fullWeatherSummaryBottom.Name = "fullWeatherSummaryBottom";
+        this.fullWeatherSummaryBottom.Size = new System.Drawing.Size(107, 17);
+        this.fullWeatherSummaryBottom.TabIndex = 31;
+        this.fullWeatherSummaryBottom.TabStop = true;
+        this.fullWeatherSummaryBottom.Text = "Bottom of Screen";
+        this.fullWeatherSummaryBottom.UseVisualStyleBackColor = true;
+        // 
+        // fullWeatherSummaryMiddle
+        // 
+        this.fullWeatherSummaryMiddle.AutoSize = true;
+        this.fullWeatherSummaryMiddle.Location = new System.Drawing.Point(14, 20);
+        this.fullWeatherSummaryMiddle.Name = "fullWeatherSummaryMiddle";
+        this.fullWeatherSummaryMiddle.Size = new System.Drawing.Size(105, 17);
+        this.fullWeatherSummaryMiddle.TabIndex = 30;
+        this.fullWeatherSummaryMiddle.TabStop = true;
+        this.fullWeatherSummaryMiddle.Text = "Center of Screen";
+        this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
+        this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
+        // 
         // gbRssImageType
         // 
         this.gbRssImageType.Controls.Add(this.rbRssInfoServiceImage);
         this.gbRssImageType.Controls.Add(this.rbRssSkinImage);
         this.gbRssImageType.Controls.Add(this.rbRssNoImage);
-        this.gbRssImageType.Location = new System.Drawing.Point(280, 143);
+        this.gbRssImageType.Location = new System.Drawing.Point(208, 143);
         this.gbRssImageType.Name = "gbRssImageType";
         this.gbRssImageType.Size = new System.Drawing.Size(148, 112);
         this.gbRssImageType.TabIndex = 18;
@@ -1107,11 +1202,8 @@
         this.styleOptionsGroup.Controls.Add(this.cboSelectedFont);
         this.styleOptionsGroup.Controls.Add(this.label15);
         this.styleOptionsGroup.Controls.Add(this.label21);
-        this.styleOptionsGroup.Controls.Add(this.summaryWeatherCheckBox);
-        this.styleOptionsGroup.Controls.Add(this.weatherBGlink);
         this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
         this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
-        this.styleOptionsGroup.Controls.Add(this.weatherSummaryGroup);
         this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
         this.styleOptionsGroup.Name = "styleOptionsGroup";
         this.styleOptionsGroup.Size = new System.Drawing.Size(729, 145);
@@ -1153,30 +1245,10 @@
         this.label21.TabIndex = 39;
         this.label21.Text = "Focused Item Font:";
         // 
-        // summaryWeatherCheckBox
-        // 
-        this.summaryWeatherCheckBox.AutoSize = true;
-        this.summaryWeatherCheckBox.Location = new System.Drawing.Point(20, 53);
-        this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
-        this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
-        this.summaryWeatherCheckBox.TabIndex = 24;
-        this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
-        this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
-        // 
-        // weatherBGlink
-        // 
-        this.weatherBGlink.AutoSize = true;
-        this.weatherBGlink.Location = new System.Drawing.Point(20, 27);
-        this.weatherBGlink.Name = "weatherBGlink";
-        this.weatherBGlink.Size = new System.Drawing.Size(200, 17);
-        this.weatherBGlink.TabIndex = 23;
-        this.weatherBGlink.Text = "Link Background to Current Weather";
-        this.weatherBGlink.UseVisualStyleBackColor = true;
-        // 
         // useAeonGraphics
         // 
         this.useAeonGraphics.AutoSize = true;
-        this.useAeonGraphics.Location = new System.Drawing.Point(20, 105);
+        this.useAeonGraphics.Location = new System.Drawing.Point(20, 52);
         this.useAeonGraphics.Name = "useAeonGraphics";
         this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
         this.useAeonGraphics.TabIndex = 26;
@@ -1186,46 +1258,12 @@
         // horizontalContextLabels
         // 
         this.horizontalContextLabels.AutoSize = true;
-        this.horizontalContextLabels.Location = new System.Drawing.Point(20, 79);
+        this.horizontalContextLabels.Location = new System.Drawing.Point(20, 26);
         this.horizontalContextLabels.Name = "horizontalContextLabels";
         this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
         this.horizontalContextLabels.TabIndex = 25;
         this.horizontalContextLabels.Text = "Use Context Labels on Horizontal Menu";
         this.horizontalContextLabels.UseVisualStyleBackColor = true;
-        // 
-        // weatherSummaryGroup
-        // 
-        this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
-        this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
-        this.weatherSummaryGroup.Location = new System.Drawing.Point(532, 19);
-        this.weatherSummaryGroup.Name = "weatherSummaryGroup";
-        this.weatherSummaryGroup.Size = new System.Drawing.Size(178, 69);
-        this.weatherSummaryGroup.TabIndex = 29;
-        this.weatherSummaryGroup.TabStop = false;
-        this.weatherSummaryGroup.Text = "Five Day Weather Position";
-        // 
-        // fullWeatherSummaryBottom
-        // 
-        this.fullWeatherSummaryBottom.AutoSize = true;
-        this.fullWeatherSummaryBottom.Location = new System.Drawing.Point(14, 44);
-        this.fullWeatherSummaryBottom.Name = "fullWeatherSummaryBottom";
-        this.fullWeatherSummaryBottom.Size = new System.Drawing.Size(107, 17);
-        this.fullWeatherSummaryBottom.TabIndex = 31;
-        this.fullWeatherSummaryBottom.TabStop = true;
-        this.fullWeatherSummaryBottom.Text = "Bottom of Screen";
-        this.fullWeatherSummaryBottom.UseVisualStyleBackColor = true;
-        // 
-        // fullWeatherSummaryMiddle
-        // 
-        this.fullWeatherSummaryMiddle.AutoSize = true;
-        this.fullWeatherSummaryMiddle.Location = new System.Drawing.Point(14, 20);
-        this.fullWeatherSummaryMiddle.Name = "fullWeatherSummaryMiddle";
-        this.fullWeatherSummaryMiddle.Size = new System.Drawing.Size(105, 17);
-        this.fullWeatherSummaryMiddle.TabIndex = 30;
-        this.fullWeatherSummaryMiddle.TabStop = true;
-        this.fullWeatherSummaryMiddle.Text = "Center of Screen";
-        this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
-        this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
         // 
         // infoserviceOptions
         // 
@@ -1233,7 +1271,7 @@
         this.infoserviceOptions.Controls.Add(this.enableRssfeed);
         this.infoserviceOptions.Location = new System.Drawing.Point(9, 143);
         this.infoserviceOptions.Name = "infoserviceOptions";
-        this.infoserviceOptions.Size = new System.Drawing.Size(265, 112);
+        this.infoserviceOptions.Size = new System.Drawing.Size(192, 112);
         this.infoserviceOptions.TabIndex = 15;
         this.infoserviceOptions.TabStop = false;
         this.infoserviceOptions.Text = "InfoService/MP-RSSTicker Options";
@@ -1974,12 +2012,14 @@
         this.itemProperties.ResumeLayout(false);
         this.itemProperties.PerformLayout();
         this.basicHomeOptions.ResumeLayout(false);
+        this.weatherOptions.ResumeLayout(false);
+        this.weatherOptions.PerformLayout();
+        this.weatherSummaryGroup.ResumeLayout(false);
+        this.weatherSummaryGroup.PerformLayout();
         this.gbRssImageType.ResumeLayout(false);
         this.gbRssImageType.PerformLayout();
         this.styleOptionsGroup.ResumeLayout(false);
         this.styleOptionsGroup.PerformLayout();
-        this.weatherSummaryGroup.ResumeLayout(false);
-        this.weatherSummaryGroup.PerformLayout();
         this.infoserviceOptions.ResumeLayout(false);
         this.infoserviceOptions.PerformLayout();
         this.globalSettings.ResumeLayout(false);
@@ -2164,6 +2204,9 @@
     private System.Windows.Forms.RichTextBox richTextBox2;
     private System.Windows.Forms.Button cancelCreateButton;
     private System.Windows.Forms.CheckBox cbDisableClock;
+    private System.Windows.Forms.LinkLabel installAnimatedIcons;
+    private System.Windows.Forms.GroupBox weatherOptions;
+    private System.Windows.Forms.LinkLabel installWeatherBackgrounds;
   }
 }
 
