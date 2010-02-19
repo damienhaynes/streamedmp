@@ -31,7 +31,10 @@ namespace StreamedMPEditor
         Button prevBatch = new Button();
         Button imgCancel = new Button();
 
-
+        ProgressBar pBar = new ProgressBar();
+        Label pLabel = new Label();
+        Form downloadForm = new Form();
+        Button downloadStop = new Button();
 
         enum errorCode
         {
@@ -117,7 +120,9 @@ namespace StreamedMPEditor
             randomFanart.fanartPictures = false;
             randomFanart.fanartPlugins = false;
             randomFanart.fanartTv = false;
-            randomFanart.fanartTVSeries = false; 
+            randomFanart.fanartTVSeries = false;
+
+            buildDownloadForm();
 
             releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());

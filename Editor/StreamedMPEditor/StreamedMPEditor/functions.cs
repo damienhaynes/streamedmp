@@ -68,9 +68,9 @@ namespace StreamedMPEditor
 
 
       if (infoServiceVer == "InfoService Not Installed")
-        infoserviceOptions.Text = "InfoService Options (Disabled " + infoServiceVer + " )";
+        infoserviceOptions.Text = "InfoService Options(Disabled)";
       else
-        infoserviceOptions.Text = "InfoService Options (InfoService V" + infoServiceVer + " Installed)";
+        infoserviceOptions.Text = "InfoService Options";
     }
 
     private string getStreamedMPVer()
@@ -905,17 +905,33 @@ namespace StreamedMPEditor
       enableRssfeed.Checked = true;
 
       if (!animatedIconsInstalled())
-        WeatherIconsAnimated.Enabled = false;
+      {
+          WeatherIconsAnimated.Enabled = false;
+          weatherIconsStatic.Checked = true;
+          WeatherIconsAnimated.Text = "Animated (Not Installed)";
+          installAnimatedIcons.Visible = true;
+      }
+      else
+      {
+          WeatherIconsAnimated.Enabled = true;
+          WeatherIconsAnimated.Text = "Animated";
+          installAnimatedIcons.Visible = false;
+      }
 
       if (!weatherBackgoundsInstalled())
       {
-          weatherBGlink.Checked = false; 
+          weatherBGlink.Checked = false;
           weatherBGlink.Enabled = false;
+          weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+          installWeatherBackgrounds.Visible = true;
+
 
       }
       else
       {
-        weatherBGlink.Enabled = true;
+          weatherBGlink.Enabled = true;
+          weatherBGlink.Text = "Link Background to Current Weather";
+          installWeatherBackgrounds.Visible = false;
       }
 
       switch (menuStyle)
