@@ -79,6 +79,7 @@ namespace StreamedMPEditor
             else
             {
                 DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+                downloadForm.BringToFront();
             }
         }
 
@@ -98,6 +99,7 @@ namespace StreamedMPEditor
             else
             {
                 DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+                downloadForm.BringToFront();
             }
         }
 
