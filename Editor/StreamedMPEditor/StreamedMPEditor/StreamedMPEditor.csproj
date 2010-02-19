@@ -118,6 +118,8 @@
     <None Include="Resources\style7.png" />
     <None Include="Resources\style8.png" />
     <None Include="Resources\style5.png" />
+    <None Include="Properties\VersionInfo.cs.tmpl" />
+    <Compile Include="Properties\VersionInfo.cs" />
     <EmbeddedResource Include="rtfFiles\introduction.rtf" />
     <EmbeddedResource Include="rtfFiles\style3.rtf" />
     <EmbeddedResource Include="rtfFiles\style2.rtf" />
@@ -135,5 +137,6 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>call $(TargetDir)merge.bat</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
