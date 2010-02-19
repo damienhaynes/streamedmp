@@ -676,7 +676,72 @@ This file should contain the list view
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTS 71.png</texture>
 		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTS)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
 		</control>
+		
+		<!-- DTS-HD 5.1 -->
+		<control>
+		  <description>DTS-HD 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTSHD 51.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTSHD)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		</control>
 
+		<!-- DTS-HD 6.1 -->
+		<control>
+		  <description>DTS-HD 6.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTSHD 61.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTSHD)+[string.equals(#MovingPictures.LocalMedia.audiochannels,7)|string.equals(#MovingPictures.LocalMedia.audiochannels,6.1)]]</visible>
+		</control>
+
+		<!-- DTS-HD 7.1 -->
+		<control>
+		  <description>DTS-HD 7.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\DTSHD 71.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,DTSHD)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
+		</control>
+
+		<!-- TrueHD 5.1 -->
+		<control>
+		  <description>TrueHD 5.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\TrueHD 51.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,TrueHD)+string.equals(#MovingPictures.LocalMedia.audiochannels,5.1)]</visible>
+		</control>
+		
+		<!-- TrueHD 7.1 -->
+		<control>
+		  <description>TrueHD 7.1</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>500</posX>
+		  <posY>665</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\TrueHD 71.png</texture>
+		  <visible>Control.IsVisible(50)+facadeview.list+[string.equals(#MovingPictures.LocalMedia.audiocodec,TrueHD)+[string.equals(#MovingPictures.LocalMedia.audiochannels,8)|string.equals(#MovingPictures.LocalMedia.audiochannels,7.1)]]</visible>
+		</control>
+		
 		<!-- PCM -->
 		<control>
 		  <description>PCM</description>
