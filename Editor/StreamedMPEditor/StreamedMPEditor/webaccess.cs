@@ -105,6 +105,9 @@ namespace StreamedMPEditor
                         this.Invoke(new UpdateProgessCallback(this.UpdateProgress), new object[] { strLocal.Length, fileSize });
                     }
                 }
+                catch
+                {
+                }
                 finally
                 {
                     webResponse.Close();
