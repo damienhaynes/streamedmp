@@ -33,6 +33,8 @@ namespace StreamedMPEditor
         string optionDownloadPath = null;
         string destinationPath = null;
 
+        bool downloadActive = false;
+
         private void buildDownloadForm()
         {
             downloadForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -63,6 +65,8 @@ namespace StreamedMPEditor
         
         private void installAnimatedIcons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (!downloadActive)
+            {
             optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
             optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_AnimatedWeatherIcons.zip";
             destinationPath = mpPaths.skinBasePath;
@@ -71,22 +75,36 @@ namespace StreamedMPEditor
             thrDownload = new Thread(Download);
             thrDownload.Start();
             downloadForm.Show();
+            }
+            else
+            {
+                DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+            }
         }
 
         private void installWeatherBackgrounds_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
-            optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
-            destinationPath = mpPaths.skinBasePath;
-            downloadForm.Text = "Download and Install Weather Backgrounds";
-            pLabel.Text = "Starting Download";
-            thrDownload = new Thread(Download);
-            thrDownload.Start();
-            downloadForm.Show();
+            if (!downloadActive)
+            {
+                optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
+                optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
+                destinationPath = mpPaths.skinBasePath;
+                downloadForm.Text = "Download and Install Weather Backgrounds";
+                pLabel.Text = "Starting Download";
+                thrDownload = new Thread(Download);
+                thrDownload.Start();
+                downloadForm.Show();
+            }
+            else
+            {
+                DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+            }
         }
 
         private void Download()
         {
+            downloadActive = true;
+
             using (WebClient wcDownload = new WebClient())
             {
                 try
@@ -114,6 +132,7 @@ namespace StreamedMPEditor
                     strResponse.Close();
                     strLocal.Close();
                     this.Invoke(new MethodInvoker(extractAndCleanup));
+                    downloadActive = false;
                 }
             }
         }
