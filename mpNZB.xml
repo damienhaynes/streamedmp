@@ -1,9 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>3847</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+  <define>#currentmodule:MPNZB</define>
   <controls>
-
     <control>
       <description>BackGround</description>
       <type>image</type>
@@ -12,9 +13,8 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_my videos.png</texture>
+      <texture>hover_my mpnzb.png</texture>
     </control>
-
     <control>
       <description>Backdrop Overlay</description>
       <type>image</type>
@@ -25,7 +25,47 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>101</id>
+      <posX>20</posX>
+      <posY>240</posY>
+      <width>280</width>
+      <height>250</height>
+      <texture>mpinfo_filmbox.png</texture>
+    </control>
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>101</id>
+      <posX>20</posX>
+      <posY>485</posY>
+      <width>280</width>
+      <height>180</height>
+      <texture>mpinfo_filmbox.png</texture>
+    </control>
+    <control>
+      <description>Selected item Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+    </control>
+    <control>
+      <description>Selecteditem</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>687</posY>
+      <width>940</width>
+      <height>47</height>
+      <label>#selecteditem</label>
+      <font>mediastream12tc</font>
+    </control>
     <control>
       <description>Refresh</description>
       <type>button</type>
@@ -36,7 +76,6 @@
       <onright>50</onright>
       <ondown>2</ondown>
     </control>
-
     <control>
       <description>Feeds</description>
       <type>button</type>
@@ -48,7 +87,6 @@
       <onup>1</onup>
       <ondown>3</ondown>
     </control>
-
     <control>
       <description>Groups</description>
       <type>button</type>
@@ -60,7 +98,6 @@
       <onup>2</onup>
       <ondown>4</ondown>
     </control>
-
     <control>
       <description>Search</description>
       <type>button</type>
@@ -72,7 +109,6 @@
       <onup>3</onup>
       <ondown>5</ondown>
     </control>
-
     <control>
       <description>Job Queue</description>
       <type>button</type>
@@ -84,7 +120,6 @@
       <onup>4</onup>
       <ondown>7</ondown>
     </control>
-
     <control>
       <description>History</description>
       <type>button</type>
@@ -96,7 +131,6 @@
       <onup>5</onup>
       <ondown>6</ondown>
     </control>
-
     <control>
       <description>Pause Queue</description>
       <type>togglebutton</type>
@@ -108,7 +142,6 @@
       <onup>7</onup>
       <ondown>2</ondown>
     </control>
-
     <control>
       <description>Paused</description>
       <type>label</type>
@@ -116,10 +149,9 @@
       <posX>120</posX>
       <posY>500</posY>
       <label>Paused:</label>
-      <align>Right</align> 
+      <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Paused</description>
       <type>label</type>
@@ -127,10 +159,9 @@
       <posX>127</posX>
       <posY>500</posY>
       <label>#Paused</label>
-      <align>Left</align> 
-      <textcolor>ffffffff</textcolor> 
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Speed</description>
       <type>label</type>
@@ -138,10 +169,9 @@
       <posX>120</posX>
       <posY>520</posY>
       <label>Speed:</label>
-      <align>Right</align> 
+      <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Speed</description>
       <type>label</type>
@@ -149,10 +179,9 @@
       <posX>127</posX>
       <posY>520</posY>
       <label>#KBps</label>
-      <align>Left</align> 
-      <textcolor>ffffffff</textcolor> 
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Queued</description>
       <type>label</type>
@@ -160,10 +189,9 @@
       <posX>120</posX>
       <posY>540</posY>
       <label>Queued:</label>
-      <align>Right</align> 
+      <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Queued</description>
       <type>label</type>
@@ -171,10 +199,9 @@
       <posX>127</posX>
       <posY>540</posY>
       <label>#MBStatus</label>
-      <align>Left</align> 
-      <textcolor>ffffffff</textcolor> 
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Job Count</description>
       <type>label</type>
@@ -185,7 +212,6 @@
       <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Job Count</description>
       <type>label</type>
@@ -194,9 +220,8 @@
       <posY>560</posY>
       <label>#JobCount</label>
       <align>Left</align>
-      <textcolor>ffffffff</textcolor> 
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Disk Space 1</description>
       <type>label</type>
@@ -207,7 +232,6 @@
       <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Disk Space 1</description>
       <type>label</type>
@@ -216,9 +240,8 @@
       <posY>580</posY>
       <label>#DiskSpace1</label>
       <align>Left</align>
-      <textcolor>ffffffff</textcolor> 
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Disk Space 2</description>
       <type>label</type>
@@ -226,10 +249,9 @@
       <posX>120</posX>
       <posY>600</posY>
       <label>Temp DIR:</label>
-      <align>Right</align> 
+      <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Disk Space 2</description>
       <type>label</type>
@@ -237,10 +259,9 @@
       <posX>127</posX>
       <posY>600</posY>
       <label>#DiskSpace2</label>
-      <align>Left</align> 
-      <textcolor>ffffffff</textcolor> 
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
       <description>Time Left</description>
       <type>label</type>
@@ -248,10 +269,9 @@
       <posX>120</posX>
       <posY>620</posY>
       <label>ETA:</label>
-      <align>Right</align> 
+      <align>Right</align>
       <textcolor>FF006699</textcolor>
     </control>
-
     <control>
       <description>Time Left</description>
       <type>label</type>
@@ -259,50 +279,31 @@
       <posX>127</posX>
       <posY>620</posY>
       <label>#TimeLeft</label>
-      <align>Left</align> 
-      <textcolor>ffffffff</textcolor> 
+      <align>Left</align>
+      <textcolor>ffffffff</textcolor>
     </control>
-
     <control>
-      <type>group</type>
-      <description>Content</description>
-
-      <control>
-        <description>Title</description>
-        <type>listcontrol</type>
-        <id>50</id>
-        <width>850</width>
-        <height>430</height>
-        <textXOff2>850</textXOff2>
-        <posX>350</posX>
-        <posY>250</posY>
-        <onleft>2</onleft>
-        <onright>2</onright>
-      </control>
-
-      <control>
-        <description>Status</description>
-        <type>label</type>
-        <id>51</id>
-        <posX>395</posX>
-        <posY>670</posY>
-        <label>Status:</label>
-        <align>Right</align>
-        <textcolor>FF006699</textcolor>
-      </control>
-
-      <control>
-        <description>Status</description>
-        <type>label</type>
-        <id>52</id>
-        <posX>402</posX>
-        <posY>670</posY>
-        <label>#Status</label>
-        <align>Left</align>
-        <textcolor>ffffffff</textcolor>
-      </control>
+      <description>listcontrol</description>
+      <type>listcontrol</type>
+      <id>50</id>
+      <posX>350</posX>
+      <posY>250</posY>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <width>650</width>
+      <height>430</height>
+      <onleft>2</onleft>
+      <spinPosX>1175</spinPosX>
+      <spinPosY>681</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <textXOff2>850</textXOff2>
     </control>
-
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -314,7 +315,6 @@
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
@@ -325,12 +325,66 @@
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
-      <label>#PageTitle</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <label>#currentmodule</label>
     </control>
-
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>683</posY>
+      <width>260</width>
+      <height>32</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>yes</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>yes</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1100</posX>
+      <posY>12</posY>
+      <width>172</width>
+      <height>27</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Status</description>
+      <type>label</type>
+      <id>52</id>
+      <posX>1246</posX>
+      <posY>14</posY>
+      <label>#Status</label>
+      <align>right</align>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
-
   </controls>
 </window>
