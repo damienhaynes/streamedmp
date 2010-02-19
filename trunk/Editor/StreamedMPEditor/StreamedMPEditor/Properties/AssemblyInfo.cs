@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("StreamedMPEditor")]
+[assembly: AssemblyTitle("StreamedMP Editor")]
 [assembly: AssemblyDescription("Menu Editor for MediaPortal StreamedMP Skin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("StreamedMPEditor")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2009")]
+[assembly: AssemblyCompany("Team MediaPortal")]
+[assembly: AssemblyProduct("StreamedMP Editor")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,15 +22,3 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// StreamedMP SVN revision
-[assembly: AssemblyVersion("0.9.891.0")]
-[assembly: AssemblyFileVersion("0.9.891.0")]
