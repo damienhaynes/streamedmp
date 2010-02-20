@@ -271,6 +271,16 @@
           <onleft>50</onleft>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>1700</id>
+          <label>-</label>
+          <visible allowhiddenfocus="true">false</visible>
+          <ondown>2</ondown>          
+          <onleft>2</onleft>          
+          <onright>2</onright>
+        </control>        
       </control>
     </control>
     <import>common.overlays.xml</import>
