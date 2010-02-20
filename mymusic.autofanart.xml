@@ -52,7 +52,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>Animations\music\default.jpg</texture>
+      <texture>hover_my music.png</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
       <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>

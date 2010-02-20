@@ -61,7 +61,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>Animations\music\default.jpg</texture>
+      <texture>hover_my music.png</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
       <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
@@ -89,8 +89,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.selected</texture>
       <visible>control.isvisible(91919292)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-      <animation effect="fade" start="40" end="100" time="700" >Visible</animation>
-      <animation effect="fade" start="100" end="40" time="700" delay="100">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="700" >Visible</animation>
+      <animation effect="fade" start="100" end="10" time="700" delay="100">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 1</description>
