@@ -400,14 +400,20 @@ namespace StreamedMPEditor
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
-      menuStyle = chosenMenuStyle.horizontalStandardStyle;
-      syncEditor(sync.editing);
+        if (menuStyle != chosenMenuStyle.horizontalStandardStyle)
+        {
+            menuStyle = chosenMenuStyle.horizontalStandardStyle;
+            syncEditor(sync.editing);
+        }
     }
 
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
-      menuStyle = chosenMenuStyle.horizontalContextStyle;
-      syncEditor(sync.editing);
+        if (menuStyle != chosenMenuStyle.horizontalContextStyle)
+        {
+            menuStyle = chosenMenuStyle.horizontalContextStyle;
+            syncEditor(sync.editing);
+        }
     }
 
     private void stdWeatherStyle_Click(object sender, EventArgs e)
@@ -1237,6 +1243,58 @@ namespace StreamedMPEditor
         screenReset();
         setScreenProperties(itemsOnMenubar.SelectedIndex);
         disableItemControls();
+    }
+
+    private void sdRes_CheckedChanged(object sender, EventArgs e)
+    {
+        if (sdRes.Checked)
+        {
+            setSDScreenRes();
+        }
+        else
+        {
+            setHDScreenRes();
+        }
+
+    }
+
+    private void hdRes_CheckedChanged(object sender, EventArgs e)
+    {
+        if (hdRes.Checked)
+        {
+            setHDScreenRes();
+        }
+        else
+        {
+            setSDScreenRes();
+        }
+
+    }
+
+    private void setHDScreenRes()
+    {
+        screenres = screenResolutionType.res1920x1080;
+        hdRes.Checked = true;
+        sdRes.Checked = false;
+        if (screenres == detectedres)
+            detectedHD.Text = "Auto Detected";
+        else
+            detectedHD.Text = "Set Manually";
+        detectedHD.Visible = true;
+        detectedSD.Visible = false;
+    }
+
+    private void setSDScreenRes()
+    {
+        screenres = screenResolutionType.res1280x720;
+        hdRes.Checked = false;
+        sdRes.Checked = true;
+        if (screenres == detectedres)
+            detectedSD.Text = "Auto Detected";
+        else
+            detectedSD.Text = "Set Manually";
+        detectedSD.Visible = true;
+        detectedHD.Visible = false;
     }
 
     public class getAsmVersion

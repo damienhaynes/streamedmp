@@ -987,6 +987,15 @@ namespace StreamedMPEditor
         {
             StringBuilder rawXML = new StringBuilder();
 
+            int rssImageXposOffset = 0; 
+            int rssImageYposOffset = 0;
+            if (screenres == screenResolutionType.res1920x1080)
+            {
+                rssImageXposOffset = 40;
+                rssImageYposOffset = 357;
+            }
+
+
             switch (rssImage)
             {
                 case rssImageType.infoserviceImage:
@@ -996,8 +1005,8 @@ namespace StreamedMPEditor
                     rawXML.AppendLine("\t<id>1</id>");
                     rawXML.AppendLine("\t<keepaspectratio>yes</keepaspectratio>");
                     rawXML.AppendLine("\t<height>26</height>");
-                    rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage).ToString() + "</posY>");
-                    rawXML.AppendLine("\t<posX>60</posX>");
+                    rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + rssImageYposOffset).ToString() + "</posY>");
+                    rawXML.AppendLine("\t<posX>" + (rssImageXposOffset + 60).ToString() + "</posX>");
                     rawXML.AppendLine("\t<texture>" + ticker + ".feed.img</texture>");
                     rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
                     rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
@@ -1010,7 +1019,7 @@ namespace StreamedMPEditor
                     rawXML.AppendLine("\t<id>1</id>");
                     rawXML.AppendLine("\t<width>24</width>");
                     rawXML.AppendLine("\t<height>24</height>");
-                    rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4).ToString() + "</posY>");
+                    rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
                     rawXML.AppendLine("\t<posX>60</posX>");
                     rawXML.AppendLine("\t<texture>defaultFeedRSS.png</texture>");
                     rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
@@ -1029,7 +1038,7 @@ namespace StreamedMPEditor
             if (rssImage == rssImageType.skinImage)
                 rawXML.AppendLine("\t<posX>90</posX>");
             else if (rssImage == rssImageType.infoserviceImage)
-                rawXML.AppendLine("\t<posX>120</posX>");
+                rawXML.AppendLine("\t<posX>140</posX>");
             else
                 rawXML.AppendLine("\t<posX>60</posX>");
             rawXML.AppendLine("\t<font>mediastream12</font>");
@@ -3447,6 +3456,7 @@ namespace StreamedMPEditor
             string acceleration = tbAcceleration.Text;
             string duration = tbDuration.Text;
             string activeRssImageType = null;
+            string targetScreenRes = "SD";
 
             string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
             string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
@@ -3504,6 +3514,9 @@ namespace StreamedMPEditor
             else if (weatherStyle == chosenWeatherStyle.middle)
                 activeWeatherStyle = "middle";
 
+            if (screenres == screenResolutionType.res1920x1080)
+                targetScreenRes = "HD";
+
 
             xml = ("<profile>\n\t"
                       + "<version>1.0</version>\n\t"
@@ -3533,6 +3546,7 @@ namespace StreamedMPEditor
                       + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 2, true)
                       + generateEntry("activeRssImageType", activeRssImageType, 2, true)
                       + generateEntry("disableOnScreenClock", disableOnScreenClock, 2, true)
+                      + generateEntry("targetScreenRes", targetScreenRes, 2, true)
                       + "\t</section>");
 
 

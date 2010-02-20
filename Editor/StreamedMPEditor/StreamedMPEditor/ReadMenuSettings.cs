@@ -25,6 +25,7 @@ namespace StreamedMPEditor
             string _selectedFont = null;
             string _labelFont = null;
             string activeRssImageType = null;
+            string targetScreenRes = null;
 
 
             menuItems.Clear();
@@ -98,7 +99,6 @@ namespace StreamedMPEditor
                         horizontalStyle.Checked = true;
                         cboSelectedFont.Text = "mediastream28tc";
                         cboLabelFont.Text = "mediastream28tc";
-
                         break;
                     case "horizontalContextStyle":
                         menuStyle = chosenMenuStyle.horizontalContextStyle;
@@ -169,6 +169,25 @@ namespace StreamedMPEditor
             // which can be overidden by user settings below
             syncEditor(sync.OnLoad);
 
+            // Re-read and set menupos and 5 day weather location
+            if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "bottom")
+            {
+                weatherStyle = chosenWeatherStyle.bottom;
+            }
+            else if (readEntryValue(optionsTag, "weatherstyle", nodelist) == "middle")
+            {
+                weatherStyle = chosenWeatherStyle.middle;
+            }
+            else
+            {
+                weatherStyle = chosenWeatherStyle.bottom;
+            }
+            if (readEntryValue(optionsTag, "menustyle", nodelist) == "verticalStyle")
+                txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+            else
+                txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+
+
 
             //
             // Check and set the Global and Plugin options and apply any customization by user
@@ -193,12 +212,17 @@ namespace StreamedMPEditor
                 fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
                 activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
                 cbDisableClock.Checked = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
-
+                targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
             }
             catch
             {
                 // Most likley a new option added but not written to file yet - just continue
             }
+
+            if (targetScreenRes == "HD")
+                setHDScreenRes();
+            else if (targetScreenRes == "SD")
+                setSDScreenRes();
 
             switch (activeRssImageType)
             {

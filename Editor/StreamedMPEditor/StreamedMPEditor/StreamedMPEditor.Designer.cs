@@ -114,6 +114,11 @@
         this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
         this.rbRssNoImage = new System.Windows.Forms.RadioButton();
         this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+        this.gbScreenRes = new System.Windows.Forms.GroupBox();
+        this.detectedHD = new System.Windows.Forms.Label();
+        this.detectedSD = new System.Windows.Forms.Label();
+        this.hdRes = new System.Windows.Forms.RadioButton();
+        this.sdRes = new System.Windows.Forms.RadioButton();
         this.cboLabelFont = new System.Windows.Forms.ComboBox();
         this.cboSelectedFont = new System.Windows.Forms.ComboBox();
         this.label15 = new System.Windows.Forms.Label();
@@ -217,6 +222,7 @@
         this.weatherSummaryGroup.SuspendLayout();
         this.gbRssImageType.SuspendLayout();
         this.styleOptionsGroup.SuspendLayout();
+        this.gbScreenRes.SuspendLayout();
         this.infoserviceOptions.SuspendLayout();
         this.globalSettings.SuspendLayout();
         this.defaultBackgrounds.SuspendLayout();
@@ -1198,6 +1204,7 @@
         // 
         // styleOptionsGroup
         // 
+        this.styleOptionsGroup.Controls.Add(this.gbScreenRes);
         this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
         this.styleOptionsGroup.Controls.Add(this.cboSelectedFont);
         this.styleOptionsGroup.Controls.Add(this.label15);
@@ -1210,6 +1217,63 @@
         this.styleOptionsGroup.TabIndex = 22;
         this.styleOptionsGroup.TabStop = false;
         this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
+        // 
+        // gbScreenRes
+        // 
+        this.gbScreenRes.Controls.Add(this.detectedHD);
+        this.gbScreenRes.Controls.Add(this.detectedSD);
+        this.gbScreenRes.Controls.Add(this.hdRes);
+        this.gbScreenRes.Controls.Add(this.sdRes);
+        this.gbScreenRes.Location = new System.Drawing.Point(507, 19);
+        this.gbScreenRes.Name = "gbScreenRes";
+        this.gbScreenRes.Size = new System.Drawing.Size(215, 100);
+        this.gbScreenRes.TabIndex = 41;
+        this.gbScreenRes.TabStop = false;
+        this.gbScreenRes.Text = "Target Screen Resoloution";
+        this.toolTip1.SetToolTip(this.gbScreenRes, resources.GetString("gbScreenRes.ToolTip"));
+        // 
+        // detectedHD
+        // 
+        this.detectedHD.AutoSize = true;
+        this.detectedHD.Location = new System.Drawing.Point(114, 62);
+        this.detectedHD.Name = "detectedHD";
+        this.detectedHD.Size = new System.Drawing.Size(51, 13);
+        this.detectedHD.TabIndex = 3;
+        this.detectedHD.Text = "Detected";
+        // 
+        // detectedSD
+        // 
+        this.detectedSD.AutoSize = true;
+        this.detectedSD.Location = new System.Drawing.Point(114, 31);
+        this.detectedSD.Name = "detectedSD";
+        this.detectedSD.Size = new System.Drawing.Size(51, 13);
+        this.detectedSD.TabIndex = 2;
+        this.detectedSD.Text = "Detected";
+        // 
+        // hdRes
+        // 
+        this.hdRes.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+        this.hdRes.AutoSize = true;
+        this.hdRes.Location = new System.Drawing.Point(13, 60);
+        this.hdRes.Name = "hdRes";
+        this.hdRes.Size = new System.Drawing.Size(84, 17);
+        this.hdRes.TabIndex = 1;
+        this.hdRes.TabStop = true;
+        this.hdRes.Text = "1920 x 1080";
+        this.hdRes.UseVisualStyleBackColor = true;
+        this.hdRes.CheckedChanged += new System.EventHandler(this.hdRes_CheckedChanged);
+        // 
+        // sdRes
+        // 
+        this.sdRes.AutoSize = true;
+        this.sdRes.Location = new System.Drawing.Point(13, 29);
+        this.sdRes.Name = "sdRes";
+        this.sdRes.Size = new System.Drawing.Size(78, 17);
+        this.sdRes.TabIndex = 0;
+        this.sdRes.TabStop = true;
+        this.sdRes.Text = "1280 x 720";
+        this.sdRes.UseVisualStyleBackColor = true;
+        this.sdRes.CheckedChanged += new System.EventHandler(this.sdRes_CheckedChanged);
         // 
         // cboLabelFont
         // 
@@ -2020,6 +2084,8 @@
         this.gbRssImageType.PerformLayout();
         this.styleOptionsGroup.ResumeLayout(false);
         this.styleOptionsGroup.PerformLayout();
+        this.gbScreenRes.ResumeLayout(false);
+        this.gbScreenRes.PerformLayout();
         this.infoserviceOptions.ResumeLayout(false);
         this.infoserviceOptions.PerformLayout();
         this.globalSettings.ResumeLayout(false);
@@ -2207,6 +2273,11 @@
     private System.Windows.Forms.LinkLabel installAnimatedIcons;
     private System.Windows.Forms.GroupBox weatherOptions;
     private System.Windows.Forms.LinkLabel installWeatherBackgrounds;
+    private System.Windows.Forms.GroupBox gbScreenRes;
+    private System.Windows.Forms.RadioButton hdRes;
+    private System.Windows.Forms.RadioButton sdRes;
+    private System.Windows.Forms.Label detectedHD;
+    private System.Windows.Forms.Label detectedSD;
   }
 }
 
