@@ -14,6 +14,8 @@ namespace StreamedMPEditor
 {
     public partial class streamedMpEditor : Form
     {
+        #region Declares
+
         editorPaths mpPaths = new editorPaths();
         editorValues basicHomeValues = new editorValues();
         defaultImages defImgs = new defaultImages();
@@ -35,6 +37,7 @@ namespace StreamedMPEditor
         Label pLabel = new Label();
         Form downloadForm = new Form();
         Button downloadStop = new Button();
+
 
         enum errorCode
         {
@@ -77,7 +80,11 @@ namespace StreamedMPEditor
             infoserviceImage,
         };
 
-          
+        enum screenResolutionType
+        {
+            res1280x720,
+            res1920x1080
+        };     
 
         const string quote = "\"";
 
@@ -102,12 +109,21 @@ namespace StreamedMPEditor
         int maxXPosition = 400;
         int menuOffset = 0;
 
+        int deskHeight;
+        int deskWidth;
+
+
 
         //Default Style to StreamedMp standard
         chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
         chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
         rssImageType rssImage = rssImageType.skinImage;
 
+        //Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
+        screenResolutionType screenres = screenResolutionType.res1280x720;
+        screenResolutionType detectedres = screenResolutionType.res1280x720;
+
+        #endregion Declares
 
         public streamedMpEditor()
         {
@@ -122,6 +138,22 @@ namespace StreamedMPEditor
             randomFanart.fanartTv = false;
             randomFanart.fanartTVSeries = false;
 
+            //Check the display res
+            deskHeight = Screen.PrimaryScreen.Bounds.Height;
+            deskWidth = Screen.PrimaryScreen.Bounds.Width;
+            //MessageBox.Show("Your screen resolution is " + deskWidth + "x" + deskHeight);
+
+            if (deskWidth == 1920 && deskHeight == 1080)
+            {
+                detectedres = screenResolutionType.res1920x1080;
+                setHDScreenRes();
+            }
+            else
+            {
+                detectedres = screenResolutionType.res1280x720;
+                setSDScreenRes();
+            }
+;
             buildDownloadForm();
 
             releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
