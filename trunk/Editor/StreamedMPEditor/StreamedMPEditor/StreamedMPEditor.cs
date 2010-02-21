@@ -184,6 +184,10 @@ namespace StreamedMPEditor
             GetMediaPortalSkinPath();
             readFonts();
             getBackupFileTotals();
+            if (!System.IO.File.Exists(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
+                useSkinWeatherIcons.Text = "Replace Standard Weather Icons with Skin Supplied Versions";
+            else
+                useSkinWeatherIcons.Text = "Restore Standard Weather Icons";
 
             if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
             {

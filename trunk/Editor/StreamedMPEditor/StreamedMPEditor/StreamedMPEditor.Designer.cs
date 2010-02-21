@@ -51,6 +51,7 @@
         this.pictureBox2 = new System.Windows.Forms.PictureBox();
         this.pictureBox6 = new System.Windows.Forms.PictureBox();
         this.weatherIconsGroup = new System.Windows.Forms.GroupBox();
+        this.useSkinWeatherIcons = new System.Windows.Forms.LinkLabel();
         this.pictureBox4 = new System.Windows.Forms.PictureBox();
         this.menuStyle4 = new System.Windows.Forms.PictureBox();
         this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -476,6 +477,7 @@
         // 
         // weatherIconsGroup
         // 
+        this.weatherIconsGroup.Controls.Add(this.useSkinWeatherIcons);
         this.weatherIconsGroup.Controls.Add(this.pictureBox4);
         this.weatherIconsGroup.Controls.Add(this.menuStyle4);
         this.weatherIconsGroup.Controls.Add(this.pictureBox5);
@@ -487,10 +489,23 @@
         this.weatherIconsGroup.TabStop = false;
         this.weatherIconsGroup.Text = "Display 5 Day Weather Summary When Weather Menu Item";
         // 
+        // useSkinWeatherIcons
+        // 
+        this.useSkinWeatherIcons.AutoSize = true;
+        this.useSkinWeatherIcons.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.useSkinWeatherIcons.Location = new System.Drawing.Point(264, 161);
+        this.useSkinWeatherIcons.Name = "useSkinWeatherIcons";
+        this.useSkinWeatherIcons.Size = new System.Drawing.Size(326, 17);
+        this.useSkinWeatherIcons.TabIndex = 32;
+        this.useSkinWeatherIcons.TabStop = true;
+        this.useSkinWeatherIcons.Text = "Install Skin Weather Icons In Main Weather Screen";
+        this.toolTip1.SetToolTip(this.useSkinWeatherIcons, resources.GetString("useSkinWeatherIcons.ToolTip"));
+        this.useSkinWeatherIcons.Click += new System.EventHandler(this.useSkinWeatherIcons_Click);
+        // 
         // pictureBox4
         // 
         this.pictureBox4.Image = global::StreamedMPEditor.Properties.Resources.style6;
-        this.pictureBox4.Location = new System.Drawing.Point(475, 41);
+        this.pictureBox4.Location = new System.Drawing.Point(475, 32);
         this.pictureBox4.Name = "pictureBox4";
         this.pictureBox4.Size = new System.Drawing.Size(175, 110);
         this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -500,7 +515,7 @@
         // menuStyle4
         // 
         this.menuStyle4.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
-        this.menuStyle4.Location = new System.Drawing.Point(246, 41);
+        this.menuStyle4.Location = new System.Drawing.Point(246, 32);
         this.menuStyle4.Name = "menuStyle4";
         this.menuStyle4.Size = new System.Drawing.Size(175, 110);
         this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -510,7 +525,7 @@
         // pictureBox5
         // 
         this.pictureBox5.Image = global::StreamedMPEditor.Properties.Resources.style7;
-        this.pictureBox5.Location = new System.Drawing.Point(17, 41);
+        this.pictureBox5.Location = new System.Drawing.Point(17, 32);
         this.pictureBox5.Name = "pictureBox5";
         this.pictureBox5.Size = new System.Drawing.Size(175, 110);
         this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -521,7 +536,7 @@
         // 
         this.enableFiveDayWeather.AutoSize = true;
         this.enableFiveDayWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.enableFiveDayWeather.Location = new System.Drawing.Point(247, 163);
+        this.enableFiveDayWeather.Location = new System.Drawing.Point(36, 160);
         this.enableFiveDayWeather.Name = "enableFiveDayWeather";
         this.enableFiveDayWeather.Size = new System.Drawing.Size(179, 21);
         this.enableFiveDayWeather.TabIndex = 4;
@@ -1084,7 +1099,7 @@
         this.weatherOptions.Controls.Add(this.weatherSummaryGroup);
         this.weatherOptions.Location = new System.Drawing.Point(362, 143);
         this.weatherOptions.Name = "weatherOptions";
-        this.weatherOptions.Size = new System.Drawing.Size(375, 111);
+        this.weatherOptions.Size = new System.Drawing.Size(375, 138);
         this.weatherOptions.TabIndex = 23;
         this.weatherOptions.TabStop = false;
         this.weatherOptions.Text = "Weather Options";
@@ -1124,7 +1139,7 @@
         // 
         this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
         this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
-        this.weatherSummaryGroup.Location = new System.Drawing.Point(5, 65);
+        this.weatherSummaryGroup.Location = new System.Drawing.Point(5, 92);
         this.weatherSummaryGroup.Name = "weatherSummaryGroup";
         this.weatherSummaryGroup.Size = new System.Drawing.Size(364, 41);
         this.weatherSummaryGroup.TabIndex = 29;
@@ -1161,7 +1176,7 @@
         this.gbRssImageType.Controls.Add(this.rbRssNoImage);
         this.gbRssImageType.Location = new System.Drawing.Point(208, 143);
         this.gbRssImageType.Name = "gbRssImageType";
-        this.gbRssImageType.Size = new System.Drawing.Size(148, 112);
+        this.gbRssImageType.Size = new System.Drawing.Size(148, 138);
         this.gbRssImageType.TabIndex = 18;
         this.gbRssImageType.TabStop = false;
         this.gbRssImageType.Text = "RSS Image Selection";
@@ -1211,9 +1226,9 @@
         this.styleOptionsGroup.Controls.Add(this.label21);
         this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
         this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
-        this.styleOptionsGroup.Location = new System.Drawing.Point(9, 261);
+        this.styleOptionsGroup.Location = new System.Drawing.Point(9, 287);
         this.styleOptionsGroup.Name = "styleOptionsGroup";
-        this.styleOptionsGroup.Size = new System.Drawing.Size(729, 145);
+        this.styleOptionsGroup.Size = new System.Drawing.Size(729, 124);
         this.styleOptionsGroup.TabIndex = 22;
         this.styleOptionsGroup.TabStop = false;
         this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
@@ -1335,7 +1350,7 @@
         this.infoserviceOptions.Controls.Add(this.enableRssfeed);
         this.infoserviceOptions.Location = new System.Drawing.Point(9, 143);
         this.infoserviceOptions.Name = "infoserviceOptions";
-        this.infoserviceOptions.Size = new System.Drawing.Size(192, 112);
+        this.infoserviceOptions.Size = new System.Drawing.Size(192, 138);
         this.infoserviceOptions.TabIndex = 15;
         this.infoserviceOptions.TabStop = false;
         this.infoserviceOptions.Text = "InfoService/MP-RSSTicker Options";
@@ -2278,6 +2293,7 @@
     private System.Windows.Forms.RadioButton sdRes;
     private System.Windows.Forms.Label detectedHD;
     private System.Windows.Forms.Label detectedSD;
+    private System.Windows.Forms.LinkLabel useSkinWeatherIcons;
   }
 }
 
