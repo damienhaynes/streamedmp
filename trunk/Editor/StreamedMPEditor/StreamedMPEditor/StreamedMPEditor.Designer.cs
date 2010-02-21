@@ -882,9 +882,9 @@
         this.cbItemFanartHandlerEnable.AutoSize = true;
         this.cbItemFanartHandlerEnable.Location = new System.Drawing.Point(10, 22);
         this.cbItemFanartHandlerEnable.Name = "cbItemFanartHandlerEnable";
-        this.cbItemFanartHandlerEnable.Size = new System.Drawing.Size(187, 17);
+        this.cbItemFanartHandlerEnable.Size = new System.Drawing.Size(189, 17);
         this.cbItemFanartHandlerEnable.TabIndex = 14;
-        this.cbItemFanartHandlerEnable.Text = "Enable Fanart Hander for this Item";
+        this.cbItemFanartHandlerEnable.Text = "Enable Fanart Handler for this Item";
         this.cbItemFanartHandlerEnable.UseVisualStyleBackColor = true;
         this.cbItemFanartHandlerEnable.CheckedChanged += new System.EventHandler(this.cbItemFanartHandlerEnable_CheckedChanged);
         // 
@@ -898,7 +898,7 @@
             "music",
             "picture",
             "plugins",
-            "scoresentre",
+            "scorecenter",
             "tv",
             "tvseries"});
         this.cboFanartProperty.Location = new System.Drawing.Point(113, 72);
