@@ -168,8 +168,7 @@ namespace StreamedMPEditor
             {
                 FastZip fz = new FastZip();
                 fz.ExtractZip(optionDownloadPath, destinationPath, "");
-                System.IO.File.Delete(optionDownloadPath);
-            }
+                System.IO.File.Delete(optionDownloadPath);            }
             downloadForm.Hide();
             pBar.Value = 0;
             if (!animatedIconsInstalled())
