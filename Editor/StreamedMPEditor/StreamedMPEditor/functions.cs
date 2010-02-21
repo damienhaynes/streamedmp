@@ -495,6 +495,7 @@ namespace StreamedMPEditor
             {
 
                 if (bgitem.folder == menItem.bgFolder && 
+                    bgitem.fanartPropery == menItem.fanartProperty &&
                     bgitem.disableBGSharing.Equals(menItem.disableBGSharing) && 
                     bgitem.fanartHandlerEnabled.Equals(menItem.fanartHandlerEnabled))
                 {
