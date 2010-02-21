@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>0</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <autohidetopbar>yes</autohidetopbar>
+  <define>#header.hover:hover_my plugins.png</define>
+  <controls>
+    
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="200" delay="300">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <description>Menu</description>
+      <type>menu</type>
+      <id>50</id>
+      <posX>0</posX>
+      <posY>440</posY>
+      <width>1280</width>
+      <height>100</height>
+      <textcolor>ffffffff</textcolor>
+      <textColorNoFocus>ff505050</textColorNoFocus>
+      <dimColor>ffffffff</dimColor>
+      <buttonTextXOff>0</buttonTextXOff>
+      <buttonTextYOff>0</buttonTextYOff>
+      <buttonOffset>20</buttonOffset>
+      <textAlign>center</textAlign>
+      <buttonFont>mediastream16tc</buttonFont>
+      <buttonWidth>350</buttonWidth>
+      <buttonHeight>105</buttonHeight>
+      <spaceBetweenButtons>15</spaceBetweenButtons>
+      <numberOfButtons>5</numberOfButtons>
+      <textureButtonFocus>-</textureButtonFocus>
+      <textureButtonNoFocus>-</textureButtonNoFocus>
+      <hoverX>0</hoverX>
+      <hoverY>0</hoverY>
+      <horizontal>true</horizontal>
+      <hoverWidth>1280</hoverWidth>
+      <hoverHeight>720</hoverHeight>
+      <hoverKeepAspectratio>no</hoverKeepAspectratio>
+      <scrollTime>90</scrollTime>
+      <scrollTimeMin>45</scrollTimeMin>
+      <mouseScrollTime>900</mouseScrollTime>
+       <mouseScrollTimeMin>450</mouseScrollTimeMin>
+      <textureBackground>-</textureBackground>
+      <!--<onleft>17</onleft>-->
+      <onup>10</onup>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>ff000000</shadowColor>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+ 
+    <!-- Hidden Menu -->
+    
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>10</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>460</buttonX>
+      <buttonY>125</buttonY>
+      <buttonwidth>360</buttonwidth>
+      <buttonheight>300</buttonheight>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>256</width>
+      <height>720</height>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <description>sub-blade</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>460</posX>
+        <posY>125</posY>
+        <width>360</width>
+        <height>370</height>
+        <texture>mpinfo_filmbox.old.png</texture>
+        <colordiffuse>d1ffffff</colordiffuse>
+        <visible>!Control.HasFocus(50)</visible>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="0" start="0,0">visible</animation>
+        <animation effect="slide" time="0" end="0,0">hidden</animation>
+        <posX>480</posX>
+        <posY>200</posY>
+        <width>350</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Back button</description>
+          <type>button</type>
+          <id>10</id>
+          <width>320</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>1</textYOff>
+          <textalign>center</textalign>
+          <label>SHUTDOWN</label>
+          <font>mediastream11tc</font>
+          <action>99</action>
+          <onup>14</onup>
+          <ondown>11</ondown>
+        </control>
+        <control>
+          <description>settings button</description>
+          <type>button</type>
+          <id>11</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>1</textYOff>
+          <textalign>center</textalign>
+          <label>SETTINGS</label>
+          <font>mediastream11tc</font>
+          <hyperlink>4</hyperlink>
+          <onup>10</onup>
+          <ondown>12</ondown>
+        </control>
+        <control>
+          <description>videowallpaper button</description>
+          <type>button</type>
+          <id>12</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>1</textYOff>
+          <textalign>center</textalign>
+          <label>VIDEO WALLPAPER</label>
+          <font>mediastream11tc</font>
+          <action>101</action>
+          <onup>11</onup>
+          <ondown>13</ondown>
+        </control>
+        <control>
+          <description>basichome button button</description>
+          <type>button</type>
+          <id>13</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>1</textYOff>
+          <textalign>center</textalign>
+          <label>BASIC HOME</label>
+          <font>mediastream11tc</font>
+          <action>115</action>
+          <onup>12</onup>
+          <ondown>14</ondown>
+        </control>
+        <control>
+          <description>Exit button</description>
+          <type>button</type>
+          <id>14</id>
+          <width>249</width>
+          <height>50</height>
+          <textXOff>25</textXOff>
+          <textYOff>1</textYOff>
+          <textalign>center</textalign>
+          <label>EXIT</label>
+          <font>mediastream11tc</font>
+          <action>97</action>
+          <onup>13</onup>
+          <ondown>50</ondown>
+        </control>
+      </control>
+    </control>
+    
+    <control>
+      <description>Homeblade</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>440</posY>
+      <width>1280</width>
+      <height>150</height>
+      <texture>vmenu_main.png</texture>
+     <colordiffuse>ffffffff</colordiffuse>
+    </control>
+    
+    
+    
+    <!-- Date -->
+    
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#date</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    
+    <!-- RSS Ticker -->
+    
+    <control>
+      <description>Rss Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>75</posX>
+      <posY>546</posY>
+      <width>1205</width>
+      <height>52</height>
+      <texture>vmenu_submenu-a.png</texture>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.titles,)</visible>
+	  <animation effect="slide" start="1205,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="1205,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>RSS Items</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>1250</width>
+      <height>50</height>
+      <posX>114</posX>
+      <posY>546</posY>
+      <font>mediastream12</font>
+      <textcolor>ff000000</textcolor>
+      <label>#infoservice.feed.titles</label>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>1</shadowDistance>
+      <shadowColor>60000000</shadowColor>
+	  <wrapString> #infoservice.feed.separator </wrapString>
+      <visible>plugin.isenabled(InfoService)</visible>
+      <animation effect="slide" start="1205,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="1205,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    
+    <!-- Weather -->
+    
+    <control>
+      <description>Weather Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>976</posX>
+      <posY>-3</posY>
+      <width>306</width>
+      <height>75</height>
+      <texture>homeweatheroverlaybg.png</texture>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>Weather image</description>
+      <type>image</type>
+      <id>43001</id>
+      <posX>987</posX>
+      <posY>9</posY>
+      <height>53</height>
+      <width>55</width>
+      <centered>yes</centered>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.today.img.big.filenamewithoutext.png</texture>
+      <visible>plugin.isenabled(InfoService)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>condition</description>
+      <type>textbox</type>
+      <id>0</id>
+      <posX>1048</posX>
+      <posY>15</posY>
+      <width>150</width>
+      <height>50</height>
+      <font>mediastream10tc</font>
+      <label>#infoservice.weather.today.condition</label>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>Temperature</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1250</posX>
+      <posY>22</posY>
+      <width>400</width>
+      <height>50</height>
+      <align>right</align>
+      <font>mediastream14c</font>
+      <label>#infoservice.weather.today.temp</label>
+      <visible>plugin.isenabled(InfoService)+control.hasthumb(43001)</visible>
+	  <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+	  <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    
+    <!-- imports -->
+    <import>common.overlay.home.xml</import>
+    <import>common.time.xml</import>
+    
+  </controls>
+</window>
