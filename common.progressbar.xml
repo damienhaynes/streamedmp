@@ -37,6 +37,7 @@
 			<width>896</width>
 			<height>12</height>
 			<texture>osdprogressback.png</texture>
+            <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|Control.IsVisible(10)|player.seeking</visible>
 		</control>
 		<control>
 			<description>Progress Bar</description>
