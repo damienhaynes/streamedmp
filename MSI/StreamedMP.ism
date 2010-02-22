@@ -362,9 +362,12 @@
 		<row><td>fontsXMLDefault</td><td>{974BA809-5A8A-4E4B-BAC0-13CE7971D9D2}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsXMLLarge</td><td>{5E47442D-BFB5-434B-B252-22E6750CAFEA}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>hiddenMenuImage</td><td>{74FEF926-CA4D-4525-AE2D-F5FB4CD728DA}</td><td>MEDIA1</td><td>0</td><td/><td>action_menu.png</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>libCornerstone</td><td>{B4F1FA68-22B9-4289-A689-C75CF72E49E8}</td><td>MPBINDIR</td><td>0</td><td/><td>cornerstone.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libGoogleTranslate</td><td>{068938CB-5716-445B-BD0B-FB32B9D24984}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td>{1DBD701C-580A-4DF9-A891-8BBBE5E173BC}</td><td>MPBINDIR</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libLyricsEngine</td><td>{1E4B56F5-8F05-4AB2-8B60-29598AE215DD}</td><td>MPBINDIR</td><td>8</td><td/><td>lyricsengine.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>libMediaInfo</td><td>{4D410358-8BEA-4B6E-A7F8-F7E9D5A7DFFF}</td><td>MPBINDIR</td><td>8</td><td/><td>mediainfo.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>libNLog</td><td>{B9C558E2-1005-46EB-BD3D-19FC898042A3}</td><td>MPBINDIR</td><td>0</td><td/><td>nlog.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libSubtitleDownloader</td><td>{160088EF-B410-48D0-9399-1DBE262F729B}</td><td>MPBINDIR</td><td>8</td><td/><td>subtitledownloader.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libWebBrowserDependencies</td><td>{FF4957A4-6B69-459D-8107-EB0EFBEC7C3E}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>menuEditor</td><td>{A5AEBB21-201D-4094-A115-C1D834D63A6E}</td><td>STREAMEDMP</td><td>0</td><td/><td>streamedmpeditor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1580,6 +1583,9 @@
 		<row><td>Main</td><td>webWiki</td></row>
 		<row><td>MenuEditor</td><td>menuEditor</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
+		<row><td>MovingPictures</td><td>libCornerstone</td></row>
+		<row><td>MovingPictures</td><td>libMediaInfo</td></row>
+		<row><td>MovingPictures</td><td>libNLog</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesLanguages</td></row>
 		<row><td>MyLyrics</td><td>libGoogleTranslate</td></row>
@@ -1587,6 +1593,7 @@
 		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
 		<row><td>MyTrailers</td><td>pluginMyTrailersDLL</td></row>
 		<row><td>TVSeries</td><td>libICSharpCodeSharpZipLib</td></row>
+		<row><td>TVSeries</td><td>libMediaInfo</td></row>
 		<row><td>TVSeries</td><td>libSubtitleDownloader</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
@@ -1644,8 +1651,10 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I4">ISAttributes</col>
 		<col def="S72">ISComponentSubFolder_</col>
-		<row><td>_z.dll</td><td>libSubtitleDownloader</td><td>7z.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\7z.dll</td><td>1</td><td/></row>
+		<row><td>_z.dll</td><td>libSubtitleDownloader</td><td>7z.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\7z.dll</td><td>1</td><td/></row>
 		<row><td>action_menu.png</td><td>hiddenMenuImage</td><td>ACTION~1.PNG|Action_menu.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\Action_menu.png</td><td>1</td><td/></row>
+		<row><td>cornerstone.dll</td><td>libCornerstone</td><td>CORNER~1.DLL|Cornerstone.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\Cornerstone.dll</td><td>1</td><td/></row>
+		<row><td>cornerstone.mp.dll1</td><td>pluginMovingPicturesDLL</td><td>CORNER~1.DLL|Cornerstone.MP.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Cornerstone.MP.dll</td><td>1</td><td/></row>
 		<row><td>default.ttf</td><td>fontsFluidBody</td><td>Default.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\Default.ttf</td><td>1</td><td/></row>
 		<row><td>defaultcaps.ttf</td><td>fontsFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>1</td><td/></row>
 		<row><td>dialogtvguide.xml</td><td>tvguide10Rows</td><td>DIALOG~1.XML|dialogTvGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\dialogTvGuide.xml</td><td>1</td><td/></row>
@@ -1657,16 +1666,17 @@
 		<row><td>fonts.xml</td><td>fontsXMLDefault</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fonts.xml</td><td>1</td><td/></row>
 		<row><td>fonts.xml1</td><td>fontsXMLLarge</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\large\fonts.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
-		<row><td>googletranslateapi.dll</td><td>libGoogleTranslate</td><td>GOOGLE~1.DLL|GoogleTranslateAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\GoogleTranslateAPI.dll</td><td>1</td><td/></row>
+		<row><td>googletranslateapi.dll</td><td>libGoogleTranslate</td><td>GOOGLE~1.DLL|GoogleTranslateAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\GoogleTranslateAPI.dll</td><td>1</td><td/></row>
 		<row><td>guiglobalsearch.dll</td><td>pluginGlobalMusicSearchDLL</td><td>GUIGLO~1.DLL|GUIGlobalSearch.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\GUIGlobalSearch.dll</td><td>1</td><td/></row>
 		<row><td>home.url</td><td>webHome</td><td>Home.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Home.url</td><td>1</td><td/></row>
-		<row><td>icsharpcode.sharpziplib.dll</td><td>libICSharpCodeSharpZipLib</td><td>ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\ICSharpCode.SharpZipLib.dll</td><td>1</td><td/></row>
+		<row><td>icsharpcode.sharpziplib.dll</td><td>libICSharpCodeSharpZipLib</td><td>ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\ICSharpCode.SharpZipLib.dll</td><td>1</td><td/></row>
 		<row><td>infoservice.dll</td><td>pluginInfoServiceDLL</td><td>INFOSE~1.DLL|InfoService.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\InfoService.dll</td><td>1</td><td/></row>
-		<row><td>interop.shdocvw.dll</td><td>libWebBrowserDependencies</td><td>INTERO~1.DLL|Interop.SHDocVw.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Interop.SHDocVw.dll</td><td>1</td><td/></row>
+		<row><td>interop.shdocvw.dll</td><td>libWebBrowserDependencies</td><td>INTERO~1.DLL|Interop.SHDocVw.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\Interop.SHDocVw.dll</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
-		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\LyricsEngine.dll</td><td>1</td><td/></row>
+		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\LyricsEngine.dll</td><td>1</td><td/></row>
+		<row><td>mediainfo.dll</td><td>libMediaInfo</td><td>MEDIAI~1.DLL|MediaInfo.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\MediaInfo.dll</td><td>1</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
-		<row><td>microsoft.mshtml.dll</td><td>libWebBrowserDependencies</td><td>MICROS~1.DLL|microsoft.mshtml.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\microsoft.mshtml.dll</td><td>1</td><td/></row>
+		<row><td>microsoft.mshtml.dll</td><td>libWebBrowserDependencies</td><td>MICROS~1.DLL|microsoft.mshtml.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\microsoft.mshtml.dll</td><td>1</td><td/></row>
 		<row><td>movingpictures.details.xml</td><td>commonMovingPictures</td><td>MOVING~1.XML|movingpictures.details.xml</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.details.xml</td><td>17</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>movingpictures.facade.xml</td><td>defaultMovingPictures</td><td>MOVING~1.XML|movingpictures.facade.xml</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.facade.xml</td><td>17</td><td/></row>
@@ -1714,10 +1724,11 @@
 		<row><td>mytvguide.xml</td><td>tvguide08Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\8 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
+		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
 		<row><td>streamedmpeditor.exe</td><td>menuEditor</td><td>STREAM~1.EXE|StreamedMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>1</td><td/></row>
-		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\SubtitleDownloader.dll</td><td>1</td><td/></row>
+		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\SubtitleDownloader.dll</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
-		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\TranslateProvider.dll</td><td>1</td><td/></row>
+		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\TranslateProvider.dll</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml</td><td>tvminiguide03Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvminiguides\3 rows\TVMiniGuide.xml</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml1</td><td>tvminiguide05Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvminiguides\5 rows\TVMiniGuide.xml</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml2</td><td>tvminiguide07Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\TVMiniGuide.xml</td><td>1</td><td/></row>
@@ -2046,9 +2057,12 @@
 		<row><td>fontsXMLDefault</td><td/><td/><td>_7F0D04B9_7618_45FC_BD56_15428CB35F14_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsXMLLarge</td><td/><td/><td>_3C065494_D8A3_4950_9AD2_9DAC9A1D522C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>hiddenMenuImage</td><td/><td/><td>_FC5131B6_54D6_45AF_ADA4_C494F55D764E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>libCornerstone</td><td/><td/><td>_8ABE2317_C7F7_4158_BB51_088B6D2F0537_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libGoogleTranslate</td><td/><td/><td>_ECA9F67F_1B2F_4CB1_9B0C_11D20D990BFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td/><td/><td>_588A286F_B16D_487F_8FD0_66DEAB35DF8E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libLyricsEngine</td><td/><td/><td>_46169EBA_6F43_4CDE_A47B_2B6D309338C1_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>libMediaInfo</td><td/><td/><td>_B2BB0E41_7DFB_46CC_ABC4_D0BDBF65761F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>libNLog</td><td/><td/><td>_66DA8A3D_8044_476A_BD46_7F3BE1BAC0D5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libSubtitleDownloader</td><td/><td/><td>_34463402_2F11_422F_A277_1E45DF3B08E6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libWebBrowserDependencies</td><td/><td/><td>_78CB0E94_033C_4BF7_B7C5_5E9DB9352728_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>menuEditor</td><td/><td/><td>_82B4A157_DF26_4AD7_BB6C_19BCF8DB57AB_FILTER</td><td/><td/><td/><td/></row>
@@ -2509,7 +2523,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.987</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.988</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4905,9 +4919,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{7B4900E7-6D8B-44EB-B003-32FB3780E38E}</td><td/></row>
+		<row><td>ProductCode</td><td>{93303418-8B2A-4FAB-84DA-77B513351063}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.987.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.988.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
