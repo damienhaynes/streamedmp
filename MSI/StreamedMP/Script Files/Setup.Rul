@@ -98,8 +98,23 @@
 #define STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU			INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowAnVU.xml"
 #define STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU        INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowLedVU.xml"
 
+#define STREAMEDMP_SKIN_4TRACTIVE			        INSTALLDIR^SKIN_NAME^"4TR_Active.xml"
+#define STREAMEDMP_SKIN_4TRPROGRAMINFO		        INSTALLDIR^SKIN_NAME^"4TR_ProgramInfo.xml"
+#define STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH	        INSTALLDIR^SKIN_NAME^"4TR_RadioGuideSearch.xml"
+#define STREAMEDMP_SKIN_4TRRECORDEDRADIO	        INSTALLDIR^SKIN_NAME^"4TR_RecordedRadio.xml"
+#define STREAMEDMP_SKIN_4TRRECORDEDTV		        INSTALLDIR^SKIN_NAME^"4TR_RecordedTv.xml"
+#define STREAMEDMP_SKIN_4TRTVGUIDESEARCH		    INSTALLDIR^SKIN_NAME^"4TR_TvGuideSearch.xml"
+#define STREAMEDMP_SKIN_4TRUPCOMING			        INSTALLDIR^SKIN_NAME^"4TR_Upcoming.xml"
+
+#define STREAMEDMP_SKIN_MYTVPROGRAM			        INSTALLDIR^SKIN_NAME^"mytvprogram.xml"
+#define STREAMEDMP_SKIN_MYTVRECORDEDINFO	        INSTALLDIR^SKIN_NAME^"mytvRecordedInfo.xml"
+#define STREAMEDMP_SKIN_MYTVRECORDEDTV		        INSTALLDIR^SKIN_NAME^"mytvrecordedtv.xml"
+#define STREAMEDMP_SKIN_MYTVSCEDULERSERVER	        INSTALLDIR^SKIN_NAME^"mytvschedulerServer.xml"
+#define STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH	INSTALLDIR^SKIN_NAME^"mytvschedulerserverSearch.xml"
+#define STREAMEDMP_SKIN_MYTVSEARCH					INSTALLDIR^SKIN_NAME^"mytvsearch.xml"
+
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.24975" 	// 1.1.0 Beta + SVN [6th Feb 2010]
+#define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.25080" 	// 1.1.0 RC1 [20th Feb 2010]
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
 #define TVSERIES_MIN_VERSION				"2.5.0.924"
@@ -150,15 +165,16 @@
 #define RES_COMBO_LISTIMAGESSTYLE		1308
 #define RES_CHECK_ARTWORKICONS			1307
   
-#define RES_COMBO_FONTS					1401 
-#define RES_CHECK_SKINDEFAULT			1402
-#define RES_CHECK_USEBASICHOME			1405
-#define RES_COMBO_TVGUIDE				1406
-#define RES_CHECK_ROUNDEDCOVERS			1408 
-#define RES_COMBO_VUMETERS				1410
-#define RES_BUTTON_LISTCOLOURS			1412
-#define RES_BUTTON_UNFOCUSEDALPHA		1413
-#define RES_CHECK_SHOWHIDDENMENUIMAGE	1414
+#define RES_COMBO_FONTS						1401 
+#define RES_CHECK_SKINDEFAULT				1402
+#define RES_CHECK_USEBASICHOME				1405
+#define RES_COMBO_TVGUIDE					1406
+#define RES_CHECK_ROUNDEDCOVERS				1408 
+#define RES_COMBO_VUMETERS					1410
+#define RES_BUTTON_LISTCOLOURS				1412
+#define RES_BUTTON_UNFOCUSEDALPHA			1413
+#define RES_CHECK_SHOWHIDDENMENUIMAGE		1414   
+#define RES_CHECK_ENABLERANDOMFANARTMYTV    1416
 
 #define RES_BMP_NOWPLAYINGDEFAULT					1400
 #define RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU		1401
@@ -220,7 +236,8 @@ prototype VOID		GetListFacadeColors();
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
 prototype VOID 		ShowControl(STRING, NUMBER);    
-prototype VOID		DetectWinLargeFonts();
+prototype VOID		DetectWinLargeFonts();   
+prototype STRING	BoolToString(BOOL);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -239,7 +256,8 @@ BOOL g_bShowIconsInListView;
 BOOL g_bShowUnWatchedOnlyInListImage; 
 BOOL g_bStartBasicHome; 
 BOOL g_bShowRoundedCovers;
-BOOL g_bShowHiddenMenuImage;                               
+BOOL g_bShowHiddenMenuImage;      
+BOOL g_bEnableRandomFanartInMyTV;                         
                                
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;  
@@ -429,6 +447,14 @@ begin
 	endif;	
 	if svValue = "1" then
 		g_bShowHiddenMenuImage = TRUE;			
+	endif; 
+	
+	// Enable Random Fanart in MyTV
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ENABLERANDOMFANARTINMYTV",nvType,svValue,nvSize) < 0) then
+		svValue = "0";		
+	endif;	
+	if svValue = "1" then
+		g_bEnableRandomFanartInMyTV = TRUE;			
 	endif;
 	
 	// Determine if 'Total Episode Count' fields are added to List View
@@ -1507,6 +1533,10 @@ Dlg_Wait:
  				if g_bShowHiddenMenuImage then
  					CtrlSetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE,BUTTON_CHECKED);
  				endif;
+ 				  
+ 				if g_bEnableRandomFanartInMyTV then
+ 					CtrlSetState(szDialogName,RES_CHECK_ENABLERANDOMFANARTMYTV,BUTTON_CHECKED);
+ 				endif;
  				
  				
  			case RES_BUTTON_LISTCOLOURS:
@@ -1654,7 +1684,12 @@ Dlg_Wait:
 		g_bShowHiddenMenuImage = FALSE;
 		FeatureSelectItem ( MEDIA, HIDDENMENU_IMAGE_OPTION, FALSE );		
 	endif;
-	
+	  
+	if (CtrlGetState(szDialogName,RES_CHECK_ENABLERANDOMFANARTMYTV) = BUTTON_CHECKED) then
+		g_bEnableRandomFanartInMyTV = TRUE;		
+	else
+		g_bEnableRandomFanartInMyTV = FALSE;		
+	endif;  	 
 
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -1875,7 +1910,7 @@ end;
 
 
 function VOID UpdateSettings()
-	STRING svString, sFile, sArtistImage;
+	STRING svString, sFile, sArtistImage, szDefine;
 	BOOL bReturn;		
 begin
 	// Save configuration to registry
@@ -1989,6 +2024,24 @@ begin
 	
 	NumToStr(svString,g_bShowHiddenMenuImage);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"SHOWHIDDENMENUIMAGE",REGDB_NUMBER,svString, -1);
+	
+	// Enable/Disable Random Fanart in MyTV sections	
+	NumToStr(svString,g_bEnableRandomFanartInMyTV);	
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ENABLERANDOMFANARTINMYTV",REGDB_NUMBER,svString, -1);
+	szDefine = "#useRandomTVSeriesFanart";
+	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDRADIO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVPROGRAM, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVER, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
 	
 	// Update Unfocused Alpha in references.xml
 	// Valid values from 0 - 255 (Tranparent - Solid);
@@ -3129,6 +3182,17 @@ begin
 		MessageBox(szMessage,WARNING);
 		
 	endif;
+end;
+
+function string BoolToString(bState)
+	STRING sReturn;
+begin
+    if bState then
+    	sReturn = "Yes";
+    else
+    	sReturn = "No";
+    endif;
+    return sReturn;
 end;
 
 
