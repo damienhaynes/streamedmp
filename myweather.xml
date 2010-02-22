@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2600</id>
   <defaultcontrol>3</defaultcontrol>
@@ -17,7 +17,6 @@
       <height>720</height>
       <texture>#header.hover</texture>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-	  <visible>!plugin.isenabled(InfoService)</visible>
     </control>
     <control>
       <description>weather background image infoservice</description>
