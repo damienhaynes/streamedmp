@@ -1977,7 +1977,7 @@ namespace StreamedMPEditor
 
             // Place Now Playing above horizontal menu if placed at bottom of screen
             // Note: this is not taking into consideration manual y-Position
-            if (horizontalContextLabels.Checked)
+            if (horizontalContextLabels.Checked && (menuStyle == chosenMenuStyle.horizontalContextStyle))
             {
                 rawXML.AppendLine("\t<import>common.overlay.basichome2.xml</import>");
             }
