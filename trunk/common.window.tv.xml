@@ -1,9 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
        <controls>
-              <!--
-    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
-    -->
+       
+			<control>
+				<description>default background image</description>
+				<type>image</type>
+				<id>0</id>
+				<posX>0</posX>
+				<posY>0</posY>
+				<width>1280</width>
+				<height>720</height>
+				<texture>hover_my tv.png</texture>                     
+				<animation effect="fade" time="500" start="10">WindowOpen</animation>
+				<animation effect="fade" time="500" end="10" >WindowClose</animation>
+			</control>
               
               <control>
                      <description>DUMMY CONTROLL FOR RANDOM FANART 1 VISIBILITY CONDITION</description>
@@ -11,8 +21,7 @@
                      <id>91919297</id>
                      <posX>0</posX>
                      <posY>0</posY>
-                     <width>1</width>
-                     <!--<visible>plugin.isenabled(Fanart Handler)</visible>-->
+                     <width>1</width>                     
               </control>
 
               <control>
@@ -21,9 +30,9 @@
                      <id>91919298</id>
                      <posX>0</posX>
                      <posY>0</posY>
-                     <width>1</width>
-                     <!--<visible>plugin.isenabled(Fanart Handler)</visible>-->
+                     <width>1</width>                     
               </control>
+			  			  
               <control>
                      <description>FANART IMAGE 1</description>
                      <id>897688</id>
@@ -54,7 +63,8 @@
                      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0" >Visible</animation>
                      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
               </control>
-              <control>
+			  
+              <!--<control>
                      <description>standard background image with FH</description>
                      <type>image</type>
                      <id>0</id>
@@ -79,7 +89,8 @@
                      <visible>!plugin.isenabled(Fanart Handler)</visible>
                      <animation effect="fade" time="500" start="10">WindowOpen</animation>
                      <animation effect="fade" time="500" end="10" >WindowClose</animation>
-              </control>
+              </control>-->
+			  
               <control>
                      <description>tv overlay image</description>
                      <type>image</type>
