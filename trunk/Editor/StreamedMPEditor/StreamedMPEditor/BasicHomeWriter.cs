@@ -2544,7 +2544,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t<posY>699</posY>");
             rawXML.AppendLine("\t\t<width>200</width>");
             rawXML.AppendLine("\t\t<align>center</align>");
-            rawXML.AppendLine("\t\t<label>TODAY</label>");
+            rawXML.AppendLine("\t\t<label>6030</label>");
             rawXML.AppendLine("\t\t<font>mediastream11tc</font>");
             rawXML.AppendLine("\t\t<textcolor>White</textcolor>");
             rawXML.AppendLine("\t</control>");
