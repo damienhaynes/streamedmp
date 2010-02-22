@@ -61,7 +61,12 @@
 
 #define TVGUIDE08_FEATURE_OPTIONS					"Main\\tvguide08Options"
 #define TVGUIDE10_FEATURE_OPTIONS					"Main\\tvguide10Options"
-#define TVGUIDE12_FEATURE_OPTIONS					"Main\\tvguide12Options"
+#define TVGUIDE12_FEATURE_OPTIONS					"Main\\tvguide12Options"  
+
+#define TVMINIGUIDE03_FEATURE_OPTIONS				"Main\\tvguide03Options"
+#define TVMINIGUIDE05_FEATURE_OPTIONS				"Main\\tvguide05Options"
+#define TVMINIGUIDE07_FEATURE_OPTIONS				"Main\\tvguide07Options"
+#define TVMINIGUIDE09_FEATURE_OPTIONS				"Main\\tvguide09Options"
 
 #define FONTSDEF_FEATURE_OPTIONS					"Main\\fontsDefOptions"
 #define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"
@@ -170,7 +175,7 @@
 #define RES_CHECK_USEBASICHOME				1405
 #define RES_COMBO_TVGUIDE					1406
 #define RES_CHECK_ROUNDEDCOVERS				1408 
-#define RES_COMBO_VUMETERS					1410
+#define RES_COMBO_TVMINIGUIDE				1410
 #define RES_BUTTON_LISTCOLOURS				1412
 #define RES_BUTTON_UNFOCUSEDALPHA			1413
 #define RES_CHECK_SHOWHIDDENMENUIMAGE		1414   
@@ -260,10 +265,10 @@ BOOL g_bShowHiddenMenuImage;
 BOOL g_bEnableRandomFanartInMyTV;                         
                                
 STRING g_sMajorUpgradeGUID;
-STRING g_sTVGuideSize;  
+STRING g_sTVGuideSize;
+STRING g_sTVMiniGuideSize;  
 STRING g_sFontSize;
 STRING g_sDownloadInstallDir;   
-STRING g_sVUMeter;
 STRING g_sWideBannerLayout;
 STRING g_sUnfocusedAlphaListItems;
 STRING g_sUnfocusedAlphaThumbs;  
@@ -435,6 +440,10 @@ begin
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",nvType,g_sTVGuideSize,nvSize) < 0) then
 		g_sTVGuideSize = "10";							
 	endif;	 
+	
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVMINIGUIDESIZE",nvType,g_sTVMiniGuideSize,nvSize) < 0) then
+		g_sTVMiniGuideSize = "7";							
+	endif;
 	                        	                        
 	// Read Font Size default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",nvType,g_sFontSize,nvSize) < 0) then
@@ -513,9 +522,9 @@ begin
 	endif;
 	
 	// My Music VU Meters
-	if GetMPXMLProperty("musicmisc","vumeter", g_sVUMeter) < 0 then
-		g_sVUMeter = "led";	
-	endif;	
+	//if GetMPXMLProperty("musicmisc","vumeter", g_sVUMeter) < 0 then
+	//	g_sVUMeter = "led";	
+	//endif;	
 
 	// Unfocused Alpha List Layout               
 	sFile = STREAMEDMP_SKIN_REFERENCES;	
@@ -1433,7 +1442,7 @@ function number ShowSelectOptions(bModify)
 	STRING szDialogName, sValue;
 	NUMBER nCmdValue;
 	BOOL bDone, bResult;
-	LIST listFonts, listTVGuides, listVUMeters;
+	LIST listFonts, listTVGuides, listVUMeters, listTVMiniGuides;
 	OBJECT objColors, objUnfocusedAlpha;
 begin
 
@@ -1476,7 +1485,7 @@ Dlg_Wait:
 	        	        	     			     			     			 				
  				ListAddString(listTVGuides,"8 Rows",AFTER);
 	        	ListAddString(listTVGuides,"10 Rows",AFTER);
-	        	ListAddString(listTVGuides,"12 Rows",AFTER);
+	        	ListAddString(listTVGuides,"12 Rows",AFTER);	    	    		
 	        	
 	        	// Add TVGuide sizes to list
 	        	CtrlSetList(szDialogName,RES_COMBO_TVGUIDE,listTVGuides);
@@ -1490,28 +1499,51 @@ Dlg_Wait:
 	    			default:
 	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"12 Rows");
 	   			endswitch; 		
-					    			 				
- 				ListDestroy(listFonts);
-
+				ListDestroy(listTVGuides);					    			 				
+ 				
+ 				// Populate TVMiniGuide size list
+	      		listTVMiniGuides = ListCreate(STRINGLIST);	      			    	
+	        	        	     			     			     			 				
+ 				ListAddString(listTVMiniGuides,"3 Rows",AFTER);
+	        	ListAddString(listTVMiniGuides,"5 Rows",AFTER);
+	        	ListAddString(listTVMiniGuides,"7 Rows",AFTER);	    	    		
+	        	ListAddString(listTVMiniGuides,"9 Rows",AFTER);
+	        	
+	        	// Add TVGuide sizes to list
+	        	CtrlSetList(szDialogName,RES_COMBO_TVMINIGUIDE,listTVMiniGuides);
+	    
+ 				// Select Last/Default TVGuide size
+ 				switch (g_sTVMiniGuideSize)
+ 					case "3":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,"3 Rows");
+	    			case "5":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,"5 Rows");
+	    			case "9":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,"9 Rows");
+	    			default:
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,"7 Rows");
+	   			endswitch; 		
+				ListDestroy(listTVMiniGuides);
+ 				
  				// Select Now Playing Music VU Meters
- 				listVUMeters = ListCreate(STRINGLIST);
+ 				//listVUMeters = ListCreate(STRINGLIST);
 				
-				ListAddString(listVUMeters,"Analog",AFTER);
-				ListAddString(listVUMeters,"Digital",AFTER);
-				ListAddString(listVUMeters,"None (Fake)",AFTER);
+				//ListAddString(listVUMeters,"Analog",AFTER);
+				//ListAddString(listVUMeters,"Digital",AFTER);
+				//ListAddString(listVUMeters,"None (Fake)",AFTER);
 				// Add VUMeter types to list
-	        	CtrlSetList(szDialogName,RES_COMBO_VUMETERS,listVUMeters);
+	        	//CtrlSetList(szDialogName,RES_COMBO_VUMETERS,listVUMeters);
 	    		
 	    		// Select current VUMeter type    		      		
-	    		switch (g_sVUMeter)
- 					case "analog":
-	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Analog");
-	    			case "led":
-	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Digital");
-	    			default:
-	    				CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"None (Fake)");
-	   			endswitch; 		 				
- 				ListDestroy(listVUMeters);	        
+	    		//switch (g_sVUMeter)
+ 				//	case "analog":
+	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Analog");
+	    		//	case "led":
+	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Digital");
+	    		//	default:
+	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"None (Fake)");
+	   			//endswitch; 		 				
+ 				//ListDestroy(listVUMeters);	        
  				 				 				 		
  				if g_bSetAsDefaultSkin then
  					CtrlSetState(szDialogName,RES_CHECK_SKINDEFAULT,BUTTON_CHECKED);
@@ -1621,19 +1653,31 @@ Dlg_Wait:
 			g_sTVGuideSize = "10";
 		default:
 			g_sTVGuideSize = "12";
+	endswitch;  
+	
+	CtrlGetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,sValue);
+	switch (sValue)
+		case "3 Rows":
+			g_sTVMiniGuideSize = "3"; 
+		case "5 Rows":
+			g_sTVMiniGuideSize = "5";
+		case "9 Rows":
+			g_sTVMiniGuideSize = "9";
+		default:
+			g_sTVMiniGuideSize = "7";
 	endswitch;
 
 	CtrlGetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize);	
 	
-	CtrlGetCurSel(szDialogName,RES_COMBO_VUMETERS,sValue);
-	switch (sValue)
-		case "Analog":
-			g_sVUMeter = "analog"; 
-		case "Digital":
-			g_sVUMeter = "led";
-		default:
-			g_sVUMeter = "none";
-	endswitch;
+	//CtrlGetCurSel(szDialogName,RES_COMBO_VUMETERS,sValue);
+	//switch (sValue)
+	//	case "Analog":
+	//		g_sVUMeter = "analog"; 
+	//	case "Digital":
+	//		g_sVUMeter = "led";
+	//	default:
+	//		g_sVUMeter = "none";
+	//endswitch;
 	
 	if (CtrlGetState(szDialogName,RES_CHECK_SKINDEFAULT) = BUTTON_CHECKED) then
 		g_bSetAsDefaultSkin = TRUE;
@@ -1646,36 +1690,58 @@ Dlg_Wait:
 	else
 		g_bStartBasicHome = FALSE;
 	endif;  	
+	
+	if (CtrlGetState(szDialogName,RES_CHECK_ROUNDEDCOVERS) = BUTTON_CHECKED) then
+		g_bShowRoundedCovers = TRUE;
+	else
+		g_bShowRoundedCovers = FALSE;
+	endif;  
+	  
+	if (CtrlGetState(szDialogName,RES_CHECK_ENABLERANDOMFANARTMYTV) = BUTTON_CHECKED) then
+		g_bEnableRandomFanartInMyTV = TRUE;		
+	else
+		g_bEnableRandomFanartInMyTV = FALSE;		
+	endif;  	
 		
-	// Set Features
+	// Set Features 
+	
+	// TVGuide
+	FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
+	FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, FALSE );
+	FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, FALSE );
 	switch (g_sTVGuideSize)
 		case "8":
-			FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, TRUE );
-			FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, FALSE );
-			FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, FALSE );
-		case "10":
-			FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
-			FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, TRUE );
-			FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, FALSE );
-		default:
-			FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
-			FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, FALSE );
+			FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, TRUE );			
+		case "10":			;
+			FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, TRUE );			
+		default:			
 			FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, TRUE );
+	endswitch; 
+	
+	// TV MiniGuide	                            
+	FeatureSelectItem ( MEDIA, TVMINIGUIDE03_FEATURE_OPTIONS, FALSE );
+	FeatureSelectItem ( MEDIA, TVMINIGUIDE05_FEATURE_OPTIONS, FALSE );
+	FeatureSelectItem ( MEDIA, TVMINIGUIDE07_FEATURE_OPTIONS, FALSE );
+	FeatureSelectItem ( MEDIA, TVMINIGUIDE09_FEATURE_OPTIONS, FALSE );                            
+	switch (g_sTVMiniGuideSize)
+		case "3":
+			FeatureSelectItem ( MEDIA, TVMINIGUIDE03_FEATURE_OPTIONS, TRUE );			
+		case "5":			
+			FeatureSelectItem ( MEDIA, TVMINIGUIDE05_FEATURE_OPTIONS, TRUE );			
+		case "9":			
+			FeatureSelectItem ( MEDIA, TVMINIGUIDE09_FEATURE_OPTIONS, TRUE );			
+		default:			
+			FeatureSelectItem ( MEDIA, TVMINIGUIDE07_FEATURE_OPTIONS, TRUE );
 	endswitch;
-		
+	
+	// Font Sizes	
 	if (g_sFontSize = "Default") then
 		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, TRUE );
 		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, FALSE );
 	else
 		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, FALSE );
 		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, TRUE );
-	endif;
-		
-	if (CtrlGetState(szDialogName,RES_CHECK_ROUNDEDCOVERS) = BUTTON_CHECKED) then
-		g_bShowRoundedCovers = TRUE;
-	else
-		g_bShowRoundedCovers = FALSE;
-	endif;  
+	endif;			
 	
 	if (CtrlGetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE) = BUTTON_CHECKED) then
 		g_bShowHiddenMenuImage = TRUE;
@@ -1683,13 +1749,7 @@ Dlg_Wait:
 	else
 		g_bShowHiddenMenuImage = FALSE;
 		FeatureSelectItem ( MEDIA, HIDDENMENU_IMAGE_OPTION, FALSE );		
-	endif;
-	  
-	if (CtrlGetState(szDialogName,RES_CHECK_ENABLERANDOMFANARTMYTV) = BUTTON_CHECKED) then
-		g_bEnableRandomFanartInMyTV = TRUE;		
-	else
-		g_bEnableRandomFanartInMyTV = FALSE;		
-	endif;  	 
+	endif;		
 
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
@@ -1924,6 +1984,7 @@ begin
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVMINIGUIDESIZE",REGDB_NUMBER,g_sTVMiniGuideSize, -1);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"NOWPLAYINGSTYLE",REGDB_STRING,g_sNowPlayingChoice, -1);	
@@ -2007,7 +2068,7 @@ begin
 	SetMPXMLProperty("general","animations","yes");
 	
 	// Now Playing Music VUMeter support
-	SetMPXMLProperty("musicmisc","vumeter", g_sVUMeter);
+	//SetMPXMLProperty("musicmisc","vumeter", g_sVUMeter);
 	
 	// Start with Basic Home or Standard Home
 	if g_bStartBasicHome then
