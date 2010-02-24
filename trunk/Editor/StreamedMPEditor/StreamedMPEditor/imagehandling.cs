@@ -261,13 +261,18 @@ namespace StreamedMPEditor
         // Set the default pic for chosen background image and clean up/reset
         string fromFile = defImgs.newDefault[int.Parse(tag)];
         string defaultFile = defImgs.activeDir + "\\default.jpg";
-        string saveFile = defImgs.activeDir + "\\default2.jpg";
-        string tempFile = defImgs.activeDir + "\\temp.jpg"; 
-        imageReset(true);
-        File.Copy(defaultFile, tempFile, true);
-        File.Copy(fromFile, defaultFile, true);
-        File.Copy(tempFile, fromFile, true);
-        File.Delete(tempFile);
+        if (fromFile != defaultFile)
+        {
+            string saveFile = defImgs.activeDir + "\\default2.jpg";
+            string tempFile = defImgs.activeDir + "\\temp.jpg";
+            imageReset(true);
+            File.Copy(defaultFile, tempFile, true);
+            File.Copy(fromFile, defaultFile, true);
+            File.Copy(tempFile, fromFile, true);
+            File.Delete(tempFile);
+        }
+        else
+            imageReset(true);
     }
 
     private void imageReset(bool fullReset)
