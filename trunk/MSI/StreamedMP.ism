@@ -362,7 +362,6 @@
 		<row><td>fontsXMLDefault</td><td>{974BA809-5A8A-4E4B-BAC0-13CE7971D9D2}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsXMLLarge</td><td>{5E47442D-BFB5-434B-B252-22E6750CAFEA}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>hiddenMenuImage</td><td>{74FEF926-CA4D-4525-AE2D-F5FB4CD728DA}</td><td>MEDIA1</td><td>0</td><td/><td>action_menu.png</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>libCornerstone</td><td>{B4F1FA68-22B9-4289-A689-C75CF72E49E8}</td><td>MPBINDIR</td><td>0</td><td/><td>cornerstone.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libGoogleTranslate</td><td>{068938CB-5716-445B-BD0B-FB32B9D24984}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td>{1DBD701C-580A-4DF9-A891-8BBBE5E173BC}</td><td>MPBINDIR</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libLyricsEngine</td><td>{1E4B56F5-8F05-4AB2-8B60-29598AE215DD}</td><td>MPBINDIR</td><td>8</td><td/><td>lyricsengine.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1583,7 +1582,6 @@
 		<row><td>Main</td><td>webWiki</td></row>
 		<row><td>MenuEditor</td><td>menuEditor</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
-		<row><td>MovingPictures</td><td>libCornerstone</td></row>
 		<row><td>MovingPictures</td><td>libMediaInfo</td></row>
 		<row><td>MovingPictures</td><td>libNLog</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
@@ -1653,7 +1651,7 @@
 		<col def="S72">ISComponentSubFolder_</col>
 		<row><td>_z.dll</td><td>libSubtitleDownloader</td><td>7z.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\7z.dll</td><td>1</td><td/></row>
 		<row><td>action_menu.png</td><td>hiddenMenuImage</td><td>ACTION~1.PNG|Action_menu.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\media\Action_menu.png</td><td>1</td><td/></row>
-		<row><td>cornerstone.dll</td><td>libCornerstone</td><td>CORNER~1.DLL|Cornerstone.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\Cornerstone.dll</td><td>1</td><td/></row>
+		<row><td>cornerstone.dll</td><td>pluginMovingPicturesDLL</td><td>CORNER~1.DLL|Cornerstone.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Cornerstone.dll</td><td>1</td><td/></row>
 		<row><td>cornerstone.mp.dll1</td><td>pluginMovingPicturesDLL</td><td>CORNER~1.DLL|Cornerstone.MP.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Cornerstone.MP.dll</td><td>1</td><td/></row>
 		<row><td>default.ttf</td><td>fontsFluidBody</td><td>Default.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\Default.ttf</td><td>1</td><td/></row>
 		<row><td>defaultcaps.ttf</td><td>fontsFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>1</td><td/></row>
@@ -2057,7 +2055,6 @@
 		<row><td>fontsXMLDefault</td><td/><td/><td>_7F0D04B9_7618_45FC_BD56_15428CB35F14_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsXMLLarge</td><td/><td/><td>_3C065494_D8A3_4950_9AD2_9DAC9A1D522C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>hiddenMenuImage</td><td/><td/><td>_FC5131B6_54D6_45AF_ADA4_C494F55D764E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>libCornerstone</td><td/><td/><td>_8ABE2317_C7F7_4158_BB51_088B6D2F0537_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libGoogleTranslate</td><td/><td/><td>_ECA9F67F_1B2F_4CB1_9B0C_11D20D990BFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td/><td/><td>_588A286F_B16D_487F_8FD0_66DEAB35DF8E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libLyricsEngine</td><td/><td/><td>_46169EBA_6F43_4CDE_A47B_2B6D309338C1_FILTER</td><td/><td/><td/><td/></row>
@@ -2523,7 +2520,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.988</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.996</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4919,9 +4916,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{93303418-8B2A-4FAB-84DA-77B513351063}</td><td/></row>
+		<row><td>ProductCode</td><td>{6AE7A298-2E35-4728-959C-88612C7BF35A}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.988.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.996.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
