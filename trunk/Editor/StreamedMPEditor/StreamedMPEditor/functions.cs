@@ -394,8 +394,11 @@ namespace StreamedMPEditor
 
     private void verticalStyle_Click(object sender, EventArgs e)
     {
-      menuStyle = chosenMenuStyle.verticalStyle;
-      syncEditor(sync.editing);
+        if (menuStyle != chosenMenuStyle.verticalStyle)
+        {
+            menuStyle = chosenMenuStyle.verticalStyle;
+            syncEditor(sync.editing);
+        }
     }
 
     private void horizontalStyle_Click(object sender, EventArgs e)
