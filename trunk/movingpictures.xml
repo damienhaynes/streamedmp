@@ -175,24 +175,22 @@ multiple view modes.
       <texture>glasstitlebar.png</texture>
       <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
     </control>
-    
-    <!--            :: HIDDEN MENU ::            	-->
-    <import>movingpictures.hiddenmenu.xml</import>
-    
-    <!--            :: LIST VIEW ::            		-->
-    <import>movingpictures.listview.xml</import>
        
-    <!--            :: THUMBNAIL VIEW ::            -->
-    <import>movingpictures.thumbsview.xml</import>
+    <import>movingpictures.hiddenmenu.xml</import>
         
-    <!--            :: FILMSTRIP VIEW ::            -->
-    <import>movingpictures.filmstripview.xml</import>
-        
-    <!--            :: DETAILS VIEW ::            	-->    
-    <import>movingpictures.details.xml</import>
+    <import>movingpictures.listview.xml</import>
+	<import>movingpictures.listview.mediainfo.xml</import>
     
-    <!--            :: OTHER ::            			-->    
-    <import>movingpictures.facade.xml</import>
+	<import>movingpictures.thumbsview.xml</import>
+	<import>movingpictures.thumbsview.mediainfo.xml</import>
+    
+	<import>movingpictures.filmstripview.xml</import>
+	<import>movingpictures.filmstripview.mediainfo.xml</import>
+    
+	<import>movingpictures.details.xml</import>
+	<import>movingpictures.details.mediainfo.xml</import>
+ 	   
+    <import>movingpictures.facade.xml</import>	
     <import>common.overlays2.xml</import>
     
 	<control>

@@ -266,12 +266,20 @@ multiple view modes.
 		<animation effect="fade" time="250">WindowClose</animation>	
 	</control>
     
-	<!-- Imported Facades Views -->		
-	<import>movingpictures.details.xml</import>    
+	<!-- Imported Facades Views -->	
+	<import>movingpictures.details.xml</import>
+	<import>movingpictures.details.mediainfo.xml</import>
+	
 	<import>movingpictures.listview.xml</import>
+	<import>movingpictures.listview.mediainfo.xml</import>
+	
 	<import>movingpictures.thumbsview.xml</import>
+	<import>movingpictures.thumbsview.mediainfo.xml</import>
+	
 	<import>movingpictures.facade.xml</import>
-	<import>movingpictures.filmstripview.xml</import>
+	
+	<!-- MediaInfo for filmstrp is shared in thumbsview -->
+	<import>movingpictures.filmstripview.xml</import>	
 	
     <!--Top Bar Controls -->
 	<control>
