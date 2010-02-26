@@ -900,19 +900,27 @@ namespace StreamedMPEditor
 
         int maxContextSize = 0;
         int maxMenuItemSize = 0;
+        Font nameFont = new Font("Fluid Title Caps", 28.0F);
+        Font contextFont = new Font("Fluid Title Caps", 16.0F);
         // find the longest Context and Menu items
         foreach (menuItem menItem in menuItems)
         {
-          if (maxContextSize < menItem.contextLabel.Length)
-            maxContextSize = menItem.contextLabel.Length;
-          if (maxMenuItemSize < menItem.name.Length)
-            maxMenuItemSize = menItem.name.Length;
+            Size textNameSize = TextRenderer.MeasureText(menItem.name, nameFont);
+            Size textContextSize = TextRenderer.MeasureText(menItem.contextLabel, contextFont);
+
+            if (maxMenuItemSize < textNameSize.Width)
+                maxMenuItemSize = textNameSize.Width; 
+            
+            if (maxContextSize < textContextSize.Width)
+                maxContextSize = textContextSize.Width;
         }
         // now calc the minimum xpos based on longest string in context and menu labels
-        minXPos = (maxContextSize * 17);
-        if ((maxMenuItemSize * 41) > minXPos)
-          minXPos = (maxMenuItemSize * 41);
 
+        minXPos = maxContextSize;
+        if (minXPos < maxMenuItemSize)
+            minXPos = maxMenuItemSize;
+
+        minXPos = (int)((double)minXPos*1.35);
         if (menuOffset < minXPos)
         {
           txtMenuPos.Text = minXPos.ToString();
