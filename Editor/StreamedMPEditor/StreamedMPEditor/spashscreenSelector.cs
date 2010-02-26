@@ -100,7 +100,22 @@ namespace StreamedMPEditor
 
         private void btSplashSelect_Click(object sender, EventArgs e)
         {
-            System.IO.File.Copy(fileList[imagePos], mpPaths.streamedMPpath + "media//splashscreen.png", true);
+            string sourceFile = fileList[imagePos];
+            string destinationFile = mpPaths.streamedMPpath + @"media\splashscreen.png";
+
+            try
+            {
+                // Delete old splashscreen and copy newly selected one
+                // Thumbnail in explorer wont update if overwritten
+                if (File.Exists(destinationFile)) File.Delete(destinationFile);
+                File.Copy(sourceFile, destinationFile);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Failed to set new splashscreen\n\n{0}", ex.Message), "Splashscreen", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Update Image Preview
             splashScreenImage = Path.GetFileName(fileList[imagePos]);
         }
 
