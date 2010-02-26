@@ -95,34 +95,37 @@
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
+		<description>label OPTIONS</description>
         <id>0</id>
-        <label>VIEW OPTIONS</label>
+        <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>230</posY>
+        <posY>180</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-        <id>0</id>
-        <label>PLAYLIST</label>
+        <description>label PLAYLIST</description>
+		<id>0</id>
+        <label>136</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>287</posY>
+        <posY>237</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
+		<description>label JUMP TO</description>
         <id>0</id>
-        <label>JUMP TO</label>
+        <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>449</posY>
+        <posY>399</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -133,7 +136,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>591</posY>
+        <posY>568</posY>
         <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -145,7 +148,7 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
-        <posY>250</posY>
+        <posY>200</posY>
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
@@ -206,6 +209,14 @@
           <label>-</label>
           <visible>false</visible>
         </control>
+		<control>
+          <description>Music</description>
+          <type>button</type>
+          <id>31</id>
+          <label>249</label>
+          <hyperlink>501</hyperlink>
+          <onleft>50</onleft>
+        </control>
         <control>
           <description>Now playing</description>
           <type>button</type>
@@ -213,7 +224,7 @@
           <label>4540</label>
           <hyperlink>510</hyperlink>
           <onleft>50</onleft>
-        </control>
+        </control>		
         <control>
           <description>music settings button</description>
           <type>button</type>
