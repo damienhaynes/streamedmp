@@ -236,6 +236,7 @@ namespace StreamedMPEditor
 
                 loadMenuSettings();
                 checkSplashScreens();
+                toolStripStatusLabel2.Text = null;
                 itemsOnMenubar.SelectedIndex = 0;
                 screenReset();
                 setScreenProperties(itemsOnMenubar.SelectedIndex);
@@ -543,7 +544,7 @@ namespace StreamedMPEditor
 
         private void setXMLFilesIndex(string hyperlink)
         {
-            for (int i = 1; i < ids.Count; i++)
+            for (int i = 0; i < ids.Count; i++)
             {
                 if (ids[i] == hyperlink)
                     xmlFiles.SelectedIndex = i;
