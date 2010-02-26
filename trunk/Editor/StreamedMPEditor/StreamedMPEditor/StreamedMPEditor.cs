@@ -113,7 +113,7 @@ namespace StreamedMPEditor
         string defUnFocus = "C0C0C0";
 
         int textXOffset = -25;
-        int maxXPosition = 400;
+        int maxXPosition = 350;
         int menuOffset = 0;
 
         int deskHeight;
