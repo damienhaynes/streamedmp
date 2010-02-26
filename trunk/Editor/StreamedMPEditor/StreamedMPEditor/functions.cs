@@ -729,19 +729,17 @@ namespace StreamedMPEditor
 
     private void removeToolStripMenuItem_Click(object sender, EventArgs e)
     {
-      if (itemsOnMenubar.SelectedItem != null)
-      {
-        menuItems.RemoveAt(itemsOnMenubar.SelectedIndex);
-        itemsOnMenubar.Items.Remove(itemsOnMenubar.SelectedItem);
-        screenReset();
-
-
-      }
-      else
-        showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
+        if (itemsOnMenubar.SelectedItem != null)
+        {
+            menuItems.RemoveAt(itemsOnMenubar.SelectedIndex);
+            itemsOnMenubar.Items.Remove(itemsOnMenubar.SelectedItem);
+            screenReset();
+            if (itemsOnMenubar.Items.Count > 0)
+                itemsOnMenubar.SelectedIndex = 0;
+        }
+        else
+            showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
     }
-
-
 
     private string generateEntry(string entry, string value, int tabs, bool addcr)
     {
