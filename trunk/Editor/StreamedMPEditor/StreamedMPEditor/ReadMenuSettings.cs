@@ -213,11 +213,15 @@ namespace StreamedMPEditor
                 activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
                 cbDisableClock.Checked = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
                 targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
+                splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
             }
             catch
             {
                 // Most likley a new option added but not written to file yet - just continue
             }
+
+            if (splashScreenImage == "false")
+                splashScreenImage = "splashscreen.png";
 
             if (targetScreenRes == "HD")
                 setHDScreenRes();

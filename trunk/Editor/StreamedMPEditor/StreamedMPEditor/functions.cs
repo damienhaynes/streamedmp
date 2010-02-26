@@ -71,6 +71,12 @@ namespace StreamedMPEditor
         infoserviceOptions.Text = "InfoService Options(Disabled)";
       else
         infoserviceOptions.Text = "InfoService Options";
+
+
+        if (pluginEnabled("Fanart Handler"))
+            cbItemFanartHandlerEnable.Visible = true;
+        else
+            cbItemFanartHandlerEnable.Visible = false;
     }
 
     private string getStreamedMPVer()

@@ -149,6 +149,14 @@
         this.label17 = new System.Windows.Forms.Label();
         this.defaultBackgrounds = new System.Windows.Forms.TabPage();
         this.pictureBox3 = new System.Windows.Forms.PictureBox();
+        this.splashscreenSelector = new System.Windows.Forms.TabPage();
+        this.gbSplashDL = new System.Windows.Forms.GroupBox();
+        this.textBox1 = new System.Windows.Forms.TextBox();
+        this.splashDownloadLink = new System.Windows.Forms.LinkLabel();
+        this.btSplashSelect = new System.Windows.Forms.Button();
+        this.btSplashPrev = new System.Windows.Forms.Button();
+        this.btSplashNext = new System.Windows.Forms.Button();
+        this.spashscreenPreview = new System.Windows.Forms.PictureBox();
         this.editingInfo = new System.Windows.Forms.TabPage();
         this.editorOptionsGroup = new System.Windows.Forms.GroupBox();
         this.autoBackupGroup = new System.Windows.Forms.GroupBox();
@@ -188,6 +196,7 @@
         this.label4 = new System.Windows.Forms.Label();
         this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
         this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+        this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
         this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
         this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
         this.cboClearCache = new System.Windows.Forms.CheckBox();
@@ -228,12 +237,16 @@
         this.globalSettings.SuspendLayout();
         this.defaultBackgrounds.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+        this.splashscreenSelector.SuspendLayout();
+        this.gbSplashDL.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).BeginInit();
         this.editingInfo.SuspendLayout();
         this.editorOptionsGroup.SuspendLayout();
         this.autoBackupGroup.SuspendLayout();
         this.groupBox4.SuspendLayout();
         this.aboutBoxGroup.SuspendLayout();
         this.groupBox2.SuspendLayout();
+        this.statusStrip1.SuspendLayout();
         this.groupBox5.SuspendLayout();
         this.SuspendLayout();
         // 
@@ -244,6 +257,7 @@
         this.StreamedMPMenu.Controls.Add(this.basicHomeDesign);
         this.StreamedMPMenu.Controls.Add(this.basicHomeOptions);
         this.StreamedMPMenu.Controls.Add(this.defaultBackgrounds);
+        this.StreamedMPMenu.Controls.Add(this.splashscreenSelector);
         this.StreamedMPMenu.Controls.Add(this.editingInfo);
         this.StreamedMPMenu.ImageList = this.imageList1;
         this.StreamedMPMenu.Location = new System.Drawing.Point(12, 130);
@@ -1579,6 +1593,93 @@
         this.pictureBox3.TabStop = false;
         this.toolTip1.SetToolTip(this.pictureBox3, resources.GetString("pictureBox3.ToolTip"));
         // 
+        // splashscreenSelector
+        // 
+        this.splashscreenSelector.Controls.Add(this.gbSplashDL);
+        this.splashscreenSelector.Controls.Add(this.btSplashSelect);
+        this.splashscreenSelector.Controls.Add(this.btSplashPrev);
+        this.splashscreenSelector.Controls.Add(this.btSplashNext);
+        this.splashscreenSelector.Controls.Add(this.spashscreenPreview);
+        this.splashscreenSelector.Location = new System.Drawing.Point(4, 23);
+        this.splashscreenSelector.Name = "splashscreenSelector";
+        this.splashscreenSelector.Size = new System.Drawing.Size(750, 420);
+        this.splashscreenSelector.TabIndex = 6;
+        this.splashscreenSelector.Text = "SplashScreen Selector";
+        this.splashscreenSelector.UseVisualStyleBackColor = true;
+        // 
+        // gbSplashDL
+        // 
+        this.gbSplashDL.Controls.Add(this.textBox1);
+        this.gbSplashDL.Controls.Add(this.splashDownloadLink);
+        this.gbSplashDL.Location = new System.Drawing.Point(195, 105);
+        this.gbSplashDL.Name = "gbSplashDL";
+        this.gbSplashDL.Size = new System.Drawing.Size(349, 127);
+        this.gbSplashDL.TabIndex = 4;
+        this.gbSplashDL.TabStop = false;
+        this.gbSplashDL.Text = "SplashScreen Setup and Download";
+        // 
+        // textBox1
+        // 
+        this.textBox1.Location = new System.Drawing.Point(70, 28);
+        this.textBox1.Multiline = true;
+        this.textBox1.Name = "textBox1";
+        this.textBox1.Size = new System.Drawing.Size(190, 40);
+        this.textBox1.TabIndex = 1;
+        this.textBox1.Text = "Alternative SplashScreen option pack is not installed \r\nplease click the link bel" +
+            "ow to install these files. ";
+        // 
+        // splashDownloadLink
+        // 
+        this.splashDownloadLink.AutoSize = true;
+        this.splashDownloadLink.Location = new System.Drawing.Point(68, 71);
+        this.splashDownloadLink.Name = "splashDownloadLink";
+        this.splashDownloadLink.Size = new System.Drawing.Size(192, 13);
+        this.splashDownloadLink.TabIndex = 0;
+        this.splashDownloadLink.TabStop = true;
+        this.splashDownloadLink.Text = "Download SplashScreen Option Pack  ";
+        this.splashDownloadLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.splashDownloadLink_LinkClicked);
+        // 
+        // btSplashSelect
+        // 
+        this.btSplashSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.btSplashSelect.Location = new System.Drawing.Point(296, 379);
+        this.btSplashSelect.Name = "btSplashSelect";
+        this.btSplashSelect.Size = new System.Drawing.Size(159, 27);
+        this.btSplashSelect.TabIndex = 3;
+        this.btSplashSelect.Text = "Use Image as SplashScreen";
+        this.btSplashSelect.UseVisualStyleBackColor = true;
+        this.btSplashSelect.Click += new System.EventHandler(this.btSplashSelect_Click);
+        // 
+        // btSplashPrev
+        // 
+        this.btSplashPrev.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.btSplashPrev.Location = new System.Drawing.Point(51, 379);
+        this.btSplashPrev.Name = "btSplashPrev";
+        this.btSplashPrev.Size = new System.Drawing.Size(99, 27);
+        this.btSplashPrev.TabIndex = 2;
+        this.btSplashPrev.Text = "Prev";
+        this.btSplashPrev.UseVisualStyleBackColor = true;
+        this.btSplashPrev.Click += new System.EventHandler(this.btSplashPrev_Click);
+        // 
+        // btSplashNext
+        // 
+        this.btSplashNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.btSplashNext.Location = new System.Drawing.Point(601, 379);
+        this.btSplashNext.Name = "btSplashNext";
+        this.btSplashNext.Size = new System.Drawing.Size(99, 27);
+        this.btSplashNext.TabIndex = 1;
+        this.btSplashNext.Text = "Next";
+        this.btSplashNext.UseVisualStyleBackColor = true;
+        this.btSplashNext.Click += new System.EventHandler(this.btSplashNext_Click);
+        // 
+        // spashscreenPreview
+        // 
+        this.spashscreenPreview.Location = new System.Drawing.Point(50, 8);
+        this.spashscreenPreview.Name = "spashscreenPreview";
+        this.spashscreenPreview.Size = new System.Drawing.Size(650, 365);
+        this.spashscreenPreview.TabIndex = 0;
+        this.spashscreenPreview.TabStop = false;
+        // 
         // editingInfo
         // 
         this.editingInfo.Controls.Add(this.editorOptionsGroup);
@@ -1974,11 +2075,19 @@
         // 
         // statusStrip1
         // 
+        this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel2});
         this.statusStrip1.Location = new System.Drawing.Point(0, 590);
         this.statusStrip1.Name = "statusStrip1";
         this.statusStrip1.Size = new System.Drawing.Size(784, 22);
         this.statusStrip1.TabIndex = 7;
         this.statusStrip1.Text = "statusStrip1";
+        // 
+        // toolStripStatusLabel2
+        // 
+        this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+        this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
+        this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
         // 
         // toolStripStatusLabel1
         // 
@@ -2108,6 +2217,10 @@
         this.defaultBackgrounds.ResumeLayout(false);
         this.defaultBackgrounds.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+        this.splashscreenSelector.ResumeLayout(false);
+        this.gbSplashDL.ResumeLayout(false);
+        this.gbSplashDL.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).EndInit();
         this.editingInfo.ResumeLayout(false);
         this.editorOptionsGroup.ResumeLayout(false);
         this.editorOptionsGroup.PerformLayout();
@@ -2119,6 +2232,8 @@
         this.aboutBoxGroup.PerformLayout();
         this.groupBox2.ResumeLayout(false);
         this.groupBox2.PerformLayout();
+        this.statusStrip1.ResumeLayout(false);
+        this.statusStrip1.PerformLayout();
         this.groupBox5.ResumeLayout(false);
         this.groupBox5.PerformLayout();
         this.ResumeLayout(false);
@@ -2294,6 +2409,15 @@
     private System.Windows.Forms.Label detectedHD;
     private System.Windows.Forms.Label detectedSD;
     private System.Windows.Forms.LinkLabel useSkinWeatherIcons;
+    private System.Windows.Forms.TabPage splashscreenSelector;
+    private System.Windows.Forms.PictureBox spashscreenPreview;
+    private System.Windows.Forms.Button btSplashNext;
+    private System.Windows.Forms.Button btSplashSelect;
+    private System.Windows.Forms.Button btSplashPrev;
+    private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+    private System.Windows.Forms.GroupBox gbSplashDL;
+    private System.Windows.Forms.LinkLabel splashDownloadLink;
+    private System.Windows.Forms.TextBox textBox1;
   }
 }
 

@@ -198,6 +198,18 @@ namespace StreamedMPEditor
                 weatherBGlink.Text = "Link Background to Current Weather";
                 installWeatherBackgrounds.Visible = false;
             }
+            if (!splashScreensInstalled())
+            {
+                spashscreenPreview.Visible = false;
+                gbSplashDL.Visible = true;
+            }
+            else
+            {
+                spashscreenPreview.Visible = true;
+                gbSplashDL.Visible = false;
+                GetSplashScreens();
+            }
+
         }
     }
 }
