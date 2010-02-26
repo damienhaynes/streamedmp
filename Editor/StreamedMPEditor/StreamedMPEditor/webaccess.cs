@@ -47,6 +47,9 @@ namespace StreamedMPEditor
             downloadForm.Width = 400;
             downloadForm.Height = 120;
             pBar.Width = 350;
+            downloadForm.MaximizeBox = false;
+            downloadForm.MinimizeBox = false;
+            downloadForm.TopMost = true;
             pBar.Location = new System.Drawing.Point(25, 10);
             downloadForm.Controls.Add(pBar);
 

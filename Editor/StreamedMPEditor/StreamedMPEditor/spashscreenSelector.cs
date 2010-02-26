@@ -174,6 +174,9 @@ namespace StreamedMPEditor
             userConfirm.StartPosition = FormStartPosition.CenterScreen;
             userConfirm.Width = 400;
             userConfirm.Height = 120;
+            userConfirm.MaximizeBox = false;
+            userConfirm.MinimizeBox = false;
+            userConfirm.TopMost = true;
 
             btOk.Width = 80;
             btOk.Text = "OK";
@@ -217,9 +220,12 @@ namespace StreamedMPEditor
 
         private void showActiveSplashScreen()
         {
+            if (File.Exists(mpPaths.streamedMPpath + @"media\splashscreen.png"))
+            {
             workingImage = Image.FromFile(mpPaths.streamedMPpath + @"media\splashscreen.png");
             pbActiveSplashScreen.Image = workingImage.GetThumbnailImage(100, 56, null, new IntPtr());
             workingImage.Dispose();
+            }
         }
 
     }
