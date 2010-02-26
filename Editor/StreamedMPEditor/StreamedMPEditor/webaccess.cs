@@ -168,9 +168,12 @@ namespace StreamedMPEditor
             {
                 FastZip fz = new FastZip();
                 fz.ExtractZip(optionDownloadPath, destinationPath, "");
-                System.IO.File.Delete(optionDownloadPath);            }
+                System.IO.File.Delete(optionDownloadPath);            
+            }
+                
             downloadForm.Hide();
             pBar.Value = 0;
+        
             if (!animatedIconsInstalled())
             {
                 WeatherIconsAnimated.Enabled = false;
@@ -183,14 +186,13 @@ namespace StreamedMPEditor
                 WeatherIconsAnimated.Text = "Animated";
                 installAnimatedIcons.Visible = false;
             }
+            
             if (!weatherBackgoundsInstalled())
             {
                 weatherBGlink.Checked = false;
                 weatherBGlink.Enabled = false;
                 weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
-                installWeatherBackgrounds.Visible = true;
-                
-
+                installWeatherBackgrounds.Visible = true;               
             }
             else
             {
@@ -198,7 +200,8 @@ namespace StreamedMPEditor
                 weatherBGlink.Text = "Link Background to Current Weather";
                 installWeatherBackgrounds.Visible = false;
             }
-            if (!splashScreensInstalled())
+
+            if (!IsSplashScreensInstalled)
             {
                 spashscreenPreview.Visible = false;
                 gbSplashDL.Visible = true;

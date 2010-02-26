@@ -2086,8 +2086,7 @@
         // toolStripStatusLabel2
         // 
         this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-        this.toolStripStatusLabel2.Size = new System.Drawing.Size(118, 17);
-        this.toolStripStatusLabel2.Text = "toolStripStatusLabel2";
+        this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
         // 
         // toolStripStatusLabel1
         // 
