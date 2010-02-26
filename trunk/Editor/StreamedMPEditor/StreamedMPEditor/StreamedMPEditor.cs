@@ -39,6 +39,12 @@ namespace StreamedMPEditor
         Button downloadStop = new Button();
 
 
+        Form userConfirm = new Form();
+        Button btOk = new Button();
+        TextBox tbInfo = new TextBox();
+        CheckBox cbShowAgain = new CheckBox();
+
+
         enum errorCode
         {
             info,
@@ -171,6 +177,7 @@ namespace StreamedMPEditor
             {
                 autoPurgeBackups.Checked = true;
             }
+
 
 
 
@@ -823,6 +830,7 @@ namespace StreamedMPEditor
                 item.id = menuItems.IndexOf(item);
             }
         }
+
     }
 }
 

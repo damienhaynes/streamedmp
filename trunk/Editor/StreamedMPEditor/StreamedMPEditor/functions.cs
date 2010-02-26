@@ -1305,6 +1305,22 @@ namespace StreamedMPEditor
         detectedHD.Visible = false;
     }
 
+
+    private void StreamedMPMenu_Click(object sender, EventArgs e)
+    {
+        // Index 5 is the SplashScreen Tab
+        if (StreamedMPMenu.SelectedIndex == 5)
+        {
+            pbActiveSplashScreen.Visible = true;
+            lbActiveSplashScreen.Visible = true;
+        }
+        else
+        {
+            pbActiveSplashScreen.Visible = false;
+            lbActiveSplashScreen.Visible = false;
+        }
+    }
+
     public class getAsmVersion
     {
       #region Private Variables

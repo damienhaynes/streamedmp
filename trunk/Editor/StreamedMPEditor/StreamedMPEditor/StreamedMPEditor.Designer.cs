@@ -205,6 +205,8 @@
         this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
         this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         this.groupBox5 = new System.Windows.Forms.GroupBox();
+        this.lbActiveSplashScreen = new System.Windows.Forms.Label();
+        this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -248,6 +250,7 @@
         this.groupBox2.SuspendLayout();
         this.statusStrip1.SuspendLayout();
         this.groupBox5.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
         this.SuspendLayout();
         // 
         // StreamedMPMenu
@@ -267,6 +270,7 @@
         this.StreamedMPMenu.TabIndex = 0;
         this.StreamedMPMenu.TabStop = false;
         this.StreamedMPMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.StreamedMPMenu_Selected);
+        this.StreamedMPMenu.Click += new System.EventHandler(this.StreamedMPMenu_Click);
         // 
         // menuStyleTab
         // 
@@ -1611,32 +1615,32 @@
         // 
         this.gbSplashDL.Controls.Add(this.textBox1);
         this.gbSplashDL.Controls.Add(this.splashDownloadLink);
-        this.gbSplashDL.Location = new System.Drawing.Point(195, 105);
+        this.gbSplashDL.Location = new System.Drawing.Point(195, 76);
         this.gbSplashDL.Name = "gbSplashDL";
-        this.gbSplashDL.Size = new System.Drawing.Size(349, 127);
+        this.gbSplashDL.Size = new System.Drawing.Size(349, 191);
         this.gbSplashDL.TabIndex = 4;
         this.gbSplashDL.TabStop = false;
-        this.gbSplashDL.Text = "SplashScreen Setup and Download";
+        this.gbSplashDL.Text = "SplashScreen Option Pack Download";
         // 
         // textBox1
         // 
-        this.textBox1.Location = new System.Drawing.Point(70, 28);
+        this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        this.textBox1.Location = new System.Drawing.Point(16, 19);
         this.textBox1.Multiline = true;
         this.textBox1.Name = "textBox1";
-        this.textBox1.Size = new System.Drawing.Size(190, 40);
+        this.textBox1.Size = new System.Drawing.Size(327, 142);
         this.textBox1.TabIndex = 1;
-        this.textBox1.Text = "Alternative SplashScreen option pack is not installed \r\nplease click the link bel" +
-            "ow to install these files. ";
+        this.textBox1.Text = resources.GetString("textBox1.Text");
         // 
         // splashDownloadLink
         // 
         this.splashDownloadLink.AutoSize = true;
-        this.splashDownloadLink.Location = new System.Drawing.Point(68, 71);
+        this.splashDownloadLink.Location = new System.Drawing.Point(52, 164);
         this.splashDownloadLink.Name = "splashDownloadLink";
-        this.splashDownloadLink.Size = new System.Drawing.Size(192, 13);
+        this.splashDownloadLink.Size = new System.Drawing.Size(225, 13);
         this.splashDownloadLink.TabIndex = 0;
         this.splashDownloadLink.TabStop = true;
-        this.splashDownloadLink.Text = "Download SplashScreen Option Pack  ";
+        this.splashDownloadLink.Text = "Download & Install SplashScreen Option Pack  ";
         this.splashDownloadLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.splashDownloadLink_LinkClicked);
         // 
         // btSplashSelect
@@ -2143,6 +2147,8 @@
         // 
         // groupBox5
         // 
+        this.groupBox5.Controls.Add(this.lbActiveSplashScreen);
+        this.groupBox5.Controls.Add(this.pbActiveSplashScreen);
         this.groupBox5.Controls.Add(this.cboClearCache);
         this.groupBox5.Controls.Add(this.generateMenu);
         this.groupBox5.Controls.Add(this.btnClearCache);
@@ -2152,6 +2158,25 @@
         this.groupBox5.TabIndex = 50;
         this.groupBox5.TabStop = false;
         this.groupBox5.Text = "StreamedMP BasicHome Editor";
+        // 
+        // lbActiveSplashScreen
+        // 
+        this.lbActiveSplashScreen.AutoSize = true;
+        this.lbActiveSplashScreen.Location = new System.Drawing.Point(330, 78);
+        this.lbActiveSplashScreen.Name = "lbActiveSplashScreen";
+        this.lbActiveSplashScreen.Size = new System.Drawing.Size(110, 13);
+        this.lbActiveSplashScreen.TabIndex = 5;
+        this.lbActiveSplashScreen.Text = "Current SplashScreen";
+        this.lbActiveSplashScreen.Visible = false;
+        // 
+        // pbActiveSplashScreen
+        // 
+        this.pbActiveSplashScreen.Location = new System.Drawing.Point(335, 17);
+        this.pbActiveSplashScreen.Name = "pbActiveSplashScreen";
+        this.pbActiveSplashScreen.Size = new System.Drawing.Size(100, 56);
+        this.pbActiveSplashScreen.TabIndex = 4;
+        this.pbActiveSplashScreen.TabStop = false;
+        this.pbActiveSplashScreen.Visible = false;
         // 
         // streamedMpEditor
         // 
@@ -2235,6 +2260,7 @@
         this.statusStrip1.PerformLayout();
         this.groupBox5.ResumeLayout(false);
         this.groupBox5.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
         this.ResumeLayout(false);
         this.PerformLayout();
 
@@ -2417,6 +2443,8 @@
     private System.Windows.Forms.GroupBox gbSplashDL;
     private System.Windows.Forms.LinkLabel splashDownloadLink;
     private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.Label lbActiveSplashScreen;
+    private System.Windows.Forms.PictureBox pbActiveSplashScreen;
   }
 }
 
