@@ -28,21 +28,32 @@ namespace StreamedMPEditor
 
         Image workingImage = null;
 
-        private bool splashScreensInstalled()
+
+        private bool IsSplashScreensInstalled
         {
-            if (Directory.Exists(mpPaths.streamedMPpath + "media\\SplashScreens"))
-                return true;
-            else
+            get
+            {
+                if (Directory.Exists(mpPaths.streamedMPpath + "media\\SplashScreens"))
+                {
+                    fileList = getFileListing(mpPaths.streamedMPpath + "media\\splashscreens", "*.*");
+                    numOfImages = fileList.Length;
+                    if (numOfImages > 0) return true;
+                }
                 return false;
+            }
         }
+
 
         private void checkSplashScreens()
         {
-
-            if (!splashScreensInstalled())
+            if (!IsSplashScreensInstalled)
             {
                 spashscreenPreview.Visible = false;
                 gbSplashDL.Visible = true;
+
+                btSplashNext.Enabled = false;
+                btSplashPrev.Enabled = false;
+                btSplashSelect.Enabled = false;
             }
             else
             {
@@ -50,37 +61,37 @@ namespace StreamedMPEditor
                 gbSplashDL.Visible = false;
                 GetSplashScreens();
             }
-
-        }
+        }  
 
 
         private void GetSplashScreens()
         {
+            if (!IsSplashScreensInstalled) return;
+            
             showActiveSplashScreen();
-            fileList = getFileListing(mpPaths.streamedMPpath + "media\\splashscreens", "*.*");
-            numOfImages = fileList.Length;
-
-            // Display current chosen image - Do we really want to do this
-            //foreach (string fileName in fileList)
-            //{
-            //    if (Path.GetFileName(fileName) == splashScreenImage)
-            //    {
-            //        break;
-            //    }
-            //    imagePos++;
-            //}
             displayImage(fileList[imagePos]);
+
+            btSplashNext.Enabled = true;
+            btSplashPrev.Enabled = true;
+            btSplashSelect.Enabled = true; 
+ 
         }
 
         private void displayImage(string imageFile)
         {
-            workingImage = Image.FromFile(imageFile);
-            spashscreenPreview.Image = workingImage.GetThumbnailImage(650, 365, null, new IntPtr());
-            toolStripStatusLabel2.Text = "SpashScreen Image " + (imagePos + 1).ToString() + " of " + numOfImages.ToString() + "   " + "[" + Path.GetFileName(imageFile) + "]";
-        }
+            if (File.Exists(imageFile))
+            {
+                workingImage = Image.FromFile(imageFile);
+                spashscreenPreview.Image = workingImage.GetThumbnailImage(650, 365, null, new IntPtr());
+                toolStripStatusLabel2.Text = "SpashScreen Image " + (imagePos + 1).ToString() + " of " + numOfImages.ToString() + "   " + "[" + Path.GetFileName(imageFile) + "]";
+            }
+        } 
+ 
 
         private void btSplashPrev_Click(object sender, EventArgs e)
         {
+            if (fileList == null || numOfImages == 0) return; 
+
             if (imagePos > 0)
                 imagePos--;
             else
@@ -91,6 +102,8 @@ namespace StreamedMPEditor
 
         private void btSplashNext_Click(object sender, EventArgs e)
         {
+            if (fileList == null || numOfImages == 0) return; 
+
             if ((imagePos + 1) < numOfImages)
                 imagePos++;
             else
@@ -116,7 +129,7 @@ namespace StreamedMPEditor
                 MessageBox.Show(string.Format("Failed to set new splashscreen\n\n{0}", ex.Message), "Splashscreen", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            // Update Image Preview
+            // Save Image filename for later 
             splashScreenImage = Path.GetFileName(fileList[imagePos]);
             showActiveSplashScreen();
             userConfirmation();
@@ -125,16 +138,24 @@ namespace StreamedMPEditor
 
         private void splashDownloadLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP-SplashScreens-V1.0.zip";
-            optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP-SplashScreens-V1.0.zip";
-            destinationPath = mpPaths.skinBasePath;
-            downloadForm.Text = "Download and Install Alternative SplashScreens";
-            pLabel.Text = "Starting Download";
-            thrDownload = new Thread(Download);
-            thrDownload.Start();
-            downloadForm.Show();
-        }
-
+            if (!downloadActive)
+            {
+                optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP-SplashScreens-V1.0.zip";
+                optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP-SplashScreens-V1.0.zip";
+                destinationPath = mpPaths.skinBasePath;
+                downloadForm.Text = "Download and Install Alternative SplashScreens";
+                pLabel.Text = "Starting Download";
+                thrDownload = new Thread(Download);
+                thrDownload.Start();
+                downloadForm.Show();
+            }
+            else
+            {
+                DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+                downloadForm.BringToFront();
+            }
+        } 
+ 
         private void userConfirmation()
         {
 
