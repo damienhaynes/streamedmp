@@ -101,6 +101,7 @@ namespace StreamedMPEditor
         string isSeparatorVer = "1.1.0.0";
         string mpReleaseVersion = "1.0.2.22555";
         string ticker = "#rssticker";
+        string splashScreenImage = null;
 
         string defFocus = "FFFFFF";
         string defUnFocus = "C0C0C0";
@@ -227,6 +228,7 @@ namespace StreamedMPEditor
                 }
 
                 loadMenuSettings();
+                checkSplashScreens();
                 itemsOnMenubar.SelectedIndex = 0;
                 screenReset();
                 setScreenProperties(itemsOnMenubar.SelectedIndex);
