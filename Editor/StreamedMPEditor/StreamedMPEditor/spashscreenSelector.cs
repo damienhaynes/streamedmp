@@ -217,7 +217,7 @@ namespace StreamedMPEditor
 
         private void showActiveSplashScreen()
         {
-            workingImage = Image.FromFile(mpPaths.streamedMPpath + "media//splashscreen.png");
+            workingImage = Image.FromFile(mpPaths.streamedMPpath + @"media\splashscreen.png");
             pbActiveSplashScreen.Image = workingImage.GetThumbnailImage(100, 56, null, new IntPtr());
             workingImage.Dispose();
         }
