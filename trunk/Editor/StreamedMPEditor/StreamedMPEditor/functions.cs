@@ -316,9 +316,10 @@ namespace StreamedMPEditor
         int i = 0;
         bool bFound = false;
         string selectedID = ids[xmlFiles.SelectedIndex];
+        string xmlFileName = xmlFiles.SelectedItem.ToString();
         foreach (prettyItem p in prettyItems)
         {
-          if (p.id == selectedID)
+          if (p.id == selectedID && xmlFileName == p.name)
           {
             // Populate
             QuickSelect(i);
@@ -1116,7 +1117,8 @@ namespace StreamedMPEditor
         }
       }
       Properties.Settings.Default.Save();
-    }
+
+   }
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
     {
@@ -1332,6 +1334,7 @@ namespace StreamedMPEditor
         {
             pbActiveSplashScreen.Visible = false;
             lbActiveSplashScreen.Visible = false;
+            toolStripStatusLabel2.Text = null;
         }
     }
 

@@ -109,7 +109,6 @@ namespace StreamedMPEditor
         private void Download()
         {
             downloadActive = true;
-
             using (WebClient wcDownload = new WebClient())
             {
                 try

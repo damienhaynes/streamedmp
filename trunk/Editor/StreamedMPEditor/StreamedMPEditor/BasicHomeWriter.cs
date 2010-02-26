@@ -883,9 +883,9 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<description>Menu Background</description>");
             rawXML.AppendLine("\t\t\t<type>image</type>");
             rawXML.AppendLine("\t\t\t<id>1</id>");
-            rawXML.AppendLine("\t\t\t<posX>" + (int.Parse(txtMenuPos.Text) - maxXPosition) + "</posX>");
+            rawXML.AppendLine("\t\t\t<posX>0</posX>");
             rawXML.AppendLine("\t\t\t<posY>0</posY>");
-            rawXML.AppendLine("\t\t\t<width>1280</width>");
+            rawXML.AppendLine("\t\t\t<width>" + (1280 + (int.Parse(txtMenuPos.Text) - maxXPosition)).ToString() + "</width>");
             rawXML.AppendLine("\t\t\t<height>720</height>");
             rawXML.AppendLine("\t\t\t<texture>streamed_album_preview_thumb_background.png</texture>");
             rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
