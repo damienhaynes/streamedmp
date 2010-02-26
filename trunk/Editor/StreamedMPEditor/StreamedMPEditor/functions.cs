@@ -500,23 +500,36 @@ namespace StreamedMPEditor
     {
         bool newBG = true;
 
-            foreach (backgroundItem bgitem in bgItems)
+        foreach (backgroundItem bgitem in bgItems)
+        {
+            // if we are sharing the same image folder and background sharing is enabled
+            // update the existing background item
+            if (!menItem.disableBGSharing && !bgitem.disableBGSharing)
             {
+                // check if current item is unique
+                if (!menItem.fanartHandlerEnabled.Equals(bgitem.fanartHandlerEnabled))
+                    continue;
 
-                if (bgitem.folder == menItem.bgFolder && 
-                    bgitem.fanartPropery == menItem.fanartProperty &&
-                    bgitem.disableBGSharing.Equals(menItem.disableBGSharing) && 
-                    bgitem.fanartHandlerEnabled.Equals(menItem.fanartHandlerEnabled))
+                if (menItem.fanartHandlerEnabled)
                 {
-                    bgitem.ids.Add(menItem.id.ToString());
-                    bgitem.mname.Add(menItem.name.ToString());
-                    bgitem.name = bgitem.name + ", " + menItem.name;
-                    newBG = false;
+                    if (bgitem.fanartPropery != menItem.fanartProperty)
+                        continue;
                 }
+                else
+                {
+                    if (bgitem.folder != menItem.bgFolder)
+                        continue;
+                }
+
+                // share background item
+                bgitem.ids.Add(menItem.id.ToString());
+                bgitem.mname.Add(menItem.name.ToString());
+                bgitem.name = bgitem.name + ", " + menItem.name;
+                newBG = false;
             }
+        }
 
-
-
+        // create a new background item
         if (newBG == true)
         {
             backgroundItem newbgItem = new backgroundItem();
@@ -533,6 +546,7 @@ namespace StreamedMPEditor
             bgItems.Add(newbgItem);
         }
     }
+
 
     private void setBasicHomeValues()
     {
