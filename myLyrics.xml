@@ -168,7 +168,7 @@
                      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
                      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
                      <spinWidth>50</spinWidth>
-                     <spinHeight>37</spinHeight>
+                     <spinHeight>37</spinHeight>					 
               </control>
               <control>
                      <type>textboxscrollup</type>
@@ -391,6 +391,7 @@
                      <posX>930</posX>
                      <posY>502</posY>
                      <width>300</width>
+					 <label>#percentage</label>
                      <visible>player.hasmedia+!string.equals(#duration,)</visible>
                      <animation effect="fade" time="250">WindowOpen</animation>
                      <animation effect="fade" time="250">WindowClose</animation>
