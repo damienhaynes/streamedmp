@@ -579,6 +579,8 @@ namespace StreamedMPEditor
 
         private void setScreenProperties(int index)
         {
+            if (index < 0) return;
+
             menuItem mnuItem = menuItems[index];
 
             setXMLFilesIndex(mnuItem.hyperlink);
