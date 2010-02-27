@@ -429,7 +429,7 @@ namespace StreamedMPEditor
         string sourceImgFile = getFileListing(imageDir, "*.*")[0];
         System.IO.File.Copy(sourceImgFile, imageDir + "default.jpg", true);
         // Delete the Source file
-        System.IO.File.Delete(sourceImgFile);
+        // System.IO.File.Delete(sourceImgFile);
     }
 
     private string imageDir(string image)
