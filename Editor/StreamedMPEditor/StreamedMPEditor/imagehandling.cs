@@ -24,13 +24,16 @@ namespace StreamedMPEditor
 
     private void GetDefaultBackgroundImages()
     {
-
       Image workingImage = null;
       Label[] bgLabels = new Label[bgItems.Count];
       Label[] bgCount = new Label[bgItems.Count];
       Button[] bgButtons = new Button[bgItems.Count];
-      ToolTip labelsToolTip; 
-      
+      ToolTip labelsToolTip;
+
+
+      for (int i = 0; i < 24; i++)
+          defImgs.picBoxes[i] = null;
+
       defImgs.count = bgItems.Count;
       selectPanel.Visible = false;
       pBoxElement = 0;
@@ -78,9 +81,10 @@ namespace StreamedMPEditor
 
         workingImage = Image.FromFile(imageDir(bgItem.image));
         newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+        workingImage.Dispose();
+
         defImgs.picBoxes[pBoxElement] = newPBox;
         defaultBackgrounds.Controls.Add(defImgs.picBoxes[pBoxElement]);
-        workingImage.Dispose();
 
         //Create the label
         newBGlabel.Size = new Size(90, 15);
@@ -143,58 +147,76 @@ namespace StreamedMPEditor
         }
       }
 
-      // Create Panel
+      
+        // Configure the Panel
       selectPanel.Size = new Size(756, 120);
       selectPanel.Location = new Point(12, 101);
       selectPanel.BackColor = Color.White;
       selectPanel.BorderStyle = BorderStyle.FixedSingle;
-      this.Controls.Add(selectPanel);
 
-      //Create 3 PictureBox Controls
+
+      //Configure the 3 PictureBox Controls
       xPos = 70;
       yPos = 5;
       for (int i = 0;i < 3; i++)
       {
-        PictureBox pBox = new PictureBox();
-        pBox.Size = new Size(160, 80);
-        pBox.Location = new Point(xPos, yPos);
-        pBox.Name = "pBox" + i.ToString();
-        pBox.Tag = i.ToString();
-        pBox.BorderStyle = BorderStyle.Fixed3D;
-        pBox.Cursor = Cursors.Hand;
-        pBox.Click += new System.EventHandler(pBox_Click);
-        defImgs.NewPicBoxes[i] = pBox;
-        selectPanel.Controls.Add(defImgs.NewPicBoxes[i]);
+        defImgs.NewPicBoxes[i].Size = new Size(160, 80);
+        defImgs.NewPicBoxes[i].Location = new Point(xPos, yPos);
+        defImgs.NewPicBoxes[i].Name = "pBox" + i.ToString();
+        defImgs.NewPicBoxes[i].Tag = i.ToString();
+        defImgs.NewPicBoxes[i].BorderStyle = BorderStyle.Fixed3D;
+        defImgs.NewPicBoxes[i].Cursor = Cursors.Hand;
         xPos += 230;
       }
 
-      //add the next and previous buttons
+      //Configure next and previous buttons
       nextBatch.Enabled = false;
       nextBatch.Location = new Point(500, 90);
       nextBatch.Size = new Size(60, 20);
       nextBatch.Text = "Next";
       nextBatch.UseVisualStyleBackColor = true;
-      nextBatch.Click += new System.EventHandler(nextButton_Click);
-      selectPanel.Controls.Add(nextBatch);
 
       prevBatch.Enabled = false;
       prevBatch.Location = new Point(200, 90);
       prevBatch.Size = new Size(60, 20);
       prevBatch.UseVisualStyleBackColor = true;
       prevBatch.Text = "Previous";
-      prevBatch.Click += new System.EventHandler(prevButton_Click);
       if (totalImages > 3)
         prevBatch.Enabled = true;
-      selectPanel.Controls.Add(prevBatch);
   
       imgCancel.Location = new Point(350, 90);
       imgCancel.Size = new Size(60, 20);
       imgCancel.UseVisualStyleBackColor = true;
       imgCancel.Text = "Cancel";
-      imgCancel.Click += new System.EventHandler(imgCancel_Click);
-      selectPanel.Controls.Add(imgCancel);
 
       selectPanel.BringToFront();
+    }
+
+    private void inialiseImgControls()
+    {
+        // Initilise the various img controls - only needs to be done once
+
+        // Create Panel - add to the main form
+        this.Controls.Add(selectPanel);
+
+        // Create the 3 picture box controls and add to the select panel
+        for (int i = 0; i < 3; i++)
+        {
+            PictureBox pBox = new PictureBox();
+            pBox.Click += new System.EventHandler(pBox_Click);
+            defImgs.NewPicBoxes[i] = pBox;
+            selectPanel.Controls.Add(defImgs.NewPicBoxes[i]);
+        }
+
+        // Create and add the next and previous buttons to the select panel
+        nextBatch.Click += new System.EventHandler(nextButton_Click);
+        selectPanel.Controls.Add(nextBatch);
+
+        prevBatch.Click += new System.EventHandler(prevButton_Click);
+        selectPanel.Controls.Add(prevBatch);
+
+        imgCancel.Click += new System.EventHandler(imgCancel_Click);
+        selectPanel.Controls.Add(imgCancel);
     }
 
     private void imgCancel_Click(object sender, EventArgs e)
@@ -261,16 +283,21 @@ namespace StreamedMPEditor
         // Set the default pic for chosen background image and clean up/reset
         string fromFile = defImgs.newDefault[int.Parse(tag)];
         string defaultFile = defImgs.activeDir + "\\default.jpg";
-        workingImage.Dispose();
         if (fromFile != defaultFile)
         {
-            string saveFile = defImgs.activeDir + "\\default2.jpg";
             string tempFile = defImgs.activeDir + "\\temp.jpg";
             imageReset(true);
             File.Copy(defaultFile, tempFile, true);
+            File.Delete(defaultFile);
+
             File.Copy(fromFile, defaultFile, true);
+            File.Delete(fromFile);
+
             File.Copy(tempFile, fromFile, true);
             File.Delete(tempFile);
+
+
+
         }
         else
             imageReset(true);
@@ -305,7 +332,8 @@ namespace StreamedMPEditor
       {
         if (bgItem.mname[0] == ctrlName)
         {
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
+            string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
+            
           for (int i = 0; i < 3; i++)
           {
             if (imagePointer < fileList.Length)
@@ -314,6 +342,7 @@ namespace StreamedMPEditor
               defImgs.newDefault[i] = fileList[imagePointer];
               defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
               defImgs.NewPicBoxes[i].Visible = true;
+              workingImage.Dispose();
 
             }
             else
@@ -349,19 +378,20 @@ namespace StreamedMPEditor
 
       foreach (backgroundItem bgItem in bgItems)
       {
-        if (bgItem.mname[0] == ctrlName)
-        {
-          string[] fileList = getFileListing(imageDir(bgItem.image.Substring(0, (bgItem.image.Length - 11))),"*.*");
-          for (int i = 0; i < 3; i++)
+          if (bgItem.mname[0] == ctrlName)
           {
-            defImgs.NewPicBoxes[i].Visible = true;
-            nextBatch.Enabled = true;
-            workingImage = Image.FromFile(fileList[imagePointer]);
-            defImgs.newDefault[i] = fileList[imagePointer];
-            defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
-            imagePointer++;
+              string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
+              for (int i = 0; i < 3; i++)
+              {
+                  defImgs.NewPicBoxes[i].Visible = true;
+                  nextBatch.Enabled = true;
+                  workingImage = Image.FromFile(fileList[imagePointer]);
+                  defImgs.newDefault[i] = fileList[imagePointer];
+                  defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+                  workingImage.Dispose();
+                  imagePointer++;
+              }
           }
-        }
       }
       if (imagePointer <= 3)
         prevBatch.Enabled = false;

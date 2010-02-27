@@ -162,6 +162,7 @@ namespace StreamedMPEditor
             }
 ;
             buildDownloadForm();
+            inialiseImgControls();
 
             releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
             DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
@@ -431,7 +432,6 @@ namespace StreamedMPEditor
                 menuItems.Add(item);
                 itemsOnMenubar.Items.Add(item.name);
                 reloadBackgroundItems();
-                GetDefaultBackgroundImages();
                 itemName.Text = "";
                 bgBox.Text = "";
 
@@ -539,6 +539,7 @@ namespace StreamedMPEditor
                 screenReset();
                 disableItemControls();
                 cancelCreateButton.Visible = false;
+
             }
         }
 
