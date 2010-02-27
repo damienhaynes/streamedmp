@@ -410,21 +410,7 @@ namespace StreamedMPEditor
                 item.isWeather = isWeather.Checked;
                 item.disableBGSharing = disableBGSharing.Checked;
 
-                // Set default image....
-                if (!item.bgFolder.Contains("\\"))
-                    item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
-                else
-                    item.defaultImage = item.bgFolder + "\\default.jpg";
-                // And check if it exists and create if not.
-
-                string filetotest = imageDir(item.defaultImage);
-                if (!System.IO.File.Exists(filetotest))
-                {
-
-                    string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*");
-                    createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
-
-                }
+                checkAndSetDefultImage(item);
 
                 if (item.fanartHandlerEnabled)
                     checkAndSetRandomFanart(item.fanartProperty);
@@ -508,28 +494,11 @@ namespace StreamedMPEditor
                 item.disableBGSharing = disableBGSharing.Checked;
                 item.isWeather = isWeather.Checked;
 
-
-
-
                 if (item.fanartHandlerEnabled)
                     checkAndSetRandomFanart(item.fanartProperty);
                 else
                 {
-                    // Set default image....
-                    if (!item.bgFolder.Contains("\\"))
-                        item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
-                    else
-                        item.defaultImage = item.bgFolder + "\\default.jpg";
-                    // And check if it exists and create if not.
-
-                    string filetotest = imageDir(item.defaultImage);
-                    if (!System.IO.File.Exists(filetotest))
-                    {
-
-                        string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage),"*.*");
-                        createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
-
-                    }
+                    checkAndSetDefultImage(item);
                 }
 
                 
