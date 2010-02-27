@@ -740,6 +740,7 @@ namespace StreamedMPEditor
     private void removeButton_Click(object sender, EventArgs e)
     {
       removeToolStripMenuItem_Click(sender, e);
+      reloadBackgroundItems();
     }
 
     private void removeToolStripMenuItem_Click(object sender, EventArgs e)

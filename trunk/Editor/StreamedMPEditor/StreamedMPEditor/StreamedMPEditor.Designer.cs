@@ -593,13 +593,13 @@
         this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
         this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.richTextBox2.Location = new System.Drawing.Point(3, 357);
+        this.richTextBox2.Location = new System.Drawing.Point(3, 356);
         this.richTextBox2.Name = "richTextBox2";
-        this.richTextBox2.Size = new System.Drawing.Size(197, 56);
+        this.richTextBox2.Size = new System.Drawing.Size(197, 60);
         this.richTextBox2.TabIndex = 122;
         this.richTextBox2.TabStop = false;
-        this.richTextBox2.Text = "To create new menu item\n  1. Select Menu Item from Dropdown.\n  2. Select Skin fil" +
-            "e from List.";
+        this.richTextBox2.Text = "           To create new menu item\n  1. Select Menu Item from Dropdown.\n         " +
+            "                  OR\n  2. Select Skin file from List.";
         // 
         // groupBox3
         // 
