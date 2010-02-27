@@ -1347,6 +1347,23 @@ namespace StreamedMPEditor
         }
     }
 
+    private void checkAndSetDefultImage(menuItem item)
+    {                    
+        // Set default image....
+        if (!item.bgFolder.Contains("\\"))
+            item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
+        else
+            item.defaultImage = item.bgFolder + "\\default.jpg";
+        // And check if it exists and create if not.
+
+        string filetotest = imageDir(item.defaultImage);
+        if (!System.IO.File.Exists(filetotest))
+        {
+            string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*");
+            createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
+        }
+    }
+
     public class getAsmVersion
     {
       #region Private Variables

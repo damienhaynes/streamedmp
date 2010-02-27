@@ -68,14 +68,16 @@ namespace StreamedMPEditor
         // Create Picturebox Control and create/load thumbnail
         newPBox.Size = new Size(160, 80);
         newPBox.Location = new Point(xPos, yPos);
+
         if (!System.IO.File.Exists((imageDir(bgItem.image))))
         {
-
           string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
           createDefaultJpg(Path.GetDirectoryName(imageDir(bgItem.image)));
         }
 
         totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
+        if (totalImages > 1)
+            totalImages--;
         string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
         mpPaths.fanartBasePath = dirParent;
 
@@ -252,6 +254,7 @@ namespace StreamedMPEditor
             defImgs.NewPicBoxes[imagePointer].Visible = true;
             defImgs.newDefault[imagePointer] = fileList[imagePointer];
             defImgs.NewPicBoxes[imagePointer].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+            defImgs.NewPicBoxes[imagePointer].Name = bgItem.name;
             workingImage.Dispose();
           }
         }
@@ -283,25 +286,39 @@ namespace StreamedMPEditor
         // Set the default pic for chosen background image and clean up/reset
         string fromFile = defImgs.newDefault[int.Parse(tag)];
         string defaultFile = defImgs.activeDir + "\\default.jpg";
+        string bGround = defImgs.NewPicBoxes[int.Parse(tag)].Name;
         if (fromFile != defaultFile)
         {
-            string tempFile = defImgs.activeDir + "\\temp.jpg";
             imageReset(true);
-            File.Copy(defaultFile, tempFile, true);
-            File.Delete(defaultFile);
+            //File.Delete(defaultFile);
+            //File.Copy(fromFile, defaultFile, true);
+            int i = 0;
+            foreach (menuItem menItem in menuItems)
+            {
+                if (bGround.Contains(menItem.name))
+                {
 
-            File.Copy(fromFile, defaultFile, true);
-            File.Delete(fromFile);
-
-            File.Copy(tempFile, fromFile, true);
-            File.Delete(tempFile);
-
-
+                    if (menuItems[i].disableBGSharing)
+                    {
+                        // This is a stand alone menu so set the image for this item to what has been selected
+                        menuItems[i].defaultImage = "animations\\" + menuItems[i].bgFolder + "\\" + Path.GetFileName(fromFile);
+                        break;
+                    }
+                    else
+                    {
+                        // This is a shared or possible shared background so we need to set the default image selected
+                        File.Delete(defaultFile);
+                        File.Copy(fromFile, defaultFile, true);
+                    }
+                }
+                i++;
+            }
+            reloadBackgroundItems();
 
         }
         else
             imageReset(true);
-    }
+        }
 
     private void imageReset(bool fullReset)
     {
@@ -399,13 +416,20 @@ namespace StreamedMPEditor
 
     private void createDefaultJpg(string imageDir)
     {
+        // Check if there is defult.jog already and exit if there is
+        if (System.IO.File.Exists(imageDir + "default.jpg"))
+            return;
+        
         // Check if there is a trailing backslash
         if (!imageDir.EndsWith(@"\"))
         {
             imageDir += @"\";
         }
-      // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
-      System.IO.File.Copy(getFileListing(imageDir,"*.*")[0], imageDir + "default.jpg",true);
+        // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
+        string sourceImgFile = getFileListing(imageDir, "*.*")[0];
+        System.IO.File.Copy(sourceImgFile, imageDir + "default.jpg", true);
+        // Delete the Source file
+        System.IO.File.Delete(sourceImgFile);
     }
 
     private string imageDir(string image)
@@ -427,8 +451,11 @@ namespace StreamedMPEditor
       foreach (FileInfo fInfo in dInfo.GetFiles(fileMask))
       {
         fcompare = fInfo.Name.ToLower();
-        fileResults.Add(fInfo.FullName);
-        totalImages++;
+        if (fcompare != "default.jpg")
+        {
+            fileResults.Add(fInfo.FullName);
+            totalImages++;
+        }
       }
       return fileResults.ToArray();
     }
