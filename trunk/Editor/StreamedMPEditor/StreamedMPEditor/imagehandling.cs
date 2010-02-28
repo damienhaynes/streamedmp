@@ -9,6 +9,9 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Threading;
+using System.Drawing.Imaging;
+using System.Security.Cryptography;
+
 
 namespace StreamedMPEditor
 {
@@ -76,8 +79,8 @@ namespace StreamedMPEditor
         }
 
         totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
-        if (totalImages > 1)
-            totalImages--;
+        //if (totalImages > 1)
+        //    totalImages--;
         string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
         mpPaths.fanartBasePath = dirParent;
 
@@ -286,6 +289,7 @@ namespace StreamedMPEditor
         // Set the default pic for chosen background image and clean up/reset
         string fromFile = defImgs.newDefault[int.Parse(tag)];
         string defaultFile = defImgs.activeDir + "\\default.jpg";
+        string defaultBackup = defImgs.activeDir + "\\default-backup.jpg"; 
         string bGround = defImgs.NewPicBoxes[int.Parse(tag)].Name;
         if (fromFile != defaultFile)
         {
@@ -307,8 +311,17 @@ namespace StreamedMPEditor
                     else
                     {
                         // This is a shared or possible shared background so we need to set the default image selected
-                        File.Delete(defaultFile);
+
+                        if (defaultIsCopy(defaultFile))
+                            File.Delete(defaultFile);
+                        else
+                        {
+                            File.Copy(defaultFile, defaultBackup);
+                            File.Delete(defaultFile);
+                        }
+
                         File.Copy(fromFile, defaultFile, true);
+                        break;
                     }
                 }
                 i++;
@@ -319,6 +332,34 @@ namespace StreamedMPEditor
         else
             imageReset(true);
         }
+
+
+    private bool defaultIsCopy(string fileToCheck)
+    {
+        Bitmap defBmp = new Bitmap(fileToCheck);
+        FileInfo fDefInfo = new FileInfo(fileToCheck);
+        string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(fileToCheck)), "*.*");
+
+        foreach (string fileName in fileList)
+        {
+            // First check if the files size is the same, if not then 
+            // dont need to compare the file contents and can skip to the next file.
+            FileInfo fInfo = new FileInfo(fileName);
+            if (fDefInfo.Length != fInfo.Length)
+                continue;
+
+            // File sizes are the same, check the contents
+            Bitmap bmp2 = new Bitmap(fileName);
+            if (compareImages(defBmp, bmp2) == CompareResult.ciCompareOk)
+            {
+                defBmp.Dispose();
+                return true;
+            }
+        }
+        defBmp.Dispose();
+        return false;
+    }
+
 
     private void imageReset(bool fullReset)
     {
@@ -458,6 +499,43 @@ namespace StreamedMPEditor
         }
       }
       return fileResults.ToArray();
+    }
+
+
+
+    private CompareResult compareImages(Bitmap bmp1, Bitmap bmp2)
+    {
+        CompareResult cr = CompareResult.ciCompareOk;
+
+        //Test to see if we have the same size of image
+        if (bmp1.Size != bmp2.Size)
+        {
+            cr = CompareResult.ciSizeMismatch;
+        }
+        else
+        {
+            //Convert each image to a byte array
+            System.Drawing.ImageConverter ic =
+                   new System.Drawing.ImageConverter();
+            byte[] btImage1 = new byte[1];
+            btImage1 = (byte[])ic.ConvertTo(bmp1, btImage1.GetType());
+            byte[] btImage2 = new byte[1];
+            btImage2 = (byte[])ic.ConvertTo(bmp2, btImage2.GetType());
+
+            //Compute a hash for each image
+            SHA256Managed shaM = new SHA256Managed();
+            byte[] hash1 = shaM.ComputeHash(btImage1);
+            byte[] hash2 = shaM.ComputeHash(btImage2);
+
+            //Compare the hash values
+            for (int i = 0; i < hash1.Length && i < hash2.Length
+                              && cr == CompareResult.ciCompareOk; i++)
+            {
+                if (hash1[i] != hash2[i])
+                    cr = CompareResult.ciPixelMismatch;
+            }
+        }
+        return cr;
     }
   }
 }

@@ -14,7 +14,7 @@ namespace StreamedMPEditor
 {
     public partial class streamedMpEditor : Form
     {
-        #region Declares
+        #region Declares and Enums
 
         editorPaths mpPaths = new editorPaths();
         editorValues basicHomeValues = new editorValues();
@@ -90,7 +90,14 @@ namespace StreamedMPEditor
         {
             res1280x720,
             res1920x1080
-        };     
+        };
+
+        public enum CompareResult
+        {
+            ciCompareOk,
+            ciPixelMismatch,
+            ciSizeMismatch
+        };
 
         const string quote = "\"";
 
@@ -130,7 +137,7 @@ namespace StreamedMPEditor
         screenResolutionType screenres = screenResolutionType.res1280x720;
         screenResolutionType detectedres = screenResolutionType.res1280x720;
 
-        #endregion Declares
+        #endregion Declares and Enums
 
         public streamedMpEditor()
         {
@@ -160,7 +167,7 @@ namespace StreamedMPEditor
                 detectedres = screenResolutionType.res1280x720;
                 setSDScreenRes();
             }
-;
+
             buildDownloadForm();
             inialiseImgControls();
 
@@ -193,6 +200,15 @@ namespace StreamedMPEditor
             GetMediaPortalSkinPath();
             readFonts();
             getBackupFileTotals();
+            if (!basicHomeEnabled())
+            {
+                DialogResult result = showError("MediaPortal is not configured to start with BasicHome\n\nTo use the file produced by this editor please configure MediaPortal to use BasicHome\n\nDo you want to edit the menu anyway?", errorCode.infoQuestion);
+
+                if (result == DialogResult.No)
+                {
+                    this.Close();
+                }
+            }
             if (!System.IO.File.Exists(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
                 useSkinWeatherIcons.Text = "Replace Standard Weather Icons with Skin Supplied Versions";
             else
