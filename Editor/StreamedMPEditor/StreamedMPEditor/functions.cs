@@ -61,7 +61,7 @@ namespace StreamedMPEditor
      }
 
       // Display some Info
-      infoSkinName.Text = configuredSkin("name") + " (" + getStreamedMPVer() + ")";
+      infoSkinName.Text = configuredSkin + " (" + getStreamedMPVer() + ")";
       infoSkinpath.Text = mpPaths.streamedMPpath;
       infoInstallPath.Text = mpPaths.sMPbaseDir + "  (Version: " + getMediaPortalVersion() + ")";
       infoConfigpath.Text = mpPaths.configBasePath;
@@ -160,7 +160,7 @@ namespace StreamedMPEditor
           }
         }
       }
-      mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin("name") + "\\";
+      mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin + "\\";
     }
 
     private string GetMediaPortalDir(string path)
@@ -231,77 +231,68 @@ namespace StreamedMPEditor
       return false;
     }
 
-    private string configuredSkin(string elementName)
+    private string configuredSkin
     {
-      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      string entryValue;
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
-      {
-        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
-        return "Error";
-      }
-
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-
-      foreach (XmlNode node in nodeList)
-      {
-
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-
-        // get the currently configured Skin name
-        if (innerNode.InnerText == "skin")
+        get
         {
-
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
-          if (path != null)
-          {
-            entryValue = path.InnerText;
-            return entryValue;
-
-          }
+            return readMPConfiguration("skin", "name");
         }
-      }
-      return null;
     }
 
-    private bool basicHomeEnabled()
+    private string readMPConfiguration(string sectionName, string entryName)
     {
         string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
         XmlDocument doc = new XmlDocument();
         if (!File.Exists(fMPdirs))
         {
             showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
-            return false;
+            return null;
         }
-
         doc.Load(fMPdirs);
         XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-
         foreach (XmlNode node in nodeList)
         {
 
             XmlNode innerNode = node.Attributes.GetNamedItem("name");
-
-            // get the currently configured Skin name
-            if (innerNode.InnerText == "general")
+            if (innerNode.InnerText == sectionName)
             {
-
-                XmlNode path = node.SelectSingleNode("entry[@name=\"startbasichome\"]");
+                XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
                 if (path != null)
                 {
-                    if (path.InnerText.ToLower() == "yes")
-                        return true;
-                    else
-                        return false;
+                    entryName = path.InnerText;
+                    return entryName;
                 }
             }
         }
-        return false;
+        return null;
     }
 
+    private void writeMPConfiguration(string sectionName, string entryName,string entryValue)
+    {
+        string xmlFileName = mpPaths.configBasePath + "MediaPortal.xml";
+        XmlDocument doc = new XmlDocument();
+        if (!File.Exists(xmlFileName))
+        {
+            showError("Can't find MediaPortal.xml \r\r" + xmlFileName, errorCode.major);
+        }
+        doc.Load(xmlFileName);
+        XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+        foreach (XmlNode node in nodeList)
+        {
 
+            XmlNode innerNode = node.Attributes.GetNamedItem("name");
+            if (innerNode.InnerText == sectionName)
+            {
+                XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
+                if (path != null)
+                {
+                    path.InnerText = entryValue;
+                }
+            }
+        }
+        doc.Save(xmlFileName);
+
+    }
 
     private void GetMediaPortalPath(ref editorPaths mpPaths)
     {
@@ -851,7 +842,7 @@ namespace StreamedMPEditor
 
     private void btnClearCache_Click(object sender, EventArgs e)
     {
-      DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin("name") + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
+      DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
       if (result == DialogResult.No)
       {
         return;
@@ -863,7 +854,7 @@ namespace StreamedMPEditor
     {
       try
       {
-        System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin("name"), true);
+        System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin, true);
         //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
       catch
