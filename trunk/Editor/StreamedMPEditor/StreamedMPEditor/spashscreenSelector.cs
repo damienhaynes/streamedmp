@@ -83,6 +83,7 @@ namespace StreamedMPEditor
             {
                 workingImage = Image.FromFile(imageFile);
                 spashscreenPreview.Image = workingImage.GetThumbnailImage(650, 365, null, new IntPtr());
+                workingImage.Dispose();
                 toolStripStatusLabel2.Text = "SpashScreen Image " + (imagePos + 1).ToString() + " of " + numOfImages.ToString() + "   " + "[" + Path.GetFileName(imageFile) + "]";
             }
         } 
