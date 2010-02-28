@@ -266,6 +266,43 @@ namespace StreamedMPEditor
       return null;
     }
 
+    private bool basicHomeEnabled()
+    {
+        string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
+        XmlDocument doc = new XmlDocument();
+        if (!File.Exists(fMPdirs))
+        {
+            showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
+            return false;
+        }
+
+        doc.Load(fMPdirs);
+        XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+
+        foreach (XmlNode node in nodeList)
+        {
+
+            XmlNode innerNode = node.Attributes.GetNamedItem("name");
+
+            // get the currently configured Skin name
+            if (innerNode.InnerText == "general")
+            {
+
+                XmlNode path = node.SelectSingleNode("entry[@name=\"startbasichome\"]");
+                if (path != null)
+                {
+                    if (path.InnerText.ToLower() == "yes")
+                        return true;
+                    else
+                        return false;
+                }
+            }
+        }
+        return false;
+    }
+
+
+
     private void GetMediaPortalPath(ref editorPaths mpPaths)
     {
       string sRegRoot = "SOFTWARE";
