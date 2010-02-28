@@ -879,8 +879,6 @@ namespace StreamedMPEditor
         {
             StringBuilder rawXML = new StringBuilder();
             const string quote = "\"";
-            int pCent = 0;
-
             rawXML.AppendLine("\t\t<control>");
             rawXML.AppendLine("\t\t\t<description>Menu Background</description>");
             rawXML.AppendLine("\t\t\t<type>image</type>");
