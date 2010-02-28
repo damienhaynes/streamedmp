@@ -895,9 +895,9 @@ namespace StreamedMPEditor
             }
             else
             {
-                rawXML.AppendLine("\t\t\t<posX>-40</posX>");
+                rawXML.AppendLine("\t\t\t<posX>0</posX>");
                 rawXML.AppendLine("\t\t\t<posY>0</posY>");
-                rawXML.AppendLine("\t\t\t<width>1320</width>");
+                rawXML.AppendLine("\t\t\t<width>1280</width>");
             }
             rawXML.AppendLine("\t\t\t<height>720</height>");
             rawXML.AppendLine("\t\t\t<texture>streamed_album_preview_thumb_background.png</texture>");

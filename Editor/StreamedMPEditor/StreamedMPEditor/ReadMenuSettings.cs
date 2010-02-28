@@ -304,6 +304,10 @@ namespace StreamedMPEditor
                 // If user decides not to use multiimage backgrounds then we need a default image, lets check and set if one is required
                 defaultImage = readEntryValue(menuTag, "menuitem" + i.ToString() + "defaultimage", nodelist);
 
+                // Check if the stored image still exists, if nor set to default.jpg
+                if (!System.IO.File.Exists((imageDir(defaultImage))))
+                    defaultImage = "animations\\" + mnuItem.bgFolder + "\\default.jpg";
+
                 if (defaultImage.StartsWith("animations"))
                     mnuItem.defaultImage = defaultImage;
                 else
