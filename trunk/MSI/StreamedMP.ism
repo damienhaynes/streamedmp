@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -362,6 +361,9 @@
 		<row><td>fontsXMLDefault</td><td>{974BA809-5A8A-4E4B-BAC0-13CE7971D9D2}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsXMLLarge</td><td>{5E47442D-BFB5-434B-B252-22E6750CAFEA}</td><td>STREAMEDMP</td><td>0</td><td/><td>fonts.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>hiddenMenuImage</td><td>{74FEF926-CA4D-4525-AE2D-F5FB4CD728DA}</td><td>MEDIA1</td><td>0</td><td/><td>action_menu.png</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesInfoService</td><td>{9F87BCB4-6FF3-4E89-BF9C-77BC71D447D6}</td><td>INFOSERVICE</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesMovingPictures</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesTVSeries</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libGoogleTranslate</td><td>{068938CB-5716-445B-BD0B-FB32B9D24984}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td>{1DBD701C-580A-4DF9-A891-8BBBE5E173BC}</td><td>MPBINDIR</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libLyricsEngine</td><td>{1E4B56F5-8F05-4AB2-8B60-29598AE215DD}</td><td>MPBINDIR</td><td>8</td><td/><td>lyricsengine.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -383,11 +385,9 @@
 		<row><td>pluginGlobalMusicSearchDLL</td><td>{6DF4CB2A-2130-45F7-9B50-D13E88355031}</td><td>WINDOWS1</td><td>8</td><td/><td>guiglobalsearch.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginInfoServiceDLL</td><td>{7EE11828-B057-428A-A24B-3DFF8D21ED24}</td><td>WINDOWS1</td><td>8</td><td/><td>infoservice.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMovingPicturesDLL</td><td>{A3739C2D-3ADA-4751-ACD2-A7B1B7AFAB28}</td><td>WINDOWS1</td><td>8</td><td/><td>movingpictures.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginMovingPicturesLanguages</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyLyricsDLL</td><td>{3225823B-6960-4E52-A9DA-FE9BBD426E11}</td><td>WINDOWS1</td><td>8</td><td/><td>mylyrics.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyTrailersDLL</td><td>{2B3B7BCE-0D8E-4840-ABF6-FC3BEADC9BAA}</td><td>WINDOWS1</td><td>8</td><td/><td>mytrailers.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginTVSeriesLanguages</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -702,13 +702,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -765,6 +761,7 @@
 		<row><td>FavoritesFolder</td><td>TARGETDIR</td><td>.:FAVORI~1|Favorites</td><td/><td>0</td><td/></row>
 		<row><td>FontsFolder</td><td>TARGETDIR</td><td>.:Fonts</td><td/><td>0</td><td/></row>
 		<row><td>GlobalAssemblyCache</td><td>TARGETDIR</td><td>.:Global~1|GlobalAssemblyCache</td><td/><td>0</td><td/></row>
+		<row><td>INFOSERVICE</td><td>MPLANGUAGESDIR</td><td>INFOSE~1|InfoService</td><td/><td>0</td><td/></row>
 		<row><td>INSTALLDIR</td><td>SKIN</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
@@ -1566,6 +1563,7 @@
 		<row><td>FanartHandler</td><td>FanartHandlerConfig</td></row>
 		<row><td>FanartHandler</td><td>pluginFanartHandlerDLL</td></row>
 		<row><td>GlobalMusicSearch</td><td>pluginGlobalMusicSearchDLL</td></row>
+		<row><td>InfoService</td><td>languagesInfoService</td></row>
 		<row><td>InfoService</td><td>libWebBrowserDependencies</td></row>
 		<row><td>InfoService</td><td>pluginInfoServiceDLL</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
@@ -1582,19 +1580,19 @@
 		<row><td>Main</td><td>webWiki</td></row>
 		<row><td>MenuEditor</td><td>menuEditor</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
+		<row><td>MovingPictures</td><td>languagesMovingPictures</td></row>
 		<row><td>MovingPictures</td><td>libMediaInfo</td></row>
 		<row><td>MovingPictures</td><td>libNLog</td></row>
 		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
-		<row><td>MovingPictures</td><td>pluginMovingPicturesLanguages</td></row>
 		<row><td>MyLyrics</td><td>libGoogleTranslate</td></row>
 		<row><td>MyLyrics</td><td>libLyricsEngine</td></row>
 		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
 		<row><td>MyTrailers</td><td>pluginMyTrailersDLL</td></row>
+		<row><td>TVSeries</td><td>languagesTVSeries</td></row>
 		<row><td>TVSeries</td><td>libICSharpCodeSharpZipLib</td></row>
 		<row><td>TVSeries</td><td>libMediaInfo</td></row>
 		<row><td>TVSeries</td><td>libSubtitleDownloader</td></row>
 		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
-		<row><td>TVSeries</td><td>pluginTVSeriesLanguages</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
 		<row><td>defaultMovingPictures</td><td>defaultMovingPictures</td></row>
@@ -2061,6 +2059,9 @@
 		<row><td>fontsXMLDefault</td><td/><td/><td>_7F0D04B9_7618_45FC_BD56_15428CB35F14_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsXMLLarge</td><td/><td/><td>_3C065494_D8A3_4950_9AD2_9DAC9A1D522C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>hiddenMenuImage</td><td/><td/><td>_FC5131B6_54D6_45AF_ADA4_C494F55D764E_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesInfoService</td><td/><td/><td>_1018D5F5_478E_44D4_BD89_C3A6E3F5147F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesMovingPictures</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesTVSeries</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libGoogleTranslate</td><td/><td/><td>_ECA9F67F_1B2F_4CB1_9B0C_11D20D990BFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td/><td/><td>_588A286F_B16D_487F_8FD0_66DEAB35DF8E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libLyricsEngine</td><td/><td/><td>_46169EBA_6F43_4CDE_A47B_2B6D309338C1_FILTER</td><td/><td/><td/><td/></row>
@@ -2082,11 +2083,9 @@
 		<row><td>pluginGlobalMusicSearchDLL</td><td/><td/><td>_3AAC13C9_7B53_485A_9C50_A32427BDCF04_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginInfoServiceDLL</td><td/><td/><td>_DF4E5D4E_310D_4490_92E9_20E736BAE6F2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMovingPicturesDLL</td><td/><td/><td>_D229F38C_9C25_4A94_BEF9_43F6BFE7C56E_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pluginMovingPicturesLanguages</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyLyricsDLL</td><td/><td/><td>_73146477_AF9B_495D_8B51_E0961E3602E5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyTrailersDLL</td><td/><td/><td>_EE3A3D2F_4BF2_4EDD_B49C_62C527A58857_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>pluginTVSeriesLanguages</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinSounds</td><td/><td/><td>_84C77638_8B61_4BB4_9F1B_B6EF3C72911F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinXML</td><td/><td/><td>_DC47D95D_6D31_4780_896D_85C92FF14D4C_FILTER</td><td/><td/><td/><td/></row>
@@ -2168,8 +2167,9 @@
 		<col def="S0">ExcludeFiles</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>Fanart</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.jpg,*.txt</td><td/><td>2</td></row>
-		<row><td>pluginMovingPicturesLanguages</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
-		<row><td>pluginTVSeriesLanguages</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
+		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
+		<row><td>languagesMovingPictures</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
+		<row><td>languagesTVSeries</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>skinMedia</td><td>&lt;SKINFILES&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td>tvseries_SeriesListIcon.png,tvseries_SeasonListIcon.png,Action_menu.png</td><td>2</td></row>
 		<row><td>skinSounds</td><td>&lt;SKINFILES&gt;\sounds</td><td>4</td><td>*.wav,*.mp3,*.wma</td><td/><td>2</td></row>
 		<row><td>skinXML</td><td>&lt;SKINFILES&gt;</td><td>4</td><td>*.xml</td><td>fonts.xml, mytvguide.xml, dialogTvGuide.xml, TVSeries*.xml, movingpictures*.xml,mymusicplayingnow*.xml,TVMiniGuide.xml</td><td>0</td></row>
@@ -2526,7 +2526,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.1008</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.1041</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4515,13 +4515,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4922,9 +4918,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{829D4736-5319-40DC-B8E5-B4F28B432B72}</td><td/></row>
+		<row><td>ProductCode</td><td>{5560BF9C-6731-4252-A648-D8F27AE157B3}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.1008.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.1041.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
