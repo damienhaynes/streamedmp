@@ -445,10 +445,10 @@
         this.installAnimatedIcons.AutoSize = true;
         this.installAnimatedIcons.Location = new System.Drawing.Point(276, 155);
         this.installAnimatedIcons.Name = "installAnimatedIcons";
-        this.installAnimatedIcons.Size = new System.Drawing.Size(110, 13);
+        this.installAnimatedIcons.Size = new System.Drawing.Size(147, 13);
         this.installAnimatedIcons.TabIndex = 7;
         this.installAnimatedIcons.TabStop = true;
-        this.installAnimatedIcons.Text = "Install Animated Icons";
+        this.installAnimatedIcons.Text = "Install Animated Icons (11MB)";
         this.installAnimatedIcons.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installAnimatedIcons_LinkClicked);
         // 
         // weatherIconsStatic
@@ -1125,12 +1125,12 @@
         // installWeatherBackgrounds
         // 
         this.installWeatherBackgrounds.AutoSize = true;
-        this.installWeatherBackgrounds.Location = new System.Drawing.Point(269, 44);
+        this.installWeatherBackgrounds.Location = new System.Drawing.Point(23, 63);
         this.installWeatherBackgrounds.Name = "installWeatherBackgrounds";
-        this.installWeatherBackgrounds.Size = new System.Drawing.Size(100, 13);
+        this.installWeatherBackgrounds.Size = new System.Drawing.Size(202, 13);
         this.installWeatherBackgrounds.TabIndex = 30;
         this.installWeatherBackgrounds.TabStop = true;
-        this.installWeatherBackgrounds.Text = "Install Backgrounds";
+        this.installWeatherBackgrounds.Text = "Download Weather Backgrounds (12MB)";
         this.installWeatherBackgrounds.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installWeatherBackgrounds_LinkClicked);
         // 
         // weatherBGlink
@@ -1615,7 +1615,7 @@
         // 
         this.gbSplashDL.Controls.Add(this.textBox1);
         this.gbSplashDL.Controls.Add(this.splashDownloadLink);
-        this.gbSplashDL.Location = new System.Drawing.Point(195, 76);
+        this.gbSplashDL.Location = new System.Drawing.Point(201, 76);
         this.gbSplashDL.Name = "gbSplashDL";
         this.gbSplashDL.Size = new System.Drawing.Size(349, 191);
         this.gbSplashDL.TabIndex = 4;
@@ -1635,12 +1635,12 @@
         // splashDownloadLink
         // 
         this.splashDownloadLink.AutoSize = true;
-        this.splashDownloadLink.Location = new System.Drawing.Point(52, 164);
+        this.splashDownloadLink.Location = new System.Drawing.Point(45, 164);
         this.splashDownloadLink.Name = "splashDownloadLink";
-        this.splashDownloadLink.Size = new System.Drawing.Size(225, 13);
+        this.splashDownloadLink.Size = new System.Drawing.Size(259, 13);
         this.splashDownloadLink.TabIndex = 0;
         this.splashDownloadLink.TabStop = true;
-        this.splashDownloadLink.Text = "Download & Install SplashScreen Option Pack  ";
+        this.splashDownloadLink.Text = "Download & Install SplashScreen Option Pack  (30MB)";
         this.splashDownloadLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.splashDownloadLink_LinkClicked);
         // 
         // btSplashSelect
