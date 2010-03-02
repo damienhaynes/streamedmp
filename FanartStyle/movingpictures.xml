@@ -173,7 +173,7 @@ multiple view modes.
 		<width>1284</width>
 		<height>722</height>
 		<texture>mainoverlay.png</texture>
-		<visible>facadeview.smallicons|facadeview.largeicons</visible>
+		<visible>Control.IsVisible(50)+facadeview.smallicons|facadeview.largeicons</visible>
 	</control>
 	
 	<control>
@@ -278,7 +278,7 @@ multiple view modes.
 	
 	<import>movingpictures.facade.xml</import>
 	
-	<!-- MediaInfo for filmstrp is shared in thumbsview -->
+	<!-- MediaInfo for filmstrp is shared in listview -->	
 	<import>movingpictures.filmstripview.xml</import>	
 	
     <!--Top Bar Controls -->
