@@ -1,82 +1,27 @@
 <window>
 	<controls>	
-		<!--Video Resolutions-->	
-		<!-- HD 720p -->
+		!-- Video Resolutions / Aspect Ratio-->
+		
 		<control>
-		  <description>HD 720p</description>
+		  <description>720p, 1080i, 1080p</description>
 		  <type>image</type>
-		  <id>0</id>
+		  <id>9997</id>
 		  <posX>190</posX>
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Video\HD 720P.png</texture>
-		  <visible>string.equals(#Play.Current.VideoResolution,720p)</visible>
+		  <texture>Logos\Video\#Play.Current.VideoResolution.png</texture>		 
 		</control>
-
-		<!-- HD 1080p -->
 		<control>
-		  <description>HD 1080p</description>
+		  <description>SD/HD Fullscreen/Widescreen</description>
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>190</posX>
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Video\HD 1080P.png</texture>
-		  <visible>string.equals(#Play.Current.VideoResolution,1080p)</visible>
-		</control>
-
-		<!-- HD 1080i -->
-		<control>
-		  <description>HD 1080i</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>190</posX>
-		  <posY>650</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\HD 1080i.png</texture>
-		  <visible>string.equals(#Play.Current.VideoResolution,1080i)</visible>
-		</control>
-
-		<!-- HD Widescren ie not 720p, 1080i or 1080p -->
-		<control>
-		  <description>HD Widescreen</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>190</posX>
-		  <posY>650</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\HD 169.png</texture>
-		  <visible>[string.equals(#Play.Current.VideoResolution,HD)+string.equals(#Play.Current.AspectRatio,widescreen)]</visible>
-		</control>
-
-		<!-- SD Widescreen -->
-		<control>
-		  <description>SD Widescreen</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>190</posX>
-		  <posY>650</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\SD 169.png</texture>
-		  <visible>[string.equals(#Play.Current.VideoResolution,SD)+string.equals(#Play.Current.AspectRatio,widescreen)]</visible>
-		</control>
-
-		<!-- SD Fullscreen -->
-		<control>
-		  <description>SD Fullscreen</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>190</posX>
-		  <posY>650</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\SD 43.png</texture>
-		  <visible>[string.equals(#Play.Current.VideoResolution,SD)+string.equals(#Play.Current.AspectRatio,fullscreen)]</visible>
+		  <texture>Logos\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
+		  <visible>!Control.HasThumb(9997)</visible>
 		</control>
 
 		<!-- Video Codecs -->
@@ -129,7 +74,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Video\MPEG.png</texture>
+		  <texture>Logos\Video\MP1V.png</texture>
 		  <visible>string.equals(#Play.Current.VideoCodec,MP1V)|string.equals(#Play.Current.VideoCodec,MPEG-1V)</visible>
 		</control>
 
@@ -142,7 +87,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Video\MPEG2.png</texture>
+		  <texture>Logos\Video\MP2V.png</texture>
 		  <visible>string.equals(#Play.Current.VideoCodec,MP2V)|string.equals(#Play.Current.VideoCodec,MPEG-2V)|string.contains(#Play.Current.VideoCodec,MPEG2)</visible>
 		</control>
 
@@ -212,19 +157,6 @@
 		</control>
 	
 		<!-- Audio Channels / Codecs-->
-			
-		<!-- Mono -->
-		<control>
-		  <description>Mono</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>390</posX>
-		  <posY>650</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Audio\MONO.png</texture>
-		  <visible>string.equals(#Play.Current.AudioChannels,mono)</visible>
-		</control>
 
 		<!-- Dolby Digital 5.1 -->
 		<control>
@@ -235,7 +167,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DD 51.png</texture>
+		  <texture>Logos\Audio\AC3 5.1.png</texture>
 		  <visible>string.equals(#Play.Current.AudioCodec,AC3)+[string.equals(#Play.Current.AudioChannels,5.1)|string.equals(#Play.Current.AudioChannels,5)]</visible>
 		</control>
 		
@@ -275,7 +207,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DD 20.png</texture>
+		  <texture>Logos\Audio\AC3 Stereo.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,AC3)+string.equals(#Play.Current.AudioChannels,stereo)]</visible>
 		</control>
 
@@ -288,7 +220,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\MP3 20.png</texture>
+		  <texture>Logos\Audio\MP3 Stereo.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,MP3)|string.contains(#Play.Current.AudioCodec,MPEG-1 AUDIO LAYER 3)]+string.equals(#Play.Current.AudioChannels,stereo)</visible>
 		</control>
 
@@ -301,7 +233,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\AAC 20.png</texture>
+		  <texture>Logos\Audio\AAC Stereo.png</texture>
 		  <visible>string.contains(#Play.Current.AudioCodec,AAC)+string.equals(#Play.Current.AudioChannels,stereo)</visible>
 		</control>
 		
@@ -314,7 +246,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\AAC 51.png</texture>
+		  <texture>Logos\Audio\AAC 5.1.png</texture>
 		  <visible>string.contains(#Play.Current.AudioCodec,AAC)+string.equals(#Play.Current.AudioChannels,5.1)</visible>
 		</control>
 
@@ -353,7 +285,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\FLAC 51.png</texture>
+		  <texture>Logos\Audio\FLAC 5.1.png</texture>
 		  <visible>[string.contains(#Play.Current.AudioCodec,FLAC)+string.equals(#Play.Current.AudioChannels,5.1)]</visible>
 		</control>
 
@@ -379,7 +311,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTS 20.png</texture>
+		  <texture>Logos\Audio\DTS Stereo.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,DTS)+string.equals(#Play.Current.AudioChannels,stereo)]</visible>
 		</control>
 		
@@ -392,7 +324,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTS 51.png</texture>
+		  <texture>Logos\Audio\DTS 5.1.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,DTS)+string.equals(#Play.Current.AudioChannels,5.1)]</visible>
 		</control>
 
@@ -405,7 +337,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTS 61.png</texture>
+		  <texture>Logos\Audio\DTS 7.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,DTS)+[string.equals(#Play.Current.AudioChannels,7)|string.equals(#Play.Current.AudioChannels,6.1)]]</visible>
 		</control>
 
@@ -418,7 +350,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTS 71.png</texture>
+		  <texture>Logos\Audio\DTS 7.1.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,DTS)+[string.equals(#Play.Current.AudioChannels,8)|string.equals(#Play.Current.AudioChannels,7.1)]]</visible>
 		</control>
 		
@@ -431,7 +363,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTSHD 51.png</texture>
+		  <texture>Logos\Audio\DTSHD 5.1.png</texture>
 		  <visible>[[string.equals(#Play.Current.AudioCodec,DTSHD)|string.equals(#Play.Current.AudioCodec,DTS-HD)]+string.equals(#Play.Current.AudioChannels,5.1)]</visible>
 		</control>
 
@@ -444,7 +376,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTSHD 61.png</texture>
+		  <texture>Logos\Audio\DTSHD 7.png</texture>
 		  <visible>[[string.equals(#Play.Current.AudioCodec,DTSHD)|string.equals(#Play.Current.AudioCodec,DTS-HD)]+[string.equals(#Play.Current.AudioChannels,7)|string.equals(#Play.Current.AudioChannels,6.1)]]</visible>
 		</control>
 
@@ -457,7 +389,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\DTSHD 71.png</texture>
+		  <texture>Logos\Audio\DTSHD 7.1.png</texture>
 		  <visible>[[string.equals(#Play.Current.AudioCodec,DTSHD)|string.equals(#Play.Current.AudioCodec,DTS-HD)]+[string.equals(#Play.Current.AudioChannels,8)|string.equals(#Play.Current.AudioChannels,7.1)]]</visible>
 		</control>
 
@@ -470,7 +402,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\TrueHD 51.png</texture>
+		  <texture>Logos\Audio\TrueHD 5.1.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,TrueHD)+string.equals(#Play.Current.AudioChannels,5.1)]</visible>
 		</control>
 		
@@ -483,7 +415,7 @@
 		  <posY>650</posY>
 		  <width>100</width>
 		  <height>32</height>
-		  <texture>Logos\Audio\TrueHD 71.png</texture>
+		  <texture>Logos\Audio\TrueHD 7.1.png</texture>
 		  <visible>[string.equals(#Play.Current.AudioCodec,TrueHD)+[string.equals(#Play.Current.AudioChannels,8)|string.equals(#Play.Current.AudioChannels,7.1)]]</visible>
 		</control>
 		
