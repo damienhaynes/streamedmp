@@ -70,14 +70,14 @@ namespace StreamedMPEditor
         {
             if (!downloadActive)
             {
-            optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
-            optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_AnimatedWeatherIcons.zip";
-            destinationPath = mpPaths.skinBasePath;
-            downloadForm.Text = "Download and Install Animated Weather Icons";
-            pLabel.Text = "Starting Download";
-            thrDownload = new Thread(Download);
-            thrDownload.Start();
-            downloadForm.Show();
+                optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
+                optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_AnimatedWeatherIcons.zip";
+                destinationPath = mpPaths.skinBasePath;
+                downloadForm.Text = "Download and Install Animated Weather Icons";
+                pLabel.Text = "Starting Download";
+                thrDownload = new Thread(Download);
+                thrDownload.Start();
+                downloadForm.Show();
             }
             else
             {
