@@ -130,6 +130,7 @@
         this.enableTwitter = new System.Windows.Forms.CheckBox();
         this.enableRssfeed = new System.Windows.Forms.CheckBox();
         this.globalSettings = new System.Windows.Forms.GroupBox();
+        this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
         this.cbDisableClock = new System.Windows.Forms.CheckBox();
         this.noFocusAlphaLabel = new System.Windows.Forms.Label();
         this.focusAlphaLabel = new System.Windows.Forms.Label();
@@ -207,7 +208,6 @@
         this.groupBox5 = new System.Windows.Forms.GroupBox();
         this.lbActiveSplashScreen = new System.Windows.Forms.Label();
         this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-        this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -1421,6 +1421,16 @@
         this.globalSettings.TabStop = false;
         this.globalSettings.Text = "Global settings";
         // 
+        // cbHideFanartScraper
+        // 
+        this.cbHideFanartScraper.AutoSize = true;
+        this.cbHideFanartScraper.Location = new System.Drawing.Point(455, 85);
+        this.cbHideFanartScraper.Name = "cbHideFanartScraper";
+        this.cbHideFanartScraper.Size = new System.Drawing.Size(190, 17);
+        this.cbHideFanartScraper.TabIndex = 32;
+        this.cbHideFanartScraper.Text = "Hide Fanart Handler Scraping Text";
+        this.cbHideFanartScraper.UseVisualStyleBackColor = true;
+        // 
         // cbDisableClock
         // 
         this.cbDisableClock.AutoSize = true;
@@ -1642,7 +1652,7 @@
         this.splashDownloadLink.Size = new System.Drawing.Size(259, 13);
         this.splashDownloadLink.TabIndex = 0;
         this.splashDownloadLink.TabStop = true;
-        this.splashDownloadLink.Text = "Download & Install SplashScreen Option Pack  (30MB)";
+        this.splashDownloadLink.Text = "Download & Install SplashScreen Option Pack  (41MB)";
         this.splashDownloadLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.splashDownloadLink_LinkClicked);
         // 
         // btSplashSelect
@@ -1651,7 +1661,7 @@
         this.btSplashSelect.Location = new System.Drawing.Point(296, 379);
         this.btSplashSelect.Name = "btSplashSelect";
         this.btSplashSelect.Size = new System.Drawing.Size(159, 27);
-        this.btSplashSelect.TabIndex = 3;
+        this.btSplashSelect.TabIndex = 2;
         this.btSplashSelect.Text = "Use Image as SplashScreen";
         this.btSplashSelect.UseVisualStyleBackColor = true;
         this.btSplashSelect.Click += new System.EventHandler(this.btSplashSelect_Click);
@@ -1662,7 +1672,7 @@
         this.btSplashPrev.Location = new System.Drawing.Point(51, 379);
         this.btSplashPrev.Name = "btSplashPrev";
         this.btSplashPrev.Size = new System.Drawing.Size(99, 27);
-        this.btSplashPrev.TabIndex = 2;
+        this.btSplashPrev.TabIndex = 1;
         this.btSplashPrev.Text = "Prev";
         this.btSplashPrev.UseVisualStyleBackColor = true;
         this.btSplashPrev.Click += new System.EventHandler(this.btSplashPrev_Click);
@@ -1673,7 +1683,7 @@
         this.btSplashNext.Location = new System.Drawing.Point(601, 379);
         this.btSplashNext.Name = "btSplashNext";
         this.btSplashNext.Size = new System.Drawing.Size(99, 27);
-        this.btSplashNext.TabIndex = 1;
+        this.btSplashNext.TabIndex = 3;
         this.btSplashNext.Text = "Next";
         this.btSplashNext.UseVisualStyleBackColor = true;
         this.btSplashNext.Click += new System.EventHandler(this.btSplashNext_Click);
@@ -2179,16 +2189,6 @@
         this.pbActiveSplashScreen.TabIndex = 4;
         this.pbActiveSplashScreen.TabStop = false;
         this.pbActiveSplashScreen.Visible = false;
-        // 
-        // cbHideFanartScraper
-        // 
-        this.cbHideFanartScraper.AutoSize = true;
-        this.cbHideFanartScraper.Location = new System.Drawing.Point(455, 85);
-        this.cbHideFanartScraper.Name = "cbHideFanartScraper";
-        this.cbHideFanartScraper.Size = new System.Drawing.Size(190, 17);
-        this.cbHideFanartScraper.TabIndex = 32;
-        this.cbHideFanartScraper.Text = "Hide Fanart Handler Scraping Text";
-        this.cbHideFanartScraper.UseVisualStyleBackColor = true;
         // 
         // streamedMpEditor
         // 
