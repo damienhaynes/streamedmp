@@ -255,7 +255,7 @@ namespace StreamedMPEditor
 
                 loadMenuSettings();
                 checkSplashScreens();
-                toolStripStatusLabel2.Text = null;
+                toolStripStatusLabel2.Visible = false;
                 itemsOnMenubar.SelectedIndex = 0;
                 screenReset();
                 setScreenProperties(itemsOnMenubar.SelectedIndex);
