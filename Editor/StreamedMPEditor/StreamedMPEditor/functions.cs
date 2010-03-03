@@ -1366,12 +1366,13 @@ namespace StreamedMPEditor
         {
             pbActiveSplashScreen.Visible = true;
             lbActiveSplashScreen.Visible = true;
+            toolStripStatusLabel2.Visible = true;
         }
         else
         {
             pbActiveSplashScreen.Visible = false;
             lbActiveSplashScreen.Visible = false;
-            toolStripStatusLabel2.Text = null;
+            toolStripStatusLabel2.Visible = false;
         }
     }
 

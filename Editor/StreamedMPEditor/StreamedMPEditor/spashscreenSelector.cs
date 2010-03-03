@@ -70,7 +70,6 @@ namespace StreamedMPEditor
             
             showActiveSplashScreen();
             displayImage(fileList[imagePos]);
-
             btSplashNext.Enabled = true;
             btSplashPrev.Enabled = true;
             btSplashSelect.Enabled = true; 
