@@ -207,6 +207,7 @@
         this.groupBox5 = new System.Windows.Forms.GroupBox();
         this.lbActiveSplashScreen = new System.Windows.Forms.Label();
         this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+        this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -1395,6 +1396,7 @@
         // 
         // globalSettings
         // 
+        this.globalSettings.Controls.Add(this.cbHideFanartScraper);
         this.globalSettings.Controls.Add(this.cbDisableClock);
         this.globalSettings.Controls.Add(this.noFocusAlphaLabel);
         this.globalSettings.Controls.Add(this.focusAlphaLabel);
@@ -1422,7 +1424,7 @@
         // cbDisableClock
         // 
         this.cbDisableClock.AutoSize = true;
-        this.cbDisableClock.Location = new System.Drawing.Point(455, 66);
+        this.cbDisableClock.Location = new System.Drawing.Point(455, 63);
         this.cbDisableClock.Name = "cbDisableClock";
         this.cbDisableClock.Size = new System.Drawing.Size(140, 17);
         this.cbDisableClock.TabIndex = 14;
@@ -1451,7 +1453,7 @@
         // 
         this.wrapString.AutoSize = true;
         this.wrapString.Enabled = false;
-        this.wrapString.Location = new System.Drawing.Point(455, 42);
+        this.wrapString.Location = new System.Drawing.Point(455, 41);
         this.wrapString.Name = "wrapString";
         this.wrapString.Size = new System.Drawing.Size(226, 17);
         this.wrapString.TabIndex = 13;
@@ -2178,6 +2180,16 @@
         this.pbActiveSplashScreen.TabStop = false;
         this.pbActiveSplashScreen.Visible = false;
         // 
+        // cbHideFanartScraper
+        // 
+        this.cbHideFanartScraper.AutoSize = true;
+        this.cbHideFanartScraper.Location = new System.Drawing.Point(455, 85);
+        this.cbHideFanartScraper.Name = "cbHideFanartScraper";
+        this.cbHideFanartScraper.Size = new System.Drawing.Size(190, 17);
+        this.cbHideFanartScraper.TabIndex = 32;
+        this.cbHideFanartScraper.Text = "Hide Fanart Handler Scraping Text";
+        this.cbHideFanartScraper.UseVisualStyleBackColor = true;
+        // 
         // streamedMpEditor
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2445,6 +2457,7 @@
     private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Label lbActiveSplashScreen;
     private System.Windows.Forms.PictureBox pbActiveSplashScreen;
+    private System.Windows.Forms.CheckBox cbHideFanartScraper;
   }
 }
 

@@ -3246,7 +3246,16 @@ namespace StreamedMPEditor
             StringBuilder rawXML = new StringBuilder();
             rawXML.AppendLine("<import>common.time.xml</import>");
             xml = xml.Replace("<!-- BEGIN COMMON TIME CODE-->", rawXML.ToString());
+        }
 
+        private void generatefanartScraper()
+        {
+            StringBuilder rawXML = new StringBuilder();
+            if (menuStyle == chosenMenuStyle.verticalStyle)
+                rawXML.AppendLine("<import>common.fanart.scraperv.xml</import>");
+            else
+                rawXML.AppendLine("<import>common.fanart.scraper.xml</import>");
+            xml = xml.Replace("<!-- BEGIN FANART SCRAPER CODE-->", rawXML.ToString());
         }
 
         private void generateWeathersummary(int weatherId)
@@ -3473,6 +3482,7 @@ namespace StreamedMPEditor
             string settingFullWeatherSummaryBottom = fullWeatherSummaryBottom.Checked ? "true" : "false";
             string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
             string disableOnScreenClock = cbDisableClock.Checked ? "true" : "false";
+            string hideFanartScrapingtext = cbHideFanartScraper.Checked ? "true" : "false";
 
             if (direction == menuType.horizontal)
             {
@@ -3549,6 +3559,7 @@ namespace StreamedMPEditor
                       + generateEntry("activeRssImageType", activeRssImageType, 2, true)
                       + generateEntry("disableOnScreenClock", disableOnScreenClock, 2, true)
                       + generateEntry("targetScreenRes", targetScreenRes, 2, true)
+                      + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 2, true)
                       + "\t</section>");
 
 

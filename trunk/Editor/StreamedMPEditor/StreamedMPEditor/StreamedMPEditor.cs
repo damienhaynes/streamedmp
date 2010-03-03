@@ -750,6 +750,8 @@ namespace StreamedMPEditor
             generateBg(direction);
             if (!cbDisableClock.Checked)
                 generateClock();
+            if (!cbHideFanartScraper.Checked)
+                generatefanartScraper();
             if (enableFiveDayWeather.Checked)
                 GenerateFiveDayWeather();
             if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
