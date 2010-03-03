@@ -214,6 +214,7 @@ namespace StreamedMPEditor
                 cbDisableClock.Checked = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
                 targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
                 splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
+                cbHideFanartScraper.Checked =  bool.Parse(readEntryValue(optionsTag, "hideFanartScrapingtext", nodelist));
             }
             catch
             {
