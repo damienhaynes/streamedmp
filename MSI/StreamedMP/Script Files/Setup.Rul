@@ -206,7 +206,7 @@
 #endif
          
 // Prototype Functions         
-prototype VOID 		CleanCache();
+prototype VOID 		CleanCache(STRING);
 prototype NUMBER 	GetMediaPortalProgramDir(BYREF STRING);
 prototype NUMBER 	GetMediaPortalConfigDir(BYREF STRING); 
 prototype NUMBER	GetMediaPortalDirs(STRING, BYREF STRING);
@@ -861,9 +861,11 @@ begin
  	// Update Settings
 	UpdateSettings();
 	
-	// Clean Cache Folder
-    CleanCache();
-        
+	// Clean Cache Folder    
+    CleanCache("Blue3");
+    CleanCache("Blue3wide");
+	CleanCache(SKIN_NAME);
+	        
     // Major Upgrade Cleanup
     if g_bMajorUpgrade then
     	MajorUpgradeCleanup();
@@ -905,8 +907,10 @@ function OnMaintUIAfter()
 	NUMBER bOpt1, bOpt2;
 begin     
 
-    // Clean Cache Folder
-    CleanCache();
+    // Clean Cache Folder    
+    CleanCache("Blue3");
+    CleanCache("Blue3wide");
+    CleanCache(SKIN_NAME);
     
     if ( REMOVEALLMODE ) then
     	UninstallCleanup();
@@ -929,14 +933,14 @@ begin
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
 end; 
 
-function VOID CleanCache()
+function VOID CleanCache(sSkin)
 	STRING svValue;	
 begin
     
     // Delete Skin Cache Folder
-    SetStatusWindow(100, "Removing " + SKIN_NAME + " from MediaPortal cache.");
+    SetStatusWindow(100, "Removing " + sSkin + " from MediaPortal cache.");
     Delay(1);
-    svValue = g_sCacheDir ^ SKIN_NAME;
+    svValue = g_sCacheDir ^ sSkin;
     DeleteDir(svValue,ALLCONTENTS);
     
 end;      

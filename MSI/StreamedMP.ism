@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -339,6 +340,10 @@
 		<row><td>FanartHandlerConfig</td><td>{BFA1D198-1FCB-48B0-B997-FEF480B1F2A3}</td><td>MPCONFIGDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>ISRegistryComponent</td><td>{2F401AD0-DF97-4A46-B9CB-90CEEDDB5FD8}</td><td>INSTALLDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>b3SkinMovingPictures</td><td>{B7171908-83C8-4143-B383-03F8966B8425}</td><td>BLUE3</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>b3wSkinMovingPictures</td><td>{A67C966E-E70B-4415-A201-933EB1DDE738}</td><td>BLUE3WIDE</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>b3wSkinTVSeries</td><td>{A0A6261A-3D92-4255-96ED-597E29041F37}</td><td>BLUE3WIDE</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>b3wSkinTrailers</td><td>{F3F8E3B4-8561-4DBA-87E2-BB5D5AD571A9}</td><td>BLUE3WIDE</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>commonMovingPictures</td><td>{755A65DE-18FD-4078-A070-C52D64FA5E55}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>commonTVSeries</td><td>{0D20C1C0-7128-4D7D-BB69-F674C70BDAF1}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultMovingPictures</td><td>{BACFB03F-33E0-4FE1-8147-DF08BB8F5F7E}</td><td>STREAMEDMP</td><td>0</td><td/><td>movingpictures.xml</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -702,9 +707,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -754,6 +763,8 @@
 		<row><td>ALLUSERSPROFILE</td><td>TARGETDIR</td><td>.:ALLUSE~1|All Users</td><td/><td>0</td><td/></row>
 		<row><td>AdminToolsFolder</td><td>TARGETDIR</td><td>.:Admint~1|AdminTools</td><td/><td>0</td><td/></row>
 		<row><td>AppDataFolder</td><td>TARGETDIR</td><td>.:APPLIC~1|Application Data</td><td/><td>0</td><td/></row>
+		<row><td>BLUE3</td><td>INSTALLDIR</td><td>Blue3</td><td/><td>0</td><td/></row>
+		<row><td>BLUE3WIDE</td><td>INSTALLDIR</td><td>BLUE3W~1|Blue3wide</td><td/><td>0</td><td/></row>
 		<row><td>CommonAppDataFolder</td><td>TARGETDIR</td><td>.:Common~1|CommonAppData</td><td/><td>0</td><td/></row>
 		<row><td>CommonFiles64Folder</td><td>TARGETDIR</td><td>.:Common64</td><td/><td>0</td><td/></row>
 		<row><td>CommonFilesFolder</td><td>TARGETDIR</td><td>.:Common</td><td/><td>0</td><td/></row>
@@ -1507,11 +1518,18 @@
 		<row><td>MenuEditor</td><td/><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>10</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Modern</td><td>Germany</td><td>##ID_STRING96##</td><td>##ID_STRING99##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesBlue3Skin</td><td>MovingPictures</td><td>##ID_STRING121##</td><td>##ID_STRING123##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesBlue3wideSkin</td><td>MovingPictures</td><td>##ID_STRING122##</td><td>##ID_STRING124##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesMainPlugin</td><td>MovingPictures</td><td>##ID_STRING130##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailers</td><td>Plugins</td><td>##ID_STRING82##</td><td>##ID_STRING83##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyTrailersBlue3wideSkin</td><td>MyTrailers</td><td>##ID_STRING127##</td><td>##ID_STRING128##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyTrailersMainPlugin</td><td>MyTrailers</td><td>##ID_STRING131##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>TVSeriesBlue3wideSkin</td><td>TVSeries</td><td>##ID_STRING125##</td><td>##ID_STRING126##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>TVSeriesMainPlugin</td><td>TVSeries</td><td>##ID_STRING129##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td>Germany</td><td>##ID_STRING98##</td><td>##ID_STRING101##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>defaultMovingPictures</td><td>Main</td><td>##ID_STRING19##</td><td>##ID_STRING23##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1580,19 +1598,23 @@
 		<row><td>Main</td><td>webWiki</td></row>
 		<row><td>MenuEditor</td><td>menuEditor</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
-		<row><td>MovingPictures</td><td>languagesMovingPictures</td></row>
-		<row><td>MovingPictures</td><td>libMediaInfo</td></row>
-		<row><td>MovingPictures</td><td>libNLog</td></row>
-		<row><td>MovingPictures</td><td>pluginMovingPicturesDLL</td></row>
+		<row><td>MovingPicturesBlue3Skin</td><td>b3SkinMovingPictures</td></row>
+		<row><td>MovingPicturesBlue3wideSkin</td><td>b3wSkinMovingPictures</td></row>
+		<row><td>MovingPicturesMainPlugin</td><td>languagesMovingPictures</td></row>
+		<row><td>MovingPicturesMainPlugin</td><td>libMediaInfo</td></row>
+		<row><td>MovingPicturesMainPlugin</td><td>libNLog</td></row>
+		<row><td>MovingPicturesMainPlugin</td><td>pluginMovingPicturesDLL</td></row>
 		<row><td>MyLyrics</td><td>libGoogleTranslate</td></row>
 		<row><td>MyLyrics</td><td>libLyricsEngine</td></row>
 		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
-		<row><td>MyTrailers</td><td>pluginMyTrailersDLL</td></row>
-		<row><td>TVSeries</td><td>languagesTVSeries</td></row>
-		<row><td>TVSeries</td><td>libICSharpCodeSharpZipLib</td></row>
-		<row><td>TVSeries</td><td>libMediaInfo</td></row>
-		<row><td>TVSeries</td><td>libSubtitleDownloader</td></row>
-		<row><td>TVSeries</td><td>pluginTVSeriesDLL</td></row>
+		<row><td>MyTrailersBlue3wideSkin</td><td>b3wSkinTrailers</td></row>
+		<row><td>MyTrailersMainPlugin</td><td>pluginMyTrailersDLL</td></row>
+		<row><td>TVSeriesBlue3wideSkin</td><td>b3wSkinTVSeries</td></row>
+		<row><td>TVSeriesMainPlugin</td><td>languagesTVSeries</td></row>
+		<row><td>TVSeriesMainPlugin</td><td>libICSharpCodeSharpZipLib</td></row>
+		<row><td>TVSeriesMainPlugin</td><td>libMediaInfo</td></row>
+		<row><td>TVSeriesMainPlugin</td><td>libSubtitleDownloader</td></row>
+		<row><td>TVSeriesMainPlugin</td><td>pluginTVSeriesDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
 		<row><td>defaultMovingPictures</td><td>defaultMovingPictures</td></row>
@@ -2037,6 +2059,10 @@
 		<row><td>FanartHandlerConfig</td><td/><td/><td>_A5B9AED9_62EA_4BB8_B272_A084E77AE59F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>ISRegistryComponent</td><td/><td/><td>_A149E774_9B9A_4D43_A480_377DE9C8260E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>b3SkinMovingPictures</td><td/><td/><td>_D37D0ADD_3144_423D_9882_3B55C09C5494_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>b3wSkinMovingPictures</td><td/><td/><td>_400C2F17_03E4_4BE3_A97C_BE45AE87D848_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>b3wSkinTVSeries</td><td/><td/><td>_F57917B6_3C0A_458A_AA88_4D68966666D7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>b3wSkinTrailers</td><td/><td/><td>_C1539BD1_6FAB_416F_82DF_E4A802F57400_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>commonMovingPictures</td><td/><td/><td>_8C6F6878_5060_4AF3_A120_48B2213248A2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>commonTVSeries</td><td/><td/><td>_4B8365A2_8C53_4DB3_9166_AF618CE25CCA_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultMovingPictures</td><td/><td/><td>_40FA0A44_1D9F_4F9A_8144_837EAE8EE45B_FILTER</td><td/><td/><td/><td/></row>
@@ -2167,6 +2193,10 @@
 		<col def="S0">ExcludeFiles</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>Fanart</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.jpg,*.txt</td><td/><td>2</td></row>
+		<row><td>b3SkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>b3wSkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>b3wSkinTVSeries</td><td>&lt;SKINFILES&gt;\blue3skins\mp-tvseries\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>b3wSkinTrailers</td><td>&lt;SKINFILES&gt;\blue3skins\mytrailers\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesMovingPictures</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesTVSeries</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
@@ -2206,11 +2236,18 @@
 		<row><td>MenuEditor</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Modern</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesBlue3Skin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MovingPicturesMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyLyrics</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyTrailers</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MyTrailersBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MyTrailersMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVLogos</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>TVSeriesBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>TVSeriesMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>UK</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>defaultMovingPictures</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2526,7 +2563,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.1041</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 0.9.1055</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2790,11 +2827,18 @@
 		<row><td>Custom</td><td>MenuEditor</td></row>
 		<row><td>Custom</td><td>Modern</td></row>
 		<row><td>Custom</td><td>MovingPictures</td></row>
+		<row><td>Custom</td><td>MovingPicturesBlue3Skin</td></row>
+		<row><td>Custom</td><td>MovingPicturesBlue3wideSkin</td></row>
+		<row><td>Custom</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Custom</td><td>MyLyrics</td></row>
 		<row><td>Custom</td><td>MyTrailers</td></row>
+		<row><td>Custom</td><td>MyTrailersBlue3wideSkin</td></row>
+		<row><td>Custom</td><td>MyTrailersMainPlugin</td></row>
 		<row><td>Custom</td><td>Plugins</td></row>
 		<row><td>Custom</td><td>TVLogos</td></row>
 		<row><td>Custom</td><td>TVSeries</td></row>
+		<row><td>Custom</td><td>TVSeriesBlue3wideSkin</td></row>
+		<row><td>Custom</td><td>TVSeriesMainPlugin</td></row>
 		<row><td>Custom</td><td>Transparent</td></row>
 		<row><td>Custom</td><td>UK</td></row>
 		<row><td>Custom</td><td>defaultMovingPictures</td></row>
@@ -2843,9 +2887,17 @@
 		<row><td>Minimal</td><td>Main</td></row>
 		<row><td>Minimal</td><td>MenuEditor</td></row>
 		<row><td>Minimal</td><td>Modern</td></row>
+		<row><td>Minimal</td><td>MovingPicturesBlue3Skin</td></row>
+		<row><td>Minimal</td><td>MovingPicturesBlue3wideSkin</td></row>
+		<row><td>Minimal</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Minimal</td><td>MyLyrics</td></row>
 		<row><td>Minimal</td><td>MyTrailers</td></row>
+		<row><td>Minimal</td><td>MyTrailersBlue3wideSkin</td></row>
+		<row><td>Minimal</td><td>MyTrailersMainPlugin</td></row>
+		<row><td>Minimal</td><td>Plugins</td></row>
 		<row><td>Minimal</td><td>TVLogos</td></row>
+		<row><td>Minimal</td><td>TVSeriesBlue3wideSkin</td></row>
+		<row><td>Minimal</td><td>TVSeriesMainPlugin</td></row>
 		<row><td>Minimal</td><td>Transparent</td></row>
 		<row><td>Minimal</td><td>UK</td></row>
 		<row><td>Minimal</td><td>defaultMovingPictures</td></row>
@@ -2892,11 +2944,18 @@
 		<row><td>Typical</td><td>MenuEditor</td></row>
 		<row><td>Typical</td><td>Modern</td></row>
 		<row><td>Typical</td><td>MovingPictures</td></row>
+		<row><td>Typical</td><td>MovingPicturesBlue3Skin</td></row>
+		<row><td>Typical</td><td>MovingPicturesBlue3wideSkin</td></row>
+		<row><td>Typical</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Typical</td><td>MyLyrics</td></row>
 		<row><td>Typical</td><td>MyTrailers</td></row>
+		<row><td>Typical</td><td>MyTrailersBlue3wideSkin</td></row>
+		<row><td>Typical</td><td>MyTrailersMainPlugin</td></row>
 		<row><td>Typical</td><td>Plugins</td></row>
 		<row><td>Typical</td><td>TVLogos</td></row>
 		<row><td>Typical</td><td>TVSeries</td></row>
+		<row><td>Typical</td><td>TVSeriesBlue3wideSkin</td></row>
+		<row><td>Typical</td><td>TVSeriesMainPlugin</td></row>
 		<row><td>Typical</td><td>Transparent</td></row>
 		<row><td>Typical</td><td>UK</td></row>
 		<row><td>Typical</td><td>defaultMovingPictures</td></row>
@@ -4179,7 +4238,18 @@
 		<row><td>ID_STRING119</td><td>1033</td><td>Mini EPG Guide 9 Rows</td><td>0</td><td/><td>-1323432682</td></row>
 		<row><td>ID_STRING12</td><td>1033</td><td>Tools and Utilities that can be used to customise Steamed MP skin</td><td>0</td><td/><td>-979580656</td></row>
 		<row><td>ID_STRING120</td><td>1033</td><td>Mini EPG Guide 5 Rows</td><td>0</td><td/><td>-1323422442</td></row>
+		<row><td>ID_STRING121</td><td>1033</td><td>Blue3 Skin</td><td>0</td><td/><td>564020044</td></row>
+		<row><td>ID_STRING122</td><td>1033</td><td>Blue3wide Skin</td><td>0</td><td/><td>564036428</td></row>
+		<row><td>ID_STRING123</td><td>1033</td><td>Default Blue3 skin files for the MovingPictures plugin.</td><td>0</td><td/><td>564042700</td></row>
+		<row><td>ID_STRING124</td><td>1033</td><td>Default Blue3wide skin files for the MovingPictures plugin.</td><td>0</td><td/><td>564061132</td></row>
+		<row><td>ID_STRING125</td><td>1033</td><td>Blue3wide Skin</td><td>0</td><td/><td>564038540</td></row>
+		<row><td>ID_STRING126</td><td>1033</td><td>Default Blue3wide skin files for the MP-TVSeries plugin.</td><td>0</td><td/><td>564052940</td></row>
+		<row><td>ID_STRING127</td><td>1033</td><td>Blue3wide Skin</td><td>0</td><td/><td>564063148</td></row>
+		<row><td>ID_STRING128</td><td>1033</td><td>Default Blue3wide skin files for the My Trailers plugin.</td><td>0</td><td/><td>564003820</td></row>
+		<row><td>ID_STRING129</td><td>1033</td><td>TVSeriesMainPlugin</td><td>0</td><td/><td>564057198</td></row>
 		<row><td>ID_STRING13</td><td>1033</td><td>TV Series</td><td>0</td><td/><td>-1919153970</td></row>
+		<row><td>ID_STRING130</td><td>1033</td><td>MovingPicturesMainPlugin</td><td>0</td><td/><td>564053102</td></row>
+		<row><td>ID_STRING131</td><td>1033</td><td>MyTrailersMainPlugin</td><td>0</td><td/><td>564038798</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919145778</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
@@ -4515,9 +4585,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4918,9 +4992,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{5560BF9C-6731-4252-A648-D8F27AE157B3}</td><td/></row>
+		<row><td>ProductCode</td><td>{677DBA9D-0863-4614-95CE-621C4DFD6704}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>0.9.1041.0</td><td/></row>
+		<row><td>ProductVersion</td><td>0.9.1055.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ISALWAYSINSTALLELEVATED;ISSETUPDRIVEN;ARPSYSTEMCOMPONENT;ARPNOMODIFY;ARPNOREMOVE;INSTALLDIR;ISFOUNDNEWERPRODUCTVERSION;USERNAME;COMPANYNAME;ISX_SERIALNUM;IS_SQLSERVER_LIST;IS_SQLSERVER_DATABASE;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_USERNAME;IS_SQLSERVER_SERVER;IS_SQLSERVER_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_PASSWORD;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_SERVER_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_CONFIRM;IS_NEW_USER_PASSWORD_TEXT;IS_NET_API_NEW_USER_SERVER;IS_NET_API_NEW_USER_GROUP;IS_NET_API_GROUP_LIST;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_USERNAME_TOKEN;SUPPORTDIR;MAJORUPGRADE_01</td><td/></row>
