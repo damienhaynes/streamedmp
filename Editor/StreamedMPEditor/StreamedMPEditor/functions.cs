@@ -347,16 +347,28 @@ namespace StreamedMPEditor
         string xmlFileName = xmlFiles.SelectedItem.ToString();
         foreach (prettyItem p in prettyItems)
         {
-          if (p.id == selectedID && xmlFileName == p.name)
+          if (p.id == selectedID && xmlFileName == p.xmlfile)
           {
             // Populate
             QuickSelect(i);
             cboQuickSelect.SelectedIndex = i;
             bFound = true;
+            int k = 0;
+            foreach (menuItem mnuItem in menuItems)
+            {
+                if (p.id == mnuItem.hyperlink)
+                {
+                    itemsOnMenubar.SelectedIndex = k;
+                    break;
+                }
+                k++;
+            }
             break;
           }
           i++;
         }
+
+
         if (!bFound)
         {
           // Clear Items
