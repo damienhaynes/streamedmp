@@ -1081,7 +1081,7 @@
         this.itemsOnMenubar.Name = "itemsOnMenubar";
         this.itemsOnMenubar.Size = new System.Drawing.Size(170, 244);
         this.itemsOnMenubar.TabIndex = 6;
-        this.itemsOnMenubar.Click += new System.EventHandler(this.itemsOnMenubar_Click);
+        this.itemsOnMenubar.SelectedIndexChanged += new System.EventHandler(this.itemsOnMenubar_SelectedIndexChanged);        
         // 
         // xmlFiles
         // 

@@ -556,13 +556,12 @@ namespace StreamedMPEditor
 
         }
 
-        private void itemsOnMenubar_Click(object sender, EventArgs e)
+        private void itemsOnMenubar_SelectedIndexChanged(object sender, EventArgs e)
         {
             screenReset();
             setScreenProperties(itemsOnMenubar.SelectedIndex);
             editButton.Enabled = true;
             disableItemControls();
-
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
