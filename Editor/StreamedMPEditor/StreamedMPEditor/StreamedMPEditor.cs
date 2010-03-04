@@ -426,19 +426,18 @@ namespace StreamedMPEditor
                 item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
                 item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
                 item.isWeather = isWeather.Checked;
-                item.disableBGSharing = disableBGSharing.Checked;
-
-                checkAndSetDefultImage(item);
+                item.disableBGSharing = disableBGSharing.Checked;                
 
                 if (item.fanartHandlerEnabled)
                     checkAndSetRandomFanart(item.fanartProperty);
+                else
+                    checkAndSetDefultImage(item);
 
                 menuItems.Add(item);
                 itemsOnMenubar.Items.Add(item.name);
                 reloadBackgroundItems();
                 itemName.Text = "";
                 bgBox.Text = "";
-
 
                 if (itemsOnMenubar.Items.Count > 2)
                     generateMenu.Enabled = true;
