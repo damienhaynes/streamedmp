@@ -517,7 +517,7 @@ namespace StreamedMPEditor
                                 else
                                     onright = (menItem.id + 1);
                                 rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-                                rawXML.AppendLine("\t\t\t<onright>17</onright>");
+                                rawXML.AppendLine("\t\t\t<onright>7777</onright>");
                                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
                                 rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menItem.id + 700).ToString() + ")</visible>");
@@ -548,7 +548,7 @@ namespace StreamedMPEditor
                                 else
                                     onright = (menItem.id + 1);
                                 rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-                                rawXML.AppendLine("\t\t\t<onright>17</onright>");
+                                rawXML.AppendLine("\t\t\t<onright>7777</onright>");
                                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
                                 rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menItem.id + 800).ToString() + ")</visible>");
@@ -1362,7 +1362,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
             rawXML.AppendLine("\t\t\t<hover>-</hover>");
             rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-            rawXML.AppendLine("\t\t\t<onright>17</onright>");
+            rawXML.AppendLine("\t\t\t<onright>7777</onright>");
             rawXML.AppendLine("\t\t\t<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
             rawXML.AppendLine("\t\t\t<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
             rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
