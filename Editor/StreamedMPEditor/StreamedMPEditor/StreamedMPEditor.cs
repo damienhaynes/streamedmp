@@ -21,7 +21,8 @@ namespace StreamedMPEditor
         defaultImages defImgs = new defaultImages();
         randomFanartSetting randomFanart = new randomFanartSetting();
 
-        List<string> ids = new List<string>();
+        List<string> ids = new List<string>(); 
+        List<string> idsTemp = new List<string>();
         List<menuItem> menuItems = new List<menuItem>();
         List<backgroundItem> bgItems = new List<backgroundItem>();
         List<prettyItem> prettyItems = new List<prettyItem>();
@@ -314,6 +315,7 @@ namespace StreamedMPEditor
 
                         ids.Add(node.InnerText);
                         xmlFiles.Items.Add(file.Remove(0, file.LastIndexOf(@"\") + 1).Replace(".xml", ""));
+
                     }
                 }
 
@@ -323,7 +325,7 @@ namespace StreamedMPEditor
             //return true;
             if (xmlFiles.Items.Count > 0)
             {
-                LoadPrettyItems();
+                LoadPrettyItems(); 
                 disableItemControls();
                 cancelCreateButton.Visible = false;
                 return true;
@@ -393,8 +395,10 @@ namespace StreamedMPEditor
                 // Dont Add item if its not available
                 if (ids.Contains(pItem.id))
                     prettyItems.Add(pItem);
-
             }
+
+           
+
 
             // Load list
             foreach (prettyItem p in prettyItems)
@@ -405,6 +409,23 @@ namespace StreamedMPEditor
                     cboQuickSelect.Items.Add(p.name);
             }
             cboQuickSelect.SelectedIndex = 0;
+
+
+            // Remove xml files for list if they are in the quicklist
+            foreach (string id in ids)
+            {
+                bool pItemFound = false;
+                foreach (prettyItem p in prettyItems)
+                {
+                    if (id == p.id)
+                        pItemFound = true;
+                }
+                if (!pItemFound)
+                    idsTemp.Add(id);
+            }
+            ids.Clear();
+            ids = idsTemp;
+            idsTemp.Clear();
 
         }
 
