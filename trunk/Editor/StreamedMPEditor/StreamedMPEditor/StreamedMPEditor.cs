@@ -520,7 +520,7 @@ namespace StreamedMPEditor
                 menuItem item = new menuItem();
 
                 item = menuItems[index];
-                itemsOnMenubar.Items.RemoveAt(index);
+
 
                 item.name = itemName.Text;
                 item.contextLabel = cboContextLabel.Text;
@@ -539,8 +539,8 @@ namespace StreamedMPEditor
                     checkAndSetDefultImage(item);
                 }
 
-                
-                menuItems[index] = item;
+                menuItems[index] = item; 
+                itemsOnMenubar.Items.RemoveAt(index);                
                 itemsOnMenubar.Items.Insert(index, item.name);
                 reloadBackgroundItems();
                 screenReset();
