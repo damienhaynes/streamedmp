@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Reflection;
+using System.Diagnostics;
+
 
 namespace StreamedMPEditor
 {
@@ -145,6 +147,7 @@ namespace StreamedMPEditor
         public streamedMpEditor()
         {
             InitializeComponent();
+            // Check for newer version of Editor if user has allowed this
             if (Properties.Settings.Default.allowUpdateCheck)
             {
               checkForUpdate();
@@ -152,10 +155,11 @@ namespace StreamedMPEditor
               if (curVersion.CompareTo(newVersion) < 0)
               {
                 string title = "StreamedMP Editor Version " + newVersion.ToString() + " available.";
-                string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to display the download page?";
+                string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to exit and display the download page?";
                 if (DialogResult.Yes == MessageBox.Show(this, question, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                  System.Diagnostics.Process.Start(url);
+                  Process.Start(url);
+                  System.Environment.Exit(1);
                 }
               }
             }

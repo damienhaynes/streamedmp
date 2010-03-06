@@ -231,24 +231,15 @@ namespace StreamedMPEditor
         {
           while (reader.Read())
           {
-            // when we find an element node,   
-            // we remember its name   
             if (reader.NodeType == XmlNodeType.Element)
               elementName = reader.Name;
             else
-            {
-              // for text nodes...   
-              if ((reader.NodeType == XmlNodeType.Text) &&
-                  (reader.HasValue))
+            { 
+              if ((reader.NodeType == XmlNodeType.Text) && (reader.HasValue))
               {
-                // we check what the name of the node was   
                 switch (elementName)
                 {
                   case "version":
-                    // thats why we keep the version info   
-                    // in xxx.xxx.xxx.xxx format   
-                    // the Version class does the   
-                    // parsing for us   
                     newVersion = new Version(reader.Value);
                     break;
                   case "url":
