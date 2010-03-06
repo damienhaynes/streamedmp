@@ -55,6 +55,7 @@ namespace StreamedMPEditor
             string randomFanartPlugins = randomFanart.fanartPlugins ? "Yes" : "No";
             string randomFanartTv = randomFanart.fanartTv ? "Yes" : "No";
             string randomFanartTVSeries = randomFanart.fanartTVSeries ? "Yes" : "No";
+            string randomScoreCenterFanart = randomFanart.fanartScoreCenter ? "Yes" : "No";
 
 
             xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
@@ -70,7 +71,8 @@ namespace StreamedMPEditor
                             + "\t<define>#useRandomMusicFanart:" + randomFanartMusic + "</define>\n"
                             + "\t<define>#useRandomPicturesFanart:" + randomFanartPictures + "</define>\n"
                             + "\t<define>#useRandomTVFanart:" + randomFanartTv + "</define>\n"
-                            + "\t<define>#useRandomMoviesFanart:" + randomFanartMovies + "</define>\n");
+                            + "\t<define>#useRandomMoviesFanart:" + randomFanartMovies + "</define>\n"
+                            + "\t<define>#useRandomScoreCenterFanart:" + randomScoreCenterFanart + "</define>\n");
 
 
 
@@ -1681,35 +1683,15 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
                 rawXML.AppendLine("\t\t</control>");
 
-                if (item.fanartHandlerEnabled && !item.isWeather)
+                // Add second background control for random fanart provided 
+                if (item.fanartHandlerEnabled && (!weatherBGlink.Checked && item.isWeather))
                 {
                     rawXML.AppendLine("\n\t\t<control>");
 
                     rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND 2</description>");
                     rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "2</id>");
-
-                    if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
-                    {
-                        rawXML.AppendLine("\t\t\t<type>image</type>");
-                        rawXML.AppendLine("\t\t\t<texture>animations\\linkedweather\\" + ticker + ".weather.today.img.big.filenamewithoutext.jpg</texture>");
-                    }
-                    else
-                    {
-
-                        if (item.fanartHandlerEnabled)
-                        {
-                            rawXML.AppendLine("\t\t\t<type>image</type>");
-                            rawXML.AppendLine("\t\t\t<texture>#fanarthandler." + item.fanartPropery + ".backdrop2.any</texture>");
-
-                        }
-                        else
-                        {
-                            rawXML.AppendLine("\t\t\t<type>image</type>");
-                            rawXML.AppendLine("\t\t\t<texture>" + item.image + "</texture>");
-                        }
-
-                    }
-
+                    rawXML.AppendLine("\t\t\t<type>image</type>");
+                    rawXML.AppendLine("\t\t\t<texture>#fanarthandler." + item.fanartPropery + ".backdrop2.any</texture>");
                     rawXML.AppendLine("\t\t\t<posx>0</posx>");
                     rawXML.AppendLine("\t\t\t<posy>0</posy>");
                     rawXML.AppendLine("\t\t\t<width>1280</width>");

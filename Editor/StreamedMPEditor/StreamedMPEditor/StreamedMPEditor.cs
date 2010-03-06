@@ -152,6 +152,7 @@ namespace StreamedMPEditor
             randomFanart.fanartPlugins = false;
             randomFanart.fanartTv = false;
             randomFanart.fanartTVSeries = false;
+            randomFanart.fanartScoreCenter = false;
 
             //Check the display res
             deskHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -501,8 +502,6 @@ namespace StreamedMPEditor
             if (mnuItem.fanartHandlerEnabled)
                 checkAndSetRandomFanart(mnuItem.fanartProperty);
 
-
-
             saveButton.Enabled = true;
             cancelButton.Enabled = true;
             editButton.Enabled = false;
@@ -531,6 +530,17 @@ namespace StreamedMPEditor
                 item.hyperlink = ids[xmlFiles.SelectedIndex];
                 item.disableBGSharing = disableBGSharing.Checked;
                 item.isWeather = isWeather.Checked;
+
+                if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
+                {
+                    DialogResult result = showError("You have selected to use Fanart Random images for the Weather item\nbut the option 'Link Background to Current Weather' is enabled\nand will override this setting\n\nDisable the 'Link Background to Current Weather' Option? ", errorCode.infoQuestion);
+                    if (result == DialogResult.Yes)
+                    {
+                        weatherBGlink.Checked = false;
+                    }
+
+                }
+
 
                 if (item.fanartHandlerEnabled)
                     checkAndSetRandomFanart(item.fanartProperty);

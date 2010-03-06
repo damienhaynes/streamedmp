@@ -1285,6 +1285,8 @@ namespace StreamedMPEditor
             randomFanart.fanartMovingPictures = true;
         if (fanartProperty.ToLower().Contains("movie"))
             randomFanart.fanartMovies = true;
+        if (fanartProperty.ToLower().Contains("scorecenter"))
+            randomFanart.fanartScoreCenter = true;
     }
 
 
@@ -1639,6 +1641,7 @@ namespace StreamedMPEditor
           public bool fanartPictures;
           public bool fanartTv;
           public bool fanartMovies;
+          public bool fanartScoreCenter;
       }
 
     public struct editorValues
