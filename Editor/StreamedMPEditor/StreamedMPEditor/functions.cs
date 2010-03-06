@@ -1124,9 +1124,9 @@ namespace StreamedMPEditor
 
     private void getBackupFileTotals()
     {
-      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*");
+      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*",false);
       numUPBackups.Text = totalImages.ToString();
-      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
       numBHBackups.Text = totalImages.ToString();
     }
 
@@ -1148,7 +1148,7 @@ namespace StreamedMPEditor
         Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
         Properties.Settings.Default.autoPurge = true;
 
-        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*");
+        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*",false);
         foreach (string file in filesToDelete)
         {
           if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1157,7 +1157,7 @@ namespace StreamedMPEditor
         }
         versionCount = 0;
 
-        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
         foreach (string file in filesToDelete2)
         {
           if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1171,7 +1171,7 @@ namespace StreamedMPEditor
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*");
+      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*",false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1181,7 +1181,7 @@ namespace StreamedMPEditor
 
     private void purgeBHBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*");
+      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1400,7 +1400,7 @@ namespace StreamedMPEditor
         string filetotest = imageDir(item.defaultImage);
         if (!System.IO.File.Exists(filetotest))
         {
-            string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*");
+            string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*",true);
             createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
         }
     }
