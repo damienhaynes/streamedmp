@@ -35,7 +35,7 @@ namespace StreamedMPEditor
             {
                 if (Directory.Exists(mpPaths.streamedMPpath + "media\\SplashScreens"))
                 {
-                    fileList = getFileListing(mpPaths.streamedMPpath + "media\\splashscreens", "*.*");
+                    fileList = getFileListing(mpPaths.streamedMPpath + "media\\splashscreens", "*.*",true);
                     numOfImages = fileList.Length;
                     if (numOfImages > 0) return true;
                 }

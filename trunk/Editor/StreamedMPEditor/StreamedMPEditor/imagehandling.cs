@@ -74,11 +74,19 @@ namespace StreamedMPEditor
 
         if (!System.IO.File.Exists((imageDir(bgItem.image))))
         {
-          string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
-          createDefaultJpg(Path.GetDirectoryName(imageDir(bgItem.image)));
+            string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*", true);
+            createDefaultJpg(Path.GetDirectoryName(imageDir(bgItem.image)));
         }
+        else
+        {
+            string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*", true);
+        }
+        totalImages = fileResults.Count();
 
-        totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
+
+
+
+        //totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
         //if (totalImages > 1)
         //    totalImages--;
         string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
@@ -129,7 +137,7 @@ namespace StreamedMPEditor
         newBGButton.Tag = pBoxElement.ToString();
         newBGButton.Click += new System.EventHandler(bgChangeButton_Click);
         newBGButton.Name = bgItem.mname[0];
-        if (totalImages < 2)
+        if (totalImages < 1)
           newBGButton.Enabled = false;
         else
           newBGButton.Enabled = true;
@@ -249,7 +257,7 @@ namespace StreamedMPEditor
         if (bgItem.mname[0] == ctrlName)
         {
           defImgs.activeDir = Path.GetDirectoryName(imageDir(bgItem.image));
-          string[] fileList = getFileListing(defImgs.activeDir,"*.*");
+          string[] fileList = getFileListing(defImgs.activeDir,"*.*",true);
           for (imagePointer = 0; imagePointer < 3; imagePointer++)
           {
             if (imagePointer >= totalImages) break;
@@ -338,7 +346,7 @@ namespace StreamedMPEditor
     {
         Bitmap defBmp = new Bitmap(fileToCheck);
         FileInfo fDefInfo = new FileInfo(fileToCheck);
-        string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(fileToCheck)), "*.*");
+        string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(fileToCheck)), "*.*",true);
 
         foreach (string fileName in fileList)
         {
@@ -390,7 +398,7 @@ namespace StreamedMPEditor
       {
         if (bgItem.mname[0] == ctrlName)
         {
-            string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
+            string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*",true);
             
           for (int i = 0; i < 3; i++)
           {
@@ -438,7 +446,7 @@ namespace StreamedMPEditor
       {
           if (bgItem.mname[0] == ctrlName)
           {
-              string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*");
+              string[] fileList = getFileListing(Path.GetDirectoryName(imageDir(bgItem.image)), "*.*",true);
               for (int i = 0; i < 3; i++)
               {
                   defImgs.NewPicBoxes[i].Visible = true;
@@ -467,10 +475,10 @@ namespace StreamedMPEditor
             imageDir += @"\";
         }
         // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
-        string sourceImgFile = getFileListing(imageDir, "*.*")[0];
+        string sourceImgFile = getFileListing(imageDir, "*.*",true)[0];
         System.IO.File.Copy(sourceImgFile, imageDir + "default.jpg", true);
         // Delete the Source file
-        // System.IO.File.Delete(sourceImgFile);
+        System.IO.File.Delete(sourceImgFile);
     }
 
     private string imageDir(string image)
@@ -482,7 +490,7 @@ namespace StreamedMPEditor
 
     }
 
-    private string[] getFileListing(string imageDir, string fileMask)
+    private string[] getFileListing(string imageDir, string fileMask, bool imagelisting)
     {
       string fcompare;
       totalImages = 0;
@@ -491,17 +499,31 @@ namespace StreamedMPEditor
       //get list of files from directory
       foreach (FileInfo fInfo in dInfo.GetFiles(fileMask))
       {
-        fcompare = fInfo.Name.ToLower();
-        if (fcompare != "default.jpg")
-        {
-            fileResults.Add(fInfo.FullName);
-            totalImages++;
-        }
+          if (imagelisting)
+          {
+              fcompare = fInfo.Name.ToLower();
+              if (fcompare != "default.jpg")
+              {
+                  switch (fInfo.Extension.ToLower())
+                  {
+                      case ".jpg":
+                      case ".jpeg":
+                      case ".png":
+                      case ".bmp":
+                          fileResults.Add(fInfo.FullName);
+                          totalImages++;
+                          break;
+                  }
+              }
+          }
+          else
+          {
+              fileResults.Add(fInfo.FullName);
+              totalImages++;
+          }
       }
       return fileResults.ToArray();
     }
-
-
 
     private CompareResult compareImages(Bitmap bmp1, Bitmap bmp2)
     {
