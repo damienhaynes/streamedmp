@@ -1165,6 +1165,9 @@ namespace StreamedMPEditor
           versionCount++;
         }
       }
+      if (cbAllowUpdateCheck.Checked)
+        Properties.Settings.Default.allowUpdateCheck = true;
+
       Properties.Settings.Default.Save();
 
    }

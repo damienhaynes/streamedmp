@@ -82,5 +82,17 @@ namespace StreamedMPEditor.Properties {
                 this["hideSplashConfirm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool allowUpdateCheck {
+            get {
+                return ((bool)(this["allowUpdateCheck"]));
+            }
+            set {
+                this["allowUpdateCheck"] = value;
+            }
+        }
     }
 }

@@ -127,7 +127,9 @@ namespace StreamedMPEditor
         int deskHeight;
         int deskWidth;
 
-
+        Version newVersion = null;
+        string url = "";
+        XmlTextReader reader;
 
         //Default Style to StreamedMp standard
         chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
@@ -143,6 +145,20 @@ namespace StreamedMPEditor
         public streamedMpEditor()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.allowUpdateCheck)
+            {
+              checkForUpdate();
+              Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+              if (curVersion.CompareTo(newVersion) < 0)
+              {
+                string title = "StreamedMP Editor Version " + newVersion.ToString() + " available.";
+                string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to display the download page?";
+                if (DialogResult.Yes == MessageBox.Show(this, question, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                  System.Diagnostics.Process.Start(url);
+                }
+              }
+            }
 
             randomFanart.fanartGames = false;
             randomFanart.fanartMovies = false;
@@ -187,6 +203,8 @@ namespace StreamedMPEditor
             {
                 autoPurgeBackups.Checked = true;
             }
+            if (Properties.Settings.Default.allowUpdateCheck)
+              cbAllowUpdateCheck.Checked = true;
 
 
 
