@@ -872,7 +872,6 @@ namespace StreamedMPEditor
                 item.id = menuItems.IndexOf(item);
             }
         }
-
     }
 }
 

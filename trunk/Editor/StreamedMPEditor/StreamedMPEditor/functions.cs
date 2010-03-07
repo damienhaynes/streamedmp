@@ -1410,6 +1410,27 @@ namespace StreamedMPEditor
         }
     }
 
+    private void btCheckForUpdate_Click(object sender, EventArgs e)
+    {
+      checkForUpdate();
+      Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+      if (curVersion.CompareTo(newVersion) < 0)
+      {
+        string title = "StreamedMP Editor Version " + newVersion.ToString() + " available.";
+        string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to exit and display the download page?";
+        if (DialogResult.Yes == MessageBox.Show(this, question, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+        {
+          Process.Start(url);
+          System.Environment.Exit(1);
+        }
+      }
+      else
+      {
+        showError("Version " + curVersion.ToString() + " of the StreamedMP Editor is the latest release\n\nNo Update Required - Click OK to Continue", errorCode.info);
+      }
+    }
+
+
     public class getAsmVersion
     {
       #region Private Variables
