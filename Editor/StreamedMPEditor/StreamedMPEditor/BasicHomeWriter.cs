@@ -1628,7 +1628,10 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\n\t\t<control>");
                 rawXML.AppendLine("\t\t\t<description>" + item.name + " BACKGROUND 1</description>");
                 if (item.fanartHandlerEnabled)
-                    rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "1</id>");
+                  rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "1</id>");
+                else
+                  rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
+
 
                 if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
                 {
@@ -1990,7 +1993,10 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<posX>-50</posX>");
             rawXML.AppendLine("\t<posY>-50</posY>");
             rawXML.AppendLine("\t<label></label>");
-            rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+            if (weatherId.ToString().Length == 5)
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+            else
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
             rawXML.AppendLine("</control>");
 
             rawXML.AppendLine("\n<control>");
