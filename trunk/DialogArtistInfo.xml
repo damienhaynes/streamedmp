@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
-  <id>2001</id>
+  <id>2011</id>
   <defaultcontrol>5</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
@@ -68,79 +67,98 @@
       <description>Artist</description>
       <type>label</type>
       <id>1</id>
-      <posX>850</posX>
+      <posX>940</posX>
       <posY>280</posY>
       <label>171</label>
       <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <textcolor>ff006699</textcolor>
+      <align>right</align>
     </control>
     <control>
-      <description>Date of Release</description>
+      <description>Born</description>
       <type>label</type>
       <id>1</id>
-      <posX>850</posX>
+      <posX>940</posX>
       <posY>310</posY>
-      <label>201</label>
+      <label>689</label>
       <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <textcolor>ff006699</textcolor>
+      <align>right</align>
     </control>
     <control>
-      <description>Rating</description>
+      <description>Years Active</description>
       <type>label</type>
       <id>1</id>
-      <posX>850</posX>
+      <posX>940</posX>
       <posY>340</posY>
-      <label>173</label>
+      <label>687</label>
       <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <textcolor>ff006699</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>Genre</description>
       <type>label</type>
       <id>1</id>
-      <posX>850</posX>
+      <posX>940</posX>
       <posY>370</posY>
-      <label>174</label>
+      <label>135</label>
       <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <textcolor>ff006699</textcolor>
-    </control>
-    <control>
-      <description>Tones</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>850</posX>
-      <posY>430</posY>
-      <label>175</label>
-      <font>mediastream11</font>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>Styles</description>
       <type>label</type>
       <id>1</id>
-      <posX>850</posX>
+      <posX>940</posX>
       <posY>400</posY>
       <label>176</label>
       <font>mediastream11</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <textcolor>ff006699</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Tones</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>940</posX>
+      <posY>430</posY>
+      <label>175</label>
+      <font>mediastream11</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <textcolor>ff006699</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Instruments</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>940</posX>
+      <posY>460</posY>
+      <label>688</label>
+      <font>mediastream11</font>
+      <textcolor>ff006699</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <align>right</align>
     </control>
     <control>
       <description>Artist value</description>
       <type>label</type>
       <id>21</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>280</posY>
       <label>-</label>
       <font>mediastream11</font>
@@ -149,10 +167,10 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Date of Release value</description>
+      <description>Born value</description>
       <type>label</type>
       <id>22</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>310</posY>
       <label>-</label>
       <font>mediastream11</font>
@@ -161,10 +179,10 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Rating value</description>
+      <description>Years Active value</description>
       <type>label</type>
       <id>23</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>340</posY>
       <label>-</label>
       <font>mediastream11</font>
@@ -176,7 +194,7 @@
       <description>Genre value</description>
       <type>label</type>
       <id>24</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>370</posY>
       <label>-</label>
       <font>mediastream11</font>
@@ -188,7 +206,7 @@
       <description>Tones value</description>
       <type>fadelabel</type>
       <id>25</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>430</posY>
       <width>210</width>
       <label>-</label>
@@ -201,9 +219,21 @@
       <description>Styles value</description>
       <type>fadelabel</type>
       <id>26</id>
-      <posX>925</posX>
+      <posX>945</posX>
       <posY>400</posY>
       <width>200</width>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Instruments value</description>
+      <type>label</type>
+      <id>27</id>
+      <posX>945</posX>
+      <posY>460</posY>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -273,7 +303,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Tracks/Review</description>
       <type>button</type>
