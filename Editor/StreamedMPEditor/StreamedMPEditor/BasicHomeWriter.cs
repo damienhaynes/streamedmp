@@ -990,12 +990,12 @@ namespace StreamedMPEditor
 
             int rssImageXposOffset = 0; 
             int rssImageYposOffset = 0;
-            if (screenres == screenResolutionType.res1920x1080 && (menuStyle == chosenMenuStyle.horizontalContextStyle))
+            if (screenres == screenResolutionType.res1920x1080 && (menuStyle == chosenMenuStyle.horizontalContextStyle) && rssImage == rssImageType.infoserviceImage)
             {
                 rssImageXposOffset = 40;
                 rssImageYposOffset = 357;
             }
-            if (screenres == screenResolutionType.res1920x1080 && (menuStyle == chosenMenuStyle.horizontalStandardStyle))
+            if (screenres == screenResolutionType.res1920x1080 && (menuStyle == chosenMenuStyle.horizontalStandardStyle) && rssImage == rssImageType.infoserviceImage)
             {
                 rssImageXposOffset = 40;
                 rssImageYposOffset = 262;
