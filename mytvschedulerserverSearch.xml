@@ -34,6 +34,8 @@
                         <width>256</width>
                         <height>256</height>
                         <texture>keyboard.png</texture>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 <control>
                         <description>status</description>
@@ -56,6 +58,8 @@
                       <height>32</height>
                       <texture>mediacountbg_Spin.png</texture>
                       <visible>Control.isvisible(50)</visible>
+                      <animation effect="fade" time="250">WindowOpen</animation>
+                      <animation effect="fade" time="250">WindowClose</animation>
                </control>
                <control>
                       <description>Page Count Label</description>
@@ -67,6 +71,8 @@
                       <font>mediastream12tc</font>
                       <textcolor>ff909090</textcolor>
                       <visible>Control.isvisible(50)</visible>
+                      <animation effect="fade" time="250">WindowOpen</animation>
+                      <animation effect="fade" time="250">WindowClose</animation>
                </control>
                <control>
                       <description>listcontrol</description>
@@ -125,12 +131,14 @@
                         <textboxYpos>618</textboxYpos>
                         <textboxWidth>600</textboxWidth>
                         <textboxHeight>37</textboxHeight>
-                        <textboxColor>00FFFF00</textboxColor>
+                        <textboxColor>FFFFFF00</textboxColor>
                         <textboxBgColor>00ffffff</textboxBgColor>
                         <onleft>51</onleft>
                         <onright>51</onright>
                         <onup>50</onup>
                         <ondown>50</ondown>
+                        <animation effect="fade" time="250">WindowOpen</animation>
+                        <animation effect="fade" time="250">WindowClose</animation>
                 </control>
                 
                 <!--<import>common.overlays.xml</import>-->
