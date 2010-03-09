@@ -1000,6 +1000,9 @@ namespace StreamedMPEditor
                 rssImageXposOffset = 40;
                 rssImageYposOffset = 262;
             }
+            //rssImageXposOffset = 0;
+            //rssImageYposOffset = 0;
+
             switch (rssImage)
             {
                 case rssImageType.infoserviceImage:
