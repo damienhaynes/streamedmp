@@ -67,7 +67,19 @@ This file should contain the details view
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
-				<posY>333</posY>
+				<posY>362</posY>
+				<visible>!Control.HasFocus(50)</visible>
+				<animation effect="slide" time="100" start="300,0">visible</animation>
+				<animation effect="slide" time="0" end="300,0">hidden</animation>
+			</control>
+			<control>
+				<id>0</id>
+				<description>JUMP TO</description>
+				<label>1065</label>
+				<type>label</type>
+				<font>mediastream12tc</font>
+				<posX>1040</posX>
+				<posY>446</posY>
 				<visible>!Control.HasFocus(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -79,7 +91,7 @@ This file should contain the details view
 				<type>label</type>
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
-				<posY>417</posY>
+				<posY>530</posY>
 				<visible>!Control.HasFocus(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -118,6 +130,13 @@ This file should contain the details view
 					<onleft>50</onleft>
 				</control>
 				<control>
+					<description>Options</description>
+					<type>button</type>
+					<id>4</id>
+					<label>496</label>
+					<onleft>50</onleft>
+				</control>
+				<control>
 					<description>Empty button</description>
 					<type>button</type>
 					<id>0</id>
@@ -147,11 +166,27 @@ This file should contain the details view
 					<visible>false</visible>
 				</control>
 				<control>
-					<description>Options</description>
-					<type>button</type>
-					<id>4</id>
-					<label>496</label>
+					<description>MovingPictures</description>
+					<id>66606</id>
+					<type>button</type>					
+					<label>Moving Pictures</label>
+					<hyperlink>96742</hyperlink>
 					<onleft>50</onleft>
+				</control>
+				<control>
+					<description>My Videos</description>
+					<type>button</type>
+					<id>66607</id>
+					<label>100006</label>
+					<onleft>50</onleft>
+					<hyperlink>6</hyperlink>
+				</control>
+				<control>
+					<description>Empty button</description>
+					<type>button</type>
+					<id>0</id>
+					<label>-</label>
+					<visible>false</visible>
 				</control>
 				<control>
 					<description>Video Settings</description>
