@@ -412,20 +412,20 @@ namespace StreamedMPEditor
 
 
             // Remove xml files for list if they are in the quicklist
-            foreach (string id in ids)
-            {
-                bool pItemFound = false;
-                foreach (prettyItem p in prettyItems)
-                {
-                    if (id == p.id)
-                        pItemFound = true;
-                }
-                if (!pItemFound)
-                    idsTemp.Add(id);
-            }
-            ids.Clear();
-            ids = idsTemp;
-            idsTemp.Clear();
+            //foreach (string id in ids)
+            //{
+            //    bool pItemFound = false;
+            //    foreach (prettyItem p in prettyItems)
+            //    {
+            //        if (id == p.id)
+            //            pItemFound = true;
+            //    }
+            //    if (!pItemFound)
+            //        idsTemp.Add(id);
+            //}
+            //ids.Clear();
+            //ids = idsTemp;
+            //idsTemp.Clear();
 
         }
 
