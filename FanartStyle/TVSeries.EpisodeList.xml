@@ -59,26 +59,26 @@
 		
 		<control>
 			<description>Episode Name Shadow</description>
-			<type>textbox</type>
+			<type>textboxscrollup</type>
 			<label>#TVSeries.Episode.LocalEpisodeName</label>
 			<id>0</id>
 			<posX>302</posX>
 			<posY>442</posY>
-			<width>350</width>
-			<height>80</height>
+			<width>460</width>
+			<height>60</height>
 			<font>mediastream14tc</font>
 			<textcolor>#shadow.light</textcolor>
 			<visible>Control.IsVisible(1239)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
-			<type>textbox</type>
+			<type>textboxscrollup</type>
 			<label>#TVSeries.Episode.LocalEpisodeName</label>
 			<id>0</id>
 			<posX>300</posX>
 			<posY>440</posY>
-			<width>350</width>
-			<height>80</height>
+			<width>460</width>
+			<height>60</height>
 			<font>mediastream14tc</font>
 			<textcolor>ffffffff</textcolor>
 			<visible>Control.IsVisible(1239)+facadeview.list</visible>
