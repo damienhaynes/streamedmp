@@ -25,7 +25,7 @@
       <textureFocus>Action_menu.png</textureFocus>
       <textureNoFocus>Action_menu.png</textureNoFocus>
       <description>action menu</description>
-      <onexit>10</onexit>
+      <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
     <defaultcontrol>5</defaultcontrol>
       <control>
@@ -35,7 +35,7 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(10)</visible>
+        <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -137,58 +137,64 @@
             <id>51</id>
             <description>station logo</description>
             <type>image</type>
-            <visible>facadeview.list</visible>
-            <posX>274</posX>
-            <posY>350</posY>
-            <texture/>
+            <visible>facadeview.list|facadeview.album</visible>
+            <posX>20</posX>
+            <posY>300</posY>
+            <width>200</width>
+            <height>300</height>
+            <texture>-</texture>
+            <keepaspectratio>yes</keepaspectratio>
         </control>
+
         <control>
             <id>47</id>
             <description>meta label</description>
             <type>label</type>
-            <visible>facadeview.list</visible>
-            <posX>274</posX>
+            <posX>20</posX>
             <posY>490</posY>
-            <font>font12</font>
+            <font>mediastream12c</font>
             <textcolor>ffffffff</textcolor>
-            <align>LEFT</align>
-            <label>#RadioTime.Selected.NowPlaying</label>
-        </control>
-        <control>
-            <id>47</id>
-            <description>meta label</description>
-            <type>label</type>
-            <visible>facadeview.list</visible>
-            <posX>274</posX>
-            <posY>460</posY>
-            <font>font12</font>
-            <textcolor>ffffffff</textcolor>
-            <align>LEFT</align>
-            <label>#RadioTime.Selected.Subtext</label>
-        </control>
-        <control>
-            <id>47</id>
-            <description>meta label</description>
-            <type>label</type>
-            <visible>facadeview.list</visible>
-            <posX>274</posX>
-            <posY>430</posY>
-            <font>font12</font>
-            <textcolor>ffffffff</textcolor>
-            <align>LEFT</align>
+            <align>left</align>
             <label>#RadioTime.Selected.Format</label>
+            <visible>facadeview.list|facadeview.album</visible>
         </control>
+        <control>
+            <id>47</id>
+            <description>meta label</description>
+            <type>label</type>
+            <posX>20</posX>
+            <posY>430</posY>
+            <font>mediastream14c</font>
+            <textcolor>ffffffff</textcolor>
+            <align>left</align>
+            <label>#RadioTime.Selected.Subtext</label>
+            <visible>facadeview.list|facadeview.album</visible>
+        </control>
+        <control>
+            <id>47</id>
+            <description>meta label</description>
+            <type>label</type>
+            <posX>20</posX>
+            <posY>460</posY>
+            <font>mediastream14c</font>
+            <textcolor>ffffffff</textcolor>
+            <align>left</align>
+            <label>#RadioTime.Selected.NowPlaying</label>
+            <visible>facadeview.list|facadeview.album</visible>
+        </control>
+
+
         <control>
             <id>81</id>
             <description>existent rating2</description>
             <type>imagelist</type>
             <visible>facadeview.list</visible>
-            <posX>274</posX>
-            <posY>515</posY>
+            <posX>20</posX>
+            <posY>635</posY>
             <width>142</width>
-            <height>40</height>
-            <textureHeight>20</textureHeight>
-            <textureWidth>28</textureWidth>
+            <height>60</height>
+            <textureHeight>30</textureHeight>
+            <textureWidth>38</textureWidth>
             <percentage>#RadioTime.Selected.Reliability</percentage>
             <imagesToDraw>5</imagesToDraw>
             <orientation>HORIZONTAL</orientation>
@@ -199,30 +205,7 @@
             </subitems>
         </control>
      <import>common.window.xml</import>
-     <import>common.time.xml</import>
-    <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>481</posX>
-      <posY>11</posY>
-      <width>456</width>
-      <height>36</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>617</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <label>LABEL</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>             
+     <import>common.time.xml</import>          
         <import>common.facade.music.xml</import>
         <import>common.overlays.xml</import>
     </controls>

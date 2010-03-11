@@ -18,7 +18,7 @@
       <description>background image</description>
       <type>image</type>
       <id>0</id>
-      <texture>context_background.png</texture>
+      <texture>dialogmenumiddle.png</texture>
       <width>1066</width>
       <height>557</height>
       <posX>106</posX>
@@ -30,17 +30,17 @@
       <id>34</id>
       <posX>1046</posX>
       <posY>97</posY>
-      <width>78</width>
-      <height>68</height>
-      <textureFocus>dialogue_shutdown_focus.png</textureFocus>
-      <textureNoFocus>dialogue_shutdown_nofocus.png</textureNoFocus>
+      <width>48</width>
+      <height>38</height>
+      <textureFocus>button_close_focus.png</textureFocus>
+      <textureNoFocus>button_close_nofocus.png</textureNoFocus>
       <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       <animation effect="zoom" start="100,100" end="100,100" time="300">unfocus</animation>
       <label>-</label>
-      <onleft>36</onleft>
-      <onright>34</onright>
-      <ondown>35</ondown>
-      <onup>34</onup>
+      <onleft>37</onleft>
+      <onright>37</onright>
+      <ondown>36</ondown>
+      <onup>36</onup>
     </control>
     <control>
       <description>list to show channels without channel state logos</description>
@@ -80,6 +80,15 @@
       <!-- used for selected channel -->
       <onleft>36</onleft>
       <onright>34</onright>
+      <spinWidth>37</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1065</spinPosX>
+      <spinPosY>586</spinPosY>
+      <spinAlign>right</spinAlign>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>      
     </control>
     <control>
       <description>list to show channels with channel state logos</description>
@@ -118,6 +127,15 @@
       <textcolor3>FFFFFFFF</textcolor3>
       <remoteColor>FFFFFFFF</remoteColor>
       <!-- used for selected channel -->
+      <spinWidth>37</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1065</spinPosX>
+      <spinPosY>586</spinPosY>
+      <spinAlign>right</spinAlign>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>       
       <onleft>36</onleft>
       <onright>34</onright>
     </control>
@@ -129,27 +147,54 @@
       <posY>117</posY>
       <width>426</width>
       <label>10105</label>
-      <font>font14</font>
-      <textcolor>Black</textcolor>
+      <font>mediastream14c</font>
+      <textcolor>white</textcolor>
     </control>
+    
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>915</posX>
+      <posY>590</posY>
+      <width>240</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>925</posX>
+      <posY>594</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>    
+    
     <control>
       <description>groups spin control</description>
       <type>spincontrol</type>
       <id>36</id>
-      <posX>423</posX>
+      <posX>423</posX>b
       <posY>122</posY>
-      <showrange>no</showrange>
-      <orientation>horizontal</orientation>
-      <font>font14</font>
-      <textureUp>arrow_round_right_nofocus.png</textureUp>
-      <textureDown>arrow_round_left_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>       
+      <onleft>36</onleft>
+      <spinWidth>100</spinWidth>
+      <spinHeight>37</spinHeight>
       <ondown>35</ondown>
       <onup>36</onup>
       <onright>34</onright>
       <onleft>36</onleft>
     </control>
+    
     <control>
       <description>time label</description>
       <id>0</id>
@@ -157,7 +202,7 @@
       <posX>942</posX>
       <posY>120</posY>
       <align>right</align>
-      <font>font14</font>
+      <font>mediastream14tc</font>
       <textcolor>ffa9d0f7</textcolor>
       <label>#time</label>
     </control>
