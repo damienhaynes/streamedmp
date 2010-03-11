@@ -1,345 +1,229 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>25650</id>
-  <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
-  <define>#header.image:radiotime_logo.png</define>
-  <define>#currentmodule:RadioTime</define>
-  <controls>
+    <id>25650</id>
+    <defaultcontrol>50</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <define>#header.image:radiotime_logo.png</define>
+    <define>#currentmodule:RadioTime</define>
+    <define>#Play.Current.Album:#RadioTime.Play.Image</define>
+    <define>#useRandomMusicFanart:Yes</define>
+    <controls>
+        <import>mymusic.autofanart.xml</import>
+	<control>
+	    <type>image</type>
+	    <posX>0</posX>
+	    <posY>0</posY>
+	    <texture>mainoverlay.png</texture>
+	</control>            
     <control>
-      <description>Top Title Background</description>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>Action_menu.png</textureFocus>
+      <textureNoFocus>Action_menu.png</textureNoFocus>
+      <description>action menu</description>
+      <onexit>10</onexit>
+      <dimColor>00ffffff</dimColor>
+    <defaultcontrol>5</defaultcontrol>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+                <control>
+                    <id>5</id>
+                    <description>Search Button</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>10</onup>
+                    <ondown>7</ondown>
+                    <label>#RadioTime.Translation.Search.Label</label>
+                </control>
+                <control>
+                    <id>7</id>
+                    <description>Search Button</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>5</onup>
+                    <ondown>2</ondown>
+                    <label>#RadioTime.Translation.SearchArtist.Label</label>
+                </control>
+                <control>
+                    <id>2</id>
+                    <description>Sort Button</description>
+                    <type>sortbutton</type>
+                    <onleft>50</onleft>
+                    <onup>7</onup>
+                    <ondown>3</ondown>
+                    <label/>
+                </control>
+                <control>
+                    <id>3</id>
+                    <description>Swich view</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>2</onup>
+                    <ondown>4</ondown>
+                    <label/>
+                </control>
+                <control>
+                    <id>4</id>
+                    <description>Home</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>3</onup>
+                    <ondown>8</ondown>
+                    <label>#RadioTime.Translation.Home.Label</label>
+                </control>
+                <control>
+                    <id>8</id>
+                    <description>genres</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>4</onup>
+                    <ondown>6</ondown>
+                    <label>#RadioTime.Translation.Genres.Label</label>
+                </control>
+                <control>
+                    <id>6</id>
+                    <description>My Presets</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>8</onup>
+                    <ondown>9</ondown>
+                    <label>#RadioTime.Translation.Presets.Label</label>
+                </control>
+                <control>
+                    <id>9</id>
+                    <description>Now playing</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>6</onup>
+                    <ondown>10</ondown>
+                    <label>#RadioTime.Translation.NowPlaying.Label</label>
+                </control>
+                <control>
+                    <id>10</id>
+                    <description>Random</description>
+                    <type>button</type>
+                    <onleft>50</onleft>
+                    <onup>9</onup>
+                    <ondown>2</ondown>
+                    <label>#RadioTime.Translation.Random.Label</label>
+                </control>
+            </control>
+        </control>
+        <control>
+            <id>51</id>
+            <description>station logo</description>
+            <type>image</type>
+            <visible>facadeview.list</visible>
+            <posX>274</posX>
+            <posY>350</posY>
+            <texture/>
+        </control>
+        <control>
+            <id>47</id>
+            <description>meta label</description>
+            <type>label</type>
+            <visible>facadeview.list</visible>
+            <posX>274</posX>
+            <posY>490</posY>
+            <font>font12</font>
+            <textcolor>ffffffff</textcolor>
+            <align>LEFT</align>
+            <label>#RadioTime.Selected.NowPlaying</label>
+        </control>
+        <control>
+            <id>47</id>
+            <description>meta label</description>
+            <type>label</type>
+            <visible>facadeview.list</visible>
+            <posX>274</posX>
+            <posY>460</posY>
+            <font>font12</font>
+            <textcolor>ffffffff</textcolor>
+            <align>LEFT</align>
+            <label>#RadioTime.Selected.Subtext</label>
+        </control>
+        <control>
+            <id>47</id>
+            <description>meta label</description>
+            <type>label</type>
+            <visible>facadeview.list</visible>
+            <posX>274</posX>
+            <posY>430</posY>
+            <font>font12</font>
+            <textcolor>ffffffff</textcolor>
+            <align>LEFT</align>
+            <label>#RadioTime.Selected.Format</label>
+        </control>
+        <control>
+            <id>81</id>
+            <description>existent rating2</description>
+            <type>imagelist</type>
+            <visible>facadeview.list</visible>
+            <posX>274</posX>
+            <posY>515</posY>
+            <width>142</width>
+            <height>40</height>
+            <textureHeight>20</textureHeight>
+            <textureWidth>28</textureWidth>
+            <percentage>#RadioTime.Selected.Reliability</percentage>
+            <imagesToDraw>5</imagesToDraw>
+            <orientation>HORIZONTAL</orientation>
+            <align>LEFT</align>
+            <subitems>
+                <subitem>greystar.png</subitem>
+                <subitem>stargood.png</subitem>
+            </subitems>
+        </control>
+     <import>common.window.xml</import>
+     <import>common.time.xml</import>
+    <control>
+      <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
+      <posX>481</posX>
       <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <width>456</width>
+      <height>36</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
+    
     <control>
-      <description>Time Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
-      <texture>clockbackground.png</texture>
-      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
-    </control>
-    <control>
-      <description>music background image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>hover_my music.png</texture>
-    </control>
-    <control>
-      <description>music overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>tvviewbg.png</texture>
-    </control>
-    <control>
-      <type>group</type>
-      <description>group element</description>
-      <posX>40</posX>
-      <posY>220</posY>
-      <layout>StackLayout</layout>
-      <control>
-        <description>Search Button</description>
-        <type>button</type>
-        <id>5</id>
-        <label>25651</label>
-        <onright>50</onright>
-        <onup>17</onup>
-        <ondown>2</ondown>
-        <textYOff>5</textYOff>
-        <textXOff>20</textXOff>
-        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>Sort Button</description>
-        <type>sortbutton</type>
-        <id>2</id>
-        <label></label>
-        <onright>50</onright>
-        <onup>5</onup>
-        <ondown>3</ondown>
-        <textYOff>5</textYOff>
-        <textXOff>20</textXOff>
-        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>Swich view</description>
-        <type>button</type>
-        <id>3</id>
-        <label></label>
-        <onright>50</onright>
-        <onup>2</onup>
-        <ondown>4</ondown>
-        <textYOff>5</textYOff>
-        <textXOff>20</textXOff>
-        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>Home</description>
-        <type>button</type>
-        <id>4</id>
-        <label>25661</label>
-        <onright>50</onright>
-        <onup>3</onup>
-        <ondown>6</ondown>
-        <textYOff>5</textYOff>
-        <textXOff>20</textXOff>
-        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>My Presets</description>
-        <type>button</type>
-        <id>6</id>
-        <label>25652</label>
-        <onright>50</onright>
-        <onup>4</onup>
-        <ondown>99</ondown>
-        <textYOff>5</textYOff>
-        <textXOff>20</textXOff>
-        <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      </control>
-    </control>
-    <control>
-      <description>station logo</description>
-      <type>image</type>
-      <id>51</id>
-      <posX>500</posX>
-      <posY>550</posY>
-      <align>center</align>
-      <width>300</width>
-      <height>300</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture />
-    </control>
-    <control>
-      <description>meta label</description>
       <type>label</type>
-      <id>47</id>
-      <posX>25</posX>
-      <posY>395</posY>
-      <label>#nowplaying</label>
-      <font>font12</font>
-      <align>left</align>
-      <textcolor>ffffffff</textcolor>
-    </control>
-    <control>
-      <description>group element</description>
-      <type>group</type>
-      <visible>!Control.HasFocus(50)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-      <control>
-        <description>composite control consisting of a list control and a thumbnail panel</description>
-        <type>facadeview</type>
-        <id>50</id>
-        <control>
-          <description>listcontrol</description>
-          <type>listcontrol</type>
-          <id>50</id>
-          <posX>520</posX>
-          <posY>80</posY>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <height>450</height>
-          <width>800</width>
-          <textureHeight>55</textureHeight>
-          <scrollOffset>2</scrollOffset>
-          <font>mediastream12tc</font>
-          <font2>mediastream12tc</font2>
-          <IconXOff>5</IconXOff>
-          <IconYOff>5</IconYOff>
-          <textXOff>25</textXOff>
-          <itemWidth>65</itemWidth>
-          <itemHeight>65</itemHeight>
-          <keepaspectratio>yes</keepaspectratio>
-          <!--<unfocusedAlpha>200</unfocusedAlpha>-->
-          <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <spinColor>ff006698</spinColor>
-          <spinCanFocus>no</spinCanFocus>
-        </control>
-        <control>
-          <description>album view listcontrol</description>
-          <type>listcontrol</type>
-          <subtype>album</subtype>
-          <id>50</id>
-          <posX>520</posX>
-          <posY>80</posY>
-          <height>450</height>
-          <width>800</width>
-          <font>mediastream12tc</font>
-          <font2>mediastream12</font2>
-          <selectedColor>80000000</selectedColor>         
-          <selectedColor2>ffffffff</selectedColor2>          
-          <textXOff2>420</textXOff2>
-          <textYOff2>60</textYOff2>
-          <itemWidth>72</itemWidth>
-          <itemHeight>72</itemHeight>
-          <spaceBetweenItems>14</spaceBetweenItems>
-          <textureHeight>90</textureHeight>
-          <scrollOffset>1</scrollOffset>
-          <textureFocus>listbg_fo.png</textureFocus>
-          <textureNoFocus>listbg_nf.png</textureNoFocus>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <onup>2</onup>
-          <ondown>2</ondown>
-          <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <spinColor>ff006698</spinColor>
-          <spinCanFocus>no</spinCanFocus>
-        </control>
-        <control>
-          <description>Thumbnail Panel</description>
-          <type>thumbnailpanel</type>
-          <id>50</id>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <ondown>2</ondown>
-          <onup>2</onup>
-          <posX>520</posX>
-          <posY>85</posY>
-          <width>800</width>
-          <height>440</height>
-          <scrollOffset>0</scrollOffset>
-          <textureWidthBig>96</textureWidthBig>
-          <textureHeightBig>96</textureHeightBig>
-          <itemWidthBig>130</itemWidthBig>
-          <thumbWidthBig>100</thumbWidthBig>
-          <thumbWidthBig>82</thumbWidthBig>
-          <thumbHeightBig>82</thumbHeightBig>
-          <thumbPosXBig>6</thumbPosXBig>
-          <thumbPosYBig>6</thumbPosYBig>
-          <thumbZoom>no</thumbZoom>
-          <enableFocusZoom>no</enableFocusZoom>
-          <zoomXPixels>30</zoomXPixels>
-          <zoomYPixels>30</zoomYPixels>
-          <hideUnfocusTexture>no</hideUnfocusTexture>
-          <renderFocusText>no</renderFocusText>
-          <renderUnfocusText>yes</renderUnfocusText>
-          <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <textureUp>-</textureUp>
-          <textureDown>-</textureDown>
-          <textureUpFocus>-</textureUpFocus>
-          <textureDownFocus>-</textureDownFocus>
-        </control>
-        <control>
-          <description>Filmstrip view</description>
-          <type>filmstrip</type>
-          <dimColor>90ffffff</dimColor>
-          <id>50</id>
-          <posX>620</posX>
-          <posY>100</posY>
-          <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <textureUp>-</textureUp>
-          <textureDown>-</textureDown>
-          <textureUpFocus>-</textureUpFocus>
-          <textureDownFocus>-</textureDownFocus>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <onup>2</onup>
-          <ondown>2</ondown>
-          <scrollOffset>2</scrollOffset>
-          <width>800</width>
-          <height>576</height>
-          <thumbWidth>200</thumbWidth>
-          <thumbHeight>200</thumbHeight>
-          <thumbPosX>4</thumbPosX>
-          <thumbPosY>4</thumbPosY>
-          <itemWidth>220</itemWidth>
-          <itemHeight>185</itemHeight>
-          <textureWidth>250</textureWidth>
-          <textureHeight>152</textureHeight>
-          <imageFolderFocus>Picture_cover.png</imageFolderFocus>
-          <frame>Picture_cover.png</frame>
-          <frameFocus>Picture_cover.png</frameFocus>
-          <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
-          <showFrame>yes</showFrame>
-          <showFolder>yes</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
-        </control>
-        <control>
-          <description>playlist listcontrol</description>
-          <type>playlistcontrol</type>
-          <id>50</id>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <spinPosX>1249</spinPosX>
-          <spinPosY>690</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <spinColor>ff006698</spinColor>
-          <spinCanFocus>no</spinCanFocus>
-        </control>
-      </control>
-    </control>
-    <control>
-      <description>Media Count Background</description>
-      <type>image</type>
+      <description>Top Title Extension</description>
       <id>0</id>
-      <posX>1113</posX>
-      <posY>684</posY>
-      <width>159</width>
-      <height>28</height>
-      <texture>mediacountbackground.png</texture>
-      <!-- <visible>facadeview.list|facadeview.playlist</visible> -->
-    </control>
-    <control>
-      <description>Media Count Label</description>
-      <type>label</type>
-      <label>PAGE:</label>
-      <id>0</id>
-      <posX>1123</posX>
-      <posY>688</posY>
-      <font>mediastream10tc</font>
-      <textcolor>ff909090</textcolor>
-      <!-- <visible>facadeview.list|facadeview.playlist</visible> -->
-    </control>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
-    <import>common.overlays.xml</import>
-    <control>
-      <description>music logo</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>18</posX>
-      <posY>78</posY>
-      <width>114</width>
-      <height>114</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <centered>yes</centered>
-      <zoom>no</zoom>
-      <texture>#selectedthumb</texture>
-    </control>
-  </controls>
+      <posX>617</posX>
+      <posY>13</posY>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>LABEL</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>             
+        <import>common.facade.music.xml</import>
+        <import>common.overlays.xml</import>
+    </controls>
 </window>
