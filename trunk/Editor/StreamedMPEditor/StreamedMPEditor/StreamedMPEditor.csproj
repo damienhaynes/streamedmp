@@ -13,6 +13,9 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>Resources\Configuration_32512.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -109,6 +112,7 @@
     <EmbeddedResource Include="xmlFiles\VBasicHomeSkeleton.xml" />
     <Content Include="Resources\Configuration_32512.ico" />
     <Content Include="Resources\down.png" />
+    <None Include="Properties\app.manifest" />
     <None Include="Resources\menuStyle31.jpg" />
     <None Include="Resources\menuStyle41.jpg" />
     <None Include="Resources\menuStyle1.jpg" />
