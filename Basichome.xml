@@ -10,11 +10,12 @@
 	<define>#useRandomGamesFanart:No</define>
 	<define>#useRandomTVSeriesFanart:No</define>
 	<define>#useRandomPluginsFanart:No</define>
-	<define>#useRandomMovingPicturesFanart:Yes</define>
+	<define>#useRandomMovingPicturesFanart:No</define>
 	<define>#useRandomMusicFanart:No</define>
-	<define>#useRandomPicturesFanart:Yes</define>
-	<define>#useRandomTVFanart:Yes</define>
+	<define>#useRandomPicturesFanart:No</define>
+	<define>#useRandomTVFanart:No</define>
 	<define>#useRandomMoviesFanart:No</define>
+	<define>#useRandomScoreCenterFanart:No</define>
 
   <allowoverlay>no</allowoverlay>
   <disabletopbar>yes</disabletopbar>
@@ -42,7 +43,7 @@
       <align>center</align>
       <font>mediastream12tc</font>
       <label>Exit MediaPortal</label>
-      <visible>Control.HasFocus(7777)</visible>
+      <visible allowhiddenfocus="true">Control.HasFocus(7777)</visible>
     </control>
     <control>
       <description>Restart Label</description>
@@ -126,7 +127,7 @@
 			<posX>773</posX>
 			<posY>350</posY>
 			<onleft>7888</onleft>
-			<onright>1903</onright>
+			<onright>17</onright>
 			<width>80</width>
 			<height>80</height>
 			<textureNoFocus>shutdown_button.png</textureNoFocus>
@@ -326,7 +327,7 @@
 			<hyperlink>2</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1809</onup>
 			<ondown>1701</ondown>
 			<visible>Control.IsVisible(1700)</visible>
@@ -345,7 +346,7 @@
 			<hyperlink>2</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1809</onup>
 			<ondown>1701</ondown>
 			<visible>Control.IsVisible(1800)</visible>
@@ -568,7 +569,7 @@
 			<hyperlink>501</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1800</onup>
 			<ondown>1702</ondown>
 			<visible>Control.IsVisible(1701)</visible>
@@ -587,7 +588,7 @@
 			<hyperlink>501</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1800</onup>
 			<ondown>1702</ondown>
 			<visible>Control.IsVisible(1801)</visible>
@@ -810,7 +811,7 @@
 			<hyperlink>96742</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1801</onup>
 			<ondown>1703</ondown>
 			<visible>Control.IsVisible(1702)</visible>
@@ -829,7 +830,7 @@
 			<hyperlink>96742</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1801</onup>
 			<ondown>1703</ondown>
 			<visible>Control.IsVisible(1802)</visible>
@@ -1052,7 +1053,7 @@
 			<hyperlink>9811</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1802</onup>
 			<ondown>1704</ondown>
 			<visible>Control.IsVisible(1703)</visible>
@@ -1071,7 +1072,7 @@
 			<hyperlink>9811</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1802</onup>
 			<ondown>1704</ondown>
 			<visible>Control.IsVisible(1803)</visible>
@@ -1294,7 +1295,7 @@
 			<hyperlink>1</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1803</onup>
 			<ondown>1705</ondown>
 			<visible>Control.IsVisible(1704)</visible>
@@ -1313,7 +1314,7 @@
 			<hyperlink>1</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1803</onup>
 			<ondown>1705</ondown>
 			<visible>Control.IsVisible(1804)</visible>
@@ -1536,7 +1537,7 @@
 			<hyperlink>5900</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1804</onup>
 			<ondown>1706</ondown>
 			<visible>Control.IsVisible(1705)</visible>
@@ -1555,7 +1556,7 @@
 			<hyperlink>5900</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1804</onup>
 			<ondown>1706</ondown>
 			<visible>Control.IsVisible(1805)</visible>
@@ -1778,7 +1779,7 @@
 			<hyperlink>6</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1805</onup>
 			<ondown>1707</ondown>
 			<visible>Control.IsVisible(1706)</visible>
@@ -1797,7 +1798,7 @@
 			<hyperlink>6</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1805</onup>
 			<ondown>1707</ondown>
 			<visible>Control.IsVisible(1806)</visible>
@@ -2020,7 +2021,7 @@
 			<hyperlink>2600</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1806</onup>
 			<ondown>1708</ondown>
 			<visible>Control.IsVisible(1707)</visible>
@@ -2039,7 +2040,7 @@
 			<hyperlink>2600</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1806</onup>
 			<ondown>1708</ondown>
 			<visible>Control.IsVisible(1807)</visible>
@@ -2262,7 +2263,7 @@
 			<hyperlink>16001</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1807</onup>
 			<ondown>1709</ondown>
 			<visible>Control.IsVisible(1708)</visible>
@@ -2281,7 +2282,7 @@
 			<hyperlink>16001</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1807</onup>
 			<ondown>1709</ondown>
 			<visible>Control.IsVisible(1808)</visible>
@@ -2504,7 +2505,7 @@
 			<hyperlink>4</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1808</onup>
 			<ondown>1700</ondown>
 			<visible>Control.IsVisible(1709)</visible>
@@ -2523,7 +2524,7 @@
 			<hyperlink>4</hyperlink>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1808</onup>
 			<ondown>1700</ondown>
 			<visible>Control.IsVisible(1809)</visible>
@@ -2735,7 +2736,7 @@
 			<textureNoFocus>-</textureNoFocus>
 			<hover>-</hover>
 			<onleft>-</onleft>
-			<onright>17</onright>
+			<onright>7777</onright>
 			<onup>1802</onup>
 			<ondown>1704</ondown>
 			<visible>Control.IsVisible(1903)|Control.HasFocus(656)</visible>
@@ -3092,7 +3093,7 @@
 		<posY>155</posY>
 		<height>180</height>
 		<width>180</width>
-		<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
 		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
 	</control>
 
@@ -3105,7 +3106,7 @@
 		<posY>0</posY>
 		<height>180</height>
 		<width>180</width>
-		<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
 		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
 	</control>
 
@@ -3118,7 +3119,7 @@
 		<posY>0</posY>
 		<height>180</height>
 		<width>180</width>
-		<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
 		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
 	</control>
 
@@ -3131,7 +3132,7 @@
 		<posY>345</posY>
 		<height>180</height>
 		<width>180</width>
-		<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
 		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
 	</control>
 
@@ -3144,7 +3145,7 @@
 		<posY>345</posY>
 		<height>180</height>
 		<width>180</width>
-		<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
+	<visible>plugin.isenabled(InfoService)+control.isvisible(1207)</visible>
 		<animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
 	</control>
 
@@ -3525,7 +3526,8 @@
 
     <import>common.time.xml</import>
 
+    <import>common.fanart.scraperv.xml</import>
+
     <import>common.overlay.basichome.xml</import>
-    <import>common.fanart.scraper.xml</import>
   </controls>
 </window>
