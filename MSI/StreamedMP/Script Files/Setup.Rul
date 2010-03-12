@@ -116,19 +116,22 @@
 #define STREAMEDMP_SKIN_MYTVRECORDEDTV		        INSTALLDIR^SKIN_NAME^"mytvrecordedtv.xml"
 #define STREAMEDMP_SKIN_MYTVSCEDULERSERVER	        INSTALLDIR^SKIN_NAME^"mytvschedulerServer.xml"
 #define STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH	INSTALLDIR^SKIN_NAME^"mytvschedulerserverSearch.xml"
-#define STREAMEDMP_SKIN_MYTVSEARCH					INSTALLDIR^SKIN_NAME^"mytvsearch.xml"
+#define STREAMEDMP_SKIN_MYTVSEARCH					INSTALLDIR^SKIN_NAME^"mytvsearch.xml" 
+#define STREAMEDMP_SKIN_VIDEOOSD					INSTALLDIR^SKIN_NAME^"videoOSD.xml"
 
 // Version Defines
 #define MEDIAPORTAL_MINNOWARN_VERSION		"1.0.4.25080" 	// 1.1.0 RC1 [20th Feb 2010]
 #define MEDIAPORTAL_MIN_VERSION				"1.0.0.0"	
 
-#define TVSERIES_MIN_VERSION				"2.5.0.924"
+#define TVSERIES_MIN_VERSION				"2.5.3.1008"
 #define MOVINGPICTURES_MIN_VERSION			"1.0.2.1048"
 #define FANARTHANDLER_MIN_VERSION			"1.5.3713.40365"
 #define MYLYRICS_MIN_VERSION				"1.42.0.0"
 #define GLOBALSEARCH_MIN_VERSION			"1.7.0.0"
 #define INFOSERVICE_MIN_VERSION				"1.5.0.0"
 #define TRAILERS_MIN_VERSION				"2.0.5.44"
+
+#define VIDEO_OSD_UPDATE					25113 // svn revision in which mediainfo for VideoOSD was updated.
 
 // XML Path Defines
 #define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
@@ -242,7 +245,9 @@ prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
 prototype VOID 		ShowControl(STRING, NUMBER);    
 prototype VOID		DetectWinLargeFonts();   
-prototype STRING	BoolToString(BOOL);
+prototype STRING	BoolToString(BOOL); 
+prototype NUMBER	GetVersionDigit(STRING, INT);
+prototype NUMBER 	GetMediaPortalRevision();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -289,7 +294,7 @@ STRING g_sTextColor;
 STRING g_sText2Color;
 STRING g_sText3Color;
 STRING g_sWatchedColor;
-STRING g_sRemoteColor;
+STRING g_sRemoteColor;               
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -2161,6 +2166,12 @@ begin
 	bReturn = AdjustForScreenSize();
 	ModifySkinFilesForFULLHD(bReturn);	
 	
+	// Update VideoOSD.xml to point to correct <import> for mediainfo
+	// This can be removed after RC2
+	if GetMediaPortalRevision() >= VIDEO_OSD_UPDATE then
+		ReplaceLineInFile(STREAMEDMP_SKIN_VIDEOOSD,"<import>videoOSD.mediainfo.xml</import>","<import>videoOSD.mediainfo2.xml</import>");
+	endif;
+	
 end;             
 
 function NUMBER	GetFileVersion(svVersionNumber,sType)
@@ -2226,8 +2237,42 @@ begin
     svVersion1 = MEDIAPORTAL_MINNOWARN_VERSION;
     if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
     	MessageBox(@MPOLDVERSION,WARNING);
+    endif;        
+    
+end;
+
+function NUMBER GetMediaPortalRevision()
+	STRING svVersion;
+begin
+	GetFileVersion(svVersion,"MEDIAPORTAL");
+	return GetVersionDigit(svVersion, 4);	
+end;
+
+function NUMBER GetVersionDigit(version, digit)
+	STRING svString;
+	LIST listVersionDigits;
+	NUMBER nvVar;
+begin
+
+	// Check for valid index
+	if (digit < 1 || digit > 4) then
+		return -1;
+	endif;
+                                       
+	listVersionDigits = ListCreate(STRINGLIST);
+	                                       
+    if StrGetTokens(listVersionDigits, version, ".") < 0 then
+    	return -1;
     endif;
     
+    if ListSetIndex(listVersionDigits, digit - 1) = 0 then
+    	ListCurrentString(listVersionDigits, svString);
+		StrToNum(nvVar, svString);
+		return nvVar;
+	else
+		return -1;
+	endif;
+                          
 end;
 
 function NUMBER CheckPluginVersions(szQuestion)
