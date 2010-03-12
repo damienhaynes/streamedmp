@@ -1148,7 +1148,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<posX>773</posX>");
             rawXML.AppendLine("\t\t\t<posY>350</posY>");
             rawXML.AppendLine("\t\t\t<onleft>7888</onleft>");
-            rawXML.AppendLine("\t\t\t<onright>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onright>");
+            rawXML.AppendLine("\t\t\t<onright>17</onright>");
             rawXML.AppendLine("\t\t\t<width>80</width>");
             rawXML.AppendLine("\t\t\t<height>80</height>");
             rawXML.AppendLine("\t\t\t<textureNoFocus>shutdown_button.png</textureNoFocus>");
