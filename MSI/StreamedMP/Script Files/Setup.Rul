@@ -132,6 +132,7 @@
 #define TRAILERS_MIN_VERSION				"2.0.5.44"
 
 #define VIDEO_OSD_UPDATE					25113 // svn revision in which mediainfo for VideoOSD was updated.
+#define BASICHOME_SUPPORTS_UPGRADE			1130  // version that allows upgrade of basichome
 
 // XML Path Defines
 #define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
@@ -267,7 +268,8 @@ BOOL g_bShowUnWatchedOnlyInListImage;
 BOOL g_bStartBasicHome; 
 BOOL g_bShowRoundedCovers;
 BOOL g_bShowHiddenMenuImage;      
-BOOL g_bEnableRandomFanartInMyTV;                         
+BOOL g_bEnableRandomFanartInMyTV;
+BOOL g_bBasicHomeUpgrade;                         
                                
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;
@@ -320,14 +322,21 @@ begin
 			nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);
 			if (nResult != IDYES) then
 				abort;
+			endif; 
+			
+			// Detect if we can upgrade Basichome
+			nResult = GetVersionDigit(szVersion, 4);
+			if (nResult >= BASICHOME_SUPPORTS_UPGRADE) then
+				g_bBasicHomeUpgrade = TRUE;
 			endif;
+	
 		else
 		 	szUpgradeMessage = "Setup cannot perform an Upgrade from: v" + szVersion + "\nPlease uninstall from the Add\\Remove programs " +
 							   "and run setup again.";
 			MessageBox(szUpgradeMessage,INFORMATION);
 			abort;							   
 		endif;
-	endif; 
+	endif; 		
 	                                                              
 	SetDefaults();		
 end;           
@@ -740,7 +749,7 @@ Dlg_SdStartCopy:
 	    if GetMediaPortalConfigDir(svValue) != -1 then;
 	    	DeleteFile(svValue^"skin"^SKIN_NAME^"Basichome.xml.backup.*");
 	    endif;
-    endif;*/
+    endif;*/        
     
     // setup default status
     Enable(STATUSEX);
