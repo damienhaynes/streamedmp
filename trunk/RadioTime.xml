@@ -6,9 +6,10 @@
     <define>#header.image:radiotime_logo.png</define>
     <define>#currentmodule:RadioTime</define>
     <define>#Play.Current.Album:#RadioTime.Play.Image</define>
-    <define>#useRandomMusicFanart:Yes</define>
-    <controls>
-        <import>mymusic.autofanart.xml</import>
+    <define>#usePlayFanart:Yes</define>
+    <define>#useRandomMusicFanart:Yes</define> 
+  <controls>  
+  <import>mymusic.autofanart.xml</import> 
 	<control>
 	    <type>image</type>
 	    <posX>0</posX>
@@ -207,6 +208,6 @@
      <import>common.window.xml</import>
      <import>common.time.xml</import>          
         <import>common.facade.music.xml</import>
-        <import>common.overlays.xml</import>
+        <import>common.radiotime.overlay.xml</import>
     </controls>
 </window>

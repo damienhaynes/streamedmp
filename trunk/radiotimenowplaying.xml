@@ -4,11 +4,12 @@
     <defaultcontrol>155</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <define>#header.image:radiotime_logo.png</define>
-  <define>#useRandomMusicFanart:Yes</define>
-  <controls>
-        <import>mymusic.autofanart.xml</import>
-        <import>common.window.xml</import>
-            <control>
+    <define>#usePlayFanart:Yes</define>
+    <define>#useRandomMusicFanart:Yes</define> 
+  <controls>  
+    <import>mymusic.autofanart.xml</import> 
+     <import>common.window.xml</import>
+     <control>
 	      <description>bottom black bg</description>
 	      <type>image</type>
 	      <id>0</id>
@@ -58,44 +59,72 @@
 
         <control>
             <id>0</id>
-            <description>Artist label</description>
+            <description>Station Name</description>
             <type>fadelabel</type>
             <posX>20</posX>
-            <posY>660</posY>
-            <width>468</width>
+            <posY>655</posY>
+            <width>320</width>
             <height>28</height>
-            <font>font16</font>
+            <font>mediastream12c</font>
             <label>#RadioTime.Play.Station</label>
             <animation effect="Fade" time="150">WindowOpen</animation>
         </control>
         <control>
             <id>0</id>
-            <description>Artist label</description>
+            <description>Artist and Song Title</description>
             <type>fadelabel</type>
             <posX>20</posX>
             <posY>680</posY>
-            <width>300</width>
+            <width>320</width>
             <height>28</height>
-            <font>font16</font>
+            <font>mediastream12</font>
             <label>#RadioTime.Play.Description</label>
             <animation effect="Fade" time="150">WindowOpen</animation>
         </control>  
         <control>
             <id>0</id>
-            <description>track label</description>
+            <description>Radio Location</description>
             <type>fadelabel</type>
             <posX>20</posX>
             <posY>700</posY>
-            <width>540</width>
+            <width>320</width>
             <height>28</height>
-            <font>font16</font>
+            <font>mediastream12</font>
             <label>#RadioTime.Play.Location</label>
             <animation effect="Fade" time="250">WindowOpen</animation>
         </control>
+
+
+         <control>
+            <id>0</id>
+            <description>Currenty Playing Artist</description>
+            <type>fadelabel</type>
+            <posX>350</posX>
+            <posY>680</posY>
+            <width>300</width>
+            <height>28</height>
+            <font>mediastream12c</font>
+            <label>#Play.Current.Artist</label>
+            <animation effect="Fade" time="150">WindowOpen</animation>
+        </control>  
+        
+         <control>
+            <id>0</id>
+            <description>Song Title</description>
+            <type>fadelabel</type>
+            <posX>350</posX>
+            <posY>700</posY>
+            <width>300</width>
+            <height>28</height>
+            <font>mediastream12</font>
+            <label>#Play.Current.Title</label>
+            <animation effect="Fade" time="150">WindowOpen</animation>
+        </control>  
+
               
          <control>
             <id>0</id>
-            <description>Title label</description>
+            <description>Language</description>
             <type>fadelabel</type>
             <posX>200</posX>
             <posY>580</posY>
@@ -107,11 +136,11 @@
         </control>       
         <control>
             <id>0</id>
-            <description>track label</description>
+            <description>Radio Station Slogan</description>
             <type>fadelabel</type>
             <posX>200</posX>
             <posY>610</posY>
-            <width>468</width>
+            <width>300</width>
             <height>28</height>
             <font>mediastream14</font>
             <label>#RadioTime.Play.Slogan</label>
