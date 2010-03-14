@@ -1678,7 +1678,7 @@ namespace StreamedMPEditor
 
                 if (item.fanartHandlerEnabled)
                     if (item.EnableMusicNowPlayingFanart)
-                        rawXML.Append("]+control.isvisible(91919297)+!control.isvisible(91919294)</visible>\n");
+                      rawXML.Append("]+control.isvisible(91919297)+![control.isvisible(91919294)+Player.HasMedia]</visible>\n");
                     else
                         rawXML.Append("]+control.isvisible(91919297)</visible>\n");
                 else
@@ -1711,7 +1711,7 @@ namespace StreamedMPEditor
                     }
 
                     if (item.EnableMusicNowPlayingFanart)
-                        rawXML.Append("]+control.isvisible(91919298)+!control.isvisible(91919294)</visible>\n");
+                      rawXML.Append("]+control.isvisible(91919298)+![control.isvisible(91919294)+Player.HasMedia]</visible>\n");
                     else
                         rawXML.Append("]+control.isvisible(91919298)</visible>\n");
 
@@ -1758,7 +1758,7 @@ namespace StreamedMPEditor
                     rawXML.AppendLine("\t\t\t<description>" + item.name + " NOW PLAYING BACKGROUND 2</description>");
                     rawXML.AppendLine("\t\t\t<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "4</id>");
                     rawXML.AppendLine("\t\t\t<type>image</type>");
-                    rawXML.AppendLine("\t\t\t<texture>#fanarthandler.music.backdrop1.play</texture>");
+                    rawXML.AppendLine("\t\t\t<texture>#fanarthandler.music.backdrop2.play</texture>");
                     rawXML.AppendLine("\t\t\t<posx>0</posx>");
                     rawXML.AppendLine("\t\t\t<posy>0</posy>");
                     rawXML.AppendLine("\t\t\t<width>1280</width>");
