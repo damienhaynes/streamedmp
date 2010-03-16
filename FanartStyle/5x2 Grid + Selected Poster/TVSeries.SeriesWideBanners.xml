@@ -205,6 +205,25 @@
             <visible>facadeview.largeicons+Control.IsVisible(1237)+!Control.IsVisible(5555)+!Control.IsVisible(5556)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
-	
+		<control Style="smallTitleB">
+			<label>#TVSeries.Series.InfoPanelLine8Key</label>
+			<type>label</type>
+			<posX>720</posX>
+			<posY>676</posY>
+			<width>190</width>
+			<visible>Control.IsVisible(1237)+facadeview.largeicons</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+		</control>		
+        <control Style="smallTitle">
+			<id>0</id>
+            <type>label</type>
+            <label>#TVSeries.Series.InfoPanelLine8Value</label>
+            <posX>930</posX>
+			<posY>677</posY>
+			<width>310</width>
+            <visible>facadeview.largeicons+Control.IsVisible(1237)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+        </control>
+		
 	</controls>
 </window>
