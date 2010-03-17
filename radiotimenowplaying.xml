@@ -6,9 +6,9 @@
   <define>#header.image:radiotime_logo.png</define>
   <define>#usePlayFanart:Yes</define>
   <define>#useRandomMusicFanart:Yes</define>
+  <define>#header.label:RadioTime/Now Playing</define>
   <controls>
     <import>mymusic.autofanart.xml</import>
-    <import>common.window.xml</import>
     <control>
       <description>bottom black bg</description>
       <type>image</type>
@@ -46,9 +46,9 @@
       <id>112</id>
       <description>album art image</description>
       <type>image</type>
-      <posX>20</posX>
-      <posY>580</posY>
-      <width>150</width>
+      <posX>2</posX>
+      <posY>570</posY>
+      <height>90</height>
       <texture>#RadioTime.Play.Image</texture>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <keepaspectratio>yes</keepaspectratio>
@@ -142,23 +142,29 @@
       <id>117</id>
       <description>Progress background</description>
       <type>image</type>
-      <visible>player.hasmedia</visible>
-      <posX>336</posX>
+      <posX>346</posX>
       <posY>656</posY>
-      <width>436</width>
+      <width>300</width>
       <height>30</height>
-      <texture>osd_progress_background.png</texture>
+      <texture>osdprogressbackv.png</texture>
+      <colordiffuse>ffFFFFFF</colordiffuse>
       <animation effect="Fade" time="150">WindowOpen</animation>
+      <visible>player.hasmedia</visible>
     </control>
     <control>
       <id>118</id>
       <description>track progress</description>
       <type>progress</type>
-      <visible>player.hasmedia</visible>
-      <posX>431</posX>
-      <posY>650</posY>
+      <posX>338</posX>
+      <posY>661</posY>
       <width>350</width>
+      <height>25</height>
+      <texturebg>-</texturebg>
+      <lefttexture>osdprogressleft.png</lefttexture>
+      <midtexture>osdprogressmid.png</midtexture>
+      <righttexture>osdprogressright.png</righttexture>
       <label>#percentage</label>
+      <visible>player.hasmedia</visible>
     </control>
     <control>
       <id>0</id>
@@ -166,7 +172,7 @@
       <type>label</type>
       <visible>player.hasmedia</visible>
       <posX>640</posX>
-      <posY>600</posY>
+      <posY>605</posY>
       <font>mediastream28tc</font>
       <textcolor>80ffffff</textcolor>
       <align>right</align>
@@ -178,13 +184,13 @@
       <description>track duration label</description>
       <type>label</type>
       <visible>player.hasmedia</visible>
-      <posX>745</posX>
-      <posY>666</posY>
+      <posX>600</posX>
+      <posY>660</posY>
       <font>font14</font>
-      <textcolor>80ffffff</textcolor>
-      <align>RIGHT</align>
+      <align>right</align>
       <label>#duration</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
+      <textcolor>ff006699</textcolor>
     </control>
     <control>
       <id>29</id>
@@ -194,6 +200,8 @@
       <posY>585</posY>
       <width>497</width>
       <label>#RadioTime.Translation.Genres.Label</label>
+      <textcolor>ff006699</textcolor>
+      <font>mediastream12tc</font>
     </control>
     <control>
       <id>166</id>
@@ -228,6 +236,8 @@
       <posY>585</posY>
       <width>497</width>
       <label>#RadioTime.Translation.SimilarStations.Label</label>
+      <textcolor>ff006699</textcolor>
+      <font>mediastream12tc</font>
     </control>
     <control>
       <id>155</id>
@@ -254,7 +264,13 @@
       <textureHeight>32</textureHeight>
       <textcolor>White</textcolor>
     </control>
-&gt;
-
-        <control><type>fadelabel</type><posX>531</posX><posY>35</posY><width>711</width></control><import>common.window.xml</import><import>common.time.xml</import></controls>
+    <control>
+     	<type>fadelabel</type>
+       <posX>531</posX>
+       <posY>35</posY>
+       <width>711</width>
+    </control>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
 </window>
