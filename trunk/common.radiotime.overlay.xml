@@ -116,7 +116,7 @@ same location everywhere
       <textureFocus>thumbborder5.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <!--<action>18</action>-->
-      <hyperlink>510</hyperlink>
+      <hyperlink>25652</hyperlink>
       <colordiffuse>f1ffffff</colordiffuse>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
@@ -160,7 +160,7 @@ same location everywhere
       <height>40</height>
       <posX>143</posX>
       <posY>123</posY>
-      <label>zz#Play.Current.Album</label>
+      <label>#RadioTime.Play.Station</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
@@ -183,123 +183,16 @@ same location everywhere
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>next song label</description>
+      <description>Format</description>
       <type>label</type>
       <id>0</id>
-      <width>42</width>
+      <width>300</width>
       <height>40</height>
       <posX>143</posX>
       <posY>167</posY>
-      <label>Next:</label>
-      <textcolor>FF025984</textcolor>
-      <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>next song info label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>183</posX>
-      <posY>167</posY>
-      <width>300</width>
-      <height>40</height>
-      <label>#Play.Next.Title by #Play.Next.Artist</label>
-      <textcolor>FF999999</textcolor>
-      <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <!--                                    :: VIDEO OVERLAY ::                                    -->
-    <control>
-      <description>video preview window</description>
-      <type>videowindow</type>
-      <id>9900</id>
-      <posX>20</posX>
-      <posY>79</posY>
-      <width>203</width>
-      <height>114</height>
-      <action>18</action>
-      <onleft>1701</onleft>
-      <textureFocus>tv_blue_border.png</textureFocus>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>artist info label</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <width>250</width>
-      <height>40</height>
-      <posX>233</posX>
-      <posY>80</posY>
-      <label>#Play.Current.Title</label>
-      <textcolor>FFFFFFFF</textcolor>
-      <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>title info label</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <width>250</width>
-      <height>40</height>
-      <posX>233</posX>
-      <posY>98</posY>
-      <label>#Play.Current.Year</label>
-      <textcolor>FFFFFFFF</textcolor>
-      <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>album info label</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <width>250</width>
-      <height>40</height>
-      <posX>233</posX>
-      <posY>124</posY>
-      <label>#Play.Current.Genre</label>
-      <textcolor>FFFFFFFF</textcolor>
-      <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>album info label</description>
-      <type>fadelabel</type>
-      <id>0</id>
-      <width>250</width>
-      <height>40</height>
-      <posX>233</posX>
-      <posY>144</posY>
-      <label>#Play.Current.Director</label>
-      <textcolor>FFFFFFFF</textcolor>
-      <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
-    </control>
-    <control>
-      <description>play time / duration label</description>
-      <type>label</type>
-      <id>0</id>
-      <width>250</width>
-      <height>40</height>
-      <posX>233</posX>
-      <posY>164</posY>
-      <label>#currentplaytime / #duration</label>
-      <textcolor>FFFFFFFF</textcolor>
-      <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <label>Stream Format: #RadioTime.Play.Format</label>
+      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <font>mediastream9c</font>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
