@@ -43,6 +43,19 @@
       <animation effect="Fade" time="150">WindowOpen</animation>
     </control>
     <control>
+      <id>0</id>
+      <description>album art image</description>
+      <type>image</type>
+      <posX>20</posX>
+      <posY>585</posY>
+      <height>90</height>
+      <texture>DefaultMyradioBig.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>no</centered>
+      <visible>string.equals(#RadioTime.Play.Image,)</visible>
+    </control>
+    <control>
       <id>112</id>
       <description>album art image</description>
       <type>image</type>
@@ -184,8 +197,8 @@
       <description>track duration label</description>
       <type>label</type>
       <visible>player.hasmedia</visible>
-      <posX>600</posX>
-      <posY>660</posY>
+      <posX>640</posX>
+      <posY>680</posY>
       <font>font14</font>
       <align>right</align>
       <label>#duration</label>

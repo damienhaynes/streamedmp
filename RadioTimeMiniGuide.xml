@@ -3,16 +3,14 @@
   <id>25651</id>
   <defaultcontrol>35</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#useRandomMusicFanart:Yes</define>
   <controls>
-  <import>mymusic.autofanart.xml</import>
     <control>
       <type>image</type>
       <id>0</id>
       <width>1280</width>
       <height>720</height>
       <texture>black.png</texture>
-      <colordiffuse>60ffffff</colordiffuse>
+      <colordiffuse>40ffffff</colordiffuse>
     </control>
     <control>
       <description>background image</description>
@@ -160,8 +158,6 @@
       <width>240</width>
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
@@ -172,15 +168,13 @@
       <posY>594</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>  
     
     <control>
       <description>groups spin control</description>
       <type>spincontrol</type>
       <id>36</id>
-      <posX>423</posX>b
+      <posX>423</posX>
       <posY>122</posY>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
@@ -206,5 +200,8 @@
       <textcolor>ffa9d0f7</textcolor>
       <label>#time</label>
     </control>
+    
+      
+    
   </controls>
 </window>
