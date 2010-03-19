@@ -168,6 +168,7 @@
 #define RES_COMBO_SERIESLAYOUT						1402 
 #define RES_BUTTON_TVSERIESADVANCED					1404
 #define RES_COMBO_WIDEBANNERLAYOUT					1406	
+#define RES_HYPERLINK								1407
 
 #define RES_CHECK_TOTALEPCOUNT						1304
 #define RES_CHECK_LISTIMAGES						1305
@@ -1076,7 +1077,7 @@ begin
 end;
 
 function number ShowSelectTVSeries(bModify)
-	STRING szDialogName, szErrorMsg;
+	STRING szDialogName, szErrorMsg, szUrl;
 	NUMBER nCmdValue;
 	BOOL bDone, bValidate; 
 	LIST listWideBannerLayout;
@@ -1137,7 +1138,12 @@ Dlg_Wait:
  			
  			case RES_BUTTON_TVSERIESADVANCED:
  				ShowTVSeriesAdvanced(bModify);
- 				         		      
+ 			
+ 			case RES_HYPERLINK:
+				if CtrlGetUrlForLinkClicked(szDialogName, RES_HYPERLINK, szUrl) = 0 then
+					LaunchBrowser(szUrl);
+				endif;
+				    		      
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
 	   	        	   	        	   	        
@@ -1383,7 +1389,7 @@ Dlg_Wait:
 end;
 
 function number ShowSelectMovingPics(bModify)
-	STRING szDialogName;
+	STRING szDialogName, szUrl;
 	NUMBER nCmdValue;
 	BOOL bDone;
 begin
@@ -1415,7 +1421,12 @@ Dlg_Wait:
  				else
  					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
  				endif;
- 				         		      
+ 			
+ 			case RES_HYPERLINK:
+				if CtrlGetUrlForLinkClicked(szDialogName, RES_HYPERLINK, szUrl) = 0 then
+					LaunchBrowser(szUrl);
+				endif;
+				
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
 	   	        	   	        	   	        
@@ -2432,18 +2443,18 @@ begin
 	ParsePath(svReturnString2, svValue, FILENAME_ONLY);
 	
 	// Now append the .exe extension to the file name.
-	// If the browser is IE, the path contains an extra quote("").
+	// If the browser contains an extra quote("") fix path.
 	// By removing the placeholder, we also removed the ending close quote("),
 	// but it still has the beginning opening quote ("),
 	// so you have to put and ending quote (" to make if a correct path.
-	// Netscape does not have the extra "" in the path.
-	szDir=svReturnString1^svReturnString2+".exe";
-	if ( svReturnString2 = "iexplore" ) then
-		szDir=svReturnString1^svReturnString2+".exe\"";
+	// Some older versions of firefox do not have the extra "" in the path.
+	szDir = svReturnString1 ^ svReturnString2 + ".exe";
+	if (szDir[0] = "\"") then
+		szDir = svReturnString1 ^ svReturnString2 + ".exe\"";
 	endif;
 	
 	// Now the path to the browser is available.
-	// You can launch the browser and pass your .htm file as a parameter to it.
+	// You can launch the browser and pass your .htm file as a parameter to it.	
 	if LaunchAppAndWait(szDir, szSite, NOWAIT) < 0 then
 		return -1;
 	else
