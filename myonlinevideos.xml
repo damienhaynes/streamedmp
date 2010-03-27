@@ -14,13 +14,12 @@
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
 
-
     <!-- *** CLIP TITLE & DESCRIPTION *** -->
     <!--
      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
      :::::::::::::::::::::::::::::::::           LIST VIEW      ::::::::::::::::::
      :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                -->
+    -->
 
     <control>
       <description>Thumb</description>
@@ -198,10 +197,10 @@
     </control>
     
     <!--
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                ::::::::::::::::::::::::::::::::::     THUMBNAIL VIEW      ::::::::::::::::::
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                -->
+		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+		::::::::::::::::::::::::::::::::::     THUMBNAIL VIEW      ::::::::::::::::::
+		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-->
     <control>
       <description>Category Logo</description>
       <type>image</type>
@@ -281,12 +280,7 @@
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
 
-   
-    
-
-
     <!-- *** HIDDEN MENU *** -->
-
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -365,7 +359,7 @@
           <type>button</type>
           <id>2</id>
           <ondown>12</ondown>
-          <label>101</label>
+          <label>#OnlineVideos.Translation.LayoutList.Label</label>
           <onup>17</onup>
           <onleft>50</onleft>
           <onright>50</onright>
@@ -375,7 +369,7 @@
           <type>button</type>
           <id>12</id>
           <ondown>11</ondown>
-          <label>Enter Pin</label>
+          <label>#OnlineVideos.Translation.EnterPin.Label</label>
           <onleft>50</onleft>
           <onright>50</onright>
           <visible>no</visible>
@@ -401,7 +395,7 @@
           <type>button</type>
           <id>11</id>
           <ondown>10</ondown>
-          <label>932</label>
+          <label>#OnlineVideos.Translation.Favourites.Label</label>
           <onleft>50</onleft>
           <onright>50</onright>
           <visible>no</visible>
@@ -411,7 +405,7 @@
           <type>button</type>
           <id>10</id>
           <ondown>9</ondown>
-          <label>137</label>
+          <label>#OnlineVideos.Translation.Search.Label</label>
           <onleft>50</onleft>
           <onright>50</onright>
           <visible>no</visible>
@@ -423,7 +417,7 @@
           <ondown>5</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>2053</label>
+          <label>#OnlineVideos.Translation.Category.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -433,7 +427,7 @@
           <ondown>7</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>Max Results</label>
+          <label>#OnlineVideos.Translation.MaxResults.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -443,7 +437,7 @@
           <ondown>6</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>Timeframe</label>
+          <label>#OnlineVideos.Translation.Timeframe.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -453,7 +447,7 @@
           <ondown>8</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>495</label>
+          <label>#OnlineVideos.Translation.SortOptions.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -463,7 +457,7 @@
           <ondown>3</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>184</label>
+          <label>#OnlineVideos.Translation.Refresh.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -483,7 +477,7 @@
           <ondown>4</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>1975</label>
+          <label>#OnlineVideos.Translation.NextPage.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -493,13 +487,12 @@
           <ondown>2</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>30004</label>
+          <label>#OnlineVideos.Translation.PreviousPage.Label</label>
           <visible>no</visible>
         </control>
-
       </control>
-
     </control>
+	
     <import>common.overlays.xml</import>
     <import>myonlinevideos.facade.xml</import>
     <import>myonlinevideos.details.xml</import>
