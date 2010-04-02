@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-
 <window>
-
   <controls>
 
     <!--
@@ -9,7 +7,6 @@
 		::::::::::::::                VIEW  Apple Trailers         ::::::::::::::::::
 		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	-->
-
     <control>
       <type>image</type>
       <description>movie border</description>
@@ -80,7 +77,6 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
-
     <!-- *** POSTER *** -->
     <control>
       <type>image</type>
@@ -96,7 +92,6 @@
       <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
       <texture>#OnlineVideos.movieposter</texture>
     </control>
-
     <!-- *** RELEASE DATE *** -->
     <control>
       <type>label</type>
@@ -123,7 +118,6 @@
       <font>mediastream11</font>
       <disabledcolor>ff808080</disabledcolor>
     </control>
-
     <!-- *** GENRE *** -->
     <control>
       <type>label</type>
@@ -150,7 +144,6 @@
       <font>mediastream11</font>
       <disabledcolor>ff808080</disabledcolor>
     </control>
-
     <!-- *** CAST *** -->
     <control>
       <type>label</type>
@@ -177,7 +170,6 @@
       <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
       <disabledcolor>ff808080</disabledcolor>
     </control>
-
     <!-- *** PLOT *** -->
     <control>
       <type>label</type>
@@ -206,7 +198,6 @@
       <label>#OnlineVideos.trailerdesc</label>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-	
     <!--
 		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 		::::::::::::::                VIEW  Hardware.Info         ::::::::::::::::::
@@ -357,7 +348,5 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
-
   </controls>
-
 </window>
