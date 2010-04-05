@@ -135,7 +135,6 @@ namespace StreamedMPEditor
           {
             mpPaths.cacheBasePath = GetMediaPortalDir(path.InnerText);
           }
-
         }
 
         // get the Config base path
@@ -155,8 +154,16 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);
-            
+            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);          
+          }
+        }
+        // get the Thumbs base path
+        if (innerNode.InnerText == "Thumbs")
+        {
+          XmlNode path = node.SelectSingleNode("Path");
+          if (path != null)
+          {
+            mpPaths.thumbsPath = GetMediaPortalDir(path.InnerText);
           }
         }
       }
@@ -638,11 +645,14 @@ namespace StreamedMPEditor
           }
           break;
         case chosenMenuStyle.horizontalContextStyle:
-          basicHomeValues.menuHeight += 33;
-          basicHomeValues.offsetMymenu -= 24;
-          basicHomeValues.offsetButtons += 16;
-          basicHomeValues.offsetTwitter += 15;
-          basicHomeValues.offsetTwitterImage += 15;
+          if (horizontalContextLabels.Checked)
+          {
+            basicHomeValues.menuHeight += 33;
+            basicHomeValues.offsetMymenu -= 24;
+            basicHomeValues.offsetButtons += 16;
+            basicHomeValues.offsetTwitter += 15;
+            basicHomeValues.offsetTwitterImage += 15;
+          }
 
           break;
       }
@@ -1653,6 +1663,7 @@ namespace StreamedMPEditor
       public string pluginPath;
       public string backgroundPath;
       public string fanartBasePath;
+      public string thumbsPath;
     }
 
       public struct randomFanartSetting
