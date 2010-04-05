@@ -39,6 +39,10 @@ namespace StreamedMPEditor
             }
             ticker = "#infoservice";
 
+
+
+
+
             Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream(skeletonFile);
             StreamReader reader = new StreamReader(stream);
             xml = reader.ReadToEnd();
@@ -1959,23 +1963,6 @@ namespace StreamedMPEditor
             xml = xml.Replace("<!-- BEGIN CONTEXT LABELS CODE-->", rawXML.ToString());
         }
 
-        private void GenerateOverlayImport()
-        {
-            StringBuilder rawXML = new StringBuilder();
-
-            // Place Now Playing above horizontal menu if placed at bottom of screen
-            // Note: this is not taking into consideration manual y-Position
-            if (horizontalContextLabels.Checked && (menuStyle == chosenMenuStyle.horizontalContextStyle))
-            {
-                rawXML.AppendLine("\t<import>common.overlay.basichome2.xml</import>");
-            }
-            else
-            {
-                rawXML.AppendLine("\t<import>common.overlay.basichome.xml</import>");
-            }
-
-            xml = xml.Replace("<!-- BEGIN GENERATED OVERLAY CODE -->", rawXML.ToString());
-        }
 
         private void generateFiveDayWeatherVertical(int weatherId)
         {
@@ -3350,8 +3337,8 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t<width>400</width>");
             rawXML.AppendLine("\t\t<height>50</height>");
             rawXML.AppendLine("\t\t<align>right</align>");
-            rawXML.AppendLine("\t\t<posX>1250</posX>");
-            rawXML.AppendLine("\t\t<posY>22</posY>");
+            rawXML.AppendLine("\t\t<posX>1265</posX>");
+            rawXML.AppendLine("\t\t<posY>30</posY>");
             rawXML.AppendLine("\t\t<font>mediastream14c</font>");
             rawXML.AppendLine("\t\t<label>" + ticker + ".weather.today.temp</label>");
             rawXML.AppendLine("\t</control>");
@@ -3512,6 +3499,7 @@ namespace StreamedMPEditor
             string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
             string disableOnScreenClock = cbDisableClock.Checked ? "true" : "false";
             string hideFanartScrapingtext = cbHideFanartScraper.Checked ? "true" : "false";
+            string enableOverlayFanart = cbOverlayFanart.Checked ? "true" : "false";
 
             if (direction == menuType.horizontal)
             {
@@ -3589,6 +3577,7 @@ namespace StreamedMPEditor
                       + generateEntry("disableOnScreenClock", disableOnScreenClock, 2, true)
                       + generateEntry("targetScreenRes", targetScreenRes, 2, true)
                       + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 2, true)
+                      + generateEntry("enableOverlayFanart",enableOverlayFanart,2,true)
                       + "\t</section>");
 
 

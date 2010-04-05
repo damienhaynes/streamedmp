@@ -825,7 +825,7 @@ namespace StreamedMPEditor
                 generateCrowdingFixH();
                 if (horizontalContextLabels.Checked)
                     GenerateContextLabelsH();
-                GenerateOverlayImport();
+
 
             }
             else if (direction == menuType.vertical)
@@ -861,6 +861,10 @@ namespace StreamedMPEditor
             xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
             writer.Write(xml);
             writer.Close();
+
+            generateOverlay(int.Parse(txtMenuPos.Text),basicHomeValues.weatherControl);            
+
+
             getBackupFileTotals();
             DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
             if (result == DialogResult.No)
@@ -871,6 +875,11 @@ namespace StreamedMPEditor
             {
                 item.id = menuItems.IndexOf(item);
             }
+        }
+
+        private void horizontalContextLabels_CheckedChanged(object sender, EventArgs e)
+        {
+          setBasicHomeValues();
         }
     }
 }

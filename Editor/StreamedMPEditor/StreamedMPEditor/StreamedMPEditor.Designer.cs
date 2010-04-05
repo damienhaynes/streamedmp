@@ -210,6 +210,7 @@
       this.btCheckForUpdate = new System.Windows.Forms.Button();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1240,6 +1241,7 @@
       // 
       // styleOptionsGroup
       // 
+      this.styleOptionsGroup.Controls.Add(this.cbOverlayFanart);
       this.styleOptionsGroup.Controls.Add(this.gbScreenRes);
       this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
       this.styleOptionsGroup.Controls.Add(this.cboSelectedFont);
@@ -1348,7 +1350,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(20, 52);
+      this.useAeonGraphics.Location = new System.Drawing.Point(20, 80);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 26;
@@ -1364,6 +1366,7 @@
       this.horizontalContextLabels.TabIndex = 25;
       this.horizontalContextLabels.Text = "Use Context Labels on Horizontal Menu";
       this.horizontalContextLabels.UseVisualStyleBackColor = true;
+      this.horizontalContextLabels.CheckedChanged += new System.EventHandler(this.horizontalContextLabels_CheckedChanged);
       // 
       // infoserviceOptions
       // 
@@ -1374,12 +1377,12 @@
       this.infoserviceOptions.Size = new System.Drawing.Size(192, 138);
       this.infoserviceOptions.TabIndex = 15;
       this.infoserviceOptions.TabStop = false;
-      this.infoserviceOptions.Text = "InfoService/MP-RSSTicker Options";
+      this.infoserviceOptions.Text = "InfoService Options";
       // 
       // enableTwitter
       // 
       this.enableTwitter.AutoSize = true;
-      this.enableTwitter.Location = new System.Drawing.Point(17, 50);
+      this.enableTwitter.Location = new System.Drawing.Point(17, 47);
       this.enableTwitter.Name = "enableTwitter";
       this.enableTwitter.Size = new System.Drawing.Size(94, 17);
       this.enableTwitter.TabIndex = 17;
@@ -1389,7 +1392,7 @@
       // enableRssfeed
       // 
       this.enableRssfeed.AutoSize = true;
-      this.enableRssfeed.Location = new System.Drawing.Point(17, 27);
+      this.enableRssfeed.Location = new System.Drawing.Point(17, 24);
       this.enableRssfeed.Name = "enableRssfeed";
       this.enableRssfeed.Size = new System.Drawing.Size(117, 17);
       this.enableRssfeed.TabIndex = 16;
@@ -2214,6 +2217,18 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbOverlayFanart
+      // 
+      this.cbOverlayFanart.AutoSize = true;
+      this.cbOverlayFanart.Location = new System.Drawing.Point(20, 53);
+      this.cbOverlayFanart.Name = "cbOverlayFanart";
+      this.cbOverlayFanart.Size = new System.Drawing.Size(205, 17);
+      this.cbOverlayFanart.TabIndex = 42;
+      this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
+      this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
+              "Music/Video overlay.");
+      this.cbOverlayFanart.UseVisualStyleBackColor = true;
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2484,6 +2499,7 @@
     private System.Windows.Forms.CheckBox cbHideFanartScraper;
     private System.Windows.Forms.CheckBox cbAllowUpdateCheck;
     private System.Windows.Forms.Button btCheckForUpdate;
+    private System.Windows.Forms.CheckBox cbOverlayFanart;
   }
 }
 
