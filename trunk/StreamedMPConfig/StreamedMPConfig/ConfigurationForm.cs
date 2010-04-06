@@ -21,7 +21,8 @@ namespace StreamedMPConfig
         {
             using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
             {
-                xmlwriter.SetValue("StreamedMPConfig", "cdCoverOnly", cdCoverOnly.Checked ? 1 : 0);
+                xmlwriter.SetValue("StreamedMPConfig", "cdCoverOnly", cbCdCoverOnly.Checked ? 1 : 0);
+                xmlwriter.SetValue("StreamedMPConfig", "showEqGraphic", cbShowEqGraphic.Checked ? 1 : 0);
 
             }
             this.Close();
@@ -36,10 +37,12 @@ namespace StreamedMPConfig
         {
             using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
             {
-                cdCoverOnly.Checked = true;
+                cbCdCoverOnly.Checked = true;
                 if (xmlreader.GetValueAsInt("StreamedMPConfig", "cdCoverOnly", 1) != 1)
-                    cdCoverOnly.Checked = false;
-
+                    cbCdCoverOnly.Checked = false;
+                cbShowEqGraphic.Checked = true;
+                if (xmlreader.GetValueAsInt("StreamedMPConfig", "showEqGraphic", 1) != 1)
+                  cbShowEqGraphic.Checked = false;
             }
         }
     }
