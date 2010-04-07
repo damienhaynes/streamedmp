@@ -19,6 +19,18 @@
       <texture>background.png</texture>
     </control>
     <control>
+      <description>BACKGROUND LOADING</description>
+      <id>0</id>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>LoadingBackdrop.png</texture>
+      <animation effect="fade" start="100" end="0" time="3000" reversible="false">WindowOpen</animation>
+      <animation effect="fade" start="0" end="0" time="10" reversible="false">WindowClose</animation>
+    </control>    
+    <control>
       <description>Exit Label</description>
       <type>label</type>
       <id>0</id>
