@@ -1688,7 +1688,7 @@ namespace StreamedMPEditor
                 else
                     rawXML.Append("</visible>\n");
 
-                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
+                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
                 rawXML.AppendLine("\t\t</control>");
 
                 // Add second background control for random fanart provided 
@@ -1719,7 +1719,7 @@ namespace StreamedMPEditor
                     else
                         rawXML.Append("]+control.isvisible(91919298)</visible>\n");
 
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
                 }
             
@@ -1751,7 +1751,7 @@ namespace StreamedMPEditor
                             rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>\n");
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
 
                     //
@@ -1776,7 +1776,7 @@ namespace StreamedMPEditor
                             rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>\n");
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"350\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
                 }
 
