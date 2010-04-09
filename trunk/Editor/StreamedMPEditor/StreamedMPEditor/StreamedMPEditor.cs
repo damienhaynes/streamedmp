@@ -155,11 +155,10 @@ namespace StreamedMPEditor
               if (curVersion.CompareTo(newVersion) < 0)
               {
                 string title = "StreamedMP Editor Version " + newVersion.ToString() + " available.";
-                string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to exit and display the download page?";
+                string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to download and install the update";
                 if (DialogResult.Yes == MessageBox.Show(this, question, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                  Process.Start(url);
-                  System.Environment.Exit(1);
+                  installEditor(url);
                 }
               }
             }
