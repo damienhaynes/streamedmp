@@ -71,7 +71,7 @@ namespace StreamedMPEditor
       if (!downloadActive)
       {
         optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
-        optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_AnimatedWeatherIcons.zip";
+        optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_AnimatedWeatherIcons.zip");
         destinationPath = mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Animated Weather Icons";
         pLabel.Text = "Starting Download";
@@ -91,7 +91,7 @@ namespace StreamedMPEditor
       if (!downloadActive)
       {
         optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
-        optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
+        optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_LinkedWeatherBackgrounds.zip");
         destinationPath = mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Weather Backgrounds";
         pLabel.Text = "Starting Download";
@@ -105,7 +105,25 @@ namespace StreamedMPEditor
         downloadForm.BringToFront();
       }
     }
-
+    private void installEditor(string downloadURL)
+    {
+      if (!downloadActive)
+      {
+        optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMPEditor.msi";
+        optionDownloadPath = Path.Combine(Path.GetTempPath(), "StreamedMPEditor.msi");
+        destinationPath = mpPaths.skinBasePath;
+        downloadForm.Text = "Download and Install StreamedMPEditor Update";
+        pLabel.Text = "Starting Download";
+        thrDownload = new Thread(Download);
+        thrDownload.Start();
+        downloadForm.Show();
+      }
+      else
+      {
+        DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+        downloadForm.BringToFront();
+      }
+    }
     private void Download()
     {
       downloadActive = true;
@@ -129,6 +147,7 @@ namespace StreamedMPEditor
         }
         catch
         {
+          MessageBox.Show("Error in Download");
         }
         finally
         {
@@ -166,6 +185,12 @@ namespace StreamedMPEditor
 
     private void extractAndCleanup()
     {
+      if (optionDownloadPath.Contains("StreamedMPEditor.msi"))
+      {
+        Process.Start(optionDownloadPath);
+        System.Environment.Exit(1); 
+      }
+
       if (System.IO.File.Exists(optionDownloadPath))
       {
         FastZip fz = new FastZip();
@@ -223,7 +248,7 @@ namespace StreamedMPEditor
     {
       try
       {
-        string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/Editor/StreamedMpEditor_Version.xml";
+        string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/Editor/StreamedMpEditor_VersionTest.xml";
         reader = new XmlTextReader(xmlURL);
         reader.MoveToContent();
         string elementName = "";
