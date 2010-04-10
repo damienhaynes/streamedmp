@@ -187,7 +187,11 @@ namespace StreamedMPEditor
     {
       if (optionDownloadPath.Contains("StreamedMPEditor.msi"))
       {
-        Process.Start(optionDownloadPath);
+        ProcessStartInfo startCommand = new ProcessStartInfo();
+        startCommand.FileName = "msiexec.exe";
+        startCommand.Arguments = "/i " + optionDownloadPath + " REINSTALL=ALL REINSTALLMODE=vomus";
+        startCommand.CreateNoWindow = true;
+        Process.Start(startCommand);
         System.Environment.Exit(1); 
       }
 
