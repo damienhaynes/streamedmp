@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="846ECF64-94D3-487a-AA90-20B154A709E0" Name="StreamedMPEditor" Language="1033" Version="1.0.1.1216" Manufacturer="StreamedMP Team" UpgradeCode="9DC761EF-4BCB-4180-AEDC-096BB2479497">
+		<Package Id="*" InstallerVersion="200" Compressed="yes" />
+
+		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+
+    <Property Id="ALLUSERS">1</Property>
+
+      <Property Id="INSTALLDIR">
+      <RegistrySearch Id='StreamedMP' Type='raw'
+        Root='HKLM' Key='Software\Wow6432Node\StreamedMP' Name='InstallDir' />
+    </Property>
+    
+    <Property Id="LAUNCHAPPONEXIT" Value="1" />
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="INSTALLDIR">
+				<Directory Id="StreamedMP" Name="StreamedMP">
+					<Component Id="MainExecutable" Guid="1C66CC50-3A9F-42c7-BD1D-89E597A505B8">
+            <File Id='StreamedMPEditorEXE' Name='StreamedMPEditor.exe' Source='G:\SkinDev\StreamedMP\StreamedMP\Editor\StreamedMPEditor\StreamedMPEditor\bin\Release\StreamedMPEditor.exe' Vital='yes' />
+            <RemoveFolder Id="INSTALLDIR" On="uninstall" />
+					</Component>
+				</Directory>
+			</Directory>
+		</Directory>
+
+    <Icon Id="StreamedMPEditor.ico" SourceFile="AppIcon.ico" />
+    
+    <Upgrade Id="9DC761EF-4BCB-4180-AEDC-096BB2479497">
+      <UpgradeVersion OnlyDetect='no' Property='PREVIOUSFOUND'
+        Minimum='1.0.0' IncludeMinimum='yes'
+        Maximum='1.9.9' IncludeMaximum='no' />
+    </Upgrade>
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize"/>
+    </InstallExecuteSequence>
+
+
+    <Feature Id="Complete" Level="1">
+      <ComponentRef Id="MainExecutable" />
+    </Feature>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR"/>
+    <UIRef Id="MyWixUI_InstallDir" />
+
+
+    <WixVariable Id="WixUIBannerBmp" Value="logo.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Banner.bmp" />
+    
+    <CustomAction Id="LaunchApplication"
+      FileKey="StreamedMPEditorEXE" ExeCommand="" Execute="immediate" Impersonate="yes" Return="asyncNoWait" />
+    <UI>
+      <Publish Dialog="MyExitDialog" Control="Finish" Order="1" Event="DoAction" Value="LaunchApplication">LAUNCHAPPONEXIT AND NOT (WixUI_InstallMode = "Remove")</Publish>
+    </UI>
+    
+
+   <!-- This will ensure that the LaunchConditions   
+        are executed only after searching -->
+  <InstallUISequence>
+    <LaunchConditions After='AppSearch' />
+  </InstallUISequence>
+  <InstallExecuteSequence>
+    <LaunchConditions After='AppSearch' />
+  </InstallExecuteSequence>
+
+  </Product>
+</Wix>
