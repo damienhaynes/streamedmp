@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="846ECF64-94D3-487a-AA90-20B154A709E0" Name="StreamedMPEditor" Language="1033" Version="1.0.1.1216" Manufacturer="StreamedMP Team" UpgradeCode="9DC761EF-4BCB-4180-AEDC-096BB2479497">
-		<Package Id="*" InstallerVersion="200" Compressed="yes" />
+  
+	<Product Id="846ECF64-94D3-487a-AA90-20B154A709E0" 
+           Name="MediaPortal StreamedMP Editor" 
+           Language="1033" 
+           Version="!(bind.FileVersion.StreamedMPEditorEXE)" 
+           Manufacturer="StreamedMP Team" 
+           UpgradeCode="9DC761EF-4BCB-4180-AEDC-096BB2479497">
+    
+		<Package Id="*" InstallerVersion="300" Compressed="yes" />
 
 		<Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 
     <Property Id="ALLUSERS">1</Property>
 
-      <Property Id="INSTALLDIR">
-      <RegistrySearch Id='StreamedMP' Type='raw'
-        Root='HKLM' Key='Software\Wow6432Node\StreamedMP' Name='InstallDir' />
+    <Property Id="INSTALLDIR">
+      <RegistrySearch Id='StreamedMP' Type='raw' Win64='no'
+        Root='HKLM' Key='Software\StreamedMP' Name='InstallDir' />
     </Property>
     
     <Property Id="LAUNCHAPPONEXIT" Value="1" />
@@ -18,7 +25,7 @@
 			<Directory Id="INSTALLDIR">
 				<Directory Id="StreamedMP" Name="StreamedMP">
 					<Component Id="MainExecutable" Guid="1C66CC50-3A9F-42c7-BD1D-89E597A505B8">
-            <File Id='StreamedMPEditorEXE' Name='StreamedMPEditor.exe' Source='G:\SkinDev\StreamedMP\StreamedMP\Editor\StreamedMPEditor\StreamedMPEditor\bin\Release\StreamedMPEditor.exe' Vital='yes' />
+            <File Id='StreamedMPEditorEXE' Name='StreamedMPEditor.exe' Source='..\..\Editor\StreamedMPEditor\StreamedMPEditor\bin\Release\StreamedMPEditor.exe' Vital='yes' />
             <RemoveFolder Id="INSTALLDIR" On="uninstall" />
 					</Component>
 				</Directory>
@@ -56,14 +63,20 @@
     </UI>
     
 
-   <!-- This will ensure that the LaunchConditions   
+    <!-- This will ensure that the LaunchConditions   
         are executed only after searching -->
-  <InstallUISequence>
-    <LaunchConditions After='AppSearch' />
-  </InstallUISequence>
-  <InstallExecuteSequence>
-    <LaunchConditions After='AppSearch' />
-  </InstallExecuteSequence>
+    <InstallUISequence>
+      <LaunchConditions After='AppSearch' />
+    </InstallUISequence>
+    <InstallExecuteSequence>
+      <LaunchConditions After='AppSearch' />
+    </InstallExecuteSequence>
 
+    <!-- Add / Remove Program Infomation -->
+    <Property Id="ARPCONTACT">StreamedMP Forum</Property>
+    <Property Id="ARPHELPLINK">http://forum.team-mediaportal.com/streamedmp-301/</Property>
+    <Property Id="ARPURLINFOABOUT">http://code.google.com/p/streamedmp/</Property>
+    <Property Id="ARPPRODUCTICON">StreamedMPEditor.ico</Property>
+    
   </Product>
 </Wix>
