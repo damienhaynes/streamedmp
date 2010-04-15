@@ -252,7 +252,7 @@ namespace StreamedMPEditor
     {
       try
       {
-        string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/Editor/StreamedMpEditor_VersionTest.xml";
+        string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/Editor/StreamedMpEditor_Version2.xml";
         reader = new XmlTextReader(xmlURL);
         reader.MoveToContent();
         string elementName = "";
