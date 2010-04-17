@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MediaPortal.Configuration;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace StreamedMPConfig
 {
@@ -14,6 +16,11 @@ namespace StreamedMPConfig
         public ConfigurationForm()
         {
             InitializeComponent();
+
+            releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
+            compileTime.Text += " " + buildDate.ToString() + " GMT";
+
         }
 
         // Save settings to file
@@ -33,6 +40,7 @@ namespace StreamedMPConfig
             this.Close();
         }
 
+        // Load settings from xml
         private void ConfigurationForm_Load(object sender, EventArgs e)
         {
             using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
@@ -45,5 +53,22 @@ namespace StreamedMPConfig
                   cbShowEqGraphic.Checked = false;
             }
         }
+
+        private static DateTime getLinkerTimeStamp(string filePath)
+        {
+          const int PeHeaderOffset = 60;
+          const int LinkerTimestampOffset = 8;
+
+          byte[] b = new byte[2047];
+          using (System.IO.Stream s = new System.IO.FileStream(filePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
+          {
+            s.Read(b, 0, 2047);
+          }
+
+          int secondsSince1970 = BitConverter.ToInt32(b, BitConverter.ToInt32(b, PeHeaderOffset) + LinkerTimestampOffset);
+
+          return new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(secondsSince1970);
+        }
+
     }
 }
