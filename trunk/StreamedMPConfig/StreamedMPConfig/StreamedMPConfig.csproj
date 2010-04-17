@@ -78,7 +78,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>copy G:\SkinDev\StreamedMP\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Release\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\process</PostBuildEvent>
   </PropertyGroup>
 </Project>

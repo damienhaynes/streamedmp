@@ -282,7 +282,7 @@ namespace StreamedMPEditor
       }
       catch (Exception e)
       {
-        showError("Exception while attempting to read upgdae xml file\n\n" + e.Message, errorCode.major);
+        showError("Exception while attempting to read upgrade xml file\n\n" + e.Message, errorCode.major);
       }
       finally
       {
