@@ -13,6 +13,7 @@
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
     </control>
     <control>
       <description>Current SMS T9 Filter</description>
@@ -36,7 +37,7 @@
       <width>950</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
-      <visible>!string.equals(#selectedindex,)</visible>
+      <visible>!string.equals(#selectedindex,)+!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
     </control>
@@ -49,7 +50,7 @@
       <width>260</width>
       <height>32</height>
       <texture>mediacountbg_Spin.png</texture>
-      <visible>!Control.IsVisible(51)</visible>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -64,7 +65,7 @@
       <posY>688</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>!Control.IsVisible(51)</visible>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -79,7 +80,7 @@
       <width>159</width>
       <height>27</height>
       <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -94,7 +95,7 @@
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <label>#itemcount</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
