@@ -4,20 +4,9 @@
 
     <!--
 		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-		::::::::::::::                VIEW  Apple Trailers         ::::::::::::::::::
+		::::::::::::::                VIEW  ITMovieTrailers  ???       ::::::::::::::::::
 		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 	-->
-    <control>
-      <type>image</type>
-      <description>movie border</description>
-      <id>23</id>
-      <posX>37</posX>
-      <posY>312</posY>
-      <width>280</width>
-      <height>389</height>
-      <visible>no</visible>
-      <texture>-</texture>
-    </control>
     <control>
       <description>Category Logo</description>
       <type>image</type>
@@ -27,7 +16,7 @@
       <width>105</width>
       <height>35</height>
       <texture>#header.image</texture>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -39,7 +28,7 @@
       <width>1280</width>
       <height>47</height>
       <texture>imagestreamtitle.png</texture>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
     </control>
     <control>
       <type>fadelabel</type>
@@ -54,7 +43,7 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <label>#selecteditem</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -71,7 +60,7 @@
       <font>mediastream14tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -88,33 +77,33 @@
       <height>328</height>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <texture flipY="true" diffuse="diffusemirrorwide.png">#OnlineVideos.movieposter</texture> 
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#OnlineVideos.Details.Poster</texture>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <texture>#OnlineVideos.movieposter</texture>
     </control>
     <!-- *** RELEASE DATE *** -->
     <control>
       <type>label</type>
       <description>Release Date Label</description>
-      <id>54</id>
+      <id>56</id>
       <posX>320</posX>
       <posY>312</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <label>#OnlineVideos.Translation.DateOfRelease.Label</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <textcolor>ff909090</textcolor>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Release Date</description>
-      <id>55</id>
+      <id>57</id>
       <posX>349</posX>
       <posY>332</posY>
       <width>375</width>
-      <label>#OnlineVideos.releasedate</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <label>#OnlineVideos.Details.ReleaseDate</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <font>mediastream11</font>
       <disabledcolor>ff808080</disabledcolor>
     </control>
@@ -122,25 +111,25 @@
     <control>
       <type>label</type>
       <description>Genre Label</description>
-      <id>56</id>
+      <id>58</id>
       <posX>320</posX>
       <posY>362</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <label>#OnlineVideos.Translation.Genre.Label</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <textcolor>ff909090</textcolor>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Genre</description>
-      <id>57</id>
+      <id>59</id>
       <posX>349</posX>
       <posY>382</posY>
       <width>368</width>
-      <label>#OnlineVideos.genre</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <label>#OnlineVideos.Details.Genres</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <font>mediastream11</font>
       <disabledcolor>ff808080</disabledcolor>
     </control>
@@ -155,7 +144,7 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <label>#OnlineVideos.Translation.Actors.Label</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <textcolor>ff909090</textcolor>
     </control>
     <control>
@@ -166,8 +155,8 @@
       <posY>432</posY>
       <width>368</width>
       <font>mediastream11</font>
-      <label>#OnlineVideos.cast</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
+      <label>#OnlineVideos.Details.Actors</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <disabledcolor>ff808080</disabledcolor>
     </control>
     <!-- *** PLOT *** -->
@@ -177,10 +166,10 @@
       <id>58</id>
       <posX>320</posX>
       <posY>452</posY>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <label>#OnlineVideos.Translation.PlotOutline.Label</label>
       <textcolor>ff909090</textcolor>
     </control>
@@ -193,160 +182,10 @@
       <width>375</width>
       <height>186</height>
       <colordiffuse>ffffffff</colordiffuse>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Apple Trailers)</visible>
       <font>mediastream11</font>
-      <label>#OnlineVideos.trailerdesc</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
+      <label>#OnlineVideos.Details.Synopsis</label>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-    <!--
-		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-		::::::::::::::                VIEW  Hardware.Info         ::::::::::::::::::
-		:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-	-->
-    <control>
-      <description>Thumb</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>28</posX>
-      <posY>242</posY>
-      <height>198</height>
-      <width>354</width>
-      <zoom>no</zoom>
-      <keepaspectratio>yes</keepaspectratio>
-      <centered>yes</centered>
-      <texture flipY="true" diffuse="diffusemirrorwide.png">#OnlineVideos.movieposter</texture>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Category Logo</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>424</posX>
-      <posY>248</posY>
-      <width>105</width>
-      <height>35</height>
-      <texture>#header.image</texture>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+!string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Current title</description>
-      <id>0</id>
-      <posX>28</posX>
-      <posY>460</posY>
-      <width>600</width>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <label>#selecteditem</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+!string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Category</description>
-      <id>0</id>
-      <posX>28</posX>
-      <posY>485</posY>
-      <width>495</width>
-      <label>#header.Extension.label</label>
-      <font>mediastream11tc</font>
-      <textcolor>ff006698</textcolor>
-      <align>left</align>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+!string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <type>textboxscrollup</type>
-      <description>Description</description>
-      <id>0</id>
-      <posX>28</posX>
-      <posY>532</posY>
-      <width>600</width>
-      <height>160</height>
-      <seperator>----------------------------------------------------------------------------------------</seperator>
-      <font>mediastream11</font>
-      <label>#OnlineVideos.trailerdesc</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+!string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <!--:::::::::::::::::::::::::::::::::           Hardware.Info VIEW  WITHOUT #OnlineVideos.movieposter    ::::::::::::::::::-->
-    <control>
-      <description>Category Logo</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>248</posY>
-      <width>105</width>
-      <height>35</height>
-      <texture>#header.image</texture>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Current title</description>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>290</posY>
-      <width>600</width>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <label>#selecteditem</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Category</description>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>315</posY>
-      <width>315</width>
-      <label>#header.Extension.label</label>
-      <font>mediastream11tc</font>
-      <textcolor>ff006698</textcolor>
-      <align>left</align>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <type>textboxscrollup</type>
-      <description>Description</description>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>362</posY>
-      <width>600</width>
-      <height>298</height>
-      <seperator>----------------------------------------------------------------------------------------</seperator>
-      <font>mediastream12</font>
-      <label>#OnlineVideos.trailerdesc</label>
-      <visible>Control.IsVisible(51)+string.contains(#header.image,Hardwareinfo)+string.equals(#OnlineVideos.movieposter,)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-  </controls>
+   </controls>
 </window>
