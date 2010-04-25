@@ -115,7 +115,7 @@ namespace StreamedMPEditor
         string baseISVer = "0.9.9.3";
         string baseISVerTwitter = "1.2.0.0";
         string isSeparatorVer = "1.1.0.0";
-        string mpReleaseVersion = "1.0.2.22555";
+        string mpReleaseVersion = "1.0.2.22554";
         string ticker = "#rssticker";
         string splashScreenImage = null;
 
@@ -285,7 +285,6 @@ namespace StreamedMPEditor
                 disableItemControls();
                 cancelCreateButton.Visible = false;
                 editButton.Enabled = true;
-
 
                 string mpVersion = getMediaPortalVersion();
                 if (mpVersion.CompareTo(mpReleaseVersion) > 0)
