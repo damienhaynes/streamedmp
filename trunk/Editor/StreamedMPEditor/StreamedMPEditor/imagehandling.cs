@@ -56,6 +56,7 @@ namespace StreamedMPEditor
       // Set the default base directory for backgrounds (need to work out how to handle custom directories)
       //
       int xPos = 16, yPos = 51;
+      int bg_item_count = 1;
       foreach (backgroundItem bgItem in bgItems)
       {
 
@@ -145,7 +146,7 @@ namespace StreamedMPEditor
         bgButtons[pBoxElement] = newBGButton;
         defaultBackgrounds.Controls.Add(bgButtons[pBoxElement]);
 
-        // Increment the position and pointer counters - currently supports 12 backgrounds
+        // Increment the position and pointer counters - currently supports 20 backgrounds
         pBoxElement++;
         xPos += 185;
         if (pBoxElement == 4)
@@ -153,11 +154,14 @@ namespace StreamedMPEditor
           yPos += 126;
           xPos = 16;
         }
-        if (pBoxElement == 8)
+        if (pBoxElement == 8 || pBoxElement == 12 || pBoxElement == 16 || pBoxElement == 20)
         {
           yPos += 126;
           xPos = 16;
         }
+        bg_item_count++;
+        if (bg_item_count > 12)
+          defaultBackgrounds.AutoScroll = true; 
       }
 
       
