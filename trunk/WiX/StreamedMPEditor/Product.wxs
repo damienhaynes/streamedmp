@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   
-	<Product Id="846ECF64-94D3-487a-AA90-20B154A709E0" 
+	<Product Id="B3DD84AE-B35A-426b-9157-AC758D5DBC7E" 
            Name="MediaPortal StreamedMP Editor" 
            Language="1033" 
            Version="!(bind.FileVersion.StreamedMPEditorEXE)" 
@@ -18,6 +18,8 @@
       <RegistrySearch Id='StreamedMP' Type='raw' Win64='no'
         Root='HKLM' Key='Software\StreamedMP' Name='InstallDir' />
     </Property>
+    
+    
     
     <Property Id="LAUNCHAPPONEXIT" Value="1" />
     
