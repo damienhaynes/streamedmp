@@ -143,7 +143,7 @@ namespace StreamedMPEditor
                     "\t\t\t<height>114</height>\n" +
                     "\t\t\t<texture>#fanarthandler.music.backdrop1.play</texture>\n" +
                     "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
-                    "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote +"850" + quote + ">VisibleChange</animation>\n" +
+                    "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote +"1000" + quote + ">VisibleChange</animation>\n" +
                   "\t\t</control>\n" +
                   "\t\t<control>\n" +
                     "\t\t\t<description>PICTURES NOW PLAYING BACKGROUND 2</description>\n" +
@@ -155,7 +155,7 @@ namespace StreamedMPEditor
                     "\t\t\t<height>114</height>\n" +
                     "\t\t\t<texture>#fanarthandler.music.backdrop2.play</texture>\n" +
                     "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
-                    "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "850" + quote + ">VisibleChange</animation>\n" +
+                    "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>\n" +
                   "\t\t</control>\n" +
                   "\t\t<control>\n" +
                     "\t\t\t<description>Overlay Mask</description>\n" +

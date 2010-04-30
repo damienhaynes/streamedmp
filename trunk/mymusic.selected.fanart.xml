@@ -63,7 +63,8 @@
       <height>720</height>
       <texture>hover_my music.png</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="850">VisibleChange</animation>
+			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 1</description>
@@ -75,7 +76,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop1.selected </texture>
       <visible>control.isvisible(91919291)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="850">VisibleChange</animation>
+			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 2</description>
@@ -87,7 +89,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.selected</texture>
       <visible>control.isvisible(91919292)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="850">VisibleChange</animation>
+			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 1</description>
@@ -99,7 +102,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
       <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="850">VisibleChange</animation>
+			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 2</description>
@@ -111,7 +115,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
       <visible>control.isvisible(91919296)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="850">VisibleChange</animation>
+			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
   </controls>
 </window>
