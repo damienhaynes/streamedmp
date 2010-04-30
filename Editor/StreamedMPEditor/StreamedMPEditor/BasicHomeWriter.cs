@@ -1688,7 +1688,7 @@ namespace StreamedMPEditor
                 else
                     rawXML.Append("</visible>\n");
 
-                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
+                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>"); 
                 rawXML.AppendLine("\t\t</control>");
 
                 // Add second background control for random fanart provided 
@@ -1719,7 +1719,7 @@ namespace StreamedMPEditor
                     else
                         rawXML.Append("]+control.isvisible(91919298)</visible>\n");
 
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
                 }
             
@@ -1751,7 +1751,7 @@ namespace StreamedMPEditor
                             rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>\n");
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
 
                     //
@@ -1776,7 +1776,7 @@ namespace StreamedMPEditor
                             rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>\n");
-                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"850\">VisibleChange</animation>");
+                    rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
                     rawXML.AppendLine("\t\t</control>");
                 }
 
@@ -1986,7 +1986,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             rawXML.AppendLine("</control>");
 
             rawXML.AppendLine("\n<control>");
@@ -1996,7 +1996,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
 
 
@@ -2057,8 +2057,11 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>"); rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
-            rawXML.AppendLine("\t</control>"); 
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
+              
+            rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+            rawXML.AppendLine("\t</control>");
+
             for (i = 1; i < 5; i++)
             {
                 rawXML.AppendLine("\n\t<control>");
@@ -2091,7 +2094,7 @@ namespace StreamedMPEditor
                 if (weatherId.ToString().Length == 5)
                   rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
                 else
-                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>"); rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>"); rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
                 rawXML.AppendLine("\t</control>");
             }
             // ************************************* Weather Text Items *******************************
@@ -2104,7 +2107,8 @@ namespace StreamedMPEditor
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
 
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");            // ************************************* Day 1 ****************************************
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
+            // ************************************* Day 1 ****************************************
             rawXML.AppendLine("\n\t<control>");
             rawXML.AppendLine("\t\t<description>DAY 1 LABEL</description>");
             rawXML.AppendLine("\t\t<type>label</type>");
@@ -2441,10 +2445,10 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             rawXML.AppendLine("</control>");
 
-            // Group for Weater Backgrounds
+            // Group for Weather Backgrounds
             rawXML.AppendLine("\n<control>");
             rawXML.AppendLine("\t<description>GROUP: FIVE DAY WEATHER BACKGROUNDS</description>");
             rawXML.AppendLine("\t<type>group</type>");
@@ -2452,7 +2456,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
             for (i = 0; i < 5; i++)
             {
@@ -2479,7 +2483,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             // ********************* Weather Icons **************************************
             for (i = 0; i < 5; i++)
             {
@@ -2505,7 +2509,7 @@ namespace StreamedMPEditor
                 if (weatherId.ToString().Length == 5)
                   rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
                 else
-                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
                 rawXML.AppendLine("\t\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
                 rawXML.AppendLine("\t</control>");
 
@@ -2537,7 +2541,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             // **************************************** DAY 1 *********************************************
             rawXML.AppendLine("\n\t<control>");
             rawXML.AppendLine("\t\t<description>DAY 1 LABEL</description>");
@@ -2873,7 +2877,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
             for (i = 0; i < 5; i++)
             {
@@ -2899,7 +2903,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             // ********************* Weather Icons **************************************
             for (i = 0; i < 5; i++)
             {
@@ -2925,7 +2929,7 @@ namespace StreamedMPEditor
                 if (weatherId.ToString().Length == 5)
                   rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
                 else
-                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+                  rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
                 rawXML.AppendLine("\t<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
                 rawXML.AppendLine("\t</control>");
             }
@@ -2939,7 +2943,7 @@ namespace StreamedMPEditor
             if (weatherId.ToString().Length == 5)
               rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
             else
-              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
+              rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")]</visible>");
             // ************************************* Day 1 ****************************************
             rawXML.AppendLine("\n\t<control>");
             rawXML.AppendLine("\t\t<description>DAY 1 LABEL</description>");
