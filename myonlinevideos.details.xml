@@ -56,7 +56,7 @@
       <type>label</type>
       <description>Release Date Label</description>
       <id>56</id>
-      <posX>320</posX>
+      <posX>280</posX>
       <posY>292</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -69,7 +69,7 @@
       <type>fadelabel</type>
       <description>Release Date</description>
       <id>57</id>
-      <posX>349</posX>
+      <posX>309</posX>
       <posY>312</posY>
       <width>375</width>
       <label>#OnlineVideos.Details.ReleaseDate</label>
@@ -82,7 +82,7 @@
       <type>label</type>
       <description>Genre Label</description>
       <id>58</id>
-      <posX>320</posX>
+      <posX>280</posX>
       <posY>342</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -95,10 +95,36 @@
       <type>fadelabel</type>
       <description>Genre</description>
       <id>59</id>
-      <posX>349</posX>
+      <posX>309</posX>
       <posY>362</posY>
       <width>430</width>
       <label>#OnlineVideos.Details.Genres</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
+      <font>mediastream11</font>
+      <disabledcolor>ff808080</disabledcolor>
+    </control>
+    <!-- *** STUDIO *** -->
+    <control>
+      <type>label</type>
+      <description>Studio Label</description>
+      <id>580</id>
+      <posX>520</posX>
+      <posY>342</posY>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>ff111111</shadowColor>
+      <label>Studio</label>
+      <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
+      <textcolor>ff909090</textcolor>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Studio</description>
+      <id>590</id>
+      <posX>549</posX>
+      <posY>362</posY>
+      <width>230</width>
+      <label>#OnlineVideos.Details.Studio</label>
       <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <font>mediastream11</font>
       <disabledcolor>ff808080</disabledcolor>
@@ -108,7 +134,7 @@
       <type>label</type>
       <description>Cast Label</description>
       <id>52</id>
-      <posX>320</posX>
+      <posX>280</posX>
       <posY>392</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -121,9 +147,9 @@
       <type>textboxscrollup</type>
       <description>Cast</description>
       <id>53</id>
-      <posX>349</posX>
+      <posX>309</posX>
       <posY>412</posY>
-      <width>430</width>
+      <width>470</width>
       <height>40</height>
       <font>mediastream11</font>
       <label>#OnlineVideos.Details.Actors</label>
@@ -135,7 +161,7 @@
       <type>label</type>
       <description>Directors Label</description>
       <id>54</id>
-      <posX>320</posX>
+      <posX>280</posX>
       <posY>472</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -148,9 +174,9 @@
       <type>fadelabel</type>
       <description>Directors</description>
       <id>54</id>
-      <posX>349</posX>
+      <posX>309</posX>
       <posY>492</posY>
-      <width>430</width>
+      <width>470</width>
       <label>#OnlineVideos.Details.Directors</label>
       <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
       <font>mediastream10</font>
@@ -161,7 +187,7 @@
       <type>label</type>
       <description>Plot Label</description>
       <id>60</id>
-      <posX>320</posX>
+      <posX>280</posX>
       <posY>522</posY>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -174,10 +200,10 @@
       <type>textboxscrollup</type>
       <description>Plot</description>
       <id>61</id>
-      <posX>349</posX>
+      <posX>309</posX>
       <posY>545</posY>
-      <width>430</width>
-      <height>170</height>
+      <width>470</width>
+      <height>160</height>
       <colordiffuse>ffffffff</colordiffuse>
       <font>mediastream11</font>
       <visible>string.equals(#OnlineVideos.state, details) + string.equals(#OnlineVideos.selectedSiteUtil, ITMovieTrailers)</visible>
