@@ -30,6 +30,7 @@ namespace StreamedMPConfig
             {
                 xmlwriter.SetValue("StreamedMPConfig", "cdCoverOnly", cbCdCoverOnly.Checked ? 1 : 0);
                 xmlwriter.SetValue("StreamedMPConfig", "showEqGraphic", cbShowEqGraphic.Checked ? 1 : 0);
+                xmlwriter.SetValue("StreamedMPConfig", "fullVideoOSD", fullVideoOSD.Checked ? 1 : 0);
 
             }
             this.Close();
@@ -51,6 +52,17 @@ namespace StreamedMPConfig
                 cbShowEqGraphic.Checked = true;
                 if (xmlreader.GetValueAsInt("StreamedMPConfig", "showEqGraphic", 1) != 1)
                   cbShowEqGraphic.Checked = false;
+                if (xmlreader.GetValueAsInt("StreamedMPConfig", "fullVideoOSD", 1) == 1)
+                {
+                  fullVideoOSD.Checked = true;
+                  minVideoOSD.Checked = false;
+                }
+                else
+                {
+                  fullVideoOSD.Checked = false;
+                  minVideoOSD.Checked = true;
+                }
+
             }
         }
 

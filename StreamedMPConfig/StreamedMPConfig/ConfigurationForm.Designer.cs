@@ -35,16 +35,22 @@ namespace StreamedMPConfig
           this.cbShowEqGraphic = new System.Windows.Forms.CheckBox();
           this.cbCdCoverOnly = new System.Windows.Forms.CheckBox();
           this.MiscScreens = new System.Windows.Forms.TabPage();
-          this.label1 = new System.Windows.Forms.Label();
           this.aboutTab = new System.Windows.Forms.TabPage();
-          this.richTextBox1 = new System.Windows.Forms.RichTextBox();
           this.groupBox1 = new System.Windows.Forms.GroupBox();
           this.compileTime = new System.Windows.Forms.Label();
+          this.richTextBox1 = new System.Windows.Forms.RichTextBox();
           this.releaseVersion = new System.Windows.Forms.Label();
+          this.label1 = new System.Windows.Forms.Label();
+          this.VideoScreens = new System.Windows.Forms.TabPage();
+          this.groupBox2 = new System.Windows.Forms.GroupBox();
+          this.fullVideoOSD = new System.Windows.Forms.RadioButton();
+          this.minVideoOSD = new System.Windows.Forms.RadioButton();
           this.tabControl1.SuspendLayout();
           this.MusicScreens.SuspendLayout();
           this.aboutTab.SuspendLayout();
           this.groupBox1.SuspendLayout();
+          this.VideoScreens.SuspendLayout();
+          this.groupBox2.SuspendLayout();
           this.SuspendLayout();
           // 
           // btCancel
@@ -72,6 +78,7 @@ namespace StreamedMPConfig
           // tabControl1
           // 
           this.tabControl1.Controls.Add(this.MusicScreens);
+          this.tabControl1.Controls.Add(this.VideoScreens);
           this.tabControl1.Controls.Add(this.MiscScreens);
           this.tabControl1.Controls.Add(this.aboutTab);
           this.tabControl1.Location = new System.Drawing.Point(12, 52);
@@ -123,16 +130,6 @@ namespace StreamedMPConfig
           this.MiscScreens.Text = "Misc Screens";
           this.MiscScreens.UseVisualStyleBackColor = true;
           // 
-          // label1
-          // 
-          this.label1.AutoSize = true;
-          this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label1.Location = new System.Drawing.Point(211, 9);
-          this.label1.Name = "label1";
-          this.label1.Size = new System.Drawing.Size(353, 26);
-          this.label1.TabIndex = 10;
-          this.label1.Text = "StreamedMP Skin Configuration";
-          // 
           // aboutTab
           // 
           this.aboutTab.Controls.Add(this.groupBox1);
@@ -143,18 +140,6 @@ namespace StreamedMPConfig
           this.aboutTab.TabIndex = 2;
           this.aboutTab.Text = "About";
           this.aboutTab.UseVisualStyleBackColor = true;
-          // 
-          // richTextBox1
-          // 
-          this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-          this.richTextBox1.Location = new System.Drawing.Point(9, 20);
-          this.richTextBox1.Name = "richTextBox1";
-          this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-          this.richTextBox1.Size = new System.Drawing.Size(478, 64);
-          this.richTextBox1.TabIndex = 0;
-          this.richTextBox1.Text = "This is the configuration tool for the StreamedMP Skin. \n\nIt allows you to custom" +
-              "ise aspects of the skin to suit your preferance. This will be updated\nbased on u" +
-              "sers requests.\n";
           // 
           // groupBox1
           // 
@@ -178,6 +163,18 @@ namespace StreamedMPConfig
           this.compileTime.TabIndex = 4;
           this.compileTime.Text = "Built:";
           // 
+          // richTextBox1
+          // 
+          this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+          this.richTextBox1.Location = new System.Drawing.Point(9, 20);
+          this.richTextBox1.Name = "richTextBox1";
+          this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+          this.richTextBox1.Size = new System.Drawing.Size(478, 64);
+          this.richTextBox1.TabIndex = 0;
+          this.richTextBox1.Text = "This is the configuration tool for the StreamedMP Skin. \n\nIt allows you to custom" +
+              "ise aspects of the skin to suit your preferance. This will be updated\nbased on u" +
+              "sers requests.\n";
+          // 
           // releaseVersion
           // 
           this.releaseVersion.AutoSize = true;
@@ -187,6 +184,59 @@ namespace StreamedMPConfig
           this.releaseVersion.Size = new System.Drawing.Size(45, 13);
           this.releaseVersion.TabIndex = 3;
           this.releaseVersion.Text = "Version:";
+          // 
+          // label1
+          // 
+          this.label1.AutoSize = true;
+          this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+          this.label1.Location = new System.Drawing.Point(211, 9);
+          this.label1.Name = "label1";
+          this.label1.Size = new System.Drawing.Size(353, 26);
+          this.label1.TabIndex = 10;
+          this.label1.Text = "StreamedMP Skin Configuration";
+          // 
+          // VideoScreens
+          // 
+          this.VideoScreens.Controls.Add(this.groupBox2);
+          this.VideoScreens.Location = new System.Drawing.Point(4, 22);
+          this.VideoScreens.Name = "VideoScreens";
+          this.VideoScreens.Size = new System.Drawing.Size(548, 227);
+          this.VideoScreens.TabIndex = 3;
+          this.VideoScreens.Text = "Video Screens";
+          this.VideoScreens.UseVisualStyleBackColor = true;
+          // 
+          // groupBox2
+          // 
+          this.groupBox2.Controls.Add(this.minVideoOSD);
+          this.groupBox2.Controls.Add(this.fullVideoOSD);
+          this.groupBox2.Location = new System.Drawing.Point(11, 20);
+          this.groupBox2.Name = "groupBox2";
+          this.groupBox2.Size = new System.Drawing.Size(521, 35);
+          this.groupBox2.TabIndex = 0;
+          this.groupBox2.TabStop = false;
+          this.groupBox2.Text = "VideoOSD";
+          // 
+          // fullVideoOSD
+          // 
+          this.fullVideoOSD.AutoSize = true;
+          this.fullVideoOSD.Location = new System.Drawing.Point(106, 12);
+          this.fullVideoOSD.Name = "fullVideoOSD";
+          this.fullVideoOSD.Size = new System.Drawing.Size(97, 17);
+          this.fullVideoOSD.TabIndex = 0;
+          this.fullVideoOSD.TabStop = true;
+          this.fullVideoOSD.Text = "Full Video OSD";
+          this.fullVideoOSD.UseVisualStyleBackColor = true;
+          // 
+          // minVideoOSD
+          // 
+          this.minVideoOSD.AutoSize = true;
+          this.minVideoOSD.Location = new System.Drawing.Point(297, 12);
+          this.minVideoOSD.Name = "minVideoOSD";
+          this.minVideoOSD.Size = new System.Drawing.Size(86, 17);
+          this.minVideoOSD.TabIndex = 1;
+          this.minVideoOSD.TabStop = true;
+          this.minVideoOSD.Text = "Minimal OSD";
+          this.minVideoOSD.UseVisualStyleBackColor = true;
           // 
           // ConfigurationForm
           // 
@@ -206,6 +256,9 @@ namespace StreamedMPConfig
           this.aboutTab.ResumeLayout(false);
           this.groupBox1.ResumeLayout(false);
           this.groupBox1.PerformLayout();
+          this.VideoScreens.ResumeLayout(false);
+          this.groupBox2.ResumeLayout(false);
+          this.groupBox2.PerformLayout();
           this.ResumeLayout(false);
           this.PerformLayout();
 
@@ -226,6 +279,10 @@ namespace StreamedMPConfig
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label compileTime;
         private System.Windows.Forms.Label releaseVersion;
+        private System.Windows.Forms.TabPage VideoScreens;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton minVideoOSD;
+        private System.Windows.Forms.RadioButton fullVideoOSD;
 
     }
 }
