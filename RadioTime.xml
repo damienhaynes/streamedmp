@@ -230,34 +230,6 @@
         <subitem>stargood.png</subitem>
       </subitems>
     </control>
-    <control>
-      <description>Item Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1113</posX>
-      <posY>12</posY>
-      <width>159</width>
-      <height>27</height>
-      <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(50)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Number of Files Label</description>
-      <id>1</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
-      <font>mediastream10c</font>
-      <textcolor>ff006698</textcolor>
-      <align>right</align>
-      <label>#itemcount</label>
-      <visible>Control.IsVisible(50)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     <import>common.facade.music.xml</import>
