@@ -14,7 +14,7 @@ This file should contain the list view
 		  <width>257</width>
 		  <height>380</height>
 		  <texture>#MovingPictures.Coverart</texture>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>		  
+		  <visible>facadeview.list+control.isvisible(50)</visible>		  
 		</control>    
 		<control>
 		  <description>Cover Art Glass Overlay</description>
@@ -25,7 +25,7 @@ This file should contain the list view
 		  <width>228</width>
 		  <height>177</height>
 		  <texture>glassoverlay2.png</texture>
-		  <visible>facadeview.list+Control.IsVisible(50)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)</visible>
 		</control>
 		
 		<control>
@@ -37,7 +37,7 @@ This file should contain the list view
 		  <width>32</width>
 		  <height>39</height>
 		  <texture>overlaywubg.png</texture>
-		  <visible>facadeview.list+Control.IsVisible(50)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)</visible>
 		</control>  
 		<control>
 		  <description>Watched Icon</description>
@@ -48,7 +48,7 @@ This file should contain the list view
 		  <width>23</width>
 		  <height>23</height>
 		  <texture>overlaywatched.png</texture>
-		  <visible>facadeview.list+Control.IsVisible(50)+Control.IsVisible(9)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>    
 		<control>
 		  <description>Un-Watched Icon</description>
@@ -59,7 +59,7 @@ This file should contain the list view
 		  <width>23</width>
 		  <height>23</height>
 		  <texture>overlayunwatched.png</texture>
-		  <visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(9)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>
 		
 		<control>
@@ -72,7 +72,7 @@ This file should contain the list view
 		  <font>mediastream16tc</font>
 		  <label>#MovingPictures.SelectedMovie.title</label>
 		  <textcolor>ff222222</textcolor>		 
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control>
 		  <description>Movie Title</description>
@@ -84,7 +84,7 @@ This file should contain the list view
 		  <font>mediastream16tc</font>
 		  <label>#MovingPictures.SelectedMovie.title</label>
 		  <textcolor>ffFFFFFF</textcolor>		 
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 
 		<control>
@@ -100,7 +100,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		   
 		<control>
@@ -115,7 +115,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control>
 		  <type>image</type>
@@ -126,7 +126,7 @@ This file should contain the list view
 		  <posY>305</posY>	  
 		  <align>right</align>		  
 		  <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>		  
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>					
 		
 		<control>
@@ -141,7 +141,7 @@ This file should contain the list view
 		  <seperator>-----------------------------------------------------------------------------------</seperator>
 		  <font>mediastream11</font>
 		  <label>#MovingPictures.SelectedMovie.summary</label>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 
 		<!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
@@ -152,7 +152,7 @@ This file should contain the list view
 		  <posX>311</posX>
 		  <posY>573</posY>
 		  <textcolor>ff111111</textcolor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>		
 		<control Style="smallTitleB">	  
 		  <description>Certification Label</description>
@@ -162,7 +162,7 @@ This file should contain the list view
 		  <posX>310</posX>
 		  <posY>572</posY>
 		  <width>140</width>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Certification</description>
@@ -175,7 +175,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Certification N/A</description>
@@ -188,7 +188,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)+!Control.HasText(1001)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1001)</visible>
 		</control>
 		
 		<control Style="smallTitleB">
@@ -198,7 +198,7 @@ This file should contain the list view
 		  <posX>311</posX>
 		  <posY>595</posY>
 		  <textcolor>ff111111</textcolor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitleB">	  
 		  <description>Runtime Label</description>
@@ -208,7 +208,7 @@ This file should contain the list view
 		  <posX>310</posX>
 		  <posY>594</posY>
 		  <width>140</width>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Runtime</description>
@@ -221,7 +221,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Runtime N/A</description>
@@ -234,7 +234,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)+!Control.HasText(1002)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1002)</visible>
 		</control>
 		
 		<control Style="smallTitleB">
@@ -244,7 +244,7 @@ This file should contain the list view
 		  <posX>311</posX>
 		  <posY>617</posY>
 		  <textcolor>ff111111</textcolor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitleB">
 		  <description>Year Label</description>		  
@@ -253,7 +253,7 @@ This file should contain the list view
 		  <posX>310</posX>
 		  <posY>616</posY>
 		  <width>140</width>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Year</description>
@@ -265,7 +265,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)</visible>
+		  <visible>facadeview.list+control.isvisible(50)</visible>
 		</control>
 		<control Style="smallTitle">
 		  <description>Year N/A</description>
@@ -277,7 +277,7 @@ This file should contain the list view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.list+Control.IsVisible(50)+!Control.HasText(1003)</visible>
+		  <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1003)</visible>
 		</control>		
 		
 	</controls>

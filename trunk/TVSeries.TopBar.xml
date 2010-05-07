@@ -23,7 +23,7 @@
             <align>right</align>
             <font>mediastream12c</font>
 			<scrollStartDelaySec>30</scrollStartDelaySec>
-            <visible>Control.IsVisible(1240)|Control.IsVisible(1237)</visible>
+            <visible>control.isvisible(1240)|control.isvisible(1237)</visible>
             <wrapString> |  </wrapString>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -37,7 +37,7 @@
             <font>mediastream12c</font>
             <label>#TVSeries.Season.SeasonLabel</label>
             <align>right</align>
-            <visible>Control.IsVisible(1238)</visible>
+            <visible>control.isvisible(1238)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control>
@@ -50,7 +50,7 @@
             <font>mediastream12c</font>
             <label>#TVSeries.Episode.SeasonLabel</label>
             <align>right</align>
-            <visible>Control.IsVisible(1239)</visible>
+            <visible>control.isvisible(1239)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
@@ -75,7 +75,7 @@
             <font>mediastream12c</font>
             <label>#currentmodule</label>
             <align>right</align>
-            <visible>!Control.IsVisible(1238)+!Control.IsVisible(1239)</visible>
+            <visible>!control.isvisible(1238)+!control.isvisible(1239)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -90,7 +90,7 @@
             <align>right</align>
             <wrapString> |  </wrapString>
 			<scrollStartDelaySec>30</scrollStartDelaySec>
-            <visible>Control.IsVisible(1238)|Control.IsVisible(1239)</visible>
+            <visible>control.isvisible(1238)|control.isvisible(1239)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 	</controls>

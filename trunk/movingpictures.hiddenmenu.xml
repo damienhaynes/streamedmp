@@ -11,7 +11,7 @@ This file should contain the details view
 			<width>59</width>
 			<height>153</height>
 			<texture>Action_menu.png</texture>
-			<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>				
+			<visible>!control.isvisible(51)+control.isvisible(50)</visible>				
 		</control>			
 		<control>
 			<type>actiongroup</type>
@@ -30,7 +30,7 @@ This file should contain the details view
 				<width>278</width>
 				<height>720</height>
 				<texture>hiddenmenu_right.png</texture>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
@@ -43,7 +43,7 @@ This file should contain the details view
 				<posY>0</posY>
 				<width>278</width>
 				<height>720</height>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
@@ -55,7 +55,7 @@ This file should contain the details view
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
 				<posY>226</posY>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
@@ -67,7 +67,7 @@ This file should contain the details view
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
 				<posY>370</posY>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
@@ -79,7 +79,7 @@ This file should contain the details view
 				<font>mediastream12tc</font>
 				<posX>1040</posX>
 				<posY>425</posY>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
@@ -92,14 +92,14 @@ This file should contain the details view
 				<posX>1240</posX>
 				<posY>286</posY>
 				<texture>movingpictures_Sort#MovingPictures.Sort.Direction.png</texture>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>			
 			<control>
 				<type>group</type>
 				<description>group element</description>
-				<visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 				<posX>1040</posX>

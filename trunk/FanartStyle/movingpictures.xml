@@ -149,7 +149,7 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>fanartoverlay.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>control.isvisible(51)</visible>
     </control>
 	
 	<control>
@@ -161,7 +161,7 @@ multiple view modes.
       <width>1280</width>
       <height>720</height>
       <texture>fanartoverlay.png</texture>
-      <visible>facadeview.list+Control.IsVisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)</visible>
     </control>
 	
 	<control>
@@ -173,7 +173,7 @@ multiple view modes.
 		<width>1284</width>
 		<height>722</height>
 		<texture>mainoverlay.png</texture>
-		<visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+		<visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
 	</control>
 	
 	<control>
@@ -185,7 +185,7 @@ multiple view modes.
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
     </control>
     <control>
       <description>Filmstrip Bottom Overlay</description>
@@ -196,7 +196,7 @@ multiple view modes.
       <width>1280</width>
       <height>320</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
     </control>
 	
 	<!--            :: HIDDEN MENU ::            -->
@@ -212,7 +212,7 @@ multiple view modes.
 		<width>159</width>
 		<height>28</height>
 		<texture>mediacountbackground.png</texture>
-		<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
+		<visible>!control.isvisible(51)+control.isvisible(50)</visible>
 	</control>    
 	<control>
 		<description>Movie Count Label</description>
@@ -223,7 +223,7 @@ multiple view modes.
 		<posY>14</posY>
 		<font>mediastream10tc</font>
 		<textcolor>ff909090</textcolor>
-		<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
+		<visible>!control.isvisible(51)+control.isvisible(50)</visible>
 	</control>
 	<control>
 		<type>label</type>
@@ -235,7 +235,7 @@ multiple view modes.
 		<textcolor>ff006698</textcolor>
 		<align>right</align>
 		<label>#MovingPictures.general.filteredmoviecount</label>
-		<visible>!Control.IsVisible(51)+Control.IsVisible(50)</visible>
+		<visible>!control.isvisible(51)+control.isvisible(50)</visible>
 	</control>
 	
 	<!-- Facade Spin Background -->
@@ -248,7 +248,7 @@ multiple view modes.
 		<width>260</width>
 		<height>30</height>
 		<texture>mediacountbg_Spin.png</texture>
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
+		<visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>	
 	</control>
@@ -261,7 +261,7 @@ multiple view modes.
 		<posY>688</posY>
 		<font>mediastream12tc</font>
 		<textcolor>ff909090</textcolor>
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
+		<visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>	
 	</control>
@@ -293,7 +293,7 @@ multiple view modes.
 		<texture>tvtitlebg.png</texture>		
 		<animation effect="fade" time="150" delay="0">WindowClose</animation>		
 		<animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>		
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+Control.IsVisible(17)+!Control.IsVisible(9001)</visible>
+		<visible>[control.isvisible(50)|control.isvisible(51)]+control.isvisible(17)+!control.isvisible(9001)</visible>
 	</control>
 	<control>
 		<description>Current Filter</description>
@@ -309,7 +309,7 @@ multiple view modes.
 		<wrapString> |  </wrapString>
 		<animation effect="fade" time="150" delay="0">WindowClose</animation>		
 		<animation effect="slide" start="-40,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>	
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+Control.IsVisible(17)+!Control.IsVisible(9001)</visible>
+		<visible>[control.isvisible(50)|control.isvisible(51)]+control.isvisible(17)+!control.isvisible(9001)</visible>
 	</control>
 	
     <control>
@@ -323,7 +323,7 @@ multiple view modes.
 		<texture>tvtitlebg.png</texture>		
 		<animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>		
 		<animation effect="fade" time="150" delay="0">WindowClose</animation>
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>
+		<visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
     </control>    
     <control>
 		<description>Plugin Name / Current Category</description>
@@ -339,7 +339,7 @@ multiple view modes.
 		<wrapString> |  </wrapString>
 		<animation effect="slide" start="-150,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
 		<animation effect="fade" time="150" delay="0">WindowClose</animation>		
-		<visible>[Control.IsVisible(50)|Control.IsVisible(51)]+!Control.IsVisible(9001)</visible>	  
+		<visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>	  
     </control>
         
 	<control>
@@ -368,7 +368,7 @@ multiple view modes.
 		<width>36</width>
 		<height>36</height>
 		<texture>parentallock.png</texture>
-		<visible>Control.IsVisible(16)+!Control.IsVisible(51)+Control.IsVisible(50)</visible>
+		<visible>control.isvisible(16)+!control.isvisible(51)+control.isvisible(50)</visible>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>
 	</control>		
@@ -381,7 +381,7 @@ multiple view modes.
 		<width>36</width>
 		<height>36</height>
 		<texture>parentallock.png</texture>
-		<visible>Control.IsVisible(16)+Control.IsVisible(51)+!Control.IsVisible(50)</visible>
+		<visible>control.isvisible(16)+control.isvisible(51)+!control.isvisible(50)</visible>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>		
 	</control>
@@ -398,7 +398,7 @@ multiple view modes.
 		<keepaspectratio>yes</keepaspectratio>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>			
-		<visible>Control.IsVisible(51)+!Control.IsVisible(50)+!Control.HasThumb(100)</visible>
+		<visible>control.isvisible(51)+!control.isvisible(50)+!Control.HasThumb(100)</visible>
 	</control>
 	<control>
 		<description>Category Image</description>
@@ -412,7 +412,7 @@ multiple view modes.
 		<keepaspectratio>yes</keepaspectratio>
 		<animation effect="fade" time="250">WindowOpen</animation>
 		<animation effect="fade" time="250">WindowClose</animation>			
-		<visible>Control.IsVisible(51)</visible>
+		<visible>control.isvisible(51)</visible>
 	</control>
 	
   </controls>

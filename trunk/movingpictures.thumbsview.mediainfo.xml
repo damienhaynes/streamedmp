@@ -13,7 +13,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
 		</control>
 		<control>
 		  <description>SD/HD Fullscreen/Widescreen</description>
@@ -24,7 +24,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9803)</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9803)</visible>
 		</control>
 
 		<!-- Video Codecs -->
@@ -37,7 +37,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
 		</control>
 
 		<!-- Audio Channels / Codecs -->	
@@ -50,7 +50,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
 		</control>
 		<control>
 		  <description>Audio Channels / Codecs</description>
@@ -61,7 +61,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9804)</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9804)</visible>
 		</control>
 
 		<!-- Subtitles -->
@@ -74,7 +74,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture>Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
-		  <visible>Control.IsVisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+		  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
 		</control>
 		
 	</controls>
