@@ -132,7 +132,7 @@
       <width>570</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
-      <visible>!Control.IsVisible(14)</visible>
+      <visible>!control.isvisible(14)</visible>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -169,7 +169,7 @@
       <posY>331</posY>
       <font>mediastream12tc</font>
       <textcolor>ff006698</textcolor>
-      <visible>Control.isvisible(14)</visible>
+      <visible>control.isvisible(14)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>

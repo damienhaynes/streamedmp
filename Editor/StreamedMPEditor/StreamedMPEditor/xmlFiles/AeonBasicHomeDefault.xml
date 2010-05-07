@@ -35,7 +35,7 @@
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>False</randomize>
-      <visible>Control.IsVisible(1000)</visible>
+      <visible>control.isvisible(1000)</visible>
     </control>
 
     <control>
@@ -51,7 +51,7 @@
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>False</randomize>
-      <visible>Control.IsVisible(1001)</visible>
+      <visible>control.isvisible(1001)</visible>
     </control>
 
     <control>
@@ -67,7 +67,7 @@
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>False</randomize>
-      <visible>Control.IsVisible(1002)</visible>
+      <visible>control.isvisible(1002)</visible>
     </control>
 
     <control>
@@ -83,7 +83,7 @@
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>False</randomize>
-      <visible>Control.IsVisible(1003)|Control.IsVisible(1004)</visible>
+      <visible>control.isvisible(1003)|control.isvisible(1004)</visible>
     </control>
 
     <control>
@@ -95,7 +95,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#infoservice.weather.today.img.big.fullpath</texture>
-      <visible>Control.IsVisible(1005)</visible>
+      <visible>control.isvisible(1005)</visible>
     </control>
 
     <control>
@@ -111,7 +111,7 @@
       <fadetime>800</fadetime>
       <loop>yes</loop>
       <randomize>False</randomize>
-      <visible>Control.IsVisible(1006)</visible>
+      <visible>control.isvisible(1006)</visible>
     </control>
 
 
@@ -175,7 +175,7 @@
         <onright>160004</onright>
         <onup>160003</onup>
         <ondown>1700</ondown>
-        <visible>Control.IsVisible(1000)</visible>
+        <visible>control.isvisible(1000)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -193,7 +193,7 @@
         <onright>160005</onright>
         <onup>160004</onup>
         <ondown>1700</ondown>
-        <visible>Control.IsVisible(1000)</visible>
+        <visible>control.isvisible(1000)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -211,7 +211,7 @@
         <onright>160001</onright>
         <onup>160005</onup>
         <ondown>1700</ondown>
-        <visible>Control.IsVisible(1000)</visible>
+        <visible>control.isvisible(1000)</visible>
       </control>
     </control>
     <!-- /Topbar buttons PLUGINS -->
@@ -248,7 +248,7 @@
         <onright>160104</onright>
         <onup>160103</onup>
         <ondown>1701</ondown>
-        <visible>Control.IsVisible(1001)</visible>
+        <visible>control.isvisible(1001)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -266,7 +266,7 @@
         <onright>160105</onright>
         <onup>160104</onup>
         <ondown>1701</ondown>
-        <visible>Control.IsVisible(1001)</visible>
+        <visible>control.isvisible(1001)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -284,7 +284,7 @@
         <onright>160101</onright>
         <onup>160105</onup>
         <ondown>1701</ondown>
-        <visible>Control.IsVisible(1001)</visible>
+        <visible>control.isvisible(1001)</visible>
       </control>
     </control>
     <!-- /Topbar buttons MUSIC -->
@@ -321,7 +321,7 @@
         <onright>160204</onright>
         <onup>160203</onup>
         <ondown>1702</ondown>
-        <visible>Control.IsVisible(1002)</visible>
+        <visible>control.isvisible(1002)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -339,7 +339,7 @@
         <onright>160205</onright>
         <onup>160204</onup>
         <ondown>1702</ondown>
-        <visible>Control.IsVisible(1002)</visible>
+        <visible>control.isvisible(1002)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -357,7 +357,7 @@
         <onright>160201</onright>
         <onup>160205</onup>
         <ondown>1702</ondown>
-        <visible>Control.IsVisible(1002)</visible>
+        <visible>control.isvisible(1002)</visible>
       </control>
     </control>
     <!-- /Topbar buttons MOVIES -->
@@ -394,7 +394,7 @@
         <onright>160304</onright>
         <onup>160303</onup>
         <ondown>1703</ondown>
-        <visible>Control.IsVisible(1003)</visible>
+        <visible>control.isvisible(1003)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -412,7 +412,7 @@
         <onright>160305</onright>
         <onup>160304</onup>
         <ondown>1703</ondown>
-        <visible>Control.IsVisible(1003)</visible>
+        <visible>control.isvisible(1003)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -430,7 +430,7 @@
         <onright>160301</onright>
         <onup>160305</onup>
         <ondown>1703</ondown>
-        <visible>Control.IsVisible(1003)</visible>
+        <visible>control.isvisible(1003)</visible>
       </control>
     </control>
     <!-- /Topbar buttons TV -->
@@ -467,7 +467,7 @@
         <onright>160404</onright>
         <onup>160403</onup>
         <ondown>1704</ondown>
-        <visible>Control.IsVisible(1004)</visible>
+        <visible>control.isvisible(1004)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -485,7 +485,7 @@
         <onright>160405</onright>
         <onup>160404</onup>
         <ondown>1704</ondown>
-        <visible>Control.IsVisible(1004)</visible>
+        <visible>control.isvisible(1004)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -503,7 +503,7 @@
         <onright>160401</onright>
         <onup>160405</onup>
         <ondown>1704</ondown>
-        <visible>Control.IsVisible(1004)</visible>
+        <visible>control.isvisible(1004)</visible>
       </control>
     </control>
     <!-- /Topbar buttons SERIES -->
@@ -540,7 +540,7 @@
         <onright>160504</onright>
         <onup>160503</onup>
         <ondown>1705</ondown>
-        <visible>Control.IsVisible(1005)</visible>
+        <visible>control.isvisible(1005)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -558,7 +558,7 @@
         <onright>160505</onright>
         <onup>160504</onup>
         <ondown>1705</ondown>
-        <visible>Control.IsVisible(1005)</visible>
+        <visible>control.isvisible(1005)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -576,7 +576,7 @@
         <onright>160501</onright>
         <onup>160505</onup>
         <ondown>1705</ondown>
-        <visible>Control.IsVisible(1005)</visible>
+        <visible>control.isvisible(1005)</visible>
       </control>
     </control>
     <!-- /Topbar buttons WEATHER -->
@@ -613,7 +613,7 @@
         <onright>160604</onright>
         <onup>160603</onup>
         <ondown>1706</ondown>
-        <visible>Control.IsVisible(1006)</visible>
+        <visible>control.isvisible(1006)</visible>
       </control>
       <control>
         <description>Exit button</description>
@@ -631,7 +631,7 @@
         <onright>160605</onright>
         <onup>160604</onup>
         <ondown>1706</ondown>
-        <visible>Control.IsVisible(1006)</visible>
+        <visible>control.isvisible(1006)</visible>
       </control>
       <control>
         <description>Shutdown button</description>
@@ -649,7 +649,7 @@
         <onright>160601</onright>
         <onup>160605</onup>
         <ondown>1706</ondown>
-        <visible>Control.IsVisible(1006)</visible>
+        <visible>control.isvisible(1006)</visible>
       </control>
     </control>
     <!-- /Topbar buttons SETTINGS -->
@@ -721,7 +721,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1700)|Control.HasFocus(1800)|Control.HasFocus(1900)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|Control.HasFocus(1800)|Control.HasFocus(1900)|control.isvisible(1100)</visible>
     </control>
     <control>
       <description>PLUGINS0</description>
@@ -739,7 +739,7 @@
       <onright>1701</onright>
       <onup>160003</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1700)</visible>
+      <visible>control.isvisible(1700)</visible>
     </control>
     <control>
       <description>PLUGINS1</description>
@@ -757,7 +757,7 @@
       <onright>1701</onright>
       <onup>160003</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1800)</visible>
+      <visible>control.isvisible(1800)</visible>
     </control>
     <control>
       <description>PLUGINS2</description>
@@ -770,7 +770,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -784,7 +784,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -798,7 +798,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -812,7 +812,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -826,7 +826,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -840,7 +840,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -854,7 +854,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>PLUGINS</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -965,7 +965,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1701)|Control.HasFocus(1801)|Control.HasFocus(1901)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|Control.HasFocus(1801)|Control.HasFocus(1901)|control.isvisible(1101)</visible>
     </control>
     <control>
       <description>MUSIC0</description>
@@ -983,7 +983,7 @@
       <onright>1702</onright>
       <onup>160103</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1701)</visible>
+      <visible>control.isvisible(1701)</visible>
     </control>
     <control>
       <description>MUSIC1</description>
@@ -1001,7 +1001,7 @@
       <onright>1702</onright>
       <onup>160103</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1801)</visible>
+      <visible>control.isvisible(1801)</visible>
     </control>
     <control>
       <description>MUSIC2</description>
@@ -1014,7 +1014,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1028,7 +1028,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1042,7 +1042,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1056,7 +1056,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1070,7 +1070,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1084,7 +1084,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1098,7 +1098,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MUSIC</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1209,7 +1209,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1702)|Control.HasFocus(1802)|Control.HasFocus(1902)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|Control.HasFocus(1802)|Control.HasFocus(1902)|control.isvisible(1102)</visible>
     </control>
     <control>
       <description>MOVIES0</description>
@@ -1227,7 +1227,7 @@
       <onright>1703</onright>
       <onup>160203</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1702)</visible>
+      <visible>control.isvisible(1702)</visible>
     </control>
     <control>
       <description>MOVIES1</description>
@@ -1245,7 +1245,7 @@
       <onright>1703</onright>
       <onup>160203</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1802)</visible>
+      <visible>control.isvisible(1802)</visible>
     </control>
     <control>
       <description>MOVIES2</description>
@@ -1258,7 +1258,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1272,7 +1272,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1286,7 +1286,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1300,7 +1300,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1314,7 +1314,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1328,7 +1328,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1342,7 +1342,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>MOVIES</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1453,7 +1453,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1703)|Control.HasFocus(1803)|Control.HasFocus(1903)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|Control.HasFocus(1803)|Control.HasFocus(1903)|control.isvisible(1103)</visible>
     </control>
     <control>
       <description>TV0</description>
@@ -1471,7 +1471,7 @@
       <onright>1704</onright>
       <onup>160303</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1703)</visible>
+      <visible>control.isvisible(1703)</visible>
     </control>
     <control>
       <description>TV1</description>
@@ -1489,7 +1489,7 @@
       <onright>1704</onright>
       <onup>160303</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1803)</visible>
+      <visible>control.isvisible(1803)</visible>
     </control>
     <control>
       <description>TV2</description>
@@ -1502,7 +1502,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1516,7 +1516,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1530,7 +1530,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1544,7 +1544,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1558,7 +1558,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1572,7 +1572,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1586,7 +1586,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>TV</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1697,7 +1697,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1704)|Control.HasFocus(1804)|Control.HasFocus(1904)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|Control.HasFocus(1804)|Control.HasFocus(1904)|control.isvisible(1104)</visible>
     </control>
     <control>
       <description>SERIES0</description>
@@ -1715,7 +1715,7 @@
       <onright>1705</onright>
       <onup>160403</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1704)</visible>
+      <visible>control.isvisible(1704)</visible>
     </control>
     <control>
       <description>SERIES1</description>
@@ -1733,7 +1733,7 @@
       <onright>1705</onright>
       <onup>160403</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1804)</visible>
+      <visible>control.isvisible(1804)</visible>
     </control>
     <control>
       <description>SERIES2</description>
@@ -1746,7 +1746,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1760,7 +1760,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1702)|Control.IsVisible(1102)</visible>
+      <visible>Control.HasFocus(1702)|control.isvisible(1102)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1774,7 +1774,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1788,7 +1788,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1802,7 +1802,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1816,7 +1816,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1830,7 +1830,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SERIES</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -1941,7 +1941,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1705)|Control.HasFocus(1805)|Control.HasFocus(1905)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|Control.HasFocus(1805)|Control.HasFocus(1905)|control.isvisible(1105)</visible>
     </control>
     <control>
       <description>WEATHER0</description>
@@ -1959,7 +1959,7 @@
       <onright>1706</onright>
       <onup>160503</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1705)</visible>
+      <visible>control.isvisible(1705)</visible>
     </control>
     <control>
       <description>WEATHER1</description>
@@ -1977,7 +1977,7 @@
       <onright>1706</onright>
       <onup>160503</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1805)</visible>
+      <visible>control.isvisible(1805)</visible>
     </control>
     <control>
       <description>WEATHER2</description>
@@ -1990,7 +1990,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2004,7 +2004,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1703)|Control.IsVisible(1103)</visible>
+      <visible>Control.HasFocus(1703)|control.isvisible(1103)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2018,7 +2018,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2032,7 +2032,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2046,7 +2046,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2060,7 +2060,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2074,7 +2074,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>WEATHER</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2185,7 +2185,7 @@
       <width>500</width>
       <height>0</height>
       <label>Movies</label>
-      <visible>Control.HasFocus(1706)|Control.HasFocus(1806)|Control.HasFocus(1906)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|Control.HasFocus(1806)|Control.HasFocus(1906)|control.isvisible(1106)</visible>
     </control>
     <control>
       <description>SETTINGS0</description>
@@ -2203,7 +2203,7 @@
       <onright>1700</onright>
       <onup>160603</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1706)</visible>
+      <visible>control.isvisible(1706)</visible>
     </control>
     <control>
       <description>SETTINGS1</description>
@@ -2221,7 +2221,7 @@
       <onright>1700</onright>
       <onup>160603</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1806)</visible>
+      <visible>control.isvisible(1806)</visible>
     </control>
     <control>
       <description>SETTINGS2</description>
@@ -2234,7 +2234,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" end="-320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2248,7 +2248,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1704)|Control.IsVisible(1104)</visible>
+      <visible>Control.HasFocus(1704)|control.isvisible(1104)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2262,7 +2262,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1705)|Control.IsVisible(1105)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2276,7 +2276,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2290,7 +2290,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1706)|Control.IsVisible(1106)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2304,7 +2304,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1700)|Control.IsVisible(1100)</visible>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
       <animation effect="slide" start="320,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2318,7 +2318,7 @@
       <font>#labelFont</font>
       <align>center</align>
       <label>SETTINGS</label>
-      <visible>Control.HasFocus(1701)|Control.IsVisible(1101)</visible>
+      <visible>Control.HasFocus(1701)|control.isvisible(1101)</visible>
       <animation effect="slide" start="160,0" end="-160,0" time="300" acceleration="-0.1" reversible="false">visiblechange</animation>
     </control>
     <control>
@@ -2437,7 +2437,7 @@
       <onright>1704</onright>
       <onup>160301</onup>
       <ondown>1111</ondown>
-      <visible>Control.IsVisible(1903)</visible>
+      <visible>control.isvisible(1903)</visible>
     </control>
     <control>
       <description>home MUSIC</description>

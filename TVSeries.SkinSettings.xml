@@ -63,35 +63,35 @@
 		</episode>
 	</views>
 	<formatting import="true">
-		<![CDATA[<Enabled>1<Format><Episode.InfoPanelLine2Key><FormatAs>Trans(Aired)
-<Enabled>1<Format><Episode.InfoPanelLine2Value><FormatAs><Episode.FirstAired>
-<Enabled>1<Format><Episode.InfoPanelLine3Key><FormatAs>Trans(Rating)
-<Enabled>1<Format><Episode.InfoPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
-<Enabled>1<Format><Episode.InfoPanelLine32Value><FormatAs>(Trans(Rated): <Episode.myRating>)
-<Enabled>1<Format><Episode.InfoPanelLine4Key><FormatAs>Trans(Director)
-<Enabled>1<Format><Episode.InfoPanelLine4Value><FormatAs><Episode.Director>
-<Enabled>1<Format><Episode.InfoPanelLine5Key><FormatAs>Trans(Writer)
-<Enabled>1<Format><Episode.InfoPanelLine5Value><FormatAs><Episode.Writer>
+		<![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Aired)
+<Enabled>1<Format><Episode.DataPanelLine2Value><FormatAs><Episode.FirstAired>
+<Enabled>1<Format><Episode.DataPanelLine3Key><FormatAs>Trans(Rating)
+<Enabled>1<Format><Episode.DataPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
+<Enabled>1<Format><Episode.DataPanelLine32Value><FormatAs>(Trans(Rated): <Episode.myRating>)
+<Enabled>1<Format><Episode.DataPanelLine4Key><FormatAs>Trans(Director)
+<Enabled>1<Format><Episode.DataPanelLine4Value><FormatAs><Episode.Director>
+<Enabled>1<Format><Episode.DataPanelLine5Key><FormatAs>Trans(Writer)
+<Enabled>1<Format><Episode.DataPanelLine5Value><FormatAs><Episode.Writer>
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
 <Enabled>1<Format><Episode.SeriesName><FormatAs><Series.Pretty_Name>
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
 <Enabled>1<Format><Season.SeasonLabel><FormatAs>Season <Season.SeasonIndex>
 <Enabled>1<Format><Season.SeasonTitle><FormatAs><Series.Pretty_Name>Season <Season.SeasonIndex>
-<Enabled>1<Format><Series.InfoPanelLine1Key><FormatAs>Trans(Genre)
-<Enabled>1<Format><Series.InfoPanelLine1Value><FormatAs><Series.Genre>
-<Enabled>1<Format><Series.InfoPanelLine2Key><FormatAs>Trans(FirstAired)
-<Enabled>1<Format><Series.InfoPanelLine2Value><FormatAs><Series.FirstAired> (Trans(AiredStatus<Series.Status>))
-<Enabled>1<Format><Series.InfoPanelLine3Key><FormatAs>Trans(Runtime)
-<Enabled>1<Format><Series.InfoPanelLine3Value><FormatAs><Series.Runtime> Trans(Minutes)
-<Enabled>1<Format><Series.InfoPanelLine4Key><FormatAs>Trans(Rating)
-<Enabled>1<Format><Series.InfoPanelLine41Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10
-<Enabled>1<Format><Series.InfoPanelLine42Value><FormatAs>(Trans(Rated): <Series.myRating>)
-<Enabled>1<Format><Series.InfoPanelLine5Key><FormatAs>Trans(Network)
-<Enabled>1<Format><Series.InfoPanelLine5Value><FormatAs><Series.Network>
-<Enabled>1<Format><Series.InfoPanelLine6Value><FormatAs>Eval(<Series.EpisodeCount>-<Series.EpisodesUnWatched>) Trans(Watched)
-<Enabled>1<Format><Series.InfoPanelLine7Value><FormatAs><Series.EpisodesUnWatched> Trans(Unwatched)
-<Enabled>1<Format><Series.InfoPanelLine8Key><FormatAs>Trans(Episodes)
-<Enabled>1<Format><Series.InfoPanelLine8Value><FormatAs><Series.EpisodeCount> Trans(Episodes), <Series.EpisodesUnWatched> Trans(Unwatched)
+<Enabled>1<Format><Series.DataPanelLine1Key><FormatAs>Trans(Genre)
+<Enabled>1<Format><Series.DataPanelLine1Value><FormatAs><Series.Genre>
+<Enabled>1<Format><Series.DataPanelLine2Key><FormatAs>Trans(FirstAired)
+<Enabled>1<Format><Series.DataPanelLine2Value><FormatAs><Series.FirstAired> (Trans(AiredStatus<Series.Status>))
+<Enabled>1<Format><Series.DataPanelLine3Key><FormatAs>Trans(Runtime)
+<Enabled>1<Format><Series.DataPanelLine3Value><FormatAs><Series.Runtime> Trans(Minutes)
+<Enabled>1<Format><Series.DataPanelLine4Key><FormatAs>Trans(Rating)
+<Enabled>1<Format><Series.DataPanelLine41Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10
+<Enabled>1<Format><Series.DataPanelLine42Value><FormatAs>(Trans(Rated): <Series.myRating>)
+<Enabled>1<Format><Series.DataPanelLine5Key><FormatAs>Trans(Network)
+<Enabled>1<Format><Series.DataPanelLine5Value><FormatAs><Series.Network>
+<Enabled>1<Format><Series.DataPanelLine6Value><FormatAs>Eval(<Series.EpisodeCount>-<Series.EpisodesUnWatched>) Trans(Watched)
+<Enabled>1<Format><Series.DataPanelLine7Value><FormatAs><Series.EpisodesUnWatched> Trans(Unwatched)
+<Enabled>1<Format><Series.DataPanelLine8Key><FormatAs>Trans(Episodes)
+<Enabled>1<Format><Series.DataPanelLine8Value><FormatAs><Series.EpisodeCount> Trans(Episodes), <Series.EpisodesUnWatched> Trans(Unwatched)
 <Enabled>1<Format><Series.FiveStarPath><FormatAs>starEval(Round(<Series.Rating>)).png
 <Enabled>1<Format>star.png<FormatAs>star0.png
 <Enabled>1<Format>SeriesUnWatched<FormatAs><Series.EpisodesUnWatched>

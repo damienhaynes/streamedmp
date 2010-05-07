@@ -75,7 +75,7 @@
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-      <visible>facadeview.list+!Control.IsVisible(51)</visible>
+      <visible>facadeview.list+!control.isvisible(51)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -90,7 +90,7 @@
       <width>105</width>
       <height>35</height>
       <texture>#header.image</texture>
-      <visible>facadeview.list+!Control.IsVisible(51)+!string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -103,7 +103,7 @@
       <width>315</width>
       <textcolor>ff006698</textcolor>
       <label>#OnlineVideos.length</label>
-      <visible>facadeview.list+!Control.IsVisible(51)+!string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -120,7 +120,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#OnlineVideos.desc</label>
-      <visible>facadeview.list+!Control.IsVisible(51)+!string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -136,7 +136,7 @@
       <width>105</width>
       <height>35</height>
       <texture>#header.image</texture>
-      <visible>facadeview.list+!Control.IsVisible(51)+string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -150,7 +150,7 @@
       <textcolor>ff006698</textcolor>
       <font>mediastream11tc</font>
       <label>#OnlineVideos.length</label>
-      <visible>facadeview.list+!Control.IsVisible(51)+string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -167,7 +167,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
       <label>#OnlineVideos.desc</label>
-      <visible>facadeview.list+!Control.IsVisible(51)+string.equals(#selectedthumb,)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -187,7 +187,7 @@
       <width>105</width>
       <height>35</height>
       <texture>#header.image</texture>
-      <visible>[facadeview.largeicons | facadeview.smallicons]+!Control.IsVisible(51)</visible>
+      <visible>[facadeview.largeicons | facadeview.smallicons]+!control.isvisible(51)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -201,7 +201,7 @@
       <textcolor>ff006698</textcolor>
       <font>mediastream11tc</font>
       <label>#OnlineVideos.length</label>
-      <visible>[facadeview.largeicons | facadeview.smallicons]+!Control.IsVisible(51)</visible>
+      <visible>[facadeview.largeicons | facadeview.smallicons]+!control.isvisible(51)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -218,7 +218,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
       <label>#OnlineVideos.desc</label>
-      <visible>[facadeview.largeicons | facadeview.smallicons]+!Control.IsVisible(51)</visible>
+      <visible>[facadeview.largeicons | facadeview.smallicons]+!control.isvisible(51)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -240,7 +240,7 @@
       <buttonheight>153</buttonheight>
       <textureFocus>Action_menu.png</textureFocus>
       <textureNoFocus>Action_menu.png</textureNoFocus>
-      <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
+      <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
       <dimColor>00ffffff</dimColor>
       <control>
         <description>Menu Background</description>
@@ -250,7 +250,7 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
+        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -261,7 +261,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>230</posY>
-        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
+        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <label>499</label>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -271,7 +271,7 @@
         <type>label</type>
         <id>0</id>
         <font>mediastream12tc</font>
-        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
+        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <posX>1040</posX>
         <posY>480</posY>
         <label>496</label>
@@ -286,7 +286,7 @@
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
-        <visible>!Control.HasFocus(50)+!Control.IsVisible(51)</visible>
+        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>

@@ -33,7 +33,7 @@
 			<id>0</id>
 			<posX>0</posX>
 			<posY>0</posY>
-			<visible>!Control.IsVisible(24)</visible>
+			<visible>!control.isvisible(24)</visible>
 			<texture>mainoverlay.png</texture>
 		</control>
 		<control>
@@ -70,7 +70,7 @@
       		<width>228</width>
       		<height>177</height>
       		<texture>glassoverlay2.png</texture>
-			<visible>Control.IsVisible(24)</visible>
+			<visible>control.isvisible(24)</visible>
 		</control>
 		
 		<!-- Poster Image List View -->
@@ -83,7 +83,7 @@
 			<width>267</width>
 			<height>390</height>
 			<texture>defaultdvdcover.png</texture>
-			<visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(24)</visible>
+			<visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
 		</control>    
 		<control>
 			<description>Cover Art</description>
@@ -94,7 +94,7 @@
 			<width>257</width>
 			<height>380</height>
 			<texture flipY="true" diffuse="diffusemirrorwide.png">#st_poster</texture>
-			<visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(24)</visible>			
+			<visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>			
 		</control>		
 		<control>
 			<description>Cover Art Glass Overlay</description>
@@ -105,7 +105,7 @@
 			<width>228</width>
 			<height>177</height>
 			<texture>glassoverlay2.png</texture>
-			<visible>facadeview.list+Control.IsVisible(50)+!Control.IsVisible(24)</visible>
+			<visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
 		</control>
 		
 		<!-- Movie Details -->
@@ -256,7 +256,7 @@
       		<label>#selecteditem</label>
       		<textcolor>ffffffff</textcolor>
       		<font>mediastream16tc</font>
-      		<visible>!Control.IsVisible(24)</visible>
+      		<visible>!control.isvisible(24)</visible>
     	</control>	
 		<control>
       		<description>Details Movie Label</description>
@@ -269,7 +269,7 @@
       		<label>#selecteditem</label>
       		<textcolor>ffffffff</textcolor>
 			<font>mediastream16tc</font>
-      		<visible>Control.IsVisible(24)</visible>	
+      		<visible>control.isvisible(24)</visible>	
 			<scrollStartDelaySec>2</scrollStartDelaySec>
     	</control>	
     	<control>
@@ -554,7 +554,7 @@
 			<visible>yes</visible>
 			<label>#currentmodule</label>
 			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-			<visible>!Control.IsVisible(44)</visible>
+			<visible>!control.isvisible(44)</visible>
 		</control>
 		<control>
       		<type>fadelabel</type>

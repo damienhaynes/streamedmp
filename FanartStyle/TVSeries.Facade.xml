@@ -39,7 +39,7 @@
 			<width>1280</width>
 			<height>320</height>
 			<texture>filmstrip_overlay.png</texture>
-			<visible>facadeview.filmstrip+[Control.IsVisible(1237)|Control.IsVisible(1238)]</visible>
+			<visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
 		</control>
 		
 		<control>
@@ -62,7 +62,7 @@
 			<width>1280</width>
 			<height>47</height>
 			<texture>imagestreamtitle.png</texture>
-			<visible>Control.IsVisible(1240)</visible>
+			<visible>control.isvisible(1240)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
@@ -94,7 +94,7 @@
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>[Control.IsVisible(1239)|Control.IsVisible(1238)]</visible>
+			<visible>[control.isvisible(1239)|control.isvisible(1238)]</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
@@ -107,7 +107,7 @@
 			<font>mediastream11c</font>
 			<align>right</align>    
 			<textcolor>ff006698</textcolor>
-			<visible>Control.IsVisible(1238)</visible>
+			<visible>control.isvisible(1238)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
@@ -120,7 +120,7 @@
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
-			<visible>Control.IsVisible(1239)</visible>
+			<visible>control.isvisible(1239)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
@@ -135,7 +135,7 @@
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(1237)</visible>
+			<visible>control.isvisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
@@ -148,7 +148,7 @@
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
-			<visible>Control.IsVisible(1237)</visible>
+			<visible>control.isvisible(1237)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		
@@ -163,7 +163,7 @@
 			<align>left</align>
 			<font>mediastream10tc</font>
 			<textcolor>ff909090</textcolor>
-			<visible>Control.IsVisible(1240)</visible>
+			<visible>control.isvisible(1240)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control>
@@ -176,7 +176,7 @@
 			<font>mediastream11c</font>
 			<align>right</align>
 			<textcolor>ff006698</textcolor>
-			<visible>Control.IsVisible(1240)</visible>
+			<visible>control.isvisible(1240)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		

@@ -70,7 +70,7 @@
       <width>159</width>
       <height>27</height>
       <texture>mediacountbackground.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -85,7 +85,7 @@
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <label>#MusicVids.TotalVideos</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -181,7 +181,7 @@
       <label>#MusicVids.ArtistName</label>
       <font>mediastream16tc</font>
       <align>left</align>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>control.isvisible(50)</visible>
     </control>
     <control>
       <type>textboxscrollup</type>
@@ -294,14 +294,14 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>10</posY>
-        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+        <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <visible>!Control.HasFocus(50)+Control.IsVisible(50)</visible>
+        <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>

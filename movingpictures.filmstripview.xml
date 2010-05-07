@@ -14,7 +14,7 @@ This file should contain the thumbs view
 		  <width>288</width>
 		  <height>422</height>
 		  <texture>#MovingPictures.Coverart</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>		
 		<control>
 		  <description>Cover Art Glass Overlay</description>
@@ -25,7 +25,7 @@ This file should contain the thumbs view
 		  <width>228</width>
 		  <height>177</height>
 		  <texture>glassoverlay2.png</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
 		</control>
 		
 		<control>
@@ -37,7 +37,7 @@ This file should contain the thumbs view
 		  <width>32</width>
 		  <height>39</height>
 		  <texture>overlaywubg.png</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
 		</control>		
 		<control>
 		  <description>Watched Icon</description>
@@ -48,7 +48,7 @@ This file should contain the thumbs view
 		  <width>23</width>
 		  <height>23</height>
 		  <texture>overlaywatched.png</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)+Control.IsVisible(9)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>		
 		<control>
 		  <description>Un-Watched Icon</description>
@@ -59,7 +59,7 @@ This file should contain the thumbs view
 		  <width>23</width>
 		  <height>23</height>
 		  <texture>overlayunwatched.png</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)+!Control.IsVisible(9)+Control.HasThumb(60)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>
 		
 		<control>
@@ -72,7 +72,7 @@ This file should contain the thumbs view
 		  <font>mediastream16tc</font>
 		  <label>#MovingPictures.SelectedMovie.title</label>
 		  <textcolor>ffFFFFFF</textcolor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -88,7 +88,7 @@ This file should contain the thumbs view
 		  <font>mediastream11</font>
 		  <scrollStartDelaySec>10</scrollStartDelaySec>
 		  <label>#MovingPictures.SelectedMovie.summary</label>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>		  
@@ -104,7 +104,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -117,7 +117,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -130,7 +130,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -143,7 +143,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -156,7 +156,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
 		</control>
 		
 		<control>		  
@@ -172,7 +172,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>	
 		<control>
 		  <type>image</type>
@@ -183,7 +183,7 @@ This file should contain the thumbs view
 		  <height>23</height>		  
 		  <align>left</align>		  
 		  <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>		
 		<control>
 		  <type>label</type>
@@ -195,7 +195,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -211,7 +211,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>		
 		<control>
 		  <id>0</id>	
@@ -224,7 +224,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -240,7 +240,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>		
 		<control>
 		  <id>0</id>	
@@ -253,7 +253,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 		<control>
@@ -269,7 +269,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>		
 		<control>
 		  <id>0</id>	
@@ -283,7 +283,7 @@ This file should contain the thumbs view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>facadeview.filmstrip+Control.IsVisible(50)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(50)</visible>
 		</control>
 		
 	</controls>

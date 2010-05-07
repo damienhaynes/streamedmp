@@ -12,7 +12,7 @@
 			<label>#selecteditem #TVSeries.Translation.Series_Plural.Label</label>
 			<font>mediastream16tc</font>
 			<textcolor>White</textcolor>			
-			<visible>Control.IsVisible(1240)</visible>
+			<visible>control.isvisible(1240)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 
@@ -28,7 +28,7 @@
             <textcolor>ffffffff</textcolor>
             <font>mediastream12</font>
 			<label>#TVSeries.Description</label>
-            <visible>Control.IsVisible(1240)+facadeview.list</visible>
+            <visible>control.isvisible(1240)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		

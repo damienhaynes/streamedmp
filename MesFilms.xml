@@ -87,7 +87,7 @@
       <colordiffuse>ccffffff</colordiffuse>
       <texture>glasstitlebar.png</texture>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-      <visible>facadeview.filmstrip+Control.IsVisible(1026)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(1026)</visible>
     </control>
     <import>MesFilms_Visible.xml</import>
     <control>
@@ -99,7 +99,7 @@
       <width>256</width>
       <height>36</height>
       <texture>tvtitlebgshort.png</texture>
-      <visible>Control.IsVisible(34)</visible>
+      <visible>control.isvisible(34)</visible>
     </control>
     <control>
       <type>fadelabel</type>
@@ -520,7 +520,7 @@
       <width>266</width>
       <height>390</height>
       <texture>defaultdvdcover.png</texture>
-      <visible>Control.IsVisible(1026)+facadeview.list</visible>
+      <visible>control.isvisible(1026)+facadeview.list</visible>
     </control>
     <control>
       <description>Thumbnail with video playing</description>

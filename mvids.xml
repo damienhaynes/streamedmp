@@ -39,7 +39,7 @@
       <height>380</height>
       <keepaspectratio>yes</keepaspectratio>
 <texture>#mvids.artim</texture>
-<visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>  
+<visible>!control.isvisible(101)+!control.isvisible(110)</visible>  
     </control>
     
     <control>
@@ -52,7 +52,7 @@
       <font>mediastream16tc</font>
       <label>#mvids.artist</label>
       <textcolor>ffFFFFFF</textcolor>
-<visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible> 
+<visible>!control.isvisible(101)+!control.isvisible(110)</visible> 
     </control>
     
     <control>
@@ -79,7 +79,7 @@
       <seperator>-----------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#mvids.bio</label>
-<visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>  
+<visible>!control.isvisible(101)+!control.isvisible(110)</visible>  
     </control>
     
 
@@ -96,7 +96,7 @@
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
-      <visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>
+      <visible>!control.isvisible(101)+!control.isvisible(110)</visible>
     </control>
 
 <control>
@@ -111,7 +111,7 @@
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
-      <visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>
+      <visible>!control.isvisible(101)+!control.isvisible(110)</visible>
     </control>
 
 
@@ -128,7 +128,7 @@
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
-      <visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>
+      <visible>!control.isvisible(101)+!control.isvisible(110)</visible>
     </control>
 
 
@@ -145,7 +145,7 @@
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
-      <visible>!Control.IsVisible(101)+!Control.IsVisible(110)</visible>
+      <visible>!control.isvisible(101)+!control.isvisible(110)</visible>
     </control>
 
 
@@ -165,7 +165,7 @@
        <font>mediastream16tc</font>
        <align>left</align>
        <textcolor>White</textcolor>
-       <visible>Control.IsVisible(101)</visible>
+       <visible>control.isvisible(101)</visible>
     </control>
 
     <control>
@@ -180,7 +180,7 @@
        <seperator>-----------------------------------------</seperator>
        <font>mediastream11</font>
        <label>#mvids.bio</label>
-       <visible>Control.IsVisible(101)</visible>
+       <visible>control.isvisible(101)</visible>
     </control>
 
     <control>
@@ -194,7 +194,7 @@
        <font>mediastream12tc</font>
        <align>left</align>
        <textcolor>White</textcolor>
-       <visible>Control.IsVisible(101)</visible>
+       <visible>control.isvisible(101)</visible>
     </control>
 
     <control>
@@ -207,7 +207,7 @@
        <height>190</height>
        <keepaspectratio>yes</keepaspectratio>
        <texture>#mvids.artim</texture>
-       <visible>Control.IsVisible(101)</visible>  
+       <visible>control.isvisible(101)</visible>  
     </control>
 
     <control>
@@ -221,7 +221,7 @@
        <texture>#mvids.videoimage</texture>
        <keepaspectratio>yes</keepaspectratio>
         
-       <visible>Control.IsVisible(101)</visible>
+       <visible>control.isvisible(101)</visible>
     </control>
 
     
@@ -293,7 +293,7 @@
       <posX>430</posX>
       <posY>420</posY>
       <label>Score................</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitle">
@@ -304,7 +304,7 @@
       <posY>420</posY>
 
       <label>#mvids.videoscore</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -314,7 +314,7 @@
       <posX>430</posX>
       <posY>450</posY>
       <label>Rank..................</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitle">
@@ -324,7 +324,7 @@
       <posX>600</posX>
       <posY>450</posY>
       <label>#mvids.videorank</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
 
     <control Style="smallTitleB">
@@ -334,7 +334,7 @@
       <posX>430</posX>
       <posY>480</posY>
       <label>Play Count...</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitle">
@@ -344,7 +344,7 @@
       <posX>600</posX>
       <posY>480</posY>
       <label>#mvids.videoplaycount</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitleB">
@@ -354,7 +354,7 @@
       <posX>430</posX>
       <posY>510</posY>
       <label>Length............</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
     
     <control Style="smallTitle">
@@ -364,7 +364,7 @@
       <posX>600</posX>
       <posY>510</posY>
       <label>#mvids.videolength</label>
-      <visible>Control.IsVisible(101)</visible>
+      <visible>control.isvisible(101)</visible>
     </control>
 
 <!-- TAG VIEW ELEMENTS - Mosaic visibility must be controlled by the plugin. -->
@@ -391,7 +391,7 @@
       <font>mediastream16tc</font>
       		<align>left</align>
       		<textcolor>White</textcolor>
-      		<visible>Control.IsVisible(110)</visible>
+      		<visible>control.isvisible(110)</visible>
       		<animation effect="fade" time="250">WindowOpen</animation>
       		<animation effect="fade" time="500">WindowClose</animation>
     	</control>

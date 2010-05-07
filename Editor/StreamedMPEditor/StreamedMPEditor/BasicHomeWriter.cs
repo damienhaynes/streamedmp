@@ -98,7 +98,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<width>500</width>");
                 rawXML.AppendLine("\t<height>0</height>");
                 rawXML.AppendLine("\t<label>Movies</label>");
-                rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|Control.IsVisible(" + (menItem.id + 100).ToString() + ")</visible>");
+                rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 for (int i = 0; i < 14; i++)
@@ -143,7 +143,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<onright>" + (onright + 700).ToString() + "</onright>");
                                 rawXML.AppendLine("\t<onup>" + (menItem.id + 600).ToString() + "01</onup>");
                                 //rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
-                                rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menItem.id + 700).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
                                 break;
@@ -175,7 +175,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<onright>" + (onright + 700).ToString() + "</onright>");
                                 rawXML.AppendLine("\t<onup>" + (menItem.id + 600).ToString() + "01</onup>");
                                 //rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
-                                rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menItem.id + 800).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
                                 break;
@@ -194,13 +194,13 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 1)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 2)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 3)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")|control.isvisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|Control.IsVisible(" + (menItem.id + 101).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|control.isvisible(" + (menItem.id + 101).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
@@ -219,11 +219,11 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) - 2 == -2)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 2].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 2].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 2].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 2].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) - 2 == -1)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 698).ToString() + ")|Control.IsVisible(" + (menItem.id + 98).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 698).ToString() + ")|control.isvisible(" + (menItem.id + 98).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("</control>");
                                 break;
@@ -241,9 +241,9 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) - 1 == -1)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 699).ToString() + ")|Control.IsVisible(" + (menItem.id + 99).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 699).ToString() + ")|control.isvisible(" + (menItem.id + 99).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
@@ -263,7 +263,7 @@ namespace StreamedMPEditor
                                     rawXML.AppendLine("\t<align>center</align>");
                                     rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.IsVisible(" + (menItem.id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
 
                                     rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                     rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
@@ -282,7 +282,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<align>center</align>");
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
-                                rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.IsVisible(" + (menItem.id + 100).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
@@ -302,9 +302,9 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 1 == menuItems.Count)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|Control.IsVisible(" + (menItem.id + 101).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|control.isvisible(" + (menItem.id + 101).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "320,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
@@ -323,11 +323,11 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 2 == menuItems.Count + 1)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 2 == menuItems.Count)
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 702).ToString() + ")|Control.IsVisible(" + (menItem.id + 102).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 702).ToString() + ")|control.isvisible(" + (menItem.id + 102).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "160,0" + quote + " end=" + quote + "-160,0" + quote + " time=" + quote + duration + quote + " acceleration=" + quote + acceleration + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                                 rawXML.AppendLine("</control>");
@@ -526,7 +526,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<onright>7777</onright>");
                                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
-                                rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menItem.id + 700).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t\t</control>");
                                 break;
 
@@ -557,7 +557,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<onright>7777</onright>");
                                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
-                                rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menItem.id + 800).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t\t</control>");
                                 break;
 
@@ -575,13 +575,13 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 1)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 2)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 3)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")|control.isvisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|Control.IsVisible(" + (menItem.id + 101).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|control.isvisible(" + (menItem.id + 101).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -602,11 +602,11 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) - 2 == -2)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 2].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 2].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 2].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 2].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) - 2 == -1)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 698).ToString() + ")|Control.IsVisible(" + (menItem.id + 98).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 698).ToString() + ")|control.isvisible(" + (menItem.id + 98).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -627,9 +627,9 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) - 1 == -1)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[menuItems.Count - 1].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 699).ToString() + ")|Control.IsVisible(" + (menItem.id + 99).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 699).ToString() + ")|control.isvisible(" + (menItem.id + 99).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -648,7 +648,7 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<font>#selectedFont</font>");
                                 rawXML.AppendLine("\t\t\t<align>right</align>");
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
-                                rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.IsVisible(" + (menItem.id + 100).ToString() + ")</visible>");
+                                rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
@@ -668,9 +668,9 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 1 == menuItems.Count)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|Control.IsVisible(" + (menItem.id + 101).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")|control.isvisible(" + (menItem.id + 101).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -691,11 +691,11 @@ namespace StreamedMPEditor
                                 rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
 
                                 if (menuItems.IndexOf(menItem) + 2 == menuItems.Count + 1)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
                                 else if (menuItems.IndexOf(menItem) + 2 == menuItems.Count)
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|Control.IsVisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
                                 else
-                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 702).ToString() + ")|Control.IsVisible(" + (menItem.id + 102).ToString() + ")</visible>");
+                                    rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(" + (menItem.id + 702).ToString() + ")|control.isvisible(" + (menItem.id + 102).ToString() + ")</visible>");
 
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
                                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
@@ -1223,7 +1223,7 @@ namespace StreamedMPEditor
                 {
                     rawXML.AppendLine("\t\t<texture>3buttonbar.png</texture>");
                 }
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 rawXML.AppendLine("\t<control>");
@@ -1234,7 +1234,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t<height>50</height>");
                 rawXML.AppendLine("\t\t<width>50</width>");
                 rawXML.AppendLine("\t\t<texture>restart_button.png</texture>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 rawXML.AppendLine("\t<control>");
@@ -1245,7 +1245,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t<height>50</height>");
                 rawXML.AppendLine("\t\t<width>50</width>");
                 rawXML.AppendLine("\t\t<texture>exit_button.png</texture>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 rawXML.AppendLine("\t<control>");
@@ -1256,7 +1256,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t<height>50</height>");
                 rawXML.AppendLine("\t\t<width>50</width>");
                 rawXML.AppendLine("\t\t<texture>shutdown_button.png</texture>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
                 rawXML.AppendLine("\t</control>");
 
 
@@ -1281,7 +1281,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 rawXML.AppendLine("\t<control>");
@@ -1305,7 +1305,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")</visible>");
                 rawXML.AppendLine("\t</control>");
 
                 rawXML.AppendLine("\t<control>");
@@ -1329,7 +1329,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
                 rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-                rawXML.AppendLine("\t\t<visible>Control.IsVisible(" + menItem.id + ")</visible>");
+                rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")</visible>");
                 rawXML.AppendLine("\t</control>");
                 rawXML.AppendLine("\t<animation effect=\"slide\" start=\"0,-" + basicHomeValues.Button3Slide.ToString() + "\" time=\"600\" acceleration=\"-0.1\" reversible=\"false\">visiblechange</animation>");
 
@@ -1374,7 +1374,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<onright>7777</onright>");
             rawXML.AppendLine("\t\t\t<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
             rawXML.AppendLine("\t\t\t<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
-            rawXML.AppendLine("\t\t\t<visible>Control.IsVisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
+            rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
             rawXML.AppendLine("\t\t</control>");
             // ************ FIRST
 
@@ -1509,7 +1509,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<onright>" + (menuItems[third].id + 700).ToString() + "</onright>");
             rawXML.AppendLine("\t<onup>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onup>");
             //rawXML.AppendLine("\t<ondown>" + (menuItems[basicHomeValues.defaultId].id + 700).ToString() + "01</ondown>");
-            rawXML.AppendLine("\t<visible>Control.IsVisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
+            rawXML.AppendLine("\t<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
             rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
             rawXML.AppendLine("</control>	");
             // ************ FIRST
@@ -1675,9 +1675,9 @@ namespace StreamedMPEditor
                 for (int i = 0; i < item.ids.Count; i++)
                 {
                     if (i == 0)
-                        rawXML.Append("Control.IsVisible(" + item.ids[i] + ")");
+                        rawXML.Append("control.isvisible(" + item.ids[i] + ")");
                     else
-                        rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
+                        rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
                 }
 
                 if (item.fanartHandlerEnabled)
@@ -1709,9 +1709,9 @@ namespace StreamedMPEditor
                     for (int i = 0; i < item.ids.Count; i++)
                     {
                         if (i == 0)
-                            rawXML.Append("Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("control.isvisible(" + item.ids[i] + ")");
                         else
-                            rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
                     }
 
                     if (item.EnableMusicNowPlayingFanart)
@@ -1746,9 +1746,9 @@ namespace StreamedMPEditor
                     for (int i = 0; i < item.ids.Count; i++)
                     {
                         if (i == 0)
-                            rawXML.Append("Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("control.isvisible(" + item.ids[i] + ")");
                         else
-                            rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>\n");
                     rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
@@ -1771,9 +1771,9 @@ namespace StreamedMPEditor
                     for (int i = 0; i < item.ids.Count; i++)
                     {
                         if (i == 0)
-                            rawXML.Append("Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("control.isvisible(" + item.ids[i] + ")");
                         else
-                            rawXML.Append("|Control.IsVisible(" + item.ids[i] + ")");
+                            rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>\n");
                     rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");

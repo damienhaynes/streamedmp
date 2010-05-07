@@ -13,7 +13,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list</visible>
+		  <visible>control.isvisible(50)+facadeview.list</visible>
 		</control>
 		<control>
 		  <description>SD/HD Fullscreen/Widescreen</description>
@@ -24,7 +24,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list+!Control.HasThumb(9799)</visible>
+		  <visible>control.isvisible(50)+facadeview.list+!Control.HasThumb(9799)</visible>
 		</control>
 
 		<!-- Video Codecs -->	
@@ -37,7 +37,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list</visible>
+		  <visible>control.isvisible(50)+facadeview.list</visible>
 		</control>
 		
 		<!-- Audio  Codecs / Channels -->
@@ -50,7 +50,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list</visible>
+		  <visible>control.isvisible(50)+facadeview.list</visible>
 		</control>
 		<control>
 		  <description>Audio Codecs - Unknown number of channels</description>
@@ -61,7 +61,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list+!Control.HasThumb(9800)</visible>
+		  <visible>control.isvisible(50)+facadeview.list+!Control.HasThumb(9800)</visible>
 		</control>
 	
 		<!-- Subtitles -->
@@ -74,7 +74,7 @@
 		  <width>100</width>
 		  <height>32</height>
 		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
-		  <visible>Control.IsVisible(50)+facadeview.list</visible>
+		  <visible>control.isvisible(50)+facadeview.list</visible>
 		</control>
 		
 	</controls>

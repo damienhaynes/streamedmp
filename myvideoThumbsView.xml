@@ -30,7 +30,7 @@ This file should contain the details view
 		  <width>500</width>
 		  <font>mediastream12tc</font>
 		  <textcolor>ff909090</textcolor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	  
 		</control>
@@ -46,7 +46,7 @@ This file should contain the details view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+Control.HasText(1003)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+Control.HasText(1003)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
@@ -63,7 +63,7 @@ This file should contain the details view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
@@ -79,7 +79,7 @@ This file should contain the details view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+Control.HasText(1004)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+Control.HasText(1004)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
@@ -96,7 +96,7 @@ This file should contain the details view
 		  <shadowAngle>45</shadowAngle>
 		  <shadowDistance>2</shadowDistance>
 		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
@@ -114,7 +114,7 @@ This file should contain the details view
 		  <seperator>-----------------------------------------------------------------------------------</seperator>
 		  <font>mediastream11</font>
 		  <label>#plot</label>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)+!string.starts(#plot,unknown)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!string.starts(#plot,unknown)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	  
 		</control>
@@ -126,7 +126,7 @@ This file should contain the details view
 		  <posY>630</posY>
 		  <width>360</width>
 		  <font>mediastream11tc</font>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	  
 		</control>		
@@ -147,7 +147,7 @@ This file should contain the details view
 		  <align>left</align>
 		  <imagesToDraw>10</imagesToDraw>
 		  <percentage>#rating</percentage>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	  
 		</control>		
@@ -158,7 +158,7 @@ This file should contain the details view
 		  <posY>653</posY>
 		  <width>360</width>
 		  <font>mediastream11</font>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+Control.IsVisible(4441)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	  
 		</control>

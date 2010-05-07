@@ -11,7 +11,7 @@
             <width>364</width>
             <height>208</height>
             <texture>defaultepisodethumb.png</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
@@ -26,7 +26,7 @@
             <keepaspectratio>yes</keepaspectratio>
             <zoom>yes</zoom>
             <texture flipY="true" diffuse="diffusemirrorwide.png">#TVSeries.EpisodeImage</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
@@ -40,7 +40,7 @@
             <width>32</width>
             <height>39</height>
             <texture>#overlaywubg</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -52,7 +52,7 @@
             <width>88</width>
             <height>22</height>
             <texture>#tvseries_Watched</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -64,7 +64,7 @@
             <width>88</width>
             <height>22</height>
             <texture>#tvseries_UnWatched</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(1243)+Control.IsVisible(1244)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -76,7 +76,7 @@
             <width>88</width>
             <height>22</height>
             <texture>#tvseries_WatchedNA</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+!control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -88,7 +88,7 @@
             <width>88</width>
             <height>22</height>
             <texture>#tvseries_UnWatchedNA</texture>
-            <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(1243)+!Control.IsVisible(1244)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>        
 
@@ -104,7 +104,7 @@
             <font>mediastream11</font>
 			<label>#TVSeries.Episode.Summary</label>
 			<scrollStartDelaySec>12</scrollStartDelaySec>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
@@ -119,7 +119,7 @@
             <font>mediastream12tc</font>
             <textcolor>ff909090</textcolor>           
             <textcolor>#shadow.dark</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -131,7 +131,7 @@
             <width>300</width>
             <font>mediastream12tc</font>
             <textcolor>ff909090</textcolor>           
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
@@ -146,7 +146,7 @@
             <height>100</height>
             <font>mediastream14tc</font>
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control>
@@ -159,109 +159,109 @@
             <height>100</height>
             <font>mediastream14tc</font>
             <textcolor>ffffffff</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
 		<control Style="smallTitleB">
-			<description>InfoPanelLine2Key Shadow</description>
-            <label>#TVSeries.Episode.InfoPanelLine2Key</label>
+			<description>DataPanelLine2Key Shadow</description>
+            <label>#TVSeries.Episode.DataPanelLine2Key</label>
             <type>label</type>
             <posX>401</posX>
             <posY>370</posY>
 			<width>150</width>
             <textcolor>#shadow.dark</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10002)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitleB">
-            <label>#TVSeries.Episode.InfoPanelLine2Key</label>
+            <label>#TVSeries.Episode.DataPanelLine2Key</label>
             <type>label</type>
             <posX>401</posX>
             <posY>369</posY>
 			<width>150</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10002)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
-			<description>InfoPanelLine2Value Shadow</description>
+			<description>DataPanelLine2Value Shadow</description>
             <id>10002</id>
-            <label>#TVSeries.Episode.InfoPanelLine2Value</label>
+            <label>#TVSeries.Episode.DataPanelLine2Value</label>
             <type>label</type>
             <posX>561</posX>
             <posY>371</posY>          
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10002)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <id>10002</id>
-            <label>#TVSeries.Episode.InfoPanelLine2Value</label>
+            <label>#TVSeries.Episode.DataPanelLine2Value</label>
             <type>label</type>
             <posX>560</posX>
             <posY>370</posY>          
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10002)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10002)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
 		<control Style="smallTitleB">
-			<description>InfoPanelLine3Key Shadow</description>
-            <label>#TVSeries.Episode.InfoPanelLine3Key</label>
+			<description>DataPanelLine3Key Shadow</description>
+            <label>#TVSeries.Episode.DataPanelLine3Key</label>
             <type>label</type>
             <posX>401</posX>
             <posY>393</posY>
 			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitleB">
-            <label>#TVSeries.Episode.InfoPanelLine3Key</label>
+            <label>#TVSeries.Episode.DataPanelLine3Key</label>
             <type>label</type>
             <posX>400</posX>
             <posY>392</posY>
 			<width>150</width>
-            <visible>Control.IsVisible(1239)+facadeview.list</visible>
+            <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
 			<description>Rating Shadow</description>
             <id>0</id>
-            <label>#TVSeries.Episode.InfoPanelLine31Value #TVSeries.Episode.InfoPanelLine32Value</label>
+            <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine32Value</label>
             <type>label</type>
             <posX>561</posX>
             <posY>394</posY>           
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
             <id>0</id>
-            <label>#TVSeries.Episode.InfoPanelLine31Value #TVSeries.Episode.InfoPanelLine32Value</label>
+            <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine32Value</label>
             <type>label</type>
             <posX>560</posX>
             <posY>393</posY>          
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
 			<description>Rating Shadow</description>
             <id>0</id>
-            <label>#TVSeries.Episode.InfoPanelLine31Value</label>
+            <label>#TVSeries.Episode.DataPanelLine31Value</label>
             <type>label</type>
             <posX>561</posX>
             <posY>394</posY>        
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
             <id>0</id>
-            <label>#TVSeries.Episode.InfoPanelLine31Value</label>
+            <label>#TVSeries.Episode.DataPanelLine31Value</label>
             <type>label</type>
             <posX>560</posX>
             <posY>393</posY>           
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
@@ -272,7 +272,7 @@
             <posX>561</posX>
             <posY>394</posY>          
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(5557)+!control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 		<control Style="smallTitle">
@@ -281,89 +281,89 @@
             <type>label</type>
             <posX>560</posX>
             <posY>393</posY>            
-            <visible>Control.IsVisible(1239)+facadeview.list+!Control.IsVisible(5557)+!Control.IsVisible(5558)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(5557)+!control.isvisible(5558)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
 		<control Style="smallTitleB">
-			<description>InfoPanelLine4Key Shadow</description>
-            <label>#TVSeries.Episode.InfoPanelLine4Key</label>
+			<description>DataPanelLine4Key Shadow</description>
+            <label>#TVSeries.Episode.DataPanelLine4Key</label>
             <type>label</type>
             <posX>402</posX>
             <posY>416</posY>
 			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10004)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitleB">
-            <label>#TVSeries.Episode.InfoPanelLine4Key</label>
+            <label>#TVSeries.Episode.DataPanelLine4Key</label>
             <type>label</type>
             <posX>400</posX>
             <posY>415</posY>
 			<width>150</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10004)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
-            <label>#TVSeries.Episode.InfoPanelLine4Value</label>
+            <label>#TVSeries.Episode.DataPanelLine4Value</label>
             <type>label</type>
             <posX>561</posX>
             <posY>417</posY>
             <textcolor>#shadow.light</textcolor>
 			<width>180</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10004)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <id>10004</id>
-            <label>#TVSeries.Episode.InfoPanelLine4Value</label>
+            <label>#TVSeries.Episode.DataPanelLine4Value</label>
             <type>label</type>
             <posX>560</posX>
             <posY>416</posY>
 			<width>180</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10004)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10004)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 
 		<control Style="smallTitleB">
-			<description>InfoPanelLine5Key Shadow</description>
-            <label>#TVSeries.Episode.InfoPanelLine5Key</label>
+			<description>DataPanelLine5Key Shadow</description>
+            <label>#TVSeries.Episode.DataPanelLine5Key</label>
             <type>label</type>
             <posX>401</posX>
             <posY>439</posY>
 			<width>150</width>
 			<textcolor>#shadow.dark</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10005)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitleB">
-            <label>#TVSeries.Episode.InfoPanelLine5Key</label>
+            <label>#TVSeries.Episode.DataPanelLine5Key</label>
             <type>label</type>
             <posX>400</posX>
             <posY>438</posY>
 			<width>150</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.IsVisible(10005)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+control.isvisible(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
-            <label>#TVSeries.Episode.InfoPanelLine5Value</label>
+            <label>#TVSeries.Episode.DataPanelLine5Value</label>
             <type>label</type>
             <posX>561</posX>
             <posY>440</posY>
 			<width>180</width>
             <textcolor>#shadow.light</textcolor>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10005)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
         <control Style="smallTitle">
             <id>10005</id>
-            <label>#TVSeries.Episode.InfoPanelLine5Value</label>
+            <label>#TVSeries.Episode.DataPanelLine5Value</label>
             <type>label</type>
             <posX>560</posX>
             <posY>439</posY>
 			<width>180</width>
-            <visible>Control.IsVisible(1239)+facadeview.list+Control.HasText(10005)</visible>
+            <visible>control.isvisible(1239)+facadeview.list+Control.HasText(10005)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
 

@@ -22,7 +22,7 @@
                      <fadetime>800</fadetime>
                      <loop>yes</loop>
                      <randomize>True</randomize>
-                     <visible>!Control.IsVisible(1232)</visible>
+                     <visible>!control.isvisible(1232)</visible>
               </control>
               <control>
                      <description>screenshot background</description>
@@ -47,7 +47,7 @@
                      <width>1281</width>
                      <height>720</height>
                      <texture>fanartoverlay.png</texture>
-                     <visible>!Control.IsVisible(1236)</visible>
+                     <visible>!control.isvisible(1236)</visible>
               </control>
               <import>common.time.xml</import>
               <control>
@@ -86,7 +86,7 @@
                      <width>242</width>
                      <height>343</height>
                      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -99,7 +99,7 @@
                      <label>#selecteditem</label>
                      <font>mediastream16tc</font>
                      <align>left</align>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -112,7 +112,7 @@
                      <font>mediastream12tc</font>
                      <textcolor>ff989898</textcolor>
                      <label>#Year</label>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -124,7 +124,7 @@
                      <font>mediastream12tc</font>
                      <textcolor>ff989898</textcolor>
                      <align>left</align>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -139,7 +139,7 @@
                      <height>160</height>
                      <seperator>-------------------------------------------------</seperator>
                      <font>mediastream11</font>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -151,7 +151,7 @@
                      <textcolor>ff989898</textcolor>
                      <font>mediastream12tc</font>
                      <label>Genre</label>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -164,7 +164,7 @@
                      <font>mediastream11tc</font>
                      <textcolor>ff006698</textcolor>
                      <align>left</align>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
 
               <control>
@@ -176,7 +176,7 @@
                      <textcolor>ff989898</textcolor>
                      <font>mediastream12tc</font>
                      <label>Grade</label>
-                     <visible>facadeview.list+Control.IsVisible(50)</visible>
+                     <visible>facadeview.list+control.isvisible(50)</visible>
               </control>
               <!--:::::::::::
                 :: Thumbnail small VIEW ::
@@ -190,7 +190,7 @@
                      <width>260</width>
                      <height>670</height>
                      <texture>hiddenmenu_left.png</texture>
-                     <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.smallicons+control.isvisible(50)</visible>
               </control>
               <control>
                      <description>Game Title</description>
@@ -202,7 +202,7 @@
                      <label>#selecteditem</label>
                      <font>mediastream16tc</font>
                      <align>center</align>
-                     <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.smallicons+control.isvisible(50)</visible>
               </control>
               <control>
                      <id>46</id>
@@ -213,7 +213,7 @@
                      <width>292</width>
                      <height>393</height>
                      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                     <visible>facadeview.smallicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.smallicons+control.isvisible(50)</visible>
               </control>
               <control>
                      <animation effect="slide" time="400" end="-300,0" >WindowClose</animation>
@@ -227,7 +227,7 @@
                      <height>160</height>
                      <seperator>-------------------------------------------------</seperator>
                      <font>mediastream11</font>
-                     <visible>ffacadeview.smallicons+Control.IsVisible(50)</visible>
+                     <visible>ffacadeview.smallicons+control.isvisible(50)</visible>
               </control>
               <!--:::::::::::
                 :: Thumbnail VIEW ::
@@ -241,7 +241,7 @@
                      <width>160</width>
                      <height>670</height>
                      <texture>hiddenmenu_left.png</texture>
-                     <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.largeicons+control.isvisible(50)</visible>
               </control>
               <control>
                      <id>46</id>
@@ -252,7 +252,7 @@
                      <width>292</width>
                      <height>393</height>
                      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                     <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.largeicons+control.isvisible(50)</visible>
               </control>
               <control>
                      <description>Game Title</description>
@@ -264,7 +264,7 @@
                      <label>#selecteditem</label>
                      <font>mediastream28tc</font>
                      <align>center</align>
-                     <visible>facadeview.largeicons+Control.IsVisible(50)</visible>
+                     <visible>facadeview.largeicons+control.isvisible(50)</visible>
               </control>
 
               <!--:::::::::::
@@ -280,7 +280,7 @@
                      <label>#selecteditem</label>
                      <font>mediastream28tc</font>
                      <align>center</align>
-                     <visible>facadeview.Filmstrip+Control.IsVisible(50)</visible>
+                     <visible>facadeview.Filmstrip+control.isvisible(50)</visible>
               </control>
 
 
