@@ -1,146 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>747</id>
-        <defaultcontrol>51</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <define>#header.image:-</define>
-        <define>#header.label:Search</define>
-        <define>#header.hover:-</define>
-        <define>#selecteditem:-</define>
-        <define>#itemcount:-</define>
-        <define>#useRandomTVSeriesFanart:Yes</define>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <!--<control>
-                        <type>fadelabel</type>
-                        <description>Top Title</description>
-                        <id>0</id>
-                        <posX>493</posX>
-                        <posY>13</posY>
-                        <width>350</width>
-                        <font>mediastream12c</font>
-                        <align>right</align>
-                        <visible>yes</visible>
-                        <label>#header.label</label>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                        <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-                </control>-->
-                <control>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>182</posX>
-                        <posY>315</posY>
-                        <width>256</width>
-                        <height>256</height>
-                        <texture>keyboard.png</texture>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>status</description>
-                        <type>label</type>
-                        <id>2</id>
-                        <posX>28</posX>
-                        <posY>240</posY>
-                        <font>mediastream13</font>
-                        <textcolor>ff626d73</textcolor>
-                        <align>right</align>
-                        <label>6035</label>
-                </control>
-               <control>
-                      <description>Page Count Background</description>
-                      <type>image</type>
-                      <id>0</id>
-                      <posX>1013</posX>
-                      <posY>684</posY>
-                      <width>260</width>
-                      <height>32</height>
-                      <texture>mediacountbg_Spin.png</texture>
-                      <visible>control.isvisible(50)</visible>
-                      <animation effect="fade" time="250">WindowOpen</animation>
-                      <animation effect="fade" time="250">WindowClose</animation>
-               </control>
-               <control>
-                      <description>Page Count Label</description>
-                      <type>label</type>
-                      <label>30009</label>
-                      <id>0</id>
-                      <posX>1023</posX>
-                      <posY>689</posY>
-                      <font>mediastream12tc</font>
-                      <textcolor>ff909090</textcolor>
-                      <visible>control.isvisible(50)</visible>
-                      <animation effect="fade" time="250">WindowOpen</animation>
-                      <animation effect="fade" time="250">WindowClose</animation>
-               </control>
-               <control>
-                      <description>listcontrol</description>
-                      <type>listcontrol</type>
-                      <id>50</id>
-                      <posX>620</posX>
-                      <posY>240</posY>
-                      <height>450</height>
-                      <width>660</width>
-                      <onleft>51</onleft>
-                      <onright>51</onright>
-                      <scrollOffset>2</scrollOffset>
-                      <PinIconWidth>15</PinIconWidth>
-                      <PinIconHeight>15</PinIconHeight>
-                      <PinIconXOff>57</PinIconXOff>
-                      <PinIconYOff>13</PinIconYOff>
-                      <itemWidth>32</itemWidth>
-                      <itemHeight>32</itemHeight>
-                      <IconXOff>12</IconXOff>
-                      <IconYOff>4</IconYOff>
-                      <textXOff>48</textXOff>
-                      <textYOff>5</textYOff>
-                      <textXOff2>0</textXOff2>
-                      <textYOff2>5</textYOff2>
-                      <font2>mediastream11</font2>
-                      <keepaspectratio>yes</keepaspectratio>
-                      <!--<unfocusedAlpha>0xFF</unfocusedAlpha>-->
-                      <spinPosX>1175</spinPosX>
-                      <spinPosY>682</spinPosY>
-                      <spinAlign>Right</spinAlign>
-                      <textureUp>arrow_round_up_nofocus.png</textureUp>
-                      <textureDown>arrow_round_down_nofocus.png</textureDown>
-                      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-                      <spinWidth>50</spinWidth>
-                      <spinHeight>37</spinHeight>
-                      <suffix>|</suffix>
-                      <animation effect="fade" time="250">WindowOpen</animation>
-                      <animation effect="fade" time="250">WindowClose</animation>
-                      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-               </control>
-                <control>
-                        <description>sms input</description>
-                        <type>smsinput</type>
-                        <id>51</id>
-                        <posX>0</posX>
-                        <posY>520</posY>
-                        <width>400</width>
-                        <height>125</height>
-                        <font>font14</font>
-                        <font>font14</font>
-                        <textcolor2>ff222222</textcolor2>
-                        <textboxFont>mediastream16c</textboxFont>
-                        <textboxXpos>10</textboxXpos>
-                        <textboxYpos>618</textboxYpos>
-                        <textboxWidth>600</textboxWidth>
-                        <textboxHeight>37</textboxHeight>
-                        <textboxColor>FFFFFF00</textboxColor>
-                        <textboxBgColor>00ffffff</textboxBgColor>
-                        <onleft>51</onleft>
-                        <onright>51</onright>
-                        <onup>50</onup>
-                        <ondown>50</ondown>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                
-                <!--<import>common.overlays.xml</import>-->
-        </controls>
+  <id>747</id>
+  <defaultcontrol>51</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.image:-</define>
+  <define>#header.label:Search</define>
+  <define>#header.hover:-</define>
+  <define>#selecteditem:-</define>
+  <define>#itemcount:-</define>
+  <define>#useRandomTVSeriesFanart:Yes</define>
+  <controls>
+    <import>common.window.tv.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>182</posX>
+      <posY>315</posY>
+      <width>256</width>
+      <height>256</height>
+      <texture>keyboard.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>status</description>
+      <type>label</type>
+      <id>2</id>
+      <posX>28</posX>
+      <posY>240</posY>
+      <font>mediastream13</font>
+      <textcolor>ff626d73</textcolor>
+      <align>right</align>
+      <label>6035</label>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>32</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>689</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>listcontrol</description>
+      <type>listcontrol</type>
+      <id>50</id>
+      <posX>620</posX>
+      <posY>240</posY>
+      <height>450</height>
+      <width>660</width>
+      <onleft>51</onleft>
+      <onright>51</onright>
+      <scrollOffset>2</scrollOffset>
+      <PinIconWidth>15</PinIconWidth>
+      <PinIconHeight>15</PinIconHeight>
+      <PinIconXOff>57</PinIconXOff>
+      <PinIconYOff>13</PinIconYOff>
+      <itemWidth>32</itemWidth>
+      <itemHeight>32</itemHeight>
+      <IconXOff>12</IconXOff>
+      <IconYOff>4</IconYOff>
+      <textXOff>48</textXOff>
+      <textYOff>5</textYOff>
+      <textXOff2>0</textXOff2>
+      <textYOff2>5</textYOff2>
+      <font2>mediastream11</font2>
+      <keepaspectratio>yes</keepaspectratio>
+      <!--<unfocusedAlpha>0xFF</unfocusedAlpha>-->
+      <spinPosX>1175</spinPosX>
+      <spinPosY>682</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <suffix>|</suffix>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>sms input</description>
+      <type>smsinput</type>
+      <id>51</id>
+      <posX>0</posX>
+      <posY>520</posY>
+      <width>400</width>
+      <height>125</height>
+      <font>font14</font>
+      <font>font14</font>
+      <textcolor2>ff222222</textcolor2>
+      <textboxFont>mediastream16c</textboxFont>
+      <textboxXpos>10</textboxXpos>
+      <textboxYpos>618</textboxYpos>
+      <textboxWidth>600</textboxWidth>
+      <textboxHeight>37</textboxHeight>
+      <textboxColor>FFFFFF00</textboxColor>
+      <textboxBgColor>00ffffff</textboxBgColor>
+      <onleft>51</onleft>
+      <onright>51</onright>
+      <onup>50</onup>
+      <ondown>50</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+  </controls>
 </window>
