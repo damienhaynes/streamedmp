@@ -156,7 +156,7 @@
 
       <control>
         <type>fadelabel</type>
-        <description>track label</description>
+        <description>Artist label</description>
         <id>0</id>
         <posX>325</posX>
         <posY>264</posY>
@@ -167,7 +167,7 @@
       </control>
       <control>
         <type>fadelabel</type>
-        <description>track label</description>
+        <description>Title label</description>
         <id>0</id>
         <posX>325</posX>
         <posY>294</posY>
@@ -188,23 +188,45 @@
         <font>mediastream12c</font>
       </control>
       <control>
-        <type>fadelabel</type>
-        <description>year label</description>
+        <type>label</type>
+        <description>Translation "Year"</description>
         <id>0</id>
         <posX>325</posX>
         <posY>354</posY>
-        <width>735</width>
+        <width>90</width>
+        <height>26</height>
+        <label>201</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
+        <type>label</type>
+        <description>year label</description>
+        <id>0</id>
+        <posX>415</posX>
+        <posY>354</posY>
+        <width>100</width>
         <height>26</height>
         <label>#Play.Current.Year</label>
         <font>mediastream12c</font>
       </control>
       <control>
-        <type>fadelabel</type>
-        <description>track label</description>
+        <type>label</type>
+        <description>Translation "Track"</description>
         <id>0</id>
         <posX>325</posX>
         <posY>384</posY>
-        <width>735</width>
+        <width>90</width>
+        <height>26</height>
+        <label>435</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
+        <type>label</type>
+        <description>track label</description>
+        <id>0</id>
+        <posX>415</posX>
+        <posY>384</posY>
+        <width>100</width>
         <height>26</height>
         <label>#Play.Current.Track</label>
         <font>mediastream12c</font>
