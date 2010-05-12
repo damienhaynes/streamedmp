@@ -60,7 +60,7 @@ different overlays on home screens
       <id>3337</id>
       <posX>2000</posX>
       <label>#Play.Current.Album</label>
-      <visible>player.hasmedia+control.hastext(3337)</visible>
+      <visible>!player.hasvideo+player.hasaudio</visible>
     </control>
     <control>
       <description>dummy (visible when there is a next track)</description>
