@@ -111,7 +111,7 @@ namespace StreamedMPEditor
                     "\t\t\t<id>3337</id>\n" +
                     "\t\t\t<posX>2000</posX>\n" +
                     "\t\t\t<label>#Play.Current.Album</label>\n" +
-                    "\t\t\t<visible>player.hasmedia+control.hastext(3337)</visible>\n" +
+                    "\t\t\t<visible>!player.hasvideo+player.hasaudio</visible>\n" +
                   "\t\t</control>\n" +
                   "\t\t<control>\n" +
                     "\t\t\t<description>dummy (visible when there is a next track)</description>\n" +
