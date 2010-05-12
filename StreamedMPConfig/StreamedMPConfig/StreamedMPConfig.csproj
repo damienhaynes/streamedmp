@@ -37,6 +37,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\HTPC\MediaPortal\Core.dll</HintPath>
     </Reference>
+    <Reference Include="Dialogs, Version=1.0.6.19695, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\HTPC\MediaPortal\plugins\Windows\Dialogs.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -48,10 +52,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\HTPC\MediaPortal\Utils.dll</HintPath>
     </Reference>
-    <Reference Include="WindowPlugins, Version=0.9.2.33191, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\plugins\Windows\WindowPlugins.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationForm.cs">
@@ -60,6 +60,7 @@
     <Compile Include="ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="settings.cs" />
     <Compile Include="StreamedMPConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,6 +79,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy G:\SkinDev\StreamedMP\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Release\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\process</PostBuildEvent>
+    <PostBuildEvent>copy F:\Dev\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Release\StreamedMPConfig.dll F:\HTPC\MediaPortal\plugins\windows</PostBuildEvent>
   </PropertyGroup>
 </Project>

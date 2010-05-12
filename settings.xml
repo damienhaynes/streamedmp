@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>4</id>
   <defaultcontrol>3</defaultcontrol>
@@ -145,10 +145,17 @@
         <label>2</label>
         <hyperlink>14</hyperlink>        
       </control>
-	  
+      
+      <control Style="settingsbutton">
+        <description>StreamedMP Settings</description>
+        <type>button</type>
+        <id>12</id>
+        <label>Skin Settings</label>
+        <hyperlink>1962</hyperlink>        
+      </control>	  
 	  <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
 	  
-	  <control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>MiniDisplay</description>
         <type>button</type>
         <id>11</id>        
