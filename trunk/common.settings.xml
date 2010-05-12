@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     
@@ -160,18 +160,29 @@
         <hyperlink>704</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-      
+           
       <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
         <id>9998</id>
         <label>2</label>
         <hyperlink>14</hyperlink>
-        <ondown>99</ondown>
         <onleft>#defaultcontrol</onleft>
       </control>
+      
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
+      
+
+      <control Style="settingsbutton">
+        <description>StreamedMP Settings</description>
+        <type>button</type>
+        <id>9999</id>
+        <label>Skin Settings</label>
+        <hyperlink>1962</hyperlink>
+        <ondown>99</ondown>
+        <onleft>#defaultcontrol</onleft>
+      </control>       
+      
     </control>
     
     <control>
