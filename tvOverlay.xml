@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
-        <id>3002</id>
-        <defaultcontrol>2</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <controls>
-                <control>
-                        <description>rec logo</description>
-                        <type>image</type>
-                        <id>4</id>
-                        <posX>14</posX>
-                        <posY>16</posY>
-                        <width>18</width>
-                        <height>18</height>
-                        <texture>tvguide_record_button.png</texture>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                </control>
-        </controls>
+  <id>3002</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <description>rec logo</description>
+      <type>image</type>
+      <id>4</id>
+      <posX>14</posX>
+      <posY>16</posY>
+      <width>18</width>
+      <height>18</height>
+      <texture>tvguide_record_button.png</texture>
+      <animation effect="fade" start="20" time="2000" condition="true" pulse="true">Conditional</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+  </controls>
 </window>
