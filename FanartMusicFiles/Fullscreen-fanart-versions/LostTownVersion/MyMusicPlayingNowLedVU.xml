@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>200010</defaultcontrol>
@@ -6,8 +6,6 @@
   <vumeter>no</vumeter>
   <define>#useRandomMusicFanart:Yes</define>
   <define>#usePlayFanart:Yes</define>
-  <define>#use.cd.and.artist:yes</define>
-  <define>#use.cdcover.only:no</define>
   <controls>
     <import>mymusic.autofanart.xml</import>
     <control>
@@ -63,7 +61,7 @@
         <width>250</width>
         <height>250</height>
         <texture flipY="true" diffuse="diffusemirrorwide.png">-</texture>
-        <visible>#use.cd.and.artist</visible>
+        <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
       </control>
       <control>
         <type>image</type>
@@ -74,7 +72,7 @@
         <width>250</width>
         <height>250</height>
         <texture flipY="true" diffuse="diffusemirrorwide.png">#Play.Current.Thumb</texture>
-        <visible>#use.cdcover.only</visible>
+        <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
       </control>
       <control>
         <type>image</type>
@@ -187,51 +185,51 @@
         <label>#Play.Current.Album</label>
         <font>mediastream12c</font>
       </control>
-      <control>
-        <type>label</type>
-        <description>Translation "Year"</description>
-        <id>0</id>
-        <posX>325</posX>
-        <posY>354</posY>
-        <width>90</width>
-        <height>26</height>
-        <label>201</label>
-        <font>mediastream12c</font>
-      </control>
-      <control>
-        <type>label</type>
-        <description>year label</description>
-        <id>0</id>
-        <posX>415</posX>
-        <posY>354</posY>
-        <width>100</width>
-        <height>26</height>
-        <label>#Play.Current.Year</label>
-        <font>mediastream12c</font>
-      </control>
-      <control>
-        <type>label</type>
-        <description>Translation "Track"</description>
-        <id>0</id>
-        <posX>325</posX>
-        <posY>384</posY>
-        <width>90</width>
-        <height>26</height>
-        <label>435</label>
-        <font>mediastream12c</font>
-      </control>
-      <control>
-        <type>label</type>
-        <description>track label</description>
-        <id>0</id>
-        <posX>415</posX>
-        <posY>384</posY>
-        <width>100</width>
-        <height>26</height>
-        <label>#Play.Current.Track</label>
-        <font>mediastream12c</font>
-      </control>
-      <control>
+      <control> 
+         <type>label</type> 
+         <description>Translation "Year"</description> 
+         <id>0</id> 
+         <posX>325</posX> 
+         <posY>354</posY> 
+         <width>90</width> 
+         <height>26</height> 
+         <label>201</label> 
+         <font>mediastream12c</font> 
+       </control> 
+       <control> 
+         <type>label</type> 
+         <description>year label</description> 
+         <id>0</id> 
+         <posX>415</posX> 
+         <posY>354</posY> 
+         <width>100</width> 
+         <height>26</height> 
+         <label>#Play.Current.Year</label> 
+         <font>mediastream12c</font> 
+       </control> 
+       <control> 
+         <type>label</type> 
+         <description>Translation "Track"</description> 
+         <id>0</id> 
+         <posX>325</posX> 
+         <posY>384</posY> 
+         <width>90</width> 
+         <height>26</height> 
+         <label>435</label> 
+         <font>mediastream12c</font> 
+       </control> 
+       <control> 
+         <type>label</type> 
+         <description>track label</description> 
+         <id>0</id> 
+         <posX>415</posX> 
+         <posY>384</posY> 
+         <width>100</width> 
+         <height>26</height> 
+         <label>#Play.Current.Track</label> 
+         <font>mediastream12c</font> 
+       </control> 
+       <control>
         <type>image</type>
         <id>117</id>
         <posX>587</posX>

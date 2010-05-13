@@ -29,7 +29,19 @@
       <width>130</width>
       <height>130</height>
       <texture>-</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
     </control>
+    <control>
+      <type>image</type>
+      <description>album art image (Fixed)</description>
+      <id>112</id>
+      <posX>5</posX>
+      <posY>585</posY>
+      <width>130</width>
+      <height>130</height>
+      <texture>#Play.Current.Thumb</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
+    </control>    
 	<!-- VU Meter: Analog -->	
     <control>
       <type>image</type>

@@ -3,8 +3,8 @@
   <id>2005</id>
   <defaultcontrol>13</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <controls>    
-    <control>
+  <controls>  	
+     <control>
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
@@ -24,7 +24,7 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible</visible>
+      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (small)</description>
@@ -35,7 +35,7 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>control.isvisible(10)|control.isvisible(11)|control.isvisible(12)</visible>
+      <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
 
     <control>
@@ -62,7 +62,7 @@
       <align>left</align>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>player.paused|player.rewinding|player.forwarding</visible>
+      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Movie Name</description>
@@ -74,7 +74,7 @@
       <font>mediastream12tc</font>
       <label>#Play.Current.Title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>player.rewinding|player.forwarding</visible>
+      <visible>[player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Movie Name</description>
@@ -86,7 +86,7 @@
       <font>mediastream12tc</font>
       <label>#Play.Current.Title </label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>player.paused</visible>
+      <visible>player.paused+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Movie Year</description>
@@ -98,7 +98,7 @@
       <font>mediastream11tc</font>
       <label>#Play.Current.Year </label>
       <textcolor>ff909090</textcolor>
-      <visible>player.paused|player.rewinding|player.forwarding</visible>
+      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Plot</description>
@@ -111,7 +111,7 @@
       <seperator>------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream11</font>
-      <visible>player.paused+!window.isosdvisible</visible>
+      <visible>[player.paused+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <import>common.player.xml</import>   
     <import>common.play.fullscreen.xml</import>
