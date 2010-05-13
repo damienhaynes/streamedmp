@@ -12,7 +12,7 @@ same location everywhere
                      <id>3337</id>
                      <posX>2000</posX>
                      <label>#Play.Current.Album</label>
-                     <visible>!player.hasvideo+player.hasaudio</visible>
+                     <visible>player.hasmedia+control.hastext(3337)</visible>
               </control>
               <control>
                      <description>dummy (visible when there is a next track)</description>
@@ -20,7 +20,7 @@ same location everywhere
                      <id>3338</id>
                      <posX>1800</posX>
                      <label>#Play.Next.Title</label>
-                     <visible>player.hasmedia+control.hastext(3338)</visible>
+                     <visible>!player.hasvideo+player.hasaudio</visible>
               </control>
               <control>
                      <description>dialog bg</description>
@@ -31,7 +31,7 @@ same location everywhere
                      <width>512</width>
                      <height>152</height>
                      <texture>dialogprogressbg.png</texture>
-                     <visible>player.hasmedia</visible>
+                     <visible>player.hasmedia+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
@@ -239,7 +239,7 @@ same location everywhere
                      <label>#Play.Current.Title</label>
                      <textcolor>FFFFFFFF</textcolor>
                      <font>mediastream10tc</font>
-                     <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                     <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
@@ -254,7 +254,7 @@ same location everywhere
                      <label>#Play.Current.Year</label>
                      <textcolor>FFFFFFFF</textcolor>
                      <font>mediastream10tc</font>
-                     <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                     <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
@@ -269,7 +269,7 @@ same location everywhere
                      <label>#Play.Current.Genre</label>
                      <textcolor>FFFFFFFF</textcolor>
                      <font>mediastream10c</font>
-                     <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                     <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
@@ -284,7 +284,7 @@ same location everywhere
                      <label>#Play.Current.Director</label>
                      <textcolor>FFFFFFFF</textcolor>
                      <font>mediastream10c</font>
-                     <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                     <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>
@@ -299,7 +299,7 @@ same location everywhere
                      <label>#currentplaytime / #duration</label>
                      <textcolor>FFFFFFFF</textcolor>
                      <font>mediastream10c</font>
-                     <visible>player.hasmedia+!control.isvisible(3337)</visible>
+                     <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
                      <animation effect="fade" time="500">WindowOpen</animation>
                      <animation effect="fade" time="500">WindowClose</animation>
               </control>

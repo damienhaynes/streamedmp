@@ -42,22 +42,6 @@
   -->
   <define>#overlay.album:music.album.round.faded.png</define>
   <define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
-<!--
-				The next 2 <define> statments control how the cdcover/artist is displayed
-				
-				#use.cd.and.artist
-				Default : no 
-				This is the standard for MediaPortal and swaps between cdcover and artist image
-				
-				#use.cdcover.only
-				Default : yes
-				Set this to yes if you want a static cd cover only
-				
-				NOTE: One must always be set to yes and the other to no
-				
--->
-  <define>#use.cd.and.artist:no</define>
-  <define>#use.cdcover.only:yes</define>
   <controls>
   	 <control>
       <description>music background image</description>
@@ -78,7 +62,7 @@
       <width>370</width>
       <height>347</height>
       <texture>-</texture>
-      <visible>#use.cd.and.artist</visible>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
     </control>
     <control>
       <type>image</type>
@@ -90,9 +74,9 @@
       <height>347</height>
       <texture>-</texture>
       <texture>#Play.Current.Thumb</texture>
-      <visible>#use.cdover.only</visible>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
     </control>
-<!--
+    <!--
     There are two overlay import files
     
     	1.	Display fanart in a window mask in the top right of the sceen, use this file
@@ -101,7 +85,7 @@
     	2.	Display fanart to the top and right edge, use this file
     		mymusic.nowplaying.fanart.and.overlay.edge.xml
     	
--->   
+    -->   
     <import>mymusic.nowplaying.fanart.and.overlay.edge.xml</import>
     
     <control>
@@ -116,7 +100,7 @@
       <fadetime>10</fadetime>
       <loop>yes</loop>
       <randomize>yes</randomize>
-      <visible>Player.HasAudio + Player.playing</visible>
+      <visible>Player.HasAudio + Player.playing + string.equals(#StreamedMP.showEqGraphic,true)</visible>
       <animation effect="fade" time="10">VisibleChange</animation>
     </control>
     <import>music.nowplaying.common.xml</import>

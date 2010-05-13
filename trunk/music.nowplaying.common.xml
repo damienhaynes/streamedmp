@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 This file should contain the details view
 -->
@@ -24,7 +24,7 @@ This file should contain the details view
     </control>
     <control>
       <type>fadelabel</type>
-      <description>track label</description>
+      <description>Artist label</description>
       <id>0</id>
       <posX>23</posX>
       <posY>395</posY>
@@ -35,7 +35,7 @@ This file should contain the details view
     </control>
     <control>
       <type>fadelabel</type>
-      <description>track label</description>
+      <description>Title label</description>
       <id>0</id>
       <posX>23</posX>
       <posY>428</posY>
@@ -55,28 +55,53 @@ This file should contain the details view
       <label>#Play.Current.Album</label>
       <font>mediastream12c</font>
     </control>
+
+    <control> 
+      <type>label</type> 
+      <description>Translation "Track"</description> 
+      <id>0</id> 
+      <posX>23</posX> 
+      <posY>485</posY> 
+      <width>90</width> 
+      <height>26</height> 
+      <label>435</label> 
+      <font>mediastream12c</font> 
+    </control> 
     <control>
       <type>fadelabel</type>
       <description>track label</description>
       <id>0</id>
-      <posX>23</posX>
+      <posX>93</posX>
       <posY>485</posY>
       <width>755</width>
       <height>26</height>
-      <label>#Play.Current.Track</label>
+      <label>#Play.Current.Track   |</label>
       <font>mediastream12c</font>
     </control>
+    
+    <control> 
+      <type>label</type> 
+      <description>Translation "Year"</description> 
+      <id>0</id> 
+      <posX>145</posX> 
+      <posY>485</posY> 
+      <width>90</width> 
+      <height>26</height> 
+      <label>201</label> 
+      <font>mediastream12c</font> 
+    </control>  
     <control>
       <type>fadelabel</type>
       <description>year label</description>
       <id>0</id>
-      <posX>125</posX>
+      <posX>205</posX>
       <posY>485</posY>
       <width>755</width>
       <height>26</height>
-      <label>|     #Play.Current.Year</label>
+      <label>#Play.Current.Year</label>
       <font>mediastream12c</font>
     </control>
+    
     <control>
       <description>seperator</description>
       <type>image</type>
