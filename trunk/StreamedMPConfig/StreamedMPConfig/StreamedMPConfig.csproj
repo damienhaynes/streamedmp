@@ -25,9 +25,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\Plugins\windows\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,9 +37,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>D:\HTPC\MediaPortal\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Dialogs, Version=1.0.6.19695, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Dialogs, Version=1.0.6.25500, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HTPC\MediaPortal\plugins\Windows\Dialogs.dll</HintPath>
+      <HintPath>D:\HTPC\MediaPortal\plugins\Windows\Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,6 +79,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy F:\Dev\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Release\StreamedMPConfig.dll F:\HTPC\MediaPortal\plugins\windows</PostBuildEvent>
+    <PostBuildEvent>copy G:\SkinDev\StreamedMP\StreamedMP\Plugins\windows\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\windows</PostBuildEvent>
   </PropertyGroup>
 </Project>
