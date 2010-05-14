@@ -215,7 +215,8 @@ namespace StreamedMPEditor
                 targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
                 splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
                 cbHideFanartScraper.Checked =  bool.Parse(readEntryValue(optionsTag, "hideFanartScrapingtext", nodelist));
-                cbOverlayFanart.Checked = bool.Parse(readEntryValue(optionsTag,"enableOverlayFanart",nodelist));
+                cbOverlayFanart.Checked = bool.Parse(readEntryValue(optionsTag, "enableOverlayFanart", nodelist));
+                cbAnimateBackground.Checked = bool.Parse(readEntryValue(optionsTag, "animatedBackground", nodelist));
             }
             catch
             {
