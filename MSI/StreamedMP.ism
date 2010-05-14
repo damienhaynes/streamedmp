@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -368,6 +367,7 @@
 		<row><td>hiddenMenuImage</td><td>{74FEF926-CA4D-4525-AE2D-F5FB4CD728DA}</td><td>MEDIA1</td><td>0</td><td/><td>action_menu.png</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesInfoService</td><td>{9F87BCB4-6FF3-4E89-BF9C-77BC71D447D6}</td><td>INFOSERVICE</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesMovingPictures</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesStreamedMP</td><td>{698D38D5-269E-4D2F-9110-25A40C4CAAA1}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesTVSeries</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libGoogleTranslate</td><td>{068938CB-5716-445B-BD0B-FB32B9D24984}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td>{1DBD701C-580A-4DF9-A891-8BBBE5E173BC}</td><td>MPBINDIR</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -710,13 +710,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -818,6 +814,7 @@
 		<row><td>SOUNDS1</td><td>STREAMEDMP</td><td>Sounds</td><td/><td>0</td><td/></row>
 		<row><td>SOUNDS2</td><td>STREAMEDMP</td><td>Sounds</td><td/><td>0</td><td/></row>
 		<row><td>STREAMEDMP</td><td>INSTALLDIR</td><td>STREAM~1|StreamedMP</td><td/><td>0</td><td/></row>
+		<row><td>STREAMEDMP1</td><td>MPLANGUAGESDIR</td><td>STREAM~1|StreamedMP</td><td/><td>0</td><td/></row>
 		<row><td>SendToFolder</td><td>TARGETDIR</td><td>.:SendTo</td><td/><td>3</td><td/></row>
 		<row><td>StartMenuFolder</td><td>TARGETDIR</td><td>.:STARTM~1|Start Menu</td><td/><td>3</td><td/></row>
 		<row><td>StartupFolder</td><td>TARGETDIR</td><td>.:StartUp</td><td/><td>3</td><td/></row>
@@ -1563,6 +1560,7 @@
 		<row><td>nowPlayingWindowFade</td><td>Main</td><td>##ID_STRING111##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>nowPlayingWindowNoFade</td><td>Main</td><td>##ID_STRING109##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>nowPlayingWindowNoMask</td><td>Main</td><td>##ID_STRING108##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>translations</td><td>Main</td><td>##ID_STRING134##</td><td>##ID_STRING135##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>tvguide08Options</td><td>Main</td><td>##ID_STRING49##</td><td>##ID_STRING51##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>tvguide10Options</td><td>Main</td><td>##ID_STRING72##</td><td>##ID_STRING73##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>tvguide12Options</td><td>Main</td><td>##ID_STRING50##</td><td>##ID_STRING52##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1651,6 +1649,7 @@
 		<row><td>nowPlayingWindowFade</td><td>playingNowWindowFade</td></row>
 		<row><td>nowPlayingWindowNoFade</td><td>playingNowWindowNoFade</td></row>
 		<row><td>nowPlayingWindowNoMask</td><td>playingNowWindowNoMask</td></row>
+		<row><td>translations</td><td>languagesStreamedMP</td></row>
 		<row><td>tvguide08Options</td><td>tvguide08Rows</td></row>
 		<row><td>tvguide10Options</td><td>tvguide10Rows</td></row>
 		<row><td>tvguide12Options</td><td>tvguide12Rows</td></row>
@@ -2096,6 +2095,7 @@
 		<row><td>hiddenMenuImage</td><td/><td/><td>_FC5131B6_54D6_45AF_ADA4_C494F55D764E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesInfoService</td><td/><td/><td>_1018D5F5_478E_44D4_BD89_C3A6E3F5147F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesMovingPictures</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesStreamedMP</td><td/><td/><td>_5A51C813_59FB_4E8F_A5A0_53A0A6D89DFC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesTVSeries</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libGoogleTranslate</td><td/><td/><td>_ECA9F67F_1B2F_4CB1_9B0C_11D20D990BFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libICSharpCodeSharpZipLib</td><td/><td/><td>_588A286F_B16D_487F_8FD0_66DEAB35DF8E_FILTER</td><td/><td/><td/><td/></row>
@@ -2209,6 +2209,7 @@
 		<row><td>b3wSkinTrailers</td><td>&lt;SKINFILES&gt;\blue3skins\mytrailers\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesMovingPictures</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
+		<row><td>languagesStreamedMP</td><td>&lt;StreamedMP&gt;\language\streamedmp</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesTVSeries</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>skinMedia</td><td>&lt;SKINFILES&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td>tvseries_SeriesListIcon.png,tvseries_SeasonListIcon.png,Action_menu.png</td><td>2</td></row>
 		<row><td>skinSounds</td><td>&lt;SKINFILES&gt;\sounds</td><td>4</td><td>*.wav,*.mp3,*.wma</td><td/><td>2</td></row>
@@ -2288,6 +2289,7 @@
 		<row><td>nowPlayingWindowFade</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>nowPlayingWindowNoFade</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>nowPlayingWindowNoMask</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>translations</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>tvguide08Options</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>tvguide10Options</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>tvguide12Options</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2877,6 +2879,7 @@
 		<row><td>Custom</td><td>nowPlayingWindowFade</td></row>
 		<row><td>Custom</td><td>nowPlayingWindowNoFade</td></row>
 		<row><td>Custom</td><td>nowPlayingWindowNoMask</td></row>
+		<row><td>Custom</td><td>translations</td></row>
 		<row><td>Custom</td><td>tvguide08Options</td></row>
 		<row><td>Custom</td><td>tvguide10Options</td></row>
 		<row><td>Custom</td><td>tvguide12Options</td></row>
@@ -2935,6 +2938,7 @@
 		<row><td>Minimal</td><td>nowPlayingWindowFade</td></row>
 		<row><td>Minimal</td><td>nowPlayingWindowNoFade</td></row>
 		<row><td>Minimal</td><td>nowPlayingWindowNoMask</td></row>
+		<row><td>Minimal</td><td>translations</td></row>
 		<row><td>Minimal</td><td>tvguide10Options</td></row>
 		<row><td>Minimal</td><td>tvguide12Options</td></row>
 		<row><td>Minimal</td><td>tvminiguide03Options</td></row>
@@ -2994,6 +2998,7 @@
 		<row><td>Typical</td><td>nowPlayingWindowFade</td></row>
 		<row><td>Typical</td><td>nowPlayingWindowNoFade</td></row>
 		<row><td>Typical</td><td>nowPlayingWindowNoMask</td></row>
+		<row><td>Typical</td><td>translations</td></row>
 		<row><td>Typical</td><td>tvguide08Options</td></row>
 		<row><td>Typical</td><td>tvguide10Options</td></row>
 		<row><td>Typical</td><td>tvguide12Options</td></row>
@@ -4266,6 +4271,8 @@
 		<row><td>ID_STRING131</td><td>1033</td><td>MyTrailersMainPlugin</td><td>0</td><td/><td>564038798</td></row>
 		<row><td>ID_STRING132</td><td>1033</td><td>StreamedMP</td><td>0</td><td/><td>1923016043</td></row>
 		<row><td>ID_STRING133</td><td>1033</td><td>StreamedMP Configuration Plugin.</td><td>0</td><td/><td>1922964875</td></row>
+		<row><td>ID_STRING134</td><td>1033</td><td>Translations</td><td>0</td><td/><td>2057235593</td></row>
+		<row><td>ID_STRING135</td><td>1033</td><td>Translations for StreamedMP skin.</td><td>0</td><td/><td>2057184425</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919145778</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
@@ -4569,13 +4576,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
