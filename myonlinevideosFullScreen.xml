@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <window>
   <id>4758</id>
   <defaultcontrol>13</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <controls>  	
-     <control>
+  <define>#percentage:#percentage</define>
+  <define>#currentplaytime:#currentplaytime</define>
+  <define>#currentremaining:#currentremaining</define>
+  <controls>
+    <control>
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
@@ -16,105 +19,196 @@
       <visible>player.forwarding|player.rewinding</visible>
     </control>
     <control>
-      <description>background (default)</description>
+      <description>background (paused)</description>
       <type>image</type>
-      <id>0</id>
+      <id>1</id>
       <posX>0</posX>
       <posY>523</posY>
       <width>1280</width>
       <height>197</height>
-      <texture>osdbackground.png</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <texture>osdbackground1.png</texture>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
-      <description>background (small)</description>
+      <description>Thumb border</description>
       <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>613</posY>
-      <width>1280</width>
-      <height>197</height>
-      <texture>osdbackground.png</texture>
-      <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-    </control>
-
-    <control>
-      <type>image</type>
-      <id>502</id>
-      <posX>1100</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
-      <texture>video.action.forbidden.png</texture>
-      <colordiffuse>White</colordiffuse>
-      <visible>no</visible>
-    </control>
-    
-    <control>
-      <description>DVD Cover</description>
-      <type>image</type>
-      <id>0</id>
-      <texture>#Play.Current.Thumb</texture>
-      <posX>16</posX>
-      <posY>554</posY>
-      <width>160</width>
-      <height>160</height>
-      <align>left</align>
+      <posX>6</posX>
+      <posY>470</posY>
+      <width>170</width>
+      <height>170</height>
+      <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
-      <description>Movie Name</description>
-      <id>0</id>
-      <type>fadelabel</type>
-      <width>700</width>
+      <description>Thumb background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>16</posX>
+      <posY>480</posY>
+      <width>150</width>
+      <height>150</height>
+      <texture>logo_BG.png</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Current Logo</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>16</posX>
+      <posY>480</posY>
+      <width>150</width>
+      <height>150</height>
+      <texture>#Play.Current.Thumb</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Current Date</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1255</posX>
+      <posY>533</posY>
+      <label>#date</label>
+      <align>right</align>
+      <font>mediastream10</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Title</description>
+      <id>14</id>
+      <type>label</type>
+      <width>900</width>
+      <height>25</height>
       <posX>195</posX>
-      <posY>585</posY>
-      <font>mediastream12tc</font>
+      <posY>535</posY>
+      <font>mediastream16tc</font>
       <label>#Play.Current.Title</label>
-      <textcolor>ffFFFFFF</textcolor>
-      <visible>[player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
-      <description>Movie Name</description>
-      <type>fadelabel</type>
-      <id>0</id>
+      <description>Year</description>
+      <id>36</id>
+      <type>textbox</type>
+      <width>900</width>
+      <height>25</height>
       <posX>195</posX>
-      <posY>585</posY>
-      <width>480</width>
-      <font>mediastream12tc</font>
-      <label>#Play.Current.Title </label>
-      <textcolor>ffFFFFFF</textcolor>
-      <visible>player.paused+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-    </control>
-    <control>
-      <description>Movie Year</description>
-      <id>0</id>
-      <type>fadelabel</type>
-      <width>700</width>
-      <posX>195</posX>
-      <posY>608</posY>
-      <font>mediastream11tc</font>
-      <label>#Play.Current.Year </label>
-      <textcolor>ff909090</textcolor>
-      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <posY>563</posY>
+      <label>#Play.Current.Year</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
       <description>Plot</description>
       <type>textboxscrollup</type>
-      <id>0</id>
-      <posX>690</posX>
-      <posY>557</posY>
-      <width>550</width>
-      <height>96</height>
-      <seperator>------------------------------------</seperator>
+      <id>38</id>
+      <posX>230</posX>
+      <posY>590</posY>
+      <width>820</width>
+      <height>79</height>
+      <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#Play.Current.Plot</label>
-      <font>mediastream11</font>
-      <visible>[player.paused+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <font>mediastream12</font>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
-    <import>common.player.xml</import>   
+    <control>
+      <description>Progress Bar Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>190</posX>
+      <posY>676</posY>
+      <width>912</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+      <keepaspectratio>no</keepaspectratio>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Progress Bar</description>
+      <type>progress</type>
+      <id>1</id>
+      <posX>183</posX>
+      <posY>676</posY>
+      <width>928</width>
+      <height>20</height>
+      <lefttexture>osdprogressleft_e.png</lefttexture>
+      <midtexture>osdprogressmid_e.png</midtexture>
+      <righttexture>-</righttexture>
+      <label>#percentage</label>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Buffer Progress Bar</description>
+      <type>tvprogress</type>
+      <id>101</id>
+      <posX>183</posX>
+      <posY>676</posY>
+      <width>918</width>
+      <height>20</height>
+      <toptexture>osd_progress_indicatorTV.png</toptexture>
+      <TextureOffsetY>21</TextureOffsetY>
+      <bottomtexture>-</bottomtexture>
+      <texturetick>-</texturetick>
+      <lefttexture>-</lefttexture>
+      <midtexture>-</midtexture>
+      <righttexture>-</righttexture>
+      <logotexture>-</logotexture>
+      <fillbackgroundtexture>-</fillbackgroundtexture>
+      <fillbgxoff>12</fillbgxoff>
+      <fillbgyoff>9</fillbgyoff>
+      <filltexture1>-</filltexture1>
+      <filltexture2>osdprogressmid_blue.png</filltexture2>
+      <filltexture3>osdprogressmid_blue.png</filltexture3>
+      <fillheight>8</fillheight>
+      <label>#percentage</label>
+      <label1>#percentage</label1>
+      <label2>#TV.Record.percent3</label2>
+      <font>mediastream10c</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>Start Time Info</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>195</posX>
+      <posY>695</posY>
+      <label>#currentplaytime</label>
+      <align>left</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>End Time Info</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1093</posX>
+      <posY>695</posY>
+      <label>#currentremaining</label>
+      <align>right</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>
+    <control>
+      <description>pause image</description>
+      <type>image</type>
+      <id>16</id>
+      <posX>58</posX>
+      <posY>650</posY>
+      <width>60</width>
+      <height>60</height>
+      <texture>-</texture>
+      <visible>no</visible>
+    </control>
     <import>common.play.fullscreen.xml</import>
-    <import>common.progressbar.xml</import>
+    <import>common.player.xml</import>
   </controls>
 </window>
