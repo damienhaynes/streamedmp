@@ -1508,9 +1508,8 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<onleft>" + (menuItems[second].id + 800).ToString() + "</onleft>");
             rawXML.AppendLine("\t<onright>" + (menuItems[third].id + 700).ToString() + "</onright>");
             rawXML.AppendLine("\t<onup>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onup>");
-            //rawXML.AppendLine("\t<ondown>" + (menuItems[basicHomeValues.defaultId].id + 700).ToString() + "01</ondown>");
             rawXML.AppendLine("\t<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")</visible>");
-            rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">visiblechange</animation>");
             rawXML.AppendLine("</control>	");
             // ************ FIRST
 
@@ -1688,7 +1687,12 @@ namespace StreamedMPEditor
                 else
                     rawXML.Append("</visible>\n");
 
-                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>"); 
+                rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
+                if (cbAnimateBackground.Checked)
+                {
+                  rawXML.AppendLine("\t\t\t<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                  rawXML.AppendLine("\t\t\t<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                }
                 rawXML.AppendLine("\t\t</control>");
 
                 // Add second background control for random fanart provided 
@@ -1720,6 +1724,11 @@ namespace StreamedMPEditor
                         rawXML.Append("]+control.isvisible(91919298)</visible>\n");
 
                     rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
+                    if (cbAnimateBackground.Checked)
+                    {
+                      rawXML.AppendLine("\t\t\t<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                      rawXML.AppendLine("\t\t\t<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                    }
                     rawXML.AppendLine("\t\t</control>");
                 }
             
@@ -1752,6 +1761,11 @@ namespace StreamedMPEditor
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>\n");
                     rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
+                    if (cbAnimateBackground.Checked)
+                    {
+                      rawXML.AppendLine("\t\t\t<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                      rawXML.AppendLine("\t\t\t<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                    }
                     rawXML.AppendLine("\t\t</control>");
 
                     //
@@ -1777,6 +1791,11 @@ namespace StreamedMPEditor
                     }
                     rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>\n");
                     rawXML.AppendLine("\t\t\t<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">VisibleChange</animation>");
+                    if (cbAnimateBackground.Checked)
+                    {
+                      rawXML.AppendLine("\t\t\t<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                      rawXML.AppendLine("\t\t\t<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
+                    }
                     rawXML.AppendLine("\t\t</control>");
                 }
 
@@ -3504,6 +3523,7 @@ namespace StreamedMPEditor
             string disableOnScreenClock = cbDisableClock.Checked ? "true" : "false";
             string hideFanartScrapingtext = cbHideFanartScraper.Checked ? "true" : "false";
             string enableOverlayFanart = cbOverlayFanart.Checked ? "true" : "false";
+            string animatedBackground = cbAnimateBackground.Checked ? "true" : "false";
 
             if (direction == menuType.horizontal)
             {
@@ -3582,6 +3602,7 @@ namespace StreamedMPEditor
                       + generateEntry("targetScreenRes", targetScreenRes, 2, true)
                       + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 2, true)
                       + generateEntry("enableOverlayFanart",enableOverlayFanart,2,true)
+                      + generateEntry("animatedBackground", animatedBackground, 2, true)
                       + "\t</section>");
 
 

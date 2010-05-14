@@ -115,6 +115,7 @@
       this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
       this.rbRssNoImage = new System.Windows.Forms.RadioButton();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+      this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
       this.gbScreenRes = new System.Windows.Forms.GroupBox();
       this.detectedHD = new System.Windows.Forms.Label();
       this.detectedSD = new System.Windows.Forms.Label();
@@ -210,7 +211,7 @@
       this.btCheckForUpdate = new System.Windows.Forms.Button();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
+      this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1241,6 +1242,7 @@
       // 
       // styleOptionsGroup
       // 
+      this.styleOptionsGroup.Controls.Add(this.cbAnimateBackground);
       this.styleOptionsGroup.Controls.Add(this.cbOverlayFanart);
       this.styleOptionsGroup.Controls.Add(this.gbScreenRes);
       this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
@@ -1255,6 +1257,18 @@
       this.styleOptionsGroup.TabIndex = 22;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
+      // 
+      // cbOverlayFanart
+      // 
+      this.cbOverlayFanart.AutoSize = true;
+      this.cbOverlayFanart.Location = new System.Drawing.Point(20, 53);
+      this.cbOverlayFanart.Name = "cbOverlayFanart";
+      this.cbOverlayFanart.Size = new System.Drawing.Size(205, 17);
+      this.cbOverlayFanart.TabIndex = 42;
+      this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
+      this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
+              "Music/Video overlay.");
+      this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
       // gbScreenRes
       // 
@@ -1350,7 +1364,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(20, 80);
+      this.useAeonGraphics.Location = new System.Drawing.Point(20, 101);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 26;
@@ -1419,9 +1433,9 @@
       this.globalSettings.Controls.Add(this.txtFocusColour);
       this.globalSettings.Controls.Add(this.label16);
       this.globalSettings.Controls.Add(this.label17);
-      this.globalSettings.Location = new System.Drawing.Point(9, 19);
+      this.globalSettings.Location = new System.Drawing.Point(9, 6);
       this.globalSettings.Name = "globalSettings";
-      this.globalSettings.Size = new System.Drawing.Size(729, 118);
+      this.globalSettings.Size = new System.Drawing.Size(729, 131);
       this.globalSettings.TabIndex = 4;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
@@ -2217,17 +2231,16 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // cbOverlayFanart
+      // cbAnimateBackground
       // 
-      this.cbOverlayFanart.AutoSize = true;
-      this.cbOverlayFanart.Location = new System.Drawing.Point(20, 53);
-      this.cbOverlayFanart.Name = "cbOverlayFanart";
-      this.cbOverlayFanart.Size = new System.Drawing.Size(205, 17);
-      this.cbOverlayFanart.TabIndex = 42;
-      this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
-      this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
-              "Music/Video overlay.");
-      this.cbOverlayFanart.UseVisualStyleBackColor = true;
+      this.cbAnimateBackground.AutoSize = true;
+      this.cbAnimateBackground.Location = new System.Drawing.Point(20, 76);
+      this.cbAnimateBackground.Name = "cbAnimateBackground";
+      this.cbAnimateBackground.Size = new System.Drawing.Size(157, 17);
+      this.cbAnimateBackground.TabIndex = 43;
+      this.cbAnimateBackground.Text = "Animate Background Image";
+      this.toolTip1.SetToolTip(this.cbAnimateBackground, "This animates the backgound image slighty making slide and pulse.\r\n");
+      this.cbAnimateBackground.UseVisualStyleBackColor = true;
       // 
       // streamedMpEditor
       // 
@@ -2500,6 +2513,7 @@
     private System.Windows.Forms.CheckBox cbAllowUpdateCheck;
     private System.Windows.Forms.Button btCheckForUpdate;
     private System.Windows.Forms.CheckBox cbOverlayFanart;
+    private System.Windows.Forms.CheckBox cbAnimateBackground;
   }
 }
 
