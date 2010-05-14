@@ -392,6 +392,7 @@
 		<row><td>pluginMovingPicturesDLL</td><td>{A3739C2D-3ADA-4751-ACD2-A7B1B7AFAB28}</td><td>WINDOWS1</td><td>8</td><td/><td>movingpictures.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyLyricsDLL</td><td>{3225823B-6960-4E52-A9DA-FE9BBD426E11}</td><td>WINDOWS1</td><td>8</td><td/><td>mylyrics.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginMyTrailersDLL</td><td>{2B3B7BCE-0D8E-4840-ABF6-FC3BEADC9BAA}</td><td>WINDOWS1</td><td>8</td><td/><td>mytrailers.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginStreamedMPDLL</td><td>{32CECD94-93BC-4ECC-8511-3E6E3C3AAADE}</td><td>WINDOWS1</td><td>8</td><td/><td>streamedmpconfig.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1528,6 +1529,7 @@
 		<row><td>MyTrailersBlue3wideSkin</td><td>MyTrailers</td><td>##ID_STRING127##</td><td>##ID_STRING128##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailersMainPlugin</td><td>MyTrailers</td><td>##ID_STRING131##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>StreamedMP</td><td>Main</td><td>##ID_STRING132##</td><td>##ID_STRING133##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeriesBlue3wideSkin</td><td>TVSeries</td><td>##ID_STRING125##</td><td>##ID_STRING126##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1611,6 +1613,7 @@
 		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
 		<row><td>MyTrailersBlue3wideSkin</td><td>b3wSkinTrailers</td></row>
 		<row><td>MyTrailersMainPlugin</td><td>pluginMyTrailersDLL</td></row>
+		<row><td>StreamedMP</td><td>pluginStreamedMPDLL</td></row>
 		<row><td>TVSeriesBlue3wideSkin</td><td>b3wSkinTVSeries</td></row>
 		<row><td>TVSeriesMainPlugin</td><td>languagesTVSeries</td></row>
 		<row><td>TVSeriesMainPlugin</td><td>libICSharpCodeSharpZipLib</td></row>
@@ -1697,6 +1700,7 @@
 		<row><td>mediainfo.dll</td><td>libMediaInfo</td><td>MEDIAI~1.DLL|MediaInfo.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\MediaInfo.dll</td><td>1</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>microsoft.mshtml.dll</td><td>libWebBrowserDependencies</td><td>MICROS~1.DLL|microsoft.mshtml.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\microsoft.mshtml.dll</td><td>1</td><td/></row>
+		<row><td>movingpictures.background.ov</td><td>defaultMovingPictures</td><td>MOVING~4.XML|movingpictures.background.overlays.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.background.overlays.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.details.media</td><td>commonMovingPictures</td><td>MOVING~1.XML|movingpictures.details.mediainfo.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.details.mediainfo.xml</td><td>1</td><td/></row>
 		<row><td>movingpictures.details.xml</td><td>commonMovingPictures</td><td>MOVING~1.XML|movingpictures.details.xml</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\movingpictures.details.xml</td><td>17</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
@@ -1751,6 +1755,7 @@
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
+		<row><td>streamedmpconfig.dll</td><td>pluginStreamedMPDLL</td><td>STREAM~1.DLL|StreamedMPConfig.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\StreamedMPConfig.dll</td><td>1</td><td/></row>
 		<row><td>streamedmpeditor.exe</td><td>menuEditor</td><td>STREAM~1.EXE|StreamedMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>1</td><td/></row>
 		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\SubtitleDownloader.dll</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
@@ -2115,6 +2120,7 @@
 		<row><td>pluginMovingPicturesDLL</td><td/><td/><td>_D229F38C_9C25_4A94_BEF9_43F6BFE7C56E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyLyricsDLL</td><td/><td/><td>_73146477_AF9B_495D_8B51_E0961E3602E5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginMyTrailersDLL</td><td/><td/><td>_EE3A3D2F_4BF2_4EDD_B49C_62C527A58857_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pluginStreamedMPDLL</td><td/><td/><td>_60BE2A06_FCB3_4B18_8B17_FC08D939EF35_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinSounds</td><td/><td/><td>_84C77638_8B61_4BB4_9F1B_B6EF3C72911F_FILTER</td><td/><td/><td/><td/></row>
@@ -2248,6 +2254,7 @@
 		<row><td>MyTrailersBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyTrailersMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>StreamedMP</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVLogos</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeriesBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2543,7 +2550,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.0.3</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.0.4</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2835,6 +2842,7 @@
 		<row><td>Custom</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Custom</td><td>MyTrailersMainPlugin</td></row>
 		<row><td>Custom</td><td>Plugins</td></row>
+		<row><td>Custom</td><td>StreamedMP</td></row>
 		<row><td>Custom</td><td>TVLogos</td></row>
 		<row><td>Custom</td><td>TVSeries</td></row>
 		<row><td>Custom</td><td>TVSeriesBlue3wideSkin</td></row>
@@ -2895,6 +2903,7 @@
 		<row><td>Minimal</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Minimal</td><td>MyTrailersMainPlugin</td></row>
 		<row><td>Minimal</td><td>Plugins</td></row>
+		<row><td>Minimal</td><td>StreamedMP</td></row>
 		<row><td>Minimal</td><td>TVLogos</td></row>
 		<row><td>Minimal</td><td>TVSeriesBlue3wideSkin</td></row>
 		<row><td>Minimal</td><td>TVSeriesMainPlugin</td></row>
@@ -2952,6 +2961,7 @@
 		<row><td>Typical</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Typical</td><td>MyTrailersMainPlugin</td></row>
 		<row><td>Typical</td><td>Plugins</td></row>
+		<row><td>Typical</td><td>StreamedMP</td></row>
 		<row><td>Typical</td><td>TVLogos</td></row>
 		<row><td>Typical</td><td>TVSeries</td></row>
 		<row><td>Typical</td><td>TVSeriesBlue3wideSkin</td></row>
@@ -4253,6 +4263,8 @@
 		<row><td>ID_STRING13</td><td>1033</td><td>TV Series</td><td>0</td><td/><td>-1919153970</td></row>
 		<row><td>ID_STRING130</td><td>1033</td><td>MovingPicturesMainPlugin</td><td>0</td><td/><td>564053102</td></row>
 		<row><td>ID_STRING131</td><td>1033</td><td>MyTrailersMainPlugin</td><td>0</td><td/><td>564038798</td></row>
+		<row><td>ID_STRING132</td><td>1033</td><td>StreamedMP</td><td>0</td><td/><td>1923016043</td></row>
+		<row><td>ID_STRING133</td><td>1033</td><td>StreamedMP Configuration Plugin.</td><td>0</td><td/><td>1922964875</td></row>
 		<row><td>ID_STRING14</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919145778</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
@@ -5004,9 +5016,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{017575D5-1A7B-4EE2-8E9A-DC8FAF149F85}</td><td/></row>
+		<row><td>ProductCode</td><td>{6C8725BC-9BC2-414C-A782-61D09963EB94}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.0.3.1223</td><td/></row>
+		<row><td>ProductVersion</td><td>1.0.4.1259</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
