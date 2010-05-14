@@ -2,7 +2,7 @@
   <id>1962</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:Skin Settings</define>
+  <define>#header.label:Skin</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
@@ -59,7 +59,6 @@
         <description>Shuffle Playlist on load</description>
         <type>checkmark</type>
         <id>2</id>
-        <label>Show CD Cover Only in Music Now Playing</label>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>17</onup>
@@ -70,7 +69,6 @@
         <description>Enable ID3  other tagformats</description>
         <type>checkmark</type>
         <id>3</id>
-        <label>Show Graphic EQ in Music Now Playing</label>
         <onleft>3</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
@@ -80,15 +78,11 @@
         <description>Enable ID3  other tagformats</description>
         <type>checkmark</type>
         <id>4</id>
-        <label>Use minimal VideoOSD</label>
         <onleft>4</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>3</onup>
         <ondown>99</ondown>
-      </control>
-
-
-      
+      </control>    
     </control>
         
   </controls>
