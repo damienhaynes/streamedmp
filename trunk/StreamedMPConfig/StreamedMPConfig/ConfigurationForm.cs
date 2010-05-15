@@ -42,6 +42,9 @@ namespace StreamedMPConfig
     private void ConfigurationForm_Load(object sender, EventArgs e)
     {
       settings.Load();
+      cbCdCoverOnly.Text = Translation.Strings["CDCover"];
+      cbShowEqGraphic.Text = Translation.Strings["ShowEQ"];
+
       cbCdCoverOnly.Checked = StreamedMPConfig.cdCoverOnly;
       cbShowEqGraphic.Checked = StreamedMPConfig.showEqGraphic;
 
