@@ -16,6 +16,20 @@
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
     <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+      <colordiffuse>ffd52020</colordiffuse>
+      <visible>!string.equals(#SleepControl.Text,)+plugin.isenabled(Sleep Control)</visible>
+      <animation effect="fade" start="0" time="500" condition="true" pulse="true">Conditional</animation>
+      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
+    </control>
+    <control>
       <description>Time</description>
       <type>label</type>
       <id>233</id>
