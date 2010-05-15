@@ -157,17 +157,6 @@ namespace StreamedMPConfig
       return input;
     }
 
-
-
-    public static string GetDayName(DayOfWeek dayOfWeek)
-    {
-      return _info.GetDayName(dayOfWeek);
-    }
-    public static string GetShortestDayName(DayOfWeek dayOfWeek)
-    {
-      return _info.GetShortestDayName(dayOfWeek);
-    }
-
     #endregion
 
     #region Translations / Strings
@@ -181,6 +170,7 @@ namespace StreamedMPConfig
     public static string CDCover = "Show CD Cover Only in Music Now Playing";
     public static string ShowEQ = "Show Graphic EQ in Music Now Playing";
     public static string MinVideoOSD = "Use minimal Video OSD when paused";
+    public static string VideoWallpaperLabel = "Video Wallpaper";
     public static string SMPTranslation1 = "";
     public static string SMPTranslation2 = "";
     public static string SMPTranslation3 = "";
