@@ -181,6 +181,27 @@ namespace StreamedMPConfig
     public static string CDCover = "Show CD Cover Only in Music Now Playing";
     public static string ShowEQ = "Show Graphic EQ in Music Now Playing";
     public static string MinVideoOSD = "Use minimal Video OSD when paused";
+    public static string SMPTranslation1 = "";
+    public static string SMPTranslation2 = "";
+    public static string SMPTranslation3 = "";
+    public static string SMPTranslation4 = "";
+    public static string SMPTranslation5 = "";
+    public static string SMPTranslation6 = "";
+    public static string SMPTranslation7 = "";
+    public static string SMPTranslation8 = "";
+    public static string SMPTranslation9 = "";
+    public static string SMPTranslation10 = "";
+    public static string SMPTranslation11 = "";
+    public static string SMPTranslation12 = "";
+    public static string SMPTranslation13 = "";
+    public static string SMPTranslation14 = "";
+    public static string SMPTranslation15 = "";
+    public static string SMPTranslation16 = "";
+    public static string SMPTranslation17 = "";
+    public static string SMPTranslation18 = "";
+    public static string SMPTranslation19 = "";
+    public static string SMPTranslation20 = "";
+
 
     #endregion
 
