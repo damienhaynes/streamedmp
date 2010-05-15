@@ -71,6 +71,12 @@
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMPSettings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SMPSettingsDisabled.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -80,7 +86,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>rem copy G:\SkinDev\StreamedMP\StreamedMP\Plugins\windows\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\windows
-copy G:\SkinDev\StreamedMP\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Debug\StreamedMPConfig.* G:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\Windows</PostBuildEvent>
+    <PostBuildEvent>copy G:\SkinDev\StreamedMP\StreamedMP\Plugins\windows\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\windows
+rem copy G:\SkinDev\StreamedMP\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Debug\StreamedMPConfig.* G:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\Windows</PostBuildEvent>
   </PropertyGroup>
 </Project>
