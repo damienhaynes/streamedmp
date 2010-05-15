@@ -93,14 +93,14 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <description>Back button</description>
+          <description>Shutdown button</description>
           <type>button</type>
           <id>10</id>
           <width>249</width>
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
-          <label>SHUTDOWN</label>
+          <label>1030</label>
           <font>mediastream11tc</font>
           <action>99</action>
           <onup>14</onup>
@@ -114,7 +114,7 @@
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
-          <label>SETTINGS</label>
+          <label>1048</label>
           <font>mediastream11tc</font>
           <hyperlink>4</hyperlink>
           <onup>10</onup>
@@ -142,7 +142,7 @@
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
-          <label>BASIC HOME</label>
+          <label>100035</label>
           <font>mediastream11tc</font>
           <action>115</action>
           <onup>12</onup>
@@ -156,7 +156,7 @@
           <height>50</height>
           <textXOff>25</textXOff>
           <textYOff>15</textYOff>
-          <label>EXIT</label>
+          <label>4517</label>
           <font>mediastream11tc</font>
           <action>97</action>
           <onup>13</onup>
@@ -307,7 +307,7 @@
     </control>
     
     <!-- imports -->
-    
+    <import>FritzManager.Notify.xml</import>
     <import>common.overlay.home.xml</import>
     <import>common.time.xml</import>
     
