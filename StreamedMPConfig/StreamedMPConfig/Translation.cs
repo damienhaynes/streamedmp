@@ -15,6 +15,7 @@ namespace StreamedMPConfig
     #region Private variables
 
     private static Dictionary<string, string> _translations;
+    private static Dictionary<string, string> DynamicTranslations = new Dictionary<string, string>();
     private static readonly string _path = string.Empty;
     private static readonly DateTimeFormatInfo _info;
 
@@ -65,7 +66,16 @@ namespace StreamedMPConfig
           FieldInfo[] fields = transType.GetFields(BindingFlags.Public | BindingFlags.Static);
           foreach (FieldInfo field in fields)
           {
-            _translations.Add(field.Name, field.GetValue(transType).ToString());
+            if (DynamicTranslations.ContainsKey(field.Name))
+            {
+              if (field.GetValue(transType).ToString() != string.Empty)
+                _translations.Add(field.Name + ":" + DynamicTranslations[field.Name], field.GetValue(transType).ToString());
+            }
+            else
+            {
+              if (field.GetValue(transType).ToString() != string.Empty)
+                _translations.Add(field.Name, field.GetValue(transType).ToString());
+            }
           }
         }
         return _translations;
@@ -81,6 +91,7 @@ namespace StreamedMPConfig
       XmlDocument doc = new XmlDocument();
       Dictionary<string, string> TranslatedStrings = new Dictionary<string, string>();
       string langPath = "";
+      string[] words;
       try
       {
         langPath = Path.Combine(_path, lang + ".xml");
@@ -107,7 +118,17 @@ namespace StreamedMPConfig
         if (stringEntry.NodeType == XmlNodeType.Element)
           try
           {
-            TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
+            if (stringEntry.Attributes.GetNamedItem("Field").Value.Contains(":"))
+            {
+              words = stringEntry.Attributes.GetNamedItem("Field").Value.Split(':');
+              if (words[1] != null)
+              {
+                TranslatedStrings.Add(words[0], stringEntry.InnerText);
+                DynamicTranslations.Add(words[0], words[1]);
+              }
+            }
+            else
+              TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
           }
           catch (Exception ex)
           {
@@ -123,7 +144,10 @@ namespace StreamedMPConfig
         if (TranslatedStrings != null && TranslatedStrings.ContainsKey(fi.Name))
           TransType.InvokeMember(fi.Name, BindingFlags.SetField, null, TransType, new object[] { TranslatedStrings[fi.Name] });
         else
+        {
+          // There is no hard-coded translation so create one
           Log.Info("Translation not found for field: {0}.  Using hard-coded English default.", fi.Name);
+        }
       }
       return TranslatedStrings.Count;
     }
