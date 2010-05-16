@@ -1,0 +1,77 @@
+<window>
+	<controls>		
+		
+		<control>
+			<type>image</type>
+			<description>hidebackground</description>
+			<id>0</id>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black.png</texture>
+			<animation effect="fade" time="400" delay="0">WindowOpen</animation>
+			<visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Backdrop Overlay</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>-2</posX>
+			<posY>-2</posY>
+			<width>1284</width>
+			<height>724</height>
+			<texture>mainoverlay.png</texture>
+			<visible>facadeview.list+[control.isvisible(50)|control.isvisible(51)]</visible>
+		</control>
+		
+		<control>
+			<description>Filmstrip Black Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>504</posY>
+			<width>1280</width>
+			<height>221</height>
+			<colordiffuse>ffFFFFFF</colordiffuse>
+			<texture>black.png</texture>
+			<visible>facadeview.filmstrip+control.isvisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Backdrop Overlay - FilmStrip</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>-2</posX>
+			<posY>-2</posY>
+			<width>1284</width>
+			<height>726</height>
+			<texture>movieviewbg.png</texture>
+			<visible>facadeview.filmstrip+control.isvisible(50)</visible>
+		</control>
+		
+		<control>
+			<description>Glasstitlebar - FilmStrip</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>280</posX>
+			<posY>64</posY>
+			<width>512</width>
+			<height>43</height>
+			<texture>glasstitlebar.png</texture>
+			<visible>facadeview.filmstrip+control.isvisible(50)</visible>
+		</control>
+		
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>675</posY>
+			<width>1280</width>
+			<height>47</height>
+			<texture>imagestreamtitle.png</texture>
+			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+		</control>
+	
+	</controls>
+</window>

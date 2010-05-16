@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MediaInfo Logos (Small/Large Thumbs View) -->
+<window>
+	<controls>
+		
+		
+		<!-- Video Resolutions / Aspect Ratio-->		
+		<control>
+		  <description>720p, 1080i, 1080p</description>
+		  <type>image</type>
+		  <id>9799</id>
+		  <posX>35</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons</visible>
+		</control>
+		<control>
+		  <description>SD/HD Fullscreen/Widescreen</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>35</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(9799)</visible>
+		</control>
+
+		<!-- Video Codecs -->	
+		<control>
+		  <description>Video Codecs</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>135</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons</visible>
+		</control>
+		
+		<!-- Audio  Codecs / Channels -->
+		<control>
+		  <description>Audio Codecs / Channels</description>
+		  <type>image</type>
+		  <id>9800</id>
+		  <posX>235</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons</visible>
+		</control>
+		<control>
+		  <description>Audio Codecs - Unknown number of channels</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>235</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(9800)</visible>
+		</control>
+	
+		<!-- Subtitles -->
+		<control>
+		  <description>Subtitles</description>
+		  <type>image</type>
+		  <id>0</id>
+		  <posX>335</posX>
+		  <posY>630</posY>
+		  <width>100</width>
+		  <height>32</height>
+		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
+		  <visible>control.isvisible(50)+facadeview.smallicons</visible>
+		</control>
+		
+	</controls>
+</window>

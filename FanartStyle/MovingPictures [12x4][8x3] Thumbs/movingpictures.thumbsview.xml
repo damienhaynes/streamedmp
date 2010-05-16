@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window> 
+	<controls>
+
+		<control>
+			<description>Movie  Title</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>40</posX>
+			<posY>684</posY>
+			<width>900</width>
+			<font>mediastream16tc</font>
+			<label>#MovingPictures.SelectedMovie.title</label>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+		</control>
+
+	</controls>
+</window>
