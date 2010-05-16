@@ -50,6 +50,9 @@
 #define FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS		"Main\\fanartTVSeries7x3WideBanners"
 #define FANART_FEATURE_TVSERIES_10x4_WIDEBANNERS	"Main\\fanartTVSeries10x4WideBanners"
 #define FANART_FEATURE_MOVINGPICS					"Main\\fanartMovingPictures"
+#define FANART_FEATURE_MOVINGPICS_THUMBS			"Main\\fanartMovingPicturesThumbs"
+#define FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\fanartMovingPictures.12x3.8x2.Thumbs"
+#define FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS	"Main\\fanartMovingPictures.12x4.8x3.Thumbs"
 
 #define DEFAULT_FEATURE_TVSERIES					"Main\\defaultTVSeries"
 #define DEFAULT_FEATURE_TVSERIES_WIDEBANNERS		"Main\\defaultTVSeriesWideBanners"
@@ -58,6 +61,9 @@
 #define DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS	"Main\\defaultTVSeries7x3WideBanners"
 #define DEFAULT_FEATURE_TVSERIES_10x4_WIDEBANNERS	"Main\\defaultTVSeries10x4WideBanners"
 #define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
+#define DEFAULT_FEATURE_MOVINGPICS_THUMBS			"Main\\defaultMovingPicturesThumbs"
+#define DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\defaultMovingPictures.12x3.8x2.Thumbs"
+#define DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS	"Main\\defaultMovingPictures.12x4.8x3.Thumbs"
 
 #define TVGUIDE08_FEATURE_OPTIONS					"Main\\tvguide08Options"
 #define TVGUIDE10_FEATURE_OPTIONS					"Main\\tvguide10Options"
@@ -170,7 +176,8 @@
 #define RES_COMBO_SERIESLAYOUT						1402 
 #define RES_BUTTON_TVSERIESADVANCED					1404
 #define RES_COMBO_WIDEBANNERLAYOUT					1406	
-#define RES_HYPERLINK								1407
+#define RES_HYPERLINK								1407          
+#define RES_COMBO_THUMBLAYOUT						1408
 
 #define RES_CHECK_TOTALEPCOUNT						1304
 #define RES_CHECK_LISTIMAGES						1305
@@ -282,7 +289,8 @@ STRING g_sDownloadInstallDir;
 STRING g_sWideBannerLayout;
 STRING g_sUnfocusedAlphaListItems;
 STRING g_sUnfocusedAlphaThumbs;  
-STRING g_sNowPlayingChoice;
+STRING g_sNowPlayingChoice; 
+STRING g_sThumbLayout;
   
 STRING g_sMediaPortalProgramDir;
 STRING g_sLanguageDir;
@@ -451,6 +459,11 @@ begin
 	endif;	
 	if svValue = "1" then
 		g_bMovingPicturesDefault = TRUE;			
+	endif;
+	
+	// Read MovingPictures Thumb layout
+	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"MOVINGPICTURESTHUMBLAYOUT",nvType,g_sThumbLayout,nvSize) < 0) then
+		g_sThumbLayout = "0";		
 	endif;
 	
 	// Read TVGuide Size default
@@ -1392,7 +1405,8 @@ end;
 
 function number ShowSelectMovingPics(bModify)
 	STRING szDialogName, szUrl;
-	NUMBER nCmdValue;
+	NUMBER nCmdValue;  
+	LIST listThumbLayout;
 	BOOL bDone;
 begin
 
@@ -1423,7 +1437,26 @@ Dlg_Wait:
  				else
  					CtrlSetState(szDialogName,RES_RADIO_CHOICE2,BUTTON_CHECKED);
  				endif;
- 			
+ 			              
+ 			    // Populate Thumbs layout list                               
+	        	listThumbLayout = ListCreate(STRINGLIST);
+	        	
+	        	ListAddString(listThumbLayout,"Default",AFTER);
+	        	ListAddString(listThumbLayout,"[12x4][8x3] Grid",AFTER);
+	        	ListAddString(listThumbLayout,"[12x3][8x2] Grid + Info",AFTER);
+	        		        	
+	        	// Add Layouts to list
+	        	CtrlSetList(szDialogName, RES_COMBO_THUMBLAYOUT, listThumbLayout);	        	
+	        	switch (g_sThumbLayout)
+	        		case "0":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"Default");
+	        		case "1":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"[12x4][8x3] Grid");
+	        		case "2":
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"[12x3][8x2] Grid + Info");	        		
+	        	endswitch;	        	
+	        	ListDestroy(listThumbLayout);	  
+ 			              
  			case RES_HYPERLINK:
 				if CtrlGetUrlForLinkClicked(szDialogName, RES_HYPERLINK, szUrl) = 0 then
 					LaunchBrowser(szUrl);
@@ -1454,15 +1487,53 @@ Dlg_Wait:
 		g_bMovingPicturesDefault = FALSE;
 	endif;
 	
-	// Set Features
+	CtrlGetCurSel(szDialogName, RES_COMBO_THUMBLAYOUT, g_sThumbLayout); 
+	switch (g_sThumbLayout)
+		case "Default":
+			g_sThumbLayout = "0";
+		case "[12x4][8x3] Grid":
+			g_sThumbLayout = "1";
+		case "[12x3][8x2] Grid + Info":
+			g_sThumbLayout = "2";	
+	endswitch;
+	
+	// Set Features  
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, FALSE );
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_THUMBS, FALSE );         
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, FALSE );	
+	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, FALSE );	
+	
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_THUMBS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, FALSE );
+	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, FALSE );	
+	
 	if (g_bMovingPicturesDefault) then
 		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, TRUE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, FALSE );
-	else
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, FALSE );
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, TRUE );
-	endif;		
 		
+		switch (g_sThumbLayout)
+			case "0":				
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_THUMBS, TRUE );
+			case "1":                                                    				
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, TRUE );
+			case "2":                                                          				
+				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, TRUE );			
+		endswitch;
+				
+	else		
+		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, TRUE );      
+		
+		switch (g_sThumbLayout)
+			case "0":				
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_THUMBS, TRUE );
+			case "1":                                                    				
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, TRUE );
+			case "2":                                                          				
+				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, TRUE );			
+		endswitch;
+		
+	endif;
+	
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
         
@@ -2013,6 +2084,7 @@ begin
 		
 	NumToStr(svString,g_bMovingPicturesDefault);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
+	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"MOVINGPICTURESTHUMBLAYOUT",REGDB_NUMBER,g_sThumbLayout, -1);
 	
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
 	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVMINIGUIDESIZE",REGDB_NUMBER,g_sTVMiniGuideSize, -1);
