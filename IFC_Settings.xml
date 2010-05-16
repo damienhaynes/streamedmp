@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>240782</id>
-  <defaultcontrol>1</defaultcontrol>
+  <defaultcontrol>18</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:Intelligent Frame Correction</define>
   <define>#header.hover:hover_settings.png</define>
-  <define>#defaultcontrol:1</define>
-  <define>#defaultcontrol.onright:9999</define>
+  <define>#defaultcontrol:18</define>
+  <define>#defaultcontrol.onright:10000</define>
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
@@ -102,7 +102,7 @@
       <id>18</id>
       <description>Scan Interval</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
+      <onleft>18</onleft>
       <onright>#defaultcontrol.onright</onright>
       <align>right</align>
       <onup>9</onup>
@@ -133,8 +133,8 @@
       <id>2</id>
       <description>Detection Counter</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>2</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>18</onup>
       <ondown>3</ondown>
       <posX>754</posX>
@@ -163,8 +163,8 @@
       <id>3</id>
       <description>Min Brightness Treshold</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>3</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>2</onup>
       <ondown>4</ondown>
       <posX>754</posX>
@@ -193,8 +193,8 @@
       <id>4</id>
       <description>Max Brightness Treshold</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>4</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>3</onup>
       <ondown>5</ondown>
       <posX>754</posX>
@@ -223,8 +223,8 @@
       <id>5</id>
       <description>Stabilizer</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>5</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>4</onup>
       <ondown>6</ondown>
       <posX>754</posX>
@@ -253,8 +253,8 @@
       <id>6</id>
       <description>Single Black Bar Height</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>6</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>5</onup>
       <ondown>7</ondown>
       <posX>754</posX>
@@ -283,8 +283,8 @@
       <id>7</id>
       <description>Double Black Bar Height</description>
       <type>spincontrol</type>
-      <onleft>9</onleft>
-      <onright>9</onright>
+      <onleft>7</onleft>
+      <onright>#defaultcontrol.onright</onright>
       <onup>6</onup>
       <ondown>8</ondown>
       <posX>754</posX>
