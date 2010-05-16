@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-    
+
     <control>
       <type>image</type>
       <description>BG</description>
@@ -9,7 +9,7 @@
       <width>1280</width>
       <height>720</height>
     </control>
-    
+
     <control>
       <type>image</type>
       <id>0</id>
@@ -19,7 +19,7 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
-    
+
     <control>
       <type>image</type>
       <id>0</id>
@@ -30,7 +30,7 @@
       <texture>homebladesub.png</texture>
       <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
     </control>
-    
+
     <control>
       <type>image</type>
       <id>0</id>
@@ -41,7 +41,7 @@
       <texture>settingsbg.png</texture>
       <animation effect="slide" time="200" start="-840,0">windowopen</animation>
     </control>
-    
+
     <control>
       <type>image</type>
       <id>0</id>
@@ -52,7 +52,7 @@
       <texture>homebladeleft.png</texture>
       <animation effect="slide" time="100" start="-846,0">windowopen</animation>
     </control>
-    
+
     <control>
       <description>right overlay</description>
       <type>image</type>
@@ -65,17 +65,6 @@
       <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
     
-    <!--control>
-      <type>image</type>
-      <id>0</id>
-      <posX>906</posX>
-      <posY>144</posY>
-      <width>137</width>
-      <height>56</height>
-      <texture>mediastreamlogo.png</texture>
-      <animation effect="fade" time="200" delay="300">windowopen</animation>
-    </control-->
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -86,7 +75,7 @@
       <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
     </control>
-    
+
     <control>
       <type>group</type>
       <description>group element</description>
@@ -96,7 +85,7 @@
       <width>211</width>
       <height>379</height>
       <layout>StackLayout</layout>
-      
+
       <control Style="settingsbutton">
         <description>Wizard</description>
         <type>button</type>
@@ -106,7 +95,7 @@
         <onup>17</onup>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>General</description>
         <type>button</type>
@@ -115,7 +104,7 @@
         <hyperlink>705</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>Screen</description>
         <type>button</type>
@@ -124,7 +113,7 @@
         <hyperlink>9</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>TV</description>
         <type>button</type>
@@ -133,7 +122,7 @@
         <hyperlink>700</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>My Pictures</description>
         <type>button</type>
@@ -142,7 +131,7 @@
         <hyperlink>12</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>Movies</description>
         <type>button</type>
@@ -151,7 +140,7 @@
         <hyperlink>703</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <control Style="settingsbutton">
         <description>My DVD</description>
         <type>button</type>
@@ -160,7 +149,7 @@
         <hyperlink>704</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-           
+
       <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
@@ -169,9 +158,9 @@
         <hyperlink>14</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      
+
       <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-      
+
 
       <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
@@ -179,23 +168,29 @@
         <id>9999</id>
         <label>Skin</label>
         <hyperlink>1962</hyperlink>
-        <ondown>99</ondown>
         <onleft>#defaultcontrol</onleft>
-      </control>       
-      
+      </control>
+
+      <control Style="settingsbutton">
+        <description>Intelligent Frame Correction</description>
+        <type>button</type>
+        <id>10000</id>
+        <label> I.F.C. </label>
+        <onleft>#defaultcontrol</onleft>
+        <hyperlink>240782</hyperlink>
+        <ondown>9991</ondown>
+      </control>
     </control>
-    
-    <control>
-      <description>Settings Title Label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>250</posX>
-      <posY>25</posY>
-      <label>#header.label</label>
-      <font>mediastream16c</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-    
-  </controls>
+      <control>
+        <description>Settings Title Label</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>250</posX>
+        <posY>25</posY>
+        <label>#header.label</label>
+        <font>mediastream16c</font>
+        <textcolor>FFFFFFFF</textcolor>
+        <animation effect="fade" time="200" delay="200">windowopen</animation>
+      </control>
+    </controls>
 </window>

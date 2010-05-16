@@ -169,12 +169,25 @@
         <id>11</id>        
         <label>9100</label>
         <hyperlink>9000</hyperlink>
-        <ondown>99</ondown>
+        <ondown>3</ondown>
       </control>
 
 	</control>
  
     <import>common.time.xml</import>
-    
+
+    <control>
+      <description>TV preview window</description>
+      <type>videowindow</type>
+      <id>99</id>
+      <posX>10</posX>
+      <posY>676</posY>
+      <width>146</width>
+      <height>82</height>
+      <action>18</action>
+      <textureFocus>tv_green_border.png</textureFocus>
+      <onup>5</onup>
+      <visible>no</visible>
+    </control>
   </controls>
 </window>
