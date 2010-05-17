@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9005</id>
+  <defaultcontrol>60</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:109005</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:60</define>
+  <define>#defaultcontrol.onright:10001</define>
+  <controls>
+    
+	<import>common.settings.xml</import>
+    <import>common.time.xml</import>    
+    
+	<control>      
+      <description>buttons</description>
+	  <type>group</type>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      <control>
+        <description>NO KEYPAD OPTIONS</description>
+        <type>label</type>
+        <id>50</id>       
+		<label>9140</label>
+		<onup>17</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaintogglebutton">
+	    <description>Enable Keypad</description>
+        <type>togglebutton</type>
+        <id>60</id>
+        <label>9141</label>		
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmaintogglebutton">
+	    <description>Custom Mapping</description>
+        <type>togglebutton</type>
+        <id>61</id>
+        <label>9142</label>		
+        <onright>#defaultcontrol.onright</onright>
+      </control>	  
+	  <control Style="settingsmainbutton">
+        <description>Invert Display</description>
+        <type>button</type>
+        <id>62</id>
+        <label>9143</label>		
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+    
+  </controls>
+</window>

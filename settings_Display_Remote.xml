@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9006</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:109006</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:50</define>
+  <define>#defaultcontrol.onright:10001</define>
+  <controls>
+    
+	<import>common.settings.xml</import>
+    <import>common.time.xml</import>    
+    
+	<control>      
+      <description>buttons</description>
+	  <type>group</type>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      <control>
+        <description>NO REMOTE OPTIONS</description>
+        <type>label</type>
+        <id>40</id>       
+		<label>9144</label>
+		<onup>17</onup>
+		<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaintogglebutton">
+	    <description>Disable Remote</description>
+        <type>togglebutton</type>
+        <id>50</id>
+        <label>9145</label>
+		<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmaintogglebutton">
+	    <description>Disable Repeat</description>
+        <type>togglebutton</type>
+        <id>51</id>
+        <label>9146</label>
+		<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>	  
+	  <control Style="settingsmainbutton">
+        <description>Repeat Delay</description>
+        <type>selectbutton</type>
+        <id>52</id>
+        <label>9147</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmainbutton">
+        <description>Remote Mapping</description>
+        <type>button</type>
+        <id>53</id>
+        <label>9148</label>
+		<textXOff>35</textXOff>
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+    
+  </controls>
+</window>

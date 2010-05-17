@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9002</id>
+  <defaultcontrol>40</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:109002</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:40</define>
+  <define>#defaultcontrol.onright:10001</define>
+  <controls>    
+    
+	<import>common.settings.xml</import>
+    <import>common.time.xml</import>    
+    
+	<control>      
+      <description>buttons</description>
+	  <type>group</type>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>            
+	  <control Style="settingsmaintogglebutton">        
+        <description>Blank Display with Video</description>
+		<type>togglebutton</type>
+        <id>40</id>
+        <label>9116</label>		
+        <onup>17</onup>
+		<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>      
+      <control Style="settingsmaintogglebutton">
+        <description>Enable Display Actions</description>
+        <type>togglebutton</type>
+        <id>41</id>       
+		<label>9117</label>	
+		<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>      
+      <control Style="settingsmainbutton">
+	    <description>Action Display Time</description>
+        <type>selectbutton</type>
+        <id>42</id>
+        <label>9118</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+        <onright>#defaultcontrol.onright</onright>
+      </control>      
+	  <control Style="settingsmaintogglebutton">
+        <description>Blank Display on Idle</description>
+        <type>togglebutton</type>
+        <id>43</id>
+        <label>9119</label>
+		<textXOff>35</textXOff>
+		<onright>#defaultcontrol.onright</onright>
+      </control>  	  
+      <control Style="settingsmainbutton">
+	    <description>Idle Delay</description>
+        <type>selectbutton</type>
+        <id>44</id>
+        <label>9120</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+        <onright>#defaultcontrol.onright</onright>
+      </control>       
+    </control>
+    
+  </controls>
+</window>
