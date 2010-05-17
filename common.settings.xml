@@ -159,9 +159,6 @@
         <onleft>#defaultcontrol</onleft>
       </control>
 
-      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-
-
       <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
         <type>button</type>
@@ -178,19 +175,32 @@
         <label> I.F.C. </label>
         <onleft>#defaultcontrol</onleft>
         <hyperlink>240782</hyperlink>
+        <ondown>10001</ondown>
+      </control>
+	  
+	  <control Style="settingsbutton">
+        <description>MiniDisplay</description>
+        <type>button</type>
+        <id>10001</id>
+        <label>9100</label>
+        <onleft>#defaultcontrol</onleft>
+        <hyperlink>9000</hyperlink>
         <ondown>9991</ondown>
       </control>
-    </control>
-      <control>
-        <description>Settings Title Label</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>250</posX>
-        <posY>25</posY>
-        <label>#header.label</label>
-        <font>mediastream16c</font>
-        <textcolor>FFFFFFFF</textcolor>
-        <animation effect="fade" time="200" delay="200">windowopen</animation>
-      </control>
-    </controls>
+    
+	</control>
+	
+	<control>
+	  <description>Settings Title Label</description>
+	  <type>label</type>
+	  <id>0</id>
+	  <posX>250</posX>
+	  <posY>25</posY>
+	  <label>#header.label</label>
+	  <font>mediastream16c</font>
+	  <textcolor>FFFFFFFF</textcolor>
+	  <animation effect="fade" time="200" delay="200">windowopen</animation>
+	</control>
+	
+  </controls>
 </window>
