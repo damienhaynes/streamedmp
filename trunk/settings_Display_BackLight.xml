@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>9001</id>
+  <defaultcontrol>65</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:109001</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:65</define>
+  <define>#defaultcontrol.onright:10001</define>
+  <controls>
+    
+	<import>common.settings.xml</import>
+    <import>common.time.xml</import>    
+    
+	<control>      
+      <description>buttons</description>
+	  <type>group</type>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>            
+      <control Style="settingsmainbutton">
+        <description>Red</description>
+        <type>selectbutton</type>
+        <id>65</id>       
+		<label>9112</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+		<onup>17</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+	    <description>Green</description>
+        <type>selectbutton</type>
+        <id>66</id>
+        <label>9113</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmainbutton">
+	    <description>Blue</description>
+        <type>selectbutton</type>
+        <id>67</id>
+        <label>9114</label>
+		<textXOff>45</textXOff>
+        <textXOff2>35</textXOff2>
+        <onright>#defaultcontrol.onright</onright>
+      </control>	  
+	  <control Style="settingsmaintogglebutton">
+        <description>Invert Display</description>
+        <type>togglebutton</type>
+        <id>68</id>
+        <label>9115</label>
+		<textXOff>35</textXOff>
+		<onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+    
+  </controls>
+</window>
