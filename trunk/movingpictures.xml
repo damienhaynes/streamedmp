@@ -189,7 +189,7 @@ multiple view modes.
 		<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>		
 		<animation effect="fade" time="150" delay="0">WindowClose</animation>
 		<visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
-    </control>    
+    </control>
     <control>
 		<description>Plugin Name / Current Category</description>
 		<type>fadelabel</type>      
@@ -219,8 +219,20 @@ multiple view modes.
 		<Duration>0:0:03</Duration>
 		<keepaspectratio>yes</keepaspectratio>		
     </control>	
-		
+	
     <import>common.time.xml</import>
     
+	<control>
+		<description>Playback Indicator</description>
+		<type>image</type>
+		<id>18</id>
+		<posX>0</posX>
+		<posY>0</posY>
+		<width>1280</width>
+		<height>720</height>
+		<texture>black.png</texture>
+		<colordiffuse>50fefaff</colordiffuse>
+    </control>
+	
   </controls>
 </window>
