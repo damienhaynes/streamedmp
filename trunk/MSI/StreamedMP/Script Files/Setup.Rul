@@ -258,7 +258,7 @@ prototype VOID 		ShowControl(STRING, NUMBER);
 prototype VOID		DetectWinLargeFonts();   
 prototype STRING	BoolToString(BOOL); 
 prototype NUMBER	GetVersionDigit(STRING, INT);
-prototype NUMBER 	GetMediaPortalRevision();
+//prototype NUMBER 	GetMediaPortalRevision();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -2262,9 +2262,9 @@ begin
 	
 	// Update VideoOSD.xml to point to correct <import> for mediainfo
 	// This can be removed after RC2
-	if GetMediaPortalRevision() >= VIDEO_OSD_UPDATE then
-		ReplaceLineInFile(STREAMEDMP_SKIN_VIDEOOSD,"<import>videoOSD.mediainfo.xml</import>","<import>videoOSD.mediainfo2.xml</import>");
-	endif;
+	//if GetMediaPortalRevision() >= VIDEO_OSD_UPDATE then
+	//	ReplaceLineInFile(STREAMEDMP_SKIN_VIDEOOSD,"<import>videoOSD.mediainfo.xml</import>","<import>videoOSD.mediainfo2.xml</import>");
+	//endif;
 	
 end;             
 
@@ -2335,12 +2335,12 @@ begin
     
 end;
 
-function NUMBER GetMediaPortalRevision()
-	STRING svVersion;
-begin
-	GetFileVersion(svVersion,"MEDIAPORTAL");
-	return GetVersionDigit(svVersion, 4);	
-end;
+//function NUMBER GetMediaPortalRevision()
+//	STRING svVersion;
+//begin
+//	GetFileVersion(svVersion,"MEDIAPORTAL");
+//	return GetVersionDigit(svVersion, 4);	
+//end;
 
 function NUMBER GetVersionDigit(version, digit)
 	STRING svString;
