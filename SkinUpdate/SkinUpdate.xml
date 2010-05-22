@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StreamedMP>
-  <version>1.1.0.1303</version>
-  <url>http://code.google.com/p/streamedmp/source/browse/trunk/SkinUpdate/SkinUpdate.zip</url>
-  <changelog>List the changes/additions here</changelog>
+  <version>1.1.0.1304</version>
+  <url>http://streamedmp.googlecode.com/svn/trunk/SkinUpdate/SkinUpdate.zip</url>
+  <changelog>
+  	<description>List the changes/additions here</description>
+  	<line>Fix position for weather condition on Day-4 in MyWeather. Note: fonts need revising for when 'Large Font' setting is used as this window heavily uses Mediastream11 font.</line>	
+  	<line>Removed check for earlier version of MediaPortal that adjusts the videoOSD logos. Now that RC3 is released we dont need this check anymore as people should meet the recommended requirement of skin. 
+This also resolves a bug in that logic that was only exposed after RC3 was released because MediaPortal changed there versioning for non-svn releases.</line>	
+  	<line>Added missing InfoService RSS icons</line>	
+  </changelog>
 </StreamedMP>
