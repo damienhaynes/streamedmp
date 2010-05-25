@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <id>196204</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:StreamedMP - Skin Update</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:3</define>
+  <define>#defaultcontrol.onright:9999</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>textarea</description>
+      <type>textbox</type>
+      <id>2</id>
+      <posY>120</posY>
+      <posX>250</posX>
+      <width>550</width>
+      <height>400</height>
+      <spinWidth>37</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1050</spinPosX>
+      <spinPosY>645</spinPosY>
+      <spinAlign>right</spinAlign>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="settingsmainbutton">
+      <description>Do Update</description>
+      <type>button</type>
+      <id>3</id>
+      <label>Download and Update</label>
+      <posX>370</posX>
+      <posY>555</posY>
+      <width>260</width>
+      <height>36</height>
+      <onup>17</onup>
+    </control>
+  </controls>
+</window>

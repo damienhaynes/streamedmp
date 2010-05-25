@@ -34,23 +34,31 @@ namespace StreamedMPConfig
           this.MusicScreens = new System.Windows.Forms.TabPage();
           this.cbShowEqGraphic = new System.Windows.Forms.CheckBox();
           this.cbCdCoverOnly = new System.Windows.Forms.CheckBox();
+          this.VideoScreens = new System.Windows.Forms.TabPage();
+          this.groupBox2 = new System.Windows.Forms.GroupBox();
+          this.minVideoOSD = new System.Windows.Forms.RadioButton();
+          this.fullVideoOSD = new System.Windows.Forms.RadioButton();
           this.MiscScreens = new System.Windows.Forms.TabPage();
+          this.CheckUpdate = new System.Windows.Forms.TabPage();
+          this.label2 = new System.Windows.Forms.Label();
+          this.cbCheckForUpdate = new System.Windows.Forms.CheckBox();
+          this.comboCheckInterval = new System.Windows.Forms.ComboBox();
+          this.cbCheckOnStart = new System.Windows.Forms.CheckBox();
+          this.btCheckForUpdate = new System.Windows.Forms.Button();
+          this.textBox1 = new System.Windows.Forms.TextBox();
           this.aboutTab = new System.Windows.Forms.TabPage();
           this.groupBox1 = new System.Windows.Forms.GroupBox();
           this.compileTime = new System.Windows.Forms.Label();
           this.richTextBox1 = new System.Windows.Forms.RichTextBox();
           this.releaseVersion = new System.Windows.Forms.Label();
           this.label1 = new System.Windows.Forms.Label();
-          this.VideoScreens = new System.Windows.Forms.TabPage();
-          this.groupBox2 = new System.Windows.Forms.GroupBox();
-          this.fullVideoOSD = new System.Windows.Forms.RadioButton();
-          this.minVideoOSD = new System.Windows.Forms.RadioButton();
           this.tabControl1.SuspendLayout();
           this.MusicScreens.SuspendLayout();
-          this.aboutTab.SuspendLayout();
-          this.groupBox1.SuspendLayout();
           this.VideoScreens.SuspendLayout();
           this.groupBox2.SuspendLayout();
+          this.CheckUpdate.SuspendLayout();
+          this.aboutTab.SuspendLayout();
+          this.groupBox1.SuspendLayout();
           this.SuspendLayout();
           // 
           // btCancel
@@ -59,7 +67,7 @@ namespace StreamedMPConfig
           this.btCancel.Location = new System.Drawing.Point(493, 313);
           this.btCancel.Name = "btCancel";
           this.btCancel.Size = new System.Drawing.Size(75, 23);
-          this.btCancel.TabIndex = 5;
+          this.btCancel.TabIndex = 31;
           this.btCancel.Text = "Cancel";
           this.btCancel.UseVisualStyleBackColor = true;
           this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
@@ -70,7 +78,7 @@ namespace StreamedMPConfig
           this.btSave.Location = new System.Drawing.Point(399, 313);
           this.btSave.Name = "btSave";
           this.btSave.Size = new System.Drawing.Size(75, 23);
-          this.btSave.TabIndex = 8;
+          this.btSave.TabIndex = 30;
           this.btSave.Text = "Save";
           this.btSave.UseVisualStyleBackColor = true;
           this.btSave.Click += new System.EventHandler(this.btSave_Click);
@@ -80,6 +88,7 @@ namespace StreamedMPConfig
           this.tabControl1.Controls.Add(this.MusicScreens);
           this.tabControl1.Controls.Add(this.VideoScreens);
           this.tabControl1.Controls.Add(this.MiscScreens);
+          this.tabControl1.Controls.Add(this.CheckUpdate);
           this.tabControl1.Controls.Add(this.aboutTab);
           this.tabControl1.Location = new System.Drawing.Point(12, 52);
           this.tabControl1.Name = "tabControl1";
@@ -120,6 +129,49 @@ namespace StreamedMPConfig
           this.cbCdCoverOnly.Text = "Display CD Cover Only on Music Now Playing Screen";
           this.cbCdCoverOnly.UseVisualStyleBackColor = true;
           // 
+          // VideoScreens
+          // 
+          this.VideoScreens.Controls.Add(this.groupBox2);
+          this.VideoScreens.Location = new System.Drawing.Point(4, 22);
+          this.VideoScreens.Name = "VideoScreens";
+          this.VideoScreens.Size = new System.Drawing.Size(548, 227);
+          this.VideoScreens.TabIndex = 3;
+          this.VideoScreens.Text = "Video Screens";
+          this.VideoScreens.UseVisualStyleBackColor = true;
+          // 
+          // groupBox2
+          // 
+          this.groupBox2.Controls.Add(this.minVideoOSD);
+          this.groupBox2.Controls.Add(this.fullVideoOSD);
+          this.groupBox2.Location = new System.Drawing.Point(11, 20);
+          this.groupBox2.Name = "groupBox2";
+          this.groupBox2.Size = new System.Drawing.Size(521, 35);
+          this.groupBox2.TabIndex = 0;
+          this.groupBox2.TabStop = false;
+          this.groupBox2.Text = "VideoOSD";
+          // 
+          // minVideoOSD
+          // 
+          this.minVideoOSD.AutoSize = true;
+          this.minVideoOSD.Location = new System.Drawing.Point(297, 12);
+          this.minVideoOSD.Name = "minVideoOSD";
+          this.minVideoOSD.Size = new System.Drawing.Size(86, 17);
+          this.minVideoOSD.TabIndex = 1;
+          this.minVideoOSD.TabStop = true;
+          this.minVideoOSD.Text = "Minimal OSD";
+          this.minVideoOSD.UseVisualStyleBackColor = true;
+          // 
+          // fullVideoOSD
+          // 
+          this.fullVideoOSD.AutoSize = true;
+          this.fullVideoOSD.Location = new System.Drawing.Point(106, 12);
+          this.fullVideoOSD.Name = "fullVideoOSD";
+          this.fullVideoOSD.Size = new System.Drawing.Size(97, 17);
+          this.fullVideoOSD.TabIndex = 0;
+          this.fullVideoOSD.TabStop = true;
+          this.fullVideoOSD.Text = "Full Video OSD";
+          this.fullVideoOSD.UseVisualStyleBackColor = true;
+          // 
           // MiscScreens
           // 
           this.MiscScreens.Location = new System.Drawing.Point(4, 22);
@@ -129,6 +181,83 @@ namespace StreamedMPConfig
           this.MiscScreens.TabIndex = 1;
           this.MiscScreens.Text = "Misc Screens";
           this.MiscScreens.UseVisualStyleBackColor = true;
+          // 
+          // CheckUpdate
+          // 
+          this.CheckUpdate.Controls.Add(this.label2);
+          this.CheckUpdate.Controls.Add(this.cbCheckForUpdate);
+          this.CheckUpdate.Controls.Add(this.comboCheckInterval);
+          this.CheckUpdate.Controls.Add(this.cbCheckOnStart);
+          this.CheckUpdate.Controls.Add(this.btCheckForUpdate);
+          this.CheckUpdate.Controls.Add(this.textBox1);
+          this.CheckUpdate.Location = new System.Drawing.Point(4, 22);
+          this.CheckUpdate.Name = "CheckUpdate";
+          this.CheckUpdate.Size = new System.Drawing.Size(548, 227);
+          this.CheckUpdate.TabIndex = 4;
+          this.CheckUpdate.Text = "Update";
+          this.CheckUpdate.UseVisualStyleBackColor = true;
+          // 
+          // label2
+          // 
+          this.label2.AutoSize = true;
+          this.label2.Location = new System.Drawing.Point(273, 126);
+          this.label2.Name = "label2";
+          this.label2.Size = new System.Drawing.Size(30, 13);
+          this.label2.TabIndex = 5;
+          this.label2.Text = "Time";
+          // 
+          // cbCheckForUpdate
+          // 
+          this.cbCheckForUpdate.AutoSize = true;
+          this.cbCheckForUpdate.Location = new System.Drawing.Point(16, 126);
+          this.cbCheckForUpdate.Name = "cbCheckForUpdate";
+          this.cbCheckForUpdate.Size = new System.Drawing.Size(110, 17);
+          this.cbCheckForUpdate.TabIndex = 2;
+          this.cbCheckForUpdate.Text = "Check for Update";
+          this.cbCheckForUpdate.UseVisualStyleBackColor = true;
+          // 
+          // comboCheckInterval
+          // 
+          this.comboCheckInterval.FormattingEnabled = true;
+          this.comboCheckInterval.Items.AddRange(new object[] {
+            "Daily",
+            "Weekly",
+            "Monthly"});
+          this.comboCheckInterval.Location = new System.Drawing.Point(131, 126);
+          this.comboCheckInterval.Name = "comboCheckInterval";
+          this.comboCheckInterval.Size = new System.Drawing.Size(121, 21);
+          this.comboCheckInterval.TabIndex = 4;
+          // 
+          // cbCheckOnStart
+          // 
+          this.cbCheckOnStart.AutoSize = true;
+          this.cbCheckOnStart.Location = new System.Drawing.Point(16, 87);
+          this.cbCheckOnStart.Name = "cbCheckOnStart";
+          this.cbCheckOnStart.Size = new System.Drawing.Size(224, 17);
+          this.cbCheckOnStart.TabIndex = 1;
+          this.cbCheckOnStart.Text = "Check for update when MediaPortal starts";
+          this.cbCheckOnStart.UseVisualStyleBackColor = true;
+          // 
+          // btCheckForUpdate
+          // 
+          this.btCheckForUpdate.Location = new System.Drawing.Point(176, 191);
+          this.btCheckForUpdate.Name = "btCheckForUpdate";
+          this.btCheckForUpdate.Size = new System.Drawing.Size(160, 23);
+          this.btCheckForUpdate.TabIndex = 8;
+          this.btCheckForUpdate.Text = "Check for Skin Update";
+          this.btCheckForUpdate.UseVisualStyleBackColor = true;
+          this.btCheckForUpdate.Click += new System.EventHandler(this.btCheckForUpdate_Click);
+          // 
+          // textBox1
+          // 
+          this.textBox1.Location = new System.Drawing.Point(16, 15);
+          this.textBox1.Multiline = true;
+          this.textBox1.Name = "textBox1";
+          this.textBox1.ReadOnly = true;
+          this.textBox1.Size = new System.Drawing.Size(508, 54);
+          this.textBox1.TabIndex = 0;
+          this.textBox1.Text = "This screen will allow you to check if a skin update is available, download and i" +
+              "nstall. You can also configue this to be an automatic process if required.";
           // 
           // aboutTab
           // 
@@ -195,49 +324,6 @@ namespace StreamedMPConfig
           this.label1.TabIndex = 10;
           this.label1.Text = "StreamedMP Skin Configuration";
           // 
-          // VideoScreens
-          // 
-          this.VideoScreens.Controls.Add(this.groupBox2);
-          this.VideoScreens.Location = new System.Drawing.Point(4, 22);
-          this.VideoScreens.Name = "VideoScreens";
-          this.VideoScreens.Size = new System.Drawing.Size(548, 227);
-          this.VideoScreens.TabIndex = 3;
-          this.VideoScreens.Text = "Video Screens";
-          this.VideoScreens.UseVisualStyleBackColor = true;
-          // 
-          // groupBox2
-          // 
-          this.groupBox2.Controls.Add(this.minVideoOSD);
-          this.groupBox2.Controls.Add(this.fullVideoOSD);
-          this.groupBox2.Location = new System.Drawing.Point(11, 20);
-          this.groupBox2.Name = "groupBox2";
-          this.groupBox2.Size = new System.Drawing.Size(521, 35);
-          this.groupBox2.TabIndex = 0;
-          this.groupBox2.TabStop = false;
-          this.groupBox2.Text = "VideoOSD";
-          // 
-          // fullVideoOSD
-          // 
-          this.fullVideoOSD.AutoSize = true;
-          this.fullVideoOSD.Location = new System.Drawing.Point(106, 12);
-          this.fullVideoOSD.Name = "fullVideoOSD";
-          this.fullVideoOSD.Size = new System.Drawing.Size(97, 17);
-          this.fullVideoOSD.TabIndex = 0;
-          this.fullVideoOSD.TabStop = true;
-          this.fullVideoOSD.Text = "Full Video OSD";
-          this.fullVideoOSD.UseVisualStyleBackColor = true;
-          // 
-          // minVideoOSD
-          // 
-          this.minVideoOSD.AutoSize = true;
-          this.minVideoOSD.Location = new System.Drawing.Point(297, 12);
-          this.minVideoOSD.Name = "minVideoOSD";
-          this.minVideoOSD.Size = new System.Drawing.Size(86, 17);
-          this.minVideoOSD.TabIndex = 1;
-          this.minVideoOSD.TabStop = true;
-          this.minVideoOSD.Text = "Minimal OSD";
-          this.minVideoOSD.UseVisualStyleBackColor = true;
-          // 
           // ConfigurationForm
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,12 +339,14 @@ namespace StreamedMPConfig
           this.tabControl1.ResumeLayout(false);
           this.MusicScreens.ResumeLayout(false);
           this.MusicScreens.PerformLayout();
-          this.aboutTab.ResumeLayout(false);
-          this.groupBox1.ResumeLayout(false);
-          this.groupBox1.PerformLayout();
           this.VideoScreens.ResumeLayout(false);
           this.groupBox2.ResumeLayout(false);
           this.groupBox2.PerformLayout();
+          this.CheckUpdate.ResumeLayout(false);
+          this.CheckUpdate.PerformLayout();
+          this.aboutTab.ResumeLayout(false);
+          this.groupBox1.ResumeLayout(false);
+          this.groupBox1.PerformLayout();
           this.ResumeLayout(false);
           this.PerformLayout();
 
@@ -283,6 +371,13 @@ namespace StreamedMPConfig
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton minVideoOSD;
         private System.Windows.Forms.RadioButton fullVideoOSD;
+        private System.Windows.Forms.TabPage CheckUpdate;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboCheckInterval;
+        private System.Windows.Forms.CheckBox cbCheckOnStart;
+        private System.Windows.Forms.Button btCheckForUpdate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbCheckForUpdate;
 
     }
 }

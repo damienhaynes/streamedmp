@@ -1,0 +1,37 @@
+<window>
+  <id>196202</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:StreamedMP - Setup - Video</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9999</define>
+  <controls>
+
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+
+   
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>159</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmaintogglebutton">
+        <description>Video OSD Min/Full</description>
+        <type>togglebutton</type>
+        <id>2</id>
+        <onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>2</onup>
+        <ondown>99</ondown>
+      </control>    
+    </control>
+        
+  </controls>
+</window>

@@ -5,21 +5,38 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using MediaPortal.Configuration;
-using System.Diagnostics;
+using System.Xml;
+using System.IO;
 using System.Reflection;
+using Microsoft.Win32;
+using System.Security;
+using System.Diagnostics;
+using System.Net;
+using System.Threading;
+using ICSharpCode.SharpZipLib.Zip;
 
 namespace StreamedMPConfig
 {
   public partial class ConfigurationForm : Form
   {
+    private DateTimePicker timePicker;
+
+
     public ConfigurationForm()
     {
       InitializeComponent();
+      SkinInfo.GetMediaPortalSkinPath();
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
       compileTime.Text += " " + buildDate.ToString() + " GMT";
+
+      timePicker = new DateTimePicker();
+      timePicker.Format = DateTimePickerFormat.Time;
+      timePicker.ShowUpDown = true;
+      timePicker.Location = new Point(309, 123);
+      timePicker.Width = 100;
+      CheckUpdate.Controls.Add(timePicker);
 
     }
 
@@ -29,6 +46,10 @@ namespace StreamedMPConfig
       StreamedMPConfig.cdCoverOnly = cbCdCoverOnly.Checked;
       StreamedMPConfig.showEqGraphic = cbShowEqGraphic.Checked;
       StreamedMPConfig.fullVideoOSD = fullVideoOSD.Checked;
+      StreamedMPConfig.checkOnStart = cbCheckOnStart.Checked;
+      StreamedMPConfig.checkForUpdate = cbCheckForUpdate.Checked;
+      StreamedMPConfig.checkInterval = comboCheckInterval.Text;
+      StreamedMPConfig.checkTime = timePicker.Value;
       settings.Save();
       this.Close();
     }
@@ -58,6 +79,15 @@ namespace StreamedMPConfig
         fullVideoOSD.Checked = false;
         minVideoOSD.Checked = true;
       }
+      cbCheckOnStart.Checked = StreamedMPConfig.checkOnStart;
+      cbCheckForUpdate.Checked = StreamedMPConfig.checkForUpdate;
+      if (StreamedMPConfig.checkForUpdate)
+      {
+        cbCheckForUpdate.Checked = StreamedMPConfig.checkForUpdate;
+        comboCheckInterval.Text = StreamedMPConfig.checkInterval;
+        timePicker.Value = StreamedMPConfig.checkTime;
+
+      }
     }
 
     private static DateTime getLinkerTimeStamp(string filePath)
@@ -72,6 +102,16 @@ namespace StreamedMPConfig
       }
       int secondsSince1970 = BitConverter.ToInt32(b, BitConverter.ToInt32(b, PeHeaderOffset) + LinkerTimestampOffset);
       return new DateTime(1970, 1, 1, 0, 0, 0).AddSeconds(secondsSince1970);
+    }
+
+    private void btCheckForUpdate_Click(object sender, EventArgs e)
+    {
+      checkForUpdate.checkIfUpdate();
+
+      if (checkForUpdate.SkinVersion().CompareTo(checkForUpdate.newVersion) < 0)
+      {
+        updateFound.displayDetail();
+      }
     }
   }
 }
