@@ -1,0 +1,46 @@
+<window>
+  <id>196201</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:StreamedMP - Setup - Music</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9999</define>
+  <controls>
+
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+
+   
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>159</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      
+      <control Style="settingsmaintogglebutton">
+        <description>CD Cover Obly in Now Playing</description>
+        <type>togglebutton</type>
+        <id>2</id>
+        <onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>17</onup>
+        <ondown>3</ondown>
+      </control>
+
+      <control Style="settingsmaintogglebutton">
+        <description>Display default EQ Graphic</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <onleft>3</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>2</onup>
+      </control>   
+    </control>
+        
+  </controls>
+</window>
