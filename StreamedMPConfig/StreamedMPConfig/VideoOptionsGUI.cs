@@ -25,7 +25,7 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region Core Functions
+    #region Public methods
 
     public override bool Init()
     {
@@ -36,6 +36,10 @@ namespace StreamedMPConfig
     {
       settings.Load();
     }
+
+    #endregion
+
+    #region Base overrides
 
     protected override void OnPageLoad()
     {
@@ -56,8 +60,6 @@ namespace StreamedMPConfig
         StreamedMPConfig.fullVideoOSD = true;
       settings.Save();
     }
-
     #endregion
-
   }
 }
