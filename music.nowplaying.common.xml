@@ -28,10 +28,11 @@ This file should contain the details view
       <id>0</id>
       <posX>23</posX>
       <posY>395</posY>
-      <width>755</width>
+      <width>410</width>
       <height>26</height>
       <label>#Play.Current.Artist</label>
       <font>mediastream16tc</font>
+	  <scrollStartDelaySec>30</scrollStartDelaySec>
     </control>
     <control>
       <type>fadelabel</type>
@@ -39,10 +40,11 @@ This file should contain the details view
       <id>0</id>
       <posX>23</posX>
       <posY>428</posY>
-      <width>430</width>
+      <width>410</width>
       <height>26</height>
       <label>#Play.Current.Title</label>
       <font>mediastream14tc</font>
+	  <scrollStartDelaySec>30</scrollStartDelaySec>
     </control>
     <control>
       <type>fadelabel</type>
@@ -54,6 +56,7 @@ This file should contain the details view
       <height>26</height>
       <label>#Play.Current.Album</label>
       <font>mediastream12c</font>
+	  <scrollStartDelaySec>30</scrollStartDelaySec>
     </control>
 
     <control> 
@@ -65,7 +68,8 @@ This file should contain the details view
       <width>90</width> 
       <height>26</height> 
       <label>435</label> 
-      <font>mediastream12c</font> 
+      <font>mediastream12c</font>
+	  <visible>!string.equals(#Play.Current.Track,)</visible>
     </control> 
     <control>
       <type>fadelabel</type>
@@ -77,6 +81,7 @@ This file should contain the details view
       <height>26</height>
       <label>#Play.Current.Track   |</label>
       <font>mediastream12c</font>
+	  <visible>!string.equals(#Play.Current.Track,)</visible>
     </control>
     
     <control> 
@@ -88,7 +93,8 @@ This file should contain the details view
       <width>90</width> 
       <height>26</height> 
       <label>201</label> 
-      <font>mediastream12c</font> 
+      <font>mediastream12c</font>
+	  <visible>!string.equals(#Play.Current.Year,)</visible>
     </control>  
     <control>
       <type>fadelabel</type>
@@ -211,6 +217,7 @@ This file should contain the details view
       <label>#Play.Next.Title</label>
       <font>mediastream12</font>
       <textcolor>ff909090</textcolor>
+	  <scrollStartDelaySec>30</scrollStartDelaySec>
     </control>
     <control>
       <type>fadelabel</type>
@@ -223,6 +230,7 @@ This file should contain the details view
       <label>#Play.Next.Artist</label>
       <font>mediastream12</font>
       <textcolor>ff909090</textcolor>
+	  <scrollStartDelaySec>30</scrollStartDelaySec>
     </control>
     <control>
       <description>music logo</description>
@@ -285,6 +293,7 @@ This file should contain the details view
       <width>430</width>
       <label>Best Tracks For Tag</label>
       <font>mediastream12tc</font>
+	  <scrollStartDelaySec>60</scrollStartDelaySec>	  
     </control>
     <control>
       <type>listcontrol</type>
