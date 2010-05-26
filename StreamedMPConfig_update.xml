@@ -11,35 +11,57 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
     <control>
-      <description>textarea</description>
+    	
+
+        	
+    <description>textarea</description>
       <type>textbox</type>
       <id>2</id>
-      <posY>120</posY>
+      <posY>150</posY>
       <posX>250</posX>
       <width>550</width>
-      <height>400</height>
-      <spinWidth>37</spinWidth>
+      <height>450</height>
+      <onup>2</onup>
+      <onright>2</onright>
+      <ondown>3</ondown>
+      <onleft>3</onleft>    
+      <spinWidth>50</spinWidth>
       <spinHeight>37</spinHeight>
-      <spinPosX>1050</spinPosX>
-      <spinPosY>645</spinPosY>
+      <spinPosX>700</spinPosX>
+      <spinPosY>580</spinPosY>
       <spinAlign>right</spinAlign>
+      <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    <control Style="settingsmainbutton">
+
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>570</posX>
+      <posY>583</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>control.isvisible(3)</visible>
+    </control>      
+
+    
+    <control>
       <description>Do Update</description>
       <type>button</type>
       <id>3</id>
       <label>Download and Update</label>
-      <posX>370</posX>
-      <posY>555</posY>
+      <posX>250</posX>
+      <posY>580</posY>
       <width>260</width>
-      <height>36</height>
-      <onup>17</onup>
-    </control>
+      <onup>2</onup>
+      <onright>2</onright>
+      <ondown>3</ondown>
+      <onleft>3</onleft>
+    </control>  
   </controls>
 </window>

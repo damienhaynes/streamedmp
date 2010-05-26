@@ -26,6 +26,7 @@ namespace StreamedMPConfig
     {
       InitializeComponent();
       SkinInfo.GetMediaPortalSkinPath();
+      
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
@@ -106,12 +107,8 @@ namespace StreamedMPConfig
 
     private void btCheckForUpdate_Click(object sender, EventArgs e)
     {
-      checkForUpdate.checkIfUpdate();
-
-      if (checkForUpdate.SkinVersion().CompareTo(checkForUpdate.newVersion) < 0)
-      {
+      if (checkForUpdate.checkIfUpdate())
         updateFound.displayDetail();
-      }
     }
   }
 }
