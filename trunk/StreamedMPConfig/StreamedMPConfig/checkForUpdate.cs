@@ -14,6 +14,8 @@ using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
+using MediaPortal.GUI.Library;
+using MediaPortal.Dialogs;
 
 namespace StreamedMPConfig
 {
@@ -76,7 +78,7 @@ namespace StreamedMPConfig
 
     public static void installUpdate(string downloadURL)
     {
-
+      buildDownloadForm();
       optionDownloadURL = downloadURL;
       optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
       destinationPath = SkinInfo.mpPaths.skinBasePath;
@@ -107,10 +109,7 @@ namespace StreamedMPConfig
             downloadForm.Invoke(new UpdateProgessCallback(checkForUpdate.UpdateProgress), new object[] { strLocal.Length, fileSize });
           }
         }
-        catch
-        {
-          MessageBox.Show("Error in Download");
-        }
+        catch {}
         finally
         {
           webResponse.Close();
@@ -120,6 +119,7 @@ namespace StreamedMPConfig
         }
       }
     }
+
 
     private static void UpdateProgress(Int64 BytesRead, Int64 TotalBytes)
     {
@@ -136,6 +136,7 @@ namespace StreamedMPConfig
       thrDownload.Abort();
       pBar.Value = 0;
       System.IO.File.Delete(optionDownloadPath);
+      downloadForm.Hide();
     }
 
     private static void extractAndCleanup()
@@ -149,18 +150,21 @@ namespace StreamedMPConfig
 
       downloadForm.Hide();
       pBar.Value = 0;
-
-
     }
 
 
     // This section checks to see if there is a later version of the editor
-    public static void checkIfUpdate()
+    public static bool checkIfUpdate()
     {
       try
       {
-        //string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/SkinUpdate/SkinUpdate.xml";
-        string xmlURL = "G:\\SkinDev\\StreamedMP\\StreamedMP\\SkinUpdate\\SkinUpdate.xml";
+        string xmlURL = null;
+        // Allow for testing
+        if (System.IO.File.Exists("C:\\SkinUpdate.xml"))
+          xmlURL = "C:\\SkinUpdate.xml";
+        else
+          xmlURL = "http://streamedmp.googlecode.com/svn/trunk/SkinUpdate/SkinUpdate.xml";
+
         reader = new XmlTextReader(xmlURL);
         reader.MoveToContent();
         string elementName = "";
@@ -183,7 +187,10 @@ namespace StreamedMPConfig
                     url = reader.Value;
                     break;
                   case "changelog":
-                    changeLogFile = reader.Value;
+                    if (System.IO.File.Exists("C:\\ChangeLog.rtf"))
+                      changeLogFile = "C:\\ChangeLog.rtf";
+                    else
+                      changeLogFile = reader.Value;
                     break;
                 }
               }
@@ -199,7 +206,10 @@ namespace StreamedMPConfig
       {
         if (reader != null) reader.Close();
       }
-
+      if (checkForUpdate.SkinVersion().CompareTo(newVersion) < 0)
+        return true;
+      else
+        return false;
     }
 
     public static Version SkinVersion()

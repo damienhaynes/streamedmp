@@ -52,10 +52,9 @@ namespace StreamedMPConfig
       changeLog.Height = 200;
       changeLog.Multiline = true;
       changeLog.WordWrap = true;
-      changeLog.ReadOnly = true; 
+      changeLog.ReadOnly = true;
 
-      WebClient client = new WebClient();
-      client.DownloadFile(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+      downloadChangeLog();
       changeLog.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"),RichTextBoxStreamType.RichText);
       
       changeLog.ScrollBars = RichTextBoxScrollBars.Vertical;
@@ -82,6 +81,17 @@ namespace StreamedMPConfig
       HideCaret(changlogForm.Handle);
 
 
+    }
+
+    public static void downloadChangeLog()
+    {
+      if (checkForUpdate.changeLogFile.StartsWith("C:\\"))
+        System.IO.File.Copy( checkForUpdate.changeLogFile, Path.Combine( Path.GetTempPath(),"ChangeLog.rtf"),true );
+      else
+      {
+      WebClient client = new WebClient();
+      client.DownloadFile(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+      }
     }
 
     private static void okButton_Click(object sender, EventArgs e)
