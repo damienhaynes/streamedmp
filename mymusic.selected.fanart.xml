@@ -9,7 +9,6 @@
       <posY>0</posY>
       <width>1</width>
     </control>
-
     <control>
       <description>DUMMY CONTROL FOR SELECTED FANART 2 VISIBILITY CONDITION</description>
       <type>label</type>
@@ -25,7 +24,9 @@
       <posX>0</posX>
       <posY>0</posY>
       <width>1</width>
+      <visible>no</visible>
     </control>
+
     <control>
       <description>DUMMY CONTROLL FOR PLAYING FANART 1 VISIBILITY CONDITION</description>
       <type>label</type>
@@ -34,7 +35,6 @@
       <posY>0</posY>
       <width>1</width>
     </control>
-
     <control>
       <description>DUMMY CONTROLL FOR PLAYING FANART 2 VISIBILITY CONDITION</description>
       <type>label</type>
@@ -43,7 +43,6 @@
       <posY>0</posY>
       <width>1</width>
     </control>
-
     <control>
       <description>DUMMY CONTROLL FOR PLAYING FANART AVAILABILITY CONDITION</description>
       <type>label</type>
@@ -53,6 +52,7 @@
       <width>1</width>
       <visible>no</visible>
     </control>
+
     <control>
       <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
       <id>0</id>
@@ -62,7 +62,8 @@
       <width>1280</width>
       <height>720</height>
       <texture>hover_my music.png</texture>
-      <visible>[string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
+      <!-- <visible>[string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible> -->
+      <visible>!control.isvisible(91919293) | !plugin.isenabled(Fanart Handler)</visible>
 			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
 			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
