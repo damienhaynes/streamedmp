@@ -1,26 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
-using System.Reflection;
-using Microsoft.Win32;
-using System.Security;
-using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
-using MediaPortal.GUI.Library;
-using MediaPortal.Dialogs;
 
 namespace StreamedMPConfig
 {
   public class checkForUpdate
   {
+    #region Variables
+
     private static Thread thrDownload;
     private static Stream strResponse;
     private static Stream strLocal;
@@ -44,37 +36,9 @@ namespace StreamedMPConfig
     public static string changeLogFile;
     private static XmlTextReader reader;
 
+    #endregion
 
-
-    private static void buildDownloadForm()
-    {
-      downloadForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      downloadForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      downloadForm.Name = "frmDownload";
-      downloadForm.ControlBox = true;
-      downloadForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      downloadForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      downloadForm.StartPosition = FormStartPosition.CenterScreen;
-      downloadForm.Width = 400;
-      downloadForm.Height = 120;
-      pBar.Width = 350;
-      downloadForm.MaximizeBox = false;
-      downloadForm.MinimizeBox = false;
-      downloadForm.TopMost = true;
-      pBar.Location = new System.Drawing.Point(25, 10);
-      downloadForm.Controls.Add(pBar);
-
-      pLabel.Text = "Starting Download";
-      pLabel.Location = new System.Drawing.Point(25, 40);
-      pLabel.Width = 350;
-      downloadForm.Controls.Add(pLabel);
-
-      downloadStop.Text = "Cancel Install";
-      downloadStop.Width = 150;
-      downloadStop.Location = new System.Drawing.Point(230, 65);
-      downloadStop.Click += new System.EventHandler(downloadStop_Click);
-      downloadForm.Controls.Add(downloadStop);
-    }
+    #region Public methods
 
     public static void installUpdate(string downloadURL)
     {
@@ -88,70 +52,6 @@ namespace StreamedMPConfig
       thrDownload.Start();
       downloadForm.Show();
     }
-
-    private static void Download()
-    {
-      using (WebClient wcDownload = new WebClient())
-      {
-        try
-        {
-          webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
-          webRequest.Credentials = CredentialCache.DefaultCredentials;
-          webResponse = (HttpWebResponse)webRequest.GetResponse();
-          Int64 fileSize = webResponse.ContentLength;
-          strResponse = wcDownload.OpenRead(optionDownloadURL);
-          strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
-          int bytesSize = 0;
-          byte[] downBuffer = new byte[2048];
-          while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
-          {
-            strLocal.Write(downBuffer, 0, bytesSize);
-            downloadForm.Invoke(new UpdateProgessCallback(checkForUpdate.UpdateProgress), new object[] { strLocal.Length, fileSize });
-          }
-        }
-        catch {}
-        finally
-        {
-          webResponse.Close();
-          strResponse.Close();
-          strLocal.Close();
-          downloadForm.Invoke(new MethodInvoker(extractAndCleanup));
-        }
-      }
-    }
-
-
-    private static void UpdateProgress(Int64 BytesRead, Int64 TotalBytes)
-    {
-      PercentProgress = Convert.ToInt32((BytesRead * 100) / TotalBytes);
-      pBar.Value = PercentProgress;
-      pLabel.Text = "Downloaded " + BytesRead + " out of " + TotalBytes + " (" + PercentProgress + "%)";
-    }
-
-    private static void downloadStop_Click(object sender, EventArgs e)
-    {
-      webResponse.Close();
-      strResponse.Close();
-      strLocal.Close();
-      thrDownload.Abort();
-      pBar.Value = 0;
-      System.IO.File.Delete(optionDownloadPath);
-      downloadForm.Hide();
-    }
-
-    private static void extractAndCleanup()
-    {
-      if (System.IO.File.Exists(optionDownloadPath))
-      {
-        FastZip fz = new FastZip();
-        fz.ExtractZip(optionDownloadPath, destinationPath, "");
-        System.IO.File.Delete(optionDownloadPath);
-      }
-
-      downloadForm.Hide();
-      pBar.Value = 0;
-    }
-
 
     // This section checks to see if there is a later version of the editor
     public static bool checkIfUpdate()
@@ -251,5 +151,102 @@ namespace StreamedMPConfig
       return curVersion;
     }
 
+    #endregion
+
+    #region Private methods
+
+    static void buildDownloadForm()
+    {
+      downloadForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      downloadForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      downloadForm.Name = "frmDownload";
+      downloadForm.ControlBox = true;
+      downloadForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      downloadForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      downloadForm.StartPosition = FormStartPosition.CenterScreen;
+      downloadForm.Width = 400;
+      downloadForm.Height = 120;
+      pBar.Width = 350;
+      downloadForm.MaximizeBox = false;
+      downloadForm.MinimizeBox = false;
+      downloadForm.TopMost = true;
+      pBar.Location = new System.Drawing.Point(25, 10);
+      downloadForm.Controls.Add(pBar);
+
+      pLabel.Text = "Starting Download";
+      pLabel.Location = new System.Drawing.Point(25, 40);
+      pLabel.Width = 350;
+      downloadForm.Controls.Add(pLabel);
+
+      downloadStop.Text = "Cancel Install";
+      downloadStop.Width = 150;
+      downloadStop.Location = new System.Drawing.Point(230, 65);
+      downloadStop.Click += new System.EventHandler(downloadStop_Click);
+      downloadForm.Controls.Add(downloadStop);
+    }
+
+    static void Download()
+    {
+      using (WebClient wcDownload = new WebClient())
+      {
+        try
+        {
+          webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
+          webRequest.Credentials = CredentialCache.DefaultCredentials;
+          webResponse = (HttpWebResponse)webRequest.GetResponse();
+          Int64 fileSize = webResponse.ContentLength;
+          strResponse = wcDownload.OpenRead(optionDownloadURL);
+          strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
+          int bytesSize = 0;
+          byte[] downBuffer = new byte[2048];
+          while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
+          {
+            strLocal.Write(downBuffer, 0, bytesSize);
+            downloadForm.Invoke(new UpdateProgessCallback(checkForUpdate.UpdateProgress), new object[] { strLocal.Length, fileSize });
+          }
+        }
+        catch { }
+        finally
+        {
+          webResponse.Close();
+          strResponse.Close();
+          strLocal.Close();
+          downloadForm.Invoke(new MethodInvoker(extractAndCleanup));
+        }
+      }
+    }
+
+    static void UpdateProgress(Int64 BytesRead, Int64 TotalBytes)
+    {
+      PercentProgress = Convert.ToInt32((BytesRead * 100) / TotalBytes);
+      pBar.Value = PercentProgress;
+      pLabel.Text = "Downloaded " + BytesRead + " out of " + TotalBytes + " (" + PercentProgress + "%)";
+    }
+
+    static void downloadStop_Click(object sender, EventArgs e)
+    {
+      webResponse.Close();
+      strResponse.Close();
+      strLocal.Close();
+      thrDownload.Abort();
+      pBar.Value = 0;
+      System.IO.File.Delete(optionDownloadPath);
+      downloadForm.Hide();
+    }
+
+    static void extractAndCleanup()
+    {
+      if (System.IO.File.Exists(optionDownloadPath))
+      {
+        FastZip fz = new FastZip();
+        fz.ExtractZip(optionDownloadPath, destinationPath, "");
+        System.IO.File.Delete(optionDownloadPath);
+      }
+
+      downloadForm.Hide();
+      pBar.Value = 0;
+    }
+
+    #endregion
   }
 }

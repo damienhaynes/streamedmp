@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Reflection;
-using System.Threading;
-using System.Xml.Serialization;
 using MediaPortal.Configuration;
-using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
-using MediaPortal.Player;
 using MediaPortal.Util;
 
 namespace StreamedMPConfig
 {
-  internal static class settings
+  class settings
   {
-
+    #region Public methods
+ 
     public static void Load()
     {
       Log.Info("StreamedMPConfig: Settings.Load()");
@@ -65,5 +58,7 @@ namespace StreamedMPConfig
         xmlwriter.SetValue("StreamedMPConfig", "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
       }
     }
+
+    #endregion
   }
 }

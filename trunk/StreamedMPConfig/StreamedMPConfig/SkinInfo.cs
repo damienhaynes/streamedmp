@@ -1,26 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
-using System.Reflection;
 using Microsoft.Win32;
-using System.Security;
-using System.Diagnostics;
-using System.Net;
-using System.Threading;
-using ICSharpCode.SharpZipLib.Zip;
 
 namespace StreamedMPConfig
 {
   class SkinInfo
   {
-
-    public static editorPaths mpPaths = new editorPaths();
+    #region Enums
 
     public enum errorCode
     {
@@ -30,31 +19,87 @@ namespace StreamedMPConfig
       readError,
       major,
     };
-    
-    public static void GetMediaPortalSkinPath()
+
+    #endregion
+
+    #region Structs
+
+    public struct editorPaths
     {
-      GetMediaPortalPath(ref mpPaths);
-      if (mpPaths.sMPbaseDir == null)
-        return;
-      readMediaPortalDirs();
+      public string sMPbaseDir;
+      public string skinBasePath;
+      public string cacheBasePath;
+      public string configBasePath;
+      public string streamedMPpath;
+      public string pluginPath;
+      public string backgroundPath;
+      public string fanartBasePath;
+      public string thumbsPath;
     }
 
-    public static void GetMediaPortalPath(ref editorPaths mpPaths)
+    #endregion
+
+    #region Variables
+    // Private Variables
+    // Protected Variables
+    // Public Variables
+    public static editorPaths mpPaths = new editorPaths();
+
+    #endregion
+
+    #region Public methods
+
+    public static void GetMediaPortalSkinPath()
+    {
+      SkinInfo si = new SkinInfo();
+      si.GetMediaPortalPath(ref mpPaths);
+      if (mpPaths.sMPbaseDir == null)
+        return;
+      si.readMediaPortalDirs();
+    }
+
+    public static string readMPConfiguration(string sectionName, string entryName)
+    {
+      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(fMPdirs))
+      {
+        MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
+        return null;
+      }
+      doc.Load(fMPdirs);
+      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+      foreach (XmlNode node in nodeList)
+      {
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+        if (innerNode.InnerText == sectionName)
+        {
+          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
+          if (path != null)
+          {
+            entryName = path.InnerText;
+            return entryName;
+          }
+        }
+      }
+      return null;
+    }
+
+    #endregion
+
+    #region Private methods
+
+    void GetMediaPortalPath(ref editorPaths mpPaths)
     {
       string sRegRoot = "SOFTWARE";
-
-
       if (IntPtr.Size > 4)
         sRegRoot += "\\Wow6432Node";
-
       try
       {
-
         RegistryKey MediaPortalKey = Registry.LocalMachine.OpenSubKey(sRegRoot + "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal\\", false);
         if (MediaPortalKey != null)
         {
           mpPaths.sMPbaseDir = MediaPortalKey.GetValue("InstallPath").ToString();
-
         }
         else
         {
@@ -62,8 +107,6 @@ namespace StreamedMPConfig
           if (MediaPortalKey != null)
           {
             mpPaths.sMPbaseDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
-
-
           }
           else
             mpPaths.sMPbaseDir = null;
@@ -76,7 +119,7 @@ namespace StreamedMPConfig
       }
     }
 
-    public static void readMediaPortalDirs()
+    void readMediaPortalDirs()
     {
       // Check if user MediaPortalDirs.xml exists in Personal Directory
       string PersonalFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
@@ -146,7 +189,7 @@ namespace StreamedMPConfig
       mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin + "\\";
     }
 
-    public static string GetMediaPortalDir(string path)
+    string GetMediaPortalDir(string path)
     {
       string CommonAppData = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
       string AppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -169,34 +212,7 @@ namespace StreamedMPConfig
       return path;
     }
 
-    public static string readMPConfiguration(string sectionName, string entryName)
-    {
-      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
-      {
-        MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
-        return null;
-      }
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-        if (innerNode.InnerText == sectionName)
-        {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-          if (path != null)
-          {
-            entryName = path.InnerText;
-            return entryName;
-          }
-        }
-      }
-      return null;
-    }
-
-    public static string configuredSkin
+    string configuredSkin
     {
       get
       {
@@ -204,18 +220,6 @@ namespace StreamedMPConfig
       }
     }
 
-
-    public struct editorPaths
-    {
-      public string sMPbaseDir;
-      public string skinBasePath;
-      public string cacheBasePath;
-      public string configBasePath;
-      public string streamedMPpath;
-      public string pluginPath;
-      public string backgroundPath;
-      public string fanartBasePath;
-      public string thumbsPath;
-    }
+    #endregion
   }
 }

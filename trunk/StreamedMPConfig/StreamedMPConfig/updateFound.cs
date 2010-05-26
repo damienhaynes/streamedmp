@@ -1,37 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Xml;
 using System.IO;
-using System.Reflection;
-using Microsoft.Win32;
-using System.Security;
-using System.Diagnostics;
 using System.Net;
 using System.Runtime.InteropServices;
 
-
 namespace StreamedMPConfig
 {
-  public static class updateFound
+  class updateFound
   {
+    #region Variables
 
-
+    // Private Variables
     private static Form changlogForm = new Form();
     private static RichTextBox changeLog = new RichTextBox();
- 
     private static Button okButton = new Button();
     private static Button cancelButton = new Button();
-
+    // Protected Variables
+    // Public Variables
     [DllImport("user32.dll", EntryPoint = "HideCaret")]
     public static extern long HideCaret(IntPtr hwnd);
 
+    #endregion
+
+    #region Public methods
+
     public static void displayDetail()
-    {    
+    {
       changlogForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       changlogForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       changlogForm.Name = "frmDownloadDetail";
@@ -55,8 +50,8 @@ namespace StreamedMPConfig
       changeLog.ReadOnly = true;
 
       downloadChangeLog();
-      changeLog.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"),RichTextBoxStreamType.RichText);
-      
+      changeLog.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), RichTextBoxStreamType.RichText);
+
       changeLog.ScrollBars = RichTextBoxScrollBars.Vertical;
       changeLog.SelectionStart = 0;
 
@@ -69,30 +64,31 @@ namespace StreamedMPConfig
       okButton.Focus();
       changlogForm.Controls.Add(okButton);
 
-
       cancelButton.Text = "Cancel";
       cancelButton.Width = 120;
       cancelButton.Location = new System.Drawing.Point(460, 240);
       cancelButton.Click += new System.EventHandler(cancelButton_Click);
       changlogForm.Controls.Add(cancelButton);
 
-
       changlogForm.Show();
       HideCaret(changlogForm.Handle);
-
-
     }
 
     public static void downloadChangeLog()
     {
       if (checkForUpdate.changeLogFile.StartsWith("C:\\"))
-        System.IO.File.Copy( checkForUpdate.changeLogFile, Path.Combine( Path.GetTempPath(),"ChangeLog.rtf"),true );
+        System.IO.File.Copy(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), true);
       else
       {
-      WebClient client = new WebClient();
-      client.DownloadFile(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+        WebClient client = new WebClient();
+        client.DownloadFile(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
       }
     }
+
+
+    #endregion
+
+    #region Private methods
 
     private static void okButton_Click(object sender, EventArgs e)
     {
@@ -104,6 +100,6 @@ namespace StreamedMPConfig
       changlogForm.Hide();
     }
 
-
+    #endregion
   }
 }

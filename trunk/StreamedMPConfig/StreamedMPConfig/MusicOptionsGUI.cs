@@ -5,7 +5,7 @@ using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
-  public class MusicOptionsGUI : GUIWindow
+ public class MusicOptionsGUI : GUIWindow
   {
     #region Skin Connection
 
@@ -27,7 +27,7 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region Core Functions
+    #region Public methods
 
     public override bool Init()
     {
@@ -38,6 +38,10 @@ namespace StreamedMPConfig
     {
       settings.Load();
     }
+
+    #endregion
+
+    #region Base overrides
 
     protected override void OnPageLoad()
     {
@@ -56,6 +60,5 @@ namespace StreamedMPConfig
     }
 
     #endregion
-
   }
 }
