@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<window>
+  <!-- BEGIN GENERATED ID CODE-->
+  <!-- BEGIN GENERATED DEFAULTCONTROL CODE-->
+  <!-- BEGIN GENERATED DEFINITIONS -->
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>yes</disabletopbar>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <controls>
+    <import>common.fanartcontrols.basichome.xml</import>
+    <control>
+      <description>DEFAULT BACKGROUND</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>background.png</texture>
+    </control>
+    <control>
+      <description>Exit Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Exit MediaPortal</label>
+      <visible allowhiddenfocus="true">Control.HasFocus(7777)</visible>
+    </control>
+    <control>
+      <description>Restart Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Restart MediaPortal</label>
+      <visible>Control.HasFocus(7888)</visible>
+    </control>
+    <control>
+      <description>Shutdown Label</description>
+      <type>label</type>
+      <id>0</id>
+      <width>340</width>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>513</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>Shutdown Menu</label>
+      <visible>Control.HasFocus(7999)</visible>
+    </control>
+    <control>
+      <description>Shutdown menu hbar</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>485</posX>
+      <posY>335</posY>
+      <width>381</width>
+      <height>1</height>
+      <texture>hbar1white.png</texture>
+      <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
+    </control>
+    <!-- BEGIN GENERATED TOPBAR CODE -->
+    <control>
+      <description>BACKGROUND LOADING</description>
+      <id>0</id>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>LoadingBackdrop.png</texture>
+      <animation effect="fade" start="100" end="0" time="4000" reversible="false">WindowOpen</animation>
+      <animation effect="fade" start="0" end="0" time="10" reversible="false">WindowClose</animation>
+    </control>
+    <!-- BEGIN GENERATED BACKGROUND CODE-->
+    <!-- BEGIN GENERATED MENUGRAPHICS CODE-->
+    <!-- BEGIN GENERATED RSS TICKER CODE-->
+    <!-- BEGIN GENERATED TWITTER CODE-->
+    <!-- BEGIN GENERATED BUTTON CODE-->
+    <!-- BEGIN CROWDING FIX CODE-->
+    <!-- BEGIN CONTEXT LABELS CODE-->
+    <!-- BEGIN GENERATED FIVE DAY WEATHER CODE -->
+    <!-- BEGIN GENERATED WEATHER SUMMARY CODE-->
+    <!-- BEGIN COMMON TIME CODE-->
+    <!-- BEGIN FANART SCRAPER CODE-->
+    <import>common.overlay.basichome.xml</import>
+  </controls>
+</window>
