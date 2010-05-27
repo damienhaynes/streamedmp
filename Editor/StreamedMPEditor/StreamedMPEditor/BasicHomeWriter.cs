@@ -1032,7 +1032,7 @@ namespace StreamedMPEditor
                     rawXML.AppendLine("\t<height>24</height>");
                     rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
                     rawXML.AppendLine("\t<posX>60</posX>");
-                    rawXML.AppendLine("\t<texture>InfoService\defaultFeedRSS.png</texture>");
+                    rawXML.AppendLine("\t<texture>InfoService\\defaultFeedRSS.png</texture>");
                     rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
                     rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                     rawXML.AppendLine("</control>");
@@ -3419,7 +3419,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<width>28</width>");
             rawXML.AppendLine("\t<posY>" + (int.Parse(txtMenuPos.Text) - (basicHomeValues.offsetTwitterImage - 5)).ToString() + "</posY>");
             rawXML.AppendLine("\t<posX>330</posX>");
-            rawXML.AppendLine("\t<texture>InfoService\defaultTwitter.png</texture>");
+            rawXML.AppendLine("\t<texture>InfoService\\defaultTwitter.png</texture>");
             rawXML.AppendLine("\t<keepaspectratio>yes</keepaspectratio>");
             rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
             rawXML.AppendLine("\t\t\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,320" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
@@ -3475,7 +3475,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t<width>20</width>");
             rawXML.AppendLine("\t<posY>16</posY>");
             rawXML.AppendLine("\t<posX>149</posX>");
-            rawXML.AppendLine("\t<texture>InfoService\defaultTwitter.png</texture>");
+            rawXML.AppendLine("\t<texture>InfoService\\defaultTwitter.png</texture>");
             rawXML.AppendLine("\t<keepaspectratio>yes</keepaspectratio>");
             rawXML.AppendLine("\t<visible>plugin.isenabled(InfoService)</visible>");
             rawXML.AppendLine("</control>");

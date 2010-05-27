@@ -6,6 +6,8 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
+using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
@@ -53,7 +55,7 @@ namespace StreamedMPConfig
       downloadForm.Show();
     }
 
-    // This section checks to see if there is a later version of the editor
+    // This section checks to see if there is a later version of the skin
     public static bool checkIfUpdate()
     {
       try
@@ -100,7 +102,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        MessageBox.Show("Exception while attempting to read upgrade xml file\n\n" + e.Message);
+        Log.Error("Exception while attempting to read upgrade xml file\n\n" + e.Message);
       }
       finally
       {
@@ -142,7 +144,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        MessageBox.Show("Exception while attempting to read upgrade xml file\n\n" + e.Message);
+        Log.Error("Exception while attempting to read upgrade xml file\n\n" + e.Message);
       }
       finally
       {
@@ -242,7 +244,6 @@ namespace StreamedMPConfig
         fz.ExtractZip(optionDownloadPath, destinationPath, "");
         System.IO.File.Delete(optionDownloadPath);
       }
-
       downloadForm.Hide();
       pBar.Value = 0;
     }

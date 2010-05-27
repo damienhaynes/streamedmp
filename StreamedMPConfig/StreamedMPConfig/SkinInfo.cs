@@ -58,33 +58,6 @@ namespace StreamedMPConfig
       si.readMediaPortalDirs();
     }
 
-    public static string readMPConfiguration(string sectionName, string entryName)
-    {
-      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
-      {
-        MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
-        return null;
-      }
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-        if (innerNode.InnerText == sectionName)
-        {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-          if (path != null)
-          {
-            entryName = path.InnerText;
-            return entryName;
-          }
-        }
-      }
-      return null;
-    }
-
     #endregion
 
     #region Private methods
@@ -210,6 +183,33 @@ namespace StreamedMPConfig
         path += @"\";
       }
       return path;
+    }
+
+    string readMPConfiguration(string sectionName, string entryName)
+    {
+      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(fMPdirs))
+      {
+        MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
+        return null;
+      }
+      doc.Load(fMPdirs);
+      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+      foreach (XmlNode node in nodeList)
+      {
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+        if (innerNode.InnerText == sectionName)
+        {
+          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
+          if (path != null)
+          {
+            entryName = path.InnerText;
+            return entryName;
+          }
+        }
+      }
+      return null;
     }
 
     string configuredSkin
