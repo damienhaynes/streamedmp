@@ -12,10 +12,8 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)]
-    protected GUITextControl cmc_ChangeLog = null;
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)]
-    protected GUIButtonControl btDoUpdate = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)] protected GUITextControl cmc_ChangeLog = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)] protected GUIButtonControl btDoUpdate = null;
 
     #endregion
 
@@ -33,7 +31,91 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region Core Functions
+    #region Private methods
+
+    void installUpdateGUI(string downloadURL)
+    {
+      SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
+      optionDownloadURL = downloadURL;
+      optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
+      destinationPath = SkinInfo.mpPaths.skinBasePath;
+
+      GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
+      progressDialog.Reset();
+      progressDialog.DisplayProgressBar = true;
+      progressDialog.ShowWaitCursor = false;
+      progressDialog.SetHeading("StreamedMP Update Download & Install");
+      progressDialog.Percentage = 0;
+      progressDialog.SetLine(1, string.Empty);
+      progressDialog.SetLine(2, string.Empty);
+      progressDialog.StartModal(skinUpdate.GetID);
+      GUIWindowManager.Process();
+
+      using (WebClient wcDownload = new WebClient())
+      {
+        try
+        {
+          int upd = 1;
+          int bytesSize = 0;
+          byte[] downBuffer = new byte[2048];
+
+          webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
+          webRequest.Credentials = CredentialCache.DefaultCredentials;
+          webResponse = (HttpWebResponse)webRequest.GetResponse();
+          Int64 fileSize = webResponse.ContentLength;
+          strResponse = wcDownload.OpenRead(optionDownloadURL);
+          strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
+          while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
+          {
+            strLocal.Write(downBuffer, 0, bytesSize);
+            PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
+            progressDialog.Percentage = PercentProgress;
+            progressDialog.SetLine(2, "Downloaded " + strLocal.Length.ToString() + " out of " + fileSize.ToString() + " (" + PercentProgress.ToString() + "%)");
+            // Only Update the progress bar every 1MB of downloaded data,
+            // any more offen slows the download to much.
+            if (upd > 50)
+            {
+              GUIWindowManager.Process();
+              upd = 0;
+              if (progressDialog.IsCanceled)
+                break;
+            }
+            ++upd;
+          }
+        }
+        catch (Exception e)
+        {
+          Log.Error("Error in Download" + e.Message);
+        }
+        finally
+        {
+          webResponse.Close();
+          strResponse.Close();
+          strLocal.Close();
+          if (System.IO.File.Exists(optionDownloadPath) && !progressDialog.IsCanceled)
+          {
+            FastZip fz = new FastZip();
+            fz.ExtractZip(optionDownloadPath, destinationPath, "");
+            System.IO.File.Delete(optionDownloadPath);
+          }
+          progressDialog.Close();
+        }
+      }
+    }
+
+
+    #endregion
+
+    #region Public methods
+
+    public SkinUpdateGUI()
+    {
+      settings.Load();
+    }
+
+    #endregion
+
+    #region Base overrides
 
     public override int GetID
     {
@@ -45,14 +127,10 @@ namespace StreamedMPConfig
       {
       }
     }
+
     public override bool Init()
     {
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_update.xml");
-    }
-
-    public SkinUpdateGUI()
-    {
-      settings.Load();
     }
 
     protected override void OnPageLoad()
@@ -94,75 +172,6 @@ namespace StreamedMPConfig
     protected override void OnPageDestroy(int new_windowId)
     {
       settings.Save();
-    }
-
-
-    private void installUpdateGUI(string downloadURL)
-    {
-      SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-      optionDownloadURL = downloadURL;
-      optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
-      destinationPath = SkinInfo.mpPaths.skinBasePath;
-
-      GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
-      progressDialog.Reset();
-      progressDialog.DisplayProgressBar = true;
-      progressDialog.ShowWaitCursor = false;
-      //progressDialog.DisableCancel(true);
-      progressDialog.SetHeading("StreamedMP Update Download & Install");
-      progressDialog.Percentage = 0;
-      progressDialog.SetLine(1, string.Empty);
-      progressDialog.SetLine(2, string.Empty);
-      progressDialog.StartModal(skinUpdate.GetID);
-      GUIWindowManager.Process();
-
-      using (WebClient wcDownload = new WebClient())
-      {
-        try
-        {
-          webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
-          webRequest.Credentials = CredentialCache.DefaultCredentials;
-          webResponse = (HttpWebResponse)webRequest.GetResponse();
-          Int64 fileSize = webResponse.ContentLength;
-          strResponse = wcDownload.OpenRead(optionDownloadURL);
-          strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
-          int upd = 0;
-          int bytesSize = 0;
-          byte[] downBuffer = new byte[2048];
-          while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
-          {
-            strLocal.Write(downBuffer, 0, bytesSize);
-            progressDialog.Percentage = Convert.ToInt32((strLocal.Length * 100) / fileSize);
-            progressDialog.SetLine(2, "Downloaded " + strLocal.Length.ToString() + " out of " + fileSize.ToString() + " (" + PercentProgress.ToString() + "%)");
-            ++upd;            
-            // Only Update the progress bar every 1MB of downloaded data, any more offen slows the download to much.
-            if (upd > 50)
-            {
-              GUIWindowManager.Process();
-              upd = 0;
-              if (progressDialog.IsCanceled)
-                break;
-            }
-          }
-        }
-        catch (Exception e)
-        {
-          Log.Error("Error in Download" + e.Message);
-        }
-        finally
-        {
-          webResponse.Close();
-          strResponse.Close();
-          strLocal.Close();
-          if (System.IO.File.Exists(optionDownloadPath) && !progressDialog.IsCanceled)
-          {
-            FastZip fz = new FastZip();
-            fz.ExtractZip(optionDownloadPath, destinationPath, "");
-            System.IO.File.Delete(optionDownloadPath);
-          }
-          progressDialog.Close();
-        }
-      }
     }
 
     #endregion
