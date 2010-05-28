@@ -10,11 +10,13 @@ using System.Xml;
 using System.IO;
 using System.Reflection;
 using System.Diagnostics;
+using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
 
 
 namespace StreamedMPEditor
 {
-    public partial class streamedMpEditor : Form
+  public partial class streamedMpEditor : Form, IPlugin, ISetupForm
     {
         #region Declares and Enums
 
@@ -879,6 +881,127 @@ namespace StreamedMPEditor
         {
           setBasicHomeValues();
         }
+
+
+        #region IPlugin Interface
+
+        public void Start()
+        {
+        }
+
+        public void Stop()
+        {
+        }
+
+        #endregion
+
+
+        #region ISetupForm Members
+
+        /// <summary>
+        /// Returns the name of the plugin which is shown in the plugin menu
+        /// </summary>
+        /// <returns>the name of the plugin which is shown in the plugin menu</returns>
+        public string PluginName()
+        {
+          return "StreamedMP BasicHome Editor";
+        }
+
+        /// <summary>
+        /// Returns the description of the plugin which is shown in the plugin menu
+        /// </summary>
+        /// <returns>the description of the plugin which is shown in the plugin menu</returns>
+        public string Description()
+        {
+          return "BasicHome Editor";
+        }
+
+        /// <summary>
+        /// Returns the author of the plugin which is shown in the plugin menu
+        /// </summary>
+        /// <returns>the author of the plugin which is shown in the plugin menu</returns>
+        public string Author()
+        {
+          return "The StreamedMP Team";
+        }
+
+        /// <summary>
+        /// Indicates whether plugin can be enabled/disabled
+        /// </summary>
+        public void ShowPlugin()
+        {
+          //ConfigurationForm configurationForm = new ConfigurationForm();
+          //configurationForm.ShowDialog();
+
+          //SMPEditor startSMPEditor = new SMPEditor();
+          //startSMPEditor.ShowDialog();
+
+          streamedMpEditor startEditor = new streamedMpEditor();
+          startEditor.ShowDialog();
+        }
+
+        /// <summary>
+        /// Indicates whether plugin can be enabled/disabled
+        /// </summary>
+        /// <returns>true if the plugin can be enabled/disabled</returns>
+        public bool CanEnable()
+        {
+          return false;
+        }
+
+        /// <summary>
+        /// Get Windows-ID
+        /// </summary>
+        /// <returns>unique id for this plugin</returns>
+        public int GetWindowId()
+        {
+          // WindowID of windowplugin belonging to this setup
+          // enter your own unique code
+          return -1;
+        }
+
+        /// <summary>
+        /// Indicates if plugin is enabled by default
+        /// </summary>
+        /// <returns>true if this plugin is enabled by default</returns>
+        public bool DefaultEnabled()
+        {
+          return true;
+        }
+
+        /// <summary>
+        /// indicates if a plugin has its own setup screen
+        /// </summary>
+        /// <returns>true if the plugin has its own setup screen</returns>
+        public bool HasSetup()
+        {
+          return true;
+        }
+
+        /// <summary>
+        /// no Home for this plugin, return false
+        /// </summary>
+        /// <param name="strButtonText"></param>
+        /// <param name="strButtonImage"></param>
+        /// <param name="strButtonImageFocus"></param>
+        /// <param name="strPictureImage"></param>
+        /// <returns></returns>
+        public bool GetHome(out string strButtonText, out string strButtonImage,
+                            out string strButtonImageFocus, out string strPictureImage)
+        {
+          strButtonText = String.Empty;
+          strButtonImage = String.Empty;
+          strButtonImageFocus = String.Empty;
+          strPictureImage = String.Empty;
+          return false;
+        }
+
+
+        #endregion
+
+
+
+
     }
 }
 
