@@ -105,25 +105,8 @@ namespace StreamedMPEditor
         downloadForm.BringToFront();
       }
     }
-    private void installEditor(string downloadURL)
-    {
-      if (!downloadActive)
-      {
-        optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMPEditor.msi";
-        optionDownloadPath = Path.Combine(Path.GetTempPath(), "StreamedMPEditor.msi");
-        destinationPath = mpPaths.skinBasePath;
-        downloadForm.Text = "Download and Install StreamedMPEditor Update";
-        pLabel.Text = "Starting Download";
-        thrDownload = new Thread(Download);
-        thrDownload.Start();
-        downloadForm.Show();
-      }
-      else
-      {
-        DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
-        downloadForm.BringToFront();
-      }
-    }
+
+    
     private void Download()
     {
       downloadActive = true;
@@ -185,16 +168,6 @@ namespace StreamedMPEditor
 
     private void extractAndCleanup()
     {
-      if (optionDownloadPath.Contains("StreamedMPEditor.msi"))
-      {
-        ProcessStartInfo startCommand = new ProcessStartInfo();
-        startCommand.FileName = "msiexec.exe";
-        startCommand.Arguments = "/i " + optionDownloadPath + " REINSTALL=ALL REINSTALLMODE=vomus";
-        startCommand.CreateNoWindow = true;
-        Process.Start(startCommand);
-        System.Environment.Exit(1); 
-      }
-
       if (System.IO.File.Exists(optionDownloadPath))
       {
         FastZip fz = new FastZip();
@@ -243,52 +216,6 @@ namespace StreamedMPEditor
         gbSplashDL.Visible = false;
         GetSplashScreens();
       }
-
-    }
-
-
-    // This section checks to see if there is a later version of the editor
-    public void checkForUpdate()
-    {
-      try
-      {
-        string xmlURL = "http://streamedmp.googlecode.com/svn/trunk/Editor/StreamedMpEditor_Version2.xml";
-        reader = new XmlTextReader(xmlURL);
-        reader.MoveToContent();
-        string elementName = "";
-        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "StreamedMpEditor"))
-        {
-          while (reader.Read())
-          {
-            if (reader.NodeType == XmlNodeType.Element)
-              elementName = reader.Name;
-            else
-            { 
-              if ((reader.NodeType == XmlNodeType.Text) && (reader.HasValue))
-              {
-                switch (elementName)
-                {
-                  case "version":
-                    newVersion = new Version(reader.Value);
-                    break;
-                  case "url":
-                    url = reader.Value;
-                    break;
-                }
-              }
-            }
-          }
-        }
-      }
-      catch (Exception e)
-      {
-        showError("Exception while attempting to read upgrade xml file\n\n" + e.Message, errorCode.major);
-      }
-      finally
-      {
-        if (reader != null) reader.Close();
-      }
-
     }
   }
 }

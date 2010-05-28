@@ -115,6 +115,7 @@
       this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
       this.rbRssNoImage = new System.Windows.Forms.RadioButton();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+      this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
       this.gbScreenRes = new System.Windows.Forms.GroupBox();
       this.detectedHD = new System.Windows.Forms.Label();
@@ -190,7 +191,6 @@
       this.infoSkinpath = new System.Windows.Forms.Label();
       this.infoSkinName = new System.Windows.Forms.Label();
       this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-      this.cbAllowUpdateCheck = new System.Windows.Forms.CheckBox();
       this.generateMenu = new System.Windows.Forms.Button();
       this.btnClearCache = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
@@ -208,10 +208,8 @@
       this.helpToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.groupBox5 = new System.Windows.Forms.GroupBox();
-      this.btCheckForUpdate = new System.Windows.Forms.Button();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1258,6 +1256,17 @@
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
       // 
+      // cbAnimateBackground
+      // 
+      this.cbAnimateBackground.AutoSize = true;
+      this.cbAnimateBackground.Location = new System.Drawing.Point(20, 76);
+      this.cbAnimateBackground.Name = "cbAnimateBackground";
+      this.cbAnimateBackground.Size = new System.Drawing.Size(157, 17);
+      this.cbAnimateBackground.TabIndex = 43;
+      this.cbAnimateBackground.Text = "Animate Background Image";
+      this.toolTip1.SetToolTip(this.cbAnimateBackground, "This animates the backgound image slighty making slide and pulse.\r\n");
+      this.cbAnimateBackground.UseVisualStyleBackColor = true;
+      // 
       // cbOverlayFanart
       // 
       this.cbOverlayFanart.AutoSize = true;
@@ -2051,16 +2060,6 @@
       this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
       this.imageList1.Images.SetKeyName(0, "help.png");
       // 
-      // cbAllowUpdateCheck
-      // 
-      this.cbAllowUpdateCheck.AutoSize = true;
-      this.cbAllowUpdateCheck.Location = new System.Drawing.Point(617, 58);
-      this.cbAllowUpdateCheck.Name = "cbAllowUpdateCheck";
-      this.cbAllowUpdateCheck.Size = new System.Drawing.Size(109, 17);
-      this.cbAllowUpdateCheck.TabIndex = 10;
-      this.cbAllowUpdateCheck.Text = "Check on Startup";
-      this.cbAllowUpdateCheck.UseVisualStyleBackColor = true;
-      // 
       // generateMenu
       // 
       this.generateMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2074,7 +2073,7 @@
       // 
       // btnClearCache
       // 
-      this.btnClearCache.Location = new System.Drawing.Point(454, 27);
+      this.btnClearCache.Location = new System.Drawing.Point(588, 25);
       this.btnClearCache.Name = "btnClearCache";
       this.btnClearCache.Size = new System.Drawing.Size(148, 20);
       this.btnClearCache.TabIndex = 2;
@@ -2151,7 +2150,7 @@
       // cboClearCache
       // 
       this.cboClearCache.AutoSize = true;
-      this.cboClearCache.Location = new System.Drawing.Point(454, 58);
+      this.cboClearCache.Location = new System.Drawing.Point(588, 56);
       this.cboClearCache.Name = "cboClearCache";
       this.cboClearCache.Size = new System.Drawing.Size(145, 17);
       this.cboClearCache.TabIndex = 3;
@@ -2188,8 +2187,6 @@
       // 
       // groupBox5
       // 
-      this.groupBox5.Controls.Add(this.cbAllowUpdateCheck);
-      this.groupBox5.Controls.Add(this.btCheckForUpdate);
       this.groupBox5.Controls.Add(this.lbActiveSplashScreen);
       this.groupBox5.Controls.Add(this.pbActiveSplashScreen);
       this.groupBox5.Controls.Add(this.cboClearCache);
@@ -2201,16 +2198,6 @@
       this.groupBox5.TabIndex = 50;
       this.groupBox5.TabStop = false;
       this.groupBox5.Text = "StreamedMP BasicHome Editor";
-      // 
-      // btCheckForUpdate
-      // 
-      this.btCheckForUpdate.Location = new System.Drawing.Point(617, 27);
-      this.btCheckForUpdate.Name = "btCheckForUpdate";
-      this.btCheckForUpdate.Size = new System.Drawing.Size(136, 20);
-      this.btCheckForUpdate.TabIndex = 6;
-      this.btCheckForUpdate.Text = "Check for Update";
-      this.btCheckForUpdate.UseVisualStyleBackColor = true;
-      this.btCheckForUpdate.Click += new System.EventHandler(this.btCheckForUpdate_Click);
       // 
       // lbActiveSplashScreen
       // 
@@ -2230,17 +2217,6 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
-      // 
-      // cbAnimateBackground
-      // 
-      this.cbAnimateBackground.AutoSize = true;
-      this.cbAnimateBackground.Location = new System.Drawing.Point(20, 76);
-      this.cbAnimateBackground.Name = "cbAnimateBackground";
-      this.cbAnimateBackground.Size = new System.Drawing.Size(157, 17);
-      this.cbAnimateBackground.TabIndex = 43;
-      this.cbAnimateBackground.Text = "Animate Background Image";
-      this.toolTip1.SetToolTip(this.cbAnimateBackground, "This animates the backgound image slighty making slide and pulse.\r\n");
-      this.cbAnimateBackground.UseVisualStyleBackColor = true;
       // 
       // streamedMpEditor
       // 
@@ -2510,8 +2486,6 @@
     private System.Windows.Forms.Label lbActiveSplashScreen;
     private System.Windows.Forms.PictureBox pbActiveSplashScreen;
     private System.Windows.Forms.CheckBox cbHideFanartScraper;
-    private System.Windows.Forms.CheckBox cbAllowUpdateCheck;
-    private System.Windows.Forms.Button btCheckForUpdate;
     private System.Windows.Forms.CheckBox cbOverlayFanart;
     private System.Windows.Forms.CheckBox cbAnimateBackground;
   }

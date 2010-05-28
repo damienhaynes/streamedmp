@@ -79,6 +79,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Utils, Version=2.2.7.22194, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\HTPC\MediaPortal\Utils.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="imagehandling.cs">
@@ -161,6 +165,8 @@
     <EmbeddedResource Include="rtfFiles\introduction.rtf" />
     <EmbeddedResource Include="rtfFiles\style3.rtf" />
     <EmbeddedResource Include="rtfFiles\style2.rtf" />
+    <EmbeddedResource Include="Resources\SMPEditor.png" />
+    <EmbeddedResource Include="Resources\SMPEditorDisabled.png" />
     <Content Include="Resources\up.png" />
     <EmbeddedResource Include="xmlFiles\defaultusermenuprofile.xml" />
     <EmbeddedResource Include="xmlFiles\usermenuprofile.xml" />
@@ -196,7 +202,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>rem call $(TargetDir)merge.bat</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)StreamedMPEditor.dll D:\HTPC\MediaPortal\plugins\process</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
