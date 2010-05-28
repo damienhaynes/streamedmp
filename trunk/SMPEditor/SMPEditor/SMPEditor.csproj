@@ -23,7 +23,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\Plugins\process\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,7 +43,7 @@
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\plugins\Windows\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\PluginDependencies\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="MediaPortal.Support, Version=1.0.7.22193, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -168,8 +168,8 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>call $(TargetDir)merge.bat
-copy $(targetDir)SMPEditor.dll D:\HTPC\MediaPortal\plugins\process</PostBuildEvent>
-    <PreBuildEvent>rem subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PostBuildEvent>REM call $(TargetDir)merge.bat
+</PostBuildEvent>
+    <PreBuildEvent>REM subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
