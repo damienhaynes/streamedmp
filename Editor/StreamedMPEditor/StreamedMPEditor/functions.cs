@@ -45,7 +45,7 @@ namespace StreamedMPEditor
         enableFiveDayWeather.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
         if (infoServiceVer.CompareTo(isSeparatorVer) >= 0)
-          useInfoServiceSeparator  = true;
+          useInfoServiceSeparator = true;
       }
       else
       {
@@ -58,7 +58,7 @@ namespace StreamedMPEditor
         enableTwitter.Checked = false;
         enableTwitter.Enabled = false;
         enableTwitter.Text += " (Disabled - Version 1.2.0.0 or greater required)";
-     }
+      }
 
       // Display some Info
       infoSkinName.Text = configuredSkin + " (" + getStreamedMPVer() + ")";
@@ -73,10 +73,10 @@ namespace StreamedMPEditor
         infoserviceOptions.Text = "InfoService Options";
 
 
-        if (pluginEnabled("Fanart Handler"))
-            cbItemFanartHandlerEnable.Visible = true;
-        else
-            cbItemFanartHandlerEnable.Visible = false;
+      if (pluginEnabled("Fanart Handler"))
+        cbItemFanartHandlerEnable.Visible = true;
+      else
+        cbItemFanartHandlerEnable.Visible = false;
     }
 
     private string getStreamedMPVer()
@@ -154,7 +154,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);          
+            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);
           }
         }
         // get the Thumbs base path
@@ -196,7 +196,7 @@ namespace StreamedMPEditor
 
       return path;
     }
- 
+
 
 
     private bool pluginEnabled(string pluginName)
@@ -240,64 +240,64 @@ namespace StreamedMPEditor
 
     private string configuredSkin
     {
-        get
-        {
-            return readMPConfiguration("skin", "name");
-        }
+      get
+      {
+        return readMPConfiguration("skin", "name");
+      }
     }
 
     private string readMPConfiguration(string sectionName, string entryName)
     {
-        string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-        XmlDocument doc = new XmlDocument();
-        if (!File.Exists(fMPdirs))
-        {
-            showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
-            return null;
-        }
-        doc.Load(fMPdirs);
-        XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-        foreach (XmlNode node in nodeList)
-        {
-
-            XmlNode innerNode = node.Attributes.GetNamedItem("name");
-            if (innerNode.InnerText == sectionName)
-            {
-                XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-                if (path != null)
-                {
-                    entryName = path.InnerText;
-                    return entryName;
-                }
-            }
-        }
+      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(fMPdirs))
+      {
+        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
         return null;
+      }
+      doc.Load(fMPdirs);
+      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+      foreach (XmlNode node in nodeList)
+      {
+
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+        if (innerNode.InnerText == sectionName)
+        {
+          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
+          if (path != null)
+          {
+            entryName = path.InnerText;
+            return entryName;
+          }
+        }
+      }
+      return null;
     }
 
-    private void writeMPConfiguration(string sectionName, string entryName,string entryValue)
+    private void writeMPConfiguration(string sectionName, string entryName, string entryValue)
     {
-        string xmlFileName = mpPaths.configBasePath + "MediaPortal.xml";
-        XmlDocument doc = new XmlDocument();
-        if (!File.Exists(xmlFileName))
-        {
-            showError("Can't find MediaPortal.xml \r\r" + xmlFileName, errorCode.major);
-        }
-        doc.Load(xmlFileName);
-        XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-        foreach (XmlNode node in nodeList)
-        {
+      string xmlFileName = mpPaths.configBasePath + "MediaPortal.xml";
+      XmlDocument doc = new XmlDocument();
+      if (!File.Exists(xmlFileName))
+      {
+        showError("Can't find MediaPortal.xml \r\r" + xmlFileName, errorCode.major);
+      }
+      doc.Load(xmlFileName);
+      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
+      foreach (XmlNode node in nodeList)
+      {
 
-            XmlNode innerNode = node.Attributes.GetNamedItem("name");
-            if (innerNode.InnerText == sectionName)
-            {
-                XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-                if (path != null)
-                {
-                    path.InnerText = entryValue;
-                }
-            }
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+        if (innerNode.InnerText == sectionName)
+        {
+          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
+          if (path != null)
+          {
+            path.InnerText = entryValue;
+          }
         }
-        doc.Save(xmlFileName);
+      }
+      doc.Save(xmlFileName);
 
     }
 
@@ -363,12 +363,12 @@ namespace StreamedMPEditor
             int k = 0;
             foreach (menuItem mnuItem in menuItems)
             {
-                if (p.id == mnuItem.hyperlink)
-                {
-                    itemsOnMenubar.SelectedIndex = k;
-                    break;
-                }
-                k++;
+              if (p.id == mnuItem.hyperlink)
+              {
+                itemsOnMenubar.SelectedIndex = k;
+                break;
+              }
+              k++;
             }
             break;
           }
@@ -448,29 +448,29 @@ namespace StreamedMPEditor
 
     private void verticalStyle_Click(object sender, EventArgs e)
     {
-        if (menuStyle != chosenMenuStyle.verticalStyle)
-        {
-            menuStyle = chosenMenuStyle.verticalStyle;
-            syncEditor(sync.editing);
-        }
+      if (menuStyle != chosenMenuStyle.verticalStyle)
+      {
+        menuStyle = chosenMenuStyle.verticalStyle;
+        syncEditor(sync.editing);
+      }
     }
 
     private void horizontalStyle_Click(object sender, EventArgs e)
     {
-        if (menuStyle != chosenMenuStyle.horizontalStandardStyle)
-        {
-            menuStyle = chosenMenuStyle.horizontalStandardStyle;
-            syncEditor(sync.editing);
-        }
+      if (menuStyle != chosenMenuStyle.horizontalStandardStyle)
+      {
+        menuStyle = chosenMenuStyle.horizontalStandardStyle;
+        syncEditor(sync.editing);
+      }
     }
 
     private void horizontalStyle2_Click(object sender, EventArgs e)
     {
-        if (menuStyle != chosenMenuStyle.horizontalContextStyle)
-        {
-            menuStyle = chosenMenuStyle.horizontalContextStyle;
-            syncEditor(sync.editing);
-        }
+      if (menuStyle != chosenMenuStyle.horizontalContextStyle)
+      {
+        menuStyle = chosenMenuStyle.horizontalContextStyle;
+        syncEditor(sync.editing);
+      }
     }
 
     private void stdWeatherStyle_Click(object sender, EventArgs e)
@@ -491,46 +491,46 @@ namespace StreamedMPEditor
     private void UpdateImageControlVisibility(bool fanartHandlerEnabled)
     {
 
-        if (fanartHandlerEnabled)
-        {
-            cboFanartProperty.Visible = true;
-            labelFanartProperty.Visible = true;
-            cbEnableMusicNowPlayingFanart.Visible = true;
-            labelImageFolder.Visible = false;
-            bgBox.Visible = false;
-            folderBrowse.Visible = false;
-        }
-        else
-        {
-            // Hide the fanart selection
-            cboFanartProperty.Visible = false;
-            labelFanartProperty.Visible = false;
-            cbEnableMusicNowPlayingFanart.Visible = false;
-            //set the x,y of the skin image settings and display
-            labelImageFolder.Location = new Point(12, 52);
-            bgBox.Location = new Point(113, 49);
-            folderBrowse.Location = new Point(255, 49);
-            labelImageFolder.Visible = true;
-            bgBox.Visible = true;
-            folderBrowse.Visible = true;
-        }
+      if (fanartHandlerEnabled)
+      {
+        cboFanartProperty.Visible = true;
+        labelFanartProperty.Visible = true;
+        cbEnableMusicNowPlayingFanart.Visible = true;
+        labelImageFolder.Visible = false;
+        bgBox.Visible = false;
+        folderBrowse.Visible = false;
+      }
+      else
+      {
+        // Hide the fanart selection
+        cboFanartProperty.Visible = false;
+        labelFanartProperty.Visible = false;
+        cbEnableMusicNowPlayingFanart.Visible = false;
+        //set the x,y of the skin image settings and display
+        labelImageFolder.Location = new Point(12, 52);
+        bgBox.Location = new Point(113, 49);
+        folderBrowse.Location = new Point(255, 49);
+        labelImageFolder.Visible = true;
+        bgBox.Visible = true;
+        folderBrowse.Visible = true;
+      }
     }
 
     private void disableItemControls()
     {
-        itemProperties.Enabled = false;
-        backgroundImages.Enabled = false;
-        addButton.Enabled = false;
-        removeButton.Enabled = true;
-        cancelCreateButton.Visible = false;
+      itemProperties.Enabled = false;
+      backgroundImages.Enabled = false;
+      addButton.Enabled = false;
+      removeButton.Enabled = true;
+      cancelCreateButton.Visible = false;
     }
 
     private void enableItemControls()
     {
-        itemProperties.Enabled = true;
-        backgroundImages.Enabled = true;
-        addButton.Enabled = true;
-        removeButton.Enabled = false;
+      itemProperties.Enabled = true;
+      backgroundImages.Enabled = true;
+      addButton.Enabled = true;
+      removeButton.Enabled = false;
     }
 
     private void reloadBackgroundItems()
@@ -546,53 +546,53 @@ namespace StreamedMPEditor
 
     private void fillBackgroundItem(menuItem menItem)
     {
-        bool newBG = true;
+      bool newBG = true;
 
-        foreach (backgroundItem bgitem in bgItems)
+      foreach (backgroundItem bgitem in bgItems)
+      {
+        // if we are sharing the same image folder and background sharing is enabled
+        // update the existing background item
+        if (!menItem.disableBGSharing && !bgitem.disableBGSharing)
         {
-            // if we are sharing the same image folder and background sharing is enabled
-            // update the existing background item
-            if (!menItem.disableBGSharing && !bgitem.disableBGSharing)
-            {
-                // check if current item is unique
-                if (!menItem.fanartHandlerEnabled.Equals(bgitem.fanartHandlerEnabled))
-                    continue;
+          // check if current item is unique
+          if (!menItem.fanartHandlerEnabled.Equals(bgitem.fanartHandlerEnabled))
+            continue;
 
-                if (menItem.fanartHandlerEnabled)
-                {
-                    if (bgitem.fanartPropery != menItem.fanartProperty)
-                        continue;
-                }
-                else
-                {
-                    if (bgitem.folder != menItem.bgFolder)
-                        continue;
-                }
+          if (menItem.fanartHandlerEnabled)
+          {
+            if (bgitem.fanartPropery != menItem.fanartProperty)
+              continue;
+          }
+          else
+          {
+            if (bgitem.folder != menItem.bgFolder)
+              continue;
+          }
 
-                // share background item
-                bgitem.ids.Add(menItem.id.ToString());
-                bgitem.mname.Add(menItem.name.ToString());
-                bgitem.name = bgitem.name + ", " + menItem.name;
-                newBG = false;
-            }
+          // share background item
+          bgitem.ids.Add(menItem.id.ToString());
+          bgitem.mname.Add(menItem.name.ToString());
+          bgitem.name = bgitem.name + ", " + menItem.name;
+          newBG = false;
         }
+      }
 
-        // create a new background item
-        if (newBG == true)
-        {
-            backgroundItem newbgItem = new backgroundItem();
-            newbgItem.folder = menItem.bgFolder;
-            newbgItem.fanartPropery = menItem.fanartProperty;
-            newbgItem.fanartHandlerEnabled = menItem.fanartHandlerEnabled;
-            newbgItem.EnableMusicNowPlayingFanart = menItem.EnableMusicNowPlayingFanart;
-            newbgItem.ids.Add(menItem.id.ToString());
-            newbgItem.mname.Add(menItem.name.ToString());
-            newbgItem.name = menItem.name;
-            newbgItem.image = menItem.defaultImage;
-            newbgItem.isWeather = menItem.isWeather;
-            newbgItem.disableBGSharing = menItem.disableBGSharing;
-            bgItems.Add(newbgItem);
-        }
+      // create a new background item
+      if (newBG == true)
+      {
+        backgroundItem newbgItem = new backgroundItem();
+        newbgItem.folder = menItem.bgFolder;
+        newbgItem.fanartPropery = menItem.fanartProperty;
+        newbgItem.fanartHandlerEnabled = menItem.fanartHandlerEnabled;
+        newbgItem.EnableMusicNowPlayingFanart = menItem.EnableMusicNowPlayingFanart;
+        newbgItem.ids.Add(menItem.id.ToString());
+        newbgItem.mname.Add(menItem.name.ToString());
+        newbgItem.name = menItem.name;
+        newbgItem.image = menItem.defaultImage;
+        newbgItem.isWeather = menItem.isWeather;
+        newbgItem.disableBGSharing = menItem.disableBGSharing;
+        bgItems.Add(newbgItem);
+      }
     }
 
 
@@ -795,16 +795,16 @@ namespace StreamedMPEditor
 
     private void removeToolStripMenuItem_Click(object sender, EventArgs e)
     {
-        if (itemsOnMenubar.SelectedItem != null)
-        {
-            menuItems.RemoveAt(itemsOnMenubar.SelectedIndex);
-            itemsOnMenubar.Items.Remove(itemsOnMenubar.SelectedItem);
-            screenReset();
-            if (itemsOnMenubar.Items.Count > 0)
-                itemsOnMenubar.SelectedIndex = 0;
-        }
-        else
-            showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
+      if (itemsOnMenubar.SelectedItem != null)
+      {
+        menuItems.RemoveAt(itemsOnMenubar.SelectedIndex);
+        itemsOnMenubar.Items.Remove(itemsOnMenubar.SelectedItem);
+        screenReset();
+        if (itemsOnMenubar.Items.Count > 0)
+          itemsOnMenubar.SelectedIndex = 0;
+      }
+      else
+        showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
     }
 
     private string generateEntry(string entry, string value, int tabs, bool addcr)
@@ -887,15 +887,15 @@ namespace StreamedMPEditor
 
     private string weatherIcon(int theDay)
     {
-      string day;      
-	  if (theDay == 0)
+      string day;
+      if (theDay == 0)
         day = "today";
       else
         day = "day" + (theDay + 1).ToString() + ".day";
       if (WeatherIconsAnimated.Checked)
       {
         // relative from Animations folder
-        return "weathericons\\animated\\128x128\\" + ticker + ".weather." + day + ".img.big.filenamewithoutext"; 
+        return "weathericons\\animated\\128x128\\" + ticker + ".weather." + day + ".img.big.filenamewithoutext";
       }
       else
       {
@@ -956,22 +956,22 @@ namespace StreamedMPEditor
         // find the longest Context and Menu items
         foreach (menuItem menItem in menuItems)
         {
-            Size textNameSize = TextRenderer.MeasureText(menItem.name, nameFont);
-            Size textContextSize = TextRenderer.MeasureText(menItem.contextLabel, contextFont);
+          Size textNameSize = TextRenderer.MeasureText(menItem.name, nameFont);
+          Size textContextSize = TextRenderer.MeasureText(menItem.contextLabel, contextFont);
 
-            if (maxMenuItemSize < textNameSize.Width)
-                maxMenuItemSize = textNameSize.Width; 
-            
-            if (maxContextSize < textContextSize.Width)
-                maxContextSize = textContextSize.Width;
+          if (maxMenuItemSize < textNameSize.Width)
+            maxMenuItemSize = textNameSize.Width;
+
+          if (maxContextSize < textContextSize.Width)
+            maxContextSize = textContextSize.Width;
         }
         // now calc the minimum xpos based on longest string in context and menu labels
 
         minXPos = maxContextSize;
         if (minXPos < maxMenuItemSize)
-            minXPos = maxMenuItemSize;
+          minXPos = maxMenuItemSize;
 
-        minXPos = (int)((double)minXPos*1.35);
+        minXPos = (int)((double)minXPos * 1.35);
         if (menuOffset < minXPos)
         {
           txtMenuPos.Text = minXPos.ToString();
@@ -994,89 +994,89 @@ namespace StreamedMPEditor
 
       if (!animatedIconsInstalled())
       {
-          WeatherIconsAnimated.Enabled = false;
-          weatherIconsStatic.Checked = true;
-          WeatherIconsAnimated.Text = "Animated (Not Installed)";
-          installAnimatedIcons.Visible = true;
+        WeatherIconsAnimated.Enabled = false;
+        weatherIconsStatic.Checked = true;
+        WeatherIconsAnimated.Text = "Animated (Not Installed)";
+        installAnimatedIcons.Visible = true;
       }
       else
       {
-          WeatherIconsAnimated.Enabled = true;
-          WeatherIconsAnimated.Text = "Animated";
-          installAnimatedIcons.Visible = false;
+        WeatherIconsAnimated.Enabled = true;
+        WeatherIconsAnimated.Text = "Animated";
+        installAnimatedIcons.Visible = false;
       }
 
       if (!weatherBackgoundsInstalled())
       {
-          weatherBGlink.Checked = false;
-          weatherBGlink.Enabled = false;
-          weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
-          installWeatherBackgrounds.Visible = true;
+        weatherBGlink.Checked = false;
+        weatherBGlink.Enabled = false;
+        weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+        installWeatherBackgrounds.Visible = true;
 
 
       }
       else
       {
-          weatherBGlink.Enabled = true;
-          weatherBGlink.Text = "Link Background to Current Weather";
-          installWeatherBackgrounds.Visible = false;
+        weatherBGlink.Enabled = true;
+        weatherBGlink.Text = "Link Background to Current Weather";
+        installWeatherBackgrounds.Visible = false;
       }
 
       switch (menuStyle)
       {
-          case chosenMenuStyle.verticalStyle:
-              enableFiveDayWeather.Checked = true;
-              horizontalContextLabels.Enabled = false;
-              weatherSummaryGroup.Visible = false;
-              verticalStyle.Checked = true;
-              if (!WeatherIconsAnimated.Checked) 
-                  weatherIconsStatic.Checked = true;
-              useAeonGraphics.Visible = false;
-              txtMenuPos.Text = "350";
-              menuPosLabel.Text = "Menu X Position:";
-              cboLabelFont.Enabled = false;
-              cboSelectedFont.Enabled = false;
-              cboSelectedFont.Text = "mediastream28tc";
-              cboLabelFont.Text = "mediastream16tc";
-              break;
+        case chosenMenuStyle.verticalStyle:
+          enableFiveDayWeather.Checked = true;
+          horizontalContextLabels.Enabled = false;
+          weatherSummaryGroup.Visible = false;
+          verticalStyle.Checked = true;
+          if (!WeatherIconsAnimated.Checked)
+            weatherIconsStatic.Checked = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "350";
+          menuPosLabel.Text = "Menu X Position:";
+          cboLabelFont.Enabled = false;
+          cboSelectedFont.Enabled = false;
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream16tc";
+          break;
 
-          case chosenMenuStyle.horizontalStandardStyle:
-              weatherStyle = chosenWeatherStyle.bottom;
-              horizontalContextLabels.Checked = false;
-              enableFiveDayWeather.Checked = true;
-              fullWeatherSummaryBottom.Enabled = true;
-              fullWeatherSummaryBottom.Checked = true;
-              horizontalContextLabels.Enabled = true;
-              horizontalStyle.Checked = true;
-              if (!WeatherIconsAnimated.Checked) 
-                  weatherIconsStatic.Checked = true;
-              weatherSummaryGroup.Visible = true;
-              useAeonGraphics.Visible = false;
-              txtMenuPos.Text = "430";
-              cboLabelFont.Enabled = true;
-              cboSelectedFont.Enabled = true;
-              cboSelectedFont.Text = "mediastream28tc";
-              cboLabelFont.Text = "mediastream28tc";
-              break;
+        case chosenMenuStyle.horizontalStandardStyle:
+          weatherStyle = chosenWeatherStyle.bottom;
+          horizontalContextLabels.Checked = false;
+          enableFiveDayWeather.Checked = true;
+          fullWeatherSummaryBottom.Enabled = true;
+          fullWeatherSummaryBottom.Checked = true;
+          horizontalContextLabels.Enabled = true;
+          horizontalStyle.Checked = true;
+          if (!WeatherIconsAnimated.Checked)
+            weatherIconsStatic.Checked = true;
+          weatherSummaryGroup.Visible = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "430";
+          cboLabelFont.Enabled = true;
+          cboSelectedFont.Enabled = true;
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream28tc";
+          break;
 
-          case chosenMenuStyle.horizontalContextStyle:
-              weatherStyle = chosenWeatherStyle.middle;
-              horizontalContextLabels.Checked = true;
-              enableFiveDayWeather.Checked = true;
-              fullWeatherSummaryMiddle.Checked = true;
-              fullWeatherSummaryBottom.Enabled = false;
-              horizontalContextLabels.Enabled = true;
-              horizontalStyle2.Checked = true;
-              if (!WeatherIconsAnimated.Checked)
-                  weatherIconsStatic.Checked = true;
-              weatherSummaryGroup.Visible = true;
-              useAeonGraphics.Visible = false;
-              txtMenuPos.Text = "620";
-              cboSelectedFont.Text = "mediastream28tc";
-              cboLabelFont.Text = "mediastream28tc";
-              cboLabelFont.Enabled = false;
-              cboSelectedFont.Enabled = false;
-              break;
+        case chosenMenuStyle.horizontalContextStyle:
+          weatherStyle = chosenWeatherStyle.middle;
+          horizontalContextLabels.Checked = true;
+          enableFiveDayWeather.Checked = true;
+          fullWeatherSummaryMiddle.Checked = true;
+          fullWeatherSummaryBottom.Enabled = false;
+          horizontalContextLabels.Enabled = true;
+          horizontalStyle2.Checked = true;
+          if (!WeatherIconsAnimated.Checked)
+            weatherIconsStatic.Checked = true;
+          weatherSummaryGroup.Visible = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "620";
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream28tc";
+          cboLabelFont.Enabled = false;
+          cboSelectedFont.Enabled = false;
+          break;
       }
     }
 
@@ -1134,9 +1134,9 @@ namespace StreamedMPEditor
 
     private void getBackupFileTotals()
     {
-      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*",false);
+      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*", false);
       numUPBackups.Text = totalImages.ToString();
-      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
+      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
       numBHBackups.Text = totalImages.ToString();
     }
 
@@ -1158,7 +1158,7 @@ namespace StreamedMPEditor
         Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
         Properties.Settings.Default.autoPurge = true;
 
-        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*",false);
+        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
         foreach (string file in filesToDelete)
         {
           if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1167,7 +1167,7 @@ namespace StreamedMPEditor
         }
         versionCount = 0;
 
-        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
+        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
         foreach (string file in filesToDelete2)
         {
           if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1175,16 +1175,12 @@ namespace StreamedMPEditor
           versionCount++;
         }
       }
-      if (cbAllowUpdateCheck.Checked)
-        Properties.Settings.Default.allowUpdateCheck = true;
-
       Properties.Settings.Default.Save();
-
-   }
+    }
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*",false);
+      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1194,7 +1190,7 @@ namespace StreamedMPEditor
 
     private void purgeBHBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*",false);
+      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1281,161 +1277,142 @@ namespace StreamedMPEditor
 
     public void checkAndSetRandomFanart(string fanartProperty)
     {
-        // Check and set random fanart
-        if (fanartProperty.ToLower().Contains("games"))
-            randomFanart.fanartGames = true;
-        if (fanartProperty.ToLower().Contains("plugins"))
-            randomFanart.fanartPlugins = true;
-        if (fanartProperty.ToLower().Contains("picture"))
-            randomFanart.fanartPictures = true;
-        if (fanartProperty.ToLower().Contains("tv"))
-            randomFanart.fanartTv = true;
-        if (fanartProperty.ToLower().Contains("music"))
-            randomFanart.fanartMusic = true;
-        if (fanartProperty.ToLower().Contains("tvseries"))
-            randomFanart.fanartTVSeries = true;
-        if (fanartProperty.ToLower().Contains("movingpicture"))
-            randomFanart.fanartMovingPictures = true;
-        if (fanartProperty.ToLower().Contains("movie"))
-            randomFanart.fanartMovies = true;
-        if (fanartProperty.ToLower().Contains("scorecenter"))
-            randomFanart.fanartScoreCenter = true;
+      // Check and set random fanart
+      if (fanartProperty.ToLower().Contains("games"))
+        randomFanart.fanartGames = true;
+      if (fanartProperty.ToLower().Contains("plugins"))
+        randomFanart.fanartPlugins = true;
+      if (fanartProperty.ToLower().Contains("picture"))
+        randomFanart.fanartPictures = true;
+      if (fanartProperty.ToLower().Contains("tv"))
+        randomFanart.fanartTv = true;
+      if (fanartProperty.ToLower().Contains("music"))
+        randomFanart.fanartMusic = true;
+      if (fanartProperty.ToLower().Contains("tvseries"))
+        randomFanart.fanartTVSeries = true;
+      if (fanartProperty.ToLower().Contains("movingpicture"))
+        randomFanart.fanartMovingPictures = true;
+      if (fanartProperty.ToLower().Contains("movie"))
+        randomFanart.fanartMovies = true;
+      if (fanartProperty.ToLower().Contains("scorecenter"))
+        randomFanart.fanartScoreCenter = true;
     }
 
 
     private void rbRssNoImage_CheckedChanged(object sender, EventArgs e)
     {
-        if (rbRssNoImage.Checked)
-            rssImage = rssImageType.noImage;
+      if (rbRssNoImage.Checked)
+        rssImage = rssImageType.noImage;
     }
 
     private void rbRssSkinImage_CheckedChanged(object sender, EventArgs e)
     {
-        if (rbRssSkinImage.Checked)
-            rssImage = rssImageType.skinImage;
+      if (rbRssSkinImage.Checked)
+        rssImage = rssImageType.skinImage;
     }
 
     private void rbRssInfoServiceImage_CheckedChanged(object sender, EventArgs e)
     {
-        if (rbRssInfoServiceImage.Checked)
-            rssImage = rssImageType.infoserviceImage;
+      if (rbRssInfoServiceImage.Checked)
+        rssImage = rssImageType.infoserviceImage;
     }
 
     private void cbItemFanartHandlerEnable_CheckedChanged(object sender, EventArgs e)
     {
-        UpdateImageControlVisibility(cbItemFanartHandlerEnable.Checked);
+      UpdateImageControlVisibility(cbItemFanartHandlerEnable.Checked);
     }
 
     private void buttonCancelCreate_Click(object sender, EventArgs e)
     {
-        screenReset();
-        setScreenProperties(itemsOnMenubar.SelectedIndex);
-        disableItemControls();
+      screenReset();
+      setScreenProperties(itemsOnMenubar.SelectedIndex);
+      disableItemControls();
     }
 
     private void sdRes_CheckedChanged(object sender, EventArgs e)
     {
-        if (sdRes.Checked)
-        {
-            setSDScreenRes();
-        }
-        else
-        {
-            setHDScreenRes();
-        }
+      if (sdRes.Checked)
+      {
+        setSDScreenRes();
+      }
+      else
+      {
+        setHDScreenRes();
+      }
 
     }
 
     private void hdRes_CheckedChanged(object sender, EventArgs e)
     {
-        if (hdRes.Checked)
-        {
-            setHDScreenRes();
-        }
-        else
-        {
-            setSDScreenRes();
-        }
+      if (hdRes.Checked)
+      {
+        setHDScreenRes();
+      }
+      else
+      {
+        setSDScreenRes();
+      }
 
     }
 
     private void setHDScreenRes()
     {
-        screenres = screenResolutionType.res1920x1080;
-        hdRes.Checked = true;
-        sdRes.Checked = false;
-        if (screenres == detectedres)
-            detectedHD.Text = "Auto Detected";
-        else
-            detectedHD.Text = "Set Manually";
-        detectedHD.Visible = true;
-        detectedSD.Visible = false;
+      screenres = screenResolutionType.res1920x1080;
+      hdRes.Checked = true;
+      sdRes.Checked = false;
+      if (screenres == detectedres)
+        detectedHD.Text = "Auto Detected";
+      else
+        detectedHD.Text = "Set Manually";
+      detectedHD.Visible = true;
+      detectedSD.Visible = false;
     }
 
     private void setSDScreenRes()
     {
-        screenres = screenResolutionType.res1280x720;
-        hdRes.Checked = false;
-        sdRes.Checked = true;
-        if (screenres == detectedres)
-            detectedSD.Text = "Auto Detected";
-        else
-            detectedSD.Text = "Set Manually";
-        detectedSD.Visible = true;
-        detectedHD.Visible = false;
+      screenres = screenResolutionType.res1280x720;
+      hdRes.Checked = false;
+      sdRes.Checked = true;
+      if (screenres == detectedres)
+        detectedSD.Text = "Auto Detected";
+      else
+        detectedSD.Text = "Set Manually";
+      detectedSD.Visible = true;
+      detectedHD.Visible = false;
     }
 
 
     private void StreamedMPMenu_Click(object sender, EventArgs e)
     {
-        // Index 5 is the SplashScreen Tab
-        if (StreamedMPMenu.SelectedIndex == 5)
-        {
-            pbActiveSplashScreen.Visible = true;
-            lbActiveSplashScreen.Visible = true;
-            toolStripStatusLabel2.Visible = true;
-        }
-        else
-        {
-            pbActiveSplashScreen.Visible = false;
-            lbActiveSplashScreen.Visible = false;
-            toolStripStatusLabel2.Visible = false;
-        }
-    }
-
-    private void checkAndSetDefultImage(menuItem item)
-    {                    
-        // Set default image....
-        if (!item.bgFolder.Contains("\\"))
-            item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
-        else
-            item.defaultImage = item.bgFolder + "\\default.jpg";
-        // And check if it exists and create if not.
-
-        string filetotest = imageDir(item.defaultImage);
-        if (!System.IO.File.Exists(filetotest))
-        {
-            string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*",true);
-            createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
-        }
-    }
-
-    private void btCheckForUpdate_Click(object sender, EventArgs e)
-    {
-      checkForUpdate();
-      Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-      if (curVersion.CompareTo(newVersion) < 0)
+      // Index 5 is the SplashScreen Tab
+      if (StreamedMPMenu.SelectedIndex == 5)
       {
-        string title = "StreamedMP Editor Version " + newVersion.ToString() + " available.";
-        string question = "Version " + newVersion.ToString() + " of the StreamedMP Editor available on the StreamedMP site\n\nDo you want to download and install the update?";
-        if (DialogResult.Yes == MessageBox.Show(this, question, title, MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-        {
-          installEditor(url);
-        }
+        pbActiveSplashScreen.Visible = true;
+        lbActiveSplashScreen.Visible = true;
+        toolStripStatusLabel2.Visible = true;
       }
       else
       {
-        showError("Version " + curVersion.ToString() + " of the StreamedMP Editor is the latest release\n\nNo Update Required - Click OK to Continue", errorCode.info);
+        pbActiveSplashScreen.Visible = false;
+        lbActiveSplashScreen.Visible = false;
+        toolStripStatusLabel2.Visible = false;
+      }
+    }
+
+    private void checkAndSetDefultImage(menuItem item)
+    {
+      // Set default image....
+      if (!item.bgFolder.Contains("\\"))
+        item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
+      else
+        item.defaultImage = item.bgFolder + "\\default.jpg";
+      // And check if it exists and create if not.
+
+      string filetotest = imageDir(item.defaultImage);
+      if (!System.IO.File.Exists(filetotest))
+      {
+        string[] fileList = getFileListing(Path.GetDirectoryName(item.defaultImage), "*.*", true);
+        createDefaultJpg(Path.GetDirectoryName(item.defaultImage));
       }
     }
 
@@ -1615,16 +1592,16 @@ namespace StreamedMPEditor
 
     public class backgroundItem
     {
-        public string name;
-        public string folder;
-        public string fanartPropery;
-        public bool fanartHandlerEnabled;
-        public bool EnableMusicNowPlayingFanart;
-        public string image;
-        public List<string> ids = new List<string>();
-        public List<string> mname = new List<string>();
-        public bool isWeather;
-        public bool disableBGSharing;
+      public string name;
+      public string folder;
+      public string fanartPropery;
+      public bool fanartHandlerEnabled;
+      public bool EnableMusicNowPlayingFanart;
+      public string image;
+      public List<string> ids = new List<string>();
+      public List<string> mname = new List<string>();
+      public bool isWeather;
+      public bool disableBGSharing;
     }
 
     public class defaultImages
@@ -1665,23 +1642,23 @@ namespace StreamedMPEditor
       public string thumbsPath;
     }
 
-      public struct randomFanartSetting
-      {
-          public bool fanartGames;
-          public bool fanartTVSeries;
-          public bool fanartPlugins;
-          public bool fanartMovingPictures;
-          public bool fanartMusic;
-          public bool fanartPictures;
-          public bool fanartTv;
-          public bool fanartMovies;
-          public bool fanartScoreCenter;
-      }
+    public struct randomFanartSetting
+    {
+      public bool fanartGames;
+      public bool fanartTVSeries;
+      public bool fanartPlugins;
+      public bool fanartMovingPictures;
+      public bool fanartMusic;
+      public bool fanartPictures;
+      public bool fanartTv;
+      public bool fanartMovies;
+      public bool fanartScoreCenter;
+    }
 
     public struct editorValues
     {
       public bool basicHomeLoadError;
-      public bool useInfoServiceSeparator ;
+      public bool useInfoServiceSeparator;
       public int defaultId;
       public int textYOffset;
       public int weatherControl;
