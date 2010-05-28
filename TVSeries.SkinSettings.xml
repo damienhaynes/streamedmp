@@ -37,6 +37,29 @@
 		item1 = <text3> (left aligned)
 		item3 = <text2> (right aligned)
 	-->		
+
+	<!-- Position of 'NEW' stamp in thumb views -->
+	<!-- Draws 'tvseries_newlabel.png' on thumbnail -->
+	<thumbstamp>
+		<widebanners>
+			<posx>668</posx>
+			<posy>-5</posy>
+		</widebanners>
+		<posters>
+			<posx>580</posx>
+			<posy>-5</posy>
+		</posters>
+	</thumbstamp>
+	
+	<!-- Define the images loaded in Video OSD -->
+	<!-- Note: You can reorder the items to set priority -->
+	<videoosdimages import="true">
+		<episode use="true" />
+		<series use="true" />		
+		<season use="true" />		
+		<!--<custom use="false"><![CDATA[skin\blue3wide\Media\custom.png]]></custom>-->
+	</videoosdimages>
+	
 	<layouts>
 		<group List="true" SmallIcons="false"/>
 		<series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true"/>
