@@ -92,9 +92,6 @@
 #define NOWPLAYING_WINDOW_NOFADE                    "Main\\nowPlayingWindowNoFade"
 #define NOWPLAYING_WINDOW_NOMASK                    "Main\\nowPlayingWindowNoMask"
 
-// Program executable defines
-#define STREAMEDMP_EDITOR_FILE						INSTALLDIR^SKIN_NAME^"streamedmpeditor.exe"
-
 // Skin XML defines
 #define STREAMEDMP_SKIN_TVSERIES					INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES				INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
@@ -884,7 +881,7 @@ end;
 // completed successfully.
 //---------------------------------------------------------------------------
 function OnFirstUIAfter()
-    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine, szSite;
+    STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine, szSite, szFile;
     NUMBER bOpt1, bOpt2;
 begin
 	
@@ -902,12 +899,15 @@ begin
     endif;
     
 	Disable(STATUSEX);
-
+ 
+ 	szFile = g_sMediaPortalProgramDir ^ "SMPEditor.exe";
+ 
 	bOpt1  = FALSE;
 	bOpt2  = TRUE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
-	szOption1 = "&Launch Home Page in default Browser";
-	if Is(FILE_EXISTS,STREAMEDMP_EDITOR_FILE) && g_bStartBasicHome then
+	szOption1 = "&Launch Home Page in default Browser"; 
+	
+	if Is(FILE_EXISTS,szFile) && g_bStartBasicHome then
 		szOption2 = "Launch &Streamed MP Basic Home Editor";
 	endif;
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
@@ -919,7 +919,7 @@ begin
 		LaunchBrowser(szSite);
 	endif;
 	if (!BATCH_INSTALL && bOpt2) then
-		LaunchApp(STREAMEDMP_EDITOR_FILE, szCmdLine);
+		LaunchApp(szFile, szCmdLine);
 	endif;
 	        
 	
