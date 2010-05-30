@@ -138,7 +138,7 @@ namespace StreamedMPConfig
       cmc_ChangeLog.Visible = false;
       btDoUpdate.Visible = false;
       settings.Load();
-      if (checkForUpdate.checkIfUpdate())
+      if (updateCheck.updateAvailable())
       {
         updateFound.downloadChangeLog();
         System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
@@ -165,7 +165,7 @@ namespace StreamedMPConfig
     {
       if (control == btDoUpdate)
       {
-        installUpdateGUI(checkForUpdate.url);
+        installUpdateGUI(updateCheck.url);
       }
     }
 

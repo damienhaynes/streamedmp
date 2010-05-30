@@ -11,7 +11,7 @@ using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
-  public class checkForUpdate
+  public class updateCheck
   {
     #region Variables
 
@@ -56,7 +56,7 @@ namespace StreamedMPConfig
     }
 
     // This section checks to see if there is a later version of the skin
-    public static bool checkIfUpdate()
+    public static bool updateAvailable()
     {
       try
       {
@@ -108,7 +108,7 @@ namespace StreamedMPConfig
       {
         if (reader != null) reader.Close();
       }
-      if (checkForUpdate.SkinVersion().CompareTo(newVersion) < 0)
+      if (updateCheck.SkinVersion().CompareTo(newVersion) < 0)
         return true;
       else
         return false;
@@ -204,7 +204,7 @@ namespace StreamedMPConfig
           while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
           {
             strLocal.Write(downBuffer, 0, bytesSize);
-            downloadForm.Invoke(new UpdateProgessCallback(checkForUpdate.UpdateProgress), new object[] { strLocal.Length, fileSize });
+            downloadForm.Invoke(new UpdateProgessCallback(updateCheck.UpdateProgress), new object[] { strLocal.Length, fileSize });
           }
         }
         catch { }

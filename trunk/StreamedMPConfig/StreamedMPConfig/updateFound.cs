@@ -76,12 +76,12 @@ namespace StreamedMPConfig
 
     public static void downloadChangeLog()
     {
-      if (checkForUpdate.changeLogFile.StartsWith("C:\\"))
-        System.IO.File.Copy(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), true);
+      if (updateCheck.changeLogFile.StartsWith("C:\\"))
+        System.IO.File.Copy(updateCheck.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), true);
       else
       {
         WebClient client = new WebClient();
-        client.DownloadFile(checkForUpdate.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+        client.DownloadFile(updateCheck.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
       }
     }
 
@@ -92,7 +92,7 @@ namespace StreamedMPConfig
 
     private static void okButton_Click(object sender, EventArgs e)
     {
-      checkForUpdate.installUpdate(checkForUpdate.url);
+      updateCheck.installUpdate(updateCheck.url);
     }
 
     private static void cancelButton_Click(object sender, EventArgs e)

@@ -310,6 +310,21 @@
     <import>FritzManager.Notify.xml</import>
     <import>common.overlay.home.xml</import>
     <import>common.time.xml</import>
+
+	<control>
+    <description>Update Icon</description>
+		<type>image</type>
+		<id>0</id>
+		<width>250</width>
+		<height>250</height>
+		<posX>950</posX>
+		<posY>250</posY>
+		<align>center</align>
+		<texture>skinupdate.png</texture>
+		<visible>string.equals(#StreamedMP.UpdateAvailable,true)</visible>
+	  <animation effect="fade" delay="2000" start="100" end="0" time="5000">WindowOpen</animation>
+	  <animation effect="fade" delay="100" start="0" end="0" time="100">WindowClose</animation>
+	</control>    
     
   </controls>
 </window>

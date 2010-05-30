@@ -105,7 +105,7 @@ namespace StreamedMPConfig
 
     void btCheckForUpdate_Click(object sender, EventArgs e)
     {
-      if (checkForUpdate.checkIfUpdate())
+      if (updateCheck.updateAvailable())
         updateFound.displayDetail();
     }
 
