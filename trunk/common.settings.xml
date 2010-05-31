@@ -189,6 +189,20 @@
       </control>
     
 	</control>
+
+  <control>
+    <description>Update Indicator</description>
+    <type>image</type>
+    <id>0</id>
+    <posX>1000</posX>
+    <posY>554</posY>
+    <width>32</width>
+    <height>32</height>
+    <texture>isupdate.png</texture>
+    <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+  </control>
+
+
 	
 	<control>
 	  <description>Settings Title Label</description>

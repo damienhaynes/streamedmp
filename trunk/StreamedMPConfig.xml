@@ -54,5 +54,18 @@
 	      <onright>#defaultcontrol.onright</onright>
       </control>
     </control>   
+
+      <control>
+        <description>Update Indicator</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>700</posX>
+        <posY>282</posY>
+        <width>32</width>
+        <height>32</height>
+        <texture>isupdate.png</texture>
+        <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+      </control>    
+    
   </controls>
 </window>
