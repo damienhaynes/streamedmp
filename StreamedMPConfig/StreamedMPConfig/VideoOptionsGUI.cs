@@ -27,14 +27,13 @@ namespace StreamedMPConfig
 
     #region Public methods
 
+    public VideoOptionsGUI()
+    {
+    }
+    
     public override bool Init()
     {
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_video.xml");
-    }
-
-    public VideoOptionsGUI()
-    {
-      settings.Load();
     }
 
     #endregion

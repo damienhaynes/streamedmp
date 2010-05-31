@@ -47,9 +47,10 @@ namespace StreamedMPConfig
       StreamedMPConfig.showEqGraphic = cbShowEqGraphic.Checked;
       StreamedMPConfig.fullVideoOSD = fullVideoOSD.Checked;
       StreamedMPConfig.checkOnStart = cbCheckOnStart.Checked;
-      StreamedMPConfig.checkForUpdate = cbCheckForUpdate.Checked;
-      StreamedMPConfig.checkInterval = comboCheckInterval.Text;
+      StreamedMPConfig.checkForUpdateAt = cbCheckForUpdateAt.Checked;
+      StreamedMPConfig.checkInterval = comboCheckInterval.SelectedIndex;
       StreamedMPConfig.checkTime = timePicker.Value;
+      StreamedMPConfig.nextUpdateCheck = StreamedMPConfig.nextCheckAt.ToString();
       settings.Save();
       this.Close();
     }
@@ -62,7 +63,7 @@ namespace StreamedMPConfig
     // Load settings from xml
     void ConfigurationForm_Load(object sender, EventArgs e)
     {
-      settings.Load();
+      //settings.Load();
       cbCdCoverOnly.Text = Translation.Strings["CDCover"];
       cbShowEqGraphic.Text = Translation.Strings["ShowEQ"];
 
@@ -80,11 +81,11 @@ namespace StreamedMPConfig
         minVideoOSD.Checked = true;
       }
       cbCheckOnStart.Checked = StreamedMPConfig.checkOnStart;
-      cbCheckForUpdate.Checked = StreamedMPConfig.checkForUpdate;
-      if (StreamedMPConfig.checkForUpdate)
+      cbCheckForUpdateAt.Checked = StreamedMPConfig.checkForUpdateAt;
+      if (StreamedMPConfig.checkForUpdateAt)
       {
-        cbCheckForUpdate.Checked = StreamedMPConfig.checkForUpdate;
-        comboCheckInterval.Text = StreamedMPConfig.checkInterval;
+        cbCheckForUpdateAt.Checked = StreamedMPConfig.checkForUpdateAt;
+        comboCheckInterval.SelectedIndex = StreamedMPConfig.checkInterval;
         timePicker.Value = StreamedMPConfig.checkTime;
       }
     }

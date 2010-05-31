@@ -110,7 +110,6 @@ namespace StreamedMPConfig
 
     public SkinUpdateGUI()
     {
-      settings.Load();
     }
 
     #endregion
@@ -166,6 +165,16 @@ namespace StreamedMPConfig
       if (control == btDoUpdate)
       {
         installUpdateGUI(updateCheck.url);
+
+        cmc_ChangeLog.Visible = false;
+        btDoUpdate.Visible = false;
+        GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+        dlgDone.SetHeading("StreamedMP Skin Update");
+        dlgDone.SetLine(1, String.Empty);
+        dlgDone.SetLine(2, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
+        dlgDone.SetLine(3, String.Empty);
+        dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+        GUIWindowManager.ShowPreviousWindow();
       }
     }
 

@@ -25,20 +25,21 @@ namespace StreamedMPConfig
           StreamedMPConfig.fullVideoOSD = true;
         if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkOnStart", 1) != 0)
           StreamedMPConfig.checkOnStart = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkForUpdate", 1) != 0)
-          StreamedMPConfig.checkForUpdate = true;
+        if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkForUpdateAt", 1) != 0)
+          StreamedMPConfig.checkForUpdateAt = true;
 
-        if (StreamedMPConfig.checkForUpdate)
+        if (StreamedMPConfig.checkForUpdateAt)
         {
             if (xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", "") == "")
             {
                 StreamedMPConfig.checkTime = DateTime.Parse("03:00");
-                StreamedMPConfig.checkInterval = "Daily";
+                StreamedMPConfig.checkInterval = 1;
             }
             else
             {
                 StreamedMPConfig.checkTime = DateTime.Parse(xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", ""));
-                StreamedMPConfig.checkInterval = xmlreader.GetValueAsString("StreamedMPConfig", "checkInterval", "");
+                StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString("StreamedMPConfig", "nextUpdateCheck", "");
+                StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt("StreamedMPConfig", "checkInterval", 1);
             }
         }
       }
@@ -53,9 +54,10 @@ namespace StreamedMPConfig
         xmlwriter.SetValue("StreamedMPConfig", "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
         xmlwriter.SetValue("StreamedMPConfig", "fullVideoOSD", StreamedMPConfig.fullVideoOSD ? 1 : 0);
         xmlwriter.SetValue("StreamedMPConfig", "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "checkForUpdate", StreamedMPConfig.checkForUpdate ? 1 : 0);
+        xmlwriter.SetValue("StreamedMPConfig", "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
         xmlwriter.SetValue("StreamedMPConfig", "checkInterval", StreamedMPConfig.checkInterval);
         xmlwriter.SetValue("StreamedMPConfig", "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
+        xmlwriter.SetValue("StreamedMPConfig", "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
       }
     }
 
