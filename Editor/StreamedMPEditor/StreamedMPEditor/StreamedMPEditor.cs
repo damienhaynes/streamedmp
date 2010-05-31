@@ -145,6 +145,7 @@ namespace StreamedMPEditor
     //Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
+
     #endregion
 
     #region Public methods
