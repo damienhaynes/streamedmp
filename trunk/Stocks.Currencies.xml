@@ -1,0 +1,525 @@
+<window>
+	<controls>
+		
+		<!-- *** Currency 0 *** -->
+		<control>
+			<description>Currency Indicator 0</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency0Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 0</description>
+			<type>label</type>
+			<id>400</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency0Name - #Stocks.Currency0Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 1 *** -->
+		<control>
+			<description>Currency Indicator 1</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>328</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency1Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 1</description>
+			<type>label</type>
+			<id>401</id>
+			<posX>65</posX>
+			<posY>325</posY>
+			<label>#Stocks.Currency1Name - #Stocks.Currency1Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 2 *** -->
+		<control>
+			<description>Currency Indicator 2</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>348</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency2Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 2</description>
+			<type>label</type>
+			<id>402</id>
+			<posX>65</posX>
+			<posY>345</posY>
+			<label>#Stocks.Currency2Name - #Stocks.Currency2Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 3 *** -->
+		<control>
+			<description>Currency Indicator 3</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>368</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency3Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 3</description>
+			<type>label</type>
+			<id>403</id>
+			<posX>65</posX>
+			<posY>365</posY>
+			<label>#Stocks.Currency3Name - #Stocks.Currency3Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 4 *** -->
+		<control>
+			<description>Currency Indicator 4</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>388</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency4Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 4</description>
+			<type>label</type>
+			<id>404</id>
+			<posX>65</posX>
+			<posY>385</posY>
+			<label>#Stocks.Currency4Name - #Stocks.Currency4Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 5 *** -->
+		<control>
+			<description>Currency Indicator 5</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>508</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency5Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 5</description>
+			<type>label</type>
+			<id>405</id>
+			<posX>65</posX>
+			<posY>505</posY>
+			<label>#Stocks.Currency5Name - #Stocks.Currency5Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 6 *** -->
+		<control>
+			<description>Currency Indicator 6</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>528</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency6Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 6</description>
+			<type>label</type>
+			<id>406</id>
+			<posX>65</posX>
+			<posY>525</posY>
+			<label>#Stocks.Currency6Name - #Stocks.Currency6Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 7 *** -->
+		<control>
+			<description>Currency Indicator 7</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>548</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency7Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 7</description>
+			<type>label</type>
+			<id>407</id>
+			<posX>65</posX>
+			<posY>545</posY>
+			<label>#Stocks.Currency7Name - #Stocks.Currency7Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 8 *** -->
+		<control>
+			<description>Currency Indicator 8</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>568</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency8Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 8</description>
+			<type>label</type>
+			<id>408</id>
+			<posX>65</posX>
+			<posY>565</posY>
+			<label>#Stocks.Currency8Name - #Stocks.Currency8Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 9 *** -->
+		<control>
+			<description>Currency Indicator 9</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>588</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency9Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 9</description>
+			<type>label</type>
+			<id>409</id>
+			<posX>65</posX>
+			<posY>585</posY>
+			<label>#Stocks.Currency9Name - #Stocks.Currency9Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 10 *** -->
+		<control>
+			<description>Currency Indicator 10</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency10Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 10</description>
+			<type>label</type>
+			<id>410</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency10Name - #Stocks.Currency10Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 11 *** -->
+		<control>
+			<description>Currency Indicator 11</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency11Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 11</description>
+			<type>label</type>
+			<id>411</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency11Name - #Stocks.Currency11Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 12 *** -->
+		<control>
+			<description>Currency Indicator 12</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency12Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 12</description>
+			<type>label</type>
+			<id>412</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency12Name - #Stocks.Currency12Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 13 *** -->
+		<control>
+			<description>Currency Indicator 13</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency13Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 13</description>
+			<type>label</type>
+			<id>413</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency13Name - #Stocks.Currency13Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 14 *** -->
+		<control>
+			<description>Currency Indicator 14</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency14Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 14</description>
+			<type>label</type>
+			<id>414</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency14Name - #Stocks.Currency14Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 15 *** -->
+		<control>
+			<description>Currency Indicator 15</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency15Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 15</description>
+			<type>label</type>
+			<id>415</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency15Name - #Stocks.Currency15Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 16 *** -->
+		<control>
+			<description>Currency Indicator 16</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency16Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 16</description>
+			<type>label</type>
+			<id>416</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency16Name - #Stocks.Currency16Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 17 *** -->
+		<control>
+			<description>Currency Indicator 17</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency17Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 17</description>
+			<type>label</type>
+			<id>417</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency17Name - #Stocks.Currency17Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 18 *** -->
+		<control>
+			<description>Currency Indicator 18</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency18Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 18</description>
+			<type>label</type>
+			<id>418</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency18Name - #Stocks.Currency18Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+
+		<!-- *** Currency 19 *** -->
+		<control>
+			<description>Currency Indicator 19</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>38</posX>
+			<posY>308</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>#Stocks.Currency19Indicator</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Currency Value 19</description>
+			<type>label</type>
+			<id>419</id>
+			<posX>65</posX>
+			<posY>305</posY>
+			<label>#Stocks.Currency19Name - #Stocks.Currency19Summary</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		
+	</controls>
+</window>
