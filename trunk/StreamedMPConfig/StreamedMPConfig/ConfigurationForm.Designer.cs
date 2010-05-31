@@ -41,7 +41,7 @@ namespace StreamedMPConfig
           this.MiscScreens = new System.Windows.Forms.TabPage();
           this.CheckUpdate = new System.Windows.Forms.TabPage();
           this.label2 = new System.Windows.Forms.Label();
-          this.cbCheckForUpdate = new System.Windows.Forms.CheckBox();
+          this.cbCheckForUpdateAt = new System.Windows.Forms.CheckBox();
           this.comboCheckInterval = new System.Windows.Forms.ComboBox();
           this.cbCheckOnStart = new System.Windows.Forms.CheckBox();
           this.btCheckForUpdate = new System.Windows.Forms.Button();
@@ -185,7 +185,7 @@ namespace StreamedMPConfig
           // CheckUpdate
           // 
           this.CheckUpdate.Controls.Add(this.label2);
-          this.CheckUpdate.Controls.Add(this.cbCheckForUpdate);
+          this.CheckUpdate.Controls.Add(this.cbCheckForUpdateAt);
           this.CheckUpdate.Controls.Add(this.comboCheckInterval);
           this.CheckUpdate.Controls.Add(this.cbCheckOnStart);
           this.CheckUpdate.Controls.Add(this.btCheckForUpdate);
@@ -194,7 +194,7 @@ namespace StreamedMPConfig
           this.CheckUpdate.Name = "CheckUpdate";
           this.CheckUpdate.Size = new System.Drawing.Size(548, 227);
           this.CheckUpdate.TabIndex = 4;
-          this.CheckUpdate.Text = "Update";
+          this.CheckUpdate.Text = "Skin Update";
           this.CheckUpdate.UseVisualStyleBackColor = true;
           // 
           // label2
@@ -206,23 +206,24 @@ namespace StreamedMPConfig
           this.label2.TabIndex = 5;
           this.label2.Text = "Time";
           // 
-          // cbCheckForUpdate
+          // cbCheckForUpdateAt
           // 
-          this.cbCheckForUpdate.AutoSize = true;
-          this.cbCheckForUpdate.Location = new System.Drawing.Point(16, 126);
-          this.cbCheckForUpdate.Name = "cbCheckForUpdate";
-          this.cbCheckForUpdate.Size = new System.Drawing.Size(110, 17);
-          this.cbCheckForUpdate.TabIndex = 2;
-          this.cbCheckForUpdate.Text = "Check for Update";
-          this.cbCheckForUpdate.UseVisualStyleBackColor = true;
+          this.cbCheckForUpdateAt.AutoSize = true;
+          this.cbCheckForUpdateAt.Location = new System.Drawing.Point(16, 126);
+          this.cbCheckForUpdateAt.Name = "cbCheckForUpdateAt";
+          this.cbCheckForUpdateAt.Size = new System.Drawing.Size(110, 17);
+          this.cbCheckForUpdateAt.TabIndex = 2;
+          this.cbCheckForUpdateAt.Text = "Check for Update";
+          this.cbCheckForUpdateAt.UseVisualStyleBackColor = true;
           // 
           // comboCheckInterval
           // 
           this.comboCheckInterval.FormattingEnabled = true;
           this.comboCheckInterval.Items.AddRange(new object[] {
-            "Daily",
-            "Weekly",
-            "Monthly"});
+            "Every Day",
+            "Every Week",
+            "Every 2 Weeks",
+            "Every 4 Weeks"});
           this.comboCheckInterval.Location = new System.Drawing.Point(131, 126);
           this.comboCheckInterval.Name = "comboCheckInterval";
           this.comboCheckInterval.Size = new System.Drawing.Size(121, 21);
@@ -244,7 +245,7 @@ namespace StreamedMPConfig
           this.btCheckForUpdate.Name = "btCheckForUpdate";
           this.btCheckForUpdate.Size = new System.Drawing.Size(160, 23);
           this.btCheckForUpdate.TabIndex = 8;
-          this.btCheckForUpdate.Text = "Check for Skin Update";
+          this.btCheckForUpdate.Text = "Check for Skin Update Now";
           this.btCheckForUpdate.UseVisualStyleBackColor = true;
           this.btCheckForUpdate.Click += new System.EventHandler(this.btCheckForUpdate_Click);
           // 
@@ -377,7 +378,7 @@ namespace StreamedMPConfig
         private System.Windows.Forms.CheckBox cbCheckOnStart;
         private System.Windows.Forms.Button btCheckForUpdate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox cbCheckForUpdate;
+        private System.Windows.Forms.CheckBox cbCheckForUpdateAt;
 
     }
 }

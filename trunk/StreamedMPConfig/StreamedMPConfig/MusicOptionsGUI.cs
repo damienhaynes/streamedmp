@@ -36,7 +36,6 @@ namespace StreamedMPConfig
 
     public MusicOptionsGUI()
     {
-      settings.Load();
     }
 
     #endregion
