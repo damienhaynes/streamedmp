@@ -152,7 +152,8 @@
         <id>12</id>
         <label>Skin</label>
         <hyperlink>196200</hyperlink>        
-      </control>	  
+      </control>	 
+              
 	  <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
 	  
       <control Style="settingsbutton">
@@ -173,6 +174,18 @@
       </control>
 
 	</control>
+
+    <control>
+      <description>Update Indicator</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>378</posX>
+      <posY>554</posY>
+      <width>32</width>
+      <height>32</height>
+      <texture>isupdate.png</texture>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+    </control>
  
     <import>common.time.xml</import>
 
