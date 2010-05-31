@@ -269,7 +269,7 @@
       this.StreamedMPMenu.Location = new System.Drawing.Point(12, 130);
       this.StreamedMPMenu.Name = "StreamedMPMenu";
       this.StreamedMPMenu.SelectedIndex = 0;
-      this.StreamedMPMenu.Size = new System.Drawing.Size(758, 447);
+      this.StreamedMPMenu.Size = new System.Drawing.Size(758, 457);
       this.StreamedMPMenu.TabIndex = 0;
       this.StreamedMPMenu.TabStop = false;
       this.StreamedMPMenu.Selected += new System.Windows.Forms.TabControlEventHandler(this.StreamedMPMenu_Selected);
@@ -586,7 +586,7 @@
       this.basicHomeDesign.Location = new System.Drawing.Point(4, 23);
       this.basicHomeDesign.Name = "basicHomeDesign";
       this.basicHomeDesign.Padding = new System.Windows.Forms.Padding(3);
-      this.basicHomeDesign.Size = new System.Drawing.Size(750, 420);
+      this.basicHomeDesign.Size = new System.Drawing.Size(750, 430);
       this.basicHomeDesign.TabIndex = 0;
       this.basicHomeDesign.Text = "BasicHome Design";
       this.basicHomeDesign.UseVisualStyleBackColor = true;
@@ -657,7 +657,7 @@
       // label20
       // 
       this.label20.AutoSize = true;
-      this.label20.Location = new System.Drawing.Point(537, 6);
+      this.label20.Location = new System.Drawing.Point(537, 4);
       this.label20.Name = "label20";
       this.label20.Size = new System.Drawing.Size(77, 13);
       this.label20.TabIndex = 120;
@@ -666,11 +666,11 @@
       // label19
       // 
       this.label19.AutoSize = true;
-      this.label19.Location = new System.Drawing.Point(6, 6);
+      this.label19.Location = new System.Drawing.Point(3, 4);
       this.label19.Name = "label19";
       this.label19.Size = new System.Drawing.Size(78, 13);
       this.label19.TabIndex = 119;
-      this.label19.Text = "Items A&vailable";
+      this.label19.Text = "Items Available";
       // 
       // cboQuickSelect
       // 
@@ -922,9 +922,9 @@
             "scorecenter",
             "tv",
             "tvseries"});
-      this.cboFanartProperty.Location = new System.Drawing.Point(113, 72);
+      this.cboFanartProperty.Location = new System.Drawing.Point(121, 72);
       this.cboFanartProperty.Name = "cboFanartProperty";
-      this.cboFanartProperty.Size = new System.Drawing.Size(201, 21);
+      this.cboFanartProperty.Size = new System.Drawing.Size(193, 21);
       this.cboFanartProperty.TabIndex = 16;
       this.toolTip1.SetToolTip(this.cboFanartProperty, resources.GetString("cboFanartProperty.ToolTip"));
       // 
@@ -973,15 +973,15 @@
             "tv",
             "weatherbg",
             "infoservice"});
-      this.bgBox.Location = new System.Drawing.Point(113, 103);
+      this.bgBox.Location = new System.Drawing.Point(121, 103);
       this.bgBox.Name = "bgBox";
-      this.bgBox.Size = new System.Drawing.Size(136, 21);
+      this.bgBox.Size = new System.Drawing.Size(128, 21);
       this.bgBox.TabIndex = 17;
       // 
       // labelImageFolder
       // 
       this.labelImageFolder.AutoSize = true;
-      this.labelImageFolder.Location = new System.Drawing.Point(12, 107);
+      this.labelImageFolder.Location = new System.Drawing.Point(7, 106);
       this.labelImageFolder.Name = "labelImageFolder";
       this.labelImageFolder.Size = new System.Drawing.Size(103, 13);
       this.labelImageFolder.TabIndex = 12;
@@ -1042,7 +1042,7 @@
       // label18
       // 
       this.label18.AutoSize = true;
-      this.label18.Location = new System.Drawing.Point(26, 27);
+      this.label18.Location = new System.Drawing.Point(23, 27);
       this.label18.Name = "label18";
       this.label18.Size = new System.Drawing.Size(36, 13);
       this.label18.TabIndex = 101;
@@ -1061,7 +1061,7 @@
       // label9
       // 
       this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(7, 61);
+      this.label9.Location = new System.Drawing.Point(4, 61);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(61, 13);
       this.label9.TabIndex = 0;

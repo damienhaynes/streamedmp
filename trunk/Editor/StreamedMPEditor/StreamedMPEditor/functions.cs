@@ -507,7 +507,7 @@ namespace StreamedMPEditor
         labelFanartProperty.Visible = false;
         cbEnableMusicNowPlayingFanart.Visible = false;
         //set the x,y of the skin image settings and display
-        labelImageFolder.Location = new Point(12, 52);
+        labelImageFolder.Location = new Point(5, 52);
         bgBox.Location = new Point(113, 49);
         folderBrowse.Location = new Point(255, 49);
         labelImageFolder.Visible = true;

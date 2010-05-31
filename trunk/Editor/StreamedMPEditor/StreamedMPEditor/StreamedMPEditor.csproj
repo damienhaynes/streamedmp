@@ -216,7 +216,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)StreamedMPEditor.dll D:\HTPC\MediaPortal\plugins\windows</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)StreamedMPEditor.dll D:\HTPC\MediaPortal\plugins\process</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
