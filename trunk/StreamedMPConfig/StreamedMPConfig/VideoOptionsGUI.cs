@@ -31,14 +31,16 @@ namespace StreamedMPConfig
     {
     }
     
-    public override bool Init()
-    {
-      return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_video.xml");
-    }
+
 
     #endregion
 
     #region Base overrides
+
+    public override bool Init()
+    {
+      return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_video.xml");
+    }
 
     protected override void OnPageLoad()
     {

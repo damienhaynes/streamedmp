@@ -22,6 +22,7 @@ namespace StreamedMPConfig
     public ConfigurationForm()
     {
       InitializeComponent();
+      settings.Load();
       SkinInfo.GetMediaPortalSkinPath();
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
