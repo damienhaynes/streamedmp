@@ -4356,6 +4356,8 @@
 		<row><td>ID_STRING14</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919145778</td></row>
 		<row><td>ID_STRING140</td><td>1033</td><td>fanartMovingPictures.12x3.8x2.Thumbs</td><td>0</td><td/><td>-2103516757</td></row>
 		<row><td>ID_STRING141</td><td>1033</td><td>fanartMovingPictures.12x4.8x3.Thumbs</td><td>0</td><td/><td>-2103574069</td></row>
+		<row><td>ID_STRING142</td><td>1033</td><td>STREAM~1|StreamedMP BasicHome Editor</td><td>0</td><td/><td>186551695</td></row>
+		<row><td>ID_STRING143</td><td>1033</td><td>BASICH~1|BasicHome Editor</td><td>0</td><td/><td>186568079</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
@@ -4611,11 +4613,13 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectDataFolder&gt;\res\mp.ico</td><td>0</td></row>
+		<row><td>NewShortcut1_D01DE67400B84322B9490EB8673F2046.exe</td><td/><td>&lt;StreamedMP&gt;\editor\streamedmpeditor\smpeditor\bin\x86\release\SMPEditor.exe</td><td>0</td></row>
 		<row><td>NewShortcut2_FF3799C827FB4AB7AB7DE6EEAEF77EEE.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut3_60EFB7FEA77A458A8531E0A05D6BC065.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>6</td></row>
 		<row><td>NewShortcut4_A0594CEEF3A447DE9C40F2B791979F8C.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut5_5F8C724FD1764D49819A518683F36431.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut6_B891162023F7441B8E7C9146DCA623E5.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
+		<row><td>NewShortcut7_5290AB3015C9419CB73C14A4781FB9A7.exe</td><td/><td>&lt;StreamedMP&gt;\editor\streamedmpeditor\smpeditor\bin\x86\release\SMPEditor.exe</td><td>0</td></row>
 		<row><td>menuGeneratorShort_AD7031F04E39404C8D69FB7F3DAE50BC.exe</td><td/><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>0</td></row>
 		<row><td>menuGeneratorShort_D928837CA45F4756BAE06DED95F196D1.exe</td><td/><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>0</td></row>
 	</table>
@@ -5200,6 +5204,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>NewShortcut4</td><td>webIssues</td><td/><td>newfolder4</td><td>2</td></row>
 		<row><td>NewShortcut5</td><td>webUpdates</td><td/><td>newfolder4</td><td>2</td></row>
 		<row><td>NewShortcut6</td><td>webWiki</td><td/><td>newfolder4</td><td>2</td></row>
+		<row><td>NewShortcut7</td><td>exeStreamedMPEditor</td><td/><td>newfolder3</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -5285,11 +5290,13 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING142##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut1_D01DE67400B84322B9490EB8673F2046.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut2</td><td>newfolder4</td><td>##ID_STRING42##</td><td>webForums</td><td>[INSTALLDIR]StreamedMP\Web\Forums.url</td><td/><td/><td/><td>NewShortcut2_FF3799C827FB4AB7AB7DE6EEAEF77EEE.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>newfolder4</td><td>##ID_STRING43##</td><td>webHome</td><td>[INSTALLDIR]StreamedMP\Web\Home.url</td><td/><td/><td/><td>NewShortcut3_60EFB7FEA77A458A8531E0A05D6BC065.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut4</td><td>newfolder4</td><td>##ID_STRING44##</td><td>webIssues</td><td>[INSTALLDIR]StreamedMP\Web\Issues.url</td><td/><td/><td/><td>NewShortcut4_A0594CEEF3A447DE9C40F2B791979F8C.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>newfolder4</td><td>##ID_STRING45##</td><td>webUpdates</td><td>[INSTALLDIR]StreamedMP\Web\Updates.url</td><td/><td/><td/><td>NewShortcut5_5F8C724FD1764D49819A518683F36431.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut6</td><td>newfolder4</td><td>##ID_STRING46##</td><td>webWiki</td><td>[INSTALLDIR]StreamedMP\Web\Wiki.url</td><td/><td/><td/><td>NewShortcut6_B891162023F7441B8E7C9146DCA623E5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut7</td><td>newfolder3</td><td>##ID_STRING143##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut7_5290AB3015C9419CB73C14A4781FB9A7.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
