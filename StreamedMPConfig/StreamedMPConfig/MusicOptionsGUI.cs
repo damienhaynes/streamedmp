@@ -56,6 +56,7 @@ namespace StreamedMPConfig
     {
       StreamedMPConfig.showEqGraphic = cmc_EqGfx.Selected;
       StreamedMPConfig.cdCoverOnly = cmc_CDCover.Selected;
+      settings.Save();
     }
 
     #endregion

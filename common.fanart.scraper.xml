@@ -10,6 +10,71 @@
       <width>1</width>
       <visible>no</visible>
     </control>
+    <!--- If there is an Update pending and the indicator arrow is display use these controls -->
+    <control>
+      <description>music background image</description>
+      <id>0</id>
+      <type>image</type>
+      <posX>170</posX>
+      <posY>10</posY>
+      <width>280</width>
+      <height>32</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>control.isvisible(91919280)+string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+    </control>
+    <control>
+      <description>Scraping Header Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>180</posX>
+      <posY>13</posY>
+      <width>200</width>
+      <textcolor>ff000000</textcolor>
+      <font>mediastream11tc</font>
+      <label>Fanart Scraping</label>
+      <align>left</align>
+      <visible>control.isvisible(91919280)+string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+    </control>
+    <control>
+      <description>Scraping Header</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>182</posX>
+      <posY>15</posY>
+      <width>200</width>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream11tc</font>
+      <label>Fanart Scraping</label>
+      <align>left</align>
+      <visible>control.isvisible(91919280)+string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+    </control>
+    <control>
+      <description>Scraping Percent Complete Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>13</posY>
+      <width>96</width>
+      <textcolor>ff000000</textcolor>
+      <font>mediastream11tc</font>
+      <label>#fanarthandler.scraper.percent.completed%</label>
+      <align>right</align>
+      <visible>control.isvisible(91919280)+string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+    </control>
+    <control>
+      <description>Scraping Percent Complete</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>412</posX>
+      <posY>15</posY>
+      <width>96</width>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream11tc</font>
+      <label>#fanarthandler.scraper.percent.completed%</label>
+      <align>right</align>
+      <visible>control.isvisible(91919280)+string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+    </control>
+    <!--- If there no Update pending use these controls -->
     <control>
       <description>music background image</description>
       <id>0</id>
@@ -19,7 +84,7 @@
       <width>280</width>
       <height>32</height>
       <texture>mediacountbackground.png</texture>
-      <visible>control.isvisible(91919280)</visible>
+      <visible>control.isvisible(91919280)+!string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
     </control>
     <control>
       <description>Scraping Header Shadow</description>
@@ -32,7 +97,7 @@
       <font>mediastream11tc</font>
       <label>Fanart Scraping</label>
       <align>left</align>
-      <visible>control.isvisible(91919280)</visible>
+      <visible>control.isvisible(91919280)+!string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
     </control>
     <control>
       <description>Scraping Header</description>
@@ -45,7 +110,7 @@
       <font>mediastream11tc</font>
       <label>Fanart Scraping</label>
       <align>left</align>
-      <visible>control.isvisible(91919280)</visible>
+      <visible>control.isvisible(91919280)+!string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
     </control>
     <control>
       <description>Scraping Percent Complete Shadow</description>
@@ -58,7 +123,7 @@
       <font>mediastream11tc</font>
       <label>#fanarthandler.scraper.percent.completed%</label>
       <align>right</align>
-      <visible>control.isvisible(91919280)</visible>
+      <visible>control.isvisible(91919280)+!string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
     </control>
     <control>
       <description>Scraping Percent Complete</description>
@@ -71,7 +136,8 @@
       <font>mediastream11tc</font>
       <label>#fanarthandler.scraper.percent.completed%</label>
       <align>right</align>
-      <visible>control.isvisible(91919280)</visible>
+      <visible>control.isvisible(91919280)+!string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
     </control>
+
   </controls>
 </window>
