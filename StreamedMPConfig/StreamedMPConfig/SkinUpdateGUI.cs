@@ -33,10 +33,9 @@ namespace StreamedMPConfig
 
     #region Private methods
 
-    void installUpdateGUI(string downloadURL)
+    void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-      optionDownloadURL = downloadURL;
       optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
       destinationPath = SkinInfo.mpPaths.skinBasePath;
 
@@ -51,56 +50,61 @@ namespace StreamedMPConfig
       progressDialog.StartModal(skinUpdate.GetID);
       GUIWindowManager.Process();
 
-      using (WebClient wcDownload = new WebClient())
+      foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
-        try
+        optionDownloadURL = thePatch.patchURL;
+        progressDialog.SetLine(1, "Downloading Patch: " + thePatch.patchVersion.ToString());
+        using (WebClient wcDownload = new WebClient())
         {
-          int upd = 1;
-          int bytesSize = 0;
-          byte[] downBuffer = new byte[2048];
+          try
+          {
+            int upd = 1;
+            int bytesSize = 0;
+            byte[] downBuffer = new byte[2048];
 
-          webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
-          webRequest.Credentials = CredentialCache.DefaultCredentials;
-          webResponse = (HttpWebResponse)webRequest.GetResponse();
-          Int64 fileSize = webResponse.ContentLength;
-          strResponse = wcDownload.OpenRead(optionDownloadURL);
-          strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
-          while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
-          {
-            strLocal.Write(downBuffer, 0, bytesSize);
-            PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
-            progressDialog.Percentage = PercentProgress;
-            progressDialog.SetLine(2, "Downloaded " + strLocal.Length.ToString() + " out of " + fileSize.ToString() + " (" + PercentProgress.ToString() + "%)");
-            // Only Update the progress bar every 1MB of downloaded data,
-            // any more offen slows the download to much.
-            if (upd > 50)
+            webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
+            webRequest.Credentials = CredentialCache.DefaultCredentials;
+            webResponse = (HttpWebResponse)webRequest.GetResponse();
+            Int64 fileSize = webResponse.ContentLength;
+            strResponse = wcDownload.OpenRead(optionDownloadURL);
+            strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
+            while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
             {
-              GUIWindowManager.Process();
-              upd = 0;
-              if (progressDialog.IsCanceled)
-                break;
+              strLocal.Write(downBuffer, 0, bytesSize);
+              PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
+              progressDialog.Percentage = PercentProgress;
+              progressDialog.SetLine(2, "Downloaded " + strLocal.Length.ToString() + " out of " + fileSize.ToString() + " (" + PercentProgress.ToString() + "%)");
+              // Only Update the progress bar every 1MB of downloaded data,
+              // any more offen slows the download to much.
+              if (upd > 50)
+              {
+                GUIWindowManager.Process();
+                upd = 0;
+                if (progressDialog.IsCanceled)
+                  break;
+              }
+              ++upd;
             }
-            ++upd;
           }
-        }
-        catch (Exception e)
-        {
-          Log.Error("Error in Download" + e.Message);
-        }
-        finally
-        {
-          webResponse.Close();
-          strResponse.Close();
-          strLocal.Close();
-          if (System.IO.File.Exists(optionDownloadPath) && !progressDialog.IsCanceled)
+          catch (Exception e)
           {
-            FastZip fz = new FastZip();
-            fz.ExtractZip(optionDownloadPath, destinationPath, "");
-            System.IO.File.Delete(optionDownloadPath);
+            Log.Error("Error in Download" + e.Message);
           }
-          progressDialog.Close();
+          finally
+          {
+            webResponse.Close();
+            strResponse.Close();
+            strLocal.Close();
+            if (System.IO.File.Exists(optionDownloadPath) && !progressDialog.IsCanceled)
+            {
+              FastZip fz = new FastZip();
+              fz.ExtractZip(optionDownloadPath, destinationPath, "");
+              System.IO.File.Delete(optionDownloadPath);
+            }
+          }
         }
       }
+      progressDialog.Close();
     }
 
 
@@ -164,15 +168,16 @@ namespace StreamedMPConfig
     {
       if (control == btDoUpdate)
       {
-        installUpdateGUI(updateCheck.url);
-
+        //install the patch(s)
+        installUpdateGUI();
+        // tell the user what has been done
         cmc_ChangeLog.Visible = false;
         btDoUpdate.Visible = false;
         GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
         dlgDone.SetHeading("StreamedMP Skin Update");
-        dlgDone.SetLine(1, String.Empty);
-        dlgDone.SetLine(2, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
-        dlgDone.SetLine(3, String.Empty);
+        dlgDone.SetLine(1, "Number or patch files installed : " + updateCheck.patchList.Count.ToString());
+        dlgDone.SetLine(2, String.Empty); 
+        dlgDone.SetLine(3, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
         dlgDone.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
       }

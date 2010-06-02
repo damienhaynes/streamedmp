@@ -109,6 +109,8 @@ namespace StreamedMPConfig
     {
       if (updateCheck.updateAvailable())
         updateFound.displayDetail();
+      else
+        MessageBox.Show("No patches avaiable - Currently running latest skin version");
     }
 
     #endregion

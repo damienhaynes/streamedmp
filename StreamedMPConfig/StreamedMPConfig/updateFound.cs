@@ -4,6 +4,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
+using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
+using System.Reflection;
 
 namespace StreamedMPConfig
 {
@@ -76,13 +79,48 @@ namespace StreamedMPConfig
 
     public static void downloadChangeLog()
     {
-      if (updateCheck.changeLogFile.StartsWith("C:\\"))
-        System.IO.File.Copy(updateCheck.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), true);
-      else
+      RichTextBox richTextBoxInput = new RichTextBox();
+      RichTextBox richTextBoxOutput = new RichTextBox();
+      //
+      // Download the change logs
+      //
+      foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
+        if (thePatch.patchChangeLog.StartsWith("C:\\"))
+        {
+          System.IO.File.Copy(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), true);
+          return;
+        }
+
         WebClient client = new WebClient();
-        client.DownloadFile(updateCheck.changeLogFile, Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+        client.DownloadFile(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        Log.Info("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
       }
+      //
+      // And combine them into a single change log
+      //
+      if (File.Exists(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf")))
+        File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+
+      // Add the default header
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPConfig.baseChangeLog.rtf");
+      richTextBoxInput.LoadFile(stream, RichTextBoxStreamType.RichText);
+      richTextBoxInput.SelectAll();
+      richTextBoxInput.Copy();
+      richTextBoxOutput.Paste();
+
+      // Add each file and save as ChangeLog.rtf
+      foreach (updateCheck.patches thePatch in updateCheck.patchList)
+      {
+        richTextBoxInput.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        richTextBoxInput.SelectAll();
+        richTextBoxInput.Copy();
+        richTextBoxOutput.Paste();
+        System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+      }
+      richTextBoxOutput.SaveFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+      richTextBoxInput.Dispose();
+      richTextBoxOutput.Dispose();
     }
 
 
@@ -92,7 +130,8 @@ namespace StreamedMPConfig
 
     private static void okButton_Click(object sender, EventArgs e)
     {
-      updateCheck.installUpdate(updateCheck.url);
+        updateCheck.installUpdate();
+        changlogForm.Hide();
     }
 
     private static void cancelButton_Click(object sender, EventArgs e)
