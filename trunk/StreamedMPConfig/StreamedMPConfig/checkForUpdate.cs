@@ -21,7 +21,7 @@ namespace StreamedMPConfig
     private static HttpWebRequest webRequest;
     private static HttpWebResponse webResponse;
     private static int PercentProgress;
-    private delegate void UpdateProgessCallback(Int64 BytesRead, Int64 TotalBytes);
+    //private delegate void UpdateProgessCallback(Int64 BytesRead, Int64 TotalBytes);
 
     private static string optionDownloadURL = null;
     private static string optionDownloadPath = null;
@@ -30,70 +30,97 @@ namespace StreamedMPConfig
     private static ProgressBar pBar = new ProgressBar();
     private static Label pLabel = new Label();
     private static Form downloadForm = new Form();
-    private static Button downloadStop = new Button();
+    public static Button downloadStop = new Button();
+    private static XmlTextReader reader;
+    private static Version minVersion = null;
 
     public static Version newVersion = null;
     public static Version curVersion = null;
     public static string url = "";
     public static string changeLogFile;
-    private static XmlTextReader reader;
+    public static List<patches> patchList = new List<patches>();
+
+    public class patches
+    {
+      public Version patchVersion;
+      public Version minSkinVersionForPatch;
+      public string patchURL;
+      public string patchChangeLog;
+    }
+
+    public static bool abortDownload = false;
 
     #endregion
 
     #region Public methods
-
-    public static void installUpdate(string downloadURL)
-    {
-      buildDownloadForm();
-      optionDownloadURL = downloadURL;
-      optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
-      destinationPath = SkinInfo.mpPaths.skinBasePath;
-      downloadForm.Text = "Download and Install StreamedMP Update";
-      pLabel.Text = "Starting Download";
-      thrDownload = new Thread(Download);
-      thrDownload.Start();
-      downloadForm.Show();
-    }
 
     // This section checks to see if there is a later version of the skin
     public static bool updateAvailable()
     {
       try
       {
+        string elementName = "";
         string xmlURL = null;
+        patchList.Clear();
+        Version skinVersionIs = updateCheck.SkinVersion();
+
         // Allow for testing
         if (System.IO.File.Exists("C:\\SkinUpdate.xml"))
           xmlURL = "C:\\SkinUpdate.xml";
         else
           xmlURL = "http://streamedmp.googlecode.com/svn/trunk/SkinUpdate/SkinUpdate.xml";
 
+        // Read the file
         reader = new XmlTextReader(xmlURL);
         reader.MoveToContent();
-        string elementName = "";
         if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "StreamedMP"))
         {
           while (reader.Read())
           {
-            if (reader.NodeType == XmlNodeType.Element)
-              elementName = reader.Name;
-            else
+            if (reader.NodeType == XmlNodeType.Element && reader.Name == "patch")
             {
-              if ((reader.NodeType == XmlNodeType.Text) && (reader.HasValue))
+              patches thisPatch = new patches();
+              while (reader.Read())
               {
-                switch (elementName)
+                if (reader.NodeType == XmlNodeType.Element)
+                  elementName = reader.Name;
+                else
                 {
-                  case "version":
-                    newVersion = new Version(reader.Value);
+                  if ((reader.NodeType == XmlNodeType.Text) && (reader.HasValue))
+                  {
+                    switch (elementName)
+                    {
+                      case "version":
+                        thisPatch.patchVersion = new Version(reader.Value);
+                        break;
+                      case "minversion":
+                        thisPatch.minSkinVersionForPatch = new Version(reader.Value);
+                        break;
+                      case "url":
+                        thisPatch.patchURL = reader.Value;
+                        break;
+                      case "changelog":
+                        if (System.IO.File.Exists("C:\\ChangeLog.rtf"))
+                          thisPatch.patchChangeLog = "C:\\ChangeLog.rtf";
+                        else
+                          thisPatch.patchChangeLog = reader.Value;
+                        break;
+                    }
+                  }
+                }
+                if (reader.NodeType == XmlNodeType.EndElement)
+                {
+                  if (reader.Name == "patch")
+                  {
+                    // Is this patch valide for the skin version we are running
+                    if (skinVersionIs.CompareTo(thisPatch.minSkinVersionForPatch) >= 0)
+                    {
+                      // Only add patch if current skin version is less
+                      if (skinVersionIs.CompareTo(thisPatch.patchVersion) < 0)
+                        patchList.Add(thisPatch);
+                    }
                     break;
-                  case "url":
-                    url = reader.Value;
-                    break;
-                  case "changelog":
-                    if (System.IO.File.Exists("C:\\ChangeLog.rtf"))
-                      changeLogFile = "C:\\ChangeLog.rtf";
-                    else
-                      changeLogFile = reader.Value;
-                    break;
+                  }
                 }
               }
             }
@@ -108,7 +135,9 @@ namespace StreamedMPConfig
       {
         if (reader != null) reader.Close();
       }
-      if (updateCheck.SkinVersion().CompareTo(newVersion) < 0)
+      // sort the list of patches with the oldest first - this is the order they will be insalled in
+      patchList.Sort(delegate(patches p1, patches p2) { return p1.patchVersion.CompareTo(p2.patchVersion); });
+      if (patchList.Count > 0)
         return true;
       else
         return false;
@@ -153,11 +182,31 @@ namespace StreamedMPConfig
       return curVersion;
     }
 
+    public static void installUpdate()
+    {
+      buildDownloadForm();
+      downloadForm.Show();
+      foreach (updateCheck.patches thePatch in updateCheck.patchList)
+      {
+        optionDownloadURL = thePatch.patchURL;
+        optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
+        destinationPath = SkinInfo.mpPaths.skinBasePath;
+        downloadForm.Text = "Download and Install StreamedMP Update r" + thePatch.patchVersion.ToString();
+        pLabel.Text = "Starting Download of Patch r" + thePatch.patchVersion.ToString();
+        //thrDownload = new Thread(Download);
+        //thrDownload.Start();
+        Cursor.Current = Cursors.WaitCursor;
+        Download();
+      }
+      downloadForm.Hide();
+      Cursor.Current = Cursors.Default;
+    }
+
     #endregion
 
     #region Private methods
 
-    static void buildDownloadForm()
+    public static void buildDownloadForm()
     {
       downloadForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       downloadForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,15 +228,9 @@ namespace StreamedMPConfig
       pLabel.Location = new System.Drawing.Point(25, 40);
       pLabel.Width = 350;
       downloadForm.Controls.Add(pLabel);
-
-      downloadStop.Text = "Cancel Install";
-      downloadStop.Width = 150;
-      downloadStop.Location = new System.Drawing.Point(230, 65);
-      downloadStop.Click += new System.EventHandler(downloadStop_Click);
-      downloadForm.Controls.Add(downloadStop);
     }
 
-    static void Download()
+    public static void Download()
     {
       using (WebClient wcDownload = new WebClient())
       {
@@ -201,10 +244,14 @@ namespace StreamedMPConfig
           strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
           int bytesSize = 0;
           byte[] downBuffer = new byte[2048];
+          downloadForm.Refresh();
           while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
           {
             strLocal.Write(downBuffer, 0, bytesSize);
-            downloadForm.Invoke(new UpdateProgessCallback(updateCheck.UpdateProgress), new object[] { strLocal.Length, fileSize });
+            PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
+            pBar.Value = PercentProgress;
+            pLabel.Text = "Downloaded " + strLocal.Length + " out of " + fileSize + " (" + PercentProgress + "%)";
+            downloadForm.Refresh();
           }
         }
         catch { }
@@ -213,27 +260,11 @@ namespace StreamedMPConfig
           webResponse.Close();
           strResponse.Close();
           strLocal.Close();
-          downloadForm.Invoke(new MethodInvoker(extractAndCleanup));
+          //downloadForm.Invoke(new MethodInvoker(extractAndCleanup));
+          extractAndCleanup();
+          downloadForm.Hide();
         }
       }
-    }
-
-    static void UpdateProgress(Int64 BytesRead, Int64 TotalBytes)
-    {
-      PercentProgress = Convert.ToInt32((BytesRead * 100) / TotalBytes);
-      pBar.Value = PercentProgress;
-      pLabel.Text = "Downloaded " + BytesRead + " out of " + TotalBytes + " (" + PercentProgress + "%)";
-    }
-
-    static void downloadStop_Click(object sender, EventArgs e)
-    {
-      webResponse.Close();
-      strResponse.Close();
-      strLocal.Close();
-      thrDownload.Abort();
-      pBar.Value = 0;
-      System.IO.File.Delete(optionDownloadPath);
-      downloadForm.Hide();
     }
 
     static void extractAndCleanup()
@@ -244,7 +275,6 @@ namespace StreamedMPConfig
         fz.ExtractZip(optionDownloadPath, destinationPath, "");
         System.IO.File.Delete(optionDownloadPath);
       }
-      downloadForm.Hide();
       pBar.Value = 0;
     }
 
