@@ -232,6 +232,8 @@ namespace StreamedMPConfig
           // cbCheckOnStart
           // 
           this.cbCheckOnStart.AutoSize = true;
+          this.cbCheckOnStart.Checked = true;
+          this.cbCheckOnStart.CheckState = System.Windows.Forms.CheckState.Checked;
           this.cbCheckOnStart.Location = new System.Drawing.Point(16, 87);
           this.cbCheckOnStart.Name = "cbCheckOnStart";
           this.cbCheckOnStart.Size = new System.Drawing.Size(224, 17);

@@ -107,6 +107,7 @@ namespace StreamedMPConfig
         }
       }
       progressDialog.Close();
+      StreamedMPConfig.udateAvailable = false;
     }
 
 
@@ -183,6 +184,7 @@ namespace StreamedMPConfig
         dlgDone.SetLine(3, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
         dlgDone.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
+        StreamedMPConfig.udateAvailable = false;
       }
     }
 

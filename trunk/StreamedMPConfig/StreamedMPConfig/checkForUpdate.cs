@@ -135,9 +135,15 @@ namespace StreamedMPConfig
       // sort the list of patches with the oldest first - this is the order they will be insalled in
       patchList.Sort(delegate(patches p1, patches p2) { return p1.patchVersion.CompareTo(p2.patchVersion); });
       if (patchList.Count > 0)
+      {
+        StreamedMPConfig.udateAvailable = true;
         return true;
+      }
       else
+      {
+        StreamedMPConfig.udateAvailable = false;
         return false;
+      }
     }
 
     public static Version SkinVersion()

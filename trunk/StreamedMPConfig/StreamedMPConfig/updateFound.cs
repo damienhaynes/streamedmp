@@ -132,6 +132,7 @@ namespace StreamedMPConfig
     {
         updateCheck.installUpdate();
         changlogForm.Hide();
+        StreamedMPConfig.udateAvailable = false;
     }
 
     private static void cancelButton_Click(object sender, EventArgs e)
