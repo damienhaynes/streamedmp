@@ -11,10 +11,19 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
     <control>
-    	
-
-        	
-    <description>textarea</description>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>570</posX>
+      <posY>583</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>control.isvisible(3)</visible>
+    </control>
+    
+    <control>
+      <description>textarea</description>
       <type>textbox</type>
       <id>2</id>
       <posY>150</posY>
@@ -37,17 +46,7 @@
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
     </control>
 
-    <control>
-      <description>Page Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>570</posX>
-      <posY>583</posY>
-      <width>260</width>
-      <height>30</height>
-      <texture>mediacountbg_Spin.png</texture>
-      <visible>control.isvisible(3)</visible>
-    </control>      
+          
 
     
     <control>
