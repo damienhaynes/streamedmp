@@ -58,7 +58,7 @@ namespace StreamedMPConfig
         xmlwriter.SetValue("StreamedMPConfig", "checkInterval", StreamedMPConfig.checkInterval);
         xmlwriter.SetValue("StreamedMPConfig", "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
         xmlwriter.SetValue("StreamedMPConfig", "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
-        MediaPortal.Profile.MPSettings.SaveCache();
+        MediaPortal.Profile.Settings.SaveCache();
       }
     }
 
