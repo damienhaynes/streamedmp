@@ -15,13 +15,11 @@ namespace StreamedMPConfig
   {
     #region Variables
 
-    private static Thread thrDownload;
     private static Stream strResponse;
     private static Stream strLocal;
     private static HttpWebRequest webRequest;
     private static HttpWebResponse webResponse;
     private static int PercentProgress;
-    //private delegate void UpdateProgessCallback(Int64 BytesRead, Int64 TotalBytes);
 
     private static string optionDownloadURL = null;
     private static string optionDownloadPath = null;
@@ -32,7 +30,6 @@ namespace StreamedMPConfig
     private static Form downloadForm = new Form();
     public static Button downloadStop = new Button();
     private static XmlTextReader reader;
-    private static Version minVersion = null;
 
     public static Version newVersion = null;
     public static Version curVersion = null;
@@ -112,7 +109,7 @@ namespace StreamedMPConfig
                 {
                   if (reader.Name == "patch")
                   {
-                    // Is this patch valide for the skin version we are running
+                    // Is this patch valid for the skin version we are running
                     if (skinVersionIs.CompareTo(thisPatch.minSkinVersionForPatch) >= 0)
                     {
                       // Only add patch if current skin version is less
