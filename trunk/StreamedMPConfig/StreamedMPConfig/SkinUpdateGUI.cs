@@ -12,8 +12,10 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)] protected GUITextControl cmc_ChangeLog = null;
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)] protected GUIButtonControl btDoUpdate = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)]
+    protected GUITextControl cmc_ChangeLog = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)]
+    protected GUIButtonControl btDoUpdate = null;
 
     #endregion
 
@@ -177,7 +179,7 @@ namespace StreamedMPConfig
         GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
         dlgDone.SetHeading("StreamedMP Skin Update");
         dlgDone.SetLine(1, "Number or patch files installed : " + updateCheck.patchList.Count.ToString());
-        dlgDone.SetLine(2, String.Empty); 
+        dlgDone.SetLine(2, String.Empty);
         dlgDone.SetLine(3, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
         dlgDone.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
