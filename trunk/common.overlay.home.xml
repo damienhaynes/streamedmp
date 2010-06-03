@@ -206,7 +206,7 @@
       <width>203</width>
       <height>114</height>
       <texture>black.png</texture>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>video preview window</description>
@@ -237,7 +237,7 @@
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -250,7 +250,7 @@
       <label>#Play.Current.Year</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -263,7 +263,7 @@
       <label>#Play.Current.Genre</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -276,7 +276,7 @@
       <label>#Play.Current.Director</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -289,7 +289,7 @@
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
   </controls>
 </window>

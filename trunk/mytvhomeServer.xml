@@ -321,6 +321,7 @@
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+      <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>     
     </control>
     <!--<control>
                         <description>video window</description>
