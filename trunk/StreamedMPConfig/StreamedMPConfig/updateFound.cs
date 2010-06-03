@@ -102,13 +102,6 @@ namespace StreamedMPConfig
       if (File.Exists(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf")))
         File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
 
-      // Add the default header
-      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPConfig.baseChangeLog.rtf");
-      richTextBoxInput.LoadFile(stream, RichTextBoxStreamType.RichText);
-      richTextBoxInput.SelectAll();
-      richTextBoxInput.Copy();
-      richTextBoxOutput.Paste();
-
       // Add each file and save as ChangeLog.rtf
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
