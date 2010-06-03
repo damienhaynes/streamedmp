@@ -155,6 +155,7 @@ namespace StreamedMPConfig
       else
       {
         GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+        dlg.Reset();
         dlg.SetHeading("StreamedMP Skin Update");
         dlg.SetLine(1, String.Empty);
         dlg.SetLine(2, "No Update Avaiable - Running Latest Release");
