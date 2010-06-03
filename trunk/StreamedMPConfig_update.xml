@@ -10,6 +10,19 @@
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
+	
+	<control>
+	  <description>Page Label</description>
+	  <type>label</type>
+	  <label>30009</label>
+	  <id>0</id>
+	  <posX>580</posX>
+	  <posY>587</posY>
+	  <font>mediastream12tc</font>
+	  <textcolor>ff909090</textcolor>
+	  <visible>control.isvisible(3)</visible>
+	  <animation effect="fade" time="250" delay="0">windowopen</animation>
+	</control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
@@ -20,6 +33,7 @@
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(3)</visible>
+	  <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     
     <control>
@@ -30,10 +44,10 @@
       <posX>250</posX>
       <width>550</width>
       <height>450</height>
-      <onup>2</onup>
-      <onright>2</onright>
+      <onup>3</onup>      
       <ondown>3</ondown>
-      <onleft>3</onleft>    
+      <onleft>3</onleft>
+	  <onright>#defaultcontrol.onright</onright>
       <spinWidth>50</spinWidth>
       <spinHeight>37</spinHeight>
       <spinPosX>700</spinPosX>
@@ -44,11 +58,9 @@
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+	  <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
 
-          
-
-    
     <control>
       <description>Do Update</description>
       <type>button</type>
@@ -56,11 +68,12 @@
       <label>Download and Update</label>
       <posX>250</posX>
       <posY>580</posY>
-      <width>260</width>
+      <width>260</width>	  
       <onup>2</onup>
       <onright>2</onright>
-      <ondown>3</ondown>
+      <ondown>2</ondown>
       <onleft>3</onleft>
+	  <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>  
   </controls>
 </window>
