@@ -38,9 +38,9 @@
       <type>image</type>
       <id>0</id>
       <posX>220</posX>
-      <posY>55</posY>
+      <posY>60</posY>
       <width>610</width>
-      <height>595</height>
+      <height>590</height>
       <texture>changelogbg.png</texture>
       <visible>control.isvisible(3)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>  	
@@ -49,26 +49,48 @@
       <description>Changelog Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>362</posX>
-      <posY>67</posY>
-      <width>500</width>
-      <textcolor>ff595959</textcolor>
-      <font>mediastream28tc</font>
-      <label>Change Log</label>
-      <align>left</align>
+      <posX>527</posX>
+      <posY>86</posY>
+      <textcolor>ff102020</textcolor>
+      <font>mediastream14tc</font>
+      <label>Update Available - Change Log</label>
+      <align>center</align>
       <visible>control.isvisible(3)</visible>
     </control>
     <control>
       <description>ChangeLog Header</description>
       <type>label</type>
       <id>0</id>
-      <posX>360</posX>
-      <posY>65</posY>
-      <width>500</width>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream28tc</font>
-      <label>Change Log</label>
-      <align>left</align>
+      <posX>525</posX>
+      <posY>84</posY>
+      <textcolor>ff006699</textcolor>
+      <font>mediastream14tc</font>
+      <label>Update Available - Change Log</label>
+      <align>center</align>
+      <visible>control.isvisible(3)</visible>
+    </control>
+    <control>
+      <description>List of Revsions/Patches</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>527</posX>
+      <posY>116</posY>
+      <textcolor>ff102020</textcolor>
+      <font>mediastream10tc</font>
+      <label>#StreamedMP.Revisions</label>
+      <align>center</align>
+      <visible>control.isvisible(3)</visible>
+    </control>    
+    <control>
+      <description>List of Revsions/Patches</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>525</posX>
+      <posY>114</posY>
+      <textcolor>ff006699</textcolor>
+      <font>mediastream10tc</font>
+      <label>#StreamedMP.Revisions</label>
+      <align>center</align>
       <visible>control.isvisible(3)</visible>
     </control>
     <control>
@@ -76,16 +98,17 @@
       <type>textbox</type>
       <id>2</id>
       <posY>150</posY>
-      <posX>250</posX>
-      <width>550</width>
+      <posX>245</posX>
+      <width>570</width>
       <height>450</height>
       <onup>3</onup>
       <ondown>3</ondown>
       <onleft>3</onleft>
+      <font>mediastream10</font>
       <onright>#defaultcontrol.onright</onright>
       <spinWidth>50</spinWidth>
       <spinHeight>37</spinHeight>
-      <spinPosX>680</spinPosX>
+      <spinPosX>684</spinPosX>
       <spinPosY>595</spinPosY>
       <spinAlign>right</spinAlign>
       <spinColor>ff006698</spinColor>

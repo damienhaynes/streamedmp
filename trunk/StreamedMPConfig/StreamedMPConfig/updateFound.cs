@@ -103,6 +103,8 @@ namespace StreamedMPConfig
         File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
 
       // Add each file and save as ChangeLog.rtf
+      int patchCnt = 1;
+      StreamedMPConfig.theRevisions = "Patch(s): ";
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
         richTextBoxInput.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
@@ -110,6 +112,11 @@ namespace StreamedMPConfig
         richTextBoxInput.Copy();
         richTextBoxOutput.Paste();
         System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        if (patchCnt < updateCheck.patchList.Count)
+          StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString() + " / ";
+        else
+          StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString();
+        patchCnt++;
       }
       richTextBoxOutput.SaveFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
       richTextBoxInput.Dispose();
