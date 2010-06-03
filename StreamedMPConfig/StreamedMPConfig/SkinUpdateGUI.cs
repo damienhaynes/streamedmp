@@ -150,7 +150,24 @@ namespace StreamedMPConfig
         string s = System.IO.File.ReadAllText(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
         rtBox.Rtf = s;
         string plainText = rtBox.Text;
-        cmc_ChangeLog.Label = plainText.ToString();
+        string[] revisions = plainText.Split('\n');
+        plainText = string.Empty;
+        int i = 1;
+        foreach (string line in revisions)
+        {
+          if (i > 1)
+          {
+            if (line.Contains("Revision:"))
+              plainText = plainText + "\n\n" + line;
+            else
+              plainText = plainText + "\n" + line;
+          }
+          else
+            plainText = plainText + line;
+
+          i++;
+        }
+        cmc_ChangeLog.Label = plainText;
         cmc_ChangeLog.Visible = true;
         btDoUpdate.Visible = true;
       }
