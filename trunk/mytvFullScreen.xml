@@ -27,7 +27,7 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground1.png</texture>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TV Logo border</description>
@@ -39,7 +39,7 @@
       <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TV background</description>
@@ -52,7 +52,7 @@
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TV Logo</description>
@@ -65,7 +65,7 @@
       <texture>#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Date</description>
@@ -77,7 +77,7 @@
       <align>right</align>
       <font>mediastream10</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
 
     </control>
     <control>
@@ -90,7 +90,7 @@
       <posY>535</posY>
       <font>mediastream16tc</font>
       <label>#TV.View.channel</label>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
 
     </control>
     <control>
@@ -104,7 +104,7 @@
       <label>#TV.View.title</label>
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
 
     </control>
     <control>
@@ -118,23 +118,21 @@
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
       <font>mediastream12</font>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <!--<control>
-                        <description>On tv NEXT</description>
-                        <id>0</id>
-                        <type>textbox</type>
-                        <width>900</width>
-                        <height>24</height>
-                        <posX>195</posX>
-                        <posY>650</posY>
-                        <label>#TV.Next.title</label>
-                        <font>mediastream12tc</font>
-                        <textcolor>ff888888</textcolor>
-                        <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-                        
-                </control>-->
+      <description>On tv NEXT</description>
+      <id>0</id>
+      <type>textbox</type>
+      <width>900</width>
+      <height>24</height>
+      <posX>195</posX>
+      <posY>650</posY>
+      <label>#TV.Next.title</label>
+      <font>mediastream12tc</font>
+      <textcolor>ff888888</textcolor>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+    </control>-->
     <control>
       <description>Progress Bar Background</description>
       <type>image</type>
