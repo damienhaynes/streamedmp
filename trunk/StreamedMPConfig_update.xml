@@ -10,19 +10,18 @@
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-	
-	<control>
-	  <description>Page Label</description>
-	  <type>label</type>
-	  <label>30009</label>
-	  <id>0</id>
-	  <posX>580</posX>
-	  <posY>587</posY>
-	  <font>mediastream12tc</font>
-	  <textcolor>ff909090</textcolor>
-	  <visible>control.isvisible(3)</visible>
-	  <animation effect="fade" time="250" delay="0">windowopen</animation>
-	</control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>580</posX>
+      <posY>587</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(3)</visible>
+      <animation effect="fade" time="250" delay="0">windowopen</animation>
+    </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
@@ -33,9 +32,8 @@
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(3)</visible>
-	  <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control>
       <description>textarea</description>
       <type>textbox</type>
@@ -44,10 +42,10 @@
       <posX>250</posX>
       <width>550</width>
       <height>450</height>
-      <onup>3</onup>      
+      <onup>3</onup>
       <ondown>3</ondown>
       <onleft>3</onleft>
-	  <onright>#defaultcontrol.onright</onright>
+      <onright>#defaultcontrol.onright</onright>
       <spinWidth>50</spinWidth>
       <spinHeight>37</spinHeight>
       <spinPosX>700</spinPosX>
@@ -58,29 +56,28 @@
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-	  <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-
     <control>
-      <description>Do Update</description>
+      <description>Do Update and Install</description>
       <type>button</type>
       <id>3</id>
-      <label>Download and Update</label>
+      <label>-</label>
       <posX>240</posX>
       <posY>585</posY>
-      <width>260</width>	  
+      <width>260</width>
       <onup>2</onup>
       <onright>2</onright>
       <ondown>2</ondown>
       <onleft>3</onleft>
-	  <textalign>center</textalign>
-	  <textYOff>0</textYOff>
+      <textalign>center</textalign>
+      <textYOff>0</textYOff>
       <textXOff>0</textXOff>
-	  <textcolor>ffffffff</textcolor>
+      <textcolor>ffffffff</textcolor>
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
-	  <textureFocus>tv_button_focus.png</textureFocus>
+      <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-	  <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>  
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
   </controls>
 </window>
