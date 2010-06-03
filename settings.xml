@@ -176,7 +176,7 @@
 	</control>
 
     <control>
-      <description>Update Indicator</description>
+      <description>Update Indicator (Non Full HD Screen)</description>
       <type>image</type>
       <id>0</id>
       <posX>378</posX>
@@ -184,7 +184,19 @@
       <width>32</width>
       <height>32</height>
       <texture>isupdate.png</texture>
-      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)+string.equals(#StreamedMP.FullHD,false)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>Update Indicator</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>378</posX>
+      <posY>551</posY>
+      <width>32</width>
+      <height>32</height>
+      <texture>isupdate.png</texture>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)+string.equals(#StreamedMP.FullHD,true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
  
