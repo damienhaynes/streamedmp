@@ -66,13 +66,20 @@
       <type>button</type>
       <id>3</id>
       <label>Download and Update</label>
-      <posX>250</posX>
-      <posY>580</posY>
+      <posX>240</posX>
+      <posY>585</posY>
       <width>260</width>	  
       <onup>2</onup>
       <onright>2</onright>
       <ondown>2</ondown>
       <onleft>3</onleft>
+	  <textalign>center</textalign>
+	  <textYOff>0</textYOff>
+      <textXOff>0</textXOff>
+	  <textcolor>ffffffff</textcolor>
+      <textcolorNoFocus>bfffffff</textcolorNoFocus>
+	  <textureFocus>tv_button_focus.png</textureFocus>
+      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
 	  <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>  
   </controls>
