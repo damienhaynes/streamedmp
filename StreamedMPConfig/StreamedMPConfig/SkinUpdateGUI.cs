@@ -170,6 +170,7 @@ namespace StreamedMPConfig
         cmc_ChangeLog.Label = plainText;
         cmc_ChangeLog.Visible = true;
         btDoUpdate.Visible = true;
+        GUIPropertyManager.SetProperty("#StreamedMP.Revisions", StreamedMPConfig.theRevisions);
       }
       else
       {
