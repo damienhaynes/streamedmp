@@ -195,6 +195,10 @@ namespace StreamedMPConfig
     public static string ShowEQ = "Show Graphic EQ in Music Now Playing";
     public static string MinVideoOSD = "Use minimal Video OSD when paused";
     public static string VideoWallpaperLabel = "Video Wallpaper";
+    public static string MusicMenu = "Music Menu";
+    public static string VideoMenu = "Video Menu";
+    public static string SkinUpdate = "Skin Update";
+    public static string UpdateInstall = "Update and Install";
     public static string SMPTranslation1 = "";
     public static string SMPTranslation2 = "";
     public static string SMPTranslation3 = "";
