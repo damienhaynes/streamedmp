@@ -26,7 +26,7 @@ namespace StreamedMPConfig
       SkinInfo.GetMediaPortalSkinPath();
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
-      DateTime buildDate = getLinkerTimeStamp(System.Reflection.Assembly.GetEntryAssembly().Location.ToString());
+      DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
       compileTime.Text += " " + buildDate.ToString() + " GMT";
 
       timePicker = new DateTimePicker();
