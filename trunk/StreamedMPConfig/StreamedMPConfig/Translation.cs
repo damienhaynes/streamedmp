@@ -209,6 +209,11 @@ namespace StreamedMPConfig
     public static string Author = "Author:";
     public static string Date = "Date:";
     public static string Message = "Message:";
+    public static string mupdateheader = "Patch Installer Downloaded to Desktop";
+    public static string mupdateline1 = "Manual Update Required - To apply close";
+    public static string mupdateline2 = "MediaPortal and/or Configuration";
+    public static string mupdateline3 = "and run:  {0}";
+    public static string mupdateline4 = "which can be found on your Desktop";
     public static string SMPTranslation1 = "";
     public static string SMPTranslation2 = "";
     public static string SMPTranslation3 = "";
