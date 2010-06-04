@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("SMPEditor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("StreamedMP BasicHome Editor")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("StreamedMP Team")]
-[assembly: AssemblyProduct("SMPEditor")]
-[assembly: AssemblyCopyright("Copyright © 2006")]
+[assembly: AssemblyProduct("StreamedMP")]
+[assembly: AssemblyCopyright("Copyright © 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.2.0.1408")]
+[assembly: AssemblyFileVersion("1.2.0.1408")]
