@@ -36,7 +36,6 @@ namespace StreamedMPConfig
     void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-      optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
       destinationPath = SkinInfo.mpPaths.skinBasePath;
 
       GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
@@ -56,6 +55,7 @@ namespace StreamedMPConfig
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
         optionDownloadURL = thePatch.patchURL;
+        optionDownloadPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(thePatch.patchURL));
         progressDialog.SetLine(1, string.Format(Translation.DownloadingPatch, thePatch.patchVersion.ToString()));
         using (WebClient wcDownload = new WebClient())
         {
@@ -100,16 +100,27 @@ namespace StreamedMPConfig
             strLocal.Close();
             if (System.IO.File.Exists(optionDownloadPath) && !progressDialog.IsCanceled)
             {
-              FastZip fz = new FastZip();
-              fz.ExtractZip(optionDownloadPath, destinationPath, "");
-              System.IO.File.Delete(optionDownloadPath);
+              if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
+              {
+                // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
+                System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
+                System.IO.File.Delete(optionDownloadPath);
+                StreamedMPConfig.manualInstallNeeded = true;
+              }
+              else
+              {
+                FastZip fz = new FastZip();
+                fz.ExtractZip(optionDownloadPath, destinationPath, "");
+                System.IO.File.Delete(optionDownloadPath);
+                StreamedMPConfig.manualInstallNeeded = false;
+                StreamedMPConfig.udateAvailable = false;
+              }
             }
           }
         }
       }
       progressDialog.Close();
-      StreamedMPConfig.udateAvailable = false;
-    }
+     }
 
 
     #endregion
@@ -204,12 +215,25 @@ namespace StreamedMPConfig
         // tell the user what has been done
         cmc_ChangeLog.Visible = false;
         btDoUpdate.Visible = false;
-        GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
-        dlgDone.SetHeading(Translation.SkinUpdate);
-        dlgDone.SetLine(1, string.Format(Translation.NumPatchesInstalled, updateCheck.patchList.Count.ToString()));
-        dlgDone.SetLine(2, String.Empty);
-        dlgDone.SetLine(3, string.Format(Translation.PatchUpdateComplete, updateCheck.SkinVersion()));
-        dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+        if (StreamedMPConfig.manualInstallNeeded)
+        {
+          GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+          dlgDone.SetHeading(Translation.mupdateheader);
+          dlgDone.SetLine(1, Translation.mupdateline1);
+          dlgDone.SetLine(2, Translation.mupdateline2);
+          dlgDone.SetLine(3, string.Format(Translation.mupdateline3, Path.GetFileName(optionDownloadPath)));
+          dlgDone.SetLine(4, Translation.mupdateline4);
+          dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+        }
+        else
+        {
+          GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+          dlgDone.SetHeading(Translation.SkinUpdate);
+          dlgDone.SetLine(1, string.Format(Translation.NumPatchesInstalled, updateCheck.patchList.Count.ToString()));
+          dlgDone.SetLine(2, String.Empty);
+          dlgDone.SetLine(3, string.Format(Translation.PatchUpdateComplete, updateCheck.SkinVersion()));
+          dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+        }
         GUIWindowManager.ShowPreviousWindow();
         StreamedMPConfig.udateAvailable = false;
       }

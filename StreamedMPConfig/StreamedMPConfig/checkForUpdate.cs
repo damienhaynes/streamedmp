@@ -194,18 +194,23 @@ namespace StreamedMPConfig
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
         optionDownloadURL = thePatch.patchURL;
-        optionDownloadPath = Path.Combine(Path.GetTempPath(), "SkinUpdate.zip");
+        optionDownloadPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(optionDownloadURL));
         destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install StreamedMP Update r" + thePatch.patchVersion.ToString();
         pLabel.Text = "Starting Download of Patch r" + thePatch.patchVersion.ToString();
-        //thrDownload = new Thread(Download);
-        //thrDownload.Start();
         Cursor.Current = Cursors.WaitCursor;
         Download();
       }
       downloadForm.Hide();
       Cursor.Current = Cursors.Default;
+      if (StreamedMPConfig.manualInstallNeeded)
+      {
+        string messageStr = Translation.mupdateline1 + " " + Translation.mupdateline2 + "\n\n";
+        messageStr = messageStr  + string.Format(Translation.mupdateline3, Path.GetFileName(optionDownloadPath)) + "\n\n" + Translation.mupdateline4;
+        MessageBox.Show(messageStr,Translation.mupdateheader);
+      }
     }
+
 
     #endregion
 
@@ -265,7 +270,6 @@ namespace StreamedMPConfig
           webResponse.Close();
           strResponse.Close();
           strLocal.Close();
-          //downloadForm.Invoke(new MethodInvoker(extractAndCleanup));
           extractAndCleanup();
           downloadForm.Hide();
         }
@@ -276,9 +280,20 @@ namespace StreamedMPConfig
     {
       if (System.IO.File.Exists(optionDownloadPath))
       {
-        FastZip fz = new FastZip();
-        fz.ExtractZip(optionDownloadPath, destinationPath, "");
-        System.IO.File.Delete(optionDownloadPath);
+        if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
+        {
+          // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
+          System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
+          System.IO.File.Delete(optionDownloadPath);
+          StreamedMPConfig.manualInstallNeeded = true;
+        }
+        else
+        {
+          FastZip fz = new FastZip();
+          fz.ExtractZip(optionDownloadPath, destinationPath, "");
+          System.IO.File.Delete(optionDownloadPath);
+          StreamedMPConfig.manualInstallNeeded = false;
+        }
       }
       pBar.Value = 0;
     }
