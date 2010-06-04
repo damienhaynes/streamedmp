@@ -26,6 +26,17 @@
       <texture>osdbackground.png</texture>
       <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
+	<control>
+      <description>background (small)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>650</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+    </control>
     <control>
       <description>background (small)</description>
       <type>image</type>
@@ -36,6 +47,17 @@
       <height>197</height>
       <texture>osdbackground.png</texture>
       <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+    </control>
+	<control>
+      <description>background (small)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>650</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
 
     <control>
