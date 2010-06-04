@@ -891,6 +891,9 @@ namespace StreamedMPEditor
       if (theDay == 0)
         day = "today";
       else
+        if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
+          day = "forecast" + (theDay + 1).ToString() + ".day";
+      else
         day = "day" + (theDay + 1).ToString() + ".day";
       if (WeatherIconsAnimated.Checked)
       {
