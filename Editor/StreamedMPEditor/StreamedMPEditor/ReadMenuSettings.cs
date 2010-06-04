@@ -267,7 +267,7 @@ namespace StreamedMPEditor
         txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
       if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
-        infoServiceDayProperty = "forcast";
+        infoServiceDayProperty = "forecast";
       else
         infoServiceDayProperty = "day";
 

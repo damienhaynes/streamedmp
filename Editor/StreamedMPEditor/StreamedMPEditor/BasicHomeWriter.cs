@@ -40,7 +40,7 @@ namespace StreamedMPEditor
         skeletonFile = "StreamedMPEditor.xmlFiles.VBasicHomeSkeleton.xml";
       }
       if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
-        infoServiceDayProperty = "forcast";
+        infoServiceDayProperty = "forecast";
       else
         infoServiceDayProperty = "day";
 
@@ -2204,29 +2204,32 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
       rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>" + ((xPos1 - 200) + 5).ToString() + "</posX>");
-      rawXML.AppendLine("\t\t<posY>" + (yPos1 + 200 + 155).ToString() + "</posY>");
-      rawXML.AppendLine("\t\t<align>left</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream12</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      {
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>" + ((xPos1 - 200) + 5).ToString() + "</posX>");
+        rawXML.AppendLine("\t\t<posY>" + (yPos1 + 200 + 155).ToString() + "</posY>");
+        rawXML.AppendLine("\t\t<align>left</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream12</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>" + ((xPos1 - 200) + 175).ToString() + "</posX>");
-      rawXML.AppendLine("\t\t<posY>" + (yPos1 + 200 + 155).ToString() + "</posY>");
-      rawXML.AppendLine("\t\t<align>right</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream12</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>" + ((xPos1 - 200) + 175).ToString() + "</posX>");
+        rawXML.AppendLine("\t\t<posY>" + (yPos1 + 200 + 155).ToString() + "</posY>");
+        rawXML.AppendLine("\t\t<align>right</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream12</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
+      }
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 GENERAL WEATHER</description>");
@@ -2643,29 +2646,32 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
       rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>300</posX>");
-      rawXML.AppendLine("\t\t<posY>559</posY>");
-      rawXML.AppendLine("\t\t<align>right</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream11</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      {
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>300</posX>");
+        rawXML.AppendLine("\t\t<posY>559</posY>");
+        rawXML.AppendLine("\t\t<align>right</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream11</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>300</posX>");
-      rawXML.AppendLine("\t\t<posY>584</posY>");
-      rawXML.AppendLine("\t\t<align>right</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream11</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>300</posX>");
+        rawXML.AppendLine("\t\t<posY>584</posY>");
+        rawXML.AppendLine("\t\t<align>right</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream11</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
+      }
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 GENERAL WEATHER</description>");
@@ -3048,29 +3054,32 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
       rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>125</posX>");
-      rawXML.AppendLine("\t\t<posY>355</posY>");
-      rawXML.AppendLine("\t\t<align>left</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream12</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      {
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MAX VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>125</posX>");
+        rawXML.AppendLine("\t\t<posY>355</posY>");
+        rawXML.AppendLine("\t\t<align>left</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.maxtemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream12</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
 
-      rawXML.AppendLine("\n\t<control>");
-      rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
-      rawXML.AppendLine("\t\t<type>label</type>");
-      rawXML.AppendLine("\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t<posX>295</posX>");
-      rawXML.AppendLine("\t\t<posY>355</posY>");
-      rawXML.AppendLine("\t\t<align>right</align>");
-      rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
-      rawXML.AppendLine("\t\t<font>mediastream12</font>");
-      rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
-      rawXML.AppendLine("\t</control>");
+        rawXML.AppendLine("\n\t<control>");
+        rawXML.AppendLine("\t\t<description>DAY 1 MIN VALUE</description>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<id>0</id>");
+        rawXML.AppendLine("\t\t<posX>295</posX>");
+        rawXML.AppendLine("\t\t<posY>355</posY>");
+        rawXML.AppendLine("\t\t<align>right</align>");
+        rawXML.AppendLine("\t\t<label>#infoservice.weather.today.mintemp</label>");
+        rawXML.AppendLine("\t\t<font>mediastream12</font>");
+        rawXML.AppendLine("\t\t<textcolor>white</textcolor>");
+        rawXML.AppendLine("\t</control>");
+      }
 
       rawXML.AppendLine("\n\t<control>");
       rawXML.AppendLine("\t\t<description>DAY 1 GENERAL WEATHER</description>");
