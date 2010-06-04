@@ -38,7 +38,6 @@ namespace StreamedMPConfig
           this.groupBox2 = new System.Windows.Forms.GroupBox();
           this.minVideoOSD = new System.Windows.Forms.RadioButton();
           this.fullVideoOSD = new System.Windows.Forms.RadioButton();
-          this.MiscScreens = new System.Windows.Forms.TabPage();
           this.CheckUpdate = new System.Windows.Forms.TabPage();
           this.label2 = new System.Windows.Forms.Label();
           this.cbCheckForUpdateAt = new System.Windows.Forms.CheckBox();
@@ -87,7 +86,6 @@ namespace StreamedMPConfig
           // 
           this.tabControl1.Controls.Add(this.MusicScreens);
           this.tabControl1.Controls.Add(this.VideoScreens);
-          this.tabControl1.Controls.Add(this.MiscScreens);
           this.tabControl1.Controls.Add(this.CheckUpdate);
           this.tabControl1.Controls.Add(this.aboutTab);
           this.tabControl1.Location = new System.Drawing.Point(12, 52);
@@ -171,16 +169,6 @@ namespace StreamedMPConfig
           this.fullVideoOSD.TabStop = true;
           this.fullVideoOSD.Text = "Full Video OSD";
           this.fullVideoOSD.UseVisualStyleBackColor = true;
-          // 
-          // MiscScreens
-          // 
-          this.MiscScreens.Location = new System.Drawing.Point(4, 22);
-          this.MiscScreens.Name = "MiscScreens";
-          this.MiscScreens.Padding = new System.Windows.Forms.Padding(3);
-          this.MiscScreens.Size = new System.Drawing.Size(548, 227);
-          this.MiscScreens.TabIndex = 1;
-          this.MiscScreens.Text = "Misc Screens";
-          this.MiscScreens.UseVisualStyleBackColor = true;
           // 
           // CheckUpdate
           // 
@@ -363,7 +351,6 @@ namespace StreamedMPConfig
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage MusicScreens;
         private System.Windows.Forms.CheckBox cbCdCoverOnly;
-        private System.Windows.Forms.TabPage MiscScreens;
         private System.Windows.Forms.CheckBox cbShowEqGraphic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage aboutTab;
