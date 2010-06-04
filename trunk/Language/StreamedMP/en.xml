@@ -4,6 +4,10 @@
 <!-- Note: English is the fallback for any strings not found in other languages -->
 <!-- Last Updated: 4th June 2010 -->
 <strings>
+	  <!-- Example user defined translation property                                       -->
+	  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
+	  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+    <string Field="#StreamedMP.Example.Property">Translated String</string>
     <!-- Menu Options -->
     <string Field="MusicMenu">Music Settings</string>
     <string Field="VideoMenu">Video Settings</string>
@@ -20,6 +24,11 @@
     <string Field="Author">Author:</string>
     <string Field="Date">Date:</string>
     <string Field="Message">Message:</string>
+    <string Field="mupdateheader">Patch Installer Downloaded to Desktop</string>
+    <string Field="mupdateline1">Manual Update Required - To apply close</string>
+    <string Field="mupdateline2">MediaPortal and/or Configuration</string>
+    <string Field="mupdateline3">and run:  {0}</string>
+    <string Field="mupdateline4">which can be found on your Desktop</string>
     <!-- Plugin Options -->
     <string Field="CDCover">Show CD Cover Only in Music Now Playing</string>
     <string Field="ShowEQ">Show Graphic EQ in Music Now Playing</string>

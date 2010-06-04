@@ -52,6 +52,8 @@ namespace StreamedMPConfig
 
     #region Public Properties
 
+    public static Dictionary<string, string> FixedTranslations = new Dictionary<string, string>();
+
     /// <summary>
     /// Gets the translated strings collection in the active language
     /// </summary>
@@ -118,14 +120,9 @@ namespace StreamedMPConfig
         if (stringEntry.NodeType == XmlNodeType.Element)
           try
           {
-            if (stringEntry.Attributes.GetNamedItem("Field").Value.Contains(":"))
+            if (stringEntry.Attributes.GetNamedItem("Field").Value.StartsWith("#"))
             {
-              words = stringEntry.Attributes.GetNamedItem("Field").Value.Split(':');
-              if (words[1] != null)
-              {
-                TranslatedStrings.Add(words[0], stringEntry.InnerText);
-                DynamicTranslations.Add(words[0], words[1]);
-              }
+              FixedTranslations.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
             }
             else
               TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
@@ -214,27 +211,6 @@ namespace StreamedMPConfig
     public static string mupdateline2 = "MediaPortal and/or Configuration";
     public static string mupdateline3 = "and run:  {0}";
     public static string mupdateline4 = "which can be found on your Desktop";
-    public static string SMPTranslation1 = "";
-    public static string SMPTranslation2 = "";
-    public static string SMPTranslation3 = "";
-    public static string SMPTranslation4 = "";
-    public static string SMPTranslation5 = "";
-    public static string SMPTranslation6 = "";
-    public static string SMPTranslation7 = "";
-    public static string SMPTranslation8 = "";
-    public static string SMPTranslation9 = "";
-    public static string SMPTranslation10 = "";
-    public static string SMPTranslation11 = "";
-    public static string SMPTranslation12 = "";
-    public static string SMPTranslation13 = "";
-    public static string SMPTranslation14 = "";
-    public static string SMPTranslation15 = "";
-    public static string SMPTranslation16 = "";
-    public static string SMPTranslation17 = "";
-    public static string SMPTranslation18 = "";
-    public static string SMPTranslation19 = "";
-    public static string SMPTranslation20 = "";
-
 
     #endregion
   }
