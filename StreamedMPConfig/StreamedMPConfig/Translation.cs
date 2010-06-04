@@ -199,7 +199,7 @@ namespace StreamedMPConfig
     public static string VideoMenu = "Video Menu";
     public static string SkinUpdate = "Skin Update";
     public static string UpdateInstall = "Update and Install";
-    public static string NoUpdatesAvailable = "No patches available - Currently running latest skin version";
+    public static string NoUpdatesAvailable = "No patches are currently available";
     public static string DownloadingPatch = "Downloading Patch: {0}";
     public static string DownloadingProgress = "Downloaded {0} out of {1} ({2}%)";
     public static string NumPatchesInstalled = "Number of patch files installed: {0}";
