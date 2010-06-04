@@ -50,6 +50,9 @@ namespace StreamedMPConfig
       progressDialog.StartModal(skinUpdate.GetID);
       GUIWindowManager.Process();
 
+      // sort the list of patches with the oldest first - this is the order they will be insalled in
+      updateCheck.patchList.Sort(delegate(updateCheck.patches p1, updateCheck.patches p2) { return p1.patchVersion.CompareTo(p2.patchVersion); });
+
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
         optionDownloadURL = thePatch.patchURL;

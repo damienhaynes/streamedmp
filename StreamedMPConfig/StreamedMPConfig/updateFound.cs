@@ -79,6 +79,10 @@ namespace StreamedMPConfig
 
     public static void downloadChangeLog()
     {
+      // sort the list of patches with the newest first, this correctly display the change log
+      updateCheck.patchList.Sort(delegate(updateCheck.patches p1, updateCheck.patches p2) { return p2.patchVersion.CompareTo(p1.patchVersion); });
+
+
       RichTextBox richTextBoxInput = new RichTextBox();
       RichTextBox richTextBoxOutput = new RichTextBox();
       //
