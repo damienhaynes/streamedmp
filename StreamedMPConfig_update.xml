@@ -3,7 +3,7 @@
   <id>196204</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:StreamedMP - Skin Update</define>
+  <define>#header.label:StreamedMP - #StreamedMP.SkinUpdate</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:3</define>
   <define>#defaultcontrol.onright:9999</define>
@@ -50,10 +50,10 @@
       <type>label</type>
       <id>0</id>
       <posX>527</posX>
-      <posY>86</posY>
+      <posY>86</posY>	  
       <textcolor>ff102020</textcolor>
       <font>mediastream14tc</font>
-      <label>Update Available - Change Log</label>
+      <label>#StreamedMP.UpdateAvailableHeading</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
     </control>
@@ -61,11 +61,11 @@
       <description>ChangeLog Header</description>
       <type>label</type>
       <id>0</id>
-      <posX>525</posX>
-      <posY>84</posY>
+      <posX>527</posX>
+      <posY>84</posY>	  
       <textcolor>ff006699</textcolor>
       <font>mediastream14tc</font>
-      <label>Update Available - Change Log</label>
+      <label>#StreamedMP.UpdateAvailableHeading</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
     </control>

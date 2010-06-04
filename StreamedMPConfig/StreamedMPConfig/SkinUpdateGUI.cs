@@ -43,7 +43,7 @@ namespace StreamedMPConfig
       progressDialog.Reset();
       progressDialog.DisplayProgressBar = true;
       progressDialog.ShowWaitCursor = false;
-      progressDialog.SetHeading("StreamedMP Update Download & Install");
+      progressDialog.SetHeading(Translation.SkinUpdate);
       progressDialog.Percentage = 0;
       progressDialog.SetLine(1, string.Empty);
       progressDialog.SetLine(2, string.Empty);
@@ -53,7 +53,7 @@ namespace StreamedMPConfig
       foreach (updateCheck.patches thePatch in updateCheck.patchList)
       {
         optionDownloadURL = thePatch.patchURL;
-        progressDialog.SetLine(1, "Downloading Patch: " + thePatch.patchVersion.ToString());
+        progressDialog.SetLine(1, string.Format(Translation.DownloadingPatch, thePatch.patchVersion.ToString()));
         using (WebClient wcDownload = new WebClient())
         {
           try
@@ -73,7 +73,7 @@ namespace StreamedMPConfig
               strLocal.Write(downBuffer, 0, bytesSize);
               PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
               progressDialog.Percentage = PercentProgress;
-              progressDialog.SetLine(2, "Downloaded " + strLocal.Length.ToString() + " out of " + fileSize.ToString() + " (" + PercentProgress.ToString() + "%)");
+              progressDialog.SetLine(2, string.Format(Translation.DownloadingProgress, strLocal.Length.ToString(), fileSize.ToString(), PercentProgress.ToString()));
               // Only Update the progress bar every 1MB of downloaded data,
               // any more offen slows the download to much.
               if (upd > 50)
@@ -167,6 +167,13 @@ namespace StreamedMPConfig
 
           i++;
         }
+
+        // Replace hardcoded strings in change log
+        plainText = plainText.Replace("Revision:", Translation.Revision);
+        plainText = plainText.Replace("Author:", Translation.Author);
+        plainText = plainText.Replace("Date:", Translation.Date);
+        plainText = plainText.Replace("Message:", Translation.Message);
+
         cmc_ChangeLog.Label = plainText;
         cmc_ChangeLog.Visible = true;
         btDoUpdate.Visible = true;
@@ -176,9 +183,9 @@ namespace StreamedMPConfig
       {
         GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
         dlg.Reset();
-        dlg.SetHeading("StreamedMP Skin Update");
+        dlg.SetHeading(Translation.SkinUpdate);
         dlg.SetLine(1, String.Empty);
-        dlg.SetLine(2, "No Update Avaiable - Running Latest Release");
+        dlg.SetLine(2, Translation.NoUpdatesAvailable);
         dlg.SetLine(3, String.Empty);
         dlg.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
@@ -195,10 +202,10 @@ namespace StreamedMPConfig
         cmc_ChangeLog.Visible = false;
         btDoUpdate.Visible = false;
         GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
-        dlgDone.SetHeading("StreamedMP Skin Update");
-        dlgDone.SetLine(1, "Number or patch files installed : " + updateCheck.patchList.Count.ToString());
+        dlgDone.SetHeading(Translation.SkinUpdate);
+        dlgDone.SetLine(1, string.Format(Translation.NumPatchesInstalled, updateCheck.patchList.Count.ToString()));
         dlgDone.SetLine(2, String.Empty);
-        dlgDone.SetLine(3, "Update to Skin Version : " + updateCheck.SkinVersion() + " Complete");
+        dlgDone.SetLine(3, string.Format(Translation.PatchUpdateComplete, updateCheck.SkinVersion()));
         dlgDone.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
         StreamedMPConfig.udateAvailable = false;
