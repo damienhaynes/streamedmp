@@ -266,7 +266,10 @@ namespace StreamedMPEditor
       else
         txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
-      ticker = "#infoservice";
+      if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
+        infoServiceDayProperty = "forcast";
+      else
+        infoServiceDayProperty = "day";
 
       // As only saving the animated state set the static state true if animimated state is false
       if (!WeatherIconsAnimated.Checked)
