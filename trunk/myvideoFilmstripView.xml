@@ -102,7 +102,7 @@ This file should contain the details view
 		  <seperator>-----------------------------------------------------------------------------------</seperator>
 		  <font>mediastream11</font>
 		  <label>#plot</label>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)+!string.starts(#plot,unknown)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
@@ -160,7 +160,7 @@ This file should contain the details view
 		  <label>#mpaarating</label>
 		  <posX>410</posX>
 		  <posY>365</posY>
-		  <width>360</width>
+		  <width>400</width>
 		  <height>50</height>
 		  <font>mediastream11</font>
 		  <visible><![CDATA[facadeview.filmstrip+control.isvisible(4441)+!string.starts(#mpaarating,<)+!string.starts(#mpaarating,unknown)]]></visible>
@@ -172,14 +172,37 @@ This file should contain the details view
 		  <type>label</type>
 		  <label>173</label>
 		  <posX>410</posX>
-		  <posY>405</posY>
+		  <posY>410</posY>
 		  <width>360</width>
 		  <font>mediastream11tc</font>
 		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>	
+		</control>
+		<control>
+		  <description>Rating Stars - 1080p</description>
+		  <type>imagelist</type>
+		  <id>1001</id>
+		  <posX>410</posX>
+		  <posY>432</posY>
+		  <width>115</width>
+		  <height>13</height>
+		  <textureWidth>35</textureWidth>
+		  <textureHeight>34</textureHeight>
+		  <subitems>
+			<subitem>starwhitehollow.png</subitem>
+			<subitem>starwhite.png</subitem>
+		  </subitems>
+		  <orientation>horizontal</orientation>
+		  <align>left</align>
+		  <imagesToDraw>5</imagesToDraw>
+		  <percentage>#rating</percentage>
+		  <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
+		  <animation effect="fade" time="250">WindowOpen</animation>
+		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>		
 		<control>
+		  <description>Rating Stars - 720p</description>
 		  <type>imagelist</type>
 		  <id>1001</id>
 		  <posX>410</posX>
@@ -189,24 +212,24 @@ This file should contain the details view
 		  <textureWidth>23</textureWidth>
 		  <textureHeight>22</textureHeight>
 		  <subitems>
-			<subitem>-.png</subitem>
+			<subitem>starwhitehollow.png</subitem>
 			<subitem>starwhite.png</subitem>
 		  </subitems>
 		  <orientation>horizontal</orientation>
 		  <align>left</align>
-		  <imagesToDraw>10</imagesToDraw>
+		  <imagesToDraw>5</imagesToDraw>
 		  <percentage>#rating</percentage>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+		  <visible>facadeview.filmstrip+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 		  <type>label</type>
-		  <label>#rating / 10</label>
+		  <label>#rating / 10 (#votes votes)</label>
 		  <posX>410</posX>
 		  <posY>457</posY>
 		  <width>360</width>
-		  <font>mediastream11</font>
+		  <font>mediastream10</font>
 		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
 		  <animation effect="fade" time="250">WindowOpen</animation>
 		  <animation effect="fade" time="250">WindowClose</animation>
