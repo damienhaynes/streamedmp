@@ -8,29 +8,30 @@
   <define>#currentremaining:#currentremaining</define>
   <controls>
     <control>
-      <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
+      <description>dummy to fix controls with ID 1</description>
       <type>image</type>
-      <id>0</id>
-      <posX>2000</posX>
-      <posY>2000</posY>
-      <width>10</width>
-      <height>10</height>
-      <texture>-</texture>
-      <visible>player.forwarding|player.rewinding</visible>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1</width>
+      <height>1</height>
+      <texture>black.png</texture>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (paused)</description>
       <type>image</type>
-      <id>1</id>
+      <id>0</id>
       <posX>0</posX>
       <posY>523</posY>
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground1.png</texture>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Thumb border</description>
+      <id>0</id>
       <type>image</type>
       <posX>6</posX>
       <posY>470</posY>
@@ -39,12 +40,12 @@
       <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Thumb background</description>
       <type>image</type>
-      <id>1</id>
+      <id>0</id>
       <posX>16</posX>
       <posY>480</posY>
       <width>150</width>
@@ -52,12 +53,12 @@
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Current Logo</description>
       <type>image</type>
-      <id>1</id>
+      <id>0</id>
       <posX>16</posX>
       <posY>480</posY>
       <width>150</width>
@@ -65,7 +66,7 @@
       <texture>#Play.Current.Thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Current Date</description>
@@ -77,7 +78,7 @@
       <align>right</align>
       <font>mediastream10</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Title</description>
@@ -89,7 +90,7 @@
       <posY>535</posY>
       <font>mediastream16tc</font>
       <label>#Play.Current.Title</label>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Year</description>
@@ -102,7 +103,7 @@
       <label>#Play.Current.Year</label>
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Plot</description>
@@ -115,7 +116,7 @@
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream12</font>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Progress Bar Background</description>
@@ -183,6 +184,9 @@
       <align>left</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
@@ -195,6 +199,9 @@
       <align>right</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
     <control>
