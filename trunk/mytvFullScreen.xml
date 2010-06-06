@@ -200,6 +200,9 @@
       <align>left</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
 
     </control>
@@ -213,6 +216,9 @@
       <align>right</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
 
     </control>
