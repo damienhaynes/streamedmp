@@ -277,9 +277,9 @@
       <description>Sub Menu Background (subtitles)</description>
       <type>image</type>
       <id>302</id>
-      <posX>909</posX>
+      <posX>865</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>415</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <visible>control.isvisible(800)</visible>
@@ -289,7 +289,7 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>18</posY>
       <label>SUBTITLES MENU</label>
       <font>mediastream16c</font>
@@ -301,7 +301,7 @@
       <description>SubTitle Delay label</description>
       <type>label</type>
       <id>850</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>64</posY>
       <label>303</label>
       <visible>no</visible>
@@ -311,7 +311,7 @@
       <description>SubTitle Delay Slider</description>
       <type>slider</type>
       <id>800</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -328,7 +328,7 @@
       <description>SubTitles On/Off Checkbox</description>
       <type>checkmark</type>
       <id>801</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>139</posY>
       <MarkWidth>20</MarkWidth>
       <MarkHeight>20</MarkHeight>
@@ -344,7 +344,7 @@
       <description>Sub Titles List Control</description>
       <type>listcontrol</type>
       <id>802</id>
-      <posX>910</posX>
+      <posX>870</posX>
       <posY>174</posY>
       <width>370</width>
       <textXOff>25</textXOff>
@@ -356,72 +356,14 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-    <control>
-      <description>Channel Button Down</description>
-      <type>button</type>
-      <id>32</id>
-      <posX>30</posX>
-      <posY>700</posY>
-      <width>37</width>
-      <height>37</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <label>-</label>
-      <onleft>221</onleft>
-      <onright>31</onright>
-      <onup>33</onup>
-      <ondown>210</ondown>
-      <visible>no</visible>
-    </control>
-    <control>
-      <description>Channel Button Up</description>
-      <type>button</type>
-      <id>31</id>
-      <posX>67</posX>
-      <posY>700</posY>
-      <width>37</width>
-      <height>37</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <label>-</label>
-      <onleft>32</onleft>
-      <onright>210</onright>
-      <onup>33</onup>
-      <ondown>210</ondown>
-      <visible>no</visible>
-    </control>
-    <!-- :::::::::: AUDIO MENU :::::::::: -->
-    <control>
-      <description>Sub Menu Background (volume)</description>
-      <type>image</type>
-      <id>300</id>
-      <posX>48</posX>
-      <posY>49</posY>
-      <width>285</width>
-      <height>473</height>
-      <texture>osdmenubg.png</texture>
-      <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-    </control>
-    <control>
-      <description>Sub Menu Background (bookmarks)</description>
-      <type>image</type>
-      <id>303</id>
-      <posX>48</posX>
-      <posY>49</posY>
-      <width>285</width>
-      <height>473</height>
-      <texture>osdmenubg.png</texture>
-      <visible>no</visible>
-    </control>
     <!-- :::::::::: VIDEO MENU :::::::::: -->
     <control>
       <description>Sub Menu Background (video)</description>
       <type>image</type>
       <id>304</id>
-      <posX>909</posX>
+      <posX>835</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>445</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -431,7 +373,7 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>880</posX>
       <posY>18</posY>
       <label>VIDEO MENU</label>
       <font>mediastream16c</font>
@@ -443,7 +385,7 @@
       <description>Video Position label</description>
       <type>label</type>
       <id>750</id>
-      <posX>948</posX>
+      <posX>880</posX>
       <posY>64</posY>
       <label>298</label>
       <font>mediastream10tc</font>
@@ -454,7 +396,7 @@
       <description>Video Position Slider</description>
       <type>slider</type>
       <id>700</id>
-      <posX>948</posX>
+      <posX>880</posX>
       <posY>89</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -471,7 +413,7 @@
       <description>Non-Interleaved Checkbox</description>
       <type>checkmark</type>
       <id>701</id>
-      <posX>948</posX>
+      <posX>880</posX>
       <posY>124</posY>
       <label>306</label>
       <MarkWidth>20</MarkWidth>
@@ -487,7 +429,7 @@
       <description>No Cache Checkbox</description>
       <type>checkmark</type>
       <id>702</id>
-      <posX>948</posX>
+      <posX>880</posX>
       <posY>154</posY>
       <label>431</label>
       <MarkWidth>20</MarkWidth>
@@ -504,7 +446,7 @@
       <type>checkmark</type>
       <id>703</id>
       <posX>73</posX>
-      <posY>948</posY>
+      <posY>880</posY>
       <label>343</label>
       <MarkWidth>20</MarkWidth>
       <MarkHeight>20</MarkHeight>
@@ -600,9 +542,9 @@
       <description>Sub Menu Background (audio)</description>
       <type>image</type>
       <id>305</id>
-      <posX>909</posX>
+      <posX>865</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>415</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <visible>control.isvisible(500)</visible>
@@ -612,7 +554,7 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>18</posY>
       <label>AUDIO MENU</label>
       <!-- no string available for this one? -->
@@ -625,7 +567,7 @@
       <description>A/v Delay label</description>
       <type>label</type>
       <id>550</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>64</posY>
       <label>297</label>
       <font>mediastream10tc</font>
@@ -636,7 +578,7 @@
       <description>A/V Delay Slider</description>
       <type>slider</type>
       <id>500</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -653,7 +595,7 @@
       <description>Audio Stream List Control</description>
       <type>listcontrol</type>
       <id>501</id>
-      <posX>910</posX>
+      <posX>870</posX>
       <posY>174</posY>
       <width>370</width>
       <height>299</height>
@@ -679,7 +621,7 @@
       <description>Volume Slider</description>
       <type>slider</type>
       <id>400</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
@@ -730,6 +672,66 @@
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(221)+!player.rewinding+!player.forwarding</visible>
     </control>
+    
+    <!--************* Unused controls **********************-->
+    <control>
+      <description>Channel Button Down</description>
+      <type>button</type>
+      <id>32</id>
+      <posX>30</posX>
+      <posY>700</posY>
+      <width>37</width>
+      <height>37</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <label>-</label>
+      <onleft>221</onleft>
+      <onright>31</onright>
+      <onup>33</onup>
+      <ondown>210</ondown>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>Channel Button Up</description>
+      <type>button</type>
+      <id>31</id>
+      <posX>67</posX>
+      <posY>700</posY>
+      <width>37</width>
+      <height>37</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <label>-</label>
+      <onleft>32</onleft>
+      <onright>210</onright>
+      <onup>33</onup>
+      <ondown>210</ondown>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>Sub Menu Background (volume)</description>
+      <type>image</type>
+      <id>300</id>
+      <posX>48</posX>
+      <posY>49</posY>
+      <width>285</width>
+      <height>473</height>
+      <texture>osdmenubg.png</texture>
+      <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>Sub Menu Background (bookmarks)</description>
+      <type>image</type>
+      <id>303</id>
+      <posX>48</posX>
+      <posY>49</posY>
+      <width>285</width>
+      <height>473</height>
+      <texture>osdmenubg.png</texture>
+      <visible>no</visible>
+    </control>
+    <!--****************************************************-->
     <import>common.player.xml</import>
   </controls>
 </window>
