@@ -172,9 +172,10 @@
       <textYOff>5</textYOff>
       <textXOff2>0</textXOff2>
       <textYOff2>5</textYOff2>
-      <textXOff3>600</textXOff3>
+      <textXOff3>580</textXOff3>
       <textYOff3>10</textYOff3>
-      <font2>mediastream11</font2>
+      <font3>mediastream10</font3>
+	  <font2>mediastream10</font2>
       <keepaspectratio>yes</keepaspectratio>
       <unfocusedAlpha>200</unfocusedAlpha>
       <spinPosX>1172</spinPosX>
@@ -221,6 +222,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+	  <visible>!string.equals(#OnlineVideos.owner,)</visible>
     </control>
     <control>
       <type>textboxscrollup</type>
