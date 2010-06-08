@@ -5,6 +5,7 @@ using MediaPortal.GUI.Library;
 using MediaPortal.Dialogs;
 using System.Net;
 using ICSharpCode.SharpZipLib.Zip;
+using System.Diagnostics;
 
 namespace StreamedMPConfig
 {
@@ -102,10 +103,25 @@ namespace StreamedMPConfig
             {
               if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
               {
-                // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
-                System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
-                System.IO.File.Delete(optionDownloadPath);
-                StreamedMPConfig.manualInstallNeeded = true;
+                  if (Path.GetExtension(optionDownloadPath).ToLower() == ".exe")
+                  {
+                      //Lets run it
+                      if (File.Exists(optionDownloadPath))
+                      {
+                          ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
+                          upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
+                          System.Diagnostics.Process.Start(upgradeProcess);
+                          Environment.Exit(0);
+                      }
+
+                  }
+                  else
+                  {
+                      // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
+                      System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
+                      System.IO.File.Delete(optionDownloadPath);
+                      StreamedMPConfig.manualInstallNeeded = true;
+                  }
               }
               else
               {
