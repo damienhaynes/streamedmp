@@ -102,35 +102,18 @@
       this.itemName = new System.Windows.Forms.TextBox();
       this.itemsOnMenubar = new System.Windows.Forms.CheckedListBox();
       this.xmlFiles = new System.Windows.Forms.ListBox();
-      this.basicHomeOptions = new System.Windows.Forms.TabPage();
-      this.weatherOptions = new System.Windows.Forms.GroupBox();
-      this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
-      this.weatherBGlink = new System.Windows.Forms.CheckBox();
-      this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
-      this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
-      this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
-      this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
-      this.gbRssImageType = new System.Windows.Forms.GroupBox();
-      this.rbRssInfoServiceImage = new System.Windows.Forms.RadioButton();
-      this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
-      this.rbRssNoImage = new System.Windows.Forms.RadioButton();
+      this.menuOptions = new System.Windows.Forms.TabPage();
+      this.tabControl1 = new System.Windows.Forms.TabControl();
+      this.tabPage3 = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
       this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
-      this.gbScreenRes = new System.Windows.Forms.GroupBox();
-      this.detectedHD = new System.Windows.Forms.Label();
-      this.detectedSD = new System.Windows.Forms.Label();
-      this.hdRes = new System.Windows.Forms.RadioButton();
-      this.sdRes = new System.Windows.Forms.RadioButton();
       this.cboLabelFont = new System.Windows.Forms.ComboBox();
       this.cboSelectedFont = new System.Windows.Forms.ComboBox();
       this.label15 = new System.Windows.Forms.Label();
       this.label21 = new System.Windows.Forms.Label();
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
-      this.infoserviceOptions = new System.Windows.Forms.GroupBox();
-      this.enableTwitter = new System.Windows.Forms.CheckBox();
-      this.enableRssfeed = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
       this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
       this.cbDisableClock = new System.Windows.Forms.CheckBox();
@@ -150,6 +133,26 @@
       this.txtFocusColour = new System.Windows.Forms.TextBox();
       this.label16 = new System.Windows.Forms.Label();
       this.label17 = new System.Windows.Forms.Label();
+      this.gbScreenRes = new System.Windows.Forms.GroupBox();
+      this.detectedHD = new System.Windows.Forms.Label();
+      this.detectedSD = new System.Windows.Forms.Label();
+      this.hdRes = new System.Windows.Forms.RadioButton();
+      this.sdRes = new System.Windows.Forms.RadioButton();
+      this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.weatherOptions = new System.Windows.Forms.GroupBox();
+      this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
+      this.weatherBGlink = new System.Windows.Forms.CheckBox();
+      this.summaryWeatherCheckBox = new System.Windows.Forms.CheckBox();
+      this.gbRssImageType = new System.Windows.Forms.GroupBox();
+      this.rbRssInfoServiceImage = new System.Windows.Forms.RadioButton();
+      this.rbRssSkinImage = new System.Windows.Forms.RadioButton();
+      this.rbRssNoImage = new System.Windows.Forms.RadioButton();
+      this.infoserviceOptions = new System.Windows.Forms.GroupBox();
+      this.enableTwitter = new System.Windows.Forms.CheckBox();
+      this.enableRssfeed = new System.Windows.Forms.CheckBox();
+      this.weatherSummaryGroup = new System.Windows.Forms.GroupBox();
+      this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
+      this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
       this.defaultBackgrounds = new System.Windows.Forms.TabPage();
       this.pictureBox3 = new System.Windows.Forms.PictureBox();
       this.splashscreenSelector = new System.Windows.Forms.TabPage();
@@ -232,14 +235,17 @@
       this.groupBox1.SuspendLayout();
       this.backgroundImages.SuspendLayout();
       this.itemProperties.SuspendLayout();
-      this.basicHomeOptions.SuspendLayout();
-      this.weatherOptions.SuspendLayout();
-      this.weatherSummaryGroup.SuspendLayout();
-      this.gbRssImageType.SuspendLayout();
+      this.menuOptions.SuspendLayout();
+      this.tabControl1.SuspendLayout();
+      this.tabPage3.SuspendLayout();
       this.styleOptionsGroup.SuspendLayout();
-      this.gbScreenRes.SuspendLayout();
-      this.infoserviceOptions.SuspendLayout();
       this.globalSettings.SuspendLayout();
+      this.gbScreenRes.SuspendLayout();
+      this.tabPage2.SuspendLayout();
+      this.weatherOptions.SuspendLayout();
+      this.gbRssImageType.SuspendLayout();
+      this.infoserviceOptions.SuspendLayout();
+      this.weatherSummaryGroup.SuspendLayout();
       this.defaultBackgrounds.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
       this.splashscreenSelector.SuspendLayout();
@@ -261,7 +267,7 @@
       this.StreamedMPMenu.Controls.Add(this.menuStyleTab);
       this.StreamedMPMenu.Controls.Add(this.weatherStyleTab);
       this.StreamedMPMenu.Controls.Add(this.basicHomeDesign);
-      this.StreamedMPMenu.Controls.Add(this.basicHomeOptions);
+      this.StreamedMPMenu.Controls.Add(this.menuOptions);
       this.StreamedMPMenu.Controls.Add(this.defaultBackgrounds);
       this.StreamedMPMenu.Controls.Add(this.splashscreenSelector);
       this.StreamedMPMenu.Controls.Add(this.editingInfo);
@@ -280,7 +286,7 @@
       this.menuStyleTab.Controls.Add(this.menuStylesGroup);
       this.menuStyleTab.Location = new System.Drawing.Point(4, 23);
       this.menuStyleTab.Name = "menuStyleTab";
-      this.menuStyleTab.Size = new System.Drawing.Size(750, 420);
+      this.menuStyleTab.Size = new System.Drawing.Size(750, 430);
       this.menuStyleTab.TabIndex = 4;
       this.menuStyleTab.Text = "Menu Styles";
       this.menuStyleTab.UseVisualStyleBackColor = true;
@@ -424,7 +430,7 @@
       this.weatherStyleTab.Controls.Add(this.weatherIconsGroup);
       this.weatherStyleTab.Location = new System.Drawing.Point(4, 23);
       this.weatherStyleTab.Name = "weatherStyleTab";
-      this.weatherStyleTab.Size = new System.Drawing.Size(750, 420);
+      this.weatherStyleTab.Size = new System.Drawing.Size(750, 430);
       this.weatherStyleTab.TabIndex = 5;
       this.weatherStyleTab.Text = "Weather Styles";
       this.weatherStyleTab.UseVisualStyleBackColor = true;
@@ -1096,170 +1102,61 @@
       this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
       this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
       // 
-      // basicHomeOptions
+      // menuOptions
       // 
-      this.basicHomeOptions.BackColor = System.Drawing.Color.Transparent;
-      this.basicHomeOptions.Controls.Add(this.weatherOptions);
-      this.basicHomeOptions.Controls.Add(this.gbRssImageType);
-      this.basicHomeOptions.Controls.Add(this.styleOptionsGroup);
-      this.basicHomeOptions.Controls.Add(this.infoserviceOptions);
-      this.basicHomeOptions.Controls.Add(this.globalSettings);
-      this.basicHomeOptions.Location = new System.Drawing.Point(4, 23);
-      this.basicHomeOptions.Name = "basicHomeOptions";
-      this.basicHomeOptions.Padding = new System.Windows.Forms.Padding(3);
-      this.basicHomeOptions.Size = new System.Drawing.Size(750, 420);
-      this.basicHomeOptions.TabIndex = 1;
-      this.basicHomeOptions.Text = "Menu/Plugin Options";
-      this.basicHomeOptions.UseVisualStyleBackColor = true;
+      this.menuOptions.Controls.Add(this.tabControl1);
+      this.menuOptions.Location = new System.Drawing.Point(4, 23);
+      this.menuOptions.Name = "menuOptions";
+      this.menuOptions.Padding = new System.Windows.Forms.Padding(3);
+      this.menuOptions.Size = new System.Drawing.Size(750, 430);
+      this.menuOptions.TabIndex = 7;
+      this.menuOptions.Text = "Menu /Plugin Options";
+      this.menuOptions.UseVisualStyleBackColor = true;
       // 
-      // weatherOptions
+      // tabControl1
       // 
-      this.weatherOptions.Controls.Add(this.installWeatherBackgrounds);
-      this.weatherOptions.Controls.Add(this.weatherBGlink);
-      this.weatherOptions.Controls.Add(this.summaryWeatherCheckBox);
-      this.weatherOptions.Controls.Add(this.weatherSummaryGroup);
-      this.weatherOptions.Location = new System.Drawing.Point(362, 143);
-      this.weatherOptions.Name = "weatherOptions";
-      this.weatherOptions.Size = new System.Drawing.Size(375, 138);
-      this.weatherOptions.TabIndex = 23;
-      this.weatherOptions.TabStop = false;
-      this.weatherOptions.Text = "Weather Options";
+      this.tabControl1.Controls.Add(this.tabPage3);
+      this.tabControl1.Controls.Add(this.tabPage2);
+      this.tabControl1.Location = new System.Drawing.Point(6, 19);
+      this.tabControl1.Name = "tabControl1";
+      this.tabControl1.SelectedIndex = 0;
+      this.tabControl1.Size = new System.Drawing.Size(738, 405);
+      this.tabControl1.TabIndex = 0;
       // 
-      // installWeatherBackgrounds
+      // tabPage3
       // 
-      this.installWeatherBackgrounds.AutoSize = true;
-      this.installWeatherBackgrounds.Location = new System.Drawing.Point(23, 63);
-      this.installWeatherBackgrounds.Name = "installWeatherBackgrounds";
-      this.installWeatherBackgrounds.Size = new System.Drawing.Size(202, 13);
-      this.installWeatherBackgrounds.TabIndex = 30;
-      this.installWeatherBackgrounds.TabStop = true;
-      this.installWeatherBackgrounds.Text = "Download Weather Backgrounds (12MB)";
-      this.installWeatherBackgrounds.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installWeatherBackgrounds_LinkClicked);
-      // 
-      // weatherBGlink
-      // 
-      this.weatherBGlink.AutoSize = true;
-      this.weatherBGlink.Location = new System.Drawing.Point(6, 43);
-      this.weatherBGlink.Name = "weatherBGlink";
-      this.weatherBGlink.Size = new System.Drawing.Size(268, 17);
-      this.weatherBGlink.TabIndex = 23;
-      this.weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
-      this.weatherBGlink.UseVisualStyleBackColor = true;
-      // 
-      // summaryWeatherCheckBox
-      // 
-      this.summaryWeatherCheckBox.AutoSize = true;
-      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(6, 20);
-      this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
-      this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
-      this.summaryWeatherCheckBox.TabIndex = 24;
-      this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
-      this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
-      // 
-      // weatherSummaryGroup
-      // 
-      this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
-      this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
-      this.weatherSummaryGroup.Location = new System.Drawing.Point(5, 92);
-      this.weatherSummaryGroup.Name = "weatherSummaryGroup";
-      this.weatherSummaryGroup.Size = new System.Drawing.Size(364, 41);
-      this.weatherSummaryGroup.TabIndex = 29;
-      this.weatherSummaryGroup.TabStop = false;
-      this.weatherSummaryGroup.Text = "Five Day Weather Position";
-      // 
-      // fullWeatherSummaryBottom
-      // 
-      this.fullWeatherSummaryBottom.AutoSize = true;
-      this.fullWeatherSummaryBottom.Location = new System.Drawing.Point(125, 20);
-      this.fullWeatherSummaryBottom.Name = "fullWeatherSummaryBottom";
-      this.fullWeatherSummaryBottom.Size = new System.Drawing.Size(107, 17);
-      this.fullWeatherSummaryBottom.TabIndex = 31;
-      this.fullWeatherSummaryBottom.TabStop = true;
-      this.fullWeatherSummaryBottom.Text = "Bottom of Screen";
-      this.fullWeatherSummaryBottom.UseVisualStyleBackColor = true;
-      // 
-      // fullWeatherSummaryMiddle
-      // 
-      this.fullWeatherSummaryMiddle.AutoSize = true;
-      this.fullWeatherSummaryMiddle.Location = new System.Drawing.Point(14, 20);
-      this.fullWeatherSummaryMiddle.Name = "fullWeatherSummaryMiddle";
-      this.fullWeatherSummaryMiddle.Size = new System.Drawing.Size(105, 17);
-      this.fullWeatherSummaryMiddle.TabIndex = 30;
-      this.fullWeatherSummaryMiddle.TabStop = true;
-      this.fullWeatherSummaryMiddle.Text = "Center of Screen";
-      this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
-      this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
-      // 
-      // gbRssImageType
-      // 
-      this.gbRssImageType.Controls.Add(this.rbRssInfoServiceImage);
-      this.gbRssImageType.Controls.Add(this.rbRssSkinImage);
-      this.gbRssImageType.Controls.Add(this.rbRssNoImage);
-      this.gbRssImageType.Location = new System.Drawing.Point(208, 143);
-      this.gbRssImageType.Name = "gbRssImageType";
-      this.gbRssImageType.Size = new System.Drawing.Size(148, 138);
-      this.gbRssImageType.TabIndex = 18;
-      this.gbRssImageType.TabStop = false;
-      this.gbRssImageType.Text = "RSS Image Selection";
-      // 
-      // rbRssInfoServiceImage
-      // 
-      this.rbRssInfoServiceImage.AutoSize = true;
-      this.rbRssInfoServiceImage.Location = new System.Drawing.Point(7, 64);
-      this.rbRssInfoServiceImage.Name = "rbRssInfoServiceImage";
-      this.rbRssInfoServiceImage.Size = new System.Drawing.Size(131, 17);
-      this.rbRssInfoServiceImage.TabIndex = 21;
-      this.rbRssInfoServiceImage.TabStop = true;
-      this.rbRssInfoServiceImage.Text = "Ticker Supplied Image";
-      this.rbRssInfoServiceImage.UseVisualStyleBackColor = true;
-      this.rbRssInfoServiceImage.CheckedChanged += new System.EventHandler(this.rbRssInfoServiceImage_CheckedChanged);
-      // 
-      // rbRssSkinImage
-      // 
-      this.rbRssSkinImage.AutoSize = true;
-      this.rbRssSkinImage.Location = new System.Drawing.Point(7, 42);
-      this.rbRssSkinImage.Name = "rbRssSkinImage";
-      this.rbRssSkinImage.Size = new System.Drawing.Size(115, 17);
-      this.rbRssSkinImage.TabIndex = 20;
-      this.rbRssSkinImage.TabStop = true;
-      this.rbRssSkinImage.Text = "Default Skin Image";
-      this.rbRssSkinImage.UseVisualStyleBackColor = true;
-      this.rbRssSkinImage.CheckedChanged += new System.EventHandler(this.rbRssSkinImage_CheckedChanged);
-      // 
-      // rbRssNoImage
-      // 
-      this.rbRssNoImage.AutoSize = true;
-      this.rbRssNoImage.Location = new System.Drawing.Point(7, 20);
-      this.rbRssNoImage.Name = "rbRssNoImage";
-      this.rbRssNoImage.Size = new System.Drawing.Size(71, 17);
-      this.rbRssNoImage.TabIndex = 19;
-      this.rbRssNoImage.TabStop = true;
-      this.rbRssNoImage.Text = "No Image";
-      this.rbRssNoImage.UseVisualStyleBackColor = true;
-      this.rbRssNoImage.CheckedChanged += new System.EventHandler(this.rbRssNoImage_CheckedChanged);
+      this.tabPage3.Controls.Add(this.styleOptionsGroup);
+      this.tabPage3.Controls.Add(this.globalSettings);
+      this.tabPage3.Controls.Add(this.gbScreenRes);
+      this.tabPage3.Location = new System.Drawing.Point(4, 22);
+      this.tabPage3.Name = "tabPage3";
+      this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage3.Size = new System.Drawing.Size(730, 379);
+      this.tabPage3.TabIndex = 1;
+      this.tabPage3.Text = "Menu Options";
+      this.tabPage3.UseVisualStyleBackColor = true;
       // 
       // styleOptionsGroup
       // 
       this.styleOptionsGroup.Controls.Add(this.cbAnimateBackground);
       this.styleOptionsGroup.Controls.Add(this.cbOverlayFanart);
-      this.styleOptionsGroup.Controls.Add(this.gbScreenRes);
       this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
       this.styleOptionsGroup.Controls.Add(this.cboSelectedFont);
       this.styleOptionsGroup.Controls.Add(this.label15);
       this.styleOptionsGroup.Controls.Add(this.label21);
       this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
       this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
-      this.styleOptionsGroup.Location = new System.Drawing.Point(9, 287);
+      this.styleOptionsGroup.Location = new System.Drawing.Point(6, 143);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(729, 124);
-      this.styleOptionsGroup.TabIndex = 22;
+      this.styleOptionsGroup.Size = new System.Drawing.Size(719, 100);
+      this.styleOptionsGroup.TabIndex = 24;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
       // 
       // cbAnimateBackground
       // 
       this.cbAnimateBackground.AutoSize = true;
-      this.cbAnimateBackground.Location = new System.Drawing.Point(20, 76);
+      this.cbAnimateBackground.Location = new System.Drawing.Point(244, 27);
       this.cbAnimateBackground.Name = "cbAnimateBackground";
       this.cbAnimateBackground.Size = new System.Drawing.Size(157, 17);
       this.cbAnimateBackground.TabIndex = 43;
@@ -1279,67 +1176,10 @@
               "Music/Video overlay.");
       this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
-      // gbScreenRes
-      // 
-      this.gbScreenRes.Controls.Add(this.detectedHD);
-      this.gbScreenRes.Controls.Add(this.detectedSD);
-      this.gbScreenRes.Controls.Add(this.hdRes);
-      this.gbScreenRes.Controls.Add(this.sdRes);
-      this.gbScreenRes.Location = new System.Drawing.Point(507, 19);
-      this.gbScreenRes.Name = "gbScreenRes";
-      this.gbScreenRes.Size = new System.Drawing.Size(215, 100);
-      this.gbScreenRes.TabIndex = 41;
-      this.gbScreenRes.TabStop = false;
-      this.gbScreenRes.Text = "Target Screen Resoloution";
-      this.toolTip1.SetToolTip(this.gbScreenRes, resources.GetString("gbScreenRes.ToolTip"));
-      // 
-      // detectedHD
-      // 
-      this.detectedHD.AutoSize = true;
-      this.detectedHD.Location = new System.Drawing.Point(114, 62);
-      this.detectedHD.Name = "detectedHD";
-      this.detectedHD.Size = new System.Drawing.Size(51, 13);
-      this.detectedHD.TabIndex = 3;
-      this.detectedHD.Text = "Detected";
-      // 
-      // detectedSD
-      // 
-      this.detectedSD.AutoSize = true;
-      this.detectedSD.Location = new System.Drawing.Point(114, 31);
-      this.detectedSD.Name = "detectedSD";
-      this.detectedSD.Size = new System.Drawing.Size(51, 13);
-      this.detectedSD.TabIndex = 2;
-      this.detectedSD.Text = "Detected";
-      // 
-      // hdRes
-      // 
-      this.hdRes.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-      this.hdRes.AutoSize = true;
-      this.hdRes.Location = new System.Drawing.Point(13, 60);
-      this.hdRes.Name = "hdRes";
-      this.hdRes.Size = new System.Drawing.Size(84, 17);
-      this.hdRes.TabIndex = 1;
-      this.hdRes.TabStop = true;
-      this.hdRes.Text = "1920 x 1080";
-      this.hdRes.UseVisualStyleBackColor = true;
-      this.hdRes.CheckedChanged += new System.EventHandler(this.hdRes_CheckedChanged);
-      // 
-      // sdRes
-      // 
-      this.sdRes.AutoSize = true;
-      this.sdRes.Location = new System.Drawing.Point(13, 29);
-      this.sdRes.Name = "sdRes";
-      this.sdRes.Size = new System.Drawing.Size(78, 17);
-      this.sdRes.TabIndex = 0;
-      this.sdRes.TabStop = true;
-      this.sdRes.Text = "1280 x 720";
-      this.sdRes.UseVisualStyleBackColor = true;
-      this.sdRes.CheckedChanged += new System.EventHandler(this.sdRes_CheckedChanged);
-      // 
       // cboLabelFont
       // 
       this.cboLabelFont.FormattingEnabled = true;
-      this.cboLabelFont.Location = new System.Drawing.Point(363, 53);
+      this.cboLabelFont.Location = new System.Drawing.Point(583, 52);
       this.cboLabelFont.Name = "cboLabelFont";
       this.cboLabelFont.Size = new System.Drawing.Size(121, 21);
       this.cboLabelFont.TabIndex = 28;
@@ -1347,7 +1187,7 @@
       // cboSelectedFont
       // 
       this.cboSelectedFont.FormattingEnabled = true;
-      this.cboSelectedFont.Location = new System.Drawing.Point(363, 24);
+      this.cboSelectedFont.Location = new System.Drawing.Point(583, 23);
       this.cboSelectedFont.Name = "cboSelectedFont";
       this.cboSelectedFont.Size = new System.Drawing.Size(121, 21);
       this.cboSelectedFont.TabIndex = 24;
@@ -1355,7 +1195,7 @@
       // label15
       // 
       this.label15.AutoSize = true;
-      this.label15.Location = new System.Drawing.Point(252, 57);
+      this.label15.Location = new System.Drawing.Point(472, 56);
       this.label15.Name = "label15";
       this.label15.Size = new System.Drawing.Size(109, 13);
       this.label15.TabIndex = 40;
@@ -1364,7 +1204,7 @@
       // label21
       // 
       this.label21.AutoSize = true;
-      this.label21.Location = new System.Drawing.Point(263, 28);
+      this.label21.Location = new System.Drawing.Point(483, 27);
       this.label21.Name = "label21";
       this.label21.Size = new System.Drawing.Size(98, 13);
       this.label21.TabIndex = 39;
@@ -1373,7 +1213,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(20, 101);
+      this.useAeonGraphics.Location = new System.Drawing.Point(244, 55);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 26;
@@ -1389,38 +1229,6 @@
       this.horizontalContextLabels.TabIndex = 25;
       this.horizontalContextLabels.Text = "Use Context Labels on Horizontal Menu";
       this.horizontalContextLabels.UseVisualStyleBackColor = true;
-      this.horizontalContextLabels.CheckedChanged += new System.EventHandler(this.horizontalContextLabels_CheckedChanged);
-      // 
-      // infoserviceOptions
-      // 
-      this.infoserviceOptions.Controls.Add(this.enableTwitter);
-      this.infoserviceOptions.Controls.Add(this.enableRssfeed);
-      this.infoserviceOptions.Location = new System.Drawing.Point(9, 143);
-      this.infoserviceOptions.Name = "infoserviceOptions";
-      this.infoserviceOptions.Size = new System.Drawing.Size(192, 138);
-      this.infoserviceOptions.TabIndex = 15;
-      this.infoserviceOptions.TabStop = false;
-      this.infoserviceOptions.Text = "InfoService Options";
-      // 
-      // enableTwitter
-      // 
-      this.enableTwitter.AutoSize = true;
-      this.enableTwitter.Location = new System.Drawing.Point(17, 47);
-      this.enableTwitter.Name = "enableTwitter";
-      this.enableTwitter.Size = new System.Drawing.Size(94, 17);
-      this.enableTwitter.TabIndex = 17;
-      this.enableTwitter.Text = "Enable Twitter";
-      this.enableTwitter.UseVisualStyleBackColor = true;
-      // 
-      // enableRssfeed
-      // 
-      this.enableRssfeed.AutoSize = true;
-      this.enableRssfeed.Location = new System.Drawing.Point(17, 24);
-      this.enableRssfeed.Name = "enableRssfeed";
-      this.enableRssfeed.Size = new System.Drawing.Size(117, 17);
-      this.enableRssfeed.TabIndex = 16;
-      this.enableRssfeed.Text = "Enable RSS Ticker";
-      this.enableRssfeed.UseVisualStyleBackColor = true;
       // 
       // globalSettings
       // 
@@ -1442,10 +1250,10 @@
       this.globalSettings.Controls.Add(this.txtFocusColour);
       this.globalSettings.Controls.Add(this.label16);
       this.globalSettings.Controls.Add(this.label17);
-      this.globalSettings.Location = new System.Drawing.Point(9, 6);
+      this.globalSettings.Location = new System.Drawing.Point(3, 6);
       this.globalSettings.Name = "globalSettings";
-      this.globalSettings.Size = new System.Drawing.Size(729, 131);
-      this.globalSettings.TabIndex = 4;
+      this.globalSettings.Size = new System.Drawing.Size(722, 131);
+      this.globalSettings.TabIndex = 23;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
       // 
@@ -1569,7 +1377,6 @@
       this.txtMenuPos.Size = new System.Drawing.Size(62, 20);
       this.txtMenuPos.TabIndex = 9;
       this.txtMenuPos.Text = "552";
-      this.txtMenuPos.Leave += new System.EventHandler(this.txtMenuPos_Leave);
       // 
       // menuPosLabel
       // 
@@ -1616,12 +1423,232 @@
       this.label17.TabIndex = 0;
       this.label17.Text = "Focus item colour:";
       // 
+      // gbScreenRes
+      // 
+      this.gbScreenRes.Controls.Add(this.detectedHD);
+      this.gbScreenRes.Controls.Add(this.detectedSD);
+      this.gbScreenRes.Controls.Add(this.hdRes);
+      this.gbScreenRes.Controls.Add(this.sdRes);
+      this.gbScreenRes.Location = new System.Drawing.Point(6, 273);
+      this.gbScreenRes.Name = "gbScreenRes";
+      this.gbScreenRes.Size = new System.Drawing.Size(215, 100);
+      this.gbScreenRes.TabIndex = 41;
+      this.gbScreenRes.TabStop = false;
+      this.gbScreenRes.Text = "Target Screen Resoloution";
+      this.toolTip1.SetToolTip(this.gbScreenRes, resources.GetString("gbScreenRes.ToolTip"));
+      // 
+      // detectedHD
+      // 
+      this.detectedHD.AutoSize = true;
+      this.detectedHD.Location = new System.Drawing.Point(114, 62);
+      this.detectedHD.Name = "detectedHD";
+      this.detectedHD.Size = new System.Drawing.Size(51, 13);
+      this.detectedHD.TabIndex = 3;
+      this.detectedHD.Text = "Detected";
+      // 
+      // detectedSD
+      // 
+      this.detectedSD.AutoSize = true;
+      this.detectedSD.Location = new System.Drawing.Point(114, 31);
+      this.detectedSD.Name = "detectedSD";
+      this.detectedSD.Size = new System.Drawing.Size(51, 13);
+      this.detectedSD.TabIndex = 2;
+      this.detectedSD.Text = "Detected";
+      // 
+      // hdRes
+      // 
+      this.hdRes.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+      this.hdRes.AutoSize = true;
+      this.hdRes.Location = new System.Drawing.Point(13, 60);
+      this.hdRes.Name = "hdRes";
+      this.hdRes.Size = new System.Drawing.Size(84, 17);
+      this.hdRes.TabIndex = 1;
+      this.hdRes.TabStop = true;
+      this.hdRes.Text = "1920 x 1080";
+      this.hdRes.UseVisualStyleBackColor = true;
+      // 
+      // sdRes
+      // 
+      this.sdRes.AutoSize = true;
+      this.sdRes.Location = new System.Drawing.Point(13, 29);
+      this.sdRes.Name = "sdRes";
+      this.sdRes.Size = new System.Drawing.Size(78, 17);
+      this.sdRes.TabIndex = 0;
+      this.sdRes.TabStop = true;
+      this.sdRes.Text = "1280 x 720";
+      this.sdRes.UseVisualStyleBackColor = true;
+      // 
+      // tabPage2
+      // 
+      this.tabPage2.Controls.Add(this.weatherOptions);
+      this.tabPage2.Controls.Add(this.gbRssImageType);
+      this.tabPage2.Controls.Add(this.infoserviceOptions);
+      this.tabPage2.Controls.Add(this.weatherSummaryGroup);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
+      this.tabPage2.Name = "tabPage2";
+      this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+      this.tabPage2.Size = new System.Drawing.Size(730, 379);
+      this.tabPage2.TabIndex = 0;
+      this.tabPage2.Text = "InfoService Options";
+      this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // weatherOptions
+      // 
+      this.weatherOptions.Controls.Add(this.installWeatherBackgrounds);
+      this.weatherOptions.Controls.Add(this.weatherBGlink);
+      this.weatherOptions.Controls.Add(this.summaryWeatherCheckBox);
+      this.weatherOptions.Location = new System.Drawing.Point(324, 6);
+      this.weatherOptions.Name = "weatherOptions";
+      this.weatherOptions.Size = new System.Drawing.Size(400, 138);
+      this.weatherOptions.TabIndex = 26;
+      this.weatherOptions.TabStop = false;
+      this.weatherOptions.Text = "Weather Options";
+      // 
+      // installWeatherBackgrounds
+      // 
+      this.installWeatherBackgrounds.AutoSize = true;
+      this.installWeatherBackgrounds.Location = new System.Drawing.Point(24, 88);
+      this.installWeatherBackgrounds.Name = "installWeatherBackgrounds";
+      this.installWeatherBackgrounds.Size = new System.Drawing.Size(202, 13);
+      this.installWeatherBackgrounds.TabIndex = 30;
+      this.installWeatherBackgrounds.TabStop = true;
+      this.installWeatherBackgrounds.Text = "Download Weather Backgrounds (12MB)";
+      // 
+      // weatherBGlink
+      // 
+      this.weatherBGlink.AutoSize = true;
+      this.weatherBGlink.Location = new System.Drawing.Point(6, 55);
+      this.weatherBGlink.Name = "weatherBGlink";
+      this.weatherBGlink.Size = new System.Drawing.Size(268, 17);
+      this.weatherBGlink.TabIndex = 23;
+      this.weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+      this.weatherBGlink.UseVisualStyleBackColor = true;
+      // 
+      // summaryWeatherCheckBox
+      // 
+      this.summaryWeatherCheckBox.AutoSize = true;
+      this.summaryWeatherCheckBox.Location = new System.Drawing.Point(6, 20);
+      this.summaryWeatherCheckBox.Name = "summaryWeatherCheckBox";
+      this.summaryWeatherCheckBox.Size = new System.Drawing.Size(175, 17);
+      this.summaryWeatherCheckBox.TabIndex = 24;
+      this.summaryWeatherCheckBox.Text = "Weather Summary at Top Right";
+      this.summaryWeatherCheckBox.UseVisualStyleBackColor = true;
+      // 
+      // gbRssImageType
+      // 
+      this.gbRssImageType.Controls.Add(this.rbRssInfoServiceImage);
+      this.gbRssImageType.Controls.Add(this.rbRssSkinImage);
+      this.gbRssImageType.Controls.Add(this.rbRssNoImage);
+      this.gbRssImageType.Location = new System.Drawing.Point(170, 6);
+      this.gbRssImageType.Name = "gbRssImageType";
+      this.gbRssImageType.Size = new System.Drawing.Size(148, 91);
+      this.gbRssImageType.TabIndex = 25;
+      this.gbRssImageType.TabStop = false;
+      this.gbRssImageType.Text = "RSS Image Selection";
+      // 
+      // rbRssInfoServiceImage
+      // 
+      this.rbRssInfoServiceImage.AutoSize = true;
+      this.rbRssInfoServiceImage.Location = new System.Drawing.Point(7, 64);
+      this.rbRssInfoServiceImage.Name = "rbRssInfoServiceImage";
+      this.rbRssInfoServiceImage.Size = new System.Drawing.Size(131, 17);
+      this.rbRssInfoServiceImage.TabIndex = 21;
+      this.rbRssInfoServiceImage.TabStop = true;
+      this.rbRssInfoServiceImage.Text = "Ticker Supplied Image";
+      this.rbRssInfoServiceImage.UseVisualStyleBackColor = true;
+      // 
+      // rbRssSkinImage
+      // 
+      this.rbRssSkinImage.AutoSize = true;
+      this.rbRssSkinImage.Location = new System.Drawing.Point(7, 42);
+      this.rbRssSkinImage.Name = "rbRssSkinImage";
+      this.rbRssSkinImage.Size = new System.Drawing.Size(115, 17);
+      this.rbRssSkinImage.TabIndex = 20;
+      this.rbRssSkinImage.TabStop = true;
+      this.rbRssSkinImage.Text = "Default Skin Image";
+      this.rbRssSkinImage.UseVisualStyleBackColor = true;
+      // 
+      // rbRssNoImage
+      // 
+      this.rbRssNoImage.AutoSize = true;
+      this.rbRssNoImage.Location = new System.Drawing.Point(7, 20);
+      this.rbRssNoImage.Name = "rbRssNoImage";
+      this.rbRssNoImage.Size = new System.Drawing.Size(71, 17);
+      this.rbRssNoImage.TabIndex = 19;
+      this.rbRssNoImage.TabStop = true;
+      this.rbRssNoImage.Text = "No Image";
+      this.rbRssNoImage.UseVisualStyleBackColor = true;
+      // 
+      // infoserviceOptions
+      // 
+      this.infoserviceOptions.Controls.Add(this.enableTwitter);
+      this.infoserviceOptions.Controls.Add(this.enableRssfeed);
+      this.infoserviceOptions.Location = new System.Drawing.Point(3, 6);
+      this.infoserviceOptions.Name = "infoserviceOptions";
+      this.infoserviceOptions.Size = new System.Drawing.Size(161, 91);
+      this.infoserviceOptions.TabIndex = 24;
+      this.infoserviceOptions.TabStop = false;
+      this.infoserviceOptions.Text = "InfoService Options";
+      // 
+      // enableTwitter
+      // 
+      this.enableTwitter.AutoSize = true;
+      this.enableTwitter.Location = new System.Drawing.Point(17, 47);
+      this.enableTwitter.Name = "enableTwitter";
+      this.enableTwitter.Size = new System.Drawing.Size(94, 17);
+      this.enableTwitter.TabIndex = 17;
+      this.enableTwitter.Text = "Enable Twitter";
+      this.enableTwitter.UseVisualStyleBackColor = true;
+      // 
+      // enableRssfeed
+      // 
+      this.enableRssfeed.AutoSize = true;
+      this.enableRssfeed.Location = new System.Drawing.Point(17, 24);
+      this.enableRssfeed.Name = "enableRssfeed";
+      this.enableRssfeed.Size = new System.Drawing.Size(117, 17);
+      this.enableRssfeed.TabIndex = 16;
+      this.enableRssfeed.Text = "Enable RSS Ticker";
+      this.enableRssfeed.UseVisualStyleBackColor = true;
+      // 
+      // weatherSummaryGroup
+      // 
+      this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryBottom);
+      this.weatherSummaryGroup.Controls.Add(this.fullWeatherSummaryMiddle);
+      this.weatherSummaryGroup.Location = new System.Drawing.Point(3, 103);
+      this.weatherSummaryGroup.Name = "weatherSummaryGroup";
+      this.weatherSummaryGroup.Size = new System.Drawing.Size(315, 41);
+      this.weatherSummaryGroup.TabIndex = 29;
+      this.weatherSummaryGroup.TabStop = false;
+      this.weatherSummaryGroup.Text = "Five Day Weather Position";
+      // 
+      // fullWeatherSummaryBottom
+      // 
+      this.fullWeatherSummaryBottom.AutoSize = true;
+      this.fullWeatherSummaryBottom.Location = new System.Drawing.Point(182, 18);
+      this.fullWeatherSummaryBottom.Name = "fullWeatherSummaryBottom";
+      this.fullWeatherSummaryBottom.Size = new System.Drawing.Size(107, 17);
+      this.fullWeatherSummaryBottom.TabIndex = 31;
+      this.fullWeatherSummaryBottom.TabStop = true;
+      this.fullWeatherSummaryBottom.Text = "Bottom of Screen";
+      this.fullWeatherSummaryBottom.UseVisualStyleBackColor = true;
+      // 
+      // fullWeatherSummaryMiddle
+      // 
+      this.fullWeatherSummaryMiddle.AutoSize = true;
+      this.fullWeatherSummaryMiddle.Location = new System.Drawing.Point(27, 18);
+      this.fullWeatherSummaryMiddle.Name = "fullWeatherSummaryMiddle";
+      this.fullWeatherSummaryMiddle.Size = new System.Drawing.Size(105, 17);
+      this.fullWeatherSummaryMiddle.TabIndex = 30;
+      this.fullWeatherSummaryMiddle.TabStop = true;
+      this.fullWeatherSummaryMiddle.Text = "Center of Screen";
+      this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
+      // 
       // defaultBackgrounds
       // 
       this.defaultBackgrounds.Controls.Add(this.pictureBox3);
       this.defaultBackgrounds.Location = new System.Drawing.Point(4, 23);
       this.defaultBackgrounds.Name = "defaultBackgrounds";
-      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 420);
+      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 430);
       this.defaultBackgrounds.TabIndex = 2;
       this.defaultBackgrounds.Text = "Default Background Images";
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
@@ -1646,7 +1673,7 @@
       this.splashscreenSelector.Controls.Add(this.spashscreenPreview);
       this.splashscreenSelector.Location = new System.Drawing.Point(4, 23);
       this.splashscreenSelector.Name = "splashscreenSelector";
-      this.splashscreenSelector.Size = new System.Drawing.Size(750, 420);
+      this.splashscreenSelector.Size = new System.Drawing.Size(750, 430);
       this.splashscreenSelector.TabIndex = 6;
       this.splashscreenSelector.Text = "SplashScreen Selector";
       this.splashscreenSelector.UseVisualStyleBackColor = true;
@@ -1732,7 +1759,7 @@
       this.editingInfo.ImageIndex = 0;
       this.editingInfo.Location = new System.Drawing.Point(4, 23);
       this.editingInfo.Name = "editingInfo";
-      this.editingInfo.Size = new System.Drawing.Size(750, 420);
+      this.editingInfo.Size = new System.Drawing.Size(750, 430);
       this.editingInfo.TabIndex = 3;
       this.editingInfo.Text = "About";
       this.editingInfo.UseVisualStyleBackColor = true;
@@ -2263,21 +2290,24 @@
       this.backgroundImages.PerformLayout();
       this.itemProperties.ResumeLayout(false);
       this.itemProperties.PerformLayout();
-      this.basicHomeOptions.ResumeLayout(false);
-      this.weatherOptions.ResumeLayout(false);
-      this.weatherOptions.PerformLayout();
-      this.weatherSummaryGroup.ResumeLayout(false);
-      this.weatherSummaryGroup.PerformLayout();
-      this.gbRssImageType.ResumeLayout(false);
-      this.gbRssImageType.PerformLayout();
+      this.menuOptions.ResumeLayout(false);
+      this.tabControl1.ResumeLayout(false);
+      this.tabPage3.ResumeLayout(false);
       this.styleOptionsGroup.ResumeLayout(false);
       this.styleOptionsGroup.PerformLayout();
-      this.gbScreenRes.ResumeLayout(false);
-      this.gbScreenRes.PerformLayout();
-      this.infoserviceOptions.ResumeLayout(false);
-      this.infoserviceOptions.PerformLayout();
       this.globalSettings.ResumeLayout(false);
       this.globalSettings.PerformLayout();
+      this.gbScreenRes.ResumeLayout(false);
+      this.gbScreenRes.PerformLayout();
+      this.tabPage2.ResumeLayout(false);
+      this.weatherOptions.ResumeLayout(false);
+      this.weatherOptions.PerformLayout();
+      this.gbRssImageType.ResumeLayout(false);
+      this.gbRssImageType.PerformLayout();
+      this.infoserviceOptions.ResumeLayout(false);
+      this.infoserviceOptions.PerformLayout();
+      this.weatherSummaryGroup.ResumeLayout(false);
+      this.weatherSummaryGroup.PerformLayout();
       this.defaultBackgrounds.ResumeLayout(false);
       this.defaultBackgrounds.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -2310,7 +2340,6 @@
 
     private System.Windows.Forms.TabControl StreamedMPMenu;
     private System.Windows.Forms.TabPage basicHomeDesign;
-    private System.Windows.Forms.TabPage basicHomeOptions;
     private System.Windows.Forms.Button generateMenu;
     private System.Windows.Forms.Button btnClearCache;
     private System.Windows.Forms.GroupBox groupBox2;
@@ -2349,32 +2378,9 @@
     private System.Windows.Forms.Button addButton;
     private System.Windows.Forms.Button btMoveDown;
     private System.Windows.Forms.Button btMoveUp;
-    private System.Windows.Forms.GroupBox globalSettings;
-    private System.Windows.Forms.CheckBox useAeonGraphics;
-    private System.Windows.Forms.Label noFocusAlphaLabel;
-    private System.Windows.Forms.Label focusAlphaLabel;
-    private System.Windows.Forms.TextBox noFocusAlpha;
-    private System.Windows.Forms.TextBox focusAlpha;
-    private System.Windows.Forms.TextBox tbAcceleration;
-    private System.Windows.Forms.TextBox tbDuration;
-    private System.Windows.Forms.Label label13;
-    private System.Windows.Forms.Label label14;
-    private System.Windows.Forms.CheckBox cbDropShadow;
-    private System.Windows.Forms.TextBox txtMenuPos;
-    private System.Windows.Forms.Label menuPosLabel;
-    private System.Windows.Forms.TextBox txtNoFocusColour;
-    private System.Windows.Forms.TextBox txtFocusColour;
-    private System.Windows.Forms.Label label16;
-    private System.Windows.Forms.Label label17;
     private System.Windows.Forms.StatusStrip statusStrip1;
     private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-    private System.Windows.Forms.GroupBox infoserviceOptions;
-    private System.Windows.Forms.CheckBox summaryWeatherCheckBox;
     private System.Windows.Forms.CheckBox enableFiveDayWeather;
-    private System.Windows.Forms.CheckBox weatherBGlink;
-    private System.Windows.Forms.CheckBox wrapString;
-    private System.Windows.Forms.CheckBox enableTwitter;
-    private System.Windows.Forms.CheckBox enableRssfeed;
     private System.Windows.Forms.ComboBox cboQuickSelect;
     private System.Windows.Forms.ComboBox cboContextLabel;
     private System.Windows.Forms.Label label18;
@@ -2396,8 +2402,6 @@
     private System.Windows.Forms.ToolStripMenuItem helpToolStripMenu;
     private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     private System.Windows.Forms.TabPage menuStyleTab;
-    private System.Windows.Forms.GroupBox styleOptionsGroup;
-    private System.Windows.Forms.CheckBox horizontalContextLabels;
     private System.Windows.Forms.PictureBox menuStyle1;
     private System.Windows.Forms.PictureBox pictureBox1;
     private System.Windows.Forms.PictureBox menuStyle2;
@@ -2408,9 +2412,6 @@
     private System.Windows.Forms.RadioButton verticalStyle;
     private System.Windows.Forms.GroupBox menuStylesGroup;
     private System.Windows.Forms.GroupBox weatherIconsGroup;
-    private System.Windows.Forms.GroupBox weatherSummaryGroup;
-    private System.Windows.Forms.RadioButton fullWeatherSummaryBottom;
-    private System.Windows.Forms.RadioButton fullWeatherSummaryMiddle;
     private System.Windows.Forms.GroupBox aboutBoxGroup;
     private System.Windows.Forms.RichTextBox richTextBox1;
     private System.Windows.Forms.Label compileTime;
@@ -2448,14 +2449,6 @@
     private System.Windows.Forms.Label label7;
     private System.Windows.Forms.Label label6;
     private System.Windows.Forms.TextBox backupVersionsToKeep;
-    private System.Windows.Forms.ComboBox cboLabelFont;
-    private System.Windows.Forms.ComboBox cboSelectedFont;
-    private System.Windows.Forms.Label label15;
-    private System.Windows.Forms.Label label21;
-    private System.Windows.Forms.GroupBox gbRssImageType;
-    private System.Windows.Forms.RadioButton rbRssInfoServiceImage;
-    private System.Windows.Forms.RadioButton rbRssSkinImage;
-    private System.Windows.Forms.RadioButton rbRssNoImage;
     private System.Windows.Forms.GroupBox groupBox5;
     private System.Windows.Forms.CheckBox disableBGSharing;
     private System.Windows.Forms.ComboBox cboFanartProperty;
@@ -2464,15 +2457,7 @@
     private System.Windows.Forms.CheckBox cbEnableMusicNowPlayingFanart;
     private System.Windows.Forms.RichTextBox richTextBox2;
     private System.Windows.Forms.Button cancelCreateButton;
-    private System.Windows.Forms.CheckBox cbDisableClock;
     private System.Windows.Forms.LinkLabel installAnimatedIcons;
-    private System.Windows.Forms.GroupBox weatherOptions;
-    private System.Windows.Forms.LinkLabel installWeatherBackgrounds;
-    private System.Windows.Forms.GroupBox gbScreenRes;
-    private System.Windows.Forms.RadioButton hdRes;
-    private System.Windows.Forms.RadioButton sdRes;
-    private System.Windows.Forms.Label detectedHD;
-    private System.Windows.Forms.Label detectedSD;
     private System.Windows.Forms.LinkLabel useSkinWeatherIcons;
     private System.Windows.Forms.TabPage splashscreenSelector;
     private System.Windows.Forms.PictureBox spashscreenPreview;
@@ -2485,9 +2470,57 @@
     private System.Windows.Forms.TextBox textBox1;
     private System.Windows.Forms.Label lbActiveSplashScreen;
     private System.Windows.Forms.PictureBox pbActiveSplashScreen;
-    private System.Windows.Forms.CheckBox cbHideFanartScraper;
-    private System.Windows.Forms.CheckBox cbOverlayFanart;
+    private System.Windows.Forms.TabPage menuOptions;
+    private System.Windows.Forms.TabControl tabControl1;
+    private System.Windows.Forms.TabPage tabPage3;
+    private System.Windows.Forms.TabPage tabPage2;
+    private System.Windows.Forms.GroupBox weatherOptions;
+    private System.Windows.Forms.LinkLabel installWeatherBackgrounds;
+    private System.Windows.Forms.CheckBox weatherBGlink;
+    private System.Windows.Forms.CheckBox summaryWeatherCheckBox;
+    private System.Windows.Forms.GroupBox gbRssImageType;
+    private System.Windows.Forms.RadioButton rbRssInfoServiceImage;
+    private System.Windows.Forms.RadioButton rbRssSkinImage;
+    private System.Windows.Forms.RadioButton rbRssNoImage;
+    private System.Windows.Forms.GroupBox infoserviceOptions;
+    private System.Windows.Forms.CheckBox enableTwitter;
+    private System.Windows.Forms.CheckBox enableRssfeed;
+    private System.Windows.Forms.GroupBox weatherSummaryGroup;
+    private System.Windows.Forms.RadioButton fullWeatherSummaryBottom;
+    private System.Windows.Forms.RadioButton fullWeatherSummaryMiddle;
+    private System.Windows.Forms.GroupBox styleOptionsGroup;
     private System.Windows.Forms.CheckBox cbAnimateBackground;
+    private System.Windows.Forms.CheckBox cbOverlayFanart;
+    private System.Windows.Forms.ComboBox cboLabelFont;
+    private System.Windows.Forms.ComboBox cboSelectedFont;
+    private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.Label label21;
+    private System.Windows.Forms.CheckBox useAeonGraphics;
+    private System.Windows.Forms.CheckBox horizontalContextLabels;
+    private System.Windows.Forms.GroupBox globalSettings;
+    private System.Windows.Forms.CheckBox cbHideFanartScraper;
+    private System.Windows.Forms.CheckBox cbDisableClock;
+    private System.Windows.Forms.Label noFocusAlphaLabel;
+    private System.Windows.Forms.Label focusAlphaLabel;
+    private System.Windows.Forms.CheckBox wrapString;
+    private System.Windows.Forms.TextBox noFocusAlpha;
+    private System.Windows.Forms.TextBox focusAlpha;
+    private System.Windows.Forms.TextBox tbAcceleration;
+    private System.Windows.Forms.TextBox tbDuration;
+    private System.Windows.Forms.Label label13;
+    private System.Windows.Forms.Label label14;
+    private System.Windows.Forms.CheckBox cbDropShadow;
+    private System.Windows.Forms.TextBox txtMenuPos;
+    private System.Windows.Forms.Label menuPosLabel;
+    private System.Windows.Forms.TextBox txtNoFocusColour;
+    private System.Windows.Forms.TextBox txtFocusColour;
+    private System.Windows.Forms.Label label16;
+    private System.Windows.Forms.Label label17;
+    private System.Windows.Forms.GroupBox gbScreenRes;
+    private System.Windows.Forms.Label detectedHD;
+    private System.Windows.Forms.Label detectedSD;
+    private System.Windows.Forms.RadioButton hdRes;
+    private System.Windows.Forms.RadioButton sdRes;
   }
 }
 

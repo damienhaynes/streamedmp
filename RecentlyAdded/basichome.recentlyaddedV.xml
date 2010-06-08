@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>GROUP: RecentlyAdded Series</description>
+      <type>group</type>
+      <dimColor>0xffffffff</dimColor>
+      <!-- CHANGE the ID value (represented as xxxx) of isvisible(xxxx) to the value of the ID in basichome you want this to show.
+           If you want it to show on multiple you can chain them like so; control.isvisible(xxxx) + control.isvisible(xxxx2) etc. -->
+      <visible>control.isvisible(1004) + !Player.HasMedia + !string.equals(#infoservice.recentlyAdded.series1.thumb,)</visible>
+      
+      <animation effect="slide" end="-300,0" time=" 1500" acceleration=" -0.1" reversible="false">Hidden</animation>
+      <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+      
+      <animation effect="slide" start="-300,0" end="0,0" time="1000" acceleration=" -0.1" reversible="false">Visible</animation>
+      <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
+      
+      <animation effect="slide" end="-300,0" time="500" acceleration=" -0.1" reversible="false">WindowClose</animation>
+      <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
+      
+      
+      <control>
+        <description>Recent Background</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>355</posX>
+        <posY>0</posY>
+        <width>90</width>
+        <height>686</height>
+        <texture>recentbgv.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      
+      
+      <control>
+        <description>Series 1 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>357</posX>
+        <posY>73</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <texture>#infoservice.recentlyAdded.series1.thumb</texture>
+      </control>
+
+      <control>
+        <description>Series 1 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>400</posX>
+        <posY>205</posY>
+        <align>center</align>
+        <label>S#infoservice.recentlyAdded.series1.seasonE#infoservice.recentlyAdded.series1.episodenumber</label>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+      <control>
+        <description>Series 2 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>357</posX>
+        <posY>270</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <texture>#infoservice.recentlyAdded.series2.thumb</texture>
+      </control>
+      <control>
+        <description>Series 2 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>400</posX>
+        <posY>402</posY>
+        <label>S#infoservice.recentlyAdded.series2.seasonE#infoservice.recentlyAdded.series2.episodenumber</label>
+        <align>center</align>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+
+      
+
+      <control>
+        <description>Series 3 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>357</posX>
+        <posY>470</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <texture>#infoservice.recentlyAdded.series3.thumb</texture>
+      </control>
+      <control>
+        <description>Series 3 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>400</posX>
+        <posY>602</posY>
+        <label>S#infoservice.recentlyAdded.series3.seasonE#infoservice.recentlyAdded.series3.episodenumber</label>
+        <align>center</align>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+    </control>
+  </controls>
+</window>
