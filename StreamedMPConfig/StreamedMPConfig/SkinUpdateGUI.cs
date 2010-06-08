@@ -103,7 +103,7 @@ namespace StreamedMPConfig
             {
               if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
               {
-                  if (Path.GetExtension(optionDownloadPath).ToLower() == ".exe")
+                  if (Path.GetExtension(optionDownloadPath).ToLower() == ".msi")
                   {
                       //Lets run it
                       if (File.Exists(optionDownloadPath))
@@ -111,7 +111,8 @@ namespace StreamedMPConfig
                           ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
                           upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
                           System.Diagnostics.Process.Start(upgradeProcess);
-                          Environment.Exit(0);
+                          Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
+                          GUIGraphicsContext.OnAction(exitAction);
                       }
 
                   }
