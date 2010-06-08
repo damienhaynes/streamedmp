@@ -93,7 +93,6 @@ namespace StreamedMPConfig
       XmlDocument doc = new XmlDocument();
       Dictionary<string, string> TranslatedStrings = new Dictionary<string, string>();
       string langPath = "";
-      string[] words;
       try
       {
         langPath = Path.Combine(_path, lang + ".xml");
