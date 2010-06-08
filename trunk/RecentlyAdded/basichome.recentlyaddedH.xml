@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>GROUP: RecentlyAdded Series</description>
+      <type>group</type>
+      <dimColor>0xffffffff</dimColor>
+      <!-- CHANGE the ID value (represented as xxxx) of isvisible(xxxx) to the value of the ID in basichome you want this to show.
+           If you want it to show on multiple you can chain them like so; control.isvisible(xxxx) + control.isvisible(xxxx2) etc. -->
+      <visible>control.isvisible(1004) + !Player.HasMedia + !string.equals(#infoservice.recentlyAdded.series1.thumb,)</visible>
+      
+      <animation effect="slide" end="0,300" time=" 1500" acceleration=" -0.1" reversible="false">Hidden</animation>
+      <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
+      
+      <animation effect="slide" start="0,200" end="0,0" time="1000" acceleration=" -0.1" reversible="false">Visible</animation>
+      <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
+      
+      <animation effect="slide" end="0,300" time="1000" acceleration=" -0.1" reversible="false">WindowClose</animation>
+      <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
+      
+      
+      <control>
+        <description>Recent Background</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>0</posX>
+        <posY>478</posY>
+        <width>1280</width>
+        <height>133</height>
+        <texture>recentbg.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      
+      
+      <control>
+        <description>Series 1 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>10</posX>
+        <posY>485</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <align>center</align>
+        <texture>#infoservice.recentlyAdded.series1.thumb</texture>
+      </control>
+      <control>
+        <description>Series 1 name</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>100</posX>
+        <posY>485</posY>
+        <label>#infoservice.recentlyAdded.series1.title</label>
+        <font>mediastream12tc</font>
+        <textcolor>White</textcolor>
+      </control>
+      <control>
+        <description>Series 1 title</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>100</posX>
+        <posY>510</posY>
+        <width>300</width>
+        <label>#infoservice.recentlyAdded.series1.episodetitle</label>
+        <font>mediastream12</font>
+        <textcolor>White</textcolor>
+      </control>  
+      <control>
+        <description>Series 1 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>100</posX>
+        <posY>540</posY>
+        <width>300</width>
+        <label>#StreamedMP.Series: #infoservice.recentlyAdded.series1.season #StreamedMP.Episode: #infoservice.recentlyAdded.series1.episodenumber</label>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+      <control>
+        <description>Series 2 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>470</posX>
+        <posY>485</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <align>center</align>
+        <texture>#infoservice.recentlyAdded.series2.thumb</texture>
+      </control>
+      <control>
+        <description>Series 2 name</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>560</posX>
+        <posY>485</posY>
+        <label>#infoservice.recentlyAdded.series2.title</label>
+        <font>mediastream12tc</font>
+        <textcolor>White</textcolor>
+      </control>
+      <control>
+        <description>Series 2 title</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>560</posX>
+        <posY>510</posY>
+        <width>300</width>
+        <label>#infoservice.recentlyAdded.series2.episodetitle</label>
+        <font>mediastream12</font>
+        <textcolor>White</textcolor>
+      </control>  
+      <control>
+        <description>Series 2 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>560</posX>
+        <posY>540</posY>
+        <width>300</width>
+        <label>#StreamedMP.Series: #infoservice.recentlyAdded.series2.season #StreamedMP.Episode: #infoservice.recentlyAdded.series2.episodenumber</label>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+
+      
+
+      <control>
+        <description>Series 3 thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>860</posX>
+        <posY>485</posY>
+        <width>80</width>
+        <keepaspectratio>true</keepaspectratio>
+        <align>center</align>
+        <texture>#infoservice.recentlyAdded.series3.thumb</texture>
+      </control>
+      <control>
+        <description>Series 3 name</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>950</posX>
+        <posY>485</posY>
+        <label>#infoservice.recentlyAdded.series3.title</label>
+        <font>mediastream12tc</font>
+        <textcolor>White</textcolor>
+      </control>
+      <control>
+        <description>Series 3 title</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>950</posX>
+        <posY>510</posY>
+        <width>300</width>
+        <label>#infoservice.recentlyAdded.series3.episodetitle</label>
+        <font>mediastream12</font>
+        <textcolor>White</textcolor>
+      </control>  
+      <control>
+        <description>Series 3 episode</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>950</posX>
+        <posY>540</posY>
+        <width>300</width>
+        <label>#StreamedMP.Series: #infoservice.recentlyAdded.series3.season #StreamedMP.Episode: #infoservice.recentlyAdded.series3.episodenumber</label>
+        <font>mediastream10</font>
+        <textcolor>White</textcolor>
+      </control>
+    
+
+    </control>
+  </controls>
+</window>
