@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Util;
@@ -30,17 +31,23 @@ namespace StreamedMPConfig
 
         if (StreamedMPConfig.checkForUpdateAt)
         {
-            if (xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", "") == "")
-            {
-                StreamedMPConfig.checkTime = DateTime.Parse("03:00");
-                StreamedMPConfig.checkInterval = 1;
-            }
-            else
-            {
-                StreamedMPConfig.checkTime = DateTime.Parse(xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", ""));
-                StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString("StreamedMPConfig", "nextUpdateCheck", "");
-                StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt("StreamedMPConfig", "checkInterval", 1);
-            }
+          string checkTime = xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", "");
+
+          if (string.IsNullOrEmpty(checkTime))
+          {
+            StreamedMPConfig.checkTime = DateTime.Parse("03:00");
+            StreamedMPConfig.checkInterval = 1;
+          }
+          else
+          {
+            DateTime dtCheckTime = new DateTime();
+            if (!DateTime.TryParse(checkTime, CultureInfo.CurrentCulture, DateTimeStyles.None, out dtCheckTime))
+              dtCheckTime = DateTime.Now;
+            StreamedMPConfig.checkTime = dtCheckTime;
+            
+            StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString("StreamedMPConfig", "nextUpdateCheck", "");
+            StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt("StreamedMPConfig", "checkInterval", 1);
+          }
         }
       }
     }
