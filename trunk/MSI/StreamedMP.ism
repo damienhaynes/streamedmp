@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -343,6 +342,7 @@
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>b3SkinMovingPictures</td><td>{B7171908-83C8-4143-B383-03F8966B8425}</td><td>BLUE3</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>b3wSkinMovingPictures</td><td>{A67C966E-E70B-4415-A201-933EB1DDE738}</td><td>NEW_DIRECTORY1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>b3wSkinMyLyrics</td><td>{4764DE76-A0A8-448E-A72C-38ADC921A7BA}</td><td>NEW_DIRECTORY1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>b3wSkinTVSeries</td><td>{A0A6261A-3D92-4255-96ED-597E29041F37}</td><td>NEW_DIRECTORY3</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>b3wSkinTrailers</td><td>{F3F8E3B4-8561-4DBA-87E2-BB5D5AD571A9}</td><td>NEW_DIRECTORY2</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>commonMovingPictures</td><td>{755A65DE-18FD-4078-A070-C52D64FA5E55}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -729,13 +729,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -825,47 +821,47 @@
 		<row><td>MY_PRODUCT_NAME</td><td>TEAM_MEDIAPORTAL</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
 		<row><td>MyPicturesFolder</td><td>TARGETDIR</td><td>.:MyPict~1|MyPictures</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY1</td><td>BLUE3WIDE</td><td>.:B3WSKI~1|b3wSkinMovingPictures</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY10</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\defaultTVSeries7x3WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY11</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\fanartMovingPictures</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY12</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\fanartMovingPictures.12x3.8x2.Thumbs</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY13</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\fanartMovingPictures.12x4.8x3.Thumbs</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY14</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\fanartMovingPicturesThumbs</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY15</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeries</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY16</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeries10x4WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY17</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeries5x2WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY18</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeries5x3WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY19</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeries7x3WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY10</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultTVSeries7x3WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY11</td><td>STREAMEDMP</td><td>.:FANART~1|fanartMovingPictures</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY12</td><td>STREAMEDMP</td><td>.:FANART~1|fanartMovingPictures.12x3.8x2.Thumbs</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY13</td><td>STREAMEDMP</td><td>.:FANART~1|fanartMovingPictures.12x4.8x3.Thumbs</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY14</td><td>STREAMEDMP</td><td>.:FANART~1|fanartMovingPicturesThumbs</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY15</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeries</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY16</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeries10x4WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY17</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeries5x2WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY18</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeries5x3WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY19</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeries7x3WideBanners</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY2</td><td>BLUE3WIDE</td><td>.:B3WSKI~1|b3wSkinTrailers</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY20</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\fanartTVSeriesWideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY21</td><td>STREAMEDMP</td><td>.:FONTS_~1|Fonts\fontsXMLLarge</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY22</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingFullscreenSlidingMenu</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY23</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowEdgeFade</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY24</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowEdgeNoFade</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY25</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowEdgeNoMask</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY26</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowFullscreenHiddenMenu</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY27</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowWindowFade</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY28</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowWindowNoFade</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY29</td><td>STREAMEDMP</td><td>.:MUSIC_~1|Music\playingNowWindowNoMask</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY20</td><td>STREAMEDMP</td><td>.:FANART~1|fanartTVSeriesWideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY21</td><td>STREAMEDMP</td><td>.:FONTSX~1|fontsXMLLarge</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY22</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingFullscreenSlidingMenu</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY23</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowEdgeFade</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY24</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowEdgeNoFade</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY25</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowEdgeNoMask</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY26</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowFullscreenHiddenMenu</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY27</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowWindowFade</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY28</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowWindowNoFade</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY29</td><td>STREAMEDMP</td><td>.:PLAYIN~1|playingNowWindowNoMask</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY3</td><td>BLUE3WIDE</td><td>.:B3WSKI~1|b3wSkinTVSeries</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY30</td><td>STREAMEDMP</td><td>.:TVGUID~1|TVGuide\tvguide08Rows</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY31</td><td>STREAMEDMP</td><td>.:TVGUID~1|TVGuide\tvguide12Rows</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY30</td><td>STREAMEDMP</td><td>.:TVGUID~1|tvguide08Rows</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY31</td><td>STREAMEDMP</td><td>.:TVGUID~1|tvguide12Rows</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY32</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosAustralia</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY33</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosCanada</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY34</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosGermanyClassical</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY35</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosGermanyModern</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY36</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosGermanyTransparent</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY37</td><td>MPTVLOGOSDIR</td><td>.:TVLOGO~1|tvlogosUK</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY38</td><td>STREAMEDMP</td><td>.:TVMINI~1|TVMiniGuide\tvminiguide03Rows</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY39</td><td>STREAMEDMP</td><td>.:TVMINI~1|TVMiniGuide\tvminiguide05Rows</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY4</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\defaultMovingPictures.12x3.8x2.Thumbs</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY40</td><td>STREAMEDMP</td><td>.:TVMINI~1|TVMiniGuide\tvminiguide09Rows</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY41</td><td>MEDIA1</td><td>.:FACADE~1|FacadeIcons\tvseriesSingleImageIcons</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY38</td><td>STREAMEDMP</td><td>.:TVMINI~1|tvminiguide03Rows</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY39</td><td>STREAMEDMP</td><td>.:TVMINI~1|tvminiguide05Rows</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY4</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultMovingPictures.12x3.8x2.Thumbs</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY40</td><td>STREAMEDMP</td><td>.:TVMINI~1|tvminiguide09Rows</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY41</td><td>MEDIA1</td><td>.:TVSERI~1|tvseriesSingleImageIcons</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY42</td><td>STREAMEDMP</td><td>.:TVMINI~1|TVMiniGuide\tvminiguide07Rows</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY5</td><td>STREAMEDMP</td><td>.:MOVING~1|MovingPictures\defaultMovingPictures.12x4.8x3.Thumbs</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY5</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultMovingPictures.12x4.8x3.Thumbs</td><td/><td>0</td><td/></row>
 		<row><td>NEW_DIRECTORY6</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultTVSeries</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY7</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\defaultTVSeries10x4WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY8</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\defaultTVSeries5x2WideBanners</td><td/><td>0</td><td/></row>
-		<row><td>NEW_DIRECTORY9</td><td>STREAMEDMP</td><td>.:TVSERI~1|TVSeries\defaultTVSeries5x3WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY7</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultTVSeries10x4WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY8</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultTVSeries5x2WideBanners</td><td/><td>0</td><td/></row>
+		<row><td>NEW_DIRECTORY9</td><td>STREAMEDMP</td><td>.:DEFAUL~1|defaultTVSeries5x3WideBanners</td><td/><td>0</td><td/></row>
 		<row><td>PROCESS</td><td>MPPLUGINSDIR</td><td>Process</td><td/><td>0</td><td/></row>
 		<row><td>PROCESS1</td><td>MPPLUGINSDIR</td><td>Process</td><td/><td>0</td><td/></row>
 		<row><td>PersonalFolder</td><td>TARGETDIR</td><td>.:Personal</td><td/><td>0</td><td/></row>
@@ -1588,6 +1584,8 @@
 		<row><td>MovingPicturesBlue3wideSkin</td><td>MovingPictures</td><td>##ID_STRING122##</td><td>##ID_STRING124##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesMainPlugin</td><td>MovingPictures</td><td>##ID_STRING130##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyLyricsBlue3wideSkin</td><td>MyLyrics</td><td>##ID_STRING145##</td><td>##ID_STRING146##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyLyricsMainPlugin</td><td>MyLyrics</td><td>##ID_STRING144##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailers</td><td>Plugins</td><td>##ID_STRING82##</td><td>##ID_STRING83##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailersBlue3wideSkin</td><td>MyTrailers</td><td>##ID_STRING127##</td><td>##ID_STRING128##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyTrailersMainPlugin</td><td>MyTrailers</td><td>##ID_STRING131##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1678,9 +1676,10 @@
 		<row><td>MovingPicturesMainPlugin</td><td>languagesMovingPictures</td></row>
 		<row><td>MovingPicturesMainPlugin</td><td>libNLog</td></row>
 		<row><td>MovingPicturesMainPlugin</td><td>pluginMovingPicturesDLL</td></row>
-		<row><td>MyLyrics</td><td>libGoogleTranslate</td></row>
-		<row><td>MyLyrics</td><td>libLyricsEngine</td></row>
-		<row><td>MyLyrics</td><td>pluginMyLyricsDLL</td></row>
+		<row><td>MyLyricsBlue3wideSkin</td><td>b3wSkinMyLyrics</td></row>
+		<row><td>MyLyricsMainPlugin</td><td>libGoogleTranslate</td></row>
+		<row><td>MyLyricsMainPlugin</td><td>libLyricsEngine</td></row>
+		<row><td>MyLyricsMainPlugin</td><td>pluginMyLyricsDLL</td></row>
 		<row><td>MyTrailersBlue3wideSkin</td><td>b3wSkinTrailers</td></row>
 		<row><td>MyTrailersMainPlugin</td><td>pluginMyTrailersDLL</td></row>
 		<row><td>StreamedMP</td><td>libICSharpCodeSharpZipLib</td></row>
@@ -1766,14 +1765,14 @@
 		<row><td>fonts.xml</td><td>fontsXMLDefault</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fonts.xml</td><td>1</td><td/></row>
 		<row><td>fonts.xml1</td><td>fontsXMLLarge</td><td>fonts.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\large\fonts.xml</td><td>1</td><td/></row>
 		<row><td>forums.url</td><td>webForums</td><td>Forums.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Forums.url</td><td>1</td><td/></row>
-		<row><td>googletranslateapi.dll</td><td>libGoogleTranslate</td><td>GOOGLE~1.DLL|GoogleTranslateAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\GoogleTranslateAPI.dll</td><td>1</td><td/></row>
+		<row><td>googletranslateapi.dll</td><td>libGoogleTranslate</td><td>GOOGLE~1.DLL|GoogleTranslateAPI.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\GoogleTranslateAPI.dll</td><td>1</td><td/></row>
 		<row><td>guiglobalsearch.dll</td><td>pluginGlobalMusicSearchDLL</td><td>GUIGLO~1.DLL|GUIGlobalSearch.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\GUIGlobalSearch.dll</td><td>1</td><td/></row>
 		<row><td>home.url</td><td>webHome</td><td>Home.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Home.url</td><td>1</td><td/></row>
 		<row><td>icsharpcode.sharpziplib.dll</td><td>libICSharpCodeSharpZipLib</td><td>ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\ICSharpCode.SharpZipLib.dll</td><td>1</td><td/></row>
 		<row><td>infoservice.dll</td><td>pluginInfoServiceDLL</td><td>INFOSE~1.DLL|InfoService.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\InfoService.dll</td><td>1</td><td/></row>
 		<row><td>interop.shdocvw.dll</td><td>libWebBrowserDependencies</td><td>INTERO~1.DLL|Interop.SHDocVw.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\Interop.SHDocVw.dll</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
-		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\LyricsEngine.dll</td><td>1</td><td/></row>
+		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\LyricsEngine.dll</td><td>17</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>microsoft.mshtml.dll</td><td>libWebBrowserDependencies</td><td>MICROS~1.DLL|microsoft.mshtml.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\microsoft.mshtml.dll</td><td>1</td><td/></row>
 		<row><td>movingpictures.background.ov</td><td>defaultMovingPicturesThumbs</td><td>MOVING~2.XML|movingpictures.background.overlays.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\movingpictures.background.overlays.xml</td><td>1</td><td/></row>
@@ -1815,7 +1814,7 @@
 		<row><td>movingpictures.xml1</td><td>fanartMovingPictures</td><td>MOVING~1.XML|movingpictures.xml</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\fanartstyle\movingpictures.xml</td><td>17</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
 		<row><td>music.nowplaying.fullscreen.</td><td>playingNowFullscreenHiddenMenu</td><td>MUSICN~1.XML|music.nowplaying.fullscreen.common.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanartmusicfiles\fullscreen-fanart-versions\menuversion\music.nowplaying.fullscreen.common.xml</td><td>1</td><td/></row>
-		<row><td>mylyrics.dll</td><td>pluginMyLyricsDLL</td><td>MyLyrics.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MyLyrics.dll</td><td>1</td><td/></row>
+		<row><td>mylyrics.dll</td><td>pluginMyLyricsDLL</td><td>MyLyrics.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MyLyrics.dll</td><td>17</td><td/></row>
 		<row><td>mymusicplayingnow.xml</td><td>playingNowDefault</td><td>MYMUSI~1.XML|MyMusicPlayingNow.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\MyMusicPlayingNow.xml</td><td>1</td><td/></row>
 		<row><td>mymusicplayingnow.xml1</td><td>playingNowEdgeFade</td><td>MYMUSI~1.XML|MyMusicPlayingNow.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanartmusicfiles\standard-fanart-versions\variants\streamedmp edge fade\MyMusicPlayingNow.xml</td><td>1</td><td/></row>
 		<row><td>mymusicplayingnow.xml2</td><td>playingNowEdgeNoFade</td><td>MYMUSI~1.XML|MyMusicPlayingNow.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanartmusicfiles\standard-fanart-versions\variants\streamedmp edge nofade\MyMusicPlayingNow.xml</td><td>1</td><td/></row>
@@ -1853,7 +1852,7 @@
 		<row><td>streamedmpeditor.dll</td><td>pluginStreamedMPEditorDLL</td><td>STREAM~1.DLL|StreamedMPEditor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\StreamedMPEditor.dll</td><td>1</td><td/></row>
 		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\SubtitleDownloader.dll</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
-		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\TranslateProvider.dll</td><td>1</td><td/></row>
+		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\TranslateProvider.dll</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml</td><td>tvminiguide03Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvminiguides\3 rows\TVMiniGuide.xml</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml1</td><td>tvminiguide05Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvminiguides\5 rows\TVMiniGuide.xml</td><td>1</td><td/></row>
 		<row><td>tvminiguide.xml2</td><td>tvminiguide07Rows</td><td>TVMINI~1.XML|TVMiniGuide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\TVMiniGuide.xml</td><td>1</td><td/></row>
@@ -2164,6 +2163,7 @@
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>b3SkinMovingPictures</td><td/><td/><td>_D37D0ADD_3144_423D_9882_3B55C09C5494_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>b3wSkinMovingPictures</td><td/><td/><td>_400C2F17_03E4_4BE3_A97C_BE45AE87D848_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>b3wSkinMyLyrics</td><td/><td/><td>_5F492178_B332_44C6_8B77_039C80AB53F2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>b3wSkinTVSeries</td><td/><td/><td>_F57917B6_3C0A_458A_AA88_4D68966666D7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>b3wSkinTrailers</td><td/><td/><td>_C1539BD1_6FAB_416F_82DF_E4A802F57400_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>commonMovingPictures</td><td/><td/><td>_8C6F6878_5060_4AF3_A120_48B2213248A2_FILTER</td><td/><td/><td/><td/></row>
@@ -2306,6 +2306,7 @@
 		<row><td>Fanart</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.jpg,*.txt</td><td/><td>2</td></row>
 		<row><td>b3SkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>b3wSkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>b3wSkinMyLyrics</td><td>&lt;StreamedMP&gt;\blue3skins\mylyrics\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>b3wSkinTVSeries</td><td>&lt;SKINFILES&gt;\blue3skins\mp-tvseries\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>b3wSkinTrailers</td><td>&lt;SKINFILES&gt;\blue3skins\mytrailers\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
@@ -2352,6 +2353,8 @@
 		<row><td>MovingPicturesBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyLyrics</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MyLyricsBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>MyLyricsMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyTrailers</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyTrailersBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MyTrailersMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2662,7 +2665,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.2.3</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.2.1</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2952,6 +2955,8 @@
 		<row><td>Custom</td><td>MovingPicturesBlue3wideSkin</td></row>
 		<row><td>Custom</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Custom</td><td>MyLyrics</td></row>
+		<row><td>Custom</td><td>MyLyricsBlue3wideSkin</td></row>
+		<row><td>Custom</td><td>MyLyricsMainPlugin</td></row>
 		<row><td>Custom</td><td>MyTrailers</td></row>
 		<row><td>Custom</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Custom</td><td>MyTrailersMainPlugin</td></row>
@@ -3020,6 +3025,8 @@
 		<row><td>Minimal</td><td>MovingPicturesBlue3wideSkin</td></row>
 		<row><td>Minimal</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Minimal</td><td>MyLyrics</td></row>
+		<row><td>Minimal</td><td>MyLyricsBlue3wideSkin</td></row>
+		<row><td>Minimal</td><td>MyLyricsMainPlugin</td></row>
 		<row><td>Minimal</td><td>MyTrailers</td></row>
 		<row><td>Minimal</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Minimal</td><td>MyTrailersMainPlugin</td></row>
@@ -3085,6 +3092,8 @@
 		<row><td>Typical</td><td>MovingPicturesBlue3wideSkin</td></row>
 		<row><td>Typical</td><td>MovingPicturesMainPlugin</td></row>
 		<row><td>Typical</td><td>MyLyrics</td></row>
+		<row><td>Typical</td><td>MyLyricsBlue3wideSkin</td></row>
+		<row><td>Typical</td><td>MyLyricsMainPlugin</td></row>
 		<row><td>Typical</td><td>MyTrailers</td></row>
 		<row><td>Typical</td><td>MyTrailersBlue3wideSkin</td></row>
 		<row><td>Typical</td><td>MyTrailersMainPlugin</td></row>
@@ -4419,6 +4428,9 @@
 		<row><td>ID_STRING141</td><td>1033</td><td>fanartMovingPictures.12x4.8x3.Thumbs</td><td>0</td><td/><td>-2103574069</td></row>
 		<row><td>ID_STRING142</td><td>1033</td><td>STREAM~1|StreamedMP BasicHome Editor</td><td>0</td><td/><td>186551695</td></row>
 		<row><td>ID_STRING143</td><td>1033</td><td>BASICH~1|BasicHome Editor</td><td>0</td><td/><td>186568079</td></row>
+		<row><td>ID_STRING144</td><td>1033</td><td>MyLyricsMainPlugin</td><td>0</td><td/><td>-1155641621</td></row>
+		<row><td>ID_STRING145</td><td>1033</td><td>Blue3wide Skin</td><td>0</td><td/><td>-1155625237</td></row>
+		<row><td>ID_STRING146</td><td>1033</td><td>Default Blue3wide skin files for the My Lyrics plugin.</td><td>0</td><td/><td>-1155612949</td></row>
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
@@ -4444,7 +4456,7 @@
 		<row><td>ID_STRING35</td><td>1033</td><td>STREAM~1|Streamed MP Editor</td><td>0</td><td/><td>-845354164</td></row>
 		<row><td>ID_STRING36</td><td>1033</td><td>Menu Editor</td><td>0</td><td/><td>-979617776</td></row>
 		<row><td>ID_STRING37</td><td>1033</td><td>MediaInfo Logos PSD</td><td>0</td><td/><td>681503754</td></row>
-		<row><td>ID_STRING38</td><td>1033</td><td>The StreamedMP Menu Editor is used to customize MediaPortal's Basic Home screen.\n\nThis tool requires administator access in MediaPortal 1.0.2</td><td>0</td><td/><td>681493546</td></row>
+		<row><td>ID_STRING38</td><td>1033</td><td>The StreamedMP Menu Editor is used to customize MediaPortal's Basic Home screen.\nThis can be accessed from the desktop or within MediaPortal configuration.</td><td>0</td><td/><td>-1155624180</td></row>
 		<row><td>ID_STRING39</td><td>1033</td><td>The Photoshop PSD project that is used to create logos for Streamed MP</td><td>0</td><td/><td>-979615664</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>http://code.google.com/p/streamedmp/downloads/list</td><td>0</td><td/><td>-1919124627</td></row>
 		<row><td>ID_STRING40</td><td>1033</td><td>UNINST|Uninstall Streamed MP</td><td>0</td><td/><td>-845362292</td></row>
@@ -4724,13 +4736,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4797,8 +4805,8 @@
 		<row><td>ActiveLanguage</td><td>1033</td></row>
 		<row><td>ApplicationType</td><td>Standard Windows Application</td></row>
 		<row><td>Comments</td><td/></row>
-		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="9f795eb6c3c8326da701c71dc1af6769">
-UwB0AHIAZQBhAG0AZQBkAE0AUAAtAFUAbgBjAG8AbQBwAHIAZQBzAHMAZQBkAAEAUgBlAGwAZQBhAHMAZQA=
+		<row><td>CurrentMedia</td><td dt:dt="bin.base64" md5="6d0d78a65c62cff7dd6db134f9be46ab">
+UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 			</td></row>
 		<row><td>CurrentPatchConfiguration</td><td>StreamedMP</td></row>
 		<row><td>DoMaintenance</td><td>1</td></row>
