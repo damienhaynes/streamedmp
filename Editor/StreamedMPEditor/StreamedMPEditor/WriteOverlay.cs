@@ -23,6 +23,10 @@ namespace StreamedMPEditor
       int maxEndYpos = 540;
       int overlayOffset = 140;
       string overlayFanart = "No";
+      string hideControls = "!control.isvisible(" + int.Parse(weatherId.ToString()) + ")";
+
+      if (cbMostRecentTvSeries.Checked)
+        hideControls += "+!control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ")";
 
       if (horizontalContextLabels.Checked)
       {
@@ -130,7 +134,7 @@ namespace StreamedMPEditor
                   "\t\t\t<width>519</width>\n" +
                   "\t\t\t<height>152</height>\n" +
                   "\t\t\t<texture>dialogprogressbg.png</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                   "\t\t\t<!-- Not visible in regular home and my plugins -->\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
@@ -142,7 +146,7 @@ namespace StreamedMPEditor
                   "\t\t\t<width>270</width>\n" +
                   "\t\t\t<height>114</height>\n" +
                   "\t\t\t<texture>#fanarthandler.music.backdrop1.play</texture>\n" +
-                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                   "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
@@ -154,7 +158,7 @@ namespace StreamedMPEditor
                   "\t\t\t<width>270</width>\n" +
                   "\t\t\t<height>114</height>\n" +
                   "\t\t\t<texture>#fanarthandler.music.backdrop2.play</texture>\n" +
-                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767+" + hideControls + "</visible>\n" +
                   "\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
@@ -167,7 +171,7 @@ namespace StreamedMPEditor
                   "\t\t\t<height>114</height>\n" +
                   "\t\t\t<colordiffuse>EFFFFFFF</colordiffuse>\n" +
                   "\t\t\t<texture>overlayfanartmask.png</texture>\n" +
-                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t\t<!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->\n" +
                 "\t\t<control>\n" +
@@ -182,7 +186,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>no</zoom>\n" +
                   "\t\t\t<texture>defaultAudioBig.png</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>music logo</description>\n" +
@@ -196,7 +200,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>yes</zoom>\n" +
                   "\t\t\t<texture>" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>music logo</description>\n" +
@@ -210,7 +214,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>no</zoom>\n" +
                   "\t\t\t<texture>#Play.Current.Thumb</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>Music logo Animation</description>\n" +
@@ -226,7 +230,7 @@ namespace StreamedMPEditor
                   "\t\t\t<keepaspectratio>no</keepaspectratio>\n" +
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>yes</zoom>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>Selectable Button</description>\n" +
@@ -245,7 +249,7 @@ namespace StreamedMPEditor
                   "\t\t\t<onright>7777</onright>\n" +
                   "\t\t\t<onleft>7777</onleft>\n" +
                   "\t\t\t<colordiffuse>f1ffffff</colordiffuse>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>artist info label</description>\n" +
@@ -259,7 +263,7 @@ namespace StreamedMPEditor
                   "\t\t\t<align>left</align>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream12tc</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>title info label</description>\n" +
@@ -273,7 +277,7 @@ namespace StreamedMPEditor
                   "\t\t\t<align>left</align>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10tc</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>album info label</description>\n" +
@@ -287,7 +291,7 @@ namespace StreamedMPEditor
                   "\t\t\t<align>left</align>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10c</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>play time / duration label</description>\n" +
@@ -301,7 +305,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#currentplaytime / #duration</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10c</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>next song label</description>\n" +
@@ -315,7 +319,7 @@ namespace StreamedMPEditor
                   "\t\t\t<textcolor>FF025984</textcolor>\n" +
                   "\t\t\t<font>mediastream10</font>\n" +
                   "\t\t\t<align>left</align>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>next song info label</description>\n" +
@@ -329,7 +333,7 @@ namespace StreamedMPEditor
                   "\t\t\t<textcolor>white</textcolor>\n" +
                   "\t\t\t<align>left</align>\n" +
                   "\t\t\t<font>mediastream10</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t\t<!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->\n" +
                 "\t\t<control>\n" +
@@ -347,7 +351,7 @@ namespace StreamedMPEditor
                   "\t\t\t<ondown>7777</ondown>\n" +
                   "\t\t\t<onright>7777</onright>\n" +
                   "\t\t\t<onleft>7777</onleft>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>video preview window</description>\n" +
@@ -363,7 +367,7 @@ namespace StreamedMPEditor
                   "\t\t\t<ondown>7777</ondown>\n" +
                   "\t\t\t<onright>7777</onright>\n" +
                   "\t\t\t<onleft>7777</onleft>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>artist info label</description>\n" +
@@ -376,7 +380,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#Play.Current.Title</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10tc</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>title info label</description>\n" +
@@ -389,7 +393,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#Play.Current.Year</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10tc</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>album info label</description>\n" +
@@ -402,7 +406,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#Play.Current.Genre</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10c</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>album info label</description>\n" +
@@ -415,7 +419,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#Play.Current.Director</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10c</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>play time / duration label</description>\n" +
@@ -428,7 +432,7 @@ namespace StreamedMPEditor
                   "\t\t\t<label>#currentplaytime / #duration</label>\n" +
                   "\t\t\t<textcolor>FFFFFFFF</textcolor>\n" +
                   "\t\t\t<font>mediastream10c</font>\n" +
-                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
               "\t</controls>\n" +
             "</window>";

@@ -139,6 +139,17 @@
       this.hdRes = new System.Windows.Forms.RadioButton();
       this.sdRes = new System.Windows.Forms.RadioButton();
       this.tabPage2 = new System.Windows.Forms.TabPage();
+      this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
+      this.pMovPicsRecent = new System.Windows.Forms.Panel();
+      this.gbMovPicsOptions = new System.Windows.Forms.GroupBox();
+      this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
+      this.rbMovPicsSummary = new System.Windows.Forms.RadioButton();
+      this.cbMostRecentMovPics = new System.Windows.Forms.CheckBox();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.gbTvSeriesOptions = new System.Windows.Forms.GroupBox();
+      this.rbTBSeriesFull = new System.Windows.Forms.RadioButton();
+      this.rbTVSeriesSummary = new System.Windows.Forms.RadioButton();
+      this.cbMostRecentTvSeries = new System.Windows.Forms.CheckBox();
       this.weatherOptions = new System.Windows.Forms.GroupBox();
       this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
       this.weatherBGlink = new System.Windows.Forms.CheckBox();
@@ -242,6 +253,11 @@
       this.globalSettings.SuspendLayout();
       this.gbScreenRes.SuspendLayout();
       this.tabPage2.SuspendLayout();
+      this.infoServiceRecentOptions.SuspendLayout();
+      this.pMovPicsRecent.SuspendLayout();
+      this.gbMovPicsOptions.SuspendLayout();
+      this.panel1.SuspendLayout();
+      this.gbTvSeriesOptions.SuspendLayout();
       this.weatherOptions.SuspendLayout();
       this.gbRssImageType.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
@@ -1480,6 +1496,7 @@
       // 
       // tabPage2
       // 
+      this.tabPage2.Controls.Add(this.infoServiceRecentOptions);
       this.tabPage2.Controls.Add(this.weatherOptions);
       this.tabPage2.Controls.Add(this.gbRssImageType);
       this.tabPage2.Controls.Add(this.infoserviceOptions);
@@ -1491,6 +1508,132 @@
       this.tabPage2.TabIndex = 0;
       this.tabPage2.Text = "InfoService Options";
       this.tabPage2.UseVisualStyleBackColor = true;
+      // 
+      // infoServiceRecentOptions
+      // 
+      this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
+      this.infoServiceRecentOptions.Controls.Add(this.panel1);
+      this.infoServiceRecentOptions.Location = new System.Drawing.Point(3, 164);
+      this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
+      this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 129);
+      this.infoServiceRecentOptions.TabIndex = 30;
+      this.infoServiceRecentOptions.TabStop = false;
+      this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
+      // 
+      // pMovPicsRecent
+      // 
+      this.pMovPicsRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
+      this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
+      this.pMovPicsRecent.Enabled = false;
+      this.pMovPicsRecent.Location = new System.Drawing.Point(383, 19);
+      this.pMovPicsRecent.Name = "pMovPicsRecent";
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 101);
+      this.pMovPicsRecent.TabIndex = 5;
+      this.toolTip1.SetToolTip(this.pMovPicsRecent, "This Option Not Currently Supported by Moving Pictures");
+      // 
+      // gbMovPicsOptions
+      // 
+      this.gbMovPicsOptions.Controls.Add(this.rbMovPicsFull);
+      this.gbMovPicsOptions.Controls.Add(this.rbMovPicsSummary);
+      this.gbMovPicsOptions.Enabled = false;
+      this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 28);
+      this.gbMovPicsOptions.Name = "gbMovPicsOptions";
+      this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 60);
+      this.gbMovPicsOptions.TabIndex = 3;
+      this.gbMovPicsOptions.TabStop = false;
+      this.gbMovPicsOptions.Text = "MovingPictures Options";
+      // 
+      // rbMovPicsFull
+      // 
+      this.rbMovPicsFull.AutoSize = true;
+      this.rbMovPicsFull.Location = new System.Drawing.Point(147, 24);
+      this.rbMovPicsFull.Name = "rbMovPicsFull";
+      this.rbMovPicsFull.Size = new System.Drawing.Size(76, 17);
+      this.rbMovPicsFull.TabIndex = 3;
+      this.rbMovPicsFull.TabStop = true;
+      this.rbMovPicsFull.Text = "Full Details";
+      this.rbMovPicsFull.UseVisualStyleBackColor = true;
+      // 
+      // rbMovPicsSummary
+      // 
+      this.rbMovPicsSummary.AutoSize = true;
+      this.rbMovPicsSummary.Location = new System.Drawing.Point(9, 24);
+      this.rbMovPicsSummary.Name = "rbMovPicsSummary";
+      this.rbMovPicsSummary.Size = new System.Drawing.Size(71, 17);
+      this.rbMovPicsSummary.TabIndex = 2;
+      this.rbMovPicsSummary.TabStop = true;
+      this.rbMovPicsSummary.Text = "Summary ";
+      this.rbMovPicsSummary.UseVisualStyleBackColor = true;
+      this.rbMovPicsSummary.CheckedChanged += new System.EventHandler(this.rbMovPicsSummary_CheckedChanged);
+      // 
+      // cbMostRecentMovPics
+      // 
+      this.cbMostRecentMovPics.AutoSize = true;
+      this.cbMostRecentMovPics.Location = new System.Drawing.Point(9, 5);
+      this.cbMostRecentMovPics.Name = "cbMostRecentMovPics";
+      this.cbMostRecentMovPics.Size = new System.Drawing.Size(201, 17);
+      this.cbMostRecentMovPics.TabIndex = 1;
+      this.cbMostRecentMovPics.Text = "Enable MovingPictures Last 3 Added";
+      this.cbMostRecentMovPics.UseVisualStyleBackColor = true;
+      this.cbMostRecentMovPics.CheckedChanged += new System.EventHandler(this.cbMostRecentMovPics_CheckedChanged);
+      // 
+      // panel1
+      // 
+      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel1.Controls.Add(this.gbTvSeriesOptions);
+      this.panel1.Controls.Add(this.cbMostRecentTvSeries);
+      this.panel1.Location = new System.Drawing.Point(30, 17);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(283, 101);
+      this.panel1.TabIndex = 4;
+      // 
+      // gbTvSeriesOptions
+      // 
+      this.gbTvSeriesOptions.Controls.Add(this.rbTBSeriesFull);
+      this.gbTvSeriesOptions.Controls.Add(this.rbTVSeriesSummary);
+      this.gbTvSeriesOptions.Enabled = false;
+      this.gbTvSeriesOptions.Location = new System.Drawing.Point(9, 30);
+      this.gbTvSeriesOptions.Name = "gbTvSeriesOptions";
+      this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 60);
+      this.gbTvSeriesOptions.TabIndex = 2;
+      this.gbTvSeriesOptions.TabStop = false;
+      this.gbTvSeriesOptions.Text = "TVSeries Overlay Type";
+      // 
+      // rbTBSeriesFull
+      // 
+      this.rbTBSeriesFull.AutoSize = true;
+      this.rbTBSeriesFull.Location = new System.Drawing.Point(146, 24);
+      this.rbTBSeriesFull.Name = "rbTBSeriesFull";
+      this.rbTBSeriesFull.Size = new System.Drawing.Size(76, 17);
+      this.rbTBSeriesFull.TabIndex = 1;
+      this.rbTBSeriesFull.TabStop = true;
+      this.rbTBSeriesFull.Text = "Full Details";
+      this.rbTBSeriesFull.UseVisualStyleBackColor = true;
+      // 
+      // rbTVSeriesSummary
+      // 
+      this.rbTVSeriesSummary.AutoSize = true;
+      this.rbTVSeriesSummary.Location = new System.Drawing.Point(8, 24);
+      this.rbTVSeriesSummary.Name = "rbTVSeriesSummary";
+      this.rbTVSeriesSummary.Size = new System.Drawing.Size(71, 17);
+      this.rbTVSeriesSummary.TabIndex = 0;
+      this.rbTVSeriesSummary.TabStop = true;
+      this.rbTVSeriesSummary.Text = "Summary ";
+      this.rbTVSeriesSummary.UseVisualStyleBackColor = true;
+      this.rbTVSeriesSummary.CheckedChanged += new System.EventHandler(this.rbTVSeriesSummary_CheckedChanged);
+      // 
+      // cbMostRecentTvSeries
+      // 
+      this.cbMostRecentTvSeries.AutoSize = true;
+      this.cbMostRecentTvSeries.CausesValidation = false;
+      this.cbMostRecentTvSeries.Location = new System.Drawing.Point(9, 7);
+      this.cbMostRecentTvSeries.Name = "cbMostRecentTvSeries";
+      this.cbMostRecentTvSeries.Size = new System.Drawing.Size(171, 17);
+      this.cbMostRecentTvSeries.TabIndex = 0;
+      this.cbMostRecentTvSeries.Text = "Enable TVSeries Last 3 Added";
+      this.cbMostRecentTvSeries.UseVisualStyleBackColor = true;
+      this.cbMostRecentTvSeries.CheckedChanged += new System.EventHandler(this.cbMostRecentTvSeries_CheckedChanged);
       // 
       // weatherOptions
       // 
@@ -2300,6 +2443,15 @@
       this.gbScreenRes.ResumeLayout(false);
       this.gbScreenRes.PerformLayout();
       this.tabPage2.ResumeLayout(false);
+      this.infoServiceRecentOptions.ResumeLayout(false);
+      this.pMovPicsRecent.ResumeLayout(false);
+      this.pMovPicsRecent.PerformLayout();
+      this.gbMovPicsOptions.ResumeLayout(false);
+      this.gbMovPicsOptions.PerformLayout();
+      this.panel1.ResumeLayout(false);
+      this.panel1.PerformLayout();
+      this.gbTvSeriesOptions.ResumeLayout(false);
+      this.gbTvSeriesOptions.PerformLayout();
       this.weatherOptions.ResumeLayout(false);
       this.weatherOptions.PerformLayout();
       this.gbRssImageType.ResumeLayout(false);
@@ -2521,6 +2673,17 @@
     private System.Windows.Forms.Label detectedSD;
     private System.Windows.Forms.RadioButton hdRes;
     private System.Windows.Forms.RadioButton sdRes;
+    private System.Windows.Forms.GroupBox infoServiceRecentOptions;
+    private System.Windows.Forms.CheckBox cbMostRecentTvSeries;
+    private System.Windows.Forms.GroupBox gbTvSeriesOptions;
+    private System.Windows.Forms.CheckBox cbMostRecentMovPics;
+    public System.Windows.Forms.GroupBox gbMovPicsOptions;
+    private System.Windows.Forms.RadioButton rbTBSeriesFull;
+    private System.Windows.Forms.RadioButton rbTVSeriesSummary;
+    private System.Windows.Forms.Panel pMovPicsRecent;
+    private System.Windows.Forms.RadioButton rbMovPicsFull;
+    private System.Windows.Forms.RadioButton rbMovPicsSummary;
+    private System.Windows.Forms.Panel panel1;
   }
 }
 

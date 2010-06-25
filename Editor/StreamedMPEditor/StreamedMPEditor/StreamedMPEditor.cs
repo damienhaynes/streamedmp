@@ -75,6 +75,24 @@ namespace StreamedMPEditor
       ciSizeMismatch
     };
 
+    enum isOverlayType
+    {
+      TVSeries,
+      MovPics
+    }
+
+    enum tvSeriesRecentType
+    {
+      summary,
+      full
+    }
+
+    enum movPicsRecentType
+    {
+      summary,
+      full
+    }
+
     #endregion
 
     #region Variables
@@ -109,7 +127,8 @@ namespace StreamedMPEditor
 
 
 
-
+    const string tvseriesSkinID = "9811";
+    const string movingPicturesSkinID = "96742";
     const string quote = "\"";
 
     bool basicHomeLoadError = false;
@@ -137,12 +156,16 @@ namespace StreamedMPEditor
     int deskHeight;
     int deskWidth;
 
-    //Default Style to StreamedMP standard
+    // Default Style to StreamedMP standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
     chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
     rssImageType rssImage = rssImageType.skinImage;
 
-    //Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
+    // Default to Full Details
+    tvSeriesRecentType tvSeriesRecentStyle = tvSeriesRecentType.full;
+    movPicsRecentType movPicsRecentStyle = movPicsRecentType.full;
+
+    // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
 
@@ -263,6 +286,9 @@ namespace StreamedMPEditor
 
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
+
+          rbTBSeriesFull.Checked = true;
+          rbMovPicsFull.Checked = true;
         }
 
         loadMenuSettings();
@@ -751,12 +777,16 @@ namespace StreamedMPEditor
       System.IO.StreamWriter writer;
       generateXML(direction);
       generateBg(direction);
+
       if (!cbDisableClock.Checked)
         generateClock();
+
       if (!cbHideFanartScraper.Checked)
         generatefanartScraper();
+
       if (enableFiveDayWeather.Checked)
         GenerateFiveDayWeather();
+
       if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
       {
         foreach (backgroundItem item in bgItems)
@@ -767,7 +797,6 @@ namespace StreamedMPEditor
             generateWeathersummary(basicHomeValues.weatherControl);
           }
         }
-
       }
 
       if (direction == menuType.horizontal)
@@ -777,8 +806,6 @@ namespace StreamedMPEditor
         generateCrowdingFixH();
         if (horizontalContextLabels.Checked)
           GenerateContextLabelsH();
-
-
       }
       else if (direction == menuType.vertical)
       {
@@ -801,6 +828,21 @@ namespace StreamedMPEditor
           if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitterV();
         }
       }
+      //
+      // Infoservice Most Recent Imports
+      //
+      if (infoserviceOptions.Enabled)
+      {
+        if (cbMostRecentTvSeries.Checked)
+        {
+          generateMostRecentInclude(isOverlayType.TVSeries);
+        }
+
+        if (cbMostRecentMovPics.Checked)
+        {
+          generateMostRecentInclude(isOverlayType.MovPics);
+        }
+      }
 
       toolStripStatusLabel1.Text = "Done!";
 
@@ -816,6 +858,22 @@ namespace StreamedMPEditor
 
       generateOverlay(int.Parse(txtMenuPos.Text), basicHomeValues.weatherControl);
 
+      //
+      // Generate the Infoservice Most Recent Import files
+      //
+      if (infoserviceOptions.Enabled)
+      {
+        if (cbMostRecentTvSeries.Checked)
+        {
+          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries);
+        }
+
+        if (cbMostRecentTvSeries.Checked)
+        {
+          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics);
+        }
+      } 
+      
 
       getBackupFileTotals();
       DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);

@@ -1419,6 +1419,38 @@ namespace StreamedMPEditor
       }
     }
 
+    private void cbMostRecentTvSeries_CheckedChanged(object sender, EventArgs e)
+    {
+      if (cbMostRecentTvSeries.Checked == true)
+        gbTvSeriesOptions.Enabled = true;
+      else
+        gbTvSeriesOptions.Enabled = false;
+    }
+
+    private void rbTVSeriesSummary_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbTBSeriesFull.Checked)
+        tvSeriesRecentStyle = tvSeriesRecentType.full;
+      else
+        tvSeriesRecentStyle = tvSeriesRecentType.summary;
+    }
+
+    private void cbMostRecentMovPics_CheckedChanged(object sender, EventArgs e)
+    {
+      if (cbMostRecentMovPics.Checked)
+        gbMovPicsOptions.Enabled = true;
+      else
+        gbMovPicsOptions.Enabled = false;
+    }
+
+    private void rbMovPicsSummary_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbMovPicsFull.Checked)
+        movPicsRecentStyle = movPicsRecentType.full;
+      else
+        movPicsRecentStyle = movPicsRecentType.summary;
+    }
+
 
     public class getAsmVersion
     {
@@ -1665,6 +1697,8 @@ namespace StreamedMPEditor
       public int defaultId;
       public int textYOffset;
       public int weatherControl;
+      public int tvseriesControl;
+      public int movingPicturesControl;
       public int offsetMymenu;
       public int offsetSubmenu;
       public int offsetRssImage;

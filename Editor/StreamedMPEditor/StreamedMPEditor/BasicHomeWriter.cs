@@ -92,7 +92,7 @@ namespace StreamedMPEditor
 
         rawXML.AppendLine("\n<control>");
         rawXML.AppendLine("\t<description>Dummy label indicating " + menItem.name + " visibility</description>");
-        rawXML.AppendLine("\t<id>" + menItem.id + "</id>");
+        rawXML.AppendLine("\t<id>" + menItem.id.ToString() + "</id>");
         rawXML.AppendLine("\t<type>label</type>");
         rawXML.AppendLine("\t<posX>100</posX>");
         rawXML.AppendLine("\t<posY>-100</posY>");
@@ -101,6 +101,15 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t<label>Movies</label>");
         rawXML.AppendLine("\t<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
         rawXML.AppendLine("\t</control>");
+
+
+        // Check if this menu item is TVSeries or MovingPictures and store the menu ID for use
+        // with the InfoService 3 last added items function if a match
+        if (menItem.hyperlink == tvseriesSkinID)
+          basicHomeValues.tvseriesControl = menItem.id;
+
+        if (menItem.hyperlink == movingPicturesSkinID)
+          basicHomeValues.movingPicturesControl = menItem.id;
 
         for (int i = 0; i < 14; i++)
         {
@@ -3467,6 +3476,57 @@ namespace StreamedMPEditor
 
     #endregion
 
+    #region InfoSerice Most Recent Includes
+
+    void generateMostRecentInclude(isOverlayType overlayType)
+    {
+      StringBuilder rawXML = new StringBuilder();
+      string replaceString = null;
+
+      if (overlayType == isOverlayType.TVSeries)
+      {
+        replaceString = "<!-- BEGIN MOST RECENT TVSERIES CODE-->";
+
+        if (menuStyle == chosenMenuStyle.verticalStyle)
+        {
+          if (tvSeriesRecentStyle == tvSeriesRecentType.full)
+            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VFull.xml</import>");
+          else
+            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum.xml</import>");
+        }
+        else
+        {
+          if (tvSeriesRecentStyle == tvSeriesRecentType.full)
+            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HFull.xml</import>");
+          else
+            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum.xml</import>");
+        }
+      }
+
+      if (overlayType == isOverlayType.MovPics)
+      {
+        replaceString = "<!-- BEGIN MOST RECENT MOVPICS CODE-->";
+
+        if (menuStyle == chosenMenuStyle.verticalStyle)
+        {
+          if (movPicsRecentStyle == movPicsRecentType.full)
+            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+          else
+            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+        }
+        else
+        {
+          if (movPicsRecentStyle == movPicsRecentType.full)
+            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+          else
+            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+        }
+      }
+      xml = xml.Replace(replaceString, rawXML.ToString());
+    }
+
+    #endregion
+
     #region Generate Twitter Horizontal
 
     private void generateTwitter()
@@ -3599,6 +3659,8 @@ namespace StreamedMPEditor
       string duration = tbDuration.Text;
       string activeRssImageType = null;
       string targetScreenRes = "SD";
+      string tvRecentDisplayType = "full";
+      string movPicsDisplayType = "full";
 
       string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
       string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
@@ -3616,6 +3678,9 @@ namespace StreamedMPEditor
       string hideFanartScrapingtext = cbHideFanartScraper.Checked ? "true" : "false";
       string enableOverlayFanart = cbOverlayFanart.Checked ? "true" : "false";
       string animatedBackground = cbAnimateBackground.Checked ? "true" : "false";
+      string tvSeriesMostRecent = cbMostRecentTvSeries.Checked ? "true" : "false";
+      string movPicsMostRecent = cbMostRecentMovPics.Checked ? "true" : "false";
+
 
       if (direction == menuType.horizontal)
       {
@@ -3662,6 +3727,11 @@ namespace StreamedMPEditor
       if (screenres == screenResolutionType.res1920x1080)
         targetScreenRes = "HD";
 
+      if (tvSeriesRecentStyle == tvSeriesRecentType.summary)
+        tvRecentDisplayType = "summary";
+
+      if (movPicsRecentStyle == movPicsRecentType.summary)
+        movPicsDisplayType = "summary";
 
       xml = ("<profile>\n\t"
                 + "<version>1.0</version>\n\t"
@@ -3695,12 +3765,13 @@ namespace StreamedMPEditor
                 + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 2, true)
                 + generateEntry("enableOverlayFanart", enableOverlayFanart, 2, true)
                 + generateEntry("animatedBackground", animatedBackground, 2, true)
+                + generateEntry("tvSeriesMostRecent", tvSeriesMostRecent, 2, true)
+                + generateEntry("movPicsMostRecent", movPicsMostRecent, 2, true)
+                + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 2, true)
+                + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
                 + "\t</section>");
 
-
       StringBuilder rawXML = new StringBuilder();
-
-
 
       rawXML.AppendLine("\n\t<!-- End Of Menu Options -->\n\t<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
 
