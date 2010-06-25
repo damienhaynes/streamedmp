@@ -26,7 +26,8 @@ namespace StreamedMPEditor
       string _labelFont = null;
       string activeRssImageType = null;
       string targetScreenRes = null;
-
+      string tvRecentDisplayType = null;
+      string movPicsDisplayType = null;
 
       menuItems.Clear();
       itemsOnMenubar.Items.Clear();
@@ -217,12 +218,38 @@ namespace StreamedMPEditor
         cbHideFanartScraper.Checked = bool.Parse(readEntryValue(optionsTag, "hideFanartScrapingtext", nodelist));
         cbOverlayFanart.Checked = bool.Parse(readEntryValue(optionsTag, "enableOverlayFanart", nodelist));
         cbAnimateBackground.Checked = bool.Parse(readEntryValue(optionsTag, "animatedBackground", nodelist));
+        cbMostRecentTvSeries.Checked = bool.Parse(readEntryValue(optionsTag, "tvSeriesMostRecent", nodelist));
+        cbMostRecentMovPics.Checked = bool.Parse(readEntryValue(optionsTag, "movPicsMostRecent", nodelist));
+        tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
+        movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
       }
       catch
       {
         // Most likley a new option added but not written to file yet - just continue
       }
 
+      if (tvRecentDisplayType == "summary")
+      {
+        tvSeriesRecentStyle = tvSeriesRecentType.summary;
+        rbTVSeriesSummary.Checked = true;
+      }
+      else
+      {
+        tvSeriesRecentStyle = tvSeriesRecentType.full;
+        rbTBSeriesFull.Checked = true;
+      }
+
+      if (movPicsDisplayType == "summary")
+      {
+        movPicsRecentStyle = movPicsRecentType.summary;
+        rbMovPicsSummary.Checked = true;
+      }
+      else
+      {
+        movPicsRecentStyle = movPicsRecentType.full;
+        rbMovPicsFull.Checked = true;
+      }
+      
       if (splashScreenImage == "false")
         splashScreenImage = "splashscreen.png";
 
