@@ -195,7 +195,7 @@ namespace StreamedMPConfig
       {
         optionDownloadURL = thePatch.patchURL;
         optionDownloadPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(optionDownloadURL));
-        destinationPath = SkinInfo.mpPaths.skinBasePath;
+        destinationPath = SkinInfo.mpPaths.configBasePath;
         downloadForm.Text = "Download and Install StreamedMP Update r" + thePatch.patchVersion.ToString();
         pLabel.Text = "Starting Download of Patch r" + thePatch.patchVersion.ToString();
         Cursor.Current = Cursors.WaitCursor;

@@ -37,7 +37,7 @@ namespace StreamedMPConfig
     void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-      destinationPath = SkinInfo.mpPaths.skinBasePath;
+      destinationPath = SkinInfo.mpPaths.configBasePath;
 
       GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
       progressDialog.Reset();
