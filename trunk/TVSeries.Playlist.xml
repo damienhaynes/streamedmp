@@ -99,7 +99,7 @@
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 	    <control>
-			<id>204</id>
+			<id>0</id>
 			<type>image</type>
 			<posX>28</posX>
 			<posY>270</posY>
@@ -107,7 +107,7 @@
 			<width>354</width>
 			<keepaspectratio>yes</keepaspectratio>
 			<zoom>yes</zoom>
-			<texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>			
+			<texture flipY="true" diffuse="diffusemirrorwide.png">#TVSeries.EpisodeImage</texture>		
 			<visible>facadeview.playlist | facadeview.filmstrip</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 	    </control>   	
@@ -415,16 +415,21 @@
 					<type>playlistcontrol</type>
 					<id>50</id>
 					<dimColor>30ffffff</dimColor>
-					<scrollOffset>3</scrollOffset>				
+					<scrollOffset>3</scrollOffset>
 					<onleft>2</onleft>
-					<onright>2</onright>	
-					<posX>756</posX>
-					<posY>310</posY>					
-					<textXOff>0</textXOff>
-					<textXOff2>430</textXOff2>
-					<upBtnXOffset>449</upBtnXOffset>
-					<downBtnXOffset>467</downBtnXOffset>
-					<deleteBtnXOffset>485</deleteBtnXOffset>	
+					<onright>2</onright>
+					<posX>700</posX>
+					<posY>310</posY>
+					<textXOff>-40</textXOff>
+					<textXOff2>480</textXOff2>
+					<upBtnXOffset>499</upBtnXOffset>
+					<downBtnXOffset>517</downBtnXOffset>
+					<deleteBtnXOffset>535</deleteBtnXOffset>
+					<!-- Watched/Unwatched Icons -->
+					<IconYOff>13</IconYOff>
+					<IconXOff>410</IconXOff>
+					<itemHeight>18</itemHeight>
+					<itemWidth>72</itemWidth>
 					<!-- Spin Controls -->
 					<spinWidth>50</spinWidth>
 					<spinHeight>37</spinHeight>
@@ -435,7 +440,7 @@
 					<textureUp>arrow_round_up_nofocus.png</textureUp>
 					<textureDown>arrow_round_down_nofocus.png</textureDown>
 					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>					
 				</control>
 			</control> 
 		</control>
