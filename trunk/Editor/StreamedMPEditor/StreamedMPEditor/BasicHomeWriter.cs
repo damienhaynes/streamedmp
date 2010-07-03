@@ -138,7 +138,15 @@ namespace StreamedMPEditor
                 }
                 rawXML.AppendLine("\t<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("\t<textureNoFocus>-</textureNoFocus>");
-                rawXML.AppendLine("\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+                if (menItem.name.ToLower() == "shutdown")
+                  rawXML.AppendLine("\t<action>99</action>");
+                else if (menItem.name.ToLower() == "exit")
+                  rawXML.AppendLine("\t<action>97</action>");
+                else
+                  rawXML.AppendLine("\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+
                 rawXML.AppendLine("\t<hover>-</hover>");
 
                 if (menuItems.IndexOf(menItem) == 0)
@@ -152,7 +160,6 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<onleft>" + (onleft + 800).ToString() + "</onleft>");
                 rawXML.AppendLine("\t<onright>" + (onright + 700).ToString() + "</onright>");
                 rawXML.AppendLine("\t<onup>" + (menItem.id + 600).ToString() + "01</onup>");
-                //rawXML.AppendLine("\t<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
                 rawXML.AppendLine("\t<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
                 rawXML.AppendLine("\t<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
                 rawXML.AppendLine("</control>");
@@ -170,7 +177,14 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t<height>72</height>");
                 rawXML.AppendLine("\t<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("\t<textureNoFocus>-</textureNoFocus>");
-                rawXML.AppendLine("\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+                if (menItem.name.ToLower() == "shutdown")
+                  rawXML.AppendLine("\t<action>99</action>");
+                else if (menItem.name.ToLower() == "exit")
+                  rawXML.AppendLine("\t<action>97</action>");
+                else
+                  rawXML.AppendLine("\t<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
                 rawXML.AppendLine("\t<hover>-</hover>");
 
                 if (menuItems.IndexOf(menItem) == 0)
