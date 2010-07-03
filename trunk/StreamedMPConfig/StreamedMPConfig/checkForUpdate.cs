@@ -195,7 +195,9 @@ namespace StreamedMPConfig
       {
         optionDownloadURL = thePatch.patchURL;
         optionDownloadPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(optionDownloadURL));
-        destinationPath = SkinInfo.mpPaths.configBasePath;
+        destinationPath = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(optionDownloadURL) + DateTime.Now.Ticks.ToString());
+
+        //SkinInfo.mpPaths.configBasePath;
         downloadForm.Text = "Download and Install StreamedMP Update r" + thePatch.patchVersion.ToString();
         pLabel.Text = "Starting Download of Patch r" + thePatch.patchVersion.ToString();
         Cursor.Current = Cursors.WaitCursor;
@@ -206,8 +208,8 @@ namespace StreamedMPConfig
       if (StreamedMPConfig.manualInstallNeeded)
       {
         string messageStr = Translation.mupdateline1 + " " + Translation.mupdateline2 + "\n\n";
-        messageStr = messageStr  + string.Format(Translation.mupdateline3, Path.GetFileName(optionDownloadPath)) + "\n\n" + Translation.mupdateline4;
-        MessageBox.Show(messageStr,Translation.mupdateheader);
+        messageStr = messageStr + string.Format(Translation.mupdateline3, Path.GetFileName(optionDownloadPath)) + "\n\n" + Translation.mupdateline4;
+        MessageBox.Show(messageStr, Translation.mupdateheader);
       }
     }
 
@@ -293,6 +295,9 @@ namespace StreamedMPConfig
           fz.ExtractZip(optionDownloadPath, destinationPath, "");
           System.IO.File.Delete(optionDownloadPath);
           StreamedMPConfig.manualInstallNeeded = false;
+          // Now check what we have and copy to the right places.....
+          StreamedMPConfig.checkAndCopy(destinationPath);
+          Directory.Delete(destinationPath, true);
         }
       }
       pBar.Value = 0;
