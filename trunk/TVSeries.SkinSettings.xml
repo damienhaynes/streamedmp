@@ -9,7 +9,7 @@
 	-->
 
 	<!-- version may be useful for logging purposes and/or future upgrades -->
-	<version>1.2.0.0</version>
+	<version>1.3.0.0</version>
 	
 	<!-- Skin Defines -->
 	<defines>		
@@ -57,7 +57,7 @@
 		<episode use="true" />
 		<series use="true" />		
 		<season use="true" />		
-		<!--<custom use="false"><![CDATA[skin\blue3wide\Media\custom.png]]></custom>-->
+		<!--<custom use="false"><![CDATA[skin\StreamedMP\Media\custom.png]]></custom>-->
 	</videoosdimages>
 	
 	<layouts>
@@ -136,42 +136,40 @@ skin\StreamedMP\Media\Logos\Video\SD Widescreen.png;-;<Episode.videoWidth>;-;<;-
 skin\StreamedMP\Media\Logos\Video\SD 540P.png;-;<Episode.videoWidth>;-;=;-;960;-;AND;-;<Episode.videoHeight>;-;<=;-;600;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\720P.png;-;<Episode.videoWidth>;-;=;-;1280;-;OR;-;<Episode.videoHeight>;-;=;-;720;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\1080P.png;-;<Episode.videoWidth>;-;=;-;1920;-;OR;-;<Episode.videoHeight>;-;=;-;1080;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Video\H264.png;-;<Episode.VideoCodec>;-;contains;-;AVC;-;OR;-;<Episode.VideoCodec>;-;=;-;h264;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Video\MP2V.png;-;<Episode.VideoCodec>;-;contains;-;MPEG;-;AND;-;<Episode.VideoCodec>;-;!contains;-;AVC;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\H264.png;-;<Episode.VideoFormat>;-;=;-;AVC;-;OR;-;<Episode.VideoCodec>;-;=;-;h264;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\MP2V.png;-;<Episode.VideoFormat>;-;=;-;MPEG Video;-;AND;-;<Episode.VideoFormatProfile>;-;contains;-;Main;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\DIVX.png;-;<Episode.VideoCodec>;-;contains;-;DIVX;-;OR;-;<Episode.VideoCodec>;-;contains;-;DX50;-;OR;-;<Episode.VideoCodec>;-;contains;-;DIV3;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\XVID.png;-;<Episode.VideoCodec>;-;contains;-;XVID;-;OR;-;<Episode.VideoCodec>;-;contains;-;MPG4;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Video\VC-1.png;-;<Episode.VideoCodec>;-;contains;-;VC-1;-;OR;-;<Episode.VideoCodec>;-;contains;-;VC1;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\VC-1.png;-;<Episode.VideoFormat>;-;contains;-;VC-1;-;OR;-;<Episode.VideoCodec>;-;contains;-;VC1;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\WMV.png;-;<Episode.VideoCodec>;-;contains;-;WMV;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Video\VP6.png;-;<Episode.VideoCodec>;-;contains;-;VP6;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Video\VP6.png;-;<Episode.VideoFormat>;-;=;-;VP6;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\REAL.png;-;<Episode.VideoCodec>;-;contains;-;REAL;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AC3 Stereo.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AC3 5.1.png;-;<Episode.AudioCodec>;-;=;-;AC3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AC3+ 5.1.png;-;<Episode.AudioCodec>;-;=;-;AC3+;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AC3+ 7.1.png;-;<Episode.AudioCodec>;-;=;-;AC3+;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTS 5.1.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTS 7.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTS 7.1.png;-;<Episode.AudioCodec>;-;=;-;DTS;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTSHD 5.1.png;-;<Episode.AudioCodec>;-;=;-;DTS-HD;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTSHD 7.png;-;<Episode.AudioCodec>;-;=;-;DTS-HD;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\DTSHD 7.1.png;-;<Episode.AudioCodec>;-;=;-;DTS-HD;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\TrueHD 5.1.png;-;<Episode.AudioCodec>;-;=;-;TrueHD;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\TrueHD 7.1.png;-;<Episode.AudioCodec>;-;=;-;TrueHD;-;AND;-;<Episode.AudioChannels>;-;contains;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\FLAC Stereo.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\FLAC 5.1.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\FLAC 7.1.png;-;<Episode.AudioCodec>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP3 Stereo.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP3 Stereo.png;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP3 5.1.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP3 5.1.png;-;<Episode.AudioCodec>;-;contains;-;MPA2L3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\MP2A.png;-;<Episode.AudioCodec>;-;contains;-;MPA1L2;-;OR;-;<Episode.AudioCodec>;-;contains;-;MPA2L2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AAC Stereo.png;-;<Episode.AudioCodec>;-;contains;-;AAC;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\AAC 5.1.png;-;<Episode.AudioCodec>;-;contains;-;AAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\VORBIS.png;-;<Episode.AudioCodec>;-;contains;-;VORBIS;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\WMA Stereo.png;-;<Episode.AudioCodec>;-;=;-;WMA;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\WMA 5.1.png;-;<Episode.AudioCodec>;-;=;-;WMA;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\WMA Stereo.png;-;<Episode.AudioCodec>;-;=;-;161;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\WMA 5.1.png;-;<Episode.AudioCodec>;-;=;-;161;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Audio\REAL.png;-;<Episode.AudioCodec>;-;contains;-;REAL;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AC3 Stereo.png;-;<Episode.AudioFormat>;-;=;-;AC-3;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AC3 5.1.png;-;<Episode.AudioFormat>;-;=;-;AC-3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AC3+ 5.1.png;-;<Episode.AudioFormat>;-;=;-;E-AC-3;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AC3+ 7.1.png;-;<Episode.AudioFormat>;-;=;-;E-AC-3;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 5.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;-1;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 7.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;-1;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS 7.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;-1;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS MA 5.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;MA;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS MA 7.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;MA;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS MA 7.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;MA;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS HRA 5.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;HRA;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS HRA 7.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;HRA;-;AND;-;<Episode.AudioChannels>;-;=;-;7;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\DTS HRA 7.1.png;-;<Episode.AudioFormat>;-;=;-;DTS;-;AND;-;<Episode.AudioFormatProfile>;-;=;-;HRA;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\TrueHD 5.1.png;-;<Episode.AudioFormatProfile>;-;contains;-;TrueHD;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\TrueHD 7.1.png;-;<Episode.AudioFormatProfile>;-;contains;-;TrueHD;-;AND;-;<Episode.AudioChannels>;-;contains;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\FLAC Stereo.png;-;<Episode.AudioFormat>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\FLAC 5.1.png;-;<Episode.AudioFormat>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\FLAC 7.1.png;-;<Episode.AudioFormat>;-;contains;-;FLAC;-;AND;-;<Episode.AudioChannels>;-;=;-;8;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\MP3 Stereo.png;-;<Episode.AudioFormat>;-;=;-;MPEG Audio;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\MP3 5.1.png;-;<Episode.AudioFormat>;-;=;-;MPEG Audio;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AAC Stereo.png;-;<Episode.AudioFormat>;-;=;-;AAC;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\AAC 5.1.png;-;<Episode.AudioFormat>;-;=;-;AAC;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\VORBIS.png;-;<Episode.AudioFormat>;-;=;-;VORBIS;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\WMA Stereo.png;-;<Episode.AudioFormat>;-;=;-;WMA;-;AND;-;<Episode.AudioChannels>;-;=;-;2;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\WMA 5.1.png;-;<Episode.AudioFormat>;-;=;-;WMA;-;AND;-;<Episode.AudioChannels>;-;=;-;6;-;AND;-;;-;=;-;;-;<Restrict:Episode>
+skin\StreamedMP\Media\Logos\Audio\REAL.png;-;<Episode.AudioFormat>;-;contains;-;REAL;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\MULTIAUDIO.png;-;<Episode.AudioTracks>;-;>;-;1;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\DVD.png;-;<Episode.EpisodeFilename>;-;contains;-;DVD;-;AND;-;<Episode.EpisodeFilename>;-;!contains;-;HDDVD;-;AND;-;<Episode.EpisodeFilename>;-;!contains;-;HD-DVD;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\HDTV.png;-;<Episode.EpisodeFilename>;-;contains;-;HDTV;-;AND;-;;-;=;-;;-;AND;-;;-;=;-;;-;<Restrict:Episode>
