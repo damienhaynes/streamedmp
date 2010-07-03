@@ -6,7 +6,19 @@
   <controls>
     
     <import>common.time.xml</import>
-    
+
+	<!-- ::::::::::TVSeries ClearArt :::::::::: -->
+	<control>
+      <description>TVSeries ClearArt</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>420</posY>
+      <width>250</width>
+      <height>126</height>
+      <texture>#TVSeries.Play.ClearArt</texture>	  
+    </control>
+	
     <control>
       <description>background</description>
       <type>image</type>
@@ -590,7 +602,7 @@
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-    
+	
 	<import>common.player.xml</import>      
     <import>common.progressbar.xml</import>
 	<import>videoOSD.mediainfo2.xml</import>
