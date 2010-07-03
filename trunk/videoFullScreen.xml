@@ -14,6 +14,17 @@
       <height>10</height>
       <texture>-</texture>
       <visible>player.forwarding|player.rewinding</visible>
+    </control>	
+	<control>
+      <description>TVSeries ClearArt (Full VideoOSD)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>420</posY>
+      <width>250</width>
+      <height>126</height>
+      <texture>#TVSeries.Play.ClearArt</texture>
+	  <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (default)</description>
@@ -25,6 +36,17 @@
       <height>197</height>
       <texture>osdbackground.png</texture>
       <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+    </control>
+	<control>
+      <description>TVSeries ClearArt (Small VideoOSD)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>547</posY>
+      <width>250</width>
+      <height>126</height>
+      <texture>#TVSeries.Play.ClearArt</texture>
+	  <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
 	<control>
       <description>background (small)</description>

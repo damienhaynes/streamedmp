@@ -53,12 +53,27 @@
 	
 	<!-- Define the images loaded in Video OSD -->
 	<!-- Note: You can reorder the items to set priority -->
+	<!-- Values of custom tag is a path to custom image, where you could use:
+			thumbs\ relative path - <![CDATA[thumbs\Media\custom.png]]>,
+			skin\ relative path - <![CDATA[skin\*SKIN NAME*\Media\custom.png]]>,
+			absolute path - <![CDATA[C:\Media\custom.png]]>
+			with any of episode/season/series database fields (<Series.ID> for example)
+	-->
 	<videoosdimages import="true">
 		<episode use="true" />
 		<series use="true" />		
 		<season use="true" />		
 		<!--<custom use="false"><![CDATA[skin\StreamedMP\Media\custom.png]]></custom>-->
 	</videoosdimages>
+	
+	<!-- Define the images loaded in properties during play -->	
+	<videoplayimages import="true">
+		<property>
+			<name>TVSeries.Play.ClearArt</name>
+			<value><![CDATA[thumbs\ClearArt\<Series.ID>.png]]></value>
+		</property>
+		<!-- You can define multiple properties -->
+	</videoplayimages>
 	
 	<layouts>
 		<group List="true" SmallIcons="false"/>
