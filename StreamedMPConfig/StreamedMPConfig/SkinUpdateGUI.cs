@@ -13,8 +13,10 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)] protected GUITextControl cmc_ChangeLog = null;
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)] protected GUIButtonControl btDoUpdate = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)]
+    protected GUITextControl cmc_ChangeLog = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)]
+    protected GUIButtonControl btDoUpdate = null;
 
     #endregion
 
@@ -37,7 +39,7 @@ namespace StreamedMPConfig
     void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-      destinationPath = SkinInfo.mpPaths.configBasePath;
+      destinationPath = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(optionDownloadURL) + DateTime.Now.Ticks.ToString());
 
       GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
       progressDialog.Reset();
@@ -103,26 +105,26 @@ namespace StreamedMPConfig
             {
               if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
               {
-                  if (Path.GetExtension(optionDownloadPath).ToLower() == ".msi")
+                if (Path.GetExtension(optionDownloadPath).ToLower() == ".msi")
+                {
+                  //Lets run it
+                  if (File.Exists(optionDownloadPath))
                   {
-                      //Lets run it
-                      if (File.Exists(optionDownloadPath))
-                      {
-                          ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
-                          upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
-                          System.Diagnostics.Process.Start(upgradeProcess);
-                          Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
-                          GUIGraphicsContext.OnAction(exitAction);
-                      }
+                    ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
+                    upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
+                    System.Diagnostics.Process.Start(upgradeProcess);
+                    Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
+                    GUIGraphicsContext.OnAction(exitAction);
+                  }
 
-                  }
-                  else
-                  {
-                      // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
-                      System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
-                      System.IO.File.Delete(optionDownloadPath);
-                      StreamedMPConfig.manualInstallNeeded = true;
-                  }
+                }
+                else
+                {
+                  // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
+                  System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
+                  System.IO.File.Delete(optionDownloadPath);
+                  StreamedMPConfig.manualInstallNeeded = true;
+                }
               }
               else
               {
@@ -131,13 +133,16 @@ namespace StreamedMPConfig
                 System.IO.File.Delete(optionDownloadPath);
                 StreamedMPConfig.manualInstallNeeded = false;
                 StreamedMPConfig.udateAvailable = false;
+                // Now check what we have and copy to the right places.....
+                StreamedMPConfig.checkAndCopy(destinationPath);
+                Directory.Delete(destinationPath, true);
               }
             }
           }
         }
       }
       progressDialog.Close();
-     }
+    }
 
 
     #endregion
