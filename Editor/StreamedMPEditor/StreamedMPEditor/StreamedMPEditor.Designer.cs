@@ -1658,6 +1658,7 @@
       this.installWeatherBackgrounds.TabIndex = 30;
       this.installWeatherBackgrounds.TabStop = true;
       this.installWeatherBackgrounds.Text = "Download Weather Backgrounds (12MB)";
+      this.installWeatherBackgrounds.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.installWeatherBackgrounds_LinkClicked);
       // 
       // weatherBGlink
       // 
@@ -1701,6 +1702,7 @@
       this.rbRssInfoServiceImage.TabStop = true;
       this.rbRssInfoServiceImage.Text = "Ticker Supplied Image";
       this.rbRssInfoServiceImage.UseVisualStyleBackColor = true;
+      this.rbRssInfoServiceImage.CheckedChanged += new System.EventHandler(this.rbRssInfoServiceImage_CheckedChanged);
       // 
       // rbRssSkinImage
       // 
@@ -1712,6 +1714,7 @@
       this.rbRssSkinImage.TabStop = true;
       this.rbRssSkinImage.Text = "Default Skin Image";
       this.rbRssSkinImage.UseVisualStyleBackColor = true;
+      this.rbRssSkinImage.CheckedChanged += new System.EventHandler(this.rbRssSkinImage_CheckedChanged);
       // 
       // rbRssNoImage
       // 
@@ -1723,6 +1726,7 @@
       this.rbRssNoImage.TabStop = true;
       this.rbRssNoImage.Text = "No Image";
       this.rbRssNoImage.UseVisualStyleBackColor = true;
+      this.rbRssNoImage.CheckedChanged += new System.EventHandler(this.rbRssNoImage_CheckedChanged);
       // 
       // infoserviceOptions
       // 
@@ -1787,6 +1791,7 @@
       this.fullWeatherSummaryMiddle.TabStop = true;
       this.fullWeatherSummaryMiddle.Text = "Center of Screen";
       this.fullWeatherSummaryMiddle.UseVisualStyleBackColor = true;
+      this.fullWeatherSummaryMiddle.CheckedChanged += new System.EventHandler(this.fullWeatherSummaryMiddle_CheckedChanged);
       // 
       // defaultBackgrounds
       // 
