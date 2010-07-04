@@ -227,7 +227,8 @@ namespace StreamedMPEditor
       {
         // Most likley a new option added but not written to file yet - just continue
       }
-
+      
+      // As only saving the animated state set the static state true if animimated state is false
       if (!animatedIconsInstalled())
       {
         WeatherIconsAnimated.Enabled = false;
@@ -237,6 +238,16 @@ namespace StreamedMPEditor
         weatherIconsStatic.Checked = false;
       else
         weatherIconsStatic.Checked = true;
+
+
+
+      if (!weatherBackgoundsInstalled())
+      {
+        weatherBGlink.Checked = false;
+        weatherBGlink.Enabled = false;
+        weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+        installWeatherBackgrounds.Visible = true;
+      }
 
       if (tvRecentDisplayType == "summary")
       {
@@ -308,9 +319,6 @@ namespace StreamedMPEditor
       else
         infoServiceDayProperty = "day";
 
-      // As only saving the animated state set the static state true if animimated state is false
-      if (!WeatherIconsAnimated.Checked)
-        weatherIconsStatic.Checked = true;
 
       //
       // Read in the menu items
