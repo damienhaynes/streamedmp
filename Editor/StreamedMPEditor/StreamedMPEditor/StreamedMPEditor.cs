@@ -309,9 +309,6 @@ namespace StreamedMPEditor
         else
         {
           wrapString.Enabled = false;
-          WeatherIconsAnimated.Enabled = false;
-          WeatherIconsAnimated.Checked = false;
-          weatherIconsStatic.Checked = true;
         }
 
         if (basicHomeLoadError)

@@ -995,34 +995,32 @@ namespace StreamedMPEditor
       menuPosLabel.Text = "Menu Y Position:";
       enableRssfeed.Checked = true;
 
-      if (!animatedIconsInstalled())
+      if (animatedIconsInstalled())
+      {
+        WeatherIconsAnimated.Enabled = true;
+        WeatherIconsAnimated.Text = "Animated";
+        installAnimatedIcons.Visible = false;
+      }
+      else
       {
         WeatherIconsAnimated.Enabled = false;
         weatherIconsStatic.Checked = true;
         WeatherIconsAnimated.Text = "Animated (Not Installed)";
         installAnimatedIcons.Visible = true;
       }
-      else
-      {
-        WeatherIconsAnimated.Enabled = true;
-        WeatherIconsAnimated.Text = "Animated";
-        installAnimatedIcons.Visible = false;
-      }
 
-      if (!weatherBackgoundsInstalled())
+      if (weatherBackgoundsInstalled())
+      {
+        weatherBGlink.Enabled = true;
+        weatherBGlink.Text = "Link Background to Current Weather";
+        installWeatherBackgrounds.Visible = false;
+      }
+      else
       {
         weatherBGlink.Checked = false;
         weatherBGlink.Enabled = false;
         weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
         installWeatherBackgrounds.Visible = true;
-
-
-      }
-      else
-      {
-        weatherBGlink.Enabled = true;
-        weatherBGlink.Text = "Link Background to Current Weather";
-        installWeatherBackgrounds.Visible = false;
       }
 
       switch (menuStyle)
@@ -1383,7 +1381,6 @@ namespace StreamedMPEditor
       detectedSD.Visible = true;
       detectedHD.Visible = false;
     }
-
 
     private void StreamedMPMenu_Click(object sender, EventArgs e)
     {

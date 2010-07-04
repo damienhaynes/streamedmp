@@ -1482,6 +1482,7 @@
       this.hdRes.TabStop = true;
       this.hdRes.Text = "1920 x 1080";
       this.hdRes.UseVisualStyleBackColor = true;
+      this.hdRes.CheckedChanged += new System.EventHandler(this.hdRes_CheckedChanged);
       // 
       // sdRes
       // 
@@ -1493,6 +1494,7 @@
       this.sdRes.TabStop = true;
       this.sdRes.Text = "1280 x 720";
       this.sdRes.UseVisualStyleBackColor = true;
+      this.sdRes.CheckedChanged += new System.EventHandler(this.sdRes_CheckedChanged);
       // 
       // tabPage2
       // 

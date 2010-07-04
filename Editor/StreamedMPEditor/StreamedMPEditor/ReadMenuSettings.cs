@@ -228,6 +228,16 @@ namespace StreamedMPEditor
         // Most likley a new option added but not written to file yet - just continue
       }
 
+      if (!animatedIconsInstalled())
+      {
+        WeatherIconsAnimated.Enabled = false;
+        WeatherIconsAnimated.Checked = false;
+      }
+      if (WeatherIconsAnimated.Checked)
+        weatherIconsStatic.Checked = false;
+      else
+        weatherIconsStatic.Checked = true;
+
       if (tvRecentDisplayType == "summary")
       {
         tvSeriesRecentStyle = tvSeriesRecentType.summary;

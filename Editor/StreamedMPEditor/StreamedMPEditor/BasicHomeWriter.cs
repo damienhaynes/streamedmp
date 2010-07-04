@@ -3740,6 +3740,8 @@ namespace StreamedMPEditor
 
       if (screenres == screenResolutionType.res1920x1080)
         targetScreenRes = "HD";
+      else
+        targetScreenRes = "SD";
 
       if (tvSeriesRecentStyle == tvSeriesRecentType.summary)
         tvRecentDisplayType = "summary";
