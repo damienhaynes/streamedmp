@@ -186,7 +186,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>no</zoom>\n" +
                   "\t\t\t<texture>defaultAudioBig.png</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>music logo</description>\n" +
@@ -200,7 +200,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>yes</zoom>\n" +
                   "\t\t\t<texture>" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>music logo</description>\n" +
@@ -214,7 +214,7 @@ namespace StreamedMPEditor
                   "\t\t\t<centered>yes</centered>\n" +
                   "\t\t\t<zoom>no</zoom>\n" +
                   "\t\t\t<texture>#Play.Current.Thumb</texture>\n" +
-                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.Thumb,)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
+                  "\t\t\t<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>\n" +
                 "\t\t</control>\n" +
                 "\t\t<control>\n" +
                   "\t\t\t<description>Music logo Animation</description>\n" +
