@@ -524,7 +524,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<id>" + (menItem.id + 700).ToString() + "</id>");
                 rawXML.AppendLine("\t\t\t<posX>0</posX>");
                 rawXML.AppendLine("\t\t\t<posY>-30</posY>");
-                rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
+                rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
                 if (menItem.isDefault)
                 {
                   rawXML.AppendLine("\t<width>1280</width>");
@@ -548,8 +548,8 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-                rawXML.AppendLine("\t\t\t<onright>7777</onright>");
+                rawXML.AppendLine("\t\t\t<onright>" + (menItem.id + 600).ToString() + "01</onright>");
+                rawXML.AppendLine("\t\t\t<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
                 rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
@@ -563,7 +563,7 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("\t\t\t<id>" + (menItem.id + 800).ToString() + "</id>");
                 rawXML.AppendLine("\t\t\t<posX>0</posX>");
                 rawXML.AppendLine("\t\t\t<posY>-30</posY>");
-                rawXML.AppendLine("\t<label>" + menItem.name + "</label>");
+                rawXML.AppendLine("\t\t\t<label>" + menItem.name + "</label>");
                 rawXML.AppendLine("\t\t\t<width>320</width>");
                 rawXML.AppendLine("\t\t\t<height>72</height>");
                 rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
@@ -579,8 +579,8 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-                rawXML.AppendLine("\t\t\t<onright>7777</onright>");
+                rawXML.AppendLine("\t\t\t<onright>" + (menItem.id + 600).ToString() + "01</onright>");
+                rawXML.AppendLine("\t\t\t<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
                 rawXML.AppendLine("\t\t\t<onup>" + (onleft + 800).ToString() + "</onup>");
                 rawXML.AppendLine("\t\t\t<ondown>" + (onright + 700).ToString() + "</ondown>");
                 rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
@@ -1150,85 +1150,161 @@ namespace StreamedMPEditor
       StringBuilder rawXML = new StringBuilder();
       const string quote = "\"";
 
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("\t\t\t<description>Exit Button</description>");
-      rawXML.AppendLine("\t\t\t<type>button</type>");
-      rawXML.AppendLine("\t\t\t<id>7777</id>");
-      rawXML.AppendLine("\t\t\t<posX>493</posX>");
-      rawXML.AppendLine("\t\t\t<posY>350</posY>");
-      rawXML.AppendLine("\t\t\t<onleft>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onleft>");
-      rawXML.AppendLine("\t\t\t<onright>7888</onright>");
-      rawXML.AppendLine("\t\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t\t<height>80</height>");
-      rawXML.AppendLine("\t\t\t<textureNoFocus>exit_button.png</textureNoFocus>");
-      rawXML.AppendLine("\t\t\t<textureFocus>exit_button.png</textureFocus>");
-      rawXML.AppendLine("\t\t\t<action>97</action>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-      rawXML.AppendLine("\t\t</control>");
+      foreach (menuItem menItem in menuItems)
+      {
+        String topMenuId = (menItem.id + 600).ToString();
 
-      rawXML.AppendLine("\t\t<control>");
-      rawXML.AppendLine("\t\t\t<description>Restart Button</description>");
-      rawXML.AppendLine("\t\t\t<type>button</type>");
-      rawXML.AppendLine("\t\t\t<id>7888</id>");
-      rawXML.AppendLine("\t\t\t<posX>633</posX>");
-      rawXML.AppendLine("\t\t\t<posY>350</posY>");
-      rawXML.AppendLine("\t\t\t<onleft>7777</onleft>");
-      rawXML.AppendLine("\t\t\t<onright>7999</onright>");
-      rawXML.AppendLine("\t\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t\t<height>80</height>");
-      rawXML.AppendLine("\t\t\t<textureNoFocus>restart_button.png</textureNoFocus>");
-      rawXML.AppendLine("\t\t\t<textureFocus>restart_button.png</textureFocus>");
-      rawXML.AppendLine("\t\t\t<action>98</action>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-      rawXML.AppendLine("\t\t</control>");
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Exit Label</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<id>0</id>");
+        rawXML.AppendLine("<width>200</width>");
+        rawXML.AppendLine("<height>60</height>");
+        rawXML.AppendLine("<posY>590</posY>");
+        rawXML.AppendLine("<posX>140</posX>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<font>mediastream10tc</font>");
+        rawXML.AppendLine("<label>Exit MediaPortal</label>");
+        rawXML.AppendLine("\t\t<visible>Control.HasFocus(" + topMenuId + "01)</visible>");
+        rawXML.AppendLine("</control>");
+     
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Restart Label</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<id>0</id>");
+        rawXML.AppendLine("<width>200</width>");
+        rawXML.AppendLine("<height>60</height>");
+        rawXML.AppendLine("<posY>590</posY>");
+        rawXML.AppendLine("<posX>140</posX>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<font>mediastream10tc</font>");
+        rawXML.AppendLine("<label>Restart MediaPortal</label>");
+        rawXML.AppendLine("\t\t<visible>Control.HasFocus(" + topMenuId + "02)</visible>");
+        rawXML.AppendLine("</control>");
+        
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Shutdown Label</description>");
+        rawXML.AppendLine(" <type>label</type>");
+        rawXML.AppendLine("<id>0</id>");
+        rawXML.AppendLine("<width>200</width>");
+        rawXML.AppendLine("<height>60</height>");
+        rawXML.AppendLine("<posY>590</posY>");
+        rawXML.AppendLine("<posX>140</posX>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<font>mediastream10tc</font>");
+        rawXML.AppendLine("<label>Shutdown Menu</label>");
+        rawXML.AppendLine("\t\t<visible>Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("</control>");
+        
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Shutdown menu hbar</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<id>1</id>");
+        rawXML.AppendLine("<posX>140</posX>");
+        rawXML.AppendLine("<posY>630</posY>");
+        rawXML.AppendLine("<width>200</width>");
+        rawXML.AppendLine("<height>1</height>");
+        rawXML.AppendLine("<texture>hbar1white.png</texture>");
+        rawXML.AppendLine("\t\t<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("</control>");
 
-      rawXML.AppendLine("\t\t<control>");
-      rawXML.AppendLine("\t\t\t<description>Shutdown Button</description>");
-      rawXML.AppendLine("\t\t\t<type>button</type>");
-      rawXML.AppendLine("\t\t\t<id>7999</id>");
-      rawXML.AppendLine("\t\t\t<posX>773</posX>");
-      rawXML.AppendLine("\t\t\t<posY>350</posY>");
-      rawXML.AppendLine("\t\t\t<onleft>7888</onleft>");
-      rawXML.AppendLine("\t\t\t<onright>17</onright>");
-      rawXML.AppendLine("\t\t\t<width>80</width>");
-      rawXML.AppendLine("\t\t\t<height>80</height>");
-      rawXML.AppendLine("\t\t\t<textureNoFocus>shutdown_button.png</textureNoFocus>");
-      rawXML.AppendLine("\t\t\t<textureFocus>shutdown_button.png</textureFocus>");
-      rawXML.AppendLine("\t\t\t<action>99</action>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-      rawXML.AppendLine("\t\t</control>");
 
-      rawXML.AppendLine("\t\t<control>");
-      rawXML.AppendLine("\t\t\t<description>Icon Fix</description>");
-      rawXML.AppendLine("\t\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t\t<type>image</type>");
-      rawXML.AppendLine("\t\t\t<posx>0</posx>");
-      rawXML.AppendLine("\t\t\t<posy>0</posy>");
-      rawXML.AppendLine("\t\t\t<width>1280</width>");
-      rawXML.AppendLine("\t\t\t<height>720</height>");
-      rawXML.AppendLine("\t\t\t<texture>tv_black.png</texture>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>");
-      rawXML.AppendLine("\t\t</control>");
+
+
+
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Dummy label indicating " + menItem.name + " menu visibility</description>");
+        rawXML.AppendLine("\t\t<id>" + (menItem.id + 100).ToString() + "</id>");
+        rawXML.AppendLine("\t\t<type>label</type>");
+        rawXML.AppendLine("\t\t<posX>100</posX>");
+        rawXML.AppendLine("\t\t<posY>-100</posY>");
+        rawXML.AppendLine("\t\t<width>500</width>");
+        rawXML.AppendLine("\t\t<height>0</height>");
+        rawXML.AppendLine("\t\t<label>" + menItem.name + "</label>");
+        rawXML.AppendLine("\t\t<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("\t</control>");
+
+        rawXML.AppendLine("\n<control>\n\t<description>Topbar buttons " + menItem.name + "</description>");
+        rawXML.AppendLine("\t<type>group</type>");
+        //rawXML.AppendLine("\t<unfocusedAlpha>200</unfocusedAlpha>");
+        rawXML.AppendLine("\t<dimColor>0x60ffffff</dimColor>");
+        
+
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Exit Button: Menu Item:" + menItem.name + "</description>");
+        rawXML.AppendLine("\t\t<type>button</type>");
+        rawXML.AppendLine("\t\t<id>" + topMenuId + "01</id>");
+        rawXML.AppendLine("\t\t<posX>150</posX>");
+        rawXML.AppendLine("\t\t<posY>640</posY>");
+        rawXML.AppendLine("\t\t<onleft>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onleft>");
+        rawXML.AppendLine("\t\t<onright>" + topMenuId + "02" + "</onright>");
+        rawXML.AppendLine("\t\t\t<onup>" + (menItem.id + 700).ToString() + "</onup>");
+        rawXML.AppendLine("\t\t<width>40</width>");
+        rawXML.AppendLine("\t\t<height>40</height>");
+        rawXML.AppendLine("\t\t<textureNoFocus>exit_button.png</textureNoFocus>");
+        rawXML.AppendLine("\t\t<textureFocus>exit_button.png</textureFocus>");
+        rawXML.AppendLine("\t\t<action>97</action>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+        rawXML.AppendLine("\t\t<visible>control.isvisible(" + menItem.id + ")</visible>");
+        rawXML.AppendLine("\t</control>");
+
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Restart Button: Menu Item:" + menItem.name + "</description>");
+        rawXML.AppendLine("\t\t<type>button</type>");
+        rawXML.AppendLine("\t\t<id>" + topMenuId + "02</id>");
+        rawXML.AppendLine("\t\t<posX>220</posX>");
+        rawXML.AppendLine("\t\t<posY>640</posY>");
+        rawXML.AppendLine("\t\t<onleft>" + topMenuId + "01" + "</onleft>");
+        rawXML.AppendLine("\t\t<onright>" + topMenuId + "03" + "</onright>");
+        rawXML.AppendLine("\t\t\t<onup>" + (menItem.id + 700).ToString() + "</onup>");
+        rawXML.AppendLine("\t\t<width>40</width>");
+        rawXML.AppendLine("\t\t<height>40</height>");
+        rawXML.AppendLine("\t\t<textureNoFocus>restart_button.png</textureNoFocus>");
+        rawXML.AppendLine("\t\t<textureFocus>restart_button.png</textureFocus>");
+        rawXML.AppendLine("\t\t<action>98</action>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+        rawXML.AppendLine("\t<visible>control.isvisible(" + menItem.id + ")</visible>");
+        rawXML.AppendLine("\t\t<unfocusedAlpha>200</unfocusedAlpha>");
+        rawXML.AppendLine("\t</control>");
+
+        rawXML.AppendLine("\t<control>");
+        rawXML.AppendLine("\t\t<description>Shutdown Button: Menu Item:" + menItem.name + "</description>");
+        rawXML.AppendLine("\t\t<type>button</type>");
+        rawXML.AppendLine("\t\t<id>" + topMenuId + "03</id>");
+        rawXML.AppendLine("\t\t<posX>290</posX>");
+        rawXML.AppendLine("\t\t<posY>640</posY>");
+        rawXML.AppendLine("\t\t<onleft>" + topMenuId + "02</onleft>");
+        rawXML.AppendLine("\t\t<onright>" + topMenuId + "01</onright>");
+        rawXML.AppendLine("\t\t\t<onup>" + (menItem.id + 700).ToString() + "</onup>");
+        rawXML.AppendLine("\t\t<width>40</width>");
+        rawXML.AppendLine("\t\t<height>40</height>");
+        rawXML.AppendLine("\t\t<textureNoFocus>shutdown_button.png</textureNoFocus>");
+        rawXML.AppendLine("\t\t<textureFocus>shutdown_button.png</textureFocus>");
+        rawXML.AppendLine("\t\t<action>99</action>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+        rawXML.AppendLine("\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+        rawXML.AppendLine("\t<visible>control.isvisible(" + menItem.id + ")</visible>");
+        rawXML.AppendLine("\t</control>");
+        rawXML.AppendLine("</control>");
+      }
 
       xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE -->", rawXML.ToString());
     }
 
     #endregion
 
-    #region Generate Topbar Vertical
+    #region Generate Topbar Horizontal
 
     private void generateTopBarH()
     {
@@ -1259,7 +1335,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine("\t\t<type>image</type>");
         rawXML.AppendLine("\t\t<id>0</id>");
         rawXML.AppendLine("\t\t<posX>490</posX>");
-        //rawXML.AppendLine("\t\t<posY>" + (int.Parse(txtMenuPos.Text) - (basicHomeValues.offsetButtons + 2) - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("\t\t<posY>-5</posY>");
         rawXML.AppendLine("\t\t<height>73</height>");
         rawXML.AppendLine("\t\t<width>300</width>");
@@ -1422,8 +1497,8 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<textureFocus>-</textureFocus>");
       rawXML.AppendLine("\t\t\t<textureNoFocus>-</textureNoFocus>");
       rawXML.AppendLine("\t\t\t<hover>-</hover>");
-      rawXML.AppendLine("\t\t\t<onleft>-</onleft>");
-      rawXML.AppendLine("\t\t\t<onright>7777</onright>");
+      rawXML.AppendLine("\t<onleft>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onleft>");
+      rawXML.AppendLine("\t<onright>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onright>");
       rawXML.AppendLine("\t\t\t<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
       rawXML.AppendLine("\t\t\t<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
       rawXML.AppendLine("\t\t\t<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");

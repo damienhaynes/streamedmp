@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -68,7 +68,7 @@
   <ItemGroup>
     <Reference Include="Core, Version=1.0.7.22199, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\HTPC\MediaPortal\Core.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -76,7 +76,7 @@
     </Reference>
     <Reference Include="MediaPortal.Support, Version=1.0.7.22193, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\MediaPortal.Support.dll</HintPath>
+      <HintPath>..\..\..\..\..\HTPC\MediaPortal\MediaPortal.Support.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -95,7 +95,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="Utils, Version=2.2.7.22194, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\Utils.dll</HintPath>
+      <HintPath>..\..\..\..\..\HTPC\MediaPortal\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -219,8 +219,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)StreamedMPEditor.dll D:\HTPC\MediaPortal\plugins\process
-REM copy $(TargetDir)StreamedMPEditor.dll G:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\process</PostBuildEvent>
+    <PostBuildEvent>copy $(TargetDir)StreamedMPEditor.dll F:\HTPC\MediaPortal\plugins\process
+REM copy $(TargetDir)StreamedMPEditor.dll G:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\process
+REM copy $(TargetDir)StreamedMPEditor.dll F:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\process
+</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
