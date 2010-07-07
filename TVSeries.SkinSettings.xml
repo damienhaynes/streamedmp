@@ -101,8 +101,8 @@
 		</episode>
 	</views>
 	<formatting import="true">
-		<![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Aired)
-<Enabled>1<Format><Episode.DataPanelLine2Value><FormatAs><Episode.FirstAired>
+		<![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Runtime)
+<Enabled>1<Format><Episode.DataPanelLine2Value><FormatAs><Episode.PrettyLocalPlaytime>
 <Enabled>1<Format><Episode.DataPanelLine3Key><FormatAs>Trans(Rating)
 <Enabled>1<Format><Episode.DataPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
 <Enabled>1<Format><Episode.DataPanelLine32Value><FormatAs>(Trans(Rated): <Episode.myRating>)
