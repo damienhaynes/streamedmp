@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using System.Xml;
 using System.IO;
-using System.Reflection;
-using Microsoft.Win32;
-using System.Security;
-using System.Diagnostics;
 
 namespace StreamedMPEditor
 {
