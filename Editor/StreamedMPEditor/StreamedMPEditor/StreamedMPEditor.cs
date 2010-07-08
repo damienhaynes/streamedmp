@@ -1,18 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Reflection;
-using System.Diagnostics;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
-
 
 namespace StreamedMPEditor
 {
@@ -773,7 +766,6 @@ namespace StreamedMPEditor
 
     void writeMenu(menuType direction)
     {
-      System.IO.StreamWriter writer;
       generateXML(direction);
       generateBg(direction);
 
@@ -850,10 +842,14 @@ namespace StreamedMPEditor
 
       if (System.IO.File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
         System.IO.File.Delete(mpPaths.streamedMPpath + "BasicHome.xml");
-      writer = System.IO.File.CreateText(mpPaths.streamedMPpath + "BasicHome.xml");
+
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
-      writer.Write(xml);
-      writer.Close();
+
+      writeXMLFile("BasicHome.xml");
+
+      //writer = System.IO.File.CreateText(mpPaths.streamedMPpath + "BasicHome.xml");
+      //writer.Write(xml);
+      //writer.Close();
 
       generateOverlay(int.Parse(txtMenuPos.Text), basicHomeValues.weatherControl);
 
@@ -989,8 +985,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
-
-
   }
 }
 

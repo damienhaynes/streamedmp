@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -9,7 +7,6 @@ using System.Xml;
 using System.IO;
 using System.Reflection;
 using Microsoft.Win32;
-using System.Security;
 using System.Diagnostics;
 
 namespace StreamedMPEditor
@@ -1446,6 +1443,31 @@ namespace StreamedMPEditor
         movPicsRecentStyle = movPicsRecentType.full;
       else
         movPicsRecentStyle = movPicsRecentType.summary;
+    }
+
+    //
+    // Write out a formatted xml file
+    //
+    public void writeXMLFile(string xmlFileName)
+    {
+      // Delete any existing file
+      if (System.IO.File.Exists(mpPaths.streamedMPpath + xmlFileName))
+        System.IO.File.Delete(mpPaths.streamedMPpath + xmlFileName);
+
+      //Write tempory file
+      StreamWriter tmpwriter;
+      tmpwriter = System.IO.File.CreateText(Path.Combine(Path.GetTempPath(), "temp.xml"));
+      tmpwriter.Write(xml);
+      tmpwriter.Close();
+
+      //read tempory file and save out formatted.
+      XmlDocument doc = new XmlDocument();
+      doc.Load(Path.Combine(Path.GetTempPath(), "temp.xml"));
+      Encoding encoding = Encoding.GetEncoding("utf-8");
+      XmlTextWriter writer = new XmlTextWriter(mpPaths.streamedMPpath + xmlFileName, encoding);
+      writer.Formatting = Formatting.Indented;
+      doc.Save(writer);
+      System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "temp.xml"));
     }
 
 
