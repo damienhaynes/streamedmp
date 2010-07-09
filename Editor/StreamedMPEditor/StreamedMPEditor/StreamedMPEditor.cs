@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using System.Text.RegularExpressions;
 
 namespace StreamedMPEditor
 {
@@ -161,6 +162,8 @@ namespace StreamedMPEditor
     // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
+
+    public Regex isIleagalXML = new Regex("[&<>]");
 
     #endregion
 
@@ -704,16 +707,35 @@ namespace StreamedMPEditor
       Console.WriteLine("");
     }
 
+    bool isIlegalXML(string theValue)
+    {
+      Match m = isIleagalXML.Match(theValue);
+      return m.Success;
+    }
+
     void itemName_TextChanged(object sender, EventArgs e)
     {
       int start = itemName.SelectionStart;
+      if (isIlegalXML(itemName.Text))
+      {
+        itemName.Text = itemName.Text.Substring(0, itemName.Text.Length - 1);
+        itemName.SelectionStart = start;
+        return;
+      }
       itemName.Text = itemName.Text.ToUpper();
       itemName.SelectionStart = start;
     }
 
+
     void cboContextLabels_TextChanged(object sender, EventArgs e)
     {
       int start = cboContextLabel.SelectionStart;
+      if (isIlegalXML(itemName.Text))
+      {
+        itemName.Text = itemName.Text.Substring(0, itemName.Text.Length - 1);
+        itemName.SelectionStart = start;
+        return;
+      }
       cboContextLabel.Text = cboContextLabel.Text.ToUpper();
       cboContextLabel.SelectionStart = start;
     }
@@ -721,9 +743,7 @@ namespace StreamedMPEditor
 
     void generateMenu_Click(object sender, EventArgs e)
     {
-
       validateMenuOffset();
-
       if (itemsOnMenubar.CheckedItems.Count > 1 || itemsOnMenubar.CheckedItems.Count == 0)
       {
         if (itemsOnMenubar.CheckedItems.Count == 0) showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
