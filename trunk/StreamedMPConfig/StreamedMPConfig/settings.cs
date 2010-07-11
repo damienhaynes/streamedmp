@@ -28,6 +28,10 @@ namespace StreamedMPConfig
           StreamedMPConfig.checkOnStart = true;
         if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkForUpdateAt", 1) != 0)
           StreamedMPConfig.checkForUpdateAt = true;
+        if (xmlreader.GetValueAsInt("StreamedMPConfig", "runPatchUtilityUnattended", 1) != 0)
+          StreamedMPConfig.patchUtilityRunUnattended = true;
+        if (xmlreader.GetValueAsInt("StreamedMPConfig", "patchUtilityRestartMP", 1) != 0)
+          StreamedMPConfig.patchUtilityRestartMP = true;
 
         if (StreamedMPConfig.checkForUpdateAt)
         {
@@ -65,6 +69,9 @@ namespace StreamedMPConfig
         xmlwriter.SetValue("StreamedMPConfig", "checkInterval", StreamedMPConfig.checkInterval);
         xmlwriter.SetValue("StreamedMPConfig", "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
         xmlwriter.SetValue("StreamedMPConfig", "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
+        xmlwriter.SetValue("StreamedMPConfig", "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
+        xmlwriter.SetValue("StreamedMPConfig", "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
+
         MediaPortal.Profile.Settings.SaveCache();
       }
     }

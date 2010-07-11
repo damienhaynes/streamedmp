@@ -105,13 +105,17 @@ namespace StreamedMPConfig
             {
               if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
               {
-                if (Path.GetExtension(optionDownloadPath).ToLower() == ".msi")
+                if (Path.GetFileNameWithoutExtension(optionDownloadPath).ToLower() == "smppatch")
                 {
                   //Lets run it
                   if (File.Exists(optionDownloadPath))
                   {
                     ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
                     upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
+                    if (StreamedMPConfig.patchUtilityRunUnattended)
+                      upgradeProcess.Arguments = "/unattended ";
+                    if (StreamedMPConfig.patchUtilityRestartMP)
+                      upgradeProcess.Arguments += "/restartmp";
                     System.Diagnostics.Process.Start(upgradeProcess);
                     Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
                     GUIGraphicsContext.OnAction(exitAction);

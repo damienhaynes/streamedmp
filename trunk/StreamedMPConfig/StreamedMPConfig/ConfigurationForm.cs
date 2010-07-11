@@ -32,7 +32,7 @@ namespace StreamedMPConfig
       timePicker = new DateTimePicker();
       timePicker.Format = DateTimePickerFormat.Time;
       timePicker.ShowUpDown = true;
-      timePicker.Location = new Point(309, 123);
+      timePicker.Location = new Point(309, 85);
       timePicker.Width = 100;
       CheckUpdate.Controls.Add(timePicker);
     }
@@ -52,6 +52,8 @@ namespace StreamedMPConfig
       StreamedMPConfig.checkInterval = comboCheckInterval.SelectedIndex;
       StreamedMPConfig.checkTime = timePicker.Value;
       StreamedMPConfig.nextUpdateCheck = StreamedMPConfig.nextCheckAt.ToString();
+      StreamedMPConfig.patchUtilityRunUnattended = cbRunUnattended.Checked;
+      StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
       settings.Save();
       this.Close();
     }
@@ -70,6 +72,8 @@ namespace StreamedMPConfig
 
       cbCdCoverOnly.Checked = StreamedMPConfig.cdCoverOnly;
       cbShowEqGraphic.Checked = StreamedMPConfig.showEqGraphic;
+      cbRunUnattended.Checked = StreamedMPConfig.patchUtilityRunUnattended;
+      cbRestartMP.Checked = StreamedMPConfig.patchUtilityRestartMP;
 
       if (StreamedMPConfig.fullVideoOSD)
       {
@@ -115,5 +119,7 @@ namespace StreamedMPConfig
     }
 
     #endregion
+
+
   }
 }
