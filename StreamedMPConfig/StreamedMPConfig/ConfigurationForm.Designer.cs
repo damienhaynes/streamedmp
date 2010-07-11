@@ -28,6 +28,7 @@ namespace StreamedMPConfig
         /// </summary>
         private void InitializeComponent()
         {
+          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurationForm));
           this.btCancel = new System.Windows.Forms.Button();
           this.btSave = new System.Windows.Forms.Button();
           this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -39,6 +40,10 @@ namespace StreamedMPConfig
           this.minVideoOSD = new System.Windows.Forms.RadioButton();
           this.fullVideoOSD = new System.Windows.Forms.RadioButton();
           this.CheckUpdate = new System.Windows.Forms.TabPage();
+          this.patchUtilityOtions = new System.Windows.Forms.GroupBox();
+          this.tbPatchUtilityInfo = new System.Windows.Forms.TextBox();
+          this.cbRestartMP = new System.Windows.Forms.CheckBox();
+          this.cbRunUnattended = new System.Windows.Forms.CheckBox();
           this.label2 = new System.Windows.Forms.Label();
           this.cbCheckForUpdateAt = new System.Windows.Forms.CheckBox();
           this.comboCheckInterval = new System.Windows.Forms.ComboBox();
@@ -50,20 +55,22 @@ namespace StreamedMPConfig
           this.compileTime = new System.Windows.Forms.Label();
           this.richTextBox1 = new System.Windows.Forms.RichTextBox();
           this.releaseVersion = new System.Windows.Forms.Label();
-          this.label1 = new System.Windows.Forms.Label();
+          this.pictureBox1 = new System.Windows.Forms.PictureBox();
           this.tabControl1.SuspendLayout();
           this.MusicScreens.SuspendLayout();
           this.VideoScreens.SuspendLayout();
           this.groupBox2.SuspendLayout();
           this.CheckUpdate.SuspendLayout();
+          this.patchUtilityOtions.SuspendLayout();
           this.aboutTab.SuspendLayout();
           this.groupBox1.SuspendLayout();
+          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
           this.SuspendLayout();
           // 
           // btCancel
           // 
           this.btCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-          this.btCancel.Location = new System.Drawing.Point(493, 313);
+          this.btCancel.Location = new System.Drawing.Point(493, 318);
           this.btCancel.Name = "btCancel";
           this.btCancel.Size = new System.Drawing.Size(75, 23);
           this.btCancel.TabIndex = 31;
@@ -74,7 +81,7 @@ namespace StreamedMPConfig
           // btSave
           // 
           this.btSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-          this.btSave.Location = new System.Drawing.Point(399, 313);
+          this.btSave.Location = new System.Drawing.Point(399, 318);
           this.btSave.Name = "btSave";
           this.btSave.Size = new System.Drawing.Size(75, 23);
           this.btSave.TabIndex = 30;
@@ -91,7 +98,7 @@ namespace StreamedMPConfig
           this.tabControl1.Location = new System.Drawing.Point(12, 52);
           this.tabControl1.Name = "tabControl1";
           this.tabControl1.SelectedIndex = 0;
-          this.tabControl1.Size = new System.Drawing.Size(556, 253);
+          this.tabControl1.Size = new System.Drawing.Size(556, 260);
           this.tabControl1.TabIndex = 9;
           // 
           // MusicScreens
@@ -101,7 +108,7 @@ namespace StreamedMPConfig
           this.MusicScreens.Location = new System.Drawing.Point(4, 22);
           this.MusicScreens.Name = "MusicScreens";
           this.MusicScreens.Padding = new System.Windows.Forms.Padding(3);
-          this.MusicScreens.Size = new System.Drawing.Size(548, 227);
+          this.MusicScreens.Size = new System.Drawing.Size(548, 234);
           this.MusicScreens.TabIndex = 0;
           this.MusicScreens.Text = "Music Screens";
           this.MusicScreens.UseVisualStyleBackColor = true;
@@ -132,7 +139,7 @@ namespace StreamedMPConfig
           this.VideoScreens.Controls.Add(this.groupBox2);
           this.VideoScreens.Location = new System.Drawing.Point(4, 22);
           this.VideoScreens.Name = "VideoScreens";
-          this.VideoScreens.Size = new System.Drawing.Size(548, 227);
+          this.VideoScreens.Size = new System.Drawing.Size(548, 234);
           this.VideoScreens.TabIndex = 3;
           this.VideoScreens.Text = "Video Screens";
           this.VideoScreens.UseVisualStyleBackColor = true;
@@ -172,6 +179,7 @@ namespace StreamedMPConfig
           // 
           // CheckUpdate
           // 
+          this.CheckUpdate.Controls.Add(this.patchUtilityOtions);
           this.CheckUpdate.Controls.Add(this.label2);
           this.CheckUpdate.Controls.Add(this.cbCheckForUpdateAt);
           this.CheckUpdate.Controls.Add(this.comboCheckInterval);
@@ -180,15 +188,57 @@ namespace StreamedMPConfig
           this.CheckUpdate.Controls.Add(this.textBox1);
           this.CheckUpdate.Location = new System.Drawing.Point(4, 22);
           this.CheckUpdate.Name = "CheckUpdate";
-          this.CheckUpdate.Size = new System.Drawing.Size(548, 227);
+          this.CheckUpdate.Size = new System.Drawing.Size(548, 234);
           this.CheckUpdate.TabIndex = 4;
           this.CheckUpdate.Text = "Skin Update";
           this.CheckUpdate.UseVisualStyleBackColor = true;
           // 
+          // patchUtilityOtions
+          // 
+          this.patchUtilityOtions.Controls.Add(this.tbPatchUtilityInfo);
+          this.patchUtilityOtions.Controls.Add(this.cbRestartMP);
+          this.patchUtilityOtions.Controls.Add(this.cbRunUnattended);
+          this.patchUtilityOtions.Location = new System.Drawing.Point(15, 119);
+          this.patchUtilityOtions.Name = "patchUtilityOtions";
+          this.patchUtilityOtions.Size = new System.Drawing.Size(508, 109);
+          this.patchUtilityOtions.TabIndex = 9;
+          this.patchUtilityOtions.TabStop = false;
+          this.patchUtilityOtions.Text = "Patch Utility Options (GUI)";
+          // 
+          // tbPatchUtilityInfo
+          // 
+          this.tbPatchUtilityInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+          this.tbPatchUtilityInfo.Location = new System.Drawing.Point(6, 17);
+          this.tbPatchUtilityInfo.Multiline = true;
+          this.tbPatchUtilityInfo.Name = "tbPatchUtilityInfo";
+          this.tbPatchUtilityInfo.Size = new System.Drawing.Size(296, 87);
+          this.tbPatchUtilityInfo.TabIndex = 2;
+          this.tbPatchUtilityInfo.Text = resources.GetString("tbPatchUtilityInfo.Text");
+          // 
+          // cbRestartMP
+          // 
+          this.cbRestartMP.AutoSize = true;
+          this.cbRestartMP.Location = new System.Drawing.Point(312, 43);
+          this.cbRestartMP.Name = "cbRestartMP";
+          this.cbRestartMP.Size = new System.Drawing.Size(179, 17);
+          this.cbRestartMP.TabIndex = 1;
+          this.cbRestartMP.Text = "Restart MediaPortal after update";
+          this.cbRestartMP.UseVisualStyleBackColor = true;
+          // 
+          // cbRunUnattended
+          // 
+          this.cbRunUnattended.AutoSize = true;
+          this.cbRunUnattended.Location = new System.Drawing.Point(312, 19);
+          this.cbRunUnattended.Name = "cbRunUnattended";
+          this.cbRunUnattended.Size = new System.Drawing.Size(172, 17);
+          this.cbRunUnattended.TabIndex = 0;
+          this.cbRunUnattended.Text = "Run Patch Update unattended";
+          this.cbRunUnattended.UseVisualStyleBackColor = true;
+          // 
           // label2
           // 
           this.label2.AutoSize = true;
-          this.label2.Location = new System.Drawing.Point(273, 126);
+          this.label2.Location = new System.Drawing.Point(273, 85);
           this.label2.Name = "label2";
           this.label2.Size = new System.Drawing.Size(30, 13);
           this.label2.TabIndex = 5;
@@ -197,7 +247,7 @@ namespace StreamedMPConfig
           // cbCheckForUpdateAt
           // 
           this.cbCheckForUpdateAt.AutoSize = true;
-          this.cbCheckForUpdateAt.Location = new System.Drawing.Point(16, 126);
+          this.cbCheckForUpdateAt.Location = new System.Drawing.Point(16, 85);
           this.cbCheckForUpdateAt.Name = "cbCheckForUpdateAt";
           this.cbCheckForUpdateAt.Size = new System.Drawing.Size(110, 17);
           this.cbCheckForUpdateAt.TabIndex = 2;
@@ -212,7 +262,7 @@ namespace StreamedMPConfig
             "Every Week",
             "Every 2 Weeks",
             "Every 4 Weeks"});
-          this.comboCheckInterval.Location = new System.Drawing.Point(131, 126);
+          this.comboCheckInterval.Location = new System.Drawing.Point(131, 85);
           this.comboCheckInterval.Name = "comboCheckInterval";
           this.comboCheckInterval.Size = new System.Drawing.Size(121, 21);
           this.comboCheckInterval.TabIndex = 4;
@@ -222,7 +272,7 @@ namespace StreamedMPConfig
           this.cbCheckOnStart.AutoSize = true;
           this.cbCheckOnStart.Checked = true;
           this.cbCheckOnStart.CheckState = System.Windows.Forms.CheckState.Checked;
-          this.cbCheckOnStart.Location = new System.Drawing.Point(16, 87);
+          this.cbCheckOnStart.Location = new System.Drawing.Point(16, 61);
           this.cbCheckOnStart.Name = "cbCheckOnStart";
           this.cbCheckOnStart.Size = new System.Drawing.Size(224, 17);
           this.cbCheckOnStart.TabIndex = 1;
@@ -231,7 +281,7 @@ namespace StreamedMPConfig
           // 
           // btCheckForUpdate
           // 
-          this.btCheckForUpdate.Location = new System.Drawing.Point(176, 191);
+          this.btCheckForUpdate.Location = new System.Drawing.Point(364, 55);
           this.btCheckForUpdate.Name = "btCheckForUpdate";
           this.btCheckForUpdate.Size = new System.Drawing.Size(160, 23);
           this.btCheckForUpdate.TabIndex = 8;
@@ -241,11 +291,11 @@ namespace StreamedMPConfig
           // 
           // textBox1
           // 
-          this.textBox1.Location = new System.Drawing.Point(16, 15);
+          this.textBox1.Location = new System.Drawing.Point(16, 11);
           this.textBox1.Multiline = true;
           this.textBox1.Name = "textBox1";
           this.textBox1.ReadOnly = true;
-          this.textBox1.Size = new System.Drawing.Size(508, 54);
+          this.textBox1.Size = new System.Drawing.Size(508, 40);
           this.textBox1.TabIndex = 0;
           this.textBox1.Text = "This screen will allow you to check if a skin update is available, download and i" +
               "nstall. You can also configue this to be an automatic process if required.";
@@ -256,7 +306,7 @@ namespace StreamedMPConfig
           this.aboutTab.Location = new System.Drawing.Point(4, 22);
           this.aboutTab.Name = "aboutTab";
           this.aboutTab.Padding = new System.Windows.Forms.Padding(3);
-          this.aboutTab.Size = new System.Drawing.Size(548, 227);
+          this.aboutTab.Size = new System.Drawing.Size(548, 234);
           this.aboutTab.TabIndex = 2;
           this.aboutTab.Text = "About";
           this.aboutTab.UseVisualStyleBackColor = true;
@@ -305,22 +355,21 @@ namespace StreamedMPConfig
           this.releaseVersion.TabIndex = 3;
           this.releaseVersion.Text = "Version:";
           // 
-          // label1
+          // pictureBox1
           // 
-          this.label1.AutoSize = true;
-          this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-          this.label1.Location = new System.Drawing.Point(211, 9);
-          this.label1.Name = "label1";
-          this.label1.Size = new System.Drawing.Size(353, 26);
-          this.label1.TabIndex = 10;
-          this.label1.Text = "StreamedMP Skin Configuration";
+          this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+          this.pictureBox1.Location = new System.Drawing.Point(13, 12);
+          this.pictureBox1.Name = "pictureBox1";
+          this.pictureBox1.Size = new System.Drawing.Size(563, 26);
+          this.pictureBox1.TabIndex = 32;
+          this.pictureBox1.TabStop = false;
           // 
           // ConfigurationForm
           // 
           this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
           this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
           this.ClientSize = new System.Drawing.Size(580, 346);
-          this.Controls.Add(this.label1);
+          this.Controls.Add(this.pictureBox1);
           this.Controls.Add(this.tabControl1);
           this.Controls.Add(this.btSave);
           this.Controls.Add(this.btCancel);
@@ -336,11 +385,13 @@ namespace StreamedMPConfig
           this.groupBox2.PerformLayout();
           this.CheckUpdate.ResumeLayout(false);
           this.CheckUpdate.PerformLayout();
+          this.patchUtilityOtions.ResumeLayout(false);
+          this.patchUtilityOtions.PerformLayout();
           this.aboutTab.ResumeLayout(false);
           this.groupBox1.ResumeLayout(false);
           this.groupBox1.PerformLayout();
+          ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
           this.ResumeLayout(false);
-          this.PerformLayout();
 
         }
 
@@ -352,7 +403,6 @@ namespace StreamedMPConfig
         private System.Windows.Forms.TabPage MusicScreens;
         private System.Windows.Forms.CheckBox cbCdCoverOnly;
         private System.Windows.Forms.CheckBox cbShowEqGraphic;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage aboutTab;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -369,6 +419,11 @@ namespace StreamedMPConfig
         private System.Windows.Forms.Button btCheckForUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox cbCheckForUpdateAt;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox patchUtilityOtions;
+        private System.Windows.Forms.CheckBox cbRestartMP;
+        private System.Windows.Forms.CheckBox cbRunUnattended;
+        private System.Windows.Forms.TextBox tbPatchUtilityInfo;
 
     }
 }

@@ -59,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="checkForUpdate.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="VideoOptionsGUI.cs" />
     <Compile Include="MusicOptionsGUI.cs" />
     <Compile Include="SkinInfo.cs" />
@@ -89,6 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="baseChangeLog.rtf" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
