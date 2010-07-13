@@ -105,7 +105,7 @@ namespace StreamedMPConfig
             {
               if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
               {
-                if (Path.GetFileNameWithoutExtension(optionDownloadPath).ToLower() == "smppatch")
+                if (Path.GetFileNameWithoutExtension(optionDownloadPath).ToLower().StartsWith("smppatch"))
                 {
                   //Lets run it
                   if (File.Exists(optionDownloadPath))
