@@ -8,6 +8,7 @@ using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using System.Diagnostics;
 
 namespace StreamedMPConfig
 {
@@ -284,10 +285,28 @@ namespace StreamedMPConfig
       {
         if (Path.GetExtension(optionDownloadPath).ToLower() != ".zip")
         {
-          // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
-          System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
-          System.IO.File.Delete(optionDownloadPath);
-          StreamedMPConfig.manualInstallNeeded = true;
+          if (Path.GetFileNameWithoutExtension(optionDownloadPath).ToLower().StartsWith("smppatch"))
+          {
+            //Lets run it
+            if (File.Exists(optionDownloadPath))
+            {
+              ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
+              upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
+              if (StreamedMPConfig.patchUtilityRunUnattended)
+                upgradeProcess.Arguments = "/unattended ";
+              if (StreamedMPConfig.patchUtilityRestartMP)
+                upgradeProcess.Arguments += "/restartconfuration";
+              System.Diagnostics.Process.Start(upgradeProcess);
+              Application.Exit();
+            }
+          }
+          else
+          {
+            // Not a zip so can't process internally - download to desktop and set flag so we can inform the user to exit MP and manually install the update
+            System.IO.File.Copy(optionDownloadPath, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Path.GetFileName(optionDownloadPath)), true);
+            System.IO.File.Delete(optionDownloadPath);
+            StreamedMPConfig.manualInstallNeeded = true;
+          }
         }
         else
         {

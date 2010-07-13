@@ -200,7 +200,7 @@ namespace StreamedMPConfig
           this.patchUtilityOtions.Controls.Add(this.cbRunUnattended);
           this.patchUtilityOtions.Location = new System.Drawing.Point(15, 119);
           this.patchUtilityOtions.Name = "patchUtilityOtions";
-          this.patchUtilityOtions.Size = new System.Drawing.Size(508, 109);
+          this.patchUtilityOtions.Size = new System.Drawing.Size(509, 109);
           this.patchUtilityOtions.TabIndex = 9;
           this.patchUtilityOtions.TabStop = false;
           this.patchUtilityOtions.Text = "Patch Utility Options (GUI)";
@@ -220,9 +220,9 @@ namespace StreamedMPConfig
           this.cbRestartMP.AutoSize = true;
           this.cbRestartMP.Location = new System.Drawing.Point(312, 43);
           this.cbRestartMP.Name = "cbRestartMP";
-          this.cbRestartMP.Size = new System.Drawing.Size(179, 17);
+          this.cbRestartMP.Size = new System.Drawing.Size(186, 17);
           this.cbRestartMP.TabIndex = 1;
-          this.cbRestartMP.Text = "Restart MediaPortal after update";
+          this.cbRestartMP.Text = "Restart MediaPortal/Configuration";
           this.cbRestartMP.UseVisualStyleBackColor = true;
           // 
           // cbRunUnattended
