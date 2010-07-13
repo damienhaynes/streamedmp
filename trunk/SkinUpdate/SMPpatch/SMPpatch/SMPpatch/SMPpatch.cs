@@ -24,6 +24,7 @@ namespace SMPpatch
     public XmlTextReader reader;
     bool unattendedInatall = false;
     bool restartMediaPortal = false;
+    bool restartConfiguration = false;
 
 
     public SMPpatch()
@@ -46,6 +47,12 @@ namespace SMPpatch
         if (arg.ToLower().Contains("restartmp"))
         {
           restartMediaPortal = true;
+          btInstallPatch.Enabled = false;
+        }
+        // Do we restart Configuration after the update 
+        if (arg.ToLower().Contains("restartconfiguration"))
+        {
+          restartConfiguration = true;
           btInstallPatch.Enabled = false;
         }
       }
@@ -289,6 +296,14 @@ namespace SMPpatch
       if (restartMediaPortal)
       {
         ProcessStartInfo process = new ProcessStartInfo("mediaportal.exe");
+        process.WorkingDirectory = SkinInfo.mpPaths.sMPbaseDir;
+        process.UseShellExecute = true;
+        Process.Start(process);
+      }
+      // Check and start Mediaportal if required
+      if (restartConfiguration)
+      {
+        ProcessStartInfo process = new ProcessStartInfo("configuration.exe");
         process.WorkingDirectory = SkinInfo.mpPaths.sMPbaseDir;
         process.UseShellExecute = true;
         Process.Start(process);
