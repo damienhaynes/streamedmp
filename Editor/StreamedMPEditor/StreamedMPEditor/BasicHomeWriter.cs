@@ -132,9 +132,9 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
 
-                if (menItem.name.ToLower() == "shutdown")
+                if (menItem.hyperlink == "196299")
                   rawXML.AppendLine("<action>99</action>");
-                else if (menItem.name.ToLower() == "exit")
+                else if (menItem.hyperlink == "196297")
                   rawXML.AppendLine("<action>97</action>");
                 else
                   rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -171,9 +171,9 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
 
-                if (menItem.name.ToLower() == "shutdown")
+                if (menItem.hyperlink == "196299")
                   rawXML.AppendLine("<action>99</action>");
-                else if (menItem.name.ToLower() == "exit")
+                else if (menItem.hyperlink == "196297")
                   rawXML.AppendLine("<action>97</action>");
                 else
                   rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -530,7 +530,14 @@ namespace StreamedMPEditor
                 }
                 rawXML.AppendLine("<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
-                rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+                if (menItem.hyperlink == "196299")
+                  rawXML.AppendLine("<action>99</action>");
+                else if (menItem.hyperlink == "196297")
+                  rawXML.AppendLine("<action>97</action>");
+                else
+                  rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
                 rawXML.AppendLine("<hover>-</hover>");
 
                 if (menuItems.IndexOf(menItem) == 0)
@@ -561,7 +568,14 @@ namespace StreamedMPEditor
                 rawXML.AppendLine("<height>72</height>");
                 rawXML.AppendLine("<textureFocus>-</textureFocus>");
                 rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
-                rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+                if (menItem.name.ToLower() == "shutdown")
+                  rawXML.AppendLine("<action>99</action>");
+                else if (menItem.name.ToLower() == "exit")
+                  rawXML.AppendLine("<action>97</action>");
+                else
+                  rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
                 rawXML.AppendLine("<hover>-</hover>");
 
                 if (menuItems.IndexOf(menItem) == 0)

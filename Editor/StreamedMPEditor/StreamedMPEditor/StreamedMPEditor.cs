@@ -247,86 +247,81 @@ namespace StreamedMPEditor
       else
         useSkinWeatherIcons.Text = "Restore Standard Weather Icons";
 
-      if (File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
+      if (loadIDs() == true)
       {
-        if (loadIDs() == true)
-        {
-          bgBox.Enabled = true;
-          itemName.Enabled = true;
-          addButton.Enabled = true;
-          editButton.Enabled = false;
-          cancelButton.Enabled = false;
-          saveButton.Enabled = false;
-          removeButton.Enabled = true;
-          itemsOnMenubar.Enabled = true;
-          disableBGSharing.Enabled = true;
+        bgBox.Enabled = true;
+        itemName.Enabled = true;
+        addButton.Enabled = true;
+        editButton.Enabled = false;
+        cancelButton.Enabled = false;
+        saveButton.Enabled = false;
+        removeButton.Enabled = true;
+        itemsOnMenubar.Enabled = true;
+        disableBGSharing.Enabled = true;
 
-          rbRssInfoServiceImage.Checked = false;
-          rbRssNoImage.Checked = false;
-          rbRssSkinImage.Checked = true;
+        rbRssInfoServiceImage.Checked = false;
+        rbRssNoImage.Checked = false;
+        rbRssSkinImage.Checked = true;
 
-          menuitemName.Text = null;
-          menuItemLabel.Text = null;
-          menuitemBGFolder.Text = null;
-          menuitemTimeonPage.Text = null;
-          menuitemWindow.Text = null;
+        menuitemName.Text = null;
+        menuItemLabel.Text = null;
+        menuitemBGFolder.Text = null;
+        menuitemTimeonPage.Text = null;
+        menuitemWindow.Text = null;
 
-          xmlFiles.SelectedItem = null;
-          cboContextLabel.Text = null;
-          itemName.Text = null;
-          bgBox.Text = null;
-          isWeather.Checked = false;
-          selectedWindow.Text = null;
-          selectedWindowID.Text = null;
+        xmlFiles.SelectedItem = null;
+        cboContextLabel.Text = null;
+        itemName.Text = null;
+        bgBox.Text = null;
+        isWeather.Checked = false;
+        selectedWindow.Text = null;
+        selectedWindowID.Text = null;
 
 
-          selectedWindow.Text = null;
-          selectedWindowID.Text = null;
+        selectedWindow.Text = null;
+        selectedWindowID.Text = null;
 
-          rbTBSeriesFull.Checked = true;
-          rbMovPicsFull.Checked = true;
-        }
-
-        loadMenuSettings();
-        checkSplashScreens();
-        toolStripStatusLabel2.Visible = false;
-        itemsOnMenubar.SelectedIndex = 0;
-        screenReset();
-        setScreenProperties(itemsOnMenubar.SelectedIndex);
-        disableItemControls();
-        cancelCreateButton.Visible = false;
-        editButton.Enabled = true;
-
-
-        string mpVersionTmp = getMediaPortalVersion();
-        Version mpVersion = new Version(mpVersionTmp);
-        if (mpVersion.CompareTo(mpReleaseVersion) > 0)
-        {
-          wrapString.Enabled = true;
-        }
-        else
-        {
-          wrapString.Enabled = false;
-        }
-
-        if (basicHomeLoadError)
-        {
-          DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
-          if (result == DialogResult.Yes)
-          {
-            BasicHomeFromTemplate();
-            basicHomeLoadError = false;
-            loadMenuSettings();
-            GetDefaultBackgroundImages();
-          }
-          else
-            showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
-        }
+        rbTBSeriesFull.Checked = true;
+        rbMovPicsFull.Checked = true;
       }
 
+      loadMenuSettings();
+      checkSplashScreens();
+      toolStripStatusLabel2.Visible = false;
+      itemsOnMenubar.SelectedIndex = 0;
+      screenReset();
+      setScreenProperties(itemsOnMenubar.SelectedIndex);
+      disableItemControls();
+      cancelCreateButton.Visible = false;
+      editButton.Enabled = true;
+
+
+      string mpVersionTmp = getMediaPortalVersion();
+      Version mpVersion = new Version(mpVersionTmp);
+      if (mpVersion.CompareTo(mpReleaseVersion) > 0)
+      {
+        wrapString.Enabled = true;
+      }
       else
-        showError(mpPaths.skinBasePath + "BasicHome.xml Not Found", errorCode.major);
+      {
+        wrapString.Enabled = false;
+      }
+
+      if (basicHomeLoadError)
+      {
+        DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
+        if (result == DialogResult.Yes)
+        {
+          BasicHomeFromTemplate();
+          basicHomeLoadError = false;
+          loadMenuSettings();
+          GetDefaultBackgroundImages();
+        }
+        else
+          showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
+      }
     }
+
 
 
     #endregion
