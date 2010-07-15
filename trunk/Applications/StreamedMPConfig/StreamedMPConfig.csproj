@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="Core, Version=1.0.10.18351, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\Core.dll</HintPath>
+      <HintPath>..\..\..\svnroot\mediaportal\trunk\mediaportal\xbmc\bin\Release\Core.dll</HintPath>
     </Reference>
     <Reference Include="Dialogs, Version=1.0.6.25500, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -109,12 +109,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy G:\SkinDev\StreamedMP\StreamedMP\Plugins\windows\StreamedMPConfig.dll D:\HTPC\MediaPortal\plugins\windows
-REM copy F:\Dev\StreamedMP\Plugins\windows\StreamedMPConfig.dll F:\HTPC\MediaPortal\plugins\windows
-REM copy G:\SkinDev\StreamedMP\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Debug\StreamedMPConfig.* G:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\Windows
-REM copy F:\Dev\StreamedMP\StreamedMPConfig\StreamedMPConfig\bin\Debug\StreamedMPConfig.* F:\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\Windows
-
-
-</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
