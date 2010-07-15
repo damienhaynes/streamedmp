@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPEditor", "SMPEditor\SMPEditor.csproj", "{B2ECBD02-DD25-48C0-AEE8-792F1F071B3C}"
 	ProjectSection(ProjectDependencies) = postProject
+		{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6} = {CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}
+		{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6} = {1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}
 		{BB503792-BF10-4A59-AEF8-F753CC4F44E4} = {BB503792-BF10-4A59-AEF8-F753CC4F44E4}
 	EndProjectSection
 EndProject
@@ -11,6 +13,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamedMPConfig", "StreamedMPConfig\StreamedMPConfig.csproj", "{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPpatch", "SMPpatch\SMPpatch.csproj", "{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPRefPatch", "SMPRefPatch\SMPRefPatch.csproj", "{E85E539B-8F95-4FBD-B0E4-0517A9319810}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +54,12 @@ Global
 		{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}.Release|x86.ActiveCfg = Release|Any CPU
 		{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}.Release|x86.Build.0 = Release|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E85E539B-8F95-4FBD-B0E4-0517A9319810}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
