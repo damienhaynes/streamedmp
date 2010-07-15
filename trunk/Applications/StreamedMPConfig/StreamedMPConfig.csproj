@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -33,17 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Core, Version=1.0.10.18351, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Core, Version=1.1.0.39925, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\svnroot\mediaportal\trunk\mediaportal\xbmc\bin\Release\Core.dll</HintPath>
+      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Dialogs, Version=1.0.6.25500, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Dialogs, Version=1.1.0.39927, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HTPC\MediaPortal\plugins\Windows\Dialogs.dll</HintPath>
+      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\plugins\Windows\Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HTPC\MediaPortal\ICSharpCode.SharpZipLib.dll</HintPath>
+      <HintPath>..\..\Plugins\windows\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -52,9 +52,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Utils, Version=2.2.6.33157, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Utils, Version=2.2.7.39925, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\HTPC\MediaPortal\Utils.dll</HintPath>
+      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
