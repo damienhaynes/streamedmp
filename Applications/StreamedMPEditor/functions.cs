@@ -1487,6 +1487,7 @@ namespace StreamedMPEditor
       XmlTextWriter writer = new XmlTextWriter(mpPaths.streamedMPpath + xmlFileName, encoding);
       writer.Formatting = Formatting.Indented;
       doc.Save(writer);
+      writer.Close();
       System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "temp.xml"));
     }
 
