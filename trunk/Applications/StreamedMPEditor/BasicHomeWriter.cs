@@ -3597,14 +3597,21 @@ namespace StreamedMPEditor
           if (tvSeriesRecentStyle == tvSeriesRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VFull.xml</import>");
           else
-            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum.xml</import>");
+            if (mostRecentStyle == mostRecentSummaryStyle.poster)
+              rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum.xml</import>");
+            else
+              rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum2.xml</import>");
+
         }
         else
         {
           if (tvSeriesRecentStyle == tvSeriesRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HFull.xml</import>");
           else
+            if (mostRecentStyle == mostRecentSummaryStyle.poster)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum.xml</import>");
+            else
+              rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum2.xml</import>");
         }
       }
 
@@ -3766,6 +3773,7 @@ namespace StreamedMPEditor
       string targetScreenRes = "SD";
       string tvRecentDisplayType = "full";
       string movPicsDisplayType = "full";
+      string mostRecentSumStyle = "fanart";
 
       string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
       string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
@@ -3840,6 +3848,12 @@ namespace StreamedMPEditor
       if (movPicsRecentStyle == movPicsRecentType.summary)
         movPicsDisplayType = "summary";
 
+      if (rbFanartStyle.Checked)
+        mostRecentSumStyle = "fanart";
+      else
+        mostRecentSumStyle = "poster";
+
+
       xml = ("<profile>"
                 + "<version>1.0</version>"
                 + "<skin name=\"StreamedMP\">"
@@ -3876,6 +3890,7 @@ namespace StreamedMPEditor
                 + generateEntry("movPicsMostRecent", movPicsMostRecent, 2, true)
                 + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 2, true)
                 + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
+                + generateEntry("mostRecentSumStyle", mostRecentSumStyle, 2, true)
                 + "</section>");
 
       StringBuilder rawXML = new StringBuilder();

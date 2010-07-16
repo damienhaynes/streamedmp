@@ -140,6 +140,11 @@
       this.sdRes = new System.Windows.Forms.RadioButton();
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
+      this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
+      this.rbFanartStyle = new System.Windows.Forms.RadioButton();
+      this.rbPosterStyle = new System.Windows.Forms.RadioButton();
+      this.pictureBox8 = new System.Windows.Forms.PictureBox();
+      this.pictureBox7 = new System.Windows.Forms.PictureBox();
       this.pMovPicsRecent = new System.Windows.Forms.Panel();
       this.gbMovPicsOptions = new System.Windows.Forms.GroupBox();
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
@@ -254,6 +259,9 @@
       this.gbScreenRes.SuspendLayout();
       this.tabPage2.SuspendLayout();
       this.infoServiceRecentOptions.SuspendLayout();
+      this.gbSummaryStyle.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
       this.pMovPicsRecent.SuspendLayout();
       this.gbMovPicsOptions.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -1513,14 +1521,69 @@
       // 
       // infoServiceRecentOptions
       // 
+      this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
       this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
       this.infoServiceRecentOptions.Controls.Add(this.panel1);
-      this.infoServiceRecentOptions.Location = new System.Drawing.Point(3, 164);
+      this.infoServiceRecentOptions.Location = new System.Drawing.Point(3, 150);
       this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
-      this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 129);
+      this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 223);
       this.infoServiceRecentOptions.TabIndex = 30;
       this.infoServiceRecentOptions.TabStop = false;
       this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
+      // 
+      // gbSummaryStyle
+      // 
+      this.gbSummaryStyle.Controls.Add(this.rbFanartStyle);
+      this.gbSummaryStyle.Controls.Add(this.rbPosterStyle);
+      this.gbSummaryStyle.Controls.Add(this.pictureBox8);
+      this.gbSummaryStyle.Controls.Add(this.pictureBox7);
+      this.gbSummaryStyle.Location = new System.Drawing.Point(289, 19);
+      this.gbSummaryStyle.Name = "gbSummaryStyle";
+      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 197);
+      this.gbSummaryStyle.TabIndex = 6;
+      this.gbSummaryStyle.TabStop = false;
+      this.gbSummaryStyle.Text = "Summary Style";
+      // 
+      // rbFanartStyle
+      // 
+      this.rbFanartStyle.AutoSize = true;
+      this.rbFanartStyle.Location = new System.Drawing.Point(266, 151);
+      this.rbFanartStyle.Name = "rbFanartStyle";
+      this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
+      this.rbFanartStyle.TabIndex = 3;
+      this.rbFanartStyle.TabStop = true;
+      this.rbFanartStyle.Text = "Fanart Style";
+      this.rbFanartStyle.UseVisualStyleBackColor = true;
+      this.rbFanartStyle.CheckedChanged += new System.EventHandler(this.rbFanartStyle_CheckedChanged);
+      // 
+      // rbPosterStyle
+      // 
+      this.rbPosterStyle.AutoSize = true;
+      this.rbPosterStyle.Location = new System.Drawing.Point(26, 151);
+      this.rbPosterStyle.Name = "rbPosterStyle";
+      this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
+      this.rbPosterStyle.TabIndex = 2;
+      this.rbPosterStyle.TabStop = true;
+      this.rbPosterStyle.Text = "Poster Style";
+      this.rbPosterStyle.UseVisualStyleBackColor = true;
+      // 
+      // pictureBox8
+      // 
+      this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+      this.pictureBox8.Location = new System.Drawing.Point(266, 38);
+      this.pictureBox8.Name = "pictureBox8";
+      this.pictureBox8.Size = new System.Drawing.Size(101, 107);
+      this.pictureBox8.TabIndex = 1;
+      this.pictureBox8.TabStop = false;
+      // 
+      // pictureBox7
+      // 
+      this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+      this.pictureBox7.Location = new System.Drawing.Point(26, 57);
+      this.pictureBox7.Name = "pictureBox7";
+      this.pictureBox7.Size = new System.Drawing.Size(199, 87);
+      this.pictureBox7.TabIndex = 0;
+      this.pictureBox7.TabStop = false;
       // 
       // pMovPicsRecent
       // 
@@ -1528,9 +1591,9 @@
       this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
       this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
       this.pMovPicsRecent.Enabled = false;
-      this.pMovPicsRecent.Location = new System.Drawing.Point(383, 19);
+      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 127);
       this.pMovPicsRecent.Name = "pMovPicsRecent";
-      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 101);
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 89);
       this.pMovPicsRecent.TabIndex = 5;
       this.toolTip1.SetToolTip(this.pMovPicsRecent, "This Option Not Currently Supported by Moving Pictures");
       // 
@@ -1541,7 +1604,7 @@
       this.gbMovPicsOptions.Enabled = false;
       this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 28);
       this.gbMovPicsOptions.Name = "gbMovPicsOptions";
-      this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 60);
+      this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 51);
       this.gbMovPicsOptions.TabIndex = 3;
       this.gbMovPicsOptions.TabStop = false;
       this.gbMovPicsOptions.Text = "MovingPictures Options";
@@ -1549,7 +1612,7 @@
       // rbMovPicsFull
       // 
       this.rbMovPicsFull.AutoSize = true;
-      this.rbMovPicsFull.Location = new System.Drawing.Point(147, 24);
+      this.rbMovPicsFull.Location = new System.Drawing.Point(144, 19);
       this.rbMovPicsFull.Name = "rbMovPicsFull";
       this.rbMovPicsFull.Size = new System.Drawing.Size(76, 17);
       this.rbMovPicsFull.TabIndex = 3;
@@ -1560,7 +1623,7 @@
       // rbMovPicsSummary
       // 
       this.rbMovPicsSummary.AutoSize = true;
-      this.rbMovPicsSummary.Location = new System.Drawing.Point(9, 24);
+      this.rbMovPicsSummary.Location = new System.Drawing.Point(6, 19);
       this.rbMovPicsSummary.Name = "rbMovPicsSummary";
       this.rbMovPicsSummary.Size = new System.Drawing.Size(71, 17);
       this.rbMovPicsSummary.TabIndex = 2;
@@ -1585,9 +1648,9 @@
       this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.panel1.Controls.Add(this.gbTvSeriesOptions);
       this.panel1.Controls.Add(this.cbMostRecentTvSeries);
-      this.panel1.Location = new System.Drawing.Point(30, 17);
+      this.panel1.Location = new System.Drawing.Point(0, 31);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(283, 101);
+      this.panel1.Size = new System.Drawing.Size(283, 91);
       this.panel1.TabIndex = 4;
       // 
       // gbTvSeriesOptions
@@ -1597,7 +1660,7 @@
       this.gbTvSeriesOptions.Enabled = false;
       this.gbTvSeriesOptions.Location = new System.Drawing.Point(9, 30);
       this.gbTvSeriesOptions.Name = "gbTvSeriesOptions";
-      this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 60);
+      this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 51);
       this.gbTvSeriesOptions.TabIndex = 2;
       this.gbTvSeriesOptions.TabStop = false;
       this.gbTvSeriesOptions.Text = "TVSeries Overlay Type";
@@ -1605,7 +1668,7 @@
       // rbTBSeriesFull
       // 
       this.rbTBSeriesFull.AutoSize = true;
-      this.rbTBSeriesFull.Location = new System.Drawing.Point(146, 24);
+      this.rbTBSeriesFull.Location = new System.Drawing.Point(146, 19);
       this.rbTBSeriesFull.Name = "rbTBSeriesFull";
       this.rbTBSeriesFull.Size = new System.Drawing.Size(76, 17);
       this.rbTBSeriesFull.TabIndex = 1;
@@ -1616,7 +1679,7 @@
       // rbTVSeriesSummary
       // 
       this.rbTVSeriesSummary.AutoSize = true;
-      this.rbTVSeriesSummary.Location = new System.Drawing.Point(8, 24);
+      this.rbTVSeriesSummary.Location = new System.Drawing.Point(8, 19);
       this.rbTVSeriesSummary.Name = "rbTVSeriesSummary";
       this.rbTVSeriesSummary.Size = new System.Drawing.Size(71, 17);
       this.rbTVSeriesSummary.TabIndex = 0;
@@ -2451,6 +2514,10 @@
       this.gbScreenRes.PerformLayout();
       this.tabPage2.ResumeLayout(false);
       this.infoServiceRecentOptions.ResumeLayout(false);
+      this.gbSummaryStyle.ResumeLayout(false);
+      this.gbSummaryStyle.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
       this.pMovPicsRecent.ResumeLayout(false);
       this.pMovPicsRecent.PerformLayout();
       this.gbMovPicsOptions.ResumeLayout(false);
@@ -2691,6 +2758,11 @@
     private System.Windows.Forms.RadioButton rbMovPicsFull;
     private System.Windows.Forms.RadioButton rbMovPicsSummary;
     private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.GroupBox gbSummaryStyle;
+    private System.Windows.Forms.PictureBox pictureBox7;
+    private System.Windows.Forms.PictureBox pictureBox8;
+    private System.Windows.Forms.RadioButton rbFanartStyle;
+    private System.Windows.Forms.RadioButton rbPosterStyle;
   }
 }
 

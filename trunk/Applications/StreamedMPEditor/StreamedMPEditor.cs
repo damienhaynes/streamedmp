@@ -87,6 +87,12 @@ namespace StreamedMPEditor
       full
     }
 
+    enum mostRecentSummaryStyle
+    {
+      poster,
+      fanart
+    }
+
     #endregion
 
     #region Variables
@@ -159,6 +165,10 @@ namespace StreamedMPEditor
     tvSeriesRecentType tvSeriesRecentStyle = tvSeriesRecentType.full;
     movPicsRecentType movPicsRecentStyle = movPicsRecentType.full;
 
+    //Defualt to Fanart Summary Style
+    mostRecentSummaryStyle mostRecentStyle = mostRecentSummaryStyle.fanart;
+ 
+
     // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
@@ -197,6 +207,8 @@ namespace StreamedMPEditor
         detectedres = screenResolutionType.res1280x720;
         setSDScreenRes();
       }
+
+      rbFanartStyle.Checked = true;
 
       buildDownloadForm();
       inialiseImgControls();
@@ -1000,6 +1012,7 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
   }
 }
 

@@ -19,6 +19,7 @@ namespace StreamedMPEditor
       string targetScreenRes = null;
       string tvRecentDisplayType = null;
       string movPicsDisplayType = null;
+      string mostRecentSumStyle = null;
 
       menuItems.Clear();
       itemsOnMenubar.Items.Clear();
@@ -213,6 +214,7 @@ namespace StreamedMPEditor
         cbMostRecentMovPics.Checked = bool.Parse(readEntryValue(optionsTag, "movPicsMostRecent", nodelist));
         tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
         movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
+        mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);
       }
       catch
       {
@@ -261,7 +263,24 @@ namespace StreamedMPEditor
         movPicsRecentStyle = movPicsRecentType.full;
         rbMovPicsFull.Checked = true;
       }
-      
+
+      if (mostRecentSumStyle == "fanart")
+      {
+        mostRecentStyle = mostRecentSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+      else if (mostRecentSumStyle == "poster")
+      {
+        mostRecentStyle = mostRecentSummaryStyle.poster;
+        rbPosterStyle.Checked = true;
+      }
+      else
+      {
+        //Default to Fanart Style
+        mostRecentStyle = mostRecentSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+
       if (splashScreenImage == "false")
         splashScreenImage = "splashscreen.png";
 
