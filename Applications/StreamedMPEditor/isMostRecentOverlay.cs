@@ -292,8 +292,16 @@
 
     void verticalTVSeriesSummary()
     {
-      buildSummaryFile(475);
-      writeXMLFile("basichome.recentlyadded.tvseries.VSum.xml");
+      if (mostRecentStyle == mostRecentSummaryStyle.poster)
+      {
+        buildSummaryFile(475, mostRecentSummaryStyle.poster);
+        writeXMLFile("basichome.recentlyadded.tvseries.VSum.xml");
+      }
+      if (mostRecentStyle == mostRecentSummaryStyle.fanart)
+      {
+        buildSummaryFile(475, mostRecentSummaryStyle.fanart);
+        writeXMLFile("basichome.recentlyadded.tvseries.VSum2.xml");
+      }
     }
 
     #endregion
@@ -584,163 +592,310 @@
         menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
 
       overlayYpos = menuTop - overlayOffset;
-      buildSummaryFile(overlayYpos);
-      writeXMLFile("basichome.recentlyadded.tvseries.HSum.xml");
+      if (mostRecentStyle == mostRecentSummaryStyle.poster)
+      {
+        buildSummaryFile(overlayYpos, mostRecentSummaryStyle.poster);
+        writeXMLFile("basichome.recentlyadded.tvseries.HSum.xml");
+      }
+      if (mostRecentStyle == mostRecentSummaryStyle.fanart)
+      {
+        buildSummaryFile(overlayYpos, mostRecentSummaryStyle.fanart);
+        writeXMLFile("basichome.recentlyadded.tvseries.HSum2.xml");
+      }
+
+
     }
 
     #endregion
 
     #region Summary Builder
 
-    void buildSummaryFile(int overlayYpos)
+    void buildSummaryFile(int overlayYpos, mostRecentSummaryStyle sumStyle)
     {
-      // Build the file
-      xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
-            "<window>" +
-              "<controls>" +
-                "<control>" +
-                  "<description>GROUP: RecentlyAdded Series 3</description>" +
-                  "<type>group</type>" +
-                  "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
+      #region Summary Style 1
+
+      if (sumStyle == mostRecentSummaryStyle.poster)
+      {
+        // Build the file
+        xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
+              "<window>" +
+                "<controls>" +
                   "<control>" +
-                    "<description>Series 3 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>861</posX>" +
-                    "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                    "<width>135</width>" +
-                    "<height>220</height>" +
-                    "<texture>pic_preview_thumb_background.png</texture>" +
-                    "<colordiffuse>99FFFFFF</colordiffuse>" +
+                    "<description>GROUP: RecentlyAdded Series 3</description>" +
+                    "<type>group</type>" +
+                    "<dimColor>0xffffffff</dimColor>" +
+                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
+                    "<control>" +
+                      "<description>Series 3 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>861</posX>" +
+                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<width>135</width>" +
+                      "<height>220</height>" +
+                      "<texture>pic_preview_thumb_background.png</texture>" +
+                      "<colordiffuse>99FFFFFF</colordiffuse>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 3 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>871</posX>" +
+                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<height>170</height>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 3 episode</description>" +
+                      "<type>label</type>" +
+                      "<id>0</id>" +
+                      "<posX>871</posX>" +
+                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<label>#infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>" +
+                      "<font>mediastream10tc</font>" +
+                      "<align>center</align>" +
+                      "<textcolor>White</textcolor>" +
+                    "</control>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>871</posX>" +
-                    "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<height>170</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
+                    "<description>GROUP: RecentlyAdded Series 2</description>" +
+                    "<type>group</type>" +
+                    "<dimColor>0xffffffff</dimColor>" +
+                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
+                    "<control>" +
+                      "<description>Series 2 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1001</posX>" +
+                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<width>135</width>" +
+                      "<height>220</height>" +
+                      "<texture>pic_preview_thumb_background.png</texture>" +
+                      "<colordiffuse>99FFFFFF</colordiffuse>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 2 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1011</posX>" +
+                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<height>170</height>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 2 episode</description>" +
+                      "<type>label</type>" +
+                      "<id>0</id>" +
+                      "<posX>1011</posX>" +
+                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<label>#infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>" +
+                      "<font>mediastream10tc</font>" +
+                      "<align>center</align>" +
+                      "<textcolor>White</textcolor>" +
+                    "</control>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 episode</description>" +
-                    "<type>label</type>" +
-                    "<id>0</id>" +
-                    "<posX>871</posX>" +
-                    "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<label>#infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>" +
-                    "<font>mediastream10tc</font>" +
-                    "<align>center</align>" +
-                    "<textcolor>White</textcolor>" +
+                    "<description>GROUP: RecentlyAdded Series 1</description>" +
+                    "<type>group</type>" +
+                    "<dimColor>0xffffffff</dimColor>" +
+                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
+                    "<control>" +
+                      "<description>Series 3 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1141</posX>" +
+                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<width>135</width>" +
+                      "<height>220</height>" +
+                      "<texture>pic_preview_thumb_background.png</texture>" +
+                      "<colordiffuse>99FFFFFF</colordiffuse>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 3 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1151</posX>" +
+                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<height>170</height>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 3 episode</description>" +
+                      "<type>label</type>" +
+                      "<id>0</id>" +
+                      "<posX>1151</posX>" +
+                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<label>#infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>" +
+                      "<font>mediastream10tc</font>" +
+                      "<align>center</align>" +
+                      "<textcolor>White</textcolor>" +
+                    "</control>" +
                   "</control>" +
-                "</control>" +
-                "<control>" +
-                  "<description>GROUP: RecentlyAdded Series 2</description>" +
-                  "<type>group</type>" +
-                  "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "<control>" +
-                    "<description>Series 2 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>1001</posX>" +
-                    "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                    "<width>135</width>" +
-                    "<height>220</height>" +
-                    "<texture>pic_preview_thumb_background.png</texture>" +
-                    "<colordiffuse>99FFFFFF</colordiffuse>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 2 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>1011</posX>" +
-                    "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<height>170</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 2 episode</description>" +
-                    "<type>label</type>" +
-                    "<id>0</id>" +
-                    "<posX>1011</posX>" +
-                    "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<label>#infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>" +
-                    "<font>mediastream10tc</font>" +
-                    "<align>center</align>" +
-                    "<textcolor>White</textcolor>" +
-                  "</control>" +
-                "</control>" +
-                "<control>" +
-                  "<description>GROUP: RecentlyAdded Series 1</description>" +
-                  "<type>group</type>" +
-                  "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "<control>" +
-                    "<description>Series 3 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>1141</posX>" +
-                    "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                    "<width>135</width>" +
-                    "<height>220</height>" +
-                    "<texture>pic_preview_thumb_background.png</texture>" +
-                    "<colordiffuse>99FFFFFF</colordiffuse>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 3 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>1151</posX>" +
-                    "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<height>170</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 3 episode</description>" +
-                    "<type>label</type>" +
-                    "<id>0</id>" +
-                    "<posX>1151</posX>" +
-                    "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<label>#infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>" +
-                    "<font>mediastream10tc</font>" +
-                    "<align>center</align>" +
-                    "<textcolor>White</textcolor>" +
-                  "</control>" +
-                "</control>" +
-              "</controls>" +
+                "</controls>" +
+              "</window>";
+      }
+
+#endregion
+
+      #region Summary Style 2
+
+      if (sumStyle == mostRecentSummaryStyle.fanart)
+      {
+        xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
+              "<window>\n" +
+                "<controls>\n" +
+                  "<control>\n" +
+                    "<description>GROUP: RecentlyAdded Series</description>\n" +
+                    "<type>group</type>\n" +
+                    "<dimColor>0xffffffff</dimColor>\n" +
+                    "<visible>control.isvisible(1004)</visible>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+                  "<control>\n" +
+                    "<description>Series 1 BG</description>\n" +
+                    "<posX>1000</posX>\n" +
+                    "<posY>70</posY>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<width>270</width>\n" +
+                    "<height>270</height>\n" +
+                    "<texture>previewbackground.png</texture>\n" +
+                    "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 1 thumb</description>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1001</posX>\n" +
+                    "<posY>90</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<keepaspectratio>true</keepaspectratio>\n" +
+                    "<texture>#infoservice.recentlyAdded.series1.fanart</texture>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Header label</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>70</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>LATEST EPISODES</label>\n" +
+                    "<font>mediastream9c</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "</control>      " +
+                  "<control>\n" +
+                    "<description>Series 1 name</description>\n" +
+                    "<type>fadelabel</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>235</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series1.title - #infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>\n" +
+                    "<font>mediastream9c</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 1 title</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>250</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
+                    "<font>mediastream10tc</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "</control>    " +
+                  "<control>\n" +
+                    "<description>Series 2 name</description>\n" +
+                    "<type>fadelabel</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>270</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series2.title - #infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>\n" +
+                    "<font>mediastream9c</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 2 title</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>285</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
+                    "<font>mediastream10tc</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 3 name</description>\n" +
+                    "<type>fadelabel</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>305</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series3.title - #infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>\n" +
+                    "<font>mediastream9c</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 1 title</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1005</posX>\n" +
+                    "<posY>320</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
+                    "<font>mediastream10tc</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>\n" +
+                  "</control>      " +
+                "</control>\n" +
+              "</controls>\n" +
             "</window>";
+      }
 
+      #endregion
     }
-
     #endregion
 
   }

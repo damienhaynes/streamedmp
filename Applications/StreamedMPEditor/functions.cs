@@ -1424,9 +1424,15 @@ namespace StreamedMPEditor
     private void rbTVSeriesSummary_CheckedChanged(object sender, EventArgs e)
     {
       if (rbTBSeriesFull.Checked)
+      {
         tvSeriesRecentStyle = tvSeriesRecentType.full;
+        gbSummaryStyle.Enabled = false;
+      }
       else
+      {
         tvSeriesRecentStyle = tvSeriesRecentType.summary;
+        gbSummaryStyle.Enabled = true;
+      }
     }
 
     private void cbMostRecentMovPics_CheckedChanged(object sender, EventArgs e)
@@ -1440,11 +1446,25 @@ namespace StreamedMPEditor
     private void rbMovPicsSummary_CheckedChanged(object sender, EventArgs e)
     {
       if (rbMovPicsFull.Checked)
+      {
         movPicsRecentStyle = movPicsRecentType.full;
+        gbSummaryStyle.Enabled = false;
+      }
       else
+      {
         movPicsRecentStyle = movPicsRecentType.summary;
+        gbSummaryStyle.Enabled = true;
+      }
     }
 
+    private void rbFanartStyle_CheckedChanged(object sender, EventArgs e)
+    {
+      if (rbFanartStyle.Checked)
+        mostRecentStyle = mostRecentSummaryStyle.fanart;
+      else
+        mostRecentStyle = mostRecentSummaryStyle.poster;
+    }    
+    
     //
     // Write out a formatted xml file
     //
