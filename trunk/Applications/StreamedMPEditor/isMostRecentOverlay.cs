@@ -768,6 +768,11 @@
 
       if (sumStyle == mostRecentSummaryStyle.fanart)
       {
+        string fanartProperty = "#infoservice.recentlyAdded.series1.thumb";
+
+        if (cbCycleFanart.Checked)
+          fanartProperty = "#StreamedMP.MostRecentImageFanart";
+
         xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
               "<window>\n" +
                 "<controls>\n" +
@@ -802,7 +807,7 @@
                     "<posY>90</posY>\n" +
                     "<width>255</width>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series1.fanart</texture>\n" +
+                    "<texture>" + fanartProperty + "</texture>\n" +
                     "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
                   "</control>\n" +
                   "<control>\n" +

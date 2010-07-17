@@ -109,7 +109,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) D:\HTPC\MediaPortal\plugins\windows\
+if $(ConfigurationName) == Debug copy $(ProjectDir)bin\Debug\$(TargetFileName) $(SolutionDir)..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\windows\</PostBuildEvent>
   </PropertyGroup>
 </Project>

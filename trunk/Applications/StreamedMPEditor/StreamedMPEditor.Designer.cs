@@ -229,6 +229,7 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbCycleFanart = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1533,6 +1534,7 @@
       // 
       // gbSummaryStyle
       // 
+      this.gbSummaryStyle.Controls.Add(this.cbCycleFanart);
       this.gbSummaryStyle.Controls.Add(this.rbFanartStyle);
       this.gbSummaryStyle.Controls.Add(this.rbPosterStyle);
       this.gbSummaryStyle.Controls.Add(this.pictureBox8);
@@ -1547,7 +1549,7 @@
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
-      this.rbFanartStyle.Location = new System.Drawing.Point(266, 151);
+      this.rbFanartStyle.Location = new System.Drawing.Point(278, 125);
       this.rbFanartStyle.Name = "rbFanartStyle";
       this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
       this.rbFanartStyle.TabIndex = 3;
@@ -1559,7 +1561,7 @@
       // rbPosterStyle
       // 
       this.rbPosterStyle.AutoSize = true;
-      this.rbPosterStyle.Location = new System.Drawing.Point(26, 151);
+      this.rbPosterStyle.Location = new System.Drawing.Point(14, 125);
       this.rbPosterStyle.Name = "rbPosterStyle";
       this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
       this.rbPosterStyle.TabIndex = 2;
@@ -1570,16 +1572,16 @@
       // pictureBox8
       // 
       this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-      this.pictureBox8.Location = new System.Drawing.Point(266, 38);
+      this.pictureBox8.Location = new System.Drawing.Point(278, 17);
       this.pictureBox8.Name = "pictureBox8";
-      this.pictureBox8.Size = new System.Drawing.Size(101, 107);
+      this.pictureBox8.Size = new System.Drawing.Size(102, 102);
       this.pictureBox8.TabIndex = 1;
       this.pictureBox8.TabStop = false;
       // 
       // pictureBox7
       // 
       this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-      this.pictureBox7.Location = new System.Drawing.Point(26, 57);
+      this.pictureBox7.Location = new System.Drawing.Point(14, 32);
       this.pictureBox7.Name = "pictureBox7";
       this.pictureBox7.Size = new System.Drawing.Size(199, 87);
       this.pictureBox7.TabIndex = 0;
@@ -2458,6 +2460,16 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbCycleFanart
+      // 
+      this.cbCycleFanart.AutoSize = true;
+      this.cbCycleFanart.Location = new System.Drawing.Point(278, 148);
+      this.cbCycleFanart.Name = "cbCycleFanart";
+      this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
+      this.cbCycleFanart.TabIndex = 4;
+      this.cbCycleFanart.Text = "Cycle Fanart";
+      this.cbCycleFanart.UseVisualStyleBackColor = true;
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2763,6 +2775,7 @@
     private System.Windows.Forms.PictureBox pictureBox8;
     private System.Windows.Forms.RadioButton rbFanartStyle;
     private System.Windows.Forms.RadioButton rbPosterStyle;
+    private System.Windows.Forms.CheckBox cbCycleFanart;
   }
 }
 
