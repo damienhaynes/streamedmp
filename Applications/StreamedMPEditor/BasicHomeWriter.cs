@@ -3793,6 +3793,7 @@ namespace StreamedMPEditor
       string animatedBackground = cbAnimateBackground.Checked ? "true" : "false";
       string tvSeriesMostRecent = cbMostRecentTvSeries.Checked ? "true" : "false";
       string movPicsMostRecent = cbMostRecentMovPics.Checked ? "true" : "false";
+      string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
 
 
       if (direction == menuType.horizontal)
@@ -3891,8 +3892,9 @@ namespace StreamedMPEditor
                 + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 2, true)
                 + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
                 + generateEntry("mostRecentSumStyle", mostRecentSumStyle, 2, true)
+                + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 2, true)
                 + "</section>");
-
+      
       StringBuilder rawXML = new StringBuilder();
 
       rawXML.AppendLine("<!-- End Of Menu Options --><section name=" + quote + "StreamedMP Menu Items" + quote + ">");

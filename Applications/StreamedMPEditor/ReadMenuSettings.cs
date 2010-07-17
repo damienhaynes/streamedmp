@@ -215,6 +215,7 @@ namespace StreamedMPEditor
         tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
         movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
         mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);
+        cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
       }
       catch
       {
@@ -246,11 +247,14 @@ namespace StreamedMPEditor
       {
         tvSeriesRecentStyle = tvSeriesRecentType.summary;
         rbTVSeriesSummary.Checked = true;
+        gbSummaryStyle.Enabled = true;
       }
       else
       {
         tvSeriesRecentStyle = tvSeriesRecentType.full;
         rbTBSeriesFull.Checked = true;
+        gbSummaryStyle.Enabled = false;
+
       }
 
       if (movPicsDisplayType == "summary")
