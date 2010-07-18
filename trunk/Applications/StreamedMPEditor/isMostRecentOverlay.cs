@@ -789,13 +789,13 @@
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 1 BG</description>\n" +
-                    "<posX>1000</posX>\n" +
-                    "<posY>70</posY>\n" +
+                    "<posX>976</posX>\n" +
+                    "<posY>50</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>270</width>\n" +
-                    "<height>270</height>\n" +
-                    "<texture>previewbackground.png</texture>\n" +
+                    "<width>306</width>\n" +
+                    "<height>320</height>\n" +
+                    "<texture>recentsummoverlaybg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                     "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
                   "</control>\n" +
@@ -803,9 +803,9 @@
                     "<description>Series 1 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1001</posX>\n" +
-                    "<posY>90</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>990</posX>\n" +
+                    "<posY>92</posY>\n" +
+                    "<width>265</width>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>" + fanartProperty + "</texture>\n" +
                     "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
@@ -814,11 +814,11 @@
                     "<description>Header label</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
+                    "<posX>995</posX>\n" +
                     "<posY>70</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>LATEST EPISODES</label>\n" +
-                    "<font>mediastream9c</font>\n" +
+                    "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                     "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
                   "</control>      " +
@@ -826,8 +826,8 @@
                     "<description>Series 1 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>235</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>245</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#infoservice.recentlyAdded.series1.title - #infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>\n" +
                     "<font>mediastream9c</font>\n" +
@@ -838,8 +838,8 @@
                     "<description>Series 1 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>250</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>260</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
                     "<font>mediastream10tc</font>\n" +
@@ -850,8 +850,8 @@
                     "<description>Series 2 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>270</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>280</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#infoservice.recentlyAdded.series2.title - #infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>\n" +
                     "<font>mediastream9c</font>\n" +
@@ -862,8 +862,8 @@
                     "<description>Series 2 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>285</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>295</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
                     "<font>mediastream10tc</font>\n" +
@@ -874,8 +874,8 @@
                     "<description>Series 3 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>305</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>315</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#infoservice.recentlyAdded.series3.title - #infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>\n" +
                     "<font>mediastream9c</font>\n" +
@@ -886,8 +886,8 @@
                     "<description>Series 1 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1005</posX>\n" +
-                    "<posY>320</posY>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>330</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
                     "<font>mediastream10tc</font>\n" +

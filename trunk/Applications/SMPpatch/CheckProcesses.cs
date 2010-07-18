@@ -8,17 +8,17 @@ namespace SMPpatch
   // Class to check if a process is active
   class CheckProcesses
   {
-    private string pName;
+    private string _pName;
     public CheckProcesses(string pName)
     {
-      this.pName = pName;
+      this._pName = pName;
     }
 
    public bool running
     {
       get
       {
-        Process[] processes = Process.GetProcessesByName(pName);
+        Process[] processes = Process.GetProcessesByName(_pName);
         if (processes.Length == 0)
           return false;
         return true;

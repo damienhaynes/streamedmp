@@ -4,13 +4,33 @@ using System.Globalization;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Util;
+using System.Xml;
+using System.IO;
 
 namespace StreamedMPConfig
 {
   class settings
   {
     #region Public methods
- 
+
+
+    public bool isVisEnabled 
+    {
+      get
+      {
+        return _isVisEnabled();
+      }
+    }
+
+    public bool timerRequired
+    {
+      get
+      {
+        return _timerRequired();
+      }
+    }
+
+
     public static void Load()
     {
       Log.Info("StreamedMPConfig: Settings.Load()");
@@ -75,6 +95,85 @@ namespace StreamedMPConfig
         MediaPortal.Profile.Settings.SaveCache();
       }
     }
+
+    bool _isVisEnabled()
+    {
+      using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+      {
+        return xmlreader.GetValueAsBool("musicmisc", "showVisInNowPlaying", false);
+      }
+    }
+
+    bool _timerRequired()
+    {
+      string usermenuprofile = SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml";
+      string optionsTag = "StreamedMP Options";
+      XmlDocument doc = new XmlDocument();
+      //
+      // Open the usermenu settings file - NOTE: need to check for it in correct location, if not found look in skin dir for default version
+      //
+      if (!File.Exists(usermenuprofile))
+      {
+        // Ok, so no usermenuprofile.xml exists, this is most likely because this is a new skin install and this is the first time
+        // the editor has been run and the file has not yet been created in the default location.
+        // Check for and load the default version supplied with the skin
+        usermenuprofile = SkinInfo.mpPaths.streamedMPpath + "usermenuprofile.xml";
+        if (!File.Exists(usermenuprofile))
+        {
+          //ok, so now really in trouble, throw an error to the user and bailout!
+          Log.Error("Can't find usermenuprofile.xml \r\r" + SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
+        }
+      }
+      try
+      {
+        doc.Load(usermenuprofile);
+      }
+      catch (Exception e)
+      {
+        Log.Error("Exception while loading usermenuprofile.xml\n\n" + e.Message);
+        return false;
+      }
+      XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
+      try
+      {
+        return bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
+      }
+      catch
+      {
+        Log.Error("StreamedMPConfig: Option mostRecentCycleFanart not present");
+        return false;
+      }
+
+    }
+
+    private string readEntryValue(string section, string elementName, XmlNodeList unodeList)
+    {
+      string entryValue;
+
+      foreach (XmlNode node in unodeList)
+      {
+        XmlNode innerNode = node.Attributes.GetNamedItem("name");
+        if (innerNode.InnerText == "StreamedMP")
+        {
+          XmlNodeList skinNodeList = node.SelectNodes("section");
+          foreach (XmlNode skinNode in skinNodeList)
+          {
+            XmlNode skinNodeSection = skinNode.Attributes.GetNamedItem("name");
+            if (skinNodeSection.InnerText == section)
+            {
+              XmlNode path = skinNode.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
+              if (path != null)
+              {
+                entryValue = path.InnerText;
+                return entryValue;
+              }
+            }
+          }
+        }
+      }
+      return "false";
+    }
+
 
     #endregion
   }
