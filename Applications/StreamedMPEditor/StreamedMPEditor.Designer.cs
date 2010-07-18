@@ -143,8 +143,8 @@
       this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
       this.rbFanartStyle = new System.Windows.Forms.RadioButton();
       this.rbPosterStyle = new System.Windows.Forms.RadioButton();
-      this.pictureBox8 = new System.Windows.Forms.PictureBox();
       this.pictureBox7 = new System.Windows.Forms.PictureBox();
+      this.pictureBox8 = new System.Windows.Forms.PictureBox();
       this.pMovPicsRecent = new System.Windows.Forms.Panel();
       this.gbMovPicsOptions = new System.Windows.Forms.GroupBox();
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
@@ -230,6 +230,7 @@
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
       this.cbCycleFanart = new System.Windows.Forms.CheckBox();
+      this.btFormatOptions = new System.Windows.Forms.Button();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -261,8 +262,8 @@
       this.tabPage2.SuspendLayout();
       this.infoServiceRecentOptions.SuspendLayout();
       this.gbSummaryStyle.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
       this.pMovPicsRecent.SuspendLayout();
       this.gbMovPicsOptions.SuspendLayout();
       this.panel1.SuspendLayout();
@@ -1534,11 +1535,12 @@
       // 
       // gbSummaryStyle
       // 
-      this.gbSummaryStyle.Controls.Add(this.cbCycleFanart);
+      this.gbSummaryStyle.Controls.Add(this.btFormatOptions);
       this.gbSummaryStyle.Controls.Add(this.rbFanartStyle);
+      this.gbSummaryStyle.Controls.Add(this.cbCycleFanart);
       this.gbSummaryStyle.Controls.Add(this.rbPosterStyle);
-      this.gbSummaryStyle.Controls.Add(this.pictureBox8);
       this.gbSummaryStyle.Controls.Add(this.pictureBox7);
+      this.gbSummaryStyle.Controls.Add(this.pictureBox8);
       this.gbSummaryStyle.Location = new System.Drawing.Point(289, 19);
       this.gbSummaryStyle.Name = "gbSummaryStyle";
       this.gbSummaryStyle.Size = new System.Drawing.Size(413, 197);
@@ -1549,7 +1551,7 @@
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
-      this.rbFanartStyle.Location = new System.Drawing.Point(278, 125);
+      this.rbFanartStyle.Location = new System.Drawing.Point(256, 123);
       this.rbFanartStyle.Name = "rbFanartStyle";
       this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
       this.rbFanartStyle.TabIndex = 3;
@@ -1561,7 +1563,7 @@
       // rbPosterStyle
       // 
       this.rbPosterStyle.AutoSize = true;
-      this.rbPosterStyle.Location = new System.Drawing.Point(14, 125);
+      this.rbPosterStyle.Location = new System.Drawing.Point(14, 123);
       this.rbPosterStyle.Name = "rbPosterStyle";
       this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
       this.rbPosterStyle.TabIndex = 2;
@@ -1569,23 +1571,23 @@
       this.rbPosterStyle.Text = "Poster Style";
       this.rbPosterStyle.UseVisualStyleBackColor = true;
       // 
-      // pictureBox8
-      // 
-      this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-      this.pictureBox8.Location = new System.Drawing.Point(278, 17);
-      this.pictureBox8.Name = "pictureBox8";
-      this.pictureBox8.Size = new System.Drawing.Size(102, 102);
-      this.pictureBox8.TabIndex = 1;
-      this.pictureBox8.TabStop = false;
-      // 
       // pictureBox7
       // 
       this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-      this.pictureBox7.Location = new System.Drawing.Point(14, 32);
+      this.pictureBox7.Location = new System.Drawing.Point(14, 30);
       this.pictureBox7.Name = "pictureBox7";
       this.pictureBox7.Size = new System.Drawing.Size(199, 87);
       this.pictureBox7.TabIndex = 0;
       this.pictureBox7.TabStop = false;
+      // 
+      // pictureBox8
+      // 
+      this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+      this.pictureBox8.Location = new System.Drawing.Point(256, 15);
+      this.pictureBox8.Name = "pictureBox8";
+      this.pictureBox8.Size = new System.Drawing.Size(102, 102);
+      this.pictureBox8.TabIndex = 1;
+      this.pictureBox8.TabStop = false;
       // 
       // pMovPicsRecent
       // 
@@ -2463,12 +2465,22 @@
       // cbCycleFanart
       // 
       this.cbCycleFanart.AutoSize = true;
-      this.cbCycleFanart.Location = new System.Drawing.Point(278, 148);
+      this.cbCycleFanart.Location = new System.Drawing.Point(256, 156);
       this.cbCycleFanart.Name = "cbCycleFanart";
       this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
       this.cbCycleFanart.TabIndex = 4;
       this.cbCycleFanart.Text = "Cycle Fanart";
       this.cbCycleFanart.UseVisualStyleBackColor = true;
+      // 
+      // btFormatOptions
+      // 
+      this.btFormatOptions.Location = new System.Drawing.Point(14, 156);
+      this.btFormatOptions.Name = "btFormatOptions";
+      this.btFormatOptions.Size = new System.Drawing.Size(102, 23);
+      this.btFormatOptions.TabIndex = 5;
+      this.btFormatOptions.Text = "Formating Options";
+      this.btFormatOptions.UseVisualStyleBackColor = true;
+      this.btFormatOptions.Click += new System.EventHandler(this.btFormatOptions_Click);
       // 
       // streamedMpEditor
       // 
@@ -2528,8 +2540,8 @@
       this.infoServiceRecentOptions.ResumeLayout(false);
       this.gbSummaryStyle.ResumeLayout(false);
       this.gbSummaryStyle.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
       this.pMovPicsRecent.ResumeLayout(false);
       this.pMovPicsRecent.PerformLayout();
       this.gbMovPicsOptions.ResumeLayout(false);
@@ -2775,6 +2787,7 @@
     private System.Windows.Forms.PictureBox pictureBox8;
     private System.Windows.Forms.RadioButton rbFanartStyle;
     private System.Windows.Forms.RadioButton rbPosterStyle;
+    private System.Windows.Forms.Button btFormatOptions;
     private System.Windows.Forms.CheckBox cbCycleFanart;
   }
 }
