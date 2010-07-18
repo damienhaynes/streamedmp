@@ -1013,6 +1013,10 @@ namespace StreamedMPEditor
 
     #endregion
 
+    private void btFormatOptions_Click(object sender, EventArgs e)
+    {
+      MessageBox.Show("This section has yet to be written - Please try later");
+    }
   }
 }
 
