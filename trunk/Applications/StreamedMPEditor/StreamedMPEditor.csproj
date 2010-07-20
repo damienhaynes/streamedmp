@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -151,7 +151,6 @@
   <ItemGroup>
     <EmbeddedResource Include="mrsFormatOptions.resx">
       <DependentUpon>mrsFormatOptions.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="xmlFiles\AeonBasicHomeDefault.xml" />
     <EmbeddedResource Include="xmlFiles\HBasicHomeSkeleton.xml" />
@@ -229,7 +228,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) D:\HTPC\MediaPortal\plugins\process\
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) F:\HTPC\MediaPortal\plugins\process\
 if $(ConfigurationName) == Debug copy $(ProjectDir)bin\x86\Debug\$(TargetFileName) $(SolutionDir)..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\process\</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
