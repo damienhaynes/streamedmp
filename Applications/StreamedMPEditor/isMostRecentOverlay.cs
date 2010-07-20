@@ -768,7 +768,7 @@
 
       if (sumStyle == mostRecentSummaryStyle.fanart)
       {
-        string fanartProperty = "#infoservice.recentlyAdded.series1.thumb";
+        string fanartProperty = "#infoservice.recentlyAdded.series1.fanart";
 
         if (cbCycleFanart.Checked)
           fanartProperty = "#StreamedMP.MostRecentImageFanart";
@@ -808,7 +808,18 @@
                     "<width>265</width>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>" + fanartProperty + "</texture>\n" +
-                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Series 1 thumb (1920x1080)</description>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1510</posX>\n" +
+                    "<posY>132</posY>\n" +
+                    "<width>400</width>\n" +
+                    "<keepaspectratio>true</keepaspectratio>\n" +
+                    "<texture>" + fanartProperty + "</texture>\n" +
+                    "<visible>!string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Header label</description>\n" +
