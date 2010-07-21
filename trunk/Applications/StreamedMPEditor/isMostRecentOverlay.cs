@@ -934,7 +934,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.fanart,#)</visible>" +
+                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series1.fanart,#)|string.starts(#infoservice.recentlyAdded.series1.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -990,7 +990,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.fanart,#)</visible>" +
+                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series2.fanart,#)|string.starts(#infoservice.recentlyAdded.series2.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1024,7 +1024,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.fanart,#)</visible>" +
+                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series3.fanart,#)|string.starts(#infoservice.recentlyAdded.series3.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1062,7 +1062,7 @@
                   "<width>265</width>\n" +
                   "<keepaspectratio>true</keepaspectratio>\n" +
                   "<texture>" + fanartProperty + "</texture>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.fanart,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
+                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1079,7 +1079,7 @@
                   "<width>400</width>\n" +
                   "<keepaspectratio>true</keepaspectratio>\n" +
                   "<texture>" + fanartProperty + "</texture>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.fanart,#)+string.equals(#StreamedMP.FullHD,true)</visible>" +
+                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
