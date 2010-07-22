@@ -3794,6 +3794,11 @@ namespace StreamedMPEditor
       string tvSeriesMostRecent = cbMostRecentTvSeries.Checked ? "true" : "false";
       string movPicsMostRecent = cbMostRecentMovPics.Checked ? "true" : "false";
       string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
+      string mrSeriesEpisodeFormat = mrsForm.mrSeriesEpisodeFormat ? "true" : "false";
+      string mrTitleLast = mrsForm.mrTitleLast ? "true" : "false";
+
+
+
 
 
       if (direction == menuType.horizontal)
@@ -3854,7 +3859,6 @@ namespace StreamedMPEditor
       else
         mostRecentSumStyle = "poster";
 
-
       xml = ("<profile>"
                 + "<version>1.0</version>"
                 + "<skin name=\"StreamedMP\">"
@@ -3893,6 +3897,10 @@ namespace StreamedMPEditor
                 + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
                 + generateEntry("mostRecentSumStyle", mostRecentSumStyle, 2, true)
                 + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 2, true)
+                + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 2, true)
+                + generateEntry("mrTitleLast", mrTitleLast, 2, true)
+                + generateEntry("mrEpisodeFont", mrsForm.mrEpisodeFont, 2, true)
+                + generateEntry("mrSeriesFont", mrsForm.mrSeriesFont, 2, true)
                 + "</section>");
       
       StringBuilder rawXML = new StringBuilder();

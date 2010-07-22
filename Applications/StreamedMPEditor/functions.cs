@@ -1460,9 +1460,15 @@ namespace StreamedMPEditor
     private void rbFanartStyle_CheckedChanged(object sender, EventArgs e)
     {
       if (rbFanartStyle.Checked)
+      {
         mostRecentStyle = mostRecentSummaryStyle.fanart;
+        btFormatOptions.Enabled = true;
+      }
       else
+      {
         mostRecentStyle = mostRecentSummaryStyle.poster;
+        btFormatOptions.Enabled = false;
+      }
     }    
     
     //

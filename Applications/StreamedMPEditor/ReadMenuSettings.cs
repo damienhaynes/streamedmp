@@ -216,12 +216,23 @@ namespace StreamedMPEditor
         movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
         mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);
         cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
+        mrsForm.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
+        mrsForm.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
+        mrsForm.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
+        mrsForm.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
       }
       catch
       {
         // Most likley a new option added but not written to file yet - just continue
       }
-      
+
+      if (mrsForm.mrSeriesFont == "false" || mrsForm.mrEpisodeFont == "false")
+      {
+        mrsForm.mrSeriesFont = "mediastream10tc";
+        mrsForm.mrEpisodeFont = "mediastream9c";
+      }
+
+
       // As only saving the animated state set the static state true if animimated state is false
       if (!animatedIconsInstalled())
       {
@@ -272,11 +283,13 @@ namespace StreamedMPEditor
       {
         mostRecentStyle = mostRecentSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
+        btFormatOptions.Enabled = true;
       }
       else if (mostRecentSumStyle == "poster")
       {
         mostRecentStyle = mostRecentSummaryStyle.poster;
         rbPosterStyle.Checked = true;
+        btFormatOptions.Enabled = false;
       }
       else
       {

@@ -175,6 +175,8 @@ namespace StreamedMPEditor
 
     public Regex isIleagalXML = new Regex("[&<>]");
 
+    mrsFormatOptions mrsForm = new mrsFormatOptions();
+
     #endregion
 
     #region Public methods
@@ -914,6 +916,10 @@ namespace StreamedMPEditor
       setBasicHomeValues();
     }
 
+    private void btFormatOptions_Click(object sender, EventArgs e)
+    {
+      mrsForm.Show();
+    }
 
     #endregion
 
@@ -1013,12 +1019,6 @@ namespace StreamedMPEditor
 
     #endregion
 
-    private void btFormatOptions_Click(object sender, EventArgs e)
-    {
-      mrsFormatOptions mrsForm = new mrsFormatOptions();
-
-      mrsForm.Show();
-    }
   }
 }
 

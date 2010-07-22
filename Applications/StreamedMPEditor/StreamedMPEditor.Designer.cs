@@ -141,7 +141,9 @@
       this.tabPage2 = new System.Windows.Forms.TabPage();
       this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
       this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
+      this.btFormatOptions = new System.Windows.Forms.Button();
       this.rbFanartStyle = new System.Windows.Forms.RadioButton();
+      this.cbCycleFanart = new System.Windows.Forms.CheckBox();
       this.rbPosterStyle = new System.Windows.Forms.RadioButton();
       this.pictureBox7 = new System.Windows.Forms.PictureBox();
       this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -229,8 +231,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbCycleFanart = new System.Windows.Forms.CheckBox();
-      this.btFormatOptions = new System.Windows.Forms.Button();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1548,6 +1548,16 @@
       this.gbSummaryStyle.TabStop = false;
       this.gbSummaryStyle.Text = "Summary Style";
       // 
+      // btFormatOptions
+      // 
+      this.btFormatOptions.Location = new System.Drawing.Point(14, 156);
+      this.btFormatOptions.Name = "btFormatOptions";
+      this.btFormatOptions.Size = new System.Drawing.Size(199, 23);
+      this.btFormatOptions.TabIndex = 5;
+      this.btFormatOptions.Text = "Fanart Style Formating Options";
+      this.btFormatOptions.UseVisualStyleBackColor = true;
+      this.btFormatOptions.Click += new System.EventHandler(this.btFormatOptions_Click);
+      // 
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
@@ -1559,6 +1569,16 @@
       this.rbFanartStyle.Text = "Fanart Style";
       this.rbFanartStyle.UseVisualStyleBackColor = true;
       this.rbFanartStyle.CheckedChanged += new System.EventHandler(this.rbFanartStyle_CheckedChanged);
+      // 
+      // cbCycleFanart
+      // 
+      this.cbCycleFanart.AutoSize = true;
+      this.cbCycleFanart.Location = new System.Drawing.Point(256, 156);
+      this.cbCycleFanart.Name = "cbCycleFanart";
+      this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
+      this.cbCycleFanart.TabIndex = 4;
+      this.cbCycleFanart.Text = "Cycle Fanart";
+      this.cbCycleFanart.UseVisualStyleBackColor = true;
       // 
       // rbPosterStyle
       // 
@@ -2461,26 +2481,6 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
-      // 
-      // cbCycleFanart
-      // 
-      this.cbCycleFanart.AutoSize = true;
-      this.cbCycleFanart.Location = new System.Drawing.Point(256, 156);
-      this.cbCycleFanart.Name = "cbCycleFanart";
-      this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
-      this.cbCycleFanart.TabIndex = 4;
-      this.cbCycleFanart.Text = "Cycle Fanart";
-      this.cbCycleFanart.UseVisualStyleBackColor = true;
-      // 
-      // btFormatOptions
-      // 
-      this.btFormatOptions.Location = new System.Drawing.Point(14, 156);
-      this.btFormatOptions.Name = "btFormatOptions";
-      this.btFormatOptions.Size = new System.Drawing.Size(102, 23);
-      this.btFormatOptions.TabIndex = 5;
-      this.btFormatOptions.Text = "Formating Options";
-      this.btFormatOptions.UseVisualStyleBackColor = true;
-      this.btFormatOptions.Click += new System.EventHandler(this.btFormatOptions_Click);
       // 
       // streamedMpEditor
       // 
