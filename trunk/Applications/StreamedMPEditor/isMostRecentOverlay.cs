@@ -1054,7 +1054,7 @@
                     if (mrSeriesTitleLast)
                       xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series3.title</label>\n";
                     else
-                      xml += "<label>#infoservice.recentlyAdded.series2.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+                      xml += "<label>#infoservice.recentlyAdded.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
                     xml += "<font>" + mrSeriesNameFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
