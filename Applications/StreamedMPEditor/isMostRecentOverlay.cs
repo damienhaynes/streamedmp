@@ -1052,7 +1052,7 @@
                     "<posY>315</posY>\n" +
                     "<width>258</width>\n";
                     if (mrSeriesTitleLast)
-                      xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series1.title</label>\n";
+                      xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series3.title</label>\n";
                     else
                       xml += "<label>#infoservice.recentlyAdded.series1.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
                     xml += "<font>" + mrSeriesNameFont + "</font>\n" +
