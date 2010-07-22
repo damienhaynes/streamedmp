@@ -30,6 +30,13 @@ namespace StreamedMPConfig
       }
     }
 
+    public bool mrSeasonEpisodeStyle2
+    {
+      get
+      {
+        return _mrSeasonEpisodeStyle2();
+      }
+    }
 
     public static void Load()
     {
@@ -104,11 +111,53 @@ namespace StreamedMPConfig
       }
     }
 
-    bool _timerRequired()
+    bool _mrSeasonEpisodeStyle2()
     {
-      string usermenuprofile = SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml";
       string optionsTag = "StreamedMP Options";
       XmlDocument doc = new XmlDocument();
+
+      if (openUsermenuProfile(doc))
+      {
+
+        XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
+        try
+        {
+          return bool.Parse(readEntryValue(optionsTag, "mrSeriesEpisodeFormat", nodelist));
+        }
+        catch
+        {
+          Log.Error("StreamedMPConfig: Option mrSeriesEpisodeFormat not present");
+          return false;
+        }
+      }
+      return false;
+    }
+
+    bool _timerRequired()
+    {
+      string optionsTag = "StreamedMP Options";
+      XmlDocument doc = new XmlDocument();
+
+      if (openUsermenuProfile(doc))
+      {
+
+        XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
+        try
+        {
+          return bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
+        }
+        catch
+        {
+          Log.Error("StreamedMPConfig: Option mostRecentCycleFanart not present");
+          return false;
+        }
+      }
+      return false;
+    }
+
+    bool openUsermenuProfile(XmlDocument doc)
+    {
+      string usermenuprofile = SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml";
       //
       // Open the usermenu settings file - NOTE: need to check for it in correct location, if not found look in skin dir for default version
       //
@@ -122,28 +171,20 @@ namespace StreamedMPConfig
         {
           //ok, so now really in trouble, throw an error to the user and bailout!
           Log.Error("Can't find usermenuprofile.xml \r\r" + SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
+          return false;
         }
       }
+
       try
       {
         doc.Load(usermenuprofile);
+        return true;
       }
       catch (Exception e)
       {
         Log.Error("Exception while loading usermenuprofile.xml\n\n" + e.Message);
         return false;
       }
-      XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/profile/skin");
-      try
-      {
-        return bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
-      }
-      catch
-      {
-        Log.Error("StreamedMPConfig: Option mostRecentCycleFanart not present");
-        return false;
-      }
-
     }
 
     private string readEntryValue(string section, string elementName, XmlNodeList unodeList)

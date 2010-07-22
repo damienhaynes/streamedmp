@@ -922,6 +922,13 @@
 
       if (sumStyle == mostRecentSummaryStyle.fanart)
       {
+
+        string mrSeriesNameFont = mrsForm.mrSeriesFont;
+        string mrEpisodeFont = mrsForm.mrEpisodeFont;
+        bool mrSeriesTitleLast = mrsForm.mrTitleLast;
+
+        
+
         string fanartProperty = "#infoservice.recentlyAdded.series1.fanart";
 
         if (cbCycleFanart.Checked)
@@ -969,9 +976,12 @@
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>245</posY>\n" +
-                    "<width>258</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series1.title - #infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>\n" +
-                    "<font>mediastream9c</font>\n" +
+                    "<width>258</width>\n";
+                    if (mrSeriesTitleLast)
+                      xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #infoservice.recentlyAdded.series1.title</label>\n";
+                    else
+                      xml += "<label>#infoservice.recentlyAdded.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
+                    xml += "<font>" + mrSeriesNameFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
@@ -982,7 +992,7 @@
                     "<posY>260</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
-                    "<font>mediastream10tc</font>\n" +
+                    "<font>" + mrEpisodeFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>" +
                 "</control>\n" +
@@ -1003,9 +1013,13 @@
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>280</posY>\n" +
-                    "<width>258</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series2.title - #infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>\n" +
-                    "<font>mediastream9c</font>\n" +
+                    "<width>258</width>\n";
+
+                    if (mrSeriesTitleLast)
+                      xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #infoservice.recentlyAdded.series2.title</label>\n";
+                    else
+                      xml += "<label>#infoservice.recentlyAdded.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
+                    xml += "<font>" + mrSeriesNameFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
@@ -1016,7 +1030,7 @@
                     "<posY>295</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
-                    "<font>mediastream10tc</font>\n" +
+                    "<font>" + mrEpisodeFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                 "</control>\n" +
@@ -1036,9 +1050,12 @@
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>315</posY>\n" +
-                    "<width>258</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series3.title - #infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>\n" +
-                    "<font>mediastream9c</font>\n" +
+                    "<width>258</width>\n";
+                    if (mrSeriesTitleLast)
+                      xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series1.title</label>\n";
+                    else
+                      xml += "<label>#infoservice.recentlyAdded.series1.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+                    xml += "<font>" + mrSeriesNameFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
@@ -1049,7 +1066,7 @@
                     "<posY>330</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
-                    "<font>mediastream10tc</font>\n" +
+                    "<font>" + mrEpisodeFont + "</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>/n" +
                 "</control>/n" +
