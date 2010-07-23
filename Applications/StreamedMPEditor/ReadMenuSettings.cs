@@ -228,8 +228,8 @@ namespace StreamedMPEditor
 
       if (mrsForm.mrSeriesFont == "false" || mrsForm.mrEpisodeFont == "false")
       {
-        mrsForm.mrSeriesFont = "mediastream10tc";
-        mrsForm.mrEpisodeFont = "mediastream9c";
+        mrsForm.mrSeriesFont = "mediastream9c";
+        mrsForm.mrEpisodeFont = "mediastream10tc (Bold)";
       }
 
 

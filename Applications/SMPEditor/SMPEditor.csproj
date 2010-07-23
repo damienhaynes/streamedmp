@@ -181,7 +181,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(TargetDir)merge.bat &amp;&amp; copy $(TargetPath) D:\htpc\mediaportal</PostBuildEvent>
+    <PostBuildEvent>$(TargetDir)merge.bat &amp;&amp; copy $(TargetPath) D:\HTPC\MediaPortal</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

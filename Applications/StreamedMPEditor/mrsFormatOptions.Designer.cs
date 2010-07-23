@@ -104,9 +104,9 @@
       this.cbTitleSwap.AutoSize = true;
       this.cbTitleSwap.Location = new System.Drawing.Point(122, 36);
       this.cbTitleSwap.Name = "cbTitleSwap";
-      this.cbTitleSwap.Size = new System.Drawing.Size(254, 17);
+      this.cbTitleSwap.Size = new System.Drawing.Size(294, 17);
       this.cbTitleSwap.TabIndex = 6;
-      this.cbTitleSwap.Text = "Use \"SeriesNo/EpisodeNo - Title\" display format";
+      this.cbTitleSwap.Text = "Use \"SeriesNo/EpisodeNo - Series Name\" display format";
       this.cbTitleSwap.UseVisualStyleBackColor = true;
       // 
       // mrsFormatOptions
