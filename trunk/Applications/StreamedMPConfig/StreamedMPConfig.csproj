@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -64,6 +64,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="SMPLog.cs" />
     <Compile Include="VideoOptionsGUI.cs" />
     <Compile Include="MusicOptionsGUI.cs" />
     <Compile Include="SkinInfo.cs" />
@@ -100,6 +102,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\VersionInfo.cs.tmpl" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -109,7 +114,8 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) F:\HTPC\MediaPortal\plugins\windows\
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) D:\HTPC\MediaPortal\plugins\windows\
 if $(ConfigurationName) == Debug copy $(ProjectDir)bin\Debug\$(TargetFileName) $(SolutionDir)..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\windows\</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

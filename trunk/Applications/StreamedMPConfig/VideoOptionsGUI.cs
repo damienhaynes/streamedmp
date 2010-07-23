@@ -31,8 +31,6 @@ namespace StreamedMPConfig
     {
     }
     
-
-
     #endregion
 
     #region Base overrides

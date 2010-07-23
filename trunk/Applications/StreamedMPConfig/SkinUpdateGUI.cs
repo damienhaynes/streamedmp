@@ -32,6 +32,8 @@ namespace StreamedMPConfig
     private static string optionDownloadPath = null;
     private static string destinationPath = null;
 
+    private static readonly logger smcLog = logger.GetInstance();
+
     #endregion
 
     #region Private methods
@@ -94,7 +96,7 @@ namespace StreamedMPConfig
           }
           catch (Exception e)
           {
-            Log.Error("Error in Download" + e.Message);
+            smcLog.WriteLog("Error in Download" + e.Message, LogLevel.Error);
           }
           finally
           {

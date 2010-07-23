@@ -24,6 +24,9 @@ namespace StreamedMPConfig
     [DllImport("user32.dll", EntryPoint = "HideCaret")]
     public static extern long HideCaret(IntPtr hwnd);
 
+    private static readonly logger smcLog = logger.GetInstance();
+
+
     #endregion
 
     #region Public methods
@@ -98,7 +101,7 @@ namespace StreamedMPConfig
 
         WebClient client = new WebClient();
         client.DownloadFile(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
-        Log.Info("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        smcLog.WriteLog("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"),LogLevel.Info);
       }
       //
       // And combine them into a single change log

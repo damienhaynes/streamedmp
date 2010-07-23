@@ -38,6 +38,8 @@ namespace StreamedMPConfig
     public static string changeLogFile;
     public static List<patches> patchList = new List<patches>();
 
+    private static readonly logger smcLog = logger.GetInstance();
+
     public class patches
     {
       public Version patchVersion;
@@ -127,7 +129,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        Log.Error("Exception while attempting to read upgrade xml file\n\n" + e.Message);
+        smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message,LogLevel.Error);
       }
       finally
       {
@@ -175,7 +177,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        Log.Error("Exception while attempting to read upgrade xml file\n\n" + e.Message);
+        smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message,LogLevel.Error);
       }
       finally
       {
