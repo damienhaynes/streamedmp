@@ -11,8 +11,42 @@ namespace StreamedMPConfig
 {
   class settings
   {
+    private static readonly logger smcLog = logger.GetInstance();
+
     #region Public methods
 
+    public bool logLevelError
+    {
+      get
+      {
+        if (_logLevel() >= 0)
+          return true;
+        else
+          return false;
+      }
+    }
+
+    public bool logLevelWarning
+    {
+      get
+      {
+        if (_logLevel() >= 1)
+          return true;
+        else
+          return false;
+      }
+    }
+
+    public bool logLevelDebug
+    {
+      get
+      {
+        if (_logLevel() == 4)
+          return true;
+        else
+          return false;
+      }
+    }
 
     public bool isVisEnabled 
     {
@@ -40,7 +74,7 @@ namespace StreamedMPConfig
 
     public static void Load()
     {
-      Log.Info("StreamedMPConfig: Settings.Load()");
+      smcLog.WriteLog("StreamedMPConfig: Settings.Load()",LogLevel.Info);
       using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
       {
         // Read user settings from configuration file
@@ -85,7 +119,7 @@ namespace StreamedMPConfig
 
     public static void Save()
     {
-      Log.Info("StreamedMP: Settings.Save()");
+      smcLog.WriteLog("StreamedMP: Settings.Save()",LogLevel.Info);
       using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
       {
         xmlwriter.SetValue("StreamedMPConfig", "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
@@ -111,6 +145,14 @@ namespace StreamedMPConfig
       }
     }
 
+    int _logLevel()
+    {
+      using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+      {
+        return xmlreader.GetValueAsInt("general", "loglevel", 0);
+      }
+    }
+
     bool _mrSeasonEpisodeStyle2()
     {
       string optionsTag = "StreamedMP Options";
@@ -126,7 +168,7 @@ namespace StreamedMPConfig
         }
         catch
         {
-          Log.Error("StreamedMPConfig: Option mrSeriesEpisodeFormat not present");
+          smcLog.WriteLog("StreamedMPConfig: Option mrSeriesEpisodeFormat not present",LogLevel.Error);
           return false;
         }
       }
@@ -148,7 +190,7 @@ namespace StreamedMPConfig
         }
         catch
         {
-          Log.Error("StreamedMPConfig: Option mostRecentCycleFanart not present");
+          smcLog.WriteLog("StreamedMPConfig: Option mostRecentCycleFanart not present",LogLevel.Error);
           return false;
         }
       }
@@ -170,7 +212,7 @@ namespace StreamedMPConfig
         if (!File.Exists(usermenuprofile))
         {
           //ok, so now really in trouble, throw an error to the user and bailout!
-          Log.Error("Can't find usermenuprofile.xml \r\r" + SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
+          smcLog.WriteLog("Can't find usermenuprofile.xml \r\r" + SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml",LogLevel.Error);
           return false;
         }
       }
@@ -182,7 +224,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        Log.Error("Exception while loading usermenuprofile.xml\n\n" + e.Message);
+        smcLog.WriteLog("Exception while loading usermenuprofile.xml\n\n" + e.Message,LogLevel.Error);
         return false;
       }
     }

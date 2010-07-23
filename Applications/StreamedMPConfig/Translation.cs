@@ -18,6 +18,7 @@ namespace StreamedMPConfig
     private static Dictionary<string, string> DynamicTranslations = new Dictionary<string, string>();
     private static readonly string _path = string.Empty;
     private static readonly DateTimeFormatInfo _info;
+    private static readonly logger smcLog = logger.GetInstance();
 
     #endregion
 
@@ -38,7 +39,7 @@ namespace StreamedMPConfig
         _info = DateTimeFormatInfo.GetInstance(CultureInfo.CurrentUICulture);
       }
 
-      Log.Info("StreamedMPConfig: Using language " + lang);
+      smcLog.WriteLog("StreamedMPConfig: Using language " + lang,LogLevel.Info);
 
       _path = Config.GetSubFolder(Config.Dir.Language, "StreamedMP");
 
@@ -96,7 +97,7 @@ namespace StreamedMPConfig
       try
       {
         langPath = Path.Combine(_path, lang + ".xml");
-        Log.Debug("StreamedMpConfig: Loading Language File : " + langPath);
+        smcLog.WriteLog("StreamedMpConfig: Loading Language File : " + langPath,LogLevel.Debug);
         doc.Load(langPath);
       }
       catch (Exception e)
@@ -105,11 +106,11 @@ namespace StreamedMPConfig
           return 0; // otherwise we are in an endless loop!
 
         if (e.GetType() == typeof(FileNotFoundException))
-          Log.Warn("Cannot find translation file {0}.  Failing back to English", langPath);
+          smcLog.WriteLog(string.Format("Cannot find translation file {0}.  Failing back to English", langPath),LogLevel.Warning);
         else
         {
-          Log.Error("Error in translation xml file: {0}. Failing back to English", lang);
-          Log.Error(e);
+          smcLog.WriteLog(string.Format("Error in translation xml file: {0}. Failing back to English", lang),LogLevel.Error);
+          smcLog.WriteLog(e.ToString(),LogLevel.Error);
         }
 
         return LoadTranslations("en");
@@ -128,8 +129,8 @@ namespace StreamedMPConfig
           }
           catch (Exception ex)
           {
-            Log.Error("Error in Translation Engine");
-            Log.Error(ex);
+            smcLog.WriteLog("Error in Translation Engine",LogLevel.Error);
+            smcLog.WriteLog(ex.ToString(),LogLevel.Error);
           }
       }
 
@@ -142,7 +143,7 @@ namespace StreamedMPConfig
         else
         {
           // There is no hard-coded translation so create one
-          Log.Info("Translation not found for field: {0}.  Using hard-coded English default.", fi.Name);
+          smcLog.WriteLog(string.Format("Translation not found for field: {0}.  Using hard-coded English default.", fi.Name),LogLevel.Info);
         }
       }
       return TranslatedStrings.Count;
