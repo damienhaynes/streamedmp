@@ -298,6 +298,7 @@ STRING g_sPluginsDir;
 STRING g_sConfigDir;    
 STRING g_sFanartDir;    
 STRING g_sDatabaseDir;
+STRING g_sClearArtDir;
 
 // Colour Variables
 STRING g_sTextColor;
@@ -392,6 +393,7 @@ begin
 	endif;
 	g_sTVLogosDir = g_sThumbsDir^"tv\\logos";    
 	g_sFanartDir = g_sThumbsDir^"Skin Fanart";
+	g_sClearArtDir = g_sThumbsDir^"ClearArt";
 	
 	if GetMediaPortalDirs("Cache",g_sCacheDir) < 0 then
 		if GetMediaPortalConfigDir(svValue) < 0 then;
@@ -414,6 +416,7 @@ begin
    	MsiSetProperty(ISMSI_HANDLE,"MPCONFIGDIR",g_sConfigDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPBINDIR",g_sMediaPortalProgramDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPFANARTDIR",g_sFanartDir);
+   	MsiSetProperty(ISMSI_HANDLE,"MPCLEARARTDIR",g_sClearArtDir);
    	MsiSetProperty(ISMSI_HANDLE,"MPDATABASEDIR",g_sDatabaseDir);
    	   	
 	// Set Installation Directories used by MSI	
@@ -423,6 +426,7 @@ begin
 	FeatureSetTarget(MEDIA,"<MPCONFIGDIR>",g_sConfigDir);
 	FeatureSetTarget(MEDIA,"<MPBINDIR>",g_sMediaPortalProgramDir);
 	FeatureSetTarget(MEDIA,"<MPFANARTDIR>",g_sFanartDir);
+	FeatureSetTarget(MEDIA,"<MPCLEARARTDIR>",g_sClearArtDir);
 	FeatureSetTarget(MEDIA,"<MPDATABASEDIR>",g_sDatabaseDir);
 
 end;
