@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -336,6 +335,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
+		<row><td>ClearArt</td><td>{2A3EBF6F-7819-4FDE-84F9-4889F1D1E084}</td><td>MPCLEARARTDIR</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>Fanart</td><td>{A478EEC7-DCD1-4DAE-AD86-A4592B928AC0}</td><td>MPFANARTDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>FanartHandler.org</td><td>{214833FB-7EBC-4914-8AAE-87B1A1D238C8}</td><td>MPDATABASEDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>FanartHandlerConfig</td><td>{BFA1D198-1FCB-48B0-B997-FEF480B1F2A3}</td><td>MPCONFIGDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -730,13 +730,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -810,6 +806,7 @@
 		<row><td>MEDIASTREAM2</td><td>SKINS2</td><td>MEDIAS~1|MediaStream</td><td/><td>0</td><td/></row>
 		<row><td>MOVINGPICTURES</td><td>MPLANGUAGESDIR</td><td>MOVING~1|MovingPictures</td><td/><td>0</td><td/></row>
 		<row><td>MPBINDIR</td><td>TARGETDIR</td><td>MPBINDIR</td><td/><td>0</td><td/></row>
+		<row><td>MPCLEARARTDIR</td><td>TARGETDIR</td><td>MPCLEA~1|MPCLEARARTDIR</td><td/><td>0</td><td/></row>
 		<row><td>MPCONFIGDIR</td><td>TARGETDIR</td><td>MPCONF~1|MPCONFIGDIR</td><td/><td>0</td><td/></row>
 		<row><td>MPDATABASEDIR</td><td>TARGETDIR</td><td>MPDATA~1|MPDATABASEDIR</td><td/><td>0</td><td/></row>
 		<row><td>MPFANARTDIR</td><td>TARGETDIR</td><td>MPFANA~1|MPFANARTDIR</td><td/><td>0</td><td/></row>
@@ -1661,6 +1658,7 @@
 		<row><td>InfoService</td><td>languagesInfoService</td></row>
 		<row><td>InfoService</td><td>libWebBrowserDependencies</td></row>
 		<row><td>InfoService</td><td>pluginInfoServiceDLL</td></row>
+		<row><td>Main</td><td>ClearArt</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
 		<row><td>Main</td><td>MediaPortal.xml</td></row>
 		<row><td>Main</td><td>commonMovingPictures</td></row>
@@ -2161,6 +2159,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
+		<row><td>ClearArt</td><td/><td/><td>_23925DB2_FD46_495D_9156_C55FDE303CF1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>Fanart</td><td/><td/><td>_1F02904E_5AF5_4721_A515_D57A35937C6E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>FanartHandler.org</td><td/><td/><td>_4C539A3F_6A91_48F8_8315_7030FD0FF2EB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>FanartHandlerConfig</td><td/><td/><td>_A5B9AED9_62EA_4BB8_B272_A084E77AE59F_FILTER</td><td/><td/><td/><td/></row>
@@ -2308,6 +2307,7 @@
 		<col def="S0">IncludeFiles</col>
 		<col def="S0">ExcludeFiles</col>
 		<col def="I4">ISAttributes</col>
+		<row><td>ClearArt</td><td>&lt;StreamedMP&gt;\clearart</td><td>4</td><td>*.png</td><td/><td>0</td></row>
 		<row><td>Fanart</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.jpg,*.txt</td><td/><td>2</td></row>
 		<row><td>b3SkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>b3wSkinMovingPictures</td><td>&lt;SKINFILES&gt;\blue3skins\movingpictures\blue3wide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
@@ -4741,13 +4741,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -5154,6 +5150,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>IS_SQLSERVER_PASSWORD</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_SERVER</td><td/><td/></row>
 		<row><td>IS_SQLSERVER_USERNAME</td><td>sa</td><td/></row>
+		<row><td>MPCLEARARTDIR</td><td/><td>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\ClearArt</td></row>
 		<row><td>MPCONFIGDIR</td><td/><td>C:\ProgramData\Team MediaPortal\MediaPortal</td></row>
 		<row><td>MPDATABASEDIR</td><td/><td>C:\ProgramData\Team MediaPortal\MediaPortal\Database</td></row>
 		<row><td>MPFANARTDIR</td><td/><td>C:\ProgramData\Team MediaPortal\MediaPortal\Thumbs\Skin Fanart</td></row>
@@ -5166,7 +5163,6 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>NewProperty1</td><td>0</td><td/></row>
 		<row><td>NewProperty2</td><td>0</td><td/></row>
 		<row><td>NewProperty3</td><td>0</td><td/></row>
-		<row><td>NewProperty4</td><td>0</td><td/></row>
 		<row><td>NewProperty5</td><td>0</td><td/></row>
 		<row><td>NewProperty6</td><td>0</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
@@ -5194,7 +5190,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
 		<row><td>ProductCode</td><td>{A8943909-4E01-435B-876E-CD235496E39E}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.2.1.1537</td><td/></row>
+		<row><td>ProductVersion</td><td>1.2.1.1546</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
