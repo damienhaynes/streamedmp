@@ -69,7 +69,7 @@
       <posX>1270</posX>
       <posY>662</posY>
       <label>-</label>
-      <font>mediastream11</font>
+      <font>mediastream10</font>
       <textcolor>White</textcolor>
       <align>right</align>
     </control>
@@ -167,6 +167,7 @@
       <label>Current:</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
     </control>
     <control>
       <description></description>
@@ -248,7 +249,7 @@
       <posY>530</posY>
       <align>left</align>
       <label>-</label>
-      <font>mediastream11tc</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -278,7 +279,7 @@
       <posX>240</posX>
       <posY>637</posY>
       <label>-</label>
-      <font>mediastream11tc</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -289,7 +290,7 @@
       <posY>555</posY>
       <align>left</align>
       <label>-</label>
-      <font>mediastream11tc</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -344,7 +345,7 @@
       <type>label</type>
       <id>25</id>
       <posX>350</posX>
-      <posY>505</posY>
+      <posY>480</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11</font>
@@ -355,9 +356,9 @@
       <type>label</type>
       <id>26</id>
       <posX>350</posX>
-      <posY>480</posY>
+      <posY>505</posY>
       <align>left</align>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -786,7 +787,7 @@
       <type>image</type>
       <id>1000</id>
       <posX>600</posX>
-      <posY>217</posY>
+      <posY>117</posY>
       <width>677</width>
       <height>500</height>
       <texture />
