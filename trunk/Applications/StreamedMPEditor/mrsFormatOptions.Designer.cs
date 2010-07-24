@@ -39,11 +39,11 @@
       // 
       // btSaveAndExit
       // 
-      this.btSaveAndExit.Location = new System.Drawing.Point(122, 162);
+      this.btSaveAndExit.Location = new System.Drawing.Point(151, 162);
       this.btSaveAndExit.Name = "btSaveAndExit";
-      this.btSaveAndExit.Size = new System.Drawing.Size(194, 23);
+      this.btSaveAndExit.Size = new System.Drawing.Size(136, 23);
       this.btSaveAndExit.TabIndex = 0;
-      this.btSaveAndExit.Text = "Save and Exit";
+      this.btSaveAndExit.Text = "Close";
       this.btSaveAndExit.UseVisualStyleBackColor = true;
       this.btSaveAndExit.Click += new System.EventHandler(this.btSaveAndExit_Click);
       // 
@@ -67,7 +67,6 @@
       this.cboxMRSeriesFont.Name = "cboxMRSeriesFont";
       this.cboxMRSeriesFont.Size = new System.Drawing.Size(154, 21);
       this.cboxMRSeriesFont.TabIndex = 2;
-      this.cboxMRSeriesFont.Text = "mediastream9c";
       // 
       // lbSeriesFont
       // 
@@ -97,7 +96,6 @@
       this.cboxMREpisodeFont.Name = "cboxMREpisodeFont";
       this.cboxMREpisodeFont.Size = new System.Drawing.Size(154, 21);
       this.cboxMREpisodeFont.TabIndex = 4;
-      this.cboxMREpisodeFont.Text = "mediastream10tc (Bold)";
       // 
       // cbTitleSwap
       // 
@@ -114,6 +112,7 @@
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(439, 202);
+      this.ControlBox = false;
       this.Controls.Add(this.cbTitleSwap);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.cboxMREpisodeFont);
@@ -121,7 +120,10 @@
       this.Controls.Add(this.cboxMRSeriesFont);
       this.Controls.Add(this.cbMRSeriesEpisodeFormat);
       this.Controls.Add(this.btSaveAndExit);
+      this.MaximumSize = new System.Drawing.Size(455, 240);
+      this.MinimumSize = new System.Drawing.Size(455, 240);
       this.Name = "mrsFormatOptions";
+      this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = " Most Recent Summary Formatting";
       this.ResumeLayout(false);
