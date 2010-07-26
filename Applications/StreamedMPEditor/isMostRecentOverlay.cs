@@ -74,6 +74,17 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
+                    "<description>Series 1 thumb</description>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>900</posX>\n" +
+                    "<posY>79</posY>\n" +
+                    "<width>112</width>\n" +
+                    "<height>165</height>\n" +
+                    "<keepaspectratio>true</keepaspectratio>\n" +
+                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
                     "<description>Series 1 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
@@ -140,6 +151,17 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
+                    "<description>Series 2 thumb</description>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>902</posX>\n" +
+                    "<posY>279</posY>\n" +
+                    "<width>112</width>\n" +
+                    "<height>165</height>\n" +
+                    "<keepaspectratio>true</keepaspectratio>\n" +
+                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
                     "<description>Series 2 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
@@ -148,7 +170,7 @@
                     "<height>181</height>\n" +
                     "<width>129</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
-                  "</control>      \n" +
+                  "</control>\n" +
                   "<control>\n" +
                     "<description>Series 2 name</description>\n" +
                     "<type>fadelabel</type>\n" +
@@ -206,6 +228,17 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
+                    "<description>Series 3 thumb</description>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>901</posX>\n" +
+                    "<posY>478</posY>\n" +
+                    "<width>112</width>\n" +
+                    "<height>165</height>\n" +
+                    "<keepaspectratio>true</keepaspectratio>\n" +
+                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
                     "<description>Series 3 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
@@ -214,7 +247,7 @@
                     "<height>181</height>\n" +
                     "<width>129</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
-                  "</control>      \n" +
+                  "</control>\n" +
                   "<control>\n" +
                     "<description>Series 3 name</description>\n" +
                     "<type>label</type>\n" +
@@ -249,109 +282,6 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                 "</control>\n" +
-                "<control>\n" +
-                    "<description>Series 1 thumb</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>895</posX>\n" +
-                    "<posY>79</posY>\n" +
-                    "<height>165</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
-                  "<control>\n" +
-                    "<description>Series 1 thumb (1920x1080)</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>1351</posX>\n" +
-                    "<posY>118</posY>\n" +
-                    "<height>249</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
-                  "<control>\n" +
-                    "<description>Series 2 thumb</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>895</posX>\n" +
-                    "<posY>276</posY>\n" +
-                    "<height>163</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>\n" +
-                    "<visible>string.equals(#StreamedMP.FullHD,false)</visible>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
-                  "<control>\n" +
-                    "<description>Series 2 thumb (1920x1080)</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>1351</posX>\n" +
-                    "<posY>417</posY>\n" +
-                    "<height>249</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
-                  "<control>\n" +
-                    "<description>Series 3 thumb</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>895</posX>\n" +
-                    "<posY>475</posY>\n" +
-                    "<height>165</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
-                  "<control>\n" +
-                    "<description>Series 3 thumb (1920x1080)</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>1351</posX>\n" +
-                    "<posY>717</posY>\n" +
-                    "<height>249</height>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                  "</control>\n" +
               "</controls>\n" +
             "</window>";
 
@@ -395,7 +325,7 @@
       int menuBot = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetSubmenu;
 
       if (screenres == screenResolutionType.res1920x1080)
-        hdOffset = 276;
+        hdOffset = 0;
       else
         hdOffset = 0;
 
@@ -441,6 +371,17 @@
                       "<colordiffuse>EEFFFFFF</colordiffuse>" +
                     "</control>" +
                     "<control>" +
+                      "<description>Series 1 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>36</posX>" +
+                      "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
+                      "<height>163</height>" +
+                      "<width>111</width>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
+                    "</control>" +
+                    "<control>" +
                       "<description>Series 1 Rounded Cover</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
@@ -450,7 +391,7 @@
                       "<width>129</width>" +
                       "<texture>round.poster.frame.noreflection.png</texture>" +
                     "</control>      " +
-                    "<control>" +
+                  "<control>" +
                       "<description>Series 1 name</description>" +
                       "<type>fadelabel</type>" +
                       "<id>0</id>" +
@@ -505,6 +446,17 @@
                       "<height>180</height>" +
                       "<texture>recentfullbg.png</texture>" +
                       "<colordiffuse>EEFFFFFF</colordiffuse>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Series 2 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>452</posX>" +
+                      "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
+                      "<height>163</height>" +
+                      "<width>111</width>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Series 2 Rounded Cover</description>" +
@@ -573,6 +525,17 @@
                       "<colordiffuse>EEFFFFFF</colordiffuse>" +
                     "</control>" +
                     "<control>" +
+                      "<description>Series 3 thumb</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>866</posX>" +
+                      "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
+                      "<height>163</height>" +
+                      "<width>111</width>" +
+                      "<keepaspectratio>true</keepaspectratio>" +
+                      "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
+                    "</control>" +
+                    "<control>" +
                       "<description>Series 3 Rounded Cover</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
@@ -615,108 +578,6 @@
                       "<font>mediastream10</font>" +
                       "<textcolor>White</textcolor>" +
                     "</control>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 1 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>33</posX>" +
-                    "<posY>" + (overlayYpos + 7).ToString() + "</posY>" +
-                    "<height>165</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 1 thumb (1920x1080)</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>52</posX>" +
-                    "<posY>" + (overlayYpos + 7 + hdOffset).ToString() + "</posY>" +
-                    "<height>249</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 2 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>447</posX>" +
-                    "<posY>" + (overlayYpos + 7).ToString() + "</posY>" +
-                    "<height>165</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 2 thumb (1920x1080)</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>675</posX>" +
-                    "<posY>" + (overlayYpos + 7 + hdOffset).ToString() + "</posY>" +
-                    "<height>249</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 3 thumb</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>859</posX>" +
-                    "<posY>" + (overlayYpos + 7).ToString() + "</posY>" +
-                    "<height>165</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Series 3 thumb (1920x1080)</description>" +
-                    "<type>image</type>" +
-                    "<id>0</id>" +
-                    "<posX>1295</posX>" +
-                    "<posY>" + (overlayYpos + 7 + hdOffset).ToString() + "</posY>" +
-                    "<height>249</height>" +
-                    "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "</control>" +
                   "</controls>" +
               "</window>";
@@ -1073,21 +934,17 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                 "</control>\n" +
-                "<control>\n" +
-                  "<description>GROUP: Standard Res Only</description>\n" +
-                  "<type>group</type>\n" +
-                  "<visible>string.equals(#StreamedMP.FullHD,false)</visible>" +
-                  "<dimColor>0xffffffff</dimColor>\n" +
                   "<control>\n" +
                     "<description>Series 1 thumb/fanart</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>990</posX>\n" +
+                    "<posX>995</posX>\n" +
                     "<posY>92</posY>\n" +
-                    "<width>265</width>\n" +
+                    "<width>268</width>\n" +
+                    "<height>151</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>" + fanartProperty + "</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,false)</visible>" +
+                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#))</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1096,31 +953,6 @@
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                   "</control>\n" +
-                "</control>\n" +
-                "<control>\n" +
-                  "<description>GROUP: FullHD Only</description>\n" +
-                  "<type>group</type>\n" +
-                  "<visible>string.equals(#StreamedMP.FullHD,true)</visible>" +
-                  "<dimColor>0xffffffff</dimColor>\n" +
-                  "<control>\n" +
-                    "<description>Series 1 thumb/fanart (1920x1080)</description>\n" +
-                    "<type>image</type>\n" +
-                    "<id>0</id>\n" +
-                    "<posX>1495</posX>\n" +
-                    "<posY>137</posY>\n" +
-                    "<width>400</width>\n" +
-                    "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>" + fanartProperty + "</texture>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)+string.equals(#StreamedMP.FullHD,true)</visible>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
-                  "</control>\n" +
-                "</control>\n" +
               "</controls>\n" +
             "</window>";
       }
