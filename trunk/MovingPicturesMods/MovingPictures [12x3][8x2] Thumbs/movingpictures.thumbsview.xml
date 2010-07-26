@@ -44,11 +44,21 @@
 		</control>
 		<control Style="smallTitle">
 			<label>#MovingPictures.SelectedMovie.genres</label>
+			<id>10049</id>
 			<type>label</type>
 			<posX>930</posX>
 			<posY>557</posY>
 			<width>310</width>
 			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+		</control>
+		<control Style="smallTitle">
+			<label>N/A</label>
+			<type>label</type>
+			<posX>930</posX>
+			<posY>557</posY>
+			<width>310</width>
+			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(10049)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
 		<control Style="smallTitleB">
@@ -70,7 +80,7 @@
 			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
-		<control Style="smallTitle">			
+		<control Style="smallTitle">
 			<label>N/A</label>
 			<type>label</type>
 			<posX>930</posX>

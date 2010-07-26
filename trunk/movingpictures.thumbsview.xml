@@ -42,7 +42,7 @@ This file should contain the thumbs view
 		  <height>22</height>		  
 		  <align>left</align>		  
 		  <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
 		</control>
 		<control>
 		  <type>label</type>
@@ -51,7 +51,7 @@ This file should contain the thumbs view
 		  <posY>288</posY>
 		  <width>360</width>
 		  <font>mediastream10</font>		  
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
 		</control>
 		
 		<control>
