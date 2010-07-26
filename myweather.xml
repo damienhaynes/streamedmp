@@ -167,10 +167,10 @@
       <label>Current:</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
     </control>
     <control>
-      <description></description>
+      <description>Weather Label</description>
       <type>label</type>
       <id>4</id>
       <posX>270</posX>
@@ -179,119 +179,6 @@
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
       <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
-    </control>
-    
-    <control>
-      <description>Current Temp static label</description>
-      <type>label</type>
-      <id>223</id>
-      <posX>165</posX>
-      <posY>405</posY>
-      <label>Temp</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current feels like static label</description>
-      <type>label</type>
-      <id>224</id>
-      <posX>165</posX>
-      <posY>430</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current wind static label</description>
-      <type>label</type>
-      <id>226</id>
-      <posX>165</posX>
-      <posY>505</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current UV Index static label</description>
-      <type>label</type>
-      <id>225</id>
-      <posX>165</posX>
-      <posY>530</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current dew static label</description>
-      <type>label</type>
-      <id>227</id>
-      <posX>165</posX>
-      <posY>455</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current humidity static label</description>
-      <type>label</type>
-      <id>228</id>
-      <posX>165</posX>
-      <posY>480</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun rise label</description>
-      <type>label</type>
-      <id>200</id>
-      <posX>350</posX>
-      <posY>530</posY>
-      <align>left</align>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun rise static label</description>
-      <type>label</type>
-      <id>201</id>
-      <posX>165</posX>
-      <posY>530</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun set static label</description>
-      <type>label</type>
-      <id>203</id>
-      <posX>165</posX>
-      <posY>555</posY>
-      <label>-</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun rise label</description>
-      <type>label</type>
-      <id>70</id>
-      <posX>240</posX>
-      <posY>637</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>sun set label</description>
-      <type>label</type>
-      <id>202</id>
-      <posX>350</posX>
-      <posY>555</posY>
-      <align>left</align>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
     </control>
     <control>
       <description>current weather icon</description>
@@ -317,6 +204,22 @@
       <font>mediastream14tc</font>
       <textcolor>ffFFFFFF</textcolor>
     </control>
+
+
+
+
+
+    
+    <control>
+      <description>Current Temp static label</description>
+      <type>label</type>
+      <id>223</id>
+      <posX>182</posX>
+      <posY>165</posY>
+      <label>Temp</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
     <control>
       <description>current temp label</description>
       <type>label</type>
@@ -329,15 +232,37 @@
       <font>mediastream28tc</font>
       <textcolor>White</textcolor>
     </control>
+
+    <control>   
+      <description>current feels like static label</description>
+      <type>label</type>
+      <id>224</id>
+      <posX>180</posX>
+      <posY>430</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
     <control>
       <description>current feels like label</description>
       <type>label</type>
       <id>24</id>
       <posX>350</posX>
-      <posY>405</posY>
+      <posY>430</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+
+    <control>
+      <description>current UV Index static label</description>
+      <type>label</type>
+      <id>225</id>
+      <posX>180</posX>
+      <posY>530</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -345,10 +270,21 @@
       <type>label</type>
       <id>25</id>
       <posX>350</posX>
-      <posY>480</posY>
+      <posY>530</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+
+    <control>
+      <description>current wind static label</description>
+      <type>label</type>
+      <id>226</id>
+      <posX>180</posX>
+      <posY>505</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
       <textcolor>White</textcolor>
     </control>
     <control>
@@ -361,21 +297,21 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
+
+    <control>
+      <description>current dew static label</description>
+      <type>label</type>
+      <id>227</id>
+      <posX>180</posX>
+      <posY>455</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
     <control>
       <description>current dew label</description>
       <type>label</type>
       <id>27</id>
-      <posX>350</posX>
-      <posY>430</posY>
-      <align>left</align>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>White</textcolor>
-    </control>
-    <control>
-      <description>current humidity label</description>
-      <type>label</type>
-      <id>28</id>
       <posX>350</posX>
       <posY>455</posY>
       <align>left</align>
@@ -383,6 +319,76 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
     </control>
+
+    <control>
+      <description>current humidity static label</description>
+      <type>label</type>
+      <id>228</id>
+      <posX>180</posX>
+      <posY>480</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>current humidity label</description>
+      <type>label</type>
+      <id>28</id>
+      <posX>350</posX>
+      <posY>480</posY>
+      <align>left</align>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+
+    <control>
+      <description>sun rise label</description>
+      <type>label</type>
+      <id>200</id>
+      <posX>350</posX>
+      <posY>530</posY>
+      <align>left</align>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>sun rise static label</description>
+      <type>label</type>
+      <id>201</id>
+      <posX>165</posX>
+      <posY>530</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+
+    <control>
+      <description>sun set control</description>
+      <type>label</type>
+      <id>202</id>
+      <posX>350</posX>
+      <posY>555</posY>
+      <align>left</align>
+      <label>-</label>
+      <font>mediastream11</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>sun set static label</description>
+      <type>label</type>
+      <id>203</id>
+      <posX>165</posX>
+      <posY>555</posY>
+      <label>-</label>
+      <font>mediastream11tc</font>
+      <textcolor>White</textcolor>
+    </control>
+
+
+
+
     <!-- ***************************** Day 0 Weather Forcast ******************************** -->
     <control>
       <description>day 0 label</description>
@@ -713,6 +719,16 @@
         <label>-</label>
         <font>mediastream11tc</font>
         <textalign>left</textalign>
+        <textcolor>White</textcolor>
+      </control>
+      <control>
+        <description>sun rise label</description>
+        <type>label</type>
+        <id>70</id>
+        <posX>240</posX>
+        <posY>637</posY>
+        <label>-</label>
+        <font>mediastream11</font>
         <textcolor>White</textcolor>
       </control>
       <control>
