@@ -30,6 +30,7 @@ namespace StreamedMPConfig
       public string skinBasePath;
       public string cacheBasePath;
       public string configBasePath;
+      public string langBasePath;
       public string streamedMPpath;
       public string pluginPath;
       public string backgroundPath;
@@ -136,8 +137,7 @@ namespace StreamedMPConfig
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);
-            mpPaths.fanartBasePath = mpPaths.configBasePath + "thumbs\\Skin Fanart\\";
+            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);            
           }
         }
         // get the Plugin base path
@@ -156,7 +156,17 @@ namespace StreamedMPConfig
           if (path != null)
           {
             mpPaths.thumbsPath = GetMediaPortalDir(path.InnerText);
+            mpPaths.fanartBasePath = mpPaths.thumbsPath + "Skin Fanart\\";
           }
+        }
+        // get the Languages base path
+        if (innerNode.InnerText == "Language")
+        {
+            XmlNode path = node.SelectSingleNode("Path");
+            if (path != null)
+            {
+                mpPaths.langBasePath = GetMediaPortalDir(path.InnerText);
+            }
         }
       }
       mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin + "\\";

@@ -181,10 +181,10 @@ namespace SMPpatch
     {
       pf.patchVersion = fileVersion(Path.Combine(tempExtractPath, fileName));
 
-
-      if (pf.patchLocation.ToLower().StartsWith("plugins"))
+      // if patch file is a plugin
+      if (pf.patchLocation.ToLower().StartsWith("process") || pf.patchLocation.ToLower().StartsWith("windows"))
       {
-        pf.destinationPath = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, pf.patchLocation);
+        pf.destinationPath = Path.Combine(SkinInfo.mpPaths.pluginPath, pf.patchLocation);
         pf.installedVersion = fileVersion(Path.Combine(pf.destinationPath, fileName));
       }
       if (pf.patchLocation.ToLower().StartsWith("mediaportal"))
@@ -337,7 +337,7 @@ namespace SMPpatch
     {
       if (thePatch.patchAction.ToLower() == "install")
       {
-        if (thePatch.patchLocation.ToLower().StartsWith("plugins"))
+        if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
         {
           File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
         }
@@ -371,9 +371,11 @@ namespace SMPpatch
       foreach (string patchdir in Files)
       {
         if (patchdir.ToLower().Contains("language"))
-          copyDirectory(Path.Combine(destinationPath, "language"), Path.Combine(SkinInfo.mpPaths.configBasePath, "language"));
+          copyDirectory(Path.Combine(destinationPath, "language"), SkinInfo.mpPaths.langBasePath);
         if (patchdir.ToLower().Contains("streamedmp"))
           copyDirectory(Path.Combine(destinationPath, "StreamedMP"), Path.Combine(SkinInfo.mpPaths.skinBasePath, "StreamedMP"));
+        if (patchdir.ToLower().Contains("thumbs"))
+            copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
       }
       patchProgressBar.Value += 10;
     }
