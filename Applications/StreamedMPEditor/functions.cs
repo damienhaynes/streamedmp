@@ -140,8 +140,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);
-            mpPaths.fanartBasePath = mpPaths.configBasePath + "thumbs\\Skin Fanart\\";
+            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);            
           }
         }
 
@@ -161,6 +160,7 @@ namespace StreamedMPEditor
           if (path != null)
           {
             mpPaths.thumbsPath = GetMediaPortalDir(path.InnerText);
+            mpPaths.fanartBasePath = mpPaths.thumbsPath + "Skin Fanart\\";
           }
         }
       }
