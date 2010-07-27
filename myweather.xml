@@ -38,14 +38,15 @@
       <height>500</height>
       <texture>weatherframe.png</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+      <visible>control.isvisible(23)</visible>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>BUTTONS BG</description>
       <type>image</type>
       <id>0</id>
       <posX>5</posX>
-      <posY>660</posY>
+      <posY>658</posY>
       <width>1270</width>
       <height>30</height>
       <texture>buttonbar.png</texture>
@@ -55,7 +56,7 @@
       <description>location label</description>
       <type>label</type>
       <id>10</id>
-      <posX>10</posX>
+      <posX>15</posX>
       <posY>662</posY>
       <width>250</width>
       <font>mediastream10c</font>
@@ -66,7 +67,7 @@
       <description>update time </description>
       <type>label</type>
       <id>11</id>
-      <posX>1270</posX>
+      <posX>1265</posX>
       <posY>662</posY>
       <label>-</label>
       <font>mediastream10</font>
@@ -142,7 +143,7 @@
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
         <textcolorNoFocus>ff909090</textcolorNoFocus>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
+        <visible>control.isvisible(23)</visible>
       </control>
     </control>
     <control>
@@ -155,30 +156,31 @@
       <height>85</height>
       <texture>-</texture>
     </control>
-    <!-- ******************** Currnt Weather Information ***************************** -->
+    <!-- ******************** Current Weather Information ***************************** -->
     <control>
-      <description>DAY 0 LABEL</description>
+      <description>Weather Label</description>
       <type>label</type>
-      <id>31</id>
-      <posX>165</posX>
-      <posY>105</posY>
-      <width>400</width>
-      <align>left</align>      
+      <id>4</id>
+      <posX>180</posX>
+      <posY>107</posY>
+      <label>400</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
-    </control>	
+      <visible>control.isvisible(23)</visible>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
     <control>
       <description>current weather icon</description>
       <type>image</type>
       <id>21</id>
       <posX>380</posX>
-      <posY>130</posY>
+      <posY>140</posY>
       <width>180</width>
       <height>180</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>Current Condition Label</description>
@@ -191,8 +193,14 @@
       <align>left</align>
       <font>mediastream14tc</font>
       <textcolor>ffFFFFFF</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
+
+
+
+
+    
     <control>
       <description>Current Temp static label</description>
       <type>label</type>
@@ -202,6 +210,7 @@
       <label>Temp</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current temp label</description>
@@ -214,6 +223,7 @@
       <label>-</label>
       <font>mediastream28tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>   
@@ -225,6 +235,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current feels like label</description>
@@ -236,6 +247,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>
@@ -247,6 +259,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current UV Index label</description>
@@ -258,6 +271,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>
@@ -269,6 +283,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current wind label</description>
@@ -279,6 +294,7 @@
       <align>left</align>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>
@@ -290,6 +306,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current dew label</description>
@@ -301,6 +318,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>
@@ -312,6 +330,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
       <description>current humidity label</description>
@@ -323,6 +342,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
+	  <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
 
     <control>
@@ -394,7 +414,7 @@
       <label>MAX :</label>
       <width>0</width>
       <height>0</height>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)+control.isvisible(32)</visible>
+      <visible>control.isvisible(23)+control.isvisible(32)</visible>
     </control>
     <control>
       <description>day 0 Hi value</description>
@@ -415,7 +435,7 @@
       <label>MIN :</label>
       <width>0</width>
       <height>0</height>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)+control.isvisible(33)</visible>
+      <visible>control.isvisible(23)+control.isvisible(33)</visible>
     </control>
     <control>
       <description>day 0 low value</description>
@@ -454,14 +474,15 @@
         <description>DAY 1 LABEL</description>
         <type>label</type>
         <id>41</id>
-        <posX>640</posX>
-        <posY>105</posY>
+        <posX>650</posX>
+        <posY>107</posY>
         <width>200</width>
         <align>left</align>
         <label>-</label>
         <font>mediastream11tc</font>
         <textalign>center</textalign>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 ICON</description>
@@ -472,17 +493,19 @@
         <height>80</height>
         <texture>-</texture>
         <keepaspectratio>yes</keepaspectratio>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 MAX LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>150</posY>
         <label>MAX :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(42)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(42)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 MAX VALUE</description>
@@ -494,17 +517,19 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 MIN LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>175</posY>
         <label>MIN :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(43)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(43)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 MIN VALUE</description>
@@ -516,6 +541,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 1 GENERAL WEATHER</description>
@@ -526,6 +552,7 @@
         <label>-</label>
         <font>mediastream12</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
     
 <!-- ************************************************* Day 2 Weather ************************************************* -->    
@@ -534,14 +561,15 @@
         <description>DAY 2 LABEL</description>
         <type>label</type>
         <id>51</id>
-        <posX>640</posX>
-        <posY>227</posY>
+        <posX>650</posX>
+        <posY>229</posY>
         <width>200</width>
         <align>left</align>
         <label>-</label>
         <font>mediastream11tc</font>
         <textalign>left</textalign>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 ICON</description>
@@ -552,17 +580,19 @@
         <height>80</height>
         <texture>-</texture>
         <keepaspectratio>yes</keepaspectratio>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 MAX LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>277</posY>
         <label>MAX :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(52)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(52)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 MAX VALUE</description>
@@ -574,17 +604,19 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 MIN VALUE</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>302</posY>
         <label>MIN :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(53)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(53)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 LOW VALUE</description>
@@ -596,6 +628,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 2 GENERAL WEATHER</description>
@@ -606,6 +639,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
     
 <!-- ************************************************* Day 3 Weather ************************************************* -->    
@@ -614,14 +648,15 @@
         <description>DAY 3 LABEL</description>
         <type>label</type>
         <id>61</id>
-        <posX>640</posX>
-        <posY>352</posY>
+        <posX>650</posX>
+        <posY>354</posY>
         <width>200</width>
         <align>left</align>
         <label>-</label>
         <font>mediastream11tc</font>
         <textalign>left</textalign>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 3 ICON</description>
@@ -632,18 +667,20 @@
         <height>80</height>
         <texture>-</texture>
         <keepaspectratio>yes</keepaspectratio>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       
       <control>
         <description>DAY 3 MAX LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>397</posY>
         <label>MAX :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(62)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(62)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 3 MAX VALUE</description>
@@ -655,17 +692,19 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 3 MIN LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>422</posY>
         <label>MIN :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(63)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(63)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 3 MIN VALUE</description>
@@ -677,6 +716,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 3 GENERAL WEATHER</description>
@@ -687,6 +727,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
   
 <!-- ************************************************* Day 4 Weather ************************************************* -->    
@@ -695,14 +736,15 @@
         <description>DAY 4 LABEL</description>
         <type>label</type>
         <id>71</id>
-        <posX>640</posX>
-        <posY>475</posY>
+        <posX>650</posX>
+        <posY>477</posY>
         <width>200</width>
         <align>left</align>
         <label>-</label>
         <font>mediastream11tc</font>
         <textalign>left</textalign>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>sun rise label</description>
@@ -713,6 +755,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 ICON</description>
@@ -723,17 +766,19 @@
         <height>80</height>
         <texture>-</texture>
         <keepaspectratio>yes</keepaspectratio>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 MAX LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>520</posY>
         <label>MAX :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(72)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(72)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 MAX VALUE</description>
@@ -745,17 +790,19 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 MIN LABEL</description>
         <type>label</type>
         <id>0</id>
-        <posX>640</posX>
+        <posX>650</posX>
         <posY>545</posY>
         <label>MIN :</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
-        <visible>!control.isvisible(1000)+!control.isvisible(1200)+Control.IsVisible(73)</visible>
+        <visible>control.isvisible(23)+Control.IsVisible(73)</visible>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 MIN VALUE</description>
@@ -767,6 +814,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
       <control>
         <description>DAY 4 GENERAL WEATHER</description>
@@ -777,6 +825,7 @@
         <label>-</label>
         <font>mediastream11</font>
         <textcolor>White</textcolor>
+		<animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
       </control>
     
 <!-- ************************************************* Satellite Image/SunClock  ************************************************* -->    
@@ -801,10 +850,10 @@
       <type>image</type>
       <id>1200</id>
       <label>-</label>
-      <posY>150</posY>
-      <posX>196</posX>
-      <width>888</width>
-      <height>443</height>
+      <posX>503</posX>
+      <posY>217</posY>
+      <width>774</width>
+      <height>500</height>
       <onleft>3</onleft>
       <onright>3</onright>
       <onup>3</onup>
