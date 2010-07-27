@@ -159,27 +159,15 @@
     <control>
       <description>DAY 0 LABEL</description>
       <type>label</type>
-      <id>0</id>
+      <id>31</id>
       <posX>165</posX>
       <posY>105</posY>
       <width>400</width>
-      <align>left</align>
-      <label>Current:</label>
+      <align>left</align>      
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
       <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
-    </control>
-    <control>
-      <description>Weather Label</description>
-      <type>label</type>
-      <id>4</id>
-      <posX>270</posX>
-      <posY>105</posY>
-      <label>400</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-      <visible>!control.isvisible(1000)+!control.isvisible(1200)</visible>
-    </control>
+    </control>	
     <control>
       <description>current weather icon</description>
       <type>image</type>
@@ -205,11 +193,6 @@
       <textcolor>ffFFFFFF</textcolor>
     </control>
 
-
-
-
-
-    
     <control>
       <description>Current Temp static label</description>
       <type>label</type>
@@ -818,10 +801,10 @@
       <type>image</type>
       <id>1200</id>
       <label>-</label>
-      <posX>503</posX>
-      <posY>217</posY>
-      <width>774</width>
-      <height>500</height>
+      <posY>150</posY>
+      <posX>196</posX>
+      <width>888</width>
+      <height>443</height>
       <onleft>3</onleft>
       <onright>3</onright>
       <onup>3</onup>
