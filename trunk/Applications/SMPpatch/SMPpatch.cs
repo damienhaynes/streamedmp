@@ -27,9 +27,13 @@ namespace SMPpatch
     bool restartConfiguration = false;
 
 
+
+
     public SMPpatch()
     {
+
       InitializeComponent();
+
       //Check for any command line argments
       foreach (string arg in Environment.GetCommandLineArgs())
       {
@@ -60,13 +64,39 @@ namespace SMPpatch
 
     private void SMPpatch_Load(object sender, EventArgs e)
     {
+      string processess = null;
+
+      CheckProcesses mediaportal = new CheckProcesses("mediaportal");
+      CheckProcesses configuration = new CheckProcesses("configuration");
+      CheckProcesses smpeditor = new CheckProcesses("smpeditor");
+
       SkinInfo.GetMediaPortalSkinPath();
       introBox.SelectionStart = 0;
 
-      // Check running process and wait 5sec for processes to exit
+
       while (!checkRunningProcess())
       {
-        Thread.Sleep(1000);
+        // Check running process and wait 5sec for processes to exit
+        if (!checkRunningProcess())
+          if (mediaportal.running)
+            processess = "MediaPortal\n";
+        if (configuration.running)
+          processess += "Configuration.exe\n";
+        if (smpeditor.running)
+          processess += "StreamedMP basicHome Editor\n";
+
+        DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
+              "Retry",
+              MessageBoxButtons.RetryCancel,
+              MessageBoxIcon.Question,
+              MessageBoxDefaultButton.Button2);
+
+        if (result == DialogResult.Cancel)
+        {
+          Application.Exit();
+        }
+
+        processess = null;
       }
 
       // Create the temp directory to stroe the extracted patches
@@ -82,6 +112,7 @@ namespace SMPpatch
 
     bool checkRunningProcess()
     {
+
       CheckProcesses mediaportal = new CheckProcesses("mediaportal");
       CheckProcesses configuration = new CheckProcesses("configuration");
       CheckProcesses smpeditor = new CheckProcesses("smpeditor");
@@ -314,6 +345,7 @@ namespace SMPpatch
     private void btInstallPatch_Click(object sender, EventArgs e)
     {
       installThePatches();
+      clearCacheDir();
     }
 
     void installThePatches()
@@ -402,5 +434,19 @@ namespace SMPpatch
         }
       }
     }
+
+    private void clearCacheDir()
+    {
+      try
+      {
+        System.IO.Directory.Delete(Path.Combine(SkinInfo.mpPaths.cacheBasePath,"StreamedMP"), true);
+        //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
+      }
+      catch
+      {
+        //showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
+      }
+    }
+
   }
 }
