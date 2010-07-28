@@ -95,7 +95,6 @@ namespace SMPpatch
         {
           Application.Exit();
         }
-
         processess = null;
       }
 

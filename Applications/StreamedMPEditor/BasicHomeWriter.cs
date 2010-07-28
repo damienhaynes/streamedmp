@@ -55,22 +55,34 @@ namespace StreamedMPEditor
       string randomFanartTVSeries = randomFanart.fanartTVSeries ? "Yes" : "No";
       string randomScoreCenterFanart = randomFanart.fanartScoreCenter ? "Yes" : "No";
 
+      if (fanartHandlerUsed)
+      {
+        xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
+                        , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>"
+                        + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>"
+                        + "<define>#labelFont:" + cboLabelFont.Text + "</define>"
+                        + "<define>#selectedFont:" + cboSelectedFont.Text + "</define>"
+                        + "<define>#" + menuPos + "</define>"
+                        + "<define>#useRandomGamesFanart:" + randomFanartGames + "</define>"
+                        + "<define>#useRandomTVSeriesFanart:" + randomFanartTVSeries + "</define>"
+                        + "<define>#useRandomPluginsFanart:" + randomFanartPlugins + "</define>"
+                        + "<define>#useRandomMovingPicturesFanart:" + randomFanartMovingPictures + "</define>"
+                        + "<define>#useRandomMusicFanart:" + randomFanartMusic + "</define>"
+                        + "<define>#useRandomPicturesFanart:" + randomFanartPictures + "</define>"
+                        + "<define>#useRandomTVFanart:" + randomFanartTv + "</define>"
+                        + "<define>#useRandomMoviesFanart:" + randomFanartMovies + "</define>"
+                        + "<define>#useRandomScoreCenterFanart:" + randomScoreCenterFanart + "</define>");
+      }
+      else
+      {
+        xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
+                        , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>"
+                        + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>"
+                        + "<define>#labelFont:" + cboLabelFont.Text + "</define>"
+                        + "<define>#selectedFont:" + cboSelectedFont.Text + "</define>"
+                        + "<define>#" + menuPos + "</define>");
 
-      xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
-                      , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>"
-                      + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>"
-                      + "<define>#labelFont:" + cboLabelFont.Text + "</define>"
-                      + "<define>#selectedFont:" + cboSelectedFont.Text + "</define>"
-                      + "<define>#" + menuPos + "</define>"
-                      + "<define>#useRandomGamesFanart:" + randomFanartGames + "</define>"
-                      + "<define>#useRandomTVSeriesFanart:" + randomFanartTVSeries + "</define>"
-                      + "<define>#useRandomPluginsFanart:" + randomFanartPlugins + "</define>"
-                      + "<define>#useRandomMovingPicturesFanart:" + randomFanartMovingPictures + "</define>"
-                      + "<define>#useRandomMusicFanart:" + randomFanartMusic + "</define>"
-                      + "<define>#useRandomPicturesFanart:" + randomFanartPictures + "</define>"
-                      + "<define>#useRandomTVFanart:" + randomFanartTv + "</define>"
-                      + "<define>#useRandomMoviesFanart:" + randomFanartMovies + "</define>"
-                      + "<define>#useRandomScoreCenterFanart:" + randomScoreCenterFanart + "</define>");
+      }
 
 
 
@@ -548,8 +560,16 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                rawXML.AppendLine("<onright>" + (menItem.id + 600).ToString() + "01</onright>");
-                rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+                if (cbExitStyleOld.Checked)
+                {
+                  rawXML.AppendLine("<onright>7777</onright>");
+                  rawXML.AppendLine("<onleft>-</onleft>");
+                }
+                else
+                {
+                  rawXML.AppendLine("<onright>" + (menItem.id + 600).ToString() + "01</onright>");
+                  rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+                }
                 rawXML.AppendLine("<onup>" + (onleft + 800).ToString() + "</onup>");
                 rawXML.AppendLine("<ondown>" + (onright + 700).ToString() + "</ondown>");
                 rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
@@ -586,7 +606,16 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                rawXML.AppendLine("<onright>" + (menItem.id + 600).ToString() + "01</onright>");
+                if (cbExitStyleOld.Checked)
+                {
+                  rawXML.AppendLine("<onright>7777</onright>");
+                  rawXML.AppendLine("<onleft>-</onleft>");
+                }
+                else
+                {
+                  rawXML.AppendLine("<onright>" + (menItem.id + 600).ToString() + "01</onright>");
+                  rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+                }
                 rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
                 rawXML.AppendLine("<onup>" + (onleft + 800).ToString() + "</onup>");
                 rawXML.AppendLine("<ondown>" + (onright + 700).ToString() + "</ondown>");
@@ -1150,6 +1179,145 @@ namespace StreamedMPEditor
 
     #endregion
 
+    #region Generate Topbar Vertical Old Style
+
+    private void generateTopBarV1()
+    {
+      StringBuilder rawXML = new StringBuilder();
+      const string quote = "\"";
+
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Exit Label</description>");
+      rawXML.AppendLine("<type>label</type>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<width>340</width>");
+      rawXML.AppendLine("<height>60</height>");
+      rawXML.AppendLine("<posY>435</posY>");
+      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<align>center</align>");
+      rawXML.AppendLine("<font>mediastream12tc</font>");
+      rawXML.AppendLine("<label>Exit MediaPortal</label>");
+      rawXML.AppendLine("<visible allowhiddenfocus=" + quote + "true" + quote + ">Control.HasFocus(7777)</visible>");
+      rawXML.AppendLine("</control>");
+
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Restart Label</description>");
+      rawXML.AppendLine("<type>label</type>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<width>340</width>");
+      rawXML.AppendLine("<height>60</height>");
+      rawXML.AppendLine("<posY>435</posY>");
+      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<align>center</align>");
+      rawXML.AppendLine("<font>mediastream12tc</font>");
+      rawXML.AppendLine("<label>Restart MediaPortal</label>");
+      rawXML.AppendLine("<visible>Control.HasFocus(7888)</visible>");
+      rawXML.AppendLine("</control>");
+
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Shutdown Label</description>");
+      rawXML.AppendLine("<type>label</type>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<width>340</width>");
+      rawXML.AppendLine("<height>60</height>");
+      rawXML.AppendLine("<posY>435</posY>");
+      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<align>center</align>");
+      rawXML.AppendLine("<font>mediastream12tc</font>");
+      rawXML.AppendLine("<label>Shutdown Menu</label>");
+      rawXML.AppendLine("<visible>Control.HasFocus(7999)</visible>");
+      rawXML.AppendLine("</control>");
+
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Shutdown menu hbar</description>");
+      rawXML.AppendLine("<type>image</type>");
+      rawXML.AppendLine("<id>1</id>");
+      rawXML.AppendLine("<posX>485</posX>");
+      rawXML.AppendLine("<posY>335</posY>");
+      rawXML.AppendLine("<width>381</width>");
+      rawXML.AppendLine("<height>1</height>");
+      rawXML.AppendLine("<texture>hbar1white.png</texture>");
+      rawXML.AppendLine("<visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>");
+      rawXML.AppendLine("</control>");
+
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("\t\t\t<description>Exit Button</description>");
+      rawXML.AppendLine("\t\t\t<type>button</type>");
+      rawXML.AppendLine("\t\t\t<id>7777</id>");
+      rawXML.AppendLine("\t\t\t<posX>493</posX>");
+      rawXML.AppendLine("\t\t\t<posY>350</posY>");
+      rawXML.AppendLine("\t\t\t<onleft>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onleft>");
+      rawXML.AppendLine("\t\t\t<onright>7888</onright>");
+      rawXML.AppendLine("\t\t\t<width>80</width>");
+      rawXML.AppendLine("\t\t\t<height>80</height>");
+      rawXML.AppendLine("\t\t\t<textureNoFocus>exit_button.png</textureNoFocus>");
+      rawXML.AppendLine("\t\t\t<textureFocus>exit_button.png</textureFocus>");
+      rawXML.AppendLine("\t\t\t<action>97</action>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+      rawXML.AppendLine("\t\t</control>");
+
+      rawXML.AppendLine("\t\t<control>");
+      rawXML.AppendLine("\t\t\t<description>Restart Button</description>");
+      rawXML.AppendLine("\t\t\t<type>button</type>");
+      rawXML.AppendLine("\t\t\t<id>7888</id>");
+      rawXML.AppendLine("\t\t\t<posX>633</posX>");
+      rawXML.AppendLine("\t\t\t<posY>350</posY>");
+      rawXML.AppendLine("\t\t\t<onleft>7777</onleft>");
+      rawXML.AppendLine("\t\t\t<onright>7999</onright>");
+      rawXML.AppendLine("\t\t\t<width>80</width>");
+      rawXML.AppendLine("\t\t\t<height>80</height>");
+      rawXML.AppendLine("\t\t\t<textureNoFocus>restart_button.png</textureNoFocus>");
+      rawXML.AppendLine("\t\t\t<textureFocus>restart_button.png</textureFocus>");
+      rawXML.AppendLine("\t\t\t<action>98</action>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+      rawXML.AppendLine("\t\t</control>");
+
+      rawXML.AppendLine("\t\t<control>");
+      rawXML.AppendLine("\t\t\t<description>Shutdown Button</description>");
+      rawXML.AppendLine("\t\t\t<type>button</type>");
+      rawXML.AppendLine("\t\t\t<id>7999</id>");
+      rawXML.AppendLine("\t\t\t<posX>773</posX>");
+      rawXML.AppendLine("\t\t\t<posY>350</posY>");
+      rawXML.AppendLine("\t\t\t<onleft>7888</onleft>");
+      rawXML.AppendLine("\t\t\t<onright>17</onright>");
+      rawXML.AppendLine("\t\t\t<width>80</width>");
+      rawXML.AppendLine("\t\t\t<height>80</height>");
+      rawXML.AppendLine("\t\t\t<textureNoFocus>shutdown_button.png</textureNoFocus>");
+      rawXML.AppendLine("\t\t\t<textureFocus>shutdown_button.png</textureFocus>");
+      rawXML.AppendLine("\t\t\t<action>99</action>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+      rawXML.AppendLine("\t\t</control>");
+
+      rawXML.AppendLine("\t\t<control>");
+      rawXML.AppendLine("\t\t\t<description>Icon Fix</description>");
+      rawXML.AppendLine("\t\t\t<id>0</id>");
+      rawXML.AppendLine("\t\t\t<type>image</type>");
+      rawXML.AppendLine("\t\t\t<posx>0</posx>");
+      rawXML.AppendLine("\t\t\t<posy>0</posy>");
+      rawXML.AppendLine("\t\t\t<width>1280</width>");
+      rawXML.AppendLine("\t\t\t<height>720</height>");
+      rawXML.AppendLine("\t\t\t<texture>tv_black.png</texture>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>");
+      rawXML.AppendLine("\t\t</control>");
+
+      xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE OLD STYLE -->", rawXML.ToString());
+    }
+
+    #endregion
+
     #region Generate Topbar Vertical
 
     private void generateTopBarV()
@@ -1513,8 +1681,16 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textureFocus>-</textureFocus>");
       rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
       rawXML.AppendLine("<hover>-</hover>");
-      rawXML.AppendLine("<onleft>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onleft>");
-      rawXML.AppendLine("<onright>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onright>");
+      if (cbExitStyleOld.Checked)
+      {
+        rawXML.AppendLine("<onright>7777</onright>");
+        rawXML.AppendLine("<onleft>-</onleft>");
+      }
+      else
+      {
+        rawXML.AppendLine("<onleft>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onleft>");
+        rawXML.AppendLine("<onright>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onright>");
+      }
       rawXML.AppendLine("<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
       rawXML.AppendLine("<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
       rawXML.AppendLine("<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
@@ -3567,6 +3743,40 @@ namespace StreamedMPEditor
 
     #endregion
 
+    #region Add Fanart Controls Import
+
+    private void generateFanartControls()
+    {
+      StringBuilder rawXML = new StringBuilder();
+      rawXML.AppendLine("<import>common.fanartcontrols.basichome.xml</import>");
+      xml = xml.Replace("<!-- BEGIN FANART HANDLER CONTROLS -->", rawXML.ToString());
+    }
+
+    #endregion
+
+    #region Background Loading
+
+    private void generateBackgroundLoading()
+    {
+      StringBuilder rawXML = new StringBuilder();
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>BACKGROUND LOADING</description>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<type>image</type>");
+      rawXML.AppendLine("<posX>0</posX>");
+      rawXML.AppendLine("<posY>0</posY>");
+      rawXML.AppendLine("<width>1280</width>");
+      rawXML.AppendLine("<height>720</height>");
+      rawXML.AppendLine("<texture>LoadingBackdrop.png</texture>");
+      rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "0" + quote + " time=" + quote + "10" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("</control>");
+
+      xml = xml.Replace("<!-- BEGIN BACKGROUND LOADING -->", rawXML.ToString());
+    }
+
+    #endregion
+
     #region Generate Fanart Scraper Progress
 
     private void generatefanartScraper()
@@ -3796,6 +4006,7 @@ namespace StreamedMPEditor
       string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
       string mrSeriesEpisodeFormat = mrsForm.mrSeriesEpisodeFormat ? "true" : "false";
       string mrTitleLast = mrsForm.mrTitleLast ? "true" : "false";
+      string settingOldStyleExitButtons = cbExitStyleOld.Checked ? "true" : "false";
 
 
 
@@ -3901,6 +4112,7 @@ namespace StreamedMPEditor
                 + generateEntry("mrTitleLast", mrTitleLast, 2, true)
                 + generateEntry("mrEpisodeFont", mrsForm.mrEpisodeFont, 2, true)
                 + generateEntry("mrSeriesFont", mrsForm.mrSeriesFont, 2, true)
+                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons,2,true)
                 + "</section>");
       
       StringBuilder rawXML = new StringBuilder();
@@ -3928,6 +4140,9 @@ namespace StreamedMPEditor
 
 
         menuIndex += 1;
+
+        if (menItem.fanartHandlerEnabled)
+          fanartHandlerUsed = true;
       }
       rawXML.AppendLine("</section>");
       rawXML.AppendLine("</skin>");
