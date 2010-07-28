@@ -33,13 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Core, Version=1.1.0.39925, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Core, Version=1.1.0.16045, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\Core.dll</HintPath>
+      <HintPath>..\Externals\Core.dll</HintPath>
     </Reference>
-    <Reference Include="Dialogs, Version=1.1.0.39927, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Dialogs, Version=1.1.0.16051, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\plugins\Windows\Dialogs.dll</HintPath>
+      <HintPath>..\Externals\Dialogs.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -52,9 +52,9 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Utils, Version=2.2.7.39925, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Utils, Version=2.2.7.16040, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Release\Utils.dll</HintPath>
+      <HintPath>..\Externals\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
