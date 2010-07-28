@@ -27,8 +27,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Plugins\windows\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -114,8 +115,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) F:\HTPC\MediaPortal\plugins\windows\
-if $(ConfigurationName) == Debug copy $(ProjectDir)bin\Debug\$(TargetFileName) $(SolutionDir)..\..\svnroot\mediaportal\trunk\MediaPortal\xbmc\bin\Debug\plugins\windows\</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\Plugins\Windows /Y</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>

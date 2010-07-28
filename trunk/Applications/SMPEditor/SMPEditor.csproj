@@ -59,8 +59,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -70,10 +71,6 @@
     <Reference Include="Core, Version=1.1.0.16045, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\Core.dll</HintPath>
-    </Reference>
-    <Reference Include="StreamedMPEditor, Version=1.1.0.1338, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Plugins\process\StreamedMPEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -172,6 +169,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StreamedMPEditor\StreamedMPEditor.csproj">
+      <Project>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</Project>
+      <Name>StreamedMPEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -181,7 +184,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(TargetDir)merge.bat &amp;&amp; copy $(TargetPath) F:\HTPC\MediaPortal</PostBuildEvent>
+    <PostBuildEvent>$(TargetDir)merge.bat</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
