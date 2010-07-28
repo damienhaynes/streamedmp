@@ -7,7 +7,7 @@
   <disabletopbar>yes</disabletopbar>
   <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <controls>
-    <import>common.fanartcontrols.basichome.xml</import>
+    <!-- BEGIN FANART HANDLER CONTROLS -->
     <control>
       <description>DEFAULT BACKGROUND</description>
       <type>image</type>
@@ -18,18 +18,8 @@
       <height>720</height>
       <texture>background.png</texture>
     </control>
-    <control>
-      <description>BACKGROUND LOADING</description>
-      <id>0</id>
-      <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>LoadingBackdrop.png</texture>
-      <animation effect="fade" start="100" end="0" time="4000" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="0" end="0" time="10" reversible="false">WindowClose</animation>
-    </control>
+    <!-- BEGIN GENERATED TOPBAR CODE OLD STYLE -->
+    <!-- BEGIN BACKGROUND LOADING -->
     <!-- BEGIN GENERATED BACKGROUND CODE-->
     <!-- BEGIN GENERATED MENUGRAPHICS CODE-->
     <!-- BEGIN GENERATED RSS TICKER CODE-->

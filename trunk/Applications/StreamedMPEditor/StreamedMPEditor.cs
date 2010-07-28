@@ -133,7 +133,7 @@ namespace StreamedMPEditor
 
     bool basicHomeLoadError = false;
     bool useInfoServiceSeparator = false;
-
+    bool fanartHandlerUsed = false;
 
     string xml;
     string xmlTemplate;
@@ -798,6 +798,12 @@ namespace StreamedMPEditor
       generateXML(direction);
       generateBg(direction);
 
+      if (fanartHandlerUsed)
+      {
+        generateFanartControls();
+        generateBackgroundLoading();
+      }
+
       if (!cbDisableClock.Checked)
         generateClock();
 
@@ -829,7 +835,10 @@ namespace StreamedMPEditor
       }
       else if (direction == menuType.vertical)
       {
-        generateTopBarV();
+        if (cbExitStyleOld.Checked)
+          generateTopBarV1();
+        else
+          generateTopBarV();
         generateMenuGraphicsV();
         generateCrowdingFixV();
         GenerateContextLabelsV();
