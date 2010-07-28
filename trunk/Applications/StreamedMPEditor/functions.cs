@@ -1718,7 +1718,7 @@ namespace StreamedMPEditor
       public string configBasePath;
       public string streamedMPpath;
       public string pluginPath;
-      public string backgroundPath;
+      //public string backgroundPath;
       public string fanartBasePath;
       public string thumbsPath;
     }

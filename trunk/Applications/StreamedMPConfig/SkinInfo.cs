@@ -33,7 +33,7 @@ namespace StreamedMPConfig
       public string langBasePath;
       public string streamedMPpath;
       public string pluginPath;
-      public string backgroundPath;
+      //public string backgroundPath;
       public string fanartBasePath;
       public string thumbsPath;
     }
