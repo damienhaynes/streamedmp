@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -730,9 +731,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1850,7 +1855,7 @@
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
-		<row><td>smpeditor.exe</td><td>exeStreamedMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\x86\release\SMPEditor.exe</td><td>1</td><td/></row>
+		<row><td>smpeditor.exe</td><td>exeStreamedMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>1</td><td/></row>
 		<row><td>streamedmpconfig.dll</td><td>pluginStreamedMPConfigDLL</td><td>STREAM~1.DLL|StreamedMPConfig.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\StreamedMPConfig.dll</td><td>1</td><td/></row>
 		<row><td>streamedmpeditor.dll</td><td>pluginStreamedMPEditorDLL</td><td>STREAM~1.DLL|StreamedMPEditor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\StreamedMPEditor.dll</td><td>1</td><td/></row>
 		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\SubtitleDownloader.dll</td><td>1</td><td/></row>
@@ -4691,13 +4696,13 @@
 		<col def="S255">ISBuildSourcePath</col>
 		<col def="I2">ISIconIndex</col>
 		<row><td>ARPPRODUCTICON.exe</td><td/><td>&lt;ISProjectDataFolder&gt;\res\mp.ico</td><td>0</td></row>
-		<row><td>NewShortcut1_72FCBEFC804B4F09A75C7A7A012D22B9.exe</td><td/><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\x86\release\SMPEditor.exe</td><td>0</td></row>
+		<row><td>NewShortcut1_11F11864335F4511AAAA619F7F2A0FEF.exe</td><td/><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>0</td></row>
 		<row><td>NewShortcut2_FF3799C827FB4AB7AB7DE6EEAEF77EEE.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut3_60EFB7FEA77A458A8531E0A05D6BC065.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>6</td></row>
 		<row><td>NewShortcut4_A0594CEEF3A447DE9C40F2B791979F8C.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut5_5F8C724FD1764D49819A518683F36431.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
 		<row><td>NewShortcut6_B891162023F7441B8E7C9146DCA623E5.exe</td><td/><td>&lt;ProgramFilesFolder&gt;\internet explorer\iexplore.exe</td><td>12</td></row>
-		<row><td>NewShortcut7_18CC0ABEF51D4CF999168BCFFD7E6E67.exe</td><td/><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\x86\release\SMPEditor.exe</td><td>0</td></row>
+		<row><td>NewShortcut7_501E2E1C3D324488985997E92E17F9D5.exe</td><td/><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>0</td></row>
 		<row><td>menuGeneratorShort_AD7031F04E39404C8D69FB7F3DAE50BC.exe</td><td/><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>0</td></row>
 		<row><td>menuGeneratorShort_D928837CA45F4756BAE06DED95F196D1.exe</td><td/><td>&lt;SKINFILES&gt;\editor\streamedmpeditor\streamedmpeditor\bin\release\StreamedMPEditor.exe</td><td>0</td></row>
 	</table>
@@ -4741,9 +4746,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -5365,13 +5374,13 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING142##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut1_72FCBEFC804B4F09A75C7A7A012D22B9.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING142##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut1_11F11864335F4511AAAA619F7F2A0FEF.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut2</td><td>newfolder4</td><td>##ID_STRING42##</td><td>webForums</td><td>[INSTALLDIR]StreamedMP\Web\Forums.url</td><td/><td/><td/><td>NewShortcut2_FF3799C827FB4AB7AB7DE6EEAEF77EEE.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>newfolder4</td><td>##ID_STRING43##</td><td>webHome</td><td>[INSTALLDIR]StreamedMP\Web\Home.url</td><td/><td/><td/><td>NewShortcut3_60EFB7FEA77A458A8531E0A05D6BC065.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut4</td><td>newfolder4</td><td>##ID_STRING44##</td><td>webIssues</td><td>[INSTALLDIR]StreamedMP\Web\Issues.url</td><td/><td/><td/><td>NewShortcut4_A0594CEEF3A447DE9C40F2B791979F8C.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>newfolder4</td><td>##ID_STRING45##</td><td>webUpdates</td><td>[INSTALLDIR]StreamedMP\Web\Updates.url</td><td/><td/><td/><td>NewShortcut5_5F8C724FD1764D49819A518683F36431.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut6</td><td>newfolder4</td><td>##ID_STRING46##</td><td>webWiki</td><td>[INSTALLDIR]StreamedMP\Web\Wiki.url</td><td/><td/><td/><td>NewShortcut6_B891162023F7441B8E7C9146DCA623E5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut7</td><td>newfolder3</td><td>##ID_STRING143##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut7_18CC0ABEF51D4CF999168BCFFD7E6E67.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut7</td><td>newfolder3</td><td>##ID_STRING143##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut7_501E2E1C3D324488985997E92E17F9D5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
