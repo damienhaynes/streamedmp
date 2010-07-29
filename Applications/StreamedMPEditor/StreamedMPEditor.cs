@@ -835,7 +835,7 @@ namespace StreamedMPEditor
       }
       else if (direction == menuType.vertical)
       {
-        if (cbExitStyleOld.Checked)
+        if (!cbExitStyleNew.Checked)
           generateTopBarV1();
         else
           generateTopBarV();

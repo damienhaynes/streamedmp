@@ -1036,6 +1036,7 @@ namespace StreamedMPEditor
           cboSelectedFont.Enabled = false;
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream16tc";
+          cbExitStyleNew.Visible = true;
           break;
 
         case chosenMenuStyle.horizontalStandardStyle:
@@ -1055,6 +1056,8 @@ namespace StreamedMPEditor
           cboSelectedFont.Enabled = true;
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
+          cbExitStyleNew.Visible = false;
+
           break;
 
         case chosenMenuStyle.horizontalContextStyle:
@@ -1074,6 +1077,7 @@ namespace StreamedMPEditor
           cboLabelFont.Text = "mediastream28tc";
           cboLabelFont.Enabled = false;
           cboSelectedFont.Enabled = false;
+          cbExitStyleNew.Visible = false;
           break;
       }
     }
