@@ -106,7 +106,7 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
-      this.cbExitStyleOld = new System.Windows.Forms.CheckBox();
+      this.cbExitStyleNew = new System.Windows.Forms.CheckBox();
       this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
       this.cboLabelFont = new System.Windows.Forms.ComboBox();
@@ -1165,7 +1165,7 @@
       // 
       // styleOptionsGroup
       // 
-      this.styleOptionsGroup.Controls.Add(this.cbExitStyleOld);
+      this.styleOptionsGroup.Controls.Add(this.cbExitStyleNew);
       this.styleOptionsGroup.Controls.Add(this.cbAnimateBackground);
       this.styleOptionsGroup.Controls.Add(this.cbOverlayFanart);
       this.styleOptionsGroup.Controls.Add(this.cboLabelFont);
@@ -1183,18 +1183,18 @@
       // 
       // cbExitStyleOld
       // 
-      this.cbExitStyleOld.AutoSize = true;
-      this.cbExitStyleOld.Location = new System.Drawing.Point(229, 51);
-      this.cbExitStyleOld.Name = "cbExitStyleOld";
-      this.cbExitStyleOld.Size = new System.Drawing.Size(231, 17);
-      this.cbExitStyleOld.TabIndex = 44;
-      this.cbExitStyleOld.Text = "Hidden Exit, Restart and Shutdown Buttons";
-      this.cbExitStyleOld.UseVisualStyleBackColor = true;
+      this.cbExitStyleNew.AutoSize = true;
+      this.cbExitStyleNew.Location = new System.Drawing.Point(223, 51);
+      this.cbExitStyleNew.Name = "cbExitStyleOld";
+      this.cbExitStyleNew.Size = new System.Drawing.Size(246, 17);
+      this.cbExitStyleNew.TabIndex = 44;
+      this.cbExitStyleNew.Text = "Enable Exit/Shutdown Buttons  on BasicHome";
+      this.cbExitStyleNew.UseVisualStyleBackColor = true;
       // 
       // cbAnimateBackground
       // 
       this.cbAnimateBackground.AutoSize = true;
-      this.cbAnimateBackground.Location = new System.Drawing.Point(229, 27);
+      this.cbAnimateBackground.Location = new System.Drawing.Point(223, 27);
       this.cbAnimateBackground.Name = "cbAnimateBackground";
       this.cbAnimateBackground.Size = new System.Drawing.Size(157, 17);
       this.cbAnimateBackground.TabIndex = 43;
@@ -1205,7 +1205,7 @@
       // cbOverlayFanart
       // 
       this.cbOverlayFanart.AutoSize = true;
-      this.cbOverlayFanart.Location = new System.Drawing.Point(10, 51);
+      this.cbOverlayFanart.Location = new System.Drawing.Point(6, 51);
       this.cbOverlayFanart.Name = "cbOverlayFanart";
       this.cbOverlayFanart.Size = new System.Drawing.Size(205, 17);
       this.cbOverlayFanart.TabIndex = 42;
@@ -1251,7 +1251,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(229, 77);
+      this.useAeonGraphics.Location = new System.Drawing.Point(223, 77);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 26;
@@ -1261,7 +1261,7 @@
       // horizontalContextLabels
       // 
       this.horizontalContextLabels.AutoSize = true;
-      this.horizontalContextLabels.Location = new System.Drawing.Point(10, 26);
+      this.horizontalContextLabels.Location = new System.Drawing.Point(6, 26);
       this.horizontalContextLabels.Name = "horizontalContextLabels";
       this.horizontalContextLabels.Size = new System.Drawing.Size(213, 17);
       this.horizontalContextLabels.TabIndex = 25;
@@ -2801,7 +2801,7 @@
     private System.Windows.Forms.RadioButton rbPosterStyle;
     private System.Windows.Forms.Button btFormatOptions;
     private System.Windows.Forms.CheckBox cbCycleFanart;
-    private System.Windows.Forms.CheckBox cbExitStyleOld;
+    private System.Windows.Forms.CheckBox cbExitStyleNew;
   }
 }
 

@@ -560,7 +560,7 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                if (cbExitStyleOld.Checked)
+                if (!cbExitStyleNew.Checked)
                 {
                   rawXML.AppendLine("<onright>7777</onright>");
                   rawXML.AppendLine("<onleft>-</onleft>");
@@ -606,7 +606,7 @@ namespace StreamedMPEditor
                   onright = menuItems[0].id;
                 else
                   onright = (menItem.id + 1);
-                if (cbExitStyleOld.Checked)
+                if (!cbExitStyleNew.Checked)
                 {
                   rawXML.AppendLine("<onright>7777</onright>");
                   rawXML.AppendLine("<onleft>-</onleft>");
@@ -1681,7 +1681,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textureFocus>-</textureFocus>");
       rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
       rawXML.AppendLine("<hover>-</hover>");
-      if (cbExitStyleOld.Checked)
+      if (!cbExitStyleNew.Checked)
       {
         rawXML.AppendLine("<onright>7777</onright>");
         rawXML.AppendLine("<onleft>-</onleft>");
@@ -4006,7 +4006,7 @@ namespace StreamedMPEditor
       string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
       string mrSeriesEpisodeFormat = mrsForm.mrSeriesEpisodeFormat ? "true" : "false";
       string mrTitleLast = mrsForm.mrTitleLast ? "true" : "false";
-      string settingOldStyleExitButtons = cbExitStyleOld.Checked ? "true" : "false";
+      string settingOldStyleExitButtons = cbExitStyleNew.Checked ? "true" : "false";
 
 
 

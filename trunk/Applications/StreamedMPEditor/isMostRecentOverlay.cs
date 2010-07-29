@@ -462,10 +462,10 @@
                       "<description>Series 2 Rounded Cover</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>441</posX>" +
-                      "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                      "<posX>440</posX>" +
+                      "<posY>" + (overlayYpos + 1).ToString() + "</posY>" +
                       "<height>181</height>" +
-                      "<width>129</width>" +
+                      "<width>127</width>" +
                       "<texture>round.poster.frame.noreflection.png</texture>" +
                     "</control>      " +
                     "<control>" +
@@ -539,10 +539,10 @@
                       "<description>Series 3 Rounded Cover</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>855</posX>" +
+                      "<posX>858</posX>" +
                       "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
                       "<height>181</height>" +
-                      "<width>129</width>" +
+                      "<width>127</width>" +
                       "<texture>round.poster.frame.noreflection.png</texture>" +
                     "</control>      " +
                     "<control>" +

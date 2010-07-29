@@ -220,7 +220,7 @@ namespace StreamedMPEditor
         mrsForm.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
         mrsForm.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
         mrsForm.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
-        cbExitStyleOld.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));      
+        cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));      
       }
       catch
       {
