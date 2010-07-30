@@ -41,14 +41,13 @@
       this.processCheckGroup = new System.Windows.Forms.GroupBox();
       this.introBox = new System.Windows.Forms.TextBox();
       this.btInstallPatch = new System.Windows.Forms.Button();
-      this.btShowChangeLog = new System.Windows.Forms.Button();
       this.btExit = new System.Windows.Forms.Button();
       this.PatchFileName = new System.Windows.Forms.ColumnHeader();
       this.patchFileVersion = new System.Windows.Forms.ColumnHeader();
       this.thePatches = new System.Windows.Forms.ListView();
       this.installedVersion = new System.Windows.Forms.ColumnHeader();
-      this.patchProgressBar = new System.Windows.Forms.ProgressBar();
       this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+      this.patchProgressBar = new System.Windows.Forms.ProgressBar();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       this.processCheckGroup.SuspendLayout();
@@ -137,7 +136,7 @@
       this.processCheckGroup.Controls.Add(this.smpeditorStatus);
       this.processCheckGroup.Controls.Add(this.ConfigurationStatusLb);
       this.processCheckGroup.Controls.Add(this.SMPEditorActivelb);
-      this.processCheckGroup.Location = new System.Drawing.Point(193, 247);
+      this.processCheckGroup.Location = new System.Drawing.Point(194, 209);
       this.processCheckGroup.Name = "processCheckGroup";
       this.processCheckGroup.Size = new System.Drawing.Size(354, 76);
       this.processCheckGroup.TabIndex = 8;
@@ -158,7 +157,7 @@
       // 
       // btInstallPatch
       // 
-      this.btInstallPatch.Location = new System.Drawing.Point(193, 214);
+      this.btInstallPatch.Location = new System.Drawing.Point(194, 294);
       this.btInstallPatch.Name = "btInstallPatch";
       this.btInstallPatch.Size = new System.Drawing.Size(104, 24);
       this.btInstallPatch.TabIndex = 12;
@@ -166,18 +165,9 @@
       this.btInstallPatch.UseVisualStyleBackColor = true;
       this.btInstallPatch.Click += new System.EventHandler(this.btInstallPatch_Click);
       // 
-      // btShowChangeLog
-      // 
-      this.btShowChangeLog.Location = new System.Drawing.Point(316, 214);
-      this.btShowChangeLog.Name = "btShowChangeLog";
-      this.btShowChangeLog.Size = new System.Drawing.Size(104, 24);
-      this.btShowChangeLog.TabIndex = 13;
-      this.btShowChangeLog.Text = "Change Log";
-      this.btShowChangeLog.UseVisualStyleBackColor = true;
-      // 
       // btExit
       // 
-      this.btExit.Location = new System.Drawing.Point(442, 214);
+      this.btExit.Location = new System.Drawing.Point(444, 294);
       this.btExit.Name = "btExit";
       this.btExit.Size = new System.Drawing.Size(104, 24);
       this.btExit.TabIndex = 14;
@@ -214,19 +204,19 @@
       this.installedVersion.Text = "Installed Version";
       this.installedVersion.Width = 100;
       // 
-      // patchProgressBar
-      // 
-      this.patchProgressBar.Location = new System.Drawing.Point(194, 191);
-      this.patchProgressBar.Name = "patchProgressBar";
-      this.patchProgressBar.Size = new System.Drawing.Size(351, 12);
-      this.patchProgressBar.TabIndex = 16;
-      // 
       // imageList1
       // 
       this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
       this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
       this.imageList1.Images.SetKeyName(0, "patchInstalled.png");
       this.imageList1.Images.SetKeyName(1, "patchNotInstalled.png");
+      // 
+      // patchProgressBar
+      // 
+      this.patchProgressBar.Location = new System.Drawing.Point(194, 191);
+      this.patchProgressBar.Name = "patchProgressBar";
+      this.patchProgressBar.Size = new System.Drawing.Size(351, 12);
+      this.patchProgressBar.TabIndex = 16;
       // 
       // SMPpatch
       // 
@@ -236,7 +226,6 @@
       this.Controls.Add(this.patchProgressBar);
       this.Controls.Add(this.thePatches);
       this.Controls.Add(this.btExit);
-      this.Controls.Add(this.btShowChangeLog);
       this.Controls.Add(this.btInstallPatch);
       this.Controls.Add(this.introBox);
       this.Controls.Add(this.processCheckGroup);
@@ -270,7 +259,6 @@
     private System.Windows.Forms.GroupBox processCheckGroup;
     private System.Windows.Forms.TextBox introBox;
     private System.Windows.Forms.Button btInstallPatch;
-    private System.Windows.Forms.Button btShowChangeLog;
     private System.Windows.Forms.Button btExit;
     private System.Windows.Forms.ColumnHeader PatchFileName;
     private System.Windows.Forms.ColumnHeader patchFileVersion;
