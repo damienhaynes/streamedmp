@@ -34,7 +34,10 @@ namespace SMPpatch
 
       InitializeComponent();
 
+
+
       //Check for any command line argments
+      btInstallPatch.Enabled = true; 
       foreach (string arg in Environment.GetCommandLineArgs())
       {
         // Run unattended - This will run the program minimised and exit
@@ -51,13 +54,11 @@ namespace SMPpatch
         if (arg.ToLower().Contains("restartmp"))
         {
           restartMediaPortal = true;
-          btInstallPatch.Enabled = false;
         }
         // Do we restart Configuration after the update 
         if (arg.ToLower().Contains("restartconfiguration"))
         {
           restartConfiguration = true;
-          btInstallPatch.Enabled = false;
         }
       }
     }
@@ -73,6 +74,8 @@ namespace SMPpatch
       SkinInfo.GetMediaPortalSkinPath();
       introBox.SelectionStart = 0;
 
+      // Sleep for 2 secs to enable MediaPortal to shutdown before doing checks for running processess
+      Thread.Sleep(2000);
 
       while (!checkRunningProcess())
       {
