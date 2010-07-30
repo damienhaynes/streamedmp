@@ -159,6 +159,8 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(TargetDir)merge.bat</PostBuildEvent>
+    <PostBuildEvent>copy $(SolutionDir)Externals\ILMerge.exe $(TargetDir) /Y
+copy $(ProjectDir)\ILMerge\merge.bat $(TargetDir) /Y
+$(TargetDir)merge.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>
