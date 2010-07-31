@@ -358,7 +358,7 @@ namespace SMPpatch
 
     private void btInstallPatch_Click(object sender, EventArgs e)
     {
-      installThePatches();      
+      installThePatches();
     }
 
     void installThePatches()
@@ -381,39 +381,39 @@ namespace SMPpatch
 
     void installPatch(patchFile thePatch)
     {
-        try
+      try
+      {
+        if (thePatch.patchAction.ToLower() == "install")
         {
-            if (thePatch.patchAction.ToLower() == "install")
-            {
-                if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
-                {
-                    File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
-                }
-                if (thePatch.patchLocation.ToLower().StartsWith("mediaportal"))
-                {
-                    File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
-                }
-            }
+          if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
+          {
+            File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+          }
+          if (thePatch.patchLocation.ToLower().StartsWith("mediaportal"))
+          {
+            File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+          }
         }
-        catch (UnauthorizedAccessException ex)
-        {
-            // catch access issues...maybe from UAC
-            // really need to elevate
-            string message = "User Account Control maybe preventing StreamedMP from updating the required file: ";
-            string message2 = "Its recommended you address the issue and run the patch again.";
-            DialogResult result = MessageBox.Show(string.Format("{0}{1}.\n\n{2}\n\n{3}", message, thePatch.patchFileName, ex.Message, message2), "SMPPatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            // exit now, so we dont update version and prevent user from applying patch again
-            Application.Exit();
-        }
+      }
+      catch (UnauthorizedAccessException ex)
+      {
+        // catch access issues...maybe from UAC
+        // really need to elevate
+        string message = "User Account Control maybe preventing StreamedMP from updating the required file: ";
+        string message2 = "Its recommended you address the issue and run the patch again.";
+        DialogResult result = MessageBox.Show(string.Format("{0}{1}.\n\n{2}\n\n{3}", message, thePatch.patchFileName, ex.Message, message2), "SMPPatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        // exit now, so we dont update version and prevent user from applying patch again
+        Application.Exit();
+      }
 
-        if (thePatch.patchAction.ToLower() == "unzip")
-        {
-            installZip(thePatch);
-        }
+      if (thePatch.patchAction.ToLower() == "unzip")
+      {
+        installZip(thePatch);
+      }
 
-        if (thePatch.patchAction.ToLower() == "run")
-        {
-        }        
+      if (thePatch.patchAction.ToLower() == "run")
+      {
+      }
     }
 
 
@@ -435,7 +435,7 @@ namespace SMPpatch
         if (patchdir.ToLower().Contains("streamedmp"))
           copyDirectory(Path.Combine(destinationPath, "StreamedMP"), Path.Combine(SkinInfo.mpPaths.skinBasePath, "StreamedMP"));
         if (patchdir.ToLower().Contains("thumbs"))
-            copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
+          copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
       }
       patchProgressBar.Value += 10;
     }
@@ -467,7 +467,7 @@ namespace SMPpatch
     {
       try
       {
-        System.IO.Directory.Delete(Path.Combine(SkinInfo.mpPaths.cacheBasePath,"StreamedMP"), true);
+        System.IO.Directory.Delete(Path.Combine(SkinInfo.mpPaths.cacheBasePath, "StreamedMP"), true);
         //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
       catch
