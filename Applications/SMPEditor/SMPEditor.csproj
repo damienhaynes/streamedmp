@@ -187,6 +187,6 @@
     <PostBuildEvent>copy $(SolutionDir)Externals\ILMerge.exe $(TargetDir) /Y
 copy $(ProjectDir)\ILMerge\merge.bat $(TargetDir) /Y
 $(TargetDir)merge.bat</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
