@@ -358,8 +358,7 @@ namespace SMPpatch
 
     private void btInstallPatch_Click(object sender, EventArgs e)
     {
-      installThePatches();
-      clearCacheDir();
+      installThePatches();      
     }
 
     void installThePatches()
@@ -377,29 +376,44 @@ namespace SMPpatch
           patchProgressBar.Value += patchProgressBar.Step;
       }
       btInstallPatch.Enabled = false;
+      clearCacheDir();
     }
 
     void installPatch(patchFile thePatch)
     {
-      if (thePatch.patchAction.ToLower() == "install")
-      {
-        if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
+        try
         {
-          File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+            if (thePatch.patchAction.ToLower() == "install")
+            {
+                if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
+                {
+                    File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+                }
+                if (thePatch.patchLocation.ToLower().StartsWith("mediaportal"))
+                {
+                    File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+                }
+            }
         }
-        if (thePatch.patchLocation.ToLower().StartsWith("mediaportal"))
+        catch (UnauthorizedAccessException ex)
         {
-          File.Copy(Path.Combine(tempExtractPath, thePatch.patchFileName), Path.Combine(thePatch.destinationPath, thePatch.patchFileName), true);
+            // catch access issues...maybe from UAC
+            // really need to elevate
+            string message = "User Account Control maybe preventing StreamedMP from updating the required file: ";
+            string message2 = "Its recommended you address the issue and run the patch again.";
+            DialogResult result = MessageBox.Show(string.Format("{0}{1}.\n\n{2}\n\n{3}", message, thePatch.patchFileName, ex.Message, message2), "SMPPatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // exit now, so we dont update version and prevent user from applying patch again
+            Application.Exit();
         }
-      }
-      if (thePatch.patchAction.ToLower() == "unzip")
-      {
-        installZip(thePatch);
-      }
 
-      if (thePatch.patchAction.ToLower() == "run")
-      {
-      }
+        if (thePatch.patchAction.ToLower() == "unzip")
+        {
+            installZip(thePatch);
+        }
+
+        if (thePatch.patchAction.ToLower() == "run")
+        {
+        }        
     }
 
 
