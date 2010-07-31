@@ -45,10 +45,22 @@ namespace SMPpatch
     // Protected Variables
     // Public Variables
     public static editorPaths mpPaths = new editorPaths();
+    XmlTextReader reader;
+    Version newVersion = null;
+    Version curVersion = null;
 
     #endregion
 
     #region Public methods
+
+    public Version skinVersion
+    {
+      get
+      {
+        return _skinVersion();
+      }
+    }
+
 
     public static void GetMediaPortalSkinPath()
     {
@@ -228,6 +240,46 @@ namespace SMPpatch
       {
         return readMPConfiguration("skin", "name");
       }
+    }
+
+
+     Version _skinVersion()
+    {
+      try
+      {
+        string xmlURL = SkinInfo.mpPaths.streamedMPpath + "streamedmp.version.xml";
+        reader = new XmlTextReader(xmlURL);
+        reader.MoveToContent();
+        string elementName = "";
+        if ((reader.NodeType == XmlNodeType.Element) && (reader.Name == "window"))
+        {
+          while (reader.Read())
+          {
+            if (reader.NodeType == XmlNodeType.Element)
+              elementName = reader.Name;
+            else
+            {
+              if ((reader.NodeType == XmlNodeType.Text) && (reader.HasValue))
+              {
+                if (elementName == "label")
+                {
+                  string aa = reader.Value.Substring(12);
+                  curVersion = new Version(reader.Value.Substring(12));
+                }
+              }
+            }
+          }
+        }
+      }
+      catch
+      {
+        //smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message, LogLevel.Error);
+      }
+      finally
+      {
+        if (reader != null) reader.Close();
+      }
+      return curVersion;
     }
 
     #endregion

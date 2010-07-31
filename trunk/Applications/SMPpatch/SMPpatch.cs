@@ -28,13 +28,9 @@ namespace SMPpatch
 
 
 
-
     public SMPpatch()
     {
-
       InitializeComponent();
-
-
 
       //Check for any command line argments
       btInstallPatch.Enabled = true; 
@@ -108,8 +104,25 @@ namespace SMPpatch
       if (unattendedInatall)
       {
         installThePatches();
-        exitAndCleanup();
+        if (unattendedInatall)
+        {
+          UpdateMessage updateDone = new UpdateMessage();
+          SkinInfo skInfo = new SkinInfo();
+          updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
+          updateDone.Show();
+          for (int i = 0; i < 5; i++)
+          {
+            if (restartMediaPortal)
+              updateDone.countDown = "Restarting MediaPortal : " + (5 - i).ToString();
+            if (restartConfiguration)
+              updateDone.countDown = "Restarting Configuration : " + (5 - i).ToString();
+            updateDone.Refresh();
+            Thread.Sleep(1000);
+          }
+        }
       }
+
+        exitAndCleanup();
     }
 
     bool checkRunningProcess()
