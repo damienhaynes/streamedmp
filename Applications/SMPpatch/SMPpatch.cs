@@ -33,7 +33,9 @@ namespace SMPpatch
       InitializeComponent();
 
       //Check for any command line argments
-      btInstallPatch.Enabled = true; 
+      btInstallPatch.Enabled = true;
+      restartConfiguration = false;
+      restartMediaPortal = false;
       foreach (string arg in Environment.GetCommandLineArgs())
       {
         // Run unattended - This will run the program minimised and exit
@@ -104,25 +106,22 @@ namespace SMPpatch
       if (unattendedInatall)
       {
         installThePatches();
-        if (unattendedInatall)
-        {
-          UpdateMessage updateDone = new UpdateMessage();
-          SkinInfo skInfo = new SkinInfo();
-          updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
-          updateDone.Show();
-          for (int i = 0; i < 5; i++)
-          {
-            if (restartMediaPortal)
-              updateDone.countDown = "Restarting MediaPortal : " + (5 - i).ToString();
-            if (restartConfiguration)
-              updateDone.countDown = "Restarting Configuration : " + (5 - i).ToString();
-            updateDone.Refresh();
-            Thread.Sleep(1000);
-          }
-        }
-      }
 
+        UpdateMessage updateDone = new UpdateMessage();
+        SkinInfo skInfo = new SkinInfo();
+        updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
+        updateDone.Show();
+        for (int i = 0; i < 5; i++)
+        {
+          if (restartMediaPortal)
+            updateDone.countDown = "Restarting MediaPortal : " + (5 - i).ToString();
+          if (restartConfiguration)
+            updateDone.countDown = "Restarting Configuration : " + (5 - i).ToString();
+          updateDone.Refresh();
+          Thread.Sleep(1000);
+        }
         exitAndCleanup();
+      }
     }
 
     bool checkRunningProcess()
