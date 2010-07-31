@@ -297,7 +297,7 @@ namespace StreamedMPConfig
               if (StreamedMPConfig.patchUtilityRunUnattended)
                 upgradeProcess.Arguments = "/unattended ";
               if (StreamedMPConfig.patchUtilityRestartMP)
-                upgradeProcess.Arguments += "/restartconfuration";
+                upgradeProcess.Arguments += "/restartconfiguration";
               System.Diagnostics.Process.Start(upgradeProcess);
               Application.Exit();
             }
