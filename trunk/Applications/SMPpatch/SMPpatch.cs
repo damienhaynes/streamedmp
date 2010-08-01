@@ -263,7 +263,8 @@ namespace SMPpatch
     {
       try
       {
-        System.Reflection.Assembly a = System.Reflection.Assembly.Load(assemblyName);
+        //System.Reflection.Assembly a = System.Reflection.Assembly.Load(assemblyName);
+        System.Reflection.Assembly a = System.Reflection.Assembly.GetCallingAssembly();
         Stream str = a.GetManifestResourceStream(assemblyName + "." + fileName);
 
         if (str == null)

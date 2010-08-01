@@ -41,7 +41,7 @@ namespace StreamedMPConfig
     {
       get
       {
-        if (_logLevel() == 4)
+        if (_logLevel() == 3)
           return true;
         else
           return false;
