@@ -241,13 +241,19 @@ namespace SMPpatch
       patchFiles.Add(pf);
       ListViewItem item = new ListViewItem(new[] { pf.patchFileName, pf.patchVersion, pf.installedVersion });
       item.ImageIndex = 1;
-      thePatches.Items.Add(item);
+      if (pf.installedVersion != "0.0.0.0")
+        thePatches.Items.Add(item);
     }
 
     string fileVersion(string fileToCheck)
     {
-      FileVersionInfo fv = FileVersionInfo.GetVersionInfo(fileToCheck);
-      return fv.FileVersion;
+      if (File.Exists(fileToCheck))
+      {
+        FileVersionInfo fv = FileVersionInfo.GetVersionInfo(fileToCheck);
+        return fv.FileVersion;
+      }
+      else
+        return "0.0.0.0";
     }
 
 
