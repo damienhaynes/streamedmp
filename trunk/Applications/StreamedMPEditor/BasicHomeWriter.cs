@@ -1272,7 +1272,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>80</height>");
       rawXML.AppendLine("\t\t\t<textureNoFocus>restart_button.png</textureNoFocus>");
       rawXML.AppendLine("\t\t\t<textureFocus>restart_button.png</textureFocus>");
-      rawXML.AppendLine("\t\t\t<action>98</action>");
+      rawXML.AppendLine("\t\t\t<action>196250</action>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
@@ -1389,7 +1389,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>40</height>");
         rawXML.AppendLine("<textureNoFocus>restart_button.png</textureNoFocus>");
         rawXML.AppendLine("<textureFocus>restart_button.png</textureFocus>");
-        rawXML.AppendLine("<action>98</action>");
+        rawXML.AppendLine("<action>196250</action>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
@@ -1578,7 +1578,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<textureFocus>restart_button.png</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<label>-</label>");
-        rawXML.AppendLine("<action>98</action> ");
+        rawXML.AppendLine("<action>196250</action> ");
         rawXML.AppendLine("<onleft>" + topMenuId + "03</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "02</onright>");
         rawXML.AppendLine("<onup>" + topMenuId + "01</onup>");
