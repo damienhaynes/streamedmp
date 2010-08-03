@@ -3747,9 +3747,12 @@ namespace StreamedMPEditor
 
     private void generateFanartControls()
     {
-      StringBuilder rawXML = new StringBuilder();
-      rawXML.AppendLine("<import>common.fanartcontrols.basichome.xml</import>");
-      xml = xml.Replace("<!-- BEGIN FANART HANDLER CONTROLS -->", rawXML.ToString());
+      if (fanartHandlerUsed)
+      {
+        StringBuilder rawXML = new StringBuilder();
+        rawXML.AppendLine("<import>common.fanartcontrols.basichome.xml</import>");
+        xml = xml.Replace("<!-- BEGIN FANART HANDLER CONTROLS -->", rawXML.ToString());
+      }
     }
 
     #endregion
