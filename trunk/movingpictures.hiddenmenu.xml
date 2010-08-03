@@ -11,7 +11,7 @@ This file should contain the details view
 			<width>59</width>
 			<height>153</height>
 			<texture>Action_menu.png</texture>
-			<visible>!control.isvisible(51)+control.isvisible(50)</visible>				
+			<visible>!control.isvisible(51)+control.isvisible(50)</visible>
 		</control>			
 		<control>
 			<type>actiongroup</type>
@@ -22,7 +22,7 @@ This file should contain the details view
 			<buttonX>1231</buttonX>
 			<buttonY>55</buttonY>
 			<buttonwidth>49</buttonwidth>
-			<buttonheight>253</buttonheight>						
+			<buttonheight>253</buttonheight>
 			<control>
 				<type>image</type>
 				<posX>1002</posX>
@@ -47,7 +47,7 @@ This file should contain the details view
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
-			<control>				
+			<control>
 				<description>Views Menu</description>
 				<id>0</id>
 				<label>499</label>
@@ -59,7 +59,7 @@ This file should contain the details view
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
-			<control>				
+			<control>
 				<description>Settings</description>
 				<id>0</id>
 				<label>897</label>
@@ -71,7 +71,7 @@ This file should contain the details view
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
 			</control>
-			<control>								
+			<control>
 				<id>0</id>
 				<description>JUMP TO</description>
 				<type>label</type>
@@ -95,7 +95,7 @@ This file should contain the details view
 				<visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
 				<animation effect="slide" time="100" start="300,0">visible</animation>
 				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>			
+			</control>
 			<control>
 				<type>group</type>
 				<description>group element</description>
@@ -112,7 +112,7 @@ This file should contain the details view
 					<type>button</type>
 					<id>2</id>
 					<label>#MovingPictures.Translation.CycleView.Label</label>
-					<onleft>50</onleft>					
+					<onleft>50</onleft>
 					<onup>21</onup>
 				</control>
 				<control>
@@ -126,14 +126,14 @@ This file should contain the details view
 					<description>Filters Menu</description>
 					<type>button</type>
 					<id>4</id>
-					<label>#MovingPictures.Translation.FilterBy.Label ...</label>	
+					<label>#MovingPictures.Translation.FilterBy.Label ...</label>
 					<onleft>50</onleft>
 				</control>
 				<control>
 					<description>Parental Controls</description>
 					<type>button</type>
 					<id>15</id>
-					<label>#MovingPictures.Translation.ToggleParentalLock.Label</label>					
+					<label>#MovingPictures.Translation.ToggleParentalLock.Label</label>
 					<onleft>50</onleft>
 					<scrollStartDelaySec>1</scrollStartDelaySec>
 					<scrollWrapString> | </scrollWrapString>
@@ -144,14 +144,14 @@ This file should contain the details view
 					<id>0</id>
 					<label>-</label>
 					<visible>false</visible>
-				</control>			
+				</control>
 				<control>
 					<description>Video Settings</description>
 					<type>button</type>
 					<id>66610</id>
 					<label>100006</label>
 					<hyperlink>703</hyperlink>
-					<ondown>176</ondown>					
+					<ondown>176</ondown>
 					<onleft>50</onleft>
 				</control>
 				<control>
@@ -165,7 +165,7 @@ This file should contain the details view
 					<description>My TVSeries</description>
 					<type>button</type>
 					<id>176</id>
-					<label>My TVSeries</label>					
+					<label>My TVSeries</label>
 					<onup>66610</onup>
 					<ondown>177</ondown>
 					<onleft>50</onleft>
@@ -175,7 +175,7 @@ This file should contain the details view
 					<description>My Videos</description>
 					<type>button</type>
 					<id>177</id>
-					<label>100006</label>					
+					<label>100006</label>
 					<ondown>178</ondown>
 					<onup>176</onup>
 					<onleft>50</onleft>
@@ -185,11 +185,22 @@ This file should contain the details view
 					<description>My Trailers</description>
 					<type>button</type>
 					<id>178</id>
-					<label>5900</label>										
-					<ondown>2</ondown>
+					<label>5900</label>
+					<ondown>179</ondown>
 					<onup>177</onup>
 					<onleft>50</onleft>
 					<hyperlink>5900</hyperlink>
+				</control>
+				<control>
+				<description>SubCentral</description>
+					<type>button</type>
+					<id>179</id>
+					<label>287</label>
+					<hyperlink>84623</hyperlink>
+					<onup>178</onup>
+					<ondown>2</ondown>
+					<onleft>50</onleft>
+					<visible>plugin.isenabled(SubCentral)</visible>
 				</control>
 			</control>
 		</control>
