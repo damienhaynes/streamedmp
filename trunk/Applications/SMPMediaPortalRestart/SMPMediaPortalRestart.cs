@@ -22,7 +22,6 @@ namespace SMPMediaPortalRestart
     private void SMPMediaPortalRestart_Load(object sender, EventArgs e)
     {
       // The Parameter we need is in postion 1
-      string[] exePath = Environment.GetCommandLineArgs();
       lbStatus.Text = "Restarting MediaPortal in 0 Seconds";
       int xpos = (Screen.PrimaryScreen.Bounds.Width / 2) - (lbStatus.Width/2);
       int ypos = (Screen.PrimaryScreen.Bounds.Height / 2);
@@ -39,8 +38,7 @@ namespace SMPMediaPortalRestart
         this.Refresh();
         Thread.Sleep(1000);
       }
-      ProcessStartInfo process = new ProcessStartInfo(exePath[1]);
-      process.WorkingDirectory = Path.GetDirectoryName(exePath[1]);
+      ProcessStartInfo process = new ProcessStartInfo("MediaPortal.exe");
       process.UseShellExecute = true;
       Process.Start(process);
       Application.Exit();
