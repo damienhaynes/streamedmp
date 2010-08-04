@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using MediaPortal.Utils;
 using System.Text.RegularExpressions;
 
 namespace StreamedMPEditor
@@ -240,6 +241,30 @@ namespace StreamedMPEditor
     protected override void OnLoad(EventArgs e)
     {
       base.OnLoad(e);
+
+      using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+      {
+        if (xmlreader.GetValueAsString("skin", "name", "") != "StreamedMP")
+        {
+          DialogResult result = showError("MediaPortal is not configured to use the StreamedMP skin\n\nThe Menu Editor requires the selected Skin to be StreamedMP.\n\nDo you want set StreamedMP as the selected Skin", errorCode.infoQuestion);
+
+          if (result == DialogResult.No)
+          {
+            Application.Exit();
+          }
+          else
+          {
+            using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+            {
+              xmlwriter.SetValue("skin", "name", "StreamedMP");
+            }
+            MediaPortal.Profile.Settings.SaveCache();
+
+          }
+        }
+      }
+
+
       Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
       GetMediaPortalSkinPath();

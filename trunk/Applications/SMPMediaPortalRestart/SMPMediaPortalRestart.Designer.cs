@@ -49,11 +49,11 @@
       // 
       this.lbStatus.AutoSize = true;
       this.lbStatus.BackColor = System.Drawing.Color.Transparent;
-      this.lbStatus.Font = new System.Drawing.Font("Fluid Title Caps", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lbStatus.ForeColor = System.Drawing.Color.White;
-      this.lbStatus.Location = new System.Drawing.Point(576, 467);
+      this.lbStatus.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lbStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(144)))), ((int)(((byte)(144)))));
+      this.lbStatus.Location = new System.Drawing.Point(28, 649);
       this.lbStatus.Name = "lbStatus";
-      this.lbStatus.Size = new System.Drawing.Size(0, 28);
+      this.lbStatus.Size = new System.Drawing.Size(0, 37);
       this.lbStatus.TabIndex = 1;
       // 
       // SMPMediaPortalRestart
