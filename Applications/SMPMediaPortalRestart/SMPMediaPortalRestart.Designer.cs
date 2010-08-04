@@ -53,9 +53,8 @@
       this.lbStatus.ForeColor = System.Drawing.Color.White;
       this.lbStatus.Location = new System.Drawing.Point(576, 467);
       this.lbStatus.Name = "lbStatus";
-      this.lbStatus.Size = new System.Drawing.Size(154, 28);
+      this.lbStatus.Size = new System.Drawing.Size(0, 28);
       this.lbStatus.TabIndex = 1;
-      this.lbStatus.Text = "lbStatus";
       // 
       // SMPMediaPortalRestart
       // 
