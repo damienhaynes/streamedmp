@@ -72,6 +72,14 @@ namespace StreamedMPConfig
       }
     }
 
+    public bool mpSetAsFullScreen
+    {
+      get
+      {
+        return _mpSetAsFullScreen();
+      }
+    }
+
     public static void Load()
     {
       smcLog.WriteLog("StreamedMPConfig: Settings.Load()",LogLevel.Info);
@@ -142,6 +150,14 @@ namespace StreamedMPConfig
       using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
       {
         return xmlreader.GetValueAsBool("musicmisc", "showVisInNowPlaying", false);
+      }
+    }
+
+    bool _mpSetAsFullScreen()
+    {
+      using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+      {
+        return xmlreader.GetValueAsBool("general", "startfullscreen", false);
       }
     }
 
