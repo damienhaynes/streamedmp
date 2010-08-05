@@ -1,5 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <patches>
+  <!-- This defines the minium skin version this patch can run against -->
+  <minskinversion>1.2.1.1533</minskinversion>
+  <!-- There are 4 possible fields for each patch, 'version' is only needed for the zip file as versions are extracted from .dll and .exe -->
   <patch>
     <name>StreamedMPConfig.dll</name>
     <action>install</action>
@@ -19,5 +22,6 @@
     <name>SkinUpdate.zip</name>
     <action>unzip</action>
     <location>temp</location>
+    <version>1.2.1.1605</version>
   </patch>
 </patches>
