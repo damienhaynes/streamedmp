@@ -25,7 +25,9 @@ namespace SMPpatch
     bool unattendedInatall = false;
     bool restartMediaPortal = false;
     bool restartConfiguration = false;
-
+    Version minSMPVersion = new Version();
+    int i = 0;
+    bool patchesToInstall = false;
 
 
     public SMPpatch()
@@ -101,14 +103,28 @@ namespace SMPpatch
 
       // Create the temp directory to stroe the extracted patches
       Directory.CreateDirectory(tempExtractPath);
-
+      SkinInfo skInfo = new SkinInfo(); 
       readPatchControl();
+      if (skInfo.skinVersion.CompareTo(minSMPVersion) < 0)
+      {
+        MessageBox.Show("The Installed Version of StreamedMP V" + skInfo.skinVersion + " does not support this patch.\n\n  Please install StreamedMP V" + minSMPVersion.ToString() + " or greater before applying this patch.\n\n                                  This program will now terminate","Incompatible Skin Version");
+        Application.Exit();
+      }
+      // First check if we have any patches to install - this could be being run on a system that is already patched
+      foreach (patchFile patch in patchFiles)
+      {
+        if (thePatches.Items[i].ImageIndex != 0)
+          patchesToInstall = true;
+        i++;
+      }
+      if (!patchesToInstall)
+        btInstallPatch.Enabled = false;
+
       if (unattendedInatall)
       {
         installThePatches();
 
         UpdateMessage updateDone = new UpdateMessage();
-        SkinInfo skInfo = new SkinInfo();
         updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
         updateDone.Show();
         for (int i = 0; i < 5; i++)
@@ -173,6 +189,13 @@ namespace SMPpatch
       {
         while (reader.Read())
         {
+          // Get the minium skin version required
+          if (reader.NodeType == XmlNodeType.Element && reader.Name == "minskinversion")
+          {
+            reader.Read();
+            minSMPVersion = new Version(reader.Value);
+
+          }
           if (reader.NodeType == XmlNodeType.Element && reader.Name == "patch")
           {
             patchFile thisPatch = new patchFile();
@@ -194,6 +217,9 @@ namespace SMPpatch
                       break;
                     case "location":
                       thisPatch.patchLocation = reader.Value;
+                      break;
+                    case "version":
+                      thisPatch.patchVersion = reader.Value;
                       break;
                   }
                 }
@@ -224,7 +250,9 @@ namespace SMPpatch
 
     void fillInfo(string fileName, patchFile pf)
     {
-      pf.patchVersion = fileVersion(Path.Combine(tempExtractPath, fileName));
+      SkinInfo skInfo = new SkinInfo();
+      if (pf.patchAction != "unzip")
+        pf.patchVersion = fileVersion(Path.Combine(tempExtractPath, fileName));
 
       // if patch file is a plugin
       if (pf.patchLocation.ToLower().StartsWith("process") || pf.patchLocation.ToLower().StartsWith("windows"))
@@ -237,12 +265,18 @@ namespace SMPpatch
         pf.destinationPath = SkinInfo.mpPaths.sMPbaseDir;
         pf.installedVersion = fileVersion(Path.Combine(pf.destinationPath, fileName));
       }
+      if (pf.patchAction == "unzip")
+        pf.installedVersion = skInfo.skinVersion.ToString();
 
       patchFiles.Add(pf);
       ListViewItem item = new ListViewItem(new[] { pf.patchFileName, pf.patchVersion, pf.installedVersion });
       item.ImageIndex = 1;
-      if (pf.installedVersion != "0.0.0.0")
-        thePatches.Items.Add(item);
+      if (pf.patchVersion.CompareTo(pf.installedVersion) <= 0)
+        item.ImageIndex = 0;
+      else
+        item.ImageIndex = 1;
+      
+      thePatches.Items.Add(item);
     }
 
     string fileVersion(string fileToCheck)
@@ -370,20 +404,23 @@ namespace SMPpatch
 
     void installThePatches()
     {
-      patchProgressBar.Step = (100 / patchFiles.Count);
-      int i = 0;
-      foreach (patchFile patch in patchFiles)
+      if (patchesToInstall)
       {
-        installPatch(patch);
-        thePatches.Items[i].ImageIndex = 0;
-        i++;
-        if ((patchProgressBar.Value + patchProgressBar.Step) > patchProgressBar.Maximum)
-          patchProgressBar.Value = 100;
-        else
-          patchProgressBar.Value += patchProgressBar.Step;
+        i = 0;
+        patchProgressBar.Step = (100 / patchFiles.Count);
+        foreach (patchFile patch in patchFiles)
+        {
+          installPatch(patch);
+          thePatches.Items[i].ImageIndex = 0;
+          i++;
+          if ((patchProgressBar.Value + patchProgressBar.Step) > patchProgressBar.Maximum)
+            patchProgressBar.Value = 100;
+          else
+            patchProgressBar.Value += patchProgressBar.Step;
+        }
+        btInstallPatch.Enabled = false;
+        clearCacheDir();
       }
-      btInstallPatch.Enabled = false;
-      clearCacheDir();
     }
 
     void installPatch(patchFile thePatch)
