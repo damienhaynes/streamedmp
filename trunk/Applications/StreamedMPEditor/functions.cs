@@ -1153,31 +1153,34 @@ namespace StreamedMPEditor
 
     private void streamedMpEditor_FormClosing(object sender, FormClosingEventArgs e)
     {
-      int versionCount = 0;
-      Properties.Settings.Default.autoPurge = autoPurgeBackups.Checked;
-      if (autoPurgeBackups.Checked)
+      if (!exitCondition)
       {
-        Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
-        Properties.Settings.Default.autoPurge = true;
-
-        string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
-        foreach (string file in filesToDelete)
+        int versionCount = 0;
+        Properties.Settings.Default.autoPurge = autoPurgeBackups.Checked;
+        if (autoPurgeBackups.Checked)
         {
-          if (versionCount >= int.Parse(backupVersionsToKeep.Text))
-            System.IO.File.Delete(file);
-          versionCount++;
-        }
-        versionCount = 0;
+          Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
+          Properties.Settings.Default.autoPurge = true;
 
-        string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
-        foreach (string file in filesToDelete2)
-        {
-          if (versionCount >= int.Parse(backupVersionsToKeep.Text))
-            System.IO.File.Delete(file);
-          versionCount++;
+          string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
+          foreach (string file in filesToDelete)
+          {
+            if (versionCount >= int.Parse(backupVersionsToKeep.Text))
+              System.IO.File.Delete(file);
+            versionCount++;
+          }
+          versionCount = 0;
+
+          string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
+          foreach (string file in filesToDelete2)
+          {
+            if (versionCount >= int.Parse(backupVersionsToKeep.Text))
+              System.IO.File.Delete(file);
+            versionCount++;
+          }
         }
+        Properties.Settings.Default.Save();
       }
-      Properties.Settings.Default.Save();
     }
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
