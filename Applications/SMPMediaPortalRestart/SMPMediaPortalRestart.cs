@@ -24,12 +24,15 @@ namespace SMPMediaPortalRestart
 
     private void SMPMediaPortalRestart_Load(object sender, EventArgs e)
     {
-      // The Parameter we need is in postion 1
-      string[] args = Environment.GetCommandLineArgs();
+      // The Parameter we need is in postion 1, assume MediaPortal not starting in fullscreen
+      bool weIsFullscreen = false;
+        string[] args = Environment.GetCommandLineArgs();
+        if (args.Length >= 2)
+          weIsFullscreen = bool.Parse(args[1]);
 
       lbStatus.Parent = pbSplashScreen;
       lbStatus.BackColor = Color.Transparent;
-      if (args[1] == "true")
+      if (weIsFullscreen)
       {
         lbStatus.Text = "Restarting MediaPortal in 3 Seconds";
         xpos = (Screen.PrimaryScreen.Bounds.Width / 2) - (lbStatus.Width / 2);
@@ -43,7 +46,7 @@ namespace SMPMediaPortalRestart
         ypos = (338 / 2) - (lbStatus.Height / 2);
       }
 
-      if (args[1] == "true") 
+      if (weIsFullscreen) 
       {
         // MP set to start in fullscreen - fullscreen splash screen
         this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
@@ -59,7 +62,6 @@ namespace SMPMediaPortalRestart
         pbSplashScreen.Size = new Size(600,338);
         lbStatus.Location = new Point(xpos, ypos);
       }
-
 
       this.Show();
 
