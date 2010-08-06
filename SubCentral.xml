@@ -1,117 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<id>84623</id>
-	<defaultcontrol>912</defaultcontrol>
-	<allowoverlay>no</allowoverlay>	
-	<controls>
-		<!-- 
+  <id>84623</id>
+  <defaultcontrol>912</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <!-- 
 		This is the main subcentral skin file and should contain all screen elements that are common
 		to all views in the GUI. Anything that belongs only in a specific view should be placed in the
 		coorespodning subfile.
 		-->
-
-		<!-- Dummy Controls meant for visibility and status purposes. -->
-		<control>
-			<description>Visible when in the main view mode.</description>
-			<type>label</type>
-			<id>101</id>
-			<posX>-50</posX>
-			<posY>-50</posY>
-			<width>0</width>
-		</control>
-		<control>
-			<description>Visible when in the file view mode.</description>
-			<type>label</type>
-			<id>102</id>
-			<posX>-50</posX>
-			<posY>-50</posY>
-			<width>0</width>
-		</control>
-		<control>
-			<description>Visible when in the manual search mode.</description>
-			<type>label</type>
-			<id>103</id>
-			<posX>-50</posX>
-			<posY>-50</posY>
-			<width>0</width>
-		</control>
-		
-		<!-- Backgrounds -->
-		<control>
-            <description>Default Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>0</posX>
-            <posY>0</posY>
-            <width>1280</width>
-            <height>720</height>
-            <texture>hover_my plugins.png</texture>
-            <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-		<control>
-			<description>backdrop</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>#SubCentral.Search.Media.FanArt</texture>
-			<animation effect="fade" time="1">WindowClose</animation>
-		</control>		
-		<control>
-            <description>Fanart Overlay</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>-2</posX>
-            <posY>0</posY>
-            <width>1284</width>
-            <height>722</height>
-            <texture>mainoverlay.png</texture>
-        </control>
-		
-		<!-- Title Area -->
-		<control>
-			<description>Top Title Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>77</posX>
-			<posY>11</posY>
-			<width>437</width>
-			<height>35</height>
-			<texture>tvtitlebg.png</texture>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-			<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
-			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<type>fadelabel</type>
-			<description>Top Title</description>
-			<id>0</id>
-			<posX>493</posX>
-			<posY>13</posY>
-			<width>350</width>
-			<font>mediastream12c</font>
-			<align>right</align>			
-			<label>#SubCentral.Header.Label</label>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-			<animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
-			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<!-- Controls common to all views of the GUI -->
-		<import>common.time.xml</import>
-
-		<!-- Imports for various views of the GUI -->
-		<import>SubCentral.Main.xml</import>
-		<import>SubCentral.Search.xml</import>		
-		<import>SubCentral.ModifySearch.xml</import>
-		<import>SubCentral.HiddenMenu.xml</import>
-			
-		<!-- Video / Music overlay -->
-		<import>common.overlays.xml</import>
-		
-	</controls>
+    <!-- Dummy Controls meant for visibility and status purposes. -->
+    <control>
+      <description>Visible when in the main view mode.</description>
+      <type>label</type>
+      <id>101</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    <control>
+      <description>Visible when in the file view mode.</description>
+      <type>label</type>
+      <id>102</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    <control>
+      <description>Visible when in the manual search mode.</description>
+      <type>label</type>
+      <id>103</id>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <width>0</width>
+    </control>
+    <!-- Backgrounds -->
+    <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my plugins.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>backdrop</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#SubCentral.Search.Media.FanArt</texture>
+      <animation effect="fade" time="1">WindowClose</animation>
+    </control>
+    <control>
+      <description>Fanart Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>0</posY>
+      <width>1284</width>
+      <height>722</height>
+      <texture>mainoverlay.png</texture>
+      <visible>!control.isvisible(103)</visible>      
+    </control>
+    <!-- Title Area -->
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>#SubCentral.Header.Label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Controls common to all views of the GUI -->
+    <import>common.time.xml</import>
+    <!-- Imports for various views of the GUI -->
+    <import>SubCentral.Main.xml</import>
+    <import>SubCentral.Search.xml</import>
+    <import>SubCentral.ModifySearch.xml</import>
+    <import>SubCentral.HiddenMenu.xml</import>
+    <!-- Video / Music overlay -->
+    <import>common.overlays.xml</import>
+  </controls>
 </window>
