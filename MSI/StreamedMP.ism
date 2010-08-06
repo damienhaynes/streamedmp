@@ -359,7 +359,8 @@
 		<row><td>defaultTVSeries5x3WideBanners</td><td>{E185947F-05D9-43F1-AED4-A6DAF261A93D}</td><td>NEW_DIRECTORY9</td><td>0</td><td/><td>tvseries.serieswidebanners.x2</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultTVSeries7x3WideBanners</td><td>{00A65B8C-271F-47C3-A4FA-5DA686C3E2D3}</td><td>NEW_DIRECTORY10</td><td>0</td><td/><td>tvseries.serieswidebanners.x6</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultTVSeriesWideBanners</td><td>{08BFDAEC-37C5-4A9E-B009-CFB7CD6E97D9}</td><td>STREAMEDMP</td><td>0</td><td/><td>tvseries.serieswidebanners.x</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>exeStreamedMPEditor</td><td>{FC174F35-D445-4927-BED3-971FEE9DDB1B}</td><td>MPBINDIR</td><td>0</td><td/><td>smpeditor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>exeSMPEditor</td><td>{FC174F35-D445-4927-BED3-971FEE9DDB1B}</td><td>MPBINDIR</td><td>0</td><td/><td>smpeditor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>exeSMPMediaPortalRestart</td><td>{DB0C9EFF-4490-4936-B588-02CC8CC3A0C6}</td><td>MPBINDIR</td><td>0</td><td/><td>smpmediaportalrestart.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fanartMovingPictures</td><td>{DB260C85-DD0E-4893-BD33-EF8CE98AA0C7}</td><td>NEW_DIRECTORY11</td><td>0</td><td/><td>movingpictures.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fanartMovingPictures.12x3.8x2.Thumbs</td><td>{F7B0B0E2-662E-403B-8CB6-EB037EDBECF7}</td><td>NEW_DIRECTORY12</td><td>8</td><td/><td>movingpictures.facade.xml4</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fanartMovingPictures.12x4.8x3.Thumbs</td><td>{960F05C2-969D-4C43-A4A7-DD341B14EFA6}</td><td>NEW_DIRECTORY13</td><td>8</td><td/><td>movingpictures.facade.xml5</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1668,6 +1669,7 @@
 		<row><td>Main</td><td>MediaPortal.xml</td></row>
 		<row><td>Main</td><td>commonMovingPictures</td></row>
 		<row><td>Main</td><td>commonTVSeries</td></row>
+		<row><td>Main</td><td>exeSMPMediaPortalRestart</td></row>
 		<row><td>Main</td><td>skinMedia</td></row>
 		<row><td>Main</td><td>skinSounds</td></row>
 		<row><td>Main</td><td>skinXML</td></row>
@@ -1676,7 +1678,7 @@
 		<row><td>Main</td><td>webIssues</td></row>
 		<row><td>Main</td><td>webUpdates</td></row>
 		<row><td>Main</td><td>webWiki</td></row>
-		<row><td>MenuEditor</td><td>exeStreamedMPEditor</td></row>
+		<row><td>MenuEditor</td><td>exeSMPEditor</td></row>
 		<row><td>MenuEditor</td><td>pluginStreamedMPEditorDLL</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
 		<row><td>MovingPicturesBlue3Skin</td><td>b3SkinMovingPictures</td></row>
@@ -1855,7 +1857,8 @@
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
-		<row><td>smpeditor.exe</td><td>exeStreamedMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>1</td><td/></row>
+		<row><td>smpeditor.exe</td><td>exeSMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>1</td><td/></row>
+		<row><td>smpmediaportalrestart.exe</td><td>exeSMPMediaPortalRestart</td><td>SMPMED~1.EXE|SMPMediaPortalRestart.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpmediaportalrestart\bin\release\SMPMediaPortalRestart.exe</td><td>1</td><td/></row>
 		<row><td>streamedmpconfig.dll</td><td>pluginStreamedMPConfigDLL</td><td>STREAM~1.DLL|StreamedMPConfig.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\StreamedMPConfig.dll</td><td>1</td><td/></row>
 		<row><td>streamedmpeditor.dll</td><td>pluginStreamedMPEditorDLL</td><td>STREAM~1.DLL|StreamedMPEditor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\StreamedMPEditor.dll</td><td>1</td><td/></row>
 		<row><td>subtitledownloader.dll</td><td>libSubtitleDownloader</td><td>SUBTIT~1.DLL|SubtitleDownloader.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\SubtitleDownloader.dll</td><td>1</td><td/></row>
@@ -2187,7 +2190,8 @@
 		<row><td>defaultTVSeries5x3WideBanners</td><td/><td/><td>_8E454C85_2F95_4845_809C_D2D969C9E45E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeries7x3WideBanners</td><td/><td/><td>_64AA2D62_D37A_4F8E_8F16_1C0A0F1B1E67_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultTVSeriesWideBanners</td><td/><td/><td>_EA1C0095_D842_4F4F_BE06_692251692B7C_FILTER</td><td/><td/><td/><td/></row>
-		<row><td>exeStreamedMPEditor</td><td/><td/><td>_E47CF3DF_3ED9_4FD3_88AF_45C3FB48ED7A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>exeSMPEditor</td><td/><td/><td>_E47CF3DF_3ED9_4FD3_88AF_45C3FB48ED7A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>exeSMPMediaPortalRestart</td><td/><td/><td>_39F0BDA9_51D1_4158_9C22_0CF1433BB853_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fanartMovingPictures</td><td/><td/><td>_DF22B257_E2F6_4632_82EE_8DBF18C286CC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fanartMovingPictures.12x3.8x2.Thumbs</td><td/><td/><td>_7D651209_F46F_4564_A99C_076EE82B7F90_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fanartMovingPictures.12x4.8x3.Thumbs</td><td/><td/><td>_4EE86183_52F9_4EFB_BA2E_FDB269A74ADD_FILTER</td><td/><td/><td/><td/></row>
@@ -5288,7 +5292,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>NewShortcut4</td><td>webIssues</td><td/><td>newfolder4</td><td>2</td></row>
 		<row><td>NewShortcut5</td><td>webUpdates</td><td/><td>newfolder4</td><td>2</td></row>
 		<row><td>NewShortcut6</td><td>webWiki</td><td/><td>newfolder4</td><td>2</td></row>
-		<row><td>NewShortcut7</td><td>exeStreamedMPEditor</td><td/><td>newfolder3</td><td>2</td></row>
+		<row><td>NewShortcut7</td><td>exeSMPEditor</td><td/><td>newfolder3</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">
@@ -5374,13 +5378,13 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<col def="S255">ISComments</col>
 		<col def="S255">ISShortcutName</col>
 		<col def="I4">ISAttributes</col>
-		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING142##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut1_11F11864335F4511AAAA619F7F2A0FEF.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut1</td><td>DesktopFolder</td><td>##ID_STRING142##</td><td>exeSMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut1_11F11864335F4511AAAA619F7F2A0FEF.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut2</td><td>newfolder4</td><td>##ID_STRING42##</td><td>webForums</td><td>[INSTALLDIR]StreamedMP\Web\Forums.url</td><td/><td/><td/><td>NewShortcut2_FF3799C827FB4AB7AB7DE6EEAEF77EEE.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut3</td><td>newfolder4</td><td>##ID_STRING43##</td><td>webHome</td><td>[INSTALLDIR]StreamedMP\Web\Home.url</td><td/><td/><td/><td>NewShortcut3_60EFB7FEA77A458A8531E0A05D6BC065.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut4</td><td>newfolder4</td><td>##ID_STRING44##</td><td>webIssues</td><td>[INSTALLDIR]StreamedMP\Web\Issues.url</td><td/><td/><td/><td>NewShortcut4_A0594CEEF3A447DE9C40F2B791979F8C.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut5</td><td>newfolder4</td><td>##ID_STRING45##</td><td>webUpdates</td><td>[INSTALLDIR]StreamedMP\Web\Updates.url</td><td/><td/><td/><td>NewShortcut5_5F8C724FD1764D49819A518683F36431.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>NewShortcut6</td><td>newfolder4</td><td>##ID_STRING46##</td><td>webWiki</td><td>[INSTALLDIR]StreamedMP\Web\Wiki.url</td><td/><td/><td/><td>NewShortcut6_B891162023F7441B8E7C9146DCA623E5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
-		<row><td>NewShortcut7</td><td>newfolder3</td><td>##ID_STRING143##</td><td>exeStreamedMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut7_501E2E1C3D324488985997E92E17F9D5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>NewShortcut7</td><td>newfolder3</td><td>##ID_STRING143##</td><td>exeSMPEditor</td><td>[MPBINDIR]SMPEditor.exe</td><td/><td/><td/><td>NewShortcut7_501E2E1C3D324488985997E92E17F9D5.exe</td><td>1</td><td>1</td><td/><td/><td/><td/><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="Signature">
