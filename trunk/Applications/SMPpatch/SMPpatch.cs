@@ -120,19 +120,36 @@ namespace SMPpatch
       if (!patchesToInstall)
         btInstallPatch.Enabled = false;
 
+
+        
       if (unattendedInatall)
       {
-        installThePatches();
-
         UpdateMessage updateDone = new UpdateMessage();
-        updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
-        updateDone.Show();
+
+        if (patchesToInstall)
+        {
+          installThePatches();
+          updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
+          updateDone.Show();
+        }
+        else
+        {
+          updateDone.statusMessage = "StreamedMP is fully patched - no updates are required.";
+          updateDone.Show();
+        }
         for (int i = 0; i < 5; i++)
         {
           if (restartMediaPortal)
             updateDone.countDown = "Restarting MediaPortal : " + (5 - i).ToString();
-          if (restartConfiguration)
+          else if (restartConfiguration)
             updateDone.countDown = "Restarting Configuration : " + (5 - i).ToString();
+          else
+          {
+            updateDone.countDown = "";
+            updateDone.Refresh();
+            Thread.Sleep(2000);
+            break;
+          }
           updateDone.Refresh();
           Thread.Sleep(1000);
         }
