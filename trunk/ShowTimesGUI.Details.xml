@@ -1,0 +1,393 @@
+<window>
+	<controls>
+
+		<!-- Artwork -->
+		<control>
+			<description>Cover Art</description>
+			<type>image</type>
+			<id>61</id>
+			<posX>47</posX>
+			<posY>309</posY>
+			<width>257</width>
+			<height>380</height>
+			<texture flipY="true" diffuse="diffusemirrorwide.png">#st_poster</texture>
+			<visible>control.isvisible(24)</visible>
+		</control>
+		<control>
+			<description>Cover Art Glass Overlay</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>47</posX>
+			<posY>309</posY>
+			<width>228</width>
+			<height>177</height>
+			<texture>glassoverlay2.png</texture>
+			<visible>control.isvisible(24)+Control.HasThumb(61)</visible>
+		</control>   
+	
+		<!-- Details Box -->
+		<control>
+			<description>Details Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>340</posX>
+			<posY>380</posY>
+			<width>896</width>
+			<height>337</height>
+			<texture>detailsbg.png</texture>
+			<visible>control.isvisible(24)</visible>
+		</control>
+		
+		<control>
+			<description>Movie Title</description>
+			<type>label</type>
+			<id>0</id>
+			<posX>362</posX>
+			<posY>402</posY>
+			<width>570</width>
+			<font>mediastream14tc</font>
+			<label>#selecteditem</label>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+    
+		<control>
+			<description>Genres</description>
+			<type>label</type>
+			<label>#st_genre</label>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>425</posY>
+			<width>840</width>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+    
+		<control>
+			<description>Star Rating Image - 1080p</description>
+			<type>imagelist</type>
+			<id>0</id>
+			<width>115</width>
+			<height>22</height>
+			<posX>363</posX>
+			<posY>450</posY>
+			<align>left</align>	
+			<textureWidth>35</textureWidth>
+			<textureHeight>34</textureHeight>
+			<subitems>
+				<subitem>starwhitehollow.png</subitem>
+				<subitem>starwhite.png</subitem>				
+			</subitems>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<imagesToDraw>5</imagesToDraw>
+			<percentage>#st_userrating</percentage>
+			<visible>control.isvisible(24)+string.equals(#StreamedMP.FullHD,True)</visible>
+		</control>
+		<control>
+			<description>Star Rating Image - 720p</description>
+			<type>imagelist</type>
+			<id>0</id>
+			<width>115</width>
+			<height>22</height>
+			<posX>363</posX>
+			<posY>450</posY>
+			<align>left</align>	
+			<textureWidth>24</textureWidth>
+			<textureHeight>24</textureHeight>
+			<subitems>
+				<subitem>starwhitehollow.png</subitem>
+				<subitem>starwhite.png</subitem>
+			</subitems>
+			<orientation>horizontal</orientation>
+			<align>left</align>
+			<imagesToDraw>5</imagesToDraw>
+			<percentage>#st_userrating</percentage>
+			<visible>control.isvisible(24)+!string.equals(#StreamedMP.FullHD,True)</visible>
+		</control>
+		<control>
+			<description>Star Rating Value</description>
+			<id>0</id>
+			<type>label</type>
+			<label>#st_userrating / 10</label>
+			<posX>490</posX>
+			<posY>450</posY>
+			<width>200</width>
+			<align>left</align>
+			<font>mediastream11c</font>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>2</shadowDistance>
+			<shadowColor>ff222222</shadowColor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+	
+		<control>
+			<description>Summary</description>
+			<type>textboxscrollup</type>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>480</posY>
+			<width>860</width>
+			<height>100</height>
+			<textcolor>ffFFFFFF</textcolor>
+			<seperator>-----------------------------------------------------------------------------------</seperator>
+			<font>mediastream11</font>
+			<label>#st_plot</label>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
+			<visible>control.isvisible(24)+string.equals(#st_theater,)</visible>
+		</control>
+		<control>
+			<description>Summary + Theatre Times</description>
+			<type>textboxscrollup</type>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>480</posY>
+			<width>860</width>
+			<height>100</height>
+			<textcolor>ffFFFFFF</textcolor>
+			<seperator>-----------------------------------------------------------------------------------</seperator>
+			<font>mediastream11</font>
+			<label>#st_theater
+#st_moviedate
+#st_showtimes
+#st_plot</label>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
+			<visible>control.isvisible(24)+!string.equals(#st_theater,)</visible>
+		</control>
+		
+		<control>
+			<description>Director Label</description>
+			<type>label</type>
+			<label>#StreamedMP.ShowTimes.Director</label>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>608</posY>
+			<width>120</width>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>    
+		<control>
+			<description>Director</description>
+			<type>label</type>
+			<label>#st_director</label>
+			<id>0</id>
+			<posX>488</posX>
+			<posY>608</posY>
+			<width>370</width>
+			<font>mediastream11c</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>    
+	
+		<control>
+			<description>MPAA Rating Label</description>
+			<type>label</type>
+			<label>MPAA</label>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>584</posY>
+			<width>120</width>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>   
+		<control>
+			<description>MPAA Rating</description>
+			<type>label</type>
+			<label>#StreamedMP.ShowTimes.Rated: #st_rating</label>
+			<id>0</id>
+			<posX>488</posX>
+			<posY>584</posY>
+			<width>370</width>
+			<font>mediastream11c</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control> 	
+	
+		<control>
+			<description>Actors Label</description>
+			<type>label</type>
+			<label>344</label>
+			<id>0</id>
+			<posX>363</posX>
+			<posY>632</posY>
+			<width>120</width>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>    
+		<control>
+			<description>Actors</description>
+			<type>fadelabel</type>
+			<label>#st_starring</label>
+			<id>0</id>
+			<posX>488</posX>
+			<posY>632</posY>
+			<width>706</width>
+			<font>mediastream11c</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+    
+		<control>
+			<description>Release Date Label</description>
+			<type>label</type>
+			<label>#StreamedMP.ShowTimes.ReleaseDate</label>
+			<id>0</id>
+			<posX>1080</posX>
+			<posY>584</posY>
+			<width>840</width>
+			<align>right</align>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>    
+		<control>
+			<description>Release Date</description>
+			<type>label</type>
+			<label>#st_releasedate</label>
+			<id>0</id>
+			<posX>1100</posX>
+			<posY>584</posY>
+			<width>150</width>
+			<align>left</align>
+			<font>mediastream11c</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+    
+		<control>
+			<description>Runtime Label</description>
+			<type>label</type>
+			<label>#StreamedMP.ShowTimes.Runtime</label>
+			<id>0</id>
+			<posX>1080</posX>
+			<posY>608</posY>
+			<width>840</width>
+			<align>right</align>
+			<font>mediastream11c</font>
+			<textcolor>ff909090</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>    
+		<control>
+			<description>Runtime</description>
+			<type>label</type>      
+			<label>#st_runtime</label>
+			<id>0</id>
+			<posX>1100</posX>
+			<posY>608</posY>
+			<width>220</width>
+			<align>left</align>
+			<font>mediastream11c</font>
+			<textcolor>ffFFFFFF</textcolor>
+			<visible>control.isvisible(24)</visible>
+		</control>
+    
+		<control>
+			<description>MPAA Rating Image</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>950</posX>
+			<posY>400</posY>
+			<width>259</width>
+			<height>57</height>
+			<texture>Logos\Certification\#st_rating.png</texture>
+			<visible>control.isvisible(24)</visible>
+		</control>	
+	
+		<!-- Detail Buttons -->
+		<control>
+			<type>group</type>
+			<description>group element</description>
+			<posX>1008</posX>
+			<posY>220</posY>
+			<width>250</width>
+			<height>80</height>
+			<layout>StackLayout</layout>
+			<visible>control.isvisible(24)</visible>
+			<control>
+				<description>Show Times</description>
+				<type>button</type>
+				<id>40</id>
+				<label>Show Times</label>
+				<onup>17</onup>
+				<ondown>41</ondown>
+				<onright>40</onright>
+				<onleft>40</onleft>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<height>40</height>				
+				<textYOff>8</textYOff>
+				<textXOff>20</textXOff>
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>       
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
+			<control>
+				<description>Play Trailer</description>
+				<type>button</type>
+				<id>41</id>
+				<label>Play Trailer</label>
+				<onup>40</onup>
+				<ondown>42</ondown>
+				<onright>41</onright>
+				<onleft>41</onleft>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<height>40</height>
+				<textYOff>8</textYOff>
+				<textXOff>20</textXOff>				
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
+			<control>
+				<description>Next</description>
+				<type>button</type>
+				<id>42</id>
+				<label>Next</label>
+				<onup>41</onup>
+				<ondown>43</ondown>
+				<onright>42</onright>
+				<onleft>42</onleft>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<height>40</height>
+				<textYOff>8</textYOff>
+				<textXOff>20</textXOff>				
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
+			<control>
+				<description>Previous</description>
+				<type>button</type>
+				<id>43</id>
+				<label>Previous</label>
+				<onup>42</onup>
+				<ondown>40</ondown>
+				<onright>43</onright>
+				<onleft>43</onleft>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<height>40</height>
+				<textYOff>8</textYOff>
+				<textXOff>20</textXOff>				
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
+		</control>
+	
+	</controls>
+</window>
