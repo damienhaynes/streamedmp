@@ -1,0 +1,44 @@
+<window>
+	<controls>
+		<!-- Poster Image List View -->
+		<control>
+			<description>Default Cover Art</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>26</posX>
+			<posY>250</posY>
+			<width>267</width>
+			<height>390</height>
+			<texture>defaultdvdcover.png</texture>
+			<visible>facadeview.list+!control.isvisible(24)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Cover Art</description>
+			<type>image</type>
+			<id>60</id>
+			<posX>31</posX>
+			<posY>254</posY>
+			<width>257</width>
+			<height>380</height>
+			<texture flipY="true" diffuse="diffusemirrorwide.png">#st_poster</texture>
+			<visible>facadeview.list+!control.isvisible(24)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+		<control>
+			<description>Cover Art Glass Overlay</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>31</posX>
+			<posY>254</posY>
+			<width>228</width>
+			<height>177</height>
+			<texture>glassoverlay2.png</texture>
+			<visible>facadeview.list+!control.isvisible(24)+Control.HasThumb(60)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>
+	</controls>
+</window>
