@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -115,6 +115,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Properties\VersionInfo.cs.tmpl" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -126,6 +127,7 @@
     <Compile Include="UpdateMessage.Designer.cs">
       <DependentUpon>UpdateMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Banner.bmp" />
@@ -174,5 +176,6 @@
     <PostBuildEvent>copy $(SolutionDir)Externals\ILMerge.exe $(TargetDir) /Y
 copy $(ProjectDir)\ILMerge\merge.bat $(TargetDir) /Y
 $(TargetDir)merge.bat</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
