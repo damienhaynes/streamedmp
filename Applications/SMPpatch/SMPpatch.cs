@@ -285,7 +285,7 @@ namespace SMPpatch
       if (pf.patchAction == "unzip")
         pf.installedVersion = skInfo.skinVersion.ToString();
 
-      if (pf.installedVersion == "0.0.0.0")
+      if (pf.installedVersion == "0.0.0.0" && pf.patchAction != "mandatoryinstall")
         return;
 
       patchFiles.Add(pf);
