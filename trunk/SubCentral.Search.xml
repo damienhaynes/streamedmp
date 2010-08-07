@@ -7,21 +7,7 @@
 		with "<visible>Control.IsVisible(102)</visible>". 
 		-->
 		
-		<!-- Title Area -->
-		<control>
-			<description>Top Title Extension Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>431</posX>
-			<posY>11</posY>
-			<width>456</width>
-			<height>36</height>
-			<texture>tvtitlebg.png</texture>
-			<visible>control.isvisible(102)+!string.equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
+		<!-- Title Area -->		
 		<control>			
 			<description>TVSeries Media Title</description>
 			<type>fadelabel</type>
