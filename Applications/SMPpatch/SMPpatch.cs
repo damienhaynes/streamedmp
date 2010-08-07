@@ -497,6 +497,8 @@ namespace SMPpatch
           copyDirectory(Path.Combine(destinationPath, "StreamedMP"), Path.Combine(SkinInfo.mpPaths.skinBasePath, "StreamedMP"));
         if (patchdir.ToLower().Contains("thumbs"))
           copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
+        if (patchdir.ToLower().Contains("database"))
+          copyDirectory(Path.Combine(destinationPath, "database"), SkinInfo.mpPaths.databasePath);
       }
       patchProgressBar.Value += 10;
     }

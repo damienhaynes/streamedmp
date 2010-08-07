@@ -36,6 +36,7 @@ namespace SMPpatch
       //public string backgroundPath;
       public string fanartBasePath;
       public string thumbsPath;
+      public string databasePath;
     }
 
     #endregion
@@ -178,6 +179,15 @@ namespace SMPpatch
             if (path != null)
             {
                 mpPaths.langBasePath = GetMediaPortalDir(path.InnerText);
+            }
+        }
+        // get the Database base path
+        if (innerNode.InnerText == "Database")
+        {
+            XmlNode path = node.SelectSingleNode("Path");
+            if (path != null)
+            {
+                mpPaths.databasePath = GetMediaPortalDir(path.InnerText);
             }
         }
       }
