@@ -65,13 +65,22 @@ namespace SMPpatch
 
     private void SMPpatch_Load(object sender, EventArgs e)
     {
+      SkinInfo.GetMediaPortalSkinPath();
+
+      SkinInfo si = new SkinInfo();
+      if (si.configuredSkin != "StreamedMP")
+      {
+        MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.","Patch Installation Error");
+        Application.Exit();
+      }
+
       string processess = null;
 
       CheckProcesses mediaportal = new CheckProcesses("mediaportal");
       CheckProcesses configuration = new CheckProcesses("configuration");
       CheckProcesses smpeditor = new CheckProcesses("smpeditor");
 
-      SkinInfo.GetMediaPortalSkinPath();
+
       introBox.SelectionStart = 0;
 
       // Sleep for 2 secs to enable MediaPortal to shutdown before doing checks for running processess
@@ -428,15 +437,20 @@ namespace SMPpatch
       {
         i = 0;
         patchProgressBar.Step = (100 / patchFiles.Count);
+        patchProgressBar.Maximum = 100;
         foreach (patchFile patch in patchFiles)
         {
-          installPatch(patch);
-          thePatches.Items[i].ImageIndex = 0;
-          i++;
-          if ((patchProgressBar.Value + patchProgressBar.Step) > patchProgressBar.Maximum)
+          // Dont copy if the installed version is newer
+          if (thePatches.Items[i].ImageIndex != 0)
+            installPatch(patch);
+
+          if ((patchProgressBar.Value + patchProgressBar.Step) >= patchProgressBar.Maximum)
             patchProgressBar.Value = 100;
           else
             patchProgressBar.Value += patchProgressBar.Step;
+
+          thePatches.Items[i].ImageIndex = 0;
+          i++;
         }
         btInstallPatch.Enabled = false;
         clearCacheDir();
@@ -447,7 +461,7 @@ namespace SMPpatch
     {
       try
       {
-        if (thePatch.patchAction.ToLower() == "install")
+        if (thePatch.patchAction.Contains("install"))
         {
           if (thePatch.patchLocation.ToLower().StartsWith("process") || thePatch.patchLocation.ToLower().StartsWith("windows"))
           {

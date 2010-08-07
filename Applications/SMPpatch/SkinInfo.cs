@@ -244,7 +244,7 @@ namespace SMPpatch
       return null;
     }
 
-    string configuredSkin
+    public string configuredSkin
     {
       get
       {
