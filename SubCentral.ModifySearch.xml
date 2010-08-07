@@ -7,17 +7,17 @@
 		with "<visible>Control.IsVisible(103)</visible>". 
 		-->
 		<control>
-      <description>Subcentral Search dialog</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>175</posX>
-      <posY>140</posY>
-      <width>930</width>
-      <height>360</height>
-      <texture>subsearchbg.png</texture>
-      <colordiffuse>ddffffff</colordiffuse>
-      <visible>control.isvisible(103)</visible>
-    </control>
+			<description>Subcentral Search dialog</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>175</posX>
+			<posY>140</posY>
+			<width>930</width>
+			<height>360</height>
+			<texture>subsearchbg.png</texture>
+			<colordiffuse>ddffffff</colordiffuse>
+			<visible>control.isvisible(103)</visible>
+		</control>
 		<control>
 			<type>label</type>
 			<id>0</id>
@@ -68,7 +68,7 @@
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>
 				<width>200</width>
-			  <height>40</height>				
+			    <height>40</height>				
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
 				<animation effect="fade" time="250">WindowOpen</animation>
@@ -89,7 +89,7 @@
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>				
 				<width>200</width>
-			  <height>40</height>				
+			    <height>40</height>				
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
 				<animation effect="fade" time="250">WindowOpen</animation>
@@ -109,7 +109,7 @@
 				<font>mediastream12tc</font>
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>				
-			  <height>40</height>				
+			    <height>40</height>				
 				<width>200</width>
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
@@ -142,7 +142,7 @@
 				<font>mediastream12tc</font>
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>
-			  <height>40</height>				
+			    <height>40</height>				
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>       
 				<animation effect="fade" time="250">WindowOpen</animation>
@@ -162,7 +162,7 @@
 				<font>mediastream12tc</font>
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>				
-			  <height>40</height>				
+			    <height>40</height>				
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
 				<animation effect="fade" time="250">WindowOpen</animation>
@@ -194,7 +194,7 @@
 				<font>mediastream12tc</font>
 				<textYOff>8</textYOff>
 				<textXOff>20</textXOff>
-			  <height>40</height>				
+			    <height>40</height>				
 				<textureFocus>tv_button_focus.png</textureFocus>
 				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>       
 				<animation effect="fade" time="250">WindowOpen</animation>
@@ -205,7 +205,7 @@
 		<control>
 			<type>label</type>
 			<id>0</id>
-			<posX>195</posX>
+			<posX>205</posX>
 			<posY>220</posY>
 			<label>#SubCentral.Translation.Title.Label</label>
 			<font>mediastream14tc</font>
@@ -218,7 +218,7 @@
 			<type>button</type>
 			<id>222</id>
 			<label>#SubCentral.ManualSearch.Media.Title</label>
-			<posX>355</posX>
+			<posX>365</posX>
 			<posY>220</posY>
 			<onleft>222</onleft>
 			<onright>214</onright>
@@ -238,7 +238,7 @@
 		<control>
 			<type>label</type>
 			<id>0</id>
-			<posX>195</posX>
+			<posX>205</posX>
 			<posY>260</posY>
 			<label>#SubCentral.Translation.Year.Label</label>
 			<font>mediastream14tc</font>
@@ -251,7 +251,7 @@
 			<type>button</type>
 			<id>223</id>
 			<label>#SubCentral.ManualSearch.Media.Year</label>
-			<posX>355</posX>
+			<posX>365</posX>
 			<posY>260</posY>
 			<onleft>223</onleft>
 			<onright>214</onright>
@@ -270,7 +270,7 @@
 		<control>
 			<type>label</type>
 			<id>0</id>
-			<posX>195</posX>
+			<posX>205</posX>
 			<posY>300</posY>
 			<label>#SubCentral.Translation.IMDbID.Label</label>
 			<font>mediastream14tc</font>
@@ -283,7 +283,7 @@
 			<type>button</type>
 			<id>221</id>
 			<label>#SubCentral.ManualSearch.Media.IMDb.ID.Complete</label>
-			<posX>355</posX>
+			<posX>365</posX>
 			<posY>300</posY>
 			<onleft>225</onleft>
 			<onright>214</onright>
@@ -302,8 +302,8 @@
 		<control>
 			<type>label</type>
 			<id>0</id>
-			<posX>195</posX>
-			<posY>310</posY>
+			<posX>205</posX>
+			<posY>260</posY>
 			<label>#SubCentral.Translation.Season.Label</label>
 			<font>mediastream14tc</font>
 			<textcolor>ff006699</textcolor>
@@ -315,8 +315,8 @@
 			<type>button</type>
 			<id>224</id>
 			<label>#SubCentral.ManualSearch.Media.Season</label>
-			<posX>355</posX>
-			<posY>310</posY>
+			<posX>365</posX>
+			<posY>260</posY>
 			<onleft>224</onleft>
 			<onright>214</onright>
 			<onup>221</onup>
@@ -335,8 +335,8 @@
 		<control>
 			<type>label</type>
 			<id>0</id>
-			<posX>195</posX>
-			<posY>350</posY>
+			<posX>205</posX>
+			<posY>300</posY>
 			<label>#SubCentral.Translation.Episode.Label</label>
 			<font>mediastream14tc</font>
 			<textcolor>ff006699</textcolor>
@@ -348,8 +348,8 @@
 			<type>button</type>
 			<id>225</id>
 			<label>#SubCentral.ManualSearch.Media.Episode</label>
-			<posX>355</posX>
-			<posY>350</posY>
+			<posX>365</posX>
+			<posY>300</posY>
 			<onleft>221</onleft>
 			<onright>214</onright>
 			<onup>224</onup>
