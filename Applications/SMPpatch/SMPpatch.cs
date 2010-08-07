@@ -285,6 +285,9 @@ namespace SMPpatch
       if (pf.patchAction == "unzip")
         pf.installedVersion = skInfo.skinVersion.ToString();
 
+      if (pf.installedVersion == "0.0.0.0")
+        return;
+
       patchFiles.Add(pf);
       ListViewItem item = new ListViewItem(new[] { pf.patchFileName, pf.patchVersion, pf.installedVersion });
       item.ImageIndex = 1;
