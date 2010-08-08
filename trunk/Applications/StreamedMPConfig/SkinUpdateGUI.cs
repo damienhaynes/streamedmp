@@ -81,7 +81,7 @@ namespace StreamedMPConfig
               strLocal.Write(downBuffer, 0, bytesSize);
               PercentProgress = Convert.ToInt32((strLocal.Length * 100) / fileSize);
               progressDialog.Percentage = PercentProgress;
-              progressDialog.SetLine(2, string.Format(Translation.DownloadingProgress, strLocal.Length.ToString(), fileSize.ToString(), PercentProgress.ToString()));
+              progressDialog.SetLine(2, string.Format(Translation.DownloadingProgress, (strLocal.Length/1024).ToString(), (fileSize/1024).ToString(), PercentProgress.ToString()));
               // Only Update the progress bar every 1MB of downloaded data,
               // any more offen slows the download to much.
               if (upd > 50)
