@@ -22,7 +22,7 @@ namespace SMPpatch
     List<patchFile> patchFiles = new List<patchFile>();
     public string tempExtractPath = Path.Combine(Path.GetTempPath(), "StreamedMPPatch" + DateTime.Now.Ticks.ToString());
     public XmlTextReader reader;
-    bool unattendedInatall = false;
+    bool unattendedInatall = true;
     bool restartMediaPortal = false;
     bool restartConfiguration = false;
     Version minSMPVersion = new Version();
@@ -30,14 +30,11 @@ namespace SMPpatch
     bool patchesToInstall = false;
 
 
+
     public SMPpatch()
     {
       InitializeComponent();
 
-      //Check for any command line argments
-      btInstallPatch.Enabled = true;
-      restartConfiguration = false;
-      restartMediaPortal = false;
       foreach (string arg in Environment.GetCommandLineArgs())
       {
         // Run unattended - This will run the program minimised and exit
@@ -66,9 +63,8 @@ namespace SMPpatch
     private void SMPpatch_Load(object sender, EventArgs e)
     {
       SkinInfo.GetMediaPortalSkinPath();
-
-      SkinInfo si = new SkinInfo();
-      if (si.configuredSkin != "StreamedMP")
+      SkinInfo skInfo = new SkinInfo();
+      if (skInfo.configuredSkin != "StreamedMP")
       {
         MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.","Patch Installation Error");
         Application.Exit();
@@ -80,12 +76,17 @@ namespace SMPpatch
       CheckProcesses configuration = new CheckProcesses("configuration");
       CheckProcesses smpeditor = new CheckProcesses("smpeditor");
 
+      if (skInfo.minimiseMPOnExit.ToLower() == "yes")
+      {
+        mediaportal.kill();
+        Thread.Sleep(3000);
+      }
 
       introBox.SelectionStart = 0;
 
       // Sleep for 4 secs to enable MediaPortal to shutdown before doing checks for running processess
       Thread.Sleep(4000);
-
+      int waitCount = 0;
       while (!checkRunningProcess())
       {
         // Check running process and wait 5sec for processes to exit
@@ -96,23 +97,27 @@ namespace SMPpatch
           processess += "Configuration.exe\n";
         if (smpeditor.running)
           processess += "StreamedMP basicHome Editor\n";
-
-        DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
-              "Retry",
-              MessageBoxButtons.RetryCancel,
-              MessageBoxIcon.Question,
-              MessageBoxDefaultButton.Button2);
-
-        if (result == DialogResult.Cancel)
+        if (waitCount > 5)
         {
-          Application.Exit();
+          DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
+                "Retry",
+                MessageBoxButtons.RetryCancel,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+
+          if (result == DialogResult.Cancel)
+          {
+            Application.Exit();
+          }
         }
+        else
+          Thread.Sleep(1000);
+
         processess = null;
       }
 
       // Create the temp directory to stroe the extracted patches
       Directory.CreateDirectory(tempExtractPath);
-      SkinInfo skInfo = new SkinInfo(); 
       readPatchControl();
       if (skInfo.skinVersion.CompareTo(minSMPVersion) < 0)
       {

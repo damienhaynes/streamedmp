@@ -34,6 +34,7 @@ namespace StreamedMPConfig
 
     private static readonly logger smcLog = logger.GetInstance();
 
+
     #endregion
 
     #region Private methods
@@ -41,6 +42,8 @@ namespace StreamedMPConfig
     void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
+
+      
       destinationPath = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(optionDownloadURL) + DateTime.Now.Ticks.ToString());
 
       GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
@@ -100,6 +103,8 @@ namespace StreamedMPConfig
           }
           finally
           {
+            SkinInfo skInfo = new SkinInfo();
+            smcLog.WriteLog("Patch Download Complete", LogLevel.Error);
             webResponse.Close();
             strResponse.Close();
             strLocal.Close();
@@ -115,14 +120,26 @@ namespace StreamedMPConfig
                     ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
                     upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
                     if (StreamedMPConfig.patchUtilityRunUnattended)
-                      upgradeProcess.Arguments = "/unattended ";
+                      upgradeProcess.Arguments = " /unattended";
                     if (StreamedMPConfig.patchUtilityRestartMP)
-                      upgradeProcess.Arguments += "/restartmp";
-                    System.Diagnostics.Process.Start(upgradeProcess);
-                    Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
-                    GUIGraphicsContext.OnAction(exitAction);
-                  }
+                      upgradeProcess.Arguments += " /restartmp";
 
+                    smcLog.WriteLog("Starting Upgrade process, Arguments : " + upgradeProcess.Arguments, LogLevel.Debug);
+                    System.Diagnostics.Process.Start(upgradeProcess);
+
+                    smcLog.WriteLog("Upgrade Process Started....", LogLevel.Debug);
+                    Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
+
+                    smcLog.WriteLog("Calling exit Action....", LogLevel.Debug);
+                    if (skInfo.minimiseMPOnExit == "yes")
+                    {
+                      // This is not a nice way of closing down MP
+                      GUIGraphicsContext.CurrentState = GUIGraphicsContext.State.STOPPING;
+                      Environment.Exit(0);
+                    }
+                    else
+                      GUIGraphicsContext.OnAction(exitAction);
+                  }
                 }
                 else
                 {

@@ -14,7 +14,7 @@ namespace SMPpatch
       this._pName = pName;
     }
 
-   public bool running
+    public bool running
     {
       get
       {
@@ -23,6 +23,16 @@ namespace SMPpatch
           return false;
         return true;
       }
+    }
+
+    public bool kill()
+    {
+      foreach (Process actProcess in Process.GetProcesses())
+      {
+        if (actProcess.ProcessName.ToLower() == _pName)
+          actProcess.Kill();
+      }
+      return true;
     }
   }
 }
