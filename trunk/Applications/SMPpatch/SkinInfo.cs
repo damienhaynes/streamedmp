@@ -62,6 +62,21 @@ namespace SMPpatch
       }
     }
 
+    public string configuredSkin
+    {
+      get
+      {
+        return readMPConfiguration("skin", "name");
+      }
+    }
+
+    public string minimiseMPOnExit
+    {
+      get
+      {
+        return readMPConfiguration("general", "minimizeonexit");
+      }
+    }
 
     public static void GetMediaPortalSkinPath()
     {
@@ -242,14 +257,6 @@ namespace SMPpatch
         }
       }
       return null;
-    }
-
-    public string configuredSkin
-    {
-      get
-      {
-        return readMPConfiguration("skin", "name");
-      }
     }
 
 

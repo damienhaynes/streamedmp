@@ -60,6 +60,8 @@ namespace StreamedMPConfig
       si.readMediaPortalDirs();
     }
 
+
+
     #endregion
 
     #region Private methods
@@ -232,11 +234,19 @@ namespace StreamedMPConfig
       return null;
     }
 
-    string configuredSkin
+    public string configuredSkin
     {
       get
       {
         return readMPConfiguration("skin", "name");
+      }
+    }
+
+    public string minimiseMPOnExit
+    {
+      get
+      {
+        return readMPConfiguration("general", "minimizeonexit");
       }
     }
 
