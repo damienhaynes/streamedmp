@@ -83,8 +83,8 @@ namespace SMPpatch
 
       introBox.SelectionStart = 0;
 
-      // Sleep for 2 secs to enable MediaPortal to shutdown before doing checks for running processess
-      Thread.Sleep(2000);
+      // Sleep for 4 secs to enable MediaPortal to shutdown before doing checks for running processess
+      Thread.Sleep(4000);
 
       while (!checkRunningProcess())
       {
