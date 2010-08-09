@@ -19,6 +19,8 @@ namespace SMPpatch
   public partial class SMPpatch : Form
   {
 
+    #region Varibles
+
     List<patchFile> patchFiles = new List<patchFile>();
     public string tempExtractPath = Path.Combine(Path.GetTempPath(), "StreamedMPPatch" + DateTime.Now.Ticks.ToString());
     public XmlTextReader reader;
@@ -29,7 +31,9 @@ namespace SMPpatch
     int i = 0;
     bool patchesToInstall = false;
 
+    #endregion
 
+    #region Public Methods
 
     public SMPpatch()
     {
@@ -60,13 +64,17 @@ namespace SMPpatch
       }
     }
 
+    #endregion
+
+    #region Private Methods
+
     private void SMPpatch_Load(object sender, EventArgs e)
     {
       SkinInfo.GetMediaPortalSkinPath();
       SkinInfo skInfo = new SkinInfo();
       if (skInfo.configuredSkin != "StreamedMP")
       {
-        MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.","Patch Installation Error");
+        MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.", "Patch Installation Error");
         Application.Exit();
       }
 
@@ -121,7 +129,7 @@ namespace SMPpatch
       readPatchControl();
       if (skInfo.skinVersion.CompareTo(minSMPVersion) < 0)
       {
-        MessageBox.Show("The Installed Version of StreamedMP V" + skInfo.skinVersion + " does not support this patch.\n\n  Please install StreamedMP V" + minSMPVersion.ToString() + " or greater before applying this patch.\n\n                                  This program will now terminate","Incompatible Skin Version");
+        MessageBox.Show("The Installed Version of StreamedMP V" + skInfo.skinVersion + " does not support this patch.\n\n  Please install StreamedMP V" + minSMPVersion.ToString() + " or greater before applying this patch.\n\n                                  This program will now terminate", "Incompatible Skin Version");
         Application.Exit();
       }
       // First check if we have any patches to install - this could be being run on a system that is already patched
@@ -135,7 +143,7 @@ namespace SMPpatch
         btInstallPatch.Enabled = false;
 
 
-        
+
       if (unattendedInatall)
       {
         UpdateMessage updateDone = new UpdateMessage();
@@ -309,7 +317,7 @@ namespace SMPpatch
         item.ImageIndex = 0;
       else
         item.ImageIndex = 1;
-      
+
       thePatches.Items.Add(item);
     }
 
@@ -323,78 +331,6 @@ namespace SMPpatch
       else
         return "0.0.0.0";
     }
-
-
-    #region Extract Patches
-
-    /// <summary>
-    /// Extracts an embedded file out of a given assembly.
-    /// </summary>
-    /// <param name="assemblyName">The namespace of you assembly.</param>
-    /// <param name="fileName">The name of the file to extract.</param>
-    /// <returns>A stream containing the file data.</returns>
-    public static Stream GetEmbeddedFile(string assemblyName, string fileName)
-    {
-      try
-      {
-        //System.Reflection.Assembly a = System.Reflection.Assembly.Load(assemblyName);
-        System.Reflection.Assembly a = System.Reflection.Assembly.GetCallingAssembly();
-        Stream str = a.GetManifestResourceStream(assemblyName + "." + fileName);
-
-        if (str == null)
-          throw new Exception("Could not locate embedded resource '" + fileName + "' in assembly '" + assemblyName + "'");
-        return str;
-      }
-      catch (Exception e)
-      {
-        throw new Exception(assemblyName + ": " + e.Message);
-      }
-    }
-
-    #region Overloads
-
-    public static Stream GetEmbeddedFile(System.Reflection.Assembly assembly, string fileName)
-    {
-      string assemblyName = assembly.GetName().Name;
-      return GetEmbeddedFile(assemblyName, fileName);
-    }
-
-    public static Stream GetEmbeddedFile(Type type, string fileName)
-    {
-      string assemblyName = type.Assembly.GetName().Name;
-      return GetEmbeddedFile(assemblyName, fileName);
-    }
-
-    #endregion
-
-    void extractFile(Stream inFile, Stream outFile)
-    {
-      const int size = 4096;
-      byte[] bytes = new byte[4096];
-      int numBytes;
-      while ((numBytes = inFile.Read(bytes, 0, size)) > 0)
-      {
-        outFile.Write(bytes, 0, numBytes);
-      }
-      outFile.Close();
-      inFile.Close();
-    }
-
-    #endregion
-
-    #region Class Defines
-
-    public class patchFile
-    {
-      public string patchFileName { get; set; }
-      public string patchVersion { get; set; }
-      public string patchAction { get; set; }
-      public string patchLocation { get; set; }
-      public string installedVersion { get; set; }
-      public string destinationPath { get; set; }
-    }
-
-    #endregion
 
     private void SMPpatch_FormClosing(object sender, FormClosingEventArgs e)
     {
@@ -560,6 +496,79 @@ namespace SMPpatch
         //showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
       }
     }
+
+    #endregion
+
+    #region Extract Patches
+
+    /// <summary>
+    /// Extracts an embedded file out of a given assembly.
+    /// </summary>
+    /// <param name="assemblyName">The namespace of you assembly.</param>
+    /// <param name="fileName">The name of the file to extract.</param>
+    /// <returns>A stream containing the file data.</returns>
+    public static Stream GetEmbeddedFile(string assemblyName, string fileName)
+    {
+      try
+      {
+        //System.Reflection.Assembly a = System.Reflection.Assembly.Load(assemblyName);
+        System.Reflection.Assembly a = System.Reflection.Assembly.GetCallingAssembly();
+        Stream str = a.GetManifestResourceStream(assemblyName + "." + fileName);
+
+        if (str == null)
+          throw new Exception("Could not locate embedded resource '" + fileName + "' in assembly '" + assemblyName + "'");
+        return str;
+      }
+      catch (Exception e)
+      {
+        throw new Exception(assemblyName + ": " + e.Message);
+      }
+    }
+
+    #region Overloads
+
+    public static Stream GetEmbeddedFile(System.Reflection.Assembly assembly, string fileName)
+    {
+      string assemblyName = assembly.GetName().Name;
+      return GetEmbeddedFile(assemblyName, fileName);
+    }
+
+    public static Stream GetEmbeddedFile(Type type, string fileName)
+    {
+      string assemblyName = type.Assembly.GetName().Name;
+      return GetEmbeddedFile(assemblyName, fileName);
+    }
+
+    #endregion
+
+    void extractFile(Stream inFile, Stream outFile)
+    {
+      const int size = 4096;
+      byte[] bytes = new byte[4096];
+      int numBytes;
+      while ((numBytes = inFile.Read(bytes, 0, size)) > 0)
+      {
+        outFile.Write(bytes, 0, numBytes);
+      }
+      outFile.Close();
+      inFile.Close();
+    }
+
+    #endregion
+
+    #region Class Defines
+
+    public class patchFile
+    {
+      public string patchFileName { get; set; }
+      public string patchVersion { get; set; }
+      public string patchAction { get; set; }
+      public string patchLocation { get; set; }
+      public string installedVersion { get; set; }
+      public string destinationPath { get; set; }
+    }
+
+    #endregion
 
   }
 }
