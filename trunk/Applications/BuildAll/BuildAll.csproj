@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BuildAll</RootNamespace>
     <AssemblyName>BuildAll</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>
     </StartupObject>
@@ -29,6 +29,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,4 +93,7 @@
   <PropertyGroup>
     <PostBuildEvent>if exist $(SolutionDir)PostBuild.bat call $(SolutionDir)PostBuild.bat $(SolutionDir) $(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
 </Project>

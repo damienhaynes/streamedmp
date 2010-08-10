@@ -3810,7 +3810,7 @@ namespace StreamedMPEditor
           if (tvSeriesRecentStyle == tvSeriesRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VFull.xml</import>");
           else
-            if (mostRecentStyle == mostRecentSummaryStyle.poster)
+            if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
               rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum.xml</import>");
             else
               rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.VSum2.xml</import>");
@@ -3821,7 +3821,7 @@ namespace StreamedMPEditor
           if (tvSeriesRecentStyle == tvSeriesRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HFull.xml</import>");
           else
-            if (mostRecentStyle == mostRecentSummaryStyle.poster)
+            if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum.xml</import>");
             else
               rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum2.xml</import>");
@@ -3835,16 +3835,22 @@ namespace StreamedMPEditor
         if (menuStyle == chosenMenuStyle.verticalStyle)
         {
           if (movPicsRecentStyle == movPicsRecentType.full)
-            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VFull.xml</import>");
           else
-            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+            if (mrMovPicsSummStyle== mostRecentMovPicsSummaryStyle.poster)
+              rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VSum.xml</import>");
+            else
+              rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VSum2.xml</import>");
         }
         else
         {
           if (movPicsRecentStyle == movPicsRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
           else
-            rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HFull.xml</import>");
+            if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster)
+              rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HSum.xml</import>");
+            else
+              rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HSum2.xml</import>");
         }
       }
       xml = xml.Replace(replaceString, rawXML.ToString());

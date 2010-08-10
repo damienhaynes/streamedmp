@@ -14,6 +14,9 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +41,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\Core.dll</HintPath>
     </Reference>
+    <Reference Include="Cornerstone, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Plugins\windows\Cornerstone.dll</HintPath>
+    </Reference>
     <Reference Include="Dialogs, Version=1.1.0.16051, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\Dialogs.dll</HintPath>
@@ -45,6 +52,10 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\PluginDependencies\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MovingPictures, Version=1.0.6.1116, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Plugins\windows\MovingPictures.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -104,6 +115,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Properties\VersionInfo.cs.tmpl" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

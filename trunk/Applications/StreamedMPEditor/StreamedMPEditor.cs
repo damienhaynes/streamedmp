@@ -88,7 +88,13 @@ namespace StreamedMPEditor
       full
     }
 
-    enum mostRecentSummaryStyle
+    enum mostRecentTVSeriesSummaryStyle
+    {
+      poster,
+      fanart
+    }
+
+    enum mostRecentMovPicsSummaryStyle
     {
       poster,
       fanart
@@ -168,9 +174,9 @@ namespace StreamedMPEditor
     movPicsRecentType movPicsRecentStyle = movPicsRecentType.full;
 
     //Defualt to Fanart Summary Style
-    mostRecentSummaryStyle mostRecentStyle = mostRecentSummaryStyle.fanart;
+    mostRecentTVSeriesSummaryStyle mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+    mostRecentMovPicsSummaryStyle mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
  
-
     // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
@@ -327,6 +333,12 @@ namespace StreamedMPEditor
 
           rbTBSeriesFull.Checked = true;
           rbMovPicsFull.Checked = true;
+
+          pbPosterPicTVSeries.Visible = true;
+          pbFanartPicTVSeries.Visible = true;
+          pbPosterPicMovPics.Visible = false;
+          pbFanartPicMovPics.Visible = false;
+          btFormatOptions.Visible = true;
         }
 
         loadMenuSettings();
@@ -934,7 +946,7 @@ namespace StreamedMPEditor
           generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries);
         }
 
-        if (cbMostRecentTvSeries.Checked)
+        if (cbMostRecentMovPics.Checked)
         {
           generateMostRecentOverlay(menuStyle, isOverlayType.MovPics);
         }
@@ -1060,6 +1072,7 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
   }
 }
 
