@@ -97,8 +97,7 @@
 			<textYOff>8</textYOff>
 			<textXOff>20</textXOff>
 			<textureFocus>tv_button_focus.png</textureFocus>
-			<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-			<visible>true</visible>
+			<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>			
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 		</control>	
@@ -122,8 +121,7 @@
 			<textYOff>8</textYOff>
 			<textXOff>20</textXOff>
 			<textureFocus>tv_button_focus.png</textureFocus>
-			<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-			<visible>!string.equals(#MPE.Selected.isinstalled,true)</visible>
+			<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>			
 			<animation effect="fade" time="250">WindowOpen</animation>
 			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
