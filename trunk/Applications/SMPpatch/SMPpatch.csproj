@@ -110,6 +110,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="EmbeddedPatches\SkinUpdate.zip" />
+    <None Include="EmbeddedPatches\PreBuild.bat" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +137,9 @@
     <EmbeddedResource Include="EmbeddedPatches\StreamedMPEditor.dll" />
     <EmbeddedResource Include="EmbeddedPatches\FanartHandler.dll" />
     <EmbeddedResource Include="EmbeddedPatches\SMPMediaPortalRestart.exe" />
+    <EmbeddedResource Include="EmbeddedPatches\LyricsEngine.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\MyLyrics.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\TranslateProvider.dll" />
     <Content Include="patchNotInstalled.png" />
     <Content Include="patchInstalled.png" />
     <EmbeddedResource Include="EmbeddedPatches\PatchControl.xml" />
