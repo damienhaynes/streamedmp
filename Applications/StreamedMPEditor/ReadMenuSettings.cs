@@ -282,20 +282,20 @@ namespace StreamedMPEditor
 
       if (mostRecentSumStyle == "fanart")
       {
-        mostRecentStyle = mostRecentSummaryStyle.fanart;
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
         btFormatOptions.Enabled = true;
       }
       else if (mostRecentSumStyle == "poster")
       {
-        mostRecentStyle = mostRecentSummaryStyle.poster;
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         rbPosterStyle.Checked = true;
         btFormatOptions.Enabled = false;
       }
       else
       {
         //Default to Fanart Style
-        mostRecentStyle = mostRecentSummaryStyle.fanart;
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
       }
 

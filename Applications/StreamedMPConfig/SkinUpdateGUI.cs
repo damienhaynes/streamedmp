@@ -251,7 +251,7 @@ namespace StreamedMPConfig
       }
     }
 
-    protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
+    protected override void OnClicked(int controlId, GUIControl control, MediaPortal.GUI.Library.Action.ActionType actionType)
     {
       if (control == btDoUpdate)
       {

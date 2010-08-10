@@ -1423,9 +1423,76 @@ namespace StreamedMPEditor
     private void cbMostRecentTvSeries_CheckedChanged(object sender, EventArgs e)
     {
       if (cbMostRecentTvSeries.Checked == true)
+      {
         gbTvSeriesOptions.Enabled = true;
+
+        if (cbMostRecentMovPics.Checked)
+          cboxSummaryFor.Enabled = true;
+        else
+        {
+          cboxSummaryFor.Text = "TVSeries";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+          gbSummaryStyle.Enabled = true;
+        }
+      }
       else
-        gbTvSeriesOptions.Enabled = false;
+      {
+        if (cbMostRecentMovPics.Checked)
+        {
+          cboxSummaryFor.Text = "MovingPictures";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+          gbTvSeriesOptions.Enabled = false;
+          gbSummaryStyle.Enabled = true;
+        }
+        else
+        {
+          cboxSummaryFor.Enabled = false;
+          gbTvSeriesOptions.Enabled = false;
+          gbSummaryStyle.Enabled = false;
+        }
+      }
+    }
+
+    private void cbMostRecentMovPics_CheckedChanged(object sender, EventArgs e)
+    {
+      if (cbMostRecentMovPics.Checked)
+      {
+        gbMovPicsOptions.Enabled = true;
+      
+        if (cbMostRecentTvSeries.Checked)
+          cboxSummaryFor.Enabled = true;
+        else
+        {
+          cboxSummaryFor.Text = "MovingPictures";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+          gbSummaryStyle.Enabled = true;
+        }
+      }
+      else
+      {
+        if (cbMostRecentTvSeries.Checked)
+        {
+          cboxSummaryFor.Text = "TVSeries";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+          gbMovPicsOptions.Enabled = false;
+          gbSummaryStyle.Enabled = true;
+        }
+        else
+        {
+          cboxSummaryFor.Enabled = false;
+          gbTvSeriesOptions.Enabled = false;
+          gbSummaryStyle.Enabled = false;
+        }
+
+      }
     }
 
     private void rbTVSeriesSummary_CheckedChanged(object sender, EventArgs e)
@@ -1433,34 +1500,62 @@ namespace StreamedMPEditor
       if (rbTBSeriesFull.Checked)
       {
         tvSeriesRecentStyle = tvSeriesRecentType.full;
-        gbSummaryStyle.Enabled = false;
+        if (rbMovPicsFull.Checked)
+          gbSummaryStyle.Enabled = false;
+        else
+        {
+          cboxSummaryFor.Text = "MovingPictures";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+        }
       }
       else
       {
         tvSeriesRecentStyle = tvSeriesRecentType.summary;
         gbSummaryStyle.Enabled = true;
+        if (rbMovPicsSummary.Checked)
+          cboxSummaryFor.Enabled = true;
+        else
+        {
+          cboxSummaryFor.Text = "TVSeries";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+        }
       }
     }
 
-    private void cbMostRecentMovPics_CheckedChanged(object sender, EventArgs e)
-    {
-      if (cbMostRecentMovPics.Checked)
-        gbMovPicsOptions.Enabled = true;
-      else
-        gbMovPicsOptions.Enabled = false;
-    }
+
 
     private void rbMovPicsSummary_CheckedChanged(object sender, EventArgs e)
     {
       if (rbMovPicsFull.Checked)
       {
         movPicsRecentStyle = movPicsRecentType.full;
-        gbSummaryStyle.Enabled = false;
+        if (rbTBSeriesFull.Checked)
+          gbSummaryStyle.Enabled = false;
+        else
+        {
+          cboxSummaryFor.Text = "TVSeries";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+        }
       }
       else
       {
         movPicsRecentStyle = movPicsRecentType.summary;
         gbSummaryStyle.Enabled = true;
+        if (rbTVSeriesSummary.Checked)
+          cboxSummaryFor.Enabled = true;
+        else
+        {
+          cboxSummaryFor.Text = "MovingPictures";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+          cboxSummaryFor.Enabled = false;
+        }
       }
     }
 
@@ -1468,15 +1563,77 @@ namespace StreamedMPEditor
     {
       if (rbFanartStyle.Checked)
       {
-        mostRecentStyle = mostRecentSummaryStyle.fanart;
+        if (cboxSummaryFor.Text == "TVSeries")
+          mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+        else
+          mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
         btFormatOptions.Enabled = true;
       }
       else
       {
-        mostRecentStyle = mostRecentSummaryStyle.poster;
+        if (cboxSummaryFor.Text == "TVSeries")
+          mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
+        else
+          mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
         btFormatOptions.Enabled = false;
       }
-    }    
+    }
+
+    private void cboxSummaryFor_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      doSummaryFor();
+    }
+
+    void doSummaryFor()
+    {
+
+      if (cboxSummaryFor.Text == "TVSeries")
+      {
+        pbPosterPicTVSeries.Visible = true;
+        pbFanartPicTVSeries.Visible = true;
+        pbPosterPicMovPics.Visible = false;
+        pbFanartPicMovPics.Visible = false;
+
+        if (rbTBSeriesFull.Checked)
+          btFormatOptions.Enabled = false;
+        else
+          btFormatOptions.Enabled = true;
+
+        if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
+        {
+          rbFanartStyle.Checked = true;
+          rbPosterStyle.Checked = false;
+        }
+        else
+        {
+          rbFanartStyle.Checked = false;
+          rbPosterStyle.Checked = true;
+        }
+
+        btFormatOptions.Visible = true;
+
+      }
+      else
+      {
+        pbPosterPicTVSeries.Visible = false;
+        pbFanartPicTVSeries.Visible = false;
+        pbPosterPicMovPics.Visible = true;
+        pbFanartPicMovPics.Visible = true;
+        btFormatOptions.Visible = false;
+
+        if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
+        {
+          rbFanartStyle.Checked = true;
+          rbPosterStyle.Checked = false;
+        }
+
+        else
+        {
+          rbFanartStyle.Checked = false;
+          rbPosterStyle.Checked = true;
+        }
+      }
+    }
     
     //
     // Write out a formatted xml file
