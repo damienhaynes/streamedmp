@@ -451,8 +451,8 @@ namespace SMPpatch
       {
         if (patchdir.ToLower().Contains("language"))
           copyDirectory(Path.Combine(destinationPath, "language"), SkinInfo.mpPaths.langBasePath);
-        if (patchdir.ToLower().Contains("streamedmp"))
-          copyDirectory(Path.Combine(destinationPath, "StreamedMP"), Path.Combine(SkinInfo.mpPaths.skinBasePath, "StreamedMP"));
+        if (patchdir.ToLower().Contains("skin"))
+          copyDirectory(Path.Combine(destinationPath, "skin"), SkinInfo.mpPaths.skinBasePath);
         if (patchdir.ToLower().Contains("thumbs"))
           copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
         if (patchdir.ToLower().Contains("database"))
