@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -178,6 +178,8 @@
     <PostBuildEvent>copy $(SolutionDir)Externals\ILMerge.exe $(TargetDir) /Y 
 copy $(ProjectDir)\ILMerge\merge.bat $(TargetDir) /Y
 $(TargetDir)merge.bat</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
+cd $(ProjectDir)EmbeddedPatches
+call PreBuild.bat</PreBuildEvent>
   </PropertyGroup>
 </Project>
