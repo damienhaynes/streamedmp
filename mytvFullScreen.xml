@@ -19,7 +19,7 @@
       <visible>player.forwarding|player.rewinding</visible>
     </control>
     <control>
-      <description>background (paused)</description>
+      <description>background large (paused)</description>
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
@@ -28,6 +28,17 @@
       <height>197</height>
       <texture>osdbackground1.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+    </control>
+    <control>
+      <description>background small (paused)</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>650</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TV Logo border</description>

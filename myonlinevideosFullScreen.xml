@@ -18,8 +18,8 @@
       <texture>black.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-    <control>
-      <description>background (paused)</description>
+	<control>
+      <description>background paused (large)</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -28,6 +28,17 @@
       <height>197</height>
       <texture>osdbackground1.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+    </control>
+    <control>
+      <description>background paused (small)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>650</posY>
+      <width>1280</width>
+      <height>197</height>
+      <texture>osdbackground.png</texture>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Thumb border</description>
