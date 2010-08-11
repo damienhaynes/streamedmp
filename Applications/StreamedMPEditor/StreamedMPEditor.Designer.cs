@@ -1191,9 +1191,9 @@
       this.cbExitStyleNew.AutoSize = true;
       this.cbExitStyleNew.Location = new System.Drawing.Point(223, 51);
       this.cbExitStyleNew.Name = "cbExitStyleNew";
-      this.cbExitStyleNew.Size = new System.Drawing.Size(246, 17);
+      this.cbExitStyleNew.Size = new System.Drawing.Size(240, 17);
       this.cbExitStyleNew.TabIndex = 44;
-      this.cbExitStyleNew.Text = "Enable Exit/Shutdown Buttons  on BasicHome";
+      this.cbExitStyleNew.Text = "Show Exit/Shutdown Buttons  on BasicHome";
       this.cbExitStyleNew.UseVisualStyleBackColor = true;
       // 
       // cbAnimateBackground
