@@ -93,7 +93,4 @@
   <PropertyGroup>
     <PostBuildEvent>if exist $(SolutionDir)PostBuild.bat call $(SolutionDir)PostBuild.bat $(SolutionDir) $(ConfigurationName)</PostBuildEvent>
   </PropertyGroup>
-  <ItemGroup>
-    <None Include="app.config" />
-  </ItemGroup>
 </Project>
