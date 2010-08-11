@@ -1579,7 +1579,7 @@
               "<window>" +
                 "<controls>" +
                   "<control>" +
-                    "<description>GROUP: RecentlyAdded Series 3</description>" +
+                    "<description>GROUP: RecentlyAdded Movie 3</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
@@ -1611,18 +1611,17 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                     "</control>" +
-//                    "<control>" +
-//                      "<description>Series 3 episode</description>" +
-//                      "<type>label</type>" +
-//                      "<id>0</id>" +
-//                      "<posX>871</posX>" +
-//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-//                      "<width>115</width>" +
-//                      "<label>#StreamedMP.recentlyAdded.movie3.title</label>" +
-//                      "<font>mediastream10tc</font>" +
-//                      "<align>center</align>" +
-//                      "<textcolor>White</textcolor>" +
-//                    "</control>" +
+                  "<control>" +
+                    "<description>Movie 1 Star Rating</description>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<posX>871</posX>" +
+                    "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                    "<width>115</width>" +
+                    "<height>22</height>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
+                    "<align>left</align>" +
+                  "</control>" +
                   "</control>" +
                   "<control>" +
                     "<description>GROUP: RecentlyAdded Series 2</description>" +
@@ -1657,18 +1656,17 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>" +
                     "</control>" +
-//                    "<control>" +
-//                      "<description>Series 2 episode</description>" +
-//                      "<type>label</type>" +
-//                      "<id>0</id>" +
-//                      "<posX>1011</posX>" +
-//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-//                      "<width>115</width>" +
-//                      "<label>#StreamedMP.recentlyAdded.movie2.title</label>" +
-//                      "<font>mediastream10tc</font>" +
-//                      "<align>center</align>" +
-//                      "<textcolor>White</textcolor>" +
-//                    "</control>" +
+                  "<control>" +
+                    "<description>Movie 2 Star Rating</description>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<posX>1011</posX>" +
+                    "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                    "<width>115</width>" +
+                    "<height>22</height>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
+                    "<align>left</align>" +
+                  "</control>" +
                   "</control>" +
                   "<control>" +
                     "<description>GROUP: RecentlyAdded Series 1</description>" +
@@ -1682,7 +1680,7 @@
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
-                      "<description>Series 3 thumb</description>" +
+                      "<description>Movie 1 background</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1141</posX>" +
@@ -1693,7 +1691,7 @@
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
                     "<control>" +
-                      "<description>Series 3 thumb</description>" +
+                      "<description>Movie 1 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1151</posX>" +
@@ -1703,18 +1701,17 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>" +
                     "</control>" +
-//                    "<control>" +
-//                      "<description>Series 3 episode</description>" +
-//                      "<type>label</type>" +
-//                      "<id>0</id>" +
-//                      "<posX>1151</posX>" +
-//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-//                      "<width>115</width>" +
-//                      "<label>#StreamedMP.recentlyAdded.movie1.title</label>" +
-//                      "<font>mediastream10tc</font>" +
-//                      "<align>center</align>" +
-//                      "<textcolor>White</textcolor>" +
-//                    "</control>" +
+                    "<control>" +
+                      "<description>Movie 1 Star rating</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1151</posX>" +
+                      "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                      "<width>115</width>" +
+                      "<height>22</height>" +
+                      "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
+                      "<align>left</align>" +
+                    "</control>" +
                   "</control>" +
                 "</controls>" +
               "</window>";
