@@ -1566,7 +1566,6 @@
 
     #endregion
 
-
     #region MovingPictures Summary Builder
 
     void buildMovingPicturesSummaryFile(int overlayYpos, mostRecentMovPicsSummaryStyle sumStyle)
@@ -1612,18 +1611,18 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                     "</control>" +
-                    "<control>" +
-                      "<description>Series 3 episode</description>" +
-                      "<type>label</type>" +
-                      "<id>0</id>" +
-                      "<posX>871</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<label>#StreamedMP.recentlyAdded.movie3.title</label>" +
-                      "<font>mediastream10tc</font>" +
-                      "<align>center</align>" +
-                      "<textcolor>White</textcolor>" +
-                    "</control>" +
+//                    "<control>" +
+//                      "<description>Series 3 episode</description>" +
+//                      "<type>label</type>" +
+//                      "<id>0</id>" +
+//                      "<posX>871</posX>" +
+//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+//                      "<width>115</width>" +
+//                      "<label>#StreamedMP.recentlyAdded.movie3.title</label>" +
+//                      "<font>mediastream10tc</font>" +
+//                      "<align>center</align>" +
+//                      "<textcolor>White</textcolor>" +
+//                    "</control>" +
                   "</control>" +
                   "<control>" +
                     "<description>GROUP: RecentlyAdded Series 2</description>" +
@@ -1658,18 +1657,18 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>" +
                     "</control>" +
-                    "<control>" +
-                      "<description>Series 2 episode</description>" +
-                      "<type>label</type>" +
-                      "<id>0</id>" +
-                      "<posX>1011</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<label>#StreamedMP.recentlyAdded.movie2.title</label>" +
-                      "<font>mediastream10tc</font>" +
-                      "<align>center</align>" +
-                      "<textcolor>White</textcolor>" +
-                    "</control>" +
+//                    "<control>" +
+//                      "<description>Series 2 episode</description>" +
+//                      "<type>label</type>" +
+//                      "<id>0</id>" +
+//                      "<posX>1011</posX>" +
+//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+//                      "<width>115</width>" +
+//                      "<label>#StreamedMP.recentlyAdded.movie2.title</label>" +
+//                      "<font>mediastream10tc</font>" +
+//                      "<align>center</align>" +
+//                      "<textcolor>White</textcolor>" +
+//                    "</control>" +
                   "</control>" +
                   "<control>" +
                     "<description>GROUP: RecentlyAdded Series 1</description>" +
@@ -1704,18 +1703,18 @@
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>" +
                     "</control>" +
-                    "<control>" +
-                      "<description>Series 3 episode</description>" +
-                      "<type>label</type>" +
-                      "<id>0</id>" +
-                      "<posX>1151</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<label>#StreamedMP.recentlyAdded.movie1.title</label>" +
-                      "<font>mediastream10tc</font>" +
-                      "<align>center</align>" +
-                      "<textcolor>White</textcolor>" +
-                    "</control>" +
+//                    "<control>" +
+//                      "<description>Series 3 episode</description>" +
+//                      "<type>label</type>" +
+//                      "<id>0</id>" +
+//                      "<posX>1151</posX>" +
+//                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
+//                      "<width>115</width>" +
+//                      "<label>#StreamedMP.recentlyAdded.movie1.title</label>" +
+//                      "<font>mediastream10tc</font>" +
+//                      "<align>center</align>" +
+//                      "<textcolor>White</textcolor>" +
+//                    "</control>" +
                   "</control>" +
                 "</controls>" +
               "</window>";
@@ -1883,7 +1882,6 @@
       #endregion
     }
     #endregion
-
 
   }
 }
