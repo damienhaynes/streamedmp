@@ -20,8 +20,8 @@ namespace StreamedMPEditor
       string tvRecentDisplayType = null;
       string movPicsDisplayType = null;
       string mostRecentSumStyle = null;
-
-      menuItems.Clear();
+      string mostRecentTVSeriesSummStyle = null;
+      string mostRecentMovPicsSummStyle = null;
       itemsOnMenubar.Items.Clear();
 
       XmlDocument doc = new XmlDocument();
@@ -214,13 +214,17 @@ namespace StreamedMPEditor
         cbMostRecentMovPics.Checked = bool.Parse(readEntryValue(optionsTag, "movPicsMostRecent", nodelist));
         tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
         movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
-        mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);
+        mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);  // Hang over from when juts TVSeries was supported
+        mostRecentTVSeriesSummStyle = readEntryValue(optionsTag, "mostRecentTVSeriesSummStyle", nodelist);
+        mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);     
         cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
         mrsForm.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
         mrsForm.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
         mrsForm.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
         mrsForm.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
-        cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));      
+        cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
+        mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
+        mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
       }
       catch
       {
@@ -280,6 +284,7 @@ namespace StreamedMPEditor
         rbMovPicsFull.Checked = true;
       }
 
+      // Old Setting - if found in usermenuprofile use as setting for TVSeries Summary Style
       if (mostRecentSumStyle == "fanart")
       {
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
@@ -298,6 +303,47 @@ namespace StreamedMPEditor
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
       }
+
+      // TVSeries most recent summry Style
+      if (mostRecentTVSeriesSummStyle == "fanart")
+      {
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+        btFormatOptions.Enabled = true;
+      }
+      else if (mostRecentSumStyle == "poster")
+      {
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
+        rbPosterStyle.Checked = true;
+        btFormatOptions.Enabled = false;
+      }
+      else
+      {
+        //Default to Fanart Style
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+
+      // Moving Pictures most recent summry Style
+      if (mostRecentMovPicsSummStyle == "fanart")
+      {
+        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+        btFormatOptions.Enabled = true;
+      }
+      else if (mostRecentMovPicsSummStyle == "poster")
+      {
+        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
+        rbPosterStyle.Checked = true;
+        btFormatOptions.Enabled = false;
+      }
+      else
+      {
+        //Default to Fanart Style
+        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+
 
       if (splashScreenImage == "false")
         splashScreenImage = "splashscreen.png";
@@ -346,6 +392,40 @@ namespace StreamedMPEditor
         infoServiceDayProperty = "forecast";
       else
         infoServiceDayProperty = "day";
+
+      // Check if Moving Pictures is installed and enabled, if not disable most recent options
+      if (getMovingPicturesVersion() == "Not Installed")
+      {
+        pMovPicsRecent.Enabled = false;
+        cbMostRecentTvSeries.Checked = false;
+        cbMostRecentMovPics.Refresh();
+      }
+      else
+      {
+        if (!pluginEnabled("Moving Pictures"))
+        {
+          pMovPicsRecent.Enabled = false;
+          cbMostRecentTvSeries.Checked = false;
+          cbMostRecentMovPics.Refresh();
+        }
+      }
+
+      // Check in TVSeries is installed and enabled, if not disable most recent options
+      if (getTVSeriesVersion() == "Not Installed")
+      {
+        pTVSeriesRecent.Enabled = false;
+        cbMostRecentTvSeries.Checked = false;
+        cbMostRecentTvSeries.Refresh();
+      }
+      else
+      {
+        if (!pluginEnabled("MP-TV Series"))
+        {
+          pTVSeriesRecent.Enabled = false;
+          cbMostRecentTvSeries.Checked = false;
+          cbMostRecentTvSeries.Refresh();
+        }
+      }
 
 
       //

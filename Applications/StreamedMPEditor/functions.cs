@@ -24,10 +24,10 @@ namespace StreamedMPEditor
         return;
 
       readMediaPortalDirs();
-
+    
       string infoServiceVer = getInfoServiceVersion();
 
-      if (infoServiceVer == "InfoService Not Installed")
+      if (infoServiceVer == "Not Installed")
       {
         infoserviceOptions.Enabled = false;
       }
@@ -64,7 +64,7 @@ namespace StreamedMPEditor
       infoConfigpath.Text = mpPaths.configBasePath;
 
 
-      if (infoServiceVer == "InfoService Not Installed")
+      if (infoServiceVer == "Not Installed")
         infoserviceOptions.Text = "InfoService Options(Disabled)";
       else
         infoserviceOptions.Text = "InfoService Options";
@@ -653,21 +653,13 @@ namespace StreamedMPEditor
 
           break;
       }
-
-
-
-
     }
 
     private string getInfoServiceVersion()
     {
 
       if (!File.Exists(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
-      {
-        //showError("Can't find InfoService Plugin\r\r" + mpPaths.pluginPath + "windows\\infoservice.dll\n\nInfoService Options will be Disabled", errorCode.info);
-        return "InfoService Not Installed";
-      }
-
+        return "Not Installed";
 
       getAsmVersion ver = new getAsmVersion();
       if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
@@ -678,9 +670,40 @@ namespace StreamedMPEditor
       else
         showError(ver.ErrorMessage, errorCode.major);
       return "";
-
     }
 
+
+    private string getMovingPicturesVersion()
+    {
+      if (!File.Exists(mpPaths.pluginPath + "\\windows\\MovingPictures.dll"))
+        return "Not Installed";
+      
+      getAsmVersion ver = new getAsmVersion();
+      if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\MovingPictures.dll"))
+      {
+        AssemblyInformation info = ver.CurrentAssemblyInfo;
+        return info.Version;
+      }
+      else
+        showError(ver.ErrorMessage, errorCode.major);
+      return "";
+    }
+
+    private string getTVSeriesVersion()
+    {
+      if (!File.Exists(mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll"))
+        return "Not Installed";
+
+      getAsmVersion ver = new getAsmVersion();
+      if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll"))
+      {
+        AssemblyInformation info = ver.CurrentAssemblyInfo;
+        return info.Version;
+      }
+      else
+        showError(ver.ErrorMessage, errorCode.major);
+      return "";
+    }
 
     private string getMediaPortalVersion()
     {
@@ -1579,6 +1602,24 @@ namespace StreamedMPEditor
       }
     }
 
+    private void cbCycleFanart_CheckStateChanged(object sender, EventArgs e)
+    {
+      if (cboxSummaryFor.Text == "TVSeries")
+      {
+        if (cbCycleFanart.Checked)
+          mostRecentTVSeriesCycleFanart = true;
+        else
+          mostRecentTVSeriesCycleFanart = false;
+      }
+      else
+      {
+        if (cbCycleFanart.Checked)
+          mostRecentMovPicsCycleFanart = true;
+        else
+          mostRecentMovPicsCycleFanart = false;
+      }
+    }
+
     private void cboxSummaryFor_SelectedIndexChanged(object sender, EventArgs e)
     {
       doSummaryFor();
@@ -1589,6 +1630,8 @@ namespace StreamedMPEditor
 
       if (cboxSummaryFor.Text == "TVSeries")
       {
+        cbCycleFanart.Checked = mostRecentTVSeriesCycleFanart;
+
         pbPosterPicTVSeries.Visible = true;
         pbFanartPicTVSeries.Visible = true;
         pbPosterPicMovPics.Visible = false;
@@ -1615,6 +1658,8 @@ namespace StreamedMPEditor
       }
       else
       {
+        cbCycleFanart.Checked = mostRecentMovPicsCycleFanart;
+
         pbPosterPicTVSeries.Visible = false;
         pbFanartPicTVSeries.Visible = false;
         pbPosterPicMovPics.Visible = true;

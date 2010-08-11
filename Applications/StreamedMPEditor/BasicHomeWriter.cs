@@ -3993,6 +3993,8 @@ namespace StreamedMPEditor
       string tvRecentDisplayType = "full";
       string movPicsDisplayType = "full";
       string mostRecentSumStyle = "fanart";
+      string mostRecentTVSeriesSummStyle = "fanart";
+      string mostRecentMovPicsSummStyle = "fanart";
 
       string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
       string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
@@ -4016,9 +4018,8 @@ namespace StreamedMPEditor
       string mrSeriesEpisodeFormat = mrsForm.mrSeriesEpisodeFormat ? "true" : "false";
       string mrTitleLast = mrsForm.mrTitleLast ? "true" : "false";
       string settingOldStyleExitButtons = cbExitStyleNew.Checked ? "true" : "false";
-
-
-
+      string mrTVSeriesCycleFanart = mostRecentTVSeriesCycleFanart ? "true" : "false";
+      string mrMovPicsCycleFanart = mostRecentMovPicsCycleFanart ? "true" : "false";
 
 
       if (direction == menuType.horizontal)
@@ -4070,14 +4071,23 @@ namespace StreamedMPEditor
 
       if (tvSeriesRecentStyle == tvSeriesRecentType.summary)
         tvRecentDisplayType = "summary";
+      else
+        tvRecentDisplayType = "full";
 
       if (movPicsRecentStyle == movPicsRecentType.summary)
         movPicsDisplayType = "summary";
-
-      if (rbFanartStyle.Checked)
-        mostRecentSumStyle = "fanart";
       else
-        mostRecentSumStyle = "poster";
+        movPicsDisplayType = "full";
+
+      if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
+        mostRecentTVSeriesSummStyle = "fanart";
+      else
+        mostRecentTVSeriesSummStyle = "poster";
+
+      if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
+        mostRecentMovPicsSummStyle = "fanart";
+      else
+        mostRecentMovPicsSummStyle = "poster";
 
       xml = ("<profile>"
                 + "<version>1.0</version>"
@@ -4115,13 +4125,16 @@ namespace StreamedMPEditor
                 + generateEntry("movPicsMostRecent", movPicsMostRecent, 2, true)
                 + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 2, true)
                 + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
-                + generateEntry("mostRecentSumStyle", mostRecentSumStyle, 2, true)
+                + generateEntry("mostRecentTVSeriesSummStyle", mostRecentTVSeriesSummStyle, 2, true)
+                + generateEntry("mostRecentMovPicsSummStyle", mostRecentMovPicsSummStyle, 2, true)
                 + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 2, true)
                 + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 2, true)
                 + generateEntry("mrTitleLast", mrTitleLast, 2, true)
                 + generateEntry("mrEpisodeFont", mrsForm.mrEpisodeFont, 2, true)
                 + generateEntry("mrSeriesFont", mrsForm.mrSeriesFont, 2, true)
                 + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons,2,true)
+                + generateEntry("mrTVSeriesCycleFanart",mrTVSeriesCycleFanart,2,true)
+                + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 2, true)
                 + "</section>");
       
       StringBuilder rawXML = new StringBuilder();
