@@ -144,7 +144,6 @@
       this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
       this.pbPosterPicMovPics = new System.Windows.Forms.PictureBox();
       this.pbFanartPicMovPics = new System.Windows.Forms.PictureBox();
-      this.cboxSummaryFor = new System.Windows.Forms.ComboBox();
       this.btFormatOptions = new System.Windows.Forms.Button();
       this.rbFanartStyle = new System.Windows.Forms.RadioButton();
       this.cbCycleFanart = new System.Windows.Forms.CheckBox();
@@ -156,11 +155,14 @@
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
       this.rbMovPicsSummary = new System.Windows.Forms.RadioButton();
       this.cbMostRecentMovPics = new System.Windows.Forms.CheckBox();
+      this.cboxSummaryFor = new System.Windows.Forms.ComboBox();
       this.pTVSeriesRecent = new System.Windows.Forms.Panel();
       this.gbTvSeriesOptions = new System.Windows.Forms.GroupBox();
       this.rbTBSeriesFull = new System.Windows.Forms.RadioButton();
       this.rbTVSeriesSummary = new System.Windows.Forms.RadioButton();
       this.cbMostRecentTvSeries = new System.Windows.Forms.CheckBox();
+      this.pSumHeader = new System.Windows.Forms.Panel();
+      this.label12 = new System.Windows.Forms.Label();
       this.weatherOptions = new System.Windows.Forms.GroupBox();
       this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
       this.weatherBGlink = new System.Windows.Forms.CheckBox();
@@ -235,6 +237,9 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.label22 = new System.Windows.Forms.Label();
+      this.label23 = new System.Windows.Forms.Label();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -274,6 +279,7 @@
       this.gbMovPicsOptions.SuspendLayout();
       this.pTVSeriesRecent.SuspendLayout();
       this.gbTvSeriesOptions.SuspendLayout();
+      this.pSumHeader.SuspendLayout();
       this.weatherOptions.SuspendLayout();
       this.gbRssImageType.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
@@ -292,6 +298,7 @@
       this.statusStrip1.SuspendLayout();
       this.groupBox5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
+      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -1543,6 +1550,8 @@
       this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
       this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
       this.infoServiceRecentOptions.Controls.Add(this.pTVSeriesRecent);
+      this.infoServiceRecentOptions.Controls.Add(this.pSumHeader);
+      this.infoServiceRecentOptions.Controls.Add(this.panel2);
       this.infoServiceRecentOptions.Location = new System.Drawing.Point(3, 150);
       this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
       this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 223);
@@ -1554,24 +1563,22 @@
       // 
       this.gbSummaryStyle.Controls.Add(this.pbPosterPicMovPics);
       this.gbSummaryStyle.Controls.Add(this.pbFanartPicMovPics);
-      this.gbSummaryStyle.Controls.Add(this.cboxSummaryFor);
       this.gbSummaryStyle.Controls.Add(this.btFormatOptions);
       this.gbSummaryStyle.Controls.Add(this.rbFanartStyle);
       this.gbSummaryStyle.Controls.Add(this.cbCycleFanart);
       this.gbSummaryStyle.Controls.Add(this.rbPosterStyle);
       this.gbSummaryStyle.Controls.Add(this.pbPosterPicTVSeries);
       this.gbSummaryStyle.Controls.Add(this.pbFanartPicTVSeries);
-      this.gbSummaryStyle.Location = new System.Drawing.Point(296, 19);
+      this.gbSummaryStyle.Location = new System.Drawing.Point(296, 31);
       this.gbSummaryStyle.Name = "gbSummaryStyle";
-      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 197);
+      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 185);
       this.gbSummaryStyle.TabIndex = 6;
       this.gbSummaryStyle.TabStop = false;
-      this.gbSummaryStyle.Text = "Summary Style For :";
       // 
       // pbPosterPicMovPics
       // 
       this.pbPosterPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicMovPics.Image")));
-      this.pbPosterPicMovPics.Location = new System.Drawing.Point(32, 30);
+      this.pbPosterPicMovPics.Location = new System.Drawing.Point(32, 28);
       this.pbPosterPicMovPics.Name = "pbPosterPicMovPics";
       this.pbPosterPicMovPics.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1581,29 +1588,16 @@
       // pbFanartPicMovPics
       // 
       this.pbFanartPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicMovPics.Image")));
-      this.pbFanartPicMovPics.Location = new System.Drawing.Point(274, 15);
+      this.pbFanartPicMovPics.Location = new System.Drawing.Point(274, 13);
       this.pbFanartPicMovPics.Name = "pbFanartPicMovPics";
       this.pbFanartPicMovPics.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.pbFanartPicMovPics.TabIndex = 7;
       this.pbFanartPicMovPics.TabStop = false;
       // 
-      // cboxSummaryFor
-      // 
-      this.cboxSummaryFor.FormattingEnabled = true;
-      this.cboxSummaryFor.Items.AddRange(new object[] {
-            "TVSeries",
-            "MovingPictures"});
-      this.cboxSummaryFor.Location = new System.Drawing.Point(105, -2);
-      this.cboxSummaryFor.Name = "cboxSummaryFor";
-      this.cboxSummaryFor.Size = new System.Drawing.Size(135, 21);
-      this.cboxSummaryFor.TabIndex = 6;
-      this.cboxSummaryFor.Text = "TVSeries";
-      this.cboxSummaryFor.SelectedIndexChanged += new System.EventHandler(this.cboxSummaryFor_SelectedIndexChanged);
-      // 
       // btFormatOptions
       // 
-      this.btFormatOptions.Location = new System.Drawing.Point(32, 153);
+      this.btFormatOptions.Location = new System.Drawing.Point(32, 151);
       this.btFormatOptions.Name = "btFormatOptions";
       this.btFormatOptions.Size = new System.Drawing.Size(199, 23);
       this.btFormatOptions.TabIndex = 5;
@@ -1614,7 +1608,7 @@
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
-      this.rbFanartStyle.Location = new System.Drawing.Point(274, 123);
+      this.rbFanartStyle.Location = new System.Drawing.Point(274, 121);
       this.rbFanartStyle.Name = "rbFanartStyle";
       this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
       this.rbFanartStyle.TabIndex = 3;
@@ -1626,7 +1620,7 @@
       // cbCycleFanart
       // 
       this.cbCycleFanart.AutoSize = true;
-      this.cbCycleFanart.Location = new System.Drawing.Point(274, 158);
+      this.cbCycleFanart.Location = new System.Drawing.Point(274, 156);
       this.cbCycleFanart.Name = "cbCycleFanart";
       this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
       this.cbCycleFanart.TabIndex = 4;
@@ -1637,7 +1631,7 @@
       // rbPosterStyle
       // 
       this.rbPosterStyle.AutoSize = true;
-      this.rbPosterStyle.Location = new System.Drawing.Point(32, 123);
+      this.rbPosterStyle.Location = new System.Drawing.Point(32, 121);
       this.rbPosterStyle.Name = "rbPosterStyle";
       this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
       this.rbPosterStyle.TabIndex = 2;
@@ -1648,7 +1642,7 @@
       // pbPosterPicTVSeries
       // 
       this.pbPosterPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicTVSeries.Image")));
-      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(32, 31);
+      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(32, 29);
       this.pbPosterPicTVSeries.Name = "pbPosterPicTVSeries";
       this.pbPosterPicTVSeries.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicTVSeries.TabIndex = 0;
@@ -1657,7 +1651,7 @@
       // pbFanartPicTVSeries
       // 
       this.pbFanartPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicTVSeries.Image")));
-      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(274, 16);
+      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(274, 14);
       this.pbFanartPicTVSeries.Name = "pbFanartPicTVSeries";
       this.pbFanartPicTVSeries.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicTVSeries.TabIndex = 1;
@@ -1720,6 +1714,19 @@
       this.cbMostRecentMovPics.UseVisualStyleBackColor = true;
       this.cbMostRecentMovPics.CheckedChanged += new System.EventHandler(this.cbMostRecentMovPics_CheckedChanged);
       // 
+      // cboxSummaryFor
+      // 
+      this.cboxSummaryFor.FormattingEnabled = true;
+      this.cboxSummaryFor.Items.AddRange(new object[] {
+            "TVSeries",
+            "MovingPictures"});
+      this.cboxSummaryFor.Location = new System.Drawing.Point(152, 0);
+      this.cboxSummaryFor.Name = "cboxSummaryFor";
+      this.cboxSummaryFor.Size = new System.Drawing.Size(109, 21);
+      this.cboxSummaryFor.TabIndex = 6;
+      this.cboxSummaryFor.Text = "TVSeries";
+      this.cboxSummaryFor.SelectedIndexChanged += new System.EventHandler(this.cboxSummaryFor_SelectedIndexChanged);
+      // 
       // pTVSeriesRecent
       // 
       this.pTVSeriesRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1777,6 +1784,25 @@
       this.cbMostRecentTvSeries.Text = "Enable TVSeries Last 3 Added";
       this.cbMostRecentTvSeries.UseVisualStyleBackColor = true;
       this.cbMostRecentTvSeries.CheckedChanged += new System.EventHandler(this.cbMostRecentTvSeries_CheckedChanged);
+      // 
+      // pSumHeader
+      // 
+      this.pSumHeader.BackColor = System.Drawing.Color.LightGray;
+      this.pSumHeader.Controls.Add(this.label12);
+      this.pSumHeader.Controls.Add(this.cboxSummaryFor);
+      this.pSumHeader.Location = new System.Drawing.Point(296, 9);
+      this.pSumHeader.Name = "pSumHeader";
+      this.pSumHeader.Size = new System.Drawing.Size(413, 24);
+      this.pSumHeader.TabIndex = 8;
+      // 
+      // label12
+      // 
+      this.label12.AutoSize = true;
+      this.label12.Location = new System.Drawing.Point(3, 3);
+      this.label12.Name = "label12";
+      this.label12.Size = new System.Drawing.Size(145, 13);
+      this.label12.TabIndex = 7;
+      this.label12.Text = "Editing Summary Options for :";
       // 
       // weatherOptions
       // 
@@ -2536,6 +2562,35 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.label23);
+      this.panel2.Controls.Add(this.label22);
+      this.panel2.Location = new System.Drawing.Point(329, 71);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(345, 85);
+      this.panel2.TabIndex = 9;
+      // 
+      // label22
+      // 
+      this.label22.AutoSize = true;
+      this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label22.Location = new System.Drawing.Point(50, 10);
+      this.label22.Name = "label22";
+      this.label22.Size = new System.Drawing.Size(225, 20);
+      this.label22.TabIndex = 0;
+      this.label22.Text = "Summary Options Disabled";
+      // 
+      // label23
+      // 
+      this.label23.AutoSize = true;
+      this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label23.Location = new System.Drawing.Point(3, 43);
+      this.label23.Name = "label23";
+      this.label23.Size = new System.Drawing.Size(328, 20);
+      this.label23.TabIndex = 1;
+      this.label23.Text = "Select Overlay Type Summary to Enable";
+      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2606,6 +2661,8 @@
       this.pTVSeriesRecent.PerformLayout();
       this.gbTvSeriesOptions.ResumeLayout(false);
       this.gbTvSeriesOptions.PerformLayout();
+      this.pSumHeader.ResumeLayout(false);
+      this.pSumHeader.PerformLayout();
       this.weatherOptions.ResumeLayout(false);
       this.weatherOptions.PerformLayout();
       this.gbRssImageType.ResumeLayout(false);
@@ -2637,6 +2694,8 @@
       this.groupBox5.ResumeLayout(false);
       this.groupBox5.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
+      this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -2849,6 +2908,11 @@
     private System.Windows.Forms.ComboBox cboxSummaryFor;
     private System.Windows.Forms.PictureBox pbPosterPicMovPics;
     private System.Windows.Forms.PictureBox pbFanartPicMovPics;
+    private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.Panel pSumHeader;
+    private System.Windows.Forms.Panel panel2;
+    private System.Windows.Forms.Label label23;
+    private System.Windows.Forms.Label label22;
   }
 }
 

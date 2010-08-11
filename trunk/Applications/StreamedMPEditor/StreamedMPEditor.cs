@@ -1076,8 +1076,6 @@ namespace StreamedMPEditor
 
     #endregion
 
-
-
   }
 }
 

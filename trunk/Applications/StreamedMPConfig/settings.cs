@@ -82,7 +82,7 @@ namespace StreamedMPConfig
 
     public static void Load()
     {
-      smcLog.WriteLog("StreamedMPConfig: Settings.Load()",LogLevel.Info);
+      smcLog.WriteLog("StreamedMPConfig: Settings.Load()", LogLevel.Info);
       using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
       {
         // Read user settings from configuration file
@@ -101,6 +101,7 @@ namespace StreamedMPConfig
           StreamedMPConfig.patchUtilityRunUnattended = true;
         if (xmlreader.GetValueAsInt("StreamedMPConfig", "patchUtilityRestartMP", 1) != 0)
           StreamedMPConfig.patchUtilityRestartMP = true;
+        StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt("StreamedMPConfig", "mostRecentTimer", 7);
 
         if (StreamedMPConfig.checkForUpdateAt)
         {
@@ -117,7 +118,7 @@ namespace StreamedMPConfig
             if (!DateTime.TryParse(checkTime, CultureInfo.CurrentCulture, DateTimeStyles.None, out dtCheckTime))
               dtCheckTime = DateTime.Now;
             StreamedMPConfig.checkTime = dtCheckTime;
-            
+
             StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString("StreamedMPConfig", "nextUpdateCheck", "");
             StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt("StreamedMPConfig", "checkInterval", 1);
           }
@@ -140,6 +141,7 @@ namespace StreamedMPConfig
         xmlwriter.SetValue("StreamedMPConfig", "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
         xmlwriter.SetValue("StreamedMPConfig", "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
         xmlwriter.SetValue("StreamedMPConfig", "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
+        xmlwriter.SetValue("StreamedMPConfig", "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
 
         MediaPortal.Profile.Settings.SaveCache();
       }
