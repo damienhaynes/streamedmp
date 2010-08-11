@@ -1409,6 +1409,20 @@ namespace StreamedMPEditor
       detectedHD.Visible = false;
     }
 
+    private void pTVSeriesRecent_Click(object sender, EventArgs e)
+    {
+      cboxSummaryFor.Text = "TVSeries";
+      cboxSummaryFor.Refresh();
+      doSummaryFor();
+    }
+
+    private void pMovPicsRecent_Click(object sender, EventArgs e)
+    {
+      cboxSummaryFor.Text = "MovingPictures";
+      cboxSummaryFor.Refresh();
+      doSummaryFor();
+    }
+
     private void StreamedMPMenu_Click(object sender, EventArgs e)
     {
       // Index 5 is the SplashScreen Tab

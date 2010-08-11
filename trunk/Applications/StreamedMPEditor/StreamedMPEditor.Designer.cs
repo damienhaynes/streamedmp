@@ -1672,7 +1672,7 @@
       this.pMovPicsRecent.Name = "pMovPicsRecent";
       this.pMovPicsRecent.Size = new System.Drawing.Size(283, 89);
       this.pMovPicsRecent.TabIndex = 5;
-      this.toolTip1.SetToolTip(this.pMovPicsRecent, "This Option Not Currently Supported by Moving Pictures");
+      this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
       // gbMovPicsOptions
       // 
@@ -1729,6 +1729,7 @@
       this.pTVSeriesRecent.Name = "pTVSeriesRecent";
       this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 91);
       this.pTVSeriesRecent.TabIndex = 4;
+      this.pTVSeriesRecent.Click += new System.EventHandler(this.pTVSeriesRecent_Click);
       // 
       // gbTvSeriesOptions
       // 
