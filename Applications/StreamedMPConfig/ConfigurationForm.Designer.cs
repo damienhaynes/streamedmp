@@ -50,6 +50,12 @@ namespace StreamedMPConfig
           this.cbCheckOnStart = new System.Windows.Forms.CheckBox();
           this.btCheckForUpdate = new System.Windows.Forms.Button();
           this.textBox1 = new System.Windows.Forms.TextBox();
+          this.Advanced = new System.Windows.Forms.TabPage();
+          this.numFanartTimer = new System.Windows.Forms.NumericUpDown();
+          this.label5 = new System.Windows.Forms.Label();
+          this.label4 = new System.Windows.Forms.Label();
+          this.label3 = new System.Windows.Forms.Label();
+          this.label1 = new System.Windows.Forms.Label();
           this.aboutTab = new System.Windows.Forms.TabPage();
           this.groupBox1 = new System.Windows.Forms.GroupBox();
           this.compileTime = new System.Windows.Forms.Label();
@@ -62,6 +68,8 @@ namespace StreamedMPConfig
           this.groupBox2.SuspendLayout();
           this.CheckUpdate.SuspendLayout();
           this.patchUtilityOtions.SuspendLayout();
+          this.Advanced.SuspendLayout();
+          ((System.ComponentModel.ISupportInitialize)(this.numFanartTimer)).BeginInit();
           this.aboutTab.SuspendLayout();
           this.groupBox1.SuspendLayout();
           ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,12 +102,13 @@ namespace StreamedMPConfig
           this.tabControl1.Controls.Add(this.MusicScreens);
           this.tabControl1.Controls.Add(this.VideoScreens);
           this.tabControl1.Controls.Add(this.CheckUpdate);
+          this.tabControl1.Controls.Add(this.Advanced);
           this.tabControl1.Controls.Add(this.aboutTab);
           this.tabControl1.Location = new System.Drawing.Point(12, 52);
           this.tabControl1.Name = "tabControl1";
           this.tabControl1.SelectedIndex = 0;
           this.tabControl1.Size = new System.Drawing.Size(556, 260);
-          this.tabControl1.TabIndex = 9;
+          this.tabControl1.TabIndex = 0;
           // 
           // MusicScreens
           // 
@@ -300,6 +309,79 @@ namespace StreamedMPConfig
           this.textBox1.Text = "This screen will allow you to check if a skin update is available, download and i" +
               "nstall. You can also configue this to be an automatic process if required.";
           // 
+          // Advanced
+          // 
+          this.Advanced.Controls.Add(this.numFanartTimer);
+          this.Advanced.Controls.Add(this.label5);
+          this.Advanced.Controls.Add(this.label4);
+          this.Advanced.Controls.Add(this.label3);
+          this.Advanced.Controls.Add(this.label1);
+          this.Advanced.Location = new System.Drawing.Point(4, 22);
+          this.Advanced.Name = "Advanced";
+          this.Advanced.Padding = new System.Windows.Forms.Padding(3);
+          this.Advanced.Size = new System.Drawing.Size(548, 234);
+          this.Advanced.TabIndex = 5;
+          this.Advanced.Text = "Advanced";
+          this.Advanced.UseVisualStyleBackColor = true;
+          // 
+          // numFanartTimer
+          // 
+          this.numFanartTimer.Location = new System.Drawing.Point(148, 39);
+          this.numFanartTimer.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+          this.numFanartTimer.Minimum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+          this.numFanartTimer.Name = "numFanartTimer";
+          this.numFanartTimer.Size = new System.Drawing.Size(37, 20);
+          this.numFanartTimer.TabIndex = 5;
+          this.numFanartTimer.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+          // 
+          // label5
+          // 
+          this.label5.AutoSize = true;
+          this.label5.Location = new System.Drawing.Point(186, 42);
+          this.label5.Name = "label5";
+          this.label5.Size = new System.Drawing.Size(49, 13);
+          this.label5.TabIndex = 4;
+          this.label5.Text = "Seconds";
+          // 
+          // label4
+          // 
+          this.label4.AutoSize = true;
+          this.label4.Location = new System.Drawing.Point(279, 53);
+          this.label4.Name = "label4";
+          this.label4.Size = new System.Drawing.Size(237, 13);
+          this.label4.TabIndex = 3;
+          this.label4.Text = "on Most Recent Fanart overlay. (5 - 60 Seconds)";
+          // 
+          // label3
+          // 
+          this.label3.AutoSize = true;
+          this.label3.Location = new System.Drawing.Point(278, 39);
+          this.label3.Name = "label3";
+          this.label3.Size = new System.Drawing.Size(252, 13);
+          this.label3.TabIndex = 2;
+          this.label3.Text = "Enter number of seconds between switching images";
+          // 
+          // label1
+          // 
+          this.label1.AutoSize = true;
+          this.label1.Location = new System.Drawing.Point(15, 42);
+          this.label1.Name = "label1";
+          this.label1.Size = new System.Drawing.Size(130, 13);
+          this.label1.TabIndex = 0;
+          this.label1.Text = "Most Recent Fanart Timer";
+          // 
           // aboutTab
           // 
           this.aboutTab.Controls.Add(this.groupBox1);
@@ -387,6 +469,9 @@ namespace StreamedMPConfig
           this.CheckUpdate.PerformLayout();
           this.patchUtilityOtions.ResumeLayout(false);
           this.patchUtilityOtions.PerformLayout();
+          this.Advanced.ResumeLayout(false);
+          this.Advanced.PerformLayout();
+          ((System.ComponentModel.ISupportInitialize)(this.numFanartTimer)).EndInit();
           this.aboutTab.ResumeLayout(false);
           this.groupBox1.ResumeLayout(false);
           this.groupBox1.PerformLayout();
@@ -424,6 +509,12 @@ namespace StreamedMPConfig
         private System.Windows.Forms.CheckBox cbRestartMP;
         private System.Windows.Forms.CheckBox cbRunUnattended;
         private System.Windows.Forms.TextBox tbPatchUtilityInfo;
+        private System.Windows.Forms.TabPage Advanced;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numFanartTimer;
 
     }
 }

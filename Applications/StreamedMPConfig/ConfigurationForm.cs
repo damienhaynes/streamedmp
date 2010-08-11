@@ -35,6 +35,11 @@ namespace StreamedMPConfig
       timePicker.Location = new Point(309, 85);
       timePicker.Width = 100;
       CheckUpdate.Controls.Add(timePicker);
+
+      if (StreamedMPConfig.mrFanartTimer != 0)
+        numFanartTimer.Value = (decimal)StreamedMPConfig.mrFanartTimer;
+      else
+        numFanartTimer.Value = (decimal)StreamedMPConfig.mrFanartTimer;
     }
 
     #endregion
@@ -54,6 +59,7 @@ namespace StreamedMPConfig
       StreamedMPConfig.nextUpdateCheck = StreamedMPConfig.nextCheckAt.ToString();
       StreamedMPConfig.patchUtilityRunUnattended = cbRunUnattended.Checked;
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
+      StreamedMPConfig.mrFanartTimer = (int)numFanartTimer.Value;
       settings.Save();
       this.Close();
     }

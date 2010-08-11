@@ -1538,7 +1538,11 @@ namespace StreamedMPEditor
       {
         tvSeriesRecentStyle = tvSeriesRecentType.full;
         if (rbMovPicsFull.Checked)
+        {
           gbSummaryStyle.Enabled = false;
+          gbSummaryStyle.Visible = false;
+          pSumHeader.Visible = false;
+        }
         else
         {
           cboxSummaryFor.Text = "MovingPictures";
@@ -1551,8 +1555,15 @@ namespace StreamedMPEditor
       {
         tvSeriesRecentStyle = tvSeriesRecentType.summary;
         gbSummaryStyle.Enabled = true;
+        gbSummaryStyle.Visible = true;
+        pSumHeader.Visible = true;
         if (rbMovPicsSummary.Checked)
+        {
           cboxSummaryFor.Enabled = true;
+          cboxSummaryFor.Text = "TVSeries";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+        }
         else
         {
           cboxSummaryFor.Text = "TVSeries";
@@ -1571,7 +1582,11 @@ namespace StreamedMPEditor
       {
         movPicsRecentStyle = movPicsRecentType.full;
         if (rbTBSeriesFull.Checked)
+        {
           gbSummaryStyle.Enabled = false;
+          gbSummaryStyle.Visible = false;
+          pSumHeader.Visible = false;
+        }
         else
         {
           cboxSummaryFor.Text = "TVSeries";
@@ -1584,8 +1599,16 @@ namespace StreamedMPEditor
       {
         movPicsRecentStyle = movPicsRecentType.summary;
         gbSummaryStyle.Enabled = true;
+        gbSummaryStyle.Visible = true;
+        pSumHeader.Visible = true;
         if (rbTVSeriesSummary.Checked)
+        {
           cboxSummaryFor.Enabled = true;
+          cboxSummaryFor.Text = "MovingPictures";
+          cboxSummaryFor.Refresh();
+          doSummaryFor();
+
+        }
         else
         {
           cboxSummaryFor.Text = "MovingPictures";
@@ -1604,6 +1627,7 @@ namespace StreamedMPEditor
           mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         else
           mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
+        
         btFormatOptions.Enabled = true;
       }
       else
@@ -1612,6 +1636,7 @@ namespace StreamedMPEditor
           mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         else
           mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
+
         btFormatOptions.Enabled = false;
       }
     }
