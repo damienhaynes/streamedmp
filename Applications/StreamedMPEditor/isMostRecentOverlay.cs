@@ -1793,6 +1793,16 @@
                     "<font>mediastream9</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>" +
+                  "<control>" +
+                    "<description>Movie 1 Star Rating</description>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<posX>1175</posX>" +
+                    "<posY>262</posY>" +
+                    "<width>84</width>" +
+                    "<height>16</height>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
+                  "</control>" +
                   "<control>\n" +
                     "<description>Series 1 thumb/fanart</description>\n" +
                     "<type>image</type>\n" +
@@ -1838,6 +1848,16 @@
                     "<font>mediastream9</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
+                  "<control>" +
+                    "<description>Movie 1 Star Rating</description>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<posX>1175</posX>" +
+                    "<posY>297</posY>" +
+                    "<width>84</width>" +
+                    "<height>16</height>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
+                  "</control>" +
                 "</control>\n" +
                 "<control>\n" +
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
@@ -1861,7 +1881,7 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 title</description>\n" +
+                    "<description>Movie 3 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
@@ -1871,6 +1891,16 @@
                     "<font>mediastream9</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
+                  "<control>" +
+                    "<description>Movie 3 Star Rating</description>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<posX>1175</posX>" +
+                    "<posY>332</posY>" +
+                    "<width>84</width>" +
+                    "<height>16</height>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
+                  "</control>" +
                 "</control>\n" +
               "</controls>\n" +
             "</window>";
