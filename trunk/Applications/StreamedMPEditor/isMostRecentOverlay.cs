@@ -1730,7 +1730,7 @@
 
 
 
-        string fanartProperty = "##StreamedMP.recentlyAdded.movie1.fanart";
+        string fanartProperty = "#StreamedMP.recentlyAdded.movie1.fanart";
 
         if (cbCycleFanart.Checked)
           fanartProperty = "#StreamedMP.MostRecentMovPicsImageFanart";
@@ -1742,7 +1742,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)]</visible>" +
+                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1751,7 +1751,7 @@
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
-                    "<description>Series 1 BG</description>\n" +
+                    "<description>Series 3 BG</description>\n" +
                     "<posX>976</posX>\n" +
                     "<posY>50</posY>\n" +
                     "<type>image</type>\n" +
@@ -1773,38 +1773,38 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>      " +
                   "<control>\n" +
-                    "<description>Series 1 name</description>\n" +
+                    "<description>Series 3 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>245</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 title</description>\n" +
+                    "<description>Series 3 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>262</posY>\n" +
                     "<width>257</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>\n" +
                     "<font>mediastream9</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>" +
                   "<control>" +
-                    "<description>Movie 1 Star Rating</description>" +
+                    "<description>Movie 3 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1175</posX>" +
                     "<posY>262</posY>" +
                     "<width>84</width>" +
                     "<height>16</height>" +
-                    "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
                   "</control>" +
                   "<control>\n" +
-                    "<description>Series 1 thumb/fanart</description>\n" +
+                    "<description>Series 3 thumb/fanart</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
@@ -1816,7 +1816,7 @@
                   "</control>\n" +
                 "</control>\n" +
                 "<control>\n" +
-                  "<description>GROUP: RecentlyAdded Series</description>\n" +
+                  "<description>GROUP: RecentlyAdded Movie 2</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)]</visible>" +
@@ -1860,10 +1860,10 @@
                   "</control>" +
                 "</control>\n" +
                 "<control>\n" +
-                  "<description>GROUP: RecentlyAdded Series</description>\n" +
+                  "<description>GROUP: RecentlyAdded Movie 1</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)]</visible>" +
+                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1877,29 +1877,29 @@
                     "<posX>995</posX>\n" +
                     "<posY>315</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Movie 3 title</description>\n" +
+                    "<description>Movie 1 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>332</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>\n" +
                     "<font>mediastream9</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>" +
-                    "<description>Movie 3 Star Rating</description>" +
+                    "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1175</posX>" +
                     "<posY>332</posY>" +
                     "<width>84</width>" +
                     "<height>16</height>" +
-                    "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
+                    "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
                   "</control>" +
                 "</control>\n" +
               "</controls>\n" +
