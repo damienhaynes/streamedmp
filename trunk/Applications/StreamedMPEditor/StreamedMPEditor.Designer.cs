@@ -156,7 +156,7 @@
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
       this.rbMovPicsSummary = new System.Windows.Forms.RadioButton();
       this.cbMostRecentMovPics = new System.Windows.Forms.CheckBox();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.pTVSeriesRecent = new System.Windows.Forms.Panel();
       this.gbTvSeriesOptions = new System.Windows.Forms.GroupBox();
       this.rbTBSeriesFull = new System.Windows.Forms.RadioButton();
       this.rbTVSeriesSummary = new System.Windows.Forms.RadioButton();
@@ -272,7 +272,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicTVSeries)).BeginInit();
       this.pMovPicsRecent.SuspendLayout();
       this.gbMovPicsOptions.SuspendLayout();
-      this.panel1.SuspendLayout();
+      this.pTVSeriesRecent.SuspendLayout();
       this.gbTvSeriesOptions.SuspendLayout();
       this.weatherOptions.SuspendLayout();
       this.gbRssImageType.SuspendLayout();
@@ -1542,7 +1542,7 @@
       // 
       this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
       this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
-      this.infoServiceRecentOptions.Controls.Add(this.panel1);
+      this.infoServiceRecentOptions.Controls.Add(this.pTVSeriesRecent);
       this.infoServiceRecentOptions.Location = new System.Drawing.Point(3, 150);
       this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
       this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 223);
@@ -1632,6 +1632,7 @@
       this.cbCycleFanart.TabIndex = 4;
       this.cbCycleFanart.Text = "Cycle Fanart";
       this.cbCycleFanart.UseVisualStyleBackColor = true;
+      this.cbCycleFanart.CheckStateChanged += new System.EventHandler(this.cbCycleFanart_CheckStateChanged);
       // 
       // rbPosterStyle
       // 
@@ -1719,15 +1720,15 @@
       this.cbMostRecentMovPics.UseVisualStyleBackColor = true;
       this.cbMostRecentMovPics.CheckedChanged += new System.EventHandler(this.cbMostRecentMovPics_CheckedChanged);
       // 
-      // panel1
+      // pTVSeriesRecent
       // 
-      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.panel1.Controls.Add(this.gbTvSeriesOptions);
-      this.panel1.Controls.Add(this.cbMostRecentTvSeries);
-      this.panel1.Location = new System.Drawing.Point(0, 31);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(283, 91);
-      this.panel1.TabIndex = 4;
+      this.pTVSeriesRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pTVSeriesRecent.Controls.Add(this.gbTvSeriesOptions);
+      this.pTVSeriesRecent.Controls.Add(this.cbMostRecentTvSeries);
+      this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 31);
+      this.pTVSeriesRecent.Name = "pTVSeriesRecent";
+      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 91);
+      this.pTVSeriesRecent.TabIndex = 4;
       // 
       // gbTvSeriesOptions
       // 
@@ -2600,8 +2601,8 @@
       this.pMovPicsRecent.PerformLayout();
       this.gbMovPicsOptions.ResumeLayout(false);
       this.gbMovPicsOptions.PerformLayout();
-      this.panel1.ResumeLayout(false);
-      this.panel1.PerformLayout();
+      this.pTVSeriesRecent.ResumeLayout(false);
+      this.pTVSeriesRecent.PerformLayout();
       this.gbTvSeriesOptions.ResumeLayout(false);
       this.gbTvSeriesOptions.PerformLayout();
       this.weatherOptions.ResumeLayout(false);
@@ -2835,7 +2836,7 @@
     private System.Windows.Forms.Panel pMovPicsRecent;
     private System.Windows.Forms.RadioButton rbMovPicsFull;
     private System.Windows.Forms.RadioButton rbMovPicsSummary;
-    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel pTVSeriesRecent;
     private System.Windows.Forms.GroupBox gbSummaryStyle;
     private System.Windows.Forms.PictureBox pbPosterPicTVSeries;
     private System.Windows.Forms.PictureBox pbFanartPicTVSeries;

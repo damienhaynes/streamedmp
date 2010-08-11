@@ -143,6 +143,9 @@ namespace StreamedMPEditor
     bool fanartHandlerUsed = false;
     bool exitCondition = false;
 
+    bool mostRecentTVSeriesCycleFanart = true;
+    bool mostRecentMovPicsCycleFanart = true;
+
     string xml;
     string xmlTemplate;
 
