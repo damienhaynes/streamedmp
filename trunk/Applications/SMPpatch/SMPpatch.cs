@@ -24,7 +24,7 @@ namespace SMPpatch
     List<patchFile> patchFiles = new List<patchFile>();
     public string tempExtractPath = Path.Combine(Path.GetTempPath(), "StreamedMPPatch" + DateTime.Now.Ticks.ToString());
     public XmlTextReader reader;
-    bool unattendedInatall = true;
+    bool unattendedInatall = false;
     bool restartMediaPortal = false;
     bool restartConfiguration = false;
     Version minSMPVersion = new Version();
