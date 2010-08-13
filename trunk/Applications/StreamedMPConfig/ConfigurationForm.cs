@@ -12,6 +12,7 @@ namespace StreamedMPConfig
     #region Variables
     // Private Variables
     private DateTimePicker timePicker;
+    SkinInfo skInfo = new SkinInfo();
 
     // Protected Variables
     // Public Variables
@@ -23,7 +24,6 @@ namespace StreamedMPConfig
     {
       InitializeComponent();
       settings.Load();
-      SkinInfo.GetMediaPortalSkinPath();
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);

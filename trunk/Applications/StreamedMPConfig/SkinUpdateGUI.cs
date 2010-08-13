@@ -33,6 +33,7 @@ namespace StreamedMPConfig
     private static string destinationPath = null;
 
     private static readonly logger smcLog = logger.GetInstance();
+    SkinInfo skInfo = new SkinInfo();
 
 
     #endregion
@@ -103,7 +104,6 @@ namespace StreamedMPConfig
           }
           finally
           {
-            SkinInfo skInfo = new SkinInfo();
             smcLog.WriteLog("Patch Download Complete", LogLevel.Error);
             webResponse.Close();
             strResponse.Close();

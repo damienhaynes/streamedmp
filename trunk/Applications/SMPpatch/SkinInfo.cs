@@ -52,6 +52,16 @@ namespace SMPpatch
 
     #endregion
 
+    #region Constructor
+
+    public SkinInfo()
+    {
+      GetMediaPortalPath(ref mpPaths);
+      readMediaPortalDirs();
+    }
+
+    #endregion
+
     #region Public methods
 
     public Version skinVersion
@@ -78,14 +88,18 @@ namespace SMPpatch
       }
     }
 
-    public static void GetMediaPortalSkinPath()
+    public bool startFullScreen
     {
-      SkinInfo si = new SkinInfo();
-      si.GetMediaPortalPath(ref mpPaths);
-      if (mpPaths.sMPbaseDir == null)
-        return;
-      si.readMediaPortalDirs();
+      get
+      {
+        if (readMPConfiguration("general", "startfullscreen").ToLower() == "yes")
+          return true;
+        else
+          return false;
+      }
     }
+
+
 
     #endregion
 
