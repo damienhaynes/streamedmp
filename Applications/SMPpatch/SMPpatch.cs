@@ -22,14 +22,20 @@ namespace SMPpatch
     #region Varibles
 
     List<patchFile> patchFiles = new List<patchFile>();
+
     public string tempExtractPath = Path.Combine(Path.GetTempPath(), "StreamedMPPatch" + DateTime.Now.Ticks.ToString());
     public XmlTextReader reader;
+
     bool unattendedInatall = false;
     bool restartMediaPortal = false;
     bool restartConfiguration = false;
-    Version minSMPVersion = new Version();
-    int i = 0;
     bool patchesToInstall = false;
+
+    int i = 0;
+
+    Version minSMPVersion = new Version(); 
+    SplashScreen splash = new SplashScreen();
+    SkinInfo skInfo = new SkinInfo();
 
     #endregion
 
@@ -70,13 +76,22 @@ namespace SMPpatch
 
     private void SMPpatch_Load(object sender, EventArgs e)
     {
-      SkinInfo.GetMediaPortalSkinPath();
-      SkinInfo skInfo = new SkinInfo();
+      //Display full screen Splash if in unattended mode.
+      if (unattendedInatall)
+      {
+        Version patchVersion = new Version(Application.ProductVersion);
+        splash.statusTextLine1 = "Applying StreamedMP Patch Revision (" + patchVersion.ToString() + ")";
+        splash.statusTextLine2 = " ";
+        splash.Show();
+        splash.Refresh();
+
+      }
       if (skInfo.configuredSkin != "StreamedMP")
       {
         MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.", "Patch Installation Error");
         Application.Exit();
       }
+
 
       string processess = null;
 
@@ -92,12 +107,10 @@ namespace SMPpatch
 
       introBox.SelectionStart = 0;
 
-      // Sleep for 4 secs to enable MediaPortal to shutdown before doing checks for running processess
-      Thread.Sleep(4000);
       int waitCount = 0;
       while (!checkRunningProcess())
       {
-        // Check running process and wait 5sec for processes to exit
+        // Check running process and wait 10sec for processes to exit
         if (!checkRunningProcess())
           if (mediaportal.running)
             processess = "MediaPortal\n";
@@ -105,7 +118,7 @@ namespace SMPpatch
           processess += "Configuration.exe\n";
         if (smpeditor.running)
           processess += "StreamedMP basicHome Editor\n";
-        if (waitCount > 5)
+        if (waitCount > 10)
         {
           DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
                 "Retry",
@@ -142,37 +155,32 @@ namespace SMPpatch
       if (!patchesToInstall)
         btInstallPatch.Enabled = false;
 
-
-
       if (unattendedInatall)
       {
-        UpdateMessage updateDone = new UpdateMessage();
-
         if (patchesToInstall)
         {
           installThePatches();
-          updateDone.statusMessage = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
-          updateDone.Show();
+          splash.statusTextLine1 = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
+          splash.Refresh();
         }
         else
         {
-          updateDone.statusMessage = "StreamedMP is fully patched - no updates are required.";
-          updateDone.Show();
+          splash.statusTextLine1 = "StreamedMP is fully patched - no updates are required.";
+          splash.Refresh();
         }
-        for (int i = 0; i < 5; i++)
+        for (int i = 5; i > 0; i--)
         {
           if (restartMediaPortal)
-            updateDone.countDown = "Restarting MediaPortal : " + (5 - i).ToString();
+            splash.statusTextLine2 = String.Format("Restarting MediaPortal ({0})",i);
           else if (restartConfiguration)
-            updateDone.countDown = "Restarting Configuration : " + (5 - i).ToString();
+            splash.statusTextLine2 = String.Format("Restarting Configuration ({0})",i);
           else
           {
-            updateDone.countDown = "";
-            updateDone.Refresh();
+            splash.Refresh();
             Thread.Sleep(2000);
             break;
           }
-          updateDone.Refresh();
+          splash.Refresh();
           Thread.Sleep(1000);
         }
         exitAndCleanup();
@@ -289,7 +297,6 @@ namespace SMPpatch
 
     void fillInfo(string fileName, patchFile pf)
     {
-      SkinInfo skInfo = new SkinInfo();
       if (pf.patchAction != "unzip")
         pf.patchVersion = fileVersion(Path.Combine(tempExtractPath, fileName));
 
@@ -355,7 +362,7 @@ namespace SMPpatch
         process.WorkingDirectory = SkinInfo.mpPaths.sMPbaseDir;
         process.UseShellExecute = true;
         Process.Start(process);
-      }
+        }
       // Check and start Mediaportal if required
       if (restartConfiguration)
       {
@@ -364,6 +371,8 @@ namespace SMPpatch
         process.UseShellExecute = true;
         Process.Start(process);
       }
+      if (skInfo.startFullScreen)
+        Thread.Sleep(2000);
       Application.Exit();
     }
 

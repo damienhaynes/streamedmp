@@ -49,16 +49,17 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region Public methods
+    #region Constructor
 
-    public static void GetMediaPortalSkinPath()
+    public SkinInfo()
     {
-      SkinInfo si = new SkinInfo();
-      si.GetMediaPortalPath(ref mpPaths);
-      if (mpPaths.sMPbaseDir == null)
-        return;
-      si.readMediaPortalDirs();
+      GetMediaPortalPath(ref mpPaths);
+      readMediaPortalDirs();
     }
+
+    #endregion
+
+    #region Public methods
 
     public string configuredSkin
     {

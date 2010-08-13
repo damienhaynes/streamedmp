@@ -986,7 +986,6 @@
     }
     #endregion
 
-
     #region MovingPictures Vertical Full
 
     void verticalMovingPicturesFull()
