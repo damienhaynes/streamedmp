@@ -489,7 +489,7 @@
                       "<height>163</height>" +
                       "<width>111</width>" +
                       "<keepaspectratio>true</keepaspectratio>" +
-                      "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
+                      "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Series 2 Rounded Cover</description>" +

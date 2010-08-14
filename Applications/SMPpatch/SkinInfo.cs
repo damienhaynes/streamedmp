@@ -47,7 +47,6 @@ namespace SMPpatch
     // Public Variables
     public static editorPaths mpPaths = new editorPaths();
     XmlTextReader reader;
-    Version newVersion = null;
     Version curVersion = null;
 
     #endregion
