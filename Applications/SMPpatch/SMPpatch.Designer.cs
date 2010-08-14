@@ -231,6 +231,8 @@
       this.Controls.Add(this.processCheckGroup);
       this.Controls.Add(this.pictureBox2);
       this.Controls.Add(this.pictureBox1);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+      this.MaximizeBox = false;
       this.Name = "SMPpatch";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "StreamedMP Patch Utility";

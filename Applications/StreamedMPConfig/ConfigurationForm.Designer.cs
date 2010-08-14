@@ -455,6 +455,8 @@ namespace StreamedMPConfig
           this.Controls.Add(this.tabControl1);
           this.Controls.Add(this.btSave);
           this.Controls.Add(this.btCancel);
+          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+          this.MaximizeBox = false;
           this.Name = "ConfigurationForm";
           this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
           this.Text = "StreamedMP Skin Configuration";
