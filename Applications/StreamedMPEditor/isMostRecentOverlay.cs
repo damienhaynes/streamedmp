@@ -1789,7 +1789,7 @@
                     "<posY>262</posY>\n" +
                     "<width>257</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>\n" +
-                    "<font>mediastream9</font>\n" +
+                    "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>" +
                   "<control>" +
@@ -1844,7 +1844,7 @@
                     "<posY>297</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.runtime #StreamedMP.recentlyAdded.movie2.certification</label>\n" +
-                    "<font>mediastream9</font>\n" +
+                    "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>" +
@@ -1887,7 +1887,7 @@
                     "<posY>332</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>\n" +
-                    "<font>mediastream9</font>\n" +
+                    "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>" +
