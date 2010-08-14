@@ -1294,7 +1294,7 @@
             "<window>" +
               "<controls>" +
                 "<control>" +
-                  "<description>GROUP: RecentlyAdded Series</description>" +
+                  "<description>GROUP: RecentlyAdded Movie 1</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
@@ -1305,7 +1305,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
-                    "<description>Series 1 BG</description>" +
+                    "<description>Mivie 1 BG</description>" +
                     "<posX>28</posX>" +
                     "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
                     "<type>image</type>" +
@@ -1316,7 +1316,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 1 thumb</description>" +
+                    "<description>Movie 1 Thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>36</posX>" +
@@ -1327,7 +1327,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 1 Rounded Cover</description>" +
+                    "<description>Movie 1 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>26</posX>" +
@@ -1337,7 +1337,7 @@
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                 "<control>" +
-                    "<description>Series 1 name</description>" +
+                    "<description>Movie 2 Title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
                     "<posX>152</posX>" +
@@ -1348,7 +1348,7 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 1 title</description>" +
+                    "<description>Movie 1 Runtime</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>152</posX>" +
@@ -1359,7 +1359,7 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 1 episode</description>" +
+                    "<description>Movie 1 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>152</posX>" +
@@ -1371,7 +1371,7 @@
                   "</control>" +
                 "</control>" +
                 "<control>" +
-                  "<description>GROUP: RecentlyAdded Series</description>" +
+                  "<description>GROUP: RecentlyAdded Movie 2</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
@@ -1382,7 +1382,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
-                    "<description>Series 2 BG</description>" +
+                    "<description>Movie 2 BG</description>" +
                     "<posX>442</posX>" +
                     "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
                     "<type>image</type>" +
@@ -1393,7 +1393,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 2 thumb</description>" +
+                    "<description>Movie 2 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>452</posX>" +
@@ -1404,7 +1404,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 2 Rounded Cover</description>" +
+                    "<description>Movie Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>440</posX>" +
@@ -1414,7 +1414,7 @@
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
-                    "<description>Series 2 name</description>" +
+                    "<description>Movie 2 Title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
                     "<posX>568</posX>" +
@@ -1425,7 +1425,7 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 2 title</description>" +
+                    "<description>Movie 2 Runtime</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>565</posX>" +
@@ -1436,7 +1436,7 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 2 episode</description>" +
+                    "<description>Movie 2 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>565</posX>" +
@@ -1448,7 +1448,7 @@
                   "</control>" +
                 "</control>" +
                 "<control>" +
-                  "<description>GROUP: RecentlyAdded Series</description>" +
+                  "<description>GROUP: RecentlyAdded Movie 3</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
@@ -1459,7 +1459,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
-                    "<description>Series 3 BG</description>" +
+                    "<description>Movie 3 BG</description>" +
                     "<posX>855</posX>" +
                     "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
                     "<type>image</type>" +
@@ -1470,7 +1470,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 thumb</description>" +
+                    "<description>Movie 3 Thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>866</posX>" +
@@ -1481,7 +1481,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 Rounded Cover</description>" +
+                    "<description>Movie 3 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>858</posX>" +
@@ -1491,8 +1491,8 @@
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
-                    "<description>Series 3 name</description>" +
-                    "<type>label</type>" +
+                    "<description>Movie 3 Title</description>" +
+                    "<type>fadelabel</type>" +
                     "<id>0</id>" +
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
@@ -1502,8 +1502,8 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 title</description>" +
-                    "<type>fadelabel</type>" +
+                    "<description>Movie 3 Runtime</description>" +
+                    "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
@@ -1513,7 +1513,7 @@
                     "<textcolor>White</textcolor>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Series 3 episode</description>" +
+                    "<description>Movie 3 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
                     "<posX>981</posX>" +
