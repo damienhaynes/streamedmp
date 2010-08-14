@@ -11,8 +11,11 @@
       string overlayFanart = "No";
       string hideControls = "!control.isvisible(" + int.Parse(weatherId.ToString()) + ")";
 
-      if (cbMostRecentTvSeries.Checked)
+      if (cbMostRecentTvSeries.Checked && (rbTBSeriesFull.Checked || mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster))
         hideControls += "+!control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ")";
+
+      if (cbMostRecentMovPics.Checked && (rbMovPicsFull.Checked || mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster))
+        hideControls += "+!control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ")";
 
       if (horizontalContextLabels.Checked)
       {

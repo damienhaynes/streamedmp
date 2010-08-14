@@ -155,7 +155,6 @@
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
       this.rbMovPicsSummary = new System.Windows.Forms.RadioButton();
       this.cbMostRecentMovPics = new System.Windows.Forms.CheckBox();
-      this.cboxSummaryFor = new System.Windows.Forms.ComboBox();
       this.pTVSeriesRecent = new System.Windows.Forms.Panel();
       this.gbTvSeriesOptions = new System.Windows.Forms.GroupBox();
       this.rbTBSeriesFull = new System.Windows.Forms.RadioButton();
@@ -163,6 +162,10 @@
       this.cbMostRecentTvSeries = new System.Windows.Forms.CheckBox();
       this.pSumHeader = new System.Windows.Forms.Panel();
       this.label12 = new System.Windows.Forms.Label();
+      this.cboxSummaryFor = new System.Windows.Forms.ComboBox();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.label23 = new System.Windows.Forms.Label();
+      this.label22 = new System.Windows.Forms.Label();
       this.weatherOptions = new System.Windows.Forms.GroupBox();
       this.installWeatherBackgrounds = new System.Windows.Forms.LinkLabel();
       this.weatherBGlink = new System.Windows.Forms.CheckBox();
@@ -237,9 +240,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.panel2 = new System.Windows.Forms.Panel();
-      this.label22 = new System.Windows.Forms.Label();
-      this.label23 = new System.Windows.Forms.Label();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -280,6 +280,7 @@
       this.pTVSeriesRecent.SuspendLayout();
       this.gbTvSeriesOptions.SuspendLayout();
       this.pSumHeader.SuspendLayout();
+      this.panel2.SuspendLayout();
       this.weatherOptions.SuspendLayout();
       this.gbRssImageType.SuspendLayout();
       this.infoserviceOptions.SuspendLayout();
@@ -298,7 +299,6 @@
       this.statusStrip1.SuspendLayout();
       this.groupBox5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
-      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -1714,19 +1714,6 @@
       this.cbMostRecentMovPics.UseVisualStyleBackColor = true;
       this.cbMostRecentMovPics.CheckedChanged += new System.EventHandler(this.cbMostRecentMovPics_CheckedChanged);
       // 
-      // cboxSummaryFor
-      // 
-      this.cboxSummaryFor.FormattingEnabled = true;
-      this.cboxSummaryFor.Items.AddRange(new object[] {
-            "TVSeries",
-            "MovingPictures"});
-      this.cboxSummaryFor.Location = new System.Drawing.Point(152, 0);
-      this.cboxSummaryFor.Name = "cboxSummaryFor";
-      this.cboxSummaryFor.Size = new System.Drawing.Size(109, 21);
-      this.cboxSummaryFor.TabIndex = 6;
-      this.cboxSummaryFor.Text = "TVSeries";
-      this.cboxSummaryFor.SelectedIndexChanged += new System.EventHandler(this.cboxSummaryFor_SelectedIndexChanged);
-      // 
       // pTVSeriesRecent
       // 
       this.pTVSeriesRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1790,7 +1777,7 @@
       this.pSumHeader.BackColor = System.Drawing.Color.LightGray;
       this.pSumHeader.Controls.Add(this.label12);
       this.pSumHeader.Controls.Add(this.cboxSummaryFor);
-      this.pSumHeader.Location = new System.Drawing.Point(296, 9);
+      this.pSumHeader.Location = new System.Drawing.Point(296, 10);
       this.pSumHeader.Name = "pSumHeader";
       this.pSumHeader.Size = new System.Drawing.Size(413, 24);
       this.pSumHeader.TabIndex = 8;
@@ -1803,6 +1790,48 @@
       this.label12.Size = new System.Drawing.Size(145, 13);
       this.label12.TabIndex = 7;
       this.label12.Text = "Editing Summary Options for :";
+      // 
+      // cboxSummaryFor
+      // 
+      this.cboxSummaryFor.FormattingEnabled = true;
+      this.cboxSummaryFor.Items.AddRange(new object[] {
+            "TVSeries",
+            "MovingPictures"});
+      this.cboxSummaryFor.Location = new System.Drawing.Point(152, 0);
+      this.cboxSummaryFor.Name = "cboxSummaryFor";
+      this.cboxSummaryFor.Size = new System.Drawing.Size(127, 21);
+      this.cboxSummaryFor.TabIndex = 6;
+      this.cboxSummaryFor.Text = "TVSeries";
+      this.cboxSummaryFor.SelectedIndexChanged += new System.EventHandler(this.cboxSummaryFor_SelectedIndexChanged);
+      // 
+      // panel2
+      // 
+      this.panel2.Controls.Add(this.label23);
+      this.panel2.Controls.Add(this.label22);
+      this.panel2.Location = new System.Drawing.Point(329, 71);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(345, 85);
+      this.panel2.TabIndex = 9;
+      // 
+      // label23
+      // 
+      this.label23.AutoSize = true;
+      this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label23.Location = new System.Drawing.Point(3, 43);
+      this.label23.Name = "label23";
+      this.label23.Size = new System.Drawing.Size(328, 20);
+      this.label23.TabIndex = 1;
+      this.label23.Text = "Select Overlay Type Summary to Enable";
+      // 
+      // label22
+      // 
+      this.label22.AutoSize = true;
+      this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label22.Location = new System.Drawing.Point(50, 10);
+      this.label22.Name = "label22";
+      this.label22.Size = new System.Drawing.Size(225, 20);
+      this.label22.TabIndex = 0;
+      this.label22.Text = "Summary Options Disabled";
       // 
       // weatherOptions
       // 
@@ -2562,35 +2591,6 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // panel2
-      // 
-      this.panel2.Controls.Add(this.label23);
-      this.panel2.Controls.Add(this.label22);
-      this.panel2.Location = new System.Drawing.Point(329, 71);
-      this.panel2.Name = "panel2";
-      this.panel2.Size = new System.Drawing.Size(345, 85);
-      this.panel2.TabIndex = 9;
-      // 
-      // label22
-      // 
-      this.label22.AutoSize = true;
-      this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label22.Location = new System.Drawing.Point(50, 10);
-      this.label22.Name = "label22";
-      this.label22.Size = new System.Drawing.Size(225, 20);
-      this.label22.TabIndex = 0;
-      this.label22.Text = "Summary Options Disabled";
-      // 
-      // label23
-      // 
-      this.label23.AutoSize = true;
-      this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label23.Location = new System.Drawing.Point(3, 43);
-      this.label23.Name = "label23";
-      this.label23.Size = new System.Drawing.Size(328, 20);
-      this.label23.TabIndex = 1;
-      this.label23.Text = "Select Overlay Type Summary to Enable";
-      // 
       // streamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2663,6 +2663,8 @@
       this.gbTvSeriesOptions.PerformLayout();
       this.pSumHeader.ResumeLayout(false);
       this.pSumHeader.PerformLayout();
+      this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.weatherOptions.ResumeLayout(false);
       this.weatherOptions.PerformLayout();
       this.gbRssImageType.ResumeLayout(false);
@@ -2694,8 +2696,6 @@
       this.groupBox5.ResumeLayout(false);
       this.groupBox5.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
-      this.panel2.ResumeLayout(false);
-      this.panel2.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
 
