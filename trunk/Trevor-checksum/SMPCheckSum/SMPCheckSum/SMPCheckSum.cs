@@ -18,7 +18,6 @@ namespace SMPCheckSum
   {
     SkinInfo skInfo = new SkinInfo();
     string[] skinFiles;
-    string xml;
     CheckSum checkSum = new CheckSum();
 
 
@@ -82,6 +81,10 @@ namespace SMPCheckSum
     private void btReGenerate_Click(object sender, EventArgs e)
     {
       checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, chkSumFiles.SelectedItems[0].Text));
+      if (!checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath, chkSumFiles.SelectedItems[0].Text)))
+        chkSumFiles.SelectedItems[0].ImageIndex = 1;
+      else
+        chkSumFiles.SelectedItems[0].ImageIndex = 0;
       chkSumFiles.Refresh();
       btVerifyChksum.Enabled = false;
       btReGenerate.Enabled = false;
