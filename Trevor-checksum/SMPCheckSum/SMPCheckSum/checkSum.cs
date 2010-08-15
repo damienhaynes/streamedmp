@@ -16,7 +16,7 @@ namespace SMPCheckSum
 
     public string Add(string xmlFileName)
     {
-      if (readChksum(xmlFileName) != null)
+      if (readChksum(xmlFileName) == null)
       {
         rewriteXMLFile(xmlFileName);
         return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
@@ -46,9 +46,9 @@ namespace SMPCheckSum
       if (readChksum(xmlFileName) != null)
       {
         stripChecksum(xmlFileName, 50);
-        return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
+        rewriteXMLFile(xmlFileName);
       }
-      return null;
+      return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
     }
 
     public void Remove(string xmlFileName)
@@ -85,12 +85,12 @@ namespace SMPCheckSum
       }
     }
     
-    string stripChecksum(string xmlFileName, int bytestoIgnore)
+    void stripChecksum(string xmlFileName, int bytesToIgnore)
     {
       checkAndThrow(xmlFileName);
 
       FileStream readFile = new FileStream(xmlFileName, FileMode.Open);
-      int bytesToRead = ((int)readFile.Length - bytestoIgnore);
+      int bytesToRead = ((int)readFile.Length - bytesToIgnore);
       byte[] theFile = new byte[bytesToRead];
 
       readFile.Read(theFile, 0, bytesToRead);
@@ -99,8 +99,6 @@ namespace SMPCheckSum
       FileStream writeFile = new FileStream(xmlFileName,FileMode.Create);
       writeFile.Write(theFile, 0, bytesToRead);
       writeFile.Close();
-      return null;
-
     }
 
     string GetMD5HashFromFile(string xmlFileName, int bytestoIgnore)
