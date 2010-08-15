@@ -52,10 +52,10 @@ namespace SMPCheckSum
       {
         fileToCheck.pathAndFilename = chkFile;
         fileToCheck.fileName = Path.GetFileName(chkFile);
-        if (checkSum.Read(chkFile) == null)
+        if (checkSum.Get(chkFile) == null)
           fileToCheck.checkSum = checkSum.Add(chkFile);
         else
-          fileToCheck.checkSum = checkSum.Read(chkFile);
+          fileToCheck.checkSum = checkSum.Get(chkFile);
 
         ListViewItem item = new ListViewItem(new[] { fileToCheck.fileName, fileToCheck.checkSum });
         if (checkSum.Compare(chkFile))
@@ -98,6 +98,16 @@ namespace SMPCheckSum
       public string pathAndFilename { get; set; }
       public string fileName { get; set; }
       public string checkSum { get; set; }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      checkSum.Add("c:\\xyz.xml");
+    }
+
+    private void btInvaildFile_Click(object sender, EventArgs e)
+    {
+      checkSum.Get("G:\\Development\\StreamedMP 1.2.1 Release Notes.rtf");
     }
 
   }

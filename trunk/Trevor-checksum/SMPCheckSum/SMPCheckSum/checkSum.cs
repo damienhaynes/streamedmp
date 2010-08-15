@@ -16,11 +16,16 @@ namespace SMPCheckSum
 
     public string Add(string xmlFileName)
     {
-      rewriteXMLFile(xmlFileName);
-      return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName,0));
+      if (readChksum(xmlFileName) != null)
+      {
+        rewriteXMLFile(xmlFileName);
+        return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
+      }
+      else
+        return readChksum(xmlFileName);
     }
 
-    public string Read(string xmlFileName)
+    public string Get(string xmlFileName)
     {
       return readChksum(xmlFileName);
     }
@@ -46,48 +51,22 @@ namespace SMPCheckSum
       return null;
     }
 
+    public void Remove(string xmlFileName)
+    {
+      if (readChksum(xmlFileName) != null)
+      {
+        stripChecksum(xmlFileName, 50);
+      }
+    }
+
     #endregion
 
     #region Private Methods
 
-    string stripChecksum(string fileName, int bytestoIgnore)
-    {
-      FileStream readFile = new FileStream(fileName, FileMode.Open);
-      int bytesToRead = ((int)readFile.Length - bytestoIgnore);
-      byte[] theFile = new byte[bytesToRead];
-
-      readFile.Read(theFile, 0, bytesToRead);
-      readFile.Close();
-
-      FileStream writeFile = new FileStream(fileName,FileMode.Create);
-      writeFile.Write(theFile, 0, bytesToRead);
-      writeFile.Close();
-      return null;
-
-    }
-
-    string GetMD5HashFromFile(string fileName, int bytestoIgnore)
-    {
-      FileStream file = new FileStream(fileName, FileMode.Open);
-      MD5 md5 = new MD5CryptoServiceProvider();
-      int bytesToRead = ((int)file.Length - bytestoIgnore);
-      byte[] theFile = new byte[bytesToRead];
-
-      file.Read(theFile, 0, bytesToRead);
-      byte[] retVal = md5.ComputeHash(theFile);
-      file.Close();
-
-      StringBuilder sb = new StringBuilder();
-      for (int i = 0; i < retVal.Length; i++)
-      {
-        sb.Append(retVal[i].ToString("x2"));
-      }
-      return sb.ToString();
-    }
-
     string readChksum(string xmlFileName)
     {
       string chkSum = null;
+      checkAndThrow(xmlFileName);
       XmlTextReader reader = new XmlTextReader(xmlFileName);
       while (!reader.Value.StartsWith("Checksum:") && !reader.EOF)
       {
@@ -105,13 +84,57 @@ namespace SMPCheckSum
         return chkSum;
       }
     }
+    
+    string stripChecksum(string xmlFileName, int bytestoIgnore)
+    {
+      checkAndThrow(xmlFileName);
+
+      FileStream readFile = new FileStream(xmlFileName, FileMode.Open);
+      int bytesToRead = ((int)readFile.Length - bytestoIgnore);
+      byte[] theFile = new byte[bytesToRead];
+
+      readFile.Read(theFile, 0, bytesToRead);
+      readFile.Close();
+
+      FileStream writeFile = new FileStream(xmlFileName,FileMode.Create);
+      writeFile.Write(theFile, 0, bytesToRead);
+      writeFile.Close();
+      return null;
+
+    }
+
+    string GetMD5HashFromFile(string xmlFileName, int bytestoIgnore)
+    {
+      checkAndThrow(xmlFileName);
+
+      FileStream file = new FileStream(xmlFileName, FileMode.Open);
+      MD5 md5 = new MD5CryptoServiceProvider();
+      int bytesToRead = ((int)file.Length - bytestoIgnore);
+      byte[] theFile = new byte[bytesToRead];
+
+      file.Read(theFile, 0, bytesToRead);
+      byte[] retVal = md5.ComputeHash(theFile);
+      file.Close();
+
+      StringBuilder sb = new StringBuilder();
+      for (int i = 0; i < retVal.Length; i++)
+      {
+        sb.Append(retVal[i].ToString("x2"));
+      }
+      return sb.ToString();
+    }
+
+
 
     void rewriteXMLFile(string xmlFileName)
     {
+      checkAndThrow(xmlFileName);
+
+
       XmlDocument doc = new XmlDocument();
       doc.Load(xmlFileName);
       Encoding encoding = Encoding.GetEncoding("utf-8");
-      XmlTextWriter writer = new XmlTextWriter(Path.Combine(Path.GetDirectoryName(xmlFileName),"temp.xml"), encoding);
+      XmlTextWriter writer = new XmlTextWriter(Path.Combine(Path.GetDirectoryName(xmlFileName), "temp.xml"), encoding);
       writer.Formatting = Formatting.Indented;
       doc.Save(writer);
       writer.Close();
@@ -132,6 +155,16 @@ namespace SMPCheckSum
       xmlDoc.InsertAfter(chkSumComment, root);
       xmlDoc.Save(xmlFileName);
       return chksum;
+    }
+
+
+    void checkAndThrow(string xmlFileName)
+    {
+      if (!File.Exists(xmlFileName))
+        throw new FileNotFoundException("File does not exist", xmlFileName);
+
+      if (Path.GetExtension(xmlFileName).ToLower() != ".xml")
+        throw new ArgumentException("Only XML files are supported", xmlFileName);
     }
 
     #endregion
