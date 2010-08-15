@@ -33,10 +33,11 @@
       this.chkSumFiles = new System.Windows.Forms.ListView();
       this.Filename = new System.Windows.Forms.ColumnHeader();
       this.Checksum = new System.Windows.Forms.ColumnHeader();
+      this.ilCheckSum = new System.Windows.Forms.ImageList(this.components);
       this.btAddChksumToAll = new System.Windows.Forms.Button();
       this.btVerifyChksum = new System.Windows.Forms.Button();
-      this.ilCheckSum = new System.Windows.Forms.ImageList(this.components);
       this.pbCheckSum = new System.Windows.Forms.ProgressBar();
+      this.btReGenerate = new System.Windows.Forms.Button();
       this.SuspendLayout();
       // 
       // chkSumFiles
@@ -63,6 +64,13 @@
       this.Checksum.Text = "Checksum";
       this.Checksum.Width = 393;
       // 
+      // ilCheckSum
+      // 
+      this.ilCheckSum.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilCheckSum.ImageStream")));
+      this.ilCheckSum.TransparentColor = System.Drawing.Color.Transparent;
+      this.ilCheckSum.Images.SetKeyName(0, "checkSumOk.png");
+      this.ilCheckSum.Images.SetKeyName(1, "checkSumFailed.png");
+      // 
       // btAddChksumToAll
       // 
       this.btAddChksumToAll.Location = new System.Drawing.Point(122, 264);
@@ -75,20 +83,13 @@
       // 
       // btVerifyChksum
       // 
-      this.btVerifyChksum.Location = new System.Drawing.Point(616, 264);
+      this.btVerifyChksum.Location = new System.Drawing.Point(615, 264);
       this.btVerifyChksum.Name = "btVerifyChksum";
       this.btVerifyChksum.Size = new System.Drawing.Size(187, 23);
       this.btVerifyChksum.TabIndex = 2;
       this.btVerifyChksum.Text = "Verify Checksum on Selected File";
       this.btVerifyChksum.UseVisualStyleBackColor = true;
       this.btVerifyChksum.Click += new System.EventHandler(this.btVerifyChksum_Click);
-      // 
-      // ilCheckSum
-      // 
-      this.ilCheckSum.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ilCheckSum.ImageStream")));
-      this.ilCheckSum.TransparentColor = System.Drawing.Color.Transparent;
-      this.ilCheckSum.Images.SetKeyName(0, "checkSumOk.png");
-      this.ilCheckSum.Images.SetKeyName(1, "checkSumFailed.png");
       // 
       // pbCheckSum
       // 
@@ -97,11 +98,22 @@
       this.pbCheckSum.Size = new System.Drawing.Size(679, 20);
       this.pbCheckSum.TabIndex = 3;
       // 
+      // btReGenerate
+      // 
+      this.btReGenerate.Location = new System.Drawing.Point(352, 264);
+      this.btReGenerate.Name = "btReGenerate";
+      this.btReGenerate.Size = new System.Drawing.Size(212, 23);
+      this.btReGenerate.TabIndex = 4;
+      this.btReGenerate.Text = "Re-Generate Checksum on Selected File";
+      this.btReGenerate.UseVisualStyleBackColor = true;
+      this.btReGenerate.Click += new System.EventHandler(this.btReGenerate_Click);
+      // 
       // SMPCheckSum
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(924, 318);
+      this.Controls.Add(this.btReGenerate);
       this.Controls.Add(this.pbCheckSum);
       this.Controls.Add(this.btVerifyChksum);
       this.Controls.Add(this.btAddChksumToAll);
@@ -122,6 +134,7 @@
     private System.Windows.Forms.Button btVerifyChksum;
     private System.Windows.Forms.ImageList ilCheckSum;
     private System.Windows.Forms.ProgressBar pbCheckSum;
+    private System.Windows.Forms.Button btReGenerate;
   }
 }
 
