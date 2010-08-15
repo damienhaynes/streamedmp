@@ -2357,8 +2357,10 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
       else
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
 
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
 
       // ******************************** Weather Backgrounds **********************************
       rawXML.AppendLine("<control>");
@@ -2419,7 +2421,10 @@ namespace StreamedMPEditor
       else
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
 
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+
       rawXML.AppendLine("</control>");
 
       for (i = 1; i < 5; i++)
@@ -2455,7 +2460,10 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
         else
           rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-        rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+
         rawXML.AppendLine("</control>");
       }
       // ************************************* Weather Text Items *******************************
@@ -2463,7 +2471,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>GROUP: FULL WEATHER DETAILS</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+
       if (weatherId.ToString().Length == 5)
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
 
