@@ -12,10 +12,7 @@ namespace SMPCheckSum
   class CheckSum
   {
 
-    public CheckSum()
-    {
-    }
-
+    #region Public Methods
 
     public string Add(string xmlFileName)
     {
@@ -39,6 +36,35 @@ namespace SMPCheckSum
         return false;
     }
 
+    public string Replace(string xmlFileName)
+    {
+      if (readChksum(xmlFileName) != null)
+      {
+        stripChecksum(xmlFileName, 50);
+        return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
+      }
+      return null;
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    string stripChecksum(string fileName, int bytestoIgnore)
+    {
+      FileStream readFile = new FileStream(fileName, FileMode.Open);
+      int bytesToRead = ((int)readFile.Length - bytestoIgnore);
+      byte[] theFile = new byte[bytesToRead];
+
+      readFile.Read(theFile, 0, bytesToRead);
+      readFile.Close();
+
+      FileStream writeFile = new FileStream(fileName,FileMode.Create);
+      writeFile.Write(theFile, 0, bytesToRead);
+      writeFile.Close();
+      return null;
+
+    }
 
     string GetMD5HashFromFile(string fileName, int bytestoIgnore)
     {
@@ -107,6 +133,8 @@ namespace SMPCheckSum
       xmlDoc.Save(xmlFileName);
       return chksum;
     }
+
+    #endregion
 
   }
 }
