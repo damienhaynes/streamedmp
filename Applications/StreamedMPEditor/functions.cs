@@ -1730,19 +1730,11 @@ namespace StreamedMPEditor
 
       //Write tempory file
       StreamWriter tmpwriter;
-      tmpwriter = System.IO.File.CreateText(Path.Combine(Path.GetTempPath(), "temp.xml"));
+      tmpwriter = System.IO.File.CreateText(Path.Combine(mpPaths.streamedMPpath,xmlFileName));
       tmpwriter.Write(xml);
       tmpwriter.Close();
 
-      //read tempory file and save out formatted.
-      XmlDocument doc = new XmlDocument();
-      doc.Load(Path.Combine(Path.GetTempPath(), "temp.xml"));
-      Encoding encoding = Encoding.GetEncoding("utf-8");
-      XmlTextWriter writer = new XmlTextWriter(mpPaths.streamedMPpath + xmlFileName, encoding);
-      writer.Formatting = Formatting.Indented;
-      doc.Save(writer);
-      writer.Close();
-      System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "temp.xml"));
+      checkSum.Replace(Path.Combine(mpPaths.streamedMPpath, xmlFileName));
     }
 
 

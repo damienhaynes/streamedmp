@@ -32,7 +32,7 @@ namespace SMPCheckSum
     public bool Compare(string xmlFileName)
     {
       if (readChksum(xmlFileName) == null)
-        return false;
+        return true;
 
       if (readChksum(xmlFileName).CompareTo(GetMD5HashFromFile(xmlFileName, 50)) == 0)
         return true;

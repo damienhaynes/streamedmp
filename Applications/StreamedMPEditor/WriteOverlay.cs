@@ -1,4 +1,7 @@
-﻿namespace StreamedMPEditor
+﻿using SMPCheckSum;
+using System.IO;
+
+namespace StreamedMPEditor
 {
   public partial class streamedMpEditor
   {

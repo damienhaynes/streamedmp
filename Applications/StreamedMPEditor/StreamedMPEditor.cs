@@ -8,6 +8,7 @@ using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Utils;
 using System.Text.RegularExpressions;
+using SMPCheckSum;
 
 namespace StreamedMPEditor
 {
@@ -187,6 +188,7 @@ namespace StreamedMPEditor
     public Regex isIleagalXML = new Regex("[&<>]");
 
     mrsFormatOptions mrsForm = new mrsFormatOptions();
+    CheckSum checkSum = new CheckSum();
 
     #endregion
 
@@ -930,6 +932,8 @@ namespace StreamedMPEditor
         System.IO.File.Delete(mpPaths.streamedMPpath + "BasicHome.xml");
 
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
+
+      CheckSum checkSum = new CheckSum();
 
       writeXMLFile("BasicHome.xml");
 
