@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.Xml;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Threading;
+using SMPCheckSum;
 
 
 namespace SMPpatch
@@ -36,6 +37,7 @@ namespace SMPpatch
     Version minSMPVersion = new Version(); 
     SplashScreen splash = new SplashScreen();
     SkinInfo skInfo = new SkinInfo();
+    CheckSum checkSum = new CheckSum();
 
     #endregion
 
@@ -488,7 +490,14 @@ namespace SMPpatch
           copyDirectory(Element, patchDestination + Path.GetFileName(Element));
         else
         {
-          File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+          // If we are replacing an xml, check if the exiting files checksum matches (or it does not have one) and only then copy the file.
+          if (Path.GetExtension(Element).ToLower() == ".xml")
+          {
+            if (checkSum.Compare(patchDestination + Path.GetFileName(Element)))
+              File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+          }
+          else
+            File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
         }
       }
     }
