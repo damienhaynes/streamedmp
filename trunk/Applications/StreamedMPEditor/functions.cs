@@ -1734,7 +1734,7 @@ namespace StreamedMPEditor
       tmpwriter.Write(xml);
       tmpwriter.Close();
 
-      checkSum.Replace(Path.Combine(mpPaths.streamedMPpath, xmlFileName));
+      checkSum.Add(Path.Combine(mpPaths.streamedMPpath, xmlFileName));
     }
 
 

@@ -22,5 +22,16 @@ namespace SMPCheckSum_Test.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection baseDirs {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["baseDirs"]));
+            }
+            set {
+                this["baseDirs"] = value;
+            }
+        }
     }
 }
