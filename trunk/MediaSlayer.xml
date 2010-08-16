@@ -3,300 +3,424 @@
   <id>8765</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  
-  <define>#header.hover:hover_my videos.png</define>
+  <define>#header.label:#currentmodule</define>
+  <define>#header.hover:hover_my plugins.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
   <controls>
-     
-    <control>
-      <type>image</type>
-      <description>BG</description>
-      <id>0</id>
-      <width>1280</width>
-      <height>720</height>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <description>movies background image</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-    </control>
-
-	<control>
-      <description>Heading</description>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+		<control>
+      <description>dummy control</description>
       <type>label</type>
       <id>2</id>
-      <posX>493</posX>
-      <posY>13</posY>
+      <posX>-50</posX>
+      <posY>-50</posY>
       <width>350</width>
-      <font>mediastream12c</font>
-      <label>Media Slayer</label>
+      <label>-</label>
       <align>right</align>
-	  <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>	 
     </control>
-	
-	<control>
-      <description>movies overlay image</description>
+    <control>
       <type>image</type>
-      <id>0</id>
+      <id>1</id>
       <posX>0</posX>
-      <posY>0</posY>
+      <posY>675</posY>
       <width>1280</width>
-      <height>720</height>
-      <texture>mainoverlay.png</texture>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	
-	<control>
-      <description>Top Title Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
-      <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-	
-    <control>
-      <type>image</type>
-      <posX>1002</posX>
-      <posY>0</posY>
-      <width>278</width>
-      <height>720</height>
-      <texture>hiddenmenu_right.png</texture>
-    </control>
-
-    <control>
-      <id>0</id>
-      <label>MENU</label>
-      <type>label</type>
-      <font>mediastream12tc</font>
-      <posX>1040</posX>
-      <posY>225</posY>
-    </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>1040</posX>
+      <posX>25</posX>
       <posY>250</posY>
-      <width>220</width>
-      <height>720</height>
       <layout>StackLayout</layout>
-      
       <control>
-        <description>Rip Disc</description>
+        <description>Rip Disc Button</description>
         <type>button</type>
         <id>3</id>
         <label>Rip Disc</label>
         <onup>17</onup>
+        <ondown>4</ondown>
+        <onright>25</onright>
+        <onleft>3</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <width>300</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>About</description>
+        <description>About Button</description>
         <type>button</type>
         <id>4</id>
-        <label>About</label>        
+        <label>About</label>
+        <onup>3</onup>
+        <ondown>10</ondown>
+        <onright>25</onright>
+        <onleft>4</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>hidden</description>
-        <type>button</type>
-        <id>100</id>
-        <label></label>
-        <visible>no</visible>
-      </control>
-      <control>
-        <description>art</description>
+        <description>Art Button</description>
         <type>togglebutton</type>
         <id>10</id>
         <label>Get Cover Art</label>
+        <onup>4</onup>
+        <ondown>19</ondown>
+        <onright>10</onright>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>eject</description>
+        <description>Eject Button</description>
         <type>togglebutton</type>
         <id>19</id>
-        <label>Eject Disc</label>
-      </control>      
+        <label>Eject</label>
+        <onup>10</onup>
+        <ondown>9</ondown>
+        <onright>19</onright>
+        <onleft>19</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
       <control>
-        <description>target</description>
+        <description>Music Target Button</description>
         <type>button</type>
         <id>9</id>
-        <label>Music</label>
+        <label>Music Target</label>
+        <onup>19</onup>
+        <ondown>14</ondown>
+        <onright>9</onright>
+        <onleft>9</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>format</description>
+        <description>Music Format Button</description>
         <type>button</type>
         <id>14</id>
-        <label>Ogg Vorbis</label>
+        <label>Format</label>
+        <onup>9</onup>
+        <ondown>24</ondown>
+        <onright>14</onright>
+        <onleft>14</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-      <description>target</description>
+        <description>Video Target Button</description>
         <type>button</type>
         <id>24</id>
-        <label>Video</label>
+        <label>Video Target</label>
+        <onup>14</onup>
+        <ondown>18</ondown>
+        <onright>24</onright>
+        <onleft>24</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>DVD mode</description>
+        <description>DVD Mode Button</description>
         <type>button</type>
         <id>18</id>
-        <label>Full Disc</label>
+        <label>DVD Mode</label>
+        <onup>24</onup>
         <ondown>3</ondown>
+        <onright>18</onright>
+        <onleft>18</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
-    </control>
-
-    <control>
-      <type>image</type>
-      <id>1</id>
-      <posX>340</posX>
-      <posY>245</posY>
-      <width>470</width>
-      <height>20</height>
-      <texture>osdprogressback.png</texture>
-      <visible>control.isvisible(8)</visible>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>track progress</description>
-      <id>8</id>
-      <posX>330</posX>
-      <posY>245</posY>
-      <width>490</width>
-      <height>20</height>
-			<texturebg>-</texturebg>
-			<lefttexture>osdprogressleft.png</lefttexture>
-			<midtexture>osdprogressmid.png</midtexture>
-			<righttexture>osdprogressright.png</righttexture>
-    </control>
-    <control>
-      <type>image</type>
-      <id>1</id>
-      <posX>340</posX>
-      <posY>285</posY>
-      <width>470</width>
-      <height>20</height>
-      <texture>osdprogressback.png</texture>
-      <visible>control.isvisible(12)</visible>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>tot progress</description>
-      <id>12</id>
-      <posX>330</posX>
-      <posY>285</posY>
-      <width>490</width>
-      <height>20</height>
-			<texturebg>-</texturebg>
-			<lefttexture>osdprogressleft.png</lefttexture>
-			<midtexture>osdprogressmid.png</midtexture>
-			<righttexture>osdprogressright.png</righttexture>
-    </control>
-
-    <control>
-      <description>Artist header</description>
-      <type>label</type>
-      <id>15</id>
-      <posX>340</posX>
-      <posY>325</posY>
-      <label>171</label>
-      <textcolor>99ffffff</textcolor>
-    </control>
-    <control>
-      <description>Artist name</description>
-      <type>label</type>
-      <id>6</id>
-      <posX>410</posX>
-      <posY>325</posY>
-      <label></label>
-	  
-    </control>
-
-    <control>
-      <description>Album header</description>
-      <type>label</type>
-      <id>16</id>
-      <posX>340</posX>
-      <posY>305</posY>
-      <label>170</label>
-      <textcolor>99ffffff</textcolor>
-    </control>
-    <control>
-      <description>Album name</description>
-      <type>label</type>
-      <id>7</id>
-      <posX>410</posX>
-      <posY>305</posY>
-      <label></label>
     </control>
 
     <control>
       <description>text label - STATUS</description>
       <type>label</type>
       <id>5</id>
-      <posX>340</posX>
-      <posY>225</posY>
+      <posX>350</posX>
+      <posY>250</posY>
+			<width>560</width>
       <font>mediastream12tc</font>
       <label></label>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>text label - TOTAL STATUS</description>
       <type>label</type>
       <id>13</id>
-      <posX>340</posX>
-      <posY>265</posY>
+      <posX>350</posX>
+      <posY>300</posY>
       <font>mediastream12tc</font>
       <label></label>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+      <description>Progress Bar Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>345</posX>
+      <posY>275</posY>
+      <width>470</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+      <visible>control.isvisible(8)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Audio Storage</description>
+      <type>progress</type>
+      <id>8</id>
+      <posX>335</posX>
+      <posY>275</posY>
+      <width>490</width>
+      <height>20</height>
+      <texturebg>-</texturebg>
+      <lefttexture>osdprogressleft.png</lefttexture>
+      <midtexture>osdprogressmid.png</midtexture>
+      <righttexture>osdprogressright.png</righttexture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+      <description>Progress Bar Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>345</posX>
+      <posY>325</posY>
+      <width>470</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+      <visible>control.isvisible(12)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Video Storage</description>
+      <type>progress</type>
+      <id>12</id>
+      <posX>335</posX>
+      <posY>325</posY>
+      <width>490</width>
+      <height>20</height>
+      <texturebg>-</texturebg>
+      <lefttexture>osdprogressleft.png</lefttexture>
+      <midtexture>osdprogressmid.png</midtexture>
+      <righttexture>osdprogressright.png</righttexture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+      <description>Artist Label (Dummy - Dont Display)</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>-1000</posX>
+      <posY>-1000</posY>
+      <label>171</label>
+      <textcolor>99ffffff</textcolor>
+    </control>
+    <control>
+      <description>Artist</description>
+      <type>label</type>
+      <id>6</id>
+      <posX>1250</posX>
+			<posY>14</posY>
+      <label></label>
+			<align>right</align>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+      <description>Album / Movie Label (Dummy - Dont Display)</description>
+      <type>label</type>
+      <id>16</id>
+      <posX>-1000</posX>
+      <posY>-1000</posY>
+      <label>170</label>
+    </control>
+    <control>
+      <description>Album / Movie Title</description>
+      <type>label</type>
+      <id>7</id>
+      <posX>25</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label></label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>650</posX>
+      <posY>640</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>control.isvisible(25)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>660</posX>
+      <posY>644</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(25)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Track List / Album Info</description>
+      <type>textbox</type>
+      <id>25</id>
+      <font>mediastream11</font>
+      <posX>350</posX>
+      <posY>350</posY>
+      <width>540</width>
+      <height>310</height>
+      <spinColor>ff006698</spinColor>
+      <spinPosX>782</spinPosX>
+      <spinPosY>637</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
 
     <control>
       <description>Movie image background</description>
       <type>image</type>
       <id>23</id>
-      <posX>36</posX>
-      <posY>264</posY>
+      <posX>950</posX>
+      <posY>250</posY>
       <width>286</width>
       <height>406</height>
       <texture>defaultdvdcover.png</texture>
-      <animation effect="fade" time="1000">WindowOpen</animation>
-      <animation effect="fade" time="1000">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Movie image</description>
       <type>image</type>
       <id>22</id>
-      <posX>36</posX>
-      <posY>264</posY>
+      <posX>950</posX>
+      <posY>250</posY>
       <width>286</width>
       <height>406</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">-</texture>
-      <animation effect="fade" time="1000">WindowOpen</animation>
-      <animation effect="fade" time="1000">WindowClose</animation>
+      <texture>-</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
 
     <control>
       <description>Album image background</description>
       <type>image</type>
       <id>21</id>
-      <posX>36</posX>
-      <posY>264</posY>
+      <posX>950</posX>
+      <posY>250</posY>
       <width>286</width>
       <height>286</height>
       <texture>albumcover.png</texture>
-      <animation effect="fade" time="1000">WindowOpen</animation>
-      <animation effect="fade" time="1000">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Album Art</description>
       <type>image</type>
       <id>20</id>
-      <posX>36</posX>
-      <posY>264</posY>
+      <posX>950</posX>
+      <posY>250</posY>
       <width>286</width>
       <height>286</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">-</texture>
@@ -305,29 +429,53 @@
     </control>
 
     <control>
-	  <description>textarea</description> 
-	  <type>textbox</type> 
-	  <id>25</id> 
-	  <posX>340</posX>
-	  <posY>355</posY>
-	  <width>520</width>
-	  <height>360</height>  
-	</control>
-
+      <description>Cycle Cover Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>control.isvisible(20)|control.isvisible(22)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
     <control>
-      <description>spin control</description>
+      <description>Cycle Cover Label</description>
+      <type>label</type>
+      <id>30</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <label>734</label>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(20)|control.isvisible(22)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cycle Cover Spin Control</description>
       <type>spincontrol</type>
       <id>26</id>
-      <posX>180</posX>
-      <posY>670</posY>
+      <posX>1175</posX>
+      <posY>681</posY>
       <onup>26</onup>
       <ondown>26</ondown>
       <onleft>3</onleft>
       <onright>25</onright>
+      <width>50</width>
+      <height>37</height>
       <align>right</align>
+      <font>mediastream11</font>
+      <textcolor>ff006698</textcolor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
 
-    <import>common.overlays.xml</import>
-    <import>common.time.xml</import>
   </controls>
 </window>
