@@ -12,7 +12,10 @@ namespace SMPCheckSum
   public class CheckSum
   {
     #region Public Methods
-
+    
+    //
+    // Add Checksum to specified file if one does not exist and retuen the calculated checksum.
+    //
     public string Add(string xmlFileName)
     {
       if (readChksum(xmlFileName) == null)
@@ -23,33 +26,40 @@ namespace SMPCheckSum
       else
         return readChksum(xmlFileName);
     }
-
+    //
+    // Read the Checksum and return it, NULL is returned if no Checksum exists
+    //
     public string Get(string xmlFileName)
     {
       return readChksum(xmlFileName);
     }
-
+    //
+    // Read the existing Checksum and compare with recalculated checksum on the file after stripping off the embedded checksum.
+    //
     public bool Compare(string xmlFileName)
     {
       if (readChksum(xmlFileName) == null)
-        return true;
+        return false;
 
       if (readChksum(xmlFileName).CompareTo(GetMD5HashFromFile(xmlFileName, 50)) == 0)
         return true;
       else
         return false;
     }
-
+    //
+    // Recalulate and replace existing Checksum on the file
+    //
     public string Replace(string xmlFileName)
     {
       if (readChksum(xmlFileName) != null)
-      {
         stripChecksum(xmlFileName, 50);
-        rewriteXMLFile(xmlFileName);
-      }
+
+      rewriteXMLFile(xmlFileName);
       return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
     }
-
+    //
+    // Remove the Checksum from the file
+    //
     public void Remove(string xmlFileName)
     {
       if (readChksum(xmlFileName) != null)
@@ -110,6 +120,7 @@ namespace SMPCheckSum
       byte[] theFile = new byte[bytesToRead];
 
       file.Read(theFile, 0, bytesToRead);
+
       byte[] retVal = md5.ComputeHash(theFile);
       file.Close();
 
