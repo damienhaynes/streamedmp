@@ -43,23 +43,11 @@
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
 // Feature Defines
-#define FANART_FEATURE_TVSERIES						"Main\\fanartTVSeries"
-#define FANART_FEATURE_TVSERIES_WIDEBANNERS			"Main\\fanartTVSeriesWideBanners"
-#define FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS		"Main\\fanartTVSeries5x2WideBanners"
-#define FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS		"Main\\fanartTVSeries5x3WideBanners"
-#define FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS		"Main\\fanartTVSeries7x3WideBanners"
-#define FANART_FEATURE_TVSERIES_10x4_WIDEBANNERS	"Main\\fanartTVSeries10x4WideBanners"
 #define FANART_FEATURE_MOVINGPICS					"Main\\fanartMovingPictures"
 #define FANART_FEATURE_MOVINGPICS_THUMBS			"Main\\fanartMovingPicturesThumbs"
 #define FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\fanartMovingPictures.12x3.8x2.Thumbs"
 #define FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS	"Main\\fanartMovingPictures.12x4.8x3.Thumbs"
 
-#define DEFAULT_FEATURE_TVSERIES					"Main\\defaultTVSeries"
-#define DEFAULT_FEATURE_TVSERIES_WIDEBANNERS		"Main\\defaultTVSeriesWideBanners"
-#define DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS	"Main\\defaultTVSeries5x2WideBanners"
-#define DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS	"Main\\defaultTVSeries5x3WideBanners"
-#define DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS	"Main\\defaultTVSeries7x3WideBanners"
-#define DEFAULT_FEATURE_TVSERIES_10x4_WIDEBANNERS	"Main\\defaultTVSeries10x4WideBanners"
 #define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
 #define DEFAULT_FEATURE_MOVINGPICS_THUMBS			"Main\\defaultMovingPicturesThumbs"
 #define DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\defaultMovingPictures.12x3.8x2.Thumbs"
@@ -159,6 +147,26 @@
 #define MUSIC_ARTIST_ANIM_OVERLAY				"/window/controls/control[id='7210']/textures"
 
 #define EMULATORS_SCREENSHOT					"/window/controls/control[id='1001']/texture"
+    
+// TVSeries ImportPaths
+#define TVSERIES_FACADE_PATH								"/window/controls/import[@tag='Facade']"
+#define TVSERIES_SERIESANDSEASONLISTPOSTERS_PATH			"/window/controls/import[@tag='SeriesAndSeasonListPosters']"
+#define TVSERIES_SERIESANDSEASONFILMSTRIP_PATH				"/window/controls/import[@tag='SeriesAndSeasonFilmstrip']"
+#define TVSERIES_SERIESLISTBANNERS_PATH						"/window/controls/import[@tag='SeriesListBanners']"
+#define TVSERIES_SERIESWIDEBANNERS_PATH						"/window/controls/import[@tag='SeriesWideBanners']"
+#define TVSERIES_EPISODELIST_PATH							"/window/controls/import[@tag='EpisodeList']"
+#define TVSERIES_GROUPLIST_PATH								"/window/controls/import[@tag='GroupList']"
+
+// MovingPictures ImportPaths
+#define MOVPICS_BACKGROUNDOVERLAY_PATH						"/window/controls/import[@tag='BackgroundOverlay']"
+#define MOVPICS_LISTVIEW_PATH								"/window/controls/import[@tag='ListView']"
+#define MOVPICS_LISTVIEWMEDIAINFO_PATH						"/window/controls/import[@tag='ListViewMediaInfo']"
+#define MOVPICS_THUMBVIEW_PATH								"/window/controls/import[@tag='ThumbView']"
+#define MOVPICS_THUMBVIEWMEDIAINFO_PATH						"/window/controls/import[@tag='ThumbViewMediaInfo']"
+#define MOVPICS_FILMSTRIPVIEW_PATH							"/window/controls/import[@tag='FilmstripView']"
+#define MOVPICS_FILMSTRIPMEDIAINFO_PATH						"/window/controls/import[@tag='FilmstripViewMediaInfo']"
+#define MOVPICS_FACADE_PATH									"/window/controls/import[@tag='Facade']"
+#define MOVPICS_TOPBAR_PATH									"/window/controls/import[@tag='TopBar']"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT						13000
@@ -203,8 +211,7 @@
 #define RES_BMP_NOWPLAYINGFULLSCREENSLIDINGMENU		1408
 
 #define RES_COMBO_NOWPLAYINGCHOICE					1420
-    
-    
+        
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
 #define RES_PBUT_CLOSE		  			2     			// ID of the (X) button
@@ -242,6 +249,7 @@ prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
 prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING); 
 prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
+prototype NUMBER	GetSkinDefine(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 prototype VOID		RoundedCovers(BOOL, STRING);   
 prototype VOID		SetInstallationDirectories();
@@ -314,10 +322,10 @@ STRING g_sRemoteColor;
 // initializes.
 //---------------------------------------------------------------------------
 function OnBegin()
-	STRING szVersion, szUpgradeMessage;
+	STRING szVersion, szUpgradeMessage, szValue;
 	NUMBER nResult;
 	BOOL bUpgradeSupported; 
-begin
+begin 
 	
 	DetectWinLargeFonts();
  
@@ -441,18 +449,25 @@ begin
 	 
 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
 	
-	// Read TVSeries Default
+	// Read TVSeries Default	
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",nvType,svValue,nvSize) < 0) then
 		svValue = "1";		
 	endif;	 
 	if svValue = "1" then
 		g_bTVSeriesDefault = TRUE;			
 	endif;
+	// now stored in define because can be changed from GUI as well
+	if (GetSkinDefine(STREAMEDMP_SKIN_TVSERIES, "#defaultstyle", svValue) = 0) then;
+		if svValue = "yes" then
+			g_bTVSeriesDefault = TRUE;
+		endif;
+	endif;   
 	
 	// Read TVSeries widebanner layout
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVSERIESWIDEBANNERLAYOUT",nvType,g_sWideBannerLayout,nvSize) < 0) then
 		g_sWideBannerLayout = "0";		
-	endif;	 
+	endif;	 	
+	GetSkinDefine(STREAMEDMP_SKIN_TVSERIES, "#widebannerstyle", g_sWideBannerLayout);
 	
 	// Read Moving Pictures Default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",nvType,svValue,nvSize) < 0) then
@@ -461,11 +476,17 @@ begin
 	if svValue = "1" then
 		g_bMovingPicturesDefault = TRUE;			
 	endif;
+	if (GetSkinDefine(STREAMEDMP_SKIN_MOVINGPICTURES, "#defaultstyle", svValue) = 0) then;
+		if svValue = "yes" then
+			g_bMovingPicturesDefault = TRUE;
+		endif;
+	endif;
 	
 	// Read MovingPictures Thumb layout
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"MOVINGPICTURESTHUMBLAYOUT",nvType,g_sThumbLayout,nvSize) < 0) then
 		g_sThumbLayout = "0";		
 	endif;
+	GetSkinDefine(STREAMEDMP_SKIN_MOVINGPICTURES, "#thumbnailstyle", g_sThumbLayout);
 	
 	// Read TVGuide Size default
 	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",nvType,g_sTVGuideSize,nvSize) < 0) then
@@ -1152,6 +1173,8 @@ Dlg_Wait:
 	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"7x3 Grid");
 	        		case "4":
 	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"10x4 Grid");
+	        		default:
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_WIDEBANNERLAYOUT,"Default");
 	        	endswitch;	        	
 	        	ListDestroy(listWideBannerLayout);	        	
  			
@@ -1213,64 +1236,7 @@ Dlg_Wait:
 		// Fanart Style does not yet support Single List Image for Series/Season views
 		MessageBox("Fanart Style only supports Mult-Icon images in Series/Season lists, setup has changed accordingly.",INFORMATION);
 		g_bShowUnWatchedOnlyInListImage = FALSE;
-	endif;				
-	
-	// Set TVSeries Features
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_10x4_WIDEBANNERS, FALSE );
-	
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_10x4_WIDEBANNERS, FALSE );
-	
-	if (g_bTVSeriesDefault) then		
-		// only enable the corresonding default layout		
-		switch (g_sWideBannerLayout)
-			case "0":
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_WIDEBANNERS, TRUE );
-			case "1":                                                    
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE ); 
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x2_WIDEBANNERS, TRUE );
-			case "2":                                                          
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
-			case "3":                                                          
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_7x3_WIDEBANNERS, TRUE );
-			case "4":                                                          
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_TVSERIES_10x4_WIDEBANNERS, TRUE );
-		endswitch;
-				
-	else		
-		// only enable the corresonding fanart layout
-		switch (g_sWideBannerLayout)
-			case "0":
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_WIDEBANNERS, TRUE );
-			case "1":
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x2_WIDEBANNERS, TRUE );
-			case "2":                                                          
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_5x3_WIDEBANNERS, TRUE );
-			case "3":                                                          
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_7x3_WIDEBANNERS, TRUE );
-			case "4":                                                          
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES, TRUE );
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_TVSERIES_10x4_WIDEBANNERS, TRUE );
-		endswitch;   
-		
-	endif;	
+	endif;					
 		
 	if (g_bShowIconsInListView) then
 		
@@ -1457,7 +1423,9 @@ Dlg_Wait:
 	        		case "1":
 	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"[12x4][8x3] Grid");
 	        		case "2":
-	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"[12x3][8x2] Grid + Info");	        		
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"[12x3][8x2] Grid + Info");
+	        		default:
+	        			CtrlSetCurSel(szDialogName,RES_COMBO_THUMBLAYOUT,"Default");	        		
 	        	endswitch;	        	
 	        	ListDestroy(listThumbLayout);	  
  			              
@@ -1500,44 +1468,7 @@ Dlg_Wait:
 		case "[12x3][8x2] Grid + Info":
 			g_sThumbLayout = "2";	
 	endswitch;
-	
-	// Set Features  
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, FALSE );
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_THUMBS, FALSE );         
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, FALSE );	
-	FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, FALSE );	
-	
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_THUMBS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, FALSE );
-	FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, FALSE );	
-	
-	if (g_bMovingPicturesDefault) then
-		FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS, TRUE );
 		
-		switch (g_sThumbLayout)
-			case "0":				
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_THUMBS, TRUE );
-			case "1":                                                    				
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, TRUE );
-			case "2":                                                          				
-				FeatureSelectItem ( MEDIA, DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, TRUE );			
-		endswitch;
-				
-	else		
-		FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS, TRUE );      
-		
-		switch (g_sThumbLayout)
-			case "0":				
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_THUMBS, TRUE );
-			case "1":                                                    				
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS, TRUE );
-			case "2":                                                          				
-				FeatureSelectItem ( MEDIA, FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS, TRUE );			
-		endswitch;
-		
-	endif;
-	
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);
         
@@ -2076,7 +2007,7 @@ end;
 
 
 function VOID UpdateSettings()
-	STRING svString, sFile, sArtistImage, szDefine;
+	STRING svString, sFile, sArtistImage, szDefine, sStyle;
 	BOOL bReturn;		
 begin
 	// Save configuration to registry
@@ -2161,6 +2092,76 @@ begin
 	if g_bTVSeriesDefault then
 		TVSeriesImageStyle(g_bShowUnWatchedOnlyInListImage);
 	endif;
+	
+	// Update TVSeries Imports
+	sFile = STREAMEDMP_SKIN_TVSERIES;
+	
+	sStyle = "Default";
+	if !g_bTVSeriesDefault then
+		sStyle = "Fanart";
+	endif;
+	
+	SetSkinDefine(sFile, "#defaultstyle", BoolToString(g_bTVSeriesDefault));
+	SetSkinDefine(sFile, "#widebannerstyle", g_sWideBannerLayout);
+	
+	SetXMLProperty(sFile, TVSERIES_SERIESANDSEASONLISTPOSTERS_PATH, "TVSeries."+sStyle+".SeriesAndSeasonListPosters.xml");
+	SetXMLProperty(sFile, TVSERIES_SERIESANDSEASONFILMSTRIP_PATH, "TVSeries."+sStyle+".SeriesAndSeasonFilmstrip.xml");
+	SetXMLProperty(sFile, TVSERIES_SERIESLISTBANNERS_PATH, "TVSeries."+sStyle+".SeriesListBanners.xml");
+	SetXMLProperty(sFile, TVSERIES_EPISODELIST_PATH, "TVSeries."+sStyle+".EpisodeList.xml");
+	SetXMLProperty(sFile, TVSERIES_GROUPLIST_PATH, "TVSeries."+sStyle+".GroupList.xml");
+	
+	switch (g_sWideBannerLayout)
+		case "0":
+			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".Facade.xml");
+			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries."+sStyle+".SeriesWideBanners.xml");
+		case "1":
+			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.5x2.Facade.xml");
+			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.5x2.SeriesWideBanners.xml");
+		case "2":
+			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.5x3.Facade.xml");
+			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.5x3.SeriesWideBanners.xml");
+		case "3":
+			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.7x3.Facade.xml");
+			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.7x3.SeriesWideBanners.xml");
+		case "4":
+			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.10x4.Facade.xml");
+			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.10x4.SeriesWideBanners.xml");
+	endswitch;
+	
+	// Update MovingPictures Imports
+	sFile = STREAMEDMP_SKIN_MOVINGPICTURES;
+	
+	sStyle = "default";
+	if !g_bMovingPicturesDefault then
+		sStyle = "fanart";
+	endif;
+	
+	SetSkinDefine(sFile, "#defaultstyle", BoolToString(g_bMovingPicturesDefault));
+	SetSkinDefine(sFile, "#thumbnailstyle", g_sThumbLayout);
+	
+	SetXMLProperty(sFile, MOVPICS_LISTVIEW_PATH, "movingpictures."+sStyle+".listview.xml");
+	SetXMLProperty(sFile, MOVPICS_LISTVIEWMEDIAINFO_PATH, "movingpictures."+sStyle+".listview.mediainfo.xml");
+	SetXMLProperty(sFile, MOVPICS_FILMSTRIPVIEW_PATH, "movingpictures."+sStyle+".filmstripview.xml");
+	SetXMLProperty(sFile, MOVPICS_FILMSTRIPMEDIAINFO_PATH, "movingpictures."+sStyle+".filmstripview.mediainfo.xml");
+	SetXMLProperty(sFile, MOVPICS_TOPBAR_PATH, "movingpictures."+sStyle+".topbar.xml");	
+	
+	switch (g_sThumbLayout)
+		case "0":
+			SetXMLProperty(sFile, MOVPICS_FACADE_PATH, "movingpictures."+sStyle+".facade.xml");			
+			SetXMLProperty(sFile, MOVPICS_BACKGROUNDOVERLAY_PATH, "movingpictures."+sStyle+".background.overlays.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEW_PATH, "movingpictures."+sStyle+".thumbsview.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures."+sStyle+".thumbsview.mediainfo.xml");
+		case "1":
+			SetXMLProperty(sFile, MOVPICS_FACADE_PATH, "movingpictures."+sStyle+".thumbsview.12x4.8x3.facade.xml");			
+			SetXMLProperty(sFile, MOVPICS_BACKGROUNDOVERLAY_PATH, "movingpictures."+sStyle+".thumbsview.12x4.8x3.background.overlays.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEW_PATH, "movingpictures.common.thumbsview.12x4.8x3.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures.common.thumbsview.12x4.8x3.mediainfo.xml");
+		case "2":
+			SetXMLProperty(sFile, MOVPICS_FACADE_PATH, "movingpictures."+sStyle+".thumbsview.12x3.8x2.facade.xml");			
+			SetXMLProperty(sFile, MOVPICS_BACKGROUNDOVERLAY_PATH, "movingpictures."+sStyle+".thumbsview.12x3.8x2.background.overlays.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEW_PATH, "movingpictures.common.thumbsview.12x3.8x2.xml");
+			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures.common.thumbsview.12x3.8x2.mediainfo.xml");
+	endswitch;
 	
 	// Set Default Skin
 	if g_bSetAsDefaultSkin then
@@ -3242,6 +3243,53 @@ begin
 	    // save the xml	    
 	    oXMLdoc.Save (szFile);
 	    
+	    // release objects used
+	    set oXMLdoc = NOTHING;
+	    set oNodes = NOTHING;	   
+	    
+	catch
+	    
+	    Enable(LOGGING);
+		return -1;
+		
+	endcatch;
+	
+	Enable(LOGGING);
+	return 0;
+
+end;
+
+function NUMBER GetSkinDefine(szFile, szDefine, szValue)
+	OBJECT oXMLdoc, oNodes;
+	STRING sNode;
+	INT i;
+begin
+	Disable(LOGGING);
+	
+	try
+		// Prepare XML parser object
+		set oXMLdoc = CreateObject("Microsoft.XMLDOM");
+		
+		oXMLdoc.async = FALSE;
+		oXMLdoc.preserveWhiteSpace = TRUE;
+		
+		// Load the document 	    
+		oXMLdoc.Load (szFile);
+		
+		sNode = "/window/define";	    
+	    set oNodes = oXMLdoc.DocumentElement.SelectNodes(sNode);
+		
+		// Traverse all defines in xml until 
+	    // we reach 'szDefine'
+	    for i=0 to oNodes.length - 1
+		
+			if oNodes(i).Text % szDefine then                
+                // Match found, get value                  
+                StrSub ( szValue, oNodes(i).Text, (StrLength(szDefine) + 1), 3 );                
+	        endif;
+		
+		endfor;   		    
+	
 	    // release objects used
 	    set oXMLdoc = NOTHING;
 	    set oNodes = NOTHING;	   
