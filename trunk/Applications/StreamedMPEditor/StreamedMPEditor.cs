@@ -187,7 +187,9 @@ namespace StreamedMPEditor
 
     public Regex isIleagalXML = new Regex("[&<>]");
 
-    mrsFormatOptions mrsForm = new mrsFormatOptions();
+    TVSereisFormatOptions tvSeriesOptions = new TVSereisFormatOptions();
+    MovPicsSummaryOptions movPicsOptions = new MovPicsSummaryOptions();
+
     CheckSum checkSum = new CheckSum();
 
     #endregion
@@ -343,7 +345,6 @@ namespace StreamedMPEditor
           pbFanartPicTVSeries.Visible = true;
           pbPosterPicMovPics.Visible = false;
           pbFanartPicMovPics.Visible = false;
-          btFormatOptions.Visible = true;
         }
 
         loadMenuSettings();

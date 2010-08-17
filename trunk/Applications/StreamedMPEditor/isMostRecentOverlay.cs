@@ -817,9 +817,9 @@
       if (sumStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
 
-        string mrSeriesNameFont = mrsForm.mrSeriesFont;
-        string mrEpisodeFont = mrsForm.mrEpisodeFont;
-        bool mrSeriesTitleLast = mrsForm.mrTitleLast;
+        string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
+        string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
+        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
 
         
 
@@ -884,7 +884,7 @@
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
-                    "<posY>260</posY>\n" +
+                    "<posY>262</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
                     "<font>" + mrEpisodeFont + "</font>\n" +
@@ -934,7 +934,7 @@
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
-                    "<posY>295</posY>\n" +
+                    "<posY>297</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
                     "<font>" + mrEpisodeFont + "</font>\n" +
@@ -971,7 +971,7 @@
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
-                    "<posY>330</posY>\n" +
+                    "<posY>332</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
                     "<font>" + mrEpisodeFont + "</font>\n" +
@@ -1726,9 +1726,9 @@
       if (sumStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
 
-        string mrSeriesNameFont = mrsForm.mrSeriesFont;
-        string mrEpisodeFont = mrsForm.mrEpisodeFont;
-        bool mrSeriesTitleLast = mrsForm.mrTitleLast;
+        string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
+        string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
+        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
 
 
 
@@ -1783,6 +1783,7 @@
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
+                    "<font>" + mrMovieTitleFont + "</font>" +
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
                   "<control>\n" +
@@ -1793,17 +1794,17 @@
                     "<posY>262</posY>\n" +
                     "<width>257</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>\n" +
-                    "<font>mediastream10</font>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>" +
                   "<control>" +
                     "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1175</posX>" +
+                    "<posX>1190</posX>" +
                     "<posY>262</posY>" +
-                    "<width>84</width>" +
-                    "<height>16</height>" +
+                    "<width>70</width>" +
+                    "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
                   "</control>" +
                   "<control>\n" +
@@ -1838,6 +1839,7 @@
                     "<posY>280</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.title</label>\n" +
+                    "<font>" + mrMovieTitleFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
@@ -1849,17 +1851,17 @@
                     "<posY>297</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.runtime #StreamedMP.recentlyAdded.movie2.certification</label>\n" +
-                    "<font>mediastream10</font>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>" +
                     "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1175</posX>" +
+                    "<posX>1190</posX>" +
                     "<posY>297</posY>" +
-                    "<width>84</width>" +
-                    "<height>16</height>" +
+                    "<width>70</width>" +
+                    "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
                   "</control>" +
                 "</control>\n" +
@@ -1883,6 +1885,7 @@
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
+                    "<font>" + mrMovieTitleFont + "</font>" +
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
                   "<control>\n" +
@@ -1893,17 +1896,17 @@
                     "<posY>332</posY>\n" +
                     "<width>255</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>\n" +
-                    "<font>mediastream10</font>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>" +
                     "<description>Movie 3 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1175</posX>" +
+                    "<posX>1190</posX>" +
                     "<posY>332</posY>" +
-                    "<width>84</width>" +
-                    "<height>16</height>" +
+                    "<width>70</width>" +
+                    "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
                   "</control>" +
                 "</control>\n" +

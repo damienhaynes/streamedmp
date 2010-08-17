@@ -4026,8 +4026,8 @@ namespace StreamedMPEditor
       string tvSeriesMostRecent = cbMostRecentTvSeries.Checked ? "true" : "false";
       string movPicsMostRecent = cbMostRecentMovPics.Checked ? "true" : "false";
       string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
-      string mrSeriesEpisodeFormat = mrsForm.mrSeriesEpisodeFormat ? "true" : "false";
-      string mrTitleLast = mrsForm.mrTitleLast ? "true" : "false";
+      string mrSeriesEpisodeFormat = tvSeriesOptions.mrSeriesEpisodeFormat ? "true" : "false";
+      string mrTitleLast = tvSeriesOptions.mrTitleLast ? "true" : "false";
       string settingOldStyleExitButtons = cbExitStyleNew.Checked ? "true" : "false";
       string mrTVSeriesCycleFanart = mostRecentTVSeriesCycleFanart ? "true" : "false";
       string mrMovPicsCycleFanart = mostRecentMovPicsCycleFanart ? "true" : "false";
@@ -4141,11 +4141,13 @@ namespace StreamedMPEditor
                 + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 2, true)
                 + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 2, true)
                 + generateEntry("mrTitleLast", mrTitleLast, 2, true)
-                + generateEntry("mrEpisodeFont", mrsForm.mrEpisodeFont, 2, true)
-                + generateEntry("mrSeriesFont", mrsForm.mrSeriesFont, 2, true)
-                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons,2,true)
-                + generateEntry("mrTVSeriesCycleFanart",mrTVSeriesCycleFanart,2,true)
+                + generateEntry("mrEpisodeFont", tvSeriesOptions.mrEpisodeFont, 2, true)
+                + generateEntry("mrSeriesFont", tvSeriesOptions.mrSeriesFont, 2, true)
+                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons, 2, true)
+                + generateEntry("mrTVSeriesCycleFanart", mrTVSeriesCycleFanart, 2, true)
                 + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 2, true)
+                + generateEntry("mrMovieTitleFont", movPicsOptions.MovieTitleFont, 2, true)
+                + generateEntry("mrMovieDetailFont", movPicsOptions.MovieDetailFont, 2, true)
                 + "</section>");
       
       StringBuilder rawXML = new StringBuilder();
