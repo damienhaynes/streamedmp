@@ -977,11 +977,6 @@ namespace StreamedMPEditor
       setBasicHomeValues();
     }
 
-    private void btFormatOptions_Click(object sender, EventArgs e)
-    {
-      mrsForm.Show();
-    }
-
     #endregion
 
     #region ISetupForm Members

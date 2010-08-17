@@ -1409,20 +1409,6 @@ namespace StreamedMPEditor
       detectedHD.Visible = false;
     }
 
-    private void pTVSeriesRecent_Click(object sender, EventArgs e)
-    {
-      cboxSummaryFor.Text = "TVSeries";
-      cboxSummaryFor.Refresh();
-      doSummaryFor();
-    }
-
-    private void pMovPicsRecent_Click(object sender, EventArgs e)
-    {
-      cboxSummaryFor.Text = "MovingPictures";
-      cboxSummaryFor.Refresh();
-      doSummaryFor();
-    }
-
     private void StreamedMPMenu_Click(object sender, EventArgs e)
     {
       // Index 5 is the SplashScreen Tab
@@ -1457,6 +1443,26 @@ namespace StreamedMPEditor
       }
     }
 
+    private void pTVSeriesRecent_Click(object sender, EventArgs e)
+    {
+      if (cbMostRecentTvSeries.Checked && rbTVSeriesSummary.Checked)
+      {
+        cboxSummaryFor.Text = "TVSeries";
+        cboxSummaryFor.Refresh();
+        doSummaryFor();
+      }
+    }
+
+    private void pMovPicsRecent_Click(object sender, EventArgs e)
+    {
+      if (cbMostRecentMovPics.Checked && rbMovPicsSummary.Checked)
+      {
+        cboxSummaryFor.Text = "MovingPictures";
+        cboxSummaryFor.Refresh();
+        doSummaryFor();
+      }
+    }
+
     private void cbMostRecentTvSeries_CheckedChanged(object sender, EventArgs e)
     {
       if (cbMostRecentTvSeries.Checked == true)
@@ -1464,32 +1470,63 @@ namespace StreamedMPEditor
         gbTvSeriesOptions.Enabled = true;
 
         if (cbMostRecentMovPics.Checked)
-          cboxSummaryFor.Enabled = true;
-        else
-        {
-          cboxSummaryFor.Text = "TVSeries";
-          cboxSummaryFor.Refresh();
-          doSummaryFor();
-          cboxSummaryFor.Enabled = false;
-          gbSummaryStyle.Enabled = true;
-        }
+          if (rbMovPicsSummary.Checked && rbTVSeriesSummary.Checked)
+          {
+            cboxSummaryFor.Enabled = true;
+            gbSummaryStyle.Visible = true;
+            pSumHeader.Visible = true;
+          }
+          else
+          {
+            if (rbTVSeriesSummary.Checked)
+            {
+              cboxSummaryFor.Text = "TVSeries";
+              cboxSummaryFor.Refresh();
+              doSummaryFor();
+              cboxSummaryFor.Enabled = false;
+              gbSummaryStyle.Enabled = true;
+              gbSummaryStyle.Visible = true;
+              pSumHeader.Visible = true;
+            }
+            if (rbMovPicsSummary.Checked)
+            {
+              cboxSummaryFor.Text = "MovingPictures";
+              cboxSummaryFor.Refresh();
+              doSummaryFor();
+              cboxSummaryFor.Enabled = false;
+              gbSummaryStyle.Enabled = true;
+              gbSummaryStyle.Visible = true;
+              pSumHeader.Visible = true;
+            }
+          }
       }
       else
       {
         if (cbMostRecentMovPics.Checked)
         {
-          cboxSummaryFor.Text = "MovingPictures";
-          cboxSummaryFor.Refresh();
-          doSummaryFor();
-          cboxSummaryFor.Enabled = false;
-          gbTvSeriesOptions.Enabled = false;
-          gbSummaryStyle.Enabled = true;
+          if (rbMovPicsSummary.Checked)
+          {
+            cboxSummaryFor.Text = "MovingPictures";
+            cboxSummaryFor.Refresh();
+            doSummaryFor();
+            cboxSummaryFor.Enabled = false;
+            gbTvSeriesOptions.Enabled = false;
+            gbSummaryStyle.Enabled = true;
+          }
+          else
+          {
+            gbSummaryStyle.Enabled = false;
+            gbSummaryStyle.Visible = false;
+            pSumHeader.Visible = false;
+          }
         }
         else
         {
           cboxSummaryFor.Enabled = false;
           gbTvSeriesOptions.Enabled = false;
           gbSummaryStyle.Enabled = false;
+          gbSummaryStyle.Visible = false;
+          pSumHeader.Visible = false;
         }
       }
     }
@@ -1499,34 +1536,63 @@ namespace StreamedMPEditor
       if (cbMostRecentMovPics.Checked)
       {
         gbMovPicsOptions.Enabled = true;
-      
-        if (cbMostRecentTvSeries.Checked)
+
+        if (rbMovPicsSummary.Checked && rbTVSeriesSummary.Checked)
+        {
           cboxSummaryFor.Enabled = true;
+          gbSummaryStyle.Visible = true;
+          pSumHeader.Visible = true;
+        }
         else
         {
-          cboxSummaryFor.Text = "MovingPictures";
-          cboxSummaryFor.Refresh();
-          doSummaryFor();
-          cboxSummaryFor.Enabled = false;
-          gbSummaryStyle.Enabled = true;
+          if (rbTVSeriesSummary.Checked)
+          {
+            cboxSummaryFor.Text = "TVSeries";
+            cboxSummaryFor.Refresh();
+            doSummaryFor();
+            cboxSummaryFor.Enabled = false;
+            gbSummaryStyle.Enabled = true;
+            gbSummaryStyle.Visible = true;
+            pSumHeader.Visible = true;
+          }
+          if (rbMovPicsSummary.Checked)
+          {
+            cboxSummaryFor.Text = "MovingPictures";
+            cboxSummaryFor.Refresh();
+            doSummaryFor();
+            cboxSummaryFor.Enabled = false;
+            gbSummaryStyle.Enabled = true;
+            gbSummaryStyle.Visible = true;
+            pSumHeader.Visible = true;
+          }
         }
       }
       else
       {
         if (cbMostRecentTvSeries.Checked)
         {
-          cboxSummaryFor.Text = "TVSeries";
-          cboxSummaryFor.Refresh();
-          doSummaryFor();
-          cboxSummaryFor.Enabled = false;
-          gbMovPicsOptions.Enabled = false;
-          gbSummaryStyle.Enabled = true;
+          if (rbTVSeriesSummary.Checked)
+          {
+            cboxSummaryFor.Text = "TVSeries";
+            cboxSummaryFor.Refresh();
+            doSummaryFor();
+            cboxSummaryFor.Enabled = false;
+            gbMovPicsOptions.Enabled = false;
+            gbSummaryStyle.Enabled = true;
+          }
+          else
+          {
+            gbSummaryStyle.Visible = false;
+            pSumHeader.Visible = false;
+          }
         }
         else
         {
           cboxSummaryFor.Enabled = false;
           gbTvSeriesOptions.Enabled = false;
           gbSummaryStyle.Enabled = false;
+          gbSummaryStyle.Visible = false;
+          pSumHeader.Visible = false;
         }
 
       }
@@ -1662,6 +1728,11 @@ namespace StreamedMPEditor
     private void cboxSummaryFor_SelectedIndexChanged(object sender, EventArgs e)
     {
       doSummaryFor();
+    }
+
+    private void btFormatOptions_Click(object sender, EventArgs e)
+    {
+      mrsForm.Show();
     }
 
     void doSummaryFor()
