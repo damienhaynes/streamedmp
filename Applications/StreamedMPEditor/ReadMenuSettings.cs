@@ -218,25 +218,40 @@ namespace StreamedMPEditor
         mostRecentTVSeriesSummStyle = readEntryValue(optionsTag, "mostRecentTVSeriesSummStyle", nodelist);
         mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);     
         cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
-        mrsForm.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
-        mrsForm.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
-        mrsForm.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
-        mrsForm.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
+        tvSeriesOptions.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
+        tvSeriesOptions.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
+        tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
+        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
         cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
         mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
         mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
+
+        movPicsOptions.MovieTitleFont = tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
+        movPicsOptions.MovieDetailFont = readEntryValue(optionsTag, "mrMovieDetailFont", nodelist);
+
       }
       catch
       {
         // Most likley a new option added but not written to file yet - just continue
       }
 
-      if (mrsForm.mrSeriesFont == "false" || mrsForm.mrEpisodeFont == "false")
+      if(tvSeriesOptions.mrSeriesFont == "mediastream9c")
+        tvSeriesOptions.mrSeriesFont = "mediastream10c";
+
+      if (tvSeriesOptions.mrEpisodeFont == "mediastream9c")
+        tvSeriesOptions.mrEpisodeFont = "mediastream10c";
+
+      if (tvSeriesOptions.mrSeriesFont == "false" || tvSeriesOptions.mrEpisodeFont == "false")
       {
-        mrsForm.mrSeriesFont = "mediastream9c";
-        mrsForm.mrEpisodeFont = "mediastream10tc (Bold)";
+        tvSeriesOptions.mrSeriesFont = "mediastream10c";
+        tvSeriesOptions.mrEpisodeFont = "mediastream10tc (Bold)";
       }
 
+      if (movPicsOptions.MovieTitleFont == "false" || movPicsOptions.MovieDetailFont == "false")
+      {
+        movPicsOptions.MovieTitleFont = "mediastream10tc (Bold)";
+        movPicsOptions.MovieDetailFont = "mediastream10c";
+      }
 
       // As only saving the animated state set the static state true if animimated state is false
       if (!animatedIconsInstalled())
@@ -258,6 +273,9 @@ namespace StreamedMPEditor
         weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
         installWeatherBackgrounds.Visible = true;
       }
+
+      if (tvRecentDisplayType == "summary" || movPicsDisplayType == "summary")
+        btFormatOptions.Enabled = true;
 
       if (tvRecentDisplayType == "summary")
       {
@@ -284,38 +302,16 @@ namespace StreamedMPEditor
         rbMovPicsFull.Checked = true;
       }
 
-      // Old Setting - if found in usermenuprofile use as setting for TVSeries Summary Style
-      if (mostRecentSumStyle == "fanart")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-        btFormatOptions.Enabled = true;
-      }
-      else if (mostRecentSumStyle == "poster")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
-        rbPosterStyle.Checked = true;
-        btFormatOptions.Enabled = false;
-      }
-      else
-      {
-        //Default to Fanart Style
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
-
       // TVSeries most recent summry Style
       if (mostRecentTVSeriesSummStyle == "fanart")
       {
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
-        btFormatOptions.Enabled = true;
       }
       else if (mostRecentSumStyle == "poster")
       {
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         rbPosterStyle.Checked = true;
-        btFormatOptions.Enabled = false;
       }
       else
       {
@@ -329,13 +325,11 @@ namespace StreamedMPEditor
       {
         mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
-        btFormatOptions.Enabled = true;
       }
       else if (mostRecentMovPicsSummStyle == "poster")
       {
         mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
         rbPosterStyle.Checked = true;
-        btFormatOptions.Enabled = false;
       }
       else
       {
@@ -343,6 +337,27 @@ namespace StreamedMPEditor
         mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
       }
+
+      //
+      // Old Setting - if found in usermenuprofile use as setting for TVSeries Summary Style
+      //
+      if (mostRecentSumStyle == "fanart")
+      {
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+      else if (mostRecentSumStyle == "poster")
+      {
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
+        rbPosterStyle.Checked = true;
+      }
+      else
+      {
+        //Default to Fanart Style
+        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+        rbFanartStyle.Checked = true;
+      }
+      
 
 
       if (splashScreenImage == "false")

@@ -1692,9 +1692,7 @@ namespace StreamedMPEditor
         if (cboxSummaryFor.Text == "TVSeries")
           mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         else
-          mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
-        
-        btFormatOptions.Enabled = true;
+          mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;        
       }
       else
       {
@@ -1702,8 +1700,6 @@ namespace StreamedMPEditor
           mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         else
           mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
-
-        btFormatOptions.Enabled = false;
       }
     }
 
@@ -1732,7 +1728,10 @@ namespace StreamedMPEditor
 
     private void btFormatOptions_Click(object sender, EventArgs e)
     {
-      mrsForm.Show();
+      if (cboxSummaryFor.Text == "TVSeries")
+        tvSeriesOptions.Show();
+      else
+        movPicsOptions.Show();
     }
 
     void doSummaryFor()
@@ -1747,11 +1746,6 @@ namespace StreamedMPEditor
         pbPosterPicMovPics.Visible = false;
         pbFanartPicMovPics.Visible = false;
 
-        if (rbTBSeriesFull.Checked)
-          btFormatOptions.Enabled = false;
-        else
-          btFormatOptions.Enabled = true;
-
         if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
         {
           rbFanartStyle.Checked = true;
@@ -1762,9 +1756,6 @@ namespace StreamedMPEditor
           rbFanartStyle.Checked = false;
           rbPosterStyle.Checked = true;
         }
-
-        btFormatOptions.Visible = true;
-
       }
       else
       {
@@ -1774,14 +1765,12 @@ namespace StreamedMPEditor
         pbFanartPicTVSeries.Visible = false;
         pbPosterPicMovPics.Visible = true;
         pbFanartPicMovPics.Visible = true;
-        btFormatOptions.Visible = false;
 
         if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
         {
           rbFanartStyle.Checked = true;
           rbPosterStyle.Checked = false;
         }
-
         else
         {
           rbFanartStyle.Checked = false;
