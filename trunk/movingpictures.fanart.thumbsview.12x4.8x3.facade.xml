@@ -63,6 +63,42 @@ This file should contain the facade view
 		    <animation effect="fade" time="250">WindowClose</animation>	
 		</control>
 		
+		<!-- Movie Counts -->
+		<control>
+			<description>Movie Count Background</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1113</posX>
+			<posY>10</posY>
+			<width>159</width>
+			<height>28</height>
+			<texture>mediacountbackground.png</texture>
+			<visible>!control.isvisible(51)+control.isvisible(50)</visible>
+		</control>    
+		<control>
+			<description>Movie Count Label</description>
+			<type>label</type>
+			<label>#MovingPictures.Translation.Movies.Label:</label>
+			<id>0</id>
+			<posX>1123</posX>
+			<posY>14</posY>
+			<font>mediastream10tc</font>
+			<textcolor>ff909090</textcolor>
+			<visible>!control.isvisible(51)+control.isvisible(50)</visible>
+		</control>
+		<control>
+			<type>label</type>
+			<id>0</id>
+			<posX>1246</posX>
+			<posY>12</posY>
+			<width>350</width>
+			<font>mediastream11c</font>
+			<textcolor>ff006698</textcolor>
+			<align>right</align>
+			<label>#MovingPictures.general.filteredmoviecount</label>
+			<visible>!control.isvisible(51)+control.isvisible(50)</visible>
+		</control>
+		
 		<control>
 			<description>composite control consisting of a list control and a thumbnail panel</description>
 			<type>facadeview</type>
@@ -213,5 +249,66 @@ This file should contain the facade view
 				<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
 			</control>
 		</control>
+		
+		
+		<!-- Parental Controls Indicator -->
+		<control>
+			<description>Parental Controls Lock Indicator</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>1075</posX>
+			<posY>8</posY>
+			<width>36</width>
+			<height>36</height>
+			<texture>parentallock.png</texture>
+			<visible>control.isvisible(16)+!control.isvisible(51)+control.isvisible(50)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+		</control>		
+		<control>
+			<description>Parental Controls Lock Indicator</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>1240</posX>
+			<posY>8</posY>
+			<width>36</width>
+			<height>36</height>
+			<texture>parentallock.png</texture>
+			<visible>control.isvisible(16)+control.isvisible(51)+!control.isvisible(50)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>		
+		</control>	
+		
+		<!-- Selected Category Image -->
+		<control>
+			<description>Default Category Image</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>125</posX>
+			<posY>175</posY>
+			<width>454</width>
+			<height>455</height>
+			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
+			<keepaspectratio>yes</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<!--<animation effect="fade" time="250">visible</animation>-->
+			<visible>control.isvisible(51)+!control.isvisible(50)+!Control.HasThumb(100)</visible>
+		</control>		
+		<control>
+			<description>Selected Category Image</description>
+			<type>image</type>
+			<id>100</id>
+			<posX>125</posX>
+			<posY>175</posY>
+			<width>454</width>
+			<height>455</height>
+			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\#MovingPictures.SelectedNode.FileFriendlyName.png</texture>	
+			<keepaspectratio>yes</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>			
+			<visible>control.isvisible(51)+!control.isvisible(50)</visible>
+		</control>	
+		
 	</controls>
 </window>
