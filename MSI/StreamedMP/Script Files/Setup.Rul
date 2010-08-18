@@ -246,8 +246,8 @@ prototype NUMBER	SetXMLProperty(STRING,STRING,STRING);
 prototype VOID		TVSeriesIcons(BOOL);
 prototype VOID		TVSeriesImageStyle(BOOL);    
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
-prototype NUMBER	SetMPXMLProperty(STRING,STRING,STRING);
-prototype NUMBER	GetMPXMLProperty(STRING,STRING,BYREF STRING); 
+prototype NUMBER	SetMPXMLProperty(STRING, STRING, STRING, STRING);
+prototype NUMBER	GetMPXMLProperty(STRING, STRING, STRING ,BYREF STRING); 
 prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
 prototype NUMBER	GetSkinDefine(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
@@ -256,14 +256,16 @@ prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
 prototype VOID		ModifySkinFilesForFULLHD(BOOL);
-prototype VOID		GetListFacadeColors(); 
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
 prototype VOID 		ShowControl(STRING, NUMBER);    
 prototype VOID		DetectWinLargeFonts();   
 prototype STRING	BoolToString(BOOL); 
+prototype STRING	BoolToStringInt(BOOL);
 prototype NUMBER	GetVersionDigit(STRING, INT);
 //prototype NUMBER 	GetMediaPortalRevision();
+prototype VOID		CheckXMLSectionsExist();
+prototype NUMBER	CheckStringExists(STRING, STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -284,12 +286,12 @@ BOOL g_bStartBasicHome;
 BOOL g_bShowRoundedCovers;
 BOOL g_bShowHiddenMenuImage;      
 BOOL g_bEnableRandomFanartInMyTV;
-BOOL g_bBasicHomeUpgrade;                         
+BOOL g_bBasicHomeUpgrade;
+BOOL g_bLargeFonts;                         
                                
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;
-STRING g_sTVMiniGuideSize;  
-STRING g_sFontSize;
+STRING g_sTVMiniGuideSize; 
 STRING g_sDownloadInstallDir;   
 STRING g_sWideBannerLayout;
 STRING g_sUnfocusedAlphaListItems;
@@ -324,9 +326,9 @@ STRING g_sRemoteColor;
 function OnBegin()
 	STRING szVersion, szUpgradeMessage, szValue;
 	NUMBER nResult;
-	BOOL bUpgradeSupported; 
-begin 
-	
+	BOOL bUpgradeSupported;
+begin                
+
 	DetectWinLargeFonts();
  
 	// See if older version is installed
@@ -446,117 +448,143 @@ begin
 	
 	// Set Installation Directories
 	SetInstallationDirectories();
-	 
-	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
-	
-	// Read TVSeries Default	
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",nvType,svValue,nvSize) < 0) then
-		svValue = "1";		
-	endif;	 
+
+	// Read TVSeries Default 
+	sFile = g_sConfigDir^"StreamedMPConfig.xml";
+	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", svValue) < 0 then
+		svValue = "1";
+	endif;
 	if svValue = "1" then
 		g_bTVSeriesDefault = TRUE;			
-	endif;
-	// now stored in define because can be changed from GUI as well
-	if (GetSkinDefine(STREAMEDMP_SKIN_TVSERIES, "#defaultstyle", svValue) = 0) then;
-		if svValue = "yes" then
-			g_bTVSeriesDefault = TRUE;
-		endif;
-	endif;   
-	
-	// Read TVSeries widebanner layout
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVSERIESWIDEBANNERLAYOUT",nvType,g_sWideBannerLayout,nvSize) < 0) then
-		g_sWideBannerLayout = "0";		
-	endif;	 	
-	GetSkinDefine(STREAMEDMP_SKIN_TVSERIES, "#widebannerstyle", g_sWideBannerLayout);
-	
-	// Read Moving Pictures Default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",nvType,svValue,nvSize) < 0) then
-		svValue = "1";		
 	endif;	
+	
+	// Read TVSeries widebanner layout	
+	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesWideBannerMod", g_sWideBannerLayout) < 0 then
+		g_sWideBannerLayout = "0";
+	endif;
+	 
+	// Determine if 'Total Episode Count' fields are added to List View 	
+	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowTotalEpisodeCounts", svValue) < 0 then
+		svValue = "0";
+	endif;
 	if svValue = "1" then
-		g_bMovingPicturesDefault = TRUE;			
-	endif;
-	if (GetSkinDefine(STREAMEDMP_SKIN_MOVINGPICTURES, "#defaultstyle", svValue) = 0) then;
-		if svValue = "yes" then
-			g_bMovingPicturesDefault = TRUE;
-		endif;
-	endif;
-	
-	// Read MovingPictures Thumb layout
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"MOVINGPICTURESTHUMBLAYOUT",nvType,g_sThumbLayout,nvSize) < 0) then
-		g_sThumbLayout = "0";		
-	endif;
-	GetSkinDefine(STREAMEDMP_SKIN_MOVINGPICTURES, "#thumbnailstyle", g_sThumbLayout);
-	
-	// Read TVGuide Size default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",nvType,g_sTVGuideSize,nvSize) < 0) then
-		g_sTVGuideSize = "10";							
-	endif;	 
-	
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"TVMINIGUIDESIZE",nvType,g_sTVMiniGuideSize,nvSize) < 0) then
-		g_sTVMiniGuideSize = "7";							
-	endif;
-	                        	                        
-	// Read Font Size default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",nvType,g_sFontSize,nvSize) < 0) then
-		g_sFontSize = "Default";		
-	endif;   
-	
-	// Read Show Hidden Menu Image
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"SHOWHIDDENMENUIMAGE",nvType,svValue,nvSize) < 0) then
-		svValue = "1";		
+		g_bShowTotalEpisodeCount = TRUE;			
 	endif;	
+		
+	// Determine if 'Watched/Unwatched' Icons are added to List View	
+	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", svValue) < 0 then
+		svValue = "1";
+	endif;
 	if svValue = "1" then
-		g_bShowHiddenMenuImage = TRUE;			
-	endif; 
-	
-	// Enable Random Fanart in MyTV
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ENABLERANDOMFANARTINMYTV",nvType,svValue,nvSize) < 0) then
-		svValue = "0";		
+		g_bShowIconsInListView = TRUE;			
 	endif;	
-	if svValue = "1" then
-		g_bEnableRandomFanartInMyTV = TRUE;			
+	
+	// Read TVSeries Watched/Unwatched List Image Style
+	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowUnwatchedIconsOnlyInListView", svValue) < 0 then
+		svValue = "0";
 	endif;
-	
-	// Determine if 'Total Episode Count' fields are added to List View
-	// Just Check Series, but set for both Series & Season
-	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
-	if (GetXMLProperty(sFile, "/settings/views/series/item3", svValue) < 0) then
-		g_bShowTotalEpisodeCount = FALSE;
-	else
-		if svValue = "SeriesTotalEpisodes_1" || svValue = "SeriesTotalEpisodes_2" || svValue = "SeriesEpCount" then
-			g_bShowTotalEpisodeCount = TRUE;	
-		endif;
-	endif;
-	
-	// Determine if 'Watched/Unwatched' Icons are added to List View
-	// Just Check Series, but set for both Series & Season	
-	if (GetXMLProperty(sFile, "/settings/views/series/item1", svValue) < 0) then
-		g_bShowIconsInListView = TRUE;
-	else
-		if svValue = "SeriesWatchedAndUnWatched" || svValue = "SeriesUnWatched" || svValue = "SeriesIcons" then
-			g_bShowIconsInListView = TRUE;		
-		endif;
-	endif;		
-	
-	// Read Icons in Artwork default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ICONSINARTWORK",nvType,svValue,nvSize) < 0) then
-		svValue = "1";		
-	endif;	
-	if svValue = "1" then
-		g_bShowArtworkIcons = TRUE;			
-	endif;
-	
-	// Read Watched/Unwatched List Image Style
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"WATCHEDIMAGESTYLE",nvType,svValue,nvSize) < 0) then
-		svValue = "0";		
-	endif;	
 	if svValue = "1" then
 		g_bShowUnWatchedOnlyInListImage = TRUE;			
+	endif;	
+		
+	// Read Moving Pictures Default	
+	if GetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", svValue) < 0 then
+		svValue = "1";
+	endif;
+	if svValue = "1" then
+		g_bMovingPicturesDefault = TRUE;			
+	endif;	
+	
+	// Read MovingPictures Thumb layout	
+	if GetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesThumbMod", g_sThumbLayout) < 0 then
+		g_sThumbLayout = "0";
 	endif;
 	
+	// Read TVGuide Size default
+	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvGuideSize", g_sTVGuideSize) < 0 then
+		g_sTVGuideSize = "10";
+	endif;
+	
+	// Read TVMiniGuide Size default
+	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvMiniGuideSize", g_sTVMiniGuideSize) < 0 then
+		g_sTVMiniGuideSize = "7";
+	endif;
+	
+	// Enable Random Fanart in MyTV
+	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvEnableRandomTVSeriesFanart", svValue) < 0 then
+		svValue = "0";
+	endif;
+	if svValue = "1" then
+		g_bShowHiddenMenuImage = TRUE;
+	endif; 
+
+	// Read NowPlaying Style default
+	if GetMPXMLProperty(sFile, "MusicGUI", "musicNowPlayingMod", g_sNowPlayingChoice) < 0 then
+		g_sNowPlayingChoice = "0";
+	endif;
+     	                        
+	// Read Font Size default 
+	if GetMPXMLProperty(sFile, "Misc", "miscUseLargeFonts", svValue) < 0 then
+		svValue = "0";
+	endif;
+	if svValue = "1" then
+		g_bLargeFonts = TRUE;
+	endif;
+		
+	// Read Show Hidden Menu Image
+	if GetMPXMLProperty(sFile, "Misc", "miscShowHiddenMenuImage", svValue) < 0 then
+		svValue = "1";
+	endif;
+	if svValue = "1" then
+		g_bShowHiddenMenuImage = TRUE;
+	endif;
+	
+	// Read Icons in Artwork default
+	if GetMPXMLProperty(sFile, "Misc", "miscShowIconsInArtwork", svValue) < 0 then
+		svValue = "1";
+	endif;
+	if svValue = "1" then
+		g_bShowArtworkIcons = TRUE;
+	endif;
+	
+	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
+	if GetMPXMLProperty(sFile, "Misc", "miscShowRoundedCovers", svValue) < 0 then
+		svValue = "1";
+	endif;
+	if svValue = "1" then
+		g_bShowRoundedCovers = TRUE;
+	endif;
+	
+	// Unfocused Alpha List Layout
+	if GetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems) < 0 then
+		g_sUnfocusedAlphaListItems = "100";
+	endif;
+	               	
+	// Unfocused Alpha Thumbs Layout
+	if GetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs) < 0 then
+		g_sUnfocusedAlphaThumbs = "100";
+	endif;
+		
+	// Get List Facade Colors
+	if GetMPXMLProperty(sFile, "Misc", "miscTextColor", g_sTextColor) < 0 then
+		g_sTextColor = "FFFFFF";
+	endif;
+	if GetMPXMLProperty(sFile, "Misc", "miscTextColor2", g_sText2Color) < 0 then
+		g_sText2Color = "FFFFFF";
+	endif;
+	if GetMPXMLProperty(sFile, "Misc", "miscTextColor3", g_sText3Color) < 0 then
+		g_sText3Color = "FFFFFF";
+	endif;
+	if GetMPXMLProperty(sFile, "Misc", "miscWatchedColor", g_sWatchedColor) < 0 then
+		g_sWatchedColor = "808080";
+	endif;
+	if GetMPXMLProperty(sFile, "Misc", "miscRemoteColor", g_sRemoteColor) < 0 then
+		g_sRemoteColor = "FFA075";
+	endif;
+			
 	// Get Start With Basic Home property
-	if GetMPXMLProperty("general","startbasichome", svValue) < 0 then
+	sFile = g_sConfigDir^"MediaPortal.xml";
+	if GetMPXMLProperty(sFile, "general","startbasichome", svValue) < 0 then
 		g_bStartBasicHome = TRUE;
 	else
 		if svValue = "yes" then
@@ -564,78 +592,7 @@ begin
 		endif;
 	endif;	
 	
-	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",nvType,svValue,nvSize) < 0) then
-		// Default=ON
-		svValue = "1";		
-	endif;	
-	if svValue = "1" then
-		g_bShowRoundedCovers = TRUE;			
-	endif;
-	
-	// My Music VU Meters
-	//if GetMPXMLProperty("musicmisc","vumeter", g_sVUMeter) < 0 then
-	//	g_sVUMeter = "led";	
-	//endif;	
-
-	// Unfocused Alpha List Layout               
-	sFile = STREAMEDMP_SKIN_REFERENCES;	
-	if GetXMLProperty(sFile, REFERENCES_LISTALPHA_PATH, g_sUnfocusedAlphaListItems) < 0 then
-		g_sUnfocusedAlphaListItems = "100";
-	endif;		
-	// Unfocused Alpha Thumbs Layout
-	if GetXMLProperty(sFile, REFERENCES_THUMBALPHA_PATH, g_sUnfocusedAlphaThumbs) < 0 then
-		g_sUnfocusedAlphaThumbs = "100";
-	endif;
-	
-	// Read NowPlaying Style default
-	if (RegDBGetKeyValueEx(STREAMEDMP_REG_KEY,"NOWPLAYINGSTYLE",nvType,g_sNowPlayingChoice,nvSize) < 0) then
-		g_sNowPlayingChoice = "Default";							
-	endif;
-		
-	// Get List Facade Colors
-	GetListFacadeColors();
-	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
-	
-end;
-
-function VOID GetListFacadeColors()
-	STRING svValue, szString, sFile;
-begin
-	
-	// Get ListControl Colors
-	sFile = STREAMEDMP_SKIN_REFERENCES;
-	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT_PATH, svValue) < 0 then
-		svValue = "ffFFFFFF";
-	endif;
-	StrToUpper(szString, svValue);
-	StrSub(g_sTextColor, szString, 2, 6);
-	
-	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT2_PATH, svValue) < 0 then
-		svValue = "ffFFFFFF";
-	endif;
-	StrToUpper(szString, svValue);
-	StrSub(g_sText2Color, szString, 2, 6);
-	
-	if GetXMLProperty(sFile, REFERENCES_LISTCOLORTEXT3_PATH, svValue) < 0 then
-		svValue = "ffFFFFFF";
-	endif;
-	StrToUpper(szString, svValue);
-	StrSub(g_sText3Color, szString, 2, 6);
-	
-	if GetXMLProperty(sFile, REFERENCES_LISTCOLORWATCHED_PATH, svValue) < 0 then
-		svValue = "ff808080";
-	endif;
-	StrToUpper(szString, svValue);
-	StrSub(g_sWatchedColor, szString, 2, 6);
-	
-	
-	if GetXMLProperty(sFile, REFERENCES_LISTCOLORREMOTE_PATH, svValue) < 0 then
-		svValue = "ffFFA075";
-	endif;
-	StrToUpper(szString, svValue);
-	StrSub(g_sRemoteColor, szString, 2, 6);
 	
 end;
 
@@ -1513,8 +1470,13 @@ Dlg_Wait:
 	        	// Add Font sizes to list
 	        	CtrlSetList(szDialogName,RES_COMBO_FONTS,listFonts);
 	      		
-	      		// Select Last/Default Font size                                      
-				CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize); 				
+	      		// Select Last/Default Font size
+	      		if g_bLargeFonts then
+	   				CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,"Large");		   		                                      
+	   			else
+	   				CtrlSetCurSel(szDialogName,RES_COMBO_FONTS,"Default");
+	   			endif;
+				
  				ListDestroy(listFonts);
 	      		                                      
 	      		// Populate TVGuide size list
@@ -1704,7 +1666,12 @@ Dlg_Wait:
 			g_sTVMiniGuideSize = "7";
 	endswitch;
 
-	CtrlGetCurSel(szDialogName,RES_COMBO_FONTS,g_sFontSize);	
+	CtrlGetCurSel(szDialogName,RES_COMBO_FONTS,sValue);	
+	if sValue = "Large" then
+		g_bLargeFonts = TRUE;
+	else
+		g_bLargeFonts = FALSE;
+	endif;
 	
 	//CtrlGetCurSel(szDialogName,RES_COMBO_VUMETERS,sValue);
 	//switch (sValue)
@@ -1772,7 +1739,7 @@ Dlg_Wait:
 	endswitch;
 	
 	// Font Sizes	
-	if (g_sFontSize = "Default") then
+	if (!g_bLargeFonts) then
 		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, TRUE );
 		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, FALSE );
 	else
@@ -1839,7 +1806,40 @@ Dlg_Wait:
 	        	// Add Now Playing styles to list
 	        	CtrlSetList(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,listNowPlaying);
 	      		
-	      		// Set current selection			  
+	      		// Set current selection
+	      		switch (g_sNowPlayingChoice)	
+					case "0": //"Default":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default");
+					
+					case "1": //"Fullscreen - Standard Hidden Menu":                        
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Fullscreen - Standard Hidden Menu");					   
+					    
+					case "2": //"Fullscreen - Top/Down Sliding Menu":                                           
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Fullscreen - Top/Down Sliding Menu");					    
+					    
+					case "3": //"Default - Edge Fade":                                                                    
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Edge Fade");						
+						
+					case "4": //"Default - Edge No Fade":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Edge No Fade");
+					
+					case "5": //"Default - Edge No Mask":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Edge No Mask");						
+					
+					case "6": //"Default - Window Fade":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Window Fade");
+					
+					case "7": //"Default - Window No Fade":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Window No Fade");						
+					
+					case "8": // "Default - Window No Mask":
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default - Window No Mask");						
+									
+					default:
+						CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,"Default");	
+					
+				endswitch;
+				  
 	    		CtrlSetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,g_sNowPlayingChoice); 				
  				ListDestroy(listNowPlaying);
 	       		
@@ -1868,7 +1868,7 @@ Dlg_Wait:
 	bDone = FALSE;
 	
 	// Store settings in Global Variables	
-	CtrlGetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,g_sNowPlayingChoice);
+	CtrlGetCurSel(szDialogName,RES_COMBO_NOWPLAYINGCHOICE,sValue);
     
     // Set Feature Selection
     FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, FALSE );
@@ -1881,35 +1881,45 @@ Dlg_Wait:
     FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, FALSE );
     FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, FALSE );
         
-    switch (g_sNowPlayingChoice)	
+    switch (sValue)	
 		case "Default":
+			g_sNowPlayingChoice = "0";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );
 		
 		case "Fullscreen - Standard Hidden Menu":
+			g_sNowPlayingChoice = "1";
 		    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, TRUE );
 		    
 		case "Fullscreen - Top/Down Sliding Menu":
+			g_sNowPlayingChoice = "2";
 		    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_SLIDINGMENU, TRUE );
 		    
 		case "Default - Edge Fade":
+			g_sNowPlayingChoice = "3";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, TRUE );  
 			
 		case "Default - Edge No Fade":
+			g_sNowPlayingChoice = "4";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, TRUE );
 		
 		case "Default - Edge No Mask":
+			g_sNowPlayingChoice = "5";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, TRUE );
 		
 		case "Default - Window Fade":
+			g_sNowPlayingChoice = "6";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_FADE, TRUE );
 		
 		case "Default - Window No Fade":
+			g_sNowPlayingChoice = "7";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, TRUE );
 		
 		case "Default - Window No Mask":
+			g_sNowPlayingChoice = "8";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, TRUE );
 						
-		default:
+		default:                 
+			g_sNowPlayingChoice = "0";
 			FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );	
 		
 	endswitch;
@@ -2005,28 +2015,160 @@ begin
 	
 end;
 
+function NUMBER CheckStringExists(sFile, sSearchStr)
+	LIST listID;
+	NUMBER nResult;
+	STRING svString;
+	BOOL bMatch;
+begin
+	// check if file exists
+	if !(Is(FILE_EXISTS, sFile)) then
+		return -1;
+	endif;
+	
+	// check if the string exists
+	listID = ListCreate(STRINGLIST);
+	ListReadFromFile ( listID, sFile );
+	
+	nResult = ListGetFirstString(listID, svString);
+	
+	while (nResult != END_OF_LIST)		
+		if (svString % sSearchStr) then		
+			// Match Found
+			bMatch = TRUE;
+			nResult = ListSetCurrentItem(listID, LISTLAST);
+		endif;
+		nResult = ListGetNextString(listID, svString);
+	endwhile;
+	
+	ListDestroy(listID); 
+	
+	if (bMatch) then
+		return 1;
+	else
+		return 0;
+	endif;
+	
+end;
+
+function VOID CheckXMLSectionsExist()
+	STRING TVSeriesSection,  MovingPicturesSection, MusicSection, TVSection, MiscSection;
+	STRING SearchStr, sFile;
+begin
+    
+    sFile = g_sConfigDir^"StreamedMPConfig.xml";
+    
+    // TVseries Section
+    TVSeriesSection = 		"\t<section name=\"TVSeriesConfigGUI\">"+
+    						"\n\t\t<entry name=\"tvseriesDefaultStyle\">1</entry>"+
+    						"\n\t\t<entry name=\"tvseriesWideBannerMod\">0</entry>"+
+    						"\n\t\t<entry name=\"tvseriesShowTotalEpisodeCounts\">0</entry>"+
+    						"\n\t\t<entry name=\"tvseriesShowIconsInListView\">1</entry>"+
+    						"\n\t\t<entry name=\"tvseriesShowUnwatchedIconsOnlyInListView\">0</entry>"+
+    						"\n\t</section>"+
+    						"\n</profile>";
+    
+    SearchStr = "<section name=\"TVSeriesConfigGUI\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", TVSeriesSection);
+    endif;
+	
+	// MovingPictures Section    						
+	MovingPicturesSection = "\t<section name=\"MovingPicturesConfigGUI\">"+
+							"\n\t\t<entry name=\"movingpicturesDefaultStyle\">1</entry>"+
+							"\n\t\t<entry name=\"movingpicturesThumbMod\">0</entry>"+
+							"\n\t</section>"+
+							"\n</profile>";
+							
+	SearchStr = "<section name=\"MovingPicturesConfigGUI\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", MovingPicturesSection);
+    endif; 
+    
+    // Music Section
+    MusicSection = 			"\t<section name=\"MusicGUI\">"+
+							"\n\t\t<entry name=\"musicNowPlayingMod\">0</entry>"+							
+							"\n\t</section>"+
+							"\n</profile>";
+							
+	SearchStr = "<section name=\"MusicGUI\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", MusicSection);
+    endif;
+    
+    // TV Section
+    TVSection = 			"\t<section name=\"TVConfigGUI\">"+
+							"\n\t\t<entry name=\"tvGuideSize\">10</entry>"+							
+							"\n\t\t<entry name=\"tvMiniGuideSize\">7</entry>"+
+							"\n\t\t<entry name=\"tvEnableRandomTVSeriesFanart\">0</entry>"+
+							"\n\t</section>"+
+							"\n</profile>";
+							
+	SearchStr = "<section name=\"TVConfigGUI\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", TVSection);
+    endif;
+    
+    // Misc Section
+    MiscSection = 			"\t<section name=\"Misc\">"+
+							"\n\t\t<entry name=\"miscUseLargeFonts\">0</entry>"+							
+							"\n\t\t<entry name=\"miscShowHiddenMenuImage\">1</entry>"+
+							"\n\t\t<entry name=\"miscShowIconsInArtwork\">1</entry>"+
+							"\n\t\t<entry name=\"miscShowRoundedCovers\">1</entry>"+
+							"\n\t\t<entry name=\"miscUnfocusedAlphaListItems\">100</entry>"+
+							"\n\t\t<entry name=\"miscUnfocusedAlphaThumbs\">100</entry>"+
+							"\n\t\t<entry name=\"miscTextColor\">FFFFFF</entry>"+
+							"\n\t\t<entry name=\"miscTextColor2\">FFFFFF</entry>"+
+							"\n\t\t<entry name=\"miscTextColor3\">FFFFFF</entry>"+							
+							"\n\t\t<entry name=\"miscWatchedColor\">808080</entry>"+
+							"\n\t\t<entry name=\"miscRemoteColor\">FFA075</entry>"+
+							"\n\t</section>"+
+							"\n</profile>";
+							
+	SearchStr = "<section name=\"Misc\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", MiscSection);
+    endif;
+
+end;
 
 function VOID UpdateSettings()
 	STRING svString, sFile, sArtistImage, szDefine, sStyle;
 	BOOL bReturn;		
 begin
-	// Save configuration to registry
-	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	// Confirm if configuration sections exist
+	// we dont have any XML functions to help here	
+   	CheckXMLSectionsExist();  	
+
+	// Save configuration	
+	sFile = g_sConfigDir^"StreamedMPConfig.xml";
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesWideBannerMod", g_sWideBannerLayout);	
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowTotalEpisodeCounts", BoolToStringInt(g_bShowTotalEpisodeCount));
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", BoolToStringInt(g_bShowIconsInListView));
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowUnwatchedIconsOnlyInListView", BoolToStringInt(g_bShowUnWatchedOnlyInListImage));
 	
-	NumToStr(svString,g_bTVSeriesDefault);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTTVSERIES",REGDB_NUMBER,svString, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVSERIESWIDEBANNERLAYOUT",REGDB_NUMBER,g_sWideBannerLayout, -1);
-		
-	NumToStr(svString,g_bMovingPicturesDefault);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"DEFAULTMOVINGPICS",REGDB_NUMBER,svString, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"MOVINGPICTURESTHUMBLAYOUT",REGDB_NUMBER,g_sThumbLayout, -1);
-	
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVGUIDESIZE",REGDB_NUMBER,g_sTVGuideSize, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"TVMINIGUIDESIZE",REGDB_NUMBER,g_sTVMiniGuideSize, -1);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"FONTSIZE",REGDB_STRING,g_sFontSize, -1);
-	
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"NOWPLAYINGSTYLE",REGDB_STRING,g_sNowPlayingChoice, -1);	
-	
+	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", BoolToStringInt(g_bMovingPicturesDefault));
+	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesThumbMod", g_sThumbLayout);
+    
+    SetMPXMLProperty(sFile, "TVConfigGUI", "tvGuideSize", g_sTVGuideSize);
+    SetMPXMLProperty(sFile, "TVConfigGUI", "tvMiniGuideSize", g_sTVMiniGuideSize);
+    SetMPXMLProperty(sFile, "TVConfigGUI", "tvEnableRandomTVSeriesFanart", BoolToStringInt(g_bEnableRandomFanartInMyTV));
+    
+    SetMPXMLProperty(sFile, "MusicGUI", "musicNowPlayingMod", g_sNowPlayingChoice);
+    
+	SetMPXMLProperty(sFile, "Misc", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));
+	SetMPXMLProperty(sFile, "Misc", "miscShowHiddenMenuImage", BoolToStringInt(g_bShowHiddenMenuImage));
+	SetMPXMLProperty(sFile, "Misc", "miscShowIconsInArtwork", BoolToStringInt(g_bShowArtworkIcons));
+	SetMPXMLProperty(sFile, "Misc", "miscShowRoundedCovers", BoolToStringInt(g_bShowRoundedCovers));
+	SetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems);
+	SetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs);
+	SetMPXMLProperty(sFile, "Misc", "miscTextColor", g_sTextColor);
+	SetMPXMLProperty(sFile, "Misc", "miscTextColor2", g_sText2Color);
+	SetMPXMLProperty(sFile, "Misc", "miscTextColor3", g_sText3Color);
+	SetMPXMLProperty(sFile, "Misc", "miscWatchedColor", g_sWatchedColor);
+	SetMPXMLProperty(sFile, "Misc", "miscRemoteColor", g_sRemoteColor);
+		                                      
 	// Update Graphics Quality for SeriesPosters, Default style does not require as much details
 	// as it uses a much smaller Filmstrip and also contains a 100% Image on item selected       
 	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
@@ -2081,13 +2223,9 @@ begin
 		SetXMLProperty(sFile, "/settings/views/episode/item3", "LARGESPACE");
 	endif; 
 		
-	NumToStr(svString,g_bShowArtworkIcons);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ICONSINARTWORK",REGDB_NUMBER,svString, -1);
 	// Update Skin to add/remove TVSeries Icons from artwork
 	TVSeriesIcons(g_bShowArtworkIcons);
-	
-	NumToStr(svString, g_bShowUnWatchedOnlyInListImage);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"WATCHEDIMAGESTYLE",REGDB_NUMBER,svString, -1); 
+
 	// Update Skin to change TVSeries textlist control for Image Style chosen
 	if g_bTVSeriesDefault then
 		TVSeriesImageStyle(g_bShowUnWatchedOnlyInListImage);
@@ -2100,9 +2238,6 @@ begin
 	if !g_bTVSeriesDefault then
 		sStyle = "Fanart";
 	endif;
-	
-	SetSkinDefine(sFile, "#defaultstyle", BoolToString(g_bTVSeriesDefault));
-	SetSkinDefine(sFile, "#widebannerstyle", g_sWideBannerLayout);
 	
 	SetXMLProperty(sFile, TVSERIES_SERIESANDSEASONLISTPOSTERS_PATH, "TVSeries."+sStyle+".SeriesAndSeasonListPosters.xml");
 	SetXMLProperty(sFile, TVSERIES_SERIESANDSEASONFILMSTRIP_PATH, "TVSeries."+sStyle+".SeriesAndSeasonFilmstrip.xml");
@@ -2135,7 +2270,7 @@ begin
 	if !g_bMovingPicturesDefault then
 		sStyle = "fanart";
 	endif;
-	
+		
 	SetSkinDefine(sFile, "#defaultstyle", BoolToString(g_bMovingPicturesDefault));
 	SetSkinDefine(sFile, "#thumbnailstyle", g_sThumbLayout);
 	
@@ -2164,39 +2299,33 @@ begin
 	endswitch;
 	
 	// Set Default Skin
+	sFile = g_sConfigDir^"MediaPortal.xml";	
 	if g_bSetAsDefaultSkin then
-		SetMPXMLProperty("skin","name",SKIN_NAME);
+		SetMPXMLProperty(sFile, "skin","name",SKIN_NAME);
 	else
-		SetMPXMLProperty("skin","name",DEFAULT_SKIN);		
+		SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);		
 	endif;             
 	
 	// Enable Animations & Transistions, this is required for skin 
 	// Dont need to worry about 1st time installs of mediaportal with XML
-	// as this is setting is enabled by default for MediaPortal
-	SetMPXMLProperty("general","animations","yes");
+	// as this is setting is enabled by default for MediaPortal 	
+	SetMPXMLProperty(sFile, "general","animations","yes");
 	
 	// Now Playing Music VUMeter support
 	//SetMPXMLProperty("musicmisc","vumeter", g_sVUMeter);
 	
-	// Start with Basic Home or Standard Home
+	// Start with Basic Home or Standard Home	
 	if g_bStartBasicHome then
-		SetMPXMLProperty("general","startbasichome","yes");
+		SetMPXMLProperty(sFile, "general","startbasichome","yes");
 	else
-		SetMPXMLProperty("general","startbasichome","no");
+		SetMPXMLProperty(sFile, "general","startbasichome","no");
 	endif;
-	
-	NumToStr(svString,g_bShowRoundedCovers);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ROUNDEDCOVERS",REGDB_NUMBER,svString, -1);
+		
 	// Update Skin to show/hide rounded covers
 	RoundedCovers(g_bShowRoundedCovers, "TVSeries");
 	RoundedCovers(g_bShowRoundedCovers, "MovingPictures");
-	
-	NumToStr(svString,g_bShowHiddenMenuImage);
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"SHOWHIDDENMENUIMAGE",REGDB_NUMBER,svString, -1);
-	
+		
 	// Enable/Disable Random Fanart in MyTV sections	
-	NumToStr(svString,g_bEnableRandomFanartInMyTV);	
-	RegDBSetKeyValueEx(STREAMEDMP_REG_KEY,"ENABLERANDOMFANARTINMYTV",REGDB_NUMBER,svString, -1);
 	szDefine = "#useRandomTVSeriesFanart";
 	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
 	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
@@ -2264,12 +2393,6 @@ begin
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
 	ModifySkinFilesForFULLHD(bReturn);	
-	
-	// Update VideoOSD.xml to point to correct <import> for mediainfo
-	// This can be removed after RC2
-	//if GetMediaPortalRevision() >= VIDEO_OSD_UPDATE then
-	//	ReplaceLineInFile(STREAMEDMP_SKIN_VIDEOOSD,"<import>videoOSD.mediainfo.xml</import>","<import>videoOSD.mediainfo2.xml</import>");
-	//endif;
 	
 end;             
 
@@ -2584,7 +2707,7 @@ begin
 end; 
 
 function VOID UninstallCleanup()
-	STRING szDir;
+	STRING szDir, sFile;
 begin 
 	// Remove cached downloaded install files                                           
 	if (Is(PATH_EXISTS,g_sDownloadInstallDir)) then
@@ -2599,18 +2722,19 @@ begin
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
-    // Finially set default skin back to Blue3wide    
-    SetMPXMLProperty("skin","name",DEFAULT_SKIN);
+    // Finially set default skin back to Blue3wide
+    sFile = g_sConfigDir^"MediaPortal.xml";    
+    SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);
         
 end; 
 
-function NUMBER SetMPXMLProperty(sSectionAttribute,sEntryAttribute, sValue)
-	STRING sFile, sNode, svString;
+function NUMBER SetMPXMLProperty(sFile, sSectionAttribute,sEntryAttribute, sValue)
+	STRING sNode, svString;
 	OBJECT oXMLdoc, oNodeListRoot, oNodeListElements;
 	INT i, j;
 begin
    	
-   	sFile = g_sConfigDir^"MediaPortal.xml";        	 
+   	//sFile = g_sConfigDir^"MediaPortal.xml";        	 
     Disable(LOGGING);
     
     try
@@ -2672,14 +2796,12 @@ begin
     
 end;
 
-function NUMBER GetMPXMLProperty(sSectionAttribute, sEntryAttribute, sValue)
-	STRING sFile, sNode, svString;
+function NUMBER GetMPXMLProperty(sFile, sSectionAttribute, sEntryAttribute, sValue)
+	STRING sNode, svString;
 	OBJECT oXMLdoc, oNodeListRoot, oNodeListElements;
 	INT i, j;
+	BOOL bEntryExists;
 begin
-   	
-   	sFile = g_sConfigDir^"MediaPortal.xml";    
-    
     try
 	    // Prepare XML parser object
 	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
@@ -2708,7 +2830,8 @@ begin
 	                    
 	                    if oNodeListElements(j).Attributes(0).Text = sEntryAttribute then
 	                		// Get the MediaPortal property
-	                        sValue = oNodeListElements(j).Text;	                       
+	                        sValue = oNodeListElements(j).Text;
+	                        bEntryExists = TRUE;	                       
 	                    endif;
                 
                 	endif;	                               
@@ -2730,7 +2853,11 @@ begin
 	    
 	endcatch;	       
     
-    return 0;
+    if bEntryExists then
+    	return 0;
+    else
+    	return -1;
+    endif;
     
 end;
 
@@ -2780,7 +2907,7 @@ begin
     
 end;*/
 
-function NUMBER GetXMLProperty(sFile, sNode, sPropertyValue)
+/*function NUMBER GetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
 begin
 		
@@ -2810,7 +2937,7 @@ begin
   
     return 0;
     
-end;
+end; */
 
 function NUMBER SetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
@@ -3259,7 +3386,7 @@ begin
 
 end;
 
-function NUMBER GetSkinDefine(szFile, szDefine, szValue)
+/*function NUMBER GetSkinDefine(szFile, szDefine, szValue)
 	OBJECT oXMLdoc, oNodes;
 	STRING sNode;
 	INT i;
@@ -3304,7 +3431,7 @@ begin
 	Enable(LOGGING);
 	return 0;
 
-end;
+end;  */
     
 function NUMBER ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr)
 	NUMBER nResult, nIndex;
@@ -3341,7 +3468,7 @@ end;
   
 function BOOL AdjustForScreenSize()
 	NUMBER nvDx, nvDy;
-	STRING sValue;
+	STRING sValue, sFile;
 begin
 	
 	// Get Screen Dimmensions
@@ -3355,8 +3482,9 @@ begin
 	endif;
 	
 	// Check if MediaPortal is Running in Full Screen
-	// If not then it will run in Windowed Mode using default resolution
-	GetMPXMLProperty("general","startfullscreen", sValue);
+	// If not then it will run in Windowed Mode using default resolution 
+	sFile = g_sConfigDir^"MediaPortal.xml";
+	GetMPXMLProperty(sFile, "general", "startfullscreen", sValue);
 	if sValue = "yes" then
 		return TRUE;
 	else
@@ -3447,6 +3575,17 @@ begin
     	sReturn = "Yes";
     else
     	sReturn = "No";
+    endif;
+    return sReturn;
+end; 
+
+function string BoolToStringInt(bState)
+	STRING sReturn;
+begin
+    if bState then
+    	sReturn = "1";
+    else
+    	sReturn = "0";
     endif;
     return sReturn;
 end;

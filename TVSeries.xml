@@ -4,19 +4,6 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
 
-	<!-- Default (yes) or Fanart Style (no) -->
-	<define>#defaultstyle:yes</define>
-	
-	<!-- 
-		Wide Banner Style, values are:
-			0: Default (depends on Default or Fanart Style)
-			1: 5x2 Grid + Poster
-			2: 5x3 Grid
-			3: 7x3 Grid
-			4: 10x4 Grid
-	-->
-	<define>#widebannerstyle:0</define>
-	
   <!-- Shadows under blue/grey text -->
   <define>#shadow.dark:ff111111</define>
   <!-- Shadows under white text -->
@@ -90,7 +77,7 @@
     </control>
 
 		<!-- Do not mix and match different styles (fanart/default) -->
-		<!-- Chosen style should match define at top of document -->
+		<!-- Chosen style should match in users StreamedMPConfig.xml -->
 		<!-- Facade and SeriesWideBanners imports need to reflect widebanner mods -->
     <import tag="Facade">TVSeries.Default.Facade.xml</import>
     <import tag="SeriesAndSeasonListPosters">TVSeries.Default.SeriesAndSeasonListPosters.xml</import>
