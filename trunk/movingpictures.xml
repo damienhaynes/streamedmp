@@ -3,17 +3,6 @@
   <id>96742</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	
-  <!-- Default (yes) or Fanart Style (no) -->
-  <define>#defaultstyle:Yes</define>
-
-  <!-- 
-		Thumbnail Style, values are:
-			0: Default (depends on Default or Fanart Style)
-			1: SmallIcon [12x4], Large Icon [8x3] Grid
-			2: SmallIcon [12x3], Large Icon [8x2] Grid + Info
-	-->
-  <define>#thumbnailstyle:0</define>
 
   <!-- 
 		This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
@@ -79,7 +68,7 @@
     </control>
 
 		<!-- Do not mix and match different styles (fanart/default) -->
-		<!-- Chosen style should match define at top of document -->
+		<!-- Chosen style should match users StreamedMPConfig.xml -->
 		<!-- Facade, BackgroundOverlay, ThumbView and ThumbViewMediaInfo imports need to reflect Thumbnail mods -->		
     <import tag="BackgroundOverlay">movingpictures.default.background.overlays.xml</import>
     <import>movingpictures.common.hiddenmenu.xml</import>
