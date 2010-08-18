@@ -8,6 +8,7 @@ using System.IO;
 using System.Reflection;
 using Microsoft.Win32;
 using System.Diagnostics;
+using MediaPortal.Configuration;
 
 namespace StreamedMPEditor
 {
@@ -245,57 +246,34 @@ namespace StreamedMPEditor
 
     private string readMPConfiguration(string sectionName, string entryName)
     {
-      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
+      try
       {
-        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
-        return null;
-      }
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-        if (innerNode.InnerText == sectionName)
+        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
         {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-          if (path != null)
-          {
-            entryName = path.InnerText;
-            return entryName;
-          }
+          return xmlreader.GetValueAsString(sectionName, entryName, "");
         }
       }
-      return null;
+      catch (Exception e)
+      {
+        showError("Error reading MediaPortal.xml : " + e.Message, errorCode.readError);
+        return string.Empty;
+      }
     }
 
     private void writeMPConfiguration(string sectionName, string entryName, string entryValue)
     {
-      string xmlFileName = mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(xmlFileName))
+      try
       {
-        showError("Can't find MediaPortal.xml \r\r" + xmlFileName, errorCode.major);
-      }
-      doc.Load(xmlFileName);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-        if (innerNode.InnerText == sectionName)
+        using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
         {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + entryName + "\"]");
-          if (path != null)
-          {
-            path.InnerText = entryValue;
-          }
+          xmlwriter.SetValue(sectionName, entryName, entryValue);
         }
       }
-      doc.Save(xmlFileName);
-
+      catch (Exception e)
+      {
+        showError("Error writing MediaPortal.xml : " + e.Message, errorCode.readError);
+      }
+        MediaPortal.Profile.Settings.SaveCache();
     }
 
     private void GetMediaPortalPath(ref editorPaths mpPaths)
