@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Xml;
+using SMPCheckSum;
 
 namespace StreamedMPConfig
 {
@@ -42,6 +43,7 @@ namespace StreamedMPConfig
     /// <param name="value"></param>
     public static void SetSkinImport(string file, string importtag, string value)
     {
+      CheckSum checkSum = new CheckSum();
       XmlDocument doc = LoadXMLDocument(file);
       if (doc == null) return;
 
@@ -55,6 +57,7 @@ namespace StreamedMPConfig
       smcLog.WriteLog(string.Format("Setting skin import '<import tag='{0}'>{1}</import>' in '{2}'", importtag, value, file), LogLevel.Info);
       node.InnerText = value;
       doc.Save(file);
+      checkSum.Replace(file);
     }
     #endregion;
 
