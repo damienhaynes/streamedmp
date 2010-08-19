@@ -1947,6 +1947,7 @@ namespace StreamedMPEditor
       public string contextLabel;
       public string defaultImage;
       public bool disableBGSharing;
+      public displayMostRecent showMostRecent;
     }
 
     public class backgroundItem

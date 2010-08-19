@@ -15,7 +15,6 @@
       {
         doMovingPictures(movPicsRecentStyle);
       }
-
     }
     //
     // TVSeries - Summary or Full, vertical or horizonal
@@ -88,7 +87,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -165,7 +164,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -242,7 +241,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -385,7 +384,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -462,7 +461,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -539,7 +538,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -672,7 +671,7 @@
                     "<description>GROUP: RecentlyAdded Series 3</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -718,7 +717,7 @@
                     "<description>GROUP: RecentlyAdded Series 2</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -764,7 +763,7 @@
                     "<description>GROUP: RecentlyAdded Series 1</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + !string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -835,7 +834,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series1.fanart,#)|string.starts(#infoservice.recentlyAdded.series1.thumb,#)]</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series1.fanart,#)|string.starts(#infoservice.recentlyAdded.series1.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -906,7 +905,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series2.fanart,#)|string.starts(#infoservice.recentlyAdded.series2.thumb,#)]</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series2.fanart,#)|string.starts(#infoservice.recentlyAdded.series2.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -945,7 +944,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.tvseriesControl.ToString() + ") + ![string.starts(#infoservice.recentlyAdded.series3.fanart,#)|string.starts(#infoservice.recentlyAdded.series3.thumb,#)]</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series3.fanart,#)|string.starts(#infoservice.recentlyAdded.series3.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -997,7 +996,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1075,7 +1074,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1153,7 +1152,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -1297,7 +1296,7 @@
                   "<description>GROUP: RecentlyAdded Movie 1</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1374,7 +1373,7 @@
                   "<description>GROUP: RecentlyAdded Movie 2</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1451,7 +1450,7 @@
                   "<description>GROUP: RecentlyAdded Movie 3</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1584,7 +1583,7 @@
                     "<description>GROUP: RecentlyAdded Movie 3</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1629,7 +1628,7 @@
                     "<description>GROUP: RecentlyAdded Series 2</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1674,7 +1673,7 @@
                     "<description>GROUP: RecentlyAdded Series 1</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + !string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -1744,7 +1743,7 @@
                     "<description>GROUP: RecentlyAdded Movie 1</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)]</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1823,7 +1822,7 @@
                   "<description>GROUP: RecentlyAdded Movie 2</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)]</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1869,7 +1868,7 @@
                   "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>control.isvisible(" + basicHomeValues.movingPicturesControl.ToString() + ") + ![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)]</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)]</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1918,5 +1917,45 @@
     }
     #endregion
 
+    #region Private Methods
+
+    string mostRecentVisibleControls(isOverlayType isOverlay)
+    {
+      string visibleOn = null;
+      if (isOverlay == isOverlayType.MovPics)
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.movies)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+        }
+        if (visibleOn != null)
+          visibleOn += "]";
+        return visibleOn;
+      }
+      else
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.tvSeries)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+        }
+        if (visibleOn != null)
+          visibleOn += "]";
+        return visibleOn;
+      }
+    }
+
+    #endregion
   }
 }
