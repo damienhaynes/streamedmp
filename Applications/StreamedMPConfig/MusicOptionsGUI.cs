@@ -44,7 +44,7 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-      settings.Load();
+      settings.Load("StreamedMPConfig");
       cmc_EqGfx.Selected = StreamedMPConfig.showEqGraphic;
       cmc_CDCover.Selected = StreamedMPConfig.cdCoverOnly;
       // Load Translations
@@ -56,7 +56,7 @@ namespace StreamedMPConfig
     {
       StreamedMPConfig.showEqGraphic = cmc_EqGfx.Selected;
       StreamedMPConfig.cdCoverOnly = cmc_CDCover.Selected;
-      settings.Save();
+      settings.Save("StreamedMPConfig");
     }
 
     #endregion

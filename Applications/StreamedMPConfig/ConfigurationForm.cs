@@ -23,7 +23,7 @@ namespace StreamedMPConfig
     public ConfigurationForm()
     {
       InitializeComponent();
-      settings.Load();
+      settings.Load("StreamedMPConfig");
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
@@ -60,7 +60,7 @@ namespace StreamedMPConfig
       StreamedMPConfig.patchUtilityRunUnattended = cbRunUnattended.Checked;
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
       StreamedMPConfig.mrFanartTimer = (int)numFanartTimer.Value;
-      settings.Save();
+      settings.Save("StreamedMPConfig");
       this.Close();
     }
 

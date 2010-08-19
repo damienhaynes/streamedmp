@@ -80,69 +80,111 @@ namespace StreamedMPConfig
       }
     }
 
-    public static void Load()
+    public static void Load(string section)
     {
-      smcLog.WriteLog("StreamedMPConfig: Settings.Load()", LogLevel.Info);
+      smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Load({0})", section), LogLevel.Info);
       using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
       {
         // Read user settings from configuration file
-
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "cdCoverOnly", 1) != 0)
-          StreamedMPConfig.cdCoverOnly = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "showEqGraphic", 1) != 0)
-          StreamedMPConfig.showEqGraphic = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "fullVideoOSD", 1) != 0)
-          StreamedMPConfig.fullVideoOSD = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkOnStart", 1) != 0)
-          StreamedMPConfig.checkOnStart = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "checkForUpdateAt", 1) != 0)
-          StreamedMPConfig.checkForUpdateAt = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "runPatchUtilityUnattended", 1) != 0)
-          StreamedMPConfig.patchUtilityRunUnattended = true;
-        if (xmlreader.GetValueAsInt("StreamedMPConfig", "patchUtilityRestartMP", 1) != 0)
-          StreamedMPConfig.patchUtilityRestartMP = true;
-        StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt("StreamedMPConfig", "mostRecentTimer", 7);
-
-        if (StreamedMPConfig.checkForUpdateAt)
+        switch (section)
         {
-          string checkTime = xmlreader.GetValueAsString("StreamedMPConfig", "checkTime", "");
+          #region StreamedMPConfig
+          case "StreamedMPConfig":
+            if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
+              StreamedMPConfig.cdCoverOnly = true;
+            if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
+              StreamedMPConfig.showEqGraphic = true;
+            if (xmlreader.GetValueAsInt(section, "fullVideoOSD", 1) != 0)
+              StreamedMPConfig.fullVideoOSD = true;
+            if (xmlreader.GetValueAsInt(section, "checkOnStart", 1) != 0)
+              StreamedMPConfig.checkOnStart = true;
+            if (xmlreader.GetValueAsInt(section, "checkForUpdateAt", 1) != 0)
+              StreamedMPConfig.checkForUpdateAt = true;
+            if (xmlreader.GetValueAsInt(section, "runPatchUtilityUnattended", 1) != 0)
+              StreamedMPConfig.patchUtilityRunUnattended = true;
+            if (xmlreader.GetValueAsInt(section, "patchUtilityRestartMP", 1) != 0)
+              StreamedMPConfig.patchUtilityRestartMP = true;
+            StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt(section, "mostRecentTimer", 7);
 
-          if (string.IsNullOrEmpty(checkTime))
-          {
-            StreamedMPConfig.checkTime = DateTime.Parse("03:00");
-            StreamedMPConfig.checkInterval = 1;
-          }
-          else
-          {
-            DateTime dtCheckTime = new DateTime();
-            if (!DateTime.TryParse(checkTime, CultureInfo.CurrentCulture, DateTimeStyles.None, out dtCheckTime))
-              dtCheckTime = DateTime.Now;
-            StreamedMPConfig.checkTime = dtCheckTime;
+            if (StreamedMPConfig.checkForUpdateAt)
+            {
+              string checkTime = xmlreader.GetValueAsString(section, "checkTime", "");
 
-            StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString("StreamedMPConfig", "nextUpdateCheck", "");
-            StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt("StreamedMPConfig", "checkInterval", 1);
-          }
+              if (string.IsNullOrEmpty(checkTime))
+              {
+                StreamedMPConfig.checkTime = DateTime.Parse("03:00");
+                StreamedMPConfig.checkInterval = 1;
+              }
+              else
+              {
+                DateTime dtCheckTime = new DateTime();
+                if (!DateTime.TryParse(checkTime, CultureInfo.CurrentCulture, DateTimeStyles.None, out dtCheckTime))
+                  dtCheckTime = DateTime.Now;
+                StreamedMPConfig.checkTime = dtCheckTime;
+
+                StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString(section, "nextUpdateCheck", "");
+                StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt(section, "checkInterval", 1);
+              }
+            }
+            break;
+          #endregion
+
+          #region TVSeries
+          case "TVSeriesConfigGUI":
+            TVSeriesConfigGUI.IsDefaultStyle = xmlreader.GetValueAsInt(section, "tvseriesDefaultStyle", 1) == 1;
+            TVSeriesConfigGUI.WideBannerMod = (TVSeriesConfigGUI.WideBanners)xmlreader.GetValueAsInt(section, "tvseriesWideBannerMod", 0);
+            break;
+          #endregion
+
+          #region MovingPictures
+          case "MovingPicturesConfigGUI":
+            break;
+          #endregion
+
+          #region Music
+          case "MusicGUI":
+            break;
+          #endregion
+
+          #region TV
+          case "TVConfigGUI":
+            break;
+          #endregion
+
         }
       }
     }
 
-    public static void Save()
+    public static void Save(string section)
     {
-      smcLog.WriteLog("StreamedMP: Settings.Save()",LogLevel.Info);
+      smcLog.WriteLog(string.Format("StreamedMP: Settings.Save({0})", section), LogLevel.Info);
       using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "StreamedMPConfig.xml")))
       {
-        xmlwriter.SetValue("StreamedMPConfig", "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "fullVideoOSD", StreamedMPConfig.fullVideoOSD ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "checkInterval", StreamedMPConfig.checkInterval);
-        xmlwriter.SetValue("StreamedMPConfig", "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
-        xmlwriter.SetValue("StreamedMPConfig", "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
-        xmlwriter.SetValue("StreamedMPConfig", "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
-        xmlwriter.SetValue("StreamedMPConfig", "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
+        switch (section)
+        {
+          #region StreamedMPConfig
+          case "StreamedMPConfig":
+            xmlwriter.SetValue(section, "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
+            xmlwriter.SetValue(section, "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
+            xmlwriter.SetValue(section, "fullVideoOSD", StreamedMPConfig.fullVideoOSD ? 1 : 0);
+            xmlwriter.SetValue(section, "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
+            xmlwriter.SetValue(section, "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
+            xmlwriter.SetValue(section, "checkInterval", StreamedMPConfig.checkInterval);
+            xmlwriter.SetValue(section, "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
+            xmlwriter.SetValue(section, "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
+            xmlwriter.SetValue(section, "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
+            xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
+            xmlwriter.SetValue(section, "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
+            break;
+          #endregion
 
+          #region TVSeries
+          case "TVSeriesConfigGUI":
+            xmlwriter.SetValue(section, "tvseriesDefaultStyle", TVSeriesConfigGUI.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfigGUI.WideBannerMod);
+            break;
+          #endregion
+        }
         MediaPortal.Profile.Settings.SaveCache();
       }
     }
