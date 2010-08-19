@@ -220,6 +220,11 @@ namespace StreamedMPConfig
     public static string WideBanner5x3Grid = "WideBanners: 5x3 Grid";
     public static string WideBanner7x3Grid = "WideBanners: 7x3 Grid";
     public static string WideBanner10x4Grid = "WideBanners: 10x4 Grid";
+    public static string MovingPicturesMenu = "MovingPictures Settings";
+    public static string Thumbnails = "Thumbnails";
+    public static string ThumbnailDefault = "Thumbnails: Default";
+    public static string Thumbnail_12x4_8x3_Grid = "Thumbnails: 12x4 Small Icons, 8x3 Large Icons";
+    public static string Thumbnail_12x3_8x2_Grid = "Thumbnails: 12x3 Small Icons, 8x2 Large Icons + Info";
 
     #endregion
   }
