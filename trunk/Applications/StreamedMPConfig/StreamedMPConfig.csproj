@@ -58,10 +58,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Plugins\windows\MovingPictures.dll</HintPath>
     </Reference>
-    <Reference Include="SMPCheckSum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SMPCheckSum\SMPCheckSum\bin\Release\SMPCheckSum.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -124,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\VersionInfo.cs.tmpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPCheckSum\SMPCheckSum.csproj">
+      <Project>{96319632-3BE1-4D71-A494-7186A947DFD0}</Project>
+      <Name>SMPCheckSum</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

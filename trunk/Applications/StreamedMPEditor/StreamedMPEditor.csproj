@@ -78,10 +78,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\MediaPortal.Support.dll</HintPath>
     </Reference>
-    <Reference Include="SMPCheckSum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SMPCheckSum\SMPCheckSum\bin\Release\SMPCheckSum.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -232,6 +228,12 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMPCheckSum\SMPCheckSum.csproj">
+      <Project>{96319632-3BE1-4D71-A494-7186A947DFD0}</Project>
+      <Name>SMPCheckSum</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
