@@ -73,10 +73,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\Core.dll</HintPath>
     </Reference>
-    <Reference Include="SMPCheckSum, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SMPCheckSum\SMPCheckSum\bin\Release\SMPCheckSum.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -176,6 +172,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SMPCheckSum\SMPCheckSum.csproj">
+      <Project>{96319632-3BE1-4D71-A494-7186A947DFD0}</Project>
+      <Name>SMPCheckSum</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StreamedMPEditor\StreamedMPEditor.csproj">
       <Project>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</Project>
       <Name>StreamedMPEditor</Name>
