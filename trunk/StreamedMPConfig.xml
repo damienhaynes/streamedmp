@@ -8,10 +8,10 @@
   <define>#defaultcontrol.onright:9999</define>
   <controls>
 
-   <import>common.settings.xml</import>
-   <import>common.time.xml</import>    
-    
-   <control>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+
+    <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -20,21 +20,21 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-	    <control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <type>button</type>
         <description>Music Screen Options</description>
         <id>40</id>
         <label>-</label>
         <onup>17</onup>
-	      <textXOff>35</textXOff>
+        <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
+      </control>
       <control Style="settingsmainbutton">
         <description>Video Settings</description>
         <type>button</type>
-        <id>41</id>       
-	      <label>-</label>
-	      <textXOff>35</textXOff>
+        <id>41</id>
+        <label>-</label>
+        <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <!--
@@ -47,27 +47,35 @@
         <onright>#defaultcontrol.onright</onright>
       </control>
       -->
-	      <control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
+        <description>TVSeries Settings</description>
+        <type>button</type>
+        <id>44</id>
+        <label>-</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
         <description>Skin Update</description>
         <type>button</type>
         <id>43</id>
         <label>-</label>
-	      <textXOff>35</textXOff>
-	      <onright>#defaultcontrol.onright</onright>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-    </control>   
+    </control>
 
-      <control>
-        <description>Update Indicator</description>
-        <type>image</type>
-        <id>0</id>
-        <posX>700</posX>
-        <posY>240</posY>
-        <width>32</width>
-        <height>32</height>
-        <texture>isupdate.png</texture>
-        <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
-      </control>    
-    
+    <control>
+      <description>Update Indicator</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>700</posX>
+      <posY>240</posY>
+      <width>32</width>
+      <height>32</height>
+      <texture>isupdate.png</texture>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+    </control>
+
   </controls>
 </window>

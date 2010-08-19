@@ -211,7 +211,17 @@ namespace StreamedMPConfig
     public static string mupdateline2 = "MediaPortal and/or Configuration";
     public static string mupdateline3 = "and run:  {0}";
     public static string mupdateline4 = "which can be found on your Desktop";
+    public static string SkinSettings = "Skin Settings";
+    public static string TVSeriesMenu = "TVSeries Settings";
+    public static string FanartStyle = "Fanart Style";
+    public static string WideBanners = "WideBanners";
+    public static string WideBannerDefault = "WideBanners: Default";
+    public static string WideBanner5x2Grid = "WideBanners: 5x2 Grid with Poster";
+    public static string WideBanner5x3Grid = "WideBanners: 5x3 Grid";
+    public static string WideBanner7x3Grid = "WideBanners: 7x3 Grid";
+    public static string WideBanner10x4Grid = "WideBanners: 10x4 Grid";
 
     #endregion
   }
 }
+

@@ -42,7 +42,7 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-      settings.Load();
+      settings.Load("StreamedMPConfig");
       if (StreamedMPConfig.fullVideoOSD)
         cmc_MinOSD.Selected = false;
       else
@@ -57,7 +57,7 @@ namespace StreamedMPConfig
         StreamedMPConfig.fullVideoOSD = false;
       else
         StreamedMPConfig.fullVideoOSD = true;
-      settings.Save();
+      settings.Save("StreamedMPConfig");
     }
     #endregion
   }
