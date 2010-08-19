@@ -364,6 +364,7 @@
 		<row><td>libICSharpCodeSharpZipLib</td><td>{1DBD701C-580A-4DF9-A891-8BBBE5E173BC}</td><td>MPBINDIR</td><td>8</td><td/><td>icsharpcode.sharpziplib.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libLyricsEngine</td><td>{1E4B56F5-8F05-4AB2-8B60-29598AE215DD}</td><td>MPBINDIR</td><td>8</td><td/><td>lyricsengine.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libNLog</td><td>{B9C558E2-1005-46EB-BD3D-19FC898042A3}</td><td>MPBINDIR</td><td>8</td><td/><td>nlog.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>libSMPCheckSum</td><td>{31694058-055D-40BF-8E3E-8C0385EA33EC}</td><td>MPBINDIR</td><td>0</td><td/><td>smpchecksum.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libSubtitleDownloader</td><td>{160088EF-B410-48D0-9399-1DBE262F729B}</td><td>MPBINDIR</td><td>8</td><td/><td>subtitledownloader.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libWebBrowserDependencies</td><td>{FF4957A4-6B69-459D-8107-EB0EFBEC7C3E}</td><td>MPBINDIR</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>playingFullscreenSlidingMenu</td><td>{93C19F08-61A7-4E5D-BFD5-C8B4E48A9609}</td><td>NEW_DIRECTORY22</td><td>0</td><td/><td>mymusicplayingnow.xml8</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1628,6 +1629,7 @@
 		<row><td>Main</td><td>MediaPortal.xml</td></row>
 		<row><td>Main</td><td>StreamedMPConfig.xml</td></row>
 		<row><td>Main</td><td>exeSMPMediaPortalRestart</td></row>
+		<row><td>Main</td><td>libSMPCheckSum</td></row>
 		<row><td>Main</td><td>skinMedia</td></row>
 		<row><td>Main</td><td>skinSounds</td></row>
 		<row><td>Main</td><td>skinXML</td></row>
@@ -1759,6 +1761,7 @@
 		<row><td>mytvguide.xml1</td><td>tvguide12Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\tvguides\12 rows\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>mytvguide.xml2</td><td>tvguide10Rows</td><td>MYTVGU~1.XML|mytvguide.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\mytvguide.xml</td><td>1</td><td/></row>
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
+		<row><td>smpchecksum.dll</td><td>libSMPCheckSum</td><td>SMPCHE~1.DLL|SMPCheckSum.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugindependencies\SMPCheckSum.dll</td><td>1</td><td/></row>
 		<row><td>smpeditor.exe</td><td>exeSMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>1</td><td/></row>
 		<row><td>smpmediaportalrestart.exe</td><td>exeSMPMediaPortalRestart</td><td>SMPMED~1.EXE|SMPMediaPortalRestart.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpmediaportalrestart\bin\release\SMPMediaPortalRestart.exe</td><td>1</td><td/></row>
 		<row><td>streamedmpconfig.dll</td><td>pluginStreamedMPConfigDLL</td><td>STREAM~1.DLL|StreamedMPConfig.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\StreamedMPConfig.dll</td><td>1</td><td/></row>
@@ -2058,6 +2061,7 @@
 		<row><td>libICSharpCodeSharpZipLib</td><td/><td/><td>_588A286F_B16D_487F_8FD0_66DEAB35DF8E_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libLyricsEngine</td><td/><td/><td>_46169EBA_6F43_4CDE_A47B_2B6D309338C1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libNLog</td><td/><td/><td>_66DA8A3D_8044_476A_BD46_7F3BE1BAC0D5_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>libSMPCheckSum</td><td/><td/><td>_6050D8A7_0F9C_48EA_8856_CCB532AA40BD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libSubtitleDownloader</td><td/><td/><td>_34463402_2F11_422F_A277_1E45DF3B08E6_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libWebBrowserDependencies</td><td/><td/><td>_78CB0E94_033C_4BF7_B7C5_5E9DB9352728_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>playingFullscreenSlidingMenu</td><td/><td/><td>_F7B4BF9A_AD50_44E4_8464_E18304D0EB9C_FILTER</td><td/><td/><td/><td/></row>
