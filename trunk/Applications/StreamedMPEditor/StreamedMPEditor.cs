@@ -101,6 +101,13 @@ namespace StreamedMPEditor
       fanart
     }
 
+    public enum displayMostRecent
+    {
+      off,
+      tvSeries,
+      movies
+    }
+
     #endregion
 
     #region Variables
@@ -495,6 +502,45 @@ namespace StreamedMPEditor
       cboQuickSelect.SelectedIndex = 0;
     }
 
+    displayMostRecent getMostRecentDisplayOption()
+    {
+      if (rbDisplayMostRecentNone.Checked)
+        return displayMostRecent.off;
+
+      if (rbDisplayMostRecentTVSeries.Checked)
+        return displayMostRecent.tvSeries;
+
+      return displayMostRecent.movies;
+    }
+
+    void setMostRecentDisplayOption(displayMostRecent dmr)
+    {
+      switch (dmr)
+      {
+        case displayMostRecent.off:
+          {
+            rbDisplayMostRecentNone.Checked = true;
+            rbDisplayMostRecentMovies.Checked = false;
+            rbDisplayMostRecentTVSeries.Checked = false;
+            break;
+          }
+        case displayMostRecent.tvSeries:
+          {
+            rbDisplayMostRecentNone.Checked = false;
+            rbDisplayMostRecentMovies.Checked = false;
+            rbDisplayMostRecentTVSeries.Checked = true;
+            break;
+          }
+        case displayMostRecent.movies:
+          {
+            rbDisplayMostRecentNone.Checked = false;
+            rbDisplayMostRecentMovies.Checked = true;
+            rbDisplayMostRecentTVSeries.Checked = false;
+            break;
+          }
+      }
+    }
+
 
     void addButton_Click(object sender, EventArgs e)
     {
@@ -512,6 +558,7 @@ namespace StreamedMPEditor
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
         item.isWeather = isWeather.Checked;
         item.disableBGSharing = disableBGSharing.Checked;
+        item.showMostRecent = getMostRecentDisplayOption();
 
         if (item.fanartHandlerEnabled)
           checkAndSetRandomFanart(item.fanartProperty);
@@ -559,7 +606,7 @@ namespace StreamedMPEditor
       isWeather.Checked = mnuItem.isWeather;
       selectedWindow.Text = xmlFiles.Text;
       selectedWindowID.Text = ids[index];
-
+      setMostRecentDisplayOption(mnuItem.showMostRecent);
       if (mnuItem.fanartHandlerEnabled)
         checkAndSetRandomFanart(mnuItem.fanartProperty);
 
@@ -588,6 +635,7 @@ namespace StreamedMPEditor
         item.hyperlink = ids[xmlFiles.SelectedIndex];
         item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
+        item.showMostRecent = getMostRecentDisplayOption();
 
         if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
         {
@@ -676,6 +724,7 @@ namespace StreamedMPEditor
       menuitemBGFolder.Text = mnuItem.bgFolder;
       bgBox.Text = mnuItem.bgFolder;
       menuitemWindow.Text = xmlFiles.Text;
+      setMostRecentDisplayOption(mnuItem.showMostRecent);
 
       UpdateImageControlVisibility(mnuItem.fanartHandlerEnabled);
     }

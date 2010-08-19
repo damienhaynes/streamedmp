@@ -308,7 +308,7 @@ namespace StreamedMPEditor
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
         rbFanartStyle.Checked = true;
       }
-      else if (mostRecentSumStyle == "poster")
+      else if (mostRecentTVSeriesSummStyle == "poster")
       {
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         rbPosterStyle.Checked = true;
@@ -351,12 +351,7 @@ namespace StreamedMPEditor
         mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
         rbPosterStyle.Checked = true;
       }
-      else
-      {
-        //Default to Fanart Style
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
+
       
 
 
@@ -442,7 +437,7 @@ namespace StreamedMPEditor
         }
       }
 
-
+      
       //
       // Read in the menu items
       //
@@ -462,7 +457,7 @@ namespace StreamedMPEditor
         mnuItem.updateStatus = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
         mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
         mnuItem.id = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
-
+        mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist),mnuItem.hyperlink);
         isWeather.Checked = mnuItem.isWeather;
         disableBGSharing.Checked = mnuItem.disableBGSharing;
 
@@ -498,6 +493,24 @@ namespace StreamedMPEditor
       reloadBackgroundItems();
       //UpdateImageControlVisibility();
       generateMenu.Enabled = true;
+    }
+
+    displayMostRecent readMostRecentDisplayOption(string mrOption, string skinId)
+    {
+      // Enable most recent movies on MovingPictures menu item if not defined
+      if (mrOption == "false" && skinId == movingPicturesSkinID)
+        return displayMostRecent.movies;
+
+      // Enable most recent TVSeries on TVSeries menu item if not defined
+      if (mrOption == "false" && skinId == tvseriesSkinID)
+        return displayMostRecent.tvSeries;
+
+      if (mrOption == displayMostRecent.movies.ToString())
+        return displayMostRecent.movies;
+      else if (mrOption == displayMostRecent.tvSeries.ToString())
+        return displayMostRecent.tvSeries;
+      else
+        return displayMostRecent.off;
     }
   }
 }
