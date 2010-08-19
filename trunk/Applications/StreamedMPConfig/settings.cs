@@ -138,6 +138,8 @@ namespace StreamedMPConfig
 
           #region MovingPictures
           case "MovingPicturesConfigGUI":
+            MovingPicturesConfigGUI.IsDefaultStyle = xmlreader.GetValueAsInt(section, "movingpicturesDefaultStyle", 1) == 1;
+            MovingPicturesConfigGUI.ThumbnailMod = (MovingPicturesConfigGUI.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);            
             break;
           #endregion
 
@@ -184,6 +186,14 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfigGUI.WideBannerMod);
             break;
           #endregion
+          
+          #region MovingPictures
+          case "MovingPicturesConfigGUI":
+            xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfigGUI.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, "movingpicturesThumbMod", (int)MovingPicturesConfigGUI.ThumbnailMod);
+            break;
+          #endregion
+
         }
         MediaPortal.Profile.Settings.SaveCache();
       }
