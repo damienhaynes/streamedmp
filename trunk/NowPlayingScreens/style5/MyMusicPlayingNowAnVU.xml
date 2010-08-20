@@ -6,15 +6,6 @@
   <vumeter>yes</vumeter>
   <define>#useRandomMusicFanart:Yes</define>
   <define>#usePlayFanart:Yes</define>
-  <!-- 
-  This is the define that adjusts the Personal Star Rating
-  the imagelist does not scale correctly, set the following
-  value for the #star.rating.size as below.
-  For 1280x720           - <define>#star.rating.size:32</define>
-  For 1920x1080(Full HD) - <define>#star.rating.size:48</define>  
-  Default setting is for 1280x720
-  -->
-  <define>#star.rating.size:32</define>
   <!--
   	The next two <define> statments select the overlay
   	Choices
@@ -42,22 +33,6 @@
   -->
   <define>#overlay.album:-</define>
   <define>#overlay.fanart:-</define>
-<!--
-				The next 2 <define> statments control how the cdcover/artist is displayed
-				
-				#use.cd.and.artist
-				Default : yes 
-				This is the standard for MediaPortal and swaps between cdcover and artist image
-				
-				#use.cdcover.only
-				Default : no
-				Set this to yes if you want a static cd cover only
-				
-				NOTE: Both can not be yes or no
-				
--->
-  <define>#use.cd.and.artist:no</define>
-  <define>#use.cdcover.only:yes</define>
   <controls>
   	 <control>
       <description>music background image</description>
