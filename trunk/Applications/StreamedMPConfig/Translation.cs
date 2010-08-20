@@ -238,6 +238,13 @@ namespace StreamedMPConfig
     public static string ShowHiddenMenuImage = "Show Hidden Menu Image";
     public static string MiscMenu = "Misc Settings";
     public static string ShowRoundedPosters = "Show Rounded Poster Images";
+    public static string LatestEpisodes = "Latest Episodes";
+    public static string LatestMovies = "Latest Movies";
+    public static string NowPlayingStyles = "Now Playing Screen Styles";
+    public static string Rated = "Rated";
+    public static string Director = "Director";
+    public static string ReleaseDate = "Release Date";
+    public static string Runtime = "Runtime";
     #endregion
   }
 }

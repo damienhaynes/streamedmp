@@ -860,7 +860,7 @@
                     "<posX>995</posX>\n" +
                     "<posY>70</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>LATEST EPISODES</label>\n" +
+                    "<label>#StreamedMP.LatestEpisodes</label>\n" +
                     "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>      " +
@@ -1769,7 +1769,7 @@
                     "<posX>995</posX>\n" +
                     "<posY>70</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>LATEST MOVIES</label>\n" +
+                    "<label>#StreamedMP.LatestMovies</label>\n" +
                     "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>      " +
