@@ -15,7 +15,7 @@ namespace SMPCheckSumTest
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new SMPCheckSum());
+      Application.Run(new SMPCheckSum_Test());
     }
   }
 }

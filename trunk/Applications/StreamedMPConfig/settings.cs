@@ -151,11 +151,6 @@ namespace StreamedMPConfig
             break;
           #endregion
 
-          #region Music
-          case "MusicGUI":
-            break;
-          #endregion
-
           #region TV
           case "TVConfigGUI":
             TVConfigGUI.TVGuideRowSize = (TVConfigGUI.TVGuideRows)xmlreader.GetValueAsInt(section, "tvGuideSize", 10);
