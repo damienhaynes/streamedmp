@@ -5,7 +5,7 @@ using System.Xml;
 using System.IO;
 using Microsoft.Win32;
 
-namespace SMPCheckSum
+namespace SMPCheckSumTest
 {
   class SkinInfo
   {
