@@ -235,6 +235,8 @@ namespace StreamedMPConfig
     public static string TVMiniGuideFiveRows = "TV Mini Guide: 5 Rows";
     public static string TVMiniGuideSevenRows = "TV Mini Guide: 7 Rows";
     public static string TVMiniGuideNineRows = "TV Mini Guide: 9 Rows";
+    public static string ShowHiddenMenuImage = "Show Hidden Menu Image";
+    public static string MiscMenu = "Misc Settings";
     #endregion
   }
 }

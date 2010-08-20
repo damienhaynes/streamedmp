@@ -49,8 +49,6 @@
 #define TVSERIES_MULTIIMAGE_OPTION					"Main\\tvseriesMultiImageIcons"
 #define TVSERIES_SINGLEIMAGE_OPTION					"Main\\tvseriesSingleImageIcons"
 
-#define HIDDENMENU_IMAGE_OPTION						"Main\\hiddenMenuImage"
-
 #define NOWPLAYING_DEFAULT							"Main\\nowPlayingDefault"
 #define NOWPLAYING_FULLSCREEN_HIDDENMENU            "Main\\nowPlayingFullscreenHiddenMenu"
 #define NOWPLAYING_FULLSCREEN_SLIDINGMENU           "Main\\nowPlayingFullscreenSlidingMenu"
@@ -1675,15 +1673,7 @@ Dlg_Wait:
 	else
 		FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, FALSE );
 		FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, TRUE );
-	endif;			
-	
-	if (CtrlGetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE) = BUTTON_CHECKED) then
-		g_bShowHiddenMenuImage = TRUE;
-		FeatureSelectItem ( MEDIA, HIDDENMENU_IMAGE_OPTION, TRUE );		
-	else
-		g_bShowHiddenMenuImage = FALSE;
-		FeatureSelectItem ( MEDIA, HIDDENMENU_IMAGE_OPTION, FALSE );		
-	endif;		
+	endif;	
 
     EndDialog (szDialogName);
     ReleaseDialog (szDialogName);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Xml;
 using SMPCheckSum;
 
@@ -60,6 +61,50 @@ namespace StreamedMPConfig
       checkSum.Replace(file);
     }
     #endregion;
+
+    #region Assembly Helpers
+    public static bool IsAssemblyAvailable(string name, Version ver)
+    {
+      bool result = false;
+
+      smcLog.WriteLog(string.Format("Checking whether assembly {0} is available and loaded...", name), LogLevel.Info);
+
+      Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+      foreach (Assembly a in assemblies)
+      {
+        try
+        {
+          if (a.GetName().Name == name && a.GetName().Version >= ver)
+          {
+            smcLog.WriteLog(string.Format("Assembly {0} v{1} is available and loaded.", name, a.GetName().Version.ToString()), LogLevel.Info);
+            result = true;
+            break;
+          }
+        }
+        catch (Exception e)
+        {
+          smcLog.WriteLog(string.Format("Assembly.GetName() call failed for '{0}'!\nException: {1}", a.Location, e), LogLevel.Error);
+        }
+      }
+
+      if (!result)
+      {
+        smcLog.WriteLog(string.Format("Assembly {0} is not loaded (not available?), trying to load it manually...", name), LogLevel.Info);
+        try
+        {          
+          Assembly assembly = Assembly.ReflectionOnlyLoad(name);
+          smcLog.WriteLog(string.Format("Assembly {0} is available and loaded successfully.", name), LogLevel.Info);
+          result = true;
+        }
+        catch (Exception e)
+        {
+          smcLog.WriteLog(string.Format("Assembly {0} is unavailable, load unsuccessful: {1}:{2}", name, e.GetType(), e.Message), LogLevel.Info);
+        }
+      }
+
+      return result;
+    }
+    #endregion
 
   }
 }
