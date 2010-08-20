@@ -87,8 +87,8 @@ namespace StreamedMPConfig
       if (dlg.SelectedId <= 0) return;
 
       // Set new Selection
-      WideBannerMod = (WideBanners)Enum.Parse(typeof(WideBanners), (dlg.SelectedId - 1).ToString());
-      btnWideBannerMod.Label = GetWideBannerName(WideBannerMod);
+      WideBannerMod = (WideBanners)Enum.GetValues(typeof(WideBanners)).GetValue(dlg.SelectedLabel);
+      btnWideBannerMod.Label = dlg.SelectedLabelText;
     }
 
     /// <summary>

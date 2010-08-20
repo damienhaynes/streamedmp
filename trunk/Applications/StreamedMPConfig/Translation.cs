@@ -225,7 +225,16 @@ namespace StreamedMPConfig
     public static string ThumbnailDefault = "Thumbnails: Default";
     public static string Thumbnail_12x4_8x3_Grid = "Thumbnails: 12x4 Small Icons, 8x3 Large Icons";
     public static string Thumbnail_12x3_8x2_Grid = "Thumbnails: 12x3 Small Icons, 8x2 Large Icons + Info";
-
+    public static string TVMenu = "TV Settings";
+    public static string TVGuideSize = "TV Guide Size";
+    public static string TVMiniGuideSize = "TV Mini Guide Size";
+    public static string TVGuideEightRows = "TV Guide: 8 Rows";
+    public static string TVGuideTenRows = "TV Guide: 10 Rows";
+    public static string TVGuideTwelveRows = "TV Guide: 12 Rows";
+    public static string TVMiniGuideThreeRows = "TV Mini Guide: 3 Rows";
+    public static string TVMiniGuideFiveRows = "TV Mini Guide: 5 Rows";
+    public static string TVMiniGuideSevenRows = "TV Mini Guide: 7 Rows";
+    public static string TVMiniGuideNineRows = "TV Mini Guide: 9 Rows";
     #endregion
   }
 }

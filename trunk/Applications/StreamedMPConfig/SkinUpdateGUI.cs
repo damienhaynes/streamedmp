@@ -15,7 +15,7 @@ namespace StreamedMPConfig
 
     [SkinControl((int)StreamedMPConfig.SkinControlIDs.UpdateChangeLog)]
     protected GUITextControl cmc_ChangeLog = null;
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)]
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.DoUpdate)]
     protected GUIButtonControl btDoUpdate = null;
 
     #endregion

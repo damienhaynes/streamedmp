@@ -2,7 +2,7 @@
   <id>196200</id>
   <defaultcontrol>40</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:Skin</define>
+  <define>#header.label:#StreamedMP.SkinSettings</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:40</define>
   <define>#defaultcontrol.onright:9999</define>
@@ -63,6 +63,14 @@
 	      <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
+			<control Style="settingsmainbutton">
+        <description>TV Settings</description>
+        <type>button</type>
+        <id>46</id>
+        <label>-</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmainbutton">
         <description>Skin Update</description>
         <type>button</type>
@@ -78,7 +86,7 @@
       <type>image</type>
       <id>0</id>
       <posX>700</posX>
-      <posY>325</posY>
+      <posY>366</posY>
       <width>32</width>
       <height>32</height>
       <texture>isupdate.png</texture>
