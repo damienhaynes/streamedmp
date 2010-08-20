@@ -9,7 +9,7 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_MinOSD)] protected GUIToggleButtonControl cmc_MinOSD = null;
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.VideoMinOSD)] protected GUIToggleButtonControl cmc_MinOSD = null;
 
 
     public override int GetID
