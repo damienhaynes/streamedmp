@@ -91,10 +91,6 @@ namespace StreamedMPConfig
         {
           #region StreamedMPConfig
           case "StreamedMPConfig":
-            if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
-              StreamedMPConfig.cdCoverOnly = true;
-            if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
-              StreamedMPConfig.showEqGraphic = true;
             if (xmlreader.GetValueAsInt(section, "fullVideoOSD", 1) != 0)
               StreamedMPConfig.fullVideoOSD = true;
             if (xmlreader.GetValueAsInt(section, "checkOnStart", 1) != 0)
@@ -106,7 +102,7 @@ namespace StreamedMPConfig
             if (xmlreader.GetValueAsInt(section, "patchUtilityRestartMP", 1) != 0)
               StreamedMPConfig.patchUtilityRestartMP = true;
             StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt(section, "mostRecentTimer", 7);
-            StreamedMPConfig.nowPlayingStyle = xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
+
 
             if (StreamedMPConfig.checkForUpdateAt)
             {
@@ -128,6 +124,16 @@ namespace StreamedMPConfig
                 StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt(section, "checkInterval", 1);
               }
             }
+            break;
+          #endregion
+
+          #region Music
+          case "MusicConfigGUI":
+            if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
+              StreamedMPConfig.cdCoverOnly = true;
+            if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
+              StreamedMPConfig.showEqGraphic = true;
+            StreamedMPConfig.nowPlayingStyle = xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
             break;
           #endregion
 
@@ -177,8 +183,7 @@ namespace StreamedMPConfig
         {
           #region StreamedMPConfig
           case "StreamedMPConfig":
-            xmlwriter.SetValue(section, "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
-            xmlwriter.SetValue(section, "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
+
             xmlwriter.SetValue(section, "fullVideoOSD", StreamedMPConfig.fullVideoOSD ? 1 : 0);
             xmlwriter.SetValue(section, "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
             xmlwriter.SetValue(section, "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
@@ -188,6 +193,13 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
             xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
             xmlwriter.SetValue(section, "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
+            break;
+          #endregion
+
+          #region Music
+          case "MusicConfigGUI":
+            xmlwriter.SetValue(section, "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
+            xmlwriter.SetValue(section, "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
             xmlwriter.SetValue(section, "nowPlayingStyle", StreamedMPConfig.nowPlayingStyle.ToString());
             break;
           #endregion
@@ -198,7 +210,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfigGUI.WideBannerMod);
             break;
           #endregion
-          
+
           #region MovingPictures
           case "MovingPicturesConfigGUI":
             xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfigGUI.IsDefaultStyle ? 1 : 0);
