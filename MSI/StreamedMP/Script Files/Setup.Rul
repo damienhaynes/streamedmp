@@ -238,7 +238,7 @@ prototype NUMBER	GetMPXMLProperty(STRING, STRING, STRING ,BYREF STRING);
 prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
 prototype NUMBER	GetSkinDefine(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
-prototype VOID		RoundedCovers(BOOL, STRING);   
+//prototype VOID		RoundedCovers(BOOL, STRING);   
 prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
@@ -1524,9 +1524,9 @@ Dlg_Wait:
  				endif;
  				
  				// Disable rounded cover checkbox if Fanart Style is not chosen
- 				if (g_bTVSeriesDefault && g_bMovingPicturesDefault) then
- 				      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
- 				endif; 			 		
+ 				//if (g_bTVSeriesDefault && g_bMovingPicturesDefault) then
+ 				//      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
+ 				//endif; 			 		
  				       
  				if g_bShowHiddenMenuImage then
  					CtrlSetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE,BUTTON_CHECKED);
@@ -2246,10 +2246,6 @@ begin
 	else
 		SetMPXMLProperty(sFile, "general","startbasichome","no");
 	endif;
-		
-	// Update Skin to show/hide rounded covers
-	RoundedCovers(g_bShowRoundedCovers, "TVSeries");
-	RoundedCovers(g_bShowRoundedCovers, "MovingPictures");
 		
 	// Enable/Disable Random Fanart in MyTV sections	
 	szDefine = "#useRandomTVSeriesFanart";
@@ -3045,7 +3041,7 @@ begin
 		
 end;
 
-function VOID RoundedCovers(bAdd, sSkin)
+/*function VOID RoundedCovers(bAdd, sSkin)
 	OBJECT oXMLdoc, oNodeList;
 	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
 	INT i;
@@ -3109,7 +3105,7 @@ begin
     Enable(LOGGING);         
     return;
 		
-end;
+end;*/
 
 function VOID TVSeriesImageStyle(bShowUnWatchedOnly)
 	OBJECT oXMLdoc, oNodeList;
@@ -3515,6 +3511,3 @@ begin
     endif;
     return sReturn;
 end;
-
-
-
