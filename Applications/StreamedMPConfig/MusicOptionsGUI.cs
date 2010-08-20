@@ -79,33 +79,8 @@ namespace StreamedMPConfig
       {
         case GUIMessage.MessageType.GUI_MSG_SETFOCUS:
 
-          if (iControl == (int)defaultStyle.GetID)
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle0");
-
-          if (iControl == (int)fullscreenStyle1.GetID)
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle1");
-
-          if (iControl == (int)fullscreenStyle2.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle2");
-          if (iControl == (int)edgeFadeStyle.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle3");
-          if (iControl == (int)edgeNoFadeStyle.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle4");
-          if (iControl == (int)edgeNoMaskStyle.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle5");
-          if (iControl == (int)windowFadeStyle.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle6");
-          if (iControl == (int)windowsNoFadeStyle.GetID)
-
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle7");
-
-          if (iControl == (int)windowNoMaskStyle.GetID)
-            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle8");
+          if (iControl >= (int)GUIControls.Default && iControl <= (int)GUIControls.WindowNoMask)
+            StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + (iControl - (int)GUIControls.Default).ToString());
 
           break;
       }
@@ -169,7 +144,7 @@ namespace StreamedMPConfig
       else
       {
         GUIControl.SelectControl(GetID, StreamedMPConfig.nowPlayingStyle);
-        StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + (StreamedMPConfig.nowPlayingStyle - 4).ToString());
+        StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + (StreamedMPConfig.nowPlayingStyle - (int)GUIControls.Default).ToString());
         currentSyle = StreamedMPConfig.nowPlayingStyle;
 
       }
@@ -187,7 +162,7 @@ namespace StreamedMPConfig
       {
         smcLog.WriteLog("StreamedMPConfig: Copy new Now Playing files", LogLevel.Info);
         // Copy the style files to the main skin directory
-        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + (StreamedMPConfig.nowPlayingStyle - 4).ToString());
+        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + (StreamedMPConfig.nowPlayingStyle - (int)GUIControls.Default).ToString());
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
