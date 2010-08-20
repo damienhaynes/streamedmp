@@ -10,13 +10,17 @@ namespace StreamedMPConfig
     #region Enums
     private enum GUIControls
     {
-      HiddenMenuImage = 2,      
+      HiddenMenuImage = 2,
+      RoundedImages = 3
     }  
     #endregion
 
     #region Skin Controls
     [SkinControl((int)GUIControls.HiddenMenuImage)]
     protected GUIToggleButtonControl btnHiddenMenuImage = null;
+
+    [SkinControl((int)GUIControls.RoundedImages)]
+    protected GUIToggleButtonControl btnRoundedImages = null;
     #endregion
 
     #region Constructor
@@ -24,20 +28,26 @@ namespace StreamedMPConfig
     #endregion
 
     #region Public Properties
-    public static bool ShowHiddenMenuImage { get; set; }    
+    public static bool ShowHiddenMenuImage { get; set; }
+    public static bool ShowRoundedImages { get; set; }
     #endregion
 
     #region Private Methods
     private void SetControlStates()
-    {
-      // Set Toggle Button if menu image hidden
+    {      
+      // Hidden Menu Images
       btnHiddenMenuImage.Selected = ShowHiddenMenuImage;
       btnHiddenMenuImage.Label = Translation.ShowHiddenMenuImage; 
+
+      // Rounded Poster Images
+      btnRoundedImages.Selected = ShowRoundedImages;
+      btnRoundedImages.Label = Translation.ShowRoundedPosters;
     }
 
     private void GetControlStates()
     {
-      ShowHiddenMenuImage = btnHiddenMenuImage.Selected;      
+      ShowHiddenMenuImage = btnHiddenMenuImage.Selected;
+      ShowRoundedImages = btnRoundedImages.Selected;
     }
 
     /// <summary>
@@ -46,6 +56,7 @@ namespace StreamedMPConfig
     private void ApplyConfigurationChanges()
     {
       StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", MiscConfigGUI.ShowHiddenMenuImage ? "Action_menu.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", MiscConfigGUI.ShowRoundedImages ? "round.poster.frame.png" : "-");
     }
     #endregion
 
