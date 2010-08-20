@@ -1,1 +1,0 @@
-Either 12 Rows or 8 Rows tvguide.xml will be installed depending on choice by user in setup
