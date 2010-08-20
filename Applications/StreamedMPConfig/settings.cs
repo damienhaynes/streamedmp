@@ -155,6 +155,12 @@ namespace StreamedMPConfig
             break;
           #endregion
 
+          #region Misc
+          case "Misc":
+            MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;            
+            break;
+          #endregion
+
         }
       }
     }
@@ -200,6 +206,12 @@ namespace StreamedMPConfig
           case "TVConfigGUI":
             xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfigGUI.TVGuideRowSize);
             xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfigGUI.TVMiniGuideRowSize);
+            break;
+          #endregion
+
+          #region Misc
+          case "Misc":
+            xmlwriter.SetValue(section, "miscShowHiddenMenuImage", MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);            
             break;
           #endregion
 

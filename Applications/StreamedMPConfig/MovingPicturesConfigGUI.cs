@@ -10,8 +10,8 @@ namespace StreamedMPConfig
     #region Enums
     private enum GUIControls
     {
-      btnStyle = 2,
-      btnThumbnailMod = 3
+      Style = 2,
+      ThumbnailMod = 3
     }
 
     public enum Thumbnails
@@ -23,10 +23,10 @@ namespace StreamedMPConfig
     #endregion
 
     #region Skin Controls
-    [SkinControl((int)GUIControls.btnStyle)]
+    [SkinControl((int)GUIControls.Style)]
     protected GUIToggleButtonControl btnStyle = null;
 
-    [SkinControl((int)GUIControls.btnThumbnailMod)]
+    [SkinControl((int)GUIControls.ThumbnailMod)]
     protected GUIButtonControl btnThumbnailMod = null;
     #endregion
 
@@ -202,10 +202,10 @@ namespace StreamedMPConfig
     {
       switch (controlId)
       {
-        case (int)GUIControls.btnStyle:
+        case (int)GUIControls.Style:
           break;
 
-        case (int)GUIControls.btnThumbnailMod:
+        case (int)GUIControls.ThumbnailMod:
           ShowThumbnailContextMenu();
           break;
       }

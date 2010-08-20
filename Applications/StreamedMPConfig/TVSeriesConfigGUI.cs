@@ -9,8 +9,8 @@ namespace StreamedMPConfig
     #region Enums
     private enum GUIControls
     {
-      btnStyle = 2,
-      btnWideBannerMod = 3
+      Style = 2,
+      WideBannerMod = 3
     }
 
     public enum WideBanners
@@ -24,10 +24,10 @@ namespace StreamedMPConfig
     #endregion
 
     #region Skin Controls
-    [SkinControl((int)GUIControls.btnStyle)]
+    [SkinControl((int)GUIControls.Style)]
     protected GUIToggleButtonControl btnStyle = null;
 
-    [SkinControl((int)GUIControls.btnWideBannerMod)]
+    [SkinControl((int)GUIControls.WideBannerMod)]
     protected GUIButtonControl btnWideBannerMod = null;
     #endregion
 
@@ -211,10 +211,10 @@ namespace StreamedMPConfig
     {
       switch (controlId)
       {
-        case (int)GUIControls.btnStyle:
+        case (int)GUIControls.Style:
           break;
 
-        case (int)GUIControls.btnWideBannerMod:
+        case (int)GUIControls.WideBannerMod:
           ShowWideBannerContextMenu();
           break;
       }
