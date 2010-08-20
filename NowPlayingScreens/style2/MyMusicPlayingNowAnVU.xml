@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>200010</defaultcontrol>
@@ -88,8 +88,8 @@
       <control>
         <type>imagelist</type>
         <id>141</id>
-        <posX>110</posX>
-        <posY>450</posY>
+        <posX>85</posX>
+        <posY>430</posY>
         <width>120</width>
         <height>24</height>
         <onup>1141</onup>
@@ -106,8 +106,31 @@
         <align>left</align>
         <imagesToDraw>5</imagesToDraw>
         <percentage>#Play.Current.Rating</percentage>
-        <visible>Player.HasMedia</visible>
+        <visible>control.hasthumb(112)+string.equals(#StreamedMP.FullHD,false)</visible>
       </control>
+      <control>
+        <type>imagelist</type>
+        <id>141</id>
+        <posX>85</posX>
+        <posY>430</posY>
+        <width>120</width>
+        <height>24</height>
+        <onup>1141</onup>
+        <ondown>200010</ondown>
+        <onleft>200010</onleft>
+        <onright>200010</onright>
+        <textureWidth>48</textureWidth>
+        <textureHeight>48</textureHeight>
+        <subitems>
+          <subitem>white-star-outline.png</subitem>
+          <subitem>white-star-filled.png</subitem>
+        </subitems>
+        <orientation>horizontal</orientation>
+        <align>left</align>
+        <imagesToDraw>5</imagesToDraw>
+        <percentage>#Play.Current.Rating</percentage>
+        <visible>control.hasthumb(112)+string.equals(#StreamedMP.FullHD,true)</visible>
+      </control>      
       <!-- VU Meter: Analog -->
       <control>
         <type>image</type>
@@ -117,7 +140,6 @@
         <width>60</width>
         <height>60</height>
         <texture>VU aus.png</texture>
-
       </control>
       <control>
         <type>image</type>
@@ -138,7 +160,6 @@
         <width>60</width>
         <height>60</height>
         <texture>VU aus.png</texture>
-
       </control>
       <control>
         <type>image</type>
@@ -151,7 +172,6 @@
         <texture>#VUMeterR</texture>
         <visible>Player.HasAudio + Player.playing</visible>
       </control>
-
       <control>
         <type>fadelabel</type>
         <description>Artist label</description>
@@ -185,51 +205,51 @@
         <label>#Play.Current.Album</label>
         <font>mediastream12c</font>
       </control>
-      <control> 
-         <type>label</type> 
-         <description>Translation "Year"</description> 
-         <id>0</id> 
-         <posX>325</posX> 
-         <posY>354</posY> 
-         <width>90</width> 
-         <height>26</height> 
-         <label>201</label> 
-         <font>mediastream12c</font> 
-       </control> 
-       <control> 
-         <type>label</type> 
-         <description>year label</description> 
-         <id>0</id> 
-         <posX>415</posX> 
-         <posY>354</posY> 
-         <width>100</width> 
-         <height>26</height> 
-         <label>#Play.Current.Year</label> 
-         <font>mediastream12c</font> 
-       </control> 
-       <control> 
-         <type>label</type> 
-         <description>Translation "Track"</description> 
-         <id>0</id> 
-         <posX>325</posX> 
-         <posY>384</posY> 
-         <width>90</width> 
-         <height>26</height> 
-         <label>435</label> 
-         <font>mediastream12c</font> 
-       </control> 
-       <control> 
-         <type>label</type> 
-         <description>track label</description> 
-         <id>0</id> 
-         <posX>415</posX> 
-         <posY>384</posY> 
-         <width>100</width> 
-         <height>26</height> 
-         <label>#Play.Current.Track</label> 
-         <font>mediastream12c</font> 
-       </control> 
-       <control>
+      <control>
+        <type>label</type>
+        <description>Translation "Year"</description>
+        <id>0</id>
+        <posX>325</posX>
+        <posY>354</posY>
+        <width>90</width>
+        <height>26</height>
+        <label>201</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
+        <type>label</type>
+        <description>year label</description>
+        <id>0</id>
+        <posX>415</posX>
+        <posY>354</posY>
+        <width>100</width>
+        <height>26</height>
+        <label>#Play.Current.Year</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
+        <type>label</type>
+        <description>Translation "Track"</description>
+        <id>0</id>
+        <posX>325</posX>
+        <posY>384</posY>
+        <width>90</width>
+        <height>26</height>
+        <label>435</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
+        <type>label</type>
+        <description>track label</description>
+        <id>0</id>
+        <posX>415</posX>
+        <posY>384</posY>
+        <width>100</width>
+        <height>26</height>
+        <label>#Play.Current.Track</label>
+        <font>mediastream12c</font>
+      </control>
+      <control>
         <type>image</type>
         <id>117</id>
         <posX>587</posX>
@@ -331,11 +351,7 @@
         <texture>imagestreamtitle.png</texture>
         <colordiffuse>ffFFFFFF</colordiffuse>
       </control>
-
       <!-- BOTTOM PART -->
-
-
-
       <control>
         <description>unknown rating1</description>
         <type>imagelist</type>
@@ -651,11 +667,7 @@
         <textXOff>40</textXOff>
         <IconXOff>10</IconXOff>
         <spinColor>-</spinColor>#
-        <font>mediastream12</font>
-        <textureHeight>35</textureHeight>
-        <unfocusedAlpha>100</unfocusedAlpha>
-        <image>-</image>
-      </control>
+        <font>mediastream12</font><textureHeight>35</textureHeight><unfocusedAlpha>100</unfocusedAlpha><image>-</image></control>
       <control>
         <type>fadelabel</type>
         <description>best tag tracks label</description>
@@ -721,7 +733,6 @@
         <height>50</height>
         <hyperlink>500</hyperlink>
       </control>
-
       <control>
         <description>Lyrics Button</description>
         <type>button</type>
@@ -754,3 +765,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:734b89858521c8c0f86512c712f8dd88-->
