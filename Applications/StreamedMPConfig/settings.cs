@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using MediaPortal.Configuration;
@@ -105,6 +106,7 @@ namespace StreamedMPConfig
             if (xmlreader.GetValueAsInt(section, "patchUtilityRestartMP", 1) != 0)
               StreamedMPConfig.patchUtilityRestartMP = true;
             StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt(section, "mostRecentTimer", 7);
+            StreamedMPConfig.nowPlayingStyle = xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
 
             if (StreamedMPConfig.checkForUpdateAt)
             {
@@ -186,6 +188,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
             xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
             xmlwriter.SetValue(section, "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
+            xmlwriter.SetValue(section, "nowPlayingStyle", StreamedMPConfig.nowPlayingStyle.ToString());
             break;
           #endregion
 

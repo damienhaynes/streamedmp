@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>510</id>
+  <defaultcontrol>1141</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <vumeter>yes</vumeter>
+  <define>#useRandomMusicFanart:Yes</define>
+  <define>#usePlayFanart:Yes</define>
+  <!-- 
+  This is the define that adjusts the Personal Star Rating
+  the imagelist does not scale correctly, set the following
+  value for the #star.rating.size as below.
+  For 1280x720           - <define>#star.rating.size:32</define>
+  For 1920x1080(Full HD) - <define>#star.rating.size:48</define>  
+  Default setting is for 1280x720
+  -->
+  <define>#star.rating.size:32</define>
+  <!--
+  	The next two <define> statments select the overlay
+  	Choices
+  		1.	No overlay mask
+  		 						<define>#overlay.album:-</define>
+  								<define>#overlay.fanart:-</define>
+  										
+  		2.	Rounded mask with fade - window style
+  		 						<define>#overlay.album:music.album.round.faded.png</define>
+  								<define>#overlay.fanart:music.fanart.round.win.faded.png</define>
+  								  							
+  		3.	Rounded mask without fade - window style
+  		 						<define>#overlay.album:music.album.round.nofade.png</define>
+  								<define>#overlay.fanart:music.fanart.round.win.nofade.png</define  								
+  				NOTE: This requires the mymusic.nowplaying.fanart.and.overlay.win.xml overlay file - see below.
+
+  		4.	Rounded mask with fade - Edge style
+  		 						<define>#overlay.album:music.album.round.faded.png</define>
+  								<define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
+  								   
+  		4.	Rounded mask without fade - Edge style
+  		 						<define>#overlay.album:music.album.round.nofade.png</define>
+  								<define>#overlay.fanart:music.fanart.round.edge.nofade.png</define>   
+  		    NOTE: This requires the mymusic.nowplaying.fanart.and.overlay.edge.xml overlay file - see below.
+  -->
+  <define>#overlay.album:-</define>
+  <define>#overlay.fanart:-</define>
+<!--
+				The next 2 <define> statments control how the cdcover/artist is displayed
+				
+				#use.cd.and.artist
+				Default : yes 
+				This is the standard for MediaPortal and swaps between cdcover and artist image
+				
+				#use.cdcover.only
+				Default : no
+				Set this to yes if you want a static cd cover only
+				
+				NOTE: Both can not be yes or no
+				
+-->
+  <define>#use.cd.and.artist:no</define>
+  <define>#use.cdcover.only:yes</define>
+  <controls>
+  	 <control>
+      <description>music background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+    </control>  	
+    <control>
+      <type>image</type>
+      <description>album art image (rotating)</description>
+      <id>112</id>
+      <posX>20</posX>
+      <posY>45</posY>
+      <width>370</width>
+      <height>347</height>
+      <texture>-</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>album art image (Fixed)</description>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>45</posY>
+      <width>370</width>
+      <height>347</height>
+      <texture>-</texture>
+      <texture>#Play.Current.Thumb</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
+    </control>
+<!--  There are two overlay import files
+    
+    	1.	Display fanart in a window mask in the top right of the sceen, use this file
+    		mymusic.nowplaying.fanart.and.overlay.win.xml
+    		
+    	2.	Display fanart to the top and right edge, use this file
+    		mymusic.nowplaying.fanart.and.overlay.edge.xml
+    	
+-->   
+    <import>mymusic.nowplaying.fanart.and.overlay.edge.xml</import>
+    
+	<!-- VU Meter: Analog -->	
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>600</posY>
+      <width>107</width>
+      <height>107</height>
+      <texture>VU aus.png</texture>
+      <visible>!Player.playing</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>999</id>
+      <posX>20</posX>
+      <posY>600</posY>
+      <width>80</width>
+      <height>80</height>
+      <imagepath>Animations\AnVu</imagepath>
+      <texture>#VUMeterL</texture>
+      <visible>Player.HasAudio + Player.playing</visible>
+      <animation effect="fade" time="150">Visible</animation>
+    </control>
+     <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>130</posX>
+      <posY>600</posY>
+      <width>80</width>
+      <height>80</height>
+      <texture>VU aus.png</texture>
+      <visible>!Player.playing</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>998</id>
+      <posX>130</posX>
+      <posY>600</posY>
+      <width>80</width>
+      <height>80</height>
+	  <imagepath>Animations\AnVu</imagepath>
+      <texture>#VUMeterR</texture>
+      <visible>Player.HasAudio + Player.playing</visible>
+      <animation effect="fade" time="150">Visible</animation>
+    </control>
+    <import>music.nowplaying.common.xml</import>      
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
+</window>
