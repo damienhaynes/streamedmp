@@ -13,7 +13,7 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.cmc_ChangeLog)]
+    [SkinControl((int)StreamedMPConfig.SkinControlIDs.UpdateChangeLog)]
     protected GUITextControl cmc_ChangeLog = null;
     [SkinControl((int)StreamedMPConfig.SkinControlIDs.btDoUpdate)]
     protected GUIButtonControl btDoUpdate = null;
