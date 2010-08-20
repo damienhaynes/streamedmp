@@ -24,6 +24,7 @@ namespace StreamedMPConfig
     {
       InitializeComponent();
       settings.Load("StreamedMPConfig");
+      settings.Load("MusicConfigGUI");
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
@@ -61,6 +62,7 @@ namespace StreamedMPConfig
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
       StreamedMPConfig.mrFanartTimer = (int)numFanartTimer.Value;
       settings.Save("StreamedMPConfig");
+      settings.Save("MusicConfigGUI");
       this.Close();
     }
 
@@ -125,7 +127,6 @@ namespace StreamedMPConfig
     }
 
     #endregion
-
 
   }
 }
