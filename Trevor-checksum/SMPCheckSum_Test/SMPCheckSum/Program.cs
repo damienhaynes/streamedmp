@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace SMPCheckSumTest
+namespace SMPCheckSum_Test
 {
   static class Program
   {

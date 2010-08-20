@@ -35,16 +35,15 @@ namespace SMPCheckSum_Test
       //SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Clear();
       //SMPCheckSum_Test.Properties.Settings.Default.Save();
 
-
-      if (SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Count == 0)
+      if (Properties.Settings.Default.baseDirs == null)
       {
-        SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Add(baseDirectory);
-        SMPCheckSum_Test.Properties.Settings.Default.Save();
+        Properties.Settings.Default.baseDirs.Add(baseDirectory);
+        Properties.Settings.Default.Save();
       }
 
-      for (int i = 1; i < SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Count; i++)
+      for (int i = 1; i < Properties.Settings.Default.baseDirs.Count; i++)
       {
-        cboxXmlFolder.Items.Insert(i,SMPCheckSum_Test.Properties.Settings.Default.baseDirs[i].ToString());
+        cboxXmlFolder.Items.Insert(i,Properties.Settings.Default.baseDirs[i].ToString());
       }
 
     }
@@ -181,18 +180,17 @@ namespace SMPCheckSum_Test
 
     private void btBrowse_Click(object sender, EventArgs e)
     {
-
       folderBrowserDialog.ShowNewFolderButton = false;
       folderBrowserDialog.Description = "Select the folder containing the images for this menu item";
       folderBrowserDialog.SelectedPath = SkinInfo.mpPaths.streamedMPpath;
       if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
         baseDirectory = folderBrowserDialog.SelectedPath;
-        if (!SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Contains(baseDirectory))
+        if (!Properties.Settings.Default.baseDirs.Contains(baseDirectory))
         {
           cboxXmlFolder.Items.Add(folderBrowserDialog.SelectedPath);
-          SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Add(baseDirectory);
-          SMPCheckSum_Test.Properties.Settings.Default.Save();
+          Properties.Settings.Default.baseDirs.Add(baseDirectory);
+          Properties.Settings.Default.Save();
           cboxXmlFolder.SelectedIndex++;
         }
         else

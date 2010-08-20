@@ -120,7 +120,7 @@
       // 
       // btInvalidFileName
       // 
-      this.btInvalidFileName.Location = new System.Drawing.Point(16, 198);
+      this.btInvalidFileName.Location = new System.Drawing.Point(16, 197);
       this.btInvalidFileName.Name = "btInvalidFileName";
       this.btInvalidFileName.Size = new System.Drawing.Size(224, 23);
       this.btInvalidFileName.TabIndex = 5;
@@ -130,7 +130,7 @@
       // 
       // btInvaildFile
       // 
-      this.btInvaildFile.Location = new System.Drawing.Point(16, 228);
+      this.btInvaildFile.Location = new System.Drawing.Point(16, 227);
       this.btInvaildFile.Name = "btInvaildFile";
       this.btInvaildFile.Size = new System.Drawing.Size(224, 23);
       this.btInvaildFile.TabIndex = 6;

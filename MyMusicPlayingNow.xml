@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1141</defaultcontrol>
@@ -6,18 +6,6 @@
   <vumeter>yes</vumeter>
   <define>#useRandomMusicFanart:Yes</define>
   <define>#usePlayFanart:Yes</define>
-  <!-- 
-  This is the define that adjusts the Personal Star Rating
-  the imagelist does not scale correctly, set the following
-  value for the #star.rating.size as below.
-  For 1280x720           - <define>#star.rating.size:32</define>
-  For 1920x1080(Full HD) - <define>#star.rating.size:48</define>  
-  Default setting is for 1280x720
-  -->
-  <define>#star.rating.size:32</define>
-  <!--
-  <define>#star.rating.size:48</define>
-  -->
   <!--
   	The next two <define> statments select the overlay
   	Choices
@@ -45,22 +33,6 @@
   -->
   <define>#overlay.album:-.png</define>
   <define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
-  <!--
-				The next 2 <define> statments control how the cdcover/artist is displayed
-				
-				#use.cd.and.artist
-				Default : yes 
-				This is the standard for MediaPortal and swaps between cdcover and artist image
-				
-				#use.cdcover.only
-				Default : no
-				Set this to yes if you want a static cd cover only
-				
-				NOTE: Both can not be yes or no
-				
--->
-  <define>#use.cd.and.artist:no</define>
-  <define>#use.cdcover.only:yes</define>
   <controls>
     <control>
       <description>music background image</description>
@@ -81,7 +53,7 @@
       <width>370</width>
       <height>347</height>
       <texture>-</texture>
-      <visible>#use.cd.and.artist</visible>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
     </control>
     <control>
       <type>image</type>
@@ -93,7 +65,7 @@
       <height>347</height>
       <texture>-</texture>
       <texture>#Play.Current.Thumb</texture>
-      <visible>#use.cdover.only</visible>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
     </control>
     <!--
     There are two overlay import files
@@ -126,3 +98,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:27d1e6d959c230615b47e9f3712568f1-->
