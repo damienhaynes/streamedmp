@@ -1,6 +1,6 @@
-﻿namespace SMPCheckSumTest
+﻿namespace SMPCheckSum_Test
 {
-  partial class SMPCheckSum
+  partial class SMPCheckSum_Test
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMPCheckSum));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMPCheckSum_Test));
       this.chkSumFiles = new System.Windows.Forms.ListView();
       this.Filename = new System.Windows.Forms.ColumnHeader();
       this.Checksum = new System.Windows.Forms.ColumnHeader();
@@ -120,7 +120,7 @@
       // 
       // btInvalidFileName
       // 
-      this.btInvalidFileName.Location = new System.Drawing.Point(16, 199);
+      this.btInvalidFileName.Location = new System.Drawing.Point(16, 198);
       this.btInvalidFileName.Name = "btInvalidFileName";
       this.btInvalidFileName.Size = new System.Drawing.Size(224, 23);
       this.btInvalidFileName.TabIndex = 5;
@@ -201,7 +201,7 @@
       this.label1.TabIndex = 12;
       this.label1.Text = "Location of Files";
       // 
-      // SMPCheckSum
+      // SMPCheckSum_Test
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -213,7 +213,7 @@
       this.Controls.Add(this.pbCheckSum);
       this.Controls.Add(this.chkSumFiles);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-      this.Name = "SMPCheckSum";
+      this.Name = "SMPCheckSum_Test";
       this.Text = "Checksum Test Program";
       this.Load += new System.EventHandler(this.SMPCheckSum_Load);
       this.panel1.ResumeLayout(false);

@@ -10,6 +10,7 @@ namespace StreamedMPConfig
   public class MusicOptionsGUI : GUIWindow
   {
     private static readonly logger smcLog = logger.GetInstance();
+    int currentSyle = 0;
 
     #region Skin Connection
 
@@ -114,18 +115,32 @@ namespace StreamedMPConfig
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
     {
-      // Clear current selected value
-      for (int i = 4; i < 13; i++)
+      switch (controlId)
       {
-        if ((int)control.GetID != i)
-          GUIControl.DeSelectControl(GetID, i);
+        case (int)GUIControls.MusicCDCover:
+          StreamedMPConfig.cdCoverOnly = MusicCDCover.Selected;
+          break;
+        case (int)GUIControls.MusicGFXeq:
+          StreamedMPConfig.showEqGraphic = MusicGFXeq.Selected;
+          break;
+        default:
+          {
+            // Clear current selected value
+            for (int i = 4; i < 13; i++)
+            {
+              if ((int)control.GetID != i)
+                GUIControl.DeSelectControl(GetID, i);
+            }
+            StreamedMPConfig.nowPlayingStyle = control.GetID;
+          }
+          break;
       }
-      StreamedMPConfig.nowPlayingStyle = control.GetID;
       base.OnClicked(controlId, control, actionType);
     }
 
     protected override void OnPageLoad()
     {
+
       settings.Load("MusicConfigGUI");
       MusicGFXeq.Selected = StreamedMPConfig.showEqGraphic;
       MusicCDCover.Selected = StreamedMPConfig.cdCoverOnly;
@@ -149,31 +164,44 @@ namespace StreamedMPConfig
       {
         GUIControl.SelectControl(GetID, (int)GUIControls.Default);
         StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle0");
+        currentSyle = (int)GUIControls.Default;
       }
       else
       {
         GUIControl.SelectControl(GetID, StreamedMPConfig.nowPlayingStyle);
         StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + (StreamedMPConfig.nowPlayingStyle - 4).ToString());
+        currentSyle = StreamedMPConfig.nowPlayingStyle;
+
       }
     }
 
     protected override void OnPageDestroy(int new_windowId)
     {
       CheckSum checkSum = new CheckSum();
+      smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Save({0})", "MusicConfigGUI"), LogLevel.Info);
 
       StreamedMPConfig.showEqGraphic = MusicGFXeq.Selected;
       StreamedMPConfig.cdCoverOnly = MusicCDCover.Selected;
-      // Copy the style files to the main skin directory
-      string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + (StreamedMPConfig.nowPlayingStyle - 4).ToString());
-      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
-      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
-      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
-      // Checksum them
-      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"));
-      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"));
-      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"));
+
+      if (StreamedMPConfig.nowPlayingStyle != currentSyle)
+      {
+        smcLog.WriteLog("StreamedMPConfig: Copy new Now Playing files", LogLevel.Info);
+        // Copy the style files to the main skin directory
+        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + (StreamedMPConfig.nowPlayingStyle - 4).ToString());
+        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
+        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
+        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
+        // Checksum them
+        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"));
+        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"));
+        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"));
+      }
+      else
+        smcLog.WriteLog("No Changes Made to Now Playing", LogLevel.Info);
+
+      settings.Save("MusicConfigGUI"); 
+      
       GUIWindowManager.OnResize();
-      settings.Save("MusicConfigGUI");
     }
     #endregion
   }

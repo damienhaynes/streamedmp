@@ -13,9 +13,9 @@ using System.Xml;
 using SMPCheckSum;
 
 
-namespace SMPCheckSumTest
+namespace SMPCheckSum_Test
 {
-  public partial class SMPCheckSum : Form
+  public partial class SMPCheckSum_Test : Form
   {
     SkinInfo skInfo = new SkinInfo();
     string[] skinFiles;
@@ -24,7 +24,7 @@ namespace SMPCheckSumTest
 
 
 
-    public SMPCheckSum()
+    public SMPCheckSum_Test()
     {
       InitializeComponent();
       baseDirectory = SkinInfo.mpPaths.streamedMPpath;
