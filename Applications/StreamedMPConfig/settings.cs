@@ -139,7 +139,7 @@ namespace StreamedMPConfig
           #region MovingPictures
           case "MovingPicturesConfigGUI":
             MovingPicturesConfigGUI.IsDefaultStyle = xmlreader.GetValueAsInt(section, "movingpicturesDefaultStyle", 1) == 1;
-            MovingPicturesConfigGUI.ThumbnailMod = (MovingPicturesConfigGUI.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);            
+            MovingPicturesConfigGUI.ThumbnailMod = (MovingPicturesConfigGUI.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);
             break;
           #endregion
 
@@ -150,6 +150,8 @@ namespace StreamedMPConfig
 
           #region TV
           case "TVConfigGUI":
+            TVConfigGUI.TVGuideRowSize = (TVConfigGUI.TVGuideRows)xmlreader.GetValueAsInt(section, "tvGuideSize", 10);
+            TVConfigGUI.TVMiniGuideRowSize = (TVConfigGUI.TVMiniGuideRows)xmlreader.GetValueAsInt(section, "tvMiniGuideSize", 7);
             break;
           #endregion
 
@@ -191,6 +193,13 @@ namespace StreamedMPConfig
           case "MovingPicturesConfigGUI":
             xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfigGUI.IsDefaultStyle ? 1 : 0);
             xmlwriter.SetValue(section, "movingpicturesThumbMod", (int)MovingPicturesConfigGUI.ThumbnailMod);
+            break;
+          #endregion
+
+          #region TV
+          case "TVConfigGUI":
+            xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfigGUI.TVGuideRowSize);
+            xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfigGUI.TVMiniGuideRowSize);
             break;
           #endregion
 

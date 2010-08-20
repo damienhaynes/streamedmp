@@ -1,8 +1,8 @@
 <window>
-  <id>196202</id>
+  <id>196207</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#StreamedMP.SkinSettings - Video</define>
+  <define>#header.label:#StreamedMP.SkinSettings - TV</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
@@ -11,7 +11,6 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
 
-   
     <control>
       <type>group</type>
       <description>group element</description>
@@ -21,17 +20,26 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
-      <control Style="settingsmaintogglebutton">
-        <description>Video OSD Min/Full</description>
-        <type>togglebutton</type>
+
+      <control Style="settingsmainbutton">
+        <description>TV Guide Size</description>
+        <type>button</type>
         <id>2</id>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
+        <ondown>3</ondown>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>TV Mini Guide Size</description>
+        <type>button</type>
+        <id>3</id>
+        <onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>2</onup>
         <ondown>99</ondown>
-      </control>    
+      </control>
     </control>
-        
+
   </controls>
 </window>

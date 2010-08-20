@@ -86,8 +86,8 @@ namespace StreamedMPConfig
       if (dlg.SelectedId <= 0) return;
 
       // Set new Selection
-      ThumbnailMod = (Thumbnails)Enum.Parse(typeof(Thumbnails), (dlg.SelectedId - 1).ToString());
-      btnThumbnailMod.Label = GetThumbnailName(ThumbnailMod);
+      ThumbnailMod = (Thumbnails)Enum.GetValues(typeof(Thumbnails)).GetValue(dlg.SelectedLabel);
+      btnThumbnailMod.Label = dlg.SelectedLabelText;
     }
 
     /// <summary>

@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CE98A456-9FAF-4707-9872-7FEEA8BE5FB6}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="checkForUpdate.cs" />
     <Compile Include="MovingPicturesConfigGUI.cs" />
+    <Compile Include="TVConfigGUI.cs" />
     <Compile Include="TVSeriesConfigGUI.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

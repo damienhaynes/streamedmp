@@ -2250,9 +2250,6 @@ begin
 	// as this is setting is enabled by default for MediaPortal 	
 	SetMPXMLProperty(sFile, "general","animations","yes");
 	
-	// Now Playing Music VUMeter support
-	//SetMPXMLProperty("musicmisc","vumeter", g_sVUMeter);
-	
 	// Start with Basic Home or Standard Home	
 	if g_bStartBasicHome then
 		SetMPXMLProperty(sFile, "general","startbasichome","yes");
