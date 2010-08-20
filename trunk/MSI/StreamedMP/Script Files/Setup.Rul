@@ -506,7 +506,7 @@ begin
 	endif; 
 
 	// Read NowPlaying Style default
-	if GetMPXMLProperty(sFile, "MusicGUI", "musicNowPlayingMod", g_sNowPlayingChoice) < 0 then
+	if GetMPXMLProperty(sFile, "MusicConfigGUI", "nowPlayingStyle", g_sNowPlayingChoice) < 0 then
 		g_sNowPlayingChoice = "0";
 	endif;
      	                        
@@ -2006,12 +2006,12 @@ begin
     endif; 
     
     // Music Section
-    MusicSection = 			"\t<section name=\"MusicGUI\">"+
-							"\n\t\t<entry name=\"musicNowPlayingMod\">0</entry>"+							
+    MusicSection = 			"\t<section name=\"MusicConfigGUI\">"+
+							"\n\t\t<entry name=\"nowPlayingStyle\">0</entry>"+							
 							"\n\t</section>"+
 							"\n</profile>";
 							
-	SearchStr = "<section name=\"MusicGUI\">";
+	SearchStr = "<section name=\"MusicConfigGUI\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", MusicSection);
     endif;
@@ -2075,7 +2075,7 @@ begin
     SetMPXMLProperty(sFile, "TVConfigGUI", "tvMiniGuideSize", g_sTVMiniGuideSize);
     SetMPXMLProperty(sFile, "TVConfigGUI", "tvEnableRandomTVSeriesFanart", BoolToStringInt(g_bEnableRandomFanartInMyTV));
     
-    SetMPXMLProperty(sFile, "MusicGUI", "musicNowPlayingMod", g_sNowPlayingChoice);
+    SetMPXMLProperty(sFile, "MusicConfigGUI", "nowPlayingStyle", g_sNowPlayingChoice);
     
 	SetMPXMLProperty(sFile, "Misc", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));
 	SetMPXMLProperty(sFile, "Misc", "miscShowHiddenMenuImage", BoolToStringInt(g_bShowHiddenMenuImage));
