@@ -43,25 +43,6 @@
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
 // Feature Defines
-#define FANART_FEATURE_MOVINGPICS					"Main\\fanartMovingPictures"
-#define FANART_FEATURE_MOVINGPICS_THUMBS			"Main\\fanartMovingPicturesThumbs"
-#define FANART_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\fanartMovingPictures.12x3.8x2.Thumbs"
-#define FANART_FEATURE_MOVINGPICS_12x4_8x3_THUMBS	"Main\\fanartMovingPictures.12x4.8x3.Thumbs"
-
-#define DEFAULT_FEATURE_MOVINGPICS					"Main\\defaultMovingPictures"
-#define DEFAULT_FEATURE_MOVINGPICS_THUMBS			"Main\\defaultMovingPicturesThumbs"
-#define DEFAULT_FEATURE_MOVINGPICS_12x3_8x2_THUMBS	"Main\\defaultMovingPictures.12x3.8x2.Thumbs"
-#define DEFAULT_FEATURE_MOVINGPICS_12x4_8x3_THUMBS	"Main\\defaultMovingPictures.12x4.8x3.Thumbs"
-
-#define TVGUIDE08_FEATURE_OPTIONS					"Main\\tvguide08Options"
-#define TVGUIDE10_FEATURE_OPTIONS					"Main\\tvguide10Options"
-#define TVGUIDE12_FEATURE_OPTIONS					"Main\\tvguide12Options"  
-
-#define TVMINIGUIDE03_FEATURE_OPTIONS				"Main\\tvminiguide03Options"
-#define TVMINIGUIDE05_FEATURE_OPTIONS				"Main\\tvminiguide05Options"
-#define TVMINIGUIDE07_FEATURE_OPTIONS				"Main\\tvminiguide07Options"
-#define TVMINIGUIDE09_FEATURE_OPTIONS				"Main\\tvminiguide09Options"
-
 #define FONTSDEF_FEATURE_OPTIONS					"Main\\fontsDefOptions"
 #define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"
 
@@ -83,7 +64,10 @@
 // Skin XML defines
 #define STREAMEDMP_SKIN_TVSERIES					INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES				INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
-#define STREAMEDMP_SKIN_TVSERIESSETTINGS			INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"                  
+#define STREAMEDMP_SKIN_TVSERIESSETTINGS			INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"
+#define STREAMEDMP_SKIN_TVMINIGUIDE					INSTALLDIR^SKIN_NAME^"TVMiniGuide.xml"
+#define STREAMEDMP_SKIN_MYTVGUIDE					INSTALLDIR^SKIN_NAME^"mytvguide.xml"
+#define STREAMEDMP_SKIN_DIALOGTVGUIDE				INSTALLDIR^SKIN_NAME^"dialogTvGuide.xml"
 #define STREAMEDMP_SKIN_REFERENCES					INSTALLDIR^SKIN_NAME^"references.xml"       
 #define STREAMEDMP_SKIN_COMMOVERLAYHOME				INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
 #define STREAMEDMP_SKIN_COMMOVERLAY					INSTALLDIR^SKIN_NAME^"common.overlays.xml"
@@ -124,7 +108,6 @@
 #define INFOSERVICE_MIN_VERSION				"1.5.0.65"
 #define TRAILERS_MIN_VERSION				"2.0.6.49"
 
-//#define VIDEO_OSD_UPDATE					25113 // svn revision in which mediainfo for VideoOSD was updated.
 #define BASICHOME_SUPPORTS_UPGRADE			1133  // version that allows upgrade of basichome
 
 // XML Path Defines
@@ -167,6 +150,12 @@
 #define MOVPICS_FILMSTRIPMEDIAINFO_PATH						"/window/controls/import[@tag='FilmstripViewMediaInfo']"
 #define MOVPICS_FACADE_PATH									"/window/controls/import[@tag='Facade']"
 #define MOVPICS_TOPBAR_PATH									"/window/controls/import[@tag='TopBar']"
+
+// TV Mini Guide ImportPaths
+#define TVMINIGUIDE_ROWS_PATH								"/window/controls/import[@tag='TVMiniGuide']"
+
+// TV Guide ImportPaths
+#define TVGUIDE_ROWS_PATH									"/window/controls/import[@tag='TVGuideChannelTemplate']"
 
 // Dialogs
 #define RES_DLG_TVSERIESSELECT						13000
@@ -1523,27 +1512,7 @@ Dlg_Wait:
 	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVMINIGUIDE,"7 Rows");
 	   			endswitch; 		
 				ListDestroy(listTVMiniGuides);
- 				
- 				// Select Now Playing Music VU Meters
- 				//listVUMeters = ListCreate(STRINGLIST);
-				
-				//ListAddString(listVUMeters,"Analog",AFTER);
-				//ListAddString(listVUMeters,"Digital",AFTER);
-				//ListAddString(listVUMeters,"None (Fake)",AFTER);
-				// Add VUMeter types to list
-	        	//CtrlSetList(szDialogName,RES_COMBO_VUMETERS,listVUMeters);
-	    		
-	    		// Select current VUMeter type    		      		
-	    		//switch (g_sVUMeter)
- 				//	case "analog":
-	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Analog");
-	    		//	case "led":
-	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"Digital");
-	    		//	default:
-	    		//		CtrlSetCurSel(szDialogName,RES_COMBO_VUMETERS,"None (Fake)");
-	   			//endswitch; 		 				
- 				//ListDestroy(listVUMeters);	        
- 				 				 				 		
+ 				 			 				 				 		
  				if g_bSetAsDefaultSkin then
  					CtrlSetState(szDialogName,RES_CHECK_SKINDEFAULT,BUTTON_CHECKED);
  				endif;
@@ -1673,16 +1642,6 @@ Dlg_Wait:
 		g_bLargeFonts = FALSE;
 	endif;
 	
-	//CtrlGetCurSel(szDialogName,RES_COMBO_VUMETERS,sValue);
-	//switch (sValue)
-	//	case "Analog":
-	//		g_sVUMeter = "analog"; 
-	//	case "Digital":
-	//		g_sVUMeter = "led";
-	//	default:
-	//		g_sVUMeter = "none";
-	//endswitch;
-	
 	if (CtrlGetState(szDialogName,RES_CHECK_SKINDEFAULT) = BUTTON_CHECKED) then
 		g_bSetAsDefaultSkin = TRUE;
 	else
@@ -1708,35 +1667,6 @@ Dlg_Wait:
 	endif;  	
 		
 	// Set Features 
-	
-	// TVGuide
-	FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, FALSE );
-	FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, FALSE );
-	FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, FALSE );
-	switch (g_sTVGuideSize)
-		case "8":
-			FeatureSelectItem ( MEDIA, TVGUIDE08_FEATURE_OPTIONS, TRUE );			
-		case "10":			;
-			FeatureSelectItem ( MEDIA, TVGUIDE10_FEATURE_OPTIONS, TRUE );			
-		default:			
-			FeatureSelectItem ( MEDIA, TVGUIDE12_FEATURE_OPTIONS, TRUE );
-	endswitch; 
-	
-	// TV MiniGuide	                            
-	FeatureSelectItem ( MEDIA, TVMINIGUIDE03_FEATURE_OPTIONS, FALSE );
-	FeatureSelectItem ( MEDIA, TVMINIGUIDE05_FEATURE_OPTIONS, FALSE );
-	FeatureSelectItem ( MEDIA, TVMINIGUIDE07_FEATURE_OPTIONS, FALSE );
-	FeatureSelectItem ( MEDIA, TVMINIGUIDE09_FEATURE_OPTIONS, FALSE );                            
-	switch (g_sTVMiniGuideSize)
-		case "3":
-			FeatureSelectItem ( MEDIA, TVMINIGUIDE03_FEATURE_OPTIONS, TRUE );			
-		case "5":			
-			FeatureSelectItem ( MEDIA, TVMINIGUIDE05_FEATURE_OPTIONS, TRUE );			
-		case "9":			
-			FeatureSelectItem ( MEDIA, TVMINIGUIDE09_FEATURE_OPTIONS, TRUE );			
-		default:			
-			FeatureSelectItem ( MEDIA, TVMINIGUIDE07_FEATURE_OPTIONS, TRUE );
-	endswitch;
 	
 	// Font Sizes	
 	if (!g_bLargeFonts) then
@@ -2168,6 +2098,8 @@ begin
 	SetMPXMLProperty(sFile, "Misc", "miscTextColor3", g_sText3Color);
 	SetMPXMLProperty(sFile, "Misc", "miscWatchedColor", g_sWatchedColor);
 	SetMPXMLProperty(sFile, "Misc", "miscRemoteColor", g_sRemoteColor);
+	
+	// Apply Configuration
 		                                      
 	// Update Graphics Quality for SeriesPosters, Default style does not require as much details
 	// as it uses a much smaller Filmstrip and also contains a 100% Image on item selected       
@@ -2271,9 +2203,6 @@ begin
 		sStyle = "fanart";
 	endif;
 		
-	SetSkinDefine(sFile, "#defaultstyle", BoolToString(g_bMovingPicturesDefault));
-	SetSkinDefine(sFile, "#thumbnailstyle", g_sThumbLayout);
-	
 	SetXMLProperty(sFile, MOVPICS_LISTVIEW_PATH, "movingpictures."+sStyle+".listview.xml");
 	SetXMLProperty(sFile, MOVPICS_LISTVIEWMEDIAINFO_PATH, "movingpictures."+sStyle+".listview.mediainfo.xml");
 	SetXMLProperty(sFile, MOVPICS_FILMSTRIPVIEW_PATH, "movingpictures."+sStyle+".filmstripview.xml");
@@ -2298,6 +2227,16 @@ begin
 			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures.common.thumbsview.12x3.8x2.mediainfo.xml");
 	endswitch;
 	
+	// Update TV Mini Guide Imports
+	sFile = STREAMEDMP_SKIN_TVMINIGUIDE;
+	SetXMLProperty(sFile, TVMINIGUIDE_ROWS_PATH, "TVMiniGuide."+g_sTVMiniGuideSize+"Rows.xml");           
+	
+	// Update TV Guide Imports
+	sFile = STREAMEDMP_SKIN_MYTVGUIDE;
+	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");	
+	sFile = STREAMEDMP_SKIN_DIALOGTVGUIDE;
+	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
+		
 	// Set Default Skin
 	sFile = g_sConfigDir^"MediaPortal.xml";	
 	if g_bSetAsDefaultSkin then
