@@ -15,8 +15,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>	  
     </control>
     <control>
       <description>weather background image infoservice</description>
@@ -27,8 +26,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>Animations/linkedweather//#infoservice.weather.today.img.small.filenamewithoutext.jpg</texture>
-      <visible>plugin.isenabled(InfoService)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <visible>plugin.isenabled(InfoService)</visible>	  
     </control>
     <control>
       <description>Current Weather BG</description>
