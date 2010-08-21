@@ -72,10 +72,7 @@
 #define STREAMEDMP_SKIN_BASICHOMEOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
 #define STREAMEDMP_SKIN_BASICHOMEOVERLAY2			INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
 #define STREAMEDMP_SKIN_MOVPICSOVERLAY				INSTALLDIR^SKIN_NAME^"movingpictures.overlay.xml"
-#define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml" 
-#define STREAMEDMP_SKIN_MUSICNOWPLAYING             INSTALLDIR^SKIN_NAME^"MyMusicPlayingNow.xml"
-#define STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU			INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowAnVU.xml"
-#define STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU        INSTALLDIR^SKIN_NAME^"MyMusicPlayingNowLedVU.xml"
+#define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 #define STREAMEDMP_SKIN_4TRACTIVE			        INSTALLDIR^SKIN_NAME^"4TR_Active.xml"
 #define STREAMEDMP_SKIN_4TRPROGRAMINFO		        INSTALLDIR^SKIN_NAME^"4TR_ProgramInfo.xml"
@@ -183,7 +180,7 @@
 #define RES_BUTTON_UNFOCUSEDALPHA					1413
 #define RES_CHECK_SHOWHIDDENMENUIMAGE				1414   
 #define RES_CHECK_ENABLERANDOMFANARTMYTV    		1416
-#define RES_CHECK_ARTWORKICONS						1418
+#define RES_CHECK_ARTWORKICONS						1420
 
 #define RES_BMP_NOWPLAYINGDEFAULT					1400
 #define RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU		1401
@@ -307,9 +304,9 @@ STRING g_sRemoteColor;
 function OnBegin()
 	STRING szVersion, szUpgradeMessage, szValue;
 	NUMBER nResult;
-	BOOL bUpgradeSupported;
-begin                
-
+	BOOL bUpgradeSupported;	
+begin 
+    
 	DetectWinLargeFonts();
  
 	// See if older version is installed
@@ -649,9 +646,9 @@ function OnFirstUIBefore()
     NUMBER nResult, nSetupType, nvSize, nUser;
     STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile;
     STRING svMPVersion, svValue;    
-	BOOL bCustom;
-begin						   
-  
+	BOOL bCustom;	
+begin
+
 	SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	   
     
 	nSetupType = TYPICAL;	
@@ -1988,13 +1985,17 @@ begin
 end;
 
 function VOID UpdateSettings()
-	STRING svString, sFile, sArtistImage, szDefine, sStyle;
-	BOOL bReturn;		
+	STRING svString, sFile, sArtistImage, szDefine, sStyle, svValue;
+	BOOL bReturn;
+	OBJECT objCheckSum;		
 begin
 	// Confirm if configuration sections exist
 	// we dont have any XML functions to help here	
    	CheckXMLSectionsExist();  	
-
+    
+    // Change CheckSums after Applying configuration changes
+    set objCheckSum = CoCreateObjectDotNet(g_sMediaPortalProgramDir^"SMPCheckSum.dll", "SMPCheckSum.CheckSum" );
+    
 	// Save configuration	
 	sFile = g_sConfigDir^"StreamedMPConfig.xml";
 	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
@@ -2055,6 +2056,13 @@ begin
 		SetXMLProperty(sFile, "/settings/views/season/item1", "SMALLSPACE");
 	endif;				 
 		
+	// Adjust Skin to support 1920x1080 resolution
+	bReturn = AdjustForScreenSize();
+	ModifySkinFilesForFULLHD(bReturn);
+	
+	// TVSeries.SkinSettings.xml CheckSum
+	svValue = objCheckSum.Replace(sFile);               
+       
 	// Update TVSeries Imports
 	sFile = STREAMEDMP_SKIN_TVSERIES;
 	
@@ -2086,6 +2094,9 @@ begin
 			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.10x4.Facade.xml");
 			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.10x4.SeriesWideBanners.xml");
 	endswitch;
+	
+	// TVSeries CheckSum
+	svValue = objCheckSum.Replace(sFile);
 	
 	// Update MovingPictures Imports
 	sFile = STREAMEDMP_SKIN_MOVINGPICTURES;
@@ -2119,51 +2130,50 @@ begin
 			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures.common.thumbsview.12x3.8x2.mediainfo.xml");
 	endswitch;
 	
+	// MovingPictures CheckSum
+	svValue = objCheckSum.Replace(sFile);
+	
 	// Update TV Mini Guide Imports
 	sFile = STREAMEDMP_SKIN_TVMINIGUIDE;
 	SetXMLProperty(sFile, TVMINIGUIDE_ROWS_PATH, "TVMiniGuide."+g_sTVMiniGuideSize+"Rows.xml");           
+	svValue = objCheckSum.Replace(sFile);
 	
 	// Update TV Guide Imports
 	sFile = STREAMEDMP_SKIN_MYTVGUIDE;
-	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");	
+	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
+	svValue = objCheckSum.Replace(sFile);	
 	sFile = STREAMEDMP_SKIN_DIALOGTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
-		
-	// Set Default Skin
-	sFile = g_sConfigDir^"MediaPortal.xml";	
-	if g_bSetAsDefaultSkin then
-		SetMPXMLProperty(sFile, "skin","name",SKIN_NAME);
-	else
-		SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);		
-	endif;             
-	
-	// Enable Animations & Transistions, this is required for skin 
-	// Dont need to worry about 1st time installs of mediaportal with XML
-	// as this is setting is enabled by default for MediaPortal 	
-	SetMPXMLProperty(sFile, "general","animations","yes");
-	
-	// Start with Basic Home or Standard Home	
-	if g_bStartBasicHome then
-		SetMPXMLProperty(sFile, "general","startbasichome","yes");
-	else
-		SetMPXMLProperty(sFile, "general","startbasichome","no");
-	endif;
-		
+	svValue = objCheckSum.Replace(sFile);
+			
 	// Enable/Disable Random Fanart in MyTV sections	
 	szDefine = "#useRandomTVSeriesFanart";
 	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRACTIVE);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRPROGRAMINFO);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDRADIO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRECORDEDRADIO);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRECORDEDTV);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRTVGUIDESEARCH);
 	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRUPCOMING);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVPROGRAM, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVPROGRAM);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVRECORDEDINFO);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVRECORDEDTV);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVER, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSCEDULERSERVER);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH);
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSEARCH);
 	
 	// Update Unfocused Alpha in references.xml
 	// Valid values from 0 - 255 (Tranparent - Solid);
@@ -2185,38 +2195,67 @@ begin
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
 	
+	// References CheckSum
+	svValue = objCheckSum.Replace(sFile);
+		
 	// Update Hard Coded Paths
 	sArtistImage = g_sThumbsDir^"Music\\Artists\\#Play.Current.ArtistL.jpg";
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAYHOME;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage );
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAY;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);
 	
 	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);   
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);   
 	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);
 	
 	sFile = STREAMEDMP_SKIN_MOVPICSOVERLAY;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
+	svValue = objCheckSum.Replace(sFile);	
 	
 	sFile = STREAMEDMP_SKIN_EMULATORS;
 	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");
+	svValue = objCheckSum.Replace(sFile);		
 	
-	// Adjust Skin to support 1920x1080 resolution
-	bReturn = AdjustForScreenSize();
-	ModifySkinFilesForFULLHD(bReturn);	
+	// Set Default Skin
+	sFile = g_sConfigDir^"MediaPortal.xml";	
+	if g_bSetAsDefaultSkin then
+		SetMPXMLProperty(sFile, "skin","name",SKIN_NAME);
+	else
+		SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);		
+	endif;             
+	
+	// Enable Animations & Transistions, this is required for skin 
+	// Dont need to worry about 1st time installs of mediaportal with XML
+	// as this is setting is enabled by default for MediaPortal 	
+	SetMPXMLProperty(sFile, "general","animations","yes");
+	
+	// Start with Basic Home or Standard Home	
+	if g_bStartBasicHome then
+		SetMPXMLProperty(sFile, "general","startbasichome","yes");
+	else
+		SetMPXMLProperty(sFile, "general","startbasichome","no");
+	endif;
+		
+	// Release CheckSum Object		
+	set objCheckSum = NOTHING;
 	
 end;             
 
@@ -2983,23 +3022,7 @@ begin
 	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
 	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);    
     endif; 
-    
-    // Modify ImageList controls in MyMusic
-    // ImageList Controls do not scale
-    if b1920 then
-    	szDefine = "#star.rating.size";
-    	szValue = "48";
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYING, szDefine, szValue);
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU, szDefine, szValue);
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU, szDefine, szValue);
-    else
-    	szDefine = "#star.rating.size";
-    	szValue = "32";
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYING, szDefine, szValue);
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGANVU, szDefine, szValue);
-    	SetSkinDefine(STREAMEDMP_SKIN_MUSICNOWPLAYINGLEDVU, szDefine, szValue);          
-    endif;   
-    
+   
 end; 
 
 function void DetectWinLargeFonts()
