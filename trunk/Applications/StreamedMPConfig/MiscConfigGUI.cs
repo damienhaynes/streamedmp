@@ -11,7 +11,8 @@ namespace StreamedMPConfig
     private enum GUIControls
     {
       HiddenMenuImage = 2,
-      RoundedImages = 3
+      RoundedImages = 3,
+      IconsInArtwork = 4
     }  
     #endregion
 
@@ -21,6 +22,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.RoundedImages)]
     protected GUIToggleButtonControl btnRoundedImages = null;
+
+    [SkinControl((int)GUIControls.IconsInArtwork)]
+    protected GUIToggleButtonControl btnIconsInArtwork = null;
     #endregion
 
     #region Constructor
@@ -30,6 +34,21 @@ namespace StreamedMPConfig
     #region Public Properties
     public static bool ShowHiddenMenuImage { get; set; }
     public static bool ShowRoundedImages { get; set; }
+    public static bool ShowIconsInArtwork { get; set; }
+    #endregion
+
+    #region Public Methods
+    public static void SetProperties()
+    {
+      StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", MiscConfigGUI.ShowHiddenMenuImage ? "Action_menu.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", MiscConfigGUI.ShowRoundedImages ? "round.poster.frame.png" : "-");
+      // Icons in Artwork require a few image properties
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Background", MiscConfigGUI.ShowIconsInArtwork ? "overlaywubg.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Watched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatched.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.UnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatched.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatchedna.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
+    }
     #endregion
 
     #region Private Methods
@@ -42,12 +61,17 @@ namespace StreamedMPConfig
       // Rounded Poster Images
       btnRoundedImages.Selected = ShowRoundedImages;
       btnRoundedImages.Label = Translation.ShowRoundedPosters;
+
+      // Icons In Artwork
+      btnIconsInArtwork.Selected = ShowIconsInArtwork;
+      btnIconsInArtwork.Label = Translation.ShowIconsInArtwork;
     }
 
     private void GetControlStates()
     {
       ShowHiddenMenuImage = btnHiddenMenuImage.Selected;
       ShowRoundedImages = btnRoundedImages.Selected;
+      ShowIconsInArtwork = btnIconsInArtwork.Selected;
     }
 
     /// <summary>
@@ -55,8 +79,7 @@ namespace StreamedMPConfig
     /// </summary>
     private void ApplyConfigurationChanges()
     {
-      StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", MiscConfigGUI.ShowHiddenMenuImage ? "Action_menu.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", MiscConfigGUI.ShowRoundedImages ? "round.poster.frame.png" : "-");
+      SetProperties();
     }
     #endregion
 

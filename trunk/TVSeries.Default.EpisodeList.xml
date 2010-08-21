@@ -39,7 +39,7 @@
             <posY>276</posY>
             <width>32</width>
             <height>39</height>
-            <texture>#overlaywubg</texture>
+            <texture>#StreamedMP.Icons.Background</texture>
             <visible>control.isvisible(1239)+facadeview.list</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -49,9 +49,9 @@
             <id>0</id>
             <posX>356</posX>
             <posY>280</posY>
-            <width>88</width>
-            <height>22</height>
-            <texture>#tvseries_Watched</texture>
+            <width>24</width>
+            <height>24</height>
+            <texture>#StreamedMP.Icons.Watched</texture>
             <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -61,9 +61,9 @@
             <id>0</id>
             <posX>356</posX>
             <posY>280</posY>
-            <width>88</width>
-            <height>22</height>
-            <texture>#tvseries_UnWatched</texture>
+            <width>24</width>
+            <height>24</height>
+            <texture>#StreamedMP.Icons.UnWatched</texture>
             <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -73,9 +73,9 @@
             <id>0</id>
             <posX>356</posX>
             <posY>280</posY>
-            <width>88</width>
-            <height>22</height>
-            <texture>#tvseries_WatchedNA</texture>
+            <width>24</width>
+            <height>24</height>
+            <texture>#StreamedMP.Icons.NAWatched</texture>
             <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+!control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>
@@ -85,9 +85,9 @@
             <id>0</id>
             <posX>356</posX>
             <posY>280</posY>
-            <width>88</width>
-            <height>22</height>
-            <texture>#tvseries_UnWatchedNA</texture>
+            <width>24</width>
+            <height>24</height>
+            <texture>#StreamedMP.Icons.NAUnWatched</texture>
             <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
         </control>        

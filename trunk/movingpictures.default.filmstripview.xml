@@ -36,7 +36,7 @@ This file should contain the thumbs view
 		  <posY>130</posY>
 		  <width>32</width>
 		  <height>39</height>
-		  <texture>overlaywubg.png</texture>
+		  <texture>#StreamedMP.Icons.Background</texture>
 		  <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
 		</control>		
 		<control>
@@ -44,10 +44,10 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>333</posX>
-		  <posY>134</posY>
-		  <width>23</width>
-		  <height>23</height>
-		  <texture>overlaywatched.png</texture>
+		  <posY>133</posY>
+		  <width>24</width>
+		  <height>24</height>
+		  <texture>#StreamedMP.Icons.Watched</texture>
 		  <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>		
 		<control>
@@ -55,10 +55,10 @@ This file should contain the thumbs view
 		  <type>image</type>
 		  <id>0</id>
 		  <posX>333</posX>
-		  <posY>134</posY>
-		  <width>23</width>
-		  <height>23</height>
-		  <texture>overlayunwatched.png</texture>
+		  <posY>133</posY>
+		  <width>24</width>
+		  <height>24</height>
+		  <texture>#StreamedMP.Icons.UnWatched</texture>
 		  <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
 		</control>
 		
