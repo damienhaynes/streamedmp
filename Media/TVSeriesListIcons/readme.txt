@@ -1,1 +1,0 @@
-Either MultiIcon or SingleIcon images will be installed depending on choice by user in setup

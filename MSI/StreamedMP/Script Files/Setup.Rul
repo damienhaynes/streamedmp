@@ -42,12 +42,11 @@
 
 #define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
 
-// Feature Defines
+// Feature Defines 
+#define TVSERIES_LISTICONS_FEATURE					"Main\\tvseriesListIcons"
+
 #define FONTSDEF_FEATURE_OPTIONS					"Main\\fontsDefOptions"
 #define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"
-
-#define TVSERIES_MULTIIMAGE_OPTION					"Main\\tvseriesMultiImageIcons"
-#define TVSERIES_SINGLEIMAGE_OPTION					"Main\\tvseriesSingleImageIcons"
 
 #define NOWPLAYING_DEFAULT							"Main\\nowPlayingDefault"
 #define NOWPLAYING_FULLSCREEN_HIDDENMENU            "Main\\nowPlayingFullscreenHiddenMenu"
@@ -173,7 +172,6 @@
 
 #define RES_CHECK_TOTALEPCOUNT						1304
 #define RES_CHECK_LISTIMAGES						1305
-#define RES_COMBO_LISTIMAGESSTYLE					1308
 #define RES_CHECK_ARTWORKICONS						1307
   
 #define RES_COMBO_FONTS								1401 
@@ -225,20 +223,17 @@ prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
 prototype VOID		UninstallCleanup();       
-//prototype NUMBER	TVSeriesLayout(BYREF STRING,BOOL);
 prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRING);
 prototype VOID		CleanVirtualStoreDir();
 prototype NUMBER	GetXMLProperty(STRING,STRING,BYREF STRING);
 prototype NUMBER	SetXMLProperty(STRING,STRING,STRING);
 prototype VOID		TVSeriesIcons(BOOL);
-prototype VOID		TVSeriesImageStyle(BOOL);    
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING, STRING, STRING, STRING);
 prototype NUMBER	GetMPXMLProperty(STRING, STRING, STRING ,BYREF STRING); 
 prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
 prototype NUMBER	GetSkinDefine(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
-//prototype VOID		RoundedCovers(BOOL, STRING);   
 prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
@@ -267,8 +262,7 @@ BOOL g_bMajorUpgrade;
 BOOL g_bSetAsDefaultSkin;
 BOOL g_bShowTotalEpisodeCount;
 BOOL g_bShowArtworkIcons;
-BOOL g_bShowIconsInListView;   
-BOOL g_bShowUnWatchedOnlyInListImage; 
+BOOL g_bShowIconsInListView;
 BOOL g_bStartBasicHome; 
 BOOL g_bShowRoundedCovers;
 BOOL g_bShowHiddenMenuImage;      
@@ -466,14 +460,6 @@ begin
 		g_bShowIconsInListView = TRUE;			
 	endif;	
 	
-	// Read TVSeries Watched/Unwatched List Image Style
-	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowUnwatchedIconsOnlyInListView", svValue) < 0 then
-		svValue = "0";
-	endif;
-	if svValue = "1" then
-		g_bShowUnWatchedOnlyInListImage = TRUE;			
-	endif;	
-		
 	// Read Moving Pictures Default	
 	if GetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", svValue) < 0 then
 		svValue = "1";
@@ -1174,26 +1160,12 @@ Dlg_Wait:
 	if !bValidate then 
 	 	MessageBox(szErrorMsg,INFORMATION);	 	
 		goto Dlg_Wait;
-	endif;
-	
-	if (!g_bTVSeriesDefault && g_bShowIconsInListView && g_bShowUnWatchedOnlyInListImage) then
-		// Fanart Style does not yet support Single List Image for Series/Season views
-		MessageBox("Fanart Style only supports Mult-Icon images in Series/Season lists, setup has changed accordingly.",INFORMATION);
-		g_bShowUnWatchedOnlyInListImage = FALSE;
-	endif;					
+	endif;	
 		
-	if (g_bShowIconsInListView) then
-		
-		if (g_bShowUnWatchedOnlyInListImage) then
-			FeatureSelectItem ( MEDIA, TVSERIES_SINGLEIMAGE_OPTION, TRUE );
-			FeatureSelectItem ( MEDIA, TVSERIES_MULTIIMAGE_OPTION, FALSE );
-		else
-			FeatureSelectItem ( MEDIA, TVSERIES_SINGLEIMAGE_OPTION, FALSE );
-			FeatureSelectItem ( MEDIA, TVSERIES_MULTIIMAGE_OPTION, TRUE );
-		endif;
+	if (g_bShowIconsInListView) then		
+		FeatureSelectItem ( MEDIA, TVSERIES_LISTICONS_FEATURE, TRUE );	
 	else
-		FeatureSelectItem ( MEDIA, TVSERIES_MULTIIMAGE_OPTION, FALSE );
-		FeatureSelectItem ( MEDIA, TVSERIES_SINGLEIMAGE_OPTION, FALSE );				
+		FeatureSelectItem ( MEDIA, TVSERIES_LISTICONS_FEATURE, FALSE );		
 	endif;
 
     EndDialog (szDialogName);
@@ -1205,8 +1177,7 @@ end;
 function number ShowTVSeriesAdvanced(bModify)
 	STRING szDialogName, szErrorMsg, svText;
 	NUMBER nCmdValue;
-	BOOL bDone, bValidate;
-	LIST listImageStyle;
+	BOOL bDone, bValidate;	
 begin
 
 	szDialogName = "SelectionTVSeriesAdvanced";
@@ -1240,24 +1211,7 @@ Dlg_Wait:
  				if g_bShowArtworkIcons then
  					CtrlSetState(szDialogName,RES_CHECK_ARTWORKICONS,BUTTON_CHECKED); 			
  				endif; 			 				
- 				
- 				listImageStyle = ListCreate(STRINGLIST);
-	        	ListAddString(listImageStyle,"Multi-Icon",AFTER);	        	
-	        	ListAddString(listImageStyle,"UnWatched Icon",AFTER);
-	        	// Add Support Icon Styles	        		        		        	
-	        	CtrlSetList(szDialogName,RES_COMBO_LISTIMAGESSTYLE,listImageStyle);  
-	        	if g_bShowUnWatchedOnlyInListImage then
-	        		CtrlSetCurSel(szDialogName,RES_COMBO_LISTIMAGESSTYLE,"UnWatched Icon");
-	        	else
-	        		CtrlSetCurSel(szDialogName,RES_COMBO_LISTIMAGESSTYLE,"Multi-Icon");
-	        	endif;
-	        	ListDestroy(listImageStyle);
-	        	
-	        	if !g_bShowIconsInListView then
-	        		// Disable Control
-	        		EnableControl(szDialogName,RES_COMBO_LISTIMAGESSTYLE,FALSE);
-	        	endif;
-	        	 				 				         		     
+ 				 				
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
 	   	        	   	        	   	        
@@ -1268,15 +1222,7 @@ Dlg_Wait:
 	        	bDone = TRUE;
 	        	
 	        case RES_PBUT_CLOSE:
-	        	bDone = TRUE;
-	        
-	        case RES_CHECK_LISTIMAGES:
-	        	if CtrlGetState(szDialogName,RES_CHECK_LISTIMAGES) = BUTTON_CHECKED then
-	        		// Enable Control
-	        		EnableControl(szDialogName,RES_COMBO_LISTIMAGESSTYLE,TRUE);
-	        	else
-	        		EnableControl(szDialogName,RES_COMBO_LISTIMAGESSTYLE,FALSE);
-	        	endif;
+	        	bDone = TRUE;	    
 	        	
 	     endswitch;
     
@@ -1302,13 +1248,7 @@ Dlg_Wait:
 		else
 			g_bShowArtworkIcons = FALSE;
 		endif;					
-		CtrlGetCurSel(szDialogName,RES_COMBO_LISTIMAGESSTYLE,svText);
-		if svText = "UnWatched Icon" then
-			g_bShowUnWatchedOnlyInListImage = TRUE;
-		else
-			g_bShowUnWatchedOnlyInListImage = FALSE;
-		endif;
-			
+		
 	endif;
 	
     EndDialog (szDialogName);
@@ -1522,11 +1462,6 @@ Dlg_Wait:
  				if g_bShowRoundedCovers then
  					CtrlSetState(szDialogName,RES_CHECK_ROUNDEDCOVERS,BUTTON_CHECKED);
  				endif;
- 				
- 				// Disable rounded cover checkbox if Fanart Style is not chosen
- 				//if (g_bTVSeriesDefault && g_bMovingPicturesDefault) then
- 				//      EnableControl(szDialogName,RES_CHECK_ROUNDEDCOVERS,FALSE);
- 				//endif; 			 		
  				       
  				if g_bShowHiddenMenuImage then
  					CtrlSetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE,BUTTON_CHECKED);
@@ -1983,8 +1918,7 @@ begin
     						"\n\t\t<entry name=\"tvseriesDefaultStyle\">1</entry>"+
     						"\n\t\t<entry name=\"tvseriesWideBannerMod\">0</entry>"+
     						"\n\t\t<entry name=\"tvseriesShowTotalEpisodeCounts\">0</entry>"+
-    						"\n\t\t<entry name=\"tvseriesShowIconsInListView\">1</entry>"+
-    						"\n\t\t<entry name=\"tvseriesShowUnwatchedIconsOnlyInListView\">0</entry>"+
+    						"\n\t\t<entry name=\"tvseriesShowIconsInListView\">1</entry>"+    						
     						"\n\t</section>"+
     						"\n</profile>";
     
@@ -2065,8 +1999,7 @@ begin
 	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
 	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesWideBannerMod", g_sWideBannerLayout);	
 	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowTotalEpisodeCounts", BoolToStringInt(g_bShowTotalEpisodeCount));
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", BoolToStringInt(g_bShowIconsInListView));
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowUnwatchedIconsOnlyInListView", BoolToStringInt(g_bShowUnWatchedOnlyInListImage));
+	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", BoolToStringInt(g_bShowIconsInListView));	
 	
 	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", BoolToStringInt(g_bMovingPicturesDefault));
 	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesThumbMod", g_sThumbLayout);
@@ -2102,56 +2035,27 @@ begin
 	
 	// Set Total Episode Count Field to Series/Season List View
 	sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;
-	if g_bShowTotalEpisodeCount then
-		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesTotalEpisodes_1");
-			SetXMLProperty(sFile, "/settings/views/season/item3", "SeasonTotalEpisodes_1");
-		else
-			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesTotalEpisodes_2");
-			SetXMLProperty(sFile, "/settings/views/season/item3", "SeasonTotalEpisodes_2");
-		endif;
+	if g_bShowTotalEpisodeCount then	
+		SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesTotalEpisodes");
+		SetXMLProperty(sFile, "/settings/views/season/item3", "SeasonTotalEpisodes");	
 	else
 		// Display nothing for Season List
-		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(sFile, "/settings/views/series/item3", "SMALLSPACE");
-		else
-			SetXMLProperty(sFile, "/settings/views/series/item3", "SeriesAirsDay_2");
-		endif;
+		SetXMLProperty(sFile, "/settings/views/series/item3", "SMALLSPACE");		
 		SetXMLProperty(sFile, "/settings/views/season/item3", "SMALLSPACE");
 	endif;
 	
 	// Set Watched/Unwatched counts to Series/Season List View
 	if g_bShowIconsInListView then
-		if !g_bShowUnWatchedOnlyInListImage then
-			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesWatchedAndUnWatched");
-			SetXMLProperty(sFile, "/settings/views/season/item1", "SeasonWatchedAndUnWatched");
-		else
-			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesUnWatched");
-			SetXMLProperty(sFile, "/settings/views/season/item1", "SeasonUnWatched");
-		endif;
-	else		
-		if !g_bShowUnWatchedOnlyInListImage then
-			// Display the Series Air Day and nothing for Season List
-			SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesAirsDay_1");
-		else
-			SetXMLProperty(sFile, "/settings/views/series/item1", "SMALLSPACE");
-		endif;
+		SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesWatchedAndUnWatched");
+		SetXMLProperty(sFile, "/settings/views/season/item1", "SeasonWatchedAndUnWatched");		 
+	else				
+		// Display the Series Air Day and nothing for Season List
+		SetXMLProperty(sFile, "/settings/views/series/item1", "SeriesAirsDay");		
 		SetXMLProperty(sFile, "/settings/views/season/item1", "SMALLSPACE");
-	endif;
-	
-	if !g_bShowUnWatchedOnlyInListImage then
-		SetXMLProperty(sFile, "/settings/views/episode/item3", "SMALLSPACE");	
-	else		
-		SetXMLProperty(sFile, "/settings/views/episode/item3", "LARGESPACE");
-	endif; 
+	endif;				 
 		
 	// Update Skin to add/remove TVSeries Icons from artwork
-	TVSeriesIcons(g_bShowArtworkIcons);
-
-	// Update Skin to change TVSeries textlist control for Image Style chosen
-	if g_bTVSeriesDefault then
-		TVSeriesImageStyle(g_bShowUnWatchedOnlyInListImage);
-	endif;
+	TVSeriesIcons(g_bShowArtworkIcons);	
 	
 	// Update TVSeries Imports
 	sFile = STREAMEDMP_SKIN_TVSERIES;
@@ -3107,156 +3011,12 @@ begin
 		
 end;*/
 
-function VOID TVSeriesImageStyle(bShowUnWatchedOnly)
-	OBJECT oXMLdoc, oNodeList;
-	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
-	INT i;
-begin   
-
-	sFile = STREAMEDMP_SKIN_TVSERIES;        	 
-    Disable(LOGGING);
-    
-    try
-	    // Prepare XML parser object
-	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
-	    
-		oXMLdoc.async = FALSE;
-		oXMLdoc.preserveWhiteSpace = TRUE;
-	    
-	    // Load the document 	    
-		oXMLdoc.Load (sFile);	
-		
-	    sNode = "/window/define";	    
-	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
-	    
-	    // Examine all <defines> and set texture
-	    for i=0 to oNodeList.length - 1
-		 	
-		 	szString = oNodeList.Item(i).Text;
-		 	
-		 	szFindStr = "#posX:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "730";
-				else
-					szReplaceStr = szFindStr + "760";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#IconXOff:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "384";
-				else
-					szReplaceStr = szFindStr + "389";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#IconYOff:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "11";
-				else
-					szReplaceStr = szFindStr + "12";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;  
-		    
-		   	szFindStr = "#textXOff:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "-65";
-				else
-					szReplaceStr = szFindStr + "-75";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#textXOff2:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "548";
-				else
-					szReplaceStr = szFindStr + "380";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif; 
-		    
-		    szFindStr = "#textXOff3:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "407";
-				else
-					szReplaceStr = szFindStr + "415";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;  		    		   
-		    
-		    szFindStr = "#textureFocus:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "listbg_detail2_fo.png";
-				else
-					szReplaceStr = szFindStr + "listbg_detail_fo.png";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;  		    		   
-		    
-		    /*szFindStr = "#font:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bShowUnWatchedOnly then
-					szReplaceStr = szFindStr + "mediastream11c";
-				else
-					szReplaceStr = szFindStr + "mediastream12c";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;*/
-		    
-		endfor;   		    
-	    
-	    // save the xml	    
-	    oXMLdoc.Save (sFile);
-	    
-	    // release objects used
-	    set oXMLdoc = NOTHING;	    
-	    set oNodeList = NOTHING;	    	    
-	    
-	catch                  
-		
-		Enable(LOGGING);
-	    return;    
-	    
-	endcatch;	       
-
-    Enable(LOGGING);         
-    return;
-		
-end;
-
-function VOID EnableControl(szDialogName, nControl, bState)
+/*function VOID EnableControl(szDialogName, nControl, bState)
 	HWND hwndDlg;	
 begin
 	hwndDlg = CmdGetHwndDlg( szDialogName );
 	EnableWindow( GetDlgItem( hwndDlg, nControl), bState);	
-end; 
+end;*/
 
 function NUMBER SetSkinDefine(szFile, szDefine, szValue)
 	OBJECT oXMLdoc, oNodes;
