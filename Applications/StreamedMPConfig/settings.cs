@@ -162,6 +162,7 @@ namespace StreamedMPConfig
           case "Misc":
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;
             MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, "miscShowRoundedCovers", 1) == 1;
+            MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, "miscShowIconsInArtwork", 1) == 1;
             break;
           #endregion
 
@@ -224,6 +225,7 @@ namespace StreamedMPConfig
           case "Misc":
             xmlwriter.SetValue(section, "miscShowHiddenMenuImage", MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
             xmlwriter.SetValue(section, "miscShowRoundedCovers", MiscConfigGUI.ShowRoundedImages ? 1 : 0);
+            xmlwriter.SetValue(section, "miscShowIconsInArtwork", MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
             break;
           #endregion
 

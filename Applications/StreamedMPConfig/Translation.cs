@@ -195,6 +195,7 @@ namespace StreamedMPConfig
     public static string MusicMenu = "Music Menu";
     public static string VideoMenu = "Video Menu";
     public static string SkinUpdate = "Skin Update";
+    public static string MiscMenu = "Misc Settings";
     public static string UpdateInstall = "Update and Install";
     public static string NoUpdatesAvailable = "No patches are currently available";
     public static string DownloadingPatch = "Downloading Patch: {0}";
@@ -235,9 +236,9 @@ namespace StreamedMPConfig
     public static string TVMiniGuideFiveRows = "TV Mini Guide: 5 Rows";
     public static string TVMiniGuideSevenRows = "TV Mini Guide: 7 Rows";
     public static string TVMiniGuideNineRows = "TV Mini Guide: 9 Rows";
-    public static string ShowHiddenMenuImage = "Show Hidden Menu Image";
-    public static string MiscMenu = "Misc Settings";
+    public static string ShowHiddenMenuImage = "Show Hidden Menu Image";    
     public static string ShowRoundedPosters = "Show Rounded Poster Images";
+    public static string ShowIconsInArtwork = "Show Watched/UnWatched Icons In Artwork";
     public static string LatestEpisodes = "Latest Episodes";
     public static string LatestMovies = "Latest Movies";
     public static string NowPlayingStyles = "Now Playing Screen Styles";

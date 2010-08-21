@@ -61,7 +61,7 @@ This file should contain the details view
       <posY>339</posY>
       <width>32</width>
       <height>39</height>
-      <texture>overlaywubg.png</texture>
+      <texture>#StreamedMP.Icons.Background</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)</visible>
     </control>    
     <control>
@@ -69,10 +69,10 @@ This file should contain the details view
       <type>image</type>
       <id>0</id>
       <posX>279</posX>
-      <posY>343</posY>
-      <width>23</width>
-      <height>23</height>
-      <texture>overlaywatched.png</texture>
+      <posY>342</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>#StreamedMP.Icons.Watched</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+control.isvisible(9)</visible>
     </control>    
     <control>
@@ -80,10 +80,10 @@ This file should contain the details view
       <type>image</type>
       <id>0</id>
       <posX>279</posX>
-      <posY>343</posY>
-      <width>23</width>
-      <height>23</height>
-      <texture>overlayunwatched.png</texture>
+      <posY>342</posY>
+      <width>24</width>
+      <height>24</height>
+      <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+!control.isvisible(9)</visible>
     </control>
     

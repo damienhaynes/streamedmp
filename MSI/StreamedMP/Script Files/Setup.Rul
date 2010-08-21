@@ -172,7 +172,6 @@
 
 #define RES_CHECK_TOTALEPCOUNT						1304
 #define RES_CHECK_LISTIMAGES						1305
-#define RES_CHECK_ARTWORKICONS						1307
   
 #define RES_COMBO_FONTS								1401 
 #define RES_CHECK_SKINDEFAULT						1402
@@ -184,6 +183,7 @@
 #define RES_BUTTON_UNFOCUSEDALPHA					1413
 #define RES_CHECK_SHOWHIDDENMENUIMAGE				1414   
 #define RES_CHECK_ENABLERANDOMFANARTMYTV    		1416
+#define RES_CHECK_ARTWORKICONS						1418
 
 #define RES_BMP_NOWPLAYINGDEFAULT					1400
 #define RES_BMP_NOWPLAYINGFULLSCREENHIDDENMENU		1401
@@ -1207,10 +1207,7 @@ Dlg_Wait:
  				endif;
  				if g_bShowIconsInListView then
  					CtrlSetState(szDialogName,RES_CHECK_LISTIMAGES,BUTTON_CHECKED); 			
- 				endif;
- 				if g_bShowArtworkIcons then
- 					CtrlSetState(szDialogName,RES_CHECK_ARTWORKICONS,BUTTON_CHECKED); 			
- 				endif; 			 				
+ 				endif; 				
  				 				
 			case RES_PBUT_BACK:
 				bDone = TRUE;	 	        
@@ -1242,12 +1239,7 @@ Dlg_Wait:
 			g_bShowIconsInListView = TRUE;
 		else
 			g_bShowIconsInListView = FALSE;
-		endif;
-		if CtrlGetState(szDialogName,RES_CHECK_ARTWORKICONS) = BUTTON_CHECKED then
-			g_bShowArtworkIcons = TRUE;
-		else
-			g_bShowArtworkIcons = FALSE;
-		endif;					
+		endif;						
 		
 	endif;
 	
@@ -1469,9 +1461,12 @@ Dlg_Wait:
  				  
  				if g_bEnableRandomFanartInMyTV then
  					CtrlSetState(szDialogName,RES_CHECK_ENABLERANDOMFANARTMYTV,BUTTON_CHECKED);
- 				endif;
+ 				endif; 
  				
- 				
+ 				if g_bShowArtworkIcons then
+ 					CtrlSetState(szDialogName,RES_CHECK_ARTWORKICONS,BUTTON_CHECKED); 			
+ 				endif; 			 				
+ 				 				
  			case RES_BUTTON_LISTCOLOURS:
  				// Create Instance of Colors Class
  				try
@@ -1598,6 +1593,12 @@ Dlg_Wait:
 	else
 		g_bEnableRandomFanartInMyTV = FALSE;		
 	endif;  	
+	
+	if CtrlGetState(szDialogName,RES_CHECK_ARTWORKICONS) = BUTTON_CHECKED then
+		g_bShowArtworkIcons = TRUE;
+	else
+		g_bShowArtworkIcons = FALSE;
+	endif;	
 		
 	// Set Features 
 	
@@ -2054,9 +2055,6 @@ begin
 		SetXMLProperty(sFile, "/settings/views/season/item1", "SMALLSPACE");
 	endif;				 
 		
-	// Update Skin to add/remove TVSeries Icons from artwork
-	TVSeriesIcons(g_bShowArtworkIcons);	
-	
 	// Update TVSeries Imports
 	sFile = STREAMEDMP_SKIN_TVSERIES;
 	
@@ -2687,52 +2685,6 @@ begin
     
 end;
 
-/*function NUMBER TVSeriesLayout(g_sSeriesLayout,bSet)
-	OBJECT oXMLdoc, oNode; 
-	STRING sNode, sFile;
-begin
-    
-    sFile = STREAMEDMP_SKIN_TVSERIESSETTINGS;        	 
-    Disable(LOGGING);
-    
-    try
-	    // Prepare XML parser object
-	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
-	    
-		oXMLdoc.async = FALSE;
-		oXMLdoc.preserveWhiteSpace = TRUE;
-	    
-	    // Load the document 	    
-		oXMLdoc.Load (sFile);
-		
-		sNode = "/settings/views/series";	    
-	    set oNode = oXMLdoc.DocumentElement.SelectSingleNode(sNode); 	    	    
-		
-		if bSet then				       		    	  
-		
-			oNode.Attributes.getNamedItem("layout").Text = g_sSeriesLayout;
-		    // save the xml	    
-		    oXMLdoc.Save (sFile);		   
-		
-		else
-			g_sSeriesLayout = oNode.Attributes.getNamedItem("layout").Text;			
-		endif;
-	 		 	
-	    // release objects used
-	    set oXMLdoc = NOTHING;	    
-	    set oNode = NOTHING;  	    
-	    
-	catch                  
-		
-	    return -1;    
-	    
-	endcatch;	       
-
-    Enable(LOGGING);         
-    return 0;
-    
-end;*/
-
 /*function NUMBER GetXMLProperty(sFile, sNode, sPropertyValue)
 	OBJECT oXMLdoc, oNode; 
 begin
@@ -2835,181 +2787,7 @@ begin
 	
 	Enable(LOGGING);
 	
-end;
-
-function VOID TVSeriesIcons(bAdd)
-	OBJECT oXMLdoc, oNodeList;
-	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
-	INT i;
-begin   
-
-	sFile = STREAMEDMP_SKIN_TVSERIES;
-    Disable(LOGGING);
-    
-    try
-	    // Prepare XML parser object
-	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
-	    
-		oXMLdoc.async = FALSE;
-		oXMLdoc.preserveWhiteSpace = TRUE;
-	    
-	    // Load the document 	    
-		oXMLdoc.Load (sFile);	
-		
-	    sNode = "/window/define";	    
-	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
-	    
-	    // Examine all <defines> and set texture
-	    for i=0 to oNodeList.length - 1
-		 	
-		 	szString = oNodeList.Item(i).Text;
-		 	
-		 	szFindStr = "#overlaywubg:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "overlaywubg.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#tvseries_Watched:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "tvseries_Watched.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#tvseries_UnWatched:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "tvseries_UnWatched.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;  
-		    
-		   	szFindStr = "#tvseries_WatchedNA:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "tvseries_WatchedNA.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;
-		    
-		    szFindStr = "#tvseries_UnWatchedNA:";
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "tvseries_UnWatchedNA.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;  		    		   
-		    
-		endfor;   		    
-	    
-	    // save the xml	    
-	    oXMLdoc.Save (sFile);
-	    
-	    // release objects used
-	    set oXMLdoc = NOTHING;	    
-	    set oNodeList = NOTHING;	    	    
-	    
-	catch                  
-		
-		Enable(LOGGING);
-	    return;    
-	    
-	endcatch;	       
-
-    Enable(LOGGING);         
-    return;
-		
-end;
-
-/*function VOID RoundedCovers(bAdd, sSkin)
-	OBJECT oXMLdoc, oNodeList;
-	STRING sNode, sFile, szString, szFindStr, szReplaceStr;
-	INT i;
-begin   
-       
-    if sSkin = "TVSeries" then
-    	sFile = STREAMEDMP_SKIN_TVSERIES;		
-		szFindStr = "#tvseries_RoundedPosters:";
-	else
-		sFile = STREAMEDMP_SKIN_MOVINGPICTURES;    
-		szFindStr = "#movingpictures_RoundedPosters:";
-	endif;
-	
-    Disable(LOGGING);
-    
-    try
-	    // Prepare XML parser object
-	    set oXMLdoc = CreateObject("Microsoft.XMLDOM");
-	    
-		oXMLdoc.async = FALSE;
-		oXMLdoc.preserveWhiteSpace = TRUE;
-	    
-	    // Load the document 	    
-		oXMLdoc.Load (sFile);	
-		
-	    sNode = "/window/define";	    
-	    set oNodeList = oXMLdoc.DocumentElement.SelectNodes(sNode); 	    	    
-	    
-	    // Examine all <defines> and set texture
-	    for i=0 to oNodeList.length - 1
-		 	
-		 	szString = oNodeList.Item(i).Text;
-		 	
-		 	if StrFind(szString,szFindStr) = 0 then
-				
-				if bAdd then
-					szReplaceStr = szFindStr + "round.poster.frame.png";
-				else
-					szReplaceStr = szFindStr + "-";              
-				endif;
-				oNodeList.Item(i).Text = szReplaceStr;
-				
-		    endif;		      	    		   
-		    
-		endfor;   		    
-	    
-	    // save the xml	    
-	    oXMLdoc.Save (sFile);
-	    
-	    // release objects used
-	    set oXMLdoc = NOTHING;	    
-	    set oNodeList = NOTHING;	    	    
-	    
-	catch                  
-		
-		Enable(LOGGING);
-	    return;    
-	    
-	endcatch;	       
-
-    Enable(LOGGING);         
-    return;
-		
-end;*/
+end;  
 
 /*function VOID EnableControl(szDialogName, nControl, bState)
 	HWND hwndDlg;	

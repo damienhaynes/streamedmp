@@ -24,7 +24,7 @@
 			<posY>130</posY>
 			<width>32</width>
 			<height>39</height>
-			<texture>#overlaywubg</texture>
+			<texture>#StreamedMP.Icons.Background</texture>
 			<visible>control.isvisible(1237)+facadeview.largeicons+Control.HasThumb(60)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -35,9 +35,9 @@
 			<id>0</id>
 			<posX>327</posX>
 			<posY>133</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>#tvseries_Watched</texture>
+			<texture>#StreamedMP.Icons.Watched</texture>
 			<visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -48,9 +48,9 @@
 			<id>0</id>
 			<posX>327</posX>
 			<posY>133</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>#tvseries_UnWatched</texture>
+			<texture>#StreamedMP.Icons.UnWatched</texture>
 			<visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -61,9 +61,9 @@
 			<id>0</id>
 			<posX>327</posX>
 			<posY>133</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>#tvseries_WatchedNA</texture>
+			<texture>#StreamedMP.Icons.NAWatched</texture>
 			<visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -74,9 +74,9 @@
 			<id>0</id>
 			<posX>327</posX>
 			<posY>133</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>#tvseries_UnWatchedNA</texture>
+			<texture>#StreamedMP.Icons.NAUnWatched</texture>
 			<visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>	

@@ -1,33 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>96742</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-
   <!-- 
 		This set of defines are read by the plug-in and used to determine aspects of it's behavior. These
 		are parameters to give the skinner a tiny bit more control over the presentation.
   -->
   <define>#largeicons.available:true</define>
-  <define>#largeicons.backdrop.used:true</define>  
-
-  <define>#smallicons.available:true</define>  
+  <define>#largeicons.backdrop.used:true</define>
+  <define>#smallicons.available:true</define>
   <define>#smallicons.backdrop.used:true</define>
-
-  <define>#list.available:true</define>  
+  <define>#list.available:true</define>
   <define>#list.backdrop.used:true</define>
-
   <define>#filmstrip.available:true</define>
   <define>#filmstrip.backdrop.used:true</define>
-
-  <define>#details.backdrop.used:true</define>  
-  <define>#categories.backdrop.used:true</define>  
-
+  <define>#details.backdrop.used:true</define>
+  <define>#categories.backdrop.used:true</define>
   <controls>
-
-		<import>movingpictures.common.dummy.xml</import>
-		
-		<!-- Default backdrop and fanart -->
+    <import>movingpictures.common.dummy.xml</import>
+    <!-- Default backdrop and fanart -->
     <control>
       <description>Default Background</description>
       <type>image</type>
@@ -38,7 +30,6 @@
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
-    
     <control>
       <description>Movie Backdrop (Fan Art)</description>
       <type>image</type>
@@ -63,33 +54,24 @@
       <animation effect="fade" time="300">visible</animation>
       <animation effect="fade" time="300" delay="300">hidden</animation>
     </control>
-
-		<!-- Do not mix and match different styles (fanart/default) -->
-		<!-- Chosen style should match users StreamedMPConfig.xml -->
-		<!-- Facade, BackgroundOverlay, ThumbView and ThumbViewMediaInfo imports need to reflect Thumbnail mods -->		
+    <!-- Do not mix and match different styles (fanart/default) -->
+    <!-- Chosen style should match users StreamedMPConfig.xml -->
+    <!-- Facade, BackgroundOverlay, ThumbView and ThumbViewMediaInfo imports need to reflect Thumbnail mods -->
     <import tag="BackgroundOverlay">movingpictures.default.background.overlays.xml</import>
     <import>movingpictures.common.hiddenmenu.xml</import>
-
     <import tag="ListView">movingpictures.default.listview.xml</import>
     <import tag="ListViewMediaInfo">movingpictures.default.listview.mediainfo.xml</import>
-
     <import tag="ThumbView">movingpictures.default.thumbsview.xml</import>
     <import tag="ThumbViewMediaInfo">movingpictures.default.thumbsview.mediainfo.xml</import>
-
     <import tag="FilmstripView">movingpictures.default.filmstripview.xml</import>
     <import tag="FilmstripViewMediaInfo">movingpictures.default.filmstripview.mediainfo.xml</import>
-
     <import>movingpictures.common.details.xml</import>
     <import>movingpictures.common.details.mediainfo.xml</import>
-
     <import tag="Facade">movingpictures.default.facade.xml</import>
-
     <import>common.overlays2.xml</import>
-		
-		<import tag="TopBar">movingpictures.default.topbar.xml</import>
+    <import tag="TopBar">movingpictures.default.topbar.xml</import>
     <import>common.time.xml</import>
-		
-		<!-- Fade out the screen when playback starts -->
+    <!-- Fade out the screen when playback starts -->
     <control>
       <description>Playback Indicator</description>
       <type>image</type>
@@ -101,6 +83,6 @@
       <texture>black.png</texture>
       <colordiffuse>50fefaff</colordiffuse>
     </control>
-
   </controls>
 </window>
+<!--Checksum:407376938afdc87b6e34a57f436c7e88-->

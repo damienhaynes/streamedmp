@@ -237,9 +237,9 @@
 			<id>0</id>
 			<posX>686</posX>
 			<posY>453</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>tvseries_Watched.png</texture>
+			<texture>overlaywatched.png</texture>
 			<visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(991)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -249,9 +249,9 @@
 			<id>0</id>
 			<posX>686</posX>
 			<posY>453</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>tvseries_UnWatched.png</texture>
+			<texture>overlayunwatched.png</texture>
 			<visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(991)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -261,9 +261,9 @@
 			<id>0</id>
 			<posX>686</posX>
 			<posY>453</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>tvseries_WatchedNA.png</texture>
+			<texture>overlaywatchedna.png</texture>
 			<visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(991)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
@@ -273,9 +273,9 @@
 			<id>0</id>
 			<posX>686</posX>
 			<posY>453</posY>
-			<width>96</width>
+			<width>24</width>
 			<height>24</height>
-			<texture>tvseries_UnWatchedNA.png</texture>
+			<texture>overlayunwatchedna.png</texture>
 			<visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(991)</visible>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 		</control>
