@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1141</defaultcontrol>
@@ -34,7 +34,7 @@
   <define>#overlay.album:music.album.round.faded.png</define>
   <define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
   <controls>
-  	 <control>
+    <control>
       <description>music background image</description>
       <type>image</type>
       <id>0</id>
@@ -43,7 +43,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>black.png</texture>
-    </control>  	
+    </control>
     <control>
       <type>image</type>
       <description>album art image (rotating)</description>
@@ -76,9 +76,8 @@
     	2.	Display fanart to the top and right edge, use this file
     		mymusic.nowplaying.fanart.and.overlay.edge.xml
     	
-    -->   
+    -->
     <import>mymusic.nowplaying.fanart.and.overlay.edge.xml</import>
-    
     <control>
       <type>multiimage</type>
       <id>9990</id>
@@ -99,3 +98,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:d440f124c28137939c7ce6fd636b8d7d-->

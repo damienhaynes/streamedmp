@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -21,8 +21,8 @@
           <id>50</id>
           <font>font12</font>
           <font2>font12</font2>
-          <selectedColor>FFFF6600</selectedColor>          
-          <selectedColor2>FFFF6600</selectedColor2>          
+          <selectedColor>FFFF6600</selectedColor>
+          <selectedColor2>FFFF6600</selectedColor2>
           <textXOff>15</textXOff>
           <textYOff>15</textYOff>
           <textXOff2>1030</textXOff2>
@@ -32,7 +32,8 @@
           <spaceBetweenItems>0</spaceBetweenItems>
           <textureHeight>96</textureHeight>
           <scrollOffset>1</scrollOffset>
-          <textureFocus></textureFocus>
+          <textureFocus>
+          </textureFocus>
           <textureNoFocus>album_background_nofocus.png</textureNoFocus>
           <spinPosY>560</spinPosY>
           <onleft>2</onleft>
@@ -108,8 +109,10 @@
           <textureWidth>220</textureWidth>
           <textureHeight>220</textureHeight>
           <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png"></InfoImage>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
+          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
+          </InfoImage>
           <showFrame>yes</showFrame>
           <showFolder>no</showFolder>
           <showBackGround>no</showBackGround>
@@ -121,3 +124,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:469f57edcf9d6cb8c2005c01979af3de-->

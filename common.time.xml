@@ -4,12 +4,12 @@
     <!--
     WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
     -->
-   <control>
-  	<description>Update Indicator</description>
-  	  <type>group</type>
-  	  <dimColor>0xffffffff</dimColor>
-  	  <visible>string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
-      <animation effect="fade" time="200" delay="100">WindowOpen</animation>    
+    <control>
+      <description>Update Indicator</description>
+      <type>group</type>
+      <dimColor>0xffffffff</dimColor>
+      <visible>string.equals(#StreamedMP.ShowUpdateInd,true)</visible>
+      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
       <control>
         <description>Update Background</description>
         <type>image</type>
@@ -19,7 +19,7 @@
         <width>187</width>
         <height>32</height>
         <texture>mediacountbg.png</texture>
-      </control>   
+      </control>
       <control>
         <description>Update Indicator</description>
         <type>image</type>
@@ -30,9 +30,8 @@
         <height>25</height>
         <texture>isupdate.png</texture>
         <animation effect="zoom" start="101,101" end="108,108" time="1000" easing="inout" pulse="true" reversible="false" condition="true">Conditional</animation>
-      </control>    
-    </control>    
-    
+      </control>
+    </control>
     <control>
       <description>Time Background</description>
       <type>image</type>
@@ -70,7 +69,7 @@
       <label>#time</label>
       <align>left</align>
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
-    </control>  
-    
+    </control>
   </controls>
 </window>
+<!--Checksum:056e86ceb3d2fbae8d04b3a47dd3ca23-->

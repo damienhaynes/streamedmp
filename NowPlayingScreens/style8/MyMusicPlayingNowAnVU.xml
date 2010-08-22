@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1141</defaultcontrol>
@@ -32,9 +32,9 @@
   		    NOTE: This requires the mymusic.nowplaying.fanart.and.overlay.edge.xml overlay file - see below.
   -->
   <define>#overlay.album:music.album.round.faded.png</define>
-  <define>#overlay.fanart:music.fanart.round.edge.faded.png</define>  
+  <define>#overlay.fanart:music.fanart.round.edge.faded.png</define>
   <controls>
-  	 <control>
+    <control>
       <description>music background image</description>
       <type>image</type>
       <id>0</id>
@@ -43,7 +43,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>black.png</texture>
-    </control>  	
+    </control>
     <control>
       <type>image</type>
       <description>album art image (rotating)</description>
@@ -76,10 +76,9 @@
     	2.	Display fanart to the top and right edge, use this file
     		mymusic.nowplaying.fanart.and.overlay.edge.xml
     	
--->   
+-->
     <import>mymusic.nowplaying.fanart.and.overlay.win.xml</import>
-    
-	<!-- VU Meter: Analog -->	
+    <!-- VU Meter: Analog -->
     <control>
       <type>image</type>
       <id>0</id>
@@ -102,7 +101,7 @@
       <visible>Player.HasAudio + Player.playing</visible>
       <animation effect="fade" time="150">Visible</animation>
     </control>
-     <control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>130</posX>
@@ -119,13 +118,14 @@
       <posY>600</posY>
       <width>80</width>
       <height>80</height>
-	  <imagepath>Animations\AnVu</imagepath>
+      <imagepath>Animations\AnVu</imagepath>
       <texture>#VUMeterR</texture>
       <visible>Player.HasAudio + Player.playing</visible>
       <animation effect="fade" time="150">Visible</animation>
     </control>
-    <import>music.nowplaying.common.xml</import>      
+    <import>music.nowplaying.common.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:1eef6991ded67d88fa52240c4828a144-->

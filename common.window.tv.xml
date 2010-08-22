@@ -1,70 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-       <controls>
-       
-			<control>
-				<description>default background image</description>
-				<type>image</type>
-				<id>0</id>
-				<posX>0</posX>
-				<posY>0</posY>
-				<width>1280</width>
-				<height>720</height>
-				<texture>hover_my tv.png</texture>                     
-				<animation effect="fade" time="500" start="10">WindowOpen</animation>
-				<animation effect="fade" time="500" end="10" >WindowClose</animation>
-			</control>
-              
-              <control>
-                     <description>DUMMY CONTROLL FOR RANDOM FANART 1 VISIBILITY CONDITION</description>
-                     <type>label</type>
-                     <id>91919297</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1</width>                     
-              </control>
-
-              <control>
-                     <description>DUMMY CONTROLL FOR RANDOM FANART 2 VISIBILITY CONDITION</description>
-                     <type>label</type>
-                     <id>91919298</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1</width>                     
-              </control>
-			  			  
-              <control>
-                     <description>FANART IMAGE 1</description>
-                     <id>897688</id>
-                     <type>image</type>
-                     <posx>0</posx>
-                     <posy>0</posy>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>#fanarthandler.tvseries.backdrop1.any</texture>
-                     <visible>control.isvisible(91919297)+plugin.isenabled(Fanart Handler)</visible>
-                     <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
-                     <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
-                     <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" >Visible</animation>
-                     <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
-              </control>
-              <control>
-                     <description>FANART IMAGE 2</description>
-                     <id>897689</id>
-                     <type>image</type>
-                     <posx>0</posx>
-                     <posy>0</posy>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>#fanarthandler.tvseries.backdrop2.any</texture>
-                     <visible>control.isvisible(91919298)+plugin.isenabled(Fanart Handler)</visible>
-                     <animation effect="fade" start="10" end="100" time="1000" delay="80" >Visible</animation>
-                     <animation effect="fade" start="100" end="0" time="900" >Hidden</animation>
-                     <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0" >Visible</animation>
-                     <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900" >Hidden</animation>
-              </control>
-			  
-              <!--<control>
+  <controls>
+    <control>
+      <description>default background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my tv.png</texture>
+      <animation effect="fade" time="500" start="10">WindowOpen</animation>
+      <animation effect="fade" time="500" end="10">WindowClose</animation>
+    </control>
+    <control>
+      <description>DUMMY CONTROLL FOR RANDOM FANART 1 VISIBILITY CONDITION</description>
+      <type>label</type>
+      <id>91919297</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1</width>
+    </control>
+    <control>
+      <description>DUMMY CONTROLL FOR RANDOM FANART 2 VISIBILITY CONDITION</description>
+      <type>label</type>
+      <id>91919298</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1</width>
+    </control>
+    <control>
+      <description>FANART IMAGE 1</description>
+      <id>897688</id>
+      <type>image</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#fanarthandler.tvseries.backdrop1.any</texture>
+      <visible>control.isvisible(91919297)+plugin.isenabled(Fanart Handler)</visible>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
+      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">Visible</animation>
+      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
+    </control>
+    <control>
+      <description>FANART IMAGE 2</description>
+      <id>897689</id>
+      <type>image</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#fanarthandler.tvseries.backdrop2.any</texture>
+      <visible>control.isvisible(91919298)+plugin.isenabled(Fanart Handler)</visible>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
+      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0">Visible</animation>
+      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
+    </control>
+    <!--<control>
                      <description>standard background image with FH</description>
                      <type>image</type>
                      <id>0</id>
@@ -90,59 +85,59 @@
                      <animation effect="fade" time="500" start="10">WindowOpen</animation>
                      <animation effect="fade" time="500" end="10" >WindowClose</animation>
               </control>-->
-			  
-              <control>
-                     <description>tv overlay image</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1281</width>
-                     <height>720</height>
-                     <texture>mainoverlay.png</texture>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Top Title Background</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>77</posX>
-                     <posY>11</posY>
-                     <width>437</width>
-                     <height>35</height>
-                     <texture>tvtitlebg.png</texture>
-                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-                     <animation effect="fade" time="600">WindowOpen</animation>
-                     <animation effect="fade" time="600">WindowClose</animation>
-              </control>
-              <control>
-                     <type>fadelabel</type>
-                     <description>Top Title</description>
-                     <id>0</id>
-                     <posX>493</posX>
-                     <posY>13</posY>
-                     <width>350</width>
-                     <font>mediastream12c</font>
-                     <align>right</align>
-                     <visible>yes</visible>
-                     <label>#currentmodule</label>
-                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-                     <animation effect="fade" time="400">WindowOpen</animation>
-                     <animation effect="fade" time="400">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Time Background</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>6</posX>
-                     <posY>10</posY>
-                     <width>132</width>
-                     <height>32</height>
-                     <texture>clockbackground.png</texture>
-                     <animation effect="fade" time="50">WindowClose</animation>
-              </control>
-       </controls>
+    <control>
+      <description>tv overlay image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
+      <animation effect="fade" time="600">WindowOpen</animation>
+      <animation effect="fade" time="600">WindowClose</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+      <animation effect="fade" time="400">WindowClose</animation>
+    </control>
+    <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+      <animation effect="fade" time="50">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:8b486cadd2267bc10ef886a089f49101-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1141</defaultcontrol>
@@ -34,7 +34,7 @@
   <define>#overlay.album:-</define>
   <define>#overlay.fanart:-</define>
   <controls>
-  	 <control>
+    <control>
       <description>music background image</description>
       <type>image</type>
       <id>0</id>
@@ -43,7 +43,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>black.png</texture>
-    </control>  	
+    </control>
     <control>
       <type>image</type>
       <description>album art image (rotating)</description>
@@ -76,10 +76,9 @@
     	2.	Display fanart to the top and right edge, use this file
     		mymusic.nowplaying.fanart.and.overlay.edge.xml
     	
--->   
+-->
     <import>mymusic.nowplaying.fanart.and.overlay.win.xml</import>
-    
-	<!-- VU Meter: LED -->
+    <!-- VU Meter: LED -->
     <control>
       <type>image</type>
       <id>0</id>
@@ -99,7 +98,7 @@
       <height>20</height>
       <imagepath>Animations\LedVu</imagepath>
       <texture>#VUMeterL</texture>
-      <visible>Player.HasAudio + Player.playing</visible>      
+      <visible>Player.HasAudio + Player.playing</visible>
     </control>
     <control>
       <type>image</type>
@@ -118,12 +117,13 @@
       <posY>630</posY>
       <width>380</width>
       <height>20</height>
-	    <imagepath>Animations\LedVu</imagepath>
+      <imagepath>Animations\LedVu</imagepath>
       <texture>#VUMeterR</texture>
-      <visible>Player.HasAudio + Player.playing</visible>      
-    </control>    
-    <import>music.nowplaying.common.xml</import>    
+      <visible>Player.HasAudio + Player.playing</visible>
+    </control>
+    <import>music.nowplaying.common.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:1ec7216e189b5a001fa9687dc7802bab-->

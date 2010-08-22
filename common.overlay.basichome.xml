@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--
 different overlays on home screens
 -->
@@ -10,7 +10,8 @@ different overlays on home screens
       <type>label</type>
       <id>3339</id>
       <posX>2000</posX>
-      <label></label>
+      <label>
+      </label>
       <visible>no</visible>
     </control>
     <control>
@@ -188,7 +189,7 @@ different overlays on home screens
       <hyperlink>510</hyperlink>
       <!--<action>18</action>-->
       <onup>7777</onup>
-	  <ondown>7777</ondown>
+      <ondown>7777</ondown>
       <onright>7777</onright>
       <onleft>7777</onleft>
       <colordiffuse>f1ffffff</colordiffuse>
@@ -291,7 +292,7 @@ different overlays on home screens
       <textureNoFocus>-</textureNoFocus>
       <action>18</action>
       <onup>7777</onup>
-	  <ondown>7777</ondown>
+      <ondown>7777</ondown>
       <onright>7777</onright>
       <onleft>7777</onleft>
       <visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)</visible>
@@ -306,7 +307,7 @@ different overlays on home screens
       <height>103</height>
       <textureFocus>tv_blue_border.png</textureFocus>
       <action>18</action>
-	  <onup>7777</onup>
+      <onup>7777</onup>
       <ondown>7777</ondown>
       <onright>7777</onright>
       <onleft>7777</onleft>
@@ -379,3 +380,4 @@ different overlays on home screens
     </control>
   </controls>
 </window>
+<!--Checksum:cc30922de7e99f98560b79c31f6a1f37-->
