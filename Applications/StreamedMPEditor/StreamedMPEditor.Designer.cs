@@ -95,6 +95,9 @@
       this.labelImageFolder = new System.Windows.Forms.Label();
       this.itemProperties = new System.Windows.Forms.GroupBox();
       this.gbMostRecentDisplay = new System.Windows.Forms.GroupBox();
+      this.rbDisplayMostRecentNone = new System.Windows.Forms.RadioButton();
+      this.rbDisplayMostRecentMovies = new System.Windows.Forms.RadioButton();
+      this.rbDisplayMostRecentTVSeries = new System.Windows.Forms.RadioButton();
       this.cancelCreateButton = new System.Windows.Forms.Button();
       this.cboContextLabel = new System.Windows.Forms.ComboBox();
       this.label18 = new System.Windows.Forms.Label();
@@ -241,9 +244,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.rbDisplayMostRecentTVSeries = new System.Windows.Forms.RadioButton();
-      this.rbDisplayMostRecentMovies = new System.Windows.Forms.RadioButton();
-      this.rbDisplayMostRecentNone = new System.Windows.Forms.RadioButton();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1066,6 +1066,39 @@
       this.gbMostRecentDisplay.TabStop = false;
       this.gbMostRecentDisplay.Text = "When Item Selected Display Most Recent";
       // 
+      // rbDisplayMostRecentNone
+      // 
+      this.rbDisplayMostRecentNone.AutoSize = true;
+      this.rbDisplayMostRecentNone.Location = new System.Drawing.Point(222, 18);
+      this.rbDisplayMostRecentNone.Name = "rbDisplayMostRecentNone";
+      this.rbDisplayMostRecentNone.Size = new System.Drawing.Size(39, 17);
+      this.rbDisplayMostRecentNone.TabIndex = 2;
+      this.rbDisplayMostRecentNone.TabStop = true;
+      this.rbDisplayMostRecentNone.Text = "Off";
+      this.rbDisplayMostRecentNone.UseVisualStyleBackColor = true;
+      // 
+      // rbDisplayMostRecentMovies
+      // 
+      this.rbDisplayMostRecentMovies.AutoSize = true;
+      this.rbDisplayMostRecentMovies.Location = new System.Drawing.Point(117, 18);
+      this.rbDisplayMostRecentMovies.Name = "rbDisplayMostRecentMovies";
+      this.rbDisplayMostRecentMovies.Size = new System.Drawing.Size(59, 17);
+      this.rbDisplayMostRecentMovies.TabIndex = 1;
+      this.rbDisplayMostRecentMovies.TabStop = true;
+      this.rbDisplayMostRecentMovies.Text = "Movies";
+      this.rbDisplayMostRecentMovies.UseVisualStyleBackColor = true;
+      // 
+      // rbDisplayMostRecentTVSeries
+      // 
+      this.rbDisplayMostRecentTVSeries.AutoSize = true;
+      this.rbDisplayMostRecentTVSeries.Location = new System.Drawing.Point(26, 18);
+      this.rbDisplayMostRecentTVSeries.Name = "rbDisplayMostRecentTVSeries";
+      this.rbDisplayMostRecentTVSeries.Size = new System.Drawing.Size(68, 17);
+      this.rbDisplayMostRecentTVSeries.TabIndex = 0;
+      this.rbDisplayMostRecentTVSeries.TabStop = true;
+      this.rbDisplayMostRecentTVSeries.Text = "TVSeries";
+      this.rbDisplayMostRecentTVSeries.UseVisualStyleBackColor = true;
+      // 
       // cancelCreateButton
       // 
       this.cancelCreateButton.Location = new System.Drawing.Point(231, 19);
@@ -1815,9 +1848,9 @@
       this.cboxSummaryFor.Items.AddRange(new object[] {
             "TVSeries",
             "MovingPictures"});
-      this.cboxSummaryFor.Location = new System.Drawing.Point(152, 0);
+      this.cboxSummaryFor.Location = new System.Drawing.Point(155, 0);
       this.cboxSummaryFor.Name = "cboxSummaryFor";
-      this.cboxSummaryFor.Size = new System.Drawing.Size(127, 21);
+      this.cboxSummaryFor.Size = new System.Drawing.Size(153, 21);
       this.cboxSummaryFor.TabIndex = 6;
       this.cboxSummaryFor.Text = "TVSeries";
       this.cboxSummaryFor.SelectedIndexChanged += new System.EventHandler(this.cboxSummaryFor_SelectedIndexChanged);
@@ -2608,39 +2641,6 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
-      // 
-      // rbDisplayMostRecentTVSeries
-      // 
-      this.rbDisplayMostRecentTVSeries.AutoSize = true;
-      this.rbDisplayMostRecentTVSeries.Location = new System.Drawing.Point(26, 18);
-      this.rbDisplayMostRecentTVSeries.Name = "rbDisplayMostRecentTVSeries";
-      this.rbDisplayMostRecentTVSeries.Size = new System.Drawing.Size(68, 17);
-      this.rbDisplayMostRecentTVSeries.TabIndex = 0;
-      this.rbDisplayMostRecentTVSeries.TabStop = true;
-      this.rbDisplayMostRecentTVSeries.Text = "TVSeries";
-      this.rbDisplayMostRecentTVSeries.UseVisualStyleBackColor = true;
-      // 
-      // rbDisplayMostRecentMovies
-      // 
-      this.rbDisplayMostRecentMovies.AutoSize = true;
-      this.rbDisplayMostRecentMovies.Location = new System.Drawing.Point(117, 18);
-      this.rbDisplayMostRecentMovies.Name = "rbDisplayMostRecentMovies";
-      this.rbDisplayMostRecentMovies.Size = new System.Drawing.Size(59, 17);
-      this.rbDisplayMostRecentMovies.TabIndex = 1;
-      this.rbDisplayMostRecentMovies.TabStop = true;
-      this.rbDisplayMostRecentMovies.Text = "Movies";
-      this.rbDisplayMostRecentMovies.UseVisualStyleBackColor = true;
-      // 
-      // rbDisplayMostRecentNone
-      // 
-      this.rbDisplayMostRecentNone.AutoSize = true;
-      this.rbDisplayMostRecentNone.Location = new System.Drawing.Point(222, 18);
-      this.rbDisplayMostRecentNone.Name = "rbDisplayMostRecentNone";
-      this.rbDisplayMostRecentNone.Size = new System.Drawing.Size(39, 17);
-      this.rbDisplayMostRecentNone.TabIndex = 2;
-      this.rbDisplayMostRecentNone.TabStop = true;
-      this.rbDisplayMostRecentNone.Text = "Off";
-      this.rbDisplayMostRecentNone.UseVisualStyleBackColor = true;
       // 
       // streamedMpEditor
       // 

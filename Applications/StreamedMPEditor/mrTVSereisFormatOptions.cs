@@ -40,7 +40,13 @@ namespace StreamedMPEditor
           return cboxMRSeriesFont.Text; 
       }
 
-      set { cboxMRSeriesFont.Text = value; }
+      set
+      {
+        if (value.StartsWith("mediastream10tc"))
+          cboxMRSeriesFont.SelectedIndex = cboxMRSeriesFont.Items.IndexOf("mediastream10tc (Bold)");
+        else
+          cboxMRSeriesFont.SelectedIndex = cboxMRSeriesFont.Items.IndexOf("mediastream10c");
+      }
     }
 
     public string mrEpisodeFont
@@ -53,7 +59,14 @@ namespace StreamedMPEditor
           return cboxMREpisodeFont.Text;
       }
 
-      set { cboxMREpisodeFont.Text = value; }
+      set
+      {
+        if (value.StartsWith("mediastream10tc"))
+          cboxMREpisodeFont.SelectedIndex = cboxMREpisodeFont.Items.IndexOf("mediastream10tc (Bold)");
+        else
+          cboxMREpisodeFont.SelectedIndex = cboxMREpisodeFont.Items.IndexOf("mediastream10c");
+      }
+
     }
 
 

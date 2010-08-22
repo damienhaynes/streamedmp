@@ -220,13 +220,13 @@ namespace StreamedMPEditor
         cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
         tvSeriesOptions.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
         tvSeriesOptions.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
-        tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
-        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
         cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
         mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
         mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
 
-        movPicsOptions.MovieTitleFont = tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
+        tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
+        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist); 
+        movPicsOptions.MovieTitleFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
         movPicsOptions.MovieDetailFont = readEntryValue(optionsTag, "mrMovieDetailFont", nodelist);
 
       }
