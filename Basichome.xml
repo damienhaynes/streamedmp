@@ -7,20 +7,11 @@
   <define>#labelFont:mediastream16tc</define>
   <define>#selectedFont:mediastream28tc</define>
   <define>#menuXPos:350</define>
-  <define>#useRandomGamesFanart:No</define>
-  <define>#useRandomTVSeriesFanart:No</define>
-  <define>#useRandomPluginsFanart:No</define>
-  <define>#useRandomMovingPicturesFanart:No</define>
-  <define>#useRandomMusicFanart:No</define>
-  <define>#useRandomPicturesFanart:No</define>
-  <define>#useRandomTVFanart:No</define>
-  <define>#useRandomMoviesFanart:No</define>
-  <define>#useRandomScoreCenterFanart:No</define>
   <allowoverlay>no</allowoverlay>
   <disabletopbar>yes</disabletopbar>
   <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <controls>
-    <import>common.fanartcontrols.basichome.xml</import>
+    <!-- BEGIN FANART HANDLER CONTROLS -->
     <control>
       <description>DEFAULT BACKGROUND</description>
       <type>image</type>
@@ -112,7 +103,7 @@
       <height>80</height>
       <textureNoFocus>restart_button.png</textureNoFocus>
       <textureFocus>restart_button.png</textureFocus>
-      <action>98</action>
+      <action>196250</action>
       <animation effect="zoom" start="1,1" end="100,100" center="0,0" time="1000" tween="back" ease="out">WindowOpen</animation>
       <animation effect="fade" time="400">WindowOpen</animation>
       <animation effect="fade" time="400">WindowClose</animation>
@@ -150,6 +141,7 @@
       <animation effect="fade" start="200" end="100" time="1000">WindowClose</animation>
       <visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>
     </control>
+    <!-- BEGIN BACKGROUND LOADING -->
     <control>
       <description>PICTURES BACKGROUND 1</description>
       <id>1200</id>
@@ -183,7 +175,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <visible>control.isvisible(1002)|control.isvisible(1005)|control.isvisible(1009)</visible>
+      <visible>control.isvisible(1002)|control.isvisible(1005)|control.isvisible(1007)</visible>
       <animation effect="fade" start="10" end="100" time="1000">VisibleChange</animation>
     </control>
     <control>
@@ -212,26 +204,26 @@
     </control>
     <control>
       <description>WEATHER BACKGROUND 1</description>
-      <id>1207</id>
+      <id>1208</id>
       <type>image</type>
       <texture>animations\weatherbg\default.jpg</texture>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <visible>control.isvisible(1007)</visible>
+      <visible>control.isvisible(1008)</visible>
       <animation effect="fade" start="10" end="100" time="1000">VisibleChange</animation>
     </control>
     <control>
       <description>NEWS BACKGROUND 1</description>
-      <id>1208</id>
+      <id>1209</id>
       <type>image</type>
       <texture>animations\news\default.jpg</texture>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <visible>control.isvisible(1008)</visible>
+      <visible>control.isvisible(1009)</visible>
       <animation effect="fade" start="10" end="100" time="1000">VisibleChange</animation>
     </control>
     <control>
@@ -301,6 +293,7 @@
       <visible>plugin.isenabled(InfoService)</visible>
     </control>
     <!-- BEGIN GENERATED TWITTER CODE-->
+    <!-- BEGIN GENERATED TOPBAR CODE -->
     <control>
       <description>Dummy label indicating PICTURES visibility</description>
       <id>1000</id>
@@ -325,8 +318,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>2</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1810</onup>
       <ondown>1701</ondown>
       <visible>control.isvisible(1700)</visible>
@@ -344,8 +337,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>2</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160001</onleft>
       <onup>1810</onup>
       <ondown>1701</ondown>
       <visible>control.isvisible(1800)</visible>
@@ -566,8 +560,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>501</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1800</onup>
       <ondown>1702</ondown>
       <visible>control.isvisible(1701)</visible>
@@ -585,8 +579,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>501</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160101</onleft>
       <onup>1800</onup>
       <ondown>1702</ondown>
       <visible>control.isvisible(1801)</visible>
@@ -807,8 +802,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>96742</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1801</onup>
       <ondown>1703</ondown>
       <visible>control.isvisible(1702)</visible>
@@ -826,8 +821,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>96742</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160201</onleft>
       <onup>1801</onup>
       <ondown>1703</ondown>
       <visible>control.isvisible(1802)</visible>
@@ -1048,8 +1044,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>9811</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1802</onup>
       <ondown>1704</ondown>
       <visible>control.isvisible(1703)</visible>
@@ -1067,8 +1063,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>9811</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160301</onleft>
       <onup>1802</onup>
       <ondown>1704</ondown>
       <visible>control.isvisible(1803)</visible>
@@ -1289,8 +1286,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>1</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1803</onup>
       <ondown>1705</ondown>
       <visible>control.isvisible(1704)</visible>
@@ -1308,8 +1305,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>1</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160401</onleft>
       <onup>1803</onup>
       <ondown>1705</ondown>
       <visible>control.isvisible(1804)</visible>
@@ -1530,8 +1528,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>5900</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1804</onup>
       <ondown>1706</ondown>
       <visible>control.isvisible(1705)</visible>
@@ -1549,8 +1547,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>5900</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160501</onleft>
       <onup>1804</onup>
       <ondown>1706</ondown>
       <visible>control.isvisible(1805)</visible>
@@ -1771,8 +1770,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>34</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1805</onup>
       <ondown>1707</ondown>
       <visible>control.isvisible(1706)</visible>
@@ -1790,8 +1789,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>34</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160601</onleft>
       <onup>1805</onup>
       <ondown>1707</ondown>
       <visible>control.isvisible(1806)</visible>
@@ -1989,7 +1989,7 @@
       <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
     </control>
     <control>
-      <description>Dummy label indicating WEATHER visibility</description>
+      <description>Dummy label indicating VIDEOS visibility</description>
       <id>1007</id>
       <type>label</type>
       <posX>100</posX>
@@ -2000,524 +2000,43 @@
       <visible>Control.HasFocus(1707)|Control.HasFocus(1807)|Control.HasFocus(1907)|control.isvisible(1107)</visible>
     </control>
     <control>
-      <description>WEATHER0</description>
+      <description>VIDEOS0</description>
       <type>button</type>
       <id>1707</id>
       <posX>0</posX>
       <posY>-30</posY>
-      <label>WEATHER</label>
+      <label>VIDEOS</label>
       <width>320</width>
       <height>72</height>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <hyperlink>2600</hyperlink>
+      <hyperlink>6</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1806</onup>
       <ondown>1708</ondown>
       <visible>control.isvisible(1707)</visible>
     </control>
     <control>
-      <description>WEATHER1</description>
+      <description>VIDEOS1</description>
       <type>button</type>
       <id>1807</id>
       <posX>0</posX>
       <posY>-30</posY>
-      <label>WEATHER</label>
+      <label>VIDEOS</label>
       <width>320</width>
       <height>72</height>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <hyperlink>2600</hyperlink>
+      <hyperlink>6</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160701</onleft>
       <onup>1806</onup>
       <ondown>1708</ondown>
       <visible>control.isvisible(1807)</visible>
-    </control>
-    <control>
-      <description>WEATHER2</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>-24</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER3</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>542</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER4</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>442</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER5</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>342</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#selectedFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER6</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>242</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER7</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>142</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER8</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>-24</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER9</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>542</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER10</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>442</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER11</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>342</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#selectedFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER12</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>242</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>WEATHER13</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>142</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>WEATHER</label>
-      <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>Dummy label indicating NEWS visibility</description>
-      <id>1008</id>
-      <type>label</type>
-      <posX>100</posX>
-      <posY>-100</posY>
-      <width>500</width>
-      <height>0</height>
-      <label>Movies</label>
-      <visible>Control.HasFocus(1708)|Control.HasFocus(1808)|Control.HasFocus(1908)|control.isvisible(1108)</visible>
-    </control>
-    <control>
-      <description>NEWS0</description>
-      <type>button</type>
-      <id>1708</id>
-      <posX>0</posX>
-      <posY>-30</posY>
-      <label>NEWS</label>
-      <width>320</width>
-      <height>72</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <hyperlink>16001</hyperlink>
-      <hover>-</hover>
-      <onleft>-</onleft>
-      <onright>7777</onright>
-      <onup>1807</onup>
-      <ondown>1709</ondown>
-      <visible>control.isvisible(1708)</visible>
-    </control>
-    <control>
-      <description>NEWS1</description>
-      <type>button</type>
-      <id>1808</id>
-      <posX>0</posX>
-      <posY>-30</posY>
-      <label>NEWS</label>
-      <width>320</width>
-      <height>72</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <hyperlink>16001</hyperlink>
-      <hover>-</hover>
-      <onleft>-</onleft>
-      <onright>7777</onright>
-      <onup>1807</onup>
-      <ondown>1709</ondown>
-      <visible>control.isvisible(1808)</visible>
-    </control>
-    <control>
-      <description>NEWS2</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>-24</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS3</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>542</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS4</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>442</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS5</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>342</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#selectedFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS6</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>242</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS7</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>142</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1710)|control.isvisible(1110)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS8</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>-24</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS9</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>542</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS10</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>442</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS11</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>342</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#selectedFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS12</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>242</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>NEWS13</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>142</posY>
-      <width>500</width>
-      <height>72</height>
-      <textcolor>#menuitemNoFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <label>NEWS</label>
-      <visible>Control.HasFocus(1810)</visible>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
-    </control>
-    <control>
-      <description>Dummy label indicating VIDEOS visibility</description>
-      <id>1009</id>
-      <type>label</type>
-      <posX>100</posX>
-      <posY>-100</posY>
-      <width>500</width>
-      <height>0</height>
-      <label>Movies</label>
-      <visible>Control.HasFocus(1709)|Control.HasFocus(1809)|Control.HasFocus(1909)|control.isvisible(1109)</visible>
-    </control>
-    <control>
-      <description>VIDEOS0</description>
-      <type>button</type>
-      <id>1709</id>
-      <posX>0</posX>
-      <posY>-30</posY>
-      <label>VIDEOS</label>
-      <width>320</width>
-      <height>72</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <hyperlink>6</hyperlink>
-      <hover>-</hover>
-      <onleft>-</onleft>
-      <onright>7777</onright>
-      <onup>1808</onup>
-      <ondown>1710</ondown>
-      <visible>control.isvisible(1709)</visible>
-    </control>
-    <control>
-      <description>VIDEOS1</description>
-      <type>button</type>
-      <id>1809</id>
-      <posX>0</posX>
-      <posY>-30</posY>
-      <label>VIDEOS</label>
-      <width>320</width>
-      <height>72</height>
-      <textureFocus>-</textureFocus>
-      <textureNoFocus>-</textureNoFocus>
-      <hyperlink>6</hyperlink>
-      <hover>-</hover>
-      <onleft>-</onleft>
-      <onright>7777</onright>
-      <onup>1808</onup>
-      <ondown>1710</ondown>
-      <visible>control.isvisible(1809)</visible>
     </control>
     <control>
       <description>VIDEOS2</description>
@@ -2530,7 +2049,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
+      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2546,7 +2065,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
+      <visible>Control.HasFocus(1705)|control.isvisible(1105)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2562,7 +2081,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2578,7 +2097,7 @@
       <font>#selectedFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
+      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2594,7 +2113,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1710)|control.isvisible(1110)</visible>
+      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2610,7 +2129,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
+      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2626,7 +2145,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1806)</visible>
+      <visible>Control.HasFocus(1804)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2642,7 +2161,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1807)</visible>
+      <visible>Control.HasFocus(1805)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2658,7 +2177,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1808)</visible>
+      <visible>Control.HasFocus(1806)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2674,7 +2193,7 @@
       <font>#selectedFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1809)</visible>
+      <visible>Control.HasFocus(1807)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2690,7 +2209,7 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
-      <visible>Control.HasFocus(1810)</visible>
+      <visible>Control.HasFocus(1808)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
@@ -2706,6 +2225,490 @@
       <font>#labelFont</font>
       <align>right</align>
       <label>VIDEOS</label>
+      <visible>Control.HasFocus(1809)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>Dummy label indicating WEATHER visibility</description>
+      <id>1008</id>
+      <type>label</type>
+      <posX>100</posX>
+      <posY>-100</posY>
+      <width>500</width>
+      <height>0</height>
+      <label>Movies</label>
+      <visible>Control.HasFocus(1708)|Control.HasFocus(1808)|Control.HasFocus(1908)|control.isvisible(1108)</visible>
+    </control>
+    <control>
+      <description>WEATHER0</description>
+      <type>button</type>
+      <id>1708</id>
+      <posX>0</posX>
+      <posY>-30</posY>
+      <label>WEATHER</label>
+      <width>320</width>
+      <height>72</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <hyperlink>2600</hyperlink>
+      <hover>-</hover>
+      <onright>7777</onright>
+      <onleft>-</onleft>
+      <onup>1807</onup>
+      <ondown>1709</ondown>
+      <visible>control.isvisible(1708)</visible>
+    </control>
+    <control>
+      <description>WEATHER1</description>
+      <type>button</type>
+      <id>1808</id>
+      <posX>0</posX>
+      <posY>-30</posY>
+      <label>WEATHER</label>
+      <width>320</width>
+      <height>72</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <hyperlink>2600</hyperlink>
+      <hover>-</hover>
+      <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160801</onleft>
+      <onup>1807</onup>
+      <ondown>1709</ondown>
+      <visible>control.isvisible(1808)</visible>
+    </control>
+    <control>
+      <description>WEATHER2</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>-24</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER3</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>542</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1706)|control.isvisible(1106)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER4</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>442</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER5</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>342</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#selectedFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER6</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>242</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER7</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>142</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1710)|control.isvisible(1110)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER8</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>-24</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1805)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER9</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>542</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1806)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER10</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>442</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1807)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER11</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>342</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#selectedFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1808)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER12</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>242</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1809)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>WEATHER13</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>142</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>WEATHER</label>
+      <visible>Control.HasFocus(1810)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>Dummy label indicating NEWS visibility</description>
+      <id>1009</id>
+      <type>label</type>
+      <posX>100</posX>
+      <posY>-100</posY>
+      <width>500</width>
+      <height>0</height>
+      <label>Movies</label>
+      <visible>Control.HasFocus(1709)|Control.HasFocus(1809)|Control.HasFocus(1909)|control.isvisible(1109)</visible>
+    </control>
+    <control>
+      <description>NEWS0</description>
+      <type>button</type>
+      <id>1709</id>
+      <posX>0</posX>
+      <posY>-30</posY>
+      <label>NEWS</label>
+      <width>320</width>
+      <height>72</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <hyperlink>16001</hyperlink>
+      <hover>-</hover>
+      <onright>7777</onright>
+      <onleft>-</onleft>
+      <onup>1808</onup>
+      <ondown>1710</ondown>
+      <visible>control.isvisible(1709)</visible>
+    </control>
+    <control>
+      <description>NEWS1</description>
+      <type>button</type>
+      <id>1809</id>
+      <posX>0</posX>
+      <posY>-30</posY>
+      <label>NEWS</label>
+      <width>320</width>
+      <height>72</height>
+      <textureFocus>-</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <hyperlink>16001</hyperlink>
+      <hover>-</hover>
+      <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>160901</onleft>
+      <onup>1808</onup>
+      <ondown>1710</ondown>
+      <visible>control.isvisible(1809)</visible>
+    </control>
+    <control>
+      <description>NEWS2</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>-24</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS3</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>542</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1707)|control.isvisible(1107)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS4</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>442</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1708)|control.isvisible(1108)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS5</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>342</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#selectedFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1709)|control.isvisible(1109)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS6</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>242</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1710)|control.isvisible(1110)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS7</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>142</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1700)|control.isvisible(1100)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS8</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>-24</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1806)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-118" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS9</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>542</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1807)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS10</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>442</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1808)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS11</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>342</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#selectedFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1809)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS12</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>242</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
+      <visible>Control.HasFocus(1810)</visible>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-100" time=" 250" acceleration=" -0.4" reversible="false">visiblechange</animation>
+    </control>
+    <control>
+      <description>NEWS13</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>142</posY>
+      <width>500</width>
+      <height>72</height>
+      <textcolor>#menuitemNoFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <label>NEWS</label>
       <visible>Control.HasFocus(1800)</visible>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
@@ -2735,8 +2738,8 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>4</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1809</onup>
       <ondown>1700</ondown>
       <visible>control.isvisible(1710)</visible>
@@ -2754,8 +2757,9 @@
       <textureNoFocus>-</textureNoFocus>
       <hyperlink>4</hyperlink>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
+      <onleft>161001</onleft>
       <onup>1809</onup>
       <ondown>1700</ondown>
       <visible>control.isvisible(1810)</visible>
@@ -2965,8 +2969,8 @@
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <hover>-</hover>
-      <onleft>-</onleft>
       <onright>7777</onright>
+      <onleft>-</onleft>
       <onup>1802</onup>
       <ondown>1704</ondown>
       <visible>control.isvisible(1903)|Control.HasFocus(656)</visible>
@@ -3061,7 +3065,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1700)|Control.HasFocus(1800)</visible>
+      <visible>Control.HasFocus(1700)|Control.HasFocus(1800)|control.isvisible(1100)</visible>
     </control>
     <control>
       <description>MUSIC Label</description>
@@ -3077,7 +3081,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1701)|Control.HasFocus(1801)</visible>
+      <visible>Control.HasFocus(1701)|Control.HasFocus(1801)|control.isvisible(1101)</visible>
     </control>
     <control>
       <description>MOVIES Label</description>
@@ -3093,7 +3097,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1702)|Control.HasFocus(1802)</visible>
+      <visible>Control.HasFocus(1702)|Control.HasFocus(1802)|control.isvisible(1102)</visible>
     </control>
     <control>
       <description>SERIES Label (Default)</description>
@@ -3124,7 +3128,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1703)|Control.HasFocus(1803)</visible>
+      <visible>Control.HasFocus(1703)|Control.HasFocus(1803)|control.isvisible(1103)</visible>
     </control>
     <control>
       <description>TV Label</description>
@@ -3140,7 +3144,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1704)|Control.HasFocus(1804)</visible>
+      <visible>Control.HasFocus(1704)|Control.HasFocus(1804)|control.isvisible(1104)</visible>
     </control>
     <control>
       <description>TRAILERS Label</description>
@@ -3156,7 +3160,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1705)|Control.HasFocus(1805)</visible>
+      <visible>Control.HasFocus(1705)|Control.HasFocus(1805)|control.isvisible(1105)</visible>
     </control>
     <control>
       <description>PLUGINS Label</description>
@@ -3172,55 +3176,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1706)|Control.HasFocus(1806)</visible>
-    </control>
-    <control>
-      <description>WEATHER Label</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>322</posY>
-      <width>380</width>
-      <height>72</height>
-      <label>CHECK THE</label>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <animation effect="fade" delay="350" time="250">Visible</animation>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1707)|Control.HasFocus(1807)</visible>
-    </control>
-    <control>
-      <description>WEATHER Label</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>395</posY>
-      <width>380</width>
-      <height>62</height>
-      <label> in #infoservice.weather.location</label>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>mediastream10tc</font>
-      <align>right</align>
-      <animation effect="fade" delay="350" time="250">Visible</animation>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)]</visible>
-    </control>
-    <control>
-      <description>NEWS Label</description>
-      <type>label</type>
-      <posX>325</posX>
-      <posY>322</posY>
-      <width>380</width>
-      <height>72</height>
-      <label>READ THE</label>
-      <textcolor>#menuitemFocus</textcolor>
-      <font>#labelFont</font>
-      <align>right</align>
-      <animation effect="fade" delay="350" time="250">Visible</animation>
-      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1708)|Control.HasFocus(1808)</visible>
+      <visible>Control.HasFocus(1706)|Control.HasFocus(1806)|control.isvisible(1106)</visible>
     </control>
     <control>
       <description>VIDEOS Label</description>
@@ -3236,7 +3192,55 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1709)|Control.HasFocus(1809)</visible>
+      <visible>Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1107)</visible>
+    </control>
+    <control>
+      <description>WEATHER Label</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>322</posY>
+      <width>380</width>
+      <height>72</height>
+      <label>CHECK THE</label>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <animation effect="fade" delay="350" time="250">Visible</animation>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <visible>Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1108)</visible>
+    </control>
+    <control>
+      <description>WEATHER Label</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>395</posY>
+      <width>380</width>
+      <height>62</height>
+      <label> in #infoservice.weather.location</label>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>mediastream10tc</font>
+      <align>right</align>
+      <animation effect="fade" delay="350" time="250">Visible</animation>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1108)]</visible>
+    </control>
+    <control>
+      <description>NEWS Label</description>
+      <type>label</type>
+      <posX>325</posX>
+      <posY>322</posY>
+      <width>380</width>
+      <height>72</height>
+      <label>READ THE</label>
+      <textcolor>#menuitemFocus</textcolor>
+      <font>#labelFont</font>
+      <align>right</align>
+      <animation effect="fade" delay="350" time="250">Visible</animation>
+      <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <visible>Control.HasFocus(1709)|Control.HasFocus(1809)|control.isvisible(1109)</visible>
     </control>
     <control>
       <description>SETTINGS Label</description>
@@ -3252,7 +3256,7 @@
       <animation effect="fade" delay="350" time="250">Visible</animation>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
-      <visible>Control.HasFocus(1710)|Control.HasFocus(1810)</visible>
+      <visible>Control.HasFocus(1710)|Control.HasFocus(1810)|control.isvisible(1110)</visible>
     </control>
     <control>
       <description>5-Day Weather Dummy Label</description>
@@ -3262,14 +3266,16 @@
       <posY>-50</posY>
       <label>
       </label>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
     </control>
     <control>
       <description>GROUP: Forecast BGs</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="600" time="300">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
       <control>
         <description>TODAY BG</description>
         <posX>460</posX>
@@ -3330,63 +3336,75 @@
       <posY>155</posY>
       <height>180</height>
       <width>180</width>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
     </control>
     <control>
       <description>DAY 1 ICON</description>
       <id>0</id>
       <type>image</type>
-      <texture>animations\weathericons\static\128x128\#infoservice.weather.day2.day.img.big.filenamewithoutext.png</texture>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast2.day.img.big.filenamewithoutext.png</texture>
       <posX>705</posX>
       <posY>0</posY>
       <height>180</height>
       <width>180</width>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
     </control>
     <control>
       <description>DAY 2 ICON</description>
       <id>0</id>
       <type>image</type>
-      <texture>animations\weathericons\static\128x128\#infoservice.weather.day3.day.img.big.filenamewithoutext.png</texture>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast3.day.img.big.filenamewithoutext.png</texture>
       <posX>955</posX>
       <posY>0</posY>
       <height>180</height>
       <width>180</width>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
     </control>
     <control>
       <description>DAY 3 ICON</description>
       <id>0</id>
       <type>image</type>
-      <texture>animations\weathericons\static\128x128\#infoservice.weather.day4.day.img.big.filenamewithoutext.png</texture>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast4.day.img.big.filenamewithoutext.png</texture>
       <posX>705</posX>
       <posY>345</posY>
       <height>180</height>
       <width>180</width>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
     </control>
     <control>
       <description>DAY 4 ICON</description>
       <id>0</id>
       <type>image</type>
-      <texture>animations\weathericons\static\128x128\#infoservice.weather.day5.day.img.big.filenamewithoutext.png</texture>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast5.day.img.big.filenamewithoutext.png</texture>
       <posX>955</posX>
       <posY>345</posY>
       <height>180</height>
       <width>180</width>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
     </control>
     <control>
       <description>GROUP: FULL WEATHER DETAILS</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <animation effect="fade" delay="1000" time="300" tween="linear">Visible</animation>
-      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1707)|Control.HasFocus(1807)|control.isvisible(1207)]</visible>
+      <animation effect="fade" start="20" end="100" delay="100" time="400">VisibleChange</animation>
+      <animation effect="fade" start="0" end="100" delay="200" time="400">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" delay="200" time="400">WindowClose</animation>
+      <visible>plugin.isenabled(InfoService)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]</visible>
       <control>
         <description>DAY 1 LABEL</description>
         <type>label</type>
@@ -3410,28 +3428,6 @@
         <textcolor>white</textcolor>
       </control>
       <control>
-        <description>DAY 1 MAX VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>465</posX>
-        <posY>425</posY>
-        <align>left</align>
-        <label>#infoservice.weather.today.maxtemp</label>
-        <font>mediastream12</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 1 MIN VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>635</posX>
-        <posY>425</posY>
-        <align>right</align>
-        <label>#infoservice.weather.today.mintemp</label>
-        <font>mediastream12</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
         <description>DAY 1 GENERAL WEATHER</description>
         <type>textbox</type>
         <id>0</id>
@@ -3451,7 +3447,7 @@
         <posX>795</posX>
         <posY>315</posY>
         <align>center</align>
-        <label>#infoservice.weather.day2.weekday</label>
+        <label>#infoservice.weather.forecast2.weekday</label>
         <font>mediastream11tc</font>
         <textcolor>White</textcolor>
       </control>
@@ -3462,7 +3458,7 @@
         <posX>710</posX>
         <posY>270</posY>
         <align>left</align>
-        <label>#infoservice.weather.day2.maxtemp</label>
+        <label>#infoservice.weather.forecast2.maxtemp</label>
         <font>mediastream12</font>
         <textcolor>white</textcolor>
       </control>
@@ -3473,7 +3469,7 @@
         <posX>880</posX>
         <posY>270</posY>
         <align>right</align>
-        <label>#infoservice.weather.day2.mintemp</label>
+        <label>#infoservice.weather.forecast2.mintemp</label>
         <font>mediastream12</font>
         <textcolor>white</textcolor>
       </control>
@@ -3485,7 +3481,7 @@
         <posY>170</posY>
         <width>160</width>
         <height>50</height>
-        <label>#infoservice.weather.day2.day.condition</label>
+        <label>#infoservice.weather.forecast2.day.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3498,7 +3494,7 @@
         <posY>220</posY>
         <width>160</width>
         <height>50</height>
-        <label>#infoservice.weather.day2.night.condition</label>
+        <label>#infoservice.weather.forecast2.night.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3510,7 +3506,7 @@
         <posX>1045</posX>
         <posY>315</posY>
         <align>center</align>
-        <label>#infoservice.weather.day3.weekday</label>
+        <label>#infoservice.weather.forecast3.weekday</label>
         <font>mediastream11tc</font>
         <textcolor>White</textcolor>
       </control>
@@ -3521,7 +3517,7 @@
         <posX>960</posX>
         <posY>270</posY>
         <align>left</align>
-        <label>#infoservice.weather.day3.maxtemp</label>
+        <label>#infoservice.weather.forecast3.maxtemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3532,7 +3528,7 @@
         <posX>1130</posX>
         <posY>270</posY>
         <align>right</align>
-        <label>#infoservice.weather.day3.mintemp</label>
+        <label>#infoservice.weather.forecast3.mintemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3543,7 +3539,7 @@
         <posX>960</posX>
         <posY>170</posY>
         <width>170</width>
-        <label>#infoservice.weather.day3.day.condition</label>
+        <label>#infoservice.weather.forecast3.day.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3555,7 +3551,7 @@
         <posX>960</posX>
         <posY>220</posY>
         <width>170</width>
-        <label>#infoservice.weather.day3.night.condition</label>
+        <label>#infoservice.weather.forecast3.night.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3567,7 +3563,7 @@
         <posX>795</posX>
         <posY>660</posY>
         <align>center</align>
-        <label>#infoservice.weather.day4.weekday</label>
+        <label>#infoservice.weather.forecast4.weekday</label>
         <font>mediastream11tc</font>
         <textcolor>White</textcolor>
       </control>
@@ -3578,7 +3574,7 @@
         <posX>710</posX>
         <posY>615</posY>
         <align>left</align>
-        <label>#infoservice.weather.day4.maxtemp</label>
+        <label>#infoservice.weather.forecast4.maxtemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3589,7 +3585,7 @@
         <posX>880</posX>
         <posY>615</posY>
         <align>right</align>
-        <label>#infoservice.weather.day4.mintemp</label>
+        <label>#infoservice.weather.forecast4.mintemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3600,7 +3596,7 @@
         <posX>710</posX>
         <posY>515</posY>
         <width>170</width>
-        <label>#infoservice.weather.day4.day.condition</label>
+        <label>#infoservice.weather.forecast4.day.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3612,7 +3608,7 @@
         <posX>710</posX>
         <posY>565</posY>
         <width>170</width>
-        <label>#infoservice.weather.day4.night.condition</label>
+        <label>#infoservice.weather.forecast4.night.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3624,7 +3620,7 @@
         <posX>1045</posX>
         <posY>660</posY>
         <align>center</align>
-        <label>#infoservice.weather.day5.weekday</label>
+        <label>#infoservice.weather.forecast5.weekday</label>
         <font>mediastream11tc</font>
         <textcolor>White</textcolor>
       </control>
@@ -3635,7 +3631,7 @@
         <posX>960</posX>
         <posY>615</posY>
         <align>left</align>
-        <label>#infoservice.weather.day5.maxtemp</label>
+        <label>#infoservice.weather.forecast5.maxtemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3646,7 +3642,7 @@
         <posX>1130</posX>
         <posY>615</posY>
         <align>right</align>
-        <label>#infoservice.weather.day5.mintemp</label>
+        <label>#infoservice.weather.forecast5.mintemp</label>
         <font>mediastream11</font>
         <textcolor>white</textcolor>
       </control>
@@ -3657,7 +3653,7 @@
         <posX>960</posX>
         <posY>515</posY>
         <width>170</width>
-        <label>#infoservice.weather.day5.day.condition</label>
+        <label>#infoservice.weather.forecast5.day.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3669,7 +3665,7 @@
         <posX>960</posX>
         <posY>565</posY>
         <width>170</width>
-        <label>#infoservice.weather.day5.night.condition</label>
+        <label>#infoservice.weather.forecast5.night.condition</label>
         <font>mediastream10</font>
         <align>left</align>
         <textcolor>white</textcolor>
@@ -3679,7 +3675,7 @@
       <description>GROUP: WEATHER SUMMARY</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>plugin.isenabled(InfoService)+!control.isvisible(1207)</visible>
+      <visible>plugin.isenabled(InfoService)+!control.isvisible(1208)</visible>
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
@@ -3730,6 +3726,8 @@
     </control>
     <import>common.time.xml</import>
     <import>common.fanart.scraperv.xml</import>
+    <!-- BEGIN MOST RECENT TVSERIES CODE-->
+    <!-- BEGIN MOST RECENT MOVPICS CODE-->
     <import>common.overlay.basichome.xml</import>
     <control>
       <description>Update Icon</description>
@@ -3749,4 +3747,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:276d925221263a9d9ad12a81ef5c4103-->
+<!--Checksum:5aad3b61d05335192b31394019808400-->
