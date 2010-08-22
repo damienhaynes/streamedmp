@@ -98,12 +98,12 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <visible>!control.hasthumb(500)</visible>
+      <visible>!control.hasthumb(112)</visible>
       <posX>25</posX>
       <posY>530</posY>
       <width>160</width>
       <height>160</height>
-      <texture>defaultAlbum.png</texture>
+      <texture>defaultAudioBig.png</texture>
       <animation effect="Fade" time="1600">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -334,7 +334,7 @@
       <width>66</width>
       <height>66</height>
       <keepaspectratio>yes</keepaspectratio>
-      <texture>defaultAlbum.png</texture>
+      <texture>defaultAudio.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -717,4 +717,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:e9384e970e2419c2a309582c43dc062b-->
+<!--Checksum:dc5a8bbfaf0eea4f9f78822822db52e5-->
