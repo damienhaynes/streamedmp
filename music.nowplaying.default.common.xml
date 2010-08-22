@@ -98,13 +98,13 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <visible>!control.hasthumb(112)</visible>
+      <visible>string.equals(#Play.Current.Thumb,)</visible>
       <posX>25</posX>
       <posY>530</posY>
       <width>160</width>
       <height>160</height>
       <texture>defaultAudioBig.png</texture>
-      <animation effect="Fade" time="1600">WindowOpen</animation>
+      <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
@@ -116,7 +116,6 @@
       <width>160</width>
       <height>160</height>
       <texture>#Play.Current.Thumb</texture>
-      <animation effect="Fade" reversible="FALSE" time="450">Visible</animation>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -351,6 +350,18 @@
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
+    <control>
+      <id>0</id>
+      <description>album art overlay</description>
+      <type>image</type>
+      <posX>904</posX>
+      <posY>605</posY>
+      <width>76</width>
+      <height>76</height>
+      <texture>mayacdborder.png</texture>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>    
     <control>
       <id>141</id>
       <description>Rating</description>
