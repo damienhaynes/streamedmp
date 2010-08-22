@@ -46,6 +46,7 @@
         <textYOff>1</textYOff>
         <onleft>5101</onleft>
         <onright>5101</onright>
+        <onup>17</onup>
       </control>
       <control>
         <id>5102</id>
@@ -97,6 +98,7 @@
         <textYOff>1</textYOff>
         <onleft>5105</onleft>
         <onright>5105</onright>
+        <ondown>5101</ondown>
       </control>
     </control>
     <control>
@@ -184,7 +186,7 @@
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
       <posX>200</posX>
-      <posY>580</posY>
+      <posY>585</posY>
       <width>497</width>
       <font>mediastream11</font>
       <label>#Play.Current.Title</label>
