@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>510</id>
   <defaultcontrol>1701</defaultcontrol>
@@ -6,9 +6,9 @@
   <disabletopbar>no</disabletopbar>
   <vumeter>yes</vumeter>
   <define>#usePlayFanart:Yes</define>
-  <define>#useRandomMusicFanart:Yes</define> 
-  <controls>    
-    <import>mymusic.autofanart.xml</import>    
+  <define>#useRandomMusicFanart:Yes</define>
+  <controls>
+    <import>mymusic.autofanart.xml</import>
     <control>
       <description>bottom black bg</description>
       <type>image</type>
@@ -19,7 +19,7 @@
       <height>201</height>
       <colordiffuse>CCFFFFFF</colordiffuse>
       <texture>black.png</texture>
-    </control>       
+    </control>
     <control>
       <type>image</type>
       <description>album art image</description>
@@ -41,8 +41,8 @@
       <height>130</height>
       <texture>#Play.Current.Thumb</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
-    </control>    
-	<!-- VU Meter: Analog -->	
+    </control>
+    <!-- VU Meter: Analog -->
     <control>
       <type>image</type>
       <id>0</id>
@@ -65,7 +65,7 @@
       <visible>Player.HasAudio + Player.playing</visible>
       <animation effect="fade" time="150">Visible</animation>
     </control>
-     <control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>730</posX>
@@ -82,15 +82,14 @@
       <posY>588</posY>
       <width>75</width>
       <height>75</height>
-	    <imagepath>Animations\AnVu</imagepath>
+      <imagepath>Animations\AnVu</imagepath>
       <texture>#VUMeterR</texture>
       <visible>Player.HasAudio + Player.playing</visible>
       <animation effect="fade" time="150">Visible</animation>
     </control>
-    
-    <import>music.nowplaying.fullscreen.common.xml</import>  
+    <import>music.nowplaying.fullscreen.common.xml</import>
     <!--<import>common.window.xml</import>-->
     <import>common.time.xml</import>
-    
   </controls>
 </window>
+<!--Checksum:b1f61894bc713bfe2673bef38d54ae11-->

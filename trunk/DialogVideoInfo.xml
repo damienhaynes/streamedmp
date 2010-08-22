@@ -1,586 +1,573 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-    <id>2003</id>
-    <defaultcontrol>2</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
-	<disabletopbar>yes</disabletopbar>
-    <define>#header.hover:hover_moving pictures.png</define>
-	<define>#header.BG.overlay:mainoverlay.png</define>
-	<define>#header.BG.colordiffuse:ffffffff</define>	
-    <define>#header.label:102003</define>
-    <controls>
-		<import>common.window.default.xml</import>
-        <import>common.time.xml</import>
-		
-		<control>
-			<description>Disc Select Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1000</posX>
-			<posY>10</posY>
-			<width>260</width>
-			<height>30</height>
-			<texture>mediacountbg_Spin.png</texture>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>			
-		</control>  
-		<control>
-            <description>Disc Select</description>
-            <type>spincontrol</type>
-            <id>11</id>
-            <posX>1163</posX>
-            <posY>6</posY>
-			<width>50</width>
-            <height>37</height>
-            <onup>11</onup>
-            <ondown>2</ondown>
-            <onleft>11</onleft>
-            <onright>11</onright>
-			<buddycontrolid>100</buddycontrolid>
-            <showrange>no</showrange>
-			<font>mediastream12c</font>
-			<textcolor>ff006698</textcolor>
-			<textureUp>arrow_round_up_nofocus.png</textureUp>
-			<textureDown>arrow_round_down_nofocus.png</textureDown>
-			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <description>Disc Select Label</description>
-            <type>label</type>
-            <id>100</id>
-            <posX>1010</posX>
-            <posY>15</posY>
-            <label>427</label>
-            <font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
-        </control>		
-		
-		<control>
-			<description>Default Cover Art</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>31</posX>
-			<posY>254</posY>
-			<width>257</width>
-			<height>380</height>
-			<texture>defaultdvdcover.png</texture>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-			<description>Cover Art</description>
-			<type>image</type>
-			<id>21</id>
-			<posX>31</posX>
-			<posY>254</posY>
-			<width>257</width>
-			<height>380</height>
-			<texture>#thumb</texture>		
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-			<description>Cover Art Glass Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>31</posX>
-			<posY>254</posY>
-			<width>228</width>
-			<height>177</height>
-			<texture>glassoverlay2.png</texture>
-			<visible>Control.HasThumb(21)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Cycle Cover Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>28</posX>
-			<posY>650</posY>
-			<width>260</width>
-			<height>30</height>
-			<texture>mediacountbg_Spin.png</texture>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-            <description>Cycle Cover Art</description>
-            <type>spincontrol</type>
-            <id>10</id>
-            <posX>191</posX>
-            <posY>646</posY>
-			<width>50</width>
-            <height>37</height>
-            <onup>6</onup>
-            <ondown>10</ondown>
-            <onleft>10</onleft>
-            <onright>6</onright>
-			<font>mediastream12c</font>
-			<textcolor>ff006698</textcolor>
-			<textureUp>arrow_round_up_nofocus.png</textureUp>
-			<textureDown>arrow_round_down_nofocus.png</textureDown>
-			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <description>Cycle Cover Label</description>
-            <type>label</type>
-            <id>30</id>
-            <posX>38</posX>
-            <posY>655</posY>
-            <label>734</label>
-            <font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-        </control>
-        		
-		<control>
-			<description>Movie Title Shadow</description>
-			<type>label</type>
-			<id>0</id>
-			<posX>309</posX>
-			<posY>252</posY>
-			<width>900</width>
-			<font>mediastream16tc</font>
-			<label>#title</label>
-			<textcolor>ff222222</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Movie Title</description>
-			<type>label</type>
-			<id>0</id>
-			<posX>308</posX>
-			<posY>251</posY>
-			<width>900</width>
-			<font>mediastream16tc</font>
-			<label>#title</label>
-			<textcolor>ffFFFFFF</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		
-		<control>
-			<description>Genres Shadow</description>
-			<type>label</type>
-			<label>#genre</label>
-			<id>0</id>
-			<posX>311</posX>
-			<posY>284</posY>
-			<width>900</width>
-			<font>mediastream11tc</font>
-			<textcolor>ff222222</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Genres</description>
-			<type>label</type>
-			<label>#genre</label>
-			<id>0</id>
-			<posX>309</posX>
-			<posY>282</posY>
-			<width>900</width>
-			<font>mediastream11tc</font>
-			<textcolor>ff909090</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Rating Stars - 720p</description>
-			<type>imagelist</type>
-			<id>101</id>			
-			<posX>309</posX>
-			<posY>305</posY>	  
-			<textureWidth>23</textureWidth>
-			<textureHeight>22</textureHeight>
-			<subitems>
-				<subitem>starwhitehollow.png</subitem>
-				<subitem>starwhite.png</subitem>
-			</subitems>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<imagesToDraw>5</imagesToDraw>
-			<percentage>#rating</percentage>
-			<visible>!string.equals(#StreamedMP.FullHD,True)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Rating Stars - 1080p</description>
-			<type>imagelist</type>
-			<id>101</id>			
-			<posX>309</posX>
-			<posY>305</posY>	  
-			<textureWidth>35</textureWidth>
-			<textureHeight>34</textureHeight>
-			<subitems>
-				<subitem>starwhitehollow.png</subitem>
-				<subitem>starwhite.png</subitem>
-			</subitems>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<imagesToDraw>5</imagesToDraw>
-			<percentage>#rating</percentage>
-			<visible>string.equals(#StreamedMP.FullHD,True)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Rating Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#rating / 10 (#votes votes)</label>
-			<posX>430</posX>
-			<posY>306</posY>
-			<width>400</width>
-			<font>mediastream10</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-				
-		<control>
-			<description>Summary</description>
-			<type>textboxscrollup</type>
-			<id>20</id>
-			<posX>308</posX>
-			<posY>338</posY>
-			<width>510</width>
-			<height>190</height>
-			<textcolor>ffFFFFFF</textcolor>
-			<seperator>-----------------------------------------------------------------------------------</seperator>
-			<font>mediastream11</font>
-			<label>#plot</label>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>cast</description>
-			<type>textbox</type>
-			<id>22</id>
-			<posX>308</posX>
-			<posY>338</posY>
-			<width>430</width>
-			<height>190</height>
-			<textcolor>ffFFFFFF</textcolor>
-			<seperator>-----------------------------------------------------------------------------------</seperator>
-			<font>mediastream11</font>
-			<label>#cast</label>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control Style="smallTitleB">
-			<description>Runtime Label Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>299</label>
-			<posX>312</posX>
-			<posY>551</posY>
-			<textcolor>ff111111</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control Style="smallTitleB">	  
-			<description>Runtime Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>299</label>
-			<posX>310</posX>
-			<posY>550</posY>
-			<width>140</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Runtime Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#runtime</label>
-			<posX>471</posX>
-			<posY>552</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Runtime</description>
-			<id>1000</id>
-			<type>label</type>
-			<label>#runtime minutes</label>
-			<posX>470</posX>
-			<posY>551</posY>
-			<width>200</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		
-		<control Style="smallTitleB">
-			<description>Directors Label Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>199</label>
-			<posX>311</posX>
-			<posY>573</posY>
-			<textcolor>ff111111</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control Style="smallTitleB">	  
-			<description>Directors Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>199</label>
-			<posX>310</posX>
-			<posY>572</posY>
-			<width>140</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>471</posX>
-			<posY>574</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors</description>
-			<id>1001</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>470</posX>
-			<posY>573</posY>
-			<width>200</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors N/A</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>470</posX>
-			<posY>573</posY>
-			<width>200</width>
-			<visible>!control.hastext(1001)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control Style="smallTitleB">
-			<id>0</id>
-			<description>Year Label Shadow</description>		  
-			<type>label</type>
-			<label>201</label>
-			<posX>311</posX>
-			<posY>595</posY>
-			<textcolor>ff111111</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">	  
-			<description>Year Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>201</label>
-			<posX>310</posX>
-			<posY>594</posY>
-			<width>140</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#year</label>
-			<posX>471</posX>
-			<posY>596</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year</description>
-			<id>1002</id>
-			<type>label</type>
-			<label>#year</label>
-			<posX>470</posX>
-			<posY>595</posY>
-			<width>200</width>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year N/A</description>
-			<id>0</id>
-			<type>label</type>
-			<label>N/A</label>
-			<posX>470</posX>
-			<posY>595</posY>
-			<width>200</width>
-			<visible>!control.hastext(1002)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-
-		<control Style="smallTitleB">
-			<id>0</id>
-			<description>MPAA Label Shadow</description>		  
-			<type>label</type>
-			<label>173</label>
-			<posX>311</posX>
-			<posY>617</posY>
-			<textcolor>ff111111</textcolor>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">	  
-			<description>MPAA Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>173</label>
-			<posX>310</posX>
-			<posY>616</posY>
-			<width>140</width>			
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>MPAA</description>
-			<id>1003</id>
-			<type>textbox</type>
-			<label>#mpaarating</label>
-			<posX>470</posX>
-			<posY>617</posY>
-			<width>350</width>
-			<font>mediastream9c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
-		</control>
-				
-		<control>
-			<type>group</type>
-			<description>Button Group</description>
-			<posX>900</posX>
-			<posY>320</posY>
-			<width>300</width>
-			<height>80</height>
-			<layout>StackLayout</layout>
-			<control>
-				<description>Play Button</description>
-				<type>button</type>
-				<id>2</id>
-				<label>208</label>				
-				<onup>11</onup>
-				<onleft>10</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<height>40</height>
-				<width>300</width>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>			
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-			<control>
-			<description>Plot</description>
-				<type>togglebutton</type>
-				<id>3</id>
-				<label>207</label>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<height>40</height>
-				<onleft>10</onleft>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>				
-				<textureFocus>tv_button_focus_ledon.png</textureFocus>
-				<textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-				<AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-				<AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-			<control>
-				<description>Cast</description>
-				<type>togglebutton</type>
-				<id>4</id>
-				<label>206</label>
-				<onleft>10</onleft>				
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<height>40</height>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>				
-				<textureFocus>tv_button_focus_ledon.png</textureFocus>
-				<textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-				<AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-				<AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>			
-			</control>
-			<control>
-				<description>Refresh</description>
-				<type>button</type>
-				<id>5</id>
-				<label>184</label>
-				<onleft>10</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<height>40</height>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>			
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>				
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-			<control>
-				<description>Watched</description>
-				<type>togglebutton</type>
-				<id>6</id>
-				<label>1010</label>
-				<onleft>10</onleft>
-				<ondown>2</ondown>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<height>40</height>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>			
-				<textureFocus>tv_button_focus_ledon.png</textureFocus>
-				<textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-				<AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-				<AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-		</control>
-	
-    </controls>
+  <id>2003</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>yes</disabletopbar>
+  <define>#header.hover:hover_moving pictures.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.label:102003</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Disc Select Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>10</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Disc Select</description>
+      <type>spincontrol</type>
+      <id>11</id>
+      <posX>1163</posX>
+      <posY>6</posY>
+      <width>50</width>
+      <height>37</height>
+      <onup>11</onup>
+      <ondown>2</ondown>
+      <onleft>11</onleft>
+      <onright>11</onright>
+      <buddycontrolid>100</buddycontrolid>
+      <showrange>no</showrange>
+      <font>mediastream12c</font>
+      <textcolor>ff006698</textcolor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Disc Select Label</description>
+      <type>label</type>
+      <id>100</id>
+      <posX>1010</posX>
+      <posY>15</posY>
+      <label>427</label>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>380</height>
+      <texture>defaultdvdcover.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>21</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>380</height>
+      <texture>#thumb</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+      <visible>Control.HasThumb(21)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cycle Cover Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>650</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cycle Cover Art</description>
+      <type>spincontrol</type>
+      <id>10</id>
+      <posX>191</posX>
+      <posY>646</posY>
+      <width>50</width>
+      <height>37</height>
+      <onup>6</onup>
+      <ondown>10</ondown>
+      <onleft>10</onleft>
+      <onright>6</onright>
+      <font>mediastream12c</font>
+      <textcolor>ff006698</textcolor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cycle Cover Label</description>
+      <type>label</type>
+      <id>30</id>
+      <posX>38</posX>
+      <posY>655</posY>
+      <label>734</label>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Title Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>252</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#title</label>
+      <textcolor>ff222222</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>251</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genres Shadow</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>311</posX>
+      <posY>284</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genres</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>282</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 720p</description>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>309</posX>
+      <posY>305</posY>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>!string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 1080p</description>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>309</posX>
+      <posY>305</posY>
+      <textureWidth>35</textureWidth>
+      <textureHeight>34</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#rating / 10 (#votes votes)</label>
+      <posX>430</posX>
+      <posY>306</posY>
+      <width>400</width>
+      <font>mediastream10</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>20</id>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>510</width>
+      <height>190</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#plot</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>cast</description>
+      <type>textbox</type>
+      <id>22</id>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>430</width>
+      <height>190</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#cast</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>299</label>
+      <posX>312</posX>
+      <posY>551</posY>
+      <textcolor>ff111111</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>299</label>
+      <posX>310</posX>
+      <posY>550</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#runtime</label>
+      <posX>471</posX>
+      <posY>552</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime</description>
+      <id>1000</id>
+      <type>label</type>
+      <label>#runtime minutes</label>
+      <posX>470</posX>
+      <posY>551</posY>
+      <width>200</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Directors Label Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>199</label>
+      <posX>311</posX>
+      <posY>573</posY>
+      <textcolor>ff111111</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Directors Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>199</label>
+      <posX>310</posX>
+      <posY>572</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>471</posX>
+      <posY>574</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors</description>
+      <id>1001</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>470</posX>
+      <posY>573</posY>
+      <width>200</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>470</posX>
+      <posY>573</posY>
+      <width>200</width>
+      <visible>!control.hastext(1001)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <id>0</id>
+      <description>Year Label Shadow</description>
+      <type>label</type>
+      <label>201</label>
+      <posX>311</posX>
+      <posY>595</posY>
+      <textcolor>ff111111</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Year Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>201</label>
+      <posX>310</posX>
+      <posY>594</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#year</label>
+      <posX>471</posX>
+      <posY>596</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year</description>
+      <id>1002</id>
+      <type>label</type>
+      <label>#year</label>
+      <posX>470</posX>
+      <posY>595</posY>
+      <width>200</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>470</posX>
+      <posY>595</posY>
+      <width>200</width>
+      <visible>!control.hastext(1002)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <id>0</id>
+      <description>MPAA Label Shadow</description>
+      <type>label</type>
+      <label>173</label>
+      <posX>311</posX>
+      <posY>617</posY>
+      <textcolor>ff111111</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>MPAA Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>173</label>
+      <posX>310</posX>
+      <posY>616</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>MPAA</description>
+      <id>1003</id>
+      <type>textbox</type>
+      <label>#mpaarating</label>
+      <posX>470</posX>
+      <posY>617</posY>
+      <width>350</width>
+      <font>mediastream9c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>Button Group</description>
+      <posX>900</posX>
+      <posY>320</posY>
+      <width>300</width>
+      <height>80</height>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Play Button</description>
+        <type>button</type>
+        <id>2</id>
+        <label>208</label>
+        <onup>11</onup>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <width>300</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Plot</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <label>207</label>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <onleft>10</onleft>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Cast</description>
+        <type>togglebutton</type>
+        <id>4</id>
+        <label>206</label>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Refresh</description>
+        <type>button</type>
+        <id>5</id>
+        <label>184</label>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Watched</description>
+        <type>togglebutton</type>
+        <id>6</id>
+        <label>1010</label>
+        <onleft>10</onleft>
+        <ondown>2</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+  </controls>
 </window>
+<!--Checksum:75f60573c9f940617b95a237d6b1b985-->

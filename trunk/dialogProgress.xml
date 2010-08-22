@@ -4,9 +4,7 @@
   <defaultcontrol>10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
-    
     <import>common.dialog.xml</import>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -37,7 +35,7 @@
       <texture>dialogbottom.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
     </control>
-	<control>
+    <control>
       <type>image</type>
       <id>100</id>
       <posX>405</posX>
@@ -45,7 +43,7 @@
       <width>472</width>
       <height>12</height>
       <texture>osdprogressback.png</texture>
-    </control>	
+    </control>
     <control>
       <description>progress control</description>
       <type>progress</type>
@@ -59,7 +57,6 @@
       <midtexture>osdprogressmid.png</midtexture>
       <righttexture>osdprogressright.png</righttexture>
     </control>
-    
     <control>
       <description>OK button</description>
       <type>button</type>
@@ -79,6 +76,6 @@
       <onup>10</onup>
       <ondown>10</ondown>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:96cfb1ae1b1391bb2c4a9b2c6d17e9a4-->

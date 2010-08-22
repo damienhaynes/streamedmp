@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-
     <!--                                    :: DUMMY / STUFF ::                                    -->
-
     <control>
       <description>dummy (visible when music is playing)</description>
       <type>label</type>
@@ -12,7 +10,6 @@
       <label>#Play.Current.Album</label>
       <visible>!player.hasvideo+player.hasaudio</visible>
     </control>
-
     <control>
       <description>dummy (visible when there is a next track)</description>
       <type>label</type>
@@ -21,9 +18,6 @@
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
-
-
-
     <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
     <control>
       <description>music logo</description>
@@ -68,7 +62,6 @@
       <texture>#Play.Current.Thumb</texture>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>Music logo Animation</description>
       <type>animation</type>
@@ -119,7 +112,6 @@
       <font>mediastream12tc</font>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>title info label</description>
       <type>label</type>
@@ -134,7 +126,6 @@
       <font>mediastream10tc</font>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>album info label</description>
       <type>label</type>
@@ -149,7 +140,6 @@
       <font>mediastream10c</font>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>play time / duration label</description>
       <type>label</type>
@@ -164,7 +154,6 @@
       <font>mediastream10c</font>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>next song label</description>
       <type>label</type>
@@ -179,7 +168,6 @@
       <align>left</align>
       <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
     </control>
-
     <control>
       <description>next song info label</description>
       <type>label</type>
@@ -194,9 +182,7 @@
       <font>mediastream10</font>
       <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
     </control>
-
     <!--                                    :: VIDEO OVERLAY IN REGULAR HOME ::                                    -->
-
     <control>
       <description>video preview window BACKGROUND</description>
       <type>image</type>
@@ -225,7 +211,6 @@
       <textureNoFocus>-</textureNoFocus>
       <visible>player.hasmedia+!control.isvisible(3337)</visible>
     </control>
-
     <control>
       <description>artist info label</description>
       <type>fadelabel</type>
@@ -293,3 +278,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:b84ea733c422b37d726973d9766d1127-->

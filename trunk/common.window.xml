@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-    
     <!--
     WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
     -->
-    
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -17,7 +15,6 @@
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-    
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
@@ -31,7 +28,7 @@
       <label>#currentmodule</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-<control>
+    <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
@@ -44,9 +41,7 @@
       <label>#header.label</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-    
     <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
-    
     <!--
     <control>
       <description>Top Title Extension Background</description>
@@ -72,6 +67,6 @@
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     -->
-    
   </controls>
 </window>
+<!--Checksum:8f1f4d1a24b5023b7a391f4c1d3d9253-->
