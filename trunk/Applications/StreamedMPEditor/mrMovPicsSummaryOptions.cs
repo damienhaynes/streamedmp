@@ -26,7 +26,14 @@ namespace StreamedMPEditor
           return cboxMRMovieTitle.Text;
       }
 
-      set { cboxMRMovieTitle.Text = value; }
+      set
+      {
+        if (value.StartsWith("mediastream10tc"))
+          cboxMRMovieTitle.SelectedIndex = cboxMRMovieTitle.Items.IndexOf("mediastream10tc (Bold)");
+        else
+          cboxMRMovieTitle.SelectedIndex = cboxMRMovieTitle.Items.IndexOf("mediastream10c");
+      }
+
     }
 
     public string MovieDetailFont
@@ -39,7 +46,13 @@ namespace StreamedMPEditor
           return cboxMRMovieDetail.Text;
       }
 
-      set { cboxMRMovieDetail.Text = value; }
+      set
+      {
+        if (value.StartsWith("mediastream10tc"))
+          cboxMRMovieDetail.SelectedIndex = cboxMRMovieDetail.Items.IndexOf("mediastream10tc (Bold)");
+        else
+          cboxMRMovieDetail.SelectedIndex = cboxMRMovieDetail.Items.IndexOf("mediastream10c");
+      }
     }
 
 
