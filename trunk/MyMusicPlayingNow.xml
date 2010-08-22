@@ -44,6 +44,8 @@
         <height>26</height>
         <label>4540</label>
         <textYOff>1</textYOff>
+        <onleft>5101</onleft>
+        <onright>5101</onright>
       </control>
       <control>
         <id>5102</id>
@@ -76,6 +78,8 @@
         <hyperlink>500</hyperlink>
         <label>4555</label>
         <textYOff>1</textYOff>
+        <onleft>5104</onleft>
+        <onright>5104</onright>
       </control>
       <control>
         <id>5105</id>
@@ -91,6 +95,8 @@
         <hyperlink>90478</hyperlink>
         <label>MyLyrics</label>
         <textYOff>1</textYOff>
+        <onleft>5105</onleft>
+        <onright>5105</onright>
       </control>
     </control>
     <control>
@@ -143,7 +149,8 @@
       <loop>yes</loop>
       <randomize>yes</randomize>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+string.equals(#StreamedMP.showEqGraphic,true)+Player.HasAudio + Player.playing</visible>
-      <animation effect="fade" time="10">VisibleChange</animation>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -195,6 +202,8 @@
       <label>435</label>
       <font>mediastream10c</font>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -207,6 +216,8 @@
       <label>#Play.Current.Track  |</label>
       <font>mediastream10c</font>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -219,6 +230,8 @@
       <label>201</label>
       <font>mediastream10c</font>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -231,6 +244,8 @@
       <label>#Play.Current.Year</label>
       <font>mediastream10c</font>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -241,6 +256,8 @@
       <height>12</height>
       <texture>osd_progress_background_medium.png</texture>
       <visible>Player.HasMedia</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <description>progressbar background</description>
@@ -252,6 +269,8 @@
       <height>29</height>
       <texture>osdprogressbackv.png</texture>
       <colordiffuse>ffFFFFFF</colordiffuse>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>progress</type>
@@ -267,6 +286,8 @@
       <midtexture>osdprogressmid.png</midtexture>
       <righttexture>osdprogressright.png</righttexture>
       <visible>player.hasmedia</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -278,6 +299,8 @@
       <label>[#currentplaytime]</label>
       <font>mediastream12c</font>
       <visible>Player.HasMedia</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -289,6 +312,8 @@
       <label>[#duration]</label>
       <font>mediastream12c</font>
       <visible>Player.HasMedia</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -300,6 +325,8 @@
       <font>mediastream11tc</font>
       <align>right</align>
       <textcolor>ff006699</textcolor>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>fadelabel</type>
@@ -312,6 +339,8 @@
       <font>mediastream12</font>
       <align>right</align>
       <textcolor>ffb0b0b0</textcolor>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>fadelabel</type>
@@ -324,6 +353,8 @@
       <font>mediastream12</font>
       <align>right</align>
       <textcolor>ffb0b0b0</textcolor>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <description>music logo</description>
@@ -335,6 +366,8 @@
       <height>66</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>missing_coverart.png</texture>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <description>music logo</description>
@@ -346,6 +379,8 @@
       <height>66</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#Play.Next.Thumb</texture>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <id>141</id>
@@ -421,7 +456,7 @@
       <onright>5103</onright>
       <onup>155</onup>
       <ondown>155</ondown>
-      <visible>Control.HasFocus(5103)</visible>
+      <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
       <posX>328</posX>
       <posY>537</posY>
       <width>649</width>
@@ -710,4 +745,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:73c0b9036da7ee3550dcb5393a1261bf-->
+<!--Checksum:bf73b322d63e117641a3fa465764caf1-->
