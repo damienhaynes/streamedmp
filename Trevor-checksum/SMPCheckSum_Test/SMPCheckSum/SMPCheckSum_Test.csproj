@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{2FDEC0AA-1CED-435A-968D-5D796361020F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -100,6 +100,6 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>$(TargetDir)merge.bat</PostBuildEvent>
+    <PostBuildEvent>rem $(TargetDir)merge.bat</PostBuildEvent>
   </PropertyGroup>
 </Project>

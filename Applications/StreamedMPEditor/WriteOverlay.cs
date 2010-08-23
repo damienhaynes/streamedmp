@@ -53,6 +53,12 @@ namespace StreamedMPEditor
       if (cbOverlayFanart.Checked)
         overlayFanart = "Yes";
 
+      if (hideControls.Length > 0)
+      {
+        if (!hideControls.StartsWith("+"))
+          hideControls = "+" + hideControls;
+      }
+
       xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + " standalone=" + quote + "yes" + quote + "?>" +
             "<!--" +
             "different overlays on home screens" +
@@ -134,7 +140,7 @@ namespace StreamedMPEditor
                   "<width>519</width>" +
                   "<height>152</height>" +
                   "<texture>dialogprogressbg.png</texture>" +
-                  "<visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(6767)" + hideControls + "</visible>" +
                   "<!-- Not visible in regular home and my plugins -->" +
                 "</control>" +
                 "<control>" +
@@ -146,7 +152,7 @@ namespace StreamedMPEditor
                   "<width>270</width>" +
                   "<height>114</height>" +
                   "<texture>#fanarthandler.music.backdrop1.play</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>" +
                 "</control>" +
                 "<control>" +
@@ -158,7 +164,7 @@ namespace StreamedMPEditor
                   "<width>270</width>" +
                   "<height>114</height>" +
                   "<texture>#fanarthandler.music.backdrop2.play</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767+" + hideControls + "</visible>" +
+                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>" +
                 "</control>" +
                 "<control>" +
@@ -171,7 +177,7 @@ namespace StreamedMPEditor
                   "<height>114</height>" +
                   "<colordiffuse>EFFFFFFF</colordiffuse>" +
                   "<texture>overlayfanartmask.png</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->" +
                 "<control>" +
@@ -186,7 +192,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>defaultAudioBig.png</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -200,7 +206,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
                   "<texture>" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -214,7 +220,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>#Play.Current.Thumb</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb)+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Music logo Animation</description>" +
@@ -230,7 +236,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Selectable Button</description>" +
@@ -249,7 +255,7 @@ namespace StreamedMPEditor
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
                   "<colordiffuse>f1ffffff</colordiffuse>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>artist info label</description>" +
@@ -263,7 +269,7 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream12tc</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>title info label</description>" +
@@ -277,7 +283,7 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>album info label</description>" +
@@ -291,7 +297,7 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>play time / duration label</description>" +
@@ -305,7 +311,7 @@ namespace StreamedMPEditor
                   "<label>#currentplaytime / #duration</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>next song label</description>" +
@@ -319,7 +325,7 @@ namespace StreamedMPEditor
                   "<textcolor>FF025984</textcolor>" +
                   "<font>mediastream10</font>" +
                   "<align>left</align>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>next song info label</description>" +
@@ -333,7 +339,7 @@ namespace StreamedMPEditor
                   "<textcolor>white</textcolor>" +
                   "<align>left</align>" +
                   "<font>mediastream10</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->" +
                 "<control>" +
@@ -351,7 +357,7 @@ namespace StreamedMPEditor
                   "<ondown>7777</ondown>" +
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>video preview window</description>" +
@@ -367,7 +373,7 @@ namespace StreamedMPEditor
                   "<ondown>7777</ondown>" +
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>artist info label</description>" +
@@ -380,7 +386,7 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Title</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>title info label</description>" +
@@ -393,7 +399,7 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Year</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>album info label</description>" +
@@ -406,7 +412,7 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Genre</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>album info label</description>" +
@@ -419,7 +425,7 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Director</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>play time / duration label</description>" +
@@ -432,7 +438,7 @@ namespace StreamedMPEditor
                   "<label>#currentplaytime / #duration</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
               "</controls>" +
             "</window>";
