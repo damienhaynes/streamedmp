@@ -59,7 +59,7 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-      settings.Load("VideoConfigGUI");  
+      settings.Load("VideoConfig");  
       cmc_MinOSD.Selected = !FullVideoOSD;
       cmc_MinOSD.Label = Translation.MinVideoOSD;      
     }
@@ -68,7 +68,7 @@ namespace StreamedMPConfig
     {
       FullVideoOSD = !cmc_MinOSD.Selected;
       SetProperties();
-      settings.Save("VideoConfigGUI");
+      settings.Save("VideoConfig");
     }
     #endregion
   }

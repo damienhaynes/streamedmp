@@ -124,7 +124,7 @@ namespace StreamedMPConfig
           #endregion
 
           #region Music
-          case "MusicConfigGUI":
+          case "MusicConfig":
             if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
               MusicOptionsGUI.cdCoverOnly = true;
             if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
@@ -134,34 +134,34 @@ namespace StreamedMPConfig
           #endregion
 
           #region TVSeries
-          case "TVSeriesConfigGUI":
-            TVSeriesConfigGUI.IsDefaultStyle = xmlreader.GetValueAsInt(section, "tvseriesDefaultStyle", 1) == 1;
-            TVSeriesConfigGUI.WideBannerMod = (TVSeriesConfigGUI.WideBanners)xmlreader.GetValueAsInt(section, "tvseriesWideBannerMod", 0);
+          case "TVSeriesConfig":
+            TVSeriesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, "tvseriesDefaultStyle", 1) == 1;
+            TVSeriesConfig.WideBannerMod = (TVSeriesConfig.WideBanners)xmlreader.GetValueAsInt(section, "tvseriesWideBannerMod", 0);
             break;
           #endregion
 
           #region MovingPictures
-          case "MovingPicturesConfigGUI":
-            MovingPicturesConfigGUI.IsDefaultStyle = xmlreader.GetValueAsInt(section, "movingpicturesDefaultStyle", 1) == 1;
-            MovingPicturesConfigGUI.ThumbnailMod = (MovingPicturesConfigGUI.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);
+          case "MovingPicturesConfig":
+            MovingPicturesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, "movingpicturesDefaultStyle", 1) == 1;
+            MovingPicturesConfig.ThumbnailMod = (MovingPicturesConfig.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);
             break;
           #endregion
 
           #region TV
-          case "TVConfigGUI":
-            TVConfigGUI.TVGuideRowSize = (TVConfigGUI.TVGuideRows)xmlreader.GetValueAsInt(section, "tvGuideSize", 10);
-            TVConfigGUI.TVMiniGuideRowSize = (TVConfigGUI.TVMiniGuideRows)xmlreader.GetValueAsInt(section, "tvMiniGuideSize", 7);
+          case "TVConfig":
+            TVConfig.TVGuideRowSize = (TVConfig.TVGuideRows)xmlreader.GetValueAsInt(section, "tvGuideSize", 10);
+            TVConfig.TVMiniGuideRowSize = (TVConfig.TVMiniGuideRows)xmlreader.GetValueAsInt(section, "tvMiniGuideSize", 7);
             break;
           #endregion
 
           #region Video
-          case "VideoConfigGUI":
+          case "VideoConfig":
             VideoOptionsGUI.FullVideoOSD = xmlreader.GetValueAsInt(section, "videoFullVideoOSD", 1) == 1;
             break;
           #endregion
 
           #region Misc
-          case "Misc":
+          case "MiscConfig":
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;
             MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, "miscShowRoundedCovers", 1) == 1;
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, "miscShowIconsInArtwork", 1) == 1;
@@ -193,7 +193,7 @@ namespace StreamedMPConfig
           #endregion
 
           #region Music
-          case "MusicConfigGUI":
+          case "MusicConfig":
             xmlwriter.SetValue(section, "cdCoverOnly", MusicOptionsGUI.cdCoverOnly ? 1 : 0);
             xmlwriter.SetValue(section, "showEqGraphic", MusicOptionsGUI.showEqGraphic ? 1 : 0);
             xmlwriter.SetValue(section, "nowPlayingStyle", (int)MusicOptionsGUI.nowPlayingStyle);
@@ -201,34 +201,34 @@ namespace StreamedMPConfig
           #endregion
 
           #region TVSeries
-          case "TVSeriesConfigGUI":
-            xmlwriter.SetValue(section, "tvseriesDefaultStyle", TVSeriesConfigGUI.IsDefaultStyle ? 1 : 0);
-            xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfigGUI.WideBannerMod);
+          case "TVSeriesConfig":
+            xmlwriter.SetValue(section, "tvseriesDefaultStyle", TVSeriesConfig.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfig.WideBannerMod);
             break;
           #endregion
 
           #region MovingPictures
-          case "MovingPicturesConfigGUI":
-            xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfigGUI.IsDefaultStyle ? 1 : 0);
-            xmlwriter.SetValue(section, "movingpicturesThumbMod", (int)MovingPicturesConfigGUI.ThumbnailMod);
+          case "MovingPicturesConfig":
+            xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfig.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, "movingpicturesThumbMod", (int)MovingPicturesConfig.ThumbnailMod);
             break;
           #endregion
 
           #region TV
-          case "TVConfigGUI":
-            xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfigGUI.TVGuideRowSize);
-            xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfigGUI.TVMiniGuideRowSize);
+          case "TVConfig":
+            xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfig.TVGuideRowSize);
+            xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfig.TVMiniGuideRowSize);
             break;
           #endregion
 
           #region Video
-          case "VideoConfigGUI":
+          case "VideoConfig":
             xmlwriter.SetValue(section, "videoFullVideoOSD", VideoOptionsGUI.FullVideoOSD ? 1 : 0);          
             break;
           #endregion
 
           #region Misc
-          case "Misc":
+          case "MiscConfig":
             xmlwriter.SetValue(section, "miscShowHiddenMenuImage", MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
             xmlwriter.SetValue(section, "miscShowRoundedCovers", MiscConfigGUI.ShowRoundedImages ? 1 : 0);
             xmlwriter.SetValue(section, "miscShowIconsInArtwork", MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);

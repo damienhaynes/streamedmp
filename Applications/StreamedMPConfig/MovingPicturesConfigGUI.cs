@@ -5,7 +5,7 @@ using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
-  public class MovingPicturesConfigGUI : GUIWindow
+  public class MovingPicturesConfig : GUIWindow
   {
     #region Enums
     private enum GUIControls
@@ -31,7 +31,7 @@ namespace StreamedMPConfig
     #endregion
 
     #region Constructor
-    public MovingPicturesConfigGUI() { }
+    public MovingPicturesConfig() { }
     #endregion
 
     #region Public Properties
@@ -180,7 +180,7 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       // Load Settings
-      settings.Load("MovingPicturesConfigGUI");
+      settings.Load("MovingPicturesConfig");
 
       // Update Controls
       SetControlStates();
@@ -195,7 +195,7 @@ namespace StreamedMPConfig
       ApplyConfigurationChanges();
 
       // Save Settings
-      settings.Save("MovingPicturesConfigGUI");
+      settings.Save("MovingPicturesConfig");
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)

@@ -4,7 +4,7 @@ using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
-  public class TVConfigGUI : GUIWindow
+  public class TVConfig : GUIWindow
   {
     #region Enums
     private enum GUIControls
@@ -38,7 +38,7 @@ namespace StreamedMPConfig
     #endregion
 
     #region Constructor
-    public TVConfigGUI() { }
+    public TVConfig() { }
     #endregion
 
     #region Public Properties
@@ -199,7 +199,7 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       // Load Settings
-      settings.Load("TVConfigGUI");
+      settings.Load("TVConfig");
 
       // Update Controls
       SetControlStates();
@@ -214,7 +214,7 @@ namespace StreamedMPConfig
       ApplyConfigurationChanges();
 
       // Save Settings
-      settings.Save("TVConfigGUI");
+      settings.Save("TVConfig");
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
