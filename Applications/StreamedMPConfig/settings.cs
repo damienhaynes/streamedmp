@@ -89,8 +89,8 @@ namespace StreamedMPConfig
         // Read user settings from configuration file
         switch (section)
         {
-          #region StreamedMPConfig
-          case "StreamedMPConfig":            
+          #region Update
+          case "UpdateConfig":           
             if (xmlreader.GetValueAsInt(section, "checkOnStart", 1) != 0)
               StreamedMPConfig.checkOnStart = true;
             if (xmlreader.GetValueAsInt(section, "checkForUpdateAt", 1) != 0)
@@ -99,8 +99,6 @@ namespace StreamedMPConfig
               StreamedMPConfig.patchUtilityRunUnattended = true;
             if (xmlreader.GetValueAsInt(section, "patchUtilityRestartMP", 1) != 0)
               StreamedMPConfig.patchUtilityRestartMP = true;
-            StreamedMPConfig.mrFanartTimer = xmlreader.GetValueAsInt(section, "mostRecentTimer", 7);
-
 
             if (StreamedMPConfig.checkForUpdateAt)
             {
@@ -167,6 +165,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;
             MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, "miscShowRoundedCovers", 1) == 1;
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, "miscShowIconsInArtwork", 1) == 1;
+            MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, "miscMostRecentFanartTimerInt", 7);
             break;
           #endregion
 
@@ -181,16 +180,15 @@ namespace StreamedMPConfig
       {
         switch (section)
         {
-          #region StreamedMPConfig
-          case "StreamedMPConfig":            
+          #region Update
+          case "UpdateConfig":            
             xmlwriter.SetValue(section, "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
             xmlwriter.SetValue(section, "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
             xmlwriter.SetValue(section, "checkInterval", StreamedMPConfig.checkInterval);
             xmlwriter.SetValue(section, "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
             xmlwriter.SetValue(section, "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
             xmlwriter.SetValue(section, "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
-            xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
-            xmlwriter.SetValue(section, "mostRecentTimer", StreamedMPConfig.mrFanartTimer);
+            xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);            
             break;
           #endregion
 
@@ -234,6 +232,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, "miscShowHiddenMenuImage", MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
             xmlwriter.SetValue(section, "miscShowRoundedCovers", MiscConfigGUI.ShowRoundedImages ? 1 : 0);
             xmlwriter.SetValue(section, "miscShowIconsInArtwork", MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
+            xmlwriter.SetValue(section, "miscMostRecentFanartTimerInt", MiscConfigGUI.MostRecentFanartTimerInt);
             break;
           #endregion
 

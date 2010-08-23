@@ -14,7 +14,7 @@ namespace StreamedMPConfig
 
     #region Skin Connection
 
-    public enum GUIControls
+    private enum GUIControls
     {
       MusicCDCover = 2,          // Music Options
       MusicGFXeq = 3,            // Music Options

@@ -11,7 +11,7 @@ namespace StreamedMPConfig
 
     #region Skin Connection
 
-    public enum GUIControls
+    private enum GUIControls
     {
       VideoMinOSD = 2
     }

@@ -13,13 +13,19 @@ namespace StreamedMPConfig
   {
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.UpdateChangeLog)]
+    private enum GUIControls
+    {
+      UpdateChangeLog = 2,
+      DoUpdate = 3
+    }
+
+    [SkinControl((int)GUIControls.UpdateChangeLog)]
     protected GUITextControl cmc_ChangeLog = null;
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.DoUpdate)]
+    [SkinControl((int)GUIControls.DoUpdate)]
     protected GUIButtonControl btDoUpdate = null;
 
     #endregion
-
+   
     #region Local Variables
 
     private static Stream strResponse;
@@ -200,7 +206,7 @@ namespace StreamedMPConfig
     {
       cmc_ChangeLog.Visible = false;
       btDoUpdate.Visible = false;
-      settings.Load("StreamedMPConfig");
+      settings.Load("UpdateConfig");
       GUIControl.SetControlLabel(GetID, 3, Translation.Strings["UpdateInstall"]);
       if (updateCheck.updateAvailable())
       {
