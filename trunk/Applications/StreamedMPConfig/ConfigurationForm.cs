@@ -50,8 +50,8 @@ namespace StreamedMPConfig
     // Save settings to file
     void btSave_Click(object sender, EventArgs e)
     {
-      StreamedMPConfig.cdCoverOnly = cbCdCoverOnly.Checked;
-      StreamedMPConfig.showEqGraphic = cbShowEqGraphic.Checked;
+      MusicOptionsGUI.cdCoverOnly = cbCdCoverOnly.Checked;
+      MusicOptionsGUI.showEqGraphic = cbShowEqGraphic.Checked;
       StreamedMPConfig.fullVideoOSD = fullVideoOSD.Checked;
       StreamedMPConfig.checkOnStart = cbCheckOnStart.Checked;
       StreamedMPConfig.checkForUpdateAt = cbCheckForUpdateAt.Checked;
@@ -78,8 +78,8 @@ namespace StreamedMPConfig
       cbCdCoverOnly.Text = Translation.Strings["CDCover"];
       cbShowEqGraphic.Text = Translation.Strings["ShowEQ"];
 
-      cbCdCoverOnly.Checked = StreamedMPConfig.cdCoverOnly;
-      cbShowEqGraphic.Checked = StreamedMPConfig.showEqGraphic;
+      cbCdCoverOnly.Checked = MusicOptionsGUI.cdCoverOnly;
+      cbShowEqGraphic.Checked = MusicOptionsGUI.showEqGraphic;
       cbRunUnattended.Checked = StreamedMPConfig.patchUtilityRunUnattended;
       cbRestartMP.Checked = StreamedMPConfig.patchUtilityRestartMP;
 
