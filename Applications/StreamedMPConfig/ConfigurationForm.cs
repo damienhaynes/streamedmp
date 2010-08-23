@@ -52,7 +52,7 @@ namespace StreamedMPConfig
     {
       MusicOptionsGUI.cdCoverOnly = cbCdCoverOnly.Checked;
       MusicOptionsGUI.showEqGraphic = cbShowEqGraphic.Checked;
-      StreamedMPConfig.fullVideoOSD = fullVideoOSD.Checked;
+      VideoOptionsGUI.FullVideoOSD = fullVideoOSD.Checked;
       StreamedMPConfig.checkOnStart = cbCheckOnStart.Checked;
       StreamedMPConfig.checkForUpdateAt = cbCheckForUpdateAt.Checked;
       StreamedMPConfig.checkInterval = comboCheckInterval.SelectedIndex;
@@ -63,6 +63,7 @@ namespace StreamedMPConfig
       StreamedMPConfig.mrFanartTimer = (int)numFanartTimer.Value;
       settings.Save("StreamedMPConfig");
       settings.Save("MusicConfigGUI");
+      settings.Save("VideoConfigGUI");
       this.Close();
     }
 
@@ -83,7 +84,7 @@ namespace StreamedMPConfig
       cbRunUnattended.Checked = StreamedMPConfig.patchUtilityRunUnattended;
       cbRestartMP.Checked = StreamedMPConfig.patchUtilityRestartMP;
 
-      if (StreamedMPConfig.fullVideoOSD)
+      if (VideoOptionsGUI.FullVideoOSD)
       {
         fullVideoOSD.Checked = true;
         minVideoOSD.Checked = false;
