@@ -143,7 +143,7 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-      settings.Load("MusicConfigGUI");
+      settings.Load("MusicConfig");
       MusicGFXeq.Selected = showEqGraphic;
       MusicCDCover.Selected = cdCoverOnly;
 
@@ -169,7 +169,7 @@ namespace StreamedMPConfig
     protected override void OnPageDestroy(int new_windowId)
     {
       CheckSum checkSum = new CheckSum();
-      smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Save({0})", "MusicConfigGUI"), LogLevel.Info);
+      smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Save({0})", "MusicConfig"), LogLevel.Info);
 
       showEqGraphic = MusicGFXeq.Selected;
       cdCoverOnly = MusicCDCover.Selected;
@@ -190,7 +190,7 @@ namespace StreamedMPConfig
       else
         smcLog.WriteLog("No Changes Made to Now Playing", LogLevel.Info);
 
-      settings.Save("MusicConfigGUI");
+      settings.Save("MusicConfig");
       SetProperties();
 
       GUIWindowManager.OnResize();

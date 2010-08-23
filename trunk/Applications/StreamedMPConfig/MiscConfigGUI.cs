@@ -101,7 +101,7 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       // Load Settings
-      settings.Load("Misc");
+      settings.Load("MiscConfig");
 
       // Update Controls
       SetControlStates();
@@ -116,7 +116,7 @@ namespace StreamedMPConfig
       ApplyConfigurationChanges();
 
       // Save Settings
-      settings.Save("Misc");
+      settings.Save("MiscConfig");
     }
     #endregion
   }

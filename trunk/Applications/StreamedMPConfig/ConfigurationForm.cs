@@ -25,9 +25,9 @@ namespace StreamedMPConfig
       InitializeComponent();
 
       settings.Load("UpdateConfig");
-      settings.Load("MusicConfigGUI");
-      settings.Load("VideoConfigGUI");
-      settings.Load("Misc");
+      settings.Load("MusicConfig");
+      settings.Load("VideoConfig");
+      settings.Load("MiscConfig");
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
@@ -65,9 +65,9 @@ namespace StreamedMPConfig
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
       MiscConfigGUI.MostRecentFanartTimerInt = (int)numFanartTimer.Value;
       settings.Save("UpdateConfig");
-      settings.Save("MusicConfigGUI");
-      settings.Save("VideoConfigGUI");
-      settings.Save("Misc");
+      settings.Save("MusicConfig");
+      settings.Save("VideoConfig");
+      settings.Save("MiscConfig");
       this.Close();
     }
 
