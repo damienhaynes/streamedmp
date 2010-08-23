@@ -58,6 +58,28 @@ namespace SMPCheckSum
       return addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
     }
     //
+    // Recalulate and replace existing Checksum on all xml files
+    // Typically used by installer after install/modify
+    //
+    public void ReplaceAllFiles(string xmlPath)
+    {
+      string[] xmlFileNames = System.IO.Directory.GetFiles(xmlPath, "*.xml", SearchOption.AllDirectories);
+      
+      foreach (string xmlFileName in xmlFileNames)
+      {
+        try
+        {
+          if (readChksum(xmlFileName) != null)
+            stripChecksum(xmlFileName, 50);
+
+          rewriteXMLFile(xmlFileName);
+          addCheckSum(xmlFileName, GetMD5HashFromFile(xmlFileName, 0));
+        }
+        catch { }
+      }     
+    }
+
+    //
     // Remove the Checksum from the file
     //
     public void Remove(string xmlFileName)

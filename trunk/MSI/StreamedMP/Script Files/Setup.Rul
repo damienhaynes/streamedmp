@@ -244,6 +244,7 @@ prototype NUMBER	GetVersionDigit(STRING, INT);
 //prototype NUMBER 	GetMediaPortalRevision();
 prototype VOID		CheckXMLSectionsExist();
 prototype NUMBER	CheckStringExists(STRING, STRING);
+prototype VOID		ApplyCheckSum();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -1983,18 +1984,35 @@ begin
 
 end;
 
+function VOID ApplyCheckSum()
+	OBJECT objCheckSum;
+begin
+	SdShowMsg("Applying Checksums...Please wait.", TRUE);
+
+	// Apply Check sum to all Installed XML files.
+	try		             	
+		set objCheckSum = CoCreateObjectDotNet(g_sMediaPortalProgramDir^"SMPCheckSum.dll", "SMPCheckSum.CheckSum" );
+		objCheckSum.ReplaceAllFiles(INSTALLDIR^SKIN_NAME);
+	catch
+	    MessageBox("Error occurred applying CheckSums to XML files",INFORMATION);
+	endcatch;
+	
+	// Release CheckSum Object		
+	set objCheckSum = NOTHING;                           
+	
+	SdShowMsg("Applying Checksums...Please wait.", FALSE);
+	
+end;
+
 function VOID UpdateSettings()
 	STRING svString, sFile, sArtistImage, szDefine, sStyle, svValue;
 	BOOL bReturn;
-	OBJECT objCheckSum;		
+		
 begin
 	// Confirm if configuration sections exist
 	// we dont have any XML functions to help here	
    	CheckXMLSectionsExist();  	
-    
-    // Change CheckSums after Applying configuration changes
-    set objCheckSum = CoCreateObjectDotNet(g_sMediaPortalProgramDir^"SMPCheckSum.dll", "SMPCheckSum.CheckSum" );
-    
+
 	// Save configuration	
 	sFile = g_sConfigDir^"StreamedMPConfig.xml";
 	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
@@ -2058,10 +2076,7 @@ begin
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
 	ModifySkinFilesForFULLHD(bReturn);
-	
-	// TVSeries.SkinSettings.xml CheckSum
-	svValue = objCheckSum.Replace(sFile);               
-       
+
 	// Update TVSeries Imports
 	sFile = STREAMEDMP_SKIN_TVSERIES;
 	
@@ -2093,9 +2108,6 @@ begin
 			SetXMLProperty(sFile, TVSERIES_FACADE_PATH, "TVSeries."+sStyle+".WideBannerMod.10x4.Facade.xml");
 			SetXMLProperty(sFile, TVSERIES_SERIESWIDEBANNERS_PATH, "TVSeries.Common.WideBannerMod.10x4.SeriesWideBanners.xml");
 	endswitch;
-	
-	// TVSeries CheckSum
-	svValue = objCheckSum.Replace(sFile);
 	
 	// Update MovingPictures Imports
 	sFile = STREAMEDMP_SKIN_MOVINGPICTURES;
@@ -2129,50 +2141,32 @@ begin
 			SetXMLProperty(sFile, MOVPICS_THUMBVIEWMEDIAINFO_PATH, "movingpictures.common.thumbsview.12x3.8x2.mediainfo.xml");
 	endswitch;
 	
-	// MovingPictures CheckSum
-	svValue = objCheckSum.Replace(sFile);
-	
 	// Update TV Mini Guide Imports
 	sFile = STREAMEDMP_SKIN_TVMINIGUIDE;
-	SetXMLProperty(sFile, TVMINIGUIDE_ROWS_PATH, "TVMiniGuide."+g_sTVMiniGuideSize+"Rows.xml");           
-	svValue = objCheckSum.Replace(sFile);
+	SetXMLProperty(sFile, TVMINIGUIDE_ROWS_PATH, "TVMiniGuide."+g_sTVMiniGuideSize+"Rows.xml");	
 	
 	// Update TV Guide Imports
 	sFile = STREAMEDMP_SKIN_MYTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
-	svValue = objCheckSum.Replace(sFile);	
+	
 	sFile = STREAMEDMP_SKIN_DIALOGTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
-	svValue = objCheckSum.Replace(sFile);
 			
 	// Enable/Disable Random Fanart in MyTV sections	
 	szDefine = "#useRandomTVSeriesFanart";
-	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRACTIVE);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRPROGRAMINFO);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDRADIO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRECORDEDRADIO);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRRECORDEDTV);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRTVGUIDESEARCH);
-	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_4TRUPCOMING);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVPROGRAM, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVPROGRAM);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVRECORDEDINFO);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVRECORDEDTV);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVER, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSCEDULERSERVER);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH);
-	SetSkinDefine(STREAMEDMP_SKIN_MYTVSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
-	svValue = objCheckSum.Replace(STREAMEDMP_SKIN_MYTVSEARCH);
+	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDRADIO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVPROGRAM, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVER, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSCEDULERSERVERSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_MYTVSEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	
 	// Update Unfocused Alpha in references.xml
 	// Valid values from 0 - 255 (Tranparent - Solid);
@@ -2193,40 +2187,32 @@ begin
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT3_PATH, "FF"+g_sText3Color);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
-	
-	// References CheckSum
-	svValue = objCheckSum.Replace(sFile);
 		
 	// Update Hard Coded Paths
 	sArtistImage = g_sThumbsDir^"Music\\Artists\\#Play.Current.ArtistL.jpg";
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAYHOME;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage );
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	svValue = objCheckSum.Replace(sFile);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAY;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	svValue = objCheckSum.Replace(sFile);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
 	
 	sFile = STREAMEDMP_SKIN_COMMOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	svValue = objCheckSum.Replace(sFile);
+	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
 	
 	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	svValue = objCheckSum.Replace(sFile);   
+	
 	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY2;
 	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
 	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	svValue = objCheckSum.Replace(sFile);	
 	
 	sFile = STREAMEDMP_SKIN_EMULATORS;
-	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");
-	svValue = objCheckSum.Replace(sFile);		
+	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");	
 	
 	// Set Default Skin
 	sFile = g_sConfigDir^"MediaPortal.xml";	
@@ -2247,9 +2233,9 @@ begin
 	else
 		SetMPXMLProperty(sFile, "general","startbasichome","no");
 	endif;
-		
-	// Release CheckSum Object		
-	set objCheckSum = NOTHING;
+	
+	// Apply CheckSums
+	ApplyCheckSum();	
 	
 end;             
 
