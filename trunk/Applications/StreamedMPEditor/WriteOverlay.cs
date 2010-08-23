@@ -192,7 +192,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>defaultAudioBig.png</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -206,7 +206,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
                   "<texture>" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -220,7 +220,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>#Play.Current.Thumb</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb)+!control.isvisible(6767)" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Music logo Animation</description>" +
