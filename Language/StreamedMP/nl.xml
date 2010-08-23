@@ -1,39 +1,78 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- StreamedMP translation file -->
-<!-- English (US) -->
+<!-- Dutch (NL) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Last Updated: 23rd August 2010 -->
 <strings>
-	<!-- MediaPortal Localised IDs -> Skin Properties -->
-	<string Field="#StreamedMP.Track">435</string>
-	<string Field="#StreamedMP.Year">436</string>	
-    <!-- Menu Options -->
-    <string Field="MusicMenu">Muziek Instellingen</string>
-    <string Field="VideoMenu">Video Instellingen</string>
-    <string Field="SkinUpdate">Skin Update</string>
-    <!-- Skin Updates / Patching GUI -->   
-    <string Field="UpdateInstall">Update en Installeer</string>
-    <string Field="NoUpdatesAvailable">Momenteel geen patches beschikbaar</string>
-    <string Field="DownloadingPatch">Downloaden Patch: {0}</string>
-    <string Field="DownloadingProgress">{0}KB van de {1}KB gedownload ({2}%)</string>
-    <string Field="NumPatchesInstalled">Aantal Patches geinstalleerd: {0}</string>
-    <string Field="PatchUpdateComplete">Update naar Skin Versie: {0} Compleet</string>
-    <string Field="UpdateAvailableHeading">Update Beschikbaar - Wijzigingen</string>
-    <string Field="Revision">Revisie:</string>
-    <string Field="Author">Schrijver:</string>
-    <string Field="Date">Datum:</string>
-    <string Field="Message">Bericht:</string>
-    <!-- Plugin Options -->	
-    <string Field="CDCover">Laat alleen CD Cover zien in Music Now Playing</string>
-    <string Field="ShowEQ">Laat Grafische EQ zien in Music Now Playing</string>
-    <string Field="MinVideoOSD">Gebruik beperkte Video OSD indien gepauzeerd</string>
-	<string Field="mupdateheader">De update is gedownload naar het bureaublad</string>
-	<string Field="mupdateline1">Handmatige update noodzakelijk - om toe te passen sluit</string>
-	<string Field="mupdateline2">MediaPortal en/of Configuratie</string>
-	<string Field="mupdateline3">en voer dit bestand uit: {0}</string>
-	<string Field="mupdateline4">welke gevonden kan worden op het bureaublad</string>
+  <!-- Example user defined translation property                                       -->
+  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
+  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <string Field="#StreamedMP.Example.Property">Translated String</string>
+  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <string Field="#StreamedMP.Track">435</string>
+  <string Field="#StreamedMP.Year">436</string>
+  <!-- Menu Options -->
+  <string Field="MusicMenu">Muziek Instellingen</string>
+  <string Field="VideoMenu">Video Instellingen</string>
+  <string Field="SkinUpdate">Skin Update</string>
+  <string Field="MiscMenu">Diverse instellingen</string>
+  <string Field="TVSeriesMenu">TVSeries-instellingen</string>
+  <string Field="MovingPicturesMenu">MovingPictures-instellingen</string>
+  <string Field="TVMenu">TV-instellingen</string>
+  <!-- Skin Updates / Patching GUI -->
+  <string Field="UpdateInstall">Update en Installeer</string>
+  <string Field="NoUpdatesAvailable">Momenteel geen patches beschikbaar</string>
+  <string Field="DownloadingPatch">Downloaden Patch: {0}</string>
+  <string Field="DownloadingProgress">{0}KB van de {1}KB gedownload ({2}%)</string>
+  <string Field="NumPatchesInstalled">Aantal Patches geinstalleerd: {0}</string>
+  <string Field="PatchUpdateComplete">Update naar Skin Versie: {0} Compleet</string>
+  <string Field="UpdateAvailableHeading">Update Beschikbaar - Wijzigingen</string>
+  <string Field="Revision">Revisie:</string>
+  <string Field="Author">Schrijver:</string>
+  <string Field="Date">Datum:</string>
+  <string Field="Message">Bericht:</string>
+  <string Field="mupdateheader">De update is gedownload naar het bureaublad</string>
+  <string Field="mupdateline1">Handmatige update noodzakelijk - om toe te passen sluit</string>
+  <string Field="mupdateline2">MediaPortal en/of Configuratie</string>
+  <string Field="mupdateline3">en voer dit bestand uit: {0}</string>
+  <string Field="mupdateline4">welke gevonden kan worden op het bureaublad</string>
+  <!-- Plugin Options -->
+  <string Field="MinVideoOSD">Gebruik beperkte Video OSD indien gepauzeerd</string>
+  <string Field="VideoWallpaperLabel">Video Wallpaper</string>
+  <!-- Music Options -->
+  <string Field="CDCover">Laat alleen CD Cover zien in Music Now Playing</string>
+  <string Field="ShowEQ">Laat Grafische EQ zien in Music Now Playing</string>
+  <string Field="NowPlayingStyles">Nu speelt-weergaves</string>
+  <!-- TVSeries Configuration -->
+  <string Field="FanartStyle">Fanartstijl</string>
+  <string Field="WideBanners">Brede banners</string>
+  <string Field="WideBannerDefault">Brede banners: Standaard</string>
+  <string Field="WideBanner5x2Grid">Brede banners: 5x2 rooster met poster</string>
+  <string Field="WideBanner5x3Grid">Brede Banners: 5x3 rooster</string>
+  <string Field="WideBanner7x3Grid">Brede Banners: 7x3 rooster</string>
+  <string Field="WideBanner10x4Grid">Beede Banners: 10x4 rooster</string>
+  <!-- MovingPictures Configuration -->
+  <string Field="Thumbnails">Pictogrammen</string>
+  <string Field="ThumbnailDefault">Pictogrammen: strandaard</string>
+  <string Field="Thumbnail_12x4_8x3_Grid">Pictogrammen: 12x4 kleine iconen, 8x3 krote iconen</string>
+  <string Field="Thumbnail_12x3_8x2_Grid">Pictogrammen: 12x3 kleine iconen, 8x2 grote iconen + info</string>
+  <!-- TVGuide Configuration -->
+  <string Field="TVGuideSize">TV-Gidsgrootte</string>
+  <string Field="TVMiniGuideSize">TV-Minigidsgrootte</string>
+  <string Field="TVGuideEightRows">TV-gids: 8 rijen</string>
+  <string Field="TVGuideTenRows">TV-gids: 10 rijen</string>
+  <string Field="TVGuideTwelveRows">TV-gids: 12 rijen</string>
+  <string Field="TVMiniGuideThreeRows">TV-Minigids: 3 rijen</string>
+  <string Field="TVMiniGuideFiveRows">TV-Minigids: 5 rijen</string>
+  <string Field="TVMiniGuideSevenRows">TV-Minigids: 7 rijen</string>
+  <string Field="TVMiniGuideNineRows">TV-Minigids: 9 rijen</string>
+  <!-- Misc Settings -->
+  <string Field="ShowHiddenMenuImage">Toon verborgen menu-indicator</string>
+  <string Field="ShowRoundedPosters">Toon posterweergave met afgeronde hoeken</string>
+  <string Field="ShowIconsInArtwork">Toon bekeken/onbkeken-iconen</string>
   <!-- General Translations -->
   <string Field="Rated">Waardering</string>
   <string Field="Director">Regisseur</string>
   <string Field="ReleaseDate">Release datum</string>
-  <string Field="Runtime">Speelduur</string>	
+  <string Field="Runtime">Speelduur</string>
 </strings>

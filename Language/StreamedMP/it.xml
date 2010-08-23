@@ -1,31 +1,75 @@
-﻿<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="iso-8859-1"?>
 <!-- StreamedMP translation file -->
 <!-- Spanish (es_ES) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Last Updated: 23rd August 2010 -->
 <strings>
-	<!-- MediaPortal Localised IDs -> Skin Properties -->
-	<string Field="#StreamedMP.Track">435</string>
-	<string Field="#StreamedMP.Year">436</string>	
-    <!-- Menu Options -->
-    <string Field="MusicMenu">Impostazioni Musica</string>
-    <string Field="VideoMenu">Impostazioni Video</string>
-    <string Field="SkinUpdate">Aggiornamento Skin</string>
-    <!-- Skin Updates / Patching GUI -->   
-    <string Field="UpdateInstall">Aggiorna e Installa</string>
-    <string Field="NoUpdatesAvailable">Attualmente non ci sono aggiornamenti disponibili</string>
-    <string Field="DownloadingPatch">Download Aggiornamento: {0}</string>
-    <string Field="DownloadingProgress">Download {0}KB di {1}KB Terminato  ({2}%)</string>
-    <string Field="NumPatchesInstalled">Numero di aggiornamenti installati: {0}</string>
-    <string Field="PatchUpdateComplete">Aggiorna alla versione della Skin: {0} Complete</string>
-    <string Field="UpdateAvailableHeading">Aggiornamento Disponibile - Cambiamenti</string>
-    <string Field="Revision">Revisione:</string>
-    <string Field="Author">Autore:</string>
-    <string Field="Date">Data:</string>
-    <string Field="Message">Messaggio:</string>
-    <!-- Plugin Options -->	
-    <string Field="CDCover">Mostrare solo la Cover del CD 'In Ascolto Ora'</string>
-    <string Field="ShowEQ">Mostrare l'equalizzatore grafico in'In Ascolto Ora'</string>
-    <string Field="MinVideoOSD">Mostrare le informazioni dutante la pausa</string>
+  <!-- Example user defined translation property                                       -->
+  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
+  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <string Field="#StreamedMP.Example.Property">Translated String</string>
+  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <string Field="#StreamedMP.Track">435</string>
+  <string Field="#StreamedMP.Year">436</string>
+  <!-- Menu Options -->
+  <string Field="MusicMenu">Impostazioni Musica</string>
+  <string Field="VideoMenu">Impostazioni Video</string>
+  <string Field="SkinUpdate">Aggiornamento Skin</string>
+  <string Field="MiscMenu">Impostazione Varie</string>
+  <string Field="TVSeriesMenu">Impostazioni TVSeries</string>
+  <string Field="MovingPicturesMenu">Impostazioni MovingPictures</string>
+  <string Field="TVMenu">Impostazioni TV</string>
+  <!-- Skin Updates / Patching GUI -->
+  <string Field="UpdateInstall">Aggiorna e Installa</string>
+  <string Field="NoUpdatesAvailable">Attualmente non ci sono aggiornamenti disponibili</string>
+  <string Field="DownloadingPatch">Download Aggiornamento: {0}</string>
+  <string Field="DownloadingProgress">Download {0}KB di {1}KB Terminato  ({2}%)</string>
+  <string Field="NumPatchesInstalled">Numero di aggiornamenti installati: {0}</string>
+  <string Field="PatchUpdateComplete">Aggiorna alla versione della Skin: {0} Complete</string>
+  <string Field="UpdateAvailableHeading">Aggiornamento Disponibile - Cambiamenti</string>
+  <string Field="Revision">Revisione:</string>
+  <string Field="Author">Autore:</string>
+  <string Field="Date">Data:</string>
+  <string Field="Message">Messaggio:</string>
+  <string Field="mupdateheader">Patch Installer Downloaded to Desktop</string>
+  <string Field="mupdateline1">Manual Update Required - To apply close</string>
+  <string Field="mupdateline2">MediaPortal and/or Configuration</string>
+  <string Field="mupdateline3">and run:  {0}</string>
+  <string Field="mupdateline4">which can be found on your Desktop</string>
+  <!-- Plugin Options -->
+  <string Field="MinVideoOSD">Mostrare le informazioni dutante la pausa</string>
+  <!-- Music Options -->
+  <string Field="CDCover">Mostrare solo la Cover del CD 'In Ascolto Ora'</string>
+  <string Field="ShowEQ">Mostrare l'equalizzatore grafico in'In Ascolto Ora'</string>
+  <string Field="NowPlayingStyles">Style Schermata In Ascolto Ora</string>
+  <!-- TVSeries Configuration -->
+  <string Field="FanartStyle">Style Fanart</string>
+  <string Field="WideBanners">Banner Larghi</string>
+  <string Field="WideBannerDefault">Banner Larghi: Default</string>
+  <string Field="WideBanner5x2Grid">Banner Larghi: Griglia 5x2 con Poster</string>
+  <string Field="WideBanner5x3Grid">Banner Larghi: Griglia 5x3</string>
+  <string Field="WideBanner7x3Grid">Banner Larghi: Griglia 7x3</string>
+  <string Field="WideBanner10x4Grid">Banner Larghi: Griglia 10x4</string>
+  <!-- MovingPictures Configuration -->
+  <string Field="Thumbnails">Miniature</string>
+  <string Field="ThumbnailDefault">Miniature: Default</string>
+  <string Field="Thumbnail_12x4_8x3_Grid">Miniature: 12x4 Icone Piccole, 8x3 Icone Grandi</string>
+  <string Field="Thumbnail_12x3_8x2_Grid">Miniature: 12x3 Icone Piccole, 8x2 Icone Grandi</string>
+  <!-- TVGuide Configuration -->
+  <string Field="TVGuideSize">Dimensione Guida TV</string>
+  <string Field="TVMiniGuideSize">Dimensione Mini Guida TV</string>
+  <string Field="TVGuideEightRows">Guida TV: 8 Righe</string>
+  <string Field="TVGuideTenRows">Guida TV: 10 Righe</string>
+  <string Field="TVGuideTwelveRows">Guida TV: 12 Righe</string>
+  <string Field="TVMiniGuideThreeRows">Mini Guida TV: 3 Righe</string>
+  <string Field="TVMiniGuideFiveRows">Mini Guida TV: 5 Righe</string>
+  <string Field="TVMiniGuideSevenRows">Mini Guida TV: 7 Righe</string>
+  <string Field="TVMiniGuideNineRows">Mini Guida TV: 9 Righe</string>
+  <!-- Misc Settings -->
+  <string Field="ShowHiddenMenuImage">Mostra Immagine Menu Nascosto</string>
+  <string Field="ShowRoundedPosters">Mostra Immagini Poster Arrotondate</string>
+  <string Field="ShowIconsInArtwork">Mostra Icona Visto/Non Visto negli Artwork</string>
   <!-- General Translations -->
   <string Field="Rated">Divieti</string>
   <string Field="Director">Regista</string>
