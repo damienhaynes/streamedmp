@@ -130,10 +130,10 @@ namespace StreamedMPConfig
           #region Music
           case "MusicConfigGUI":
             if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
-              StreamedMPConfig.cdCoverOnly = true;
+              MusicOptionsGUI.cdCoverOnly = true;
             if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
-              StreamedMPConfig.showEqGraphic = true;
-            StreamedMPConfig.nowPlayingStyle = xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
+              MusicOptionsGUI.showEqGraphic = true;
+            MusicOptionsGUI.nowPlayingStyle = (MusicOptionsGUI.NowPlayingStyles)xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
             break;
           #endregion
 
@@ -194,9 +194,9 @@ namespace StreamedMPConfig
 
           #region Music
           case "MusicConfigGUI":
-            xmlwriter.SetValue(section, "cdCoverOnly", StreamedMPConfig.cdCoverOnly ? 1 : 0);
-            xmlwriter.SetValue(section, "showEqGraphic", StreamedMPConfig.showEqGraphic ? 1 : 0);
-            xmlwriter.SetValue(section, "nowPlayingStyle", StreamedMPConfig.nowPlayingStyle.ToString());
+            xmlwriter.SetValue(section, "cdCoverOnly", MusicOptionsGUI.cdCoverOnly ? 1 : 0);
+            xmlwriter.SetValue(section, "showEqGraphic", MusicOptionsGUI.showEqGraphic ? 1 : 0);
+            xmlwriter.SetValue(section, "nowPlayingStyle", (int)MusicOptionsGUI.nowPlayingStyle);
             break;
           #endregion
 

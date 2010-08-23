@@ -10,7 +10,7 @@ namespace StreamedMPConfig
   public class MusicOptionsGUI : GUIWindow
   {
     private static readonly logger smcLog = logger.GetInstance();
-    int currentSyle = 0;
+    private NowPlayingStyles currentStyle = NowPlayingStyles.Default;
 
     #region Skin Connection
 
@@ -27,6 +27,19 @@ namespace StreamedMPConfig
       WindowsFade = 10,
       WindowNofade = 11,
       WindowNoMask = 12
+    }
+
+    public enum NowPlayingStyles
+    {
+      Default,
+      FullscreenStyle1,
+      FullScreenStyle2,
+      EdgeFade,
+      EdgeNoFade,
+      EdgeNoMask,
+      WindowsFade,
+      WindowNofade,
+      WindowNoMask
     }
 
     [SkinControl((int)GUIControls.MusicCDCover)] protected GUIToggleButtonControl MusicCDCover = null;
@@ -52,11 +65,35 @@ namespace StreamedMPConfig
 
     #endregion
 
+    #region Public Properties
+    public static NowPlayingStyles nowPlayingStyle { get; set; }
+    public static bool cdCoverOnly { get; set; }
+    public static bool showEqGraphic { get; set; }
+    #endregion
+
     #region Public methods
 
     public override bool Init()
     {
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_music.xml");
+    }
+
+    public static void SetProperties()
+    {
+      GUIPropertyManager.SetProperty("#StreamedMP.cdCoverOnly", "false");
+      GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", "false");
+
+      if (cdCoverOnly)
+      {
+        smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.cdCoverOnly = true", LogLevel.Debug);
+        GUIPropertyManager.SetProperty("#StreamedMP.cdCoverOnly", "true");
+      }
+
+      if (showEqGraphic)
+      {
+        smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.showEqGraphic = true", LogLevel.Debug);
+        GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", "true");
+      }
     }
 
     #endregion
@@ -93,10 +130,10 @@ namespace StreamedMPConfig
       switch (controlId)
       {
         case (int)GUIControls.MusicCDCover:
-          StreamedMPConfig.cdCoverOnly = MusicCDCover.Selected;
+          cdCoverOnly = MusicCDCover.Selected;
           break;
         case (int)GUIControls.MusicGFXeq:
-          StreamedMPConfig.showEqGraphic = MusicGFXeq.Selected;
+          showEqGraphic = MusicGFXeq.Selected;
           break;
         default:
           {
@@ -106,7 +143,7 @@ namespace StreamedMPConfig
               if ((int)control.GetID != i)
                 GUIControl.DeSelectControl(GetID, i);
             }
-            StreamedMPConfig.nowPlayingStyle = control.GetID;
+            nowPlayingStyle = (NowPlayingStyles)(controlId - (int)GUIControls.Default);
           }
           break;
       }
@@ -115,39 +152,27 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-
       settings.Load("MusicConfigGUI");
-      MusicGFXeq.Selected = StreamedMPConfig.showEqGraphic;
-      MusicCDCover.Selected = StreamedMPConfig.cdCoverOnly;
+      MusicGFXeq.Selected = showEqGraphic;
+      MusicCDCover.Selected = cdCoverOnly;
 
       // Load Translations
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.MusicCDCover, Translation.Strings["CDCover"]);
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.MusicGFXeq, Translation.Strings["ShowEQ"]);
+      MusicCDCover.Label = Translation.CDCover;
+      MusicGFXeq.Label = Translation.ShowEQ;
 
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.Default, "Default");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.FullscreenStyle1, "Fullscreen 1");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.FullScreenStyle2, "Fullscreen 2");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.EdgeFade, "Edge/Fade");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.EdgeNoFade, "Edge/Nofade");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.EdgeNoMask, "Edge Only");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.WindowsFade, "Window/Fade");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.WindowNofade, "Window/Nofade");
-      GUIControl.SetControlLabel(GetID, (int)GUIControls.WindowNoMask, "Window Only");
+      defaultStyle.Label = "Default";
+      fullscreenStyle1.Label = "Fullscreen 1";
+      fullscreenStyle2.Label = "Fullscreen 2";
+      edgeFadeStyle.Label = "Edge/Fade";
+      edgeNoFadeStyle.Label = "Edge/Nofade";
+      edgeNoMaskStyle.Label = "Edge Only";
+      windowFadeStyle.Label = "Window/Fade";
+      windowsNoFadeStyle.Label = "Window/Nofade";
+      windowNoMaskStyle.Label = "Window Only";
 
-      // If no setting then setup default Now Playing Screen
-      if (StreamedMPConfig.nowPlayingStyle == 0)
-      {
-        GUIControl.SelectControl(GetID, (int)GUIControls.Default);
-        StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle0");
-        currentSyle = (int)GUIControls.Default;
-      }
-      else
-      {
-        GUIControl.SelectControl(GetID, StreamedMPConfig.nowPlayingStyle);
-        StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + (StreamedMPConfig.nowPlayingStyle - (int)GUIControls.Default).ToString());
-        currentSyle = StreamedMPConfig.nowPlayingStyle;
-
-      }
+      GUIControl.SelectControl(GetID, (int)nowPlayingStyle + (int)GUIControls.Default);
+      StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + ((int)nowPlayingStyle).ToString());
+      currentStyle = nowPlayingStyle;
     }
 
     protected override void OnPageDestroy(int new_windowId)
@@ -155,14 +180,14 @@ namespace StreamedMPConfig
       CheckSum checkSum = new CheckSum();
       smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Save({0})", "MusicConfigGUI"), LogLevel.Info);
 
-      StreamedMPConfig.showEqGraphic = MusicGFXeq.Selected;
-      StreamedMPConfig.cdCoverOnly = MusicCDCover.Selected;
+      showEqGraphic = MusicGFXeq.Selected;
+      cdCoverOnly = MusicCDCover.Selected;
 
-      if (StreamedMPConfig.nowPlayingStyle != currentSyle)
+      if (nowPlayingStyle != currentStyle)
       {
         smcLog.WriteLog("StreamedMPConfig: Copy new Now Playing files", LogLevel.Info);
         // Copy the style files to the main skin directory
-        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + (StreamedMPConfig.nowPlayingStyle - (int)GUIControls.Default).ToString());
+        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + ((int)nowPlayingStyle).ToString());
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
         File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
@@ -174,8 +199,9 @@ namespace StreamedMPConfig
       else
         smcLog.WriteLog("No Changes Made to Now Playing", LogLevel.Info);
 
-      settings.Save("MusicConfigGUI"); 
-      
+      settings.Save("MusicConfigGUI");
+      SetProperties();
+
       GUIWindowManager.OnResize();
     }
     #endregion
