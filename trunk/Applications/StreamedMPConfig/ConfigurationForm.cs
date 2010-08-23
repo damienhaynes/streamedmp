@@ -23,8 +23,11 @@ namespace StreamedMPConfig
     public ConfigurationForm()
     {
       InitializeComponent();
-      settings.Load("StreamedMPConfig");
+
+      settings.Load("UpdateConfig");
       settings.Load("MusicConfigGUI");
+      settings.Load("VideoConfigGUI");
+      settings.Load("Misc");
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
@@ -37,10 +40,10 @@ namespace StreamedMPConfig
       timePicker.Width = 100;
       CheckUpdate.Controls.Add(timePicker);
 
-      if (StreamedMPConfig.mrFanartTimer != 0)
-        numFanartTimer.Value = (decimal)StreamedMPConfig.mrFanartTimer;
+      if (MiscConfigGUI.MostRecentFanartTimerInt != 0)
+        numFanartTimer.Value = (decimal)MiscConfigGUI.MostRecentFanartTimerInt;
       else
-        numFanartTimer.Value = (decimal)StreamedMPConfig.mrFanartTimer;
+        numFanartTimer.Value = (decimal)MiscConfigGUI.MostRecentFanartTimerInt;
     }
 
     #endregion
@@ -60,10 +63,11 @@ namespace StreamedMPConfig
       StreamedMPConfig.nextUpdateCheck = StreamedMPConfig.nextCheckAt.ToString();
       StreamedMPConfig.patchUtilityRunUnattended = cbRunUnattended.Checked;
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
-      StreamedMPConfig.mrFanartTimer = (int)numFanartTimer.Value;
-      settings.Save("StreamedMPConfig");
+      MiscConfigGUI.MostRecentFanartTimerInt = (int)numFanartTimer.Value;
+      settings.Save("UpdateConfig");
       settings.Save("MusicConfigGUI");
       settings.Save("VideoConfigGUI");
+      settings.Save("Misc");
       this.Close();
     }
 
@@ -74,8 +78,7 @@ namespace StreamedMPConfig
 
     // Load settings from xml
     void ConfigurationForm_Load(object sender, EventArgs e)
-    {
-      //settings.Load();
+    { 
       cbCdCoverOnly.Text = Translation.Strings["CDCover"];
       cbShowEqGraphic.Text = Translation.Strings["ShowEQ"];
 

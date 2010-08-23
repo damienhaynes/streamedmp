@@ -35,6 +35,7 @@ namespace StreamedMPConfig
     public static bool ShowHiddenMenuImage { get; set; }
     public static bool ShowRoundedImages { get; set; }
     public static bool ShowIconsInArtwork { get; set; }
+    public static int MostRecentFanartTimerInt { get; set; }
     #endregion
 
     #region Public Methods
