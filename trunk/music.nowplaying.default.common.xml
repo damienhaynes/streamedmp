@@ -9,18 +9,31 @@
       <width>1275</width>
       <height>220</height>
       <texture>fullscreenbg2.png</texture>
-      <colordiffuse>AAFFFFFF</colordiffuse>
+      <colordiffuse>FAFFFFFF</colordiffuse>
       <animation effect="Fade" time="400">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Shadow - Menu label</description>
+      <type>label</type>
+      <posX>1107</posX>
+      <posY>528</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff000000</textcolor>
+      <label>924</label>
+      <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
       <description>Menu label</description>
       <type>label</type>
-      <posX>1100</posX>
+      <posX>1105</posX>
       <posY>527</posY>
       <font>mediastream12tc</font>
       <label>924</label>
+      <textcolor>ff006699</textcolor>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -42,6 +55,8 @@
         <onleft>5101</onleft>
         <onright>5101</onright>
         <onup>17</onup>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
         <id>5102</id>
@@ -53,6 +68,8 @@
         <height>26</height>
         <label>33030</label>
         <textYOff>1</textYOff>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
         <id>5103</id>
@@ -64,6 +81,8 @@
         <height>26</height>
         <label>33011</label>
         <textYOff>1</textYOff>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
         <id>5104</id>
@@ -76,6 +95,8 @@
         <textYOff>1</textYOff>
         <onleft>5104</onleft>
         <onright>5104</onright>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
         <id>5105</id>
@@ -94,6 +115,8 @@
         <onleft>5105</onleft>
         <onright>5105</onright>
         <ondown>5101</ondown>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
     </control>
     <control>
@@ -152,7 +175,7 @@
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
       <posX>200</posX>
-      <posY>533</posY>
+      <posY>528</posY>
       <width>497</width>
       <font>mediastream14tc</font>
       <label>#Play.Current.Artist</label>
@@ -180,7 +203,7 @@
       <posX>200</posX>
       <posY>585</posY>
       <width>497</width>
-      <font>mediastream11</font>
+      <font>mediastream12</font>
       <label>#Play.Current.Title</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -300,12 +323,25 @@
     </control>
     <control>
       <type>label</type>
+      <description>Shadow - up next label</description>
+      <id>20</id>
+      <posX>975</posX>
+      <posY>528</posY>
+      <label>4541</label>
+      <font>mediastream12tc</font>
+      <align>right</align>
+      <textcolor>ff000000</textcolor>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
       <description>up next label</description>
       <id>20</id>
       <posX>975</posX>
-      <posY>530</posY>
+      <posY>527</posY>
       <label>4541</label>
-      <font>mediastream11tc</font>
+      <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ff006699</textcolor>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -419,6 +455,20 @@
     </control>
     <control>
       <id>0</id>
+      <description>Shadow -list of top album tracks label</description>
+      <type>fadelabel</type>
+      <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
+      <posX>202</posX>
+      <posY>526</posY>
+      <width>627</width>
+      <font>mediastream16c</font>
+      <textcolor>ff000000</textcolor>
+      <label>33030</label>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
       <description>list of top album tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
@@ -448,6 +498,24 @@
       <animation effect="Fade" time="300">WindowClose</animation>
       <textureHeight>32</textureHeight>
       <textYOff>4</textYOff>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Shadow - list of tagged tracks label</description>
+      <type>fadelabel</type>
+      <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
+      <posX>202</posX>
+      <posY>526</posY>
+      <width>627</width>
+      <onleft>155</onleft>
+      <onright>5103</onright>
+      <onup>155</onup>
+      <ondown>155</ondown>
+      <font>mediastream16c</font>
+      <textcolor>ff000000</textcolor>
+      <label>33011</label>
+      <animation effect="Fade" time="200">WindowOpen</animation>
+      <animation effect="Fade" time="200">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -763,4 +831,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:f642cdb7e454220a2f57468d848b174e-->
+<!--Checksum:7a3d33b91ecad2837b8e54f4e40806e0-->
