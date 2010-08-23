@@ -72,33 +72,24 @@ namespace StreamedMPConfig
     #endregion
 
     #region Public methods
-
-    public override bool Init()
-    {
-      return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_music.xml");
-    }
-
+    
     public static void SetProperties()
-    {
-      GUIPropertyManager.SetProperty("#StreamedMP.cdCoverOnly", "false");
-      GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", "false");
+    { 
+      smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.cdCoverOnly = " + cdCoverOnly.ToString().ToLower(), LogLevel.Debug);
+      GUIPropertyManager.SetProperty("#StreamedMP.cdCoverOnly", cdCoverOnly.ToString().ToLower());
 
-      if (cdCoverOnly)
-      {
-        smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.cdCoverOnly = true", LogLevel.Debug);
-        GUIPropertyManager.SetProperty("#StreamedMP.cdCoverOnly", "true");
-      }
-
-      if (showEqGraphic)
-      {
-        smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.showEqGraphic = true", LogLevel.Debug);
-        GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", "true");
-      }
+      smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.showEqGraphic = " + showEqGraphic.ToString().ToLower(), LogLevel.Debug);
+      GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", showEqGraphic.ToString().ToLower());
     }
 
     #endregion
 
     #region Base overrides
+
+    public override bool Init()
+    {
+      return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_music.xml");
+    }
 
     public override int GetID
     {

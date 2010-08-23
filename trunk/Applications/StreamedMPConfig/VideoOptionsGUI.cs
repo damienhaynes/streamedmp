@@ -7,10 +7,39 @@ namespace StreamedMPConfig
 {
   public class VideoOptionsGUI : GUIWindow
   {
+    private static readonly logger smcLog = logger.GetInstance();
+
     #region Skin Connection
 
-    [SkinControl((int)StreamedMPConfig.SkinControlIDs.VideoMinOSD)] protected GUIToggleButtonControl cmc_MinOSD = null;
+    public enum GUIControls
+    {
+      VideoMinOSD = 2
+    }
 
+    [SkinControl((int)GUIControls.VideoMinOSD)]
+    protected GUIToggleButtonControl cmc_MinOSD = null;    
+
+    #endregion
+
+    #region Public Properties
+    public static bool FullVideoOSD { get; set; }
+    #endregion
+
+    #region Public methods
+
+    public VideoOptionsGUI()
+    {
+    }
+    
+    public static void SetProperties()
+    {
+      smcLog.WriteLog("StreamedMPConfig: Setting #StreamedMP.fullVideoOSD = " + FullVideoOSD.ToString().ToLower(), LogLevel.Debug);
+      GUIPropertyManager.SetProperty("#StreamedMP.fullVideoOSD", FullVideoOSD.ToString().ToLower());
+    }
+
+    #endregion
+
+    #region Base overrides
 
     public override int GetID
     {
@@ -23,18 +52,6 @@ namespace StreamedMPConfig
       }
     }
 
-    #endregion
-
-    #region Public methods
-
-    public VideoOptionsGUI()
-    {
-    }
-    
-    #endregion
-
-    #region Base overrides
-
     public override bool Init()
     {
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_video.xml");
@@ -42,22 +59,16 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-      settings.Load("StreamedMPConfig");
-      if (StreamedMPConfig.fullVideoOSD)
-        cmc_MinOSD.Selected = false;
-      else
-        cmc_MinOSD.Selected = true;
-      // Load Translations
-      GUIControl.SetControlLabel(GetID, 2, Translation.Strings["MinVideoOSD"]);
+      settings.Load("VideoConfigGUI");  
+      cmc_MinOSD.Selected = !FullVideoOSD;
+      cmc_MinOSD.Label = Translation.MinVideoOSD;      
     }
 
     protected override void OnPageDestroy(int new_windowId)
     {
-      if (cmc_MinOSD.Selected)
-        StreamedMPConfig.fullVideoOSD = false;
-      else
-        StreamedMPConfig.fullVideoOSD = true;
-      settings.Save("StreamedMPConfig");
+      FullVideoOSD = !cmc_MinOSD.Selected;
+      SetProperties();
+      settings.Save("VideoConfigGUI");
     }
     #endregion
   }

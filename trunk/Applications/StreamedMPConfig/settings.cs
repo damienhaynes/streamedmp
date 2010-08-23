@@ -90,9 +90,7 @@ namespace StreamedMPConfig
         switch (section)
         {
           #region StreamedMPConfig
-          case "StreamedMPConfig":
-            if (xmlreader.GetValueAsInt(section, "fullVideoOSD", 1) != 0)
-              StreamedMPConfig.fullVideoOSD = true;
+          case "StreamedMPConfig":            
             if (xmlreader.GetValueAsInt(section, "checkOnStart", 1) != 0)
               StreamedMPConfig.checkOnStart = true;
             if (xmlreader.GetValueAsInt(section, "checkForUpdateAt", 1) != 0)
@@ -158,6 +156,12 @@ namespace StreamedMPConfig
             break;
           #endregion
 
+          #region Video
+          case "VideoConfigGUI":
+            VideoOptionsGUI.FullVideoOSD = xmlreader.GetValueAsInt(section, "videoFullVideoOSD", 1) == 1;
+            break;
+          #endregion
+
           #region Misc
           case "Misc":
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;
@@ -178,9 +182,7 @@ namespace StreamedMPConfig
         switch (section)
         {
           #region StreamedMPConfig
-          case "StreamedMPConfig":
-
-            xmlwriter.SetValue(section, "fullVideoOSD", StreamedMPConfig.fullVideoOSD ? 1 : 0);
+          case "StreamedMPConfig":            
             xmlwriter.SetValue(section, "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
             xmlwriter.SetValue(section, "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
             xmlwriter.SetValue(section, "checkInterval", StreamedMPConfig.checkInterval);
@@ -218,6 +220,12 @@ namespace StreamedMPConfig
           case "TVConfigGUI":
             xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfigGUI.TVGuideRowSize);
             xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfigGUI.TVMiniGuideRowSize);
+            break;
+          #endregion
+
+          #region Video
+          case "VideoConfigGUI":
+            xmlwriter.SetValue(section, "videoFullVideoOSD", VideoOptionsGUI.FullVideoOSD ? 1 : 0);          
             break;
           #endregion
 
