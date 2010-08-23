@@ -116,7 +116,21 @@
       <posY>530</posY>
       <width>160</width>
       <height>160</height>
+      <texture>-</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>
+    <control>
+      <id>112</id>
+      <description>album art image</description>
+      <type>image</type>
+      <posX>25</posX>
+      <posY>530</posY>
+      <width>160</width>
+      <height>160</height>
       <texture>#Play.Current.Thumb</texture>
+      <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
