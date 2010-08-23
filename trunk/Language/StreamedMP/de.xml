@@ -2,36 +2,74 @@
 <!-- StreamedMP translation file -->
 <!-- German (DE) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Last Updated: 23rd August 2010 -->
 <strings>
-	<!-- MediaPortal Localised IDs -> Skin Properties -->
-	<string Field="#StreamedMP.Track">435</string>
-	<string Field="#StreamedMP.Year">436</string>	
-    <!-- Menu Options -->
-    <string Field="MusicMenu">Musik Einstellungen</string>
-    <string Field="VideoMenu">Video Einstellungen</string>
-    <string Field="SkinUpdate">Skin aktualisieren</string>
-    <!-- Skin Updates / Patching GUI --> 
-    <string Field="UpdateInstall">Installiere Update</string>
-    <string Field="NoUpdatesAvailable">Keine Updates zur Zeit verfügbar</string>
-    <string Field="DownloadingPatch">Patch {0} wird heruntergeladen</string>
-    <string Field="DownloadingProgress">Runtergeladen {0}KB von {1}KB ({2}%)</string>
-    <string Field="NumPatchesInstalled">Anzahl installierter Patches: {0}</string>
-    <string Field="PatchUpdateComplete">Aktualisiere zur Skin Version: {0} fertiggestellt</string>
-    <string Field="UpdateAvailableHeading">Update verfügbar - Change Log</string>
-    <string Field="Revision">Revision:</string>
-    <string Field="Author">Autor:</string>
-    <string Field="Date">Datum:</string>
-    <string Field="Message">Meldung:</string>
-    <!-- Plugin Options -->
-    <string Field="CDCover">Zeige nur CD Cover in aktueller Musikwiedergabe</string>
-    <string Field="ShowEQ">Zeige den grafischen EQ in aktueller Musikwiedergabe</string>
-    <string Field="MinVideoOSD">Benutze das minimierte Video OSD während der Pause</string>
-    <string Field="VideoWallpaperLabel">Video Hintergrund</string>
-    <string Field="mupdateheader">Patch Installer wurde auf den Desktop heruntergeladen</string>
-    <string Field="mupdateline1">Manuelles Update erforderlich - die Anwendung schließen</string>
-    <string Field="mupdateline2">MediaPortal und/oder Konfiguration</string>
-    <string Field="mupdateline3">und ausführen: {0}</string>
-    <string Field="mupdateline4">die sich auf Ihrem Desktop befinden</string>
+  <!-- Example user defined translation property                                       -->
+  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
+  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <string Field="#StreamedMP.Example.Property">Translated String</string>
+  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <string Field="#StreamedMP.Track">435</string>
+  <string Field="#StreamedMP.Year">436</string>
+  <!-- Menu Options -->
+  <string Field="MusicMenu">Musik Einstellungen</string>
+  <string Field="VideoMenu">Video Einstellungen</string>
+  <string Field="SkinUpdate">Skin aktualisieren</string>
+  <string Field="MiscMenu">Sonstige Einstellungen</string>
+  <string Field="TVSeriesMenu">TVSeries Einstellungen</string>
+  <string Field="MovingPicturesMenu">MovingPictures Einstellungen</string>
+  <string Field="TVMenu">TV Einstellungen</string>
+  <!-- Skin Updates / Patching GUI -->
+  <string Field="UpdateInstall">Installiere Update</string>
+  <string Field="NoUpdatesAvailable">Keine Updates zur Zeit verfügbar</string>
+  <string Field="DownloadingPatch">Patch {0} wird heruntergeladen</string>
+  <string Field="DownloadingProgress">Runtergeladen {0}KB von {1}KB ({2}%)</string>
+  <string Field="NumPatchesInstalled">Anzahl installierter Patches: {0}</string>
+  <string Field="PatchUpdateComplete">Aktualisiere zur Skin Version: {0} fertiggestellt</string>
+  <string Field="UpdateAvailableHeading">Update verfügbar - Change Log</string>
+  <string Field="Revision">Revision:</string>
+  <string Field="Author">Autor:</string>
+  <string Field="Date">Datum:</string>
+  <string Field="Message">Meldung:</string>
+  <string Field="mupdateheader">Patch Installer wurde auf den Desktop heruntergeladen</string>
+  <string Field="mupdateline1">Manuelles Update erforderlich - die Anwendung schließen</string>
+  <string Field="mupdateline2">MediaPortal und/oder Konfiguration</string>
+  <string Field="mupdateline3">und ausführen: {0}</string>
+  <string Field="mupdateline4">die sich auf Ihrem Desktop befinden</string>
+  <!-- Plugin Options -->
+  <string Field="MinVideoOSD">Benutze das minimierte Video OSD während der Pause</string>
+  <string Field="VideoWallpaperLabel">Video Hintergrund</string>
+  <!-- Music Options -->
+  <string Field="CDCover">Zeige nur CD Cover in aktueller Musikwiedergabe</string>
+  <string Field="ShowEQ">Zeige den grafischen EQ in aktueller Musikwiedergabe</string>
+  <string Field="NowPlayingStyles">Aktuelle Wiedergabe-Bildschirmauswahl</string>
+  <!-- TVSeries Configuration -->
+  <string Field="FanartStyle">Fanart Stil</string>
+  <string Field="WideBanners">Breitbanner</string>
+  <string Field="WideBannerDefault">Breitbanner: Vorgabe</string>
+  <string Field="WideBanner5x2Grid">Breitbanner: 5x2 Gitter mit Poster</string>
+  <string Field="WideBanner5x3Grid">Breitbanner: 5x3 Gitter</string>
+  <string Field="WideBanner7x3Grid">Breitbanner: 7x3 Gitter</string>
+  <string Field="WideBanner10x4Grid">Breitbanner: 10x4 Gitter</string>
+  <!-- MovingPictures Configuration -->
+  <string Field="Thumbnails">Vorschaubilder</string>
+  <string Field="ThumbnailDefault">Vorschaubild: Vorgabe</string>
+  <string Field="Thumbnail_12x4_8x3_Grid">Vorschaubilder: 12x4 Kleine Zeichen, 8x3 Große Zeichen</string>
+  <string Field="Thumbnail_12x3_8x2_Grid">Vorschaubilder: 12x3 Kleine Zeichen, 8x2 Große Zeichen + Info</string>
+  <!-- TVGuide Configuration -->
+  <string Field="TVGuideSize">TV Führer Größe</string>
+  <string Field="TVMiniGuideSize">TV Mini Führer Größe</string>
+  <string Field="TVGuideEightRows">TV Führer: 8 Zeilen</string>
+  <string Field="TVGuideTenRows">TV Führer: 10 Zeilen</string>
+  <string Field="TVGuideTwelveRows">TV Führer: 12 Zeilen</string>
+  <string Field="TVMiniGuideThreeRows">TV Mini Führer: 3 Zeilen</string>
+  <string Field="TVMiniGuideFiveRows">TV Mini Führer: 5 Zeilen</string>
+  <string Field="TVMiniGuideSevenRows">TV Mini Führer: 7 Zeilen</string>
+  <string Field="TVMiniGuideNineRows">TV Mini Führer: 9 Zeilen</string>
+  <!-- Misc Settings -->
+  <string Field="ShowHiddenMenuImage">Zeige das versteckte Menü Bild</string>
+  <string Field="ShowRoundedPosters">Zeige runde Poster</string>
+  <string Field="ShowIconsInArtwork">Zeige gesehen/ungesehen Zeichen in der Grafik</string>
   <!-- General Translations -->
   <string Field="Rated">Bewertung</string>
   <string Field="Director">Regisseur</string>
