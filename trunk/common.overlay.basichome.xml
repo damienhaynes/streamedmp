@@ -102,7 +102,7 @@
       <width>270</width>
       <height>114</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
-      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767+!control.isvisible(1208)</visible>
+      <visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(1208)</visible>
       <animation effect="fade" start="10" end="100" time="1000">VisibleChange</animation>
     </control>
     <control>
@@ -130,7 +130,7 @@
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
     </control>
     <control>
       <description>music logo</description>
@@ -144,7 +144,7 @@
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>c:\mediaportal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
     </control>
     <control>
       <description>music logo</description>
@@ -158,7 +158,7 @@
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb,)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
     </control>
     <control>
       <description>Music logo Animation</description>
@@ -380,4 +380,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:8eac20a0d04a5933edaea7181ac41a0d-->
+<!--Checksum:b158675befd11d7b13b2886032df8417-->
