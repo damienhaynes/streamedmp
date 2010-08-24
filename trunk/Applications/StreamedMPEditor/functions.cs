@@ -391,6 +391,7 @@ namespace StreamedMPEditor
       enableItemControls();
       cancelCreateButton.Visible = true;
       editButton.Enabled = false;
+      btGenerateMenu.Enabled = false;
     }
 
 
@@ -498,6 +499,7 @@ namespace StreamedMPEditor
       addButton.Enabled = false;
       removeButton.Enabled = true;
       cancelCreateButton.Visible = false;
+      btGenerateMenu.Enabled = true;
     }
 
     private void enableItemControls()

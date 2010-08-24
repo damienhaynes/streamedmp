@@ -492,7 +492,7 @@ namespace StreamedMPEditor
       }
       reloadBackgroundItems();
       //UpdateImageControlVisibility();
-      generateMenu.Enabled = true;
+      btGenerateMenu.Enabled = true;
     }
 
     displayMostRecent readMostRecentDisplayOption(string mrOption, string skinId)

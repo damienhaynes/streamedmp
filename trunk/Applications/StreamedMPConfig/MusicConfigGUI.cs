@@ -129,7 +129,7 @@ namespace StreamedMPConfig
         default:
           {
             // Clear current selected value
-            for (int i = 4; i < 13; i++)
+            for (int i = (int)GUIControls.Default; i <= (int)GUIControls.WindowNoMask; i++)
             {
               if ((int)control.GetID != i)
                 GUIControl.DeSelectControl(GetID, i);
