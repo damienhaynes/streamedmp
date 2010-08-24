@@ -1912,7 +1912,7 @@ begin
     sFile = g_sConfigDir^"StreamedMPConfig.xml";
     
     // TVseries Section
-    TVSeriesSection = 		"\t<section name=\"TVSeriesConfigGUI\">"+
+    TVSeriesSection = 		"\t<section name=\"TVSeriesConfig\">"+
     						"\n\t\t<entry name=\"tvseriesDefaultStyle\">1</entry>"+
     						"\n\t\t<entry name=\"tvseriesWideBannerMod\">0</entry>"+
     						"\n\t\t<entry name=\"tvseriesShowTotalEpisodeCounts\">0</entry>"+
@@ -1920,49 +1920,49 @@ begin
     						"\n\t</section>"+
     						"\n</profile>";
     
-    SearchStr = "<section name=\"TVSeriesConfigGUI\">";
+    SearchStr = "<section name=\"TVSeriesConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", TVSeriesSection);
     endif;
 	
 	// MovingPictures Section    						
-	MovingPicturesSection = "\t<section name=\"MovingPicturesConfigGUI\">"+
+	MovingPicturesSection = "\t<section name=\"MovingPicturesConfig\">"+
 							"\n\t\t<entry name=\"movingpicturesDefaultStyle\">1</entry>"+
 							"\n\t\t<entry name=\"movingpicturesThumbMod\">0</entry>"+
 							"\n\t</section>"+
 							"\n</profile>";
 							
-	SearchStr = "<section name=\"MovingPicturesConfigGUI\">";
+	SearchStr = "<section name=\"MovingPicturesConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", MovingPicturesSection);
     endif; 
     
     // Music Section
-    MusicSection = 			"\t<section name=\"MusicConfigGUI\">"+
-							"\n\t\t<entry name=\"nowPlayingStyle\">0</entry>"+							
+    MusicSection = 			"\t<section name=\"MusicConfig\">"+
+							"\n\t\t<entry name=\"musicNowPlayingStyle\">0</entry>"+							
 							"\n\t</section>"+
 							"\n</profile>";
 							
-	SearchStr = "<section name=\"MusicConfigGUI\">";
+	SearchStr = "<section name=\"MusicConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", MusicSection);
     endif;
     
     // TV Section
-    TVSection = 			"\t<section name=\"TVConfigGUI\">"+
+    TVSection = 			"\t<section name=\"TVConfig\">"+
 							"\n\t\t<entry name=\"tvGuideSize\">10</entry>"+							
 							"\n\t\t<entry name=\"tvMiniGuideSize\">7</entry>"+
 							"\n\t\t<entry name=\"tvEnableRandomTVSeriesFanart\">0</entry>"+
 							"\n\t</section>"+
 							"\n</profile>";
 							
-	SearchStr = "<section name=\"TVConfigGUI\">";
+	SearchStr = "<section name=\"TVConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", TVSection);
     endif;
     
     // Misc Section
-    MiscSection = 			"\t<section name=\"Misc\">"+
+    MiscSection = 			"\t<section name=\"MiscConfig\">"+
 							"\n\t\t<entry name=\"miscUseLargeFonts\">0</entry>"+							
 							"\n\t\t<entry name=\"miscShowHiddenMenuImage\">1</entry>"+
 							"\n\t\t<entry name=\"miscShowIconsInArtwork\">1</entry>"+
@@ -1977,7 +1977,7 @@ begin
 							"\n\t</section>"+
 							"\n</profile>";
 							
-	SearchStr = "<section name=\"Misc\">";
+	SearchStr = "<section name=\"MiscConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", MiscSection);
     endif;
@@ -2015,31 +2015,31 @@ begin
 
 	// Save configuration	
 	sFile = g_sConfigDir^"StreamedMPConfig.xml";
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesWideBannerMod", g_sWideBannerLayout);	
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowTotalEpisodeCounts", BoolToStringInt(g_bShowTotalEpisodeCount));
-	SetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", BoolToStringInt(g_bShowIconsInListView));	
+	SetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesDefaultStyle", BoolToStringInt(g_bTVSeriesDefault));
+	SetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesWideBannerMod", g_sWideBannerLayout);	
+	SetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesShowTotalEpisodeCounts", BoolToStringInt(g_bShowTotalEpisodeCount));
+	SetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesShowIconsInListView", BoolToStringInt(g_bShowIconsInListView));	
 	
-	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", BoolToStringInt(g_bMovingPicturesDefault));
-	SetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesThumbMod", g_sThumbLayout);
+	SetMPXMLProperty(sFile, "MovingPicturesConfig", "movingpicturesDefaultStyle", BoolToStringInt(g_bMovingPicturesDefault));
+	SetMPXMLProperty(sFile, "MovingPicturesConfig", "movingpicturesThumbMod", g_sThumbLayout);
     
-    SetMPXMLProperty(sFile, "TVConfigGUI", "tvGuideSize", g_sTVGuideSize);
-    SetMPXMLProperty(sFile, "TVConfigGUI", "tvMiniGuideSize", g_sTVMiniGuideSize);
-    SetMPXMLProperty(sFile, "TVConfigGUI", "tvEnableRandomTVSeriesFanart", BoolToStringInt(g_bEnableRandomFanartInMyTV));
+    SetMPXMLProperty(sFile, "TVConfig", "tvGuideSize", g_sTVGuideSize);
+    SetMPXMLProperty(sFile, "TVConfig", "tvMiniGuideSize", g_sTVMiniGuideSize);
+    SetMPXMLProperty(sFile, "TVConfig", "tvEnableRandomTVSeriesFanart", BoolToStringInt(g_bEnableRandomFanartInMyTV));
     
-    SetMPXMLProperty(sFile, "MusicConfigGUI", "nowPlayingStyle", g_sNowPlayingChoice);
+    SetMPXMLProperty(sFile, "MusicConfig", "musicNowPlayingStyle", g_sNowPlayingChoice);
     
-	SetMPXMLProperty(sFile, "Misc", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));
-	SetMPXMLProperty(sFile, "Misc", "miscShowHiddenMenuImage", BoolToStringInt(g_bShowHiddenMenuImage));
-	SetMPXMLProperty(sFile, "Misc", "miscShowIconsInArtwork", BoolToStringInt(g_bShowArtworkIcons));
-	SetMPXMLProperty(sFile, "Misc", "miscShowRoundedCovers", BoolToStringInt(g_bShowRoundedCovers));
-	SetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems);
-	SetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs);
-	SetMPXMLProperty(sFile, "Misc", "miscTextColor", g_sTextColor);
-	SetMPXMLProperty(sFile, "Misc", "miscTextColor2", g_sText2Color);
-	SetMPXMLProperty(sFile, "Misc", "miscTextColor3", g_sText3Color);
-	SetMPXMLProperty(sFile, "Misc", "miscWatchedColor", g_sWatchedColor);
-	SetMPXMLProperty(sFile, "Misc", "miscRemoteColor", g_sRemoteColor);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));
+	SetMPXMLProperty(sFile, "MiscConfig", "miscShowHiddenMenuImage", BoolToStringInt(g_bShowHiddenMenuImage));
+	SetMPXMLProperty(sFile, "MiscConfig", "miscShowIconsInArtwork", BoolToStringInt(g_bShowArtworkIcons));
+	SetMPXMLProperty(sFile, "MiscConfig", "miscShowRoundedCovers", BoolToStringInt(g_bShowRoundedCovers));
+	SetMPXMLProperty(sFile, "MiscConfig", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscTextColor", g_sTextColor);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscTextColor2", g_sText2Color);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscTextColor3", g_sText3Color);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscWatchedColor", g_sWatchedColor);
+	SetMPXMLProperty(sFile, "MiscConfig", "miscRemoteColor", g_sRemoteColor);
 	
 	// Apply Configuration
 		                                      

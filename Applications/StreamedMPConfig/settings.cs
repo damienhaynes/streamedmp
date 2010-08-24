@@ -14,6 +14,58 @@ namespace StreamedMPConfig
   {
     private static readonly logger smcLog = logger.GetInstance();
 
+    #region XML Configuration Sections
+    public const string cXMLSectionTVSeries = "TVSeriesConfig";
+    public const string cXMLSectionMovingPictures = "MovingPicturesConfig";
+    public const string cXMLSectionTV = "TVConfig";
+    public const string cXMLSectionMusic = "MusicConfig";
+    public const string cXMLSectionMisc = "MiscConfig";
+    public const string cXMLSectionVideo = "VideoConfig";
+    public const string cXMLSectionUpdate = "UpdateConfig";
+    #endregion
+
+    #region XML Configuration Strings
+    public const string cXMLSettingUpdateCheckOnStart = "updateCheckOnStart";
+    public const string cXMLSettingUpdateCheckForUpdateAt = "updateCheckForUpdateAt";
+    public const string cXMLSettingUpdateCheckInterval = "updateCheckInterval";
+    public const string cXMLSettingUpdateCheckTime = "updateCheckTime";
+    public const string cXMLSettingUpdateRunPatchUtilityUnattended = "updateRunPatchUtilityUnattended";
+    public const string cXMLSettingUpdateNextUpdateCheck = "updateNextUpdateCheck";
+    public const string cXMLSettingUpdatePatchUtilityRestartMP = "updatePatchUtilityRestartMP";
+
+    public const string cXMLSettingMusicCdCoverOnly = "musicCdCoverOnly";
+    public const string cXMLSettingMusicShowEqGraphic = "musicShowEqGraphic";
+    public const string cXMLSettingNowPlayingStyle = "musicNowPlayingStyle";
+
+    public const string cXMLSettingTVSeriesDefaultStyle = "tvseriesDefaultStyle";
+    public const string cXMLSettingTVSeriesWideBannerMod = "tvseriesWideBannerMod";
+    public const string cXMLSettingTVSeriesShowTotalEpisodeCounts = "tvseriesShowTotalEpisodeCounts";
+    public const string cXMLSettingTVSeriesShowIconsInListView = "tvseriesShowIconsInListView";
+
+    public const string cXMLSettingMovingPicturesDefaultStyle = "movingpicturesDefaultStyle";
+    public const string cXMLSettingMovingPicturesThumbMod = "movingpicturesThumbMod";
+
+    public const string cXMLSettingTVGuideSize = "tvGuideSize";
+    public const string cXMLSettingTVMiniGuideSize = "tvMiniGuideSize";
+    public const string cXMLSettingTVEnableRandomTVSeriesFanart = "tvEnableRandomTVSeriesFanart";
+
+    public const string cXMLSettingVideoFullVideoOSD = "videoFullVideoOSD";
+
+    public const string cXMLSettingMiscShowHiddenMenuImage = "miscShowHiddenMenuImage";
+    public const string cXMLSettingMiscShowRoundedCovers = "miscShowRoundedCovers";
+    public const string cXMLSettingMiscShowIconsInArtwork = "miscShowIconsInArtwork";
+    public const string cXMLSettingMiscMostRecentFanartTimerInt = "miscMostRecentFanartTimerInt";
+    public const string cXMLSettingMiscUseLargeFonts = "miscUseLargeFonts";
+    public const string cXMLSettingMiscUnfocusedAlphaListItems = "miscUnfocusedAlphaListItems";
+    public const string cXMLSettingMiscUnfocusedAlphaThumbs = "miscUnfocusedAlphaThumbs";
+    public const string cXMLSettingMiscTextColor = "miscTextColor";
+    public const string cXMLSettingTextColor2 = "miscTextColor2";
+    public const string cXMLSettingTextColor3 = "miscTextColor3";
+    public const string cXMLSettingWatchedColor = "miscWatchedColor";
+    public const string cXMLSettingRemoteColor = "miscRemoteColor";
+
+    #endregion
+
     #region Public methods
 
     public bool logLevelError
@@ -90,19 +142,19 @@ namespace StreamedMPConfig
         switch (section)
         {
           #region Update
-          case "UpdateConfig":           
-            if (xmlreader.GetValueAsInt(section, "checkOnStart", 1) != 0)
+          case settings.cXMLSectionUpdate:           
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdateCheckOnStart, 1) != 0)
               StreamedMPConfig.checkOnStart = true;
-            if (xmlreader.GetValueAsInt(section, "checkForUpdateAt", 1) != 0)
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdateCheckForUpdateAt, 1) != 0)
               StreamedMPConfig.checkForUpdateAt = true;
-            if (xmlreader.GetValueAsInt(section, "runPatchUtilityUnattended", 1) != 0)
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdateRunPatchUtilityUnattended, 1) != 0)
               StreamedMPConfig.patchUtilityRunUnattended = true;
-            if (xmlreader.GetValueAsInt(section, "patchUtilityRestartMP", 1) != 0)
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdatePatchUtilityRestartMP, 1) != 0)
               StreamedMPConfig.patchUtilityRestartMP = true;
 
             if (StreamedMPConfig.checkForUpdateAt)
             {
-              string checkTime = xmlreader.GetValueAsString(section, "checkTime", "");
+              string checkTime = xmlreader.GetValueAsString(section, settings.cXMLSettingUpdateCheckTime, "");
 
               if (string.IsNullOrEmpty(checkTime))
               {
@@ -116,56 +168,56 @@ namespace StreamedMPConfig
                   dtCheckTime = DateTime.Now;
                 StreamedMPConfig.checkTime = dtCheckTime;
 
-                StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString(section, "nextUpdateCheck", "");
-                StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt(section, "checkInterval", 1);
+                StreamedMPConfig.nextUpdateCheck = xmlreader.GetValueAsString(section, settings.cXMLSettingUpdateNextUpdateCheck, "");
+                StreamedMPConfig.checkInterval = xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdateCheckInterval, 1);
               }
             }
             break;
           #endregion
 
           #region Music
-          case "MusicConfig":
-            if (xmlreader.GetValueAsInt(section, "cdCoverOnly", 1) != 0)
+          case settings.cXMLSectionMusic:
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingMusicCdCoverOnly, 1) != 0)
               MusicOptionsGUI.cdCoverOnly = true;
-            if (xmlreader.GetValueAsInt(section, "showEqGraphic", 1) != 0)
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingMusicShowEqGraphic, 1) != 0)
               MusicOptionsGUI.showEqGraphic = true;
-            MusicOptionsGUI.nowPlayingStyle = (MusicOptionsGUI.NowPlayingStyles)xmlreader.GetValueAsInt(section, "nowPlayingStyle", 0);
+            MusicOptionsGUI.nowPlayingStyle = (MusicOptionsGUI.NowPlayingStyles)xmlreader.GetValueAsInt(section, settings.cXMLSettingNowPlayingStyle, 0);
             break;
           #endregion
 
           #region TVSeries
-          case "TVSeriesConfig":
-            TVSeriesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, "tvseriesDefaultStyle", 1) == 1;
-            TVSeriesConfig.WideBannerMod = (TVSeriesConfig.WideBanners)xmlreader.GetValueAsInt(section, "tvseriesWideBannerMod", 0);
+          case settings.cXMLSectionTVSeries:
+            TVSeriesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, settings.cXMLSettingTVSeriesDefaultStyle, 1) == 1;
+            TVSeriesConfig.WideBannerMod = (TVSeriesConfig.WideBanners)xmlreader.GetValueAsInt(section, settings.cXMLSettingTVSeriesWideBannerMod, 0);
             break;
           #endregion
 
           #region MovingPictures
-          case "MovingPicturesConfig":
-            MovingPicturesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, "movingpicturesDefaultStyle", 1) == 1;
-            MovingPicturesConfig.ThumbnailMod = (MovingPicturesConfig.Thumbnails)xmlreader.GetValueAsInt(section, "movingpicturesThumbMod", 0);
+          case settings.cXMLSectionMovingPictures:
+            MovingPicturesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, settings.cXMLSettingMovingPicturesDefaultStyle, 1) == 1;
+            MovingPicturesConfig.ThumbnailMod = (MovingPicturesConfig.Thumbnails)xmlreader.GetValueAsInt(section, settings.cXMLSettingMovingPicturesThumbMod, 0);
             break;
           #endregion
 
           #region TV
-          case "TVConfig":
-            TVConfig.TVGuideRowSize = (TVConfig.TVGuideRows)xmlreader.GetValueAsInt(section, "tvGuideSize", 10);
-            TVConfig.TVMiniGuideRowSize = (TVConfig.TVMiniGuideRows)xmlreader.GetValueAsInt(section, "tvMiniGuideSize", 7);
+          case settings.cXMLSectionTV:
+            TVConfig.TVGuideRowSize = (TVConfig.TVGuideRows)xmlreader.GetValueAsInt(section, settings.cXMLSettingTVGuideSize, 10);
+            TVConfig.TVMiniGuideRowSize = (TVConfig.TVMiniGuideRows)xmlreader.GetValueAsInt(section, settings.cXMLSettingTVMiniGuideSize, 7);
             break;
           #endregion
 
           #region Video
-          case "VideoConfig":
-            VideoOptionsGUI.FullVideoOSD = xmlreader.GetValueAsInt(section, "videoFullVideoOSD", 1) == 1;
+          case settings.cXMLSectionVideo:
+            VideoOptionsGUI.FullVideoOSD = xmlreader.GetValueAsInt(section, settings.cXMLSettingVideoFullVideoOSD, 1) == 1;
             break;
           #endregion
 
           #region Misc
-          case "MiscConfig":
-            MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, "miscShowHiddenMenuImage", 1) == 1;
-            MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, "miscShowRoundedCovers", 1) == 1;
-            MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, "miscShowIconsInArtwork", 1) == 1;
-            MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, "miscMostRecentFanartTimerInt", 7);
+          case settings.cXMLSectionMisc:
+            MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowHiddenMenuImage, 1) == 1;
+            MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowRoundedCovers, 1) == 1;
+            MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowIconsInArtwork, 1) == 1;
+            MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, 7);
             break;
           #endregion
 
@@ -181,58 +233,58 @@ namespace StreamedMPConfig
         switch (section)
         {
           #region Update
-          case "UpdateConfig":            
-            xmlwriter.SetValue(section, "checkOnStart", StreamedMPConfig.checkOnStart ? 1 : 0);
-            xmlwriter.SetValue(section, "checkForUpdateAt", StreamedMPConfig.checkForUpdateAt ? 1 : 0);
-            xmlwriter.SetValue(section, "checkInterval", StreamedMPConfig.checkInterval);
-            xmlwriter.SetValue(section, "checkTime", StreamedMPConfig.checkTime.ToShortTimeString());
-            xmlwriter.SetValue(section, "nextUpdateCheck", StreamedMPConfig.nextUpdateCheck);
-            xmlwriter.SetValue(section, "runPatchUtilityUnattended", StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
-            xmlwriter.SetValue(section, "patchUtilityRestartMP", StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);            
+          case settings.cXMLSectionUpdate:            
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateCheckOnStart, StreamedMPConfig.checkOnStart ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateCheckForUpdateAt, StreamedMPConfig.checkForUpdateAt ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateCheckInterval, StreamedMPConfig.checkInterval);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateCheckTime, StreamedMPConfig.checkTime.ToShortTimeString());
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateNextUpdateCheck, StreamedMPConfig.nextUpdateCheck);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdateRunPatchUtilityUnattended, StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdatePatchUtilityRestartMP, StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);            
             break;
           #endregion
 
           #region Music
-          case "MusicConfig":
-            xmlwriter.SetValue(section, "cdCoverOnly", MusicOptionsGUI.cdCoverOnly ? 1 : 0);
-            xmlwriter.SetValue(section, "showEqGraphic", MusicOptionsGUI.showEqGraphic ? 1 : 0);
-            xmlwriter.SetValue(section, "nowPlayingStyle", (int)MusicOptionsGUI.nowPlayingStyle);
+          case settings.cXMLSectionMusic:
+            xmlwriter.SetValue(section, settings.cXMLSettingMusicCdCoverOnly, MusicOptionsGUI.cdCoverOnly ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMusicShowEqGraphic, MusicOptionsGUI.showEqGraphic ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingNowPlayingStyle, (int)MusicOptionsGUI.nowPlayingStyle);
             break;
           #endregion
 
           #region TVSeries
-          case "TVSeriesConfig":
-            xmlwriter.SetValue(section, "tvseriesDefaultStyle", TVSeriesConfig.IsDefaultStyle ? 1 : 0);
-            xmlwriter.SetValue(section, "tvseriesWideBannerMod", (int)TVSeriesConfig.WideBannerMod);
+          case cXMLSectionTVSeries:
+            xmlwriter.SetValue(section, settings.cXMLSettingTVSeriesDefaultStyle, TVSeriesConfig.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingTVSeriesWideBannerMod, (int)TVSeriesConfig.WideBannerMod);
             break;
           #endregion
 
           #region MovingPictures
-          case "MovingPicturesConfig":
-            xmlwriter.SetValue(section, "movingpicturesDefaultStyle", MovingPicturesConfig.IsDefaultStyle ? 1 : 0);
-            xmlwriter.SetValue(section, "movingpicturesThumbMod", (int)MovingPicturesConfig.ThumbnailMod);
+          case cXMLSectionMovingPictures:
+            xmlwriter.SetValue(section, settings.cXMLSettingMovingPicturesDefaultStyle, MovingPicturesConfig.IsDefaultStyle ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMovingPicturesThumbMod, (int)MovingPicturesConfig.ThumbnailMod);
             break;
           #endregion
 
           #region TV
-          case "TVConfig":
-            xmlwriter.SetValue(section, "tvGuideSize", (int)TVConfig.TVGuideRowSize);
-            xmlwriter.SetValue(section, "tvMiniGuideSize", (int)TVConfig.TVMiniGuideRowSize);
+          case settings.cXMLSectionTV:
+            xmlwriter.SetValue(section, settings.cXMLSettingTVGuideSize, (int)TVConfig.TVGuideRowSize);
+            xmlwriter.SetValue(section, settings.cXMLSettingTVMiniGuideSize, (int)TVConfig.TVMiniGuideRowSize);
             break;
           #endregion
 
           #region Video
-          case "VideoConfig":
-            xmlwriter.SetValue(section, "videoFullVideoOSD", VideoOptionsGUI.FullVideoOSD ? 1 : 0);          
+          case settings.cXMLSectionVideo:
+            xmlwriter.SetValue(section, settings.cXMLSettingVideoFullVideoOSD, VideoOptionsGUI.FullVideoOSD ? 1 : 0);          
             break;
           #endregion
 
           #region Misc
-          case "MiscConfig":
-            xmlwriter.SetValue(section, "miscShowHiddenMenuImage", MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
-            xmlwriter.SetValue(section, "miscShowRoundedCovers", MiscConfigGUI.ShowRoundedImages ? 1 : 0);
-            xmlwriter.SetValue(section, "miscShowIconsInArtwork", MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
-            xmlwriter.SetValue(section, "miscMostRecentFanartTimerInt", MiscConfigGUI.MostRecentFanartTimerInt);
+          case settings.cXMLSectionMisc:
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscShowHiddenMenuImage, MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscShowRoundedCovers, MiscConfigGUI.ShowRoundedImages ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscShowIconsInArtwork, MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, MiscConfigGUI.MostRecentFanartTimerInt);
             break;
           #endregion
 

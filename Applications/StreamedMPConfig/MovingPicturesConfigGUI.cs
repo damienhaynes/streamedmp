@@ -180,7 +180,7 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       // Load Settings
-      settings.Load("MovingPicturesConfig");
+      settings.Load(settings.cXMLSectionMovingPictures);
 
       // Update Controls
       SetControlStates();
@@ -195,7 +195,7 @@ namespace StreamedMPConfig
       ApplyConfigurationChanges();
 
       // Save Settings
-      settings.Save("MovingPicturesConfig");
+      settings.Save(settings.cXMLSectionMovingPictures);
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)

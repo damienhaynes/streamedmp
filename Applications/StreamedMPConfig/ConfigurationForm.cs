@@ -24,10 +24,10 @@ namespace StreamedMPConfig
     {
       InitializeComponent();
 
-      settings.Load("UpdateConfig");
-      settings.Load("MusicConfig");
-      settings.Load("VideoConfig");
-      settings.Load("MiscConfig");
+      settings.Load(settings.cXMLSectionUpdate);
+      settings.Load(settings.cXMLSectionMusic);
+      settings.Load(settings.cXMLSectionVideo);
+      settings.Load(settings.cXMLSectionMisc);
 
       releaseVersion.Text = String.Format("Version: {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString());
       DateTime buildDate = getLinkerTimeStamp(Assembly.GetExecutingAssembly().Location);
@@ -53,6 +53,7 @@ namespace StreamedMPConfig
     // Save settings to file
     void btSave_Click(object sender, EventArgs e)
     {
+      // get current settings and save to file
       MusicOptionsGUI.cdCoverOnly = cbCdCoverOnly.Checked;
       MusicOptionsGUI.showEqGraphic = cbShowEqGraphic.Checked;
       VideoOptionsGUI.FullVideoOSD = fullVideoOSD.Checked;
@@ -64,10 +65,12 @@ namespace StreamedMPConfig
       StreamedMPConfig.patchUtilityRunUnattended = cbRunUnattended.Checked;
       StreamedMPConfig.patchUtilityRestartMP = cbRestartMP.Checked;
       MiscConfigGUI.MostRecentFanartTimerInt = (int)numFanartTimer.Value;
-      settings.Save("UpdateConfig");
-      settings.Save("MusicConfig");
-      settings.Save("VideoConfig");
-      settings.Save("MiscConfig");
+      
+      settings.Save(settings.cXMLSectionUpdate);
+      settings.Save(settings.cXMLSectionMusic);
+      settings.Save(settings.cXMLSectionVideo);
+      settings.Save(settings.cXMLSectionMisc);
+      
       this.Close();
     }
 

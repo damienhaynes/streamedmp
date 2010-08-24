@@ -199,7 +199,7 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       // Load Settings
-      settings.Load("TVConfig");
+      settings.Load(settings.cXMLSectionTV);
 
       // Update Controls
       SetControlStates();
@@ -214,7 +214,7 @@ namespace StreamedMPConfig
       ApplyConfigurationChanges();
 
       // Save Settings
-      settings.Save("TVConfig");
+      settings.Save(settings.cXMLSectionTV);
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)

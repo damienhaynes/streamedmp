@@ -4002,8 +4002,7 @@ namespace StreamedMPEditor
       string activeRssImageType = null;
       string targetScreenRes = "SD";
       string tvRecentDisplayType = "full";
-      string movPicsDisplayType = "full";
-      string mostRecentSumStyle = "fanart";
+      string movPicsDisplayType = "full";      
       string mostRecentTVSeriesSummStyle = "fanart";
       string mostRecentMovPicsSummStyle = "fanart";
 
