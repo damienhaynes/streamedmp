@@ -1,40 +1,88 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- RadioTime translation file -->
-<!-- English (US) -->
+<!-- StreamedMP translation file -->
+<!-- French (fr) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
+<!-- Last Updated:  -->
 <strings>
-	<!-- MediaPortal Localised IDs -> Skin Properties -->
-	<string Field="#StreamedMP.Track">435</string>
-	<string Field="#StreamedMP.Year">436</string>	
-	<!-- Menu Options -->
-	<string Field="MusicMenu">Paramètres Audio</string>
-	<string Field="VideoMenu">Paramètres Video</string>
-	<string Field="SkinUpdate">Mise à Jour</string>
-	<!-- Skin Updates / Patching GUI -->   
-	<string Field="UpdateInstall">Mettre à jour et installer</string>
-	<string Field="NoUpdatesAvailable">Aucune mise à jour disponible</string>
-	<string Field="DownloadingPatch">Téléchargement de la mise à jour: {0}</string>
-	<string Field="DownloadingProgress"> {0}KB Mise(s) à jour sur {1}KB téléchargée(s)({2}%)</string>
-	<string Field="NumPatchesInstalled">Nombre de mises à jour installée: {0}</string>
-	<string Field="PatchUpdateComplete">Mise à jour vers la version: {0} Effectuée</string>
-	<string Field="UpdateAvailableHeading">Mise à jour disponible - Voir les changement</string>
-	<string Field="Revision">Revision:</string>
-	<string Field="Author">Autheur:</string>
-	<string Field="Date">Date:</string>
-	<string Field="Message">Message:</string>
-	<string Field="mupdateheader">La mise à jour a été téléchargée</string>
-	<string Field="mupdateline1">Une mise à jour manuelle est requise.</string>
-	<string Field="mupdateline2">Pour effectuer la mise à jour, fermez MediaPortal </string>
-	<string Field="mupdateline3">et/ou le menu de configuration et exécutez: {0}</string>
-	<string Field="mupdateline4">qui se trouve sur le Bureau</string>
-	<!-- Plugin Options -->	
-	<string Field="CDCover">Voir Seulement la pochette CD dans Musique/Lecture En Cours</string>
-	<string Field="ShowEQ">Voir le graphique EQ dans Musique/Lecture En Cours</string>
-	<string Field="MinVideoOSD">Affichage minimal de l'OSD Vidéo pendant la pause</string>
+  <!-- Example user defined translation property                                       -->
+  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
+  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <string Field="#StreamedMP.Example.Property">Translated String</string>
+  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <string Field="#StreamedMP.Track">435</string>
+  <string Field="#StreamedMP.Year">436</string>
+  <!-- Menu Options -->
+  <string Field="MusicMenu">Paramètres Audio</string>
+  <string Field="VideoMenu">Paramètres Video</string>
+  <string Field="SkinUpdate">Mise à Jour</string>
+  <string Field="TVSeriesMenu">TVSeries Settings</string>
+  <string Field="MovingPicturesMenu">MovingPictures Settings</string>
+  <string Field="TVMenu">TV Settings</string>
+  <string Field="MiscMenu">Misc Settings</string>
+  <!-- Skin Updates / Patching GUI -->
+  <string Field="UpdateInstall">Mettre à jour et installer</string>
+  <string Field="NoUpdatesAvailable">Aucune mise à jour disponible</string>
+  <string Field="DownloadingPatch">Téléchargement de la mise à jour: {0}</string>
+  <string Field="DownloadingProgress"> {0}KB Mise(s) à jour sur {1}KB téléchargée(s)({2}%)</string>
+  <string Field="NumPatchesInstalled">Nombre de mises à jour installée: {0}</string>
+  <string Field="PatchUpdateComplete">Mise à jour vers la version: {0} Effectuée</string>
+  <string Field="UpdateAvailableHeading">Mise à jour disponible - Voir les changement</string>
+  <string Field="Revision">Revision:</string>
+  <string Field="Author">Autheur:</string>
+  <string Field="Date">Date:</string>
+  <string Field="Message">Message:</string>
+  <string Field="mupdateheader">La mise à jour a été téléchargée</string>
+  <string Field="mupdateline1">Une mise à jour manuelle est requise.</string>
+  <string Field="mupdateline2">Pour effectuer la mise à jour, fermez MediaPortal </string>
+  <string Field="mupdateline3">et/ou le menu de configuration et exécutez: {0}</string>
+  <string Field="mupdateline4">qui se trouve sur le Bureau</string>
+  <!-- Plugin Options -->
+  <string Field="MinVideoOSD">Affichage minimal de l'OSD Vidéo pendant la pause</string>
+  <string Field="VideoWallpaperLabel">Video Wallpaper</string>
+  <!-- Music Options -->
+  <string Field="CDCover">Voir Seulement la pochette CD dans Musique/Lecture En Cours</string>
+  <string Field="ShowEQ">Voir le graphique EQ dans Musique/Lecture En Cours</string>
+  <string Field="NowPlayingStyles">Now Playing Screen Styles</string>
+  <!-- TVSeries Configuration -->
+  <string Field="FanartStyle">Fanart Style</string>
+  <string Field="WideBanners">WideBanners</string>
+  <string Field="WideBannerDefault">WideBanners: Default</string>
+  <string Field="WideBanner5x2Grid">WideBanners: 5x2 Grid with Poster</string>
+  <string Field="WideBanner5x3Grid">WideBanners: 5x3 Grid</string>
+  <string Field="WideBanner7x3Grid">WideBanners: 7x3 Grid</string>
+  <string Field="WideBanner10x4Grid">WideBanners: 10x4 Grid</string>
+  <!-- MovingPictures Configuration -->
+  <string Field="Thumbnails">Thumbnails</string>
+  <string Field="ThumbnailDefault">Thumbnails: Default</string>
+  <string Field="Thumbnail_12x4_8x3_Grid">Thumbnails: 12x4 Small Icons, 8x3 Large Icons</string>
+  <string Field="Thumbnail_12x3_8x2_Grid">Thumbnails: 12x3 Small Icons, 8x2 Large Icons + Info</string>
+  <!-- TVGuide Configuration -->
+  <string Field="TVGuideSize">TV Guide Size</string>
+  <string Field="TVMiniGuideSize">TV Mini Guide Size</string>
+  <string Field="TVGuideEightRows">TV Guide: 8 Rows</string>
+  <string Field="TVGuideTenRows">TV Guide: 10 Rows</string>
+  <string Field="TVGuideTwelveRows">TV Guide: 12 Rows</string>
+  <string Field="TVMiniGuideThreeRows">TV Mini Guide: 3 Rows</string>
+  <string Field="TVMiniGuideFiveRows">TV Mini Guide: 5 Rows</string>
+  <string Field="TVMiniGuideSevenRows">TV Mini Guide: 7 Rows</string>
+  <string Field="TVMiniGuideNineRows">TV Mini Guide: 9 Rows</string>
+  <!-- Misc Settings -->
+  <string Field="ShowHiddenMenuImage">Show Hidden Menu Image</string>
+  <string Field="ShowRoundedPosters">Show Rounded Poster Images</string>
+  <string Field="ShowIconsInArtwork">Show Watched/UnWatched Icons In Artwork</string>
   <!-- General Translations -->
   <string Field="Rated">Rated</string>
   <string Field="Director">Director</string>
   <string Field="ReleaseDate">Release Date</string>
   <string Field="Runtime">Runtime</string>
-
+  <!-- Global Search -->
+  <string Field="SearchMusic">Search Music</string>
+  <string Field="SearchPhrase">Search Phrase</string>
+  <string Field="SearchHistory">Search History</string>
+  <string Field="SearchFields">Search Fields</string>
+  <string Field="SearchType">Search Type</string>
+  <string Field="CaseSensitive">Case Sensitive</string>
+  <!-- Recently Added -->
+  <string Field="LatestEpisodes">Latest Episodes</string>
+  <string Field="LatestMovies">Latest Movies</string>
 </strings>
