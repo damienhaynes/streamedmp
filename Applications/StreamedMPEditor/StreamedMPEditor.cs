@@ -150,7 +150,7 @@ namespace StreamedMPEditor
     bool useInfoServiceSeparator = false;
     bool fanartHandlerUsed = false;
     bool exitCondition = false;
-
+    bool changeOutstanding = false;
     bool mostRecentTVSeriesCycleFanart = true;
     bool mostRecentMovPicsCycleFanart = true;
 
@@ -576,6 +576,7 @@ namespace StreamedMPEditor
         if (itemsOnMenubar.Items.Count > 2)
           btGenerateMenu.Enabled = true;
         xmlFiles.SelectedIndex = -1;
+        changeOutstanding = true;
       }
       else
       {
@@ -665,6 +666,7 @@ namespace StreamedMPEditor
         disableItemControls();
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
+        changeOutstanding = true;
       }
     }
 
@@ -859,6 +861,12 @@ namespace StreamedMPEditor
 
     void generateMenu_Click(object sender, EventArgs e)
     {
+      genMenu(false);
+      changeOutstanding = false;
+    }
+
+    void genMenu(bool onFormClosing)
+    {
       validateMenuOffset();
       if (itemsOnMenubar.CheckedItems.Count > 1 || itemsOnMenubar.CheckedItems.Count == 0)
       {
@@ -889,18 +897,18 @@ namespace StreamedMPEditor
         setBasicHomeValues();
         if (menuStyle == chosenMenuStyle.verticalStyle)
         {
-          writeMenu(menuType.vertical);
+          writeMenu(menuType.vertical, onFormClosing);
         }
         else
         {
-          writeMenu(menuType.horizontal);
+          writeMenu(menuType.horizontal,onFormClosing);
         }
       }
       if (cboClearCache.Checked)
         clearCacheDir();
     }
 
-    void writeMenu(menuType direction)
+    void writeMenu(menuType direction, bool onFormClosing)
     {
       generateXML(direction);
       generateBg(direction);
@@ -994,10 +1002,6 @@ namespace StreamedMPEditor
 
       writeXMLFile("BasicHome.xml");
 
-      //writer = System.IO.File.CreateText(mpPaths.streamedMPpath + "BasicHome.xml");
-      //writer.Write(xml);
-      //writer.Close();
-
       generateOverlay(int.Parse(txtMenuPos.Text), basicHomeValues.weatherControl);
 
       //
@@ -1014,18 +1018,21 @@ namespace StreamedMPEditor
         {
           generateMostRecentOverlay(menuStyle, isOverlayType.MovPics);
         }
-      } 
-      
+      }
 
+      changeOutstanding = false;
       getBackupFileTotals();
-      DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
-      if (result == DialogResult.No)
-        this.Close();
-
-      // reset item id's as it is possible to generate again.
-      foreach (menuItem item in menuItems)
+      if (!onFormClosing)
       {
-        item.id = menuItems.IndexOf(item);
+        DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
+        if (result == DialogResult.No)
+          this.Close();
+
+        // reset item id's as it is possible to generate again.
+        foreach (menuItem item in menuItems)
+        {
+          item.id = menuItems.IndexOf(item);
+        }
       }
     }
 

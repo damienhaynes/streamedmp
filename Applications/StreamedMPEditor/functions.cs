@@ -791,6 +791,7 @@ namespace StreamedMPEditor
     {
       removeToolStripMenuItem_Click(sender, e);
       reloadBackgroundItems();
+      changeOutstanding = true;
     }
 
     private void removeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1156,6 +1157,15 @@ namespace StreamedMPEditor
 
     private void streamedMpEditor_FormClosing(object sender, FormClosingEventArgs e)
     {
+      if (changeOutstanding)
+      {
+        DialogResult result = showError("There are outstanding menu changes\n\nDo you want Re-Generate your menu", errorCode.infoQuestion);
+        if (result == DialogResult.Yes)
+        {
+          genMenu(true);
+        }
+      }
+
       if (!exitCondition)
       {
         int versionCount = 0;
