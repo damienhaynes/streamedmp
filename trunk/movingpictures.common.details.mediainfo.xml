@@ -1,105 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- MediaInfo Logos (Details View)-->
 <window>
-	<controls>
-	
-		<!-- Video Resolutions / Aspect Ratio -->	
-		<control>
-		  <description>720p, 1080i, 1080p</description>
-		  <type>image</type>
-		  <id>9796</id>
-		  <posX>345</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-		</control>
-		<control>
-		  <description>SD/HD Fullscreen/Widescreen</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>345</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)</visible>
-		</control>
-
-		<!-- Video Codecs -->
-		<control>
-		  <description>Video Codecs</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>445</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-		</control>
-
-		<!-- Audio Channels / Codecs-->	
-		<control>
-		  <description>Audio Codecs / Channels</description>
-		  <type>image</type>
-		  <id>9797</id>
-		  <posX>545</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-		</control>
-		<control>
-		  <description>Audio Codecs - Unknown number of channels</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>545</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)</visible>
-		</control>
-
-		<!-- Subtitles -->
-		<control>
-		  <description>Subtitles</description>
-		  <type>image</type>
-		  <id>9798</id>
-		  <posX>645</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-		</control>
-		
-		<!-- Video Format -->
-		<control>
-		  <description>Video Format</description>
-		  <type>image</type>
-		  <id>78</id>
-		  <posX>645</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)</visible>
-		</control>
-		<control>
-		  <description>Video Format</description>
-		  <type>image</type>
-		  <id>78</id>
-		  <posX>745</posX>
-		  <posY>665</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
-		  <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)</visible>
-		</control>
-		
-	</controls>
+  <controls>
+    <!-- Video Resolutions / Aspect Ratio -->
+    <control>
+      <description>720p, 1080i, 1080p</description>
+      <type>image</type>
+      <id>9796</id>
+      <posX>345</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>SD/HD Fullscreen/Widescreen</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>345</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Video Codecs -->
+    <control>
+      <description>Video Codecs</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>445</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Audio Channels / Codecs-->
+    <control>
+      <description>Audio Codecs / Channels</description>
+      <type>image</type>
+      <id>9797</id>
+      <posX>545</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Audio Codecs - Unknown number of channels</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>545</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Subtitles -->
+    <control>
+      <description>Subtitles</description>
+      <type>image</type>
+      <id>9798</id>
+      <posX>645</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Video Format -->
+    <control>
+      <description>Video Format</description>
+      <type>image</type>
+      <id>78</id>
+      <posX>645</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Video Format</description>
+      <type>image</type>
+      <id>78</id>
+      <posX>745</posX>
+      <posY>665</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:d843cb6ef8bf4e710bf4c035e1b361d9-->

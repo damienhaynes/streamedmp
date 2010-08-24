@@ -1,81 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- MediaInfo Logos (List and Filmstrip View) -->
 <window>
-	<controls>
-
-		<!-- Video Resolutions / Aspect Ratio -->
-		<control>
-		  <description>720p, 1080i, 1080p</description>
-		  <type>image</type>
-		  <id>9789</id>
-		  <posX>670</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip</visible>
-		</control>
-		<control>
-		  <description>SD/HD Fullscreen/Widescreen</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>670</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9789)</visible>
-		</control>
-
-		<!-- Video Codecs -->
-		<control>
-		  <description>Video Codecs</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>770</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip</visible>
-		</control>
-
-		<!-- Audio Channels / Codecs-->
-		<control>
-		  <description>Audio Channels / Codecs</description>
-		  <type>image</type>
-		  <id>9800</id>
-		  <posX>870</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip</visible>
-		</control>
-		<control>
-		  <description>Audio Codecs - Unknown number of channels</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>870</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9800)</visible>
-		</control>
-
-		<!-- Subtitles -->
-		<control>
-		  <description>Subtitles</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>970</posX>
-		  <posY>10</posY>
-		  <width>100</width>
-		  <height>32</height>
-		  <texture>Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
-		  <visible>control.isvisible(50)+facadeview.filmstrip</visible>
-		</control>
-		
-	</controls>
+  <controls>
+    <!-- Video Resolutions / Aspect Ratio -->
+    <control>
+      <description>720p, 1080i, 1080p</description>
+      <type>image</type>
+      <id>9789</id>
+      <posX>670</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>SD/HD Fullscreen/Widescreen</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>670</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9789)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Video Codecs -->
+    <control>
+      <description>Video Codecs</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>770</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Audio Channels / Codecs-->
+    <control>
+      <description>Audio Channels / Codecs</description>
+      <type>image</type>
+      <id>9800</id>
+      <posX>870</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Audio Codecs - Unknown number of channels</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>870</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9800)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Subtitles -->
+    <control>
+      <description>Subtitles</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>10</posY>
+      <width>100</width>
+      <height>32</height>
+      <texture>Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
+      <visible>control.isvisible(50)+facadeview.filmstrip</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:635a5aa876dd84123125b2fe6e3a3c2e-->

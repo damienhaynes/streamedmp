@@ -1,209 +1,219 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- 
 This file should contain the thumbs view
 -->
 <window>
-	<controls>
-	
-		<!-- Movie Details -->
-		<control>
-		  <description>Movie Title</description>
-		  <type>label</type>
-		  <id>0</id>
-		  <posX>20</posX>
-		  <posY>240</posY>
-		  <width>500</width>
-		  <font>mediastream14tc</font>
-		  <label>#MovingPictures.SelectedMovie.title</label>
-		  <textcolor>ffFFFFFF</textcolor>		  
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		
-		<control>
-		  <description>Genres</description>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.genres</label>
-		  <id>0</id>
-		  <posX>20</posX>
-		  <posY>265</posY>
-		  <width>500</width>
-		  <font>mediastream12tc</font>
-		  <textcolor>ff909090</textcolor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		
-		<!-- Star Rating -->		
-		<control>
-		  <type>image</type>
-		  <id>1001</id>
-		  <posX>20</posX>
-		  <posY>287</posY>
-		  <width>115</width>
-		  <height>22</height>		  
-		  <align>left</align>		  
-		  <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
-		  <posX>145</posX>
-		  <posY>288</posY>
-		  <width>360</width>
-		  <font>mediastream11c</font>		  
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		
-		<control>
-		  <description>Summary</description>
-		  <type>textboxscrollup</type>
-		  <id>0</id>
-		  <posX>20</posX>
-		  <posY>320</posY>
-		  <width>500</width>
-		  <height>215</height>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <seperator>-----------------------------------------------------------------------------------</seperator>
-		  <font>mediastream11</font>
-		  <label>#MovingPictures.SelectedMovie.summary</label>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>	
-
-		<!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
-		<control Style="smallTitleB">
-		  <description>Certification Label Shadow</description>		  
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Certification.Label</label>
-		  <posX>21</posX>
-		  <posY>552</posY>
-		  <textcolor>ff111111</textcolor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>		
-		<control Style="smallTitleB">	  
-		  <description>Certification Label</description>
-		  <id>0</id>
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Certification.Label</label>
-		  <posX>20</posX>
-		  <posY>551</posY>
-		  <width>140</width>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Certification</description>
-		  <id>1004</id>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.certification</label>
-		  <posX>180</posX>
-		  <posY>552</posY>
-		  <width>200</width>		  
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Certification N/A</description>
-		  <id>0</id>
-		  <type>label</type>
-		  <label>N/A</label>
-		  <posX>180</posX>
-		  <posY>552</posY>
-		  <width>200</width>		  
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
-		</control>
-		
-		<control Style="smallTitleB">
-		  <description>Runtime Label Shadow</description>		  
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Runtime.Label</label>
-		  <posX>21</posX>
-		  <posY>574</posY>
-		  <textcolor>ff111111</textcolor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitleB">	  
-		  <description>Runtime Label</description>
-		  <id>0</id>
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Runtime.Label</label>
-		  <posX>20</posX>
-		  <posY>573</posY>
-		  <width>140</width>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Runtime</description>
-		  <id>1005</id>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
-		  <posX>180</posX>
-		  <posY>574</posY>
-		  <width>200</width>		  
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Runtime N/A</description>
-		  <id>0</id>
-		  <type>label</type>
-		  <label>N/A</label>
-		  <posX>180</posX>
-		  <posY>574</posY>
-		  <width>200</width>		  
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
-		</control>
-		
-		<control Style="smallTitleB">
-		  <description>Year Label Shadow</description>		  
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Year.Label</label>
-		  <posX>21</posX>
-		  <posY>596</posY>
-		  <textcolor>ff111111</textcolor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitleB">
-		  <description>Year Label</description>		  
-		  <type>label</type>
-		  <label>#MovingPictures.Translation.Year.Label</label>
-		  <posX>20</posX>
-		  <posY>595</posY>
-		  <width>140</width>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Year</description>
-		  <id>1006</id>
-		  <type>label</type>
-		  <label>#MovingPictures.SelectedMovie.year</label>
-		  <posX>180</posX>
-		  <posY>596</posY>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Year N/A</description>
-		  <id>0</id>
-		  <type>label</type>
-		  <label>N/A</label>
-		  <posX>180</posX>
-		  <posY>596</posY>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>2</shadowDistance>
-		  <shadowColor>ff222222</shadowColor>
-		  <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
-		</control>		
-
-	</controls>
+  <controls>
+    <!-- Movie Details -->
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>240</posY>
+      <width>500</width>
+      <font>mediastream14tc</font>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genres</description>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>265</posY>
+      <width>500</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Star Rating -->
+    <control>
+      <type>image</type>
+      <id>1001</id>
+      <posX>20</posX>
+      <posY>287</posY>
+      <width>115</width>
+      <height>22</height>
+      <align>left</align>
+      <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <posX>145</posX>
+      <posY>288</posY>
+      <width>360</width>
+      <font>mediastream11c</font>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>320</posY>
+      <width>500</width>
+      <height>215</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#MovingPictures.SelectedMovie.summary</label>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
+    <control Style="smallTitleB">
+      <description>Certification Label Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Certification.Label</label>
+      <posX>21</posX>
+      <posY>552</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Certification Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Certification.Label</label>
+      <posX>20</posX>
+      <posY>551</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Certification</description>
+      <id>1004</id>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.certification</label>
+      <posX>180</posX>
+      <posY>552</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Certification N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>180</posX>
+      <posY>552</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
+      <posX>21</posX>
+      <posY>574</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Runtime.Label</label>
+      <posX>20</posX>
+      <posY>573</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime</description>
+      <id>1005</id>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
+      <posX>180</posX>
+      <posY>574</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>180</posX>
+      <posY>574</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Year Label Shadow</description>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Year.Label</label>
+      <posX>21</posX>
+      <posY>596</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Year Label</description>
+      <type>label</type>
+      <label>#MovingPictures.Translation.Year.Label</label>
+      <posX>20</posX>
+      <posY>595</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year</description>
+      <id>1006</id>
+      <type>label</type>
+      <label>#MovingPictures.SelectedMovie.year</label>
+      <posX>180</posX>
+      <posY>596</posY>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>180</posX>
+      <posY>596</posY>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:9e7ef770280c0b2b6dc9eff6d8da5e31-->
