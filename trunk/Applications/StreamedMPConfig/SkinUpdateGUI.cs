@@ -206,7 +206,7 @@ namespace StreamedMPConfig
     {
       cmc_ChangeLog.Visible = false;
       btDoUpdate.Visible = false;
-      settings.Load("UpdateConfig");
+      
       GUIControl.SetControlLabel(GetID, 3, Translation.Strings["UpdateInstall"]);
       if (updateCheck.updateAvailable())
       {
@@ -288,11 +288,6 @@ namespace StreamedMPConfig
         GUIWindowManager.ShowPreviousWindow();
         StreamedMPConfig.udateAvailable = false;
       }
-    }
-
-    protected override void OnPageDestroy(int new_windowId)
-    {
-      settings.Save("StreamedMPConfig");
     }
 
     #endregion
