@@ -218,7 +218,7 @@ prototype NUMBER	LaunchBrowser(STRING);
 prototype BOOL 		IsMajorUpgrade(BYREF STRING, BYREF STRING, BYREF BOOL);
 prototype VOID		MajorUpgradeCleanup();
 prototype VOID		GetCachedInstallDir();  
-prototype VOID		UninstallCleanup();       
+prototype VOID		UninstallCleanup(BOOL, BOOL);       
 prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRING);
 prototype VOID		CleanVirtualStoreDir();
 prototype NUMBER	GetXMLProperty(STRING,STRING,BYREF STRING);
@@ -429,7 +429,7 @@ begin
 
 	// Read TVSeries Default 
 	sFile = g_sConfigDir^"StreamedMPConfig.xml";
-	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesDefaultStyle", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesDefaultStyle", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -437,12 +437,12 @@ begin
 	endif;	
 	
 	// Read TVSeries widebanner layout	
-	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesWideBannerMod", g_sWideBannerLayout) < 0 then
+	if GetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesWideBannerMod", g_sWideBannerLayout) < 0 then
 		g_sWideBannerLayout = "0";
 	endif;
 	 
 	// Determine if 'Total Episode Count' fields are added to List View 	
-	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowTotalEpisodeCounts", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesShowTotalEpisodeCounts", svValue) < 0 then
 		svValue = "0";
 	endif;
 	if svValue = "1" then
@@ -450,7 +450,7 @@ begin
 	endif;	
 		
 	// Determine if 'Watched/Unwatched' Icons are added to List View	
-	if GetMPXMLProperty(sFile, "TVSeriesConfigGUI", "tvseriesShowIconsInListView", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "TVSeriesConfig", "tvseriesShowIconsInListView", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -458,7 +458,7 @@ begin
 	endif;	
 	
 	// Read Moving Pictures Default	
-	if GetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesDefaultStyle", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "MovingPicturesConfig", "movingpicturesDefaultStyle", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -466,22 +466,22 @@ begin
 	endif;	
 	
 	// Read MovingPictures Thumb layout	
-	if GetMPXMLProperty(sFile, "MovingPicturesConfigGUI", "movingpicturesThumbMod", g_sThumbLayout) < 0 then
+	if GetMPXMLProperty(sFile, "MovingPicturesConfig", "movingpicturesThumbMod", g_sThumbLayout) < 0 then
 		g_sThumbLayout = "0";
 	endif;
 	
 	// Read TVGuide Size default
-	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvGuideSize", g_sTVGuideSize) < 0 then
+	if GetMPXMLProperty(sFile, "TVConfig", "tvGuideSize", g_sTVGuideSize) < 0 then
 		g_sTVGuideSize = "10";
 	endif;
 	
 	// Read TVMiniGuide Size default
-	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvMiniGuideSize", g_sTVMiniGuideSize) < 0 then
+	if GetMPXMLProperty(sFile, "TVConfig", "tvMiniGuideSize", g_sTVMiniGuideSize) < 0 then
 		g_sTVMiniGuideSize = "7";
 	endif;
 	
 	// Enable Random Fanart in MyTV
-	if GetMPXMLProperty(sFile, "TVConfigGUI", "tvEnableRandomTVSeriesFanart", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "TVConfig", "tvEnableRandomTVSeriesFanart", svValue) < 0 then
 		svValue = "0";
 	endif;
 	if svValue = "1" then
@@ -489,12 +489,12 @@ begin
 	endif; 
 
 	// Read NowPlaying Style default
-	if GetMPXMLProperty(sFile, "MusicConfigGUI", "nowPlayingStyle", g_sNowPlayingChoice) < 0 then
+	if GetMPXMLProperty(sFile, "MusicConfig", "nowPlayingStyle", g_sNowPlayingChoice) < 0 then
 		g_sNowPlayingChoice = "0";
 	endif;
      	                        
 	// Read Font Size default 
-	if GetMPXMLProperty(sFile, "Misc", "miscUseLargeFonts", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscUseLargeFonts", svValue) < 0 then
 		svValue = "0";
 	endif;
 	if svValue = "1" then
@@ -502,7 +502,7 @@ begin
 	endif;
 		
 	// Read Show Hidden Menu Image
-	if GetMPXMLProperty(sFile, "Misc", "miscShowHiddenMenuImage", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscShowHiddenMenuImage", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -510,7 +510,7 @@ begin
 	endif;
 	
 	// Read Icons in Artwork default
-	if GetMPXMLProperty(sFile, "Misc", "miscShowIconsInArtwork", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscShowIconsInArtwork", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -518,7 +518,7 @@ begin
 	endif;
 	
 	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
-	if GetMPXMLProperty(sFile, "Misc", "miscShowRoundedCovers", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscShowRoundedCovers", svValue) < 0 then
 		svValue = "1";
 	endif;
 	if svValue = "1" then
@@ -526,29 +526,29 @@ begin
 	endif;
 	
 	// Unfocused Alpha List Layout
-	if GetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscUnfocusedAlphaListItems", g_sUnfocusedAlphaListItems) < 0 then
 		g_sUnfocusedAlphaListItems = "100";
 	endif;
 	               	
 	// Unfocused Alpha Thumbs Layout
-	if GetMPXMLProperty(sFile, "Misc", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscUnfocusedAlphaThumbs", g_sUnfocusedAlphaThumbs) < 0 then
 		g_sUnfocusedAlphaThumbs = "100";
 	endif;
 		
 	// Get List Facade Colors
-	if GetMPXMLProperty(sFile, "Misc", "miscTextColor", g_sTextColor) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscTextColor", g_sTextColor) < 0 then
 		g_sTextColor = "FFFFFF";
 	endif;
-	if GetMPXMLProperty(sFile, "Misc", "miscTextColor2", g_sText2Color) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscTextColor2", g_sText2Color) < 0 then
 		g_sText2Color = "FFFFFF";
 	endif;
-	if GetMPXMLProperty(sFile, "Misc", "miscTextColor3", g_sText3Color) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscTextColor3", g_sText3Color) < 0 then
 		g_sText3Color = "FFFFFF";
 	endif;
-	if GetMPXMLProperty(sFile, "Misc", "miscWatchedColor", g_sWatchedColor) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscWatchedColor", g_sWatchedColor) < 0 then
 		g_sWatchedColor = "808080";
 	endif;
-	if GetMPXMLProperty(sFile, "Misc", "miscRemoteColor", g_sRemoteColor) < 0 then
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscRemoteColor", g_sRemoteColor) < 0 then
 		g_sRemoteColor = "FFA075";
 	endif;
 			
@@ -894,10 +894,6 @@ begin
     CleanCache("Blue3wide");
     CleanCache(SKIN_NAME);
     
-    if ( REMOVEALLMODE ) then
-    	UninstallCleanup();
-    endif;
-    
 	Disable(STATUSEX);
 
 	bOpt1   = FALSE;
@@ -907,12 +903,22 @@ begin
     if( REMOVEALLMODE ) then
         szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
         szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
+        
+        bOpt1 = FALSE;
+        bOpt2 = FALSE;
+        szOption1 = "Clear Skin configuration settings (restore defaults)?";
+        szOption2 = "Clear BasicHome configuration settings and backups?";      
     else
         szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
         szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
     endif;
 
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+		
+    if ( REMOVEALLMODE ) then
+    	UninstallCleanup(bOpt1, bOpt2);
+    endif;
+    
 end; 
 
 function VOID CleanCache(sSkin)
@@ -2546,28 +2552,38 @@ function VOID GetCachedInstallDir()
 begin                           
 	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
     szUninstallKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\InstallShield_"+PRODUCT_GUID;
-    RegDBGetKeyValueEx(szUninstallKey,"InstallSource",nvType,g_sDownloadInstallDir,nvSize);	
+    RegDBGetKeyValueEx(szUninstallKey, "InstallSource", nvType, g_sDownloadInstallDir, nvSize);	
 end; 
 
-function VOID UninstallCleanup()
+function VOID UninstallCleanup(bRemoveSkinSettings, bRemoveBasicHomeSettings)
 	STRING szDir, sFile;
 begin 
 	// Remove cached downloaded install files                                           
 	if (Is(PATH_EXISTS,g_sDownloadInstallDir)) then
-    	DeleteDir(g_sDownloadInstallDir,ALLCONTENTS);    	
+    	DeleteDir(g_sDownloadInstallDir, ALLCONTENTS);    	
     endif;
+       
+    // Remove StreamedMPConfig.xml    
+    if bRemoveSkinSettings then
+    	DeleteFile(g_sConfigDir^"StreamedMPConfig.xml*");	
+    endif;
+    // Remove UserMenuProfile.xml    
+    if bRemoveBasicHomeSettings then
+    	DeleteFile(g_sConfigDir^"usermenuprofile.xml*");
+    	DeleteFile(INSTALLDIR^SKIN_NAME^"BasicHome.xml*");
+    endif;    
     
     // Remove any rouge XML files from skin directory
     szDir = INSTALLDIR^SKIN_NAME;
     DeleteFile(szDir^"*.xml");
-    DeleteDir(szDir,ONLYDIR); 
+    DeleteDir(szDir, ONLYDIR); 
     
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
     // Finially set default skin back to Blue3wide
     sFile = g_sConfigDir^"MediaPortal.xml";    
-    SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);
+    SetMPXMLProperty(sFile, "skin", "name", DEFAULT_SKIN);
         
 end; 
 
