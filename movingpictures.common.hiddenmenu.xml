@@ -9,6 +9,7 @@
       <height>153</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>actiongroup</type>
@@ -151,7 +152,7 @@
           <ondown>66611</ondown>
           <onleft>50</onleft>
         </control>
-				<control>
+        <control>
           <description>Skin Settings</description>
           <type>button</type>
           <id>66611</id>
@@ -197,7 +198,7 @@
           <onup>177</onup>
           <onleft>50</onleft>
           <hyperlink>5900</hyperlink>
-        </control>        
+        </control>
         <control>
           <description>SubCentral</description>
           <type>button</type>
@@ -213,3 +214,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:179a836966571a707a365fab2e21de50-->
