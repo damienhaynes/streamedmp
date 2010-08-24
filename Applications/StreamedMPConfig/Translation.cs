@@ -246,6 +246,13 @@ namespace StreamedMPConfig
     public static string Director = "Director";
     public static string ReleaseDate = "Release Date";
     public static string Runtime = "Runtime";
+    public static string SearchMusic = "Search Music";
+    public static string SearchPhrase = "Search Phrase";
+    public static string SearchHistory = "Search History";
+    public static string SearchFields = "Search Fields";
+    public static string SearchType = "Search Type";
+    public static string CaseSensitive = "Case Sensitive";
+
     #endregion
   }
 }
