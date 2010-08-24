@@ -1,88 +1,78 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!-- StreamedMP translation file -->
-<!-- Spanish (es_ES) -->
+<!-- Spanish (es)-->
 <!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Last Updated:  -->
+<!-- Last Updated: 22nd August 2010 -->
 <strings>
-  <!-- Example user defined translation property                                       -->
-  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
-  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <!-- Example user defined translation property -->
+  <!-- Field name must start with a '#'. The entry below creates the skin property -->
+  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String' -->
   <string Field="#StreamedMP.Example.Property">Translated String</string>
   <!-- MediaPortal Localised IDs -> Skin Properties -->
   <string Field="#StreamedMP.Track">435</string>
   <string Field="#StreamedMP.Year">436</string>
   <!-- Menu Options -->
-  <string Field="MusicMenu">Opciones de Música</string>
-  <string Field="VideoMenu">Opciones de Video</string>
+  <string Field="MusicMenu">Configuración Música</string>
+  <string Field="VideoMenu">Configuración Video</string>
   <string Field="SkinUpdate">Actualización del Skin</string>
-  <string Field="TVSeriesMenu">TVSeries Settings</string>
-  <string Field="MovingPicturesMenu">MovingPictures Settings</string>
-  <string Field="TVMenu">TV Settings</string>
-  <string Field="MiscMenu">Misc Settings</string>
+  <string Field="TVSeriesMenu">Configuración TVSeries</string>
+  <string Field="MovingPicturesMenu">Configuración MovingPictures</string>
+  <string Field="TVMenu">Configuración TV</string>
+  <string Field="MiscMenu">Configuración otros</string>
   <!-- Skin Updates / Patching GUI -->
   <string Field="UpdateInstall">Actualizar e Instalar</string>
-  <string Field="NoUpdatesAvailable">No hay parches disponibles por el momento</string>
+  <string Field="NoUpdatesAvailable">No hay parches disponibles</string>
   <string Field="DownloadingPatch">Descargando Parche: {0}</string>
   <string Field="DownloadingProgress">Descargado {0}KB de {1}KB ({2}%)</string>
-  <string Field="NumPatchesInstalled">Numero de parches instalados: {0}</string>
-  <string Field="PatchUpdateComplete">Actualizar la versión del Skin: {0} Completo</string>
-  <string Field="UpdateAvailableHeading">Actualización disponible - Cambios disponibles</string>
+  <string Field="NumPatchesInstalled">Número de archivos instalados: {0}</string>
+  <string Field="PatchUpdateComplete">Actualizado a la version: {0} Completo</string>
+  <string Field="UpdateAvailableHeading">Actualización disponible - Historial de Cambios</string>
   <string Field="Revision">Revisión:</string>
   <string Field="Author">Autor:</string>
   <string Field="Date">Fecha:</string>
   <string Field="Message">Mensaje:</string>
   <string Field="mupdateheader">Instalador del parche descargado al escritorio</string>
-  <string Field="mupdateline1">Actualización manual necesaria - Cierra para aplicarla</string>
+  <string Field="mupdateline1">Actualización manual necesaria - Para aplicarla cierre</string>
   <string Field="mupdateline2">MediaPortal y/o Configuración</string>
-  <string Field="mupdateline3">y ejecuta: {0}</string>
-  <string Field="mupdateline4">la cual se puede encontrar en el escritorio</string>
+  <string Field="mupdateline3">y ejecute: {0}</string>
+  <string Field="mupdateline4">que se puede encontrar en el escritorio</string>
   <!-- Plugin Options -->
-  <string Field="MinVideoOSD">Mostrar información en pantalla mínima durante la pausa</string>
-  <string Field="VideoWallpaperLabel">Video Wallpaper</string>
+  <string Field="MinVideoOSD">Usar Vídeo OSD minimalista al pausar</string>
+  <string Field="VideoWallpaperLabel">Fondo de Vídeo</string>
   <!-- Music Options -->
-  <string Field="CDCover">Mostrar sólo la portada del CD en 'Reproduciendo'</string>
-  <string Field="ShowEQ">Mostrar el ecualizador gráfico en 'Reproduciendo'</string>
-  <string Field="NowPlayingStyles">Now Playing Screen Styles</string>
+  <string Field="CDCover">Mostrar carátula CD sólo en Reproduciendo</string>
+  <string Field="ShowEQ">Mostrar Gráfica EQ en Reproduciendo</string>
+  <string Field="NowPlayingStyles">Diseño pantalla Reproduciendo</string>
   <!-- TVSeries Configuration -->
-  <string Field="FanartStyle">Fanart Style</string>
-  <string Field="WideBanners">WideBanners</string>
-  <string Field="WideBannerDefault">WideBanners: Default</string>
-  <string Field="WideBanner5x2Grid">WideBanners: 5x2 Grid with Poster</string>
-  <string Field="WideBanner5x3Grid">WideBanners: 5x3 Grid</string>
-  <string Field="WideBanner7x3Grid">WideBanners: 7x3 Grid</string>
-  <string Field="WideBanner10x4Grid">WideBanners: 10x4 Grid</string>
+  <string Field="FanartStyle">Diseño Fanart</string>
+  <string Field="WideBanners">Banners Grandes</string>
+  <string Field="WideBannerDefault">Banners Grandes: Defecto</string>
+  <string Field="WideBanner5x2Grid">Banners Grandes: Panel 5x2 con Poster</string>
+  <string Field="WideBanner5x3Grid">Banners Grandes: Panel 5x3</string>
+  <string Field="WideBanner7x3Grid">Banners Grandes: Panel 7x3</string>
+  <string Field="WideBanner10x4Grid">Banners Grandes:  10x4</string>
   <!-- MovingPictures Configuration -->
-  <string Field="Thumbnails">Thumbnails</string>
-  <string Field="ThumbnailDefault">Thumbnails: Default</string>
-  <string Field="Thumbnail_12x4_8x3_Grid">Thumbnails: 12x4 Small Icons, 8x3 Large Icons</string>
-  <string Field="Thumbnail_12x3_8x2_Grid">Thumbnails: 12x3 Small Icons, 8x2 Large Icons + Info</string>
+  <string Field="Thumbnails">Miniaturas</string>
+  <string Field="ThumbnailDefault">Miniaturas: Defecto</string>
+  <string Field="Thumbnail_12x4_8x3_Grid">Miniaturas: 12x4 Iconos Pequeños, 8x3 Iconos Grandes</string>
+  <string Field="Thumbnail_12x3_8x2_Grid">Miniaturas: 12x3 Iconos Pequeños, 8x2 Iconos Grandes + Info</string>
   <!-- TVGuide Configuration -->
-  <string Field="TVGuideSize">TV Guide Size</string>
-  <string Field="TVMiniGuideSize">TV Mini Guide Size</string>
-  <string Field="TVGuideEightRows">TV Guide: 8 Rows</string>
-  <string Field="TVGuideTenRows">TV Guide: 10 Rows</string>
-  <string Field="TVGuideTwelveRows">TV Guide: 12 Rows</string>
-  <string Field="TVMiniGuideThreeRows">TV Mini Guide: 3 Rows</string>
-  <string Field="TVMiniGuideFiveRows">TV Mini Guide: 5 Rows</string>
-  <string Field="TVMiniGuideSevenRows">TV Mini Guide: 7 Rows</string>
-  <string Field="TVMiniGuideNineRows">TV Mini Guide: 9 Rows</string>
+  <string Field="TVGuideSize">Tamaño Guía TV</string>
+  <string Field="TVMiniGuideSize">Tamaño Mini Guía TV</string>
+  <string Field="TVGuideEightRows">Guía TV: 8 Filas</string>
+  <string Field="TVGuideTenRows">Guía TV: 10 Filas</string>
+  <string Field="TVGuideTwelveRows">Guía TV: 12 Filas</string>
+  <string Field="TVMiniGuideThreeRows">Mini Guía TV: 3 Filas</string>
+  <string Field="TVMiniGuideFiveRows">Mini Guía TV: 5 Filas</string>
+  <string Field="TVMiniGuideSevenRows">Mini Guía TV: 7 Filas</string>
+  <string Field="TVMiniGuideNineRows">Mini Guía TV: 9 Filas</string>
   <!-- Misc Settings -->
-  <string Field="ShowHiddenMenuImage">Show Hidden Menu Image</string>
-  <string Field="ShowRoundedPosters">Show Rounded Poster Images</string>
-  <string Field="ShowIconsInArtwork">Show Watched/UnWatched Icons In Artwork</string>
+  <string Field="ShowHiddenMenuImage">Mostrar imagen de menú oculto</string>
+  <string Field="ShowRoundedPosters">Mostrar imágenes de posters redondeados</string>
+  <string Field="ShowIconsInArtwork">Mostrar Iconos Visto/No Visto en Ilustraciones</string>
   <!-- General Translations -->
-  <string Field="Rated">Rated</string>
+  <string Field="Rated">Valorado</string>
   <string Field="Director">Director</string>
-  <string Field="ReleaseDate">Release Date</string>
-  <string Field="Runtime">Runtime</string>
-  <!-- Global Search -->
-  <string Field="SearchMusic">Search Music</string>
-  <string Field="SearchPhrase">Search Phrase</string>
-  <string Field="SearchHistory">Search History</string>
-  <string Field="SearchFields">Search Fields</string>
-  <string Field="SearchType">Search Type</string>
-  <string Field="CaseSensitive">Case Sensitive</string>
-  <!-- Recently Added -->
-  <string Field="LatestEpisodes">Latest Episodes</string>
-  <string Field="LatestMovies">Latest Movies</string>
+  <string Field="ReleaseDate">Fecha de lanzamiento</string>
+  <string Field="Runtime">Duración</string>
 </strings>
