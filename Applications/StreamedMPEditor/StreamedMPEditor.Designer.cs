@@ -225,7 +225,7 @@
       this.infoSkinpath = new System.Windows.Forms.Label();
       this.infoSkinName = new System.Windows.Forms.Label();
       this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-      this.generateMenu = new System.Windows.Forms.Button();
+      this.btGenerateMenu = new System.Windows.Forms.Button();
       this.btnClearCache = new System.Windows.Forms.Button();
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
@@ -2484,16 +2484,16 @@
       this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
       this.imageList1.Images.SetKeyName(0, "help.png");
       // 
-      // generateMenu
+      // btGenerateMenu
       // 
-      this.generateMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.generateMenu.Location = new System.Drawing.Point(14, 27);
-      this.generateMenu.Name = "generateMenu";
-      this.generateMenu.Size = new System.Drawing.Size(217, 48);
-      this.generateMenu.TabIndex = 1;
-      this.generateMenu.Text = "Generate Menu";
-      this.generateMenu.UseVisualStyleBackColor = true;
-      this.generateMenu.Click += new System.EventHandler(this.generateMenu_Click);
+      this.btGenerateMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btGenerateMenu.Location = new System.Drawing.Point(14, 27);
+      this.btGenerateMenu.Name = "btGenerateMenu";
+      this.btGenerateMenu.Size = new System.Drawing.Size(217, 48);
+      this.btGenerateMenu.TabIndex = 1;
+      this.btGenerateMenu.Text = "Generate Menu";
+      this.btGenerateMenu.UseVisualStyleBackColor = true;
+      this.btGenerateMenu.Click += new System.EventHandler(this.generateMenu_Click);
       // 
       // btnClearCache
       // 
@@ -2614,7 +2614,7 @@
       this.groupBox5.Controls.Add(this.lbActiveSplashScreen);
       this.groupBox5.Controls.Add(this.pbActiveSplashScreen);
       this.groupBox5.Controls.Add(this.cboClearCache);
-      this.groupBox5.Controls.Add(this.generateMenu);
+      this.groupBox5.Controls.Add(this.btGenerateMenu);
       this.groupBox5.Controls.Add(this.btnClearCache);
       this.groupBox5.Location = new System.Drawing.Point(8, 18);
       this.groupBox5.Name = "groupBox5";
@@ -2758,7 +2758,7 @@
 
     private System.Windows.Forms.TabControl StreamedMPMenu;
     private System.Windows.Forms.TabPage basicHomeDesign;
-    private System.Windows.Forms.Button generateMenu;
+    private System.Windows.Forms.Button btGenerateMenu;
     private System.Windows.Forms.Button btnClearCache;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.Label infoConfigpath;

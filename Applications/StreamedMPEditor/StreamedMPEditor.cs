@@ -362,6 +362,7 @@ namespace StreamedMPEditor
         setScreenProperties(itemsOnMenubar.SelectedIndex);
         disableItemControls();
         cancelCreateButton.Visible = false;
+        btGenerateMenu.Enabled = true;
         editButton.Enabled = true;
 
 
@@ -425,6 +426,7 @@ namespace StreamedMPEditor
         LoadPrettyItems();
         disableItemControls();
         cancelCreateButton.Visible = false;
+        btGenerateMenu.Enabled = true;
         return true;
       }
       else
@@ -572,7 +574,7 @@ namespace StreamedMPEditor
         bgBox.Text = "";
 
         if (itemsOnMenubar.Items.Count > 2)
-          generateMenu.Enabled = true;
+          btGenerateMenu.Enabled = true;
         xmlFiles.SelectedIndex = -1;
       }
       else
@@ -584,6 +586,7 @@ namespace StreamedMPEditor
 
     void editButton_Click(object sender, EventArgs e)
     {
+      btGenerateMenu.Enabled = false;
       if (itemsOnMenubar.SelectedIndex == -1)
       {
         showError("No menu item selected\n\nPlease select item above to edit", errorCode.info);
@@ -616,6 +619,7 @@ namespace StreamedMPEditor
       enableItemControls();
       addButton.Enabled = false;
       cancelCreateButton.Visible = false;
+      btGenerateMenu.Enabled = true;
     }
 
 
@@ -660,6 +664,7 @@ namespace StreamedMPEditor
         screenReset();
         disableItemControls();
         cancelCreateButton.Visible = false;
+        btGenerateMenu.Enabled = true;
       }
     }
 
@@ -703,6 +708,7 @@ namespace StreamedMPEditor
       screenReset();
       setScreenProperties(itemsOnMenubar.SelectedIndex);
       disableItemControls();
+      btGenerateMenu.Enabled = true;
     }
 
     void setScreenProperties(int index)
@@ -749,6 +755,7 @@ namespace StreamedMPEditor
       enableItemControls();
       editButton.Enabled = false;
       cancelCreateButton.Visible = true;
+      btGenerateMenu.Enabled = false;
     }
 
 
