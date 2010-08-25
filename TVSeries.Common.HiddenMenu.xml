@@ -71,8 +71,8 @@
       </control>
       <control>
         <id>0</id>
-        <description>JUMP TO</description>
-        <label>1065</label>
+        <description>SETTINGS</description>
+        <label>1048</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
@@ -83,8 +83,8 @@
       </control>
       <control>
         <id>0</id>
-        <description>SETTINGS</description>
-        <label>1048</label>
+        <description>JUMP TO</description>
+        <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
@@ -164,8 +164,31 @@
           <visible>false</visible>
         </control>
         <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>66608</id>
+          <label>100006</label>
+          <hyperlink>703</hyperlink>
+          <onleft>50</onleft>          
+        </control>
+        <control>
+          <description>Skin Settings</description>
+          <type>button</type>
+          <id>66609</id>
+          <label>#StreamedMP.SkinSettings</label>
+          <hyperlink>196205</hyperlink>
+          <onleft>50</onleft>          
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+				<control>
           <description>MovingPictures</description>
-          <id>66606</id>
+          <id>66610</id>
           <type>button</type>
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
@@ -174,37 +197,23 @@
         <control>
           <description>My Videos</description>
           <type>button</type>
-          <id>66607</id>
+          <id>66611</id>
           <label>100006</label>
           <onleft>50</onleft>
-          <hyperlink>6</hyperlink>
+          <hyperlink>6</hyperlink>					
         </control>
-        <control>
-          <description>Empty button</description>
+				<control>
+          <description>SubCentral</description>
           <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>        
-        <control>
-          <description>Video Settings</description>
-          <type>button</type>
-          <id>66608</id>
-          <label>100006</label>
-          <hyperlink>703</hyperlink>
-          <onleft>50</onleft>
-          <ondown>66609</ondown>
-        </control>
-        <control>
-          <description>Skin Settings</description>
-          <type>button</type>
-          <id>66609</id>
-          <label>#StreamedMP.SkinSettings</label>
-          <hyperlink>196205</hyperlink>
-          <onleft>50</onleft>
+          <id>66612</id>
+          <label>287</label>
+          <hyperlink>84623</hyperlink>          
           <ondown>2</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(SubCentral)</visible>
         </control>
       </control>
     </control>
   </controls>
 </window>
+<!--Checksum:4eb7a44a2988c382996f35e01d57472f-->
