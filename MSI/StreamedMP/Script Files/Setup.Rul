@@ -95,10 +95,10 @@
 
 #define TVSERIES_MIN_VERSION				"2.6.0.1157"
 #define MOVINGPICTURES_MIN_VERSION			"1.0.6.1116"
-#define FANARTHANDLER_MIN_VERSION			"2.0.3789.22123"
+#define FANARTHANDLER_MIN_VERSION			"2.1.1.13899"
 #define MYLYRICS_MIN_VERSION				"1.5.1.0"
 #define GLOBALSEARCH_MIN_VERSION			"1.7.0.0"
-#define INFOSERVICE_MIN_VERSION				"1.5.0.65"
+#define INFOSERVICE_MIN_VERSION				"1.6.0.136"
 #define TRAILERS_MIN_VERSION				"2.0.6.49"
 
 #define BASICHOME_SUPPORTS_UPGRADE			1133  // version that allows upgrade of basichome
@@ -485,7 +485,7 @@ begin
 		svValue = "0";
 	endif;
 	if svValue = "1" then
-		g_bShowHiddenMenuImage = TRUE;
+		g_bEnableRandomFanartInMyTV = TRUE;
 	endif; 
 
 	// Read NowPlaying Style default
@@ -1601,7 +1601,13 @@ Dlg_Wait:
 		g_bShowArtworkIcons = TRUE;
 	else
 		g_bShowArtworkIcons = FALSE;
-	endif;	
+	endif;	 
+	
+	if CtrlGetState(szDialogName,RES_CHECK_SHOWHIDDENMENUIMAGE) = BUTTON_CHECKED then
+		g_bShowHiddenMenuImage = TRUE;
+	else
+		g_bShowHiddenMenuImage = FALSE;
+	endif;
 		
 	// Set Features 
 	
