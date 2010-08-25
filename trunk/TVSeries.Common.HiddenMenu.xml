@@ -169,7 +169,7 @@
           <id>66608</id>
           <label>100006</label>
           <hyperlink>703</hyperlink>
-          <onleft>50</onleft>          
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Skin Settings</description>
@@ -177,7 +177,7 @@
           <id>66609</id>
           <label>#StreamedMP.SkinSettings</label>
           <hyperlink>196205</hyperlink>
-          <onleft>50</onleft>          
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -186,7 +186,7 @@
           <label>-</label>
           <visible>false</visible>
         </control>
-				<control>
+        <control>
           <description>MovingPictures</description>
           <id>66610</id>
           <type>button</type>
@@ -200,20 +200,21 @@
           <id>66611</id>
           <label>100006</label>
           <onleft>50</onleft>
-          <hyperlink>6</hyperlink>					
+          <hyperlink>6</hyperlink>
+					<ondown>66612</ondown>
         </control>
-				<control>
+        <control>
           <description>SubCentral</description>
           <type>button</type>
           <id>66612</id>
           <label>287</label>
-          <hyperlink>84623</hyperlink>          
+          <hyperlink>84623</hyperlink>
           <ondown>2</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(SubCentral)</visible>
+          <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
         </control>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:4eb7a44a2988c382996f35e01d57472f-->
+<!--Checksum:9976559bbfcd070ce41c5b2586258128-->
