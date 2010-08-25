@@ -1792,16 +1792,28 @@
                     "<posX>995</posX>\n" +
                     "<posY>262</posY>\n" +
                     "<width>257</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie1.runtime</label>\n" +
                     "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
+                  "</control>" +
+                  "<control>\n" +
+                    "<description>Movie 1</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1180</posX>\n" +
+                    "<posY>262</posY>\n" +
+                    "<width>257</width>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie1.certification</label>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<align>right</align>" +
                   "</control>" +
                   "<control>" +
                     "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1190</posX>" +
-                    "<posY>262</posY>" +
+                    "<posY>265</posY>" +
                     "<width>70</width>" +
                     "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
@@ -1849,16 +1861,28 @@
                     "<posX>995</posX>\n" +
                     "<posY>297</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie2.runtime #StreamedMP.recentlyAdded.movie2.certification</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>\n" +
                     "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Movie 2 title</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1180</posX>\n" +
+                    "<posY>297</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie2.certification</label>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<align>right</align>" +
                   "</control>\n" +
                   "<control>" +
                     "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1190</posX>" +
-                    "<posY>297</posY>" +
+                    "<posY>301</posY>" +
                     "<width>70</width>" +
                     "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
@@ -1894,16 +1918,28 @@
                     "<posX>995</posX>\n" +
                     "<posY>332</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>\n" +
                     "<font>" + mrMovieDetailFont + "</font>" +
                     "<textcolor>White</textcolor>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Movie 3 Additional</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>1180</posX>\n" +
+                    "<posY>332</posY>\n" +
+                    "<width>255</width>\n" +
+                    "<label>#StreamedMP.recentlyAdded.movie3.certification</label>\n" +
+                    "<font>" + mrMovieDetailFont + "</font>" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<align>right</align>" +
                   "</control>\n" +
                   "<control>" +
                     "<description>Movie 3 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1190</posX>" +
-                    "<posY>332</posY>" +
+                    "<posY>335</posY>" +
                     "<width>70</width>" +
                     "<height>13</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
