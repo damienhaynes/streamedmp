@@ -587,7 +587,6 @@ namespace StreamedMPEditor
 
     void editButton_Click(object sender, EventArgs e)
     {
-      btGenerateMenu.Enabled = false;
       if (itemsOnMenubar.SelectedIndex == -1)
       {
         showError("No menu item selected\n\nPlease select item above to edit", errorCode.info);
@@ -595,6 +594,8 @@ namespace StreamedMPEditor
       }
       int index = itemsOnMenubar.SelectedIndex;
       menuItem mnuItem = menuItems[index];
+
+      btGenerateMenu.Enabled = false;
       setXMLFilesIndex(mnuItem.hyperlink);
       itemName.Text = mnuItem.name;
       cboContextLabel.Text = mnuItem.contextLabel;
@@ -620,7 +621,6 @@ namespace StreamedMPEditor
       enableItemControls();
       addButton.Enabled = false;
       cancelCreateButton.Visible = false;
-      btGenerateMenu.Enabled = true;
     }
 
 
