@@ -15,7 +15,7 @@ namespace StreamedMPEditor
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new streamedMpEditor());
+      Application.Run(new formStreamedMpEditor());
     }
   }
 }

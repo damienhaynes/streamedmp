@@ -5,7 +5,7 @@ using System.IO;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     public void loadMenuSettings()
     {

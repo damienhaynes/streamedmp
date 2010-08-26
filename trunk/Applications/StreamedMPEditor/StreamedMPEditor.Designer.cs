@@ -1,6 +1,6 @@
 ﻿namespace StreamedMPEditor
 {
-  partial class streamedMpEditor
+  partial class formStreamedMpEditor
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,7 @@
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(streamedMpEditor));
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formStreamedMpEditor));
       this.StreamedMPMenu = new System.Windows.Forms.TabControl();
       this.menuStyleTab = new System.Windows.Forms.TabPage();
       this.menuStylesGroup = new System.Windows.Forms.GroupBox();
@@ -2493,7 +2493,7 @@
       this.btGenerateMenu.TabIndex = 1;
       this.btGenerateMenu.Text = "Generate Menu";
       this.btGenerateMenu.UseVisualStyleBackColor = true;
-      this.btGenerateMenu.Click += new System.EventHandler(this.generateMenu_Click);
+      this.btGenerateMenu.Click += new System.EventHandler(this.btGenerateMenu_Click);
       // 
       // btnClearCache
       // 
@@ -2642,7 +2642,7 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // streamedMpEditor
+      // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2653,7 +2653,7 @@
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.MaximumSize = new System.Drawing.Size(800, 650);
       this.MinimumSize = new System.Drawing.Size(800, 650);
-      this.Name = "streamedMpEditor";
+      this.Name = "formStreamedMpEditor";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "StreamedMP Menu Editor";
       this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.streamedMpEditor_FormClosing);

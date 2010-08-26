@@ -15,7 +15,7 @@ using System.Security.Cryptography;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     // Image handling declares
     List<string> fileResults = new List<string>();

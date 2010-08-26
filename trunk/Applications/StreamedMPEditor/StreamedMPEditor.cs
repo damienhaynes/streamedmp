@@ -13,7 +13,7 @@ using SMPCheckSum;
 namespace StreamedMPEditor
 {
   [PluginIcons("StreamedMPEditor.Resources.SMPEditor.png", "StreamedMPEditor.Resources.SMPEditorDisabled.png")]
-  public partial class streamedMpEditor : Form, ISetupForm
+  public partial class formStreamedMpEditor : Form, ISetupForm
   {
     #region enums
 
@@ -203,7 +203,7 @@ namespace StreamedMPEditor
 
     #region Public methods
 
-    public streamedMpEditor()
+    public formStreamedMpEditor()
     {
       InitializeComponent();
 
@@ -859,54 +859,97 @@ namespace StreamedMPEditor
     }
 
 
-    void generateMenu_Click(object sender, EventArgs e)
+    void btGenerateMenu_Click(object sender, EventArgs e)
     {
-      genMenu(false);
-      changeOutstanding = false;
-    }
-
-    void genMenu(bool onFormClosing)
-    {
-      validateMenuOffset();
       if (itemsOnMenubar.CheckedItems.Count > 1 || itemsOnMenubar.CheckedItems.Count == 0)
       {
         if (itemsOnMenubar.CheckedItems.Count == 0) showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
         if (itemsOnMenubar.CheckedItems.Count > 1) showError("          More than one default item set\n\nOnly one item can be set as the default menu.", errorCode.info);
       }
       else
+        genMenu(false);
+
+      changeOutstanding = false;
+    }
+
+    void genMenu(bool onFormClosing)
+    {
+      validateMenuOffset();
+      foreach (menuItem item in menuItems)
       {
-        foreach (menuItem item in menuItems)
+        item.id = 1000 + menuItems.IndexOf(item);
+        if (item.name == itemsOnMenubar.CheckedItems[0].ToString())
         {
-          item.id = 1000 + menuItems.IndexOf(item);
-          if (item.name == itemsOnMenubar.CheckedItems[0].ToString())
-          {
-            item.isDefault = true;
-            basicHomeValues.defaultId = menuItems.IndexOf(item);
-          }
-          else
-          {
-            item.isDefault = false;
-          }
-          if (!infoserviceOptions.Enabled || !weatherBGlink.Checked)
-            if (item.bgFolder == null && item.fanartProperty == null)
-            {
-              showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
-              return;
-            }
-        }
-        setBasicHomeValues();
-        if (menuStyle == chosenMenuStyle.verticalStyle)
-        {
-          writeMenu(menuType.vertical, onFormClosing);
+          item.isDefault = true;
+          basicHomeValues.defaultId = menuItems.IndexOf(item);
         }
         else
         {
-          writeMenu(menuType.horizontal,onFormClosing);
+          item.isDefault = false;
         }
+        if (!infoserviceOptions.Enabled || !weatherBGlink.Checked)
+          if (item.bgFolder == null && item.fanartProperty == null)
+          {
+            showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
+            return;
+          }
+      }
+      setBasicHomeValues();
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+      {
+        writeMenu(menuType.vertical, onFormClosing);
+      }
+      else
+      {
+        writeMenu(menuType.horizontal, onFormClosing);
       }
       if (cboClearCache.Checked)
         clearCacheDir();
     }
+
+
+    // This function call will regenerate the menu from the currenly saved usermenuprofile.xml
+    // it assums that this file is correct.....
+    public void reGenterateMenu()
+    {
+      this.WindowState = FormWindowState.Minimized;
+      GetMediaPortalSkinPath();
+      readFonts();
+      getBackupFileTotals();
+      loadMenuSettings();
+      setBasicHomeValues();
+      foreach (menuItem item in menuItems)
+      {
+        item.id = 1000 + menuItems.IndexOf(item);
+        if (item.name == itemsOnMenubar.CheckedItems[0].ToString())
+        {
+          item.isDefault = true;
+          basicHomeValues.defaultId = menuItems.IndexOf(item);
+        }
+        else
+        {
+          item.isDefault = false;
+        }
+        if (!infoserviceOptions.Enabled || !weatherBGlink.Checked)
+          if (item.bgFolder == null && item.fanartProperty == null)
+          {
+            showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
+            return;
+          }
+      }
+      if (menuStyle == chosenMenuStyle.verticalStyle)
+      {
+        writeMenu(menuType.vertical, true);
+      }
+      else
+      {
+        writeMenu(menuType.horizontal, true);
+      }
+      if (cboClearCache.Checked)
+        clearCacheDir();
+      Application.Exit();
+    }
+
 
     void writeMenu(menuType direction, bool onFormClosing)
     {
@@ -1077,7 +1120,7 @@ namespace StreamedMPEditor
     /// </summary>
     public void ShowPlugin()
     {
-      streamedMpEditor startEditor = new streamedMpEditor();
+      formStreamedMpEditor startEditor = new formStreamedMpEditor();
       startEditor.ShowDialog();
     }
 

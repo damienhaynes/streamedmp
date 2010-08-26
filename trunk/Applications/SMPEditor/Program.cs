@@ -15,7 +15,7 @@ namespace SMPEditor
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      streamedMpEditor appStart = new streamedMpEditor();
+      formStreamedMpEditor appStart = new formStreamedMpEditor();
       appStart.ShowPlugin();
     }
   }

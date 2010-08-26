@@ -18,7 +18,7 @@ using ICSharpCode.SharpZipLib.Zip;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     string[] fileList = null;
     int imagePos = 0;

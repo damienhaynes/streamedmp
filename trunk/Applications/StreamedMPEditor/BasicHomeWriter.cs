@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     #region Main Generation Function
 
