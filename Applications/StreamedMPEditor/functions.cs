@@ -12,7 +12,7 @@ using MediaPortal.Configuration;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     private void GetMediaPortalSkinPath()
     {

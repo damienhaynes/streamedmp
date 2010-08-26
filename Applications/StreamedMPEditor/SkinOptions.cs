@@ -18,7 +18,7 @@ using ICSharpCode.SharpZipLib.Zip;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
 
     private void useSkinWeatherIcons_Click(object sender, EventArgs e)

@@ -3,7 +3,7 @@ using System.IO;
 
 namespace StreamedMPEditor
 {
-  public partial class streamedMpEditor
+  public partial class formStreamedMpEditor
   {
     private void generateOverlay(int baseYpos, int weatherId)
     {
