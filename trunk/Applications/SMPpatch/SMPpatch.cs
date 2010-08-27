@@ -13,6 +13,7 @@ using System.Xml;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Threading;
 using SMPCheckSum;
+using StreamedMPEditor;
 
 
 namespace SMPpatch
@@ -164,6 +165,12 @@ namespace SMPpatch
           installThePatches();
           splash.statusTextLine1 = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
           splash.Refresh();
+          if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath,"BasicHome.xml")))
+          {
+            formStreamedMpEditor smpEditor = new formStreamedMpEditor();
+            smpEditor.reGenterateMenu();
+          }
+
         }
         else
         {
