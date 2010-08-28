@@ -167,10 +167,11 @@ namespace SMPpatch
           splash.Refresh();
           if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath,"BasicHome.xml")))
           {
-            formStreamedMpEditor smpEditor = new formStreamedMpEditor();
-            smpEditor.reGenterateMenu();
+            ProcessStartInfo regenBasicHome = new ProcessStartInfo(Path.Combine(SkinInfo.mpPaths.sMPbaseDir,"SMPEditor.exe"));
+            regenBasicHome.WorkingDirectory = Path.GetDirectoryName(SkinInfo.mpPaths.sMPbaseDir);
+            regenBasicHome.Arguments += "/regenerateonly";
+            System.Diagnostics.Process.Start(regenBasicHome);
           }
-
         }
         else
         {
