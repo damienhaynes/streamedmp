@@ -183,7 +183,7 @@
       // patchFileVersion
       // 
       this.patchFileVersion.Text = "Version";
-      this.patchFileVersion.Width = 100;
+      this.patchFileVersion.Width = 80;
       // 
       // thePatches
       // 
