@@ -161,7 +161,7 @@ namespace StreamedMPConfig
                 fz.ExtractZip(optionDownloadPath, destinationPath, "");
                 System.IO.File.Delete(optionDownloadPath);
                 StreamedMPConfig.manualInstallNeeded = false;
-                StreamedMPConfig.udateAvailable = false;
+                StreamedMPConfig.updateAvailable = false;
                 // Now check what we have and copy to the right places.....
                 StreamedMPConfig.checkAndCopy(destinationPath);
                 Directory.Delete(destinationPath, true);
@@ -286,7 +286,7 @@ namespace StreamedMPConfig
           dlgDone.DoModal(GUIWindowManager.ActiveWindow);
         }
         GUIWindowManager.ShowPreviousWindow();
-        StreamedMPConfig.udateAvailable = false;
+        StreamedMPConfig.updateAvailable = false;
       }
     }
 
