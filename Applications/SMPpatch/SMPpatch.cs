@@ -191,9 +191,13 @@ namespace SMPpatch
 
     void regenerateBasicHome()
     {
-      if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml")))
+      // only regenerate basichome if user hasn't modified it
+      // also check if editor exists, as its optional
+      string editorFilename = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPEditor.exe");
+
+      if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml")) && File.Exists(editorFilename))
       {
-        ProcessStartInfo regenBasicHome = new ProcessStartInfo(Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPEditor.exe"));
+        ProcessStartInfo regenBasicHome = new ProcessStartInfo(editorFilename);
         regenBasicHome.WorkingDirectory = Path.GetDirectoryName(SkinInfo.mpPaths.sMPbaseDir);
         regenBasicHome.Arguments += "/regenerateonly";
         System.Diagnostics.Process.Start(regenBasicHome);
