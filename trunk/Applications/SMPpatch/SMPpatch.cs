@@ -501,17 +501,22 @@ namespace SMPpatch
           // we only want to do checksum compares on streamedmp specific skin files
           if (Path.GetExtension(Element).ToLower() == ".xml" && patchDestination.StartsWith(SkinInfo.mpPaths.streamedMPpath))
           {
+            string destFilename = Path.Combine(patchDestination, Path.GetFileName(Element));
+            
             // check if file exists and is a skin file
             try
             {
-              if (checkSum.Compare(patchDestination + Path.GetFileName(Element)))
-                File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+              if (checkSum.Compare(destFilename))
+                File.Copy(Element, destFilename, true);
             }
             catch (FileNotFoundException)
             {
               // most likely a new file, copy anyway
-              File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+              File.Copy(Element, destFilename, true);
             }
+            
+            // replace checksum so we can patch next time
+            checkSum.Replace(destFilename);
           }
           else
             File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
