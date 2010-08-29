@@ -139,7 +139,7 @@ namespace SMPpatch
         processess = null;
       }
 
-      // Create the temp directory to stroe the extracted patches
+      // Create the temp directory to store the extracted patches
       Directory.CreateDirectory(tempExtractPath);
       readPatchControl();
       if (skInfo.skinVersion.CompareTo(minSMPVersion) < 0)
@@ -164,13 +164,6 @@ namespace SMPpatch
           installThePatches();
           splash.statusTextLine1 = "StreamedMP Sucessfully Updated to Version : " + skInfo.skinVersion.ToString();
           splash.Refresh();
-          if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath,"BasicHome.xml")))
-          {
-            ProcessStartInfo regenBasicHome = new ProcessStartInfo(Path.Combine(SkinInfo.mpPaths.sMPbaseDir,"SMPEditor.exe"));
-            regenBasicHome.WorkingDirectory = Path.GetDirectoryName(SkinInfo.mpPaths.sMPbaseDir);
-            regenBasicHome.Arguments += "/regenerateonly";
-            System.Diagnostics.Process.Start(regenBasicHome);
-          }
         }
         else
         {
@@ -193,6 +186,17 @@ namespace SMPpatch
           Thread.Sleep(1000);
         }
         exitAndCleanup();
+      }
+    }
+
+    void regenerateBasicHome()
+    {
+      if (checkSum.Compare(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml")))
+      {
+        ProcessStartInfo regenBasicHome = new ProcessStartInfo(Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPEditor.exe"));
+        regenBasicHome.WorkingDirectory = Path.GetDirectoryName(SkinInfo.mpPaths.sMPbaseDir);
+        regenBasicHome.Arguments += "/regenerateonly";
+        System.Diagnostics.Process.Start(regenBasicHome);
       }
     }
 
@@ -412,6 +416,7 @@ namespace SMPpatch
           i++;
         }
         btInstallPatch.Enabled = false;
+        regenerateBasicHome();
         clearCacheDir();
       }
     }
