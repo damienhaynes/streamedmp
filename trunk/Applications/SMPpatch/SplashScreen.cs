@@ -38,14 +38,13 @@ namespace SMPpatch
       lbStatus2.Parent = pbSplashScreen;
       lbStatus2.BackColor = Color.Transparent;
 
-
       if (skInfo.startFullScreen)
       {
         setXYPos(skInfo.startFullScreen);
         // MP Set to start fullscreen - fullscreen splash
         this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
-        this.Location = new Point(0, 0);
-        pbSplashScreen.Size = new Size(Screen.PrimaryScreen.Bounds.Width + 1, Screen.PrimaryScreen.Bounds.Height + 1);
+        this.Location = new Point(0, -1);
+        pbSplashScreen.Size = new Size(Screen.PrimaryScreen.Bounds.Width + 2, Screen.PrimaryScreen.Bounds.Height + 2);
       }
       else
       {
