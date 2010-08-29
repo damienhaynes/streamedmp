@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>602</id>
   <defaultcontrol>13</defaultcontrol>
@@ -89,7 +89,6 @@
       <font>mediastream10</font>
       <textcolor>ff888888</textcolor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-
     </control>
     <control>
       <description>Channel Name</description>
@@ -102,7 +101,6 @@
       <font>mediastream16tc</font>
       <label>#TV.View.channel</label>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-
     </control>
     <control>
       <description>On tv NOW</description>
@@ -116,7 +114,6 @@
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-
     </control>
     <control>
       <description>Plot</description>
@@ -169,7 +166,6 @@
       <righttexture>-</righttexture>
       <label>#TV.Record.percent1</label>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-
     </control>
     <control>
       <description>TV Progress Bar</description>
@@ -215,7 +211,6 @@
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-
     </control>
     <control>
       <description>End Time Info</description>
@@ -231,7 +226,6 @@
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-
     </control>
     <control>
       <description>pause image</description>
@@ -243,7 +237,6 @@
       <height>60</height>
       <texture>-</texture>
       <visible>no</visible>
-
     </control>
     <control>
       <description>MSGBox</description>
@@ -324,3 +317,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
+<!--Checksum:227828c489498444f6af10cf326471e3-->

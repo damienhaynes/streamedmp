@@ -14,7 +14,7 @@ This file should contain the thumbs view
       <height>422</height>
       <texture>#MovingPictures.Coverart</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Cover Art Glass Overlay</description>
@@ -26,7 +26,7 @@ This file should contain the thumbs view
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon Background</description>
@@ -38,7 +38,7 @@ This file should contain the thumbs view
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon</description>
@@ -50,7 +50,7 @@ This file should contain the thumbs view
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Un-Watched Icon</description>
@@ -62,7 +62,7 @@ This file should contain the thumbs view
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title</description>
@@ -75,7 +75,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -91,7 +91,7 @@ This file should contain the thumbs view
       <scrollStartDelaySec>10</scrollStartDelaySec>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Details Label</description>
@@ -107,7 +107,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -120,7 +120,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -133,7 +133,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -146,7 +146,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -159,7 +159,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Star Rating Label</description>
@@ -175,7 +175,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -187,7 +187,7 @@ This file should contain the thumbs view
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -200,7 +200,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Director Label</description>
@@ -216,7 +216,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -230,7 +230,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Writer Label</description>
@@ -246,7 +246,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -260,7 +260,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Actors Label</description>
@@ -276,7 +276,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -291,8 +291,8 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:672036e7ff6f33a8ec1b2d78dddce068-->
+<!--Checksum:ea607990fa8d32e5c499415f7691cecb-->

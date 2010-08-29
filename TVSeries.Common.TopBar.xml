@@ -1,97 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>		
-		<control>
-            <description>Top Title Extension Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>381</posX>
-            <posY>11</posY>
-            <width>386</width>
-            <height>35</height>
-            <texture>tvtitlebgshort.png</texture>
-            <visible>true</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-        <control>
-            <description>Current View/Category Label</description>
-            <type>fadelabel</type>
-            <label>#TVSeries.SimpleCurrentView</label>
-            <id>0</id>
-            <posX>739</posX>
-            <posY>14</posY>
-            <width>220</width>
-            <align>right</align>
-            <font>mediastream12c</font>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-            <visible>control.isvisible(1240)|control.isvisible(1237)</visible>
-            <wrapString> |  </wrapString>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-        <control>
-            <description>Current Season Number</description>
-            <type>label</type>
-            <id>0</id>
-            <posX>739</posX>
-            <posY>14</posY>
-            <width>220</width>
-            <font>mediastream12c</font>
-            <label>#TVSeries.Season.SeasonLabel</label>
-            <align>right</align>
-            <visible>control.isvisible(1238)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-		<control>
-            <description>Current Season Number</description>
-            <type>label</type>
-            <id>0</id>
-            <posX>739</posX>
-            <posY>14</posY>
-            <width>220</width>
-            <font>mediastream12c</font>
-            <label>#TVSeries.Episode.SeasonLabel</label>
-            <align>right</align>
-            <visible>control.isvisible(1239)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-
-        <control>
-            <description>Title Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>77</posX>
-            <posY>11</posY>
-            <width>437</width>
-            <height>35</height>
-            <texture>tvtitlebg.png</texture>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-        <control>
-            <description>MP-TVSeries Plugin Name</description>
-            <type>fadelabel</type>
-            <id>0</id>
-            <posX>493</posX>
-            <posY>14</posY>
-            <width>350</width>
-            <font>mediastream12c</font>
-            <label>#currentmodule</label>
-            <align>right</align>
-            <visible>!control.isvisible(1238)+!control.isvisible(1239)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-        <control>
-            <description>Series Name</description>
-            <type>fadelabel</type>
-            <id>0</id>
-            <posX>493</posX>
-            <posY>14</posY>
-            <width>350</width>
-            <font>mediastream12c</font>
-            <label>#TVSeries.Series.Pretty_Name</label>
-            <align>right</align>
-            <wrapString> |  </wrapString>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-            <visible>control.isvisible(1238)|control.isvisible(1239)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-	</controls>
+  <controls>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>386</width>
+      <height>35</height>
+      <texture>tvtitlebgshort.png</texture>
+      <visible>true</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current View/Category Label</description>
+      <type>fadelabel</type>
+      <label>#TVSeries.SimpleCurrentView</label>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>14</posY>
+      <width>220</width>
+      <align>right</align>
+      <font>mediastream12c</font>
+      <scrollStartDelaySec>30</scrollStartDelaySec>
+      <visible>control.isvisible(1240)|control.isvisible(1237)</visible>
+      <wrapString> |  </wrapString>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current Season Number</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>14</posY>
+      <width>220</width>
+      <font>mediastream12c</font>
+      <label>#TVSeries.Season.SeasonLabel</label>
+      <align>right</align>
+      <visible>control.isvisible(1238)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current Season Number</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>14</posY>
+      <width>220</width>
+      <font>mediastream12c</font>
+      <label>#TVSeries.Episode.SeasonLabel</label>
+      <align>right</align>
+      <visible>control.isvisible(1239)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>MP-TVSeries Plugin Name</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>14</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <label>#currentmodule</label>
+      <align>right</align>
+      <visible>!control.isvisible(1238)+!control.isvisible(1239)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Name</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>14</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <label>#TVSeries.Series.Pretty_Name</label>
+      <align>right</align>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>30</scrollStartDelaySec>
+      <visible>control.isvisible(1238)|control.isvisible(1239)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:51e0d47d834e8655eb581f67eef281e8-->

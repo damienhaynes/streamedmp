@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>4</id>
   <defaultcontrol>3</defaultcontrol>
@@ -7,7 +7,6 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:#highlightedbutton</define>
   <controls>
-    
     <control>
       <type>image</type>
       <description>BG</description>
@@ -15,7 +14,6 @@
       <width>1280</width>
       <height>720</height>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -25,7 +23,6 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -36,7 +33,6 @@
       <texture>homebladesub.png</texture>
       <animation effect="slide" time="200" start="-434,0">windowopen</animation>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -47,7 +43,6 @@
       <texture>homebladeleft.png</texture>
       <animation effect="slide" time="100" start="-846,0">windowopen</animation>
     </control>
-    
     <control>
       <description>right overlay</description>
       <type>image</type>
@@ -59,7 +54,6 @@
       <texture>homerightoverlay.png</texture>
       <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -70,7 +64,6 @@
       <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -80,7 +73,6 @@
       <width>211</width>
       <height>379</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsbutton">
         <description>Wizard</description>
         <type>button</type>
@@ -89,7 +81,6 @@
         <hyperlink>615</hyperlink>
         <onup>17</onup>
       </control>
-      
       <control Style="settingsbutton">
         <description>General</description>
         <type>button</type>
@@ -97,7 +88,6 @@
         <label>128</label>
         <hyperlink>705</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>Screen</description>
         <type>button</type>
@@ -105,7 +95,6 @@
         <label>6023</label>
         <hyperlink>9</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>TV</description>
         <type>button</type>
@@ -113,7 +102,6 @@
         <label>605</label>
         <hyperlink>700</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>My Pictures</description>
         <type>button</type>
@@ -121,7 +109,6 @@
         <label>1</label>
         <hyperlink>12</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>Movies</description>
         <type>button</type>
@@ -129,7 +116,6 @@
         <label>3</label>
         <hyperlink>703</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>My DVD</description>
         <type>button</type>
@@ -137,25 +123,21 @@
         <label>1027</label>
         <hyperlink>704</hyperlink>
       </control>
-            
       <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
         <id>6</id>
         <label>2</label>
-        <hyperlink>14</hyperlink>        
+        <hyperlink>14</hyperlink>
       </control>
-      
       <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
         <type>button</type>
         <id>12</id>
         <label>Skin</label>
-        <hyperlink>196200</hyperlink>        
-      </control>	 
-              
-	  <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
-	  
+        <hyperlink>196200</hyperlink>
+      </control>
+      <!-- last item needs an ondown with a value of 99 to navigate to overlay -->
       <control Style="settingsbutton">
         <description>Intelligent Frame Correction</description>
         <type>button</type>
@@ -164,17 +146,14 @@
         <hyperlink>240782</hyperlink>
       </control>
       <control Style="settingsbutton">
-      
         <description>MiniDisplay</description>
         <type>button</type>
-        <id>11</id>        
+        <id>11</id>
         <label>9100</label>
         <hyperlink>9000</hyperlink>
         <ondown>3</ondown>
       </control>
-
-	</control>
-
+    </control>
     <control>
       <description>Update Indicator (Non Full HD Screen)</description>
       <type>image</type>
@@ -199,9 +178,7 @@
       <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)+string.equals(#StreamedMP.FullHD,true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
- 
     <import>common.time.xml</import>
-
     <control>
       <description>TV preview window</description>
       <type>videowindow</type>
@@ -217,3 +194,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:0f41f3c690d688f1db7215eca529d060-->

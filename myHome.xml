@@ -6,7 +6,6 @@
   <autohidetopbar>yes</autohidetopbar>
   <define>#header.hover:hover_my plugins.png</define>
   <controls>
-
     <control>
       <type>image</type>
       <id>0</id>
@@ -17,7 +16,6 @@
       <texture>#header.hover</texture>
       <animation effect="fade" time="200" delay="300">WindowOpen</animation>
     </control>
-
     <control>
       <description>Menu</description>
       <type>menu</type>
@@ -51,9 +49,7 @@
       <onright>10</onright>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
-
     <!-- Hidden Menu -->
-
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -164,7 +160,6 @@
         </control>
       </control>
     </control>
-
     <control>
       <description>Homeblade</description>
       <type>image</type>
@@ -176,7 +171,6 @@
       <texture>homebladeleft.png</texture>
       <colordiffuse>eaffffff</colordiffuse>
     </control>
-
     <control>
       <description>right overlay</description>
       <type>image</type>
@@ -187,9 +181,7 @@
       <height>720</height>
       <texture>homerightoverlay.png</texture>
     </control>
-
     <!-- Date -->
-
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -201,7 +193,6 @@
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
@@ -215,9 +206,7 @@
       <label>#date</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-
     <!-- RSS Ticker -->
-
     <control>
       <description>Rss Background</description>
       <type>image</type>
@@ -246,9 +235,7 @@
       <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
-
     <!-- Weather -->
-
     <control>
       <description>Weather Background</description>
       <type>image</type>
@@ -305,12 +292,10 @@
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
-
     <!-- imports -->
     <import>FritzManager.Notify.xml</import>
     <import>common.overlay.home.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <description>Update Icon</description>
       <type>image</type>
@@ -327,6 +312,6 @@
       <animation effect="fade" start="100" end="0" time="10000">VisibleChange</animation>
       <animation effect="fade" delay="100" start="0" end="0" time="100">WindowClose</animation>
     </control>
-
   </controls>
 </window>
+<!--Checksum:4ca2bc5500b72848f6e2972b45601c67-->

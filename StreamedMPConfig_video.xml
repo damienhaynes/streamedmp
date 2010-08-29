@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>196202</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,11 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
   <controls>
-
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-
-   
     <control>
       <type>group</type>
       <description>group element</description>
@@ -21,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmaintogglebutton">
         <description>Video OSD Min/Full</description>
         <type>togglebutton</type>
@@ -30,8 +27,8 @@
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
         <ondown>99</ondown>
-      </control>    
+      </control>
     </control>
-        
   </controls>
 </window>
+<!--Checksum:1ffc656d68615b27b641dbc0e866d14c-->

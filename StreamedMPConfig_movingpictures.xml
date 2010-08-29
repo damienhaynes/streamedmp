@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>196206</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
   <controls>
-
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-		
     <control>
       <type>group</type>
       <description>group element</description>
@@ -20,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmaintogglebutton">
         <description>MovingPictures Default/Fanart Style</description>
         <type>togglebutton</type>
@@ -29,8 +27,8 @@
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
         <ondown>3</ondown>
-      </control>    
-			<control Style="settingsmainbutton">
+      </control>
+      <control Style="settingsmainbutton">
         <description>MovingPictures Thumbnail Mod</description>
         <type>button</type>
         <id>3</id>
@@ -40,6 +38,6 @@
         <ondown>99</ondown>
       </control>
     </control>
-        
   </controls>
 </window>
+<!--Checksum:3bbf0d2c385bef95119523e4624caa67-->

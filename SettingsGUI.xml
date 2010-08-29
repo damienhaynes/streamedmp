@@ -8,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9993</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control Style="settingsmaintexturefo">
       <type>image</type>
       <posY>150</posY>
@@ -42,7 +40,6 @@
       <posY>234</posY>
       <visible>!control.hasfocus(3)</visible>
     </control>
-    
     <control>
       <description>Scroll Speed label horizontal</description>
       <type>label</type>
@@ -65,7 +62,7 @@
       <onleft>2</onleft>
       <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
-	  <wrapString>v</wrapString>
+      <wrapString>v</wrapString>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
@@ -128,8 +125,6 @@
       <align>right</align>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
-    
     <control>
       <description>Example value</description>
       <type>label</type>
@@ -150,7 +145,8 @@
       <posY>404</posY>
       <width>450</width>
       <label>-</label>
-	  <wrapString></wrapString>
+      <wrapString>
+      </wrapString>
       <font>mediastream12c</font>
       <textcolor>ffFFFFFF</textcolor>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -170,3 +166,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:93e7c4e6b5bb76c1b86976b59e9792c8-->

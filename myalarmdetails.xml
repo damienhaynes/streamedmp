@@ -6,7 +6,6 @@
   <define>#header.label:861</define>
   <define>#header.hover:hover_settings.png</define>
   <controls>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -17,7 +16,6 @@
       <texture>#header.hover</texture>
       <animation effect="fade" time="200">windowopen</animation>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -27,7 +25,6 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-    
     <control>
       <description>media type image</description>
       <type>image</type>
@@ -71,7 +68,6 @@
       <onup>22</onup>
       <ondown>2</ondown>
     </control>
-    
     <control>
       <type>image</type>
       <posX>1002</posX>
@@ -82,7 +78,6 @@
       <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
       <animation effect="slide" time="0" end="300,0">WindowClose</animation>
     </control>
-    
     <control>
       <id>0</id>
       <label>MENU</label>
@@ -93,7 +88,6 @@
       <animation effect="slide" time="100" start="300,0">visible</animation>
       <animation effect="slide" time="0" end="300,0">hidden</animation>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -104,7 +98,6 @@
       <width>220</width>
       <height>720</height>
       <layout>StackLayout</layout>
-      
       <control>
         <description>Alarm On/Off button</description>
         <type>togglebutton</type>
@@ -187,9 +180,7 @@
         <onup>5</onup>
         <ondown>2</ondown>
       </control>
-      
     </control>
-    
     <control>
       <description>Name</description>
       <type>label</type>
@@ -212,7 +203,6 @@
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-    
     <control>
       <description>Time</description>
       <type>label</type>
@@ -254,7 +244,6 @@
       <onright>16</onright>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-    
     <control>
       <description>Date</description>
       <type>label</type>
@@ -311,7 +300,6 @@
       <onright>2</onright>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-    
     <!--control>
       <description>Enabled Days</description>
       <type>label</type>
@@ -428,7 +416,6 @@
       <onright>27</onright>
       <ondown>27</ondown>
     </control>
-    
     <control>
       <description>fade in volume</description>
       <type>checkmark</type>
@@ -444,7 +431,6 @@
       <ondown>22</ondown>
       <onright>2</onright>
     </control>
-    
     <control>
       <description>wake up pc</description>
       <type>checkmark</type>
@@ -460,10 +446,9 @@
       <ondown>3</ondown>
       <onright>2</onright>
     </control>
-    
     <import>common.overlays.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-    
   </controls>
 </window>
+<!--Checksum:5ee59f67262103d34338db7b73de7703-->

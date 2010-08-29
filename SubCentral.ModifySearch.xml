@@ -1,394 +1,387 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>
-		<!-- 
+  <controls>
+    <!-- 
 		This skin file is meant for all controls that should be visible for the user
 		when in the modify search view of the plugin. All controls should be tagged at a minimum
 		with "<visible>Control.IsVisible(103)</visible>". 
 		-->
-		<control>
-			<description>Subcentral Search dialog</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>175</posX>
-			<posY>140</posY>
-			<width>930</width>
-			<height>360</height>
-			<texture>subsearchbg.png</texture>
-			<colordiffuse>ddffffff</colordiffuse>
-			<visible>control.isvisible(103)</visible>
-		</control>
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>1250</posX>
-			<posY>14</posY>
-			<label>#SubCentral.Translation.Movie.Label</label>
-			<width>200</width>
-			<font>mediastream12tc</font>
-			<align>right</align>
-			<textcolor>ffffffff</textcolor>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
-		</control>
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>1250</posX>
-			<posY>14</posY>
-			<label>#SubCentral.Translation.TVShow.Label</label>
-			<width>200</width>
-			<font>mediastream12tc</font>
-			<align>right</align>
-			<textcolor>ffffffff</textcolor>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
-		</control>
-		
-		<control>
-			<type>group</type>
-			<description>group element</description>
-			<posX>195</posX>
-			<posY>447</posY>
-			<width>900</width>
-			<height>80</height>
-			<layout>StackLayout(0,Horizontal)</layout>
-			<dimColor>0xddffffff</dimColor>
-			<visible>control.isvisible(103)</visible>
-			<control>
-				<description>OK/Search Button</description>
-				<type>button</type>
-				<id>211</id>
-				<label>OK/Search</label>
-				<onup>225</onup>
-				<ondown>222</ondown>
-				<onright>212</onright>
-				<onleft>216</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
- 				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>
-				<width>200</width>
-			    <height>40</height>				
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>
-			</control>
-			<control>
-				<description>Cancel Button</description>
-				<type>button</type>
-				<id>212</id>
-				<label>Cancel</label>
-				<onup>225</onup>
-				<ondown>212</ondown>
-				<onright>213</onright>
-				<onleft>211</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>				
-				<width>200</width>
-			    <height>40</height>				
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>
-			</control>
-			<control>
-				<description>Revert Button</description>
-				<type>button</type>
-				<id>213</id>
-				<label>Revert</label>
-				<onup>225</onup>
-				<ondown>216</ondown>
-				<onright>216</onright>
-				<onleft>212</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>				
-			    <height>40</height>				
-				<width>200</width>
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-		</control>
-		
-		<control>
-			<type>group</type>
-			<description>group element</description>
-			<posX>195</posX>
-			<posY>154</posY>
-			<width>300</width>
-			<height>80</height>
-			<dimColor>0xddffffff</dimColor>
-			<layout>StackLayout(0,Horizontal)</layout>
-			<visible>control.isvisible(103)</visible>
-			<control>
-				<description>Movie Search Button</description>
-				<type>button</type>
-				<id>216</id>
-				<label>#SubCentral.Translation.Movie.Label</label>
-				<onup>17</onup>
-				<ondown>222</ondown>
-				<onright>217</onright>
-				<onleft>216</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>
-			    <height>40</height>				
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>       
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-			<control>
-				<description>TV Show Search Button</description>
-				<type>button</type>
-				<id>217</id>
-				<label>#SubCentral.Translation.TVShow.Label</label>
-				<onup>17</onup>
-				<ondown>222</ondown>
-				<onright>211</onright>
-				<onleft>216</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>				
-			    <height>40</height>				
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>				
-			</control>
-		</control>
-		
-		<control>
-			<type>group</type>
-			<description>group element</description>
-			<posX>875</posX>
-			<posY>395</posY>
-			<width>340</width>
-			<height>80</height>
-			<dimColor>0xddffffff</dimColor>
-			<layout>StackLayout</layout>
-			<visible>control.isvisible(103)</visible>
-			<control>
-				<description>Clear Files Button</description>
-				<type>button</type>
-				<id>214</id>
-				<label>Clear files</label>
-				<onup>222</onup>
-				<ondown>211</ondown>
-				<onright>211</onright>
-				<onleft>222</onleft>
-				<textcolor>ffffffff</textcolor>
-				<textcolorNoFocus>bfffffff</textcolorNoFocus>
-				<font>mediastream12tc</font>
-				<textYOff>8</textYOff>
-				<textXOff>20</textXOff>
-			    <height>40</height>				
-				<textureFocus>tv_button_focus.png</textureFocus>
-				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>       
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>
-			</control>			
-		</control>
-	
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>205</posX>
-			<posY>220</posY>
-			<label>#SubCentral.Translation.Title.Label</label>
-			<font>mediastream14tc</font>
-			<textcolor>ff006699</textcolor>
-			<visible>control.isvisible(103)+control.isvisible(222)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>Title Button</description>
-			<type>button</type>
-			<id>222</id>
-			<label>#SubCentral.ManualSearch.Media.Title</label>
-			<posX>365</posX>
-			<posY>220</posY>
-			<onleft>222</onleft>
-			<onright>214</onright>
-			<onup>216</onup>
-			<ondown>223</ondown>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<font>mediastream14tc</font>
-			<textalign>left</textalign>
-			<height>30</height>
-			<width>600</width>
-			<scrollWrapString> | </scrollWrapString>
-			<visible>control.isvisible(103)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>205</posX>
-			<posY>260</posY>
-			<label>#SubCentral.Translation.Year.Label</label>
-			<font>mediastream14tc</font>
-			<textcolor>ff006699</textcolor>
-			<visible>control.isvisible(103)+control.isvisible(223)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>Year Button</description>
-			<type>button</type>
-			<id>223</id>
-			<label>#SubCentral.ManualSearch.Media.Year</label>
-			<posX>365</posX>
-			<posY>260</posY>
-			<onleft>223</onleft>
-			<onright>214</onright>
-			<onup>222</onup>
-			<ondown>221</ondown>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<font>mediastream14tc</font>
-			<textalign>left</textalign>
-			<height>30</height>
-			<width>600</width>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>205</posX>
-			<posY>300</posY>
-			<label>#SubCentral.Translation.IMDbID.Label</label>
-			<font>mediastream14tc</font>
-			<textcolor>ff006699</textcolor>
-			<visible>control.isvisible(103)+control.isvisible(221)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>IMDb Button</description>
-			<type>button</type>
-			<id>221</id>
-			<label>#SubCentral.ManualSearch.Media.IMDb.ID.Complete</label>
-			<posX>365</posX>
-			<posY>300</posY>
-			<onleft>225</onleft>
-			<onright>214</onright>
-			<onup>223</onup>
-			<ondown>224</ondown>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<font>mediastream14tc</font>
-			<textalign>left</textalign>
-			<height>30</height>
-			<width>600</width>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>205</posX>
-			<posY>260</posY>
-			<label>#SubCentral.Translation.Season.Label</label>
-			<font>mediastream14tc</font>
-			<textcolor>ff006699</textcolor>
-			<visible>Control.IsVisible(103)+Control.IsVisible(224)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>Season Button</description>
-			<type>button</type>
-			<id>224</id>
-			<label>#SubCentral.ManualSearch.Media.Season</label>
-			<posX>365</posX>
-			<posY>260</posY>
-			<onleft>224</onleft>
-			<onright>214</onright>
-			<onup>221</onup>
-			<ondown>225</ondown>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<font>mediastream14tc</font>
-			<textalign>left</textalign>
-			<height>30</height>
-			<width>600</width>			
-			<scrollWrapString></scrollWrapString>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-
-		<control>
-			<type>label</type>
-			<id>0</id>
-			<posX>205</posX>
-			<posY>300</posY>
-			<label>#SubCentral.Translation.Episode.Label</label>
-			<font>mediastream14tc</font>
-			<textcolor>ff006699</textcolor>
-			<visible>control.isvisible(103)+control.isvisible(225)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>Episode Button</description>
-			<type>button</type>
-			<id>225</id>
-			<label>#SubCentral.ManualSearch.Media.Episode</label>
-			<posX>365</posX>
-			<posY>300</posY>
-			<onleft>221</onleft>
-			<onright>214</onright>
-			<onup>224</onup>
-			<ondown>214</ondown>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<font>mediastream14tc</font>
-			<textalign>left</textalign>
-			<height>30</height>
-			<width>600</width>			
-			<scrollWrapString></scrollWrapString>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-	
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>675</posY>
-			<width>1280</width>
-			<height>47</height>
-			<texture>imagestreamtitle.png</texture>
-			<visible>control.isvisible(103)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		<control>
-			<description>Media File(s)</description>
-			<type>fadelabel</type>
-			<id>0</id>
-			<posX>40</posX>
-			<posY>684</posY>
-			<width>1200</width>
-			<label>#SubCentral.ManualSearch.Files.AllNames</label>
-			<font>mediastream16tc</font>
-			<textcolor>White</textcolor>			
-			<visible>control.isvisible(103)</visible>
-			<animation effect="fade" time="250">visiblechange</animation>
-		</control>
-		
-	</controls>
+    <control>
+      <description>Subcentral Search dialog</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>175</posX>
+      <posY>140</posY>
+      <width>930</width>
+      <height>360</height>
+      <texture>subsearchbg.png</texture>
+      <colordiffuse>ddffffff</colordiffuse>
+      <visible>control.isvisible(103)</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1250</posX>
+      <posY>14</posY>
+      <label>#SubCentral.Translation.Movie.Label</label>
+      <width>200</width>
+      <font>mediastream12tc</font>
+      <align>right</align>
+      <textcolor>ffffffff</textcolor>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1250</posX>
+      <posY>14</posY>
+      <label>#SubCentral.Translation.TVShow.Label</label>
+      <width>200</width>
+      <font>mediastream12tc</font>
+      <align>right</align>
+      <textcolor>ffffffff</textcolor>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>195</posX>
+      <posY>447</posY>
+      <width>900</width>
+      <height>80</height>
+      <layout>StackLayout(0,Horizontal)</layout>
+      <dimColor>0xddffffff</dimColor>
+      <visible>control.isvisible(103)</visible>
+      <control>
+        <description>OK/Search Button</description>
+        <type>button</type>
+        <id>211</id>
+        <label>OK/Search</label>
+        <onup>225</onup>
+        <ondown>222</ondown>
+        <onright>212</onright>
+        <onleft>216</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <width>200</width>
+        <height>40</height>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Cancel Button</description>
+        <type>button</type>
+        <id>212</id>
+        <label>Cancel</label>
+        <onup>225</onup>
+        <ondown>212</ondown>
+        <onright>213</onright>
+        <onleft>211</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <width>200</width>
+        <height>40</height>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Revert Button</description>
+        <type>button</type>
+        <id>213</id>
+        <label>Revert</label>
+        <onup>225</onup>
+        <ondown>216</ondown>
+        <onright>216</onright>
+        <onleft>212</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <height>40</height>
+        <width>200</width>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>195</posX>
+      <posY>154</posY>
+      <width>300</width>
+      <height>80</height>
+      <dimColor>0xddffffff</dimColor>
+      <layout>StackLayout(0,Horizontal)</layout>
+      <visible>control.isvisible(103)</visible>
+      <control>
+        <description>Movie Search Button</description>
+        <type>button</type>
+        <id>216</id>
+        <label>#SubCentral.Translation.Movie.Label</label>
+        <onup>17</onup>
+        <ondown>222</ondown>
+        <onright>217</onright>
+        <onleft>216</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <height>40</height>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>TV Show Search Button</description>
+        <type>button</type>
+        <id>217</id>
+        <label>#SubCentral.Translation.TVShow.Label</label>
+        <onup>17</onup>
+        <ondown>222</ondown>
+        <onright>211</onright>
+        <onleft>216</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <height>40</height>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>875</posX>
+      <posY>395</posY>
+      <width>340</width>
+      <height>80</height>
+      <dimColor>0xddffffff</dimColor>
+      <layout>StackLayout</layout>
+      <visible>control.isvisible(103)</visible>
+      <control>
+        <description>Clear Files Button</description>
+        <type>button</type>
+        <id>214</id>
+        <label>Clear files</label>
+        <onup>222</onup>
+        <ondown>211</ondown>
+        <onright>211</onright>
+        <onleft>222</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <height>40</height>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>205</posX>
+      <posY>220</posY>
+      <label>#SubCentral.Translation.Title.Label</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff006699</textcolor>
+      <visible>control.isvisible(103)+control.isvisible(222)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Title Button</description>
+      <type>button</type>
+      <id>222</id>
+      <label>#SubCentral.ManualSearch.Media.Title</label>
+      <posX>365</posX>
+      <posY>220</posY>
+      <onleft>222</onleft>
+      <onright>214</onright>
+      <onup>216</onup>
+      <ondown>223</ondown>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <font>mediastream14tc</font>
+      <textalign>left</textalign>
+      <height>30</height>
+      <width>600</width>
+      <scrollWrapString> | </scrollWrapString>
+      <visible>control.isvisible(103)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>205</posX>
+      <posY>260</posY>
+      <label>#SubCentral.Translation.Year.Label</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff006699</textcolor>
+      <visible>control.isvisible(103)+control.isvisible(223)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Year Button</description>
+      <type>button</type>
+      <id>223</id>
+      <label>#SubCentral.ManualSearch.Media.Year</label>
+      <posX>365</posX>
+      <posY>260</posY>
+      <onleft>223</onleft>
+      <onright>214</onright>
+      <onup>222</onup>
+      <ondown>221</ondown>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <font>mediastream14tc</font>
+      <textalign>left</textalign>
+      <height>30</height>
+      <width>600</width>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>205</posX>
+      <posY>300</posY>
+      <label>#SubCentral.Translation.IMDbID.Label</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff006699</textcolor>
+      <visible>control.isvisible(103)+control.isvisible(221)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>IMDb Button</description>
+      <type>button</type>
+      <id>221</id>
+      <label>#SubCentral.ManualSearch.Media.IMDb.ID.Complete</label>
+      <posX>365</posX>
+      <posY>300</posY>
+      <onleft>225</onleft>
+      <onright>214</onright>
+      <onup>223</onup>
+      <ondown>224</ondown>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <font>mediastream14tc</font>
+      <textalign>left</textalign>
+      <height>30</height>
+      <width>600</width>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>205</posX>
+      <posY>260</posY>
+      <label>#SubCentral.Translation.Season.Label</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff006699</textcolor>
+      <visible>Control.IsVisible(103)+Control.IsVisible(224)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Season Button</description>
+      <type>button</type>
+      <id>224</id>
+      <label>#SubCentral.ManualSearch.Media.Season</label>
+      <posX>365</posX>
+      <posY>260</posY>
+      <onleft>224</onleft>
+      <onright>214</onright>
+      <onup>221</onup>
+      <ondown>225</ondown>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <font>mediastream14tc</font>
+      <textalign>left</textalign>
+      <height>30</height>
+      <width>600</width>
+      <scrollWrapString>
+      </scrollWrapString>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>205</posX>
+      <posY>300</posY>
+      <label>#SubCentral.Translation.Episode.Label</label>
+      <font>mediastream14tc</font>
+      <textcolor>ff006699</textcolor>
+      <visible>control.isvisible(103)+control.isvisible(225)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Episode Button</description>
+      <type>button</type>
+      <id>225</id>
+      <label>#SubCentral.ManualSearch.Media.Episode</label>
+      <posX>365</posX>
+      <posY>300</posY>
+      <onleft>221</onleft>
+      <onright>214</onright>
+      <onup>224</onup>
+      <ondown>214</ondown>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <font>mediastream14tc</font>
+      <textalign>left</textalign>
+      <height>30</height>
+      <width>600</width>
+      <scrollWrapString>
+      </scrollWrapString>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <visible>control.isvisible(103)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Media File(s)</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>1200</width>
+      <label>#SubCentral.ManualSearch.Files.AllNames</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <visible>control.isvisible(103)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:06aeb2c3b7091a8b35654241fdc616f4-->

@@ -8,7 +8,7 @@
   <vumeter>yes</vumeter>
   <controls>
     <import>mymusic.autofanart.xml</import>
-		<import>music.nowplaying.default.common.xml</import>
+    <import>music.nowplaying.default.common.xml</import>
     <!-- VU Meter: Analog -->
     <control>
       <type>image</type>
@@ -59,8 +59,8 @@
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+Player.HasAudio + Player.playing</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>    
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:782ebb045750541badb54fc5669bc29e-->
+<!--Checksum:e9518e5aab3c87c5bd7000fd4eae530a-->

@@ -3,292 +3,281 @@
 This file should contain the details view
 -->
 <window>
-	<controls>
-		
-		<control>
-		  <description>Filmstrip black background - FilmStripView</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>0</posX>
-		  <posY>504</posY>
-		  <width>1280</width>
-		  <height>221</height>
-		  <colordiffuse>ffFFFFFF</colordiffuse>
-		  <texture>black.png</texture>
-		  <visible>facadeview.filmstrip</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		
-		<control>
-		  <description>Backdrop Overlay - FilmStripView</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>0</posX>
-		  <posY>0</posY>
-		  <width>1280</width>
-		  <height>720</height>
-		  <texture>movieviewbg.png</texture>
-		  <visible>facadeview.filmstrip</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		
-		<control>
-		  <description>Glasstitlebar - FilmStripView</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>280</posX>
-		  <posY>64</posY>
-		  <width>512</width>
-		  <height>43</height>
-		  <texture>glasstitlebar.png</texture>
-		  <visible>facadeview.filmstrip</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		
-		<control>
-		  <description>Cover Art</description>
-		  <type>image</type>
-		  <id>60</id>
-		  <posX>70</posX>
-		  <posY>73</posY>
-		  <width>288</width>
-		  <height>422</height>
-		  <texture>#selectedthumb</texture>
-		  <visible>facadeview.filmstrip</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>		
-		<control>
-		  <description>Cover Art Glass Overlay</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>70</posX>
-		  <posY>73</posY>
-		  <width>228</width>
-		  <height>177</height>
-		  <texture>glassoverlay2.png</texture>
-		  <visible>facadeview.filmstrip+Control.HasThumb(60)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-
-		<control>
-		  <description>Movie Title</description>
-		  <type>label</type>
-		  <id>0</id>
-		  <posX>410</posX>
-		  <posY>70</posY>
-		  <width>850</width>
-		  <font>mediastream16tc</font>
-		  <label>#selecteditem</label>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <visible>facadeview.filmstrip</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	  
-		</control>
-		
-		<control>
-		  <description>Summary</description>
-		  <type>textboxscrollup</type>
-		  <id>0</id>
-		  <posX>410</posX>
-		  <posY>110</posY>
-		  <width>850</width>
-		  <height>160</height>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <seperator>-----------------------------------------------------------------------------------</seperator>
-		  <font>mediastream11</font>
-		  <label>#plot</label>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		
-		<control>
-		  <description>Movie Details Label</description>
-		  <type>label</type>
-		  <id>0</id>
-		  <posX>410</posX>
-		  <posY>280</posY>
-		  <width>300</width>
-		  <font>mediastream12tc</font>
-		  <label>1020</label>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		
-		<control>
-		  <type>label</type>
-		  <label>#genre</label>
-		  <posX>410</posX>
-		  <posY>305</posY>
-		  <width>360</width>
-		  <font>mediastream11</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>		
-		<control>
-		  <type>label</type>
-		  <label>#year</label>
-		  <posX>410</posX>
-		  <posY>325</posY>
-		  <width>360</width>
-		  <font>mediastream11</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>		
-		<control>
-		  <type>label</type>
-		  <label>#runtime mins</label>
-		  <posX>410</posX>
-		  <posY>345</posY>
-		  <width>360</width>
-		  <font>mediastream11</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>		
-		<control>
-		  <type>textbox</type>
-		  <label>#mpaarating</label>
-		  <posX>410</posX>
-		  <posY>365</posY>
-		  <width>400</width>
-		  <height>50</height>
-		  <font>mediastream11</font>
-		  <visible><![CDATA[facadeview.filmstrip+control.isvisible(4441)+!string.starts(#mpaarating,<)+!string.starts(#mpaarating,unknown)]]></visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>	
-		
-		<control>
-		  <type>label</type>
-		  <label>173</label>
-		  <posX>410</posX>
-		  <posY>410</posY>
-		  <width>360</width>
-		  <font>mediastream11tc</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>	
-		</control>
-		<control>
-		  <description>Rating Stars - 1080p</description>
-		  <type>imagelist</type>
-		  <id>1001</id>
-		  <posX>410</posX>
-		  <posY>432</posY>
-		  <width>115</width>
-		  <height>13</height>
-		  <textureWidth>35</textureWidth>
-		  <textureHeight>34</textureHeight>
-		  <subitems>
-			<subitem>starwhitehollow.png</subitem>
-			<subitem>starwhite.png</subitem>
-		  </subitems>
-		  <orientation>horizontal</orientation>
-		  <align>left</align>
-		  <imagesToDraw>5</imagesToDraw>
-		  <percentage>#rating</percentage>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-		  <description>Rating Stars - 720p</description>
-		  <type>imagelist</type>
-		  <id>1001</id>
-		  <posX>410</posX>
-		  <posY>432</posY>
-		  <width>115</width>
-		  <height>13</height>
-		  <textureWidth>23</textureWidth>
-		  <textureHeight>22</textureHeight>
-		  <subitems>
-			<subitem>starwhitehollow.png</subitem>
-			<subitem>starwhite.png</subitem>
-		  </subitems>
-		  <orientation>horizontal</orientation>
-		  <align>left</align>
-		  <imagesToDraw>5</imagesToDraw>
-		  <percentage>#rating</percentage>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-		  <type>label</type>
-		  <label>#rating / 10 (#votes votes)</label>
-		  <posX>410</posX>
-		  <posY>457</posY>
-		  <width>360</width>
-		  <font>mediastream10</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-		  <description>Director Label</description>
-		  <type>label</type>
-		  <id>0</id>
-		  <posX>875</posX>
-		  <posY>280</posY>
-		  <width>300</width>
-		  <font>mediastream12tc</font>
-		  <label>199</label>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)+Control.HasText(1005)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-		  <type>label</type>
-		  <id>1005</id>
-		  <label>#director</label>
-		  <posX>875</posX>
-		  <posY>305</posY>
-		  <width>360</width>
-		  <font>mediastream11</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-		  <description>Cast Label</description>
-		  <type>label</type>
-		  <id>0</id>
-		  <posX>875</posX>
-		  <posY>350</posY>
-		  <width>300</width>
-		  <font>mediastream12tc</font>
-		  <label>206</label>
-		  <textcolor>ffFFFFFF</textcolor>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-		  <type>textboxscrollup</type>
-		  <id>1006</id>
-		  <label>#cast</label>
-		  <posX>875</posX>
-		  <posY>375</posY>
-		  <width>360</width>
-		  <height>120</height>
-		  <font>mediastream11</font>
-		  <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-	</controls>
+  <controls>
+    <control>
+      <description>Filmstrip black background - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>504</posY>
+      <width>1280</width>
+      <height>221</height>
+      <colordiffuse>ffFFFFFF</colordiffuse>
+      <texture>black.png</texture>
+      <visible>facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Backdrop Overlay - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>movieviewbg.png</texture>
+      <visible>facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Glasstitlebar - FilmStripView</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>280</posX>
+      <posY>64</posY>
+      <width>512</width>
+      <height>43</height>
+      <texture>glasstitlebar.png</texture>
+      <visible>facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>60</id>
+      <posX>70</posX>
+      <posY>73</posY>
+      <width>288</width>
+      <height>422</height>
+      <texture>#selectedthumb</texture>
+      <visible>facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>70</posX>
+      <posY>73</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+      <visible>facadeview.filmstrip+Control.HasThumb(60)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>70</posY>
+      <width>850</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>110</posY>
+      <width>850</width>
+      <height>160</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#plot</label>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Details Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>280</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>1020</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#genre</label>
+      <posX>410</posX>
+      <posY>305</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#year</label>
+      <posX>410</posX>
+      <posY>325</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#runtime mins</label>
+      <posX>410</posX>
+      <posY>345</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#mpaarating</label>
+      <posX>410</posX>
+      <posY>365</posY>
+      <width>400</width>
+      <height>50</height>
+      <font>mediastream11</font>
+      <visible><![CDATA[facadeview.filmstrip+control.isvisible(4441)+!string.starts(#mpaarating,<)+!string.starts(#mpaarating,unknown)]]></visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>173</label>
+      <posX>410</posX>
+      <posY>410</posY>
+      <width>360</width>
+      <font>mediastream11tc</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 1080p</description>
+      <type>imagelist</type>
+      <id>1001</id>
+      <posX>410</posX>
+      <posY>432</posY>
+      <width>115</width>
+      <height>13</height>
+      <textureWidth>35</textureWidth>
+      <textureHeight>34</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 720p</description>
+      <type>imagelist</type>
+      <id>1001</id>
+      <posX>410</posX>
+      <posY>432</posY>
+      <width>115</width>
+      <height>13</height>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#rating / 10 (#votes votes)</label>
+      <posX>410</posX>
+      <posY>457</posY>
+      <width>360</width>
+      <font>mediastream10</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Director Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>280</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>199</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+Control.HasText(1005)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>1005</id>
+      <label>#director</label>
+      <posX>875</posX>
+      <posY>305</posY>
+      <width>360</width>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cast Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>875</posX>
+      <posY>350</posY>
+      <width>300</width>
+      <font>mediastream12tc</font>
+      <label>206</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <id>1006</id>
+      <label>#cast</label>
+      <posX>875</posX>
+      <posY>375</posY>
+      <width>360</width>
+      <height>120</height>
+      <font>mediastream11</font>
+      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:4e8447f962bb3ed0b3345f6d3e7d8033-->

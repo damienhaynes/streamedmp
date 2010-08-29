@@ -1,352 +1,343 @@
-<?xml version="1.0" encoding="utf-8"?>
-<window> 
-	<controls>
-
-		<!-- ClearArt -->
-		<control>
-			<description>ClearArt</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1000</posX>
-			<posY>89</posY>
-			<width>250</width>
-			<height>126</height>
-			<texture>#TVSeries.Play.ClearArt</texture>
-			<visible>!facadeview.filmstrip</visible>
-		</control>
-		
-		<!--
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- ClearArt -->
+    <control>
+      <description>ClearArt</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>89</posY>
+      <width>250</width>
+      <height>126</height>
+      <texture>#TVSeries.Play.ClearArt</texture>
+      <visible>!facadeview.filmstrip</visible>
+    </control>
+    <!--
 		::::::::::::::
 		:: OVERLAYS ::
 		::::::::::::::
 		-->
-		<control>
-            <description>FanArt Overlay</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>-2</posX>
-            <posY>0</posY>
-            <width>1284</width>
-            <height>722</height>
-            <texture>mainoverlay.png</texture>
-            <visible>!facadeview.filmstrip</visible>
-        </control>
-
-		<control>
-            <description>Filmstrip Black Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>0</posX>
-            <posY>504</posY>
-            <width>1280</width>
-            <height>221</height>
-            <colordiffuse>ffFFFFFF</colordiffuse>
-            <texture>black.png</texture>
-            <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-        </control>
-        <control>
-            <description>FanArt Overlay (Graphical View)</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>-2</posX>
-            <posY>-2</posY>
-            <width>1284</width>
-            <height>726</height>
-            <colordiffuse>ffffffff</colordiffuse>
-            <texture>movieviewbg.png</texture>
-            <visible>facadeview.filmstrip</visible>
-        </control>
-		
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>675</posY>
-			<width>1280</width>
-			<height>47</height>
-			<texture>imagestreamtitle.png</texture>
-			<visible>control.isvisible(1240)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<!--
+    <control>
+      <description>FanArt Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>0</posY>
+      <width>1284</width>
+      <height>722</height>
+      <texture>mainoverlay.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <description>Filmstrip Black Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>504</posY>
+      <width>1280</width>
+      <height>221</height>
+      <colordiffuse>ffFFFFFF</colordiffuse>
+      <texture>black.png</texture>
+      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>FanArt Overlay (Graphical View)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>-2</posY>
+      <width>1284</width>
+      <height>726</height>
+      <colordiffuse>ffffffff</colordiffuse>
+      <texture>movieviewbg.png</texture>
+      <visible>facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <visible>control.isvisible(1240)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!--
 		::::::::::::::::::
 		:: MEDIA COUNTS ::
 		::::::::::::::::::
 		-->
-		<control>
-			<description>Media Count Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1065</posX>
-			<posY>13</posY>
-			<width>202</width>
-            <height>28</height>
-			<texture>mediacountbackground.png</texture>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Episode Count Label</description>
-			<type>label</type>
-			<label>#TVSeries.Translation.Episodes.Label</label>
-			<id>0</id>
-			<width>135</width>
-			<posX>1078</posX>
-			<posY>16</posY>
-			<align>left</align>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>[control.isvisible(1239)|control.isvisible(1238)]</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<description>Series Episode Count</description>
-			<type>label</type>
-			<label>#TVSeries.Series.EpisodeCount</label>
-			<id>0</id>
-			<posX>1238</posX>
-			<posY>14</posY>
-			<font>mediastream11c</font>
-			<align>right</align>    
-			<textcolor>ff006698</textcolor>
-			<visible>control.isvisible(1238)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<description>Filtered Episode Count</description>
-			<type>label</type>
-			<id>0</id>
-			<label>#TVSeries.FilteredEpisodeCount</label>
-			<posX>1238</posX>
-			<posY>14</posY>
-			<font>mediastream11c</font>
-			<align>right</align>
-			<textcolor>ff006698</textcolor>
-			<visible>control.isvisible(1239)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Series Count Label</description>
-			<type>label</type>
-			<label>#TVSeries.Translation.Series_Plural.Label</label>
-			<id>0</id>
-			<width>135</width>
-			<posX>1078</posX>
-			<posY>16</posY>
-			<align>left</align>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>control.isvisible(1237)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<description>Series Count</description>
-			<type>label</type>
-			<label>#TVSeries.SeriesCount</label>
-			<id>0</id>
-			<posX>1238</posX>
-			<posY>14</posY>
-			<font>mediastream11c</font>
-			<align>right</align>
-			<textcolor>ff006698</textcolor>
-			<visible>control.isvisible(1237)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Group Count Label</description>
-			<type>label</type>
-			<label>#TVSeries.Translation.Groups.Label</label>
-			<id>0</id>
-			<width>135</width>
-			<posX>1078</posX>
-			<posY>16</posY>
-			<align>left</align>
-			<font>mediastream10tc</font>
-			<textcolor>ff909090</textcolor>
-			<visible>control.isvisible(1240)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<description>Group Count</description>
-			<type>label</type>
-			<label>#TVSeries.GroupCount</label>
-			<id>0</id>
-			<posX>1238</posX>
-			<posY>14</posY>
-			<font>mediastream11c</font>
-			<align>right</align>
-			<textcolor>ff006698</textcolor>
-			<visible>control.isvisible(1240)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-
-		<!--
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Episode Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.Translation.Episodes.Label</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>[control.isvisible(1239)|control.isvisible(1238)]</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Episode Count</description>
+      <type>label</type>
+      <label>#TVSeries.Series.EpisodeCount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>control.isvisible(1238)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Filtered Episode Count</description>
+      <type>label</type>
+      <id>0</id>
+      <label>#TVSeries.FilteredEpisodeCount</label>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>control.isvisible(1239)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.Translation.Series_Plural.Label</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(1237)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Count</description>
+      <type>label</type>
+      <label>#TVSeries.SeriesCount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>control.isvisible(1237)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Group Count Label</description>
+      <type>label</type>
+      <label>#TVSeries.Translation.Groups.Label</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(1240)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Group Count</description>
+      <type>label</type>
+      <label>#TVSeries.GroupCount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <visible>control.isvisible(1240)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!--
 		:::::::::::::::::
 		:: PAGE COUNTS ::
 		:::::::::::::::::
 		-->
-		<control>
-			<description>Page Count Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>1013</posX>
-			<posY>684</posY>
-			<width>260</width>
-			<height>30</height>
-			<texture>mediacountbg_Spin.png</texture>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-			<description>Page Label</description>
-			<type>label</type>
-			<label>30009</label>
-			<id>0</id>
-			<posX>1023</posX>
-			<posY>688</posY>
-			<font>mediastream12tc</font>
-			<textcolor>ff909090</textcolor>			
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		
-		<control>
-			<type>group</type>
-			<id>28</id>
-			<layout>StackLayout</layout>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<control>
-				<type>facadeview</type>
-				<id>50</id>
-				<control>					
-					<type>listcontrol</type>
-					<subtype>album</subtype>
-					<id>50</id>
-				</control>
-				<control>
-					<description>Series Wide Banner Thumbnails</description>
-                    <type>thumbnailpanel</type>
-                    <id>50</id>
-                    <onleft>2</onleft>
-                    <onright>2</onright>
-                    <posX>790</posX>
-                    <posY>240</posY>
-                    <width>500</width>
-                    <height>500</height>
-                    <imageFolder>-</imageFolder>
-                    <imageFolderFocus>widebannerborder.png</imageFolderFocus>
-                    <keepaspectratio>no</keepaspectratio>
-                    <enableFocusZoom>no</enableFocusZoom>
-                    <scrollOffset>2</scrollOffset>
-                    <dimColor>30ffffff</dimColor>
-                    <!-- margin -->
-                    <itemWidthBig>420</itemWidthBig>
-                    <itemHeightBig>85</itemHeightBig>
-                    <!-- frame texture -->
-                    <textureWidthBig>414</textureWidthBig>
-                    <textureHeightBig>88</textureHeightBig>
-                    <!-- wide banners -->
-                    <thumbWidthBig>400</thumbWidthBig>
-                    <thumbHeightBig>74</thumbHeightBig>
-                    <thumbPosXBig>7</thumbPosXBig>
-                    <thumbPosYBig>7</thumbPosYBig>
-                    <thumbZoom>no</thumbZoom>
-                    <!-- text (when there is no banner) -->
-                    <textXOff>60</textXOff>
-                    <textYOff>25</textYOff>
-                    <!-- Spin Controls -->
-                    <spinWidth>50</spinWidth>
-                    <spinHeight>37</spinHeight>
-                    <spinPosX>1175</spinPosX>
-                    <spinPosY>681</spinPosY>
-                    <spinAlign>Right</spinAlign>
-                    <spinColor>ff006698</spinColor>
-                    <textureUp>arrow_round_up_nofocus.png</textureUp>
-                    <textureDown>arrow_round_down_nofocus.png</textureDown>
-                    <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                    <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-				</control>
-				<control>
-					<description>Series/Season Filmstrip view</description>
-                    <type>filmstrip</type>
-                    <id>50</id>
-                    <onup>2</onup>
-                    <onleft>50</onleft>
-                    <posX>12</posX>
-                    <posY>512</posY>
-                    <width>1280</width>
-					<height>220</height>
-                    <scrollOffset>4</scrollOffset>
-                    <itemWidth>142</itemWidth>
-                    <itemHeight>156</itemHeight>
-                    <textureWidth>120</textureWidth>
-                    <textureHeight>170</textureHeight>
-                    <thumbWidth>106</thumbWidth>
-                    <thumbHeight>156</thumbHeight>
-                    <thumbPosX>7</thumbPosX>
-                    <thumbPosY>7</thumbPosY>
-                    <thumbs flipY="true" diffuse="diffusemirrorwide.png"/>
-					<thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
-                    <InfoImage></InfoImage>
-                    <imageFolder>-</imageFolder>
-                    <imageFolderFocus>thumbborder.png</imageFolderFocus>
-                    <frame>-</frame>
-                    <frameFocus>thumbborder.png</frameFocus>
-                    <showFrame>no</showFrame>
-                    <showFolder>yes</showFolder>
-                    <showBackGround>no</showBackGround>
-                    <showInfoImage>no</showInfoImage>                    
-                    <!-- Spin Controls -->
-                    <spinWidth>50</spinWidth>
-                    <spinHeight>37</spinHeight>
-                    <spinPosX>1175</spinPosX>
-                    <spinPosY>681</spinPosY>
-                    <spinAlign>Right</spinAlign>
-                    <spinColor>ff006698</spinColor>
-                    <textureUp>arrow_round_up_nofocus.png</textureUp>
-                    <textureDown>arrow_round_down_nofocus.png</textureDown>
-                    <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                    <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-				</control>
-				<control>
-					<description>Textlist (series and/or seasons if set and Episodes)</description>
-					<type>listcontrol</type>
-					<id>50</id>
-					<onleft>2</onleft>
-					<onright>2</onright>
-					<posX>760</posX>
-					<posY>310</posY>
-					<height>410</height>								
-					<dimColor>50ffffff</dimColor>
-					<!-- Watched/Unwatched icons -->
-					<IconXOff>389</IconXOff>
-					<IconYOff>12</IconYOff>	
-					<itemWidth>72</itemWidth>
-					<itemHeight>18</itemHeight>
-					<textXOff>-75</textXOff>
-					<textYOff>10</textYOff>
-					<textXOff2>380</textXOff2>
-					<textYOff2>10</textYOff2>
-					<textXOff3>415</textXOff3>
-					<textYOff3>12</textYOff3>
-					<font2>mediastream9c</font2>
-					<font3>mediastream9c</font3>
-					<textureFocus>listbg_detail_fo.png</textureFocus>
-					<!-- Spin Controls -->
-					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>
-					<spinPosX>1175</spinPosX>
-					<spinPosY>681</spinPosY>
-					<spinAlign>Right</spinAlign>
-					<spinColor>ff006698</spinColor>
-					<textureUp>arrow_round_up_nofocus.png</textureUp>
-					<textureDown>arrow_round_down_nofocus.png</textureDown>
-					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-				</control>
-			</control>
-		</control>
-	
-	</controls>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <id>28</id>
+      <layout>StackLayout</layout>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <type>listcontrol</type>
+          <subtype>album</subtype>
+          <id>50</id>
+        </control>
+        <control>
+          <description>Series Wide Banner Thumbnails</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <posX>790</posX>
+          <posY>240</posY>
+          <width>500</width>
+          <height>500</height>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>widebannerborder.png</imageFolderFocus>
+          <keepaspectratio>no</keepaspectratio>
+          <enableFocusZoom>no</enableFocusZoom>
+          <scrollOffset>2</scrollOffset>
+          <dimColor>30ffffff</dimColor>
+          <!-- margin -->
+          <itemWidthBig>420</itemWidthBig>
+          <itemHeightBig>85</itemHeightBig>
+          <!-- frame texture -->
+          <textureWidthBig>414</textureWidthBig>
+          <textureHeightBig>88</textureHeightBig>
+          <!-- wide banners -->
+          <thumbWidthBig>400</thumbWidthBig>
+          <thumbHeightBig>74</thumbHeightBig>
+          <thumbPosXBig>7</thumbPosXBig>
+          <thumbPosYBig>7</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <!-- text (when there is no banner) -->
+          <textXOff>60</textXOff>
+          <textYOff>25</textYOff>
+          <!-- Spin Controls -->
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+        <control>
+          <description>Series/Season Filmstrip view</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>2</onup>
+          <onleft>50</onleft>
+          <posX>12</posX>
+          <posY>512</posY>
+          <width>1280</width>
+          <height>220</height>
+          <scrollOffset>4</scrollOffset>
+          <itemWidth>142</itemWidth>
+          <itemHeight>156</itemHeight>
+          <textureWidth>120</textureWidth>
+          <textureHeight>170</textureHeight>
+          <thumbWidth>106</thumbWidth>
+          <thumbHeight>156</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+          <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
+          <InfoImage>
+          </InfoImage>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>thumbborder.png</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>thumbborder.png</frameFocus>
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <!-- Spin Controls -->
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+        <control>
+          <description>Textlist (series and/or seasons if set and Episodes)</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <posX>760</posX>
+          <posY>310</posY>
+          <height>410</height>
+          <dimColor>50ffffff</dimColor>
+          <!-- Watched/Unwatched icons -->
+          <IconXOff>389</IconXOff>
+          <IconYOff>12</IconYOff>
+          <itemWidth>72</itemWidth>
+          <itemHeight>18</itemHeight>
+          <textXOff>-75</textXOff>
+          <textYOff>10</textYOff>
+          <textXOff2>380</textXOff2>
+          <textYOff2>10</textYOff2>
+          <textXOff3>415</textXOff3>
+          <textYOff3>12</textYOff3>
+          <font2>mediastream9c</font2>
+          <font3>mediastream9c</font3>
+          <textureFocus>listbg_detail_fo.png</textureFocus>
+          <!-- Spin Controls -->
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+      </control>
+    </control>
+  </controls>
 </window>
+<!--Checksum:fbf6bb60dc2a0619ddc3e718dcc38eb8-->

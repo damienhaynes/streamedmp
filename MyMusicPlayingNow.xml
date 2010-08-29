@@ -7,8 +7,8 @@
   <define>#usePlayFanart:Yes</define>
   <controls>
     <import>mymusic.autofanart.xml</import>
-		<import>music.nowplaying.default.common.xml</import>
-		<!-- VU Meter: NONE/FAKE -->
+    <import>music.nowplaying.default.common.xml</import>
+    <!-- VU Meter: NONE/FAKE -->
     <control>
       <type>multiimage</type>
       <id>9990</id>
@@ -24,8 +24,8 @@
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+string.equals(#StreamedMP.showEqGraphic,true)+Player.HasAudio + Player.playing</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>    
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:bf73b322d63e117641a3fa465764caf1-->
+<!--Checksum:ce392d328c0ff4a58efe766e6e042c1f-->

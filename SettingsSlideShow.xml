@@ -8,10 +8,8 @@
   <define>#defaultcontrol:5</define>
   <define>#defaultcontrol.onright:9995</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control Style="settingsmaintexturefo">
       <type>image</type>
       <posY>150</posY>
@@ -92,7 +90,6 @@
       <posY>493</posY>
       <visible>!control.hasfocus(9)</visible>
     </control>
-    
     <control>
       <description>Speed label</description>
       <type>label</type>
@@ -174,7 +171,6 @@
       <buddycontrolid>102</buddycontrolid>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <description>X-fade transitions</description>
       <type>checkmark</type>
@@ -208,7 +204,6 @@
       <onup>6</onup>
       <ondown>8</ondown>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <description>Repeat/loop slideshows</description>
       <type>checkmark</type>
@@ -233,3 +228,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:120c043642226fa21b6f098bbb193e11-->

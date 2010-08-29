@@ -3,124 +3,125 @@
 This file should contain the hidden menu
 -->
 <window>
-	<controls>
-		<control>
-			<type>image</type>
-			<posX>1220</posX>
-			<posY>190</posY>
-			<width>59</width>
-			<height>153</height>
-			<texture>#StreamedMP.ActionMenu.Image</texture>
-			<visible>!control.isvisible(103)</visible>				
-		</control>			
-		<control>
-			<type>actiongroup</type>
-			<description>action menu</description>
-			<defaultcontrol>2</defaultcontrol>
-			<onexit>50</onexit>
-			<dimColor>00ffffff</dimColor>
-			<buttonX>1231</buttonX>
-			<buttonY>55</buttonY>
-			<buttonwidth>49</buttonwidth>
-			<buttonheight>253</buttonheight>						
-			<control>
-				<type>image</type>
-				<posX>1002</posX>
-				<posY>0</posY>
-				<width>278</width>
-				<height>720</height>
-				<texture>hiddenmenu_right.png</texture>
-				<visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>
-				<id>0</id>
-				<description>Dummy Button (for Mouse)</description>
-				<label>-</label>
-				<type>button</type>
-				<posX>1002</posX>
-				<posY>0</posY>
-				<width>278</width>
-				<height>720</height>
-				<visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>				
-				<description>Menu</description>
-				<id>0</id>
-				<label>924</label>
-				<type>label</type>
-				<font>mediastream12tc</font>
-				<posX>1040</posX>
-				<posY>226</posY>
-				<visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>			
-			<control>
-				<type>group</type>
-				<description>group element</description>
-				<visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-				<posX>1040</posX>
-				<posY>250</posY>
-				<width>220</width>
-				<height>720</height>
-				<layout>StackLayout</layout>
-				<control>
-					<description>Cancel Button</description>
-					<type>button</type>
-					<id>202</id>
-					<label>Cancel</label>
-					<onup>201</onup>
-					<ondown>203</ondown>
-					<onleft>50</onleft>
-					<onright>912</onright>
-				</control>
-				<control>
-					<description>Languages Button</description>
-					<type>button</type>
-					<id>203</id>
-					<label>Languages</label>
-					<onup>202</onup>
-					<ondown>204</ondown>
-					<onleft>50</onleft>
-					<onright>912</onright>
-				</control>
-				<control>
-					<description>Modify Search Button</description>
-					<type>button</type>
-					<id>204</id>
-					<label>Modify search</label>
-					<onup>203</onup>
-					<ondown>206</ondown>
-					<onleft>50</onleft>
-					<onright>912</onright>
-				</control>
-				<control>
-					<description>Delete Subtitles Button</description>
-					<type>button</type>
-					<id>206</id>
-					<label>Delete subtitles</label>
-					<onup>204</onup>
-					<ondown>205</ondown>
-					<onleft>50</onleft>
-					<onright>912</onright>
-				</control>
-				<control>
-					<description>Sort</description>
-					<type>sortbutton</type>
-					<id>205</id>
-					<label>Sort</label>
-					<onup>206</onup>
-					<ondown>202</ondown>
-					<onleft>50</onleft>
-					<onright>912</onright>
-				</control>
-			</control>
-		</control>
-	</controls>
+  <controls>
+    <control>
+      <type>image</type>
+      <posX>1220</posX>
+      <posY>190</posY>
+      <width>59</width>
+      <height>153</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>!control.isvisible(103)</visible>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>Menu</description>
+        <id>0</id>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>226</posY>
+        <visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!control.hasfocus(50)+!control.hasfocus(912)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Cancel Button</description>
+          <type>button</type>
+          <id>202</id>
+          <label>Cancel</label>
+          <onup>201</onup>
+          <ondown>203</ondown>
+          <onleft>50</onleft>
+          <onright>912</onright>
+        </control>
+        <control>
+          <description>Languages Button</description>
+          <type>button</type>
+          <id>203</id>
+          <label>Languages</label>
+          <onup>202</onup>
+          <ondown>204</ondown>
+          <onleft>50</onleft>
+          <onright>912</onright>
+        </control>
+        <control>
+          <description>Modify Search Button</description>
+          <type>button</type>
+          <id>204</id>
+          <label>Modify search</label>
+          <onup>203</onup>
+          <ondown>206</ondown>
+          <onleft>50</onleft>
+          <onright>912</onright>
+        </control>
+        <control>
+          <description>Delete Subtitles Button</description>
+          <type>button</type>
+          <id>206</id>
+          <label>Delete subtitles</label>
+          <onup>204</onup>
+          <ondown>205</ondown>
+          <onleft>50</onleft>
+          <onright>912</onright>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>205</id>
+          <label>Sort</label>
+          <onup>206</onup>
+          <ondown>202</ondown>
+          <onleft>50</onleft>
+          <onright>912</onright>
+        </control>
+      </control>
+    </control>
+  </controls>
 </window>
+<!--Checksum:1a2fc2c858faf098a7781d33ec917bbc-->

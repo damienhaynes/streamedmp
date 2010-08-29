@@ -1,37 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
-<window> 
-	<controls>
-	
-		<control>
-			<description>Selected Category Label</description>
-			<type>fadelabel</type>
-			<id>1</id>
-			<posX>40</posX>
-			<posY>684</posY>
-			<width>900</width>
-			<label>#selecteditem #TVSeries.Translation.Series_Plural.Label</label>
-			<font>mediastream16tc</font>
-			<textcolor>White</textcolor>			
-			<visible>control.isvisible(1240)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-
-        <control>
-            <description>Shows in this Group</description>
-            <type>textboxscrollup</type>
-            <id>631</id>
-            <posX>70</posX>
-            <posY>280</posY>
-            <width>540</width>
-            <height>355</height>
-            <seperator>----------------------------------------------------------------------------------------------------</seperator>
-            <textcolor>ffffffff</textcolor>
-            <font>mediastream12</font>
-			<label>#TVSeries.Description</label>
-            <visible>control.isvisible(1240)+facadeview.list</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-		
-	
-	</controls>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>Selected Category Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#selecteditem #TVSeries.Translation.Series_Plural.Label</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <visible>control.isvisible(1240)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Shows in this Group</description>
+      <type>textboxscrollup</type>
+      <id>631</id>
+      <posX>70</posX>
+      <posY>280</posY>
+      <width>540</width>
+      <height>355</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream12</font>
+      <label>#TVSeries.Description</label>
+      <visible>control.isvisible(1240)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:a14c9e647c8d1b400130d874ed2aa09c-->

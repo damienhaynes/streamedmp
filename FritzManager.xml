@@ -1,193 +1,193 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-       <id>464554871</id>
-       <defaultcontrol>50</defaultcontrol>
-       <allowoverlay>no</allowoverlay>
-       <define>#header.label:FritzBox Manager</define>
-       <define>#header.hover:hover_FritzBox.png</define>
-       <define>#header.BG.colordiffuse:ffffffff</define>
-       <define>#header.BG.overlay:mainoverlay.png</define>
-       <controls>
-              <import>common.window.default.xml</import>
-              <import>common.time.xml</import>
-              <import>common.overlays.xml</import>
-              <control>
-                     <description>Top Title Extension Background</description>
-                     <type>image</type>
-                     <id>1</id>
-                     <posX>381</posX>
-                     <posY>11</posY>
-                     <width>486</width>
-                     <height>36</height>
-                     <texture>tvtitlebg.png</texture>
-                     <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-                     <animation effect="fade" time="300" delay="0">WindowClose</animation>
-                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
-              </control>
-              <control>
-                     <id>1</id>
-                     <description>Top Title Background</description>
-                     <type>image</type>
-                     <posX>77</posX>
-                     <posY>11</posY>
-                     <width>437</width>
-                     <height>35</height>
-                     <texture>tvtitlebg.png</texture>
-                     <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                     <animation effect="fade" time="150">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Current Feed</description>
-                     <type>fadelabel</type>
-                     <id>4711</id>
-                     <posX>839</posX>
-                     <posY>13</posY>
-                     <width>320</width>
-                     <align>right</align>
-                     <label>-</label>
-                     <font>mediastream12c</font>
-                     <align>right</align>
-                     <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-                     <animation effect="fade" time="230" delay="0">WindowClose</animation>
-                     <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-                     <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
-              </control>
-              <control>
-                     <type>actiongroup</type>
-                     <description>action menu</description>
-                     <defaultcontrol>2</defaultcontrol>
-                     <onexit>50</onexit>
-                     <buttonX>1231</buttonX>
-                     <buttonY>55</buttonY>
-                     <buttonwidth>49</buttonwidth>
-                     <buttonheight>153</buttonheight>
-                     <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
-                     <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
-                     <dimColor>00ffffff</dimColor>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-                     <control>
-                            <type>image</type>
-                            <posX>1002</posX>
-                            <posY>0</posY>
-                            <width>278</width>
-                            <height>720</height>
-                            <texture>hiddenmenu_right.png</texture>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <id>0</id>
-                            <description>dummy button</description>
-                            <label>-</label>
-                            <type>button</type>
-                            <posX>1002</posX>
-                            <posY>0</posY>
-                            <width>278</width>
-                            <height>720</height>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <id>0</id>
-                            <description>label Views menu</description>
-                            <label>499</label>
-                            <type>label</type>
-                            <font>mediastream12tc</font>
-                            <posX>1040</posX>
-                            <posY>225</posY>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <description>group element</description>
-                            <type>group</type>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                            <posX>1040</posX>
-                            <posY>250</posY>
-                            <width>220</width>
-                            <height>720</height>
-                            <layout>StackLayout</layout>
-                            <control>
-                                   <id>2</id>
-                                   <description>View-As</description>
-                                   <type>button</type>
-                                   <onright>50</onright>
-                                   <onup>9</onup>
-                                   <label>100</label>
-                            </control>
-                            <control>
-                                   <id>3</id>
-                                   <description>Sort</description>
-                                   <type>sortbutton</type>
-                                   <onright>50</onright>
-                                   <ondown>4</ondown>
-                            </control>
-                            <control>
-                                   <id>4</id>
-                                   <description>Modus</description>
-                                   <type>button</type>
-                                   <onright>50</onright>
-                                   <ondown>9</ondown>
-                                   <label>Anrufliste</label>
-                            </control>
-                            <control>
-                                   <id>9</id>
-                                   <description>Receive new list</description>
-                                   <type>button</type>
-                                   <onright>50</onright>
-                                   <ondown>2</ondown>
-                                   <label>Update</label>
-                            </control>
-                     </control>
-              </control>
-              <control>
-                     <id>1</id>
-                     <type>image</type>
-                     <posX>90</posX>
-                     <posY>250</posY>
-                     <width>348</width>
-                     <height>348</height>
-                     <keepaspectratio>yes</keepaspectratio>
-                     <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-                     <visible>!facadeview.filmstrip</visible>
-                     <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Item Count Background</description>
-                     <type>image</type>
-                     <id>1</id>
-                     <posX>1113</posX>
-                     <posY>12</posY>
-                     <width>159</width>
-                     <height>27</height>
-                     <texture>mediacountbackground.png</texture>
-                     <visible>Control.IsVisible(50)+!string.equals(#FritzManager.TotalMessages, )</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-              </control>
-              <control>
-                     <type>label</type>
-                     <description>Number of Files Label</description>
-                     <id>0</id>
-                     <posX>1246</posX>
-                     <posY>14</posY>
-                     <width>130</width>
-                     <font>mediastream10c</font>
-                     <textcolor>ff006698</textcolor>
-                     <align>right</align>
-                     <label>#FritzManager.TotalMessages</label>
-                     <visible>Control.IsVisible(50)</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-              </control>
-              <!--<control>
+  <id>464554871</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:FritzBox Manager</define>
+  <define>#header.hover:hover_FritzBox.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <import>common.overlays.xml</import>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>486</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="fade" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current Feed</description>
+      <type>fadelabel</type>
+      <id>4711</id>
+      <posX>839</posX>
+      <posY>13</posY>
+      <width>320</width>
+      <align>right</align>
+      <label>-</label>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="fade" time="230" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
+      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
+      <dimColor>00ffffff</dimColor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>dummy button</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>label Views menu</description>
+        <label>499</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>group element</description>
+        <type>group</type>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <id>2</id>
+          <description>View-As</description>
+          <type>button</type>
+          <onright>50</onright>
+          <onup>9</onup>
+          <label>100</label>
+        </control>
+        <control>
+          <id>3</id>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <onright>50</onright>
+          <ondown>4</ondown>
+        </control>
+        <control>
+          <id>4</id>
+          <description>Modus</description>
+          <type>button</type>
+          <onright>50</onright>
+          <ondown>9</ondown>
+          <label>Anrufliste</label>
+        </control>
+        <control>
+          <id>9</id>
+          <description>Receive new list</description>
+          <type>button</type>
+          <onright>50</onright>
+          <ondown>2</ondown>
+          <label>Update</label>
+        </control>
+      </control>
+    </control>
+    <control>
+      <id>1</id>
+      <type>image</type>
+      <posX>90</posX>
+      <posY>250</posY>
+      <width>348</width>
+      <height>348</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>1113</posX>
+      <posY>12</posY>
+      <width>159</width>
+      <height>27</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>Control.IsVisible(50)+!string.equals(#FritzManager.TotalMessages, )</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Number of Files Label</description>
+      <id>0</id>
+      <posX>1246</posX>
+      <posY>14</posY>
+      <width>130</width>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <label>#FritzManager.TotalMessages</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!--<control>
                      <type>fadelabel</type>
                      <description>Label</description>
                      <id>4711</id>
@@ -198,8 +198,11 @@
                      <textcolor>ff006698</textcolor>
                      <align>right</align>
                      <label>-</label>
-                     --><!--<visible>Control.IsVisible(50)</visible>--><!--
+                     -->
+    <!--<visible>Control.IsVisible(50)</visible>-->
+    <!--
               </control>-->
-              <import>FritzManager.facade.xml</import>
-       </controls>
+    <import>FritzManager.facade.xml</import>
+  </controls>
 </window>
+<!--Checksum:880afd27928056cc274d2105e38aefdb-->

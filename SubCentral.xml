@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>84623</id>
   <defaultcontrol>912</defaultcontrol>
@@ -68,34 +68,34 @@
       <width>1284</width>
       <height>722</height>
       <texture>mainoverlay.png</texture>
-      <visible>!control.isvisible(103)</visible>      
+      <visible>!control.isvisible(103)</visible>
     </control>
-	<control>
-	  <description>Top Bar Overlay</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>0</posX>
-	  <posY>0</posY>
-	  <width>1280</width>
-	  <height>51</height>
-	  <texture>overlay_topbar.png</texture>
-	  <visible>control.isvisible(103)</visible>
-	</control>
+    <control>
+      <description>Top Bar Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>control.isvisible(103)</visible>
+    </control>
     <!-- Title Area -->
-	<control>
-	  <description>Top Title Extension Background</description>
-	  <type>image</type>
-	  <id>0</id>
-	  <posX>431</posX>
-	  <posY>11</posY>
-	  <width>456</width>
-	  <height>36</height>
-	  <texture>tvtitlebg.png</texture>
-	  <visible>control.isvisible(102)+!string.equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
-	  <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-	  <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-	  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-	</control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>431</posX>
+      <posY>11</posY>
+      <width>456</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <visible>control.isvisible(102)+!string.equals(#SubCentral.Search.SearchType.Type,NONE)</visible>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -136,3 +136,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
+<!--Checksum:cb87603731d230b5338384ca06403dcc-->

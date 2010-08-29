@@ -14,7 +14,7 @@ This file should contain the list view
       <height>380</height>
       <texture>#MovingPictures.Coverart</texture>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Cover Art Glass Overlay</description>
@@ -26,7 +26,7 @@ This file should contain the list view
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon Background</description>
@@ -38,7 +38,7 @@ This file should contain the list view
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon</description>
@@ -50,7 +50,7 @@ This file should contain the list view
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>facadeview.list+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Un-Watched Icon</description>
@@ -62,7 +62,7 @@ This file should contain the list view
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title Shadow</description>
@@ -75,7 +75,7 @@ This file should contain the list view
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ff222222</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title</description>
@@ -88,7 +88,7 @@ This file should contain the list view
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Genres</description>
@@ -104,7 +104,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>0</id>
@@ -119,7 +119,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -131,7 +131,7 @@ This file should contain the list view
       <align>right</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -146,7 +146,7 @@ This file should contain the list view
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
     <control Style="smallTitleB">
@@ -157,7 +157,7 @@ This file should contain the list view
       <posY>573</posY>
       <textcolor>ff111111</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Certification Label</description>
@@ -168,7 +168,7 @@ This file should contain the list view
       <posY>572</posY>
       <width>140</width>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Certification</description>
@@ -182,7 +182,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Certification N/A</description>
@@ -196,7 +196,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1001)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Runtime Label Shadow</description>
@@ -206,7 +206,7 @@ This file should contain the list view
       <posY>595</posY>
       <textcolor>ff111111</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Runtime Label</description>
@@ -217,7 +217,7 @@ This file should contain the list view
       <posY>594</posY>
       <width>140</width>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Runtime</description>
@@ -231,7 +231,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Runtime N/A</description>
@@ -245,7 +245,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1002)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Year Label Shadow</description>
@@ -255,7 +255,7 @@ This file should contain the list view
       <posY>617</posY>
       <textcolor>ff111111</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Year Label</description>
@@ -265,7 +265,7 @@ This file should contain the list view
       <posY>616</posY>
       <width>140</width>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Year</description>
@@ -278,7 +278,7 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Year N/A</description>
@@ -291,8 +291,8 @@ This file should contain the list view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!Control.HasText(1003)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>		
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
   </controls>
 </window>
-<!--Checksum:0a73e187f6bc97a88e25a8b11b76ce99-->
+<!--Checksum:bd595139b77f898e203a2469582b4b47-->

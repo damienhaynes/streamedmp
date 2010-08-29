@@ -8,10 +8,8 @@
   <define>#defaultcontrol:24</define>
   <define>#defaultcontrol.onright:9996</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -21,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmainbutton">
         <type>button</type>
         <description>MPEG-2 Video Codecs</description>
@@ -30,7 +27,6 @@
         <onup>17</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>H.264 Video Codecs</description>
         <type>button</type>
@@ -38,63 +34,55 @@
         <label>6036</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
-	    <description>Audio Codecs</description>
+        <description>Audio Codecs</description>
         <type>button</type>
         <id>25</id>
         <label>6001</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
-	  <control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>AAC Audio Codecs</description>
         <type>button</type>
         <id>30</id>
         <label>6039</label>
-		<onright>#defaultcontrol.onright</onright>
-      </control>  
-	  
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmainbutton">
-	    <description>Audio Renderer</description>
+        <description>Audio Renderer</description>
         <type>button</type>
         <id>27</id>
         <label>6002</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
-	    <description>Apect Ratio</description>
+        <description>Apect Ratio</description>
         <type>button</type>
         <id>28</id>
         <label>6004</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
-	  <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaintogglebutton">
         <description>Subtitles On/Off</description>
         <type>togglebutton</type>
         <id>31</id>
         <label>1196</label>
-		<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
         <description>Subtitle Language</description>
         <type>button</type>
         <id>32</id>
         <label>1029</label>
-		<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
         <description>Audio Language</description>
         <type>button</type>
         <id>33</id>
-        <label>492</label>        
-		<onright>#defaultcontrol.onright</onright>
+        <label>492</label>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
         <description>Skip steps screen button</description>
         <type>button</type>
@@ -102,10 +90,9 @@
         <label>6024</label>
         <hyperlink>708</hyperlink>
         <onright>#defaultcontrol.onright</onright>
-		<ondown>24</ondown>
+        <ondown>24</ondown>
       </control>
-      
     </control>
-    
   </controls>
 </window>
+<!--Checksum:57c3ed4be3ac5755d37605df1148c813-->

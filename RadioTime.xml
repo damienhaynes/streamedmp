@@ -40,31 +40,31 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-	  <control>
-		<description>label OPTIONS</description>
-		<id>0</id>
-		<label>496</label>
-		<type>label</type>
-		<font>mediastream12tc</font>
-		<posX>1040</posX>
-		<posY>225</posY>
-		<visible>!Control.HasFocus(50)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
-	  </control>
-	  <control>
-		<id>0</id>
-		<description>dummy button (For Mouse Use)</description>
-		<label>-</label>
-		<type>button</type>
-		<posX>1002</posX>
-		<posY>0</posY>
-		<width>278</width>
-		<height>720</height>
-		<visible>!Control.HasFocus(50)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
-	  </control>
+      <control>
+        <description>label OPTIONS</description>
+        <id>0</id>
+        <label>496</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>dummy button (For Mouse Use)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
       <control>
         <type>group</type>
         <description>group element</description>
@@ -236,3 +236,4 @@
     <import>common.radiotime.overlay.xml</import>
   </controls>
 </window>
+<!--Checksum:91cafd1954a96bd78f6f46f118dec9be-->

@@ -13,7 +13,7 @@
       <height>720</height>
       <texture>hover_my tv.png</texture>
       <animation effect="fade" time="500" start="10">WindowOpen</animation>
-      <animation effect="fade" time="500" end="10" >WindowClose</animation>
+      <animation effect="fade" time="500" end="10">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -266,7 +266,7 @@
       <label>#TV.Guide.Description</label>
       <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
-    </control>  
+    </control>
     <control>
       <description>template for program title light area</description>
       <type>label</type>
@@ -293,7 +293,7 @@
       <label>-</label>
       <font>mediastream13</font>
       <textcolor>FFFFFFFF</textcolor>
-    </control>    
+    </control>
     <control>
       <description>TvGroup button</description>
       <type>button</type>
@@ -304,7 +304,8 @@
       <height>435</height>
       <textureFocus>small_vbutton_focus.png</textureFocus>
       <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
-      <label></label>
+      <label>
+      </label>
       <onleft>60</onleft>
       <onright>6</onright>
       <onup>6</onup>
@@ -348,3 +349,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:223139fe41b15282b491eff85c4cd75d-->

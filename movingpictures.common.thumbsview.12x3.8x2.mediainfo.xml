@@ -13,7 +13,7 @@
       <height>32</height>
       <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>SD/HD Fullscreen/Widescreen</description>
@@ -25,7 +25,7 @@
       <height>32</height>
       <texture>Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9803)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Codecs -->
     <control>
@@ -38,7 +38,7 @@
       <height>32</height>
       <texture>Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Audio Channels / Codecs -->
     <control>
@@ -51,7 +51,7 @@
       <height>32</height>
       <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Audio Channels / Codecs</description>
@@ -63,7 +63,7 @@
       <height>32</height>
       <texture>Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]+!Control.HasThumb(9804)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Subtitles -->
     <control>
@@ -76,8 +76,8 @@
       <height>32</height>
       <texture>Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:2ece73dead32ccb53e3c9ac8a272f8d7-->
+<!--Checksum:585647ee4f63d829f50217fee0fda21d-->

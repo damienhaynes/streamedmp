@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2600</id>
   <defaultcontrol>3</defaultcontrol>
@@ -15,7 +15,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-      <animation effect="fade" time="400" delay="0">WindowOpen</animation>	  
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     <control>
       <description>weather background image infoservice</description>
@@ -26,7 +26,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>Animations/linkedweather//#infoservice.weather.today.img.small.filenamewithoutext.jpg</texture>
-      <visible>plugin.isenabled(InfoService)</visible>	  
+      <visible>plugin.isenabled(InfoService)</visible>
     </control>
     <control>
       <description>Current Weather BG</description>
@@ -36,10 +36,10 @@
       <posY>95</posY>
       <width>1010</width>
       <height>510</height>
-      <texture>weatherframe.png</texture>      
+      <texture>weatherframe.png</texture>
       <visible>control.isvisible(23)</visible>
-	  <animation effect="fade" time="300">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -52,7 +52,7 @@
       <height>30</height>
       <texture>buttonbar.png</texture>
       <animation effect="fade" time="200">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>location label</description>
@@ -64,8 +64,8 @@
       <font>mediastream10c</font>
       <label>-</label>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>update time </description>
@@ -77,8 +77,8 @@
       <font>mediastream10</font>
       <textcolor>White</textcolor>
       <align>right</align>
-	  <animation effect="fade" time="250">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>group</type>
@@ -86,8 +86,8 @@
       <posX>300</posX>
       <posY>660</posY>
       <layout>StackLayout(0,Horizontal)</layout>
-	  <animation effect="fade" time="250">WindowOpen</animation>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <description>Refresh Button</description>
         <type>button</type>
@@ -163,7 +163,7 @@
       <width>114</width>
       <height>85</height>
       <texture>-</texture>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <!-- ******************** Current Weather Information ***************************** -->
     <control>
@@ -176,7 +176,7 @@
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -190,7 +190,7 @@
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -204,7 +204,7 @@
       <align>left</align>
       <font>mediastream14tc</font>
       <textcolor>ffFFFFFF</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -216,7 +216,7 @@
       <label>Temp</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -230,7 +230,7 @@
       <label>-</label>
       <font>mediastream28tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -242,7 +242,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -255,7 +255,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -267,7 +267,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -280,7 +280,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -292,7 +292,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -304,7 +304,7 @@
       <align>left</align>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -316,7 +316,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -329,7 +329,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -341,7 +341,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -354,7 +354,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -367,7 +367,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>sun rise static label</description>
@@ -378,7 +378,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>sun set control</description>
@@ -390,7 +390,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>sun set static label</description>
@@ -401,7 +401,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <!-- ***************************** Day 0 Weather Forcast ******************************** -->
     <control>
@@ -415,7 +415,7 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 Hi label</description>
@@ -427,7 +427,7 @@
       <width>0</width>
       <height>0</height>
       <visible>control.isvisible(23)+control.isvisible(32)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 Hi value</description>
@@ -438,7 +438,7 @@
       <label>-</label>
       <width>0</width>
       <height>0</height>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 low label</description>
@@ -450,7 +450,7 @@
       <width>0</width>
       <height>0</height>
       <visible>control.isvisible(23)+control.isvisible(33)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 low value</description>
@@ -461,7 +461,7 @@
       <label>-</label>
       <width>0</width>
       <height>0</height>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 general weather label</description>
@@ -472,7 +472,7 @@
       <label>-</label>
       <width>0</width>
       <height>0</height>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>day 0 icon</description>
@@ -484,7 +484,7 @@
       <height>0</height>
       <texture>-</texture>
       <visible>no</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <!-- ************************************************* Day 1 Weather ************************************************* -->
     <control>
@@ -499,7 +499,7 @@
       <font>mediastream11tc</font>
       <textalign>center</textalign>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -511,7 +511,7 @@
       <height>80</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -524,7 +524,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(42)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -537,7 +537,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -550,7 +550,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(43)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -563,7 +563,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -575,7 +575,7 @@
       <label>-</label>
       <font>mediastream12</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <!-- ************************************************* Day 2 Weather ************************************************* -->
@@ -591,7 +591,7 @@
       <font>mediastream11tc</font>
       <textalign>left</textalign>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -603,7 +603,7 @@
       <height>80</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -616,7 +616,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(52)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -629,7 +629,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -642,7 +642,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(53)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -655,7 +655,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -667,7 +667,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <!-- ************************************************* Day 3 Weather ************************************************* -->
@@ -683,7 +683,7 @@
       <font>mediastream11tc</font>
       <textalign>left</textalign>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -695,7 +695,7 @@
       <height>80</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -708,7 +708,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(62)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -721,7 +721,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -734,7 +734,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(63)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -747,7 +747,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -759,7 +759,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <!-- ************************************************* Day 4 Weather ************************************************* -->
@@ -775,7 +775,7 @@
       <font>mediastream11tc</font>
       <textalign>left</textalign>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -787,7 +787,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -799,7 +799,7 @@
       <height>80</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -812,7 +812,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(72)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -825,7 +825,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -838,7 +838,7 @@
       <font>mediastream11</font>
       <textcolor>White</textcolor>
       <visible>control.isvisible(23)+Control.IsVisible(73)</visible>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -851,7 +851,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
@@ -863,7 +863,7 @@
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <!-- ************************************************* Satellite Image/SunClock  ************************************************* -->
@@ -881,7 +881,7 @@
       <colordiffuse>White</colordiffuse>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Sunclock image</description>
@@ -897,8 +897,9 @@
       <onup>3</onup>
       <ondown>3</ondown>
       <keepaspectratio>yes</keepaspectratio>
-	  <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:530c806c47ccf62521bfd46932622673-->

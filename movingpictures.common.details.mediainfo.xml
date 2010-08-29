@@ -13,7 +13,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>SD/HD Fullscreen/Widescreen</description>
@@ -25,7 +25,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Codecs -->
     <control>
@@ -38,7 +38,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Audio Channels / Codecs-->
     <control>
@@ -51,7 +51,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Audio Codecs - Unknown number of channels</description>
@@ -63,7 +63,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Subtitles -->
     <control>
@@ -76,7 +76,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Format -->
     <control>
@@ -89,7 +89,7 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Video Format</description>
@@ -101,8 +101,8 @@
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:d843cb6ef8bf4e710bf4c035e1b361d9-->
+<!--Checksum:ffd643a206976b5212415a1d34623093-->

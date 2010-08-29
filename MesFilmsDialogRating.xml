@@ -4,40 +4,36 @@
   <defaultcontrol>10</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <controls>
-  
     <control>
-		<description>Overlay</description>
-		<type>image</type>
-		<id>0</id>
-		<width>1280</width>
-		<height>720</height>
-		<texture>black.bmp</texture>
-		<colordiffuse>60ffffff</colordiffuse>
+      <description>Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.bmp</texture>
+      <colordiffuse>60ffffff</colordiffuse>
     </control>
-	
     <control>
-		<description>Dialog background</description>
-		<type>image</type>
-		<id>0</id>
-		<posX>353</posX>
-		<posY>220</posY>
-		<width>574</width>
-		<height>280</height>
-		<texture>streamed_dialog_background.png</texture>
+      <description>Dialog background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>353</posX>
+      <posY>220</posY>
+      <width>574</width>
+      <height>280</height>
+      <texture>streamed_dialog_background.png</texture>
     </control>
-	
     <control>
-		<description>Dialog Heading</description>
-		<type>label</type>
-		<id>2</id>
-		<posX>360</posX>
-		<posY>245</posY>
-		<width>560</width>
-		<label>934</label>
-		<font>mediastream14tcb</font>
-		<align>center</align>
+      <description>Dialog Heading</description>
+      <type>label</type>
+      <id>2</id>
+      <posX>360</posX>
+      <posY>245</posY>
+      <width>560</width>
+      <label>934</label>
+      <font>mediastream14tcb</font>
+      <align>center</align>
     </control>
-	
     <control>
       <description>Rating label</description>
       <type>label</type>
@@ -47,7 +43,6 @@
       <label>204</label>
       <font>mediastream10</font>
     </control>
-	
     <control>
       <description>Rating value</description>
       <type>label</type>
@@ -57,7 +52,6 @@
       <label>#rating</label>
       <font>mediastream10</font>
     </control>
-	
     <control>
       <description>right button</description>
       <type>button</type>
@@ -74,7 +68,6 @@
       <onup>13</onup>
       <ondown>13</ondown>
     </control>
-	
     <control>
       <description>left button</description>
       <type>button</type>
@@ -91,13 +84,12 @@
       <onup>13</onup>
       <ondown>13</ondown>
     </control>
-	
     <control>
       <description>OK button</description>
       <type>button</type>
       <id>12</id>
-        <posX>860</posX>
-        <posY>235</posY>
+      <posX>860</posX>
+      <posY>235</posY>
       <width>43</width>
       <height>17</height>
       <textureFocus>dialogue_shutdown_focus.png</textureFocus>
@@ -108,7 +100,6 @@
       <onup>10</onup>
       <ondown>10</ondown>
     </control>
-	
     <control>
       <type>imagelist</type>
       <id>100</id>
@@ -128,3 +119,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:1d475726e494486621aaf0dcd459a351-->

@@ -11,7 +11,7 @@
       <height>280</height>
       <texture>mpinfo_filmbox.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -23,7 +23,7 @@
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Rating</description>
@@ -39,7 +39,7 @@
       <shadowDistance>2</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Filtering Indicator - Watched</description>
@@ -50,7 +50,7 @@
       <width>24</width>
       <height>24</height>
       <visible>control.isvisible(50)+control.isvisible(9)+facadeview.filmstrip</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Filtering Indicator - UnWatched</description>
@@ -61,7 +61,7 @@
       <width>24</width>
       <height>24</height>
       <visible>control.isvisible(50)+!control.isvisible(9)+facadeview.filmstrip</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title</description>
@@ -74,7 +74,7 @@
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>FFffffff</textcolor>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -82,7 +82,7 @@
       <posX>686</posX>
       <posY>485</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
@@ -91,7 +91,7 @@
       <posY>485</posY>
       <width>580</width>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -99,7 +99,7 @@
       <posX>686</posX>
       <posY>510</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
@@ -107,7 +107,7 @@
       <posX>825</posX>
       <posY>510</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -115,7 +115,7 @@
       <posX>686</posX>
       <posY>535</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
@@ -124,7 +124,7 @@
       <posY>535</posY>
       <width>580</width>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -139,8 +139,8 @@
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
   </controls>
 </window>
-<!--Checksum:fe3aed54c9951d725ba16c40e2c5d3dd-->
+<!--Checksum:6fdc5afe6da1ce4f0bacd2a70b30725c-->

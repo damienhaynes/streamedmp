@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>636</id>
   <defaultcontrol>4</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <controls>
-    
-	<control>
+    <control>
       <description>Default Background</description>
       <type>image</type>
       <id>0</id>
@@ -15,7 +14,6 @@
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
-    
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
@@ -26,10 +24,8 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-    
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <type>label</type>
       <description>Internet Access</description>
@@ -96,7 +92,7 @@
       <label>200038</label>
       <align>right</align>
     </control>
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Next</description>
       <id>26</id>
@@ -104,11 +100,11 @@
       <posY>550</posY>
       <width>400</width>
       <onup>7</onup>
-      <ondown>25</ondown>    
+      <ondown>25</ondown>
       <label>200009</label>
       <font>mediastream12tc</font>
     </control>
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Back</description>
       <id>25</id>
@@ -116,7 +112,7 @@
       <posY>600</posY>
       <width>400</width>
       <onup>26</onup>
-      <ondown>9</ondown>   
+      <ondown>9</ondown>
       <label>200007</label>
       <font>mediastream12tc</font>
     </control>
@@ -127,7 +123,8 @@
       <posX>150</posX>
       <posY>648</posY>
       <label>200006</label>
-	  <font>mediastream12</font>
+      <font>mediastream12</font>
     </control>
   </controls>
 </window>
+<!--Checksum:f39aa0ac6c270be61a7f9ab46f8db9a6-->

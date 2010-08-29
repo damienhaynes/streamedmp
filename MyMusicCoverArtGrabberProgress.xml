@@ -1,235 +1,235 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>509</id>
-        <defaultcontrol>30</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <controls>
-                <control>
-                        <description>music background image</description>
-                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-                        <type>image</type>
-                        <id>1</id>
-                        <posX>0</posX>
-                        <posY>0</posY>
-                        <width>1280</width>
-                        <height>720</height>
-                        <texture>hover_my music.png</texture>
-                </control>
-                <control>
-                        <description>music overlay image</description>
-                        <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
-                        <type>image</type>
-                        <id>1</id>
-                        <posX>0</posX>
-                        <posY>0</posY>
-                        <width>1280</width>
-                        <height>720</height>
-                        <texture>mainoverlay.png</texture>
-                </control>
-                <control>
-                        <type>image</type>
-                        <description>Amazon Logo image</description>
-                        <id>3</id>
-                        <posX>113</posX>
-                        <posY>620</posY>
-                        <width>167</width>
-                        <height>56</height>
-                        <texture>amazonlogo.png</texture>
-                        <centered>yes</centered>
-                        <keepaspectratio>yes</keepaspectratio>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>image</type>
-                        <id>100</id>
-                        <posX>113</posX>
-                        <posY>482</posY>
-                        <width>613</width>
-                        <height>20</height>
-                        <texture>osdprogressback.png</texture>
-                </control>
-                <control>
-                        <type>image</type>
-                        <id>101</id>
-                        <posX>113</posX>
-                        <posY>566</posY>
-                        <width>613</width>
-                        <height>20</height>
-                        <texture>osdprogressback.png</texture>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Overall progress label</description>
-                        <id>10</id>
-                        <posX>488</posX>
-                        <posY>600</posY>
-                        <width>773</width>
-                        <label>-</label>
-                        <textcolor>BFffffff</textcolor>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Current cover progress label</description>
-                        <id>11</id>
-                        <posX>488</posX>
-                        <posY>516</posY>
-                        <width>773</width>
-                        <label>-</label>
-                        <textcolor>BFffffff</textcolor>
-                </control>
-                <control>
-                        <type>label</type>
-                        <description>Folder value</description>
-                        <id>12</id>
-                        <posX>25</posX>
-                        <posY>680</posY>
-                        <label>-</label>
-                        <font>mediastream12tc</font>
-                        <textcolor>BFffffff</textcolor>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>Current album value</description>
-                        <id>13</id>
-                        <posX>488</posX>
-                        <posY>453</posY>
-                        <width>773</width>
-                        <label>-</label>
-                        <font>mediastream12c</font>
-                        <textcolor>BFffffff</textcolor>
-                </control>
-                <control>
-                        <type>fadelabel</type>
-                        <description>search info label</description>
-                        <id>14</id>
-                        <posX>488</posX>
-                        <posY>428</posY>
-                        <width>773</width>
-                        <label>-</label>
-                        <font>mediastream12c</font>
-                        <textcolor>BFffffff</textcolor>
-                </control>
-                <control>
-                        <type>progress</type>
-                        <description>Overall progress control</description>
-                        <id>20</id>
-                        <posX>104</posX>
-                        <posY>566</posY>
-                        <width>628</width>
-                </control>
-                <control>
-                        <type>progress</type>
-                        <description>Current cover progress control</description>
-                        <id>21</id>
-                        <posX>104</posX>
-                        <posY>482</posY>
-                        <width>628</width>
-                </control>
-                <control>
-                        <type>image</type>
-                        <posX>1002</posX>
-                        <posY>0</posY>
-                        <width>278</width>
-                        <height>720</height>
-                        <texture>hiddenmenu_right.png</texture>
-                        <visible>!Control.HasFocus(50)</visible>
-                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                </control>
-                <control>
-                        <id>0</id>
-                        <description>label OPTIONS</description>
-                        <label>496</label>
-                        <type>label</type>
-                        <font>mediastream12tc</font>
-                        <posX>1040</posX>
-                                <posY>225</posY>
-                        <visible>!Control.HasFocus(50)</visible>
-                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                </control>
-
-                <control>
-                        <type>button</type>
-                        <description>Start button</description>
-                        <id>30</id>
-                        <posX>1040</posX>
-                        <posY>250</posY>
-                        <label>335</label>
-                        <width>224</width>
-                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>button</type>
-                        <description>Cancel button</description>
-                        <id>31</id>
-                        <posX>1040</posX>
-                        <posY>290</posY>
-                        <label>4517</label>
-                        <width>224</width>
-                        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>checkmark</type>
-                        <description>Skip existing checkmark</description>
-                        <id>40</id>
-                        <posX>113</posX>
-                        <posY>275</posY>
-                        <onleft>31</onleft>
-                        <onright>31</onright>
-                        <onup>40</onup>
-                        <ondown>41</ondown>
-                        <align>right</align>
-                        <disabledcolor>BFFFFFFF</disabledcolor>
-                        <textureFocus>ledon.png</textureFocus>
-                        <textureNoFocus>ledoff.png</textureNoFocus>
-                        <label>4500</label>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>checkmark</type>
-                        <description>Save to album folder checkmark</description>
-                        <id>41</id>
-                        <posX>113</posX>
-                        <posY>312</posY>
-                        <onleft>31</onleft>
-                        <onright>31</onright>
-                        <onup>40</onup>
-                        <ondown>42</ondown>
-                        <align>right</align>
-                        <disabledcolor>BFFFFFFF</disabledcolor>
-                        <textureFocus>ledon.png</textureFocus>
-                        <textureNoFocus>ledoff.png</textureNoFocus>
-                        <label>4501</label>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <control>
-                        <type>checkmark</type>
-                        <description>Save to thumbs folder</description>
-                        <id>42</id>
-                        <posX>113</posX>
-                        <posY>349</posY>
-                        <onleft>31</onleft>
-                        <onright>31</onright>
-                        <onup>41</onup>
-                        <ondown>30</ondown>
-                        <align>right</align>
-                        <disabledcolor>BFFFFFFF</disabledcolor>
-                        <textureFocus>ledon.png</textureFocus>
-                        <textureNoFocus>ledoff.png</textureNoFocus>
-                        <label>4502</label>
-                        <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-                        <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-                </control>
-                <import>common.overlays.xml</import>
-                <import>common.window.xml</import>
-                <import>common.time.xml</import>
-        </controls>
+  <id>509</id>
+  <defaultcontrol>30</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <description>music background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my music.png</texture>
+    </control>
+    <control>
+      <description>music overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <description>Amazon Logo image</description>
+      <id>3</id>
+      <posX>113</posX>
+      <posY>620</posY>
+      <width>167</width>
+      <height>56</height>
+      <texture>amazonlogo.png</texture>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>100</id>
+      <posX>113</posX>
+      <posY>482</posY>
+      <width>613</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>101</id>
+      <posX>113</posX>
+      <posY>566</posY>
+      <width>613</width>
+      <height>20</height>
+      <texture>osdprogressback.png</texture>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Overall progress label</description>
+      <id>10</id>
+      <posX>488</posX>
+      <posY>600</posY>
+      <width>773</width>
+      <label>-</label>
+      <textcolor>BFffffff</textcolor>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Current cover progress label</description>
+      <id>11</id>
+      <posX>488</posX>
+      <posY>516</posY>
+      <width>773</width>
+      <label>-</label>
+      <textcolor>BFffffff</textcolor>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Folder value</description>
+      <id>12</id>
+      <posX>25</posX>
+      <posY>680</posY>
+      <label>-</label>
+      <font>mediastream12tc</font>
+      <textcolor>BFffffff</textcolor>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Current album value</description>
+      <id>13</id>
+      <posX>488</posX>
+      <posY>453</posY>
+      <width>773</width>
+      <label>-</label>
+      <font>mediastream12c</font>
+      <textcolor>BFffffff</textcolor>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>search info label</description>
+      <id>14</id>
+      <posX>488</posX>
+      <posY>428</posY>
+      <width>773</width>
+      <label>-</label>
+      <font>mediastream12c</font>
+      <textcolor>BFffffff</textcolor>
+    </control>
+    <control>
+      <type>progress</type>
+      <description>Overall progress control</description>
+      <id>20</id>
+      <posX>104</posX>
+      <posY>566</posY>
+      <width>628</width>
+    </control>
+    <control>
+      <type>progress</type>
+      <description>Current cover progress control</description>
+      <id>21</id>
+      <posX>104</posX>
+      <posY>482</posY>
+      <width>628</width>
+    </control>
+    <control>
+      <type>image</type>
+      <posX>1002</posX>
+      <posY>0</posY>
+      <width>278</width>
+      <height>720</height>
+      <texture>hiddenmenu_right.png</texture>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+      <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>label OPTIONS</description>
+      <label>496</label>
+      <type>label</type>
+      <font>mediastream12tc</font>
+      <posX>1040</posX>
+      <posY>225</posY>
+      <visible>!Control.HasFocus(50)</visible>
+      <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+      <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>button</type>
+      <description>Start button</description>
+      <id>30</id>
+      <posX>1040</posX>
+      <posY>250</posY>
+      <label>335</label>
+      <width>224</width>
+      <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+      <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>button</type>
+      <description>Cancel button</description>
+      <id>31</id>
+      <posX>1040</posX>
+      <posY>290</posY>
+      <label>4517</label>
+      <width>224</width>
+      <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+      <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>checkmark</type>
+      <description>Skip existing checkmark</description>
+      <id>40</id>
+      <posX>113</posX>
+      <posY>275</posY>
+      <onleft>31</onleft>
+      <onright>31</onright>
+      <onup>40</onup>
+      <ondown>41</ondown>
+      <align>right</align>
+      <disabledcolor>BFFFFFFF</disabledcolor>
+      <textureFocus>ledon.png</textureFocus>
+      <textureNoFocus>ledoff.png</textureNoFocus>
+      <label>4500</label>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>checkmark</type>
+      <description>Save to album folder checkmark</description>
+      <id>41</id>
+      <posX>113</posX>
+      <posY>312</posY>
+      <onleft>31</onleft>
+      <onright>31</onright>
+      <onup>40</onup>
+      <ondown>42</ondown>
+      <align>right</align>
+      <disabledcolor>BFFFFFFF</disabledcolor>
+      <textureFocus>ledon.png</textureFocus>
+      <textureNoFocus>ledoff.png</textureNoFocus>
+      <label>4501</label>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>checkmark</type>
+      <description>Save to thumbs folder</description>
+      <id>42</id>
+      <posX>113</posX>
+      <posY>349</posY>
+      <onleft>31</onleft>
+      <onright>31</onright>
+      <onup>41</onup>
+      <ondown>30</ondown>
+      <align>right</align>
+      <disabledcolor>BFFFFFFF</disabledcolor>
+      <textureFocus>ledon.png</textureFocus>
+      <textureNoFocus>ledoff.png</textureNoFocus>
+      <label>4502</label>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <import>common.overlays.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
 </window>
+<!--Checksum:0241c3d2d079cf2bbd5a7b8c647d2eec-->

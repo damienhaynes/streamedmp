@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>4759</id>
   <defaultcontrol>213</defaultcontrol>
@@ -536,7 +536,6 @@
       <onright>706</onright>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-
     <!-- :::::::::: AUDIO MENU :::::::::: -->
     <control>
       <description>Sub Menu Background (audio)</description>
@@ -632,7 +631,6 @@
       <onright>400</onright>
       <visible>yes</visible>
     </control>
-
     <control>
       <description>subtitles label</description>
       <type>label</type>
@@ -672,7 +670,6 @@
       <textcolor>ff808080</textcolor>
       <visible>Control.HasFocus(221)+!player.rewinding+!player.forwarding</visible>
     </control>
-    
     <!--************* Unused controls **********************-->
     <control>
       <description>Channel Button Down</description>
@@ -735,3 +732,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
+<!--Checksum:edd3a1df7d64dced001828602d2cc62a-->

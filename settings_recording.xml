@@ -7,10 +7,8 @@
   <define>#defaultcontrol:4</define>
   <define>#defaultcontrol.onright:9994</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control Style="settingsmaintexturefo">
       <type>image</type>
       <posY>150</posY>
@@ -51,7 +49,6 @@
       <posY>276</posY>
       <visible>!control.hasfocus(30)</visible>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <type>checkmark</type>
       <id>4</id>
@@ -63,7 +60,6 @@
       <onright>#defaultcontrol.onright</onright>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <type>checkmark</type>
       <id>5</id>
@@ -75,7 +71,6 @@
       <onright>#defaultcontrol.onright</onright>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control>
       <type>label</type>
       <id>26</id>
@@ -107,7 +102,6 @@
       <font>mediastream12</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control>
       <type>label</type>
       <id>29</id>
@@ -139,6 +133,6 @@
       <font>mediastream12</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:9596fdf6d34cc26a2774a4e979298e62-->

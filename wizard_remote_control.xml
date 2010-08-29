@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>634</id>
   <defaultcontrol>26</defaultcontrol>
-  <allowoverlay>yes</allowoverlay> 
+  <allowoverlay>yes</allowoverlay>
   <controls>
-  
-  <control>
+    <control>
       <description>Default Background</description>
       <type>image</type>
       <id>0</id>
@@ -15,7 +14,6 @@
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
-    
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
@@ -26,11 +24,9 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-	
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-
-	 <control>
+    <control>
       <type>label</type>
       <description>Please specify the remote control you use:</description>
       <id>1</id>
@@ -110,8 +106,7 @@
       <ondown>26</ondown>
       <label>Other</label>
       <align>right</align>
-    </control>    
-   
+    </control>
     <control>
       <type>image</type>
       <description>remote control image</description>
@@ -122,8 +117,7 @@
       <height>400</height>
       <texture>-</texture>
     </control>
-	
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Next</description>
       <id>26</id>
@@ -131,11 +125,11 @@
       <posY>550</posY>
       <width>400</width>
       <onup>9</onup>
-      <ondown>25</ondown>    
+      <ondown>25</ondown>
       <label>200009</label>
       <font>mediastream12tc</font>
     </control>
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Back</description>
       <id>25</id>
@@ -143,7 +137,7 @@
       <posY>600</posY>
       <width>400</width>
       <onup>26</onup>
-      <ondown>9</ondown>      
+      <ondown>9</ondown>
       <label>200007</label>
       <font>mediastream12tc</font>
     </control>
@@ -154,7 +148,8 @@
       <posX>150</posX>
       <posY>648</posY>
       <label>200006</label>
-	  <font>mediastream12</font>
+      <font>mediastream12</font>
     </control>
   </controls>
 </window>
+<!--Checksum:c4cf059f9ea12157b08460af1abe36d0-->

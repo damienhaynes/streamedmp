@@ -1,76 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>
-	
-		<!-- Overlays -->
-		<control>
-			<type>image</type>
-			<description>hidebackground</description>
-			<id>0</id>
-			<width>1280</width>
-			<height>720</height>
-			<texture>black.png</texture>
-			<animation effect="fade" time="400" delay="0">WindowOpen</animation>
-			<visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
-		</control>
-		
-		<control>
-			<description>Backdrop Overlay - Thumbs</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>-2</posX>
-			<posY>-2</posY>
-			<width>1284</width>
-			<height>726</height>
-			<texture>movieviewbg.png</texture>
-			<visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
-		</control>
-		
-		<control>
-			<description>Categories Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>fanartoverlay.png</texture>
-			<visible>control.isvisible(51)</visible>
-		</control>
-		
-		<control>
-			<description>List Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>fanartoverlay.png</texture>
-			<visible>facadeview.list+control.isvisible(50)</visible>
-		</control>
-		
-		<control>
-			<description>Filmstrip Top Bar</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>51</height>
-			<texture>overlay_topbar.png</texture>
-			<visible>facadeview.filmstrip+control.isvisible(50)</visible>
-		</control>
-		<control>
-			<description>Filmstrip Bottom Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>400</posY>
-			<width>1280</width>
-			<height>320</height>
-			<texture>filmstrip_overlay.png</texture>
-			<visible>facadeview.filmstrip+control.isvisible(50)</visible>
-		</control>
-	
-	</controls>
+  <controls>
+    <!-- Overlays -->
+    <control>
+      <type>image</type>
+      <description>hidebackground</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+      <visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Backdrop Overlay - Thumbs</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>-2</posY>
+      <width>1284</width>
+      <height>726</height>
+      <texture>movieviewbg.png</texture>
+      <visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Categories Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>fanartoverlay.png</texture>
+      <visible>control.isvisible(51)</visible>
+    </control>
+    <control>
+      <description>List Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>fanartoverlay.png</texture>
+      <visible>facadeview.list+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Filmstrip Top Bar</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Filmstrip Bottom Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>400</posY>
+      <width>1280</width>
+      <height>320</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+    </control>
+  </controls>
 </window>
+<!--Checksum:39dd3d21349bc1841d875479fa9a5085-->

@@ -6,10 +6,8 @@
   <define>#header.label:859</define>
   <define>#header.hover:hover_my plugins.png</define>
   <controls>
-    
     <import>common.alarm.xml</import>
     <import>common.time.xml</import>
-    
     <control Style="settingsmaintexturefo">
       <type>image</type>
       <posY>269</posY>
@@ -40,7 +38,6 @@
       <posY>353</posY>
       <visible>!control.hasfocus(6)</visible>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -51,7 +48,6 @@
       <height>500</height>
       <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmaintogglebutton">
         <description>SleepTimer On/Off button</description>
         <type>togglebutton</type>
@@ -60,7 +56,6 @@
         <onup>17</onup>
         <ondown>7</ondown>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Reset Button</description>
         <type>button</type>
@@ -69,9 +64,7 @@
         <onup>3</onup>
         <ondown>4</ondown>
       </control>
-      
     </control>
-    
     <control>
       <description>sleep time label</description>
       <type>label</type>
@@ -94,7 +87,6 @@
       <font>mediastream14c</font>
       <textcolor>FFffffff</textcolor>
     </control>
-    
     <control>
       <description>Number of minutes until sleep</description>
       <type>label</type>
@@ -117,7 +109,6 @@
       <onup>7</onup>
       <ondown>5</ondown>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <description>fade out volume</description>
       <type>checkmark</type>
@@ -127,7 +118,6 @@
       <onup>4</onup>
       <ondown>6</ondown>
     </control>
-    
     <control Style="settingsmaincheckmark">
       <description>shutdown pc</description>
       <type>checkmark</type>
@@ -137,6 +127,6 @@
       <onup>5</onup>
       <ondown>3</ondown>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:d1b87283ac7a6177554c64e833f5cda9-->

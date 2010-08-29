@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>1</id>
   <defaultcontrol>2</defaultcontrol>
@@ -78,7 +78,6 @@
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
-
     <control>
       <type>group</type>
       <description>group element</description>
@@ -171,7 +170,8 @@
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <scrollWrapString></scrollWrapString>
+        <scrollWrapString>
+        </scrollWrapString>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
@@ -321,7 +321,7 @@
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>     
+      <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <!--<control>
                         <description>video window</description>
@@ -536,3 +536,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:35cb6f43c444f54c104276c25bf3f618-->

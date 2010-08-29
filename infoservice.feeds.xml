@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>16001</id>
   <defaultcontrol>50</defaultcontrol>
@@ -106,47 +106,47 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-    </control>    
-	<!-- Facade Item Counts -->		
-	<control>
-		<description>Item Count Background</description>
-		<type>image</type>
-		<id>0</id>
-		<posX>1065</posX>
-		<posY>13</posY>
-		<width>202</width>
-		<height>28</height>
-		<texture>mediacountbg.png</texture>
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>		
-	</control>
-	<control>
-		<description>Item Count Label</description>
-		<type>label</type>
-		<label>507</label>
-		<id>0</id>
-		<width>135</width>
-		<posX>1078</posX>
-		<posY>16</posY>
-		<align>left</align>
-		<font>mediastream10tc</font>
-		<textcolor>ff909090</textcolor>			
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>		
-	</control>
-	<control>
-		<description>Item Count</description>
-		<type>label</type>
-		<label>#infoservice.feed.itemcount</label>
-		<id>0</id>
-		<posX>1238</posX>
-		<posY>14</posY>
-		<font>mediastream11c</font>
-		<textcolor>ff006698</textcolor>
-		<align>right</align>
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>			
-	</control>
+    </control>
+    <!-- Facade Item Counts -->
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Label</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#infoservice.feed.itemcount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -356,3 +356,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
+<!--Checksum:b9c574b08c829d7bed3ff062bf080f03-->

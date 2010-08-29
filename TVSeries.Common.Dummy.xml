@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -166,52 +166,52 @@
       <!-- to make a control visible only when Series/Season/Episode is available (file local) do this: <visible>control.isvisible(1244)</visible> -->
       <!-- to make a control invisible only when Series/Season/Episode is not available (file not local) do this: <visible>!control.isvisible(1244)</visible> -->
     </control>
-	
-	<!-- CUSTOM DUMMIES -->
-	<control>
-		<description>Dummy label for Rating Display</description>
-		<id>5555</id>
-		<type>label</type>
-		<label>#TVSeries.Series.Rating</label>
-		<posX>-50</posX>
-		<posY>-50</posY>          
-		<visible>Control.HasText(5555)</visible>
-	</control>
-	<control>
-		<description>Dummy label for Rating Display</description>
-		<id>5556</id>
-		<type>label</type>
-		<label>#TVSeries.Series.myRating</label>
-		<posX>-50</posX>
-		<posY>-50</posY>          
-		<visible>Control.HasText(5556)</visible>
-	</control>
-	<control>
-		<description>Dummy label for Rating Display</description>
-		<id>5557</id>
-		<type>label</type>
-		<label>#TVSeries.Episode.Rating</label>
-		<posX>-50</posX>
-		<posY>-50</posY>          
-		<visible>Control.HasText(5557)</visible>
-	</control>
-	<control>
-		<description>Dummy label for Rating Display</description>
-		<id>5558</id>
-		<type>label</type>
-		<label>#TVSeries.Episode.myRating</label>
-		<posX>-50</posX>
-		<posY>-50</posY>          
-		<visible>Control.HasText(5558)</visible>
-	</control>
-	<control>
-		<description>Dummy label for Series Title has Loaded</description>
-		<id>5559</id>
-		<type>label</type>
-		<label>#TVSeries.Series.Pretty_Name</label>
-		<posX>-50</posX>
-		<posY>-50</posY>          
-		<visible>Control.HasText(5559)</visible>
-	</control>
+    <!-- CUSTOM DUMMIES -->
+    <control>
+      <description>Dummy label for Rating Display</description>
+      <id>5555</id>
+      <type>label</type>
+      <label>#TVSeries.Series.Rating</label>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <visible>Control.HasText(5555)</visible>
+    </control>
+    <control>
+      <description>Dummy label for Rating Display</description>
+      <id>5556</id>
+      <type>label</type>
+      <label>#TVSeries.Series.myRating</label>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <visible>Control.HasText(5556)</visible>
+    </control>
+    <control>
+      <description>Dummy label for Rating Display</description>
+      <id>5557</id>
+      <type>label</type>
+      <label>#TVSeries.Episode.Rating</label>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <visible>Control.HasText(5557)</visible>
+    </control>
+    <control>
+      <description>Dummy label for Rating Display</description>
+      <id>5558</id>
+      <type>label</type>
+      <label>#TVSeries.Episode.myRating</label>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <visible>Control.HasText(5558)</visible>
+    </control>
+    <control>
+      <description>Dummy label for Series Title has Loaded</description>
+      <id>5559</id>
+      <type>label</type>
+      <label>#TVSeries.Series.Pretty_Name</label>
+      <posX>-50</posX>
+      <posY>-50</posY>
+      <visible>Control.HasText(5559)</visible>
+    </control>
   </controls>
 </window>
+<!--Checksum:7bc5e028066775b37c14d2e2f33770bf-->

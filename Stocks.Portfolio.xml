@@ -1,667 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>		
-		
-		<!-- *** TopPortfolio 0 *** -->
-		<control>
-			<description>TopPortfolio Indicator 0</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>35</posX>
-			<posY>305</posY>
-			<width>50</width>
-			<height>50</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.TopPortfolio0Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Name 0</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>90</posX>
-			<posY>305</posY>
-			<width>200</width>
-			<height>15</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio0Name</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Last 0</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>90</posX>
-			<posY>325</posY>
-			<width>200</width>
-			<height>35</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio0Last</label>
-			<font>mediastream14tc</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** TopPortfolio 1 *** -->
-		<control>
-			<description>TopPortfolio Indicator 1</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>350</posX>
-			<posY>305</posY>
-			<width>50</width>
-			<height>50</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.TopPortfolio1Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Name 1</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>405</posX>
-			<posY>305</posY>
-			<width>200</width>
-			<height>15</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio1Name</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Last 1</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>405</posX>
-			<posY>325</posY>
-			<width>200</width>
-			<height>35</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio1Last</label>
-			<font>mediastream14tc</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** TopPortfolio 2 *** -->
-		<control>
-			<description>TopPortfolio Indicator 2</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>665</posX>
-			<posY>305</posY>
-			<width>50</width>
-			<height>50</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.TopPortfolio2Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Name 2</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>720</posX>
-			<posY>305</posY>
-			<width>200</width>
-			<height>15</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio2Name</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>TopPortfolio Last 2</description>
-			<type>label</type>
-			<id>1</id>
-			<posX>720</posX>
-			<posY>325</posY>
-			<width>200</width>
-			<height>35</height>
-			<align>left</align>
-			<label>#Stocks.TopPortfolio2Last</label>
-			<font>mediastream14tc</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 0 *** -->
-		<control>
-			<description>Portfolio Indicator 0</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio0Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 0</description>
-			<type>label</type>
-			<id>300</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio0Name - #Stocks.Portfolio0Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 1 *** -->
-		<control>
-			<description>Portfolio Indicator 1</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>428</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio1Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 1</description>
-			<type>label</type>
-			<id>301</id>
-			<posX>65</posX>
-			<posY>425</posY>
-			<label>#Stocks.Portfolio1Name - #Stocks.Portfolio1Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 2 *** -->
-		<control>
-			<description>Portfolio Indicator 2</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>448</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio2Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 2</description>
-			<type>label</type>
-			<id>302</id>
-			<posX>65</posX>
-			<posY>445</posY>
-			<label>#Stocks.Portfolio2Name - #Stocks.Portfolio2Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 3 *** -->
-		<control>
-			<description>Portfolio Indicator 3</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>468</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio3Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 3</description>
-			<type>label</type>
-			<id>303</id>
-			<posX>65</posX>
-			<posY>465</posY>
-			<label>#Stocks.Portfolio3Name - #Stocks.Portfolio3Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 4 *** -->
-		<control>
-			<description>Portfolio Indicator 4</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>488</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio4Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 4</description>
-			<type>label</type>
-			<id>304</id>
-			<posX>65</posX>
-			<posY>485</posY>
-			<label>#Stocks.Portfolio4Name - #Stocks.Portfolio4Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 5 *** -->
-		<control>
-			<description>Portfolio Indicator 5</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>508</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio5Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 5</description>
-			<type>label</type>
-			<id>305</id>
-			<posX>65</posX>
-			<posY>505</posY>
-			<label>#Stocks.Portfolio5Name - #Stocks.Portfolio5Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 6 *** -->
-		<control>
-			<description>Portfolio Indicator 6</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>528</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio6Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 6</description>
-			<type>label</type>
-			<id>306</id>
-			<posX>65</posX>
-			<posY>525</posY>
-			<label>#Stocks.Portfolio6Name - #Stocks.Portfolio6Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 7 *** -->
-		<control>
-			<description>Portfolio Indicator 7</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>548</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio7Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 7</description>
-			<type>label</type>
-			<id>307</id>
-			<posX>65</posX>
-			<posY>545</posY>
-			<label>#Stocks.Portfolio7Name - #Stocks.Portfolio7Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 8 *** -->
-		<control>
-			<description>Portfolio Indicator 8</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>568</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio8Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 8</description>
-			<type>label</type>
-			<id>308</id>
-			<posX>65</posX>
-			<posY>565</posY>
-			<label>#Stocks.Portfolio8Name - #Stocks.Portfolio8Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 9 *** -->
-		<control>
-			<description>Portfolio Indicator 9</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>588</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio9Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 9</description>
-			<type>label</type>
-			<id>309</id>
-			<posX>65</posX>
-			<posY>585</posY>
-			<label>#Stocks.Portfolio9Name - #Stocks.Portfolio9Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 10 *** -->
-		<control>
-			<description>Portfolio Indicator 10</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio10Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 10</description>
-			<type>label</type>
-			<id>310</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio10Name - #Stocks.Portfolio10Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 11 *** -->
-		<control>
-			<description>Portfolio Indicator 11</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio11Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 11</description>
-			<type>label</type>
-			<id>311</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio11Name - #Stocks.Portfolio11Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 12 *** -->
-		<control>
-			<description>Portfolio Indicator 12</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio12Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 12</description>
-			<type>label</type>
-			<id>312</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio12Name - #Stocks.Portfolio12Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 13 *** -->
-		<control>
-			<description>Portfolio Indicator 13</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio13Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 13</description>
-			<type>label</type>
-			<id>313</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio13Name - #Stocks.Portfolio13Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 14 *** -->
-		<control>
-			<description>Portfolio Indicator 14</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio14Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 10</description>
-			<type>label</type>
-			<id>314</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio14Name - #Stocks.Portfolio14Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 15 *** -->
-		<control>
-			<description>Portfolio Indicator 15</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio15Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 15</description>
-			<type>label</type>
-			<id>315</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio15Name - #Stocks.Portfolio15Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 16 *** -->
-		<control>
-			<description>Portfolio Indicator 16</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio16Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 16</description>
-			<type>label</type>
-			<id>316</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio16Name - #Stocks.Portfolio16Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 17 *** -->
-		<control>
-			<description>Portfolio Indicator 17</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio17Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 17</description>
-			<type>label</type>
-			<id>317</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio17Name - #Stocks.Portfolio17Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 18 *** -->
-		<control>
-			<description>Portfolio Indicator 18</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio18Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 18</description>
-			<type>label</type>
-			<id>318</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio18Name - #Stocks.Portfolio18Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio 19 *** -->
-		<control>
-			<description>Portfolio Indicator 19</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>38</posX>
-			<posY>408</posY>
-			<width>20</width>
-			<height>20</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<texture>#Stocks.Portfolio19Indicator</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Portfolio Value 19</description>
-			<type>label</type>
-			<id>319</id>
-			<posX>65</posX>
-			<posY>405</posY>
-			<label>#Stocks.Portfolio19Name - #Stocks.Portfolio19Summary</label>
-			<font>mediastream11c</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-
-		<!-- *** Portfolio Summary *** -->
-		<control>
-			<description>Portfolio Summary</description>
-			<type>label</type>
-			<id>500</id>
-			<posX>38</posX>
-			<posY>680</posY>
-			<label>#Stocks.PortfolioSummary</label>
-			<font>mediastream12tc</font>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-	</controls>
+  <controls>
+    <!-- *** TopPortfolio 0 *** -->
+    <control>
+      <description>TopPortfolio Indicator 0</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>35</posX>
+      <posY>305</posY>
+      <width>50</width>
+      <height>50</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.TopPortfolio0Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Name 0</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>90</posX>
+      <posY>305</posY>
+      <width>200</width>
+      <height>15</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio0Name</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Last 0</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>90</posX>
+      <posY>325</posY>
+      <width>200</width>
+      <height>35</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio0Last</label>
+      <font>mediastream14tc</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** TopPortfolio 1 *** -->
+    <control>
+      <description>TopPortfolio Indicator 1</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>350</posX>
+      <posY>305</posY>
+      <width>50</width>
+      <height>50</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.TopPortfolio1Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Name 1</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>405</posX>
+      <posY>305</posY>
+      <width>200</width>
+      <height>15</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio1Name</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Last 1</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>405</posX>
+      <posY>325</posY>
+      <width>200</width>
+      <height>35</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio1Last</label>
+      <font>mediastream14tc</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** TopPortfolio 2 *** -->
+    <control>
+      <description>TopPortfolio Indicator 2</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>665</posX>
+      <posY>305</posY>
+      <width>50</width>
+      <height>50</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.TopPortfolio2Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Name 2</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>720</posX>
+      <posY>305</posY>
+      <width>200</width>
+      <height>15</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio2Name</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>TopPortfolio Last 2</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>720</posX>
+      <posY>325</posY>
+      <width>200</width>
+      <height>35</height>
+      <align>left</align>
+      <label>#Stocks.TopPortfolio2Last</label>
+      <font>mediastream14tc</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 0 *** -->
+    <control>
+      <description>Portfolio Indicator 0</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio0Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 0</description>
+      <type>label</type>
+      <id>300</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio0Name - #Stocks.Portfolio0Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 1 *** -->
+    <control>
+      <description>Portfolio Indicator 1</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>428</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio1Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 1</description>
+      <type>label</type>
+      <id>301</id>
+      <posX>65</posX>
+      <posY>425</posY>
+      <label>#Stocks.Portfolio1Name - #Stocks.Portfolio1Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 2 *** -->
+    <control>
+      <description>Portfolio Indicator 2</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>448</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio2Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 2</description>
+      <type>label</type>
+      <id>302</id>
+      <posX>65</posX>
+      <posY>445</posY>
+      <label>#Stocks.Portfolio2Name - #Stocks.Portfolio2Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 3 *** -->
+    <control>
+      <description>Portfolio Indicator 3</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>468</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio3Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 3</description>
+      <type>label</type>
+      <id>303</id>
+      <posX>65</posX>
+      <posY>465</posY>
+      <label>#Stocks.Portfolio3Name - #Stocks.Portfolio3Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 4 *** -->
+    <control>
+      <description>Portfolio Indicator 4</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>488</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio4Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 4</description>
+      <type>label</type>
+      <id>304</id>
+      <posX>65</posX>
+      <posY>485</posY>
+      <label>#Stocks.Portfolio4Name - #Stocks.Portfolio4Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 5 *** -->
+    <control>
+      <description>Portfolio Indicator 5</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>508</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio5Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 5</description>
+      <type>label</type>
+      <id>305</id>
+      <posX>65</posX>
+      <posY>505</posY>
+      <label>#Stocks.Portfolio5Name - #Stocks.Portfolio5Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 6 *** -->
+    <control>
+      <description>Portfolio Indicator 6</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>528</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio6Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 6</description>
+      <type>label</type>
+      <id>306</id>
+      <posX>65</posX>
+      <posY>525</posY>
+      <label>#Stocks.Portfolio6Name - #Stocks.Portfolio6Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 7 *** -->
+    <control>
+      <description>Portfolio Indicator 7</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>548</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio7Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 7</description>
+      <type>label</type>
+      <id>307</id>
+      <posX>65</posX>
+      <posY>545</posY>
+      <label>#Stocks.Portfolio7Name - #Stocks.Portfolio7Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 8 *** -->
+    <control>
+      <description>Portfolio Indicator 8</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>568</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio8Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 8</description>
+      <type>label</type>
+      <id>308</id>
+      <posX>65</posX>
+      <posY>565</posY>
+      <label>#Stocks.Portfolio8Name - #Stocks.Portfolio8Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 9 *** -->
+    <control>
+      <description>Portfolio Indicator 9</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>588</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio9Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 9</description>
+      <type>label</type>
+      <id>309</id>
+      <posX>65</posX>
+      <posY>585</posY>
+      <label>#Stocks.Portfolio9Name - #Stocks.Portfolio9Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 10 *** -->
+    <control>
+      <description>Portfolio Indicator 10</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio10Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 10</description>
+      <type>label</type>
+      <id>310</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio10Name - #Stocks.Portfolio10Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 11 *** -->
+    <control>
+      <description>Portfolio Indicator 11</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio11Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 11</description>
+      <type>label</type>
+      <id>311</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio11Name - #Stocks.Portfolio11Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 12 *** -->
+    <control>
+      <description>Portfolio Indicator 12</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio12Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 12</description>
+      <type>label</type>
+      <id>312</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio12Name - #Stocks.Portfolio12Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 13 *** -->
+    <control>
+      <description>Portfolio Indicator 13</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio13Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 13</description>
+      <type>label</type>
+      <id>313</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio13Name - #Stocks.Portfolio13Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 14 *** -->
+    <control>
+      <description>Portfolio Indicator 14</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio14Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 10</description>
+      <type>label</type>
+      <id>314</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio14Name - #Stocks.Portfolio14Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 15 *** -->
+    <control>
+      <description>Portfolio Indicator 15</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio15Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 15</description>
+      <type>label</type>
+      <id>315</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio15Name - #Stocks.Portfolio15Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 16 *** -->
+    <control>
+      <description>Portfolio Indicator 16</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio16Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 16</description>
+      <type>label</type>
+      <id>316</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio16Name - #Stocks.Portfolio16Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 17 *** -->
+    <control>
+      <description>Portfolio Indicator 17</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio17Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 17</description>
+      <type>label</type>
+      <id>317</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio17Name - #Stocks.Portfolio17Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 18 *** -->
+    <control>
+      <description>Portfolio Indicator 18</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio18Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 18</description>
+      <type>label</type>
+      <id>318</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio18Name - #Stocks.Portfolio18Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio 19 *** -->
+    <control>
+      <description>Portfolio Indicator 19</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>38</posX>
+      <posY>408</posY>
+      <width>20</width>
+      <height>20</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#Stocks.Portfolio19Indicator</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Portfolio Value 19</description>
+      <type>label</type>
+      <id>319</id>
+      <posX>65</posX>
+      <posY>405</posY>
+      <label>#Stocks.Portfolio19Name - #Stocks.Portfolio19Summary</label>
+      <font>mediastream11c</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- *** Portfolio Summary *** -->
+    <control>
+      <description>Portfolio Summary</description>
+      <type>label</type>
+      <id>500</id>
+      <posX>38</posX>
+      <posY>680</posY>
+      <label>#Stocks.PortfolioSummary</label>
+      <font>mediastream12tc</font>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:747e0bd29944fc01bab94e7ddff78242-->

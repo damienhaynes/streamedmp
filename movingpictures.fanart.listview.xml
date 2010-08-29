@@ -11,7 +11,7 @@
       <height>356</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MovingPictures.Coverart</texture>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Rounded cover edges</description>
@@ -23,7 +23,7 @@
       <height>390</height>
       <texture>#StreamedMP.RoundedPosters.Image</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Cover Art Glass Overlay</description>
@@ -35,7 +35,7 @@
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.list+control.isvisible(50)+!Control.HasThumb(91)+Control.HasThumb(90)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Watched Icons -->
     <control>
@@ -48,7 +48,7 @@
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Watched Icon</description>
@@ -60,7 +60,7 @@
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+control.isvisible(9)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Series Un-Watched Icon</description>
@@ -72,7 +72,7 @@
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+!control.isvisible(9)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Movie Details -->
     <control>
@@ -87,7 +87,7 @@
       <align>left</align>
       <textcolor>#shadow.light</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title</description>
@@ -100,7 +100,7 @@
       <label>#MovingPictures.SelectedMovie.title</label>
       <align>left</align>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Genres Shadow</description>
@@ -114,7 +114,7 @@
       <label>#MovingPictures.SelectedMovie.genres</label>
       <textcolor>#shadow.dark</textcolor>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Genres</description>
@@ -127,7 +127,7 @@
       <textcolor>ff989898</textcolor>
       <label>#MovingPictures.SelectedMovie.genres</label>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Star Rating Image</description>
@@ -140,7 +140,7 @@
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Rating</description>
@@ -156,7 +156,7 @@
       <shadowDistance>2</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -173,7 +173,7 @@
       <label>#MovingPictures.SelectedMovie.summary</label>
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Runtime Label</description>
@@ -185,7 +185,7 @@
       <font>mediastream12tc</font>
       <label>#MovingPictures.Translation.Runtime.Label</label>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.runtime.localized.long,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Runtime</description>
@@ -197,7 +197,7 @@
       <font>mediastream11tc</font>
       <label>#MovingPictures.SelectedMovie.runtime.localized.long</label>
       <visible>facadeview.list+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Certification Label</description>
@@ -209,7 +209,7 @@
       <font>mediastream12tc</font>
       <label>#MovingPictures.Translation.Certification.Label</label>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Certification</description>
@@ -221,8 +221,8 @@
       <font>mediastream11tc</font>
       <label>#MovingPictures.Translation.Rated.Label #MovingPictures.SelectedMovie.certification</label>
       <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.certification,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:8f3da3a7afa67d97cb4bca894f02a031-->
+<!--Checksum:349c56559584a8fbaa99c0e3cf3daf83-->

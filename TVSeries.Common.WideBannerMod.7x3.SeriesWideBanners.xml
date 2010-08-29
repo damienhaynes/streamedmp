@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<window> 
-	<controls>
-
-		<control>
-			<description>Series Title</description>
-			<type>fadelabel</type>
-			<id>0</id>
-			<posX>40</posX>
-			<posY>684</posY>
-			<width>900</width>
-			<label>#TVSeries.Series.Pretty_Name</label>
-			<font>mediastream16tc</font>
-			<textcolor>White</textcolor>			
-			<visible>control.isvisible(1237)+facadeview.largeicons</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>		
-	
-	</controls>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>Series Title</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#TVSeries.Series.Pretty_Name</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <visible>control.isvisible(1237)+facadeview.largeicons</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:fe376e0a7c276f349569efd273832fd5-->
