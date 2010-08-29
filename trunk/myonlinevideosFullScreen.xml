@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>4758</id>
   <defaultcontrol>13</defaultcontrol>
@@ -18,7 +18,7 @@
       <texture>black.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-	<control>
+    <control>
       <description>background paused (large)</description>
       <type>image</type>
       <id>0</id>
@@ -230,3 +230,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
+<!--Checksum:b0758b3a0fe81653c8c52572c60ead9f-->

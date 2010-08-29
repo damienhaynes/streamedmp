@@ -8,10 +8,8 @@
   <define>#defaultcontrol:19</define>
   <define>#defaultcontrol.onright:9992</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -21,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmainbutton">
         <description>add button</description>
         <type>button</type>
@@ -29,7 +26,6 @@
         <label>200039</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>remove button</description>
         <type>button</type>
@@ -37,7 +33,6 @@
         <label>200040</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>reset button</description>
         <type>button</type>
@@ -47,7 +42,6 @@
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
-    
     <control>
       <type>label</type>
       <description>skip steps seconds</description>
@@ -248,7 +242,6 @@
       <onleft>9</onleft>
       <onright>#defaultcontrol.onright</onright>
     </control>
-    
     <control>
       <type>label</type>
       <description>Current config static</description>
@@ -266,10 +259,11 @@
       <id>21</id>
       <posX>351</posX>
       <posY>630</posY>
-      <label></label>
+      <label>
+      </label>
       <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->

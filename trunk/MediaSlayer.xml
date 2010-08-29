@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>8765</id>
   <defaultcontrol>3</defaultcontrol>
@@ -10,7 +10,7 @@
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-		<control>
+    <control>
       <description>dummy control</description>
       <type>label</type>
       <id>2</id>
@@ -203,17 +203,17 @@
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
-
     <control>
       <description>text label - STATUS</description>
       <type>label</type>
       <id>5</id>
       <posX>350</posX>
       <posY>250</posY>
-			<width>560</width>
+      <width>560</width>
       <font>mediastream12tc</font>
-      <label></label>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <label>
+      </label>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
@@ -223,11 +223,11 @@
       <posX>350</posX>
       <posY>300</posY>
       <font>mediastream12tc</font>
-      <label></label>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <label>
+      </label>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Progress Bar Background</description>
       <type>image</type>
@@ -238,7 +238,7 @@
       <height>20</height>
       <texture>osdprogressback.png</texture>
       <visible>control.isvisible(8)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
@@ -253,10 +253,9 @@
       <lefttexture>osdprogressleft.png</lefttexture>
       <midtexture>osdprogressmid.png</midtexture>
       <righttexture>osdprogressright.png</righttexture>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Progress Bar Background</description>
       <type>image</type>
@@ -267,7 +266,7 @@
       <height>20</height>
       <texture>osdprogressback.png</texture>
       <visible>control.isvisible(12)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
@@ -282,10 +281,9 @@
       <lefttexture>osdprogressleft.png</lefttexture>
       <midtexture>osdprogressmid.png</midtexture>
       <righttexture>osdprogressright.png</righttexture>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Artist Label (Dummy - Dont Display)</description>
       <type>label</type>
@@ -300,13 +298,13 @@
       <type>label</type>
       <id>6</id>
       <posX>1250</posX>
-			<posY>14</posY>
-      <label></label>
-			<align>right</align>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <posY>14</posY>
+      <label>
+      </label>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Album / Movie Label (Dummy - Dont Display)</description>
       <type>label</type>
@@ -322,13 +320,13 @@
       <posX>25</posX>
       <posY>684</posY>
       <width>900</width>
-      <label></label>
+      <label>
+      </label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Page Count Background</description>
       <type>image</type>
@@ -374,10 +372,9 @@
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Movie image background</description>
       <type>image</type>
@@ -402,7 +399,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Album image background</description>
       <type>image</type>
@@ -427,7 +423,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <control>
       <description>Cycle Cover Background</description>
       <type>image</type>
@@ -473,9 +468,9 @@
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
   </controls>
 </window>
+<!--Checksum:0d548e255a49e8b437a66f77cf8c66f1-->

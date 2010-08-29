@@ -7,99 +7,97 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:30</define>
   <define>#defaultcontrol.onright:10001</define>
-  <controls>    
-    
-	<import>common.settings.xml</import>
-    <import>common.time.xml</import>    
-    
-	<control>      
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
       <description>buttons</description>
-	  <type>group</type>
+      <type>group</type>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>251</posX>
       <posY>150</posY>
       <width>595</width>
       <height>500</height>
-      <layout>StackLayout</layout>            
-	  <control Style="settingsmaintogglebutton">        
+      <layout>StackLayout</layout>
+      <control Style="settingsmaintogglebutton">
         <description>Volume Display</description>
-		<type>togglebutton</type>
+        <type>togglebutton</type>
         <id>30</id>
-        <label>9121</label>		
+        <label>9121</label>
         <onup>17</onup>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
+      </control>
       <control Style="settingsmaintogglebutton">
         <description>Progress display</description>
         <type>togglebutton</type>
-        <id>31</id>       
-		<label>9122</label>		
+        <id>31</id>
+        <label>9122</label>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
+      </control>
       <control Style="settingsmaintogglebutton">
-	    <description>Disk Icon</description>
+        <description>Disk Icon</description>
         <type>togglebutton</type>
         <id>32</id>
-        <label>9123</label>		
+        <label>9123</label>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
-	  <control Style="settingsmaintogglebutton">
+      </control>
+      <control Style="settingsmaintogglebutton">
         <description>Media Status</description>
         <type>togglebutton</type>
         <id>33</id>
-        <label>9124</label>		
-		<onright>#defaultcontrol.onright</onright>
-      </control>  	  
+        <label>9124</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmaintogglebutton">
-	    <description>CD/DVD Status</description>
+        <description>CD/DVD Status</description>
         <type>togglebutton</type>
         <id>34</id>
-        <label>9125</label>		
+        <label>9125</label>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
+      </control>
       <control Style="settingsmaintogglebutton">
-	    <description>Use Custom Font</description>
+        <description>Use Custom Font</description>
         <type>togglebutton</type>
         <id>35</id>
-        <label>9126</label>		
+        <label>9126</label>
         <onright>#defaultcontrol.onright</onright>
-      </control>      
-	  <control Style="settingsmaintogglebutton">
+      </control>
+      <control Style="settingsmaintogglebutton">
         <description>Use Large Icons</description>
         <type>togglebutton</type>
         <id>36</id>
         <label>9127</label>
-		<onright>#defaultcontrol.onright</onright>
-      </control>	  
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmaintogglebutton">
         <description>Use Custom Large Icons</description>
         <type>togglebutton</type>
         <id>37</id>
-        <label>9128</label>	
-		<onright>#defaultcontrol.onright</onright>
-      </control>	  
+        <label>9128</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmaintogglebutton">
         <description>Invert Large Icons</description>
         <type>togglebutton</type>
         <id>38</id>
-        <label>9129</label>  
-		<onright>#defaultcontrol.onright</onright>
-      </control>	  
-	  <control Style="settingsmainbutton">
+        <label>9129</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
         <description>Font Editor</description>
         <type>button</type>
         <id>39</id>
-        <label>9130</label>	
-		<onright>#defaultcontrol.onright</onright>
+        <label>9130</label>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Icon Editor</description>
         <type>button</type>
         <id>40</id>
-        <label>9131</label>        
-		<onright>#defaultcontrol.onright</onright>
-      </control>	  
+        <label>9131</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:944f95af61abc5cf08858b3783b23874-->

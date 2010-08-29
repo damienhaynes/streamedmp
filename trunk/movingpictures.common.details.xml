@@ -15,7 +15,7 @@ This file should contain the details view
       <height>724</height>
       <texture>filmstrip_overlay.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Cover Art</description>
@@ -27,7 +27,7 @@ This file should contain the details view
       <height>380</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Rounded cover edges</description>
@@ -39,7 +39,7 @@ This file should contain the details view
       <height>414</height>
       <texture>#StreamedMP.RoundedPosters.Image</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Cover Art Glass Overlay</description>
@@ -51,7 +51,7 @@ This file should contain the details view
       <height>177</height>
       <texture>glassoverlay2.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+!Control.HasThumb(61)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon Background</description>
@@ -63,7 +63,7 @@ This file should contain the details view
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Icon</description>
@@ -75,7 +75,7 @@ This file should contain the details view
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+control.isvisible(9)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Un-Watched Icon</description>
@@ -87,7 +87,7 @@ This file should contain the details view
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+!control.isvisible(9)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Buttons -->
     <!-- Only show the Play button so we can focus to the Subtitle button -->
@@ -113,7 +113,7 @@ This file should contain the details view
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       <visible allowhiddenfocus="true">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Subtitles</description>
@@ -138,7 +138,7 @@ This file should contain the details view
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       <visible allowhiddenfocus="true">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Details Box -->
     <control>
@@ -151,7 +151,7 @@ This file should contain the details view
       <height>337</height>
       <texture>detailsbg.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Title</description>
@@ -164,7 +164,7 @@ This file should contain the details view
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Genres</description>
@@ -177,7 +177,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Star Rating Image</description>
@@ -190,7 +190,7 @@ This file should contain the details view
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Star Rating Value</description>
@@ -206,7 +206,7 @@ This file should contain the details view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Dummy User Star Rating Value</description>
@@ -216,7 +216,7 @@ This file should contain the details view
       <posX>-50</posX>
       <posY>-50</posY>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>User Star Rating Value</description>
@@ -229,7 +229,7 @@ This file should contain the details view
       <align>left</align>
       <font>mediastream11c</font>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasText(199)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -245,7 +245,7 @@ This file should contain the details view
       <label>#MovingPictures.SelectedMovie.summary</label>
       <scrollStartDelaySec>15</scrollStartDelaySec>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Directors Label</description>
@@ -258,7 +258,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Directors</description>
@@ -271,7 +271,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Writers Label</description>
@@ -284,7 +284,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Writer</description>
@@ -297,7 +297,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Actors Label</description>
@@ -310,7 +310,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Actors</description>
@@ -323,7 +323,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Year Label</description>
@@ -337,7 +337,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Year</description>
@@ -351,7 +351,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Runtime Label</description>
@@ -365,7 +365,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Runtime</description>
@@ -379,7 +379,7 @@ This file should contain the details view
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Certification -->
     <control>
@@ -392,8 +392,8 @@ This file should contain the details view
       <height>57</height>
       <texture>Logos\Certification\#MovingPictures.SelectedMovie.certification.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:d337fed1f33ec9445ab3938a00aabd22-->
+<!--Checksum:528ba8500a71dd1a2d1c0e07ff4a6ffd-->

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>196203</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
   <controls>
-
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <type>group</type>
       <description>group element</description>
@@ -20,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-
       <control Style="settingsmaintogglebutton">
         <description>Enable/Disable Hidden Menu Image</description>
         <type>togglebutton</type>
@@ -30,7 +28,7 @@
         <onup>17</onup>
         <ondown>3</ondown>
       </control>
-			<control Style="settingsmaintogglebutton">
+      <control Style="settingsmaintogglebutton">
         <description>Enable/Disable Rounded Poster Images</description>
         <type>togglebutton</type>
         <id>3</id>
@@ -39,7 +37,7 @@
         <onup>2</onup>
         <ondown>4</ondown>
       </control>
-			<control Style="settingsmaintogglebutton">
+      <control Style="settingsmaintogglebutton">
         <description>Enable/Disable Watched/Unwatched Icons in Artwork</description>
         <type>togglebutton</type>
         <id>4</id>
@@ -48,8 +46,7 @@
         <onup>3</onup>
         <ondown>2</ondown>
       </control>
-    
     </control>
-
   </controls>
 </window>
+<!--Checksum:60aa2449ccdee9938534cc558d4fa222-->

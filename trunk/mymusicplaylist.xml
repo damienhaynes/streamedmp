@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>500</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,7 +7,7 @@
   <define>#header.image:-</define>
   <define>#header.hover:hover_my music.png</define>
   <define>#useSelectedFanart:Yes</define>
-  <define>#usePlayFanart:Yes</define>  
+  <define>#usePlayFanart:Yes</define>
   <controls>
     <import>mymusic.selected.fanart.xml</import>
     <control>
@@ -94,7 +94,7 @@
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-		<description>label OPTIONS</description>
+        <description>label OPTIONS</description>
         <id>0</id>
         <label>496</label>
         <type>label</type>
@@ -107,7 +107,7 @@
       </control>
       <control>
         <description>label PLAYLIST</description>
-		<id>0</id>
+        <id>0</id>
         <label>136</label>
         <type>label</type>
         <font>mediastream12tc</font>
@@ -118,7 +118,7 @@
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-		<description>label JUMP TO</description>
+        <description>label JUMP TO</description>
         <id>0</id>
         <label>1065</label>
         <type>label</type>
@@ -208,7 +208,7 @@
           <label>-</label>
           <visible>false</visible>
         </control>
-		<control>
+        <control>
           <description>Music</description>
           <type>button</type>
           <id>31</id>
@@ -223,7 +223,7 @@
           <label>4540</label>
           <hyperlink>510</hyperlink>
           <onleft>50</onleft>
-        </control>		
+        </control>
         <control>
           <description>music settings button</description>
           <type>button</type>
@@ -287,10 +287,10 @@
           <id>1700</id>
           <label>-</label>
           <visible allowhiddenfocus="true">false</visible>
-          <ondown>2</ondown>          
-          <onleft>2</onleft>          
+          <ondown>2</ondown>
+          <onleft>2</onleft>
           <onright>2</onright>
-        </control>        
+        </control>
       </control>
     </control>
     <import>common.overlays.xml</import>
@@ -299,3 +299,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:a9dd5f4d9b95cace42dec5d6a4937f21-->

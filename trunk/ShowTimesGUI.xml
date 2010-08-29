@@ -1,130 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<id>7111992</id>
-	<defaultcontrol>50</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<define>#header.label:#currentmodule</define>
-	<define>#default.image:hover_moving pictures.png</define>
-	<controls>
-		<import>ShowTimesGUI.Dummies.xml</import>
-		
-		<!-- Backdrops -->
-		<control>
-			<description>Default background image</description>		
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>#default.image</texture>
-		</control>
-		<control>
-			<description>fanart</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<texture>#st_backdrop</texture>
-			<width>1280</width>
-			<height>720</height>		
-		</control>		
-
-		<!-- Fanart Overlays -->
-		<control>
-			<description>Main Facade Overlay Image</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<visible>!control.isvisible(24)+!facadeview.filmstrip</visible>
-			<texture>mainoverlay.png</texture>
-		</control>
-		<control>
-			<description>Top Bar Overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>51</height>
-			<texture>overlay_topbar.png</texture>
-			<visible>!control.isvisible(24)+facadeview.filmstrip</visible>
-		</control>
-		<control>
-			<description>background overlay</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>filmstrip_overlay.png</texture>
-			<visible>control.isvisible(24)|facadeview.filmstrip</visible>
-		</control>
-		
-		<!-- Title Area -->
-		<control>
-            <description>Top Title Extension Background</description>
-            <type>image</type>
-            <id>0</id>
-            <posX>381</posX>
-            <posY>11</posY>
-            <width>486</width>
-            <height>35</height>
-            <texture>tvtitlebgshort.png</texture>
-            <visible>!control.isvisible(24)+!string.equals(#st_extra,)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-		<control>
-            <description>ShowTimes Extras</description>
-            <type>fadelabel</type>
-            <label>#st_extra</label>
-            <id>0</id>
-            <posX>839</posX>
-            <posY>14</posY>
-            <width>320</width>
-            <align>right</align>
-            <font>mediastream12c</font>
-			<scrollStartDelaySec>30</scrollStartDelaySec>
-            <visible>!control.isvisible(24)+!string.equals(#st_extra,)</visible>            
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
-        </control>
-		<control>
-			<description>Top Title Background</description>
-			<type>image</type>
-			<id>0</id>
-			<posX>77</posX>
-			<posY>11</posY>
-			<width>437</width>
-			<height>35</height>
-			<texture>tvtitlebg.png</texture>
-			<visible>!control.isvisible(24)</visible>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-		</control>    
-		<control>
-			<type>fadelabel</type>
-			<description>Top Title</description>
-			<id>0</id>
-			<posX>493</posX>
-			<posY>13</posY>
-			<width>350</width>
-			<font>mediastream12c</font>
-			<align>right</align>
-			<visible>yes</visible>
-			<label>#currentmodule</label>
-			<animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-			<visible>!control.isvisible(24)</visible>
-		</control>
-
-		<!-- ShowTimes Imports -->
-		<import>ShowTimesGUI.HiddenMenu.xml</import>
-		<import>ShowTimesGUI.Facade.xml</import>
-		<import>ShowTimesGUI.ListView.xml</import>
-		<import>ShowTimesGUI.Details.xml</import>		
-		
-		<!-- Common Imports -->
-		<import>common.overlays2.xml</import>			
-		<import>common.time.xml</import>
-		
-	</controls>
+  <id>7111992</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#currentmodule</define>
+  <define>#default.image:hover_moving pictures.png</define>
+  <controls>
+    <import>ShowTimesGUI.Dummies.xml</import>
+    <!-- Backdrops -->
+    <control>
+      <description>Default background image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#default.image</texture>
+    </control>
+    <control>
+      <description>fanart</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <texture>#st_backdrop</texture>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    <!-- Fanart Overlays -->
+    <control>
+      <description>Main Facade Overlay Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <visible>!control.isvisible(24)+!facadeview.filmstrip</visible>
+      <texture>mainoverlay.png</texture>
+    </control>
+    <control>
+      <description>Top Bar Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>!control.isvisible(24)+facadeview.filmstrip</visible>
+    </control>
+    <control>
+      <description>background overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>control.isvisible(24)|facadeview.filmstrip</visible>
+    </control>
+    <!-- Title Area -->
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>486</width>
+      <height>35</height>
+      <texture>tvtitlebgshort.png</texture>
+      <visible>!control.isvisible(24)+!string.equals(#st_extra,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>ShowTimes Extras</description>
+      <type>fadelabel</type>
+      <label>#st_extra</label>
+      <id>0</id>
+      <posX>839</posX>
+      <posY>14</posY>
+      <width>320</width>
+      <align>right</align>
+      <font>mediastream12c</font>
+      <scrollStartDelaySec>30</scrollStartDelaySec>
+      <visible>!control.isvisible(24)+!string.equals(#st_extra,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <visible>!control.isvisible(24)</visible>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <visible>!control.isvisible(24)</visible>
+    </control>
+    <!-- ShowTimes Imports -->
+    <import>ShowTimesGUI.HiddenMenu.xml</import>
+    <import>ShowTimesGUI.Facade.xml</import>
+    <import>ShowTimesGUI.ListView.xml</import>
+    <import>ShowTimesGUI.Details.xml</import>
+    <!-- Common Imports -->
+    <import>common.overlays2.xml</import>
+    <import>common.time.xml</import>
+  </controls>
 </window>
+<!--Checksum:d9a752e860a82f1373352cb63ceeab84-->

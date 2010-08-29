@@ -71,7 +71,7 @@ This file should contain the facade view
       <height>28</height>
       <texture>mediacountbackground.png</texture>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Movie Count Label</description>
@@ -83,7 +83,7 @@ This file should contain the facade view
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -96,7 +96,7 @@ This file should contain the facade view
       <align>right</align>
       <label>#MovingPictures.general.filteredmoviecount</label>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>facadeview</type>
@@ -130,7 +130,7 @@ This file should contain the facade view
     <control>
       <type>facadeview</type>
       <id>50</id>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <control>
         <visible>control.isvisible(50)</visible>
         <description>Movie List</description>
@@ -303,4 +303,4 @@ This file should contain the facade view
     </control>
   </controls>
 </window>
-<!--Checksum:7eee8e9b4867cc9893c8023fbe3cec6a-->
+<!--Checksum:0a9ae5d53d73f5c621579df2b315b312-->

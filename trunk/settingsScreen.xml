@@ -8,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9993</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -21,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmainbutton">
         <description>UI Calibration button</description>
         <type>button</type>
@@ -31,7 +28,6 @@
         <onright>#defaultcontrol.onright</onright>
         <onup>17</onup>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Screen Calibration button</description>
         <type>button</type>
@@ -40,7 +36,6 @@
         <hyperlink>11</hyperlink>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Scroll speed button</description>
         <type>button</type>
@@ -49,7 +44,7 @@
         <hyperlink>31</hyperlink>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
     </control>
   </controls>
 </window>
+<!--Checksum:3c651195e702299e7058fdf2f8bb478f-->

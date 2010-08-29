@@ -9,10 +9,8 @@
   <define>#defaultcontrol:21</define>
   <define>#defaultcontrol.onright:9997</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -22,73 +20,64 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
-	  <control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>DVD Navigators</description>
         <type>button</type>
         <id>21</id>
         <label>1198</label>
         <onup>17</onup>
-		<onright>#defaultcontrol.onright</onright>
-      </control>	
-	  
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmainbutton">
-	    <description>Video Codecs</description>
+        <description>Video Codecs</description>
         <type>button</type>
         <id>24</id>
         <label>6000</label>
         <onup>17</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
-	    <description>Audio Codecs</description>
+        <description>Audio Codecs</description>
         <type>button</type>
         <id>25</id>
         <label>6001</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
-	    <description>Audio Renderer</description>
+        <description>Audio Renderer</description>
         <type>button</type>
         <id>27</id>
         <label>6002</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
-	    <description>Apect Ratio</description>
+        <description>Apect Ratio</description>
         <type>button</type>
         <id>28</id>
         <label>6004</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  
-	  <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaintogglebutton">
         <description>Enable Subtitles</description>
         <type>togglebutton</type>
         <id>22</id>
         <label>1196</label>
-		<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
-	    <description>Subtitle Language</description>
+        <description>Subtitle Language</description>
         <type>button</type>
         <id>29</id>
         <label>1029</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmainbutton">
-	    <description>Audio Language</description>
+        <description>Audio Language</description>
         <type>button</type>
         <id>30</id>
         <label>492</label>
-        <onright>#defaultcontrol.onright</onright>        
+        <onright>#defaultcontrol.onright</onright>
       </control>
-	  
       <control Style="settingsmaintogglebutton">
         <description>Turn Off DXVA</description>
         <type>togglebutton</type>
@@ -96,8 +85,7 @@
         <label>1197</label>
         <ondown>21</ondown>
       </control>
-	  
     </control>
-    
   </controls>
 </window>
+<!--Checksum:ecdcb8c43bc0bdaa159f7d8a5f6bcca1-->

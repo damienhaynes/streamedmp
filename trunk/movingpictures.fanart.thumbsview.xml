@@ -16,7 +16,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Genres</description>
@@ -29,7 +29,7 @@ This file should contain the thumbs view
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Star Rating -->
     <control>
@@ -42,7 +42,7 @@ This file should contain the thumbs view
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -52,7 +52,7 @@ This file should contain the thumbs view
       <width>360</width>
       <font>mediastream11c</font>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Summary</description>
@@ -67,7 +67,7 @@ This file should contain the thumbs view
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
     <control Style="smallTitleB">
@@ -78,7 +78,7 @@ This file should contain the thumbs view
       <posY>552</posY>
       <textcolor>ff111111</textcolor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Certification Label</description>
@@ -89,7 +89,7 @@ This file should contain the thumbs view
       <posY>551</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Certification</description>
@@ -103,7 +103,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Certification N/A</description>
@@ -117,7 +117,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Runtime Label Shadow</description>
@@ -127,7 +127,7 @@ This file should contain the thumbs view
       <posY>574</posY>
       <textcolor>ff111111</textcolor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Runtime Label</description>
@@ -138,7 +138,7 @@ This file should contain the thumbs view
       <posY>573</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Runtime</description>
@@ -152,7 +152,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Runtime N/A</description>
@@ -166,7 +166,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Year Label Shadow</description>
@@ -176,7 +176,7 @@ This file should contain the thumbs view
       <posY>596</posY>
       <textcolor>ff111111</textcolor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <description>Year Label</description>
@@ -186,7 +186,7 @@ This file should contain the thumbs view
       <posY>595</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Year</description>
@@ -199,7 +199,7 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Year N/A</description>
@@ -212,8 +212,8 @@ This file should contain the thumbs view
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
-			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:9e7ef770280c0b2b6dc9eff6d8da5e31-->
+<!--Checksum:1133a1c8d04e6d3511ac5c651374e9ea-->

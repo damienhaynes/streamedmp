@@ -19,8 +19,8 @@
       <width>1281</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
-    </control>   
-		<control>
+    </control>
+    <control>
       <type>group</type>
       <description>group element</description>
       <posX>50</posX>
@@ -63,13 +63,13 @@
         <font>mediastream12tc</font>
         <height>40</height>
         <textYOff>8</textYOff>
-        <textXOff>20</textXOff>				
+        <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Search Fields Button</description>
         <type>button</type>
         <id>6</id>
@@ -89,18 +89,18 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Search Type Select Button</description>
         <type>selectbutton</type>
         <id>5</id>
         <label>#StreamedMP.SearchType</label>
-				<subitems>
-					<subitem>Equals</subitem>
-					<subitem>Starts with</subitem>
-					<subitem>Contains</subitem>
-					<subitem>Ends with</subitem>
+        <subitems>
+          <subitem>Equals</subitem>
+          <subitem>Starts with</subitem>
+          <subitem>Contains</subitem>
+          <subitem>Ends with</subitem>
         </subitems>
-				<selected>2</selected>
+        <selected>2</selected>
         <onup>6</onup>
         <ondown>3</ondown>
         <onright>50</onright>
@@ -111,23 +111,23 @@
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
-				<texturebg>tv_button_focus.png</texturebg>
-				<textureLeft>arrow_round_left_focus.png</textureLeft>
-				<textureLeftFocus>arrow_round_left_nofocus.png</textureLeftFocus>
-				<textureRight>arrow_round_right_nofocus.png</textureRight>
-				<textureRightFocus>arrow_round_right_focus.png</textureRightFocus>
+        <texturebg>tv_button_focus.png</texturebg>
+        <textureLeft>arrow_round_left_focus.png</textureLeft>
+        <textureLeftFocus>arrow_round_left_nofocus.png</textureLeftFocus>
+        <textureRight>arrow_round_right_nofocus.png</textureRight>
+        <textureRightFocus>arrow_round_right_focus.png</textureRightFocus>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Case Sensitivity Button</description>
         <type>togglebutton</type>
         <id>3</id>
-				<!-- Translations doesn't work? -->
+        <!-- Translations doesn't work? -->
         <!--<label>#StreamedMP.CaseSensitive</label>-->
-				<label>Case Sensitive</label>
+        <label>Case Sensitive</label>
         <onup>5</onup>
         <ondown>2</ondown>
         <onright>50</onright>
@@ -138,14 +138,14 @@
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
-				<textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-    </control>		
+    </control>
     <control>
       <type>image</type>
       <id>0</id>
@@ -155,7 +155,7 @@
       <height>47</height>
       <texture>imagestreamtitle.png</texture>
       <visible>true</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
@@ -224,14 +224,14 @@
         <PinIconXOff>57</PinIconXOff>
         <PinIconYOff>13</PinIconYOff>
         <itemWidth>32</itemWidth>
-        <itemHeight>32</itemHeight>        
+        <itemHeight>32</itemHeight>
         <IconXOff>12</IconXOff>
         <IconYOff>4</IconYOff>
         <textXOff>25</textXOff>
         <textYOff>5</textYOff>
         <textXOff2>0</textXOff2>
-        <textYOff2>5</textYOff2>        
-        <keepaspectratio>no</keepaspectratio>        
+        <textYOff2>5</textYOff2>
+        <keepaspectratio>no</keepaspectratio>
         <spinPosX>1175</spinPosX>
         <spinPosY>681</spinPosY>
         <spinAlign>Right</spinAlign>
@@ -250,4 +250,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:192b30cf219c58f87752883ac900f083-->
+<!--Checksum:ff78779123df78804006615e7fb63d9c-->

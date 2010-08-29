@@ -1,40 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>607</id>
-        <defaultcontrol>10</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <define>#header.label:877</define>
-        <define>#header.image:-</define>
-        <define>#header.hover:hover_my tv.png</define>
-        <define>#selecteditem:877</define>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <control>
-                        <description>Top Title Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>77</posX>
-                        <posY>11</posY>
-                        <width>437</width>
-                        <height>35</height>
-                        <texture>tvtitlebg.png</texture>
-                        <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-                </control>
-                <control>
-                        <type>group</type>
-                        <description>group element</description>
-                        <control>
-                                <description>scheduler recordings listcontrol</description>
-                                <type>updownlistcontrol</type>
-                                <id>10</id>
-                                <posX>620</posX>
-                                <posY>240</posY>
-                                <height>450</height>
-                                <width>660</width>
-                                <onleft>99</onleft>
-                                <onright>10</onright>
-                                <!--<selectedColor>80000000</selectedColor>
+  <id>607</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:877</define>
+  <define>#header.image:-</define>
+  <define>#header.hover:hover_my tv.png</define>
+  <define>#selecteditem:877</define>
+  <controls>
+    <import>common.window.tv.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <control>
+        <description>scheduler recordings listcontrol</description>
+        <type>updownlistcontrol</type>
+        <id>10</id>
+        <posX>620</posX>
+        <posY>240</posY>
+        <height>450</height>
+        <width>660</width>
+        <onleft>99</onleft>
+        <onright>10</onright>
+        <!--<selectedColor>80000000</selectedColor>
                                 <textcolor>ffffffff</textcolor>
                                 <selectedColor2>ffffffff</selectedColor2>
                                 <textcolor2>ffffffff</textcolor2>
@@ -68,75 +68,74 @@
                                 <onright>2</onright>
                                 <unfocusedAlpha>0xFF</unfocusedAlpha>
                                 <keepaspectratio>yes</keepaspectratio>-->
-                        </control>
-                </control>
-                <control>
-                        <description>channel</description>
-                        <type>label</type>
-                        <id>17</id>
-                        <posX>28</posX>
-                        <posY>240</posY>
-                        <width>570</width>
-                        <label>#TV.Scheduled.Channel</label>
-                        <font>mediastream16tc</font>
-                        <textcolor>ffcccccc</textcolor>
-                        <textcolor>ff909090</textcolor>
-                </control>
-                <control>
-                        <description>Current program title</description>
-                        <type>fadelabel</type>
-                        <id>13</id>
-                        <posX>28</posX>
-                        <posY>273</posY>
-                        <width>570</width>
-                        <font>mediastream12tc</font>
-                        <label>#TV.Scheduled.Title</label>
-                        <textcolor>ff909090</textcolor>
-                </control>
-                <control>
-                        <description>Current program time</description>
-                        <type>label</type>
-                        <id>14</id>
-                        <posX>28</posX>
-                        <posY>302</posY>
-                        <font>mediastream12tc</font>
-                        <label>#TV.Scheduled.Time</label>
-                </control>
-
-                <control>
-                        <description>Description1</description>
-                        <type>textboxscrollup</type>
-                        <id>15</id>
-                        <posX>28</posX>
-                        <posY>370</posY>
-                        <width>570</width>
-                        <height>290</height>
-                        <font>mediastream12</font>
-                        <seperator>----------------------------------------------------------------------------------------------------</seperator>
-                        <label>#TV.Scheduled.Description</label>
-                </control>
-                <control>
-                        <description>Media Count Background</description>
-                        <type>image</type>
-                        <id>0</id>
-                        <posX>1113</posX>
-                        <posY>684</posY>
-                        <width>159</width>
-                        <height>30</height>
-                        <texture>mediacountbackground.png</texture>
-                        <visible>yes</visible>
-                </control>
-                <control>
-                        <description>Media Count Label</description>
-                        <type>label</type>
-                        <label>PAGE:</label>
-                        <id>0</id>
-                        <posX>1123</posX>
-                        <posY>688</posY>
-                        <font>mediastream10tc</font>
-                        <textcolor>ff909090</textcolor>
-                </control>
-                <!--<control>
+      </control>
+    </control>
+    <control>
+      <description>channel</description>
+      <type>label</type>
+      <id>17</id>
+      <posX>28</posX>
+      <posY>240</posY>
+      <width>570</width>
+      <label>#TV.Scheduled.Channel</label>
+      <font>mediastream16tc</font>
+      <textcolor>ffcccccc</textcolor>
+      <textcolor>ff909090</textcolor>
+    </control>
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>28</posX>
+      <posY>273</posY>
+      <width>570</width>
+      <font>mediastream12tc</font>
+      <label>#TV.Scheduled.Title</label>
+      <textcolor>ff909090</textcolor>
+    </control>
+    <control>
+      <description>Current program time</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>28</posX>
+      <posY>302</posY>
+      <font>mediastream12tc</font>
+      <label>#TV.Scheduled.Time</label>
+    </control>
+    <control>
+      <description>Description1</description>
+      <type>textboxscrollup</type>
+      <id>15</id>
+      <posX>28</posX>
+      <posY>370</posY>
+      <width>570</width>
+      <height>290</height>
+      <font>mediastream12</font>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <label>#TV.Scheduled.Description</label>
+    </control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>684</posY>
+      <width>159</width>
+      <height>30</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>yes</visible>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>688</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+    </control>
+    <!--<control>
                    <description>TV preview window</description>
                       <type>videowindow</type>
                       <id>99</id>
@@ -149,6 +148,7 @@
                       <onup>7</onup>
                       <visible>Player.HasVideo</visible>
                     </control>-->
-                <import>common.overlays.xml</import>
-        </controls>
+    <import>common.overlays.xml</import>
+  </controls>
 </window>
+<!--Checksum:b9dac47fd6c43cfac29a606a8822a371-->

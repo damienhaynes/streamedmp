@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>196207</id>
   <defaultcontrol>2</defaultcontrol>
@@ -7,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
   <controls>
-
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <type>group</type>
       <description>group element</description>
@@ -20,7 +19,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-
       <control Style="settingsmainbutton">
         <description>TV Guide Size</description>
         <type>button</type>
@@ -40,6 +38,6 @@
         <ondown>99</ondown>
       </control>
     </control>
-
   </controls>
 </window>
+<!--Checksum:bc43d4e7beba24ae0532f01de44b588b-->

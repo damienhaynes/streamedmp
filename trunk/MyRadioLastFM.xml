@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>7890</id>
   <defaultcontrol>10</defaultcontrol>
@@ -20,9 +20,6 @@
       <texture>black.png</texture>
     </control>
     <!--            :: MENU ::            -->
-
-
-
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -145,7 +142,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <type>image</type>
       <description>artist art image</description>
@@ -157,7 +153,6 @@
       <keepaspectratio>no</keepaspectratio>
       <texture>#Play.Current.ArtistThumb</texture>
       <visible>Player.HasAudio</visible>
-
     </control>
     <control>
       <type>fadelabel</type>
@@ -217,9 +212,7 @@
       <visible>Player.HasAudio</visible>
       <font>mediastream12c</font>
     </control>
-    
     <!-- Similar Artist and Tags -->
-
     <control>
       <type>label</type>
       <description>similar hint</description>
@@ -244,8 +237,6 @@
       <font>mediastream12</font>
       <label>#Play.Current.Lastfm.SimilarArtists</label>
     </control>
-    
-
     <control>
       <type>label</type>
       <description>tag hint</description>
@@ -269,9 +260,7 @@
       <width>500</width>
       <font>mediastream11</font>
       <label>#Play.Current.Lastfm.TrackTags</label>
-    </control>    
-    
-    
+    </control>
     <!-- Next up List Control -->
     <control>
       <id>0</id>
@@ -314,7 +303,7 @@
       <spaceBetweenItems>0</spaceBetweenItems>
       <visible allowhiddenfocus="True">player.hasmedia</visible>
     </control>
-<!--    
+    <!--    
     <control>
       <description>video preview window</description>
       <type>videowindow</type>
@@ -333,3 +322,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:ce6a452947d069e89464a7f2fb8f384d-->

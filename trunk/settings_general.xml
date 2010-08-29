@@ -8,10 +8,8 @@
   <define>#defaultcontrol:10</define>
   <define>#defaultcontrol.onright:9992</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <description>Skin Preview</description>
       <type>image</type>
@@ -26,7 +24,6 @@
       <texture />
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -36,7 +33,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmainbutton">
         <description>Skin</description>
         <type>button</type>
@@ -45,9 +41,8 @@
         <onup>9994</onup>
         <textXOff>45</textXOff>
         <textXOff2>35</textXOff2>
-		<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Language</description>
         <type>selectbutton</type>
@@ -55,9 +50,8 @@
         <textXOff>45</textXOff>
         <textXOff2>35</textXOff2>
         <label>248</label>
-		<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmaintogglebutton">
         <description>Start in fullscreen mode</description>
         <type>togglebutton</type>
@@ -66,7 +60,6 @@
         <label>Start in fullscreen</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmaintogglebutton">
         <description>Screensaver</description>
         <type>togglebutton</type>
@@ -75,7 +68,6 @@
         <label>360</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Skip steps screen button</description>
         <type>button</type>
@@ -87,6 +79,6 @@
         <ondown>99</ondown>
       </control>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:ffa7d3b7ef508e8a52c4ad1b8b127215-->

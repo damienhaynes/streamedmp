@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
     <control>
@@ -25,7 +25,6 @@
       <posY>0</posY>
       <width>1</width>
     </control>
-
     <control>
       <description>DUMMY CONTROLL FOR PLAYING FANART 2 VISIBILITY CONDITION</description>
       <type>label</type>
@@ -34,7 +33,6 @@
       <posY>0</posY>
       <width>1</width>
     </control>
-
     <control>
       <description>DUMMY CONTROLL FOR PLAYING FANART AVAILABILITY CONDITION</description>
       <type>label</type>
@@ -54,8 +52,8 @@
       <height>720</height>
       <texture>hover_my music.png</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART Random Image 1</description>
@@ -67,10 +65,9 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop1.any</texture>
       <visible>control.isvisible(91919297)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
-
     <control>
       <description>FANART Random Image 2</description>
       <id>0</id>
@@ -81,8 +78,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.any</texture>
       <visible>control.isvisible(91919298)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 1</description>
@@ -94,8 +91,8 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
       <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
     <control>
       <description>FANART IMAGE 2</description>
@@ -107,8 +104,9 @@
       <height>720</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
       <visible>control.isvisible(91919296)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
-			<animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
-			<animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
+      <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
   </controls>
 </window>
+<!--Checksum:32e53680044ad2f76ab2fdd1be0a7934-->

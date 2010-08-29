@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-
 <window>
   <controls>
     <control>
@@ -117,48 +116,48 @@
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
-	<control>
-		<description>Item Count Background</description>
-		<type>image</type>
-		<id>0</id>
-		<posX>1065</posX>
-		<posY>13</posY>
-		<width>202</width>
-		<height>28</height>
-		<texture>mediacountbg.png</texture>
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-		<visible>!string.equals(#OnlineVideos.state, details)</visible>
-	</control>
-	<control>
-		<description>Items Translation</description>
-		<type>label</type>
-		<label>507</label>
-		<id>0</id>
-		<width>90</width>
-		<posX>1077</posX>
-		<posY>17</posY>
-		<align>left</align>
-		<font>mediastream10tc</font>
-		<textcolor>ff909090</textcolor>			
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-		<visible>!string.equals(#OnlineVideos.state, details)</visible>
-	</control>
-	<control>
-		<description>Item Count</description>
-		<type>label</type>
-		<label>#itemcount</label>
-		<id>0</id>
-		<posX>1240</posX>
-		<posY>16</posY>
-		<font>mediastream10c</font>
-		<textcolor>ff006698</textcolor>
-		<align>right</align>
-		<animation effect="fade" time="250">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-		<visible>!string.equals(#OnlineVideos.state, details)</visible>
-	</control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
+    </control>
+    <control>
+      <description>Items Translation</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>90</width>
+      <posX>1077</posX>
+      <posY>17</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1240</posX>
+      <posY>16</posY>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#OnlineVideos.state, details)</visible>
+    </control>
     <control>
       <description>group element</description>
       <type>group</type>
@@ -166,11 +165,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="250" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-
       <!-- *** CLIPS LIST *** -->
-
-     
-
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
@@ -285,3 +280,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:75464601b11fd9a26882800dd004a213-->

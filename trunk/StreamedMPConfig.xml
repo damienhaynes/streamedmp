@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>196200</id>
   <defaultcontrol>40</defaultcontrol>
@@ -7,10 +8,8 @@
   <define>#defaultcontrol:40</define>
   <define>#defaultcontrol.onright:9999</define>
   <controls>
-
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <type>group</type>
       <description>group element</description>
@@ -38,11 +37,11 @@
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
-	      <description>Misc Screen Settings</description>
+        <description>Misc Screen Settings</description>
         <type>button</type>
         <id>42</id>
         <label>-</label>
-	      <textXOff>35</textXOff>
+        <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -53,15 +52,15 @@
         <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>MovingPictures Settings</description>
         <type>button</type>
-        <id>45</id>       
-	      <label>-</label>
-	      <textXOff>35</textXOff>
+        <id>45</id>
+        <label>-</label>
+        <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>TV Settings</description>
         <type>button</type>
         <id>46</id>
@@ -78,7 +77,6 @@
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
-
     <control>
       <description>Update Indicator</description>
       <type>image</type>
@@ -90,6 +88,6 @@
       <texture>isupdate.png</texture>
       <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
     </control>
-
   </controls>
 </window>
+<!--Checksum:2cf0c1e96fd3661bf432f099c30d1b98-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>5000</id>
   <defaultcontrol>3</defaultcontrol>
@@ -6,10 +6,8 @@
   <define>#header.label:850</define>
   <define>#header.hover:hover_my plugins.png</define>
   <controls>
-    
     <import>common.alarm.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -19,7 +17,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmainbutton">
         <description>New Button</description>
         <type>button</type>
@@ -28,7 +25,6 @@
         <onup>17</onup>
         <textXOff>45</textXOff>
       </control>
-      
       <control Style="settingsmainbutton">
         <description>Sleep Timer Button</description>
         <type>button</type>
@@ -37,9 +33,7 @@
         <ondown>50</ondown>
         <textXOff>45</textXOff>
       </control>
-      
     </control>
-    
     <control>
       <description>group element</description>
       <type>group</type>
@@ -61,6 +55,6 @@
         </control>
       </control>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:d07106f8d9c9467eb0a5bf94cc1f1cca-->

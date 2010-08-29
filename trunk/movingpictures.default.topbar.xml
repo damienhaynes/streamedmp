@@ -1,7 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>
-	
-		<control>
+  <controls>
+    <control>
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
@@ -32,7 +32,6 @@
       <animation effect="slide" start="-160,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+control.isvisible(17)+!control.isvisible(9001)</visible>
     </control>
-
     <control>
       <description>Top Title Background</description>
       <type>image</type>
@@ -62,7 +61,6 @@
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
     </control>
-
     <control>
       <description>Working Animation</description>
       <type>animation</type>
@@ -75,6 +73,6 @@
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>
-		
-	</controls>
+  </controls>
 </window>
+<!--Checksum:8f3f9ca0a0f93f42b0d913954b93618f-->

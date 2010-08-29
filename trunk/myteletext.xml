@@ -1,219 +1,212 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-        <id>7700</id>
-        <defaultcontrol>502</defaultcontrol>
-        <allowoverlay>no</allowoverlay>
-        <define>#header.label:1440</define>
-        <define>#header.hover:-</define>
-        <controls>
-                <import>common.window.tv.xml</import>
-                <import>common.time.xml</import>
-                <control>
-                        <description>tele-text rendering image</description>
-                        <type>image</type>
-                        <id>500</id>
-                        <posX>80</posX>
-                        <posY>68</posY>
-                        <width>880</width>
-                        <height>660</height>
-                        <texture>button_small_settings_nofocus.png</texture>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>tele-text rendering image 2</description>
-                        <type>image</type>
-                        <id>501</id>
-                        <posX>80</posX>
-                        <posY>68</posY>
-                        <width>880</width>
-                        <height>660</height>
-                        <texture>button_small_settings_nofocus.png</texture>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>template for program title darkarea </description>
-                        <type>label</type>
-                        <visible>no</visible>
-                        <id>26</id>
-                        <label>-</label>
-                        <font>mediastream12tc</font>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <description>template for program title darkarea </description>
-                        <type>label</type>
-                        <visible>no</visible>
-                        <posX>533</posX>
-                        <posY>250</posY>
-                        <id>27</id>
-                        <label>-</label>
-                        <font>mediastream12tc</font>
-                        <textcolor>FFFFFFFF</textcolor>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>
-                <control>
-                        <type>actiongroup</type>
-                        <description>action menu</description>
-                        <dimColor>00ffffff</dimColor>
-                        <control>
-                                <type>image</type>
-                                <posX>1002</posX>
-                                <posY>0</posY>
-                                <width>278</width>
-                                <height>720</height>
-                                <texture>hiddenmenu_right.png</texture>
-                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                        </control>
-                        <control>
-                                <id>1</id>
-                                <description>label OPTIONS</description>
-                                <label>496</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>225</posY>
-                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                        </control>
-                        <control>
-                                <id>1</id>
-                                <description>label JUMP TO</description>
-                                <label>1065</label>
-                                <type>label</type>
-                                <font>mediastream12tc</font>
-                                <posX>1040</posX>
-                                <posY>423</posY>
-                                <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                        </control>
-                        <control>
-                                <type>group</type>
-                                 <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-                                <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-                                <posX>1040</posX>
-                                <posY>250</posY>
-                                <width>220</width>
-                                <height>720</height>
-                                <layout>StackLayout</layout>
-                                <control>
-                                        <description>Page100</description>
-                                        <type>button</type>
-                                        <id>502</id>
-                                        <posX>106</posX>
-                                        <posY>121</posY>
-                                        <label>590</label>
-                                        
-                                </control>
-                                <control>
-                                        <description>Page200</description>
-                                        <type>button</type>
-                                        <id>503</id>
-                                        <posX>106</posX>
-                                        <posY>163</posY>
-                                        <label>591</label>
-                                       
-                                </control>
-                                <control>
-                                        <description>Page300</description>
-                                        <type>button</type>
-                                        <id>504</id>
-                                        <posX>106</posX>
-                                        <posY>206</posY>
-                                        <label>592</label>
-                                       
-                                </control>
-                                <control>
-                                        <description>hidden mode</description>
-                                        <type>togglebutton</type>
-                                        <id>505</id>
-                                        <posX>106</posX>
-                                        <posY>248</posY>
-                                        <label>593</label>
-                                        <textYOff>1</textYOff>
-                                        <textcolor>ffffffff</textcolor>
-                                        <colordiffuse>ffffffff</colordiffuse>
-                                        
-                                </control>
-                                <control>
-                                        <description>subpage</description>
-                                        <type>selectbutton</type>
-                                        <id>506</id>
-                                        <posX>106</posX>
-                                        <posY>291</posY>
-                                        <label>594</label>
-                                        
-                                        <subitems>
-                                                <subitem>./1</subitem>
-                                                <subitem>./2</subitem>
-                                                <subitem>./3</subitem>
-                                                <subitem>./4</subitem>
-                                                <subitem>./5</subitem>
-                                                <subitem>./6</subitem>
-                                                <subitem>./7</subitem>
-                                                <subitem>./8</subitem>
-                                                <subitem>./9</subitem>
-                                                <subitem>./10</subitem>
-                                                <subitem>./11</subitem>
-                                                <subitem>./12</subitem>
-                                                <subitem>./13</subitem>
-                                                <subitem>./14</subitem>
-                                                <subitem>./15</subitem>
-                                                <subitem>./16</subitem>
-                                                <subitem>./17</subitem>
-                                                <subitem>./18</subitem>
-                                                <subitem>./19</subitem>
-                                                <subitem>./20</subitem>
-                                                <subitem>./21</subitem>
-                                                <subitem>./22</subitem>
-                                                <subitem>./23</subitem>
-                                                <subitem>./24</subitem>
-                                                <subitem>./25</subitem>
-                                                <subitem>./26</subitem>
-                                                <subitem>./27</subitem>
-                                                <subitem>./28</subitem>
-                                                <subitem>./29</subitem>
-                                                <subitem>./30</subitem>
-                                                <subitem>./31</subitem>
-                                                <subitem>./32</subitem>
-                                                <subitem>./33</subitem>
-                                                <subitem>./34</subitem>
-                                                <subitem>./35</subitem>
-                                                <subitem>./36</subitem>
-                                        </subitems>
-                                </control>
-                                <control>
-                                        <description>Fullscreen</description>
-                                        <type>button</type>
-                                        <id>507</id>
-                                        <posX>106</posX>
-                                        <posY>333</posY>
-                                        <label>595</label>
-                                        
-                                </control>
-                                <control>
-                                        <description>Empty button</description>
-                                        <type>button</type>
-                                        <id>0</id>
-                                        <label>-</label>
-                                        <visible>false</visible>
-                                </control>
-                                <control>
-                                        <description>TVGuide</description>
-                                        <type>button</type>
-                                        <id>66602</id>
-                                        <label>600</label>
-                                        <hyperlink>600</hyperlink>
-                                       
-                                </control>
-                        </control>
-                </control>
-                <!--<control>
+  <id>7700</id>
+  <defaultcontrol>502</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:1440</define>
+  <define>#header.hover:-</define>
+  <controls>
+    <import>common.window.tv.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>tele-text rendering image</description>
+      <type>image</type>
+      <id>500</id>
+      <posX>80</posX>
+      <posY>68</posY>
+      <width>880</width>
+      <height>660</height>
+      <texture>button_small_settings_nofocus.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>tele-text rendering image 2</description>
+      <type>image</type>
+      <id>501</id>
+      <posX>80</posX>
+      <posY>68</posY>
+      <width>880</width>
+      <height>660</height>
+      <texture>button_small_settings_nofocus.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>template for program title darkarea </description>
+      <type>label</type>
+      <visible>no</visible>
+      <id>26</id>
+      <label>-</label>
+      <font>mediastream12tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>template for program title darkarea </description>
+      <type>label</type>
+      <visible>no</visible>
+      <posX>533</posX>
+      <posY>250</posY>
+      <id>27</id>
+      <label>-</label>
+      <font>mediastream12tc</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+      </control>
+      <control>
+        <id>1</id>
+        <description>label OPTIONS</description>
+        <label>496</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+      </control>
+      <control>
+        <id>1</id>
+        <description>label JUMP TO</description>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>423</posY>
+        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Page100</description>
+          <type>button</type>
+          <id>502</id>
+          <posX>106</posX>
+          <posY>121</posY>
+          <label>590</label>
+        </control>
+        <control>
+          <description>Page200</description>
+          <type>button</type>
+          <id>503</id>
+          <posX>106</posX>
+          <posY>163</posY>
+          <label>591</label>
+        </control>
+        <control>
+          <description>Page300</description>
+          <type>button</type>
+          <id>504</id>
+          <posX>106</posX>
+          <posY>206</posY>
+          <label>592</label>
+        </control>
+        <control>
+          <description>hidden mode</description>
+          <type>togglebutton</type>
+          <id>505</id>
+          <posX>106</posX>
+          <posY>248</posY>
+          <label>593</label>
+          <textYOff>1</textYOff>
+          <textcolor>ffffffff</textcolor>
+          <colordiffuse>ffffffff</colordiffuse>
+        </control>
+        <control>
+          <description>subpage</description>
+          <type>selectbutton</type>
+          <id>506</id>
+          <posX>106</posX>
+          <posY>291</posY>
+          <label>594</label>
+          <subitems>
+            <subitem>./1</subitem>
+            <subitem>./2</subitem>
+            <subitem>./3</subitem>
+            <subitem>./4</subitem>
+            <subitem>./5</subitem>
+            <subitem>./6</subitem>
+            <subitem>./7</subitem>
+            <subitem>./8</subitem>
+            <subitem>./9</subitem>
+            <subitem>./10</subitem>
+            <subitem>./11</subitem>
+            <subitem>./12</subitem>
+            <subitem>./13</subitem>
+            <subitem>./14</subitem>
+            <subitem>./15</subitem>
+            <subitem>./16</subitem>
+            <subitem>./17</subitem>
+            <subitem>./18</subitem>
+            <subitem>./19</subitem>
+            <subitem>./20</subitem>
+            <subitem>./21</subitem>
+            <subitem>./22</subitem>
+            <subitem>./23</subitem>
+            <subitem>./24</subitem>
+            <subitem>./25</subitem>
+            <subitem>./26</subitem>
+            <subitem>./27</subitem>
+            <subitem>./28</subitem>
+            <subitem>./29</subitem>
+            <subitem>./30</subitem>
+            <subitem>./31</subitem>
+            <subitem>./32</subitem>
+            <subitem>./33</subitem>
+            <subitem>./34</subitem>
+            <subitem>./35</subitem>
+            <subitem>./36</subitem>
+          </subitems>
+        </control>
+        <control>
+          <description>Fullscreen</description>
+          <type>button</type>
+          <id>507</id>
+          <posX>106</posX>
+          <posY>333</posY>
+          <label>595</label>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>TVGuide</description>
+          <type>button</type>
+          <id>66602</id>
+          <label>600</label>
+          <hyperlink>600</hyperlink>
+        </control>
+      </control>
+    </control>
+    <!--<control>
                         <description>video rectangle</description>
                         <type>image</type>
                         <id>0</id>
@@ -223,18 +216,18 @@
                         <height>135</height>
                         <texture>tv_frame.png</texture>
                 </control>-->
-                <control>
-                        <description>video preview window</description>
-                        <type>videowindow</type>
-                        <id>508</id>
-                        <posX>10</posX>
-                        <posY>1030</posY>
-                        <width>180</width>
-                        <height>103</height>
-                        <action>18</action>
-                        <textureFocus>tv_blue_border.png</textureFocus>
-                        <visible>no</visible>
-                </control>            
-                
-        </controls>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>508</id>
+      <posX>10</posX>
+      <posY>1030</posY>
+      <width>180</width>
+      <height>103</height>
+      <action>18</action>
+      <textureFocus>tv_blue_border.png</textureFocus>
+      <visible>no</visible>
+    </control>
+  </controls>
 </window>
+<!--Checksum:7baf0561297cd08cf45125c170813a42-->

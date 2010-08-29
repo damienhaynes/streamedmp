@@ -8,56 +8,54 @@
   <define>#defaultcontrol:65</define>
   <define>#defaultcontrol.onright:10001</define>
   <controls>
-    
-	<import>common.settings.xml</import>
-    <import>common.time.xml</import>    
-    
-	<control>      
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
       <description>buttons</description>
-	  <type>group</type>
+      <type>group</type>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>216</posX>
       <posY>150</posY>
       <width>595</width>
       <height>500</height>
-      <layout>StackLayout</layout>            
+      <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>Red</description>
         <type>selectbutton</type>
-        <id>65</id>       
-		<label>9112</label>
-		<textXOff>45</textXOff>
+        <id>65</id>
+        <label>9112</label>
+        <textXOff>45</textXOff>
         <textXOff2>35</textXOff2>
-		<onup>17</onup>
+        <onup>17</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
-	    <description>Green</description>
+        <description>Green</description>
         <type>selectbutton</type>
         <id>66</id>
         <label>9113</label>
-		<textXOff>45</textXOff>
+        <textXOff>45</textXOff>
         <textXOff2>35</textXOff2>
         <onright>#defaultcontrol.onright</onright>
       </control>
-	  <control Style="settingsmainbutton">
-	    <description>Blue</description>
+      <control Style="settingsmainbutton">
+        <description>Blue</description>
         <type>selectbutton</type>
         <id>67</id>
         <label>9114</label>
-		<textXOff>45</textXOff>
+        <textXOff>45</textXOff>
         <textXOff2>35</textXOff2>
         <onright>#defaultcontrol.onright</onright>
-      </control>	  
-	  <control Style="settingsmaintogglebutton">
+      </control>
+      <control Style="settingsmaintogglebutton">
         <description>Invert Display</description>
         <type>togglebutton</type>
         <id>68</id>
         <label>9115</label>
-		<textXOff>35</textXOff>
-		<onright>#defaultcontrol.onright</onright>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:30b1f413fd112b3a93ffe791a5b87626-->

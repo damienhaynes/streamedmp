@@ -3,348 +3,340 @@
 This file should contain the details view
 -->
 <window>
-	<controls>
-		
-		<control>
-			<description>Movie Title Shadow</description>
-			<type>label</type>
-			<id>0</id>
-			<posX>32</posX>
-			<posY>252</posY>
-			<width>490</width>
-			<font>mediastream16tc</font>
-			<label>#selecteditem</label>
-			<textcolor>ff222222</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+!string.equals(#selecteditem,..)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Movie Title</description>
-			<type>label</type>
-			<id>0</id>
-			<posX>31</posX>
-			<posY>251</posY>
-			<width>490</width>
-			<font>mediastream16tc</font>
-			<label>#selecteditem</label>
-			<textcolor>ffFFFFFF</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+!string.equals(#selecteditem,..)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		
-		<control>
-			<description>Genres Shadow</description>
-			<type>label</type>
-			<label>#genre</label>
-			<id>0</id>
-			<posX>32</posX>
-			<posY>284</posY>
-			<width>490</width>
-			<font>mediastream11tc</font>
-			<textcolor>ff222222</textcolor>			
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Genres</description>
-			<type>label</type>
-			<label>#genre</label>
-			<id>0</id>
-			<posX>31</posX>
-			<posY>282</posY>
-			<width>490</width>
-			<font>mediastream11tc</font>
-			<textcolor>ff909090</textcolor>			
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control>
-			<description>Rating Stars - 720p</description>
-			<type>imagelist</type>
-			<id>101</id>			
-			<posX>31</posX>
-			<posY>305</posY>	  
-			<textureWidth>23</textureWidth>
-			<textureHeight>22</textureHeight>
-			<subitems>
-				<subitem>starwhitehollow.png</subitem>
-				<subitem>starwhite.png</subitem>
-			</subitems>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<imagesToDraw>5</imagesToDraw>
-			<percentage>#rating</percentage>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Rating Stars - 1080p</description>
-			<type>imagelist</type>
-			<id>101</id>			
-			<posX>31</posX>
-			<posY>305</posY>	  
-			<textureWidth>35</textureWidth>
-			<textureHeight>34</textureHeight>
-			<subitems>
-				<subitem>starwhitehollow.png</subitem>
-				<subitem>starwhite.png</subitem>
-			</subitems>
-			<orientation>horizontal</orientation>
-			<align>left</align>
-			<imagesToDraw>5</imagesToDraw>
-			<percentage>#rating</percentage>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-			<description>Rating Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#rating / 10 (#votes votes)</label>
-			<posX>155</posX>
-			<posY>306</posY>
-			<width>400</width>
-			<font>mediastream10</font>		  
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-				
-		<control>
-			<description>Summary</description>
-			<type>textboxscrollup</type>
-			<id>0</id>
-			<posX>31</posX>
-			<posY>338</posY>
-			<width>490</width>
-			<height>190</height>
-			<textcolor>ffFFFFFF</textcolor>
-			<seperator>-----------------------------------------------------------</seperator>
-			<font>mediastream11</font>
-			<label>#plot</label>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control Style="smallTitleB">
-			<description>Runtime Label Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>299</label>
-			<posX>32</posX>
-			<posY>551</posY>
-			<textcolor>ff111111</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control Style="smallTitleB">	  
-			<description>Runtime Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>299</label>
-			<posX>31</posX>
-			<posY>550</posY>
-			<width>140</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Runtime Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#runtime</label>
-			<posX>192</posX>
-			<posY>552</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>			
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Runtime</description>
-			<id>1000</id>
-			<type>label</type>
-			<label>#runtime minutes</label>
-			<posX>191</posX>
-			<posY>551</posY>
-			<width>200</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		
-		<control Style="smallTitleB">
-			<description>Directors Label Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>199</label>
-			<posX>32</posX>
-			<posY>573</posY>
-			<textcolor>ff111111</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control Style="smallTitleB">	  
-			<description>Directors Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>199</label>
-			<posX>31</posX>
-			<posY>572</posY>
-			<width>140</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>192</posX>
-			<posY>574</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>			
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors</description>
-			<id>1001</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>191</posX>
-			<posY>573</posY>
-			<width>200</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Directors N/A</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#director</label>
-			<posX>470</posX>
-			<posY>573</posY>
-			<width>200</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!control.hastext(1001)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-		<control Style="smallTitleB">
-			<id>0</id>
-			<description>Year Label Shadow</description>		  
-			<type>label</type>
-			<label>201</label>
-			<posX>32</posX>
-			<posY>595</posY>
-			<textcolor>ff111111</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">	  
-			<description>Year Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>201</label>
-			<posX>31</posX>
-			<posY>594</posY>
-			<width>140</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year Shadow</description>
-			<id>0</id>
-			<type>label</type>
-			<label>#year</label>
-			<posX>192</posX>
-			<posY>596</posY>
-			<width>200</width>
-			<textcolor>ff222222</textcolor>		
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year</description>
-			<id>1002</id>
-			<type>label</type>
-			<label>#year</label>
-			<posX>191</posX>
-			<posY>595</posY>
-			<width>200</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitle">
-			<description>Year N/A</description>
-			<id>0</id>
-			<type>label</type>
-			<label>N/A</label>
-			<posX>191</posX>
-			<posY>595</posY>
-			<width>200</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!control.hastext(1002)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-
-		<control Style="smallTitleB">
-			<id>0</id>
-			<description>MPAA Label Shadow</description>		  
-			<type>label</type>
-			<label>173</label>
-			<posX>32</posX>
-			<posY>617</posY>
-			<textcolor>ff111111</textcolor>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">	  
-			<description>MPAA Label</description>
-			<id>0</id>
-			<type>label</type>
-			<label>173</label>
-			<posX>31</posX>
-			<posY>616</posY>
-			<width>140</width>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>		
-		<control>
-			<description>MPAA</description>
-			<id>1003</id>
-			<type>textbox</type>
-			<label>#mpaarating</label>
-			<posX>191</posX>
-			<posY>617</posY>
-			<width>330</width>
-			<font>mediastream9c</font>
-			<visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		
-	</controls>
+  <controls>
+    <control>
+      <description>Movie Title Shadow</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>32</posX>
+      <posY>252</posY>
+      <width>490</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ff222222</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+!string.equals(#selecteditem,..)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>251</posY>
+      <width>490</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+!string.equals(#selecteditem,..)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genres Shadow</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>32</posX>
+      <posY>284</posY>
+      <width>490</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff222222</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Genres</description>
+      <type>label</type>
+      <label>#genre</label>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>282</posY>
+      <width>490</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 720p</description>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>31</posX>
+      <posY>305</posY>
+      <textureWidth>23</textureWidth>
+      <textureHeight>22</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars - 1080p</description>
+      <type>imagelist</type>
+      <id>101</id>
+      <posX>31</posX>
+      <posY>305</posY>
+      <textureWidth>35</textureWidth>
+      <textureHeight>34</textureHeight>
+      <subitems>
+        <subitem>starwhitehollow.png</subitem>
+        <subitem>starwhite.png</subitem>
+      </subitems>
+      <orientation>horizontal</orientation>
+      <align>left</align>
+      <imagesToDraw>5</imagesToDraw>
+      <percentage>#rating</percentage>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#rating / 10 (#votes votes)</label>
+      <posX>155</posX>
+      <posY>306</posY>
+      <width>400</width>
+      <font>mediastream10</font>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>338</posY>
+      <width>490</width>
+      <height>190</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#plot</label>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>299</label>
+      <posX>32</posX>
+      <posY>551</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Runtime Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>299</label>
+      <posX>31</posX>
+      <posY>550</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#runtime</label>
+      <posX>192</posX>
+      <posY>552</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Runtime</description>
+      <id>1000</id>
+      <type>label</type>
+      <label>#runtime minutes</label>
+      <posX>191</posX>
+      <posY>551</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Directors Label Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>199</label>
+      <posX>32</posX>
+      <posY>573</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Directors Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>199</label>
+      <posX>31</posX>
+      <posY>572</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>192</posX>
+      <posY>574</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors</description>
+      <id>1001</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>191</posX>
+      <posY>573</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Directors N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#director</label>
+      <posX>470</posX>
+      <posY>573</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!control.hastext(1001)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <id>0</id>
+      <description>Year Label Shadow</description>
+      <type>label</type>
+      <label>201</label>
+      <posX>32</posX>
+      <posY>595</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Year Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>201</label>
+      <posX>31</posX>
+      <posY>594</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year Shadow</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#year</label>
+      <posX>192</posX>
+      <posY>596</posY>
+      <width>200</width>
+      <textcolor>ff222222</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year</description>
+      <id>1002</id>
+      <type>label</type>
+      <label>#year</label>
+      <posX>191</posX>
+      <posY>595</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Year N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>191</posX>
+      <posY>595</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!control.hastext(1002)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <id>0</id>
+      <description>MPAA Label Shadow</description>
+      <type>label</type>
+      <label>173</label>
+      <posX>32</posX>
+      <posY>617</posY>
+      <textcolor>ff111111</textcolor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>MPAA Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>173</label>
+      <posX>31</posX>
+      <posY>616</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>MPAA</description>
+      <id>1003</id>
+      <type>textbox</type>
+      <label>#mpaarating</label>
+      <posX>191</posX>
+      <posY>617</posY>
+      <width>330</width>
+      <font>mediastream9c</font>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:c356ddaa1b44b5392373b462b24e1728-->

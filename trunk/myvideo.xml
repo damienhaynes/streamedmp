@@ -6,69 +6,59 @@
   <define>#header.label:134</define>
   <define>#header.hover:hover_moving pictures.png</define>
   <controls>
-    
-		<control>
-			<description>dummy label for imdb info</description>
-			<type>label</type>
-			<id>4441</id>
-			<posX>1300</posX>
-			<posY>800</posY>
-			<label>#title</label>
-			<visible>control.hastext(4441)</visible>
-		</control>
-		
-		<control>
-		  <type>image</type>
-		  <description>BG</description>
-		  <id>0</id>
-		  <width>1280</width>
-		  <height>720</height>
-		  <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-		</control>
-		
-		<control>
-		  <description>Default Background</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>0</posX>
-		  <posY>0</posY>
-		  <width>1280</width>
-		  <height>720</height>
-		  <texture>#header.hover</texture>
-		  <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-		</control>
-		
-		<control>
-		  <description>Backdrop Overlay</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>0</posX>
-		  <posY>0</posY>
-		  <width>1281</width>
-		  <height>720</height>
-		  <texture>mainoverlay.png</texture>
-		  <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
-		</control>
-		   
-		<!--            :: HIDDEN MENU ::           -->
-		<import>myvideoHiddenMenu.xml</import>
-		
-		<!--            :: LIST VIEW ::            	-->
-		<import>myvideoListView.xml</import>
-		
-		<!--            :: FILMSTRIP VIEW ::        -->
-		<import>myvideoFilmstripView.xml</import>
-			
-		<!--            :: ICON VIEWS ::            -->
-		<import>myvideoThumbsView.xml</import>
-		  
-		<!--            :: FACADE ::            	-->    
-		<import>common.facade.video.xml</import>
-		
-		<!--            :: OTHER ::            		-->    
-		<import>common.overlays2.xml</import>
-		<import>common.window.xml</import>
-		<import>common.time.xml</import>
-    
+    <control>
+      <description>dummy label for imdb info</description>
+      <type>label</type>
+      <id>4441</id>
+      <posX>1300</posX>
+      <posY>800</posY>
+      <label>#title</label>
+      <visible>control.hastext(4441)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+      <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
+    </control>
+    <!--            :: HIDDEN MENU ::           -->
+    <import>myvideoHiddenMenu.xml</import>
+    <!--            :: LIST VIEW ::            	-->
+    <import>myvideoListView.xml</import>
+    <!--            :: FILMSTRIP VIEW ::        -->
+    <import>myvideoFilmstripView.xml</import>
+    <!--            :: ICON VIEWS ::            -->
+    <import>myvideoThumbsView.xml</import>
+    <!--            :: FACADE ::            	-->
+    <import>common.facade.video.xml</import>
+    <!--            :: OTHER ::            		-->
+    <import>common.overlays2.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:4e7c422b24fe83d535c5e679cfc14a84-->

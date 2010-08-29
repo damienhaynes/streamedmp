@@ -1,172 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>
-		<!-- Show only while in a facade view -->
-		<!-- Show buttons seperately for Details view -->
-		<control>
-			<type>image</type>
-			<posX>1220</posX>
-			<posY>190</posY>
-			<width>59</width>
-			<height>153</height>
-			<texture>#StreamedMP.ActionMenu.Image</texture>
-			<visible>control.isvisible(50)+!control.isvisible(24)</visible>
-		</control>
-		<control>
-			<type>actiongroup</type>
-			<description>action menu</description>
-			<defaultcontrol>2</defaultcontrol>
-			<onexit>50</onexit>
-			<buttonX>1231</buttonX>
-			<buttonY>55</buttonY>
-			<buttonwidth>49</buttonwidth>
-			<buttonheight>253</buttonheight>
-			<dimColor>00ffffff</dimColor>			
-			<control>
-				<type>image</type>
-				<posX>1002</posX>
-				<posY>0</posY>
-				<width>278</width>
-				<height>720</height>
-				<texture>hiddenmenu_right.png</texture>
-				<visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>
-				<id>0</id>
-				<description>Dummy Button (for Mouse)</description>
-				<label>-</label>
-				<type>button</type>
-				<posX>1002</posX>
-				<posY>0</posY>
-				<width>278</width>
-				<height>720</height>
-				<visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>
-				<description>VIEW MENU</description>
-				<id>0</id>
-				<label>499</label>
-				<type>label</type>
-				<font>mediastream12tc</font>
-				<posX>1040</posX>
-				<posY>225</posY>
-				<visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>
-				<description>JUMP TO</description>
-				<id>0</id>				
-				<label>1065</label>
-				<type>label</type>
-				<font>mediastream12tc</font>
-				<posX>1040</posX>
-				<posY>335</posY>
-				<visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-			</control>
-			<control>
-				<type>group</type>
-				<description>group element</description>        	
-				<posX>1040</posX>
-				<posY>245</posY>
-				<width>220</width>
-				<height>720</height>
-				<layout>StackLayout</layout>
-				<animation effect="slide" time="100" start="300,0">visible</animation>
-				<animation effect="slide" time="0" end="300,0">hidden</animation>
-				<visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-				<control>
-					<type>button</type>
-					<description>Change View</description>
-					<id>2</id>
-					<label>417</label>
-					<onup>17</onup>
-					<ondown>3</ondown>
-				</control>
-				<control>
-					<type>button</type>
-					<description>Show Theaters</description>
-					<id>3</id>
-					<label>-</label>
-					<onup>2</onup>
-					<ondown>4</ondown>
-				</control>
-				<control>
-					<type>button</type>
-					<description>Extra</description>
-					<id>4</id>
-					<label>-</label>
-					<onup>3</onup>
-					<ondown>66602</ondown>
-				</control>
-				<control>
-					<description>Empty button</description>
-					<type>button</type>
-					<id>0</id>
-					<label>-</label>
-					<visible>false</visible>
-				</control>
-				<control>
-					<description>Moving Pictures</description>
-					<type>button</type>
-					<id>66602</id>
-					<label>Moving Pictures</label>
-					<hyperlink>96742</hyperlink>
-					<visible>plugin.isenabled(Moving Pictures)</visible>
-					<onleft>50</onleft>
-					<onup>4</onup>
-					<ondown>66603</ondown>
-				</control>
-				<control>
-					<description>TV Shows</description>
-					<type>button</type>
-					<id>66603</id>
-					<hyperlink>9811</hyperlink>
-					<label>1300</label>
-					<visible>plugin.isenabled(MP-TV Series)</visible>
-					<onleft>50</onleft>
-					<onup>66602</onup>
-					<ondown>66604</ondown>
-				</control>
-				<control>
-					<description>Trailers</description>
-					<type>button</type>
-					<id>66604</id>
-					<label>5906</label>
-					<hyperlink>5900</hyperlink>
-					<visible>plugin.isenabled(My Trailers)</visible>
-					<onleft>50</onleft>
-					<onup>66603</onup>
-					<ondown>2</ondown>
-				</control>
-				<control>
-					<description>Empty button</description>
-					<type>button</type>
-					<id>0</id>
-					<label>-</label>
-					<visible>false</visible>
-				</control>
-				<control>
-					<description>Empty button</description>
-					<type>button</type>
-					<id>0</id>
-					<label>-</label>
-					<visible>false</visible>
-				</control>				
-				<control>
-					<type>label</type>
-					<description>Next Refresh</description>
-					<id>0</id>
-					<width>220</width>
-					<font>mediastream10</font>
-					<label>#showtimes_nextupdate</label>
-				</control>
-			</control>
-		</control>
-	</controls>
+  <controls>
+    <!-- Show only while in a facade view -->
+    <!-- Show buttons seperately for Details view -->
+    <control>
+      <type>image</type>
+      <posX>1220</posX>
+      <posY>190</posY>
+      <width>59</width>
+      <height>153</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>control.isvisible(50)+!control.isvisible(24)</visible>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>VIEW MENU</description>
+        <id>0</id>
+        <label>499</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>JUMP TO</description>
+        <id>0</id>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>335</posY>
+        <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <posX>1040</posX>
+        <posY>245</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
+        <control>
+          <type>button</type>
+          <description>Change View</description>
+          <id>2</id>
+          <label>417</label>
+          <onup>17</onup>
+          <ondown>3</ondown>
+        </control>
+        <control>
+          <type>button</type>
+          <description>Show Theaters</description>
+          <id>3</id>
+          <label>-</label>
+          <onup>2</onup>
+          <ondown>4</ondown>
+        </control>
+        <control>
+          <type>button</type>
+          <description>Extra</description>
+          <id>4</id>
+          <label>-</label>
+          <onup>3</onup>
+          <ondown>66602</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Moving Pictures</description>
+          <type>button</type>
+          <id>66602</id>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
+          <visible>plugin.isenabled(Moving Pictures)</visible>
+          <onleft>50</onleft>
+          <onup>4</onup>
+          <ondown>66603</ondown>
+        </control>
+        <control>
+          <description>TV Shows</description>
+          <type>button</type>
+          <id>66603</id>
+          <hyperlink>9811</hyperlink>
+          <label>1300</label>
+          <visible>plugin.isenabled(MP-TV Series)</visible>
+          <onleft>50</onleft>
+          <onup>66602</onup>
+          <ondown>66604</ondown>
+        </control>
+        <control>
+          <description>Trailers</description>
+          <type>button</type>
+          <id>66604</id>
+          <label>5906</label>
+          <hyperlink>5900</hyperlink>
+          <visible>plugin.isenabled(My Trailers)</visible>
+          <onleft>50</onleft>
+          <onup>66603</onup>
+          <ondown>2</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <type>label</type>
+          <description>Next Refresh</description>
+          <id>0</id>
+          <width>220</width>
+          <font>mediastream10</font>
+          <label>#showtimes_nextupdate</label>
+        </control>
+      </control>
+    </control>
+  </controls>
 </window>
+<!--Checksum:138bc020134c486bff0f1b342a01f264-->

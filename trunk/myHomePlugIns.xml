@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>34</id>
   <defaultcontrol>50</defaultcontrol>
@@ -6,7 +6,6 @@
   <disabletopbar>no</disabletopbar>
   <define>#header.hover:hover_my plugins.png</define>
   <controls>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -17,7 +16,6 @@
       <texture>#header.hover</texture>
       <animation effect="fade" time="200" delay="300">WindowOpen</animation>
     </control>
-    
     <control>
       <description>Menu</description>
       <type>menu</type>
@@ -51,9 +49,7 @@
       <onright>10</onright>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
-    
     <!-- Hidden Menu -->
-    
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -150,9 +146,7 @@
         </control>
       </control>
     </control>
-    
     <!-- Home Blade -->
-    
     <control>
       <description>Homeblade</description>
       <type>image</type>
@@ -164,7 +158,6 @@
       <texture>homebladeleft.png</texture>
       <colordiffuse>eaffffff</colordiffuse>
     </control>
-    
     <control>
       <description>right overlay</description>
       <type>image</type>
@@ -175,102 +168,97 @@
       <height>720</height>
       <texture>homerightoverlay.png</texture>
     </control>
-    
     <!-- RSS Ticker -->
-
-        <control>
-              <description>Rss Background</description>
-              <type>image</type>
-              <id>0</id>
-              <posX>75</posX>
-              <posY>678</posY>
-              <width>1205</width>
-              <height>42</height>
-              <texture>homerss.png</texture>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)+!string.equals(#infoservice.feed.titles,)</visible>
-              <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-        <control>
-              <description>RSS Items</description>
-              <type>fadelabel</type>
-              <id>0</id>
-              <width>1250</width>
-              <height>50</height>
-              <posX>114</posX>
-              <posY>689</posY>
-              <font>mediastream12tc</font>
-              <label>#infoservice.feed.titles</label>
-              <wrapString> #infoservice.feed.separator </wrapString>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)</visible>
-              <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-    
+    <control>
+      <description>Rss Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>75</posX>
+      <posY>678</posY>
+      <width>1205</width>
+      <height>42</height>
+      <texture>homerss.png</texture>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)+!string.equals(#infoservice.feed.titles,)</visible>
+      <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>RSS Items</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <width>1250</width>
+      <height>50</height>
+      <posX>114</posX>
+      <posY>689</posY>
+      <font>mediastream12tc</font>
+      <label>#infoservice.feed.titles</label>
+      <wrapString> #infoservice.feed.separator </wrapString>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)</visible>
+      <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
     <!-- Weather -->
-
-        <control>
-              <description>Weather Background</description>
-              <type>image</type>
-              <id>0</id>
-              <posX>976</posX>
-              <posY>-3</posY>
-              <width>306</width>
-              <height>75</height>
-              <texture>homeweatheroverlaybg.png</texture>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
-              <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-        <control>
-              <description>Weather image</description>
-              <type>image</type>
-              <id>43001</id>
-              <posX>987</posX>
-              <posY>9</posY>
-              <height>53</height>
-              <width>55</width>
-              <centered>yes</centered>
-              <texture>animations\weathericons\static\128x128\#infoservice.weather.today.img.big.filenamewithoutext.png</texture>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)</visible>
-              <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-        <control>
-              <description>condition</description>
-              <type>textbox</type>
-              <id>0</id>
-              <posX>1048</posX>
-              <posY>15</posY>
-              <width>150</width>
-              <height>50</height>
-              <font>mediastream10tc</font>
-              <label>#infoservice.weather.today.condition</label>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
-              <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-        <control>
-              <description>Temperature</description>
-              <type>label</type>
-              <id>0</id>
-              <posX>1250</posX>
-              <posY>22</posY>
-              <width>400</width>
-              <height>50</height>
-              <align>right</align>
-              <font>mediastream14c</font>
-              <label>#infoservice.weather.today.temp</label>
-              <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
-              <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-              <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-        </control>
-    
+    <control>
+      <description>Weather Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>976</posX>
+      <posY>-3</posY>
+      <width>306</width>
+      <height>75</height>
+      <texture>homeweatheroverlaybg.png</texture>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
+      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>Weather image</description>
+      <type>image</type>
+      <id>43001</id>
+      <posX>987</posX>
+      <posY>9</posY>
+      <height>53</height>
+      <width>55</width>
+      <centered>yes</centered>
+      <texture>animations\weathericons\static\128x128\#infoservice.weather.today.img.big.filenamewithoutext.png</texture>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)</visible>
+      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>condition</description>
+      <type>textbox</type>
+      <id>0</id>
+      <posX>1048</posX>
+      <posY>15</posY>
+      <width>150</width>
+      <height>50</height>
+      <font>mediastream10tc</font>
+      <label>#infoservice.weather.today.condition</label>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
+      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
+    <control>
+      <description>Temperature</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1250</posX>
+      <posY>22</posY>
+      <width>400</width>
+      <height>50</height>
+      <align>right</align>
+      <font>mediastream14c</font>
+      <label>#infoservice.weather.today.temp</label>
+      <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.weather.enabled,False)+control.hasthumb(43001)</visible>
+      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+    </control>
     <!-- imports -->
     <import>FritzManager.Notify.xml</import>
     <import>common.overlay.home.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-    
   </controls>
 </window>
+<!--Checksum:2003b27f067ae6c1c4af59c001345d93-->

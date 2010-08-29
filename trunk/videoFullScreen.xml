@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2005</id>
   <defaultcontrol>13</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <controls>  	
-     <control>
+  <controls>
+    <control>
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
@@ -14,8 +14,8 @@
       <height>10</height>
       <texture>-</texture>
       <visible>player.forwarding|player.rewinding</visible>
-    </control>	
-	<control>
+    </control>
+    <control>
       <description>TVSeries ClearArt (Full VideoOSD)</description>
       <type>image</type>
       <id>0</id>
@@ -24,7 +24,7 @@
       <width>250</width>
       <height>126</height>
       <texture>#TVSeries.Play.ClearArt</texture>
-	  <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (default)</description>
@@ -37,7 +37,7 @@
       <texture>osdbackground.png</texture>
       <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-	<control>
+    <control>
       <description>TVSeries ClearArt (Small VideoOSD)</description>
       <type>image</type>
       <id>0</id>
@@ -46,9 +46,9 @@
       <width>250</width>
       <height>126</height>
       <texture>#TVSeries.Play.ClearArt</texture>
-	  <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-	<control>
+    <control>
       <description>background (small)</description>
       <type>image</type>
       <id>0</id>
@@ -70,7 +70,7 @@
       <texture>osdbackground.png</texture>
       <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-	<control>
+    <control>
       <description>background (small)</description>
       <type>image</type>
       <id>0</id>
@@ -81,7 +81,6 @@
       <texture>osdbackground.png</texture>
       <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-
     <control>
       <type>image</type>
       <id>502</id>
@@ -93,7 +92,6 @@
       <colordiffuse>White</colordiffuse>
       <visible>no</visible>
     </control>
-    
     <control>
       <description>DVD Cover</description>
       <type>image</type>
@@ -157,8 +155,9 @@
       <font>mediastream11</font>
       <visible>[player.paused+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-    <import>common.player.xml</import>   
+    <import>common.player.xml</import>
     <import>common.play.fullscreen.xml</import>
     <import>common.progressbar.xml</import>
   </controls>
 </window>
+<!--Checksum:c975cd4b10d4515d2980b6b9c41a26b5-->

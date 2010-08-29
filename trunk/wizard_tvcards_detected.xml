@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>616</id>
   <defaultcontrol>5</defaultcontrol>
-  <allowoverlay>yes</allowoverlay> 
+  <allowoverlay>yes</allowoverlay>
   <controls>
-    
-  <control>
+    <control>
       <description>Default Background</description>
       <type>image</type>
       <id>0</id>
@@ -15,7 +14,6 @@
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
     </control>
-    
     <control>
       <description>FanArt Overlay</description>
       <type>image</type>
@@ -26,10 +24,8 @@
       <height>720</height>
       <texture>mainoverlay.png</texture>
     </control>
-	
     <import>common.window.xml</import>
     <import>common.time.xml</import>
-
     <control>
       <type>label</type>
       <description>MediaPortal has found the following tv-cards:</description>
@@ -51,29 +47,28 @@
       <SpinPosY>282</SpinPosY>
       <SpinAlign>right</SpinAlign>
     </control>
-	
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Next</description>
       <id>5</id>
       <posX>150</posX>
       <posY>550</posY>
-      <width>400</width>    
+      <width>400</width>
       <label>200009</label>
-	  <onup>25</onup>
+      <onup>25</onup>
       <font>mediastream12tc</font>
     </control>
-	<control Style="settingsmainbutton">
+    <control Style="settingsmainbutton">
       <type>button</type>
       <description>Back</description>
       <id>25</id>
       <posX>150</posX>
       <posY>600</posY>
-      <width>400</width>   
+      <width>400</width>
       <label>200007</label>
-	  <ondown>5</ondown>
+      <ondown>5</ondown>
       <font>mediastream12tc</font>
-	  <hyperlink>634</hyperlink>
+      <hyperlink>634</hyperlink>
     </control>
     <control>
       <type>label</type>
@@ -82,8 +77,8 @@
       <posX>150</posX>
       <posY>648</posY>
       <label>200006</label>
-	  <font>mediastream12</font>
+      <font>mediastream12</font>
     </control>
-	
   </controls>
 </window>
+<!--Checksum:f0e655bbcab9fbe487a6677dab2062ad-->

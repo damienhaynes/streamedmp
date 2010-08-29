@@ -1,17 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <!-- 
   This is the main pandora skin file and should contain all screen elements that are common
   to all views in the GUI. Anything that belongs only in a specific view should be placed in the
   coorespodning subfile.
   -->
-
   <id>82341</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-
   <controls>
-
     <control>
       <description>Default Background</description>
       <type>image</type>
@@ -21,9 +18,7 @@
       <height>720</height>
       <texture>hover_my music.png</texture>
     </control>
-
     <import>mymusic.autofanart.xml</import>
-
     <control>
       <description>Background Overlay</description>
       <type>image</type>
@@ -35,9 +30,7 @@
       <texture>filmstrip_overlay.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
     </control>
-
     <!-- Top Bar Controls -->
-
     <control>
       <description>Top Bar Background</description>
       <type>image</type>
@@ -47,7 +40,6 @@
       <height>51</height>
       <texture>overlay_topbar.png</texture>
     </control>
-
     <control>
       <description>Plugin Name Background</description>
       <type>image</type>
@@ -59,7 +51,6 @@
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
-
     <control>
       <description>Current Station Background</description>
       <type>image</type>
@@ -70,7 +61,6 @@
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
-
     <control>
       <description>Plugin Name</description>
       <type>label</type>
@@ -83,7 +73,6 @@
       <animation effect="slide" start="-150,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
     </control>
-
     <control>
       <description>Current Station</description>
       <type>fadelabel</type>
@@ -97,22 +86,20 @@
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="slide" start="-40,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
-
     <import>common.time.xml</import>
-
     <control>
       <description>GROUP: Buttons</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
       <animation effect="Slide" time="350" start="0,300" end="0,0" delay="256">WindowOpen</animation>
       <animation effect="Slide" time="350" start="0,0" end="0,300" delay="256">WindowClose</animation>
-
       <!-- Buttons -->
       <control>
         <description>History Song 4 Button</description>
         <type>button</type>
         <id>6</id>
-        <label></label>
+        <label>
+        </label>
         <posX>130</posX>
         <posY>474</posY>
         <width>204</width>
@@ -125,12 +112,12 @@
         <animation effect="zoom" start="100,100" end="100,100" time="100">unfocus</animation>
         <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       </control>
-
       <control>
         <description>History Song 3 Button</description>
         <type>button</type>
         <id>5</id>
-        <label></label>
+        <label>
+        </label>
         <posX>335</posX>
         <posY>474</posY>
         <width>204</width>
@@ -143,12 +130,12 @@
         <animation effect="zoom" start="100,100" end="100,100" time="100">unfocus</animation>
         <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       </control>
-
       <control>
         <description>History Song 2 Button</description>
         <type>button</type>
         <id>4</id>
-        <label></label>
+        <label>
+        </label>
         <posX>540</posX>
         <posY>474</posY>
         <width>204</width>
@@ -161,12 +148,12 @@
         <animation effect="zoom" start="100,100" end="100,100" time="100">unfocus</animation>
         <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       </control>
-
       <control>
         <description>History Song 1 Button</description>
         <type>button</type>
         <id>3</id>
-        <label></label>
+        <label>
+        </label>
         <posX>745</posX>
         <posY>474</posY>
         <width>204</width>
@@ -179,12 +166,12 @@
         <animation effect="zoom" start="100,100" end="100,100" time="100">unfocus</animation>
         <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       </control>
-
       <control>
         <description>Current Song Button</description>
         <type>button</type>
         <id>2</id>
-        <label></label>
+        <label>
+        </label>
         <posX>950</posX>
         <posY>365</posY>
         <width>299</width>
@@ -197,7 +184,6 @@
         <animation effect="zoom" start="100,100" end="100,100" time="100">unfocus</animation>
         <animation effect="zoom" start="100,100" end="100,100" time="100">focus</animation>
       </control>
-
       <control>
         <description>Progress background</description>
         <type>image</type>
@@ -207,7 +193,6 @@
         <height>12</height>
         <texture>osdprogressback.png</texture>
       </control>
-
       <control>
         <description>progress bar</description>
         <type>progress</type>
@@ -220,9 +205,7 @@
         <lefttexture>osdprogressleft.png</lefttexture>
         <midtexture>osdprogressmid.png</midtexture>
         <righttexture>osdprogressright.png</righttexture>
-
       </control>
-
       <!-- Album Art -->
       <control>
         <description>History 4 Image</description>
@@ -255,7 +238,6 @@
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
       </control>
-
       <control>
         <description>History 3 Image</description>
         <type>image</type>
@@ -287,7 +269,6 @@
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
       </control>
-
       <control>
         <description>History 2 Image</description>
         <type>image</type>
@@ -319,7 +300,6 @@
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
       </control>
-
       <control>
         <description>History 1 Image</description>
         <type>image</type>
@@ -351,7 +331,6 @@
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
       </control>
-
       <control>
         <description>Current Song Image</description>
         <type>image</type>
@@ -383,7 +362,6 @@
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
       </control>
-
       <!-- Song Labels -->
       <control>
         <description>History 4 Title</description>
@@ -405,7 +383,6 @@
         <font>font10</font>
         <visible>Control.HasFocus(6)</visible>
       </control>
-
       <control>
         <description>History 4 Artist</description>
         <type>label</type>
@@ -428,8 +405,6 @@
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(6)+!String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
       </control>
-
-
       <control>
         <description>History 3 Title</description>
         <type>label</type>
@@ -450,7 +425,6 @@
         <font>font10</font>
         <visible>Control.HasFocus(5)</visible>
       </control>
-
       <control>
         <description>History 3 Artist</description>
         <type>label</type>
@@ -473,8 +447,6 @@
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(5)+!String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
       </control>
-
-
       <control>
         <description>History 2 Title</description>
         <type>label</type>
@@ -495,7 +467,6 @@
         <font>font10</font>
         <visible>Control.HasFocus(4)</visible>
       </control>
-
       <control>
         <description>History 2 Artist</description>
         <type>label</type>
@@ -518,9 +489,6 @@
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(4)+!String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
       </control>
-
-
-
       <control>
         <description>History 1 Title</description>
         <type>label</type>
@@ -541,7 +509,6 @@
         <font>font10</font>
         <visible>Control.HasFocus(3)</visible>
       </control>
-
       <control>
         <description>History 1 Artist</description>
         <type>label</type>
@@ -564,7 +531,6 @@
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(3)+!String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
       </control>
-
       <control>
         <description>Current Title</description>
         <type>label</type>
@@ -585,7 +551,6 @@
         <font>font12</font>
         <visible>Control.HasFocus(2)</visible>
       </control>
-
       <control>
         <description>Current Artist</description>
         <type>label</type>
@@ -608,9 +573,6 @@
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(2)+!String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
       </control>
-
-
-
       <control>
         <description>History 4 Rating</description>
         <type>image</type>
@@ -620,7 +582,6 @@
         <width>37</width>
         <height>37</height>
       </control>
-
       <control>
         <description>History 3 Rating</description>
         <type>image</type>
@@ -630,7 +591,6 @@
         <width>37</width>
         <height>37</height>
       </control>
-
       <control>
         <description>History 2 Rating</description>
         <type>image</type>
@@ -640,7 +600,6 @@
         <width>37</width>
         <height>37</height>
       </control>
-
       <control>
         <description>History 1 Rating</description>
         <type>image</type>
@@ -650,7 +609,6 @@
         <width>37</width>
         <height>37</height>
       </control>
-
       <control>
         <description>Current Song Rating</description>
         <type>image</type>
@@ -660,7 +618,6 @@
         <width>51</width>
         <height>51</height>
       </control>
-
       <control>
         <description>Pause Indicator</description>
         <type>image</type>
@@ -672,12 +629,12 @@
         <visible>player.paused</visible>
       </control>
     </control>
-
     <control>
       <description>Dummy Working Label</description>
       <type>label</type>
       <id>13</id>
-      <label></label>
+      <label>
+      </label>
     </control>
     <control>
       <description>Working Animation</description>
@@ -691,6 +648,6 @@
       <keepaspectratio>yes</keepaspectratio>
       <visible>Control.IsVisible(13)</visible>
     </control>
-
   </controls>
 </window>
+<!--Checksum:f9e9ed33d7b71af61eb5b0fd812f8f1d-->

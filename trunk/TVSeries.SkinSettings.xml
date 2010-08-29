@@ -1,22 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
-	<!--
+  <!--
 		The purpose of TVSeries.SkinSettings.xml is to allow the skinner to control the presentation of the TVSeries plugin to the user
 		Advanced users may disable this by removing the file or by setting the import attribute  to false in the relevant XML element.
 		
 		The TVSeries plugin reads this file on load and will import settings into its database.
 		IMPORTANT: Ensure that all settings are wrapped in a CDATA type otherwise this docment will not get parsed as proper XML.
 	-->
-
-	<!-- version may be useful for logging purposes and/or future upgrades -->
-	<version>1.3.0.0</version>
-	
-	<!-- Skin Defines -->
-	<defines>		
-        <property key="blah">false</property>	
-    </defines>	
-	
-	<!-- 
+  <!-- version may be useful for logging purposes and/or future upgrades -->
+  <version>1.3.0.0</version>
+  <!-- Skin Defines -->
+  <defines>
+    <property key="blah">false</property>
+  </defines>
+  <!-- 
 		Possible Layout Types supported by the plugin, the defined layout will be what is loaded by default for the corresponding view:
 		
 			Groups:
@@ -36,72 +33,67 @@
 		Notes:
 		item1 = <text3> (left aligned)
 		item3 = <text2> (right aligned)
-	-->		
-
-	<!-- Position of 'NEW' stamp in thumb views -->
-	<!-- Draws 'tvseries_newlabel.png' on thumbnail -->
-	<thumbstamp>
-		<widebanners>
-			<posx>668</posx>
-			<posy>-5</posy>
-		</widebanners>
-		<posters>
-			<posx>580</posx>
-			<posy>-5</posy>
-		</posters>
-	</thumbstamp>
-	
-	<!-- Define the images loaded in Video OSD -->
-	<!-- Note: You can reorder the items to set priority -->
-	<!-- Values of custom tag is a path to custom image, where you could use:
+	-->
+  <!-- Position of 'NEW' stamp in thumb views -->
+  <!-- Draws 'tvseries_newlabel.png' on thumbnail -->
+  <thumbstamp>
+    <widebanners>
+      <posx>668</posx>
+      <posy>-5</posy>
+    </widebanners>
+    <posters>
+      <posx>580</posx>
+      <posy>-5</posy>
+    </posters>
+  </thumbstamp>
+  <!-- Define the images loaded in Video OSD -->
+  <!-- Note: You can reorder the items to set priority -->
+  <!-- Values of custom tag is a path to custom image, where you could use:
 			thumbs\ relative path - <![CDATA[thumbs\Media\custom.png]]>,
 			skin\ relative path - <![CDATA[skin\*SKIN NAME*\Media\custom.png]]>,
 			absolute path - <![CDATA[C:\Media\custom.png]]>
 			with any of episode/season/series database fields (<Series.ID> for example)
 	-->
-	<videoosdimages import="true">
-		<episode use="true"/>
-		<series use="true"/>		
-		<season use="true"/>		
-		<!--<custom use="false"><![CDATA[skin\StreamedMP\Media\custom.png]]></custom>-->
-	</videoosdimages>
-	
-	<!-- Define the images loaded in properties during play -->	
-	<videoplayimages import="true">
-		<property>
-			<name>TVSeries.Play.ClearArt</name>
-			<value><![CDATA[thumbs\ClearArt\<Series.ID>.png]]></value>
-		</property>
-		<!-- You can define multiple properties -->
-	</videoplayimages>
-	
-	<layouts>
-		<group List="true" SmallIcons="false"/>
-		<series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true"/>
-		<season List="true" Filmstrip="true"/>
-		<episode List="true"/>
-	</layouts>
-	
-	<views import="true" AppendlmageToList="false">		
-		<group layout="List"></group>
-		<series layout="ListPosters">			
-			<item1>SeriesWatchedAndUnWatched</item1>
-			<item2><![CDATA[<Series.Pretty_Name>]]></item2>			
-			<item3>SMALLSPACE</item3>
-		</series>
-		<season layout="List">	
-			<item1>SeasonWatchedAndUnWatched</item1>
-			<item2><![CDATA[Season <Season.SeasonIndex>]]></item2>		
-			<item3>SMALLSPACE</item3>
-		</season>
-		<episode>	
-			<item1><![CDATA[<Episode.FirstAired>]]></item1>
-			<item2><![CDATA[<Episode.EpisodeIndex>: <Episode.LocalEpisodeName>]]></item2>			
-			<item3>SMALLSPACE</item3>
-		</episode>
-	</views>
-	<formatting import="true">
-		<![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Runtime)
+  <videoosdimages import="true">
+    <episode use="true" />
+    <series use="true" />
+    <season use="true" />
+    <!--<custom use="false"><![CDATA[skin\StreamedMP\Media\custom.png]]></custom>-->
+  </videoosdimages>
+  <!-- Define the images loaded in properties during play -->
+  <videoplayimages import="true">
+    <property>
+      <name>TVSeries.Play.ClearArt</name>
+      <value><![CDATA[thumbs\ClearArt\<Series.ID>.png]]></value>
+    </property>
+    <!-- You can define multiple properties -->
+  </videoplayimages>
+  <layouts>
+    <group List="true" SmallIcons="false" />
+    <series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true" />
+    <season List="true" Filmstrip="true" />
+    <episode List="true" />
+  </layouts>
+  <views import="true" AppendlmageToList="false">
+    <group layout="List">
+    </group>
+    <series layout="ListPosters">
+      <item1>SeriesWatchedAndUnWatched</item1>
+      <item2><![CDATA[<Series.Pretty_Name>]]></item2>
+      <item3>SMALLSPACE</item3>
+    </series>
+    <season layout="List">
+      <item1>SeasonWatchedAndUnWatched</item1>
+      <item2><![CDATA[Season <Season.SeasonIndex>]]></item2>
+      <item3>SMALLSPACE</item3>
+    </season>
+    <episode>
+      <item1><![CDATA[<Episode.FirstAired>]]></item1>
+      <item2><![CDATA[<Episode.EpisodeIndex>: <Episode.LocalEpisodeName>]]></item2>
+      <item3>SMALLSPACE</item3>
+    </episode>
+  </views>
+  <formatting import="true"><![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Runtime)
 <Enabled>1<Format><Episode.DataPanelLine2Value><FormatAs><Episode.PrettyLocalPlaytime>
 <Enabled>1<Format><Episode.DataPanelLine3Key><FormatAs>Trans(Rating)
 <Enabled>1<Format><Episode.DataPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
@@ -140,10 +132,8 @@
 <Enabled>1<Format>SeasonTotalEpisodes<FormatAs><Season.EpisodeCount> Trans(Episodes)
 <Enabled>1<Format>SMALLSPACE<FormatAs> 
 <Enabled>1<Format>LARGESPACE<FormatAs>                                        
-<Enabled>1<Format>SeriesAirsDay<FormatAs><Series.AirsDay>]]>
-	</formatting>
-	<logos import="true">
-		<![CDATA[skin\StreamedMP\Media\Logos\Video\SD Fullscreen.png;-;<Episode.videoWidth>;-;<;-;960;-;AND;-;<Episode.VideoAspectRatio>;-;<;-;1.5;-;AND;-;<Episode.VideoAspectRatio>;-;>;-;1.2;-;<Restrict:Episode>
+<Enabled>1<Format>SeriesAirsDay<FormatAs><Series.AirsDay>]]></formatting>
+  <logos import="true"><![CDATA[skin\StreamedMP\Media\Logos\Video\SD Fullscreen.png;-;<Episode.videoWidth>;-;<;-;960;-;AND;-;<Episode.VideoAspectRatio>;-;<;-;1.5;-;AND;-;<Episode.VideoAspectRatio>;-;>;-;1.2;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\SD Widescreen.png;-;<Episode.videoWidth>;-;<;-;960;-;AND;-;<Episode.VideoAspectRatio>;-;<;-;1.9;-;AND;-;<Episode.VideoAspectRatio>;-;>=;-;1.5;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\SD 540P.png;-;<Episode.videoWidth>;-;=;-;960;-;AND;-;<Episode.videoHeight>;-;<=;-;600;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Video\720P.png;-;<Episode.videoWidth>;-;=;-;1280;-;OR;-;<Episode.videoHeight>;-;=;-;720;-;AND;-;;-;=;-;;-;<Restrict:Episode>
@@ -188,15 +178,16 @@ skin\StreamedMP\Media\Logos\Misc\HDTV.png;-;<Episode.EpisodeFilename>;-;contains
 skin\StreamedMP\Media\Logos\Misc\HDDVD.png;-;<Episode.EpisodeFilename>;-;contains;-;HDDVD;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;HD-DVD;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\BLURAY.png;-;<Episode.EpisodeFilename>;-;contains;-;BLURAY;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;BLU-RAY;-;AND;-;;-;=;-;;-;<Restrict:Episode>
 skin\StreamedMP\Media\Logos\Misc\WEB-DL.png;-;<Episode.EpisodeFilename>;-;contains;-;WEBDL;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;WEB-DL;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;ITUNES;-;<Restrict:Episode>
-skin\StreamedMP\Media\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;subbed.;-;AND;-;;-;=;-;;-;]]>
-	</logos>
-	<!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
-	<!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
-	<!-- Should use highest of both Default/Fanart tvseries xmls (let setup handle this), the settings below are for optimal performance without too much loss to visual quality -->
-	<graphicsquality import="true">
-		<seriesbanners>60</seriesbanners>
-		<seriesposters>20</seriesposters> <!-- 20% for Default, 35% for Fanart style-->
-		<seasonbanners>75</seasonbanners>
-		<episodethumbs>90</episodethumbs>
-	</graphicsquality>
+skin\StreamedMP\Media\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;=;-;1;-;OR;-;<Episode.EpisodeFilename>;-;contains;-;subbed.;-;AND;-;;-;=;-;;-;]]></logos>
+  <!-- Only used for Thumbnail view creation e.g. Filmstrip and WideBanners. Episode Thumbs are the exception -->
+  <!-- #TVSeries.SeriesBanner and #TVSeries.SeasonBanner properties dont use the values below, the image will be presented as they are but will be using a delay of 250ms to present image -->
+  <!-- Should use highest of both Default/Fanart tvseries xmls (let setup handle this), the settings below are for optimal performance without too much loss to visual quality -->
+  <graphicsquality import="true">
+    <seriesbanners>60</seriesbanners>
+    <seriesposters>20</seriesposters>
+    <!-- 20% for Default, 35% for Fanart style-->
+    <seasonbanners>75</seasonbanners>
+    <episodethumbs>90</episodethumbs>
+  </graphicsquality>
 </settings>
+<!--Checksum:c873170532fdb3b71e7bdb8f2c2d8901-->

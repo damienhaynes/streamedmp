@@ -1,219 +1,212 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-       <id>2700</id>
-       <defaultcontrol>2</defaultcontrol>
-       <allowoverlay>no</allowoverlay>
-       <define>#header.hover:hover_my pictures.png</define>
-       <controls>
-
-              <control>
-                     <type>image</type>
-                     <description>BG</description>
-                     <id>0</id>
-                     <width>1280</width>
-                     <height>720</height>
-                     <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-              </control>
-
-              <control>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>#header.hover</texture>
-                     <animation effect="fade" time="400" delay="0">WindowOpen</animation>
-              </control>
-
-              <control>
-                     <description>Overlay</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>mainoverlay.png</texture>
-              </control>
-              <control>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>675</posY>
-                     <width>1280</width>
-                     <height>47</height>
-                     <texture>imagestreamtitle.png</texture>
-              </control>
-              <control>
-                     <description>Selected item Label</description>
-                     <type>fadelabel</type>
-                     <id>1</id>
-                     <posX>25</posX>
-                     <posY>684</posY>
-                     <width>950</width>
-                     <font>mediastream16tc</font>
-                     <label>#selecteditem</label>
-              </control>
-              <control>
-                     <description>Media Count Background</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>1013</posX>
-                     <posY>684</posY>
-                     <width>260</width>
-                     <height>30</height>
-                     <texture>mediacountbg_Spin.png</texture>
-                     <visible>!facadeview.filmstrip</visible>
-                     <animation effect="fade" time="150">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-              </control>
-              <control>
-                     <description>Media Count Label</description>
-                     <type>label</type>
-                     <label>PAGE:</label>
-                     <id>0</id>
-                     <posX>1023</posX>
-                     <posY>688</posY>
-                     <font>mediastream12tc</font>
-                     <textcolor>ff909090</textcolor>
-                     <visible>!facadeview.filmstrip</visible>
-                     <animation effect="fade" time="250">WindowOpen</animation>
-                     <animation effect="fade" time="250">WindowClose</animation>
-                     <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-                     <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-              </control>
-              <control>
-                     <type>actiongroup</type>
-                     <description>action menu</description>
-                     <defaultcontrol>2</defaultcontrol>
-                     <onexit>50</onexit>
-                     <buttonX>1231</buttonX>
-                     <buttonY>55</buttonY>
-                     <buttonwidth>49</buttonwidth>
-                     <buttonheight>153</buttonheight>
-                     <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
-                     <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
-                     <dimColor>00ffffff</dimColor>
-                     <control>
-                            <type>image</type>
-                            <posX>1002</posX>
-                            <posY>0</posY>
-                            <width>278</width>
-                            <height>720</height>
-                            <texture>hiddenmenu_right.png</texture>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <id>0</id>
-                            <description>dummy button</description>
-                            <label>-</label>
-                            <type>button</type>
-                            <posX>1002</posX>
-                            <posY>0</posY>
-                            <width>278</width>
-                            <height>720</height>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <id>0</id>
-                            <label>MENU</label>
-                            <type>label</type>
-                            <font>mediastream12tc</font>
-                            <posX>1040</posX>
-                            <posY>225</posY>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                     </control>
-                     <control>
-                            <type>group</type>
-                            <description>group element</description>
-                            <visible>!Control.HasFocus(50)</visible>
-                            <animation effect="slide" time="100" start="300,0">visible</animation>
-                            <animation effect="slide" time="0" end="300,0">hidden</animation>
-                            <posX>1040</posX>
-                            <posY>250</posY>
-                            <width>220</width>
-                            <height>720</height>
-                            <layout>StackLayout</layout>
-                            <control>
-                                   <description>Refresh Button</description>
-                                   <type>button</type>
-                                   <id>2</id>
-                                   <label>184</label>
-                                   <onleft>50</onleft>
-                                   <onup>21</onup>
-                            </control>
-                            <control>
-                                   <description>RSS feed select</description>
-                                   <type>button</type>
-                                   <id>4</id>
-                                   <label>706</label>
-                                   <onleft>50</onleft>
-                                   <ondown>2</ondown>
-                            </control>
-                     </control>
-              </control>
-
-             
-
-              <control>
-                     <description>Site Logo</description>
-                     <type>image</type>
-                     <id>101</id>
-                     <posX>50</posX>
-                     <posY>260</posY>
-                     <width>400</width>
-                     <height>140</height>
-                     <texture>thumbs\ars_article.png</texture>
-                     <centered>yes</centered>
-                     <keepaspectratio>yes</keepaspectratio>
-              </control>
-
-              <control>
-                     <type>group</type>
-                     <description>group element</description>
-                     <control>
-                            <description>listcontrol</description>
-                            <type>listcontrol</type>
-                            <id>50</id>
-                            <onleft>2</onleft>
-                            <onright>2</onright>
-                            <spinPosX>1175</spinPosX>
-                            <spinPosY>681</spinPosY>
-                            <spinAlign>Right</spinAlign>
-                            <spinColor>ff006698</spinColor>
-                            <textureUp>arrow_round_up_nofocus.png</textureUp>
-                            <textureDown>arrow_round_down_nofocus.png</textureDown>
-                            <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                            <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-                            <spinWidth>50</spinWidth>
-                            <spinHeight>37</spinHeight>
-                     </control>
-                     <control>
-                            <description>Chosen Story description</description>
-                            <type>textboxscrollup</type>
-                            <id>506</id>
-                            <posX>50</posX>
-                            <posY>400</posY>
-                            <width>600</width>
-                            <height>300</height>
-                            <label>-</label>
-                            <seperator>----------------------------------------------------------------------------------------------</seperator>
-                            <font>mediastream11</font>
-                            <textcolor>FFFFFFFF</textcolor>
-                     </control>
-              </control>
-              <import>common.overlays.xml</import>
-              <import>common.window.xml</import>
-              <import>common.time.xml</import>
-
-       </controls>
+  <id>2700</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.hover:hover_my pictures.png</define>
+  <controls>
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <animation effect="fade" time="400" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>25</posX>
+      <posY>684</posY>
+      <width>950</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+    </control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <label>PAGE:</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
+      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>dummy button</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <label>MENU</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Refresh Button</description>
+          <type>button</type>
+          <id>2</id>
+          <label>184</label>
+          <onleft>50</onleft>
+          <onup>21</onup>
+        </control>
+        <control>
+          <description>RSS feed select</description>
+          <type>button</type>
+          <id>4</id>
+          <label>706</label>
+          <onleft>50</onleft>
+          <ondown>2</ondown>
+        </control>
+      </control>
+    </control>
+    <control>
+      <description>Site Logo</description>
+      <type>image</type>
+      <id>101</id>
+      <posX>50</posX>
+      <posY>260</posY>
+      <width>400</width>
+      <height>140</height>
+      <texture>thumbs\ars_article.png</texture>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <control>
+        <description>listcontrol</description>
+        <type>listcontrol</type>
+        <id>50</id>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <spinPosX>1175</spinPosX>
+        <spinPosY>681</spinPosY>
+        <spinAlign>Right</spinAlign>
+        <spinColor>ff006698</spinColor>
+        <textureUp>arrow_round_up_nofocus.png</textureUp>
+        <textureDown>arrow_round_down_nofocus.png</textureDown>
+        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        <spinWidth>50</spinWidth>
+        <spinHeight>37</spinHeight>
+      </control>
+      <control>
+        <description>Chosen Story description</description>
+        <type>textboxscrollup</type>
+        <id>506</id>
+        <posX>50</posX>
+        <posY>400</posY>
+        <width>600</width>
+        <height>300</height>
+        <label>-</label>
+        <seperator>----------------------------------------------------------------------------------------------</seperator>
+        <font>mediastream11</font>
+        <textcolor>FFFFFFFF</textcolor>
+      </control>
+    </control>
+    <import>common.overlays.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+  </controls>
 </window>
+<!--Checksum:203f4800d4496e5420862958475737c6-->

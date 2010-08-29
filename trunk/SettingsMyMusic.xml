@@ -8,10 +8,8 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9998</define>
   <controls>
-    
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-    
     <control Style="settingsmaintexturefo">
       <type>image</type>
       <posY>150</posY>
@@ -32,7 +30,6 @@
       <posY>192</posY>
       <visible>!control.hasfocus(6)</visible>
     </control>
-    
     <control>
       <type>group</type>
       <description>group element</description>
@@ -42,7 +39,6 @@
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      
       <control Style="settingsmaincheckmark">
         <description>Shuffle Playlist on load</description>
         <type>checkmark</type>
@@ -63,7 +59,6 @@
         <onup>2</onup>
         <ondown>8</ondown>
       </control>
-        
       <control Style="settingsmainbutton">
         <description>Reorganize My Music Database button</description>
         <type>button</type>
@@ -94,8 +89,7 @@
         <onleft>10</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      
     </control>
-    
   </controls>
 </window>
+<!--Checksum:2704023b2c6f7099031de23f93d11719-->
