@@ -137,12 +137,12 @@ namespace StreamedMPConfig
       }
       if (patchList.Count > 0)
       {
-        StreamedMPConfig.udateAvailable = true;
+        StreamedMPConfig.updateAvailable = true;
         return true;
       }
       else
       {
-        StreamedMPConfig.udateAvailable = false;
+        StreamedMPConfig.updateAvailable = false;
         return false;
       }
     }
