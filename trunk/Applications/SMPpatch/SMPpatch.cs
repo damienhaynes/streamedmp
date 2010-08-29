@@ -467,13 +467,13 @@ namespace SMPpatch
       Files = Directory.GetFileSystemEntries(destinationPath);
       foreach (string patchdir in Files)
       {
-        if (patchdir.ToLower().Contains("language"))
+        if (patchdir.ToLower().EndsWith("language"))
           copyDirectory(Path.Combine(destinationPath, "language"), SkinInfo.mpPaths.langBasePath);
-        if (patchdir.ToLower().Contains("skin"))
+        if (patchdir.ToLower().EndsWith("skin"))
           copyDirectory(Path.Combine(destinationPath, "skin"), SkinInfo.mpPaths.skinBasePath);
-        if (patchdir.ToLower().Contains("thumbs"))
+        if (patchdir.ToLower().EndsWith("thumbs"))
           copyDirectory(Path.Combine(destinationPath, "thumbs"), SkinInfo.mpPaths.thumbsPath);
-        if (patchdir.ToLower().Contains("database"))
+        if (patchdir.ToLower().EndsWith("database"))
           copyDirectory(Path.Combine(destinationPath, "database"), SkinInfo.mpPaths.databasePath);
       }
       patchProgressBar.Value += 10;
