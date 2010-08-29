@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{1D38397B-AECC-4DBF-AA34-CEEA315AC2E6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -65,17 +65,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Core, Version=1.1.0.16045, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\HTPC\MediaPortal\Core.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\StreamedMP\PluginDependencies\ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="StreamedMPEditor, Version=1.3.0.1807, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Plugins\process\StreamedMPEditor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -118,6 +110,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="EmbeddedPatches\PreBuild.bat" />
+    <EmbeddedResource Include="EmbeddedPatches\SkinUpdate.zip" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +132,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Banner.bmp" />
+    <EmbeddedResource Include="EmbeddedPatches\Cornerstone.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\Cornerstone.MP.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\MovingPictures.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\SMPCheckSum.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\SMPEditor.exe" />
+    <EmbeddedResource Include="EmbeddedPatches\SMPMediaPortalRestart.exe" />
+    <EmbeddedResource Include="EmbeddedPatches\StreamedMPConfig.dll" />
+    <EmbeddedResource Include="EmbeddedPatches\StreamedMPEditor.dll" />
     <Content Include="patchNotInstalled.png" />
     <Content Include="patchInstalled.png" />
     <EmbeddedResource Include="EmbeddedPatches\PatchControl.xml" />

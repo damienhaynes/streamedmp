@@ -13,7 +13,6 @@ using System.Xml;
 using ICSharpCode.SharpZipLib.Zip;
 using System.Threading;
 using SMPCheckSum;
-using StreamedMPEditor;
 
 
 namespace SMPpatch
@@ -499,10 +498,20 @@ namespace SMPpatch
         else
         {
           // If we are replacing an xml, check if the exiting files checksum matches (or it does not have one) and only then copy the file.
-          if (Path.GetExtension(Element).ToLower() == ".xml")
+          // we only want to do checksum compares on streamedmp specific skin files
+          if (Path.GetExtension(Element).ToLower() == ".xml" && patchDestination.StartsWith(SkinInfo.mpPaths.streamedMPpath))
           {
-            if (checkSum.Compare(patchDestination + Path.GetFileName(Element)))
+            // check if file exists and is a skin file
+            try
+            {
+              if (checkSum.Compare(patchDestination + Path.GetFileName(Element)))
+                File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+            }
+            catch (FileNotFoundException)
+            {
+              // most likely a new file, copy anyway
               File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
+            }
           }
           else
             File.Copy(Element, patchDestination + Path.GetFileName(Element), true);
