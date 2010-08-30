@@ -315,18 +315,23 @@ namespace SMPpatch
     void fillInfo(string fileName, patchFile pf)
     {
       if (pf.patchAction != "unzip")
+      {
         pf.patchVersion = fileVersion(Path.Combine(tempExtractPath, fileName));
+        pf.patchSize = fileSize(Path.Combine(tempExtractPath, fileName));
+      }
 
       // if patch file is a plugin
       if (pf.patchLocation.ToLower().StartsWith("process") || pf.patchLocation.ToLower().StartsWith("windows"))
       {
         pf.destinationPath = Path.Combine(SkinInfo.mpPaths.pluginPath, pf.patchLocation);
         pf.installedVersion = fileVersion(Path.Combine(pf.destinationPath, fileName));
+        pf.installedSize = fileSize(Path.Combine(pf.destinationPath, fileName));
       }
       if (pf.patchLocation.ToLower().StartsWith("mediaportal"))
       {
         pf.destinationPath = SkinInfo.mpPaths.sMPbaseDir;
         pf.installedVersion = fileVersion(Path.Combine(pf.destinationPath, fileName));
+        pf.installedSize = fileSize(Path.Combine(pf.destinationPath, fileName));
       }
       if (pf.patchAction == "unzip")
         pf.installedVersion = skInfo.skinVersion.ToString();
@@ -337,8 +342,19 @@ namespace SMPpatch
       patchFiles.Add(pf);
       ListViewItem item = new ListViewItem(new[] { pf.patchFileName, pf.patchVersion, pf.installedVersion });
       item.ImageIndex = 1;
-      if (pf.patchVersion.CompareTo(pf.installedVersion) <= 0)
+      if (pf.patchVersion.CompareTo(pf.installedVersion) < 0)
+      {
         item.ImageIndex = 0;
+      }
+      else if (pf.patchVersion.CompareTo(pf.installedVersion) == 0)
+      {
+        // check filesize...we cant do modified date as embedded resource
+        // streams and writes a new file
+        if (pf.patchSize.CompareTo(pf.installedSize) <= 0)
+          item.ImageIndex = 0;
+        else
+          item.ImageIndex = 1;
+      }
       else
         item.ImageIndex = 1;
 
@@ -354,6 +370,18 @@ namespace SMPpatch
       }
       else
         return "0.0.0.0";
+    }
+
+    long fileSize(string fileToCheck)
+    {
+      long returnValue = 0;
+
+      if (File.Exists(fileToCheck))
+      {
+        FileInfo f = new FileInfo(fileToCheck);
+        returnValue = f.Length;
+      }
+      return returnValue;
     }
 
     private void SMPpatch_FormClosing(object sender, FormClosingEventArgs e)
@@ -611,9 +639,11 @@ namespace SMPpatch
     {
       public string patchFileName { get; set; }
       public string patchVersion { get; set; }
+      public long patchSize { get; set; }
       public string patchAction { get; set; }
       public string patchLocation { get; set; }
       public string installedVersion { get; set; }
+      public long installedSize { get; set; }
       public string destinationPath { get; set; }
     }
 
