@@ -11,45 +11,35 @@
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
-    <!--            :: MENU ::            -->
-    <control>
-      <type>image</type>
-      <posX>1002</posX>
-      <posY>0</posY>
-      <width>278</width>
-      <height>720</height>
-      <texture>hiddenmenu_right.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <id>0</id>
-      <description>label Views menu</description>
-      <label>499</label>
-      <type>label</type>
-      <font>mediastream12tc</font>
-      <posX>1040</posX>
-      <posY>225</posY>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    <!-- *** Menu Buttons *** -->
     <control>
       <type>group</type>
       <description>group element</description>
-      <layout>StackLayout</layout>
-      <posX>1040</posX>
+      <posX>880</posX>
       <posY>250</posY>
-      <width>220</width>
-      <height>720</height>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <width>370</width>
+      <height>80</height>
+      <layout>StackLayout</layout>
       <control>
-        <description>Sleep Method</description>
+        <description>Sleep Mode</description>
         <type>button</type>
         <id>2</id>
-        <label>Sleep Method</label>
-        <onup>5</onup>
+        <label>Sleep Mode</label>
+        <onup>17</onup>
         <ondown>3</ondown>
+        <onright>2</onright>
+        <onleft>2</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <width>370</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Set Timer</description>
@@ -58,6 +48,18 @@
         <label>Set Timer</label>
         <onup>2</onup>
         <ondown>4</ondown>
+        <onright>3</onright>
+        <onleft>3</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Start Timer</description>
@@ -66,22 +68,122 @@
         <label>Start Timer</label>
         <onup>3</onup>
         <ondown>5</ondown>
+        <onright>4</onright>
+        <onleft>4</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Pause timer</description>
+        <type>button</type>
+        <id>5</id>
+        <label>Pause timer</label>
+        <onup>4</onup>
+        <ondown>6</ondown>
+        <onright>5</onright>
+        <onleft>5</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Increment Timer</description>
         <type>button</type>
-        <id>5</id>
-        <label>Start Timer</label>
-        <onup>4</onup>
-        <ondown>6</ondown>
+        <id>6</id>
+        <label>Increment Timer</label>
+        <onup>5</onup>
+        <ondown>7</ondown>
+        <onright>6</onright>
+        <onleft>6</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>Wait until TV Recording finished</description>
+        <description>Decrement Timer</description>
+        <type>button</type>
+        <id>7</id>
+        <label>Decrement Timer</label>
+        <onup>6</onup>
+        <ondown>8</ondown>
+        <onright>7</onright>
+        <onleft>7</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Wait until tasks finished</description>
         <type>togglebutton</type>
-        <id>6</id>
-        <label>Wait until rec. finished</label>
-        <onup>5</onup>
+        <id>8</id>
+        <label>Wait until tasks finished</label>
+        <onup>7</onup>
+        <ondown>9</ondown>
+        <onright>8</onright>
+        <onleft>8</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Volume Reduction</description>
+        <type>togglebutton</type>
+        <id>9</id>
+        <label>Volume Reduction</label>
+        <onup>8</onup>
         <ondown>2</ondown>
+        <onright>9</onright>
+        <onleft>9</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream11tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
     <!-- *** Sleep Activity *** -->
@@ -166,4 +268,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:e7768fe1ad85374c5b9d8ec2fa8ff890-->
+<!--Checksum:215c48ef5e34f7013029dae9b202b5fc-->
