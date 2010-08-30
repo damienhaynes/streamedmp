@@ -130,33 +130,35 @@
     </control>
     <control>
       <id>0</id>
-      <description>album art image</description>
+      <description>Default Image</description>
       <type>image</type>
-      <posX>24</posX>
+      <posX>29</posX>
       <posY>531</posY>
-      <width>159</width>
-      <height>159</height>
+      <width>150</width>
+      <height>150</height>
       <texture>DefaultMyradioBig.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-      <visible>string.equals(#RadioTime.Play.Image,)</visible>
+      <visible>player.hasmedia+!string.equals(#RadioTime.Play.Image)</visible>
     </control>
     <control>
       <id>112</id>
-      <description>album art image</description>
+      <description>Radio Logo</description>
       <type>image</type>
-      <posX>24</posX>
-      <posY>570</posY>
-      <width>159</width>
+      <posX>29</posX>
+      <posY>530</posY>
+      <width>150</width>
+      <height>150</height>
       <texture>#RadioTime.Play.Image</texture>
-      <animation effect="Fade" time="800">WindowOpen</animation>
-      <animation effect="Fade" time="300">WindowClose</animation>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+      <visible>player.hasmedia</visible>
     </control>
     <control>
       <id>0</id>
-      <description>album art overlay</description>
+      <description>Boarder</description>
       <type>image</type>
       <posX>19</posX>
       <posY>526</posY>
@@ -474,4 +476,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:5df42af985de3c171a658363a5e7e352-->
+<!--Checksum:175a7dbd08f9b04f8bde4a68d4b2310a-->
