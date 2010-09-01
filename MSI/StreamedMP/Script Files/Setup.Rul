@@ -244,7 +244,8 @@ prototype NUMBER	GetVersionDigit(STRING, INT);
 //prototype NUMBER 	GetMediaPortalRevision();
 prototype VOID		CheckXMLSectionsExist();
 prototype NUMBER	CheckStringExists(STRING, STRING);
-prototype VOID		ApplyCheckSum();
+prototype VOID		ApplyCheckSum();  
+prototype VOID		GenerateBasicHome();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -840,6 +841,9 @@ begin
  	// Update Settings
 	UpdateSettings();
 	
+	// Generate new BasicHome screen
+	GenerateBasicHome();
+	
 	// Clean Cache Folder    
     CleanCache("Blue3");
     CleanCache("Blue3wide");
@@ -855,12 +859,12 @@ begin
  	szFile = g_sMediaPortalProgramDir ^ "SMPEditor.exe";
  
 	bOpt1  = FALSE;
-	bOpt2  = TRUE;
+	bOpt2  = FALSE;
 	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
 	szOption1 = "&Launch Home Page in default Browser"; 
 	
 	if Is(FILE_EXISTS,szFile) && g_bStartBasicHome then
-		szOption2 = "Launch &Streamed MP Basic Home Editor";
+		szOption2 = "Launch &StreamedMP Basic Home Editor";
 	endif;
 	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
 	
@@ -3073,4 +3077,13 @@ begin
     	sReturn = "0";
     endif;
     return sReturn;
+end; 
+
+function VOID GenerateBasicHome()
+	STRING szFile;
+begin
+	szFile = g_sMediaPortalProgramDir ^ "SMPEditor.exe";
+	if (Is(FILE_EXISTS, szFile)) then
+		LaunchAppAndWait(szFile, "/regenerateonly", TRUE);
+	endif;	
 end;
