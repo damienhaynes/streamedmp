@@ -13,7 +13,7 @@ namespace StreamedMPEditor
       int overlayOffset = 140;
       string overlayFanart = "No";
       string hideControls = "!control.isvisible(" + int.Parse(weatherId.ToString()) + ")";
-      if (menuStyle == chosenMenuStyle.horizontalContextStyle)
+      if (menuStyle == chosenMenuStyle.horizontalContextStyle || enableFiveDayWeather.Checked == false)
         hideControls = "";
 
       if (cbMostRecentTvSeries.Checked && (rbTBSeriesFull.Checked || mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster))
