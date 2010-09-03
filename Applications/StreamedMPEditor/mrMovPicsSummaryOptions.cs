@@ -16,6 +16,30 @@ namespace StreamedMPEditor
       InitializeComponent();
     }
 
+    public bool HideRuntime
+    {
+      get { return cbHideRuntime.Checked; }
+      set { cbHideRuntime.Checked = value; }
+    }
+
+    public bool HideCertification
+    {
+      get { return cbHideCertification.Checked; }
+      set { cbHideCertification.Checked = value; }
+    }
+
+    public bool HideRating
+    {
+      get { return cbHideRating.Checked; }
+      set { cbHideRating.Checked = value; }
+    }
+
+    public bool UseTextRating
+    {
+      get { return cbUseTextRating.Checked; }
+      set { cbUseTextRating.Checked = value; }
+    }
+
     public string MovieTitleFont
     {
       get

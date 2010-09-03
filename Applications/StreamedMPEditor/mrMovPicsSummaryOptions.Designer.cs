@@ -33,6 +33,10 @@
       this.label1 = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.bySaveAndExit = new System.Windows.Forms.Button();
+      this.cbHideRuntime = new System.Windows.Forms.CheckBox();
+      this.cbHideCertification = new System.Windows.Forms.CheckBox();
+      this.cbHideRating = new System.Windows.Forms.CheckBox();
+      this.cbUseTextRating = new System.Windows.Forms.CheckBox();
       this.SuspendLayout();
       // 
       // cboxMRMovieTitle
@@ -41,7 +45,7 @@
       this.cboxMRMovieTitle.Items.AddRange(new object[] {
             "mediastream10c",
             "mediastream10tc (Bold)"});
-      this.cboxMRMovieTitle.Location = new System.Drawing.Point(165, 46);
+      this.cboxMRMovieTitle.Location = new System.Drawing.Point(165, 98);
       this.cboxMRMovieTitle.Name = "cboxMRMovieTitle";
       this.cboxMRMovieTitle.Size = new System.Drawing.Size(165, 21);
       this.cboxMRMovieTitle.TabIndex = 0;
@@ -53,7 +57,7 @@
       this.cboxMRMovieDetail.Items.AddRange(new object[] {
             "mediastream10c",
             "mediastream10tc (Bold)"});
-      this.cboxMRMovieDetail.Location = new System.Drawing.Point(165, 91);
+      this.cboxMRMovieDetail.Location = new System.Drawing.Point(165, 128);
       this.cboxMRMovieDetail.Name = "cboxMRMovieDetail";
       this.cboxMRMovieDetail.Size = new System.Drawing.Size(165, 21);
       this.cboxMRMovieDetail.TabIndex = 1;
@@ -62,7 +66,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(73, 49);
+      this.label1.Location = new System.Drawing.Point(73, 101);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(83, 13);
       this.label1.TabIndex = 2;
@@ -71,7 +75,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(61, 94);
+      this.label2.Location = new System.Drawing.Point(61, 131);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(95, 13);
       this.label2.TabIndex = 3;
@@ -79,7 +83,7 @@
       // 
       // bySaveAndExit
       // 
-      this.bySaveAndExit.Location = new System.Drawing.Point(165, 143);
+      this.bySaveAndExit.Location = new System.Drawing.Point(165, 167);
       this.bySaveAndExit.Name = "bySaveAndExit";
       this.bySaveAndExit.Size = new System.Drawing.Size(103, 23);
       this.bySaveAndExit.TabIndex = 4;
@@ -87,11 +91,55 @@
       this.bySaveAndExit.UseVisualStyleBackColor = true;
       this.bySaveAndExit.Click += new System.EventHandler(this.btSaveAndExit_Click);
       // 
+      // cbHideRuntime
+      // 
+      this.cbHideRuntime.AutoSize = true;
+      this.cbHideRuntime.Location = new System.Drawing.Point(76, 12);
+      this.cbHideRuntime.Name = "cbHideRuntime";
+      this.cbHideRuntime.Size = new System.Drawing.Size(90, 17);
+      this.cbHideRuntime.TabIndex = 5;
+      this.cbHideRuntime.Text = "Hide Runtime";
+      this.cbHideRuntime.UseVisualStyleBackColor = true;
+      // 
+      // cbHideCertification
+      // 
+      this.cbHideCertification.AutoSize = true;
+      this.cbHideCertification.Location = new System.Drawing.Point(76, 33);
+      this.cbHideCertification.Name = "cbHideCertification";
+      this.cbHideCertification.Size = new System.Drawing.Size(106, 17);
+      this.cbHideCertification.TabIndex = 6;
+      this.cbHideCertification.Text = "Hide Certification";
+      this.cbHideCertification.UseVisualStyleBackColor = true;
+      // 
+      // cbHideRating
+      // 
+      this.cbHideRating.AutoSize = true;
+      this.cbHideRating.Location = new System.Drawing.Point(76, 56);
+      this.cbHideRating.Name = "cbHideRating";
+      this.cbHideRating.Size = new System.Drawing.Size(109, 17);
+      this.cbHideRating.TabIndex = 7;
+      this.cbHideRating.Text = "Hide Rating Stars";
+      this.cbHideRating.UseVisualStyleBackColor = true;
+      // 
+      // cbUseTextRating
+      // 
+      this.cbUseTextRating.AutoSize = true;
+      this.cbUseTextRating.Location = new System.Drawing.Point(232, 56);
+      this.cbUseTextRating.Name = "cbUseTextRating";
+      this.cbUseTextRating.Size = new System.Drawing.Size(103, 17);
+      this.cbUseTextRating.TabIndex = 8;
+      this.cbUseTextRating.Text = "Use Text Rating";
+      this.cbUseTextRating.UseVisualStyleBackColor = true;
+      // 
       // MovPicsSummaryOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(439, 202);
+      this.Controls.Add(this.cbUseTextRating);
+      this.Controls.Add(this.cbHideRating);
+      this.Controls.Add(this.cbHideCertification);
+      this.Controls.Add(this.cbHideRuntime);
       this.Controls.Add(this.bySaveAndExit);
       this.Controls.Add(this.label2);
       this.Controls.Add(this.label1);
@@ -113,5 +161,9 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Button bySaveAndExit;
+    private System.Windows.Forms.CheckBox cbHideRuntime;
+    private System.Windows.Forms.CheckBox cbHideCertification;
+    private System.Windows.Forms.CheckBox cbHideRating;
+    private System.Windows.Forms.CheckBox cbUseTextRating;
   }
 }

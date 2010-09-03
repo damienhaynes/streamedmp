@@ -4034,7 +4034,10 @@ namespace StreamedMPEditor
       string settingOldStyleExitButtons = cbExitStyleNew.Checked ? "true" : "false";
       string mrTVSeriesCycleFanart = mostRecentTVSeriesCycleFanart ? "true" : "false";
       string mrMovPicsCycleFanart = mostRecentMovPicsCycleFanart ? "true" : "false";
-
+      string mrMovPicsHideRuntime = movPicsOptions.HideRuntime ? "true" : "false";
+      string mrMovPicsHideCertification = movPicsOptions.HideCertification ? "true" : "false";
+      string mrMovPicsHideRating = movPicsOptions.HideRating ? "true" : "false";
+      string mrMovPicsUseTextRating = movPicsOptions.UseTextRating ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -4151,8 +4154,15 @@ namespace StreamedMPEditor
                 + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 2, true)
                 + generateEntry("mrMovieTitleFont", movPicsOptions.MovieTitleFont, 2, true)
                 + generateEntry("mrMovieDetailFont", movPicsOptions.MovieDetailFont, 2, true)
+                + generateEntry("mrMovPicsHideRuntime", mrMovPicsHideRuntime, 2, true)
+                + generateEntry("mrMovPicsHideCertification", mrMovPicsHideCertification, 2, true)
+                + generateEntry("mrMovPicsHideRating", mrMovPicsHideRating, 2, true)
+                + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 2, true)
                 + "</section>");
-      
+
+    
+
+
       StringBuilder rawXML = new StringBuilder();
 
       rawXML.AppendLine("<!-- End Of Menu Options --><section name=" + quote + "StreamedMP Menu Items" + quote + ">");
