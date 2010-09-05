@@ -863,7 +863,8 @@
                     "<id>0</id>\n" +
                     "<posX>995</posX>\n" +
                     "<posY>245</posY>\n" +
-                    "<width>258</width>\n";
+                    "<width>258</width>\n" +
+                    "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #infoservice.recentlyAdded.series1.title</label>\n";
         else
@@ -873,11 +874,12 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 1 title</description>\n" +
-        "<type>label</type>\n" +
+        "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
         "<posX>995</posX>\n" +
         "<posY>262</posY>\n" +
         "<width>255</width>\n" +
+        "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
@@ -912,8 +914,8 @@
         "<id>0</id>\n" +
         "<posX>995</posX>\n" +
         "<posY>280</posY>\n" +
-        "<width>258</width>\n";
-
+        "<width>258</width>\n" + 
+        "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #infoservice.recentlyAdded.series2.title</label>\n";
         else
@@ -923,11 +925,12 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 2 title</description>\n" +
-        "<type>label</type>\n" +
+        "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
         "<posX>995</posX>\n" +
         "<posY>297</posY>\n" +
         "<width>255</width>\n" +
+        "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
@@ -950,7 +953,8 @@
         "<id>0</id>\n" +
         "<posX>995</posX>\n" +
         "<posY>315</posY>\n" +
-        "<width>258</width>\n";
+        "<width>258</width>\n" +
+        "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series3.title</label>\n";
         else
@@ -960,11 +964,12 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 3 title</description>\n" +
-        "<type>label</type>\n" +
+        "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
         "<posX>995</posX>\n" +
         "<posY>332</posY>\n" +
         "<width>255</width>\n" +
+        "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
