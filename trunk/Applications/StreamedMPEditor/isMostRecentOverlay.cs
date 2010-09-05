@@ -815,17 +815,10 @@
 
       if (sumStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
-
+        string fanartProperty = "#StreamedMP.MostRecentImageFanart"; 
         string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
         string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
-
-
-
-        string fanartProperty = "#infoservice.recentlyAdded.series1.fanart";
-
-        if (cbCycleFanart.Checked)
-          fanartProperty = "#StreamedMP.MostRecentImageFanart";
 
         xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
               "<window>\n" +
