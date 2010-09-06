@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using MediaPortal.GUI.Library;
+using Action = MediaPortal.GUI.Library.Action;
 using System.IO;
 using SMPCheckSum;
 

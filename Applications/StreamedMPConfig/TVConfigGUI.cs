@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MediaPortal.GUI.Library;
+using Action = MediaPortal.GUI.Library.Action;
 
 namespace StreamedMPConfig
 {
