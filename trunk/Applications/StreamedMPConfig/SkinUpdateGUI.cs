@@ -2,6 +2,7 @@
 using System.Collections;
 using System.IO;
 using MediaPortal.GUI.Library;
+using Action = MediaPortal.GUI.Library.Action;
 using MediaPortal.Dialogs;
 using System.Net;
 using ICSharpCode.SharpZipLib.Zip;
