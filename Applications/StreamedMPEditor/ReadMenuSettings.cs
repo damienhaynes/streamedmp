@@ -231,6 +231,7 @@ namespace StreamedMPEditor
         movPicsOptions.HideCertification = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideCertification", nodelist));
         movPicsOptions.HideRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRating", nodelist));
         movPicsOptions.UseTextRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsUseTextRating", nodelist));
+        cbEnableMostRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
       }
       catch
       {

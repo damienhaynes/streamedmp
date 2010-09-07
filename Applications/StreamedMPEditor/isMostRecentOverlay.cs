@@ -1245,6 +1245,9 @@
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
         buildMovingPicturesSummaryFile(475, mostRecentMovPicsSummaryStyle.fanart);
+        if (cbEnableMostRecentWatched.Checked)
+          mostRecentWatched();
+  
         writeXMLFile("basichome.recentlyadded.movpics.VSum2.xml");
       }
     }
@@ -1567,7 +1570,7 @@
 
     #region MovingPictures Summary Builder
 
-    void buildMovingPicturesSummaryFile(int overlayYpos, mostRecentMovPicsSummaryStyle sumStyle)
+    void buildMovingPicturesSummaryFile(int sumStyle1OverlayYpos, mostRecentMovPicsSummaryStyle sumStyle)
     {
       #region Summary Style 1
 
@@ -1593,7 +1596,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>861</posX>" +
-                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
                       "<width>135</width>" +
                       "<height>220</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
@@ -1604,7 +1607,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>871</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
@@ -1615,7 +1618,7 @@
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>871</posX>" +
-                    "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
                     "<width>115</width>" +
                     "<height>22</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
@@ -1638,7 +1641,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1001</posX>" +
-                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
                       "<width>135</width>" +
                       "<height>220</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
@@ -1649,7 +1652,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1011</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
@@ -1660,7 +1663,7 @@
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>1011</posX>" +
-                    "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
                     "<width>115</width>" +
                     "<height>22</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
@@ -1683,7 +1686,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1141</posX>" +
-                      "<posY>" + (overlayYpos).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
                       "<width>135</width>" +
                       "<height>220</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
@@ -1694,7 +1697,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1151</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
@@ -1705,7 +1708,7 @@
                       "<type>image</type>" +
                       "<id>0</id>" +
                       "<posX>1151</posX>" +
-                      "<posY>" + (overlayYpos + 185).ToString() + "</posY>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
                       "<width>115</width>" +
                       "<height>22</height>" +
                       "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
@@ -1728,7 +1731,6 @@
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
         int xPos = 995;
         string alignTxt = "right";
-
 
 
         string fanartProperty = "#StreamedMP.recentlyAdded.movie1.fanart";
@@ -2056,13 +2058,356 @@
           }
         }
 
-        xml += "</control>\n" +
-      "</controls>\n" +
-    "</window>";
+        xml += "</control>\n";
+        if (!cbEnableMostRecentWatched.Checked)
+        {
+         xml += "</controls>\n" +
+        "</window>";
+        }
       }
 
       #endregion
     }
+
+    #endregion
+
+    #region MovingPictures Most Recent Watched
+
+    void mostRecentWatched()
+    {
+        string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
+        string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
+        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
+        int xPos = 995;
+        string alignTxt = "right";
+
+        string fanartProperty = "#StreamedMP.recentlyWatched.movie1.fanart";
+
+        if (cbCycleFanart.Checked)
+          fanartProperty = "#StreamedMP.MostRecentMovPicsImageFanartWatched";
+
+        xml +=    "<control>\n" +
+                    "<description>GROUP: RecentlyWatched Movie 1</description>\n" +
+                    "<type>group</type>\n" +
+                    "<dimColor>0xffffffff</dimColor>\n" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie1.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie1.thumb,#)]</visible>" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+                    "<control>\n" +
+                    "<description>Movie 1 BG</description>\n" +
+                    "<posX>976</posX>\n" +
+                    "<posY>370</posY>\n" +
+                    "<type>image</type>\n" +
+                    "<id>0</id>\n" +
+                    "<width>306</width>\n" +
+                    "<height>320</height>\n" +
+                    "<texture>recentsummoverlaybg.png</texture>\n" +
+                    "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
+                  "</control>\n" +
+                  "<control>\n" +
+                    "<description>Header label</description>\n" +
+                    "<type>label</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>390</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>Recently Watched</label>\n" +
+                    "<font>mediastream10tc</font>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                  "</control>      " +
+                  "<control>\n" +
+                    "<description>Movie 1 Title</description>\n" +
+                    "<type>fadelabel</type>\n" +
+                    "<id>0</id>\n" +
+                    "<posX>995</posX>\n" +
+                    "<posY>565</posY>\n" +
+                    "<width>258</width>\n" +
+                    "<label>#StreamedMP.recentlyWatched.movie1.title</label>\n" +
+                    "<textcolor>White</textcolor>\n" +
+                    "<font>" + mrMovieTitleFont + "</font>" +
+                    "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+                  "</control>\n";
+
+        if (!movPicsOptions.HideRuntime)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 1 Runtime</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>582</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie1.runtime</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+          "</control>";
+          xPos = 1180;
+        }
+        else
+        {
+          alignTxt = "left";
+          xPos -= 5;
+        }
+
+        if (!movPicsOptions.HideCertification)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 1 Certification</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>582</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie1.certification</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+            "<align>" + alignTxt + "</align>" +
+          "</control>";
+        }
+
+        if (!movPicsOptions.HideRating)
+        {
+          if (movPicsOptions.UseTextRating)
+          {
+            xml += "<control>" +
+              "<description>Movie 1 Star Rating Text</description>" +
+              "<type>label</type>" +
+              "<id>0</id>" +
+              "<posX>1260</posX>" +
+              "<posY>585</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<font>" + mrMovieDetailFont + "</font>" +
+              "<align>right</align>" +
+              "<label>#StreamedMP.recentlyWatched.movie1.actualscore/10</label>" +
+            "</control>";
+          }
+          else
+          {
+            xml += "<control>" +
+              "<description>Movie 1 Star Rating Image</description>" +
+              "<type>image</type>" +
+              "<id>0</id>" +
+              "<posX>1190</posX>" +
+              "<posY>585</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<texture>star#StreamedMP.recentlyWatched.movie1.score.png</texture>" +
+            "</control>";
+          }
+        }
+
+        xPos = 995;
+        xml += "<control>\n" +
+                "<description>Movie 1 thumb/fanart</description>\n" +
+                "<type>image</type>\n" +
+                "<id>0</id>\n" +
+                "<posX>995</posX>\n" +
+                "<posY>412</posY>\n" +
+                "<width>268</width>\n" +
+                "<height>151</height>\n" +
+                "<keepaspectratio>true</keepaspectratio>\n" +
+                "<texture>" + fanartProperty + "</texture>\n" +
+              "</control>\n" +
+            "</control>\n" +
+            "<control>\n" +
+              "<description>GROUP: recentlyWatched Movie 2</description>\n" +
+              "<type>group</type>\n" +
+              "<dimColor>0xffffffff</dimColor>\n" +
+              "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie2.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie2.thumb,#)]</visible>" +
+              "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+              "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+              "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+              "<control>\n" +
+                "<description>Movie 2 Title</description>\n" +
+                "<type>fadelabel</type>\n" +
+                "<id>0</id>\n" +
+                "<posX>995</posX>\n" +
+                "<posY>600</posY>\n" +
+                "<width>258</width>\n" +
+                "<label>#StreamedMP.recentlyWatched.movie2.title</label>\n" +
+                "<font>" + mrMovieTitleFont + "</font>" +
+                "<textcolor>White</textcolor>\n" +
+                "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+              "</control>\n";
+
+        if (!movPicsOptions.HideRuntime)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 2 Runtime</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>617</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie2.runtime</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+          "</control>";
+          xPos = 1180;
+        }
+        else
+        {
+          xPos -= 5;
+        }
+
+        if (!movPicsOptions.HideCertification)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 2 Certification</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>617</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie2.certification</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+            "<align>" + alignTxt + "</align>" +
+          "</control>";
+        }
+
+        if (!movPicsOptions.HideRating)
+        {
+          if (movPicsOptions.UseTextRating)
+          {
+            xml += "<control>" +
+              "<description>Movie 2 Star Rating Text</description>" +
+              "<type>label</type>" +
+              "<id>0</id>" +
+              "<posX>1260</posX>" +
+              "<posY>617</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<font>" + mrMovieDetailFont + "</font>" +
+              "<align>right</align>" +
+              "<label>#StreamedMP.recentlyWatched.movie2.actualscore/10</label>" +
+            "</control>";
+          }
+          else
+          {
+            xml += "<control>" +
+              "<description>Movie 2 Star Rating Image</description>" +
+              "<type>image</type>" +
+              "<id>0</id>" +
+              "<posX>1190</posX>" +
+              "<posY>621</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<texture>star#StreamedMP.recentlyWatched.movie1.score.png</texture>" +
+            "</control>";
+          }
+        }
+
+        xPos = 995;
+        xml += "</control>\n" +
+        "<control>\n" +
+          "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
+          "<type>group</type>\n" +
+          "<dimColor>0xffffffff</dimColor>\n" +
+          "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie3.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie3.thumb,#)]</visible>" +
+          "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+          "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+          "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+          "<control>\n" +
+            "<type>fadelabel</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>995</posX>\n" +
+            "<posY>635</posY>\n" +
+            "<width>258</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie3.title</label>\n" +
+            "<textcolor>White</textcolor>\n" +
+            "<font>" + mrMovieTitleFont + "</font>" +
+            "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+          "</control>\n";
+
+
+        if (!movPicsOptions.HideRuntime)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 3 Runtime</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>652</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie3.runtime</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+          "</control>";
+          xPos = 1180;
+        }
+        else
+        {
+          xPos -= 5;
+        }
+
+        if (!movPicsOptions.HideCertification)
+        {
+          xml += "<control>\n" +
+            "<description>Movie 3 Certification</description>\n" +
+            "<type>label</type>\n" +
+            "<id>0</id>\n" +
+            "<posX>" + xPos.ToString() + "</posX>\n" +
+            "<posY>652</posY>\n" +
+            "<width>257</width>\n" +
+            "<label>#StreamedMP.recentlyWatched.movie3.certification</label>\n" +
+            "<font>" + mrMovieDetailFont + "</font>" +
+            "<textcolor>White</textcolor>\n" +
+            "<align>" + alignTxt + "</align>" +
+          "</control>";
+        }
+
+        if (!movPicsOptions.HideRating)
+        {
+          if (movPicsOptions.UseTextRating)
+          {
+            xml += "<control>" +
+              "<description>Movie 3 Star Rating Text</description>" +
+              "<type>label</type>" +
+              "<id>0</id>" +
+              "<posX>1260</posX>" +
+              "<posY>652</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<font>" + mrMovieDetailFont + "</font>" +
+              "<align>right</align>" +
+              "<label>#StreamedMP.recentlyWatched.movie3.actualscore/10</label>" +
+            "</control>";
+          }
+          else
+          {
+            xml += "<control>" +
+              "<description>Movie 3 Star Rating Image</description>" +
+              "<type>image</type>" +
+              "<id>0</id>" +
+              "<posX>1190</posX>" +
+              "<posY>655</posY>" +
+              "<width>70</width>" +
+              "<height>13</height>" +
+              "<texture>star#StreamedMP.recentlyWatched.movie3.score.png</texture>" +
+            "</control>";
+          }
+        }
+
+        xml += "</control>\n" +
+      "</controls>\n" +
+    "</window>";
+    }
+
     #endregion
 
     #region Private Methods

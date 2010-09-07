@@ -4038,6 +4038,7 @@ namespace StreamedMPEditor
       string mrMovPicsHideCertification = movPicsOptions.HideCertification ? "true" : "false";
       string mrMovPicsHideRating = movPicsOptions.HideRating ? "true" : "false";
       string mrMovPicsUseTextRating = movPicsOptions.UseTextRating ? "true" : "false";
+      string mrMovPicsWatched = cbEnableMostRecentWatched.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -4158,6 +4159,7 @@ namespace StreamedMPEditor
                 + generateEntry("mrMovPicsHideCertification", mrMovPicsHideCertification, 2, true)
                 + generateEntry("mrMovPicsHideRating", mrMovPicsHideRating, 2, true)
                 + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 2, true)
+                + generateEntry("mrMovPicsWatched", mrMovPicsWatched, 2, true)
                 + "</section>");
 
     
