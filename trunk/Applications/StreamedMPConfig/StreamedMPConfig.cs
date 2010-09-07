@@ -32,6 +32,7 @@ namespace StreamedMPConfig
     public int isImageCount = 1;
     public string[] mostTVSeriesRecents = new string[3];
     public string[] mostMovPicsRecents = new string[3];
+    public string[] mostMovPicsRecentsWatched = new string[3];
     bool minimiseOnExit = false;
     //Declare Timer for use with Most Recent TVSeries/Movies
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
@@ -367,6 +368,11 @@ namespace StreamedMPConfig
         smcLog.WriteLog("StreamedMPConfig: MovingPictures Img(" + mrImageToDisplay.ToString() + ") File:" + mostMovPicsRecents[mrImageToDisplay - 1], LogLevel.Debug);
         SetProperty("#StreamedMP.MostRecentMovPicsImageFanart", mostMovPicsRecents[mrImageToDisplay - 1]);
       }
+      if (mostMovPicsRecentsWatched[mrImageToDisplay - 1] != null)
+      {
+        smcLog.WriteLog("StreamedMPConfig: MovingPictures Watched Img(" + mrImageToDisplay.ToString() + ") File:" + mostMovPicsRecents[mrImageToDisplay - 1], LogLevel.Debug);
+        SetProperty("#StreamedMP.MostRecentMovPicsImageFanartWatched", mostMovPicsRecentsWatched[mrImageToDisplay - 1]);
+      }
     }
 
     void getMostRecents()
@@ -375,6 +381,7 @@ namespace StreamedMPConfig
       {
         mostTVSeriesRecents[i] = null;
         mostMovPicsRecents[i] = null;
+        mostMovPicsRecentsWatched[i] = null;
         try
         {
           mostTVSeriesRecents[i] = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series" + (i + 1).ToString() + ".fanart");
@@ -385,11 +392,20 @@ namespace StreamedMPConfig
           mostMovPicsRecents[i] = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.movie" + (i + 1).ToString() + ".fanart");
         }
         catch { }
+        try
+        {
+          mostMovPicsRecentsWatched[i] = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.movie" + (i + 1).ToString() + ".fanart");
+        }
+        catch { }
         if (mostTVSeriesRecents[i] == " ")
           mostTVSeriesRecents[i] = null;
 
         if (mostMovPicsRecents[i] == " ")
           mostMovPicsRecents[i] = null;
+
+        if (mostMovPicsRecentsWatched[i] == " ")
+          mostMovPicsRecentsWatched[i] = null;
+
       }
     }
 

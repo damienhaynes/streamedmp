@@ -244,6 +244,7 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbEnableMostRecentWatched = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1711,11 +1712,12 @@
       // pMovPicsRecent
       // 
       this.pMovPicsRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.pMovPicsRecent.Controls.Add(this.cbEnableMostRecentWatched);
       this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
       this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
-      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 127);
+      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 107);
       this.pMovPicsRecent.Name = "pMovPicsRecent";
-      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 89);
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 109);
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
@@ -1724,7 +1726,7 @@
       this.gbMovPicsOptions.Controls.Add(this.rbMovPicsFull);
       this.gbMovPicsOptions.Controls.Add(this.rbMovPicsSummary);
       this.gbMovPicsOptions.Enabled = false;
-      this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 28);
+      this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 48);
       this.gbMovPicsOptions.Name = "gbMovPicsOptions";
       this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 51);
       this.gbMovPicsOptions.TabIndex = 3;
@@ -1770,9 +1772,9 @@
       this.pTVSeriesRecent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
       this.pTVSeriesRecent.Controls.Add(this.gbTvSeriesOptions);
       this.pTVSeriesRecent.Controls.Add(this.cbMostRecentTvSeries);
-      this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 31);
+      this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 17);
       this.pTVSeriesRecent.Name = "pTVSeriesRecent";
-      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 91);
+      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 84);
       this.pTVSeriesRecent.TabIndex = 4;
       this.pTVSeriesRecent.Click += new System.EventHandler(this.pTVSeriesRecent_Click);
       // 
@@ -1783,7 +1785,7 @@
       this.gbTvSeriesOptions.Enabled = false;
       this.gbTvSeriesOptions.Location = new System.Drawing.Point(9, 30);
       this.gbTvSeriesOptions.Name = "gbTvSeriesOptions";
-      this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 51);
+      this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 45);
       this.gbTvSeriesOptions.TabIndex = 2;
       this.gbTvSeriesOptions.TabStop = false;
       this.gbTvSeriesOptions.Text = "TVSeries Overlay Type";
@@ -2642,6 +2644,16 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbEnableMostRecentWatched
+      // 
+      this.cbEnableMostRecentWatched.AutoSize = true;
+      this.cbEnableMostRecentWatched.Location = new System.Drawing.Point(9, 25);
+      this.cbEnableMostRecentWatched.Name = "cbEnableMostRecentWatched";
+      this.cbEnableMostRecentWatched.Size = new System.Drawing.Size(246, 17);
+      this.cbEnableMostRecentWatched.TabIndex = 4;
+      this.cbEnableMostRecentWatched.Text = "Enable MovingPictures Most Recent Watched";
+      this.cbEnableMostRecentWatched.UseVisualStyleBackColor = true;
+      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2970,6 +2982,7 @@
     private System.Windows.Forms.RadioButton rbDisplayMostRecentMovies;
     private System.Windows.Forms.RadioButton rbDisplayMostRecentTVSeries;
     private System.Windows.Forms.RadioButton rbDisplayMostRecentNone;
+    private System.Windows.Forms.CheckBox cbEnableMostRecentWatched;
   }
 }
 
