@@ -137,7 +137,7 @@ This file should contain the details view
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible allowhiddenfocus="true">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Details Box -->
