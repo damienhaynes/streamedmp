@@ -250,10 +250,9 @@ namespace StreamedMPConfig
       // sort based on most recently watched
       filteredMovies.Sort((m1, m2) =>
         {
-          // get watched count for each movie from user settings
-          // only 1 user currently exists
-          int watchCount1 = m1.UserSettings[0].WatchedCount;
-          int watchCount2 = m2.UserSettings[0].WatchedCount;
+          // get watched count for each movie         
+          int watchCount1 = m1.WatchedHistory.Count;
+          int watchCount2 = m2.WatchedHistory.Count;
 
           // compare most recently watched dates
           // WatchedHistory stores a list of dates each time the movie was watched
@@ -285,10 +284,8 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty(movie.Certification.Trim()) ? string.Empty : " [" + movie.Certification + "]"));
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".score", Math.Round(movie.Score, MidpointRounding.AwayFromZero).ToString());
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
-
-        int watchedCount = movie.UserSettings[0].WatchedCount;
-        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watchedcount", watchedCount.ToString());
-        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watcheddate", watchedCount > 0 ? movie.WatchedHistory[watchedCount - 1].DateWatched.ToString() : "N/A");
+        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watchedcount", movie.WatchedHistory.Count.ToString());
+        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watcheddate", movie.WatchedHistory.Count > 0 ? movie.WatchedHistory[movie.WatchedHistory.Count - 1].DateWatched.ToString() : "N/A");
         smcLog.WriteLog(string.Format("Recently Watched Movie {0} is ", rwMovieNumber) + movie.Title, LogLevel.Info);
         ++rwMovieNumber;
         if (rwMovieNumber == 4)
