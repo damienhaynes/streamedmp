@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7980</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:MediaTip</define>
+  <define>#header.hover:hover_my plugins.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <!-- GUI Buttons -->
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>40</posX>
+      <posY>250</posY>
+      <width>300</width>
+      <height>80</height>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Refresh Overview</description>
+        <type>button</type>
+        <id>2</id>
+        <onup>17</onup>
+        <ondown>3</ondown>
+        <onright>2</onright>
+        <onleft>2</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <width>300</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Music Button</description>
+        <type>button</type>
+        <id>3</id>
+        <label>Refresh</label>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <onright>3</onright>
+        <onleft>3</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Movie Button</description>
+        <type>button</type>
+        <id>4</id>
+        <onup>3</onup>
+        <ondown>5</ondown>
+        <onright>4</onright>
+        <onleft>4</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Pictures Button</description>
+        <type>button</type>
+        <id>5</id>
+        <onup>4</onup>
+        <ondown>2</ondown>
+        <onright>5</onright>
+        <onleft>5</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+    <!-- MediaInfo -->
+    <control>
+      <id>1</id>
+      <description>Music</description>
+      <type>image</type>
+      <posX>361</posX>
+      <posY>250</posY>
+      <width>50</width>
+      <height>50</height>
+      <texture>mediatip_music.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Music Headline</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>250</posY>
+      <label>#MediaTip.MusicHeadline</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Music Directory Name/Size Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>268</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Directory:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Music Directory Name/Size Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>268</posY>
+      <font>font12</font>
+      <label>#MediaTip.MusicDirectoryName (#MediaTip.MusicDirectorySize)</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Music File Count Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>290</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Files:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Music File Count Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>290</posY>
+      <font>font12</font>
+      <label>#MediaTip.MusicDirectoryFileCount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Video</description>
+      <type>image</type>
+      <posX>361</posX>
+      <posY>330</posY>
+      <width>50</width>
+      <height>50</height>
+      <texture>mediatip_video.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Videos Headline</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>330</posY>
+      <label>#MediaTip.VideoHeadline</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Video Directory Name/Size Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>348</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Directory:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Video Directory Name/Size Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>348</posY>
+      <font>font12</font>
+      <label>#MediaTip.VideoDirectoryName (#MediaTip.VideoDirectorySize)</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Video File Count Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>370</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Files:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Video File Count Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>370</posY>
+      <font>font12</font>
+      <label>#MediaTip.VideoDirectoryFileCount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture</description>
+      <type>image</type>
+      <posX>361</posX>
+      <posY>410</posY>
+      <width>50</width>
+      <height>50</height>
+      <texture>mediatip_picture.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <keepaspectratio>yes</keepaspectratio>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture Headline</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>410</posY>
+      <label>#MediaTip.PictureHeadline</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture Directory Name/Size Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>428</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Directory:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture Directory Name/Size Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>428</posY>
+      <font>font12</font>
+      <label>#MediaTip.PictureDirectoryName (#MediaTip.PictureDirectorySize)</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture File Count Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>450</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Files:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Picture File Count Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>450</posY>
+      <font>font12</font>
+      <label>#MediaTip.PictureDirectoryFileCount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 Image</description>
+      <type>image</type>
+      <posX>361</posX>
+      <posY>490</posY>
+      <width>50</width>
+      <height>50</height>
+      <texture>mediatip_additional.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <keepaspectratio>yes</keepaspectratio>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0Headline,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 Headline</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>490</posY>
+      <label>#MediaTip.AdditionalDirectory0Headline</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0Headline,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 Directory Name/Size Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>508</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Directory:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0Name,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 Directory Name/Size Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>508</posY>
+      <font>font12</font>
+      <label>#MediaTip.AdditionalDirectory0Name (#MediaTip.AdditionalDirectory0Size)</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0Name,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 File Count Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>530</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Files:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0FileCount,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #1 File Count Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>530</posY>
+      <font>font12</font>
+      <label>#MediaTip.AdditionalDirectory0FileCount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory0FileCount,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 Image</description>
+      <type>image</type>
+      <posX>361</posX>
+      <posY>570</posY>
+      <width>50</width>
+      <height>50</height>
+      <texture>mediatip_additional.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <keepaspectratio>yes</keepaspectratio>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1Headline,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 Headline</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>570</posY>
+      <label>#MediaTip.AdditionalDirectory1Headline</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1Headline,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 Directory Name/Size Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>588</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Directory:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1Name,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 Directory Name/Size Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>588</posY>
+      <font>font12</font>
+      <label>#MediaTip.AdditionalDirectory1Name (#MediaTip.AdditionalDirectory1Size)</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1Name,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 File Count Label</description>
+      <type>label</type>
+      <posX>426</posX>
+      <posY>610</posY>
+      <width>120</width>
+      <font>font12</font>
+      <textcolor>ff808080</textcolor>
+      <label>Files:</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1FileCount,)</visible>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Additional #2 File Count Value</description>
+      <type>label</type>
+      <posX>553</posX>
+      <posY>610</posY>
+      <font>font12</font>
+      <label>#MediaTip.AdditionalDirectory1FileCount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <visible>!string.equals(#MediaTip.AdditionalDirectory1FileCount,)</visible>
+    </control>
+  </controls>
+</window>
+<!--Checksum:4917b8d8e206010f2d38b2c69ceca916-->
