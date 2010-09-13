@@ -269,7 +269,7 @@ namespace SMPpatch
           }
         }
       }
-      return null;
+      return string.Empty;
     }
 
 
