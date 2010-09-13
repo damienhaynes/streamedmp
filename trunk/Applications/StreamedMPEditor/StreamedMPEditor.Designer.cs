@@ -155,6 +155,7 @@
       this.pbPosterPicTVSeries = new System.Windows.Forms.PictureBox();
       this.pbFanartPicTVSeries = new System.Windows.Forms.PictureBox();
       this.pMovPicsRecent = new System.Windows.Forms.Panel();
+      this.cbEnableMostRecentWatched = new System.Windows.Forms.CheckBox();
       this.gbMovPicsOptions = new System.Windows.Forms.GroupBox();
       this.rbMovPicsFull = new System.Windows.Forms.RadioButton();
       this.rbMovPicsSummary = new System.Windows.Forms.RadioButton();
@@ -244,7 +245,7 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbEnableMostRecentWatched = new System.Windows.Forms.CheckBox();
+      this.addSubmenus = new System.Windows.Forms.Button();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -475,7 +476,7 @@
       this.weatherStyleTab.Controls.Add(this.weatherIconsGroup);
       this.weatherStyleTab.Location = new System.Drawing.Point(4, 23);
       this.weatherStyleTab.Name = "weatherStyleTab";
-      this.weatherStyleTab.Size = new System.Drawing.Size(750, 430);
+      this.weatherStyleTab.Size = new System.Drawing.Size(764, 430);
       this.weatherStyleTab.TabIndex = 5;
       this.weatherStyleTab.Text = "Weather Styles";
       this.weatherStyleTab.UseVisualStyleBackColor = true;
@@ -617,6 +618,7 @@
       // 
       // basicHomeDesign
       // 
+      this.basicHomeDesign.Controls.Add(this.addSubmenus);
       this.basicHomeDesign.Controls.Add(this.richTextBox2);
       this.basicHomeDesign.Controls.Add(this.groupBox3);
       this.basicHomeDesign.Controls.Add(this.label20);
@@ -736,9 +738,9 @@
       // btMoveDown
       // 
       this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
-      this.btMoveDown.Location = new System.Drawing.Point(713, 159);
+      this.btMoveDown.Location = new System.Drawing.Point(713, 147);
       this.btMoveDown.Name = "btMoveDown";
-      this.btMoveDown.Size = new System.Drawing.Size(33, 108);
+      this.btMoveDown.Size = new System.Drawing.Size(33, 90);
       this.btMoveDown.TabIndex = 116;
       this.btMoveDown.TabStop = false;
       this.btMoveDown.UseVisualStyleBackColor = true;
@@ -749,7 +751,7 @@
       this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
       this.btMoveUp.Location = new System.Drawing.Point(713, 23);
       this.btMoveUp.Name = "btMoveUp";
-      this.btMoveUp.Size = new System.Drawing.Size(33, 116);
+      this.btMoveUp.Size = new System.Drawing.Size(33, 90);
       this.btMoveUp.TabIndex = 115;
       this.btMoveUp.TabStop = false;
       this.btMoveUp.UseVisualStyleBackColor = true;
@@ -757,7 +759,7 @@
       // 
       // cancelButton
       // 
-      this.cancelButton.Location = new System.Drawing.Point(602, 274);
+      this.cancelButton.Location = new System.Drawing.Point(619, 274);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(49, 21);
       this.cancelButton.TabIndex = 21;
@@ -778,7 +780,7 @@
       // saveButton
       // 
       this.saveButton.Enabled = false;
-      this.saveButton.Location = new System.Drawing.Point(661, 273);
+      this.saveButton.Location = new System.Drawing.Point(695, 274);
       this.saveButton.Name = "saveButton";
       this.saveButton.Size = new System.Drawing.Size(48, 23);
       this.saveButton.TabIndex = 20;
@@ -1178,7 +1180,7 @@
       this.itemsOnMenubar.FormattingEnabled = true;
       this.itemsOnMenubar.Location = new System.Drawing.Point(540, 23);
       this.itemsOnMenubar.Name = "itemsOnMenubar";
-      this.itemsOnMenubar.Size = new System.Drawing.Size(170, 244);
+      this.itemsOnMenubar.Size = new System.Drawing.Size(170, 214);
       this.itemsOnMenubar.TabIndex = 6;
       this.itemsOnMenubar.SelectedIndexChanged += new System.EventHandler(this.itemsOnMenubar_SelectedIndexChanged);
       // 
@@ -1199,7 +1201,7 @@
       this.menuOptions.Location = new System.Drawing.Point(4, 23);
       this.menuOptions.Name = "menuOptions";
       this.menuOptions.Padding = new System.Windows.Forms.Padding(3);
-      this.menuOptions.Size = new System.Drawing.Size(750, 430);
+      this.menuOptions.Size = new System.Drawing.Size(764, 430);
       this.menuOptions.TabIndex = 7;
       this.menuOptions.Text = "Menu /Plugin Options";
       this.menuOptions.UseVisualStyleBackColor = true;
@@ -1721,6 +1723,16 @@
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
+      // cbEnableMostRecentWatched
+      // 
+      this.cbEnableMostRecentWatched.AutoSize = true;
+      this.cbEnableMostRecentWatched.Location = new System.Drawing.Point(9, 25);
+      this.cbEnableMostRecentWatched.Name = "cbEnableMostRecentWatched";
+      this.cbEnableMostRecentWatched.Size = new System.Drawing.Size(246, 17);
+      this.cbEnableMostRecentWatched.TabIndex = 4;
+      this.cbEnableMostRecentWatched.Text = "Enable MovingPictures Most Recent Watched";
+      this.cbEnableMostRecentWatched.UseVisualStyleBackColor = true;
+      // 
       // gbMovPicsOptions
       // 
       this.gbMovPicsOptions.Controls.Add(this.rbMovPicsFull);
@@ -2047,7 +2059,7 @@
       this.defaultBackgrounds.Controls.Add(this.pictureBox3);
       this.defaultBackgrounds.Location = new System.Drawing.Point(4, 23);
       this.defaultBackgrounds.Name = "defaultBackgrounds";
-      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 430);
+      this.defaultBackgrounds.Size = new System.Drawing.Size(764, 430);
       this.defaultBackgrounds.TabIndex = 2;
       this.defaultBackgrounds.Text = "Default Background Images";
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
@@ -2072,7 +2084,7 @@
       this.splashscreenSelector.Controls.Add(this.spashscreenPreview);
       this.splashscreenSelector.Location = new System.Drawing.Point(4, 23);
       this.splashscreenSelector.Name = "splashscreenSelector";
-      this.splashscreenSelector.Size = new System.Drawing.Size(750, 430);
+      this.splashscreenSelector.Size = new System.Drawing.Size(764, 430);
       this.splashscreenSelector.TabIndex = 6;
       this.splashscreenSelector.Text = "SplashScreen Selector";
       this.splashscreenSelector.UseVisualStyleBackColor = true;
@@ -2158,7 +2170,7 @@
       this.editingInfo.ImageIndex = 0;
       this.editingInfo.Location = new System.Drawing.Point(4, 23);
       this.editingInfo.Name = "editingInfo";
-      this.editingInfo.Size = new System.Drawing.Size(750, 430);
+      this.editingInfo.Size = new System.Drawing.Size(764, 430);
       this.editingInfo.TabIndex = 3;
       this.editingInfo.Text = "About";
       this.editingInfo.UseVisualStyleBackColor = true;
@@ -2644,15 +2656,14 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // cbEnableMostRecentWatched
+      // addSubmenus
       // 
-      this.cbEnableMostRecentWatched.AutoSize = true;
-      this.cbEnableMostRecentWatched.Location = new System.Drawing.Point(9, 25);
-      this.cbEnableMostRecentWatched.Name = "cbEnableMostRecentWatched";
-      this.cbEnableMostRecentWatched.Size = new System.Drawing.Size(246, 17);
-      this.cbEnableMostRecentWatched.TabIndex = 4;
-      this.cbEnableMostRecentWatched.Text = "Enable MovingPictures Most Recent Watched";
-      this.cbEnableMostRecentWatched.UseVisualStyleBackColor = true;
+      this.addSubmenus.Location = new System.Drawing.Point(538, 244);
+      this.addSubmenus.Name = "addSubmenus";
+      this.addSubmenus.Size = new System.Drawing.Size(208, 21);
+      this.addSubmenus.TabIndex = 123;
+      this.addSubmenus.Text = "Add Submens to Selected Item";
+      this.addSubmenus.UseVisualStyleBackColor = true;
       // 
       // formStreamedMpEditor
       // 
@@ -2983,6 +2994,7 @@
     private System.Windows.Forms.RadioButton rbDisplayMostRecentTVSeries;
     private System.Windows.Forms.RadioButton rbDisplayMostRecentNone;
     private System.Windows.Forms.CheckBox cbEnableMostRecentWatched;
+    private System.Windows.Forms.Button addSubmenus;
   }
 }
 
