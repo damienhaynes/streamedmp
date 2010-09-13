@@ -100,6 +100,7 @@ namespace SMPpatch
       CheckProcesses mediaportal = new CheckProcesses("mediaportal");
       CheckProcesses configuration = new CheckProcesses("configuration");
       CheckProcesses smpeditor = new CheckProcesses("smpeditor");
+      CheckProcesses pluginconfigloader = new CheckProcesses("pluginconfigloader");
 
       if (skInfo.minimiseMPOnExit.ToLower() == "yes")
       {
@@ -120,6 +121,9 @@ namespace SMPpatch
           processess += "Configuration.exe\n";
         if (smpeditor.running)
           processess += "StreamedMP basicHome Editor\n";
+        if (pluginconfigloader.running)
+          processess += "Plugin Config Loader\n";
+
         if (waitCount > 10)
         {
           DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
@@ -210,6 +214,7 @@ namespace SMPpatch
       CheckProcesses mediaportal = new CheckProcesses("mediaportal");
       CheckProcesses configuration = new CheckProcesses("configuration");
       CheckProcesses smpeditor = new CheckProcesses("smpeditor");
+      CheckProcesses pluginconfigloader = new CheckProcesses("pluginconfigloader");
 
       if (!mediaportal.running)
       {
@@ -234,6 +239,15 @@ namespace SMPpatch
       }
       else
         return false;
+
+      if (!pluginconfigloader.running)
+      {
+        configLoaderStatus.ForeColor = Color.Green;
+        configLoaderStatus.Text = "Shutdown";
+      }
+      else
+        return false;
+
 
       return true;
     }

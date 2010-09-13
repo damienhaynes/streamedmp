@@ -48,6 +48,8 @@
       this.installedVersion = new System.Windows.Forms.ColumnHeader();
       this.imageList1 = new System.Windows.Forms.ImageList(this.components);
       this.patchProgressBar = new System.Windows.Forms.ProgressBar();
+      this.lbPluginConfigLoader = new System.Windows.Forms.Label();
+      this.configLoaderStatus = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
       this.processCheckGroup.SuspendLayout();
@@ -56,9 +58,9 @@
       // pictureBox1
       // 
       this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-      this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+      this.pictureBox1.Location = new System.Drawing.Point(12, 13);
       this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(174, 310);
+      this.pictureBox1.Size = new System.Drawing.Size(174, 339);
       this.pictureBox1.TabIndex = 0;
       this.pictureBox1.TabStop = false;
       // 
@@ -130,15 +132,17 @@
       // 
       // processCheckGroup
       // 
+      this.processCheckGroup.Controls.Add(this.configLoaderStatus);
+      this.processCheckGroup.Controls.Add(this.lbPluginConfigLoader);
       this.processCheckGroup.Controls.Add(this.mediaPortalStatusLb);
       this.processCheckGroup.Controls.Add(this.configurationStatus);
       this.processCheckGroup.Controls.Add(this.mediaportalStatus);
       this.processCheckGroup.Controls.Add(this.smpeditorStatus);
       this.processCheckGroup.Controls.Add(this.ConfigurationStatusLb);
       this.processCheckGroup.Controls.Add(this.SMPEditorActivelb);
-      this.processCheckGroup.Location = new System.Drawing.Point(194, 209);
+      this.processCheckGroup.Location = new System.Drawing.Point(194, 206);
       this.processCheckGroup.Name = "processCheckGroup";
-      this.processCheckGroup.Size = new System.Drawing.Size(354, 76);
+      this.processCheckGroup.Size = new System.Drawing.Size(354, 90);
       this.processCheckGroup.TabIndex = 8;
       this.processCheckGroup.TabStop = false;
       this.processCheckGroup.Text = "Active Process Check";
@@ -157,7 +161,7 @@
       // 
       // btInstallPatch
       // 
-      this.btInstallPatch.Location = new System.Drawing.Point(194, 294);
+      this.btInstallPatch.Location = new System.Drawing.Point(194, 302);
       this.btInstallPatch.Name = "btInstallPatch";
       this.btInstallPatch.Size = new System.Drawing.Size(104, 24);
       this.btInstallPatch.TabIndex = 12;
@@ -167,7 +171,7 @@
       // 
       // btExit
       // 
-      this.btExit.Location = new System.Drawing.Point(444, 294);
+      this.btExit.Location = new System.Drawing.Point(444, 302);
       this.btExit.Name = "btExit";
       this.btExit.Size = new System.Drawing.Size(104, 24);
       this.btExit.TabIndex = 14;
@@ -213,16 +217,35 @@
       // 
       // patchProgressBar
       // 
-      this.patchProgressBar.Location = new System.Drawing.Point(194, 191);
+      this.patchProgressBar.Location = new System.Drawing.Point(194, 188);
       this.patchProgressBar.Name = "patchProgressBar";
       this.patchProgressBar.Size = new System.Drawing.Size(351, 12);
       this.patchProgressBar.TabIndex = 16;
+      // 
+      // lbPluginConfigLoader
+      // 
+      this.lbPluginConfigLoader.AutoSize = true;
+      this.lbPluginConfigLoader.Location = new System.Drawing.Point(6, 71);
+      this.lbPluginConfigLoader.Name = "lbPluginConfigLoader";
+      this.lbPluginConfigLoader.Size = new System.Drawing.Size(106, 13);
+      this.lbPluginConfigLoader.TabIndex = 8;
+      this.lbPluginConfigLoader.Text = "Config Loader Active";
+      // 
+      // configLoaderStatus
+      // 
+      this.configLoaderStatus.AutoSize = true;
+      this.configLoaderStatus.ForeColor = System.Drawing.Color.Red;
+      this.configLoaderStatus.Location = new System.Drawing.Point(283, 71);
+      this.configLoaderStatus.Name = "configLoaderStatus";
+      this.configLoaderStatus.Size = new System.Drawing.Size(47, 13);
+      this.configLoaderStatus.TabIndex = 9;
+      this.configLoaderStatus.Text = "Running";
       // 
       // SMPpatch
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(560, 330);
+      this.ClientSize = new System.Drawing.Size(560, 333);
       this.Controls.Add(this.patchProgressBar);
       this.Controls.Add(this.thePatches);
       this.Controls.Add(this.btExit);
@@ -268,6 +291,8 @@
     private System.Windows.Forms.ProgressBar patchProgressBar;
     private System.Windows.Forms.ColumnHeader installedVersion;
     private System.Windows.Forms.ImageList imageList1;
+    private System.Windows.Forms.Label lbPluginConfigLoader;
+    private System.Windows.Forms.Label configLoaderStatus;
   }
 }
 
