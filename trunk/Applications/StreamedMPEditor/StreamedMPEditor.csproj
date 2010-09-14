@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -159,6 +159,9 @@
       <DependentUpon>mrTVSereisFormatOptions.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubMenuDesigner.resx">
+      <DependentUpon>SubMenuDesigner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xmlFiles\AeonBasicHomeDefault.xml" />
     <EmbeddedResource Include="xmlFiles\HBasicHomeSkeleton.xml" />
     <EmbeddedResource Include="xmlFiles\QuickSelectList.xml" />
@@ -176,6 +179,13 @@
     <None Include="Resources\style8.png" />
     <None Include="Resources\style5.png" />
     <None Include="Properties\VersionInfo.cs.tmpl" />
+    <Compile Include="BHHorizontalWriter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BHVerticalWriter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper.cs" />
     <Compile Include="isMostRecentOverlay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +207,12 @@
     </Compile>
     <Compile Include="spashscreenSelector.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMenuDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubMenuDesigner.Designer.cs">
+      <DependentUpon>SubMenuDesigner.cs</DependentUpon>
     </Compile>
     <Compile Include="WriteOverlay.cs">
       <SubType>Form</SubType>

@@ -57,6 +57,7 @@
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
+      this.addSubmenus = new System.Windows.Forms.Button();
       this.richTextBox2 = new System.Windows.Forms.RichTextBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
       this.selectedWindowID = new System.Windows.Forms.Label();
@@ -245,7 +246,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.addSubmenus = new System.Windows.Forms.Button();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -476,7 +476,7 @@
       this.weatherStyleTab.Controls.Add(this.weatherIconsGroup);
       this.weatherStyleTab.Location = new System.Drawing.Point(4, 23);
       this.weatherStyleTab.Name = "weatherStyleTab";
-      this.weatherStyleTab.Size = new System.Drawing.Size(764, 430);
+      this.weatherStyleTab.Size = new System.Drawing.Size(750, 430);
       this.weatherStyleTab.TabIndex = 5;
       this.weatherStyleTab.Text = "Weather Styles";
       this.weatherStyleTab.UseVisualStyleBackColor = true;
@@ -643,6 +643,17 @@
       this.basicHomeDesign.TabIndex = 0;
       this.basicHomeDesign.Text = "BasicHome Design";
       this.basicHomeDesign.UseVisualStyleBackColor = true;
+      // 
+      // addSubmenus
+      // 
+      this.addSubmenus.Location = new System.Drawing.Point(538, 244);
+      this.addSubmenus.Name = "addSubmenus";
+      this.addSubmenus.Size = new System.Drawing.Size(208, 21);
+      this.addSubmenus.TabIndex = 123;
+      this.addSubmenus.Text = "Add Submens to Selected Item";
+      this.addSubmenus.UseVisualStyleBackColor = true;
+      this.addSubmenus.Visible = false;
+      this.addSubmenus.Click += new System.EventHandler(this.addSubmenus_Click);
       // 
       // richTextBox2
       // 
@@ -1201,7 +1212,7 @@
       this.menuOptions.Location = new System.Drawing.Point(4, 23);
       this.menuOptions.Name = "menuOptions";
       this.menuOptions.Padding = new System.Windows.Forms.Padding(3);
-      this.menuOptions.Size = new System.Drawing.Size(764, 430);
+      this.menuOptions.Size = new System.Drawing.Size(750, 430);
       this.menuOptions.TabIndex = 7;
       this.menuOptions.Text = "Menu /Plugin Options";
       this.menuOptions.UseVisualStyleBackColor = true;
@@ -2059,7 +2070,7 @@
       this.defaultBackgrounds.Controls.Add(this.pictureBox3);
       this.defaultBackgrounds.Location = new System.Drawing.Point(4, 23);
       this.defaultBackgrounds.Name = "defaultBackgrounds";
-      this.defaultBackgrounds.Size = new System.Drawing.Size(764, 430);
+      this.defaultBackgrounds.Size = new System.Drawing.Size(750, 430);
       this.defaultBackgrounds.TabIndex = 2;
       this.defaultBackgrounds.Text = "Default Background Images";
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
@@ -2084,7 +2095,7 @@
       this.splashscreenSelector.Controls.Add(this.spashscreenPreview);
       this.splashscreenSelector.Location = new System.Drawing.Point(4, 23);
       this.splashscreenSelector.Name = "splashscreenSelector";
-      this.splashscreenSelector.Size = new System.Drawing.Size(764, 430);
+      this.splashscreenSelector.Size = new System.Drawing.Size(750, 430);
       this.splashscreenSelector.TabIndex = 6;
       this.splashscreenSelector.Text = "SplashScreen Selector";
       this.splashscreenSelector.UseVisualStyleBackColor = true;
@@ -2170,7 +2181,7 @@
       this.editingInfo.ImageIndex = 0;
       this.editingInfo.Location = new System.Drawing.Point(4, 23);
       this.editingInfo.Name = "editingInfo";
-      this.editingInfo.Size = new System.Drawing.Size(764, 430);
+      this.editingInfo.Size = new System.Drawing.Size(750, 430);
       this.editingInfo.TabIndex = 3;
       this.editingInfo.Text = "About";
       this.editingInfo.UseVisualStyleBackColor = true;
@@ -2655,15 +2666,6 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
-      // 
-      // addSubmenus
-      // 
-      this.addSubmenus.Location = new System.Drawing.Point(538, 244);
-      this.addSubmenus.Name = "addSubmenus";
-      this.addSubmenus.Size = new System.Drawing.Size(208, 21);
-      this.addSubmenus.TabIndex = 123;
-      this.addSubmenus.Text = "Add Submens to Selected Item";
-      this.addSubmenus.UseVisualStyleBackColor = true;
       // 
       // formStreamedMpEditor
       // 

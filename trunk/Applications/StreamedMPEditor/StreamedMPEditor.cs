@@ -111,7 +111,7 @@ namespace StreamedMPEditor
     #endregion
 
     #region Variables
-    editorPaths mpPaths = new editorPaths();
+    public static editorPaths mpPaths = new editorPaths();
     editorValues basicHomeValues = new editorValues();
     defaultImages defImgs = new defaultImages();
     randomFanartSetting randomFanart = new randomFanartSetting();
@@ -697,6 +697,7 @@ namespace StreamedMPEditor
 
     }
 
+
     void itemsOnMenubar_SelectedIndexChanged(object sender, EventArgs e)
     {
       screenReset();
@@ -1181,6 +1182,14 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+    private void addSubmenus_Click(object sender, EventArgs e)
+    {
+      menuItem mnuItem = menuItems[itemsOnMenubar.SelectedIndex];
+
+      formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
+      subMenuForm.createSubmenu(ref mnuItem);
+    }
 
   }
 }
