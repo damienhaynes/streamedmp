@@ -1960,6 +1960,15 @@ namespace StreamedMPEditor
       public string defaultImage;
       public bool disableBGSharing;
       public displayMostRecent showMostRecent;
+      public List<subMenuItem> subMenuLevel1 = new List<subMenuItem>();
+      public List<subMenuItem> subMenuLevel2 = new List<subMenuItem>();
+    }
+
+    public class subMenuItem
+    {
+      public int id;
+      public string name;
+      public string hyperlink;
     }
 
     public class backgroundItem
