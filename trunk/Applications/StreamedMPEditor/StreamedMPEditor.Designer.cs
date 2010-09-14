@@ -749,9 +749,9 @@
       // btMoveDown
       // 
       this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
-      this.btMoveDown.Location = new System.Drawing.Point(713, 147);
+      this.btMoveDown.Location = new System.Drawing.Point(714, 148);
       this.btMoveDown.Name = "btMoveDown";
-      this.btMoveDown.Size = new System.Drawing.Size(33, 90);
+      this.btMoveDown.Size = new System.Drawing.Size(33, 120);
       this.btMoveDown.TabIndex = 116;
       this.btMoveDown.TabStop = false;
       this.btMoveDown.UseVisualStyleBackColor = true;
@@ -760,9 +760,9 @@
       // btMoveUp
       // 
       this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
-      this.btMoveUp.Location = new System.Drawing.Point(713, 23);
+      this.btMoveUp.Location = new System.Drawing.Point(714, 23);
       this.btMoveUp.Name = "btMoveUp";
-      this.btMoveUp.Size = new System.Drawing.Size(33, 90);
+      this.btMoveUp.Size = new System.Drawing.Size(33, 120);
       this.btMoveUp.TabIndex = 115;
       this.btMoveUp.TabStop = false;
       this.btMoveUp.UseVisualStyleBackColor = true;
@@ -1191,7 +1191,7 @@
       this.itemsOnMenubar.FormattingEnabled = true;
       this.itemsOnMenubar.Location = new System.Drawing.Point(540, 23);
       this.itemsOnMenubar.Name = "itemsOnMenubar";
-      this.itemsOnMenubar.Size = new System.Drawing.Size(170, 214);
+      this.itemsOnMenubar.Size = new System.Drawing.Size(170, 244);
       this.itemsOnMenubar.TabIndex = 6;
       this.itemsOnMenubar.SelectedIndexChanged += new System.EventHandler(this.itemsOnMenubar_SelectedIndexChanged);
       // 
