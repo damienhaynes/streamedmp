@@ -102,7 +102,10 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>500</width>");
         rawXML.AppendLine("<height>0</height>");
         rawXML.AppendLine("<label>Movies</label>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
+        if (menItem.isDefault == true)
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
+        else
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
         rawXML.AppendLine("</control>");
 
 
@@ -885,7 +888,9 @@ namespace StreamedMPEditor
       if (fourth >= menuItems.Count) fourth -= menuItems.Count;
 
       const string quote = "\"";
-
+      rawXML.AppendLine("<!--**************-->");
+      rawXML.AppendLine("<!-- Crowding Fix -->");
+      rawXML.AppendLine("<!--**************-->");
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>home " + menuItems[basicHomeValues.defaultId].name + "</description>");
       rawXML.AppendLine("<type>button</type>");
