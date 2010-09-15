@@ -420,7 +420,7 @@ namespace StreamedMPConfig
         mostTVSeriesRecents[0] = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series1.fanart");
       }
       catch { }
-      if (string.IsNullOrEmpty(mostTVSeriesRecents[0].Trim()))
+      if (string.IsNullOrEmpty(mostTVSeriesRecents[0]) || string.IsNullOrEmpty(mostTVSeriesRecents[0].Trim()))
       {
         smcLog.WriteLog("StreamedMPConfig: TVSeries No Fanart - Set property to mostrecentdefaultfanart.png", LogLevel.Debug);
         SetProperty("#StreamedMP.MostRecentImageFanart", "mostrecentdefaultfanart.png");
