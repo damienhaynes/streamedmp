@@ -124,7 +124,7 @@ namespace StreamedMPConfig
       {
         getLastThreeAddedMovies();
         getLastThreeWatchedMovies();
-        MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+        setMovingPicturesEvents();
       }
       smcLog.WriteLog("Set the most recent fanart", LogLevel.Info);
       cycleMostrecentFanart();
@@ -231,6 +231,11 @@ namespace StreamedMPConfig
     {
       Match m = _isNumber.Match(theValue);
       return m.Success;
+    }
+    
+    void setMovingPicturesEvents()
+    {
+      MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
     }
 
     void getLastThreeWatchedMovies()
