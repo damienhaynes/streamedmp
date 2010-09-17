@@ -6,7 +6,7 @@
     <control>
       <description>720p, 1080i, 1080p</description>
       <type>image</type>
-      <id>9799</id>
+      <id>97993</id>
       <posX>35</posX>
       <posY>630</posY>
       <width>100</width>
@@ -24,7 +24,7 @@
       <width>100</width>
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-      <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(9799)</visible>
+      <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(97993)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Codecs -->
@@ -44,7 +44,7 @@
     <control>
       <description>Audio Codecs / Channels</description>
       <type>image</type>
-      <id>9800</id>
+      <id>98003</id>
       <posX>235</posX>
       <posY>630</posY>
       <width>100</width>
@@ -62,7 +62,7 @@
       <width>100</width>
       <height>32</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-      <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(9800)</visible>
+      <visible>control.isvisible(50)+facadeview.smallicons+!Control.HasThumb(98003)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Subtitles -->
@@ -80,4 +80,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:79aa8dab71e1a78b56a93079d49cd85d-->
+<!--Checksum:965448536bf92dbeb5b317ba7a033bde-->
