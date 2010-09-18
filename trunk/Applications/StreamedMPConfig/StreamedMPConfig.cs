@@ -285,7 +285,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".title", movie.Title);
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".thumb", movie.CoverThumbFullPath);
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".fanart", movie.BackdropFullPath);
-        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".runtime", movie.Runtime.ToString() + " mins");
+        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".runtime", GetMovieRuntime(movie) + " mins");
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty(movie.Certification.Trim()) ? string.Empty : " [" + movie.Certification + "]"));
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".score", Math.Round(movie.Score, MidpointRounding.AwayFromZero).ToString());
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
@@ -337,7 +337,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".title", movie.Title);
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".thumb", movie.CoverThumbFullPath);
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".fanart", movie.BackdropFullPath);
-        SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".runtime", movie.Runtime.ToString() + " mins");
+        SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".runtime", GetMovieRuntime(movie) + " mins");
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty(movie.Certification.Trim()) ? string.Empty : " [" + movie.Certification + "]"));
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".score", Math.Round(movie.Score, MidpointRounding.AwayFromZero).ToString());
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
@@ -346,6 +346,23 @@ namespace StreamedMPConfig
         if (mrMovieNumber == 4)
           break;
       }
+    }
+
+    string GetMovieRuntime(DBMovieInfo movie)
+    {
+      string minutes = string.Empty;
+      if (movie == null) return minutes;
+
+      if (MovingPicturesCore.Settings.DisplayActualRuntime && movie.ActualRuntime > 0)
+      {
+        // Actual Runtime or (MediaInfo result) is in milliseconds
+        // convert to minutes
+        minutes = ((movie.ActualRuntime / 1000) / 60).ToString();
+      }
+      else
+        minutes = movie.Runtime.ToString();
+
+      return minutes;
     }
 
     void cycleMostrecentFanart()
