@@ -1958,7 +1958,7 @@
               "<posY>301</posY>" +
               "<width>70</width>" +
               "<height>13</height>" +
-              "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
+              "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
             "</control>";
           }
         }
@@ -2303,7 +2303,7 @@
               "<posY>621</posY>" +
               "<width>70</width>" +
               "<height>13</height>" +
-              "<texture>star#StreamedMP.recentlyWatched.movie1.score.png</texture>" +
+              "<texture>star#StreamedMP.recentlyWatched.movie2.score.png</texture>" +
             "</control>";
           }
         }
