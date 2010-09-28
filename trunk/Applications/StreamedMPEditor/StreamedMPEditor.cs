@@ -17,7 +17,7 @@ namespace StreamedMPEditor
   {
     #region enums
 
-    enum errorCode
+    public enum errorCode
     {
       info,
       infoQuestion,
@@ -105,75 +105,63 @@ namespace StreamedMPEditor
     {
       off,
       tvSeries,
-      movies
+      moviesAdded,
+      moviesWatched,
+      music,
+      recordedTV
     }
 
     #endregion
 
     #region Variables
-    public static editorPaths mpPaths = new editorPaths();
-    editorValues basicHomeValues = new editorValues();
-    defaultImages defImgs = new defaultImages();
-    randomFanartSetting randomFanart = new randomFanartSetting();
 
+
+    public static List<prettyItem> prettyItems = new List<prettyItem>();
+    public static List<menuItem> menuItems = new List<menuItem>();
+
+    List<backgroundItem> bgItems = new List<backgroundItem>();
     List<string> ids = new List<string>();
     List<string> idsTemp = new List<string>();
-    List<menuItem> menuItems = new List<menuItem>();
-    List<backgroundItem> bgItems = new List<backgroundItem>();
-    List<prettyItem> prettyItems = new List<prettyItem>();
     List<string> skinFontsFocused = new List<string>();
     List<string> skinFontsUnFocused = new List<string>();
-
-    Panel selectPanel = new Panel();
-    Button nextBatch = new Button();
-    Button prevBatch = new Button();
-    Button imgCancel = new Button();
-
-    ProgressBar pBar = new ProgressBar();
-    Label pLabel = new Label();
-    Form downloadForm = new Form();
-    Button downloadStop = new Button();
-
-
-    Form userConfirm = new Form();
-    Button btOk = new Button();
-    TextBox tbInfo = new TextBox();
-    CheckBox cbShowAgain = new CheckBox();
-
-
 
     const string tvseriesSkinID = "9811";
     const string movingPicturesSkinID = "96742";
     const string quote = "\"";
 
-    bool basicHomeLoadError = false;
+    public static bool basicHomeLoadError = false;
     bool useInfoServiceSeparator = false;
     bool fanartHandlerUsed = false;
     bool exitCondition = false;
     bool changeOutstanding = false;
     bool mostRecentTVSeriesCycleFanart = true;
     bool mostRecentMovPicsCycleFanart = true;
+    bool subMenusExist = false;
 
     string xml;
     string xmlTemplate;
-
     string dropShadowColor = "1d1f1b";
-    string baseISVer = "0.9.9.3";
-    string baseISVerTwitter = "1.2.0.0";
-    string isSeparatorVer = "1.1.0.0";
-    Version mpReleaseVersion = new Version("1.0.2.22554");
     string infoServiceDayProperty = "forecast";
     string splashScreenImage = null;
-
     string defFocus = "FFFFFF";
     string defUnFocus = "C0C0C0";
+    string level1LateralBladeVisible;
+    string level2LateralBladeVisible;
+
 
     int textXOffset = -25;
     int maxXPosition = 520;
     int menuOffset = 0;
-
     int deskHeight;
     int deskWidth;
+
+    Version baseISVer = new Version("0.9.9.3");
+    Version baseISVerTwitter = new Version("1.2.0.0");
+    Version isSeparatorVer = new Version("1.1.0.0");
+    Version mpReleaseVersion = new Version("1.0.2.22554");
+    Version isWeatherVersion = new Version("1.6.0.0");
+
+    public static Regex isIleagalXML = new Regex("[&<>]");
 
     // Default Style to StreamedMP standard
     chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
@@ -192,13 +180,27 @@ namespace StreamedMPEditor
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
 
-    public Regex isIleagalXML = new Regex("[&<>]");
-
+    CheckSum checkSum = new CheckSum();
+    SkinInfo skInfo = new SkinInfo();
+    Helper helper = new Helper();
+    Form userConfirm = new Form();
+    Button btOk = new Button();
+    TextBox tbInfo = new TextBox();
+    CheckBox cbShowAgain = new CheckBox();
+    Panel selectPanel = new Panel();
+    Button nextBatch = new Button();
+    Button prevBatch = new Button();
+    Button imgCancel = new Button();
+    ProgressBar pBar = new ProgressBar();
+    Label pLabel = new Label();
+    Form downloadForm = new Form();
+    Button downloadStop = new Button();
     TVSereisFormatOptions tvSeriesOptions = new TVSereisFormatOptions();
     MovPicsSummaryOptions movPicsOptions = new MovPicsSummaryOptions();
-
-    CheckSum checkSum = new CheckSum();
-
+    editorValues basicHomeValues = new editorValues();
+    defaultImages defImgs = new defaultImages();
+    randomFanartSetting randomFanart = new randomFanartSetting();
+    
     #endregion
 
     #region Public methods
@@ -263,31 +265,22 @@ namespace StreamedMPEditor
     {
       base.OnLoad(e);
 
-
-      using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+      if (helper.readMPConfiguration("skin", "name") != "StreamedMP")
       {
-        if (xmlreader.GetValueAsString("skin", "name", "") != "StreamedMP")
+        DialogResult result = helper.showError("MediaPortal is not configured to use the StreamedMP skin\n\nThe Menu Editor requires the selected Skin to be StreamedMP.\n\nDo you want set StreamedMP as the selected Skin", errorCode.infoQuestion);
+
+        if (result == DialogResult.No)
         {
-          DialogResult result = showError("MediaPortal is not configured to use the StreamedMP skin\n\nThe Menu Editor requires the selected Skin to be StreamedMP.\n\nDo you want set StreamedMP as the selected Skin", errorCode.infoQuestion);
-
-          if (result == DialogResult.No)
-          {
-            this.Hide();
-            exitCondition = true; ;
-          }
-          else
-          {
-            using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
-            {
-              xmlwriter.SetValue("skin", "name", "StreamedMP");
-            }
-            MediaPortal.Profile.Settings.SaveCache();
-
-          }
+          this.Hide();
+          exitCondition = true; ;
+        }
+        else
+        {
+          helper.writeMPConfiguration("skin", "name", "StreamedMP");
+          MediaPortal.Profile.Settings.SaveCache();
         }
       }
-
-
+    
       if (!exitCondition)
       {
         Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
@@ -295,18 +288,19 @@ namespace StreamedMPEditor
         GetMediaPortalSkinPath();
         readFonts();
         getBackupFileTotals();
-        if (readMPConfiguration("general", "startbasichome") == "no")
+        if (helper.readMPConfiguration("general", "startbasichome") == "no")
         {
-          DialogResult result = showError("MediaPortal is not configured to start with the BasicHome menu\n\nThe Menu Generated by this Editor requires this option to be enabled.\n\nDo you want the Basichome Menu enabled?", errorCode.infoQuestion);
+          DialogResult result = helper.showError("MediaPortal is not configured to start with the BasicHome menu\n\nThe Menu Generated by this Editor requires this option to be enabled.\n\nDo you want the Basichome Menu enabled?", errorCode.infoQuestion);
 
           if (result == DialogResult.No)
           {
             this.Close();
           }
           else
-            writeMPConfiguration("general", "startbasichome", "yes");
+            helper.writeMPConfiguration("general", "startbasichome", "yes");
         }
-        if (!System.IO.File.Exists(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
+
+        if (!System.IO.File.Exists(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
           useSkinWeatherIcons.Text = "Replace Standard Weather Icons with Skin Supplied Versions";
         else
           useSkinWeatherIcons.Text = "Restore Standard Weather Icons";
@@ -365,9 +359,7 @@ namespace StreamedMPEditor
         btGenerateMenu.Enabled = true;
         editButton.Enabled = true;
 
-
-        string mpVersionTmp = getMediaPortalVersion();
-        Version mpVersion = new Version(mpVersionTmp);
+        Version mpVersion = new Version(MediaPortalVersion);
         if (mpVersion.CompareTo(mpReleaseVersion) > 0)
         {
           wrapString.Enabled = true;
@@ -379,7 +371,7 @@ namespace StreamedMPEditor
 
         if (basicHomeLoadError)
         {
-          DialogResult result = showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
+          DialogResult result = helper.showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
           if (result == DialogResult.Yes)
           {
             BasicHomeFromTemplate();
@@ -388,7 +380,7 @@ namespace StreamedMPEditor
             GetDefaultBackgroundImages();
           }
           else
-            showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
+            helper.showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
         }
       }
       else
@@ -404,26 +396,12 @@ namespace StreamedMPEditor
     bool loadIDs()
     {
       xmlFiles.Enabled = true;
-      string[] files = System.IO.Directory.GetFiles(mpPaths.streamedMPpath);
-      foreach (string file in files)
-      {
-        try
-        {
-          if (file.StartsWith("common") == false && file.Contains("Dialog") == false && file.Contains("dialog") == false && file.Contains("wizard") == false && file.Contains("xml.backup") == false)
-          {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(file);
-            XmlNode node = doc.DocumentElement.SelectSingleNode("/window/id");
-            ids.Add(node.InnerText);
-            xmlFiles.Items.Add(file.Remove(0, file.LastIndexOf(@"\") + 1).Replace(".xml", ""));
-          }
-        }
-        catch { }
-      }
+      helper.getSkinFileList(ref xmlFiles, ref ids);
+
       //return true;
       if (xmlFiles.Items.Count > 0)
       {
-        LoadPrettyItems();
+        helper.loadPrettyItems(ref cboQuickSelect,ids);
         disableItemControls();
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
@@ -431,78 +409,11 @@ namespace StreamedMPEditor
       }
       else
       {
-        showError("Error reading Skin diectory - no files found", errorCode.major);
+        helper.showError("Error reading Skin diectory - no files found", errorCode.major);
         return false;
       }
     }
 
-    void LoadPrettyItems()
-    {
-      XmlDocument doc = new XmlDocument();
-      Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.QuickSelectList.xml");
-      try
-      {
-        doc.Load(stream);
-      }
-      catch (Exception e)
-      {
-        showError("Exception while loading QuickSelectList.xml\n\n" + e.Message, errorCode.loadError);
-        basicHomeLoadError = true;
-        return;
-      }
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/items/item");
-      foreach (XmlNode node in nodeList)
-      {
-        prettyItem pItem = new prettyItem();
-        XmlNode innerNode = node.SelectSingleNode("name");
-        if (innerNode != null)
-          pItem.name = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("name2");
-        if (innerNode != null)
-          pItem.name2 = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("context");
-        if (innerNode != null)
-          pItem.contextlabel = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("folder");
-        if (innerNode != null)
-          pItem.folder = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("fanartproperty");
-        if (innerNode != null)
-          pItem.fanartProperty = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("fanarthandlerenabled");
-        if (innerNode != null)
-          pItem.fanartHandlerEnabled = bool.Parse(innerNode.InnerText);
-
-        innerNode = node.SelectSingleNode("xmlfile");
-        if (innerNode != null) pItem.xmlfile = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("id");
-        if (innerNode != null)
-          pItem.id = innerNode.InnerText;
-
-        innerNode = node.SelectSingleNode("isweather");
-        if (innerNode != null)
-          pItem.isweather = bool.Parse(innerNode.InnerText);
-
-        // Dont Add item if its not available
-        if (ids.Contains(pItem.id))
-          prettyItems.Add(pItem);
-      }
-      // Load list
-      foreach (prettyItem p in prettyItems)
-      {
-        if (p.name2 != null)
-          cboQuickSelect.Items.Add(p.name + " " + p.name2);
-        else
-          cboQuickSelect.Items.Add(p.name);
-      }
-      cboQuickSelect.SelectedIndex = 0;
-    }
 
     displayMostRecent getMostRecentDisplayOption()
     {
@@ -512,7 +423,7 @@ namespace StreamedMPEditor
       if (rbDisplayMostRecentTVSeries.Checked)
         return displayMostRecent.tvSeries;
 
-      return displayMostRecent.movies;
+      return displayMostRecent.moviesAdded;
     }
 
     void setMostRecentDisplayOption(displayMostRecent dmr)
@@ -533,7 +444,7 @@ namespace StreamedMPEditor
             rbDisplayMostRecentTVSeries.Checked = true;
             break;
           }
-        case displayMostRecent.movies:
+        case displayMostRecent.moviesAdded:
           {
             rbDisplayMostRecentNone.Checked = false;
             rbDisplayMostRecentMovies.Checked = true;
@@ -580,7 +491,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        showError("All fields must be complete before a Menu Item can be added", errorCode.info);
+        helper.showError("All fields must be complete before a Menu Item can be added", errorCode.info);
       }
 
     }
@@ -589,7 +500,7 @@ namespace StreamedMPEditor
     {
       if (itemsOnMenubar.SelectedIndex == -1)
       {
-        showError("No menu item selected\n\nPlease select item above to edit", errorCode.info);
+        helper.showError("No menu item selected\n\nPlease select item above to edit", errorCode.info);
         return;
       }
       int index = itemsOnMenubar.SelectedIndex;
@@ -644,7 +555,7 @@ namespace StreamedMPEditor
 
         if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
         {
-          DialogResult result = showError("You have selected to use Fanart Random images for the Weather item\nbut the option 'Link Background to Current Weather' is enabled\nand will override this setting\n\nDisable the 'Link Background to Current Weather' Option? ", errorCode.infoQuestion);
+          DialogResult result = helper.showError("You have selected to use Fanart Random images for the Weather item\nbut the option 'Link Background to Current Weather' is enabled\nand will override this setting\n\nDisable the 'Link Background to Current Weather' Option? ", errorCode.infoQuestion);
           if (result == DialogResult.Yes)
           {
             weatherBGlink.Checked = false;
@@ -864,8 +775,8 @@ namespace StreamedMPEditor
     {
       if (itemsOnMenubar.CheckedItems.Count > 1 || itemsOnMenubar.CheckedItems.Count == 0)
       {
-        if (itemsOnMenubar.CheckedItems.Count == 0) showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
-        if (itemsOnMenubar.CheckedItems.Count > 1) showError("          More than one default item set\n\nOnly one item can be set as the default menu.", errorCode.info);
+        if (itemsOnMenubar.CheckedItems.Count == 0) helper.showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
+        if (itemsOnMenubar.CheckedItems.Count > 1) helper.showError("          More than one default item set\n\nOnly one item can be set as the default menu.", errorCode.info);
       }
       else
         genMenu(false);
@@ -891,7 +802,7 @@ namespace StreamedMPEditor
         if (!infoserviceOptions.Enabled || !weatherBGlink.Checked)
           if (item.bgFolder == null && item.fanartProperty == null)
           {
-            showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
+            helper.showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
             return;
           }
       }
@@ -934,7 +845,7 @@ namespace StreamedMPEditor
         if (!infoserviceOptions.Enabled || !weatherBGlink.Checked)
           if (item.bgFolder == null && item.fanartProperty == null)
           {
-            showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
+            helper.showError("Menu Item " + item.name + " Has no Background Image folder\n\n\tPlease set a Folder", errorCode.info);
             return;
           }
       }
@@ -1034,11 +945,11 @@ namespace StreamedMPEditor
 
       toolStripStatusLabel1.Text = "Done!";
 
-      if (System.IO.File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Copy(mpPaths.streamedMPpath + "BasicHome.xml", mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString());
+      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
+        System.IO.File.Copy(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml", SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString());
 
-      if (System.IO.File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Delete(mpPaths.streamedMPpath + "BasicHome.xml");
+      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
+        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
 
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
 
@@ -1068,7 +979,7 @@ namespace StreamedMPEditor
       getBackupFileTotals();
       if (!onFormClosing)
       {
-        DialogResult result = showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
+        DialogResult result = helper.showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
         if (result == DialogResult.No)
           this.Close();
 
@@ -1185,10 +1096,8 @@ namespace StreamedMPEditor
 
     private void addSubmenus_Click(object sender, EventArgs e)
     {
-      menuItem mnuItem = menuItems[itemsOnMenubar.SelectedIndex];
-
       formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
-      subMenuForm.createSubmenu(ref mnuItem);
+      subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
     }
 
   }

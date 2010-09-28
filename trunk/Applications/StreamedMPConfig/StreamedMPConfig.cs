@@ -428,22 +428,6 @@ namespace StreamedMPConfig
       }
     }
 
-    void overRideInfoServiceFanartProperty()
-    {
-      getMostRecents();
-      mostTVSeriesRecents[0] = null;
-      try
-      {
-        mostTVSeriesRecents[0] = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series1.fanart");
-      }
-      catch { }
-      if (string.IsNullOrEmpty(mostTVSeriesRecents[0]) || string.IsNullOrEmpty(mostTVSeriesRecents[0].Trim()))
-      {
-        smcLog.WriteLog("StreamedMPConfig: TVSeries No Fanart - Set property to mostrecentdefaultfanart.png", LogLevel.Debug);
-        SetProperty("#StreamedMP.MostRecentImageFanart", "mostrecentdefaultfanart.png");
-      }
-    }
-
     private void setMostRecents()
     {
       string seasonNum = null;
@@ -755,9 +739,7 @@ namespace StreamedMPConfig
       MusicOptionsGUI.SetProperties();
       MiscConfigGUI.SetProperties();
       VideoOptionsGUI.SetProperties();
-      overRideInfoServiceFanartProperty();  // If there is no fanart for any series set property to the default image
-                                            
-
+                                         
       if (smpSettings.timerRequired)
       {
         cycleMostrecentFanart();

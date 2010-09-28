@@ -29,9 +29,9 @@ namespace StreamedMPEditor
     {
       get
       {
-        if (Directory.Exists(mpPaths.streamedMPpath + "media\\SplashScreens"))
+        if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SplashScreens"))
         {
-          fileList = getFileListing(mpPaths.streamedMPpath + "media\\splashscreens", "*.*", true);
+          fileList = getFileListing(SkinInfo.mpPaths.streamedMPpath + "media\\splashscreens", "*.*", true);
           numOfImages = fileList.Length;
           if (numOfImages > 0) return true;
         }
@@ -111,7 +111,7 @@ namespace StreamedMPEditor
     private void btSplashSelect_Click(object sender, EventArgs e)
     {
       string sourceFile = fileList[imagePos];
-      string destinationFile = mpPaths.streamedMPpath + @"media\splashscreen.png";
+      string destinationFile = SkinInfo.mpPaths.streamedMPpath + @"media\splashscreen.png";
 
       try
       {
@@ -137,7 +137,7 @@ namespace StreamedMPEditor
       {
         optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP-SplashScreens-V1.0.zip";
         optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP-SplashScreens-V1.0.zip";
-        destinationPath = mpPaths.skinBasePath;
+        destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Alternative SplashScreens";
         pLabel.Text = "Starting Download";
         thrDownload = new Thread(Download);
@@ -146,7 +146,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
         downloadForm.BringToFront();
       }
     }
@@ -208,9 +208,9 @@ namespace StreamedMPEditor
 
     private void showActiveSplashScreen()
     {
-      if (File.Exists(mpPaths.streamedMPpath + @"media\splashscreen.png"))
+      if (File.Exists(SkinInfo.mpPaths.streamedMPpath + @"media\splashscreen.png"))
       {
-        workingImage = Image.FromFile(mpPaths.streamedMPpath + @"media\splashscreen.png");
+        workingImage = Image.FromFile(SkinInfo.mpPaths.streamedMPpath + @"media\splashscreen.png");
         pbActiveSplashScreen.Image = workingImage.GetThumbnailImage(100, 56, null, new IntPtr());
         workingImage.Dispose();
       }

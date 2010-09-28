@@ -820,6 +820,9 @@
         string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
 
+        if (!mostRecentTVSeriesCycleFanart)
+          fanartProperty = "#infoservice.recentlyAdded.series1.fanart";
+
         xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
               "<window>\n" +
                 "<controls>\n" +
@@ -884,6 +887,17 @@
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>" +
+      "<control>\n" +
+        "<description>Series 1 defalt fanart image</description>\n" +
+        "<type>image</type>\n" +
+        "<id>0</id>\n" +
+        "<posX>995</posX>\n" +
+        "<posY>92</posY>\n" +
+        "<width>268</width>\n" +
+        "<height>151</height>\n" +
+        "<keepaspectratio>true</keepaspectratio>\n" +
+        "<texture>mostrecentdefaultfanart.png</texture>\n" +
+      "</control>\n" +
       "<control>\n" +
         "<description>Series 1 thumb/fanart</description>\n" +
         "<type>image</type>\n" +
@@ -2415,23 +2429,43 @@
     string mostRecentVisibleControls(isOverlayType isOverlay)
     {
       string visibleOn = null;
+      //
+      //Controls to display recent movies overlay
+      //
       if (isOverlay == isOverlayType.MovPics)
       {
         foreach (menuItem item in menuItems)
         {
-          if (item.showMostRecent == displayMostRecent.movies)
+          if (item.showMostRecent == displayMostRecent.moviesAdded)
           {
             if (visibleOn == null)
               visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
             else
               visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
           }
+          //check the submenus
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAdded)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn = "|[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          if (item.subMenuLevel2.Count > 0)
+          {
+          }
         }
-        if (visibleOn != null)
-          visibleOn += "]";
-        return visibleOn;
       }
-      else
+      //
+      //Controls to display recent TVSeries overlay
+      //
+      if (isOverlay == isOverlayType.TVSeries)
       {
         foreach (menuItem item in menuItems)
         {
@@ -2442,11 +2476,28 @@
             else
               visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
           }
+          //check the submenus
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn = "|[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          if (item.subMenuLevel2.Count > 0)
+          {
+          }
         }
-        if (visibleOn != null)
-          visibleOn += "]";
-        return visibleOn;
       }
+      if (visibleOn != null)
+        visibleOn += "]";
+      return visibleOn;
     }
 
     #endregion

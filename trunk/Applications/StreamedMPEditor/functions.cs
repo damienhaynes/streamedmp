@@ -20,73 +20,48 @@ namespace StreamedMPEditor
       enableFiveDayWeather.Enabled = false;
       summaryWeatherCheckBox.Enabled = false;
 
-      GetMediaPortalPath(ref mpPaths);
-      if (mpPaths.sMPbaseDir == null)
-        return;
-
       readMediaPortalDirs();
-    
-      string infoServiceVer = getInfoServiceVersion();
 
-      if (infoServiceVer == "Not Installed")
+      // Check in Infoservice is enabled
+      if (!helper.pluginEnabled("InfoService"))
       {
         infoserviceOptions.Enabled = false;
+        infoserviceOptions.Text = "InfoService Options(Disabled)";
       }
-      else if (infoServiceVer.CompareTo(baseISVer) < 0)
-      {
-        showError("Version " + infoServiceVer + " of InfoService Plugin detected\r\r          Version 0.9.9.3 or greater required\n\nRSS and Weather Tags changed from version 0.9.9.3\n\n          InfoService Options will be disabled", errorCode.info);
-        infoserviceOptions.Enabled = false;
-      }
-      else if (pluginEnabled("InfoService"))
+      else
       {
         infoserviceOptions.Enabled = true;
         enableFiveDayWeather.Enabled = true;
         summaryWeatherCheckBox.Enabled = true;
-        if (infoServiceVer.CompareTo(isSeparatorVer) >= 0)
-          useInfoServiceSeparator = true;
-      }
-      else
-      {
-        infoserviceOptions.Enabled = false;
-      }
-
-      // Only support Verion 1.2.0.0 and greater for Twitter
-      if (infoServiceVer.CompareTo(baseISVerTwitter) < 0)
-      {
-        enableTwitter.Checked = false;
-        enableTwitter.Enabled = false;
-        enableTwitter.Text += " (Disabled - Version 1.2.0.0 or greater required)";
-      }
-
-      // Display some Info
-      infoSkinName.Text = configuredSkin + " (" + getStreamedMPVer() + ")";
-      infoSkinpath.Text = mpPaths.streamedMPpath;
-      infoInstallPath.Text = mpPaths.sMPbaseDir + "  (Version: " + getMediaPortalVersion() + ")";
-      infoConfigpath.Text = mpPaths.configBasePath;
-
-
-      if (infoServiceVer == "Not Installed")
-        infoserviceOptions.Text = "InfoService Options(Disabled)";
-      else
+        useInfoServiceSeparator = true;
         infoserviceOptions.Text = "InfoService Options";
+      }
 
-
-      if (pluginEnabled("Fanart Handler"))
+      // Checkl if Fanart Handler is Enabled
+      if (helper.pluginEnabled("Fanart Handler"))
         cbItemFanartHandlerEnable.Visible = true;
       else
         cbItemFanartHandlerEnable.Visible = false;
+
+      // Display some Info
+      infoSkinName.Text = configuredSkin + " (" + getStreamedMPVer() + ")";
+      infoSkinpath.Text = SkinInfo.mpPaths.streamedMPpath;
+      infoInstallPath.Text = SkinInfo.mpPaths.sMPbaseDir + "  (Version: " + MediaPortalVersion + ")";
+      infoConfigpath.Text = SkinInfo.mpPaths.configBasePath;
+
+
     }
 
     private string getStreamedMPVer()
     {
       XmlDocument doc = new XmlDocument();
-      if (!File.Exists(mpPaths.streamedMPpath + "streamedmp.version.xml"))
+      if (!File.Exists(SkinInfo.mpPaths.streamedMPpath + "streamedmp.version.xml"))
       {
-        showError("Unable to find StreamedMP version information in the following path:\r\r" + mpPaths.streamedMPpath + "streamedmp.version.xml\r\rIt seems you have another skin selected in Mediaportal configuration.\rThis editor is for StreamedMP skin.\rGo to General->Skin and select StreamedMP to be able to open this editor.", errorCode.major);
+        helper.showError("Unable to find StreamedMP version information in the following path:\r\r" + SkinInfo.mpPaths.streamedMPpath + "streamedmp.version.xml\r\rIt seems you have another skin selected in Mediaportal configuration.\rThis editor is for StreamedMP skin.\rGo to General->Skin and select StreamedMP to be able to open this editor.", errorCode.major);
         return null;
       }
 
-      doc.Load(mpPaths.streamedMPpath + "streamedmp.version.xml");
+      doc.Load(SkinInfo.mpPaths.streamedMPpath + "streamedmp.version.xml");
       XmlNode node = doc.DocumentElement.SelectSingleNode("/window/controls/control/label");
       return node.InnerText;
     }
@@ -98,12 +73,12 @@ namespace StreamedMPEditor
       string fMPdirs = Path.Combine(PersonalFolder, @"Team MediaPortal\MediaPortalDirs.xml");
 
       if (!File.Exists(fMPdirs))
-        fMPdirs = mpPaths.sMPbaseDir + "\\MediaPortalDirs.xml";
+        fMPdirs = SkinInfo.mpPaths.sMPbaseDir + "\\MediaPortalDirs.xml";
 
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
       {
-        showError("Can't find MediaPortalDirs.xml \r\r" + fMPdirs, errorCode.major);
+        helper.showError("Can't find MediaPortalDirs.xml \r\r" + fMPdirs, errorCode.major);
         return;
       }
 
@@ -121,7 +96,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.skinBasePath = GetMediaPortalDir(path.InnerText);
+            SkinInfo.mpPaths.skinBasePath = GetMediaPortalDir(path.InnerText);
           }
         }
 
@@ -131,7 +106,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.cacheBasePath = GetMediaPortalDir(path.InnerText);
+            SkinInfo.mpPaths.cacheBasePath = GetMediaPortalDir(path.InnerText);
           }
         }
 
@@ -141,7 +116,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);            
+            SkinInfo.mpPaths.configBasePath = GetMediaPortalDir(path.InnerText);            
           }
         }
 
@@ -151,7 +126,7 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);
+            SkinInfo.mpPaths.pluginPath = GetMediaPortalDir(path.InnerText);
           }
         }
         // get the Thumbs base path
@@ -160,12 +135,12 @@ namespace StreamedMPEditor
           XmlNode path = node.SelectSingleNode("Path");
           if (path != null)
           {
-            mpPaths.thumbsPath = GetMediaPortalDir(path.InnerText);
-            mpPaths.fanartBasePath = mpPaths.thumbsPath + "Skin Fanart\\";
+            SkinInfo.mpPaths.thumbsPath = GetMediaPortalDir(path.InnerText);
+            SkinInfo.mpPaths.fanartBasePath = SkinInfo.mpPaths.thumbsPath + "Skin Fanart\\";
           }
         }
       }
-      mpPaths.streamedMPpath = mpPaths.skinBasePath + configuredSkin + "\\";
+      SkinInfo.mpPaths.streamedMPpath = SkinInfo.mpPaths.skinBasePath + configuredSkin + "\\";
     }
 
     private string GetMediaPortalDir(string path)
@@ -183,7 +158,7 @@ namespace StreamedMPEditor
       // If directory is relative e.g. 'skin\', prefix with Base Dir
       if (!Path.IsPathRooted(path))
       {
-        path = Path.Combine(mpPaths.sMPbaseDir, path);
+        path = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, path);
       }
 
       // Check if there is a trailing backslash
@@ -196,84 +171,12 @@ namespace StreamedMPEditor
     }
 
 
-
-    private bool pluginEnabled(string pluginName)
-    {
-      // check if plugin is enabled/disabled
-      // if we dont find they entry then we assume enabled as we know it
-      // is installed so most likley configuration has not yet been run
-      // to write the entry to MediaPortal.xml
-
-      string fMPdirs = mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
-      {
-        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, errorCode.major);
-        return false; ;
-      }
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-
-        // get the currently configured plugins
-        if (innerNode.InnerText == "plugins")
-        {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + pluginName + "\"]");
-          if (path != null)
-          {
-            if (path.InnerText.ToLower() == "no")
-              // only return false if we have found the entry and it is set to No
-              return false;
-            else
-              return true;
-          }
-          else
-            return true;
-        }
-      }
-      return false;
-    }
-
     private string configuredSkin
     {
       get
       {
-        return readMPConfiguration("skin", "name");
+        return helper.readMPConfiguration("skin", "name");
       }
-    }
-
-    private string readMPConfiguration(string sectionName, string entryName)
-    {
-      try
-      {
-        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
-        {
-          return xmlreader.GetValueAsString(sectionName, entryName, "");
-        }
-      }
-      catch (Exception e)
-      {
-        showError("Error reading MediaPortal.xml : " + e.Message, errorCode.readError);
-        return string.Empty;
-      }
-    }
-
-    private void writeMPConfiguration(string sectionName, string entryName, string entryValue)
-    {
-      try
-      {
-        using (MediaPortal.Profile.Settings xmlwriter = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
-        {
-          xmlwriter.SetValue(sectionName, entryName, entryValue);
-        }
-      }
-      catch (Exception e)
-      {
-        showError("Error writing MediaPortal.xml : " + e.Message, errorCode.readError);
-      }
-        MediaPortal.Profile.Settings.SaveCache();
     }
 
     private void GetMediaPortalPath(ref editorPaths mpPaths)
@@ -308,7 +211,7 @@ namespace StreamedMPEditor
       }
       catch (Exception e)
       {
-        showError("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message, errorCode.major);
+        helper.showError("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message, errorCode.major);
         mpPaths.sMPbaseDir = null;
       }
 
@@ -399,22 +302,22 @@ namespace StreamedMPEditor
     private void BasicHomeFromTemplate()
     {
       System.IO.StreamWriter writer;
-      string backupFilename = mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString();
+      string backupFilename = SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString();
 
-      if (System.IO.File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Copy(mpPaths.streamedMPpath + "BasicHome.xml", backupFilename);
+      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
+        System.IO.File.Copy(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml", backupFilename);
 
-      if (System.IO.File.Exists(mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Delete(mpPaths.streamedMPpath + "BasicHome.xml");
+      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
+        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
 
       Stream streamTemplate = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.AeonBasicHomeDefault.xml");
       StreamReader reader = new StreamReader(streamTemplate);
       xmlTemplate = reader.ReadToEnd();
 
-      writer = System.IO.File.CreateText(mpPaths.streamedMPpath + "BasicHome.xml");
+      writer = System.IO.File.CreateText(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
       writer.Write(xmlTemplate);
       writer.Close();
-      showError("Existing BasicHome.xml Saved Sucessfully as\n\n" + backupFilename + "\n\nNew BasicHome.xml created from Internal template", errorCode.info);
+      helper.showError("Existing BasicHome.xml Saved Sucessfully as\n\n" + backupFilename + "\n\nNew BasicHome.xml created from Internal template", errorCode.info);
 
       foreach (menuItem item in menuItems)
       {
@@ -568,6 +471,7 @@ namespace StreamedMPEditor
         newbgItem.image = menItem.defaultImage;
         newbgItem.isWeather = menItem.isWeather;
         newbgItem.disableBGSharing = menItem.disableBGSharing;
+        newbgItem.subMenuID = menItem.subMenuLevel1ID;
         bgItems.Add(newbgItem);
       }
     }
@@ -635,113 +539,37 @@ namespace StreamedMPEditor
       }
     }
 
-    private string getInfoServiceVersion()
+    private Version getInfoServiceVersion()
     {
-
-      if (!File.Exists(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
-        return "Not Installed";
-
-      getAsmVersion ver = new getAsmVersion();
-      if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\infoservice.dll"))
-      {
-        AssemblyInformation info = ver.CurrentAssemblyInfo;
-        return info.Version;
-      }
-      else
-        showError(ver.ErrorMessage, errorCode.major);
-      return "";
+      Version fv = new Version(helper.fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\infoservice.dll"));
+      return fv;
     }
 
 
-    private string getMovingPicturesVersion()
+    private string MovingPicturesVersion
     {
-      if (!File.Exists(mpPaths.pluginPath + "\\windows\\MovingPictures.dll"))
-        return "Not Installed";
-      
-      getAsmVersion ver = new getAsmVersion();
-      if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\MovingPictures.dll"))
+      get
       {
-        AssemblyInformation info = ver.CurrentAssemblyInfo;
-        return info.Version;
+        return helper.fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\MovingPictures.dll");
       }
-      else
-        showError(ver.ErrorMessage, errorCode.major);
-      return "";
     }
 
-    private string getTVSeriesVersion()
+    private string TVSeriesVersion
     {
-      if (!File.Exists(mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll"))
-        return "Not Installed";
-
-      getAsmVersion ver = new getAsmVersion();
-      if (ver.GetVersion(mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll"))
+      get
       {
-        AssemblyInformation info = ver.CurrentAssemblyInfo;
-        return info.Version;
+        return helper.fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll");
       }
-      else
-        showError(ver.ErrorMessage, errorCode.major);
-      return "";
     }
 
-    private string getMediaPortalVersion()
+    private string MediaPortalVersion
     {
-      if (!File.Exists(mpPaths.sMPbaseDir + "\\MediaPortal.exe"))
+      get
       {
-        showError("Can't find MediaPortal! \r\r" + mpPaths.sMPbaseDir + "MediaPortal.exe", errorCode.major);
+        return helper.fileVersion(Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "MediaPortal.exe"));
       }
-      FileVersionInfo mpFileVersion = FileVersionInfo.GetVersionInfo(mpPaths.sMPbaseDir + "\\MediaPortal.exe");
-      return mpFileVersion.FileVersion;
     }
 
-
-    private DialogResult showError(string errorText, errorCode errorType)
-    {
-
-
-      switch (errorType)
-      {
-        case errorCode.info:
-          MessageBox.Show(errorText,
-              "Click OK to continue.",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Information,
-              MessageBoxDefaultButton.Button1);
-          break;
-        case errorCode.infoQuestion:
-          return MessageBox.Show(errorText,
-              "Continue Editing",
-              MessageBoxButtons.YesNo,
-              MessageBoxIcon.Question,
-              MessageBoxDefaultButton.Button1);
-        case errorCode.loadError:
-          MessageBox.Show("Error loading menu, file seems invalid\r\rReason: " + errorText + "  ",
-              "Click OK to continue.",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Error,
-              MessageBoxDefaultButton.Button1);
-          break;
-        case errorCode.readError:
-          MessageBox.Show("Error loading menu, file seems invalid\r\rReason: " + errorText + "  ",
-              "Click OK to continue.",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Error,
-              MessageBoxDefaultButton.Button1);
-          break;
-        case errorCode.major:
-          MessageBox.Show(errorText + "\r\rEditor will now terminate.",
-              "Click OK to Exit",
-              MessageBoxButtons.OK,
-              MessageBoxIcon.Error,
-              MessageBoxDefaultButton.Button1);
-          this.Close();
-          break;
-      }
-
-      return DialogResult;
-
-    }
 
     private Color ColorFromRGB(string RGB)
     {
@@ -805,7 +633,7 @@ namespace StreamedMPEditor
           itemsOnMenubar.SelectedIndex = 0;
       }
       else
-        showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
+        helper.showError("No menu item selected to Remove\n\nPlease select menu item to Remove", errorCode.info);
     }
 
     private string generateEntry(string entry, string value, int tabs, bool addcr)
@@ -865,7 +693,7 @@ namespace StreamedMPEditor
 
     private void btnClearCache_Click(object sender, EventArgs e)
     {
-      DialogResult result = showError("Clearing cache\n\n" + mpPaths.cacheBasePath + configuredSkin + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
+      DialogResult result = helper.showError("Clearing cache\n\n" + SkinInfo.mpPaths.cacheBasePath + configuredSkin + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
       if (result == DialogResult.No)
       {
         return;
@@ -877,12 +705,12 @@ namespace StreamedMPEditor
     {
       try
       {
-        System.IO.Directory.Delete(mpPaths.cacheBasePath + configuredSkin, true);
-        //showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
+        System.IO.Directory.Delete(SkinInfo.mpPaths.cacheBasePath + configuredSkin, true);
+        //helper.showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
       catch
       {
-        //showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
+        //helper.showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
       }
     }
 
@@ -892,7 +720,7 @@ namespace StreamedMPEditor
       if (theDay == 0)
         day = "today";
       else
-        if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
+        if (getInfoServiceVersion().CompareTo(isWeatherVersion) >= 0)
           day = "forecast" + (theDay + 1).ToString() + ".day";
       else
         day = "day" + (theDay + 1).ToString() + ".day";
@@ -980,7 +808,7 @@ namespace StreamedMPEditor
         {
           txtMenuPos.Text = minXPos.ToString();
           menuOffset = int.Parse(txtMenuPos.Text);
-          showError("The Menu X Position value will result in blank Context or Menu labels. \n\nMenu X Position reset to calculated minium value of " + txtMenuPos.Text, errorCode.info);
+          helper.showError("The Menu X Position value will result in blank Context or Menu labels. \n\nMenu X Position reset to calculated minium value of " + txtMenuPos.Text, errorCode.info);
         }
       }
     }
@@ -1140,9 +968,9 @@ namespace StreamedMPEditor
 
     private void getBackupFileTotals()
     {
-      getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup*", false);
+      getFileListing(SkinInfo.mpPaths.configBasePath, "usermenuprofile.xml.backup*", false);
       numUPBackups.Text = totalImages.ToString();
-      getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
+      getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
       numBHBackups.Text = totalImages.ToString();
     }
 
@@ -1159,7 +987,7 @@ namespace StreamedMPEditor
     {
       if (changeOutstanding)
       {
-        DialogResult result = showError("There are outstanding menu changes\n\nDo you want Re-Generate your menu", errorCode.infoQuestion);
+        DialogResult result = helper.showError("There are outstanding menu changes\n\nDo you want Re-Generate your menu", errorCode.infoQuestion);
         if (result == DialogResult.Yes)
         {
           genMenu(true);
@@ -1175,7 +1003,7 @@ namespace StreamedMPEditor
           Properties.Settings.Default.keepVersions = int.Parse(backupVersionsToKeep.Text);
           Properties.Settings.Default.autoPurge = true;
 
-          string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
+          string[] filesToDelete = getFileListing(SkinInfo.mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
           foreach (string file in filesToDelete)
           {
             if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1184,7 +1012,7 @@ namespace StreamedMPEditor
           }
           versionCount = 0;
 
-          string[] filesToDelete2 = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
+          string[] filesToDelete2 = getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
           foreach (string file in filesToDelete2)
           {
             if (versionCount >= int.Parse(backupVersionsToKeep.Text))
@@ -1198,7 +1026,7 @@ namespace StreamedMPEditor
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
+      string[] filesToDelete = getFileListing(SkinInfo.mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1208,7 +1036,7 @@ namespace StreamedMPEditor
 
     private void purgeBHBackups_Click(object sender, EventArgs e)
     {
-      string[] filesToDelete = getFileListing(mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
+      string[] filesToDelete = getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);
@@ -1223,29 +1051,29 @@ namespace StreamedMPEditor
 
     private void showConfigPath_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (System.IO.Directory.Exists(mpPaths.configBasePath))
-        System.Diagnostics.Process.Start(mpPaths.configBasePath);
+      if (System.IO.Directory.Exists(SkinInfo.mpPaths.configBasePath))
+        System.Diagnostics.Process.Start(SkinInfo.mpPaths.configBasePath);
       else MessageBox.Show("The directory/file does not exist.");
     }
 
     private void showMPDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (System.IO.Directory.Exists(mpPaths.sMPbaseDir))
-        System.Diagnostics.Process.Start(mpPaths.sMPbaseDir);
+      if (System.IO.Directory.Exists(SkinInfo.mpPaths.sMPbaseDir))
+        System.Diagnostics.Process.Start(SkinInfo.mpPaths.sMPbaseDir);
       else MessageBox.Show("The directory/file does not exist.");
 
     }
 
     private void showSkinDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (System.IO.Directory.Exists(mpPaths.streamedMPpath))
-        System.Diagnostics.Process.Start(mpPaths.streamedMPpath);
+      if (System.IO.Directory.Exists(SkinInfo.mpPaths.streamedMPpath))
+        System.Diagnostics.Process.Start(SkinInfo.mpPaths.streamedMPpath);
       else MessageBox.Show("The directory/file does not exist.");
     }
 
     private bool animatedIconsInstalled()
     {
-      if (Directory.Exists(mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128"))
+      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\animations\\weathericons\\animated\\128x128"))
         return true;
       else
         return false;
@@ -1253,7 +1081,7 @@ namespace StreamedMPEditor
 
     private bool weatherBackgoundsInstalled()
     {
-      if (Directory.Exists(mpPaths.streamedMPpath + "media\\animations\\linkedweather"))
+      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\animations\\linkedweather"))
         return true;
       else
         return false;
@@ -1263,18 +1091,18 @@ namespace StreamedMPEditor
     private void readFonts()
     {
       XmlDocument doc = new XmlDocument();
-      if (!File.Exists(mpPaths.streamedMPpath + "Fonts.xml"))
+      if (!File.Exists(SkinInfo.mpPaths.streamedMPpath + "Fonts.xml"))
       {
-        showError("Fonts.xml Not Found in \r\r" + mpPaths.streamedMPpath + " \r\rPlease make sure fonts.xml exists", errorCode.major);
+        helper.showError("Fonts.xml Not Found in \r\r" + SkinInfo.mpPaths.streamedMPpath + " \r\rPlease make sure fonts.xml exists", errorCode.major);
         return;
       }
       try
       {
-        doc.Load(mpPaths.streamedMPpath + "Fonts.xml");
+        doc.Load(SkinInfo.mpPaths.streamedMPpath + "Fonts.xml");
       }
       catch (Exception e)
       {
-        showError("Exception while loading Fonts.xml\n\n" + e.Message, errorCode.loadError);
+        helper.showError("Exception while loading Fonts.xml\n\n" + e.Message, errorCode.loadError);
         return;
       }
 
@@ -1775,16 +1603,16 @@ namespace StreamedMPEditor
     public void writeXMLFile(string xmlFileName)
     {
       // Delete any existing file
-      if (System.IO.File.Exists(mpPaths.streamedMPpath + xmlFileName))
-        System.IO.File.Delete(mpPaths.streamedMPpath + xmlFileName);
+      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + xmlFileName))
+        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + xmlFileName);
 
       //Write tempory file
       StreamWriter tmpwriter;
-      tmpwriter = System.IO.File.CreateText(Path.Combine(mpPaths.streamedMPpath,xmlFileName));
+      tmpwriter = System.IO.File.CreateText(Path.Combine(SkinInfo.mpPaths.streamedMPpath,xmlFileName));
       tmpwriter.Write(xml);
       tmpwriter.Close();
 
-      checkSum.Add(Path.Combine(mpPaths.streamedMPpath, xmlFileName));
+      checkSum.Add(Path.Combine(SkinInfo.mpPaths.streamedMPpath, xmlFileName));
     }
 
 
@@ -1960,15 +1788,17 @@ namespace StreamedMPEditor
       public string defaultImage;
       public bool disableBGSharing;
       public displayMostRecent showMostRecent;
+      public int subMenuLevel1ID;
       public List<subMenuItem> subMenuLevel1 = new List<subMenuItem>();
       public List<subMenuItem> subMenuLevel2 = new List<subMenuItem>();
     }
 
     public class subMenuItem
     {
-      public int id;
-      public string name;
+      public string displayName; 
+      public string xmlFileName;
       public string hyperlink;
+      public displayMostRecent showMostRecent;
     }
 
     public class backgroundItem
@@ -1983,6 +1813,7 @@ namespace StreamedMPEditor
       public List<string> mname = new List<string>();
       public bool isWeather;
       public bool disableBGSharing;
+      public int subMenuID;
     }
 
     public class defaultImages
@@ -2000,7 +1831,6 @@ namespace StreamedMPEditor
     public class prettyItem
     {
       public string name;
-      public string name2;
       public string folder;
       public string fanartProperty;
       public bool fanartHandlerEnabled;

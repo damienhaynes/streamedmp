@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BB503792-BF10-4A59-AEF8-F753CC4F44E4}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -70,7 +70,7 @@
   <ItemGroup>
     <Reference Include="Core, Version=1.1.0.16045, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Externals\Core.dll</HintPath>
+      <HintPath>..\..\..\..\HTPC\MediaPortal\Core.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -78,26 +78,41 @@
     </Reference>
     <Reference Include="MediaPortal.Support, Version=1.1.0.16039, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Externals\MediaPortal.Support.dll</HintPath>
+      <HintPath>..\..\..\..\HTPC\MediaPortal\MediaPortal.Support.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Data">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.XML.dll</HintPath>
+    </Reference>
     <Reference Include="Utils, Version=2.2.7.16040, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Externals\Utils.dll</HintPath>
+      <HintPath>..\..\..\..\HTPC\MediaPortal\Utils.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +166,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ItemNameDialog.resx">
+      <DependentUpon>ItemNameDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mostRecentDisplaySelection.resx">
+      <DependentUpon>mostRecentDisplaySelection.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="mrMovPicsSummaryOptions.resx">
       <DependentUpon>mrMovPicsSummaryOptions.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -183,12 +206,28 @@
     <Compile Include="BHHorizontalWriter.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BHSubMenuWriterV.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BHVerticalWriter.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controls.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="isMostRecentOverlay.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemNameDialog.Designer.cs">
+      <DependentUpon>ItemNameDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mostRecentDisplaySelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mostRecentDisplaySelection.Designer.cs">
+      <DependentUpon>mostRecentDisplaySelection.cs</DependentUpon>
     </Compile>
     <Compile Include="mrMovPicsSummaryOptions.cs">
       <SubType>Form</SubType>
@@ -203,6 +242,7 @@
       <DependentUpon>mrTVSereisFormatOptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="SkinInfo.cs" />
     <Compile Include="SkinOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,7 +304,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\Plugins\Process /Y</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\..\StreamedMP\Plugins\Process /Y</PostBuildEvent>
+    <PreBuildEvent>subwcrev $(SolutionDir) $(ProjectDir)Properties\VersionInfo.cs.tmpl $(ProjectDir)Properties\VersionInfo.cs</PreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -11,7 +11,7 @@ namespace StreamedMPEditor
     {
       string defaultcontrol = null;
       string defaultImage = null;
-      string usermenuprofile = mpPaths.configBasePath + "usermenuprofile.xml";
+      string usermenuprofile = SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml";
       string id = null;
       string _selectedFont = null;
       string _labelFont = null;
@@ -22,6 +22,10 @@ namespace StreamedMPEditor
       string mostRecentSumStyle = null;
       string mostRecentTVSeriesSummStyle = null;
       string mostRecentMovPicsSummStyle = null;
+
+      int subMenuItems1 = 0;
+      int subMenuItems2 = 0;
+
       itemsOnMenubar.Items.Clear();
 
       XmlDocument doc = new XmlDocument();
@@ -33,11 +37,11 @@ namespace StreamedMPEditor
         // Ok, so no usermenuprofile.xml exists, this is most likely because this is a new skin install and this is the first time
         // the editor has been run and the file has not yet been created in the default location.
         // Check for and load the default version supplied with the skin
-        usermenuprofile = mpPaths.streamedMPpath + "usermenuprofile.xml";
+        usermenuprofile = SkinInfo.mpPaths.streamedMPpath + "usermenuprofile.xml";
         if (!File.Exists(usermenuprofile))
         {
           //ok, so now really in trouble, throw an error to the user and bailout!
-          showError("Can't find usermenuprofile.xml \r\r" + mpPaths.configBasePath + "usermenuprofile.xml", errorCode.major);
+          helper.showError("Can't find usermenuprofile.xml \r\r" + SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml", errorCode.major);
         }
       }
       try
@@ -46,7 +50,7 @@ namespace StreamedMPEditor
       }
       catch (Exception e)
       {
-        showError("Exception while loading usermenuprofile.xml\n\n" + e.Message, errorCode.loadError);
+        helper.showError("Exception while loading usermenuprofile.xml\n\n" + e.Message, errorCode.loadError);
         basicHomeLoadError = true;
       }
 
@@ -216,15 +220,15 @@ namespace StreamedMPEditor
         movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
         mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);  // Hang over from when juts TVSeries was supported
         mostRecentTVSeriesSummStyle = readEntryValue(optionsTag, "mostRecentTVSeriesSummStyle", nodelist);
-        mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);     
+        mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);
         cbCycleFanart.Checked = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
-        tvSeriesOptions.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag,"mrSeriesEpisodeFormat",nodelist));
-        tvSeriesOptions.mrTitleLast = bool.Parse(readEntryValue(optionsTag,"mrTitleLast",nodelist));
+        tvSeriesOptions.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag, "mrSeriesEpisodeFormat", nodelist));
+        tvSeriesOptions.mrTitleLast = bool.Parse(readEntryValue(optionsTag, "mrTitleLast", nodelist));
         cbExitStyleNew.Checked = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
         mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
         mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
         tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
-        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist); 
+        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
         movPicsOptions.MovieTitleFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
         movPicsOptions.MovieDetailFont = readEntryValue(optionsTag, "mrMovieDetailFont", nodelist);
         movPicsOptions.HideRuntime = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRuntime", nodelist));
@@ -238,7 +242,7 @@ namespace StreamedMPEditor
         // Most likley a new option added but not written to file yet - just continue
       }
 
-      if(tvSeriesOptions.mrSeriesFont == "mediastream9c")
+      if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
         tvSeriesOptions.mrSeriesFont = "mediastream10c";
 
       if (tvSeriesOptions.mrEpisodeFont == "mediastream9c")
@@ -355,7 +359,7 @@ namespace StreamedMPEditor
         rbPosterStyle.Checked = true;
       }
 
-      
+
 
 
       if (splashScreenImage == "false")
@@ -401,13 +405,14 @@ namespace StreamedMPEditor
       else
         txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
-      if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
+      Version isver = new Version("1.6.0.0");
+      if (getInfoServiceVersion().CompareTo(isver) >= 0)
         infoServiceDayProperty = "forecast";
       else
         infoServiceDayProperty = "day";
 
       // Check if Moving Pictures is installed and enabled, if not disable most recent options
-      if (getMovingPicturesVersion() == "Not Installed")
+      if (MovingPicturesVersion == "0.0.0.0")
       {
         pMovPicsRecent.Enabled = false;
         cbMostRecentTvSeries.Checked = false;
@@ -415,7 +420,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        if (!pluginEnabled("Moving Pictures"))
+        if (!helper.pluginEnabled("Moving Pictures"))
         {
           pMovPicsRecent.Enabled = false;
           cbMostRecentTvSeries.Checked = false;
@@ -424,7 +429,7 @@ namespace StreamedMPEditor
       }
 
       // Check in TVSeries is installed and enabled, if not disable most recent options
-      if (getTVSeriesVersion() == "Not Installed")
+      if (TVSeriesVersion == "0.0.0.0")
       {
         pTVSeriesRecent.Enabled = false;
         cbMostRecentTvSeries.Checked = false;
@@ -432,7 +437,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        if (!pluginEnabled("MP-TV Series"))
+        if (!helper.pluginEnabled("MP-TV Series"))
         {
           pTVSeriesRecent.Enabled = false;
           cbMostRecentTvSeries.Checked = false;
@@ -440,7 +445,7 @@ namespace StreamedMPEditor
         }
       }
 
-      
+
       //
       // Read in the menu items
       //
@@ -460,7 +465,84 @@ namespace StreamedMPEditor
         mnuItem.updateStatus = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
         mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
         mnuItem.id = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
-        mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist),mnuItem.hyperlink);
+        mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
+
+        if (readEntryValue(menuTag, "menuitem" + i.ToString() + "subMenuLevel1ID", nodelist) != "false")
+        {
+          mnuItem.subMenuLevel1ID = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "subMenuLevel1ID", nodelist));
+
+          subMenuItems1 = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "submenu1", nodelist));
+          subMenuItems2 = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "submenu2", nodelist));
+
+
+          if (subMenuItems1 > 0)
+          {
+            for (int k = 0; k < subMenuItems1; k++)
+            {
+              subMenuItem subItem = new subMenuItem();
+              subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "displayName", nodelist);
+              subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "xmlFileName", nodelist);
+              subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlink", nodelist);
+              switch (readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "mrDisplay", nodelist))
+              {
+                case "off":
+                  subItem.showMostRecent = displayMostRecent.off;
+                  break;
+                case "tvSeries":
+                  subItem.showMostRecent = displayMostRecent.tvSeries;
+                  break;
+                case "moviesAdded":
+                  subItem.showMostRecent = displayMostRecent.moviesAdded;
+                  break;
+                case "moviesWatched":
+                  subItem.showMostRecent = displayMostRecent.moviesWatched;
+                  break;
+                case "music":
+                  subItem.showMostRecent = displayMostRecent.music;
+                  break;
+                case "recordedTV":
+                  subItem.showMostRecent = displayMostRecent.recordedTV;
+                  break;
+              }
+              mnuItem.subMenuLevel1.Add(subItem);
+            }
+          }
+
+          if (subMenuItems2 > 0)
+          {
+            for (int k = 0; k < subMenuItems2; k++)
+            {
+              subMenuItem subItem = new subMenuItem();
+              subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "displayName", nodelist);
+              subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "xmlFileName", nodelist);
+              subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlink", nodelist);
+              switch (readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "mrDisplay", nodelist))
+              {
+                case "off":
+                  subItem.showMostRecent = displayMostRecent.off;
+                  break;
+                case "tvSeries":
+                  subItem.showMostRecent = displayMostRecent.tvSeries;
+                  break;
+                case "moviesAdded":
+                  subItem.showMostRecent = displayMostRecent.moviesAdded;
+                  break;
+                case "moviesWatched":
+                  subItem.showMostRecent = displayMostRecent.moviesWatched;
+                  break;
+                case "music":
+                  subItem.showMostRecent = displayMostRecent.music;
+                  break;
+                case "recordedTV":
+                  subItem.showMostRecent = displayMostRecent.recordedTV;
+                  break;
+              }
+              mnuItem.subMenuLevel2.Add(subItem);
+            }
+          }
+
+        }
+
         isWeather.Checked = mnuItem.isWeather;
         disableBGSharing.Checked = mnuItem.disableBGSharing;
 
@@ -502,14 +584,14 @@ namespace StreamedMPEditor
     {
       // Enable most recent movies on MovingPictures menu item if not defined
       if (mrOption == "false" && skinId == movingPicturesSkinID)
-        return displayMostRecent.movies;
+        return displayMostRecent.moviesAdded;
 
       // Enable most recent TVSeries on TVSeries menu item if not defined
       if (mrOption == "false" && skinId == tvseriesSkinID)
         return displayMostRecent.tvSeries;
 
-      if (mrOption == displayMostRecent.movies.ToString())
-        return displayMostRecent.movies;
+      if (mrOption == displayMostRecent.moviesAdded.ToString())
+        return displayMostRecent.moviesAdded;
       else if (mrOption == displayMostRecent.tvSeries.ToString())
         return displayMostRecent.tvSeries;
       else
