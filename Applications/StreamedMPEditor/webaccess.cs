@@ -63,7 +63,7 @@ namespace StreamedMPEditor
       {
         optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
         optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_AnimatedWeatherIcons.zip");
-        destinationPath = mpPaths.skinBasePath;
+        destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Animated Weather Icons";
         pLabel.Text = "Starting Download";
         thrDownload = new Thread(Download);
@@ -72,7 +72,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
         downloadForm.BringToFront();
       }
     }
@@ -83,7 +83,7 @@ namespace StreamedMPEditor
       {
         optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
         optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_LinkedWeatherBackgrounds.zip");
-        destinationPath = mpPaths.skinBasePath;
+        destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Weather Backgrounds";
         pLabel.Text = "Starting Download";
         thrDownload = new Thread(Download);
@@ -92,7 +92,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        DialogResult result = showError("Please wait till current download has finished before contining", errorCode.info);
+        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
         downloadForm.BringToFront();
       }
     }

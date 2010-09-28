@@ -91,7 +91,7 @@ namespace StreamedMPEditor
         //if (totalImages > 1)
         //    totalImages--;
         string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
-        mpPaths.fanartBasePath = dirParent;
+        SkinInfo.mpPaths.fanartBasePath = dirParent;
 
         workingImage = Image.FromFile(imageDir(bgItem.image));
         newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
@@ -488,7 +488,7 @@ namespace StreamedMPEditor
     private string imageDir(string image)
     {
       if (!image.StartsWith("Animations\\") && !image.Contains(":"))
-        return mpPaths.streamedMPpath + "media\\" + image;
+        return SkinInfo.mpPaths.streamedMPpath + "media\\" + image;
       else
         return image;
 

@@ -23,22 +23,22 @@ namespace StreamedMPEditor
 
     private void useSkinWeatherIcons_Click(object sender, EventArgs e)
     {
-      if (!System.IO.File.Exists(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
+      if (!System.IO.File.Exists(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
       {
-        zipIcons(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip", mpPaths.sMPbaseDir + "\\Weather\\128x128");
-        deleteIcons(mpPaths.sMPbaseDir + "\\Weather\\128x128");
-        copyInIcons(mpPaths.streamedMPpath + "Media\\Animations\\weathericons\\static\\128x128", mpPaths.sMPbaseDir + "\\Weather\\128x128");
+        zipIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip", SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
+        deleteIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
+        copyInIcons(SkinInfo.mpPaths.streamedMPpath + "Media\\Animations\\weathericons\\static\\128x128", SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
         useSkinWeatherIcons.Text = "Restore Standard Weather Icons";
         clearCacheDir();
-        DialogResult result = showError("MediaPortal supplied weather icons have been replaced with the \nskin supplied static weather icons and the cache cleared.\n\nSelecting this link again will restore the defaut icons.", errorCode.info);
+        DialogResult result = helper.showError("MediaPortal supplied weather icons have been replaced with the \nskin supplied static weather icons and the cache cleared.\n\nSelecting this link again will restore the defaut icons.", errorCode.info);
       }
       else
       {
-        deleteIcons(mpPaths.sMPbaseDir + "\\Weather\\128x128");
-        unzipIcons(mpPaths.sMPbaseDir + "\\Weather\\128x128.zip", mpPaths.sMPbaseDir + "\\Weather\\128x128");
+        deleteIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
+        unzipIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip", SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
         useSkinWeatherIcons.Text = "Replace Standard Weather Icons with Skin Supplied Versions";
         clearCacheDir();
-        DialogResult result = showError("MediaPortal supplied weather icons have been restored and cache cleared.", errorCode.info);
+        DialogResult result = helper.showError("MediaPortal supplied weather icons have been restored and cache cleared.", errorCode.info);
       }
     }
 

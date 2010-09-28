@@ -205,7 +205,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<texture>" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>" +
+                  "<texture>" + SkinInfo.mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
@@ -230,7 +230,7 @@ namespace StreamedMPEditor
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
-                  "<textures>#Play.Current.Thumb;" + mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</textures>" +
+                  "<textures>#Play.Current.Thumb;" + SkinInfo.mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</textures>" +
                   "<Duration>0:0:45</Duration>" +
                   "<randomize>no</randomize>" +
                   "<keepaspectratio>no</keepaspectratio>" +

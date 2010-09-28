@@ -15,7 +15,17 @@ namespace StreamedMPEditor
     {
       string menuPos;
       string skeletonFile;
+      string subArrowVisible = "control.hasfocus(";
 
+      // Sync Submenu ID's with control ID's
+      foreach (menuItem item in menuItems)
+      {
+        if (item.subMenuLevel1.Count > 0)
+          menuItems[menuItems.IndexOf(item)].subMenuLevel1ID = (menuItems[menuItems.IndexOf(item)].id - 999) * 10000;
+        else
+          menuItems[menuItems.IndexOf(item)].subMenuLevel1ID = 0;
+      }
+      // Save out configuration into usermenuprofile.xml
       writeMenuProfile(direction);
       bgItems.Clear();
 
@@ -29,7 +39,7 @@ namespace StreamedMPEditor
         menuPos = "menuXPos:" + txtMenuPos.Text;
         skeletonFile = "StreamedMPEditor.xmlFiles.VBasicHomeSkeleton.xml";
       }
-      if (getInfoServiceVersion().CompareTo("1.6.0.0") >= 0)
+      if (getInfoServiceVersion().CompareTo(isWeatherVersion) >= 0)
         infoServiceDayProperty = "forecast";
       else
         infoServiceDayProperty = "day";
@@ -79,6 +89,12 @@ namespace StreamedMPEditor
                         + "<define>#" + menuPos + "</define>");
 
       }
+      
+      
+      
+      // Write out Sub Menu Code
+      if (direction == menuType.vertical)
+        xml = xml.Replace("<!-- BEGIN GENERATED SUBMENU CODE -->", bhSubMenuWriterV());
 
 
       // String will we use to hold the create xml
@@ -87,28 +103,7 @@ namespace StreamedMPEditor
       // For each defined menu item create the visibility control and the 14 controls for menu item, 2 buttons and 12 label controls
       foreach (menuItem menItem in menuItems)
       {
-
         fillBackgroundItem(menItem);
-
-        if (menItem.isDefault == true)
-          xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");
-
-        rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " visibility</description>");
-        rawXML.AppendLine("<id>" + menItem.id.ToString() + "</id>");
-        rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>100</posX>");
-        rawXML.AppendLine("<posY>-100</posY>");
-        rawXML.AppendLine("<width>500</width>");
-        rawXML.AppendLine("<height>0</height>");
-        rawXML.AppendLine("<label>Movies</label>");
-        if (menItem.isDefault == true)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
-        else
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
-        rawXML.AppendLine("</control>");
-
-
         // Check if this menu item is TVSeries or MovingPictures and store the menu ID for use
         // with the InfoService 3 last added items function if a match
         if (menItem.hyperlink == tvseriesSkinID)
@@ -117,7 +112,23 @@ namespace StreamedMPEditor
         if (menItem.hyperlink == movingPicturesSkinID)
           basicHomeValues.movingPicturesControl = menItem.id;
 
-        // Write out the menu butons and lables
+        // Is this the default Item
+        if (menItem.isDefault == true)
+          xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " visibility when submen open</description>");
+        rawXML.AppendLine("<id>" + menItem.id.ToString() + "</id>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>100</posX>");
+        rawXML.AppendLine("<posY>-100</posY>");
+        rawXML.AppendLine("<width>500</width>");
+        rawXML.AppendLine("<height>0</height>");
+        rawXML.AppendLine("<label>-</label>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
+        rawXML.AppendLine("</control>");
+
+         // Write out the menu butons and lables
         for (int i = 0; i < 14; i++)
         {
           if (direction == menuType.horizontal)
@@ -131,7 +142,153 @@ namespace StreamedMPEditor
         }
       }
       xml = xml.Replace("<!-- BEGIN GENERATED BUTTON CODE-->", rawXML.ToString());
+
+      // Are the Submenus defined, if so we need the additional blade controls
+      if (subMenusExist)
+      {
+        level1LateralBladeVisible = level1LateralBladeVisible.Substring(0,(level1LateralBladeVisible.Length - 19));
+        level2LateralBladeVisible = level2LateralBladeVisible.Substring(0, (level2LateralBladeVisible.Length - 19));
+
+        string tmpXML = "<control>" +
+                          "<description>Lateral blade control item</description>" +
+                          "<type>label</type>" +
+                          "<id>4242</id>" +
+                          "<label></label>" +
+                          "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
+                          "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
+                          "<visible>yes</visible>" +
+                        "</control>" +
+                        "<control>" +
+                          "<description>Lateral blade</description>" +
+                          "<type>image</type>" +
+                          "<id>11111</id>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
+                          "<posY>0</posY>" +
+                          "<width>230</width>" +
+                          "<height>687</height>" +
+                          "<texture>homebladesub.png</texture>" +
+                          "<visible>" + level1LateralBladeVisible + "</visible>" +
+                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                        "</control>" +
+                        "<control>" +
+                          "<description>lateral blade logo</description>" +
+                          "<type>image</type>" +
+                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) - 5 ).ToString() + "</posX>" +
+                          "<posY>179</posY>" +
+                          "<width>210</width>" +
+                          "<height>70</height>" +
+                          "<texture>lateralbladelogo.png</texture>" +
+                          "<visible>" + level1LateralBladeVisible + "</visible>" +
+                        "</control>";
+       
+        
+
+               tmpXML += "<control>" +
+                          "<description>Lateral blade control item</description>" +
+                          "<type>label</type>" +
+                          "<id>4242</id>" +
+                          "<label></label>" +
+                          "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
+                          "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
+                          "<visible>yes</visible>" +
+                        "</control>" +
+                        "<control>" +
+                          "<description>Lateral blade</description>" +
+                          "<type>image</type>" +
+                          "<id>22222</id>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
+                          "<posY>0</posY>" +
+                          "<width>230</width>" +
+                          "<height>687</height>" +
+                          "<texture>homebladesub.png</texture>" +
+                          "<visible>" + level2LateralBladeVisible + "</visible>" +
+                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                        "</control>" +
+                        "<control>" +
+                          "<description>lateral blade logo</description>" +
+                          "<type>image</type>" +
+                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
+                          "<posY>179</posY>" +
+                          "<width>210</width>" +
+                          "<height>70</height>" +
+                          "<texture>lateralbladelogo.png</texture>" +
+                          "<visible>" + level2LateralBladeVisible + "</visible>" +
+                        "</control>";
+
+
+
+                foreach (menuItem item in menuItems)
+                {
+                  if (item.subMenuLevel1ID != 0)
+                    subArrowVisible += (item.id + 700).ToString() + ")|control.hasfocus(" + (item.id + 800).ToString() + ")|control.hasfocus(" + (item.id + 900).ToString() + ")|control.hasfocus(";
+                }
+                subArrowVisible = subArrowVisible.Substring(0,(subArrowVisible.Length - 18));
+
+                tmpXML += "<control>" +
+                          "<description>Sub Menu Indicator</description>" +
+                          "<type>image</type>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
+                          "<posY>330</posY>" +
+                          "<align>right</align>" +
+                          "<width>16</width>" +
+                          "<height>16</height>" +
+                          "<visible>" + subArrowVisible + "</visible>" +
+                          "<colorDiffuse>fffffffff</colorDiffuse>" +
+                          "<texture>arrowrightfo.png</texture>" +
+                          "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                          "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                        "</control>";
+
+
+                subArrowVisible = "control.hasfocus(";
+                foreach (menuItem item in menuItems)
+                {
+                  if (item.subMenuLevel1ID != 0)
+                    if (item.subMenuLevel2.Count > 0)
+                    {
+                      for (int i = 0; i < item.subMenuLevel1.Count; i++)
+                      {
+                        subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
+                      }
+                    }
+                }
+                subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
+
+
+                tmpXML += "<control>" +
+                          "<description>Sub Menu Indicator</description>" +
+                          "<type>image</type>" +
+                          "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
+                          "<posY>330</posY>" +
+                          "<align>right</align>" +
+                          "<width>16</width>" +
+                          "<height>16</height>" +
+                          "<visible>" + subArrowVisible + "</visible>" +
+                          "<colorDiffuse>fffffffff</colorDiffuse>" +
+                          "<texture>arrowrightfo.png</texture>" +
+                          "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                          "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                        "</control>";
+
+
+        xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
+      }
     }
+
     #endregion
 
     #region Generate menu Graphics Horizontal
@@ -578,10 +735,10 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<id>" + topMenuId + "01</id>");
         rawXML.AppendLine("<posX>150</posX>");
         rawXML.AppendLine("<posY>640</posY>");
-        rawXML.AppendLine("<onleft>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onleft>");
+        rawXML.AppendLine("<onleft>" + (menItem.id + 900).ToString() + "</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "02" + "</onright>");
-        rawXML.AppendLine("<onup>" + (menItem.id + 800).ToString() + "</onup>");
-        rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "</ondown>");
+        rawXML.AppendLine("<onup>" + (menItem.id + 900).ToString() + "</onup>");
+        rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<width>40</width>");
         rawXML.AppendLine("<height>40</height>");
         rawXML.AppendLine("<textureNoFocus>exit_button.png</textureNoFocus>");
@@ -604,8 +761,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<posY>640</posY>");
         rawXML.AppendLine("<onleft>" + topMenuId + "01" + "</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "03" + "</onright>");
-        rawXML.AppendLine("<onup>" + (menItem.id + 800).ToString() + "</onup>");
-        rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "</ondown>");
+        rawXML.AppendLine("<onup>" + (menItem.id + 900).ToString() + "</onup>");
+        rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<width>40</width>");
         rawXML.AppendLine("<height>40</height>");
         rawXML.AppendLine("<textureNoFocus>restart_button.png</textureNoFocus>");
@@ -629,8 +786,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<posY>640</posY>");
         rawXML.AppendLine("<onleft>" + topMenuId + "02</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "01</onright>");
-        rawXML.AppendLine("<onup>" + (menItem.id + 800).ToString() + "</onup>");
-        rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "</ondown>");
+        rawXML.AppendLine("<onup>" + (menItem.id + 900).ToString() + "</onup>");
+        rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<width>40</width>");
         rawXML.AppendLine("<height>40</height>");
         rawXML.AppendLine("<textureNoFocus>shutdown_button.png</textureNoFocus>");
@@ -875,143 +1032,155 @@ namespace StreamedMPEditor
     {
       //defaultId
       StringBuilder rawXML = new StringBuilder();
-      int first = basicHomeValues.defaultId - 2;
-      if (first < 0) first += menuItems.Count;
 
-      int second = basicHomeValues.defaultId - 1;
-      if (second < 0) second += menuItems.Count;
-
-      int third = basicHomeValues.defaultId + 1;
-      if (third >= menuItems.Count) third -= menuItems.Count;
-
-      int fourth = basicHomeValues.defaultId + 2;
-      if (fourth >= menuItems.Count) fourth -= menuItems.Count;
+      string topBarButtons = string.Empty;
+      string submenuControl = string.Empty;
 
       const string quote = "\"";
       rawXML.AppendLine("<!--**************-->");
       rawXML.AppendLine("<!-- Crowding Fix -->");
       rawXML.AppendLine("<!--**************-->");
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[basicHomeValues.defaultId].name + "</description>");
-      rawXML.AppendLine("<type>button</type>");
-      rawXML.AppendLine("<id>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</id>");
-      rawXML.AppendLine("<posX>0</posX>");
-      rawXML.AppendLine("<posY>-30</posY>");
-      rawXML.AppendLine("<label>" + menuItems[basicHomeValues.defaultId].name + "</label>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<hyperlink>" + menuItems[basicHomeValues.defaultId].hyperlink + "</hyperlink>");
-      rawXML.AppendLine("<textureFocus>-</textureFocus>");
-      rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
-      rawXML.AppendLine("<hover>-</hover>");
-      if (!cbExitStyleNew.Checked)
+      
+
+      for (int k = 0; k < menuItems.Count; k++)
       {
-        rawXML.AppendLine("<onright>7777</onright>");
-        rawXML.AppendLine("<onleft>-</onleft>");
+        topBarButtons = string.Empty;
+        submenuControl = string.Empty;
+
+        int first = k - 2;
+        if (first < 0) first += menuItems.Count;
+
+        int second = k - 1;
+        if (second < 0) second += menuItems.Count;
+
+        int third = k + 1;
+        if (third >= menuItems.Count) third -= menuItems.Count;
+
+        int fourth = k + 2;
+        if (fourth >= menuItems.Count) fourth -= menuItems.Count;
+
+        if (cbExitStyleNew.Checked)
+          topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() +")";
+
+        if (menuItems[k].subMenuLevel1.Count > 0)
+          submenuControl = "|control.isvisible(" + menuItems[k].subMenuLevel1ID.ToString() + ")";
+
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<type>button</type>");
+        rawXML.AppendLine("<id>" + (menuItems[k].id + 900).ToString() + "</id>");
+        rawXML.AppendLine("<posX>0</posX>");
+        rawXML.AppendLine("<posY>-30</posY>");
+        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
+        rawXML.AppendLine("<textureFocus>-</textureFocus>");
+        rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
+        rawXML.AppendLine("<hover>-</hover>");
+        if (menuItems[k].subMenuLevel1.Count > 0)
+        {
+          rawXML.AppendLine("<onright>" + (menuItems[k].subMenuLevel1ID + 1).ToString() + "</onright>");
+          rawXML.AppendLine("<onleft>" + (menuItems[k].id + 600).ToString() + "01" + "</onleft>");
+        }
+        else
+        {
+          if (!cbExitStyleNew.Checked)
+          {
+            rawXML.AppendLine("<onright>7777</onright>");
+            rawXML.AppendLine("<onleft>" + (menuItems[k].id + 900).ToString() + "</onleft>");
+          }
+          else
+          {
+            rawXML.AppendLine("<onleft>" + (menuItems[k].id + 600).ToString() + "01</onleft>");
+            rawXML.AppendLine("<onright>" + (menuItems[k].id + 900).ToString() + "</onright>");
+          }
+        }
+        rawXML.AppendLine("<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
+        rawXML.AppendLine("<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
+        rawXML.AppendLine("</control>");
+        // ************ FIRST
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posY>142</posY>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<label>" + menuItems[first].name + "</label>");
+        rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>right</align>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("</control>");
+        // ************** SECOND
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posY>242</posY>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<label>" + menuItems[second].name + "</label>");
+        rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>right</align>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("</control>");
+        // ******** CENTER
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posY>342</posY>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
+        rawXML.AppendLine("<font>#selectedFont</font>");
+        rawXML.AppendLine("<align>right</align>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("</control>");
+        // ******** THIRD
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posY>442</posY>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<label>" + menuItems[third].name + "</label>");
+        rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>right</align>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("</control>");
+        // *************** FOURTH
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posY>542</posY>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<label>" + menuItems[fourth].name + "</label>");
+        rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>right</align>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("</control>");
       }
-      else
-      {
-        rawXML.AppendLine("<onleft>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onleft>");
-        rawXML.AppendLine("<onright>" + (menuItems[basicHomeValues.defaultId].id + 600).ToString() + "01</onright>");
-      }
-      rawXML.AppendLine("<onup>" + (menuItems[second].id + 800).ToString() + "</onup>");
-      rawXML.AppendLine("<ondown>" + (menuItems[third].id + 700).ToString() + "</ondown>");
-      rawXML.AppendLine("<visible>control.isvisible(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("</control>");
-      // ************ FIRST
-
-
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
-      rawXML.AppendLine("<type>label</type>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-      rawXML.AppendLine("<posY>142</posY>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<label>" + menuItems[first].name + "</label>");
-      rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("<font>#labelFont</font>");
-      rawXML.AppendLine("<align>right</align>");
-      rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("</control>");
-
-      // ************** SECOND
-
-
-
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
-      rawXML.AppendLine("<type>label</type>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-      rawXML.AppendLine("<posY>242</posY>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<label>" + menuItems[second].name + "</label>");
-      rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("<font>#labelFont</font>");
-      rawXML.AppendLine("<align>right</align>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("</control>");
-
-      // ******** CENTER
-
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[basicHomeValues.defaultId].name + "</description>");
-      rawXML.AppendLine("<type>label</type>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-      rawXML.AppendLine("<posY>342</posY>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<label>" + menuItems[basicHomeValues.defaultId].name + "</label>");
-      rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
-      rawXML.AppendLine("<font>#selectedFont</font>");
-      rawXML.AppendLine("<align>right</align>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("</control>");
-
-      // ******** THIRD
-
-
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
-      rawXML.AppendLine("<type>label</type>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-      rawXML.AppendLine("<posY>442</posY>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<label>" + menuItems[third].name + "</label>");
-      rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("<font>#labelFont</font>");
-      rawXML.AppendLine("<align>right</align>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("</control>");
-
-      // *************** FOURTH
-
-
-      rawXML.AppendLine("<control>");
-      rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
-      rawXML.AppendLine("<type>label</type>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-      rawXML.AppendLine("<posY>542</posY>");
-      rawXML.AppendLine("<width>320</width>");
-      rawXML.AppendLine("<height>72</height>");
-      rawXML.AppendLine("<label>" + menuItems[fourth].name + "</label>");
-      rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
-      rawXML.AppendLine("<font>#labelFont</font>");
-      rawXML.AppendLine("<align>right</align>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + ")|Control.HasFocus(656)</visible>");
-      rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
     }
@@ -1177,6 +1346,7 @@ namespace StreamedMPEditor
 
       foreach (backgroundItem item in bgItems)
       {
+        string subMenu = item.subMenuID.ToString();
         //
         // Main controls - these deal with random fanart
         //
@@ -1195,7 +1365,6 @@ namespace StreamedMPEditor
         }
         else
         {
-
           if (item.fanartHandlerEnabled)
           {
             rawXML.AppendLine("<type>image</type>");
@@ -1207,13 +1376,13 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<type>image</type>");
             rawXML.AppendLine("<texture>" + item.image + "</texture>");
           }
-
         }
 
         rawXML.AppendLine("<posx>0</posx>");
         rawXML.AppendLine("<posy>0</posy>");
         rawXML.AppendLine("<width>1280</width>");
         rawXML.AppendLine("<height>720</height>");
+
         if (item.fanartHandlerEnabled)
           rawXML.Append("<visible>[");
         else
@@ -1223,16 +1392,23 @@ namespace StreamedMPEditor
         for (int i = 0; i < item.ids.Count; i++)
         {
           if (i == 0)
-            rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+          {
+            if (subMenu == "0")
+              rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+            else
+              rawXML.Append("control.isvisible(" + subMenu + ")|control.isvisible(" + item.ids[i] + ")");
+          }
           else
             rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
         }
 
         if (item.fanartHandlerEnabled)
+        {
           if (item.EnableMusicNowPlayingFanart)
             rawXML.Append("]+control.isvisible(91919297)+![control.isvisible(91919294)+Player.HasMedia]</visible>");
           else
             rawXML.Append("]+control.isvisible(91919297)</visible>");
+        }
         else
           rawXML.Append("</visible>");
 
@@ -1262,7 +1438,12 @@ namespace StreamedMPEditor
           for (int i = 0; i < item.ids.Count; i++)
           {
             if (i == 0)
-              rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+            {
+              if (subMenu == "0")
+                rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+              else
+                rawXML.Append("control.isvisible(11111)|control.isvisible(" + item.ids[i] + ")");
+            }
             else
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
@@ -1304,7 +1485,12 @@ namespace StreamedMPEditor
           for (int i = 0; i < item.ids.Count; i++)
           {
             if (i == 0)
-              rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+            {
+              if (subMenu == "0")
+                rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+              else
+                rawXML.Append("control.isvisible(11111)|control.isvisible(" + item.ids[i] + ")");
+            }
             else
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
@@ -1334,7 +1520,12 @@ namespace StreamedMPEditor
           for (int i = 0; i < item.ids.Count; i++)
           {
             if (i == 0)
-              rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+            {
+              if (subMenu == "0")
+                rawXML.Append("control.isvisible(" + item.ids[i] + ")");
+              else
+                rawXML.Append("control.isvisible(11111)|control.isvisible(" + item.ids[i] + ")");
+            }
             else
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
@@ -1454,7 +1645,7 @@ namespace StreamedMPEditor
       {
         if (menItem.isDefault)
         {
-          // Add default label
+          // Add default Context label
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
           rawXML.AppendLine("<type>label</type>");
@@ -1468,10 +1659,10 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<align>right</align>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")</visible>");
+          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")</visible>");
           rawXML.AppendLine("</control>");
         }
-
+        // Context Lables
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
@@ -1486,9 +1677,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " delay=" + quote + "350" + quote + " time=" + quote + "250" + quote + ">Visible</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")</visible>");
         rawXML.AppendLine("</control>");
-
         // Display the current weather location under the menu option
         if (menItem.isWeather)
         {
@@ -1509,10 +1699,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")]</visible>");
           rawXML.AppendLine("</control>");
         }
-
-
       }
-
       xml = xml.Replace("<!-- BEGIN CONTEXT LABELS CODE-->", rawXML.ToString());
     }
 
@@ -1728,7 +1915,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
-      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      if (getInfoServiceVersion().CompareTo(isWeatherVersion) < 0)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY 1 MAX VALUE</description>");
@@ -2170,7 +2357,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
-      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      if (getInfoServiceVersion().CompareTo(isWeatherVersion) < 0)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY 1 MAX VALUE</description>");
@@ -2578,7 +2765,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
-      if (getInfoServiceVersion().CompareTo("1.6.0.0") < 0)
+      if (getInfoServiceVersion().CompareTo(isWeatherVersion) < 0)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY 1 MAX VALUE</description>");
@@ -3411,12 +3598,46 @@ namespace StreamedMPEditor
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "defaultimage", menItem.defaultImage, 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "disableBGSharing", menItem.disableBGSharing.ToString(), 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 2, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 2, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu1", menItem.subMenuLevel1.Count.ToString(), 2, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu2", menItem.subMenuLevel2.Count.ToString(), 2, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "subMenuLevel1ID", menItem.subMenuLevel1ID.ToString(), 2, false));
 
+        if (menItem.subMenuLevel1.Count > 0)
+        {
+          int subCount = 0;
+          subMenusExist = true;
+          rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
+          foreach (subMenuItem subItem in menItem.subMenuLevel1)
+          {
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 2, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 2, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 2, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 2, false));
+            subCount++;
+          }
+
+          subCount = 0;
+          if (menItem.subMenuLevel2.Count > 0)
+          {
+            rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
+            foreach (subMenuItem subItem in menItem.subMenuLevel2)
+            {
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 2, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 2, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 2, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 2, false));
+              subCount++;
+            }
+          }
+        }
 
         menuIndex += 1;
 
         if (menItem.fanartHandlerEnabled)
           fanartHandlerUsed = true;
+
+
       }
       rawXML.AppendLine("</section>");
       rawXML.AppendLine("</skin>");
@@ -3424,14 +3645,14 @@ namespace StreamedMPEditor
 
       xml += rawXML.ToString();
 
-      if (System.IO.File.Exists(mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Copy(mpPaths.configBasePath + "usermenuprofile.xml", mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
+      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
+        System.IO.File.Copy(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml", SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
 
-      if (System.IO.File.Exists(mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Delete(mpPaths.configBasePath + "usermenuprofile.xml");
+      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
+        System.IO.File.Delete(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
 
       StreamWriter writer;
-      writer = System.IO.File.CreateText(mpPaths.configBasePath + "usermenuprofile.xml");
+      writer = System.IO.File.CreateText(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
       writer.Write(xml);
       writer.Close();
     }
