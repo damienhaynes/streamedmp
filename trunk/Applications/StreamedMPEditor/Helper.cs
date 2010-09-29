@@ -132,7 +132,7 @@ namespace StreamedMPEditor
             return true;
         }
       }
-      return false;
+      return true;  // Not found - Return true as detailed above
     }
 
 
