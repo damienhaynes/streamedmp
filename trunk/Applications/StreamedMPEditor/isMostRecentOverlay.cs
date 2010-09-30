@@ -888,18 +888,6 @@
         "<textcolor>White</textcolor>\n" +
       "</control>" +
       "<control>\n" +
-        "<description>Series 1 defalt fanart image</description>\n" +
-        "<type>image</type>\n" +
-        "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>92</posY>\n" +
-        "<width>268</width>\n" +
-        "<height>151</height>\n" +
-        "<keepaspectratio>true</keepaspectratio>\n" +
-        "<texture>mostrecentdefaultfanart.png</texture>\n" +
-        "<visible>string.equals(" + fanartProperty + ",)</visible>" +
-      "</control>\n" +
-      "<control>\n" +
         "<description>Series 1 thumb/fanart</description>\n" +
         "<type>image</type>\n" +
         "<id>0</id>\n" +
