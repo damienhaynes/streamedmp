@@ -908,7 +908,7 @@
         "<width>268</width>\n" +
         "<height>151</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
-        "<texture>xx" + fanartProperty + "</texture>\n" +
+        "<texture>" + fanartProperty + "</texture>\n" +
       "</control>\n" +
     "</control>\n" +
     "<control>\n" +
