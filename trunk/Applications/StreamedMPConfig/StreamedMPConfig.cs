@@ -19,6 +19,8 @@ using Cornerstone.Database.Tables;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.Database;
 using SMPCheckSum;
+using WindowPlugins.GUITVSeries;
+using TVSeriesHelper = WindowPlugins.GUITVSeries.Helper;
 
 namespace StreamedMPConfig
 {
@@ -120,6 +122,11 @@ namespace StreamedMPConfig
       }
       Start();
       smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
+      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1236)))
+      {
+        getLastThreeAddedTVSeries();        
+        setTVSeriesEvents();
+      }
       if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
       {
         getLastThreeAddedMovies();
@@ -236,6 +243,11 @@ namespace StreamedMPConfig
     void setMovingPicturesEvents()
     {
       MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+    }
+
+    void setTVSeriesEvents()
+    {
+      OnlineParsing.OnlineParsingCompleted += new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
     }
 
     void getLastThreeWatchedMovies()
@@ -365,6 +377,59 @@ namespace StreamedMPConfig
       return minutes;
     }
 
+
+    void getLastThreeAddedTVSeries()
+    {
+      smcLog.WriteLog("Get Most Recent Added TVSeries", LogLevel.Info);
+
+      // get list of tvseries in database
+      List<DBEpisode> episodes = DBEpisode.GetAll();
+      
+      smcLog.WriteLog(string.Format("{0} Episodes found in database", episodes.Count.ToString()), LogLevel.Info);      
+
+      // Sort list in to most recent first
+      episodes.Sort((ep1, ep2) =>
+        {
+          DateTime dateAddedEp1 = DateTime.MinValue;
+          DateTime dateAddedEp2 = DateTime.MinValue;
+
+          DateTime.TryParse(ep1[DBEpisode.cFileDateCreated].ToString(), out dateAddedEp1);
+          DateTime.TryParse(ep2[DBEpisode.cFileDateCreated].ToString(), out dateAddedEp2);
+
+          return dateAddedEp2.CompareTo(dateAddedEp1);
+        });
+
+      // Clear the properties first
+      for (int i = 3; i == 0; --i)
+      {
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".title", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".episodetitle", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".episodenumber", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".season", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".thumb", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".fanart", string.Empty);
+      }
+      // Now take the first 3 
+      int mrEpisodeNumber = 1;
+      foreach (DBEpisode episode in episodes)
+      {
+        DBSeries series = TVSeriesHelper.getCorrespondingSeries(episode[DBEpisode.cSeriesID]);
+        if (series != null)
+        {
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".title", series.ToString());
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".episodetitle", episode[DBEpisode.cEpisodeName]);
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".episodenumber", episode[DBEpisode.cEpisodeIndex]);
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".season", episode[DBEpisode.cSeasonIndex]);
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".thumb", series.Poster);
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".fanart", Fanart.getFanart(episode[DBEpisode.cSeriesID]).FanartFilename);
+          smcLog.WriteLog(string.Format("Recently Added Episode {0} is {1}", mrEpisodeNumber, episode.ToString()), LogLevel.Info);
+          ++mrEpisodeNumber;
+        }        
+        if (mrEpisodeNumber == 4)
+          break;
+      }
+    }
+
     void cycleMostrecentFanart()
     {
       // Read the InfoService Fanart property every x seconds, check the next in the sequence each time through.
@@ -403,7 +468,7 @@ namespace StreamedMPConfig
         mostMovPicsRecentsWatched[i] = null;
         try
         {
-          mostTVSeriesRecents[i] = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series" + (i + 1).ToString() + ".fanart");
+          mostTVSeriesRecents[i] = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".fanart");
         }
         catch { }
         try
@@ -436,8 +501,8 @@ namespace StreamedMPConfig
 
       for (int i = 0; i < 3; i++)
       {
-        seasonNum = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series" + (i + 1).ToString() + ".season");
-        episodeNum = GUIPropertyManager.GetProperty("#infoservice.recentlyAdded.series" + (i + 1).ToString() + ".episodenumber");
+        seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".season");
+        episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".episodenumber");
         if (mostTVSeriesRecents[i] != null)
         {
           if (smpSettings.mrSeasonEpisodeStyle2)
@@ -592,6 +657,16 @@ namespace StreamedMPConfig
       {
         smcLog.WriteLog("Restarting MediaPortal", LogLevel.Info);
         restartMediaportal();
+      }
+    }
+
+    private void OnTVSeriesParseCompleted(bool dataUpdated)
+    {
+      // if tvseries has new or changed data update recents
+      if (dataUpdated)
+      {
+        smcLog.WriteLog("TVSeries online import complete", LogLevel.Info);
+        getLastThreeAddedTVSeries();
       }
     }
 
