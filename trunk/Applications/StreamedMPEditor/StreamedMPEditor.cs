@@ -130,13 +130,15 @@ namespace StreamedMPEditor
     const string quote = "\"";
 
     public static bool basicHomeLoadError = false;
+    public static bool changeOutstanding = false; 
+    
     bool useInfoServiceSeparator = false;
     bool fanartHandlerUsed = false;
     bool exitCondition = false;
-    bool changeOutstanding = false;
     bool mostRecentTVSeriesCycleFanart = true;
     bool mostRecentMovPicsCycleFanart = true;
-    bool subMenusExist = false;
+    bool subMenuL1Exists = false;
+    bool subMenuL2Exists = false;
 
     string xml;
     string xmlTemplate;
