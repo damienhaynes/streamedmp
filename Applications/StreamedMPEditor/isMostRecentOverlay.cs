@@ -897,6 +897,7 @@
         "<height>151</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
         "<texture>mostrecentdefaultfanart.png</texture>\n" +
+        "<visible>string.equals(" + fanartProperty + ",)</visible>" +
       "</control>\n" +
       "<control>\n" +
         "<description>Series 1 thumb/fanart</description>\n" +
@@ -907,7 +908,7 @@
         "<width>268</width>\n" +
         "<height>151</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
-        "<texture>" + fanartProperty + "</texture>\n" +
+        "<texture>xx" + fanartProperty + "</texture>\n" +
       "</control>\n" +
     "</control>\n" +
     "<control>\n" +
