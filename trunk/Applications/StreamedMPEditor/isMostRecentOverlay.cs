@@ -87,7 +87,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -114,7 +114,7 @@
                     "<width>112</width>\n" +
                     "<height>165</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>\n" +
+                    "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 1 Rounded Cover</description>\n" +
@@ -133,7 +133,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>98</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series1.title</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series1.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -144,7 +144,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>151</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -155,7 +155,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>206</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series1.episodenumber</label>\n" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series1.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -164,7 +164,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -191,7 +191,7 @@
                     "<width>112</width>\n" +
                     "<height>165</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>\n" +
+                    "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 2 Rounded Cover</description>\n" +
@@ -210,7 +210,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>299</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series2.title</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series2.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -221,7 +221,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>352</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -232,7 +232,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>405</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series2.episodenumber</label>\n" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series2.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -241,7 +241,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>\n" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
@@ -268,7 +268,7 @@
                     "<width>112</width>\n" +
                     "<height>165</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>\n" +
+                    "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 3 Rounded Cover</description>\n" +
@@ -287,7 +287,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>498</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series3.title</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series3.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -298,7 +298,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>551</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
+                    "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -309,7 +309,7 @@
                     "<posX>1020</posX>\n" +
                     "<posY>604</posY>\n" +
                     "<width>255</width>\n" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series3.episodenumber</label>\n" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series3.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
@@ -384,7 +384,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -411,7 +411,7 @@
                     "<height>163</height>" +
                     "<width>111</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
+                    "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>Series 1 Rounded Cover</description>" +
@@ -430,7 +430,7 @@
                     "<posX>152</posX>" +
                     "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
                     "<width>258</width>" +
-                    "<label>#infoservice.recentlyAdded.series1.title</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series1.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -441,7 +441,7 @@
                     "<posX>152</posX>" +
                     "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#infoservice.recentlyAdded.series1.episodetitle</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -452,7 +452,7 @@
                     "<posX>152</posX>" +
                     "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series1.episodenumber</label>" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series1.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -461,7 +461,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -488,7 +488,7 @@
                     "<height>163</height>" +
                     "<width>111</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
+                    "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>Series 2 Rounded Cover</description>" +
@@ -507,7 +507,7 @@
                     "<posX>568</posX>" +
                     "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
                     "<width>258</width>" +
-                    "<label>#infoservice.recentlyAdded.series2.title</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series2.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -518,7 +518,7 @@
                     "<posX>565</posX>" +
                     "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#infoservice.recentlyAdded.series2.episodetitle</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -529,7 +529,7 @@
                     "<posX>565</posX>" +
                     "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
                     "<width>258</width>" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series2.episodenumber</label>" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series2.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -538,7 +538,7 @@
                   "<description>GROUP: RecentlyAdded Series</description>" +
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
-                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>" +
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -565,7 +565,7 @@
                     "<height>163</height>" +
                     "<width>111</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
-                    "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
+                    "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>Series 3 Rounded Cover</description>" +
@@ -584,7 +584,7 @@
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#infoservice.recentlyAdded.series3.title</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series3.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -595,7 +595,7 @@
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#infoservice.recentlyAdded.series3.episodetitle</label>" +
+                    "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -606,7 +606,7 @@
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#TVSeries.Translation.Season.Label: #infoservice.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #infoservice.recentlyAdded.series3.episodenumber</label>" +
+                    "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series3.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
@@ -671,7 +671,7 @@
                     "<description>GROUP: RecentlyAdded Series 3</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series3.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -698,7 +698,7 @@
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
-                      "<texture>#infoservice.recentlyAdded.series3.thumb</texture>" +
+                      "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Series 3 episode</description>" +
@@ -707,7 +707,7 @@
                       "<posX>871</posX>" +
                       "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
                       "<width>115</width>" +
-                      "<label>#infoservice.recentlyAdded.series3.seasonx#infoservice.recentlyAdded.series3.episodenumber</label>" +
+                      "<label>#StreamedMP.recentlyAdded.series3.seasonx#StreamedMP.recentlyAdded.series3.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
                       "<textcolor>White</textcolor>" +
@@ -717,7 +717,7 @@
                     "<description>GROUP: RecentlyAdded Series 2</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series2.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -744,7 +744,7 @@
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
-                      "<texture>#infoservice.recentlyAdded.series2.thumb</texture>" +
+                      "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Series 2 episode</description>" +
@@ -753,7 +753,7 @@
                       "<posX>1011</posX>" +
                       "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
                       "<width>115</width>" +
-                      "<label>#infoservice.recentlyAdded.series2.seasonx#infoservice.recentlyAdded.series2.episodenumber</label>" +
+                      "<label>#StreamedMP.recentlyAdded.series2.seasonx#StreamedMP.recentlyAdded.series2.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
                       "<textcolor>White</textcolor>" +
@@ -763,7 +763,7 @@
                     "<description>GROUP: RecentlyAdded Series 1</description>" +
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#infoservice.recentlyAdded.series1.thumb,#)</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>" +
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
@@ -790,7 +790,7 @@
                       "<width>115</width>" +
                       "<height>170</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
-                      "<texture>#infoservice.recentlyAdded.series1.thumb</texture>" +
+                      "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Series 3 episode</description>" +
@@ -799,7 +799,7 @@
                       "<posX>1151</posX>" +
                       "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
                       "<width>115</width>" +
-                      "<label>#infoservice.recentlyAdded.series1.seasonx#infoservice.recentlyAdded.series1.episodenumber</label>" +
+                      "<label>#StreamedMP.recentlyAdded.series1.seasonx#StreamedMP.recentlyAdded.series1.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
                       "<textcolor>White</textcolor>" +
@@ -821,7 +821,7 @@
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
 
         if (!mostRecentTVSeriesCycleFanart)
-          fanartProperty = "#infoservice.recentlyAdded.series1.fanart";
+          fanartProperty = "#StreamedMP.recentlyAdded.series1.fanart";
 
         xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
               "<window>\n" +
@@ -830,7 +830,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series1.fanart,#)|string.starts(#infoservice.recentlyAdded.series1.thumb,#)]</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -869,9 +869,9 @@
                     "<width>258</width>\n" +
                     "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #infoservice.recentlyAdded.series1.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #StreamedMP.recentlyAdded.series1.title</label>\n";
         else
-          xml += "<label>#infoservice.recentlyAdded.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -883,7 +883,7 @@
         "<posY>262</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
-        "<label>#infoservice.recentlyAdded.series1.episodetitle</label>\n" +
+        "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>" +
@@ -915,7 +915,7 @@
       "<description>GROUP: RecentlyAdded Series</description>\n" +
       "<type>group</type>\n" +
       "<dimColor>0xffffffff</dimColor>\n" +
-      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series2.fanart,#)|string.starts(#infoservice.recentlyAdded.series2.thumb,#)]</visible>" +
+      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)]</visible>" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -932,9 +932,9 @@
         "<width>258</width>\n" + 
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #infoservice.recentlyAdded.series2.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #StreamedMP.recentlyAdded.series2.title</label>\n";
         else
-          xml += "<label>#infoservice.recentlyAdded.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -946,7 +946,7 @@
         "<posY>297</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
-        "<label>#infoservice.recentlyAdded.series2.episodetitle</label>\n" +
+        "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -955,7 +955,7 @@
       "<description>GROUP: RecentlyAdded Series</description>\n" +
       "<type>group</type>\n" +
       "<dimColor>0xffffffff</dimColor>\n" +
-      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#infoservice.recentlyAdded.series3.fanart,#)|string.starts(#infoservice.recentlyAdded.series3.thumb,#)]</visible>" +
+      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)]</visible>" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -971,9 +971,9 @@
         "<width>258</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #infoservice.recentlyAdded.series3.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #StreamedMP.recentlyAdded.series3.title</label>\n";
         else
-          xml += "<label>#infoservice.recentlyAdded.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -985,7 +985,7 @@
         "<posY>332</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
-        "<label>#infoservice.recentlyAdded.series3.episodetitle</label>\n" +
+        "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
