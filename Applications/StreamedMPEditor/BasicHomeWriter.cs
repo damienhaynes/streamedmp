@@ -15,7 +15,7 @@ namespace StreamedMPEditor
     {
       string menuPos;
       string skeletonFile;
-      string subArrowVisible = "control.hasfocus(";
+      string subArrowVisible;
 
       // Sync Submenu ID's with control ID's
       foreach (menuItem item in menuItems)
@@ -89,9 +89,9 @@ namespace StreamedMPEditor
                         + "<define>#" + menuPos + "</define>");
 
       }
-      
-      
-      
+
+
+
       // Write out Sub Menu Code
       if (direction == menuType.vertical)
         xml = xml.Replace("<!-- BEGIN GENERATED SUBMENU CODE -->", bhSubMenuWriterV());
@@ -128,7 +128,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
         rawXML.AppendLine("</control>");
 
-         // Write out the menu butons and lables
+        // Write out the menu butons and lables
         for (int i = 0; i < 14; i++)
         {
           if (direction == menuType.horizontal)
@@ -144,149 +144,147 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN GENERATED BUTTON CODE-->", rawXML.ToString());
 
       // Are the Submenus defined, if so we need the additional blade controls
-      if (subMenusExist)
+      string tmpXML = string.Empty;
+      if (subMenuL1Exists)
       {
-        level1LateralBladeVisible = level1LateralBladeVisible.Substring(0,(level1LateralBladeVisible.Length - 19));
+        level1LateralBladeVisible = level1LateralBladeVisible.Substring(0, (level1LateralBladeVisible.Length - 19));
+
+        tmpXML = "<control>" +
+                  "<description>Level 1 - Lateral blade control item</description>" +
+                  "<type>label</type>" +
+                  "<id>4242</id>" +
+                  "<label></label>" +
+                  "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
+                  "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
+                  "<visible>yes</visible>" +
+                "</control>" +
+                "<control>" +
+                  "<description>Lateral blade</description>" +
+                  "<type>image</type>" +
+                  "<id>11111</id>" +
+                  "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
+                  "<posY>0</posY>" +
+                  "<width>230</width>" +
+                  "<height>687</height>" +
+                  "<texture>homebladesub.png</texture>" +
+                  "<visible>" + level1LateralBladeVisible + "</visible>" +
+                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                  "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                "</control>" +
+                "<control>" +
+                  "<description>lateral blade logo</description>" +
+                  "<type>image</type>" +
+                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                  "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                  "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
+                  "<posY>179</posY>" +
+                  "<width>210</width>" +
+                  "<height>70</height>" +
+                  "<texture>lateralbladelogo.png</texture>" +
+                  "<visible>" + level1LateralBladeVisible + "</visible>" +
+                "</control>";
+
+        subArrowVisible = "control.isvisible(11111)|Control.HasFocus(";
+        foreach (menuItem item in menuItems)
+        {
+          if (item.subMenuLevel1ID != 0)
+            subArrowVisible += (item.id + 700).ToString() + ")|control.hasfocus(" + (item.id + 800).ToString() + ")|control.hasfocus(" + (item.id + 900).ToString() + ")|control.hasfocus(";
+        }
+        subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
+
+        tmpXML += "<control>" +
+                  "<description>Sub Menu Indicator (Main)</description>" +
+                  "<type>image</type>" +
+                  "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
+                  "<posY>330</posY>" +
+                  "<align>right</align>" +
+                  "<width>16</width>" +
+                  "<height>16</height>" +
+                  "<visible>" + subArrowVisible + "</visible>" +
+                  "<colorDiffuse>fffffffff</colorDiffuse>" +
+                  "<texture>arrowrightfo.png</texture>" +
+                  "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "</control>";
+      }
+
+      if (subMenuL2Exists)
+      {
         level2LateralBladeVisible = level2LateralBladeVisible.Substring(0, (level2LateralBladeVisible.Length - 19));
 
-        string tmpXML = "<control>" +
-                          "<description>Lateral blade control item</description>" +
-                          "<type>label</type>" +
-                          "<id>4242</id>" +
-                          "<label></label>" +
-                          "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
-                          "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
-                          "<visible>yes</visible>" +
-                        "</control>" +
-                        "<control>" +
-                          "<description>Lateral blade</description>" +
-                          "<type>image</type>" +
-                          "<id>11111</id>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
-                          "<posY>0</posY>" +
-                          "<width>230</width>" +
-                          "<height>687</height>" +
-                          "<texture>homebladesub.png</texture>" +
-                          "<visible>" + level1LateralBladeVisible + "</visible>" +
-                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                        "</control>" +
-                        "<control>" +
-                          "<description>lateral blade logo</description>" +
-                          "<type>image</type>" +
-                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) - 5 ).ToString() + "</posX>" +
-                          "<posY>179</posY>" +
-                          "<width>210</width>" +
-                          "<height>70</height>" +
-                          "<texture>lateralbladelogo.png</texture>" +
-                          "<visible>" + level1LateralBladeVisible + "</visible>" +
-                        "</control>";
-       
-        
+        tmpXML += "<control>" +
+                   "<description>Level 2 - Lateral blade control item</description>" +
+                   "<type>label</type>" +
+                   "<id>4242</id>" +
+                   "<label></label>" +
+                   "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
+                   "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
+                   "<visible>yes</visible>" +
+                 "</control>" +
+                 "<control>" +
+                   "<description>Lateral blade</description>" +
+                   "<type>image</type>" +
+                   "<id>22222</id>" +
+                   "<posX>" + (int.Parse(txtMenuPos.Text) + 215).ToString() + "</posX>" +
+                   "<posY>0</posY>" +
+                   "<width>230</width>" +
+                   "<height>687</height>" +
+                   "<texture>homebladesub.png</texture>" +
+                   "<visible>" + level2LateralBladeVisible + "</visible>" +
+                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                 "</control>" +
+                 "<control>" +
+                   "<description>lateral blade logo</description>" +
+                   "<type>image</type>" +
+                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
+                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                   "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
+                   "<posY>179</posY>" +
+                   "<width>210</width>" +
+                   "<height>70</height>" +
+                   "<texture>lateralbladelogo.png</texture>" +
+                   "<visible>" + level2LateralBladeVisible + "</visible>" +
+                 "</control>";
 
-               tmpXML += "<control>" +
-                          "<description>Lateral blade control item</description>" +
-                          "<type>label</type>" +
-                          "<id>4242</id>" +
-                          "<label></label>" +
-                          "<!-- Set 'visible' to YES if you wanna have home labels displayed when lateral blade is active  -->" +
-                          "<!-- Set 'visible' to FALSE if you don't wanna have inactive home labels displayed when lateral blade is active  -->" +
-                          "<visible>yes</visible>" +
-                        "</control>" +
-                        "<control>" +
-                          "<description>Lateral blade</description>" +
-                          "<type>image</type>" +
-                          "<id>22222</id>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
-                          "<posY>0</posY>" +
-                          "<width>230</width>" +
-                          "<height>687</height>" +
-                          "<texture>homebladesub.png</texture>" +
-                          "<visible>" + level2LateralBladeVisible + "</visible>" +
-                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                        "</control>" +
-                        "<control>" +
-                          "<description>lateral blade logo</description>" +
-                          "<type>image</type>" +
-                          "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                          "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                          "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                          "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
-                          "<posY>179</posY>" +
-                          "<width>210</width>" +
-                          "<height>70</height>" +
-                          "<texture>lateralbladelogo.png</texture>" +
-                          "<visible>" + level2LateralBladeVisible + "</visible>" +
-                        "</control>";
-
-
-
-                foreach (menuItem item in menuItems)
+          subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
+          foreach (menuItem item in menuItems)
+          {
+            if (item.subMenuLevel1ID != 0)
+              if (item.subMenuLevel2.Count > 0)
+              {
+                for (int i = 0; i < item.subMenuLevel1.Count; i++)
                 {
-                  if (item.subMenuLevel1ID != 0)
-                    subArrowVisible += (item.id + 700).ToString() + ")|control.hasfocus(" + (item.id + 800).ToString() + ")|control.hasfocus(" + (item.id + 900).ToString() + ")|control.hasfocus(";
+                  subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
                 }
-                subArrowVisible = subArrowVisible.Substring(0,(subArrowVisible.Length - 18));
-
-                tmpXML += "<control>" +
-                          "<description>Sub Menu Indicator</description>" +
-                          "<type>image</type>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
-                          "<posY>330</posY>" +
-                          "<align>right</align>" +
-                          "<width>16</width>" +
-                          "<height>16</height>" +
-                          "<visible>" + subArrowVisible + "</visible>" +
-                          "<colorDiffuse>fffffffff</colorDiffuse>" +
-                          "<texture>arrowrightfo.png</texture>" +
-                          "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                        "</control>";
-
-
-                subArrowVisible = "control.hasfocus(";
-                foreach (menuItem item in menuItems)
-                {
-                  if (item.subMenuLevel1ID != 0)
-                    if (item.subMenuLevel2.Count > 0)
-                    {
-                      for (int i = 0; i < item.subMenuLevel1.Count; i++)
-                      {
-                        subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
-                      }
-                    }
-                }
-                subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-
-
-                tmpXML += "<control>" +
-                          "<description>Sub Menu Indicator</description>" +
-                          "<type>image</type>" +
-                          "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
-                          "<posY>330</posY>" +
-                          "<align>right</align>" +
-                          "<width>16</width>" +
-                          "<height>16</height>" +
-                          "<visible>" + subArrowVisible + "</visible>" +
-                          "<colorDiffuse>fffffffff</colorDiffuse>" +
-                          "<texture>arrowrightfo.png</texture>" +
-                          "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                        "</control>";
-
-
+              }
+          }
+          subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
+          tmpXML += "<control>" +
+                      "<description>Sub Menu Indicator (Level1)</description>" +
+                      "<type>image</type>" +
+                      "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
+                      "<posY>333</posY>" +
+                      "<align>right</align>" +
+                      "<width>16</width>" +
+                      "<height>16</height>" +
+                      "<visible>" + subArrowVisible + "</visible>" +
+                      "<colorDiffuse>fffffffff</colorDiffuse>" +
+                      "<texture>arrowrightfo.png</texture>" +
+                      "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                      "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                    "</control>";
+        }
+        tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
         xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
-      }
     }
 
     #endregion
@@ -3598,7 +3596,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "defaultimage", menItem.defaultImage, 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "disableBGSharing", menItem.disableBGSharing.ToString(), 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu1", menItem.subMenuLevel1.Count.ToString(), 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu2", menItem.subMenuLevel2.Count.ToString(), 2, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "subMenuLevel1ID", menItem.subMenuLevel1ID.ToString(), 2, false));
@@ -3606,7 +3603,7 @@ namespace StreamedMPEditor
         if (menItem.subMenuLevel1.Count > 0)
         {
           int subCount = 0;
-          subMenusExist = true;
+          subMenuL1Exists = true;
           rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
           foreach (subMenuItem subItem in menItem.subMenuLevel1)
           {
@@ -3620,6 +3617,7 @@ namespace StreamedMPEditor
           subCount = 0;
           if (menItem.subMenuLevel2.Count > 0)
           {
+            subMenuL2Exists = true;
             rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
             foreach (subMenuItem subItem in menItem.subMenuLevel2)
             {

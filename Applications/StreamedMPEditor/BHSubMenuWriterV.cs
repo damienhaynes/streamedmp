@@ -34,6 +34,7 @@ namespace StreamedMPEditor
           writeSubMenuLevel2V(menItem);
         }
       }
+      localxml += "<!--             End of Submenu Code            -->";
       return localxml;
     }
 
@@ -81,7 +82,7 @@ namespace StreamedMPEditor
                       "<animation effect=\"slide\" time=\"0\" end=\"0,0\">hidden</animation>" +
                       "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                       "<posX>" + int.Parse(txtMenuPos.Text) + "</posX>" +
-                      "<posY>315</posY>" +
+                      "<posY>325</posY>" +
                       "<width>230</width>" +
                       "<height>405</height>" +
                       "<dimColor>ffffffff</dimColor>" +
@@ -107,10 +108,10 @@ namespace StreamedMPEditor
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</id>" +
-                "<height>40</height>" +
+                "<height>30</height>" +
                 "<width>230</width>" +
                 "<textXOff>5</textXOff>" +
-                "<textYOff>7</textYOff>" +
+                "<textYOff>4</textYOff>" +
                 "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>";
 
        if (parentMenu.subMenuLevel1[j].hyperlink == "196299")
@@ -122,7 +123,7 @@ namespace StreamedMPEditor
        else
         localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
 
-       localxml += "<font>mediastream10tc</font>" +
+       localxml += "<font>mediastream11tc</font>" +
                 "<onleft>" + (parentMenu.id + 900).ToString() + "</onleft>" +
                 "<onright>" + (parentMenu.subMenuLevel1ID + (j + 1 + isSecondLevel)).ToString() + "</onright>" +
                 "<ondown>" + ondown + "</ondown>" +
@@ -163,7 +164,7 @@ namespace StreamedMPEditor
                       "<animation effect=\"slide\" time=\"0\" end=\"0,0\">hidden</animation>" +
                       "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                       "<posX>" + (int.Parse(txtMenuPos.Text) + 230).ToString() + "</posX>" +
-                      "<posY>315</posY>" +
+                      "<posY>325</posY>" +
                       "<width>230</width>" +
                       "<height>405</height>" +
                       "<dimColor>ffffffff</dimColor>" +
@@ -189,10 +190,10 @@ namespace StreamedMPEditor
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</id>" +
-                "<height>40</height>" +
+                "<height>30</height>" +
                 "<width>230</width>" +
                 "<textXOff>5</textXOff>" +
-                "<textYOff>7</textYOff>" +
+                "<textYOff>4</textYOff>" +
                 "<label>" + parentMenu.subMenuLevel2[j].displayName + "</label>";
 
         if (parentMenu.subMenuLevel2[j].hyperlink == "196299")
@@ -205,7 +206,7 @@ namespace StreamedMPEditor
           localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
 
 
-        localxml += "<font>mediastream10tc</font>" +
+        localxml += "<font>mediastream11tc</font>" +
                  "<onleft>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</onleft>" +
                  "<onright>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</onright>" +
                  "<ondown>" + ondown + "</ondown>" +
@@ -216,7 +217,6 @@ namespace StreamedMPEditor
                "</control>";
       }
       localxml += "</control>";
-
       return localxml;
     }
   }

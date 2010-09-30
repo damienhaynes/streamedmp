@@ -159,6 +159,7 @@ namespace StreamedMPEditor
           subItem.hyperlink = formStreamedMpEditor.prettyItems[index].id; 
         }
       }
+      formStreamedMpEditor.changeOutstanding = true;
       subMenuLevel1.Add(subItem);
       lboxSubMenuLevel1.Items.Add(subItem.displayName);
     }
@@ -186,6 +187,7 @@ namespace StreamedMPEditor
           subItem.hyperlink = formStreamedMpEditor.prettyItems[index].id;
         }
       }
+      formStreamedMpEditor.changeOutstanding = true;
       subMenuLevel2.Add(subItem);
       lboxSubMenuLevel2.Items.Add(subItem.displayName);
     }
@@ -281,6 +283,7 @@ namespace StreamedMPEditor
         int index = lboxSubMenuLevel1.SelectedIndex;
         subMenuLevel1.Remove(subMenuLevel1[index]);
         lboxSubMenuLevel1.Items.RemoveAt(index);
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -289,8 +292,9 @@ namespace StreamedMPEditor
       if (lboxSubMenuLevel2.SelectedIndex != -1)
       {
         int index = lboxSubMenuLevel2.SelectedIndex;
-        subMenuLevel2.Remove(subMenuLevel1[index]);
+        subMenuLevel2.Remove(subMenuLevel2[index]);
         lboxSubMenuLevel2.Items.RemoveAt(index);
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -301,9 +305,13 @@ namespace StreamedMPEditor
         int index = lboxSubMenuLevel1.SelectedIndex;
         itemName.itemDisplayName = subMenuLevel1[index].displayName;
         itemName.ShowDialog();
-        subMenuLevel1[index].displayName = itemName.itemDisplayName;
-        lboxSubMenuLevel1.Items.RemoveAt(index);
-        lboxSubMenuLevel1.Items.Insert(index, itemName.itemDisplayName);
+        if (itemName.itemDisplayName != subMenuLevel1[index].displayName)
+        {
+          subMenuLevel1[index].displayName = itemName.itemDisplayName;
+          lboxSubMenuLevel1.Items.RemoveAt(index);
+          lboxSubMenuLevel1.Items.Insert(index, itemName.itemDisplayName);
+          formStreamedMpEditor.changeOutstanding = true;
+        }
       }
     }
 
@@ -314,9 +322,13 @@ namespace StreamedMPEditor
         int index = lboxSubMenuLevel2.SelectedIndex;
         itemName.itemDisplayName = subMenuLevel2[index].displayName;
         itemName.ShowDialog();
-        subMenuLevel2[index].displayName = itemName.itemDisplayName;
-        lboxSubMenuLevel2.Items.RemoveAt(index);
-        lboxSubMenuLevel2.Items.Insert(index, itemName.itemDisplayName);
+        if (itemName.itemDisplayName != subMenuLevel2[index].displayName)
+        {
+          subMenuLevel2[index].displayName = itemName.itemDisplayName;
+          lboxSubMenuLevel2.Items.RemoveAt(index);
+          lboxSubMenuLevel2.Items.Insert(index, itemName.itemDisplayName);
+          formStreamedMpEditor.changeOutstanding = true;
+        }
       }
     }
 
@@ -334,6 +346,7 @@ namespace StreamedMPEditor
         lboxSubMenuLevel1.Items.Insert(index - 1, listItem);
         subMenuLevel1.Insert(index - 1, subItem);
         lboxSubMenuLevel1.SelectedIndex = index - 1;
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -351,6 +364,7 @@ namespace StreamedMPEditor
         lboxSubMenuLevel1.Items.Insert(index + 1, listItem);
         subMenuLevel1.Insert(index + 1, subItem);
         lboxSubMenuLevel1.SelectedIndex = index + 1;
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -361,13 +375,14 @@ namespace StreamedMPEditor
         int index = lboxSubMenuLevel2.SelectedIndex;
 
         Object listItem = lboxSubMenuLevel2.SelectedItem;
-        formStreamedMpEditor.subMenuItem subItem = subMenuLevel1[index];
+        formStreamedMpEditor.subMenuItem subItem = subMenuLevel2[index];
 
         lboxSubMenuLevel2.Items.RemoveAt(index);
         subMenuLevel2.RemoveAt(index);
         lboxSubMenuLevel2.Items.Insert(index - 1, listItem);
         subMenuLevel2.Insert(index - 1, subItem);
         lboxSubMenuLevel2.SelectedIndex = index - 1;
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -385,6 +400,7 @@ namespace StreamedMPEditor
         lboxSubMenuLevel2.Items.Insert(index + 1, listItem);
         subMenuLevel2.Insert(index + 1, subItem);
         lboxSubMenuLevel2.SelectedIndex = index + 1;
+        formStreamedMpEditor.changeOutstanding = true;
       }
     }
 
@@ -424,13 +440,10 @@ namespace StreamedMPEditor
         mrDisplaySelection.ShowDialog();
         subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
       };
-
     }
 
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {
-      formStreamedMpEditor.menuItems[menuIndex].subMenuLevel1 = subMenuLevel1;
-      formStreamedMpEditor.menuItems[menuIndex].subMenuLevel2 = subMenuLevel2;
       this.Hide();
     }
     #endregion
