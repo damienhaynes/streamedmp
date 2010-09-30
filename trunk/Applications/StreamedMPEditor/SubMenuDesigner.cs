@@ -286,31 +286,38 @@ namespace StreamedMPEditor
 
     private void btRemoveSubItem2_Click(object sender, EventArgs e)
     {
-      int index = lboxSubMenuLevel2.SelectedIndex;
-      subMenuLevel2.Remove(subMenuLevel1[index]);
-      lboxSubMenuLevel2.Items.RemoveAt(index);
+      if (lboxSubMenuLevel2.SelectedIndex != -1)
+      {
+        int index = lboxSubMenuLevel2.SelectedIndex;
+        subMenuLevel2.Remove(subMenuLevel1[index]);
+        lboxSubMenuLevel2.Items.RemoveAt(index);
+      }
     }
 
     private void btEditItemSubMenu1_Click(object sender, EventArgs e)
     {
-      int index = lboxSubMenuLevel1.SelectedIndex;
-
-      itemName.itemDisplayName = subMenuLevel1[index].displayName;
-      itemName.ShowDialog();
-      subMenuLevel1[index].displayName = itemName.itemDisplayName;
-      lboxSubMenuLevel1.Items.RemoveAt(index);
-      lboxSubMenuLevel1.Items.Insert(index,itemName.itemDisplayName);
+      if (lboxSubMenuLevel1.SelectedIndex != -1)
+      {
+        int index = lboxSubMenuLevel1.SelectedIndex;
+        itemName.itemDisplayName = subMenuLevel1[index].displayName;
+        itemName.ShowDialog();
+        subMenuLevel1[index].displayName = itemName.itemDisplayName;
+        lboxSubMenuLevel1.Items.RemoveAt(index);
+        lboxSubMenuLevel1.Items.Insert(index, itemName.itemDisplayName);
+      }
     }
 
     private void btEditSubMenu2_Click(object sender, EventArgs e)
     {
-      int index = lboxSubMenuLevel2.SelectedIndex;
-
-      itemName.itemDisplayName = subMenuLevel1[index].displayName;
-      itemName.ShowDialog();
-      subMenuLevel2[index].displayName = itemName.itemDisplayName;
-      lboxSubMenuLevel2.Items.RemoveAt(index);
-      lboxSubMenuLevel2.Items.Insert(index, itemName.itemDisplayName);
+      if (lboxSubMenuLevel2.SelectedIndex != -1)
+      {
+        int index = lboxSubMenuLevel2.SelectedIndex;
+        itemName.itemDisplayName = subMenuLevel2[index].displayName;
+        itemName.ShowDialog();
+        subMenuLevel2[index].displayName = itemName.itemDisplayName;
+        lboxSubMenuLevel2.Items.RemoveAt(index);
+        lboxSubMenuLevel2.Items.Insert(index, itemName.itemDisplayName);
+      }
     }
 
     private void btSub1MoveUp_Click(object sender, EventArgs e)
