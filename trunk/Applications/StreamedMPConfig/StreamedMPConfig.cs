@@ -122,7 +122,7 @@ namespace StreamedMPConfig
       }
       Start();
       smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
-      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1236)))
+      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
       {
         getLastThreeAddedTVSeries();
         getLastThreeWatchedTVSeries();
@@ -383,23 +383,8 @@ namespace StreamedMPConfig
     {
       smcLog.WriteLog("Get Most Recent Watched TVSeries", LogLevel.Info);
 
-      // get list of tvseries in database      
-      List<DBEpisode> episodes = DBEpisode.GetAll();
-      episodes.RemoveAll(eps => eps[DBOnlineEpisode.cWatched] != true);
-
-      smcLog.WriteLog(string.Format("{0} Episodes watched in database", episodes.Count.ToString()), LogLevel.Info);
-
-      // Sort list in to most recently watched first
-      episodes.Sort((ep1, ep2) =>
-      {
-        DateTime dateWatchedEp1 = DateTime.MinValue;
-        DateTime dateWatchedEp2 = DateTime.MinValue;
-
-        DateTime.TryParse(ep1[DBEpisode.cDateWatched].ToString(), out dateWatchedEp1);
-        DateTime.TryParse(ep2[DBEpisode.cDateWatched].ToString(), out dateWatchedEp2);
-
-        return dateWatchedEp2.CompareTo(dateWatchedEp1);
-      });
+      // get list of the 3 most recently watched episodes in tvseries database      
+      List<DBEpisode> episodes = DBEpisode.GetMostRecent(MostRecentType.Watched, 30, 3);
 
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -411,6 +396,12 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".thumb", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".fanart", string.Empty);
       }
+
+      if (episodes.Count == 0)
+      {
+        smcLog.WriteLog("Found no results for TVseries Recently Watched", LogLevel.Info);
+      }
+
       // Now take the first 3 
       int mrEpisodeNumber = 1;
       foreach (DBEpisode episode in episodes)
@@ -427,8 +418,6 @@ namespace StreamedMPConfig
           smcLog.WriteLog(string.Format("Recently Watched Episode {0} is {1}", mrEpisodeNumber, episode.ToString()), LogLevel.Info);
           ++mrEpisodeNumber;
         }
-        if (mrEpisodeNumber == 4)
-          break;
       }
     }
 
@@ -436,23 +425,10 @@ namespace StreamedMPConfig
     {
       smcLog.WriteLog("Get Most Recent Added TVSeries", LogLevel.Info);
 
-      // get list of tvseries in database
-      List<DBEpisode> episodes = DBEpisode.GetAll();
+      // get list of the 3 most recently added episodes in tvseries database
+      // use file created date rather than added as we dont want to see all episodes for new databases
+      List<DBEpisode> episodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3);
       
-      smcLog.WriteLog(string.Format("{0} Episodes found in database", episodes.Count.ToString()), LogLevel.Info);      
-
-      // Sort list in to most recently added first
-      episodes.Sort((ep1, ep2) =>
-        {
-          DateTime dateAddedEp1 = DateTime.MinValue;
-          DateTime dateAddedEp2 = DateTime.MinValue;
-
-          DateTime.TryParse(ep1[DBEpisode.cFileDateCreated].ToString(), out dateAddedEp1);
-          DateTime.TryParse(ep2[DBEpisode.cFileDateCreated].ToString(), out dateAddedEp2);
-
-          return dateAddedEp2.CompareTo(dateAddedEp1);
-        });
-
       // Clear the properties first
       for (int i = 3; i == 0; --i)
       {
@@ -463,7 +439,13 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".thumb", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".fanart", string.Empty);
       }
-      // Now take the first 3 
+
+      if (episodes.Count == 0)
+      {
+        smcLog.WriteLog("Found no results for TVseries Recently Added", LogLevel.Info);
+      }
+
+      // Set properties
       int mrEpisodeNumber = 1;
       foreach (DBEpisode episode in episodes)
       {
@@ -478,9 +460,7 @@ namespace StreamedMPConfig
           SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".fanart", Fanart.getFanart(episode[DBEpisode.cSeriesID]).FanartFilename);
           smcLog.WriteLog(string.Format("Recently Added Episode {0} is {1}", mrEpisodeNumber, episode.ToString()), LogLevel.Info);
           ++mrEpisodeNumber;
-        }        
-        if (mrEpisodeNumber == 4)
-          break;
+        }
       }
 
       // Need to sort this - but for now...
