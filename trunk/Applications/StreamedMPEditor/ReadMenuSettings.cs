@@ -590,7 +590,7 @@ namespace StreamedMPEditor
       if (mrOption == "false" && skinId == tvseriesSkinID)
         return displayMostRecent.tvSeries;
 
-      if (mrOption == displayMostRecent.moviesAdded.ToString())
+      if (mrOption == displayMostRecent.moviesAdded.ToString() || mrOption == "movies")
         return displayMostRecent.moviesAdded;
       else if (mrOption == displayMostRecent.tvSeries.ToString())
         return displayMostRecent.tvSeries;
