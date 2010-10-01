@@ -313,6 +313,10 @@ namespace StreamedMPEditor
     void writeHorizontalSubmenus()
     {
       string subArrowVisible;
+      int conextOffsett = 0;
+
+      if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
+        conextOffsett = 17;
 
       // Are the Submenus defined, if so we need the additional blade controls
       string tmpXML = string.Empty;
@@ -334,29 +338,17 @@ namespace StreamedMPEditor
                   "<type>image</type>" +
                   "<id>11111</id>" +
                   "<posX>520</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) - 255).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) - 255 - conextOffsett).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>260</height>" +
                   "<texture>settingsbg.png</texture>" +
                   "<visible>" + level1LateralBladeVisible + "</visible>" +
-                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                  "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                  "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "</control>" +
-                "<control>" +
-                  "<description>lateral blade logo</description>" +
-                  "<type>image</type>" +
-                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                  "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                  "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
-                  "<posY>179</posY>" +
-                  "<width>210</width>" +
-                  "<height>70</height>" +
-                  "<texture>lateralbladelogo.png</texture>" +
-                  "<visible>" + level1LateralBladeVisible + "</visible>" +
+                  "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
+                  "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
+                  "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Hidden</animation>" +
                 "</control>";
 
         subArrowVisible = "control.isvisible(11111)|Control.HasFocus(";
@@ -371,7 +363,7 @@ namespace StreamedMPEditor
                     "<description>Sub Menu Indicator (Main)</description>" +
                     "<type>image</type>" +
                     "<posX>632</posX>" +
-                    "<posY>" + (int.Parse(txtMenuPos.Text) + 7).ToString() + "</posY>" +
+                    "<posY>" + (int.Parse(txtMenuPos.Text) + 7 - (conextOffsett + 13)).ToString() + "</posY>" +
                     "<align>right</align>" +
                     "<width>16</width>" +
                     "<height>16</height>" +
@@ -401,30 +393,18 @@ namespace StreamedMPEditor
                    "<description>Lateral blade</description>" +
                    "<type>image</type>" +
                    "<id>22222</id>" +
-                   "<posX>770</posX>" +
-                   "<posY>" + (int.Parse(txtMenuPos.Text) - 255).ToString() + "</posY>" +
+                   "<posX>767</posX>" +
+                   "<posY>" + (int.Parse(txtMenuPos.Text) - 255 - conextOffsett).ToString() + "</posY>" +
                    "<width>250</width>" +
                    "<height>260</height>" +
                    "<texture>settingsbg.png</texture>" +
                    "<visible>" + level2LateralBladeVisible + "</visible>" +
-                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                 "</control>" +
-                 "<control>" +
-                   "<description>lateral blade logo</description>" +
-                   "<type>image</type>" +
-                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                   "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
-                   "<posY>179</posY>" +
-                   "<width>210</width>" +
-                   "<height>70</height>" +
-                   "<texture>lateralbladelogo.png</texture>" +
-                   "<visible>" + level2LateralBladeVisible + "</visible>" +
+                  "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
+                  "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
+                  "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Hidden</animation>" +
                  "</control>";
 
         subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
@@ -443,8 +423,8 @@ namespace StreamedMPEditor
         tmpXML += "<control>" +
                     "<description>Sub Menu Indicator (Level1)</description>" +
                     "<type>image</type>" +
-                    "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
-                    "<posY>333</posY>" +
+                    "<posX>750</posX>" +
+                    "<posY>"+ (int.Parse(txtMenuPos.Text) - 240 - conextOffsett).ToString() + "</posY>" +
                     "<align>right</align>" +
                     "<width>16</width>" +
                     "<height>16</height>" +
