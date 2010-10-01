@@ -155,12 +155,10 @@ namespace StreamedMPEditor
 
     #endregion
 
-    #region Vetical Sub Menus
+    #region Vetical SubMenu Controls
 
     void writeVerticalSubmenus()
     {
-      string subArrowVisible;
-
       // Are the Submenus defined, if so we need the additional blade controls
       string tmpXML = string.Empty;
       if (subMenuL1Exists)
@@ -182,51 +180,14 @@ namespace StreamedMPEditor
                   "<id>11111</id>" +
                   "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
                   "<posY>0</posY>" +
-                  "<width>230</width>" +
+                  "<width>233</width>" +
                   "<height>687</height>" +
                   "<texture>homebladesub.png</texture>" +
                   "<visible>" + level1LateralBladeVisible + "</visible>" +
-                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                  "<animation effect=\"fade\" time=\"200\">visible</animation>" +
+                  "<animation effect=\"fade\" time=\"200\" end=\"50\">hidden</animation>" +
                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "</control>" +
-                "<control>" +
-                  "<description>lateral blade logo</description>" +
-                  "<type>image</type>" +
-                  "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                  "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                  "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                  "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
-                  "<posY>179</posY>" +
-                  "<width>210</width>" +
-                  "<height>70</height>" +
-                  "<texture>lateralbladelogo.png</texture>" +
-                  "<visible>" + level1LateralBladeVisible + "</visible>" +
-                "</control>";
-
-        subArrowVisible = "control.isvisible(11111)|Control.HasFocus(";
-        foreach (menuItem item in menuItems)
-        {
-          if (item.subMenuLevel1ID != 0)
-            subArrowVisible += (item.id + 700).ToString() + ")|control.hasfocus(" + (item.id + 800).ToString() + ")|control.hasfocus(" + (item.id + 900).ToString() + ")|control.hasfocus(";
-        }
-        subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-
-        tmpXML += "<control>" +
-                  "<description>Sub Menu Indicator (Main)</description>" +
-                  "<type>image</type>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
-                  "<posY>330</posY>" +
-                  "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
-                  "<visible>" + subArrowVisible + "</visible>" +
-                  "<colorDiffuse>fffffffff</colorDiffuse>" +
-                  "<texture>arrowrightfo.png</texture>" +
-                  "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                 "</control>";
       }
 
@@ -247,59 +208,19 @@ namespace StreamedMPEditor
                    "<description>Lateral blade</description>" +
                    "<type>image</type>" +
                    "<id>22222</id>" +
-                   "<posX>" + (int.Parse(txtMenuPos.Text) + 215).ToString() + "</posX>" +
+                   "<posX>" + (int.Parse(txtMenuPos.Text) + 225).ToString() + "</posX>" +
                    "<posY>0</posY>" +
-                   "<width>230</width>" +
+                   "<width>233</width>" +
                    "<height>687</height>" +
                    "<texture>homebladesub.png</texture>" +
                    "<visible>" + level2LateralBladeVisible + "</visible>" +
-                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
+                   "<animation effect=\"fade\" time=\"200\">visible</animation>" +
+                   "<animation effect=\"fade\" time=\"200\" end=\"50\">hidden</animation>" +
                    "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                    "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                 "</control>" +
-                 "<control>" +
-                   "<description>lateral blade logo</description>" +
-                   "<type>image</type>" +
-                   "<animation effect=\"slide\" time=\"200\" start=\"-200,0\">visible</animation>" +
-                   "<animation effect=\"slide\" time=\"200\" end=\"-200,0\">hidden</animation>" +
-                   "<animation effect=\"slide\" end=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                   "<animation effect=\"slide\" start=\"-800,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                   "<posX>" + (int.Parse(txtMenuPos.Text) + 220).ToString() + "</posX>" +
-                   "<posY>179</posY>" +
-                   "<width>210</width>" +
-                   "<height>70</height>" +
-                   "<texture>lateralbladelogo.png</texture>" +
-                   "<visible>" + level2LateralBladeVisible + "</visible>" +
                  "</control>";
 
-          subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
-          foreach (menuItem item in menuItems)
-          {
-            if (item.subMenuLevel1ID != 0)
-              if (item.subMenuLevel2.Count > 0)
-              {
-                for (int i = 0; i < item.subMenuLevel1.Count; i++)
-                {
-                  subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
-                }
-              }
-          }
-          subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-          tmpXML += "<control>" +
-                      "<description>Sub Menu Indicator (Level1)</description>" +
-                      "<type>image</type>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
-                      "<posY>333</posY>" +
-                      "<align>right</align>" +
-                      "<width>16</width>" +
-                      "<height>16</height>" +
-                      "<visible>" + subArrowVisible + "</visible>" +
-                      "<colorDiffuse>fffffffff</colorDiffuse>" +
-                      "<texture>arrowrightfo.png</texture>" +
-                      "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                      "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                    "</control>";
+
         }
         tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
         xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
@@ -308,11 +229,10 @@ namespace StreamedMPEditor
 
     #endregion
 
-    #region Horizontal Sub Menus
+    #region Horizontal SubMenu Controls
 
     void writeHorizontalSubmenus()
     {
-      string subArrowVisible;
       int conextOffsett = 0;
 
       if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
@@ -338,42 +258,18 @@ namespace StreamedMPEditor
                   "<type>image</type>" +
                   "<id>11111</id>" +
                   "<posX>520</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) - 255 - conextOffsett).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
                   "<width>250</width>" +
-                  "<height>260</height>" +
+                  "<height>360</height>" +
                   "<texture>settingsbg.png</texture>" +
                   "<visible>" + level1LateralBladeVisible + "</visible>" +
                   "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
                   "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Visible</animation>" +
-                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Hidden</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
                 "</control>";
-
-        subArrowVisible = "control.isvisible(11111)|Control.HasFocus(";
-        foreach (menuItem item in menuItems)
-        {
-          if (item.subMenuLevel1ID != 0)
-            subArrowVisible += (item.id + 700).ToString() + ")|control.hasfocus(" + (item.id + 800).ToString() + ")|control.hasfocus(" + (item.id + 900).ToString() + ")|control.hasfocus(";
-        }
-        subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-
-        tmpXML += "<control>" +
-                    "<description>Sub Menu Indicator (Main)</description>" +
-                    "<type>image</type>" +
-                    "<posX>632</posX>" +
-                    "<posY>" + (int.Parse(txtMenuPos.Text) + 7 - (conextOffsett + 13)).ToString() + "</posY>" +
-                    "<align>right</align>" +
-                    "<width>16</width>" +
-                    "<height>16</height>" +
-                    "<visible>" + subArrowVisible + "</visible>" +
-                    "<colorDiffuse>fffffffff</colorDiffuse>" +
-                    "<texture>arrowupfo.png</texture>" +
-                    "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"800\" reversible=\"false\">WindowOpen</animation>" +
-                    "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"250\" delay=\"700\" reversible=\"false\">VisibleChange</animation>" +
-                    "<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>" +
-                  "</control>";
       }
 
       if (subMenuL2Exists)
@@ -394,46 +290,19 @@ namespace StreamedMPEditor
                    "<type>image</type>" +
                    "<id>22222</id>" +
                    "<posX>767</posX>" +
-                   "<posY>" + (int.Parse(txtMenuPos.Text) - 255 - conextOffsett).ToString() + "</posY>" +
+                   "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
                    "<width>250</width>" +
-                   "<height>260</height>" +
+                   "<height>360</height>" +
                    "<texture>settingsbg.png</texture>" +
                    "<visible>" + level2LateralBladeVisible + "</visible>" +
                   "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
                   "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Visible</animation>" +
-                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 75).ToString() + "\" time=\"200\">Hidden</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
                  "</control>";
 
-        subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
-        foreach (menuItem item in menuItems)
-        {
-          if (item.subMenuLevel1ID != 0)
-            if (item.subMenuLevel2.Count > 0)
-            {
-              for (int i = 0; i < item.subMenuLevel1.Count; i++)
-              {
-                subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
-              }
-            }
-        }
-        subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-        tmpXML += "<control>" +
-                    "<description>Sub Menu Indicator (Level1)</description>" +
-                    "<type>image</type>" +
-                    "<posX>750</posX>" +
-                    "<posY>"+ (int.Parse(txtMenuPos.Text) - 240 - conextOffsett).ToString() + "</posY>" +
-                    "<align>right</align>" +
-                    "<width>16</width>" +
-                    "<height>16</height>" +
-                    "<visible>" + subArrowVisible + "</visible>" +
-                    "<colorDiffuse>fffffffff</colorDiffuse>" +
-                    "<texture>arrowrightfo.png</texture>" +
-                    "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                    "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                  "</control>";
       }
       tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
       xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
@@ -1710,10 +1579,15 @@ namespace StreamedMPEditor
     private void GenerateContextLabelsH()
     {
       StringBuilder rawXML = new StringBuilder();
+      string menuIDControl;
 
       rawXML.AppendLine("<!-- Menu Context Labels -->");
       foreach (menuItem menItem in menuItems)
       {
+        if (menItem.subMenuLevel1ID == 0)
+          menuIDControl = string.Empty;
+        else
+          menuIDControl = "|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
 
         if (menItem.isDefault)
         {
@@ -1733,7 +1607,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<align>center</align>");
             rawXML.AppendLine("<animation effect=\"fade\" delay=\"400\" time=\"300\">Visible</animation>");
             rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
             rawXML.AppendLine("</control>");
           }
           // Add default label
@@ -1750,7 +1624,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<animation effect=\"fade\" delay=\"400\" time=\"300\">Visible</animation>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")</visible>");
+          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
         if (cbDropShadow.Checked)
@@ -1768,7 +1642,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
+          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
         rawXML.AppendLine("<control>");
@@ -1784,7 +1658,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")" + menuIDControl + "</visible>");
         rawXML.AppendLine("</control>");
       }
 
@@ -1799,10 +1673,16 @@ namespace StreamedMPEditor
     {
       StringBuilder rawXML = new StringBuilder();
       const string quote = "\"";
+      string menuIDControl;
 
       rawXML.AppendLine("<!-- Menu Context Labels -->");
       foreach (menuItem menItem in menuItems)
       {
+        if (menItem.subMenuLevel1ID == 0)
+          menuIDControl = string.Empty;
+        else
+          menuIDControl = "|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
+
         if (menItem.isDefault)
         {
           // Add default Context label
@@ -1819,7 +1699,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<align>right</align>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")</visible>");
+          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
         // Context Lables
@@ -1837,7 +1717,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " delay=" + quote + "350" + quote + " time=" + quote + "250" + quote + ">Visible</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")</visible>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
         rawXML.AppendLine("</control>");
         // Display the current weather location under the menu option
         if (menItem.isWeather)
@@ -1914,9 +1794,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>-50</posY>");
       rawXML.AppendLine("<label></label>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
@@ -1924,9 +1804,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
 
       rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
@@ -1987,9 +1867,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<height>180</height>");
       rawXML.AppendLine("<width>180</width>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
 
       rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
@@ -2027,9 +1907,9 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>180</height>");
         rawXML.AppendLine("<width>180</width>");
         if (weatherId.ToString().Length == 5)
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
         else
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
         rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
         rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
         rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
@@ -2046,10 +1926,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
 
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
 
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       // ************************************* Day 1 ****************************************
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 LABEL</description>");
@@ -2392,9 +2272,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>-50</posY>");
       rawXML.AppendLine("<label></label>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       rawXML.AppendLine("</control>");
 
       // Group for Weather Backgrounds
@@ -2403,10 +2283,12 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       for (i = 0; i < 5; i++)
       {
         rawXML.AppendLine("<control>");
@@ -2428,11 +2310,13 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>GROUP: FIVE DAY WEATHER ICONS</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       // ********************* Weather Icons **************************************
       for (i = 0; i < 5; i++)
       {
@@ -2456,41 +2340,28 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>80</height>");
         rawXML.AppendLine("<width>80</width>");
         if (weatherId.ToString().Length == 5)
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")]</visible>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")]+!control.isvisible(11111)</visible>");
         else
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-        rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
         rawXML.AppendLine("</control>");
-
-        // This control was for debugging only, it displays the weather condition number
-        //rawXML.AppendLine("<control>");
-        //rawXML.AppendLine("<description>DAY 1 LABEL</description>");
-        //rawXML.AppendLine("<type>label</type>");
-        //rawXML.AppendLine("<id>0</id>");
-        //rawXML.AppendLine("<posX>100</posX>");
-        //rawXML.AppendLine("<posY>" + (200 + (30 * i)).ToString() + "</posY>");
-        //rawXML.AppendLine("<width>800</width>");
-        //rawXML.AppendLine("<align>center</align>");
-        //rawXML.AppendLine("<label>" + weatherIcon(i) + "</label>");
-        //rawXML.AppendLine("<font>mediastream11tc</font>");
-        //rawXML.AppendLine("<textcolor>White</textcolor>");
-        //rawXML.AppendLine("</control>");
-
       }
       rawXML.AppendLine("</control>");
-
-
 
       //Group for weather Text
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>GROUP: FIVE DAY WEATHER TEXT</description>");
       rawXML.AppendLine("<type>group</type>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")]+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       // **************************************** DAY 1 *********************************************
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 LABEL</description>");
@@ -2831,10 +2702,12 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       for (i = 0; i < 5; i++)
       {
         rawXML.AppendLine("<control>");
@@ -2855,11 +2728,13 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>GROUP: FULL WEATHER ICONS (Animated)</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       // ********************* Weather Icons **************************************
       for (i = 0; i < 5; i++)
       {
@@ -2883,10 +2758,12 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>180</height>");
         rawXML.AppendLine("<width>180</width>");
         if (weatherId.ToString().Length == 5)
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
         else
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
-        rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
         rawXML.AppendLine("</control>");
       }
       rawXML.AppendLine("</control>");
@@ -2894,12 +2771,14 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>GROUP: FULL WEATHER</description>");
       rawXML.AppendLine("<type>group</type>");
-      rawXML.AppendLine("<animation effect=\"fade\" delay=\"1000\" time=\"300\" tween=\"linear\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">VisibleChange</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
-        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]</visible>");
+        rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       // ************************************* Day 1 ****************************************
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 LABEL</description>");
