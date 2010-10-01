@@ -482,6 +482,9 @@ namespace StreamedMPConfig
         if (mrEpisodeNumber == 4)
           break;
       }
+
+      // Need to sort this - but for now...
+      setMostRecents();
     }
 
     void cycleMostrecentFanart()
