@@ -509,7 +509,7 @@ namespace StreamedMPEditor
       menuItem mnuItem = menuItems[index];
 
       btGenerateMenu.Enabled = false;
-      setXMLFilesIndex(mnuItem.hyperlink);
+      xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
       itemName.Text = mnuItem.name;
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
@@ -583,15 +583,6 @@ namespace StreamedMPEditor
       }
     }
 
-    void setXMLFilesIndex(string hyperlink)
-    {
-      for (int i = 0; i < ids.Count; i++)
-      {
-        if (ids[i] == hyperlink)
-          xmlFiles.SelectedIndex = i;
-      }
-    }
-
     void screenReset()
     {
       if (saveButton.Enabled)
@@ -633,7 +624,7 @@ namespace StreamedMPEditor
 
       menuItem mnuItem = menuItems[index];
 
-      setXMLFilesIndex(mnuItem.hyperlink);
+      xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
       cboContextLabel.Text = mnuItem.contextLabel;
       itemName.Text = mnuItem.name;
       cboFanartProperty.Text = mnuItem.fanartProperty;
