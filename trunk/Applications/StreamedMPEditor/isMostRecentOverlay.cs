@@ -335,6 +335,9 @@
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
         buildTVSeriesSummaryFile(475, mostRecentTVSeriesSummaryStyle.fanart);
+        if (cbTVSeriesRecentWatched.Checked)
+          mostRecentTVSeriesWatched();
+
         writeXMLFile("basichome.recentlyadded.tvseries.VSum2.xml");
       }
     }
@@ -977,9 +980,13 @@
         "<font>" + mrEpisodeFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
-    "</control>\n" +
-  "</controls>\n" +
-"</window>";
+    "</control>\n";
+        if (!cbMovPicsRecentWatched.Checked || menuStyle != chosenMenuStyle.verticalStyle)
+        {
+          xml += "</controls>\n" +
+         "</window>";
+        }
+
       }
 
       #endregion
@@ -1248,8 +1255,8 @@
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
         buildMovingPicturesSummaryFile(475, mostRecentMovPicsSummaryStyle.fanart);
-        if (cbEnableMostRecentWatched.Checked)
-          mostRecentWatched();
+        if (cbMovPicsRecentWatched.Checked)
+          mostRecentMoviesWatched();
   
         writeXMLFile("basichome.recentlyadded.movpics.VSum2.xml");
       }
@@ -2062,7 +2069,7 @@
         }
 
         xml += "</control>\n";
-        if (!cbEnableMostRecentWatched.Checked)
+        if (!cbMovPicsRecentWatched.Checked || menuStyle != chosenMenuStyle.verticalStyle)
         {
          xml += "</controls>\n" +
         "</window>";
@@ -2076,7 +2083,7 @@
 
     #region MovingPictures Most Recent Watched
 
-    void mostRecentWatched()
+    void mostRecentMoviesWatched()
     {
         string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
@@ -2409,6 +2416,176 @@
         xml += "</control>\n" +
       "</controls>\n" +
     "</window>";
+    }
+
+    #endregion
+
+    #region TVSeries Most Recent Watched
+
+    void mostRecentTVSeriesWatched()
+    {
+        string fanartProperty = "#StreamedMP.MostRecentImageFanart";
+        string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
+        string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
+        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
+
+        if (!mostRecentTVSeriesCycleFanart)
+          fanartProperty = "#StreamedMP.recentlyWatched.series1.fanart";
+
+        xml += "<control>\n" +
+                  "<description>GROUP: RecentlyWatched Series</description>\n" +
+                  "<type>group</type>\n" +
+                  "<dimColor>0xffffffff</dimColor>\n" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)]</visible>" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+                  "<control>\n" +
+                  "<description>Series 1 BG</description>\n" +
+                  "<posX>976</posX>\n" +
+                  "<posY>370</posY>\n" +
+                  "<type>image</type>\n" +
+                  "<id>0</id>\n" +
+                  "<width>306</width>\n" +
+                  "<height>320</height>\n" +
+                  "<texture>recentsummoverlaybg.png</texture>\n" +
+                  "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
+                "</control>\n" +
+                "<control>\n" +
+                  "<description>Header label</description>\n" +
+                  "<type>label</type>\n" +
+                  "<id>0</id>\n" +
+                  "<posX>995</posX>\n" +
+                  "<posY>390</posY>\n" +
+                  "<width>258</width>\n" +
+                  "<label>Recently Watched</label>\n" +
+                  "<font>mediastream10tc</font>\n" +
+                  "<textcolor>White</textcolor>\n" +
+                "</control>      " +
+                "<control>\n" +
+                  "<description>Series 1 name</description>\n" +
+                  "<type>fadelabel</type>\n" +
+                  "<id>0</id>\n" +
+                  "<posX>995</posX>\n" +
+                  "<posY>565</posY>\n" +
+                  "<width>258</width>\n" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>";
+      if (mrSeriesTitleLast)
+        xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #StreamedMP.recentlyWatched.series1.title</label>\n";
+      else
+        xml += "<label>#StreamedMP.recentlyWatched.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
+      xml += "<font>" + mrSeriesNameFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>\n" +
+    "<control>\n" +
+      "<description>Series 1 title</description>\n" +
+      "<type>fadelabel</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>582</posY>\n" +
+      "<width>255</width>\n" +
+      "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+      "<label>#StreamedMP.recentlyWatched.series1.episodetitle</label>\n" +
+      "<font>" + mrEpisodeFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>" +
+    "<control>\n" +
+      "<description>Series 1 thumb/fanart</description>\n" +
+      "<type>image</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>412</posY>\n" +
+      "<width>268</width>\n" +
+      "<height>151</height>\n" +
+      "<keepaspectratio>true</keepaspectratio>\n" +
+      "<texture>" + fanartProperty + "</texture>\n" +
+    "</control>\n" +
+  "</control>\n" +
+  "<control>\n" +
+    "<description>GROUP: RecentlyWatched Series</description>\n" +
+    "<type>group</type>\n" +
+    "<dimColor>0xffffffff</dimColor>\n" +
+    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)]</visible>" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+    "<control>\n" +
+      "<description>Series 2 name</description>\n" +
+      "<type>fadelabel</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>600</posY>\n" +
+      "<width>258</width>\n" +
+      "<scrollStartDelaySec>30</scrollStartDelaySec>";
+      if (mrSeriesTitleLast)
+        xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #StreamedMP.recentlyWatched.series2.title</label>\n";
+      else
+        xml += "<label>#StreamedMP.recentlyWatched.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
+      xml += "<font>" + mrSeriesNameFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>\n" +
+    "<control>\n" +
+      "<description>Series 2 title</description>\n" +
+      "<type>fadelabel</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>617</posY>\n" +
+      "<width>255</width>\n" +
+      "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+      "<label>#StreamedMP.recentlyWatched.series2.episodetitle</label>\n" +
+      "<font>" + mrEpisodeFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>\n" +
+  "</control>\n" +
+  "<control>\n" +
+    "<description>GROUP: RecentlyWatched Series</description>\n" +
+    "<type>group</type>\n" +
+    "<dimColor>0xffffffff</dimColor>\n" +
+    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)]</visible>" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+    "<control>\n" +
+      "<type>fadelabel</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>635</posY>\n" +
+      "<width>258</width>\n" +
+      "<scrollStartDelaySec>30</scrollStartDelaySec>";
+      if (mrSeriesTitleLast)
+        xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #StreamedMP.recentlyWatched.series3.title</label>\n";
+      else
+        xml += "<label>#StreamedMP.recentlyWatched.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+      xml += "<font>" + mrSeriesNameFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>\n" +
+    "<control>\n" +
+      "<description>Series 3 title</description>\n" +
+      "<type>fadelabel</type>\n" +
+      "<id>0</id>\n" +
+      "<posX>995</posX>\n" +
+      "<posY>652</posY>\n" +
+      "<width>255</width>\n" +
+      "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+      "<label>#StreamedMP.recentlyWatched.series3.episodetitle</label>\n" +
+      "<font>" + mrEpisodeFont + "</font>\n" +
+      "<textcolor>White</textcolor>\n" +
+    "</control>\n" +
+  "</control>\n" +
+  "</controls>\n" +
+  "</window>";
     }
 
     #endregion

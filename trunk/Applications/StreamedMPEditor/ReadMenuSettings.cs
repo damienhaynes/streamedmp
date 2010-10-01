@@ -235,7 +235,8 @@ namespace StreamedMPEditor
         movPicsOptions.HideCertification = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideCertification", nodelist));
         movPicsOptions.HideRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRating", nodelist));
         movPicsOptions.UseTextRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsUseTextRating", nodelist));
-        cbEnableMostRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
+        cbMovPicsRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
+        cbTVSeriesRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesWatched", nodelist));
       }
       catch
       {
@@ -359,9 +360,6 @@ namespace StreamedMPEditor
         rbPosterStyle.Checked = true;
       }
 
-
-
-
       if (splashScreenImage == "false")
         splashScreenImage = "splashscreen.png";
 
@@ -389,7 +387,6 @@ namespace StreamedMPEditor
           rbRssSkinImage.Checked = true;
           break;
       }
-
 
       if (_selectedFont != "false")
       {
