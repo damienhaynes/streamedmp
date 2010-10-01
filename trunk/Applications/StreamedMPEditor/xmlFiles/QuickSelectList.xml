@@ -65,9 +65,9 @@
   <item>
     <context>WATCH YOUR</context>
     <name>WEBVIDEOS</name>
-	<name2>(ONLINE VIDEOS)</name2>
+	  <name2>(ONLINE VIDEOS)</name2>
     <folder>movies</folder>
-	<fanartproperty>movie</fanartproperty>
+	  <fanartproperty>movie</fanartproperty>
     <fanarthandlerenabled>False</fanarthandlerenabled>    
     <xmlfile>myonlinevideos</xmlfile>
     <id>4755</id>
@@ -255,7 +255,6 @@
     <xmlfile>infoservice.feeds</xmlfile>
     <id>16001</id>
   </item>
-  
   <item>
     <context>CHECK</context>
     <name>TWITTER</name>
@@ -264,8 +263,43 @@
     <fanarthandlerenabled>False</fanarthandlerenabled>
     <xmlfile>infoservice.twitter</xmlfile>
     <id>16003</id>
+  </item>  
+  <item>
+    <context>DISPLAY</context>
+    <name>MEDIATIP</name>
+    <folder>pluginsbg</folder>
+    <fanartproperty>-</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>mediatip</xmlfile>
+    <id>7980</id>
   </item>
-
+  <item>
+    <context>ACCESS</context>
+    <name>MEDIASLAYER</name>
+    <folder>pluginsbg</folder>
+    <fanartproperty>-</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>mediaslayer</xmlfile>
+    <id>8765</id>
+  </item>
+  <item>
+    <context>FILE</context>
+    <name>EXPLORER</name>
+    <folder>pluginsbg</folder>
+    <fanartproperty>-</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>File Explorer_main</xmlfile>
+    <id>557311</id>
+  </item>
+  <item>
+    <context>DISPLAY</context>
+    <name>MY ALARM</name>
+    <folder>pluginsbg</folder>
+    <fanartproperty>-</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>myalarm</xmlfile>
+    <id>5000</id>
+  </item>
   <item>
     <context>MEDIAPORTAL</context>
     <name>SHUTDOWN</name>
@@ -283,6 +317,15 @@
     <fanarthandlerenabled>False</fanarthandlerenabled>
     <xmlfile>exit</xmlfile>
     <id>196297</id>
-  </item>  
+  </item>
+  <item>
+    <context>MEDIAPORTAL</context>
+    <name>RESTART</name>
+    <folder>pluginsbg</folder>
+    <fanartproperty>-</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>restartmp</xmlfile>
+    <id>196250</id>
+  </item>
   
 </items>
