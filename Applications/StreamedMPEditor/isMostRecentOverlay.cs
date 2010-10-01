@@ -981,7 +981,7 @@
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
     "</control>\n";
-        if (!cbMovPicsRecentWatched.Checked || menuStyle != chosenMenuStyle.verticalStyle)
+        if (!cbTVSeriesRecentWatched.Checked || menuStyle != chosenMenuStyle.verticalStyle)
         {
           xml += "</controls>\n" +
          "</window>";
