@@ -28,6 +28,7 @@
     /// </summary>
     private void InitializeComponent()
     {
+      this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSubMenuDesigner));
       this.lboxSubMenuLevel1 = new System.Windows.Forms.ListBox();
       this.lboxSubMenuLevel2 = new System.Windows.Forms.ListBox();
@@ -74,6 +75,7 @@
       this.panel7 = new System.Windows.Forms.Panel();
       this.btSubMenu1MostRecentSettings = new System.Windows.Forms.Button();
       this.btSubMenu2MostRecentSettings = new System.Windows.Forms.Button();
+      this.subMenuToolTip = new System.Windows.Forms.ToolTip(this.components);
       this.pEditingInfo.SuspendLayout();
       this.panel1.SuspendLayout();
       this.panel2.SuspendLayout();
@@ -184,6 +186,8 @@
       this.lboxXMLSkinFiles.Name = "lboxXMLSkinFiles";
       this.lboxXMLSkinFiles.Size = new System.Drawing.Size(204, 316);
       this.lboxXMLSkinFiles.TabIndex = 12;
+      this.subMenuToolTip.SetToolTip(this.lboxXMLSkinFiles, "Select pre-defined items or raw xmlfiles using the button above.\r\n\r\nDrag and drop" +
+              " items to either Level 1 or Level 2 menu lists. ");
       this.lboxXMLSkinFiles.SelectedIndexChanged += new System.EventHandler(this.lboxXMLSkinFiles_SelectedIndexChanged);
       this.lboxXMLSkinFiles.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lboxXMLSkinFiles_MouseDown);
       this.lboxXMLSkinFiles.Click += new System.EventHandler(this.lboxXMLSkinFiles_Click);
@@ -536,6 +540,12 @@
       this.btSubMenu2MostRecentSettings.UseVisualStyleBackColor = true;
       this.btSubMenu2MostRecentSettings.Click += new System.EventHandler(this.subMenu2MostRecentSettings_Click);
       // 
+      // subMenuToolTip
+      // 
+      this.subMenuToolTip.IsBalloon = true;
+      this.subMenuToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+      this.subMenuToolTip.ToolTipTitle = "Sub Menu Editor";
+      // 
       // formSubMenuDesigner
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,5 +637,6 @@
     private System.Windows.Forms.Panel panel7;
     private System.Windows.Forms.Button btSubMenu1MostRecentSettings;
     private System.Windows.Forms.Button btSubMenu2MostRecentSettings;
+    private System.Windows.Forms.ToolTip subMenuToolTip;
   }
 }
