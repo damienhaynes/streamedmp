@@ -130,8 +130,8 @@ namespace StreamedMPEditor
     const string quote = "\"";
 
     public static bool basicHomeLoadError = false;
-    public static bool changeOutstanding = false; 
-    
+    public static bool changeOutstanding = false;
+
     bool useInfoServiceSeparator = false;
     bool fanartHandlerUsed = false;
     bool exitCondition = false;
@@ -177,7 +177,7 @@ namespace StreamedMPEditor
     //Defualt to Fanart Summary Style
     mostRecentTVSeriesSummaryStyle mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
     mostRecentMovPicsSummaryStyle mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
- 
+
     // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
     screenResolutionType screenres = screenResolutionType.res1280x720;
     screenResolutionType detectedres = screenResolutionType.res1280x720;
@@ -202,7 +202,7 @@ namespace StreamedMPEditor
     editorValues basicHomeValues = new editorValues();
     defaultImages defImgs = new defaultImages();
     randomFanartSetting randomFanart = new randomFanartSetting();
-    
+
     #endregion
 
     #region Public methods
@@ -282,7 +282,7 @@ namespace StreamedMPEditor
           MediaPortal.Profile.Settings.SaveCache();
         }
       }
-    
+
       if (!exitCondition)
       {
         Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
@@ -403,7 +403,7 @@ namespace StreamedMPEditor
       //return true;
       if (xmlFiles.Items.Count > 0)
       {
-        helper.loadPrettyItems(ref cboQuickSelect,ids);
+        helper.loadPrettyItems(ref cboQuickSelect, ids);
         disableItemControls();
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
@@ -1101,7 +1101,6 @@ namespace StreamedMPEditor
       formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
       subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
     }
-
   }
 }
 
