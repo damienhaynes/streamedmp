@@ -102,37 +102,24 @@ namespace StreamedMPEditor
       // if we dont find they entry then we assume enabled as we know it
       // is installed so most likley configuration has not yet been run
       // to write the entry to MediaPortal.xml
+      string returnValue;
 
-      string fMPdirs = SkinInfo.mpPaths.configBasePath + "MediaPortal.xml";
-      XmlDocument doc = new XmlDocument();
-      if (!File.Exists(fMPdirs))
+      try
       {
-        showError("Can't find MediaPortal.xml \r\r" + fMPdirs, formStreamedMpEditor.errorCode.major);
-        return false; ;
-      }
-      doc.Load(fMPdirs);
-      XmlNodeList nodeList = doc.DocumentElement.SelectNodes("/profile/section");
-      foreach (XmlNode node in nodeList)
-      {
-        XmlNode innerNode = node.Attributes.GetNamedItem("name");
-
-        // get the currently configured plugins
-        if (innerNode.InnerText == "plugins")
+        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
         {
-          XmlNode path = node.SelectSingleNode("entry[@name=\"" + pluginName + "\"]");
-          if (path != null)
-          {
-            if (path.InnerText.ToLower() == "no")
-              // only return false if we have found the entry and it is set to No
-              return false;
-            else
-              return true;
-          }
-          else
-            return true;
+          returnValue = xmlreader.GetValueAsString("plugins", pluginName, "");
         }
       }
-      return true;  // Not found - Return true as detailed above
+      catch (Exception e)
+      {
+        showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);
+        return true;
+      }
+      if (returnValue.ToLower() == "no")
+        return false;
+      else
+        return true;
     }
 
 
