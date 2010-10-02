@@ -872,9 +872,9 @@
                     "<width>258</width>\n" +
                     "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #StreamedMP.recentlyAdded.series1.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.Added.1.SEFormat - #StreamedMP.recentlyAdded.series1.title</label>\n";
         else
-          xml += "<label>#StreamedMP.recentlyAdded.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series1.title - #StreamedMP.MostRecent.Added.1.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -923,9 +923,9 @@
         "<width>258</width>\n" + 
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #StreamedMP.recentlyAdded.series2.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.Added.2.SEFormat - #StreamedMP.recentlyAdded.series2.title</label>\n";
         else
-          xml += "<label>#StreamedMP.recentlyAdded.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series2.title - #StreamedMP.MostRecent.Added.2.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -962,9 +962,9 @@
         "<width>258</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
-          xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #StreamedMP.recentlyAdded.series3.title</label>\n";
+          xml += "<label>#StreamedMP.MostRecent.Added.3.SEFormat - #StreamedMP.recentlyAdded.series3.title</label>\n";
         else
-          xml += "<label>#StreamedMP.recentlyAdded.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+          xml += "<label>#StreamedMP.recentlyAdded.series3.title - #StreamedMP.MostRecent.Added.3.SEFormat</label>\n";
         xml += "<font>" + mrSeriesNameFont + "</font>\n" +
         "<textcolor>White</textcolor>\n" +
       "</control>\n" +
@@ -2475,9 +2475,9 @@
                   "<width>258</width>\n" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
-        xml += "<label>#StreamedMP.MostRecent.1.SEFormat - #StreamedMP.recentlyWatched.series1.title</label>\n";
+        xml += "<label>#StreamedMP.MostRecent.Watched.1.SEFormat - #StreamedMP.recentlyWatched.series1.title</label>\n";
       else
-        xml += "<label>#StreamedMP.recentlyWatched.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>\n";
+        xml += "<label>#StreamedMP.recentlyWatched.series1.title - #StreamedMP.MostRecent.Watched.1.SEFormat</label>\n";
       xml += "<font>" + mrSeriesNameFont + "</font>\n" +
       "<textcolor>White</textcolor>\n" +
     "</control>\n" +
@@ -2526,9 +2526,9 @@
       "<width>258</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
-        xml += "<label>#StreamedMP.MostRecent.2.SEFormat - #StreamedMP.recentlyWatched.series2.title</label>\n";
+        xml += "<label>#StreamedMP.MostRecent.Watched.2.SEFormat - #StreamedMP.recentlyWatched.series2.title</label>\n";
       else
-        xml += "<label>#StreamedMP.recentlyWatched.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>\n";
+        xml += "<label>#StreamedMP.recentlyWatched.series2.title - #StreamedMP.MostRecent.Watched.2.SEFormat</label>\n";
       xml += "<font>" + mrSeriesNameFont + "</font>\n" +
       "<textcolor>White</textcolor>\n" +
     "</control>\n" +
@@ -2565,9 +2565,9 @@
       "<width>258</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
-        xml += "<label>#StreamedMP.MostRecent.3.SEFormat - #StreamedMP.recentlyWatched.series3.title</label>\n";
+        xml += "<label>#StreamedMP.MostRecent.Watched.3.SEFormat - #StreamedMP.recentlyWatched.series3.title</label>\n";
       else
-        xml += "<label>#StreamedMP.recentlyWatched.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>\n";
+        xml += "<label>#StreamedMP.recentlyWatched.series3.title - #StreamedMP.MostRecent.Watched.3.SEFormat</label>\n";
       xml += "<font>" + mrSeriesNameFont + "</font>\n" +
       "<textcolor>White</textcolor>\n" +
     "</control>\n" +
