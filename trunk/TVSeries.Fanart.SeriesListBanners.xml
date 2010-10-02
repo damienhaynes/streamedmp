@@ -66,7 +66,27 @@
       <posX>200</posX>
       <posY>491</posY>
       <font>mediastream11c</font>
-      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+control.isvisible(5556)</visible>
+      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
+      <posX>200</posX>
+      <posY>491</posY>
+      <font>mediastream11c</font>
+      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
+      <posX>200</posX>
+      <posY>491</posY>
+      <font>mediastream11c</font>
+      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -76,13 +96,13 @@
       <posX>200</posX>
       <posY>491</posY>
       <font>mediastream11c</font>
-      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+!control.isvisible(5556)</visible>
+      <visible>control.isvisible(1237)+!control.isvisible(1242)+facadeview.list+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label> / 10</label>
+      <label>N/A</label>
       <posX>200</posX>
       <posY>491</posY>
       <font>mediastream11c</font>

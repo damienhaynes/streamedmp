@@ -224,7 +224,7 @@
       <posX>561</posX>
       <posY>394</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -233,7 +233,45 @@
       <type>label</type>
       <posX>560</posX>
       <posY>393</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+!control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine33Value</label>
+      <type>label</type>
+      <posX>561</posX>
+      <posY>394</posY>
+	  <textcolor>#shadow.light</textcolor>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine33Value</label>
+      <type>label</type>
+      <posX>560</posX>
+      <posY>393</posY>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine34Value</label>
+      <type>label</type>
+      <posX>561</posX>
+      <posY>394</posY>
+	  <textcolor>#shadow.light</textcolor>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine34Value</label>
+      <type>label</type>
+      <posX>560</posX>
+      <posY>393</posY>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -244,7 +282,7 @@
       <posX>561</posX>
       <posY>394</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -253,13 +291,13 @@
       <type>label</type>
       <posX>560</posX>
       <posY>393</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <description>Rating Shadow</description>
       <id>0</id>
-      <label> / 10</label>
+      <label>N/A</label>
       <type>label</type>
       <posX>561</posX>
       <posY>394</posY>
@@ -269,7 +307,7 @@
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label> / 10</label>
+      <label>N/A</label>
       <type>label</type>
       <posX>560</posX>
       <posY>393</posY>
