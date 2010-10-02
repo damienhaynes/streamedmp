@@ -181,7 +181,7 @@ namespace StreamedMPEditor
                   "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
                   "<posY>0</posY>" +
                   "<width>233</width>" +
-                  "<height>687</height>" +
+                  "<height>720</height>" +
                   "<texture>homebladesub.png</texture>" +
                   "<visible>" + level1LateralBladeVisible + "</visible>" +
                   "<animation effect=\"fade\" time=\"200\">visible</animation>" +
@@ -211,7 +211,7 @@ namespace StreamedMPEditor
                    "<posX>" + (int.Parse(txtMenuPos.Text) + 225).ToString() + "</posX>" +
                    "<posY>0</posY>" +
                    "<width>233</width>" +
-                   "<height>687</height>" +
+                   "<height>720</height>" +
                    "<texture>homebladesub.png</texture>" +
                    "<visible>" + level2LateralBladeVisible + "</visible>" +
                    "<animation effect=\"fade\" time=\"200\">visible</animation>" +
