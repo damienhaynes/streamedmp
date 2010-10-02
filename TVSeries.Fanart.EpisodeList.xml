@@ -157,7 +157,7 @@
       <posX>456</posX>
       <posY>530</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -166,9 +166,49 @@
       <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine32Value</label>
       <posX>455</posX>
       <posY>529</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <description>RATING SHADOW</description>
+      <type>label</type>
+      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine33Value</label>
+      <posX>456</posX>
+      <posY>530</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine33Value</label>
+      <posX>455</posX>
+      <posY>529</posY>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <description>RATING SHADOW</description>
+      <type>label</type>
+      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine34Value</label>
+      <posX>456</posX>
+      <posY>530</posY>
+      <textcolor>#shadow.light</textcolor>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine34Value</label>
+      <posX>455</posX>
+      <posY>529</posY>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+control.isvisible(5561)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>	
     <control Style="smallTitle">
       <id>0</id>
       <description>RATING SHADOW</description>
@@ -177,7 +217,7 @@
       <posX>456</posX>
       <posY>530</posY>
       <textcolor>#shadow.light</textcolor>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -186,14 +226,14 @@
       <label>#TVSeries.Episode.DataPanelLine31Value</label>
       <posX>455</posX>
       <posY>529</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+!control.isvisible(5561)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <id>0</id>
       <description>RATING SHADOW</description>
       <type>label</type>
-      <label> / 10</label>
+      <label>N/A</label>
       <posX>456</posX>
       <posY>530</posY>
       <textcolor>#shadow.light</textcolor>
@@ -203,7 +243,7 @@
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label> / 10</label>
+      <label>N/A</label>
       <posX>455</posX>
       <posY>529</posY>
       <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(5557)+!control.isvisible(5558)</visible>

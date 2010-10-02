@@ -8,7 +8,7 @@
 		IMPORTANT: Ensure that all settings are wrapped in a CDATA type otherwise this docment will not get parsed as proper XML.
 	-->
   <!-- version may be useful for logging purposes and/or future upgrades -->
-  <version>1.3.0.0</version>
+  <version>1.3.1.0</version>
   <!-- Skin Defines -->
   <defines>
     <property key="blah">false</property>
@@ -96,8 +96,11 @@
   <formatting import="true"><![CDATA[<Enabled>1<Format><Episode.DataPanelLine2Key><FormatAs>Trans(Runtime)
 <Enabled>1<Format><Episode.DataPanelLine2Value><FormatAs><Episode.PrettyLocalPlaytime>
 <Enabled>1<Format><Episode.DataPanelLine3Key><FormatAs>Trans(Rating)
+<Enabled>1<Format><Episode.DataPanelLine30Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10)
 <Enabled>1<Format><Episode.DataPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
 <Enabled>1<Format><Episode.DataPanelLine32Value><FormatAs>(Trans(Rated): <Episode.myRating>)
+<Enabled>1<Format><Episode.DataPanelLine33Value><FormatAs>(<Episode.RatingCount> Trans(Votes), Trans(Rated): <Episode.myRating>)
+<Enabled>1<Format><Episode.DataPanelLine34Value><FormatAs>(<Episode.RatingCount> Trans(Votes))
 <Enabled>1<Format><Episode.DataPanelLine4Key><FormatAs>Trans(Director)
 <Enabled>1<Format><Episode.DataPanelLine4Value><FormatAs><Episode.Director>
 <Enabled>1<Format><Episode.DataPanelLine5Key><FormatAs>Trans(Writer)
@@ -114,8 +117,11 @@
 <Enabled>1<Format><Series.DataPanelLine3Key><FormatAs>Trans(Runtime)
 <Enabled>1<Format><Series.DataPanelLine3Value><FormatAs><Series.Runtime> Trans(Minutes)
 <Enabled>1<Format><Series.DataPanelLine4Key><FormatAs>Trans(Rating)
+<Enabled>1<Format><Series.DataPanelLine40Value><FormatAs>Eval(Round(<Series.Rating>*10)/10)
 <Enabled>1<Format><Series.DataPanelLine41Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10
 <Enabled>1<Format><Series.DataPanelLine42Value><FormatAs>(Trans(Rated): <Series.myRating>)
+<Enabled>1<Format><Series.DataPanelLine43Value><FormatAs>(<Series.RatingCount> Trans(Votes), Trans(Rated): <Series.myRating>)
+<Enabled>1<Format><Series.DataPanelLine44Value><FormatAs>(<Series.RatingCount> Trans(Votes))
 <Enabled>1<Format><Series.DataPanelLine5Key><FormatAs>Trans(Network)
 <Enabled>1<Format><Series.DataPanelLine5Value><FormatAs><Series.Network>
 <Enabled>1<Format><Series.DataPanelLine6Value><FormatAs>Eval(<Series.EpisodeCount>-<Series.EpisodesUnWatched>) Trans(Watched)

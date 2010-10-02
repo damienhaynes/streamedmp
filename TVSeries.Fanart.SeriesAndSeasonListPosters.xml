@@ -166,7 +166,33 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
+      <posX>360</posX>
+      <posY>469</posY>
+      <font>mediastream11c</font>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
+      <posX>360</posX>
+      <posY>469</posY>
+      <font>mediastream11c</font>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -179,13 +205,13 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label> / 10</label>
+      <label>N/A</label>
       <posX>360</posX>
       <posY>469</posY>
       <font>mediastream11c</font>
