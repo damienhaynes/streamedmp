@@ -1902,11 +1902,11 @@
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
-      // cbEnableMostRecentWatched
+      // cbMovPicsRecentWatched
       // 
       this.cbMovPicsRecentWatched.AutoSize = true;
       this.cbMovPicsRecentWatched.Location = new System.Drawing.Point(9, 28);
-      this.cbMovPicsRecentWatched.Name = "cbEnableMostRecentWatched";
+      this.cbMovPicsRecentWatched.Name = "cbMovPicsRecentWatched";
       this.cbMovPicsRecentWatched.Size = new System.Drawing.Size(246, 17);
       this.cbMovPicsRecentWatched.TabIndex = 4;
       this.cbMovPicsRecentWatched.Text = "Enable MovingPictures Most Recent Watched";
@@ -1968,7 +1968,6 @@
       this.pTVSeriesRecent.Name = "pTVSeriesRecent";
       this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 117);
       this.pTVSeriesRecent.TabIndex = 4;
-      this.pTVSeriesRecent.Paint += new System.Windows.Forms.PaintEventHandler(this.pTVSeriesRecent_Click);
       this.pTVSeriesRecent.Click += new System.EventHandler(this.pTVSeriesRecent_Click);
       // 
       // cbTVSeriesRecentWatched

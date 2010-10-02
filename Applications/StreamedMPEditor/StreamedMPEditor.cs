@@ -1092,6 +1092,7 @@ namespace StreamedMPEditor
       formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
       subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
     }
+
   }
 }
 
