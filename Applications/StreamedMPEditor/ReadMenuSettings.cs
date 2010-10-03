@@ -412,7 +412,8 @@ namespace StreamedMPEditor
       if (MovingPicturesVersion == "0.0.0.0")
       {
         pMovPicsRecent.Enabled = false;
-        cbMostRecentTvSeries.Checked = false;
+        cbMostRecentMovPics.Checked = false;
+        cbMovPicsRecentWatched.Checked = false;
         cbMostRecentMovPics.Refresh();
       }
       else
@@ -420,7 +421,8 @@ namespace StreamedMPEditor
         if (!helper.pluginEnabled("Moving Pictures"))
         {
           pMovPicsRecent.Enabled = false;
-          cbMostRecentTvSeries.Checked = false;
+          cbMostRecentMovPics.Checked = false;
+          cbMovPicsRecentWatched.Checked = false;
           cbMostRecentMovPics.Refresh();
         }
       }
@@ -430,6 +432,7 @@ namespace StreamedMPEditor
       {
         pTVSeriesRecent.Enabled = false;
         cbMostRecentTvSeries.Checked = false;
+        cbTVSeriesRecentWatched.Checked = false;
         cbMostRecentTvSeries.Refresh();
       }
       else
@@ -438,6 +441,7 @@ namespace StreamedMPEditor
         {
           pTVSeriesRecent.Enabled = false;
           cbMostRecentTvSeries.Checked = false;
+          cbTVSeriesRecentWatched.Checked = false;
           cbMostRecentTvSeries.Refresh();
         }
       }
