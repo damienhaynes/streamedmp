@@ -3558,9 +3558,9 @@ namespace StreamedMPEditor
         mostRecentMovPicsSummStyle = "poster";
 
       xml = ("<profile>"
-                + "<version>1.0</version>"
-                + "<skin name=\"StreamedMP\">"
-                + "<section name=" + quote + "StreamedMP Options" + quote + ">"
+                + "<version>1.0</version>\n"
+                + "<skin name=\"StreamedMP\">\n"
+                + "<section name=" + quote + "StreamedMP Options" + quote + ">\n"
                 + generateEntry("menustyle", activeMenuStyle, 2, true)
                 + generateEntry("weatherstyle", activeWeatherStyle, 2, true)
                 + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2, true)
@@ -3618,7 +3618,7 @@ namespace StreamedMPEditor
 
       StringBuilder rawXML = new StringBuilder();
 
-      rawXML.AppendLine("<!-- End Of Menu Options --><section name=" + quote + "StreamedMP Menu Items" + quote + ">");
+      rawXML.AppendLine("<!-- End Of Menu Options -->\n<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
 
       int menuIndex = 0;
       rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 2, false));
