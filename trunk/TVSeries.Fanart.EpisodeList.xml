@@ -249,6 +249,7 @@
       <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(5557)+!control.isvisible(5558)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+	<!-- Prevent gaps between writers and directors -->
     <control Style="smallTitleB">
       <description>DIRECTOR LABEL SHADOW</description>
       <id>0</id>
@@ -258,7 +259,7 @@
       <posY>549</posY>
       <width>150</width>
       <textcolor>#shadow.dark</textcolor>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(12003)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+[control.isvisible(12003)|control.isvisible(12004)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -269,7 +270,7 @@
       <posX>300</posX>
       <posY>548</posY>
       <width>150</width>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(12003)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+[control.isvisible(12003)|control.isvisible(12004)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -293,6 +294,29 @@
       <posY>549</posY>
       <width>270</width>
       <visible>control.isvisible(1239)+facadeview.list+Control.HasText(12003)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control Style="smallTitle">
+      <description>DIRECTOR VALUE SHADOW</description>
+      <id>0</id>
+      <label>N/A</label>
+      <type>label</type>
+      <posX>456</posX>
+      <posY>550</posY>
+      <width>270</width>
+      <textcolor>#shadow.light</textcolor>
+      <visible>control.isvisible(1239)+facadeview.list+!Control.HasText(12003)+Control.HasText(12004)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>DIRECTOR VALUE</description>
+      <id>0</id>
+      <label>N/A</label>
+      <type>label</type>
+      <posX>455</posX>
+      <posY>549</posY>
+      <width>270</width>
+      <visible>control.isvisible(1239)+facadeview.list+!Control.HasText(12003)+Control.HasText(12004)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
