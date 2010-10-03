@@ -1089,8 +1089,13 @@ namespace StreamedMPEditor
 
     private void addSubmenus_Click(object sender, EventArgs e)
     {
-      formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
-      subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
+      if (itemsOnMenubar.SelectedIndex != -1)
+      {
+        formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
+        subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
+      }
+      else
+        helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
     }
 
   }
