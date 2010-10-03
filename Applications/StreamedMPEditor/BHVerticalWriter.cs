@@ -130,7 +130,7 @@ namespace StreamedMPEditor
           {
             if (!cbExitStyleNew.Checked)
             {
-              rawXML.AppendLine("<onright>-</onright>");
+              rawXML.AppendLine("<onright>7777</onright>");
               rawXML.AppendLine("<onleft>7777</onleft>");
             }
             else
