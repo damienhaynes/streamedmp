@@ -34,7 +34,7 @@ namespace StreamedMPEditor
     private formStreamedMpEditor.displayMostRecent selectedMostRecent()
     {
       if (rbSubTVSeries.Checked)
-        return formStreamedMpEditor.displayMostRecent.tvSeries;
+        return formStreamedMpEditor.displayMostRecent.tvSeriesAdded;
 
       if (rbSubTVSeriesWatched.Checked)
         return formStreamedMpEditor.displayMostRecent.tvseriesWatched;
@@ -67,7 +67,7 @@ namespace StreamedMPEditor
         case formStreamedMpEditor.displayMostRecent.off:
           rbSubOff.Checked = true;
           break;
-        case formStreamedMpEditor.displayMostRecent.tvSeries:
+        case formStreamedMpEditor.displayMostRecent.tvSeriesAdded:
           rbSubTVSeries.Checked = true;
           break;
         case formStreamedMpEditor.displayMostRecent.tvseriesWatched:

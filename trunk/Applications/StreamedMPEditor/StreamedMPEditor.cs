@@ -104,7 +104,7 @@ namespace StreamedMPEditor
     public enum displayMostRecent
     {
       off,
-      tvSeries,
+      tvSeriesAdded,
       tvseriesWatched,
       moviesAdded,
       moviesWatched,
@@ -426,7 +426,7 @@ namespace StreamedMPEditor
         return displayMostRecent.off;
 
       if (rbDisplayMostRecentTVSeries.Checked)
-        return displayMostRecent.tvSeries;
+        return displayMostRecent.tvSeriesAdded;
 
       return displayMostRecent.moviesAdded;
     }
@@ -442,7 +442,7 @@ namespace StreamedMPEditor
             rbDisplayMostRecentTVSeries.Checked = false;
             break;
           }
-        case displayMostRecent.tvSeries:
+        case displayMostRecent.tvSeriesAdded:
           {
             rbDisplayMostRecentNone.Checked = false;
             rbDisplayMostRecentMovies.Checked = false;
@@ -1100,7 +1100,6 @@ namespace StreamedMPEditor
       else
         helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
     }
-
   }
 }
 
