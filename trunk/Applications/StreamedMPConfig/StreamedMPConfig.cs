@@ -33,6 +33,7 @@ namespace StreamedMPConfig
     public string isImageFanart = null;
     public int isImageCount = 1;
     public string[] mostTVSeriesRecents = new string[3];
+    public string[] mostTVSeriesRecentsWatched = new string[3];
     public string[] mostMovPicsRecents = new string[3];
     public string[] mostMovPicsRecentsWatched = new string[3];
     bool minimiseOnExit = false;
@@ -59,7 +60,12 @@ namespace StreamedMPConfig
     public static bool patchUtilityRunUnattended { get; set; }
     public static bool patchUtilityRestartMP { get; set; }    
     public static System.Threading.Timer updateChkTimer;
-    
+
+    public static bool movPicRecentAddedEnabled { get; set; }
+    public static bool movPicRecentWatchedEnabled { get; set; }
+    public static bool tvSeriesRecentAddedEnabled { get; set; }
+    public static bool tvSeriesRecentWatchedEnabled { get; set; }
+
     #endregion
 
     #region Private Properties
@@ -121,21 +127,34 @@ namespace StreamedMPConfig
         return true;
       }
       Start();
-      smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
-      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
+
+      //smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
+      
+      // Get Most Recent Options
+      settings.LoadEditorProperties(settings.cXMLSectionEditorOptions);
+
+      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
       {
-        getLastThreeAddedTVSeries();
-        getLastThreeWatchedTVSeries();
+        if (tvSeriesRecentAddedEnabled)
+          getLastThreeAddedTVSeries();
+        if (tvSeriesRecentWatchedEnabled)
+          getLastThreeWatchedTVSeries();
         setTVSeriesEvents();
       }
-      if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
+      if ((movPicRecentAddedEnabled || movPicRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
       {
-        getLastThreeAddedMovies();
-        getLastThreeWatchedMovies();
+        if (movPicRecentAddedEnabled)
+          getLastThreeAddedMovies();
+        if (movPicRecentWatchedEnabled)
+          getLastThreeWatchedMovies();
         setMovingPicturesEvents();
       }
-      smcLog.WriteLog("Set the most recent fanart", LogLevel.Info);
-      cycleMostrecentFanart();
+
+      if (smpSettings.timerRequired)
+      {
+        smcLog.WriteLog("Set the most recent fanart", LogLevel.Info);
+        cycleMostrecentFanart();
+      }
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig.xml");
     }
 
@@ -243,13 +262,22 @@ namespace StreamedMPConfig
     
     void setMovingPicturesEvents()
     {
-      MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+      if (movPicRecentAddedEnabled || movPicRecentWatchedEnabled)
+      {
+        MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+      }
     }
 
     void setTVSeriesEvents()
     {
-      OnlineParsing.OnlineParsingCompleted += new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
-      VideoHandler.EpisodeWatched += new VideoHandler.EpisodeWatchedDelegate(OnEpisodeWatched);
+      if (tvSeriesRecentAddedEnabled)
+      {
+        OnlineParsing.OnlineParsingCompleted += new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
+      }
+      if (tvSeriesRecentWatchedEnabled)
+      {
+        VideoHandler.EpisodeWatched += new VideoHandler.EpisodeWatchedDelegate(OnEpisodeWatched);
+      }
     }
 
     void getLastThreeWatchedMovies()
@@ -469,7 +497,7 @@ namespace StreamedMPConfig
 
     void cycleMostrecentFanart()
     {
-      // Read the InfoService Fanart property every x seconds, check the next in the sequence each time through.
+      // Read the MostRecent Fanart property every x seconds, check the next in the sequence each time through.
       // Set our own property to match a value if found.
       getMostRecents();
       if (mrImageToDisplay == 1)
@@ -484,6 +512,11 @@ namespace StreamedMPConfig
         smcLog.WriteLog("StreamedMPConfig: TVSeries Img(" + mrImageToDisplay.ToString() + ") File:" + mostTVSeriesRecents[mrImageToDisplay - 1], LogLevel.Debug);
         SetProperty("#StreamedMP.MostRecentImageFanart", mostTVSeriesRecents[mrImageToDisplay - 1]);
       }
+      if (mostTVSeriesRecentsWatched[mrImageToDisplay - 1] != null)
+      {
+        smcLog.WriteLog("StreamedMPConfig: TVSeries Img(" + mrImageToDisplay.ToString() + ") File:" + mostTVSeriesRecentsWatched[mrImageToDisplay - 1], LogLevel.Debug);
+        SetProperty("#StreamedMP.MostRecentImageFanartWatched", mostTVSeriesRecentsWatched[mrImageToDisplay - 1]);
+      }
       if (mostMovPicsRecents[mrImageToDisplay - 1] != null)
       {
         smcLog.WriteLog("StreamedMPConfig: MovingPictures Img(" + mrImageToDisplay.ToString() + ") File:" + mostMovPicsRecents[mrImageToDisplay - 1], LogLevel.Debug);
@@ -491,7 +524,7 @@ namespace StreamedMPConfig
       }
       if (mostMovPicsRecentsWatched[mrImageToDisplay - 1] != null)
       {
-        smcLog.WriteLog("StreamedMPConfig: MovingPictures Watched Img(" + mrImageToDisplay.ToString() + ") File:" + mostMovPicsRecents[mrImageToDisplay - 1], LogLevel.Debug);
+        smcLog.WriteLog("StreamedMPConfig: MovingPictures Watched Img(" + mrImageToDisplay.ToString() + ") File:" + mostMovPicsRecentsWatched[mrImageToDisplay - 1], LogLevel.Debug);
         SetProperty("#StreamedMP.MostRecentMovPicsImageFanartWatched", mostMovPicsRecentsWatched[mrImageToDisplay - 1]);
       }
     }
@@ -501,11 +534,17 @@ namespace StreamedMPConfig
       for (int i = 0; i < 3; i++)
       {
         mostTVSeriesRecents[i] = null;
+        mostTVSeriesRecentsWatched[i] = null;
         mostMovPicsRecents[i] = null;
         mostMovPicsRecentsWatched[i] = null;
         try
         {
           mostTVSeriesRecents[i] = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".fanart");
+        }
+        catch { }
+        try
+        {
+          mostTVSeriesRecentsWatched[i] = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".fanart");
         }
         catch { }
         try
@@ -520,6 +559,9 @@ namespace StreamedMPConfig
         catch { }
         if (mostTVSeriesRecents[i] == " ")
           mostTVSeriesRecents[i] = null;
+
+        if (mostTVSeriesRecentsWatched[i] == " ")
+          mostTVSeriesRecentsWatched[i] = null;
 
         if (mostMovPicsRecents[i] == " ")
           mostMovPicsRecents[i] = null;
@@ -536,55 +578,60 @@ namespace StreamedMPConfig
       string episodeNum = null;
       string formattedSE = null;
 
-
-      for (int i = 0; i < 3; i++)
+      if (tvSeriesRecentAddedEnabled)
       {
-        seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".season");
-        episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".episodenumber");
-        if (mostTVSeriesRecents[i] != null)
+        for (int i = 0; i < 3; i++)
         {
-          if (smpSettings.mrSeasonEpisodeStyle2)
+          seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".season");
+          episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".episodenumber");
+          if (mostTVSeriesRecents[i] != null)
           {
-            formattedSE = "S" + seasonNum.PadLeft(2, '0') + "E" + episodeNum.PadLeft(2, '0');
-            SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            if (smpSettings.mrSeasonEpisodeStyle2)
+            {
+              formattedSE = "S" + seasonNum.PadLeft(2, '0') + "E" + episodeNum.PadLeft(2, '0');
+              SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            }
+            else
+            {
+              formattedSE = seasonNum + "x" + episodeNum;
+              SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            }
           }
           else
           {
             formattedSE = seasonNum + "x" + episodeNum;
             SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
           }
+          smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
         }
-        else
-        {
-          formattedSE = seasonNum + "x" + episodeNum;
-          SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
-        }
-        smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
       }
 
-      for (int i = 0; i < 3; i++)
+      if (tvSeriesRecentWatchedEnabled)
       {
-        seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".season");
-        episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".episodenumber");
-        if (mostTVSeriesRecents[i] != null)
+        for (int i = 0; i < 3; i++)
         {
-          if (smpSettings.mrSeasonEpisodeStyle2)
+          seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".season");
+          episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".episodenumber");
+          if (mostTVSeriesRecents[i] != null)
           {
-            formattedSE = "S" + seasonNum.PadLeft(2, '0') + "E" + episodeNum.PadLeft(2, '0');
-            SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            if (smpSettings.mrSeasonEpisodeStyle2)
+            {
+              formattedSE = "S" + seasonNum.PadLeft(2, '0') + "E" + episodeNum.PadLeft(2, '0');
+              SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            }
+            else
+            {
+              formattedSE = seasonNum + "x" + episodeNum;
+              SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
+            }
           }
           else
           {
             formattedSE = seasonNum + "x" + episodeNum;
             SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
           }
+          smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
         }
-        else
-        {
-          formattedSE = seasonNum + "x" + episodeNum;
-          SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
-        }
-        smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
       }
     }
 
@@ -742,12 +789,12 @@ namespace StreamedMPConfig
     private void OnObjectInserted(DatabaseTable obj)
     {
       // Update Recent Added/Watched lists
-      if (obj.GetType() == typeof(DBMovieInfo))
+      if ((obj.GetType() == typeof(DBMovieInfo)) && movPicRecentAddedEnabled)
       {
         smcLog.WriteLog(string.Format("New movie added: {0}", ((DBMovieInfo)obj).Title), LogLevel.Info);
         getLastThreeAddedMovies();
       }
-      else if (obj.GetType() == typeof(DBWatchedHistory))
+      else if ((obj.GetType() == typeof(DBWatchedHistory)) && movPicRecentWatchedEnabled)
       {
         smcLog.WriteLog(string.Format("movie watched: {0}", ((DBWatchedHistory)obj).Movie.Title), LogLevel.Info);
         getLastThreeWatchedMovies();
@@ -783,17 +830,24 @@ namespace StreamedMPConfig
       // Disable the timer used for most recent fanart images in not on home screen.
       if (GUIWindowManager.ActiveWindow == 35)
       {
-        mrTimer.Enabled = true;
-        smcLog.WriteLog(string.Format("Most Recent Summary Timer : Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Debug);
+        if (smpSettings.timerRequired)
+        {
+          mrTimer.Enabled = true;
+          smcLog.WriteLog(string.Format("Most Recent Summary Timer : Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Debug);
+        }
       }
       else
       {
-        mrTimer.Enabled = false;
-        smcLog.WriteLog("Most Recent Summary Timer : Disabled", LogLevel.Debug);
+        if (smpSettings.timerRequired)
+        {
+          mrTimer.Enabled = false;
+          smcLog.WriteLog("Most Recent Summary Timer : Disabled", LogLevel.Debug);
+        }
       }
 
       if (GUIWindowManager.ActiveWindow == 35)
       {
+        
         getMostRecents();
         setMostRecents();        
       }
@@ -878,15 +932,15 @@ namespace StreamedMPConfig
       settings.Load(settings.cXMLSectionUpdate);
       settings.Load(settings.cXMLSectionMusic);      
       settings.Load(settings.cXMLSectionMisc);
-      settings.Load(settings.cXMLSectionVideo);
-      
+      settings.Load(settings.cXMLSectionVideo);      
+
       MusicOptionsGUI.SetProperties();
       MiscConfigGUI.SetProperties();
       VideoOptionsGUI.SetProperties();
                                          
       if (smpSettings.timerRequired)
       {
-        cycleMostrecentFanart();
+        //cycleMostrecentFanart();
         mrTimer.Enabled = true;
         mrTimer.Interval = MiscConfigGUI.MostRecentFanartTimerInt * 1000;
         mrTimer.Tick += new EventHandler(mrTimer_Tick);

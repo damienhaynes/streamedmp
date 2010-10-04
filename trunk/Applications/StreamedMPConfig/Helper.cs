@@ -16,7 +16,7 @@ namespace StreamedMPConfig
     /// Loads and returns an XML Document
     /// </summary>
     /// <param name="file"></param>    
-    private static XmlDocument LoadXMLDocument(string file)
+    public static XmlDocument LoadXMLDocument(string file)
     {
       // Check if File Exist
       if (!File.Exists(file))
@@ -34,6 +34,27 @@ namespace StreamedMPConfig
         return null;
       }
       return doc;
+    }
+
+    /// <summary>
+    /// Gets an elements value from section node
+    /// </summary>
+    /// <param name="section"></param>
+    /// <param name="elementName"></param>
+    /// <param name="node"></param>
+    /// <returns></returns>
+    public static string ReadEntryValue(string section, string elementName, XmlNode node)
+    {
+      string entryValue = string.Empty;
+
+      XmlNode path = node.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
+      if (path != null)
+      {
+        entryValue = path.InnerText;
+        return entryValue;
+      }
+
+      return "false";
     }
 
     /// <summary>
@@ -60,6 +81,7 @@ namespace StreamedMPConfig
       doc.Save(file);
       checkSum.Replace(file);
     }
+
     #endregion;
 
     #region Assembly Helpers

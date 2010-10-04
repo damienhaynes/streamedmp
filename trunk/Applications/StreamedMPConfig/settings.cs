@@ -22,6 +22,8 @@ namespace StreamedMPConfig
     public const string cXMLSectionMisc = "MiscConfig";
     public const string cXMLSectionVideo = "VideoConfig";
     public const string cXMLSectionUpdate = "UpdateConfig";
+    
+    public const string cXMLSectionEditorOptions = "StreamedMP Options";
     #endregion
 
     #region XML Configuration Strings
@@ -64,6 +66,10 @@ namespace StreamedMPConfig
     public const string cXMLSettingWatchedColor = "miscWatchedColor";
     public const string cXMLSettingRemoteColor = "miscRemoteColor";
 
+    public const string cXMLSettingMovPicsRecentAdded = "movPicsMostRecent";
+    public const string cXMLSettingMovPicsRecentWatched = "mrMovPicsWatched";
+    public const string cXMLSettingTVSeriesRecentAdded = "tvSeriesMostRecent";
+    public const string cXMLSettingTVSeriesRecentWatched = "mrTVSeriesWatched";
     #endregion
 
     #region Public methods
@@ -131,6 +137,37 @@ namespace StreamedMPConfig
       {
         return _mpSetAsFullScreen();
       }
+    }
+
+    public static void LoadEditorProperties(string section)
+    {
+      smcLog.WriteLog(string.Format("BasicHome Menu: Settings.Load({0})", section), LogLevel.Info);
+
+      // Get settings from editor...would be best to unify all these into the same configuration file    
+      XmlDocument xmlDoc = Helper.LoadXMLDocument(Config.GetFile(Config.Dir.Config, "usermenuprofile.xml"));
+
+      if (xmlDoc == null)
+      {
+        // set defaults
+        StreamedMPConfig.movPicRecentAddedEnabled = true;
+        StreamedMPConfig.tvSeriesRecentAddedEnabled = true;
+        return;
+      }
+
+      XmlNode node = xmlDoc.SelectSingleNode(string.Format("/profile/skin[@name='StreamedMP']/section[@name='{0}']", section));
+
+      if (Helper.ReadEntryValue(section, settings.cXMLSettingMovPicsRecentAdded, node) == "true")
+        StreamedMPConfig.movPicRecentAddedEnabled = true;
+
+      if (Helper.ReadEntryValue(section, settings.cXMLSettingMovPicsRecentWatched, node) == "true")
+        StreamedMPConfig.movPicRecentWatchedEnabled = true;
+
+      if (Helper.ReadEntryValue(section, settings.cXMLSettingTVSeriesRecentAdded, node) == "true")
+        StreamedMPConfig.tvSeriesRecentAddedEnabled = true;
+
+      if (Helper.ReadEntryValue(section, settings.cXMLSettingTVSeriesRecentWatched, node) == "true")
+        StreamedMPConfig.tvSeriesRecentWatchedEnabled = true;
+     
     }
 
     public static void Load(string section)
@@ -222,8 +259,8 @@ namespace StreamedMPConfig
           #endregion
 
         }
-      }
-    }
+      }      
+    }   
 
     public static void Save(string section)
     {
