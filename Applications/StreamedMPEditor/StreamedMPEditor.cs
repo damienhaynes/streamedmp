@@ -105,6 +105,7 @@ namespace StreamedMPEditor
     {
       off,
       tvSeries,
+      tvseriesWatched,
       moviesAdded,
       moviesWatched,
       music,

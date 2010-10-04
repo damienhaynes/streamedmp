@@ -29,6 +29,8 @@
     private void InitializeComponent()
     {
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.rbSubMovPicsAddedAndWatched = new System.Windows.Forms.RadioButton();
+      this.rbSubTVSeriesAddedAndWatched = new System.Windows.Forms.RadioButton();
       this.rbSubOff = new System.Windows.Forms.RadioButton();
       this.rbSubTV = new System.Windows.Forms.RadioButton();
       this.rbSubMusic = new System.Windows.Forms.RadioButton();
@@ -36,13 +38,13 @@
       this.rbSubAddedMovies = new System.Windows.Forms.RadioButton();
       this.rbSubTVSeries = new System.Windows.Forms.RadioButton();
       this.btSaveAndClose = new System.Windows.Forms.Button();
-      this.rbSubTVSeriesAddedAndWatched = new System.Windows.Forms.RadioButton();
-      this.rbSubMovPicsAddedAndWatched = new System.Windows.Forms.RadioButton();
+      this.rbSubTVSeriesWatched = new System.Windows.Forms.RadioButton();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.rbSubTVSeriesWatched);
       this.groupBox1.Controls.Add(this.rbSubMovPicsAddedAndWatched);
       this.groupBox1.Controls.Add(this.rbSubTVSeriesAddedAndWatched);
       this.groupBox1.Controls.Add(this.rbSubOff);
@@ -53,10 +55,32 @@
       this.groupBox1.Controls.Add(this.rbSubTVSeries);
       this.groupBox1.Location = new System.Drawing.Point(23, 12);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(231, 210);
+      this.groupBox1.Size = new System.Drawing.Size(231, 242);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "When Menu Item is Selected Display";
+      // 
+      // rbSubMovPicsAddedAndWatched
+      // 
+      this.rbSubMovPicsAddedAndWatched.AutoSize = true;
+      this.rbSubMovPicsAddedAndWatched.Location = new System.Drawing.Point(11, 214);
+      this.rbSubMovPicsAddedAndWatched.Name = "rbSubMovPicsAddedAndWatched";
+      this.rbSubMovPicsAddedAndWatched.Size = new System.Drawing.Size(206, 17);
+      this.rbSubMovPicsAddedAndWatched.TabIndex = 7;
+      this.rbSubMovPicsAddedAndWatched.TabStop = true;
+      this.rbSubMovPicsAddedAndWatched.Text = "Movies Recently Added and Watched";
+      this.rbSubMovPicsAddedAndWatched.UseVisualStyleBackColor = true;
+      // 
+      // rbSubTVSeriesAddedAndWatched
+      // 
+      this.rbSubTVSeriesAddedAndWatched.AutoSize = true;
+      this.rbSubTVSeriesAddedAndWatched.Location = new System.Drawing.Point(11, 190);
+      this.rbSubTVSeriesAddedAndWatched.Name = "rbSubTVSeriesAddedAndWatched";
+      this.rbSubTVSeriesAddedAndWatched.Size = new System.Drawing.Size(215, 17);
+      this.rbSubTVSeriesAddedAndWatched.TabIndex = 6;
+      this.rbSubTVSeriesAddedAndWatched.TabStop = true;
+      this.rbSubTVSeriesAddedAndWatched.Text = "TVSeries Recently Added and Watched";
+      this.rbSubTVSeriesAddedAndWatched.UseVisualStyleBackColor = true;
       // 
       // rbSubOff
       // 
@@ -72,7 +96,7 @@
       // rbSubTV
       // 
       this.rbSubTV.AutoSize = true;
-      this.rbSubTV.Location = new System.Drawing.Point(11, 141);
+      this.rbSubTV.Location = new System.Drawing.Point(11, 166);
       this.rbSubTV.Name = "rbSubTV";
       this.rbSubTV.Size = new System.Drawing.Size(137, 17);
       this.rbSubTV.TabIndex = 4;
@@ -83,7 +107,7 @@
       // rbSubMusic
       // 
       this.rbSubMusic.AutoSize = true;
-      this.rbSubMusic.Location = new System.Drawing.Point(11, 117);
+      this.rbSubMusic.Location = new System.Drawing.Point(11, 142);
       this.rbSubMusic.Name = "rbSubMusic";
       this.rbSubMusic.Size = new System.Drawing.Size(132, 17);
       this.rbSubMusic.TabIndex = 3;
@@ -94,18 +118,18 @@
       // rbSubWatchedMovies
       // 
       this.rbSubWatchedMovies.AutoSize = true;
-      this.rbSubWatchedMovies.Location = new System.Drawing.Point(11, 93);
+      this.rbSubWatchedMovies.Location = new System.Drawing.Point(11, 118);
       this.rbSubWatchedMovies.Name = "rbSubWatchedMovies";
-      this.rbSubWatchedMovies.Size = new System.Drawing.Size(132, 17);
+      this.rbSubWatchedMovies.Size = new System.Drawing.Size(151, 17);
       this.rbSubWatchedMovies.TabIndex = 2;
       this.rbSubWatchedMovies.TabStop = true;
-      this.rbSubWatchedMovies.Text = "Most Watched Movies";
+      this.rbSubWatchedMovies.Text = "Recently Watched Movies";
       this.rbSubWatchedMovies.UseVisualStyleBackColor = true;
       // 
       // rbSubAddedMovies
       // 
       this.rbSubAddedMovies.AutoSize = true;
-      this.rbSubAddedMovies.Location = new System.Drawing.Point(11, 69);
+      this.rbSubAddedMovies.Location = new System.Drawing.Point(11, 94);
       this.rbSubAddedMovies.Name = "rbSubAddedMovies";
       this.rbSubAddedMovies.Size = new System.Drawing.Size(138, 17);
       this.rbSubAddedMovies.TabIndex = 1;
@@ -116,7 +140,7 @@
       // rbSubTVSeries
       // 
       this.rbSubTVSeries.AutoSize = true;
-      this.rbSubTVSeries.Location = new System.Drawing.Point(11, 45);
+      this.rbSubTVSeries.Location = new System.Drawing.Point(11, 46);
       this.rbSubTVSeries.Name = "rbSubTVSeries";
       this.rbSubTVSeries.Size = new System.Drawing.Size(150, 17);
       this.rbSubTVSeries.TabIndex = 0;
@@ -126,7 +150,7 @@
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(45, 228);
+      this.btSaveAndClose.Location = new System.Drawing.Point(43, 260);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(182, 23);
       this.btSaveAndClose.TabIndex = 1;
@@ -134,33 +158,22 @@
       this.btSaveAndClose.UseVisualStyleBackColor = true;
       this.btSaveAndClose.Click += new System.EventHandler(this.btSaveAndClose_Click);
       // 
-      // rbSubTVSeriesAddedAndWatched
+      // rbSubTVSeriesWatched
       // 
-      this.rbSubTVSeriesAddedAndWatched.AutoSize = true;
-      this.rbSubTVSeriesAddedAndWatched.Location = new System.Drawing.Point(11, 165);
-      this.rbSubTVSeriesAddedAndWatched.Name = "rbSubTVSeriesAddedAndWatched";
-      this.rbSubTVSeriesAddedAndWatched.Size = new System.Drawing.Size(215, 17);
-      this.rbSubTVSeriesAddedAndWatched.TabIndex = 6;
-      this.rbSubTVSeriesAddedAndWatched.TabStop = true;
-      this.rbSubTVSeriesAddedAndWatched.Text = "TVSeries Recently Added and Watched";
-      this.rbSubTVSeriesAddedAndWatched.UseVisualStyleBackColor = true;
-      // 
-      // rbSubMovPicsAddedAndWatched
-      // 
-      this.rbSubMovPicsAddedAndWatched.AutoSize = true;
-      this.rbSubMovPicsAddedAndWatched.Location = new System.Drawing.Point(11, 185);
-      this.rbSubMovPicsAddedAndWatched.Name = "rbSubMovPicsAddedAndWatched";
-      this.rbSubMovPicsAddedAndWatched.Size = new System.Drawing.Size(206, 17);
-      this.rbSubMovPicsAddedAndWatched.TabIndex = 7;
-      this.rbSubMovPicsAddedAndWatched.TabStop = true;
-      this.rbSubMovPicsAddedAndWatched.Text = "Movies Recently Added and Watched";
-      this.rbSubMovPicsAddedAndWatched.UseVisualStyleBackColor = true;
+      this.rbSubTVSeriesWatched.AutoSize = true;
+      this.rbSubTVSeriesWatched.Location = new System.Drawing.Point(11, 70);
+      this.rbSubTVSeriesWatched.Name = "rbSubTVSeriesWatched";
+      this.rbSubTVSeriesWatched.Size = new System.Drawing.Size(160, 17);
+      this.rbSubTVSeriesWatched.TabIndex = 8;
+      this.rbSubTVSeriesWatched.TabStop = true;
+      this.rbSubTVSeriesWatched.Text = "Recently Watched TVSeries";
+      this.rbSubTVSeriesWatched.UseVisualStyleBackColor = true;
       // 
       // mostRecentDisplaySelection
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(284, 263);
+      this.ClientSize = new System.Drawing.Size(284, 295);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.groupBox1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -185,5 +198,6 @@
     private System.Windows.Forms.RadioButton rbSubOff;
     private System.Windows.Forms.RadioButton rbSubMovPicsAddedAndWatched;
     private System.Windows.Forms.RadioButton rbSubTVSeriesAddedAndWatched;
+    private System.Windows.Forms.RadioButton rbSubTVSeriesWatched;
   }
 }

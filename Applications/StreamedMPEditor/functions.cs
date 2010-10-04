@@ -453,6 +453,8 @@ namespace StreamedMPEditor
           bgitem.ids.Add(menItem.id.ToString());
           bgitem.mname.Add(menItem.name.ToString());
           bgitem.name = bgitem.name + ", " + menItem.name;
+          if (bgitem.subMenuID == 0)
+            bgitem.subMenuID = menItem.subMenuLevel1ID;
           newBG = false;
         }
       }

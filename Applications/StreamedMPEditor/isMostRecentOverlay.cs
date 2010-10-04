@@ -2646,7 +2646,7 @@
       {
         foreach (menuItem item in menuItems)
         {
-          if (item.showMostRecent == displayMostRecent.tvSeries || item.showMostRecent == displayMostRecent.tvseriesAddedWatched)
+          if (item.showMostRecent == displayMostRecent.tvSeries || item.showMostRecent == displayMostRecent.tvseriesWatched || item.showMostRecent == displayMostRecent.tvseriesAddedWatched)
           {
             if (visibleOn == null)
               visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
@@ -2658,7 +2658,7 @@
           {
             for (int i = 0; i < item.subMenuLevel1.Count; i++)
             {
-              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries || item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries || item.showMostRecent == displayMostRecent.tvseriesWatched || item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
@@ -2671,7 +2671,7 @@
           {
             for (int i = 0; i < item.subMenuLevel2.Count; i++)
             {
-              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvSeries || item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvSeries || item.showMostRecent == displayMostRecent.tvseriesWatched || item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
