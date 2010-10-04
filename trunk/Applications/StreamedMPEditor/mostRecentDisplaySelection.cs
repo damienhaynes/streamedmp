@@ -36,6 +36,9 @@ namespace StreamedMPEditor
       if (rbSubTVSeries.Checked)
         return formStreamedMpEditor.displayMostRecent.tvSeries;
 
+      if (rbSubTVSeriesWatched.Checked)
+        return formStreamedMpEditor.displayMostRecent.tvseriesWatched;
+
       if (rbSubAddedMovies.Checked)
         return formStreamedMpEditor.displayMostRecent.moviesAdded;
 
@@ -66,6 +69,9 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.displayMostRecent.tvSeries:
           rbSubTVSeries.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.tvseriesWatched:
+          rbSubTVSeriesWatched.Checked = true;
           break;
         case formStreamedMpEditor.displayMostRecent.moviesAdded:
           rbSubAddedMovies.Checked = true;
