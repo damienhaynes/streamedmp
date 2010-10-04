@@ -1860,6 +1860,7 @@
       this.cbCycleFanart.TabIndex = 4;
       this.cbCycleFanart.Text = "Cycle Fanart";
       this.cbCycleFanart.UseVisualStyleBackColor = true;
+      this.cbCycleFanart.CheckedChanged += new System.EventHandler(this.cbCycleFanart_CheckStateChanged);
       // 
       // rbPosterStyle
       // 
