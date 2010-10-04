@@ -2600,31 +2600,42 @@
       //
       if (isOverlay == isOverlayType.MovPics)
       {
-        foreach (menuItem item in menuItems)
+        foreach (menuItem menItem in menuItems)
         {
-          if (item.showMostRecent == displayMostRecent.moviesAdded)
+          if (menItem.showMostRecent == displayMostRecent.moviesAdded || menItem.showMostRecent == displayMostRecent.moviesAddedWatched)
           {
             if (visibleOn == null)
-              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+              visibleOn = "[control.isvisible(" + menItem.id.ToString() + ")";
             else
-              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+              visibleOn += "|control.isvisible(" + menItem.id.ToString() + ")";
           }
           //check the submenus
-          if (item.subMenuLevel1.Count > 0)
+          if (menItem.subMenuLevel1.Count > 0)
           {
-            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            for (int i = 0; i < menItem.subMenuLevel1.Count; i++)
             {
-              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAdded)
+              if (menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAdded || menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAddedWatched)
               {
                 if (visibleOn == null)
-                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                  visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
                 else
-                  visibleOn = "|[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                  visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
               }
             }
           }
-          if (item.subMenuLevel2.Count > 0)
+          if (menItem.subMenuLevel2.Count > 0)
           {
+            for (int i = 0; i < menItem.subMenuLevel2.Count; i++)
+            {
+              if (menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.moviesAdded || menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.moviesAddedWatched)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+
           }
         }
       }
@@ -2635,7 +2646,7 @@
       {
         foreach (menuItem item in menuItems)
         {
-          if (item.showMostRecent == displayMostRecent.tvSeries)
+          if (item.showMostRecent == displayMostRecent.tvSeries || item.showMostRecent == displayMostRecent.tvseriesAddedWatched)
           {
             if (visibleOn == null)
               visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
@@ -2647,17 +2658,28 @@
           {
             for (int i = 0; i < item.subMenuLevel1.Count; i++)
             {
-              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries)
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries || item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
                 else
-                  visibleOn = "|[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
               }
             }
           }
           if (item.subMenuLevel2.Count > 0)
           {
+            for (int i = 0; i < item.subMenuLevel2.Count; i++)
+            {
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvSeries || item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+
           }
         }
       }

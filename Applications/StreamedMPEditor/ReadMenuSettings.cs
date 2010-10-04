@@ -504,6 +504,12 @@ namespace StreamedMPEditor
                 case "recordedTV":
                   subItem.showMostRecent = displayMostRecent.recordedTV;
                   break;
+                case "moviesAddedWatched":
+                  subItem.showMostRecent = displayMostRecent.moviesAddedWatched;
+                  break;
+                case "tvseriesAddedWatched":
+                  subItem.showMostRecent = displayMostRecent.tvseriesAddedWatched;
+                  break;
               }
               mnuItem.subMenuLevel1.Add(subItem);
             }
@@ -536,6 +542,12 @@ namespace StreamedMPEditor
                   break;
                 case "recordedTV":
                   subItem.showMostRecent = displayMostRecent.recordedTV;
+                  break;
+                case "moviesAddedWatched":
+                  subItem.showMostRecent = displayMostRecent.moviesAddedWatched;
+                  break;
+                case "tvseriesAddedWatched":
+                  subItem.showMostRecent = displayMostRecent.tvseriesAddedWatched;
                   break;
               }
               mnuItem.subMenuLevel2.Add(subItem);

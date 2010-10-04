@@ -18,22 +18,22 @@ namespace StreamedMPEditor
 
     string bhSubMenuWriterH()
     {
-      level1LateralBladeVisible = "Control.IsVisible(";
-      level2LateralBladeVisible = "Control.IsVisible(";
+      level1LateralBladeVisible = "control.isvisible(";
+      level2LateralBladeVisible = "control.isvisible(";
       foreach (menuItem menItem in menuItems)
       {
         if (menItem.subMenuLevel1.Count > 0)
         {
-          level1LateralBladeVisible += menItem.subMenuLevel1ID.ToString() + ")|Control.IsVisible(";
+          level1LateralBladeVisible += menItem.subMenuLevel1ID.ToString() + ")|control.isvisible(";
 
           if (menItem.subMenuLevel2.Count > 0)
-            level1LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|Control.IsVisible(";
+            level1LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|control.isvisible(";
 
           writeSubMenuLevel1H(menItem);
         }
         if (menItem.subMenuLevel2.Count > 0)
         {
-          level2LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|Control.IsVisible(";
+          level2LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|control.isvisible(";
           writeSubMenuLevel2H(menItem);
         }
       }
@@ -133,7 +133,7 @@ namespace StreamedMPEditor
                  "<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
                  "<ondown>" + ondown + "</ondown>" +
                  "<onup>" + onup + "</onup>" +
-                 "<visible allowhiddenfocus=\"true\">Control.IsVisible(" + parentMenu.subMenuLevel1ID.ToString() + ")</visible>" +
+                 "<visible allowhiddenfocus=\"true\">control.isvisible(" + parentMenu.subMenuLevel1ID.ToString() + ")</visible>" +
                "</control>";
       }
       localxml += "</control>";
@@ -272,7 +272,7 @@ namespace StreamedMPEditor
                  "<onright>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</onright>" +
                  "<ondown>" + ondown + "</ondown>" +
                  "<onup>" + onup + "</onup>" +
-                 "<visible allowhiddenfocus=\"true\">Control.IsVisible(" + (parentMenu.subMenuLevel1ID + 100).ToString() + ")</visible>" +
+                 "<visible allowhiddenfocus=\"true\">control.isvisible(" + (parentMenu.subMenuLevel1ID + 100).ToString() + ")</visible>" +
                "</control>";
       }
       localxml += "</control>";

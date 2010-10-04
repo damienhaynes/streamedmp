@@ -21,6 +21,8 @@ namespace StreamedMPEditor
       rbSubWatchedMovies.Checked = false;
       rbSubMusic.Checked = false;
       rbSubTV.Checked = false;
+      rbSubMovPicsAddedAndWatched.Checked = false;
+      rbSubTVSeriesAddedAndWatched.Checked = false;
     }
 
     public formStreamedMpEditor.displayMostRecent mrToDisplay
@@ -46,6 +48,12 @@ namespace StreamedMPEditor
       if (rbSubTV.Checked)
         return formStreamedMpEditor.displayMostRecent.recordedTV;
 
+      if (rbSubTVSeriesAddedAndWatched.Checked)
+        return formStreamedMpEditor.displayMostRecent.tvseriesAddedWatched;
+
+      if (rbSubMovPicsAddedAndWatched.Checked)
+        return formStreamedMpEditor.displayMostRecent.moviesAddedWatched;
+
       return formStreamedMpEditor.displayMostRecent.off;
     
     }
@@ -70,6 +78,12 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.displayMostRecent.recordedTV:
           rbSubTV.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.moviesAddedWatched:
+          rbSubMovPicsAddedAndWatched.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.tvseriesAddedWatched:
+          rbSubTVSeriesAddedAndWatched.Checked = true;
           break;
       }
     }
