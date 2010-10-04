@@ -2424,7 +2424,7 @@
 
     void mostRecentTVSeriesWatched()
     {
-        string fanartProperty = "#StreamedMP.MostRecentImageFanart";
+        string fanartProperty = "#StreamedMP.MostRecentImageFanartWatched";
         string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
         string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
