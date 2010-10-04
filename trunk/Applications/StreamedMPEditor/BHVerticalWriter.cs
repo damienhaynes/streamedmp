@@ -20,7 +20,7 @@ namespace StreamedMPEditor
       int ondown = 0;
 
       if (menItem.subMenuLevel1ID > 0)
-        menuVisControl = "Control.IsVisible(" + menItem.subMenuLevel1ID.ToString() + ")|";
+        menuVisControl = "control.isvisible(" + menItem.subMenuLevel1ID.ToString() + ")|";
 
        switch (i)
       {

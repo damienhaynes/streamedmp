@@ -578,6 +578,9 @@ namespace StreamedMPConfig
       string episodeNum = null;
       string formattedSE = null;
 
+      smcLog.WriteLog("In Most Recents Added=" + tvSeriesRecentAddedEnabled.ToString() + "   Watched=" + tvSeriesRecentWatchedEnabled.ToString(), LogLevel.Debug);
+
+
       if (tvSeriesRecentAddedEnabled)
       {
         for (int i = 0; i < 3; i++)
@@ -849,7 +852,7 @@ namespace StreamedMPConfig
       {
         
         getMostRecents();
-        setMostRecents();        
+        //setMostRecents();        
       }
  
       if (StreamedMPConfig.updateAvailable)

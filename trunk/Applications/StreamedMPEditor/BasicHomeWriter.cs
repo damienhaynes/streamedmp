@@ -1587,7 +1587,7 @@ namespace StreamedMPEditor
         if (menItem.subMenuLevel1ID == 0)
           menuIDControl = string.Empty;
         else
-          menuIDControl = "|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
+          menuIDControl = "|control.isvisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
 
         if (menItem.isDefault)
         {
@@ -1681,7 +1681,7 @@ namespace StreamedMPEditor
         if (menItem.subMenuLevel1ID == 0)
           menuIDControl = string.Empty;
         else
-          menuIDControl = "|Control.IsVisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
+          menuIDControl = "|control.isvisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
 
         if (menItem.isDefault)
         {

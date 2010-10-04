@@ -108,7 +108,9 @@ namespace StreamedMPEditor
       moviesAdded,
       moviesWatched,
       music,
-      recordedTV
+      recordedTV,
+      moviesAddedWatched,
+      tvseriesAddedWatched
     }
 
     #endregion
