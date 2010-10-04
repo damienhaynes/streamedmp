@@ -490,7 +490,10 @@ namespace StreamedMPEditor
                   subItem.showMostRecent = displayMostRecent.off;
                   break;
                 case "tvSeries":
-                  subItem.showMostRecent = displayMostRecent.tvSeries;
+                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
+                  break;
+                case "tvSeriesAdded":
+                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
                   break;
                 case "moviesAdded":
                   subItem.showMostRecent = displayMostRecent.moviesAdded;
@@ -531,8 +534,11 @@ namespace StreamedMPEditor
                 case "off":
                   subItem.showMostRecent = displayMostRecent.off;
                   break;
+                case "tvSeriesAdded":
+                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
+                  break;
                 case "tvSeries":
-                  subItem.showMostRecent = displayMostRecent.tvSeries;
+                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
                   break;
                 case "moviesAdded":
                   subItem.showMostRecent = displayMostRecent.moviesAdded;
@@ -591,7 +597,6 @@ namespace StreamedMPEditor
             mnuItem.defaultImage = mnuItem.bgFolder + "\\default.jpg";
         }
 
-
         menuItems.Add(mnuItem);
       }
       reloadBackgroundItems();
@@ -607,12 +612,12 @@ namespace StreamedMPEditor
 
       // Enable most recent TVSeries on TVSeries menu item if not defined
       if (mrOption == "false" && skinId == tvseriesSkinID)
-        return displayMostRecent.tvSeries;
+        return displayMostRecent.tvSeriesAdded;
 
       if (mrOption == displayMostRecent.moviesAdded.ToString() || mrOption == "movies")
         return displayMostRecent.moviesAdded;
-      else if (mrOption == displayMostRecent.tvSeries.ToString())
-        return displayMostRecent.tvSeries;
+      else if (mrOption == displayMostRecent.tvSeriesAdded.ToString())
+        return displayMostRecent.tvSeriesAdded;
       else
         return displayMostRecent.off;
     }
