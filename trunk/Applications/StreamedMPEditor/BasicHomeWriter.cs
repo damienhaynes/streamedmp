@@ -3557,103 +3557,103 @@ namespace StreamedMPEditor
       else
         mostRecentMovPicsSummStyle = "poster";
 
-      xml = ("<profile>"
-                + "<version>1.0</version>\n"
-                + "<skin name=\"StreamedMP\">\n"
-                + "<section name=" + quote + "StreamedMP Options" + quote + ">\n"
-                + generateEntry("menustyle", activeMenuStyle, 2, true)
-                + generateEntry("weatherstyle", activeWeatherStyle, 2, true)
-                + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 2, true)
-                + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 2, true)
-                + generateEntry("labelFont", cboLabelFont.Text, 2, true)
-                + generateEntry("selectedFont", cboSelectedFont.Text, 2, true)
-                + generateEntry("menuType", menuOrientation, 2, true)
-                + generateEntry(menuPos, txtMenuPos.Text, 2, true)
-                + generateEntry("acceleration", acceleration, 2, true)
-                + generateEntry("duration", duration, 2, true)
-                + generateEntry("dropShadow", settingDropShadow, 2, true)
-                + generateEntry("enableRssfeed", settingEnableRssfeed, 2, true)
-                + generateEntry("enableTwitter", settingEnableTwitter, 2, true)
-                + generateEntry("wrapString", settingWrapString, 2, true)
-                + generateEntry("weatherBGlink", settingWeatherBGlink, 2, true)
-                + generateEntry("fiveDayWeatherCheckBox", settingFiveDayWeatherCheckBox, 2, true)
-                + generateEntry("summaryWeatherCheckBox", settingSummaryWeatherCheckBox, 2, true)
-                + generateEntry("cboClearCache", settingClearCacheOnGenerate, 2, true)
-                + generateEntry("animatedWeather", settingAnimatedWeather, 2, true)
-                + generateEntry("horizontalContextLabels", settingHorizontalContextLabels, 2, true)
-                + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 2, true)
-                + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 2, true)
-                + generateEntry("activeRssImageType", activeRssImageType, 2, true)
-                + generateEntry("disableOnScreenClock", disableOnScreenClock, 2, true)
-                + generateEntry("targetScreenRes", targetScreenRes, 2, true)
-                + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 2, true)
-                + generateEntry("enableOverlayFanart", enableOverlayFanart, 2, true)
-                + generateEntry("animatedBackground", animatedBackground, 2, true)
-                + generateEntry("tvSeriesMostRecent", tvSeriesMostRecent, 2, true)
-                + generateEntry("movPicsMostRecent", movPicsMostRecent, 2, true)
-                + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 2, true)
-                + generateEntry("movPicsDisplayType", movPicsDisplayType, 2, true)
-                + generateEntry("mostRecentTVSeriesSummStyle", mostRecentTVSeriesSummStyle, 2, true)
-                + generateEntry("mostRecentMovPicsSummStyle", mostRecentMovPicsSummStyle, 2, true)
-                + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 2, true)
-                + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 2, true)
-                + generateEntry("mrTitleLast", mrTitleLast, 2, true)
-                + generateEntry("mrEpisodeFont", tvSeriesOptions.mrEpisodeFont, 2, true)
-                + generateEntry("mrSeriesFont", tvSeriesOptions.mrSeriesFont, 2, true)
-                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons, 2, true)
-                + generateEntry("mrTVSeriesCycleFanart", mrTVSeriesCycleFanart, 2, true)
-                + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 2, true)
-                + generateEntry("mrMovieTitleFont", movPicsOptions.MovieTitleFont, 2, true)
-                + generateEntry("mrMovieDetailFont", movPicsOptions.MovieDetailFont, 2, true)
-                + generateEntry("mrMovPicsHideRuntime", mrMovPicsHideRuntime, 2, true)
-                + generateEntry("mrMovPicsHideCertification", mrMovPicsHideCertification, 2, true)
-                + generateEntry("mrMovPicsHideRating", mrMovPicsHideRating, 2, true)
-                + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 2, true)
-                + generateEntry("mrMovPicsWatched", mrMovPicsWatched, 2, true)
-                + generateEntry("mrTVSeriesWatched", mrTVSeriesWatched, 2, true)
-                + "</section>");
+      xml = ("<profile>\n"
+                + "\t<version>1.0</version>\n"
+                + "\t<skin name=\"StreamedMP\">\n"
+                + "\t\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
+                + generateEntry("menustyle", activeMenuStyle, 3, true)
+                + generateEntry("weatherstyle", activeWeatherStyle, 3, true)
+                + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 3, true)
+                + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 3, true)
+                + generateEntry("labelFont", cboLabelFont.Text, 3, true)
+                + generateEntry("selectedFont", cboSelectedFont.Text, 3, true)
+                + generateEntry("menuType", menuOrientation, 3, true)
+                + generateEntry(menuPos, txtMenuPos.Text, 3, true)
+                + generateEntry("acceleration", acceleration, 3, true)
+                + generateEntry("duration", duration, 3, true)
+                + generateEntry("dropShadow", settingDropShadow, 3, true)
+                + generateEntry("enableRssfeed", settingEnableRssfeed, 3, true)
+                + generateEntry("enableTwitter", settingEnableTwitter, 3, true)
+                + generateEntry("wrapString", settingWrapString, 3, true)
+                + generateEntry("weatherBGlink", settingWeatherBGlink, 3, true)
+                + generateEntry("fiveDayWeatherCheckBox", settingFiveDayWeatherCheckBox, 3, true)
+                + generateEntry("summaryWeatherCheckBox", settingSummaryWeatherCheckBox, 3, true)
+                + generateEntry("cboClearCache", settingClearCacheOnGenerate, 3, true)
+                + generateEntry("animatedWeather", settingAnimatedWeather, 3, true)
+                + generateEntry("horizontalContextLabels", settingHorizontalContextLabels, 3, true)
+                + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 3, true)
+                + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 3, true)
+                + generateEntry("activeRssImageType", activeRssImageType, 3, true)
+                + generateEntry("disableOnScreenClock", disableOnScreenClock, 3, true)
+                + generateEntry("targetScreenRes", targetScreenRes, 3, true)
+                + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 3, true)
+                + generateEntry("enableOverlayFanart", enableOverlayFanart, 3, true)
+                + generateEntry("animatedBackground", animatedBackground, 3, true)
+                + generateEntry("tvSeriesMostRecent", tvSeriesMostRecent, 3, true)
+                + generateEntry("movPicsMostRecent", movPicsMostRecent, 3, true)
+                + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 3, true)
+                + generateEntry("movPicsDisplayType", movPicsDisplayType, 3, true)
+                + generateEntry("mostRecentTVSeriesSummStyle", mostRecentTVSeriesSummStyle, 3, true)
+                + generateEntry("mostRecentMovPicsSummStyle", mostRecentMovPicsSummStyle, 3, true)
+                + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 3, true)
+                + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 3, true)
+                + generateEntry("mrTitleLast", mrTitleLast, 3, true)
+                + generateEntry("mrEpisodeFont", tvSeriesOptions.mrEpisodeFont, 3, true)
+                + generateEntry("mrSeriesFont", tvSeriesOptions.mrSeriesFont, 3, true)
+                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons, 3, true)
+                + generateEntry("mrTVSeriesCycleFanart", mrTVSeriesCycleFanart, 3, true)
+                + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 3, true)
+                + generateEntry("mrMovieTitleFont", movPicsOptions.MovieTitleFont, 3, true)
+                + generateEntry("mrMovieDetailFont", movPicsOptions.MovieDetailFont, 3, true)
+                + generateEntry("mrMovPicsHideRuntime", mrMovPicsHideRuntime, 3, true)
+                + generateEntry("mrMovPicsHideCertification", mrMovPicsHideCertification, 3, true)
+                + generateEntry("mrMovPicsHideRating", mrMovPicsHideRating, 3, true)
+                + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 3, true)
+                + generateEntry("mrMovPicsWatched", mrMovPicsWatched, 3, true)
+                + generateEntry("mrTVSeriesWatched", mrTVSeriesWatched, 3, true)
+                + "\t\t</section>");
 
     
 
 
       StringBuilder rawXML = new StringBuilder();
 
-      rawXML.AppendLine("<!-- End Of Menu Options -->\n<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
+      rawXML.AppendLine("\n\t\t<!-- End Of Menu Options -->\n\t\t<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
 
       int menuIndex = 0;
-      rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 2, false));
+      rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 3, false));
       foreach (menuItem menItem in menuItems)
       {
-        rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " -->");
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartproperty", menItem.fanartProperty, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanarthandlerenabled", menItem.fanartHandlerEnabled.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "enablemusicnowplayingfanart", menItem.EnableMusicNowPlayingFanart.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlink", menItem.hyperlink, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isdefault", menItem.isDefault.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isweather", menItem.isWeather.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "id", menItem.id.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "updatestatus", menItem.updateStatus.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "defaultimage", menItem.defaultImage, 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "disableBGSharing", menItem.disableBGSharing.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu1", menItem.subMenuLevel1.Count.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu2", menItem.subMenuLevel2.Count.ToString(), 2, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "subMenuLevel1ID", menItem.subMenuLevel1ID.ToString(), 2, false));
+        rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " -->");
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartproperty", menItem.fanartProperty, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanarthandlerenabled", menItem.fanartHandlerEnabled.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "enablemusicnowplayingfanart", menItem.EnableMusicNowPlayingFanart.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlink", menItem.hyperlink, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isdefault", menItem.isDefault.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isweather", menItem.isWeather.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "id", menItem.id.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "updatestatus", menItem.updateStatus.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "defaultimage", menItem.defaultImage, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "disableBGSharing", menItem.disableBGSharing.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu1", menItem.subMenuLevel1.Count.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu2", menItem.subMenuLevel2.Count.ToString(), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "subMenuLevel1ID", menItem.subMenuLevel1ID.ToString(), 3, false));
 
         if (menItem.subMenuLevel1.Count > 0)
         {
           int subCount = 0;
           subMenuL1Exists = true;
-          rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
+          rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
           foreach (subMenuItem subItem in menItem.subMenuLevel1)
           {
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 2, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 2, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 2, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 2, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
             subCount++;
           }
 
@@ -3661,13 +3661,13 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel2.Count > 0)
           {
             subMenuL2Exists = true;
-            rawXML.AppendLine("<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
+            rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
             foreach (subMenuItem subItem in menItem.subMenuLevel2)
             {
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 2, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 2, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 2, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 2, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
               subCount++;
             }
           }
@@ -3680,8 +3680,8 @@ namespace StreamedMPEditor
 
 
       }
-      rawXML.AppendLine("</section>");
-      rawXML.AppendLine("</skin>");
+      rawXML.AppendLine("\t\t</section>");
+      rawXML.AppendLine("\t</skin>");
       rawXML.AppendLine("</profile>");
 
       xml += rawXML.ToString();
