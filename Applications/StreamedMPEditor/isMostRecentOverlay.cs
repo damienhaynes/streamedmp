@@ -650,6 +650,9 @@
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
         buildTVSeriesSummaryFile(overlayYpos, mostRecentTVSeriesSummaryStyle.fanart);
+        //if (cbTVSeriesRecentWatched.Checked)
+        //  mostRecentTVSeriesWatched();
+
         writeXMLFile("basichome.recentlyadded.tvseries.HSum2.xml");
       }
 
@@ -1570,6 +1573,9 @@
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
         buildMovingPicturesSummaryFile(overlayYpos, mostRecentMovPicsSummaryStyle.fanart);
+        //if (cbMovPicsRecentWatched.Checked)
+        //  mostRecentMoviesWatched();
+
         writeXMLFile("basichome.recentlyadded.movpics.HSum2.xml");
       }
 
