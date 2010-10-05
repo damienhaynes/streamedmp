@@ -972,8 +972,6 @@ namespace StreamedMPEditor
     {
       getFileListing(SkinInfo.mpPaths.configBasePath, "usermenuprofile.xml.backup*", false);
       numUPBackups.Text = totalImages.ToString();
-      getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
-      numBHBackups.Text = totalImages.ToString();
     }
 
     private void StreamedMPMenu_Selected(object sender, TabControlEventArgs e)
@@ -1012,15 +1010,6 @@ namespace StreamedMPEditor
               System.IO.File.Delete(file);
             versionCount++;
           }
-          versionCount = 0;
-
-          string[] filesToDelete2 = getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
-          foreach (string file in filesToDelete2)
-          {
-            if (versionCount >= int.Parse(backupVersionsToKeep.Text))
-              System.IO.File.Delete(file);
-            versionCount++;
-          }
         }
         Properties.Settings.Default.Save();
       }
@@ -1029,16 +1018,6 @@ namespace StreamedMPEditor
     private void purgeUPBackups_Click(object sender, EventArgs e)
     {
       string[] filesToDelete = getFileListing(SkinInfo.mpPaths.configBasePath, "usermenuprofile.xml.backup.*", false);
-      foreach (string file in filesToDelete)
-      {
-        System.IO.File.Delete(file);
-      }
-      getBackupFileTotals();
-    }
-
-    private void purgeBHBackups_Click(object sender, EventArgs e)
-    {
-      string[] filesToDelete = getFileListing(SkinInfo.mpPaths.streamedMPpath, "BasicHome.xml.backup.*", false);
       foreach (string file in filesToDelete)
       {
         System.IO.File.Delete(file);

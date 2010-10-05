@@ -50,8 +50,7 @@ namespace StreamedMPEditor
       }
       catch (Exception e)
       {
-        helper.showError("Exception while loading usermenuprofile.xml\n\n" + e.Message, errorCode.loadError);
-        basicHomeLoadError = true;
+        helper.showError("Exception while loading usermenuprofile.xml\n\nUnable to Continue - please restore from backup" + e.Message, errorCode.major);
       }
 
       //

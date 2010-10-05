@@ -206,11 +206,8 @@
       this.autoPurgeBackups = new System.Windows.Forms.CheckBox();
       this.groupBox4 = new System.Windows.Forms.GroupBox();
       this.numUPBackupsL = new System.Windows.Forms.Label();
-      this.label8 = new System.Windows.Forms.Label();
-      this.purgeBHBackups = new System.Windows.Forms.Button();
       this.numUPBackups = new System.Windows.Forms.Label();
       this.purgeUPBackups = new System.Windows.Forms.Button();
-      this.numBHBackups = new System.Windows.Forms.Label();
       this.lastUsedTab = new System.Windows.Forms.CheckBox();
       this.aboutBoxGroup = new System.Windows.Forms.GroupBox();
       this.compileTime = new System.Windows.Forms.Label();
@@ -2264,11 +2261,8 @@
       // groupBox4
       // 
       this.groupBox4.Controls.Add(this.numUPBackupsL);
-      this.groupBox4.Controls.Add(this.label8);
-      this.groupBox4.Controls.Add(this.purgeBHBackups);
       this.groupBox4.Controls.Add(this.numUPBackups);
       this.groupBox4.Controls.Add(this.purgeUPBackups);
-      this.groupBox4.Controls.Add(this.numBHBackups);
       this.groupBox4.Location = new System.Drawing.Point(428, 19);
       this.groupBox4.Name = "groupBox4";
       this.groupBox4.Size = new System.Drawing.Size(244, 77);
@@ -2284,25 +2278,6 @@
       this.numUPBackupsL.Size = new System.Drawing.Size(99, 13);
       this.numUPBackupsL.TabIndex = 53;
       this.numUPBackupsL.Text = "usermenuprofile.xml";
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(6, 50);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(79, 13);
-      this.label8.TabIndex = 54;
-      this.label8.Text = "BasicHome.xml";
-      // 
-      // purgeBHBackups
-      // 
-      this.purgeBHBackups.Location = new System.Drawing.Point(144, 45);
-      this.purgeBHBackups.Name = "purgeBHBackups";
-      this.purgeBHBackups.Size = new System.Drawing.Size(75, 23);
-      this.purgeBHBackups.TabIndex = 11;
-      this.purgeBHBackups.Text = "Purge All";
-      this.purgeBHBackups.UseVisualStyleBackColor = true;
-      this.purgeBHBackups.Click += new System.EventHandler(this.purgeBHBackups_Click);
       // 
       // numUPBackups
       // 
@@ -2322,15 +2297,6 @@
       this.purgeUPBackups.Text = "Purge All";
       this.purgeUPBackups.UseVisualStyleBackColor = true;
       this.purgeUPBackups.Click += new System.EventHandler(this.purgeUPBackups_Click);
-      // 
-      // numBHBackups
-      // 
-      this.numBHBackups.AutoSize = true;
-      this.numBHBackups.Location = new System.Drawing.Point(111, 50);
-      this.numBHBackups.Name = "numBHBackups";
-      this.numBHBackups.Size = new System.Drawing.Size(27, 13);
-      this.numBHBackups.TabIndex = 52;
-      this.numBHBackups.Text = "xxxx";
       // 
       // lastUsedTab
       // 
@@ -2898,11 +2864,8 @@
     private System.Windows.Forms.PictureBox style2Description;
     private System.Windows.Forms.PictureBox style1Description;
     private System.Windows.Forms.CheckBox lastUsedTab;
-    private System.Windows.Forms.Label numBHBackups;
     private System.Windows.Forms.Label numUPBackups;
-    private System.Windows.Forms.Label label8;
     private System.Windows.Forms.Label numUPBackupsL;
-    private System.Windows.Forms.Button purgeBHBackups;
     private System.Windows.Forms.Button purgeUPBackups;
     private System.Windows.Forms.GroupBox editorOptionsGroup;
     private System.Windows.Forms.GroupBox groupBox4;
