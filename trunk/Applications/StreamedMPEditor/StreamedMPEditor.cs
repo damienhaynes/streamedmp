@@ -373,20 +373,6 @@ namespace StreamedMPEditor
         {
           wrapString.Enabled = false;
         }
-
-        if (basicHomeLoadError)
-        {
-          DialogResult result = helper.showError("There was an issue reading your current BasicHome.xml file\r\rthe format is to differnet to be parsed correctly\r\rWould you like save your existing BasicHome\r\rand load a template BasicHome for Editing?", errorCode.infoQuestion);
-          if (result == DialogResult.Yes)
-          {
-            BasicHomeFromTemplate();
-            basicHomeLoadError = false;
-            loadMenuSettings();
-            GetDefaultBackgroundImages();
-          }
-          else
-            helper.showError("Editing is not possible due to parsing issues with current BasicHome.xml file", errorCode.major);
-        }
       }
       else
         this.Close();
@@ -940,9 +926,6 @@ namespace StreamedMPEditor
       }
 
       toolStripStatusLabel1.Text = "Done!";
-
-      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Copy(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml", SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString());
 
       if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
         System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
