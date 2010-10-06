@@ -479,6 +479,9 @@ namespace StreamedMPConfig
           ++mrEpisodeNumber;
         }
       }
+
+      // Need to sort this - but for now...
+      setMostRecents();
     }
 
     void getLastThreeAddedTVSeries()
