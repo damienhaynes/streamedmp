@@ -23,7 +23,15 @@ namespace StreamedMPConfig
     public const string cXMLSectionVideo = "VideoConfig";
     public const string cXMLSectionUpdate = "UpdateConfig";
     
-    public const string cXMLSectionEditorOptions = "StreamedMP Options";
+    private const string cXMLSectionEditorOptions = "StreamedMP Options";
+    private const string cXMLSectionEditorItems = "StreamedMP Menu Items";
+
+    private const string cXMLMostRecentTVSeriesVal = "tvSeriesAdded";
+    private const string cXMLMostRecentMoviesVal = "moviesAdded";
+
+    private const string cXMLMostRecentMenuItems = "menuitem{0}showMostRecent";
+    private const string cXMLMenuItemControlID = "menuitem{0}id";
+
     #endregion
 
     #region XML Configuration Strings
@@ -139,8 +147,9 @@ namespace StreamedMPConfig
       }
     }
 
-    public static void LoadEditorProperties(string section)
+    public static void LoadEditorProperties()
     {
+      string section = cXMLSectionEditorOptions;
       smcLog.WriteLog(string.Format("BasicHome Menu: Settings.Load({0})", section), LogLevel.Info);
 
       // Get settings from editor...would be best to unify all these into the same configuration file    
@@ -148,26 +157,88 @@ namespace StreamedMPConfig
 
       if (xmlDoc == null)
       {
-        // set defaults
-        StreamedMPConfig.movPicRecentAddedEnabled = true;
-        StreamedMPConfig.tvSeriesRecentAddedEnabled = true;
-        return;
+        // user may have deleted the usermenuprofile
+        // try skin directory
+        xmlDoc = Helper.LoadXMLDocument(Path.Combine(GUIGraphicsContext.Skin, "usermenuprofile.xml"));
+
+        if (xmlDoc == null)
+        {
+          // set defaults
+          StreamedMPConfig.movPicRecentAddedEnabled = false;
+          StreamedMPConfig.tvSeriesRecentAddedEnabled = false;
+          return;
+        }
       }
 
       XmlNode node = xmlDoc.SelectSingleNode(string.Format("/profile/skin[@name='StreamedMP']/section[@name='{0}']", section));
 
-      if (Helper.ReadEntryValue(section, settings.cXMLSettingMovPicsRecentAdded, node) == "true")
+      if (Helper.ReadEntryValue(settings.cXMLSettingMovPicsRecentAdded, node) == "true")
         StreamedMPConfig.movPicRecentAddedEnabled = true;
 
-      if (Helper.ReadEntryValue(section, settings.cXMLSettingMovPicsRecentWatched, node) == "true")
+      if (Helper.ReadEntryValue(settings.cXMLSettingMovPicsRecentWatched, node) == "true")
         StreamedMPConfig.movPicRecentWatchedEnabled = true;
 
-      if (Helper.ReadEntryValue(section, settings.cXMLSettingTVSeriesRecentAdded, node) == "true")
+      if (Helper.ReadEntryValue(settings.cXMLSettingTVSeriesRecentAdded, node) == "true")
         StreamedMPConfig.tvSeriesRecentAddedEnabled = true;
 
-      if (Helper.ReadEntryValue(section, settings.cXMLSettingTVSeriesRecentWatched, node) == "true")
+      if (Helper.ReadEntryValue(settings.cXMLSettingTVSeriesRecentWatched, node) == "true")
         StreamedMPConfig.tvSeriesRecentWatchedEnabled = true;
      
+      // get list of control id's for most recently added
+      // use this to determine play what item to play on home screen
+      section = cXMLSectionEditorItems;
+      node = xmlDoc.SelectSingleNode(string.Format("/profile/skin[@name='StreamedMP']/section[@name='{0}']", section));
+
+      if (node == null)
+      {
+        StreamedMPConfig.tvSeriesRecentAddedEnabled = false;
+        StreamedMPConfig.movPicRecentAddedEnabled = false;
+        return;
+      }
+
+      // get menu item count
+      string items = string.Empty;
+      items = Helper.ReadEntryValue("count", node);
+  
+      int itemCount = 0;
+      if (int.TryParse(items, out itemCount))
+      {
+        string menuItem = string.Empty;
+        string menuVal = string.Empty;
+        int controlID = 0;
+ 
+        // go through each menu item looking for which ones
+        // show most recent episodes or movies
+        for (int i = 0; i < itemCount; i++)
+        {          
+          menuItem = string.Format(cXMLMostRecentMenuItems, i);
+          menuVal = Helper.ReadEntryValue(menuItem, node);
+
+          // item shows recently added episodes
+          if (menuVal == cXMLMostRecentTVSeriesVal)
+          {
+            if (int.TryParse(Helper.ReadEntryValue(string.Format(cXMLMenuItemControlID, i), node), out controlID))
+            {
+              StreamedMPConfig.mostRecentEpisodeControlIDs.Add(controlID);
+            }
+          }
+
+          // item shows recently added movies
+          if (menuVal == cXMLMostRecentMoviesVal)
+          {
+            if (int.TryParse(Helper.ReadEntryValue(string.Format(cXMLMenuItemControlID, i), node), out controlID))
+            {
+              StreamedMPConfig.mostRecentMovieControlIDs.Add(controlID);
+            }
+          }
+        }
+      }
+
+      if (StreamedMPConfig.mostRecentEpisodeControlIDs.Count == 0)
+        StreamedMPConfig.tvSeriesRecentAddedEnabled = false;
+
+      if (StreamedMPConfig.mostRecentMovieControlIDs.Count == 0)
+        StreamedMPConfig.movPicRecentAddedEnabled = false;
     }
 
     public static void Load(string section)
