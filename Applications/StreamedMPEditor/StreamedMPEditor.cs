@@ -945,12 +945,12 @@ namespace StreamedMPEditor
       {
         if (cbMostRecentTvSeries.Checked)
         {
-          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries);
+          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
         }
 
         if (cbMostRecentMovPics.Checked)
         {
-          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics);
+          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
         }
       }
 

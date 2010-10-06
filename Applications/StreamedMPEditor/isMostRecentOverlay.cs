@@ -3,10 +3,20 @@
   public partial class formStreamedMpEditor
   {
 
+    public int baseXPosAdded;
+    public int baseYPosAdded;
+    public int baseXPosWatched;
+    public int baseYPosWatched;
+
     #region Main
 
-    void generateMostRecentOverlay(chosenMenuStyle menuStyle, isOverlayType isOverlay)
+    void generateMostRecentOverlay(chosenMenuStyle menuStyle, isOverlayType isOverlay, int xPosAdded, int yPosAdded, int xPosWatched, int yPosWatched)
     {
+      baseXPosAdded = xPosAdded;
+      baseYPosAdded = yPosAdded;
+      baseXPosWatched = xPosWatched;
+      baseYPosWatched = yPosWatched;
+
       if (isOverlay == isOverlayType.TVSeries)
       {
         doTVSeries(tvSeriesRecentStyle);
@@ -846,8 +856,8 @@
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
                     "<description>Series 1 BG</description>\n" +
-                    "<posX>976</posX>\n" +
-                    "<posY>50</posY>\n" +
+                    "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
+                    "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<width>306</width>\n" +
@@ -859,8 +869,8 @@
                     "<description>Header label</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>70</posY>\n" +
+                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.LatestEpisodes</label>\n" +
                     "<font>mediastream10tc</font>\n" +
@@ -870,8 +880,8 @@
                     "<description>Series 1 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>245</posY>\n" +
+                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
@@ -885,8 +895,8 @@
         "<description>Series 1 title</description>\n" +
         "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>262</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>\n" +
@@ -897,8 +907,8 @@
         "<description>Series 1 thumb/fanart</description>\n" +
         "<type>image</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>92</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
         "<width>268</width>\n" +
         "<height>151</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
@@ -921,8 +931,8 @@
         "<description>Series 2 name</description>\n" +
         "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>280</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
         "<width>258</width>\n" + 
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
@@ -936,8 +946,8 @@
         "<description>Series 2 title</description>\n" +
         "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>297</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>\n" +
@@ -960,8 +970,8 @@
       "<control>\n" +
         "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>315</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
         "<width>258</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
@@ -975,8 +985,8 @@
         "<description>Series 3 title</description>\n" +
         "<type>fadelabel</type>\n" +
         "<id>0</id>\n" +
-        "<posX>995</posX>\n" +
-        "<posY>332</posY>\n" +
+        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
         "<width>255</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>\n" +
@@ -1741,14 +1751,13 @@
 
       if (sumStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
+        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
+        
+        int xPos = baseXPosAdded + 20;
 
         string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
-        bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
-        int xPos = 995;
         string alignTxt = "right";
-
-
         string fanartProperty = "#StreamedMP.recentlyAdded.movie1.fanart";
 
         if (cbCycleFanart.Checked)
@@ -1771,8 +1780,8 @@
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
                     "<description>Movie 1 BG</description>\n" +
-                    "<posX>976</posX>\n" +
-                    "<posY>50</posY>\n" +
+                    "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
+                    "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<width>306</width>\n" +
@@ -1784,8 +1793,8 @@
                     "<description>Header label</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>70</posY>\n" +
+                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.LatestMovies</label>\n" +
                     "<font>mediastream10tc</font>\n" +
@@ -1795,8 +1804,8 @@
                     "<description>Movie 1 Title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>245</posY>\n" +
+                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1811,8 +1820,8 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>262</posY>\n" +
-            "<width>257</width>\n" +
+             "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
+             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie1.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
@@ -1832,7 +1841,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>262</posY>\n" +
+            "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie1.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -1849,8 +1858,8 @@
               "<description>Movie 1 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>265</posY>" +
+              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 215).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -1864,8 +1873,8 @@
               "<description>Movie 1 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>265</posY>" +
+              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 215).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
@@ -1873,14 +1882,14 @@
           }
         }
 
-        xPos = 995;
+        xPos = baseXPosAdded + 20;
         xml += "<control>\n" +
                 "<description>Movie 1 thumb/fanart</description>\n" +
                 "<type>image</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>995</posX>\n" +
-                "<posY>92</posY>\n" +
-                "<width>268</width>\n" +
+                "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
+                "<width>268</width>\n" + 
                 "<height>151</height>\n" +
                 "<keepaspectratio>true</keepaspectratio>\n" +
                 "<texture>" + fanartProperty + "</texture>\n" +
@@ -1902,8 +1911,8 @@
                 "<description>Movie 2 Title</description>\n" +
                 "<type>fadelabel</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>995</posX>\n" +
-                "<posY>280</posY>\n" +
+                "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
                 "<width>258</width>\n" +
                 "<label>#StreamedMP.recentlyAdded.movie2.title</label>\n" +
                 "<font>" + mrMovieTitleFont + "</font>" +
@@ -1918,13 +1927,13 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>297</posY>\n" +
+            "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = baseXPosAdded + 204;
         }
         else
         {
@@ -1938,7 +1947,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>297</posY>\n" +
+            "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie2.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -1955,8 +1964,8 @@
               "<description>Movie 2 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>297</posY>" +
+              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -1970,8 +1979,8 @@
               "<description>Movie 2 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>301</posY>" +
+              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 251).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
@@ -1979,7 +1988,7 @@
           }
         }
 
-        xPos = 995;
+        xPos = baseXPosAdded + 20;
         xml += "</control>\n" +
         "<control>\n" +
           "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
@@ -1996,8 +2005,8 @@
           "<control>\n" +
             "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
-            "<posX>995</posX>\n" +
-            "<posY>315</posY>\n" +
+            "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
             "<width>258</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
             "<textcolor>White</textcolor>\n" +
@@ -2013,13 +2022,13 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>332</posY>\n" +
+            "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = baseXPosAdded + 204;
         }
         else
         {
@@ -2033,7 +2042,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>332</posY>\n" +
+            "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -2050,8 +2059,8 @@
               "<description>Movie 3 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>332</posY>" +
+              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -2065,8 +2074,8 @@
               "<description>Movie 3 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>335</posY>" +
+              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 285).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
@@ -2116,8 +2125,8 @@
                     "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
                     "<description>Movie 1 BG</description>\n" +
-                    "<posX>976</posX>\n" +
-                    "<posY>370</posY>\n" +
+                    "<posX>" + baseXPosWatched.ToString() + "</posX>\n" +
+                    "<posY>" + baseYPosWatched.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<width>306</width>\n" +
@@ -2129,8 +2138,8 @@
                     "<description>Header label</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>390</posY>\n" +
+                    "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>Recently Watched</label>\n" +
                     "<font>mediastream10tc</font>\n" +
@@ -2140,8 +2149,8 @@
                     "<description>Movie 1 Title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>995</posX>\n" +
-                    "<posY>565</posY>\n" +
+                    "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
                     "<label>#StreamedMP.recentlyWatched.movie1.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -2156,13 +2165,13 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>582</posY>\n" +
+            "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie1.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = baseXPosWatched + 204;
         }
         else
         {
@@ -2177,7 +2186,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>582</posY>\n" +
+            "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie1.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -2194,8 +2203,8 @@
               "<description>Movie 1 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>585</posY>" +
+              "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 215).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -2209,8 +2218,8 @@
               "<description>Movie 1 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>585</posY>" +
+              "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 215).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyWatched.movie1.score.png</texture>" +
@@ -2218,13 +2227,13 @@
           }
         }
 
-        xPos = 995;
+        xPos = baseXPosWatched + 19;
         xml += "<control>\n" +
                 "<description>Movie 1 thumb/fanart</description>\n" +
                 "<type>image</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>995</posX>\n" +
-                "<posY>412</posY>\n" +
+                "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosWatched + 42).ToString() + "</posY>\n" +
                 "<width>268</width>\n" +
                 "<height>151</height>\n" +
                 "<keepaspectratio>true</keepaspectratio>\n" +
@@ -2247,8 +2256,8 @@
                 "<description>Movie 2 Title</description>\n" +
                 "<type>fadelabel</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>995</posX>\n" +
-                "<posY>600</posY>\n" +
+                "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
                 "<width>258</width>\n" +
                 "<label>#StreamedMP.recentlyWatched.movie2.title</label>\n" +
                 "<font>" + mrMovieTitleFont + "</font>" +
@@ -2263,13 +2272,13 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>617</posY>\n" +
+            "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie2.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = baseXPosWatched + 204;
         }
         else
         {
@@ -2283,7 +2292,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>617</posY>\n" +
+            "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie2.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -2300,8 +2309,8 @@
               "<description>Movie 2 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>617</posY>" +
+              "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -2315,8 +2324,8 @@
               "<description>Movie 2 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>621</posY>" +
+              "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 251).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyWatched.movie2.score.png</texture>" +
@@ -2324,7 +2333,7 @@
           }
         }
 
-        xPos = 995;
+        xPos = baseXPosWatched + 19;
         xml += "</control>\n" +
         "<control>\n" +
           "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
@@ -2341,8 +2350,8 @@
           "<control>\n" +
             "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
-            "<posX>995</posX>\n" +
-            "<posY>635</posY>\n" +
+            "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
             "<width>258</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie3.title</label>\n" +
             "<textcolor>White</textcolor>\n" +
@@ -2358,13 +2367,13 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>652</posY>\n" +
+            "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie3.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = baseXPosWatched + 204;
         }
         else
         {
@@ -2378,7 +2387,7 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>652</posY>\n" +
+            "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
             "<width>257</width>\n" +
             "<label>#StreamedMP.recentlyWatched.movie3.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
@@ -2395,8 +2404,8 @@
               "<description>Movie 3 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>1260</posX>" +
-              "<posY>652</posY>" +
+              "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
@@ -2410,8 +2419,8 @@
               "<description>Movie 3 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>1190</posX>" +
-              "<posY>655</posY>" +
+              "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 285).ToString() + "</posY>\n" +
               "<width>70</width>" +
               "<height>13</height>" +
               "<texture>star#StreamedMP.recentlyWatched.movie3.score.png</texture>" +
@@ -2452,8 +2461,8 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                   "<control>\n" +
                   "<description>Series 1 BG</description>\n" +
-                  "<posX>976</posX>\n" +
-                  "<posY>370</posY>\n" +
+                  "<posX>" + baseXPosWatched.ToString() + "</posX>\n" +
+                  "<posY>" + baseYPosWatched.ToString() + "</posY>\n" +
                   "<type>image</type>\n" +
                   "<id>0</id>\n" +
                   "<width>306</width>\n" +
@@ -2465,8 +2474,8 @@
                   "<description>Header label</description>\n" +
                   "<type>label</type>\n" +
                   "<id>0</id>\n" +
-                  "<posX>995</posX>\n" +
-                  "<posY>390</posY>\n" +
+                  "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
                   "<width>258</width>\n" +
                   "<label>Recently Watched</label>\n" +
                   "<font>mediastream10tc</font>\n" +
@@ -2476,8 +2485,8 @@
                   "<description>Series 1 name</description>\n" +
                   "<type>fadelabel</type>\n" +
                   "<id>0</id>\n" +
-                  "<posX>995</posX>\n" +
-                  "<posY>565</posY>\n" +
+                  "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
                   "<width>258</width>\n" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
@@ -2491,8 +2500,8 @@
       "<description>Series 1 title</description>\n" +
       "<type>fadelabel</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>582</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
       "<width>255</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series1.episodetitle</label>\n" +
@@ -2503,8 +2512,8 @@
       "<description>Series 1 thumb/fanart</description>\n" +
       "<type>image</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>412</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 42).ToString() + "</posY>\n" +
       "<width>268</width>\n" +
       "<height>151</height>\n" +
       "<keepaspectratio>true</keepaspectratio>\n" +
@@ -2527,8 +2536,8 @@
       "<description>Series 2 name</description>\n" +
       "<type>fadelabel</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>600</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
       "<width>258</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
@@ -2542,8 +2551,8 @@
       "<description>Series 2 title</description>\n" +
       "<type>fadelabel</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>617</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
       "<width>255</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series2.episodetitle</label>\n" +
@@ -2566,8 +2575,8 @@
     "<control>\n" +
       "<type>fadelabel</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>635</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
       "<width>258</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
@@ -2581,8 +2590,8 @@
       "<description>Series 3 title</description>\n" +
       "<type>fadelabel</type>\n" +
       "<id>0</id>\n" +
-      "<posX>995</posX>\n" +
-      "<posY>652</posY>\n" +
+      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
       "<width>255</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series3.episodetitle</label>\n" +
