@@ -43,7 +43,7 @@ namespace StreamedMPConfig
     /// <param name="elementName"></param>
     /// <param name="node"></param>
     /// <returns></returns>
-    public static string ReadEntryValue(string section, string elementName, XmlNode node)
+    public static string ReadEntryValue(string elementName, XmlNode node)
     {
       string entryValue = string.Empty;
 

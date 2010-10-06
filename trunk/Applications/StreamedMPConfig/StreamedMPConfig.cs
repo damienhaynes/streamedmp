@@ -18,6 +18,7 @@ using Cornerstone.Database;
 using Cornerstone.Database.Tables;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.Database;
+using MediaPortal.Plugins.MovingPictures.MainUI;
 using SMPCheckSum;
 using WindowPlugins.GUITVSeries;
 using TVSeriesHelper = WindowPlugins.GUITVSeries.Helper;
@@ -41,6 +42,15 @@ namespace StreamedMPConfig
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
     settings smpSettings = new settings();
     SkinInfo skInfo = new SkinInfo();
+
+    List<DBMovieInfo> recentAddedMovies = null;
+    List<DBEpisode> recentAddedEpisodes = null;
+
+    public static List<int> mostRecentEpisodeControlIDs = new List<int>();
+    public static List<int> mostRecentMovieControlIDs = new List<int>();
+
+    MoviePlayer moviePlayer = null;
+    VideoHandler episodePlayer = null;
 
     private static readonly logger smcLog = logger.GetInstance();
 
@@ -99,6 +109,13 @@ namespace StreamedMPConfig
       SMPTVConfig = 196207
     }
 
+    private enum MediaPortalWindows
+    {      
+      Home = 0,
+      HomePlugins = 34,
+      BasicHome = 35
+    }
+
     [SkinControl((int)SkinControlIDs.MusicScreens)]
     protected GUIButtonControl btMusicScreens = null;
     [SkinControl((int)SkinControlIDs.VideoScreens)]
@@ -121,7 +138,8 @@ namespace StreamedMPConfig
     public override bool Init()
     {
       // Check if the skin is StreamedMP and bail if not.
-      if (!GUIGraphicsContext.Skin.EndsWith("StreamedMP"))
+      // note: user may have multiple streamedmp skins for testing
+      if (!GUIGraphicsContext.Skin.Contains("StreamedMP"))
       {
         smcLog.WriteLog("Not Running StreamedMP Skin - do Nothing", LogLevel.Info);
         return true;
@@ -131,7 +149,7 @@ namespace StreamedMPConfig
       //smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
       
       // Get Most Recent Options
-      settings.LoadEditorProperties(settings.cXMLSectionEditorOptions);
+      settings.LoadEditorProperties();
 
       if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
       {
@@ -141,6 +159,12 @@ namespace StreamedMPConfig
           getLastThreeWatchedTVSeries();
         setTVSeriesEvents();
       }
+      else
+      {
+        // set to false incase enabled after upgrade but plugin not installed
+        tvSeriesRecentAddedEnabled = false;
+        tvSeriesRecentWatchedEnabled = false;
+      }
       if ((movPicRecentAddedEnabled || movPicRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
       {
         if (movPicRecentAddedEnabled)
@@ -148,6 +172,12 @@ namespace StreamedMPConfig
         if (movPicRecentWatchedEnabled)
           getLastThreeWatchedMovies();
         setMovingPicturesEvents();
+      }
+      else
+      {
+        // set to false incase enabled after upgrade but plugin not installed
+        movPicRecentAddedEnabled = false;
+        movPicRecentWatchedEnabled = false;
       }
 
       if (smpSettings.timerRequired)
@@ -259,7 +289,7 @@ namespace StreamedMPConfig
       Match m = _isNumber.Match(theValue);
       return m.Success;
     }
-    
+
     void setMovingPicturesEvents()
     {
       if (movPicRecentAddedEnabled || movPicRecentWatchedEnabled)
@@ -360,6 +390,8 @@ namespace StreamedMPConfig
 
       // Sort list in to most recent first
       filteredMovies.Sort(delegate(DBMovieInfo m1, DBMovieInfo m2) { return m2.DateAdded.CompareTo(m1.DateAdded); });
+            
+      recentAddedMovies = filteredMovies;
 
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -455,7 +487,7 @@ namespace StreamedMPConfig
 
       // get list of the 3 most recently added episodes in tvseries database
       // use file created date rather than added as we dont want to see all episodes for new databases
-      List<DBEpisode> episodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3);
+      recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3);
       
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -468,14 +500,14 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".fanart", string.Empty);
       }
 
-      if (episodes.Count == 0)
+      if (recentAddedEpisodes.Count == 0)
       {
         smcLog.WriteLog("Found no results for TVseries Recently Added", LogLevel.Info);
       }
 
       // Set properties
       int mrEpisodeNumber = 1;
-      foreach (DBEpisode episode in episodes)
+      foreach (DBEpisode episode in recentAddedEpisodes)
       {
         DBSeries series = TVSeriesHelper.getCorrespondingSeries(episode[DBEpisode.cSeriesID]);
         if (series != null)
@@ -638,6 +670,38 @@ namespace StreamedMPConfig
       }
     }
 
+    /// <summary>
+    /// Play most recently added Episode
+    /// </summary>
+    /// <param name="index">index of episode to be played</param>
+    private void PlayEpisode(int index)
+    {
+      if (recentAddedEpisodes != null && index <= recentAddedEpisodes.Count)
+      {
+        // send off to tvseries video player
+        if (episodePlayer == null)
+          episodePlayer = new VideoHandler();
+
+        episodePlayer.ResumeOrPlay(recentAddedEpisodes[index - 1]);
+      }
+    }
+
+    /// <summary>
+    /// Play most recently added movie
+    /// </summary>
+    /// <param name="index">index of movie to be played</param>
+    private void PlayMovie(int index)
+    {
+      if (recentAddedMovies != null && index <= recentAddedMovies.Count)
+      {
+        // send off to movingpics video player
+        if (moviePlayer == null)
+          moviePlayer = new MoviePlayer(new MovingPicturesGUI());
+
+        moviePlayer.Play(recentAddedMovies[index - 1]);
+      }
+    }
+
     #endregion
 
     #region Public methods
@@ -766,10 +830,73 @@ namespace StreamedMPConfig
 
     public void smpAction(Action Action)
     {
-      if (Action.wID.ToString() == "196250")
+      switch (Action.wID)
       {
-        smcLog.WriteLog("Restarting MediaPortal", LogLevel.Info);
-        restartMediaportal();
+        case Action.ActionType.REMOTE_1:
+        case Action.ActionType.REMOTE_2:
+        case Action.ActionType.REMOTE_3:
+          // only listen when on BasicHome
+          if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome)
+          {
+            bool recentAddedEpisodesVisible = false;
+            bool recentAddedMoviesVisible = false;
+
+            // check if tvseries recently added is visible
+            if (tvSeriesRecentAddedEnabled)
+            {
+              foreach (int mostRecentEpisodeControlID in mostRecentEpisodeControlIDs)
+              {
+                recentAddedEpisodesVisible |= GUIWindowManager.GetWindow(GUIWindowManager.ActiveWindow).GetControl(mostRecentEpisodeControlID).IsVisible;
+              }
+            }
+
+            // check if tvseries recently added is visible
+            if (movPicRecentAddedEnabled)
+            {
+              foreach (int mostRecentMovieControlID in mostRecentMovieControlIDs)
+              {
+                recentAddedMoviesVisible |= GUIWindowManager.GetWindow(GUIWindowManager.ActiveWindow).GetControl(mostRecentMovieControlID).IsVisible;
+              }
+            }
+
+            // play time
+            if (recentAddedEpisodesVisible)
+            {
+              switch (Action.wID)
+              {
+                case Action.ActionType.REMOTE_1:
+                  PlayEpisode(1);
+                  break;
+                case Action.ActionType.REMOTE_2:
+                  PlayEpisode(2);
+                  break;
+                case Action.ActionType.REMOTE_3:
+                  PlayEpisode(3);
+                  break;
+              }
+            }
+            else if (recentAddedMoviesVisible)
+            {
+              switch (Action.wID)
+              {
+                case Action.ActionType.REMOTE_1:
+                  PlayMovie(1);
+                  break;
+                case Action.ActionType.REMOTE_2:
+                  PlayMovie(2);
+                  break;
+                case Action.ActionType.REMOTE_3:
+                  PlayMovie(3);
+                  break;
+              }
+            }
+          }
+          break;
+          
+        case (Action.ActionType)196250:
+          smcLog.WriteLog("Restarting MediaPortal", LogLevel.Info);
+          restartMediaportal();
+          break;
       }
     }
 
@@ -806,7 +933,7 @@ namespace StreamedMPConfig
 
     private void GUIGraphicsContext_OnVideoWindowChanged()
     {
-      if (GUIWindowManager.ActiveWindow == 0)
+      if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.Home)
         return;
 
       smcLog.WriteLog("StreamedMPConfig: OnVideoWindowsChanged Event Called", LogLevel.Debug);
@@ -825,13 +952,13 @@ namespace StreamedMPConfig
 
     private void GUIWindowManager_OnActivateWindow(int windowID)
     {
-      if (GUIWindowManager.ActiveWindow == 0)
+      if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.Home)
         return;
 
       smcLog.WriteLog("StreamedMPConfig: OnActivateWindow Event Called(" + GUIWindowManager.ActiveWindow.ToString() + ")", LogLevel.Debug);
 
       // Disable the timer used for most recent fanart images in not on home screen.
-      if (GUIWindowManager.ActiveWindow == 35)
+      if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome)
       {
         if (smpSettings.timerRequired)
         {
@@ -848,7 +975,7 @@ namespace StreamedMPConfig
         }
       }
 
-      if (GUIWindowManager.ActiveWindow == 35)
+      if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome)
       {
         
         getMostRecents();
@@ -860,7 +987,7 @@ namespace StreamedMPConfig
         // If we move off the basichome or Std menu turn off the the Update Available property so the main fade icon
         // is not displayed again
         // When leave the menu also turn off the update indicator displyed next to the clock as this may cause issues in other screens. 
-        if (windowID != 35 && windowID != 0)
+        if (windowID != (int)MediaPortalWindows.BasicHome && windowID != (int)MediaPortalWindows.Home)
         {
           SetProperty("#StreamedMP.UpdateAvailable", "false");
           SetProperty("#StreamedMP.ShowUpdateInd", "false");
