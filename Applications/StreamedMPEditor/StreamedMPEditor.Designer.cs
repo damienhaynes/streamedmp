@@ -1785,7 +1785,7 @@
       this.infoServiceRecentOptions.Controls.Add(this.panel2);
       this.infoServiceRecentOptions.Location = new System.Drawing.Point(6, 6);
       this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
-      this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 329);
+      this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 343);
       this.infoServiceRecentOptions.TabIndex = 31;
       this.infoServiceRecentOptions.TabStop = false;
       this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
@@ -1802,14 +1802,14 @@
       this.gbSummaryStyle.Controls.Add(this.pbFanartPicTVSeries);
       this.gbSummaryStyle.Location = new System.Drawing.Point(296, 48);
       this.gbSummaryStyle.Name = "gbSummaryStyle";
-      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 238);
+      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 285);
       this.gbSummaryStyle.TabIndex = 6;
       this.gbSummaryStyle.TabStop = false;
       // 
       // pbPosterPicMovPics
       // 
       this.pbPosterPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicMovPics.Image")));
-      this.pbPosterPicMovPics.Location = new System.Drawing.Point(32, 48);
+      this.pbPosterPicMovPics.Location = new System.Drawing.Point(32, 60);
       this.pbPosterPicMovPics.Name = "pbPosterPicMovPics";
       this.pbPosterPicMovPics.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1819,7 +1819,7 @@
       // pbFanartPicMovPics
       // 
       this.pbFanartPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicMovPics.Image")));
-      this.pbFanartPicMovPics.Location = new System.Drawing.Point(274, 33);
+      this.pbFanartPicMovPics.Location = new System.Drawing.Point(274, 45);
       this.pbFanartPicMovPics.Name = "pbFanartPicMovPics";
       this.pbFanartPicMovPics.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1828,7 +1828,7 @@
       // 
       // btFormatOptions
       // 
-      this.btFormatOptions.Location = new System.Drawing.Point(32, 171);
+      this.btFormatOptions.Location = new System.Drawing.Point(32, 209);
       this.btFormatOptions.Name = "btFormatOptions";
       this.btFormatOptions.Size = new System.Drawing.Size(199, 23);
       this.btFormatOptions.TabIndex = 5;
@@ -1839,7 +1839,7 @@
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
-      this.rbFanartStyle.Location = new System.Drawing.Point(274, 141);
+      this.rbFanartStyle.Location = new System.Drawing.Point(274, 153);
       this.rbFanartStyle.Name = "rbFanartStyle";
       this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
       this.rbFanartStyle.TabIndex = 3;
@@ -1851,7 +1851,7 @@
       // cbCycleFanart
       // 
       this.cbCycleFanart.AutoSize = true;
-      this.cbCycleFanart.Location = new System.Drawing.Point(274, 176);
+      this.cbCycleFanart.Location = new System.Drawing.Point(274, 214);
       this.cbCycleFanart.Name = "cbCycleFanart";
       this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
       this.cbCycleFanart.TabIndex = 4;
@@ -1862,7 +1862,7 @@
       // rbPosterStyle
       // 
       this.rbPosterStyle.AutoSize = true;
-      this.rbPosterStyle.Location = new System.Drawing.Point(32, 141);
+      this.rbPosterStyle.Location = new System.Drawing.Point(32, 153);
       this.rbPosterStyle.Name = "rbPosterStyle";
       this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
       this.rbPosterStyle.TabIndex = 2;
@@ -1873,7 +1873,7 @@
       // pbPosterPicTVSeries
       // 
       this.pbPosterPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicTVSeries.Image")));
-      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(32, 49);
+      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(32, 61);
       this.pbPosterPicTVSeries.Name = "pbPosterPicTVSeries";
       this.pbPosterPicTVSeries.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicTVSeries.TabIndex = 0;
@@ -1882,7 +1882,7 @@
       // pbFanartPicTVSeries
       // 
       this.pbFanartPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicTVSeries.Image")));
-      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(274, 34);
+      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(274, 46);
       this.pbFanartPicTVSeries.Name = "pbFanartPicTVSeries";
       this.pbFanartPicTVSeries.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicTVSeries.TabIndex = 1;
@@ -1894,9 +1894,9 @@
       this.pMovPicsRecent.Controls.Add(this.cbMovPicsRecentWatched);
       this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
       this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
-      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 169);
+      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 187);
       this.pMovPicsRecent.Name = "pMovPicsRecent";
-      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 117);
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 146);
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
@@ -1964,7 +1964,7 @@
       this.pTVSeriesRecent.Controls.Add(this.cbMostRecentTvSeries);
       this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 27);
       this.pTVSeriesRecent.Name = "pTVSeriesRecent";
-      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 117);
+      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 146);
       this.pTVSeriesRecent.TabIndex = 4;
       this.pTVSeriesRecent.Click += new System.EventHandler(this.pTVSeriesRecent_Click);
       // 
