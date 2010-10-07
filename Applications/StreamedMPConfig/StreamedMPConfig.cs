@@ -338,8 +338,17 @@ namespace StreamedMPConfig
           return lastWatchDate2.CompareTo(lastWatchDate1);
         });
 
-      // Remove anything older than 30 days
-      filteredMovies.RemoveAll(movie => movie.DateAdded < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)));
+      // Remove anything not watched in the last 30 days
+      filteredMovies.RemoveAll((movie) => 
+        {
+          int watchCount = movie.WatchedHistory.Count;
+          if (watchCount > 0)
+          {
+            return movie.WatchedHistory[watchCount - 1].DateWatched < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0));
+          }
+          else
+            return true;
+        });
 
       // Clear the properties first
       for (int i = 3; i == 0; --i)
