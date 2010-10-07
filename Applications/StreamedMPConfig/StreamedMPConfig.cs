@@ -839,7 +839,7 @@ namespace StreamedMPConfig
         case Action.ActionType.REMOTE_2:
         case Action.ActionType.REMOTE_3:
           // only listen when on BasicHome
-          if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome)
+          if ((GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome) && MiscConfigGUI.EnablePlayMostRecents)
           {
             bool recentAddedEpisodesVisible = false;
             bool recentAddedMoviesVisible = false;
@@ -892,7 +892,7 @@ namespace StreamedMPConfig
                   PlayMovie(3);
                   break;
               }
-            }
+            }            
           }
           break;
           

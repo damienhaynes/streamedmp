@@ -64,6 +64,7 @@ namespace StreamedMPConfig
     public const string cXMLSettingMiscShowHiddenMenuImage = "miscShowHiddenMenuImage";
     public const string cXMLSettingMiscShowRoundedCovers = "miscShowRoundedCovers";
     public const string cXMLSettingMiscShowIconsInArtwork = "miscShowIconsInArtwork";
+    public const string cXMLSettingMiscEnablePlayMostRecents = "miscEnablePlayMostRecents";
     public const string cXMLSettingMiscMostRecentFanartTimerInt = "miscMostRecentFanartTimerInt";
     public const string cXMLSettingMiscUseLargeFonts = "miscUseLargeFonts";
     public const string cXMLSettingMiscUnfocusedAlphaListItems = "miscUnfocusedAlphaListItems";
@@ -145,7 +146,7 @@ namespace StreamedMPConfig
       {
         return _mpSetAsFullScreen();
       }
-    }
+    }    
 
     public static void LoadEditorProperties()
     {
@@ -325,6 +326,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowHiddenMenuImage, 1) == 1;
             MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowRoundedCovers, 1) == 1;
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowIconsInArtwork, 1) == 1;
+            MiscConfigGUI.EnablePlayMostRecents = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscEnablePlayMostRecents, 1) == 1;
             MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, 7);
             break;
           #endregion
@@ -392,6 +394,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowHiddenMenuImage, MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowRoundedCovers, MiscConfigGUI.ShowRoundedImages ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowIconsInArtwork, MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscEnablePlayMostRecents, MiscConfigGUI.EnablePlayMostRecents ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, MiscConfigGUI.MostRecentFanartTimerInt);
             break;
           #endregion

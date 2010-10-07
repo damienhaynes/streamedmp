@@ -252,7 +252,7 @@ namespace StreamedMPConfig
     public static string SearchFields = "Search Fields";
     public static string SearchType = "Search Type";
     public static string CaseSensitive = "Case Sensitive";
-
+    public static string PlayMostRecents = "Enable Play Action for Most Recents";
     #endregion
   }
 }
