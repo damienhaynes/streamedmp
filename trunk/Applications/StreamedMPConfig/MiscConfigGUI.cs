@@ -12,7 +12,8 @@ namespace StreamedMPConfig
     {
       HiddenMenuImage = 2,
       RoundedImages = 3,
-      IconsInArtwork = 4
+      IconsInArtwork = 4,
+      PlayRecents = 5
     }  
     #endregion
 
@@ -25,6 +26,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.IconsInArtwork)]
     protected GUIToggleButtonControl btnIconsInArtwork = null;
+
+    [SkinControl((int)GUIControls.PlayRecents)]
+    protected GUIToggleButtonControl btnPlayRecents = null;
     #endregion
 
     #region Constructor
@@ -35,7 +39,8 @@ namespace StreamedMPConfig
     public static bool ShowHiddenMenuImage { get; set; }
     public static bool ShowRoundedImages { get; set; }
     public static bool ShowIconsInArtwork { get; set; }
-    public static int MostRecentFanartTimerInt { get; set; }
+    public static bool EnablePlayMostRecents { get; set; }
+    public static int MostRecentFanartTimerInt { get; set; }    
     #endregion
 
     #region Public Methods
@@ -66,6 +71,10 @@ namespace StreamedMPConfig
       // Icons In Artwork
       btnIconsInArtwork.Selected = ShowIconsInArtwork;
       btnIconsInArtwork.Label = Translation.ShowIconsInArtwork;
+
+      // Play Most Recents
+      btnPlayRecents.Selected = EnablePlayMostRecents;
+      btnPlayRecents.Label = Translation.PlayMostRecents;
     }
 
     private void GetControlStates()
@@ -73,6 +82,7 @@ namespace StreamedMPConfig
       ShowHiddenMenuImage = btnHiddenMenuImage.Selected;
       ShowRoundedImages = btnRoundedImages.Selected;
       ShowIconsInArtwork = btnIconsInArtwork.Selected;
+      EnablePlayMostRecents = btnPlayRecents.Selected;
     }
 
     /// <summary>
