@@ -640,7 +640,8 @@ namespace StreamedMPConfig
         {
           seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".season");
           episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyAdded.series" + (i + 1).ToString() + ".episodenumber");
-          if (mostTVSeriesRecents[i] != null)
+
+          if (seasonNum != null && episodeNum != null)
           {
             if (smpSettings.mrSeasonEpisodeStyle2)
             {
@@ -652,13 +653,9 @@ namespace StreamedMPConfig
               formattedSE = seasonNum + "x" + episodeNum;
               SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
             }
+
+            smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
           }
-          else
-          {
-            formattedSE = seasonNum + "x" + episodeNum;
-            SetProperty("#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat", formattedSE);
-          }
-          smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Added." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
         }
       }
 
@@ -668,7 +665,8 @@ namespace StreamedMPConfig
         {
           seasonNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".season");
           episodeNum = GUIPropertyManager.GetProperty("#StreamedMP.recentlyWatched.series" + (i + 1).ToString() + ".episodenumber");
-          if (mostTVSeriesRecents[i] != null)
+
+          if (seasonNum != null && episodeNum != null)
           {
             if (smpSettings.mrSeasonEpisodeStyle2)
             {
@@ -680,13 +678,9 @@ namespace StreamedMPConfig
               formattedSE = seasonNum + "x" + episodeNum;
               SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
             }
+
+            smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
           }
-          else
-          {
-            formattedSE = seasonNum + "x" + episodeNum;
-            SetProperty("#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat", formattedSE);
-          }
-          smcLog.WriteLog("Set " + "#StreamedMP.MostRecent.Watched." + (i + 1).ToString() + ".SEFormat to " + formattedSE, LogLevel.Debug);
         }
       }
     }
