@@ -338,6 +338,9 @@ namespace StreamedMPConfig
           return lastWatchDate2.CompareTo(lastWatchDate1);
         });
 
+      // Remove anything older than 30 days
+      filteredMovies.RemoveAll(movie => movie.DateAdded < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)));
+
       // Clear the properties first
       for (int i = 3; i == 0; --i)
       {
@@ -389,8 +392,14 @@ namespace StreamedMPConfig
       smcLog.WriteLog(string.Format("{0} Movies filtered by parental controls", movies.Count - filteredMovies.Count), LogLevel.Info);      
 
       // Sort list in to most recent first
-      filteredMovies.Sort(delegate(DBMovieInfo m1, DBMovieInfo m2) { return m2.DateAdded.CompareTo(m1.DateAdded); });
-            
+      filteredMovies.Sort((m1, m2) =>
+        {
+          return m2.DateAdded.CompareTo(m1.DateAdded); 
+        });
+      
+      // Remove anything older than 30 days
+      filteredMovies.RemoveAll(movie => movie.DateAdded < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)));
+
       recentAddedMovies = filteredMovies;
 
       // Clear the properties first
@@ -900,7 +909,7 @@ namespace StreamedMPConfig
                   PlayEpisode(1);
                   break;
               }
-            }            
+            }
           }
           break;
           
