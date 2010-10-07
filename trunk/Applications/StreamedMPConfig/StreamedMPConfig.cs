@@ -838,6 +838,8 @@ namespace StreamedMPConfig
         case Action.ActionType.REMOTE_1:
         case Action.ActionType.REMOTE_2:
         case Action.ActionType.REMOTE_3:
+        case Action.ActionType.ACTION_PLAY:
+        case Action.ActionType.ACTION_MUSIC_PLAY:
           // only listen when on BasicHome
           if ((GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome) && MiscConfigGUI.EnablePlayMostRecents)
           {
@@ -876,6 +878,9 @@ namespace StreamedMPConfig
                 case Action.ActionType.REMOTE_3:
                   PlayEpisode(3);
                   break;
+                default:
+                  PlayEpisode(1);
+                  break;
               }
             }
             else if (recentAddedMoviesVisible)
@@ -890,6 +895,9 @@ namespace StreamedMPConfig
                   break;
                 case Action.ActionType.REMOTE_3:
                   PlayMovie(3);
+                  break;
+                default:
+                  PlayEpisode(1);
                   break;
               }
             }            
