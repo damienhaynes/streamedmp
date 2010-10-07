@@ -945,11 +945,13 @@ namespace StreamedMPEditor
       {
         if (cbMostRecentTvSeries.Checked)
         {
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
         }
 
         if (cbMostRecentMovPics.Checked)
         {
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
         }
       }
