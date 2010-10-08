@@ -37,6 +37,7 @@
       this.cbHideCertification = new System.Windows.Forms.CheckBox();
       this.cbHideRating = new System.Windows.Forms.CheckBox();
       this.cbUseTextRating = new System.Windows.Forms.CheckBox();
+      this.cbDisableFadeLabels = new System.Windows.Forms.CheckBox();
       this.SuspendLayout();
       // 
       // cboxMRMovieTitle
@@ -45,7 +46,7 @@
       this.cboxMRMovieTitle.Items.AddRange(new object[] {
             "mediastream10c",
             "mediastream10tc (Bold)"});
-      this.cboxMRMovieTitle.Location = new System.Drawing.Point(165, 98);
+      this.cboxMRMovieTitle.Location = new System.Drawing.Point(165, 108);
       this.cboxMRMovieTitle.Name = "cboxMRMovieTitle";
       this.cboxMRMovieTitle.Size = new System.Drawing.Size(165, 21);
       this.cboxMRMovieTitle.TabIndex = 0;
@@ -57,7 +58,7 @@
       this.cboxMRMovieDetail.Items.AddRange(new object[] {
             "mediastream10c",
             "mediastream10tc (Bold)"});
-      this.cboxMRMovieDetail.Location = new System.Drawing.Point(165, 128);
+      this.cboxMRMovieDetail.Location = new System.Drawing.Point(165, 138);
       this.cboxMRMovieDetail.Name = "cboxMRMovieDetail";
       this.cboxMRMovieDetail.Size = new System.Drawing.Size(165, 21);
       this.cboxMRMovieDetail.TabIndex = 1;
@@ -66,7 +67,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(73, 101);
+      this.label1.Location = new System.Drawing.Point(73, 111);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(83, 13);
       this.label1.TabIndex = 2;
@@ -75,7 +76,7 @@
       // label2
       // 
       this.label2.AutoSize = true;
-      this.label2.Location = new System.Drawing.Point(61, 131);
+      this.label2.Location = new System.Drawing.Point(61, 141);
       this.label2.Name = "label2";
       this.label2.Size = new System.Drawing.Size(95, 13);
       this.label2.TabIndex = 3;
@@ -83,7 +84,7 @@
       // 
       // bySaveAndExit
       // 
-      this.bySaveAndExit.Location = new System.Drawing.Point(165, 167);
+      this.bySaveAndExit.Location = new System.Drawing.Point(165, 177);
       this.bySaveAndExit.Name = "bySaveAndExit";
       this.bySaveAndExit.Size = new System.Drawing.Size(103, 23);
       this.bySaveAndExit.TabIndex = 4;
@@ -131,11 +132,22 @@
       this.cbUseTextRating.Text = "Use Text Rating";
       this.cbUseTextRating.UseVisualStyleBackColor = true;
       // 
+      // cbDisableFadeLabels
+      // 
+      this.cbDisableFadeLabels.AutoSize = true;
+      this.cbDisableFadeLabels.Location = new System.Drawing.Point(76, 80);
+      this.cbDisableFadeLabels.Name = "cbDisableFadeLabels";
+      this.cbDisableFadeLabels.Size = new System.Drawing.Size(147, 17);
+      this.cbDisableFadeLabels.TabIndex = 9;
+      this.cbDisableFadeLabels.Text = "Disable use of Fadelabels";
+      this.cbDisableFadeLabels.UseVisualStyleBackColor = true;
+      // 
       // MovPicsSummaryOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(439, 202);
+      this.ClientSize = new System.Drawing.Size(439, 206);
+      this.Controls.Add(this.cbDisableFadeLabels);
       this.Controls.Add(this.cbUseTextRating);
       this.Controls.Add(this.cbHideRating);
       this.Controls.Add(this.cbHideCertification);
@@ -165,5 +177,6 @@
     private System.Windows.Forms.CheckBox cbHideCertification;
     private System.Windows.Forms.CheckBox cbHideRating;
     private System.Windows.Forms.CheckBox cbUseTextRating;
+    private System.Windows.Forms.CheckBox cbDisableFadeLabels;
   }
 }

@@ -30,6 +30,11 @@ namespace StreamedMPEditor
       set { cbTitleSwap.Checked = value; }
     }
 
+    public bool mrDisableFadeLabels
+    {
+      get { return cbDisableFadeLabels.Checked; }
+      set { cbDisableFadeLabels.Checked = value; }
+    }
     public string mrSeriesFont
     {
       get 
@@ -69,13 +74,9 @@ namespace StreamedMPEditor
 
     }
 
-
     private void btSaveAndExit_Click(object sender, EventArgs e)
     {
       this.Hide();
     }
-
-
-
   }
 }

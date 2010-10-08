@@ -1150,9 +1150,9 @@
       // 
       this.itemsOnMenubar.Enabled = false;
       this.itemsOnMenubar.FormattingEnabled = true;
-      this.itemsOnMenubar.Location = new System.Drawing.Point(540, 23);
+      this.itemsOnMenubar.Location = new System.Drawing.Point(540, 22);
       this.itemsOnMenubar.Name = "itemsOnMenubar";
-      this.itemsOnMenubar.Size = new System.Drawing.Size(170, 214);
+      this.itemsOnMenubar.Size = new System.Drawing.Size(168, 214);
       this.itemsOnMenubar.TabIndex = 6;
       this.itemsOnMenubar.SelectedIndexChanged += new System.EventHandler(this.itemsOnMenubar_SelectedIndexChanged);
       // 

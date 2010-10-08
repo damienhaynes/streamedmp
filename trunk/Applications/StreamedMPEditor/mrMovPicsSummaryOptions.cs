@@ -40,6 +40,12 @@ namespace StreamedMPEditor
       set { cbUseTextRating.Checked = value; }
     }
 
+    public bool DisableFadeLabels
+    {
+      get { return cbDisableFadeLabels.Checked; }
+      set { cbDisableFadeLabels.Checked = value; }
+    }
+
     public string MovieTitleFont
     {
       get
