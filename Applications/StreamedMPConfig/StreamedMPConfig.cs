@@ -909,7 +909,7 @@ namespace StreamedMPConfig
                   PlayMovie(3);
                   break;
                 default:
-                  PlayEpisode(1);
+                  PlayMovie(1);
                   break;
               }
             }
