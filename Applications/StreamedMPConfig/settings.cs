@@ -26,8 +26,8 @@ namespace StreamedMPConfig
     private const string cXMLSectionEditorOptions = "StreamedMP Options";
     private const string cXMLSectionEditorItems = "StreamedMP Menu Items";
 
-    private const string cXMLMostRecentTVSeriesVal = "tvSeriesAdded";
-    private const string cXMLMostRecentMoviesVal = "moviesAdded";
+    private const string cXMLMostRecentTVSeriesVal = "tvSeries";
+    private const string cXMLMostRecentMoviesVal = "movies";
 
     private const string cXMLMostRecentMenuItems = "menuitem{0}showMostRecent";
     private const string cXMLMenuItemControlID = "menuitem{0}id";

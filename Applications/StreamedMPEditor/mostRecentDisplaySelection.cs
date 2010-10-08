@@ -17,12 +17,10 @@ namespace StreamedMPEditor
 
       rbSubOff.Checked = true;
       rbSubTVSeries.Checked = false;
-      rbSubAddedMovies.Checked = false;
-      rbSubWatchedMovies.Checked = false;
+      rbSubMovies.Checked = false;
       rbSubMusic.Checked = false;
       rbSubTV.Checked = false;
-      rbSubMovPicsAddedAndWatched.Checked = false;
-      rbSubTVSeriesAddedAndWatched.Checked = false;
+
     }
 
     public formStreamedMpEditor.displayMostRecent mrToDisplay
@@ -34,28 +32,16 @@ namespace StreamedMPEditor
     private formStreamedMpEditor.displayMostRecent selectedMostRecent()
     {
       if (rbSubTVSeries.Checked)
-        return formStreamedMpEditor.displayMostRecent.tvSeriesAdded;
+        return formStreamedMpEditor.displayMostRecent.tvSeries;
 
-      if (rbSubTVSeriesWatched.Checked)
-        return formStreamedMpEditor.displayMostRecent.tvseriesWatched;
-
-      if (rbSubAddedMovies.Checked)
-        return formStreamedMpEditor.displayMostRecent.moviesAdded;
-
-      if (rbSubWatchedMovies.Checked)
-        return formStreamedMpEditor.displayMostRecent.moviesWatched;
+      if (rbSubMovies.Checked)
+        return formStreamedMpEditor.displayMostRecent.movies;
 
       if (rbSubMusic.Checked)
         return formStreamedMpEditor.displayMostRecent.music;
 
       if (rbSubTV.Checked)
         return formStreamedMpEditor.displayMostRecent.recordedTV;
-
-      if (rbSubTVSeriesAddedAndWatched.Checked)
-        return formStreamedMpEditor.displayMostRecent.tvseriesAddedWatched;
-
-      if (rbSubMovPicsAddedAndWatched.Checked)
-        return formStreamedMpEditor.displayMostRecent.moviesAddedWatched;
 
       return formStreamedMpEditor.displayMostRecent.off;
     
@@ -67,29 +53,17 @@ namespace StreamedMPEditor
         case formStreamedMpEditor.displayMostRecent.off:
           rbSubOff.Checked = true;
           break;
-        case formStreamedMpEditor.displayMostRecent.tvSeriesAdded:
+        case formStreamedMpEditor.displayMostRecent.tvSeries:
           rbSubTVSeries.Checked = true;
           break;
-        case formStreamedMpEditor.displayMostRecent.tvseriesWatched:
-          rbSubTVSeriesWatched.Checked = true;
-          break;
-        case formStreamedMpEditor.displayMostRecent.moviesAdded:
-          rbSubAddedMovies.Checked = true;
-          break;
-        case formStreamedMpEditor.displayMostRecent.moviesWatched:
-          rbSubWatchedMovies.Checked = true;
+        case formStreamedMpEditor.displayMostRecent.movies:
+          rbSubMovies.Checked = true;
           break;
         case formStreamedMpEditor.displayMostRecent.music:
           rbSubMusic.Checked = true;
           break;
         case formStreamedMpEditor.displayMostRecent.recordedTV:
           rbSubTV.Checked = true;
-          break;
-        case formStreamedMpEditor.displayMostRecent.moviesAddedWatched:
-          rbSubMovPicsAddedAndWatched.Checked = true;
-          break;
-        case formStreamedMpEditor.displayMostRecent.tvseriesAddedWatched:
-          rbSubTVSeriesAddedAndWatched.Checked = true;
           break;
       }
     }
@@ -98,5 +72,6 @@ namespace StreamedMPEditor
     {
       this.Hide();
     }
+
   }
 }

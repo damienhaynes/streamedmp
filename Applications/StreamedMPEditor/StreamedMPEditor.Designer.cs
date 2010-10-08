@@ -57,6 +57,7 @@
       this.pictureBox5 = new System.Windows.Forms.PictureBox();
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
+      this.btSelectOverlay = new System.Windows.Forms.Button();
       this.addSubmenus = new System.Windows.Forms.Button();
       this.richTextBox2 = new System.Windows.Forms.RichTextBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -95,10 +96,6 @@
       this.bgBox = new System.Windows.Forms.ComboBox();
       this.labelImageFolder = new System.Windows.Forms.Label();
       this.itemProperties = new System.Windows.Forms.GroupBox();
-      this.gbMostRecentDisplay = new System.Windows.Forms.GroupBox();
-      this.rbDisplayMostRecentNone = new System.Windows.Forms.RadioButton();
-      this.rbDisplayMostRecentMovies = new System.Windows.Forms.RadioButton();
-      this.rbDisplayMostRecentTVSeries = new System.Windows.Forms.RadioButton();
       this.cancelCreateButton = new System.Windows.Forms.Button();
       this.cboContextLabel = new System.Windows.Forms.ComboBox();
       this.label18 = new System.Windows.Forms.Label();
@@ -267,7 +264,6 @@
       this.groupBox1.SuspendLayout();
       this.backgroundImages.SuspendLayout();
       this.itemProperties.SuspendLayout();
-      this.gbMostRecentDisplay.SuspendLayout();
       this.menuOptions.SuspendLayout();
       this.tabControl1.SuspendLayout();
       this.tabPage3.SuspendLayout();
@@ -618,6 +614,7 @@
       // 
       // basicHomeDesign
       // 
+      this.basicHomeDesign.Controls.Add(this.btSelectOverlay);
       this.basicHomeDesign.Controls.Add(this.addSubmenus);
       this.basicHomeDesign.Controls.Add(this.richTextBox2);
       this.basicHomeDesign.Controls.Add(this.groupBox3);
@@ -644,13 +641,24 @@
       this.basicHomeDesign.Text = "BasicHome Design";
       this.basicHomeDesign.UseVisualStyleBackColor = true;
       // 
+      // btSelectOverlay
+      // 
+      this.btSelectOverlay.AutoSize = true;
+      this.btSelectOverlay.Location = new System.Drawing.Point(654, 242);
+      this.btSelectOverlay.Name = "btSelectOverlay";
+      this.btSelectOverlay.Size = new System.Drawing.Size(92, 23);
+      this.btSelectOverlay.TabIndex = 124;
+      this.btSelectOverlay.Text = "Select Overlays";
+      this.btSelectOverlay.UseVisualStyleBackColor = true;
+      this.btSelectOverlay.Click += new System.EventHandler(this.btSelectOverlays_Click);
+      // 
       // addSubmenus
       // 
-      this.addSubmenus.Location = new System.Drawing.Point(538, 244);
+      this.addSubmenus.Location = new System.Drawing.Point(538, 242);
       this.addSubmenus.Name = "addSubmenus";
-      this.addSubmenus.Size = new System.Drawing.Size(208, 21);
+      this.addSubmenus.Size = new System.Drawing.Size(110, 21);
       this.addSubmenus.TabIndex = 123;
-      this.addSubmenus.Text = "Add Submens to Selected Item";
+      this.addSubmenus.Text = "Edit/Add Submenu";
       this.addSubmenus.UseVisualStyleBackColor = true;
       this.addSubmenus.Click += new System.EventHandler(this.addSubmenus_Click);
       // 
@@ -674,9 +682,9 @@
       this.groupBox3.Controls.Add(this.selectedWindowIDL);
       this.groupBox3.Controls.Add(this.selectedWindow);
       this.groupBox3.Controls.Add(this.selectedWindowL);
-      this.groupBox3.Location = new System.Drawing.Point(211, 131);
+      this.groupBox3.Location = new System.Drawing.Point(211, 112);
       this.groupBox3.Name = "groupBox3";
-      this.groupBox3.Size = new System.Drawing.Size(321, 56);
+      this.groupBox3.Size = new System.Drawing.Size(321, 65);
       this.groupBox3.TabIndex = 0;
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Selected Window Properties";
@@ -684,7 +692,7 @@
       // selectedWindowID
       // 
       this.selectedWindowID.AutoSize = true;
-      this.selectedWindowID.Location = new System.Drawing.Point(123, 33);
+      this.selectedWindowID.Location = new System.Drawing.Point(123, 43);
       this.selectedWindowID.Name = "selectedWindowID";
       this.selectedWindowID.Size = new System.Drawing.Size(41, 13);
       this.selectedWindowID.TabIndex = 104;
@@ -693,7 +701,7 @@
       // selectedWindowIDL
       // 
       this.selectedWindowIDL.AutoSize = true;
-      this.selectedWindowIDL.Location = new System.Drawing.Point(58, 33);
+      this.selectedWindowIDL.Location = new System.Drawing.Point(58, 43);
       this.selectedWindowIDL.Name = "selectedWindowIDL";
       this.selectedWindowIDL.Size = new System.Drawing.Size(68, 13);
       this.selectedWindowIDL.TabIndex = 103;
@@ -702,7 +710,7 @@
       // selectedWindow
       // 
       this.selectedWindow.AutoSize = true;
-      this.selectedWindow.Location = new System.Drawing.Point(123, 17);
+      this.selectedWindow.Location = new System.Drawing.Point(123, 21);
       this.selectedWindow.Name = "selectedWindow";
       this.selectedWindow.Size = new System.Drawing.Size(12, 13);
       this.selectedWindow.TabIndex = 102;
@@ -711,7 +719,7 @@
       // selectedWindowL
       // 
       this.selectedWindowL.AutoSize = true;
-      this.selectedWindowL.Location = new System.Drawing.Point(32, 17);
+      this.selectedWindowL.Location = new System.Drawing.Point(32, 21);
       this.selectedWindowL.Name = "selectedWindowL";
       this.selectedWindowL.Size = new System.Drawing.Size(94, 13);
       this.selectedWindowL.TabIndex = 101;
@@ -769,7 +777,7 @@
       // 
       // cancelButton
       // 
-      this.cancelButton.Location = new System.Drawing.Point(619, 274);
+      this.cancelButton.Location = new System.Drawing.Point(619, 268);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(49, 21);
       this.cancelButton.TabIndex = 21;
@@ -779,7 +787,7 @@
       // 
       // editButton
       // 
-      this.editButton.Location = new System.Drawing.Point(540, 273);
+      this.editButton.Location = new System.Drawing.Point(540, 267);
       this.editButton.Name = "editButton";
       this.editButton.Size = new System.Drawing.Size(52, 21);
       this.editButton.TabIndex = 7;
@@ -790,7 +798,7 @@
       // saveButton
       // 
       this.saveButton.Enabled = false;
-      this.saveButton.Location = new System.Drawing.Point(695, 274);
+      this.saveButton.Location = new System.Drawing.Point(695, 268);
       this.saveButton.Name = "saveButton";
       this.saveButton.Size = new System.Drawing.Size(48, 23);
       this.saveButton.TabIndex = 20;
@@ -943,9 +951,9 @@
       this.backgroundImages.Controls.Add(this.bgBox);
       this.backgroundImages.Controls.Add(this.labelImageFolder);
       this.backgroundImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.backgroundImages.Location = new System.Drawing.Point(211, 189);
+      this.backgroundImages.Location = new System.Drawing.Point(211, 183);
       this.backgroundImages.Name = "backgroundImages";
-      this.backgroundImages.Size = new System.Drawing.Size(321, 161);
+      this.backgroundImages.Size = new System.Drawing.Size(321, 167);
       this.backgroundImages.TabIndex = 13;
       this.backgroundImages.TabStop = false;
       this.backgroundImages.Text = "Background Image Options";
@@ -1053,7 +1061,6 @@
       // 
       // itemProperties
       // 
-      this.itemProperties.Controls.Add(this.gbMostRecentDisplay);
       this.itemProperties.Controls.Add(this.cancelCreateButton);
       this.itemProperties.Controls.Add(this.cboContextLabel);
       this.itemProperties.Controls.Add(this.label18);
@@ -1062,55 +1069,10 @@
       this.itemProperties.Controls.Add(this.itemName);
       this.itemProperties.Location = new System.Drawing.Point(211, 6);
       this.itemProperties.Name = "itemProperties";
-      this.itemProperties.Size = new System.Drawing.Size(323, 119);
+      this.itemProperties.Size = new System.Drawing.Size(323, 96);
       this.itemProperties.TabIndex = 8;
       this.itemProperties.TabStop = false;
       this.itemProperties.Text = "Item properties";
-      // 
-      // gbMostRecentDisplay
-      // 
-      this.gbMostRecentDisplay.Controls.Add(this.rbDisplayMostRecentNone);
-      this.gbMostRecentDisplay.Controls.Add(this.rbDisplayMostRecentMovies);
-      this.gbMostRecentDisplay.Controls.Add(this.rbDisplayMostRecentTVSeries);
-      this.gbMostRecentDisplay.Location = new System.Drawing.Point(9, 72);
-      this.gbMostRecentDisplay.Name = "gbMostRecentDisplay";
-      this.gbMostRecentDisplay.Size = new System.Drawing.Size(306, 41);
-      this.gbMostRecentDisplay.TabIndex = 104;
-      this.gbMostRecentDisplay.TabStop = false;
-      this.gbMostRecentDisplay.Text = "When Item Selected Display Most Recent";
-      // 
-      // rbDisplayMostRecentNone
-      // 
-      this.rbDisplayMostRecentNone.AutoSize = true;
-      this.rbDisplayMostRecentNone.Location = new System.Drawing.Point(222, 18);
-      this.rbDisplayMostRecentNone.Name = "rbDisplayMostRecentNone";
-      this.rbDisplayMostRecentNone.Size = new System.Drawing.Size(39, 17);
-      this.rbDisplayMostRecentNone.TabIndex = 2;
-      this.rbDisplayMostRecentNone.TabStop = true;
-      this.rbDisplayMostRecentNone.Text = "Off";
-      this.rbDisplayMostRecentNone.UseVisualStyleBackColor = true;
-      // 
-      // rbDisplayMostRecentMovies
-      // 
-      this.rbDisplayMostRecentMovies.AutoSize = true;
-      this.rbDisplayMostRecentMovies.Location = new System.Drawing.Point(117, 18);
-      this.rbDisplayMostRecentMovies.Name = "rbDisplayMostRecentMovies";
-      this.rbDisplayMostRecentMovies.Size = new System.Drawing.Size(59, 17);
-      this.rbDisplayMostRecentMovies.TabIndex = 1;
-      this.rbDisplayMostRecentMovies.TabStop = true;
-      this.rbDisplayMostRecentMovies.Text = "Movies";
-      this.rbDisplayMostRecentMovies.UseVisualStyleBackColor = true;
-      // 
-      // rbDisplayMostRecentTVSeries
-      // 
-      this.rbDisplayMostRecentTVSeries.AutoSize = true;
-      this.rbDisplayMostRecentTVSeries.Location = new System.Drawing.Point(26, 18);
-      this.rbDisplayMostRecentTVSeries.Name = "rbDisplayMostRecentTVSeries";
-      this.rbDisplayMostRecentTVSeries.Size = new System.Drawing.Size(68, 17);
-      this.rbDisplayMostRecentTVSeries.TabIndex = 0;
-      this.rbDisplayMostRecentTVSeries.TabStop = true;
-      this.rbDisplayMostRecentTVSeries.Text = "TVSeries";
-      this.rbDisplayMostRecentTVSeries.UseVisualStyleBackColor = true;
       // 
       // cancelCreateButton
       // 
@@ -1160,7 +1122,7 @@
       // isWeather
       // 
       this.isWeather.AutoSize = true;
-      this.isWeather.Location = new System.Drawing.Point(233, 47);
+      this.isWeather.Location = new System.Drawing.Point(233, 56);
       this.isWeather.Name = "isWeather";
       this.isWeather.Size = new System.Drawing.Size(78, 17);
       this.isWeather.TabIndex = 12;
@@ -1170,7 +1132,7 @@
       // label9
       // 
       this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(4, 50);
+      this.label9.Location = new System.Drawing.Point(4, 59);
       this.label9.Name = "label9";
       this.label9.Size = new System.Drawing.Size(61, 13);
       this.label9.TabIndex = 0;
@@ -1178,7 +1140,7 @@
       // 
       // itemName
       // 
-      this.itemName.Location = new System.Drawing.Point(69, 46);
+      this.itemName.Location = new System.Drawing.Point(69, 55);
       this.itemName.Name = "itemName";
       this.itemName.Size = new System.Drawing.Size(148, 20);
       this.itemName.TabIndex = 11;
@@ -2702,8 +2664,6 @@
       this.backgroundImages.PerformLayout();
       this.itemProperties.ResumeLayout(false);
       this.itemProperties.PerformLayout();
-      this.gbMostRecentDisplay.ResumeLayout(false);
-      this.gbMostRecentDisplay.PerformLayout();
       this.menuOptions.ResumeLayout(false);
       this.tabControl1.ResumeLayout(false);
       this.tabPage3.ResumeLayout(false);
@@ -2953,10 +2913,6 @@
     private System.Windows.Forms.RadioButton hdRes;
     private System.Windows.Forms.RadioButton sdRes;
     private System.Windows.Forms.CheckBox cbExitStyleNew;
-    private System.Windows.Forms.GroupBox gbMostRecentDisplay;
-    private System.Windows.Forms.RadioButton rbDisplayMostRecentMovies;
-    private System.Windows.Forms.RadioButton rbDisplayMostRecentTVSeries;
-    private System.Windows.Forms.RadioButton rbDisplayMostRecentNone;
     private System.Windows.Forms.Button addSubmenus;
     private System.Windows.Forms.TabPage tabPage1;
     private System.Windows.Forms.GroupBox infoServiceRecentOptions;
@@ -2987,6 +2943,7 @@
     private System.Windows.Forms.Label label23;
     private System.Windows.Forms.Label label22;
     private System.Windows.Forms.CheckBox cbTVSeriesRecentWatched;
+    private System.Windows.Forms.Button btSelectOverlay;
   }
 }
 

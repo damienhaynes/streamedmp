@@ -489,31 +489,16 @@ namespace StreamedMPEditor
                   subItem.showMostRecent = displayMostRecent.off;
                   break;
                 case "tvSeries":
-                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
+                  subItem.showMostRecent = displayMostRecent.tvSeries;
                   break;
-                case "tvSeriesAdded":
-                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
-                  break;
-                case "moviesAdded":
-                  subItem.showMostRecent = displayMostRecent.moviesAdded;
-                  break;
-                case "moviesWatched":
-                  subItem.showMostRecent = displayMostRecent.moviesWatched;
+                case "movies":
+                  subItem.showMostRecent = displayMostRecent.movies;
                   break;
                 case "music":
                   subItem.showMostRecent = displayMostRecent.music;
                   break;
                 case "recordedTV":
                   subItem.showMostRecent = displayMostRecent.recordedTV;
-                  break;
-                case "moviesAddedWatched":
-                  subItem.showMostRecent = displayMostRecent.moviesAddedWatched;
-                  break;
-                case "tvseriesAddedWatched":
-                  subItem.showMostRecent = displayMostRecent.tvseriesAddedWatched;
-                  break;
-                case "tvseriesWatched":
-                  subItem.showMostRecent = displayMostRecent.tvseriesWatched;
                   break;
               }
               mnuItem.subMenuLevel1.Add(subItem);
@@ -533,32 +518,17 @@ namespace StreamedMPEditor
                 case "off":
                   subItem.showMostRecent = displayMostRecent.off;
                   break;
-                case "tvSeriesAdded":
-                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
-                  break;
                 case "tvSeries":
-                  subItem.showMostRecent = displayMostRecent.tvSeriesAdded;
+                  subItem.showMostRecent = displayMostRecent.tvSeries;
                   break;
-                case "moviesAdded":
-                  subItem.showMostRecent = displayMostRecent.moviesAdded;
-                  break;
-                case "moviesWatched":
-                  subItem.showMostRecent = displayMostRecent.moviesWatched;
+                case "movies":
+                  subItem.showMostRecent = displayMostRecent.movies;
                   break;
                 case "music":
                   subItem.showMostRecent = displayMostRecent.music;
                   break;
                 case "recordedTV":
                   subItem.showMostRecent = displayMostRecent.recordedTV;
-                  break;
-                case "moviesAddedWatched":
-                  subItem.showMostRecent = displayMostRecent.moviesAddedWatched;
-                  break;
-                case "tvseriesAddedWatched":
-                  subItem.showMostRecent = displayMostRecent.tvseriesAddedWatched;
-                  break;
-                case "tvseriesWatched":
-                  subItem.showMostRecent = displayMostRecent.tvseriesWatched;
                   break;
               }
               mnuItem.subMenuLevel2.Add(subItem);
@@ -607,16 +577,16 @@ namespace StreamedMPEditor
     {
       // Enable most recent movies on MovingPictures menu item if not defined
       if (mrOption == "false" && skinId == movingPicturesSkinID)
-        return displayMostRecent.moviesAdded;
+        return displayMostRecent.movies;
 
       // Enable most recent TVSeries on TVSeries menu item if not defined
       if (mrOption == "false" && skinId == tvseriesSkinID)
-        return displayMostRecent.tvSeriesAdded;
+        return displayMostRecent.tvSeries;
 
-      if (mrOption == displayMostRecent.moviesAdded.ToString() || mrOption == "movies")
-        return displayMostRecent.moviesAdded;
-      else if (mrOption == displayMostRecent.tvSeriesAdded.ToString())
-        return displayMostRecent.tvSeriesAdded;
+      if (mrOption == displayMostRecent.movies.ToString() || mrOption == "movies")
+        return displayMostRecent.movies;
+      else if (mrOption == displayMostRecent.tvSeries.ToString())
+        return displayMostRecent.tvSeries;
       else
         return displayMostRecent.off;
     }
