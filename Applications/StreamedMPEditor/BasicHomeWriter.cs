@@ -1685,26 +1685,6 @@ namespace StreamedMPEditor
           menuIDControl = string.Empty;
         else
           menuIDControl = "|control.isvisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
-
-        if (menItem.isDefault)
-        {
-          // Add default Context label
-          rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
-          rawXML.AppendLine("<type>label</type>");
-          rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>322</posY>");
-          rawXML.AppendLine("<width>380</width>");
-          rawXML.AppendLine("<height>72</height>");
-          rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
-          rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
-          rawXML.AppendLine("<font>#labelFont</font>");
-          rawXML.AppendLine("<align>right</align>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
-          rawXML.AppendLine("</control>");
-        }
         // Context Lables
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
@@ -1726,7 +1706,7 @@ namespace StreamedMPEditor
         if (menItem.isWeather)
         {
           rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
+          rawXML.AppendLine("<description>" + menItem.name + " Location Label</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
           rawXML.AppendLine("<posY>395</posY>");
@@ -1741,6 +1721,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
           rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")]</visible>");
           rawXML.AppendLine("</control>");
+        }
+        else
+        {
         }
       }
       xml = xml.Replace("<!-- BEGIN CONTEXT LABELS CODE-->", rawXML.ToString());
