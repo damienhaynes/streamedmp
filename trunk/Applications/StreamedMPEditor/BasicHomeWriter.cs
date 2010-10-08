@@ -3303,6 +3303,22 @@ namespace StreamedMPEditor
               rawXML.AppendLine("<import>basichome.recentlyadded.movpics.HSum2.xml</import>");
         }
       }
+
+      if (helper.pluginEnabled("Fanart Handler"))
+      {
+        if (overlayType == isOverlayType.Music)
+        {
+          replaceString = "<!-- BEGIN MOST RECENT MUSIC CODE-->";
+          rawXML.AppendLine("<import>basichome.recentlyadded.Music.Summary.xml</import>");
+        }
+
+        if (overlayType == isOverlayType.RecordedTV)
+        {
+          replaceString = "<!-- BEGIN MOST RECENT RECORDEDTV CODE-->";
+          rawXML.AppendLine("<import>basichome.recentlyadded.RecordedTV.Summary.xml</import>");
+        }
+      }
+
       xml = xml.Replace(replaceString, rawXML.ToString());
     }
 
@@ -3477,6 +3493,9 @@ namespace StreamedMPEditor
       string mrTVSeriesWatched = cbTVSeriesRecentWatched.Checked ? "true" : "false";
       string mrTVSeriesDisableFadeLabel = tvSeriesOptions.mrDisableFadeLabels ? "true" : "false";
       string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
+      string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
+      string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
+
 
       if (direction == menuType.horizontal)
       {
@@ -3601,6 +3620,8 @@ namespace StreamedMPEditor
                 + generateEntry("mrTVSeriesWatched", mrTVSeriesWatched, 3, true)
                 + generateEntry("mrTVSeriesDisableFadeLabel", mrTVSeriesDisableFadeLabel, 3, true)
                 + generateEntry("mrMovPicsDisableFadeLabel", mrMovPicsDisableFadeLabel, 3, true)
+                + generateEntry("mrRecordedTVEnabled", mrRecordedTVEnabled, 3, true)
+                + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
                 + "\t\t</section>");
 
     
