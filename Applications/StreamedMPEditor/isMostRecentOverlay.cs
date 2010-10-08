@@ -2,7 +2,6 @@
 {
   public partial class formStreamedMpEditor
   {
-
     public int baseXPosAdded;
     public int baseYPosAdded;
     public int baseXPosWatched;
@@ -835,10 +834,14 @@
 
       if (sumStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
-        string fanartProperty = "#StreamedMP.MostRecentImageFanart"; 
+        string fanartProperty = "#StreamedMP.MostRecentImageFanart";
+        string fadelabelControl = "fadelabel";
         string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
         string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
+
+        if (tvSeriesOptions.mrDisableFadeLabels)
+          fadelabelControl = "label";
 
         if (!mostRecentTVSeriesCycleFanart)
           fanartProperty = "#StreamedMP.recentlyAdded.series1.fanart";
@@ -871,7 +874,7 @@
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Header label</description>\n" +
-                    "<type>label</type>\n" +
+                    "<type>" + fadelabelControl + "</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                     "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
@@ -882,7 +885,7 @@
                   "</control>      " +
                   "<control>\n" +
                     "<description>Series 1 name</description>\n" +
-                    "<type>fadelabel</type>\n" +
+                    "<type>" + fadelabelControl + "</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                     "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
@@ -897,7 +900,7 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 1 title</description>\n" +
-        "<type>fadelabel</type>\n" +
+        "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
         "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
         "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
@@ -933,7 +936,7 @@
       "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
       "<control>\n" +
         "<description>Series 2 name</description>\n" +
-        "<type>fadelabel</type>\n" +
+        "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
         "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
         "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
@@ -948,7 +951,7 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 2 title</description>\n" +
-        "<type>fadelabel</type>\n" +
+        "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
         "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
         "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
@@ -972,7 +975,7 @@
       "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
       "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
       "<control>\n" +
-        "<type>fadelabel</type>\n" +
+        "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
         "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
         "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
@@ -987,7 +990,7 @@
       "</control>\n" +
       "<control>\n" +
         "<description>Series 3 title</description>\n" +
-        "<type>fadelabel</type>\n" +
+        "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
         "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
         "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
@@ -1003,7 +1006,6 @@
           xml += "</controls>\n" +
          "</window>";
         }
-
       }
 
       #endregion
@@ -1763,6 +1765,10 @@
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
         string alignTxt = "right";
         string fanartProperty = "#StreamedMP.recentlyAdded.movie1.fanart";
+        string fadeLabelControl = "fadelabel";
+
+        if (movPicsOptions.DisableFadeLabels)
+          fadeLabelControl = "label";
 
         if (cbCycleFanart.Checked)
           fanartProperty = "#StreamedMP.MostRecentMovPicsImageFanart";
@@ -1806,7 +1812,7 @@
                   "</control>      " +
                   "<control>\n" +
                     "<description>Movie 1 Title</description>\n" +
-                    "<type>fadelabel</type>\n" +
+                    "<type>" + fadeLabelControl + "</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                     "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
@@ -1913,7 +1919,7 @@
               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
               "<control>\n" +
                 "<description>Movie 2 Title</description>\n" +
-                "<type>fadelabel</type>\n" +
+                "<type>" + fadeLabelControl + "</type>\n" +
                 "<id>0</id>\n" +
                 "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                 "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
@@ -2007,7 +2013,7 @@
           "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
           "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
           "<control>\n" +
-            "<type>fadelabel</type>\n" +
+            "<type>" + fadeLabelControl + "</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
             "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
@@ -2106,11 +2112,15 @@
     {
         string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
+        string fadelabelControl = "fadelabel";
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
         int xPos = baseXPosWatched + 20; ;
         string alignTxt = "right";
 
         string fanartProperty = "#StreamedMP.recentlyWatched.movie1.fanart";
+
+        if (movPicsOptions.DisableFadeLabels)
+          fadelabelControl = "label";
 
         if (cbCycleFanart.Checked)
           fanartProperty = "#StreamedMP.MostRecentMovPicsImageFanartWatched";
@@ -2161,7 +2171,7 @@
                   "</control>      " +
                   "<control>\n" +
                     "<description>Movie 1 Title</description>\n" +
-                    "<type>fadelabel</type>\n" +
+                    "<type>" + fadelabelControl + "</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
                     "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
@@ -2278,7 +2288,7 @@
         }
         xml += "<control>\n" +
               "<description>Movie 2 Title</description>\n" +
-                "<type>fadelabel</type>\n" +
+                "<type>" + fadelabelControl + "</type>\n" +
                 "<id>0</id>\n" +
                 "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
                 "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
@@ -2382,7 +2392,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
         }
         xml += "<control>\n" +
-          "<type>fadelabel</type>\n" +
+            "<type>" + fadelabelControl + "</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
             "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
@@ -2474,9 +2484,13 @@
     void mostRecentTVSeriesWatched()
     {
         string fanartProperty = "#StreamedMP.MostRecentImageFanartWatched";
+        string fadeLabelControl = "fadelabel";
         string mrSeriesNameFont = tvSeriesOptions.mrSeriesFont;
         string mrEpisodeFont = tvSeriesOptions.mrEpisodeFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
+
+        if (tvSeriesOptions.mrDisableFadeLabels)
+          fadeLabelControl = "label";
 
         if (!mostRecentTVSeriesCycleFanart)
           fanartProperty = "#StreamedMP.recentlyWatched.series1.fanart";
@@ -2527,7 +2541,7 @@
                 "</control>      " +
                 "<control>\n" +
                   "<description>Series 1 name</description>\n" +
-                  "<type>fadelabel</type>\n" +
+                  "<type>" + fadeLabelControl + "</type>\n" +
                   "<id>0</id>\n" +
                   "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
@@ -2542,7 +2556,7 @@
     "</control>\n" +
     "<control>\n" +
       "<description>Series 1 title</description>\n" +
-      "<type>fadelabel</type>\n" +
+      "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
       "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
       "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
@@ -2588,7 +2602,7 @@
       }
       xml += "<control>\n" +
       "<description>Series 2 name</description>\n" +
-      "<type>fadelabel</type>\n" +
+      "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
       "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
       "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
@@ -2603,7 +2617,7 @@
     "</control>\n" +
     "<control>\n" +
       "<description>Series 2 title</description>\n" +
-      "<type>fadelabel</type>\n" +
+      "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
       "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
       "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
@@ -2637,7 +2651,7 @@
                 "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
-      "<type>fadelabel</type>\n" +
+      "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
       "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
       "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
@@ -2652,7 +2666,7 @@
     "</control>\n" +
     "<control>\n" +
       "<description>Series 3 title</description>\n" +
-      "<type>fadelabel</type>\n" +
+      "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
       "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
       "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +

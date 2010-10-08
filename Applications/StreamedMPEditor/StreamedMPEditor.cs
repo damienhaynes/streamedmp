@@ -968,6 +968,29 @@ namespace StreamedMPEditor
       setBasicHomeValues();
     }
 
+    private void addSubmenus_Click(object sender, EventArgs e)
+    {
+      if (itemsOnMenubar.SelectedIndex != -1)
+      {
+        formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
+        subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
+      }
+      else
+        helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
+    }
+
+    private void btSelectOverlays_Click(object sender, EventArgs e)
+    {
+      if (itemsOnMenubar.SelectedIndex != -1)
+      {
+        mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
+        mrDisplaySelection.ShowDialog();
+        menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
+      }
+      else
+        helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
+    }
+
     #endregion
 
     #region ISetupForm Members
@@ -1066,28 +1089,6 @@ namespace StreamedMPEditor
 
     #endregion
 
-    private void addSubmenus_Click(object sender, EventArgs e)
-    {
-      if (itemsOnMenubar.SelectedIndex != -1)
-      {
-        formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
-        subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
-      }
-      else
-        helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
-    }
-
-    private void btSelectOverlays_Click(object sender, EventArgs e)
-    {
-      if (itemsOnMenubar.SelectedIndex != -1)
-      {
-        mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
-        mrDisplaySelection.ShowDialog();
-        menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
-      }
-      else
-        helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
-    }
   }
 }
 

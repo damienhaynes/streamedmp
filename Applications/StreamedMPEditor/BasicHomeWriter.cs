@@ -3475,6 +3475,8 @@ namespace StreamedMPEditor
       string mrMovPicsUseTextRating = movPicsOptions.UseTextRating ? "true" : "false";
       string mrMovPicsWatched = cbMovPicsRecentWatched.Checked ? "true" : "false";
       string mrTVSeriesWatched = cbTVSeriesRecentWatched.Checked ? "true" : "false";
+      string mrTVSeriesDisableFadeLabel = tvSeriesOptions.mrDisableFadeLabels ? "true" : "false";
+      string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -3597,6 +3599,8 @@ namespace StreamedMPEditor
                 + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 3, true)
                 + generateEntry("mrMovPicsWatched", mrMovPicsWatched, 3, true)
                 + generateEntry("mrTVSeriesWatched", mrTVSeriesWatched, 3, true)
+                + generateEntry("mrTVSeriesDisableFadeLabel", mrTVSeriesDisableFadeLabel, 3, true)
+                + generateEntry("mrMovPicsDisableFadeLabel", mrMovPicsDisableFadeLabel, 3, true)
                 + "\t\t</section>");
 
     

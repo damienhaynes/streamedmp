@@ -236,6 +236,8 @@ namespace StreamedMPEditor
         movPicsOptions.UseTextRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsUseTextRating", nodelist));
         cbMovPicsRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
         cbTVSeriesRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesWatched", nodelist));
+        tvSeriesOptions.mrDisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesDisableFadeLabel", nodelist));
+        movPicsOptions.DisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
       }
       catch
       {
