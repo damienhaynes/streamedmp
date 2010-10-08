@@ -1079,9 +1079,14 @@ namespace StreamedMPEditor
 
     private void btSelectOverlays_Click(object sender, EventArgs e)
     {
-      mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
-      mrDisplaySelection.ShowDialog();
-      menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
+      if (itemsOnMenubar.SelectedIndex != -1)
+      {
+        mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
+        mrDisplaySelection.ShowDialog();
+        menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
+      }
+      else
+        helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
     }
   }
 }
