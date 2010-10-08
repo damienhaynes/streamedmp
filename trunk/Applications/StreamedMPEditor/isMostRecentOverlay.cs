@@ -76,6 +76,8 @@
       {
         if (reqType == movPicsRecentType.summary)
         {
+          baseXPosWatched = 5;
+          baseYPosWatched = 50;
           horizontalMovingPicturesSummary();
         }
         else
@@ -1585,8 +1587,8 @@
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
         buildMovingPicturesSummaryFile(overlayYpos, mostRecentMovPicsSummaryStyle.fanart);
-        //if (cbMovPicsRecentWatched.Checked)
-        //  mostRecentMoviesWatched();
+        if (cbMovPicsRecentWatched.Checked)
+          mostRecentMoviesWatched();
 
         writeXMLFile("basichome.recentlyadded.movpics.HSum2.xml");
       }
@@ -2086,7 +2088,7 @@
         }
 
         xml += "</control>\n";
-        if (!cbMovPicsRecentWatched.Checked || menuStyle != chosenMenuStyle.verticalStyle)
+        if (!cbMovPicsRecentWatched.Checked)
         {
          xml += "</controls>\n" +
         "</window>";
@@ -2105,7 +2107,7 @@
         string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
-        int xPos = 995;
+        int xPos = baseXPosWatched + 20; ;
         string alignTxt = "right";
 
         string fanartProperty = "#StreamedMP.recentlyWatched.movie1.fanart";
@@ -2120,13 +2122,23 @@
                     "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie1.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie1.thumb,#)]</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
-                    "<control>\n" +
-                    "<description>Movie 1 BG</description>\n" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
+        if (baseXPosWatched > 640)
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        else
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        xml += "<control>\n" +
+                  "<description>Movie 1 BG</description>\n" +
                     "<posX>" + baseXPosWatched.ToString() + "</posX>\n" +
                     "<posY>" + baseYPosWatched.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
@@ -2249,13 +2261,23 @@
               "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie2.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie2.thumb,#)]</visible>" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-              "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
-              "<control>\n" +
-                "<description>Movie 2 Title</description>\n" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
+        if (baseXPosWatched > 640)
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        else
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        xml += "<control>\n" +
+              "<description>Movie 2 Title</description>\n" +
                 "<type>fadelabel</type>\n" +
                 "<id>0</id>\n" +
                 "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
@@ -2344,13 +2366,23 @@
           "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie3.fanart,#)|string.starts(#StreamedMP.recentlyWatched.movie3.thumb,#)]</visible>" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-          "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
-          "<control>\n" +
-            "<type>fadelabel</type>\n" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
+        if (baseXPosWatched > 640)
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                 "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        else
+        {
+          xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        }
+        xml += "<control>\n" +
+          "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
             "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
@@ -2649,48 +2681,25 @@
       {
         foreach (menuItem menItem in menuItems)
         {
-          if (menItem.showMostRecent == displayMostRecent.moviesAdded)
+          if (menItem.showMostRecent == displayMostRecent.movies)
           {
             if (visibleOn == null)
               visibleOn = "[control.isvisible(" + menItem.id.ToString() + ")";
             else
               visibleOn += "|control.isvisible(" + menItem.id.ToString() + ")";
           }
-          if (menItem.showMostRecent == displayMostRecent.moviesAddedWatched)
-          {
-            if (visibleOn == null)
-              visibleOn = "[control.isvisible(" + menItem.id.ToString() + ")";
-            else
-              visibleOn += "|control.isvisible(" + menItem.id.ToString() + ")";
-          }
+
           // Check Submenu Level 1
           if (menItem.subMenuLevel1.Count > 0)
           {
             for (int i = 0; i < menItem.subMenuLevel1.Count; i++)
             {
-              if (menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAddedWatched)
+              if (menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.movies)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
                 else
                   visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
-              }
-              else
-              {
-                if (menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesAdded)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                }
-                if (menItem.subMenuLevel1[i].showMostRecent == displayMostRecent.moviesWatched)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                }
               }
             }
           }
@@ -2699,29 +2708,12 @@
           {
             for (int i = 0; i < menItem.subMenuLevel2.Count; i++)
             {
-              if (menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.moviesAddedWatched)
+              if (menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.movies)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
                 else
                   visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-              }
-              else
-              {
-                if (menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.moviesAdded)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 +1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                }
-                if (menItem.subMenuLevel2[i].showMostRecent == displayMostRecent.moviesWatched)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (menItem.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                }
               }
             }
           }
@@ -2734,14 +2726,7 @@
       {       
         foreach (menuItem item in menuItems)
         {
-          if (item.showMostRecent == displayMostRecent.tvSeriesAdded)
-          {
-            if (visibleOn == null)
-              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
-            else
-              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
-          }
-          if (item.showMostRecent == displayMostRecent.tvseriesWatched)
+          if (item.showMostRecent == displayMostRecent.tvSeries)
           {
             if (visibleOn == null)
               visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
@@ -2753,29 +2738,12 @@
           {
             for (int i = 0; i < item.subMenuLevel1.Count; i++)
             {
-              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeries)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
                 else
                   visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
-              }
-              else
-              {
-                if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvSeriesAdded)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                }
-                if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.tvseriesWatched)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
-                }
               }
             }
           }
@@ -2784,32 +2752,14 @@
           {
             for (int i = 0; i < item.subMenuLevel2.Count; i++)
             {
-              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvseriesAddedWatched)
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvSeries)
               {
                 if (visibleOn == null)
                   visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
                 else
                   visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
               }
-              else
-              {
-                if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvSeriesAdded)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                }
-                if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.tvseriesWatched)
-                {
-                  if (visibleOn == null)
-                    visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                  else
-                    visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
-                }
-              }
             }
-
           }
         }
       }

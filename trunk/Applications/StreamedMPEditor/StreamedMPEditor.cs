@@ -104,14 +104,10 @@ namespace StreamedMPEditor
     public enum displayMostRecent
     {
       off,
-      tvSeriesAdded,
-      tvseriesWatched,
-      moviesAdded,
-      moviesWatched,
+      tvSeries,
+      movies,
       music,
-      recordedTV,
-      moviesAddedWatched,
-      tvseriesAddedWatched
+      recordedTV
     }
 
     #endregion
@@ -205,6 +201,7 @@ namespace StreamedMPEditor
     editorValues basicHomeValues = new editorValues();
     defaultImages defImgs = new defaultImages();
     randomFanartSetting randomFanart = new randomFanartSetting();
+    mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
     #endregion
 
@@ -408,13 +405,13 @@ namespace StreamedMPEditor
 
     displayMostRecent getMostRecentDisplayOption()
     {
-      if (rbDisplayMostRecentNone.Checked)
-        return displayMostRecent.off;
+      if (mrDisplaySelection.mrToDisplay == displayMostRecent.tvSeries)
+        return displayMostRecent.tvSeries;
 
-      if (rbDisplayMostRecentTVSeries.Checked)
-        return displayMostRecent.tvSeriesAdded;
+      if (mrDisplaySelection.mrToDisplay == displayMostRecent.movies)
+        return displayMostRecent.movies;
 
-      return displayMostRecent.moviesAdded;
+      return displayMostRecent.off;
     }
 
     void setMostRecentDisplayOption(displayMostRecent dmr)
@@ -423,23 +420,17 @@ namespace StreamedMPEditor
       {
         case displayMostRecent.off:
           {
-            rbDisplayMostRecentNone.Checked = true;
-            rbDisplayMostRecentMovies.Checked = false;
-            rbDisplayMostRecentTVSeries.Checked = false;
+            mrDisplaySelection.mrToDisplay = displayMostRecent.off;
             break;
           }
-        case displayMostRecent.tvSeriesAdded:
+        case displayMostRecent.tvSeries:
           {
-            rbDisplayMostRecentNone.Checked = false;
-            rbDisplayMostRecentMovies.Checked = false;
-            rbDisplayMostRecentTVSeries.Checked = true;
+            mrDisplaySelection.mrToDisplay = displayMostRecent.tvSeries;
             break;
           }
-        case displayMostRecent.moviesAdded:
+        case displayMostRecent.movies:
           {
-            rbDisplayMostRecentNone.Checked = false;
-            rbDisplayMostRecentMovies.Checked = true;
-            rbDisplayMostRecentTVSeries.Checked = false;
+            mrDisplaySelection.mrToDisplay = displayMostRecent.movies;
             break;
           }
       }
@@ -1084,6 +1075,13 @@ namespace StreamedMPEditor
       }
       else
         helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
+    }
+
+    private void btSelectOverlays_Click(object sender, EventArgs e)
+    {
+      mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
+      mrDisplaySelection.ShowDialog();
+      menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
     }
   }
 }
