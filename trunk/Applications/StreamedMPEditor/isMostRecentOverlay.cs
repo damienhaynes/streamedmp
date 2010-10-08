@@ -2155,7 +2155,7 @@
                     "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
                     "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
                     "<width>258</width>\n" +
-                    "<label>Recently Watched</label>\n" +
+                    "<label>#StreamedMP.RecentlyWatched</label>\n" +
                     "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>      " +
@@ -2521,7 +2521,7 @@
                   "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
                   "<width>258</width>\n" +
-                  "<label>Recently Watched</label>\n" +
+                  "<label>#StreamedMP.RecentlyWatched</label>\n" +
                   "<font>mediastream10tc</font>\n" +
                   "<textcolor>White</textcolor>\n" +
                 "</control>      " +
