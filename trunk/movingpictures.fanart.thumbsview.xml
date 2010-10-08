@@ -21,7 +21,7 @@ This file should contain the thumbs view
       <type>label</type>
       <id>0</id>
       <posX>20</posX>
-      <posY>240</posY>
+      <posY>350</posY>
       <width>500</width>
       <font>mediastream14tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
@@ -35,7 +35,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.genres</label>
       <id>0</id>
       <posX>20</posX>
-      <posY>265</posY>
+      <posY>375</posY>
       <width>500</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
@@ -47,7 +47,7 @@ This file should contain the thumbs view
       <type>image</type>
       <id>1001</id>
       <posX>20</posX>
-      <posY>287</posY>
+      <posY>397</posY>
       <width>115</width>
       <height>22</height>
       <align>left</align>
@@ -59,7 +59,7 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
       <posX>145</posX>
-      <posY>288</posY>
+      <posY>398</posY>
       <width>360</width>
       <font>mediastream11c</font>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
@@ -70,34 +70,23 @@ This file should contain the thumbs view
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>20</posX>
-      <posY>320</posY>
+      <posY>430</posY>
       <width>500</width>
-      <height>215</height>
+      <height>160</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <!-- Use Custom shadows to avoid width bug in MP 1.1.0 -->
-    <control Style="smallTitleB">
-      <description>Certification Label Shadow</description>
-      <type>label</type>
-      <label>#MovingPictures.Translation.Certification.Label</label>
-      <posX>21</posX>
-      <posY>552</posY>
-      <textcolor>ff111111</textcolor>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <description>Certification Label</description>
       <id>0</id>
       <type>label</type>
       <label>#MovingPictures.Translation.Certification.Label</label>
       <posX>20</posX>
-      <posY>551</posY>
+      <posY>606</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -108,11 +97,8 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.certification</label>
       <posX>180</posX>
-      <posY>552</posY>
-      <width>200</width>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>607</posY>
+      <width>200</width>     
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -122,22 +108,9 @@ This file should contain the thumbs view
       <type>label</type>
       <label>N/A</label>
       <posX>180</posX>
-      <posY>552</posY>
-      <width>200</width>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>607</posY>
+      <width>200</width>     
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>Runtime Label Shadow</description>
-      <type>label</type>
-      <label>#MovingPictures.Translation.Runtime.Label</label>
-      <posX>21</posX>
-      <posY>574</posY>
-      <textcolor>ff111111</textcolor>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -146,7 +119,7 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.Translation.Runtime.Label</label>
       <posX>20</posX>
-      <posY>573</posY>
+      <posY>628</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -157,11 +130,8 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
       <posX>180</posX>
-      <posY>574</posY>
-      <width>200</width>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>629</posY>
+      <width>200</width>    
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -171,30 +141,17 @@ This file should contain the thumbs view
       <type>label</type>
       <label>N/A</label>
       <posX>180</posX>
-      <posY>574</posY>
-      <width>200</width>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>629</posY>
+      <width>200</width>     
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>Year Label Shadow</description>
-      <type>label</type>
-      <label>#MovingPictures.Translation.Year.Label</label>
-      <posX>21</posX>
-      <posY>596</posY>
-      <textcolor>ff111111</textcolor>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <description>Year Label</description>
       <type>label</type>
       <label>#MovingPictures.Translation.Year.Label</label>
       <posX>20</posX>
-      <posY>595</posY>
+      <posY>650</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -205,10 +162,7 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
       <posX>180</posX>
-      <posY>596</posY>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>651</posY>      
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -218,10 +172,7 @@ This file should contain the thumbs view
       <type>label</type>
       <label>N/A</label>
       <posX>180</posX>
-      <posY>596</posY>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
+      <posY>651</posY>      
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
