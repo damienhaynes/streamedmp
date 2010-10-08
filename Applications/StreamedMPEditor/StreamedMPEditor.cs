@@ -74,7 +74,9 @@ namespace StreamedMPEditor
     enum isOverlayType
     {
       TVSeries,
-      MovPics
+      MovPics,
+      Music,
+      RecordedTV
     }
 
     enum tvSeriesRecentType
@@ -161,6 +163,9 @@ namespace StreamedMPEditor
     Version isSeparatorVer = new Version("1.1.0.0");
     Version mpReleaseVersion = new Version("1.0.2.22554");
     Version isWeatherVersion = new Version("1.6.0.0");
+    Version fanarthandlerVersionRequired = new Version("2.2.0.0");
+
+    public Version fhOverlayVersion;
 
     public static Regex isIleagalXML = new Regex("[&<>]");
 
@@ -348,6 +353,13 @@ namespace StreamedMPEditor
           pbFanartPicTVSeries.Visible = true;
           pbPosterPicMovPics.Visible = false;
           pbFanartPicMovPics.Visible = false;
+          if (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) > 0)
+          {
+            cbEnableRecentMusic.Enabled = false;
+            cbEnableRecentRecordedTV.Enabled = false;
+            mrDisplaySelection.disableMusicRB = false;
+            mrDisplaySelection.disableRecordedTVRB = false;
+          }
         }
 
         loadMenuSettings();
@@ -385,7 +397,7 @@ namespace StreamedMPEditor
     {
       xmlFiles.Enabled = true;
       helper.getSkinFileList(ref xmlFiles, ref ids);
-
+      fhOverlayVersion = new Version(helper.fileVersion(Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "Process"), "Fanarthandler.dll")));
       //return true;
       if (xmlFiles.Items.Count > 0)
       {
@@ -916,6 +928,13 @@ namespace StreamedMPEditor
         }
       }
 
+      if (cbEnableRecentMusic.Checked)
+        generateMostRecentInclude(isOverlayType.Music);
+
+      if (cbEnableRecentRecordedTV.Checked)
+        generateMostRecentInclude(isOverlayType.RecordedTV);
+
+
       toolStripStatusLabel1.Text = "Done!";
 
       if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
@@ -945,6 +964,17 @@ namespace StreamedMPEditor
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
         }
+      }
+
+      if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+      {
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        if (cbEnableRecentMusic.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
+
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        if (cbEnableRecentRecordedTV.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
       }
 
       changeOutstanding = false;

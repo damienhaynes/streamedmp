@@ -238,6 +238,8 @@ namespace StreamedMPEditor
         cbTVSeriesRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesWatched", nodelist));
         tvSeriesOptions.mrDisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesDisableFadeLabel", nodelist));
         movPicsOptions.DisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
+        cbEnableRecentRecordedTV.Checked = bool.Parse(readEntryValue(optionsTag, "mrRecordedTVEnabled", nodelist));
+        cbEnableRecentMusic.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
       }
       catch
       {
@@ -589,6 +591,10 @@ namespace StreamedMPEditor
         return displayMostRecent.movies;
       else if (mrOption == displayMostRecent.tvSeries.ToString())
         return displayMostRecent.tvSeries;
+      else if (mrOption == displayMostRecent.music.ToString())
+        return displayMostRecent.music;
+      else if (mrOption == displayMostRecent.recordedTV.ToString())
+        return displayMostRecent.recordedTV;
       else
         return displayMostRecent.off;
     }

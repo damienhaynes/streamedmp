@@ -23,6 +23,22 @@ namespace StreamedMPEditor
 
     }
 
+    public bool disableMusicRB 
+    {
+      set
+      {
+        rbSubMusic.Enabled = value; ;
+      }
+    }
+
+    public bool disableRecordedTVRB
+    {
+      set
+      {
+        rbSubTV.Enabled = value; ;
+      }
+    }
+
     public formStreamedMpEditor.displayMostRecent mrToDisplay
     {
       get { return selectedMostRecent(); }

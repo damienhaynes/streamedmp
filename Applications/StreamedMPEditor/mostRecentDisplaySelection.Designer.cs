@@ -66,7 +66,6 @@
       // rbSubTV
       // 
       this.rbSubTV.AutoSize = true;
-      this.rbSubTV.Enabled = false;
       this.rbSubTV.Location = new System.Drawing.Point(10, 115);
       this.rbSubTV.Name = "rbSubTV";
       this.rbSubTV.Size = new System.Drawing.Size(192, 17);
@@ -78,7 +77,6 @@
       // rbSubMusic
       // 
       this.rbSubMusic.AutoSize = true;
-      this.rbSubMusic.Enabled = false;
       this.rbSubMusic.Location = new System.Drawing.Point(11, 92);
       this.rbSubMusic.Name = "rbSubMusic";
       this.rbSubMusic.Size = new System.Drawing.Size(156, 17);

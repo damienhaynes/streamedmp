@@ -242,6 +242,8 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
+      this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1740,6 +1742,8 @@
       // 
       // infoServiceRecentOptions
       // 
+      this.infoServiceRecentOptions.Controls.Add(this.cbEnableRecentRecordedTV);
+      this.infoServiceRecentOptions.Controls.Add(this.cbEnableRecentMusic);
       this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
       this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
       this.infoServiceRecentOptions.Controls.Add(this.pTVSeriesRecent);
@@ -1764,14 +1768,14 @@
       this.gbSummaryStyle.Controls.Add(this.pbFanartPicTVSeries);
       this.gbSummaryStyle.Location = new System.Drawing.Point(296, 48);
       this.gbSummaryStyle.Name = "gbSummaryStyle";
-      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 285);
+      this.gbSummaryStyle.Size = new System.Drawing.Size(413, 193);
       this.gbSummaryStyle.TabIndex = 6;
       this.gbSummaryStyle.TabStop = false;
       // 
       // pbPosterPicMovPics
       // 
       this.pbPosterPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicMovPics.Image")));
-      this.pbPosterPicMovPics.Location = new System.Drawing.Point(32, 60);
+      this.pbPosterPicMovPics.Location = new System.Drawing.Point(33, 35);
       this.pbPosterPicMovPics.Name = "pbPosterPicMovPics";
       this.pbPosterPicMovPics.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1781,7 +1785,7 @@
       // pbFanartPicMovPics
       // 
       this.pbFanartPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicMovPics.Image")));
-      this.pbFanartPicMovPics.Location = new System.Drawing.Point(274, 45);
+      this.pbFanartPicMovPics.Location = new System.Drawing.Point(275, 20);
       this.pbFanartPicMovPics.Name = "pbFanartPicMovPics";
       this.pbFanartPicMovPics.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1790,7 +1794,7 @@
       // 
       // btFormatOptions
       // 
-      this.btFormatOptions.Location = new System.Drawing.Point(32, 209);
+      this.btFormatOptions.Location = new System.Drawing.Point(33, 151);
       this.btFormatOptions.Name = "btFormatOptions";
       this.btFormatOptions.Size = new System.Drawing.Size(199, 23);
       this.btFormatOptions.TabIndex = 5;
@@ -1801,7 +1805,7 @@
       // rbFanartStyle
       // 
       this.rbFanartStyle.AutoSize = true;
-      this.rbFanartStyle.Location = new System.Drawing.Point(274, 153);
+      this.rbFanartStyle.Location = new System.Drawing.Point(275, 128);
       this.rbFanartStyle.Name = "rbFanartStyle";
       this.rbFanartStyle.Size = new System.Drawing.Size(81, 17);
       this.rbFanartStyle.TabIndex = 3;
@@ -1813,7 +1817,7 @@
       // cbCycleFanart
       // 
       this.cbCycleFanart.AutoSize = true;
-      this.cbCycleFanart.Location = new System.Drawing.Point(274, 214);
+      this.cbCycleFanart.Location = new System.Drawing.Point(275, 156);
       this.cbCycleFanart.Name = "cbCycleFanart";
       this.cbCycleFanart.Size = new System.Drawing.Size(85, 17);
       this.cbCycleFanart.TabIndex = 4;
@@ -1824,7 +1828,7 @@
       // rbPosterStyle
       // 
       this.rbPosterStyle.AutoSize = true;
-      this.rbPosterStyle.Location = new System.Drawing.Point(32, 153);
+      this.rbPosterStyle.Location = new System.Drawing.Point(33, 128);
       this.rbPosterStyle.Name = "rbPosterStyle";
       this.rbPosterStyle.Size = new System.Drawing.Size(81, 17);
       this.rbPosterStyle.TabIndex = 2;
@@ -1835,7 +1839,7 @@
       // pbPosterPicTVSeries
       // 
       this.pbPosterPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicTVSeries.Image")));
-      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(32, 61);
+      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(33, 36);
       this.pbPosterPicTVSeries.Name = "pbPosterPicTVSeries";
       this.pbPosterPicTVSeries.Size = new System.Drawing.Size(199, 87);
       this.pbPosterPicTVSeries.TabIndex = 0;
@@ -1844,7 +1848,7 @@
       // pbFanartPicTVSeries
       // 
       this.pbFanartPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicTVSeries.Image")));
-      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(274, 46);
+      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(275, 21);
       this.pbFanartPicTVSeries.Name = "pbFanartPicTVSeries";
       this.pbFanartPicTVSeries.Size = new System.Drawing.Size(102, 102);
       this.pbFanartPicTVSeries.TabIndex = 1;
@@ -1856,9 +1860,9 @@
       this.pMovPicsRecent.Controls.Add(this.cbMovPicsRecentWatched);
       this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
       this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
-      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 187);
+      this.pMovPicsRecent.Location = new System.Drawing.Point(0, 133);
       this.pMovPicsRecent.Name = "pMovPicsRecent";
-      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 146);
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 108);
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
@@ -1877,7 +1881,7 @@
       this.gbMovPicsOptions.Controls.Add(this.rbMovPicsFull);
       this.gbMovPicsOptions.Controls.Add(this.rbMovPicsSummary);
       this.gbMovPicsOptions.Enabled = false;
-      this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 60);
+      this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 52);
       this.gbMovPicsOptions.Name = "gbMovPicsOptions";
       this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 51);
       this.gbMovPicsOptions.TabIndex = 3;
@@ -1926,7 +1930,7 @@
       this.pTVSeriesRecent.Controls.Add(this.cbMostRecentTvSeries);
       this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 27);
       this.pTVSeriesRecent.Name = "pTVSeriesRecent";
-      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 146);
+      this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 105);
       this.pTVSeriesRecent.TabIndex = 4;
       this.pTVSeriesRecent.Click += new System.EventHandler(this.pTVSeriesRecent_Click);
       // 
@@ -1945,7 +1949,7 @@
       this.gbTvSeriesOptions.Controls.Add(this.rbTBSeriesFull);
       this.gbTvSeriesOptions.Controls.Add(this.rbTVSeriesSummary);
       this.gbTvSeriesOptions.Enabled = false;
-      this.gbTvSeriesOptions.Location = new System.Drawing.Point(9, 63);
+      this.gbTvSeriesOptions.Location = new System.Drawing.Point(9, 54);
       this.gbTvSeriesOptions.Name = "gbTvSeriesOptions";
       this.gbTvSeriesOptions.Size = new System.Drawing.Size(264, 45);
       this.gbTvSeriesOptions.TabIndex = 2;
@@ -2619,6 +2623,26 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbEnableRecentMusic
+      // 
+      this.cbEnableRecentMusic.AutoSize = true;
+      this.cbEnableRecentMusic.Location = new System.Drawing.Point(10, 269);
+      this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
+      this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
+      this.cbEnableRecentMusic.TabIndex = 10;
+      this.cbEnableRecentMusic.Text = "Enable Last 3 Added Albums";
+      this.cbEnableRecentMusic.UseVisualStyleBackColor = true;
+      // 
+      // cbEnableRecentRecordedTV
+      // 
+      this.cbEnableRecentRecordedTV.AutoSize = true;
+      this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(10, 302);
+      this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
+      this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
+      this.cbEnableRecentRecordedTV.TabIndex = 11;
+      this.cbEnableRecentRecordedTV.Text = "Enable Last 3 Recorded TV Programs";
+      this.cbEnableRecentRecordedTV.UseVisualStyleBackColor = true;
+      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2684,6 +2708,7 @@
       this.weatherSummaryGroup.PerformLayout();
       this.tabPage1.ResumeLayout(false);
       this.infoServiceRecentOptions.ResumeLayout(false);
+      this.infoServiceRecentOptions.PerformLayout();
       this.gbSummaryStyle.ResumeLayout(false);
       this.gbSummaryStyle.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).EndInit();
@@ -2944,6 +2969,8 @@
     private System.Windows.Forms.Label label22;
     private System.Windows.Forms.CheckBox cbTVSeriesRecentWatched;
     private System.Windows.Forms.Button btSelectOverlay;
+    private System.Windows.Forms.CheckBox cbEnableRecentRecordedTV;
+    private System.Windows.Forms.CheckBox cbEnableRecentMusic;
   }
 }
 
