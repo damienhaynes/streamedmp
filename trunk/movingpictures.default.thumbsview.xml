@@ -4,6 +4,17 @@ This file should contain the thumbs view
 -->
 <window>
   <controls>
+	<control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+    </control>
     <!-- Movie Details -->
     <control>
       <description>Movie Title</description>
