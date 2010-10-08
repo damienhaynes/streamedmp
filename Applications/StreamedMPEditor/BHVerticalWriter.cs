@@ -70,7 +70,10 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel1.Count > 0)
           {
             rawXML.AppendLine("<onright>"+ (menItem.subMenuLevel1ID + 1).ToString() +"</onright>");
-            rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+            if (cbExitStyleNew.Checked)
+              rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+            else
+              rawXML.AppendLine("<onleft>7777</onleft>");
           }
           else
           {
@@ -124,7 +127,10 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel1.Count > 0)
           {
             rawXML.AppendLine("<onright>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onright>");
-            rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+            if (cbExitStyleNew.Checked)
+              rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+            else
+              rawXML.AppendLine("<onleft>7777</onleft>");
           }
           else
           {
