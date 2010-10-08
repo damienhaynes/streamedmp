@@ -1102,7 +1102,10 @@ namespace StreamedMPEditor
         if (menuItems[k].subMenuLevel1.Count > 0)
         {
           rawXML.AppendLine("<onright>" + (menuItems[k].subMenuLevel1ID + 1).ToString() + "</onright>");
-          rawXML.AppendLine("<onleft>" + (menuItems[k].id + 600).ToString() + "01" + "</onleft>");
+          if (cbExitStyleNew.Checked)
+            rawXML.AppendLine("<onleft>" + (menuItems[k].id + 600).ToString() + "01" + "</onleft>");
+          else
+            rawXML.AppendLine("<onleft>7777</onleft>");
         }
         else
         {
