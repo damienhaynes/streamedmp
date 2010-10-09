@@ -126,7 +126,7 @@ namespace SMPpatch
         if (pluginconfigloader.running)
           processess += "Plugin Config Loader\n";
 
-        if (waitCount > 10)
+        if (waitCount > 10 || waitCount == 0)
         {
           DialogResult result = MessageBox.Show("The Follow Process are Still Running\n\n" + processess + "\nPlease close application and Retry\n\nPressing Cancel will Abort the Upgrade Process",
                 "Retry",
@@ -143,6 +143,7 @@ namespace SMPpatch
           Thread.Sleep(1000);
 
         processess = null;
+        waitCount++;
       }
 
       // Create the temp directory to store the extracted patches
