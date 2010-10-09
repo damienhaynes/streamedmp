@@ -39,6 +39,8 @@ namespace StreamedMPConfig
     private static string optionDownloadPath = null;
     private static string destinationPath = null;
 
+    private static bool updateCancelled = false;
+
     private static readonly logger smcLog = logger.GetInstance();
     SkinInfo skInfo = new SkinInfo();
 
@@ -100,7 +102,10 @@ namespace StreamedMPConfig
                 GUIWindowManager.Process();
                 upd = 0;
                 if (progressDialog.IsCanceled)
+                {
+                  updateCancelled = true;
                   break;
+                }
               }
               ++upd;
             }
@@ -279,12 +284,15 @@ namespace StreamedMPConfig
         }
         else
         {
-          GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
-          dlgDone.SetHeading(Translation.SkinUpdate);
-          dlgDone.SetLine(1, string.Format(Translation.NumPatchesInstalled, updateCheck.patchList.Count.ToString()));
-          dlgDone.SetLine(2, String.Empty);
-          dlgDone.SetLine(3, string.Format(Translation.PatchUpdateComplete, updateCheck.SkinVersion()));
-          dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+          if (!updateCancelled)
+          {
+            GUIDialogOK dlgDone = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+            dlgDone.SetHeading(Translation.SkinUpdate);
+            dlgDone.SetLine(1, string.Format(Translation.NumPatchesInstalled, updateCheck.patchList.Count.ToString()));
+            dlgDone.SetLine(2, String.Empty);
+            dlgDone.SetLine(3, string.Format(Translation.PatchUpdateComplete, updateCheck.SkinVersion()));
+            dlgDone.DoModal(GUIWindowManager.ActiveWindow);
+          }
         }
         GUIWindowManager.ShowPreviousWindow();
         StreamedMPConfig.updateAvailable = false;
