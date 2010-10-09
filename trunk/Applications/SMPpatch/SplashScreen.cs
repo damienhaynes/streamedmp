@@ -25,6 +25,7 @@ namespace SMPpatch
     public SplashScreen()
     {
       InitializeComponent();
+      this.TopMost = true;
     }
 
     #endregion
