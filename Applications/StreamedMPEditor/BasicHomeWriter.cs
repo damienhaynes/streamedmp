@@ -114,6 +114,12 @@ namespace StreamedMPEditor
         if (menItem.hyperlink == movingPicturesSkinID)
           basicHomeValues.movingPicturesControl = menItem.id;
 
+        if (menItem.hyperlink == musicSkinID)
+          basicHomeValues.musicControl = menItem.id;
+
+        if (menItem.hyperlink == tvMenuSkinID)
+          basicHomeValues.tvControl = menItem.id;
+
         // Is this the default Item
         if (menItem.isDefault == true)
           xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");

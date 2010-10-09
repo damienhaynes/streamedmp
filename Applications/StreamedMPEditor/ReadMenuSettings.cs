@@ -587,6 +587,14 @@ namespace StreamedMPEditor
       if (mrOption == "false" && skinId == tvseriesSkinID)
         return displayMostRecent.tvSeries;
 
+      // Enable most recent RecordedTV on TV menu item if not defined
+      if (mrOption == "false" && skinId == tvMenuSkinID)
+        return displayMostRecent.recordedTV;
+
+      // Enable most recent Music on Music menu item if not defined
+      if (mrOption == "false" && skinId == musicSkinID)
+        return displayMostRecent.music;
+
       if (mrOption == displayMostRecent.movies.ToString() || mrOption == "movies")
         return displayMostRecent.movies;
       else if (mrOption == displayMostRecent.tvSeries.ToString())

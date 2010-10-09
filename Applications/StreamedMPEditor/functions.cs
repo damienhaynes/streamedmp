@@ -1856,6 +1856,8 @@ namespace StreamedMPEditor
       public int weatherControl;
       public int tvseriesControl;
       public int movingPicturesControl;
+      public int musicControl;
+      public int tvControl;
       public int offsetMymenu;
       public int offsetSubmenu;
       public int offsetRssImage;
