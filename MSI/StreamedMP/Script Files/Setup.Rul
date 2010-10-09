@@ -33,14 +33,14 @@
 // Included header files ----------------------------------------------------
 #include "ifx.h"
 
-#define SKIN_NAME						"StreamedMP"
-#define DEFAULT_SKIN					"Blue3wide" 
+#define SKIN_NAME									"StreamedMP"
+#define DEFAULT_SKIN								"Blue3wide" 
 
-#define MEDIAPORTAL_REG_KEY  			"SOFTWARE\\Team MediaPortal\\MediaPortal"
-#define MEDIAPORTALUNINSTALL_REG_KEY    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
-#define STREAMEDMP_REG_KEY  			"SOFTWARE\\StreamedMP"
+#define MEDIAPORTAL_REG_KEY  						"SOFTWARE\\Team MediaPortal\\MediaPortal"
+#define MEDIAPORTALUNINSTALL_REG_KEY    			"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
+#define STREAMEDMP_REG_KEY  						"SOFTWARE\\StreamedMP"
 
-#define STREAMEDMP_HOMEPAGE_URL			"http://code.google.com/p/streamedmp/" 
+#define STREAMEDMP_HOMEPAGE_URL						"http://code.google.com/p/streamedmp/" 
 
 // Feature Defines 
 #define TVSERIES_LISTICONS_FEATURE					"Main\\tvseriesListIcons"
@@ -90,18 +90,17 @@
 #define STREAMEDMP_SKIN_VIDEOOSD					INSTALLDIR^SKIN_NAME^"videoOSD.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION		"1.1.0.0" 	// 1.1.0 Final  [23th July 2010]
-#define MEDIAPORTAL_MIN_VERSION				"1.0.7.0"	// 1.1.0 RC3 	[18th May 2010]
+#define MEDIAPORTAL_MINNOWARN_VERSION				"1.1.0.0" 	// 1.1.0 Final  [23th July 2010]
+#define MEDIAPORTAL_MIN_VERSION						"1.0.7.0"	// 1.1.0 RC3 	[18th May 2010]
+                           
+#define TVSERIES_MIN_VERSION						"2.6.3.1241"
+#define MOVINGPICTURES_MIN_VERSION					"1.0.7.1132"
+#define FANARTHANDLER_MIN_VERSION					"2.2.0.0"
+#define MYLYRICS_MIN_VERSION						"1.5.1.0"
+#define GLOBALSEARCH_MIN_VERSION					"1.7.0.0"
+#define INFOSERVICE_MIN_VERSION						"1.6.0.136"
+#define TRAILERS_MIN_VERSION						"2.0.6.49"
 
-#define TVSERIES_MIN_VERSION				"2.6.3.1241"
-#define MOVINGPICTURES_MIN_VERSION			"1.0.7.1132"
-#define FANARTHANDLER_MIN_VERSION			"2.1.1.13899"
-#define MYLYRICS_MIN_VERSION				"1.5.1.0"
-#define GLOBALSEARCH_MIN_VERSION			"1.7.0.0"
-#define INFOSERVICE_MIN_VERSION				"1.6.0.136"
-#define TRAILERS_MIN_VERSION				"2.0.6.49"
-
-#define BASICHOME_SUPPORTS_UPGRADE			1133  // version that allows upgrade of basichome
 
 // XML Path Defines
 #define REFERENCES_LISTALPHA_PATH				"/controls/control[type='listcontrol']/unfocusedAlpha"
@@ -240,7 +239,7 @@ prototype VOID 		ShowControl(STRING, NUMBER);
 prototype VOID		DetectWinLargeFonts();   
 prototype STRING	BoolToString(BOOL); 
 prototype STRING	BoolToStringInt(BOOL);
-prototype NUMBER	GetVersionDigit(STRING, INT);
+//prototype NUMBER	GetVersionDigit(STRING, INT);
 //prototype NUMBER 	GetMediaPortalRevision();
 prototype VOID		CheckXMLSectionsExist();
 prototype NUMBER	CheckStringExists(STRING, STRING);
@@ -321,13 +320,7 @@ begin
 			if (nResult != IDYES) then
 				abort;
 			endif; 
-			
-			// Detect if we can upgrade Basichome
-			nResult = GetVersionDigit(szVersion, 4);
-			if (nResult >= BASICHOME_SUPPORTS_UPGRADE) then
-				g_bBasicHomeUpgrade = TRUE;
-			endif;
-	
+		
 		else
 		 	szUpgradeMessage = "Setup cannot perform an Upgrade from: v" + szVersion + "\nPlease uninstall from the Add\\Remove programs " +
 							   "and run setup again.";
@@ -2329,7 +2322,7 @@ end;
 //	return GetVersionDigit(svVersion, 4);	
 //end;
 
-function NUMBER GetVersionDigit(version, digit)
+/*function NUMBER GetVersionDigit(version, digit)
 	STRING svString;
 	LIST listVersionDigits;
 	NUMBER nvVar;
@@ -2354,7 +2347,7 @@ begin
 		return -1;
 	endif;
                           
-end;
+end;*/
 
 function NUMBER CheckPluginVersions(szQuestion)
 	STRING svVersion1, svVersion2;
