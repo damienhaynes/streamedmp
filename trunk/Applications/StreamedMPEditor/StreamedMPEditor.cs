@@ -128,6 +128,8 @@ namespace StreamedMPEditor
 
     const string tvseriesSkinID = "9811";
     const string movingPicturesSkinID = "96742";
+    const string musicSkinID = "501";
+    const string tvMenuSkinID = "1";
     const string quote = "\"";
 
     public static bool basicHomeLoadError = false;
