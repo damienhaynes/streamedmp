@@ -65,12 +65,8 @@
 #define STREAMEDMP_SKIN_TVMINIGUIDE					INSTALLDIR^SKIN_NAME^"TVMiniGuide.xml"
 #define STREAMEDMP_SKIN_MYTVGUIDE					INSTALLDIR^SKIN_NAME^"mytvguide.xml"
 #define STREAMEDMP_SKIN_DIALOGTVGUIDE				INSTALLDIR^SKIN_NAME^"dialogTvGuide.xml"
-#define STREAMEDMP_SKIN_REFERENCES					INSTALLDIR^SKIN_NAME^"references.xml"       
-#define STREAMEDMP_SKIN_COMMOVERLAYHOME				INSTALLDIR^SKIN_NAME^"common.overlay.home.xml"
-#define STREAMEDMP_SKIN_COMMOVERLAY					INSTALLDIR^SKIN_NAME^"common.overlays.xml"
-#define STREAMEDMP_SKIN_COMMOVERLAY2				INSTALLDIR^SKIN_NAME^"common.overlays2.xml"
-#define STREAMEDMP_SKIN_BASICHOMEOVERLAY			INSTALLDIR^SKIN_NAME^"common.overlay.basichome.xml"
-#define STREAMEDMP_SKIN_BASICHOMEOVERLAY2			INSTALLDIR^SKIN_NAME^"common.overlay.basichome2.xml"
+#define STREAMEDMP_SKIN_REFERENCES					INSTALLDIR^SKIN_NAME^"references.xml"
+
 #define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 #define STREAMEDMP_SKIN_4TRACTIVE			        INSTALLDIR^SKIN_NAME^"4TR_Active.xml"
@@ -117,9 +113,6 @@
 #define REFERENCES_PLAYLISTCOLORTEXT3_PATH		"/controls/control[type='playlistcontrol']/textcolor3"
 #define REFERENCES_PLAYLISTCOLORWATCHED_PATH	"/controls/control[type='playlistcontrol']/playedColor"
 #define REFERENCES_PLAYLISTCOLORREMOTE_PATH		"/controls/control[type='playlistcontrol']/remoteColor"
-
-#define MUSIC_ARTIST_OVERLAY					"/window/controls/control[id='7220']/texture"
-#define MUSIC_ARTIST_ANIM_OVERLAY				"/window/controls/control[id='7210']/textures"
 
 #define EMULATORS_SCREENSHOT					"/window/controls/control[id='1001']/texture"
     
@@ -2196,29 +2189,6 @@ begin
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORTEXT3_PATH, "FF"+g_sText3Color);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORWATCHED_PATH, "FF"+g_sWatchedColor);
 	SetXMLProperty(sFile, REFERENCES_PLAYLISTCOLORREMOTE_PATH, "FF"+g_sRemoteColor);
-		
-	// Update Hard Coded Paths
-	sArtistImage = g_sThumbsDir^"Music\\Artists\\#Play.Current.ArtistL.jpg";
-	
-	sFile = STREAMEDMP_SKIN_COMMOVERLAYHOME;
-	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage );
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
-	
-	sFile = STREAMEDMP_SKIN_COMMOVERLAY;
-	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
-	
-	sFile = STREAMEDMP_SKIN_COMMOVERLAY2;
-	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);	
-	
-	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY;
-	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
-	
-	sFile = STREAMEDMP_SKIN_BASICHOMEOVERLAY2;
-	SetXMLProperty(sFile, MUSIC_ARTIST_OVERLAY, sArtistImage);
-	SetXMLProperty(sFile, MUSIC_ARTIST_ANIM_OVERLAY, "#Play.Current.Thumb;"+sArtistImage);
 	
 	sFile = STREAMEDMP_SKIN_EMULATORS;
 	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");	

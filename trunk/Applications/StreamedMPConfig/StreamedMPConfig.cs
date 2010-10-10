@@ -1209,6 +1209,11 @@ namespace StreamedMPConfig
         StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "false");
       }
       
+      // Set Artist Path Property used in music overlays
+      string artistPath = Path.Combine(Config.GetFolder(Config.Dir.Thumbs), @"Music\Artists");
+      smcLog.WriteLog(string.Format("Set #StreamedMP.ArtistPath = {0}", artistPath), LogLevel.Info);
+      StreamedMPConfig.SetProperty("#StreamedMP.ArtistPath", artistPath);
+
     }
 
     public void Stop()
