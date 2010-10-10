@@ -130,7 +130,7 @@
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
+      <visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.starts(#Play.Current.thumb,#)+!control.isvisible(6767)+!control.isvisible(1208)</visible>
     </control>
     <control>
       <description>music logo</description>
@@ -380,4 +380,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:ee26b3cca5305c81e9a5427e6aa56dae-->
+<!--Checksum:6395232a594c5ea076a95f66e2d3df66-->

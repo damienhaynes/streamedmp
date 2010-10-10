@@ -36,8 +36,8 @@
         <textcolor>White</textcolor>
       </control>
       <control>
-        <description>Movie 1 name</description>
-        <type>fadelabel</type>
+        <description>Movie 1 Title</description>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>245</posY>
@@ -48,22 +48,34 @@
         <scrollStartDelaySec>20</scrollStartDelaySec>
       </control>
       <control>
-        <description>Movie 1</description>
+        <description>Movie 1 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
+        <posX>996</posX>
         <posY>262</posY>
         <width>257</width>
-        <label>#StreamedMP.recentlyAdded.movie1.runtime #StreamedMP.recentlyAdded.movie1.certification</label>
+        <label>#StreamedMP.recentlyAdded.movie1.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
       <control>
-        <description>Movie 1 Star Rating</description>
+        <description>Movie 1 Certification</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>1180</posX>
+        <posY>262</posY>
+        <width>257</width>
+        <label>#StreamedMP.recentlyAdded.movie1.certification</label>
+        <font>mediastream10c</font>
+        <textcolor>White</textcolor>
+        <align>right</align>
+      </control>
+      <control>
+        <description>Movie 1 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
         <posX>1190</posX>
-        <posY>262</posY>
+        <posY>265</posY>
         <width>70</width>
         <height>13</height>
         <texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>
@@ -93,8 +105,8 @@
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
-        <description>Movie 2 name</description>
-        <type>fadelabel</type>
+        <description>Movie 2 Title</description>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>280</posY>
@@ -105,22 +117,34 @@
         <scrollStartDelaySec>20</scrollStartDelaySec>
       </control>
       <control>
-        <description>Movie 2 title</description>
+        <description>Movie 2 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
+        <posX>996</posX>
         <posY>297</posY>
-        <width>255</width>
-        <label>#StreamedMP.recentlyAdded.movie2.runtime #StreamedMP.recentlyAdded.movie2.certification</label>
+        <width>257</width>
+        <label>#StreamedMP.recentlyAdded.movie2.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
       <control>
-        <description>Movie 1 Star Rating</description>
+        <description>Movie 2 Certification</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>1180</posX>
+        <posY>297</posY>
+        <width>257</width>
+        <label>#StreamedMP.recentlyAdded.movie2.certification</label>
+        <font>mediastream10c</font>
+        <textcolor>White</textcolor>
+        <align>right</align>
+      </control>
+      <control>
+        <description>Movie 2 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
         <posX>1190</posX>
-        <posY>297</posY>
+        <posY>301</posY>
         <width>70</width>
         <height>13</height>
         <texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>
@@ -139,7 +163,7 @@
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
-        <type>fadelabel</type>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>315</posY>
@@ -150,22 +174,34 @@
         <scrollStartDelaySec>20</scrollStartDelaySec>
       </control>
       <control>
-        <description>Movie 3 Additional</description>
+        <description>Movie 3 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
+        <posX>996</posX>
         <posY>332</posY>
-        <width>255</width>
-        <label>#StreamedMP.recentlyAdded.movie3.runtime #StreamedMP.recentlyAdded.movie3.certification</label>
+        <width>257</width>
+        <label>#StreamedMP.recentlyAdded.movie3.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
       <control>
-        <description>Movie 3 Star Rating</description>
+        <description>Movie 3 Certification</description>
+        <type>label</type>
+        <id>0</id>
+        <posX>1180</posX>
+        <posY>332</posY>
+        <width>257</width>
+        <label>#StreamedMP.recentlyAdded.movie3.certification</label>
+        <font>mediastream10c</font>
+        <textcolor>White</textcolor>
+        <align>right</align>
+      </control>
+      <control>
+        <description>Movie 3 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
         <posX>1190</posX>
-        <posY>332</posY>
+        <posY>335</posY>
         <width>70</width>
         <height>13</height>
         <texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>
@@ -173,4 +209,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:d600cff79ccbb9d9f2a34bb664930e13-->
+<!--Checksum:815e3741d6f97db3edd96ab5e63e9a82-->

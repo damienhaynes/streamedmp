@@ -5,7 +5,7 @@
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#infoservice.recentlyAdded.series1.fanart,#)|string.starts(#infoservice.recentlyAdded.series1.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)]</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -37,13 +37,14 @@
       </control>
       <control>
         <description>Series 1 name</description>
-        <type>fadelabel</type>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>245</posY>
         <width>258</width>
-        <label>#infoservice.recentlyAdded.series1.title - #StreamedMP.MostRecent.1.SEFormat</label>
-        <font>mediastream10c</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.MostRecent.Added.1.SEFormat - #StreamedMP.recentlyAdded.series1.title</label>
+        <font>mediastream10tc</font>
         <textcolor>White</textcolor>
       </control>
       <control>
@@ -53,8 +54,9 @@
         <posX>995</posX>
         <posY>262</posY>
         <width>255</width>
-        <label>#infoservice.recentlyAdded.series1.episodetitle</label>
-        <font>mediastream10tc</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.recentlyAdded.series1.episodetitle</label>
+        <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
       <control>
@@ -66,14 +68,14 @@
         <width>268</width>
         <height>151</height>
         <keepaspectratio>true</keepaspectratio>
-        <texture>#infoservice.recentlyAdded.series1.fanart</texture>
+        <texture>#StreamedMP.recentlyAdded.series1.fanart</texture>
       </control>
     </control>
     <control>
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#infoservice.recentlyAdded.series2.fanart,#)|string.starts(#infoservice.recentlyAdded.series2.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)]</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -83,13 +85,14 @@
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
         <description>Series 2 name</description>
-        <type>fadelabel</type>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>280</posY>
         <width>258</width>
-        <label>#infoservice.recentlyAdded.series2.title - #StreamedMP.MostRecent.2.SEFormat</label>
-        <font>mediastream10c</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.MostRecent.Added.2.SEFormat - #StreamedMP.recentlyAdded.series2.title</label>
+        <font>mediastream10tc</font>
         <textcolor>White</textcolor>
       </control>
       <control>
@@ -99,8 +102,9 @@
         <posX>995</posX>
         <posY>297</posY>
         <width>255</width>
-        <label>#infoservice.recentlyAdded.series2.episodetitle</label>
-        <font>mediastream10tc</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.recentlyAdded.series2.episodetitle</label>
+        <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
     </control>
@@ -108,7 +112,7 @@
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#infoservice.recentlyAdded.series3.fanart,#)|string.starts(#infoservice.recentlyAdded.series3.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)]</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -117,13 +121,14 @@
       <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
-        <type>fadelabel</type>
+        <type>label</type>
         <id>0</id>
         <posX>995</posX>
         <posY>315</posY>
         <width>258</width>
-        <label>#infoservice.recentlyAdded.series3.title - #StreamedMP.MostRecent.3.SEFormat</label>
-        <font>mediastream10c</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.MostRecent.Added.3.SEFormat - #StreamedMP.recentlyAdded.series3.title</label>
+        <font>mediastream10tc</font>
         <textcolor>White</textcolor>
       </control>
       <control>
@@ -133,11 +138,12 @@
         <posX>995</posX>
         <posY>332</posY>
         <width>255</width>
-        <label>#infoservice.recentlyAdded.series3.episodetitle</label>
-        <font>mediastream10tc</font>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <label>#StreamedMP.recentlyAdded.series3.episodetitle</label>
+        <font>mediastream10c</font>
         <textcolor>White</textcolor>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:99333ce4e7d2504e44ad0348f75a2b0c-->
+<!--Checksum:0791425fd1beca97f4fdea1efdee46a4-->
