@@ -205,7 +205,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<texture>#StreamedMP.ArtistPath</texture>" +
+                  "<texture>#StreamedMP.ArtistPath\\#Play.Current.ArtistL.jpg</texture>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
