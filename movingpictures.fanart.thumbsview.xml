@@ -4,7 +4,7 @@ This file should contain the thumbs view
 -->
 <window>
   <controls>
-	<control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -79,7 +79,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.summary</label>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Certification Label</description>
       <id>0</id>
@@ -98,7 +98,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.certification</label>
       <posX>180</posX>
       <posY>607</posY>
-      <width>200</width>     
+      <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -109,7 +109,7 @@ This file should contain the thumbs view
       <label>N/A</label>
       <posX>180</posX>
       <posY>607</posY>
-      <width>200</width>     
+      <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -131,7 +131,7 @@ This file should contain the thumbs view
       <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
       <posX>180</posX>
       <posY>629</posY>
-      <width>200</width>    
+      <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -142,10 +142,10 @@ This file should contain the thumbs view
       <label>N/A</label>
       <posX>180</posX>
       <posY>629</posY>
-      <width>200</width>     
+      <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Year Label</description>
       <type>label</type>
@@ -162,7 +162,7 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
       <posX>180</posX>
-      <posY>651</posY>      
+      <posY>651</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -172,10 +172,10 @@ This file should contain the thumbs view
       <type>label</type>
       <label>N/A</label>
       <posX>180</posX>
-      <posY>651</posY>      
+      <posY>651</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:1133a1c8d04e6d3511ac5c651374e9ea-->
+<!--Checksum:ed47f1dada1e3a7caf87c52ececba5b1-->
