@@ -192,7 +192,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>defaultAudioBig.png</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
+                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.starts(#Play.Current.thumb,#)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -205,7 +205,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<texture>" + SkinInfo.mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</texture>" +
+                  "<texture>#StreamedMP.ArtistPath</texture>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + "</visible>" +
                 "</control>" +
                 "<control>" +
