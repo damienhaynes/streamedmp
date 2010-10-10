@@ -39,14 +39,24 @@
       <entry name="mostRecentMovPicsSummStyle">fanart</entry>
       <entry name="mostRecentCycleFanart">false</entry>
       <entry name="mrSeriesEpisodeFormat">false</entry>
-      <entry name="mrTitleLast">false</entry>
-      <entry name="mrEpisodeFont">mediastream10tc</entry>
-      <entry name="mrSeriesFont">mediastream10c</entry>
+      <entry name="mrTitleLast">true</entry>
+      <entry name="mrEpisodeFont">mediastream10c</entry>
+      <entry name="mrSeriesFont">mediastream10tc</entry>
       <entry name="settingOldStyleExitButtons">false</entry>
       <entry name="mrTVSeriesCycleFanart">false</entry>
       <entry name="mrMovPicsCycleFanart">false</entry>
       <entry name="mrMovieTitleFont">mediastream10tc</entry>
       <entry name="mrMovieDetailFont">mediastream10c</entry>
+      <entry name="mrMovPicsHideRuntime">false</entry>
+      <entry name="mrMovPicsHideCertification">false</entry>
+      <entry name="mrMovPicsHideRating">false</entry>
+      <entry name="mrMovPicsUseTextRating">false</entry>
+      <entry name="mrMovPicsWatched">false</entry>
+      <entry name="mrTVSeriesWatched">false</entry>
+      <entry name="mrTVSeriesDisableFadeLabel">true</entry>
+      <entry name="mrMovPicsDisableFadeLabel">true</entry>
+      <entry name="mrRecordedTVEnabled">false</entry>
+      <entry name="mrMusicEnabled">false</entry>
     </section>
     <!-- End Of Menu Options -->
     <section name="StreamedMP Menu Items">
@@ -66,6 +76,9 @@
       <entry name="menuitem0defaultimage">animations\pictures\default.jpg</entry>
       <entry name="menuitem0disableBGSharing">False</entry>
       <entry name="menuitem0showMostRecent">off</entry>
+      <entry name="menuitem0submenu1">0</entry>
+      <entry name="menuitem0submenu2">0</entry>
+      <entry name="menuitem0subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 1 -->
       <entry name="menuitem1name">MUSIC</entry>
       <entry name="menuitem1label">LISTEN TO</entry>
@@ -80,7 +93,10 @@
       <entry name="menuitem1updatestatus">False</entry>
       <entry name="menuitem1defaultimage">animations\music\default.jpg</entry>
       <entry name="menuitem1disableBGSharing">False</entry>
-      <entry name="menuitem1showMostRecent">off</entry>
+      <entry name="menuitem1showMostRecent">music</entry>
+      <entry name="menuitem1submenu1">0</entry>
+      <entry name="menuitem1submenu2">0</entry>
+      <entry name="menuitem1subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 2 -->
       <entry name="menuitem2name">MOVIES</entry>
       <entry name="menuitem2label">WATCH YOUR</entry>
@@ -96,6 +112,9 @@
       <entry name="menuitem2defaultimage">animations\movies\default.jpg</entry>
       <entry name="menuitem2disableBGSharing">False</entry>
       <entry name="menuitem2showMostRecent">movies</entry>
+      <entry name="menuitem2submenu1">0</entry>
+      <entry name="menuitem2submenu2">0</entry>
+      <entry name="menuitem2subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 3 -->
       <entry name="menuitem3name">SERIES</entry>
       <entry name="menuitem3label">WATCH YOUR</entry>
@@ -111,6 +130,9 @@
       <entry name="menuitem3defaultimage">animations\tv\default.jpg</entry>
       <entry name="menuitem3disableBGSharing">False</entry>
       <entry name="menuitem3showMostRecent">tvSeries</entry>
+      <entry name="menuitem3submenu1">0</entry>
+      <entry name="menuitem3submenu2">0</entry>
+      <entry name="menuitem3subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 4 -->
       <entry name="menuitem4name">TV</entry>
       <entry name="menuitem4label">WATCH</entry>
@@ -125,7 +147,10 @@
       <entry name="menuitem4updatestatus">False</entry>
       <entry name="menuitem4defaultimage">animations\tv\default.jpg</entry>
       <entry name="menuitem4disableBGSharing">False</entry>
-      <entry name="menuitem4showMostRecent">off</entry>
+      <entry name="menuitem4showMostRecent">recordedTV</entry>
+      <entry name="menuitem4submenu1">0</entry>
+      <entry name="menuitem4submenu2">0</entry>
+      <entry name="menuitem4subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 5 -->
       <entry name="menuitem5name">TRAILERS</entry>
       <entry name="menuitem5label">WATCH</entry>
@@ -141,6 +166,9 @@
       <entry name="menuitem5defaultimage">animations\movies\default.jpg</entry>
       <entry name="menuitem5disableBGSharing">False</entry>
       <entry name="menuitem5showMostRecent">off</entry>
+      <entry name="menuitem5submenu1">0</entry>
+      <entry name="menuitem5submenu2">0</entry>
+      <entry name="menuitem5subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 6 -->
       <entry name="menuitem6name">PLUGINS</entry>
       <entry name="menuitem6label">BROWSE YOUR</entry>
@@ -156,6 +184,9 @@
       <entry name="menuitem6defaultimage">animations\pluginsbg\default.jpg</entry>
       <entry name="menuitem6disableBGSharing">False</entry>
       <entry name="menuitem6showMostRecent">off</entry>
+      <entry name="menuitem6submenu1">0</entry>
+      <entry name="menuitem6submenu2">0</entry>
+      <entry name="menuitem6subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 7 -->
       <entry name="menuitem7name">VIDEOS</entry>
       <entry name="menuitem7label">WATCH YOUR</entry>
@@ -171,6 +202,9 @@
       <entry name="menuitem7defaultimage">animations\movies\default.jpg</entry>
       <entry name="menuitem7disableBGSharing">False</entry>
       <entry name="menuitem7showMostRecent">off</entry>
+      <entry name="menuitem7submenu1">0</entry>
+      <entry name="menuitem7submenu2">0</entry>
+      <entry name="menuitem7subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 8 -->
       <entry name="menuitem8name">WEATHER</entry>
       <entry name="menuitem8label">CHECK THE</entry>
@@ -186,6 +220,9 @@
       <entry name="menuitem8defaultimage">animations\weatherbg\default.jpg</entry>
       <entry name="menuitem8disableBGSharing">False</entry>
       <entry name="menuitem8showMostRecent">off</entry>
+      <entry name="menuitem8submenu1">0</entry>
+      <entry name="menuitem8submenu2">0</entry>
+      <entry name="menuitem8subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 9 -->
       <entry name="menuitem9name">NEWS</entry>
       <entry name="menuitem9label">READ THE</entry>
@@ -201,6 +238,9 @@
       <entry name="menuitem9defaultimage">animations\news\default.jpg</entry>
       <entry name="menuitem9disableBGSharing">False</entry>
       <entry name="menuitem9showMostRecent">off</entry>
+      <entry name="menuitem9submenu1">0</entry>
+      <entry name="menuitem9submenu2">0</entry>
+      <entry name="menuitem9subMenuLevel1ID">0</entry>
       <!-- Menu Entry : 10 -->
       <entry name="menuitem10name">SETTINGS</entry>
       <entry name="menuitem10label">CONFIGURE</entry>
@@ -216,7 +256,10 @@
       <entry name="menuitem10defaultimage">animations\settings\default.jpg</entry>
       <entry name="menuitem10disableBGSharing">False</entry>
       <entry name="menuitem10showMostRecent">off</entry>
+      <entry name="menuitem10submenu1">0</entry>
+      <entry name="menuitem10submenu2">0</entry>
+      <entry name="menuitem10subMenuLevel1ID">0</entry>
     </section>
   </skin>
 </profile>
-<!--Checksum:196d1298b336df3d5afa9b63750727ce-->
+<!--Checksum:a8d00e9821924a82c4c3133f8515db4c-->
