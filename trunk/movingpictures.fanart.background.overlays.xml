@@ -12,7 +12,7 @@
       <height>720</height>
       <texture>fanartoverlay.png</texture>
       <visible>control.isvisible(51)</visible>
-    </control>	
+    </control>
     <control>
       <description>List Overlay</description>
       <type>image</type>
@@ -24,7 +24,7 @@
       <texture>fanartoverlay.png</texture>
       <visible>facadeview.list+control.isvisible(50)</visible>
     </control>
-	<control>
+    <control>
       <description>Top Bar Overlay</description>
       <type>image</type>
       <id>0</id>
@@ -33,7 +33,7 @@
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-	  <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+      <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
     </control>
     <control>
       <description>Thumbs Overlay</description>
@@ -70,4 +70,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a0199b8b3eb929e23180a35634b798c3-->
+<!--Checksum:f194463ce7d2f17ce2d616f19b9ce5d2-->
