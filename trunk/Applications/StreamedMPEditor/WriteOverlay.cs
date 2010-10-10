@@ -230,7 +230,7 @@ namespace StreamedMPEditor
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
-                  "<textures>#Play.Current.Thumb;" + SkinInfo.mpPaths.thumbsPath + "Music\\Artists\\#Play.Current.ArtistL.jpg</textures>" +
+                  "<textures>#Play.Current.Thumb;" + "#StreamedMP.ArtistPath\\#Play.Current.ArtistL.jpg"</textures>" +
                   "<Duration>0:0:45</Duration>" +
                   "<randomize>no</randomize>" +
                   "<keepaspectratio>no</keepaspectratio>" +
