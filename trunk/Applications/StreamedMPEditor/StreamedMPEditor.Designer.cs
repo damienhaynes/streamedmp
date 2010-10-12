@@ -158,6 +158,8 @@
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
+      this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
+      this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
       this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
       this.pbPosterPicMovPics = new System.Windows.Forms.PictureBox();
       this.pbFanartPicMovPics = new System.Windows.Forms.PictureBox();
@@ -242,8 +244,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
-      this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1756,6 +1756,26 @@
       this.infoServiceRecentOptions.TabStop = false;
       this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
       // 
+      // cbEnableRecentRecordedTV
+      // 
+      this.cbEnableRecentRecordedTV.AutoSize = true;
+      this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(10, 302);
+      this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
+      this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
+      this.cbEnableRecentRecordedTV.TabIndex = 11;
+      this.cbEnableRecentRecordedTV.Text = "Enable Last 3 Recorded TV Programs";
+      this.cbEnableRecentRecordedTV.UseVisualStyleBackColor = true;
+      // 
+      // cbEnableRecentMusic
+      // 
+      this.cbEnableRecentMusic.AutoSize = true;
+      this.cbEnableRecentMusic.Location = new System.Drawing.Point(10, 269);
+      this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
+      this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
+      this.cbEnableRecentMusic.TabIndex = 10;
+      this.cbEnableRecentMusic.Text = "Enable Last 3 Added Albums";
+      this.cbEnableRecentMusic.UseVisualStyleBackColor = true;
+      // 
       // gbSummaryStyle
       // 
       this.gbSummaryStyle.Controls.Add(this.pbPosterPicMovPics);
@@ -2622,26 +2642,6 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
-      // 
-      // cbEnableRecentMusic
-      // 
-      this.cbEnableRecentMusic.AutoSize = true;
-      this.cbEnableRecentMusic.Location = new System.Drawing.Point(10, 269);
-      this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
-      this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
-      this.cbEnableRecentMusic.TabIndex = 10;
-      this.cbEnableRecentMusic.Text = "Enable Last 3 Added Albums";
-      this.cbEnableRecentMusic.UseVisualStyleBackColor = true;
-      // 
-      // cbEnableRecentRecordedTV
-      // 
-      this.cbEnableRecentRecordedTV.AutoSize = true;
-      this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(10, 302);
-      this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
-      this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
-      this.cbEnableRecentRecordedTV.TabIndex = 11;
-      this.cbEnableRecentRecordedTV.Text = "Enable Last 3 Recorded TV Programs";
-      this.cbEnableRecentRecordedTV.UseVisualStyleBackColor = true;
       // 
       // formStreamedMpEditor
       // 

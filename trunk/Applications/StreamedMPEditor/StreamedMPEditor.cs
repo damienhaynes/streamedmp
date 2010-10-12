@@ -458,6 +458,7 @@ namespace StreamedMPEditor
       {
         toolStripStatusLabel1.Text = xmlFiles.SelectedItem.ToString() + " added to menu";
         menuItem item = new menuItem();
+        item.xmlFileName = xmlFiles.SelectedItem.ToString();
         item.name = itemName.Text;
         item.contextLabel = cboContextLabel.Text;
         item.hyperlink = ids[xmlFiles.SelectedIndex];
@@ -618,7 +619,7 @@ namespace StreamedMPEditor
 
       menuItem mnuItem = menuItems[index];
 
-      xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
+      xmlFiles.SelectedItem = mnuItem.xmlFileName;
       cboContextLabel.Text = mnuItem.contextLabel;
       itemName.Text = mnuItem.name;
       cboFanartProperty.Text = mnuItem.fanartProperty;
@@ -852,6 +853,7 @@ namespace StreamedMPEditor
 
     void writeMenu(menuType direction, bool onFormClosing)
     {
+      assoicateDefaultItems();
       generateXML(direction);
       generateBg(direction);
 
@@ -914,28 +916,8 @@ namespace StreamedMPEditor
           if (enableTwitter.Checked && infoserviceOptions.Enabled) generateTwitterV();
         }
       }
-      //
-      // Infoservice Most Recent Imports
-      //
-      if (infoserviceOptions.Enabled)
-      {
-        if (cbMostRecentTvSeries.Checked)
-        {
-          generateMostRecentInclude(isOverlayType.TVSeries);
-        }
 
-        if (cbMostRecentMovPics.Checked)
-        {
-          generateMostRecentInclude(isOverlayType.MovPics);
-        }
-      }
-
-      if (cbEnableRecentMusic.Checked)
-        generateMostRecentInclude(isOverlayType.Music);
-
-      if (cbEnableRecentRecordedTV.Checked)
-        generateMostRecentInclude(isOverlayType.RecordedTV);
-
+      generateMostRecentFilesAndImports("AddImports");
 
       toolStripStatusLabel1.Text = "Done!";
 
@@ -943,42 +925,11 @@ namespace StreamedMPEditor
         System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
 
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
-
       CheckSum checkSum = new CheckSum();
-
       writeXMLFile("BasicHome.xml");
 
+      generateMostRecentFilesAndImports("GenImports");
       generateOverlay(int.Parse(txtMenuPos.Text), basicHomeValues.weatherControl);
-
-      //
-      // Generate the Infoservice Most Recent Import files
-      //
-      if (infoserviceOptions.Enabled)
-      {
-        if (cbMostRecentTvSeries.Checked)
-        {
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
-        }
-
-        if (cbMostRecentMovPics.Checked)
-        {
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
-        }
-      }
-
-      if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
-      {
-        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-        if (cbEnableRecentMusic.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
-
-        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-        if (cbEnableRecentRecordedTV.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
-      }
-
       changeOutstanding = false;
       getBackupFileTotals();
       if (!onFormClosing)
@@ -991,6 +942,104 @@ namespace StreamedMPEditor
         foreach (menuItem item in menuItems)
         {
           item.id = menuItems.IndexOf(item);
+        }
+      }
+    }
+    //
+    // Generate the Most recent importfile and add to basic home
+    //
+    void generateMostRecentFilesAndImports(string recentAction)
+    {
+      //
+      // Generate the Infoservice Most Recent Import files
+      //
+      if (recentAction == "GenImports")
+      {
+        if (cbMostRecentTvSeries.Checked)
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
+
+      if (cbMostRecentMovPics.Checked)
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
+      //
+      // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
+      //
+      if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+      {
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        if (cbEnableRecentMusic.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
+
+        // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+        if (cbEnableRecentRecordedTV.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
+      }
+    }
+      //
+      // Add the imports to basichome
+      //
+      if (recentAction == "AddImports")
+      {
+        if (cbMostRecentTvSeries.Checked && mostRecentVisibleControls(isOverlayType.TVSeries) != null)
+          generateMostRecentInclude(isOverlayType.TVSeries);
+
+        if (cbMostRecentMovPics.Checked && mostRecentVisibleControls(isOverlayType.MovPics) != null)
+          generateMostRecentInclude(isOverlayType.MovPics);
+
+        //
+        // Only add imports to basichome if the correct Fanart Handler version is installed and enabled
+        //
+        if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+        {
+          if (cbEnableRecentMusic.Checked && mostRecentVisibleControls(isOverlayType.Music) != null)
+            generateMostRecentInclude(isOverlayType.Music);
+
+          if (cbEnableRecentRecordedTV.Checked && mostRecentVisibleControls(isOverlayType.RecordedTV) != null)
+            generateMostRecentInclude(isOverlayType.RecordedTV);
+        }
+      }
+    }
+    //
+    // Check and set default menu item for Recent Music or RecordedTV
+    //
+    void assoicateDefaultItems()
+    {
+      bool norecent = true;
+
+      // Check if most recent music is enabled, does it have an assiocated menu item, if not default to music
+      if (mostRecentVisibleControls(isOverlayType.Music) == "No" && cbEnableRecentMusic.Checked)
+      {
+        foreach (menuItem menItem in menuItems)
+        {
+          if (menItem.showMostRecent == displayMostRecent.music)
+            norecent = false;
+        }
+        if (norecent)
+        {
+          for (int i = 0; i < menuItems.Count; i++)
+          {
+            if (menuItems[i].hyperlink.ToString() == musicSkinID)
+              menuItems[i].showMostRecent = displayMostRecent.music;
+          }
+        }
+      }
+      // Check if most recent recorded TV is enabled, is there an assiocated menu item, if not default to RecordedTV
+      norecent = true;
+      if (mostRecentVisibleControls(isOverlayType.RecordedTV) == "No" && cbEnableRecentRecordedTV.Checked)
+      {
+        foreach (menuItem menItem in menuItems)
+        {
+          if (menItem.showMostRecent == displayMostRecent.recordedTV)
+            norecent = false;
+        }
+        if (norecent)
+        {
+          for (int i = 0; i < menuItems.Count; i++)
+          {
+            if (menuItems[i].hyperlink.ToString() == tvMenuSkinID)
+              menuItems[i].showMostRecent = displayMostRecent.recordedTV;
+          }
         }
       }
     }
@@ -1022,6 +1071,8 @@ namespace StreamedMPEditor
       else
         helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
     }
+
+
 
     #endregion
 
@@ -1120,6 +1171,7 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
 
   }
 }

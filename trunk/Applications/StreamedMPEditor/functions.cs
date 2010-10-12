@@ -1772,6 +1772,7 @@ namespace StreamedMPEditor
       public int subMenuLevel1ID;
       public List<subMenuItem> subMenuLevel1 = new List<subMenuItem>();
       public List<subMenuItem> subMenuLevel2 = new List<subMenuItem>();
+      public string xmlFileName;
     }
 
     public class subMenuItem
