@@ -2877,12 +2877,10 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 2 PM WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>340</posX>");
       rawXML.AppendLine("<posY>285</posY>");
-      rawXML.AppendLine("<width>160</width>");
-      rawXML.AppendLine("<height>50</height>");
       rawXML.AppendLine("<label>#infoservice.weather." + infoServiceDayProperty + "2.night.condition</label>");
       rawXML.AppendLine("<font>mediastream10</font>");
       rawXML.AppendLine("<align>left</align>");

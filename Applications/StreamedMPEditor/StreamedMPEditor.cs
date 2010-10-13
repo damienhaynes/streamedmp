@@ -453,9 +453,20 @@ namespace StreamedMPEditor
 
     void addButton_Click(object sender, EventArgs e)
     {
+      int index = ids.IndexOf(selectedWindowID.Text);
+      try
+      {
+        while (xmlFiles.Items[index].ToString().ToLower() != selectedWindow.Text.ToLower())
+        {
+          index = ids.IndexOf(selectedWindowID.Text, index + 1);
+        }
+      }
+      catch { }
+      
 
       if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && itemName.Text != "")
       {
+        xmlFiles.SelectedIndex = index;
         toolStripStatusLabel1.Text = xmlFiles.SelectedItem.ToString() + " added to menu";
         menuItem item = new menuItem();
         item.xmlFileName = xmlFiles.SelectedItem.ToString();
@@ -479,6 +490,7 @@ namespace StreamedMPEditor
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
         itemName.Text = "";
+
         bgBox.Text = "";
 
         if (itemsOnMenubar.Items.Count > 2)
@@ -1171,7 +1183,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
-
 
   }
 }
