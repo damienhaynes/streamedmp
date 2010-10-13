@@ -146,7 +146,10 @@ namespace StreamedMPConfig
       {
         return _mpSetAsFullScreen();
       }
-    }    
+    }
+
+    public static string CurrentSkin { get { return GUIGraphicsContext.Skin; } }
+    public static string PreviousSkin { get; set; }
 
     public static void LoadEditorProperties()
     {

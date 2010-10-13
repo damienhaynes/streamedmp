@@ -26,7 +26,7 @@ using TVSeriesHelper = WindowPlugins.GUITVSeries.Helper;
 namespace StreamedMPConfig
 {
   [PluginIcons("StreamedMPConfig.SMPSettings.png", "StreamedMPConfig.SMPSettingsDisabled.png")]
-  public class StreamedMPConfig : GUIWindow, ISetupForm, IPlugin
+  public class StreamedMPConfig : GUIWindow, ISetupForm
   {
     #region Variables
 
@@ -137,54 +137,29 @@ namespace StreamedMPConfig
 
     public override bool Init()
     {
+      logger.LogFile = Path.Combine(Config.GetFolder(Config.Dir.Log), "StreamedMPConfig.log");
+      logger.LogError = smpSettings.logLevelError;
+      logger.LogWarning = smpSettings.logLevelWarning;
+      logger.LogDebug = smpSettings.logLevelDebug;
+
+      smcLog.WriteLog(string.Format("StreamedMPConfig Plugin {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
+
       // Check if the skin is StreamedMP and bail if not.
       // note: user may have multiple streamedmp skins for testing
       if (!GUIGraphicsContext.Skin.Contains("StreamedMP"))
       {
-        smcLog.WriteLog("Not Running StreamedMP Skin - do Nothing", LogLevel.Info);
-        return true;
+        smcLog.WriteLog("Not Running StreamedMP Skin, Exiting...", LogLevel.Info);        
       }
-      Start();
-
-      //smcLog.WriteLog(string.Format("StreamedMPConfig GUI {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
+      else
+      {
+        InitStreamedMP();
+        smcLog.WriteLog("StreamedMP Init Complete", LogLevel.Info);
+      }
       
-      // Get Most Recent Options
-      settings.LoadEditorProperties();
+      // remember current skin, so we can reload settings if we need to
+      settings.PreviousSkin = settings.CurrentSkin;
+      GUIWindowManager.OnDeActivateWindow +=new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnDeActivateWindow);
 
-      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
-      {
-        if (tvSeriesRecentAddedEnabled)
-          getLastThreeAddedTVSeries();
-        if (tvSeriesRecentWatchedEnabled)
-          getLastThreeWatchedTVSeries();
-        setTVSeriesEvents();
-      }
-      else
-      {
-        // set to false incase enabled after upgrade but plugin not installed
-        tvSeriesRecentAddedEnabled = false;
-        tvSeriesRecentWatchedEnabled = false;
-      }
-      if ((movPicRecentAddedEnabled || movPicRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
-      {
-        if (movPicRecentAddedEnabled)
-          getLastThreeAddedMovies();
-        if (movPicRecentWatchedEnabled)
-          getLastThreeWatchedMovies();
-        setMovingPicturesEvents();
-      }
-      else
-      {
-        // set to false incase enabled after upgrade but plugin not installed
-        movPicRecentAddedEnabled = false;
-        movPicRecentWatchedEnabled = false;
-      }
-
-      if (smpSettings.timerRequired)
-      {
-        smcLog.WriteLog("Set the most recent fanart", LogLevel.Info);
-        cycleMostrecentFanart();
-      }
       return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig.xml");
     }
 
@@ -206,7 +181,7 @@ namespace StreamedMPConfig
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
     {
-
+      #region Activate Setting GUI Windows
       if (control == btMusicScreens)
       {
         GUIWindowManager.ActivateWindow((int)SMPScreenID.SMPMusicSettings);
@@ -241,6 +216,8 @@ namespace StreamedMPConfig
       {
         GUIWindowManager.ActivateWindow((int)SMPScreenID.SMPSkinUpdate);
       }
+      #endregion
+
       // Pass it on
       base.OnClicked(controlId, control, actionType);
     }
@@ -257,6 +234,226 @@ namespace StreamedMPConfig
     #endregion
 
     #region Private Methods
+    private void InitStreamedMP()
+    {
+      #region Load Settings
+      // we need to set properties on startup, load corresponding sections
+      settings.Load(settings.cXMLSectionUpdate);
+      settings.Load(settings.cXMLSectionMusic);
+      settings.Load(settings.cXMLSectionMisc);
+      settings.Load(settings.cXMLSectionVideo);
+
+      settings.LoadEditorProperties();
+      #endregion
+
+      #region Init Translations
+      // Set all fixed translation properties 
+      // these have defaults defined in the code and are used internally
+      try
+      {
+        foreach (string name in Translation.Strings.Keys)
+        {
+          if (!string.IsNullOrEmpty(Translation.Strings[name]))
+          {
+            smcLog.WriteLog("#StreamedMP." + name + ": " + Translation.Strings[name], LogLevel.Debug);
+            SetProperty("#StreamedMP." + name, Translation.Strings[name]);
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog(string.Format("StreamedMPConfig: Translation Exception: {0}", ex.Message), LogLevel.Error);
+      }
+
+      // Set user defined property, this is defined in the langauge file as the full 
+      // property name including the the # i.e #StreamedMP.MyDefinedProperty
+      foreach (string propName in Translation.FixedTranslations.Keys)
+      {
+        if (!string.IsNullOrEmpty(propName))
+        {
+          string propValue;
+          Translation.FixedTranslations.TryGetValue(propName, out propValue);
+          if (IsInteger(propValue))
+          {
+            smcLog.WriteLog(string.Format("Converting MediaPortal translation '{0}' to StreamedMP translation -> {1}", propValue, propName), LogLevel.Debug);
+            SetProperty(propName, GUILocalizeStrings.Get(int.Parse(propValue)));
+          }
+          else
+          {
+            smcLog.WriteLog(propName + ": " + propValue, LogLevel.Debug);
+            SetProperty(propName, propValue);
+          }
+        }
+      }
+      #endregion
+
+      #region Init Updates
+      // Should we check for an update on startup, if so check and set skin properties 
+      // to control the visibility of the icons indicating and update is available?
+      if (StreamedMPConfig.checkOnStart)
+      {
+        if (updateCheck.updateAvailable())
+        {
+          StreamedMPConfig.updateAvailable = true;
+
+          // This property controls the visibility of the large update icon on the home screens
+          SetProperty("#StreamedMP.UpdateAvailable", "true");
+
+          // This property controls the visibility or the indicator icon displyed next to the clock on the home screens
+          SetProperty("#StreamedMP.ShowUpdateInd", "true");
+
+          // This property controls the visibility or the indicator icon that is displayed next to the skin item in the settings screens
+          SetProperty("#StreamedMP.ShowSettingsUpdateInd", "true");
+        }
+      }
+
+      // Should we check for an update at a specific time
+      if (StreamedMPConfig.checkForUpdateAt)
+      {
+        DateTime stored;
+        // Setup the callback
+        TimerCallback updateCallback = new TimerCallback(checkUpdateOnTimer);
+
+        // Compare the date strored (if any) with the current time
+        try
+        {
+          stored = Convert.ToDateTime(StreamedMPConfig.nextUpdateCheck);
+        }
+        catch
+        {
+          stored = DateTime.Now;
+        }
+
+        if (stored.CompareTo(DateTime.Now) > 0)
+        {
+          //We have a save date for an update check that is in the future, we will use that.....
+          TimeSpan setStored = stored - DateTime.Now;
+          smcLog.WriteLog("Stored Timer Set for : " + setStored.ToString(), LogLevel.Debug);
+          updateChkTimer = new System.Threading.Timer(updateCallback, null, setStored, TimeSpan.FromHours(StreamedMPConfig.hours));
+        }
+        else
+        {
+          updateChkTimer = new System.Threading.Timer(updateCallback, null, nextCheckAt, TimeSpan.FromHours(StreamedMPConfig.hours));
+
+          // The line below is for testing, comment the above line and uncomment this - the update check will fire 30sec after startup
+          // updateChkTimer = new Timer(updateCallback, null, 30000, 60000);
+        }
+      }
+      #endregion
+
+      #region Init Most Recents
+      InitMostRecents();      
+      #endregion
+
+      #region Init Misc
+      MusicOptionsGUI.SetProperties();
+      MiscConfigGUI.SetProperties();
+      VideoOptionsGUI.SetProperties();
+
+      if (skInfo.minimiseMPOnExit.ToLower() == "yes")
+        minimiseOnExit = true;
+
+      if (Screen.PrimaryScreen.Bounds.Width == 1920 && Screen.PrimaryScreen.Bounds.Height == 1080)
+      {
+        smcLog.WriteLog("Set #StreamedMP.FullHD = true", LogLevel.Debug);
+        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "true");
+      }
+      else
+      {
+        smcLog.WriteLog("Set #StreamedMP.FullHD = false", LogLevel.Debug);
+        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "false");
+      }
+
+      // Set Artist Path Property used in music overlays
+      string artistPath = Path.Combine(Config.GetFolder(Config.Dir.Thumbs), @"Music\Artists");
+      smcLog.WriteLog(string.Format("Set #StreamedMP.ArtistPath = {0}", artistPath), LogLevel.Info);
+      StreamedMPConfig.SetProperty("#StreamedMP.ArtistPath", artistPath);
+      #endregion
+
+      #region Init Events
+      GUIWindowManager.OnActivateWindow += new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
+      GUIGraphicsContext.OnVideoWindowChanged += new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
+      GUIGraphicsContext.OnNewAction += new OnActionHandler(smpAction);
+      SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+      #endregion      
+    }
+
+    private void InitMostRecents()
+    {
+      if (smpSettings.timerRequired)
+      {
+        mrTimer.Enabled = true;
+        mrTimer.Interval = MiscConfigGUI.MostRecentFanartTimerInt * 1000;
+        mrTimer.Tick += new EventHandler(mrTimer_Tick);
+        smcLog.WriteLog(string.Format("StreamedMPConfig: Most Recent Fanart Cycle Timer Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Info);
+      }
+
+      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
+      {
+        if (tvSeriesRecentAddedEnabled)
+          getLastThreeAddedTVSeries();
+        if (tvSeriesRecentWatchedEnabled)
+          getLastThreeWatchedTVSeries();
+        setTVSeriesEvents(false);
+      }
+      else
+      {
+        // set to false incase enabled after upgrade but plugin not installed
+        tvSeriesRecentAddedEnabled = false;
+        tvSeriesRecentWatchedEnabled = false;
+      }
+      if ((movPicRecentAddedEnabled || movPicRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
+      {
+        if (movPicRecentAddedEnabled)
+          getLastThreeAddedMovies();
+        if (movPicRecentWatchedEnabled)
+          getLastThreeWatchedMovies();
+        setMovingPicturesEvents(false);
+      }
+      else
+      {
+        // set to false incase enabled after upgrade but plugin not installed
+        movPicRecentAddedEnabled = false;
+        movPicRecentWatchedEnabled = false;
+      }
+
+      if (smpSettings.timerRequired)
+      {
+        smcLog.WriteLog("Set the most recent fanart", LogLevel.Info);
+        cycleMostrecentFanart();
+      }
+    }
+
+    private void DeInitStreamedMP()
+    {
+      GUIWindowManager.OnActivateWindow -= new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
+      GUIGraphicsContext.OnVideoWindowChanged -= new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
+      GUIGraphicsContext.OnNewAction -= new OnActionHandler(smpAction);
+      SystemEvents.PowerModeChanged -= new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+    }
+
+    private void DeInitMostRecents()
+    {
+      if (smpSettings.timerRequired)
+      {        
+        mrTimer.Tick -= new EventHandler(mrTimer_Tick);
+        smcLog.WriteLog("StreamedMPConfig: Most Recent Fanart Cycle Timer Disabled", LogLevel.Info);
+      }
+
+      if ((movPicRecentAddedEnabled || movPicRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 0, 6, 1116)))
+      {   
+        // unsubscribe
+        smcLog.WriteLog("StreamedMPConfig: Unsubscribing from MovingPictures Most Recents events", LogLevel.Info);
+        setMovingPicturesEvents(true);
+      }
+
+      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
+      {
+        // unsubscribe
+        smcLog.WriteLog("StreamedMPConfig: Unsubscribing from TVSeries Most Recents events", LogLevel.Info);
+        setTVSeriesEvents(false);
+      }
+    }
 
     void restartMediaportal()
     {
@@ -286,27 +483,49 @@ namespace StreamedMPConfig
 
     bool IsInteger(string theValue)
     {
+      if (string.IsNullOrEmpty(theValue)) return false;
       Match m = _isNumber.Match(theValue);
       return m.Success;
     }
 
-    void setMovingPicturesEvents()
+    void setMovingPicturesEvents(bool unsubscribe)
     {
       if (movPicRecentAddedEnabled || movPicRecentWatchedEnabled)
       {
-        MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+        if (!unsubscribe)
+        {
+          MovingPicturesCore.DatabaseManager.ObjectInserted += new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+        }
+        else
+        {
+          MovingPicturesCore.DatabaseManager.ObjectInserted -= new DatabaseManager.ObjectAffectedDelegate(OnObjectInserted);
+        }
       }
     }
 
-    void setTVSeriesEvents()
+    void setTVSeriesEvents(bool unsubscribe)
     {
       if (tvSeriesRecentAddedEnabled)
       {
-        OnlineParsing.OnlineParsingCompleted += new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
+        if (!unsubscribe)
+        {
+          OnlineParsing.OnlineParsingCompleted += new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
+        }
+        else
+        {
+          OnlineParsing.OnlineParsingCompleted -= new OnlineParsing.OnlineParsingCompletedHandler(OnTVSeriesParseCompleted);
+        }
       }
       if (tvSeriesRecentWatchedEnabled)
       {
-        VideoHandler.EpisodeWatched += new VideoHandler.EpisodeWatchedDelegate(OnEpisodeWatched);
+        if (!unsubscribe)
+        {
+          VideoHandler.EpisodeWatched += new VideoHandler.EpisodeWatchedDelegate(OnEpisodeWatched);
+        }
+        else
+        {
+          VideoHandler.EpisodeWatched -= new VideoHandler.EpisodeWatchedDelegate(OnEpisodeWatched);
+        }
       }
     }
 
@@ -841,7 +1060,27 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region EventHandlers
+    #region Event Handlers
+    private void GUIWindowManager_OnDeActivateWindow(int windowID)
+    {
+      // Settings/General window
+      if (windowID == (int)Window.WINDOW_SETTINGS_SKIN)
+      {
+        if (settings.CurrentSkin != settings.PreviousSkin && settings.CurrentSkin.EndsWith("StreamedMP"))
+        {
+          smcLog.WriteLog("Skin Changed to StreamedMP from GUI, initializing plugin.", LogLevel.Info);
+          InitStreamedMP();          
+          settings.PreviousSkin = settings.CurrentSkin;
+        }
+        else if (settings.CurrentSkin != settings.PreviousSkin && settings.PreviousSkin.EndsWith("StreamedMP"))
+        {
+          smcLog.WriteLog("StreamedMP is no longer default skin, de-initializing plugin.", LogLevel.Info);
+          DeInitStreamedMP();
+          DeInitMostRecents();
+          settings.PreviousSkin = settings.CurrentSkin;
+        }
+      }
+    }
 
     public void smpAction(Action Action)
     {
@@ -1064,169 +1303,7 @@ namespace StreamedMPConfig
 
     #endregion
 
-    #region <Interface> Implementations
-
-    #region IPlugin Interface
-
-    public void Start()
-    {
-      logger.LogFile = Path.Combine(Config.GetFolder(Config.Dir.Log), "StreamedMPConfig.log");
-      logger.LogError = smpSettings.logLevelError;
-      logger.LogWarning = smpSettings.logLevelWarning;
-      logger.LogDebug = smpSettings.logLevelDebug;
-      if (skInfo.minimiseMPOnExit.ToLower() == "yes")
-        minimiseOnExit = true;
-
-      smcLog.WriteLog(string.Format("StreamedMPConfig Plugin {0} starting.", Assembly.GetExecutingAssembly().GetName().Version), LogLevel.Info);
-
-      StreamedMPConfig.updateAvailable = false;
-      
-      // if we need to set properties on startup, load corresponding sections
-      settings.Load(settings.cXMLSectionUpdate);
-      settings.Load(settings.cXMLSectionMusic);      
-      settings.Load(settings.cXMLSectionMisc);
-      settings.Load(settings.cXMLSectionVideo);      
-
-      MusicOptionsGUI.SetProperties();
-      MiscConfigGUI.SetProperties();
-      VideoOptionsGUI.SetProperties();
-                                         
-      if (smpSettings.timerRequired)
-      {
-        //cycleMostrecentFanart();
-        mrTimer.Enabled = true;
-        mrTimer.Interval = MiscConfigGUI.MostRecentFanartTimerInt * 1000;
-        mrTimer.Tick += new EventHandler(mrTimer_Tick);
-        smcLog.WriteLog(string.Format("StreamedMPConfig: Timer Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Info);
-      }
-      else
-        smcLog.WriteLog("StreamedMPConfig: Timer Disabled", LogLevel.Info);
-
-
-      GUIWindowManager.OnActivateWindow += new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
-      GUIGraphicsContext.OnVideoWindowChanged += new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
-      GUIGraphicsContext.OnNewAction += new OnActionHandler(smpAction);
-      SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
-
-      // Set all fixed translation properties 
-      // these have defaults defined in the code and are used internally
-      try
-      {
-        foreach (string name in Translation.Strings.Keys)
-        {
-          if (Translation.Strings[name] != "")
-          {
-            smcLog.WriteLog("Name : " + name + "  Translation : " + Translation.Strings[name], LogLevel.Info);
-            SetProperty("#StreamedMP." + name, Translation.Strings[name]);
-          }
-        }
-      }
-      catch
-      {
-        smcLog.WriteLog("StreamedMPConfig: Translation Exception", LogLevel.Info);
-      }
-
-      // Set user defined property, this is defined in the langauge file as the full 
-      // property name including the the # i.e #StreamedMP.MyDefinedProperty
-      foreach (string propName in Translation.FixedTranslations.Keys)
-      {
-        if (propName != "")
-        {
-          string propValue;
-          Translation.FixedTranslations.TryGetValue(propName, out propValue);
-          if (IsInteger(propValue))
-          {
-            smcLog.WriteLog("Get MediaPortal Tranlation -> Name : " + propName + "  Translation : " + GUILocalizeStrings.Get(int.Parse(propValue)), LogLevel.Debug);
-            SetProperty(propName, GUILocalizeStrings.Get(int.Parse(propValue)));
-          }
-          else
-          {
-            smcLog.WriteLog("Name : " + propName + "  Translation : " + propValue, LogLevel.Debug);
-            SetProperty(propName, propValue);
-          }
-        }
-      }
-
-      // Should we check for an update on startup, if so check and set skin properties 
-      // to control the visibility of the icons indicating and update is available?
-      if (StreamedMPConfig.checkOnStart)
-      {
-        if (updateCheck.updateAvailable())
-        {
-          StreamedMPConfig.updateAvailable = true;
-
-          // This property controls the visibility of the large update icon on the home screens
-          SetProperty("#StreamedMP.UpdateAvailable", "true");
-
-          // This property controls the visibility or the indicator icon displyed next to the clock on the home screens
-          SetProperty("#StreamedMP.ShowUpdateInd", "true");
-
-          // This property controls the visibility or the indicator icon that is displayed next to the skin item in the settings screens
-          SetProperty("#StreamedMP.ShowSettingsUpdateInd", "true");
-        }
-      }
-
-      // Should we check for an update at a specific time
-      if (StreamedMPConfig.checkForUpdateAt)
-      {
-        DateTime stored;
-        // Setup the callback
-        TimerCallback updateCallback = new TimerCallback(checkUpdateOnTimer);
-
-        // Compare the date strored (if any) with the current time
-        try
-        {
-          stored = Convert.ToDateTime(StreamedMPConfig.nextUpdateCheck);
-        }
-        catch
-        {
-          stored = DateTime.Now;
-        }
-
-        if (stored.CompareTo(DateTime.Now) > 0)
-        {
-          //We have a save date for an update check that is in the future, we will use that.....
-          TimeSpan setStored = stored - DateTime.Now;
-          smcLog.WriteLog("Stored Timer Set for : " + setStored.ToString(), LogLevel.Debug);
-          updateChkTimer = new System.Threading.Timer(updateCallback, null, setStored, TimeSpan.FromHours(StreamedMPConfig.hours));
-        }
-        else
-        {
-          updateChkTimer = new System.Threading.Timer(updateCallback, null, nextCheckAt, TimeSpan.FromHours(StreamedMPConfig.hours));
-
-          // The line below is for testing, comment the above line and uncomment this - the update check will fire 30sec after startup
-          // updateChkTimer = new Timer(updateCallback, null, 30000, 60000);
-        }
-      }
-      if (Screen.PrimaryScreen.Bounds.Width == 1920 && Screen.PrimaryScreen.Bounds.Height == 1080)
-      {
-        smcLog.WriteLog("Set #StreamedMP.FullHD = true", LogLevel.Debug);
-        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "true");
-      }
-      else
-      {
-        smcLog.WriteLog("Set #StreamedMP.FullHD = false", LogLevel.Debug);
-        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "false");
-      }
-      
-      // Set Artist Path Property used in music overlays
-      string artistPath = Path.Combine(Config.GetFolder(Config.Dir.Thumbs), @"Music\Artists");
-      smcLog.WriteLog(string.Format("Set #StreamedMP.ArtistPath = {0}", artistPath), LogLevel.Info);
-      StreamedMPConfig.SetProperty("#StreamedMP.ArtistPath", artistPath);
-
-    }
-
-    public void Stop()
-    {
-      GUIWindowManager.OnActivateWindow -= new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
-      GUIGraphicsContext.OnVideoWindowChanged -= new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
-    }
-
-    #endregion
-
-
     #region ISetupForm Members
-
     /// <summary>
     /// With GetID it will be an window-plugin / otherwise a process-plugin
     /// Enter the id number here again
@@ -1328,10 +1405,6 @@ namespace StreamedMPConfig
       strPictureImage = String.Empty;
       return false;
     }
-
-
-    #endregion
-
     #endregion
   }
 
