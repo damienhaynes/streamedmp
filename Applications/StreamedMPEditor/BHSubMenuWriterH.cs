@@ -159,7 +159,7 @@ namespace StreamedMPEditor
                   "<colorDiffuse>77fffffff</colorDiffuse>" +
                   "<texture>arrowupfo.png</texture>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"800\" reversible=\"false\">WindowOpen</animation>" +
-                  "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"250\" delay=\"700\" reversible=\"false\">VisibleChange</animation>" +
+                  "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"250\" delay=\"700\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>" +
                 "</control>";
 
