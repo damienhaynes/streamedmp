@@ -127,7 +127,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Name = "mostRecentDisplaySelection";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-      this.Text = "mostRecentDisplaySelection";
+      this.Text = "Most Recent Overlays";
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
