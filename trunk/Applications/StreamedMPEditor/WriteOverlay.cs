@@ -153,7 +153,7 @@ namespace StreamedMPEditor
                   "<height>114</height>" +
                   "<texture>#fanarthandler.music.backdrop1.play</texture>" +
                   "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">Visible</animation>" +
                 "</control>" +
                 "<control>" +
                   "<description>PICTURES NOW PLAYING BACKGROUND 2</description>" +
@@ -165,7 +165,7 @@ namespace StreamedMPEditor
                   "<height>114</height>" +
                   "<texture>#fanarthandler.music.backdrop2.play</texture>" +
                   "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "</visible>" +
-                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">VisibleChange</animation>" +
+                  "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">Visible</animation>" +
                 "</control>" +
                 "<control>" +
                   "<description>Overlay Mask</description>" +

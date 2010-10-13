@@ -151,7 +151,7 @@ namespace StreamedMPEditor
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<texture>arrowrightfo.png</texture>" +
                   "<colordiffuse>77ffffff</colordiffuse>" +
-                  "<animation effect=\"fade\" time=\"400\">VisibleChange</animation>" +
+                  "<animation effect=\"fade\" time=\"400\">Visible</animation>" +
                   "<animation effect=\"fade\" time=\"400\" delay=\"400\">WindowOpen</animation>" +
                   "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" time=\"400\">WindowClose</animation>" +
@@ -182,7 +182,7 @@ namespace StreamedMPEditor
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<texture>arrowrightfo.png</texture>" +
                   "<colordiffuse>77ffffff</colordiffuse>" +
-                  "<animation effect=\"fade\" time=\"400\">VisibleChange</animation>" +
+                  "<animation effect=\"fade\" time=\"400\">Visible</animation>" +
                   "<animation effect=\"fade\" time=\"400\" delay=\"400\">WindowOpen</animation>" +
                   "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" time=\"400\">WindowClose</animation>" +

@@ -63,7 +63,7 @@
       <visible>string.equals(#StreamedMP.UpdateAvailable,true)</visible>
       <animation effect="fade" delay="4000" start="100" end="0" time="3000">WindowOpen</animation>
       <animation effect="zoom" start="105,105" end="110,110" time="1500" tween="cubic" easing="inout" pulse="true" reversible="false" condition="true">Conditional</animation>
-      <animation effect="fade" start="100" end="0" time="10000">VisibleChange</animation>
+      <animation effect="fade" start="100" end="0" time="10000">Visible</animation>
       <animation effect="fade" delay="100" start="0" end="0" time="100">WindowClose</animation>
     </control>
   </controls>
