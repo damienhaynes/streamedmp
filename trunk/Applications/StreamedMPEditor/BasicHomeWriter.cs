@@ -1976,14 +1976,12 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 GENERAL WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>" + ((xPos1 - 200) + 5).ToString() + "</posX>");
       rawXML.AppendLine("<posY>" + (yPos1 + 100 + 155).ToString() + "</posY>");
-      rawXML.AppendLine("<width>170</width>");
-      rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<font>mediastream13</font>");
-      rawXML.AppendLine("<align>right</align>");
+      rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("<label>#infoservice.weather.today.condition</label>");
       rawXML.AppendLine("</control>");
@@ -2026,12 +2024,10 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 2 AM WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>" + (xPos2 + spacing + 5).ToString() + "</posX>");
       rawXML.AppendLine("<posY>" + (yPos1 + 100).ToString() + "</posY>");
-      rawXML.AppendLine("<width>160</width>");
-      rawXML.AppendLine("<height>50</height>");
       rawXML.AppendLine("<label>#infoservice.weather." + infoServiceDayProperty + "2.day.condition</label>");
       rawXML.AppendLine("<font>mediastream10</font>");
       rawXML.AppendLine("<align>left</align>");
@@ -2040,12 +2036,10 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 2 PM WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>" + (xPos2 + spacing + 5).ToString() + "</posX>");
       rawXML.AppendLine("<posY>" + (yPos1 + 150).ToString() + "</posY>");
-      rawXML.AppendLine("<width>160</width>");
-      rawXML.AppendLine("<height>50</height>");
       rawXML.AppendLine("<label>#infoservice.weather." + infoServiceDayProperty + "2.night.condition</label>");
       rawXML.AppendLine("<font>mediastream10</font>");
       rawXML.AppendLine("<align>left</align>");
@@ -2409,12 +2403,10 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 GENERAL WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>140</posX>");
       rawXML.AppendLine("<posY>634</posY>");
-      rawXML.AppendLine("<width>140</width>");
-      rawXML.AppendLine("<height>50</height>");
       rawXML.AppendLine("<label>#infoservice.weather.today.condition</label>");
       rawXML.AppendLine("<font>mediastream11</font>");
       rawXML.AppendLine("<align>left</align>");
@@ -2825,14 +2817,12 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 1 GENERAL WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>125</posX>");
       rawXML.AppendLine("<posY>230</posY>");
-      rawXML.AppendLine("<width>170</width>");
-      rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<font>mediastream13</font>");
-      rawXML.AppendLine("<align>right</align>");
+      rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("<label>#infoservice.weather.today.condition</label>");
       rawXML.AppendLine("</control>");
@@ -2875,12 +2865,10 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>DAY 2 AM WEATHER</description>");
-      rawXML.AppendLine("<type>textbox</type>");
+      rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>340</posX>");
       rawXML.AppendLine("<posY>230</posY>");
-      rawXML.AppendLine("<width>160</width>");
-      rawXML.AppendLine("<height>50</height>");
       rawXML.AppendLine("<label>#infoservice.weather." + infoServiceDayProperty + "2.day.condition</label>");
       rawXML.AppendLine("<font>mediastream10</font>");
       rawXML.AppendLine("<align>left</align>");
