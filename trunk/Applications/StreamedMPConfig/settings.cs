@@ -12,7 +12,9 @@ namespace StreamedMPConfig
 {
   class settings
   {
+    #region Private Variables
     private static readonly logger smcLog = logger.GetInstance();
+    #endregion
 
     #region XML Configuration Sections
     public const string cXMLSectionTVSeries = "TVSeriesConfig";
@@ -81,7 +83,7 @@ namespace StreamedMPConfig
     public const string cXMLSettingTVSeriesRecentWatched = "mrTVSeriesWatched";
     #endregion
 
-    #region Public methods
+    #region Public Properties
 
     public bool logLevelError
     {
@@ -150,6 +152,28 @@ namespace StreamedMPConfig
 
     public static string CurrentSkin { get { return GUIGraphicsContext.Skin; } }
     public static string PreviousSkin { get; set; }
+
+    public static string CurrentLanguage
+    {
+      get
+      {
+        string language = string.Empty;
+        try
+        {
+          language = GUILocalizeStrings.GetCultureName(GUILocalizeStrings.CurrentLanguage());
+        }
+        catch (Exception)
+        {
+          language = CultureInfo.CurrentUICulture.Name;
+        }
+        return language;
+      }
+    }
+    public static string PreviousLanguage { get; set; }
+
+    #endregion
+
+    #region Public methods
 
     public static void LoadEditorProperties()
     {
@@ -407,6 +431,10 @@ namespace StreamedMPConfig
       }
     }
 
+    #endregion
+
+    #region Private Methods
+
     bool _isVisEnabled()
     {
       using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
@@ -535,7 +563,7 @@ namespace StreamedMPConfig
       return "false";
     }
 
-
     #endregion
+
   }
 }

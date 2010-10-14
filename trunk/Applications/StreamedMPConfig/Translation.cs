@@ -25,28 +25,9 @@ namespace StreamedMPConfig
     #region Constructor
 
     static Translation()
-    {
-      string lang;
-
-      try
-      {
-        lang = GUILocalizeStrings.GetCultureName(GUILocalizeStrings.CurrentLanguage());
+    {    
         _info = DateTimeFormatInfo.GetInstance(CultureInfo.CurrentUICulture);
-      }
-      catch (Exception)
-      {
-        lang = CultureInfo.CurrentUICulture.Name;
-        _info = DateTimeFormatInfo.GetInstance(CultureInfo.CurrentUICulture);
-      }
-
-      smcLog.WriteLog("StreamedMPConfig: Using language " + lang,LogLevel.Info);
-
-      _path = Config.GetSubFolder(Config.Dir.Language, "StreamedMP");
-
-      if (!System.IO.Directory.Exists(_path))
-        System.IO.Directory.CreateDirectory(_path);
-
-      LoadTranslations(lang);
+        _path = Config.GetSubFolder(Config.Dir.Language, "StreamedMP");        
     }
 
     #endregion
@@ -88,6 +69,22 @@ namespace StreamedMPConfig
     #endregion
 
     #region Public Methods
+
+    public static void Init()
+    {
+      // reset active translations
+      _translations = null;
+      FixedTranslations.Clear();
+
+      string lang = settings.PreviousLanguage = settings.CurrentLanguage;
+
+      smcLog.WriteLog("StreamedMPConfig: Using language " + lang, LogLevel.Info);
+
+      if (!System.IO.Directory.Exists(_path))
+        System.IO.Directory.CreateDirectory(_path);
+
+      LoadTranslations(lang);
+    }
 
     public static int LoadTranslations(string lang)
     {

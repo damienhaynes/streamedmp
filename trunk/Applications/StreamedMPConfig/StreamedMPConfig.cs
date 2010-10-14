@@ -236,6 +236,10 @@ namespace StreamedMPConfig
     #region Private Methods
     private void InitStreamedMP()
     {
+      #region Init Translations
+      InitTranslations();
+      #endregion
+
       #region Load Settings
       // we need to set properties on startup, load corresponding sections
       settings.Load(settings.cXMLSectionUpdate);
@@ -244,47 +248,6 @@ namespace StreamedMPConfig
       settings.Load(settings.cXMLSectionVideo);
 
       settings.LoadEditorProperties();
-      #endregion
-
-      #region Init Translations
-      // Set all fixed translation properties 
-      // these have defaults defined in the code and are used internally
-      try
-      {
-        foreach (string name in Translation.Strings.Keys)
-        {
-          if (!string.IsNullOrEmpty(Translation.Strings[name]))
-          {
-            smcLog.WriteLog("#StreamedMP." + name + ": " + Translation.Strings[name], LogLevel.Debug);
-            SetProperty("#StreamedMP." + name, Translation.Strings[name]);
-          }
-        }
-      }
-      catch (Exception ex)
-      {
-        smcLog.WriteLog(string.Format("StreamedMPConfig: Translation Exception: {0}", ex.Message), LogLevel.Error);
-      }
-
-      // Set user defined property, this is defined in the langauge file as the full 
-      // property name including the the # i.e #StreamedMP.MyDefinedProperty
-      foreach (string propName in Translation.FixedTranslations.Keys)
-      {
-        if (!string.IsNullOrEmpty(propName))
-        {
-          string propValue;
-          Translation.FixedTranslations.TryGetValue(propName, out propValue);
-          if (IsInteger(propValue))
-          {
-            smcLog.WriteLog(string.Format("Converting MediaPortal translation '{0}' to StreamedMP translation -> {1}", propValue, propName), LogLevel.Debug);
-            SetProperty(propName, GUILocalizeStrings.Get(int.Parse(propValue)));
-          }
-          else
-          {
-            smcLog.WriteLog(propName + ": " + propValue, LogLevel.Debug);
-            SetProperty(propName, propValue);
-          }
-        }
-      }
       #endregion
 
       #region Init Updates
@@ -376,6 +339,50 @@ namespace StreamedMPConfig
       GUIGraphicsContext.OnNewAction += new OnActionHandler(smpAction);
       SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
       #endregion      
+    }
+
+    private void InitTranslations()
+    {
+      Translation.Init();
+
+      // Set all fixed translation properties 
+      // these have defaults defined in the code and are used internally
+      try
+      {
+        foreach (string name in Translation.Strings.Keys)
+        {
+          if (!string.IsNullOrEmpty(Translation.Strings[name]))
+          {
+            smcLog.WriteLog("#StreamedMP." + name + ": " + Translation.Strings[name], LogLevel.Debug);
+            SetProperty("#StreamedMP." + name, Translation.Strings[name]);
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog(string.Format("StreamedMPConfig: Translation Exception: {0}", ex.Message), LogLevel.Error);
+      }
+
+      // Set user defined property, this is defined in the langauge file as the full 
+      // property name including the the # i.e #StreamedMP.MyDefinedProperty
+      foreach (string propName in Translation.FixedTranslations.Keys)
+      {
+        if (!string.IsNullOrEmpty(propName))
+        {
+          string propValue;
+          Translation.FixedTranslations.TryGetValue(propName, out propValue);
+          if (IsInteger(propValue))
+          {
+            smcLog.WriteLog(string.Format("Converting MediaPortal translation '{0}' to StreamedMP translation -> {1}", propValue, propName), LogLevel.Debug);
+            SetProperty(propName, GUILocalizeStrings.Get(int.Parse(propValue)));
+          }
+          else
+          {
+            smcLog.WriteLog(propName + ": " + propValue, LogLevel.Debug);
+            SetProperty(propName, propValue);
+          }
+        }
+      }
     }
 
     private void InitMostRecents()
@@ -1066,6 +1073,7 @@ namespace StreamedMPConfig
       // Settings/General window
       if (windowID == (int)Window.WINDOW_SETTINGS_SKIN)
       {
+        // check if skin changed
         if (settings.CurrentSkin != settings.PreviousSkin && settings.CurrentSkin.EndsWith("StreamedMP"))
         {
           smcLog.WriteLog("Skin Changed to StreamedMP from GUI, initializing plugin.", LogLevel.Info);
@@ -1079,6 +1087,14 @@ namespace StreamedMPConfig
           DeInitMostRecents();
           settings.PreviousSkin = settings.CurrentSkin;
         }
+
+        //check if language changed
+        if (settings.CurrentLanguage != settings.PreviousLanguage)
+        {
+          smcLog.WriteLog(string.Format("Language Changed to '{0}' from GUI, initializing translations.", settings.CurrentLanguage), LogLevel.Info);
+          InitTranslations();
+        }
+
       }
     }
 
