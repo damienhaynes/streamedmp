@@ -3311,7 +3311,10 @@ namespace StreamedMPEditor
         }
       }
 
-      xml = xml.Replace(replaceString, rawXML.ToString());
+      if (string.IsNullOrEmpty(replaceString))
+        helper.showError("No replacement String genterated in generateMostRecentInclude",errorCode.info);
+      else
+        xml = xml.Replace(replaceString, rawXML.ToString());
     }
 
     #endregion
