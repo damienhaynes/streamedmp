@@ -454,6 +454,7 @@ namespace StreamedMPEditor
     void addButton_Click(object sender, EventArgs e)
     {
       int index = ids.IndexOf(selectedWindowID.Text);
+     
       try
       {
         while (xmlFiles.Items[index].ToString().ToLower() != selectedWindow.Text.ToLower())
@@ -461,8 +462,11 @@ namespace StreamedMPEditor
           index = ids.IndexOf(selectedWindowID.Text, index + 1);
         }
       }
-      catch { }
-      
+      catch (Exception exp)
+      {
+        helper.showError("QuickSelect Skin XML Missing or Invalid" + exp.Message, errorCode.info);
+        return;
+      }
 
       if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && itemName.Text != "")
       {
