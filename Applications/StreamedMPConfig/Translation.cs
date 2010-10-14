@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Xml;
 using System.Text.RegularExpressions;
@@ -47,8 +48,10 @@ namespace StreamedMPConfig
         {
           _translations = new Dictionary<string, string>();
           Type transType = typeof(Translation);
-          FieldInfo[] fields = transType.GetFields(BindingFlags.Public | BindingFlags.Static);
-          foreach (FieldInfo field in fields)
+          var fields = transType.GetFields(BindingFlags.Public | BindingFlags.Static)
+                      .Where(p=>p.FieldType == typeof(string));
+
+          foreach (var field in fields)
           {
             if (DynamicTranslations.ContainsKey(field.Name))
             {
@@ -132,8 +135,10 @@ namespace StreamedMPConfig
       }
 
       Type TransType = typeof(Translation);
-      FieldInfo[] fieldInfos = TransType.GetFields(BindingFlags.Public | BindingFlags.Static);
-      foreach (FieldInfo fi in fieldInfos)
+      var fieldInfos = TransType.GetFields(BindingFlags.Public | BindingFlags.Static)
+                       .Where(p=>p.FieldType == typeof(string));
+
+      foreach (var fi in fieldInfos)
       {
         if (TranslatedStrings != null && TranslatedStrings.ContainsKey(fi.Name))
           TransType.InvokeMember(fi.Name, BindingFlags.SetField, null, TransType, new object[] { TranslatedStrings[fi.Name] });
