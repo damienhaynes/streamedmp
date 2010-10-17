@@ -469,7 +469,11 @@ namespace StreamedMPEditor
         mnuItem.updateStatus = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
         mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
         mnuItem.id = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
+
         mnuItem.xmlFileName = readEntryValue(menuTag, "menuitem" + i.ToString() + "xmlFileName", nodelist);
+        if (mnuItem.xmlFileName == "false")
+            mnuItem.xmlFileName = getXMLFileName(mnuItem.hyperlink);
+        
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
 
         if (readEntryValue(menuTag, "menuitem" + i.ToString() + "subMenuLevel1ID", nodelist) != "false")
@@ -577,6 +581,19 @@ namespace StreamedMPEditor
       //UpdateImageControlVisibility();
       btGenerateMenu.Enabled = true;
     }
+
+      string getXMLFileName(string hyperLink)
+      {
+          int index = ids.IndexOf(hyperLink);
+          string firstFound = xmlFiles.Items[index].ToString();
+
+          index = ids.IndexOf(hyperLink, index + 1);
+          if (index != -1 && hyperLink == "1")
+              if (helper.pluginEnabled("For The Record TV"))
+                  firstFound = xmlFiles.Items[index].ToString();
+
+          return firstFound;
+      }
 
     displayMostRecent readMostRecentDisplayOption(string mrOption, string skinId)
     {
