@@ -830,6 +830,7 @@ namespace StreamedMPEditor
     {
       this.WindowState = FormWindowState.Minimized;
       GetMediaPortalSkinPath();
+      loadIDs();
       readFonts();
       getBackupFileTotals();
       loadMenuSettings();
