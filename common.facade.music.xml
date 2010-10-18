@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -310,7 +310,6 @@
           <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
         </control>
-        
         <control>
           <description>Cover Flow view</description>
           <type>coverflow</type>
@@ -377,10 +376,10 @@
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
           <scrollbarYOff>405</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
-          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png"></cards>
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">
+          </cards>
           <subitems>
-            <subitem>
-              <![CDATA[
+            <subitem><![CDATA[
                 <controls>
                   <control>
                     <description>background</description>
@@ -415,13 +414,9 @@
                   </control>
                   
                 </controls>
-              ]]>
-            </subitem>
+              ]]></subitem>
           </subitems>
         </control>
-        
-        
-        
         <control>
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
@@ -447,4 +442,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:af7cb7155ba9e9e63c3448cf0038d978-->
+<!--Checksum:de8a07d3f7e13630683ba1b7d42c3911-->
