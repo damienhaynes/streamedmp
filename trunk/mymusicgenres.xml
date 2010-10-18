@@ -30,7 +30,7 @@
       <height>348</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-      <visible>![facadeview.filmstrip|facadeview.coverflow]</visible>
+      <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <control>
@@ -41,7 +41,7 @@
       <width>348</width>
       <height>348</height>
       <texture>defaultAlbum.png</texture>
-      <visible>![facadeview.filmstrip|facadeview.coverflow]+!control.hasthumb(204)</visible>
+      <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist]+!control.hasthumb(204)</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
     </control>
     <import>mymusic.hiddenmenu.xml</import>
