@@ -112,12 +112,18 @@ namespace StreamedMPConfig
                 {
                   if (reader.Name == "patch")
                   {
+                    smcLog.WriteLog("Processing Patch V" + thisPatch.patchVersion.ToString(), LogLevel.Debug);
+ 
                     // Is this patch valid for the skin version we are running
                     if (skinVersionIs.CompareTo(thisPatch.minSkinVersionForPatch) >= 0)
                     {
+                      smcLog.WriteLog("Patch V" + thisPatch.patchVersion.ToString() + " is Valid", LogLevel.Debug);
                       // Only add patch if current skin version is less
                       if (skinVersionIs.CompareTo(thisPatch.patchVersion) < 0)
+                      {
+                        smcLog.WriteLog("Patch V" + thisPatch.patchVersion.ToString() + " Added", LogLevel.Debug);
                         patchList.Add(thisPatch);
+                      }
                     }
                     break;
                   }
