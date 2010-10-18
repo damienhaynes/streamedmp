@@ -326,7 +326,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\..\StreamedMP\Plugins\Process /Y</PostBuildEvent>
-    <PreBuildEvent>subwcrev $(SolutionDir) $(ProjectDir)Properties\VersionInfo.cs.tmpl $(ProjectDir)Properties\VersionInfo.cs</PreBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\Plugins\Process /Y</PostBuildEvent>
+    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
