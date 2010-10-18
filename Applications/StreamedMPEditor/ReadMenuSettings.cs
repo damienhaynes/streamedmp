@@ -585,12 +585,24 @@ namespace StreamedMPEditor
       string getXMLFileName(string hyperLink)
       {
           int index = ids.IndexOf(hyperLink);
-          string firstFound = xmlFiles.Items[index].ToString();
+          string firstFound;
 
-          index = ids.IndexOf(hyperLink, index + 1);
-          if (index != -1 && hyperLink == "1")
-              if (helper.pluginEnabled("For The Record TV"))
-                  firstFound = xmlFiles.Items[index].ToString();
+          try
+          {
+
+            firstFound = xmlFiles.Items[index].ToString();
+
+            index = ids.IndexOf(hyperLink, index + 1);
+            if (index != -1 && hyperLink == "1")
+            {
+              if (!helper.pluginEnabled("For The Record TV"))
+                firstFound = xmlFiles.Items[index].ToString();
+            }
+          }
+          catch
+          {
+            firstFound = "false";
+          }
 
           return firstFound;
       }
