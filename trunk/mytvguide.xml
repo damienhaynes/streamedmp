@@ -136,8 +136,8 @@
       <width>300</width>
       <font>mediastream12c</font>
       <align>right</align>
-      <animation effect="fade" time="300" delay="300">VisibleChange</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">VisibleChange</animation>
+      <animation effect="fade" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">Visible</animation>
     </control>
     <control>
       <description>Single Channel Image</description>
@@ -151,8 +151,8 @@
       <zoom>no</zoom>
       <centered>yes</centered>
       <texture>defaultVideoBig.png</texture>
-      <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">VisibleChange</animation>
-      <animation effect="fade" time="300">VisibleChange</animation>
+      <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">Visible</animation>
+      <animation effect="fade" time="300">Visible</animation>
     </control>
     <!-- Timeheader background must be dedfined before Timeheader label template -->
     <!-- b/c Timeheader is on the background and will be rendered first -->
@@ -349,4 +349,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:223139fe41b15282b491eff85c4cd75d-->
+<!--Checksum:b9be9af137d0edcb21926c34929d10c5-->

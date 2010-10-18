@@ -200,7 +200,6 @@ This file should contain the facade view
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
         </control>
-        
         <control>
           <description>Cover Flow view</description>
           <type>coverflow</type>
@@ -266,10 +265,10 @@ This file should contain the facade view
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
           <scrollbarYOff>455</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
-          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png"></cards>
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">
+          </cards>
           <subitems>
-            <subitem>
-              <![CDATA[
+            <subitem><![CDATA[
                 <controls>
                   <control>
                     <description>background</description>
@@ -430,12 +429,9 @@ This file should contain the facade view
                     <visible>string.contains(#mpaarating, Rated NC-17)</visible>
                   </control>                 
                 </controls>
-              ]]>
-            </subitem>
+              ]]></subitem>
           </subitems>
         </control>
-        
-        
         <control>
           <description>playlist listcontrol</description>
           <type>playlistcontrol</type>
@@ -459,4 +455,4 @@ This file should contain the facade view
     </control>
   </controls>
 </window>
-<!--Checksum:87502711930eafe633d3d61ce1fb2576-->
+<!--Checksum:14ab506a756af0bab730427d2ac23cbe-->
