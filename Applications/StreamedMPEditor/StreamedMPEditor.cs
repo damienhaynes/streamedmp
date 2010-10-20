@@ -217,7 +217,6 @@ namespace StreamedMPEditor
     public formStreamedMpEditor()
     {
       InitializeComponent();
-
       randomFanart.fanartGames = false;
       randomFanart.fanartMovies = false;
       randomFanart.fanartMovingPictures = false;
@@ -289,7 +288,6 @@ namespace StreamedMPEditor
           MediaPortal.Profile.Settings.SaveCache();
         }
       }
-
       if (!exitCondition)
       {
         Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");

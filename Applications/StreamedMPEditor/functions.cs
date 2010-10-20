@@ -237,13 +237,15 @@ namespace StreamedMPEditor
             // Populate
             QuickSelect(i);
             cboQuickSelect.SelectedIndex = i;
+
             bFound = true;
             int k = 0;
             foreach (menuItem mnuItem in menuItems)
             {
               if (p.id == mnuItem.hyperlink)
               {
-                itemsOnMenubar.SelectedIndex = k;
+                if (itemsOnMenubar.Items.Count > 0)
+                  itemsOnMenubar.SelectedIndex = k;
                 break;
               }
               k++;
@@ -629,7 +631,7 @@ namespace StreamedMPEditor
       if (itemsOnMenubar.SelectedItem != null)
       {
         menuItems.RemoveAt(itemsOnMenubar.SelectedIndex);
-        itemsOnMenubar.Items.Remove(itemsOnMenubar.SelectedItem);
+        itemsOnMenubar.Items.RemoveAt(itemsOnMenubar.SelectedIndex);
         screenReset();
         if (itemsOnMenubar.Items.Count > 0)
           itemsOnMenubar.SelectedIndex = 0;
