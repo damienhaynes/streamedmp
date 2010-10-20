@@ -36,6 +36,8 @@ namespace StreamedMPEditor
 
     public void loadPrettyItems(ref System.Windows.Forms.ComboBox cboQuickSelect, List<string> ids)
     {
+      cboQuickSelect.Items.Clear();
+      formStreamedMpEditor.prettyItems.Clear();
       XmlDocument doc = new XmlDocument();
       Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.QuickSelectList.xml");
       try
