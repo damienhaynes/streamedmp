@@ -2,7 +2,7 @@
 <!-- StreamedMP translation file -->
 <!-- German (DE) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Last Updated: 23rd August 2010 -->
+<!-- Last Updated: 20th October 2010 -->
 <strings>
   <!-- Example user defined translation property                                       -->
   <!-- Field name must start with a '#'. The entry below creates the skin property     -->
@@ -21,12 +21,12 @@
   <string Field="TVMenu">TV-Einstellungen</string>
   <string Field="SkinSettings">Skin Settings</string>
   <!-- Skin Updates / Patching GUI -->
-  <string Field="UpdateInstall">Installiere Update</string>
-  <string Field="NoUpdatesAvailable">Keine Updates zur Zeit verfügbar</string>
+  <string Field="UpdateInstall">Update installieren</string>
+  <string Field="NoUpdatesAvailable">Zur Zeit keine Updates verfügbar</string>
   <string Field="DownloadingPatch">Patch {0} wird heruntergeladen</string>
-  <string Field="DownloadingProgress">Runtergeladen {0}KB von {1}KB ({2}%)</string>
+  <string Field="DownloadingProgress">{0}KB von {1}KB ({2}%) geladen</string>
   <string Field="NumPatchesInstalled">Anzahl installierter Patches: {0}</string>
-  <string Field="PatchUpdateComplete">Aktualisiere zur Skin Version: {0} fertiggestellt</string>
+  <string Field="PatchUpdateComplete">Update zu Skin Version {0} fertiggestellt</string>
   <string Field="UpdateAvailableHeading">Update verfügbar - Change Log</string>
   <string Field="Revision">Revision:</string>
   <string Field="Author">Autor:</string>
@@ -43,13 +43,13 @@
   <!-- Music Options -->
   <string Field="CDCover">Zeige nur CD Cover in aktueller Musikwiedergabe</string>
   <string Field="ShowEQ">Zeige den grafischen EQ in aktueller Musikwiedergabe</string>
-  <string Field="NowPlayingStyles">Bildschirmauswahl für Aktuelle Wiedergabe</string>
+  <string Field="NowPlayingStyles">Bildschirmauswahl für aktuelle Wiedergabe</string>
   <!-- TVSeries Configuration -->
   <string Field="FanartStyle">Fanart Stil</string>
-  <string Field="WideBanners">Breitbanner</string>
-  <string Field="WideBannerDefault">Breitbanner: Vorgabe</string>
-  <string Field="WideBanner5x2Grid">Breitbanner: 5x2 Gitter mit Poster</string>
-  <string Field="WideBanner5x3Grid">Breitbanner: 5x3 Gitter</string>
+  <string Field="WideBanners">Breite Banner</string>
+  <string Field="WideBannerDefault">Breite Banner: Vorgabe</string>
+  <string Field="WideBanner5x2Grid">Breite Banner: 5x2 Gitter mit Poster</string>
+  <string Field="WideBanner5x3Grid">Breite Banner: 5x3 Gitter</string>
   <string Field="WideBanner7x3Grid">Breitbanner: 7x3 Gitter</string>
   <string Field="WideBanner10x4Grid">Breitbanner: 10x4 Gitter</string>
   <!-- MovingPictures Configuration -->
@@ -58,21 +58,21 @@
   <string Field="Thumbnail_12x4_8x3_Grid">Vorschaubilder: 12x4 Kleine Zeichen, 8x3 Große Zeichen</string>
   <string Field="Thumbnail_12x3_8x2_Grid">Vorschaubilder: 12x3 Kleine Zeichen, 8x2 Große Zeichen + Info</string>
   <!-- TVGuide Configuration -->
-  <string Field="TVGuideSize">TV Führer Größe</string>
-  <string Field="TVMiniGuideSize">TV Mini Führer Größe</string>
-  <string Field="TVGuideEightRows">TV Führer: 8 Zeilen</string>
-  <string Field="TVGuideTenRows">TV Führer: 10 Zeilen</string>
-  <string Field="TVGuideTwelveRows">TV Führer: 12 Zeilen</string>
-  <string Field="TVGuideSixteenRows">TV Führer: 16 Zeilen</string>
-  <string Field="TVMiniGuideThreeRows">TV Mini Führer: 3 Zeilen</string>
-  <string Field="TVMiniGuideFiveRows">TV Mini Führer: 5 Zeilen</string>
-  <string Field="TVMiniGuideSevenRows">TV Mini Führer: 7 Zeilen</string>
-  <string Field="TVMiniGuideNineRows">TV Mini Führer: 9 Zeilen</string>
+  <string Field="TVGuideSize">TV Guide Größe</string>
+  <string Field="TVMiniGuideSize">TV Mini Guide Größe</string>
+  <string Field="TVGuideEightRows">TV Guide: 8 Zeilen</string>
+  <string Field="TVGuideTenRows">TV Guide: 10 Zeilen</string>
+  <string Field="TVGuideTwelveRows">TV Guide: 12 Zeilen</string>
+  <string Field="TVGuideSixteenRows">TV Guide: 16 Zeilen</string>
+  <string Field="TVMiniGuideThreeRows">TV Mini Guide: 3 Zeilen</string>
+  <string Field="TVMiniGuideFiveRows">TV Mini Guide: 5 Zeilen</string>  
+  <string Field="TVMiniGuideSevenRows">TV Mini Guide: 7 Zeilen</string>
+  <string Field="TVMiniGuideNineRows">TV Mini Guide: 9 Zeilen</string>
   <!-- Misc Settings -->
   <string Field="ShowHiddenMenuImage">Bild für verstecktes Menü anzeigen</string>
-  <string Field="ShowRoundedPosters">Zeige runde Poster</string>
+  <string Field="ShowRoundedPosters">Zeige abgerundete Poster</string>
   <string Field="ShowIconsInArtwork">Gesehen/ungesehen Zeichen in der Grafik anzeigen</string>
-  <string Field="PlayMostRecents">Enable Play Action for Most Recents</string>
+  <string Field="PlayMostRecents">Abspielen von neu hinzugefügten Elementen ermöglichen</string>
   <!-- General Translations -->
   <string Field="Rated">Bewertung</string>
   <string Field="Director">Regisseur</string>
@@ -84,9 +84,9 @@
   <string Field="SearchHistory">Suchhistorie</string>
   <string Field="SearchFields">Suchfelder</string>
   <string Field="SearchType">Suchtyp</string>
-  <string Field="CaseSensitive">Groß-und Kleinschreibung</string>
+  <string Field="CaseSensitive">Groß- und Kleinschreibung</string>
   <!-- Recently Added -->
   <string Field="LatestEpisodes">Neueste Folgen</string>
   <string Field="LatestMovies">Neueste Filme</string>
-  <string Field="RecentlyWatched">Recently Watched</string>
+  <string Field="RecentlyWatched">Kürzlich angeschaut</string>
 </strings>
