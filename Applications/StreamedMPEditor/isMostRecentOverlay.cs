@@ -2781,8 +2781,8 @@
                   "<id>0</id>" +
                   "<posX>" + (baseXPosAdded + 71).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-                  "<width>165</width>" +
-                  "<height>165</height>" +
+                  "<width>155</width>" +
+                  "<height>155</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>#fanarthandler.music.latest1.thumb</texture>" +
                 "</control>" +

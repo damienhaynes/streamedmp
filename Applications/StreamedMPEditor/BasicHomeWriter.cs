@@ -1480,7 +1480,7 @@ namespace StreamedMPEditor
               if (subMenu == "0")
                 rawXML.Append("control.isvisible(" + item.ids[i] + ")");
               else
-                rawXML.Append("control.isvisible(11111)|control.isvisible(" + item.ids[i] + ")");
+                rawXML.Append("control.isvisible(" + subMenu + ")|control.isvisible(" + item.ids[i] + ")");
             }
             else
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
