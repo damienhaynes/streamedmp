@@ -1397,6 +1397,7 @@ Dlg_Wait:
  				ListAddString(listTVGuides,"8 Rows",AFTER);
 	        	ListAddString(listTVGuides,"10 Rows",AFTER);
 	        	ListAddString(listTVGuides,"12 Rows",AFTER);	    	    		
+	        	ListAddString(listTVGuides,"16 Rows",AFTER);
 	        	
 	        	// Add TVGuide sizes to list
 	        	CtrlSetList(szDialogName,RES_COMBO_TVGUIDE,listTVGuides);
@@ -1406,7 +1407,9 @@ Dlg_Wait:
  					case "8":
 	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"8 Rows");
 	    			case "10":
-	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"10 Rows");
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"10 Rows"); 
+	    			case "16":
+	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"16 Rows");
 	    			default:
 	    				CtrlSetCurSel(szDialogName,RES_COMBO_TVGUIDE,"12 Rows");
 	   			endswitch; 		
@@ -1539,7 +1542,9 @@ Dlg_Wait:
 		case "8 Rows":
 			g_sTVGuideSize = "8"; 
 		case "10 Rows":
-			g_sTVGuideSize = "10";
+			g_sTVGuideSize = "10";  
+		case "16 Rows":
+			g_sTVGuideSize = "16";
 		default:
 			g_sTVGuideSize = "12";
 	endswitch;  

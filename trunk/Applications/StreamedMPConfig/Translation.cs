@@ -234,6 +234,7 @@ namespace StreamedMPConfig
     public static string TVGuideEightRows = "TV Guide: 8 Rows";
     public static string TVGuideTenRows = "TV Guide: 10 Rows";
     public static string TVGuideTwelveRows = "TV Guide: 12 Rows";
+    public static string TVGuideSixteenRows = "TV Guide: 16 Rows";
     public static string TVMiniGuideThreeRows = "TV Mini Guide: 3 Rows";
     public static string TVMiniGuideFiveRows = "TV Mini Guide: 5 Rows";
     public static string TVMiniGuideSevenRows = "TV Mini Guide: 7 Rows";
