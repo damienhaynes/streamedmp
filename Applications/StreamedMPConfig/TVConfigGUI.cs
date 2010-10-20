@@ -18,7 +18,8 @@ namespace StreamedMPConfig
     {
       Eight = 8,
       Ten = 10,
-      Twelve = 12
+      Twelve = 12,
+      Sixteen = 16
     }
 
     public enum TVMiniGuideRows
@@ -138,6 +139,9 @@ namespace StreamedMPConfig
 
         case TVGuideRows.Twelve:
           return Translation.TVGuideTwelveRows;
+
+        case TVGuideRows.Sixteen:
+          return Translation.TVGuideSixteenRows;
 
         default:
           return Translation.TVGuideEightRows;
