@@ -230,6 +230,8 @@ namespace StreamedMPEditor
         bool bFound = false;
         string selectedID = ids[xmlFiles.SelectedIndex];
         string xmlFileName = xmlFiles.SelectedItem.ToString();
+        selectedWindowID.Text = selectedID;
+        selectedWindow.Text = xmlFileName;
         foreach (prettyItem p in prettyItems)
         {
           if (p.id == selectedID && xmlFileName == p.xmlfile)
