@@ -3081,16 +3081,15 @@ namespace StreamedMPEditor
 
     #region Generate Weather Summary
 
-    private void generateWeathersummary(int weatherId)
+    private void generateWeathersummary(int? weatherId)
     {
-
       StringBuilder rawXML = new StringBuilder();
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>GROUP: WEATHER SUMMARY</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      if (enableFiveDayWeather.Checked)   // Hide summary only if 5 Day weather summary is enabled
+      if (enableFiveDayWeather.Checked && weatherId != null)   // Hide summary only if 5 Day weather summary is enabled
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
       else
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
