@@ -889,14 +889,19 @@ namespace StreamedMPEditor
 
       if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
       {
+        bool itemHasWeather = false;
         foreach (backgroundItem item in bgItems)
         {
+          // Check what item to hide weather summary on
           if (item.isWeather)
           {
+            itemHasWeather = true;
             basicHomeValues.weatherControl = (int.Parse(item.ids[0]) + 200);
             generateWeathersummary(basicHomeValues.weatherControl);
           }
         }
+        // always show weather summary
+        if (!itemHasWeather) generateWeathersummary(null);
       }
 
       if (direction == menuType.horizontal)
