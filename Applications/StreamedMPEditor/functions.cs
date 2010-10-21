@@ -244,7 +244,7 @@ namespace StreamedMPEditor
             {
               if (p.id == mnuItem.hyperlink)
               {
-                if (itemsOnMenubar.Items.Count > 0)
+                if (itemsOnMenubar.Items.Count > 0 && itemsOnMenubar.Items.Count <= k)
                   itemsOnMenubar.SelectedIndex = k;
                 break;
               }
@@ -1015,6 +1015,16 @@ namespace StreamedMPEditor
         }
         Properties.Settings.Default.Save();
       }
+      changeOutstanding = false;
+
+      //reset everything
+      xmlFiles.Items.Clear();
+      cboQuickSelect.Items.Clear();
+      itemsOnMenubar.Items.Clear();
+      prettyItems.Clear();
+      ids.Clear();
+      bgItems.Clear();
+      menuItems.Clear();
     }
 
     private void purgeUPBackups_Click(object sender, EventArgs e)
