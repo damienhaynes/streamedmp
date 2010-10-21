@@ -451,6 +451,7 @@ namespace StreamedMPEditor
 
     void addButton_Click(object sender, EventArgs e)
     {
+        //selectedWindowID.Text = 
       int index = ids.IndexOf(selectedWindowID.Text);
      
       try
