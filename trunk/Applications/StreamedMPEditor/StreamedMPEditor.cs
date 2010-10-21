@@ -784,6 +784,15 @@ namespace StreamedMPEditor
         genMenu(false);
 
       changeOutstanding = false;
+
+      //reset everything
+      xmlFiles.Items.Clear();
+      cboQuickSelect.Items.Clear();
+      itemsOnMenubar.Items.Clear();
+      prettyItems.Clear();
+      ids.Clear();
+      bgItems.Clear();
+      menuItems.Clear();
     }
 
     void genMenu(bool onFormClosing)
@@ -819,6 +828,9 @@ namespace StreamedMPEditor
       }
       if (cboClearCache.Checked)
         clearCacheDir();
+
+
+
     }
 
 
