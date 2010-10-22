@@ -284,15 +284,8 @@
           <itemWidth>220</itemWidth>
           <itemHeight>185</itemHeight>
           <textureWidth>250</textureWidth>
-          <textureHeight>152</textureHeight>
-          <imageFolderFocus>Picture_cover.png</imageFolderFocus>
-          <frame>Picture_cover.png</frame>
-          <frameFocus>Picture_cover.png</frameFocus>
-          <background>Coverbig.png</background>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png">
-          </thumbs>
-          <InfoImage flipY="true" diffuse="Thumb_Mask.png">
-          </InfoImage>
+          <textureHeight>152</textureHeight>          
+          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>          
           <showFrame>yes</showFrame>
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
@@ -301,12 +294,12 @@
           <spinPosY>685</spinPosY>
           <spinAlign>center</spinAlign>
           <spinColor>ff006698</spinColor>
+		  <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
           <textureUp>arrow_round_right_nofocus.png</textureUp>
           <textureDown>arrow_round_left_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
-          <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>          
           <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
         </control>
