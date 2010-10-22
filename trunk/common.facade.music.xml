@@ -190,6 +190,8 @@
           <posY>250</posY>
           <height>450</height>
           <width>620</width>
+		  <onleft>2</onleft>
+          <onright>2</onright>
           <textXOff>30</textXOff>
           <textXOff2>650</textXOff2>
           <textXOff3>158</textXOff3>
@@ -207,17 +209,20 @@
           <PinIconXOff>72</PinIconXOff>
           <PinIconYOff>22</PinIconYOff>
           <spaceBetweenItems>0</spaceBetweenItems>
+		  <!--<unfocusedAlpha>200</unfocusedAlpha>-->
+		  <keepaspectratio>yes</keepaspectratio>
           <textureHeight>64</textureHeight>
           <scrollOffset>1</scrollOffset>
-          <spinPosX>1245</spinPosX>
-          <spinPosY>680</spinPosY>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
           <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
           <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <!--<unfocusedAlpha>200</unfocusedAlpha>-->
-          <keepaspectratio>yes</keepaspectratio>
+          <spinHeight>37</spinHeight>          
         </control>
         <control>
           <description>Thumbnail Panel</description>
