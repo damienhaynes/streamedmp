@@ -786,14 +786,6 @@ namespace StreamedMPEditor
 
       changeOutstanding = false;
 
-      //reset everything
-      xmlFiles.Items.Clear();
-      cboQuickSelect.Items.Clear();
-      itemsOnMenubar.Items.Clear();
-      prettyItems.Clear();
-      ids.Clear();
-      bgItems.Clear();
-      menuItems.Clear();
     }
 
     void genMenu(bool onFormClosing)
@@ -829,9 +821,6 @@ namespace StreamedMPEditor
       }
       if (cboClearCache.Checked)
         clearCacheDir();
-
-
-
     }
 
 
@@ -969,7 +958,17 @@ namespace StreamedMPEditor
       {
         DialogResult result = helper.showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
         if (result == DialogResult.No)
-          this.Close();
+        {
+            //reset everything
+            xmlFiles.Items.Clear();
+            cboQuickSelect.Items.Clear();
+            itemsOnMenubar.Items.Clear();
+            prettyItems.Clear();
+            ids.Clear();
+            bgItems.Clear();
+            menuItems.Clear();
+            this.Close();
+        }
 
         // reset item id's as it is possible to generate again.
         foreach (menuItem item in menuItems)
