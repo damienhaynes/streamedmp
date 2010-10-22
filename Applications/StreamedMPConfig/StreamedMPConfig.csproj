@@ -178,7 +178,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release copy $(TargetPath) ..\..\..\..\Plugins\Windows /Y</PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Release copy "$(TargetPath)" ..\..\..\..\Plugins\Windows /Y</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
