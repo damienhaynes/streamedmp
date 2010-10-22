@@ -363,8 +363,8 @@
       this.style3Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
       this.style3Description.TabIndex = 11;
       this.style3Description.TabStop = false;
-      this.style3Description.MouseLeave += new System.EventHandler(this.style3Description_MouseLeave);
       this.style3Description.MouseEnter += new System.EventHandler(this.style3Description_MouseEnter);
+      this.style3Description.MouseLeave += new System.EventHandler(this.style3Description_MouseLeave);
       // 
       // style2Description
       // 
@@ -376,8 +376,8 @@
       this.style2Description.TabIndex = 10;
       this.style2Description.TabStop = false;
       this.toolTip1.SetToolTip(this.style2Description, "\r\n");
-      this.style2Description.MouseLeave += new System.EventHandler(this.style2Description_MouseLeave);
       this.style2Description.MouseEnter += new System.EventHandler(this.style2Description_MouseEnter);
+      this.style2Description.MouseLeave += new System.EventHandler(this.style2Description_MouseLeave);
       // 
       // style1Description
       // 
@@ -389,8 +389,8 @@
       this.style1Description.TabIndex = 9;
       this.style1Description.TabStop = false;
       this.toolTip1.SetToolTip(this.style1Description, "\r\n");
-      this.style1Description.MouseLeave += new System.EventHandler(this.style1Description_MouseLeave);
       this.style1Description.MouseEnter += new System.EventHandler(this.style1Description_MouseEnter);
+      this.style1Description.MouseLeave += new System.EventHandler(this.style1Description_MouseLeave);
       // 
       // menuDescription
       // 
@@ -658,7 +658,7 @@
       // 
       this.addSubmenus.Location = new System.Drawing.Point(538, 242);
       this.addSubmenus.Name = "addSubmenus";
-      this.addSubmenus.Size = new System.Drawing.Size(110, 21);
+      this.addSubmenus.Size = new System.Drawing.Size(110, 23);
       this.addSubmenus.TabIndex = 123;
       this.addSubmenus.Text = "Edit/Add Submenu";
       this.addSubmenus.UseVisualStyleBackColor = true;
@@ -1166,8 +1166,8 @@
       this.xmlFiles.Name = "xmlFiles";
       this.xmlFiles.Size = new System.Drawing.Size(198, 303);
       this.xmlFiles.TabIndex = 5;
-      this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
       this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
+      this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
       // 
       // menuOptions
       // 
