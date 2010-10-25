@@ -125,7 +125,7 @@
       <posY>672</posY>
       <width>1280</width>
       <font>mediastream16tc</font>
-      <visible>facadeview.filmstrip</visible>
+      <visible>![facadeview.list|facadeview.album|facadeview.smallicons|facadeview.largeicons|facadeview.playlist]</visible>
       <align>center</align>
       <label>#selecteditem</label>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -359,8 +359,8 @@
           <folderSuffix>]</folderSuffix>
           <font1>mediastream14tc</font1>
           <font2>mediastream10c</font2>
-          <label1>#title (Title)</label1>
-          <label2>#artist (Genre)</label2>
+          <label1></label1>
+          <label2></label2>
           <textColor>FFFFFFFF</textColor>
           <remoteColor>FFFF0000</remoteColor>
           <playedColor>FFA0D0FF</playedColor>
@@ -391,8 +391,6 @@
                     <height>350</height>
                     <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">black.png</texture>
                   </control>
-                  
-                 
                 </controls>
               ]]></subitem>
           </subitems>
