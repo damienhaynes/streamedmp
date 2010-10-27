@@ -466,9 +466,9 @@ namespace StreamedMPConfig
     {
       GUIDialogYesNo dlg = (GUIDialogYesNo)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_YES_NO);
       dlg.Reset();
-      dlg.SetHeading("MediaPortal Restart");
+      dlg.SetHeading(Translation.MediaPortalRestart);
       dlg.SetLine(1, String.Empty);
-      dlg.SetLine(2, "Are you sure you want to restart MediaPortal?");
+      dlg.SetLine(2, Translation.MediaPortalRestartMessage);
       dlg.SetLine(3, String.Empty);
       dlg.DoModal(GUIWindowManager.ActiveWindow);
       if (dlg.IsConfirmed)

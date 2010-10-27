@@ -600,7 +600,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>513</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
-      rawXML.AppendLine("<label>Exit MediaPortal</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalExit</label>");
       rawXML.AppendLine("<visible allowhiddenfocus=" + quote + "true" + quote + ">Control.HasFocus(7777)</visible>");
       rawXML.AppendLine("</control>");
 
@@ -614,7 +614,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>513</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
-      rawXML.AppendLine("<label>Restart MediaPortal</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalRestart</label>");
       rawXML.AppendLine("<visible>Control.HasFocus(7888)</visible>");
       rawXML.AppendLine("</control>");
 
@@ -628,7 +628,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>513</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
-      rawXML.AppendLine("<label>Shutdown Menu</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalShutDownMenu</label>");
       rawXML.AppendLine("<visible>Control.HasFocus(7999)</visible>");
       rawXML.AppendLine("</control>");
 
@@ -832,7 +832,7 @@ namespace StreamedMPEditor
         else
           shutdownIsVisible += "Control.HasFocus(" + topMenuId + "03)|";
       }
-      // Exit Lable
+      // Exit Label
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Exit Label</description>");
       rawXML.AppendLine("<type>label</type>");
@@ -843,10 +843,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>140</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
-      rawXML.AppendLine("<label>Exit MediaPortal</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalExit</label>");
       rawXML.AppendLine("<visible>" + exitIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
-      //Restart Lable
+      //Restart Label
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Restart Label</description>");
       rawXML.AppendLine("<type>label</type>");
@@ -857,7 +857,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>140</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
-      rawXML.AppendLine("<label>Restart MediaPortal</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalRestart</label>");
       rawXML.AppendLine("<visible>" + restartIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
       // Shutdown Label
@@ -871,7 +871,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>140</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
-      rawXML.AppendLine("<label>Shutdown Menu</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalShutDownMenu</label>");
       rawXML.AppendLine("<visible>" + shutdownIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
       // Seperator Bar
