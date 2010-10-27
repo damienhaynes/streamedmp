@@ -260,7 +260,9 @@ namespace StreamedMPConfig
     public static string MediaPortalExit = "Exit MediaPortal";
     public static string MediaPortalRestart = "Restart MediaPortal";
     public static string MediaPortalShutDownMenu = "Shutdown Menu";
-    public static string MediaPortalRestartMessage = "Are you sure you want to restart MediaPortal?";  
+    public static string MediaPortalRestartMessage = "Are you sure you want to restart MediaPortal?";
+    public static string LatestMusic = "Latest Music";
+    public static string LatestTVRecordings = "Latest TV Recordings";
     #endregion
   }
 }

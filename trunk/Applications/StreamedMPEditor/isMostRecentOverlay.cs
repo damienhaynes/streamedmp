@@ -2749,7 +2749,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>Latest Music</label>" +
+                  "<label>#StreamedMP.LatestMusic</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2902,7 +2902,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>Latest TV Recordings</label>" +
+                  "<label>#StreamedMP.LatestTVRecordings</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
