@@ -1684,7 +1684,7 @@
 		<row><td>cornerstone.dll</td><td>pluginMovingPicturesDLL</td><td>CORNER~1.DLL|Cornerstone.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Cornerstone.dll</td><td>1</td><td/></row>
 		<row><td>cornerstone.mp.dll1</td><td>pluginMovingPicturesDLL</td><td>CORNER~1.DLL|Cornerstone.MP.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\Cornerstone.MP.dll</td><td>1</td><td/></row>
 		<row><td>default.ttf</td><td>fontsFluidBody</td><td>Default.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\Default.ttf</td><td>1</td><td/></row>
-		<row><td>defaultcaps.ttf</td><td>fontsFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>1</td><td/></row>
+		<row><td>defaultcaps.ttf</td><td>fontsFluidBodyCaps</td><td>DEFAUL~1.TTF|DefaultCaps.ttf</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\DefaultCaps.ttf</td><td>17</td><td/></row>
 		<row><td>fanarthandler.dll</td><td>pluginFanartHandlerDLL</td><td>FANART~1.DLL|FanartHandler.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\process\FanartHandler.dll</td><td>1</td><td/></row>
 		<row><td>fanarthandler.org</td><td>FanartHandler.org</td><td>FANART~1.ORG|FanartHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\database\FanartHandler.org</td><td>1</td><td/></row>
 		<row><td>fanarthandler.org1</td><td>FanartHandlerConfig</td><td>FANART~1.ORG|FanartHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\fanarthandlerconfig\config\FanartHandler.org</td><td>1</td><td/></row>
@@ -2431,19 +2431,9 @@
 		<row><td>ISProductFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectDataFolder</td><td/><td/><td>1</td></row>
 		<row><td>ISProjectFolder</td><td/><td/><td>1</td></row>
-		<row><td>PATH_TO_STREAMEDMP-R144_FI</td><td>C:\StreamedMP-r1446</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE0_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style0</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE1_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style1</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE2_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style2</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE3_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style3</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE4_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style4</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE5_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style5</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE6_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style6</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE7_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style7</td><td/><td>2</td></row>
-		<row><td>PATH_TO_STYLE8_FILES</td><td>C:\MediaPortal\Skin\StreamedMP\NowPlayingScreens\style8</td><td/><td>2</td></row>
 		<row><td>ProgramFilesFolder</td><td/><td/><td>1</td></row>
 		<row><td>SKINFILES</td><td>&lt;StreamedMP&gt;</td><td/><td>2</td></row>
-		<row><td>StreamedMP</td><td>StreamedMP</td><td/><td>4</td></row>
+		<row><td>StreamedMP</td><td>&lt;ISProjectFolder&gt;..\</td><td/><td>2</td></row>
 		<row><td>SystemFolder</td><td/><td/><td>1</td></row>
 		<row><td>WindowsFolder</td><td/><td/><td>1</td></row>
 	</table>
