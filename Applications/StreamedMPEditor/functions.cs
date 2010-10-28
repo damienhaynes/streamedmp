@@ -270,7 +270,7 @@ namespace StreamedMPEditor
     {
       xmlFiles.SelectedItem = prettyItems[index].xmlfile;
       cboContextLabel.Text = prettyItems[index].contextlabel;
-      itemName.Text = prettyItems[index].name;
+      tbItemName.Text = prettyItems[index].name;
       bgBox.Text = prettyItems[index].folder;
       cboFanartProperty.Text = prettyItems[index].fanartProperty;
       cbItemFanartHandlerEnable.Checked = prettyItems[index].fanartHandlerEnabled;
@@ -281,7 +281,7 @@ namespace StreamedMPEditor
 
     private void ClearItems()
     {
-      itemName.Text = "";
+      tbItemName.Text = "";
       bgBox.Text = "";
       cboFanartProperty.Text = "";
       cbItemFanartHandlerEnable.Checked = false;

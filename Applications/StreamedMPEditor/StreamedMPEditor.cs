@@ -273,7 +273,7 @@ namespace StreamedMPEditor
           cboTvSeriesView.Items.Clear();
           foreach (KeyValuePair<string, string> tvv in tvseriesViews)
           {
-              cboTvSeriesView.Items.Add(tvv.Value);
+              cboTvSeriesView.Items.Add(tvv.Key);
           }
           cboTvSeriesView.Visible = false;
           lbTVSView.Visible = false;
@@ -332,7 +332,7 @@ namespace StreamedMPEditor
         if (loadIDs() == true)
         {
           bgBox.Enabled = true;
-          itemName.Enabled = true;
+          tbItemName.Enabled = true;
           addButton.Enabled = true;
           editButton.Enabled = false;
           cancelButton.Enabled = false;
@@ -353,7 +353,7 @@ namespace StreamedMPEditor
 
           xmlFiles.SelectedItem = null;
           cboContextLabel.Text = null;
-          itemName.Text = null;
+          tbItemName.Text = null;
           bgBox.Text = null;
           isWeather.Checked = false;
           selectedWindow.Text = null;
@@ -484,13 +484,13 @@ namespace StreamedMPEditor
         return;
       }
 
-      if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && itemName.Text != "")
+      if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && tbItemName.Text != "")
       {
         xmlFiles.SelectedIndex = index;
         toolStripStatusLabel1.Text = xmlFiles.SelectedItem.ToString() + " added to menu";
         menuItem item = new menuItem();
         item.xmlFileName = xmlFiles.SelectedItem.ToString();
-        item.name = itemName.Text;
+        item.name = tbItemName.Text;
         item.contextLabel = cboContextLabel.Text;
         item.hyperlink = ids[xmlFiles.SelectedIndex];
         item.bgFolder = bgBox.Text;
@@ -510,7 +510,7 @@ namespace StreamedMPEditor
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
-        itemName.Text = "";
+        tbItemName.Text = "";
 
         bgBox.Text = "";
 
@@ -538,7 +538,7 @@ namespace StreamedMPEditor
 
       btGenerateMenu.Enabled = false;
       xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
-      itemName.Text = mnuItem.name;
+      tbItemName.Text = mnuItem.name;
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
       cboFanartProperty.Text = mnuItem.fanartProperty;
@@ -573,7 +573,7 @@ namespace StreamedMPEditor
         int index = itemsOnMenubar.SelectedIndex;
         menuItem item = new menuItem();
         item = menuItems[index];
-        item.name = itemName.Text;
+        item.name = tbItemName.Text;
         item.contextLabel = cboContextLabel.Text;
         item.bgFolder = bgBox.Text;
         item.fanartProperty = cboFanartProperty.Text;
@@ -617,7 +617,7 @@ namespace StreamedMPEditor
     {
       if (saveButton.Enabled)
       {
-        itemName.Text = null;
+        tbItemName.Text = null;
         cboContextLabel.Text = null;
         isWeather.Checked = false;
         bgBox.SelectedIndex = -1;
@@ -656,7 +656,7 @@ namespace StreamedMPEditor
 
       xmlFiles.SelectedItem = mnuItem.xmlFileName;
       cboContextLabel.Text = mnuItem.contextLabel;
-      itemName.Text = mnuItem.name;
+      tbItemName.Text = mnuItem.name;
       cboFanartProperty.Text = mnuItem.fanartProperty;
       cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
@@ -789,25 +789,25 @@ namespace StreamedMPEditor
 
     void itemName_TextChanged(object sender, EventArgs e)
     {
-      int start = itemName.SelectionStart;
-      if (isIlegalXML(itemName.Text))
+      int start = tbItemName.SelectionStart;
+      if (isIlegalXML(tbItemName.Text))
       {
-        itemName.Text = itemName.Text.Substring(0, itemName.Text.Length - 1);
-        itemName.SelectionStart = start;
+        tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
+        tbItemName.SelectionStart = start;
         return;
       }
-      itemName.Text = itemName.Text.ToUpper();
-      itemName.SelectionStart = start;
+      tbItemName.Text = tbItemName.Text.ToUpper();
+      tbItemName.SelectionStart = start;
     }
 
 
     void cboContextLabels_TextChanged(object sender, EventArgs e)
     {
       int start = cboContextLabel.SelectionStart;
-      if (isIlegalXML(itemName.Text))
+      if (isIlegalXML(tbItemName.Text))
       {
-        itemName.Text = itemName.Text.Substring(0, itemName.Text.Length - 1);
-        itemName.SelectionStart = start;
+        tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
+        tbItemName.SelectionStart = start;
         return;
       }
       cboContextLabel.Text = cboContextLabel.Text.ToUpper();
@@ -1259,7 +1259,7 @@ namespace StreamedMPEditor
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-
+        tbItemName.Text = cboTvSeriesView.Text;
     }
 
   }
