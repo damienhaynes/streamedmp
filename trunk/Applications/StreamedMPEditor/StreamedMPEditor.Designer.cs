@@ -103,7 +103,7 @@
         this.label18 = new System.Windows.Forms.Label();
         this.isWeather = new System.Windows.Forms.CheckBox();
         this.label9 = new System.Windows.Forms.Label();
-        this.itemName = new System.Windows.Forms.TextBox();
+        this.tbItemName = new System.Windows.Forms.TextBox();
         this.itemsOnMenubar = new System.Windows.Forms.CheckedListBox();
         this.xmlFiles = new System.Windows.Forms.ListBox();
         this.menuOptions = new System.Windows.Forms.TabPage();
@@ -1072,7 +1072,7 @@
         this.itemProperties.Controls.Add(this.label18);
         this.itemProperties.Controls.Add(this.isWeather);
         this.itemProperties.Controls.Add(this.label9);
-        this.itemProperties.Controls.Add(this.itemName);
+        this.itemProperties.Controls.Add(this.tbItemName);
         this.itemProperties.Location = new System.Drawing.Point(211, 6);
         this.itemProperties.Name = "itemProperties";
         this.itemProperties.Size = new System.Drawing.Size(323, 115);
@@ -1162,13 +1162,13 @@
         this.label9.TabIndex = 0;
         this.label9.Text = "Item Name:";
         // 
-        // itemName
+        // tbItemName
         // 
-        this.itemName.Location = new System.Drawing.Point(69, 55);
-        this.itemName.Name = "itemName";
-        this.itemName.Size = new System.Drawing.Size(148, 20);
-        this.itemName.TabIndex = 11;
-        this.itemName.TextChanged += new System.EventHandler(this.itemName_TextChanged);
+        this.tbItemName.Location = new System.Drawing.Point(69, 55);
+        this.tbItemName.Name = "tbItemName";
+        this.tbItemName.Size = new System.Drawing.Size(148, 20);
+        this.tbItemName.TabIndex = 11;
+        this.tbItemName.TextChanged += new System.EventHandler(this.itemName_TextChanged);
         // 
         // itemsOnMenubar
         // 
@@ -2801,7 +2801,7 @@
     private System.Windows.Forms.GroupBox itemProperties;
     private System.Windows.Forms.CheckBox isWeather;
     private System.Windows.Forms.Label label9;
-    private System.Windows.Forms.TextBox itemName;
+    private System.Windows.Forms.TextBox tbItemName;
     private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
     private System.Windows.Forms.Button cancelButton;
     private System.Windows.Forms.Button editButton;
