@@ -55,6 +55,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
+          if (menItem.pluginParamter != "false")
+               rawXML.AppendLine("<hyperlinkParameter>"+ menItem.pluginParamter + "</hyperlinkParameter>");
+
           rawXML.AppendLine("<hover>-</hover>");
 
           if (menuItems.IndexOf(menItem) == 0)
@@ -112,6 +115,9 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<action>97</action>");
           else
             rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+
+          if (menItem.pluginParamter != "false")
+               rawXML.AppendLine("<hyperlinkParameter>"+ menItem.pluginParamter + "</hyperlinkParameter>");
 
           rawXML.AppendLine("<hover>-</hover>");
 

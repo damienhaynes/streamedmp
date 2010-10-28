@@ -96,6 +96,8 @@
         this.bgBox = new System.Windows.Forms.ComboBox();
         this.labelImageFolder = new System.Windows.Forms.Label();
         this.itemProperties = new System.Windows.Forms.GroupBox();
+        this.lbTVSView = new System.Windows.Forms.Label();
+        this.cboTvSeriesView = new System.Windows.Forms.ComboBox();
         this.cancelCreateButton = new System.Windows.Forms.Button();
         this.cboContextLabel = new System.Windows.Forms.ComboBox();
         this.label18 = new System.Windows.Forms.Label();
@@ -646,7 +648,7 @@
         // btSelectOverlay
         // 
         this.btSelectOverlay.AutoSize = true;
-        this.btSelectOverlay.Location = new System.Drawing.Point(654, 242);
+        this.btSelectOverlay.Location = new System.Drawing.Point(654, 256);
         this.btSelectOverlay.Name = "btSelectOverlay";
         this.btSelectOverlay.Size = new System.Drawing.Size(92, 23);
         this.btSelectOverlay.TabIndex = 124;
@@ -656,7 +658,7 @@
         // 
         // addSubmenus
         // 
-        this.addSubmenus.Location = new System.Drawing.Point(538, 242);
+        this.addSubmenus.Location = new System.Drawing.Point(538, 256);
         this.addSubmenus.Name = "addSubmenus";
         this.addSubmenus.Size = new System.Drawing.Size(110, 23);
         this.addSubmenus.TabIndex = 123;
@@ -669,7 +671,7 @@
         this.richTextBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
         this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.richTextBox2.Location = new System.Drawing.Point(3, 356);
+        this.richTextBox2.Location = new System.Drawing.Point(3, 366);
         this.richTextBox2.Name = "richTextBox2";
         this.richTextBox2.Size = new System.Drawing.Size(197, 60);
         this.richTextBox2.TabIndex = 122;
@@ -684,7 +686,7 @@
         this.groupBox3.Controls.Add(this.selectedWindowIDL);
         this.groupBox3.Controls.Add(this.selectedWindow);
         this.groupBox3.Controls.Add(this.selectedWindowL);
-        this.groupBox3.Location = new System.Drawing.Point(211, 112);
+        this.groupBox3.Location = new System.Drawing.Point(211, 127);
         this.groupBox3.Name = "groupBox3";
         this.groupBox3.Size = new System.Drawing.Size(321, 65);
         this.groupBox3.TabIndex = 0;
@@ -758,7 +760,7 @@
         // btMoveDown
         // 
         this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
-        this.btMoveDown.Location = new System.Drawing.Point(713, 134);
+        this.btMoveDown.Location = new System.Drawing.Point(711, 146);
         this.btMoveDown.Name = "btMoveDown";
         this.btMoveDown.Size = new System.Drawing.Size(33, 105);
         this.btMoveDown.TabIndex = 116;
@@ -769,7 +771,7 @@
         // btMoveUp
         // 
         this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
-        this.btMoveUp.Location = new System.Drawing.Point(714, 23);
+        this.btMoveUp.Location = new System.Drawing.Point(710, 22);
         this.btMoveUp.Name = "btMoveUp";
         this.btMoveUp.Size = new System.Drawing.Size(33, 105);
         this.btMoveUp.TabIndex = 115;
@@ -779,7 +781,7 @@
         // 
         // cancelButton
         // 
-        this.cancelButton.Location = new System.Drawing.Point(619, 268);
+        this.cancelButton.Location = new System.Drawing.Point(619, 282);
         this.cancelButton.Name = "cancelButton";
         this.cancelButton.Size = new System.Drawing.Size(49, 21);
         this.cancelButton.TabIndex = 21;
@@ -789,7 +791,7 @@
         // 
         // editButton
         // 
-        this.editButton.Location = new System.Drawing.Point(540, 267);
+        this.editButton.Location = new System.Drawing.Point(540, 281);
         this.editButton.Name = "editButton";
         this.editButton.Size = new System.Drawing.Size(52, 21);
         this.editButton.TabIndex = 7;
@@ -800,7 +802,7 @@
         // saveButton
         // 
         this.saveButton.Enabled = false;
-        this.saveButton.Location = new System.Drawing.Point(695, 268);
+        this.saveButton.Location = new System.Drawing.Point(695, 282);
         this.saveButton.Name = "saveButton";
         this.saveButton.Size = new System.Drawing.Size(48, 23);
         this.saveButton.TabIndex = 20;
@@ -821,7 +823,7 @@
         this.groupBox1.Controls.Add(this.menuItemBGFolderL);
         this.groupBox1.Controls.Add(this.menuItemNameL);
         this.groupBox1.Controls.Add(this.menuitemBGFolder);
-        this.groupBox1.Location = new System.Drawing.Point(538, 302);
+        this.groupBox1.Location = new System.Drawing.Point(538, 312);
         this.groupBox1.Name = "groupBox1";
         this.groupBox1.Size = new System.Drawing.Size(209, 112);
         this.groupBox1.TabIndex = 0;
@@ -921,7 +923,7 @@
         // 
         // removeButton
         // 
-        this.removeButton.Location = new System.Drawing.Point(211, 390);
+        this.removeButton.Location = new System.Drawing.Point(211, 400);
         this.removeButton.Name = "removeButton";
         this.removeButton.Size = new System.Drawing.Size(321, 26);
         this.removeButton.TabIndex = 51;
@@ -933,7 +935,7 @@
         // addButton
         // 
         this.addButton.Enabled = false;
-        this.addButton.Location = new System.Drawing.Point(211, 357);
+        this.addButton.Location = new System.Drawing.Point(211, 367);
         this.addButton.Name = "addButton";
         this.addButton.Size = new System.Drawing.Size(321, 26);
         this.addButton.TabIndex = 50;
@@ -953,7 +955,7 @@
         this.backgroundImages.Controls.Add(this.bgBox);
         this.backgroundImages.Controls.Add(this.labelImageFolder);
         this.backgroundImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        this.backgroundImages.Location = new System.Drawing.Point(211, 183);
+        this.backgroundImages.Location = new System.Drawing.Point(211, 195);
         this.backgroundImages.Name = "backgroundImages";
         this.backgroundImages.Size = new System.Drawing.Size(321, 167);
         this.backgroundImages.TabIndex = 13;
@@ -1063,6 +1065,8 @@
         // 
         // itemProperties
         // 
+        this.itemProperties.Controls.Add(this.lbTVSView);
+        this.itemProperties.Controls.Add(this.cboTvSeriesView);
         this.itemProperties.Controls.Add(this.cancelCreateButton);
         this.itemProperties.Controls.Add(this.cboContextLabel);
         this.itemProperties.Controls.Add(this.label18);
@@ -1071,10 +1075,28 @@
         this.itemProperties.Controls.Add(this.itemName);
         this.itemProperties.Location = new System.Drawing.Point(211, 6);
         this.itemProperties.Name = "itemProperties";
-        this.itemProperties.Size = new System.Drawing.Size(323, 96);
+        this.itemProperties.Size = new System.Drawing.Size(323, 115);
         this.itemProperties.TabIndex = 8;
         this.itemProperties.TabStop = false;
         this.itemProperties.Text = "Item properties";
+        // 
+        // lbTVSView
+        // 
+        this.lbTVSView.AutoSize = true;
+        this.lbTVSView.Location = new System.Drawing.Point(9, 89);
+        this.lbTVSView.Name = "lbTVSView";
+        this.lbTVSView.Size = new System.Drawing.Size(58, 13);
+        this.lbTVSView.TabIndex = 103;
+        this.lbTVSView.Text = "Parameter:";
+        // 
+        // cboTvSeriesView
+        // 
+        this.cboTvSeriesView.FormattingEnabled = true;
+        this.cboTvSeriesView.Location = new System.Drawing.Point(69, 86);
+        this.cboTvSeriesView.Name = "cboTvSeriesView";
+        this.cboTvSeriesView.Size = new System.Drawing.Size(242, 21);
+        this.cboTvSeriesView.TabIndex = 102;
+        this.cboTvSeriesView.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
         // 
         // cancelCreateButton
         // 
@@ -1115,7 +1137,7 @@
         // label18
         // 
         this.label18.AutoSize = true;
-        this.label18.Location = new System.Drawing.Point(23, 27);
+        this.label18.Location = new System.Drawing.Point(31, 27);
         this.label18.Name = "label18";
         this.label18.Size = new System.Drawing.Size(36, 13);
         this.label18.TabIndex = 101;
@@ -1134,7 +1156,7 @@
         // label9
         // 
         this.label9.AutoSize = true;
-        this.label9.Location = new System.Drawing.Point(4, 59);
+        this.label9.Location = new System.Drawing.Point(6, 59);
         this.label9.Name = "label9";
         this.label9.Size = new System.Drawing.Size(61, 13);
         this.label9.TabIndex = 0;
@@ -1154,7 +1176,7 @@
         this.itemsOnMenubar.FormattingEnabled = true;
         this.itemsOnMenubar.Location = new System.Drawing.Point(540, 22);
         this.itemsOnMenubar.Name = "itemsOnMenubar";
-        this.itemsOnMenubar.Size = new System.Drawing.Size(168, 214);
+        this.itemsOnMenubar.Size = new System.Drawing.Size(168, 229);
         this.itemsOnMenubar.TabIndex = 6;
         this.itemsOnMenubar.SelectedIndexChanged += new System.EventHandler(this.itemsOnMenubar_SelectedIndexChanged);
         // 
@@ -1164,7 +1186,7 @@
         this.xmlFiles.FormattingEnabled = true;
         this.xmlFiles.Location = new System.Drawing.Point(3, 47);
         this.xmlFiles.Name = "xmlFiles";
-        this.xmlFiles.Size = new System.Drawing.Size(198, 303);
+        this.xmlFiles.Size = new System.Drawing.Size(198, 316);
         this.xmlFiles.TabIndex = 5;
         this.xmlFiles.Click += new System.EventHandler(this.xmlFiles_Click);
         this.xmlFiles.SelectedIndexChanged += new System.EventHandler(this.xmlFiles_SelectedIndexChanged);
@@ -2971,6 +2993,8 @@
     private System.Windows.Forms.Button btSelectOverlay;
     private System.Windows.Forms.CheckBox cbEnableRecentRecordedTV;
     private System.Windows.Forms.CheckBox cbEnableRecentMusic;
+    private System.Windows.Forms.Label lbTVSView;
+    private System.Windows.Forms.ComboBox cboTvSeriesView;
   }
 }
 

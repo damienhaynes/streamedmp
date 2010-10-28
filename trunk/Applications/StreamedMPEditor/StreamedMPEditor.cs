@@ -265,9 +265,18 @@ namespace StreamedMPEditor
         autoPurgeBackups.Checked = true;
       }
 
+
       if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1265)))
-      {        
-        tvseriesViews = GetTVSeriesViews();
+      {
+          tvseriesViews = GetTVSeriesViews();
+
+          cboTvSeriesView.Items.Clear();
+          foreach (KeyValuePair<string, string> tvv in tvseriesViews)
+          {
+              cboTvSeriesView.Items.Add(tvv.Value);
+          }
+          cboTvSeriesView.Visible = false;
+          lbTVSView.Visible = false;
       }
     }
 
@@ -491,6 +500,7 @@ namespace StreamedMPEditor
         item.isWeather = isWeather.Checked;
         item.disableBGSharing = disableBGSharing.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
+        item.pluginParamter = cboTvSeriesView.SelectedItem.ToString();
 
         if (item.fanartHandlerEnabled)
           checkAndSetRandomFanart(item.fanartProperty);
@@ -532,6 +542,7 @@ namespace StreamedMPEditor
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
       cboFanartProperty.Text = mnuItem.fanartProperty;
+      cboTvSeriesView.Text = mnuItem.pluginParamter;
 
       if (cboFanartProperty.Text.ToLower() == "false")
         cboFanartProperty.Text = "";
@@ -572,6 +583,7 @@ namespace StreamedMPEditor
         item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
+        item.pluginParamter = cboTvSeriesView.SelectedItem.ToString();
 
         if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
         {
@@ -649,6 +661,17 @@ namespace StreamedMPEditor
       cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
+      if (mnuItem.hyperlink == tvseriesSkinID)
+      {
+          cboTvSeriesView.Visible = true;
+          lbTVSView.Visible = true;
+          cboTvSeriesView.Text = mnuItem.pluginParamter;
+      }
+      else
+      {
+          cboTvSeriesView.Visible = false;
+          lbTVSView.Visible = false;
+      }
 
       menuitemName.Text = mnuItem.name;
       menuItemLabel.Text = mnuItem.contextLabel;
@@ -675,12 +698,22 @@ namespace StreamedMPEditor
 
     void xmlFiles_Click(object sender, EventArgs e)
     {
-      selectedWindow.Text = xmlFiles.Text;
-      selectedWindowID.Text = ids[xmlFiles.SelectedIndex];
-      enableItemControls();
-      editButton.Enabled = false;
-      cancelCreateButton.Visible = true;
-      btGenerateMenu.Enabled = false;
+        selectedWindow.Text = xmlFiles.Text;
+        selectedWindowID.Text = ids[xmlFiles.SelectedIndex];
+        enableItemControls();
+        editButton.Enabled = false;
+        cancelCreateButton.Visible = true;
+        btGenerateMenu.Enabled = false;
+        if (selectedWindowID.Text == tvseriesSkinID)
+        {
+            cboTvSeriesView.Visible = true;
+            lbTVSView.Visible = true;
+        }
+        else
+        {
+            cboTvSeriesView.Visible = false;
+            lbTVSView.Visible = false;
+        }
     }
 
 
@@ -1223,6 +1256,11 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 
   }
 }

@@ -1770,6 +1770,7 @@ namespace StreamedMPEditor
     public class menuItem
     {
       public string hyperlink;
+      public string pluginParamter;
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
