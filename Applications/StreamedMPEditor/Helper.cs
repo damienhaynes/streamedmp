@@ -6,6 +6,7 @@ using System.Xml;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Reflection;
 using MediaPortal.Configuration;
 
 namespace StreamedMPEditor
@@ -213,6 +214,43 @@ namespace StreamedMPEditor
       MediaPortal.Profile.Settings.SaveCache();
     }
 
+    #region Assembly Helpers
+    public static bool IsAssemblyAvailable(string name, Version ver)
+    {
+      bool result = false;
+
+      Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+      foreach (Assembly a in assemblies)
+      {
+        try
+        {
+          if (a.GetName().Name == name && a.GetName().Version >= ver)
+          {
+            result = true;
+            break;
+          }
+        }
+        catch (Exception e)
+        {
+        }
+      }
+
+      if (!result)
+      {  
+        try
+        {
+          Assembly assembly = Assembly.ReflectionOnlyLoad(name);       
+          result = true;
+        }
+        catch (Exception e)
+        {
+          result = false;
+        }
+      }
+
+      return result;
+    }
+    #endregion
 
   }
 }

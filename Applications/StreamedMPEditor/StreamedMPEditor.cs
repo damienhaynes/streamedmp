@@ -9,6 +9,7 @@ using MediaPortal.GUI.Library;
 using MediaPortal.Utils;
 using System.Text.RegularExpressions;
 using SMPCheckSum;
+using WindowPlugins.GUITVSeries;
 
 namespace StreamedMPEditor
 {
@@ -210,6 +211,8 @@ namespace StreamedMPEditor
     randomFanartSetting randomFanart = new randomFanartSetting();
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
+    List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
+
     #endregion
 
     #region Public methods
@@ -260,6 +263,11 @@ namespace StreamedMPEditor
       if (Properties.Settings.Default.autoPurge)
       {
         autoPurgeBackups.Checked = true;
+      }
+
+      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1265)))
+      {        
+        tvseriesViews = GetTVSeriesViews();
       }
     }
 
@@ -1103,8 +1111,20 @@ namespace StreamedMPEditor
       else
         helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
     }
-
-
+    
+    /// <summary>
+    /// Get list of views in TVseries database
+    /// Key: should be used as hyperlinkParameter
+    /// Val: can be used as a default display name
+    /// </summary>    
+    private List<KeyValuePair<string, string>> GetTVSeriesViews()
+    {
+      // check if we have already got them
+      if (tvseriesViews.Count == 0)
+        tvseriesViews = DBView.GetSkinViews();
+        
+      return tvseriesViews;      
+    }
 
     #endregion
 
