@@ -40,22 +40,28 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
+      <width>1281</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
       <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
     </control>
-    <!--            :: HIDDEN MENU ::           -->
-    <import>myvideoHiddenMenu.xml</import>
-    <!--            :: LIST VIEW ::            	-->
-    <import>myvideoListView.xml</import>
-    <!--            :: FILMSTRIP VIEW ::        -->
-    <import>myvideoFilmstripView.xml</import>
-    <!--            :: ICON VIEWS ::            -->
-    <import>myvideoThumbsView.xml</import>
-    <!--            :: FACADE ::            	-->
+	<control>
+      <description>Top Bar Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>51</height>
+      <texture>overlay_topbar.png</texture>
+	  <visible>![facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist|facadeview.filmstrip]</visible>
+    </control>
+    <import>myvideoHiddenMenu.xml</import>    
+    <import>myvideoListView.xml</import>    
+    <import>myvideoFilmstripView.xml</import>    
+    <import>myvideoThumbsView.xml</import>	
     <import>common.facade.video.xml</import>
-    <!--            :: OTHER ::            		-->
+	<import>myvideoCoverFlow.xml</import>
     <import>common.overlays2.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
