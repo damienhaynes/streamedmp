@@ -289,7 +289,15 @@ namespace StreamedMPEditor
       }
     }
 
-
+    public string getTVSeriesViewKey(string value)
+    {
+        foreach (KeyValuePair<string, string> tvv in tvseriesViews)
+        {
+            if (tvv.Value.ToLower() == value.ToLower())
+                return tvv.Key;
+        }
+        return "false";
+    }
 
     #endregion
 
@@ -591,7 +599,10 @@ namespace StreamedMPEditor
         item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
         item.hyperlink = ids[xmlFiles.SelectedIndex];
-        item.hyperlinkParameter = tvseriesViews[cboTvSeriesView.SelectedIndex].Key;
+        if (cboTvSeriesView.SelectedIndex != -1)
+            item.hyperlinkParameter = tvseriesViews[cboTvSeriesView.SelectedIndex].Key;
+        else
+            item.hyperlinkParameter = "false";
         item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
@@ -1272,18 +1283,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
-
-
-
-    public string getTVSeriesViewKey(string value)
-    {
-        foreach (KeyValuePair<string, string> tvv in tvseriesViews)
-        {
-            if (tvv.Value.ToLower() == value.ToLower())
-                return tvv.Key;
-        }
-        return "false";
-    }
 
   }
 }
