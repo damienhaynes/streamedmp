@@ -1770,7 +1770,7 @@ namespace StreamedMPEditor
     public class menuItem
     {
       public string hyperlink;
-      public string pluginParamter;
+      public string hyperlinkParameter;
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
@@ -1795,6 +1795,7 @@ namespace StreamedMPEditor
       public string displayName; 
       public string xmlFileName;
       public string hyperlink;
+      public string hyperlinkParameter;
       public displayMostRecent showMostRecent;
     }
 

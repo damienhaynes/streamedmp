@@ -129,6 +129,9 @@ namespace StreamedMPEditor
         else
           localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
 
+        if (parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
+            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+
         localxml += "<onleft>" + (parentMenu.id + 900).ToString() + "</onleft>" +
                  "<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
                  "<ondown>" + ondown + "</ondown>" +
@@ -266,6 +269,9 @@ namespace StreamedMPEditor
           localxml += "<action>196250</action>";
         else
           localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
+
+        if (parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
+            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
 
 
         localxml += "<onleft>" + (parentMenu.subMenuLevel1ID + 1).ToString() + "</onleft>" +
