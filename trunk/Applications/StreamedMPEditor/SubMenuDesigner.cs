@@ -448,7 +448,6 @@ namespace StreamedMPEditor
         {
             this.Hide();
         }
-        #endregion
 
         private void lboxSubMenuLevel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -504,5 +503,7 @@ namespace StreamedMPEditor
                 lboxSubMenuLevel1.Items.Insert(index, viewParameter.DisplayName.ToUpper());
             }
         }
+
+        #endregion
     }
 }
