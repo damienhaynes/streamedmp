@@ -462,7 +462,7 @@ namespace StreamedMPEditor
         mnuItem.bgFolder = readEntryValue(menuTag, "menuitem" + i.ToString() + "folder", nodelist);
         mnuItem.fanartProperty = readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartproperty", nodelist);
         mnuItem.hyperlink = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlink", nodelist);
-        mnuItem.pluginParamter = readEntryValue(menuTag, "menuitem" + i.ToString() + "pluginParameter", nodelist);
+        mnuItem.hyperlinkParameter = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlinkParameter", nodelist);
         mnuItem.fanartHandlerEnabled = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanarthandlerenabled", nodelist));
         mnuItem.EnableMusicNowPlayingFanart = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "enablemusicnowplayingfanart", nodelist));
         mnuItem.isDefault = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isdefault", nodelist));
@@ -493,6 +493,7 @@ namespace StreamedMPEditor
               subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "displayName", nodelist);
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlink", nodelist);
+              subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameter", nodelist);
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "mrDisplay", nodelist))
               {
                 case "off":
@@ -523,6 +524,7 @@ namespace StreamedMPEditor
               subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "displayName", nodelist);
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlink", nodelist);
+              subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameter", nodelist);
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "mrDisplay", nodelist))
               {
                 case "off":
