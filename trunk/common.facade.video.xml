@@ -15,6 +15,7 @@ This file should contain the facade view
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+	  <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.filmstrip|facadeview.playlist</visible>
     </control>
     <control>
       <description>Page Count Label</description>
@@ -27,6 +28,7 @@ This file should contain the facade view
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+	  <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.filmstrip|facadeview.playlist</visible>
     </control>
     <!-- Facade Item Counts -->
     <control>
@@ -207,17 +209,17 @@ This file should contain the facade view
           <dimColor>90ffffff</dimColor>
           <id>50</id>
           <posX>0</posX>
-          <posY>200</posY>
+          <posY>240</posY>
           <width>1280</width>
           <height>720</height>
           <onup>2</onup>
           <onleft>2</onleft>
           <selectedCard>0</selectedCard>
           <cardWidth>250</cardWidth>
-          <cardHeight>360</cardHeight>
+          <cardHeight>375</cardHeight>
           <angle>45</angle>
           <sideShift>220</sideShift>
-          <sideGap>150</sideGap>
+          <sideGap>100</sideGap>
           <sideDepth>250</sideDepth>
           <offsetY>0</offsetY>
           <selectedOffsetY>0</selectedOffsetY>
@@ -227,43 +229,43 @@ This file should contain the facade view
           <backgroundX>0</backgroundX>
           <backgroundY>470</backgroundY>
           <backgroundDiffuse>FF000000</backgroundDiffuse>
-          <background>black.png</background>
+          <background>filmstrip_overlay.png</background>
           <showBackground>yes</showBackground>
-          <foregroundHeight>720</foregroundHeight>
-          <foregroundWidth>1280</foregroundWidth>
-          <foregroundX>0</foregroundX>
-          <foregroundY>0</foregroundY>
+          <foregroundHeight>724</foregroundHeight>
+          <foregroundWidth>1284</foregroundWidth>
+          <foregroundX>-2</foregroundX>
+          <foregroundY>-2</foregroundY>
           <foregroundDiffuse>FF000000</foregroundDiffuse>
-          <foreground>coverflow_foreground.png</foreground>
+          <foreground>-</foreground>
           <showForeground>no</showForeground>
           <showFrame>yes</showFrame>
-          <frame>Picture_cover2.png</frame>
-          <frameFocus>Picture_cover2.png</frameFocus>
+          <frame>coverflow.poster.glass.png</frame>
+          <frameFocus>coverflow.poster.glass.png</frameFocus>
           <frameWidth>250</frameWidth>
-          <frameHeight>360</frameHeight>
+          <frameHeight>375</frameHeight>
           <spinSpeed>8</spinSpeed>
           <unfocusedAlpha>FF</unfocusedAlpha>
           <folderPrefix>[</folderPrefix>
           <folderSuffix>]</folderSuffix>
-          <font1>font13</font1>
-          <font2>font10</font2>
+          <font1>mediastream14tc</font1>
+          <font2>mediastream12tc</font2>
           <label1>#title</label1>
           <label2>#genre</label2>
           <textColor>FFFFFFFF</textColor>
           <remoteColor>FFFF0000</remoteColor>
-          <playedColor>FFA0D0FF</playedColor>
+          <playedColor>FFFFFFFF</playedColor>
           <downloadColor>FF00FF00</downloadColor>
           <selectedColor>FFFFFFFF</selectedColor>
           <shadowAngle>45</shadowAngle>
-          <shadowDistance>0</shadowDistance>
-          <shadowColor>FF000000</shadowColor>
-          <label1YOff>405</label1YOff>
-          <label2YOff>430</label2YOff>
+          <shadowDistance>2</shadowDistance>
+          <shadowColor>FF222222</shadowColor>
+          <label1YOff>395</label1YOff>
+          <label2YOff>420</label2YOff>
           <pageSize>5</pageSize>
           <scrollbarBackground>bar_hor.png</scrollbarBackground>
           <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-          <scrollbarYOff>455</scrollbarYOff>
+          <scrollbarYOff>462</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
           <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">
           </cards>
@@ -279,7 +281,6 @@ This file should contain the facade view
                     <height>360</height>
                     <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">black.png</texture>
                   </control>
-
                   <control>
                     <description>Movie Details</description>
                     <type>label</type>
@@ -287,147 +288,92 @@ This file should contain the facade view
                     <posY>10</posY>
                     <width>210</width>
                     <label>Movie Details</label>
-                    <font>font10</font>
+                    <font>mediastream10tc</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-
-
                   <control>
                     <description>genre</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>40</posY>
+                    <posY>30</posY>
                     <width>210</width>
                     <label>#genre</label>
-                    <font>font9</font>
+                    <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
                   <control>
                     <description>year</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>60</posY>
+                    <posY>50</posY>
                     <width>210</width>
                     <label>#year</label>
-                    <font>font9</font>
+                    <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
                   <control>
                     <description>runtime</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>80</posY>
+                    <posY>70</posY>
                     <width>210</width>
                     <label>#runtime min</label>
-                    <font>font9</font>
+                    <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
                   <control>
                     <description>rating</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>100</posY>
+                    <posY>90</posY>
                     <width>210</width>
-                    <label>#rating</label>
-                    <font>font9</font>
+                    <label>#rating (#votes votes)</label>
+                    <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
-                  </control>
-                  <control>
-                    <description>votes</description>
-                    <type>label</type>
-                    <posX>50</posX>
-                    <posY>100</posY>
-                    <width>210</width>
-                    <label>(#votes votes)</label>
-                    <font>font9</font>
-                    <textcolor>FFFFFFFF</textcolor>
-                  </control>
-
+                  </control>                 
                   <control>
                     <description>Director</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>140</posY>
+                    <posY>115</posY>
                     <width>210</width>
-                    <label>Director</label>
-                    <font>font10</font>
+                    <label>199</label>
+                    <font>mediastream10tc</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-
                   <control>
                     <description>director</description>
                     <type>label</type>
                     <posX>20</posX>
-                    <posY>160</posY>
+                    <posY>132</posY>
                     <width>210</width>
                     <label>#director</label>
-                    <font>font9</font>
+                    <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-
+				  <control>
+                    <description>Plot Label</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>155</posY>
+                    <width>210</width>
+                    <label>203</label>
+                    <font>mediastream10tc</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
                   <control>
                     <description>plot</description>
                     <type>textboxscrollup</type>
                     <posX>20</posX>
-                    <posY>180</posY>
-                    <width>210</width>
-                    <height>150</height>
+                    <posY>173</posY>
+                    <width>220</width>
+                    <height>80</height>
                     <label>#plot</label>
-                    <font>font9</font>
-                    <lineSpacing>1</lineSpacing>
+                    <font>mediastream10</font>
+                    <lineSpacing>2</lineSpacing>
                     <textcolor>FFFFFFFF</textcolor>
+					<scrollStartDelaySec>15</scrollStartDelaySec>
                   </control>
-
-                  <control>
-                    <description>mpaa G</description>
-                    <type>image</type>
-                    <posX>20</posX>
-                    <posY>325</posY>
-                    <width>210</width>
-                    <keepaspectratio>yes</keepaspectratio>
-                    <texture>logos/mpaa/large/mpaa_general.png</texture>
-                    <visible>string.contains(#mpaarating, Rated G)</visible>
-                  </control>
-                  <control>
-                    <description>mpaa PG</description>
-                    <type>image</type>
-                    <posX>20</posX>
-                    <posY>325</posY>
-                    <width>210</width>
-                    <keepaspectratio>yes</keepaspectratio>
-                    <texture>logos/mpaa/large/mpaa_pg.png</texture>
-                    <visible>string.contains(#mpaarating, Rated PG)+!string.contains(#mpaarating, Rated PG-13)</visible>
-                  </control>
-                  <control>
-                    <description>mpaa PG-13</description>
-                    <type>image</type>
-                    <posX>20</posX>
-                    <posY>325</posY>
-                    <width>210</width>
-                    <keepaspectratio>yes</keepaspectratio>
-                    <texture>logos/mpaa/large/mpaa_pg13.png</texture>
-                    <visible>string.contains(#mpaarating, Rated PG-13)</visible>
-                  </control>
-                  <control>
-                    <description>mpaa R</description>
-                    <type>image</type>
-                    <posX>20</posX>
-                    <posY>325</posY>
-                    <width>210</width>
-                    <keepaspectratio>yes</keepaspectratio>
-                    <texture>logos/mpaa/large/mpaa_restricted.png</texture>
-                    <visible>string.contains(#mpaarating, Rated R)</visible>
-                  </control>
-                  <control>
-                    <description>mpaa NC17</description>
-                    <type>image</type>
-                    <posX>20</posX>
-                    <posY>325</posY>
-                    <width>210</width>
-                    <keepaspectratio>yes</keepaspectratio>
-                    <texture>logos/mpaa/large/mpaa_nc17.png</texture>
-                    <visible>string.contains(#mpaarating, Rated NC-17)</visible>
-                  </control>                 
                 </controls>
               ]]></subitem>
           </subitems>
