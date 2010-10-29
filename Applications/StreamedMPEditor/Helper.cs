@@ -217,6 +217,10 @@ namespace StreamedMPEditor
     #region Assembly Helpers
     public static bool IsAssemblyAvailable(string name, Version ver)
     {
+      return IsAssemblyAvailable(name, ver, null);
+    }
+    public static bool IsAssemblyAvailable(string name, Version ver, string filename)
+    {
       bool result = false;
 
       Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -230,7 +234,7 @@ namespace StreamedMPEditor
             break;
           }
         }
-        catch (Exception e)
+        catch
         {
         }
       }
@@ -239,10 +243,19 @@ namespace StreamedMPEditor
       {  
         try
         {
-          Assembly assembly = Assembly.ReflectionOnlyLoad(name);       
-          result = true;
+          Assembly assembly = null;
+          if (string.IsNullOrEmpty(filename))
+          {
+            assembly = Assembly.ReflectionOnlyLoad(name);
+            if (assembly.GetName().Version >= ver) result = true;
+          }
+          else
+          {
+            assembly = Assembly.ReflectionOnlyLoadFrom(filename);
+            if (assembly.GetName().Version >= ver) result = true;            
+          }          
         }
-        catch (Exception e)
+        catch
         {
           result = false;
         }
