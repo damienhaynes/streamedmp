@@ -13,7 +13,8 @@ namespace StreamedMPConfig
       HiddenMenuImage = 2,
       RoundedImages = 3,
       IconsInArtwork = 4,
-      PlayRecents = 5
+      PlayRecents = 5,
+      FilterWatchedRecents = 6
     }  
     #endregion
 
@@ -29,6 +30,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.PlayRecents)]
     protected GUIToggleButtonControl btnPlayRecents = null;
+
+    [SkinControl((int)GUIControls.FilterWatchedRecents)]
+    protected GUIToggleButtonControl btnFilterWatchedRecents = null;
     #endregion
 
     #region Constructor
@@ -40,7 +44,8 @@ namespace StreamedMPConfig
     public static bool ShowRoundedImages { get; set; }
     public static bool ShowIconsInArtwork { get; set; }
     public static bool EnablePlayMostRecents { get; set; }
-    public static int MostRecentFanartTimerInt { get; set; }    
+    public static bool FilterWatchedInRecentlyAdded { get; set; }
+    public static int MostRecentFanartTimerInt { get; set; }
     #endregion
 
     #region Public Methods
@@ -75,6 +80,10 @@ namespace StreamedMPConfig
       // Play Most Recents
       btnPlayRecents.Selected = EnablePlayMostRecents;
       btnPlayRecents.Label = Translation.PlayMostRecents;
+
+      // Filter Watched Episodes From RecentlyAdded
+      btnFilterWatchedRecents.Selected = FilterWatchedInRecentlyAdded;
+      btnFilterWatchedRecents.Label = Translation.FilterWatchedRecents;
     }
 
     private void GetControlStates()
@@ -83,6 +92,14 @@ namespace StreamedMPConfig
       ShowRoundedImages = btnRoundedImages.Selected;
       ShowIconsInArtwork = btnIconsInArtwork.Selected;
       EnablePlayMostRecents = btnPlayRecents.Selected;
+      
+      // Update BasicHome RecentlyAdded with new setting
+      if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)
+      {
+        FilterWatchedInRecentlyAdded = btnFilterWatchedRecents.Selected;
+        StreamedMPConfig.getLastThreeAddedTVSeries();
+        StreamedMPConfig.getLastThreeAddedMovies();
+      }
     }
 
     /// <summary>
