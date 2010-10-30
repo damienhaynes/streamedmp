@@ -40,11 +40,11 @@ namespace StreamedMPConfig
     bool minimiseOnExit = false;
     //Declare Timer for use with Most Recent TVSeries/Movies
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
-    settings smpSettings = new settings();
+    static settings smpSettings = new settings();
     SkinInfo skInfo = new SkinInfo();
 
-    List<DBMovieInfo> recentAddedMovies = null;
-    List<DBEpisode> recentAddedEpisodes = null;
+    static List<DBMovieInfo> recentAddedMovies = null;
+    static List<DBEpisode> recentAddedEpisodes = null;
 
     public static List<int> mostRecentEpisodeControlIDs = new List<int>();
     public static List<int> mostRecentMovieControlIDs = new List<int>();
@@ -395,7 +395,7 @@ namespace StreamedMPConfig
         smcLog.WriteLog(string.Format("StreamedMPConfig: Most Recent Fanart Cycle Timer Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Info);
       }
 
-      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 3, 1239)))
+      if ((tvSeriesRecentAddedEnabled || tvSeriesRecentWatchedEnabled) && Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1268)))
       {
         if (tvSeriesRecentAddedEnabled)
           getLastThreeAddedTVSeries();
@@ -609,13 +609,20 @@ namespace StreamedMPConfig
 
     }
 
-    void getLastThreeAddedMovies()
+    public static void getLastThreeAddedMovies()
     {
-      smcLog.WriteLog("Get Most Recent Added Movies", LogLevel.Info);
+      smcLog.WriteLog(string.Format("Get Most Recent Added Movies: Exclude Watched {0}", MiscConfigGUI.FilterWatchedInRecentlyAdded ? "Enabled" : "Disabled"), LogLevel.Info);
       
       // get list of movies in database
       List<DBMovieInfo> movies = DBMovieInfo.GetAll();
       
+      // Filter out any watched movies
+      if (MiscConfigGUI.FilterWatchedInRecentlyAdded)
+      {
+        smcLog.WriteLog("Filtering out watched movies for Recently Added", LogLevel.Info);
+        movies.RemoveAll(movie => movie.UserSettings[0].WatchedCount > 0);
+      }
+
       // get filter criteria of movies protected by parental conrols
       bool pcFilterEnabled = MovingPicturesCore.Settings.ParentalControlsEnabled;
       DBFilter<DBMovieInfo> pcFilter = MovingPicturesCore.Settings.ParentalControlsFilter;     
@@ -623,7 +630,7 @@ namespace StreamedMPConfig
       // apply parental control filter to movie list
       List<DBMovieInfo> filteredMovies = pcFilterEnabled ? pcFilter.Filter(movies).ToList() : movies;
 
-      smcLog.WriteLog(string.Format("{0} Movies found in database", movies.Count.ToString()), LogLevel.Info);      
+      smcLog.WriteLog(string.Format("{0} Movies found in database", movies.Count.ToString()), LogLevel.Info);
       smcLog.WriteLog(string.Format("{0} Movies filtered by parental controls", movies.Count - filteredMovies.Count), LogLevel.Info);      
 
       // Sort list in to most recent first
@@ -666,7 +673,7 @@ namespace StreamedMPConfig
       }
     }
 
-    string GetMovieRuntime(DBMovieInfo movie)
+    static string GetMovieRuntime(DBMovieInfo movie)
     {
       string minutes = string.Empty;
       if (movie == null) return minutes;
@@ -728,13 +735,13 @@ namespace StreamedMPConfig
       setMostRecents();
     }
 
-    void getLastThreeAddedTVSeries()
+    public static void getLastThreeAddedTVSeries()
     {
-      smcLog.WriteLog("Get Most Recent Added TVSeries", LogLevel.Info);
+      smcLog.WriteLog(string.Format("Get Most Recent Added TVSeries: Exclude Watched {0}", MiscConfigGUI.FilterWatchedInRecentlyAdded ? "Enabled" : "Disabled"), LogLevel.Info);
 
       // get list of the 3 most recently added episodes in tvseries database
       // use file created date rather than added as we dont want to see all episodes for new databases
-      recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3);
+      recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
       
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -851,7 +858,7 @@ namespace StreamedMPConfig
       }
     }
 
-    private void setMostRecents()
+    public static void setMostRecents()
     {
       string seasonNum = null;
       string episodeNum = null;
