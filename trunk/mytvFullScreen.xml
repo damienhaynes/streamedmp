@@ -122,25 +122,25 @@
       <posX>230</posX>
       <posY>590</posY>
       <width>820</width>
-      <height>79</height>
+      <height>59</height>
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
       <font>mediastream12</font>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-    <!--<control>
-      <description>On tv NEXT</description>
+    <control>
+      <description>On TV NEXT</description>
       <id>0</id>
-      <type>textbox</type>
-      <width>900</width>
+      <type>label</type>
+      <width>800</width>
       <height>24</height>
       <posX>195</posX>
-      <posY>650</posY>
-      <label>#TV.Next.title</label>
+      <posY>655</posY>
+      <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
-    </control>-->
+    </control>
     <control>
       <description>Progress Bar Background</description>
       <type>image</type>
