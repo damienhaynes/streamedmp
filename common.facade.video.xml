@@ -239,8 +239,8 @@ This file should contain the facade view
           <foreground>-</foreground>
           <showForeground>no</showForeground>
           <showFrame>yes</showFrame>
-          <frame>coverflow.poster.glass.png</frame>
-          <frameFocus>coverflow.poster.glass.png</frameFocus>
+          <frame>coverflow.poster.square.glass.png</frame>
+          <frameFocus>coverflow.poster.square.glass.png</frameFocus>
           <frameWidth>250</frameWidth>
           <frameHeight>375</frameHeight>
           <spinSpeed>8</spinSpeed>
@@ -267,8 +267,7 @@ This file should contain the facade view
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
           <scrollbarYOff>462</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
-          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">
-          </cards>
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
           <subitems>
             <subitem><![CDATA[
                 <controls>
@@ -279,7 +278,7 @@ This file should contain the facade view
                     <posY>0</posY>
                     <width>250</width>
                     <height>360</height>
-                    <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_mask.png">black.png</texture>
+                    <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png">black.png</texture>
                   </control>
                   <control>
                     <description>Movie Details</description>
@@ -351,7 +350,7 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-				  <control>
+				          <control>
                     <description>Plot Label</description>
                     <type>label</type>
                     <posX>20</posX>
@@ -372,7 +371,7 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <lineSpacing>2</lineSpacing>
                     <textcolor>FFFFFFFF</textcolor>
-					<scrollStartDelaySec>15</scrollStartDelaySec>
+					          <scrollStartDelaySec>15</scrollStartDelaySec>
                   </control>
                 </controls>
               ]]></subitem>
