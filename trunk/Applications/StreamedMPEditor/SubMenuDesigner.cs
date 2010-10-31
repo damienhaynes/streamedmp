@@ -29,9 +29,6 @@ namespace StreamedMPEditor
         bool xmlFilesDisplayed = false;
 
         Helper helper = new Helper();
-        ItemNameDialog itemName = new ItemNameDialog();
-
-        tvSeriesParameter viewParameter = new tvSeriesParameter();
 
         public int menuIndex;
 
@@ -141,16 +138,19 @@ namespace StreamedMPEditor
         private void lboxSubMenuLevel1_DragDrop(object sender, DragEventArgs e)
         {
             formStreamedMpEditor.subMenuItem subItem = new formStreamedMpEditor.subMenuItem();
+
             if (e.Data.GetDataPresent(DataFormats.StringFormat))
             {
                 int index = int.Parse((string)e.Data.GetData(DataFormats.StringFormat));
 
                 formStreamedMpEditor.menuItems[menuIndex].subMenuLevel1ID = (formStreamedMpEditor.menuItems[menuIndex].id - 999) * 10000;
 
+                SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(ids[index]));
+
                 if (xmlFilesDisplayed)
                 {
-                    itemName.ShowDialog();
-                    subItem.displayName = itemName.itemDisplayName;
+                    itemProperties.ShowDialog();
+                    subItem.displayName = itemProperties.DisplayName;
                     subItem.xmlFileName = rawXMLFileNames[index];
                     subItem.hyperlink = ids[index];
                 }
@@ -162,6 +162,8 @@ namespace StreamedMPEditor
                 }
             }
             formStreamedMpEditor.changeOutstanding = true;
+            subItem.baseDisplayName = subItem.displayName;
+            subItem.hyperlinkParameter = "false";
             subMenuLevel1.Add(subItem);
             lboxSubMenuLevel1.Items.Add(subItem.displayName);
         }
@@ -169,16 +171,19 @@ namespace StreamedMPEditor
         private void lboxSubMenuLevel2_DragDrop(object sender, DragEventArgs e)
         {
             formStreamedMpEditor.subMenuItem subItem = new formStreamedMpEditor.subMenuItem();
+
             if (e.Data.GetDataPresent(DataFormats.StringFormat))
             {
                 int index = int.Parse((string)e.Data.GetData(DataFormats.StringFormat));
 
                 formStreamedMpEditor.menuItems[menuIndex].subMenuLevel1ID = (formStreamedMpEditor.menuItems[menuIndex].id - 999) * 10000;
 
+                SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(ids[index]));
+
                 if (xmlFilesDisplayed)
                 {
-                    itemName.ShowDialog();
-                    subItem.displayName = itemName.itemDisplayName;
+                    itemProperties.ShowDialog();
+                    subItem.displayName = itemProperties.DisplayName;
                     subItem.xmlFileName = rawXMLFileNames[index];
                     subItem.hyperlink = ids[index];
                 }
@@ -190,6 +195,8 @@ namespace StreamedMPEditor
                 }
             }
             formStreamedMpEditor.changeOutstanding = true;
+            subItem.baseDisplayName = subItem.displayName;
+            subItem.hyperlinkParameter = "false";
             subMenuLevel2.Add(subItem);
             lboxSubMenuLevel2.Items.Add(subItem.displayName);
         }
@@ -208,7 +215,7 @@ namespace StreamedMPEditor
 
             foreach (formStreamedMpEditor.subMenuItem sItem in subMenuLevel1)
             {
-                if (str == sItem.xmlFileName && sItem.hyperlink != formStreamedMpEditor.tvseriesSkinID)
+                if (str == sItem.xmlFileName && !formStreamedMpEditor.pluginTakesParameter(sItem.hyperlink))
                     e.Effect = DragDropEffects.None;
             }
         }
@@ -305,14 +312,40 @@ namespace StreamedMPEditor
             if (lboxSubMenuLevel1.SelectedIndex != -1)
             {
                 int index = lboxSubMenuLevel1.SelectedIndex;
-                itemName.itemDisplayName = subMenuLevel1[index].displayName;
-                itemName.ShowDialog();
-                if (itemName.itemDisplayName != subMenuLevel1[index].displayName)
+
+                SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink));
+
+                itemProperties.DisplayName = subMenuLevel1[index].displayName;
+                itemProperties.HypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
+                itemProperties.ShowDialog();
+                if (itemProperties.DisplayName != subMenuLevel1[index].displayName)
                 {
-                    subMenuLevel1[index].displayName = itemName.itemDisplayName;
-                    lboxSubMenuLevel1.Items.RemoveAt(index);
-                    lboxSubMenuLevel1.Items.Insert(index, itemName.itemDisplayName);
+                    subMenuLevel1[index].displayName = itemProperties.DisplayName;
                     formStreamedMpEditor.changeOutstanding = true;
+                }
+                if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
+                {
+                    subMenuLevel1[index].hyperlinkParameter = "false";
+                    subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+                    formStreamedMpEditor.changeOutstanding = true;
+                }
+                else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+                {
+                    subMenuLevel1[index].hyperlinkParameter = itemProperties.HypelinkParameter;
+                    subMenuLevel1[index].displayName = itemProperties.DisplayName.ToUpper();
+                    if (itemProperties.HypelinkParameterName != "false")
+                        subMenuLevel1[index].displayName = itemProperties.HypelinkParameterName.ToUpper();
+
+                    formStreamedMpEditor.changeOutstanding = true;
+                }
+                
+                if (formStreamedMpEditor.changeOutstanding)
+                {
+                    lboxSubMenuLevel1.Items.Clear();
+                    for (int i = 0; i < subMenuLevel1.Count; i++)
+                    {
+                        lboxSubMenuLevel1.Items.Add(subMenuLevel1[i].displayName);
+                    }
                 }
             }
         }
@@ -322,14 +355,38 @@ namespace StreamedMPEditor
             if (lboxSubMenuLevel2.SelectedIndex != -1)
             {
                 int index = lboxSubMenuLevel2.SelectedIndex;
-                itemName.itemDisplayName = subMenuLevel2[index].displayName;
-                itemName.ShowDialog();
-                if (itemName.itemDisplayName != subMenuLevel2[index].displayName)
+
+                SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink));
+
+                itemProperties.DisplayName = subMenuLevel2[index].displayName;
+                itemProperties.ShowDialog();
+                if (itemProperties.DisplayName != subMenuLevel2[index].displayName)
                 {
-                    subMenuLevel2[index].displayName = itemName.itemDisplayName;
-                    lboxSubMenuLevel2.Items.RemoveAt(index);
-                    lboxSubMenuLevel2.Items.Insert(index, itemName.itemDisplayName);
+                    subMenuLevel2[index].hyperlinkParameter = "false";
+                    subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
                     formStreamedMpEditor.changeOutstanding = true;
+                }
+                if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
+                {
+                    subMenuLevel1[index].hyperlinkParameter = "false";
+                }
+                else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+                {
+                    subMenuLevel2[index].hyperlinkParameter = itemProperties.HypelinkParameter;
+                    subMenuLevel2[index].displayName = itemProperties.DisplayName.ToUpper();
+                    if (itemProperties.HypelinkParameterName != "false")
+                        subMenuLevel2[index].displayName = itemProperties.HypelinkParameterName.ToUpper();
+
+                    formStreamedMpEditor.changeOutstanding = true;
+                }
+
+                if (formStreamedMpEditor.changeOutstanding)
+                {
+                    lboxSubMenuLevel2.Items.Clear();
+                    for (int i = 0; i < subMenuLevel2.Count; i++)
+                    {
+                        lboxSubMenuLevel2.Items.Add(subMenuLevel2[i].displayName);
+                    }
                 }
             }
         }
@@ -447,61 +504,6 @@ namespace StreamedMPEditor
         private void btSaveAndClose_Click(object sender, EventArgs e)
         {
             this.Hide();
-        }
-
-        private void lboxSubMenuLevel1_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                lboxSubMenuLevel1.SelectedIndex = lboxSubMenuLevel1.IndexFromPoint(e.Location);
-                if (lboxSubMenuLevel1.SelectedIndex != -1)
-                {
-                    submenuContextMenu.Show((Control)sender, e.X, e.Y);
-                }
-            }
-        }
-
-        private void lboxSubMenuLevel2_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                lboxSubMenuLevel2.SelectedIndex = lboxSubMenuLevel2.IndexFromPoint(e.Location);
-                if (lboxSubMenuLevel2.SelectedIndex != -1)
-                {
-                    submenuContextMenu.Show((Control)sender, e.X, e.Y);
-                }
-            }
-        }
-
-        private void submenuContextMenu_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void addPluginParameterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            if (submenuContextMenu.SourceControl.Name == "lboxSubMenuLevel1")
-            {
-                int index = lboxSubMenuLevel1.SelectedIndex;
-                viewParameter.SelectedView = subMenuLevel1[index].hyperlinkParameter;
-                viewParameter.ShowDialog();
-                subMenuLevel1[index].hyperlinkParameter = viewParameter.SelectedView;
-                subMenuLevel1[index].displayName = viewParameter.DisplayName.ToUpper();
-                lboxSubMenuLevel1.Items.RemoveAt(index);
-                lboxSubMenuLevel1.Items.Insert(index, viewParameter.DisplayName.ToUpper());
-            }
-
-            if (submenuContextMenu.SourceControl.Name == "lboxSubMenuLevel2")
-            {
-                int index = lboxSubMenuLevel2.SelectedIndex;
-                viewParameter.SelectedView = subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].hyperlinkParameter;
-                viewParameter.ShowDialog();
-                subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].hyperlinkParameter = viewParameter.SelectedView;
-                subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].displayName = viewParameter.DisplayName.ToUpper();
-                lboxSubMenuLevel1.Items.RemoveAt(index);
-                lboxSubMenuLevel1.Items.Insert(index, viewParameter.DisplayName.ToUpper());
-            }
         }
 
         #endregion

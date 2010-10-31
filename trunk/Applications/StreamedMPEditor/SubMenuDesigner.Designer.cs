@@ -76,8 +76,6 @@
         this.btSubMenu1MostRecentSettings = new System.Windows.Forms.Button();
         this.btSubMenu2MostRecentSettings = new System.Windows.Forms.Button();
         this.subMenuToolTip = new System.Windows.Forms.ToolTip(this.components);
-        this.submenuContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-        this.addPluginParameterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
         this.pEditingInfo.SuspendLayout();
         this.panel1.SuspendLayout();
         this.panel2.SuspendLayout();
@@ -86,7 +84,6 @@
         this.panel5.SuspendLayout();
         this.panel6.SuspendLayout();
         this.panel7.SuspendLayout();
-        this.submenuContextMenu.SuspendLayout();
         this.SuspendLayout();
         // 
         // lboxSubMenuLevel1
@@ -101,7 +98,6 @@
         this.lboxSubMenuLevel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel1_DragDrop);
         this.lboxSubMenuLevel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel1_DragEnter);
         this.lboxSubMenuLevel1.DragOver += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel1_DragOver);
-        this.lboxSubMenuLevel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lboxSubMenuLevel1_MouseDown);
         // 
         // lboxSubMenuLevel2
         // 
@@ -115,7 +111,6 @@
         this.lboxSubMenuLevel2.DragDrop += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel2_DragDrop);
         this.lboxSubMenuLevel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel2_DragEnter);
         this.lboxSubMenuLevel2.DragOver += new System.Windows.Forms.DragEventHandler(this.lboxSubMenuLevel2_DragOver);
-        this.lboxSubMenuLevel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lboxSubMenuLevel2_MouseDown);
         // 
         // lbBaseMenuItem
         // 
@@ -257,7 +252,7 @@
         // 
         this.btRemoveSubItem1.Location = new System.Drawing.Point(3, 250);
         this.btRemoveSubItem1.Name = "btRemoveSubItem1";
-        this.btRemoveSubItem1.Size = new System.Drawing.Size(81, 23);
+        this.btRemoveSubItem1.Size = new System.Drawing.Size(90, 23);
         this.btRemoveSubItem1.TabIndex = 19;
         this.btRemoveSubItem1.Text = "Remove Item";
         this.btRemoveSubItem1.UseVisualStyleBackColor = true;
@@ -267,7 +262,7 @@
         // 
         this.btRemoveSubItem2.Location = new System.Drawing.Point(4, 249);
         this.btRemoveSubItem2.Name = "btRemoveSubItem2";
-        this.btRemoveSubItem2.Size = new System.Drawing.Size(81, 23);
+        this.btRemoveSubItem2.Size = new System.Drawing.Size(90, 23);
         this.btRemoveSubItem2.TabIndex = 20;
         this.btRemoveSubItem2.Text = "Remove Item";
         this.btRemoveSubItem2.UseVisualStyleBackColor = true;
@@ -293,21 +288,21 @@
         // 
         // btEditItemSubMenu1
         // 
-        this.btEditItemSubMenu1.Location = new System.Drawing.Point(355, 286);
+        this.btEditItemSubMenu1.Location = new System.Drawing.Point(109, 249);
         this.btEditItemSubMenu1.Name = "btEditItemSubMenu1";
-        this.btEditItemSubMenu1.Size = new System.Drawing.Size(81, 23);
+        this.btEditItemSubMenu1.Size = new System.Drawing.Size(90, 23);
         this.btEditItemSubMenu1.TabIndex = 23;
-        this.btEditItemSubMenu1.Text = "Edit Item";
+        this.btEditItemSubMenu1.Text = "Item Properties";
         this.btEditItemSubMenu1.UseVisualStyleBackColor = true;
         this.btEditItemSubMenu1.Click += new System.EventHandler(this.btEditItemSubMenu1_Click);
         // 
         // btEditSubMenu2
         // 
-        this.btEditSubMenu2.Location = new System.Drawing.Point(119, 249);
+        this.btEditSubMenu2.Location = new System.Drawing.Point(110, 250);
         this.btEditSubMenu2.Name = "btEditSubMenu2";
-        this.btEditSubMenu2.Size = new System.Drawing.Size(81, 23);
+        this.btEditSubMenu2.Size = new System.Drawing.Size(90, 23);
         this.btEditSubMenu2.TabIndex = 24;
-        this.btEditSubMenu2.Text = "Edit Item";
+        this.btEditSubMenu2.Text = "Item Properties";
         this.btEditSubMenu2.UseVisualStyleBackColor = true;
         this.btEditSubMenu2.Click += new System.EventHandler(this.btEditSubMenu2_Click);
         // 
@@ -489,6 +484,7 @@
         this.panel6.Controls.Add(this.btRemoveSubItem1);
         this.panel6.Controls.Add(this.lboxSubMenuLevel1);
         this.panel6.Controls.Add(this.panel1);
+        this.panel6.Controls.Add(this.btEditItemSubMenu1);
         this.panel6.Location = new System.Drawing.Point(235, 36);
         this.panel6.Name = "panel6";
         this.panel6.Size = new System.Drawing.Size(204, 278);
@@ -551,21 +547,6 @@
         this.subMenuToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
         this.subMenuToolTip.ToolTipTitle = "Sub Menu Editor";
         // 
-        // submenuContextMenu
-        // 
-        this.submenuContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPluginParameterToolStripMenuItem});
-        this.submenuContextMenu.Name = "submenuContextMenu";
-        this.submenuContextMenu.Size = new System.Drawing.Size(191, 48);
-        this.submenuContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.submenuContextMenu_Opening);
-        // 
-        // addPluginParameterToolStripMenuItem
-        // 
-        this.addPluginParameterToolStripMenuItem.Name = "addPluginParameterToolStripMenuItem";
-        this.addPluginParameterToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-        this.addPluginParameterToolStripMenuItem.Text = "Add Plugin Parameter";
-        this.addPluginParameterToolStripMenuItem.Click += new System.EventHandler(this.addPluginParameterToolStripMenuItem_Click);
-        // 
         // formSubMenuDesigner
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -578,7 +559,6 @@
         this.Controls.Add(this.panel5);
         this.Controls.Add(this.panel4);
         this.Controls.Add(this.panel3);
-        this.Controls.Add(this.btEditItemSubMenu1);
         this.Controls.Add(this.btSaveAndClose);
         this.Controls.Add(this.pEditingInfo);
         this.Controls.Add(this.btSwapList);
@@ -606,7 +586,6 @@
         this.panel5.PerformLayout();
         this.panel6.ResumeLayout(false);
         this.panel7.ResumeLayout(false);
-        this.submenuContextMenu.ResumeLayout(false);
         this.ResumeLayout(false);
 
     }
@@ -659,7 +638,5 @@
     private System.Windows.Forms.Button btSubMenu1MostRecentSettings;
     private System.Windows.Forms.Button btSubMenu2MostRecentSettings;
     private System.Windows.Forms.ToolTip subMenuToolTip;
-    private System.Windows.Forms.ContextMenuStrip submenuContextMenu;
-    private System.Windows.Forms.ToolStripMenuItem addPluginParameterToolStripMenuItem;
   }
 }

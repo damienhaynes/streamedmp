@@ -131,6 +131,8 @@ namespace StreamedMPEditor
     public const string movingPicturesSkinID = "96742";
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
+    public const bool hyperlinkParameterEnabled = true;
+    public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
 
     public static bool basicHomeLoadError = false;
@@ -297,6 +299,19 @@ namespace StreamedMPEditor
                 return tvv.Key;
         }
         return "false";
+    }
+
+    public static bool pluginTakesParameter(string hyperLink)
+    {
+        Dictionary<string, bool> parametersValid = new Dictionary<string, bool>();
+
+        // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
+        parametersValid.Add(tvseriesSkinID, true);
+
+        if (parametersValid.ContainsKey(hyperLink))
+            return parametersValid[hyperLink];
+        else
+            return false;
     }
 
     #endregion
@@ -561,8 +576,10 @@ namespace StreamedMPEditor
         bgBox.Text = mnuItem.bgFolder;
         cboFanartProperty.Text = mnuItem.fanartProperty;
 
-        cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
-        //getTVSeriesViewName(mnuItem.hyperlinkParameter);
+        if (mnuItem.hyperlinkParameter != "false")
+            cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
+        else
+            cboTvSeriesView.Text = string.Empty;
 
         if (cboFanartProperty.Text.ToLower() == "false")
             cboFanartProperty.Text = "";
@@ -602,7 +619,10 @@ namespace StreamedMPEditor
         if (cboTvSeriesView.SelectedIndex != -1)
             item.hyperlinkParameter = tvseriesViews[cboTvSeriesView.SelectedIndex].Key;
         else
+        {
             item.hyperlinkParameter = "false";
+            cboTvSeriesView.Text = string.Empty;
+        }
         item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
@@ -683,11 +703,14 @@ namespace StreamedMPEditor
       cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
-      if (mnuItem.hyperlink == tvseriesSkinID)
+      if (pluginTakesParameter(mnuItem.hyperlink))
       {
           cboTvSeriesView.Visible = true;
           lbTVSView.Visible = true;
-          cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
+          if (mnuItem.hyperlinkParameter != "false")
+              cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
+          else
+              cboTvSeriesView.Text = string.Empty;
       }
       else
       {
