@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+	<id>7978</id>
+	<defaultcontrol>70</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<define>#header.label:World Clock</define>
+	<controls>
+		<control>
+			<description>Background Image</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>0</posX>
+			<posY>0</posY>
+			<width>1280</width>
+			<height>720</height>
+			<texture>worldclockbg.png</texture>
+			<colordiffuse>6fffffff</colordiffuse>
+		</control>
+  	<import>common.window.xml</import>
+  	<import>common.time.xml</import>
+
+		<!-- *** Main Clock *** -->
+		<control>
+			<description>Main Clock</description>
+			<type>image</type>
+			<id>50</id>
+			<posX>540</posX>
+			<posY>80</posY>
+			<width>200</width>
+			<height>200</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Main Clock indicator</description>
+			<type>image</type>
+			<id>60</id>
+			<posX>540</posX>
+			<posY>250</posY>
+			<width>30</width>
+			<height>30</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Main Clock button</description>
+			<type>button</type>
+			<id>70</id>
+			<posX>715</posX>
+			<posY>255</posY>
+			<width>25</width>
+			<height>26</height>
+			<onleft>76</onleft>
+			<onright>71</onright>
+			<onup>76</onup>
+			<ondown>71</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+			<label>-</label>
+		</control>
+		<control>
+			<description>Main Clock DateTime</description>
+			<type>label</type>
+			<id>80</id>
+			<posX>640</posX>
+			<posY>305</posY>
+			<align>center</align>
+			<label>#WorldClock.MainClockDateTime</label>
+			<font>mediastream9c</font>
+		</control>
+		<control>
+			<description>Main Clock Description</description>
+			<type>label</type>
+			<id>90</id>
+			<posX>640</posX>
+			<posY>325</posY>
+			<align>center</align>
+			<label>#WorldClock.MainClockDescription</label>
+			<font>mediastream9c</font>
+		</control>
+		<control>
+			<description>Main Clock Sunrise Time</description>
+			<type>label</type>
+			<id>91</id>
+			<posX>540</posX>
+			<posY>345</posY>
+			<align>center</align>
+			<label>Sunrise Time: #WorldClock.MainClockSunriseTime</label>
+			<font>mediastream9c</font>
+		</control>
+		<control>
+			<description>Main Clock Sunset Time</description>
+			<type>label</type>
+			<id>92</id>
+			<posX>740</posX>
+			<posY>345</posY>
+			<align>center</align>
+			<label>Sunset Time: #WorldClock.MainClockSunsetTime</label>
+			<font>mediastream9c</font>
+		</control>
+		<control>
+			<description>Main Clock Moon Phase</description>
+			<type>label</type>
+			<id>93</id>
+			<posX>640</posX>
+			<posY>370</posY>
+			<align>center</align>
+			<label>Moon: #WorldClock.MainClockMoonPhase</label>
+			<font>mediastream9c</font>
+		</control>
+		
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>530</posX>
+			<posY>70</posY>
+			<width>220</width>
+			<height>220</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>	
+		
+
+		<!-- *** Additional Clock 1 *** -->
+		<control>
+			<description>Additional Clock 1</description>
+			<type>image</type>
+			<id>51</id>
+			<posX>62</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 1 indicator</description>
+			<type>image</type>
+			<id>61</id>
+			<posX>62</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 1 button</description>
+			<type>button</type>
+			<id>71</id>
+			<posX>165</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>70</onleft>
+			<onright>72</onright>
+			<onup>70</onup>
+			<ondown>72</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 1 DateTime</description>
+			<type>label</type>
+			<id>81</id>
+			<posX>122</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock1DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 1 Description</description>
+			<type>label</type>
+			<id>91</id>
+			<posX>122</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock1Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>47</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>	
+
+		<!-- *** Additional Clock 2 *** -->
+		<control>
+			<description>Additional Clock 2</description>
+			<type>image</type>
+			<id>52</id>
+			<posX>264</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 2 indicator</description>
+			<type>image</type>
+			<id>62</id>
+			<posX>264</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 2 button</description>
+			<type>button</type>
+			<id>72</id>
+			<posX>367</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>71</onleft>
+			<onright>73</onright>
+			<onup>71</onup>
+			<ondown>73</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 2 DateTime</description>
+			<type>label</type>
+			<id>82</id>
+			<posX>324</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock2DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 2 Description</description>
+			<type>label</type>
+			<id>92</id>
+			<posX>324</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock2Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		
+	  <control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>249</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>
+
+		<!-- *** Additional Clock 3 *** -->
+		<control>
+			<description>Additional Clock 3</description>
+			<type>image</type>
+			<id>53</id>
+			<posX>456</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 3 indicator</description>
+			<type>image</type>
+			<id>63</id>
+			<posX>456</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 3 button</description>
+			<type>button</type>
+			<id>73</id>
+			<posX>559</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>72</onleft>
+			<onright>74</onright>
+			<onup>72</onup>
+			<ondown>74</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 3 DateTime</description>
+			<type>label</type>
+			<id>83</id>
+			<posX>516</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock3DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 3 Description</description>
+			<type>label</type>
+			<id>93</id>
+			<posX>516</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock3Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>441</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>	
+
+		<!-- *** Additional Clock 4 *** -->
+		<control>
+			<description>Additional Clock 4</description>
+			<type>image</type>
+			<id>54</id>
+			<posX>658</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 4 indicator</description>
+			<type>image</type>
+			<id>64</id>
+			<posX>658</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 4 button</description>
+			<type>button</type>
+			<id>74</id>
+			<posX>761</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>73</onleft>
+			<onright>75</onright>
+			<onup>73</onup>
+			<ondown>75</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 4 DateTime</description>
+			<type>label</type>
+			<id>84</id>
+			<posX>718</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock4DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 4 Description</description>
+			<type>label</type>
+			<id>94</id>
+			<posX>718</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock4Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>643</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>	
+
+		<!-- *** Additional Clock 5 *** -->
+		<control>
+			<description>Additional Clock 5</description>
+			<type>image</type>
+			<id>55</id>
+			<posX>860</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 5 indicator</description>
+			<type>image</type>
+			<id>65</id>
+			<posX>860</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 5 button</description>
+			<type>button</type>
+			<id>75</id>
+			<posX>963</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>74</onleft>
+			<onright>76</onright>
+			<onup>74</onup>
+			<ondown>76</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 5 DateTime</description>
+			<type>label</type>
+			<id>85</id>
+			<posX>920</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock5DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 5 Description</description>
+			<type>label</type>
+			<id>95</id>
+			<posX>920</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock5Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>845</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>			
+
+		<!-- *** Additional Clock 6 *** -->
+		<control>
+			<description>Additional Clock 6</description>
+			<type>image</type>
+			<id>56</id>
+			<posX>1062</posX>
+			<posY>400</posY>
+			<width>120</width>
+			<height>120</height>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 6 indicator</description>
+			<type>image</type>
+			<id>66</id>
+			<posX>1062</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>20</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>-</texture>
+		</control>
+		<control>
+			<description>Additional Clock 6 button</description>
+			<type>button</type>
+			<id>76</id>
+			<posX>1165</posX>
+			<posY>500</posY>
+			<width>20</width>
+			<height>21</height>
+			<onleft>75</onleft>
+			<onright>70</onright>
+			<onup>75</onup>
+			<ondown>70</ondown>
+			<textureFocus>worldclock_focus.png</textureFocus>
+			<textureNoFocus>worldclock_nofocus.png</textureNoFocus>
+		</control>
+		<control>
+			<description>Additional Clock 6 DateTime</description>
+			<type>label</type>
+			<id>86</id>
+			<posX>1122</posX>
+			<posY>545</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock6DateTime</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+		<control>
+			<description>Additional Clock 6 Description</description>
+			<type>label</type>
+			<id>96</id>
+			<posX>1122</posX>
+			<posY>570</posY>
+			<align>center</align>
+			<label>#WorldClock.AdditionalClock6Description</label>
+			<font>mediastream9c</font>
+			<textcolor>ff808080</textcolor>
+		</control>
+
+		<control>
+			<description>Main Clock Border</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>1047</posX>
+			<posY>385</posY>
+			<width>150</width>
+			<height>150</height>
+			<keepaspectratio>yes</keepaspectratio>
+			<texture>mayacdborder.png</texture>
+		</control>			
+
+	</controls>
+</window>
