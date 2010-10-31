@@ -188,10 +188,10 @@
       </control>
     </control>
     <!--
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                :::::::::::::::::::::::::::::::::: LIST VIEW and ALBUM VIEW::::::::::::::::::
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                -->
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	:::::::::::::::::::::::::::::::::: LIST VIEW and ALBUM VIEW::::::::::::::::::
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-->
     <control>
       <description>Folder Thumb</description>
       <type>image</type>
@@ -201,7 +201,7 @@
       <width>256</width>
       <height>256</height>
       <texture>DefaultFolderBackBig.png</texture>
-      <visible>control.hasfocus(50)+string.equals(#selectedindex,)</visible>
+      <visible>control.hasfocus(50)+string.equals(#selectedindex,)+!control.hastext(17)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -216,7 +216,7 @@
       <width>357</width>
       <height>206</height>
       <texture>defaultepisodethumb.png</texture>
-      <visible>[facadeview.list | facadeview.album]+!string.equals(#selectedindex,)</visible>
+      <visible>[facadeview.list|facadeview.album]+!string.equals(#selectedindex,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -232,7 +232,7 @@
       <width>354</width>
       <zoom>no</zoom>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-      <visible>facadeview.list | facadeview.album</visible>
+      <visible>facadeview.list|facadeview.album</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -250,7 +250,7 @@
       <zoom>yes</zoom>
       <texture>glassoverlay.png</texture>
       <colordiffuse>69ffffff</colordiffuse>
-      <visible>[facadeview.list | facadeview.album]+!string.equals(#selectedindex,)</visible>
+      <visible>[facadeview.list|facadeview.album]+!string.equals(#selectedindex,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -266,7 +266,7 @@
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <label>#TV.RecordedTV.Title</label>
-      <visible>facadeview.list | facadeview.album</visible>
+      <visible>facadeview.list|facadeview.album</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -283,7 +283,7 @@
       <font>mediastream11tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
-      <visible>facadeview.list | facadeview.album</visible>
+      <visible>facadeview.list|facadeview.album</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -296,7 +296,7 @@
       <posX>28</posX>
       <posY>507</posY>
       <label>#TV.RecordedTV.Time</label>
-      <visible>facadeview.list | facadeview.album</visible>
+      <visible>facadeview.list|facadeview.album</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -313,17 +313,17 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#TV.RecordedTV.Description</label>
-      <visible>facadeview.list | facadeview.album</visible>
+      <visible>facadeview.list|facadeview.album</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
     <!--
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                ::::::::::::::::::::::::::::::::::     THUMBNAIL VIEW      ::::::::::::::::::
-                :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                -->
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	::::::::::::::::::::::::::::::::::     THUMBNAIL VIEW      ::::::::::::::::::
+	:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	-->
     <control>
       <type>fadelabel</type>
       <description>Current program title</description>
@@ -334,7 +334,7 @@
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <label>#TV.RecordedTV.Title</label>
-      <visible>facadeview.largeicons | facadeview.smallicons</visible>
+      <visible>facadeview.largeicons|facadeview.smallicons</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -351,7 +351,7 @@
       <font>mediastream11tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
-      <visible>facadeview.largeicons | facadeview.smallicons</visible>
+      <visible>facadeview.largeicons|facadeview.smallicons</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -365,7 +365,7 @@
       <posY>287</posY>
       <font>mediastream11tc</font>
       <label>#TV.RecordedTV.Time</label>
-      <visible>facadeview.largeicons | facadeview.smallicons</visible>
+      <visible>facadeview.largeicons|facadeview.smallicons</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -382,7 +382,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
       <label>#TV.RecordedTV.Description</label>
-      <visible>facadeview.largeicons | facadeview.smallicons</visible>
+      <visible>facadeview.largeicons|facadeview.smallicons</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
