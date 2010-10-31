@@ -3678,6 +3678,7 @@ namespace StreamedMPEditor
           foreach (subMenuItem subItem in menItem.subMenuLevel1)
           {
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));
@@ -3693,6 +3694,7 @@ namespace StreamedMPEditor
             foreach (subMenuItem subItem in menItem.subMenuLevel2)
             {
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));

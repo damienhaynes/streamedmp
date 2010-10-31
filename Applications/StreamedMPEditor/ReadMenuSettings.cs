@@ -491,6 +491,7 @@ namespace StreamedMPEditor
             {
               subMenuItem subItem = new subMenuItem();
               subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "displayName", nodelist);
+              subItem.baseDisplayName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "baseDisplayName", nodelist);
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlink", nodelist);
               subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameter", nodelist);
@@ -522,6 +523,7 @@ namespace StreamedMPEditor
             {
               subMenuItem subItem = new subMenuItem();
               subItem.displayName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "displayName", nodelist);
+              subItem.baseDisplayName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "baseDisplayName", nodelist);
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlink", nodelist);
               subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameter", nodelist);

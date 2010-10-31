@@ -1792,7 +1792,8 @@ namespace StreamedMPEditor
 
     public class subMenuItem
     {
-      public string displayName; 
+      public string displayName;
+      public string baseDisplayName;
       public string xmlFileName;
       public string hyperlink;
       public string hyperlinkParameter;
