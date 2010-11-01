@@ -270,8 +270,8 @@ namespace StreamedMPEditor
         else
           localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
 
-        if (parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
-            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+        if (parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
+            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
 
 
         localxml += "<onleft>" + (parentMenu.subMenuLevel1ID + 1).ToString() + "</onleft>" +
