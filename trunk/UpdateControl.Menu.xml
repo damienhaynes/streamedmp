@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+	<controls>
+		<control>
+		  <type>image</type>
+		  <posX>0</posX>
+		  <posY>216</posY>
+		  <width>278</width>
+		  <height>720</height>
+		  <texture>hiddenmenu_left.png</texture>
+		  <animation effect="fade" time="500">WindowOpen</animation>
+		  <animation effect="fade" time="500">WindowClose</animation>
+		</control>
+		<control>
+		  <description>Buttons</description>
+		  <type>group</type>
+		  <posX>20</posX>
+		  <posY>250</posY>
+		  <layout>StackLayout</layout>
+		  <control>
+			<description>label OPTIONS</description>
+			<id>0</id>
+			<label>924</label>
+			<type>label</type>
+			<font>mediastream12tc</font>
+			<height>25</height>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Show Updates</description>
+			<type>button</type>
+			<id>2</id>			
+			<onup>7</onup>
+			<ondown>3</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Search Update</description>
+			<type>button</type>
+			<id>3</id>			
+			<onup>2</onup>
+			<ondown>4</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Install Update</description>
+			<type>button</type>
+			<id>4</id>			
+			<onup>3</onup>
+			<ondown>5</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Restore Points</description>
+			<type>togglebutton</type>
+			<id>5</id>			
+			<onup>4</onup>
+			<ondown>6</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Reboot</description>
+			<type>button</type>
+			<id>6</id>			
+			<onup>5</onup>
+			<ondown>7</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		  <control>
+			<description>Clean</description>
+			<type>button</type>
+			<id>7</id>			
+			<onup>6</onup>
+			<ondown>2</ondown>
+			<onright>50</onright>
+			<animation effect="fade" time="500">WindowOpen</animation>
+			<animation effect="fade" time="500">WindowClose</animation>
+		  </control>
+		</control>
+	</controls>
+</window>
