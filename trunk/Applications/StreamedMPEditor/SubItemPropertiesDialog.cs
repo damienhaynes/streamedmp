@@ -54,6 +54,9 @@ namespace StreamedMPEditor
     {
         get
         {
+            if (formStreamedMpEditor.tvseriesViews.Count == 0)
+                return cboTVSViews.Text;
+
             foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
             {
                 if (tvv.Value == cboTVSViews.Text)
@@ -64,6 +67,9 @@ namespace StreamedMPEditor
 
         set
         {
+            if (formStreamedMpEditor.tvseriesViews.Count == 0)
+                cboTVSViews.Text = value;
+
             foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
             {
                 if (value == tvv.Key)
