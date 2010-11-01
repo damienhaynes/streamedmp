@@ -145,6 +145,7 @@ namespace StreamedMPEditor
     bool mostRecentMovPicsCycleFanart = true;
     bool subMenuL1Exists = false;
     bool subMenuL2Exists = false;
+    public static bool hlWarningDone = false;
     public static bool isAlpha = false;
 
     string xml;
@@ -310,10 +311,17 @@ namespace StreamedMPEditor
 
     public static bool pluginTakesParameter(string hyperLink)
     {
-        Dictionary<string, bool> parametersValid = new Dictionary<string, bool>();
+        Helper helper = new Helper();
+        if (!hlWarningDone && tvseriesViews.Count == 0 && isAlpha)
+        {
+            hlWarningDone = true;
+            helper.showError("Unable to Access TVSeries DB, this will reduce functionalty and is most\nlikley caused by running the Standalone version of the Editor.\n\nThis error will prevent access to the TVSeries view parameter lookup.\n\nPlease use the Editor from within MP Confuguration Plugins->Process for full functionality", errorCode.info);
+        }
 
         if (!isAlpha)
-            return false;
+            return false; 
+        
+        Dictionary<string, bool> parametersValid = new Dictionary<string, bool>();
 
         // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
         parametersValid.Add(tvseriesSkinID, true);
