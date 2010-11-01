@@ -20,6 +20,16 @@
   	<import>common.time.xml</import>
 
 		<!-- *** Main Clock *** -->
+	  <control>
+			<description>Main Clock Border BG</description>
+			<type>image</type>
+			<id>0</id>
+			<posX>470</posX>
+			<posY>75</posY>
+			<width>340</width>
+			<height>340</height>
+			<texture>black.png</texture>
+		</control>	
 		<control>
 			<description>Main Clock</description>
 			<type>image</type>
@@ -63,7 +73,7 @@
 			<type>label</type>
 			<id>80</id>
 			<posX>640</posX>
-			<posY>305</posY>
+			<posY>300</posY>
 			<align>center</align>
 			<label>#WorldClock.MainClockDateTime</label>
 			<font>mediastream9c</font>
@@ -73,7 +83,7 @@
 			<type>label</type>
 			<id>90</id>
 			<posX>640</posX>
-			<posY>325</posY>
+			<posY>320</posY>
 			<align>center</align>
 			<label>#WorldClock.MainClockDescription</label>
 			<font>mediastream9c</font>
@@ -82,8 +92,8 @@
 			<description>Main Clock Sunrise Time</description>
 			<type>label</type>
 			<id>91</id>
-			<posX>540</posX>
-			<posY>345</posY>
+			<posX>640</posX>
+			<posY>340</posY>
 			<align>center</align>
 			<label>Sunrise Time: #WorldClock.MainClockSunriseTime</label>
 			<font>mediastream9c</font>
@@ -92,8 +102,8 @@
 			<description>Main Clock Sunset Time</description>
 			<type>label</type>
 			<id>92</id>
-			<posX>740</posX>
-			<posY>345</posY>
+			<posX>640</posX>
+			<posY>360</posY>
 			<align>center</align>
 			<label>Sunset Time: #WorldClock.MainClockSunsetTime</label>
 			<font>mediastream9c</font>
@@ -103,7 +113,7 @@
 			<type>label</type>
 			<id>93</id>
 			<posX>640</posX>
-			<posY>370</posY>
+			<posY>380</posY>
 			<align>center</align>
 			<label>Moon: #WorldClock.MainClockMoonPhase</label>
 			<font>mediastream9c</font>
@@ -113,10 +123,10 @@
 			<description>Main Clock Border</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>530</posX>
+			<posX>465</posX>
 			<posY>70</posY>
-			<width>220</width>
-			<height>220</height>
+			<width>350</width>
+			<height>350</height>
 			<keepaspectratio>yes</keepaspectratio>
 			<texture>mayacdborder.png</texture>
 		</control>	
@@ -128,7 +138,7 @@
 			<type>image</type>
 			<id>51</id>
 			<posX>62</posX>
-			<posY>400</posY>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -138,7 +148,7 @@
 			<type>image</type>
 			<id>61</id>
 			<posX>62</posX>
-			<posY>500</posY>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -149,7 +159,7 @@
 			<type>button</type>
 			<id>71</id>
 			<posX>165</posX>
-			<posY>500</posY>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>70</onleft>
@@ -164,7 +174,7 @@
 			<type>label</type>
 			<id>81</id>
 			<posX>122</posX>
-			<posY>548</posY>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock1DateTime</label>
 			<font>mediastream9c</font>
@@ -175,7 +185,7 @@
 			<type>label</type>
 			<id>91</id>
 			<posX>122</posX>
-			<posY>570</posY>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock1Description</label>
 			<font>mediastream9c</font>
@@ -186,7 +196,7 @@
 			<type>image</type>
 			<id>0</id>
 			<posX>47</posX>
-			<posY>385</posY>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -200,7 +210,7 @@
 			<type>image</type>
 			<id>52</id>
 			<posX>264</posX>
-			<posY>400</posY>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -210,7 +220,7 @@
 			<type>image</type>
 			<id>62</id>
 			<posX>264</posX>
-			<posY>500</posY>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -221,7 +231,7 @@
 			<type>button</type>
 			<id>72</id>
 			<posX>367</posX>
-			<posY>500</posY>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>71</onleft>
@@ -236,7 +246,7 @@
 			<type>label</type>
 			<id>82</id>
 			<posX>324</posX>
-			<posY>548</posY>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock2DateTime</label>
 			<font>mediastream9c</font>
@@ -247,7 +257,7 @@
 			<type>label</type>
 			<id>92</id>
 			<posX>324</posX>
-			<posY>570</posY>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock2Description</label>
 			<font>mediastream9c</font>
@@ -259,7 +269,7 @@
 			<type>image</type>
 			<id>0</id>
 			<posX>249</posX>
-			<posY>385</posY>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -272,8 +282,8 @@
 			<description>Additional Clock 3</description>
 			<type>image</type>
 			<id>53</id>
-			<posX>456</posX>
-			<posY>400</posY>
+			<posX>461</posX>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -282,8 +292,8 @@
 			<description>Additional Clock 3 indicator</description>
 			<type>image</type>
 			<id>63</id>
-			<posX>456</posX>
-			<posY>500</posY>
+			<posX>461</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -293,8 +303,8 @@
 			<description>Additional Clock 3 button</description>
 			<type>button</type>
 			<id>73</id>
-			<posX>559</posX>
-			<posY>500</posY>
+			<posX>564</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>72</onleft>
@@ -308,8 +318,8 @@
 			<description>Additional Clock 3 DateTime</description>
 			<type>label</type>
 			<id>83</id>
-			<posX>516</posX>
-			<posY>548</posY>
+			<posX>521</posX>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock3DateTime</label>
 			<font>mediastream9c</font>
@@ -319,8 +329,8 @@
 			<description>Additional Clock 3 Description</description>
 			<type>label</type>
 			<id>93</id>
-			<posX>516</posX>
-			<posY>570</posY>
+			<posX>521</posX>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock3Description</label>
 			<font>mediastream9c</font>
@@ -331,8 +341,8 @@
 			<description>Main Clock Border</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>441</posX>
-			<posY>385</posY>
+			<posX>446</posX>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -345,8 +355,8 @@
 			<description>Additional Clock 4</description>
 			<type>image</type>
 			<id>54</id>
-			<posX>658</posX>
-			<posY>400</posY>
+			<posX>694</posX>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -355,8 +365,8 @@
 			<description>Additional Clock 4 indicator</description>
 			<type>image</type>
 			<id>64</id>
-			<posX>658</posX>
-			<posY>500</posY>
+			<posX>694</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -366,8 +376,8 @@
 			<description>Additional Clock 4 button</description>
 			<type>button</type>
 			<id>74</id>
-			<posX>761</posX>
-			<posY>500</posY>
+			<posX>797</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>73</onleft>
@@ -381,8 +391,8 @@
 			<description>Additional Clock 4 DateTime</description>
 			<type>label</type>
 			<id>84</id>
-			<posX>718</posX>
-			<posY>548</posY>
+			<posX>754</posX>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock4DateTime</label>
 			<font>mediastream9c</font>
@@ -392,8 +402,8 @@
 			<description>Additional Clock 4 Description</description>
 			<type>label</type>
 			<id>94</id>
-			<posX>718</posX>
-			<posY>570</posY>
+			<posX>754</posX>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock4Description</label>
 			<font>mediastream9c</font>
@@ -404,8 +414,8 @@
 			<description>Main Clock Border</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>643</posX>
-			<posY>385</posY>
+			<posX>679</posX>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -418,8 +428,8 @@
 			<description>Additional Clock 5</description>
 			<type>image</type>
 			<id>55</id>
-			<posX>860</posX>
-			<posY>400</posY>
+			<posX>896</posX>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -428,8 +438,8 @@
 			<description>Additional Clock 5 indicator</description>
 			<type>image</type>
 			<id>65</id>
-			<posX>860</posX>
-			<posY>500</posY>
+			<posX>896</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -439,8 +449,8 @@
 			<description>Additional Clock 5 button</description>
 			<type>button</type>
 			<id>75</id>
-			<posX>963</posX>
-			<posY>500</posY>
+			<posX>999</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>74</onleft>
@@ -454,8 +464,8 @@
 			<description>Additional Clock 5 DateTime</description>
 			<type>label</type>
 			<id>85</id>
-			<posX>920</posX>
-			<posY>548</posY>
+			<posX>956</posX>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock5DateTime</label>
 			<font>mediastream9c</font>
@@ -465,8 +475,8 @@
 			<description>Additional Clock 5 Description</description>
 			<type>label</type>
 			<id>95</id>
-			<posX>920</posX>
-			<posY>570</posY>
+			<posX>956</posX>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock5Description</label>
 			<font>mediastream9c</font>
@@ -477,8 +487,8 @@
 			<description>Main Clock Border</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>845</posX>
-			<posY>385</posY>
+			<posX>881</posX>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -491,8 +501,8 @@
 			<description>Additional Clock 6</description>
 			<type>image</type>
 			<id>56</id>
-			<posX>1062</posX>
-			<posY>400</posY>
+			<posX>1098</posX>
+			<posY>450</posY>
 			<width>120</width>
 			<height>120</height>
 			<texture>-</texture>
@@ -501,8 +511,8 @@
 			<description>Additional Clock 6 indicator</description>
 			<type>image</type>
 			<id>66</id>
-			<posX>1062</posX>
-			<posY>500</posY>
+			<posX>1098</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>20</height>
 			<keepaspectratio>yes</keepaspectratio>
@@ -512,8 +522,8 @@
 			<description>Additional Clock 6 button</description>
 			<type>button</type>
 			<id>76</id>
-			<posX>1165</posX>
-			<posY>500</posY>
+			<posX>1201</posX>
+			<posY>550</posY>
 			<width>20</width>
 			<height>21</height>
 			<onleft>75</onleft>
@@ -527,8 +537,8 @@
 			<description>Additional Clock 6 DateTime</description>
 			<type>label</type>
 			<id>86</id>
-			<posX>1122</posX>
-			<posY>548</posY>
+			<posX>1158</posX>
+			<posY>598</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock6DateTime</label>
 			<font>mediastream9c</font>
@@ -538,8 +548,8 @@
 			<description>Additional Clock 6 Description</description>
 			<type>label</type>
 			<id>96</id>
-			<posX>1122</posX>
-			<posY>570</posY>
+			<posX>1158</posX>
+			<posY>620</posY>
 			<align>center</align>
 			<label>#WorldClock.AdditionalClock6Description</label>
 			<font>mediastream9c</font>
@@ -550,8 +560,8 @@
 			<description>Main Clock Border</description>
 			<type>image</type>
 			<id>0</id>
-			<posX>1047</posX>
-			<posY>385</posY>
+			<posX>1083</posX>
+			<posY>435</posY>
 			<width>150</width>
 			<height>150</height>
 			<keepaspectratio>yes</keepaspectratio>
