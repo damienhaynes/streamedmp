@@ -145,6 +145,7 @@ namespace StreamedMPEditor
     bool mostRecentMovPicsCycleFanart = true;
     bool subMenuL1Exists = false;
     bool subMenuL2Exists = false;
+    public static bool isAlpha = false;
 
     string xml;
     string xmlTemplate;
@@ -169,6 +170,8 @@ namespace StreamedMPEditor
     Version mpReleaseVersion = new Version("1.0.2.22554");
     Version isWeatherVersion = new Version("1.6.0.0");
     Version fanarthandlerVersionRequired = new Version("2.2.0.0");
+    Version mpAlphaRelease = new Version("1.1.5.0"); 
+ 
 
     public Version fhOverlayVersion;
 
@@ -247,6 +250,10 @@ namespace StreamedMPEditor
         setSDScreenRes();
       }
 
+      Version mpVersion = new Version(MediaPortalVersion);
+      if (mpVersion.CompareTo(mpAlphaRelease) > 0)
+          isAlpha = true;
+
       rbFanartStyle.Checked = true;
 
       buildDownloadForm();
@@ -304,6 +311,9 @@ namespace StreamedMPEditor
     public static bool pluginTakesParameter(string hyperLink)
     {
         Dictionary<string, bool> parametersValid = new Dictionary<string, bool>();
+
+        if (!isAlpha)
+            return false;
 
         // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
         parametersValid.Add(tvseriesSkinID, true);
