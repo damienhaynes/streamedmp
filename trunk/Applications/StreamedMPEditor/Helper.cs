@@ -228,14 +228,21 @@ namespace StreamedMPEditor
       {
         try
         {
-          if (a.GetName().Name == name && a.GetName().Version >= ver)
+          if (a.GetName().Name == name)          
           {
-            result = true;
-            break;
+            if (a.GetName().Version >= ver)
+            {
+              return true;
+            }
+            else
+            {
+              return false;
+            }            
           }
         }
         catch
         {
+          result = false;
         }
       }
 
