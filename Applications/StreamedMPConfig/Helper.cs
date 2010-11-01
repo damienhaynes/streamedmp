@@ -96,16 +96,24 @@ namespace StreamedMPConfig
       {
         try
         {
-          if (a.GetName().Name == name && a.GetName().Version >= ver)
+          if (a.GetName().Name == name)            
           {
-            smcLog.WriteLog(string.Format("Assembly {0} v{1} is available and loaded.", name, a.GetName().Version.ToString()), LogLevel.Info);
-            result = true;
-            break;
+            if (a.GetName().Version >= ver)
+            {
+              smcLog.WriteLog(string.Format("Assembly {0} v{1} is available and loaded.", name, a.GetName().Version.ToString()), LogLevel.Info);
+              return true;
+            }
+            else
+            {
+              smcLog.WriteLog(string.Format("Assembly {0} v{1} is available but does not meet version requirements v{2}.", name, a.GetName().Version.ToString(), ver.ToString()), LogLevel.Info);
+              return false;
+            }
           }
         }
         catch (Exception e)
         {
           smcLog.WriteLog(string.Format("Assembly.GetName() call failed for '{0}'!\nException: {1}", a.Location, e), LogLevel.Error);
+          result = false;
         }
       }
 
@@ -115,15 +123,23 @@ namespace StreamedMPConfig
         try
         {          
           Assembly assembly = Assembly.ReflectionOnlyLoad(name);
-          smcLog.WriteLog(string.Format("Assembly {0} is available and loaded successfully.", name), LogLevel.Info);
-          result = true;
+          if (assembly.GetName().Version >= ver)
+          {
+            smcLog.WriteLog(string.Format("Assembly {0} v{1} is available and loaded successfully.", name, assembly.GetName().Version.ToString()), LogLevel.Info);
+            result = true;
+          }
+          else
+          {
+            smcLog.WriteLog(string.Format("Assembly {0} v{1} is either un-available or does not meet version requirements.", name, assembly.GetName().Version.ToString()), LogLevel.Info);
+            result = false;
+          }
         }
         catch (Exception e)
         {
           smcLog.WriteLog(string.Format("Assembly {0} is unavailable, load unsuccessful: {1}:{2}", name, e.GetType(), e.Message), LogLevel.Info);
+          result = false;
         }
       }
-
       return result;
     }
     #endregion
