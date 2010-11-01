@@ -532,7 +532,10 @@ namespace StreamedMPEditor
         item.isWeather = isWeather.Checked;
         item.disableBGSharing = disableBGSharing.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
-        item.hyperlinkParameter = getTVSeriesViewKey(cboTvSeriesView.SelectedItem.ToString());
+        if (pluginTakesParameter(item.hyperlink) && cboTvSeriesView.SelectedIndex != -1)
+            item.hyperlinkParameter = getTVSeriesViewKey(cboTvSeriesView.SelectedItem.ToString());
+        else
+            item.hyperlinkParameter = "false";
 
         if (item.fanartHandlerEnabled)
           checkAndSetRandomFanart(item.fanartProperty);
