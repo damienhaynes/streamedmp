@@ -318,6 +318,7 @@ namespace StreamedMPEditor
                 itemProperties.DisplayName = subMenuLevel1[index].displayName;
                 itemProperties.HypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
                 itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
+                itemProperties.initialIndex = index;
                 itemProperties.ShowDialog();
 
 
@@ -360,6 +361,7 @@ namespace StreamedMPEditor
                 itemProperties.DisplayName = subMenuLevel2[index].displayName;
                 itemProperties.HypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
                 itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
+                itemProperties.initialIndex = index;
                 itemProperties.ShowDialog();
 
                 if (itemProperties.DisplayName != subMenuLevel2[index].displayName)
