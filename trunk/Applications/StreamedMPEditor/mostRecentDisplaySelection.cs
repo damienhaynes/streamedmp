@@ -28,6 +28,43 @@ namespace StreamedMPEditor
 
     }
 
+    public void setEnableState(formStreamedMpEditor.displayMostRecent overlayType, bool state)
+    {
+        switch (overlayType)
+        {
+            case formStreamedMpEditor.displayMostRecent.off:
+                rbSubOff.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.tvSeries:
+                rbSubTVSeries.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.movies:
+                rbSubMovies.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.music:
+                rbSubMusic.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.recordedTV:
+                rbSubTV.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
+                rbSubFreeDriveSpace.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.powerControl:
+                rbSubPowerControl.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.sleepControl:
+                rbSubSleepControl.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.stocks:
+                rbSubStocks.Enabled = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.htpcInfo:
+                rbSubHtpcInfo.Enabled = state;
+                break;
+        }
+    }
+
     public bool disableMusicRB 
     {
       set
@@ -118,6 +155,7 @@ namespace StreamedMPEditor
                 break;
 
         }
+
     }
 
     private void btSaveAndClose_Click(object sender, EventArgs e)

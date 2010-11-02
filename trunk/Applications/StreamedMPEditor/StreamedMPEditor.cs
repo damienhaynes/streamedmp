@@ -1235,16 +1235,36 @@ namespace StreamedMPEditor
 
     private void btSelectOverlays_Click(object sender, EventArgs e)
     {
-      if (itemsOnMenubar.SelectedIndex != -1)
-      {
-        mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
-        mrDisplaySelection.ShowDialog();
-        menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
-      }
-      else
-        helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
+        setOverlayStates();
+        if (itemsOnMenubar.SelectedIndex != -1)
+        {
+            mrDisplaySelection.mrToDisplay = menuItems[itemsOnMenubar.SelectedIndex].showMostRecent;
+            mrDisplaySelection.ShowDialog();
+            menuItems[itemsOnMenubar.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
+        }
+        else
+            helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
     }
-    
+
+    void setOverlayStates()
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.freeDriveSpace, cbFreeDriveSpaceOverlay.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.htpcInfo, cbHtpcInfoOverlay.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
+        mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
+
+        mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, false);
+        if (cbMostRecentTvSeries.Checked || cbTVSeriesRecentWatched.Checked)
+            mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, true);
+
+        mrDisplaySelection.setEnableState(displayMostRecent.movies, false);
+        if (cbMostRecentMovPics.Checked || cbMovPicsRecentWatched.Checked)
+            mrDisplaySelection.setEnableState(displayMostRecent.movies, cbMostRecentMovPics.Checked);
+    }
+
     /// <summary>
     /// Get list of views in TVseries database
     /// Key: should be used as hyperlinkParameter
@@ -1361,6 +1381,12 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+    private void btConfigureFreeDriveSpace_Click(object sender, EventArgs e)
+    {
+        SelectHardDrives selectDrives = new SelectHardDrives();
+        selectDrives.ShowDialog();
+    }
 
   }
 }

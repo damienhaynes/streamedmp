@@ -160,6 +160,12 @@
         this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
         this.tabPage1 = new System.Windows.Forms.TabPage();
         this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
+        this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
+        this.cbHtpcInfoOverlay = new System.Windows.Forms.CheckBox();
+        this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
+        this.cbSleepControlOverlay = new System.Windows.Forms.CheckBox();
+        this.cbPowerControlOverlay = new System.Windows.Forms.CheckBox();
+        this.cbFreeDriveSpaceOverlay = new System.Windows.Forms.CheckBox();
         this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
         this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
         this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
@@ -246,12 +252,6 @@
         this.groupBox5 = new System.Windows.Forms.GroupBox();
         this.lbActiveSplashScreen = new System.Windows.Forms.Label();
         this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-        this.cbFreeDriveSpaceOverlay = new System.Windows.Forms.CheckBox();
-        this.cbPowerControlOverlay = new System.Windows.Forms.CheckBox();
-        this.cbSleepControlOverlay = new System.Windows.Forms.CheckBox();
-        this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
-        this.cbHtpcInfoOverlay = new System.Windows.Forms.CheckBox();
-        this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -1790,6 +1790,72 @@
         this.infoServiceRecentOptions.TabStop = false;
         this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
         // 
+        // btConfigureFreeDriveSpace
+        // 
+        this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(541, 248);
+        this.btConfigureFreeDriveSpace.Name = "btConfigureFreeDriveSpace";
+        this.btConfigureFreeDriveSpace.Size = new System.Drawing.Size(75, 23);
+        this.btConfigureFreeDriveSpace.TabIndex = 17;
+        this.btConfigureFreeDriveSpace.Text = "Configure";
+        this.btConfigureFreeDriveSpace.UseVisualStyleBackColor = true;
+        this.btConfigureFreeDriveSpace.Visible = false;
+        this.btConfigureFreeDriveSpace.Click += new System.EventHandler(this.btConfigureFreeDriveSpace_Click);
+        // 
+        // cbHtpcInfoOverlay
+        // 
+        this.cbHtpcInfoOverlay.AutoSize = true;
+        this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(296, 342);
+        this.cbHtpcInfoOverlay.Name = "cbHtpcInfoOverlay";
+        this.cbHtpcInfoOverlay.Size = new System.Drawing.Size(148, 17);
+        this.cbHtpcInfoOverlay.TabIndex = 16;
+        this.cbHtpcInfoOverlay.Text = "Enable HTPCInfo Overlay";
+        this.cbHtpcInfoOverlay.UseVisualStyleBackColor = true;
+        this.cbHtpcInfoOverlay.Visible = false;
+        // 
+        // cbSocksOverlay
+        // 
+        this.cbSocksOverlay.AutoSize = true;
+        this.cbSocksOverlay.Location = new System.Drawing.Point(296, 318);
+        this.cbSocksOverlay.Name = "cbSocksOverlay";
+        this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
+        this.cbSocksOverlay.TabIndex = 15;
+        this.cbSocksOverlay.Text = "Enable Stocks and Indices Overlay";
+        this.cbSocksOverlay.UseVisualStyleBackColor = true;
+        this.cbSocksOverlay.Visible = false;
+        // 
+        // cbSleepControlOverlay
+        // 
+        this.cbSleepControlOverlay.AutoSize = true;
+        this.cbSleepControlOverlay.Location = new System.Drawing.Point(296, 294);
+        this.cbSleepControlOverlay.Name = "cbSleepControlOverlay";
+        this.cbSleepControlOverlay.Size = new System.Drawing.Size(164, 17);
+        this.cbSleepControlOverlay.TabIndex = 14;
+        this.cbSleepControlOverlay.Text = "Enable Sleep Control Overlay";
+        this.cbSleepControlOverlay.UseVisualStyleBackColor = true;
+        this.cbSleepControlOverlay.Visible = false;
+        // 
+        // cbPowerControlOverlay
+        // 
+        this.cbPowerControlOverlay.AutoSize = true;
+        this.cbPowerControlOverlay.Location = new System.Drawing.Point(296, 270);
+        this.cbPowerControlOverlay.Name = "cbPowerControlOverlay";
+        this.cbPowerControlOverlay.Size = new System.Drawing.Size(167, 17);
+        this.cbPowerControlOverlay.TabIndex = 13;
+        this.cbPowerControlOverlay.Text = "Enable Power Control Overlay";
+        this.cbPowerControlOverlay.UseVisualStyleBackColor = true;
+        this.cbPowerControlOverlay.Visible = false;
+        // 
+        // cbFreeDriveSpaceOverlay
+        // 
+        this.cbFreeDriveSpaceOverlay.AutoSize = true;
+        this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(296, 248);
+        this.cbFreeDriveSpaceOverlay.Name = "cbFreeDriveSpaceOverlay";
+        this.cbFreeDriveSpaceOverlay.Size = new System.Drawing.Size(184, 17);
+        this.cbFreeDriveSpaceOverlay.TabIndex = 12;
+        this.cbFreeDriveSpaceOverlay.Text = "Enable Drive Free Space Overlay";
+        this.cbFreeDriveSpaceOverlay.UseVisualStyleBackColor = true;
+        this.cbFreeDriveSpaceOverlay.Visible = false;
+        // 
         // cbEnableRecentRecordedTV
         // 
         this.cbEnableRecentRecordedTV.AutoSize = true;
@@ -2676,65 +2742,6 @@
         this.pbActiveSplashScreen.TabIndex = 4;
         this.pbActiveSplashScreen.TabStop = false;
         this.pbActiveSplashScreen.Visible = false;
-        // 
-        // cbFreeDriveSpaceOverlay
-        // 
-        this.cbFreeDriveSpaceOverlay.AutoSize = true;
-        this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(296, 248);
-        this.cbFreeDriveSpaceOverlay.Name = "cbFreeDriveSpaceOverlay";
-        this.cbFreeDriveSpaceOverlay.Size = new System.Drawing.Size(184, 17);
-        this.cbFreeDriveSpaceOverlay.TabIndex = 12;
-        this.cbFreeDriveSpaceOverlay.Text = "Enable Drive Free Space Overlay";
-        this.cbFreeDriveSpaceOverlay.UseVisualStyleBackColor = true;
-        // 
-        // cbPowerControlOverlay
-        // 
-        this.cbPowerControlOverlay.AutoSize = true;
-        this.cbPowerControlOverlay.Location = new System.Drawing.Point(296, 270);
-        this.cbPowerControlOverlay.Name = "cbPowerControlOverlay";
-        this.cbPowerControlOverlay.Size = new System.Drawing.Size(167, 17);
-        this.cbPowerControlOverlay.TabIndex = 13;
-        this.cbPowerControlOverlay.Text = "Enable Power Control Overlay";
-        this.cbPowerControlOverlay.UseVisualStyleBackColor = true;
-        // 
-        // cbSleepControlOverlay
-        // 
-        this.cbSleepControlOverlay.AutoSize = true;
-        this.cbSleepControlOverlay.Location = new System.Drawing.Point(296, 294);
-        this.cbSleepControlOverlay.Name = "cbSleepControlOverlay";
-        this.cbSleepControlOverlay.Size = new System.Drawing.Size(164, 17);
-        this.cbSleepControlOverlay.TabIndex = 14;
-        this.cbSleepControlOverlay.Text = "Enable Sleep Control Overlay";
-        this.cbSleepControlOverlay.UseVisualStyleBackColor = true;
-        // 
-        // cbSocksOverlay
-        // 
-        this.cbSocksOverlay.AutoSize = true;
-        this.cbSocksOverlay.Location = new System.Drawing.Point(296, 318);
-        this.cbSocksOverlay.Name = "cbSocksOverlay";
-        this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
-        this.cbSocksOverlay.TabIndex = 15;
-        this.cbSocksOverlay.Text = "Enable Stocks and Indices Overlay";
-        this.cbSocksOverlay.UseVisualStyleBackColor = true;
-        // 
-        // cbHtpcInfoOverlay
-        // 
-        this.cbHtpcInfoOverlay.AutoSize = true;
-        this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(296, 342);
-        this.cbHtpcInfoOverlay.Name = "cbHtpcInfoOverlay";
-        this.cbHtpcInfoOverlay.Size = new System.Drawing.Size(148, 17);
-        this.cbHtpcInfoOverlay.TabIndex = 16;
-        this.cbHtpcInfoOverlay.Text = "Enable HTPCInfo Overlay";
-        this.cbHtpcInfoOverlay.UseVisualStyleBackColor = true;
-        // 
-        // btConfigureFreeDriveSpace
-        // 
-        this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(541, 248);
-        this.btConfigureFreeDriveSpace.Name = "btConfigureFreeDriveSpace";
-        this.btConfigureFreeDriveSpace.Size = new System.Drawing.Size(75, 23);
-        this.btConfigureFreeDriveSpace.TabIndex = 17;
-        this.btConfigureFreeDriveSpace.Text = "Configure";
-        this.btConfigureFreeDriveSpace.UseVisualStyleBackColor = true;
         // 
         // formStreamedMpEditor
         // 
