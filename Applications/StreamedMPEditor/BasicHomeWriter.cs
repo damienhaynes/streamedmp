@@ -1102,6 +1102,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
+        if (menuItems[k].hyperlinkParameter != "false")
+          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
         rawXML.AppendLine("<textureFocus>-</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<hover>-</hover>");
@@ -1257,6 +1259,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
+        if (menuItems[k].hyperlinkParameter != "false")
+          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
         rawXML.AppendLine("<textureFocus>-</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<hover>-</hover>");
