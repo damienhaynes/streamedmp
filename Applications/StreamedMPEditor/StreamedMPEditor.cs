@@ -10,6 +10,7 @@ using MediaPortal.Utils;
 using System.Text.RegularExpressions;
 using SMPCheckSum;
 using WindowPlugins.GUITVSeries;
+using SQLite.NET;
 
 namespace StreamedMPEditor
 {
@@ -116,7 +117,6 @@ namespace StreamedMPEditor
     #endregion
 
     #region Variables
-
 
     public static List<prettyItem> prettyItems = new List<prettyItem>();
     public static List<menuItem> menuItems = new List<menuItem>();
@@ -291,12 +291,42 @@ namespace StreamedMPEditor
           }
           catch
           {
+            // use db lookup method - most likely ran standalone SMPEditor.exe
+            string database = Path.Combine(SkinInfo.mpPaths.databasePath, "TVSeriesDatabase4.db3");
+            if (File.Exists(database))
+            {
+              try
+              {
+                SQLiteClient dbClient = new SQLiteClient(database);
+
+                string sqlQuery = "select * from Views where enabled = 1 order by sort";
+                SQLiteResultSet resultSet = dbClient.Execute(sqlQuery);
+
+                if (resultSet != null && resultSet.Rows.Count > 0)
+                {
+                  int colViewName = 3;
+                  cboTvSeriesView.Items.Clear();
+                  tvseriesViews.Clear();
+
+                  foreach (SQLiteResultSet.Row row in resultSet.Rows)
+                  {
+                    string viewname = row.fields[colViewName].ToString();
+                    // we can't get translated name, so just copy viewname for display name
+                    KeyValuePair<string, string> view = new KeyValuePair<string, string>(viewname, viewname);
+                    tvseriesViews.Add(view);                    
+                  }
+                }
+              }
+              catch { }
+            }
+
           }
 
           cboTvSeriesView.Visible = false;
           lbTVSView.Visible = false;
 
-      }
+      }      
+
     }
 
     public string getTVSeriesViewKey(string value)
