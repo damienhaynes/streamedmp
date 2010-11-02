@@ -107,11 +107,16 @@ namespace StreamedMPEditor
 
     public enum displayMostRecent
     {
-      off,
-      tvSeries,
-      movies,
-      music,
-      recordedTV
+        off,
+        tvSeries,
+        movies,
+        music,
+        recordedTV,
+        freeDriveSpace,
+        powerControl,
+        sleepControl,
+        stocks,
+        htpcInfo
     }
 
     #endregion
@@ -282,12 +287,6 @@ namespace StreamedMPEditor
           try
           {
               tvseriesViews = GetTVSeriesViews();
-
-              cboTvSeriesView.Items.Clear();
-              foreach (KeyValuePair<string, string> tvv in tvseriesViews)
-              {
-                  cboTvSeriesView.Items.Add(tvv.Value);
-              }
           }
           catch
           {
@@ -324,6 +323,11 @@ namespace StreamedMPEditor
 
           cboTvSeriesView.Visible = false;
           lbTVSView.Visible = false;
+          cboTvSeriesView.Items.Clear();
+          foreach (KeyValuePair<string, string> tvv in tvseriesViews)
+          {
+              cboTvSeriesView.Items.Add(tvv.Value);
+          }
 
       }      
 
@@ -1257,7 +1261,7 @@ namespace StreamedMPEditor
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
+        //cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
     }
 
     #endregion

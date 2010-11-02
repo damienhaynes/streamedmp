@@ -317,7 +317,10 @@ namespace StreamedMPEditor
 
                 itemProperties.DisplayName = subMenuLevel1[index].displayName;
                 itemProperties.HypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
+                itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
                 itemProperties.ShowDialog();
+
+
                 if (itemProperties.DisplayName != subMenuLevel1[index].displayName)
                 {
                     subMenuLevel1[index].displayName = itemProperties.DisplayName;
@@ -332,10 +335,6 @@ namespace StreamedMPEditor
                 else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
                 {
                     subMenuLevel1[index].hyperlinkParameter = itemProperties.HypelinkParameter;
-                    subMenuLevel1[index].displayName = itemProperties.DisplayName.ToUpper();
-                    if (itemProperties.HypelinkParameterName != "false")
-                        subMenuLevel1[index].displayName = itemProperties.HypelinkParameterName.ToUpper();
-
                     formStreamedMpEditor.changeOutstanding = true;
                 }
                 
@@ -359,24 +358,24 @@ namespace StreamedMPEditor
                 SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink));
 
                 itemProperties.DisplayName = subMenuLevel2[index].displayName;
+                itemProperties.HypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
+                itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
                 itemProperties.ShowDialog();
+
                 if (itemProperties.DisplayName != subMenuLevel2[index].displayName)
+                {
+                    subMenuLevel2[index].displayName = itemProperties.DisplayName;
+                    formStreamedMpEditor.changeOutstanding = true;
+                }
+                if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
                 {
                     subMenuLevel2[index].hyperlinkParameter = "false";
                     subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
                     formStreamedMpEditor.changeOutstanding = true;
                 }
-                if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
-                {
-                    subMenuLevel1[index].hyperlinkParameter = "false";
-                }
                 else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
                 {
                     subMenuLevel2[index].hyperlinkParameter = itemProperties.HypelinkParameter;
-                    subMenuLevel2[index].displayName = itemProperties.DisplayName.ToUpper();
-                    if (itemProperties.HypelinkParameterName != "false")
-                        subMenuLevel2[index].displayName = itemProperties.HypelinkParameterName.ToUpper();
-
                     formStreamedMpEditor.changeOutstanding = true;
                 }
 
@@ -385,7 +384,7 @@ namespace StreamedMPEditor
                     lboxSubMenuLevel2.Items.Clear();
                     for (int i = 0; i < subMenuLevel2.Count; i++)
                     {
-                        lboxSubMenuLevel2.Items.Add(subMenuLevel2[i].displayName);
+                        lboxSubMenuLevel2.Items.Add(subMenuLevel1[i].displayName);
                     }
                 }
             }
