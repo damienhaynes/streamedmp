@@ -252,7 +252,7 @@ namespace StreamedMPEditor
       }
 
       Version mpVersion = new Version(MediaPortalVersion);
-      if (mpVersion.CompareTo(mpAlphaRelease) > 0)
+      if (mpVersion.CompareTo(mpAlphaRelease) >= 0)
           isAlpha = true;
 
       rbFanartStyle.Checked = true;
