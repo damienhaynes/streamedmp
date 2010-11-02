@@ -62,6 +62,7 @@
         this.cboTVSViews.Name = "cboTVSViews";
         this.cboTVSViews.Size = new System.Drawing.Size(188, 21);
         this.cboTVSViews.TabIndex = 3;
+        this.cboTVSViews.SelectedIndexChanged += new System.EventHandler(this.cboTVSViews_SelectedIndexChanged);
         // 
         // btSaveAndClose
         // 

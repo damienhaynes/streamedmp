@@ -3019,6 +3019,113 @@
 
     #endregion
 
+    #region DriveFreeSpace
+
+    void driveFreeSpace()
+    {
+        xml =   "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
+                "<window>" +
+                    "<controls>" +
+                        "<control>" +
+                            "<description>GROUP: Power Control Plugins Overlay</description>" +
+                            "<type>group</type>" +
+                            "<dimColor>0xffffffff</dimColor>" +
+                            "<visible>control.isvisible(1006)</visible>" +
+                            "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                            "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+                            "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+                            "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                            "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                            "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                            "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                            "<control>" +
+                            "<description>Overlay BG</description>" +
+                            "<posX>976</posX>" +
+                            "<posY>50</posY>" +
+                            "<type>image</type>" +
+                            "<id>0</id>" +
+                            "<width>306</width>" +
+                            "<height>320</height>" +
+                            "<texture>recentsummoverlaybg.png</texture>" +
+                            "<colordiffuse>EEFFFFFF</colordiffuse>" +
+                            "</control>" +
+                            "<control>" +
+                            "<description>Plugin Name</description>" +
+                            "<type>label</type>" +
+                            "<id>0</id>" +
+                            "<posX>995</posX>" +
+                            "<posY>76</posY>" +
+                            "<width>258</width>" +
+                            "<label>Drive Free Space</label>" +
+                            "<font>mediastream10tc</font>" +
+                            "<textcolor>White</textcolor>" +
+                            "</control>" +
+                            "<control>" +
+                            "<description>Index Separator</description>" +
+                            "<type>label</type>" +
+                            "<id>0</id>" +
+                            "<posX>995</posX>" +
+                            "<posY>80</posY>" +
+                            "<width>264</width>" +
+                            "<label>____________________________________________________________________________________________________________		</label>" +
+                            "<textcolor>ff808080</textcolor>" +
+                            "</control>" +
+                            "<!-- *** Drive C *** -->" +
+                            "<control>" +
+                            "<description>Drive C Image</description>" +
+                            "<type>image</type>" +
+                            "<id>1</id>" +
+                            "<posX>995</posX>" +
+                            "<posY>90</posY>" +
+                            "<width>60</width>" +
+                            "<height>60</height>" +
+                            "<texture>FreeDriveSpace_Icon_C.png</texture>" +
+                            "<visible>string.contains(#DriveFreeSpace.C.Enabled,true)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                            "<description>Drive C Progress BG</description>" +
+                            "<type>image</type>" +
+                            "<id>1</id>" +
+                            "<posX>995</posX>" +
+                            "<posY>160</posY>" +
+                            "<width>266</width>" +
+                            "<height>20</height>" +
+                            "<texture>osdprogressbackv.png</texture>" +
+                            "<visible>string.contains(#DriveFreeSpace.C.Enabled,true)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                            "<description>Drive C Progress Bar</description>" +
+                            "<type>progress</type>" +
+                            "<id>20</id>" +
+                            "<posX>985</posX>" +
+                            "<posY>161</posY>" +
+                            "<width>266</width>" +
+                            "<height>20</height>" +
+                            "<texturebg>-</texturebg>" +
+                            "<label>#DriveFreeSpace.C.AvailableSpace.UsedPercentage</label>" +
+                            "<lefttexture>osdprogressleft.png</lefttexture>" +
+                            "<midtexture>osdprogressmid.png</midtexture>" +
+                            "<righttexture>osdprogressright</righttexture>" +
+                            "<visible>string.contains(#DriveFreeSpace.C.Enabled,true)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                            "<description>Drive C Description</description>" +
+                            "<type>label</type>" +
+                            "<id>1</id>" +
+                            "<posX>1060</posX>" +
+                            "<posY>100</posY>" +
+                            "<width>198</width>" +
+                            "<label>#DriveFreeSpace.C.AvailableSpace.Data</label>" +
+                            "<font>mediastream10</font>" +
+                            "<visible>string.contains(#DriveFreeSpace.C.Enabled,true)</visible>" +
+                            "</control>" +
+                          "</control>" +
+                    "</controls>" +
+                "</window>";
+    }
+
+    #endregion
+
     #region Private Methods
 
     string mostRecentVisibleControls(isOverlayType isOverlay)
