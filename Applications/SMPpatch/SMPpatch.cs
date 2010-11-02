@@ -79,7 +79,8 @@ namespace SMPpatch
     private void SMPpatch_Load(object sender, EventArgs e)
     {
       //Ensure this is always on top
-      this.TopMost = true;
+      //this.TopMost = true;
+
       //Display full screen Splash if in unattended mode.
       if (unattendedInatall)
       {
