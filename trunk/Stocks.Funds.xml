@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<controls>
+		<!-- *** TopFund 0 *** -->
+		<control>
+		  <description>TopFund Indicator 0</description>
+		  <type>image</type>
+		  <id>1</id>
+		  <posX>990</posX>
+		  <posY>240</posY>
+		  <width>75</width>
+		  <height>75</height>
+		  <texture>#Stocks.TopFund0Indicator</texture>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Name 0</description>
+		  <type>fadelabel</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>250</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund0Name</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Last 0</description>
+		  <type>label</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>280</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund0Last</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+
+		<!-- *** TopFund 1 *** -->
+		<control>
+		  <description>TopFund Indicator 1</description>
+		  <type>image</type>
+		  <id>1</id>
+		  <posX>990</posX>
+		  <posY>360</posY>
+		  <width>75</width>
+		  <height>75</height>
+		  <texture>#Stocks.TopFund1Indicator</texture>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Name 1</description>
+		  <type>fadelabel</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>370</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund1Name</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Last 1</description>
+		  <type>label</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>400</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund1Last</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+
+		<!-- *** TopFund 2 *** -->
+		<control>
+		  <description>TopFund Indicator 2</description>
+		  <type>image</type>
+		  <id>1</id>
+		  <posX>990</posX>
+		  <posY>480</posY>
+		  <width>75</width>
+		  <height>75</height>
+		  <texture>#Stocks.TopFund2Indicator</texture>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Name 2</description>
+		  <type>fadelabel</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>490</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund2Name</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <description>TopFund Last 2</description>
+		  <type>label</type>
+		  <id>1</id>
+		  <posX>1070</posX>
+		  <posY>520</posY>
+		  <width>200</width>
+		  <height>15</height>
+		  <label>#Stocks.TopFund2Last</label>
+		  <font>mediastream10tc</font>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+
+		<!-- *** Fund Item List *** -->
+		<control>
+		  <description>listcontrol</description>
+		  <type>listcontrol</type>
+		  <id>70</id>
+		  <posX>310</posX>
+		  <posY>270</posY>
+		  <width>670</width>
+		  <height>350</height>
+		  <onleft>2</onleft>
+		  <font>font12</font>
+		  <textXOff>0</textXOff>
+		  <itemWidth>25</itemWidth>
+		  <itemHeight>25</itemHeight>
+		  <IconXOff>0</IconXOff>
+		  <IconYOff>8</IconYOff>
+		  <spinPosX>1175</spinPosX>
+		  <spinPosY>681</spinPosY>
+		  <spinAlign>Right</spinAlign>
+		  <spinColor>ff006698</spinColor>
+		  <textureUp>arrow_round_up_nofocus.png</textureUp>
+		  <textureDown>arrow_round_down_nofocus.png</textureDown>
+		  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+		  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+		  <spinWidth>50</spinWidth>
+		  <spinHeight>37</spinHeight>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+
+		<!-- *** Fund Item Separator *** -->
+		<control>
+		  <description>Separator</description>
+		  <type>label</type>
+		  <id>0</id>
+		  <posX>280</posX>
+		  <posY>587</posY>
+		  <width>1200</width>
+		  <label>____________________________________________________________________________________________________________</label>
+		  <textcolor>ff808080</textcolor>
+		  <visible>string.equals(#Stocks.FundListSelectable,true)+string.equals(#Stocks.Type,Fund)</visible>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+	
+	</controls>
+</window>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<controls>
+		<control>
+		  <description>Menu Title</description>
+		  <id>0</id>
+		  <posX>20</posX>
+		  <posY>240</posY>
+		  <label>924</label>
+		  <type>label</type>
+		  <font>mediastream12tc</font>
+		  <height>25</height>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <type>image</type>
+		  <posX>0</posX>
+		  <posY>216</posY>
+		  <width>278</width>
+		  <height>720</height>
+		  <texture>hiddenmenu_left.png</texture>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		</control>
+		<control>
+		  <type>group</type>
+		  <description>group element</description>
+		  <layout>StackLayout</layout>
+		  <posX>20</posX>
+		  <posY>270</posY>
+		  <animation effect="fade" time="300">WindowOpen</animation>
+		  <animation effect="fade" time="300">WindowClose</animation>
+		  <control>
+			<description>Switch</description>
+			<type>button</type>
+			<id>2</id>
+			<label>Switch</label>
+			<onleft>2</onleft>
+			<onright>2</onright>
+			<onup>4</onup>
+			<ondown>3</ondown>
+			<width>250</width>
+		  </control>
+		  <control>
+			<description>Portfolio Password</description>
+			<type>button</type>
+			<id>3</id>
+			<label>Portfolio Password</label>
+			<onleft>3</onleft>
+			<onright>3</onright>
+			<onup>2</onup>
+			<ondown>4</ondown>
+			<width>250</width>
+		  </control>
+		  <control>
+			<description>Refresh</description>
+			<type>button</type>
+			<id>4</id>
+			<label>Refresh</label>
+			<onleft>4</onleft>
+			<onright>4</onright>
+			<onup>3</onup>
+			<ondown>2</ondown>
+			<width>250</width>
+		  </control>
+		</control>
+	</controls>
+</window>
