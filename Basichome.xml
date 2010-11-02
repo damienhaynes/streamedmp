@@ -296,6 +296,7 @@
     <!-- BEGIN GENERATED TOPBAR CODE -->
     <!-- BEGIN GENERATED LATERAL MENU CONTROL -->
     <!--             End of Submenu Code            -->
+    <!--             End of Submenu Code            -->
     <control>
       <description>Dummy label indicating PICTURES visibility when submen open</description>
       <id>1000</id>
@@ -4139,12 +4140,14 @@
       </control>
       <control>
         <description>DAY 1 GENERAL WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>465</posX>
         <posY>325</posY>
+        <width>170</width>
+        <height>60</height>
         <font>mediastream13</font>
-        <align>left</align>
+        <align>right</align>
         <textcolor>white</textcolor>
         <label>#infoservice.weather.today.condition</label>
       </control>
@@ -4183,10 +4186,12 @@
       </control>
       <control>
         <description>DAY 2 AM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>710</posX>
         <posY>170</posY>
+        <width>160</width>
+        <height>50</height>
         <label>#infoservice.weather.forecast2.day.condition</label>
         <font>mediastream10</font>
         <align>left</align>
@@ -4194,10 +4199,12 @@
       </control>
       <control>
         <description>DAY 2 PM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>710</posX>
         <posY>220</posY>
+        <width>160</width>
+        <height>50</height>
         <label>#infoservice.weather.forecast2.night.condition</label>
         <font>mediastream10</font>
         <align>left</align>
@@ -4238,10 +4245,12 @@
       </control>
       <control>
         <description>DAY 3 AM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>960</posX>
         <posY>170</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast3.day.condition</label>
         <font>mediastream10</font>
@@ -4250,10 +4259,12 @@
       </control>
       <control>
         <description>DAY 3 PM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>960</posX>
         <posY>220</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast3.night.condition</label>
         <font>mediastream10</font>
@@ -4295,10 +4306,12 @@
       </control>
       <control>
         <description>DAY 4 AM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>710</posX>
         <posY>515</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast4.day.condition</label>
         <font>mediastream10</font>
@@ -4307,10 +4320,12 @@
       </control>
       <control>
         <description>DAY 4 PM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>710</posX>
         <posY>565</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast4.night.condition</label>
         <font>mediastream10</font>
@@ -4352,10 +4367,12 @@
       </control>
       <control>
         <description>DAY 5 AM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>960</posX>
         <posY>515</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast5.day.condition</label>
         <font>mediastream10</font>
@@ -4364,10 +4381,12 @@
       </control>
       <control>
         <description>DAY 5 PM WEATHER</description>
-        <type>label</type>
+        <type>textbox</type>
         <id>0</id>
         <posX>960</posX>
         <posY>565</posY>
+        <width>160</width>
+        <height>50</height>
         <width>170</width>
         <label>#infoservice.weather.forecast5.night.condition</label>
         <font>mediastream10</font>
@@ -4432,8 +4451,8 @@
     <import>common.fanart.scraperv.xml</import>
     <import>basichome.recentlyadded.tvseries.VSum2.xml</import>
     <import>basichome.recentlyadded.movpics.VSum2.xml</import>
-    <!-- BEGIN MOST RECENT MUSIC CODE-->
-    <!-- BEGIN MOST RECENT RECORDEDTV CODE-->
+    <import>basichome.recentlyadded.Music.Summary.xml</import>
+    <import>basichome.recentlyadded.RecordedTV.Summary.xml</import>
     <import>common.overlay.basichome.xml</import>
     <control>
       <description>Update Icon</description>
@@ -4453,4 +4472,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:feeefb02d002e12ea2cb035a6eef7240-->
+<!--Checksum:1e3cef2ead85183d83bac63d92cd0e0d-->
