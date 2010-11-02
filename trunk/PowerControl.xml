@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7983</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:Power Control</define>
+  <define>#header.hover:hover_PowerControl.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <import>common.overlays.xml</import>    
+	<import>PowerControl.Menu.xml</import>
+	<import>PowerControl.NetworkDevice.xml</import>    
+    <control>
+      <description>Action</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>1275</posX>
+      <posY>13</posY>
+      <width>700</width>
+      <label>#PowerControl.Action</label>
+      <font>mediastream10tc</font>
+      <align>right</align>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
+    </control>
+  </controls>
+</window>
