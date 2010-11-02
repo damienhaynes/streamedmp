@@ -35,6 +35,11 @@ namespace StreamedMPEditor
             set { baseName = value; }
         }
 
+        public int InitialIndex
+        {
+            set { initialIndex = value; }
+        }
+
         public string DisplayName
         {
             get
