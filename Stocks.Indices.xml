@@ -1,131 +1,131 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
-	<!-- *** TopPortfolio 0 *** -->
+    <!-- *** TopIndex 0 *** -->
     <control>
-      <description>TopPortfolio Indicator 0</description>
+      <description>TopIndex Indicator 0</description>
       <type>image</type>
       <id>1</id>
       <posX>990</posX>
       <posY>240</posY>
       <width>75</width>
       <height>75</height>
-      <texture>#Stocks.TopPortfolio0Indicator</texture>
+      <texture>#Stocks.TopIndex0Indicator</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Name 0</description>
+      <description>TopIndex Name 0</description>
       <type>fadelabel</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>250</posY>
       <width>200</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio0Name</label>
+      <label>#Stocks.TopIndex0Name</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Last 0</description>
-      <type>label</type>
+      <description>TopIndex Last 0</description>
+      <type>fadelabel</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>280</posY>
-      <width>200</width>
+      <width>300</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio0Last</label>
+      <label>#Stocks.TopIndex0Last</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
 
-    <!-- *** TopPortfolio 1 *** -->
+    <!-- *** TopIndex 1 *** -->
     <control>
-      <description>TopPortfolio Indicator 1</description>
+      <description>TopIndex Indicator 1</description>
       <type>image</type>
       <id>1</id>
       <posX>990</posX>
       <posY>360</posY>
       <width>75</width>
       <height>75</height>
-      <texture>#Stocks.TopPortfolio1Indicator</texture>
+      <texture>#Stocks.TopIndex1Indicator</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Name 1</description>
-      <type>fadelabel</type>
+      <description>TopIndex Name 1</description>
+      <type>label</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>370</posY>
       <width>200</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio1Name</label>
+      <label>#Stocks.TopIndex1Name</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Last 1</description>
+      <description>TopIndex Last 1</description>
       <type>label</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>400</posY>
       <width>200</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio1Last</label>
+      <label>#Stocks.TopIndex1Last</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
 
-    <!-- *** TopPortfolio 2 *** -->
+    <!-- *** TopIndex 2 *** -->
     <control>
-      <description>TopPortfolio Indicator 2</description>
+      <description>TopIndex Indicator 2</description>
       <type>image</type>
       <id>1</id>
       <posX>990</posX>
       <posY>480</posY>
       <width>75</width>
       <height>75</height>
-      <texture>#Stocks.TopPortfolio2Indicator</texture>
+      <texture>#Stocks.TopIndex2Indicator</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Name 2</description>
+      <description>TopIndex Name 2</description>
       <type>fadelabel</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>490</posY>
       <width>200</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio2Name</label>
+      <label>#Stocks.TopIndex2Name</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>TopPortfolio Last 2</description>
+      <description>TopIndex Last 2</description>
       <type>label</type>
       <id>1</id>
       <posX>1070</posX>
       <posY>520</posY>
       <width>200</width>
       <height>15</height>
-      <label>#Stocks.TopPortfolio2Last</label>
+      <label>#Stocks.TopIndex2Last</label>
       <font>mediastream10tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
 
-    <!-- *** Portfolio Item List *** -->
+    <!-- *** Index Item List *** -->
     <control>
       <description>listcontrol</description>
       <type>listcontrol</type>
-      <id>80</id>
+      <id>50</id>
       <posX>310</posX>
       <posY>270</posY>
       <width>670</width>
@@ -151,9 +151,9 @@
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
 
-    <!-- *** Portfolio Item Separator *** -->
+    <!-- *** Index Item Separator *** -->
     <control>
-      <description>Separator</description>
+      <description>Index Separator</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
@@ -161,96 +161,84 @@
       <width>1200</width>
       <label>____________________________________________________________________________________________________________</label>
       <textcolor>ff808080</textcolor>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
 
-    <!-- *** Portfolio Item Properties *** -->
+    <!-- *** Index Item Properties *** -->
     <control>
-      <description>Portfolio Item Name</description>
+      <description>Index Item Name</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
       <posY>580</posY>
       <width>830</width>
       <label>#Stocks.ListItemName</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>Portfolio Summary</description>
+      <description>Index Item Date/Time</description>
       <type>label</type>
       <id>0</id>
-      <posX>1260</posX>
+      <posX>1250</posX>
       <posY>580</posY>
-      <label>#Stocks.Summary</label>
+      <label>#Stocks.ListItemDate #Stocks.ListItemTime</label>
       <align>right</align>
-      <visible>string.equals(#Stocks.Type,Portfolio)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>Portfolio Item Last</description>
+      <description>Index Item Last</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
       <posY>610</posY>
       <width>830</width>
       <label>Current Value: #Stocks.ListItemLast</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)+!string.equals(#Stocks.ListItemLast,)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)+!string.equals(#Stocks.ListItemLast,)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>Portfolio Item Change</description>
+      <description>Index Item Change</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
       <posY>630</posY>
       <width>830</width>
       <label>Change: #Stocks.ListItemChange (#Stocks.ListItemPercentChange)</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)+!string.equals(#Stocks.ListItemChange,)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)+!string.equals(#Stocks.ListItemChange,)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>Portfolio Item Open</description>
+      <description>Index Item Open</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
       <posY>650</posY>
       <width>830</width>
-      <label>Close value: #Stocks.ListItemClose, Open Value: #Stocks.ListItemOpen</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)+!string.equals(#Stocks.ListItemOpen,)</visible>
+      <label>Close Value: #Stocks.ListItemClose, Open Value: #Stocks.ListItemOpen</label>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)+!string.equals(#Stocks.ListItemOpen,)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <description>Portfolio Item Low/High</description>
+      <description>Index Item Low/High</description>
       <type>label</type>
       <id>0</id>
       <posX>280</posX>
       <posY>670</posY>
       <width>830</width>
       <label>Lowest/Highest Value: #Stocks.ListItemLow/#Stocks.ListItemHigh</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)+!string.equals(#Stocks.ListItemLow,)</visible>
-      <animation effect="fade" time="300">WindowOpen</animation>
-      <animation effect="fade" time="300">WindowClose</animation>
-    </control>
-    <control>
-      <description>Portfolio Item Market</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>280</posX>
-      <posY>690</posY>
-      <width>830</width>
-      <label>Market Capital: #Stocks.ListItemCapital (Volume: #Stocks.ListItemVolume, Ratio: #Stocks.ListItemRatio)</label>
-      <visible>string.equals(#Stocks.PortfolioListSelectable,true)+string.equals(#Stocks.Type,Portfolio)+!string.equals(#Stocks.ListItemCapital,)</visible>
+      <visible>string.equals(#Stocks.IndexListSelectable,true)+string.equals(#Stocks.Type,Index)+!string.equals(#Stocks.ListItemLow,)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:747e0bd29944fc01bab94e7ddff78242-->
+<!--Checksum:cdfcff77a5414ba77411469225c5f671-->

@@ -2,132 +2,69 @@
 <window>
   <id>7973</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define><![CDATA[#header.label:Stocks & Indicies]]></define>
-  <define>#header.hover:hover_stocks.png</define>
-  <define>#header.BG.overlay:mainoverlay.png</define>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:Stocks &amp; Indices</define>
+  <define>#header.hover:hover_Stocks.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
+	<control>
+	  <description>Page Label</description>
+	  <type>label</type>
+	  <label>30009</label>
+	  <id>0</id>
+	  <posX>1023</posX>
+	  <posY>688</posY>
+	  <font>mediastream12tc</font>
+	  <textcolor>ff909090</textcolor>
+	  <animation effect="fade" time="300">WindowOpen</animation>
+	  <animation effect="fade" time="300">WindowClose</animation>
+	</control>
     <control>
-      <type>group</type>
-      <description>group element</description>
-      <posX>950</posX>
-      <posY>250</posY>
-      <width>300</width>
-      <height>80</height>
-      <layout>StackLayout</layout>
-      <control>
-        <description>Switch Button</description>
-        <type>button</type>
-        <id>2</id>
-        <label>Switch</label>
-        <onup>17</onup>
-        <ondown>3</ondown>
-        <onright>2</onright>
-        <onleft>2</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-      </control>
-      <control>
-        <description>Refresh Button</description>
-        <type>button</type>
-        <id>3</id>
-        <label>Refresh</label>
-        <onup>2</onup>
-        <ondown>2</ondown>
-        <onright>2</onright>
-        <onleft>2</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-      </control>
-    </control>
-    <!-- *** Type (Indices, Stocks, Currencies) *** -->
-    <control>
-      <description>Type</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>40</posX>
-      <posY>231</posY>
-      <label>#Stocks.Type</label>
-      <font>mediastream16tc</font>
-      <textcolor>ff000000</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Type</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>38</posX>
-      <posY>230</posY>
-      <label>#Stocks.Type</label>
-      <font>mediastream16tc</font>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <import>Stocks.Indicies.xml</import>
-    <import>Stocks.Stocks.xml</import>
-    <import>Stocks.Portfolio.xml</import>
-    <import>Stocks.Currencies.xml</import>
-    <!-- *** Logo *** -->
-    <control>
-      <description>Logo</description>
+      <description>Page Count Background</description>
       <type>image</type>
-      <id>1</id>
-      <posX>1020</posX>
-      <posY>670</posY>
-      <width>40</width>
-      <height>40</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>stocks.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
     </control>
-    <!-- *** Provider Info *** -->
-    <control>
-      <description>Provider Info</description>
+	<control>
+      <description>Refresh Time</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1270</posX>
+      <posY>14</posY>
+      <label>#StreamedMP.RefreshTime #Stocks.Time</label>
+      <font>mediastream10tc</font>
+      <textcolor>ff808080</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
+    </control>   
+	<control>
+      <description>Action</description>
       <type>label</type>
       <id>1</id>
-      <posX>1065</posX>
-      <posY>670</posY>
-      <label>provided by Yahoo! Finance</label>
-      <font>mediastream10</font>
-      <textcolor>ff808080</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <posX>280</posX>
+      <posY>240</posY>
+      <width>400</width>
+      <font>mediastream12tc</font>
+      <align>left</align>
+      <label>#Stocks.Action</label>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
     </control>
-    <control>
-      <description>Provider Info</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1065	</posX>
-      <posY>690</posY>
-      <label>quotes are delayed</label>
-      <font>mediastream10</font>
-      <textcolor>ff808080</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <import>common.overlays.xml</import>
+    <import>Stocks.Menu.xml</import>
+    <import>Stocks.Indices.xml</import>
+	<import>Stocks.Stocks.xml</import>
+    <import>Stocks.Funds.xml</import>
+	<import>Stocks.Portfolio.xml</import>
+    <import>Stocks.Currencies.xml</import>
   </controls>
 </window>
-<!--Checksum:e6aae62531df847e853d4fba78e1cc77-->
