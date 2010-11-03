@@ -327,18 +327,24 @@ namespace StreamedMPEditor
                     subMenuLevel1[index].displayName = itemProperties.DisplayName;
                     formStreamedMpEditor.changeOutstanding = true;
                 }
-                if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
+                //
+                // Only do this part if we care about hyperlink parameters
+                //
+                if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
                 {
-                    subMenuLevel1[index].hyperlinkParameter = "false";
-                    subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
-                    formStreamedMpEditor.changeOutstanding = true;
+                    if (string.IsNullOrEmpty(itemProperties.HypelinkParameter) || itemProperties.HypelinkParameter == "false")
+                    {
+                        subMenuLevel1[index].hyperlinkParameter = "false";
+                        subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+                        formStreamedMpEditor.changeOutstanding = true;
+                    }
+                    else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+                    {
+                        subMenuLevel1[index].hyperlinkParameter = itemProperties.HypelinkParameter;
+                        formStreamedMpEditor.changeOutstanding = true;
+                    }
                 }
-                else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
-                {
-                    subMenuLevel1[index].hyperlinkParameter = itemProperties.HypelinkParameter;
-                    formStreamedMpEditor.changeOutstanding = true;
-                }
-                
+                // Refresh the listbox, only way to do this is clear re-populate.
                 if (formStreamedMpEditor.changeOutstanding)
                 {
                     lboxSubMenuLevel1.Items.Clear();
