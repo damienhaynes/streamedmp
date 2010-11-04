@@ -346,11 +346,11 @@ namespace StreamedMPEditor
     public static bool pluginTakesParameter(string hyperLink)
     {
         Helper helper = new Helper();
-        if (!hlWarningDone && tvseriesViews.Count == 0 && isAlpha)
-        {
-            hlWarningDone = true;
-            helper.showError("Unable to Access TVSeries DB, this will reduce functionalty and is most\nlikley caused by running the Standalone version of the Editor.\n\nThis error will prevent access to the TVSeries view parameter lookup.\n\nPlease use the Editor from within MP Confuguration Plugins->Process for full functionality", errorCode.info);
-        }
+        //if (!hlWarningDone && tvseriesViews.Count == 0 && isAlpha)
+        //{
+        //    hlWarningDone = true;
+        //    helper.showError("Unable to Access TVSeries DB, this will reduce functionalty and is most\nlikley caused by running the Standalone version of the Editor.\n\nThis error will prevent access to the TVSeries view parameter lookup.\n\nPlease use the Editor from within MP Confuguration Plugins->Process for full functionality", errorCode.info);
+        //}
 
         if (!isAlpha)
             return false; 

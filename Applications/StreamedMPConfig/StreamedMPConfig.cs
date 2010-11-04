@@ -42,15 +42,9 @@ namespace StreamedMPConfig
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
     static settings smpSettings = new settings();
     SkinInfo skInfo = new SkinInfo();
-
-    static List<DBMovieInfo> recentAddedMovies = null;
-    static List<DBEpisode> recentAddedEpisodes = null;
-
+    
     public static List<int> mostRecentEpisodeControlIDs = new List<int>();
-    public static List<int> mostRecentMovieControlIDs = new List<int>();
-
-    MoviePlayer moviePlayer = null;
-    VideoHandler episodePlayer = null;
+    public static List<int> mostRecentMovieControlIDs = new List<int>();    
 
     private static readonly logger smcLog = logger.GetInstance();
 
@@ -307,7 +301,7 @@ namespace StreamedMPConfig
       #region Init Most Recents
       InitMostRecents();      
       #endregion
-
+      
       #region Init Misc
       MusicOptionsGUI.SetProperties();
       MiscConfigGUI.SetProperties();
@@ -642,7 +636,7 @@ namespace StreamedMPConfig
       // Remove anything older than 30 days
       filteredMovies.RemoveAll(movie => movie.DateAdded < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)));
 
-      recentAddedMovies = filteredMovies;
+      RecentlyAdded.recentAddedMovies = filteredMovies;
 
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -741,7 +735,7 @@ namespace StreamedMPConfig
 
       // get list of the 3 most recently added episodes in tvseries database
       // use file created date rather than added as we dont want to see all episodes for new databases
-      recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
+      RecentlyAdded.recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
       
       // Clear the properties first
       for (int i = 3; i == 0; --i)
@@ -754,14 +748,14 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".fanart", string.Empty);
       }
 
-      if (recentAddedEpisodes.Count == 0)
+      if (RecentlyAdded.recentAddedEpisodes.Count == 0)
       {
         smcLog.WriteLog("Found no results for TVseries Recently Added", LogLevel.Info);
       }
 
       // Set properties
       int mrEpisodeNumber = 1;
-      foreach (DBEpisode episode in recentAddedEpisodes)
+      foreach (DBEpisode episode in RecentlyAdded.recentAddedEpisodes)
       {
         DBSeries series = TVSeriesHelper.getCorrespondingSeries(episode[DBEpisode.cSeriesID]);
         if (series != null)
@@ -924,13 +918,13 @@ namespace StreamedMPConfig
     /// <param name="index">index of episode to be played</param>
     private void PlayEpisode(int index)
     {
-      if (recentAddedEpisodes != null && index <= recentAddedEpisodes.Count)
+      if (RecentlyAdded.recentAddedEpisodes != null && index <= RecentlyAdded.recentAddedEpisodes.Count)
       {
         // send off to tvseries video player
-        if (episodePlayer == null)
-          episodePlayer = new VideoHandler();
+        if (VideoPlayer.episodePlayer == null)
+          VideoPlayer.episodePlayer = new VideoHandler();
 
-        episodePlayer.ResumeOrPlay(recentAddedEpisodes[index - 1]);
+        VideoPlayer.episodePlayer.ResumeOrPlay(RecentlyAdded.recentAddedEpisodes[index - 1]);
       }
     }
 
@@ -940,13 +934,13 @@ namespace StreamedMPConfig
     /// <param name="index">index of movie to be played</param>
     private void PlayMovie(int index)
     {
-      if (recentAddedMovies != null && index <= recentAddedMovies.Count)
+      if (RecentlyAdded.recentAddedMovies != null && index <= RecentlyAdded.recentAddedMovies.Count)
       {
         // send off to movingpics video player
-        if (moviePlayer == null)
-          moviePlayer = new MoviePlayer(new MovingPicturesGUI());
+        if (VideoPlayer.moviePlayer == null)
+          VideoPlayer.moviePlayer = new MoviePlayer(new MovingPicturesGUI());
 
-        moviePlayer.Play(recentAddedMovies[index - 1]);
+        VideoPlayer.moviePlayer.Play(RecentlyAdded.recentAddedMovies[index - 1]);
       }
     }
 
