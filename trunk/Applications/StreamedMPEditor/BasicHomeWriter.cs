@@ -52,17 +52,45 @@ namespace StreamedMPEditor
 
       string randomFanartGames = randomFanart.fanartGames ? "Yes" : "No";
       string randomFanartMovies = randomFanart.fanartMovies ? "Yes" : "No";
+      string randomMoviesScraperFanart = randomFanart.fanartMoviesScraperFanart ? "Yes" : "No";
       string randomFanartMovingPictures = randomFanart.fanartMovingPictures ? "Yes" : "No";
       string randomFanartMusic = randomFanart.fanartMusic ? "Yes" : "No";
+      string randomMusicScraperFanart = randomFanart.fanartMusicScraperFanart ? "Yes" : "No";
       string randomFanartPictures = randomFanart.fanartPictures ? "Yes" : "No";
       string randomFanartPlugins = randomFanart.fanartPlugins ? "Yes" : "No";
       string randomFanartTv = randomFanart.fanartTv ? "Yes" : "No";
       string randomFanartTVSeries = randomFanart.fanartTVSeries ? "Yes" : "No";
       string randomScoreCenterFanart = randomFanart.fanartScoreCenter ? "Yes" : "No";
 
+
+
       if (fanartHandlerUsed)
       {
-        xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
+        if (fanartHandlerRelease2)
+        {
+          xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
+                        , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>"
+                        + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>"
+                        + "<define>#labelFont:" + cboLabelFont.Text + "</define>"
+                        + "<define>#selectedFont:" + cboSelectedFont.Text + "</define>"
+                        + "<define>#" + menuPos + "</define>"
+                        + "<define>#useRandomGamesUserFanart:" + randomFanartGames + "</define>"
+                        + "<define>#useRandomTVSeriesFanart:" + randomFanartTVSeries + "</define>"
+                        + "<define>#useRandomPluginsUserFanart:" + randomFanartPlugins + "</define>"
+                        + "<define>#useRandomMovingPicturesFanart:" + randomFanartMovingPictures + "</define>"
+                        + "<define>#useRandomMusicUserFanart:" + randomFanartMusic + "</define>"
+                        + "<define>#useRandomMusicScraperFanart:" + randomMusicScraperFanart + "</define>"
+                        + "<define>#useRandomPicturesUserFanart:" + randomFanartPictures + "</define>"
+                        + "<define>#useRandomTVUserFanart:" + randomFanartTv + "</define>"
+                        + "<define>#useRandomMoviesUserFanart:" + randomFanartMovies + "</define>"
+                        + "<define>#useRandomMoviesScraperFanart:" + randomMoviesScraperFanart + "</define>"
+                        + "<define>#useRandomScoreCenterUserFanart:" + randomScoreCenterFanart + "</define>");
+
+
+        }
+        else
+        {
+          xml = xml.Replace("<!-- BEGIN GENERATED DEFINITIONS -->"
                         , "<define>#menuitemFocus:" + focusAlpha.Text + txtFocusColour.Text + "</define>"
                         + "<define>#menuitemNoFocus:" + noFocusAlpha.Text + txtNoFocusColour.Text + "</define>"
                         + "<define>#labelFont:" + cboLabelFont.Text + "</define>"
@@ -77,6 +105,7 @@ namespace StreamedMPEditor
                         + "<define>#useRandomTVFanart:" + randomFanartTv + "</define>"
                         + "<define>#useRandomMoviesFanart:" + randomFanartMovies + "</define>"
                         + "<define>#useRandomScoreCenterFanart:" + randomScoreCenterFanart + "</define>");
+        }
       }
       else
       {
@@ -151,7 +180,7 @@ namespace StreamedMPEditor
       }
       xml = xml.Replace("<!-- BEGIN GENERATED BUTTON CODE-->", rawXML.ToString());
 
-      if (direction == menuType.vertical && subMenuL1Exists) 
+      if (direction == menuType.vertical && subMenuL1Exists)
         writeVerticalSubmenus();
 
       if (direction != menuType.vertical && subMenuL1Exists)
@@ -227,9 +256,9 @@ namespace StreamedMPEditor
                  "</control>";
 
 
-        }
-        tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
-        xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
+      }
+      tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
+      xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
 
     }
 
@@ -728,7 +757,7 @@ namespace StreamedMPEditor
     {
       StringBuilder rawXML = new StringBuilder();
       const string quote = "\"";
-      
+
       string exitIsVisible = null;
       string restartIsVisible = null;
       string shutdownIsVisible = null;
@@ -884,7 +913,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<width>200</width>");
       rawXML.AppendLine("<height>1</height>");
       rawXML.AppendLine("<texture>hbar1white.png</texture>");
-      rawXML.AppendLine("<visible>"+ exitIsVisible + "|"+ restartIsVisible + "|" + shutdownIsVisible +"</visible>");
+      rawXML.AppendLine("<visible>" + exitIsVisible + "|" + restartIsVisible + "|" + shutdownIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE -->", rawXML.ToString());
@@ -1066,7 +1095,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<!--**************-->");
       rawXML.AppendLine("<!-- Crowding Fix -->");
       rawXML.AppendLine("<!--**************-->");
-      
+
 
       for (int k = 0; k < menuItems.Count; k++)
       {
@@ -1086,7 +1115,7 @@ namespace StreamedMPEditor
         if (fourth >= menuItems.Count) fourth -= menuItems.Count;
 
         if (cbExitStyleNew.Checked)
-          topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() +")";
+          topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() + ")";
 
         if (menuItems[k].subMenuLevel1.Count > 0)
           submenuControl = "|control.isvisible(" + menuItems[k].subMenuLevel1ID.ToString() + ")";
@@ -1392,6 +1421,42 @@ namespace StreamedMPEditor
         //
         // Main controls - these deal with random fanart
         //
+
+        //sort out fanart handler....
+        if (item.fanartHandlerEnabled && fanartHandlerRelease2)
+        {
+          switch (item.fanartPropery.ToLower())
+          {
+            case "games":
+              fhUserDef = ".userdef";
+              break;
+            case "movie":
+              if (item.fhBGSource == fanartSource.Scraper)
+                fhUserDef = ".scraper";
+              else
+                fhUserDef = ".userdef";
+              break;
+            case "music":
+              if (item.fhBGSource == fanartSource.Scraper)
+                fhUserDef = ".scraper";
+              else
+                fhUserDef = ".userdef";
+              break;
+            case "picture":
+              fhUserDef = ".userdef";
+              break;
+            case "plugins":
+              fhUserDef = ".userdef";
+              break;
+            case "scorecenter":
+              fhUserDef = ".userdef";
+              break;
+            default:
+              fhUserDef = string.Empty;
+              break;
+          }
+        }
+
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>" + item.name + " BACKGROUND 1</description>");
         if (item.fanartHandlerEnabled)
@@ -1410,7 +1475,7 @@ namespace StreamedMPEditor
           if (item.fanartHandlerEnabled)
           {
             rawXML.AppendLine("<type>image</type>");
-            rawXML.AppendLine("<texture>#fanarthandler." + item.fanartPropery + ".backdrop1.any</texture>");
+            rawXML.AppendLine("<texture>#fanarthandler." + item.fanartPropery + fhUserDef + ".backdrop1.any</texture>");
 
           }
           else
@@ -1470,7 +1535,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + item.name + " BACKGROUND 2</description>");
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "2</id>");
           rawXML.AppendLine("<type>image</type>");
-          rawXML.AppendLine("<texture>#fanarthandler." + item.fanartPropery + ".backdrop2.any</texture>");
+          rawXML.AppendLine("<texture>#fanarthandler." + item.fanartPropery + fhUserDef + ".backdrop2.any</texture>");
           rawXML.AppendLine("<posx>0</posx>");
           rawXML.AppendLine("<posy>0</posy>");
           rawXML.AppendLine("<width>1280</width>");
@@ -3289,7 +3354,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HFull.xml</import>");
           else
             if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
-            rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum.xml</import>");
+              rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum.xml</import>");
             else
               rawXML.AppendLine("<import>basichome.recentlyadded.tvseries.HSum2.xml</import>");
         }
@@ -3304,7 +3369,7 @@ namespace StreamedMPEditor
           if (movPicsRecentStyle == movPicsRecentType.full)
             rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VFull.xml</import>");
           else
-            if (mrMovPicsSummStyle== mostRecentMovPicsSummaryStyle.poster)
+            if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster)
               rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VSum.xml</import>");
             else
               rawXML.AppendLine("<import>basichome.recentlyadded.movpics.VSum2.xml</import>");
@@ -3475,7 +3540,7 @@ namespace StreamedMPEditor
       string activeRssImageType = null;
       string targetScreenRes = "SD";
       string tvRecentDisplayType = "full";
-      string movPicsDisplayType = "full";      
+      string movPicsDisplayType = "full";
       string mostRecentTVSeriesSummStyle = "fanart";
       string mostRecentMovPicsSummStyle = "fanart";
 
@@ -3513,6 +3578,7 @@ namespace StreamedMPEditor
       string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
       string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
       string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
+
 
 
       if (direction == menuType.horizontal)
@@ -3642,7 +3708,7 @@ namespace StreamedMPEditor
                 + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
                 + "\t\t</section>");
 
-    
+
 
 
       StringBuilder rawXML = new StringBuilder();
@@ -3658,6 +3724,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartproperty", menItem.fanartProperty, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartSource", menItem.fhBGSource.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanarthandlerenabled", menItem.fanartHandlerEnabled.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "enablemusicnowplayingfanart", menItem.EnableMusicNowPlayingFanart.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlink", menItem.hyperlink, 3, false));

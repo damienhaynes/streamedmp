@@ -448,8 +448,6 @@ namespace StreamedMPEditor
           cbMostRecentTvSeries.Refresh();
         }
       }
-
-
       //
       // Read in the menu items
       //
@@ -473,10 +471,13 @@ namespace StreamedMPEditor
 
         mnuItem.xmlFileName = readEntryValue(menuTag, "menuitem" + i.ToString() + "xmlFileName", nodelist);
         if (mnuItem.xmlFileName == "false")
-            mnuItem.xmlFileName = getXMLFileName(mnuItem.hyperlink);
-        
-        mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
+          mnuItem.xmlFileName = getXMLFileName(mnuItem.hyperlink);
 
+        mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
+        mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
+        //
+        // Read submenu data
+        //
         if (readEntryValue(menuTag, "menuitem" + i.ToString() + "subMenuLevel1ID", nodelist) != "false")
         {
           mnuItem.subMenuLevel1ID = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "subMenuLevel1ID", nodelist));
@@ -587,30 +588,30 @@ namespace StreamedMPEditor
       btGenerateMenu.Enabled = true;
     }
 
-      string getXMLFileName(string hyperLink)
+    string getXMLFileName(string hyperLink)
+    {
+      int index = ids.IndexOf(hyperLink);
+      string firstFound;
+
+      try
       {
-          int index = ids.IndexOf(hyperLink);
-          string firstFound;
 
-          try
-          {
+        firstFound = xmlFiles.Items[index].ToString();
 
+        index = ids.IndexOf(hyperLink, index + 1);
+        if (index != -1 && hyperLink == "1")
+        {
+          if (!helper.pluginEnabled("For The Record TV"))
             firstFound = xmlFiles.Items[index].ToString();
-
-            index = ids.IndexOf(hyperLink, index + 1);
-            if (index != -1 && hyperLink == "1")
-            {
-              if (!helper.pluginEnabled("For The Record TV"))
-                firstFound = xmlFiles.Items[index].ToString();
-            }
-          }
-          catch
-          {
-            firstFound = "false";
-          }
-
-          return firstFound;
+        }
       }
+      catch
+      {
+        firstFound = "false";
+      }
+
+      return firstFound;
+    }
 
     displayMostRecent readMostRecentDisplayOption(string mrOption, string skinId)
     {
@@ -640,6 +641,22 @@ namespace StreamedMPEditor
         return displayMostRecent.recordedTV;
       else
         return displayMostRecent.off;
+    }
+
+    fanartSource readFHSource(string source, string fanartProperty)
+    {
+      if (source == fanartSource.Scraper.ToString())
+        return fanartSource.Scraper;
+      else if (source == fanartSource.UserDef.ToString())
+        return fanartSource.UserDef;
+      else
+      {
+        // Default Music and Movies to scraper images as source
+        if (fanartProperty.ToLower() == "music" || fanartProperty.ToLower() == "movie")
+          return fanartSource.Scraper;
+        else
+          return fanartSource.UserDef;
+      }
     }
   }
 }
