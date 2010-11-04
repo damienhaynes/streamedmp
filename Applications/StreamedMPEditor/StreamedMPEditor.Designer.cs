@@ -1008,6 +1008,7 @@
         this.cboFanartProperty.Size = new System.Drawing.Size(193, 21);
         this.cboFanartProperty.TabIndex = 16;
         this.toolTip1.SetToolTip(this.cboFanartProperty, resources.GetString("cboFanartProperty.ToolTip"));
+        this.cboFanartProperty.SelectedIndexChanged += new System.EventHandler(this.cboFanartProperty_SelectedIndexChanged);
         // 
         // labelFanartProperty
         // 

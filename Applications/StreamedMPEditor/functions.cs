@@ -371,6 +371,33 @@ namespace StreamedMPEditor
       weatherStyle = chosenWeatherStyle.middle;
     }
 
+    private void buildFHchoiceControls()
+    {
+        fhChoice.Text = "Fanart Source:";
+        fhChoice.Location = new Point(37, 100);
+
+        fhRBUserDef.Location = new Point(140, 100);
+        fhRBUserDef.Size = new Size(78, 17);
+        fhRBUserDef.Text = "User";
+
+        fhRBScraper.Location = new Point(220, 100);
+        fhRBScraper.Size = new Size(78, 17);
+        fhRBScraper.Text = "Scaper";
+
+        fhChoice.Visible = false;
+        fhRBScraper.Visible = false;
+        fhRBUserDef.Visible = false;
+
+        fhRBScraper.Checked = true;
+        fhRBUserDef.Checked = false;
+
+
+        this.backgroundImages.Controls.Add(fhChoice);
+        this.backgroundImages.Controls.Add(fhRBUserDef);
+        this.backgroundImages.Controls.Add(fhRBScraper);
+    }
+
+
     private void UpdateImageControlVisibility(bool fanartHandlerEnabled)
     {
 
@@ -382,6 +409,13 @@ namespace StreamedMPEditor
         labelImageFolder.Visible = false;
         bgBox.Visible = false;
         folderBrowse.Visible = false;
+
+        if (fanartHandlerRelease2 && (cboFanartProperty.Text.ToLower() == "music" || cboFanartProperty.Text.ToLower() == "movie"))
+        {
+            fhChoice.Visible = true;
+            fhRBScraper.Visible = true;
+            fhRBUserDef.Visible = true;
+        }
       }
       else
       {
@@ -389,6 +423,9 @@ namespace StreamedMPEditor
         cboFanartProperty.Visible = false;
         labelFanartProperty.Visible = false;
         cbEnableMusicNowPlayingFanart.Visible = false;
+        fhChoice.Visible = false;
+        fhRBScraper.Visible = false;
+        fhRBUserDef.Visible = false;
         //set the x,y of the skin image settings and display
         labelImageFolder.Location = new Point(5, 52);
         bgBox.Location = new Point(113, 49);
@@ -469,6 +506,7 @@ namespace StreamedMPEditor
         backgroundItem newbgItem = new backgroundItem();
         newbgItem.folder = menItem.bgFolder;
         newbgItem.fanartPropery = menItem.fanartProperty;
+        newbgItem.fhBGSource = menItem.fhBGSource;
         newbgItem.fanartHandlerEnabled = menItem.fanartHandlerEnabled;
         newbgItem.EnableMusicNowPlayingFanart = menItem.EnableMusicNowPlayingFanart;
         newbgItem.ids.Add(menItem.id.ToString());
@@ -1121,20 +1159,49 @@ namespace StreamedMPEditor
       // Check and set random fanart
       if (fanartProperty.ToLower().Contains("games"))
         randomFanart.fanartGames = true;
+
       if (fanartProperty.ToLower().Contains("plugins"))
         randomFanart.fanartPlugins = true;
+
       if (fanartProperty.ToLower().Contains("picture"))
         randomFanart.fanartPictures = true;
+
       if (fanartProperty.ToLower().Contains("tv"))
         randomFanart.fanartTv = true;
+      
       if (fanartProperty.ToLower().Contains("music"))
-        randomFanart.fanartMusic = true;
+      {
+          if (fhRBScraper.Checked)
+          {
+              randomFanart.fanartMusic = false;
+              randomFanart.fanartMusicScraperFanart = true;
+          }
+          else
+          {
+              randomFanart.fanartMusic = true;
+              randomFanart.fanartMusicScraperFanart = false;
+          }
+      }
+
       if (fanartProperty.ToLower().Contains("tvseries"))
         randomFanart.fanartTVSeries = true;
+
       if (fanartProperty.ToLower().Contains("movingpicture"))
         randomFanart.fanartMovingPictures = true;
+
       if (fanartProperty.ToLower().Contains("movie"))
-        randomFanart.fanartMovies = true;
+      {
+          if (fhRBScraper.Checked)
+          {
+              randomFanart.fanartMovies = false; 
+              randomFanart.fanartMoviesScraperFanart = true;
+          }
+          else
+          {
+              randomFanart.fanartMovies = true;
+              randomFanart.fanartMoviesScraperFanart = false;
+          }
+      }
       if (fanartProperty.ToLower().Contains("scorecenter"))
         randomFanart.fanartScoreCenter = true;
     }
@@ -1777,6 +1844,7 @@ namespace StreamedMPEditor
       public bool fanartHandlerEnabled;
       public bool EnableMusicNowPlayingFanart;
       public string fanartProperty;
+      public fanartSource fhBGSource; 
       public string name;
       public int id;
       public bool updateStatus;
@@ -1805,6 +1873,7 @@ namespace StreamedMPEditor
       public string name;
       public string folder;
       public string fanartPropery;
+      public fanartSource fhBGSource;
       public bool fanartHandlerEnabled;
       public bool EnableMusicNowPlayingFanart;
       public string image;
@@ -1863,6 +1932,8 @@ namespace StreamedMPEditor
       public bool fanartTv;
       public bool fanartMovies;
       public bool fanartScoreCenter;
+      public bool fanartMoviesScraperFanart;
+      public bool fanartMusicScraperFanart;
     }
 
     public struct editorValues
