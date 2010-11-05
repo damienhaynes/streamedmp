@@ -314,7 +314,7 @@ namespace StreamedMPEditor
             this.name = "Fanart Handler";
             break;
           case Plugins.ForTheRecord:
-            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\ForTheRecord.dll");
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\ForTheRecord.UI.MediaPortal.dll");
             this.name = "For The Record TV";
             break;
           case Plugins.HTPCInfo:
