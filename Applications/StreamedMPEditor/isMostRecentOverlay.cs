@@ -2933,7 +2933,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>Recorded on: #fanarthandler.tvrecordings.latest1.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest1.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2980,7 +2980,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>Recorded on: #fanarthandler.tvrecordings.latest2.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest2.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -3016,7 +3016,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>Recorded on: #fanarthandler.tvrecordings.latest3.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest3.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
