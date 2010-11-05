@@ -99,26 +99,37 @@ namespace StreamedMPEditor
 
     }
 
-    public bool pluginEnabled(string pluginName)
+    public bool pluginEnabled(Plugins plugin)
     {
+      PluginDetails pd = new PluginDetails(plugin);
+
       // check if plugin is enabled/disabled
       // if we dont find they entry then we assume enabled as we know it
       // is installed so most likley configuration has not yet been run
       // to write the entry to MediaPortal.xml
-      string returnValue;
+      string returnValue = null;
 
       try
       {
-        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
+        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.MPSettings())
         {
-          returnValue = xmlreader.GetValueAsString("plugins", pluginName, "");
+          returnValue = xmlreader.GetValueAsString("plugins", pd.name, "");
         }
       }
       catch (Exception e)
       {
-        showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);
-        return true;
+        showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);        
       }
+
+      if (string.IsNullOrEmpty(returnValue))
+      {
+        // error looking up in mediaportal.xml, check if file exists
+        if (string.IsNullOrEmpty(pd.filename))
+          return false;
+        else
+          return File.Exists(pd.filename);
+      }
+
       if (returnValue.ToLower() == "no")
         return false;
       else
@@ -270,6 +281,74 @@ namespace StreamedMPEditor
 
       return result;
     }
+
+    public enum Plugins
+    {
+      FanartHandler,
+      SleepControl,
+      Stocks,
+      PowerControl,
+      HTPCInfo,
+      DriveFreeSpace,
+      InfoService,
+      MovingPictures,
+      MPTVSeries,
+      ForTheRecord    
+    }
+
+    class PluginDetails
+    {
+      public string filename = string.Empty;
+      public string name = string.Empty;
+
+      public PluginDetails(Plugins plugin)
+      {
+        switch (plugin)
+        {
+          case Plugins.DriveFreeSpace:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\DriveFreeSpace.dll");
+            this.name = "DriveFreeSpace";
+            break;
+          case Plugins.FanartHandler:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"process\FanartHandler.dll");
+            this.name = "Fanart Handler";
+            break;
+          case Plugins.ForTheRecord:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\ForTheRecord.dll");
+            this.name = "For The Record TV";
+            break;
+          case Plugins.HTPCInfo:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\HTPCInfo.dll");
+            this.name = "HTPC Info";
+            break;
+          case Plugins.InfoService:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\HTPCInfo.dll");
+            this.name = "InfoService";
+            break;
+          case Plugins.MovingPictures:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\MovingPictures.dll");
+            this.name = "Moving Pictures";
+            break;
+          case Plugins.MPTVSeries:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\MP-TVSeries.dll");
+            this.name = "MP-TVSeries";
+            break;
+          case Plugins.PowerControl:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\PowerControl.dll");
+            this.name = "Power Controls";
+            break;
+          case Plugins.SleepControl:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\SleepControl.dll");
+            this.name = "Sleep Control";
+            break;
+          case Plugins.Stocks:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\Stocks.dll");
+            this.name = "Stocks";
+            break;
+        }
+      }
+    }
+
     #endregion
 
   }

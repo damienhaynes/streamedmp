@@ -1196,7 +1196,7 @@ namespace StreamedMPEditor
         //
         // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
         //
-        if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+        if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
         {
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           if (cbEnableRecentMusic.Checked)
@@ -1228,7 +1228,7 @@ namespace StreamedMPEditor
         //
         // Only add imports to basichome if the correct Fanart Handler version is installed and enabled
         //
-        if (helper.pluginEnabled("Fanart Handler") && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+        if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
         {
           if (cbEnableRecentMusic.Checked && mostRecentVisibleControls(isOverlayType.Music) != null)
             generateMostRecentInclude(isOverlayType.Music);
