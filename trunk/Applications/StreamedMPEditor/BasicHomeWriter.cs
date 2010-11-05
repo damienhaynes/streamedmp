@@ -3401,6 +3401,17 @@ namespace StreamedMPEditor
         }
       }
 
+      if (overlayType == isOverlayType.freeDriveSpace)
+      {
+        replaceString = "<!-- BEGIN FREEDRIVESPACE OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.FreeDriveSpace.Overlay.xml</import>");
+      }
+
+      if (overlayType == isOverlayType.sleepControl)
+      {
+        replaceString = "<!-- BEGIN SLEEPCONTROL OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.SleepControl.Overlay.xml</import>");
+      }
       if (!string.IsNullOrEmpty(replaceString))
         xml = xml.Replace(replaceString, rawXML.ToString());
     }
@@ -3578,6 +3589,7 @@ namespace StreamedMPEditor
       string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
       string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
       string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
+      string sleepControlEnabled = cbSleepControlOverlay.Checked ? "true" : "false";
 
 
 
@@ -3648,6 +3660,13 @@ namespace StreamedMPEditor
       else
         mostRecentMovPicsSummStyle = "poster";
 
+      driveFreeSpaceList = string.Empty;
+      foreach (string drive in driveFreeSpaceDrives)
+      {
+        driveFreeSpaceList += drive + ",";
+      }
+      driveFreeSpaceList = driveFreeSpaceList.Substring(0, driveFreeSpaceList.Length - 1);
+
       xml = ("<profile>\n"
                 + "\t<version>1.0</version>\n"
                 + "\t<skin name=\"StreamedMP\">\n"
@@ -3706,6 +3725,8 @@ namespace StreamedMPEditor
                 + generateEntry("mrMovPicsDisableFadeLabel", mrMovPicsDisableFadeLabel, 3, true)
                 + generateEntry("mrRecordedTVEnabled", mrRecordedTVEnabled, 3, true)
                 + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
+                + generateEntry("driveFreeSpaceList", driveFreeSpaceList, 3, true)
+                + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
                 + "\t\t</section>");
 
 

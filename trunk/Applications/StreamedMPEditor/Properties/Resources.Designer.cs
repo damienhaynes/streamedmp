@@ -60,6 +60,13 @@ namespace StreamedMPEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap down {
+            get {
+                object obj = ResourceManager.GetObject("down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap menuStyle1 {
             get {
                 object obj = ResourceManager.GetObject("menuStyle1", resourceCulture);
@@ -112,6 +119,13 @@ namespace StreamedMPEditor.Properties {
         internal static System.Drawing.Bitmap style8 {
             get {
                 object obj = ResourceManager.GetObject("style8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap up {
+            get {
+                object obj = ResourceManager.GetObject("up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

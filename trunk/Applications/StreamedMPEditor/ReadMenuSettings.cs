@@ -240,11 +240,26 @@ namespace StreamedMPEditor
         movPicsOptions.DisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
         cbEnableRecentRecordedTV.Checked = bool.Parse(readEntryValue(optionsTag, "mrRecordedTVEnabled", nodelist));
         cbEnableRecentMusic.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
+        driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
+        cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
       }
       catch
       {
         // Most likley a new option added but not written to file yet - just continue
       }
+
+      if (!(driveFreeSpaceList == "false"))
+      {
+        cbFreeDriveSpaceOverlay.Checked = true;
+        string[] configuredDrives = driveFreeSpaceList.Split(',');
+        foreach (string hd in configuredDrives)
+        {
+          DriveInfo hdDetails = new DriveInfo(hd);
+          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+          formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+        }
+      }
+
 
       if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
         tvSeriesOptions.mrSeriesFont = "mediastream10c";
@@ -639,6 +654,16 @@ namespace StreamedMPEditor
         return displayMostRecent.music;
       else if (mrOption == displayMostRecent.recordedTV.ToString())
         return displayMostRecent.recordedTV;
+      else if (mrOption == displayMostRecent.freeDriveSpace.ToString())
+        return displayMostRecent.freeDriveSpace;
+      else if (mrOption == displayMostRecent.htpcInfo.ToString())
+        return displayMostRecent.htpcInfo;
+      else if (mrOption == displayMostRecent.powerControl.ToString())
+        return displayMostRecent.powerControl;
+      else if (mrOption == displayMostRecent.sleepControl.ToString())
+        return displayMostRecent.sleepControl;
+      else if (mrOption == displayMostRecent.stocks.ToString())
+        return displayMostRecent.stocks;
       else
         return displayMostRecent.off;
     }

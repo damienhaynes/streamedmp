@@ -73,14 +73,6 @@ namespace StreamedMPEditor
       ciSizeMismatch
     };
 
-    enum isOverlayType
-    {
-      TVSeries,
-      MovPics,
-      Music,
-      RecordedTV
-    }
-
     enum tvSeriesRecentType
     {
       summary,
@@ -119,6 +111,19 @@ namespace StreamedMPEditor
       htpcInfo
     }
 
+    enum isOverlayType
+    {
+      TVSeries,
+      MovPics,
+      Music,
+      RecordedTV,
+      freeDriveSpace,
+      powerControl,
+      sleepControl,
+      stocks,
+      htpcInfo
+    }
+
     public enum fanartSource
     {
       Scraper,
@@ -135,12 +140,15 @@ namespace StreamedMPEditor
 
     public static List<prettyItem> prettyItems = new List<prettyItem>();
     public static List<menuItem> menuItems = new List<menuItem>();
+    public static List<string> driveFreeSpaceDrives = new List<string>();
 
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<string> ids = new List<string>();
     List<string> idsTemp = new List<string>();
     List<string> skinFontsFocused = new List<string>();
     List<string> skinFontsUnFocused = new List<string>();
+
+
 
     public const string tvseriesSkinID = "9811";
     public const string movingPicturesSkinID = "96742";
@@ -174,6 +182,7 @@ namespace StreamedMPEditor
     string level1LateralBladeVisible;
     string level2LateralBladeVisible;
     public string fhUserDef = string.Empty;
+    public static string driveFreeSpaceList = string.Empty;
 
 
     int textXOffset = -25;
@@ -353,8 +362,9 @@ namespace StreamedMPEditor
         fhUserDef = ".userdef";
         fanartHandlerRelease2 = true;
       }
+      
       buildFHchoiceControls();
-
+      checkAndEnableOverlays();
     }
 
     public string getTVSeriesViewKey(string value)
@@ -1108,6 +1118,7 @@ namespace StreamedMPEditor
           generateTopBarV1();
         else
           generateTopBarV();
+
         generateMenuGraphicsV();
         generateCrowdingFixV();
         GenerateContextLabelsV();
@@ -1195,6 +1206,13 @@ namespace StreamedMPEditor
           if (cbEnableRecentRecordedTV.Checked)
             generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
         }
+
+        if (cbFreeDriveSpaceOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
+
+        if (cbSleepControlOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
+
       }
       //
       // Add the imports to basichome
@@ -1218,6 +1236,12 @@ namespace StreamedMPEditor
           if (cbEnableRecentRecordedTV.Checked && mostRecentVisibleControls(isOverlayType.RecordedTV) != null)
             generateMostRecentInclude(isOverlayType.RecordedTV);
         }
+
+        if (cbFreeDriveSpaceOverlay.Checked)
+          generateMostRecentInclude(isOverlayType.freeDriveSpace);
+
+        if (cbSleepControlOverlay.Checked)
+          generateMostRecentInclude(isOverlayType.sleepControl);
       }
     }
     //
@@ -1452,6 +1476,11 @@ namespace StreamedMPEditor
         fhRBScraper.Visible = false;
         fhRBUserDef.Visible = false;
       }
+    }
+
+    private void cbFreeDriveSpaceOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      btConfigureFreeDriveSpace.Enabled = cbFreeDriveSpaceOverlay.Checked ? true : false;
     }
 
   }
