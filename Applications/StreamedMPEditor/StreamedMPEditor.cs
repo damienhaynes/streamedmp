@@ -637,9 +637,10 @@ namespace StreamedMPEditor
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
-        tbItemName.Text = "";
-
-        bgBox.Text = "";
+        // clear up
+        tbItemName.Text = string.Empty;
+        bgBox.Text = string.Empty;
+        cboContextLabel.Text = string.Empty;
 
         if (itemsOnMenubar.Items.Count > 2)
           btGenerateMenu.Enabled = true;
