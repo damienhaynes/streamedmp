@@ -153,7 +153,7 @@
       <description>Release Date Label</description>
       <id>0</id>
       <type>label</type>
-      <label>#OnlineVideos.Translation.DateOfRelease.Label</label>
+      <label>#StreamedMP.ReleaseDate</label>
       <posX>310</posX>
       <posY>557</posY>
       <width>190</width>
@@ -224,7 +224,7 @@
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible><visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible></visible>
-    </control>	    
+    </control>
     <control>
       <description>Clips List</description>
       <type>listcontrol</type>

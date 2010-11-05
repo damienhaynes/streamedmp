@@ -86,7 +86,26 @@
       <visible>!control.isvisible(50)</visible>
     </control>
     <control>
-      <description>Summary</description>
+      <description>Summary/Actors</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>315</posY>
+      <width>475</width>
+      <height>223</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#MyTrailers.Details.Description
+	  
+	  #MyTrailers.Details.Label.Cast: #MyTrailers.Details.Cast</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!control.isvisible(50)+!string.equals(#MyTrailers.Details.Description,)+!string.equals(#MyTrailers.Details.Cast,)</visible>
+    </control>
+	<control>
+      <description>Summary Only</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>308</posX>
@@ -100,13 +119,30 @@
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>!control.isvisible(50)</visible>
+      <visible>!control.isvisible(50)+!string.equals(#MyTrailers.Details.Description,)+string.equals(#MyTrailers.Details.Cast,)</visible>
+    </control>
+	<control>
+      <description>Actors Only</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>315</posY>
+      <width>475</width>
+      <height>223</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#MyTrailers.Details.Label.Cast: #MyTrailers.Details.Cast</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!control.isvisible(50)+string.equals(#MyTrailers.Details.Description,)+!string.equals(#MyTrailers.Details.Cast,)</visible>
     </control>
     <control Style="smallTitleB">
       <description>Release Date Label</description>
       <id>0</id>
       <type>label</type>
-      <label>Release Date</label>
+      <label>#StreamedMP.ReleaseDate</label>
       <posX>310</posX>
       <posY>557</posY>
       <width>140</width>
@@ -229,7 +265,7 @@
       <spinPosX>1175</spinPosX>
       <spinPosY>681</spinPosY>
       <spinAlign>Right</spinAlign>
-      <spinColor>ff006698</spinColor>
+      <spinColor>ff006698</spinColor>	  
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
