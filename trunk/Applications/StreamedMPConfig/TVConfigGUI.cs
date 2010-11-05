@@ -181,6 +181,10 @@ namespace StreamedMPConfig
       skinFile = skinFile = GUIGraphicsContext.Skin + @"\dialogTvGuide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
 
+      // 4TR TVGuide
+      skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuide.xml";
+      Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
+
       // TVMiniGuide Imports exist in TVMiniGuide.xml
       skinFile = skinFile = GUIGraphicsContext.Skin + @"\TVMiniGuide.xml";
       Helper.SetSkinImport(skinFile, "TVMiniGuide", string.Format("TVMiniGuide.{0}Rows.xml", (int)TVMiniGuideRowSize));

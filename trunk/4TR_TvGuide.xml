@@ -211,39 +211,10 @@
       <onleft>6</onleft>
       <onright>8</onright>
     </control>
-    <control>
-      <description>Channel template</description>
-      <type>image</type>
-      <id>20</id>
-      <posX>50</posX>
-      <posY>120</posY>
-      <width>251</width>
-      <height>44</height>
-    </control>
-    <control>
-      <description>Channel image template</description>
-      <type>image</type>
-      <id>7</id>
-      <width>38</width>
-      <height>38</height>
-      <posX>3</posX>
-      <posY>2</posY>
-      <zoom>no</zoom>
-      <centered>yes</centered>
-      <keepaspectratio>yes</keepaspectratio>
-      <texture>defaultVideoBig.png</texture>
-    </control>
-    <control>
-      <description>channel Label template</description>
-      <type>label</type>
-      <id>18</id>
-      <posX>55</posX>
-      <posY>5</posY>
-      <width>86</width>
-      <height>10</height>
-      <font>mediastream12tc</font>
-      <textcolor>FFFFFFFF</textcolor>
-    </control>
+    
+    <import tag="TVGuideChannelTemplate">mytvguide.common.16rows.channeltemplate.xml</import>
+    
+    
     <control>
       <description>Current program time</description>
       <type>label</type>
@@ -289,14 +260,6 @@
       <textcolor>FFFFFFFF</textcolor>
     </control>
     <control>
-      <description>template for program title light area</description>
-      <type>label</type>
-      <id>24</id>
-      <visible>no</visible>
-      <label>-</label>
-      <font>font14</font>
-    </control>
-    <control>
       <description>vertical timeline</description>
       <type>image</type>
       <id>25</id>
@@ -305,15 +268,6 @@
       <height>475</height>
       <colordiffuse>c0ffffff</colordiffuse>
       <texture>tvguide_slider.png</texture>
-    </control>
-    <control>
-      <description>template for program title darkarea </description>
-      <type>label</type>
-      <visible>no</visible>
-      <id>26</id>
-      <label>-</label>
-      <font>font14</font>
-      <textcolor>FFFFFFFF</textcolor>
     </control>
     <control>
       <description>TvGroup button</description>
