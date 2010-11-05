@@ -248,7 +248,7 @@ namespace StreamedMPEditor
         // Most likley a new option added but not written to file yet - just continue
       }
 
-      if (!(driveFreeSpaceList == "false"))
+      if (!string.IsNullOrEmpty(driveFreeSpaceList) && !(driveFreeSpaceList == "false"))
       {
         cbFreeDriveSpaceOverlay.Checked = true;
         string[] configuredDrives = driveFreeSpaceList.Split(',');
