@@ -436,7 +436,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        if (!helper.pluginEnabled("Moving Pictures"))
+        if (!helper.pluginEnabled(Helper.Plugins.MovingPictures))
         {
           pMovPicsRecent.Enabled = false;
           cbMostRecentMovPics.Checked = false;
@@ -455,7 +455,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        if (!helper.pluginEnabled("MP-TV Series"))
+        if (!helper.pluginEnabled(Helper.Plugins.MPTVSeries))
         {
           pTVSeriesRecent.Enabled = false;
           cbMostRecentTvSeries.Checked = false;
@@ -616,7 +616,7 @@ namespace StreamedMPEditor
         index = ids.IndexOf(hyperLink, index + 1);
         if (index != -1 && hyperLink == "1")
         {
-          if (!helper.pluginEnabled("For The Record TV"))
+          if (!helper.pluginEnabled(Helper.Plugins.ForTheRecord))
             firstFound = xmlFiles.Items[index].ToString();
         }
       }

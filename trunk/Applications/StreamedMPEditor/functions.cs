@@ -23,7 +23,7 @@ namespace StreamedMPEditor
       readMediaPortalDirs();
 
       // Check in Infoservice is enabled
-      if (!helper.pluginEnabled("InfoService"))
+      if (!helper.pluginEnabled(Helper.Plugins.InfoService))
       {
         infoserviceOptions.Enabled = false;
         infoserviceOptions.Text = "InfoService Options(Disabled)";
@@ -38,7 +38,7 @@ namespace StreamedMPEditor
       }
 
       // Checkl if Fanart Handler is Enabled
-      if (helper.pluginEnabled("Fanart Handler"))
+      if (helper.pluginEnabled(Helper.Plugins.FanartHandler))
         cbItemFanartHandlerEnable.Visible = true;
       else
         cbItemFanartHandlerEnable.Visible = false;
@@ -1661,27 +1661,27 @@ namespace StreamedMPEditor
 
     void checkAndEnableOverlays()
     {
-      if (helper.pluginEnabled("Sleep Control"))
+      if (helper.pluginEnabled(Helper.Plugins.SleepControl))
         cbSleepControlOverlay.Enabled = true;
       else
         cbSleepControlOverlay.Text += " (Not Installed)";
 
-      if (helper.pluginEnabled("Stocks"))
+      if (helper.pluginEnabled(Helper.Plugins.Stocks))
         cbSocksOverlay.Enabled = true;
       else
         cbSleepControlOverlay.Text += " (Not Installed)";
 
-      if (helper.pluginEnabled("Power Control"))
+      if (helper.pluginEnabled(Helper.Plugins.PowerControl))
         cbPowerControlOverlay.Enabled = true;
       else
         cbPowerControlOverlay.Text += " (Not Installed)";
 
-      if (helper.pluginEnabled("HTPC Info"))
+      if (helper.pluginEnabled(Helper.Plugins.HTPCInfo))
         cbHtpcInfoOverlay.Enabled = true;
       else
         cbHtpcInfoOverlay.Text += " (Not Installed)";
 
-      if (helper.pluginEnabled("DriveFreeSpace"))
+      if (helper.pluginEnabled(Helper.Plugins.DriveFreeSpace))
         cbFreeDriveSpaceOverlay.Enabled = true;
       else
         cbFreeDriveSpaceOverlay.Text += " (Not Installed)";

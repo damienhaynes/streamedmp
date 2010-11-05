@@ -3386,7 +3386,7 @@ namespace StreamedMPEditor
         }
       }
 
-      if (helper.pluginEnabled("Fanart Handler"))
+      if (helper.pluginEnabled(Helper.Plugins.FanartHandler))
       {
         if (overlayType == isOverlayType.Music)
         {
