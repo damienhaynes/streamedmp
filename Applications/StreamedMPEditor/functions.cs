@@ -1171,16 +1171,21 @@ namespace StreamedMPEditor
       
       if (fanartProperty.ToLower().Contains("music"))
       {
+        if (fanartHandlerRelease2)
+        {
           if (fhRBScraper.Checked)
           {
-              randomFanart.fanartMusic = false;
-              randomFanart.fanartMusicScraperFanart = true;
+            randomFanart.fanartMusic = false;
+            randomFanart.fanartMusicScraperFanart = true;
           }
           else
           {
-              randomFanart.fanartMusic = true;
-              randomFanart.fanartMusicScraperFanart = false;
+            randomFanart.fanartMusic = true;
+            randomFanart.fanartMusicScraperFanart = false;
           }
+        }
+        else
+          randomFanart.fanartMusic = true;
       }
 
       if (fanartProperty.ToLower().Contains("tvseries"))
@@ -1191,17 +1196,23 @@ namespace StreamedMPEditor
 
       if (fanartProperty.ToLower().Contains("movie"))
       {
+        if (fanartHandlerRelease2)
+        {
           if (fhRBScraper.Checked)
           {
-              randomFanart.fanartMovies = false; 
-              randomFanart.fanartMoviesScraperFanart = true;
+            randomFanart.fanartMovies = false;
+            randomFanart.fanartMoviesScraperFanart = true;
           }
           else
           {
-              randomFanart.fanartMovies = true;
-              randomFanart.fanartMoviesScraperFanart = false;
+            randomFanart.fanartMovies = true;
+            randomFanart.fanartMoviesScraperFanart = false;
           }
+        }
+        else
+          randomFanart.fanartMovies = true;
       }
+
       if (fanartProperty.ToLower().Contains("scorecenter"))
         randomFanart.fanartScoreCenter = true;
     }
