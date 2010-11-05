@@ -1658,7 +1658,35 @@ namespace StreamedMPEditor
         }
       }
     }
-    
+
+    void checkAndEnableOverlays()
+    {
+      if (helper.pluginEnabled("Sleep Control"))
+        cbSleepControlOverlay.Enabled = true;
+      else
+        cbSleepControlOverlay.Text += " (Not Installed)";
+
+      if (helper.pluginEnabled("Stocks"))
+        cbSocksOverlay.Enabled = true;
+      else
+        cbSleepControlOverlay.Text += " (Not Installed)";
+
+      if (helper.pluginEnabled("Power Control"))
+        cbPowerControlOverlay.Enabled = true;
+      else
+        cbPowerControlOverlay.Text += " (Not Installed)";
+
+      if (helper.pluginEnabled("HTPC Info"))
+        cbHtpcInfoOverlay.Enabled = true;
+      else
+        cbHtpcInfoOverlay.Text += " (Not Installed)";
+
+      if (helper.pluginEnabled("DriveFreeSpace"))
+        cbFreeDriveSpaceOverlay.Enabled = true;
+      else
+        cbFreeDriveSpaceOverlay.Text += " (Not Installed)";
+    }
+
     //
     // Write out a formatted xml file
     //
