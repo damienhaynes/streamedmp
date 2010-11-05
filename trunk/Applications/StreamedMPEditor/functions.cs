@@ -234,7 +234,7 @@ namespace StreamedMPEditor
         selectedWindow.Text = xmlFileName;
         foreach (prettyItem p in prettyItems)
         {
-          if (p.id == selectedID && xmlFileName == p.xmlfile)
+          if (p.id == selectedID && xmlFileName.ToLower() == p.xmlfile.ToLower())
           {
             // Populate
             QuickSelect(i);
