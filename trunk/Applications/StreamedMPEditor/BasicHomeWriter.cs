@@ -3665,7 +3665,8 @@ namespace StreamedMPEditor
       {
         driveFreeSpaceList += drive + ",";
       }
-      driveFreeSpaceList = driveFreeSpaceList.Substring(0, driveFreeSpaceList.Length - 1);
+      if (driveFreeSpaceList.Length > 0)
+        driveFreeSpaceList = driveFreeSpaceList.Substring(0, driveFreeSpaceList.Length - 1);
 
       xml = ("<profile>\n"
                 + "\t<version>1.0</version>\n"
