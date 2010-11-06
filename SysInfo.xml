@@ -50,7 +50,7 @@
       <defaultcontrol>41</defaultcontrol>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1028</posX>
         <posY>0</posY>
         <width>278</width>
         <height>720</height>
@@ -65,7 +65,7 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
+        <posX>1050</posX>
         <posY>225</posY>
         <visible>!Control.HasFocus(112233)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
@@ -81,8 +81,6 @@
         <width>278</width>
         <height>720</height>
         <visible>!Control.HasFocus(112233)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>1</id>
@@ -94,14 +92,15 @@
         <texture>streamed_right_menu.png</texture>
         <colorDiffuse>fffffffff</colorDiffuse>
         <visible>!Control.HasFocus(112233)</visible>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
-        <animation effect="fade" time="500">WindowClose</animation>
-        <animation effect="fade" time="250">WindowOpen</animation>
         <description>group element</description>
+        <visible>!Control.HasFocus(112233)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
         <posY>250</posY>
         <width>220</width>
@@ -118,13 +117,6 @@
           <ondown>42</ondown>
         </control>
         <control>
-          <description>hidden</description>
-          <type>button</type>
-          <id>40</id>
-          <label></label>
-          <visible>no</visible>
-        </control>
-        <control>
           <description>About</description>
           <type>button</type>
           <id>42</id>
@@ -135,6 +127,13 @@
           <ondown>42</ondown>
         </control>
       </control>
+        <control>
+          <description>hidden</description>
+          <type>button</type>
+          <id>40</id>
+          <label></label>
+          <visible>yes</visible>
+        </control>
     </control>
     <!-- CPU Gauge -->
     <control>
@@ -205,7 +204,7 @@
       <description>Gauge#2_label</description>
       <type>label</type>
       <id>20</id>
-      <posX>635</posX>
+      <posX>640</posX>
       <posY>90</posY>
       <label>Memory utilization</label>
       <font>mediastream10tc</font>
