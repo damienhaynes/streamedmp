@@ -306,7 +306,7 @@ namespace StreamedMPEditor
         switch (plugin)
         {
           case Plugins.DriveFreeSpace:
-            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\DriveFreeSpace.dll");
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"process\DriveFreeSpace.dll");
             this.name = "DriveFreeSpace";
             break;
           case Plugins.FanartHandler:
