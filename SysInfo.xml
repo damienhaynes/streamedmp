@@ -661,11 +661,21 @@
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
     <control>
+      <description>Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>496</posX>
+      <posY>668</posY>
+      <width>290</width>
+      <height>45</height>
+      <texture>subsearchbg.png</texture>
+    </control>
+    <control>
       <description>Network_Status</description>
       <type>image</type>
       <id>107</id>
-      <posX>190</posX>
-      <posY>16</posY>
+      <posX>510</posX>
+      <posY>678</posY>
       <width>20</width>
       <height>20</height>
       <texturebg>-</texturebg>
@@ -675,9 +685,40 @@
       <description>Network_label</description>
       <type>label</type>
       <id>20</id>
-      <posX>220</posX>
-      <posY>16</posY>
+      <posX>550</posX>
+      <posY>678</posY>
       <label>Network</label>
+      <font>mediastream10c</font>
+    </control>  
+    <control>
+      <description>TvServer_Status</description>
+      <type>image</type>
+      <id>108</id>
+      <posX>660</posX>
+      <posY>678</posY>
+      <width>20</width>
+      <height>20</height>
+      <texturebg>-</texturebg>
+      <texture>Sysinfo_Black.png</texture>
     </control>
+    <control>
+      <description>Status_label</description>
+      <type>label</type>
+      <id>20</id>
+      <posX>700</posX>
+      <posY>678</posY>
+      <label>TvServer</label>
+      <font>mediastream10c</font>
+    </control>
+    <!-- Hide this control for Now-->
+    <control>
+      <description>SpeedFan</description>
+      <type>textbox</type>
+      <id>25</id>
+      <posX>-30</posX>
+      <posY>668</posY>
+      <width>20</width>
+      <height>20</height>    
+    </control> 
   </controls>
 </window>
