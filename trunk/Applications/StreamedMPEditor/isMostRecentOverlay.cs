@@ -44,6 +44,10 @@
           stocksOverlay();
           writeXMLFile("basichome.Stocks.Overlay.xml");
           break;
+        case isOverlayType.powerControl:
+          powerControlOverlay();
+          writeXMLFile("basichome.PowerControl.Overlay.xml");
+          break;
         default:
           break;
       }
@@ -3737,6 +3741,215 @@
 
     #endregion
 
+    #region Power Control
+
+    void powerControlOverlay()
+    {
+      xml = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
+            "<window>" +
+              "<controls>" +
+                "<control>" +
+                  "<description>GROUP: Power Control Plugins Overlay</description>" +
+                  "<type>group</type>" +
+                  "<dimColor>0xffffffff</dimColor>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.powerControl) + "</visible>" +
+                  "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<control>" +
+                    "<description>Movie 1 BG</description>" +
+                    "<posX>976</posX>" +
+                    "<posY>50</posY>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<width>306</width>" +
+                    "<height>320</height>" +
+                    "<texture>recentsummoverlaybg.png</texture>" +
+                    "<colordiffuse>EEFFFFFF</colordiffuse>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Header label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>76</posY>" +
+                    "<width>258</width>" +
+                    "<label>Power Control</label>" +
+                    "<font>mediastream10tc</font>" +
+                    "<textcolor>White</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Index Separator</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>80</posY>" +
+                    "<width>264</width>" +
+                    "<label>____________________________________________________________________________________________________________</label>" +
+                    "<textcolor>ff808080</textcolor>" +
+                  "</control>" +
+                  "<!-- *** Network Device 0 *** -->" +
+                  "<control>" +
+                    "<description>Network Device 0 Image</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>100</posY>" +
+                    "<width>40</width>" +
+                    "<height>40</height>" +
+                    "<texture>#PowerControl.NetworkDevice0TypeImage</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 0 Description</description>" +
+                    "<type>label</type>" +
+                    "<id>1</id>" +
+                    "<posX>1042</posX>" +
+                    "<posY>110</posY>" +
+                    "<width>198</width>" +
+                    "<label>#PowerControl.NetworkDevice0Description</label>" +
+                    "<font>mediastream10tc</font>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 0 Alive</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1240</posX>" +
+                    "<posY>110</posY>>" +
+                    "<texture>#PowerControl.NetworkDevice0AliveImage</texture>" +
+                    "<width>20</width>" +
+                    "<height>20</height>" +
+                  "</control>" +
+                  "<!-- *** Network Device 1 *** -->" +
+                  "<control>" +
+                    "<description>Network Device 1 Image</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>152</posY>" +
+                    "<width>40</width>" +
+                    "<height>40</height>" +
+                    "<texture>#PowerControl.NetworkDevice1TypeImage</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 1 Description</description>" +
+                    "<type>label</type>" +
+                    "<id>1</id>" +
+                    "<posX>1042</posX>" +
+                    "<posY>162</posY>" +
+                    "<label>#PowerControl.NetworkDevice1Description</label>" +
+                    "<font>mediastream10tc</font>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 1 Alive</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1240</posX>" +
+                    "<posY>162</posY>>" +
+                    "<texture>#PowerControl.NetworkDevice1AliveImage</texture>" +
+                    "<width>20</width>" +
+                    "<height>20</height>" +
+                  "</control>" +
+                  "<!-- *** Network Device 2 *** -->" +
+                  "<control>" +
+                    "<description>Network Device 2 Image</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>204</posY>" +
+                    "<width>40</width>" +
+                    "<height>40</height>" +
+                    "<texture>#PowerControl.NetworkDevice2TypeImage</texture>" +
+                  "</control>" +
+                  "<control>" +
+                      "<description>Network Device 2 Description</description>" +
+                      "<type>label</type>" +
+                      "<id>1</id>" +
+                      "<posX>1042</posX>" +
+                      "<posY>214</posY>" +
+                      "<label>#PowerControl.NetworkDevice2Description</label>" +
+                      "<font>mediastream10tc</font>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 2 Alive</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1240</posX>" +
+                    "<posY>214</posY>>" +
+                    "<texture>#PowerControl.NetworkDevice2AliveImage</texture>" +
+                    "<width>20</width>" +
+                    "<height>20</height>" +
+                  "</control>" +
+                  "<!-- *** Network Device 3 *** -->" +
+                  "<control>" +
+                    "<description>Network Device 3 Image</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>256</posY>" +
+                    "<width>40</width>" +
+                    "<height>40</height>" +
+                    "<texture>#PowerControl.NetworkDevice3TypeImage</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 3 Description</description>" +
+                    "<type>label</type>" +
+                    "<id>1</id>" +
+                    "<posX>1042</posX>" +
+                    "<posY>266</posY>" +
+                    "<label>#PowerControl.NetworkDevice3Description</label>" +
+                    "<font>mediastream10tc</font>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 3 Alive</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1240</posX>" +
+                    "<posY>266</posY>>" +
+                    "<texture>#PowerControl.NetworkDevice3AliveImage</texture>" +
+                    "<width>20</width>" +
+                    "<height>20</height>" +
+                  "</control>" +
+                  "<!-- *** Network Device 4 *** -->" +
+                  "<control>" +
+                    "<description>Network Device 4 Image</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>308</posY>" +
+                    "<width>40</width>" +
+                    "<height>40</height>" +
+                    "<texture>#PowerControl.NetworkDevice4TypeImage</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 4 Description</description>" +
+                    "<type>label</type>" +
+                    "<id>1</id>" +
+                    "<posX>1042</posX>" +
+                    "<posY>318</posY>" +
+                    "<label>#PowerControl.NetworkDevice4Description</label>" +
+                    "<font>mediastream10tc</font>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Network Device 4 Alive</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1240</posX>" +
+                    "<posY>318</posY>" +
+                    "<texture>#PowerControl.NetworkDevice4AliveImage</texture>" +
+                    "<width>20</width>" +
+                    "<height>20</height>" +
+                  "</control>" +
+                "</control>" +
+              "</controls>" +
+            "</window>";
+    }
+
+    #endregion
+
     #region Private Methods
 
     string mostRecentVisibleControls(isOverlayType isOverlay)
@@ -3919,7 +4132,6 @@
           }
         }
       }
-
       //
       //Controls to display recent SleepContol overlay
       //
@@ -3964,7 +4176,6 @@
           }
         }
       }
-
       //
       //Controls to display recent DriveFreeSpace overlay
       //
@@ -4009,7 +4220,6 @@
           }
         }
       }
-
       //
       //Controls to display recent Stocks and Indices overlay
       //
@@ -4054,12 +4264,57 @@
           }
         }
       }
-
-
+      //
+      //Controls to display recent Power Control overlay
+      //
+      if (isOverlay == isOverlayType.powerControl)
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.powerControl)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+          // Check Sunmenu Level 1
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.powerControl)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          // Check Sunmenu Level 2
+          if (item.subMenuLevel2.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel2.Count; i++)
+            {
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.powerControl)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+          }
+        }
+      }
       
       if ((isOverlay == isOverlayType.Music || 
            isOverlay == isOverlayType.RecordedTV || 
+           isOverlay == isOverlayType.freeDriveSpace ||
            isOverlay == isOverlayType.sleepControl ||
+           isOverlay == isOverlayType.stocks ||
+           isOverlay == isOverlayType.powerControl ||
            isOverlay == isOverlayType.freeDriveSpace) && visibleOn == null)
       {
         visibleOn = "No";
