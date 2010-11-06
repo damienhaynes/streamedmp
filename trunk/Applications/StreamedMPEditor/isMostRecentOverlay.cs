@@ -48,6 +48,10 @@
           powerControlOverlay();
           writeXMLFile("basichome.PowerControl.Overlay.xml");
           break;
+        case isOverlayType.htpcInfo:
+          htpcInfoOverlay();
+          writeXMLFile("basichome.HTPCInfo.Overlay.xml");
+          break;
         default:
           break;
       }
@@ -3950,6 +3954,301 @@
 
     #endregion
 
+    #region HTPCInfo Overlay
+
+    void htpcInfoOverlay()
+    {
+      xml = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
+            "<window>" +
+              "<controls>" +
+                "<control>" +
+                  "<description>GROUP: Power Control Plugins Overlay</description>" +
+                  "<type>group</type>" +
+                  "<dimColor>0xffffffff</dimColor>" +
+                  "<visible>" + mostRecentVisibleControls(isOverlayType.htpcInfo) + "</visible>" +
+                  "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<control>" +
+                    "<description>Overlay BG</description>" +
+                    "<posX>976</posX>" +
+                    "<posY>50</posY>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<width>306</width>" +
+                    "<height>320</height>" +
+                    "<texture>recentsummoverlaybg.png</texture>" +
+                    "<colordiffuse>EEFFFFFF</colordiffuse>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Plugin Name</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>76</posY>" +
+                    "<width>258</width>" +
+                    "<label>HTPC Info</label>" +
+                    "<font>mediastream10tc</font>" +
+                    "<textcolor>White</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Index Separator</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>995</posX>" +
+                    "<posY>80</posY>" +
+                    "<width>264</width>" +
+                    "<label>____________________________________________________________________________________________________________</label>" +
+                    "<textcolor>ff808080</textcolor>" +
+                  "</control>" +
+                  "<!-- *** CPU Infos *** -->" +
+                  "<control>" +
+                    "<description>CPU Picture</description>" +
+                    "<posX>995</posX>" +
+                    "<posY>100</posY>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<width>80</width>" +
+                    "<height>80</height>" +
+                    "<texture>HTPC_Info_CPU.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>CPU Temp label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>115</posY>" +
+                    "<width>170</width>" +
+                    "<label>CPU Temp:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>CPU Temp value</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>115</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.SensorTemperatureCPU</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>CPU Usage label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>135</posY>" +
+                    "<width>170</width>" +
+                    "<label>CPU Usage:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Processor Usage</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>135</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.ProcessorUsage%</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>CPU Progress BG</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1086</posX>" +
+                    "<posY>154</posY>" +
+                    "<width>176</width>" +
+                    "<height>20</height>" +
+                    "<texture>osdprogressbackv.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>CPU Progress Bar</description>" +
+                    "<type>progress</type>" +
+                    "<id>20</id>" +
+                    "<posX>1074</posX>" +
+                    "<posY>155</posY>" +
+                    "<width>196</width>" +
+                    "<height>20</height>" +
+                    "<texturebg>-</texturebg>" +
+                    "<label>#HTPCInfo.ProcessorUsage</label>" +
+                    "<lefttexture>osdprogressleft.png</lefttexture>" +
+                    "<midtexture>osdprogressmid.png</midtexture>" +
+                    "<righttexture>osdprogressright</righttexture>" +
+                  "</control>" +
+                  "<!-- *** RAM Infos *** -->" +
+                  "<control>" +
+                    "<description>CPU Picture</description>" +
+                    "<posX>995</posX>" +
+                    "<posY>185</posY>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<width>80</width>" +
+                    "<height>80</height>" +
+                    "<texture>HTPC_Info_RAM.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Free RAM label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>200</posY>" +
+                    "<width>170</width>" +
+                    "<label>Free RAM:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Free RAM Usage</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>200</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.MemoryAvailable</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>RAM Usage label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>220</posY>" +
+                    "<width>170</width>" +
+                    "<label>RAM Usage:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>Ram Usage</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>220</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.MemoryPercentUsed%</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>RAM Progress BG</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1086</posX>" +
+                    "<posY>239</posY>" +
+                    "<width>176</width>" +
+                    "<height>20</height>" +
+                    "<texture>osdprogressbackv.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>RAM Progress Bar</description>" +
+                    "<type>progress</type>" +
+                    "<id>20</id>" +
+                    "<posX>1074</posX>" +
+                    "<posY>240</posY>" +
+                    "<width>196</width>" +
+                    "<height>20</height>" +
+                    "<texturebg>-</texturebg>" +
+                    "<label>#HTPCInfo.MemoryPercentUsed</label>" +
+                    "<lefttexture>osdprogressleft.png</lefttexture>" +
+                    "<midtexture>osdprogressmid.png</midtexture>" +
+                    "<righttexture>osdprogressright</righttexture>" +
+                  "</control>" +
+                  "<!-- *** GPU Infos *** -->" +
+                  "<control>" +
+                    "<description>CPU Picture</description>" +
+                    "<posX>995</posX>" +
+                    "<posY>275</posY>" +
+                    "<type>image</type>" +
+                    "<id>0</id>" +
+                    "<width>80</width>" +
+                    "<height>80</height>" +
+                    "<texture>HTPC_Info_GPU.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Temp label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>290</posY>" +
+                    "<width>170</width>" +
+                    "<label>GPU Temp:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Temp value</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>290</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.GPUSensorTemperature0</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Usage label</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1090</posX>" +
+                    "<posY>310</posY>" +
+                    "<width>170</width>" +
+                    "<label>GPU Usage:</label>" +
+                    "<font>mediastream10</font>" +
+                    "<textcolor>white</textcolor>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Usage</description>" +
+                    "<type>label</type>" +
+                    "<id>0</id>" +
+                    "<posX>1255</posX>" +
+                    "<posY>310</posY>" +
+                    "<width>250</width>" +
+                    "<label>#HTPCInfo.GPUSensorUsage0%</label>" +
+                    "<font>mediastream10</font>" +
+                    "<align>right</align>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Progress BG</description>" +
+                    "<type>image</type>" +
+                    "<id>1</id>" +
+                    "<posX>1086</posX>" +
+                    "<posY>329</posY>" +
+                    "<width>176</width>" +
+                    "<height>20</height>" +
+                    "<texture>osdprogressbackv.png</texture>" +
+                  "</control>" +
+                  "<control>" +
+                    "<description>GPU Progress Bar</description>" +
+                    "<type>progress</type>" +
+                    "<id>20</id>" +
+                    "<posX>1074</posX>" +
+                    "<posY>330</posY>" +
+                    "<width>196</width>" +
+                    "<height>20</height>" +
+                    "<texturebg>-</texturebg>" +
+                    "<label>#HTPCInfo.GPUSensorUsage0</label>" +
+                    "<lefttexture>osdprogressleft.png</lefttexture>" +
+                    "<midtexture>osdprogressmid.png</midtexture>" +
+                    "<righttexture>osdprogressright</righttexture>" +
+                  "</control>" +
+                "</control>" +
+              "</controls>" +
+            "</window>";
+    }
+
+    #endregion
+
     #region Private Methods
 
     string mostRecentVisibleControls(isOverlayType isOverlay)
@@ -4308,13 +4607,57 @@
           }
         }
       }
-      
+      //
+      //Controls to display recent HTPCInfo overlay
+      //
+      if (isOverlay == isOverlayType.htpcInfo)
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.htpcInfo)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+          // Check Sunmenu Level 1
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.htpcInfo)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          // Check Sunmenu Level 2
+          if (item.subMenuLevel2.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel2.Count; i++)
+            {
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.htpcInfo)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+          }
+        }
+      }      
       if ((isOverlay == isOverlayType.Music || 
            isOverlay == isOverlayType.RecordedTV || 
            isOverlay == isOverlayType.freeDriveSpace ||
            isOverlay == isOverlayType.sleepControl ||
            isOverlay == isOverlayType.stocks ||
            isOverlay == isOverlayType.powerControl ||
+           isOverlay == isOverlayType.htpcInfo ||
            isOverlay == isOverlayType.freeDriveSpace) && visibleOn == null)
       {
         visibleOn = "No";
