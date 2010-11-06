@@ -265,6 +265,7 @@ namespace StreamedMPConfig
     public static string LatestTVRecordings = "Latest TV Recordings";
     public static string FilterWatchedRecents = "Filter Watched in Recently Added";
     public static string RecordedOn = "Recorded On";
+    public static string Votes = "votes";
     #endregion
   }
 }
