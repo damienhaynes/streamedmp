@@ -243,6 +243,7 @@ namespace StreamedMPEditor
         driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
         cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
         cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
+        cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
       }
       catch
       {
