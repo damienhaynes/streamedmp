@@ -3,12 +3,11 @@
   <id>1009</id>
   <defaultcontrol>112233</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
-  <define>#header.label:Dashboard</define>
+  <define>#header.label:MediaPortal Dashboard</define>
   <define>#header.image:-</define>
   <define>#header.hover:hover_sysinfo.png</define>
   <define>#itemcount:-</define>
   <define>#selecteditem:-</define>
-  <define>#currentmodule:Dashboard</define>
   <controls>
     <control>
       <description>programs overlay image</description>
@@ -144,7 +143,7 @@
       <posX>260</posX>
       <posY>60</posY>
       <width>220</width>
-      <height>360</height>
+      <height>310</height>
       <texture>gaugebg.png</texture>
     </control>
     <control>
@@ -184,7 +183,7 @@
       <type>textbox</type>
       <id>22</id>
       <posX>290</posX>
-      <posY>330</posY>
+      <posY>300</posY>
       <width>210</width>
       <height>90</height>
       <label>CPU details</label>
@@ -197,7 +196,7 @@
       <posX>530</posX>
       <posY>60</posY>
       <width>220</width>
-      <height>360</height>
+      <height>310</height>
       <texture>gaugebg.png</texture>
     </control>
     <control>
@@ -237,7 +236,7 @@
       <type>textbox</type>
       <id>23</id>
       <posX>560</posX>
-      <posY>330</posY>
+      <posY>300</posY>
       <width>210</width>
       <height>90</height>
       <label>MEM details</label>
@@ -250,7 +249,7 @@
       <posX>800</posX>
       <posY>60</posY>
       <width>220</width>
-      <height>360</height>
+      <height>310</height>
       <texture>gaugebg.png</texture>
     </control>
     <control>
@@ -290,7 +289,7 @@
       <type>textbox</type>
       <id>24</id>
       <posX>830</posX>
-      <posY>330</posY>
+      <posY>300</posY>
       <width>210</width>
       <height>90</height>
       <label>Drive details</label>
@@ -308,7 +307,7 @@
         <posX>140</posX>
         <posY>440</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -325,9 +324,9 @@
         <description>Drive C Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>150</posX>
+        <posX>140</posX>
         <posY>500</posY>
-        <width>266</width>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -335,7 +334,7 @@
         <description>Drive C Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>140</posX>
+        <posX>130</posX>
         <posY>501</posY>
         <width>266</width>
         <height>20</height>
@@ -350,7 +349,7 @@
         <type>label</type>
         <id>1</id>
         <posX>230</posX>
-        <posY>460</posY>
+        <posY>457</posY>
         <width>198</width>
         <label>#DriveFreeSpace.C.AvailableSpace.Data</label>
         <font>mediastream10</font>
@@ -368,7 +367,7 @@
         <posX>496</posX>
         <posY>440</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -385,9 +384,9 @@
         <description>Drive D Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>506</posX>
+        <posX>496</posX>
         <posY>500</posY>
-        <width>266</width>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -395,7 +394,7 @@
         <description>Drive D Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>496</posX>
+        <posX>486</posX>
         <posY>501</posY>
         <width>266</width>
         <height>20</height>
@@ -410,7 +409,7 @@
         <type>label</type>
         <id>1</id>
         <posX>586</posX>
-        <posY>460</posY>
+        <posY>457</posY>
         <width>198</width>
         <label>#DriveFreeSpace.D.AvailableSpace.Data</label>
         <font>mediastream10</font>
@@ -428,7 +427,7 @@
         <posX>852</posX>
         <posY>440</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -445,9 +444,9 @@
         <description>Drive E Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>862</posX>
+        <posX>852</posX>
         <posY>500</posY>
-        <width>266</width>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -455,7 +454,7 @@
         <description>Drive E Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>852</posX>
+        <posX>842</posX>
         <posY>501</posY>
         <width>266</width>
         <height>20</height>
@@ -470,13 +469,13 @@
         <type>label</type>
         <id>1</id>
         <posX>942</posX>
-        <posY>460</posY>
+        <posY>457</posY>
         <width>198</width>
         <label>#DriveFreeSpace.E.AvailableSpace.Data</label>
         <font>mediastream10</font>
       </control>
     </control>
-
+    <!-- Second Row -->
     <!-- Drive F -->
     <control>
       <type>group</type>
@@ -487,9 +486,9 @@
         <type>image</type>
         <id>1</id>
         <posX>140</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -497,7 +496,7 @@
         <type>image</type>
         <id>1</id>
         <posX>150</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>60</width>
         <height>60</height>
         <texture>FreeDriveSpace_Icon.png</texture>
@@ -506,9 +505,9 @@
         <description>Drive F Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>150</posX>
-        <posY>620</posY>
-        <width>266</width>
+        <posX>140</posX>
+        <posY>590</posY>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -516,8 +515,8 @@
         <description>Drive F Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>140</posX>
-        <posY>621</posY>
+        <posX>130</posX>
+        <posY>591</posY>
         <width>266</width>
         <height>20</height>
         <texturebg>-</texturebg>
@@ -531,7 +530,7 @@
         <type>label</type>
         <id>1</id>
         <posX>230</posX>
-        <posY>580</posY>
+        <posY>547</posY>
         <width>198</width>
         <label>#DriveFreeSpace.F.AvailableSpace.Data</label>
         <font>mediastream10</font>
@@ -547,9 +546,9 @@
         <type>image</type>
         <id>1</id>
         <posX>496</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -557,7 +556,7 @@
         <type>image</type>
         <id>1</id>
         <posX>506</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>60</width>
         <height>60</height>
         <texture>FreeDriveSpace_Icon.png</texture>
@@ -566,9 +565,9 @@
         <description>Drive G Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>506</posX>
-        <posY>620</posY>
-        <width>266</width>
+        <posX>496</posX>
+        <posY>590</posY>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -576,8 +575,8 @@
         <description>Drive G Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>496</posX>
-        <posY>621</posY>
+        <posX>486</posX>
+        <posY>591</posY>
         <width>266</width>
         <height>20</height>
         <texturebg>-</texturebg>
@@ -591,7 +590,7 @@
         <type>label</type>
         <id>1</id>
         <posX>586</posX>
-        <posY>580</posY>
+        <posY>547</posY>
         <width>198</width>
         <label>#DriveFreeSpace.G.AvailableSpace.Data</label>
         <font>mediastream10</font>
@@ -607,9 +606,9 @@
         <type>image</type>
         <id>1</id>
         <posX>852</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>290</width>
-        <height>100</height>
+        <height>78</height>
         <texture>subsearchbg.png</texture>
       </control>
       <control>
@@ -617,7 +616,7 @@
         <type>image</type>
         <id>1</id>
         <posX>862</posX>
-        <posY>560</posY>
+        <posY>530</posY>
         <width>60</width>
         <height>60</height>
         <texture>FreeDriveSpace_Icon.png</texture>
@@ -626,9 +625,9 @@
         <description>Drive H Progress BG</description>
         <type>image</type>
         <id>1</id>
-        <posX>862</posX>
-        <posY>620</posY>
-        <width>266</width>
+        <posX>852</posX>
+        <posY>590</posY>
+        <width>290</width>
         <height>20</height>
         <texture>osdprogressbackv.png</texture>
       </control>
@@ -636,8 +635,8 @@
         <description>Drive H Progress Bar</description>
         <type>progress</type>
         <id>20</id>
-        <posX>852</posX>
-        <posY>621</posY>
+        <posX>842</posX>
+        <posY>591</posY>
         <width>266</width>
         <height>20</height>
         <texturebg>-</texturebg>
@@ -651,7 +650,7 @@
         <type>label</type>
         <id>1</id>
         <posX>942</posX>
-        <posY>580</posY>
+        <posY>547</posY>
         <width>198</width>
         <label>#DriveFreeSpace.H.AvailableSpace.Data</label>
         <font>mediastream10</font>
@@ -665,7 +664,7 @@
       <type>image</type>
       <id>1</id>
       <posX>496</posX>
-      <posY>668</posY>
+      <posY>385</posY>
       <width>290</width>
       <height>45</height>
       <texture>subsearchbg.png</texture>
@@ -675,7 +674,7 @@
       <type>image</type>
       <id>107</id>
       <posX>510</posX>
-      <posY>678</posY>
+      <posY>397</posY>
       <width>20</width>
       <height>20</height>
       <texturebg>-</texturebg>
@@ -686,7 +685,7 @@
       <type>label</type>
       <id>20</id>
       <posX>550</posX>
-      <posY>678</posY>
+      <posY>397</posY>
       <label>Network</label>
       <font>mediastream10c</font>
     </control>  
@@ -695,7 +694,7 @@
       <type>image</type>
       <id>108</id>
       <posX>660</posX>
-      <posY>678</posY>
+      <posY>397</posY>
       <width>20</width>
       <height>20</height>
       <texturebg>-</texturebg>
@@ -706,19 +705,53 @@
       <type>label</type>
       <id>20</id>
       <posX>700</posX>
-      <posY>678</posY>
+      <posY>397</posY>
       <label>TvServer</label>
       <font>mediastream10c</font>
     </control>
     <!-- Hide this control for Now-->
     <control>
+      <description>Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>430</posX>
+      <posY>615</posY>
+      <width>422</width>
+      <height>100</height>
+      <texture>subsearchbg.png</texture>
+      <visible>control.hastext(25)</visible>
+    </control>
+    <control>
+      <description>Background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>434</posX>
+      <posY>630</posY>
+      <width>415</width>
+      <height>5</height>
+      <texture>black.png</texture>
+      <visible>control.hastext(25)</visible>
+    </control>
+    <control>
+    	<description>Speedfan Label</description>
+    	<type>label</type>
+    	<label>SpeedFan Data</label>
+    	<posX>640</posX>
+    	<posY>632</posY>
+    	<font>mediastream9c</font>
+    	<textcolor>ff006699</textcolor>
+    	<align>center</align>
+      <visible>control.hastext(25)</visible>
+    </control>	    
+    <control>
       <description>SpeedFan</description>
       <type>textbox</type>
       <id>25</id>
-      <posX>-30</posX>
-      <posY>668</posY>
-      <width>20</width>
-      <height>20</height>    
+      <posX>435</posX>
+      <posY>638</posY>
+      <width>412</width>
+      <height>90</height>   
+      <font>mediastream9c</font> 
     </control> 
   </controls>
 </window>
