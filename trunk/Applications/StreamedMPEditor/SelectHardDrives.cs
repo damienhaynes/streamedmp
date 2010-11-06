@@ -43,7 +43,8 @@ namespace StreamedMPEditor
       {
         foreach (string hd in hardDrives)
         {
-          addDriveDetails(hd);
+          if (!string.IsNullOrEmpty(hd))
+            addDriveDetails(hd);
         }
       }
     }
@@ -122,10 +123,13 @@ namespace StreamedMPEditor
       formStreamedMpEditor.driveFreeSpaceDrives.Clear(); 
       foreach (string hd in hardDrives)
       {
-        DriveInfo hdDetails = new DriveInfo(hd);
-        string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
-        if (lboxSelectedDrives.Items.Contains(thisDrive))
-          formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+        if (!string.IsNullOrEmpty(hd))
+        {
+          DriveInfo hdDetails = new DriveInfo(hd);
+          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+          if (lboxSelectedDrives.Items.Contains(thisDrive))
+            formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+        }
       }
 
       this.Hide();
