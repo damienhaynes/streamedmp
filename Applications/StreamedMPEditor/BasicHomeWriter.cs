@@ -3412,6 +3412,14 @@ namespace StreamedMPEditor
         replaceString = "<!-- BEGIN SLEEPCONTROL OVERLAY CODE-->";
         rawXML.AppendLine("<import>basichome.SleepControl.Overlay.xml</import>");
       }
+
+      if (overlayType == isOverlayType.stocks)
+      {
+        replaceString = "<!-- BEGIN STOCKS OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.Stocks.Overlay.xml</import>");
+      }
+
+
       if (!string.IsNullOrEmpty(replaceString))
         xml = xml.Replace(replaceString, rawXML.ToString());
     }
@@ -3590,6 +3598,7 @@ namespace StreamedMPEditor
       string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
       string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
       string sleepControlEnabled = cbSleepControlOverlay.Checked ? "true" : "false";
+      string stocksControlEnabled = cbSocksOverlay.Checked ? "true" : "false";
 
 
 
@@ -3728,6 +3737,7 @@ namespace StreamedMPEditor
                 + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
                 + generateEntry("driveFreeSpaceList", driveFreeSpaceList, 3, true)
                 + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
+                + generateEntry("stocksControlEnabled", stocksControlEnabled, 3, true)
                 + "\t\t</section>");
 
 

@@ -1214,6 +1214,9 @@ namespace StreamedMPEditor
         if (cbSleepControlOverlay.Checked)
           generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
 
+        if (cbSocksOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
+
       }
       //
       // Add the imports to basichome
@@ -1243,6 +1246,9 @@ namespace StreamedMPEditor
 
         if (cbSleepControlOverlay.Checked)
           generateMostRecentInclude(isOverlayType.sleepControl);
+
+        if (cbSocksOverlay.Checked)
+          generateMostRecentInclude(isOverlayType.stocks);
       }
     }
     //
