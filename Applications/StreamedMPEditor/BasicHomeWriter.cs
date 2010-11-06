@@ -3421,10 +3421,17 @@ namespace StreamedMPEditor
 
       if (overlayType == isOverlayType.powerControl)
       {
+        replaceString = "<!-- BEGIN HTPCINFO OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.HTPCInfo.Overlay.xml</import>");
+      }
+
+      if (overlayType == isOverlayType.htpcInfo)
+      {
         replaceString = "<!-- BEGIN POWERCONTROL OVERLAY CODE-->";
         rawXML.AppendLine("<import>basichome.PowerControl.Overlay.xml</import>");
       }
 
+      
       if (!string.IsNullOrEmpty(replaceString))
         xml = xml.Replace(replaceString, rawXML.ToString());
     }
@@ -3605,7 +3612,7 @@ namespace StreamedMPEditor
       string sleepControlEnabled = cbSleepControlOverlay.Checked ? "true" : "false";
       string stocksControlEnabled = cbSocksOverlay.Checked ? "true" : "false";
       string powerControlEnabled = cbPowerControlOverlay.Checked ? "true" : "false";
-
+      string htpcinfoControlEnabled = cbHtpcInfoOverlay.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -3744,6 +3751,7 @@ namespace StreamedMPEditor
                 + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
                 + generateEntry("stocksControlEnabled", stocksControlEnabled, 3, true)
                 + generateEntry("powerControlEnabled", powerControlEnabled, 3, true)
+                + generateEntry("htpcinfoControlEnabled",htpcinfoControlEnabled,3,true)
                 + "\t\t</section>");
 
 

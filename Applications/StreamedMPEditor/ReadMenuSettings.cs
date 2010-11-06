@@ -244,13 +244,17 @@ namespace StreamedMPEditor
         cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
         cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
         cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
+        cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
       }
       catch
       {
         // Most likley a new option added but not written to file yet - just continue
       }
 
-      if (!string.IsNullOrEmpty(driveFreeSpaceList) && !(driveFreeSpaceList == "false"))
+      if (string.IsNullOrEmpty(driveFreeSpaceList))
+        driveFreeSpaceList = "false";
+
+      if (!(driveFreeSpaceList == "false"))
       {
         cbFreeDriveSpaceOverlay.Checked = true;
         string[] configuredDrives = driveFreeSpaceList.Split(',');
@@ -261,6 +265,7 @@ namespace StreamedMPEditor
           formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
         }
       }
+      
 
 
       if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
