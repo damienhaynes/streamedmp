@@ -139,7 +139,7 @@ This file should contain the details view
     </control>
     <control>
       <type>label</type>
-      <label>#runtime mins</label>
+      <label>#runtime #StreamedMP.Minutes</label>
       <posX>410</posX>
       <posY>345</posY>
       <width>360</width>
@@ -217,7 +217,7 @@ This file should contain the details view
     </control>
     <control>
       <type>label</type>
-      <label>#rating / 10 (#votes votes)</label>
+      <label>#rating / 10 (#votes #StreamedMP.Votes)</label>
       <posX>410</posX>
       <posY>457</posY>
       <width>360</width>
@@ -234,7 +234,7 @@ This file should contain the details view
       <posY>280</posY>
       <width>300</width>
       <font>mediastream12tc</font>
-      <label>199</label>
+      <label>#StreamedMP.Director</label>
       <textcolor>ffFFFFFF</textcolor>
       <visible>facadeview.filmstrip+control.isvisible(4441)+Control.HasText(1005)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
