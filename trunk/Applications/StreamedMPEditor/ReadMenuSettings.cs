@@ -242,6 +242,7 @@ namespace StreamedMPEditor
         cbEnableRecentMusic.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
         driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
         cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
+        cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
       }
       catch
       {
