@@ -3,6 +3,7 @@
   <id>762</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+  <define>#currentmodule:RADIO/GUIDE</define>
   <controls>
     <import>common.time.xml</import>
     <control>
@@ -13,7 +14,6 @@
       <height>720</height>
       <texture>hover_my radio.png</texture>
       <animation effect="fade" time="500" start="10">WindowOpen</animation>
-      <animation effect="fade" time="500" end="10">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -23,7 +23,6 @@
       <width>1280</width>
       <texture>tvguidebg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Top Title Background</description>
@@ -35,9 +34,7 @@
       <height>35</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
       <animation effect="fade" time="600">WindowOpen</animation>
-      <animation effect="fade" time="600">WindowClose</animation>
     </control>
     <control>
       <type>fadelabel</type>
@@ -51,9 +48,7 @@
       <visible>yes</visible>
       <label>#currentmodule</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
       <animation effect="fade" time="400">WindowOpen</animation>
-      <animation effect="fade" time="400">WindowClose</animation>
     </control>
     <control>
       <description>Top Title Extension Background</description>
@@ -64,10 +59,9 @@
       <width>356</width>
       <height>36</height>
       <texture>tvtitlebgshort.png</texture>
+      <visible>!string.equals(#Radio.Guide.Group,)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-      <animation effect="fade" time="300" delay="0">WindowClose</animation>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
@@ -78,10 +72,9 @@
       <font>mediastream12c</font>
       <align>right</align>
       <label>#Radio.Guide.Group</label>
+      <visible>!string.equals(#Radio.Guide.Group,)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-      <animation effect="fade" time="230" delay="0">WindowClose</animation>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Time Background</description>
@@ -98,7 +91,7 @@
       <type>label</type>
       <id>0</id>
       <posX>1230</posX>
-      <posY>30</posY>
+      <posY>18</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream11tc</font>
@@ -224,38 +217,51 @@
       <textcolor>FFFFFFFF</textcolor>
     </control>
     <control>
-      <description>Current program title</description>
-      <type>fadelabel</type>
-      <id>13</id>
-      <posX>240</posX>
-      <posY>585</posY>
-      <width>455</width>
-      <label>#Radio.Guide.Title</label>
-      <font>mediastream11tc</font>
-    </control>
-    <control>
       <description>Current program time</description>
       <type>label</type>
       <id>14</id>
-      <posX>700</posX>
+      <posX>240</posX>
       <posY>585</posY>
+      <width>190</width>
       <label>#Radio.Guide.Time</label>
       <align>left</align>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>record pin</description>
+      <type>image</type>
+      <id>31</id>
+      <posX>445</posX>
+      <posY>587</posY>
+      <width>45</width>
+      <height>17</height>
+      <texture>tvguide_record_button.png</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>470</posX>
+      <posY>585</posY>
+      <width>560</width>
+      <label>#Radio.Guide.Title</label>
       <font>mediastream11tc</font>
     </control>
     <control>
       <description>Current program genre</description>
       <type>fadelabel</type>
       <id>27</id>
-      <posX>1000</posX>
+      <posX>1270</posX>
       <posY>585</posY>
-      <width>280</width>
+      <width>350</width>
       <label>#Radio.Guide.Genre</label>
-      <align>left</align>
+      <align>right</align>
       <font>mediastream11tc</font>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
       <posX>240</posX>
@@ -267,14 +273,6 @@
       <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-    <!--<control>
-                        <description>template for program genre light area</description>
-                        <type>label</type>
-                        <id>23</id>
-                        <label>-</label>
-                        <font>mediastream11</font>
-                        <textcolor>FF101010</textcolor>
-                </control>-->
     <control>
       <description>template for program title light area</description>
       <type>label</type>
@@ -294,34 +292,13 @@
       <texture>tvguide_slider.png</texture>
     </control>
     <control>
-      <description>template for program title darkarea </description>
+      <description>template for program title darkarea</description>
       <type>label</type>
       <visible>no</visible>
       <id>26</id>
       <label>-</label>
       <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
-    </control>
-    <!--<control>
-                        <description>template for genre	dark area</description>
-                        <type>label</type>
-                        <visible>no</visible>
-                        <id>30</id>
-                        <label>-</label>
-                        <font>font10</font>
-                        <textcolor>FFDDDDDD</textcolor>
-                </control>-->
-    <control>
-      <description>record pin</description>
-      <type>image</type>
-      <id>31</id>
-      <posX>950</posX>
-      <posY>585</posY>
-      <width>45</width>
-      <height>20</height>
-      <texture>tvguide_record_button.png</texture>
-      <keepaspectratio>yes</keepaspectratio>
-      <visible>no</visible>
     </control>
     <control>
       <description>TV background</description>
@@ -348,4 +325,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:af48154e8c20809815b0e7fbdc04c089-->
+<!--Checksum:0edca9531c41d1c24999718205aec2e0-->
