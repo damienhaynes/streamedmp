@@ -2,15 +2,81 @@
 <window>
   <id>1</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#header.label:605</define>
-  <define>#header.hover:hover_my tv.png</define>
-  <define>#header.BG.colordiffuse:ffffffff</define>
-  <!--Default ffffffff-->
-  <define>#header.BG.overlay:tvviewbg.png</define>
-  <!--Default tvviewbg.png filmstrip_overlay.png mainoverlay.png movieviewbg.png -->
+  <define>#header.hover:hover_my tv.png</define>  
   <controls>
-    <import>common.window.default.xml</import>
+	<control>
+      <description>Background Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+	<control>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <colordiffuse>90ffffff</colordiffuse>
+    </control>
+	<control>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>60</height>
+      <texture>overlay_topbar.png</texture>
+      <colordiffuse>c9ffffff</colordiffuse>
+    </control>
+	<control>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>500</posY>
+      <width>1280</width>
+      <height>220</height>
+      <texture>osdbackground1.png</texture>
+      <colordiffuse>a9ffffff</colordiffuse>
+    </control>
+	<control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
     <import>common.time.xml</import>
     <control>
       <type>group</type>
@@ -174,7 +240,7 @@
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
-      </control>
+      </control>	  
     </control>
     <control>
       <description>TV background</description>
@@ -187,19 +253,8 @@
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>video window</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>509</posX>
-      <posY>119</posY>
-      <width>616</width>
-      <height>319</height>
-      <texture>tv_black.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+	  <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+    </control>   
     <control>
       <description>video window</description>
       <type>videowindow</type>
@@ -260,6 +315,7 @@
       <textcolor>ff111111</textcolor>
       <font>mediastream16tc</font>
       <align>right</align>
+	  <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -273,6 +329,7 @@
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <align>right</align>
+	  <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -287,6 +344,7 @@
       <font>mediastream16tc</font>
       <align>left</align>
       <textcolor>ff222222</textcolor>
+	  <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -301,6 +359,7 @@
       <font>mediastream16tc</font>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
+	  <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -359,7 +418,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
       <posX>250</posX>
@@ -370,7 +429,7 @@
       <label>#TV.View.description</label>
       <font>font14</font>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="slide" time="150" end="1300,0">WindowClose</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Current Channel Thumb</description>
@@ -395,6 +454,7 @@
       <height>18</height>
       <visible>no</visible>
       <texture>tvguide_record_button.png</texture>
+      <animation effect="fade" start="20" time="2000" condition="true" pulse="true">Conditional</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="fade" time="250">WindowOpen</animation>
     </control>
