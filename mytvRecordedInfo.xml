@@ -16,8 +16,8 @@
       <id>2</id>
       <posX>1000</posX>
       <posY>250</posY>
-	  <label>1042</label>
-	  <onleft>2</onleft>
+      <label>1042</label>
+      <onleft>2</onleft>
       <onright>2</onright>
       <onup>2</onup>
       <ondown>2</ondown>
@@ -33,7 +33,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>      
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
     <control>
       <description>Top Title Background</description>
@@ -45,8 +45,8 @@
       <height>35</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-	  <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-    </control>    
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
+    </control>
     <control>
       <type>fadelabel</type>
       <description>Current program title</description>
@@ -61,7 +61,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>   
+    </control>
     <control>
       <type>label</type>
       <description>Current program time</description>
@@ -74,7 +74,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <type>label</type>
       <description>genre</description>
@@ -109,4 +109,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:8a4a55b9999217f9602f1d83424a5bc1-->
+<!--Checksum:0d1227816906d9a1fa07680823532f43-->

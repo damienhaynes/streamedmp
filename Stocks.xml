@@ -10,18 +10,18 @@
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-	<control>
-	  <description>Page Label</description>
-	  <type>label</type>
-	  <label>30009</label>
-	  <id>0</id>
-	  <posX>1023</posX>
-	  <posY>688</posY>
-	  <font>mediastream12tc</font>
-	  <textcolor>ff909090</textcolor>
-	  <animation effect="fade" time="300">WindowOpen</animation>
-	  <animation effect="fade" time="300">WindowClose</animation>
-	</control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
+    </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
@@ -34,7 +34,7 @@
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <description>Refresh Time</description>
       <type>label</type>
       <id>0</id>
@@ -46,8 +46,8 @@
       <align>right</align>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
-    </control>   
-	<control>
+    </control>
+    <control>
       <description>Action</description>
       <type>label</type>
       <id>1</id>
@@ -62,9 +62,10 @@
     </control>
     <import>Stocks.Menu.xml</import>
     <import>Stocks.Indices.xml</import>
-	<import>Stocks.Stocks.xml</import>
+    <import>Stocks.Stocks.xml</import>
     <import>Stocks.Funds.xml</import>
-	<import>Stocks.Portfolio.xml</import>
+    <import>Stocks.Portfolio.xml</import>
     <import>Stocks.Currencies.xml</import>
   </controls>
 </window>
+<!--Checksum:a0ce4c37a7b9a57c347f75d33ee4b9f0-->

@@ -104,7 +104,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!control.isvisible(50)+!string.equals(#MyTrailers.Details.Description,)+!string.equals(#MyTrailers.Details.Cast,)</visible>
     </control>
-	<control>
+    <control>
       <description>Summary Only</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -121,7 +121,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!control.isvisible(50)+!string.equals(#MyTrailers.Details.Description,)+string.equals(#MyTrailers.Details.Cast,)</visible>
     </control>
-	<control>
+    <control>
       <description>Actors Only</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -265,7 +265,7 @@
       <spinPosX>1175</spinPosX>
       <spinPosY>681</spinPosY>
       <spinAlign>Right</spinAlign>
-      <spinColor>ff006698</spinColor>	  
+      <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
@@ -276,4 +276,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:7c2fbaca6a03b2bd5e95f40b725bd07b-->
+<!--Checksum:991b1822e1a0d718af3fee0349459dff-->

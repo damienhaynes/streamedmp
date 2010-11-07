@@ -8,7 +8,7 @@
   <controls>
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
-	<control>
+    <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
@@ -16,7 +16,7 @@
       <posY>684</posY>
       <width>260</width>
       <height>32</height>
-      <texture>mediacountbg_Spin.png</texture>      
+      <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -30,7 +30,7 @@
       <posX>1013</posX>
       <posY>689</posY>
       <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>      
+      <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -44,7 +44,7 @@
       <posY>13</posY>
       <width>202</width>
       <height>28</height>
-      <texture>mediacountbg.png</texture>      
+      <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -57,11 +57,11 @@
       <width>90</width>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <label>507</label>      
+      <label>507</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <type>label</type>
       <description>Number of Active Recordings</description>
       <id>12</id>
@@ -71,7 +71,7 @@
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
-      <label>#itemcount</label>      
+      <label>#itemcount</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -113,12 +113,12 @@
         <PinIconYOff>32</PinIconYOff>
         <spaceBetweenItems>0</spaceBetweenItems>
         <textureHeight>84</textureHeight>
-        <scrollOffset>1</scrollOffset>        
+        <scrollOffset>1</scrollOffset>
         <onleft>10</onleft>
         <onright>10</onright>
         <unfocusedAlpha>0xFF</unfocusedAlpha>
         <keepaspectratio>yes</keepaspectratio>
-		<spinPosX>1165</spinPosX>
+        <spinPosX>1165</spinPosX>
         <spinPosY>682</spinPosY>
         <spinAlign>Right</spinAlign>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -148,8 +148,8 @@
         <id>14</id>
         <posX>28</posX>
         <posY>265</posY>
-		<width>550</width>
-		<textcolor>ff909090</textcolor>
+        <width>550</width>
+        <textcolor>ff909090</textcolor>
         <label>#TV.Active.Time</label>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
@@ -176,4 +176,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:02276218409ec4b76d2ff5d43c41d144-->
+<!--Checksum:35b5d6bd20ce0318d7332e0e729e2d1d-->

@@ -13,7 +13,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>hover_my tv.png</texture>
-      <animation effect="fade" time="250" start="10">WindowOpen</animation>      
+      <animation effect="fade" time="250" start="10">WindowOpen</animation>
     </control>
     <control>
       <type>image</type>
@@ -22,7 +22,7 @@
       <height>720</height>
       <width>1280</width>
       <texture>tvguidebg.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>      
+      <animation effect="fade" time="250">WindowOpen</animation>
     </control>
     <control>
       <description>Top Title Background</description>
@@ -33,8 +33,8 @@
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>      
-      <animation effect="fade" time="600">WindowOpen</animation>      
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="600">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
@@ -47,8 +47,8 @@
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>      
-      <animation effect="fade" time="400">WindowOpen</animation>      
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
     </control>
     <control>
       <description>Top Title Extension Background</description>
@@ -59,10 +59,10 @@
       <width>456</width>
       <height>36</height>
       <texture>tvtitlebg.png</texture>
-	  <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
-      <animation effect="fade" time="300" delay="300">WindowOpen</animation>      
+      <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-    </control>    
+    </control>
     <control>
       <type>fadelabel</type>
       <description>Guide Group Label</description>
@@ -73,9 +73,9 @@
       <font>mediastream12c</font>
       <align>right</align>
       <label>#TV.Guide.ChangeGroup</label>
-	  <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
-      <animation effect="fade" time="300" delay="300">WindowOpen</animation>      
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>      
+      <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
     </control>
     <control>
       <description>Time Background</description>
@@ -190,8 +190,8 @@
       <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
       <onleft>6</onleft>
       <onright>8</onright>
-    </control>    
-    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>       
+    </control>
+    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>
     <control>
       <description>Current program time</description>
       <type>label</type>
@@ -255,7 +255,7 @@
       <width>30</width>
       <height>435</height>
       <textureFocus>small_vbutton_focus.png</textureFocus>
-      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>      
+      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
       <onleft>60</onleft>
       <onright>6</onright>
       <onup>6</onup>
@@ -311,4 +311,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:6d6522d8363223331d3ba3a4add5ea5b-->
+<!--Checksum:b34caafeedaf5d8df0db1c3413da79bc-->

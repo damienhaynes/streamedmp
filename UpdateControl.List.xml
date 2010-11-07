@@ -1,127 +1,128 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-	<controls>
-		<control>
-		  <description>Item Count Background</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>1045</posX>
-		  <posY>13</posY>
-		  <width>222</width>
-		  <height>28</height>
-		  <texture>mediacountbg.png</texture>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		  <visible>control.isvisible(50)</visible>
-		</control>
-		<control>
-		  <description>Item Count Label</description>
-		  <type>label</type>
-		  <label>507</label>
-		  <id>0</id>
-		  <width>135</width>
-		  <posX>1057</posX>
-		  <posY>17</posY>
-		  <align>left</align>
-		  <font>mediastream10tc</font>
-		  <textcolor>ff909090</textcolor>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		  <visible>control.isvisible(50)</visible>
-		</control>
-		<control>
-		  <description>Item Count</description>
-		  <type>label</type>
-		  <label>#UpdateControl.AvailableUpdateSelectionCount/#UpdateControl.AvailableUpdateCount</label>
-		  <id>0</id>
-		  <posX>1238</posX>
-		  <posY>15</posY>
-		  <font>mediastream11c</font>
-		  <textcolor>ff006698</textcolor>
-		  <align>right</align>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		  <visible>control.isvisible(50)+!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>
-		</control>
-		<control>
-		  <description>Item Count</description>
-		  <type>label</type>
-		  <label>#UpdateControl.InstalledUpdateCount</label>
-		  <id>0</id>
-		  <posX>1238</posX>
-		  <posY>15</posY>
-		  <font>mediastream11c</font>
-		  <textcolor>ff006698</textcolor>
-		  <align>right</align>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		  <visible>control.isvisible(50)+!string.equals(#UpdateControl.InstalledUpdateCount,0)</visible>
-		</control>
-		<control>
-		  <description>Page Label</description>
-		  <type>label</type>
-		  <label>30009</label>
-		  <id>0</id>
-		  <posX>1023</posX>
-		  <posY>688</posY>
-		  <font>mediastream12tc</font>
-		  <textcolor>ff909090</textcolor>
-		  <animation effect="fade" time="150">WindowOpen</animation>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-		  <description>Page Count Background</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>1013</posX>
-		  <posY>684</posY>
-		  <width>260</width>
-		  <height>30</height>
-		  <texture>mediacountbg_Spin.png</texture>
-		  <visible>!facadeview.filmstrip</visible>
-		  <animation effect="fade" time="150">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		</control>		   
-		<control>
-		  <description>listcontrol</description>
-		  <type>listcontrol</type>
-		  <id>50</id>
-		  <posX>270</posX>
-		  <posY>500</posY>
-		  <height>220</height>
-		  <width>1030</width>
-		  <onleft>2</onleft>
-		  <onright>2</onright>
-		  <scrollOffset>1</scrollOffset>		
-		  <textXOff>12</textXOff>
-		  <itemWidth>25</itemWidth>
-		  <itemHeight>25</itemHeight>
-		  <IconXOff>22</IconXOff>
-		  <IconYOff>10</IconYOff>
-		  <PinIconXOff>2</PinIconXOff>
-		  <PinIconYOff>10</PinIconYOff>		  
-		  <spinWidth>50</spinWidth>
-		  <spinHeight>37</spinHeight>
-		  <spinPosX>1175</spinPosX>
-		  <spinPosY>681</spinPosY>
-		  <spinAlign>Right</spinAlign>
-		  <spinColor>ff006698</spinColor>
-		  <textureUp>arrow_round_up_nofocus.png</textureUp>
-		  <textureDown>arrow_round_down_nofocus.png</textureDown>
-		  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-		  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-		  <animation effect="fade" time="500">WindowOpen</animation>
-		  <animation effect="fade" time="500">WindowClose</animation>
-		</control>
-	</controls>
+  <controls>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>13</posY>
+      <width>222</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <visible>control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Item Count Label</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1057</posX>
+      <posY>17</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <visible>control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#UpdateControl.AvailableUpdateSelectionCount/#UpdateControl.AvailableUpdateCount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <visible>control.isvisible(50)+!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#UpdateControl.InstalledUpdateCount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>15</posY>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <visible>control.isvisible(50)+!string.equals(#UpdateControl.InstalledUpdateCount,0)</visible>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>listcontrol</description>
+      <type>listcontrol</type>
+      <id>50</id>
+      <posX>270</posX>
+      <posY>500</posY>
+      <height>220</height>
+      <width>1030</width>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <scrollOffset>1</scrollOffset>
+      <textXOff>12</textXOff>
+      <itemWidth>25</itemWidth>
+      <itemHeight>25</itemHeight>
+      <IconXOff>22</IconXOff>
+      <IconYOff>10</IconYOff>
+      <PinIconXOff>2</PinIconXOff>
+      <PinIconYOff>10</PinIconYOff>
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1175</spinPosX>
+      <spinPosY>681</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="500">WindowOpen</animation>
+      <animation effect="fade" time="500">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:7a9c1cbceebc206c8bf408867f7ad10b-->

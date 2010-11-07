@@ -1,135 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<controls>
-		<!-- List View -->
-		<control>
-		  <description>Thumb</description>
-		  <type>image</type>
-		  <id>0</id>
-		  <posX>28</posX>
-		  <posY>242</posY>
-		  <height>198</height>
-		  <width>354</width>
-		  <zoom>no</zoom>
-		  <keepaspectratio>yes</keepaspectratio>
-		  <centered>yes</centered>
-		  <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-		  <visible>facadeview.list+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>label</type>
-		  <description>Current video length</description>
-		  <id>501</id>
-		  <posX>28</posX>
-		  <posY>485</posY>
-		  <width>315</width>
-		  <textcolor>ff006698</textcolor>
-		  <label>#OnlineVideos.length</label>
-		  <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>textboxscrollup</type>
-		  <description>Description</description>
-		  <id>0</id>
-		  <posX>28</posX>
-		  <posY>510</posY>
-		  <width>600</width>
-		  <height>150</height>
-		  <seperator>----------------------------------------------------------------------------------------</seperator>
-		  <font>mediastream11</font>
-		  <label>#OnlineVideos.desc</label>
-		  <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>label</type>
-		  <description>Length</description>
-		  <id>1</id>
-		  <posX>28</posX>
-		  <posY>315</posY>
-		  <width>315</width>
-		  <textcolor>ff006698</textcolor>
-		  <font>mediastream11tc</font>
-		  <label>#OnlineVideos.length</label>
-		  <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>textboxscrollup</type>
-		  <description>Description</description>
-		  <id>1</id>
-		  <posX>28</posX>
-		  <posY>337</posY>
-		  <width>600</width>
-		  <height>288</height>
-		  <seperator>----------------------------------------------------------------------------------------</seperator>
-		  <font>mediastream12</font>
-		  <label>#OnlineVideos.desc</label>
-		  <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<!-- Thumbnail Views -->
-		<control>
-		  <description>Category Logo</description>
-		  <type>image</type>
-		  <id>1</id>
-		  <posX>28</posX>
-		  <posY>248</posY>
-		  <width>105</width>
-		  <height>35</height>
-		  <texture>#header.image</texture>
-		  <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		</control>
-		<control>
-		  <type>label</type>
-		  <description>Length</description>
-		  <id>1</id>
-		  <posX>28</posX>
-		  <posY>315</posY>
-		  <width>315</width>
-		  <textcolor>ff006698</textcolor>
-		  <font>mediastream11tc</font>
-		  <label>#OnlineVideos.length</label>
-		  <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>textboxscrollup</type>
-		  <description>Description</description>
-		  <id>1</id>
-		  <posX>28</posX>
-		  <posY>337</posY>
-		  <width>475</width>
-		  <height>288</height>
-		  <seperator>----------------------------------------------------------------------------------------</seperator>
-		  <font>mediastream12</font>
-		  <label>#OnlineVideos.desc</label>
-		  <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-		  <animation effect="fade" time="250">WindowOpen</animation>
-		  <animation effect="fade" time="250">WindowClose</animation>
-		  <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-		  <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-		</control>		
-	</controls>
+  <controls>
+    <!-- List View -->
+    <control>
+      <description>Thumb</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>242</posY>
+      <height>198</height>
+      <width>354</width>
+      <zoom>no</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Current video length</description>
+      <id>501</id>
+      <posX>28</posX>
+      <posY>485</posY>
+      <width>315</width>
+      <textcolor>ff006698</textcolor>
+      <label>#OnlineVideos.length</label>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description</description>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>510</posY>
+      <width>600</width>
+      <height>150</height>
+      <seperator>----------------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#OnlineVideos.desc</label>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Length</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>315</posY>
+      <width>315</width>
+      <textcolor>ff006698</textcolor>
+      <font>mediastream11tc</font>
+      <label>#OnlineVideos.length</label>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>337</posY>
+      <width>600</width>
+      <height>288</height>
+      <seperator>----------------------------------------------------------------------------------------</seperator>
+      <font>mediastream12</font>
+      <label>#OnlineVideos.desc</label>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <!-- Thumbnail Views -->
+    <control>
+      <description>Category Logo</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>248</posY>
+      <width>105</width>
+      <height>35</height>
+      <texture>#header.image</texture>
+      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Length</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>315</posY>
+      <width>315</width>
+      <textcolor>ff006698</textcolor>
+      <font>mediastream11tc</font>
+      <label>#OnlineVideos.length</label>
+      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <description>Description</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>337</posY>
+      <width>475</width>
+      <height>288</height>
+      <seperator>----------------------------------------------------------------------------------------</seperator>
+      <font>mediastream12</font>
+      <label>#OnlineVideos.desc</label>
+      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:2df7521caf318405c0ae05483eb55e2a-->

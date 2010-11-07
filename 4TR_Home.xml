@@ -4,9 +4,9 @@
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:605</define>
-  <define>#header.hover:hover_my tv.png</define>  
+  <define>#header.hover:hover_my tv.png</define>
   <controls>
-	<control>
+    <control>
       <description>Background Image</description>
       <type>image</type>
       <id>1</id>
@@ -16,7 +16,7 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
-	<control>
+    <control>
       <description>Overlay Image</description>
       <type>image</type>
       <id>1</id>
@@ -27,7 +27,7 @@
       <texture>black.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
     </control>
-	<control>
+    <control>
       <description>Overlay Image</description>
       <type>image</type>
       <id>1</id>
@@ -38,7 +38,7 @@
       <texture>overlay_topbar.png</texture>
       <colordiffuse>c9ffffff</colordiffuse>
     </control>
-	<control>
+    <control>
       <description>Overlay Image</description>
       <type>image</type>
       <id>1</id>
@@ -49,7 +49,7 @@
       <texture>osdbackground1.png</texture>
       <colordiffuse>a9ffffff</colordiffuse>
     </control>
-	<control>
+    <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
@@ -240,7 +240,7 @@
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
-      </control>	  
+      </control>
     </control>
     <control>
       <description>TV background</description>
@@ -253,8 +253,8 @@
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-	  <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>
-    </control>   
+      <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+    </control>
     <control>
       <description>video window</description>
       <type>videowindow</type>
@@ -315,7 +315,7 @@
       <textcolor>ff111111</textcolor>
       <font>mediastream16tc</font>
       <align>right</align>
-	  <visible>!string.equals(#TV.View.start,)</visible>
+      <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -329,7 +329,7 @@
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <align>right</align>
-	  <visible>!string.equals(#TV.View.start,)</visible>
+      <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -344,7 +344,7 @@
       <font>mediastream16tc</font>
       <align>left</align>
       <textcolor>ff222222</textcolor>
-	  <visible>!string.equals(#TV.View.start,)</visible>
+      <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -359,7 +359,7 @@
       <font>mediastream16tc</font>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
-	  <visible>!string.equals(#TV.View.start,)</visible>
+      <visible>!string.equals(#TV.View.start,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -460,4 +460,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:2b9853d737a44a3c84528168bc9a7f4f-->
+<!--Checksum:1a4182749f3d1162c64dd631d8b73b1b-->
