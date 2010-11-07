@@ -191,17 +191,18 @@
       <posX>50</posX>
       <posY>120</posY>
       <width>251</width>
-      <height>35</height>
+      <height>44</height>
     </control>
     <control>
       <description>Channel image template</description>
       <type>image</type>
       <id>7</id>
-      <width>30</width>
-      <height>30</height>
+      <width>39</width>
+      <height>39</height>
       <posX>3</posX>
       <posY>2</posY>
       <zoom>no</zoom>
+      <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
       <texture>defaultVideoBig.png</texture>
     </control>
@@ -210,10 +211,10 @@
       <type>label</type>
       <id>18</id>
       <posX>50</posX>
-      <posY>5</posY>
+      <posY>8</posY>
       <width>86</width>
       <height>10</height>
-      <font>mediastream10tc</font>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
     <control>
@@ -277,9 +278,11 @@
       <description>template for program title light area</description>
       <type>label</type>
       <id>24</id>
+      <posX>10</posX>
+      <posY>6</posY>
       <visible>no</visible>
       <label>-</label>
-      <font>mediastream11</font>
+      <font>font14</font>
     </control>
     <control>
       <description>vertical timeline</description>
@@ -296,8 +299,10 @@
       <type>label</type>
       <visible>no</visible>
       <id>26</id>
+      <posX>10</posX>
+      <posY>6</posY>
       <label>-</label>
-      <font>mediastream11</font>
+      <font>mediastream13</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
     <control>
