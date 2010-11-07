@@ -12,17 +12,88 @@
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
     <control>
-      <description>Number of Files Label</description>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1003</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>32</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
       <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>689</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Items Translation</description>
+      <id>0</id>
+      <posX>1077</posX>
+      <posY>17</posY>
+      <width>90</width>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <label>507</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Number of Matches</description>
       <id>12</id>
-      <posX>493</posX>
-      <posY>706</posY>
+      <posX>1240</posX>
+      <posY>16</posY>
+      <width>350</width>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
       <label>#itemcount</label>
-      <visible>false</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <posX>1220</posX>
+      <posY>50</posY>
+      <width>59</width>
+      <height>153</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
       <onexit>10</onexit>
       <dimColor>00ffffff</dimColor>
       <control>
@@ -33,7 +104,20 @@
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(10)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(10)</visible>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
@@ -45,20 +129,20 @@
         <posX>1040</posX>
         <posY>225</posY>
         <visible>!Control.HasFocus(10)</visible>
-        <animation effect="slide" time="150" start="300,0">visible</animation>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(10)</visible>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>
           <description>Search by Title</description>
           <type>button</type>
@@ -66,6 +150,7 @@
           <label>6032</label>
           <onleft>10</onleft>
           <ondown>3</ondown>
+          <onup>17</onup>
         </control>
         <control>
           <description>Clear</description>
@@ -115,12 +200,18 @@
         <font2>mediastream10c</font2>
         <keepaspectratio>yes</keepaspectratio>
         <unfocusedAlpha>0xFF</unfocusedAlpha>
-        <spinPosX>1249</spinPosX>
-        <spinPosY>691</spinPosY>
-        <spinAlign>Right</spinAlign>
-        <onleft>99</onleft>
+        <onleft>2</onleft>
         <onright>2</onright>
         <suffix>|</suffix>
+        <spinPosX>1165</spinPosX>
+        <spinPosY>682</spinPosY>
+        <spinAlign>Right</spinAlign>
+        <textureUp>arrow_round_up_nofocus.png</textureUp>
+        <textureDown>arrow_round_down_nofocus.png</textureDown>
+        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        <spinWidth>50</spinWidth>
+        <spinHeight>37</spinHeight>
       </control>
     </control>
     <control>
@@ -161,23 +252,10 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Genre Label</description>
-      <type>label</type>
-      <label>GENERE : </label>
-      <id>0</id>
-      <posX>28</posX>
-      <posY>331</posY>
-      <font>mediastream12tc</font>
-      <textcolor>ff006698</textcolor>
-      <visible>control.isvisible(14)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
       <type>label</type>
       <description>genre</description>
       <id>17</id>
-      <posX>130</posX>
+      <posX>28</posX>
       <posY>330</posY>
       <width>468</width>
       <font>mediastream12c</font>
@@ -186,7 +264,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
       <posX>28</posX>
@@ -209,30 +287,6 @@
       <texture>-</texture>
     </control>
     <control>
-      <description>Media Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1103</posX>
-      <posY>684</posY>
-      <width>169</width>
-      <height>30</height>
-      <texture>mediacountbackground.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Media Count Label</description>
-      <type>label</type>
-      <label>PAGE:</label>
-      <id>0</id>
-      <posX>1113</posX>
-      <posY>686</posY>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
       <description>Search by Description</description>
       <type>togglebutton</type>
       <id>6</id>
@@ -246,4 +300,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:2938bb8e5444079b888c653e2bad9da7-->
+<!--Checksum:d0907d46421acc5a2b9681db5e7b0147-->
