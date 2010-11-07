@@ -190,7 +190,7 @@
           <posY>250</posY>
           <height>450</height>
           <width>620</width>
-		  <onleft>2</onleft>
+          <onleft>2</onleft>
           <onright>2</onright>
           <textXOff>30</textXOff>
           <textXOff2>650</textXOff2>
@@ -209,8 +209,8 @@
           <PinIconXOff>72</PinIconXOff>
           <PinIconYOff>22</PinIconYOff>
           <spaceBetweenItems>0</spaceBetweenItems>
-		  <!--<unfocusedAlpha>200</unfocusedAlpha>-->
-		  <keepaspectratio>yes</keepaspectratio>
+          <!--<unfocusedAlpha>200</unfocusedAlpha>-->
+          <keepaspectratio>yes</keepaspectratio>
           <textureHeight>64</textureHeight>
           <scrollOffset>1</scrollOffset>
           <spinPosX>1175</spinPosX>
@@ -222,7 +222,7 @@
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
           <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>          
+          <spinHeight>37</spinHeight>
         </control>
         <control>
           <description>Thumbnail Panel</description>
@@ -289,8 +289,9 @@
           <itemWidth>220</itemWidth>
           <itemHeight>185</itemHeight>
           <textureWidth>250</textureWidth>
-          <textureHeight>152</textureHeight>          
-          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>          
+          <textureHeight>152</textureHeight>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
           <showFrame>yes</showFrame>
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
@@ -299,12 +300,12 @@
           <spinPosY>685</spinPosY>
           <spinAlign>center</spinAlign>
           <spinColor>ff006698</spinColor>
-		  <spinWidth>50</spinWidth>
+          <spinWidth>50</spinWidth>
           <spinHeight>37</spinHeight>
           <textureUp>arrow_round_right_nofocus.png</textureUp>
           <textureDown>arrow_round_left_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
-          <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>          
+          <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
           <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
         </control>
@@ -359,8 +360,10 @@
           <folderSuffix>]</folderSuffix>
           <font1>mediastream14tc</font1>
           <font2>mediastream10c</font2>
-          <label1></label1>
-          <label2></label2>
+          <label1>
+          </label1>
+          <label2>
+          </label2>
           <textColor>FFFFFFFF</textColor>
           <remoteColor>FFFF0000</remoteColor>
           <playedColor>FFA0D0FF</playedColor>
@@ -377,7 +380,7 @@
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
           <scrollbarYOff>405</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
-		      <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
         </control>
         <control>
           <description>playlist listcontrol</description>
@@ -404,4 +407,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:de8a07d3f7e13630683ba1b7d42c3911-->
+<!--Checksum:89479e5e6c9161ff966afc0f2b3f35f5-->

@@ -21,7 +21,7 @@
       <label>1041</label>
       <font>mediastream12c</font>
     </control>
-	<control>
+    <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
@@ -29,7 +29,7 @@
       <posY>684</posY>
       <width>260</width>
       <height>32</height>
-      <texture>mediacountbg_Spin.png</texture>      
+      <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -43,7 +43,7 @@
       <posX>1013</posX>
       <posY>689</posY>
       <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>      
+      <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -57,7 +57,7 @@
       <posY>13</posY>
       <width>202</width>
       <height>28</height>
-      <texture>mediacountbg.png</texture>      
+      <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -70,7 +70,7 @@
       <width>90</width>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <label>507</label>      
+      <label>507</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -84,17 +84,17 @@
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
-      <label>#itemcount</label>      
+      <label>#itemcount</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <type>image</type>
       <posX>1220</posX>
       <posY>50</posY>
       <width>59</width>
       <height>153</height>
-      <texture>#StreamedMP.ActionMenu.Image</texture>      
+      <texture>#StreamedMP.ActionMenu.Image</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -103,10 +103,10 @@
       <buttonX>1231</buttonX>
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>      
+      <buttonheight>153</buttonheight>
       <description>action menu</description>
       <onexit>10</onexit>
-      <dimColor>00ffffff</dimColor>	  
+      <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
         <posX>1002</posX>
@@ -115,10 +115,10 @@
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(10)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-	  <control>
+      <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
@@ -128,8 +128,8 @@
         <width>278</width>
         <height>720</height>
         <visible>!Control.HasFocus(10)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -140,20 +140,20 @@
         <posX>1040</posX>
         <posY>225</posY>
         <visible>!Control.HasFocus(10)</visible>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <visible>!Control.HasFocus(10)</visible>        
+        <visible>!Control.HasFocus(10)</visible>
         <posX>1040</posX>
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
-		<animation effect="slide" time="100" start="300,0">visible</animation>
-		<animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>
           <description>Record</description>
           <id>2</id>
@@ -161,8 +161,8 @@
           <label>264</label>
           <onleft>10</onleft>
           <onright>10</onright>
-		  <onup>17</onup>	
-		  <ondown>3</ondown>
+          <onup>17</onup>
+          <ondown>3</ondown>
         </control>
         <control>
           <description>Priority</description>
@@ -171,7 +171,7 @@
           <label>991</label>
           <onleft>10</onleft>
           <onright>10</onright>
-		  <ondown>4</ondown>
+          <ondown>4</ondown>
         </control>
         <control>
           <description>Keep</description>
@@ -180,7 +180,7 @@
           <label>1042</label>
           <onleft>10</onleft>
           <onright>10</onright>
-		  <ondown>5</ondown>
+          <ondown>5</ondown>
         </control>
         <control>
           <description>Only new episodes</description>
@@ -189,7 +189,7 @@
           <label>49224</label>
           <onleft>10</onleft>
           <onright>10</onright>
-		  <ondown>8</ondown>
+          <ondown>8</ondown>
         </control>
         <control>
           <description>PreRecord</description>
@@ -198,7 +198,7 @@
           <label>1444</label>
           <onleft>10</onleft>
           <onright>10</onright>
-		  <ondown>9</ondown>
+          <ondown>9</ondown>
         </control>
         <control>
           <description>PostRecord</description>
@@ -233,11 +233,11 @@
       <textYOff2>37</textYOff2>
       <textureHeight>64</textureHeight>
       <font2>mediastream10c</font2>
-      <keepaspectratio>yes</keepaspectratio>     
+      <keepaspectratio>yes</keepaspectratio>
       <onleft>2</onleft>
       <onright>2</onright>
       <suffix>|</suffix>
-	  <spinPosX>1165</spinPosX>
+      <spinPosX>1165</spinPosX>
       <spinPosY>683</spinPosY>
       <spinAlign>Right</spinAlign>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -289,7 +289,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>genre</description>
       <type>label</type>
@@ -318,8 +318,8 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>    
+    </control>
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:15d5491bd83f473c31e5ffd17a2f845d-->
+<!--Checksum:88f2e504d9742695c8fed415a265a18b-->

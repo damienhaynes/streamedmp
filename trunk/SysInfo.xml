@@ -126,13 +126,14 @@
           <ondown>42</ondown>
         </control>
       </control>
-        <control>
-          <description>hidden</description>
-          <type>button</type>
-          <id>40</id>
-          <label></label>
-          <visible>yes</visible>
-        </control>
+      <control>
+        <description>hidden</description>
+        <type>button</type>
+        <id>40</id>
+        <label>
+        </label>
+        <visible>yes</visible>
+      </control>
     </control>
     <!-- CPU Gauge -->
     <control>
@@ -694,7 +695,7 @@
       <posY>397</posY>
       <label>Network</label>
       <font>mediastream10c</font>
-    </control>  
+    </control>
     <control>
       <description>TvServer_Status</description>
       <type>image</type>
@@ -739,16 +740,16 @@
       <visible>control.hastext(25)</visible>
     </control>
     <control>
-    	<description>Speedfan Label</description>
-    	<type>label</type>
-    	<label>SpeedFan Data</label>
-    	<posX>640</posX>
-    	<posY>632</posY>
-    	<font>mediastream9c</font>
-    	<textcolor>ff006699</textcolor>
-    	<align>center</align>
+      <description>Speedfan Label</description>
+      <type>label</type>
+      <label>SpeedFan Data</label>
+      <posX>640</posX>
+      <posY>632</posY>
+      <font>mediastream9c</font>
+      <textcolor>ff006699</textcolor>
+      <align>center</align>
       <visible>control.hastext(25)</visible>
-    </control>	    
+    </control>
     <control>
       <description>SpeedFan</description>
       <type>textbox</type>
@@ -756,8 +757,9 @@
       <posX>435</posX>
       <posY>638</posY>
       <width>412</width>
-      <height>90</height>   
-      <font>mediastream9c</font> 
-    </control> 
+      <height>90</height>
+      <font>mediastream9c</font>
+    </control>
   </controls>
 </window>
+<!--Checksum:0dcb318620726b792e898c48c39f7b7c-->

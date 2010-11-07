@@ -8,7 +8,7 @@
   <define>#header.hover:hover_onlinevideos.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
-  <controls>    
+  <controls>
     <import>common.window.default.xml</import>
     <control>
       <description>Top Title Extension Background</description>
@@ -67,13 +67,13 @@
       <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>	
-	<import>myonlinevideos.genericsite.xml</import>
-	<import>myonlinevideos.hiddenmenu.xml</import>	
+    </control>
+    <import>myonlinevideos.genericsite.xml</import>
+    <import>myonlinevideos.hiddenmenu.xml</import>
     <import>common.overlays.xml</import>
     <import>myonlinevideos.facade.xml</import>
     <import>myonlinevideos.itunestrailers.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:7894e3ac4dc4558f2f13e0f0205e896c-->
+<!--Checksum:abf86b27dd37055dec04b3b3e73066af-->

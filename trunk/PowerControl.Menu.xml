@@ -1,63 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-	<controls>
-		<control>
-		  <type>image</type>
-		  <posX>0</posX>
-		  <posY>216</posY>
-		  <width>278</width>
-		  <height>720</height>
-		  <texture>hiddenmenu_left.png</texture>
-		  <animation effect="fade" time="300">WindowOpen</animation>
-		  <animation effect="fade" time="300">WindowClose</animation>
-		</control>    
-		<control>
-		  <type>group</type>
-		  <description>group element</description>
-		  <layout>StackLayout</layout>
-		  <posX>20</posX>
-		  <posY>250</posY>		  
-		  <control>
-			<description>Menu Label</description>
-			<id>0</id>
-			<label>924</label>
-			<type>label</type>
-			<font>mediastream12tc</font>
-			<height>25</height>
-			<width>255</width>
-			<animation effect="fade" time="300">WindowOpen</animation>
-			<animation effect="fade" time="300">WindowClose</animation>
-		  </control>
-		  <control>
-			<description>Action</description>
-			<type>button</type>
-			<id>2</id>			
-			<onup>4</onup>
-			<ondown>3</ondown>
-			<width>255</width>
-			<animation effect="fade" time="300">WindowOpen</animation>
-			<animation effect="fade" time="300">WindowClose</animation>
-		  </control>
-		  <control>
-			<description>Action Scheduler</description>
-			<type>togglebutton</type>
-			<id>3</id>			
-			<onup>2</onup>
-			<ondown>4</ondown>
-			<width>255</width>
-			<animation effect="fade" time="300">WindowOpen</animation>
-			<animation effect="fade" time="300">WindowClose</animation>
-		  </control>
-		  <control>
-			<description>Alive Check Scheduler</description>
-			<type>togglebutton</type>
-			<id>4</id>			
-			<onup>3</onup>
-			<ondown>2</ondown>
-			<width>255</width>
-			<animation effect="fade" time="300">WindowOpen</animation>
-			<animation effect="fade" time="300">WindowClose</animation>
-		  </control>
-		</control>
-	</controls>
+  <controls>
+    <control>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>216</posY>
+      <width>278</width>
+      <height>720</height>
+      <texture>hiddenmenu_left.png</texture>
+      <animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowClose</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <layout>StackLayout</layout>
+      <posX>20</posX>
+      <posY>250</posY>
+      <control>
+        <description>Menu Label</description>
+        <id>0</id>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <height>25</height>
+        <width>255</width>
+        <animation effect="fade" time="300">WindowOpen</animation>
+        <animation effect="fade" time="300">WindowClose</animation>
+      </control>
+      <control>
+        <description>Action</description>
+        <type>button</type>
+        <id>2</id>
+        <onup>4</onup>
+        <ondown>3</ondown>
+        <width>255</width>
+        <animation effect="fade" time="300">WindowOpen</animation>
+        <animation effect="fade" time="300">WindowClose</animation>
+      </control>
+      <control>
+        <description>Action Scheduler</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <width>255</width>
+        <animation effect="fade" time="300">WindowOpen</animation>
+        <animation effect="fade" time="300">WindowClose</animation>
+      </control>
+      <control>
+        <description>Alive Check Scheduler</description>
+        <type>togglebutton</type>
+        <id>4</id>
+        <onup>3</onup>
+        <ondown>2</ondown>
+        <width>255</width>
+        <animation effect="fade" time="300">WindowOpen</animation>
+        <animation effect="fade" time="300">WindowClose</animation>
+      </control>
+    </control>
+  </controls>
 </window>
+<!--Checksum:baebae870cf5139f528266a464bf249c-->

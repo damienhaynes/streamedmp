@@ -45,7 +45,7 @@
       <texture>mainoverlay.png</texture>
       <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
     </control>
-	<control>
+    <control>
       <description>Top Bar Overlay</description>
       <type>image</type>
       <id>0</id>
@@ -54,17 +54,17 @@
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-	  <visible>![facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist|facadeview.filmstrip]</visible>
+      <visible>![facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist|facadeview.filmstrip]</visible>
     </control>
     <import>myvideoHiddenMenu.xml</import>
-    <import>myvideoListView.xml</import>    
-    <import>myvideoFilmstripView.xml</import>    
-    <import>myvideoThumbsView.xml</import>	
-    <import>common.facade.video.xml</import>    
-	<import>myvideoCoverFlow.xml</import>
+    <import>myvideoListView.xml</import>
+    <import>myvideoFilmstripView.xml</import>
+    <import>myvideoThumbsView.xml</import>
+    <import>common.facade.video.xml</import>
+    <import>myvideoCoverFlow.xml</import>
     <import>common.overlays2.xml</import>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:5e491fb4c8f689dc855b5197f1193b61-->
+<!--Checksum:f798080ed5be90e179d96ce5f41d1a78-->
