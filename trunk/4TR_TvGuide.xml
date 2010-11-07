@@ -3,7 +3,7 @@
   <id>600</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#currentmodule:TV\TV GUIDE</define>
+  <define>#currentmodule:TV/GUIDE</define>
   <controls>
     <import>common.time.xml</import>
     <control>
@@ -12,9 +12,8 @@
       <id>0</id>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_my tv series.png</texture>
-      <animation effect="fade" time="500" start="10">WindowOpen</animation>
-      <animation effect="fade" time="500" end="10">WindowClose</animation>
+      <texture>hover_my tv.png</texture>
+      <animation effect="fade" time="250" start="10">WindowOpen</animation>      
     </control>
     <control>
       <type>image</type>
@@ -23,8 +22,7 @@
       <height>720</height>
       <width>1280</width>
       <texture>tvguidebg.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>      
     </control>
     <control>
       <description>Top Title Background</description>
@@ -35,10 +33,8 @@
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-      <animation effect="fade" time="600">WindowOpen</animation>
-      <animation effect="fade" time="600">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>      
+      <animation effect="fade" time="600">WindowOpen</animation>      
     </control>
     <control>
       <type>fadelabel</type>
@@ -51,10 +47,8 @@
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
-      <animation effect="fade" time="400">WindowOpen</animation>
-      <animation effect="fade" time="400">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>      
+      <animation effect="fade" time="400">WindowOpen</animation>      
     </control>
     <control>
       <description>Top Title Extension Background</description>
@@ -65,23 +59,10 @@
       <width>456</width>
       <height>36</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-      <animation effect="fade" time="300" delay="0">WindowClose</animation>
+	  <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>      
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Guide Group Label</description>
-      <id>11</id>
-      <posX>852</posX>
-      <posY>13</posY>
-      <width>340</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <label>#TV.Guide.Group</label>
-      <visible>no</visible>
-    </control>
+    </control>    
     <control>
       <type>fadelabel</type>
       <description>Guide Group Label</description>
@@ -92,10 +73,9 @@
       <font>mediastream12c</font>
       <align>right</align>
       <label>#TV.Guide.ChangeGroup</label>
-      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
-      <animation effect="fade" time="230" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+	  <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>      
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>      
     </control>
     <control>
       <description>Time Background</description>
@@ -112,7 +92,7 @@
       <type>label</type>
       <id>0</id>
       <posX>1230</posX>
-      <posY>30</posY>
+      <posY>18</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream11tc</font>
@@ -210,18 +190,15 @@
       <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
       <onleft>6</onleft>
       <onright>8</onright>
-    </control>
-    
-    <import tag="TVGuideChannelTemplate">mytvguide.common.16rows.channeltemplate.xml</import>
-    
-    
+    </control>    
+    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>       
     <control>
       <description>Current program time</description>
       <type>label</type>
       <id>14</id>
       <posX>240</posX>
       <posY>585</posY>
-      <width>120</width>
+      <width>190</width>
       <label>#TV.Guide.Time</label>
       <font>mediastream11tc</font>
     </control>
@@ -229,7 +206,7 @@
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>380</posX>
+      <posX>470</posX>
       <posY>585</posY>
       <width>560</width>
       <label>#TV.Guide.Title</label>
@@ -247,7 +224,7 @@
       <font>mediastream11tc</font>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
       <posX>240</posX>
@@ -278,9 +255,7 @@
       <width>30</width>
       <height>435</height>
       <textureFocus>small_vbutton_focus.png</textureFocus>
-      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
-      <label>
-      </label>
+      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>      
       <onleft>60</onleft>
       <onright>6</onright>
       <onup>6</onup>
@@ -326,7 +301,7 @@
       <description>record pin</description>
       <type>image</type>
       <id>31</id>
-      <posX>345</posX>
+      <posX>445</posX>
       <posY>587</posY>
       <width>45</width>
       <height>17</height>

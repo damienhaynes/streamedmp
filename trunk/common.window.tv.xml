@@ -14,7 +14,7 @@
       <animation effect="fade" time="500" end="10">WindowClose</animation>
     </control>
     <control>
-      <description>DUMMY CONTROLL FOR RANDOM FANART 1 VISIBILITY CONDITION</description>
+      <description>DUMMY CONTROL FOR RANDOM FANART 1 VISIBILITY CONDITION</description>
       <type>label</type>
       <id>91919297</id>
       <posX>0</posX>
@@ -22,7 +22,7 @@
       <width>1</width>
     </control>
     <control>
-      <description>DUMMY CONTROLL FOR RANDOM FANART 2 VISIBILITY CONDITION</description>
+      <description>DUMMY CONTROL FOR RANDOM FANART 2 VISIBILITY CONDITION</description>
       <type>label</type>
       <id>91919298</id>
       <posX>0</posX>
@@ -41,8 +41,8 @@
       <visible>control.isvisible(91919297)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
-      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">Visible</animation>
-      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
+      <!--<animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200">Visible</animation>
+      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>-->
     </control>
     <control>
       <description>FANART IMAGE 2</description>
@@ -56,35 +56,9 @@
       <visible>control.isvisible(91919298)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900">Hidden</animation>
-      <animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0">Visible</animation>
-      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>
-    </control>
-    <!--<control>
-                     <description>standard background image with FH</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>animations\tv\default.jpg</texture>
-                     <visible>string.equals(#fanarthandler.tvseries.backdrop1.any,)+string.equals(#fanarthandler.tvseries.backdrop2.any,)+plugin.isenabled(Fanart Handler)</visible>
-                     <animation effect="fade" time="500" start="10">WindowOpen</animation>
-                     <animation effect="fade" time="500" end="10" >WindowClose</animation>
-              </control>
-              <control>
-                     <description>tv background image</description>
-                     <type>image</type>
-                     <id>0</id>
-                     <posX>0</posX>
-                     <posY>0</posY>
-                     <width>1280</width>
-                     <height>720</height>
-                     <texture>hover_my tv.png</texture>
-                     <visible>!plugin.isenabled(Fanart Handler)</visible>
-                     <animation effect="fade" time="500" start="10">WindowOpen</animation>
-                     <animation effect="fade" time="500" end="10" >WindowClose</animation>
-              </control>-->
+      <!--<animation effect="zoom" start="100,100" end="103,103" center="640,360" time="2200" delay="0">Visible</animation>
+      <animation effect="zoom" start="103,103" end="100,100" center="640,360" time="900">Hidden</animation>-->
+    </control>    
     <control>
       <description>tv overlay image</description>
       <type>image</type>

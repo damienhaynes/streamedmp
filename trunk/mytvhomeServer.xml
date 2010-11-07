@@ -102,10 +102,7 @@
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <!--<shadowAngle>45</shadowAngle>
-                                <shadowDistance>10</shadowDistance>
-                                <shadowColor>ff111111</shadowColor>-->
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>        
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
@@ -322,19 +319,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#StreamedMP.VideoWallpaper,false)</visible>
-    </control>
-    <!--<control>
-                        <description>video window</description>
-                        <type>image</type>
-                        <id>1</id>
-                        <posX>509</posX>
-                        <posY>119</posY>
-                        <width>616</width>
-                        <height>319</height>
-                        <texture>tv_black.png</texture>
-                        <animation effect="fade" time="250">WindowOpen</animation>
-                        <animation effect="fade" time="250">WindowClose</animation>
-                </control>-->
+    </control>   
     <control>
       <description>video window</description>
       <type>videowindow</type>
@@ -494,7 +479,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
       <posX>250</posX>
