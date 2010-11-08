@@ -32,15 +32,15 @@
         <description>Action</description>
         <type>button</type>
         <id>2</id>
-        <onup>4</onup>
+        <onup>5</onup>
         <ondown>3</ondown>
         <width>255</width>
         <animation effect="fade" time="300">WindowOpen</animation>
         <animation effect="fade" time="300">WindowClose</animation>
       </control>
-      <control>
-        <description>Action Scheduler</description>
-        <type>togglebutton</type>
+	  <control>
+        <description>Network Browser</description>
+        <type>button</type>
         <id>3</id>
         <onup>2</onup>
         <ondown>4</ondown>
@@ -49,10 +49,20 @@
         <animation effect="fade" time="300">WindowClose</animation>
       </control>
       <control>
-        <description>Alive Check Scheduler</description>
+        <description>Action Scheduler</description>
         <type>togglebutton</type>
         <id>4</id>
         <onup>3</onup>
+        <ondown>5</ondown>
+        <width>255</width>
+        <animation effect="fade" time="300">WindowOpen</animation>
+        <animation effect="fade" time="300">WindowClose</animation>
+      </control>
+      <control>
+        <description>Alive Check Scheduler</description>
+        <type>togglebutton</type>
+        <id>5</id>
+        <onup>4</onup>
         <ondown>2</ondown>
         <width>255</width>
         <animation effect="fade" time="300">WindowOpen</animation>
