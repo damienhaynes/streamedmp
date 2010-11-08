@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- *** HTPC Machine Info labels *** -->
+    <control>
+      <description>Machine</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>220</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_computer.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Machine</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>220</posY>
+      <label>Machine</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Machine Name</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Machine Name:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>250</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Model</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Model:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>270</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>BIOS</description>
+      <type>label</type>
+      <id>1</id>
+      <label>BIOS:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>290</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Processor</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Processor:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>310</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>User Name</description>
+      <type>label</type>
+      <id>1</id>
+      <label>User Name:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>330</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+
+    <!-- *** HTPC Machine Info values *** -->
+    <control>
+      <description>Machine Name Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.MachineName</label>
+      <posX>260</posX>
+      <posY>250</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Model Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>270</posY>
+      <label>#HTPCInfo.Model (#HTPCInfo.MotherboardManufacturer), #HTPCInfo.SystemType</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>BIOS Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>290</posY>
+      <label>#HTPCInfo.BIOSManufacturer, #HTPCInfo.BIOSDescription</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Processor Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>310</posY>
+      <label>#HTPCInfo.ProcessorCount Processor(s) (#HTPCInfo.ProcessorManufacturer), #HTPCInfo.ProcessorDescription</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>User Name Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>330</posY>
+      <label>#HTPCInfo.UserName</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** OS Information labels *** -->
+    <control>
+      <description>OS</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>350</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#HTPCInfo.OSVersionImage</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>OS</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>350</posY>
+      <label>Operating System</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>OS Version</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Version:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>380</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** OS Information values*** -->
+    <control>
+      <description>OS Version Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>380</posY>
+      <label>#HTPCInfo.OSDescription (#HTPCInfo.OSVersionName)</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** System Information labels *** -->
+    <control>
+      <description>OS</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>400</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_system.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>System</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>400</posY>
+      <label>System Information</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Uptime</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>430</posY>
+      <label>Uptime:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>CPU Usage</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>450</posY>
+      <label>CPU Usage:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Memory Usage</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Memory Usage:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>470</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Disk Read</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Disk Read:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>490</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Disk Write</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Disk Write:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+      <posX>60</posX>
+      <posY>510</posY>
+    </control>
+    <!-- *** System Information values*** -->
+    <control>
+      <description>Uptime Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.Uptime</label>
+      <posX>260</posX>
+      <posY>430</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>CPU Usage Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>260</posX>
+      <posY>450</posY>
+      <label>#HTPCInfo.ProcessorCurrentClock / #HTPCInfo.ProcessorMaximumClock / #HTPCInfo.ProcessorUsage%</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Memory Usage Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>470</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.MemoryAvailable MBytes / #HTPCInfo.MemoryPhysical MBytes (#HTPCInfo.PagefileUsed% Pagefile Usage)</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Memory Usage Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>490</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.DiskRead%</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Memory Usage Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>510</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.DiskWrite%</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Network Information labels *** -->
+    <control>
+      <description>Network</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>530</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_networkcard.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>530</posY>
+      <label>Network</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network</description>
+      <type>label</type>
+      <id>1</id>
+      <label>Domain/Workgroup:</label>
+      <font>mediastream10c</font>
+      <posX>60</posX>
+      <posY>560</posY>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Internal/External IP</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>580</posY>
+      <label>Internal/External IP:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network Traffic</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>60</posX>
+      <posY>600</posY>
+      <label>Traffic:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Network Information values *** -->
+    <control>
+      <description>Network Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>560</posY>
+      <font>mediastream10c</font>
+      <label>Server Mode #HTPCInfo.NetworkServerModeIsEnabled, #HTPCInfo.NetworkWorkgroup</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Internal/External Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>580</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.NetworkIPv4Address1 / #HTPCInfo.NetworkExternalIPAddress (IPv6 support #HTPCInfo.NetworkIPv6Enabled)</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network Traffic Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>600</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.NetworkSent KBytes sent / #HTPCInfo.NetworkReceived KBytes received</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Local Sensor Informations labels *** -->
+    <control>
+      <description>Sensor</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>870</posX>
+      <posY>220</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_sensor.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Sensor</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>220</posY>
+      <label>Local Sensors</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>250</posY>
+      <label>CPU:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Core0 Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>270</posY>
+      <label>Core:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>HD1 Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>290</posY>
+      <label>HD:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Fan Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>310</posY>
+      <label>Fans:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>330</posY>
+      <label>vRAM:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>350</posY>
+      <label>vCore:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>370</posY>
+      <label>+5v:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>390</posY>
+      <label>vBat:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Local Sensor Informations values *** -->
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>250</posY>
+      <label>#HTPCInfo.SensorTemperatureCPU</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>270</posY>
+      <label>#HTPCInfo.SensorTemperatureCore</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>290</posY>
+      <label>#HTPCInfo.SensorTemperatureHD</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>310</posY>
+      <label>#HTPCInfo.SensorFanFan1, #HTPCInfo.SensorFanFan2</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Fan Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1040</posX>
+      <posY>330</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.SensorVoltagevRAM</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1040</posX>
+      <posY>350</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.SensorVoltagevCore</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1040</posX>
+      <posY>370</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.SensorVoltageplus5V1</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Voltage Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1040</posX>
+      <posY>390</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.SensorVoltageVbat</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** XAP Sensor Informations labels *** -->
+    <control>
+      <description>Sensor</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>870</posX>
+      <posY>420</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_sensor.png</texture>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Sensor</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>420</posY>
+      <label>XAP Sensors</label>
+      <font>mediastream16c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>450</posY>
+      <label>CPU:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Core0 Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>470</posY>
+      <label>Mobo:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>HD1 Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>490</posY>
+      <label>HD:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Fan Sensors</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>510</posY>
+      <label>Fan:</label>
+      <font>mediastream10c</font>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** XAP Sensor Informations values *** -->
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>450</posY>
+      <label>#HTPCInfo.xAPSensorTemperatureCPU</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>470</posY>
+      <label>#HTPCInfo.xAPSensorTemperatureMobo</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Temperature Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <font>mediastream10c</font>
+      <posX>1040</posX>
+      <posY>490</posY>
+      <label>#HTPCInfo.xAPSensorTemperatureHD0</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Fan Sensors Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1040</posX>
+      <posY>510</posY>
+      <font>mediastream10c</font>
+      <label>#HTPCInfo.xAPSensorFanCPUFan</label>
+      <visible>Control.IsVisible(50)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+  </controls>
+</window>

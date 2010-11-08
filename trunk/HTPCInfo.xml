@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>7972</id>
+  <defaultcontrol>6</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.label:HTPCInfo | #HTPCInfo.SectionName</define>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <controls>
+    <control>
+      <description>programs background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>HTPCInfo\htpcinfo_overview_bg.jpg</texture>
+      <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
+      <visible>Control.isVisible(50)</visible>
+    </control>
+    <control>
+      <description>programs background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>HTPCInfo\htpcinfo_details_bg.jpg</texture>
+      <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
+      <visible>Control.isVisible(51)</visible>
+    </control>
+    <control>
+      <description>programs background image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>HTPCInfo\htpcinfo_gauges_bg.jpg</texture>
+      <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
+      <visible>Control.isVisible(52)|Control.isVisible(53)</visible>
+    </control>
+
+    <control>
+      <description>programs overlay image</description>
+      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>streamed_overlay.png</texture>
+    </control>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <import>HTPCInfo_details.xml</import>
+    <import>HTPCInfo_gauges.xml</import>
+    <import>HTPCInfo_overview.xml</import>
+    <!-- *** Menu *** -->
+    <control>
+       <type>actiongroup</type>
+       <description>action menu</description>
+       <defaultcontrol>2</defaultcontrol>
+       <onexit>6</onexit>
+       <buttonX>1231</buttonX>
+       <buttonY>55</buttonY>
+       <buttonwidth>49</buttonwidth>
+       <buttonheight>153</buttonheight>
+       <textureFocus>Action_menu.png</textureFocus>
+       <textureNoFocus>Action_menu.png</textureNoFocus>
+       <dimColor>00ffffff</dimColor>      
+      <control>
+        <id>1</id>
+        <type>image</type>
+        <posX>1012</posX>
+        <posY>0</posY>
+        <width>268</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <colorDiffuse>fffffffff</colorDiffuse>
+        <visible>!Control.HasFocus(6)</visible>
+        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
+        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
+      </control>  
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <posX>1040</posX>
+        <posY>210</posY>
+        <width>220</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(6)</visible>
+        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
+        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
+        <layout>StackLayout</layout>
+        <control>
+          <id>0</id>
+          <label>Menu</label>
+          <type>label</type>
+          <font>mediastream12tc</font>
+          <height>20</height>
+        </control>
+        <control>
+          <description>Flush Memory</description>
+          <type>button</type>
+          <id>2</id>
+          <label>Flush Memory</label>
+          <onup>9</onup>
+          <ondown>8</ondown>
+          <onleft>6</onleft>
+          <onright>2</onright>
+        </control>
+        <control>
+          <description>Flush Caches</description>
+          <type>button</type>
+          <id>8</id>
+          <label>Flush Caches</label>
+          <onup>2</onup>
+          <ondown>3</ondown>
+          <onleft>6</onleft>
+          <width>160</width>
+        </control>
+        <control>
+          <description>Empty Recycle Bin</description>
+          <type>button</type>
+          <id>3</id>
+          <label>Empty Recycle Bin</label>
+          <onup>8</onup>
+          <ondown>4</ondown>
+          <onleft>6</onleft>
+          <onright>3</onright>
+        </control>
+        <control>
+          <description>Kill Not Responding Processes</description>
+          <type>button</type>
+          <id>4</id>
+          <label>Kill Not Responding Processes</label>
+          <onup>3</onup>
+          <ondown>5</ondown>
+          <onleft>6</onleft>
+          <onright>4</onright>
+        </control>
+        <control>
+          <description>Synchronize Time</description>
+          <type>button</type>
+          <id>5</id>
+          <label>Synchronize Time</label>
+          <onup>4</onup>
+          <ondown>7</ondown>
+          <onleft>6</onleft>
+          <onright>5</onright>
+        </control>
+        <control>
+          <description>Wake On LAN</description>
+          <type>button</type>
+          <id>7</id>
+          <label>Wake On LAN</label>
+          <onup>5</onup>
+          <ondown>9</ondown>
+          <onleft>6</onleft>
+          <width>160</width>
+        </control>
+        <control>
+          <description>Safely Remove USB</description>
+          <type>button</type>
+          <id>9</id>
+          <label>Safely Remove</label>
+          <onup>7</onup>
+          <ondown>2</ondown>
+          <onleft>6</onleft>
+          <width>160</width>
+        </control>
+      </control>
+    </control>
+    <!-- *** Dummy contols indicating section visibility *** -->
+    <control>
+      <description>Hidden Control TVServer</description>
+      <type>label</type>
+      <id>10</id>
+      <label />
+    </control>
+    <control>
+      <description>Hidden Control TVClient</description>
+      <type>label</type>
+      <id>11</id>
+      <label />
+    </control>
+    <control>
+      <description>Section Overview</description>
+      <type>label</type>
+      <id>50</id>
+      <label />
+    </control>
+    <control>
+      <description>Section Details</description>
+      <type>label</type>
+      <id>51</id>
+      <label />
+    </control>
+    <control>
+      <description>Section Gauges</description>
+      <type>label</type>
+      <id>52</id>
+      <label />
+    </control>
+    <control>
+      <description>Section Progressbars</description>
+      <type>label</type>
+      <id>53</id>
+      <label />
+    </control>
+    <control>
+      <description>Section Self designed</description>
+      <type>label</type>
+      <id>54</id>
+      <label />
+    </control>
+    <control>
+      <description>Section</description>
+      <type>button</type>
+      <id>6</id>
+      <onup>2</onup>
+      <onleft>2</onleft>
+      <ondown>2</ondown>
+      <onright>2</onright>
+      <posY>-100</posY>
+    </control>
+
+    <control>
+      <description>Dummy</description>
+      <type>button</type>
+      <id>1223</id>
+      <posY>-100</posY>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <onleft>1224</onleft>
+      <onright>6</onright>
+      <action>6</action>
+    </control>
+  </controls>
+</window>

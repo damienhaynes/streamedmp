@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>VideoCard Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>230</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_videocard.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Keyboard Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>370</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_keyboard.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Pointer Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>440</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_pointer.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Soundcard Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>490</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_soundcard.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>540</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_networkcard.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Devices Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>550</posX>
+      <posY>230</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_device.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Codecs Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>550</posX>
+      <posY>310</posY>
+      <width>32</width>
+      <height>32</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>htpcinfo_codec.png</texture>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Header labels *** -->
+    <control>
+      <description>Graphic Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>230</posY>
+      <label>Graphic (#HTPCInfo.DisplayDeviceCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Keyboard Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>370</posY>
+      <label>Keyboard (#HTPCInfo.KeyboardDeviceCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Pointing Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>430</posY>
+      <label>Pointing (#HTPCInfo.PointingDeviceCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Sound Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>490</posY>
+      <label>Sound (#HTPCInfo.SoundDeviceCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Network Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>550</posY>
+      <label>Network (#HTPCInfo.NetworkDeviceCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+
+    <!-- *** Icons *** -->
+
+    <control>
+      <description>Drive Device Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>600</posX>
+      <posY>230</posY>
+      <label>Drives (#HTPCInfo.DriveCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Codecs</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>600</posX>
+      <posY>310</posY>
+      <label>Codecs (#HTPCInfo.CodecCount):</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+
+    <!-- *** Row 1 Values *** -->
+
+    <control>
+      <description>Graphic Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>250</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.DisplayDevice1Description (Driver version #HTPCInfo.DisplayDevice1DriverVersion)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Graphic Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>270</posY>
+      <font>mediastream10</font>
+      <label>Refreshrate min/max: #HTPCInfo.DisplayDevice1MinimumRefreshRate / #HTPCInfo.DisplayDevice1MaximumRefreshRate</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Graphic Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>290</posY>
+      <font>mediastream10</font>
+      <label>Resolution: #HTPCInfo.DisplayDevice1Resolution</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Graphic Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>310</posY>
+      <font>mediastream10</font>
+      <label>VRAM: #HTPCInfo.DisplayDevice1MemoryPhysical</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Graphic Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>330</posY>
+      <font>mediastream10</font>
+      <label>FPS: #HTPCInfo.DisplayDeviceCurrentFrameCount (Max: #HTPCInfo.DisplayDeviceMaximumFrameCount)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Keyboard Devices *** -->
+    <control>
+      <description>Keyboard Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>390</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.KeyboardDevice1Name</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Pointing Devices *** -->
+    <control>
+      <description>Pointing Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>450</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.PointingDevice1Name (#HTPCInfo.PointingDevice1Manufacturer)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!--
+    <control>
+    <description>Pointing Device Value</description>
+    <type>label</type>
+    <id>1</id>
+    <height>20</height>
+    <font>mediastream10</font>
+    <label>#HTPCInfo.PointingDevice2Name (#HTPCInfo.PointingDevice2Manufacturer)</label>
+    </control>
+    <control>
+    <description>Pointing Device Value</description>
+    <type>label</type>
+    <id>1</id>
+    <height>20</height>
+    <font>mediastream10</font>
+    <label>#HTPCInfo.PointingDevice3Name (#HTPCInfo.PointingDevice3Manufacturer)</label>
+    </control>
+    <control>
+    <description>Pointing Device Value</description>
+    <type>label</type>
+    <id>1</id>
+    <height>40</height>
+    <font>mediastream10</font>
+    <label>#HTPCInfo.PointingDevice4Name (#HTPCInfo.PointingDevice4Manufacturer)</label>
+    </control>
+    -->
+    <!-- *** Sound Devices *** -->
+    <control>
+      <description>Sound Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>510</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.SoundDevice1Name (#HTPCInfo.SoundDevice1Manufacturer)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!--
+    <control>
+    <description>Sound Device Value</description>
+    <type>label</type>
+    <id>1</id>
+    <height>20</height>
+    <font>mediastream10</font>
+    <label>#HTPCInfo.SoundDevice2Name (#HTPCInfo.SoundDevice2Manufacturer)</label>
+    </control>
+    <control>
+    <description>Sound Device Value</description>
+    <type>label</type>
+    <id>1</id>
+    <height>40</height>
+    <font>mediastream10</font>
+    <label>#HTPCInfo.SoundDevice3Name (#HTPCInfo.SoundDevice3Manufacturer)</label>
+    </control>
+    -->
+    <!-- *** Network Devices *** -->
+    <control>
+      <description>Network Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>70</posX>
+      <posY>570</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.NetworkDevice8Description (#HTPCInfo.NetworkDevice8Manufacturer) #HTPCInfo.NetworkDevice8Type</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <!-- *** Row 2 valus *** -->
+    <!-- *** Drive Devices *** -->
+    <control>
+      <description>Drive Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>600</posX>
+      <posY>250</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.Drive1Model, Interface #HTPCInfo.Drive1InterfaceType, Format #HTPCInfo.Drive1Type, #HTPCInfo.Drive1PartitionCount partition(s)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Drive Device Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>600</posX>
+      <posY>270</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.Drive2Model, Interface #HTPCInfo.Drive2InterfaceType, Format #HTPCInfo.Drive2Type, #HTPCInfo.Drive2PartitionCount partition(s)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Codec Value</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>600</posX>
+      <posY>330</posY>
+      <font>mediastream10</font>
+      <label>#HTPCInfo.Codec10Description (#HTPCInfo.Codec10Version)</label>
+      <visible>Control.IsVisible(51)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+  </controls>
+</window>
