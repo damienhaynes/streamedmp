@@ -12,8 +12,7 @@
       <id>0</id>
       <width>1280</width>
       <height>720</height>
-      <texture>hover_my tv.png</texture>
-      <animation effect="fade" time="250" start="10">WindowOpen</animation>
+      <texture>hover_my tv.png</texture>      
     </control>
     <control>
       <type>image</type>
@@ -21,8 +20,7 @@
       <posX>0</posX>
       <height>720</height>
       <width>1280</width>
-      <texture>tvguidebg.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
+      <texture>tvguidebg.png</texture>      
     </control>
     <control>
       <description>Top Title Background</description>
@@ -59,7 +57,7 @@
       <width>456</width>
       <height>36</height>
       <texture>tvtitlebg.png</texture>
-      <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <visible>!string.equals(#TV.Guide.ChangeGroup,)|control.isvisible(32)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
     </control>
@@ -76,6 +74,33 @@
       <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+    </control>
+	<control>
+      <description>Single Channel Label</description>
+      <type>label</type>
+      <id>32</id>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>300</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <animation effect="fade" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">Visible</animation>
+    </control>
+    <control>
+      <description>Single Channel Image</description>
+      <type>image</type>
+      <id>33</id>
+      <posX>305</posX>
+      <posY>69</posY>
+      <width>45</width>
+      <height>45</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <zoom>no</zoom>
+      <centered>yes</centered>
+      <texture>defaultVideoBig.png</texture>
+      <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">Visible</animation>
+      <animation effect="fade" time="300">Visible</animation>
     </control>
     <control>
       <description>Time Background</description>
@@ -107,34 +132,7 @@
       <height>450</height>
       <colordiffuse>ffffffff</colordiffuse>
       <texture>-</texture>
-    </control>
-    <control>
-      <description>Single Channel Label</description>
-      <type>label</type>
-      <id>32</id>
-      <posX>852</posX>
-      <posY>13</posY>
-      <width>300</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <animation effect="fade" time="300" delay="300">Visible</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">Visible</animation>
-    </control>
-    <control>
-      <description>Single Channel Image</description>
-      <type>image</type>
-      <id>33</id>
-      <posX>305</posX>
-      <posY>69</posY>
-      <width>45</width>
-      <height>45</height>
-      <keepaspectratio>yes</keepaspectratio>
-      <zoom>no</zoom>
-      <centered>yes</centered>
-      <texture>defaultVideoBig.png</texture>
-      <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">Visible</animation>
-      <animation effect="fade" time="300">Visible</animation>
-    </control>
+    </control>    
     <!-- Timeheader background must be dedfined before Timeheader label template -->
     <!-- b/c Timeheader is on the background and will be rendered first -->
     <control>
