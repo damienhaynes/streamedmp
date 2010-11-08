@@ -1696,6 +1696,12 @@ namespace StreamedMPEditor
         cbFreeDriveSpaceOverlay.Enabled = true;
       else
         cbFreeDriveSpaceOverlay.Text += " (Not Installed)";
+
+      if (helper.pluginEnabled(Helper.Plugins.UpdateControl))
+          cbUpdateControlOverlay.Enabled = true;
+      else
+          cbUpdateControlOverlay.Text += " (Not Installed)";
+
     }
 
     //

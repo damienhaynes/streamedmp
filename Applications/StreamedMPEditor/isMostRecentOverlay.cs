@@ -52,6 +52,10 @@
           htpcInfoOverlay();
           writeXMLFile("basichome.HTPCInfo.Overlay.xml");
           break;
+        case isOverlayType.updateControl:
+          updateControlOverlay();
+          writeXMLFile("basichome.UpdateControl.Overlay.xml");
+          break;
         default:
           break;
       }
@@ -4037,6 +4041,7 @@
                     "<label>#HTPCInfo.SensorTemperatureCPU</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
+                    "<visible>!string.start(#HTPCInfo.SensorTemperatureCPU,#)</visible>" +
                   "</control>" +
                   "<control>" +
                     "<description>CPU Usage label</description>" +
@@ -4245,6 +4250,169 @@
                 "</control>" +
               "</controls>" +
             "</window>";
+    }
+
+    #endregion
+
+    #region Update Overlay
+
+    void updateControlOverlay()
+    {
+        xml = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
+                "<window>" +
+                    "<controls>" +
+                        "<control>" +
+                            "<description>GROUP: Update Control Plugins Overlay</description>" +
+                            "<type>group</type>" +
+                            "<dimColor>0xffffffff</dimColor>" +
+                            "<visible>" + mostRecentVisibleControls(isOverlayType.updateControl) + "</visible>" +
+                            "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                            "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+                            "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+                            "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                            "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                            "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                            "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                            "<control>" +
+                                "<description>Overlay BG</description>" +
+                                "<posX>976</posX>" +
+                                "<posY>50</posY>" +
+                                "<type>image</type>" +
+                                "<id>0</id>" +
+                                "<width>306</width>" +
+                                "<height>320</height>" +
+                                "<texture>recentsummoverlaybg.png</texture>" +
+                                "<colordiffuse>EEFFFFFF</colordiffuse>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Plugin Name</description>" +
+                                "<type>label</type>" +
+                                "<id>0</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>76</posY>" +
+                                "<width>258</width>" +
+                                "<label>Update Control</label>" +
+                                "<font>mediastream10tc</font>" +
+                                "<textcolor>White</textcolor>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Index Separator</description>" +
+                                "<type>label</type>" +
+                                "<id>0</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>80</posY>" +
+                                "<width>264</width>" +
+                                "<label>____________________________________________________________________________________________________________</label>" +
+                                "<textcolor>ff808080</textcolor>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Urgency Image</description>" +
+                                "<type>image</type>" +
+                                "<id>1</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>115</posY>" +
+                                "<width>60</width>" +
+                                "<height>60</height>" +
+                                "<texture>#UpdateControl.AvailableUpdateUrgencyImage</texture>" +
+                                "<visible>!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>1060</posX>" +
+                                "<posY>120</posY>" +
+                                "<width>198</width>" +
+                                "<label>New Updates</label>" +
+                                "<font>mediastream12tc</font>" +
+                                "<visible>!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>1060</posX>" +
+                                "<posY>120</posY>" +
+                                "<width>198</width>" +
+                                "<label>No Updates</label>" +
+                                "<font>mediastream12tc</font>" +
+                                "<visible>string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>1060</posX>" +
+                                "<posY>145</posY>" +
+                                "<width>198</width>" +
+                                "<label>available</label>" +
+                                "<font>mediastream12tc</font>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text available windows updates</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>190</posY>" +
+                                "<width>198</width>" +
+                                "<label>Available Updates</label>" +
+                                "<font>mediastream10</font>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>available windows updates</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>1250</posX>" +
+                                "<posY>190</posY>" +
+                                "<width>198</width>" +
+                                "<label>#UpdateControl.AvailableUpdateCount</label>" +
+                                "<font>mediastream10</font>" +
+                                "<align>right</align>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text available windows updates Size</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>215</posY>" +
+                                "<width>198</width>" +
+                                "<label>Size</label>" +
+                                "<font>mediastream10</font>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>available windows updates Size</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>1250</posX>" +
+                                "<posY>215</posY>" +
+                                "<width>198</width>" +
+                                "<label>#UpdateControl.AvailableUpdateSize</label>" +
+                                "<font>mediastream10</font>" +
+                                "<align>right</align>" +
+                            "</control>" +
+                            "<control>" +
+                                "<description>Text Update Time</description>" +
+                                "<type>label</type>" +
+                                "<id>1</id>" +
+                                "<posX>995</posX>" +
+                                "<posY>240</posY>" +
+                                "<width>198</width>" +
+                                "<label>Update Time</label>" +
+                                "<font>mediastream10</font>" +
+                            "</control>" +
+                            "<control> " +
+                                "<description>Stocks.Time</description> " +
+                                "<type>label</type> " +
+                                "<id>1</id> " +
+                                "<posX>1250</posX> " +
+                                "<posY>240</posY> " +
+                                "<label>#UpdateControl.UpdateDate</label> " +
+                                "<font>mediastream10c</font>" +
+                                "<align>right</align>" +
+                            "</control>" +
+                        "</control>" +
+                    "</controls>" +
+                "</window>";
     }
 
     #endregion
@@ -4650,7 +4818,96 @@
             }
           }
         }
-      }      
+      }
+      //
+      //Controls to display recent Stocks and Indices overlay
+      //
+      if (isOverlay == isOverlayType.stocks)
+      {
+          foreach (menuItem item in menuItems)
+          {
+              if (item.showMostRecent == displayMostRecent.stocks)
+              {
+                  if (visibleOn == null)
+                      visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+                  else
+                      visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+              }
+              // Check Sunmenu Level 1
+              if (item.subMenuLevel1.Count > 0)
+              {
+                  for (int i = 0; i < item.subMenuLevel1.Count; i++)
+                  {
+                      if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.stocks)
+                      {
+                          if (visibleOn == null)
+                              visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                          else
+                              visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                      }
+                  }
+              }
+              // Check Sunmenu Level 2
+              if (item.subMenuLevel2.Count > 0)
+              {
+                  for (int i = 0; i < item.subMenuLevel2.Count; i++)
+                  {
+                      if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.stocks)
+                      {
+                          if (visibleOn == null)
+                              visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                          else
+                              visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                      }
+                  }
+              }
+          }
+      }
+      //
+      //Controls to display recent Update Control overlay
+      //
+      if (isOverlay == isOverlayType.updateControl)
+      {
+          foreach (menuItem item in menuItems)
+          {
+              if (item.showMostRecent == displayMostRecent.updateControl)
+              {
+                  if (visibleOn == null)
+                      visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+                  else
+                      visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+              }
+              // Check Sunmenu Level 1
+              if (item.subMenuLevel1.Count > 0)
+              {
+                  for (int i = 0; i < item.subMenuLevel1.Count; i++)
+                  {
+                      if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.updateControl)
+                      {
+                          if (visibleOn == null)
+                              visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                          else
+                              visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                      }
+                  }
+              }
+              // Check Sunmenu Level 2
+              if (item.subMenuLevel2.Count > 0)
+              {
+                  for (int i = 0; i < item.subMenuLevel2.Count; i++)
+                  {
+                      if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.updateControl)
+                      {
+                          if (visibleOn == null)
+                              visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                          else
+                              visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                      }
+                  }
+              }
+          }
+      }
+
       if ((isOverlay == isOverlayType.Music || 
            isOverlay == isOverlayType.RecordedTV || 
            isOverlay == isOverlayType.freeDriveSpace ||
@@ -4658,6 +4915,7 @@
            isOverlay == isOverlayType.stocks ||
            isOverlay == isOverlayType.powerControl ||
            isOverlay == isOverlayType.htpcInfo ||
+           isOverlay == isOverlayType.updateControl ||
            isOverlay == isOverlayType.freeDriveSpace) && visibleOn == null)
       {
         visibleOn = "No";
