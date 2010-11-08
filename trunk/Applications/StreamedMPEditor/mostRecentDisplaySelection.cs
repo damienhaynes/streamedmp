@@ -25,6 +25,7 @@ namespace StreamedMPEditor
       rbSubSleepControl.Checked = false;
       rbSubStocks.Checked = false;
       rbSubHtpcInfo.Checked = false;
+      rbSubUpdateControl.Checked = false;
 
     }
 
@@ -32,35 +33,48 @@ namespace StreamedMPEditor
     {
         switch (overlayType)
         {
-            case formStreamedMpEditor.displayMostRecent.off:
-                rbSubOff.Enabled = state;
-                break;
             case formStreamedMpEditor.displayMostRecent.tvSeries:
                 rbSubTVSeries.Enabled = state;
+                rbSubTVSeries.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.movies:
                 rbSubMovies.Enabled = state;
+                rbSubMovies.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.music:
                 rbSubMusic.Enabled = state;
+                rbSubMusic.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.recordedTV:
                 rbSubTV.Enabled = state;
+                rbSubTV.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
                 rbSubFreeDriveSpace.Enabled = state;
+                rbSubFreeDriveSpace.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.powerControl:
                 rbSubPowerControl.Enabled = state;
+                rbSubPowerControl.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.sleepControl:
                 rbSubSleepControl.Enabled = state;
+                rbSubSleepControl.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.stocks:
                 rbSubStocks.Enabled = state;
+                rbSubStocks.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.htpcInfo:
                 rbSubHtpcInfo.Enabled = state;
+                rbSubHtpcInfo.Checked = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.updateControl:
+                rbSubUpdateControl.Enabled = state;
+                rbSubUpdateControl.Checked = state;
+                break;
+            default:
+                rbSubOff.Checked = true;
                 break;
         }
     }
@@ -116,6 +130,9 @@ namespace StreamedMPEditor
       if (rbSubHtpcInfo.Checked)
           return formStreamedMpEditor.displayMostRecent.htpcInfo;
 
+      if (rbSubUpdateControl.Checked)
+          return formStreamedMpEditor.displayMostRecent.updateControl;
+
       return formStreamedMpEditor.displayMostRecent.off;
     
     }
@@ -153,7 +170,9 @@ namespace StreamedMPEditor
             case formStreamedMpEditor.displayMostRecent.htpcInfo:
                 rbSubHtpcInfo.Checked = true;
                 break;
-
+            case formStreamedMpEditor.displayMostRecent.updateControl:
+                rbSubUpdateControl.Checked = true;
+                break;
         }
 
     }

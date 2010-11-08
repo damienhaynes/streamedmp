@@ -284,16 +284,17 @@ namespace StreamedMPEditor
 
     public enum Plugins
     {
-      FanartHandler,
-      SleepControl,
-      Stocks,
-      PowerControl,
-      HTPCInfo,
-      DriveFreeSpace,
-      InfoService,
-      MovingPictures,
-      MPTVSeries,
-      ForTheRecord    
+        FanartHandler,
+        SleepControl,
+        Stocks,
+        PowerControl,
+        HTPCInfo,
+        DriveFreeSpace,
+        InfoService,
+        MovingPictures,
+        MPTVSeries,
+        ForTheRecord,
+        UpdateControl
     }
 
     class PluginDetails
@@ -344,6 +345,10 @@ namespace StreamedMPEditor
           case Plugins.Stocks:
             this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\Stocks.dll");
             this.name = "Stocks";
+            break;
+          case Plugins.UpdateControl:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\UpdateControl.dll");
+            this.name = "Update Control";
             break;
         }
       }

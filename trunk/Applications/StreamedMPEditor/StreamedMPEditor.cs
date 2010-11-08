@@ -99,29 +99,31 @@ namespace StreamedMPEditor
 
     public enum displayMostRecent
     {
-      off,
-      tvSeries,
-      movies,
-      music,
-      recordedTV,
-      freeDriveSpace,
-      powerControl,
-      sleepControl,
-      stocks,
-      htpcInfo
+        off,
+        tvSeries,
+        movies,
+        music,
+        recordedTV,
+        freeDriveSpace,
+        powerControl,
+        sleepControl,
+        stocks,
+        htpcInfo,
+        updateControl
     }
 
     enum isOverlayType
     {
-      TVSeries,
-      MovPics,
-      Music,
-      RecordedTV,
-      freeDriveSpace,
-      powerControl,
-      sleepControl,
-      stocks,
-      htpcInfo
+        TVSeries,
+        MovPics,
+        Music,
+        RecordedTV,
+        freeDriveSpace,
+        powerControl,
+        sleepControl,
+        stocks,
+        htpcInfo,
+        updateControl
     }
 
     public enum fanartSource
@@ -1185,44 +1187,47 @@ namespace StreamedMPEditor
       //
       // Generate the Infoservice Most Recent Import files
       //
-      if (recentAction == "GenImports")
-      {
-        if (cbMostRecentTvSeries.Checked)
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
-
-        if (cbMostRecentMovPics.Checked)
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
-        //
-        // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
-        //
-        if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+        if (recentAction == "GenImports")
         {
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          if (cbEnableRecentMusic.Checked)
-            generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
+            if (cbMostRecentTvSeries.Checked)
+                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+                generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
 
-          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          if (cbEnableRecentRecordedTV.Checked)
-            generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
+            if (cbMostRecentMovPics.Checked)
+                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+                generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
+            //
+            // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
+            //
+            if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
+            {
+                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+                if (cbEnableRecentMusic.Checked)
+                    generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
+
+                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+                if (cbEnableRecentRecordedTV.Checked)
+                    generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
+            }
+
+            if (cbFreeDriveSpaceOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
+
+            if (cbSleepControlOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
+
+            if (cbSocksOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
+
+            if (cbPowerControlOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 976, 50, 0, 0);
+
+            if (cbHtpcInfoOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 976, 50, 0, 0);
+
+            if (cbUpdateControlOverlay.Checked)
+                generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 976, 50, 0, 0);
         }
-
-        if (cbFreeDriveSpaceOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
-
-        if (cbSleepControlOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
-
-        if (cbSocksOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
-
-        if (cbPowerControlOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 976, 50, 0, 0);
-
-        if (cbHtpcInfoOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 976, 50, 0, 0);
-      }
       //
       // Add the imports to basichome
       //
@@ -1260,6 +1265,9 @@ namespace StreamedMPEditor
 
         if (cbHtpcInfoOverlay.Checked)
           generateMostRecentInclude(isOverlayType.htpcInfo);
+
+          if (cbUpdateControlOverlay.Checked)
+            generateMostRecentInclude(isOverlayType.updateControl);
       }
     }
     //
@@ -1344,6 +1352,7 @@ namespace StreamedMPEditor
       mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
       mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
       mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
+      mrDisplaySelection.setEnableState(displayMostRecent.updateControl, cbUpdateControlOverlay.Checked);
 
       mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, false);
       if (cbMostRecentTvSeries.Checked || cbTVSeriesRecentWatched.Checked)
@@ -1498,9 +1507,44 @@ namespace StreamedMPEditor
 
     private void cbFreeDriveSpaceOverlay_CheckedChanged(object sender, EventArgs e)
     {
-      btConfigureFreeDriveSpace.Enabled = cbFreeDriveSpaceOverlay.Checked ? true : false;
+        btConfigureFreeDriveSpace.Enabled = cbFreeDriveSpaceOverlay.Checked ? true : false;
+        mrDisplaySelection.setEnableState(displayMostRecent.freeDriveSpace, cbFreeDriveSpaceOverlay.Checked);
     }
 
+    private void cbPowerControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
+    }
+
+    private void cbSleepControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
+    }
+
+    private void cbSocksOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
+    }
+
+    private void cbHtpcInfoOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.htpcInfo, cbHtpcInfoOverlay.Checked);
+    }
+
+    private void cbUpdateControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.updateControl, cbUpdateControlOverlay.Checked);
+    }
+
+    private void cbEnableRecentMusic_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
+    }
+
+    private void cbEnableRecentRecordedTV_CheckedChanged(object sender, EventArgs e)
+    {
+        mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
+    }
   }
 }
 

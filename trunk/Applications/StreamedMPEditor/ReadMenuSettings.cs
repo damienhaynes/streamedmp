@@ -245,6 +245,7 @@ namespace StreamedMPEditor
         cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
         cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
         cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
+        cbUpdateControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
       }
       catch
       {
@@ -535,6 +536,24 @@ namespace StreamedMPEditor
                 case "recordedTV":
                   subItem.showMostRecent = displayMostRecent.recordedTV;
                   break;
+                case "freeDriveSpace":
+                  subItem.showMostRecent = displayMostRecent.freeDriveSpace;
+                  break;
+                case "htpcInfo":
+                  subItem.showMostRecent = displayMostRecent.htpcInfo;
+                  break;
+                case "powerControl":
+                  subItem.showMostRecent = displayMostRecent.powerControl;
+                  break;
+                case "sleepControl":
+                  subItem.showMostRecent = displayMostRecent.sleepControl;
+                  break;
+                case "stocks":
+                  subItem.showMostRecent = displayMostRecent.stocks;
+                  break;
+                case "updateControl":
+                  subItem.showMostRecent = displayMostRecent.updateControl;
+                  break;
               }
               mnuItem.subMenuLevel1.Add(subItem);
             }
@@ -552,21 +571,39 @@ namespace StreamedMPEditor
               subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameter", nodelist);
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "mrDisplay", nodelist))
               {
-                case "off":
-                  subItem.showMostRecent = displayMostRecent.off;
-                  break;
-                case "tvSeries":
-                  subItem.showMostRecent = displayMostRecent.tvSeries;
-                  break;
-                case "movies":
-                  subItem.showMostRecent = displayMostRecent.movies;
-                  break;
-                case "music":
-                  subItem.showMostRecent = displayMostRecent.music;
-                  break;
-                case "recordedTV":
-                  subItem.showMostRecent = displayMostRecent.recordedTV;
-                  break;
+                  case "off":
+                      subItem.showMostRecent = displayMostRecent.off;
+                      break;
+                  case "tvSeries":
+                      subItem.showMostRecent = displayMostRecent.tvSeries;
+                      break;
+                  case "movies":
+                      subItem.showMostRecent = displayMostRecent.movies;
+                      break;
+                  case "music":
+                      subItem.showMostRecent = displayMostRecent.music;
+                      break;
+                  case "recordedTV":
+                      subItem.showMostRecent = displayMostRecent.recordedTV;
+                      break;
+                  case "freeDriveSpace":
+                      subItem.showMostRecent = displayMostRecent.freeDriveSpace;
+                      break;
+                  case "htpcInfo":
+                      subItem.showMostRecent = displayMostRecent.htpcInfo;
+                      break;
+                  case "powerControl":
+                      subItem.showMostRecent = displayMostRecent.powerControl;
+                      break;
+                  case "sleepControl":
+                      subItem.showMostRecent = displayMostRecent.sleepControl;
+                      break;
+                  case "stocks":
+                      subItem.showMostRecent = displayMostRecent.stocks;
+                      break;
+                  case "updateControl":
+                      subItem.showMostRecent = displayMostRecent.updateControl;
+                      break;
               }
               mnuItem.subMenuLevel2.Add(subItem);
             }
@@ -654,25 +691,27 @@ namespace StreamedMPEditor
         return displayMostRecent.music;
 
       if (mrOption == displayMostRecent.movies.ToString() || mrOption == "movies")
-        return displayMostRecent.movies;
+          return displayMostRecent.movies;
       else if (mrOption == displayMostRecent.tvSeries.ToString())
-        return displayMostRecent.tvSeries;
+          return displayMostRecent.tvSeries;
       else if (mrOption == displayMostRecent.music.ToString())
-        return displayMostRecent.music;
+          return displayMostRecent.music;
       else if (mrOption == displayMostRecent.recordedTV.ToString())
-        return displayMostRecent.recordedTV;
+          return displayMostRecent.recordedTV;
       else if (mrOption == displayMostRecent.freeDriveSpace.ToString())
-        return displayMostRecent.freeDriveSpace;
+          return displayMostRecent.freeDriveSpace;
       else if (mrOption == displayMostRecent.htpcInfo.ToString())
-        return displayMostRecent.htpcInfo;
+          return displayMostRecent.htpcInfo;
       else if (mrOption == displayMostRecent.powerControl.ToString())
-        return displayMostRecent.powerControl;
+          return displayMostRecent.powerControl;
       else if (mrOption == displayMostRecent.sleepControl.ToString())
-        return displayMostRecent.sleepControl;
+          return displayMostRecent.sleepControl;
       else if (mrOption == displayMostRecent.stocks.ToString())
-        return displayMostRecent.stocks;
+          return displayMostRecent.stocks;
+      else if (mrOption == displayMostRecent.updateControl.ToString())
+          return displayMostRecent.updateControl;
       else
-        return displayMostRecent.off;
+          return displayMostRecent.off;
     }
 
     fanartSource readFHSource(string source, string fanartProperty)
