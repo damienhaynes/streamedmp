@@ -536,7 +536,7 @@
       <posX>1040</posX>
       <posY>250</posY>
       <label>#HTPCInfo.SensorTemperatureCPU</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureCPU,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -546,8 +546,8 @@
       <font>mediastream10c</font>
       <posX>1040</posX>
       <posY>270</posY>
-      <label>#HTPCInfo.SensorTemperatureCore</label>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.SensorTemperatureCore0</label>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureCore0,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -558,7 +558,7 @@
       <posX>1040</posX>
       <posY>290</posY>
       <label>#HTPCInfo.SensorTemperatureHD</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureHD,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -569,7 +569,7 @@
       <posX>1040</posX>
       <posY>310</posY>
       <label>#HTPCInfo.SensorFanFan1, #HTPCInfo.SensorFanFan2</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorFanFan2,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -580,7 +580,7 @@
       <posY>330</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevRAM</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltagevRAM,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -591,7 +591,7 @@
       <posY>350</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevCore</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltagevCore,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -602,7 +602,7 @@
       <posY>370</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageplus5V1</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltageplus5V1,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -613,7 +613,7 @@
       <posY>390</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageVbat</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltageVbat,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** XAP Sensor Informations labels *** -->
@@ -694,7 +694,7 @@
       <posX>1040</posX>
       <posY>450</posY>
       <label>#HTPCInfo.xAPSensorTemperatureCPU</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureCPU,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -705,7 +705,7 @@
       <posX>1040</posX>
       <posY>470</posY>
       <label>#HTPCInfo.xAPSensorTemperatureMobo</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureMobo,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -716,7 +716,7 @@
       <posX>1040</posX>
       <posY>490</posY>
       <label>#HTPCInfo.xAPSensorTemperatureHD0</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureHD0,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -727,7 +727,7 @@
       <posY>510</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.xAPSensorFanCPUFan</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorFanCPUFan,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
   </controls>
