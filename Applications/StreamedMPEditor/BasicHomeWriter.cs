@@ -3427,14 +3427,14 @@ namespace StreamedMPEditor
 
       if (overlayType == isOverlayType.htpcInfo)
       {
-          replaceString = "<!-- BEGIN HTPCINFO OVERLAY CODE-->";
-          rawXML.AppendLine("<import>basichome.HTPCInfo.Overlay.xml</import>");
+        replaceString = "<!-- BEGIN HTPCINFO OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.HTPCInfo.Overlay.xml</import>");
       }
 
       if (overlayType == isOverlayType.updateControl)
       {
-          replaceString = "<!-- BEGIN UPDATECONTROL OVERLAY CODE-->";
-          rawXML.AppendLine("<import>basichome.UpdateControl.Overlay.xml</import>");
+        replaceString = "<!-- BEGIN UPDATECONTROL OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.UpdateControl.Overlay.xml</import>");
       }
 
       if (!string.IsNullOrEmpty(replaceString))
@@ -3757,7 +3757,7 @@ namespace StreamedMPEditor
                 + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
                 + generateEntry("stocksControlEnabled", stocksControlEnabled, 3, true)
                 + generateEntry("powerControlEnabled", powerControlEnabled, 3, true)
-                + generateEntry("htpcinfoControlEnabled",htpcinfoControlEnabled,3,true)
+                + generateEntry("htpcinfoControlEnabled", htpcinfoControlEnabled, 3, true)
                 + generateEntry("updateControlEnabled", updateControlEnabled, 3, true)
                 + "\t\t</section>");
 
@@ -3772,6 +3772,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 3, false));
       foreach (menuItem menItem in menuItems)
       {
+        if (menItem.subMenuLevel1.Count > 0 || menItem.subMenuLevel2.Count > 0)
+          menItem.disableBGSharing = true;
+
         rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " -->");
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name, 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 3, false));
