@@ -159,16 +159,17 @@
         this.fullWeatherSummaryBottom = new System.Windows.Forms.RadioButton();
         this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
         this.tabPage1 = new System.Windows.Forms.TabPage();
-        this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
+        this.groupBox6 = new System.Windows.Forms.GroupBox();
         this.cbUpdateControlOverlay = new System.Windows.Forms.CheckBox();
-        this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
-        this.cbHtpcInfoOverlay = new System.Windows.Forms.CheckBox();
         this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
+        this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
+        this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
+        this.cbHtpcInfoOverlay = new System.Windows.Forms.CheckBox();
+        this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
+        this.cbFreeDriveSpaceOverlay = new System.Windows.Forms.CheckBox();
         this.cbSleepControlOverlay = new System.Windows.Forms.CheckBox();
         this.cbPowerControlOverlay = new System.Windows.Forms.CheckBox();
-        this.cbFreeDriveSpaceOverlay = new System.Windows.Forms.CheckBox();
-        this.cbEnableRecentRecordedTV = new System.Windows.Forms.CheckBox();
-        this.cbEnableRecentMusic = new System.Windows.Forms.CheckBox();
+        this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
         this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
         this.pbPosterPicMovPics = new System.Windows.Forms.PictureBox();
         this.pbFanartPicMovPics = new System.Windows.Forms.PictureBox();
@@ -253,7 +254,6 @@
         this.groupBox5 = new System.Windows.Forms.GroupBox();
         this.lbActiveSplashScreen = new System.Windows.Forms.Label();
         this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-        this.groupBox6 = new System.Windows.Forms.GroupBox();
         this.StreamedMPMenu.SuspendLayout();
         this.menuStyleTab.SuspendLayout();
         this.menuStylesGroup.SuspendLayout();
@@ -288,6 +288,7 @@
         this.infoserviceOptions.SuspendLayout();
         this.weatherSummaryGroup.SuspendLayout();
         this.tabPage1.SuspendLayout();
+        this.groupBox6.SuspendLayout();
         this.infoServiceRecentOptions.SuspendLayout();
         this.gbSummaryStyle.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).BeginInit();
@@ -314,7 +315,6 @@
         this.statusStrip1.SuspendLayout();
         this.groupBox5.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
-        this.groupBox6.SuspendLayout();
         this.SuspendLayout();
         // 
         // StreamedMPMenu
@@ -341,7 +341,7 @@
         this.menuStyleTab.Controls.Add(this.menuStylesGroup);
         this.menuStyleTab.Location = new System.Drawing.Point(4, 23);
         this.menuStyleTab.Name = "menuStyleTab";
-        this.menuStyleTab.Size = new System.Drawing.Size(750, 430);
+        this.menuStyleTab.Size = new System.Drawing.Size(750, 438);
         this.menuStyleTab.TabIndex = 4;
         this.menuStyleTab.Text = "Menu Styles";
         this.menuStyleTab.UseVisualStyleBackColor = true;
@@ -485,7 +485,7 @@
         this.weatherStyleTab.Controls.Add(this.weatherIconsGroup);
         this.weatherStyleTab.Location = new System.Drawing.Point(4, 23);
         this.weatherStyleTab.Name = "weatherStyleTab";
-        this.weatherStyleTab.Size = new System.Drawing.Size(750, 430);
+        this.weatherStyleTab.Size = new System.Drawing.Size(750, 438);
         this.weatherStyleTab.TabIndex = 5;
         this.weatherStyleTab.Text = "Weather Styles";
         this.weatherStyleTab.UseVisualStyleBackColor = true;
@@ -649,7 +649,7 @@
         this.basicHomeDesign.Location = new System.Drawing.Point(4, 23);
         this.basicHomeDesign.Name = "basicHomeDesign";
         this.basicHomeDesign.Padding = new System.Windows.Forms.Padding(3);
-        this.basicHomeDesign.Size = new System.Drawing.Size(750, 430);
+        this.basicHomeDesign.Size = new System.Drawing.Size(750, 438);
         this.basicHomeDesign.TabIndex = 0;
         this.basicHomeDesign.Text = "BasicHome Design";
         this.basicHomeDesign.UseVisualStyleBackColor = true;
@@ -1231,7 +1231,7 @@
         this.tabPage3.Location = new System.Drawing.Point(4, 22);
         this.tabPage3.Name = "tabPage3";
         this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-        this.tabPage3.Size = new System.Drawing.Size(730, 379);
+        this.tabPage3.Size = new System.Drawing.Size(730, 387);
         this.tabPage3.TabIndex = 1;
         this.tabPage3.Text = "Menu Options";
         this.tabPage3.UseVisualStyleBackColor = true;
@@ -1600,7 +1600,7 @@
         this.tabPage2.Location = new System.Drawing.Point(4, 22);
         this.tabPage2.Name = "tabPage2";
         this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-        this.tabPage2.Size = new System.Drawing.Size(730, 379);
+        this.tabPage2.Size = new System.Drawing.Size(730, 387);
         this.tabPage2.TabIndex = 0;
         this.tabPage2.Text = "InfoService Options";
         this.tabPage2.UseVisualStyleBackColor = true;
@@ -1773,19 +1773,22 @@
         this.tabPage1.Text = "Most Recent/Plugin Overlays";
         this.tabPage1.UseVisualStyleBackColor = true;
         // 
-        // infoServiceRecentOptions
+        // groupBox6
         // 
-        this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
-        this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
-        this.infoServiceRecentOptions.Controls.Add(this.pTVSeriesRecent);
-        this.infoServiceRecentOptions.Controls.Add(this.pSumHeader);
-        this.infoServiceRecentOptions.Controls.Add(this.panel2);
-        this.infoServiceRecentOptions.Location = new System.Drawing.Point(6, 6);
-        this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
-        this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 375);
-        this.infoServiceRecentOptions.TabIndex = 31;
-        this.infoServiceRecentOptions.TabStop = false;
-        this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
+        this.groupBox6.Controls.Add(this.cbUpdateControlOverlay);
+        this.groupBox6.Controls.Add(this.cbSocksOverlay);
+        this.groupBox6.Controls.Add(this.btConfigureFreeDriveSpace);
+        this.groupBox6.Controls.Add(this.cbEnableRecentMusic);
+        this.groupBox6.Controls.Add(this.cbHtpcInfoOverlay);
+        this.groupBox6.Controls.Add(this.cbEnableRecentRecordedTV);
+        this.groupBox6.Controls.Add(this.cbFreeDriveSpaceOverlay);
+        this.groupBox6.Controls.Add(this.cbSleepControlOverlay);
+        this.groupBox6.Controls.Add(this.cbPowerControlOverlay);
+        this.groupBox6.Location = new System.Drawing.Point(6, 242);
+        this.groupBox6.Name = "groupBox6";
+        this.groupBox6.Size = new System.Drawing.Size(709, 141);
+        this.groupBox6.TabIndex = 19;
+        this.groupBox6.TabStop = false;
         // 
         // cbUpdateControlOverlay
         // 
@@ -1799,16 +1802,39 @@
         this.cbUpdateControlOverlay.UseVisualStyleBackColor = true;
         this.cbUpdateControlOverlay.CheckedChanged += new System.EventHandler(this.cbUpdateControlOverlay_CheckedChanged);
         // 
+        // cbSocksOverlay
+        // 
+        this.cbSocksOverlay.AutoSize = true;
+        this.cbSocksOverlay.Enabled = false;
+        this.cbSocksOverlay.Location = new System.Drawing.Point(306, 38);
+        this.cbSocksOverlay.Name = "cbSocksOverlay";
+        this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
+        this.cbSocksOverlay.TabIndex = 15;
+        this.cbSocksOverlay.Text = "Enable Stocks and Indices Overlay";
+        this.cbSocksOverlay.UseVisualStyleBackColor = true;
+        this.cbSocksOverlay.CheckedChanged += new System.EventHandler(this.cbSocksOverlay_CheckedChanged);
+        // 
         // btConfigureFreeDriveSpace
         // 
         this.btConfigureFreeDriveSpace.Enabled = false;
-        this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(539, 11);
+        this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(608, 11);
         this.btConfigureFreeDriveSpace.Name = "btConfigureFreeDriveSpace";
         this.btConfigureFreeDriveSpace.Size = new System.Drawing.Size(75, 23);
         this.btConfigureFreeDriveSpace.TabIndex = 17;
         this.btConfigureFreeDriveSpace.Text = "Configure";
         this.btConfigureFreeDriveSpace.UseVisualStyleBackColor = true;
         this.btConfigureFreeDriveSpace.Click += new System.EventHandler(this.btConfigureFreeDriveSpace_Click);
+        // 
+        // cbEnableRecentMusic
+        // 
+        this.cbEnableRecentMusic.AutoSize = true;
+        this.cbEnableRecentMusic.Location = new System.Drawing.Point(14, 14);
+        this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
+        this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
+        this.cbEnableRecentMusic.TabIndex = 10;
+        this.cbEnableRecentMusic.Text = "Enable Last 3 Added Albums";
+        this.cbEnableRecentMusic.UseVisualStyleBackColor = true;
+        this.cbEnableRecentMusic.CheckedChanged += new System.EventHandler(this.cbEnableRecentMusic_CheckedChanged);
         // 
         // cbHtpcInfoOverlay
         // 
@@ -1822,17 +1848,28 @@
         this.cbHtpcInfoOverlay.UseVisualStyleBackColor = true;
         this.cbHtpcInfoOverlay.CheckedChanged += new System.EventHandler(this.cbHtpcInfoOverlay_CheckedChanged);
         // 
-        // cbSocksOverlay
+        // cbEnableRecentRecordedTV
         // 
-        this.cbSocksOverlay.AutoSize = true;
-        this.cbSocksOverlay.Enabled = false;
-        this.cbSocksOverlay.Location = new System.Drawing.Point(306, 38);
-        this.cbSocksOverlay.Name = "cbSocksOverlay";
-        this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
-        this.cbSocksOverlay.TabIndex = 15;
-        this.cbSocksOverlay.Text = "Enable Stocks and Indices Overlay";
-        this.cbSocksOverlay.UseVisualStyleBackColor = true;
-        this.cbSocksOverlay.CheckedChanged += new System.EventHandler(this.cbSocksOverlay_CheckedChanged);
+        this.cbEnableRecentRecordedTV.AutoSize = true;
+        this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(14, 37);
+        this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
+        this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
+        this.cbEnableRecentRecordedTV.TabIndex = 11;
+        this.cbEnableRecentRecordedTV.Text = "Enable Last 3 Recorded TV Programs";
+        this.cbEnableRecentRecordedTV.UseVisualStyleBackColor = true;
+        this.cbEnableRecentRecordedTV.CheckedChanged += new System.EventHandler(this.cbEnableRecentRecordedTV_CheckedChanged);
+        // 
+        // cbFreeDriveSpaceOverlay
+        // 
+        this.cbFreeDriveSpaceOverlay.AutoSize = true;
+        this.cbFreeDriveSpaceOverlay.Enabled = false;
+        this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(306, 15);
+        this.cbFreeDriveSpaceOverlay.Name = "cbFreeDriveSpaceOverlay";
+        this.cbFreeDriveSpaceOverlay.Size = new System.Drawing.Size(184, 17);
+        this.cbFreeDriveSpaceOverlay.TabIndex = 12;
+        this.cbFreeDriveSpaceOverlay.Text = "Enable Drive Free Space Overlay";
+        this.cbFreeDriveSpaceOverlay.UseVisualStyleBackColor = true;
+        this.cbFreeDriveSpaceOverlay.CheckedChanged += new System.EventHandler(this.cbFreeDriveSpaceOverlay_CheckedChanged);
         // 
         // cbSleepControlOverlay
         // 
@@ -1858,39 +1895,19 @@
         this.cbPowerControlOverlay.UseVisualStyleBackColor = true;
         this.cbPowerControlOverlay.CheckedChanged += new System.EventHandler(this.cbPowerControlOverlay_CheckedChanged);
         // 
-        // cbFreeDriveSpaceOverlay
+        // infoServiceRecentOptions
         // 
-        this.cbFreeDriveSpaceOverlay.AutoSize = true;
-        this.cbFreeDriveSpaceOverlay.Enabled = false;
-        this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(306, 15);
-        this.cbFreeDriveSpaceOverlay.Name = "cbFreeDriveSpaceOverlay";
-        this.cbFreeDriveSpaceOverlay.Size = new System.Drawing.Size(184, 17);
-        this.cbFreeDriveSpaceOverlay.TabIndex = 12;
-        this.cbFreeDriveSpaceOverlay.Text = "Enable Drive Free Space Overlay";
-        this.cbFreeDriveSpaceOverlay.UseVisualStyleBackColor = true;
-        this.cbFreeDriveSpaceOverlay.CheckedChanged += new System.EventHandler(this.cbFreeDriveSpaceOverlay_CheckedChanged);
-        // 
-        // cbEnableRecentRecordedTV
-        // 
-        this.cbEnableRecentRecordedTV.AutoSize = true;
-        this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(14, 37);
-        this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
-        this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
-        this.cbEnableRecentRecordedTV.TabIndex = 11;
-        this.cbEnableRecentRecordedTV.Text = "Enable Last 3 Recorded TV Programs";
-        this.cbEnableRecentRecordedTV.UseVisualStyleBackColor = true;
-        this.cbEnableRecentRecordedTV.CheckedChanged += new System.EventHandler(this.cbEnableRecentRecordedTV_CheckedChanged);
-        // 
-        // cbEnableRecentMusic
-        // 
-        this.cbEnableRecentMusic.AutoSize = true;
-        this.cbEnableRecentMusic.Location = new System.Drawing.Point(14, 14);
-        this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
-        this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
-        this.cbEnableRecentMusic.TabIndex = 10;
-        this.cbEnableRecentMusic.Text = "Enable Last 3 Added Albums";
-        this.cbEnableRecentMusic.UseVisualStyleBackColor = true;
-        this.cbEnableRecentMusic.CheckedChanged += new System.EventHandler(this.cbEnableRecentMusic_CheckedChanged);
+        this.infoServiceRecentOptions.Controls.Add(this.gbSummaryStyle);
+        this.infoServiceRecentOptions.Controls.Add(this.pMovPicsRecent);
+        this.infoServiceRecentOptions.Controls.Add(this.pTVSeriesRecent);
+        this.infoServiceRecentOptions.Controls.Add(this.pSumHeader);
+        this.infoServiceRecentOptions.Controls.Add(this.panel2);
+        this.infoServiceRecentOptions.Location = new System.Drawing.Point(6, 6);
+        this.infoServiceRecentOptions.Name = "infoServiceRecentOptions";
+        this.infoServiceRecentOptions.Size = new System.Drawing.Size(721, 375);
+        this.infoServiceRecentOptions.TabIndex = 31;
+        this.infoServiceRecentOptions.TabStop = false;
+        this.infoServiceRecentOptions.Text = "Most Recently Added Overlay";
         // 
         // gbSummaryStyle
         // 
@@ -1996,7 +2013,7 @@
         this.pMovPicsRecent.Controls.Add(this.cbMovPicsRecentWatched);
         this.pMovPicsRecent.Controls.Add(this.gbMovPicsOptions);
         this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
-        this.pMovPicsRecent.Location = new System.Drawing.Point(0, 127);
+        this.pMovPicsRecent.Location = new System.Drawing.Point(6, 127);
         this.pMovPicsRecent.Name = "pMovPicsRecent";
         this.pMovPicsRecent.Size = new System.Drawing.Size(283, 108);
         this.pMovPicsRecent.TabIndex = 5;
@@ -2064,7 +2081,7 @@
         this.pTVSeriesRecent.Controls.Add(this.cbTVSeriesRecentWatched);
         this.pTVSeriesRecent.Controls.Add(this.gbTvSeriesOptions);
         this.pTVSeriesRecent.Controls.Add(this.cbMostRecentTvSeries);
-        this.pTVSeriesRecent.Location = new System.Drawing.Point(0, 21);
+        this.pTVSeriesRecent.Location = new System.Drawing.Point(6, 21);
         this.pTVSeriesRecent.Name = "pTVSeriesRecent";
         this.pTVSeriesRecent.Size = new System.Drawing.Size(283, 105);
         this.pTVSeriesRecent.TabIndex = 4;
@@ -2193,7 +2210,7 @@
         this.defaultBackgrounds.Controls.Add(this.pictureBox3);
         this.defaultBackgrounds.Location = new System.Drawing.Point(4, 23);
         this.defaultBackgrounds.Name = "defaultBackgrounds";
-        this.defaultBackgrounds.Size = new System.Drawing.Size(750, 430);
+        this.defaultBackgrounds.Size = new System.Drawing.Size(750, 438);
         this.defaultBackgrounds.TabIndex = 2;
         this.defaultBackgrounds.Text = "Default Background Images";
         this.defaultBackgrounds.UseVisualStyleBackColor = true;
@@ -2218,7 +2235,7 @@
         this.splashscreenSelector.Controls.Add(this.spashscreenPreview);
         this.splashscreenSelector.Location = new System.Drawing.Point(4, 23);
         this.splashscreenSelector.Name = "splashscreenSelector";
-        this.splashscreenSelector.Size = new System.Drawing.Size(750, 430);
+        this.splashscreenSelector.Size = new System.Drawing.Size(750, 438);
         this.splashscreenSelector.TabIndex = 6;
         this.splashscreenSelector.Text = "SplashScreen Selector";
         this.splashscreenSelector.UseVisualStyleBackColor = true;
@@ -2304,7 +2321,7 @@
         this.editingInfo.ImageIndex = 0;
         this.editingInfo.Location = new System.Drawing.Point(4, 23);
         this.editingInfo.Name = "editingInfo";
-        this.editingInfo.Size = new System.Drawing.Size(750, 430);
+        this.editingInfo.Size = new System.Drawing.Size(750, 438);
         this.editingInfo.TabIndex = 3;
         this.editingInfo.Text = "About";
         this.editingInfo.UseVisualStyleBackColor = true;
@@ -2759,23 +2776,6 @@
         this.pbActiveSplashScreen.TabStop = false;
         this.pbActiveSplashScreen.Visible = false;
         // 
-        // groupBox6
-        // 
-        this.groupBox6.Controls.Add(this.cbUpdateControlOverlay);
-        this.groupBox6.Controls.Add(this.cbSocksOverlay);
-        this.groupBox6.Controls.Add(this.btConfigureFreeDriveSpace);
-        this.groupBox6.Controls.Add(this.cbEnableRecentMusic);
-        this.groupBox6.Controls.Add(this.cbHtpcInfoOverlay);
-        this.groupBox6.Controls.Add(this.cbEnableRecentRecordedTV);
-        this.groupBox6.Controls.Add(this.cbFreeDriveSpaceOverlay);
-        this.groupBox6.Controls.Add(this.cbSleepControlOverlay);
-        this.groupBox6.Controls.Add(this.cbPowerControlOverlay);
-        this.groupBox6.Location = new System.Drawing.Point(6, 242);
-        this.groupBox6.Name = "groupBox6";
-        this.groupBox6.Size = new System.Drawing.Size(709, 141);
-        this.groupBox6.TabIndex = 19;
-        this.groupBox6.TabStop = false;
-        // 
         // formStreamedMpEditor
         // 
         this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2840,6 +2840,8 @@
         this.weatherSummaryGroup.ResumeLayout(false);
         this.weatherSummaryGroup.PerformLayout();
         this.tabPage1.ResumeLayout(false);
+        this.groupBox6.ResumeLayout(false);
+        this.groupBox6.PerformLayout();
         this.infoServiceRecentOptions.ResumeLayout(false);
         this.gbSummaryStyle.ResumeLayout(false);
         this.gbSummaryStyle.PerformLayout();
@@ -2882,8 +2884,6 @@
         this.groupBox5.ResumeLayout(false);
         this.groupBox5.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
-        this.groupBox6.ResumeLayout(false);
-        this.groupBox6.PerformLayout();
         this.ResumeLayout(false);
         this.PerformLayout();
 
