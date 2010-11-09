@@ -35,8 +35,11 @@ namespace SMPCheckSum_Test
       //SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Clear();
       //SMPCheckSum_Test.Properties.Settings.Default.Save();
 
-      if (Properties.Settings.Default.baseDirs == null)
+      MessageBox.Show(Properties.Settings.Default.baseDirs.Count.ToString());
+
+      if (Properties.Settings.Default.baseDirs.Count < 2)
       {
+        baseDirectory = SkinInfo.mpPaths.streamedMPpath;
         Properties.Settings.Default.baseDirs.Add(baseDirectory);
         Properties.Settings.Default.Save();
       }
@@ -44,8 +47,12 @@ namespace SMPCheckSum_Test
       for (int i = 1; i < Properties.Settings.Default.baseDirs.Count; i++)
       {
         cboxXmlFolder.Items.Insert(i,Properties.Settings.Default.baseDirs[i].ToString());
+        baseDirectory = cboxXmlFolder.Items[i - 1].ToString();
+        MessageBox.Show(baseDirectory);
       }
-
+      MessageBox.Show("xx" + baseDirectory);
+      cboxXmlFolder.Text = baseDirectory;
+      readAndVerifyFiles();
     }
 
 
@@ -90,6 +97,12 @@ namespace SMPCheckSum_Test
     }
     private void btCompare_Click(object sender, EventArgs e)
     {
+      readAndVerifyFiles();
+    }
+
+
+    void readAndVerifyFiles()
+    {
       btVerifyChksum.Enabled = false;
       btReGenerate.Enabled = false;
       DirectoryInfo dInfo = new DirectoryInfo(baseDirectory);
@@ -115,6 +128,7 @@ namespace SMPCheckSum_Test
         chkSumFiles.Items.Add(item);
         pbCheckSum.Value++;
       }
+
     }
 
     private void btVerifyChksum_Click(object sender, EventArgs e)
@@ -135,11 +149,11 @@ namespace SMPCheckSum_Test
     {
       for (int i = 0; i < chkSumFiles.SelectedItems.Count; i++)
       {
-        checkSum.Replace(Path.Combine(baseDirectory, chkSumFiles.SelectedItems[0].Text));
-        if (!checkSum.Compare(Path.Combine(baseDirectory, chkSumFiles.SelectedItems[0].Text)))
-          chkSumFiles.SelectedItems[0].ImageIndex = 1;
+        checkSum.Replace(Path.Combine(baseDirectory, chkSumFiles.SelectedItems[i].Text));
+        if (!checkSum.Compare(Path.Combine(baseDirectory, chkSumFiles.SelectedItems[i].Text)))
+          chkSumFiles.SelectedItems[i].ImageIndex = 1;
         else
-          chkSumFiles.SelectedItems[0].ImageIndex = 0;
+          chkSumFiles.SelectedItems[i].ImageIndex = 0;
       }
       chkSumFiles.Refresh();
       btVerifyChksum.Enabled = false;
@@ -186,6 +200,9 @@ namespace SMPCheckSum_Test
       if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
         baseDirectory = folderBrowserDialog.SelectedPath;
+        chkSumFiles.Refresh();
+        btVerifyChksum.Enabled = false;
+        btReGenerate.Enabled = false;
         if (!Properties.Settings.Default.baseDirs.Contains(baseDirectory))
         {
           cboxXmlFolder.Items.Add(folderBrowserDialog.SelectedPath);
@@ -204,6 +221,17 @@ namespace SMPCheckSum_Test
       public string pathAndFilename { get; set; }
       public string fileName { get; set; }
       public string checkSum { get; set; }
+    }
+
+    private void cboxXmlFolder_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      baseDirectory = cboxXmlFolder.SelectedItem.ToString();
+      readAndVerifyFiles();
+    }
+
+    private void SMPCheckSum_Test_FormClosing(object sender, FormClosingEventArgs e)
+    {
+      Properties.Settings.Default.Save();
     }
 
 
