@@ -1325,6 +1325,10 @@ namespace StreamedMPEditor
       {
         formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
         subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
+
+        // If we have added a submenu then disable Background sharing - get background issues outherwise
+        if (menuItems[itemsOnMenubar.SelectedIndex].subMenuLevel1.Count > 0)
+            menuItems[itemsOnMenubar.SelectedIndex].disableBGSharing = true;
       }
       else
         helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);

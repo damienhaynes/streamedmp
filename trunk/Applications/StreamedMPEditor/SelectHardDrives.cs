@@ -81,7 +81,7 @@ namespace StreamedMPEditor
         {
           string thisDrive = hd + " (" + getDriveVolumeName(hd) + ")";
           if (!lboxSelectedDrives.Items.Contains(thisDrive))
-              lboxAvailableDrives.Items.Add(thisDrive);
+            lboxAvailableDrives.Items.Add(thisDrive);
         }
       }
     }
@@ -89,13 +89,13 @@ namespace StreamedMPEditor
     private void btUp_Click(object sender, EventArgs e)
     {
       if (lboxSelectedDrives.SelectedIndex == 0 || lboxSelectedDrives.SelectedItem == null)
-        return; 
-      
+        return;
+
       int index = lboxSelectedDrives.SelectedIndex;
 
       Object listItem = lboxSelectedDrives.SelectedItem;
       lboxSelectedDrives.Items.RemoveAt(index);
-      lboxSelectedDrives.Items.Insert(index - 1,listItem);
+      lboxSelectedDrives.Items.Insert(index - 1, listItem);
       lboxSelectedDrives.SelectedIndex = index - 1;
     }
 
@@ -117,21 +117,21 @@ namespace StreamedMPEditor
 
     string getDriveVolumeName(string theHD)
     {
-        try
-        {
-            DriveInfo hdInfo = new DriveInfo(theHD);
-            return hdInfo.VolumeLabel;
-        }
-        catch
-        {
-            return string.Empty;
-        }
+      try
+      {
+        DriveInfo hdInfo = new DriveInfo(theHD);
+        return hdInfo.VolumeLabel;
+      }
+      catch
+      {
+        return string.Empty;
+      }
 
     }
 
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {
-      formStreamedMpEditor.driveFreeSpaceDrives.Clear(); 
+      formStreamedMpEditor.driveFreeSpaceDrives.Clear();
       foreach (string hd in hardDrives)
       {
         if (!string.IsNullOrEmpty(hd))

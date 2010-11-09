@@ -1672,10 +1672,10 @@ namespace StreamedMPEditor
 
     void checkAndEnableOverlays()
     {
-      if (helper.pluginEnabled(Helper.Plugins.SleepControl))
-        cbSleepControlOverlay.Enabled = true;
-      else
-        cbSleepControlOverlay.Text += " (Not Installed)";
+        if (helper.pluginEnabled(Helper.Plugins.SleepControl))
+            cbSleepControlOverlay.Enabled = true;
+        else
+            cbSleepControlOverlay.Text += " (Not Installed)";
 
       if (helper.pluginEnabled(Helper.Plugins.Stocks))
         cbSocksOverlay.Enabled = true;
