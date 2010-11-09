@@ -24,7 +24,7 @@
       <posY>242</posY>
       <width>225</width>
       <label>#HTPCInfo.ProcessorUsage</label>
-      <visible>Control.IsVisible(53)</visible>
+      <visible>Control.IsVisible(53)+!string.starts(#HTPCInfo.ProcessorUsage,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
