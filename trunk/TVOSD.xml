@@ -144,6 +144,7 @@
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
+	  <visible>!string.equals(#TV.Next.title,)</visible>
     </control>
     <control>
       <description>Progress Bar Background</description>
