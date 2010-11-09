@@ -14,7 +14,6 @@ namespace StreamedMPEditor
   {
     Helper helper = new Helper();
     List<string> hardDrives;
-    List<string> allDrives;
 
     public SelectHardDrives()
     {

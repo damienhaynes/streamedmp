@@ -31,8 +31,8 @@
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMPCheckSum_Test));
       this.chkSumFiles = new System.Windows.Forms.ListView();
-      this.Filename = new System.Windows.Forms.ColumnHeader();
-      this.Checksum = new System.Windows.Forms.ColumnHeader();
+      this.Filename = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+      this.Checksum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
       this.ilCheckSum = new System.Windows.Forms.ImageList(this.components);
       this.btAddChksumToAll = new System.Windows.Forms.Button();
       this.btVerifyChksum = new System.Windows.Forms.Button();
@@ -181,6 +181,7 @@
       this.cboxXmlFolder.Name = "cboxXmlFolder";
       this.cboxXmlFolder.Size = new System.Drawing.Size(751, 21);
       this.cboxXmlFolder.TabIndex = 10;
+      this.cboxXmlFolder.SelectedIndexChanged += new System.EventHandler(this.cboxXmlFolder_SelectedIndexChanged);
       // 
       // btBrowse
       // 
@@ -215,6 +216,7 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Name = "SMPCheckSum_Test";
       this.Text = "Checksum Test Program";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SMPCheckSum_Test_FormClosing);
       this.Load += new System.EventHandler(this.SMPCheckSum_Load);
       this.panel1.ResumeLayout(false);
       this.ResumeLayout(false);
