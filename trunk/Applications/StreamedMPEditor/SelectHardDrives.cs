@@ -14,6 +14,7 @@ namespace StreamedMPEditor
   {
     Helper helper = new Helper();
     List<string> hardDrives;
+    List<string> allDrives;
 
     public SelectHardDrives()
     {
@@ -27,13 +28,11 @@ namespace StreamedMPEditor
         string[] configuredDrives = formStreamedMpEditor.driveFreeSpaceList.Split(',');
         foreach (string hd in configuredDrives)
         {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          lboxSelectedDrives.Items.Add(hd + " (" + hdDetails.VolumeLabel + ")");
+          lboxSelectedDrives.Items.Add(hd + " (" + getDriveVolumeName(hd) + ")");
         }
         foreach (string hd in hardDrives)
         {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          string driveToAdd = hd + " (" + hdDetails.VolumeLabel + ")";
+          string driveToAdd = hd + " (" + getDriveVolumeName(hd) + ")";
           if (!lboxSelectedDrives.Items.Contains(driveToAdd))
             lboxAvailableDrives.Items.Add(driveToAdd);
         }
@@ -52,8 +51,7 @@ namespace StreamedMPEditor
 
     void addDriveDetails(string hdName)
     {
-      DriveInfo hdDetails = new DriveInfo(hdName);
-      lboxAvailableDrives.Items.Add(hdName + " (" + hdDetails.VolumeLabel + ")");
+      lboxAvailableDrives.Items.Add(hdName + " (" + getDriveVolumeName(hdName) + ")");
     }
 
     List<string> getConfiguredDrives()
@@ -81,8 +79,7 @@ namespace StreamedMPEditor
 
         foreach (string hd in hardDrives)
         {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+          string thisDrive = hd + " (" + getDriveVolumeName(hd) + ")";
           if (!lboxSelectedDrives.Items.Contains(thisDrive))
               lboxAvailableDrives.Items.Add(thisDrive);
         }
@@ -118,6 +115,20 @@ namespace StreamedMPEditor
         lboxSelectedDrives.SelectedIndex = index + 1;
     }
 
+    string getDriveVolumeName(string theHD)
+    {
+        try
+        {
+            DriveInfo hdInfo = new DriveInfo(theHD);
+            return hdInfo.VolumeLabel;
+        }
+        catch
+        {
+            return string.Empty;
+        }
+
+    }
+
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {
       formStreamedMpEditor.driveFreeSpaceDrives.Clear(); 
@@ -125,8 +136,7 @@ namespace StreamedMPEditor
       {
         if (!string.IsNullOrEmpty(hd))
         {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+          string thisDrive = hd + " (" + getDriveVolumeName(hd) + ")";
           if (lboxSelectedDrives.Items.Contains(thisDrive))
             formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
         }
