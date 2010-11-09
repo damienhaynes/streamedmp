@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>7972</id>
   <defaultcontrol>6</defaultcontrol>
@@ -45,7 +45,6 @@
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
       <visible>Control.isVisible(52)|Control.isVisible(53)</visible>
     </control>
-
     <control>
       <description>programs overlay image</description>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -64,17 +63,17 @@
     <import>HTPCInfo_overview.xml</import>
     <!-- *** Menu *** -->
     <control>
-       <type>actiongroup</type>
-       <description>action menu</description>
-       <defaultcontrol>2</defaultcontrol>
-       <onexit>6</onexit>
-       <buttonX>1231</buttonX>
-       <buttonY>55</buttonY>
-       <buttonwidth>49</buttonwidth>
-       <buttonheight>153</buttonheight>
-       <textureFocus>Action_menu.png</textureFocus>
-       <textureNoFocus>Action_menu.png</textureNoFocus>
-       <dimColor>00ffffff</dimColor>      
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>6</onexit>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>Action_menu.png</textureFocus>
+      <textureNoFocus>Action_menu.png</textureNoFocus>
+      <dimColor>00ffffff</dimColor>
       <control>
         <id>1</id>
         <type>image</type>
@@ -87,7 +86,7 @@
         <visible>!Control.HasFocus(6)</visible>
         <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
         <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
-      </control>  
+      </control>
       <control>
         <type>group</type>
         <description>group element</description>
@@ -231,7 +230,6 @@
       <onright>2</onright>
       <posY>-100</posY>
     </control>
-
     <control>
       <description>Dummy</description>
       <type>button</type>
@@ -245,3 +243,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:b6a4119d41055275a17de5d2b7d72b05-->
