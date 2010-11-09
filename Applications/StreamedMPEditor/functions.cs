@@ -1680,12 +1680,12 @@ namespace StreamedMPEditor
       if (helper.pluginEnabled(Helper.Plugins.Stocks))
         cbSocksOverlay.Enabled = true;
       else
-        cbSleepControlOverlay.Text += " (Not Installed)";
+          cbSocksOverlay.Text += " (Not Installed)";
 
       if (helper.pluginEnabled(Helper.Plugins.PowerControl))
         cbPowerControlOverlay.Enabled = true;
       else
-        cbPowerControlOverlay.Text += " (Not Installed)";
+          cbPowerControlOverlay.Text += " (Not Installed)";
 
       if (helper.pluginEnabled(Helper.Plugins.HTPCInfo))
         cbHtpcInfoOverlay.Enabled = true;
