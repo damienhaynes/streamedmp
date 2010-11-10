@@ -571,7 +571,7 @@ namespace StreamedMPConfig
         });
 
       // Clear the properties first
-      for (int i = 3; i == 0; --i)
+      for (int i = 1; i < 4; i++)
       {
         SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".title", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".thumb", string.Empty);
@@ -639,7 +639,7 @@ namespace StreamedMPConfig
       RecentlyAdded.recentAddedMovies = filteredMovies;
 
       // Clear the properties first
-      for (int i = 3; i == 0; --i)
+      for (int i = 1; i < 4; i++)
       {
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".title", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".thumb", string.Empty);
@@ -647,8 +647,8 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".runtime", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".certification", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".score", string.Empty);
-
       }
+
       // Now take the first 3 
       int mrMovieNumber = 1;
       foreach (DBMovieInfo movie in filteredMovies)
@@ -692,7 +692,7 @@ namespace StreamedMPConfig
       List<DBEpisode> episodes = DBEpisode.GetMostRecent(MostRecentType.Watched, 30, 3);
 
       // Clear the properties first
-      for (int i = 3; i == 0; --i)
+      for (int i = 1; i < 4; i++)
       {
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".title", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".episodetitle", string.Empty);
@@ -738,7 +738,7 @@ namespace StreamedMPConfig
       RecentlyAdded.recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
       
       // Clear the properties first
-      for (int i = 3; i == 0; --i)
+      for (int i = 1; i < 4; i++)
       {
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".title", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".episodetitle", string.Empty);
