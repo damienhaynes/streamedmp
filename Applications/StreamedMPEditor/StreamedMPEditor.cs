@@ -1195,7 +1195,7 @@ namespace StreamedMPEditor
 
             if (cbMostRecentMovPics.Checked)
                 // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-                generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 967, 370);
+                generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 976, 370);
             //
             // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
             //
