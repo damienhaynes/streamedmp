@@ -3741,6 +3741,7 @@
                         "<label>#Stocks.Time</label>" +
                         "<font>mediastream10c</font>" +
                         "<align>right</align>" +
+                        "<visible>!string.starts(#Stocks.Time,#)</visible>" +
                       "</control>" +
                       "</control>" +
                     "</controls>" +
@@ -3800,156 +3801,181 @@
                     "<label>____________________________________________________________________________________________________________</label>" +
                     "<textcolor>ff808080</textcolor>" +
                   "</control>" +
-                  "<!-- *** Network Device 0 *** -->" +
                   "<control>" +
-                    "<description>Network Device 0 Image</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>100</posY>" +
-                    "<width>40</width>" +
-                    "<height>40</height>" +
-                    "<texture>#PowerControl.NetworkDevice0TypeImage</texture>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 0 Description</description>" +
-                    "<type>label</type>" +
-                    "<id>1</id>" +
-                    "<posX>1042</posX>" +
-                    "<posY>110</posY>" +
-                    "<width>198</width>" +
-                    "<label>#PowerControl.NetworkDevice0Description</label>" +
-                    "<font>mediastream10tc</font>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 0 Alive</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>1240</posX>" +
-                    "<posY>110</posY>>" +
-                    "<texture>#PowerControl.NetworkDevice0AliveImage</texture>" +
-                    "<width>20</width>" +
-                    "<height>20</height>" +
-                  "</control>" +
-                  "<!-- *** Network Device 1 *** -->" +
-                  "<control>" +
-                    "<description>Network Device 1 Image</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>152</posY>" +
-                    "<width>40</width>" +
-                    "<height>40</height>" +
-                    "<texture>#PowerControl.NetworkDevice1TypeImage</texture>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 1 Description</description>" +
-                    "<type>label</type>" +
-                    "<id>1</id>" +
-                    "<posX>1042</posX>" +
-                    "<posY>162</posY>" +
-                    "<label>#PowerControl.NetworkDevice1Description</label>" +
-                    "<font>mediastream10tc</font>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 1 Alive</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>1240</posX>" +
-                    "<posY>162</posY>>" +
-                    "<texture>#PowerControl.NetworkDevice1AliveImage</texture>" +
-                    "<width>20</width>" +
-                    "<height>20</height>" +
-                  "</control>" +
-                  "<!-- *** Network Device 2 *** -->" +
-                  "<control>" +
-                    "<description>Network Device 2 Image</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>204</posY>" +
-                    "<width>40</width>" +
-                    "<height>40</height>" +
-                    "<texture>#PowerControl.NetworkDevice2TypeImage</texture>" +
-                  "</control>" +
-                  "<control>" +
-                      "<description>Network Device 2 Description</description>" +
+                    "<description>Network Device Group 0</description>" +
+                    "<type>group</type>" +
+                    "<visible>!string.starts(#PowerControl.NetworkDevice0Description,Device)</visible>" +
+                    "<!-- *** Network Device 0 *** -->" +
+                    "<control>" +
+                      "<description>Network Device 0 Image</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>995</posX>" +
+                      "<posY>100</posY>" +
+                      "<width>40</width>" +
+                      "<height>40</height>" +
+                      "<texture>#PowerControl.NetworkDevice0TypeImage</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 0 Description</description>" +
                       "<type>label</type>" +
                       "<id>1</id>" +
                       "<posX>1042</posX>" +
-                      "<posY>214</posY>" +
-                      "<label>#PowerControl.NetworkDevice2Description</label>" +
+                      "<posY>110</posY>" +
+                      "<width>198</width>" +
+                      "<label>#PowerControl.NetworkDevice0Description</label>" +
                       "<font>mediastream10tc</font>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 0 Alive</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>1240</posX>" +
+                      "<posY>110</posY>>" +
+                      "<texture>#PowerControl.NetworkDevice0AliveImage</texture>" +
+                      "<width>20</width>" +
+                      "<height>20</height>" +
+                    "</control>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Network Device 2 Alive</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>1240</posX>" +
-                    "<posY>214</posY>>" +
-                    "<texture>#PowerControl.NetworkDevice2AliveImage</texture>" +
-                    "<width>20</width>" +
-                    "<height>20</height>" +
-                  "</control>" +
-                  "<!-- *** Network Device 3 *** -->" +
-                  "<control>" +
-                    "<description>Network Device 3 Image</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>256</posY>" +
-                    "<width>40</width>" +
-                    "<height>40</height>" +
-                    "<texture>#PowerControl.NetworkDevice3TypeImage</texture>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 3 Description</description>" +
-                    "<type>label</type>" +
-                    "<id>1</id>" +
-                    "<posX>1042</posX>" +
-                    "<posY>266</posY>" +
-                    "<label>#PowerControl.NetworkDevice3Description</label>" +
-                    "<font>mediastream10tc</font>" +
-                  "</control>" +
-                  "<control>" +
-                    "<description>Network Device 3 Alive</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>1240</posX>" +
-                    "<posY>266</posY>>" +
-                    "<texture>#PowerControl.NetworkDevice3AliveImage</texture>" +
-                    "<width>20</width>" +
-                    "<height>20</height>" +
-                  "</control>" +
-                  "<!-- *** Network Device 4 *** -->" +
-                  "<control>" +
-                    "<description>Network Device 4 Image</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>308</posY>" +
-                    "<width>40</width>" +
-                    "<height>40</height>" +
-                    "<texture>#PowerControl.NetworkDevice4TypeImage</texture>" +
+                    "<description>Network Device Group 1</description>" +
+                    "<type>group</type>" +
+                    "<visible>!string.starts(#PowerControl.NetworkDevice1Description,Device)</visible>" +
+                    "<!-- *** Network Device 1 *** -->" +
+                    "<control>" +
+                      "<description>Network Device 1 Image</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>995</posX>" +
+                      "<posY>152</posY>" +
+                      "<width>40</width>" +
+                      "<height>40</height>" +
+                      "<texture>#PowerControl.NetworkDevice1TypeImage</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 1 Description</description>" +
+                      "<type>label</type>" +
+                      "<id>1</id>" +
+                      "<posX>1042</posX>" +
+                      "<posY>162</posY>" +
+                      "<label>#PowerControl.NetworkDevice1Description</label>" +
+                      "<font>mediastream10tc</font>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 1 Alive</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>1240</posX>" +
+                      "<posY>162</posY>>" +
+                      "<texture>#PowerControl.NetworkDevice1AliveImage</texture>" +
+                      "<width>20</width>" +
+                      "<height>20</height>" +
+                    "</control>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Network Device 4 Description</description>" +
-                    "<type>label</type>" +
-                    "<id>1</id>" +
-                    "<posX>1042</posX>" +
-                    "<posY>318</posY>" +
-                    "<label>#PowerControl.NetworkDevice4Description</label>" +
-                    "<font>mediastream10tc</font>" +
+                  "<description>Network Device Group 2</description>" +
+                  "<type>group</type>" +
+                  "<visible>!string.starts(#PowerControl.NetworkDevice2Description,Device)</visible>" +
+                  "<!-- *** Network Device 2 *** -->" +
+                    "<control>" +
+                      "<description>Network Device 2 Image</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>995</posX>" +
+                      "<posY>204</posY>" +
+                      "<width>40</width>" +
+                      "<height>40</height>" +
+                      "<texture>#PowerControl.NetworkDevice2TypeImage</texture>" +
+                    "</control>" +
+                    "<control>" +
+                        "<description>Network Device 2 Description</description>" +
+                        "<type>label</type>" +
+                        "<id>1</id>" +
+                        "<posX>1042</posX>" +
+                        "<posY>214</posY>" +
+                        "<label>#PowerControl.NetworkDevice2Description</label>" +
+                        "<font>mediastream10tc</font>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 2 Alive</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>1240</posX>" +
+                      "<posY>214</posY>>" +
+                      "<texture>#PowerControl.NetworkDevice2AliveImage</texture>" +
+                      "<width>20</width>" +
+                      "<height>20</height>" +
+                    "</control>" +
                   "</control>" +
                   "<control>" +
-                    "<description>Network Device 4 Alive</description>" +
-                    "<type>image</type>" +
-                    "<id>1</id>" +
-                    "<posX>1240</posX>" +
-                    "<posY>318</posY>" +
-                    "<texture>#PowerControl.NetworkDevice4AliveImage</texture>" +
-                    "<width>20</width>" +
-                    "<height>20</height>" +
+                    "<description>Network Device Group 3</description>" +
+                    "<type>group</type>" +
+                    "<visible>!string.starts(#PowerControl.NetworkDevice3Description,Device)</visible>" +
+                    "<!-- *** Network Device 3 *** -->" +
+                    "<control>" +
+                      "<description>Network Device 3 Image</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>995</posX>" +
+                      "<posY>256</posY>" +
+                      "<width>40</width>" +
+                      "<height>40</height>" +
+                      "<texture>#PowerControl.NetworkDevice3TypeImage</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 3 Description</description>" +
+                      "<type>label</type>" +
+                      "<id>1</id>" +
+                      "<posX>1042</posX>" +
+                      "<posY>266</posY>" +
+                      "<label>#PowerControl.NetworkDevice3Description</label>" +
+                      "<font>mediastream10tc</font>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 3 Alive</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>1240</posX>" +
+                      "<posY>266</posY>>" +
+                      "<texture>#PowerControl.NetworkDevice3AliveImage</texture>" +
+                      "<width>20</width>" +
+                      "<height>20</height>" +
+                    "</control>" +
+                  "</control>" +
+                  "<control>" +
+                  "<description>Network Device Group 4</description>" +
+                  "<type>group</type>" +
+                  "<visible>!string.starts(#PowerControl.NetworkDevice4Description,Device)</visible>" +
+                    "<!-- *** Network Device 4 *** -->" +
+                    "<control>" +
+                      "<description>Network Device 4 Image</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>995</posX>" +
+                      "<posY>308</posY>" +
+                      "<width>40</width>" +
+                      "<height>40</height>" +
+                      "<texture>#PowerControl.NetworkDevice4TypeImage</texture>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 4 Description</description>" +
+                      "<type>label</type>" +
+                      "<id>1</id>" +
+                      "<posX>1042</posX>" +
+                      "<posY>318</posY>" +
+                      "<label>#PowerControl.NetworkDevice4Description</label>" +
+                      "<font>mediastream10tc</font>" +
+                    "</control>" +
+                    "<control>" +
+                      "<description>Network Device 4 Alive</description>" +
+                      "<type>image</type>" +
+                      "<id>1</id>" +
+                      "<posX>1240</posX>" +
+                      "<posY>318</posY>" +
+                      "<texture>#PowerControl.NetworkDevice4AliveImage</texture>" +
+                      "<width>20</width>" +
+                      "<height>20</height>" +
+                    "</control>" +
                   "</control>" +
                 "</control>" +
               "</controls>" +
