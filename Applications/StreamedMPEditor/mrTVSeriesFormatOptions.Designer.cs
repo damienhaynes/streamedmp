@@ -40,7 +40,7 @@
       // 
       // btSaveAndExitTVSeries
       // 
-      this.btSaveAndExitTVSeries.Location = new System.Drawing.Point(94, 167);
+      this.btSaveAndExitTVSeries.Location = new System.Drawing.Point(96, 167);
       this.btSaveAndExitTVSeries.Name = "btSaveAndExitTVSeries";
       this.btSaveAndExitTVSeries.Size = new System.Drawing.Size(136, 23);
       this.btSaveAndExitTVSeries.TabIndex = 0;

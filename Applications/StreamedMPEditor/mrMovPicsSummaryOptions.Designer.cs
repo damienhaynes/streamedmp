@@ -84,11 +84,11 @@
       // 
       // bySaveAndExit
       // 
-      this.bySaveAndExit.Location = new System.Drawing.Point(165, 177);
+      this.bySaveAndExit.Location = new System.Drawing.Point(168, 174);
       this.bySaveAndExit.Name = "bySaveAndExit";
       this.bySaveAndExit.Size = new System.Drawing.Size(103, 23);
       this.bySaveAndExit.TabIndex = 4;
-      this.bySaveAndExit.Text = "Close";
+      this.bySaveAndExit.Text = "Save and Close";
       this.bySaveAndExit.UseVisualStyleBackColor = true;
       this.bySaveAndExit.Click += new System.EventHandler(this.btSaveAndExit_Click);
       // 
