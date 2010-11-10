@@ -1181,8 +1181,14 @@ namespace StreamedMPConfig
 
     private void OnEpisodeWatched(DBEpisode episode)
     {
-      smcLog.WriteLog(string.Format("TVSeries episode '{0}' counts as watched:", episode.ToString()), LogLevel.Info);
+      smcLog.WriteLog(string.Format("TVSeries episode '{0}' counts as watched", episode.ToString()), LogLevel.Info);
       getLastThreeWatchedTVSeries();
+      
+      // Filter Recently Added
+      if (MiscConfigGUI.FilterWatchedInRecentlyAdded)
+      {
+        getLastThreeAddedTVSeries();
+      }      
     }
 
     private void OnTVSeriesParseCompleted(bool dataUpdated)
@@ -1207,6 +1213,12 @@ namespace StreamedMPConfig
       {
         smcLog.WriteLog(string.Format("movie watched: {0}", ((DBWatchedHistory)obj).Movie.Title), LogLevel.Info);
         getLastThreeWatchedMovies();
+
+        // Filter Recently Added
+        if (MiscConfigGUI.FilterWatchedInRecentlyAdded)
+        {
+          getLastThreeAddedMovies();
+        }        
       }      
     }
 
