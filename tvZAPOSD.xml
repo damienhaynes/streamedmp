@@ -150,6 +150,7 @@
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
+      <visible>!string.equals(#TV.Next.title,)</visible>
     </control>
     <control>
       <description>rec logo</description>
@@ -164,4 +165,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:8b49207f4d98ac2edf400ebe89194dfb-->
+<!--Checksum:abdb1d8132aa190fdef59fbc41649ee8-->
