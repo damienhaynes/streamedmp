@@ -211,7 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="xmlFiles\AeonBasicHomeDefault.xml" />
     <EmbeddedResource Include="xmlFiles\HBasicHomeSkeleton.xml" />
-    <EmbeddedResource Include="xmlFiles\QuickSelectList.xml" />
+    <EmbeddedResource Include="xmlFiles\QuickSelectList.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="xmlFiles\VBasicHomeSkeleton.xml" />
     <Content Include="Resources\Configuration_32512.ico" />
     <Content Include="Resources\down.png" />
