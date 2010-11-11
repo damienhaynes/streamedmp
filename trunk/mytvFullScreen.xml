@@ -139,7 +139,7 @@
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|player.paused|player.forwarding|player.rewinding|player.seeking]+!string.equals(#TV.Next.title,)</visible>
     </control>
     <control>
       <description>Progress Bar Background</description>
@@ -317,4 +317,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:fc69d9137277993fc2c7fdb4e6bf7340-->
+<!--Checksum:800651e269780ded0b3c8411782e708e-->
