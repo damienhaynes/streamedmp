@@ -15,18 +15,31 @@ namespace StreamedMPEditor
 
         public string baseName = null;
         public int initialIndex = -1;
+        public string currentSkinID = string.Empty;
 
-        public SubItemProperties(bool showHyperlinkParameterDialog)
+        public SubItemProperties(bool showHyperlinkParameterDialog, string skinFileID)
         {
             InitializeComponent();
             gbHyperlinkParameter.Enabled = false;
+            currentSkinID = skinFileID;
 
             if (showHyperlinkParameterDialog)
                 gbHyperlinkParameter.Enabled = true;
 
-            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
+            switch (skinFileID)
             {
-                cboTVSViews.Items.Add(tvv.Value);
+              case formStreamedMpEditor.tvseriesSkinID:
+                foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
+                {
+                  cboViews.Items.Add(tvv.Value);
+                }
+                break;
+              case formStreamedMpEditor.musicSkinID:
+                foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.musicViews)
+                {
+                  cboViews.Items.Add(mvv.Value);
+                }
+                break;
             }
         }
 
@@ -56,24 +69,24 @@ namespace StreamedMPEditor
         {
             get
             {
-                return cboTVSViews.Text;
+                return cboViews.Text;
             }
             set
             {
-                cboTVSViews.Text = value;
+                cboViews.Text = value;
             }
         }
 
-        public string HypelinkParameter
+        public string tvseriesHypelinkParameter
         {
             get
             {
                 if (formStreamedMpEditor.tvseriesViews.Count == 0)
-                    return cboTVSViews.Text;
+                    return cboViews.Text;
 
                 foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
                 {
-                    if (tvv.Value == cboTVSViews.Text)
+                    if (tvv.Value == cboViews.Text)
                         return tvv.Key;
                 }
                 return "false";
@@ -82,19 +95,52 @@ namespace StreamedMPEditor
             set
             {
                 if (formStreamedMpEditor.tvseriesViews.Count == 0)
-                    cboTVSViews.Text = value;
+                    cboViews.Text = value;
                 int i = 0;
                 foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
                 {
                     if (value == tvv.Key)
                     {
-                        cboTVSViews.Text = tvv.Value;
+                        cboViews.Text = tvv.Value;
                         initialIndex = i;
                         break;
                     }
                     i++;
                 }
             }
+        }
+
+        public string musicHypelinkParameter
+        {
+          get
+          {
+            if (formStreamedMpEditor.musicViews.Count == 0)
+              return cboViews.Text;
+
+            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.musicViews)
+            {
+              if (tvv.Value == cboViews.Text)
+                return tvv.Key;
+            }
+            return "false";
+          }
+
+          set
+          {
+            if (formStreamedMpEditor.musicViews.Count == 0)
+              cboViews.Text = value;
+            int i = 0;
+            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.musicViews)
+            {
+              if (value == tvv.Key)
+              {
+                cboViews.Text = tvv.Value;
+                initialIndex = i;
+                break;
+              }
+              i++;
+            }
+          }
         }
 
         private void tbItemDisplayName_TextChanged(object sender, EventArgs e)
@@ -135,13 +181,21 @@ namespace StreamedMPEditor
 
         private void btClearParameter_Click(object sender, EventArgs e)
         {
-            cboTVSViews.Text = string.Empty;
+            cboViews.Text = string.Empty;
         }
 
-        private void cboTVSViews_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cboViews_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (initialIndex != -1 && (tbItemDisplayName.Text == baseName || initialIndex != cboTVSViews.SelectedIndex))
-                tbItemDisplayName.Text = formStreamedMpEditor.tvseriesViews[cboTVSViews.SelectedIndex].Value;
+          if (initialIndex != -1 && (tbItemDisplayName.Text == baseName || initialIndex != cboViews.SelectedIndex))
+          {
+            if (currentSkinID == formStreamedMpEditor.tvseriesSkinID)
+              tbItemDisplayName.Text = formStreamedMpEditor.tvseriesViews[cboViews.SelectedIndex].Value;
+
+
+            if (currentSkinID == formStreamedMpEditor.musicSkinID)
+              tbItemDisplayName.Text = formStreamedMpEditor.musicViews[cboViews.SelectedIndex].Value;
+          }
         }
     }
 }

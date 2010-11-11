@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using SMPCheckSum;
 using WindowPlugins.GUITVSeries;
 using SQLite.NET;
+using MediaPortal.GUI.Music;
+using MediaPortal.GUI.View;
 
 namespace StreamedMPEditor
 {
@@ -154,7 +156,7 @@ namespace StreamedMPEditor
 
     public const string tvseriesSkinID = "9811";
     public const string movingPicturesSkinID = "96742";
-    public const string musicSkinID = "501";
+    public const string musicSkinID = "504";
     public const string tvMenuSkinID = "1";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
@@ -173,6 +175,7 @@ namespace StreamedMPEditor
     bool fanartHandlerRelease2 = false;
     public static bool hlWarningDone = false;
     public static bool isAlpha = false;
+    public static bool isBeta = false;
 
     string xml;
     string xmlTemplate;
@@ -199,9 +202,10 @@ namespace StreamedMPEditor
     Version mpReleaseVersion = new Version("1.0.2.22554");
     Version isWeatherVersion = new Version("1.6.0.0");
     Version fanarthandlerVersionRequired = new Version("2.2.0.0");
-    Version mpAlphaRelease = new Version("1.1.5.0");
     Version fhRelease2 = new Version("2.2.2.0");
 
+    Version mpAlphaRelease = new Version("1.1.5.0");
+    Version mpBetaRelease = new Version("1.1.5.26731");
 
     public Version fhOverlayVersion;
 
@@ -247,6 +251,7 @@ namespace StreamedMPEditor
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
+    public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string,string>>();
 
     #endregion
 
@@ -286,6 +291,9 @@ namespace StreamedMPEditor
       if (mpVersion.CompareTo(mpAlphaRelease) >= 0)
         isAlpha = true;
 
+      if (mpVersion.CompareTo(mpBetaRelease) >= 0)
+        isBeta = true;
+
       rbFanartStyle.Checked = true;
 
       buildDownloadForm();
@@ -305,6 +313,9 @@ namespace StreamedMPEditor
       {
         autoPurgeBackups.Checked = true;
       }
+
+      if (isBeta)
+        musicViews = GetMusicViews();
 
 
       string filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MP-TVSeries.dll");
@@ -395,6 +406,9 @@ namespace StreamedMPEditor
 
       // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
       parametersValid.Add(tvseriesSkinID, true);
+
+      if (isBeta)
+        parametersValid.Add(musicSkinID, true);
 
       if (parametersValid.ContainsKey(hyperLink))
         return parametersValid[hyperLink];
@@ -1379,6 +1393,28 @@ namespace StreamedMPEditor
         tvseriesViews = DBView.GetSkinViews();
 
       return tvseriesViews;
+    }
+
+    /// <summary>
+    /// Get list of views in Music Views database
+    /// Key: should be used as hyperlinkParameter
+    /// Val: can be used as a default display name
+    /// </summary>    
+    private List<KeyValuePair<string, string>> GetMusicViews()
+    {
+      if (musicViews.Count == 0)
+      {
+        MusicViewHandler MusicViews = new MusicViewHandler();
+        foreach (ViewDefinition MusicView in MusicViews.Views)
+        {
+          string viewName = MusicView.Name;
+          string viewDisplayName = MusicView.LocalizedName;
+          KeyValuePair<string, string> skinview = new KeyValuePair<string, string>(viewName, viewDisplayName);
+          musicViews.Add(skinview);
+        }
+      }
+
+      return musicViews;
     }
 
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
