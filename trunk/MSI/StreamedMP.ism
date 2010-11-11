@@ -351,6 +351,7 @@
 		<row><td>b3wSkinTVSeries</td><td>{A0A6261A-3D92-4255-96ED-597E29041F37}</td><td>NEW_DIRECTORY3</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>b3wSkinTrailers</td><td>{F3F8E3B4-8561-4DBA-87E2-BB5D5AD571A9}</td><td>NEW_DIRECTORY2</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>exeSMPEditor</td><td>{FC174F35-D445-4927-BED3-971FEE9DDB1B}</td><td>MPBINDIR</td><td>0</td><td/><td>smpeditor.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>exeSMPEditorConfig</td><td>{79EC00AF-AD2F-4E94-A8D8-27CB0666512E}</td><td>MPBINDIR</td><td>0</td><td/><td>smpeditor.exe.config</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>exeSMPMediaPortalRestart</td><td>{DB0C9EFF-4490-4936-B588-02CC8CC3A0C6}</td><td>MPBINDIR</td><td>0</td><td/><td>smpmediaportalrestart.exe</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBody</td><td>{9EA046A9-057C-4709-A693-48E897DABE22}</td><td>FontsFolder</td><td>24</td><td/><td>default.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>fontsFluidBodyCaps</td><td>{36288623-8C1A-4A9F-9976-D81B86EC052C}</td><td>FontsFolder</td><td>24</td><td/><td>defaultcaps.ttf</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1628,6 +1629,7 @@
 		<row><td>Main</td><td>webUpdates</td></row>
 		<row><td>Main</td><td>webWiki</td></row>
 		<row><td>MenuEditor</td><td>exeSMPEditor</td></row>
+		<row><td>MenuEditor</td><td>exeSMPEditorConfig</td></row>
 		<row><td>MenuEditor</td><td>pluginStreamedMPEditorDLL</td></row>
 		<row><td>Modern</td><td>tvlogosGermanyModern</td></row>
 		<row><td>MovingPicturesBlue3Skin</td><td>b3SkinMovingPictures</td></row>
@@ -1735,6 +1737,7 @@
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
 		<row><td>smpchecksum.dll</td><td>libSMPCheckSum</td><td>SMPCHE~1.DLL|SMPCheckSum.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugindependencies\SMPCheckSum.dll</td><td>1</td><td/></row>
 		<row><td>smpeditor.exe</td><td>exeSMPEditor</td><td>SMPEDI~1.EXE|SMPEditor.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe</td><td>1</td><td/></row>
+		<row><td>smpeditor.exe.config</td><td>exeSMPEditorConfig</td><td>SMPEDI~1.CON|SMPEditor.exe.config</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpeditor\bin\release\SMPEditor.exe.config</td><td>1</td><td/></row>
 		<row><td>smpmediaportalrestart.exe</td><td>exeSMPMediaPortalRestart</td><td>SMPMED~1.EXE|SMPMediaPortalRestart.exe</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\applications\smpmediaportalrestart\bin\release\SMPMediaPortalRestart.exe</td><td>1</td><td/></row>
 		<row><td>streamedmpconfig.dll</td><td>pluginStreamedMPConfigDLL</td><td>STREAM~1.DLL|StreamedMPConfig.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\StreamedMPConfig.dll</td><td>1</td><td/></row>
 		<row><td>streamedmpconfig.xml</td><td>StreamedMPConfig.xml</td><td>STREAM~1.XML|StreamedMPConfig.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\StreamedMPConfig.xml</td><td>1</td><td/></row>
@@ -2014,6 +2017,7 @@
 		<row><td>b3wSkinTVSeries</td><td/><td/><td>_F57917B6_3C0A_458A_AA88_4D68966666D7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>b3wSkinTrailers</td><td/><td/><td>_C1539BD1_6FAB_416F_82DF_E4A802F57400_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>exeSMPEditor</td><td/><td/><td>_E47CF3DF_3ED9_4FD3_88AF_45C3FB48ED7A_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>exeSMPEditorConfig</td><td/><td/><td>_EE1888DA_C169_4EDE_AD18_F8E289B52BB3_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>exeSMPMediaPortalRestart</td><td/><td/><td>_39F0BDA9_51D1_4158_9C22_0CF1433BB853_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBody</td><td/><td/><td>_AC0D793F_2670_49FC_803D_5C94EB482EDD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>fontsFluidBodyCaps</td><td/><td/><td>_BC32B391_5B7D_4BBD_8E0A_FE5120529351_FILTER</td><td/><td/><td/><td/></row>
