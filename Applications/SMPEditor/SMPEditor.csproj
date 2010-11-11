@@ -118,7 +118,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,6 +135,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <None Include="SMPEditor.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -195,9 +195,9 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y
-copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
-"$(TargetDir)merge.bat"</PostBuildEvent>
+    <PostBuildEvent>rem copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y
+rem copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
+rem "$(TargetDir)merge.bat"</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
   </PropertyGroup>
 </Project>
