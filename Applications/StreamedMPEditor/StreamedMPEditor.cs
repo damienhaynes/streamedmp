@@ -1386,6 +1386,73 @@ namespace StreamedMPEditor
       //cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
     }
 
+    private void btConfigureFreeDriveSpace_Click(object sender, EventArgs e)
+    {
+      SelectHardDrives selectDrives = new SelectHardDrives();
+      selectDrives.ShowDialog();
+    }
+
+    private void cboFanartProperty_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      if (!fanartHandlerRelease2)
+        return;
+
+      if (cboFanartProperty.Text.ToLower() == "music" || cboFanartProperty.Text.ToLower() == "movie")
+      {
+        fhChoice.Visible = true;
+        fhRBScraper.Visible = true;
+        fhRBUserDef.Visible = true;
+      }
+      else
+      {
+        fhChoice.Visible = false;
+        fhRBScraper.Visible = false;
+        fhRBUserDef.Visible = false;
+      }
+    }
+
+    private void cbFreeDriveSpaceOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      btConfigureFreeDriveSpace.Enabled = cbFreeDriveSpaceOverlay.Checked ? true : false;
+      mrDisplaySelection.setEnableState(displayMostRecent.freeDriveSpace, cbFreeDriveSpaceOverlay.Checked);
+    }
+
+    private void cbPowerControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
+    }
+
+    private void cbSleepControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
+    }
+
+    private void cbSocksOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
+    }
+
+    private void cbHtpcInfoOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.htpcInfo, cbHtpcInfoOverlay.Checked);
+    }
+
+    private void cbUpdateControlOverlay_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.updateControl, cbUpdateControlOverlay.Checked);
+    }
+
+    private void cbEnableRecentMusic_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
+    }
+
+    private void cbEnableRecentRecordedTV_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
+    }
+
+
     #endregion
 
     #region ISetupForm Members
@@ -1483,72 +1550,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
-
-    private void btConfigureFreeDriveSpace_Click(object sender, EventArgs e)
-    {
-      SelectHardDrives selectDrives = new SelectHardDrives();
-      selectDrives.ShowDialog();
-    }
-
-    private void cboFanartProperty_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      if (!fanartHandlerRelease2)
-        return;
-
-      if (cboFanartProperty.Text.ToLower() == "music" || cboFanartProperty.Text.ToLower() == "movie")
-      {
-        fhChoice.Visible = true;
-        fhRBScraper.Visible = true;
-        fhRBUserDef.Visible = true;
-      }
-      else
-      {
-        fhChoice.Visible = false;
-        fhRBScraper.Visible = false;
-        fhRBUserDef.Visible = false;
-      }
-    }
-
-    private void cbFreeDriveSpaceOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        btConfigureFreeDriveSpace.Enabled = cbFreeDriveSpaceOverlay.Checked ? true : false;
-        mrDisplaySelection.setEnableState(displayMostRecent.freeDriveSpace, cbFreeDriveSpaceOverlay.Checked);
-    }
-
-    private void cbPowerControlOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
-    }
-
-    private void cbSleepControlOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
-    }
-
-    private void cbSocksOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
-    }
-
-    private void cbHtpcInfoOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.htpcInfo, cbHtpcInfoOverlay.Checked);
-    }
-
-    private void cbUpdateControlOverlay_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.updateControl, cbUpdateControlOverlay.Checked);
-    }
-
-    private void cbEnableRecentMusic_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
-    }
-
-    private void cbEnableRecentRecordedTV_CheckedChanged(object sender, EventArgs e)
-    {
-        mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
-    }
   }
 }
 
