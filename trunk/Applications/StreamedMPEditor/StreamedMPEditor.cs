@@ -375,7 +375,13 @@ namespace StreamedMPEditor
         fhUserDef = ".userdef";
         fanartHandlerRelease2 = true;
       }
-      
+
+      //
+      // For 1.2 Weather Icons are now part of skin
+      //
+      if (isBeta)
+        useSkinWeatherIcons.Visible = false;
+
       buildFHchoiceControls();
       checkAndEnableOverlays();
     }
