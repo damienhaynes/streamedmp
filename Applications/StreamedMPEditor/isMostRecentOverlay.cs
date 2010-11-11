@@ -2900,7 +2900,7 @@
                 "<description>GROUP: RecentlyAdded RecordedTV 1</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest1.title,#)|string.equals(#fanarthandler.tvrecordings.latest1.title,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
@@ -2969,7 +2969,7 @@
                 "<description>GROUP: RecentlyAdded RecordedTV 2</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest2.title,#)|string.equals(#fanarthandler.tvrecordings.latest2.title,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
@@ -3005,7 +3005,7 @@
                 "<description>GROUP: RecentlyAdded RecordedTV 3</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest3.title,#)|string.equals(#fanarthandler.tvrecordings.latest3.title,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
