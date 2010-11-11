@@ -2747,7 +2747,7 @@
                 "<description>GROUP: RecentlyAdded Music 1</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest1.artist,#)|string.equals(#fanarthandler.music.latest1.artist,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
@@ -2815,7 +2815,7 @@
                 "<description>GROUP: RecentlyAdded Music 2</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest2.artist,#)|string.equals(#fanarthandler.music.latest2.artist,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
@@ -2851,7 +2851,7 @@
                 "<description>GROUP: RecentlyAdded Music 3</description>" +
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "</visible>" +
+                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest3.artist,#)|string.equals(#fanarthandler.music.latest3.artist,)]" + "</visible>" +
                 "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
