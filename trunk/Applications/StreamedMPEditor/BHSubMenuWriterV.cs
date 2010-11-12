@@ -120,7 +120,10 @@ namespace StreamedMPEditor
        else if (parentMenu.subMenuLevel1[j].hyperlink == "196250")
          localxml += "<action>196250</action>";
        else
-        localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
+          if (parentMenu.subMenuLevel1[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
+            localxml += "<hyperlink>504</hyperlink>";
+          else
+            localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
 
         if (parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
             localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
@@ -256,7 +259,10 @@ namespace StreamedMPEditor
         else if (parentMenu.subMenuLevel2[j].hyperlink == "196250")
           localxml += "<action>196250</action>";
         else
-          localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
+          if (parentMenu.subMenuLevel2[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
+            localxml += "<hyperlink>504</hyperlink>";
+          else
+            localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
 
         if (parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
             localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";

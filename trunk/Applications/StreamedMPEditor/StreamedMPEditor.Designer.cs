@@ -97,7 +97,7 @@
         this.labelImageFolder = new System.Windows.Forms.Label();
         this.itemProperties = new System.Windows.Forms.GroupBox();
         this.lbTVSView = new System.Windows.Forms.Label();
-        this.cboTvSeriesView = new System.Windows.Forms.ComboBox();
+        this.cboParameterViews = new System.Windows.Forms.ComboBox();
         this.cancelCreateButton = new System.Windows.Forms.Button();
         this.cboContextLabel = new System.Windows.Forms.ComboBox();
         this.label18 = new System.Windows.Forms.Label();
@@ -1076,7 +1076,7 @@
         // itemProperties
         // 
         this.itemProperties.Controls.Add(this.lbTVSView);
-        this.itemProperties.Controls.Add(this.cboTvSeriesView);
+        this.itemProperties.Controls.Add(this.cboParameterViews);
         this.itemProperties.Controls.Add(this.cancelCreateButton);
         this.itemProperties.Controls.Add(this.cboContextLabel);
         this.itemProperties.Controls.Add(this.label18);
@@ -1101,12 +1101,12 @@
         // 
         // cboTvSeriesView
         // 
-        this.cboTvSeriesView.FormattingEnabled = true;
-        this.cboTvSeriesView.Location = new System.Drawing.Point(69, 86);
-        this.cboTvSeriesView.Name = "cboTvSeriesView";
-        this.cboTvSeriesView.Size = new System.Drawing.Size(242, 21);
-        this.cboTvSeriesView.TabIndex = 102;
-        this.cboTvSeriesView.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+        this.cboParameterViews.FormattingEnabled = true;
+        this.cboParameterViews.Location = new System.Drawing.Point(69, 86);
+        this.cboParameterViews.Name = "cboTvSeriesView";
+        this.cboParameterViews.Size = new System.Drawing.Size(242, 21);
+        this.cboParameterViews.TabIndex = 102;
+        this.cboParameterViews.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
         // 
         // cancelCreateButton
         // 
@@ -3106,7 +3106,7 @@
     private System.Windows.Forms.CheckBox cbEnableRecentRecordedTV;
     private System.Windows.Forms.CheckBox cbEnableRecentMusic;
     private System.Windows.Forms.Label lbTVSView;
-    private System.Windows.Forms.ComboBox cboTvSeriesView;
+    private System.Windows.Forms.ComboBox cboParameterViews;
     private System.Windows.Forms.Button btConfigureFreeDriveSpace;
     private System.Windows.Forms.CheckBox cbHtpcInfoOverlay;
     private System.Windows.Forms.CheckBox cbSocksOverlay;

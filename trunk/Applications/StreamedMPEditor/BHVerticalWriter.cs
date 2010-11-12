@@ -53,7 +53,10 @@ namespace StreamedMPEditor
           else if (menItem.hyperlink == "196297")
             rawXML.AppendLine("<action>97</action>");
           else
-            rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+            if (menItem.hyperlink == formStreamedMpEditor.musicSkinID && menItem.hyperlinkParameter != "false")
+              rawXML.AppendLine("<hyperlink>504</hyperlink>");
+            else
+              rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
           if (menItem.hyperlinkParameter != "false")
                rawXML.AppendLine("<hyperlinkParameter>"+ menItem.hyperlinkParameter + "</hyperlinkParameter>");
@@ -114,7 +117,10 @@ namespace StreamedMPEditor
           else if (menItem.name.ToLower() == "exit")
             rawXML.AppendLine("<action>97</action>");
           else
-            rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
+            if (menItem.hyperlink == formStreamedMpEditor.musicSkinID && menItem.hyperlinkParameter != "false")
+              rawXML.AppendLine("<hyperlink>504</hyperlink>");
+            else
+              rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
           if (menItem.hyperlinkParameter != "false")
                rawXML.AppendLine("<hyperlinkParameter>"+ menItem.hyperlinkParameter + "</hyperlinkParameter>");

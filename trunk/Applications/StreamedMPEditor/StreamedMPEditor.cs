@@ -146,6 +146,9 @@ namespace StreamedMPEditor
     public static List<menuItem> menuItems = new List<menuItem>();
     public static List<string> driveFreeSpaceDrives = new List<string>();
 
+    public static List<string> theTVSeriesViews = new List<string>();
+    public static List<string> theMusicViews = new List<string>();
+
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<string> ids = new List<string>();
     List<string> idsTemp = new List<string>();
@@ -156,7 +159,7 @@ namespace StreamedMPEditor
 
     public const string tvseriesSkinID = "9811";
     public const string movingPicturesSkinID = "96742";
-    public const string musicSkinID = "504";
+    public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
@@ -315,8 +318,16 @@ namespace StreamedMPEditor
       }
 
       if (isBeta)
+      {
         musicViews = GetMusicViews();
-
+        theMusicViews.Clear();
+        foreach (KeyValuePair<string, string> mvv in musicViews)
+        {
+          theMusicViews.Add(mvv.Value);
+        }
+        // For 1.2 Weather Icons are now part of skin
+        useSkinWeatherIcons.Visible = false;
+      }
 
       string filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MP-TVSeries.dll");
       if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1265), filename))
@@ -326,46 +337,17 @@ namespace StreamedMPEditor
           tvseriesViews = GetTVSeriesViews();
         }
         catch
-        {
-          // use db lookup method - most likely ran standalone SMPEditor.exe
-          string database = Path.Combine(SkinInfo.mpPaths.databasePath, "TVSeriesDatabase4.db3");
-          if (File.Exists(database))
-          {
-            try
-            {
-              SQLiteClient dbClient = new SQLiteClient(database);
+        { }
 
-              string sqlQuery = "select * from Views where enabled = 1 order by sort";
-              SQLiteResultSet resultSet = dbClient.Execute(sqlQuery);
-
-              if (resultSet != null && resultSet.Rows.Count > 0)
-              {
-                int colViewName = 3;
-                cboTvSeriesView.Items.Clear();
-                tvseriesViews.Clear();
-
-                foreach (SQLiteResultSet.Row row in resultSet.Rows)
-                {
-                  string viewname = row.fields[colViewName].ToString();
-                  // we can't get translated name, so just copy viewname for display name
-                  KeyValuePair<string, string> view = new KeyValuePair<string, string>(viewname, viewname);
-                  tvseriesViews.Add(view);
-                }
-              }
-            }
-            catch { }
-          }
-
-        }
-
-        cboTvSeriesView.Visible = false;
+        cboParameterViews.Visible = false;
         lbTVSView.Visible = false;
-        cboTvSeriesView.Items.Clear();
+        cboParameterViews.Items.Clear();
+        theTVSeriesViews.Clear();
         foreach (KeyValuePair<string, string> tvv in tvseriesViews)
         {
-          cboTvSeriesView.Items.Add(tvv.Value);
+          theTVSeriesViews.Add(tvv.Value);
+          //cboParameterViews.Items.Add(tvv.Value);
         }
-
       }
 
       Version fhVersion = new Version(helper.fileVersion(Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "process"), "FanartHandler.dll")));
@@ -376,11 +358,7 @@ namespace StreamedMPEditor
         fanartHandlerRelease2 = true;
       }
 
-      //
-      // For 1.2 Weather Icons are now part of skin
-      //
-      if (isBeta)
-        useSkinWeatherIcons.Visible = false;
+
 
       buildFHchoiceControls();
       checkAndEnableOverlays();
@@ -392,6 +370,16 @@ namespace StreamedMPEditor
       {
         if (tvv.Value.ToLower() == value.ToLower())
           return tvv.Key;
+      }
+      return "false";
+    }
+
+    public string getMusicViewKey(string value)
+    {
+      foreach (KeyValuePair<string, string> mvv in musicViews)
+      {
+        if (mvv.Value.ToLower() == value.ToLower())
+          return mvv.Key;
       }
       return "false";
     }
@@ -414,7 +402,9 @@ namespace StreamedMPEditor
       parametersValid.Add(tvseriesSkinID, true);
 
       if (isBeta)
+      {
         parametersValid.Add(musicSkinID, true);
+      }
 
       if (parametersValid.ContainsKey(hyperLink))
         return parametersValid[hyperLink];
@@ -646,8 +636,18 @@ namespace StreamedMPEditor
         item.isWeather = isWeather.Checked;
         item.disableBGSharing = disableBGSharing.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
-        if (pluginTakesParameter(item.hyperlink) && cboTvSeriesView.SelectedIndex != -1)
-          item.hyperlinkParameter = getTVSeriesViewKey(cboTvSeriesView.SelectedItem.ToString());
+        if (pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1)
+        {
+          switch (item.hyperlink)
+          {
+            case tvseriesSkinID:
+              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString()); break;
+            case musicSkinID:
+              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString()); break;
+            default:
+              break;
+          }
+        }
         else
           item.hyperlinkParameter = "false";
 
@@ -705,10 +705,22 @@ namespace StreamedMPEditor
         fhRBUserDef.Checked = true;
       }
 
+      switch (mnuItem.hyperlink)
+      {
+        case tvseriesSkinID:
+          cboParameterViews.DataSource = theTVSeriesViews;
+          break;
+        case musicSkinID:
+          cboParameterViews.DataSource = theMusicViews;
+          break;
+        default:
+          break;
+      }
+
       if (mnuItem.hyperlinkParameter != "false")
-        cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
+        cboParameterViews.Text = mnuItem.hyperlinkParameter;
       else
-        cboTvSeriesView.Text = string.Empty;
+        cboParameterViews.Text = string.Empty;
 
       if (cboFanartProperty.Text.ToLower() == "false")
         cboFanartProperty.Text = "";
@@ -751,12 +763,18 @@ namespace StreamedMPEditor
         item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
         item.hyperlink = ids[xmlFiles.SelectedIndex];
-        if (cboTvSeriesView.SelectedIndex != -1)
-          item.hyperlinkParameter = tvseriesViews[cboTvSeriesView.SelectedIndex].Key;
+        if (cboParameterViews.SelectedIndex != -1)
+        {
+          if (item.hyperlink == tvseriesSkinID)
+            item.hyperlinkParameter = tvseriesViews[cboParameterViews.SelectedIndex].Key;
+        
+          if (item.hyperlink == musicSkinID)
+            item.hyperlinkParameter = musicViews[cboParameterViews.SelectedIndex].Key;
+        }
         else
         {
           item.hyperlinkParameter = "false";
-          cboTvSeriesView.Text = string.Empty;
+          cboParameterViews.Text = string.Empty;
         }
         item.disableBGSharing = disableBGSharing.Checked;
         item.isWeather = isWeather.Checked;
@@ -787,6 +805,7 @@ namespace StreamedMPEditor
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
         changeOutstanding = true;
+        cboParameterViews.Visible = false;
       }
     }
 
@@ -840,16 +859,27 @@ namespace StreamedMPEditor
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
-        cboTvSeriesView.Visible = true;
+        switch (mnuItem.hyperlink)
+        {
+          case tvseriesSkinID:
+            cboParameterViews.DataSource = theTVSeriesViews;
+            break;
+          case musicSkinID:
+            cboParameterViews.DataSource = theMusicViews;
+            break;
+          default:
+            break;
+        }
+        cboParameterViews.Visible = true;
         lbTVSView.Visible = true;
         if (mnuItem.hyperlinkParameter != "false")
-          cboTvSeriesView.Text = mnuItem.hyperlinkParameter;
+          cboParameterViews.Text = mnuItem.hyperlinkParameter;
         else
-          cboTvSeriesView.Text = string.Empty;
+          cboParameterViews.Text = string.Empty;
       }
       else
       {
-        cboTvSeriesView.Visible = false;
+        cboParameterViews.Visible = false;
         lbTVSView.Visible = false;
       }
 
@@ -886,12 +916,12 @@ namespace StreamedMPEditor
       btGenerateMenu.Enabled = false;
       if (selectedWindowID.Text == tvseriesSkinID)
       {
-        cboTvSeriesView.Visible = true;
+        cboParameterViews.Visible = true;
         lbTVSView.Visible = true;
       }
       else
       {
-        cboTvSeriesView.Visible = false;
+        cboParameterViews.Visible = false;
         lbTVSView.Visible = false;
       }
     }
