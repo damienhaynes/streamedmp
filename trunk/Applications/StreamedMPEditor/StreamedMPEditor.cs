@@ -294,7 +294,7 @@ namespace StreamedMPEditor
       if (mpVersion.CompareTo(mpAlphaRelease) >= 0)
         isAlpha = true;
 
-      if (mpVersion.CompareTo(mpBetaRelease) >= 0)
+      if (mpVersion.CompareTo(mpBetaRelease) >= 0 || File.Exists("C:\\usebeta.txt"))
         isBeta = true;
 
       rbFanartStyle.Checked = true;
@@ -320,6 +320,9 @@ namespace StreamedMPEditor
       if (isBeta)
       {
         musicViews = GetMusicViews();
+        cboParameterViews.Visible = false;
+        lbParameterView.Visible = false;
+        cboParameterViews.Items.Clear();
         theMusicViews.Clear();
         foreach (KeyValuePair<string, string> mvv in musicViews)
         {
@@ -332,15 +335,9 @@ namespace StreamedMPEditor
       string filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MP-TVSeries.dll");
       if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1265), filename))
       {
-        try
-        {
-          tvseriesViews = GetTVSeriesViews();
-        }
-        catch
-        { }
-
+        tvseriesViews = GetTVSeriesViews();
         cboParameterViews.Visible = false;
-        lbTVSView.Visible = false;
+        lbParameterView.Visible = false;
         cboParameterViews.Items.Clear();
         theTVSeriesViews.Clear();
         foreach (KeyValuePair<string, string> tvv in tvseriesViews)
@@ -358,8 +355,6 @@ namespace StreamedMPEditor
         fanartHandlerRelease2 = true;
       }
 
-
-
       buildFHchoiceControls();
       checkAndEnableOverlays();
     }
@@ -374,12 +369,32 @@ namespace StreamedMPEditor
       return "false";
     }
 
+    public string getTVSeriesViewValue(string key)
+    {
+      foreach (KeyValuePair<string, string> tvv in tvseriesViews)
+      {
+        if (tvv.Key.ToLower() == key.ToLower())
+          return tvv.Value;
+      }
+      return "false";
+    }
+
     public string getMusicViewKey(string value)
     {
       foreach (KeyValuePair<string, string> mvv in musicViews)
       {
         if (mvv.Value.ToLower() == value.ToLower())
           return mvv.Key;
+      }
+      return "false";
+    }
+
+    public string getMusicViewValue(string key)
+    {
+      foreach (KeyValuePair<string, string> mvv in musicViews)
+      {
+        if (mvv.Key.ToLower() == key.ToLower())
+          return mvv.Value;
       }
       return "false";
     }
@@ -641,9 +656,11 @@ namespace StreamedMPEditor
           switch (item.hyperlink)
           {
             case tvseriesSkinID:
-              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString()); break;
+              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString()); 
+              break;
             case musicSkinID:
-              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString()); break;
+              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString()); 
+              break;
             default:
               break;
           }
@@ -709,18 +726,23 @@ namespace StreamedMPEditor
       {
         case tvseriesSkinID:
           cboParameterViews.DataSource = theTVSeriesViews;
+          if (mnuItem.hyperlinkParameter != "false")
+            cboParameterViews.Text = getTVSeriesViewValue(mnuItem.hyperlinkParameter);
+          else
+            cboParameterViews.Text = string.Empty;
           break;
         case musicSkinID:
           cboParameterViews.DataSource = theMusicViews;
+          if (mnuItem.hyperlinkParameter != "false")
+            cboParameterViews.Text = getMusicViewValue(mnuItem.hyperlinkParameter);
+          else
+            cboParameterViews.Text = string.Empty;
           break;
         default:
           break;
       }
 
-      if (mnuItem.hyperlinkParameter != "false")
-        cboParameterViews.Text = mnuItem.hyperlinkParameter;
-      else
-        cboParameterViews.Text = string.Empty;
+
 
       if (cboFanartProperty.Text.ToLower() == "false")
         cboFanartProperty.Text = "";
@@ -766,10 +788,10 @@ namespace StreamedMPEditor
         if (cboParameterViews.SelectedIndex != -1)
         {
           if (item.hyperlink == tvseriesSkinID)
-            item.hyperlinkParameter = tvseriesViews[cboParameterViews.SelectedIndex].Key;
+            item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
         
           if (item.hyperlink == musicSkinID)
-            item.hyperlinkParameter = musicViews[cboParameterViews.SelectedIndex].Key;
+            item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
         }
         else
         {
@@ -813,8 +835,8 @@ namespace StreamedMPEditor
     {
       if (saveButton.Enabled)
       {
-        tbItemName.Text = null;
-        cboContextLabel.Text = null;
+        tbItemName.Text = string.Empty;
+        cboContextLabel.Text = string.Empty;
         isWeather.Checked = false;
         bgBox.SelectedIndex = -1;
         cboFanartProperty.SelectedIndex = -1;
@@ -822,9 +844,9 @@ namespace StreamedMPEditor
         cancelButton.Enabled = false;
         editButton.Enabled = true;
       }
-      selectedWindow.Text = null;
-      selectedWindowID.Text = null;
-
+      selectedWindow.Text = string.Empty;
+      selectedWindowID.Text = string.Empty;
+      cboParameterViews.Text = string.Empty;
     }
 
 
@@ -863,24 +885,35 @@ namespace StreamedMPEditor
         {
           case tvseriesSkinID:
             cboParameterViews.DataSource = theTVSeriesViews;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getTVSeriesViewKey(mnuItem.hyperlinkParameter);
+            else
+            {
+              cboParameterViews.Text = string.Empty;
+              cboParameterViews.SelectedIndex = -1;
+            }
             break;
           case musicSkinID:
             cboParameterViews.DataSource = theMusicViews;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getMusicViewValue(mnuItem.hyperlinkParameter);
+            else
+            {
+              cboParameterViews.Text = string.Empty;
+              cboParameterViews.SelectedIndex = -1;
+            }
             break;
           default:
             break;
         }
         cboParameterViews.Visible = true;
-        lbTVSView.Visible = true;
-        if (mnuItem.hyperlinkParameter != "false")
-          cboParameterViews.Text = mnuItem.hyperlinkParameter;
-        else
-          cboParameterViews.Text = string.Empty;
+        lbParameterView.Visible = true;
+
       }
       else
       {
         cboParameterViews.Visible = false;
-        lbTVSView.Visible = false;
+        lbParameterView.Visible = false;
       }
 
       menuitemName.Text = mnuItem.name;
@@ -917,12 +950,12 @@ namespace StreamedMPEditor
       if (selectedWindowID.Text == tvseriesSkinID)
       {
         cboParameterViews.Visible = true;
-        lbTVSView.Visible = true;
+        lbParameterView.Visible = true;
       }
       else
       {
         cboParameterViews.Visible = false;
-        lbTVSView.Visible = false;
+        lbParameterView.Visible = false;
       }
     }
 
@@ -1417,42 +1450,6 @@ namespace StreamedMPEditor
         mrDisplaySelection.setEnableState(displayMostRecent.movies, cbMostRecentMovPics.Checked);
     }
 
-    /// <summary>
-    /// Get list of views in TVseries database
-    /// Key: should be used as hyperlinkParameter
-    /// Val: can be used as a default display name
-    /// </summary>    
-    private List<KeyValuePair<string, string>> GetTVSeriesViews()
-    {
-      // check if we have already got them
-      if (tvseriesViews.Count == 0)
-        tvseriesViews = DBView.GetSkinViews();
-
-      return tvseriesViews;
-    }
-
-    /// <summary>
-    /// Get list of views in Music Views database
-    /// Key: should be used as hyperlinkParameter
-    /// Val: can be used as a default display name
-    /// </summary>    
-    private List<KeyValuePair<string, string>> GetMusicViews()
-    {
-      if (musicViews.Count == 0)
-      {
-        MusicViewHandler MusicViews = new MusicViewHandler();
-        foreach (ViewDefinition MusicView in MusicViews.Views)
-        {
-          string viewName = MusicView.Name;
-          string viewDisplayName = MusicView.LocalizedName;
-          KeyValuePair<string, string> skinview = new KeyValuePair<string, string>(viewName, viewDisplayName);
-          musicViews.Add(skinview);
-        }
-      }
-
-      return musicViews;
-    }
-
     private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
     {
       //cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
@@ -1524,6 +1521,46 @@ namespace StreamedMPEditor
       mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
     }
 
+    #endregion
+
+
+    #region Parmeter Handling
+
+    /// <summary>
+    /// Get list of views in TVseries database
+    /// Key: should be used as hyperlinkParameter
+    /// Val: can be used as a default display name
+    /// </summary>    
+    private List<KeyValuePair<string, string>> GetTVSeriesViews()
+    {
+      // check if we have already got them
+      if (tvseriesViews.Count == 0)
+        tvseriesViews = DBView.GetSkinViews();
+
+      return tvseriesViews;
+    }
+
+    /// <summary>
+    /// Get list of views in Music Views database
+    /// Key: should be used as hyperlinkParameter
+    /// Val: can be used as a default display name
+    /// </summary>    
+    private List<KeyValuePair<string, string>> GetMusicViews()
+    {
+      if (musicViews.Count == 0)
+      {
+        MusicViewHandler MusicViews = new MusicViewHandler();
+        foreach (ViewDefinition MusicView in MusicViews.Views)
+        {
+          string viewKey = MusicView.Name;
+          string viewValue = MusicView.LocalizedName;
+          KeyValuePair<string, string> skinview = new KeyValuePair<string, string>(viewKey, viewValue);
+          musicViews.Add(skinview);
+        }
+      }
+
+      return musicViews;
+    }
 
     #endregion
 

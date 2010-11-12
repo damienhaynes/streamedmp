@@ -96,7 +96,7 @@
         this.bgBox = new System.Windows.Forms.ComboBox();
         this.labelImageFolder = new System.Windows.Forms.Label();
         this.itemProperties = new System.Windows.Forms.GroupBox();
-        this.lbTVSView = new System.Windows.Forms.Label();
+        this.lbParameterView = new System.Windows.Forms.Label();
         this.cboParameterViews = new System.Windows.Forms.ComboBox();
         this.cancelCreateButton = new System.Windows.Forms.Button();
         this.cboContextLabel = new System.Windows.Forms.ComboBox();
@@ -1075,7 +1075,7 @@
         // 
         // itemProperties
         // 
-        this.itemProperties.Controls.Add(this.lbTVSView);
+        this.itemProperties.Controls.Add(this.lbParameterView);
         this.itemProperties.Controls.Add(this.cboParameterViews);
         this.itemProperties.Controls.Add(this.cancelCreateButton);
         this.itemProperties.Controls.Add(this.cboContextLabel);
@@ -1092,12 +1092,12 @@
         // 
         // lbTVSView
         // 
-        this.lbTVSView.AutoSize = true;
-        this.lbTVSView.Location = new System.Drawing.Point(9, 89);
-        this.lbTVSView.Name = "lbTVSView";
-        this.lbTVSView.Size = new System.Drawing.Size(58, 13);
-        this.lbTVSView.TabIndex = 103;
-        this.lbTVSView.Text = "Parameter:";
+        this.lbParameterView.AutoSize = true;
+        this.lbParameterView.Location = new System.Drawing.Point(9, 89);
+        this.lbParameterView.Name = "lbTVSView";
+        this.lbParameterView.Size = new System.Drawing.Size(58, 13);
+        this.lbParameterView.TabIndex = 103;
+        this.lbParameterView.Text = "Parameter:";
         // 
         // cboTvSeriesView
         // 
@@ -3105,7 +3105,7 @@
     private System.Windows.Forms.Button btSelectOverlay;
     private System.Windows.Forms.CheckBox cbEnableRecentRecordedTV;
     private System.Windows.Forms.CheckBox cbEnableRecentMusic;
-    private System.Windows.Forms.Label lbTVSView;
+    private System.Windows.Forms.Label lbParameterView;
     private System.Windows.Forms.ComboBox cboParameterViews;
     private System.Windows.Forms.Button btConfigureFreeDriveSpace;
     private System.Windows.Forms.CheckBox cbHtpcInfoOverlay;
