@@ -581,6 +581,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".score", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".watchedcount", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".watcheddate", string.Empty);
+        SetProperty("#StreamedMP.recentlyWatched.movie" + i.ToString() + ".show", "false");
       }
       // Now take the first 3 
       int rwMovieNumber = 1;
@@ -595,6 +596,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watchedcount", movie.WatchedHistory.Count.ToString());
         SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".watcheddate", movie.WatchedHistory.Count > 0 ? movie.WatchedHistory[movie.WatchedHistory.Count - 1].DateWatched.ToString() : "N/A");
+        SetProperty("#StreamedMP.recentlyWatched.movie" + rwMovieNumber.ToString() + ".show", "true");
         smcLog.WriteLog(string.Format("Recently Watched Movie {0} is ", rwMovieNumber) + movie.Title, LogLevel.Info);
         ++rwMovieNumber;
         if (rwMovieNumber == 4)
@@ -647,6 +649,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".runtime", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".certification", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".score", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.movie" + i.ToString() + ".show", "false");
       }
 
       // Now take the first 3 
@@ -660,6 +663,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty(movie.Certification.Trim()) ? string.Empty : " [" + movie.Certification + "]"));
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".score", Math.Round(movie.Score, MidpointRounding.AwayFromZero).ToString());
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
+        SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".show", "true");
         smcLog.WriteLog(string.Format("Recently Added Movie {0} is ", mrMovieNumber) + movie.Title, LogLevel.Info);
         ++mrMovieNumber;
         if (mrMovieNumber == 4)
@@ -700,6 +704,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".season", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".thumb", string.Empty);
         SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".fanart", string.Empty);
+        SetProperty("#StreamedMP.recentlyWatched.series" + i.ToString() + ".show", "false");
       }
 
       if (episodes.Count == 0)
@@ -720,6 +725,7 @@ namespace StreamedMPConfig
           SetProperty("#StreamedMP.recentlyWatched.series" + mrEpisodeNumber.ToString() + ".season", episode[DBEpisode.cSeasonIndex]);
           SetProperty("#StreamedMP.recentlyWatched.series" + mrEpisodeNumber.ToString() + ".thumb", series.Poster);
           SetProperty("#StreamedMP.recentlyWatched.series" + mrEpisodeNumber.ToString() + ".fanart", Fanart.getFanart(episode[DBEpisode.cSeriesID]).FanartFilename);
+          SetProperty("#StreamedMP.recentlyWatched.series" + mrEpisodeNumber.ToString() + ".show", "true");
           smcLog.WriteLog(string.Format("Recently Watched Episode {0} is {1}", mrEpisodeNumber, episode.ToString()), LogLevel.Info);
           ++mrEpisodeNumber;
         }
@@ -746,6 +752,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".season", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".thumb", string.Empty);
         SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".fanart", string.Empty);
+        SetProperty("#StreamedMP.recentlyAdded.series" + i.ToString() + ".show", "false");
       }
 
       if (RecentlyAdded.recentAddedEpisodes.Count == 0)
@@ -766,6 +773,7 @@ namespace StreamedMPConfig
           SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".season", episode[DBEpisode.cSeasonIndex]);
           SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".thumb", series.Poster);
           SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".fanart", Fanart.getFanart(episode[DBEpisode.cSeriesID]).FanartFilename);
+          SetProperty("#StreamedMP.recentlyAdded.series" + mrEpisodeNumber.ToString() + ".show", "true");
           smcLog.WriteLog(string.Format("Recently Added Episode {0} is {1}", mrEpisodeNumber, episode.ToString()), LogLevel.Info);
           ++mrEpisodeNumber;
         }

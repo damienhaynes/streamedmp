@@ -898,7 +898,7 @@
                     "<description>GROUP: RecentlyAdded Series</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series1.fanart,#)|string.equals(#StreamedMP.recentlyAdded.series1.fanart,)]</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyAdded.series1.show,true)</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -971,7 +971,7 @@
       "<description>GROUP: RecentlyAdded Series</description>\n" +
       "<type>group</type>\n" +
       "<dimColor>0xffffffff</dimColor>\n" +
-      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series2.fanart,#)|string.equals(#StreamedMP.recentlyAdded.series2.fanart,)]</visible>" +
+      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyAdded.series2.show,true)]</visible>" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1011,7 +1011,7 @@
       "<description>GROUP: RecentlyAdded Series</description>\n" +
       "<type>group</type>\n" +
       "<dimColor>0xffffffff</dimColor>\n" +
-      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyAdded.series3.fanart,#)|string.equals(#StreamedMP.recentlyAdded.series3.fanart,)]</visible>" +
+      "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyAdded.series3.show,true)</visible>" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1825,7 +1825,7 @@
                     "<description>GROUP: RecentlyAdded Movie 1</description>\n" +
                     "<type>group</type>\n" +
                     "<dimColor>0xffffffff</dimColor>\n" +
-                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.equals(#StreamedMP.recentlyAdded.movie1.fanart,)]</visible>" +
+                    "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyAdded.movie1.show,true)</visible>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -1954,7 +1954,7 @@
               "<description>GROUP: RecentlyAdded Movie 2</description>\n" +
               "<type>group</type>\n" +
               "<dimColor>0xffffffff</dimColor>\n" +
-              "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie2.fanart,#)|string.equals(#StreamedMP.recentlyAdded.movie2.fanart,)]</visible>" +
+              "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyAdded.movie2.show,true)</visible>" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -2049,7 +2049,7 @@
           "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
           "<type>group</type>\n" +
           "<dimColor>0xffffffff</dimColor>\n" +
-          "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.equals(#StreamedMP.recentlyAdded.movie3.fanart,)]</visible>" +
+          "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyAdded.movie3.show,true)</visible>" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
@@ -2177,7 +2177,7 @@
                   "<description>GROUP: RecentlyWatched Movie 1</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
-                  "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie1.fanart,#)|string.equals(#StreamedMP.recentlyWatched.movie1.fanart,)]</visible>" +
+                  "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyWatched.movie1.show,true)</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
@@ -2316,7 +2316,7 @@
             "<description>GROUP: recentlyWatched Movie 2</description>\n" +
             "<type>group</type>\n" +
             "<dimColor>0xffffffff</dimColor>\n" +
-            "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie2.fanart,#)|string.equals(#StreamedMP.recentlyWatched.movie2.fanart,)]</visible>" +
+            "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyWatched.movie2.show,true)</visible>" +
             "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
             "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
@@ -2421,7 +2421,7 @@
         "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
         "<type>group</type>\n" +
         "<dimColor>0xffffffff</dimColor>\n" +
-        "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+![string.starts(#StreamedMP.recentlyWatched.movie3.fanart,#)|string.equals(#StreamedMP.recentlyWatched.movie3.fanart,)]</visible>" +
+        "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyWatched.movie3.show,true)</visible>" +
         "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
         "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
@@ -2552,7 +2552,7 @@
                 "<description>GROUP: RecentlyWatched Series</description>\n" +
                 "<type>group</type>\n" +
                 "<dimColor>0xffffffff</dimColor>\n" +
-                "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyWatched.series1.fanart,#)|string.equals(#StreamedMP.recentlyWatched.series1.fanart,)]</visible>" +
+                "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyWatched.series1.show,true)</visible>" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
@@ -2635,7 +2635,7 @@
     "<description>GROUP: RecentlyWatched Series</description>\n" +
     "<type>group</type>\n" +
     "<dimColor>0xffffffff</dimColor>\n" +
-    "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyWatched.series2.fanart,#)|string.equals(#StreamedMP.recentlyWatched.series2.fanart,)]</visible>" +
+    "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyWatched.series2.show,true)</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
@@ -2685,7 +2685,7 @@
     "<description>GROUP: RecentlyWatched Series</description>\n" +
     "<type>group</type>\n" +
     "<dimColor>0xffffffff</dimColor>\n" +
-    "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+![string.starts(#StreamedMP.recentlyWatched.series3.fanart,#)|string.equals(#StreamedMP.recentlyWatched.series3.fanart,)]</visible>" +
+    "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.TVSeries) + "+string.equals(#StreamedMP.recentlyWatched.series3.show,true)</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
