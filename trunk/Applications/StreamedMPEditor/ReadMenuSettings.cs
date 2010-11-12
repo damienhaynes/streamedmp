@@ -524,6 +524,12 @@ namespace StreamedMPEditor
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlink", nodelist);
               subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameter", nodelist);
+              //
+              // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
+              //
+              if (subItem.hyperlink == "504")
+                subItem.hyperlink = "501";
+
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "mrDisplay", nodelist))
               {
                 case "off":
@@ -574,6 +580,12 @@ namespace StreamedMPEditor
               subItem.xmlFileName = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "xmlFileName", nodelist);
               subItem.hyperlink = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlink", nodelist);
               subItem.hyperlinkParameter = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameter", nodelist);
+              //
+              // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
+              //
+              if (subItem.hyperlink == "504")
+                subItem.hyperlink = "501";
+
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "mrDisplay", nodelist))
               {
                   case "off":
