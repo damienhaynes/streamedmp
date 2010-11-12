@@ -73,11 +73,11 @@
       <width>950</width>
       <font>mediastream16tc</font>
       <label>#header.Extension.label</label>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+!string.equals(#OnlineVideos.IsBuffering,true)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+	  <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+!string.equals(#OnlineVideos.IsBuffering,true)</visible>
     </control>
     <control>
       <description>Genres</description>
@@ -173,9 +173,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>
-        <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      </visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible> 
     </control>
     <control Style="smallTitleB">
       <description>Director Label</description>
@@ -188,9 +186,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-      <visible>
-        <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      </visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
     <control Style="smallTitle">
       <description>Director</description>
@@ -203,9 +199,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>
-        <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      </visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>      
     </control>
     <control Style="smallTitleB">
       <description>Studio Label</description>
@@ -217,9 +211,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-      <visible>
-        <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      </visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>      
     </control>
     <control Style="smallTitle">
       <description>Studio</description>
@@ -231,32 +223,29 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>
-        <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      </visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>      
     </control>
     <control>
-      <description>Clips List</description>
+      <description>Trailer List</description>
       <type>listcontrol</type>
       <id>51</id>
       <onright>51</onright>
-      <onleft>51</onleft>
+      <onleft>51</onleft>	  
       <posX>820</posX>
       <posY>300</posY>
       <width>460</width>
       <height>450</height>
       <textXOff2>440</textXOff2>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
-      <textureUp>arrow_round_up_nofocus.png</textureUp>
-      <textureDown>arrow_round_down_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
       <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinAlign>Right</spinAlign>
-      <spinColor>ff006698</spinColor>
-      <spinCanFocus>yes</spinCanFocus>
+	  <spinHeight>37</spinHeight>
+	  <spinPosX>1175</spinPosX>
+	  <spinPosY>681</spinPosY>
+	  <spinAlign>Right</spinAlign>
+	  <spinColor>ff006698</spinColor>
+	  <textureUp>arrow_round_up_nofocus.png</textureUp>
+	  <textureDown>arrow_round_down_nofocus.png</textureDown>
+	  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+	  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
       <visible>string.equals(#OnlineVideos.state,details)</visible>
     </control>
   </controls>
