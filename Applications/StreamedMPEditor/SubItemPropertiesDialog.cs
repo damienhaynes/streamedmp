@@ -195,6 +195,8 @@ namespace StreamedMPEditor
 
             if (currentSkinID == formStreamedMpEditor.musicSkinID)
               tbItemDisplayName.Text = formStreamedMpEditor.musicViews[cboViews.SelectedIndex].Value;
+
+            initialIndex = cboViews.SelectedIndex;
           }
         }
     }
