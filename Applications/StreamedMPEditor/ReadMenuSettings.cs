@@ -499,13 +499,10 @@ namespace StreamedMPEditor
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
         mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
         //
-        // Change the Music XML from 501 to 504
+        // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
         //
-        if (mnuItem.hyperlink == "501")
-        {
-          mnuItem.hyperlink = "504";
-          mnuItem.xmlFileName = "mymusicgenres";
-        }
+        if (mnuItem.hyperlink == "504")
+          mnuItem.hyperlink = "501";
         //
         // Read submenu data
         //
