@@ -70,13 +70,11 @@
 #define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
 #define STREAMEDMP_SKIN_4TRACTIVE			        INSTALLDIR^SKIN_NAME^"4TR_Active.xml"
+#define STREAMEDMP_SKIN_4TRTVGUIDE			        INSTALLDIR^SKIN_NAME^"4TR_TvGuide.xml"
 #define STREAMEDMP_SKIN_4TRPROGRAMINFO		        INSTALLDIR^SKIN_NAME^"4TR_ProgramInfo.xml"
-#define STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH	        INSTALLDIR^SKIN_NAME^"4TR_RadioGuideSearch.xml"
-#define STREAMEDMP_SKIN_4TRRECORDEDRADIO	        INSTALLDIR^SKIN_NAME^"4TR_RecordedRadio.xml"
 #define STREAMEDMP_SKIN_4TRRECORDEDTV		        INSTALLDIR^SKIN_NAME^"4TR_RecordedTv.xml"
 #define STREAMEDMP_SKIN_4TRTVGUIDESEARCH		    INSTALLDIR^SKIN_NAME^"4TR_TvGuideSearch.xml"
 #define STREAMEDMP_SKIN_4TRUPCOMING			        INSTALLDIR^SKIN_NAME^"4TR_Upcoming.xml"
-#define STREAMEDMP_SKIN_4TRTVGUIDE			        INSTALLDIR^SKIN_NAME^"4TR_TvGuide.xml"
 
 #define STREAMEDMP_SKIN_MYTVPROGRAM			        INSTALLDIR^SKIN_NAME^"mytvprogram.xml"
 #define STREAMEDMP_SKIN_MYTVRECORDEDINFO	        INSTALLDIR^SKIN_NAME^"mytvRecordedInfo.xml"
@@ -2166,9 +2164,7 @@ begin
 	// Enable/Disable Random Fanart in MyTV sections	
 	szDefine = "#useRandomTVSeriesFanart";
 	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRADIOGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDRADIO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));		
 	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	

@@ -1084,6 +1084,16 @@ namespace StreamedMPConfig
       }
     }
 
+    public static void ShowRestartMessage(int windowID, string windowName)
+    {
+      GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+      dlg.Reset();
+      dlg.SetHeading(windowName);
+      dlg.SetLine(1, Translation.ConfigRequiresRestartLine1);
+      dlg.SetLine(2, Translation.ConfigRequiresRestartLine2);
+      dlg.DoModal(windowID);
+    }
+
     #endregion
 
     #region Event Handlers

@@ -267,6 +267,9 @@ namespace StreamedMPConfig
     public static string RecordedOn = "Recorded On";
     public static string Votes = "votes";
     public static string SkinInfoText = "Skin Information";
+    public static string EnableRandomTVSeriesFanartInMyTV = "Enable Random TVSeries Fanart";
+    public static string ConfigRequiresRestartLine1 = "The following configuration changes will take";
+    public static string ConfigRequiresRestartLine2 = "affect on next MediaPortal restart.";
     #endregion
   }
 }

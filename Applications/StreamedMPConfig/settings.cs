@@ -340,6 +340,7 @@ namespace StreamedMPConfig
           case settings.cXMLSectionTV:
             TVConfig.TVGuideRowSize = (TVConfig.TVGuideRows)xmlreader.GetValueAsInt(section, settings.cXMLSettingTVGuideSize, 10);
             TVConfig.TVMiniGuideRowSize = (TVConfig.TVMiniGuideRows)xmlreader.GetValueAsInt(section, settings.cXMLSettingTVMiniGuideSize, 7);
+            TVConfig.EnableRandomTVSeriesFanart = xmlreader.GetValueAsInt(section, settings.cXMLSettingTVEnableRandomTVSeriesFanart, 0) == 1;
             break;
           #endregion
 
@@ -409,6 +410,7 @@ namespace StreamedMPConfig
           case settings.cXMLSectionTV:
             xmlwriter.SetValue(section, settings.cXMLSettingTVGuideSize, (int)TVConfig.TVGuideRowSize);
             xmlwriter.SetValue(section, settings.cXMLSettingTVMiniGuideSize, (int)TVConfig.TVMiniGuideRowSize);
+            xmlwriter.SetValue(section, settings.cXMLSettingTVEnableRandomTVSeriesFanart, TVConfig.EnableRandomTVSeriesFanart ? 1 : 0);
             break;
           #endregion
 
