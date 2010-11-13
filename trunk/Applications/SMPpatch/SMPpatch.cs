@@ -381,13 +381,16 @@ namespace SMPpatch
 
     string fileVersion(string fileToCheck)
     {
+      string version = "0.0.0.0";
       if (File.Exists(fileToCheck))
       {
         FileVersionInfo fv = FileVersionInfo.GetVersionInfo(fileToCheck);
-        return fv.FileVersion;
+        if (string.IsNullOrEmpty(fv.FileVersion))
+          version = "0.0.0.0";
+        else
+          version = fv.FileVersion;
       }
-      else
-        return "0.0.0.0";
+      return version;
     }
 
     long fileSize(string fileToCheck)
