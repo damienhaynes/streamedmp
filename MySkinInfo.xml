@@ -28,23 +28,24 @@
       <width>1160</width>
       <height>480</height>
       <texture>black.png</texture>
-    </control>  
-    
+    </control>     
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>20</posX>
-      <posY>80</posY>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <width>50</width>
       <layout>StackLayout</layout>
       <control>
         <type>button</type>
         <description>Back</description>
         <id>2</id>
         <action>10</action>
-        <label>Exit Button</label>
+        <label>Back</label>
+        <width>100</width>
       </control>
     </control>
-    
+    <!-- Header -->    
     <control>
       <description>auth txt</description>
       <type>label</type>
@@ -62,8 +63,7 @@
       <posX>260</posX>
       <posY>100</posY>
       <label>StreamedMP Team</label>
-    </control>
-    
+    </control> 
     <control>
       <description>vers txt</description>
       <type>label</type>
@@ -81,8 +81,7 @@
       <posX>260</posX>
       <posY>125</posY>
       <label>-</label>
-    </control>
-    
+    </control> 
     <control>
       <description>res txt</description>
       <type>label</type>
@@ -101,7 +100,7 @@
       <posY>150</posY>
       <label>16:9 (1280x720)</label>
     </control>
-    
+    <!-- Description -->    
     <control>
       <description>desc txt</description>
       <type>label</type>
@@ -121,11 +120,9 @@
       <width>950</width>
       <height>170</height>
       <font>mediastream10</font>
-      <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.
-</label>
+      <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.</label>
     </control>
-    
-
+    <!-- Supported Plugins -->
     <control>
       <description>plug txt</description>
       <type>label</type>
@@ -135,232 +132,349 @@
       <label>Supported Plugins:</label>
       <textcolor>ffa9d0f7</textcolor>
 			<align>right</align>
-    </control>
-    
+    </control>  
+    <!-- The Plugins are.... -->
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>360</posY>
-      <label>*</label>
+      <posX>260</posX>
+      <posY>330</posY>
+      <label>Alarm</label>
+    </control>
+    <control>
+      <description>plug value line 1</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>480</posX>
+      <posY>330</posY>
+      <label>Arcsoft Player</label>
+    </control>
+    <control>
+      <description>plug value line 1</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>330</posY>
+      <label>DVD</label>
+    </control>
+    <control>
+      <description>plug value line 1</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>330</posY>
+      <label>Emulators</label>
+    </control>
+    
+    <control>
+      <description>plug value line 2</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>350</posY>
+      <label>Extensions</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>390</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>350</posY>
+      <label>Fanart Handler</label>
+    </control>
+    <control>
+      <description>plug value line 2</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>350</posY>
+      <label>For The Record</label>
+    </control>
+    <control>
+      <description>plug value line 2</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>350</posY>
+      <label>Global Search</label>
+    </control>  
+
+    <control>
+      <description>plug value line 3</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>370</posY>
+      <label>InfoService</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>420</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>370</posY>
+      <label>Last.FM</label>
+    </control>
+    <control>
+      <description>plug value line 3</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>370</posY>
+      <label>MyLyrics</label>
+    </control>
+    <control>
+      <description>plug value line 3</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>370</posY>
+      <label>MediaSlayer</label>
+    </control>     
+
+    <control>
+      <description>plug value line 4</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>390</posY>
+      <label>MediaTip</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>450</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>390</posY>
+      <label>Moving Pictures</label>
+    </control>
+    <control>
+      <description>plug value line 4</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>390</posY>
+      <label>MPNZB</label>
+    </control>
+    <control>
+      <description>plug value line 4</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>390</posY>
+      <label>Music</label>
+    </control> 
+ 
+     <control>
+      <description>plug value line 5</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>410</posY>
+      <label>My Burner</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>480</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>410</posY>
+      <label>My Films</label>
     </control>
     <control>
-      <description>plug value line 12</description>
+      <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>510</posY>
-      <label>*</label>
+      <posX>700</posX>
+      <posY>410</posY>
+      <label>My ScoreCentre</label>
+    </control>
+    <control>
+      <description>plug value line 5</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>410</posY>
+      <label>My Torrents</label>
+    </control> 
+ 
+     <control>
+      <description>plug value line 6</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>430</posY>
+      <label>MP Music Vidoes</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>540</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>430</posY>
+      <label>News</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>570</posY>
-      <label>*</label>
+      <posX>700</posX>
+      <posY>430</posY>
+      <label>OnlineVideos</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>600</posY>
-      <label>*</label>
+      <posX>920</posX>
+      <posY>430</posY>
+      <label>Pictures</label>
+    </control> 
+  
+     <control>
+      <description>plug value line 7</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>450</posY>
+      <label>Plugins</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>840</posX>
-      <posY>360</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>450</posY>
+      <label>Radio</label>
+    </control>
+    <control>
+      <description>plug value line 7</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>450</posY>
+      <label>RadioTime</label>
+    </control>
+    <control>
+      <description>plug value line 7</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>450</posY>
+      <label>Setings</label>
+    </control> 
+    
+     <control>
+      <description>plug value line 8</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>470</posY>
+      <label>Shoutcast Directory</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>840</posX>
-      <posY>390</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>470</posY>
+      <label>Showtimes</label>
+    </control>
+    <control>
+      <description>plug value line 8</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>470</posY>
+      <label>Sudoku</label>
+    </control>
+    <control>
+      <description>plug value line 8</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>470</posY>
+      <label>System Info (MP Dashboard)</label>
+    </control> 
+
+     <control>
+      <description>plug value line 9</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>490</posY>
+      <label>Trailers</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>840</posX>
-      <posY>420</posY>
-      <label>*</label>
+      <posX>480</posX>
+      <posY>490</posY>
+      <label>TV</label>
+    </control>
+    <control>
+      <description>plug value line 9</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>700</posX>
+      <posY>490</posY>
+      <label>TV Series</label>
+    </control>
+    <control>
+      <description>plug value line 9</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>920</posX>
+      <posY>490</posY>
+      <label>My Vidoes</label>
+    </control> 
+
+     <control>
+      <description>plug value line 10</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>510</posY>
+      <label>Weather</label>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>840</posX>
-      <posY>450</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 11</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>480</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 11</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
+      <posX>480</posX>
       <posY>510</posY>
-      <label>*</label>
+      <label>Wikipedia</label>
     </control>
     <control>
-      <description>plug value line 2</description>
+      <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>840</posX>
-      <posY>540</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>570</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>840</posX>
-      <posY>600</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>360</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>390</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>420</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>450</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>480</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
+      <posX>700</posX>
       <posY>510</posY>
-      <label>*</label>
+      <label>Worldclock</label>
     </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>540</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>plug value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>1070</posX>
-      <posY>570</posY>
-      <label>*</label>
-    </control>
+
+
+    <!-- History Link -->
     <control>
       <description>hist txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>660</posY>
+      <posX>250</posX>
+      <posY>640</posY>
       <label>History:</label>
       <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>desc value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>660</posY>
-      <label>*</label>
+      <posX>260</posX>
+      <posY>640</posY>
+      <label>*** Add a link here ***</label>
     </control>
     
     
