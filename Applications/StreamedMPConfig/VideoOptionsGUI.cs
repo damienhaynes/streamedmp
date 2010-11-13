@@ -16,13 +16,14 @@ namespace StreamedMPConfig
       VideoMinOSD = 2
     }
 
-    [SkinControl((int)GUIControls.VideoMinOSD)]
-    protected GUIToggleButtonControl cmc_MinOSD = null;    
+    [SkinControl((int)GUIControls.VideoMinOSD)] protected GUIToggleButtonControl cmc_MinOSD = null;    
 
     #endregion
 
     #region Public Properties
+
     public static bool FullVideoOSD { get; set; }
+
     #endregion
 
     #region Public methods
