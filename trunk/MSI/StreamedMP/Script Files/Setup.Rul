@@ -58,6 +58,14 @@
 #define NOWPLAYING_WINDOW_NOFADE                    "Main\\nowPlayingWindowNoFade"
 #define NOWPLAYING_WINDOW_NOMASK                    "Main\\nowPlayingWindowNoMask"
 
+#define TVLOGOS_AUSTRALIA							"TVLogos\\Australia"
+#define TVLOGOS_GERMANY_MODERN						"TVLogos\\Germany\\Modern"
+#define TVLOGOS_GERMANY_CLASSIC						"TVLogos\\Germany\\Classical"
+#define TVLOGOS_GERMANY_TRANSPARENT					"TVLogos\\Germany\\Transparent"
+#define TVLOGOS_UK									"TVLogos\\UK"
+#define TVLOGOS_CANADA								"TVLogos\\Canada"
+
+
 // Skin XML defines
 #define STREAMEDMP_SKIN_TVSERIES					INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES				INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
@@ -237,6 +245,8 @@ prototype VOID		CheckXMLSectionsExist();
 prototype NUMBER	CheckStringExists(STRING, STRING);
 prototype VOID		ApplyCheckSum();  
 prototype VOID		GenerateBasicHome();
+prototype VOID		ReadTVLogoDefaults();
+prototype VOID		SaveTVLogoSelections();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -285,7 +295,14 @@ STRING g_sTextColor;
 STRING g_sText2Color;
 STRING g_sText3Color;
 STRING g_sWatchedColor;
-STRING g_sRemoteColor;               
+STRING g_sRemoteColor;
+
+STRING g_sTVLogosAustralia;
+STRING g_sTVLogosGermanyClassical;
+STRING g_sTVLogosGermanyModern;
+STRING g_sTVLogosGermanyTransparent;
+STRING g_sTVLogosCanada;
+STRING g_sTVLogosUK;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -472,8 +489,8 @@ begin
 	endif;
 	if svValue = "1" then
 		g_bEnableRandomFanartInMyTV = TRUE;
-	endif; 
-
+	endif;        
+    
 	// Read NowPlaying Style default
 	if GetMPXMLProperty(sFile, "MusicConfig", "nowPlayingStyle", g_sNowPlayingChoice) < 0 then
 		g_sNowPlayingChoice = "0";
@@ -632,7 +649,7 @@ function OnFirstUIBefore()
     NUMBER nResult, nSetupType, nvSize, nUser;
     STRING szTitle, szMsg, szQuestion, svName, svCompany, szFile;
     STRING svMPVersion, svValue;    
-	BOOL bCustom;	
+	BOOL bCustom, bTVLogosRead;	
 begin
 
 	SHELL_OBJECT_FOLDER = @PRODUCT_NAME;	   
@@ -658,11 +675,20 @@ Dlg_SdWelcome:
 Dlg_SdFeatureTree: 
     szTitle    = "";
     szMsg      = "";
+    
+    // Read TV Logo defaults
+    if bTVLogosRead = FALSE then
+    	ReadTVLogoDefaults();
+    endif;
+    bTVLogosRead = TRUE;
+    
     if (nSetupType = TYPICAL) then
 		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
 		if (nResult = BACK) goto Dlg_SdWelcome;  
     endif;
-     
+    // Save TV Logo Selections
+    SaveTVLogoSelections();
+         
 Dlg_SelectTVSeries:
 	nResult = ShowSelectTVSeries(FALSE);
 	if (nResult = BACK) goto Dlg_SdFeatureTree;  
@@ -764,6 +790,7 @@ Dlg_SdFeatureTree:
 		szMsg = "";		
 		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
 		if (nResult = BACK) goto Dlg_Start;
+		SaveTVLogoSelections();
 	endif;
 
 
@@ -1911,7 +1938,7 @@ begin
 end;
 
 function VOID CheckXMLSectionsExist()
-	STRING TVSeriesSection,  MovingPicturesSection, MusicSection, TVSection, MiscSection;
+	STRING TVSeriesSection,  MovingPicturesSection, MusicSection, TVSection, MiscSection, InstallSection;
 	STRING SearchStr, sFile;
 begin
     
@@ -1986,8 +2013,24 @@ begin
 	SearchStr = "<section name=\"MiscConfig\">";
     if CheckStringExists(sFile, SearchStr) = 0 then
     	ReplaceLineInFile(sFile, "</profile>", MiscSection);
-    endif;
-
+    endif; 
+    
+    // Install Features
+    InstallSection = 		"\t<section name=\"InstallFeatures\">"+
+							"\n\t\t<entry name=\"tvLogosAustralia\">0</entry>"+							
+							"\n\t\t<entry name=\"tvLogosGermanyClassical\">0</entry>"+
+							"\n\t\t<entry name=\"tvLogosGermanyModern\">0</entry>"+
+							"\n\t\t<entry name=\"tvLogosGermanyTransparent\">0</entry>"+
+							"\n\t\t<entry name=\"tvLogosCanada\">0</entry>"+
+							"\n\t\t<entry name=\"tvLogosUK\">0</entry>"+							
+							"\n\t</section>"+
+							"\n</profile>";
+							
+	SearchStr = "<section name=\"InstallFeatures\">";
+    if CheckStringExists(sFile, SearchStr) = 0 then
+    	ReplaceLineInFile(sFile, "</profile>", InstallSection);
+    endif; 
+    
 end;
 
 function VOID ApplyCheckSum()
@@ -2046,6 +2089,13 @@ begin
 	SetMPXMLProperty(sFile, "MiscConfig", "miscTextColor3", g_sText3Color);
 	SetMPXMLProperty(sFile, "MiscConfig", "miscWatchedColor", g_sWatchedColor);
 	SetMPXMLProperty(sFile, "MiscConfig", "miscRemoteColor", g_sRemoteColor);
+	
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosAustralia", g_sTVLogosAustralia);
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyClassical", g_sTVLogosGermanyClassical);
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyModern", g_sTVLogosGermanyModern);
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyTransparent", g_sTVLogosGermanyTransparent);
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosCanada", g_sTVLogosCanada);
+	SetMPXMLProperty(sFile, "InstallFeatures", "tvLogosUK", g_sTVLogosUK);
 	
 	// Apply Configuration
 		                                      
@@ -3054,4 +3104,82 @@ begin
 	if (Is(FILE_EXISTS, szFile)) then
 		LaunchAppAndWait(szFile, "/regenerateonly", TRUE);
 	endif;	
+end;        
+
+function VOID ReadTVLogoDefaults()
+	STRING sFile,svValue;
+begin    
+	sFile = g_sConfigDir^"StreamedMPConfig.xml";
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosAustralia", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_AUSTRALIA, TRUE );	
+		endif;
+	endif;
+	
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyClassical", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_GERMANY_CLASSIC, TRUE );	
+		endif;
+	endif;	
+	
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyModern", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_GERMANY_MODERN, TRUE );	
+		endif;
+	endif;	
+	
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosGermanyTransparent", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_GERMANY_TRANSPARENT, TRUE );	
+		endif;
+	endif;
+	
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosCanada", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_CANADA, TRUE );	
+		endif;
+	endif;
+	
+	if GetMPXMLProperty(sFile, "InstallFeatures", "tvLogosUK", svValue) = 0 then
+		if svValue = "1" then
+			FeatureSelectItem ( MEDIA, TVLOGOS_UK, TRUE );	
+		endif;
+	endif;	
+end;
+
+function VOID SaveTVLogoSelections()
+
+begin
+
+	g_sTVLogosAustralia = "0";
+	g_sTVLogosGermanyClassical = "0";
+	g_sTVLogosGermanyModern = "0";
+	g_sTVLogosGermanyTransparent = "0";
+	g_sTVLogosCanada = "0";
+	g_sTVLogosUK = "0";
+
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_AUSTRALIA) then
+    	g_sTVLogosAustralia = "1";
+    endif;
+    
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_GERMANY_CLASSIC) then
+    	g_sTVLogosGermanyClassical = "1";
+    endif; 
+    
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_GERMANY_MODERN) then
+    	g_sTVLogosGermanyModern = "1";
+    endif;
+    
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_GERMANY_TRANSPARENT) then
+    	g_sTVLogosGermanyTransparent = "1";
+    endif;
+    
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_CANADA) then
+    	g_sTVLogosCanada = "1";
+    endif;
+    
+    if FeatureIsItemSelected( MEDIA, TVLOGOS_UK) then
+    	g_sTVLogosUK = "1";
+    endif;    
+    
 end;
