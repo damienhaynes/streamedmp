@@ -86,30 +86,49 @@
     <control>
       <description>vers value</description>
       <type>label</type>
-      <id>1</id>
+      <id>3</id>
       <posX>260</posX>
       <posY>125</posY>
       <label>-</label>
     </control> 
     <control>
-      <description>res txt</description>
+      <description>Resolution text</description>
       <type>label</type>
       <id>1</id>
       <posX>250</posX>
       <posY>150</posY>
-      <label>Resolution:</label>
+      <label>Design Resolution:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
     </control>
     <control>
-      <description>res value</description>
+      <description>Resolution value</description>
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
       <posY>150</posY>
       <label>16:9 (1280x720)</label>
     </control>
-    <!-- Description -->    
+    <control>
+      <description>Actual Resolution text</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>550</posX>
+      <posY>150</posY>
+      <label>Physical:</label>
+      <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
+    </control>
+    <control>
+      <description>Resolution value</description>
+      <type>label</type>
+      <id>4</id>
+      <posX>560</posX>
+      <posY>150</posY>
+      <label>-</label>
+    </control>    
+    
+    <!-- Skin Description -->
     <control>
       <description>desc txt</description>
       <type>label</type>
@@ -121,14 +140,14 @@
       <align>right</align>
     </control>
     <control>
-      <description>desc value line 1</description>
+      <description>Skin Description</description>
       <type>textbox</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>190</posY>
+      <posY>187</posY>
       <width>950</width>
       <height>170</height>
-      <font>mediastream10</font>
+      <font>mediastream11</font>
       <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.</label>
     </control>
     <!-- Supported Plugins -->
@@ -314,7 +333,7 @@
       <id>1</id>
       <posX>260</posX>
       <posY>430</posY>
-      <label>MP Music Vidoes</label>
+      <label>MP Music Videos</label>
     </control>
     <control>
       <description>plug value line 6</description>
@@ -437,7 +456,7 @@
       <id>1</id>
       <posX>920</posX>
       <posY>490</posY>
-      <label>My Vidoes</label>
+      <label>My Videos</label>
     </control> 
 
      <control>

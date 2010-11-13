@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using MediaPortal.GUI.Library;
+using System.Windows.Forms;
+
 
 
 namespace StreamedMPConfig
@@ -13,17 +15,21 @@ namespace StreamedMPConfig
 
     private enum GUIControls
     {
-      exitScreen  = 2
+      exitScreen  = 2,
+      versionLabel = 3,
+      actualScreenRes = 4
     }
 
-    [SkinControl((int)GUIControls.exitScreen)]
-    protected GUIButtonControl skinInfo_exit = null;
+    [SkinControl((int)GUIControls.exitScreen)] protected GUIButtonControl skinInfo_exit = null;
+    [SkinControl((int)GUIControls.versionLabel)] protected GUILabelControl version_label = null;
+    [SkinControl((int)GUIControls.actualScreenRes)] protected GUILabelControl screen_res = null;
+
 
     #endregion
 
     #region Public Properties
 
-    public static bool FullVideoOSD { get; set; }
+
 
     #endregion
 
@@ -33,10 +39,6 @@ namespace StreamedMPConfig
     {
     }
 
-    public static void SetProperties()
-    {
-
-    }
 
     #endregion
 
@@ -60,7 +62,8 @@ namespace StreamedMPConfig
 
     protected override void OnPageLoad()
     {
-
+      GUILabelControl.SetControlLabel(GetID, (int)GUIControls.versionLabel, updateCheck.SkinVersion().ToString());
+      GUILabelControl.SetControlLabel(GetID, (int)GUIControls.actualScreenRes, "(" + Screen.PrimaryScreen.Bounds.Width.ToString() + "x" + Screen.PrimaryScreen.Bounds.Height.ToString() + ")");
     }
 
     protected override void OnPageDestroy(int new_windowId)
