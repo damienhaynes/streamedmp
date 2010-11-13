@@ -52,8 +52,7 @@ namespace StreamedMPConfig
     void installUpdateGUI()
     {
       SkinUpdateGUI skinUpdate = new SkinUpdateGUI();
-
-      
+     
       destinationPath = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(optionDownloadURL) + DateTime.Now.Ticks.ToString());
 
       GUIDialogProgress progressDialog = (GUIDialogProgress)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_PROGRESS);
@@ -75,6 +74,8 @@ namespace StreamedMPConfig
         optionDownloadURL = thePatch.patchURL;
         optionDownloadPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(thePatch.patchURL));
         progressDialog.SetLine(1, string.Format(Translation.DownloadingPatch, thePatch.patchVersion.ToString()));
+        smcLog.WriteLog("Starting Patch Installation of Patch : " + optionDownloadURL + "....Download", LogLevel.Debug);
+
         using (WebClient wcDownload = new WebClient())
         {
           try
@@ -116,7 +117,7 @@ namespace StreamedMPConfig
           }
           finally
           {
-            smcLog.WriteLog("Patch Download Complete", LogLevel.Error);
+            smcLog.WriteLog("Patch Download Complete", LogLevel.Info);
             webResponse.Close();
             strResponse.Close();
             strLocal.Close();
