@@ -1,21 +1,38 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-  <id>88889</id>
+  <id>196208</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:Indigo</define>
-  <define>#header.image:-</define>
-  <define>#itemcount:-</define>
-  <define>#header.hover:hover_skin info.png</define>
-  <define>#selecteditem:Release Information</define>
+  <define>#header.label:#StreamedMP.SkinSettings - Video</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9999</define>
   <controls>
-    <import>common.window.xml</import>
+    <!-- <import>common.settings.xml</import> -->
     <import>common.time.xml</import>
+    <import>streamedmp.version.xml</import>
+      <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>50</posX>
+      <posY>80</posY>
+      <width>1180</width>
+      <height>600</height>
+      <texture>subsearchbg.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>60</posX>
+      <posY>186</posY>
+      <width>1160</width>
+      <height>480</height>
+      <texture>black.png</texture>
+    </control>  
+    
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
       <posX>20</posX>
       <posY>80</posY>
       <layout>StackLayout</layout>
@@ -24,110 +41,102 @@
         <description>Back</description>
         <id>2</id>
         <action>10</action>
-        <label>712</label>
+        <label>Exit Button</label>
       </control>
     </control>
+    
     <control>
       <description>auth txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>80</posY>
+      <posX>250</posX>
+      <posY>100</posY>
       <label>Author:</label>
       <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>auth value</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>80</posY>
-      <label>*</label>
+      <posX>260</posX>
+      <posY>100</posY>
+      <label>StreamedMP Team</label>
     </control>
+    
     <control>
       <description>vers txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>110</posY>
+      <posX>250</posX>
+      <posY>125</posY>
       <label>Version:</label>
       <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>vers value</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>110</posY>
+      <posX>260</posX>
+      <posY>125</posY>
       <label>-</label>
     </control>
+    
     <control>
-      <description>vers txt</description>
+      <description>res txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>140</posY>
+      <posX>250</posX>
+      <posY>150</posY>
       <label>Resolution:</label>
       <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
     </control>
     <control>
-      <description>vers value</description>
+      <description>res value</description>
       <type>label</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>140</posY>
+      <posX>260</posX>
+      <posY>150</posY>
       <label>16:9 (1280x720)</label>
     </control>
+    
     <control>
       <description>desc txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>210</posY>
+      <posX>250</posX>
+      <posY>190</posY>
       <label>Description:</label>
       <textcolor>ffa9d0f7</textcolor>
+      <align>right</align>
     </control>
     <control>
       <description>desc value line 1</description>
-      <type>label</type>
+      <type>textbox</type>
       <id>1</id>
-      <posX>470</posX>
-      <posY>210</posY>
-      <label>*</label>
+      <posX>260</posX>
+      <posY>190</posY>
+      <width>950</width>
+      <height>170</height>
+      <font>mediastream10</font>
+      <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.
+</label>
     </control>
-    <control>
-      <description>desc value line 2</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>240</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>desc value line 3</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>270</posY>
-      <label>*</label>
-    </control>
-    <control>
-      <description>desc value line 4</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>470</posX>
-      <posY>300</posY>
-      <label>*</label>
-    </control>
+    
+
     <control>
       <description>plug txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>360</posY>
+      <posX>250</posX>
+      <posY>330</posY>
       <label>Supported Plugins:</label>
       <textcolor>ffa9d0f7</textcolor>
+			<align>right</align>
     </control>
+    
     <control>
       <description>plug value line 1</description>
       <type>label</type>
@@ -353,6 +362,10 @@
       <posY>660</posY>
       <label>*</label>
     </control>
-  </controls>
+    
+    
+    
+    
+   </controls>
 </window>
-<!--Checksum:82c6be69a2e15f4f85dc027f57b0e4c0-->
+<!--Checksum:1ffc656d68615b27b641dbc0e866d14c-->

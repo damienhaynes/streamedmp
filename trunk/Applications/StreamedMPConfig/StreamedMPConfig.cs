@@ -88,7 +88,8 @@ namespace StreamedMPConfig
       SkinUpdate = 43,        // Skin Settings Menu
       TVSeriesConfig = 44,    // TVSeries Configuration
       MovPicsConfig = 45,     // MovingPictures Configuration
-      TVConfig = 46           // TV Configuration
+      TVConfig = 46,           // TV Configuration
+      SkinInfoScreen = 47     // Skin Information Screen
     }
 
     public enum SMPScreenID
@@ -100,7 +101,8 @@ namespace StreamedMPConfig
       SMPSkinUpdate = 196204,
       SMPTVSeriesConfig = 196205,
       SMPMovPicsConfig = 196206,
-      SMPTVConfig = 196207
+      SMPTVConfig = 196207,
+      SMPSkinInfo = 196208
     }
 
     private enum MediaPortalWindows
@@ -124,7 +126,8 @@ namespace StreamedMPConfig
     protected GUIButtonControl btMovPicsConfig = null;
     [SkinControl((int)SkinControlIDs.TVConfig)]
     protected GUIButtonControl btTVConfig = null;
-
+    [SkinControl((int)SkinControlIDs.SkinInfoScreen)]
+    protected GUIButtonControl btSkinInfo = null;
     #endregion
 
     #region Base overrides
@@ -166,6 +169,7 @@ namespace StreamedMPConfig
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.TVSeriesConfig, Translation.TVSeriesMenu);
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.MovPicsConfig, Translation.MovingPicturesMenu);
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.TVConfig, Translation.TVMenu);
+      GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.SkinInfoScreen, Translation.SkinInfoText);
     }
 
     protected override void OnPageDestroy(int new_windowId)
@@ -210,6 +214,12 @@ namespace StreamedMPConfig
       {
         GUIWindowManager.ActivateWindow((int)SMPScreenID.SMPSkinUpdate);
       }
+
+      if (control == btSkinInfo)
+      {
+        GUIWindowManager.ActivateWindow((int)SMPScreenID.SMPSkinInfo);
+      }
+
       #endregion
 
       // Pass it on

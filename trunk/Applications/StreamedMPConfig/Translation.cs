@@ -266,6 +266,7 @@ namespace StreamedMPConfig
     public static string FilterWatchedRecents = "Filter Watched in Recently Added";
     public static string RecordedOn = "Recorded On";
     public static string Votes = "votes";
+    public static string SkinInfoText = "Skin Information";
     #endregion
   }
 }
