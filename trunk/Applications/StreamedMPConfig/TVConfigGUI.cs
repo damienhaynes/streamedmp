@@ -11,7 +11,8 @@ namespace StreamedMPConfig
     private enum GUIControls
     {
       TVGuideSize = 2,
-      TVMiniGuideSize= 3
+      TVMiniGuideSize = 3,
+      TVRandomTVSeresFanart = 4
     }
 
     public enum TVGuideRows
@@ -37,6 +38,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.TVMiniGuideSize)]
     protected GUIButtonControl btnTVMiniGuideSize = null;
+
+    [SkinControl((int)GUIControls.TVRandomTVSeresFanart)]
+    protected GUIToggleButtonControl btnTVRandomTVSeresFanart = null;
     #endregion
 
     #region Constructor
@@ -46,6 +50,7 @@ namespace StreamedMPConfig
     #region Public Properties
     public static TVGuideRows TVGuideRowSize { get; set; }
     public static TVMiniGuideRows TVMiniGuideRowSize { get; set; }
+    public static bool EnableRandomTVSeriesFanart { get; set; }
     #endregion
 
     #region Private Methods
@@ -54,6 +59,9 @@ namespace StreamedMPConfig
       // Set Label for Current TVGuide\TVMiniGuide Size
       btnTVGuideSize.Label = GetTVGuideSizeName(TVGuideRowSize);
       btnTVMiniGuideSize.Label = GetTVMiniGuideSizeName(TVMiniGuideRowSize);
+      
+      btnTVRandomTVSeresFanart.Label = Translation.EnableRandomTVSeriesFanartInMyTV;
+      btnTVRandomTVSeresFanart.Selected = EnableRandomTVSeriesFanart;
     }
 
     private void GetControlStates() { }
@@ -174,6 +182,8 @@ namespace StreamedMPConfig
     /// </summary>
     private void ApplyConfigurationChanges()
     {
+      bool requiresRestart = false;
+
       // TVGuide Imports exist in mytvguide.xml and dialogTvGuide.xml
       string skinFile = GUIGraphicsContext.Skin + @"\mytvguide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
@@ -188,6 +198,59 @@ namespace StreamedMPConfig
       // TVMiniGuide Imports exist in TVMiniGuide.xml
       skinFile = skinFile = GUIGraphicsContext.Skin + @"\TVMiniGuide.xml";
       Helper.SetSkinImport(skinFile, "TVMiniGuide", string.Format("TVMiniGuide.{0}Rows.xml", (int)TVMiniGuideRowSize));
+
+      #region Random TVSeries Fanart
+      // Enable Random TVSeries Fanart in MyTV/4TR xmls
+      if (EnableRandomTVSeriesFanart != btnTVRandomTVSeresFanart.Selected)
+      {
+        // Fanart Handler reads xmls for windows at startup
+        // so need to restart for changes to take affect
+        requiresRestart = true;
+        
+        EnableRandomTVSeriesFanart = btnTVRandomTVSeresFanart.Selected;
+
+        string define = "#useRandomTVSeriesFanart";
+        string value = EnableRandomTVSeriesFanart ? "Yes" : "No";
+      
+        skinFile = GUIGraphicsContext.Skin + @"\4TR_Active.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\4TR_ProgramInfo.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\4TR_RecordedTv.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuideSearch.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\4TR_Upcoming.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvprogram.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvRecordedInfo.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvrecordedtv.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerServer.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerserverSearch.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+
+        skinFile = GUIGraphicsContext.Skin + @"\mytvsearch.xml";
+        Helper.SetSkinDefine(skinFile, define, value);
+      }
+      #endregion
+
+      if (requiresRestart)
+      {
+        StreamedMPConfig.ShowRestartMessage(GetID, Translation.TVMenu);
+      }
     }
     #endregion
 

@@ -59,10 +59,7 @@ namespace StreamedMPConfig
 
     /// <summary>
     /// Sets a new path for a skin files <import></import>
-    /// </summary>
-    /// <param name="file"></param>
-    /// <param name="importname"></param>
-    /// <param name="value"></param>
+    /// </summary>   
     public static void SetSkinImport(string file, string importtag, string value)
     {
       CheckSum checkSum = new CheckSum();
@@ -78,6 +75,30 @@ namespace StreamedMPConfig
 
       smcLog.WriteLog(string.Format("Setting skin import '<import tag='{0}'>{1}</import>' in '{2}'", importtag, value, file), LogLevel.Info);
       node.InnerText = value;
+      doc.Save(file);
+      checkSum.Replace(file);
+    }
+
+    /// <summary>
+    /// Set Define in Skin
+    /// </summary>
+    public static void SetSkinDefine(string file, string define, string value)
+    {
+      CheckSum checkSum = new CheckSum();
+      XmlDocument doc = LoadXMLDocument(file);
+      if (doc == null) return;
+
+      string path = "/window/define";
+      XmlNodeList nodes = doc.SelectNodes(path);
+      if (nodes == null)
+        return;
+
+      foreach (XmlNode node in nodes)
+      {
+        if (node.InnerText.StartsWith(define))
+          node.InnerText = string.Format("{0}:{1}", define, value);
+      }
+
       doc.Save(file);
       checkSum.Replace(file);
     }
