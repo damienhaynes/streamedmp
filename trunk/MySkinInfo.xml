@@ -9,6 +9,15 @@
   <define>#defaultcontrol.onright:9999</define>
   <controls>
     <!-- <import>common.settings.xml</import> -->
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>    
     <import>common.time.xml</import>
     <import>streamedmp.version.xml</import>
       <control>
@@ -27,7 +36,7 @@
       <posY>186</posY>
       <width>1160</width>
       <height>480</height>
-      <texture>black.png</texture>
+      <texture>xblack.png</texture>
     </control>     
     <control>
       <type>group</type>
@@ -463,7 +472,7 @@
       <type>label</type>
       <id>1</id>
       <posX>250</posX>
-      <posY>640</posY>
+      <posY>590</posY>
       <label>History:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -473,7 +482,7 @@
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>640</posY>
+      <posY>590</posY>
       <label>*** Add a link here ***</label>
     </control>
     
