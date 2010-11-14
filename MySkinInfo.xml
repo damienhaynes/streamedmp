@@ -46,8 +46,14 @@
   <define>#plugin37:TV SERIES</define>
   <define>#plugin38:WIKIPEDIA</define>
   <define>#plugin39:WORLDCLOCK</define>
-
- 
+  <define>#plugin40:STOCKS AND INDICES</define>
+  <define>#plugin41:FILE EXPLORER</define>
+  <define>#plugin42:I.F.C</define>
+  <define>#plugin43:MY TETRIS</define>
+  <define>#plugin44:MY VIDEOS</define>
+  <define>#plugin45:SLEEP CONTROL</define>
+  <define>#plugin46:SUBCENTRAL</define>
+  <define>#plugin47:WEBBROWSER</define>  
   <controls>
     <!-- <import>common.settings.xml</import> -->
     <control>
@@ -61,7 +67,7 @@
     </control>    
     <import>common.time.xml</import>
     <import>streamedmp.version.xml</import>
-      <control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>50</posX>
@@ -505,36 +511,32 @@
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>520</posY>
-      <label>#plugin37</label>
-      <visible>string.equals(#plugin37,)</visible>
+      <posY>510</posY>
+      <label>#plugin37</label>      
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
       <posX>500</posX>
-      <posY>520</posY>
-      <label>#plugin38</label>
-      <visible>string.equals(#plugin38,)</visible>
+      <posY>510</posY>
+      <label>#plugin38</label>      
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
       <posX>720</posX>
-      <posY>520</posY>
-      <label>#plugin39</label>
-      <visible>string.equals(#plugin39,)</visible>
+      <posY>510</posY>
+      <label>#plugin39</label>      
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
       <posX>940</posX>
-      <posY>520</posY>
-      <label>#plugin40</label>
-      <visible>string.equals(#plugin40,)</visible>
+      <posY>510</posY>
+	  <label>#plugin40</label>
     </control>
 
     <control>
@@ -542,36 +544,32 @@
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>540</posY>
-      <label>#plugin41</label>
-      <visible>string.equals(#plugin41,)</visible>
+      <posY>530</posY>
+      <label>#plugin41</label>      
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
       <posX>500</posX>
-      <posY>540</posY>
-      <label>#plugin42</label>
-      <visible>string.equals(#plugin42,)</visible>
+      <posY>530</posY>
+      <label>#plugin42</label>      
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
       <posX>720</posX>
-      <posY>540</posY>
-      <label>#plugin43</label>
-      <visible>string.equals(#plugin43,)</visible>
+      <posY>530</posY>
+      <label>#plugin43</label>      
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
       <posX>940</posX>
-      <posY>540</posY>
-      <label>#plugin44</label>
-      <visible>string.equals(#plugin44,)</visible>
+      <posY>530</posY>
+      <label>#plugin44</label>      
     </control>
 
     <control>
@@ -579,34 +577,31 @@
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>540</posY>
-      <label>#plugin45</label>
-      <visible>string.equals(#plugin45,)</visible>
+      <posY>550</posY>
+      <label>#plugin45</label>      
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
       <posX>500</posX>
-      <posY>540</posY>
-      <label>#plugin46</label>
-      <visible>string.equals(#plugin46,)</visible>
+      <posY>550</posY>
+      <label>#plugin46</label>      
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
       <posX>720</posX>
-      <posY>540</posY>
-      <label>#plugin47</label>
-      <visible>string.equals(#plugin47,)</visible>
+      <posY>550</posY>
+      <label>#plugin47</label>      
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
       <posX>940</posX>
-      <posY>540</posY>
+      <posY>550</posY>
       <label>#plugin48</label>
       <visible>string.equals(#plugin48,)</visible>
     </control>
