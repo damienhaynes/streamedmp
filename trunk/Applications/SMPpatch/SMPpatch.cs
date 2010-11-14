@@ -50,7 +50,7 @@ namespace SMPpatch
       foreach (string arg in Environment.GetCommandLineArgs())
       {
         // Run unattended - This will run the program minimised and exit
-        if (arg.ToLower().Contains("unattended"))
+        if (arg.ToLower().Contains("unattended") || arg.ToLower().StartsWith("/s"))
         {
           unattendedInatall = true;
           btInstallPatch.Enabled = false;
