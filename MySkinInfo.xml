@@ -70,21 +70,21 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>50</posX>
+      <posX>30</posX>
       <posY>80</posY>
-      <width>1180</width>
+      <width>1220</width>
       <height>600</height>
       <texture>subsearchbg.png</texture>
-    </control>
+    </control>    
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>60</posX>
-      <posY>186</posY>
-      <width>1160</width>
-      <height>500</height>
-      <texture>xblack.png</texture>
-    </control>     
+      <posX>940</posX>
+      <posY>85</posY>
+      <width>300</width>
+      <height>75</height>
+      <texture>streamedmp-logo.png</texture>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
@@ -106,7 +106,7 @@
       <description>auth txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
+      <posX>240</posX>
       <posY>100</posY>
       <label>Author:</label>
       <textcolor>ffa9d0f7</textcolor>
@@ -116,7 +116,7 @@
       <description>auth value</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>100</posY>
       <label>StreamedMP Team</label>
     </control> 
@@ -124,7 +124,7 @@
       <description>vers txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
+      <posX>240</posX>
       <posY>125</posY>
       <label>Version:</label>
       <textcolor>ffa9d0f7</textcolor>
@@ -134,7 +134,7 @@
       <description>vers value</description>
       <type>label</type>
       <id>3</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>125</posY>
       <label>-</label>
     </control> 
@@ -142,7 +142,7 @@
       <description>Resolution text</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
+      <posX>240</posX>
       <posY>150</posY>
       <label>Design Resolution:</label>
       <textcolor>ffa9d0f7</textcolor>
@@ -152,9 +152,9 @@
       <description>Resolution value</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>150</posY>
-      <label>16:9 (1280x720)</label>
+      <label>[16:9]  (1280x720)</label>
     </control>
     <control>
       <description>Actual Resolution text</description>
@@ -180,29 +180,73 @@
       <description>desc txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
+      <posX>240</posX>
       <posY>190</posY>
       <label>Description:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
     </control>
     <control>
-      <description>Skin Description</description>
-      <type>textbox</type>
-      <id>1</id>
-      <posX>260</posX>
+      <description>Skin Description - Line 1</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
       <posY>187</posY>
-      <width>950</width>
+      <width>970</width>
       <height>170</height>
       <font>mediastream11</font>
-      <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.</label>
+      <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC</label>
     </control>
+    <control>
+      <description>Skin Description - Line 2</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>207</posY>
+      <width>970</width>
+      <height>170</height>
+      <font>mediastream11</font>
+      <label>Application MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that</label>
+    </control>
+    <control>
+      <description>Skin Description - Line 3</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>227</posY>
+      <width>970</width>
+      <height>170</height>
+      <font>mediastream11</font>
+      <label>will keep the fanart fans happy. This skin has also been designed with ease of use in mind, with a custom menu generator</label>
+    </control>    
+    <control>
+      <description>Skin Description - Line 4</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>247</posY>
+      <width>970</width>
+      <height>170</height>
+      <font>mediastream11</font>
+      <label>included to make creating menus suited to your setup extremely easy. All of this is wrapped up in a nice installer that installs</label>
+    </control>    
+    <control>
+      <description>Skin Description - Line 5</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>267</posY>
+      <width>960</width>
+      <height>170</height>
+      <font>mediastream11</font>
+      <label>the latest stable version of several plugins including the the two very popular plugins MP TV-Series and Moving-Pictures.</label>
+    </control>      
     <!-- Supported Plugins -->
     <control>
       <description>plug txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
+      <posX>240</posX>
       <posY>330</posY>
       <label>Supported Plugins:</label>
       <textcolor>ffa9d0f7</textcolor>
@@ -213,7 +257,7 @@
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>330</posY>
       <label>#plugin1</label>
     </control>
@@ -221,7 +265,7 @@
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>330</posY>
       <label>#plugin2</label>
     </control>
@@ -229,7 +273,7 @@
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>330</posY>
       <label>#plugin3</label>
     </control>
@@ -237,7 +281,7 @@
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>330</posY>
       <label>#plugin4</label>
     </control>
@@ -246,7 +290,7 @@
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>350</posY>
       <label>#plugin5</label>
     </control>
@@ -254,7 +298,7 @@
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>350</posY>
       <label>#plugin6</label>
     </control>
@@ -262,7 +306,7 @@
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>350</posY>
       <label>#plugin7</label>
     </control>
@@ -270,7 +314,7 @@
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>350</posY>
       <label>#plugin8</label>
     </control>  
@@ -279,7 +323,7 @@
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>370</posY>
       <label>#plugin9</label>
     </control>
@@ -287,7 +331,7 @@
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>370</posY>
       <label>#plugin10</label>
     </control>
@@ -295,7 +339,7 @@
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>370</posY>
       <label>#plugin11</label>
     </control>
@@ -303,7 +347,7 @@
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>370</posY>
       <label>#plugin12</label>
     </control>     
@@ -312,7 +356,7 @@
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>390</posY>
       <label>#plugin13</label>
     </control>
@@ -320,7 +364,7 @@
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>390</posY>
       <label>#plugin14</label>
     </control>
@@ -328,7 +372,7 @@
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>390</posY>
       <label>#plugin15</label>
     </control>
@@ -336,7 +380,7 @@
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>390</posY>
       <label>#plugin16</label>
     </control> 
@@ -345,7 +389,7 @@
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>410</posY>
       <label>#plugin17</label>
     </control>
@@ -353,7 +397,7 @@
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>410</posY>
       <label>#plugin18</label>
     </control>
@@ -361,7 +405,7 @@
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>410</posY>
       <label>#plugin19</label>
     </control>
@@ -369,7 +413,7 @@
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>410</posY>
       <label>#plugin20</label>
     </control> 
@@ -378,7 +422,7 @@
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>430</posY>
       <label>#plugin21</label>
     </control>
@@ -386,7 +430,7 @@
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>430</posY>
       <label>#plugin22</label>
     </control>
@@ -394,7 +438,7 @@
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>430</posY>
       <label>#plugin23</label>
     </control>
@@ -402,7 +446,7 @@
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>430</posY>
       <label>#plugin24</label>
     </control> 
@@ -411,7 +455,7 @@
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>450</posY>
       <label>#plugin25</label>
     </control>
@@ -419,7 +463,7 @@
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>450</posY>
       <label>#plugin26</label>
     </control>
@@ -427,7 +471,7 @@
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>450</posY>
       <label>#plugin27</label>
     </control>
@@ -435,7 +479,7 @@
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>450</posY>
       <label>#plugin28</label>
     </control> 
@@ -444,7 +488,7 @@
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>470</posY>
       <label>#plugin29</label>
     </control>
@@ -452,7 +496,7 @@
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>470</posY>
       <label>#plugin30</label>
     </control>
@@ -460,7 +504,7 @@
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>470</posY>
       <label>#plugin31</label>
     </control>
@@ -468,7 +512,7 @@
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>470</posY>
       <label>#plugin32</label>
     </control> 
@@ -477,7 +521,7 @@
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>490</posY>
       <label>#plugin33</label>
     </control>
@@ -485,7 +529,7 @@
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>490</posY>
       <label>#plugin34</label>
     </control>
@@ -493,7 +537,7 @@
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>490</posY>
       <label>#plugin35</label>
     </control>
@@ -501,7 +545,7 @@
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>490</posY>
       <label>#plugin36</label>
     </control> 
@@ -510,7 +554,7 @@
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>510</posY>
       <label>#plugin37</label>      
     </control>
@@ -518,7 +562,7 @@
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>510</posY>
       <label>#plugin38</label>      
     </control>
@@ -526,7 +570,7 @@
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>510</posY>
       <label>#plugin39</label>      
     </control>
@@ -534,7 +578,7 @@
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>510</posY>
 	  <label>#plugin40</label>
     </control>
@@ -543,7 +587,7 @@
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>530</posY>
       <label>#plugin41</label>      
     </control>
@@ -551,7 +595,7 @@
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>530</posY>
       <label>#plugin42</label>      
     </control>
@@ -559,7 +603,7 @@
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>530</posY>
       <label>#plugin43</label>      
     </control>
@@ -567,7 +611,7 @@
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>530</posY>
       <label>#plugin44</label>      
     </control>
@@ -576,7 +620,7 @@
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
+      <posX>250</posX>
       <posY>550</posY>
       <label>#plugin45</label>      
     </control>
@@ -584,7 +628,7 @@
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>500</posX>
+      <posX>490</posX>
       <posY>550</posY>
       <label>#plugin46</label>      
     </control>
@@ -592,7 +636,7 @@
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>720</posX>
+      <posX>710</posX>
       <posY>550</posY>
       <label>#plugin47</label>      
     </control>
@@ -600,7 +644,7 @@
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>940</posX>
+      <posX>930</posX>
       <posY>550</posY>
       <label>#plugin48</label>
       <visible>string.equals(#plugin48,)</visible>
