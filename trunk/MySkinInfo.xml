@@ -7,6 +7,47 @@
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9999</define>
+  <define>#plugin1:MYALARM</define>
+  <define>#plugin2:ARCSOFT PLAYER</define>
+  <define>#plugin3:DVD</define>
+  <define>#plugin4:MYEMULATORS</define>
+  <define>#plugin5:EXTENTIONS</define>
+  <define>#plugin6:FANART HANDLER</define>
+  <define>#plugin7:FOR THE RECORD</define>
+  <define>#plugin8:FRIZMANAGER</define>
+  <define>#plugin9:GLOBAL SEARCH</define>
+  <define>#plugin10:HTPC INFO</define>
+  <define>#plugin11:INFOSERVICE</define>
+  <define>#plugin12:LAST.FM</define>
+  <define>#plugin13:MYLYRICS</define>
+  <define>#plugin14:MYMUSIC</define>
+  <define>#plugin15:MYRADIO</define>
+  <define>#plugin16:MYTRAILERS</define>
+  <define>#plugin17:MYTV</define>
+  <define>#plugin18:MYWEATHER</define>
+  <define>#plugin19:MEDIASLAYER</define>
+  <define>#plugin20:MEDIATIP</define>
+  <define>#plugin21:MOVING PICTURES</define>
+  <define>#plugin22:MPNZB</define>
+  <define>#plugin23:MY BURNER</define>
+  <define>#plugin24:MP MUSIC VIDEOS</define>
+  <define>#plugin25:ONLINEVIDEOS</define>
+  <define>#plugin26:PANDORA MUSICBOX</define>
+  <define>#plugin27:PICTURES</define>
+  <define>#plugin28:PLUGINS</define>
+  <define>#plugin29:POWER CONTROL</define>
+  <define>#plugin30:UPDATE CONTROL</define>
+  <define>#plugin31:RADIOTIME</define>
+  <define>#plugin32:RSS/NEWS</define>
+  <define>#plugin33:SETTINGS</define>
+  <define>#plugin34:SHOWTIMES</define>
+  <define>#plugin35:SUDOKU</define>
+  <define>#plugin36:SYSINFO (MP DASHBOARD)</define>
+  <define>#plugin37:TV SERIES</define>
+  <define>#plugin38:WIKIPEDIA</define>
+  <define>#plugin39:WORLDCLOCK</define>
+
+ 
   <controls>
     <!-- <import>common.settings.xml</import> -->
     <control>
@@ -35,7 +76,7 @@
       <posX>60</posX>
       <posY>186</posY>
       <width>1160</width>
-      <height>480</height>
+      <height>500</height>
       <texture>xblack.png</texture>
     </control>     
     <control>
@@ -168,31 +209,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>330</posY>
-      <label>Alarm</label>
+      <label>#plugin1</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>330</posY>
-      <label>Arcsoft Player</label>
+      <label>#plugin2</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>330</posY>
-      <label>DVD</label>
+      <label>#plugin3</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>330</posY>
-      <label>Emulators</label>
+      <label>#plugin4</label>
     </control>
     
     <control>
@@ -201,31 +242,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>350</posY>
-      <label>Extensions</label>
+      <label>#plugin5</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>350</posY>
-      <label>Fanart Handler</label>
+      <label>#plugin6</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>350</posY>
-      <label>For The Record</label>
+      <label>#plugin7</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>350</posY>
-      <label>Global Search</label>
+      <label>#plugin8</label>
     </control>  
 
     <control>
@@ -234,31 +275,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>370</posY>
-      <label>InfoService</label>
+      <label>#plugin9</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>370</posY>
-      <label>Last.FM</label>
+      <label>#plugin10</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>370</posY>
-      <label>MyLyrics</label>
+      <label>#plugin11</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>370</posY>
-      <label>MediaSlayer</label>
+      <label>#plugin12</label>
     </control>     
 
     <control>
@@ -267,31 +308,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>390</posY>
-      <label>MediaTip</label>
+      <label>#plugin13</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>390</posY>
-      <label>Moving Pictures</label>
+      <label>#plugin14</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>390</posY>
-      <label>MPNZB</label>
+      <label>#plugin15</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>390</posY>
-      <label>Music</label>
+      <label>#plugin16</label>
     </control> 
  
      <control>
@@ -300,31 +341,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>410</posY>
-      <label>My Burner</label>
+      <label>#plugin17</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>410</posY>
-      <label>My Films</label>
+      <label>#plugin18</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>410</posY>
-      <label>My ScoreCentre</label>
+      <label>#plugin19</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>410</posY>
-      <label>My Torrents</label>
+      <label>#plugin20</label>
     </control> 
  
      <control>
@@ -333,31 +374,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>430</posY>
-      <label>MP Music Videos</label>
+      <label>#plugin21</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>430</posY>
-      <label>News</label>
+      <label>#plugin22</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>430</posY>
-      <label>OnlineVideos</label>
+      <label>#plugin23</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>430</posY>
-      <label>Pictures</label>
+      <label>#plugin24</label>
     </control> 
   
      <control>
@@ -366,31 +407,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>450</posY>
-      <label>Plugins</label>
+      <label>#plugin25</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>450</posY>
-      <label>Radio</label>
+      <label>#plugin26</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>450</posY>
-      <label>RadioTime</label>
+      <label>#plugin27</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>450</posY>
-      <label>Setings</label>
+      <label>#plugin28</label>
     </control> 
     
      <control>
@@ -399,31 +440,31 @@
       <id>1</id>
       <posX>260</posX>
       <posY>470</posY>
-      <label>Shoutcast Directory</label>
+      <label>#plugin29</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>470</posY>
-      <label>Showtimes</label>
+      <label>#plugin30</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>470</posY>
-      <label>Sudoku</label>
+      <label>#plugin31</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>470</posY>
-      <label>System Info (MP Dashboard)</label>
+      <label>#plugin32</label>
     </control> 
 
      <control>
@@ -432,59 +473,144 @@
       <id>1</id>
       <posX>260</posX>
       <posY>490</posY>
-      <label>Trailers</label>
+      <label>#plugin33</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
+      <posX>500</posX>
       <posY>490</posY>
-      <label>TV</label>
+      <label>#plugin34</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
+      <posX>720</posX>
       <posY>490</posY>
-      <label>TV Series</label>
+      <label>#plugin35</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>920</posX>
+      <posX>940</posX>
       <posY>490</posY>
-      <label>My Videos</label>
+      <label>#plugin36</label>
     </control> 
-
+    
      <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
-      <posY>510</posY>
-      <label>Weather</label>
+      <posY>520</posY>
+      <label>#plugin37</label>
+      <visible>string.equals(#plugin37,)</visible>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>480</posX>
-      <posY>510</posY>
-      <label>Wikipedia</label>
+      <posX>500</posX>
+      <posY>520</posY>
+      <label>#plugin38</label>
+      <visible>string.equals(#plugin38,)</visible>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>700</posX>
-      <posY>510</posY>
-      <label>Worldclock</label>
+      <posX>720</posX>
+      <posY>520</posY>
+      <label>#plugin39</label>
+      <visible>string.equals(#plugin39,)</visible>
+    </control>
+    <control>
+      <description>plug value line 10</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>940</posX>
+      <posY>520</posY>
+      <label>#plugin40</label>
+      <visible>string.equals(#plugin40,)</visible>
     </control>
 
+    <control>
+      <description>plug value line 11</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>540</posY>
+      <label>#plugin41</label>
+      <visible>string.equals(#plugin41,)</visible>
+    </control>
+    <control>
+      <description>plug value line 11</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>500</posX>
+      <posY>540</posY>
+      <label>#plugin42</label>
+      <visible>string.equals(#plugin42,)</visible>
+    </control>
+    <control>
+      <description>plug value line 11</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>720</posX>
+      <posY>540</posY>
+      <label>#plugin43</label>
+      <visible>string.equals(#plugin43,)</visible>
+    </control>
+    <control>
+      <description>plug value line 11</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>940</posX>
+      <posY>540</posY>
+      <label>#plugin44</label>
+      <visible>string.equals(#plugin44,)</visible>
+    </control>
 
+    <control>
+      <description>plug value line 12</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>260</posX>
+      <posY>540</posY>
+      <label>#plugin45</label>
+      <visible>string.equals(#plugin45,)</visible>
+    </control>
+    <control>
+      <description>plug value line 12</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>500</posX>
+      <posY>540</posY>
+      <label>#plugin46</label>
+      <visible>string.equals(#plugin46,)</visible>
+    </control>
+    <control>
+      <description>plug value line 12</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>720</posX>
+      <posY>540</posY>
+      <label>#plugin47</label>
+      <visible>string.equals(#plugin47,)</visible>
+    </control>
+    <control>
+      <description>plug value line 12</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>940</posX>
+      <posY>540</posY>
+      <label>#plugin48</label>
+      <visible>string.equals(#plugin48,)</visible>
+    </control>
+    
     <!-- History Link -->
     <control>
       <description>hist txt</description>
@@ -495,6 +621,7 @@
       <label>History:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
+      <visible>no</visible>
     </control>
     <control>
       <description>desc value line 1</description>
@@ -503,6 +630,7 @@
       <posX>260</posX>
       <posY>590</posY>
       <label>*** Add a link here ***</label>
+      <visible>no</visible>
     </control>
     
     
