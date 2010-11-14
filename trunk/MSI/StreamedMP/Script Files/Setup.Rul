@@ -323,18 +323,21 @@ begin
 	if g_bMajorUpgrade then
 		// check if version supports upgrades
 		if bUpgradeSupported then
-			szUpgradeMessage = "Setup is about to perform a Major Upgrade from: v" + szVersion + "\nThe previous installation will " +
-							   "be removed, Do you wish to continue?";
-			nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);
-			if (nResult != IDYES) then
-				abort;
-			endif; 
-		
+			if (MODE!=SILENTMODE) then
+				szUpgradeMessage = "Setup is about to perform a Major Upgrade from: v" + szVersion + "\nThe previous installation will " +
+								   "be removed, Do you wish to continue?";
+				nResult = SprintfBox( YES|NO|CANCEL,"Major Upgrade",szUpgradeMessage, INFORMATION);			
+				if (nResult != IDYES) then
+					abort;
+				endif;				
+			endif;
 		else
-		 	szUpgradeMessage = "Setup cannot perform an Upgrade from: v" + szVersion + "\nPlease uninstall from the Add\\Remove programs " +
-							   "and run setup again.";
-			MessageBox(szUpgradeMessage,INFORMATION);
-			abort;							   
+			if (MODE!=SILENTMODE) then	
+			 	szUpgradeMessage = "Setup cannot perform an Upgrade from: v" + szVersion + "\nPlease uninstall from the Add\\Remove programs " +
+								   "and run setup again.";
+				MessageBox(szUpgradeMessage,INFORMATION);				
+			endif;
+			abort;
 		endif;
 	endif; 		
 	                                                              
@@ -665,8 +668,10 @@ begin
 Dlg_SdWelcome:
     szTitle = "";
     szMsg   = @WELCOME;
-    nResult = SdWelcome(szTitle, szMsg);
-    if (nResult = BACK) goto Dlg_SdWelcome;
+    if (MODE != SILENTMODE) then
+    	nResult = SdWelcome(szTitle, szMsg);
+    	if (nResult = BACK) goto Dlg_SdWelcome;
+    endif;
 	
 	szTitle   = "";
 	svName    = "";
@@ -683,8 +688,10 @@ Dlg_SdFeatureTree:
     bTVLogosRead = TRUE;
     
     if (nSetupType = TYPICAL) then
-		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
-		if (nResult = BACK) goto Dlg_SdWelcome;  
+    	if (MODE != SILENTMODE) then
+			nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+			if (nResult = BACK) goto Dlg_SdWelcome;  
+		endif;
     endif;
     // Save TV Logo Selections
     SaveTVLogoSelections();
@@ -707,17 +714,23 @@ Dlg_SelectOptions:
 	
 Dlg_SdStartCopy:
     szTitle = "";
-    szMsg   = "";      
-    nResult = SdStartCopy2( szTitle, szMsg );			    
+    szMsg   = "";
+    if (MODE != SILENTMODE) then      
+    	nResult = SdStartCopy2( szTitle, szMsg );
+    else
+    	nResult = NEXT;
+    endif;
 	
 	if (nResult = BACK) then
     	goto Dlg_SelectOptions;
     else
     	// Confirm Plugin versions are up to date if chosen not to install them    	   
-	    szQuestion = "";
-	    nResult = CheckPluginVersions(szQuestion);
- 		if nResult < 0  then
- 			if (AskYesNo ( szQuestion, YES ) = YES) goto Dlg_SdFeatureTree; 	
+    	if (MODE != SILENTMODE) then
+		    szQuestion = "";
+		    nResult = CheckPluginVersions(szQuestion);
+	 		if nResult < 0  then 			
+	 			if (AskYesNo ( szQuestion, YES ) = YES) goto Dlg_SdFeatureTree; 	
+	 		endif;                        
  		endif;
     endif;
     
@@ -748,14 +761,19 @@ function OnMaintUIBefore()
 	NUMBER nResult, nType;
 	STRING szTitle, szMsg, svDir, svResult, szCaption;
 begin				
-	
+	 
 Dlg_Start:
 
     // Added in Version 9.5 - Support for REMOVEONLY option.
     if( !REMOVEONLY ) then
 		// In standard mode show maintenance dialog
 		Disable(BACKBUTTON);
-		nType = SdWelcomeMaint(szTitle, szMsg, MODIFY);
+		if (MODE != SILENTMODE) then
+			nType = SdWelcomeMaint(szTitle, szMsg, MODIFY);
+		else
+			// for silent maint just do Modify
+			nType = MODIFY;
+		endif;
 		Enable(BACKBUTTON);
 	else
         // Hide the initial progress dialog as otherwise the user can
@@ -768,17 +786,19 @@ Dlg_Start:
 	
 	// Show Uninstall Confirmation Dialog
     if ( nType = REMOVEALL ) then
-		nResult = MessageBox( SdLoadString( IFX_MAINTUI_MSG ), MB_YESNO );
-		if (nResult != IDYES ) then
-            
-            if( REMOVEONLY ) then
-                // In REMOVEONLY mode, abort the setup.
-                abort;
-            else
-                // In non-REMOVEONLY mode, redisplay the previous dialog.
-			    goto Dlg_Start;
-            endif;
-
+    	if (MODE != SILENTMODE) then
+			nResult = MessageBox( SdLoadString( IFX_MAINTUI_MSG ), MB_YESNO );
+			if (nResult != IDYES ) then
+	            
+	            if( REMOVEONLY ) then
+	                // In REMOVEONLY mode, abort the setup.
+	                abort;
+	            else
+	                // In non-REMOVEONLY mode, redisplay the previous dialog.
+				    goto Dlg_Start;
+	            endif;
+	
+			endif;
 		endif;
 	endif;
 
@@ -787,9 +807,13 @@ Dlg_Start:
 Dlg_SdFeatureTree:
 	if (nType = MODIFY) then
 		szTitle = "";
-		szMsg = "";		
-		nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
-		if (nResult = BACK) goto Dlg_Start;
+		szMsg = "";
+		if (MODE != SILENTMODE) then		
+			nResult = SdFeatureTree(szTitle, szMsg, INSTALLDIR, "", 2);
+			if (nResult = BACK) goto Dlg_Start;
+		else
+			ReadTVLogoDefaults();
+		endif;
 		SaveTVLogoSelections();
 	endif;
 
@@ -867,29 +891,30 @@ begin
     endif;
     
 	Disable(STATUSEX);
- 
- 	szFile = g_sMediaPortalProgramDir ^ "SMPEditor.exe";
- 
-	bOpt1  = FALSE;
-	bOpt2  = FALSE;
-	szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
-	szOption1 = "&Launch Home Page in default Browser"; 
-	
-	if Is(FILE_EXISTS,szFile) && g_bStartBasicHome then
-		szOption2 = "Launch &StreamedMP Basic Home Editor";
-	endif;
-	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
-	
-	// If reboot not needed and option selected
-	if (!BATCH_INSTALL && bOpt1) then
-		// Launch webpage
-		szSite = STREAMEDMP_HOMEPAGE_URL;
-		LaunchBrowser(szSite);
-	endif;
-	if (!BATCH_INSTALL && bOpt2) then
-		LaunchApp(szFile, szCmdLine);
-	endif;
-	        
+ 	
+ 	if (MODE != SILENTMODE) then
+	 	szFile = g_sMediaPortalProgramDir ^ "SMPEditor.exe";
+	 	
+		bOpt1  = FALSE;
+		bOpt2  = FALSE;
+		szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
+		szOption1 = "&Launch Home Page in default Browser"; 
+		
+		if Is(FILE_EXISTS,szFile) && g_bStartBasicHome then
+			szOption2 = "Launch &StreamedMP Basic Home Editor";
+		endif;
+		SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
+		
+		// If reboot not needed and option selected
+		if (!BATCH_INSTALL && bOpt1) then
+			// Launch webpage
+			szSite = STREAMEDMP_HOMEPAGE_URL;
+			LaunchBrowser(szSite);
+		endif;
+		if (!BATCH_INSTALL && bOpt2) then
+			LaunchApp(szFile, szCmdLine);
+		endif;
+	 endif;
 	
 end;
 //---------------------------------------------------------------------------
@@ -910,27 +935,29 @@ begin
     CleanCache("Blue3wide");
     CleanCache(SKIN_NAME);
     
-	Disable(STATUSEX);
-
-	bOpt1   = FALSE;
-	bOpt2   = FALSE;
+	Disable(STATUSEX);	
+    
+    if (MODE != SILENTMODE) then
+	    bOpt1   = FALSE;
+		bOpt2   = FALSE;
     	
-    // Uninstall.
-    if( REMOVEALLMODE ) then
-        szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
-        szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
-        
-        bOpt1 = FALSE;
-        bOpt2 = FALSE;
-        szOption1 = "Clear Skin configuration settings (restore defaults)?";
-        szOption2 = "Clear BasicHome configuration settings and backups?";      
-    else
-        szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
-        szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
-    endif;
-
-	SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
-		
+    	// Uninstall.
+	    if( REMOVEALLMODE ) then
+	        szTitle = SdLoadString(IFX_SDFINISH_REMOVE_TITLE);
+	        szMsg1 = SdLoadString(IFX_SDFINISH_REMOVE_MSG1);
+	        
+	        bOpt1 = FALSE;
+	        bOpt2 = FALSE;
+	        szOption1 = "Clear Skin configuration settings (restore defaults)?";
+	        szOption2 = "Clear BasicHome configuration settings and backups?";      
+	    else
+	        szTitle = SdLoadString(IFX_SDFINISH_MAINT_TITLE);    
+	        szMsg1  = SdLoadString(IFX_SDFINISH_MAINT_MSG1);
+	    endif;
+	
+		SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);
+	endif;
+	
     if ( REMOVEALLMODE ) then
     	UninstallCleanup(bOpt1, bOpt2);
     endif;
@@ -1071,7 +1098,16 @@ function number ShowSelectTVSeries(bModify)
 	BOOL bDone, bValidate; 
 	LIST listWideBannerLayout;
 begin
-
+    
+    if (MODE = SILENTMODE) then
+	    if (g_bShowIconsInListView) then		
+			FeatureSelectItem ( MEDIA, TVSERIES_LISTICONS_FEATURE, TRUE );	
+		else
+			FeatureSelectItem ( MEDIA, TVSERIES_LISTICONS_FEATURE, FALSE );		
+		endif;
+    	return RES_PBUT_NEXT;
+    endif;
+    
 	szDialogName = "SelectionTVSeries";
    	bDone = FALSE;
       	                         	                     
@@ -1274,7 +1310,11 @@ function number ShowSelectMovingPics(bModify)
 	LIST listThumbLayout;
 	BOOL bDone;
 begin
-
+    
+    if (MODE = SILENTMODE) then
+    	return RES_PBUT_NEXT;
+    endif;
+    
 	szDialogName = "SelectionMovingPictures";
    	bDone = FALSE;
       	                         	                     
@@ -1377,7 +1417,18 @@ function number ShowSelectOptions(bModify)
 	LIST listFonts, listTVGuides, listVUMeters, listTVMiniGuides;
 	OBJECT objColors, objUnfocusedAlpha;
 begin
-
+    
+    if (MODE = SILENTMODE) then
+    	if (!g_bLargeFonts) then
+			FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, TRUE );
+			FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, FALSE );
+		else
+			FeatureSelectItem ( MEDIA, FONTSDEF_FEATURE_OPTIONS, FALSE );
+			FeatureSelectItem ( MEDIA, FONTSLGE_FEATURE_OPTIONS, TRUE );
+		endif;
+    	return RES_PBUT_NEXT;
+    endif;
+    
 	szDialogName = "SelectionOptions";
    	bDone = FALSE;
       	                         	                     
@@ -1654,7 +1705,43 @@ function number ShowSelectNowPlaying(bModify)
 	BOOL bDone, bResult;
 	LIST listNowPlaying;	
 begin
-
+    
+    if (MODE = SILENTMODE) then
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_SLIDINGMENU, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_FADE, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, FALSE );
+	    FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, FALSE );
+    	switch (g_sNowPlayingChoice)	
+			case "0":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );	
+			case "1":			
+			    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_HIDDENMENU, TRUE );			    
+			case "2":				
+			    FeatureSelectItem ( MEDIA, NOWPLAYING_FULLSCREEN_SLIDINGMENU, TRUE );			   
+			case "3":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_FADE, TRUE );				
+			case "4":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOFADE, TRUE );			
+			case "5":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_EDGE_NOMASK, TRUE );			
+			case "6":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_FADE, TRUE );			
+			case "7":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOFADE, TRUE );			
+			case "8":				
+				FeatureSelectItem ( MEDIA, NOWPLAYING_WINDOW_NOMASK, TRUE );							
+			default:                 
+				g_sNowPlayingChoice = "0";
+				FeatureSelectItem ( MEDIA, NOWPLAYING_DEFAULT, TRUE );			
+		endswitch;
+    	return RES_PBUT_NEXT;
+    endif;
+    
 	szDialogName = "SelectionNowPlaying";
    	bDone = FALSE;
       	                         	                     
@@ -2036,20 +2123,26 @@ end;
 function VOID ApplyCheckSum()
 	OBJECT objCheckSum;
 begin
-	SdShowMsg("Applying Checksums...Please wait.", TRUE);
+	if (MODE != SILENTMODE) then
+		SdShowMsg("Applying Checksums...Please wait.", TRUE);
+	endif;
 
 	// Apply Check sum to all Installed XML files.
 	try		             	
 		set objCheckSum = CoCreateObjectDotNet(g_sMediaPortalProgramDir^"SMPCheckSum.dll", "SMPCheckSum.CheckSum" );
 		objCheckSum.ReplaceAllFiles(INSTALLDIR^SKIN_NAME);
 	catch
-	    MessageBox("Error occurred applying CheckSums to XML files",INFORMATION);
+		if (MODE!=SILENTMODE) then
+	    	MessageBox("Error occurred applying CheckSums to XML files",INFORMATION);
+	    endif;
 	endcatch;
 	
 	// Release CheckSum Object		
 	set objCheckSum = NOTHING;                           
 	
-	SdShowMsg("Applying Checksums...Please wait.", FALSE);
+	if (MODE != SILENTMODE) then
+		SdShowMsg("Applying Checksums...Please wait.", FALSE);
+	endif;
 	
 end;
 
@@ -2316,7 +2409,9 @@ begin
     
     // Warn user of old version of MediaPortal
     if (GetFileVersion(svVersion2,"MEDIAPORTAL") < 0) then    	
-    	MessageBox(@MPNOTFOUND,SEVERE);
+    	if (MODE!=SILENTMODE) then		
+    		MessageBox(@MPNOTFOUND,SEVERE);
+    	endif;
     	abort;                 	    	
     endif;
     
@@ -2328,14 +2423,18 @@ begin
     // Check Minimum requirements are met
     svVersion1 = MEDIAPORTAL_MIN_VERSION;
     if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
-    	MessageBox(@MPMINREQNOTMET,SEVERE);
+    	if (MODE!=SILENTMODE) then		
+    		MessageBox(@MPMINREQNOTMET,SEVERE);
+    	endif;
     	abort; 
     endif;
     
     // Check if warning should be prompted
     svVersion1 = MEDIAPORTAL_MINNOWARN_VERSION;
     if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
-    	MessageBox(@MPOLDVERSION,WARNING);
+    	if (MODE!=SILENTMODE) then		
+    		MessageBox(@MPOLDVERSION,WARNING);
+    	endif;
     endif;        
     
 end;
@@ -3053,6 +3152,10 @@ function void DetectWinLargeFonts()
 	STRING szKey, svValue, szMessage;
 	NUMBER nvType, nvSize, nvValue;
 begin
+	if (MODE=SILENTMODE) then
+		return;
+	endif;
+	
 	// Detect Windows Font Size
 	RegDBSetDefaultRoot(HKEY_CURRENT_USER);
 	
