@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SMPpatch
 {
@@ -17,6 +18,7 @@ namespace SMPpatch
     int xpos;
     int ypos;
     SkinInfo skInfo = new SkinInfo();
+    Image workingImage; 
 
     #endregion
 
@@ -34,6 +36,8 @@ namespace SMPpatch
 
     void SplashScreen_Load(object sender, EventArgs e)
     {
+      pbSplashScreen.Image = Image.FromFile(Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png"));
+
       lbStatus.Parent = pbSplashScreen;
       lbStatus.BackColor = Color.Transparent;
       lbStatus2.Parent = pbSplashScreen;
@@ -52,8 +56,9 @@ namespace SMPpatch
         // MP Not set to start fullscreen - small splash screen
         setXYPos(skInfo.startFullScreen);
         this.Size = new Size(600, 338);
-        this.Location = new Point(Screen.PrimaryScreen.Bounds.Width / 2 - 300, Screen.PrimaryScreen.Bounds.Height / 2 - 169);
+        this.Location = new Point((Screen.PrimaryScreen.Bounds.Width / 2) - 300, (Screen.PrimaryScreen.Bounds.Height / 2) - 169);
         pbSplashScreen.Size = new Size(600, 338);
+        pbSplashScreen.Location = new Point(0, 0);
       }
     }
 

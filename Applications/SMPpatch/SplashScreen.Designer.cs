@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SplashScreen));
       this.pbSplashScreen = new System.Windows.Forms.PictureBox();
       this.lbStatus = new System.Windows.Forms.Label();
       this.lbStatus2 = new System.Windows.Forms.Label();
@@ -37,7 +36,8 @@
       // 
       // pbSplashScreen
       // 
-      this.pbSplashScreen.Image = ((System.Drawing.Image)(resources.GetObject("pbSplashScreen.Image")));
+      this.pbSplashScreen.BackColor = System.Drawing.Color.Transparent;
+      this.pbSplashScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
       this.pbSplashScreen.Location = new System.Drawing.Point(-1, 1);
       this.pbSplashScreen.Name = "pbSplashScreen";
       this.pbSplashScreen.Size = new System.Drawing.Size(1280, 720);
