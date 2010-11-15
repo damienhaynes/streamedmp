@@ -28,7 +28,6 @@
     /// </summary>
     private void InitializeComponent()
     {
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SMPMediaPortalRestart));
       this.pbSplashScreen = new System.Windows.Forms.PictureBox();
       this.lbStatus = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.pbSplashScreen)).BeginInit();
@@ -36,7 +35,6 @@
       // 
       // pbSplashScreen
       // 
-      this.pbSplashScreen.Image = ((System.Drawing.Image)(resources.GetObject("pbSplashScreen.Image")));
       this.pbSplashScreen.Location = new System.Drawing.Point(0, 0);
       this.pbSplashScreen.Margin = new System.Windows.Forms.Padding(0);
       this.pbSplashScreen.Name = "pbSplashScreen";

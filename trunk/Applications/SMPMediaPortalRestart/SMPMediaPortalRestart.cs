@@ -16,10 +16,12 @@ namespace SMPMediaPortalRestart
   {
     int xpos;
     int ypos;
+    string splashScreenImage;
 
     public SMPMediaPortalRestart()
     {
       InitializeComponent();
+      this.TopMost = true;
     }
 
     private void SMPMediaPortalRestart_Load(object sender, EventArgs e)
@@ -28,7 +30,12 @@ namespace SMPMediaPortalRestart
       bool weIsFullscreen = false;
         string[] args = Environment.GetCommandLineArgs();
         if (args.Length >= 2)
+        {
           weIsFullscreen = bool.Parse(args[1]);
+          splashScreenImage = args[2];
+        }
+      
+      pbSplashScreen.Image = Image.FromFile(splashScreenImage);
 
       lbStatus.Parent = pbSplashScreen;
       lbStatus.BackColor = Color.Transparent;

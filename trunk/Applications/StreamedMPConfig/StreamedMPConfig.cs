@@ -480,8 +480,15 @@ namespace StreamedMPConfig
         string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
         ProcessStartInfo processStart = new ProcessStartInfo(restartExe);
         processStart.Arguments = smpSettings.mpSetAsFullScreen ? "true" : "false";
+        processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
+
+        smcLog.WriteLog("SMPediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
+
+
         processStart.WorkingDirectory = Path.GetDirectoryName(restartExe);
         System.Diagnostics.Process.Start(processStart);
+        if (smpSettings.mpSetAsFullScreen)
+          Thread.Sleep(2000);
         if (minimiseOnExit)
           Environment.Exit(0);
         else
