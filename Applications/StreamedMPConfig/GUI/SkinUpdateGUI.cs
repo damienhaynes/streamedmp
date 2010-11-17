@@ -212,41 +212,17 @@ namespace StreamedMPConfig
     protected override void OnPageLoad()
     {
       cmc_ChangeLog.Visible = false;
-      btDoUpdate.Visible = false;
-      
-      GUIControl.SetControlLabel(GetID, 3, Translation.Strings["UpdateInstall"]);
+      btDoUpdate.Visible = false;      
+
       if (updateCheck.updateAvailable())
       {
+        btDoUpdate.Label = Translation.UpdateInstall;
         updateFound.downloadChangeLog();
         System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
-        string s = System.IO.File.ReadAllText(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+        string s = File.ReadAllText(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
         rtBox.Rtf = s;
-        string plainText = rtBox.Text;
-        string[] revisions = plainText.Split('\n');
-        plainText = string.Empty;
-        int i = 1;
-        foreach (string line in revisions)
-        {
-          if (i > 1)
-          {
-            if (line.Contains("Revision:"))
-              plainText = plainText + "\n\n" + line;
-            else
-              plainText = plainText + "\n" + line;
-          }
-          else
-            plainText = plainText + line;
 
-          i++;
-        }
-
-        // Replace hardcoded strings in change log
-        plainText = plainText.Replace("Revision:", Translation.Revision);
-        plainText = plainText.Replace("Author:", Translation.Author);
-        plainText = plainText.Replace("Date:", Translation.Date);
-        plainText = plainText.Replace("Message:", Translation.Message);
-
-        cmc_ChangeLog.Label = plainText;
+        cmc_ChangeLog.Label = rtBox.Text;
         cmc_ChangeLog.Visible = true;
         btDoUpdate.Visible = true;
         GUIPropertyManager.SetProperty("#StreamedMP.Revisions", StreamedMPConfig.theRevisions);
