@@ -256,9 +256,7 @@ namespace StreamedMPConfig
         GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
         dlg.Reset();
         dlg.SetHeading(Translation.SkinUpdate);
-        dlg.SetLine(1, String.Empty);
-        dlg.SetLine(2, Translation.NoUpdatesAvailable);
-        dlg.SetLine(3, String.Empty);
+        dlg.SetLine(1, Translation.NoUpdatesAvailable);
         dlg.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
       }
