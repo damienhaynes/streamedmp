@@ -25,7 +25,7 @@ using TVSeriesHelper = WindowPlugins.GUITVSeries.Helper;
 
 namespace StreamedMPConfig
 {
-  [PluginIcons("StreamedMPConfig.SMPSettings.png", "StreamedMPConfig.SMPSettingsDisabled.png")]
+  [PluginIcons("StreamedMPConfig.Resources.SMPSettings.png", "StreamedMPConfig.Resources.SMPSettingsDisabled.png")]
   public class StreamedMPConfig : GUIWindow, ISetupForm
   {
     #region Variables
