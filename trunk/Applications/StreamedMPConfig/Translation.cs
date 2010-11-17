@@ -204,11 +204,7 @@ namespace StreamedMPConfig
     public static string DownloadingProgress = "Downloaded {0}KB out of {1}KB ({2}%)";
     public static string NumPatchesInstalled = "Number of patch files installed: {0}";
     public static string PatchUpdateComplete = "Update to Skin Version: {0} Complete";
-    public static string UpdateAvailableHeading = "Update Available - Change Log";
-    public static string Revision = "Revision:";
-    public static string Author = "Author:";
-    public static string Date = "Date:";
-    public static string Message = "Message:";
+    public static string UpdateAvailableHeading = "Update Available - Change Log";    
     public static string mupdateheader = "Patch Installer Downloaded to Desktop";
     public static string mupdateline1 = "Manual Update Required - To apply close";
     public static string mupdateline2 = "MediaPortal and/or Configuration";
