@@ -84,54 +84,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <!-- Thumbnail Views -->
-    <control>
-      <description>Category Logo</description>
-      <type>image</type>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>248</posY>
-      <width>105</width>
-      <height>35</height>
-      <texture>#header.image</texture>
-      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <description>Length</description>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>315</posY>
-      <width>315</width>
-      <textcolor>ff006698</textcolor>
-      <font>mediastream11tc</font>
-      <label>#OnlineVideos.length</label>
-      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
-    <control>
-      <type>textboxscrollup</type>
-      <description>Description</description>
-      <id>1</id>
-      <posX>28</posX>
-      <posY>337</posY>
-      <width>475</width>
-      <height>288</height>
-      <seperator>----------------------------------------------------------------------------------------</seperator>
-      <font>mediastream12</font>
-      <label>#OnlineVideos.desc</label>
-      <visible>[facadeview.largeicons|facadeview.smallicons]+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-    </control>
+    </control> 
   </controls>
 </window>
 <!--Checksum:2df7521caf318405c0ae05483eb55e2a-->
