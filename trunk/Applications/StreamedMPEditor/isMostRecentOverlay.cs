@@ -1893,15 +1893,17 @@
         {
           xml += "<control>\n" +
             "<description>Movie 1 Certification</description>\n" +
-            "<type>label</type>\n" +
+            "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
             "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-            "<width>257</width>\n" +
+            "<width>100</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie1.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
-            "<align>" + alignTxt + "</align>" +
+            "<align>" + alignTxt + "</align>\n" +
+            "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+            "<wrapString> |  </wrapString>\n" +
           "</control>";
         }
 
@@ -1999,15 +2001,17 @@
         {
           xml += "<control>\n" +
             "<description>Movie 2 Certification</description>\n" +
-            "<type>label</type>\n" +
+            "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
             "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-            "<width>257</width>\n" +
+            "<width>100</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie2.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
-            "<align>" + alignTxt + "</align>" +
+            "<align>" + alignTxt + "</align>\n" +
+            "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+            "<wrapString> |  </wrapString>\n" +
           "</control>";
         }
 
@@ -2094,15 +2098,17 @@
         {
           xml += "<control>\n" +
             "<description>Movie 3 Certification</description>\n" +
-            "<type>label</type>\n" +
+            "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
             "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-            "<width>257</width>\n" +
+            "<width>100</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
-            "<align>" + alignTxt + "</align>" +
+            "<align>" + alignTxt + "</align>\n" +
+            "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+            "<wrapString> |  </wrapString>\n" +
           "</control>";
         }
 
@@ -2255,15 +2261,17 @@
       {
         xml += "<control>\n" +
           "<description>Movie 1 Certification</description>\n" +
-          "<type>label</type>\n" +
+          "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
           "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<width>100</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie1.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
-          "<align>" + alignTxt + "</align>" +
+          "<align>" + alignTxt + "</align>\n" +
+          "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+          "<wrapString> |  </wrapString>\n" +
         "</control>";
       }
 
@@ -2371,15 +2379,17 @@
       {
         xml += "<control>\n" +
           "<description>Movie 2 Certification</description>\n" +
-          "<type>label</type>\n" +
+          "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
           "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<width>100</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie2.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
-          "<align>" + alignTxt + "</align>" +
+          "<align>" + alignTxt + "</align>\n" +
+          "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+          "<wrapString> |  </wrapString>\n" +
         "</control>";
       }
 
@@ -2476,15 +2486,17 @@
       {
         xml += "<control>\n" +
           "<description>Movie 3 Certification</description>\n" +
-          "<type>label</type>\n" +
+          "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
           "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<width>100</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie3.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
-          "<align>" + alignTxt + "</align>" +
+          "<align>" + alignTxt + "</align>\n" +
+          "<scrollStartDelaySec>30</scrollStartDelaySec>\n" +
+          "<wrapString> |  </wrapString>\n" +
         "</control>";
       }
 
