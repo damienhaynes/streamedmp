@@ -140,6 +140,19 @@
       <textcolor>white</textcolor>
     </control>
     <control>
+      <description>On tv NEXT</description>
+      <id>37</id>
+      <type>textbox</type>
+      <width>900</width>
+      <height>24</height>
+      <posX>195</posX>
+      <posY>650</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff888888</textcolor>
+      <visible>plugin.isenabled(For The Record TV)</visible>
+    </control>
+
+    <control>
       <description>On TV NEXT</description>
       <id>0</id>
       <type>label</type>
@@ -150,8 +163,9 @@
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
-      <visible>!string.equals(#TV.Next.title,)</visible>
+      <visible>!plugin.isenabled(For The Record TV)</visible>
     </control>
+
     <control>
       <description>rec logo</description>
       <type>image</type>
