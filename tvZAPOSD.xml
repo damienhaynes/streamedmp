@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
   <id>3007</id>
   <defaultcontrol>213</defaultcontrol>
@@ -149,9 +149,10 @@
       <posY>650</posY>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>plugin.isenabled(For The Record TV)</visible>
+      <!-- <visible>plugin.isenabled(For The Record TV)</visible> -->
     </control>
 
+    <!--
     <control>
       <description>On TV NEXT</description>
       <id>0</id>
@@ -165,6 +166,7 @@
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
       <visible>!plugin.isenabled(For The Record TV)</visible>
     </control>
+    -->
 
     <control>
       <description>rec logo</description>
