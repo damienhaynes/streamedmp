@@ -5,7 +5,7 @@
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+string.equals(#StreamedMP.recentlyAdded.series1.show,true)</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -75,7 +75,7 @@
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+string.equals(#StreamedMP.recentlyAdded.series2.show,true)]</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -112,7 +112,7 @@
       <description>GROUP: RecentlyAdded Series</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1003)]+![string.starts(#StreamedMP.recentlyAdded.series3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)]</visible>
+      <visible>[control.isvisible(1003)]+string.equals(#StreamedMP.recentlyAdded.series3.show,true)</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -146,4 +146,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:0791425fd1beca97f4fdea1efdee46a4-->
+<!--Checksum:58afae79f54cc238683bb3b6ebec22d0-->
