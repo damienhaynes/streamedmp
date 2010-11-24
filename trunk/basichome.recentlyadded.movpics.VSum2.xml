@@ -5,7 +5,7 @@
       <description>GROUP: RecentlyAdded Movie 1</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1002)]+![string.starts(#StreamedMP.recentlyAdded.movie1.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)]</visible>
+      <visible>[control.isvisible(1002)]+string.equals(#StreamedMP.recentlyAdded.movie1.show,true)</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -60,15 +60,17 @@
       </control>
       <control>
         <description>Movie 1 Certification</description>
-        <type>label</type>
+        <type>fadelabel</type>
         <id>0</id>
         <posX>1180</posX>
         <posY>262</posY>
-        <width>257</width>
+        <width>100</width>
         <label>#StreamedMP.recentlyAdded.movie1.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
         <align>right</align>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <wrapString> |  </wrapString>
       </control>
       <control>
         <description>Movie 1 Star Rating Image</description>
@@ -96,7 +98,7 @@
       <description>GROUP: RecentlyAdded Movie 2</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1002)]+![string.starts(#StreamedMP.recentlyAdded.movie2.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)]</visible>
+      <visible>[control.isvisible(1002)]+string.equals(#StreamedMP.recentlyAdded.movie2.show,true)</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -129,15 +131,17 @@
       </control>
       <control>
         <description>Movie 2 Certification</description>
-        <type>label</type>
+        <type>fadelabel</type>
         <id>0</id>
         <posX>1180</posX>
         <posY>297</posY>
-        <width>257</width>
+        <width>100</width>
         <label>#StreamedMP.recentlyAdded.movie2.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
         <align>right</align>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <wrapString> |  </wrapString>
       </control>
       <control>
         <description>Movie 2 Star Rating Image</description>
@@ -154,7 +158,7 @@
       <description>GROUP: RecentlyAdded Movie 3</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>[control.isvisible(1002)]+![string.starts(#StreamedMP.recentlyAdded.movie3.fanart,#)|string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)]</visible>
+      <visible>[control.isvisible(1002)]+string.equals(#StreamedMP.recentlyAdded.movie3.show,true)</visible>
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
@@ -186,15 +190,17 @@
       </control>
       <control>
         <description>Movie 3 Certification</description>
-        <type>label</type>
+        <type>fadelabel</type>
         <id>0</id>
         <posX>1180</posX>
         <posY>332</posY>
-        <width>257</width>
+        <width>100</width>
         <label>#StreamedMP.recentlyAdded.movie3.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
         <align>right</align>
+        <scrollStartDelaySec>30</scrollStartDelaySec>
+        <wrapString> |  </wrapString>
       </control>
       <control>
         <description>Movie 3 Star Rating Image</description>
@@ -209,4 +215,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:815e3741d6f97db3edd96ab5e63e9a82-->
+<!--Checksum:04dd3d9e8020f9cecca9279d37f089a6-->
