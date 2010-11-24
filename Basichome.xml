@@ -152,6 +152,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1000)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -164,6 +165,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1001)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -175,6 +177,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
+	  <shouldCache>true</shouldCache>
       <visible>control.isvisible(1002)|control.isvisible(1005)|control.isvisible(1007)</visible>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
@@ -187,6 +190,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
+	  <shouldCache>true</shouldCache>
       <visible>control.isvisible(1003)|control.isvisible(1004)</visible>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
@@ -200,6 +204,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1006)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -212,6 +217,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1008)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -224,6 +230,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1009)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -236,6 +243,7 @@
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1010)</visible>
+	  <shouldCache>true</shouldCache>
       <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
     </control>
     <control>
@@ -246,6 +254,7 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
+	  <shouldCache>true</shouldCache>
       <texture>basichome.menu.overlay.png</texture>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
