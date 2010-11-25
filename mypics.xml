@@ -14,8 +14,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-      <animation effect="fade" time="500" start="10">WindowOpen</animation>
-      <animation effect="fade" time="500" end="10">WindowClose</animation>
+      <animation effect="fade" time="300" start="0">WindowOpen</animation>      
     </control>
     <control>
       <type>image</type>
@@ -25,9 +24,7 @@
       <width>1281</width>
       <height>720</height>
       <texture>mainoverlay.png</texture>
-      <visible>!facadeview.filmstrip</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!facadeview.filmstrip</visible>      
     </control>
     <control>
       <id>204</id>
