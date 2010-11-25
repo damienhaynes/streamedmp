@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-  <controls>
-    <!--
-                 WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
-                -->
+  <controls>   
     <control>
       <id>1</id>
       <description>Background Image</description>
-      <animation effect="fade" time="500">WindowOpen</animation>
-      <animation effect="fade" time="500">WindowClose</animation>
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
@@ -16,18 +11,17 @@
       <height>720</height>
       <texture>#header.hover</texture>
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+	  <animation effect="fade" time="300">WindowOpen</animation>
     </control>
     <control>
       <id>1</id>
-      <description>Overlay Image</description>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <description>Overlay Image</description>      
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
       <width>1281</width>
       <height>720</height>
-      <texture>#header.BG.overlay</texture>
+      <texture>#header.BG.overlay</texture>	  
     </control>
     <control>
       <id>1</id>
