@@ -170,7 +170,10 @@ namespace StreamedMPEditor
         {
           if (direction == menuType.horizontal)
           {
-            writeHorizonalMenu(i, menItem, ref rawXML);
+            if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+              writeGraphicalMenu(i, menItem, ref rawXML);
+            else
+              writeHorizonalMenu(i, menItem, ref rawXML);
           }
           else if (direction == menuType.vertical)
           {
@@ -3641,6 +3644,9 @@ namespace StreamedMPEditor
           break;
         case chosenMenuStyle.horizontalContextStyle:
           activeMenuStyle = "horizontalContextStyle";
+          break;
+        case chosenMenuStyle.graphicMenuStyle:
+          activeMenuStyle = "graphicMenuStyle";
           break;
       }
 
