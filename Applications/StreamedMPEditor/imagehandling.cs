@@ -494,7 +494,7 @@ namespace StreamedMPEditor
 
     }
 
-    private string[] getFileListing(string imageDir, string fileMask, bool imagelisting)
+    public string[] getFileListing(string imageDir, string fileMask, bool imagelisting)
     {
       string fcompare;
       totalImages = 0;

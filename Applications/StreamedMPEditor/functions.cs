@@ -356,6 +356,15 @@ namespace StreamedMPEditor
       }
     }
 
+    private void graphicalStyle_CheckedChanged(object sender, EventArgs e)
+    {
+      if (menuStyle != chosenMenuStyle.graphicMenuStyle)
+      {
+        menuStyle = chosenMenuStyle.graphicMenuStyle;
+        syncEditor(sync.editing);
+      }
+    }
+
     private void stdWeatherStyle_Click(object sender, EventArgs e)
     {
       fullWeatherSummaryBottom.Checked = true;
@@ -578,7 +587,16 @@ namespace StreamedMPEditor
             basicHomeValues.offsetTwitter += 15;
             basicHomeValues.offsetTwitterImage += 15;
           }
-
+          break;
+        case chosenMenuStyle.graphicMenuStyle:
+          if (horizontalContextLabels.Checked)
+          {
+            basicHomeValues.menuHeight += 34;
+            basicHomeValues.offsetMymenu -= 25;
+            basicHomeValues.offsetButtons += 16;
+            basicHomeValues.offsetTwitter += 15;
+            basicHomeValues.offsetTwitterImage += 15;
+          }
           break;
       }
     }
@@ -914,7 +932,6 @@ namespace StreamedMPEditor
           cboLabelFont.Text = "mediastream16tc";
           cbExitStyleNew.Visible = true;
           break;
-
         case chosenMenuStyle.horizontalStandardStyle:
           weatherStyle = chosenWeatherStyle.bottom;
           horizontalContextLabels.Checked = false;
@@ -933,9 +950,7 @@ namespace StreamedMPEditor
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
           cbExitStyleNew.Visible = false;
-
           break;
-
         case chosenMenuStyle.horizontalContextStyle:
           weatherStyle = chosenWeatherStyle.middle;
           horizontalContextLabels.Checked = true;
@@ -953,6 +968,25 @@ namespace StreamedMPEditor
           cboLabelFont.Text = "mediastream28tc";
           cboLabelFont.Enabled = false;
           cboSelectedFont.Enabled = false;
+          cbExitStyleNew.Visible = false;
+          break;
+        case chosenMenuStyle.graphicMenuStyle:
+          weatherStyle = chosenWeatherStyle.bottom;
+          horizontalContextLabels.Checked = false;
+          enableFiveDayWeather.Checked = true;
+          fullWeatherSummaryBottom.Enabled = true;
+          fullWeatherSummaryBottom.Checked = false;
+          horizontalContextLabels.Enabled = false;
+          graphicalStyle.Checked = true;
+          if (!WeatherIconsAnimated.Checked)
+            weatherIconsStatic.Checked = true;
+          weatherSummaryGroup.Visible = true;
+          useAeonGraphics.Visible = false;
+          txtMenuPos.Text = "430";
+          cboLabelFont.Enabled = true;
+          cboSelectedFont.Enabled = true;
+          cboSelectedFont.Text = "mediastream28tc";
+          cboLabelFont.Text = "mediastream28tc";
           cbExitStyleNew.Visible = false;
           break;
       }
@@ -976,6 +1010,12 @@ namespace StreamedMPEditor
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
     }
 
+    private void style4Description_MouseEnter(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.style4.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
     private void style1Description_MouseLeave(object sender, EventArgs e)
     {
       Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
@@ -989,6 +1029,12 @@ namespace StreamedMPEditor
     }
 
     private void style3Description_MouseLeave(object sender, EventArgs e)
+    {
+      Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
+      menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
+    }
+
+    private void style4Description_MouseLeave(object sender, EventArgs e)
     {
       Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.rtfFiles.introduction.rtf");
       menuDescription.LoadFile(stream, RichTextBoxStreamType.RichText);
@@ -1901,6 +1947,7 @@ namespace StreamedMPEditor
       public List<subMenuItem> subMenuLevel1 = new List<subMenuItem>();
       public List<subMenuItem> subMenuLevel2 = new List<subMenuItem>();
       public string xmlFileName;
+      public string buttonTexture;
     }
 
     public class subMenuItem

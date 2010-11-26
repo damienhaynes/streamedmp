@@ -35,6 +35,7 @@ namespace StreamedMPEditor
       verticalStyle,
       horizontalStandardStyle,
       horizontalContextStyle,
+      graphicMenuStyle
     };
 
     enum chosenWeatherStyle
@@ -1659,6 +1660,14 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+
+    private void btMenuIcon_Click(object sender, EventArgs e)
+    {
+      getButtonTexture gbt = new getButtonTexture();
+      gbt.ShowDialog();
+    }
+
   }
 }
 

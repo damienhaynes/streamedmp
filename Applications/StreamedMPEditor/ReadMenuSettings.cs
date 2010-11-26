@@ -102,6 +102,12 @@ namespace StreamedMPEditor
             cboSelectedFont.Text = "mediastream28tc";
             cboLabelFont.Text = "mediastream28tc";
             break;
+          case "graphicMenuStyle":
+            menuStyle = chosenMenuStyle.graphicMenuStyle;
+            graphicalStyle.Checked = true;
+            cboSelectedFont.Text = "mediastream28tc";
+            cboLabelFont.Text = "mediastream28tc";
+            break;
           default:
             menuStyle = chosenMenuStyle.verticalStyle;
             verticalStyle.Checked = true;
@@ -498,6 +504,40 @@ namespace StreamedMPEditor
 
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
         mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
+        //
+        // Graphical Menu Default Image Load
+        //
+        switch (int.Parse(mnuItem.hyperlink))
+        {
+          case 1:
+            mnuItem.buttonTexture = "homebuttons\\tv.png";
+            break;
+          case 2:
+            mnuItem.buttonTexture = "homebuttons\\pictures.png";
+            break;
+          case 4:
+            mnuItem.buttonTexture = "homebuttons\\settings.png";
+            break;
+          case 34:
+            mnuItem.buttonTexture = "homebuttons\\plugins.png";
+            break;
+          case 501:
+          case 504:
+            mnuItem.buttonTexture = "homebuttons\\music.png";
+            break;
+          case 2600:
+            mnuItem.buttonTexture = "homebuttons\\weather.png";
+            break;
+          case 25650:
+            mnuItem.buttonTexture = "homebuttons\\music.png";
+            break;
+          default:
+            mnuItem.buttonTexture = "homebuttons\\play.png";
+            break;
+        }
+
+
+
         //
         // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
         //

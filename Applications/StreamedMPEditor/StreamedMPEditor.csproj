@@ -133,6 +133,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BHGraphicalWriter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getButtonTexture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getButtonTexture.Designer.cs">
+      <DependentUpon>getButtonTexture.cs</DependentUpon>
+    </Compile>
     <Compile Include="imagehandling.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +169,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="getButtonTexture.resx">
+      <DependentUpon>getButtonTexture.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectHardDrives.resx">
       <DependentUpon>SelectHardDrives.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +201,7 @@
     <Compile Include="webaccess.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="rtfFiles\style4.rtf" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SubItemPropertiesDialog.resx">
