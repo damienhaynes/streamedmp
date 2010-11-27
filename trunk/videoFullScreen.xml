@@ -24,7 +24,7 @@
       <width>250</width>
       <height>126</height>
       <texture>#TVSeries.Play.ClearArt</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (default)</description>
@@ -35,7 +35,7 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TVSeries ClearArt (Small VideoOSD)</description>
@@ -46,7 +46,7 @@
       <width>250</width>
       <height>126</height>
       <texture>#TVSeries.Play.ClearArt</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (small)</description>
@@ -57,7 +57,7 @@
       <width>1280</width>
       <height>197</height>
       <texture>osdbackground.png</texture>
-      <visible>[player.paused|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>background (small)</description>
@@ -104,7 +104,7 @@
       <align>left</align>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
-      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Movie Name</description>
@@ -128,7 +128,7 @@
       <font>mediastream12tc</font>
       <label>#Play.Current.Title </label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>player.paused+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>window.ispauseosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Movie Year</description>
@@ -140,7 +140,7 @@
       <font>mediastream11tc</font>
       <label>#Play.Current.Year </label>
       <textcolor>ff909090</textcolor>
-      <visible>[player.paused|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Plot</description>
@@ -153,7 +153,7 @@
       <seperator>------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream11</font>
-      <visible>[player.paused+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>[window.ispauseosdvisible+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <import>common.player.xml</import>
     <import>common.play.fullscreen.xml</import>

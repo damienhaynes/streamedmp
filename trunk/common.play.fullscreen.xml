@@ -34,7 +34,7 @@
       <height>32</height>
       <texture>clockbackground.png</texture>
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
-      <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>!window.isosdvisible+[window.ispauseosdvisible|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Time</description>
@@ -48,7 +48,7 @@
       <label>#time</label>
       <align>left</align>
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
-      <visible>!window.isosdvisible+[player.paused|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
+      <visible>!window.isosdvisible+[window.ispauseosdvisible|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>row 1 label</description>
