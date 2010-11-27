@@ -37,7 +37,7 @@
       <width>896</width>
       <height>12</height>
       <texture>osdprogressback.png</texture>
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
+      <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
     </control>
     <control>
       <description>Progress Bar</description>
@@ -51,7 +51,7 @@
       <lefttexture>osdprogressleft.png</lefttexture>
       <midtexture>osdprogressmid.png</midtexture>
       <righttexture>osdprogressright.png</righttexture>
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
+      <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
     </control>
     <control>
       <description>Start Time Info</description>
@@ -63,7 +63,7 @@
       <align>left</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
+      <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
     </control>
     <control>
       <description>End Time Info</description>
@@ -75,7 +75,7 @@
       <align>right</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>window.isosdvisible|player.paused|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
+      <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
     </control>
   </controls>
 </window>

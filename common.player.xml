@@ -173,7 +173,7 @@
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <colordiffuse>White</colordiffuse>
-      <visible>player.paused+!control.isvisible(10)</visible>
+      <visible>window.ispauseosdvisible+!control.isvisible(10)</visible>
     </control>
   </controls>
 </window>
