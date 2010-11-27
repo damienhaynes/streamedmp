@@ -363,6 +363,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<width>1280</width>");
       rawXML.AppendLine("<height>" + basicHomeValues.menuHeight + "</height>");
       rawXML.AppendLine("<texture>" + basicHomeValues.mymenu + "</texture>");
+      rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
       if (enableRssfeed.Checked && infoserviceOptions.Enabled)
@@ -398,6 +399,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>0</posY>");
       rawXML.AppendLine("<width>1280</width>"); rawXML.AppendLine("<height>720</height>");
       rawXML.AppendLine("<texture>basichome.menu.overlay.png</texture>");
+      rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
       rawXML.AppendLine("<visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)</visible>");
@@ -1485,6 +1487,7 @@ namespace StreamedMPEditor
           {
             rawXML.AppendLine("<type>image</type>");
             rawXML.AppendLine("<texture>" + item.image + "</texture>");
+            rawXML.AppendLine("<shouldCache>true</shouldCache>");
           }
         }
 
@@ -1886,6 +1889,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<width>180</width>");
       rawXML.AppendLine("<height>270</height>");
       rawXML.AppendLine("<texture>weather2.png</texture>");
+      rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("</control>");
       for (i = 1; i < 5; i++)
       {
@@ -1957,6 +1961,7 @@ namespace StreamedMPEditor
         {
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<texture>" + weatherIcon(i) + "</texture>");
+          rawXML.AppendLine("<shouldCache>true</shouldCache>");
         }
         if (i < 3)
         {
@@ -2376,6 +2381,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>200</width>");
         rawXML.AppendLine("<height>170</height>");
         rawXML.AppendLine("<texture>weather2.png</texture>");
+        rawXML.AppendLine("<shouldCache>true</shouldCache>");
         rawXML.AppendLine("</control>");
 
       }
@@ -2795,6 +2801,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>180</width>");
         rawXML.AppendLine("<height>270</height>");
         rawXML.AppendLine("<texture>weather2.png</texture>");
+        rawXML.AppendLine("<shouldCache>true</shouldCache>");
         rawXML.AppendLine("</control>");
       }
       rawXML.AppendLine("</control>");

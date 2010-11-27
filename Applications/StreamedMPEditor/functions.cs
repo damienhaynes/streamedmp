@@ -589,14 +589,27 @@ namespace StreamedMPEditor
           }
           break;
         case chosenMenuStyle.graphicMenuStyle:
-          if (horizontalContextLabels.Checked)
-          {
-            basicHomeValues.menuHeight += 34;
-            basicHomeValues.offsetMymenu -= 25;
-            basicHomeValues.offsetButtons += 16;
-            basicHomeValues.offsetTwitter += 15;
-            basicHomeValues.offsetTwitterImage += 15;
-          }
+          basicHomeValues.menuHeight = 198;
+          basicHomeValues.offsetMymenu = 27;
+          basicHomeValues.subMenuXpos = -70;
+          basicHomeValues.subMenuWidth = 1420;
+          basicHomeValues.subMenuHeight = 70;
+          basicHomeValues.offsetSubmenu = 257;
+          basicHomeValues.offsetRssText = 259;
+
+
+          basicHomeValues.textYOffset = 6;
+
+          basicHomeValues.offsetRssImage = 73;
+
+          basicHomeValues.offsetTwitter = 55;
+          basicHomeValues.offsetTwitterImage = 28;
+          basicHomeValues.offsetButtons = 42;
+
+
+
+          basicHomeValues.subMenuTopHeight = 60;
+          basicHomeValues.Button3Slide = 70;
           break;
       }
     }
