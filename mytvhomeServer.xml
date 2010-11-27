@@ -318,9 +318,9 @@
       <description>TV background</description>
       <type>image</type>
       <id>1</id>
-      <posX>476</posX>
+      <posX>512</posX>
       <posY>100</posY>
-      <width>682</width>
+      <width>644</width>
       <height>379</height>
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -331,9 +331,9 @@
       <description>video window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>506</posX>
+      <posX>545</posX>
       <posY>116</posY>
-      <width>622</width>
+      <width>577</width>
       <height>325</height>
       <onup>8</onup>
       <ondown>10</ondown>
@@ -344,9 +344,9 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>516</posX>
+      <posX>521</posX>
       <posY>470</posY>
-      <width>602</width>
+      <width>628</width>
       <height>20</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
@@ -357,9 +357,9 @@
       <description>progress bar</description>
       <type>progress</type>
       <id>20</id>
-      <posX>506</posX>
+      <posX>511</posX>
       <posY>470</posY>
-      <width>622</width>
+      <width>648</width>
       <label>#TV.View.Percentage</label>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -383,7 +383,7 @@
       <type>label</type>
       <id>1</id>
       <posX>1142</posX>
-      <posY>70</posY>
+      <posY>68</posY>
       <label>#TV.View.start - #TV.View.stop</label>
       <textcolor>ff111111</textcolor>
       <font>mediastream16tc</font>
@@ -396,7 +396,7 @@
       <type>label</type>
       <id>1</id>
       <posX>1140</posX>
-      <posY>72</posY>
+      <posY>70</posY>
       <label>#TV.View.start - #TV.View.stop</label>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
