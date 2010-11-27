@@ -139,7 +139,7 @@
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
-      <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+!string.equals(#TV.Next.title,)</visible>
+      <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+!string.equals(#TV.Next.title,)+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>Progress Bar Background</description>
