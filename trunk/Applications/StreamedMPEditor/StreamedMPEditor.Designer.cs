@@ -64,6 +64,7 @@
       this.addSubmenus = new System.Windows.Forms.Button();
       this.richTextBox2 = new System.Windows.Forms.RichTextBox();
       this.groupBox3 = new System.Windows.Forms.GroupBox();
+      this.pbMenuIconInfo = new System.Windows.Forms.PictureBox();
       this.selectedWindowID = new System.Windows.Forms.Label();
       this.selectedWindowIDL = new System.Windows.Forms.Label();
       this.selectedWindow = new System.Windows.Forms.Label();
@@ -258,7 +259,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.pbMenuIconInfo = new System.Windows.Forms.PictureBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -280,6 +280,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.weatherStyle1)).BeginInit();
       this.basicHomeDesign.SuspendLayout();
       this.groupBox3.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).BeginInit();
       this.groupBox1.SuspendLayout();
       this.backgroundImages.SuspendLayout();
       this.itemProperties.SuspendLayout();
@@ -322,7 +323,6 @@
       this.statusStrip1.SuspendLayout();
       this.groupBox5.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).BeginInit();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -402,7 +402,7 @@
       // 
       // menuStyle4
       // 
-      this.menuStyle4.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle4.Image")));
+      this.menuStyle4.Image = global::StreamedMPEditor.Properties.Resources.menuStyleGraphical;
       this.menuStyle4.Location = new System.Drawing.Point(557, 19);
       this.menuStyle4.Name = "menuStyle4";
       this.menuStyle4.Size = new System.Drawing.Size(175, 110);
@@ -747,6 +747,14 @@
       this.groupBox3.TabIndex = 0;
       this.groupBox3.TabStop = false;
       this.groupBox3.Text = "Selected Window Properties";
+      // 
+      // pbMenuIconInfo
+      // 
+      this.pbMenuIconInfo.Location = new System.Drawing.Point(273, 9);
+      this.pbMenuIconInfo.Name = "pbMenuIconInfo";
+      this.pbMenuIconInfo.Size = new System.Drawing.Size(40, 40);
+      this.pbMenuIconInfo.TabIndex = 105;
+      this.pbMenuIconInfo.TabStop = false;
       // 
       // selectedWindowID
       // 
@@ -2833,14 +2841,6 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // pbMenuIconInfo
-      // 
-      this.pbMenuIconInfo.Location = new System.Drawing.Point(273, 9);
-      this.pbMenuIconInfo.Name = "pbMenuIconInfo";
-      this.pbMenuIconInfo.Size = new System.Drawing.Size(40, 40);
-      this.pbMenuIconInfo.TabIndex = 105;
-      this.pbMenuIconInfo.TabStop = false;
-      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2882,6 +2882,7 @@
       this.basicHomeDesign.PerformLayout();
       this.groupBox3.ResumeLayout(false);
       this.groupBox3.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).EndInit();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
       this.backgroundImages.ResumeLayout(false);
@@ -2951,7 +2952,6 @@
       this.groupBox5.ResumeLayout(false);
       this.groupBox5.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 

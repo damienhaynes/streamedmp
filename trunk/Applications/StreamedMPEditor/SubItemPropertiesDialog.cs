@@ -40,6 +40,12 @@ namespace StreamedMPEditor
                   cboViews.Items.Add(mvv.Value);
                 }
                 break;
+              case formStreamedMpEditor.onlineVideosSkinID:
+                foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosViews)
+                {
+                  cboViews.Items.Add(mvv.Value);
+                }
+                break;
             }
         }
 
@@ -143,6 +149,39 @@ namespace StreamedMPEditor
           }
         }
 
+        public string onlineVideosHypelinkParameter
+        {
+          get
+          {
+            if (formStreamedMpEditor.onlineVideosViews.Count == 0)
+              return cboViews.Text;
+
+            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosViews)
+            {
+              if (tvv.Value == cboViews.Text)
+                return tvv.Key;
+            }
+            return "false";
+          }
+
+          set
+          {
+            if (formStreamedMpEditor.onlineVideosViews.Count == 0)
+              cboViews.Text = value;
+            int i = 0;
+            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosViews)
+            {
+              if (value == tvv.Key)
+              {
+                cboViews.Text = tvv.Value;
+                initialIndex = i;
+                break;
+              }
+              i++;
+            }
+          }
+        }
+
         private void tbItemDisplayName_TextChanged(object sender, EventArgs e)
         {
             int start = tbItemDisplayName.SelectionStart;
@@ -189,12 +228,15 @@ namespace StreamedMPEditor
         {
           if (initialIndex != -1 && (tbItemDisplayName.Text == baseName || initialIndex != cboViews.SelectedIndex))
           {
+            //TVSeries
             if (currentSkinID == formStreamedMpEditor.tvseriesSkinID)
               tbItemDisplayName.Text = formStreamedMpEditor.tvseriesViews[cboViews.SelectedIndex].Value;
-
-
+            // Music
             if (currentSkinID == formStreamedMpEditor.musicSkinID)
               tbItemDisplayName.Text = formStreamedMpEditor.musicViews[cboViews.SelectedIndex].Value;
+            // OnlineVideos
+            if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
+              tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosViews[cboViews.SelectedIndex].Value;
 
             initialIndex = cboViews.SelectedIndex;
           }

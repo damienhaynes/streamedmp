@@ -350,6 +350,9 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.musicSkinID:
             itemProperties.musicHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
             break;
+          case formStreamedMpEditor.onlineVideosSkinID:
+            itemProperties.onlineVideosHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
+            break;
         }
         itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
         itemProperties.initialIndex = index;
@@ -396,7 +399,21 @@ namespace StreamedMPEditor
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
-
+          //Onlinevideos
+          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
+          {
+            if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
+            {
+              subMenuLevel1[index].hyperlinkParameter = "false";
+              subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+            {
+              subMenuLevel1[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
         }
         // Refresh the listbox, only way to do this is clear re-populate.
         if (formStreamedMpEditor.changeOutstanding)
@@ -419,6 +436,18 @@ namespace StreamedMPEditor
         SubItemProperties itemProperties = new SubItemProperties(formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink), subMenuLevel2[index].hyperlink);
 
         itemProperties.DisplayName = subMenuLevel2[index].displayName;
+        switch (subMenuLevel2[index].hyperlink)
+        {
+          case formStreamedMpEditor.tvseriesSkinID:
+            itemProperties.tvseriesHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
+            break;
+          case formStreamedMpEditor.musicSkinID:
+            itemProperties.musicHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
+            break;
+          case formStreamedMpEditor.onlineVideosSkinID:
+            itemProperties.onlineVideosHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
+            break;
+        }      
         itemProperties.tvseriesHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
         itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
         itemProperties.initialIndex = index;
@@ -429,24 +458,64 @@ namespace StreamedMPEditor
           subMenuLevel2[index].displayName = itemProperties.DisplayName;
           formStreamedMpEditor.changeOutstanding = true;
         }
-        if (string.IsNullOrEmpty(itemProperties.tvseriesHypelinkParameter) || itemProperties.tvseriesHypelinkParameter == "false")
+        //
+        // Only do this part if we care about hyperlink parameters
+        //
+        if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
         {
-          subMenuLevel2[index].hyperlinkParameter = "false";
-          subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
-          formStreamedMpEditor.changeOutstanding = true;
-        }
-        else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
-        {
-          subMenuLevel2[index].hyperlinkParameter = itemProperties.tvseriesHypelinkParameter;
-          formStreamedMpEditor.changeOutstanding = true;
-        }
-
-        if (formStreamedMpEditor.changeOutstanding)
-        {
-          lboxSubMenuLevel2.Items.Clear();
-          for (int i = 0; i < subMenuLevel2.Count; i++)
+          //TvSeries
+          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.tvseriesSkinID)
           {
-            lboxSubMenuLevel2.Items.Add(subMenuLevel1[i].displayName);
+            if (string.IsNullOrEmpty(itemProperties.tvseriesHypelinkParameter) || itemProperties.tvseriesHypelinkParameter == "false")
+            {
+              subMenuLevel2[index].hyperlinkParameter = "false";
+              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+            {
+              subMenuLevel2[index].hyperlinkParameter = itemProperties.tvseriesHypelinkParameter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
+          //Music
+          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.musicSkinID)
+          {
+            if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
+            {
+              subMenuLevel2[index].hyperlinkParameter = "false";
+              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+            {
+              subMenuLevel2[index].hyperlinkParameter = itemProperties.musicHypelinkParameter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
+          //Onlinevideos
+          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
+          {
+            if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
+            {
+              subMenuLevel2[index].hyperlinkParameter = "false";
+              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+            {
+              subMenuLevel2[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
+          // Refresh the listbox, only way to do this is clear re-populate.
+          if (formStreamedMpEditor.changeOutstanding)
+          {
+            lboxSubMenuLevel2.Items.Clear();
+            for (int i = 0; i < subMenuLevel2.Count; i++)
+            {
+              lboxSubMenuLevel2.Items.Add(subMenuLevel1[i].displayName);
+            }
           }
         }
       }
