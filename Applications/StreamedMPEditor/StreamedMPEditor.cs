@@ -165,6 +165,7 @@ namespace StreamedMPEditor
     public const string movingPicturesSkinID = "96742";
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
+    public const string onlineVideosSkinID = "4755";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
@@ -420,12 +421,6 @@ namespace StreamedMPEditor
     public static bool pluginTakesParameter(string hyperLink)
     {
       Helper helper = new Helper();
-      //if (!hlWarningDone && tvseriesViews.Count == 0 && isAlpha)
-      //{
-      //    hlWarningDone = true;
-      //    helper.showError("Unable to Access TVSeries DB, this will reduce functionalty and is most\nlikley caused by running the Standalone version of the Editor.\n\nThis error will prevent access to the TVSeries view parameter lookup.\n\nPlease use the Editor from within MP Confuguration Plugins->Process for full functionality", errorCode.info);
-      //}
-
       if (!isAlpha)
         return false;
 
@@ -433,6 +428,7 @@ namespace StreamedMPEditor
 
       // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
       parametersValid.Add(tvseriesSkinID, true);
+      parametersValid.Add(onlineVideosSkinID, true);
 
       if (isBeta)
       {
@@ -812,7 +808,7 @@ namespace StreamedMPEditor
         {
           if (item.hyperlink == tvseriesSkinID)
             item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
-        
+
           if (item.hyperlink == musicSkinID)
             item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
         }
@@ -852,6 +848,8 @@ namespace StreamedMPEditor
         btGenerateMenu.Enabled = true;
         changeOutstanding = true;
         cboParameterViews.Visible = false;
+        if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+          displayMenuIcon(item.buttonTexture);
       }
     }
 
@@ -955,6 +953,9 @@ namespace StreamedMPEditor
     void displayMenuIcon(string icon)
     {
       string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+      if (string.IsNullOrEmpty(icon) || !File.Exists(Path.Combine(streamedMPMediaPath, icon)))
+        icon = "homeButtons\\noimage.png";
+
       pbMenuIconInfo.Image = Image.FromFile(Path.Combine(streamedMPMediaPath, icon)).GetThumbnailImage(40, 40, null, new IntPtr());
     }
 
@@ -1728,6 +1729,7 @@ namespace StreamedMPEditor
     private void btMenuIcon_Click(object sender, EventArgs e)
     {
       buttonTexture.setButtonTexture();
+      displayMenuIcon(buttonTexture.SelectedIcon);
     }
 
   }

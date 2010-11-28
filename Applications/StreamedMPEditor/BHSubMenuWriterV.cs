@@ -125,8 +125,19 @@ namespace StreamedMPEditor
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
 
+        //Plugin Parameter handling
         if (parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
-            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+        {
+          switch (parentMenu.subMenuLevel1[j].hyperlink)
+          {
+            case onlineVideosSkinID:
+              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+              break;
+            default:
+              localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+              break;
+          }
+        }
 
        localxml += "<onleft>" + (parentMenu.id + 900).ToString() + "</onleft>" +
                     "<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
@@ -264,8 +275,19 @@ namespace StreamedMPEditor
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
 
+        //Plugin Parameter handling
         if (parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
-            localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
+        {
+          switch (parentMenu.subMenuLevel2[j].hyperlink)
+          {
+            case onlineVideosSkinID:
+              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
+              break;
+            default:
+              localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
+              break;
+          }
+        } 
 
         localxml += "<onleft>" + (parentMenu.subMenuLevel1ID + (1)).ToString() + "</onleft>" +
                      "<onright>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</onright>" +
