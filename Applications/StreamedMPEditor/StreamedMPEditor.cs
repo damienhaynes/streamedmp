@@ -1195,7 +1195,12 @@ namespace StreamedMPEditor
       {
         generateTopBarH();
         generateMenuGraphicsH();
-        generateCrowdingFixH();
+        
+        if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+          generateGraphicCrowdingFixH();
+        else
+          generateCrowdingFixH();
+
         if (horizontalContextLabels.Checked)
           GenerateContextLabelsH();
       }
