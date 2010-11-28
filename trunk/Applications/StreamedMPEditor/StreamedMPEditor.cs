@@ -13,6 +13,7 @@ using WindowPlugins.GUITVSeries;
 using SQLite.NET;
 using MediaPortal.GUI.Music;
 using MediaPortal.GUI.View;
+using OnlineVideos;
 
 namespace StreamedMPEditor
 {
@@ -149,6 +150,7 @@ namespace StreamedMPEditor
 
     public static List<string> theTVSeriesViews = new List<string>();
     public static List<string> theMusicViews = new List<string>();
+    public static List<string> theOnlineVideosViews = new List<string>();
 
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<string> ids = new List<string>();
@@ -255,7 +257,8 @@ namespace StreamedMPEditor
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
-    public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string,string>>();
+    public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
+    public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
 
     #endregion
 
@@ -345,6 +348,18 @@ namespace StreamedMPEditor
         {
           theTVSeriesViews.Add(tvv.Value);
           //cboParameterViews.Items.Add(tvv.Value);
+        }
+      }
+
+      filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows\\OnlineVideos"), "OnlineVideos.dll");
+      if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(0, 27, 0, 0), filename))
+      {
+        onlineVideosViews = GetOnlineVideosViews();
+
+        theOnlineVideosViews.Clear();
+        foreach (KeyValuePair<string, string> ovv in onlineVideosViews)
+        {
+          theOnlineVideosViews.Add(ovv.Value);    
         }
       }
 
@@ -1544,6 +1559,33 @@ namespace StreamedMPEditor
         tvseriesViews = DBView.GetSkinViews();
 
       return tvseriesViews;
+    }
+
+    private List<KeyValuePair<string, string>> GetOnlineVideosViews()
+    {
+      // check if we have already got them
+      if (onlineVideosViews.Count == 0)
+      {
+        // set path of config file, so we load user settings
+        OnlineVideoSettings.Instance.ConfigDir = SkinInfo.mpPaths.configBasePath;
+
+        // load list of sites
+        OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
+        onlineVideos.LoadSites();
+
+        foreach (SiteSettings site in onlineVideos.SiteSettingsList)
+        {
+          // just get a list of enabled sites
+          if (site.IsEnabled)
+          {
+            KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Name, site.Name);
+            onlineVideosViews.Add(view);
+          }
+        }
+
+      }
+  
+      return onlineVideosViews;
     }
 
     /// <summary>
