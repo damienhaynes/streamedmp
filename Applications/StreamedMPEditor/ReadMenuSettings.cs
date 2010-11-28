@@ -528,6 +528,18 @@ namespace StreamedMPEditor
           case 2600:
             mnuItem.buttonTexture = "homebuttons\\weather.png";
             break;
+          case 5900:
+            mnuItem.buttonTexture = "homebuttons\\movies.png";
+            break;
+          case 9811:
+            mnuItem.buttonTexture = "homebuttons\\tv-series.png";
+            break;
+          case 16001:
+            mnuItem.buttonTexture = "homebuttons\\news.png";
+            break;
+          case 96742:
+            mnuItem.buttonTexture = "homebuttons\\movies.png";
+            break;
           case 25650:
             mnuItem.buttonTexture = "homebuttons\\music.png";
             break;
