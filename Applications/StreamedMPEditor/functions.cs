@@ -928,6 +928,7 @@ namespace StreamedMPEditor
         installWeatherBackgrounds.Visible = true;
       }
 
+      btMenuIcon.Visible = false;
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
@@ -988,12 +989,14 @@ namespace StreamedMPEditor
           weatherStyle = chosenWeatherStyle.bottom;
           horizontalContextLabels.Checked = false;
           enableFiveDayWeather.Checked = true;
-          fullWeatherSummaryBottom.Enabled = true;
-          fullWeatherSummaryBottom.Checked = false;
+          fullWeatherSummaryBottom.Enabled = false;
+          fullWeatherSummaryBottom.Checked = true;
           horizontalContextLabels.Enabled = false;
           graphicalStyle.Checked = true;
+
           if (!WeatherIconsAnimated.Checked)
             weatherIconsStatic.Checked = true;
+
           weatherSummaryGroup.Visible = true;
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "430";
@@ -1002,6 +1005,9 @@ namespace StreamedMPEditor
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
           cbExitStyleNew.Visible = false;
+
+          btMenuIcon.Visible = true;
+
           break;
       }
     }

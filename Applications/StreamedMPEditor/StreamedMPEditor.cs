@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Reflection;
+using System.Drawing;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
 using MediaPortal.Utils;
@@ -255,6 +256,7 @@ namespace StreamedMPEditor
     defaultImages defImgs = new defaultImages();
     randomFanartSetting randomFanart = new randomFanartSetting();
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
+    getButtonTexture buttonTexture = new getButtonTexture();
 
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
@@ -689,6 +691,9 @@ namespace StreamedMPEditor
         else
           checkAndSetDefultImage(item);
 
+        item.buttonTexture = buttonTexture.SelectedIcon;
+        buttonTexture.MenuItem = item.name;
+
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
@@ -726,6 +731,8 @@ namespace StreamedMPEditor
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
       cboFanartProperty.Text = mnuItem.fanartProperty;
+      buttonTexture.SelectedIcon = mnuItem.buttonTexture;
+      buttonTexture.MenuItem = mnuItem.name;
 
       if (mnuItem.fhBGSource == fanartSource.Scraper)
       {
@@ -833,6 +840,7 @@ namespace StreamedMPEditor
         {
           checkAndSetDefultImage(item);
         }
+        item.buttonTexture = buttonTexture.SelectedIcon;
 
         menuItems[index] = item;
         itemsOnMenubar.Items.RemoveAt(index);
@@ -938,8 +946,16 @@ namespace StreamedMPEditor
       bgBox.Text = mnuItem.bgFolder;
       menuitemWindow.Text = xmlFiles.Text;
       setMostRecentDisplayOption(mnuItem.showMostRecent);
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        displayMenuIcon(mnuItem.buttonTexture);
 
       UpdateImageControlVisibility(mnuItem.fanartHandlerEnabled);
+    }
+
+    void displayMenuIcon(string icon)
+    {
+      string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+      pbMenuIconInfo.Image = Image.FromFile(Path.Combine(streamedMPMediaPath, icon)).GetThumbnailImage(40, 40, null, new IntPtr());
     }
 
     void browseButton_Click(object sender, EventArgs e)
@@ -1711,8 +1727,7 @@ namespace StreamedMPEditor
 
     private void btMenuIcon_Click(object sender, EventArgs e)
     {
-      getButtonTexture gbt = new getButtonTexture();
-      gbt.ShowDialog();
+      buttonTexture.setButtonTexture();
     }
 
   }

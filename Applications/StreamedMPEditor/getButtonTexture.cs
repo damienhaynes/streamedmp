@@ -15,55 +15,124 @@ namespace StreamedMPEditor
 
     List<string> iconFiles = new List<string>();
     Image workingImage = null;
+    Image boarderImage = null;
+    string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+
+    public static string buttonTexture = string.Empty;
+    public static string menuName = string.Empty;
 
     public getButtonTexture()
     {
       InitializeComponent();
 
-      displayIcons();
     }
 
-
-    public List<string> IconList
+    public string SelectedIcon 
     {
       get
       {
-        return iconList();
+        return "homeButtons\\" + Path.GetFileName(buttonTexture);
+      }
+      set 
+      {
+        buttonTexture = value;
       }
     }
+
+    public string MenuItem
+    {
+      set
+      {
+        menuName = value;
+      }
+    }
+
+    public void setButtonTexture()
+    {
+      displayIcons();
+      this.ShowDialog();
+   }
 
     void displayIcons()
     {
-      int xPos = 16, yPos = 51;
-      foreach (string icon in IconList)
+      string currentIcon = string.Empty;
+      lbMenuItem.Text = menuName;
+      // Create currently selected icon picture box
+      if (string.IsNullOrEmpty(buttonTexture) || !File.Exists(Path.Combine(streamedMPMediaPath,buttonTexture)))
+        currentIcon = Path.Combine(streamedMPMediaPath, "homeButtons\\noimage.png");
+      else
+        currentIcon = buttonTexture;
+        
+      workingImage = Image.FromFile(Path.Combine(streamedMPMediaPath, currentIcon));
+      pbCurrentIcon.Image = workingImage.GetThumbnailImage(128, 128, null, new IntPtr());
+      workingImage.Dispose();
+
+      foreach (string icon in iconList())
       {
         PictureBox newPBox = new PictureBox();
         newPBox.Size = new Size(64, 64);
-        newPBox.Location = new Point(xPos, yPos);
         workingImage = Image.FromFile(icon);
         newPBox.Image = workingImage.GetThumbnailImage(64, 64, null, new IntPtr());
         workingImage.Dispose();
-        this.Controls.Add(newPBox);
-        xPos += 74;
+        newPBox.Tag = icon;
+        newPBox.Name = Path.GetFileNameWithoutExtension(icon);
+        newPBox.Click += new System.EventHandler(newPBox_Click);
+        newPBox.MouseEnter += new System.EventHandler(newPBox_MouseEnter);
+        newPBox.MouseLeave += new System.EventHandler(newPBox_MouseLeave); 
+        flIconPanel.Controls.Add(newPBox);
       }
-
     }
+
+    public void newPBox_Click(object sender, EventArgs e)
+    {
+      string newIcon = ((PictureBox)sender).Tag.ToString();
+      workingImage = Image.FromFile(newIcon);
+      pbCurrentIcon.Image = workingImage.GetThumbnailImage(128, 128, null, new IntPtr());
+      workingImage.Dispose();
+      buttonTexture = newIcon;
+    }
+
+    public void newPBox_MouseEnter(object sender, EventArgs e)
+    {
+      string homeButtonPath = Path.Combine(streamedMPMediaPath, "homebuttons");
+      string newIcon = ((PictureBox)sender).Tag.ToString();
+
+      boarderImage = Image.FromFile(Path.Combine(homeButtonPath, "glow.png")).GetThumbnailImage(64,64,null,new IntPtr());
+      workingImage = Image.FromFile(newIcon).GetThumbnailImage(64,64,null,new IntPtr());
+
+      using (Graphics grfx = Graphics.FromImage(boarderImage))
+      {
+        grfx.DrawImage(workingImage, 0, 0);
+      }
+      ((PictureBox)sender).Image = boarderImage;
+      // Clean-up
+      workingImage.Dispose();
+      //boarderImage.Dispose();
+    }
+
+    public void newPBox_MouseLeave(object sender, EventArgs e)
+    {
+      string newIcon = ((PictureBox)sender).Tag.ToString();
+      ((PictureBox)sender).Image = Image.FromFile(newIcon).GetThumbnailImage(64, 64, null, new IntPtr());
+    }
+
 
     List<string> iconList()
     {
       Helper helper = new Helper();
-
-      DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"),"homebuttons"));
+      DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, "homebuttons"));
       //get list of files from directory
       foreach (FileInfo fInfo in dInfo.GetFiles("*.png"))
       {
-        iconFiles.Add(fInfo.FullName);
+        if (!fInfo.FullName.Contains("glow"))
+          iconFiles.Add(fInfo.FullName);
       }
-
       return iconFiles;
     }
 
-
-
+    private void btSaveAndExit_Click(object sender, EventArgs e)
+    {
+      this.Hide();
+    }
   }
 }

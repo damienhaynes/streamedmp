@@ -33,8 +33,16 @@
       this.StreamedMPMenu = new System.Windows.Forms.TabControl();
       this.menuStyleTab = new System.Windows.Forms.TabPage();
       this.menuStylesGroup = new System.Windows.Forms.GroupBox();
+      this.style4Description = new System.Windows.Forms.PictureBox();
       this.graphicalStyle = new System.Windows.Forms.RadioButton();
+      this.menuStyle4 = new System.Windows.Forms.PictureBox();
+      this.style3Description = new System.Windows.Forms.PictureBox();
+      this.style2Description = new System.Windows.Forms.PictureBox();
+      this.style1Description = new System.Windows.Forms.PictureBox();
       this.menuDescription = new System.Windows.Forms.RichTextBox();
+      this.menuStyle3 = new System.Windows.Forms.PictureBox();
+      this.menuStyle2 = new System.Windows.Forms.PictureBox();
+      this.menuStyle1 = new System.Windows.Forms.PictureBox();
       this.horizontalStyle = new System.Windows.Forms.RadioButton();
       this.horizontalStyle2 = new System.Windows.Forms.RadioButton();
       this.verticalStyle = new System.Windows.Forms.RadioButton();
@@ -43,8 +51,13 @@
       this.installAnimatedIcons = new System.Windows.Forms.LinkLabel();
       this.weatherIconsStatic = new System.Windows.Forms.RadioButton();
       this.WeatherIconsAnimated = new System.Windows.Forms.RadioButton();
+      this.pictureBox2 = new System.Windows.Forms.PictureBox();
+      this.pictureBox6 = new System.Windows.Forms.PictureBox();
       this.weatherIconsGroup = new System.Windows.Forms.GroupBox();
       this.useSkinWeatherIcons = new System.Windows.Forms.LinkLabel();
+      this.weatherStyle3 = new System.Windows.Forms.PictureBox();
+      this.weatherStyle2 = new System.Windows.Forms.PictureBox();
+      this.weatherStyle1 = new System.Windows.Forms.PictureBox();
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
       this.btSelectOverlay = new System.Windows.Forms.Button();
@@ -84,6 +97,7 @@
       this.bgBox = new System.Windows.Forms.ComboBox();
       this.labelImageFolder = new System.Windows.Forms.Label();
       this.itemProperties = new System.Windows.Forms.GroupBox();
+      this.btMenuIcon = new System.Windows.Forms.Button();
       this.lbParameterView = new System.Windows.Forms.Label();
       this.cboParameterViews = new System.Windows.Forms.ComboBox();
       this.cancelCreateButton = new System.Windows.Forms.Button();
@@ -92,6 +106,8 @@
       this.isWeather = new System.Windows.Forms.CheckBox();
       this.label9 = new System.Windows.Forms.Label();
       this.tbItemName = new System.Windows.Forms.TextBox();
+      this.btMoveDown = new System.Windows.Forms.Button();
+      this.btMoveUp = new System.Windows.Forms.Button();
       this.itemsOnMenubar = new System.Windows.Forms.CheckedListBox();
       this.xmlFiles = new System.Windows.Forms.ListBox();
       this.menuOptions = new System.Windows.Forms.TabPage();
@@ -159,10 +175,14 @@
       this.cbPowerControlOverlay = new System.Windows.Forms.CheckBox();
       this.infoServiceRecentOptions = new System.Windows.Forms.GroupBox();
       this.gbSummaryStyle = new System.Windows.Forms.GroupBox();
+      this.pbPosterPicMovPics = new System.Windows.Forms.PictureBox();
+      this.pbFanartPicMovPics = new System.Windows.Forms.PictureBox();
       this.btFormatOptions = new System.Windows.Forms.Button();
       this.rbFanartStyle = new System.Windows.Forms.RadioButton();
       this.cbCycleFanart = new System.Windows.Forms.CheckBox();
       this.rbPosterStyle = new System.Windows.Forms.RadioButton();
+      this.pbPosterPicTVSeries = new System.Windows.Forms.PictureBox();
+      this.pbFanartPicTVSeries = new System.Windows.Forms.PictureBox();
       this.pMovPicsRecent = new System.Windows.Forms.Panel();
       this.cbMovPicsRecentWatched = new System.Windows.Forms.CheckBox();
       this.gbMovPicsOptions = new System.Windows.Forms.GroupBox();
@@ -182,6 +202,7 @@
       this.label23 = new System.Windows.Forms.Label();
       this.label22 = new System.Windows.Forms.Label();
       this.defaultBackgrounds = new System.Windows.Forms.TabPage();
+      this.pictureBox3 = new System.Windows.Forms.PictureBox();
       this.splashscreenSelector = new System.Windows.Forms.TabPage();
       this.gbSplashDL = new System.Windows.Forms.GroupBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
@@ -189,6 +210,7 @@
       this.btSplashSelect = new System.Windows.Forms.Button();
       this.btSplashPrev = new System.Windows.Forms.Button();
       this.btSplashNext = new System.Windows.Forms.Button();
+      this.spashscreenPreview = new System.Windows.Forms.PictureBox();
       this.editingInfo = new System.Windows.Forms.TabPage();
       this.editorOptionsGroup = new System.Windows.Forms.GroupBox();
       this.autoBackupGroup = new System.Windows.Forms.GroupBox();
@@ -235,35 +257,27 @@
       this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
-      this.style4Description = new System.Windows.Forms.PictureBox();
-      this.menuStyle4 = new System.Windows.Forms.PictureBox();
-      this.style3Description = new System.Windows.Forms.PictureBox();
-      this.style2Description = new System.Windows.Forms.PictureBox();
-      this.style1Description = new System.Windows.Forms.PictureBox();
-      this.menuStyle3 = new System.Windows.Forms.PictureBox();
-      this.menuStyle2 = new System.Windows.Forms.PictureBox();
-      this.menuStyle1 = new System.Windows.Forms.PictureBox();
-      this.pictureBox2 = new System.Windows.Forms.PictureBox();
-      this.pictureBox6 = new System.Windows.Forms.PictureBox();
-      this.weatherStyle3 = new System.Windows.Forms.PictureBox();
-      this.weatherStyle2 = new System.Windows.Forms.PictureBox();
-      this.weatherStyle1 = new System.Windows.Forms.PictureBox();
-      this.btMoveDown = new System.Windows.Forms.Button();
-      this.btMoveUp = new System.Windows.Forms.Button();
-      this.pbPosterPicMovPics = new System.Windows.Forms.PictureBox();
-      this.pbFanartPicMovPics = new System.Windows.Forms.PictureBox();
-      this.pbPosterPicTVSeries = new System.Windows.Forms.PictureBox();
-      this.pbFanartPicTVSeries = new System.Windows.Forms.PictureBox();
-      this.pictureBox3 = new System.Windows.Forms.PictureBox();
-      this.spashscreenPreview = new System.Windows.Forms.PictureBox();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.btMenuIcon = new System.Windows.Forms.Button();
+      this.pbMenuIconInfo = new System.Windows.Forms.PictureBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.style4Description)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style3Description)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style2Description)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style1Description)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle1)).BeginInit();
       this.weatherStyleTab.SuspendLayout();
       this.aninmatedIconBox.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
       this.weatherIconsGroup.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle3)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle2)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle1)).BeginInit();
       this.basicHomeDesign.SuspendLayout();
       this.groupBox3.SuspendLayout();
       this.groupBox1.SuspendLayout();
@@ -284,6 +298,10 @@
       this.groupBox6.SuspendLayout();
       this.infoServiceRecentOptions.SuspendLayout();
       this.gbSummaryStyle.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicMovPics)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicTVSeries)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicTVSeries)).BeginInit();
       this.pMovPicsRecent.SuspendLayout();
       this.gbMovPicsOptions.SuspendLayout();
       this.pTVSeriesRecent.SuspendLayout();
@@ -291,8 +309,10 @@
       this.pSumHeader.SuspendLayout();
       this.panel2.SuspendLayout();
       this.defaultBackgrounds.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
       this.splashscreenSelector.SuspendLayout();
       this.gbSplashDL.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).BeginInit();
       this.editingInfo.SuspendLayout();
       this.editorOptionsGroup.SuspendLayout();
       this.autoBackupGroup.SuspendLayout();
@@ -301,26 +321,8 @@
       this.groupBox2.SuspendLayout();
       this.statusStrip1.SuspendLayout();
       this.groupBox5.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.style4Description)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style3Description)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style2Description)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style1Description)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle2)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle1)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicMovPics)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicTVSeries)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicTVSeries)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-      ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).BeginInit();
       this.SuspendLayout();
       // 
       // StreamedMPMenu
@@ -374,6 +376,18 @@
       this.menuStylesGroup.TabStop = false;
       this.menuStylesGroup.Text = "Menu Styles";
       // 
+      // style4Description
+      // 
+      this.style4Description.Image = ((System.Drawing.Image)(resources.GetObject("style4Description.Image")));
+      this.style4Description.Location = new System.Drawing.Point(716, 134);
+      this.style4Description.Name = "style4Description";
+      this.style4Description.Size = new System.Drawing.Size(16, 16);
+      this.style4Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.style4Description.TabIndex = 14;
+      this.style4Description.TabStop = false;
+      this.style4Description.MouseEnter += new System.EventHandler(this.style4Description_MouseEnter);
+      this.style4Description.MouseLeave += new System.EventHandler(this.style4Description_MouseLeave);
+      // 
       // graphicalStyle
       // 
       this.graphicalStyle.AutoSize = true;
@@ -386,6 +400,54 @@
       this.graphicalStyle.UseVisualStyleBackColor = true;
       this.graphicalStyle.CheckedChanged += new System.EventHandler(this.graphicalStyle_CheckedChanged);
       // 
+      // menuStyle4
+      // 
+      this.menuStyle4.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle4.Image")));
+      this.menuStyle4.Location = new System.Drawing.Point(557, 19);
+      this.menuStyle4.Name = "menuStyle4";
+      this.menuStyle4.Size = new System.Drawing.Size(175, 110);
+      this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.menuStyle4.TabIndex = 12;
+      this.menuStyle4.TabStop = false;
+      // 
+      // style3Description
+      // 
+      this.style3Description.Image = ((System.Drawing.Image)(resources.GetObject("style3Description.Image")));
+      this.style3Description.Location = new System.Drawing.Point(534, 136);
+      this.style3Description.Name = "style3Description";
+      this.style3Description.Size = new System.Drawing.Size(16, 16);
+      this.style3Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.style3Description.TabIndex = 11;
+      this.style3Description.TabStop = false;
+      this.style3Description.MouseEnter += new System.EventHandler(this.style3Description_MouseEnter);
+      this.style3Description.MouseLeave += new System.EventHandler(this.style3Description_MouseLeave);
+      // 
+      // style2Description
+      // 
+      this.style2Description.Image = ((System.Drawing.Image)(resources.GetObject("style2Description.Image")));
+      this.style2Description.Location = new System.Drawing.Point(352, 135);
+      this.style2Description.Name = "style2Description";
+      this.style2Description.Size = new System.Drawing.Size(16, 16);
+      this.style2Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.style2Description.TabIndex = 10;
+      this.style2Description.TabStop = false;
+      this.toolTip1.SetToolTip(this.style2Description, "\r\n");
+      this.style2Description.MouseEnter += new System.EventHandler(this.style2Description_MouseEnter);
+      this.style2Description.MouseLeave += new System.EventHandler(this.style2Description_MouseLeave);
+      // 
+      // style1Description
+      // 
+      this.style1Description.Image = ((System.Drawing.Image)(resources.GetObject("style1Description.Image")));
+      this.style1Description.Location = new System.Drawing.Point(170, 137);
+      this.style1Description.Name = "style1Description";
+      this.style1Description.Size = new System.Drawing.Size(16, 16);
+      this.style1Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.style1Description.TabIndex = 9;
+      this.style1Description.TabStop = false;
+      this.toolTip1.SetToolTip(this.style1Description, "\r\n");
+      this.style1Description.MouseEnter += new System.EventHandler(this.style1Description_MouseEnter);
+      this.style1Description.MouseLeave += new System.EventHandler(this.style1Description_MouseLeave);
+      // 
       // menuDescription
       // 
       this.menuDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -395,6 +457,36 @@
       this.menuDescription.TabIndex = 8;
       this.menuDescription.TabStop = false;
       this.menuDescription.Text = "";
+      // 
+      // menuStyle3
+      // 
+      this.menuStyle3.Image = global::StreamedMPEditor.Properties.Resources.menuStyle3;
+      this.menuStyle3.Location = new System.Drawing.Point(375, 19);
+      this.menuStyle3.Name = "menuStyle3";
+      this.menuStyle3.Size = new System.Drawing.Size(175, 110);
+      this.menuStyle3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.menuStyle3.TabIndex = 2;
+      this.menuStyle3.TabStop = false;
+      // 
+      // menuStyle2
+      // 
+      this.menuStyle2.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle2.Image")));
+      this.menuStyle2.Location = new System.Drawing.Point(193, 19);
+      this.menuStyle2.Name = "menuStyle2";
+      this.menuStyle2.Size = new System.Drawing.Size(175, 110);
+      this.menuStyle2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.menuStyle2.TabIndex = 1;
+      this.menuStyle2.TabStop = false;
+      // 
+      // menuStyle1
+      // 
+      this.menuStyle1.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle1.Image")));
+      this.menuStyle1.Location = new System.Drawing.Point(11, 19);
+      this.menuStyle1.Name = "menuStyle1";
+      this.menuStyle1.Size = new System.Drawing.Size(175, 110);
+      this.menuStyle1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.menuStyle1.TabIndex = 0;
+      this.menuStyle1.TabStop = false;
       // 
       // horizontalStyle
       // 
@@ -490,6 +582,26 @@
       this.WeatherIconsAnimated.Text = "Animated (Not Installed)";
       this.WeatherIconsAnimated.UseVisualStyleBackColor = true;
       // 
+      // pictureBox2
+      // 
+      this.pictureBox2.Image = global::StreamedMPEditor.Properties.Resources.style5;
+      this.pictureBox2.Location = new System.Drawing.Point(279, 19);
+      this.pictureBox2.Name = "pictureBox2";
+      this.pictureBox2.Size = new System.Drawing.Size(175, 110);
+      this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.pictureBox2.TabIndex = 4;
+      this.pictureBox2.TabStop = false;
+      // 
+      // pictureBox6
+      // 
+      this.pictureBox6.Image = global::StreamedMPEditor.Properties.Resources.style8;
+      this.pictureBox6.Location = new System.Drawing.Point(30, 19);
+      this.pictureBox6.Name = "pictureBox6";
+      this.pictureBox6.Size = new System.Drawing.Size(175, 110);
+      this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.pictureBox6.TabIndex = 5;
+      this.pictureBox6.TabStop = false;
+      // 
       // weatherIconsGroup
       // 
       this.weatherIconsGroup.Controls.Add(this.useSkinWeatherIcons);
@@ -516,6 +628,36 @@
       this.useSkinWeatherIcons.Text = "Install Skin Weather Icons In Main Weather Screen";
       this.toolTip1.SetToolTip(this.useSkinWeatherIcons, resources.GetString("useSkinWeatherIcons.ToolTip"));
       this.useSkinWeatherIcons.Click += new System.EventHandler(this.useSkinWeatherIcons_Click);
+      // 
+      // weatherStyle3
+      // 
+      this.weatherStyle3.Image = global::StreamedMPEditor.Properties.Resources.style6;
+      this.weatherStyle3.Location = new System.Drawing.Point(475, 32);
+      this.weatherStyle3.Name = "weatherStyle3";
+      this.weatherStyle3.Size = new System.Drawing.Size(175, 110);
+      this.weatherStyle3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.weatherStyle3.TabIndex = 10;
+      this.weatherStyle3.TabStop = false;
+      // 
+      // weatherStyle2
+      // 
+      this.weatherStyle2.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
+      this.weatherStyle2.Location = new System.Drawing.Point(246, 32);
+      this.weatherStyle2.Name = "weatherStyle2";
+      this.weatherStyle2.Size = new System.Drawing.Size(175, 110);
+      this.weatherStyle2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.weatherStyle2.TabIndex = 3;
+      this.weatherStyle2.TabStop = false;
+      // 
+      // weatherStyle1
+      // 
+      this.weatherStyle1.Image = global::StreamedMPEditor.Properties.Resources.style7;
+      this.weatherStyle1.Location = new System.Drawing.Point(17, 32);
+      this.weatherStyle1.Name = "weatherStyle1";
+      this.weatherStyle1.Size = new System.Drawing.Size(175, 110);
+      this.weatherStyle1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.weatherStyle1.TabIndex = 11;
+      this.weatherStyle1.TabStop = false;
       // 
       // enableFiveDayWeather
       // 
@@ -594,6 +736,7 @@
       // groupBox3
       // 
       this.groupBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+      this.groupBox3.Controls.Add(this.pbMenuIconInfo);
       this.groupBox3.Controls.Add(this.selectedWindowID);
       this.groupBox3.Controls.Add(this.selectedWindowIDL);
       this.groupBox3.Controls.Add(this.selectedWindow);
@@ -608,7 +751,7 @@
       // selectedWindowID
       // 
       this.selectedWindowID.AutoSize = true;
-      this.selectedWindowID.Location = new System.Drawing.Point(123, 35);
+      this.selectedWindowID.Location = new System.Drawing.Point(101, 35);
       this.selectedWindowID.Name = "selectedWindowID";
       this.selectedWindowID.Size = new System.Drawing.Size(41, 13);
       this.selectedWindowID.TabIndex = 104;
@@ -617,7 +760,7 @@
       // selectedWindowIDL
       // 
       this.selectedWindowIDL.AutoSize = true;
-      this.selectedWindowIDL.Location = new System.Drawing.Point(58, 35);
+      this.selectedWindowIDL.Location = new System.Drawing.Point(36, 35);
       this.selectedWindowIDL.Name = "selectedWindowIDL";
       this.selectedWindowIDL.Size = new System.Drawing.Size(68, 13);
       this.selectedWindowIDL.TabIndex = 103;
@@ -626,7 +769,7 @@
       // selectedWindow
       // 
       this.selectedWindow.AutoSize = true;
-      this.selectedWindow.Location = new System.Drawing.Point(123, 18);
+      this.selectedWindow.Location = new System.Drawing.Point(101, 18);
       this.selectedWindow.Name = "selectedWindow";
       this.selectedWindow.Size = new System.Drawing.Size(12, 13);
       this.selectedWindow.TabIndex = 102;
@@ -635,7 +778,7 @@
       // selectedWindowL
       // 
       this.selectedWindowL.AutoSize = true;
-      this.selectedWindowL.Location = new System.Drawing.Point(32, 18);
+      this.selectedWindowL.Location = new System.Drawing.Point(10, 18);
       this.selectedWindowL.Name = "selectedWindowL";
       this.selectedWindowL.Size = new System.Drawing.Size(94, 13);
       this.selectedWindowL.TabIndex = 101;
@@ -972,6 +1115,16 @@
       this.itemProperties.TabStop = false;
       this.itemProperties.Text = "Item properties";
       // 
+      // btMenuIcon
+      // 
+      this.btMenuIcon.Location = new System.Drawing.Point(69, 101);
+      this.btMenuIcon.Name = "btMenuIcon";
+      this.btMenuIcon.Size = new System.Drawing.Size(164, 23);
+      this.btMenuIcon.TabIndex = 104;
+      this.btMenuIcon.Text = "Change/Select Menu Icon";
+      this.btMenuIcon.UseVisualStyleBackColor = true;
+      this.btMenuIcon.Click += new System.EventHandler(this.btMenuIcon_Click);
+      // 
       // lbParameterView
       // 
       this.lbParameterView.AutoSize = true;
@@ -1061,6 +1214,28 @@
       this.tbItemName.Size = new System.Drawing.Size(148, 20);
       this.tbItemName.TabIndex = 11;
       this.tbItemName.TextChanged += new System.EventHandler(this.itemName_TextChanged);
+      // 
+      // btMoveDown
+      // 
+      this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
+      this.btMoveDown.Location = new System.Drawing.Point(711, 146);
+      this.btMoveDown.Name = "btMoveDown";
+      this.btMoveDown.Size = new System.Drawing.Size(33, 105);
+      this.btMoveDown.TabIndex = 116;
+      this.btMoveDown.TabStop = false;
+      this.btMoveDown.UseVisualStyleBackColor = true;
+      this.btMoveDown.Click += new System.EventHandler(this.btMoveDown_Click);
+      // 
+      // btMoveUp
+      // 
+      this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
+      this.btMoveUp.Location = new System.Drawing.Point(710, 22);
+      this.btMoveUp.Name = "btMoveUp";
+      this.btMoveUp.Size = new System.Drawing.Size(33, 105);
+      this.btMoveUp.TabIndex = 115;
+      this.btMoveUp.TabStop = false;
+      this.btMoveUp.UseVisualStyleBackColor = true;
+      this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
       // 
       // itemsOnMenubar
       // 
@@ -1807,6 +1982,26 @@
       this.gbSummaryStyle.TabIndex = 6;
       this.gbSummaryStyle.TabStop = false;
       // 
+      // pbPosterPicMovPics
+      // 
+      this.pbPosterPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicMovPics.Image")));
+      this.pbPosterPicMovPics.Location = new System.Drawing.Point(33, 35);
+      this.pbPosterPicMovPics.Name = "pbPosterPicMovPics";
+      this.pbPosterPicMovPics.Size = new System.Drawing.Size(199, 87);
+      this.pbPosterPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.pbPosterPicMovPics.TabIndex = 8;
+      this.pbPosterPicMovPics.TabStop = false;
+      // 
+      // pbFanartPicMovPics
+      // 
+      this.pbFanartPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicMovPics.Image")));
+      this.pbFanartPicMovPics.Location = new System.Drawing.Point(275, 20);
+      this.pbFanartPicMovPics.Name = "pbFanartPicMovPics";
+      this.pbFanartPicMovPics.Size = new System.Drawing.Size(102, 102);
+      this.pbFanartPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.pbFanartPicMovPics.TabIndex = 7;
+      this.pbFanartPicMovPics.TabStop = false;
+      // 
       // btFormatOptions
       // 
       this.btFormatOptions.Location = new System.Drawing.Point(33, 151);
@@ -1850,6 +2045,24 @@
       this.rbPosterStyle.TabStop = true;
       this.rbPosterStyle.Text = "Poster Style";
       this.rbPosterStyle.UseVisualStyleBackColor = true;
+      // 
+      // pbPosterPicTVSeries
+      // 
+      this.pbPosterPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicTVSeries.Image")));
+      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(33, 36);
+      this.pbPosterPicTVSeries.Name = "pbPosterPicTVSeries";
+      this.pbPosterPicTVSeries.Size = new System.Drawing.Size(199, 87);
+      this.pbPosterPicTVSeries.TabIndex = 0;
+      this.pbPosterPicTVSeries.TabStop = false;
+      // 
+      // pbFanartPicTVSeries
+      // 
+      this.pbFanartPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicTVSeries.Image")));
+      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(275, 21);
+      this.pbFanartPicTVSeries.Name = "pbFanartPicTVSeries";
+      this.pbFanartPicTVSeries.Size = new System.Drawing.Size(102, 102);
+      this.pbFanartPicTVSeries.TabIndex = 1;
+      this.pbFanartPicTVSeries.TabStop = false;
       // 
       // pMovPicsRecent
       // 
@@ -2059,6 +2272,17 @@
       this.defaultBackgrounds.Text = "Default Background Images";
       this.defaultBackgrounds.UseVisualStyleBackColor = true;
       // 
+      // pictureBox3
+      // 
+      this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+      this.pictureBox3.Location = new System.Drawing.Point(731, 3);
+      this.pictureBox3.Name = "pictureBox3";
+      this.pictureBox3.Size = new System.Drawing.Size(16, 16);
+      this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+      this.pictureBox3.TabIndex = 0;
+      this.pictureBox3.TabStop = false;
+      this.toolTip1.SetToolTip(this.pictureBox3, resources.GetString("pictureBox3.ToolTip"));
+      // 
       // splashscreenSelector
       // 
       this.splashscreenSelector.Controls.Add(this.gbSplashDL);
@@ -2137,6 +2361,14 @@
       this.btSplashNext.Text = "Next";
       this.btSplashNext.UseVisualStyleBackColor = true;
       this.btSplashNext.Click += new System.EventHandler(this.btSplashNext_Click);
+      // 
+      // spashscreenPreview
+      // 
+      this.spashscreenPreview.Location = new System.Drawing.Point(50, 8);
+      this.spashscreenPreview.Name = "spashscreenPreview";
+      this.spashscreenPreview.Size = new System.Drawing.Size(650, 365);
+      this.spashscreenPreview.TabIndex = 0;
+      this.spashscreenPreview.TabStop = false;
       // 
       // editingInfo
       // 
@@ -2592,225 +2824,6 @@
       this.lbActiveSplashScreen.Text = "Current SplashScreen";
       this.lbActiveSplashScreen.Visible = false;
       // 
-      // style4Description
-      // 
-      this.style4Description.Image = ((System.Drawing.Image)(resources.GetObject("style4Description.Image")));
-      this.style4Description.Location = new System.Drawing.Point(716, 134);
-      this.style4Description.Name = "style4Description";
-      this.style4Description.Size = new System.Drawing.Size(16, 16);
-      this.style4Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.style4Description.TabIndex = 14;
-      this.style4Description.TabStop = false;
-      this.style4Description.MouseEnter += new System.EventHandler(this.style4Description_MouseEnter);
-      this.style4Description.MouseLeave += new System.EventHandler(this.style4Description_MouseLeave);
-      // 
-      // menuStyle4
-      // 
-      this.menuStyle4.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle4.Image")));
-      this.menuStyle4.Location = new System.Drawing.Point(557, 19);
-      this.menuStyle4.Name = "menuStyle4";
-      this.menuStyle4.Size = new System.Drawing.Size(175, 110);
-      this.menuStyle4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.menuStyle4.TabIndex = 12;
-      this.menuStyle4.TabStop = false;
-      // 
-      // style3Description
-      // 
-      this.style3Description.Image = ((System.Drawing.Image)(resources.GetObject("style3Description.Image")));
-      this.style3Description.Location = new System.Drawing.Point(534, 136);
-      this.style3Description.Name = "style3Description";
-      this.style3Description.Size = new System.Drawing.Size(16, 16);
-      this.style3Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.style3Description.TabIndex = 11;
-      this.style3Description.TabStop = false;
-      this.style3Description.MouseEnter += new System.EventHandler(this.style3Description_MouseEnter);
-      this.style3Description.MouseLeave += new System.EventHandler(this.style3Description_MouseLeave);
-      // 
-      // style2Description
-      // 
-      this.style2Description.Image = ((System.Drawing.Image)(resources.GetObject("style2Description.Image")));
-      this.style2Description.Location = new System.Drawing.Point(352, 135);
-      this.style2Description.Name = "style2Description";
-      this.style2Description.Size = new System.Drawing.Size(16, 16);
-      this.style2Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.style2Description.TabIndex = 10;
-      this.style2Description.TabStop = false;
-      this.toolTip1.SetToolTip(this.style2Description, "\r\n");
-      this.style2Description.MouseEnter += new System.EventHandler(this.style2Description_MouseEnter);
-      this.style2Description.MouseLeave += new System.EventHandler(this.style2Description_MouseLeave);
-      // 
-      // style1Description
-      // 
-      this.style1Description.Image = ((System.Drawing.Image)(resources.GetObject("style1Description.Image")));
-      this.style1Description.Location = new System.Drawing.Point(170, 137);
-      this.style1Description.Name = "style1Description";
-      this.style1Description.Size = new System.Drawing.Size(16, 16);
-      this.style1Description.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.style1Description.TabIndex = 9;
-      this.style1Description.TabStop = false;
-      this.toolTip1.SetToolTip(this.style1Description, "\r\n");
-      this.style1Description.MouseEnter += new System.EventHandler(this.style1Description_MouseEnter);
-      this.style1Description.MouseLeave += new System.EventHandler(this.style1Description_MouseLeave);
-      // 
-      // menuStyle3
-      // 
-      this.menuStyle3.Image = global::StreamedMPEditor.Properties.Resources.menuStyle3;
-      this.menuStyle3.Location = new System.Drawing.Point(375, 19);
-      this.menuStyle3.Name = "menuStyle3";
-      this.menuStyle3.Size = new System.Drawing.Size(175, 110);
-      this.menuStyle3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.menuStyle3.TabIndex = 2;
-      this.menuStyle3.TabStop = false;
-      // 
-      // menuStyle2
-      // 
-      this.menuStyle2.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle2.Image")));
-      this.menuStyle2.Location = new System.Drawing.Point(193, 19);
-      this.menuStyle2.Name = "menuStyle2";
-      this.menuStyle2.Size = new System.Drawing.Size(175, 110);
-      this.menuStyle2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.menuStyle2.TabIndex = 1;
-      this.menuStyle2.TabStop = false;
-      // 
-      // menuStyle1
-      // 
-      this.menuStyle1.Image = ((System.Drawing.Image)(resources.GetObject("menuStyle1.Image")));
-      this.menuStyle1.Location = new System.Drawing.Point(11, 19);
-      this.menuStyle1.Name = "menuStyle1";
-      this.menuStyle1.Size = new System.Drawing.Size(175, 110);
-      this.menuStyle1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.menuStyle1.TabIndex = 0;
-      this.menuStyle1.TabStop = false;
-      // 
-      // pictureBox2
-      // 
-      this.pictureBox2.Image = global::StreamedMPEditor.Properties.Resources.style5;
-      this.pictureBox2.Location = new System.Drawing.Point(279, 19);
-      this.pictureBox2.Name = "pictureBox2";
-      this.pictureBox2.Size = new System.Drawing.Size(175, 110);
-      this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.pictureBox2.TabIndex = 4;
-      this.pictureBox2.TabStop = false;
-      // 
-      // pictureBox6
-      // 
-      this.pictureBox6.Image = global::StreamedMPEditor.Properties.Resources.style8;
-      this.pictureBox6.Location = new System.Drawing.Point(30, 19);
-      this.pictureBox6.Name = "pictureBox6";
-      this.pictureBox6.Size = new System.Drawing.Size(175, 110);
-      this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.pictureBox6.TabIndex = 5;
-      this.pictureBox6.TabStop = false;
-      // 
-      // weatherStyle3
-      // 
-      this.weatherStyle3.Image = global::StreamedMPEditor.Properties.Resources.style6;
-      this.weatherStyle3.Location = new System.Drawing.Point(475, 32);
-      this.weatherStyle3.Name = "weatherStyle3";
-      this.weatherStyle3.Size = new System.Drawing.Size(175, 110);
-      this.weatherStyle3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.weatherStyle3.TabIndex = 10;
-      this.weatherStyle3.TabStop = false;
-      // 
-      // weatherStyle2
-      // 
-      this.weatherStyle2.Image = global::StreamedMPEditor.Properties.Resources.menuStyle4;
-      this.weatherStyle2.Location = new System.Drawing.Point(246, 32);
-      this.weatherStyle2.Name = "weatherStyle2";
-      this.weatherStyle2.Size = new System.Drawing.Size(175, 110);
-      this.weatherStyle2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.weatherStyle2.TabIndex = 3;
-      this.weatherStyle2.TabStop = false;
-      // 
-      // weatherStyle1
-      // 
-      this.weatherStyle1.Image = global::StreamedMPEditor.Properties.Resources.style7;
-      this.weatherStyle1.Location = new System.Drawing.Point(17, 32);
-      this.weatherStyle1.Name = "weatherStyle1";
-      this.weatherStyle1.Size = new System.Drawing.Size(175, 110);
-      this.weatherStyle1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.weatherStyle1.TabIndex = 11;
-      this.weatherStyle1.TabStop = false;
-      // 
-      // btMoveDown
-      // 
-      this.btMoveDown.Image = ((System.Drawing.Image)(resources.GetObject("btMoveDown.Image")));
-      this.btMoveDown.Location = new System.Drawing.Point(711, 146);
-      this.btMoveDown.Name = "btMoveDown";
-      this.btMoveDown.Size = new System.Drawing.Size(33, 105);
-      this.btMoveDown.TabIndex = 116;
-      this.btMoveDown.TabStop = false;
-      this.btMoveDown.UseVisualStyleBackColor = true;
-      this.btMoveDown.Click += new System.EventHandler(this.btMoveDown_Click);
-      // 
-      // btMoveUp
-      // 
-      this.btMoveUp.Image = ((System.Drawing.Image)(resources.GetObject("btMoveUp.Image")));
-      this.btMoveUp.Location = new System.Drawing.Point(710, 22);
-      this.btMoveUp.Name = "btMoveUp";
-      this.btMoveUp.Size = new System.Drawing.Size(33, 105);
-      this.btMoveUp.TabIndex = 115;
-      this.btMoveUp.TabStop = false;
-      this.btMoveUp.UseVisualStyleBackColor = true;
-      this.btMoveUp.Click += new System.EventHandler(this.btMoveUp_Click);
-      // 
-      // pbPosterPicMovPics
-      // 
-      this.pbPosterPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicMovPics.Image")));
-      this.pbPosterPicMovPics.Location = new System.Drawing.Point(33, 35);
-      this.pbPosterPicMovPics.Name = "pbPosterPicMovPics";
-      this.pbPosterPicMovPics.Size = new System.Drawing.Size(199, 87);
-      this.pbPosterPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.pbPosterPicMovPics.TabIndex = 8;
-      this.pbPosterPicMovPics.TabStop = false;
-      // 
-      // pbFanartPicMovPics
-      // 
-      this.pbFanartPicMovPics.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicMovPics.Image")));
-      this.pbFanartPicMovPics.Location = new System.Drawing.Point(275, 20);
-      this.pbFanartPicMovPics.Name = "pbFanartPicMovPics";
-      this.pbFanartPicMovPics.Size = new System.Drawing.Size(102, 102);
-      this.pbFanartPicMovPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-      this.pbFanartPicMovPics.TabIndex = 7;
-      this.pbFanartPicMovPics.TabStop = false;
-      // 
-      // pbPosterPicTVSeries
-      // 
-      this.pbPosterPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbPosterPicTVSeries.Image")));
-      this.pbPosterPicTVSeries.Location = new System.Drawing.Point(33, 36);
-      this.pbPosterPicTVSeries.Name = "pbPosterPicTVSeries";
-      this.pbPosterPicTVSeries.Size = new System.Drawing.Size(199, 87);
-      this.pbPosterPicTVSeries.TabIndex = 0;
-      this.pbPosterPicTVSeries.TabStop = false;
-      // 
-      // pbFanartPicTVSeries
-      // 
-      this.pbFanartPicTVSeries.Image = ((System.Drawing.Image)(resources.GetObject("pbFanartPicTVSeries.Image")));
-      this.pbFanartPicTVSeries.Location = new System.Drawing.Point(275, 21);
-      this.pbFanartPicTVSeries.Name = "pbFanartPicTVSeries";
-      this.pbFanartPicTVSeries.Size = new System.Drawing.Size(102, 102);
-      this.pbFanartPicTVSeries.TabIndex = 1;
-      this.pbFanartPicTVSeries.TabStop = false;
-      // 
-      // pictureBox3
-      // 
-      this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-      this.pictureBox3.Location = new System.Drawing.Point(731, 3);
-      this.pictureBox3.Name = "pictureBox3";
-      this.pictureBox3.Size = new System.Drawing.Size(16, 16);
-      this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-      this.pictureBox3.TabIndex = 0;
-      this.pictureBox3.TabStop = false;
-      this.toolTip1.SetToolTip(this.pictureBox3, resources.GetString("pictureBox3.ToolTip"));
-      // 
-      // spashscreenPreview
-      // 
-      this.spashscreenPreview.Location = new System.Drawing.Point(50, 8);
-      this.spashscreenPreview.Name = "spashscreenPreview";
-      this.spashscreenPreview.Size = new System.Drawing.Size(650, 365);
-      this.spashscreenPreview.TabIndex = 0;
-      this.spashscreenPreview.TabStop = false;
-      // 
       // pbActiveSplashScreen
       // 
       this.pbActiveSplashScreen.Location = new System.Drawing.Point(335, 17);
@@ -2820,15 +2833,13 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // btMenuIcon
+      // pbMenuIconInfo
       // 
-      this.btMenuIcon.Location = new System.Drawing.Point(69, 101);
-      this.btMenuIcon.Name = "btMenuIcon";
-      this.btMenuIcon.Size = new System.Drawing.Size(75, 23);
-      this.btMenuIcon.TabIndex = 104;
-      this.btMenuIcon.Text = "Icon";
-      this.btMenuIcon.UseVisualStyleBackColor = true;
-      this.btMenuIcon.Click += new System.EventHandler(this.btMenuIcon_Click);
+      this.pbMenuIconInfo.Location = new System.Drawing.Point(273, 9);
+      this.pbMenuIconInfo.Name = "pbMenuIconInfo";
+      this.pbMenuIconInfo.Size = new System.Drawing.Size(40, 40);
+      this.pbMenuIconInfo.TabIndex = 105;
+      this.pbMenuIconInfo.TabStop = false;
       // 
       // formStreamedMpEditor
       // 
@@ -2849,11 +2860,24 @@
       this.menuStyleTab.ResumeLayout(false);
       this.menuStylesGroup.ResumeLayout(false);
       this.menuStylesGroup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.style4Description)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style3Description)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style2Description)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.style1Description)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle3)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.menuStyle1)).EndInit();
       this.weatherStyleTab.ResumeLayout(false);
       this.aninmatedIconBox.ResumeLayout(false);
       this.aninmatedIconBox.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
       this.weatherIconsGroup.ResumeLayout(false);
       this.weatherIconsGroup.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle3)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle2)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle1)).EndInit();
       this.basicHomeDesign.ResumeLayout(false);
       this.basicHomeDesign.PerformLayout();
       this.groupBox3.ResumeLayout(false);
@@ -2888,6 +2912,10 @@
       this.infoServiceRecentOptions.ResumeLayout(false);
       this.gbSummaryStyle.ResumeLayout(false);
       this.gbSummaryStyle.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicMovPics)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicTVSeries)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicTVSeries)).EndInit();
       this.pMovPicsRecent.ResumeLayout(false);
       this.pMovPicsRecent.PerformLayout();
       this.gbMovPicsOptions.ResumeLayout(false);
@@ -2902,9 +2930,11 @@
       this.panel2.PerformLayout();
       this.defaultBackgrounds.ResumeLayout(false);
       this.defaultBackgrounds.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
       this.splashscreenSelector.ResumeLayout(false);
       this.gbSplashDL.ResumeLayout(false);
       this.gbSplashDL.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).EndInit();
       this.editingInfo.ResumeLayout(false);
       this.editorOptionsGroup.ResumeLayout(false);
       this.editorOptionsGroup.PerformLayout();
@@ -2920,26 +2950,8 @@
       this.statusStrip1.PerformLayout();
       this.groupBox5.ResumeLayout(false);
       this.groupBox5.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.style4Description)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle4)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style3Description)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style2Description)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.style1Description)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.menuStyle1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle2)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.weatherStyle1)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicMovPics)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicMovPics)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbPosterPicTVSeries)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pbFanartPicTVSeries)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-      ((System.ComponentModel.ISupportInitialize)(this.spashscreenPreview)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.pbActiveSplashScreen)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.pbMenuIconInfo)).EndInit();
       this.ResumeLayout(false);
       this.PerformLayout();
 
@@ -3175,6 +3187,7 @@
     private System.Windows.Forms.RadioButton graphicalStyle;
     private System.Windows.Forms.PictureBox style4Description;
     private System.Windows.Forms.Button btMenuIcon;
+    private System.Windows.Forms.PictureBox pbMenuIconInfo;
   }
 }
 
