@@ -1412,6 +1412,169 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
     }
 
+
+    private void generateGraphicCrowdingFixH()
+    {
+
+      StringBuilder rawXML = new StringBuilder();
+
+      rawXML.AppendLine("<!--            Crowding Fix                   -->");
+
+      for (int k = 0; k < menuItems.Count; k++)
+      {
+        string topBarButtons = string.Empty;
+        string submenuControl = string.Empty;
+
+        int first = k - 2;
+        if (first < 0) first += menuItems.Count;
+
+        int second = k - 1;
+        if (second < 0) second += menuItems.Count;
+
+        int third = k + 1;
+        if (third >= menuItems.Count) third -= menuItems.Count;
+
+        int fourth = k + 2;
+        if (fourth >= menuItems.Count) fourth -= menuItems.Count;
+
+        if (menuItems[k].subMenuLevel1.Count > 0)
+          submenuControl = "|control.isvisible(" + menuItems[k].subMenuLevel1ID.ToString() + ")";
+
+        topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() + ")";
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<type>button</type>");
+        rawXML.AppendLine("<id>" + (menuItems[k].id + 900).ToString() + "</id>");
+        rawXML.AppendLine("<posX>0</posX>");
+        rawXML.AppendLine("<posY>-30</posY>");
+        rawXML.AppendLine("<label>-</label>");
+        rawXML.AppendLine("<width>320</width>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
+        if (menuItems[k].hyperlinkParameter != "false")
+          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+        rawXML.AppendLine("<textureFocus>-</textureFocus>");
+        rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
+        rawXML.AppendLine("<hover>-</hover>");
+        rawXML.AppendLine("<onleft>" + (menuItems[second].id + 800).ToString() + "</onleft>");
+        rawXML.AppendLine("<onright>" + (menuItems[third].id + 700).ToString() + "</onright>");
+        if (menuItems[k].subMenuLevel1.Count > 0)
+        {
+          rawXML.AppendLine("<onup>" + (menuItems[k].subMenuLevel1ID + 1).ToString() + "</onup>");
+        }
+        else
+        {
+          rawXML.AppendLine("<onup>" + (menuItems[k].id + 600).ToString() + "01</onup>");
+        }
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+        rawXML.AppendLine("</control>	");
+
+        // ************ FIRST
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<posX>96</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<width>128</width>");
+        rawXML.AppendLine("<height>128</height>");
+        rawXML.AppendLine("<texture>" + menuItems[first].buttonTexture + "</texture>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=\"slide\" start=\"-160,0\" end=\"-160,0\" time=\"4\" acceleration=\"-0.0\" reversible=\"false\">WindowOpen</animation><!-- needed to display item at negative offset -->");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("</control>");
+
+        // ************** SECOND
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<posX>256</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<width>128</width>");
+        rawXML.AppendLine("<height>128</height>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<texture>" + menuItems[second].buttonTexture + "</texture>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("</control>	");
+
+        // ******** CENTER
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>641</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 201) + "</posY>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
+        rawXML.AppendLine("</control>");
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
+        rawXML.AppendLine("<type>label</type>");
+        rawXML.AppendLine("<posX>640</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 200) + "</posY>");
+        rawXML.AppendLine("<height>72</height>");
+        rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
+        rawXML.AppendLine("<font>#labelFont</font>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
+        rawXML.AppendLine("</control>");
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<posX>544</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + (basicHomeValues.textYOffset - 32)) + "</posY>");
+        rawXML.AppendLine("<width>192</width>");
+        rawXML.AppendLine("<height>192</height>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<texture>" + menuItems[k].buttonTexture + "</texture>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("</control>	");
+
+        // ******** THIRD
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<posX>896</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<width>128</width>");
+        rawXML.AppendLine("<height>128</height>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<texture>" + menuItems[third].buttonTexture + "</texture>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("</control>	");
+
+        // *************** FOURTH
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<posX>1216</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<width>128</width>");
+        rawXML.AppendLine("<height>128</height>");
+        rawXML.AppendLine("<align>center</align>");
+        rawXML.AppendLine("<texture>" + menuItems[fourth].buttonTexture + "</texture>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("</control>	");
+      }
+      xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
+    }
+
+
     #endregion
 
     #region Generate Item Backgrounds
