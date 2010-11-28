@@ -497,6 +497,7 @@ namespace StreamedMPEditor
         mnuItem.updateStatus = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
         mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
         mnuItem.id = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
+        mnuItem.buttonTexture = readEntryValue(menuTag, "menuitem" + i.ToString() + "buttonTexture", nodelist);
 
         mnuItem.xmlFileName = readEntryValue(menuTag, "menuitem" + i.ToString() + "xmlFileName", nodelist);
         if (mnuItem.xmlFileName == "false")
@@ -507,45 +508,48 @@ namespace StreamedMPEditor
         //
         // Graphical Menu Default Image Load
         //
-        switch (int.Parse(mnuItem.hyperlink))
+        if (string.IsNullOrEmpty(mnuItem.buttonTexture) || mnuItem.buttonTexture.ToLower() == "false")
         {
-          case 1:
-            mnuItem.buttonTexture = "homebuttons\\tv.png";
-            break;
-          case 2:
-            mnuItem.buttonTexture = "homebuttons\\pictures.png";
-            break;
-          case 4:
-            mnuItem.buttonTexture = "homebuttons\\settings.png";
-            break;
-          case 34:
-            mnuItem.buttonTexture = "homebuttons\\plugins.png";
-            break;
-          case 501:
-          case 504:
-            mnuItem.buttonTexture = "homebuttons\\music.png";
-            break;
-          case 2600:
-            mnuItem.buttonTexture = "homebuttons\\weather.png";
-            break;
-          case 5900:
-            mnuItem.buttonTexture = "homebuttons\\movies.png";
-            break;
-          case 9811:
-            mnuItem.buttonTexture = "homebuttons\\tv-series.png";
-            break;
-          case 16001:
-            mnuItem.buttonTexture = "homebuttons\\news.png";
-            break;
-          case 96742:
-            mnuItem.buttonTexture = "homebuttons\\movies.png";
-            break;
-          case 25650:
-            mnuItem.buttonTexture = "homebuttons\\music.png";
-            break;
-          default:
-            mnuItem.buttonTexture = "homebuttons\\play.png";
-            break;
+          switch (int.Parse(mnuItem.hyperlink))
+          {
+            case 1:
+              mnuItem.buttonTexture = "homebuttons\\tv.png";
+              break;
+            case 2:
+              mnuItem.buttonTexture = "homebuttons\\pictures.png";
+              break;
+            case 4:
+              mnuItem.buttonTexture = "homebuttons\\settings.png";
+              break;
+            case 34:
+              mnuItem.buttonTexture = "homebuttons\\plugins.png";
+              break;
+            case 501:
+            case 504:
+              mnuItem.buttonTexture = "homebuttons\\music.png";
+              break;
+            case 2600:
+              mnuItem.buttonTexture = "homebuttons\\weather.png";
+              break;
+            case 5900:
+              mnuItem.buttonTexture = "homebuttons\\movies.png";
+              break;
+            case 9811:
+              mnuItem.buttonTexture = "homebuttons\\tv-series.png";
+              break;
+            case 16001:
+              mnuItem.buttonTexture = "homebuttons\\news.png";
+              break;
+            case 96742:
+              mnuItem.buttonTexture = "homebuttons\\movies.png";
+              break;
+            case 25650:
+              mnuItem.buttonTexture = "homebuttons\\music.png";
+              break;
+            default:
+              mnuItem.buttonTexture = "homebuttons\\play.png";
+              break;
+          }
         }
 
 
