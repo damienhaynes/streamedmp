@@ -954,7 +954,7 @@ namespace StreamedMPEditor
     {
       string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
       if (string.IsNullOrEmpty(icon) || !File.Exists(Path.Combine(streamedMPMediaPath, icon)))
-        icon = "homeButtons\\noimage.png";
+        icon = "homeButtons\\_noimage.png";
 
       pbMenuIconInfo.Image = Image.FromFile(Path.Combine(streamedMPMediaPath, icon)).GetThumbnailImage(40, 40, null, new IntPtr());
     }

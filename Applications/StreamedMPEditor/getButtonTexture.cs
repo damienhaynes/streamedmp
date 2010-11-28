@@ -59,7 +59,7 @@ namespace StreamedMPEditor
       lbMenuItem.Text = menuName;
       // Create currently selected icon picture box
       if (string.IsNullOrEmpty(buttonTexture) || !File.Exists(Path.Combine(streamedMPMediaPath,buttonTexture)))
-        currentIcon = Path.Combine(streamedMPMediaPath, "homeButtons\\noimage.png");
+        currentIcon = Path.Combine(streamedMPMediaPath, "homeButtons\\_noimage.png");
       else
         currentIcon = buttonTexture;
         
@@ -97,7 +97,7 @@ namespace StreamedMPEditor
       string homeButtonPath = Path.Combine(streamedMPMediaPath, "homebuttons");
       string newIcon = ((PictureBox)sender).Tag.ToString();
 
-      boarderImage = Image.FromFile(Path.Combine(homeButtonPath, "glow.png")).GetThumbnailImage(64,64,null,new IntPtr());
+      boarderImage = Image.FromFile(Path.Combine(homeButtonPath, "_glow.png")).GetThumbnailImage(64,64,null,new IntPtr());
       workingImage = Image.FromFile(newIcon).GetThumbnailImage(64,64,null,new IntPtr());
 
       using (Graphics grfx = Graphics.FromImage(boarderImage))
@@ -124,7 +124,7 @@ namespace StreamedMPEditor
       //get list of files from directory
       foreach (FileInfo fInfo in dInfo.GetFiles("*.png"))
       {
-        if (!fInfo.FullName.Contains("glow"))
+        if (!fInfo.Name.StartsWith("_"))
           iconFiles.Add(fInfo.FullName);
       }
       return iconFiles;
