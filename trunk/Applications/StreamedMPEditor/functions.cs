@@ -610,6 +610,7 @@ namespace StreamedMPEditor
 
           basicHomeValues.subMenuTopHeight = 60;
           basicHomeValues.Button3Slide = 70;
+          weatherStyle = chosenWeatherStyle.middle;
           break;
       }
     }
