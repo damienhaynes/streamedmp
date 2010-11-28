@@ -51,7 +51,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>hover_my music.png</texture>
-      <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
+      <visible>[string.equals(#fanarthandler.music.scraper.backdrop1.any,)+string.equals(#fanarthandler.music.scraper.backdrop2.any,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
@@ -63,7 +63,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>#fanarthandler.music.backdrop1.any</texture>
+      <texture>#fanarthandler.music.scraper.backdrop1.any</texture>
       <visible>control.isvisible(91919297)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
@@ -76,7 +76,7 @@
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>#fanarthandler.music.backdrop2.any</texture>
+      <texture>#fanarthandler.music.scraper.backdrop2.any</texture>
       <visible>control.isvisible(91919298)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
