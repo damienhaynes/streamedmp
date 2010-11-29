@@ -53,8 +53,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
+          //Plugin Parameter handling
           if (menItem.hyperlinkParameter != "false")
-              rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 
@@ -102,8 +113,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
-            if (menItem.hyperlinkParameter != "false")
-              rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          //Plugin Parameter handling
+          if (menItem.hyperlinkParameter != "false")
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 
