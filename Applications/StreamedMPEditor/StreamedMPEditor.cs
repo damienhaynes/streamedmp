@@ -598,6 +598,12 @@ namespace StreamedMPEditor
         {
           wrapString.Enabled = false;
         }
+
+        if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        {
+          btMenuIcon.Visible = true;
+          pbMenuIconInfo.Visible = true;
+        }
       }
       else
         this.Close();
