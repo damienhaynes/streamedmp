@@ -519,36 +519,52 @@ namespace StreamedMPEditor
       //rssImageXposOffset = 0;
       //rssImageYposOffset = 0;
 
-      switch (rssImage)
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
       {
-        case rssImageType.infoserviceImage:
-          rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>RSS Feed image (InfoService)</description>");
-          rawXML.AppendLine("<type>image</type>");
-          rawXML.AppendLine("<id>1</id>");
-          rawXML.AppendLine("<keepaspectratio>yes</keepaspectratio>");
-          rawXML.AppendLine("<height>26</height>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + rssImageYposOffset).ToString() + "</posY>");
-          rawXML.AppendLine("<posX>" + (rssImageXposOffset + 60).ToString() + "</posX>");
-          rawXML.AppendLine("<texture>#infoservice.feed.img</texture>");
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-          rawXML.AppendLine("</control>");
-          break;
-        case rssImageType.skinImage:
-          rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>RSS Feed image (Default Skin Image)</description>");
-          rawXML.AppendLine("<type>image</type>");
-          rawXML.AppendLine("<id>1</id>");
-          rawXML.AppendLine("<width>24</width>");
-          rawXML.AppendLine("<height>24</height>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
-          rawXML.AppendLine("<posX>60</posX>");
-          rawXML.AppendLine("<texture>InfoService\\defaultFeedRSS.png</texture>");
-          rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
-          rawXML.AppendLine("</control>");
-          break;
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>RSS Icon</description>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<width>64</width>");
+        rawXML.AppendLine("<height>64</height>");
+        rawXML.AppendLine("<posY>665</posY>");
+        rawXML.AppendLine("<posX>-5</posX>");
+        rawXML.AppendLine("<texture>homebuttons\\_rss.png</texture>");
+        rawXML.AppendLine("<animation effect=\"slide\" end=\"0,300\" time=\" 250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>");
+        rawXML.AppendLine("</control>");
+      }
+      else
+      {
+        switch (rssImage)
+        {
+          case rssImageType.infoserviceImage:
+            rawXML.AppendLine("<control>");
+            rawXML.AppendLine("<description>RSS Feed image (InfoService)</description>");
+            rawXML.AppendLine("<type>image</type>");
+            rawXML.AppendLine("<id>1</id>");
+            rawXML.AppendLine("<keepaspectratio>yes</keepaspectratio>");
+            rawXML.AppendLine("<height>26</height>");
+            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + rssImageYposOffset).ToString() + "</posY>");
+            rawXML.AppendLine("<posX>" + (rssImageXposOffset + 60).ToString() + "</posX>");
+            rawXML.AppendLine("<texture>#infoservice.feed.img</texture>");
+            rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
+            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("</control>");
+            break;
+          case rssImageType.skinImage:
+            rawXML.AppendLine("<control>");
+            rawXML.AppendLine("<description>RSS Feed image (Default Skin Image)</description>");
+            rawXML.AppendLine("<type>image</type>");
+            rawXML.AppendLine("<id>1</id>");
+            rawXML.AppendLine("<width>24</width>");
+            rawXML.AppendLine("<height>24</height>");
+            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
+            rawXML.AppendLine("<posX>60</posX>");
+            rawXML.AppendLine("<texture>InfoService\\defaultFeedRSS.png</texture>");
+            rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
+            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("</control>");
+            break;
+        }
       }
 
       rawXML.AppendLine("<control>");
@@ -1412,6 +1428,9 @@ namespace StreamedMPEditor
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
     }
 
+    #endregion
+
+    #region Graphical Menu Crowding Fix
 
     private void generateGraphicCrowdingFixH()
     {
@@ -1505,7 +1524,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>641</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 201) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 176) + "</posY>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
@@ -1520,7 +1539,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>640</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 200) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 175) + "</posY>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
