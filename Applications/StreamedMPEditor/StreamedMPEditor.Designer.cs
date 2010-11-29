@@ -1125,11 +1125,11 @@
       // 
       // btMenuIcon
       // 
-      this.btMenuIcon.Location = new System.Drawing.Point(69, 101);
+      this.btMenuIcon.Location = new System.Drawing.Point(10, 100);
       this.btMenuIcon.Name = "btMenuIcon";
-      this.btMenuIcon.Size = new System.Drawing.Size(164, 23);
+      this.btMenuIcon.Size = new System.Drawing.Size(301, 23);
       this.btMenuIcon.TabIndex = 104;
-      this.btMenuIcon.Text = "Change/Select Menu Icon";
+      this.btMenuIcon.Text = "Graphical Menu - Icon Selection";
       this.btMenuIcon.UseVisualStyleBackColor = true;
       this.btMenuIcon.Click += new System.EventHandler(this.btMenuIcon_Click);
       // 

@@ -587,6 +587,7 @@ namespace StreamedMPEditor
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
         editButton.Enabled = true;
+        btMenuIcon.Visible = false;
 
         Version mpVersion = new Version(MediaPortalVersion);
         if (mpVersion.CompareTo(mpReleaseVersion) > 0)
@@ -1042,7 +1043,7 @@ namespace StreamedMPEditor
       editButton.Enabled = false;
       cancelCreateButton.Visible = true;
       btGenerateMenu.Enabled = false;
-      if (selectedWindowID.Text == tvseriesSkinID)
+      if (pluginTakesParameter(selectedWindowID.Text))
       {
         cboParameterViews.Visible = true;
         lbParameterView.Visible = true;

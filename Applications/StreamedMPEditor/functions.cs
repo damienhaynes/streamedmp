@@ -277,6 +277,33 @@ namespace StreamedMPEditor
       isWeather.Checked = prettyItems[index].isweather;
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;
+      if (pluginTakesParameter(selectedWindowID.Text))
+      {
+        cboParameterViews.Visible = true;
+        lbParameterView.Visible = true;
+      }
+      else
+      {
+        cboParameterViews.Visible = false;
+        lbParameterView.Visible = false;
+      }
+      switch (selectedWindowID.Text)
+      {
+        case tvseriesSkinID:
+          cboParameterViews.DataSource = theTVSeriesViews;
+          cboParameterViews.Text = string.Empty;
+          break;
+        case musicSkinID:
+          cboParameterViews.DataSource = theMusicViews;
+          cboParameterViews.Text = string.Empty;
+          break;
+        case onlineVideosSkinID:
+          cboParameterViews.DataSource = theOnlineVideosViews;
+          cboParameterViews.Text = string.Empty;
+          break;
+        default:
+          break;
+      }
     }
 
     private void ClearItems()
@@ -928,7 +955,6 @@ namespace StreamedMPEditor
         installWeatherBackgrounds.Visible = true;
       }
 
-      btMenuIcon.Visible = false;
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
@@ -936,8 +962,10 @@ namespace StreamedMPEditor
           horizontalContextLabels.Enabled = false;
           weatherSummaryGroup.Visible = false;
           verticalStyle.Checked = true;
+          
           if (!WeatherIconsAnimated.Checked)
             weatherIconsStatic.Checked = true;
+
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "350";
           menuPosLabel.Text = "Menu X Position:";
@@ -946,6 +974,8 @@ namespace StreamedMPEditor
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream16tc";
           cbExitStyleNew.Visible = true;
+          btMenuIcon.Visible = false;
+          pbMenuIconInfo.Visible = false;
           break;
         case chosenMenuStyle.horizontalStandardStyle:
           weatherStyle = chosenWeatherStyle.bottom;
@@ -955,8 +985,10 @@ namespace StreamedMPEditor
           fullWeatherSummaryBottom.Checked = true;
           horizontalContextLabels.Enabled = true;
           horizontalStyle.Checked = true;
+
           if (!WeatherIconsAnimated.Checked)
             weatherIconsStatic.Checked = true;
+
           weatherSummaryGroup.Visible = true;
           useAeonGraphics.Visible = false;
           txtMenuPos.Text = "430";
@@ -965,6 +997,8 @@ namespace StreamedMPEditor
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
           cbExitStyleNew.Visible = false;
+          btMenuIcon.Visible = false;
+          pbMenuIconInfo.Visible = false;
           break;
         case chosenMenuStyle.horizontalContextStyle:
           weatherStyle = chosenWeatherStyle.middle;
@@ -984,6 +1018,8 @@ namespace StreamedMPEditor
           cboLabelFont.Enabled = false;
           cboSelectedFont.Enabled = false;
           cbExitStyleNew.Visible = false;
+          btMenuIcon.Visible = false;
+          pbMenuIconInfo.Visible = false;
           break;
         case chosenMenuStyle.graphicMenuStyle:
           weatherStyle = chosenWeatherStyle.bottom;
@@ -1005,9 +1041,8 @@ namespace StreamedMPEditor
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
           cbExitStyleNew.Visible = false;
-
           btMenuIcon.Visible = true;
-
+          pbMenuIconInfo.Visible = true;
           break;
       }
     }
