@@ -90,7 +90,7 @@ This file should contain the details view
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Buttons -->
-    <!-- Only show the Play button so we can focus to the Subtitle button -->
+    <!-- So no gaps, always show Play & Trailers, very likely that OnlineVideos is installed -->
     <control>
       <description>Play Movie</description>
       <type>button</type>
@@ -99,7 +99,7 @@ This file should contain the details view
       <onup>6</onup>
       <ondown>6</ondown>
       <onright>6</onright>
-      <onleft>69999</onleft>
+      <onleft>4755</onleft>
       <posX>1075</posX>
       <posY>665</posY>
       <width>150</width>
@@ -112,7 +112,33 @@ This file should contain the details view
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible allowhiddenfocus="true">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+	<control>
+      <description>Trailer (Online Videos)</description>
+      <type>button</type>
+      <id>4755</id>
+      <label>Trailer</label>
+      <hyperlink>4755</hyperlink>
+	  <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
+      <onup>4755</onup>
+      <ondown>4755</ondown>
+      <onright>6</onright>
+      <onleft>69999</onleft>
+      <posX>925</posX>
+      <posY>665</posY>
+      <width>150</width>
+      <height>32</height>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream12tc</font>
+      <textYOff>0</textYOff>
+      <textXOff>0</textXOff>
+      <textalign>center</textalign>
+      <textcolorNoFocus>bfffffff</textcolorNoFocus>
+      <textureFocus>tv_button_focus.png</textureFocus>
+      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -125,7 +151,8 @@ This file should contain the details view
       <ondown>69999</ondown>
       <onright>6</onright>
       <onleft>69999</onleft>
-      <posX>920</posX>
+	  <onright>4755</onright>
+      <posX>777</posX>
       <posY>665</posY>
       <width>150</width>
       <height>32</height>
@@ -137,7 +164,7 @@ This file should contain the details view
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
+      <visible allowhiddenfocus="false">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Details Box -->
