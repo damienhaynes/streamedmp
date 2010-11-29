@@ -13,7 +13,7 @@ namespace StreamedMPEditor
     void writeHorizonalMenu(int i, menuItem menItem, ref StringBuilder rawXML)
     {
       string acceleration = tbAcceleration.Text;
-      string duration = tbDuration.Text;     
+      string duration = tbDuration.Text;
 
       int onleft = 0;
       int onright = 0;
@@ -53,8 +53,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
+          //Plugin Parameter handling
           if (menItem.hyperlinkParameter != "false")
-              rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 
@@ -102,8 +113,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
-            if (menItem.hyperlinkParameter != "false")
-              rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          //Plugin Parameter handling
+          if (menItem.hyperlinkParameter != "false")
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 
@@ -123,9 +145,9 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<onup>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onup>");
           else
             rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
-          
-        
-        //rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
+
+
+          //rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
           rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
           rawXML.AppendLine("</control>");

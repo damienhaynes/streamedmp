@@ -350,7 +350,6 @@ namespace StreamedMPEditor
         foreach (KeyValuePair<string, string> tvv in tvseriesViews)
         {
           theTVSeriesViews.Add(tvv.Value);
-          //cboParameterViews.Items.Add(tvv.Value);
         }
       }
 
@@ -358,7 +357,9 @@ namespace StreamedMPEditor
       if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(0, 27, 0, 0), filename))
       {
         onlineVideosViews = GetOnlineVideosViews();
-
+        cboParameterViews.Visible = false;
+        lbParameterView.Visible = false;
+        cboParameterViews.Items.Clear();
         theOnlineVideosViews.Clear();
         foreach (KeyValuePair<string, string> ovv in onlineVideosViews)
         {
@@ -378,6 +379,11 @@ namespace StreamedMPEditor
       checkAndEnableOverlays();
     }
 
+    //
+    // Key/value read methods TVSeries
+    //
+    // TVSeries Key
+    //
     public string getTVSeriesViewKey(string value)
     {
       foreach (KeyValuePair<string, string> tvv in tvseriesViews)
@@ -387,7 +393,8 @@ namespace StreamedMPEditor
       }
       return "false";
     }
-
+    // TVSeries Value
+    //
     public string getTVSeriesViewValue(string key)
     {
       foreach (KeyValuePair<string, string> tvv in tvseriesViews)
@@ -397,7 +404,11 @@ namespace StreamedMPEditor
       }
       return "false";
     }
-
+    //
+    // Key/value read methods Music
+    //
+    // Music key
+    //
     public string getMusicViewKey(string value)
     {
       foreach (KeyValuePair<string, string> mvv in musicViews)
@@ -407,7 +418,8 @@ namespace StreamedMPEditor
       }
       return "false";
     }
-
+    //Music Value
+    //
     public string getMusicViewValue(string key)
     {
       foreach (KeyValuePair<string, string> mvv in musicViews)
@@ -417,7 +429,34 @@ namespace StreamedMPEditor
       }
       return "false";
     }
-
+    //
+    // Key/value read methods OnlineVideos
+    //
+    //OnlineVideos Key
+    //
+    public string getOnlineVideosViewKey(string value)
+    {
+      foreach (KeyValuePair<string, string> mvv in onlineVideosViews)
+      {
+        if (mvv.Value.ToLower() == value.ToLower())
+          return mvv.Key;
+      }
+      return "false";
+    }
+    //OnlineVideos Value
+    //
+    public string getOnlineVideosViewValue(string key)
+    {
+      foreach (KeyValuePair<string, string> mvv in onlineVideosViews)
+      {
+        if (mvv.Key.ToLower() == key.ToLower())
+          return mvv.Value;
+      }
+      return "false";
+    }
+    //
+    // Does the plugin support paramerters
+    //
     public static bool pluginTakesParameter(string hyperLink)
     {
       Helper helper = new Helper();
@@ -675,6 +714,9 @@ namespace StreamedMPEditor
             case musicSkinID:
               item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString()); 
               break;
+            case onlineVideosSkinID:
+              item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+              break;
             default:
               break;
           }
@@ -757,6 +799,13 @@ namespace StreamedMPEditor
           else
             cboParameterViews.Text = string.Empty;
           break;
+        case onlineVideosSkinID:
+          cboParameterViews.DataSource = theOnlineVideosViews;
+          if (mnuItem.hyperlinkParameter != "false")
+            cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
+          else
+            cboParameterViews.Text = string.Empty;
+          break;
         default:
           break;
       }
@@ -811,6 +860,9 @@ namespace StreamedMPEditor
 
           if (item.hyperlink == musicSkinID)
             item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
+
+          if (item.hyperlink == onlineVideosSkinID)
+            item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
         }
         else
         {
@@ -919,6 +971,16 @@ namespace StreamedMPEditor
             cboParameterViews.DataSource = theMusicViews;
             if (mnuItem.hyperlinkParameter != "false")
               cboParameterViews.Text = getMusicViewValue(mnuItem.hyperlinkParameter);
+            else
+            {
+              cboParameterViews.Text = string.Empty;
+              cboParameterViews.SelectedIndex = -1;
+            }
+            break;
+          case onlineVideosSkinID:
+            cboParameterViews.DataSource = theOnlineVideosViews;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
             else
             {
               cboParameterViews.Text = string.Empty;
@@ -1488,7 +1550,7 @@ namespace StreamedMPEditor
         mrDisplaySelection.setEnableState(displayMostRecent.movies, cbMostRecentMovPics.Checked);
     }
 
-    private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+    private void cboParameterViews_SelectedIndexChanged(object sender, EventArgs e)
     {
       //cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
     }

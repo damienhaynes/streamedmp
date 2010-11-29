@@ -22,7 +22,7 @@ namespace StreamedMPEditor
       if (menItem.subMenuLevel1ID > 0)
         menuVisControl = "control.isvisible(" + menItem.subMenuLevel1ID.ToString() + ")|";
 
-       switch (i)
+      switch (i)
       {
         case 0:
 
@@ -58,8 +58,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
+          //Plugin Parameter handling
           if (menItem.hyperlinkParameter != "false")
-               rawXML.AppendLine("<hyperlinkParameter>"+ menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 
@@ -75,7 +86,7 @@ namespace StreamedMPEditor
 
           if (menItem.subMenuLevel1.Count > 0)
           {
-            rawXML.AppendLine("<onright>"+ (menItem.subMenuLevel1ID + 1).ToString() +"</onright>");
+            rawXML.AppendLine("<onright>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onright>");
             if (cbExitStyleNew.Checked)
               rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
             else
@@ -122,8 +133,19 @@ namespace StreamedMPEditor
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
 
+          //Plugin Parameter handling
           if (menItem.hyperlinkParameter != "false")
-               rawXML.AppendLine("<hyperlinkParameter>"+ menItem.hyperlinkParameter + "</hyperlinkParameter>");
+          {
+            switch (menItem.hyperlink)
+            {
+              case onlineVideosSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                break;
+              default:
+                rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
+            }
+          }
 
           rawXML.AppendLine("<hover>-</hover>");
 

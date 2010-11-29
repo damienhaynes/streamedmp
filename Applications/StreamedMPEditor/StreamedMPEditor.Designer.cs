@@ -1149,7 +1149,7 @@
       this.cboParameterViews.Name = "cboParameterViews";
       this.cboParameterViews.Size = new System.Drawing.Size(242, 21);
       this.cboParameterViews.TabIndex = 102;
-      this.cboParameterViews.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+      this.cboParameterViews.SelectedIndexChanged += new System.EventHandler(this.cboParameterViews_SelectedIndexChanged);
       // 
       // cancelCreateButton
       // 
