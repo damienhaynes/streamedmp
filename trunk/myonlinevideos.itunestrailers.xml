@@ -2,9 +2,22 @@
 <window>
   <controls>
     <control>
+      <description>Trailers Category Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>100</posX>
+      <posY>150</posY>
+      <width>454</width>
+      <height>455</height>
+      <texture flipY="true" diffuse="Thumb_Mask.png">Categories\Trailers.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>facadeview.list+!Control.HasThumb(23)+!string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+    </control>
+    <control>
       <type>image</type>
       <description>Movie Poster</description>
-      <id>0</id>
+      <id>23</id>
       <posX>180</posX>
       <posY>254</posY>
       <width>200</width>
@@ -15,7 +28,7 @@
     </control>
     <control>
       <type>image</type>
-      <description>Movie Poster</description>
+      <description>Movie Poster (Details)</description>
       <id>24</id>
       <posX>31</posX>
       <posY>254</posY>
