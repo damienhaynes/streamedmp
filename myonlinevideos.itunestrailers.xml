@@ -188,6 +188,19 @@
       <shadowColor>ff222222</shadowColor>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
+	<control Style="smallTitle">
+      <description>Release Date N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>540</posX>
+      <posY>558</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.ReleaseDate,)</visible>
+    </control>
     <control Style="smallTitleB">
       <description>Director Label</description>
       <id>0</id>
@@ -214,6 +227,19 @@
       <shadowColor>ff222222</shadowColor>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
+	<control Style="smallTitle">
+      <description>Director N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>540</posX>
+      <posY>580</posY>
+      <width>200</width>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.Directors,)</visible>
+    </control>
     <control Style="smallTitleB">
       <description>Studio Label</description>
       <type>label</type>
@@ -237,6 +263,18 @@
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+    </control>
+	<control Style="smallTitle">
+      <description>Studio N/A</description>
+      <id>0</id>
+      <type>label</type>
+      <label>N/A</label>
+      <posX>540</posX>
+      <posY>602</posY>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>2</shadowDistance>
+      <shadowColor>ff222222</shadowColor>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.Studio,ITMovieTrailers)</visible>
     </control>
     <control>
       <description>Trailer List</description>
