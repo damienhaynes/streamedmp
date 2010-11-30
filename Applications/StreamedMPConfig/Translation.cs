@@ -266,6 +266,7 @@ namespace StreamedMPConfig
     public static string EnableRandomTVSeriesFanartInMyTV = "Enable Random TVSeries Fanart";
     public static string ConfigRequiresRestartLine1 = "The following configuration changes will take";
     public static string ConfigRequiresRestartLine2 = "affect on next MediaPortal restart.";
+    public static string Trailer = "Trailer";
     #endregion
   }
 }
