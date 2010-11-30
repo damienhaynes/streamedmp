@@ -554,7 +554,7 @@
         <id>6</id>
         <label>1010</label>
         <onleft>10</onleft>
-        <ondown>2</ondown>
+        <ondown>4755</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
@@ -566,6 +566,28 @@
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+	  <control>
+        <description>Trailer</description>
+        <type>button</type>
+        <id>4755</id>
+        <label>Trailer</label>
+        <onleft>10</onleft>
+        <ondown>2</ondown>
+		<hyperlink>4755</hyperlink>
+		<hyperlinkParameter>site:iTunes Movie Trailers|search:#title|return:Locked</hyperlinkParameter>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+		<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+		<visible>plugin.isenabled(OnlineVideos)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
