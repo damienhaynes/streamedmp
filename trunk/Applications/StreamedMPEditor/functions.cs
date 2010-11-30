@@ -266,6 +266,7 @@ namespace StreamedMPEditor
       }
     }
 
+ 
     private void QuickSelect(int index)
     {
       xmlFiles.SelectedItem = prettyItems[index].xmlfile;
@@ -304,6 +305,9 @@ namespace StreamedMPEditor
         default:
           break;
       }
+      fhChoice.Visible = false;
+      fhRBScraper.Visible = false;
+      fhRBUserDef.Visible = false;
     }
 
     private void ClearItems()
@@ -448,9 +452,14 @@ namespace StreamedMPEditor
 
         if (fanartHandlerRelease2 && (cboFanartProperty.Text.ToLower() == "music" || cboFanartProperty.Text.ToLower() == "movie"))
         {
-            fhChoice.Visible = true;
-            fhRBScraper.Visible = true;
-            fhRBUserDef.Visible = true;
+          fhChoice.Visible = true;
+          fhRBScraper.Visible = true;
+          fhRBUserDef.Visible = true;
+        }
+        else
+        {
+          fhRBScraper.Visible = false;
+          fhRBUserDef.Visible = false;
         }
       }
       else

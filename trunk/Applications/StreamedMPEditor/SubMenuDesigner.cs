@@ -39,6 +39,22 @@ namespace StreamedMPEditor
     public formSubMenuDesigner()
     {
       InitializeComponent();
+      if (formStreamedMpEditor.menuStyle == formStreamedMpEditor.chosenMenuStyle.graphicMenuStyle)
+      {
+        panel2.Enabled = false;
+        panel7.Enabled = false;
+        panel5.Enabled = false;
+        lboxSubMenuLevel2.Enabled = false;
+        btSubMenu2MostRecentSettings.Enabled = false;
+      }
+      else
+      {
+        panel2.Enabled = true;
+        panel7.Enabled = true;
+        panel5.Enabled = true;
+        lboxSubMenuLevel2.Enabled = true;
+        btSubMenu2MostRecentSettings.Enabled = true;
+      }
     }
 
     #endregion
