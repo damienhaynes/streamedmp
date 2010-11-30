@@ -9,13 +9,7 @@ namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-    //public string localxml = string.Empty;
-    //string onup;
-    //string ondown;
-
-    int conextOffsett = 0;
-
-    string bhSubMenuWriterH()
+    string bhSubMenuWriterGraphical()
     {
       level1LateralBladeVisible = "control.isvisible(";
       level2LateralBladeVisible = "control.isvisible(";
@@ -28,25 +22,26 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel2.Count > 0)
             level1LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|control.isvisible(";
 
-          writeSubMenuLevel1H(menItem);
+          writeSubMenuLevel1Graphical(menItem);
         }
         if (menItem.subMenuLevel2.Count > 0)
         {
           level2LateralBladeVisible += (menItem.subMenuLevel1ID + 100).ToString() + ")|control.isvisible(";
-          writeSubMenuLevel2H(menItem);
+          writeSubMenuLevel2Graphical(menItem);
         }
       }
       localxml += "<!--             End of Submenu Code            -->";
       return localxml;
     }
-
-    string writeSubMenuLevel1H(formStreamedMpEditor.menuItem parentMenu)
+    /// <summary>
+    /// Write out Sunmenu Level 1
+    /// </summary>
+    /// <param name="parentMenu"></param>
+    /// <returns></returns>
+    string writeSubMenuLevel1Graphical(formStreamedMpEditor.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
       int isSecondLevel = 0;
-
-      if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
-        conextOffsett = 17;
 
       if (parentMenu.subMenuLevel2.Count > 0)
         isSecondLevel = 100;
@@ -71,7 +66,10 @@ namespace StreamedMPEditor
             dummyFocusControls += (parentMenu.subMenuLevel1ID + (i + 101)).ToString() + ")";
         }
       }
-
+      //
+      //work out where to start the menu
+      //
+      int menuStart = (int.Parse(txtMenuPos.Text) - (50 * parentMenu.subMenuLevel1.Count) - 20);
 
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
@@ -89,9 +87,9 @@ namespace StreamedMPEditor
                       "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
                       "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
                       "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
-                      "<posX>520</posX>" +
-                      "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
-                      "<width>230</width>" +
+                      "<posX>480</posX>" +
+                      "<posY>" + menuStart.ToString() + "</posY>" +
+                      "<width>320</width>" +
                       "<height>405</height>" +
                       "<dimColor>ffffffff</dimColor>" +
                       "<layout>StackLayout</layout>";
@@ -112,13 +110,12 @@ namespace StreamedMPEditor
           ondown = (parentMenu.id + 900).ToString();
         }
 
-        localxml += "<control Style=\"settingsbutton\">" +
+        localxml += "<control Style=\"submenubutton\">" +
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</id>" +
-                "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>" +
-                "<width>246</width>";
-
+                "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>";
+        
         if (parentMenu.subMenuLevel1[j].hyperlink == "196299")
           localxml += "<action>99</action>";
         else if (parentMenu.subMenuLevel1[j].hyperlink == "196297")
@@ -166,14 +163,14 @@ namespace StreamedMPEditor
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
-                  "<posX>632</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) + 7 - (conextOffsett + 13)).ToString() + "</posY>" +
-                  "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
+                  "<posX>630</posX>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
+                  "<align>center</align>" +
+                  "<width>24</width>" +
+                  "<height>24</height>" +
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<colorDiffuse>77fffffff</colorDiffuse>" +
-                  "<texture>arrowupfo.png</texture>" +
+                  "<texture>submenuarrow.png</texture>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"800\" reversible=\"false\">WindowOpen</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"250\" delay=\"700\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>" +
@@ -197,7 +194,7 @@ namespace StreamedMPEditor
                   "<description>Sub Menu Indicator (Level1)</description>" +
                   "<type>image</type>" +
                   "<posX>750</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) - 340 - conextOffsett).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
                   "<align>right</align>" +
                   "<width>16</width>" +
                   "<height>16</height>" +
@@ -212,7 +209,13 @@ namespace StreamedMPEditor
       return localxml;
     }
 
-    string writeSubMenuLevel2H(formStreamedMpEditor.menuItem parentMenu)
+
+    /// <summary>
+    /// Write out Submenu Level 2
+    /// </summary>
+    /// <param name="parentMenu"></param>
+    /// <returns></returns>
+    string writeSubMenuLevel2Graphical(formStreamedMpEditor.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
 
@@ -267,7 +270,7 @@ namespace StreamedMPEditor
           ondown = (parentMenu.subMenuLevel1ID + 101).ToString();
         }
 
-        localxml += "<control Style=\"settingsbutton\">" +
+        localxml += "<control Style=\"submenubutton\">" +
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</id>" +
@@ -298,7 +301,7 @@ namespace StreamedMPEditor
               localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
               break;
           }
-        } 
+        }
 
         localxml += "<onleft>" + (parentMenu.subMenuLevel1ID + 1).ToString() + "</onleft>" +
                  "<onright>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</onright>" +

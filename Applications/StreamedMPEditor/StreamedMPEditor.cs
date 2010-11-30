@@ -32,7 +32,7 @@ namespace StreamedMPEditor
       major,
     };
 
-    enum chosenMenuStyle
+    public enum chosenMenuStyle
     {
       verticalStyle,
       horizontalStandardStyle,
@@ -197,7 +197,6 @@ namespace StreamedMPEditor
     public string fhUserDef = string.Empty;
     public static string driveFreeSpaceList = string.Empty;
 
-
     int textXOffset = -25;
     int maxXPosition = 520;
     int menuOffset = 0;
@@ -220,7 +219,7 @@ namespace StreamedMPEditor
     public static Regex isIleagalXML = new Regex("[&<>]");
 
     // Default Style to StreamedMP standard
-    chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
+    public static chosenMenuStyle menuStyle = chosenMenuStyle.verticalStyle;
     chosenWeatherStyle weatherStyle = chosenWeatherStyle.bottom;
     rssImageType rssImage = rssImageType.skinImage;
 
@@ -1628,8 +1627,13 @@ namespace StreamedMPEditor
       mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
     }
 
-    #endregion
+    private void btMenuIcon_Click(object sender, EventArgs e)
+    {
+      buttonTexture.setButtonTexture();
+      displayMenuIcon(buttonTexture.SelectedIcon);
+    }
 
+    #endregion
 
     #region Parmeter Handling
 
@@ -1793,13 +1797,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
-
-
-    private void btMenuIcon_Click(object sender, EventArgs e)
-    {
-      buttonTexture.setButtonTexture();
-      displayMenuIcon(buttonTexture.SelectedIcon);
-    }
 
   }
 }

@@ -123,6 +123,8 @@ namespace StreamedMPEditor
       // Write out Sub Menu Code
       if (direction == menuType.vertical)
         xml = xml.Replace("<!-- BEGIN GENERATED SUBMENU CODE -->", bhSubMenuWriterV());
+      else if(menuStyle == chosenMenuStyle.graphicMenuStyle)
+        xml = xml.Replace("<!-- BEGIN GENERATED SUBMENU CODE -->", bhSubMenuWriterGraphical());
       else
         xml = xml.Replace("<!-- BEGIN GENERATED SUBMENU CODE -->", bhSubMenuWriterH());
 
@@ -186,7 +188,7 @@ namespace StreamedMPEditor
       if (direction == menuType.vertical && subMenuL1Exists)
         writeVerticalSubmenus();
 
-      if (direction != menuType.vertical && subMenuL1Exists)
+      if (direction != menuType.vertical && subMenuL1Exists && menuStyle != chosenMenuStyle.graphicMenuStyle)
         writeHorizontalSubmenus();
 
     }
@@ -1553,13 +1555,14 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
-        rawXML.AppendLine("<posX>544</posX>");
+        rawXML.AppendLine("<posX>543</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + (basicHomeValues.textYOffset - 32)) + "</posY>");
         rawXML.AppendLine("<width>192</width>");
         rawXML.AppendLine("<height>192</height>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[k].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
+        rawXML.AppendLine("<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         // ******** THIRD
