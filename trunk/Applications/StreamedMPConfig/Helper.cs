@@ -38,11 +38,7 @@ namespace StreamedMPConfig
 
     /// <summary>
     /// Gets an elements value from section node
-    /// </summary>
-    /// <param name="section"></param>
-    /// <param name="elementName"></param>
-    /// <param name="node"></param>
-    /// <returns></returns>
+    /// </summary>   
     public static string ReadEntryValue(string elementName, XmlNode node)
     {
       string entryValue = string.Empty;
@@ -103,6 +99,24 @@ namespace StreamedMPConfig
       checkSum.Replace(file);
     }
 
+    /// <summary>
+    /// Set XML Property
+    /// </summary>
+    public static void SetNodeText(string file, string path, string value)
+    {
+      CheckSum checkSum = new CheckSum();
+      XmlDocument doc = LoadXMLDocument(file);
+      if (doc == null) return;
+
+      XmlNode node = doc.SelectSingleNode(path);
+      if (node == null)
+        return;
+
+      node.InnerText = value;
+
+      doc.Save(file);
+      checkSum.Replace(file);
+    }
     #endregion;
 
     #region Assembly Helpers

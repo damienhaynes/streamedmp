@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
@@ -46,6 +47,13 @@ namespace StreamedMPConfig
     public static bool EnablePlayMostRecents { get; set; }
     public static bool FilterWatchedInRecentlyAdded { get; set; }
     public static int MostRecentFanartTimerInt { get; set; }
+    public static string TextColor { get; set; }
+    public static string TextColor2 { get; set; }
+    public static string TextColor3 { get; set; }
+    public static string WatchedColor { get; set; }
+    public static string RemoteColor { get; set; }
+    public static int UnfocusedAlphaListItems { get; set; }
+    public static int UnfocusedAlphaThumbs { get; set; }
     #endregion
 
     #region Public Methods
@@ -59,6 +67,32 @@ namespace StreamedMPConfig
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.UnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatched.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatchedna.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
+    }
+
+    public static void SetColors()
+    {
+      string file = GUIGraphicsContext.Skin + @"\references.xml";
+
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor", string.Concat("FF", MiscConfigGUI.TextColor));
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor2", string.Concat("FF", MiscConfigGUI.TextColor2));
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor3", string.Concat("FF", MiscConfigGUI.TextColor3));
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/playedColor", string.Concat("FF", MiscConfigGUI.WatchedColor));
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/remoteColor", string.Concat("FF", MiscConfigGUI.RemoteColor));
+
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor", string.Concat("FF", MiscConfigGUI.TextColor));
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor2", string.Concat("FF", MiscConfigGUI.TextColor2));
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor3", string.Concat("FF", MiscConfigGUI.TextColor3));
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/playedColor", string.Concat("FF", MiscConfigGUI.WatchedColor));
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/remoteColor", string.Concat("FF", MiscConfigGUI.RemoteColor));
+    }
+
+    public static void SetAlphaTransparency()
+    {
+      string file = GUIGraphicsContext.Skin + @"\references.xml";
+
+      Helper.SetNodeText(file, "/controls/control[type='listcontrol']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaListItems.ToString());
+      Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaListItems.ToString());
+      Helper.SetNodeText(file, "/controls/control[type='thumbnailpanel']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaThumbs.ToString());
     }
     #endregion
 

@@ -62,7 +62,8 @@ namespace StreamedMPConfig
     public static string theRevisions { get; set; }
     public static DateTime checkTime { get; set; }
     public static bool patchUtilityRunUnattended { get; set; }
-    public static bool patchUtilityRestartMP { get; set; }    
+    public static bool patchUtilityRestartMP { get; set; }
+    public static bool patchAppliedLastRun { get; set; }
     public static System.Threading.Timer updateChkTimer;
 
     public static bool movPicRecentAddedEnabled { get; set; }
@@ -252,6 +253,15 @@ namespace StreamedMPConfig
       settings.Load(settings.cXMLSectionVideo);
 
       settings.LoadEditorProperties();
+      #endregion
+
+      #region PostPatchInstall
+      if (StreamedMPConfig.patchAppliedLastRun)
+      {
+        smcLog.WriteLog("Patch Applied, updating settings...", LogLevel.Info);
+        PostPatchUpdate.UpdateSettings();
+        smcLog.WriteLog("Settings Updates", LogLevel.Info);
+      }
       #endregion
 
       #region Init Updates

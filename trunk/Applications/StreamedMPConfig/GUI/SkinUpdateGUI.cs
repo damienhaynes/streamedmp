@@ -137,6 +137,10 @@ namespace StreamedMPConfig
                     if (StreamedMPConfig.patchUtilityRestartMP)
                       upgradeProcess.Arguments += " /restartmp";
 
+                    // signal to next run that we have applied update and settings need updating
+                    StreamedMPConfig.patchAppliedLastRun = true;
+                    settings.Save(settings.cXMLSectionUpdate);
+
                     smcLog.WriteLog("Starting Upgrade process, Arguments : " + upgradeProcess.Arguments, LogLevel.Debug);
                     System.Diagnostics.Process.Start(upgradeProcess);
 
