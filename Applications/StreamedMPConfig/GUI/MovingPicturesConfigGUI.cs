@@ -112,16 +112,18 @@ namespace StreamedMPConfig
         default:
           return Translation.WideBannerDefault;          
       }
-    }
+    }    
+    #endregion
 
+    #region Public Methods
     /// <summary>
     /// Apply changes to MovingPictures.xml
     /// </summary>
-    private void ApplyConfigurationChanges()
+    public static void ApplyConfigurationChanges()
     {
       string skinFile = GUIGraphicsContext.Skin + @"\MovingPictures.xml";
 
-      string style = btnStyle.Selected ? "fanart" : "default";
+      string style = IsDefaultStyle ? "default" : "fanart";
 
       // Set <import> paths
       Helper.SetSkinImport(skinFile, "ListView", string.Format("movingpictures.{0}.listview.xml", style));

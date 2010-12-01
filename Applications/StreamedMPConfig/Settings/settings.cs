@@ -44,6 +44,7 @@ namespace StreamedMPConfig
     public const string cXMLSettingUpdateRunPatchUtilityUnattended = "updateRunPatchUtilityUnattended";
     public const string cXMLSettingUpdateNextUpdateCheck = "updateNextUpdateCheck";
     public const string cXMLSettingUpdatePatchUtilityRestartMP = "updatePatchUtilityRestartMP";
+    public const string cXMLSettingUpdatePatchAppliedLastRun = "updatePatchAppliedLastRun";
 
     public const string cXMLSettingMusicCdCoverOnly = "musicCdCoverOnly";
     public const string cXMLSettingMusicShowEqGraphic = "musicShowEqGraphic";
@@ -73,10 +74,10 @@ namespace StreamedMPConfig
     public const string cXMLSettingMiscUnfocusedAlphaListItems = "miscUnfocusedAlphaListItems";
     public const string cXMLSettingMiscUnfocusedAlphaThumbs = "miscUnfocusedAlphaThumbs";
     public const string cXMLSettingMiscTextColor = "miscTextColor";
-    public const string cXMLSettingTextColor2 = "miscTextColor2";
-    public const string cXMLSettingTextColor3 = "miscTextColor3";
-    public const string cXMLSettingWatchedColor = "miscWatchedColor";
-    public const string cXMLSettingRemoteColor = "miscRemoteColor";
+    public const string cXMLSettingMiscTextColor2 = "miscTextColor2";
+    public const string cXMLSettingMiscTextColor3 = "miscTextColor3";
+    public const string cXMLSettingMiscWatchedColor = "miscWatchedColor";
+    public const string cXMLSettingMiscRemoteColor = "miscRemoteColor";
 
     public const string cXMLSettingMovPicsRecentAdded = "movPicsMostRecent";
     public const string cXMLSettingMovPicsRecentWatched = "mrMovPicsWatched";
@@ -288,6 +289,8 @@ namespace StreamedMPConfig
               StreamedMPConfig.patchUtilityRunUnattended = true;
             if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdatePatchUtilityRestartMP, 1) != 0)
               StreamedMPConfig.patchUtilityRestartMP = true;
+            if (xmlreader.GetValueAsInt(section, settings.cXMLSettingUpdatePatchAppliedLastRun, 0) != 0)
+              StreamedMPConfig.patchAppliedLastRun = true;
 
             if (StreamedMPConfig.checkForUpdateAt)
             {
@@ -357,7 +360,12 @@ namespace StreamedMPConfig
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowIconsInArtwork, 1) == 1;
             MiscConfigGUI.EnablePlayMostRecents = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscEnablePlayMostRecents, 1) == 1;
             MiscConfigGUI.FilterWatchedInRecentlyAdded = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscFilterWatchedInRecentlyAdded, 0) == 1;
-            MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, 7);
+            MiscConfigGUI.TextColor = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor, "FFFFFF");
+            MiscConfigGUI.TextColor2 = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor2, "FFFFFF");
+            MiscConfigGUI.TextColor3 = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor3, "FFFFFF");
+            MiscConfigGUI.WatchedColor = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscWatchedColor, "808080");
+            MiscConfigGUI.UnfocusedAlphaListItems = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, 100);
+            MiscConfigGUI.UnfocusedAlphaThumbs = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, 100);
             break;
           #endregion
 
@@ -380,7 +388,8 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingUpdateCheckTime, StreamedMPConfig.checkTime.ToShortTimeString());
             xmlwriter.SetValue(section, settings.cXMLSettingUpdateNextUpdateCheck, StreamedMPConfig.nextUpdateCheck);
             xmlwriter.SetValue(section, settings.cXMLSettingUpdateRunPatchUtilityUnattended, StreamedMPConfig.patchUtilityRunUnattended ? 1 : 0);
-            xmlwriter.SetValue(section, settings.cXMLSettingUpdatePatchUtilityRestartMP, StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);            
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdatePatchUtilityRestartMP, StreamedMPConfig.patchUtilityRestartMP ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingUpdatePatchAppliedLastRun, StreamedMPConfig.patchAppliedLastRun ? 1 : 0);
             break;
           #endregion
 

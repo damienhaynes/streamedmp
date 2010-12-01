@@ -183,7 +183,69 @@ namespace StreamedMPConfig
     private void ApplyConfigurationChanges()
     {
       bool requiresRestart = false;
+      
+      #region Random TVSeries Fanart
+      // Enable Random TVSeries Fanart in MyTV/4TR xmls
+      if (EnableRandomTVSeriesFanart != btnTVRandomTVSeresFanart.Selected)
+      {
+        // Fanart Handler reads xmls for windows at startup
+        // so need to restart for changes to take affect
+        requiresRestart = true;
+        
+        EnableRandomTVSeriesFanart = btnTVRandomTVSeresFanart.Selected;
+        SetRandomFanartProperties();        
+      }
+      #endregion
 
+      if (requiresRestart)
+      {
+        StreamedMPConfig.ShowRestartMessage(GetID, Translation.TVMenu);
+      }
+    }
+    #endregion
+
+    #region Public Methods
+    public static void SetRandomFanartProperties()
+    {
+      string define = "#useRandomTVSeriesFanart";
+      string value = EnableRandomTVSeriesFanart ? "Yes" : "No";
+
+      string skinFile = GUIGraphicsContext.Skin + @"\4TR_Active.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\4TR_ProgramInfo.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\4TR_RecordedTv.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuideSearch.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\4TR_Upcoming.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvprogram.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvRecordedInfo.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvrecordedtv.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerServer.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerserverSearch.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\mytvsearch.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+    }
+
+    public static void SetTVGuideSize()
+    {
       // TVGuide Imports exist in mytvguide.xml and dialogTvGuide.xml
       string skinFile = GUIGraphicsContext.Skin + @"\mytvguide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
@@ -198,59 +260,6 @@ namespace StreamedMPConfig
       // TVMiniGuide Imports exist in TVMiniGuide.xml
       skinFile = skinFile = GUIGraphicsContext.Skin + @"\TVMiniGuide.xml";
       Helper.SetSkinImport(skinFile, "TVMiniGuide", string.Format("TVMiniGuide.{0}Rows.xml", (int)TVMiniGuideRowSize));
-
-      #region Random TVSeries Fanart
-      // Enable Random TVSeries Fanart in MyTV/4TR xmls
-      if (EnableRandomTVSeriesFanart != btnTVRandomTVSeresFanart.Selected)
-      {
-        // Fanart Handler reads xmls for windows at startup
-        // so need to restart for changes to take affect
-        requiresRestart = true;
-        
-        EnableRandomTVSeriesFanart = btnTVRandomTVSeresFanart.Selected;
-
-        string define = "#useRandomTVSeriesFanart";
-        string value = EnableRandomTVSeriesFanart ? "Yes" : "No";
-      
-        skinFile = GUIGraphicsContext.Skin + @"\4TR_Active.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\4TR_ProgramInfo.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\4TR_RecordedTv.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuideSearch.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\4TR_Upcoming.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvprogram.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvRecordedInfo.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvrecordedtv.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerServer.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvschedulerserverSearch.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-
-        skinFile = GUIGraphicsContext.Skin + @"\mytvsearch.xml";
-        Helper.SetSkinDefine(skinFile, define, value);
-      }
-      #endregion
-
-      if (requiresRestart)
-      {
-        StreamedMPConfig.ShowRestartMessage(GetID, Translation.TVMenu);
-      }
     }
     #endregion
 
@@ -284,6 +293,7 @@ namespace StreamedMPConfig
       
       // Apply Configuration changes
       ApplyConfigurationChanges();
+      SetTVGuideSize();
 
       // Save Settings
       settings.Save(settings.cXMLSectionTV);

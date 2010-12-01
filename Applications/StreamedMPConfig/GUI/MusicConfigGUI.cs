@@ -83,6 +83,21 @@ namespace StreamedMPConfig
       GUIPropertyManager.SetProperty("#StreamedMP.showEqGraphic", showEqGraphic.ToString().ToLower());
     }
 
+    public static void SetMusicNowPlayingStyle()
+    {
+      CheckSum checkSum = new CheckSum();
+
+      // Copy the style files to the main skin directory
+      string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + ((int)nowPlayingStyle).ToString());
+      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
+      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
+      File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
+      // Checksum them
+      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"));
+      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"));
+      checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"));
+    }
+
     #endregion
 
     #region Base overrides
@@ -168,8 +183,7 @@ namespace StreamedMPConfig
     }
 
     protected override void OnPageDestroy(int new_windowId)
-    {
-      CheckSum checkSum = new CheckSum();
+    {      
       smcLog.WriteLog(string.Format("StreamedMPConfig: Settings.Save({0})", settings.cXMLSectionMusic), LogLevel.Info);
 
       showEqGraphic = MusicGFXeq.Selected;
@@ -178,15 +192,7 @@ namespace StreamedMPConfig
       if (nowPlayingStyle != currentStyle)
       {
         smcLog.WriteLog("StreamedMPConfig: Copy new Now Playing files", LogLevel.Info);
-        // Copy the style files to the main skin directory
-        string sourceFiles = Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "NowPlayingScreens"), "style" + ((int)nowPlayingStyle).ToString());
-        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNow.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"), true);
-        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowAnVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"), true);
-        File.Copy(Path.Combine(sourceFiles, "MyMusicPlayingNowLedVU.xml"), Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"), true);
-        // Checksum them
-        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNow.xml"));
-        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowAnVU.xml"));
-        checkSum.Replace(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "MyMusicPlayingNowLedVU.xml"));
+        SetMusicNowPlayingStyle();
       }
       else
         smcLog.WriteLog("No Changes Made to Now Playing", LogLevel.Info);

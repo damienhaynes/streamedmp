@@ -120,15 +120,19 @@ namespace StreamedMPConfig
           return Translation.WideBannerDefault;          
       }
     }
+   
+    #endregion
+
+    #region Public Methods
 
     /// <summary>
     /// Apply changes to TVSeries.xml
     /// </summary>
-    private void ApplyConfigurationChanges()
+    public static void ApplyConfigurationChanges()
     {
       string skinFile = GUIGraphicsContext.Skin + @"\TVSeries.xml";
 
-      string style = btnStyle.Selected ? "Fanart" : "Default";
+      string style = IsDefaultStyle ? "Default" : "Fanart";
 
       // Set <import> paths
       Helper.SetSkinImport(skinFile, "SeriesAndSeasonListPosters", string.Format("TVSeries.{0}.SeriesAndSeasonListPosters.xml", style));
