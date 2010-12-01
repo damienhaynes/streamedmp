@@ -261,6 +261,8 @@ namespace StreamedMPConfig
         smcLog.WriteLog("Patch Applied, updating settings...", LogLevel.Info);
         PostPatchUpdate.UpdateSettings();
         smcLog.WriteLog("Settings Updates", LogLevel.Info);
+
+        StreamedMPConfig.patchAppliedLastRun = false;
       }
       #endregion
 
