@@ -10,98 +10,7 @@
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-    <control>
-      <description>Hidden Menu</description>
-      <type>actiongroup</type>
-      <buttonX>1231</buttonX>
-      <buttonY>200</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
-      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
-      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <control>
-        <type>image</type>
-        <posX>1002</posX>
-        <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!control.hasfocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <label>VIEW OPTIONS</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <visible>!control.hasfocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!control.hasfocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-        <control>
-          <description>Sections</description>
-          <type>button</type>
-          <id>2</id>
-          <label>#MPEI.Translation.Sections.Label</label>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <onup>17</onup>
-        </control>
-      </control>
-    </control>
-    <control>
-      <description>group element</description>
-      <type>group</type>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-      <control>
-        <type>facadeview</type>
-        <id>50</id>
-        <control>
-          <type>listcontrol</type>
-          <id>50</id>
-          <onleft>2</onleft>
-          <onright>2</onright>
-          <posX>556</posX>
-          <posY>317</posY>
-          <width>700</width>
-          <height>400</height>
-          <textXOff2>680</textXOff2>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
-          <spinAlign>Right</spinAlign>
-          <spinColor>ff006698</spinColor>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
-          <spinCanFocus>no</spinCanFocus>
-          <textureUp>arrow_round_up_nofocus.png</textureUp>
-          <textureDown>arrow_round_down_nofocus.png</textureDown>
-          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-        </control>
-      </control>
-    </control>
-    <control>
+	<control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -122,6 +31,90 @@
       <textcolor>White</textcolor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+	<control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>	
+	<control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>30</posX>
+      <posY>250</posY>      
+      <layout>StackLayout</layout>
+      <control>
+        <description>Sections</description>
+        <type>button</type>
+        <id>2</id>
+        <label>#MPEI.Translation.Sections.Label</label>
+        <onup>17</onup>
+        <ondown>2</ondown>
+        <onright>50</onright>
+        <onleft>2</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <width>280</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>  
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <type>listcontrol</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>50</onright>
+          <posX>356</posX>
+          <posY>240</posY>
+          <width>900</width>
+          <height>477</height>
+          <textXOff2>880</textXOff2>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinCanFocus>no</spinCanFocus>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+      </control>
+    </control>    
     <import>common.overlays2.xml</import>
   </controls>
 </window>
