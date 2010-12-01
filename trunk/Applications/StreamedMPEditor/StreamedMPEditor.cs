@@ -195,6 +195,7 @@ namespace StreamedMPEditor
     string level1LateralBladeVisible;
     string level2LateralBladeVisible;
     public string fhUserDef = string.Empty;
+    public string fhSuffix = ".any";
     public static string driveFreeSpaceList = string.Empty;
 
     int textXOffset = -25;

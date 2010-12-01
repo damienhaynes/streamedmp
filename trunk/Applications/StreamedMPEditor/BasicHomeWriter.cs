@@ -1641,6 +1641,9 @@ namespace StreamedMPEditor
             case "scorecenter":
               fhUserDef = ".userdef";
               break;
+            case "tv":
+              fhUserDef = ".userdef";
+              break;
             default:
               fhUserDef = string.Empty;
               break;
