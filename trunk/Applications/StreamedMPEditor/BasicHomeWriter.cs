@@ -62,8 +62,6 @@ namespace StreamedMPEditor
       string randomFanartTVSeries = randomFanart.fanartTVSeries ? "Yes" : "No";
       string randomScoreCenterFanart = randomFanart.fanartScoreCenter ? "Yes" : "No";
 
-
-
       if (fanartHandlerUsed)
       {
         if (fanartHandlerRelease2)

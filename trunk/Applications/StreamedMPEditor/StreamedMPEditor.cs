@@ -1253,9 +1253,22 @@ namespace StreamedMPEditor
       Application.Exit();
     }
 
-
     void writeMenu(menuType direction, bool onFormClosing)
     {
+
+      randomFanart.fanartGames = false;
+      randomFanart.fanartMovies = false;
+      randomFanart.fanartMoviesScraperFanart = false;
+      randomFanart.fanartMovingPictures = false;
+      randomFanart.fanartMusic = false;
+      randomFanart.fanartMusicScraperFanart = false;
+      randomFanart.fanartPictures = false;
+      randomFanart.fanartPlugins = false;
+      randomFanart.fanartTv = false;
+      randomFanart.fanartTVSeries = false;
+      randomFanart.fanartScoreCenter = false;
+
+      switchOnOffFHControls();
       assoicateDefaultItems();
       generateXML(direction);
       generateBg(direction);
@@ -1366,6 +1379,77 @@ namespace StreamedMPEditor
         foreach (menuItem item in menuItems)
         {
           item.id = menuItems.IndexOf(item);
+        }
+      }
+    }
+    //
+    // Switch on or off the FH controls
+    //
+    void switchOnOffFHControls()
+    {
+      foreach (menuItem menItem in menuItems)
+      {
+        if (menItem.fanartHandlerEnabled)
+        {
+          // Check and set random fanart
+          if (menItem.fanartProperty.ToLower().Contains("games"))
+            randomFanart.fanartGames = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("plugins"))
+            randomFanart.fanartPlugins = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("picture"))
+            randomFanart.fanartPictures = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("tv"))
+            randomFanart.fanartTv = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("music"))
+          {
+            if (fanartHandlerRelease2)
+            {
+              if (menItem.fhBGSource ==  fanartSource.Scraper)
+              {
+                randomFanart.fanartMusic = false;
+                randomFanart.fanartMusicScraperFanart = true;
+              }
+              else
+              {
+                randomFanart.fanartMusic = true;
+                randomFanart.fanartMusicScraperFanart = false;
+              }
+            }
+            else
+              randomFanart.fanartMusic = true;
+          }
+
+          if (menItem.fanartProperty.ToLower().Contains("tvseries"))
+            randomFanart.fanartTVSeries = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("movingpicture"))
+            randomFanart.fanartMovingPictures = true;
+
+          if (menItem.fanartProperty.ToLower().Contains("movie"))
+          {
+            if (fanartHandlerRelease2)
+            {
+              if (menItem.fhBGSource == fanartSource.Scraper)
+              {
+                randomFanart.fanartMovies = false;
+                randomFanart.fanartMoviesScraperFanart = true;
+              }
+              else
+              {
+                randomFanart.fanartMovies = true;
+                randomFanart.fanartMoviesScraperFanart = false;
+              }
+            }
+            else
+              randomFanart.fanartMovies = true;
+          }
+
+          if (menItem.fanartProperty.ToLower().Contains("scorecenter"))
+            randomFanart.fanartScoreCenter = true;
         }
       }
     }
