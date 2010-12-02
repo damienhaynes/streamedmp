@@ -43,7 +43,7 @@ namespace StreamedMPConfig
       if (MiscConfigGUI.MostRecentFanartTimerInt != 0)
         numFanartTimer.Value = (decimal)MiscConfigGUI.MostRecentFanartTimerInt;
       else
-        numFanartTimer.Value = (decimal)MiscConfigGUI.MostRecentFanartTimerInt;
+        numFanartTimer.Value = 7;
     }
 
     #endregion
