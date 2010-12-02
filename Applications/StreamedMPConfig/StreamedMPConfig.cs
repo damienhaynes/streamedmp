@@ -251,6 +251,9 @@ namespace StreamedMPConfig
       settings.Load(settings.cXMLSectionMusic);
       settings.Load(settings.cXMLSectionMisc);
       settings.Load(settings.cXMLSectionVideo);
+      settings.Load(settings.cXMLSectionTVSeries);
+      settings.Load(settings.cXMLSectionMovingPictures);
+      settings.Load(settings.cXMLSectionTV);
 
       settings.LoadEditorProperties();
       #endregion
@@ -260,9 +263,10 @@ namespace StreamedMPConfig
       {
         smcLog.WriteLog("Patch Applied, updating settings...", LogLevel.Info);
         PostPatchUpdate.UpdateSettings();
-        smcLog.WriteLog("Settings Updates", LogLevel.Info);
+        smcLog.WriteLog("Settings Updated", LogLevel.Info);
 
         StreamedMPConfig.patchAppliedLastRun = false;
+        settings.Save(settings.cXMLSectionUpdate);
       }
       #endregion
 
