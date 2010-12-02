@@ -139,7 +139,7 @@ namespace StreamedMPConfig
       Helper.SetSkinImport(skinFile, "FilmstripViewMediaInfo", string.Format("movingpictures.{0}.filmstripview.mediainfo.xml", style));
       Helper.SetSkinImport(skinFile, "TopBar", string.Format("movingpictures.{0}.topbar.xml", style));
 
-      smcLog.WriteLog(string.Format("TVSeries Thumbnail MOD is: {0}", ThumbnailMod.ToString()), LogLevel.Info);
+      smcLog.WriteLog(string.Format("MovingPictures Thumbnail MOD is: {0}", ThumbnailMod.ToString()), LogLevel.Info);
       switch (ThumbnailMod)
       {
         case Thumbnails.Default:
