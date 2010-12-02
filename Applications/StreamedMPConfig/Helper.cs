@@ -78,7 +78,7 @@ namespace StreamedMPConfig
       }
       catch (Exception ex)
       {
-        smcLog.WriteLog("Exception setting skin import: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+        smcLog.WriteLog("Exception setting skin import: " + ex.Message, LogLevel.Error);
       }
     }
 
@@ -102,7 +102,7 @@ namespace StreamedMPConfig
         {
           if (node.InnerText.StartsWith(define))
           {
-            smcLog.WriteLog(string.Format("Setting skin define '{0}' with value '{1}'", define, value), LogLevel.Debug);
+            smcLog.WriteLog(string.Format("Setting skin define '{0}' with value '{1}' in '{2}'", define, value, file), LogLevel.Debug);
             node.InnerText = string.Format("{0}:{1}", define, value);
           }
         }
@@ -112,7 +112,7 @@ namespace StreamedMPConfig
       }
       catch (Exception ex)
       {
-        smcLog.WriteLog("Exception setting skin define: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+        smcLog.WriteLog("Exception setting skin define: " + ex.Message, LogLevel.Error);
       }
     }
 
@@ -139,7 +139,7 @@ namespace StreamedMPConfig
       }
       catch (Exception ex)
       {
-        smcLog.WriteLog("Exception setting skin text: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+        smcLog.WriteLog("Exception setting skin text: " + ex.Message, LogLevel.Error);
       }
     }
     #endregion;

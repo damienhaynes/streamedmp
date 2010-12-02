@@ -15,7 +15,7 @@ namespace StreamedMPConfig
       MiscConfigGUI.SetAlphaTransparency();
 
       // Set Skin Imports
-      TVSeriesConfig.ApplyConfigurationChanges();
+      //TVSeriesConfig.ApplyConfigurationChanges();
       MovingPicturesConfig.ApplyConfigurationChanges();
       TVConfig.SetTVGuideSize();
       TVConfig.SetRandomFanartProperties();
