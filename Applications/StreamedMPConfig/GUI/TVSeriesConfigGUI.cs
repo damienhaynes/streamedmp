@@ -24,6 +24,10 @@ namespace StreamedMPConfig
     }
     #endregion
 
+    #region Local Variables
+    private static readonly logger smcLog = logger.GetInstance();
+    #endregion
+
     #region Skin Controls
     [SkinControl((int)GUIControls.Style)]
     protected GUIToggleButtonControl btnStyle = null;
@@ -130,9 +134,12 @@ namespace StreamedMPConfig
     /// </summary>
     public static void ApplyConfigurationChanges()
     {
+      smcLog.WriteLog("Applying TVSeries Configuration Changes...", LogLevel.Info);
+
       string skinFile = GUIGraphicsContext.Skin + @"\TVSeries.xml";
 
       string style = IsDefaultStyle ? "Default" : "Fanart";
+      smcLog.WriteLog(string.Format("TVSeries Chosen Style is: {0}", style), LogLevel.Info);
 
       // Set <import> paths
       Helper.SetSkinImport(skinFile, "SeriesAndSeasonListPosters", string.Format("TVSeries.{0}.SeriesAndSeasonListPosters.xml", style));
@@ -141,6 +148,7 @@ namespace StreamedMPConfig
       Helper.SetSkinImport(skinFile, "EpisodeList", string.Format("TVSeries.{0}.EpisodeList.xml", style));
       Helper.SetSkinImport(skinFile, "GroupList", string.Format("TVSeries.{0}.GroupList.xml", style));
 
+      smcLog.WriteLog(string.Format("TVSeries WideBanner MOD is: {0}", WideBannerMod.ToString()), LogLevel.Info);
       switch (WideBannerMod)
       {
         case WideBanners.Default:

@@ -534,7 +534,10 @@ namespace SMPpatch
         if (patchdir.ToLower().EndsWith("database"))
           copyDirectory(Path.Combine(destinationPath, "database"), SkinInfo.mpPaths.databasePath);
       }
-      patchProgressBar.Value += 10;
+      if (patchProgressBar.Value <= 90)
+        patchProgressBar.Value += 10;
+      else
+        patchProgressBar.Value = 100;
     }
 
     void copyDirectory(string patchSource, string patchDestination)

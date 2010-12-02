@@ -32,6 +32,10 @@ namespace StreamedMPConfig
     }
     #endregion
 
+    #region Local Variables
+    private static readonly logger smcLog = logger.GetInstance();
+    #endregion
+
     #region Skin Controls
     [SkinControl((int)GUIControls.TVGuideSize)]
     protected GUIButtonControl btnTVGuideSize = null;
@@ -207,6 +211,8 @@ namespace StreamedMPConfig
     #region Public Methods
     public static void SetRandomFanartProperties()
     {
+      smcLog.WriteLog("Setting TV Random Fanart Properties...", LogLevel.Info);
+
       string define = "#useRandomTVSeriesFanart";
       string value = EnableRandomTVSeriesFanart ? "Yes" : "No";
 
@@ -246,6 +252,8 @@ namespace StreamedMPConfig
 
     public static void SetTVGuideSize()
     {
+      smcLog.WriteLog("Setting TVGuide Size", LogLevel.Info);
+
       // TVGuide Imports exist in mytvguide.xml and dialogTvGuide.xml
       string skinFile = GUIGraphicsContext.Skin + @"\mytvguide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
@@ -256,6 +264,8 @@ namespace StreamedMPConfig
       // 4TR TVGuide
       skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
+
+      smcLog.WriteLog("Setting TVMiniGuide Size", LogLevel.Info);
 
       // TVMiniGuide Imports exist in TVMiniGuide.xml
       skinFile = skinFile = GUIGraphicsContext.Skin + @"\TVMiniGuide.xml";

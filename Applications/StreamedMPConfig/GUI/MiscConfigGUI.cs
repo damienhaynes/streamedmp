@@ -19,6 +19,10 @@ namespace StreamedMPConfig
     }  
     #endregion
 
+    #region Local Variables
+    private static readonly logger smcLog = logger.GetInstance();
+    #endregion
+
     #region Skin Controls
     [SkinControl((int)GUIControls.HiddenMenuImage)]
     protected GUIToggleButtonControl btnHiddenMenuImage = null;
@@ -73,12 +77,14 @@ namespace StreamedMPConfig
     {
       string file = GUIGraphicsContext.Skin + @"\references.xml";
 
+      smcLog.WriteLog("Setting List Control Colors...", LogLevel.Info);
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor", string.Concat("FF", MiscConfigGUI.TextColor));
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor2", string.Concat("FF", MiscConfigGUI.TextColor2));
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/textcolor3", string.Concat("FF", MiscConfigGUI.TextColor3));
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/playedColor", string.Concat("FF", MiscConfigGUI.WatchedColor));
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/remoteColor", string.Concat("FF", MiscConfigGUI.RemoteColor));
-
+      
+      smcLog.WriteLog("Setting PlayList Control Colors...", LogLevel.Info);
       Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor", string.Concat("FF", MiscConfigGUI.TextColor));
       Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor2", string.Concat("FF", MiscConfigGUI.TextColor2));
       Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/textcolor3", string.Concat("FF", MiscConfigGUI.TextColor3));
@@ -90,6 +96,7 @@ namespace StreamedMPConfig
     {
       string file = GUIGraphicsContext.Skin + @"\references.xml";
 
+      smcLog.WriteLog("Setting Unfocused Alpha Settings", LogLevel.Info);
       Helper.SetNodeText(file, "/controls/control[type='listcontrol']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaListItems.ToString());
       Helper.SetNodeText(file, "/controls/control[type='playlistcontrol']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaListItems.ToString());
       Helper.SetNodeText(file, "/controls/control[type='thumbnailpanel']/unfocusedAlpha", MiscConfigGUI.UnfocusedAlphaThumbs.ToString());
