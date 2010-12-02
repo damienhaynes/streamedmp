@@ -364,6 +364,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.TextColor2 = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor2, "FFFFFF");
             MiscConfigGUI.TextColor3 = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor3, "FFFFFF");
             MiscConfigGUI.WatchedColor = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscWatchedColor, "808080");
+            MiscConfigGUI.RemoteColor = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscWatchedColor, "FFA075");
             MiscConfigGUI.UnfocusedAlphaListItems = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, 100);
             MiscConfigGUI.UnfocusedAlphaThumbs = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, 100);
             break;
