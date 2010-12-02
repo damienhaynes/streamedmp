@@ -115,17 +115,17 @@ This file should contain the details view
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <description>Trailer (Online Videos)</description>
       <type>button</type>
       <id>4755</id>
       <label>#StreamedMP.Trailer</label>
       <hyperlink>4755</hyperlink>
-	  <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
+      <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
       <onup>4755</onup>
       <ondown>4755</ondown>
       <onright>6</onright>
-      <onleft>6</onleft>
+      <onleft>69999</onleft>
       <posX>925</posX>
       <posY>665</posY>
       <width>150</width>
@@ -149,9 +149,9 @@ This file should contain the details view
       <hyperlink>84623</hyperlink>
       <onup>69999</onup>
       <ondown>69999</ondown>
-      <onright>6</onright>
-      <onleft>69999</onleft>
-	  <onright>4755</onright>
+      <onright>4755</onright>
+      <onleft>6</onleft>
+      <onright>4755</onright>
       <posX>777</posX>
       <posY>665</posY>
       <width>150</width>
@@ -423,4 +423,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:680590a53d53455289901a913ee1f62b-->
+<!--Checksum:0f8413300c3b090d632eb7e46e87c1ee-->
