@@ -85,7 +85,6 @@ namespace StreamedMPConfig
       // sort the list of patches with the newest first, this correctly display the change log
       updateCheck.patchList.Sort(delegate(updateCheck.patches p1, updateCheck.patches p2) { return p2.patchVersion.CompareTo(p1.patchVersion); });
 
-
       RichTextBox richTextBoxInput = new RichTextBox();
       RichTextBox richTextBoxOutput = new RichTextBox();
       //
@@ -101,7 +100,7 @@ namespace StreamedMPConfig
 
         WebClient client = new WebClient();
         client.DownloadFile(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
-        smcLog.WriteLog("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"),LogLevel.Info);
+        smcLog.WriteLog("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"), LogLevel.Info);
       }
       //
       // And combine them into a single change log
@@ -109,25 +108,34 @@ namespace StreamedMPConfig
       if (File.Exists(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf")))
         File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
 
-      // Add each file and save as ChangeLog.rtf
-      int patchCnt = 1;
-      StreamedMPConfig.theRevisions = "Patch(s): ";
-      foreach (updateCheck.patches thePatch in updateCheck.patchList)
+      smcLog.WriteLog("Processing Change Log...", LogLevel.Info);
+
+      try
       {
-        richTextBoxInput.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
-        richTextBoxInput.SelectAll();
-        richTextBoxInput.Copy();
-        richTextBoxOutput.Paste();
-        System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
-        if (patchCnt < updateCheck.patchList.Count)
-          StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString() + " / ";
-        else
-          StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString();
-        patchCnt++;
+        // Add each file and save as ChangeLog.rtf
+        int patchCnt = 1;
+        StreamedMPConfig.theRevisions = "Patch(s): ";
+        foreach (updateCheck.patches thePatch in updateCheck.patchList)
+        {
+          richTextBoxInput.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+          richTextBoxInput.SelectAll();
+          richTextBoxInput.Copy();
+          richTextBoxOutput.Paste();
+          System.IO.File.Delete(Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+          if (patchCnt < updateCheck.patchList.Count)
+            StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString() + " / ";
+          else
+            StreamedMPConfig.theRevisions = StreamedMPConfig.theRevisions + thePatch.patchVersion.ToString();
+          patchCnt++;
+        }
+        richTextBoxOutput.SaveFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+        richTextBoxInput.Dispose();
+        richTextBoxOutput.Dispose();
       }
-      richTextBoxOutput.SaveFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
-      richTextBoxInput.Dispose();
-      richTextBoxOutput.Dispose();
+      catch (Exception ex)
+      {
+        smcLog.WriteLog("Exception Reading Change Logs: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+      }
     }
 
 

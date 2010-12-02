@@ -57,22 +57,29 @@ namespace StreamedMPConfig
     /// Sets a new path for a skin files <import></import>
     /// </summary>   
     public static void SetSkinImport(string file, string importtag, string value)
-    {
+    {      
       CheckSum checkSum = new CheckSum();
       XmlDocument doc = LoadXMLDocument(file);
       if (doc == null) return;
 
       // build xpath string
       string xpath = string.Format("/window/controls/import[@tag='{0}']", importtag);
-      
+
       XmlNode node = doc.DocumentElement.SelectSingleNode(xpath);
       if (node == null)
         return;
 
-      smcLog.WriteLog(string.Format("Setting skin import '<import tag='{0}'>{1}</import>' in '{2}'", importtag, value, file), LogLevel.Info);
-      node.InnerText = value;
-      doc.Save(file);
-      checkSum.Replace(file);
+      try
+      {
+        smcLog.WriteLog(string.Format("Setting skin import '<import tag='{0}'>{1}</import>' in '{2}'", importtag, value, file), LogLevel.Debug);
+        node.InnerText = value;
+        doc.Save(file);
+        checkSum.Replace(file);
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog("Exception setting skin import: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+      }
     }
 
     /// <summary>
@@ -89,14 +96,24 @@ namespace StreamedMPConfig
       if (nodes == null)
         return;
 
-      foreach (XmlNode node in nodes)
+      try
       {
-        if (node.InnerText.StartsWith(define))
-          node.InnerText = string.Format("{0}:{1}", define, value);
-      }
+        foreach (XmlNode node in nodes)
+        {
+          if (node.InnerText.StartsWith(define))
+          {
+            smcLog.WriteLog(string.Format("Setting skin define '{0}' with value '{1}'", define, value), LogLevel.Debug);
+            node.InnerText = string.Format("{0}:{1}", define, value);
+          }
+        }
 
-      doc.Save(file);
-      checkSum.Replace(file);
+        doc.Save(file);
+        checkSum.Replace(file);
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog("Exception setting skin define: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+      }
     }
 
     /// <summary>
@@ -112,10 +129,18 @@ namespace StreamedMPConfig
       if (node == null)
         return;
 
-      node.InnerText = value;
+      try
+      {
+        smcLog.WriteLog(string.Format("Setting skin text '{0}' with value '{1}'", path, value), LogLevel.Debug);
+        node.InnerText = value;
 
-      doc.Save(file);
-      checkSum.Replace(file);
+        doc.Save(file);
+        checkSum.Replace(file);
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog("Exception setting skin text: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+      }
     }
     #endregion;
 

@@ -222,14 +222,23 @@ namespace StreamedMPConfig
       {
         btDoUpdate.Label = Translation.UpdateInstall;
         updateFound.downloadChangeLog();
-        System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
-        string s = File.ReadAllText(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
-        rtBox.Rtf = s;
+        try
+        {
+          System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();
+          string s = File.ReadAllText(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"));
+          rtBox.Rtf = s;
 
-        cmc_ChangeLog.Label = rtBox.Text;
-        cmc_ChangeLog.Visible = true;
-        btDoUpdate.Visible = true;
-        GUIPropertyManager.SetProperty("#StreamedMP.Revisions", StreamedMPConfig.theRevisions);
+          smcLog.WriteLog("Change Log: \\n" + rtBox.Text, LogLevel.Debug);
+
+          cmc_ChangeLog.Label = rtBox.Text;
+          cmc_ChangeLog.Visible = true;
+          btDoUpdate.Visible = true;
+          GUIPropertyManager.SetProperty("#StreamedMP.Revisions", StreamedMPConfig.theRevisions);
+        }
+        catch (Exception ex)
+        {
+          smcLog.WriteLog("Exception Generating Change Log: " + ex.Message + "\\n" + ex.StackTrace, LogLevel.Error);
+        }
       }
       else
       {

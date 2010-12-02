@@ -23,6 +23,10 @@ namespace StreamedMPConfig
     }
     #endregion
 
+    #region Local Variables
+    private static readonly logger smcLog = logger.GetInstance();
+    #endregion
+
     #region Skin Controls
     [SkinControl((int)GUIControls.Style)]
     protected GUIToggleButtonControl btnStyle = null;
@@ -121,9 +125,12 @@ namespace StreamedMPConfig
     /// </summary>
     public static void ApplyConfigurationChanges()
     {
+      smcLog.WriteLog("Applying MovingPictures Configuration Changes...", LogLevel.Info);
+
       string skinFile = GUIGraphicsContext.Skin + @"\MovingPictures.xml";
 
       string style = IsDefaultStyle ? "default" : "fanart";
+      smcLog.WriteLog(string.Format("MovingPictures Chosen Style is: {0}", style), LogLevel.Info);
 
       // Set <import> paths
       Helper.SetSkinImport(skinFile, "ListView", string.Format("movingpictures.{0}.listview.xml", style));
@@ -132,6 +139,7 @@ namespace StreamedMPConfig
       Helper.SetSkinImport(skinFile, "FilmstripViewMediaInfo", string.Format("movingpictures.{0}.filmstripview.mediainfo.xml", style));
       Helper.SetSkinImport(skinFile, "TopBar", string.Format("movingpictures.{0}.topbar.xml", style));
 
+      smcLog.WriteLog(string.Format("TVSeries Thumbnail MOD is: {0}", ThumbnailMod.ToString()), LogLevel.Info);
       switch (ThumbnailMod)
       {
         case Thumbnails.Default:
