@@ -218,10 +218,10 @@ namespace StreamedMPConfig
       cmc_ChangeLog.Visible = false;
       btDoUpdate.Visible = false;      
 
-      if (updateCheck.updateAvailable())
+      if (updateCheck.updateAvailable(false))
       {
         btDoUpdate.Label = Translation.UpdateInstall;
-        updateFound.downloadChangeLog();
+        updateFound.downloadChangeLog(false);
         try
         {
           System.Windows.Forms.RichTextBox rtBox = new System.Windows.Forms.RichTextBox();

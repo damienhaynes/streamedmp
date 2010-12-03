@@ -127,8 +127,8 @@ namespace StreamedMPConfig
     void btCheckForUpdate_Click(object sender, EventArgs e)
     {
       updateCheck.patchList.Clear();
-      if (updateCheck.updateAvailable())
-        updateFound.displayDetail();
+      if (updateCheck.updateAvailable(true))
+        updateFound.displayDetail(true);
       else
         MessageBox.Show(Translation.NoUpdatesAvailable);
     }
