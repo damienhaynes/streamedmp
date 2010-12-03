@@ -1167,7 +1167,7 @@ namespace StreamedMPEditor
         if (itemsOnMenubar.CheckedItems.Count == 0) helper.showError("\t      No Default Item\n\nYou must set one item as the default menu item.", errorCode.info);
         if (itemsOnMenubar.CheckedItems.Count > 1) helper.showError("          More than one default item set\n\nOnly one item can be set as the default menu.", errorCode.info);
       }
-      else if (itemsOnMenubar.CheckedItems.Count < 3)
+      else if (itemsOnMenubar.Items.Count < 3)
       {
         helper.showError("          Too few Menu Items - The minium is 3\n\nPlease add additional Menu items(s) before trying to Generate.", errorCode.info);
       }
