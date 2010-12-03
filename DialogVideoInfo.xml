@@ -258,7 +258,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>cast</description>
+      <description>Cast</description>
       <type>textbox</type>
       <id>22</id>
       <posX>308</posX>
@@ -269,6 +269,21 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#cast</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+	<control>
+      <description>Review</description>
+      <type>textboxscrollup</type>
+      <id>23</id>
+      <posX>308</posX>
+      <posY>338</posY>
+      <width>430</width>
+      <height>190</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#userreview</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -515,6 +530,26 @@
         <type>togglebutton</type>
         <id>4</id>
         <label>206</label>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+		<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+	  <control>
+        <description>Review</description>
+        <type>togglebutton</type>
+        <id>7</id>
+        <label>183</label>
         <onleft>10</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
