@@ -132,7 +132,7 @@
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <id>112</id>
+      <id>0</id>
       <description>album art image</description>
       <type>image</type>
       <posX>25</posX>
@@ -145,7 +145,7 @@
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <id>112</id>
+      <id>0</id>
       <description>album art image</description>
       <type>image</type>
       <posX>25</posX>
@@ -324,33 +324,35 @@
     <control>
       <type>label</type>
       <description>Shadow - up next label</description>
-      <id>20</id>
+      <id>0</id>
       <posX>975</posX>
       <posY>528</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ff000000</textcolor>
+	  <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>up next label</description>
-      <id>20</id>
+      <id>0</id>
       <posX>975</posX>
       <posY>527</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ff006699</textcolor>
+	  <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>next artist label</description>
-      <id>123</id>
+      <id>0</id>
       <posX>975</posX>
       <posY>550</posY>
       <width>320</width>
@@ -364,7 +366,7 @@
     <control>
       <type>fadelabel</type>
       <description>next artist label</description>
-      <id>123</id>
+      <id>0</id>
       <posX>975</posX>
       <posY>575</posY>
       <width>400</width>
@@ -385,6 +387,7 @@
       <height>66</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>defaultAudio.png</texture>
+	  <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -410,14 +413,15 @@
       <width>76</width>
       <height>76</height>
       <texture>mayacdborder.png</texture>
+	  <visible>control.hasthumb(600)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <id>141</id>
+      <id>0</id>
       <description>Rating</description>
       <type>imagelist</type>
-      <visible>string.equals(#StreamedMP.FullHD,false)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]</visible>
+      <visible>string.equals(#StreamedMP.FullHD,false)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+!string.equals(#Play.Current.Title,)</visible>
       <posX>195</posX>
       <posY>640</posY>
       <textureWidth>24</textureWidth>
@@ -434,10 +438,10 @@
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <control>
-      <id>141</id>
+      <id>0</id>
       <description>Rating</description>
       <type>imagelist</type>
-      <visible>string.equals(#StreamedMP.FullHD,true)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]</visible>
+      <visible>string.equals(#StreamedMP.FullHD,true)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+!string.equals(#Play.Current.Title,)</visible>
       <posX>198</posX>
       <posY>640</posY>
       <textureWidth>32</textureWidth>
