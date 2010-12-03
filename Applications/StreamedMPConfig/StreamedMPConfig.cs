@@ -269,8 +269,8 @@ namespace StreamedMPConfig
         settings.Save(settings.cXMLSectionUpdate);
 
         // Refresh GUI
-        smcLog.WriteLog("Refreshing GUI", LogLevel.Info);
-        GUIWindowManager.OnResize();
+        //smcLog.WriteLog("Refreshing GUI", LogLevel.Info);
+        //GUIWindowManager.OnResize();
       }
       #endregion
 
