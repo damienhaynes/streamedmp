@@ -267,6 +267,10 @@ namespace StreamedMPConfig
 
         StreamedMPConfig.patchAppliedLastRun = false;
         settings.Save(settings.cXMLSectionUpdate);
+
+        // Refresh GUI
+        smcLog.WriteLog("Refreshing GUI", LogLevel.Info);
+        GUIWindowManager.OnResize();
       }
       #endregion
 
