@@ -490,10 +490,8 @@ namespace StreamedMPConfig
     {
       GUIDialogYesNo dlg = (GUIDialogYesNo)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_YES_NO);
       dlg.Reset();
-      dlg.SetHeading(Translation.MediaPortalRestart);
-      dlg.SetLine(1, String.Empty);
-      dlg.SetLine(2, Translation.MediaPortalRestartMessage);
-      dlg.SetLine(3, String.Empty);
+      dlg.SetHeading(Translation.MediaPortalRestart);      
+      dlg.SetLine(1, Translation.MediaPortalRestartMessage);      
       dlg.DoModal(GUIWindowManager.ActiveWindow);
       if (dlg.IsConfirmed)
       {
@@ -503,7 +501,6 @@ namespace StreamedMPConfig
         processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
 
         smcLog.WriteLog("SMPediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
-
 
         processStart.WorkingDirectory = Path.GetDirectoryName(restartExe);
         System.Diagnostics.Process.Start(processStart);
