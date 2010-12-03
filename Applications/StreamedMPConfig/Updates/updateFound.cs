@@ -31,7 +31,7 @@ namespace StreamedMPConfig
 
     #region Public methods
 
-    public static void displayDetail()
+    public static void displayDetail(bool calledFromConfig)
     {
       changlogForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       changlogForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -55,8 +55,11 @@ namespace StreamedMPConfig
       changeLog.WordWrap = true;
       changeLog.ReadOnly = true;
 
-      downloadChangeLog();
-      changeLog.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), RichTextBoxStreamType.RichText);
+      downloadChangeLog(calledFromConfig);
+      if (File.Exists(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf")))
+        changeLog.LoadFile(Path.Combine(Path.GetTempPath(), "ChangeLog.rtf"), RichTextBoxStreamType.RichText);
+      else
+        changeLog.Text = "\n          Error During ChangeLog Download\n\n          You can chose to try and install the patch from here or alternatively download the patch from the StreamedMP\n          Site and try a manual update.";
 
       changeLog.ScrollBars = RichTextBoxScrollBars.Vertical;
       changeLog.SelectionStart = 0;
@@ -80,7 +83,7 @@ namespace StreamedMPConfig
       HideCaret(changlogForm.Handle);
     }
 
-    public static void downloadChangeLog()
+    public static void downloadChangeLog(bool calledFromConfig)
     {
       // sort the list of patches with the newest first, this correctly display the change log
       updateCheck.patchList.Sort(delegate(updateCheck.patches p1, updateCheck.patches p2) { return p2.patchVersion.CompareTo(p1.patchVersion); });
@@ -99,7 +102,18 @@ namespace StreamedMPConfig
         }
 
         WebClient client = new WebClient();
-        client.DownloadFile(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        try
+        {
+          client.DownloadFile(thePatch.patchChangeLog, Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"));
+        }
+        catch (Exception e)
+        {
+          if (calledFromConfig)
+            MessageBox.Show("Unable to access ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf\n\n" + e.Message, "ChangeLog access issue");
+
+          smcLog.WriteLog("Unable to access ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf > " + e.Message, LogLevel.Error);
+          return;
+        }
         smcLog.WriteLog("Downloaded File : " + Path.Combine(Path.GetTempPath(), "ChangeLog-" + thePatch.patchVersion.MinorRevision.ToString() + ".rtf"), LogLevel.Info);
       }
       //

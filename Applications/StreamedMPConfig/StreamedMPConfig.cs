@@ -279,7 +279,7 @@ namespace StreamedMPConfig
       // to control the visibility of the icons indicating and update is available?
       if (StreamedMPConfig.checkOnStart)
       {
-        if (updateCheck.updateAvailable())
+        if (updateCheck.updateAvailable(false))
         {
           StreamedMPConfig.updateAvailable = true;
 
@@ -1018,7 +1018,7 @@ namespace StreamedMPConfig
     public void checkUpdateOnTimer(object source)
     {
       smcLog.WriteLog("Update timer fired - checking for update", LogLevel.Debug);
-      if (updateCheck.updateAvailable())
+      if (updateCheck.updateAvailable(false))
       {
         StreamedMPConfig.updateAvailable = true;
 
@@ -1364,7 +1364,7 @@ namespace StreamedMPConfig
         // check for updates if enabled
         if (StreamedMPConfig.checkOnStart)
         {
-          if (updateCheck.updateAvailable())
+          if (updateCheck.updateAvailable(false))
           {
             StreamedMPConfig.updateAvailable = true;
 

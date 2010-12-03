@@ -55,7 +55,7 @@ namespace StreamedMPConfig
     #region Public methods
 
     // This section checks to see if there is a later version of the skin
-    public static bool updateAvailable()
+    public static bool updateAvailable(bool calledFromConfig)
     {
       try
       {
@@ -113,7 +113,7 @@ namespace StreamedMPConfig
                   if (reader.Name == "patch")
                   {
                     smcLog.WriteLog("Processing Patch V" + thisPatch.patchVersion.ToString(), LogLevel.Debug);
- 
+
                     // Is this patch valid for the skin version we are running
                     if (skinVersionIs.CompareTo(thisPatch.minSkinVersionForPatch) >= 0)
                     {
@@ -135,7 +135,10 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message,LogLevel.Error);
+        if (calledFromConfig)
+          MessageBox.Show("Exception while attempting to read upgrade xml file\n\n" + e.Message, "Update Processing Failed");
+        else
+          smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message, LogLevel.Error);
       }
       finally
       {
@@ -183,7 +186,7 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-        smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message,LogLevel.Error);
+        smcLog.WriteLog("Exception while attempting to read upgrade xml file\n\n" + e.Message, LogLevel.Error);
       }
       finally
       {
