@@ -827,7 +827,7 @@ namespace StreamedMPEditor
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       isWeather.Checked = mnuItem.isWeather;
       selectedWindow.Text = xmlFiles.Text;
-      selectedWindowID.Text = ids[index];
+      selectedWindowID.Text = mnuItem.hyperlink;
       setMostRecentDisplayOption(mnuItem.showMostRecent);
       if (mnuItem.fanartHandlerEnabled)
         checkAndSetRandomFanart(mnuItem.fanartProperty);
