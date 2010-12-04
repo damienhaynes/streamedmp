@@ -31,7 +31,7 @@
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-        <description>label Views menu</description>
+        <description>Views</description>
         <type>label</type>
         <id>0</id>
         <font>mediastream12tc</font>
@@ -42,14 +42,26 @@
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
+	  <control>
+        <description>Filters</description>
+        <type>label</type>
+        <id>0</id>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>283</posY>
+        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
+        <label>19149</label>
+        <animation effect="slide" time="200" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
       <control>
-        <description>label OPTIONS</description>
+        <description>OPTIONS</description>
         <type>label</type>
         <id>0</id>
         <font>mediastream12tc</font>
         <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <posX>1040</posX>
-        <posY>480</posY>
+        <posY>455</posY>
         <label>496</label>
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -66,7 +78,7 @@
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>
-          <description>View-As</description>
+          <description>Layout</description>
           <type>button</type>
           <id>2</id>
           <label>#OnlineVideos.Translation.LayoutList.Label</label>
@@ -74,22 +86,29 @@
           <onleft>50</onleft>
           <onright>50</onright>
         </control>
-        <control>
-          <description>Next Page</description>
+		<control>
+          <description>Empty button</description>
           <type>button</type>
-          <id>3</id>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+		<control>
+          <description>Refresh Search</description>
+          <type>button</type>
+          <id>8</id>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>#OnlineVideos.Translation.NextPage.Label</label>
+          <label>#OnlineVideos.Translation.Refresh.Label</label>
           <visible>no</visible>
         </control>
-        <control>
-          <description>Previous Page</description>
-          <type>button</type>
-          <id>4</id>
+		<control>
+          <description>Select Category</description>
+          <type>selectbutton</type>
+          <id>9</id>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>#OnlineVideos.Translation.PreviousPage.Label</label>
+          <label>#OnlineVideos.Translation.Category.Label</label>
           <visible>no</visible>
         </control>
         <control>
@@ -118,25 +137,7 @@
           <onright>50</onright>
           <label>#OnlineVideos.Translation.Timeframe.Label</label>
           <visible>no</visible>
-        </control>
-        <control>
-          <description>Update</description>
-          <type>button</type>
-          <id>8</id>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <label>#OnlineVideos.Translation.Refresh.Label</label>
-          <visible>no</visible>
-        </control>
-        <control>
-          <description>Select Category</description>
-          <type>selectbutton</type>
-          <id>9</id>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <label>#OnlineVideos.Translation.Category.Label</label>
-          <visible>no</visible>
-        </control>
+        </control>        
         <control>
           <description>Empty button</description>
           <type>button</type>
