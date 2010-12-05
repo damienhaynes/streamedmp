@@ -17,8 +17,7 @@ namespace SMPpatch
 
     int xpos;
     int ypos;
-    SkinInfo skInfo = new SkinInfo();
-    Image workingImage; 
+    SkinInfo skInfo = new SkinInfo();    
 
     #endregion
 
