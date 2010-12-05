@@ -5,7 +5,9 @@
   <allowoverlay>no</allowoverlay>
   <define>#header.label:134</define>
   <define>#header.hover:hover_my videos.png</define>
+  <define>#useSelectedFanart:Yes</define>
   <controls>
+    <import>myvideos.selected.fanart.xml</import>
     <control>
       <description>dummy label for imdb info</description>
       <type>label</type>
@@ -15,17 +17,6 @@
       <label>#title</label>
       <visible>control.hastext(4441)</visible>
     </control>   
-    <control>
-      <description>Default Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#header.hover</texture>
-      <animation effect="fade" time="300" delay="0">WindowOpen</animation>
-    </control>
     <control>
       <description>Backdrop Overlay</description>
       <type>image</type>
