@@ -41,7 +41,7 @@
     </control>
     <control>
       <description>FANART IMAGE 1</description>
-      <id>897689</id>
+      <id>0</id>
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
@@ -54,14 +54,14 @@
     </control>
     <control>
       <description>FANART IMAGE 2</description>
-      <id>897688</id>
+      <id>0</id>
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
       <texture>#fanarthandler.movie.backdrop2.selected</texture>
-      <visible>control.isvisible(91919292)+control.isvisible(91919293))+plugin.isenabled(Fanart Handler)</visible>
+      <visible>control.isvisible(91919292)+control.isvisible(91919293)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
     </control>
