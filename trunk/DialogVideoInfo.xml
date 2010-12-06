@@ -3,8 +3,8 @@
   <id>2003</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <disabletopbar>yes</disabletopbar>
-  <define>#header.hover:hover_moving pictures.png</define>
+  <disabletopbar>no</disabletopbar>
+  <define>#header.hover:hover_my videos.png</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.label:102003</define>
@@ -627,6 +627,7 @@
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
+	<import>common.overlays2.xml</import>
   </controls>
 </window>
 <!--Checksum:75f60573c9f940617b95a237d6b1b985-->
