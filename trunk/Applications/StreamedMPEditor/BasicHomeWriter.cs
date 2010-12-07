@@ -165,19 +165,27 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")|control.isvisible(" + (menItem.id + 100).ToString() + ")</visible>");
         rawXML.AppendLine("</control>");
 
-        // Write out the menu butons and lables
-        for (int i = 0; i < 14; i++)
+        if (menuStyle == chosenMenuStyle.graphicMenuStyle)
         {
-          if (direction == menuType.horizontal)
+          // Write out the menu butons and lables
+          for (int i = 0; i < 16; i++)
           {
-            if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-              writeGraphicalMenu(i, menItem, ref rawXML);
-            else
-              writeHorizonalMenu(i, menItem, ref rawXML);
+            writeGraphicalMenu(i, menItem, ref rawXML);
           }
-          else if (direction == menuType.vertical)
+        }
+        else
+        {
+          // Write out the menu butons and lables
+          for (int i = 0; i < 14; i++)
           {
-            writeVerticalMenu(i, menItem, ref rawXML);
+            if (direction == menuType.horizontal)
+            {
+              writeHorizonalMenu(i, menItem, ref rawXML);
+            }
+            else if (direction == menuType.vertical)
+            {
+              writeVerticalMenu(i, menItem, ref rawXML);
+            }
           }
         }
       }
