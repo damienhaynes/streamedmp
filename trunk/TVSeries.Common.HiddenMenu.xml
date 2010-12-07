@@ -209,9 +209,19 @@
           <id>66612</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-          <ondown>2</ondown>
+          <ondown>181966</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
+        </control>
+		<control>
+          <description>Download Central</description>
+          <type>button</type>
+          <id>181966</id>
+          <label>Download</label>
+          <hyperlink>181966</hyperlink>
+          <ondown>2</ondown>		  
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(dlCentral)+control.isvisible(1239)</visible>
         </control>
       </control>
     </control>
