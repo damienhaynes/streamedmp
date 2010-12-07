@@ -634,7 +634,7 @@ namespace StreamedMPEditor
           basicHomeValues.offsetRssText = 259;
 
 
-          basicHomeValues.textYOffset = 6;
+          basicHomeValues.textYOffset = 30;
 
           basicHomeValues.offsetRssImage = 73;
 
