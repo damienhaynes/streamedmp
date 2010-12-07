@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>614</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>no</disabletopbar>
+  <define>#header.hover:hover_my videos.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.label:100022</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>380</height>
+      <texture>defaultdvdcover.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>21</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>380</height>
+      <texture>#thumb</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+      <visible>true</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>    
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>251</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <label>#Actor.Name</label>
+      <textcolor>ffFFFFFF</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>3</shadowDistance>
+	  <shadowColor>ff222222</shadowColor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>    
+    <control>
+      <description>DOB</description>
+      <type>label</type>
+      <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>282</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff909090</textcolor>
+	  <shadowAngle>45</shadowAngle>
+	  <shadowDistance>2</shadowDistance>
+	  <shadowColor>ff222222</shadowColor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>    
+    <control>
+      <description>Biography</description>
+      <type>textboxscrollup</type>
+      <id>20</id>
+      <posX>308</posX>
+      <posY>315</posY>
+      <width>510</width>
+      <height>320</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Actor.Biography</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movies Starred In</description>
+      <type>textbox</type>
+      <id>22</id>
+	  <onleft>3</onleft>
+      <posX>308</posX>
+      <posY>315</posY>
+      <width>430</width>
+      <height>340</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Actor.Movies</label>	 
+	  <spinWidth>25</spinWidth>
+	  <spinHeight>25</spinHeight>
+	  <spinPosX>680</spinPosX>
+	  <spinPosY>620</spinPosY>
+	  <spinAlign>Right</spinAlign>
+	  <spinColor>ff006698</spinColor>
+	  <textureUp>arrow_round_up_nofocus.png</textureUp>
+	  <textureDown>arrow_round_down_nofocus.png</textureDown>
+	  <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+	  <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>Button Group</description>
+      <posX>900</posX>
+      <posY>252</posY>
+      <layout>StackLayout</layout>
+      <control>
+        <description>Biography</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <label>1011</label>
+		<onup>17</onup>
+        <onleft>22</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+		<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+	  <control>
+        <description>Movies</description>
+        <type>togglebutton</type>
+        <id>4</id>
+        <label>342</label>
+        <onleft>22</onleft>
+		<ondown>3</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+		<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus_ledon.png</textureFocus>
+        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+    </control>
+	<import>common.overlays2.xml</import>
+  </controls>
+</window>
