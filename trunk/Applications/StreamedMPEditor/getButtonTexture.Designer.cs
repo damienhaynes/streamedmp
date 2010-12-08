@@ -47,7 +47,7 @@
       this.flIconPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
       this.flIconPanel.Location = new System.Drawing.Point(6, 18);
       this.flIconPanel.Name = "flIconPanel";
-      this.flIconPanel.Size = new System.Drawing.Size(462, 146);
+      this.flIconPanel.Size = new System.Drawing.Size(462, 218);
       this.flIconPanel.TabIndex = 0;
       // 
       // lbMenuItem
@@ -101,7 +101,7 @@
       this.groupBox2.Controls.Add(this.flIconPanel);
       this.groupBox2.Location = new System.Drawing.Point(12, 177);
       this.groupBox2.Name = "groupBox2";
-      this.groupBox2.Size = new System.Drawing.Size(474, 178);
+      this.groupBox2.Size = new System.Drawing.Size(474, 242);
       this.groupBox2.TabIndex = 9;
       this.groupBox2.TabStop = false;
       this.groupBox2.Text = "Available Menu Icons";
@@ -123,13 +123,14 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(498, 367);
+      this.ClientSize = new System.Drawing.Size(498, 431);
       this.Controls.Add(this.textBox1);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
       this.Controls.Add(this.btSaveAndExit);
       this.Controls.Add(this.label1);
       this.Controls.Add(this.lbMenuItem);
+      this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
       this.Name = "getButtonTexture";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Graphical menu - Select Icon for Menu Item";
