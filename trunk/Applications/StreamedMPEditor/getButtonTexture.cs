@@ -24,6 +24,9 @@ namespace StreamedMPEditor
     public getButtonTexture()
     {
       InitializeComponent();
+      iconList();
+      groupBox2.Text = "Available Menu Icons (" + iconFiles.Count.ToString() + ")";
+      groupBox2.Refresh();
 
     }
 
@@ -66,7 +69,7 @@ namespace StreamedMPEditor
       workingImage = Image.FromFile(Path.Combine(streamedMPMediaPath, currentIcon));
       pbCurrentIcon.Image = workingImage.GetThumbnailImage(128, 128, null, new IntPtr());
       workingImage.Dispose();
-
+      flIconPanel.Controls.Clear();
       foreach (string icon in iconList())
       {
         PictureBox newPBox = new PictureBox();
@@ -121,6 +124,7 @@ namespace StreamedMPEditor
     {
       Helper helper = new Helper();
       DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, "homebuttons"));
+      iconFiles.Clear();
       //get list of files from directory
       foreach (FileInfo fInfo in dInfo.GetFiles("*.png"))
       {

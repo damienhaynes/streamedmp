@@ -146,13 +146,10 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
           
-        
-        //rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
-          rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
+                  rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
           rawXML.AppendLine("<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
           rawXML.AppendLine("</control>");
           break;
-
         case 2:
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
@@ -165,11 +162,11 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<texture>" + menItem.buttonTexture + "</texture>");
           
           if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 1)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[0].id + 800).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[0].id + 800).ToString() + ")</visible>");
           else if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 2)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[1].id + 800).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[1].id + 800).ToString() + ")</visible>");
           else if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 3)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[2].id + 800).ToString() + ")|control.isvisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[2].id + 800).ToString() + ")</visible>");
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 799 + 4).ToString() + ")</visible>");
 
@@ -349,22 +346,13 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<texture>" + menItem.buttonTexture + "</texture>");
 
-          /// ** THIS NEEDS WORK ***
-          //if (menuItems.IndexOf(menItem) - 4 == -4)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 4].id + 700).ToString() + ")</visible>");
-          //else if (menuItems.IndexOf(menItem) - 4 == -3)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 3].id + 700).ToString() + ")</visible>");
-          //else if (menuItems.IndexOf(menItem) - 4 == -2)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[menuItems.Count - 2].id + 700).ToString() + ")</visible>");
-          //else
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 700) - 4).ToString() + ")</visible>");
 
           if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 1)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")|control.isvisible(" + (menuItems[0].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")</visible>");
           else if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 2)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")|control.isvisible(" + (menuItems[1].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")</visible>");
           else if (menuItems.IndexOf(menItem) + 4 == menuItems.Count + 3)
-            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")|control.isvisible(" + (menuItems[2].id + 100).ToString() + ")</visible>");
+            rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")</visible>");
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 699 + 4).ToString() + ")</visible>");
 
