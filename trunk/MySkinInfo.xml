@@ -2,15 +2,13 @@
 <window>
   <id>196208</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.label:#StreamedMP.SkinSettings - Video</define>
+  <allowoverlay>no</allowoverlay>  
   <define>#header.hover:hover_settings.png</define>
-  <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9999</define>
+  <define>#defaultcontrol:2</define>  
   <define>#plugin1:MYALARM</define>
   <define>#plugin2:ARCSOFT PLAYER</define>
   <define>#plugin3:DVD</define>
-  <define>#plugin4:MYEMULATORS</define>
+  <define>#plugin4:MY EMULATORS</define>
   <define>#plugin5:EXTENTIONS</define>
   <define>#plugin6:FANART HANDLER</define>
   <define>#plugin7:FOR THE RECORD</define>
@@ -19,31 +17,31 @@
   <define>#plugin10:HTPC INFO</define>
   <define>#plugin11:INFOSERVICE</define>
   <define>#plugin12:LAST.FM</define>
-  <define>#plugin13:MYLYRICS</define>
-  <define>#plugin14:MYMUSIC</define>
-  <define>#plugin15:MYRADIO</define>
-  <define>#plugin16:MYTRAILERS</define>
-  <define>#plugin17:MYTV</define>
-  <define>#plugin18:MYWEATHER</define>
+  <define>#plugin13:MY LYRICS</define>
+  <define>#plugin14:MY MUSIC</define>
+  <define>#plugin15:MY RADIO</define>
+  <define>#plugin16:MY TRAILERS</define>
+  <define>#plugin17:MY TV</define>
+  <define>#plugin18:MY WEATHER</define>
   <define>#plugin19:MEDIASLAYER</define>
   <define>#plugin20:MEDIATIP</define>
   <define>#plugin21:MOVING PICTURES</define>
   <define>#plugin22:MPNZB</define>
-  <define>#plugin23:MY BURNER</define>
+  <define>#plugin23:DOWNLOAD CENTRAL</define>
   <define>#plugin24:MP MUSIC VIDEOS</define>
   <define>#plugin25:ONLINEVIDEOS</define>
   <define>#plugin26:PANDORA MUSICBOX</define>
-  <define>#plugin27:PICTURES</define>
-  <define>#plugin28:PLUGINS</define>
+  <define>#plugin27:MY PICTURES</define>
+  <define>#plugin28:WEBBROWSER</define>
   <define>#plugin29:POWER CONTROL</define>
   <define>#plugin30:UPDATE CONTROL</define>
   <define>#plugin31:RADIOTIME</define>
   <define>#plugin32:RSS/NEWS</define>
-  <define>#plugin33:SETTINGS</define>
+  <define>#plugin33:MY SETTINGS</define>
   <define>#plugin34:SHOWTIMES</define>
   <define>#plugin35:SUDOKU</define>
   <define>#plugin36:SYSINFO (MP DASHBOARD)</define>
-  <define>#plugin37:TV SERIES</define>
+  <define>#plugin37:MP-TVSERIES</define>
   <define>#plugin38:WIKIPEDIA</define>
   <define>#plugin39:WORLDCLOCK</define>
   <define>#plugin40:STOCKS AND INDICES</define>
@@ -52,10 +50,8 @@
   <define>#plugin43:MY TETRIS</define>
   <define>#plugin44:MY VIDEOS</define>
   <define>#plugin45:SLEEP CONTROL</define>
-  <define>#plugin46:SUBCENTRAL</define>
-  <define>#plugin47:WEBBROWSER</define>  
-  <controls>
-    <!-- <import>common.settings.xml</import> -->
+  <define>#plugin46:SUBCENTRAL</define>  
+  <controls>    
     <control>
       <type>image</type>
       <id>0</id>
@@ -65,8 +61,7 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>    
-    <import>common.time.xml</import>
-    <import>streamedmp.version.xml</import>
+    <import>common.time.xml</import>    
     <control>
       <type>image</type>
       <id>0</id>
@@ -174,7 +169,6 @@
       <posY>150</posY>
       <label>-</label>
     </control>    
-    
     <!-- Skin Description -->
     <control>
       <description>desc txt</description>
@@ -250,7 +244,7 @@
       <posY>330</posY>
       <label>Supported Plugins:</label>
       <textcolor>ffa9d0f7</textcolor>
-			<align>right</align>
+	  <align>right</align>
     </control>  
     <!-- The Plugins are.... -->
     <control>
@@ -638,7 +632,8 @@
       <id>1</id>
       <posX>710</posX>
       <posY>550</posY>
-      <label>#plugin47</label>      
+	  <label>#plugin47</label>
+      <visible>string.equals(#plugin47,)</visible>      
     </control>
     <control>
       <description>plug value line 12</description>
