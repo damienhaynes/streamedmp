@@ -68,6 +68,18 @@
       <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
     </control>
+	<control>
+      <description>Update Indicator</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1000</posX>
+      <posY>206</posY>
+      <width>32</width>
+      <height>32</height>
+      <texture>isupdate.png</texture>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,false)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
@@ -76,14 +88,22 @@
       <posY>201</posY>
       <width>211</width>
       <height>379</height>
-      <layout>StackLayout</layout>
+      <layout>StackLayout(0, Vertical, true)</layout>
+	  <control Style="settingsbutton">
+        <description>StreamedMP Settings</description>
+        <type>button</type>
+        <id>9999</id>
+        <label>Skin</label>
+        <hyperlink>196200</hyperlink>
+		<onup>10000</onup>
+        <onleft>#defaultcontrol</onleft>
+      </control>
       <control Style="settingsbutton">
         <description>Wizard</description>
         <type>button</type>
         <id>9991</id>
         <label>1200</label>
         <hyperlink>615</hyperlink>
-        <onup>17</onup>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
@@ -109,6 +129,7 @@
         <label>605</label>
         <hyperlink>700</hyperlink>
         <onleft>#defaultcontrol</onleft>
+		<visible>plugin.isenabled(TV)</visible>
       </control>
       <control Style="settingsbutton">
         <description>My Pictures</description>
@@ -143,43 +164,27 @@
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>StreamedMP Settings</description>
-        <type>button</type>
-        <id>9999</id>
-        <label>Skin</label>
-        <hyperlink>196200</hyperlink>
-        <onleft>#defaultcontrol</onleft>
-      </control>
-      <control Style="settingsbutton">
-        <description>Intelligent Frame Correction</description>
-        <type>button</type>
-        <id>10000</id>
-        <label> I.F.C. </label>
-        <onleft>#defaultcontrol</onleft>
-        <hyperlink>240782</hyperlink>
-        <ondown>10001</ondown>
-      </control>
-      <control Style="settingsbutton">
         <description>MiniDisplay</description>
         <type>button</type>
         <id>10001</id>
         <label>9100</label>
         <onleft>#defaultcontrol</onleft>
         <hyperlink>9000</hyperlink>
-        <ondown>9991</ondown>
+		<onup>9998</onup>
+        <ondown>10000</ondown>
+		<visible>plugin.isenabled(MiniDisplay)</visible>
       </control>
-    </control>
-    <control>
-      <description>Update Indicator</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1000</posX>
-      <posY>551</posY>
-      <width>32</width>
-      <height>32</height>
-      <texture>isupdate.png</texture>
-      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
+	  <control Style="settingsbutton">
+        <description>Intelligent Frame Correction</description>
+        <type>button</type>
+        <id>10000</id>
+        <label> I.F.C. </label>
+        <onleft>#defaultcontrol</onleft>
+        <hyperlink>240782</hyperlink>
+		<onup>10001</onup>
+        <ondown>9999</ondown>
+		<visible>plugin.isenabled(Intelligent Frame Correction)</visible>
+      </control>
     </control>
     <control>
       <description>Settings Title Label</description>
