@@ -64,7 +64,7 @@
       <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-	<control>
+    <control>
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
@@ -85,21 +85,14 @@
       <width>211</width>
       <height>379</height>
       <layout>StackLayout(0, Vertical, true)</layout>
-	  <control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
         <type>button</type>
         <id>12</id>
-		<onup>13</onup>
+        <onup>13</onup>
         <label>Skin</label>
         <hyperlink>196200</hyperlink>
-      </control>
-      <control Style="settingsbutton">
-        <description>Wizard</description>
-        <type>button</type>
-        <id>3</id>
-        <label>1200</label>
-        <hyperlink>615</hyperlink>
-      </control>
+      </control>      
       <control Style="settingsbutton">
         <description>General</description>
         <type>button</type>
@@ -148,15 +141,15 @@
         <id>6</id>
         <label>2</label>
         <hyperlink>14</hyperlink>
-		<ondown>11</ondown>
+        <ondown>11</ondown>
       </control>
-	  <control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>MiniDisplay</description>
         <type>button</type>
         <id>11</id>
         <label>9100</label>
         <hyperlink>9000</hyperlink>
-		<onup>6</onup>
+        <onup>6</onup>
         <ondown>13</ondown>
       </control>      
       <control Style="settingsbutton">
@@ -165,9 +158,9 @@
         <id>13</id>
         <label> I.F.C. </label>
         <hyperlink>240782</hyperlink>
-		<onup>11</onup>
-		<ondown>12</ondown>
-		<visible>plugin.isenabled(Intelligent Frame Correction)</visible>
+        <onup>11</onup>
+        <ondown>12</ondown>
+        <visible>plugin.isenabled(Intelligent Frame Correction)</visible>
       </control>
     </control>
     <import>common.time.xml</import>
