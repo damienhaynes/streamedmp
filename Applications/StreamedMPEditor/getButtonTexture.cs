@@ -30,13 +30,16 @@ namespace StreamedMPEditor
 
     }
 
-    public string SelectedIcon 
+    public string SelectedIcon
     {
       get
       {
-        return "homeButtons\\" + Path.GetFileName(buttonTexture);
+        if (string.IsNullOrEmpty(buttonTexture))
+          return string.Empty;
+        else
+          return "homeButtons\\" + Path.GetFileName(buttonTexture);
       }
-      set 
+      set
       {
         buttonTexture = value;
       }
@@ -54,18 +57,18 @@ namespace StreamedMPEditor
     {
       displayIcons();
       this.ShowDialog();
-   }
+    }
 
     void displayIcons()
     {
       string currentIcon = string.Empty;
       lbMenuItem.Text = menuName;
       // Create currently selected icon picture box
-      if (string.IsNullOrEmpty(buttonTexture) || !File.Exists(Path.Combine(streamedMPMediaPath,buttonTexture)))
+      if (string.IsNullOrEmpty(buttonTexture) || !File.Exists(Path.Combine(streamedMPMediaPath, buttonTexture)))
         currentIcon = Path.Combine(streamedMPMediaPath, "homeButtons\\_noimage.png");
       else
         currentIcon = buttonTexture;
-        
+
       workingImage = Image.FromFile(Path.Combine(streamedMPMediaPath, currentIcon));
       pbCurrentIcon.Image = workingImage.GetThumbnailImage(128, 128, null, new IntPtr());
       workingImage.Dispose();
@@ -81,7 +84,7 @@ namespace StreamedMPEditor
         newPBox.Name = Path.GetFileNameWithoutExtension(icon);
         newPBox.Click += new System.EventHandler(newPBox_Click);
         newPBox.MouseEnter += new System.EventHandler(newPBox_MouseEnter);
-        newPBox.MouseLeave += new System.EventHandler(newPBox_MouseLeave); 
+        newPBox.MouseLeave += new System.EventHandler(newPBox_MouseLeave);
         flIconPanel.Controls.Add(newPBox);
       }
     }
@@ -100,8 +103,8 @@ namespace StreamedMPEditor
       string homeButtonPath = Path.Combine(streamedMPMediaPath, "homebuttons");
       string newIcon = ((PictureBox)sender).Tag.ToString();
 
-      boarderImage = Image.FromFile(Path.Combine(homeButtonPath, "_glow.png")).GetThumbnailImage(64,64,null,new IntPtr());
-      workingImage = Image.FromFile(newIcon).GetThumbnailImage(64,64,null,new IntPtr());
+      boarderImage = Image.FromFile(Path.Combine(homeButtonPath, "_glow.png")).GetThumbnailImage(64, 64, null, new IntPtr());
+      workingImage = Image.FromFile(newIcon).GetThumbnailImage(64, 64, null, new IntPtr());
 
       using (Graphics grfx = Graphics.FromImage(boarderImage))
       {

@@ -278,6 +278,7 @@ namespace StreamedMPEditor
       isWeather.Checked = prettyItems[index].isweather;
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;
+      buttonTexture.MenuItem = prettyItems[index].name;
       if (pluginTakesParameter(selectedWindowID.Text))
       {
         cboParameterViews.Visible = true;

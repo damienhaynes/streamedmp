@@ -736,8 +736,12 @@ namespace StreamedMPEditor
         else
           checkAndSetDefultImage(item);
 
-        item.buttonTexture = buttonTexture.SelectedIcon;
-        buttonTexture.MenuItem = item.name;
+        if (string.IsNullOrEmpty(buttonTexture.SelectedIcon))
+          item.buttonTexture = setDefaultIcons(int.Parse(item.hyperlink));
+        else
+          item.buttonTexture = buttonTexture.SelectedIcon;
+        
+        //buttonTexture.MenuItem = item.name;
 
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
