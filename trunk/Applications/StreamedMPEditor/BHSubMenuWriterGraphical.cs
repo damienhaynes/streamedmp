@@ -143,11 +143,12 @@ namespace StreamedMPEditor
         }
 
         localxml += "<onleft>" + (parentMenu.id + 900).ToString() + "</onleft>" +
-                 "<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
-                 "<ondown>" + ondown + "</ondown>" +
-                 "<onup>" + onup + "</onup>" +
-                 "<visible allowhiddenfocus=\"true\">control.isvisible(" + parentMenu.subMenuLevel1ID.ToString() + ")</visible>" +
-               "</control>";
+                    "<onright>" + (parentMenu.id + 900).ToString() + "</onright>" +
+                    //"<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
+                    "<ondown>" + ondown + "</ondown>" +
+                    "<onup>" + onup + "</onup>" +
+                    "<visible allowhiddenfocus=\"true\">control.isvisible(" + parentMenu.subMenuLevel1ID.ToString() + ")</visible>" +
+                  "</control>";
       }
       localxml += "</control>";
 
@@ -164,7 +165,7 @@ namespace StreamedMPEditor
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
                   "<posX>630</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 205).ToString() + "</posY>" +
                   "<align>center</align>" +
                   "<width>24</width>" +
                   "<height>24</height>" +
@@ -177,33 +178,33 @@ namespace StreamedMPEditor
                 "</control>";
 
       // 2nd Level Menu Indicator
-      subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
-      foreach (menuItem item in menuItems)
-      {
-        if (item.subMenuLevel1ID != 0)
-          if (item.subMenuLevel2.Count > 0)
-          {
-            for (int i = 0; i < item.subMenuLevel1.Count; i++)
-            {
-              subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
-            }
-          }
-      }
-      subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
-      localxml += "<control>" +
-                  "<description>Sub Menu Indicator (Level1)</description>" +
-                  "<type>image</type>" +
-                  "<posX>750</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
-                  "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
-                  "<visible>" + subArrowVisible + "</visible>" +
-                  "<colorDiffuse>77fffffff</colorDiffuse>" +
-                  "<texture>arrowrightfo.png</texture>" +
-                  "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
-                "</control>";
+      //subArrowVisible = "control.isvisible(22222)|control.hasfocus(";
+      //foreach (menuItem item in menuItems)
+      //{
+      //  if (item.subMenuLevel1ID != 0)
+      //    if (item.subMenuLevel2.Count > 0)
+      //    {
+      //      for (int i = 0; i < item.subMenuLevel1.Count; i++)
+      //      {
+      //        subArrowVisible += (item.subMenuLevel1ID + (i + 1)).ToString() + ")|control.hasfocus(";
+      //      }
+      //    }
+      //}
+      //subArrowVisible = subArrowVisible.Substring(0, (subArrowVisible.Length - 18));
+      //localxml += "<control>" +
+      //            "<description>Sub Menu Indicator (Level1)</description>" +
+      //            "<type>image</type>" +
+      //            "<posX>750</posX>" +
+      //            "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
+      //            "<align>right</align>" +
+      //            "<width>16</width>" +
+      //            "<height>16</height>" +
+      //            "<visible>" + subArrowVisible + "</visible>" +
+      //            "<colorDiffuse>77fffffff</colorDiffuse>" +
+      //            "<texture>arrowrightfo.png</texture>" +
+      //            "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+      //            "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+      //          "</control>";
 
 
       return localxml;
