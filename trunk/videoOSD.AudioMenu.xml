@@ -1,0 +1,75 @@
+<window>
+  <controls>
+    <control>
+      <description>Sub Menu Background (audio)</description>
+      <type>image</type>
+      <id>305</id>
+      <posX>865</posX>
+      <posY>0</posY>
+      <width>415</width>
+      <height>720</height>
+      <texture>osdmenubg.png</texture>
+      <visible>control.isvisible(500)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>Menu Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>908</posX>
+      <posY>18</posY>
+      <label>AUDIO MENU</label>
+      <!-- no string available for this one? -->
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <visible>control.isvisible(500)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>A/v Delay label</description>
+      <type>label</type>
+      <id>550</id>
+      <posX>908</posX>
+      <posY>64</posY>
+      <label>297</label>
+      <font>mediastream10tc</font>
+      <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>A/V Delay Slider</description>
+      <type>slider</type>
+      <id>500</id>
+      <posX>908</posX>
+      <posY>89</posY>
+      <spintype>float</spintype>
+      <textureSliderBar>sliderbackground.png</textureSliderBar>
+      <textureSliderNib>slidernibnf.png</textureSliderNib>
+      <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
+      <onup>500</onup>
+      <ondown>501</ondown>
+      <onleft>501</onleft>
+      <onright>501</onright>
+      <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>Audio Stream List Control</description>
+      <type>listcontrol</type>
+      <id>501</id>
+      <posX>908</posX>
+      <posY>154</posY>
+      <width>531</width>
+      <height>500</height>
+      <textXOff>25</textXOff>
+      <onleft>501</onleft>
+      <onright>501</onright>
+      <onup>500</onup>
+      <ondown>501</ondown>
+      <visible>no</visible>
+      <spinPosX>1300</spinPosX>
+      <spinPosY>515</spinPosY>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+  </controls>
+</window>
