@@ -18,7 +18,7 @@
       <id>0</id>
       <posX>908</posX>
       <posY>18</posY>
-      <label>SUBTITLES MENU</label>
+      <label>200083</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(800)</visible>
@@ -71,16 +71,18 @@
       <description>Sub Titles List Control</description>
       <type>listcontrol</type>
       <id>802</id>
-      <posX>870</posX>
+      <posX>908</posX>
       <posY>174</posY>
-      <width>370</width>
-      <textXOff>25</textXOff>
-      <height>299</height>
+      <width>350</width>
+      <textXOff>0</textXOff>
+      <height>500</height>
       <onleft>802</onleft>
       <onright>802</onright>
       <onup>801</onup>
-      <ondown>802</ondown>
+      <ondown>800</ondown>
       <visible>no</visible>
+      <spinPosX>1300</spinPosX>
+      <spinPosY>515</spinPosY>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
   </controls>
