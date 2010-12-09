@@ -510,46 +510,7 @@ namespace StreamedMPEditor
         //
         if (string.IsNullOrEmpty(mnuItem.buttonTexture) || mnuItem.buttonTexture.ToLower() == "false")
         {
-          switch (int.Parse(mnuItem.hyperlink))
-          {
-            case 1:
-              mnuItem.buttonTexture = "homebuttons\\tv.png";
-              break;
-            case 2:
-              mnuItem.buttonTexture = "homebuttons\\pictures.png";
-              break;
-            case 4:
-              mnuItem.buttonTexture = "homebuttons\\settings.png";
-              break;
-            case 34:
-              mnuItem.buttonTexture = "homebuttons\\plugins.png";
-              break;
-            case 501:
-            case 504:
-              mnuItem.buttonTexture = "homebuttons\\music.png";
-              break;
-            case 2600:
-              mnuItem.buttonTexture = "homebuttons\\weather.png";
-              break;
-            case 5900:
-              mnuItem.buttonTexture = "homebuttons\\movies.png";
-              break;
-            case 9811:
-              mnuItem.buttonTexture = "homebuttons\\tv-series.png";
-              break;
-            case 16001:
-              mnuItem.buttonTexture = "homebuttons\\news.png";
-              break;
-            case 96742:
-              mnuItem.buttonTexture = "homebuttons\\movies.png";
-              break;
-            case 25650:
-              mnuItem.buttonTexture = "homebuttons\\music.png";
-              break;
-            default:
-              mnuItem.buttonTexture = "homebuttons\\play.png";
-              break;
-          }
+          mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink));
         }
 
 
@@ -801,6 +762,58 @@ namespace StreamedMPEditor
         else
           return fanartSource.UserDef;
       }
+    }
+
+    string setDefaultIcons(int hyperlink)
+    {
+      string theIcon;
+      switch (hyperlink)
+      {
+        case 1:
+          theIcon =  "homebuttons\\black_tv.png";
+          break;
+        case 2:
+          theIcon = "homebuttons\\black_pictures.png";
+          break;
+        case 4:
+          theIcon = "homebuttons\\black_settings.png";
+          break;
+        case 6:
+          theIcon = "homebuttons\\black_videos.png";
+          break;
+        case 34:
+          theIcon = "homebuttons\\black_plugins.png";
+          break;
+        case 501:
+        case 504:
+          theIcon = "homebuttons\\black_music.png";
+          break;
+        case 2600:
+          theIcon = "homebuttons\\black_weather.png";
+          break;
+        case 4755:
+          theIcon = "homebuttons\\black_onlinevideos.png";
+          break;
+        case 5900:
+          theIcon = "homebuttons\\black_trailers.png";
+          break;
+        case 9811:
+          theIcon = "homebuttons\\black_tv-series.png";
+          break;
+        case 16001:
+          theIcon = "homebuttons\\black_news.png";
+          break;
+        case 96742:
+          theIcon = "homebuttons\\black_movies.png";
+          break;
+        case 25650:
+          theIcon = "homebuttons\\black_music.png";
+          break;
+        default:
+          theIcon = "homebuttons\\black_unset.png";
+          break;
+      }
+      return theIcon;
     }
   }
 }

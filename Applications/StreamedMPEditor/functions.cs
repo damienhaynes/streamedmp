@@ -1031,6 +1031,14 @@ namespace StreamedMPEditor
           pbMenuIconInfo.Visible = false;
           break;
         case chosenMenuStyle.graphicMenuStyle:
+          //First check if there is an icon, if not set a default
+          foreach (menuItem mnuItem in menuItems)
+          {
+            if (string.IsNullOrEmpty(mnuItem.buttonTexture) || mnuItem.buttonTexture.ToLower() == "false")
+            {
+              mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink));
+            }
+          }
           weatherStyle = chosenWeatherStyle.bottom;
           horizontalContextLabels.Checked = false;
           enableFiveDayWeather.Checked = true;
