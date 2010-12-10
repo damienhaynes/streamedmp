@@ -781,6 +781,9 @@ namespace StreamedMPEditor
         case 6:
           theIcon = "homebuttons\\black_videos.png";
           break;
+        case 30:
+          theIcon = "homebuttons\\black_radio.png";
+          break;
         case 34:
           theIcon = "homebuttons\\black_plugins.png";
           break;
@@ -797,6 +800,9 @@ namespace StreamedMPEditor
         case 5900:
           theIcon = "homebuttons\\black_trailers.png";
           break;
+        case 7890:
+          theIcon = "homebuttons\\black_lastfm.png";
+          break;
         case 9811:
           theIcon = "homebuttons\\black_tv-series.png";
           break;
@@ -808,6 +814,9 @@ namespace StreamedMPEditor
           break;
         case 25650:
           theIcon = "homebuttons\\black_music.png";
+          break;
+        case 711992:
+          theIcon = "homebuttons\\black_showtimes.png";
           break;
         default:
           theIcon = "homebuttons\\black_unset.png";
