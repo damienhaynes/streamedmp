@@ -47,6 +47,19 @@ namespace SMPpatch
     {
       InitializeComponent();
 
+       if (SkinInfo.mpPaths.sMPbaseDir == null)
+      {
+        DialogResult result = MessageBox.Show("MediaPortal is not Installed on this system or StreamedMP is NOT configured as your default skin. - Please install MediaPortal/StreamedMP or set StreamedMP as your defult skin before running this patch.",
+              "Patch Error............",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Error);
+
+        if (result == DialogResult.OK)
+        {
+          Environment.Exit(0);
+        }
+      }
+
       foreach (string arg in Environment.GetCommandLineArgs())
       {
         // Run unattended - This will run the program minimised and exit
@@ -94,7 +107,7 @@ namespace SMPpatch
       if (skInfo.configuredSkin != "StreamedMP")
       {
         MessageBox.Show("Sorry, the StreamedMP is configured as your default skin.\n\nThis patch updates StreamedMP only - Please install StreamedMP\n or set StreamedMP as your defult skin before running this patch.", "Patch Installation Error");
-        Application.Exit();
+        Environment.Exit(0);
       }
 
 

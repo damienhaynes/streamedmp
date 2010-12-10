@@ -207,11 +207,11 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y 
-copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
-"$(TargetDir)merge.bat"</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
-cd "$(ProjectDir)EmbeddedPatches"
-call PreBuild.bat</PreBuildEvent>
+    <PostBuildEvent>rem copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y 
+rem copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
+rem "$(TargetDir)merge.bat"</PostBuildEvent>
+    <PreBuildEvent>rem subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
+rem cd "$(ProjectDir)EmbeddedPatches"
+rem call PreBuild.bat</PreBuildEvent>
   </PropertyGroup>
 </Project>
