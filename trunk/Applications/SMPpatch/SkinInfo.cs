@@ -56,7 +56,8 @@ namespace SMPpatch
     public SkinInfo()
     {
       GetMediaPortalPath(ref mpPaths);
-      readMediaPortalDirs();
+      if (mpPaths.sMPbaseDir != null)
+        readMediaPortalDirs();
     }
 
     #endregion
@@ -129,7 +130,7 @@ namespace SMPpatch
       }
       catch (Exception e)
       {
-        MessageBox.Show("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message.ToString());
+        //MessageBox.Show("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message.ToString());
         mpPaths.sMPbaseDir = null;
       }
     }
