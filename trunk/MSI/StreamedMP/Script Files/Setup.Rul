@@ -495,7 +495,7 @@ begin
 	endif;        
     
 	// Read NowPlaying Style default
-	if GetMPXMLProperty(sFile, "MusicConfig", "nowPlayingStyle", g_sNowPlayingChoice) < 0 then
+	if GetMPXMLProperty(sFile, "MusicConfig", "musicNowPlayingStyle", g_sNowPlayingChoice) < 0 then
 		g_sNowPlayingChoice = "0";
 	endif;
      	                        
