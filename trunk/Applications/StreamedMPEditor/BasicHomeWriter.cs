@@ -1753,7 +1753,8 @@ namespace StreamedMPEditor
         else
           rawXML.Append("</visible>");
 
-        rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"10\" time=\"600\" reversible=\"false\">Hidden</animation>");
         if (cbAnimateBackground.Checked)
         {
           rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
