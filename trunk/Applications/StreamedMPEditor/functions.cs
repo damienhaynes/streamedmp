@@ -1037,7 +1037,7 @@ namespace StreamedMPEditor
           {
             if (string.IsNullOrEmpty(mnuItem.buttonTexture) || mnuItem.buttonTexture.ToLower() == "false")
             {
-              mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink));
+              mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink),"Black");
             }
           }
           weatherStyle = chosenWeatherStyle.bottom;

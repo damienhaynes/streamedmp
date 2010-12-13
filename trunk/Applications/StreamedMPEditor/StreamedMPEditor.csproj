@@ -167,6 +167,12 @@
       <DependentUpon>SelectHardDrives.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="showButtonTheme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showButtonTheme.Designer.cs">
+      <DependentUpon>showButtonTheme.cs</DependentUpon>
+    </Compile>
     <Compile Include="StreamedMPEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectHardDrives.resx">
       <DependentUpon>SelectHardDrives.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showButtonTheme.resx">
+      <DependentUpon>showButtonTheme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StreamedMPEditor.resx">
       <DependentUpon>StreamedMPEditor.cs</DependentUpon>

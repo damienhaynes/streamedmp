@@ -510,7 +510,7 @@ namespace StreamedMPEditor
         //
         if (string.IsNullOrEmpty(mnuItem.buttonTexture) || mnuItem.buttonTexture.ToLower() == "false")
         {
-          mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink));
+          mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink),"Black");
         }
 
 
@@ -764,62 +764,65 @@ namespace StreamedMPEditor
       }
     }
 
-    string setDefaultIcons(int hyperlink)
+    public static string setDefaultIcons(int hyperlink, string theme)
     {
+      if (string.IsNullOrEmpty(theme))
+        theme = "black";
+
       string theIcon;
       switch (hyperlink)
       {
         case 1:
-          theIcon =  "homebuttons\\black_tv.png";
+          theIcon =  "homebuttons\\" + theme +"_tv.png";
           break;
         case 2:
-          theIcon = "homebuttons\\black_pictures.png";
+          theIcon = "homebuttons\\" + theme +"_pictures.png";
           break;
         case 4:
-          theIcon = "homebuttons\\black_settings.png";
+          theIcon = "homebuttons\\" + theme +"_settings.png";
           break;
         case 6:
-          theIcon = "homebuttons\\black_videos.png";
+          theIcon = "homebuttons\\" + theme +"_videos.png";
           break;
         case 30:
-          theIcon = "homebuttons\\black_radio.png";
+          theIcon = "homebuttons\\" + theme +"_radio.png";
           break;
         case 34:
-          theIcon = "homebuttons\\black_plugins.png";
+          theIcon = "homebuttons\\" + theme +"_plugins.png";
           break;
         case 501:
         case 504:
-          theIcon = "homebuttons\\black_music.png";
+          theIcon = "homebuttons\\" + theme +"_music.png";
           break;
         case 2600:
-          theIcon = "homebuttons\\black_weather.png";
+          theIcon = "homebuttons\\" + theme +"_weather.png";
           break;
         case 4755:
-          theIcon = "homebuttons\\black_onlinevideos.png";
+          theIcon = "homebuttons\\" + theme +"_onlinevideos.png";
           break;
         case 5900:
-          theIcon = "homebuttons\\black_trailers.png";
+          theIcon = "homebuttons\\" + theme +"_trailers.png";
           break;
         case 7890:
-          theIcon = "homebuttons\\black_lastfm.png";
+          theIcon = "homebuttons\\" + theme +"_lastfm.png";
           break;
         case 9811:
-          theIcon = "homebuttons\\black_tv-series.png";
+          theIcon = "homebuttons\\" + theme +"_tv-series.png";
           break;
         case 16001:
-          theIcon = "homebuttons\\black_news.png";
+          theIcon = "homebuttons\\" + theme +"_news.png";
           break;
         case 96742:
-          theIcon = "homebuttons\\black_movies.png";
+          theIcon = "homebuttons\\" + theme +"_movies.png";
           break;
         case 25650:
-          theIcon = "homebuttons\\black_music.png";
+          theIcon = "homebuttons\\" + theme +"_music.png";
           break;
         case 711992:
-          theIcon = "homebuttons\\black_showtimes.png";
+          theIcon = "homebuttons\\" + theme +"_showtimes.png";
           break;
         default:
-          theIcon = "homebuttons\\black_unset.png";
+          theIcon = "homebuttons\\" + theme +"_unset.png";
           break;
       }
       return theIcon;
