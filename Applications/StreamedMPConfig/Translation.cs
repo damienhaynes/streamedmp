@@ -267,6 +267,11 @@ namespace StreamedMPConfig
     public static string ConfigRequiresRestartLine1 = "The following configuration changes will take";
     public static string ConfigRequiresRestartLine2 = "affect on next MediaPortal restart.";
     public static string Trailer = "Trailer";
+    public static string UnfocusedAlpha = "Transparency/Opacity Settings...";    
+    public static string UnfocusedAlphaMenuLists = "Unfocused Alpha on List Layouts: {0}";
+    public static string UnfocusedAlphaMenuThumbs = "Unfocused Alpha on Thumb Layouts: {0}";
+    public static string UnfocusedAlphaInvalidLine1 = "Invalid value entered, please enter a value";
+    public static string UnfocusedAlphaInvalidLine2 = "between 0 - 255.";
     #endregion
   }
 }

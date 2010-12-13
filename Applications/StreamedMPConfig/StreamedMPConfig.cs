@@ -1117,6 +1117,41 @@ namespace StreamedMPConfig
       dlg.SetLine(2, Translation.ConfigRequiresRestartLine2);
       dlg.DoModal(windowID);
     }
+    
+    /// <summary>
+    /// Shows Virtual Keyboard
+    /// </summary>
+    /// <param name="input">Inital Text in Keyboard</param>
+    /// <param name="output">Response from User</param>
+    /// <returns>true if value has changed</returns>
+    public static bool ShowKeyboard(string input, out string output)
+    {
+      output = string.Empty;
+
+      try
+      {
+        VirtualKeyboard keyboard = (VirtualKeyboard)GUIWindowManager.GetWindow((int)Window.WINDOW_VIRTUAL_KEYBOARD);
+        if (null == keyboard)
+          return false;
+
+        keyboard.Reset();
+        keyboard.Text = input;        
+        keyboard.DoModal(GUIWindowManager.ActiveWindow);
+
+        if (keyboard.IsConfirmed)
+        {
+          output = keyboard.Text;          
+          return !string.Equals(input, output, StringComparison.InvariantCultureIgnoreCase);
+        }
+        else
+          return false;
+      }
+      catch (Exception ex)
+      {
+        smcLog.WriteLog("Error showing virtual keyboard " + ex.Message, LogLevel.Info);
+        return false;
+      }
+    }
 
     #endregion
 
