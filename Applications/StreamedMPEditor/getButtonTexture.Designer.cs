@@ -36,6 +36,7 @@
       this.groupBox1 = new System.Windows.Forms.GroupBox();
       this.groupBox2 = new System.Windows.Forms.GroupBox();
       this.textBox1 = new System.Windows.Forms.TextBox();
+      this.buttonThemes = new System.Windows.Forms.Button();
       ((System.ComponentModel.ISupportInitialize)(this.pbCurrentIcon)).BeginInit();
       this.groupBox1.SuspendLayout();
       this.groupBox2.SuspendLayout();
@@ -78,9 +79,9 @@
       // 
       // btSaveAndExit
       // 
-      this.btSaveAndExit.Location = new System.Drawing.Point(12, 130);
+      this.btSaveAndExit.Location = new System.Drawing.Point(14, 136);
       this.btSaveAndExit.Name = "btSaveAndExit";
-      this.btSaveAndExit.Size = new System.Drawing.Size(172, 23);
+      this.btSaveAndExit.Size = new System.Drawing.Size(123, 23);
       this.btSaveAndExit.TabIndex = 7;
       this.btSaveAndExit.Text = "Save and Close";
       this.btSaveAndExit.UseVisualStyleBackColor = true;
@@ -110,7 +111,7 @@
       // 
       this.textBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
       this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.textBox1.Location = new System.Drawing.Point(12, 46);
+      this.textBox1.Location = new System.Drawing.Point(12, 44);
       this.textBox1.Margin = new System.Windows.Forms.Padding(5);
       this.textBox1.Multiline = true;
       this.textBox1.Name = "textBox1";
@@ -119,11 +120,22 @@
       this.textBox1.Text = "This screen shows the default or previously configured icon\r\nfor this menu item.\r" +
           "\n\r\nTo change please select a Icon from the this list below.";
       // 
+      // buttonThemes
+      // 
+      this.buttonThemes.Location = new System.Drawing.Point(154, 136);
+      this.buttonThemes.Name = "buttonThemes";
+      this.buttonThemes.Size = new System.Drawing.Size(172, 23);
+      this.buttonThemes.TabIndex = 11;
+      this.buttonThemes.Text = "Button Themes";
+      this.buttonThemes.UseVisualStyleBackColor = true;
+      this.buttonThemes.Click += new System.EventHandler(this.buttonThemes_Click);
+      // 
       // getButtonTexture
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(498, 431);
+      this.Controls.Add(this.buttonThemes);
       this.Controls.Add(this.textBox1);
       this.Controls.Add(this.groupBox2);
       this.Controls.Add(this.groupBox1);
@@ -152,5 +164,6 @@
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.GroupBox groupBox2;
     private System.Windows.Forms.TextBox textBox1;
+    private System.Windows.Forms.Button buttonThemes;
   }
 }

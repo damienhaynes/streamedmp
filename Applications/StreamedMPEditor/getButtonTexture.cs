@@ -18,6 +18,7 @@ namespace StreamedMPEditor
     Image boarderImage = null;
     string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
 
+    public static int workingIndex = -1;
     public static string buttonTexture = string.Empty;
     public static string menuName = string.Empty;
 
@@ -31,6 +32,14 @@ namespace StreamedMPEditor
         groupBox2.Refresh();
       }
 
+    }
+
+    public int menIndex
+    {
+      set
+      {
+        workingIndex = value;
+      }
     }
 
     public string SelectedIcon
@@ -143,6 +152,16 @@ namespace StreamedMPEditor
     private void btSaveAndExit_Click(object sender, EventArgs e)
     {
       this.Hide();
+    }
+
+    private void buttonThemes_Click(object sender, EventArgs e)
+    {
+      showButtonTheme showTheme = new showButtonTheme();
+      showTheme.ShowDialog();
+      SelectedIcon = formStreamedMpEditor.menuItems[workingIndex].buttonTexture;
+      workingImage = Image.FromFile(Path.Combine(streamedMPMediaPath, SelectedIcon));
+      pbCurrentIcon.Image = workingImage.GetThumbnailImage(128, 128, null, new IntPtr());
+      workingImage.Dispose();
     }
   }
 }

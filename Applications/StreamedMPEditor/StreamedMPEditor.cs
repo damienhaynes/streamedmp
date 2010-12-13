@@ -737,12 +737,12 @@ namespace StreamedMPEditor
           checkAndSetDefultImage(item);
 
         if (string.IsNullOrEmpty(buttonTexture.SelectedIcon))
-          item.buttonTexture = setDefaultIcons(int.Parse(item.hyperlink));
+          item.buttonTexture = setDefaultIcons(int.Parse(item.hyperlink),"Black");
         else
           item.buttonTexture = buttonTexture.SelectedIcon;
         
         //buttonTexture.MenuItem = item.name;
-        setDefaultIcons(int.Parse(item.hyperlink));
+        setDefaultIcons(int.Parse(item.hyperlink),"Black");
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
@@ -782,6 +782,7 @@ namespace StreamedMPEditor
       cboFanartProperty.Text = mnuItem.fanartProperty;
       buttonTexture.SelectedIcon = mnuItem.buttonTexture;
       buttonTexture.MenuItem = mnuItem.name;
+      buttonTexture.menIndex = index;
 
       if (mnuItem.fhBGSource == fanartSource.Scraper)
       {
