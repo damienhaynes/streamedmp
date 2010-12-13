@@ -439,6 +439,8 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscEnablePlayMostRecents, MiscConfigGUI.EnablePlayMostRecents ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscFilterWatchedInRecentlyAdded, MiscConfigGUI.FilterWatchedInRecentlyAdded ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, MiscConfigGUI.MostRecentFanartTimerInt);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, MiscConfigGUI.UnfocusedAlphaListItems);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, MiscConfigGUI.UnfocusedAlphaThumbs);
             break;
           #endregion
 

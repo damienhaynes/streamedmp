@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
+using Action = MediaPortal.GUI.Library.Action;
 
 namespace StreamedMPConfig
 {
@@ -15,12 +17,16 @@ namespace StreamedMPConfig
       RoundedImages = 3,
       IconsInArtwork = 4,
       PlayRecents = 5,
-      FilterWatchedRecents = 6
+      FilterWatchedRecents = 6,
+      UnfocusedAlpha = 7
     }  
     #endregion
 
     #region Local Variables
     private static readonly logger smcLog = logger.GetInstance();
+
+    private string UnfocusedAlphaListTemp;
+    private string UnfocusedAlphaThumbsTemp;
     #endregion
 
     #region Skin Controls
@@ -38,10 +44,13 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.FilterWatchedRecents)]
     protected GUIToggleButtonControl btnFilterWatchedRecents = null;
+
+    [SkinControl((int)GUIControls.UnfocusedAlpha)]
+    protected GUIButtonControl btnUnfocusedAlpha = null;
     #endregion
 
     #region Constructor
-    public MiscConfigGUI() { }
+    public MiscConfigGUI() {}
     #endregion
 
     #region Public Properties
@@ -104,6 +113,80 @@ namespace StreamedMPConfig
     #endregion
 
     #region Private Methods
+    private void ShowInvalidUnfocusedAlphaMessage()
+    {
+      GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+      dlg.Reset();
+      dlg.SetHeading(Translation.UnfocusedAlpha);
+      dlg.SetLine(1, Translation.UnfocusedAlphaInvalidLine1);
+      dlg.SetLine(2, Translation.UnfocusedAlphaInvalidLine2);
+      dlg.DoModal(GetID);
+    }
+
+    private void ShowUnfocusedAlphaMenu()
+    {
+      IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+      if (dlg == null) return;
+
+      dlg.Reset();
+      dlg.SetHeading(Translation.UnfocusedAlpha);             
+    
+      // Create menu items
+      GUIListItem listItem = new GUIListItem(string.Format(Translation.UnfocusedAlphaMenuLists, UnfocusedAlphaListTemp));      
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(string.Format(Translation.UnfocusedAlphaMenuThumbs, UnfocusedAlphaThumbsTemp));
+      dlg.Add(listItem);
+
+      dlg.DoModal(GUIWindowManager.ActiveWindow);
+      if (dlg.SelectedId <= 0) return;
+
+      string retValue = string.Empty;
+      bool invalid = false;
+      switch (dlg.SelectedId)
+      {
+        case 1:
+          string input = UnfocusedAlphaListTemp;
+          if (StreamedMPConfig.ShowKeyboard(input, out retValue))
+          {
+            int output = 0;
+            if (int.TryParse(retValue, out output))
+            {
+              if (output < 0 || output > 255)
+                invalid = true;
+              else
+                UnfocusedAlphaListTemp = retValue;
+            }
+            else
+              invalid = true;
+          }
+          break;
+        case 2:
+          input = UnfocusedAlphaThumbsTemp;
+          if (StreamedMPConfig.ShowKeyboard(input, out retValue))
+          {
+            int output = 0;
+            if (int.TryParse(retValue, out output))
+            {
+              if (output < 0 || output > 255)
+                invalid = true;
+              else
+                UnfocusedAlphaThumbsTemp = retValue;
+            }
+            else
+              invalid = true;
+          }
+          break;
+      }
+
+      if (invalid)
+      {
+        ShowInvalidUnfocusedAlphaMessage();
+        return;
+      }
+      
+    }
+
     private void SetControlStates()
     {      
       // Hidden Menu Images
@@ -125,6 +208,9 @@ namespace StreamedMPConfig
       // Filter Watched Episodes From RecentlyAdded
       btnFilterWatchedRecents.Selected = FilterWatchedInRecentlyAdded;
       btnFilterWatchedRecents.Label = Translation.FilterWatchedRecents;
+
+      // Unfocused Alpha Settings
+      btnUnfocusedAlpha.Label = string.Format(Translation.UnfocusedAlpha, "...");
     }
 
     private void GetControlStates()
@@ -148,7 +234,23 @@ namespace StreamedMPConfig
     /// </summary>
     private void ApplyConfigurationChanges()
     {
+      bool requiresRestart = false;
+
       SetProperties();
+
+      #region Unfocused Alpha
+      if (MiscConfigGUI.UnfocusedAlphaListItems != int.Parse(UnfocusedAlphaListTemp)) requiresRestart = true;
+      if (MiscConfigGUI.UnfocusedAlphaThumbs != int.Parse(UnfocusedAlphaThumbsTemp)) requiresRestart = true;
+      MiscConfigGUI.UnfocusedAlphaListItems = int.Parse(UnfocusedAlphaListTemp);
+      MiscConfigGUI.UnfocusedAlphaThumbs = int.Parse(UnfocusedAlphaThumbsTemp);
+      SetAlphaTransparency();
+      #endregion
+
+      if (requiresRestart)
+      {
+        StreamedMPConfig.ShowRestartMessage(GetID, Translation.MiscMenu);
+      }
+      
     }
     #endregion
 
@@ -173,6 +275,10 @@ namespace StreamedMPConfig
 
       // Update Controls
       SetControlStates();
+
+      // Temp Values
+      UnfocusedAlphaListTemp = MiscConfigGUI.UnfocusedAlphaListItems.ToString();
+      UnfocusedAlphaThumbsTemp = MiscConfigGUI.UnfocusedAlphaThumbs.ToString();
     }
 
     protected override void OnPageDestroy(int newWindowId)
@@ -185,6 +291,17 @@ namespace StreamedMPConfig
 
       // Save Settings
       settings.Save(settings.cXMLSectionMisc);
+    }
+
+    protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
+    {
+      switch (controlId)
+      {
+        case (int)GUIControls.UnfocusedAlpha:
+          ShowUnfocusedAlphaMenu();
+          break;
+      }
+      base.OnClicked(controlId, control, actionType);
     }
     #endregion
   }
