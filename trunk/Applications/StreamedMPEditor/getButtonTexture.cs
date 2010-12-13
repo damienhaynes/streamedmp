@@ -24,9 +24,12 @@ namespace StreamedMPEditor
     public getButtonTexture()
     {
       InitializeComponent();
-      iconList();
-      groupBox2.Text = "Available Menu Icons (" + iconFiles.Count.ToString() + ")";
-      groupBox2.Refresh();
+      if (formStreamedMpEditor.SkinName().ToLower() == "streamedmp")
+      {
+        iconList();
+        groupBox2.Text = "Available Menu Icons (" + iconFiles.Count.ToString() + ")";
+        groupBox2.Refresh();
+      }
 
     }
 

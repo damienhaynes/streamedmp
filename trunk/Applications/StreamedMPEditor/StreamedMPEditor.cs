@@ -742,7 +742,7 @@ namespace StreamedMPEditor
           item.buttonTexture = buttonTexture.SelectedIcon;
         
         //buttonTexture.MenuItem = item.name;
-
+        setDefaultIcons(int.Parse(item.hyperlink));
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();

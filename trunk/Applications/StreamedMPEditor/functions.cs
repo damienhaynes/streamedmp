@@ -1842,6 +1842,21 @@ namespace StreamedMPEditor
     }
 
 
+    public static string SkinName()
+    {
+      try
+      {
+        using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.MPSettings())
+        {
+          return xmlreader.GetValueAsString("skin", "name", "");
+        }
+      }
+      catch (Exception e)
+      {
+        return string.Empty;
+      }
+    }
+
     public class getAsmVersion
     {
       #region Private Variables
