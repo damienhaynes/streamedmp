@@ -368,6 +368,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.UnfocusedAlphaListItems = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, 100);
             MiscConfigGUI.UnfocusedAlphaThumbs = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, 100);
             MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, 7);
+            MiscConfigGUI.UseLargeFonts = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUseLargeFonts, 0) == 1;
             break;
           #endregion
 
@@ -441,6 +442,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, MiscConfigGUI.MostRecentFanartTimerInt);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, MiscConfigGUI.UnfocusedAlphaListItems);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, MiscConfigGUI.UnfocusedAlphaThumbs);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscUseLargeFonts, MiscConfigGUI.UseLargeFonts ? 1 : 0);
             break;
           #endregion
 

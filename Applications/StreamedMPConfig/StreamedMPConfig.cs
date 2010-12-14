@@ -28,6 +28,13 @@ namespace StreamedMPConfig
   [PluginIcons("StreamedMPConfig.Resources.SMPSettings.png", "StreamedMPConfig.Resources.SMPSettingsDisabled.png")]
   public class StreamedMPConfig : GUIWindow, ISetupForm
   {
+    #region Enums
+    public enum PendingChanges
+    {
+      ClearCache
+    }
+    #endregion
+
     #region Variables
 
     public int mrImageToDisplay = 3;
@@ -70,6 +77,8 @@ namespace StreamedMPConfig
     public static bool movPicRecentWatchedEnabled { get; set; }
     public static bool tvSeriesRecentAddedEnabled { get; set; }
     public static bool tvSeriesRecentWatchedEnabled { get; set; }
+
+    public static List<PendingChanges> PendingRestartChanges = new List<PendingChanges>();
 
     #endregion
 
@@ -457,6 +466,8 @@ namespace StreamedMPConfig
 
     private void DeInitStreamedMP()
     {
+      smcLog.WriteLog("De-Initializing StreamedMP");
+
       GUIWindowManager.OnActivateWindow -= new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
       GUIGraphicsContext.OnVideoWindowChanged -= new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
       GUIGraphicsContext.OnNewAction -= new OnActionHandler(smpAction);
@@ -504,7 +515,7 @@ namespace StreamedMPConfig
       if (string.IsNullOrEmpty(theValue)) return false;
       Match m = _isNumber.Match(theValue);
       return m.Success;
-    }
+    }    
 
     void setMovingPicturesEvents(bool unsubscribe)
     {
@@ -1091,6 +1102,32 @@ namespace StreamedMPConfig
       }
     }
 
+    public static void RunPendingRestartChanges()
+    {
+      if (PendingRestartChanges.Count > 0)
+      {
+        foreach (var pendingChange in PendingRestartChanges)
+        {
+          switch (pendingChange)
+          {
+            case PendingChanges.ClearCache:
+              try
+              {
+                smcLog.WriteLog("Clearing skin cache");
+                string path = Path.Combine(SkinInfo.mpPaths.cacheBasePath, "StreamedMP");
+                if (Directory.Exists(path)) Directory.Delete(path, true);
+              }
+              catch (Exception ex)
+              {
+                smcLog.WriteLog("Error deleting skin cache: {0}", LogLevel.Error, ex.Message);
+              }
+              break;
+          }
+        }
+        PendingRestartChanges.Clear();
+      }
+    }
+
     public static void RestartMediaPortal()
     {
       string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
@@ -1098,12 +1135,15 @@ namespace StreamedMPConfig
       processStart.Arguments = smpSettings.mpSetAsFullScreen ? "true" : "false";
       processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
 
-      smcLog.WriteLog("SMPediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
+      smcLog.WriteLog("SMPMediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
 
       processStart.WorkingDirectory = Path.GetDirectoryName(restartExe);
       System.Diagnostics.Process.Start(processStart);
       if (smpSettings.mpSetAsFullScreen)
         Thread.Sleep(2000);
+
+      RunPendingRestartChanges();
+      
       if (MinimiseOnExit)
         Environment.Exit(0);
       else
@@ -1271,8 +1311,14 @@ namespace StreamedMPConfig
           break;
           
         case (Action.ActionType)196250:
-          smcLog.WriteLog("Restarting MediaPortal", LogLevel.Info);
+          smcLog.WriteLog("Restarting MediaPortal");
           ShowRestartMessage();
+          break;
+
+        case Action.ActionType.ACTION_SHUTDOWN:
+        case Action.ActionType.ACTION_EXIT:
+          smcLog.WriteLog("Exiting MediaPortal");
+          RunPendingRestartChanges();
           break;
       }
     }
