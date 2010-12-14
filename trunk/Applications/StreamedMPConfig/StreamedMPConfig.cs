@@ -36,8 +36,7 @@ namespace StreamedMPConfig
     public string[] mostTVSeriesRecents = new string[3];
     public string[] mostTVSeriesRecentsWatched = new string[3];
     public string[] mostMovPicsRecents = new string[3];
-    public string[] mostMovPicsRecentsWatched = new string[3];
-    bool minimiseOnExit = false;
+    public string[] mostMovPicsRecentsWatched = new string[3];    
     //Declare Timer for use with Most Recent TVSeries/Movies
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
     static settings smpSettings = new settings();
@@ -64,6 +63,7 @@ namespace StreamedMPConfig
     public static bool patchUtilityRunUnattended { get; set; }
     public static bool patchUtilityRestartMP { get; set; }
     public static bool patchAppliedLastRun { get; set; }
+    public static bool MinimiseOnExit { get; set; }
     public static System.Threading.Timer updateChkTimer;
 
     public static bool movPicRecentAddedEnabled { get; set; }
@@ -338,7 +338,7 @@ namespace StreamedMPConfig
       VideoOptionsGUI.SetProperties();
 
       if (skInfo.minimiseMPOnExit.ToLower() == "yes")
-        minimiseOnExit = true;
+        MinimiseOnExit = true;
 
       if (Screen.PrimaryScreen.Bounds.Width == 1920 && Screen.PrimaryScreen.Bounds.Height == 1080)
       {
@@ -486,7 +486,7 @@ namespace StreamedMPConfig
       }
     }
 
-    void restartMediaportal()
+    void ShowRestartMessage()
     {
       GUIDialogYesNo dlg = (GUIDialogYesNo)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_YES_NO);
       dlg.Reset();
@@ -495,24 +495,7 @@ namespace StreamedMPConfig
       dlg.DoModal(GUIWindowManager.ActiveWindow);
       if (dlg.IsConfirmed)
       {
-        string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
-        ProcessStartInfo processStart = new ProcessStartInfo(restartExe);
-        processStart.Arguments = smpSettings.mpSetAsFullScreen ? "true" : "false";
-        processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
-
-        smcLog.WriteLog("SMPediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
-
-        processStart.WorkingDirectory = Path.GetDirectoryName(restartExe);
-        System.Diagnostics.Process.Start(processStart);
-        if (smpSettings.mpSetAsFullScreen)
-          Thread.Sleep(2000);
-        if (minimiseOnExit)
-          Environment.Exit(0);
-        else
-        {
-          Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
-          GUIGraphicsContext.OnAction(exitAction);
-        }
+        RestartMediaPortal();
       }
     }
 
@@ -1108,14 +1091,42 @@ namespace StreamedMPConfig
       }
     }
 
+    public static void RestartMediaPortal()
+    {
+      string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
+      ProcessStartInfo processStart = new ProcessStartInfo(restartExe);
+      processStart.Arguments = smpSettings.mpSetAsFullScreen ? "true" : "false";
+      processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
+
+      smcLog.WriteLog("SMPediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
+
+      processStart.WorkingDirectory = Path.GetDirectoryName(restartExe);
+      System.Diagnostics.Process.Start(processStart);
+      if (smpSettings.mpSetAsFullScreen)
+        Thread.Sleep(2000);
+      if (MinimiseOnExit)
+        Environment.Exit(0);
+      else
+      {
+        Action exitAction = new Action(Action.ActionType.ACTION_EXIT, 0, 0);
+        GUIGraphicsContext.OnAction(exitAction);
+      }
+    }
+
     public static void ShowRestartMessage(int windowID, string windowName)
     {
-      GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+      GUIDialogYesNo dlg = (GUIDialogYesNo)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_YES_NO);
       dlg.Reset();
       dlg.SetHeading(windowName);
       dlg.SetLine(1, Translation.ConfigRequiresRestartLine1);
       dlg.SetLine(2, Translation.ConfigRequiresRestartLine2);
+      dlg.SetLine(3, Translation.ConfigRequiresRestartLine3);
       dlg.DoModal(windowID);
+
+      if (dlg.IsConfirmed)
+      {
+        RestartMediaPortal();
+      }
     }
     
     /// <summary>
@@ -1261,7 +1272,7 @@ namespace StreamedMPConfig
           
         case (Action.ActionType)196250:
           smcLog.WriteLog("Restarting MediaPortal", LogLevel.Info);
-          restartMediaportal();
+          ShowRestartMessage();
           break;
       }
     }
