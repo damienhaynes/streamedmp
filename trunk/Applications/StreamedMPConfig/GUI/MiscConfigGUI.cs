@@ -18,7 +18,8 @@ namespace StreamedMPConfig
       IconsInArtwork = 4,
       PlayRecents = 5,
       FilterWatchedRecents = 6,
-      UnfocusedAlpha = 7
+      LargeFontSize = 7,
+      UnfocusedAlpha = 8
     }  
     #endregion
 
@@ -45,6 +46,9 @@ namespace StreamedMPConfig
     [SkinControl((int)GUIControls.FilterWatchedRecents)]
     protected GUIToggleButtonControl btnFilterWatchedRecents = null;
 
+    [SkinControl((int)GUIControls.LargeFontSize)]
+    protected GUIToggleButtonControl btnLargeFontSize = null;
+
     [SkinControl((int)GUIControls.UnfocusedAlpha)]
     protected GUIButtonControl btnUnfocusedAlpha = null;
     #endregion
@@ -67,6 +71,7 @@ namespace StreamedMPConfig
     public static string RemoteColor { get; set; }
     public static int UnfocusedAlphaListItems { get; set; }
     public static int UnfocusedAlphaThumbs { get; set; }
+    public static bool UseLargeFonts { get; set; }
     #endregion
 
     #region Public Methods
@@ -74,6 +79,7 @@ namespace StreamedMPConfig
     {
       StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", MiscConfigGUI.ShowHiddenMenuImage ? "Action_menu.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", MiscConfigGUI.ShowRoundedImages ? "round.poster.frame.png" : "-");
+
       // Icons in Artwork require a few image properties
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.Background", MiscConfigGUI.ShowIconsInArtwork ? "overlaywubg.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.Watched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatched.png" : "-");
@@ -209,8 +215,12 @@ namespace StreamedMPConfig
       btnFilterWatchedRecents.Selected = FilterWatchedInRecentlyAdded;
       btnFilterWatchedRecents.Label = Translation.FilterWatchedRecents;
 
+      // Fonts
+      btnLargeFontSize.Selected = UseLargeFonts;
+      btnLargeFontSize.Label = Translation.UseLargeFonts;
+
       // Unfocused Alpha Settings
-      btnUnfocusedAlpha.Label = string.Format(Translation.UnfocusedAlpha, "...");
+      btnUnfocusedAlpha.Label = string.Format(Translation.UnfocusedAlpha, " ...");
     }
 
     private void GetControlStates()
@@ -237,6 +247,26 @@ namespace StreamedMPConfig
       bool requiresRestart = false;
 
       SetProperties();
+
+      #region Fonts
+      if (UseLargeFonts != btnLargeFontSize.Selected)
+      {
+        requiresRestart = true;
+        UseLargeFonts = btnLargeFontSize.Selected;
+        string sourceFile = Path.Combine(SkinInfo.mpPaths.streamedMPpath, UseLargeFonts ? "fonts.large.xml" : "fonts.normal.xml");
+        string destinationFile = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "fonts.xml");
+        try
+        {
+          smcLog.WriteLog("Setting Font Size to: {0}", UseLargeFonts ? "Large" : "Normal");
+          File.Copy(sourceFile, destinationFile, true);
+          StreamedMPConfig.PendingRestartChanges.Add(StreamedMPConfig.PendingChanges.ClearCache);
+        }
+        catch (Exception ex)
+        {
+          smcLog.WriteLog("Failed to copy fonts file: {0}", LogLevel.Error, ex.Message);
+        }
+      }
+      #endregion
 
       #region Unfocused Alpha
       if (MiscConfigGUI.UnfocusedAlphaListItems != int.Parse(UnfocusedAlphaListTemp)) requiresRestart = true;

@@ -98,6 +98,30 @@ namespace StreamedMPConfig
       }
     }
 
+    /// <summary>
+    /// Writes Formatted String to Log at Information Level
+    /// </summary>    
+    public void WriteLog(string format, params object[] arg)
+    {
+      WriteLog(string.Format(format, arg), LogLevel.Info);
+    }
+
+    /// <summary>
+    /// Writes Formatted String to Log
+    /// </summary>    
+    public void WriteLog(string format, LogLevel level, params object[] arg)
+    {
+      WriteLog(string.Format(format, arg), level);
+    }
+
+    /// <summary>
+    /// Writes log at Information Level
+    /// </summary>
+    public void WriteLog(string message)
+    {
+      WriteLog(message, LogLevel.Info);
+    }
+
     public void WriteLog(string message, LogLevel level)
     {
       try

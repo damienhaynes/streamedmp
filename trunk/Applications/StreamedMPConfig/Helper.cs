@@ -131,7 +131,7 @@ namespace StreamedMPConfig
 
       try
       {
-        smcLog.WriteLog(string.Format("Setting skin text '{0}' with value '{1}'", path, value), LogLevel.Debug);
+        smcLog.WriteLog(string.Format("Setting skin text property '{0}' with value '{1}'", path, value), LogLevel.Debug);
         node.InnerText = value;
 
         doc.Save(file);
@@ -139,7 +139,7 @@ namespace StreamedMPConfig
       }
       catch (Exception ex)
       {
-        smcLog.WriteLog("Exception setting skin text: " + ex.Message, LogLevel.Error);
+        smcLog.WriteLog("Exception setting skin text property: " + ex.Message, LogLevel.Error);
       }
     }
     #endregion;

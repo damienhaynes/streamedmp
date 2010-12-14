@@ -3,8 +3,6 @@ using System.Collections;
 using MediaPortal.GUI.Library;
 using System.Windows.Forms;
 
-
-
 namespace StreamedMPConfig
 {
   public class SkinInfoGUI : GUIWindow
