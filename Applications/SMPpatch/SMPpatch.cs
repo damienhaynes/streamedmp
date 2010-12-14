@@ -431,9 +431,14 @@ namespace SMPpatch
     void exitAndCleanup()
     {
       // Cleanup
-      if (Directory.Exists(tempExtractPath))
-        Directory.Delete(tempExtractPath, true);
-
+      try
+      {
+        if (Directory.Exists(tempExtractPath))
+          Directory.Delete(tempExtractPath, true);
+      }
+      catch
+      {
+      }
       // Check and start Mediaportal if required
       if (restartMediaPortal)
       {
