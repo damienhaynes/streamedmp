@@ -604,6 +604,7 @@ namespace StreamedMPEditor
           btMenuIcon.Visible = true;
           pbMenuIconInfo.Visible = true;
         }
+        buttonTexture.initButtonTexture();
       }
       else
         this.Close();
