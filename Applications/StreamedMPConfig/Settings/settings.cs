@@ -443,6 +443,11 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaListItems, MiscConfigGUI.UnfocusedAlphaListItems);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscUnfocusedAlphaThumbs, MiscConfigGUI.UnfocusedAlphaThumbs);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscUseLargeFonts, MiscConfigGUI.UseLargeFonts ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscTextColor, MiscConfigGUI.TextColor);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscTextColor2, MiscConfigGUI.TextColor2);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscTextColor3, MiscConfigGUI.TextColor3);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscRemoteColor, MiscConfigGUI.RemoteColor);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscWatchedColor, MiscConfigGUI.WatchedColor);
             break;
           #endregion
 

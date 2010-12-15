@@ -5,6 +5,7 @@ using System.IO;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using Action = MediaPortal.GUI.Library.Action;
+using System.Drawing;
 
 namespace StreamedMPConfig
 {
@@ -19,7 +20,8 @@ namespace StreamedMPConfig
       PlayRecents = 5,
       FilterWatchedRecents = 6,
       LargeFontSize = 7,
-      UnfocusedAlpha = 8
+      UnfocusedAlpha = 8,
+      ListColors = 9
     }  
     #endregion
 
@@ -28,6 +30,14 @@ namespace StreamedMPConfig
 
     private string UnfocusedAlphaListTemp;
     private string UnfocusedAlphaThumbsTemp;
+
+    private string TextColorTemp;
+    private string TextColor2Temp;
+    private string TextColor3Temp;
+    private string WatchedColorTemp;
+    private string RemoteColorTemp;
+
+    private Dictionary<int, string> KnownColors = new Dictionary<int, string>();
     #endregion
 
     #region Skin Controls
@@ -51,6 +61,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.UnfocusedAlpha)]
     protected GUIButtonControl btnUnfocusedAlpha = null;
+
+    [SkinControl((int)GUIControls.ListColors)]
+    protected GUIButtonControl btnListColors = null;
     #endregion
 
     #region Constructor
@@ -71,7 +84,7 @@ namespace StreamedMPConfig
     public static string RemoteColor { get; set; }
     public static int UnfocusedAlphaListItems { get; set; }
     public static int UnfocusedAlphaThumbs { get; set; }
-    public static bool UseLargeFonts { get; set; }
+    public static bool UseLargeFonts { get; set; }    
     #endregion
 
     #region Public Methods
@@ -126,7 +139,239 @@ namespace StreamedMPConfig
       dlg.SetHeading(Translation.UnfocusedAlpha);
       dlg.SetLine(1, Translation.UnfocusedAlphaInvalidLine1);
       dlg.SetLine(2, Translation.UnfocusedAlphaInvalidLine2);
+      dlg.SetLine(3, Translation.UnfocusedAlphaInvalidLine3);
       dlg.DoModal(GetID);
+    }
+
+    private void ShowInvalidColorMessage()
+    {
+      GUIDialogOK dlg = (GUIDialogOK)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_OK);
+      dlg.Reset();
+      dlg.SetHeading(Translation.ListColors);
+      dlg.SetLine(1, Translation.ListColorInvalidLine1);
+      dlg.SetLine(2, Translation.ListColorInvalidLine2);
+      dlg.SetLine(3, Translation.ListColorInvalidLine3);
+      dlg.DoModal(GetID);
+    }
+
+    private List<string> GetColors()
+    {      
+      List<string> colors = new List<string>();
+      
+      // get the color names from the Known color enum
+      string[] colorNames = Enum.GetNames(typeof(KnownColor)); 
+
+      foreach (string colorName in colorNames)
+      {
+        // cast the colorName into a KnownColor
+        KnownColor knownColor = (KnownColor)Enum.Parse(typeof(KnownColor), colorName);
+        Color someColor = Color.FromKnownColor(knownColor);
+
+        // check if the knownColor variable is a System color  
+      
+        if (knownColor > KnownColor.Transparent)
+        {
+          colors.Add(colorName);
+        }
+      }
+      return colors;
+    }
+
+    private string GetHexCode(Color color)
+    {
+      byte[] data = { color.R, color.G, color.B };
+      string hex = BitConverter.ToString(data);
+      return hex.Replace("-", string.Empty);
+    }
+
+    private string GetColorName(string hexCode)
+    {
+      int r = Convert.ToInt32(hexCode.Substring(0, 2), 16);
+      int g = Convert.ToInt32(hexCode.Substring(2, 2), 16);
+      int b = Convert.ToInt32(hexCode.Substring(4, 2), 16);
+      Color color = Color.FromArgb(r, g, b);
+
+      if (KnownColors.Count == 0)
+      {
+        Color someColor;
+        Array knownColors = Enum.GetValues(typeof(KnownColor));
+        foreach (KnownColor knownColor in knownColors)
+        {
+          someColor = Color.FromKnownColor(knownColor);
+          if (!someColor.IsSystemColor && !KnownColors.ContainsKey(someColor.ToArgb()))          
+          {
+            KnownColors.Add(someColor.ToArgb(), someColor.Name);
+          }
+        }
+      }
+
+      string colorName = string.Empty;
+
+      if (!KnownColors.TryGetValue(color.ToArgb(), out colorName))
+      {
+        colorName = color.Name.Substring(2);
+      }
+      return colorName;
+    }
+
+    private bool IsValidColor(string hexCode)
+    {
+      if (hexCode.Length != 6) return false;
+
+      Color actColor;
+      try
+      {
+        int r = Convert.ToInt32(hexCode.Substring(0, 2), 16);
+        int g = Convert.ToInt32(hexCode.Substring(2, 2), 16);
+        int b = Convert.ToInt32(hexCode.Substring(4, 2), 16);
+        actColor = Color.FromArgb(r, g, b);
+        return true;
+      }
+      catch
+      {
+        return false;
+      }
+    }
+
+    private bool ShowColorSelectorMenu(string currentColor, out string chosenColor)
+    {
+      chosenColor = currentColor;
+
+      IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+      if (dlg == null) return false;
+
+      dlg.Reset();
+      dlg.SetHeading(Translation.ListColors);
+
+      // Get List of Known Colors
+      List<string> colors = GetColors();
+
+      // Create Custom Color menu item
+      GUIListItem listItem = new GUIListItem(string.Format("{0} ...", Translation.CustomColor));
+      dlg.Add(listItem);
+
+      // Create color menu items
+      foreach (string color in colors)
+      {
+        listItem = new GUIListItem(color);        
+        dlg.Add(listItem);
+      }
+
+      dlg.DoModal(GUIWindowManager.ActiveWindow);
+      if (dlg.SelectedId <= 0) return false;
+
+      string retValue = string.Empty;
+      bool validColor = false;
+
+      switch (dlg.SelectedId)
+      {
+        case 1:
+          // Custom Color, invoke keyboard
+          while (!validColor)
+          {
+            if (StreamedMPConfig.ShowKeyboard(currentColor, out retValue))
+            {
+              if (IsValidColor(retValue))
+              {
+                chosenColor = retValue;
+                validColor = true;
+              }
+              else
+                ShowInvalidColorMessage();
+            }
+            else
+              return false;
+          }
+          break;
+
+        default:
+          // Convert Known Color to HEX string
+          Color color = Color.FromName(dlg.SelectedLabelText);
+          chosenColor = GetHexCode(color);
+          break;
+      }
+
+      return true;
+    }
+
+    private void ShowListColorsMenu()
+    {      
+      IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
+      if (dlg == null) return;
+
+      dlg.Reset();
+      dlg.SetHeading(Translation.ListColors);
+
+      // Create menu items
+      GUIListItem listItem = new GUIListItem(string.Format(Translation.ListDefaultColor, GetColorName(TextColorTemp)));
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(string.Format(Translation.ListWatchedColor, GetColorName(WatchedColorTemp)));
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(string.Format(Translation.ListRemoteColor, GetColorName(RemoteColorTemp)));
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(string.Format(Translation.ListText2Color, GetColorName(TextColor2Temp)));
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(string.Format(Translation.ListText3Color, GetColorName(TextColor3Temp)));
+      dlg.Add(listItem);
+
+      listItem = new GUIListItem(Translation.RestoreDefaults);
+      dlg.Add(listItem);
+
+      dlg.DoModal(GUIWindowManager.ActiveWindow);
+      if (dlg.SelectedId <= 0) return;
+
+      string chosenColor = string.Empty;
+
+      switch (dlg.SelectedId)
+      {
+        case 1:
+          if (ShowColorSelectorMenu(TextColorTemp, out chosenColor))
+          {
+            TextColorTemp = chosenColor;
+          }
+          break;
+
+        case 2:
+          if (ShowColorSelectorMenu(WatchedColorTemp, out chosenColor))
+          {
+            WatchedColorTemp = chosenColor;         
+          }
+          break;
+
+        case 3:
+          if (ShowColorSelectorMenu(RemoteColorTemp, out chosenColor))
+          {
+            RemoteColorTemp = chosenColor;          
+          }
+          break;
+
+        case 4:
+          if (ShowColorSelectorMenu(TextColor2Temp, out chosenColor))
+          {
+            TextColor2Temp = chosenColor;
+          }          
+          break;
+
+        case 5:
+          if (ShowColorSelectorMenu(TextColor3Temp, out chosenColor))
+          {
+            TextColor3Temp = chosenColor;
+          }
+          break;
+
+        case 6:
+          TextColorTemp = "FFFFFF";
+          TextColor2Temp = "FFFFFF";
+          TextColor3Temp = "FFFFFF";
+          WatchedColorTemp = "808080";
+          RemoteColorTemp = "FFA075";
+          break;
+      }
+
     }
 
     private void ShowUnfocusedAlphaMenu()
@@ -229,7 +474,10 @@ namespace StreamedMPConfig
       btnLargeFontSize.Label = Translation.UseLargeFonts;
 
       // Unfocused Alpha Settings
-      btnUnfocusedAlpha.Label = string.Format(Translation.UnfocusedAlpha, " ...");
+      btnUnfocusedAlpha.Label = string.Format("{0} ...", Translation.UnfocusedAlpha);
+
+      // List Color Settings
+      btnListColors.Label = string.Format("{0} ...", Translation.ListColors);
     }
 
     private void GetControlStates()
@@ -285,6 +533,20 @@ namespace StreamedMPConfig
       SetAlphaTransparency();
       #endregion
 
+      #region Colors
+      if (MiscConfigGUI.TextColor != TextColorTemp) requiresRestart = true;
+      if (MiscConfigGUI.TextColor2 != TextColor2Temp) requiresRestart = true;
+      if (MiscConfigGUI.TextColor3 != TextColor3Temp) requiresRestart = true;
+      if (MiscConfigGUI.WatchedColor != WatchedColorTemp) requiresRestart = true;
+      if (MiscConfigGUI.RemoteColor != RemoteColorTemp) requiresRestart = true;
+      MiscConfigGUI.TextColor = TextColorTemp;
+      MiscConfigGUI.TextColor2 = TextColor2Temp;
+      MiscConfigGUI.TextColor3 = TextColor3Temp;
+      MiscConfigGUI.WatchedColor = WatchedColorTemp;
+      MiscConfigGUI.RemoteColor = RemoteColorTemp;
+      SetColors();
+      #endregion
+
       if (requiresRestart)
       {
         StreamedMPConfig.ShowRestartMessage(GetID, Translation.MiscMenu);
@@ -318,6 +580,12 @@ namespace StreamedMPConfig
       // Temp Values
       UnfocusedAlphaListTemp = MiscConfigGUI.UnfocusedAlphaListItems.ToString();
       UnfocusedAlphaThumbsTemp = MiscConfigGUI.UnfocusedAlphaThumbs.ToString();
+
+      TextColorTemp = MiscConfigGUI.TextColor;
+      TextColor2Temp = MiscConfigGUI.TextColor2;
+      TextColor3Temp = MiscConfigGUI.TextColor3;
+      WatchedColorTemp = MiscConfigGUI.WatchedColor;
+      RemoteColorTemp = MiscConfigGUI.RemoteColor;
     }
 
     protected override void OnPageDestroy(int newWindowId)
@@ -338,6 +606,10 @@ namespace StreamedMPConfig
       {
         case (int)GUIControls.UnfocusedAlpha:
           ShowUnfocusedAlphaMenu();
+          break;
+
+        case (int)GUIControls.ListColors:
+          ShowListColorsMenu();
           break;
       }
       base.OnClicked(controlId, control, actionType);
