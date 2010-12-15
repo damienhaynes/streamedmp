@@ -26,6 +26,8 @@ namespace StreamedMPEditor
             if (showHyperlinkParameterDialog)
                 gbHyperlinkParameter.Enabled = true;
 
+            cbOnlineVideosReturn.Visible = false;
+
             switch (skinFileID)
             {
               case formStreamedMpEditor.tvseriesSkinID:
@@ -41,6 +43,7 @@ namespace StreamedMPEditor
                 }
                 break;
               case formStreamedMpEditor.onlineVideosSkinID:
+                cbOnlineVideosReturn.Visible = true;
                 foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosViews)
                 {
                   cboViews.Items.Add(mvv.Value);
@@ -82,6 +85,30 @@ namespace StreamedMPEditor
                 cboViews.Text = value;
             }
         }
+
+        public string onlineVideosReturnOption
+        {
+          get
+          {
+            if (cbOnlineVideosReturn.Checked)
+              return "Root";
+            else
+              return "Locked";
+          }
+          set
+          {
+            if (string.IsNullOrEmpty(value))
+              cbOnlineVideosReturn.Checked = false;
+            else
+            {
+              if (value.ToString().ToLower() == "root")
+                cbOnlineVideosReturn.Checked = true;
+              else
+                cbOnlineVideosReturn.Checked = false;
+            }
+          }
+        }
+
 
         public string tvseriesHypelinkParameter
         {

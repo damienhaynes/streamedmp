@@ -283,11 +283,14 @@ namespace StreamedMPEditor
       {
         cboParameterViews.Visible = true;
         lbParameterView.Visible = true;
+        if (selectedWindowID.Text == onlineVideosSkinID)
+          cbOnlineVideosReturn.Visible = true;
       }
       else
       {
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
+        cbOnlineVideosReturn.Visible = false;
       }
       switch (selectedWindowID.Text)
       {
@@ -2017,6 +2020,7 @@ namespace StreamedMPEditor
     {
       public string hyperlink;
       public string hyperlinkParameter;
+      public string hyperlinkParameterOption;
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
@@ -2045,6 +2049,7 @@ namespace StreamedMPEditor
       public string xmlFileName;
       public string hyperlink;
       public string hyperlinkParameter;
+      public string hyperlinkParameterOption;
       public displayMostRecent showMostRecent;
     }
 

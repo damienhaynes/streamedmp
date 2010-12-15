@@ -744,6 +744,12 @@ namespace StreamedMPEditor
         
         //buttonTexture.MenuItem = item.name;
         setDefaultIcons(int.Parse(item.hyperlink),"Black");
+
+        if (cbOnlineVideosReturn.Checked)
+          item.hyperlinkParameterOption = "Root";
+        else
+          item.hyperlinkParameterOption = "Locked";
+
         menuItems.Add(item);
         itemsOnMenubar.Items.Add(item.name);
         reloadBackgroundItems();
@@ -784,6 +790,10 @@ namespace StreamedMPEditor
       buttonTexture.SelectedIcon = mnuItem.buttonTexture;
       buttonTexture.MenuItem = mnuItem.name;
       buttonTexture.menIndex = index;
+      cbOnlineVideosReturn.Checked = false;
+
+      if (mnuItem.hyperlinkParameterOption == "Root")
+        cbOnlineVideosReturn.Checked = true;
 
       if (mnuItem.fhBGSource == fanartSource.Scraper)
       {
@@ -901,7 +911,13 @@ namespace StreamedMPEditor
         {
           checkAndSetDefultImage(item);
         }
+
         item.buttonTexture = buttonTexture.SelectedIcon;
+
+        if (cbOnlineVideosReturn.Checked)
+          item.hyperlinkParameterOption = "Root";
+        else
+          item.hyperlinkParameterOption = "Locked";
 
         menuItems[index] = item;
         itemsOnMenubar.Items.RemoveAt(index);
@@ -934,6 +950,9 @@ namespace StreamedMPEditor
       selectedWindow.Text = string.Empty;
       selectedWindowID.Text = string.Empty;
       cboParameterViews.Text = string.Empty;
+      lbParameterView.Visible = false;
+      cbOnlineVideosReturn.Visible = false;
+
     }
 
 
@@ -966,6 +985,7 @@ namespace StreamedMPEditor
       cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
+      cbOnlineVideosReturn.Visible = false;
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
         switch (mnuItem.hyperlink)
@@ -993,12 +1013,19 @@ namespace StreamedMPEditor
           case onlineVideosSkinID:
             cboParameterViews.DataSource = theOnlineVideosViews;
             if (mnuItem.hyperlinkParameter != "false")
+            {
               cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
+              if (mnuItem.hyperlinkParameterOption == "Root")
+                cbOnlineVideosReturn.Checked = true;
+              else
+                cbOnlineVideosReturn.Checked = false;
+            }
             else
             {
               cboParameterViews.Text = string.Empty;
               cboParameterViews.SelectedIndex = -1;
             }
+            cbOnlineVideosReturn.Visible = true;
             break;
           default:
             break;
@@ -1059,11 +1086,14 @@ namespace StreamedMPEditor
       {
         cboParameterViews.Visible = true;
         lbParameterView.Visible = true;
+        if (selectedWindowID.Text == onlineVideosSkinID)
+          cbOnlineVideosReturn.Visible = true;
       }
       else
       {
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
+        cbOnlineVideosReturn.Visible = false;
       }
     }
 
