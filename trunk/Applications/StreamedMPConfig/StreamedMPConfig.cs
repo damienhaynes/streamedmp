@@ -1177,7 +1177,7 @@ namespace StreamedMPConfig
     /// <returns>true if value has changed</returns>
     public static bool ShowKeyboard(string input, out string output)
     {
-      output = string.Empty;
+      output = input;
 
       try
       {
