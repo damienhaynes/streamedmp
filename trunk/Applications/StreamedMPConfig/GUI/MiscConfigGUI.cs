@@ -144,6 +144,9 @@ namespace StreamedMPConfig
       listItem = new GUIListItem(string.Format(Translation.UnfocusedAlphaMenuThumbs, UnfocusedAlphaThumbsTemp));
       dlg.Add(listItem);
 
+      listItem = new GUIListItem(Translation.RestoreDefaults);
+      dlg.Add(listItem);
+
       dlg.DoModal(GUIWindowManager.ActiveWindow);
       if (dlg.SelectedId <= 0) return;
 
@@ -167,6 +170,7 @@ namespace StreamedMPConfig
               invalid = true;
           }
           break;
+
         case 2:
           input = UnfocusedAlphaThumbsTemp;
           if (StreamedMPConfig.ShowKeyboard(input, out retValue))
@@ -182,6 +186,11 @@ namespace StreamedMPConfig
             else
               invalid = true;
           }
+          break;
+
+        case 3:
+          UnfocusedAlphaThumbsTemp = "100";
+          UnfocusedAlphaListTemp = "100";
           break;
       }
 

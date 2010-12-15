@@ -128,7 +128,7 @@ namespace SMPpatch
             mpPaths.sMPbaseDir = null;
         }
       }
-      catch (Exception e)
+      catch (Exception)
       {
         //MessageBox.Show("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message.ToString());
         mpPaths.sMPbaseDir = null;
