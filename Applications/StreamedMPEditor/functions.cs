@@ -1851,7 +1851,7 @@ namespace StreamedMPEditor
           return xmlreader.GetValueAsString("skin", "name", "");
         }
       }
-      catch (Exception e)
+      catch (Exception)
       {
         return string.Empty;
       }

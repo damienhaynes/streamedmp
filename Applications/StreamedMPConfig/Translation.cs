@@ -274,6 +274,7 @@ namespace StreamedMPConfig
     public static string UnfocusedAlphaInvalidLine1 = "Invalid value entered, please enter a value";
     public static string UnfocusedAlphaInvalidLine2 = "between 0 - 255.";
     public static string UseLargeFonts = "Use Large Fonts";
+    public static string RestoreDefaults = "Restore Defaults";
     #endregion
   }
 }
