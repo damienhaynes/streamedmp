@@ -16,7 +16,7 @@ namespace StreamedMPEditor
     List<string> iconFiles = new List<string>();
     Image workingImage = null;
     Image boarderImage = null;
-    string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+    string streamedMPMediaPath = string.Empty;
 
     public static int workingIndex = -1;
     public static string buttonTexture = string.Empty;
@@ -25,13 +25,14 @@ namespace StreamedMPEditor
     public getButtonTexture()
     {
       InitializeComponent();
-      if (formStreamedMpEditor.SkinName().ToLower() == "streamedmp")
-      {
-        iconList();
-        groupBox2.Text = "Available Menu Icons (" + iconFiles.Count.ToString() + ")";
-        groupBox2.Refresh();
-      }
+    }
 
+    public void initButtonTexture()
+    {
+      streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+      iconList();
+      groupBox2.Text = "Available Menu Icons (" + iconFiles.Count.ToString() + ")";
+      groupBox2.Refresh();
     }
 
     public int menIndex
