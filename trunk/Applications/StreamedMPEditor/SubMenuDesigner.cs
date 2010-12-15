@@ -368,6 +368,7 @@ namespace StreamedMPEditor
             break;
           case formStreamedMpEditor.onlineVideosSkinID:
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
+            itemProperties.onlineVideosReturnOption = subMenuLevel1[index].hyperlinkParameterOption;
             break;
         }
         itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
@@ -427,6 +428,7 @@ namespace StreamedMPEditor
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
             {
               subMenuLevel1[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
+              subMenuLevel1[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
@@ -462,9 +464,9 @@ namespace StreamedMPEditor
             break;
           case formStreamedMpEditor.onlineVideosSkinID:
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
+            itemProperties.onlineVideosReturnOption = subMenuLevel2[index].hyperlinkParameterOption;
             break;
         }      
-        itemProperties.tvseriesHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
         itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
         itemProperties.initialIndex = index;
         itemProperties.ShowDialog();
@@ -521,6 +523,7 @@ namespace StreamedMPEditor
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
             {
               subMenuLevel2[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
+              subMenuLevel2[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }

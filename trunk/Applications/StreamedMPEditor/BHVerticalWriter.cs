@@ -64,7 +64,7 @@ namespace StreamedMPEditor
             switch (menItem.hyperlink)
             {
               case onlineVideosSkinID:
-                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
                 break;
               default:
                 rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
@@ -139,7 +139,7 @@ namespace StreamedMPEditor
             switch (menItem.hyperlink)
             {
               case onlineVideosSkinID:
-                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:Locked" + "</hyperlinkParameter>");
+                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
                 break;
               default:
                 rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");

@@ -259,6 +259,7 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -741,7 +742,7 @@
       this.groupBox3.Controls.Add(this.selectedWindowIDL);
       this.groupBox3.Controls.Add(this.selectedWindow);
       this.groupBox3.Controls.Add(this.selectedWindowL);
-      this.groupBox3.Location = new System.Drawing.Point(211, 139);
+      this.groupBox3.Location = new System.Drawing.Point(211, 165);
       this.groupBox3.Name = "groupBox3";
       this.groupBox3.Size = new System.Drawing.Size(321, 54);
       this.groupBox3.TabIndex = 0;
@@ -964,9 +965,9 @@
       // 
       // removeButton
       // 
-      this.removeButton.Location = new System.Drawing.Point(211, 400);
+      this.removeButton.Location = new System.Drawing.Point(377, 400);
       this.removeButton.Name = "removeButton";
-      this.removeButton.Size = new System.Drawing.Size(321, 26);
+      this.removeButton.Size = new System.Drawing.Size(155, 26);
       this.removeButton.TabIndex = 51;
       this.removeButton.TabStop = false;
       this.removeButton.Text = "<< Remove Menu Item";
@@ -976,9 +977,9 @@
       // addButton
       // 
       this.addButton.Enabled = false;
-      this.addButton.Location = new System.Drawing.Point(211, 367);
+      this.addButton.Location = new System.Drawing.Point(211, 400);
       this.addButton.Name = "addButton";
-      this.addButton.Size = new System.Drawing.Size(321, 26);
+      this.addButton.Size = new System.Drawing.Size(155, 26);
       this.addButton.TabIndex = 50;
       this.addButton.TabStop = false;
       this.addButton.Text = "Add Menu Item>>";
@@ -996,7 +997,7 @@
       this.backgroundImages.Controls.Add(this.bgBox);
       this.backgroundImages.Controls.Add(this.labelImageFolder);
       this.backgroundImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.backgroundImages.Location = new System.Drawing.Point(211, 195);
+      this.backgroundImages.Location = new System.Drawing.Point(211, 222);
       this.backgroundImages.Name = "backgroundImages";
       this.backgroundImages.Size = new System.Drawing.Size(321, 167);
       this.backgroundImages.TabIndex = 13;
@@ -1107,6 +1108,7 @@
       // 
       // itemProperties
       // 
+      this.itemProperties.Controls.Add(this.cbOnlineVideosReturn);
       this.itemProperties.Controls.Add(this.btMenuIcon);
       this.itemProperties.Controls.Add(this.lbParameterView);
       this.itemProperties.Controls.Add(this.cboParameterViews);
@@ -1118,14 +1120,14 @@
       this.itemProperties.Controls.Add(this.tbItemName);
       this.itemProperties.Location = new System.Drawing.Point(211, 6);
       this.itemProperties.Name = "itemProperties";
-      this.itemProperties.Size = new System.Drawing.Size(323, 127);
+      this.itemProperties.Size = new System.Drawing.Size(323, 153);
       this.itemProperties.TabIndex = 8;
       this.itemProperties.TabStop = false;
       this.itemProperties.Text = "Item properties";
       // 
       // btMenuIcon
       // 
-      this.btMenuIcon.Location = new System.Drawing.Point(10, 100);
+      this.btMenuIcon.Location = new System.Drawing.Point(9, 124);
       this.btMenuIcon.Name = "btMenuIcon";
       this.btMenuIcon.Size = new System.Drawing.Size(301, 23);
       this.btMenuIcon.TabIndex = 104;
@@ -1147,7 +1149,7 @@
       this.cboParameterViews.FormattingEnabled = true;
       this.cboParameterViews.Location = new System.Drawing.Point(69, 73);
       this.cboParameterViews.Name = "cboParameterViews";
-      this.cboParameterViews.Size = new System.Drawing.Size(242, 21);
+      this.cboParameterViews.Size = new System.Drawing.Size(241, 21);
       this.cboParameterViews.TabIndex = 102;
       this.cboParameterViews.SelectedIndexChanged += new System.EventHandler(this.cboParameterViews_SelectedIndexChanged);
       // 
@@ -2841,6 +2843,16 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbOnlineVideosReturn
+      // 
+      this.cbOnlineVideosReturn.AutoSize = true;
+      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(69, 101);
+      this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
+      this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
+      this.cbOnlineVideosReturn.TabIndex = 105;
+      this.cbOnlineVideosReturn.Text = "Return to OnlineVideos root menu";
+      this.cbOnlineVideosReturn.UseVisualStyleBackColor = true;
+      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3188,6 +3200,7 @@
     private System.Windows.Forms.PictureBox style4Description;
     private System.Windows.Forms.Button btMenuIcon;
     private System.Windows.Forms.PictureBox pbMenuIconInfo;
+    private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
   }
 }
 
