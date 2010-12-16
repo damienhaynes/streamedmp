@@ -1145,6 +1145,10 @@ namespace StreamedMPEditor
         Properties.Settings.Default.rememberLastUsedTab = true;
         Properties.Settings.Default.lastUsedTab = StreamedMPMenu.SelectedIndex;
       }
+      screenReset();
+      setScreenProperties(itemsOnMenubar.SelectedIndex);
+      disableItemControls();
+      btGenerateMenu.Enabled = true;
     }
 
     private void streamedMpEditor_FormClosing(object sender, FormClosingEventArgs e)
