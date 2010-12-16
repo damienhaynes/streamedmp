@@ -154,9 +154,9 @@ namespace StreamedMPConfig
       dlg.DoModal(GetID);
     }
 
-    private List<string> GetColors()
-    {      
-      List<string> colors = new List<string>();
+    private Dictionary<string, string> GetColors()
+    {
+      Dictionary<string, string> colors = new Dictionary<string, string>();
       
       // get the color names from the Known color enum
       string[] colorNames = Enum.GetNames(typeof(KnownColor)); 
@@ -165,13 +165,12 @@ namespace StreamedMPConfig
       {
         // cast the colorName into a KnownColor
         KnownColor knownColor = (KnownColor)Enum.Parse(typeof(KnownColor), colorName);
-        Color someColor = Color.FromKnownColor(knownColor);
+        Color color = Color.FromKnownColor(knownColor);
 
-        // check if the knownColor variable is a System color  
-      
+        // check if the knownColor variable is a System color      
         if (knownColor > KnownColor.Transparent)
         {
-          colors.Add(colorName);
+          colors.Add(colorName, GetHexCode(color));
         }
       }
       return colors;
@@ -184,12 +183,24 @@ namespace StreamedMPConfig
       return hex.Replace("-", string.Empty);
     }
 
-    private string GetColorName(string hexCode)
+    private Color GetColor(string hexCode)
     {
-      int r = Convert.ToInt32(hexCode.Substring(0, 2), 16);
-      int g = Convert.ToInt32(hexCode.Substring(2, 2), 16);
-      int b = Convert.ToInt32(hexCode.Substring(4, 2), 16);
-      Color color = Color.FromArgb(r, g, b);
+      try
+      {
+        int r = Convert.ToInt32(hexCode.Substring(0, 2), 16);
+        int g = Convert.ToInt32(hexCode.Substring(2, 2), 16);
+        int b = Convert.ToInt32(hexCode.Substring(4, 2), 16);
+        return Color.FromArgb(r, g, b);
+      }
+      catch
+      {
+        return Color.Empty;
+      }
+    }
+
+    private string GetColorName(string hexCode)
+    {      
+      Color color = GetColor(hexCode);
 
       if (KnownColors.Count == 0)
       {
@@ -217,20 +228,7 @@ namespace StreamedMPConfig
     private bool IsValidColor(string hexCode)
     {
       if (hexCode.Length != 6) return false;
-
-      Color actColor;
-      try
-      {
-        int r = Convert.ToInt32(hexCode.Substring(0, 2), 16);
-        int g = Convert.ToInt32(hexCode.Substring(2, 2), 16);
-        int b = Convert.ToInt32(hexCode.Substring(4, 2), 16);
-        actColor = Color.FromArgb(r, g, b);
-        return true;
-      }
-      catch
-      {
-        return false;
-      }
+      return GetColor(hexCode) != Color.Empty;      
     }
 
     private bool ShowColorSelectorMenu(string currentColor, out string chosenColor)
@@ -244,16 +242,18 @@ namespace StreamedMPConfig
       dlg.SetHeading(Translation.ListColors);
 
       // Get List of Known Colors
-      List<string> colors = GetColors();
+      Dictionary<string, string> colors = GetColors();
 
       // Create Custom Color menu item
       GUIListItem listItem = new GUIListItem(string.Format("{0} ...", Translation.CustomColor));
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), currentColor);
       dlg.Add(listItem);
 
       // Create color menu items
-      foreach (string color in colors)
+      foreach (var color in colors)
       {
-        listItem = new GUIListItem(color);        
+        listItem = new GUIListItem(color.Key);
+        listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), color.Value);
         dlg.Add(listItem);
       }
 
@@ -294,6 +294,29 @@ namespace StreamedMPConfig
       return true;
     }
 
+    private string GetColorTextureFromMemory(Size size, string identifer)
+    {
+      try
+      {
+        // create a solid image
+        Bitmap bmp = new Bitmap(size.Width, size.Height);
+        Graphics gfx = Graphics.FromImage(bmp);
+        Brush brsh = new SolidBrush(GetColor(identifer));
+        gfx.FillRectangle(brsh, new Rectangle(0, 0, size.Width, size.Height));
+
+        string textureIdentifer = string.Concat("[#StreamedMP.", identifer, "]");
+
+        // will load from memory if it exists
+        GUITextureManager.LoadFromMemory(bmp, textureIdentifer, 0, size.Width, size.Height);
+        return textureIdentifer;
+      }
+      catch (Exception e)
+      {
+        smcLog.WriteLog("Error getting texture from memory: {0}", LogLevel.Error, e.Message);
+        return string.Empty;
+      }
+    }
+
     private void ShowListColorsMenu()
     {      
       IDialogbox dlg = (IDialogbox)GUIWindowManager.GetWindow((int)GUIWindow.Window.WINDOW_DIALOG_MENU);
@@ -303,19 +326,24 @@ namespace StreamedMPConfig
       dlg.SetHeading(Translation.ListColors);
 
       // Create menu items
-      GUIListItem listItem = new GUIListItem(string.Format(Translation.ListDefaultColor, GetColorName(TextColorTemp)));
+      GUIListItem listItem = new GUIListItem(string.Format(Translation.ListDefaultColor, GetColorName(TextColorTemp)));      
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), TextColorTemp);
       dlg.Add(listItem);
 
       listItem = new GUIListItem(string.Format(Translation.ListWatchedColor, GetColorName(WatchedColorTemp)));
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), WatchedColorTemp);
       dlg.Add(listItem);
 
       listItem = new GUIListItem(string.Format(Translation.ListRemoteColor, GetColorName(RemoteColorTemp)));
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), RemoteColorTemp);
       dlg.Add(listItem);
 
       listItem = new GUIListItem(string.Format(Translation.ListText2Color, GetColorName(TextColor2Temp)));
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), TextColor2Temp);
       dlg.Add(listItem);
 
       listItem = new GUIListItem(string.Format(Translation.ListText3Color, GetColorName(TextColor3Temp)));
+      listItem.IconImage = GetColorTextureFromMemory(new Size(34, 34), TextColor3Temp);
       dlg.Add(listItem);
 
       listItem = new GUIListItem(Translation.RestoreDefaults);
