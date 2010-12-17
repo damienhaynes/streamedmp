@@ -951,20 +951,19 @@ namespace StreamedMPEditor
     #endregion
 
     #region Generate Topbar Horizontal
-
-    private void generateTopBarH()
+    
+    //
+    // These controls need to be placed before the background controls otherwise 
+    // they the hidden animation is not evalulated correctly
+    //
+    private void generateTopBarHButtons()
     {
-      int twitterHeight = 0;
-      basicHomeValues.offsetButtons = (int.Parse(txtMenuPos.Text) - 8);
-
       StringBuilder rawXML = new StringBuilder();
 
       foreach (menuItem menItem in menuItems)
       {
         String topMenuId = (menItem.id + 600).ToString();
 
-        rawXML.AppendLine("<control><description>Topbar buttons " + menItem.name + "</description>");
-        rawXML.AppendLine("<type>group</type>");
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " menu visibility</description>");
         rawXML.AppendLine("<id>" + (menItem.id + 100).ToString() + "</id>");
@@ -976,6 +975,29 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<label>" + menItem.name + "</label>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
         rawXML.AppendLine("</control>");
+      }
+
+      xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR BUTTONS -->", rawXML.ToString());
+    }
+    //
+    // These controls need to be placed after the background controls so the layer order is correct
+    //
+    private void generateTopBarH()
+    {
+
+      generateTopBarHButtons();
+
+      int twitterHeight = 0;
+      basicHomeValues.offsetButtons = (int.Parse(txtMenuPos.Text) - 8);
+
+      StringBuilder rawXML = new StringBuilder();
+
+      foreach (menuItem menItem in menuItems)
+      {
+        String topMenuId = (menItem.id + 600).ToString();
+
+        rawXML.AppendLine("<control><description>Topbar buttons " + menItem.name + "</description>");
+        rawXML.AppendLine("<type>group</type>");
 
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<type>image</type>");
@@ -1046,8 +1068,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<onup>" + topMenuId + "01</onup>");
         rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
@@ -1070,8 +1090,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<onup>" + topMenuId + "02</onup>");
         rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
@@ -1094,8 +1112,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<onup>" + topMenuId + "03</onup>");
         rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
@@ -1753,9 +1769,10 @@ namespace StreamedMPEditor
         else
           rawXML.Append("</visible>");
 
-        rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
-        if (menuStyle == chosenMenuStyle.verticalStyle)
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"10\" time=\"600\" reversible=\"false\">Hidden</animation>");
+
+        rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+
         if (cbAnimateBackground.Checked)
         {
           rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1796,7 +1813,8 @@ namespace StreamedMPEditor
           else
             rawXML.Append("]+control.isvisible(91919298)</visible>");
 
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1838,7 +1856,8 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>");
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1873,7 +1892,8 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>");
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"10\" end=\"100\" time=\"1000\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
