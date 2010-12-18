@@ -687,6 +687,17 @@ namespace StreamedMPEditor
     }
 
 
+    public bool validForMPVersion(string validForMPVersion)
+    {
+      Version versionToTest = new Version(validForMPVersion);
+      Version mpVersion = new Version(MediaPortalVersion);
+
+      if (mpVersion.CompareTo(versionToTest) > 0)
+        return true;
+      else
+        return false;
+    }
+
     private Color ColorFromRGB(string RGB)
     {
       if (RGB.Length != 6)

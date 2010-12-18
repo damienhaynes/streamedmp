@@ -13,7 +13,6 @@ namespace StreamedMPEditor
 {
   class Helper
   {
-
     public string[] getSkinFileList(ref System.Windows.Forms.ListBox listBox, ref List<string> idList)
     {
       string[] files = System.IO.Directory.GetFiles(SkinInfo.mpPaths.streamedMPpath);
