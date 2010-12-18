@@ -324,7 +324,7 @@ namespace StreamedMPEditor
         autoPurgeBackups.Checked = true;
       }
 
-      if (isBeta)
+      if (validForMPVersion("1.1.6.0"))
       {
         musicViews = GetMusicViews();
         cboParameterViews.Visible = false;
@@ -589,15 +589,11 @@ namespace StreamedMPEditor
         editButton.Enabled = true;
         btMenuIcon.Visible = false;
 
-        Version mpVersion = new Version(MediaPortalVersion);
-        if (mpVersion.CompareTo(mpReleaseVersion) > 0)
-        {
+        if (validForMPVersion("1.0.2.22554"))
           wrapString.Enabled = true;
-        }
         else
-        {
           wrapString.Enabled = false;
-        }
+       
 
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
         {
