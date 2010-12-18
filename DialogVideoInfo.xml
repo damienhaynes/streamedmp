@@ -51,7 +51,7 @@
       <id>100</id>
       <posX>1010</posX>
       <posY>15</posY>
-      <label>427</label>
+      <label>#(string.rtrim(L(427),':'))</label>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -132,25 +132,12 @@
       <id>30</id>
       <posX>38</posX>
       <posY>655</posY>
-      <label>734</label>
+      <label>#(string.rtrim(L(734),':'))</label>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Movie Title Shadow</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>309</posX>
-      <posY>252</posY>
-      <width>900</width>
-      <font>mediastream16tc</font>
-      <label>#title</label>
-      <textcolor>ff222222</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>   
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -161,22 +148,12 @@
       <font>mediastream16tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
+			<shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Genres Shadow</description>
-      <type>label</type>
-      <label>#genre</label>
-      <id>0</id>
-      <posX>311</posX>
-      <posY>284</posY>
-      <width>900</width>
-      <font>mediastream11tc</font>
-      <textcolor>ff222222</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <description>Genres</description>
       <type>label</type>
@@ -187,6 +164,9 @@
       <width>900</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
+			<shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -239,6 +219,7 @@
       <posY>306</posY>
       <width>400</width>
       <font>mediastream10</font>
+			<visible>!string.equals(#rating,0)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -272,7 +253,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	<control>
+		<control>
       <description>Review</description>
       <type>textboxscrollup</type>
       <id>23</id>
@@ -286,182 +267,78 @@
       <label>#userreview</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>Runtime Label Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>299</label>
-      <posX>312</posX>
-      <posY>551</posY>
-      <textcolor>ff111111</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <description>Runtime Label</description>
       <id>0</id>
       <type>label</type>
-      <label>299</label>
+      <label>#(string.rtrim(L(299),':'))</label>
       <posX>310</posX>
       <posY>550</posY>
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Runtime Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#runtime</label>
-      <posX>471</posX>
-      <posY>552</posY>
-      <width>200</width>
-      <textcolor>ff222222</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <description>Runtime</description>
       <id>1000</id>
       <type>label</type>
-      <label>#runtime minutes</label>
+      <label>#(iif(neq(#runtime,''),'#runtime #StreamedMP.Minutes','N/A'))</label>
       <posX>470</posX>
       <posY>551</posY>
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>Directors Label Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>199</label>
-      <posX>311</posX>
-      <posY>573</posY>
-      <textcolor>ff111111</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <description>Directors Label</description>
       <id>0</id>
       <type>label</type>
-      <label>199</label>
+      <label>#(string.rtrim(L(199),':'))</label>
       <posX>310</posX>
       <posY>572</posY>
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Directors Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#director</label>
-      <posX>471</posX>
-      <posY>574</posY>
-      <width>200</width>
-      <textcolor>ff222222</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <description>Directors</description>
       <id>1001</id>
       <type>label</type>
-      <label>#director</label>
+      <label>#(iif(neq(#director,''),#director,'N/A'))</label>
       <posX>470</posX>
       <posY>573</posY>
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Directors N/A</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#director</label>
-      <posX>470</posX>
-      <posY>573</posY>
-      <width>200</width>
-      <visible>!control.hastext(1001)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <id>0</id>
-      <description>Year Label Shadow</description>
-      <type>label</type>
-      <label>201</label>
-      <posX>311</posX>
-      <posY>595</posY>
-      <textcolor>ff111111</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <description>Year Label</description>
       <id>0</id>
       <type>label</type>
-      <label>201</label>
+      <label>#(string.rtrim(L(201),':'))</label>
       <posX>310</posX>
       <posY>594</posY>
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Year Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#year</label>
-      <posX>471</posX>
-      <posY>596</posY>
-      <width>200</width>
-      <textcolor>ff222222</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <description>Year</description>
       <id>1002</id>
       <type>label</type>
-      <label>#year</label>
+      <label>#(iif(neq(#year,''),#year,'N/A'))</label>
       <posX>470</posX>
       <posY>595</posY>
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Year N/A</description>
-      <id>0</id>
-      <type>label</type>
-      <label>N/A</label>
-      <posX>470</posX>
-      <posY>595</posY>
-      <width>200</width>
-      <visible>!control.hastext(1002)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <id>0</id>
-      <description>MPAA Label Shadow</description>
-      <type>label</type>
-      <label>173</label>
-      <posX>311</posX>
-      <posY>617</posY>
-      <textcolor>ff111111</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>        
     <control Style="smallTitleB">
       <description>MPAA Label</description>
       <id>0</id>
       <type>label</type>
-      <label>173</label>
+      <label>#(string.rtrim(L(173),':'))</label>
       <posX>310</posX>
       <posY>616</posY>
       <width>140</width>
@@ -472,7 +349,7 @@
       <description>MPAA</description>
       <id>1003</id>
       <type>textbox</type>
-      <label>#mpaarating</label>
+      <label>#(iif(neq(#mpaarating,''),#mpaarating,'N/A'))</label>
       <posX>470</posX>
       <posY>617</posY>
       <width>350</width>

@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <controls>
+  <define>#shadow.dark:ff111111</define>
+  <define>#shadow.light:ff222222</define>
   <skin>
     <width>1280</width>
     <height>720</height>
@@ -29,7 +31,7 @@
     <textalign>center</textalign>
     <textureFocus>submenubutton.png</textureFocus>
     <textureNoFocus>submenubutton.png</textureNoFocus>
-     <colordiffuse>ffFFFFFF</colordiffuse>
+    <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
   <style Name="settingsbutton">
     <width>211</width>
@@ -119,12 +121,18 @@
     <width>300</width>
     <font>mediastream10tc</font>
     <textcolor>ff006699</textcolor>
+    <shadowAngle>45</shadowAngle>
+    <shadowDistance>2</shadowDistance>
+    <shadowColor>#shadow.dark</shadowColor>
   </style>
   <style Name="smallTitle">
     <id>0</id>
     <width>220</width>
     <font>mediastream9c</font>
     <textcolor>ffffffff</textcolor>
+    <shadowAngle>45</shadowAngle>
+    <shadowDistance>2</shadowDistance>
+    <shadowColor>#shadow.light</shadowColor>
   </style>
   <style Name="TVSeriesTitle">
     <id>0</id>
@@ -750,4 +758,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:28a1287b5ddcf3b9a99c365eb14c6ebd-->
+<!--Checksum:f7ae5ce38ff93bdfdee4e80dcc3c0037-->
