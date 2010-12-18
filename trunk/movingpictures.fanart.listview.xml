@@ -74,21 +74,7 @@
       <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+!control.isvisible(9)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    <!-- Movie Details -->
-    <control>
-      <description>Movie Title Shadow</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>271</posX>
-      <posY>421</posY>
-      <width>500</width>
-      <font>mediastream16tc</font>
-      <label>#MovingPictures.SelectedMovie.title</label>
-      <align>left</align>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.list+control.isvisible(50)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    <!-- Movie Details -->    
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -99,23 +85,12 @@
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <align>left</align>
+			<shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Genres Shadow</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>271</posX>
-      <posY>448</posY>
-      <width>500</width>
-      <font>mediastream12tc</font>
-      <textcolor>ff989898</textcolor>
-      <label>#MovingPictures.SelectedMovie.genres</label>
-      <textcolor>#shadow.dark</textcolor>
-      <visible>facadeview.list+control.isvisible(50)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <description>Genres</description>
       <type>label</type>
@@ -126,6 +101,9 @@
       <font>mediastream12tc</font>
       <textcolor>ff989898</textcolor>
       <label>#MovingPictures.SelectedMovie.genres</label>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.list+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
