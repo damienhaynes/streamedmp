@@ -1,19 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-  <controls>
-    <control>
-      <description>Series Title Shadow - WideBanner</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>312</posX>
-      <posY>253</posY>
-      <width>460</width>
-      <font>mediastream16tc</font>
-      <label>#TVSeries.Series.Pretty_Name</label>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.largeicons+control.isvisible(1237)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+  <controls>    
     <control>
       <description>Series Title - WideBanner</description>
       <type>label</type>
@@ -24,22 +11,12 @@
       <font>mediastream16tc</font>
       <label>#TVSeries.Series.Pretty_Name</label>
       <textcolor>ffFFFFFF</textcolor>
+			<shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.largeicons+control.isvisible(1237)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Genre Shadow - WideBanner</description>
-      <type>label</type>
-      <label>#TVSeries.Series.Genre</label>
-      <id>0</id>
-      <posX>311</posX>
-      <posY>283</posY>
-      <width>460</width>
-      <font>mediastream12tc</font>
-      <textcolor>#shadow.dark</textcolor>
-      <visible>facadeview.largeicons+control.isvisible(1237)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <description>Genre - WideBanner</description>
       <type>label</type>
@@ -50,6 +27,9 @@
       <width>460</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
+			<shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.largeicons+control.isvisible(1237)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
