@@ -269,6 +269,8 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream12tc</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -283,6 +285,8 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -297,6 +301,8 @@ namespace StreamedMPEditor
                   "<align>left</align>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -339,6 +345,8 @@ namespace StreamedMPEditor
                   "<textcolor>white</textcolor>" +
                   "<align>left</align>" +
                   "<font>mediastream10</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->" +
@@ -386,6 +394,8 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Title</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -399,6 +409,8 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Year</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10tc</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -412,6 +424,8 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Genre</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -425,6 +439,8 @@ namespace StreamedMPEditor
                   "<label>#Play.Current.Director</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
+                  "<scrollStartDelaySec>30</scrollStartDelaySec>" +
+                  "<wrapString> | </wrapString>" +
                   "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +

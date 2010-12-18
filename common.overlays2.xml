@@ -131,6 +131,8 @@ same location everywhere
       <label>#Play.Current.Artist</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -146,6 +148,8 @@ same location everywhere
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -161,6 +165,8 @@ same location everywhere
       <label>#Play.Current.Album</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -237,6 +243,8 @@ same location everywhere
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+!control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -252,6 +260,8 @@ same location everywhere
       <label>#Play.Current.Year</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+!control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -267,6 +277,8 @@ same location everywhere
       <label>#Play.Current.Genre</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+!control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -282,6 +294,8 @@ same location everywhere
       <label>#Play.Current.Director</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
+			<scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> | </wrapString>
       <visible>player.hasmedia+!control.isvisible(3337)+![facadeview.filmstrip|Control.IsVisible(1236)]+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
