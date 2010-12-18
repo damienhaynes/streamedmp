@@ -316,7 +316,7 @@ This file should contain the facade view
                     <posX>20</posX>
                     <posY>70</posY>
                     <width>210</width>
-                    <label>#runtime min</label>
+                    <label>#runtime #StreamedMP.Minutes</label>
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
@@ -329,14 +329,15 @@ This file should contain the facade view
                     <label>#rating (#votes #StreamedMP.Votes)</label>
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
+										<visible>!string.equals(#rating,0)</visible>
                   </control>                 
                   <control>
-                    <description>Director</description>
+                    <description>Director Label</description>
                     <type>label</type>
                     <posX>20</posX>
                     <posY>115</posY>
                     <width>210</width>
-                    <label>199</label>
+                    <label>#StreamedMP.Director</label>
                     <font>mediastream10tc</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
@@ -350,13 +351,13 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-				          <control>
+									<control>
                     <description>Plot Label</description>
                     <type>label</type>
                     <posX>20</posX>
                     <posY>155</posY>
                     <width>210</width>
-                    <label>203</label>
+                    <label>#(string.rtrim(L(203),':'))</label>
                     <font>mediastream10tc</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
@@ -371,7 +372,7 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <lineSpacing>2</lineSpacing>
                     <textcolor>FFFFFFFF</textcolor>
-					          <scrollStartDelaySec>15</scrollStartDelaySec>
+										<scrollStartDelaySec>15</scrollStartDelaySec>
                   </control>
                 </controls>
               ]]></subitem>
