@@ -1064,8 +1064,11 @@ namespace StreamedMPEditor
       folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
       if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
       {
-        bgBox.Text = folderBrowserDialog.SelectedPath;
+        if (getFileListing(folderBrowserDialog.SelectedPath, "*.*", true).Length == 0)
+          helper.showError("The selected directory contains no files\n\nPleas ensure the folder contains at least one image file", errorCode.info);
       }
+      else
+        bgBox.Text = folderBrowserDialog.SelectedPath;
     }
 
 

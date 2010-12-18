@@ -479,6 +479,8 @@ namespace StreamedMPEditor
         imageDir += @"\";
       }
       // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
+      // First check if there are any files we can use to create the defauly image 
+
       string sourceImgFile = getFileListing(imageDir, "*.*", true)[0];
       System.IO.File.Copy(sourceImgFile, imageDir + "default.jpg", true);
       // Delete the Source file
