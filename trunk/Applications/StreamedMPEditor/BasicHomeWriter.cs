@@ -1770,8 +1770,8 @@ namespace StreamedMPEditor
           rawXML.Append("</visible>");
 
 
-        rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
-        rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
+        rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
 
         if (cbAnimateBackground.Checked)
         {
@@ -1813,8 +1813,8 @@ namespace StreamedMPEditor
           else
             rawXML.Append("]+control.isvisible(91919298)</visible>");
 
-          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1856,8 +1856,8 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>");
-          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1892,8 +1892,8 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>");
-          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"30\" time=\"600\" reversible=\"false\">Hidden</animation>");
-          rawXML.AppendLine("<animation effect=\"fade\" start=\"50\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
+          rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
           if (cbAnimateBackground.Checked)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
