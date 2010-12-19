@@ -1371,16 +1371,16 @@ namespace StreamedMPConfig
       if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.Home)
         return;
 
-      smcLog.WriteLog("StreamedMPConfig: OnVideoWindowsChanged Event Called", LogLevel.Debug);
+      //smcLog.WriteLog("StreamedMPConfig: OnVideoWindowsChanged Event Called", LogLevel.Debug);
 
       if (GUIGraphicsContext.ShowBackground == true)
       {
-        smcLog.WriteLog("#StreamedMP.VideoWallpaper = false", LogLevel.Debug);
+        //smcLog.WriteLog("#StreamedMP.VideoWallpaper = false", LogLevel.Debug);
         GUIPropertyManager.SetProperty("#StreamedMP.VideoWallpaper", "false");
       }
       else
       {
-        smcLog.WriteLog("#StreamedMP.VideoWallpaper = true", LogLevel.Debug);
+        //smcLog.WriteLog("#StreamedMP.VideoWallpaper = true", LogLevel.Debug);
         GUIPropertyManager.SetProperty("#StreamedMP.VideoWallpaper", "true");
       }
     }
@@ -1390,7 +1390,7 @@ namespace StreamedMPConfig
       if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.Home)
         return;
 
-      smcLog.WriteLog("StreamedMPConfig: OnActivateWindow Event Called(" + GUIWindowManager.ActiveWindow.ToString() + ")", LogLevel.Debug);
+      //smcLog.WriteLog("StreamedMPConfig: OnActivateWindow Event Called(" + GUIWindowManager.ActiveWindow.ToString() + ")", LogLevel.Debug);
 
       // Disable the timer used for most recent fanart images in not on home screen.
       if (GUIWindowManager.ActiveWindow == (int)MediaPortalWindows.BasicHome)
@@ -1398,7 +1398,7 @@ namespace StreamedMPConfig
         if (smpSettings.timerRequired)
         {
           mrTimer.Enabled = true;
-          smcLog.WriteLog(string.Format("Most Recent Summary Timer : Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Debug);
+          //smcLog.WriteLog(string.Format("Most Recent Summary Timer : Enabled ({0} Seconds)", MiscConfigGUI.MostRecentFanartTimerInt), LogLevel.Debug);
         }
       }
       else
@@ -1406,7 +1406,7 @@ namespace StreamedMPConfig
         if (smpSettings.timerRequired)
         {
           mrTimer.Enabled = false;
-          smcLog.WriteLog("Most Recent Summary Timer : Disabled", LogLevel.Debug);
+          //smcLog.WriteLog("Most Recent Summary Timer : Disabled", LogLevel.Debug);
         }
       }
 
@@ -1432,7 +1432,7 @@ namespace StreamedMPConfig
       }
       else
       {
-        smcLog.WriteLog("StreamedMPConfig: Setting all Update Indicator Values to false", LogLevel.Debug);
+        //smcLog.WriteLog("StreamedMPConfig: Setting all Update Indicator Values to false", LogLevel.Debug);
         SetProperty("#StreamedMP.UpdateAvailable", "false");
         SetProperty("#StreamedMP.ShowUpdateInd", "false");
         SetProperty("#StreamedMP.ShowSettingsUpdateInd", "false");
