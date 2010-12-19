@@ -28,12 +28,87 @@ namespace SMPMediaPortalRestart
     {
       // The Parameter we need is in postion 1, assume MediaPortal not starting in fullscreen
       bool weIsFullscreen = false;
-        string[] args = Environment.GetCommandLineArgs();
-        if (args.Length >= 2)
+      bool isRestartingMp = true; // By default MP will restart
+      bool isUpgrading = false; // By default SMP is not upgrading
+      bool isUpgradingUnattented = false; // By default silent upgrade is off
+      string upgradePath = string.Empty;
+      
+      string[] args = Environment.GetCommandLineArgs();
+      
+      // Argument structure (can be used in conjuction but in specific order):
+      //    /upgrade {FileNameToExecute} [/unattended]
+      //        Performs upgrade of MP. Executes the [FileNameToExecute] with unattended option if specified
+      //    /restartmp [{true|false}] [{splashScreenImage}]
+      //        Restarts MP in fullscreen or not with a specified splashscreen
+
+      if (args.Length > 0)
+      {
+        int currentArgumentIndex = 1;
+        isRestartingMp = false; // There are command line arguments, by default MP will not restart
+        
+        if (args[currentArgumentIndex++] == "/upgrade")
         {
-          weIsFullscreen = bool.Parse(args[1]);
-          splashScreenImage = args[2];
+          isUpgrading = true;
+          upgradePath = args[currentArgumentIndex++];
+          
+          if (args.Length > currentArgumentIndex)
+          {
+            if (args[currentArgumentIndex++] == "/unattended")
+            {
+              isUpgradingUnattented = true;
+            }
+          }
         }
+        else
+        {
+            currentArgumentIndex--;
+        }
+
+        if (args.Length > currentArgumentIndex)
+        {
+          if (args[currentArgumentIndex++] == "/restartmp")
+          {
+            isRestartingMp = true;
+            
+            if (args.Length > currentArgumentIndex)
+            {
+              bool.TryParse(args[currentArgumentIndex++], out weIsFullscreen);
+              
+              if (args.Length > currentArgumentIndex)
+              {
+                splashScreenImage = args[currentArgumentIndex++];
+              }
+            }
+          }
+        }
+      }
+      
+      if (isUpgrading && !string.IsNullOrEmpty(upgradePath))
+      {
+        ProcessStartInfo upgradeProcess = new ProcessStartInfo(upgradePath);
+        upgradeProcess.WorkingDirectory = Path.GetDirectoryName(upgradePath);
+        if (isUpgradingUnattented) upgradeProcess.Arguments = " /unattended";
+        Process p = System.Diagnostics.Process.Start(upgradeProcess);   // Kick off an elevated process. Our process remains un-elevated to restart MP !!
+        int dontWaitForeverCounter = 300; // 10 minutes are enough
+
+        while (!p.HasExited)
+	    {
+	      p.WaitForExit(2000);
+          dontWaitForeverCounter--;
+          
+          if (dontWaitForeverCounter < 0)
+          {
+            break;
+          }
+	    }
+
+        if (dontWaitForeverCounter <= 0)
+        {
+            Application.Exit(); // users will probably restart mp themshelves after 10 minutes
+        }
+      }
+      
+      if (!isRestartingMp) Application.Exit();
       
       pbSplashScreen.Image = Image.FromFile(splashScreenImage);
 

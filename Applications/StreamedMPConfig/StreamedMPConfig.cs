@@ -46,7 +46,7 @@ namespace StreamedMPConfig
     public string[] mostMovPicsRecentsWatched = new string[3];    
     //Declare Timer for use with Most Recent TVSeries/Movies
     System.Windows.Forms.Timer mrTimer = new System.Windows.Forms.Timer();
-    static settings smpSettings = new settings();
+    internal static settings smpSettings = new settings();
     SkinInfo skInfo = new SkinInfo();
     
     public static List<int> mostRecentEpisodeControlIDs = new List<int>();
@@ -1132,7 +1132,8 @@ namespace StreamedMPConfig
     {
       string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
       ProcessStartInfo processStart = new ProcessStartInfo(restartExe);
-      processStart.Arguments = smpSettings.mpSetAsFullScreen ? "true" : "false";
+      processStart.Arguments = @"/restartmp ";
+      processStart.Arguments += smpSettings.mpSetAsFullScreen ? "true" : "false";
       processStart.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
 
       smcLog.WriteLog("SMPMediaPortalRestart Parameter: " + processStart.Arguments, LogLevel.Info);
