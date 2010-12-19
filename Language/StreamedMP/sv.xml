@@ -2,7 +2,7 @@
 <!-- StreamedMP translation file -->
 <!-- Swedish (SV) -->
 <!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Last Updated: 19th Novemeber 2010 -->
+<!-- Last Updated: 20th December 2010 -->
 <strings>
   <!-- Example user defined translation property                                       -->
   <!-- Field name must start with a '#'. The entry below creates the skin property     -->
@@ -18,14 +18,15 @@
   <string Field="MusicMenu">Musikinställningar</string>
   <string Field="VideoMenu">Videoinställningar</string>
   <string Field="SkinUpdate">Skin-uppdatering</string>
-  <string Field="MiscMenu">Övriga inställningar</string>
-  <string Field="TVSeriesMenu">TV Serie-inställningar</string>
-  <string Field="MovingPicturesMenu">MovingPictures-inställningar</string>
+	<string Field="TVSeriesMenu">TV Serie-inställningar</string>
+	<string Field="MovingPicturesMenu">MovingPictures-inställningar</string>
   <string Field="TVMenu">TV-inställningar</string>
+  <string Field="MiscMenu">Övriga inställningar</string>    
   <string Field="SkinSettings">Skin-inställningar</string>
+	<string Field="SkinInfoText">Skin Information</string>
   <string Field="ConfigRequiresRestartLine1">Följande konfigurations-inställningar kommer</string>
   <string Field="ConfigRequiresRestartLine2">att slå igenom vid nästa omstart av MediaPortal.</string>
-  <string Field="ConfigRequiresRestartLine3">Would you like to restart now?</string>
+  <string Field="ConfigRequiresRestartLine3">Vill du starta om nu?</string>
   <!-- Skin Updates / Patching GUI -->
   <string Field="UpdateInstall">Uppdatera och installera</string>
   <string Field="NoUpdatesAvailable">Inga patchar finns för närvarande</string>
@@ -77,29 +78,30 @@
   <string Field="ShowIconsInArtwork">Visa ikoner för sedd/ej sedd</string>
   <string Field="PlayMostRecents">Enable Play Action for Most Recents</string>
   <string Field="FilterWatchedRecents">Filtrera bort redan sedda avsnitt från Senast tillagda</string>
-  <string Field="UnfocusedAlpha">Transparency/Opacity Settings</string>
-  <string Field="UnfocusedAlphaMenuLists">Unfocused Alpha on List Layouts: {0}</string>
-  <string Field="UnfocusedAlphaMenuThumbs">Unfocused Alpha on Thumb Layouts: {0}</string>
-  <string Field="UnfocusedAlphaInvalidLine1">Invalid value entered, please enter a value</string>
-  <string Field="UnfocusedAlphaInvalidLine2">between 0 - 255.</string>  
-  <string Field="UnfocusedAlphaInvalidLine3">Opaque = 255, Transparent = 0</string>
-  <string Field="UseLargeFonts">Use Large Fonts</string>
-  <string Field="RestoreDefaults">Restore Defaults</string>
-  <string Field="ListColors">Set List Colors</string>
-  <string Field="ListDefaultColor">Default Color: {0}</string>
-  <string Field="ListText2Color">Text 2 Color: {0}</string>
-  <string Field="ListText3Color">Text 3 Color: {0}</string>
-  <string Field="ListWatchedColor">Watched Color: {0}</string>
-  <string Field="ListRemoteColor">Remote Color: {0}</string>
-  <string Field="ListColorInvalidLine1">Invalid color code entered, please enter a</string>
-  <string Field="ListColorInvalidLine2">valid HEX code e.g. the color red is FF0000.</string>
-  <string Field="ListColorInvalidLine3">which is '255' red, '0' green, and '0' blue.</string>
+  <string Field="UnfocusedAlpha">Inställningar för transparens/opacitet</string>
+  <string Field="UnfocusedAlphaMenuLists">Alfanivå för ej fokuserade objekt i list-vyer: {0}</string>
+  <string Field="UnfocusedAlphaMenuThumbs">Alfanivå för ej fokuserade objekt i miniatyrbildslayouter: {0}</string>
+  <string Field="UnfocusedAlphaInvalidLine1">Ogiltigt värde, använd ett värde</string>
+  <string Field="UnfocusedAlphaInvalidLine2">mellan 0 - 255.</string>  
+  <string Field="UnfocusedAlphaInvalidLine3">Opacitet = 255, Transparens = 0</string>
+  <string Field="UseLargeFonts">Använd stora typsnitt</string>
+  <string Field="RestoreDefaults">Återställ inställningar</string>
+  <string Field="ListColors">Välj listornas färger</string>
+  <string Field="ListDefaultColor">Ursprunglig färg: {0}</string>
+  <string Field="ListText2Color">Text 2 färg: {0}</string>
+  <string Field="ListText3Color">Text 3 färg: {0}</string>
+  <string Field="ListWatchedColor">Färg för sedd/visad: {0}</string>
+  <string Field="ListRemoteColor">Färg för icke lokalt objekt: {0}</string>
+  <string Field="ListColorInvalidLine1">Ogiltig färg vald, ställ in ett</string>
+  <string Field="ListColorInvalidLine2">giltigt HEX-värde exempelvis. RÖD som blir FF0000.</string>
+  <string Field="ListColorInvalidLine3">innehållande '255' av röd, '0'  av grön och '0' av blå.</string>
   <string Field="CustomColor">Custom Color</string>
   <!-- General Translations -->
   <string Field="Rated">Ratad</string>
   <string Field="Director">Regissör</string>
   <string Field="ReleaseDate">Utkomstdatum</string>
   <string Field="Runtime">Speltid</string>
+	<string Field="Votes">votes</string>
   <string Field="Trailer">Trailer</string>
   <!-- Global Search -->
   <string Field="SearchMusic">Sök Musik</string>
