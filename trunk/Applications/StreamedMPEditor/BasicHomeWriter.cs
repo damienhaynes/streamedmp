@@ -1769,7 +1769,7 @@ namespace StreamedMPEditor
         else
           rawXML.Append("</visible>");
 
-        if (validForMPVersion("1.1.6.0"))
+        if (validForMPVersion("1.1.5.0"))
           rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
 
         rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
@@ -1814,7 +1814,7 @@ namespace StreamedMPEditor
           else
             rawXML.Append("]+control.isvisible(91919298)</visible>");
 
-          if (validForMPVersion("1.1.6.0"))
+          if (validForMPVersion("1.1.5.0"))
             rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
@@ -1860,7 +1860,7 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919295)</visible>");
-          if (validForMPVersion("1.1.6.0"))
+          if (validForMPVersion("1.1.5.0"))
             rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
@@ -1899,7 +1899,7 @@ namespace StreamedMPEditor
               rawXML.Append("|control.isvisible(" + item.ids[i] + ")");
           }
           rawXML.Append("]+Player.HasMedia+control.isvisible(91919296)</visible>");
-          if (validForMPVersion("1.1.6.0"))
+          if (validForMPVersion("1.1.5.0"))
             rawXML.AppendLine("<animation effect=\"fade\"  start=\"100\" end=\"0\" time=\"600\" reversible=\"false\">Hidden</animation>");
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
