@@ -130,12 +130,23 @@ namespace StreamedMPConfig
                   //Lets run it
                   if (File.Exists(optionDownloadPath))
                   {
-                    ProcessStartInfo upgradeProcess = new ProcessStartInfo(optionDownloadPath);
-                    upgradeProcess.WorkingDirectory = Path.GetDirectoryName(optionDownloadPath);
+                    string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
+                    ProcessStartInfo upgradeProcess = new ProcessStartInfo(restartExe);
+                    upgradeProcess.UseShellExecute = false;
+                    upgradeProcess.WorkingDirectory = Path.GetDirectoryName(restartExe);
+                    upgradeProcess.Arguments = string.Concat("/upgrade \"", optionDownloadPath, "\"");
+
                     if (StreamedMPConfig.patchUtilityRunUnattended)
-                      upgradeProcess.Arguments = " /unattended";
+                    {
+                      upgradeProcess.Arguments += " /unattended";
+                    }
+                    
                     if (StreamedMPConfig.patchUtilityRestartMP)
-                      upgradeProcess.Arguments += " /restartmp";
+                    {
+                      upgradeProcess.Arguments += " /restartmp ";
+                      upgradeProcess.Arguments += StreamedMPConfig.smpSettings.mpSetAsFullScreen ? "true" : "false";
+                      upgradeProcess.Arguments += " \"" + Path.Combine(Path.Combine(SkinInfo.mpPaths.streamedMPpath, "Media"), "splashscreen.png") + "\"";
+                    }
 
                     // signal to next run that we have applied update and settings need updating
                     StreamedMPConfig.patchAppliedLastRun = true;
