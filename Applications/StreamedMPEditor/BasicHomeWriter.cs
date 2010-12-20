@@ -410,7 +410,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("<visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)</visible>");
+      rawXML.AppendLine("<visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)+!Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("</control>");
       if (enableRssfeed.Checked)
       {
@@ -652,10 +652,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>Exit Label</description>");
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>340</width>");
       rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<posY>435</posY>");
-      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<posX>640</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalExit</label>");
@@ -666,10 +665,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>Restart Label</description>");
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>340</width>");
       rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<posY>435</posY>");
-      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<posX>640</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalRestart</label>");
@@ -680,10 +678,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>Shutdown Label</description>");
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>340</width>");
       rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<posY>435</posY>");
-      rawXML.AppendLine("<posX>513</posX>");
+      rawXML.AppendLine("<posX>640</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalShutDownMenu</label>");
@@ -691,22 +688,35 @@ namespace StreamedMPEditor
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Settings Label</description>");
+      rawXML.AppendLine("<type>label</type>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<height>60</height>");
+      rawXML.AppendLine("<posY>435</posY>");
+      rawXML.AppendLine("<posX>640</posX>");
+      rawXML.AppendLine("<align>center</align>");
+      rawXML.AppendLine("<font>mediastream12tc</font>");
+      rawXML.AppendLine("<label>MediaPortal Settings</label>");
+      rawXML.AppendLine("<visible>Control.HasFocus(79999)</visible>");
+      rawXML.AppendLine("</control>");
+
+      rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Shutdown menu hbar</description>");
       rawXML.AppendLine("<type>image</type>");
       rawXML.AppendLine("<id>1</id>");
-      rawXML.AppendLine("<posX>485</posX>");
+      rawXML.AppendLine("<posX>385</posX>");
       rawXML.AppendLine("<posY>335</posY>");
-      rawXML.AppendLine("<width>381</width>");
+      rawXML.AppendLine("<width>511</width>");
       rawXML.AppendLine("<height>1</height>");
       rawXML.AppendLine("<texture>hbar1white.png</texture>");
-      rawXML.AppendLine("<visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>");
+      rawXML.AppendLine("<visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)|Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("\t\t\t<description>Exit Button</description>");
       rawXML.AppendLine("\t\t\t<type>button</type>");
       rawXML.AppendLine("\t\t\t<id>7777</id>");
-      rawXML.AppendLine("\t\t\t<posX>493</posX>");
+      rawXML.AppendLine("\t\t\t<posX>390</posX>");
       rawXML.AppendLine("\t\t\t<posY>350</posY>");
       rawXML.AppendLine("\t\t\t<onleft>" + (menuItems[basicHomeValues.defaultId].id + 900).ToString() + "</onleft>");
       rawXML.AppendLine("\t\t\t<onright>7888</onright>");
@@ -726,7 +736,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<description>Restart Button</description>");
       rawXML.AppendLine("\t\t\t<type>button</type>");
       rawXML.AppendLine("\t\t\t<id>7888</id>");
-      rawXML.AppendLine("\t\t\t<posX>633</posX>");
+      rawXML.AppendLine("\t\t\t<posX>530</posX>");
       rawXML.AppendLine("\t\t\t<posY>350</posY>");
       rawXML.AppendLine("\t\t\t<onleft>7777</onleft>");
       rawXML.AppendLine("\t\t\t<onright>7999</onright>");
@@ -746,15 +756,35 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<description>Shutdown Button</description>");
       rawXML.AppendLine("\t\t\t<type>button</type>");
       rawXML.AppendLine("\t\t\t<id>7999</id>");
-      rawXML.AppendLine("\t\t\t<posX>773</posX>");
+      rawXML.AppendLine("\t\t\t<posX>670</posX>");
       rawXML.AppendLine("\t\t\t<posY>350</posY>");
       rawXML.AppendLine("\t\t\t<onleft>7888</onleft>");
-      rawXML.AppendLine("\t\t\t<onright>17</onright>");
+      rawXML.AppendLine("\t\t\t<onright>79999</onright>");
       rawXML.AppendLine("\t\t\t<width>80</width>");
       rawXML.AppendLine("\t\t\t<height>80</height>");
       rawXML.AppendLine("\t\t\t<textureNoFocus>shutdown_button.png</textureNoFocus>");
       rawXML.AppendLine("\t\t\t<textureFocus>shutdown_button.png</textureFocus>");
       rawXML.AppendLine("\t\t\t<action>99</action>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+      rawXML.AppendLine("\t\t</control>");
+
+      rawXML.AppendLine("\t\t<control>");
+      rawXML.AppendLine("\t\t\t<description>Settings Button</description>");
+      rawXML.AppendLine("\t\t\t<type>button</type>");
+      rawXML.AppendLine("\t\t\t<id>79999</id>");
+      rawXML.AppendLine("\t\t\t<posX>810</posX>");
+      rawXML.AppendLine("\t\t\t<posY>350</posY>");
+      rawXML.AppendLine("\t\t\t<onleft>7999</onleft>");
+      rawXML.AppendLine("\t\t\t<onright>17</onright>");
+      rawXML.AppendLine("\t\t\t<width>80</width>");
+      rawXML.AppendLine("\t\t\t<height>80</height>");
+      rawXML.AppendLine("\t\t\t<textureNoFocus>settings_button.png</textureNoFocus>");
+      rawXML.AppendLine("\t\t\t<textureFocus>settings_button.png</textureFocus>");
+      rawXML.AppendLine("\t\t\t<hyperlink>4</hyperlink>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
@@ -772,7 +802,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<height>720</height>");
       rawXML.AppendLine("\t\t\t<texture>tv_black.png</texture>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>");
+      rawXML.AppendLine("\t\t\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("\t\t</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE OLD STYLE -->", rawXML.ToString());
@@ -790,6 +820,7 @@ namespace StreamedMPEditor
       string exitIsVisible = null;
       string restartIsVisible = null;
       string shutdownIsVisible = null;
+      string settingsIsVisible = null; 
       int i = 0;
 
       foreach (menuItem menItem in menuItems)
@@ -806,7 +837,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>500</width>");
         rawXML.AppendLine("<height>0</height>");
         rawXML.AppendLine("<label>" + menItem.name + "</label>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
         // group the buttons
         rawXML.AppendLine("<control><description>Topbar buttons " + menItem.name + "</description>");
@@ -817,7 +848,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>Exit Button: Menu Item:" + menItem.name + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "01</id>");
-        rawXML.AppendLine("<posX>150</posX>");
+        rawXML.AppendLine("<posX>100</posX>");
         rawXML.AppendLine("<posY>640</posY>");
         rawXML.AppendLine("<onleft>" + (menItem.id + 900).ToString() + "</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "02" + "</onright>");
@@ -841,7 +872,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>Restart Button: Menu Item:" + menItem.name + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "02</id>");
-        rawXML.AppendLine("<posX>220</posX>");
+        rawXML.AppendLine("<posX>160</posX>");
         rawXML.AppendLine("<posY>640</posY>");
         rawXML.AppendLine("<onleft>" + topMenuId + "01" + "</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "03" + "</onright>");
@@ -866,10 +897,10 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>Shutdown Button: Menu Item:" + menItem.name + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "03</id>");
-        rawXML.AppendLine("<posX>290</posX>");
+        rawXML.AppendLine("<posX>210</posX>");
         rawXML.AppendLine("<posY>640</posY>");
         rawXML.AppendLine("<onleft>" + topMenuId + "02</onleft>");
-        rawXML.AppendLine("<onright>" + topMenuId + "01</onright>");
+        rawXML.AppendLine("<onright>" + topMenuId + "04</onright>");
         rawXML.AppendLine("<onup>" + (menItem.id + 900).ToString() + "</onup>");
         rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<width>40</width>");
@@ -881,23 +912,54 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
         rawXML.AppendLine("</control>");
+        if (menuItems.Count == i)
+          shutdownIsVisible += "Control.HasFocus(" + topMenuId + "03)";
+        else
+          shutdownIsVisible += "Control.HasFocus(" + topMenuId + "03)|";
+
+        // Settings Button
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Settings Button: Menu Item:" + menItem.name + "</description>");
+        rawXML.AppendLine("<type>button</type>");
+        rawXML.AppendLine("<id>" + topMenuId + "04</id>");
+        rawXML.AppendLine("<posX>270</posX>");
+        rawXML.AppendLine("<posY>640</posY>");
+        rawXML.AppendLine("<onleft>" + topMenuId + "03</onleft>");
+        rawXML.AppendLine("<onright>" + topMenuId + "01</onright>");
+        rawXML.AppendLine("<onup>" + (menItem.id + 900).ToString() + "</onup>");
+        rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
+        rawXML.AppendLine("<width>40</width>");
+        rawXML.AppendLine("<height>40</height>");
+        rawXML.AppendLine("<textureNoFocus>settings_button.png</textureNoFocus>");
+        rawXML.AppendLine("<textureFocus>settings_button.png</textureFocus>");
+        rawXML.AppendLine("<hyperlink>4</hyperlink>");
+        rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
+        rawXML.AppendLine("</control>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowOpen</animation>");
         rawXML.AppendLine("<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("</control>");
         if (menuItems.Count == i)
-          shutdownIsVisible += "Control.HasFocus(" + topMenuId + "03)";
+          settingsIsVisible += "Control.HasFocus(" + topMenuId + "04)";
         else
-          shutdownIsVisible += "Control.HasFocus(" + topMenuId + "03)|";
+          settingsIsVisible += "Control.HasFocus(" + topMenuId + "04)|";
+
+
+
       }
+
+
+
       // Exit Label
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Exit Label</description>");
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>200</width>");
+      rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>60</height>");
-      rawXML.AppendLine("<posY>590</posY>");
+      rawXML.AppendLine("<posY>100</posY>");
       rawXML.AppendLine("<posX>140</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
@@ -909,10 +971,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>Restart Label</description>");
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>200</width>");
+      rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<posY>590</posY>");
-      rawXML.AppendLine("<posX>140</posX>");
+      rawXML.AppendLine("<posX>100</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalRestart</label>");
@@ -923,26 +985,40 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>Shutdown Label</description>");
       rawXML.AppendLine(" <type>label</type>");
       rawXML.AppendLine("<id>0</id>");
-      rawXML.AppendLine("<width>200</width>");
+      rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>60</height>");
       rawXML.AppendLine("<posY>590</posY>");
-      rawXML.AppendLine("<posX>140</posX>");
+      rawXML.AppendLine("<posX>100</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalShutDownMenu</label>");
       rawXML.AppendLine("<visible>" + shutdownIsVisible + "</visible>");
+      rawXML.AppendLine("</control>");
+      // Settings Label
+      rawXML.AppendLine("<control>");
+      rawXML.AppendLine("<description>Settings Label</description>");
+      rawXML.AppendLine(" <type>label</type>");
+      rawXML.AppendLine("<id>0</id>");
+      rawXML.AppendLine("<width>210</width>");
+      rawXML.AppendLine("<height>60</height>");
+      rawXML.AppendLine("<posY>590</posY>");
+      rawXML.AppendLine("<posX>100</posX>");
+      rawXML.AppendLine("<align>center</align>");
+      rawXML.AppendLine("<font>mediastream10tc</font>");
+      rawXML.AppendLine("<label>Settings</label>");
+      rawXML.AppendLine("<visible>" + settingsIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
       // Seperator Bar
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Shutdown menu hbar</description>");
       rawXML.AppendLine("<type>image</type>");
       rawXML.AppendLine("<id>1</id>");
-      rawXML.AppendLine("<posX>140</posX>");
+      rawXML.AppendLine("<posX>100</posX>");
       rawXML.AppendLine("<posY>630</posY>");
-      rawXML.AppendLine("<width>200</width>");
+      rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>1</height>");
       rawXML.AppendLine("<texture>hbar1white.png</texture>");
-      rawXML.AppendLine("<visible>" + exitIsVisible + "|" + restartIsVisible + "|" + shutdownIsVisible + "</visible>");
+      rawXML.AppendLine("<visible>" + exitIsVisible + "|" + restartIsVisible + "|" + shutdownIsVisible + "|" + settingsIsVisible + "</visible>");
       rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE -->", rawXML.ToString());
@@ -973,7 +1049,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>500</width>");
         rawXML.AppendLine("<height>0</height>");
         rawXML.AppendLine("<label>" + menItem.name + "</label>");
-        rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
       }
 
@@ -1014,55 +1090,65 @@ namespace StreamedMPEditor
         {
           rawXML.AppendLine("<texture>3buttonbar.png</texture>");
         }
-        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
 
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
-        rawXML.AppendLine("<posX>545</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
-        rawXML.AppendLine("<height>50</height>");
-        rawXML.AppendLine("<width>50</width>");
-        rawXML.AppendLine("<texture>restart_button.png</texture>");
-        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
-        rawXML.AppendLine("</control>");
-
-        rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<type>image</type>");
-        rawXML.AppendLine("<id>0</id>");
-        rawXML.AppendLine("<posX>615</posX>");
+        rawXML.AppendLine("<posX>510</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>exit_button.png</texture>");
-        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
 
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
-        rawXML.AppendLine("<posX>685</posX>");
+        rawXML.AppendLine("<posX>580</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<height>50</height>");
+        rawXML.AppendLine("<width>50</width>");
+        rawXML.AppendLine("<texture>restart_button.png</texture>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
+        rawXML.AppendLine("</control>");
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<id>0</id>");
+        rawXML.AppendLine("<posX>650</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>shutdown_button.png</texture>");
-        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)</visible>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
 
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<type>image</type>");
+        rawXML.AppendLine("<id>0</id>");
+        rawXML.AppendLine("<posX>720</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<height>50</height>");
+        rawXML.AppendLine("<width>50</width>");
+        rawXML.AppendLine("<texture>settings_button.png</texture>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
+        rawXML.AppendLine("</control>");
 
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>BasicHome button button</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "01</id>");
-        rawXML.AppendLine("<posX>545</posX>");
+        rawXML.AppendLine("<posX>510</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
-        rawXML.AppendLine("<textureFocus>restart_button.png</textureFocus>");
+        rawXML.AppendLine("<textureFocus>exit_button.png</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<label>-</label>");
-        rawXML.AppendLine("<action>196250</action> ");
+        rawXML.AppendLine("<action>97</action> ");
         rawXML.AppendLine("<onleft>" + topMenuId + "03</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "02</onright>");
         rawXML.AppendLine("<onup>" + topMenuId + "01</onup>");
@@ -1077,14 +1163,14 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>Exit button</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "02</id>");
-        rawXML.AppendLine("<posX>615</posX>");
+        rawXML.AppendLine("<posX>580</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
-        rawXML.AppendLine("<textureFocus>exit_button.png</textureFocus>");
+        rawXML.AppendLine("<textureFocus>restart_button.png</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<label>-</label>");
-        rawXML.AppendLine("<action>97</action>");
+        rawXML.AppendLine("<action>196250</action>");
         rawXML.AppendLine("<onleft>" + topMenuId + "01</onleft>");
         rawXML.AppendLine("<onright>" + topMenuId + "03</onright>");
         rawXML.AppendLine("<onup>" + topMenuId + "02</onup>");
@@ -1099,7 +1185,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>Shutdown button</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "03</id>");
-        rawXML.AppendLine("<posX>685</posX>");
+        rawXML.AppendLine("<posX>650</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
@@ -1108,7 +1194,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<label>-</label>");
         rawXML.AppendLine("<action>99</action>");
         rawXML.AppendLine("<onleft>" + topMenuId + "02</onleft>");
-        rawXML.AppendLine("<onright>" + topMenuId + "01</onright>");
+        rawXML.AppendLine("<onright>" + topMenuId + "04</onright>");
         rawXML.AppendLine("<onup>" + topMenuId + "03</onup>");
         rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
         rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
@@ -1117,6 +1203,30 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
         rawXML.AppendLine("</control>");
         rawXML.AppendLine("<animation effect=\"slide\" start=\"0,-" + basicHomeValues.Button3Slide.ToString() + "\" time=\"600\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>");
+
+        rawXML.AppendLine("<control>");
+        rawXML.AppendLine("<description>Shutdown button</description>");
+        rawXML.AppendLine("<type>button</type>");
+        rawXML.AppendLine("<id>" + topMenuId + "04</id>");
+        rawXML.AppendLine("<posX>720</posX>");
+        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<width>50</width>");
+        rawXML.AppendLine("<height>50</height>");
+        rawXML.AppendLine("<textureFocus>settings_button.png</textureFocus>");
+        rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
+        rawXML.AppendLine("<label>-</label>");
+        rawXML.AppendLine("<hyperlink>4</hyperlink>");
+        rawXML.AppendLine("<onleft>" + topMenuId + "03</onleft>");
+        rawXML.AppendLine("<onright>" + topMenuId + "01</onright>");
+        rawXML.AppendLine("<onup>" + topMenuId + "04</onup>");
+        rawXML.AppendLine("<ondown>" + (menItem.id + 900).ToString() + "</ondown>");
+        rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "1,1" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " tween=" + quote + "back" + quote + " ease=" + quote + "out" + quote + ">WindowOpen</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
+        rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")</visible>");
+        rawXML.AppendLine("</control>");
+        rawXML.AppendLine("<animation effect=\"slide\" start=\"0,-" + basicHomeValues.Button3Slide.ToString() + "\" time=\"600\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>");
+
 
         rawXML.AppendLine("</control> <!-- /Topbar buttons " + menItem.name + " -->");
       }
