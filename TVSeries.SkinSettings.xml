@@ -8,7 +8,7 @@
 		IMPORTANT: Ensure that all settings are wrapped in a CDATA type otherwise this docment will not get parsed as proper XML.
 	-->
   <!-- version may be useful for logging purposes and/or future upgrades -->
-  <version>1.3.1.0</version>
+  <version>1.4.0.0</version>
   <!-- Skin Defines -->
   <defines>
     <property key="blah">false</property>
@@ -70,8 +70,8 @@
   </videoplayimages>
   <layouts>
     <group List="true" SmallIcons="false" />
-    <series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true" />
-    <season List="true" Filmstrip="true" />
+    <series ListPosters="true" ListBanners="true" Filmstrip="true" WideBanners="true" Coverflow="true" />
+    <season List="true" Filmstrip="true" Coverflow="true" />
     <episode List="true" />
   </layouts>
   <views import="true" AppendlmageToList="false">
@@ -191,8 +191,10 @@ skin\StreamedMP\Media\Logos\Misc\SUBTITLES.png;-;<Episode.AvailableSubtitles>;-;
   <graphicsquality import="true">
     <seriesbanners>60</seriesbanners>
     <seriesposters>20</seriesposters>
+    <seriescoverflow>40</seriescoverflow>
     <!-- 20% for Default, 35% for Fanart style-->
     <seasonbanners>75</seasonbanners>
+    <seasoncoverflow>90</seasoncoverflow>
     <episodethumbs>90</episodethumbs>
   </graphicsquality>
 </settings>

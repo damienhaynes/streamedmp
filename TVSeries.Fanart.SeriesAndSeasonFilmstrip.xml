@@ -49,18 +49,7 @@
       <texture>#TVSeries.Series.FiveStarPath</texture>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Rating Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
-      <posX>844</posX>
-      <posY>457</posY>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
@@ -69,19 +58,7 @@
       <posY>456</posY>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Rating Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
-      <posX>844</posX>
-      <posY>457</posY>
-      <textcolor>#shadow.light</textcolor>
-      <width>300</width>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
@@ -91,18 +68,7 @@
       <width>300</width>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Rating Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
-      <posX>844</posX>
-      <posY>457</posY>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
@@ -111,18 +77,7 @@
       <posY>456</posY>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Rating Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value</label>
-      <posX>844</posX>
-      <posY>457</posY>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
@@ -131,18 +86,7 @@
       <posY>456</posY>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>Rating Shadow</description>
-      <id>0</id>
-      <type>label</type>
-      <label>N/A</label>
-      <posX>844</posX>
-      <posY>457</posY>
-      <textcolor>#shadow.light</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(5555)+!control.isvisible(5556)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
@@ -151,19 +95,7 @@
       <posY>456</posY>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(5555)+!control.isvisible(5556)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>DataPanelLine1Key SHADOW</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine1Key</label>
-      <posX>687</posX>
-      <posY>481</posY>
-      <width>145</width>
-      <textcolor>shadow.dark</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <id>0</id>
       <type>label</type>
@@ -183,19 +115,7 @@
       <width>410</width>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>DataPanelLine2Key SHADOW</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine2Key</label>
-      <posX>687</posX>
-      <posY>506</posY>
-      <width>145</width>
-      <textcolor>shadow.dark</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <id>0</id>
       <type>label</type>
@@ -215,19 +135,7 @@
       <width>410</width>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>DataPanelLine5Key SHADOW</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine5Key</label>
-      <posX>567</posX>
-      <posY>531</posY>
-      <width>145</width>
-      <textcolor>shadow.dark</textcolor>
-      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control Style="smallTitleB">
       <id>0</id>
       <type>label</type>
