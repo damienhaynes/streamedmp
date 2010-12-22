@@ -648,6 +648,20 @@ namespace StreamedMPEditor
       StringBuilder rawXML = new StringBuilder();
       const string quote = "\"";
 
+      rawXML.AppendLine("\t\t<control>");
+      rawXML.AppendLine("\t\t\t<description>Icon Fix</description>");
+      rawXML.AppendLine("\t\t\t<id>0</id>");
+      rawXML.AppendLine("\t\t\t<type>image</type>");
+      rawXML.AppendLine("\t\t\t<posx>0</posx>");
+      rawXML.AppendLine("\t\t\t<posy>0</posy>");
+      rawXML.AppendLine("\t\t\t<width>1280</width>");
+      rawXML.AppendLine("\t\t\t<height>720</height>");
+      rawXML.AppendLine("\t\t\t<texture>minimenubg.png</texture>");
+      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
+      rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(7777)|Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(79999)</visible>");
+      rawXML.AppendLine("\t\t</control>");
+
+
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>Exit Label</description>");
       rawXML.AppendLine("<type>label</type>");
@@ -790,19 +804,6 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " time=" + quote + "400" + quote + ">WindowClose</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "100,100" + quote + " end=" + quote + "125,125" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">focus</animation>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "zoom" + quote + " start=" + quote + "125,125" + quote + " end=" + quote + "100,100" + quote + " center=" + quote + "0,0" + quote + " time=" + quote + "400" + quote + " acceleration=" + quote + "-0.9" + quote + " reversible=" + quote + "false" + quote + ">unfocus</animation>");
-      rawXML.AppendLine("\t\t</control>");
-
-      rawXML.AppendLine("\t\t<control>");
-      rawXML.AppendLine("\t\t\t<description>Icon Fix</description>");
-      rawXML.AppendLine("\t\t\t<id>0</id>");
-      rawXML.AppendLine("\t\t\t<type>image</type>");
-      rawXML.AppendLine("\t\t\t<posx>0</posx>");
-      rawXML.AppendLine("\t\t\t<posy>0</posy>");
-      rawXML.AppendLine("\t\t\t<width>1280</width>");
-      rawXML.AppendLine("\t\t\t<height>720</height>");
-      rawXML.AppendLine("\t\t\t<texture>minimenubg.png</texture>");
-      rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("\t\t</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED TOPBAR CODE OLD STYLE -->", rawXML.ToString());
