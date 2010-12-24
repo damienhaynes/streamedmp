@@ -252,6 +252,7 @@ namespace StreamedMPEditor
         cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
         cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
         cbUpdateControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
+        cbDisableExitMenu.Checked = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
       }
       catch
       {

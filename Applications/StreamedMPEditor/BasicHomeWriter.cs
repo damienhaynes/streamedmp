@@ -4013,6 +4013,7 @@ namespace StreamedMPEditor
       string powerControlEnabled = cbPowerControlOverlay.Checked ? "true" : "false";
       string htpcinfoControlEnabled = cbHtpcInfoOverlay.Checked ? "true" : "false";
       string updateControlEnabled = cbUpdateControlOverlay.Checked ? "true" : "false";
+      string disableExitMenu = cbDisableExitMenu.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -4156,6 +4157,7 @@ namespace StreamedMPEditor
                 + generateEntry("powerControlEnabled", powerControlEnabled, 3, true)
                 + generateEntry("htpcinfoControlEnabled", htpcinfoControlEnabled, 3, true)
                 + generateEntry("updateControlEnabled", updateControlEnabled, 3, true)
+                + generateEntry("disableExitMenu", disableExitMenu, 3, true)
                 + "\t\t</section>");
 
 
