@@ -1346,7 +1346,9 @@ namespace StreamedMPEditor
 
       if (direction == menuType.horizontal)
       {
-        generateTopBarH();
+        if (!cbDisableExitMenu.Checked)
+          generateTopBarH();
+
         generateMenuGraphicsH();
         
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
@@ -1359,10 +1361,13 @@ namespace StreamedMPEditor
       }
       else if (direction == menuType.vertical)
       {
-        if (!cbExitStyleNew.Checked)
-          generateTopBarV1();
-        else
-          generateTopBarV();
+        if (!cbDisableExitMenu.Checked)
+        {
+          if (!cbExitStyleNew.Checked)
+            generateTopBarV1();
+          else
+            generateTopBarV();
+        }
 
         generateMenuGraphicsV();
         generateCrowdingFixV();

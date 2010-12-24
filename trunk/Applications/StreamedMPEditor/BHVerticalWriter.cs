@@ -90,19 +90,36 @@ namespace StreamedMPEditor
             if (cbExitStyleNew.Checked)
               rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
             else
-              rawXML.AppendLine("<onleft>7777</onleft>");
-          }
+            {
+              if (cbDisableExitMenu.Checked)
+                rawXML.AppendLine("<onleft>" + (menItem.id + 700).ToString() + "</onleft>");
+              else
+                rawXML.AppendLine("<onleft>7777</onleft>");
+            }
+            }
           else
           {
             if (!cbExitStyleNew.Checked)
             {
-              rawXML.AppendLine("<onright>7777</onright>");
-              rawXML.AppendLine("<onleft>7777</onleft>");
+              if (cbDisableExitMenu.Checked)
+              {
+                rawXML.AppendLine("<onright>" + (menItem.id + 700).ToString() + "</onright>");
+                rawXML.AppendLine("<onleft>" + (menItem.id + 700).ToString() + "</onleft>");
+              }
+              else
+              {
+                rawXML.AppendLine("<onright>7777</onright>");
+                rawXML.AppendLine("<onleft>7777</onleft>");
+              }
             }
             else
             {
               rawXML.AppendLine("<onright>" + (menItem.id + 700).ToString() + "</onright>");
-              rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+
+              if (cbDisableExitMenu.Checked)
+                rawXML.AppendLine("<onleft>" + (menItem.id + 700).ToString() + "</onleft>");
+              else
+                rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
             }
           }
           rawXML.AppendLine("<onup>" + (onup + 800).ToString() + "</onup>");
@@ -164,19 +181,34 @@ namespace StreamedMPEditor
             if (cbExitStyleNew.Checked)
               rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
             else
-              rawXML.AppendLine("<onleft>7777</onleft>");
+            {
+              if (cbDisableExitMenu.Checked)
+                rawXML.AppendLine("<onleft>" + (menItem.id + 800).ToString() + "</onleft>");
+              else
+                rawXML.AppendLine("<onleft>7777</onleft>");
+            }
           }
           else
           {
             if (!cbExitStyleNew.Checked)
             {
-              rawXML.AppendLine("<onright>7777</onright>");
-              rawXML.AppendLine("<onleft>7777</onleft>");
+              if (cbDisableExitMenu.Checked)
+              {
+                rawXML.AppendLine("<onright>" + (menItem.id + 800).ToString() + "</onright>");
+                rawXML.AppendLine("<onleft>" + (menItem.id + 800).ToString() + "</onleft>");
+              }
+                else
+              {
+                rawXML.AppendLine("<onright>7777</onright>");
+                rawXML.AppendLine("<onleft>7777</onleft>");
+              }
             }
             else
             {
-              rawXML.AppendLine("<onright>" + (menItem.id + 800).ToString() + "</onright>");
-              rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
+              if (cbDisableExitMenu.Checked)
+                rawXML.AppendLine("<onleft>" + (menItem.id + 800).ToString() + "</onleft>");
+              else
+                rawXML.AppendLine("<onleft>" + (menItem.id + 600).ToString() + "01</onleft>");
             }
           }
           rawXML.AppendLine("<onup>" + (onup + 800).ToString() + "</onup>");

@@ -98,6 +98,7 @@
       this.bgBox = new System.Windows.Forms.ComboBox();
       this.labelImageFolder = new System.Windows.Forms.Label();
       this.itemProperties = new System.Windows.Forms.GroupBox();
+      this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btMenuIcon = new System.Windows.Forms.Button();
       this.lbParameterView = new System.Windows.Forms.Label();
       this.cboParameterViews = new System.Windows.Forms.ComboBox();
@@ -115,6 +116,7 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
+      this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
       this.cbExitStyleNew = new System.Windows.Forms.CheckBox();
       this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
@@ -259,7 +261,6 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
-      this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1125,6 +1126,16 @@
       this.itemProperties.TabStop = false;
       this.itemProperties.Text = "Item properties";
       // 
+      // cbOnlineVideosReturn
+      // 
+      this.cbOnlineVideosReturn.AutoSize = true;
+      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(69, 101);
+      this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
+      this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
+      this.cbOnlineVideosReturn.TabIndex = 105;
+      this.cbOnlineVideosReturn.Text = "Return to OnlineVideos root menu";
+      this.cbOnlineVideosReturn.UseVisualStyleBackColor = true;
+      // 
       // btMenuIcon
       // 
       this.btMenuIcon.Location = new System.Drawing.Point(9, 124);
@@ -1316,19 +1327,29 @@
       this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
       this.styleOptionsGroup.Location = new System.Drawing.Point(6, 143);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(719, 100);
+      this.styleOptionsGroup.Size = new System.Drawing.Size(719, 124);
       this.styleOptionsGroup.TabIndex = 24;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
       // 
+      // cbDisableExitMenu
+      // 
+      this.cbDisableExitMenu.AutoSize = true;
+      this.cbDisableExitMenu.Location = new System.Drawing.Point(455, 108);
+      this.cbDisableExitMenu.Name = "cbDisableExitMenu";
+      this.cbDisableExitMenu.Size = new System.Drawing.Size(203, 17);
+      this.cbDisableExitMenu.TabIndex = 45;
+      this.cbDisableExitMenu.Text = "Disable Exit/Shutdown/Restart Menu";
+      this.cbDisableExitMenu.UseVisualStyleBackColor = true;
+      // 
       // cbExitStyleNew
       // 
       this.cbExitStyleNew.AutoSize = true;
-      this.cbExitStyleNew.Location = new System.Drawing.Point(223, 51);
+      this.cbExitStyleNew.Location = new System.Drawing.Point(223, 50);
       this.cbExitStyleNew.Name = "cbExitStyleNew";
-      this.cbExitStyleNew.Size = new System.Drawing.Size(240, 17);
+      this.cbExitStyleNew.Size = new System.Drawing.Size(232, 17);
       this.cbExitStyleNew.TabIndex = 44;
-      this.cbExitStyleNew.Text = "Show Exit/Shutdown Buttons  on BasicHome";
+      this.cbExitStyleNew.Text = "Show Small Exit/Shutdown/Restart Buttons";
       this.cbExitStyleNew.UseVisualStyleBackColor = true;
       // 
       // cbAnimateBackground
@@ -1391,7 +1412,7 @@
       // useAeonGraphics
       // 
       this.useAeonGraphics.AutoSize = true;
-      this.useAeonGraphics.Location = new System.Drawing.Point(223, 77);
+      this.useAeonGraphics.Location = new System.Drawing.Point(6, 101);
       this.useAeonGraphics.Name = "useAeonGraphics";
       this.useAeonGraphics.Size = new System.Drawing.Size(175, 17);
       this.useAeonGraphics.TabIndex = 26;
@@ -1410,6 +1431,7 @@
       // 
       // globalSettings
       // 
+      this.globalSettings.Controls.Add(this.cbDisableExitMenu);
       this.globalSettings.Controls.Add(this.cbHideFanartScraper);
       this.globalSettings.Controls.Add(this.cbDisableClock);
       this.globalSettings.Controls.Add(this.noFocusAlphaLabel);
@@ -2843,16 +2865,6 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // cbOnlineVideosReturn
-      // 
-      this.cbOnlineVideosReturn.AutoSize = true;
-      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(69, 101);
-      this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
-      this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
-      this.cbOnlineVideosReturn.TabIndex = 105;
-      this.cbOnlineVideosReturn.Text = "Return to OnlineVideos root menu";
-      this.cbOnlineVideosReturn.UseVisualStyleBackColor = true;
-      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3201,6 +3213,7 @@
     private System.Windows.Forms.Button btMenuIcon;
     private System.Windows.Forms.PictureBox pbMenuIconInfo;
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
+    private System.Windows.Forms.CheckBox cbDisableExitMenu;
   }
 }
 

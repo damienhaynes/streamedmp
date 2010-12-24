@@ -83,7 +83,12 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel1ID > 0)
             rawXML.AppendLine("<onup>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onup>");
           else
-            rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
+          {
+            if (cbDisableExitMenu.Checked)
+              rawXML.AppendLine("<onup>" + (menItem.id + 700).ToString() + "</onup>");
+            else
+              rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
+          }
 
           rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 700).ToString() + ")</visible>");
           rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
@@ -144,8 +149,12 @@ namespace StreamedMPEditor
           if (menItem.subMenuLevel1ID > 0)
             rawXML.AppendLine("<onup>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onup>");
           else
-            rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
-
+          {
+            if (cbDisableExitMenu.Checked)
+              rawXML.AppendLine("<onup>" + (menItem.id + 800).ToString() + "</onup>");
+            else
+              rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
+          }
 
           //rawXML.AppendLine("<ondown>" + (menItem.id + 700).ToString() + "01</ondown>");
           rawXML.AppendLine("<visible>control.isvisible(" + (menItem.id + 800).ToString() + ")</visible>");
