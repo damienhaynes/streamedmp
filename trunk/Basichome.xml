@@ -23,13 +23,24 @@
       <texture>background.png</texture>
     </control>
     <control>
+      <description>Lightening background</description>
+      <id>0</id>
+      <type>image</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>minimenubg.png</texture>
+      <animation effect="fade" start="200" end="100" time="1000">WindowClose</animation>
+      <visible>Control.HasFocus(7777)|Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(79999)</visible>
+    </control>
+    <control>
       <description>Exit Label</description>
       <type>label</type>
       <id>0</id>
-      <width>340</width>
       <height>60</height>
       <posY>435</posY>
-      <posX>513</posX>
+      <posX>640</posX>
       <align>center</align>
       <font>mediastream12tc</font>
       <label>#StreamedMP.MediaPortalExit</label>
@@ -39,10 +50,9 @@
       <description>Restart Label</description>
       <type>label</type>
       <id>0</id>
-      <width>340</width>
       <height>60</height>
       <posY>435</posY>
-      <posX>513</posX>
+      <posX>640</posX>
       <align>center</align>
       <font>mediastream12tc</font>
       <label>#StreamedMP.MediaPortalRestart</label>
@@ -52,31 +62,42 @@
       <description>Shutdown Label</description>
       <type>label</type>
       <id>0</id>
-      <width>340</width>
       <height>60</height>
       <posY>435</posY>
-      <posX>513</posX>
+      <posX>640</posX>
       <align>center</align>
       <font>mediastream12tc</font>
       <label>#StreamedMP.MediaPortalShutDownMenu</label>
       <visible>Control.HasFocus(7999)</visible>
     </control>
     <control>
+      <description>Settings Label</description>
+      <type>label</type>
+      <id>0</id>
+      <height>60</height>
+      <posY>435</posY>
+      <posX>640</posX>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <label>MediaPortal Settings</label>
+      <visible>Control.HasFocus(79999)</visible>
+    </control>
+    <control>
       <description>Shutdown menu hbar</description>
       <type>image</type>
       <id>1</id>
-      <posX>485</posX>
+      <posX>385</posX>
       <posY>335</posY>
-      <width>381</width>
+      <width>511</width>
       <height>1</height>
       <texture>hbar1white.png</texture>
-      <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)</visible>
+      <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)|Control.HasFocus(79999)</visible>
     </control>
     <control>
       <description>Exit Button</description>
       <type>button</type>
       <id>7777</id>
-      <posX>493</posX>
+      <posX>390</posX>
       <posY>350</posY>
       <onleft>1903</onleft>
       <onright>7888</onright>
@@ -95,7 +116,7 @@
       <description>Restart Button</description>
       <type>button</type>
       <id>7888</id>
-      <posX>633</posX>
+      <posX>530</posX>
       <posY>350</posY>
       <onleft>7777</onleft>
       <onright>7999</onright>
@@ -114,15 +135,34 @@
       <description>Shutdown Button</description>
       <type>button</type>
       <id>7999</id>
-      <posX>773</posX>
+      <posX>670</posX>
       <posY>350</posY>
       <onleft>7888</onleft>
-      <onright>17</onright>
+      <onright>79999</onright>
       <width>80</width>
       <height>80</height>
       <textureNoFocus>shutdown_button.png</textureNoFocus>
       <textureFocus>shutdown_button.png</textureFocus>
       <action>99</action>
+      <animation effect="zoom" start="1,1" end="100,100" center="0,0" time="1000" tween="back" ease="out">WindowOpen</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+      <animation effect="fade" time="400">WindowClose</animation>
+      <animation effect="zoom" start="100,100" end="125,125" center="0,0" time="400" acceleration="-0.9" reversible="false">focus</animation>
+      <animation effect="zoom" start="125,125" end="100,100" center="0,0" time="400" acceleration="-0.9" reversible="false">unfocus</animation>
+    </control>
+    <control>
+      <description>Settings Button</description>
+      <type>button</type>
+      <id>79999</id>
+      <posX>810</posX>
+      <posY>350</posY>
+      <onleft>7999</onleft>
+      <onright>17</onright>
+      <width>80</width>
+      <height>80</height>
+      <textureNoFocus>settings_button.png</textureNoFocus>
+      <textureFocus>settings_button.png</textureFocus>
+      <hyperlink>4</hyperlink>
       <animation effect="zoom" start="1,1" end="100,100" center="0,0" time="1000" tween="back" ease="out">WindowOpen</animation>
       <animation effect="fade" time="400">WindowOpen</animation>
       <animation effect="fade" time="400">WindowClose</animation>
@@ -139,7 +179,7 @@
       <height>720</height>
       <texture>tv_black.png</texture>
       <animation effect="fade" start="200" end="100" time="1000">WindowClose</animation>
-      <visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)</visible>
+      <visible>!Control.HasFocus(7777)+!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(79999)</visible>
     </control>
     <!-- BEGIN BACKGROUND LOADING -->
     <control>
@@ -147,104 +187,112 @@
       <id>1200</id>
       <type>image</type>
       <texture>animations\pictures\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1000)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC BACKGROUND 1</description>
       <id>1201</id>
       <type>image</type>
       <texture>animations\music\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1001)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES, TRAILERS, VIDEOS BACKGROUND 1</description>
       <id>1202</id>
       <type>image</type>
       <texture>animations\movies\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-	  <shouldCache>true</shouldCache>
       <visible>control.isvisible(1002)|control.isvisible(1005)|control.isvisible(1007)</visible>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES, TV BACKGROUND 1</description>
       <id>1203</id>
       <type>image</type>
       <texture>animations\tv\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-	  <shouldCache>true</shouldCache>
       <visible>control.isvisible(1003)|control.isvisible(1004)</visible>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS BACKGROUND 1</description>
       <id>1206</id>
       <type>image</type>
       <texture>animations\pluginsbg\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1006)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER BACKGROUND 1</description>
       <id>1208</id>
       <type>image</type>
       <texture>animations\weatherbg\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1008)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>NEWS BACKGROUND 1</description>
       <id>1209</id>
       <type>image</type>
       <texture>animations\news\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1009)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS BACKGROUND 1</description>
       <id>1210</id>
       <type>image</type>
       <texture>animations\settings\default.jpg</texture>
+      <shouldCache>true</shouldCache>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
       <visible>control.isvisible(1010)</visible>
-	  <shouldCache>true</shouldCache>
-      <animation effect="fade" start="10" end="100" time="1000">Visible</animation>
+      <animation effect="fade" start="100" end="0" time="600" reversible="false">Hidden</animation>
+      <animation effect="fade" start="30" end="100" time="600" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Menu Background</description>
@@ -254,11 +302,11 @@
       <posY>0</posY>
       <width>1280</width>
       <height>720</height>
-	  <shouldCache>true</shouldCache>
       <texture>basichome.menu.overlay.png</texture>
+      <shouldCache>true</shouldCache>
       <animation effect="slide" start="-400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="-400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)</visible>
+      <visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)+!Control.HasFocus(79999)</visible>
     </control>
     <control>
       <description>Rss Background</description>
@@ -1442,7 +1490,8 @@
       <height>72</height>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <hyperlink>5900</hyperlink>
+      <hyperlink>4755</hyperlink>
+      <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
       <hover>-</hover>
       <onright>7777</onright>
       <onleft>7777</onleft>
@@ -1460,7 +1509,8 @@
       <height>72</height>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <hyperlink>5900</hyperlink>
+      <hyperlink>4755</hyperlink>
+      <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
       <hover>-</hover>
       <onright>7777</onright>
       <onleft>7777</onleft>
@@ -3235,7 +3285,8 @@
       <label>TRAILERS</label>
       <width>320</width>
       <height>72</height>
-      <hyperlink>5900</hyperlink>
+      <hyperlink>4755</hyperlink>
+      <hyperlinkParameter>iTunes Movie Trailers</hyperlinkParameter>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <hover>-</hover>
@@ -4004,6 +4055,7 @@
         <width>180</width>
         <height>270</height>
         <texture>weather2.png</texture>
+        <shouldCache>true</shouldCache>
       </control>
       <control>
         <description>DAY 1 BG</description>
@@ -4065,6 +4117,7 @@
       <id>0</id>
       <type>image</type>
       <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast2.day.img.big.filenamewithoutext.png</texture>
+      <shouldCache>true</shouldCache>
       <posX>705</posX>
       <posY>0</posY>
       <height>180</height>
@@ -4079,6 +4132,7 @@
       <id>0</id>
       <type>image</type>
       <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast3.day.img.big.filenamewithoutext.png</texture>
+      <shouldCache>true</shouldCache>
       <posX>955</posX>
       <posY>0</posY>
       <height>180</height>
@@ -4093,6 +4147,7 @@
       <id>0</id>
       <type>image</type>
       <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast4.day.img.big.filenamewithoutext.png</texture>
+      <shouldCache>true</shouldCache>
       <posX>705</posX>
       <posY>345</posY>
       <height>180</height>
@@ -4107,6 +4162,7 @@
       <id>0</id>
       <type>image</type>
       <texture>animations\weathericons\static\128x128\#infoservice.weather.forecast5.day.img.big.filenamewithoutext.png</texture>
+      <shouldCache>true</shouldCache>
       <posX>955</posX>
       <posY>345</posY>
       <height>180</height>
@@ -4486,4 +4542,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:bfa3ba484049cc79e7b905f7a65a66da-->
+<!--Checksum:be30645ab7e3271aaf06d2a31b2ed365-->
