@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2600</id>
-  <defaultcontrol>3</defaultcontrol>
+  <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:8</define>
   <define>#header.hover:hover_my weather.png</define>
@@ -89,22 +89,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <control>
-        <description>Refresh Button</description>
-        <type>button</type>
-        <id>3</id>
-        <label>184</label>
-        <onup>17</onup>
-        <font>mediastream11c</font>
-        <textureFocus>dialogbigbuttonfo.png</textureFocus>
-        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>162</width>
-        <height>26</height>
-        <textalign>center</textalign>
-        <textYOff>1</textYOff>
-        <disabledcolor>ff909090</disabledcolor>
-        <textcolorNoFocus>ff909090</textcolorNoFocus>
-      </control>
-      <control>
         <description>Switch Button</description>
         <type>button</type>
         <id>2</id>
@@ -121,26 +105,11 @@
         <textcolorNoFocus>ff909090</textcolorNoFocus>
       </control>
       <control>
-        <description>View Button</description>
+        <description>Refresh Button</description>
         <type>button</type>
-        <id>4</id>
-        <label>185</label>
+        <id>3</id>
+        <label>184</label>
         <onup>17</onup>
-        <font>mediastream11c</font>
-        <textureFocus>dialogbigbuttonfo.png</textureFocus>
-        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <textalign>center</textalign>
-        <textYOff>1</textYOff>
-        <disabledcolor>ff909090</disabledcolor>
-        <textcolorNoFocus>ff909090</textcolorNoFocus>
-        <width>200</width>
-        <height>26</height>
-      </control>
-      <control>
-        <description>weather location select</description>
-        <type>button</type>
-        <id>5</id>
-        <label>1028</label>
         <onup>17</onup>
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
@@ -151,7 +120,38 @@
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
         <textcolorNoFocus>ff909090</textcolorNoFocus>
-        <visible>control.isvisible(23)</visible>
+      </control>
+      <control>
+        <description>View Button</description>
+        <type>button</type>
+        <id>4</id>
+        <label>743</label>
+        <onup>17</onup>
+        <font>mediastream11c</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>162</width>
+        <height>26</height>
+        <textalign>center</textalign>
+        <textYOff>1</textYOff>
+        <disabledcolor>ff909090</disabledcolor>
+        <textcolorNoFocus>ff909090</textcolorNoFocus>
+      </control>
+      <control>
+        <description>weather location select</description>
+        <type>button</type>
+        <id>5</id>
+        <label>1028</label>
+        <onright>2</onright>
+        <font>mediastream11c</font>
+        <textureFocus>dialogbigbuttonfo.png</textureFocus>
+        <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+        <width>162</width>
+        <height>26</height>
+        <textalign>center</textalign>
+        <textYOff>1</textYOff>
+        <disabledcolor>ff909090</disabledcolor>
+        <textcolorNoFocus>ff909090</textcolorNoFocus>
       </control>
     </control>
     <control>
@@ -166,19 +166,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <!-- ******************** Current Weather Information ***************************** -->
-    <control>
-      <description>Weather Label</description>
-      <type>label</type>
-      <id>4</id>
-      <posX>180</posX>
-      <posY>111</posY>
-      <label>400</label>
-      <font>mediastream11tc</font>
-      <textcolor>White</textcolor>
-      <visible>control.isvisible(23)</visible>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
-    </control>
     <control>
       <description>current weather icon</description>
       <type>image</type>
@@ -405,86 +392,95 @@
     </control>
     <!-- ***************************** Day 0 Weather Forcast ******************************** -->
     <control>
-      <description>day 0 label</description>
+      <description>DAY 0 LABEL</description>
       <type>label</type>
       <id>31</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>0</width>
-      <height>0</height>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <width>200</width>
+      <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
+      <textalign>center</textalign>
       <textcolor>White</textcolor>
       <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <control>
-      <description>day 0 Hi label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <label>MAX</label>
-      <width>0</width>
-      <height>0</height>
-      <visible>control.isvisible(23)+control.isvisible(32)</visible>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>day 0 Hi value</description>
-      <type>label</type>
-      <id>32</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <label>-</label>
-      <width>0</width>
-      <height>0</height>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>day 0 low label</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <label>MIN</label>
-      <width>0</width>
-      <height>0</height>
-      <visible>control.isvisible(23)+control.isvisible(33)</visible>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>day 0 low value</description>
-      <type>label</type>
-      <id>33</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <label>-</label>
-      <width>0</width>
-      <height>0</height>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>day 0 general weather label</description>
-      <type>label</type>
-      <id>34</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <label>-</label>
-      <width>0</width>
-      <height>0</height>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>day 0 icon</description>
+      <description>DAY 0 ICON</description>
       <type>image</type>
       <id>35</id>
       <posX>-100</posX>
       <posY>-100</posY>
-      <width>0</width>
-      <height>0</height>
+      <height>80</height>
       <texture>-</texture>
-      <visible>no</visible>
+      <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
+    <control>
+      <description>DAY 0 MAX LABEL</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <label>MAX</label>
+      <font>mediastream10tc</font>
+      <textcolor>White</textcolor>
+      <visible>control.isvisible(23)+Control.IsVisible(42)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
+    <control>
+      <description>DAY 0 MAX VALUE</description>
+      <type>label</type>
+      <id>32</id>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <align>right</align>
+      <label>-</label>
+      <font>mediastream11c</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
+    <control>
+      <description>DAY 0 MIN LABEL</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <label>MIN</label>
+      <font>mediastream10tc</font>
+      <textcolor>White</textcolor>
+      <visible>control.isvisible(23)+Control.IsVisible(43)</visible>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
+    <control>
+      <description>DAY 0 MIN VALUE</description>
+      <type>label</type>
+      <id>33</id>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <align>right</align>
+      <label>-</label>
+      <font>mediastream11c</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
+    </control>
+    <control>
+      <description>DAY 0 GENERAL WEATHER</description>
+      <type>label</type>
+      <id>34</id>
+      <posX>-100</posX>
+      <posY>-100</posY>
+      <label>-</label>
+      <font>mediastream10tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
     </control>
     <!-- ************************************************* Day 1 Weather ************************************************* -->
     <control>
@@ -774,18 +770,6 @@
       <label>-</label>
       <font>mediastream11tc</font>
       <textalign>left</textalign>
-      <textcolor>White</textcolor>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
-    </control>
-    <control>
-      <description>sun rise label</description>
-      <type>label</type>
-      <id>70</id>
-      <posX>240</posX>
-      <posY>637</posY>
-      <label>-</label>
-      <font>mediastream11c</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="zoom" delay="20" tween="back" easing="out" start="55,55" end="100,100" center="640,310" time="550">WindowOpen</animation>
