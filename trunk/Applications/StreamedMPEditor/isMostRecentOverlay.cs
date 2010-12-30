@@ -965,6 +965,7 @@
         "<height>151</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
         "<texture>" + fanartProperty + "</texture>\n" +
+        "<shouldCache>true</shouldCache>\n" +
       "</control>\n" +
     "</control>\n" +
     "<control>\n" +
@@ -1950,6 +1951,7 @@
                 "<height>151</height>\n" +
                 "<keepaspectratio>true</keepaspectratio>\n" +
                 "<texture>" + fanartProperty + "</texture>\n" +
+                "<shouldCache>true</shouldCache>\n" +
               "</control>\n" +
             "</control>\n" +
             "<control>\n" +
@@ -2318,6 +2320,7 @@
               "<height>151</height>\n" +
               "<keepaspectratio>true</keepaspectratio>\n" +
               "<texture>" + fanartProperty + "</texture>\n" +
+              "<shouldCache>true</shouldCache>\n" +
             "</control>\n" +
           "</control>\n" +
           "<control>\n" +
@@ -2641,6 +2644,7 @@
       "<height>151</height>\n" +
       "<keepaspectratio>true</keepaspectratio>\n" +
       "<texture>" + fanartProperty + "</texture>\n" +
+      "<shouldCache>true</shouldCache>\n" +
     "</control>\n" +
   "</control>\n" +
   "<control>\n" +
@@ -2821,6 +2825,7 @@
                   "<height>155</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>#fanarthandler.music.latest1.thumb</texture>" +
+                  "<shouldCache>true</shouldCache>\n" +
                 "</control>" +
               "</control>" +
               "<control>" +
@@ -2975,6 +2980,7 @@
                   "<height>151</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>#fanarthandler.tvrecordings.latest1.thumb</texture>" +
+                  "<shouldCache>true</shouldCache>\n" +
                 "</control>" +
               "</control>" +
               "<control>" +
