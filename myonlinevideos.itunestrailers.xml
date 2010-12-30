@@ -24,6 +24,8 @@
       <width>400</width>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
       <visible>facadeview.list+!string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
     <control>
@@ -36,7 +38,7 @@
       <height>380</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#OnlineVideos.Details.Poster</texture>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
@@ -49,7 +51,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+Control.HasThumb(24)</visible>
     </control>
@@ -177,7 +179,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
@@ -192,11 +194,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
-	<control Style="smallTitle">
+		<control Style="smallTitle">
       <description>Release Date N/A</description>
       <id>0</id>
       <type>label</type>
@@ -207,7 +209,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.ReleaseDate,)</visible>
     </control>
@@ -222,7 +224,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
@@ -237,11 +239,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
-	<control Style="smallTitle">
+			<control Style="smallTitle">
       <description>Director N/A</description>
       <id>0</id>
       <type>label</type>
@@ -252,7 +254,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.Directors,)</visible>
     </control>
@@ -266,7 +268,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
@@ -280,11 +282,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
     </control>
-	<control Style="smallTitle">
+		<control Style="smallTitle">
       <description>Studio N/A</description>
       <id>0</id>
       <type>label</type>
@@ -294,7 +296,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+string.equals(#OnlineVideos.Details.Studio,ITMovieTrailers)</visible>
     </control>
@@ -320,7 +322,7 @@
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
       <visible>string.equals(#OnlineVideos.state,details)</visible>
-	  <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
