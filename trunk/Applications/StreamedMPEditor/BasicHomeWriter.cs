@@ -657,8 +657,9 @@ namespace StreamedMPEditor
       rawXML.AppendLine("\t\t\t<width>1280</width>");
       rawXML.AppendLine("\t\t\t<height>720</height>");
       rawXML.AppendLine("\t\t\t<texture>minimenubg.png</texture>");
+      rawXML.AppendLine("\t\t\t<shouldCache>true</shouldCache>");
       rawXML.AppendLine("\t\t\t<animation effect=" + quote + "fade" + quote + " start=" + quote + "200" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">WindowClose</animation>");
-      rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(7777)|Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(79999)</visible>");
+      rawXML.AppendLine("\t\t\t<visible>Control.HasFocus(7777)|Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(79999)</visible>");      
       rawXML.AppendLine("\t\t</control>");
 
       rawXML.AppendLine("<control>");
