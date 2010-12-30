@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
+		<control>
+      <type>image</type>
+      <posX>1220</posX>
+      <posY>50</posY>
+      <width>59</width>
+      <height>153</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>[control.isvisible(50)|control.isvisible(51)]+![string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)]</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -13,9 +23,7 @@
       <buttonX>1231</buttonX>
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
-      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
-      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
+      <buttonheight>153</buttonheight>      
       <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
       <dimColor>00ffffff</dimColor>
       <control>
