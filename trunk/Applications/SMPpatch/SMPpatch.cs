@@ -373,11 +373,15 @@ namespace SMPpatch
       patchFiles.Add(pf);
       ListViewItem item = new ListViewItem(new[] { pf.patchFileName, pf.patchVersion, pf.installedVersion });
       item.ImageIndex = 1;
-      if (pf.patchVersion.CompareTo(pf.installedVersion) < 0)
+
+      Version patchVersion = new Version(pf.patchVersion);
+      Version installedVersion = new Version(pf.installedVersion);
+
+      if (patchVersion.CompareTo(installedVersion) < 0)
       {
         item.ImageIndex = 0;
       }
-      else if (pf.patchVersion.CompareTo(pf.installedVersion) == 0)
+      else if (patchVersion.CompareTo(installedVersion) == 0)
       {
         // check filesize...we cant do modified date as embedded resource
         // streams and writes a new file
