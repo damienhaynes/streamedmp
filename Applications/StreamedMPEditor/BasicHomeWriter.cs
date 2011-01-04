@@ -974,8 +974,8 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>60</height>");
-      rawXML.AppendLine("<posY>100</posY>");
-      rawXML.AppendLine("<posX>140</posX>");
+      rawXML.AppendLine("<posY>590</posY>");
+      rawXML.AppendLine("<posX>100</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream10tc</font>");
       rawXML.AppendLine("<label>#StreamedMP.MediaPortalExit</label>");
