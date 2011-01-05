@@ -1400,7 +1400,11 @@ namespace StreamedMPEditor
       writeXMLFile("BasicHome.xml");
 
       generateMostRecentFilesAndImports("GenImports");
-      generateOverlay(int.Parse(txtMenuPos.Text), basicHomeValues.weatherControl);
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        generateOverlay(int.Parse(txtMenuPos.Text), 0, basicHomeValues.weatherControl);
+      else
+        generateOverlay(int.Parse(txtMenuPos.Text), 765, basicHomeValues.weatherControl);
+
       changeOutstanding = false;
       getBackupFileTotals();
       if (!onFormClosing)
