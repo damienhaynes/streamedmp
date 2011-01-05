@@ -5,7 +5,7 @@ namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-    private void generateOverlay(int baseYpos, int weatherId)
+    private void generateOverlay(int baseYpos, int baseXpos, int weatherId)
     {
       int overlayYpos = 0;
       int endYpos = 0;
@@ -135,7 +135,7 @@ namespace StreamedMPEditor
                   "<description>dialog bg</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<posX>765</posX>" +
+                  "<posX>" + baseXpos.ToString() + "</posX>" +
                   "<posY>" + overlayYpos.ToString() + "</posY>" +
                   "<width>519</width>" +
                   "<height>152</height>" +
@@ -147,7 +147,7 @@ namespace StreamedMPEditor
                   "<description>PICTURES NOW PLAYING BACKGROUND 1</description>" +
                   "<id>0</id>" +
                   "<type>image</type>" +
-                  "<posX>990</posX>" +
+                  "<posX>" + (baseXpos + 225).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>270</width>" +
                   "<height>114</height>" +
@@ -159,7 +159,7 @@ namespace StreamedMPEditor
                   "<description>PICTURES NOW PLAYING BACKGROUND 2</description>" +
                   "<id>0</id>" +
                   "<type>image</type>" +
-                  "<posX>990</posX>" +
+                  "<posX>" + (baseXpos + 225).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>270</width>" +
                   "<height>114</height>" +
@@ -171,7 +171,7 @@ namespace StreamedMPEditor
                   "<description>Overlay Mask</description>" +
                   "<id>0</id>" +
                   "<type>image</type>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>512</width>" +
                   "<height>114</height>" +
@@ -184,7 +184,7 @@ namespace StreamedMPEditor
                   "<description>music logo</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
@@ -198,7 +198,7 @@ namespace StreamedMPEditor
                   "<description>music logo</description>" +
                   "<type>image</type>" +
                   "<id>7220</id>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
@@ -212,7 +212,7 @@ namespace StreamedMPEditor
                   "<description>music logo</description>" +
                   "<type>image</type>" +
                   "<id>7230</id>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
@@ -226,7 +226,7 @@ namespace StreamedMPEditor
                   "<description>Music logo Animation</description>" +
                   "<type>animation</type>" +
                   "<id>7210</id>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
@@ -242,7 +242,7 @@ namespace StreamedMPEditor
                   "<description>Selectable Button</description>" +
                   "<type>button</type>" +
                   "<id>17011</id>" +
-                  "<posX>778</posX>" +
+                  "<posX>" + (baseXpos + 13).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 13).ToString() + "</posY>" +
                   "<width>124</width>" +
                   "<height>124</height>" +
@@ -263,7 +263,7 @@ namespace StreamedMPEditor
                   "<id>0</id>" +
                   "<width>340</width>" +
                   "<height>40</height>" +
-                  "<posX>908</posX>" +
+                  "<posX>" + (baseXpos + 143).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 23).ToString() + "</posY>" +
                   "<label>#Play.Current.Artist</label>" +
                   "<align>left</align>" +
@@ -279,7 +279,7 @@ namespace StreamedMPEditor
                   "<id>0</id>" +
                   "<width>340</width>" +
                   "<height>40</height>" +
-                  "<posX>908</posX>" +
+                  "<posX>" + (baseXpos + 143).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
                   "<label>#Play.Current.Title</label>" +
                   "<align>left</align>" +
@@ -295,7 +295,7 @@ namespace StreamedMPEditor
                   "<id>0</id>" +
                   "<width>340</width>" +
                   "<height>40</height>" +
-                  "<posX>908</posX>" +
+                  "<posX>" + (baseXpos + 143).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 63).ToString() + "</posY>" +
                   "<label>#Play.Current.Album</label>" +
                   "<align>left</align>" +
@@ -311,7 +311,7 @@ namespace StreamedMPEditor
                   "<id>0</id>" +
                   "<width>340</width>" +
                   "<height>40</height>" +
-                  "<posX>908</posX>" +
+                  "<posX>" + (baseXpos + 143).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 81).ToString() + "</posY>" +
                   "<align>left</align>" +
                   "<label>#currentplaytime / #duration</label>" +
@@ -325,7 +325,7 @@ namespace StreamedMPEditor
                   "<id>0</id>" +
                   "<width>42</width>" +
                   "<height>40</height>" +
-                  "<posX>908</posX>" +
+                  "<posX>" + (baseXpos + 143).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 107).ToString() + "</posY>" +
                   "<label>Next</label>" +
                   "<textcolor>FF025984</textcolor>" +
@@ -337,7 +337,7 @@ namespace StreamedMPEditor
                   "<description>next song info label</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
-                  "<posX>945</posX>" +
+                  "<posX>" + (baseXpos + 180).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 107).ToString() + "</posY>" +
                   "<width>300</width>" +
                   "<height>40</height>" +
@@ -354,7 +354,7 @@ namespace StreamedMPEditor
                   "<description>video preview window BACKGROUND</description>" +
                   "<type>button</type>" +
                   "<id>17</id>" +
-                  "<posX>783</posX>" +
+                  "<posX>" + (baseXpos + 18).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 17).ToString() + "</posY>" +
                   "<width>203</width>" +
                   "<height>116</height>" +
@@ -371,7 +371,7 @@ namespace StreamedMPEditor
                   "<description>video preview window</description>" +
                   "<type>videowindow</type>" +
                   "<id>99</id>" +
-                  "<posX>791</posX>" +
+                  "<posX>" + (baseXpos + 26).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 25).ToString() + "</posY>" +
                   "<width>180</width>" +
                   "<height>103</height>" +
@@ -387,7 +387,7 @@ namespace StreamedMPEditor
                   "<description>artist info label</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
-                  "<posX>998</posX>" +
+                  "<posX>" + (baseXpos + 233).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 20).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>40</height>" +
@@ -402,7 +402,7 @@ namespace StreamedMPEditor
                   "<description>title info label</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
-                  "<posX>998</posX>" +
+                  "<posX>" + (baseXpos + 233).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 38).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>40</height>" +
@@ -417,7 +417,7 @@ namespace StreamedMPEditor
                   "<description>album info label</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
-                  "<posX>998</posX>" +
+                  "<posX>" + (baseXpos + 233).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 64).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>40</height>" +
@@ -432,7 +432,7 @@ namespace StreamedMPEditor
                   "<description>album info label</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
-                  "<posX>998</posX>" +
+                  "<posX>" + (baseXpos + 233).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 84).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>40</height>" +
@@ -447,7 +447,7 @@ namespace StreamedMPEditor
                   "<description>play time / duration label</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>998</posX>" +
+                  "<posX>" + (baseXpos + 233).ToString() + "</posX>" +
                   "<posY>" + (overlayYpos + 104).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>40</height>" +

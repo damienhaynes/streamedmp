@@ -41,10 +41,6 @@ namespace StreamedMPEditor
     string writeSubMenuLevel1Graphical(formStreamedMpEditor.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
-      int isSecondLevel = 0;
-
-      if (parentMenu.subMenuLevel2.Count > 0)
-        isSecondLevel = 100;
 
       for (int i = 0; i < parentMenu.subMenuLevel1.Count; i++)
       {
