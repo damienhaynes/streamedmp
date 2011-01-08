@@ -1490,6 +1490,9 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
         rawXML.AppendLine("<animation effect=\"slide\" start=\"-160,0\" end=\"-160,0\" time=\"4\" acceleration=\"-0.0\" reversible=\"false\">WindowOpen</animation><!-- needed to display item at negative offset -->");
+        if (!menuItems[k].isDefault)
+          rawXML.AppendLine("<animation effect=\"slide\" start=\"-160,0\" end=\"-160,0\" time=\"0\" acceleration=\"-0.0\" reversible=\"false\">Visible</animation><!-- needed to display item at negative offset -->");
+
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>");
 
