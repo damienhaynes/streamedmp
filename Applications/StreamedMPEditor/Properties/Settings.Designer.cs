@@ -82,5 +82,17 @@ namespace StreamedMPEditor.Properties {
                 this["hideSplashConfirm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool hide3dConfirm {
+            get {
+                return ((bool)(this["hide3dConfirm"]));
+            }
+            set {
+                this["hide3dConfirm"] = value;
+            }
+        }
     }
 }

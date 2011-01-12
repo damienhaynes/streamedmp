@@ -116,7 +116,6 @@
       this.tabControl1 = new System.Windows.Forms.TabControl();
       this.tabPage3 = new System.Windows.Forms.TabPage();
       this.styleOptionsGroup = new System.Windows.Forms.GroupBox();
-      this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
       this.cbExitStyleNew = new System.Windows.Forms.CheckBox();
       this.cbAnimateBackground = new System.Windows.Forms.CheckBox();
       this.cbOverlayFanart = new System.Windows.Forms.CheckBox();
@@ -127,6 +126,7 @@
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
+      this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
       this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
       this.cbDisableClock = new System.Windows.Forms.CheckBox();
       this.noFocusAlphaLabel = new System.Windows.Forms.Label();
@@ -1091,11 +1091,13 @@
             "settings",
             "tv",
             "weatherbg",
-            "infoservice"});
+            "infoservice",
+            "3DBackgrounds"});
       this.bgBox.Location = new System.Drawing.Point(121, 103);
       this.bgBox.Name = "bgBox";
       this.bgBox.Size = new System.Drawing.Size(128, 21);
       this.bgBox.TabIndex = 17;
+      this.bgBox.SelectionChangeCommitted += new System.EventHandler(this.bgBox_SelectionChangeCommitted);
       // 
       // labelImageFolder
       // 
@@ -1332,16 +1334,6 @@
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
       // 
-      // cbDisableExitMenu
-      // 
-      this.cbDisableExitMenu.AutoSize = true;
-      this.cbDisableExitMenu.Location = new System.Drawing.Point(455, 108);
-      this.cbDisableExitMenu.Name = "cbDisableExitMenu";
-      this.cbDisableExitMenu.Size = new System.Drawing.Size(203, 17);
-      this.cbDisableExitMenu.TabIndex = 45;
-      this.cbDisableExitMenu.Text = "Disable Exit/Shutdown/Restart Menu";
-      this.cbDisableExitMenu.UseVisualStyleBackColor = true;
-      // 
       // cbExitStyleNew
       // 
       this.cbExitStyleNew.AutoSize = true;
@@ -1456,6 +1448,16 @@
       this.globalSettings.TabIndex = 23;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
+      // 
+      // cbDisableExitMenu
+      // 
+      this.cbDisableExitMenu.AutoSize = true;
+      this.cbDisableExitMenu.Location = new System.Drawing.Point(455, 108);
+      this.cbDisableExitMenu.Name = "cbDisableExitMenu";
+      this.cbDisableExitMenu.Size = new System.Drawing.Size(203, 17);
+      this.cbDisableExitMenu.TabIndex = 45;
+      this.cbDisableExitMenu.Text = "Disable Exit/Shutdown/Restart Menu";
+      this.cbDisableExitMenu.UseVisualStyleBackColor = true;
       // 
       // cbHideFanartScraper
       // 

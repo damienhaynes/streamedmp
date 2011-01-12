@@ -160,6 +160,11 @@ namespace StreamedMPEditor
     List<string> skinFontsUnFocused = new List<string>();
 
 
+    Form user3dConfirm = new Form();
+    Button bt3dOk = new Button();
+    TextBox tb3dInfo = new TextBox();
+    CheckBox cb3dShowAgain = new CheckBox();
+
 
     public const string tvseriesSkinID = "9811";
     public const string movingPicturesSkinID = "96742";
@@ -707,6 +712,11 @@ namespace StreamedMPEditor
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
         item.isWeather = isWeather.Checked;
         item.disableBGSharing = disableBGSharing.Checked;
+
+        // If using 3D backgrounds disable BG sharing for item.
+        if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
+          item.disableBGSharing = true;
+
         item.showMostRecent = getMostRecentDisplayOption();
         if (pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1)
         {
@@ -889,6 +899,10 @@ namespace StreamedMPEditor
           cboParameterViews.Text = string.Empty;
         }
         item.disableBGSharing = disableBGSharing.Checked;
+        // If using 3D backgrounds disable BG sharing for item.
+        if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
+          item.disableBGSharing = true;
+
         item.isWeather = isWeather.Checked;
         item.showMostRecent = getMostRecentDisplayOption();
 
@@ -1930,6 +1944,63 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+    private void bgBox_SelectionChangeCommitted(object sender, EventArgs e)
+    {
+      if (bgBox.SelectedItem.ToString().ToLower() == "3dbackgrounds")
+      {
+        disableBGSharing.Checked = true;
+
+        if (!Properties.Settings.Default.hide3dConfirm)
+        {
+          user3dConfirm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+          user3dConfirm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+          user3dConfirm.Name = "frmUser3dConfirm";
+          user3dConfirm.Text = "3D Background Information";
+          user3dConfirm.ControlBox = true;
+          user3dConfirm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+          user3dConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+          user3dConfirm.StartPosition = FormStartPosition.CenterScreen;
+          user3dConfirm.Width = 400;
+          user3dConfirm.Height = 120;
+          user3dConfirm.MaximizeBox = false;
+          user3dConfirm.MinimizeBox = false;
+          user3dConfirm.TopMost = true;
+
+          bt3dOk.Width = 80;
+          bt3dOk.Text = "OK";
+          bt3dOk.Location = new System.Drawing.Point(310, 65);
+          bt3dOk.Click += new System.EventHandler(bt3dOk_Click);
+          user3dConfirm.Controls.Add(bt3dOk);
+
+
+          cb3dShowAgain.Text = "Do not show this message again";
+          cb3dShowAgain.AutoSize = true;
+          cb3dShowAgain.Location = new System.Drawing.Point(10, 70);
+          user3dConfirm.Controls.Add(cb3dShowAgain);
+
+          tb3dInfo.BorderStyle = BorderStyle.None;
+          tb3dInfo.Multiline = true;
+          tb3dInfo.Text = "When using 3D backgrounds background sharing will be automaticlly";
+          tb3dInfo.AppendText(Environment.NewLine + "disabled for the menu item.");
+          tb3dInfo.Location = new System.Drawing.Point(20, 20);
+          tb3dInfo.WordWrap = true;
+          tb3dInfo.Width = 350;
+          tb3dInfo.Height = 60;
+          tb3dInfo.ReadOnly = true;
+          user3dConfirm.Controls.Add(tb3dInfo);
+
+          user3dConfirm.Show();
+        }
+      }
+    }
+
+    private void bt3dOk_Click(object sender, EventArgs e)
+    {
+      user3dConfirm.Hide();
+      if (cb3dShowAgain.Checked)
+        Properties.Settings.Default.hide3dConfirm = true;
+    }
 
   }
 }
