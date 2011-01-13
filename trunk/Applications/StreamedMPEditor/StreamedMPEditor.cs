@@ -104,31 +104,31 @@ namespace StreamedMPEditor
 
     public enum displayMostRecent
     {
-        off,
-        tvSeries,
-        movies,
-        music,
-        recordedTV,
-        freeDriveSpace,
-        powerControl,
-        sleepControl,
-        stocks,
-        htpcInfo,
-        updateControl
+      off,
+      tvSeries,
+      movies,
+      music,
+      recordedTV,
+      freeDriveSpace,
+      powerControl,
+      sleepControl,
+      stocks,
+      htpcInfo,
+      updateControl
     }
 
     enum isOverlayType
     {
-        TVSeries,
-        MovPics,
-        Music,
-        RecordedTV,
-        freeDriveSpace,
-        powerControl,
-        sleepControl,
-        stocks,
-        htpcInfo,
-        updateControl
+      TVSeries,
+      MovPics,
+      Music,
+      RecordedTV,
+      freeDriveSpace,
+      powerControl,
+      sleepControl,
+      stocks,
+      htpcInfo,
+      updateControl
     }
 
     public enum fanartSource
@@ -164,7 +164,6 @@ namespace StreamedMPEditor
     Button bt3dOk = new Button();
     TextBox tb3dInfo = new TextBox();
     CheckBox cb3dShowAgain = new CheckBox();
-
 
     public const string tvseriesSkinID = "9811";
     public const string movingPicturesSkinID = "96742";
@@ -263,7 +262,19 @@ namespace StreamedMPEditor
     randomFanartSetting randomFanart = new randomFanartSetting();
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
     getButtonTexture buttonTexture = new getButtonTexture();
-
+    //Menu Theme 
+    Form menuThemeForm = new Form();
+    Button btThemeOk = new Button();
+    Button btThemeCancel = new Button();
+    Button btThemeNext = new Button();
+    Button btThemePrev = new Button();
+    TextBox tbThemeInfo = new TextBox();
+    ComboBox cboThemeSelection = new ComboBox();
+    PictureBox pbThemePreview = new PictureBox();
+    List<string> menuThemeFiles = new List<string>();
+    int themeImageIndex = 0;
+    bool menuThemeActive = false;
+    //Most Recent
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
@@ -286,6 +297,8 @@ namespace StreamedMPEditor
       randomFanart.fanartScoreCenter = false;
       randomFanart.fanartMoviesScraperFanart = false;
       randomFanart.fanartMusicScraperFanart = false;
+
+      disableBGSharing.Location = new Point(10, 104);
 
       //Check the display res
       deskHeight = Screen.PrimaryScreen.Bounds.Height;
@@ -368,7 +381,7 @@ namespace StreamedMPEditor
         theOnlineVideosViews.Clear();
         foreach (KeyValuePair<string, string> ovv in onlineVideosViews)
         {
-          theOnlineVideosViews.Add(ovv.Value);    
+          theOnlineVideosViews.Add(ovv.Value);
         }
       }
 
@@ -551,7 +564,6 @@ namespace StreamedMPEditor
           menuitemName.Text = null;
           menuItemLabel.Text = null;
           menuitemBGFolder.Text = null;
-          menuitemTimeonPage.Text = null;
           menuitemWindow.Text = null;
 
           xmlFiles.SelectedItem = null;
@@ -580,6 +592,7 @@ namespace StreamedMPEditor
             mrDisplaySelection.disableMusicRB = false;
             mrDisplaySelection.disableRecordedTVRB = false;
           }
+          buildThemeScreen();
         }
 
         loadMenuSettings();
@@ -598,7 +611,7 @@ namespace StreamedMPEditor
           wrapString.Enabled = true;
         else
           wrapString.Enabled = false;
-       
+
 
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
         {
@@ -723,10 +736,10 @@ namespace StreamedMPEditor
           switch (item.hyperlink)
           {
             case tvseriesSkinID:
-              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString()); 
+              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
               break;
             case musicSkinID:
-              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString()); 
+              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
               break;
             case onlineVideosSkinID:
               item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
@@ -744,12 +757,12 @@ namespace StreamedMPEditor
           checkAndSetDefultImage(item);
 
         if (string.IsNullOrEmpty(buttonTexture.SelectedIcon))
-          item.buttonTexture = setDefaultIcons(int.Parse(item.hyperlink),"Black");
+          item.buttonTexture = setDefaultIcons(int.Parse(item.hyperlink), "Black");
         else
           item.buttonTexture = buttonTexture.SelectedIcon;
-        
+
         //buttonTexture.MenuItem = item.name;
-        setDefaultIcons(int.Parse(item.hyperlink),"Black");
+        setDefaultIcons(int.Parse(item.hyperlink), "Black");
 
         if (cbOnlineVideosReturn.Checked)
           item.hyperlinkParameterOption = "Root";
@@ -1364,7 +1377,7 @@ namespace StreamedMPEditor
           generateTopBarH();
 
         generateMenuGraphicsH();
-        
+
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
           generateGraphicCrowdingFixH();
         else
@@ -1470,7 +1483,7 @@ namespace StreamedMPEditor
           {
             if (fanartHandlerRelease2)
             {
-              if (menItem.fhBGSource ==  fanartSource.Scraper)
+              if (menItem.fhBGSource == fanartSource.Scraper)
               {
                 randomFanart.fanartMusic = false;
                 randomFanart.fanartMusicScraperFanart = true;
@@ -1523,47 +1536,47 @@ namespace StreamedMPEditor
       //
       // Generate the Infoservice Most Recent Import files
       //
-        if (recentAction == "GenImports")
+      if (recentAction == "GenImports")
+      {
+        if (cbMostRecentTvSeries.Checked)
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
+
+        if (cbMostRecentMovPics.Checked)
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 976, 370);
+        //
+        // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
+        //
+        if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
         {
-            if (cbMostRecentTvSeries.Checked)
-                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-                generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+          if (cbEnableRecentMusic.Checked)
+            generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
 
-            if (cbMostRecentMovPics.Checked)
-                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-                generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 976, 370);
-            //
-            // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
-            //
-            if (helper.pluginEnabled(Helper.Plugins.FanartHandler) && (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) <= 0))
-            {
-                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-                if (cbEnableRecentMusic.Checked)
-                    generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
-
-                // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-                if (cbEnableRecentRecordedTV.Checked)
-                    generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
-            }
-
-            if (cbFreeDriveSpaceOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
-
-            if (cbSleepControlOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
-
-            if (cbSocksOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
-
-            if (cbPowerControlOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 976, 50, 0, 0);
-
-            if (cbHtpcInfoOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 976, 50, 0, 0);
-
-            if (cbUpdateControlOverlay.Checked)
-                generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 976, 50, 0, 0);
+          // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+          if (cbEnableRecentRecordedTV.Checked)
+            generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
         }
+
+        if (cbFreeDriveSpaceOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
+
+        if (cbSleepControlOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
+
+        if (cbSocksOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
+
+        if (cbPowerControlOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 976, 50, 0, 0);
+
+        if (cbHtpcInfoOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 976, 50, 0, 0);
+
+        if (cbUpdateControlOverlay.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 976, 50, 0, 0);
+      }
       //
       // Add the imports to basichome
       //
@@ -1602,8 +1615,8 @@ namespace StreamedMPEditor
         if (cbHtpcInfoOverlay.Checked)
           generateMostRecentInclude(isOverlayType.htpcInfo);
 
-          if (cbUpdateControlOverlay.Checked)
-            generateMostRecentInclude(isOverlayType.updateControl);
+        if (cbUpdateControlOverlay.Checked)
+          generateMostRecentInclude(isOverlayType.updateControl);
       }
     }
     //
@@ -1664,7 +1677,7 @@ namespace StreamedMPEditor
 
         // If we have added a submenu then disable Background sharing - get background issues outherwise
         if (menuItems[itemsOnMenubar.SelectedIndex].subMenuLevel1.Count > 0)
-            menuItems[itemsOnMenubar.SelectedIndex].disableBGSharing = true;
+          menuItems[itemsOnMenubar.SelectedIndex].disableBGSharing = true;
       }
       else
         helper.showError("Please Highlight Menu Item to add SubMenus to", errorCode.info);
@@ -1821,7 +1834,7 @@ namespace StreamedMPEditor
         }
 
       }
-  
+
       return onlineVideosViews;
     }
 
@@ -1962,31 +1975,33 @@ namespace StreamedMPEditor
           user3dConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
           user3dConfirm.StartPosition = FormStartPosition.CenterScreen;
           user3dConfirm.Width = 400;
-          user3dConfirm.Height = 120;
+          user3dConfirm.Height = 160;
           user3dConfirm.MaximizeBox = false;
           user3dConfirm.MinimizeBox = false;
           user3dConfirm.TopMost = true;
 
           bt3dOk.Width = 80;
           bt3dOk.Text = "OK";
-          bt3dOk.Location = new System.Drawing.Point(310, 65);
+          bt3dOk.Location = new System.Drawing.Point(310, 105);
           bt3dOk.Click += new System.EventHandler(bt3dOk_Click);
           user3dConfirm.Controls.Add(bt3dOk);
 
-
           cb3dShowAgain.Text = "Do not show this message again";
           cb3dShowAgain.AutoSize = true;
-          cb3dShowAgain.Location = new System.Drawing.Point(10, 70);
+          cb3dShowAgain.Location = new System.Drawing.Point(10, 110);
           user3dConfirm.Controls.Add(cb3dShowAgain);
 
           tb3dInfo.BorderStyle = BorderStyle.None;
           tb3dInfo.Multiline = true;
           tb3dInfo.Text = "When using 3D backgrounds background sharing will be automaticlly";
-          tb3dInfo.AppendText(Environment.NewLine + "disabled for the menu item.");
+          tb3dInfo.AppendText(Environment.NewLine + "disabled for the Menu Item.");
+          tb3dInfo.AppendText(Environment.NewLine);
+          tb3dInfo.AppendText(Environment.NewLine + "Please remember you will need to set the the 3D background");
+          tb3dInfo.AppendText(Environment.NewLine + "for this Menu Item in the 'Defaul Background Images' tab.");
           tb3dInfo.Location = new System.Drawing.Point(20, 20);
           tb3dInfo.WordWrap = true;
           tb3dInfo.Width = 350;
-          tb3dInfo.Height = 60;
+          tb3dInfo.Height = 100;
           tb3dInfo.ReadOnly = true;
           user3dConfirm.Controls.Add(tb3dInfo);
 
@@ -2002,6 +2017,131 @@ namespace StreamedMPEditor
         Properties.Settings.Default.hide3dConfirm = true;
     }
 
+
+    string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+    string menuThemeName = "3DBackgrounds";
+
+    private void getThemeImages(string themeName)
+    {
+      SkinInfo skInfo = new SkinInfo();
+      string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media\\animations");
+      DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, themeName));
+      foreach (FileInfo fInfo in dInfo.GetFiles("*.jpg"))
+      {
+        menuThemeFiles.Add(fInfo.FullName);
+      }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      menuThemeForm.Show();
+    }
+
+    private void btThemeNext_Click(object sender, EventArgs e)
+    {
+      if ((themeImageIndex + 1) < menuThemeFiles.Count)
+        themeImageIndex++;
+      else
+        themeImageIndex = 0;
+
+      pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
+      pbThemePreview.Image = Image.FromFile(menuThemeFiles[themeImageIndex]);
+    }
+
+    private void btThemePrev_Click(object sender, EventArgs e)
+    {
+      if ((themeImageIndex - 1) > 0)
+        themeImageIndex--;
+      else
+        themeImageIndex = menuThemeFiles.Count;
+
+      pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
+      pbThemePreview.Image = Image.FromFile(menuThemeFiles[themeImageIndex]);
+    }
+
+
+    private void themeEnable_Click(object sender, EventArgs e)
+    {
+      menuThemeForm.Hide();
+    }
+
+    private void themeDisable_Click(object sender, EventArgs e)
+    {
+      menuThemeForm.Hide();
+    }
+
+    private void buildThemeScreen()
+    {
+      getThemeImages(menuThemeName);
+      //Main Theme Form
+      menuThemeForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      menuThemeForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      menuThemeForm.Name = "frmMenuThemes";
+      menuThemeForm.Text = "Menu Background Themes";
+      menuThemeForm.ControlBox = true;
+      menuThemeForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      menuThemeForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      menuThemeForm.StartPosition = FormStartPosition.CenterScreen;
+      menuThemeForm.Width = 750;
+      menuThemeForm.Height = 300;
+      menuThemeForm.MaximizeBox = false;
+      menuThemeForm.MinimizeBox = false;
+      menuThemeForm.TopMost = true;
+      menuThemeForm.ControlBox = false;
+      //Enable Theme Button
+      btThemeOk.Width = 120;
+      btThemeOk.Text = "Enable Selected Theme";
+      btThemeOk.Location = new System.Drawing.Point(400, 217);
+      btThemeOk.Click += new System.EventHandler(themeEnable_Click);
+      menuThemeForm.Controls.Add(btThemeOk);
+      //Disable Theme Button
+      btThemeCancel.Width = 120;
+      btThemeCancel.Text = "Disable Themes";
+      btThemeCancel.Location = new System.Drawing.Point(600, 217);
+      btThemeCancel.Click += new System.EventHandler(themeDisable_Click);
+      menuThemeForm.Controls.Add(btThemeCancel);
+      // Previw Image PictureBox
+      pbThemePreview.Width = 350;
+      pbThemePreview.Height = 197;
+      pbThemePreview.BorderStyle = BorderStyle.FixedSingle;
+      pbThemePreview.Location = new Point(10, 40);
+      pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
+      pbThemePreview.Image = Image.FromFile(menuThemeFiles[themeImageIndex]);
+      menuThemeForm.Controls.Add(pbThemePreview);
+      //Previous Image Button
+      btThemePrev.Width = 50;
+      btThemePrev.Text = "Prev";
+      btThemePrev.Location = new System.Drawing.Point(220, 10);
+      btThemePrev.Click += new System.EventHandler(btThemePrev_Click);
+      menuThemeForm.Controls.Add(btThemePrev);
+      //Next Image Button
+      btThemeNext.Width = 50;
+      btThemeNext.Text = "Next";
+      btThemeNext.Location = new System.Drawing.Point(310, 10);
+      btThemeNext.Click += new System.EventHandler(btThemeNext_Click);
+      menuThemeForm.Controls.Add(btThemeNext);
+      //Theme selection combobox
+      cboThemeSelection.Location = new Point(10, 10);
+      cboThemeSelection.Width = 200;
+      cboThemeSelection.Items.Add("3DBackgrounds");
+      cboThemeSelection.SelectedIndex = 0;
+      menuThemeForm.Controls.Add(cboThemeSelection);
+      // Textbox
+      tbThemeInfo.Text = "Menu themes are a set a themed backgrounds that are applied to all Menu Items currently defined. One theme is supplied though others maybe added later either by us or the community.";
+      tbThemeInfo.AppendText(Environment.NewLine);
+      tbThemeInfo.AppendText(Environment.NewLine + "Applying this theme will set all Menu Items to fixed background and disable background sharing. Items added after will need to be  manually configured for the select theme.");
+      tbThemeInfo.AppendText(Environment.NewLine);
+      tbThemeInfo.AppendText(Environment.NewLine + "Most major plugins are supported and a best match will be made  background images can be changed via the 'Default Background Images' tab.");
+      tbThemeInfo.Location = new System.Drawing.Point(20, 20);
+      tbThemeInfo.WordWrap = true;
+      tbThemeInfo.Width = 325;
+      tbThemeInfo.Height = 200;
+      tbThemeInfo.Location = new Point(400, 10);
+      tbThemeInfo.BorderStyle = BorderStyle.Fixed3D;
+      tbThemeInfo.Multiline = true;
+      tbThemeInfo.ReadOnly = true;
+      menuThemeForm.Controls.Add(tbThemeInfo);
+    }
   }
 }
 

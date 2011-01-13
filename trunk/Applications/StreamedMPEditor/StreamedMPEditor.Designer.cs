@@ -60,6 +60,7 @@
       this.weatherStyle1 = new System.Windows.Forms.PictureBox();
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
+      this.button1 = new System.Windows.Forms.Button();
       this.btSelectOverlay = new System.Windows.Forms.Button();
       this.addSubmenus = new System.Windows.Forms.Button();
       this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -79,10 +80,8 @@
       this.menuItemLabel = new System.Windows.Forms.Label();
       this.menuItemLabelL = new System.Windows.Forms.Label();
       this.menuitemWindow = new System.Windows.Forms.Label();
-      this.menuItemTimeonPageL = new System.Windows.Forms.Label();
       this.menuItemWindowL = new System.Windows.Forms.Label();
       this.menuitemName = new System.Windows.Forms.Label();
-      this.menuitemTimeonPage = new System.Windows.Forms.Label();
       this.menuItemBGFolderL = new System.Windows.Forms.Label();
       this.menuItemNameL = new System.Windows.Forms.Label();
       this.menuitemBGFolder = new System.Windows.Forms.Label();
@@ -674,6 +673,7 @@
       // 
       // basicHomeDesign
       // 
+      this.basicHomeDesign.Controls.Add(this.button1);
       this.basicHomeDesign.Controls.Add(this.btSelectOverlay);
       this.basicHomeDesign.Controls.Add(this.addSubmenus);
       this.basicHomeDesign.Controls.Add(this.richTextBox2);
@@ -701,10 +701,20 @@
       this.basicHomeDesign.Text = "BasicHome Design";
       this.basicHomeDesign.UseVisualStyleBackColor = true;
       // 
+      // button1
+      // 
+      this.button1.Location = new System.Drawing.Point(540, 303);
+      this.button1.Name = "button1";
+      this.button1.Size = new System.Drawing.Size(203, 23);
+      this.button1.TabIndex = 125;
+      this.button1.Text = "Set Menu Theme";
+      this.button1.UseVisualStyleBackColor = true;
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
       // btSelectOverlay
       // 
       this.btSelectOverlay.AutoSize = true;
-      this.btSelectOverlay.Location = new System.Drawing.Point(654, 256);
+      this.btSelectOverlay.Location = new System.Drawing.Point(651, 277);
       this.btSelectOverlay.Name = "btSelectOverlay";
       this.btSelectOverlay.Size = new System.Drawing.Size(92, 23);
       this.btSelectOverlay.TabIndex = 124;
@@ -714,9 +724,9 @@
       // 
       // addSubmenus
       // 
-      this.addSubmenus.Location = new System.Drawing.Point(538, 256);
+      this.addSubmenus.Location = new System.Drawing.Point(540, 277);
       this.addSubmenus.Name = "addSubmenus";
-      this.addSubmenus.Size = new System.Drawing.Size(110, 23);
+      this.addSubmenus.Size = new System.Drawing.Size(105, 23);
       this.addSubmenus.TabIndex = 123;
       this.addSubmenus.Text = "Edit/Add Submenu";
       this.addSubmenus.UseVisualStyleBackColor = true;
@@ -824,7 +834,7 @@
       // 
       // cancelButton
       // 
-      this.cancelButton.Location = new System.Drawing.Point(619, 282);
+      this.cancelButton.Location = new System.Drawing.Point(619, 254);
       this.cancelButton.Name = "cancelButton";
       this.cancelButton.Size = new System.Drawing.Size(49, 21);
       this.cancelButton.TabIndex = 21;
@@ -834,7 +844,7 @@
       // 
       // editButton
       // 
-      this.editButton.Location = new System.Drawing.Point(540, 281);
+      this.editButton.Location = new System.Drawing.Point(540, 254);
       this.editButton.Name = "editButton";
       this.editButton.Size = new System.Drawing.Size(52, 21);
       this.editButton.TabIndex = 7;
@@ -845,7 +855,7 @@
       // saveButton
       // 
       this.saveButton.Enabled = false;
-      this.saveButton.Location = new System.Drawing.Point(695, 282);
+      this.saveButton.Location = new System.Drawing.Point(695, 252);
       this.saveButton.Name = "saveButton";
       this.saveButton.Size = new System.Drawing.Size(48, 23);
       this.saveButton.TabIndex = 20;
@@ -859,16 +869,14 @@
       this.groupBox1.Controls.Add(this.menuItemLabel);
       this.groupBox1.Controls.Add(this.menuItemLabelL);
       this.groupBox1.Controls.Add(this.menuitemWindow);
-      this.groupBox1.Controls.Add(this.menuItemTimeonPageL);
       this.groupBox1.Controls.Add(this.menuItemWindowL);
       this.groupBox1.Controls.Add(this.menuitemName);
-      this.groupBox1.Controls.Add(this.menuitemTimeonPage);
       this.groupBox1.Controls.Add(this.menuItemBGFolderL);
       this.groupBox1.Controls.Add(this.menuItemNameL);
       this.groupBox1.Controls.Add(this.menuitemBGFolder);
-      this.groupBox1.Location = new System.Drawing.Point(538, 312);
+      this.groupBox1.Location = new System.Drawing.Point(538, 331);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(209, 112);
+      this.groupBox1.Size = new System.Drawing.Size(209, 94);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Menu Item Properties";
@@ -876,7 +884,7 @@
       // menuItemLabel
       // 
       this.menuItemLabel.AutoSize = true;
-      this.menuItemLabel.Location = new System.Drawing.Point(49, 36);
+      this.menuItemLabel.Location = new System.Drawing.Point(49, 37);
       this.menuItemLabel.Name = "menuItemLabel";
       this.menuItemLabel.Size = new System.Drawing.Size(79, 13);
       this.menuItemLabel.TabIndex = 108;
@@ -885,7 +893,7 @@
       // menuItemLabelL
       // 
       this.menuItemLabelL.AutoSize = true;
-      this.menuItemLabelL.Location = new System.Drawing.Point(16, 36);
+      this.menuItemLabelL.Location = new System.Drawing.Point(16, 37);
       this.menuItemLabelL.Name = "menuItemLabelL";
       this.menuItemLabelL.Size = new System.Drawing.Size(36, 13);
       this.menuItemLabelL.TabIndex = 107;
@@ -894,26 +902,16 @@
       // menuitemWindow
       // 
       this.menuitemWindow.AutoSize = true;
-      this.menuitemWindow.Location = new System.Drawing.Point(49, 90);
+      this.menuitemWindow.Location = new System.Drawing.Point(49, 73);
       this.menuitemWindow.Name = "menuitemWindow";
       this.menuitemWindow.Size = new System.Drawing.Size(92, 13);
       this.menuitemWindow.TabIndex = 106;
       this.menuitemWindow.Text = "menuItemWindow";
       // 
-      // menuItemTimeonPageL
-      // 
-      this.menuItemTimeonPageL.Anchor = System.Windows.Forms.AnchorStyles.Right;
-      this.menuItemTimeonPageL.AutoSize = true;
-      this.menuItemTimeonPageL.Location = new System.Drawing.Point(19, 72);
-      this.menuItemTimeonPageL.Name = "menuItemTimeonPageL";
-      this.menuItemTimeonPageL.Size = new System.Drawing.Size(33, 13);
-      this.menuItemTimeonPageL.TabIndex = 101;
-      this.menuItemTimeonPageL.Text = "Time:";
-      // 
       // menuItemWindowL
       // 
       this.menuItemWindowL.AutoSize = true;
-      this.menuItemWindowL.Location = new System.Drawing.Point(3, 90);
+      this.menuItemWindowL.Location = new System.Drawing.Point(3, 73);
       this.menuItemWindowL.Name = "menuItemWindowL";
       this.menuItemWindowL.Size = new System.Drawing.Size(49, 13);
       this.menuItemWindowL.TabIndex = 105;
@@ -922,25 +920,16 @@
       // menuitemName
       // 
       this.menuitemName.AutoSize = true;
-      this.menuitemName.Location = new System.Drawing.Point(49, 18);
+      this.menuitemName.Location = new System.Drawing.Point(49, 19);
       this.menuitemName.Name = "menuitemName";
       this.menuitemName.Size = new System.Drawing.Size(81, 13);
       this.menuitemName.TabIndex = 102;
       this.menuitemName.Text = "menuItemName";
       // 
-      // menuitemTimeonPage
-      // 
-      this.menuitemTimeonPage.AutoSize = true;
-      this.menuitemTimeonPage.Location = new System.Drawing.Point(49, 72);
-      this.menuitemTimeonPage.Name = "menuitemTimeonPage";
-      this.menuitemTimeonPage.Size = new System.Drawing.Size(115, 13);
-      this.menuitemTimeonPage.TabIndex = 104;
-      this.menuitemTimeonPage.Text = "menuItemTimeOnPage";
-      // 
       // menuItemBGFolderL
       // 
       this.menuItemBGFolderL.AutoSize = true;
-      this.menuItemBGFolderL.Location = new System.Drawing.Point(13, 54);
+      this.menuItemBGFolderL.Location = new System.Drawing.Point(13, 55);
       this.menuItemBGFolderL.Name = "menuItemBGFolderL";
       this.menuItemBGFolderL.Size = new System.Drawing.Size(39, 13);
       this.menuItemBGFolderL.TabIndex = 43;
@@ -949,7 +938,7 @@
       // menuItemNameL
       // 
       this.menuItemNameL.AutoSize = true;
-      this.menuItemNameL.Location = new System.Drawing.Point(14, 18);
+      this.menuItemNameL.Location = new System.Drawing.Point(14, 19);
       this.menuItemNameL.Name = "menuItemNameL";
       this.menuItemNameL.Size = new System.Drawing.Size(38, 13);
       this.menuItemNameL.TabIndex = 42;
@@ -958,7 +947,7 @@
       // menuitemBGFolder
       // 
       this.menuitemBGFolder.AutoSize = true;
-      this.menuitemBGFolder.Location = new System.Drawing.Point(49, 54);
+      this.menuitemBGFolder.Location = new System.Drawing.Point(49, 55);
       this.menuitemBGFolder.Name = "menuitemBGFolder";
       this.menuitemBGFolder.Size = new System.Drawing.Size(82, 13);
       this.menuitemBGFolder.TabIndex = 103;
@@ -1059,7 +1048,7 @@
       // disableBGSharing
       // 
       this.disableBGSharing.AutoSize = true;
-      this.disableBGSharing.Location = new System.Drawing.Point(15, 134);
+      this.disableBGSharing.Location = new System.Drawing.Point(10, 140);
       this.disableBGSharing.Name = "disableBGSharing";
       this.disableBGSharing.Size = new System.Drawing.Size(218, 17);
       this.disableBGSharing.TabIndex = 19;
@@ -3014,10 +3003,8 @@
     private System.Windows.Forms.Button saveButton;
     private System.Windows.Forms.GroupBox groupBox1;
     private System.Windows.Forms.Label menuitemWindow;
-    private System.Windows.Forms.Label menuItemTimeonPageL;
     private System.Windows.Forms.Label menuItemWindowL;
     private System.Windows.Forms.Label menuitemName;
-    private System.Windows.Forms.Label menuitemTimeonPage;
     private System.Windows.Forms.Label menuItemBGFolderL;
     private System.Windows.Forms.Label menuItemNameL;
     private System.Windows.Forms.Label menuitemBGFolder;
@@ -3216,6 +3203,7 @@
     private System.Windows.Forms.PictureBox pbMenuIconInfo;
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
     private System.Windows.Forms.CheckBox cbDisableExitMenu;
+    private System.Windows.Forms.Button button1;
   }
 }
 

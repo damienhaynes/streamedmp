@@ -334,6 +334,7 @@ namespace StreamedMPEditor
       cancelCreateButton.Visible = true;
       editButton.Enabled = false;
       btGenerateMenu.Enabled = false;
+      disableBGSharing.Checked = false;
     }
 
 
