@@ -470,7 +470,7 @@ namespace StreamedMPEditor
     private void createDefaultJpg(string imageDir)
     {
       // Check if there is defult.jog already and exit if there is
-      if (System.IO.File.Exists(imageDir + "default.jpg"))
+      if (System.IO.File.Exists(Path.Combine(imageDir,"default.jpg")))
         return;
 
       // Check if there is a trailing backslash
