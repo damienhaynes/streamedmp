@@ -9,157 +9,137 @@
   <controls>
     <import>mymusic.autofanart.xml</import>
     <control>
-      <description>bottom black bg</description>
-      <type>image</type>
       <id>0</id>
+      <type>image</type>
       <posX>0</posX>
-      <posY>500</posY>
-      <width>1280</width>
-      <height>220</height>
-      <colordiffuse>C0FFFFFF</colordiffuse>
-      <texture>black.png</texture>
+      <posY>450</posY>
+      <width>1275</width>
+      <height>290</height>
+      <texture>last.fm.background.png</texture>
+      <colordiffuse>FAFFFFFF</colordiffuse>
+      <animation effect="Fade" time="400">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
     </control>
     <!--            :: MENU ::            -->
     <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>10</defaultcontrol>
-      <onexit>123</onexit>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
-      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
-      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
-      <dimColor>00ffffff</dimColor>
-      <visible>!Control.HasFocus(123)</visible>
+      <type>group</type>
+      <description>group element</description>
+      <posX>1006</posX>
+      <posY>485</posY>
+      <width>480</width>
+      <height>720</height>
+      <layout>StackLayout</layout>
       <control>
-        <id>0</id>
-        <type>image</type>
-        <posX>1022</posX>
-        <posY>0</posY>
-        <width>258</width>
-        <height>720</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(123)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <description>start a stream</description>
+        <type>button</type>
+        <id>10</id>
+        <label>34001</label>
+        <onup>1142</onup>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
-        <id>0</id>
-        <label>MENU</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <description>choose artist</description>
+        <type>button</type>
+        <id>15</id>
+        <label>Artists</label>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
-        <id>0</id>
-        <label>JUMP TO</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>424</posY>
-        <visible>!Control.HasFocus(123)+plugin.isenabled(My Lyrics)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <description>chose tag</description>
+        <type>button</type>
+        <id>20</id>
+        <label>Tags</label>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
-        <type>group</type>
-        <description>group element</description>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
-        <layout>StackLayout</layout>
-        <visible allowhiddenfocus="True">!Control.HasFocus(123)|!Player.Hasmedia</visible>
-        <control>
-          <description>start a stream</description>
-          <type>button</type>
-          <id>10</id>
-          <label>34001</label>
-          <onup>1142</onup>
-          <onleft>123</onleft>
-          <!--<onright>50</onright>-->
-        </control>
-        <control>
-          <description>choose artist</description>
-          <type>button</type>
-          <id>15</id>
-          <label>Artists</label>
-          <onleft>123</onleft>
-        </control>
-        <control>
-          <description>chose tag</description>
-          <type>button</type>
-          <id>20</id>
-          <label>Tags</label>
-          <onleft>123</onleft>
-          <!--<onright>50</onright>-->
-        </control>
-        <control>
-          <description>chose friend</description>
-          <type>button</type>
-          <id>30</id>
-          <label>Friends</label>
-          <onleft>123</onleft>
-          <!--<onright>50</onright>-->
-        </control>
-        <control>
-          <description>toggle submit mode</description>
-          <type>togglebutton</type>
-          <id>35</id>
-          <label>34014</label>
-          <onleft>123</onleft>
-          <!--<onright>50</onright>-->
-          <visible>true</visible>
-        </control>
-        <control>
-          <description>toggle discovery mode</description>
-          <type>togglebutton</type>
-          <id>40</id>
-          <label>34013</label>
-          <onleft>123</onleft>
-          <!--<onright>50</onright>-->
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>My Lyrics</description>
-          <type>button</type>
-          <id>1142</id>
-          <label>Lyrics</label>
-          <onleft>123</onleft>
-          <ondown>10</ondown>
-          <hyperlink>90478</hyperlink>
-          <visible>plugin.isenabled(My Lyrics)</visible>
-        </control>
+        <description>chose friend</description>
+        <type>button</type>
+        <id>30</id>
+        <label>Friends</label>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
+      </control>
+      <control>
+        <description>toggle submit mode</description>
+        <type>togglebutton</type>
+        <id>35</id>
+        <label>34014</label>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
+        <visible>true</visible>
+      </control>
+      <control>
+        <description>toggle discovery mode</description>
+        <type>togglebutton</type>
+        <id>40</id>
+        <label>34013</label>
+        <onleft>123</onleft>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
+        <visible>false</visible>
+      </control>
+      <control>
+        <description>My Lyrics</description>
+        <type>button</type>
+        <id>1142</id>
+        <label>Lyrics</label>
+        <onleft>123</onleft>
+        <ondown>1143</ondown>
+        <hyperlink>90478</hyperlink>
+        <visible>plugin.isenabled(My Lyrics)</visible>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
+      </control>
+      <control>
+        <description>Similar Tags</description>
+        <type>button</type>
+        <id>1143</id>
+        <label>Show Similar tags</label>
+        <onleft>1143</onleft>
+        <ondown>10</ondown>
+        <textureFocus>listbg_fo.png</textureFocus>
+        <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
     </control>
+    <!-- Artist Image -->
     <control>
       <type>image</type>
       <description>artist art image</description>
       <id>112</id>
-      <posX>555</posX>
-      <posY>505</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>27</posX>
+      <posY>561</posY>
+      <width>140</width>
+      <height>140</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#Play.Current.ArtistThumb</texture>
       <visible>Player.HasAudio</visible>
     </control>
     <control>
+      <id>0</id>
+      <description>album art overlay</description>
+      <type>image</type>
+      <posX>22</posX>
+      <posY>556</posY>
+      <width>150</width>
+      <height>150</height>
+      <texture>mayacdborder.png</texture>
+      <animation effect="Fade" time="800">WindowOpen</animation>
+      <animation effect="Fade" time="300">WindowClose</animation>
+    </control>
+    <control>
       <type>fadelabel</type>
       <description>ARTIST label</description>
       <id>0</id>
-      <posX>730</posX>
-      <posY>500</posY>
+      <posX>25</posX>
+      <posY>485</posY>
       <width>700</width>
       <height>26</height>
       <label>#Play.Current.Artist</label>
@@ -169,8 +149,8 @@
       <type>fadelabel</type>
       <description>TRACK TITLE label</description>
       <id>0</id>
-      <posX>730</posX>
-      <posY>525</posY>
+      <posX>25</posX>
+      <posY>510</posY>
       <width>660</width>
       <height>26</height>
       <label>#Play.Current.Title</label>
@@ -180,8 +160,8 @@
       <type>fadelabel</type>
       <description>ALBUM label</description>
       <id>0</id>
-      <posX>730</posX>
-      <posY>545</posY>
+      <posX>25</posX>
+      <posY>530</posY>
       <width>660</width>
       <height>26</height>
       <label>#Play.Current.Album</label>
@@ -191,11 +171,11 @@
       <type>label</type>
       <description>CURRENT STREAM label</description>
       <id>0</id>
-      <posX>730</posX>
-      <posY>565</posY>
+      <posX>975</posX>
+      <posY>485</posY>
       <width>400</width>
       <height>26</height>
-      <align>left</align>
+      <align>right</align>
       <label>#Play.Current.Lastfm.CurrentStream</label>
       <font>mediastream11</font>
     </control>
@@ -203,27 +183,27 @@
       <type>label</type>
       <description>PLAYTIME DURATION label</description>
       <id>0</id>
-      <posX>490</posX>
+      <posX>975</posX>
       <posY>685</posY>
-      <width>300</width>
+      <width>160</width>
       <height>26</height>
-      <align>center</align>
+      <align>right</align>
       <label>#currentplaytime / #trackduration</label>
       <visible>Player.HasAudio</visible>
-      <font>mediastream12c</font>
+      <font>mediastream12tc</font>
     </control>
     <!-- Similar Artist and Tags -->
     <control>
       <type>label</type>
       <description>similar hint</description>
       <id>443</id>
-      <posX>730</posX>
-      <posY>590</posY>
+      <posX>230</posX>
+      <posY>555</posY>
       <label>34039</label>
       <font>mediastream10tc</font>
       <align>left</align>
       <textcolor>ff006698</textcolor>
-      <visible>control.hastext(444)</visible>
+      <visible>control.hastext(444)+control.hasfocus(1143)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -231,23 +211,24 @@
       <type>textbox</type>
       <description>Similar artists box</description>
       <id>444</id>
-      <posX>730</posX>
-      <posY>605</posY>
-      <width>500</width>
+      <posX>230</posX>
+      <posY>570</posY>
+      <width>800</width>
       <font>mediastream12</font>
       <label>#Play.Current.Lastfm.SimilarArtists</label>
+      <visible>control.hasfocus(1143)</visible>
     </control>
     <control>
       <type>label</type>
       <description>tag hint</description>
       <id>332</id>
-      <posX>730</posX>
-      <posY>655</posY>
+      <posX>230</posX>
+      <posY>620</posY>
       <label>34041</label>
       <font>mediastream10tc</font>
       <align>left</align>
       <textcolor>ff006698</textcolor>
-      <visible>control.hastext(333)</visible>
+      <visible>control.hastext(333)+control.hasfocus(1143)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -255,30 +236,21 @@
       <type>textbox</type>
       <description>Track tags box</description>
       <id>333</id>
-      <posX>730</posX>
-      <posY>667</posY>
-      <width>500</width>
+      <posX>230</posX>
+      <posY>635</posY>
+      <width>800</width>
       <font>mediastream11</font>
       <label>#Play.Current.Lastfm.TrackTags</label>
-    </control>
-    <!-- Next up List Control -->
-    <control>
-      <id>0</id>
-      <label>136</label>
-      <type>label</type>
-      <font>mediastream12tc</font>
-      <posX>5</posX>
-      <posY>505</posY>
-      <visible>control.isvisible(123)</visible>
+      <visible>control.hasfocus(1143)</visible>
     </control>
     <control>
       <type>listcontrol</type>
       <description>current playlist control</description>
       <id>123</id>
-      <posX>5</posX>
-      <posY>535</posY>
+      <posX>200</posX>
+      <posY>552</posY>
       <height>356</height>
-      <width>490</width>
+      <width>600</width>
       <onright>10</onright>
       <onleft>10</onleft>
       <font>mediastream12</font>
@@ -295,31 +267,16 @@
       <IconYOff>5</IconYOff>
       <onright>10</onright>
       <textureFocus>listbg_fo.png</textureFocus>
-      <keepaspectratio>no</keepaspectratio>
-      <textureHeight>35</textureHeight>
-      <itemHeight>30</itemHeight>
-      <itemWidth>30</itemWidth>
       <textureNoFocus>listbg_nf.png</textureNoFocus>
+      <keepaspectratio>no</keepaspectratio>
+      <textureHeight>30</textureHeight>
+      <itemHeight>25</itemHeight>
+      <itemWidth>25</itemWidth>
       <spaceBetweenItems>0</spaceBetweenItems>
-      <visible allowhiddenfocus="True">player.hasmedia</visible>
+      <visible allowhiddenfocus="True">player.hasmedia+!control.hasfocus(1143)</visible>
     </control>
-    <!--    
-    <control>
-      <description>video preview window</description>
-      <type>videowindow</type>
-      <id>99</id>
-      <posX>1016</posX>
-      <posY>551</posY>
-      <width>263</width>
-      <height>164</height>
-      <action>18</action>
-      <onleft>123</onleft>
-      <textureFocus>tv_blue_border.png</textureFocus>
-      <visible>player.hasmedia</visible>
-    </control>
-    -->
     <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:ce6a452947d069e89464a7f2fb8f384d-->
+<!--Checksum:cd63655af32d6d688af2bfc47f89c1a5-->
