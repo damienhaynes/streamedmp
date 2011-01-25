@@ -2129,6 +2129,8 @@ namespace StreamedMPEditor
           return "animations\\3DBackgrounds\\My_MovingPictures.jpg";
         case 25650:
           return "animations\\3DBackgrounds\\My_Music.jpg";
+        case 47286:
+          return "animations\\3DBackgrounds\\My_Rockstar.jpg";
         case 711992:
           return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
         default:
