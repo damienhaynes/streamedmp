@@ -149,7 +149,7 @@ This file should contain the details view
           <description>Music Settings</description>
           <type>button</type>
           <id>12</id>
-          <label>Music Settings</label>
+          <label>#StreamedMP.MusicMenu</label>
           <onleft>50</onleft>
           <hyperlink>14</hyperlink>
         </control>
@@ -157,9 +157,9 @@ This file should contain the details view
           <description>Skin Settings</description>
           <type>button</type>
           <id>13</id>
-          <label>Skin Settings</label>
+          <label>#StreamedMP.SkinSettings</label>
           <onleft>50</onleft>
-		  <ondown>18</ondown>
+					<ondown>18</ondown>
           <hyperlink>196201</hyperlink>
         </control>
         <control>
@@ -168,7 +168,7 @@ This file should contain the details view
           <id>18</id>
           <label>665</label>
           <onleft>50</onleft>
-		  <ondown>16</ondown>
+					<ondown>16</ondown>
           <hyperlink>30</hyperlink>
         </control>
         <control>
@@ -177,7 +177,7 @@ This file should contain the details view
           <id>16</id>
           <label>Lyrics</label>
           <onleft>50</onleft>
-		  <ondown>14</ondown>
+					<ondown>14</ondown>
           <hyperlink>90478</hyperlink>
           <visible>plugin.isenabled(My Lyrics)</visible>
         </control>
@@ -186,7 +186,7 @@ This file should contain the details view
           <type>button</type>
           <id>14</id>
           <onleft>50</onleft>
-		  <ondown>15</ondown>
+					<ondown>15</ondown>
           <label>137</label>
           <hyperlink>30885</hyperlink>
           <visible>plugin.isenabled(Search music)</visible>
@@ -197,7 +197,7 @@ This file should contain the details view
           <id>15</id>
           <label>Music Trivia</label>
           <onleft>50</onleft>
-		  <ondown>2</ondown>
+					<ondown>2</ondown>
           <visible>plugin.isenabled(Music Trivia)</visible>
           <hyperlink>6622</hyperlink>
         </control>

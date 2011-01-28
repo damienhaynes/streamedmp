@@ -286,6 +286,8 @@ namespace StreamedMPConfig
     public static string ListColorInvalidLine2 = "valid HEX code e.g. the color red is FF0000.";
     public static string ListColorInvalidLine3 = "which is '255' red, '0' green, and '0' blue.";
     public static string CustomColor = "Custom Color";
+    public static string SkinMenu = "Skin";
+    public static string MediaPortalSettings = "MediaPortal Settings";
     #endregion
   }
 }

@@ -710,7 +710,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>640</posX>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
-      rawXML.AppendLine("<label>MediaPortal Settings</label>");
+      rawXML.AppendLine("<label>#StreamedMP.MediaPortalSettings</label>");
       rawXML.AppendLine("<visible>Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("</control>");
 
