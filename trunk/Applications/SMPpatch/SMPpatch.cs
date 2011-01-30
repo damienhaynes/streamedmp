@@ -522,6 +522,21 @@ namespace SMPpatch
         // exit now, so we dont update version and prevent user from applying patch again
         Application.Exit();
       }
+      catch (Exception e)
+      {
+        // This is to catch the issue where we are running the patch from SMPMediaPortalRestart
+        // and cannot then update SMPMediaPortalRestart.
+        // Check it is SMPMediaPortalRestart we are trying to update, continue if we are 
+        // otherwise show the error and abort update process.
+        if (!thePatch.patchFileName.ToLower().Contains("smpmediaportalrestart"))
+        {
+          string message = "Exception due update while updating:";
+          string message2 = "Its recommended you address the issue and run the patch again.";
+          DialogResult result = MessageBox.Show(string.Format("{0}{1}.\n\n{2}\n\n{3}", message, thePatch.patchFileName, e.Message, message2), "SMPPatch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+          // exit now, so we dont update version and prevent user from applying patch again
+          Application.Exit();
+        }
+      }
 
       if (thePatch.patchAction.ToLower() == "unzip")
       {
