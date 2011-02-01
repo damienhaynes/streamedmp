@@ -281,6 +281,9 @@ namespace StreamedMPEditor
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
 
+    string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
+    string menuThemeName = "3DBackgrounds";
+
     #endregion
 
     #region Public methods
@@ -1095,9 +1098,9 @@ namespace StreamedMPEditor
       {
         if (getFileListing(folderBrowserDialog.SelectedPath, "*.*", true).Length == 0)
           helper.showError("The selected directory contains no files\n\nPleas ensure the folder contains at least one image file", errorCode.info);
+        else
+          bgBox.Text = folderBrowserDialog.SelectedPath;
       }
-      else
-        bgBox.Text = folderBrowserDialog.SelectedPath;
     }
 
 
@@ -1795,6 +1798,267 @@ namespace StreamedMPEditor
       displayMenuIcon(buttonTexture.SelectedIcon);
     }
 
+    private void bgBox_SelectionChangeCommitted(object sender, EventArgs e)
+    {
+      if (bgBox.SelectedItem.ToString().ToLower() == "3dbackgrounds")
+      {
+        disableBGSharing.Checked = true;
+
+        if (!Properties.Settings.Default.hide3dConfirm)
+        {
+          user3dConfirm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+          user3dConfirm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+          user3dConfirm.Name = "frmUser3dConfirm";
+          user3dConfirm.Text = "3D Background Information";
+          user3dConfirm.ControlBox = true;
+          user3dConfirm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+          user3dConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+          user3dConfirm.StartPosition = FormStartPosition.CenterScreen;
+          user3dConfirm.Width = 400;
+          user3dConfirm.Height = 160;
+          user3dConfirm.MaximizeBox = false;
+          user3dConfirm.MinimizeBox = false;
+          user3dConfirm.TopMost = true;
+
+          bt3dOk.Width = 80;
+          bt3dOk.Text = "OK";
+          bt3dOk.Location = new System.Drawing.Point(310, 105);
+          bt3dOk.Click += new System.EventHandler(bt3dOk_Click);
+          user3dConfirm.Controls.Add(bt3dOk);
+
+          cb3dShowAgain.Text = "Do not show this message again";
+          cb3dShowAgain.AutoSize = true;
+          cb3dShowAgain.Location = new System.Drawing.Point(10, 110);
+          user3dConfirm.Controls.Add(cb3dShowAgain);
+
+          tb3dInfo.BorderStyle = BorderStyle.None;
+          tb3dInfo.Multiline = true;
+          tb3dInfo.Text = "When using 3D backgrounds background sharing will be automaticlly";
+          tb3dInfo.AppendText(Environment.NewLine + "disabled for the Menu Item.");
+          tb3dInfo.AppendText(Environment.NewLine);
+          tb3dInfo.AppendText(Environment.NewLine + "Please remember you will need to set the the 3D background");
+          tb3dInfo.AppendText(Environment.NewLine + "for this Menu Item in the 'Defaul Background Images' tab.");
+          tb3dInfo.Location = new System.Drawing.Point(20, 20);
+          tb3dInfo.WordWrap = true;
+          tb3dInfo.Width = 350;
+          tb3dInfo.Height = 100;
+          tb3dInfo.ReadOnly = true;
+          user3dConfirm.Controls.Add(tb3dInfo);
+
+          user3dConfirm.Show();
+        }
+      }
+    }
+
+    private void bt3dOk_Click(object sender, EventArgs e)
+    {
+      user3dConfirm.Hide();
+      if (cb3dShowAgain.Checked)
+        Properties.Settings.Default.hide3dConfirm = true;
+    }
+
+
+
+
+    private void getThemeImages(string themeName)
+    {
+      SkinInfo skInfo = new SkinInfo();
+      string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media\\animations");
+      DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, themeName));
+      foreach (FileInfo fInfo in dInfo.GetFiles("*.jpg"))
+      {
+        menuThemeFiles.Add(fInfo.FullName);
+      }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+      menuThemeForm.Show();
+    }
+
+    private void btThemeNext_Click(object sender, EventArgs e)
+    {
+      if ((themeImageIndex + 1) < menuThemeFiles.Count)
+        themeImageIndex++;
+      else
+        themeImageIndex = 0;
+
+      matchBackground(Path.GetFileNameWithoutExtension(menuThemeFiles[themeImageIndex]));
+      workingImage = Image.FromFile(menuThemeFiles[themeImageIndex]);
+      pbThemePreview.Image = (Bitmap)workingImage.Clone();
+      workingImage.Dispose();
+    }
+
+    private void btThemePrev_Click(object sender, EventArgs e)
+    {
+      if ((themeImageIndex - 1) >= 0)
+        themeImageIndex--;
+      else
+        themeImageIndex = menuThemeFiles.Count - 1;
+
+      matchBackground(Path.GetFileNameWithoutExtension(menuThemeFiles[themeImageIndex]));
+      workingImage = Image.FromFile(menuThemeFiles[themeImageIndex]);
+      pbThemePreview.Image = (Bitmap)workingImage.Clone();
+      workingImage.Dispose();
+    }
+
+
+    private void themeEnable_Click(object sender, EventArgs e)
+    {
+      applybackgrounds();
+      menuThemeForm.Hide();
+      reloadBackgroundItems();
+    }
+
+    private void themeCancel_Click(object sender, EventArgs e)
+    {
+      menuThemeForm.Hide();
+    }
+
+    private void matchBackground(string background)
+    {
+      lbMenuItem.Text = background;
+    }
+
+    private void applybackgrounds()
+    {
+      for (int i = 0; i < formStreamedMpEditor.menuItems.Count; i++)
+      {
+        menuItems[i].fanartHandlerEnabled = false;
+        menuItems[i].disableBGSharing = true;
+        menuItems[i].bgFolder = "3DBackgrounds";
+        menuItems[i].defaultImage = bestThemeMatch(menuItems[i].hyperlink);
+      }
+    }
+
+    private string bestThemeMatch(string hyperlink)
+    {
+      switch (int.Parse(hyperlink))
+      {
+        case 1:
+          return "animations\\3DBackgrounds\\My_TVGuide.jpg";
+        case 2:
+          return "animations\\3DBackgrounds\\My_Pictures.jpg";
+        case 4:
+          return "animations\\3DBackgrounds\\My_Settings.jpg";
+        case 6:
+          return "animations\\3DBackgrounds\\My_Videos.jpg";
+        case 30:
+          return "animations\\3DBackgrounds\\My_Music.jpg";
+        case 34:
+          return "animations\\3DBackgrounds\\My_Plugins.jpg";
+        case 501:
+        case 504:
+          return "animations\\3DBackgrounds\\My_Music.jpg";
+        case 2600:
+          return "animations\\3DBackgrounds\\My_Weather.jpg";
+        case 4755:
+          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
+        case 5900:
+          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
+        case 7890:
+          return "animations\\3DBackgrounds\\My_Music.jpg";
+        case 9811:
+          return "animations\\3DBackgrounds\\My_TVSeries.jpg";
+        case 16001:
+          return "animations\\3DBackgrounds\\My_News.jpg";
+        case 96742:
+          return "animations\\3DBackgrounds\\My_MovingPictures.jpg";
+        case 25650:
+          return "animations\\3DBackgrounds\\My_Music.jpg";
+        case 47286:
+          return "animations\\3DBackgrounds\\My_Rockstar.jpg";
+        case 711992:
+          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
+        default:
+          return "animations\\3DBackgrounds\\default_background.jpg";
+      }
+    }
+
+    private void buildThemeScreen()
+    {
+      getThemeImages(menuThemeName);
+      //Main Theme Form
+      menuThemeForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      menuThemeForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      menuThemeForm.Name = "frmMenuThemes";
+      menuThemeForm.Text = "Menu Background Themes";
+      menuThemeForm.ControlBox = true;
+      menuThemeForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      menuThemeForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      menuThemeForm.StartPosition = FormStartPosition.CenterScreen;
+      menuThemeForm.Width = 750;
+      menuThemeForm.Height = 300;
+      menuThemeForm.MaximizeBox = false;
+      menuThemeForm.MinimizeBox = false;
+      menuThemeForm.TopMost = true;
+      menuThemeForm.ControlBox = false;
+      //Enable Theme Button
+      btThemeOk.Width = 200;
+      btThemeOk.Text = "Apply Selected Theme";
+      btThemeOk.Location = new System.Drawing.Point(400, 217);
+      btThemeOk.Click += new System.EventHandler(themeEnable_Click);
+      menuThemeForm.Controls.Add(btThemeOk);
+      //Disable Theme Button
+      btThemeCancel.Width = 120;
+      btThemeCancel.Text = "Cancel";
+      btThemeCancel.Location = new System.Drawing.Point(600, 217);
+      btThemeCancel.Click += new System.EventHandler(themeCancel_Click);
+      menuThemeForm.Controls.Add(btThemeCancel);
+      // Previw Image PictureBox
+      pbThemePreview.Width = 350;
+      pbThemePreview.Height = 197;
+      pbThemePreview.BorderStyle = BorderStyle.FixedSingle;
+      pbThemePreview.Location = new Point(10, 40);
+      pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
+      pbThemePreview.Image = (Bitmap)Image.FromFile(menuThemeFiles[themeImageIndex]).Clone();
+      menuThemeForm.Controls.Add(pbThemePreview);
+      //Previous Image Button
+      btThemePrev.Width = 50;
+      btThemePrev.Text = "Prev";
+      btThemePrev.Location = new System.Drawing.Point(10, 240);
+      btThemePrev.Click += new System.EventHandler(btThemePrev_Click);
+      menuThemeForm.Controls.Add(btThemePrev);
+      //Next Image Button
+      btThemeNext.Width = 50;
+      btThemeNext.Text = "Next";
+      btThemeNext.Location = new System.Drawing.Point(310, 240);
+      btThemeNext.Click += new System.EventHandler(btThemeNext_Click);
+      menuThemeForm.Controls.Add(btThemeNext);
+      // Theme Lable
+      lbTheme.Location = new Point(10, 12);
+      lbTheme.Width = 43;
+      lbTheme.Text = "Theme:";
+      menuThemeForm.Controls.Add(lbTheme);
+      //Theme selection combobox
+      cboThemeSelection.Location = new Point(56, 10);
+      cboThemeSelection.Width = 200;
+      cboThemeSelection.Items.Add("3DBackgrounds");
+      cboThemeSelection.SelectedIndex = 0;
+      menuThemeForm.Controls.Add(cboThemeSelection);
+      // Menu Item Lable
+      lbMenuItem.Location = new Point(60, 240);
+      lbMenuItem.Width = 250;
+      lbMenuItem.TextAlign = ContentAlignment.MiddleCenter;
+      lbMenuItem.Text = "Default Background";
+      menuThemeForm.Controls.Add(lbMenuItem);
+      // Textbox
+      tbThemeInfo.Text = "Menu themes are a set a themed backgrounds that are applied to all Menu Items currently defined. One theme is supplied though others maybe added later either by us or the community.";
+      tbThemeInfo.AppendText(Environment.NewLine);
+      tbThemeInfo.AppendText(Environment.NewLine + "Applying this theme will set all Menu Items to fixed background and disable background sharing. Items added after will need to be  manually configured for the select theme.");
+      tbThemeInfo.AppendText(Environment.NewLine);
+      tbThemeInfo.AppendText(Environment.NewLine + "Most major plugins are supported and a best match will be made  background images can be changed via the 'Default Background Images' tab.");
+      tbThemeInfo.Location = new System.Drawing.Point(20, 20);
+      tbThemeInfo.WordWrap = true;
+      tbThemeInfo.Width = 325;
+      tbThemeInfo.Height = 200;
+      tbThemeInfo.Location = new Point(400, 10);
+      tbThemeInfo.BorderStyle = BorderStyle.Fixed3D;
+      tbThemeInfo.Multiline = true;
+      tbThemeInfo.ReadOnly = true;
+      menuThemeForm.Controls.Add(tbThemeInfo);
+    }
+
     #endregion
 
     #region Parmeter Handling
@@ -1960,267 +2224,6 @@ namespace StreamedMPEditor
 
     #endregion
 
-    private void bgBox_SelectionChangeCommitted(object sender, EventArgs e)
-    {
-      if (bgBox.SelectedItem.ToString().ToLower() == "3dbackgrounds")
-      {
-        disableBGSharing.Checked = true;
-
-        if (!Properties.Settings.Default.hide3dConfirm)
-        {
-          user3dConfirm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-          user3dConfirm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-          user3dConfirm.Name = "frmUser3dConfirm";
-          user3dConfirm.Text = "3D Background Information";
-          user3dConfirm.ControlBox = true;
-          user3dConfirm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-          user3dConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-          user3dConfirm.StartPosition = FormStartPosition.CenterScreen;
-          user3dConfirm.Width = 400;
-          user3dConfirm.Height = 160;
-          user3dConfirm.MaximizeBox = false;
-          user3dConfirm.MinimizeBox = false;
-          user3dConfirm.TopMost = true;
-
-          bt3dOk.Width = 80;
-          bt3dOk.Text = "OK";
-          bt3dOk.Location = new System.Drawing.Point(310, 105);
-          bt3dOk.Click += new System.EventHandler(bt3dOk_Click);
-          user3dConfirm.Controls.Add(bt3dOk);
-
-          cb3dShowAgain.Text = "Do not show this message again";
-          cb3dShowAgain.AutoSize = true;
-          cb3dShowAgain.Location = new System.Drawing.Point(10, 110);
-          user3dConfirm.Controls.Add(cb3dShowAgain);
-
-          tb3dInfo.BorderStyle = BorderStyle.None;
-          tb3dInfo.Multiline = true;
-          tb3dInfo.Text = "When using 3D backgrounds background sharing will be automaticlly";
-          tb3dInfo.AppendText(Environment.NewLine + "disabled for the Menu Item.");
-          tb3dInfo.AppendText(Environment.NewLine);
-          tb3dInfo.AppendText(Environment.NewLine + "Please remember you will need to set the the 3D background");
-          tb3dInfo.AppendText(Environment.NewLine + "for this Menu Item in the 'Defaul Background Images' tab.");
-          tb3dInfo.Location = new System.Drawing.Point(20, 20);
-          tb3dInfo.WordWrap = true;
-          tb3dInfo.Width = 350;
-          tb3dInfo.Height = 100;
-          tb3dInfo.ReadOnly = true;
-          user3dConfirm.Controls.Add(tb3dInfo);
-
-          user3dConfirm.Show();
-        }
-      }
-    }
-
-    private void bt3dOk_Click(object sender, EventArgs e)
-    {
-      user3dConfirm.Hide();
-      if (cb3dShowAgain.Checked)
-        Properties.Settings.Default.hide3dConfirm = true;
-    }
-
-
-    string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
-    string menuThemeName = "3DBackgrounds";
-
-    private void getThemeImages(string themeName)
-    {
-      SkinInfo skInfo = new SkinInfo();
-      string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media\\animations");
-      DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, themeName));
-      foreach (FileInfo fInfo in dInfo.GetFiles("*.jpg"))
-      {
-        menuThemeFiles.Add(fInfo.FullName);
-      }
-    }
-
-    private void button1_Click(object sender, EventArgs e)
-    {
-      menuThemeForm.Show();
-    }
-
-    private void btThemeNext_Click(object sender, EventArgs e)
-    {
-      if ((themeImageIndex + 1) < menuThemeFiles.Count)
-        themeImageIndex++;
-      else
-        themeImageIndex = 0;
-
-      matchBackground(Path.GetFileNameWithoutExtension(menuThemeFiles[themeImageIndex]));
-      workingImage = Image.FromFile(menuThemeFiles[themeImageIndex]);
-      pbThemePreview.Image = (Bitmap)workingImage.Clone();
-      workingImage.Dispose();
-    }
-
-    private void btThemePrev_Click(object sender, EventArgs e)
-    {
-      if ((themeImageIndex - 1) >= 0)
-        themeImageIndex--;
-      else
-        themeImageIndex = menuThemeFiles.Count - 1;
-
-      matchBackground(Path.GetFileNameWithoutExtension(menuThemeFiles[themeImageIndex]));
-      workingImage = Image.FromFile(menuThemeFiles[themeImageIndex]);
-      pbThemePreview.Image = (Bitmap)workingImage.Clone();
-      workingImage.Dispose();
-    }
-
-
-    private void themeEnable_Click(object sender, EventArgs e)
-    {
-      applybackgrounds();
-      menuThemeForm.Hide();
-      reloadBackgroundItems();
-    }
-
-    private void themeCancel_Click(object sender, EventArgs e)
-    {
-      menuThemeForm.Hide();
-    }
-
-    private void matchBackground(string background)
-    {
-      lbMenuItem.Text = background;
-    }
-
-    private void applybackgrounds()
-    {
-      for (int i = 0; i < formStreamedMpEditor.menuItems.Count; i++)
-      {
-        menuItems[i].fanartHandlerEnabled = false;
-        menuItems[i].disableBGSharing = true;
-        menuItems[i].bgFolder = "3DBackgrounds";
-        menuItems[i].defaultImage = bestThemeMatch(menuItems[i].hyperlink);
-      }
-    }
-
-    string bestThemeMatch(string hyperlink)
-    {
-      switch (int.Parse(hyperlink))
-      {
-        case 1:
-          return "animations\\3DBackgrounds\\My_TVGuide.jpg";
-        case 2:
-          return "animations\\3DBackgrounds\\My_Pictures.jpg";
-        case 4:
-          return "animations\\3DBackgrounds\\My_Settings.jpg";
-        case 6:
-          return "animations\\3DBackgrounds\\My_Videos.jpg";
-        case 30:
-          return "animations\\3DBackgrounds\\My_Music.jpg";
-        case 34:
-          return "animations\\3DBackgrounds\\My_Plugins.jpg";
-        case 501:
-        case 504:
-          return "animations\\3DBackgrounds\\My_Music.jpg";
-        case 2600:
-          return "animations\\3DBackgrounds\\My_Weather.jpg";
-        case 4755:
-          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
-        case 5900:
-          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
-        case 7890:
-          return "animations\\3DBackgrounds\\My_Music.jpg";
-        case 9811:
-          return "animations\\3DBackgrounds\\My_TVSeries.jpg";
-        case 16001:
-          return "animations\\3DBackgrounds\\My_News.jpg";
-        case 96742:
-          return "animations\\3DBackgrounds\\My_MovingPictures.jpg";
-        case 25650:
-          return "animations\\3DBackgrounds\\My_Music.jpg";
-        case 47286:
-          return "animations\\3DBackgrounds\\My_Rockstar.jpg";
-        case 711992:
-          return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
-        default:
-          return "animations\\3DBackgrounds\\default_background.jpg";
-      }
-    }
-
-    private void buildThemeScreen()
-    {
-      getThemeImages(menuThemeName);
-      //Main Theme Form
-      menuThemeForm.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      menuThemeForm.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      menuThemeForm.Name = "frmMenuThemes";
-      menuThemeForm.Text = "Menu Background Themes";
-      menuThemeForm.ControlBox = true;
-      menuThemeForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-      menuThemeForm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      menuThemeForm.StartPosition = FormStartPosition.CenterScreen;
-      menuThemeForm.Width = 750;
-      menuThemeForm.Height = 300;
-      menuThemeForm.MaximizeBox = false;
-      menuThemeForm.MinimizeBox = false;
-      menuThemeForm.TopMost = true;
-      menuThemeForm.ControlBox = false;
-      //Enable Theme Button
-      btThemeOk.Width = 200;
-      btThemeOk.Text = "Apply Selected Theme";
-      btThemeOk.Location = new System.Drawing.Point(400, 217);
-      btThemeOk.Click += new System.EventHandler(themeEnable_Click);
-      menuThemeForm.Controls.Add(btThemeOk);
-      //Disable Theme Button
-      btThemeCancel.Width = 120;
-      btThemeCancel.Text = "Cancel";
-      btThemeCancel.Location = new System.Drawing.Point(600, 217);
-      btThemeCancel.Click += new System.EventHandler(themeCancel_Click);
-      menuThemeForm.Controls.Add(btThemeCancel);
-      // Previw Image PictureBox
-      pbThemePreview.Width = 350;
-      pbThemePreview.Height = 197;
-      pbThemePreview.BorderStyle = BorderStyle.FixedSingle;
-      pbThemePreview.Location = new Point(10, 40);
-      pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
-      pbThemePreview.Image = (Bitmap)Image.FromFile(menuThemeFiles[themeImageIndex]).Clone();
-      menuThemeForm.Controls.Add(pbThemePreview);
-      //Previous Image Button
-      btThemePrev.Width = 50;
-      btThemePrev.Text = "Prev";
-      btThemePrev.Location = new System.Drawing.Point(10, 240);
-      btThemePrev.Click += new System.EventHandler(btThemePrev_Click);
-      menuThemeForm.Controls.Add(btThemePrev);
-      //Next Image Button
-      btThemeNext.Width = 50;
-      btThemeNext.Text = "Next";
-      btThemeNext.Location = new System.Drawing.Point(310, 240);
-      btThemeNext.Click += new System.EventHandler(btThemeNext_Click);
-      menuThemeForm.Controls.Add(btThemeNext);
-      // Theme Lable
-      lbTheme.Location = new Point(10, 12);
-      lbTheme.Width = 43;
-      lbTheme.Text = "Theme:";
-      menuThemeForm.Controls.Add(lbTheme);
-      //Theme selection combobox
-      cboThemeSelection.Location = new Point(56, 10);
-      cboThemeSelection.Width = 200;
-      cboThemeSelection.Items.Add("3DBackgrounds");
-      cboThemeSelection.SelectedIndex = 0;
-      menuThemeForm.Controls.Add(cboThemeSelection);
-      // Menu Item Lable
-      lbMenuItem.Location = new Point(60, 240);
-      lbMenuItem.Width = 250;
-      lbMenuItem.TextAlign = ContentAlignment.MiddleCenter;
-      lbMenuItem.Text = "Default Background";
-      menuThemeForm.Controls.Add(lbMenuItem);
-      // Textbox
-      tbThemeInfo.Text = "Menu themes are a set a themed backgrounds that are applied to all Menu Items currently defined. One theme is supplied though others maybe added later either by us or the community.";
-      tbThemeInfo.AppendText(Environment.NewLine);
-      tbThemeInfo.AppendText(Environment.NewLine + "Applying this theme will set all Menu Items to fixed background and disable background sharing. Items added after will need to be  manually configured for the select theme.");
-      tbThemeInfo.AppendText(Environment.NewLine);
-      tbThemeInfo.AppendText(Environment.NewLine + "Most major plugins are supported and a best match will be made  background images can be changed via the 'Default Background Images' tab.");
-      tbThemeInfo.Location = new System.Drawing.Point(20, 20);
-      tbThemeInfo.WordWrap = true;
-      tbThemeInfo.Width = 325;
-      tbThemeInfo.Height = 200;
-      tbThemeInfo.Location = new Point(400, 10);
-      tbThemeInfo.BorderStyle = BorderStyle.Fixed3D;
-      tbThemeInfo.Multiline = true;
-      tbThemeInfo.ReadOnly = true;
-      menuThemeForm.Controls.Add(tbThemeInfo);
-    }
   }
 }
 
