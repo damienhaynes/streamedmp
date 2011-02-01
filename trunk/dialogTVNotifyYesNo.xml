@@ -5,6 +5,24 @@
   <allowoverlay>no</allowoverlay>
   <controls>
     <import>common.dialog.xml</import>
+    
+    <control>
+      <description>logo</description>
+      <type>image</type>
+      <id>12</id>
+      <posX>400</posX>
+      <posY>515</posY>
+      <width>98</width>
+      <height>98</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+	    <animation effect="fade" time="200">windowopen</animation>
+      <animation effect="fade" time="200">windowclose</animation>
+    </control>    
+    
     <control>
       <description>Yes button</description>
       <type>button</type>
@@ -23,7 +41,7 @@
       <onright>10</onright>
       <onup>11</onup>
       <ondown>11</ondown>
-	  <animation effect="fade" time="200">windowopen</animation>
+	    <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
     <control>
@@ -44,7 +62,7 @@
       <onright>11</onright>
       <onup>10</onup>
       <ondown>10</ondown>
-	  <animation effect="fade" time="200">windowopen</animation>
+	    <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
   </controls>
