@@ -102,7 +102,6 @@
 #define MYLYRICS_MIN_VERSION						"1.5.4.0"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.2.0"
 #define INFOSERVICE_MIN_VERSION						"1.6.1.167"
-#define TRAILERS_MIN_VERSION						"2.0.6.49"
 
 
 // XML Path Defines
@@ -2526,23 +2525,7 @@ begin
 	    	endif;
 	    endif;
     endif; 
-    
-    if (!FeatureIsItemSelected(MEDIA,"Plugins\\MyTrailers")) then
-		// Check that compatible version of plugin is used
-		if GetFileVersion(svVersion2,"TRAILERS") = 0 then
-			svVersion1 = TRAILERS_MIN_VERSION;
-	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
-		    	if nReturn < 0 then
-		    		szQuestion = szQuestion + "\n\n";
-		    	endif;
-		    	szQuestion = szQuestion + "Your current version of My Trailers plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
-		    				svVersion1;
-		        nReturn = nReturn - 1;
-	    	endif;
-	    endif;
-    endif; 
-    
+        
     if (!FeatureIsItemSelected(MEDIA,"Plugins\\InfoService")) then
 		// Check that compatible version of plugin is used
 		if GetFileVersion(svVersion2,"INFOSERVICE") = 0 then
