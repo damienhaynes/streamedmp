@@ -268,6 +268,7 @@ namespace StreamedMPEditor
     Button btThemeCancel = new Button();
     Button btThemeNext = new Button();
     Button btThemePrev = new Button();
+    Button btReset = new Button();
     TextBox tbThemeInfo = new TextBox();
     Label lbMenuItem = new Label();
     Label lbTheme = new Label();
@@ -1902,17 +1903,31 @@ namespace StreamedMPEditor
       workingImage.Dispose();
     }
 
-
     private void themeEnable_Click(object sender, EventArgs e)
     {
       applybackgrounds();
       menuThemeForm.Hide();
+      MessageBox.Show("The 3DBackgrounds Theme has been applied\n\nIntial images have been configured for each menu item\nthese can be futher customised in'Default Background Images' tab.",
+              "Background Theme 3DBackgrounds Applied",
+              MessageBoxButtons.OK,
+              MessageBoxIcon.Information);
       reloadBackgroundItems();
     }
 
     private void themeCancel_Click(object sender, EventArgs e)
     {
       menuThemeForm.Hide();
+    }
+
+    private void themeReset_Click(object sender, EventArgs e)
+    {
+      resetTheme();
+      menuThemeForm.Hide();
+      MessageBox.Show("The background theme has been reset to skin defaults\n\nPlease check and adjust backgrounds on the 'Default Background Images' tab.",
+                      "Background Theme Reset",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Information);
+      reloadBackgroundItems();
     }
 
     private void matchBackground(string background)
@@ -1930,6 +1945,62 @@ namespace StreamedMPEditor
         menuItems[i].defaultImage = bestThemeMatch(menuItems[i].hyperlink);
       }
     }
+
+    private void resetTheme()
+    {
+      for (int i = 0; i < formStreamedMpEditor.menuItems.Count; i++)
+      {
+        menuItems[i].fanartHandlerEnabled = false;
+        menuItems[i].disableBGSharing = false;
+        menuItems[i].bgFolder = bgFolder(menuItems[i].hyperlink);
+        menuItems[i].defaultImage = "animations\\" + menuItems[i].bgFolder + "\\default.jpg";
+      }
+    }
+
+    private string bgFolder(string hyperlink)
+    {
+      switch (int.Parse(hyperlink))
+      {
+        case 1:
+          return "tv";
+        case 2:
+          return "pictures";
+        case 4:
+          return "settings";
+        case 6:
+          return "movies";
+        case 30:
+          return "music";
+        case 34:
+          return "pluginsbg";
+        case 501:
+        case 504:
+          return "music";
+        case 2600:
+          return "weatherbg";
+        case 4755:
+          return "movies";
+        case 5900:
+          return "movies";
+        case 7890:
+          return "music";
+        case 9811:
+          return "tv";
+        case 16001:
+          return "news";
+        case 96742:
+          return "movies";
+        case 25650:
+          return "music";
+        case 47286:
+          return "music";
+        case 711992:
+          return "movies";
+        default:
+          return "tv";
+      }
+    }
+
 
     private string bestThemeMatch(string hyperlink)
     {
@@ -1993,18 +2064,24 @@ namespace StreamedMPEditor
       menuThemeForm.MinimizeBox = false;
       menuThemeForm.TopMost = true;
       menuThemeForm.ControlBox = false;
-      //Enable Theme Button
+      //Apply Theme Button
       btThemeOk.Width = 200;
       btThemeOk.Text = "Apply Selected Theme";
       btThemeOk.Location = new System.Drawing.Point(400, 217);
       btThemeOk.Click += new System.EventHandler(themeEnable_Click);
       menuThemeForm.Controls.Add(btThemeOk);
-      //Disable Theme Button
+      //Cancel Button
       btThemeCancel.Width = 120;
       btThemeCancel.Text = "Cancel";
       btThemeCancel.Location = new System.Drawing.Point(600, 217);
       btThemeCancel.Click += new System.EventHandler(themeCancel_Click);
       menuThemeForm.Controls.Add(btThemeCancel);
+      // Reset to skin default theme
+      btReset.Width = 200;
+      btReset.Text = "Reset to Default";
+      btReset.Location = new System.Drawing.Point(400, 243);
+      btReset.Click += new System.EventHandler(themeReset_Click);
+      menuThemeForm.Controls.Add(btReset);
       // Previw Image PictureBox
       pbThemePreview.Width = 350;
       pbThemePreview.Height = 197;
