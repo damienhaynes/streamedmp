@@ -1863,6 +1863,7 @@ namespace StreamedMPEditor
 
     private void getThemeImages(string themeName)
     {
+      menuThemeFiles.Clear();
       SkinInfo skInfo = new SkinInfo();
       string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media\\animations");
       DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, themeName));
@@ -1872,9 +1873,43 @@ namespace StreamedMPEditor
       }
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void btBackgroundThemes_Click(object sender, EventArgs e)
     {
+      readThemes();
       menuThemeForm.Show();
+    }
+
+    void readThemes()
+    {
+      XmlDocument doc = new XmlDocument();
+      //
+      // Open the intstalled themes file - If there is no file the theme will default to the 3DBackgrounds defaut theme.
+      //
+      if (File.Exists(SkinInfo.mpPaths.configBasePath + "SMPThemes.xml"))
+      {
+        try
+        {
+          doc.Load(SkinInfo.mpPaths.configBasePath + "SMPThemes.xml");
+        }
+        catch (Exception e1)
+        {
+          helper.showError("Exception while loading SMPThemes.xml\n\nUnable to Continue - please restore from backup" + e1.Message, errorCode.major);
+        }
+        string themeTag = "Installed Themes";
+        // Now read the file
+        XmlNodeList nodelist = doc.DocumentElement.SelectNodes("/themes/skin");
+        cboThemeSelection.Items.Clear();
+        for (int i = 0; i < int.Parse(readEntryValue(themeTag, "count", nodelist)); i++)
+        {
+          cboThemeSelection.Items.Add(readEntryValue(themeTag, "theme" + i.ToString(), nodelist));
+        }
+      }
+    }
+
+    void cboThemeSelection_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      getThemeImages(cboThemeSelection.Text);
+      pbThemePreview.Image = (Bitmap)Image.FromFile(menuThemeFiles[0]).Clone();
     }
 
     private void btThemeNext_Click(object sender, EventArgs e)
@@ -2112,6 +2147,7 @@ namespace StreamedMPEditor
       cboThemeSelection.Width = 200;
       cboThemeSelection.Items.Add("3DBackgrounds");
       cboThemeSelection.SelectedIndex = 0;
+      cboThemeSelection.SelectedIndexChanged += new System.EventHandler(cboThemeSelection_SelectedIndexChanged);
       menuThemeForm.Controls.Add(cboThemeSelection);
       // Menu Item Lable
       lbMenuItem.Location = new Point(60, 240);
