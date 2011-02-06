@@ -1583,7 +1583,7 @@
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
                     "<width>255</width>" +
-                    "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>" +
+                    "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
                   "</control>" +
