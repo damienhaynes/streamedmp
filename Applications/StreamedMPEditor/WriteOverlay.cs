@@ -13,6 +13,17 @@ namespace StreamedMPEditor
       int overlayOffset = 140;
       string overlayFanart = "No";
       string hideControls = "!control.isvisible(" + int.Parse(weatherId.ToString()) + ")";
+
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+      {
+        hideControls += "+![";
+        foreach (menuItem menItem in menuItems)
+        {
+          hideControls += "control.isvisible(" + (menItem.id + 100).ToString() + ")|";
+        }
+        hideControls = hideControls.Substring(0, hideControls.Length - 1) + "]";
+      }
+
       if (menuStyle == chosenMenuStyle.horizontalContextStyle || enableFiveDayWeather.Checked == false)
         hideControls = "";
 
@@ -49,6 +60,9 @@ namespace StreamedMPEditor
 
       if (menuStyle == chosenMenuStyle.verticalStyle)
         overlayYpos = 540;
+
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        overlayYpos = baseYpos;
 
       if (cbOverlayFanart.Checked)
         overlayFanart = "Yes";
