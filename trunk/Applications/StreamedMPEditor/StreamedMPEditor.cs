@@ -1434,7 +1434,8 @@ namespace StreamedMPEditor
 
       generateMostRecentFilesAndImports("GenImports");
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        generateOverlay(int.Parse(txtMenuPos.Text), 0, basicHomeValues.weatherControl);
+        //generateOverlay(int.Parse(txtMenuPos.Text), 0, basicHomeValues.weatherControl);
+        generateOverlay(0, 380, basicHomeValues.weatherControl);
       else
         generateOverlay(int.Parse(txtMenuPos.Text), 765, basicHomeValues.weatherControl);
 
