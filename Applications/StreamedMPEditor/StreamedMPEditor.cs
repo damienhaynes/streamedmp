@@ -2078,7 +2078,7 @@ namespace StreamedMPEditor
         case 711992:
           return "animations\\3DBackgrounds\\My_OnlineVideos.jpg";
         default:
-          return "animations\\3DBackgrounds\\default_background.jpg";
+          return "animations\\3DBackgrounds\\default.jpg";
       }
     }
 
