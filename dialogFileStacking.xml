@@ -3,8 +3,21 @@
   <id>2008</id>
   <defaultcontrol>1</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+  <animation effect="Fade" time="250">WindowOpen</animation>
+  <animation effect="Fade" time="250">WindowClose</animation>
   <controls>
     <import>common.dialog.xml</import>
+    <control>
+      <description>Selected Item Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>405</posX>
+      <posY>300</posY>
+      <label>#stackedMovie.Selected</label>
+      <width>470</width>
+      <font>mediastream11c</font>
+      <textcolor>White</textcolor>      
+    </control>
     <control>
       <description>CD1</description>
       <type>button</type>
