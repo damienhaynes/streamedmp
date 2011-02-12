@@ -730,15 +730,27 @@ namespace StreamedMPEditor
       // Now move the folders
       foreach (string folder in foldersToMove)
       {
-        string fromDir = folder + "\\";
-        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder) + "\\";
+        string fromDir = folder;
+        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
         try
         {
           Directory.Move(fromDir, toDir);
         }
+        catch (ArgumentNullException)
+        {
+          helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+        catch (System.Security.SecurityException)
+        {
+          helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+        catch (IOException)
+        {
+          helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
         catch (Exception e)
         {
-          helper.showError(e.Message, errorCode.info);
+          helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
         }
       }
 
