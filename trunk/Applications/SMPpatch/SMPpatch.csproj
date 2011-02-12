@@ -154,7 +154,9 @@
     <EmbeddedResource Include="EmbeddedPatches\TranslateProvider.dll" />
     <Content Include="patchNotInstalled.png" />
     <Content Include="patchInstalled.png" />
-    <EmbeddedResource Include="EmbeddedPatches\PatchControl.xml" />
+    <EmbeddedResource Include="EmbeddedPatches\PatchControl.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
       <SubType>Designer</SubType>
