@@ -34,7 +34,7 @@ namespace StreamedMPEditor
       ToolTip labelsToolTip;
 
 
-      for (int i = 0; i < 24; i++)
+      for (int i = 0; i < 48; i++)
         defImgs.picBoxes[i] = null;
 
       defImgs.count = bgItems.Count;
@@ -317,7 +317,7 @@ namespace StreamedMPEditor
             if (menuItems[i].disableBGSharing)
             {
               // This is a stand alone menu so set the image for this item to what has been selected
-              menuItems[i].defaultImage = "animations\\" + menuItems[i].bgFolder + "\\" + Path.GetFileName(fromFile);
+              menuItems[i].defaultImage = bgFolderName + "\\" + menuItems[i].bgFolder + "\\" + Path.GetFileName(fromFile);
               break;
             }
             else
@@ -487,7 +487,7 @@ namespace StreamedMPEditor
 
     private string imageDir(string image)
     {
-      if (!image.StartsWith("Animations\\") && !image.Contains(":"))
+      if (image.ToLower().StartsWith(bgFolderName.ToLower() + "\\") && !image.Contains(":"))
         return SkinInfo.mpPaths.streamedMPpath + "media\\" + image;
       else
         return image;

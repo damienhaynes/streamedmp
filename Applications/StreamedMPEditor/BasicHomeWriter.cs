@@ -1845,7 +1845,7 @@ namespace StreamedMPEditor
         if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
         {
           rawXML.AppendLine("<type>image</type>");
-          rawXML.AppendLine("<texture>animations\\linkedweather\\#infoservice.weather.today.img.big.filenamewithoutext.jpg</texture>");
+          rawXML.AppendLine("<texture>" + bgFolderName + "\\linkedweather\\#infoservice.weather.today.img.big.filenamewithoutext.jpg</texture>");
         }
         else
         {
@@ -4098,7 +4098,7 @@ namespace StreamedMPEditor
         driveFreeSpaceList = driveFreeSpaceList.Substring(0, driveFreeSpaceList.Length - 1);
 
       xml = ("<profile>\n"
-                + "\t<version>1.0</version>\n"
+                + "\t<version>" + profileVersion + "</version>\n"
                 + "\t<skin name=\"StreamedMP\">\n"
                 + "\t\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
                 + generateEntry("menustyle", activeMenuStyle, 3, true)

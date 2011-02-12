@@ -1252,7 +1252,7 @@ namespace StreamedMPEditor
 
     private bool weatherBackgoundsInstalled()
     {
-      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\animations\\linkedweather"))
+      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\ + bgFolderName + \\linkedweather"))
         return true;
       else
         return false;
@@ -1459,7 +1459,7 @@ namespace StreamedMPEditor
     {
       // Set default image....
       if (!item.bgFolder.Contains("\\"))
-        item.defaultImage = "animations\\" + item.bgFolder + "\\default.jpg";
+        item.defaultImage = bgFolderName + "\\" + item.bgFolder + "\\default.jpg";
       else
         item.defaultImage = item.bgFolder + "\\default.jpg";
       // And check if it exists and create if not.
@@ -2094,7 +2094,7 @@ namespace StreamedMPEditor
       public string activeDir;
       public string[] newDefault = new string[3];
       public PictureBox[] NewPicBoxes = new PictureBox[3];
-      public PictureBox[] picBoxes = new PictureBox[24];
+      public PictureBox[] picBoxes = new PictureBox[48];
     }
 
     public class prettyItem

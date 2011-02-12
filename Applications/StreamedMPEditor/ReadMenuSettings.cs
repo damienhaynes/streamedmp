@@ -23,8 +23,11 @@ namespace StreamedMPEditor
       string mostRecentTVSeriesSummStyle = null;
       string mostRecentMovPicsSummStyle = null;
 
+
       int subMenuItems1 = 0;
       int subMenuItems2 = 0;
+
+      bool folderUpdateRequired = false;
 
       itemsOnMenubar.Items.Clear();
 
@@ -65,9 +68,15 @@ namespace StreamedMPEditor
       }
       switch (versionNum)
       {
+        case "2.0":
+          optionsTag = "StreamedMP Options";
+          menuTag = "StreamedMP Menu Items";
+          bgFolderName = "SMPbackgrounds";
+          break;
         case "1.0":
           optionsTag = "StreamedMP Options";
           menuTag = "StreamedMP Menu Items";
+          folderUpdateRequired = true;
           break;
         default:
           optionsTag = "StreamedMP Options";
@@ -666,14 +675,14 @@ namespace StreamedMPEditor
 
         // Check if the stored image still exists, if nor set to default.jpg
         if (!System.IO.File.Exists((imageDir(defaultImage))))
-          defaultImage = "animations\\" + mnuItem.bgFolder + "\\default.jpg";
+          defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
 
-        if (defaultImage.StartsWith("animations"))
+        if (defaultImage.ToLower().StartsWith(bgFolderName.ToLower()))
           mnuItem.defaultImage = defaultImage;
         else
         {
           if (!mnuItem.bgFolder.Contains("\\"))
-            mnuItem.defaultImage = "animations\\" + mnuItem.bgFolder + "\\default.jpg";
+            mnuItem.defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
           else
             mnuItem.defaultImage = mnuItem.bgFolder + "\\default.jpg";
         }
@@ -683,6 +692,75 @@ namespace StreamedMPEditor
       reloadBackgroundItems();
       //UpdateImageControlVisibility();
       btGenerateMenu.Enabled = true;
+
+      if (folderUpdateRequired)
+        updateBackgroundFolders();
+    }
+
+
+    void updateBackgroundFolders()
+    {
+
+      // Up the location of of the background folders
+      // Move from sub folders of animations folder to new background folder.
+      // get list of folders to move
+      string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
+      foreach (string folder in directories)
+      {
+        switch (Path.GetFileName(folder).ToLower())
+        {
+          case "anvu":
+            break;
+          case "ledvu":
+            break;
+          case "play":
+            break;
+          case "weathericons":
+            break;
+          default:
+            foldersToMove.Add(folder);
+            break;
+        }
+      }
+
+      // Create the new directory SMPBackgrounds
+      if (!Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
+        Directory.CreateDirectory(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds");
+
+      // Now move the folders
+      foreach (string folder in foldersToMove)
+      {
+        string fromDir = folder + "\\";
+        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder) + "\\";
+        try
+        {
+          Directory.Move(fromDir, toDir);
+        }
+        catch (Exception e)
+        {
+          helper.showError(e.Message, errorCode.info);
+        }
+      }
+
+      // directories moved - update menu image directory to point at new dir
+      bgFolderName = "SMPBackgrounds";
+      foreach (menuItem mi in menuItems)
+      {
+        if (!mi.fanartHandlerEnabled && mi.defaultImage.ToLower().StartsWith("animations"))
+        {
+          mi.defaultImage = bgFolderName + "\\" + mi.bgFolder + "\\" + Path.GetFileName("c:\\" + mi.defaultImage);
+        }
+      }
+      genMenu(true);
+      itemsOnMenubar.Items.Clear();
+      bgItems.Clear();
+      menuItems.Clear();
+      // reset item id's as it is possible to generate again.
+      foreach (menuItem item in menuItems)
+      {
+        item.id = menuItems.IndexOf(item);
+      }
+      loadMenuSettings();
     }
 
     string getXMLFileName(string hyperLink)
