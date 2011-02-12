@@ -59,7 +59,7 @@ This file should contain the details view
       <posY>0</posY>
       <width>860</width>
       <height>508</height>
-      <texture>Animations\music\default.jpg</texture>
+      <texture>SMPBackgrounds\music\default.jpg</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)] | !plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
       <animation effect="fade" start="100" end="0" time="900" reversible="false">Hidden</animation>
