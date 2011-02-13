@@ -85,9 +85,18 @@ namespace StreamedMPEditor
         if (innerNode != null)
           pItem.isweather = bool.Parse(innerNode.InnerText);
 
+        innerNode = node.SelectSingleNode("takesparmeter");
+        if (innerNode != null)
+          pItem.takesParmeter = bool.Parse(innerNode.InnerText);
+
+        innerNode = node.SelectSingleNode("pluginparmeter");
+        if (innerNode != null)
+          pItem.pluginParmeter = innerNode.InnerText;
+
         // Dont Add item if its not available
         if (ids.Contains(pItem.id))
           formStreamedMpEditor.prettyItems.Add(pItem);
+      
       }
       // Load list
       foreach (formStreamedMpEditor.prettyItem p in formStreamedMpEditor.prettyItems)

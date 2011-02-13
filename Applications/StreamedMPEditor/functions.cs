@@ -2107,6 +2107,8 @@ namespace StreamedMPEditor
       public string xmlfile;
       public bool isweather;
       public string id;
+      public bool takesParmeter;
+      public string pluginParmeter;
     }
 
     public struct editorPaths
