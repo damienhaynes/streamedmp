@@ -77,6 +77,8 @@ namespace StreamedMPEditor
           optionsTag = "StreamedMP Options";
           menuTag = "StreamedMP Menu Items";
           folderUpdateRequired = true;
+          if (foldersUpdated())
+            bgFolderName = "SMPbackgrounds";           
           break;
         default:
           optionsTag = "StreamedMP Options";
@@ -673,6 +675,17 @@ namespace StreamedMPEditor
         // If user decides not to use multiimage backgrounds then we need a default image, lets check and set if one is required
         defaultImage = readEntryValue(menuTag, "menuitem" + i.ToString() + "defaultimage", nodelist);
 
+        // Version 2.0 usermenu profile - check if folder structure updated but menu has not.
+        // if so replace "Animations" with "SMPBackgrounds"
+        // Belts and Braces checks
+        if (versionNum == "1.0" && foldersUpdated())
+        {
+          if (defaultImage.ToLower().StartsWith("animations"))
+          {
+            defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\" + Path.GetFileName("C:\\" + defaultImage);
+          }
+        }
+
         // Check if the stored image still exists, if nor set to default.jpg
         if (!System.IO.File.Exists((imageDir(defaultImage))))
           defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
@@ -695,84 +708,6 @@ namespace StreamedMPEditor
 
       if (folderUpdateRequired)
         updateBackgroundFolders();
-    }
-
-
-    void updateBackgroundFolders()
-    {
-
-      // Up the location of of the background folders
-      // Move from sub folders of animations folder to new background folder.
-      // get list of folders to move
-      string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
-      foreach (string folder in directories)
-      {
-        switch (Path.GetFileName(folder).ToLower())
-        {
-          case "anvu":
-            break;
-          case "ledvu":
-            break;
-          case "play":
-            break;
-          case "weathericons":
-            break;
-          default:
-            foldersToMove.Add(folder);
-            break;
-        }
-      }
-
-      // Create the new directory SMPBackgrounds
-      if (!Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
-        Directory.CreateDirectory(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds");
-
-      // Now move the folders
-      foreach (string folder in foldersToMove)
-      {
-        string fromDir = folder;
-        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
-        try
-        {
-          Directory.Move(fromDir, toDir);
-        }
-        catch (ArgumentNullException)
-        {
-          helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (System.Security.SecurityException)
-        {
-          helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (IOException)
-        {
-          helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (Exception e)
-        {
-          helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-      }
-
-      // directories moved - update menu image directory to point at new dir
-      bgFolderName = "SMPBackgrounds";
-      foreach (menuItem mi in menuItems)
-      {
-        if (!mi.fanartHandlerEnabled && mi.defaultImage.ToLower().StartsWith("animations"))
-        {
-          mi.defaultImage = bgFolderName + "\\" + mi.bgFolder + "\\" + Path.GetFileName("c:\\" + mi.defaultImage);
-        }
-      }
-      genMenu(true);
-      itemsOnMenubar.Items.Clear();
-      bgItems.Clear();
-      menuItems.Clear();
-      // reset item id's as it is possible to generate again.
-      foreach (menuItem item in menuItems)
-      {
-        item.id = menuItems.IndexOf(item);
-      }
-      loadMenuSettings();
     }
 
     string getXMLFileName(string hyperLink)
@@ -921,6 +856,96 @@ namespace StreamedMPEditor
       }
       return theIcon;
     }
+
+
+    void updateBackgroundFolders()
+    {
+
+      // Up the location of of the background folders
+      // Move from sub folders of animations folder to new background folder.
+      // get list of folders to move
+      string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
+      foreach (string folder in directories)
+      {
+        switch (Path.GetFileName(folder).ToLower())
+        {
+          case "anvu":
+            break;
+          case "ledvu":
+            break;
+          case "play":
+            break;
+          case "weathericons":
+            break;
+          default:
+            foldersToMove.Add(folder);
+            break;
+        }
+      }
+
+      // Create the new directory SMPBackgrounds
+      if (!Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
+        Directory.CreateDirectory(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds");
+
+      // Now move the folders
+      foreach (string folder in foldersToMove)
+      {
+        string fromDir = folder;
+        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
+        try
+        {
+          Directory.Move(fromDir, toDir);
+        }
+        catch (ArgumentNullException)
+        {
+          helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+        catch (System.Security.SecurityException)
+        {
+          helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+        catch (IOException)
+        {
+          helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+        catch (Exception e)
+        {
+          helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+        }
+      }
+
+      // directories moved - update menu image directory to point at new dir
+      bgFolderName = "SMPBackgrounds";
+      foreach (menuItem mi in menuItems)
+      {
+        if (!mi.fanartHandlerEnabled && mi.defaultImage.ToLower().StartsWith("animations"))
+        {
+          mi.defaultImage = bgFolderName + "\\" + mi.bgFolder + "\\" + Path.GetFileName("c:\\" + mi.defaultImage);
+        }
+      }
+      genMenu(true);
+      itemsOnMenubar.Items.Clear();
+      bgItems.Clear();
+      menuItems.Clear();
+      // reset item id's as it is possible to generate again.
+      foreach (menuItem item in menuItems)
+      {
+        item.id = menuItems.IndexOf(item);
+      }
+      loadMenuSettings();
+    }
+
+    bool foldersUpdated()
+    {
+      // Ok, quick check to see if the folder have already moved but the usermenuprofile
+      // has not been updated.
+      // this could happen if running against SVN or if a clean install with previous usermenuprofile.
+      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
+        return true;
+      else
+        return false;
+    }
+
   }
 }
 
