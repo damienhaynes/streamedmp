@@ -5,7 +5,7 @@ This file should contain the details view
 <window>
   <controls>
     <control>
-      <description>Current Track Star Rating (STD Res Version)</description>
+      <description>Current Track Star Rating</description>
       <type>imagelist</type>
       <id>1337</id>
       <posX>753</posX>
@@ -20,26 +20,8 @@ This file should contain the details view
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#Play.Current.Rating</percentage>
-      <visible>Player.HasMedia+string.equals(#StreamedMP.FullHD,false)</visible>
-    </control>
-    <control>
-      <description>Current Track Star Rating (1920x1080 Res Version)</description>
-      <type>imagelist</type>
-      <id>1337</id>
-      <posX>753</posX>
-      <posY>512</posY>
-      <textureWidth>48</textureWidth>
-      <textureHeight>48</textureHeight>
-      <subitems>
-        <subitem>white-star-outline.png</subitem>
-        <subitem>white-star-filled.png</subitem>
-      </subitems>
-      <orientation>horizontal</orientation>
-      <align>left</align>
-      <imagesToDraw>5</imagesToDraw>
-      <percentage>#Play.Current.Rating</percentage>
-      <visible>Player.HasMedia+string.equals(#StreamedMP.FullHD,true)</visible>
-    </control>
+      <visible>Player.HasMedia</visible>
+    </control>    
     <control>
       <type>fadelabel</type>
       <description>Artist label</description>

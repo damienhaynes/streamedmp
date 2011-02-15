@@ -70,30 +70,9 @@
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
       <visible>control.isvisible(24)</visible>
-    </control>
+    </control>   
     <control>
-      <description>Star Rating Image - 1080p</description>
-      <type>imagelist</type>
-      <id>0</id>
-      <width>115</width>
-      <height>22</height>
-      <posX>363</posX>
-      <posY>450</posY>
-      <align>left</align>
-      <textureWidth>35</textureWidth>
-      <textureHeight>34</textureHeight>
-      <subitems>
-        <subitem>starwhitehollow.png</subitem>
-        <subitem>starwhite.png</subitem>
-      </subitems>
-      <orientation>horizontal</orientation>
-      <align>left</align>
-      <imagesToDraw>5</imagesToDraw>
-      <percentage>#st_userrating</percentage>
-      <visible>control.isvisible(24)+string.equals(#StreamedMP.FullHD,True)</visible>
-    </control>
-    <control>
-      <description>Star Rating Image - 720p</description>
+      <description>Star Rating Image</description>
       <type>imagelist</type>
       <id>0</id>
       <width>115</width>
@@ -111,7 +90,7 @@
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#st_userrating</percentage>
-      <visible>control.isvisible(24)+!string.equals(#StreamedMP.FullHD,True)</visible>
+      <visible>control.isvisible(24)</visible>
     </control>
     <control>
       <description>Star Rating Value</description>

@@ -39,7 +39,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Rating Stars - 720p</description>
+      <description>Rating Stars</description>
       <type>imagelist</type>
       <id>101</id>
       <posX>31</posX>
@@ -54,30 +54,10 @@ This file should contain the details view
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#rating</percentage>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+!string.equals(#StreamedMP.FullHD,True)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Rating Stars - 1080p</description>
-      <type>imagelist</type>
-      <id>101</id>
-      <posX>31</posX>
-      <posY>305</posY>
-      <textureWidth>35</textureWidth>
-      <textureHeight>34</textureHeight>
-      <subitems>
-        <subitem>starwhitehollow.png</subitem>
-        <subitem>starwhite.png</subitem>
-      </subitems>
-      <orientation>horizontal</orientation>
-      <align>left</align>
-      <imagesToDraw>5</imagesToDraw>
-      <percentage>#rating</percentage>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#StreamedMP.FullHD,True)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <description>Rating Label</description>
       <id>0</id>

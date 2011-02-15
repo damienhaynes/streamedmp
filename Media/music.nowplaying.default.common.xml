@@ -403,7 +403,7 @@
       <id>141</id>
       <description>Rating</description>
       <type>imagelist</type>
-      <visible>string.equals(#StreamedMP.FullHD,false)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]</visible>
+      <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]</visible>
       <posX>195</posX>
       <posY>640</posY>
       <textureWidth>24</textureWidth>
@@ -418,27 +418,7 @@
       </subitems>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>
-    <control>
-      <id>141</id>
-      <description>Rating</description>
-      <type>imagelist</type>
-      <visible>string.equals(#StreamedMP.FullHD,true)+[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]</visible>
-      <posX>198</posX>
-      <posY>640</posY>
-      <textureWidth>32</textureWidth>
-      <textureHeight>32</textureHeight>
-      <percentage>#Play.Current.Rating</percentage>
-      <imagesToDraw>5</imagesToDraw>
-      <orientation>HORIZONTAL</orientation>
-      <align>LEFT</align>
-      <subitems>
-        <subitem>white-star-outline.png</subitem>
-        <subitem>white-star-filled.png</subitem>
-      </subitems>
-      <animation effect="Fade" time="800">WindowOpen</animation>
-      <animation effect="Fade" time="300">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <id>0</id>
       <description>Shodow - list of top album tracks label</description>
