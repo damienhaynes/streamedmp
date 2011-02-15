@@ -106,31 +106,8 @@
         <align>left</align>
         <imagesToDraw>5</imagesToDraw>
         <percentage>#Play.Current.Rating</percentage>
-        <visible>control.hasthumb(112)+string.equals(#StreamedMP.FullHD,false)</visible>
-      </control>
-      <control>
-        <type>imagelist</type>
-        <id>141</id>
-        <posX>85</posX>
-        <posY>430</posY>
-        <width>120</width>
-        <height>24</height>
-        <onup>1141</onup>
-        <ondown>200010</ondown>
-        <onleft>200010</onleft>
-        <onright>200010</onright>
-        <textureWidth>48</textureWidth>
-        <textureHeight>48</textureHeight>
-        <subitems>
-          <subitem>white-star-outline.png</subitem>
-          <subitem>white-star-filled.png</subitem>
-        </subitems>
-        <orientation>horizontal</orientation>
-        <align>left</align>
-        <imagesToDraw>5</imagesToDraw>
-        <percentage>#Play.Current.Rating</percentage>
-        <visible>control.hasthumb(112)+string.equals(#StreamedMP.FullHD,true)</visible>
-      </control>
+        <visible>control.hasthumb(112)</visible>
+      </control>      
       <!-- Animation -->
       <control>
         <type>multiimage</type>
