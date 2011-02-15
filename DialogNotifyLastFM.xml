@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <id>2016</id>
+  <defaultcontrol>4</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <colordiffuse>90ffffff</colordiffuse>
+      <animation effect="fade" time="200">windowopen</animation>
+      <animation effect="fade" time="200">windowclose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>697</posX>
+      <posY>490</posY>
+      <width>532</width>
+      <height>23</height>
+      <texture>dialogtop.png</texture>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>697</posX>
+      <posY>512</posY>
+      <width>532</width>
+      <height>180</height>
+      <texture>dialogmiddle.png</texture>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>697</posX>
+      <posY>692</posY>
+      <width>532</width>
+      <height>23</height>
+      <texture>dialogbottom.png</texture>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <description>Heading text label</description>
+      <type>label</type>
+      <id>3</id>
+      <posX>697</posX>
+      <posY>530</posY>
+      <width>532</width>
+      <label>181</label>
+      <font>mediastream11tc</font>
+      <align>center</align>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <description>logo</description>
+      <type>image</type>
+      <id>5</id>
+      <posX>722</posX>
+      <posY>562</posY>
+      <width>75</width>
+      <height>75</height>
+      <texture>#thumb</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+      <keepaspectratio>yes</keepaspectratio>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <description>textarea</description>
+      <type>textbox</type>
+      <id>6</id>
+      <font>mediastream12</font>
+      <posX>847</posX>
+      <posY>557</posY>
+      <width>350</width>
+      <height>110</height>
+      <spinPosX>1280</spinPosX>
+      <spinPosY>720</spinPosY>
+      <spinWidth>25</spinWidth>
+      <spinHeight>25</spinHeight>
+      <onleft>4</onleft>
+      <onright>4</onright>
+      <onup>4</onup>
+      <ondown>4</ondown>
+      <label>-</label>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+    <control>
+      <description>OK button</description>
+      <type>button</type>
+      <id>4</id>
+      <font>mediastream10tc</font>
+      <textureFocus>dialogbigbuttonfo.png</textureFocus>
+      <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
+      <width>128</width>
+      <posX>896</posX>
+      <posY>652</posY>
+      <textXOff>1</textXOff>
+      <textYOff>1</textYOff>
+      <textalign>center</textalign>
+      <label>186</label>
+      <onleft>4</onleft>
+      <onright>4</onright>
+      <onup>4</onup>
+      <ondown>4</ondown>
+      <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
+      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+    </control>
+  </controls>
+</window>
+<!--Checksum:fa4d06ec69a757f62e7ddf7a94b0d611-->
