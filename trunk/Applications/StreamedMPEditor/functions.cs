@@ -219,8 +219,39 @@ namespace StreamedMPEditor
 
     }
 
+    //Check which datasource is active and do the correct action...
     private void xmlFiles_SelectedIndexChanged(object sender, EventArgs e)
     {
+      if (xmlFiles.SelectedIndex != -1)
+      {
+        if (xmlFilesDisplayed)
+          doXMLFileSelectIndexChanged();
+        else
+          doQuickSelectIndexChanged();
+      }
+    }
+
+    private void btSwapListMain_Click(object sender, EventArgs e)
+    {
+
+      if (xmlFilesDisplayed)
+      {
+        xmlFilesDisplayed = false; 
+        xmlFiles.DataSource = prettyFileNames;
+        btSwapListMain.Text = "Display XML Filenames";
+      }
+      else
+      {
+        xmlFilesDisplayed = true;
+        xmlFiles.DataSource = rawXMLFileNames;
+        btSwapListMain.Text = "Display Plugin Names";
+      }
+    }
+
+    //If XMLFiles is the active datasource
+    void doXMLFileSelectIndexChanged()
+    {
+
       if (xmlFiles.SelectedIndex >= 0)
       {
         toolStripStatusLabel1.Text = "Window ID: " + ids[xmlFiles.SelectedIndex];
@@ -238,7 +269,7 @@ namespace StreamedMPEditor
           {
             // Populate
             QuickSelect(i);
-            cboQuickSelect.SelectedIndex = i;
+            //cboQuickSelect.SelectedIndex = i;
 
             bFound = true;
             int k = 0;
@@ -266,7 +297,17 @@ namespace StreamedMPEditor
       }
     }
 
- 
+    void doQuickSelectIndexChanged()
+    {
+      // Auto fill items on new selection for quicker add
+      QuickSelect(xmlFiles.SelectedIndex);
+      enableItemControls();
+      cancelCreateButton.Visible = true;
+      editButton.Enabled = false;
+      btGenerateMenu.Enabled = false;
+      disableBGSharing.Checked = false;
+    }
+
     private void QuickSelect(int index)
     {
       xmlFiles.SelectedItem = prettyItems[index].xmlfile;
@@ -325,19 +366,6 @@ namespace StreamedMPEditor
       isWeather.Checked = false;
 
     }
-
-    private void cboQuickSelect_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      // Auto fill items on new selection for quicker add
-      QuickSelect(cboQuickSelect.SelectedIndex);
-      enableItemControls();
-      cancelCreateButton.Visible = true;
-      editButton.Enabled = false;
-      btGenerateMenu.Enabled = false;
-      disableBGSharing.Checked = false;
-    }
-
-
 
     private void BasicHomeFromTemplate()
     {
@@ -719,8 +747,18 @@ namespace StreamedMPEditor
              Color.White.G - colorIn.G, Color.White.B - colorIn.B);
     }
 
+    private void cdFocusItem_Click(object sender, EventArgs e)
+    {
+      ColorDialog colorDialog = new ColorDialog();
+      if (colorDialog.ShowDialog() == DialogResult.OK)
+      {
+        txtFocusColour.BackColor = colorDialog.Color;
+        txtFocusColour.ForeColor = ColorInvert(colorDialog.Color);
+        txtFocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
+      }
+    }
 
-    private void txtNoFocusColour_MouseClick(object sender, MouseEventArgs e)
+    private void cdNoFocusItem_Click(object sender, EventArgs e)
     {
       ColorDialog colorDialog = new ColorDialog();
       if (colorDialog.ShowDialog() != DialogResult.Cancel)
@@ -728,18 +766,6 @@ namespace StreamedMPEditor
         txtNoFocusColour.BackColor = colorDialog.Color;
         txtNoFocusColour.ForeColor = ColorInvert(colorDialog.Color);
         txtNoFocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
-      }
-
-    }
-
-    private void txtFocusColour_MouseClick(object sender, MouseEventArgs e)
-    {
-      ColorDialog colorDialog = new ColorDialog();
-      if (colorDialog.ShowDialog() != DialogResult.Cancel)
-      {
-        txtFocusColour.BackColor = colorDialog.Color;
-        txtFocusColour.ForeColor = ColorInvert(colorDialog.Color);
-        txtFocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
       }
     }
 
@@ -1196,8 +1222,8 @@ namespace StreamedMPEditor
       changeOutstanding = false;
 
       //reset everything
-      xmlFiles.Items.Clear();
-      cboQuickSelect.Items.Clear();
+      //xmlFiles.Items.Clear();
+      //cboQuickSelect.Items.Clear();
       itemsOnMenubar.Items.Clear();
       prettyItems.Clear();
       ids.Clear();

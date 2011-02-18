@@ -34,9 +34,8 @@ namespace StreamedMPEditor
       return files;
     }
 
-    public void loadPrettyItems(ref System.Windows.Forms.ComboBox cboQuickSelect, List<string> ids)
+    public void loadPrettyItems(List<string> ids)
     {
-      cboQuickSelect.Items.Clear();
       formStreamedMpEditor.prettyItems.Clear();
       XmlDocument doc = new XmlDocument();
       Stream stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.QuickSelectList.xml");
@@ -98,13 +97,6 @@ namespace StreamedMPEditor
           formStreamedMpEditor.prettyItems.Add(pItem);
       
       }
-      // Load list
-      foreach (formStreamedMpEditor.prettyItem p in formStreamedMpEditor.prettyItems)
-      {
-        cboQuickSelect.Items.Add(p.name);
-      }
-      cboQuickSelect.SelectedIndex = 0;
-
     }
 
     public bool pluginEnabled(Plugins plugin)

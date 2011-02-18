@@ -60,6 +60,7 @@
       this.weatherStyle1 = new System.Windows.Forms.PictureBox();
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
+      this.btSwapListMain = new System.Windows.Forms.Button();
       this.button1 = new System.Windows.Forms.Button();
       this.btSelectOverlay = new System.Windows.Forms.Button();
       this.addSubmenus = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
       this.selectedWindowL = new System.Windows.Forms.Label();
       this.label20 = new System.Windows.Forms.Label();
       this.label19 = new System.Windows.Forms.Label();
-      this.cboQuickSelect = new System.Windows.Forms.ComboBox();
       this.cancelButton = new System.Windows.Forms.Button();
       this.editButton = new System.Windows.Forms.Button();
       this.saveButton = new System.Windows.Forms.Button();
@@ -125,6 +125,8 @@
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
+      this.cdNoFocusItem = new System.Windows.Forms.PictureBox();
+      this.cdFocusItem = new System.Windows.Forms.PictureBox();
       this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
       this.cbHideFanartScraper = new System.Windows.Forms.CheckBox();
       this.cbDisableClock = new System.Windows.Forms.CheckBox();
@@ -290,6 +292,8 @@
       this.tabPage3.SuspendLayout();
       this.styleOptionsGroup.SuspendLayout();
       this.globalSettings.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cdNoFocusItem)).BeginInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cdFocusItem)).BeginInit();
       this.gbScreenRes.SuspendLayout();
       this.tabPage2.SuspendLayout();
       this.weatherOptions.SuspendLayout();
@@ -673,6 +677,7 @@
       // 
       // basicHomeDesign
       // 
+      this.basicHomeDesign.Controls.Add(this.btSwapListMain);
       this.basicHomeDesign.Controls.Add(this.button1);
       this.basicHomeDesign.Controls.Add(this.btSelectOverlay);
       this.basicHomeDesign.Controls.Add(this.addSubmenus);
@@ -680,7 +685,6 @@
       this.basicHomeDesign.Controls.Add(this.groupBox3);
       this.basicHomeDesign.Controls.Add(this.label20);
       this.basicHomeDesign.Controls.Add(this.label19);
-      this.basicHomeDesign.Controls.Add(this.cboQuickSelect);
       this.basicHomeDesign.Controls.Add(this.cancelButton);
       this.basicHomeDesign.Controls.Add(this.editButton);
       this.basicHomeDesign.Controls.Add(this.saveButton);
@@ -700,6 +704,16 @@
       this.basicHomeDesign.TabIndex = 0;
       this.basicHomeDesign.Text = "BasicHome Design";
       this.basicHomeDesign.UseVisualStyleBackColor = true;
+      // 
+      // btSwapListMain
+      // 
+      this.btSwapListMain.Location = new System.Drawing.Point(3, 340);
+      this.btSwapListMain.Name = "btSwapListMain";
+      this.btSwapListMain.Size = new System.Drawing.Size(198, 23);
+      this.btSwapListMain.TabIndex = 127;
+      this.btSwapListMain.Text = "Display XML Filenames";
+      this.btSwapListMain.UseVisualStyleBackColor = true;
+      this.btSwapListMain.Click += new System.EventHandler(this.btSwapListMain_Click);
       // 
       // button1
       // 
@@ -821,16 +835,6 @@
       this.label19.Size = new System.Drawing.Size(78, 13);
       this.label19.TabIndex = 119;
       this.label19.Text = "Items Available";
-      // 
-      // cboQuickSelect
-      // 
-      this.cboQuickSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.cboQuickSelect.FormattingEnabled = true;
-      this.cboQuickSelect.Location = new System.Drawing.Point(3, 22);
-      this.cboQuickSelect.Name = "cboQuickSelect";
-      this.cboQuickSelect.Size = new System.Drawing.Size(198, 21);
-      this.cboQuickSelect.TabIndex = 4;
-      this.cboQuickSelect.SelectedIndexChanged += new System.EventHandler(this.cboQuickSelect_SelectedIndexChanged);
       // 
       // cancelButton
       // 
@@ -1263,7 +1267,7 @@
       // 
       this.xmlFiles.Enabled = false;
       this.xmlFiles.FormattingEnabled = true;
-      this.xmlFiles.Location = new System.Drawing.Point(3, 47);
+      this.xmlFiles.Location = new System.Drawing.Point(3, 21);
       this.xmlFiles.Name = "xmlFiles";
       this.xmlFiles.Size = new System.Drawing.Size(198, 316);
       this.xmlFiles.TabIndex = 5;
@@ -1412,6 +1416,8 @@
       // 
       // globalSettings
       // 
+      this.globalSettings.Controls.Add(this.cdNoFocusItem);
+      this.globalSettings.Controls.Add(this.cdFocusItem);
       this.globalSettings.Controls.Add(this.cbDisableExitMenu);
       this.globalSettings.Controls.Add(this.cbHideFanartScraper);
       this.globalSettings.Controls.Add(this.cbDisableClock);
@@ -1437,6 +1443,26 @@
       this.globalSettings.TabIndex = 23;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
+      // 
+      // cdNoFocusItem
+      // 
+      this.cdNoFocusItem.Image = global::StreamedMPEditor.Properties.Resources.colorDialog;
+      this.cdNoFocusItem.Location = new System.Drawing.Point(194, 62);
+      this.cdNoFocusItem.Name = "cdNoFocusItem";
+      this.cdNoFocusItem.Size = new System.Drawing.Size(20, 20);
+      this.cdNoFocusItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.cdNoFocusItem.TabIndex = 47;
+      this.cdNoFocusItem.TabStop = false;
+      // 
+      // cdFocusItem
+      // 
+      this.cdFocusItem.Image = global::StreamedMPEditor.Properties.Resources.colorDialog;
+      this.cdFocusItem.Location = new System.Drawing.Point(194, 15);
+      this.cdFocusItem.Name = "cdFocusItem";
+      this.cdFocusItem.Size = new System.Drawing.Size(20, 20);
+      this.cdFocusItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+      this.cdFocusItem.TabIndex = 46;
+      this.cdFocusItem.TabStop = false;
       // 
       // cbDisableExitMenu
       // 
@@ -1517,7 +1543,7 @@
       // 
       // tbAcceleration
       // 
-      this.tbAcceleration.Location = new System.Drawing.Point(331, 38);
+      this.tbAcceleration.Location = new System.Drawing.Point(370, 38);
       this.tbAcceleration.Name = "tbAcceleration";
       this.tbAcceleration.Size = new System.Drawing.Size(46, 20);
       this.tbAcceleration.TabIndex = 10;
@@ -1525,7 +1551,7 @@
       // 
       // tbDuration
       // 
-      this.tbDuration.Location = new System.Drawing.Point(331, 61);
+      this.tbDuration.Location = new System.Drawing.Point(370, 61);
       this.tbDuration.Name = "tbDuration";
       this.tbDuration.Size = new System.Drawing.Size(46, 20);
       this.tbDuration.TabIndex = 11;
@@ -1534,7 +1560,7 @@
       // label13
       // 
       this.label13.AutoSize = true;
-      this.label13.Location = new System.Drawing.Point(214, 62);
+      this.label13.Location = new System.Drawing.Point(253, 62);
       this.label13.Name = "label13";
       this.label13.Size = new System.Drawing.Size(117, 13);
       this.label13.TabIndex = 23;
@@ -1543,7 +1569,7 @@
       // label14
       // 
       this.label14.AutoSize = true;
-      this.label14.Location = new System.Drawing.Point(234, 40);
+      this.label14.Location = new System.Drawing.Point(273, 40);
       this.label14.Name = "label14";
       this.label14.Size = new System.Drawing.Size(97, 13);
       this.label14.TabIndex = 21;
@@ -1563,7 +1589,7 @@
       // 
       // txtMenuPos
       // 
-      this.txtMenuPos.Location = new System.Drawing.Point(331, 15);
+      this.txtMenuPos.Location = new System.Drawing.Point(370, 15);
       this.txtMenuPos.Name = "txtMenuPos";
       this.txtMenuPos.Size = new System.Drawing.Size(62, 20);
       this.txtMenuPos.TabIndex = 9;
@@ -1572,7 +1598,7 @@
       // menuPosLabel
       // 
       this.menuPosLabel.AutoSize = true;
-      this.menuPosLabel.Location = new System.Drawing.Point(244, 18);
+      this.menuPosLabel.Location = new System.Drawing.Point(283, 18);
       this.menuPosLabel.Name = "menuPosLabel";
       this.menuPosLabel.Size = new System.Drawing.Size(87, 13);
       this.menuPosLabel.TabIndex = 4;
@@ -1585,6 +1611,7 @@
       this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
       this.txtNoFocusColour.TabIndex = 7;
       this.txtNoFocusColour.Text = "636363";
+      this.txtNoFocusColour.TextChanged += new System.EventHandler(this.txtNoFocusColour_TextChanged);
       // 
       // txtFocusColour
       // 
@@ -2911,6 +2938,8 @@
       this.styleOptionsGroup.PerformLayout();
       this.globalSettings.ResumeLayout(false);
       this.globalSettings.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.cdNoFocusItem)).EndInit();
+      ((System.ComponentModel.ISupportInitialize)(this.cdFocusItem)).EndInit();
       this.gbScreenRes.ResumeLayout(false);
       this.gbScreenRes.PerformLayout();
       this.tabPage2.ResumeLayout(false);
@@ -3015,7 +3044,6 @@
     private System.Windows.Forms.StatusStrip statusStrip1;
     private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     private System.Windows.Forms.CheckBox enableFiveDayWeather;
-    private System.Windows.Forms.ComboBox cboQuickSelect;
     private System.Windows.Forms.ComboBox cboContextLabel;
     private System.Windows.Forms.Label label18;
     private System.Windows.Forms.Label label20;
@@ -3204,6 +3232,9 @@
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
     private System.Windows.Forms.CheckBox cbDisableExitMenu;
     private System.Windows.Forms.Button button1;
+    private System.Windows.Forms.Button btSwapListMain;
+    private System.Windows.Forms.PictureBox cdFocusItem;
+    private System.Windows.Forms.PictureBox cdNoFocusItem;
   }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Drawing;
 using MediaPortal.Configuration;
@@ -145,6 +146,10 @@ namespace StreamedMPEditor
     RadioButton fhRBUserDef = new RadioButton();
     RadioButton fhRBScraper = new RadioButton();
 
+    List<string> rawXMLFileNames = new List<string>();
+    List<string> prettyFileNames = new List<string>();
+
+
     public static List<prettyItem> prettyItems = new List<prettyItem>();
     public static List<menuItem> menuItems = new List<menuItem>();
     public static List<string> driveFreeSpaceDrives = new List<string>();
@@ -209,6 +214,8 @@ namespace StreamedMPEditor
     int menuOffset = 0;
     int deskHeight;
     int deskWidth;
+
+    bool xmlFilesDisplayed = false;
 
     Version baseISVer = new Version("0.9.9.3");
     Version baseISVerTwitter = new Version("1.2.0.0");
@@ -279,6 +286,9 @@ namespace StreamedMPEditor
     List<string> menuThemeFiles = new List<string>();
     int themeImageIndex = 0;
     bool menuThemeActive = false;
+    //QuickList Info
+    Form formQlPopup = new Form();
+    Label lbQlPopup = new Label();
     //Most Recent
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
@@ -618,6 +628,7 @@ namespace StreamedMPEditor
 
         loadMenuSettings();
         buildThemeScreen();
+        buildQuickListInfo();
         checkSplashScreens();
         toolStripStatusLabel2.Visible = false;
         itemsOnMenubar.SelectedIndex = 0;
@@ -657,11 +668,26 @@ namespace StreamedMPEditor
     {
       xmlFiles.Enabled = true;
       helper.getSkinFileList(ref xmlFiles, ref ids);
+
+      //Load the file names into our own list
+      rawXMLFileNames = xmlFiles.Items.OfType<string>().ToList();
+
       fhOverlayVersion = new Version(helper.fileVersion(Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "Process"), "Fanarthandler.dll")));
       //return true;
       if (xmlFiles.Items.Count > 0)
       {
-        helper.loadPrettyItems(ref cboQuickSelect, ids);
+        helper.loadPrettyItems(ids);
+
+        // Load Pretty filenames list
+        foreach (prettyItem p in prettyItems)
+        {
+          prettyFileNames.Add(p.name);
+        }
+
+        // Default to displaying pretty names
+        xmlFiles.Items.Clear(); 
+        xmlFiles.DataSource = prettyFileNames;
+
         disableItemControls();
         cancelCreateButton.Visible = false;
         btGenerateMenu.Enabled = true;
@@ -713,10 +739,9 @@ namespace StreamedMPEditor
     {
       //selectedWindowID.Text = 
       int index = ids.IndexOf(selectedWindowID.Text);
-
       try
       {
-        while (xmlFiles.Items[index].ToString().ToLower() != selectedWindow.Text.ToLower())
+        while (rawXMLFileNames[index].ToString().ToLower() != selectedWindow.Text.ToLower())
         {
           index = ids.IndexOf(selectedWindowID.Text, index + 1);
         }
@@ -729,13 +754,13 @@ namespace StreamedMPEditor
 
       if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && tbItemName.Text != "")
       {
-        xmlFiles.SelectedIndex = index;
-        toolStripStatusLabel1.Text = xmlFiles.SelectedItem.ToString() + " added to menu";
+        //rawXMLFileNames.SelectedIndex = index;
+        toolStripStatusLabel1.Text = rawXMLFileNames[index].ToString() + " added to menu";
         menuItem item = new menuItem();
-        item.xmlFileName = xmlFiles.SelectedItem.ToString();
+        item.xmlFileName = rawXMLFileNames[index].ToString();
         item.name = tbItemName.Text;
         item.contextLabel = cboContextLabel.Text;
-        item.hyperlink = ids[xmlFiles.SelectedIndex];
+        item.hyperlink = ids[index];
         item.bgFolder = bgBox.Text;
         item.fanartProperty = cboFanartProperty.Text;
 
@@ -824,7 +849,14 @@ namespace StreamedMPEditor
       menuItem mnuItem = menuItems[index];
 
       btGenerateMenu.Enabled = false;
-      xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
+      if (xmlFilesDisplayed)
+        xmlFiles.SelectedIndex = ids.IndexOf(mnuItem.hyperlink);
+      else
+      {
+        selectedWindowID.Text = mnuItem.hyperlink;
+        selectedWindow.Text = mnuItem.xmlFileName;
+      }
+
       tbItemName.Text = mnuItem.name;
       cboContextLabel.Text = mnuItem.contextLabel;
       bgBox.Text = mnuItem.bgFolder;
@@ -917,7 +949,10 @@ namespace StreamedMPEditor
 
         item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
-        item.hyperlink = ids[xmlFiles.SelectedIndex];
+
+        item.xmlFileName = selectedWindow.Text;
+        item.hyperlink = selectedWindowID.Text;
+
         if (cboParameterViews.SelectedIndex != -1)
         {
           if (item.hyperlink == tvseriesSkinID)
@@ -1024,7 +1059,20 @@ namespace StreamedMPEditor
 
       menuItem mnuItem = menuItems[index];
 
-      xmlFiles.SelectedItem = mnuItem.xmlFileName;
+      if (xmlFilesDisplayed)
+        xmlFiles.SelectedItem = mnuItem.xmlFileName;
+      else
+      {
+        int pindex = 0;
+        foreach (prettyItem p in prettyItems)
+        {
+          if (p.id == mnuItem.hyperlink)
+            break;
+          pindex++;
+        }
+        xmlFiles.SelectedIndex = pindex;
+      }
+
       cboContextLabel.Text = mnuItem.contextLabel;
       tbItemName.Text = mnuItem.name;
       cboFanartProperty.Text = mnuItem.fanartProperty;
@@ -1032,6 +1080,7 @@ namespace StreamedMPEditor
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       cbOnlineVideosReturn.Visible = false;
+
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
         switch (mnuItem.hyperlink)
@@ -1086,12 +1135,18 @@ namespace StreamedMPEditor
         lbParameterView.Visible = false;
       }
 
+      bgBox.Text = mnuItem.bgFolder;
+
       menuitemName.Text = mnuItem.name;
       menuItemLabel.Text = mnuItem.contextLabel;
       menuitemBGFolder.Text = mnuItem.bgFolder;
-      bgBox.Text = mnuItem.bgFolder;
-      menuitemWindow.Text = xmlFiles.Text;
+      menuitemWindow.Text = mnuItem.xmlFileName;
+
+      selectedWindowID.Text = mnuItem.hyperlink;
+      selectedWindow.Text = mnuItem.xmlFileName;
+
       setMostRecentDisplayOption(mnuItem.showMostRecent);
+
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
         displayMenuIcon(mnuItem.buttonTexture);
 
@@ -1464,8 +1519,8 @@ namespace StreamedMPEditor
         if (result == DialogResult.No)
         {
           //reset everything
-          xmlFiles.Items.Clear();
-          cboQuickSelect.Items.Clear();
+          //xmlFiles.Items.Clear();
+          //cboQuickSelect.Items.Clear();
           itemsOnMenubar.Items.Clear();
           prettyItems.Clear();
           ids.Clear();
@@ -2200,6 +2255,31 @@ namespace StreamedMPEditor
       }
     }
 
+
+    void buildQuickListInfo()
+    {
+      formQlPopup.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      formQlPopup.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      formQlPopup.Name = "frmQLPopup";
+      formQlPopup.Text = "Quicklist Item Details";
+      formQlPopup.ControlBox = true;
+      formQlPopup.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+      formQlPopup.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      formQlPopup.StartPosition = FormStartPosition.CenterScreen;
+      formQlPopup.Width = 300;
+      formQlPopup.Height = 300;
+      formQlPopup.MaximizeBox = false;
+      formQlPopup.MinimizeBox = false;
+      formQlPopup.TopMost = true;
+      formQlPopup.ControlBox = false;
+      // Quicklist Name
+
+
+      lbQlPopup.Location = new Point(50, 50);
+      lbQlPopup.Width = 250;
+      lbQlPopup.Text = "Quicklist Item name.....";
+      formQlPopup.Controls.Add(lbQlPopup);
+    }
     #endregion
 
     #region Parmeter Handling
