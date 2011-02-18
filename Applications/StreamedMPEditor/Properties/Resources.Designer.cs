@@ -60,6 +60,13 @@ namespace StreamedMPEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap colorDialog {
+            get {
+                object obj = ResourceManager.GetObject("colorDialog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap down {
             get {
                 object obj = ResourceManager.GetObject("down", resourceCulture);
