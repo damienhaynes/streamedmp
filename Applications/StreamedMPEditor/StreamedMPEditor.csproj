@@ -143,6 +143,12 @@
     <Compile Include="BHSubMenuWriterGraphical.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Custom Controls\ColorSlider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Custom Controls\ColorSlider.designer.cs">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </Compile>
     <Compile Include="getButtonTexture.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Custom Controls\ColorSlider.resx">
+      <DependentUpon>ColorSlider.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="getButtonTexture.resx">
       <DependentUpon>getButtonTexture.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -329,6 +338,7 @@
     <EmbeddedResource Include="Resources\SMPEditor.png" />
     <EmbeddedResource Include="Resources\SMPEditorDisabled.png" />
     <None Include="Resources\menuStyleGraphical.jpg" />
+    <None Include="Resources\slider.png" />
     <Content Include="Resources\up.png" />
     <EmbeddedResource Include="xmlFiles\defaultusermenuprofile.xml" />
     <EmbeddedResource Include="xmlFiles\usermenuprofile.xml" />

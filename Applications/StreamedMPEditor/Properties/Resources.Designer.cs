@@ -109,6 +109,13 @@ namespace StreamedMPEditor.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap slider {
+            get {
+                object obj = ResourceManager.GetObject("slider", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap style5 {
             get {
                 object obj = ResourceManager.GetObject("style5", resourceCulture);

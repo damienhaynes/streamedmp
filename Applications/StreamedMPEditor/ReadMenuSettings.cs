@@ -147,6 +147,7 @@ namespace StreamedMPEditor
 
       // Get the Focus Colour and set the background on the control
       focusAlpha.Text = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
+      focusAlphaSlider.Value = int.Parse(focusAlpha.Text, System.Globalization.NumberStyles.HexNumber);
       try
       {
         string RGB = defFocus;
@@ -163,6 +164,7 @@ namespace StreamedMPEditor
 
       // Get the NoFocus Colour and set the background on the control
       noFocusAlpha.Text = readEntryValue(optionsTag, "menuitemNoFocus", nodelist).Substring(0, 2);
+      noFocusAlphaSlider.Value = int.Parse(noFocusAlpha.Text, System.Globalization.NumberStyles.HexNumber);
       try
       {
         string RGB = defUnFocus;
