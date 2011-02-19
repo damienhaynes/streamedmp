@@ -337,19 +337,20 @@ namespace StreamedMPEditor
       {
         case tvseriesSkinID:
           cboParameterViews.DataSource = theTVSeriesViews;
-          cboParameterViews.Text = string.Empty;
           break;
         case musicSkinID:
           cboParameterViews.DataSource = theMusicViews;
-          cboParameterViews.Text = string.Empty;
           break;
         case onlineVideosSkinID:
           cboParameterViews.DataSource = theOnlineVideosViews;
-          cboParameterViews.Text = string.Empty;
           break;
         default:
+          cboParameterViews.Text = string.Empty;
           break;
       }
+      if (prettyItems[index].takesParmeter)
+        cboParameterViews.Text = prettyItems[index].pluginParmeter;
+
       fhChoice.Visible = false;
       fhRBScraper.Visible = false;
       fhRBUserDef.Visible = false;
@@ -767,6 +768,32 @@ namespace StreamedMPEditor
         txtNoFocusColour.ForeColor = ColorInvert(colorDialog.Color);
         txtNoFocusColour.Text = (colorDialog.Color.ToArgb() & 0x00FFFFFF).ToString("X6");
       }
+    }
+
+    private void focusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+      focusAlpha.Text = focusAlphaSlider.Value.ToString("X");
+    }
+
+    private void noFocusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+      noFocusAlpha.Text = noFocusAlphaSlider.Value.ToString("X");
+    }
+
+    private void focusAlpha_TextChanged(object sender, EventArgs e)
+    {
+      if (string.IsNullOrEmpty(focusAlpha.Text))
+        return;
+
+      focusAlphaSlider.Value = int.Parse(focusAlpha.Text, System.Globalization.NumberStyles.HexNumber);
+    }
+
+    private void noFocusAlpha_TextChanged(object sender, EventArgs e)
+    {
+      if (string.IsNullOrEmpty(noFocusAlpha.Text))
+        return;
+
+      noFocusAlphaSlider.Value = int.Parse(noFocusAlpha.Text, System.Globalization.NumberStyles.HexNumber);
     }
 
     private void removeButton_Click(object sender, EventArgs e)

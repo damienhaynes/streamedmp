@@ -125,6 +125,10 @@
       this.useAeonGraphics = new System.Windows.Forms.CheckBox();
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.noFocusAlphaSlider = new MB.Controls.ColorSlider();
+      this.panel1 = new System.Windows.Forms.Panel();
+      this.focusAlphaSlider = new MB.Controls.ColorSlider();
       this.cdNoFocusItem = new System.Windows.Forms.PictureBox();
       this.cdFocusItem = new System.Windows.Forms.PictureBox();
       this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
@@ -292,6 +296,8 @@
       this.tabPage3.SuspendLayout();
       this.styleOptionsGroup.SuspendLayout();
       this.globalSettings.SuspendLayout();
+      this.panel3.SuspendLayout();
+      this.panel1.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.cdNoFocusItem)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.cdFocusItem)).BeginInit();
       this.gbScreenRes.SuspendLayout();
@@ -1320,9 +1326,9 @@
       this.styleOptionsGroup.Controls.Add(this.label21);
       this.styleOptionsGroup.Controls.Add(this.useAeonGraphics);
       this.styleOptionsGroup.Controls.Add(this.horizontalContextLabels);
-      this.styleOptionsGroup.Location = new System.Drawing.Point(6, 143);
+      this.styleOptionsGroup.Location = new System.Drawing.Point(6, 169);
       this.styleOptionsGroup.Name = "styleOptionsGroup";
-      this.styleOptionsGroup.Size = new System.Drawing.Size(719, 124);
+      this.styleOptionsGroup.Size = new System.Drawing.Size(719, 132);
       this.styleOptionsGroup.TabIndex = 24;
       this.styleOptionsGroup.TabStop = false;
       this.styleOptionsGroup.Text = "Modify Selected Style  (Advanced)";
@@ -1416,6 +1422,8 @@
       // 
       // globalSettings
       // 
+      this.globalSettings.Controls.Add(this.panel3);
+      this.globalSettings.Controls.Add(this.panel1);
       this.globalSettings.Controls.Add(this.cdNoFocusItem);
       this.globalSettings.Controls.Add(this.cdFocusItem);
       this.globalSettings.Controls.Add(this.cbDisableExitMenu);
@@ -1439,30 +1447,100 @@
       this.globalSettings.Controls.Add(this.label17);
       this.globalSettings.Location = new System.Drawing.Point(3, 6);
       this.globalSettings.Name = "globalSettings";
-      this.globalSettings.Size = new System.Drawing.Size(722, 131);
+      this.globalSettings.Size = new System.Drawing.Size(722, 157);
       this.globalSettings.TabIndex = 23;
       this.globalSettings.TabStop = false;
       this.globalSettings.Text = "Global settings";
       // 
+      // panel3
+      // 
+      this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel3.Controls.Add(this.noFocusAlphaSlider);
+      this.panel3.Location = new System.Drawing.Point(20, 133);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(194, 10);
+      this.panel3.TabIndex = 25;
+      // 
+      // noFocusAlphaSlider
+      // 
+      this.noFocusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
+      this.noFocusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.noFocusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+      this.noFocusAlphaSlider.DrawFocusRectangle = false;
+      this.noFocusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.LargeChange = ((uint)(5u));
+      this.noFocusAlphaSlider.Location = new System.Drawing.Point(-1, -1);
+      this.noFocusAlphaSlider.Maximum = 255;
+      this.noFocusAlphaSlider.MouseEffects = false;
+      this.noFocusAlphaSlider.Name = "noFocusAlphaSlider";
+      this.noFocusAlphaSlider.Size = new System.Drawing.Size(194, 10);
+      this.noFocusAlphaSlider.SmallChange = ((uint)(1u));
+      this.noFocusAlphaSlider.TabIndex = 49;
+      this.noFocusAlphaSlider.Text = "colorSlider1";
+      this.noFocusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+      this.noFocusAlphaSlider.ThumbSize = 3;
+      this.noFocusAlphaSlider.ValueChanged += new System.EventHandler(this.noFocusAlphaSlider_ValueChanged);
+      // 
+      // panel1
+      // 
+      this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+      this.panel1.Controls.Add(this.focusAlphaSlider);
+      this.panel1.Location = new System.Drawing.Point(18, 61);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(194, 10);
+      this.panel1.TabIndex = 25;
+      // 
+      // focusAlphaSlider
+      // 
+      this.focusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
+      this.focusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.focusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+      this.focusAlphaSlider.DrawFocusRectangle = false;
+      this.focusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.LargeChange = ((uint)(5u));
+      this.focusAlphaSlider.Location = new System.Drawing.Point(0, 0);
+      this.focusAlphaSlider.Maximum = 255;
+      this.focusAlphaSlider.MouseEffects = false;
+      this.focusAlphaSlider.Name = "focusAlphaSlider";
+      this.focusAlphaSlider.Size = new System.Drawing.Size(194, 10);
+      this.focusAlphaSlider.SmallChange = ((uint)(1u));
+      this.focusAlphaSlider.TabIndex = 48;
+      this.focusAlphaSlider.Text = "colorSlider1";
+      this.focusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+      this.focusAlphaSlider.ThumbSize = 3;
+      this.focusAlphaSlider.ValueChanged += new System.EventHandler(this.focusAlphaSlider_ValueChanged);
+      // 
       // cdNoFocusItem
       // 
       this.cdNoFocusItem.Image = global::StreamedMPEditor.Properties.Resources.colorDialog;
-      this.cdNoFocusItem.Location = new System.Drawing.Point(194, 62);
+      this.cdNoFocusItem.Location = new System.Drawing.Point(194, 85);
       this.cdNoFocusItem.Name = "cdNoFocusItem";
       this.cdNoFocusItem.Size = new System.Drawing.Size(20, 20);
       this.cdNoFocusItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.cdNoFocusItem.TabIndex = 47;
       this.cdNoFocusItem.TabStop = false;
+      this.cdNoFocusItem.Click += new System.EventHandler(this.cdNoFocusItem_Click);
       // 
       // cdFocusItem
       // 
       this.cdFocusItem.Image = global::StreamedMPEditor.Properties.Resources.colorDialog;
-      this.cdFocusItem.Location = new System.Drawing.Point(194, 15);
+      this.cdFocusItem.Location = new System.Drawing.Point(192, 15);
       this.cdFocusItem.Name = "cdFocusItem";
       this.cdFocusItem.Size = new System.Drawing.Size(20, 20);
       this.cdFocusItem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
       this.cdFocusItem.TabIndex = 46;
       this.cdFocusItem.TabStop = false;
+      this.cdFocusItem.Click += new System.EventHandler(this.cdFocusItem_Click);
       // 
       // cbDisableExitMenu
       // 
@@ -1497,7 +1575,7 @@
       // noFocusAlphaLabel
       // 
       this.noFocusAlphaLabel.AutoSize = true;
-      this.noFocusAlphaLabel.Location = new System.Drawing.Point(17, 90);
+      this.noFocusAlphaLabel.Location = new System.Drawing.Point(17, 112);
       this.noFocusAlphaLabel.Name = "noFocusAlphaLabel";
       this.noFocusAlphaLabel.Size = new System.Drawing.Size(107, 13);
       this.noFocusAlphaLabel.TabIndex = 31;
@@ -1527,19 +1605,21 @@
       // 
       // noFocusAlpha
       // 
-      this.noFocusAlpha.Location = new System.Drawing.Point(130, 87);
+      this.noFocusAlpha.Location = new System.Drawing.Point(130, 109);
       this.noFocusAlpha.Name = "noFocusAlpha";
-      this.noFocusAlpha.Size = new System.Drawing.Size(20, 20);
+      this.noFocusAlpha.Size = new System.Drawing.Size(25, 20);
       this.noFocusAlpha.TabIndex = 8;
       this.noFocusAlpha.Text = "80";
+      this.noFocusAlpha.TextChanged += new System.EventHandler(this.noFocusAlpha_TextChanged);
       // 
       // focusAlpha
       // 
       this.focusAlpha.Location = new System.Drawing.Point(130, 39);
       this.focusAlpha.Name = "focusAlpha";
-      this.focusAlpha.Size = new System.Drawing.Size(18, 20);
+      this.focusAlpha.Size = new System.Drawing.Size(25, 20);
       this.focusAlpha.TabIndex = 6;
       this.focusAlpha.Text = "FF";
+      this.focusAlpha.TextChanged += new System.EventHandler(this.focusAlpha_TextChanged);
       // 
       // tbAcceleration
       // 
@@ -1606,9 +1686,9 @@
       // 
       // txtNoFocusColour
       // 
-      this.txtNoFocusColour.Location = new System.Drawing.Point(130, 63);
+      this.txtNoFocusColour.Location = new System.Drawing.Point(130, 85);
       this.txtNoFocusColour.Name = "txtNoFocusColour";
-      this.txtNoFocusColour.Size = new System.Drawing.Size(62, 20);
+      this.txtNoFocusColour.Size = new System.Drawing.Size(58, 20);
       this.txtNoFocusColour.TabIndex = 7;
       this.txtNoFocusColour.Text = "636363";
       this.txtNoFocusColour.TextChanged += new System.EventHandler(this.txtNoFocusColour_TextChanged);
@@ -1617,7 +1697,7 @@
       // 
       this.txtFocusColour.Location = new System.Drawing.Point(130, 15);
       this.txtFocusColour.Name = "txtFocusColour";
-      this.txtFocusColour.Size = new System.Drawing.Size(62, 20);
+      this.txtFocusColour.Size = new System.Drawing.Size(58, 20);
       this.txtFocusColour.TabIndex = 5;
       this.txtFocusColour.Text = "FFFFFF";
       this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
@@ -1626,7 +1706,7 @@
       // label16
       // 
       this.label16.AutoSize = true;
-      this.label16.Location = new System.Drawing.Point(14, 66);
+      this.label16.Location = new System.Drawing.Point(14, 88);
       this.label16.Name = "label16";
       this.label16.Size = new System.Drawing.Size(110, 13);
       this.label16.TabIndex = 1;
@@ -1647,9 +1727,9 @@
       this.gbScreenRes.Controls.Add(this.detectedSD);
       this.gbScreenRes.Controls.Add(this.hdRes);
       this.gbScreenRes.Controls.Add(this.sdRes);
-      this.gbScreenRes.Location = new System.Drawing.Point(6, 273);
+      this.gbScreenRes.Location = new System.Drawing.Point(6, 307);
       this.gbScreenRes.Name = "gbScreenRes";
-      this.gbScreenRes.Size = new System.Drawing.Size(215, 100);
+      this.gbScreenRes.Size = new System.Drawing.Size(355, 44);
       this.gbScreenRes.TabIndex = 41;
       this.gbScreenRes.TabStop = false;
       this.gbScreenRes.Text = "Target Screen Resoloution";
@@ -1658,7 +1738,7 @@
       // detectedHD
       // 
       this.detectedHD.AutoSize = true;
-      this.detectedHD.Location = new System.Drawing.Point(114, 62);
+      this.detectedHD.Location = new System.Drawing.Point(281, 19);
       this.detectedHD.Name = "detectedHD";
       this.detectedHD.Size = new System.Drawing.Size(51, 13);
       this.detectedHD.TabIndex = 3;
@@ -1667,7 +1747,7 @@
       // detectedSD
       // 
       this.detectedSD.AutoSize = true;
-      this.detectedSD.Location = new System.Drawing.Point(114, 31);
+      this.detectedSD.Location = new System.Drawing.Point(107, 19);
       this.detectedSD.Name = "detectedSD";
       this.detectedSD.Size = new System.Drawing.Size(51, 13);
       this.detectedSD.TabIndex = 2;
@@ -1677,7 +1757,7 @@
       // 
       this.hdRes.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
       this.hdRes.AutoSize = true;
-      this.hdRes.Location = new System.Drawing.Point(13, 60);
+      this.hdRes.Location = new System.Drawing.Point(191, 17);
       this.hdRes.Name = "hdRes";
       this.hdRes.Size = new System.Drawing.Size(84, 17);
       this.hdRes.TabIndex = 1;
@@ -1689,7 +1769,7 @@
       // sdRes
       // 
       this.sdRes.AutoSize = true;
-      this.sdRes.Location = new System.Drawing.Point(13, 29);
+      this.sdRes.Location = new System.Drawing.Point(6, 17);
       this.sdRes.Name = "sdRes";
       this.sdRes.Size = new System.Drawing.Size(78, 17);
       this.sdRes.TabIndex = 0;
@@ -2938,6 +3018,8 @@
       this.styleOptionsGroup.PerformLayout();
       this.globalSettings.ResumeLayout(false);
       this.globalSettings.PerformLayout();
+      this.panel3.ResumeLayout(false);
+      this.panel1.ResumeLayout(false);
       ((System.ComponentModel.ISupportInitialize)(this.cdNoFocusItem)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.cdFocusItem)).EndInit();
       this.gbScreenRes.ResumeLayout(false);
@@ -3235,6 +3317,10 @@
     private System.Windows.Forms.Button btSwapListMain;
     private System.Windows.Forms.PictureBox cdFocusItem;
     private System.Windows.Forms.PictureBox cdNoFocusItem;
+    private MB.Controls.ColorSlider focusAlphaSlider;
+    private MB.Controls.ColorSlider noFocusAlphaSlider;
+    private System.Windows.Forms.Panel panel1;
+    private System.Windows.Forms.Panel panel3;
   }
 }
 

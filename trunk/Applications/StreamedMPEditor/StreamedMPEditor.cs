@@ -153,7 +153,7 @@ namespace StreamedMPEditor
     public static List<prettyItem> prettyItems = new List<prettyItem>();
     public static List<menuItem> menuItems = new List<menuItem>();
     public static List<string> driveFreeSpaceDrives = new List<string>();
-    
+
 
     public static List<string> theTVSeriesViews = new List<string>();
     public static List<string> theMusicViews = new List<string>();
@@ -685,7 +685,7 @@ namespace StreamedMPEditor
         }
 
         // Default to displaying pretty names
-        xmlFiles.Items.Clear(); 
+        xmlFiles.Items.Clear();
         xmlFiles.DataSource = prettyFileNames;
 
         disableItemControls();
@@ -737,7 +737,6 @@ namespace StreamedMPEditor
 
     void addButton_Click(object sender, EventArgs e)
     {
-      //selectedWindowID.Text = 
       int index = ids.IndexOf(selectedWindowID.Text);
       try
       {
@@ -754,7 +753,6 @@ namespace StreamedMPEditor
 
       if (xmlFiles.SelectedItem != null && (bgBox.Text != "" || cboFanartProperty.Text != "") && tbItemName.Text != "")
       {
-        //rawXMLFileNames.SelectedIndex = index;
         toolStripStatusLabel1.Text = rawXMLFileNames[index].ToString() + " added to menu";
         menuItem item = new menuItem();
         item.xmlFileName = rawXMLFileNames[index].ToString();
@@ -795,6 +793,7 @@ namespace StreamedMPEditor
             default:
               break;
           }
+
         }
         else
           item.hyperlinkParameter = "false";
