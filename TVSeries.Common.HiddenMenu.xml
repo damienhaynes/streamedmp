@@ -2,11 +2,12 @@
 <window>
   <controls>
     <control>
+			<description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1220</posX>
-      <posY>190</posY>
-      <width>59</width>
-      <height>153</height>
+      <posX>1216</posX>
+      <posY>26</posY>
+      <width>64</width>
+      <height>192</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
