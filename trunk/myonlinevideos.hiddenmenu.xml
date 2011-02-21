@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
-		<control>
+    <control>
 			<description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1216</posX>
-      <posY>26</posY>
-      <width>64</width>
-      <height>192</height>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>[control.isvisible(50)|control.isvisible(51)]+![string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -24,7 +24,7 @@
       <buttonX>1231</buttonX>
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>      
+      <buttonheight>153</buttonheight>
       <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
       <dimColor>00ffffff</dimColor>
       <control>
@@ -51,7 +51,7 @@
         <animation effect="slide" time="200" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
-	  <control>
+      <control>
         <description>Filters</description>
         <type>label</type>
         <id>0</id>
@@ -95,14 +95,14 @@
           <onleft>50</onleft>
           <onright>50</onright>
         </control>
-		<control>
+        <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
         </control>
-		<control>
+        <control>
           <description>Refresh Search</description>
           <type>button</type>
           <id>8</id>
@@ -111,7 +111,7 @@
           <label>#OnlineVideos.Translation.Refresh.Label</label>
           <visible>no</visible>
         </control>
-		<control>
+        <control>
           <description>Select Category</description>
           <type>selectbutton</type>
           <id>9</id>
@@ -146,7 +146,7 @@
           <onright>50</onright>
           <label>#OnlineVideos.Translation.Timeframe.Label</label>
           <visible>no</visible>
-        </control>        
+        </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
@@ -196,4 +196,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:27a4fbf3ff8f2dbc72756f0aa650bf1f-->
+<!--Checksum:7e806f79976546e5ac7fbd5dc8b338d8-->
