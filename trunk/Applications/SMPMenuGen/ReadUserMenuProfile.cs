@@ -75,8 +75,8 @@ namespace SMPMenuGen
           optionsTag = "StreamedMP Options";
           menuTag = "StreamedMP Menu Items";
           folderUpdateRequired = true;
-          if (foldersUpdated())
-            bgFolderName = "SMPbackgrounds";
+          //if (foldersUpdated())
+          //  bgFolderName = "SMPbackgrounds";
           break;
         default:
           optionsTag = "StreamedMP Options";
@@ -207,27 +207,27 @@ namespace SMPMenuGen
         menudef.exitStyleNew = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
         mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
         mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
-        tvSeriesOptions.mrEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
-        tvSeriesOptions.mrSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
-        movPicsOptions.MovieTitleFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
-        movPicsOptions.MovieDetailFont = readEntryValue(optionsTag, "mrMovieDetailFont", nodelist);
-        movPicsOptions.HideRuntime = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRuntime", nodelist));
-        movPicsOptions.HideCertification = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideCertification", nodelist));
-        movPicsOptions.HideRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRating", nodelist));
-        movPicsOptions.UseTextRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsUseTextRating", nodelist));
-        cbMovPicsRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
-        cbTVSeriesRecentWatched.Checked = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesWatched", nodelist));
-        tvSeriesOptions.mrDisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesDisableFadeLabel", nodelist));
-        movPicsOptions.DisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
-        cbEnableRecentRecordedTV.Checked = bool.Parse(readEntryValue(optionsTag, "mrRecordedTVEnabled", nodelist));
-        cbEnableRecentMusic.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
-        driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
-        cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
-        cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
-        cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
-        cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
-        cbUpdateControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
-        cbDisableExitMenu.Checked = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
+        menudef.tvSeriesEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
+        menudef.tvSeriesSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
+        menudef.movpicsTitleFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
+        menudef.movpicsDetailFont = readEntryValue(optionsTag, "mrMovieDetailFont", nodelist);
+        menudef.hideRuntime = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRuntime", nodelist));
+        menudef.hideCertifcation = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideCertification", nodelist));
+        menudef.hideRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsHideRating", nodelist));
+        menudef.useTextRating = bool.Parse(readEntryValue(optionsTag, "mrMovPicsUseTextRating", nodelist));
+        menudef.movpicsRecentWatched = bool.Parse(readEntryValue(optionsTag, "mrMovPicsWatched", nodelist));
+        menudef.tvSeriesRecentWatched = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesWatched", nodelist));
+        menudef.tvSeriesDisableFadeLables = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesDisableFadeLabel", nodelist));
+        menudef.movpicsDisableFadeLables = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
+        menudef.enableMostRecentRecordedTV = bool.Parse(readEntryValue(optionsTag, "mrRecordedTVEnabled", nodelist));
+        menudef.enableMostRecentMusic = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
+        menudef.driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
+        menudef.enableSleepControlOverlay = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
+        menudef.enableStocksOverlay = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
+        menudef.enablePowerControlOverlay = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
+        menudef.enableHTPCInfoOverlay = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
+        menudef.enableUpdateControlOverlay = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
+        menudef.disableExitMenu = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
       }
       catch
       {
@@ -237,222 +237,221 @@ namespace SMPMenuGen
       if (string.IsNullOrEmpty(driveFreeSpaceList))
         driveFreeSpaceList = "false";
 
-      if (!(driveFreeSpaceList == "false"))
-      {
-        cbFreeDriveSpaceOverlay.Checked = true;
-        string[] configuredDrives = driveFreeSpaceList.Split(',');
-        foreach (string hd in configuredDrives)
-        {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
-          formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
-        }
-      }
+      //if (!(driveFreeSpaceList == "false"))
+      //{
+      //  cbFreeDriveSpaceOverlay.Checked = true;
+      //  string[] configuredDrives = driveFreeSpaceList.Split(',');
+      //  foreach (string hd in configuredDrives)
+      //  {
+      //    DriveInfo hdDetails = new DriveInfo(hd);
+      //    string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+      //    formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+      //  }
+      //}
 
 
 
-      if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
-        tvSeriesOptions.mrSeriesFont = "mediastream10c";
+      //if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
+      //  tvSeriesOptions.mrSeriesFont = "mediastream10c";
 
-      if (tvSeriesOptions.mrEpisodeFont == "mediastream9c")
-        tvSeriesOptions.mrEpisodeFont = "mediastream10c";
+      //if (tvSeriesOptions.mrEpisodeFont == "mediastream9c")
+      //  tvSeriesOptions.mrEpisodeFont = "mediastream10c";
 
-      if (tvSeriesOptions.mrSeriesFont == "false" || tvSeriesOptions.mrEpisodeFont == "false")
-      {
-        tvSeriesOptions.mrSeriesFont = "mediastream10c";
-        tvSeriesOptions.mrEpisodeFont = "mediastream10tc (Bold)";
-      }
+      //if (tvSeriesOptions.mrSeriesFont == "false" || tvSeriesOptions.mrEpisodeFont == "false")
+      //{
+      //  tvSeriesOptions.mrSeriesFont = "mediastream10c";
+      //  tvSeriesOptions.mrEpisodeFont = "mediastream10tc (Bold)";
+      //}
 
-      if (movPicsOptions.MovieTitleFont == "false" || movPicsOptions.MovieDetailFont == "false")
-      {
-        movPicsOptions.MovieTitleFont = "mediastream10tc (Bold)";
-        movPicsOptions.MovieDetailFont = "mediastream10c";
-      }
+      //if (movPicsOptions.MovieTitleFont == "false" || movPicsOptions.MovieDetailFont == "false")
+      //{
+      //  movPicsOptions.MovieTitleFont = "mediastream10tc (Bold)";
+      //  movPicsOptions.MovieDetailFont = "mediastream10c";
+      //}
 
       // As only saving the animated state set the static state true if animimated state is false
-      if (!animatedIconsInstalled())
-      {
-        WeatherIconsAnimated.Enabled = false;
-        WeatherIconsAnimated.Checked = false;
-      }
-      if (WeatherIconsAnimated.Checked)
-        weatherIconsStatic.Checked = false;
-      else
-        weatherIconsStatic.Checked = true;
+      //if (!animatedIconsInstalled())
+      //{
+      //  WeatherIconsAnimated.Enabled = false;
+      //  WeatherIconsAnimated.Checked = false;
+      //}
+      //if (WeatherIconsAnimated.Checked)
+      //  weatherIconsStatic.Checked = false;
+      //else
+      //  weatherIconsStatic.Checked = true;
 
 
 
-      if (!weatherBackgoundsInstalled())
-      {
-        weatherBGlink.Checked = false;
-        weatherBGlink.Enabled = false;
-        weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
-        installWeatherBackgrounds.Visible = true;
-      }
+      //if (!weatherBackgoundsInstalled())
+      //{
+      //  weatherBGlink.Checked = false;
+      //  weatherBGlink.Enabled = false;
+      //  weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
+      //  installWeatherBackgrounds.Visible = true;
+      //}
 
-      if (tvRecentDisplayType == "summary" || movPicsDisplayType == "summary")
-        btFormatOptions.Enabled = true;
+      //if (tvRecentDisplayType == "summary" || movPicsDisplayType == "summary")
+      //  btFormatOptions.Enabled = true;
 
-      if (tvRecentDisplayType == "summary")
-      {
-        tvSeriesRecentStyle = tvSeriesRecentType.summary;
-        rbTVSeriesSummary.Checked = true;
-        gbSummaryStyle.Enabled = true;
-      }
-      else
-      {
-        tvSeriesRecentStyle = tvSeriesRecentType.full;
-        rbTBSeriesFull.Checked = true;
-        gbSummaryStyle.Enabled = false;
+      //if (tvRecentDisplayType == "summary")
+      //{
+      //  tvSeriesRecentStyle = tvSeriesRecentType.summary;
+      //  rbTVSeriesSummary.Checked = true;
+      //  gbSummaryStyle.Enabled = true;
+      //}
+      //else
+      //{
+      //  tvSeriesRecentStyle = tvSeriesRecentType.full;
+      //  rbTBSeriesFull.Checked = true;
+      //  gbSummaryStyle.Enabled = false;
+      //}
 
-      }
-
-      if (movPicsDisplayType == "summary")
-      {
-        movPicsRecentStyle = movPicsRecentType.summary;
-        rbMovPicsSummary.Checked = true;
-      }
-      else
-      {
-        movPicsRecentStyle = movPicsRecentType.full;
-        rbMovPicsFull.Checked = true;
-      }
+      //if (movPicsDisplayType == "summary")
+      //{
+      //  movPicsRecentStyle = movPicsRecentType.summary;
+      //  rbMovPicsSummary.Checked = true;
+      //}
+      //else
+      //{
+      //  movPicsRecentStyle = movPicsRecentType.full;
+      //  rbMovPicsFull.Checked = true;
+      //}
 
       // TVSeries most recent summry Style
-      if (mostRecentTVSeriesSummStyle == "fanart")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
-      else if (mostRecentTVSeriesSummStyle == "poster")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
-        rbPosterStyle.Checked = true;
-      }
-      else
-      {
-        //Default to Fanart Style
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
+      //if (mostRecentTVSeriesSummStyle == "fanart")
+      //{
+      //  mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+      //  rbFanartStyle.Checked = true;
+      //}
+      //else if (mostRecentTVSeriesSummStyle == "poster")
+      //{
+      //  mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
+      //  rbPosterStyle.Checked = true;
+      //}
+      //else
+      //{
+      //  //Default to Fanart Style
+      //  mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+      //  rbFanartStyle.Checked = true;
+      //}
 
       // Moving Pictures most recent summry Style
-      if (mostRecentMovPicsSummStyle == "fanart")
-      {
-        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
-      else if (mostRecentMovPicsSummStyle == "poster")
-      {
-        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
-        rbPosterStyle.Checked = true;
-      }
-      else
-      {
-        //Default to Fanart Style
-        mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
+      //if (mostRecentMovPicsSummStyle == "fanart")
+      //{
+      //  mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
+      //  rbFanartStyle.Checked = true;
+      //}
+      //else if (mostRecentMovPicsSummStyle == "poster")
+      //{
+      //  mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.poster;
+      //  rbPosterStyle.Checked = true;
+      //}
+      //else
+      //{
+      //  //Default to Fanart Style
+      //  mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
+      //  rbFanartStyle.Checked = true;
+      //}
 
       //
       // Old Setting - if found in usermenuprofile use as setting for TVSeries Summary Style
       //
-      if (mostRecentSumStyle == "fanart")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
-        rbFanartStyle.Checked = true;
-      }
-      else if (mostRecentSumStyle == "poster")
-      {
-        mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
-        rbPosterStyle.Checked = true;
-      }
+      //if (mostRecentSumStyle == "fanart")
+      //{
+      //  mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
+      //  rbFanartStyle.Checked = true;
+      //}
+      //else if (mostRecentSumStyle == "poster")
+      //{
+      //  mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.poster;
+      //  rbPosterStyle.Checked = true;
+      //}
 
-      if (splashScreenImage == "false")
-        splashScreenImage = "splashscreen.png";
+      //if (splashScreenImage == "false")
+      //  splashScreenImage = "splashscreen.png";
 
-      if (targetScreenRes == "HD")
-        setHDScreenRes();
-      else if (targetScreenRes == "SD")
-        setSDScreenRes();
+      //if (targetScreenRes == "HD")
+      //  setHDScreenRes();
+      //else if (targetScreenRes == "SD")
+      //  setSDScreenRes();
 
-      switch (activeRssImageType)
-      {
-        case "infoservice":
-          rssImage = rssImageType.infoserviceImage;
-          rbRssInfoServiceImage.Checked = true;
-          break;
-        case "noimage":
-          rssImage = rssImageType.noImage;
-          rbRssNoImage.Checked = true;
-          break;
-        case "skin":
-          rssImage = rssImageType.skinImage;
-          rbRssSkinImage.Checked = true;
-          break;
-        default:
-          rssImage = rssImageType.skinImage;
-          rbRssSkinImage.Checked = true;
-          break;
-      }
+      //switch (activeRssImageType)
+      //{
+      //  case "infoservice":
+      //    rssImage = rssImageType.infoserviceImage;
+      //    rbRssInfoServiceImage.Checked = true;
+      //    break;
+      //  case "noimage":
+      //    rssImage = rssImageType.noImage;
+      //    rbRssNoImage.Checked = true;
+      //    break;
+      //  case "skin":
+      //    rssImage = rssImageType.skinImage;
+      //    rbRssSkinImage.Checked = true;
+      //    break;
+      //  default:
+      //    rssImage = rssImageType.skinImage;
+      //    rbRssSkinImage.Checked = true;
+      //    break;
+      //}
 
-      if (_selectedFont != "false")
-      {
-        cboSelectedFont.Text = _selectedFont;
-      }
-      if (_labelFont != "false")
-      {
-        cboLabelFont.Text = _labelFont;
-      }
+      //if (_selectedFont != "false")
+      //{
+      //  cboSelectedFont.Text = _selectedFont;
+      //}
+      //if (_labelFont != "false")
+      //{
+      //  cboLabelFont.Text = _labelFont;
+      //}
 
-      if (menuStyle == chosenMenuStyle.verticalStyle)
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
-      else
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+      //if (menuStyle == chosenMenuStyle.verticalStyle)
+      //  txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+      //else
+      //  txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
 
-      Version isver = new Version("1.6.0.0");
-      if (getInfoServiceVersion().CompareTo(isver) >= 0)
-        infoServiceDayProperty = "forecast";
-      else
-        infoServiceDayProperty = "day";
+      //Version isver = new Version("1.6.0.0");
+      //if (getInfoServiceVersion().CompareTo(isver) >= 0)
+      //  infoServiceDayProperty = "forecast";
+      //else
+      //  infoServiceDayProperty = "day";
 
-      // Check if Moving Pictures is installed and enabled, if not disable most recent options
-      if (MovingPicturesVersion == "0.0.0.0")
-      {
-        pMovPicsRecent.Enabled = false;
-        cbMostRecentMovPics.Checked = false;
-        cbMovPicsRecentWatched.Checked = false;
-        cbMostRecentMovPics.Refresh();
-      }
-      else
-      {
-        if (!helper.pluginEnabled(Helper.Plugins.MovingPictures))
-        {
-          pMovPicsRecent.Enabled = false;
-          cbMostRecentMovPics.Checked = false;
-          cbMovPicsRecentWatched.Checked = false;
-          cbMostRecentMovPics.Refresh();
-        }
-      }
+      //// Check if Moving Pictures is installed and enabled, if not disable most recent options
+      //if (MovingPicturesVersion == "0.0.0.0")
+      //{
+      //  pMovPicsRecent.Enabled = false;
+      //  cbMostRecentMovPics.Checked = false;
+      //  cbMovPicsRecentWatched.Checked = false;
+      //  cbMostRecentMovPics.Refresh();
+      //}
+      //else
+      //{
+      //  if (!helper.pluginEnabled(Helper.Plugins.MovingPictures))
+      //  {
+      //    pMovPicsRecent.Enabled = false;
+      //    cbMostRecentMovPics.Checked = false;
+      //    cbMovPicsRecentWatched.Checked = false;
+      //    cbMostRecentMovPics.Refresh();
+      //  }
+      //}
 
-      // Check in TVSeries is installed and enabled, if not disable most recent options
-      if (TVSeriesVersion == "0.0.0.0")
-      {
-        pTVSeriesRecent.Enabled = false;
-        cbMostRecentTvSeries.Checked = false;
-        cbTVSeriesRecentWatched.Checked = false;
-        cbMostRecentTvSeries.Refresh();
-      }
-      else
-      {
-        if (!helper.pluginEnabled(Helper.Plugins.MPTVSeries))
-        {
-          pTVSeriesRecent.Enabled = false;
-          cbMostRecentTvSeries.Checked = false;
-          cbTVSeriesRecentWatched.Checked = false;
-          cbMostRecentTvSeries.Refresh();
-        }
-      }
+      //// Check in TVSeries is installed and enabled, if not disable most recent options
+      //if (TVSeriesVersion == "0.0.0.0")
+      //{
+      //  pTVSeriesRecent.Enabled = false;
+      //  cbMostRecentTvSeries.Checked = false;
+      //  cbTVSeriesRecentWatched.Checked = false;
+      //  cbMostRecentTvSeries.Refresh();
+      //}
+      //else
+      //{
+      //  if (!helper.pluginEnabled(Helper.Plugins.MPTVSeries))
+      //  {
+      //    pTVSeriesRecent.Enabled = false;
+      //    cbMostRecentTvSeries.Checked = false;
+      //    cbTVSeriesRecentWatched.Checked = false;
+      //    cbMostRecentTvSeries.Refresh();
+      //  }
+      //}
       //
       // Read in the menu items
       //
@@ -477,8 +476,8 @@ namespace SMPMenuGen
         mnuItem.buttonTexture = readEntryValue(menuTag, "menuitem" + i.ToString() + "buttonTexture", nodelist);
 
         mnuItem.xmlFileName = readEntryValue(menuTag, "menuitem" + i.ToString() + "xmlFileName", nodelist);
-        if (mnuItem.xmlFileName == "false")
-          mnuItem.xmlFileName = getXMLFileName(mnuItem.hyperlink);
+        //if (mnuItem.xmlFileName == "false")
+        //  mnuItem.xmlFileName = getXMLFileName(mnuItem.hyperlink);
 
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
         mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
@@ -624,17 +623,17 @@ namespace SMPMenuGen
 
         }
 
-        isWeather.Checked = mnuItem.isWeather;
-        disableBGSharing.Checked = mnuItem.disableBGSharing;
+        //isWeather.Checked = mnuItem.isWeather;
+        //disableBGSharing.Checked = mnuItem.disableBGSharing;
 
-        if (mnuItem.fanartHandlerEnabled)
-          checkAndSetRandomFanart(mnuItem.fanartProperty);
+        //if (mnuItem.fanartHandlerEnabled)
+        //  checkAndSetRandomFanart(mnuItem.fanartProperty);
 
-        // Set the default control
-        if (mnuItem.isDefault)
-          defaultcontrol = mnuItem.id.ToString();
-        id = mnuItem.id.ToString();
-        itemsOnMenubar.Items.Add(mnuItem.name, id.Equals(defaultcontrol));
+        //// Set the default control
+        //if (mnuItem.isDefault)
+        //  defaultcontrol = mnuItem.id.ToString();
+        //id = mnuItem.id.ToString();
+        //itemsOnMenubar.Items.Add(mnuItem.name, id.Equals(defaultcontrol));
 
         // If user decides not to use multiimage backgrounds then we need a default image, lets check and set if one is required
         defaultImage = readEntryValue(menuTag, "menuitem" + i.ToString() + "defaultimage", nodelist);
@@ -642,62 +641,62 @@ namespace SMPMenuGen
         // Version 2.0 usermenu profile - check if folder structure updated but menu has not.
         // if so replace "Animations" with "SMPBackgrounds"
         // Belts and Braces checks
-        if (versionNum == "1.0" && foldersUpdated())
-        {
-          if (defaultImage.ToLower().StartsWith("animations"))
-          {
-            defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\" + Path.GetFileName("C:\\" + defaultImage);
-          }
-        }
+        //if (versionNum == "1.0" && foldersUpdated())
+        //{
+        //  if (defaultImage.ToLower().StartsWith("animations"))
+        //  {
+        //    defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\" + Path.GetFileName("C:\\" + defaultImage);
+        //  }
+        //}
 
         // Check if the stored image still exists, if nor set to default.jpg
-        if (!System.IO.File.Exists((imageDir(defaultImage))))
-          defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
+        //if (!System.IO.File.Exists((imageDir(defaultImage))))
+        //  defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
 
-        if (defaultImage.ToLower().StartsWith(bgFolderName.ToLower()))
-          mnuItem.defaultImage = defaultImage;
-        else
-        {
-          if (!mnuItem.bgFolder.Contains("\\"))
-            mnuItem.defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
-          else
-            mnuItem.defaultImage = mnuItem.bgFolder + "\\default.jpg";
-        }
+        //if (defaultImage.ToLower().StartsWith(bgFolderName.ToLower()))
+        //  mnuItem.defaultImage = defaultImage;
+        //else
+        //{
+        //  if (!mnuItem.bgFolder.Contains("\\"))
+        //    mnuItem.defaultImage = bgFolderName + "\\" + mnuItem.bgFolder + "\\default.jpg";
+        //  else
+        //    mnuItem.defaultImage = mnuItem.bgFolder + "\\default.jpg";
+        //}
 
         menuItems.Add(mnuItem);
       }
-      reloadBackgroundItems();
+      //reloadBackgroundItems();
       //UpdateImageControlVisibility();
-      btGenerateMenu.Enabled = true;
+      //btGenerateMenu.Enabled = true;
 
-      if (folderUpdateRequired)
-        updateBackgroundFolders();
+      //if (folderUpdateRequired)
+      //  updateBackgroundFolders();
     }
 
-    string getXMLFileName(string hyperLink)
-    {
-      int index = ids.IndexOf(hyperLink);
-      string firstFound;
+    //string getXMLFileName(string hyperLink)
+    //{
+    //  int index = ids.IndexOf(hyperLink);
+    //  string firstFound;
 
-      try
-      {
+    //  try
+    //  {
 
-        firstFound = xmlFiles.Items[index].ToString();
+    //    firstFound = xmlFiles.Items[index].ToString();
 
-        index = ids.IndexOf(hyperLink, index + 1);
-        if (index != -1 && hyperLink == "1")
-        {
-          if (!helper.pluginEnabled(Helper.Plugins.ForTheRecord))
-            firstFound = xmlFiles.Items[index].ToString();
-        }
-      }
-      catch
-      {
-        firstFound = "false";
-      }
+    //    index = ids.IndexOf(hyperLink, index + 1);
+    //    if (index != -1 && hyperLink == "1")
+    //    {
+    //      if (!helper.pluginEnabled(Helper.Plugins.ForTheRecord))
+    //        firstFound = xmlFiles.Items[index].ToString();
+    //    }
+    //  }
+    //  catch
+    //  {
+    //    firstFound = "false";
+    //  }
 
-      return firstFound;
-    }
+    //  return firstFound;
+    //}
 
     displayMostRecent readMostRecentDisplayOption(string mrOption, string skinId)
     {
@@ -822,93 +821,93 @@ namespace SMPMenuGen
     }
 
 
-    void updateBackgroundFolders()
-    {
+    //void updateBackgroundFolders()
+    //{
 
-      // Up the location of of the background folders
-      // Move from sub folders of animations folder to new background folder.
-      // get list of folders to move
-      string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
-      foreach (string folder in directories)
-      {
-        switch (Path.GetFileName(folder).ToLower())
-        {
-          case "anvu":
-            break;
-          case "ledvu":
-            break;
-          case "play":
-            break;
-          case "weathericons":
-            break;
-          default:
-            foldersToMove.Add(folder);
-            break;
-        }
-      }
+    //  // Up the location of of the background folders
+    //  // Move from sub folders of animations folder to new background folder.
+    //  // get list of folders to move
+    //  string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
+    //  foreach (string folder in directories)
+    //  {
+    //    switch (Path.GetFileName(folder).ToLower())
+    //    {
+    //      case "anvu":
+    //        break;
+    //      case "ledvu":
+    //        break;
+    //      case "play":
+    //        break;
+    //      case "weathericons":
+    //        break;
+    //      default:
+    //        foldersToMove.Add(folder);
+    //        break;
+    //    }
+    //  }
 
-      // Create the new directory SMPBackgrounds
-      if (!Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
-        Directory.CreateDirectory(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds");
+    //  // Create the new directory SMPBackgrounds
+    //  if (!Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
+    //    Directory.CreateDirectory(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds");
 
-      // Now move the folders
-      foreach (string folder in foldersToMove)
-      {
-        string fromDir = folder;
-        string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
-        try
-        {
-          Directory.Move(fromDir, toDir);
-        }
-        catch (ArgumentNullException)
-        {
-          helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (System.Security.SecurityException)
-        {
-          helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (IOException)
-        {
-          helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (Exception e)
-        {
-          helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-      }
+    //  // Now move the folders
+    //  foreach (string folder in foldersToMove)
+    //  {
+    //    string fromDir = folder;
+    //    string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
+    //    try
+    //    {
+    //      Directory.Move(fromDir, toDir);
+    //    }
+    //    catch (ArgumentNullException)
+    //    {
+    //      //helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+    //    }
+    //    catch (System.Security.SecurityException)
+    //    {
+    //      //helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+    //    }
+    //    catch (IOException)
+    //    {
+    //      //helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+    //    }
+    //    catch (Exception e)
+    //    {
+    //      //helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
+    //    }
+    //  }
 
-      // directories moved - update menu image directory to point at new dir
-      bgFolderName = "SMPBackgrounds";
-      foreach (menuItem mi in menuItems)
-      {
-        if (!mi.fanartHandlerEnabled && mi.defaultImage.ToLower().StartsWith("animations"))
-        {
-          mi.defaultImage = bgFolderName + "\\" + mi.bgFolder + "\\" + Path.GetFileName("c:\\" + mi.defaultImage);
-        }
-      }
-      genMenu(true);
-      itemsOnMenubar.Items.Clear();
-      bgItems.Clear();
-      menuItems.Clear();
-      // reset item id's as it is possible to generate again.
-      foreach (menuItem item in menuItems)
-      {
-        item.id = menuItems.IndexOf(item);
-      }
-      loadMenuSettings();
-    }
+    //  // directories moved - update menu image directory to point at new dir
+    //  bgFolderName = "SMPBackgrounds";
+    //  foreach (menuItem mi in menuItems)
+    //  {
+    //    if (!mi.fanartHandlerEnabled && mi.defaultImage.ToLower().StartsWith("animations"))
+    //    {
+    //      mi.defaultImage = bgFolderName + "\\" + mi.bgFolder + "\\" + Path.GetFileName("c:\\" + mi.defaultImage);
+    //    }
+    //  }
+    //  genMenu(true);
+    //  itemsOnMenubar.Items.Clear();
+    //  bgItems.Clear();
+    //  menuItems.Clear();
+    //  // reset item id's as it is possible to generate again.
+    //  foreach (menuItem item in menuItems)
+    //  {
+    //    item.id = menuItems.IndexOf(item);
+    //  }
+    //  loadMenuSettings();
+    //}
 
-    bool foldersUpdated()
-    {
-      // Ok, quick check to see if the folder have already moved but the usermenuprofile
-      // has not been updated.
-      // this could happen if running against SVN or if a clean install with previous usermenuprofile.
-      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
-        return true;
-      else
-        return false;
-    }
+    //bool foldersUpdated()
+    //{
+    //  // Ok, quick check to see if the folder have already moved but the usermenuprofile
+    //  // has not been updated.
+    //  // this could happen if running against SVN or if a clean install with previous usermenuprofile.
+    //  if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds"))
+    //    return true;
+    //  else
+    //    return false;
+    //}
 
     private string readEntryValue(string section, string elementName, XmlNodeList unodeList)
     {

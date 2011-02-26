@@ -31,7 +31,7 @@ namespace SMPMenuGen
       }
       catch (Exception e)
       {
-        showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);        
+        //showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);        
       }
 
       if (string.IsNullOrEmpty(returnValue))
