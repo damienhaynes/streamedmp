@@ -293,9 +293,19 @@ namespace SMPMenuGen
       public bool hideCertifcation;
       public bool hideRating;
       public bool useTextRating;
-
-
-
+      public bool movpicsRecentWatched;
+      public bool tvSeriesRecentWatched;
+      public bool tvSeriesDisableFadeLables;
+      public bool movpicsDisableFadeLables;
+      public bool enableMostRecentMusic;
+      public bool enableMostRecentRecordedTV;
+      public bool enableSleepControlOverlay;
+      public bool enableStocksOverlay;
+      public bool enablePowerControlOverlay;
+      public bool enableHTPCInfoOverlay;
+      public bool enableUpdateControlOverlay;
+      public bool disableExitMenu;
+      public string driveFreeSpaceList;
     }
 
     public class menuItem

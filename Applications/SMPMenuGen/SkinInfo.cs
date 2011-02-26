@@ -104,7 +104,7 @@ namespace SMPMenuGen
       }
       catch (Exception e)
       {
-        MessageBox.Show("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message.ToString());
+        //MessageBox.Show("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message.ToString());
         mpPaths.sMPbaseDir = null;
       }
     }
@@ -121,7 +121,7 @@ namespace SMPMenuGen
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
       {
-        MessageBox.Show("Can't find MediaPortalDirs.xml \r\r" + fMPdirs);
+        //MessageBox.Show("Can't find MediaPortalDirs.xml \r\r" + fMPdirs);
         return;
       }
       doc.Load(fMPdirs);
@@ -226,7 +226,7 @@ namespace SMPMenuGen
       XmlDocument doc = new XmlDocument();
       if (!File.Exists(fMPdirs))
       {
-        MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
+        //MessageBox.Show("Can't find MediaPortal.xml \r\r" + fMPdirs);
         return null;
       }
       doc.Load(fMPdirs);
