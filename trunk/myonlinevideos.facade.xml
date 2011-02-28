@@ -262,31 +262,7 @@
         </control>
       </control>
     </control>
-    <control>
-      <description>Details View</description>
-      <type>listcontrol</type>
-      <id>51</id>
-      <onright>51</onright>
-      <onleft>51</onleft>
-      <posX>820</posX>
-      <posY>300</posY>
-      <width>460</width>
-      <height>450</height>
-      <textXOff2>440</textXOff2>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
-      <spinAlign>Right</spinAlign>
-      <spinColor>ff006698</spinColor>
-      <textureUp>arrow_round_up_nofocus.png</textureUp>
-      <textureDown>arrow_round_down_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <visible>string.equals(#OnlineVideos.state,details)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    
   </controls>
 </window>
 <!--Checksum:562178322b5de22a94352b35127a3ba3-->
