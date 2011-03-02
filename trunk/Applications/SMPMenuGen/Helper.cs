@@ -94,6 +94,36 @@ namespace SMPMenuGen
       MediaPortal.Profile.Settings.SaveCache();
     }
 
+    public Version getInfoServiceVersion()
+    {
+      Version fv = new Version(fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\infoservice.dll"));
+      return fv;
+    }
+
+    public string MovingPicturesVersion
+    {
+      get
+      {
+        return fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\MovingPictures.dll");
+      }
+    }
+
+    public string TVSeriesVersion
+    {
+      get
+      {
+        return fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\MP-TVSeries.dll");
+      }
+    }
+
+    public string MediaPortalVersion
+    {
+      get
+      {
+        return fileVersion(Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "MediaPortal.exe"));
+      }
+    }
+
     #region Assembly Helpers
     public static bool IsAssemblyAvailable(string name, Version ver)
     {
