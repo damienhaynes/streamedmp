@@ -894,27 +894,11 @@ namespace StreamedMPEditor
       {
         string fromDir = folder;
         string toDir = SkinInfo.mpPaths.streamedMPpath + "media\\SMPBackgrounds\\" + Path.GetFileName(folder);
-        try
-        {
-          Directory.Move(fromDir, toDir);
-        }
-        catch (ArgumentNullException)
-        {
-          helper.showError("Path is a null reference.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (System.Security.SecurityException)
-        {
-          helper.showError("The caller does not have the required permission.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (IOException)
-        {
-          helper.showError("An attempt was made to move a directory to a different volume, or destDirName already exists.\nClick Ok to continue processing.\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
-        catch (Exception e)
-        {
-          helper.showError(e.Message + "\n\n" + fromDir + "\n\n" + toDir, errorCode.info);
-        }
+
+        copyDirectory(fromDir, toDir);
+        Directory.Delete(fromDir, true);
       }
+
 
       // directories moved - update menu image directory to point at new dir
       bgFolderName = "SMPBackgrounds";
@@ -936,6 +920,28 @@ namespace StreamedMPEditor
       }
       loadMenuSettings();
     }
+
+    void copyDirectory(string sourceDir, string destinationDir)
+    {
+      String[] backgroundFiles;
+
+      if (destinationDir[destinationDir.Length - 1] != Path.DirectorySeparatorChar)
+        destinationDir += Path.DirectorySeparatorChar;
+
+      if (!Directory.Exists(destinationDir))
+        Directory.CreateDirectory(destinationDir);
+
+      backgroundFiles = Directory.GetFileSystemEntries(sourceDir);
+
+      foreach (string Element in backgroundFiles)
+      {
+        if (Directory.Exists(Element))
+          copyDirectory(Element, destinationDir + Path.GetFileName(Element));
+        else
+            File.Copy(Element, destinationDir + Path.GetFileName(Element), true);
+      }
+    }
+
 
     bool foldersUpdated()
     {

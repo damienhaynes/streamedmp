@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Xml;
 using System.IO;
 
@@ -137,9 +138,30 @@ namespace SMPMenuGen
 
       // Get the Focus Colour and set the background on the control
       menudef.focusAlpha = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(0, 2);
+      try
+      {
+        string RGB = defFocus;
+        RGB = readEntryValue(optionsTag, "menuitemFocus", nodelist).Substring(2);
+        Color col = ColorFromRGB(RGB);
+        menudef.focusColor = RGB;
+      }
+      catch
+      {
+        menudef.focusColor = defFocus;
+      }
       // Get the NoFocus Colour and set the background on the control
       menudef.noFocusAlpha = readEntryValue(optionsTag, "menuitemNoFocus", nodelist).Substring(0, 2);
-
+      try
+      {
+        string RGB = defUnFocus;
+        RGB = readEntryValue(optionsTag, "menuitemNoFocus", nodelist).Substring(2);
+        Color col = ColorFromRGB(RGB);
+        menudef.noFocusColor = RGB;
+      }
+      catch
+      {
+      menudef.noFocusColor = defUnFocus;
+      }
 
       // Line up all the options this also sets the defaults for the style
       // which can be overidden by user settings below
@@ -937,6 +959,20 @@ namespace SMPMenuGen
       return "false";
     }
 
+
+    private Color ColorFromRGB(string RGB)
+    {
+      if (RGB.Length != 6)
+        return System.Drawing.Color.FromArgb(255, 255, 255);
+
+      byte R = ColorTranslator.FromHtml("#" + RGB).R;
+      byte G = ColorTranslator.FromHtml("#" + RGB).G;
+      byte B = ColorTranslator.FromHtml("#" + RGB).B;
+
+      return System.Drawing.Color.FromArgb(int.Parse(R.ToString()),
+                                           int.Parse(G.ToString()),
+                                           int.Parse(B.ToString()));
+    }
 
   }
 }
