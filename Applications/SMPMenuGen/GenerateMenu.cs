@@ -130,6 +130,7 @@ namespace SMPMenuGen
     
     public MenuDefinition menudef = new MenuDefinition();
 
+
     public static List<menuItem> menuItems = new List<menuItem>();
     public static List<string> driveFreeSpaceDrives = new List<string>();
 
@@ -228,14 +229,17 @@ namespace SMPMenuGen
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
 
+    Helper helper = new Helper();
+    randomFanartSetting randomFanart = new randomFanartSetting();
+
     #endregion
 
     #region Constructor
 
     public GenerateMenu()
     {
-
-      
+      SkinInfo skinInfo = new SkinInfo();
+      loadMenuSettings();
     }
 
     #endregion
@@ -259,7 +263,9 @@ namespace SMPMenuGen
       public string selectedFont;
       public string labelFont;
       public string focusAlpha;
+      public string focusColor;
       public string noFocusAlpha;
+      public string noFocusColor;
       public string menuPos;
       public string acceleration;
       public string duration;
