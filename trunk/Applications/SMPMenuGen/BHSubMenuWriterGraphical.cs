@@ -38,7 +38,7 @@ namespace SMPMenuGen
     /// </summary>
     /// <param name="parentMenu"></param>
     /// <returns></returns>
-    string writeSubMenuLevel1Graphical(formStreamedMpEditor.menuItem parentMenu)
+    string writeSubMenuLevel1Graphical(GenerateMenu.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
 
@@ -65,7 +65,7 @@ namespace SMPMenuGen
       //
       //work out where to start the menu
       //
-      int menuStart = (int.Parse(txtMenuPos.Text) - (50 * parentMenu.subMenuLevel1.Count) - 20);
+      int menuStart = (int.Parse(menudef.menuPos) - (50 * parentMenu.subMenuLevel1.Count) - 20);
 
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
@@ -81,8 +81,8 @@ namespace SMPMenuGen
                       "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                       "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
+                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
                       "<posX>480</posX>" +
                       "<posY>" + menuStart.ToString() + "</posY>" +
                       "<width>320</width>" +
@@ -119,7 +119,7 @@ namespace SMPMenuGen
         else if (parentMenu.subMenuLevel1[j].hyperlink == "196250")
           localxml += "<action>196250</action>";
         else
-          if (parentMenu.subMenuLevel1[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
+          if (parentMenu.subMenuLevel1[j].hyperlink == musicSkinID && parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
             localxml += "<hyperlink>504</hyperlink>";
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
@@ -161,7 +161,7 @@ namespace SMPMenuGen
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
                   "<posX>630</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 205).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 205).ToString() + "</posY>" +
                   "<align>center</align>" +
                   "<width>24</width>" +
                   "<height>24</height>" +
@@ -191,7 +191,7 @@ namespace SMPMenuGen
       //            "<description>Sub Menu Indicator (Level1)</description>" +
       //            "<type>image</type>" +
       //            "<posX>750</posX>" +
-      //            "<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
+      //            "<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 165).ToString() + "</posY>" +
       //            "<align>right</align>" +
       //            "<width>16</width>" +
       //            "<height>16</height>" +
@@ -212,11 +212,11 @@ namespace SMPMenuGen
     /// </summary>
     /// <param name="parentMenu"></param>
     /// <returns></returns>
-    string writeSubMenuLevel2Graphical(formStreamedMpEditor.menuItem parentMenu)
+    string writeSubMenuLevel2Graphical(GenerateMenu.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
 
-      if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
+      if (menuStyle != chosenMenuStyle.verticalStyle && menudef.horizontalContextLabels)
         conextOffsett = 17;
 
       for (int i = 0; i < parentMenu.subMenuLevel2.Count; i++)
@@ -242,9 +242,9 @@ namespace SMPMenuGen
                       "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                       "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
-                      "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
+                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
+                      "<posY>" + (int.Parse(menudef.menuPos) - 355 - conextOffsett).ToString() + "</posY>" +
                       "<posX>768</posX>" +
                       "<width>230</width>" +
                       "<height>405</height>" +
@@ -281,7 +281,7 @@ namespace SMPMenuGen
         else if (parentMenu.subMenuLevel2[j].hyperlink == "196250")
           localxml += "<action>196250</action>";
         else
-          if (parentMenu.subMenuLevel2[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
+          if (parentMenu.subMenuLevel2[j].hyperlink == musicSkinID && parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
             localxml += "<hyperlink>504</hyperlink>";
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";

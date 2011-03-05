@@ -1957,11 +1957,11 @@ namespace StreamedMPEditor
       //
       // Open the intstalled themes file - If there is no file the theme will default to the 3DBackgrounds defaut theme.
       //
-      if (File.Exists(SkinInfo.mpPaths.configBasePath + "SMPThemes.xml"))
+      if (File.Exists(SkinInfo.mpPaths.streamedMPpath + "SMPThemes.xml"))
       {
         try
         {
-          doc.Load(SkinInfo.mpPaths.configBasePath + "SMPThemes.xml");
+          doc.Load(SkinInfo.mpPaths.streamedMPpath + "SMPThemes.xml");
         }
         catch (Exception e1)
         {
@@ -2114,42 +2114,43 @@ namespace StreamedMPEditor
       switch (int.Parse(hyperlink))
       {
         case 1:
-          return bgFolderName + "\\3DBackgrounds\\My_TVGuide.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_TVGuide.jpg";
         case 2:
-          return bgFolderName + "\\3DBackgrounds\\My_Pictures.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Pictures.jpg";
         case 4:
-          return bgFolderName + "\\3DBackgrounds\\My_Settings.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Settings.jpg";
         case 6:
-          return bgFolderName + "\\3DBackgrounds\\My_Videos.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Videos.jpg";
         case 30:
-          return bgFolderName + "\\3DBackgrounds\\My_Music.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Radio.jpg";
         case 34:
-          return bgFolderName + "\\3DBackgrounds\\My_Plugins.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Plugins.jpg";
         case 501:
         case 504:
-          return bgFolderName + "\\3DBackgrounds\\My_Music.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Music.jpg";
         case 2600:
-          return bgFolderName + "\\3DBackgrounds\\My_Weather.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Weather.jpg";
         case 4755:
-          return bgFolderName + "\\3DBackgrounds\\My_OnlineVideos.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_OnlineVideos.jpg";
         case 5900:
-          return bgFolderName + "\\3DBackgrounds\\My_OnlineVideos.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Trailers.jpg";
         case 7890:
-          return bgFolderName + "\\3DBackgrounds\\My_Music.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Music.jpg";
         case 9811:
-          return bgFolderName + "\\3DBackgrounds\\My_TVSeries.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_TVSeries.jpg";
         case 16001:
-          return bgFolderName + "\\3DBackgrounds\\My_News.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_News.jpg";
         case 96742:
-          return bgFolderName + "\\3DBackgrounds\\My_MovingPictures.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_MovingPictures.jpg";
         case 25650:
-          return bgFolderName + "\\3DBackgrounds\\My_Music.jpg";
+        case 25653:
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_RadioTime.jpg";
         case 47286:
-          return bgFolderName + "\\3DBackgrounds\\My_Rockstar.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Rockstar.jpg";
         case 711992:
-          return bgFolderName + "\\3DBackgrounds\\My_OnlineVideos.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_OnlineVideos.jpg";
         default:
-          return bgFolderName + "\\3DBackgrounds\\default.jpg";
+          return bgFolderName + "\\" + cboThemeSelection.Text + "\\default.jpg";
       }
     }
 

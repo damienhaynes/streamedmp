@@ -193,8 +193,8 @@ namespace SMPMenuGen
       //
       try
       {
-        _selectedFont = readEntryValue(optionsTag, "selectedFont", nodelist);
-        _labelFont = readEntryValue(optionsTag, "labelFont", nodelist);
+        menudef.selectedFont = readEntryValue(optionsTag, "selectedFont", nodelist);
+        menudef.labelFont = readEntryValue(optionsTag, "labelFont", nodelist);
         menudef.acceleration = readEntryValue(optionsTag, "acceleration", nodelist);
         menudef.duration = readEntryValue(optionsTag, "duration", nodelist);
         menudef.dropShadow = bool.Parse(readEntryValue(optionsTag, "dropShadow", nodelist));
@@ -209,26 +209,18 @@ namespace SMPMenuGen
         menudef.horizontalContextLabels = bool.Parse(readEntryValue(optionsTag, "horizontalContextLabels", nodelist));
         menudef.fullWeatherSummaryBottom = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryBottom", nodelist));
         menudef.fullWeatherSummaryMiddle = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
-        activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
         menudef.disableClock = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
-        targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
-        splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
         menudef.hideFanartScraper = bool.Parse(readEntryValue(optionsTag, "hideFanartScrapingtext", nodelist));
         menudef.overlayFanart = bool.Parse(readEntryValue(optionsTag, "enableOverlayFanart", nodelist));
         menudef.animateBackground = bool.Parse(readEntryValue(optionsTag, "animatedBackground", nodelist));
-        menudef.mostRecentTVSeries = bool.Parse(readEntryValue(optionsTag, "tvSeriesMostRecent", nodelist));
-        menudef.mostRecentMovPics = bool.Parse(readEntryValue(optionsTag, "movPicsMostRecent", nodelist));
-        tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
-        movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
-        mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);  // Hang over from when juts TVSeries was supported
-        mostRecentTVSeriesSummStyle = readEntryValue(optionsTag, "mostRecentTVSeriesSummStyle", nodelist);
-        mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);
+        menudef.enableMostRecentTVSeries = bool.Parse(readEntryValue(optionsTag, "tvSeriesMostRecent", nodelist));
+        menudef.enableMostRecentMovPics = bool.Parse(readEntryValue(optionsTag, "movPicsMostRecent", nodelist));
         menudef.cycleMostRecentFanart = bool.Parse(readEntryValue(optionsTag, "mostRecentCycleFanart", nodelist));
         menudef.mrSeriesEpisodeFormat = bool.Parse(readEntryValue(optionsTag, "mrSeriesEpisodeFormat", nodelist));
         menudef.mrTitleLast = bool.Parse(readEntryValue(optionsTag, "mrTitleLast", nodelist));
         menudef.exitStyleNew = bool.Parse(readEntryValue(optionsTag, "settingOldStyleExitButtons", nodelist));
-        mostRecentTVSeriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
-        mostRecentMovPicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
+        menudef.tvseriesCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrTVSeriesCycleFanart", nodelist));
+        menudef.movepicsCycleFanart = bool.Parse(readEntryValue(optionsTag, "mrMovPicsCycleFanart", nodelist));
         menudef.tvSeriesEpisodeFont = readEntryValue(optionsTag, "mrEpisodeFont", nodelist);
         menudef.tvSeriesSeriesFont = readEntryValue(optionsTag, "mrSeriesFont", nodelist);
         menudef.movpicsTitleFont = readEntryValue(optionsTag, "mrMovieTitleFont", nodelist);
@@ -250,6 +242,15 @@ namespace SMPMenuGen
         menudef.enableHTPCInfoOverlay = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
         menudef.enableUpdateControlOverlay = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
         menudef.disableExitMenu = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
+
+        activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
+        targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
+        splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
+        tvRecentDisplayType = readEntryValue(optionsTag, "tvRecentDisplayType", nodelist);
+        movPicsDisplayType = readEntryValue(optionsTag, "movPicsDisplayType", nodelist);
+        mostRecentSumStyle = readEntryValue(optionsTag, "mostRecentSumStyle", nodelist);  // Hang over from when juts TVSeries was supported
+        mostRecentTVSeriesSummStyle = readEntryValue(optionsTag, "mostRecentTVSeriesSummStyle", nodelist);
+        mostRecentMovPicsSummStyle = readEntryValue(optionsTag, "mostRecentMovPicsSummStyle", nodelist);    
       }
       catch
       {
@@ -259,17 +260,17 @@ namespace SMPMenuGen
       if (string.IsNullOrEmpty(driveFreeSpaceList))
         driveFreeSpaceList = "false";
 
-      //if (!(driveFreeSpaceList == "false"))
-      //{
-      //  cbFreeDriveSpaceOverlay.Checked = true;
-      //  string[] configuredDrives = driveFreeSpaceList.Split(',');
-      //  foreach (string hd in configuredDrives)
-      //  {
-      //    DriveInfo hdDetails = new DriveInfo(hd);
-      //    string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
-      //    formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
-      //  }
-      //}
+      if (!(driveFreeSpaceList == "false"))
+      {
+        menudef.enableDriveFreeSpace = true;
+        string[] configuredDrives = driveFreeSpaceList.Split(',');
+        foreach (string hd in configuredDrives)
+        {
+          DriveInfo hdDetails = new DriveInfo(hd);
+          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+          formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+        }
+      }
 
 
 
@@ -295,22 +296,19 @@ namespace SMPMenuGen
       //if (!animatedIconsInstalled())
       //{
       //  WeatherIconsAnimated.Enabled = false;
-      //  WeatherIconsAnimated.Checked = false;
+      //  menudef.animatedWeatherIcons = false;
       //}
-      //if (WeatherIconsAnimated.Checked)
+      //if (menudef.animatedWeatherIcons)
       //  weatherIconsStatic.Checked = false;
       //else
       //  weatherIconsStatic.Checked = true;
 
 
 
-      //if (!weatherBackgoundsInstalled())
-      //{
-      //  weatherBGlink.Checked = false;
-      //  weatherBGlink.Enabled = false;
-      //  weatherBGlink.Text = "Link Background to Current Weather (Not Installed)";
-      //  installWeatherBackgrounds.Visible = true;
-      //}
+      if (!weatherBackgoundsInstalled())
+      {
+        menudef.weatherBGLink = false;
+      }
 
       //if (tvRecentDisplayType == "summary" || movPicsDisplayType == "summary")
       //  btFormatOptions.Enabled = true;
@@ -397,25 +395,21 @@ namespace SMPMenuGen
       //else if (targetScreenRes == "SD")
       //  setSDScreenRes();
 
-      //switch (activeRssImageType)
-      //{
-      //  case "infoservice":
-      //    rssImage = rssImageType.infoserviceImage;
-      //    rbRssInfoServiceImage.Checked = true;
-      //    break;
-      //  case "noimage":
-      //    rssImage = rssImageType.noImage;
-      //    rbRssNoImage.Checked = true;
-      //    break;
-      //  case "skin":
-      //    rssImage = rssImageType.skinImage;
-      //    rbRssSkinImage.Checked = true;
-      //    break;
-      //  default:
-      //    rssImage = rssImageType.skinImage;
-      //    rbRssSkinImage.Checked = true;
-      //    break;
-      //}
+      switch (activeRssImageType)
+      {
+        case "infoservice":
+          rssImage = rssImageType.infoserviceImage;
+          break;
+        case "noimage":
+          rssImage = rssImageType.noImage;
+          break;
+        case "skin":
+          rssImage = rssImageType.skinImage;
+          break;
+        default:
+          rssImage = rssImageType.skinImage;
+          break;
+      }
 
       //if (_selectedFont != "false")
       //{
@@ -427,9 +421,9 @@ namespace SMPMenuGen
       //}
 
       //if (menuStyle == chosenMenuStyle.verticalStyle)
-      //  txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+      //  menudef.menuPos = readEntryValue(optionsTag, "menuXPos", nodelist);
       //else
-      //  txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+      //  menudef.menuPos = readEntryValue(optionsTag, "menuYPos", nodelist);
 
       //Version isver = new Version("1.6.0.0");
       //if (getInfoServiceVersion().CompareTo(isver) >= 0)

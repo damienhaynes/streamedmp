@@ -135,7 +135,7 @@ namespace SMPMenuGen
       // For each defined menu item create the visibility control and the 14 controls for menu item, 2 buttons and 12 label controls
       foreach (menuItem menItem in menuItems)
       {
-        fillBackgroundItem(menItem);
+        //fillBackgroundItem(menItem);
         // Check if this menu item is TVSeries or MovingPictures and store the menu ID for use
         // with the InfoService 3 last added items function if a match
         if (menItem.hyperlink == tvseriesSkinID)
@@ -206,6 +206,7 @@ namespace SMPMenuGen
 
     void writeVerticalSubmenus()
     {
+      
       // Are the Submenus defined, if so we need the additional blade controls
       string tmpXML = string.Empty;
       if (subMenuL1Exists)
@@ -225,7 +226,7 @@ namespace SMPMenuGen
                   "<description>Lateral blade</description>" +
                   "<type>image</type>" +
                   "<id>11111</id>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
+                  "<posX>" + (int.Parse(menudef.menuPos) - 5).ToString() + "</posX>" +
                   "<posY>0</posY>" +
                   "<width>233</width>" +
                   "<height>720</height>" +
@@ -255,7 +256,7 @@ namespace SMPMenuGen
                    "<description>Lateral blade</description>" +
                    "<type>image</type>" +
                    "<id>22222</id>" +
-                   "<posX>" + (int.Parse(txtMenuPos.Text) + 225).ToString() + "</posX>" +
+                   "<posX>" + (int.Parse(menudef.menuPos) + 225).ToString() + "</posX>" +
                    "<posY>0</posY>" +
                    "<width>233</width>" +
                    "<height>720</height>" +
@@ -282,7 +283,7 @@ namespace SMPMenuGen
     {
       int conextOffsett = 0;
 
-      if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
+      if (menuStyle != chosenMenuStyle.verticalStyle && menudef.horizontalContextLabels)
         conextOffsett = 17;
 
       // Are the Submenus defined, if so we need the additional blade controls
@@ -305,7 +306,7 @@ namespace SMPMenuGen
                   "<type>image</type>" +
                   "<id>11111</id>" +
                   "<posX>520</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
+                  "<posY>" + (int.Parse(menudef.menuPos) - 355 - conextOffsett).ToString() + "</posY>" +
                   "<width>250</width>" +
                   "<height>360</height>" +
                   "<texture>settingsbg.png</texture>" +
@@ -314,8 +315,8 @@ namespace SMPMenuGen
                   "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
                 "</control>";
       }
 
@@ -337,7 +338,7 @@ namespace SMPMenuGen
                    "<type>image</type>" +
                    "<id>22222</id>" +
                    "<posX>767</posX>" +
-                   "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
+                   "<posY>" + (int.Parse(menudef.menuPos) - 355 - conextOffsett).ToString() + "</posY>" +
                    "<width>250</width>" +
                    "<height>360</height>" +
                    "<texture>settingsbg.png</texture>" +
@@ -346,8 +347,8 @@ namespace SMPMenuGen
                   "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
+                  "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
+                  "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(menudef.menuPos) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
                  "</control>";
 
       }
@@ -368,21 +369,21 @@ namespace SMPMenuGen
       rawXML.AppendLine("<type>image</type>");
       rawXML.AppendLine("<id>99003</id>");
       rawXML.AppendLine("<posX>0</posX>");
-      rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu) + "</posY>");
+      rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.offsetMymenu) + "</posY>");
       rawXML.AppendLine("<width>1280</width>");
       rawXML.AppendLine("<height>" + basicHomeValues.menuHeight + "</height>");
       rawXML.AppendLine("<texture>" + basicHomeValues.mymenu + "</texture>");
       rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
-      if (enableRssfeed.Checked && infoserviceOptions.Enabled)
+      if (menudef.rssEnabled && menudef.infoServiceOptions)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>Menu Sub Menu</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>99004</id>");
         rawXML.AppendLine("<posX>" + basicHomeValues.subMenuXpos + "</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetSubmenu).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.offsetSubmenu).ToString() + "</posY>");
         rawXML.AppendLine("<width>" + basicHomeValues.subMenuWidth + "</width>");
         rawXML.AppendLine("<height>" + basicHomeValues.subMenuHeight.ToString() + "</height>");
         rawXML.AppendLine("<texture>" + basicHomeValues.mymenu_submenu + "</texture>");
@@ -404,7 +405,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<description>Menu Background</description>");
       rawXML.AppendLine("<type>image</type>");
       rawXML.AppendLine("<id>1</id>");
-      rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) - maxXPosition).ToString() + "</posX>");
+      rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) - maxXPosition).ToString() + "</posX>");
       rawXML.AppendLine("<posY>0</posY>");
       rawXML.AppendLine("<width>1280</width>"); rawXML.AppendLine("<height>720</height>");
       rawXML.AppendLine("<texture>basichome.menu.overlay.png</texture>");
@@ -413,7 +414,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
       rawXML.AppendLine("<visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)+!Control.HasFocus(79999)</visible>");
       rawXML.AppendLine("</control>");
-      if (enableRssfeed.Checked)
+      if (menudef.rssEnabled)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>Rss Background</description>");
@@ -552,7 +553,7 @@ namespace SMPMenuGen
             rawXML.AppendLine("<id>1</id>");
             rawXML.AppendLine("<keepaspectratio>yes</keepaspectratio>");
             rawXML.AppendLine("<height>26</height>");
-            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + rssImageYposOffset).ToString() + "</posY>");
+            rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.offsetRssImage + rssImageYposOffset).ToString() + "</posY>");
             rawXML.AppendLine("<posX>" + (rssImageXposOffset + 60).ToString() + "</posX>");
             rawXML.AppendLine("<texture>#infoservice.feed.img</texture>");
             rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
@@ -566,7 +567,7 @@ namespace SMPMenuGen
             rawXML.AppendLine("<id>1</id>");
             rawXML.AppendLine("<width>24</width>");
             rawXML.AppendLine("<height>24</height>");
-            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
+            rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
             rawXML.AppendLine("<posX>60</posX>");
             rawXML.AppendLine("<texture>InfoService\\defaultFeedRSS.png</texture>");
             rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
@@ -582,7 +583,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<id>1</id>");
       rawXML.AppendLine("<width>1280</width>");
       rawXML.AppendLine("<height>50</height>");
-      rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssText).ToString() + "</posY>");
+      rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.offsetRssText).ToString() + "</posY>");
       if (rssImage == rssImageType.skinImage)
         rawXML.AppendLine("<posX>90</posX>");
       else if (rssImage == rssImageType.infoserviceImage)
@@ -592,7 +593,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<font>mediastream12</font>");
       rawXML.AppendLine("<textcolor>ff000000</textcolor>");
       rawXML.AppendLine("<label>#infoservice.feed.titles</label>");
-      if (wrapString.Checked)
+      if (menudef.wrapString)
       {
         if (useInfoServiceSeparator)
           //rawXML.AppendLine("<wrapString> #infoservice.feed.separator </wrapString>");
@@ -624,7 +625,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<posX>120</posX>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
       rawXML.AppendLine("<label>#infoservice.feed.titles</label>");
-      if (wrapString.Checked)
+      if (menudef.wrapString)
       {
         if (useInfoServiceSeparator)
           //rawXML.AppendLine("<wrapString> #infoservice.feed.separator </wrapString>");
@@ -1080,7 +1081,7 @@ namespace SMPMenuGen
       generateTopBarHButtons();
 
       int twitterHeight = 0;
-      basicHomeValues.offsetButtons = (int.Parse(txtMenuPos.Text) - 8);
+      basicHomeValues.offsetButtons = (int.Parse(menudef.menuPos) - 8);
 
       StringBuilder rawXML = new StringBuilder();
 
@@ -1098,14 +1099,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<posY>-5</posY>");
         rawXML.AppendLine("<height>73</height>");
         rawXML.AppendLine("<width>300</width>");
-        if (useAeonGraphics.Checked)
-        {
-          rawXML.AppendLine("<texture>3buttonbar-a.png</texture>");
-        }
-        else
-        {
-          rawXML.AppendLine("<texture>3buttonbar.png</texture>");
-        }
+        rawXML.AppendLine("<texture>3buttonbar.png</texture>");
         rawXML.AppendLine("<visible>control.isvisible(" + menItem.id + ")+Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
 
@@ -1113,7 +1107,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
         rawXML.AppendLine("<posX>510</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>exit_button.png</texture>");
@@ -1124,7 +1118,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
         rawXML.AppendLine("<posX>580</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>restart_button.png</texture>");
@@ -1135,7 +1129,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
         rawXML.AppendLine("<posX>650</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>shutdown_button.png</texture>");
@@ -1146,7 +1140,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<id>0</id>");
         rawXML.AppendLine("<posX>720</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<texture>settings_button.png</texture>");
@@ -1158,7 +1152,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "01</id>");
         rawXML.AppendLine("<posX>510</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<textureFocus>exit_button.png</textureFocus>");
@@ -1180,7 +1174,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "02</id>");
         rawXML.AppendLine("<posX>580</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<textureFocus>restart_button.png</textureFocus>");
@@ -1202,7 +1196,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "03</id>");
         rawXML.AppendLine("<posX>650</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<textureFocus>shutdown_button.png</textureFocus>");
@@ -1225,7 +1219,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + topMenuId + "04</id>");
         rawXML.AppendLine("<posX>720</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetButtons - twitterHeight).ToString() + "</posY>");
         rawXML.AppendLine("<width>50</width>");
         rawXML.AppendLine("<height>50</height>");
         rawXML.AppendLine("<textureFocus>settings_button.png</textureFocus>");
@@ -1285,7 +1279,7 @@ namespace SMPMenuGen
         int fourth = k + 2;
         if (fourth >= menuItems.Count) fourth -= menuItems.Count;
 
-        if (cbExitStyleNew.Checked)
+        if (menudef.exitStyleNew)
           topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() + ")";
 
         if (menuItems[k].subMenuLevel1.Count > 0)
@@ -1310,14 +1304,14 @@ namespace SMPMenuGen
         if (menuItems[k].subMenuLevel1.Count > 0)
         {
           rawXML.AppendLine("<onright>" + (menuItems[k].subMenuLevel1ID + 1).ToString() + "</onright>");
-          if (cbExitStyleNew.Checked)
+          if (menudef.exitStyleNew)
             rawXML.AppendLine("<onleft>" + (menuItems[k].id + 600).ToString() + "01" + "</onleft>");
           else
             rawXML.AppendLine("<onleft>7777</onleft>");
         }
         else
         {
-          if (!cbExitStyleNew.Checked)
+          if (!menudef.exitStyleNew)
           {
             rawXML.AppendLine("<onright>7777</onright>");
             rawXML.AppendLine("<onleft>" + (menuItems[k].id + 900).ToString() + "</onleft>");
@@ -1335,7 +1329,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>142</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -1351,7 +1345,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>242</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -1367,7 +1361,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>342</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -1383,7 +1377,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>442</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -1399,7 +1393,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>542</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -1482,7 +1476,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>0</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menuItems[first].name + "</label>");
@@ -1502,7 +1496,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>160</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menuItems[second].name + "</label>");
@@ -1514,13 +1508,13 @@ namespace SMPMenuGen
         rawXML.AppendLine("</control>	");
 
         // ******** CENTER
-        if (cbDropShadow.Checked)
+        if (menudef.dropShadow)
         {
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>482</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 2) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 2) + "</posY>");
           rawXML.AppendLine("<width>320</width>");
           rawXML.AppendLine("<height>72</height>");
           rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
@@ -1535,7 +1529,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>480</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
@@ -1551,7 +1545,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>800</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menuItems[third].name + "</label>");
@@ -1567,7 +1561,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>1120</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menuItems[fourth].name + "</label>");
@@ -1653,7 +1647,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>-88</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<texture>" + menuItems[first].buttonTexture + "</texture>");
@@ -1668,7 +1662,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>125</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1682,7 +1676,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>338</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1697,7 +1691,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>641</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 152) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 152) + "</posY>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
@@ -1712,7 +1706,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>640</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 151) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 151) + "</posY>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
@@ -1727,7 +1721,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>543</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + (basicHomeValues.textYOffset - 33)) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + (basicHomeValues.textYOffset - 33)) + "</posY>");
         rawXML.AppendLine("<width>192</width>");
         rawXML.AppendLine("<height>192</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1741,7 +1735,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>814</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1755,7 +1749,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[fifth].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>1027</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1769,7 +1763,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<description>home " + menuItems[sixth].name + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>1240</posX>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>128</width>");
         rawXML.AppendLine("<height>128</height>");
         rawXML.AppendLine("<align>center</align>");
@@ -1843,7 +1837,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "</id>");
 
 
-        if (weatherBGlink.Checked && item.isWeather && infoserviceOptions.Enabled)
+        if (menudef.weatherBGLink && item.isWeather && menudef.infoServiceOptions)
         {
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<texture>" + bgFolderName + "\\linkedweather\\#infoservice.weather.today.img.big.filenamewithoutext.jpg</texture>");
@@ -1903,7 +1897,7 @@ namespace SMPMenuGen
 
         rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
 
-        if (cbAnimateBackground.Checked)
+        if (menudef.animateBackground)
         {
           rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
           rawXML.AppendLine("<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1948,7 +1942,7 @@ namespace SMPMenuGen
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
 
-          if (cbAnimateBackground.Checked)
+          if (menudef.animateBackground)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
             rawXML.AppendLine("<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -1994,7 +1988,7 @@ namespace SMPMenuGen
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
 
-          if (cbAnimateBackground.Checked)
+          if (menudef.animateBackground)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
             rawXML.AppendLine("<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -2033,7 +2027,7 @@ namespace SMPMenuGen
 
           rawXML.AppendLine("<animation effect=\"fade\" start=\"30\" end=\"100\" time=\"600\" reversible=\"false\">Visible</animation>");
 
-          if (cbAnimateBackground.Checked)
+          if (menudef.animateBackground)
           {
             rawXML.AppendLine("<animation effect=\"zoom\" start=\"105,105\" end=\"110,110\" time=\"20000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
             rawXML.AppendLine("<animation effect=\"slide\" start=\"0,0\" end=\"-20,-20\" time=\"10000\" tween=\"cubic\" easing=\"inout\" pulse=\"true\" reversible=\"false\" condition=\"true\">Conditional</animation>");
@@ -2064,13 +2058,13 @@ namespace SMPMenuGen
 
         if (menItem.isDefault)
         {
-          if (cbDropShadow.Checked)
+          if (menudef.dropShadow)
           {
             // Add default label
             rawXML.AppendLine("<control>");
             rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
             rawXML.AppendLine("<type>label</type>");
-            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 4) + "</posY>");
+            rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - 4) + "</posY>");
             rawXML.AppendLine("<posX>481</posX>");
             rawXML.AppendLine("<width>320</width>");
             rawXML.AppendLine("<height>24</height>");
@@ -2087,7 +2081,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
           rawXML.AppendLine("<type>label</type>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 5) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - 5) + "</posY>");
           rawXML.AppendLine("<posX>480</posX>");
           rawXML.AppendLine("<width>320</width>");
           rawXML.AppendLine("<height>24</height>");
@@ -2100,12 +2094,12 @@ namespace SMPMenuGen
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
-        if (cbDropShadow.Checked)
+        if (menudef.dropShadow)
         {
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
           rawXML.AppendLine("<type>label</type>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 4) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - 4) + "</posY>");
           rawXML.AppendLine("<posX>481</posX>");
           rawXML.AppendLine("<width>320</width>");
           rawXML.AppendLine("<height>24</height>");
@@ -2121,7 +2115,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 5) + "</posY>");
+        rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - 5) + "</posY>");
         rawXML.AppendLine("<posX>480</posX>");
         rawXML.AppendLine("<width>320</width>");
         rawXML.AppendLine("<height>24</height>");
@@ -2159,7 +2153,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
-        rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+        rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>322</posY>");
         rawXML.AppendLine("<width>380</width>");
         rawXML.AppendLine("<height>72</height>");
@@ -2178,7 +2172,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + " Location Label</description>");
           rawXML.AppendLine("<type>label</type>");
-          rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
+          rawXML.AppendLine("<posX>" + (int.Parse(menudef.menuPos) + textXOffset) + "</posX>");
           rawXML.AppendLine("<posY>395</posY>");
           rawXML.AppendLine("<width>380</width>");
           rawXML.AppendLine("<height>62</height>");
@@ -2205,7 +2199,7 @@ namespace SMPMenuGen
 
     private void GenerateFiveDayWeather()
     {
-      if (enableFiveDayWeather.Checked == true)
+      if (menudef.enableFiveDayWeather == true)
       {
         foreach (backgroundItem item in bgItems)
         {
@@ -2307,7 +2301,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<control>");
       rawXML.AppendLine("<description>TODAY ICON</description>");
       rawXML.AppendLine("<id>0</id>");
-      if (WeatherIconsAnimated.Checked)
+      if (menudef.animatedWeatherIcons)
       {
         rawXML.AppendLine("<type>multiimage</type>");
         rawXML.AppendLine("<imagepath>" + weatherIcon(0) + "</imagepath>");
@@ -2339,7 +2333,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY " + i.ToString() + " ICON</description>");
         rawXML.AppendLine("<id>0</id>");
-        if (WeatherIconsAnimated.Checked)
+        if (menudef.animatedWeatherIcons)
         {
           rawXML.AppendLine("<type>multiimage</type>");
           rawXML.AppendLine("<imagepath>" + weatherIcon(i) + "</imagepath>");
@@ -2794,7 +2788,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY " + i.ToString() + " ICON</description>");
         rawXML.AppendLine("<id>0</id>");
-        if (WeatherIconsAnimated.Checked)
+        if (menudef.animatedWeatherIcons)
         {
           rawXML.AppendLine("<type>multiimage</type>");
           rawXML.AppendLine("<imagepath>" + weatherIcon(i) + "</imagepath>");
@@ -3213,7 +3207,7 @@ namespace SMPMenuGen
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>DAY " + i.ToString() + " ICON</description>");
         rawXML.AppendLine("<id>0</id>");
-        if (WeatherIconsAnimated.Checked)
+        if (menudef.animatedWeatherIcons)
         {
           rawXML.AppendLine("<type>multiimage</type>");
           rawXML.AppendLine("<imagepath>" + weatherIcon(i) + "</imagepath>");
@@ -3579,7 +3573,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<description>GROUP: WEATHER SUMMARY</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      if (enableFiveDayWeather.Checked && weatherId != null)   // Hide summary only if 5 Day weather summary is enabled
+      if (menudef.enableFiveDayWeather && weatherId != null)   // Hide summary only if 5 Day weather summary is enabled
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+!control.isvisible(" + int.Parse(weatherId.ToString()) + ")</visible>");
       else
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
@@ -3598,7 +3592,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<texture>homeweatheroverlaybg.png</texture>");
       rawXML.AppendLine("</control>");
 
-      if (WeatherIconsAnimated.Checked)
+      if (menudef.animatedWeatherIcons)
       {
         rawXML.AppendLine("<control>");
         rawXML.AppendLine("<description>Todays weather image (Animated Version)</description>");
@@ -3855,12 +3849,12 @@ namespace SMPMenuGen
       rawXML.AppendLine("<id>99004</id>");
       rawXML.AppendLine("<posX>280</posX>");
       rawXML.AppendLine("<posY>400</posY>");
-      rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter).ToString() + "</posY>");
+      rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - basicHomeValues.offsetTwitter).ToString() + "</posY>");
       rawXML.AppendLine("<width>1000</width>");
       rawXML.AppendLine("<height>" + basicHomeValues.subMenuTopHeight + "</height>");
       rawXML.AppendLine("<texture>" + basicHomeValues.mymenu_submenutop + "</texture>");
       rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-      if (wrapString.Checked)
+      if (menudef.wrapString)
       {
         if (useInfoServiceSeparator)
           //rawXML.AppendLine("<wrapString> #infoservice.feed.separator </wrapString>");
@@ -3877,7 +3871,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<type>image</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<width>28</width>");
-      rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - (basicHomeValues.offsetTwitterImage - 5)).ToString() + "</posY>");
+      rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - (basicHomeValues.offsetTwitterImage - 5)).ToString() + "</posY>");
       rawXML.AppendLine("<posX>330</posX>");
       rawXML.AppendLine("<texture>InfoService\\defaultTwitter.png</texture>");
       rawXML.AppendLine("<keepaspectratio>yes</keepaspectratio>");
@@ -3891,7 +3885,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<id>1</id>");
       rawXML.AppendLine("<width>1160</width>");
       rawXML.AppendLine("<height>50</height>");
-      rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - (basicHomeValues.offsetTwitterImage - 6)).ToString() + "</posY>");
+      rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) - (basicHomeValues.offsetTwitterImage - 6)).ToString() + "</posY>");
       rawXML.AppendLine("<posX>360</posX>");
       rawXML.AppendLine("<font>mediastream12</font>");
       rawXML.AppendLine("<textcolor>ff000000</textcolor>");
@@ -3921,7 +3915,7 @@ namespace SMPMenuGen
       rawXML.AppendLine("<height>34</height>");
       rawXML.AppendLine("<texture>" + basicHomeValues.mymenu_submenutop + "</texture>");
       rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-      if (wrapString.Checked)
+      if (menudef.wrapString)
       {
         if (useInfoServiceSeparator)
           //rawXML.AppendLine("<wrapString> #infoservice.feed.separator </wrapString>");
@@ -3962,307 +3956,5 @@ namespace SMPMenuGen
 
     #endregion
 
-    #region Write UserMenuProfile.xml
-
-    private void writeMenuProfile(menuType direction)
-    {
-      string menuPos;
-      string menuOrientation;
-      string activeMenuStyle = null;
-      string activeWeatherStyle = null;
-      string acceleration = tbAcceleration.Text;
-      string duration = tbDuration.Text;
-      string activeRssImageType = null;
-      string targetScreenRes = "SD";
-      string tvRecentDisplayType = "full";
-      string movPicsDisplayType = "full";
-      string mostRecentTVSeriesSummStyle = "fanart";
-      string mostRecentMovPicsSummStyle = "fanart";
-
-      string settingDropShadow = cbDropShadow.Checked ? "true" : "false";
-      string settingEnableRssfeed = enableRssfeed.Checked ? "true" : "false";
-      string settingEnableTwitter = enableTwitter.Checked ? "true" : "false";
-      string settingWrapString = wrapString.Checked ? "true" : "false";
-      string settingWeatherBGlink = weatherBGlink.Checked ? "true" : "false";
-      string settingFiveDayWeatherCheckBox = enableFiveDayWeather.Checked ? "true" : "false";
-      string settingSummaryWeatherCheckBox = summaryWeatherCheckBox.Checked ? "true" : "false";
-      string settingClearCacheOnGenerate = cboClearCache.Checked ? "true" : "false";
-      string settingAnimatedWeather = WeatherIconsAnimated.Checked ? "true" : "false";
-      string settingHorizontalContextLabels = horizontalContextLabels.Checked ? "true" : "false";
-      string settingFullWeatherSummaryBottom = fullWeatherSummaryBottom.Checked ? "true" : "false";
-      string settingFullWeatherSummaryMiddle = fullWeatherSummaryMiddle.Checked ? "true" : "false";
-      string disableOnScreenClock = cbDisableClock.Checked ? "true" : "false";
-      string hideFanartScrapingtext = cbHideFanartScraper.Checked ? "true" : "false";
-      string enableOverlayFanart = cbOverlayFanart.Checked ? "true" : "false";
-      string animatedBackground = cbAnimateBackground.Checked ? "true" : "false";
-      string tvSeriesMostRecent = cbMostRecentTvSeries.Checked ? "true" : "false";
-      string movPicsMostRecent = cbMostRecentMovPics.Checked ? "true" : "false";
-      string mostRecentCycleFanart = cbCycleFanart.Checked ? "true" : "false";
-      string mrSeriesEpisodeFormat = tvSeriesOptions.mrSeriesEpisodeFormat ? "true" : "false";
-      string mrTitleLast = tvSeriesOptions.mrTitleLast ? "true" : "false";
-      string settingOldStyleExitButtons = cbExitStyleNew.Checked ? "true" : "false";
-      string mrTVSeriesCycleFanart = mostRecentTVSeriesCycleFanart ? "true" : "false";
-      string mrMovPicsCycleFanart = mostRecentMovPicsCycleFanart ? "true" : "false";
-      string mrMovPicsHideRuntime = movPicsOptions.HideRuntime ? "true" : "false";
-      string mrMovPicsHideCertification = movPicsOptions.HideCertification ? "true" : "false";
-      string mrMovPicsHideRating = movPicsOptions.HideRating ? "true" : "false";
-      string mrMovPicsUseTextRating = movPicsOptions.UseTextRating ? "true" : "false";
-      string mrMovPicsWatched = cbMovPicsRecentWatched.Checked ? "true" : "false";
-      string mrTVSeriesWatched = cbTVSeriesRecentWatched.Checked ? "true" : "false";
-      string mrTVSeriesDisableFadeLabel = tvSeriesOptions.mrDisableFadeLabels ? "true" : "false";
-      string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
-      string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
-      string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
-      string sleepControlEnabled = cbSleepControlOverlay.Checked ? "true" : "false";
-      string stocksControlEnabled = cbSocksOverlay.Checked ? "true" : "false";
-      string powerControlEnabled = cbPowerControlOverlay.Checked ? "true" : "false";
-      string htpcinfoControlEnabled = cbHtpcInfoOverlay.Checked ? "true" : "false";
-      string updateControlEnabled = cbUpdateControlOverlay.Checked ? "true" : "false";
-      string disableExitMenu = cbDisableExitMenu.Checked ? "true" : "false";
-
-      if (direction == menuType.horizontal)
-      {
-        menuPos = "menuYPos";
-        menuOrientation = "Horizontal";
-      }
-      else
-      {
-        menuPos = "menuXPos";
-        menuOrientation = "Vertical";
-      }
-
-      switch (menuStyle)
-      {
-        case chosenMenuStyle.verticalStyle:
-          activeMenuStyle = "verticalStyle";
-          break;
-        case chosenMenuStyle.horizontalStandardStyle:
-          activeMenuStyle = "horizontalStandardStyle";
-          break;
-        case chosenMenuStyle.horizontalContextStyle:
-          activeMenuStyle = "horizontalContextStyle";
-          break;
-        case chosenMenuStyle.graphicMenuStyle:
-          activeMenuStyle = "graphicMenuStyle";
-          break;
-      }
-
-      switch (rssImage)
-      {
-        case rssImageType.infoserviceImage:
-          activeRssImageType = "infoservice";
-          break;
-        case rssImageType.noImage:
-          activeRssImageType = "noimage";
-          break;
-        case rssImageType.skinImage:
-          activeRssImageType = "skin";
-          break;
-      }
-
-      if (weatherStyle == chosenWeatherStyle.bottom)
-        activeWeatherStyle = "bottom";
-      else if (weatherStyle == chosenWeatherStyle.middle)
-        activeWeatherStyle = "middle";
-
-      if (screenres == screenResolutionType.res1920x1080)
-        targetScreenRes = "HD";
-      else
-        targetScreenRes = "SD";
-
-      if (tvSeriesRecentStyle == tvSeriesRecentType.summary)
-        tvRecentDisplayType = "summary";
-      else
-        tvRecentDisplayType = "full";
-
-      if (movPicsRecentStyle == movPicsRecentType.summary)
-        movPicsDisplayType = "summary";
-      else
-        movPicsDisplayType = "full";
-
-      if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
-        mostRecentTVSeriesSummStyle = "fanart";
-      else
-        mostRecentTVSeriesSummStyle = "poster";
-
-      if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
-        mostRecentMovPicsSummStyle = "fanart";
-      else
-        mostRecentMovPicsSummStyle = "poster";
-
-      driveFreeSpaceList = string.Empty;
-      foreach (string drive in driveFreeSpaceDrives)
-      {
-        driveFreeSpaceList += drive + ",";
-      }
-      if (driveFreeSpaceList.Length > 0)
-        driveFreeSpaceList = driveFreeSpaceList.Substring(0, driveFreeSpaceList.Length - 1);
-
-      xml = ("<profile>\n"
-                + "\t<version>" + profileVersion + "</version>\n"
-                + "\t<skin name=\"StreamedMP\">\n"
-                + "\t\t<section name=" + quote + "StreamedMP Options" + quote + ">\n"
-                + generateEntry("menustyle", activeMenuStyle, 3, true)
-                + generateEntry("weatherstyle", activeWeatherStyle, 3, true)
-                + generateEntry("menuitemFocus", focusAlpha.Text + txtFocusColour.Text, 3, true)
-                + generateEntry("menuitemNoFocus", noFocusAlpha.Text + txtNoFocusColour.Text, 3, true)
-                + generateEntry("labelFont", cboLabelFont.Text, 3, true)
-                + generateEntry("selectedFont", cboSelectedFont.Text, 3, true)
-                + generateEntry("menuType", menuOrientation, 3, true)
-                + generateEntry(menuPos, txtMenuPos.Text, 3, true)
-                + generateEntry("acceleration", acceleration, 3, true)
-                + generateEntry("duration", duration, 3, true)
-                + generateEntry("dropShadow", settingDropShadow, 3, true)
-                + generateEntry("enableRssfeed", settingEnableRssfeed, 3, true)
-                + generateEntry("enableTwitter", settingEnableTwitter, 3, true)
-                + generateEntry("wrapString", settingWrapString, 3, true)
-                + generateEntry("weatherBGlink", settingWeatherBGlink, 3, true)
-                + generateEntry("fiveDayWeatherCheckBox", settingFiveDayWeatherCheckBox, 3, true)
-                + generateEntry("summaryWeatherCheckBox", settingSummaryWeatherCheckBox, 3, true)
-                + generateEntry("cboClearCache", settingClearCacheOnGenerate, 3, true)
-                + generateEntry("animatedWeather", settingAnimatedWeather, 3, true)
-                + generateEntry("horizontalContextLabels", settingHorizontalContextLabels, 3, true)
-                + generateEntry("fullWeatherSummaryBottom", settingFullWeatherSummaryBottom, 3, true)
-                + generateEntry("fullWeatherSummaryMiddle", settingFullWeatherSummaryMiddle, 3, true)
-                + generateEntry("activeRssImageType", activeRssImageType, 3, true)
-                + generateEntry("disableOnScreenClock", disableOnScreenClock, 3, true)
-                + generateEntry("targetScreenRes", targetScreenRes, 3, true)
-                + generateEntry("hideFanartScrapingtext", hideFanartScrapingtext, 3, true)
-                + generateEntry("enableOverlayFanart", enableOverlayFanart, 3, true)
-                + generateEntry("animatedBackground", animatedBackground, 3, true)
-                + generateEntry("tvSeriesMostRecent", tvSeriesMostRecent, 3, true)
-                + generateEntry("movPicsMostRecent", movPicsMostRecent, 3, true)
-                + generateEntry("tvRecentDisplayType", tvRecentDisplayType, 3, true)
-                + generateEntry("movPicsDisplayType", movPicsDisplayType, 3, true)
-                + generateEntry("mostRecentTVSeriesSummStyle", mostRecentTVSeriesSummStyle, 3, true)
-                + generateEntry("mostRecentMovPicsSummStyle", mostRecentMovPicsSummStyle, 3, true)
-                + generateEntry("mostRecentCycleFanart", mostRecentCycleFanart, 3, true)
-                + generateEntry("mrSeriesEpisodeFormat", mrSeriesEpisodeFormat, 3, true)
-                + generateEntry("mrTitleLast", mrTitleLast, 3, true)
-                + generateEntry("mrEpisodeFont", tvSeriesOptions.mrEpisodeFont, 3, true)
-                + generateEntry("mrSeriesFont", tvSeriesOptions.mrSeriesFont, 3, true)
-                + generateEntry("settingOldStyleExitButtons", settingOldStyleExitButtons, 3, true)
-                + generateEntry("mrTVSeriesCycleFanart", mrTVSeriesCycleFanart, 3, true)
-                + generateEntry("mrMovPicsCycleFanart", mrMovPicsCycleFanart, 3, true)
-                + generateEntry("mrMovieTitleFont", movPicsOptions.MovieTitleFont, 3, true)
-                + generateEntry("mrMovieDetailFont", movPicsOptions.MovieDetailFont, 3, true)
-                + generateEntry("mrMovPicsHideRuntime", mrMovPicsHideRuntime, 3, true)
-                + generateEntry("mrMovPicsHideCertification", mrMovPicsHideCertification, 3, true)
-                + generateEntry("mrMovPicsHideRating", mrMovPicsHideRating, 3, true)
-                + generateEntry("mrMovPicsUseTextRating", mrMovPicsUseTextRating, 3, true)
-                + generateEntry("mrMovPicsWatched", mrMovPicsWatched, 3, true)
-                + generateEntry("mrTVSeriesWatched", mrTVSeriesWatched, 3, true)
-                + generateEntry("mrTVSeriesDisableFadeLabel", mrTVSeriesDisableFadeLabel, 3, true)
-                + generateEntry("mrMovPicsDisableFadeLabel", mrMovPicsDisableFadeLabel, 3, true)
-                + generateEntry("mrRecordedTVEnabled", mrRecordedTVEnabled, 3, true)
-                + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
-                + generateEntry("driveFreeSpaceList", driveFreeSpaceList, 3, true)
-                + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
-                + generateEntry("stocksControlEnabled", stocksControlEnabled, 3, true)
-                + generateEntry("powerControlEnabled", powerControlEnabled, 3, true)
-                + generateEntry("htpcinfoControlEnabled", htpcinfoControlEnabled, 3, true)
-                + generateEntry("updateControlEnabled", updateControlEnabled, 3, true)
-                + generateEntry("disableExitMenu", disableExitMenu, 3, true)
-                + "\t\t</section>");
-
-
-
-
-      StringBuilder rawXML = new StringBuilder();
-
-      rawXML.AppendLine("\n\t\t<!-- End Of Menu Options -->\n\t\t<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
-
-      int menuIndex = 0;
-      rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 3, false));
-      foreach (menuItem menItem in menuItems)
-      {
-        if (menItem.subMenuLevel1.Count > 0 || menItem.subMenuLevel2.Count > 0)
-          menItem.disableBGSharing = true;
-
-        rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " -->");
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartproperty", menItem.fanartProperty, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartSource", menItem.fhBGSource.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanarthandlerenabled", menItem.fanartHandlerEnabled.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "enablemusicnowplayingfanart", menItem.EnableMusicNowPlayingFanart.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlink", menItem.hyperlink, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameter", menItem.hyperlinkParameter, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterOption", menItem.hyperlinkParameterOption, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isdefault", menItem.isDefault.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isweather", menItem.isWeather.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "id", menItem.id.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "xmlFileName", menItem.xmlFileName, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "buttonTexture", menItem.buttonTexture, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "updatestatus", menItem.updateStatus.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "defaultimage", menItem.defaultImage, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "disableBGSharing", menItem.disableBGSharing.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "showMostRecent", menItem.showMostRecent.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu1", menItem.subMenuLevel1.Count.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "submenu2", menItem.subMenuLevel2.Count.ToString(), 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "subMenuLevel1ID", menItem.subMenuLevel1ID.ToString(), 3, false));
-
-        if (menItem.subMenuLevel1.Count > 0)
-        {
-          int subCount = 0;
-          subMenuL1Exists = true;
-          rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
-          foreach (subMenuItem subItem in menItem.subMenuLevel1)
-          {
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterOption", subItem.hyperlinkParameterOption, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
-            subCount++;
-          }
-
-          subCount = 0;
-          if (menItem.subMenuLevel2.Count > 0)
-          {
-            subMenuL2Exists = true;
-            rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
-            foreach (subMenuItem subItem in menItem.subMenuLevel2)
-            {
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterOption", subItem.hyperlinkParameterOption, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
-              subCount++;
-            }
-          }
-        }
-
-        menuIndex += 1;
-
-        if (menItem.fanartHandlerEnabled)
-          fanartHandlerUsed = true;
-
-
-      }
-      rawXML.AppendLine("\t\t</section>");
-      rawXML.AppendLine("\t</skin>");
-      rawXML.AppendLine("</profile>");
-
-      xml += rawXML.ToString();
-
-      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Copy(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml", SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
-
-      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Delete(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
-
-      StreamWriter writer;
-      writer = System.IO.File.CreateText(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
-      writer.Write(xml);
-      writer.Close();
-    }
-    #endregion
   }
 }
