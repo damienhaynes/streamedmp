@@ -35,6 +35,9 @@
     <Reference Include="Core">
       <HintPath>..\Externals\Core.dll</HintPath>
     </Reference>
+    <Reference Include="SMPCheckSum">
+      <HintPath>..\..\PluginDependencies\SMPCheckSum.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -60,9 +63,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkinInfo.cs" />
     <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="WriteOverlay.cs" />
+    <Compile Include="WriteMostRecentOverlays.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\VersionInfo.cs.tmpl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="xmlfiles\HBasicHomeSkeleton.xml" />
+    <Content Include="xmlfiles\VBasicHomeSkeleton.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -48,7 +48,7 @@ namespace SMPMenuGen
           else if (menItem.hyperlink == "196297")
             rawXML.AppendLine("<action>97</action>");
           else
-            if (menItem.hyperlink == formStreamedMpEditor.musicSkinID && menItem.hyperlinkParameter != "false")
+            if (menItem.hyperlink == musicSkinID && menItem.hyperlinkParameter != "false")
               rawXML.AppendLine("<hyperlink>504</hyperlink>");
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -84,7 +84,7 @@ namespace SMPMenuGen
             rawXML.AppendLine("<onup>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onup>");
           else
           {
-            if (cbDisableExitMenu.Checked)
+            if (menudef.disableExitMenu)
               rawXML.AppendLine("<onup>" + (menItem.id + 700).ToString() + "</onup>");
             else
               rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
@@ -113,7 +113,7 @@ namespace SMPMenuGen
           else if (menItem.hyperlink == "196297")
             rawXML.AppendLine("<action>97</action>");
           else
-            if (menItem.hyperlink == formStreamedMpEditor.musicSkinID && menItem.hyperlinkParameter != "false")
+            if (menItem.hyperlink == musicSkinID && menItem.hyperlinkParameter != "false")
               rawXML.AppendLine("<hyperlink>504</hyperlink>");
             else
               rawXML.AppendLine("<hyperlink>" + menItem.hyperlink.ToString() + "</hyperlink>");
@@ -150,7 +150,7 @@ namespace SMPMenuGen
             rawXML.AppendLine("<onup>" + (menItem.subMenuLevel1ID + 1).ToString() + "</onup>");
           else
           {
-            if (cbDisableExitMenu.Checked)
+            if (menudef.disableExitMenu)
               rawXML.AppendLine("<onup>" + (menItem.id + 800).ToString() + "</onup>");
             else
               rawXML.AppendLine("<onup>" + (menItem.id + 600).ToString() + "01</onup>");
@@ -165,7 +165,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>-88</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -189,7 +189,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>1240</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -213,7 +213,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>1027</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -235,7 +235,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>814</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -257,7 +257,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>641</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 152) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 152) + "</posY>");
           rawXML.AppendLine("<height>72</height>");
           rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
@@ -272,7 +272,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>640</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 151) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 151) + "</posY>");
           rawXML.AppendLine("<height>72</height>");
           rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
@@ -288,7 +288,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>576</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -306,7 +306,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>338</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -327,7 +327,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>125</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -350,7 +350,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>125</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -375,7 +375,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>1027</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -400,7 +400,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>814</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -424,7 +424,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>814</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -446,7 +446,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>641</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 152) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 152) + "</posY>");
           rawXML.AppendLine("<height>72</height>");
           rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
@@ -461,7 +461,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>640</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 151) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset + 151) + "</posY>");
           rawXML.AppendLine("<height>72</height>");
           rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
@@ -477,7 +477,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>576</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -494,7 +494,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>338</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");
@@ -516,7 +516,7 @@ namespace SMPMenuGen
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<posX>125</posX>");
-          rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
+          rawXML.AppendLine("<posY>" + (int.Parse(menudef.menuPos) + basicHomeValues.textYOffset) + "</posY>");
           rawXML.AppendLine("<width>128</width>");
           rawXML.AppendLine("<height>128</height>");
           rawXML.AppendLine("<align>center</align>");

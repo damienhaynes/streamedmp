@@ -39,7 +39,7 @@ namespace SMPMenuGen
       return localxml;
     }
 
-    string writeSubMenuLevel1V(formStreamedMpEditor.menuItem parentMenu)
+    string writeSubMenuLevel1V(GenerateMenu.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
 
@@ -83,7 +83,7 @@ namespace SMPMenuGen
                       "<animation effect=\"fade\" time=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" time=\"200\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\">hidden</animation>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
+                      "<posX>" + (int.Parse(menudef.menuPos) - 5).ToString() + "</posX>" +
                       "<posY>325</posY>" +
                       "<width>225</width>" +
                       "<height>405</height>" +
@@ -120,7 +120,7 @@ namespace SMPMenuGen
         else if (parentMenu.subMenuLevel1[j].hyperlink == "196250")
           localxml += "<action>196250</action>";
         else
-          if (parentMenu.subMenuLevel1[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
+          if (parentMenu.subMenuLevel1[j].hyperlink == musicSkinID && parentMenu.subMenuLevel1[j].hyperlinkParameter != "false")
             localxml += "<hyperlink>504</hyperlink>";
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel1[j].hyperlink + "</hyperlink>";
@@ -160,7 +160,7 @@ namespace SMPMenuGen
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
+                  "<posX>" + (int.Parse(menudef.menuPos) - 27).ToString() + "</posX>" +
                   "<posY>330</posY>" +
                   "<align>right</align>" +
                   "<width>16</width>" +
@@ -191,7 +191,7 @@ namespace SMPMenuGen
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Level1)</description>" +
                   "<type>image</type>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
+                  "<posX>" + (int.Parse(menudef.menuPos) + 195).ToString() + "</posX>" +
                   "<posY>338</posY>" +
                   "<align>right</align>" +
                   "<width>16</width>" +
@@ -207,7 +207,7 @@ namespace SMPMenuGen
       return localxml;
     }
 
-    string writeSubMenuLevel2V(formStreamedMpEditor.menuItem parentMenu)
+    string writeSubMenuLevel2V(GenerateMenu.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
       for (int i = 0; i < parentMenu.subMenuLevel2.Count; i++)
@@ -233,7 +233,7 @@ namespace SMPMenuGen
                       "<animation effect=\"fade\" time=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" time=\"200\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\">hidden</animation>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) + 226).ToString() + "</posX>" +
+                      "<posX>" + (int.Parse(menudef.menuPos) + 226).ToString() + "</posX>" +
                       "<posY>325</posY>" +
                       "<width>225</width>" +
                       "<height>405</height>" +
@@ -270,7 +270,7 @@ namespace SMPMenuGen
         else if (parentMenu.subMenuLevel2[j].hyperlink == "196250")
           localxml += "<action>196250</action>";
         else
-          if (parentMenu.subMenuLevel2[j].hyperlink == formStreamedMpEditor.musicSkinID && parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
+          if (parentMenu.subMenuLevel2[j].hyperlink == musicSkinID && parentMenu.subMenuLevel2[j].hyperlinkParameter != "false")
             localxml += "<hyperlink>504</hyperlink>";
           else
             localxml += "<hyperlink>" + parentMenu.subMenuLevel2[j].hyperlink + "</hyperlink>";
