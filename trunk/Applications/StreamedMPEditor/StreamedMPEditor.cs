@@ -2114,44 +2114,52 @@ namespace StreamedMPEditor
       switch (int.Parse(hyperlink))
       {
         case 1:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_TVGuide.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_TVGuide.jpg");
         case 2:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Pictures.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Pictures.jpg");
         case 4:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Settings.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Settings.jpg");
         case 6:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Videos.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Videos.jpg");
         case 30:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Radio.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Radio.jpg");
         case 34:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Plugins.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Plugins.jpg");
         case 501:
         case 504:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Music.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Music.jpg");
         case 2600:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Weather.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Weather.jpg");
         case 4755:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_OnlineVideos.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_OnlineVideos.jpg");
         case 5900:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Trailers.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Trailers.jpg");
         case 7890:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Music.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Music.jpg");
         case 9811:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_TVSeries.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_TVSeries.jpg");
         case 16001:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_News.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_News.jpg");
         case 96742:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_MovingPictures.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_MovingPictures.jpg");
         case 25650:
         case 25653:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_RadioTime.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_RadioTime.jpg");
         case 47286:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_Rockstar.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Rockstar.jpg");
         case 711992:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\My_OnlineVideos.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_OnlineVideos.jpg");
         default:
-          return bgFolderName + "\\" + cboThemeSelection.Text + "\\default.jpg";
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\default.jpg");
       }
+    }
+
+    private string setBGFolder(string folder)
+    {
+      if (File.Exists(Path.Combine(SkinInfo.mpPaths.streamedMPpath + "\\media\\" + bgFolderName, folder)))
+        return "\\" + folder;
+      else
+        return  "\\" + cboThemeSelection.Text + "\\default.jpg";
     }
 
     private void buildThemeScreen()
