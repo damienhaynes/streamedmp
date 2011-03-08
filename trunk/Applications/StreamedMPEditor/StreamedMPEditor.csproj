@@ -77,6 +77,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Utils">
+      <HintPath>..\Externals\Common.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="Core, Version=1.1.0.16045, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Externals\Core.dll</HintPath>
