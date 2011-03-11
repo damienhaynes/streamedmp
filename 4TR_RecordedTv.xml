@@ -48,7 +48,7 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
-        <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
+        <visible>!control.hasfocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -61,7 +61,7 @@
         <posY>0</posY>
         <width>278</width>
         <height>720</height>
-        <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
+        <visible>!control.hasfocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -73,7 +73,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>225</posY>
-        <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
+        <visible>!control.hasfocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -85,7 +85,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>337</posY>
-        <visible>![Control.HasFocus(10)|Control.HasFocus(11)]+plugin.isenabled(Moving Pictures)|plugin.isenabled(MP-TV Series)|plugin.isenabled(My Trailers)</visible>
+        <visible>!control.hasfocus(50)+[plugin.isenabled(Moving Pictures)|plugin.isenabled(MP-TV Series)|plugin.isenabled(My Trailers)]</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
@@ -93,7 +93,7 @@
         <type>group</type>
         <description>group element</description>
         <id>24</id>
-        <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
+        <visible>!control.hasfocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
