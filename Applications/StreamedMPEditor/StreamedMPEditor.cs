@@ -2014,8 +2014,8 @@ namespace StreamedMPEditor
     {
       applybackgrounds();
       menuThemeForm.Hide();
-      MessageBox.Show("The 3DBackgrounds Theme has been applied\n\nIntial images have been configured for each menu item\nthese can be futher customised in'Default Background Images' tab.",
-              "Background Theme 3DBackgrounds Applied",
+      MessageBox.Show("The " + cboThemeSelection.Text + " Theme has been applied\n\nIntial images have been configured for each menu item\nthese can be futher customised in'Default Background Images' tab.",
+              "Background Theme " + cboThemeSelection.Text + " Applied",
               MessageBoxButtons.OK,
               MessageBoxIcon.Information);
       reloadBackgroundItems();
@@ -2048,7 +2048,7 @@ namespace StreamedMPEditor
       {
         menuItems[i].fanartHandlerEnabled = false;
         menuItems[i].disableBGSharing = true;
-        menuItems[i].bgFolder = "3DBackgrounds";
+        menuItems[i].bgFolder = cboThemeSelection.Text;
         menuItems[i].defaultImage = bestThemeMatch(menuItems[i].hyperlink);
       }
     }
