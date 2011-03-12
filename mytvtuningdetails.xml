@@ -253,7 +253,7 @@
       <type>label</type>
       <id>22</id>
       <posX>17</posX>
-      <posY>475</posY>
+      <posY>525</posY>
       <label>Signal level: #TV.TuningDetails.SignalLevel</label>
       <font>mediastream12</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -264,7 +264,7 @@
       <type>image</type>
       <id>0</id>
       <posX>25</posX>
-      <posY>499</posY>
+      <posY>544</posY>
       <width>429</width>
       <height>20</height>
       <texture>osdprogressbackv.png</texture>
@@ -277,7 +277,7 @@
       <type>progress</type>
       <id>23</id>
       <posX>17</posX>
-      <posY>500</posY>
+      <posY>545</posY>
       <width>444</width>
       <height>20</height>
       <label>#TV.TuningDetails.SignalLevel</label>
@@ -290,7 +290,7 @@
       <type>label</type>
       <id>24</id>
       <posX>711</posX>
-      <posY>475</posY>
+      <posY>525</posY>
       <label>Signal quality: #TV.TuningDetails.SignalQuality</label>
       <font>mediastream12</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -301,7 +301,7 @@
       <type>image</type>
       <id>0</id>
       <posX>719</posX>
-      <posY>499</posY>
+      <posY>544</posY>
       <width>429</width>
       <height>20</height>
       <texture>osdprogressbackv.png</texture>
@@ -314,7 +314,7 @@
       <type>progress</type>
       <id>25</id>
       <posX>711</posX>
-      <posY>500</posY>
+      <posY>545</posY>
       <width>444</width>
       <height>20</height>
       <label>#TV.TuningDetails.SignalQuality</label>
@@ -323,12 +323,37 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
+      <description>TS packets Transferred</description>
+      <type>label</type>
+      <id>27</id>
+      <posX>17</posX>
+      <posY>475</posY>
+	  <width>444</width>
+      <label>TS packets Transferred: #TV.TuningDetails.TSPacketsTransferred</label>
+      <font>mediastream12</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
       <description>Has CI Menu</description>
       <type>label</type>
       <id>26</id>
       <posX>17</posX>
-      <posY>525</posY>
+      <posY>500</posY>
       <label>CI Menu supported: #TV.TuningDetails.HasCiMenuSupport</label>
+      <font>mediastream12</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Discontinuities</description>
+      <type>label</type>
+      <id>28</id>
+      <posX>711</posX>
+      <posY>475</posY>
+      <label>Discontinuities: #TV.TuningDetails.Discontinuities</label>
       <font>mediastream12</font>
       <textcolor>FFFFFFFF</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
