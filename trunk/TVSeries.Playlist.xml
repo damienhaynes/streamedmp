@@ -504,28 +504,28 @@
     <control>
       <type>label</type>
       <description>Season Label Shadow</description>
-      <label>#TVSeries.Episode.SeasonLabel</label>
+      <label>#TVSeries.Episode.SeasonLabel, #TVSeries.Translation.Episode.Label #TVSeries.Episode.EpisodeIndex</label>
       <id>0</id>
       <posX>404</posX>
       <posY>273</posY>
-      <width>300</width>
+      <width>500</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <textcolor>#shadow.dark</textcolor>
-      <visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+      <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+!string.equals(#TVSeries.Episode.EpisodeIndex,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>Season Label</description>
-      <label>#TVSeries.Episode.SeasonLabel</label>
+      <label>#TVSeries.Episode.SeasonLabel, #TVSeries.Translation.Episode.Label #TVSeries.Episode.EpisodeIndex</label>
       <id>0</id>
       <posX>400</posX>
       <posY>270</posY>
       <width>300</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>facadeview.list|facadeview.playlist|facadeview.filmstrip</visible>
+      <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+!string.equals(#TVSeries.Episode.EpisodeIndex,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
