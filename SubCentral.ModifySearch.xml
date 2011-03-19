@@ -5,7 +5,7 @@
 		This skin file is meant for all controls that should be visible for the user
 		when in the modify search view of the plugin. All controls should be tagged at a minimum
 		with "<visible>Control.IsVisible(103)</visible>". 
-		-->
+		-->		
     <control>
       <description>Subcentral Search dialog</description>
       <type>image</type>
@@ -346,7 +346,7 @@
       <onleft>221</onleft>
       <onright>214</onright>
       <onup>224</onup>
-      <ondown>214</ondown>
+      <ondown>226</ondown>
       <textXOff>15</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
@@ -358,6 +358,21 @@
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
       <animation effect="fade" time="250">Visible</animation>
     </control>
+		<control>
+			<description>Absolute Numbering Button</description>
+			<type>checkmark</type>
+			<id>226</id>
+			<label>#SubCentral.Translation.AbsoluteNumbering.Label</label>
+			<font>mediastream12tc</font>
+			<posX>200</posX>
+			<posY>405</posY>
+			<onup>225</onup>
+			<ondown>214</ondown>
+			<onleft>225</onleft>
+			<onright>214</onright>
+			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+			<animation effect="fade" time="250">Visible</animation>
+		</control>
     <control>
       <type>image</type>
       <id>0</id>
