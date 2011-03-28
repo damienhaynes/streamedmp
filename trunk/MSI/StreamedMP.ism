@@ -383,6 +383,7 @@
 		<row><td>pluginStreamedMPConfigDLL</td><td>{32CECD94-93BC-4ECC-8511-3E6E3C3AAADE}</td><td>WINDOWS1</td><td>8</td><td/><td>streamedmpconfig.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginStreamedMPEditorDLL</td><td>{C447E455-0E1C-431F-BA09-9F10545ED6AC}</td><td>PROCESS</td><td>0</td><td/><td>streamedmpeditor.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginTraktDLL</td><td>{9F70836D-8EAD-463E-9C3F-84D3A64D66BA}</td><td>PROCESS</td><td>8</td><td/><td>traktplugin.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1551,20 +1552,20 @@
 		<row><td>Australia</td><td>TVLogos</td><td>##ID_STRING65##</td><td>##ID_STRING67##</td><td>2</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Canada</td><td>TVLogos</td><td>##ID_STRING68##</td><td>##ID_STRING69##</td><td>4</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Classical</td><td>Germany</td><td>##ID_STRING97##</td><td>##ID_STRING100##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>FanartHandler</td><td>Plugins</td><td>##ID_STRING102##</td><td>##ID_STRING103##</td><td>14</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>FanartHandler</td><td>Plugins</td><td>##ID_STRING102##</td><td>##ID_STRING103##</td><td>16</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Germany</td><td>TVLogos</td><td>##ID_STRING70##</td><td>##ID_STRING71##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>GlobalMusicSearch</td><td>Plugins</td><td>##ID_STRING80##</td><td>##ID_STRING81##</td><td>12</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>InfoService</td><td>Plugins</td><td>##ID_STRING78##</td><td>##ID_STRING79##</td><td>10</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>GlobalMusicSearch</td><td>Plugins</td><td>##ID_STRING80##</td><td>##ID_STRING81##</td><td>14</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>InfoService</td><td>Plugins</td><td>##ID_STRING78##</td><td>##ID_STRING79##</td><td>12</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>InfoServiceBlue3wideSkin</td><td>InfoService</td><td>##ID_STRING150##</td><td>##ID_STRING151##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>InfoServicePlugin</td><td>InfoService</td><td>##ID_STRING149##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
-		<row><td>MenuEditor</td><td>Plugins</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>15</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MenuEditor</td><td>Plugins</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>17</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Modern</td><td>Germany</td><td>##ID_STRING96##</td><td>##ID_STRING99##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesBlue3Skin</td><td>MovingPictures</td><td>##ID_STRING121##</td><td>##ID_STRING123##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesBlue3wideSkin</td><td>MovingPictures</td><td>##ID_STRING122##</td><td>##ID_STRING124##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesMainPlugin</td><td>MovingPictures</td><td>##ID_STRING130##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>10</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyricsBlue3wideSkin</td><td>MyLyrics</td><td>##ID_STRING145##</td><td>##ID_STRING146##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyricsMainPlugin</td><td>MyLyrics</td><td>##ID_STRING144##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1573,6 +1574,7 @@
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeriesBlue3wideSkin</td><td>TVSeries</td><td>##ID_STRING125##</td><td>##ID_STRING126##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeriesMainPlugin</td><td>TVSeries</td><td>##ID_STRING129##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Trakt</td><td>Plugins</td><td>##ID_STRING152##</td><td>##ID_STRING153##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td>Germany</td><td>##ID_STRING98##</td><td>##ID_STRING101##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td>Main</td><td>##ID_STRING53##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
@@ -1638,6 +1640,7 @@
 		<row><td>TVSeriesBlue3wideSkin</td><td>b3wSkinTVSeries</td></row>
 		<row><td>TVSeriesMainPlugin</td><td>languagesTVSeries</td></row>
 		<row><td>TVSeriesMainPlugin</td><td>pluginTVSeriesDLL</td></row>
+		<row><td>Trakt</td><td>pluginTraktDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
 		<row><td>fonts</td><td>fontsFluidBody</td></row>
@@ -1728,6 +1731,7 @@
 		<row><td>streamedmpconfig.xml</td><td>StreamedMPConfig.xml</td><td>STREAM~1.XML|StreamedMPConfig.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\StreamedMPConfig.xml</td><td>1</td><td/></row>
 		<row><td>streamedmpeditor.dll</td><td>pluginStreamedMPEditorDLL</td><td>STREAM~1.DLL|StreamedMPEditor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\StreamedMPEditor.dll</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>1</td><td/></row>
+		<row><td>traktplugin.dll</td><td>pluginTraktDLL</td><td>TRAKTP~1.DLL|TraktPlugin.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\TraktPlugin.dll</td><td>1</td><td/></row>
 		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\TranslateProvider.dll</td><td>1</td><td/></row>
 		<row><td>tvseries_seasonlisticon.png</td><td>tvseriesListWatchedIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\media\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
 		<row><td>tvseries_serieslisticon.png</td><td>tvseriesListWatchedIcons</td><td>TVSERI~1.PNG|tvseries_SeriesListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\media\tvseries_SeriesListIcon.png</td><td>1</td><td/></row>
@@ -2033,6 +2037,7 @@
 		<row><td>pluginStreamedMPConfigDLL</td><td/><td/><td>_60BE2A06_FCB3_4B18_8B17_FC08D939EF35_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginStreamedMPEditorDLL</td><td/><td/><td>_991C81C8_1BE2_4F3F_9F0A_AAF72E72278B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pluginTraktDLL</td><td/><td/><td>_AD0D2E47_CFA7_4450_A8CF_AD6B22C8AE40_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinSounds</td><td/><td/><td>_84C77638_8B61_4BB4_9F1B_B6EF3C72911F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinXML</td><td/><td/><td>_DC47D95D_6D31_4780_896D_85C92FF14D4C_FILTER</td><td/><td/><td/><td/></row>
@@ -2167,6 +2172,7 @@
 		<row><td>TVSeries</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeriesBlue3wideSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>TVSeriesMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>Trakt</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>UK</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2735,6 +2741,7 @@
 		<row><td>Custom</td><td>TVSeries</td></row>
 		<row><td>Custom</td><td>TVSeriesBlue3wideSkin</td></row>
 		<row><td>Custom</td><td>TVSeriesMainPlugin</td></row>
+		<row><td>Custom</td><td>Trakt</td></row>
 		<row><td>Custom</td><td>Transparent</td></row>
 		<row><td>Custom</td><td>UK</td></row>
 		<row><td>Custom</td><td>fonts</td></row>
@@ -2774,6 +2781,7 @@
 		<row><td>Minimal</td><td>TVLogos</td></row>
 		<row><td>Minimal</td><td>TVSeriesBlue3wideSkin</td></row>
 		<row><td>Minimal</td><td>TVSeriesMainPlugin</td></row>
+		<row><td>Minimal</td><td>Trakt</td></row>
 		<row><td>Minimal</td><td>Transparent</td></row>
 		<row><td>Minimal</td><td>UK</td></row>
 		<row><td>Minimal</td><td>fonts</td></row>
@@ -2815,6 +2823,7 @@
 		<row><td>Typical</td><td>TVSeries</td></row>
 		<row><td>Typical</td><td>TVSeriesBlue3wideSkin</td></row>
 		<row><td>Typical</td><td>TVSeriesMainPlugin</td></row>
+		<row><td>Typical</td><td>Trakt</td></row>
 		<row><td>Typical</td><td>Transparent</td></row>
 		<row><td>Typical</td><td>UK</td></row>
 		<row><td>Typical</td><td>fonts</td></row>
@@ -4122,6 +4131,8 @@
 		<row><td>ID_STRING15</td><td>1033</td><td>RSS</td><td>0</td><td/><td>-1919143730</td></row>
 		<row><td>ID_STRING150</td><td>1033</td><td>Blue3wide Skin</td><td>0</td><td/><td>-870389204</td></row>
 		<row><td>ID_STRING151</td><td>1033</td><td>Default Blue3wide skin files for the InfoService plugin.</td><td>0</td><td/><td>-870436276</td></row>
+		<row><td>ID_STRING152</td><td>1033</td><td>Trakt</td><td>0</td><td/><td>-509621971</td></row>
+		<row><td>ID_STRING153</td><td>1033</td><td>Trakt actively keeps a record of what TV shows and movies you are watching. Based on your favorites, your friends, and the community, trakt recommends other TV shows and movies.</td><td>0</td><td/><td>-509664947</td></row>
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
 		<row><td>ID_STRING18</td><td>1033</td><td>Fanart Moving Pictures</td><td>0</td><td/><td>1142761741</td></row>
@@ -4876,9 +4887,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{56AEF254-CD5F-48B3-959C-FCEB2037495E}</td><td/></row>
+		<row><td>ProductCode</td><td>{F4468A4A-3391-418C-BFB2-9AFBD485B9E9}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.4.100.2548</td><td/></row>
+		<row><td>ProductVersion</td><td>1.4.104.2628</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
