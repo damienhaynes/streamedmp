@@ -340,7 +340,7 @@
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 3 name</description>\n" +
-                    "<type>label</type>\n" +
+                    "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1020</posX>\n" +
                     "<posY>498</posY>\n" +
@@ -640,7 +640,7 @@
                   "</control>      " +
                   "<control>" +
                     "<description>Series 3 name</description>" +
-                    "<type>label</type>" +
+                    "<type>fadelabel</type>" +
                     "<id>0</id>" +
                     "<posX>981</posX>" +
                     "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
