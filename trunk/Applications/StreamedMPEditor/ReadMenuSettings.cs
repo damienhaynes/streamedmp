@@ -266,6 +266,7 @@ namespace StreamedMPEditor
         cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
         cbUpdateControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
         cbDisableExitMenu.Checked = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
+        cbContextLabelBelow.Checked = bool.Parse(readEntryValue(optionsTag, "contextLabelBelow", nodelist));      
       }
       catch
       {
@@ -444,9 +445,15 @@ namespace StreamedMPEditor
       }
 
       if (menuStyle == chosenMenuStyle.verticalStyle)
+      {
         txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+        cbContextLabelBelow.Enabled = true;
+      }
       else
+      {
         txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+        cbContextLabelBelow.Enabled = false;
+      }
 
       Version isver = new Version("1.6.0.0");
       if (getInfoServiceVersion().CompareTo(isver) >= 0)

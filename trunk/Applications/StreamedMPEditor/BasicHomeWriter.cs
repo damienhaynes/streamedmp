@@ -2146,6 +2146,10 @@ namespace StreamedMPEditor
       StringBuilder rawXML = new StringBuilder();
       const string quote = "\"";
       string menuIDControl;
+      int textYOffset = 0;
+
+      if (cbContextLabelBelow.Checked)
+        textYOffset = 68;
 
       rawXML.AppendLine("<!-- Menu Context Labels -->");
       foreach (menuItem menItem in menuItems)
@@ -2159,7 +2163,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-        rawXML.AppendLine("<posY>322</posY>");
+        rawXML.AppendLine("<posY>" + (322 + textYOffset).ToString() + "</posY>");
+        //rawXML.AppendLine("<posY>322</posY>");
         rawXML.AppendLine("<width>380</width>");
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
@@ -2178,7 +2183,8 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + " Location Label</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>395</posY>");
+          //rawXML.AppendLine("<posY>395</posY>");
+          rawXML.AppendLine("<posY>" + (395 - textYOffset).ToString() + "</posY>");
           rawXML.AppendLine("<width>380</width>");
           rawXML.AppendLine("<height>62</height>");
           rawXML.AppendLine("<label> in #infoservice.weather.location</label>");
@@ -4022,6 +4028,7 @@ namespace StreamedMPEditor
       string htpcinfoControlEnabled = cbHtpcInfoOverlay.Checked ? "true" : "false";
       string updateControlEnabled = cbUpdateControlOverlay.Checked ? "true" : "false";
       string disableExitMenu = cbDisableExitMenu.Checked ? "true" : "false";
+      string contextLabelBelow = cbContextLabelBelow.Checked ? "true" : "false";
 
       if (direction == menuType.horizontal)
       {
@@ -4166,10 +4173,11 @@ namespace StreamedMPEditor
                 + generateEntry("htpcinfoControlEnabled", htpcinfoControlEnabled, 3, true)
                 + generateEntry("updateControlEnabled", updateControlEnabled, 3, true)
                 + generateEntry("disableExitMenu", disableExitMenu, 3, true)
+                + generateEntry("contextLabelBelow", contextLabelBelow, 3, true)
                 + "\t\t</section>");
 
 
-
+      
 
       StringBuilder rawXML = new StringBuilder();
 
