@@ -266,6 +266,7 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.cbContextLabelBelow = new System.Windows.Forms.CheckBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1317,6 +1318,7 @@
       // 
       // styleOptionsGroup
       // 
+      this.styleOptionsGroup.Controls.Add(this.cbContextLabelBelow);
       this.styleOptionsGroup.Controls.Add(this.cbExitStyleNew);
       this.styleOptionsGroup.Controls.Add(this.cbAnimateBackground);
       this.styleOptionsGroup.Controls.Add(this.cbOverlayFanart);
@@ -1357,7 +1359,7 @@
       // cbOverlayFanart
       // 
       this.cbOverlayFanart.AutoSize = true;
-      this.cbOverlayFanart.Location = new System.Drawing.Point(6, 51);
+      this.cbOverlayFanart.Location = new System.Drawing.Point(5, 78);
       this.cbOverlayFanart.Name = "cbOverlayFanart";
       this.cbOverlayFanart.Size = new System.Drawing.Size(205, 17);
       this.cbOverlayFanart.TabIndex = 42;
@@ -2963,6 +2965,16 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // cbContextLabelBelow
+      // 
+      this.cbContextLabelBelow.AutoSize = true;
+      this.cbContextLabelBelow.Location = new System.Drawing.Point(6, 50);
+      this.cbContextLabelBelow.Name = "cbContextLabelBelow";
+      this.cbContextLabelBelow.Size = new System.Drawing.Size(210, 17);
+      this.cbContextLabelBelow.TabIndex = 45;
+      this.cbContextLabelBelow.Text = "Place Context Labels below Menu Item";
+      this.cbContextLabelBelow.UseVisualStyleBackColor = true;
+      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3321,6 +3333,7 @@
     private MB.Controls.ColorSlider noFocusAlphaSlider;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel3;
+    private System.Windows.Forms.CheckBox cbContextLabelBelow;
   }
 }
 

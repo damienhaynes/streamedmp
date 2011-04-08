@@ -1033,6 +1033,7 @@ namespace StreamedMPEditor
         installWeatherBackgrounds.Visible = true;
       }
 
+
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
@@ -1054,6 +1055,8 @@ namespace StreamedMPEditor
           cbExitStyleNew.Visible = true;
           btMenuIcon.Visible = false;
           pbMenuIconInfo.Visible = false;
+          cbContextLabelBelow.Enabled = true;
+
           break;
         case chosenMenuStyle.horizontalStandardStyle:
           weatherStyle = chosenWeatherStyle.bottom;
@@ -1077,6 +1080,7 @@ namespace StreamedMPEditor
           cbExitStyleNew.Visible = false;
           btMenuIcon.Visible = false;
           pbMenuIconInfo.Visible = false;
+          cbContextLabelBelow.Enabled = false;
           break;
         case chosenMenuStyle.horizontalContextStyle:
           weatherStyle = chosenWeatherStyle.middle;
@@ -1098,6 +1102,7 @@ namespace StreamedMPEditor
           cbExitStyleNew.Visible = false;
           btMenuIcon.Visible = false;
           pbMenuIconInfo.Visible = false;
+          cbContextLabelBelow.Enabled = false;
           break;
         case chosenMenuStyle.graphicMenuStyle:
           //First check if there is an icon, if not set a default
@@ -1129,6 +1134,7 @@ namespace StreamedMPEditor
           cbExitStyleNew.Visible = false;
           btMenuIcon.Visible = true;
           pbMenuIconInfo.Visible = true;
+          cbContextLabelBelow.Enabled = false;
           break;
       }
     }
