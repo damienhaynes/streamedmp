@@ -34,7 +34,7 @@
 #include "ifx.h"
 
 #define SKIN_NAME									"StreamedMP"
-#define DEFAULT_SKIN								"Blue3wide" 
+#define DEFAULT_SKIN								"DefaultWide" 
 
 #define MEDIAPORTAL_REG_KEY  						"SOFTWARE\\Team MediaPortal\\MediaPortal"
 #define MEDIAPORTALUNINSTALL_REG_KEY    			"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
@@ -560,7 +560,7 @@ begin
 			
 	// Get Start With Basic Home property
 	sFile = g_sConfigDir^"MediaPortal.xml";
-	if GetMPXMLProperty(sFile, "general","startbasichome", svValue) < 0 then
+	if GetMPXMLProperty(sFile, "gui","startbasichome", svValue) < 0 then
 		g_bStartBasicHome = TRUE;
 	else
 		if svValue = "yes" then
@@ -2349,16 +2349,11 @@ begin
 		SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);		
 	endif;             
 	
-	// Enable Animations & Transistions, this is required for skin 
-	// Dont need to worry about 1st time installs of mediaportal with XML
-	// as this is setting is enabled by default for MediaPortal 	
-	SetMPXMLProperty(sFile, "general","animations","yes");
-	
 	// Start with Basic Home or Standard Home	
 	if g_bStartBasicHome then
-		SetMPXMLProperty(sFile, "general","startbasichome","yes");
+		SetMPXMLProperty(sFile, "gui","startbasichome","yes");
 	else
-		SetMPXMLProperty(sFile, "general","startbasichome","no");
+		SetMPXMLProperty(sFile, "gui","startbasichome","no");
 	endif;
 	
 	// Apply CheckSums
@@ -2711,7 +2706,7 @@ begin
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
-    // Finially set default skin back to Blue3wide
+    // Finially set default skin back to DefaultWide
     sFile = g_sConfigDir^"MediaPortal.xml";    
     SetMPXMLProperty(sFile, "skin", "name", DEFAULT_SKIN);
         
