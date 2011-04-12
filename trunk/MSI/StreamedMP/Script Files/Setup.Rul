@@ -912,8 +912,8 @@ begin
 	GenerateBasicHome();
 	
 	// Clean Cache Folder    
-    CleanCache("Blue3");
-    CleanCache("Blue3wide");
+    CleanCache("Default");
+    CleanCache("DefaultWide");
 	CleanCache(SKIN_NAME);
 	        
     // Major Upgrade Cleanup
@@ -962,8 +962,8 @@ function OnMaintUIAfter()
 begin     
 
     // Clean Cache Folder    
-    CleanCache("Blue3");
-    CleanCache("Blue3wide");
+    CleanCache("Default");
+    CleanCache("DefaultWide");
     CleanCache(SKIN_NAME);
     
 	Disable(STATUSEX);	
