@@ -202,6 +202,13 @@
 #ifndef CSIDL_PROFILE
 	#define CSIDL_PROFILE          		0x0028      
 #endif
+
+// XML Entries
+#define XML_TRAKT_USERNAME				"Username"
+#define XML_TRAKT_PASSWORD				"Password"
+#define XML_TRAKT_MOVPICS				"MovingPictures"
+#define XML_TRAKT_TVSERIES				"TVSeries"
+#define XML_TRAKT_MYVIDEOS				"MyVideos"
          
 // Prototype Functions         
 prototype VOID 		CleanCache(STRING);
@@ -253,6 +260,9 @@ prototype NUMBER 	ShowSelectMovingPics(BOOL);
 prototype NUMBER 	ShowSelectOptions(BOOL);
 prototype NUMBER 	ShowTVSeriesAdvanced(BOOL); 
 prototype NUMBER	ShowSelectNowPlaying(BOOL);
+ 
+prototype VOID		GetTraktSettings();
+prototype VOID		SetTraktSettings();
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
@@ -303,6 +313,12 @@ STRING g_sTVLogosGermanyModern;
 STRING g_sTVLogosGermanyTransparent;
 STRING g_sTVLogosCanada;
 STRING g_sTVLogosUK;
+       
+STRING g_sTraktUserName;
+STRING g_sTraktPassword;
+STRING g_sTraktTVSeries;
+STRING g_sTraktMovingPictures;
+STRING g_sTraktMyVideos;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -567,6 +583,21 @@ begin
 			g_bStartBasicHome = TRUE;
 		endif;
 	endif;	
+	
+	// Trakt Migration, for old users
+	// Set Trakt Defaults
+	// Settings will be read from config file later
+	g_sTraktUserName = "";
+	g_sTraktPassword = "";
+	g_sTraktMyVideos = "-1";
+	g_sTraktTVSeries = "0";
+	if (Is(FILE_EXISTS, g_sPluginsDir ^ "Windows\\MovingPictures.dll")) then
+		g_sTraktMovingPictures = "1";
+	else
+		g_sTraktMovingPictures = "-1";
+	endif;
+	
+	GetTraktSettings();
 	
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
 	
@@ -2356,6 +2387,9 @@ begin
 		SetMPXMLProperty(sFile, "gui","startbasichome","no");
 	endif;
 	
+	// Set Trakt Settings
+	SetTraktSettings();
+	
 	// Apply CheckSums
 	ApplyCheckSum();	
 	
@@ -2596,46 +2630,17 @@ begin
     return nReturn;
 end;
 
-function NUMBER LaunchBrowser(szSite)
-	STRING szKey, szDir;
-	STRING svValue, svReturnString1, svReturnString2;
-	NUMBER nvType, nvSize;
+function NUMBER LaunchBrowser(szSite)	
+	OBJECT web;
 begin
-    RegDBSetDefaultRoot(HKEY_CLASSES_ROOT); 
     
-	// Find the value in the registry under "HKey_Classes_Root\.htm" file,
-	// to see where the browser address is kept.
-	RegDBGetKeyValueEx(".htm", "", nvType, svValue, nvSize);
-	
-	// Append the return value to Shell\open\command
-	// to get the path to executable of the browser
-	szKey = svValue+"\\shell\\open\\command";
-	RegDBGetKeyValueEx(szKey, "", nvType, svValue, nvSize);
-	
-	// Because the value in the command usually has %1 or other placeholders,
-	// we parse the path to get the directory first and then the file name
-	// (this way all the characters after the file name including the placeholder are removed)
-	ParsePath(svReturnString1, svValue, PATH);
-	ParsePath(svReturnString2, svValue, FILENAME_ONLY);
-	
-	// Now append the .exe extension to the file name.
-	// If the browser contains an extra quote("") fix path.
-	// By removing the placeholder, we also removed the ending close quote("),
-	// but it still has the beginning opening quote ("),
-	// so you have to put and ending quote (" to make if a correct path.
-	// Some older versions of firefox do not have the extra "" in the path.
-	szDir = svReturnString1 ^ svReturnString2 + ".exe";
-	if (szDir[0] = "\"") then
-		szDir = svReturnString1 ^ svReturnString2 + ".exe\"";
-	endif;
-	
-	// Now the path to the browser is available.
-	// You can launch the browser and pass your .htm file as a parameter to it.	
-	if LaunchAppAndWait(szDir, szSite, NOWAIT) < 0 then
-		return -1;
-	else
-		return 0;
-	endif;
+	try
+		set web = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "Setup.Web" );
+		web.LaunchBrowser(szSite);
+		set web = NOTHING;
+	catch
+		//MessageBox("Unable to show website: " + szSite, INFORMATION);
+	endcatch;
 	
 end;
 
@@ -3282,5 +3287,104 @@ begin
     if FeatureIsItemSelected( MEDIA, TVLOGOS_UK) then
     	g_sTVLogosUK = "1";
     endif;    
+    
+end;
+
+function void GetTraktSettings()
+	OBJECT xmlReader, db;
+	STRING sFile, sResult;	
+begin
+	try
+		set xmlReader = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "MediaPortal.XmlReader" );
+		
+		sFile = g_sConfigDir ^ "MediaPortal.xml";
+		
+		// Load MediaPortal XML file
+		xmlReader.Load(sFile);
+		
+		// Read Settings
+		g_sTraktUserName = xmlReader.GetEntry("Trakt", XML_TRAKT_USERNAME);
+		g_sTraktPassword = xmlReader.GetEntry("Trakt", XML_TRAKT_PASSWORD);
+		
+		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_TVSERIES);
+		if (sResult != "") then
+			g_sTraktTVSeries = sResult;
+		endif;
+		
+		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MOVPICS);
+		if (sResult != "") then
+			g_sTraktMovingPictures = sResult;
+		endif; 
+		
+		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MYVIDEOS);
+		if (sResult != "") then
+			g_sTraktMyVideos = sResult;
+		endif;
+						
+		if (g_sTraktUserName = "" && g_sTraktPassword = "") then 
+			
+			// Try load setting from TVSeries database
+			set db = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "TVSeries.Database" );
+			
+			sFile = g_sDatabaseDir ^ "TVSeriesDatabase4.db3";			 
+			if db.Open(sFile) then		
+				// Upgrade settings from tvseries database
+				g_sTraktUserName = db.GetOption("TraktUsername");
+				g_sTraktPassword = db.GetOption("TraktPassword");
+				
+				// Clear settings in TVSeries database now that we have upgraded
+				db.SetOption("TraktUsername", "");
+				db.SetOption("TraktPassword", "");
+			endif;	
+						 
+			set db = NOTHING;
+			 			 
+		endif;
+				
+		// Destroy Object
+	    set xmlReader = NOTHING;
+	catch
+		if (MODE != SILENTMODE) then
+	 		//MessageBox("Error reading Trakt settings!",INFORMATION);
+	 	endif;
+	endcatch;	      
+end;
+
+function void SetTraktSettings()
+	OBJECT xmlWriter;
+	STRING sFile;
+begin        
+	
+	sFile = g_sConfigDir ^ "MediaPortal.xml";
+    
+    try 
+	    set xmlWriter = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "MediaPortal.XmlWriter" );
+	    
+	    // check if MediaPortal.xml exists, otherwise create it
+	    // this could happen if we install TVSeries directly after 
+	    // MediaPortal without loading and saving configuration
+	    if (!Is(FILE_EXISTS, sFile)) then
+	    	// Create it
+	    	xmlWriter.CreateXmlConfigFile(sFile);
+	    endif;
+       
+       	// Load Document
+       	xmlWriter.Load(sFile);
+         
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_USERNAME, g_sTraktUserName);
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_PASSWORD, g_sTraktPassword);
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_TVSERIES, g_sTraktTVSeries);  
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_MOVPICS, g_sTraktMovingPictures);  
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_MYVIDEOS, g_sTraktMyVideos);    
+        
+        // Save Document
+        xmlWriter.Save(sFile);
+           
+     	set xmlWriter = NOTHING;
+     catch
+     	if (MODE != SILENTMODE) then
+     		//MessageBox("Error writing Trakt settings!",INFORMATION);
+     	endif;
+     endcatch;
     
 end;
