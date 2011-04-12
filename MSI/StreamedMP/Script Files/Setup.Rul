@@ -3361,7 +3361,7 @@ begin
 	    set xmlWriter = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "MediaPortal.XmlWriter" );
 	    
 	    // check if MediaPortal.xml exists, otherwise create it
-	    // this could happen if we install TVSeries directly after 
+	    // this could happen if we install directly after 
 	    // MediaPortal without loading and saving configuration
 	    if (!Is(FILE_EXISTS, sFile)) then
 	    	// Create it
