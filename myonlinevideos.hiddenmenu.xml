@@ -9,7 +9,7 @@
       <width>48</width>
       <height>144</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
-      <visible>[control.isvisible(50)|control.isvisible(51)]+![string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)]</visible>
+      <visible>[control.isvisible(50)|control.isvisible(51)]+![string.equals(#OnlineVideos.state,details)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
