@@ -405,7 +405,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <onleft>10</onleft>
         <textYOff>8</textYOff>
@@ -426,7 +426,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -437,7 +437,7 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-	  <control>
+			<control>
         <description>Review</description>
         <type>togglebutton</type>
         <id>7</id>
@@ -446,7 +446,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -466,7 +466,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -485,7 +485,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -496,30 +496,30 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-	  <control>
+			<control>
         <description>Trailer</description>
         <type>button</type>
         <id>4755</id>
         <label>#StreamedMP.Trailer</label>
         <onleft>10</onleft>
         <ondown>2</ondown>
-		<hyperlink>4755</hyperlink>
-		<hyperlinkParameter>site:iTunes Movie Trailers|search:#title|return:Locked</hyperlinkParameter>
+				<hyperlink>4755</hyperlink>
+				<hyperlinkParameter>site:IMDb Movie Trailers|search:#imdbnumber|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+				<width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-		<visible>plugin.isenabled(OnlineVideos)</visible>
+				<visible>plugin.isenabled(OnlineVideos)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
-	<import>common.overlays2.xml</import>
+		<import>common.overlays2.xml</import>
   </controls>
 </window>
 <!--Checksum:75f60573c9f940617b95a237d6b1b985-->
