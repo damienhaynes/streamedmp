@@ -504,7 +504,7 @@
         <onleft>10</onleft>
         <ondown>2</ondown>
 				<hyperlink>4755</hyperlink>
-				<hyperlinkParameter>site:IMDb Movie Trailers|search:#imdbnumber|return:Locked</hyperlinkParameter>
+				<hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
