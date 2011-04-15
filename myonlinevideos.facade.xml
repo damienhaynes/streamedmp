@@ -93,8 +93,7 @@
       <posY>683</posY>
       <width>260</width>
       <height>32</height>
-      <texture>mediacountbg_Spin.png</texture>
-      <visible>!string.equals(#OnlineVideos.state, details)</visible>
+      <texture>mediacountbg_Spin.png</texture>      
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -109,7 +108,6 @@
       <posY>688</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>!string.equals(#OnlineVideos.state, details)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
@@ -262,7 +260,6 @@
         </control>
       </control>
     </control>
-    
   </controls>
 </window>
 <!--Checksum:562178322b5de22a94352b35127a3ba3-->

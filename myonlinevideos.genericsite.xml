@@ -14,7 +14,7 @@
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -29,7 +29,7 @@
       <width>315</width>
       <textcolor>ff006698</textcolor>
       <label>#OnlineVideos.length</label>
-      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -46,7 +46,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#OnlineVideos.desc</label>
-      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -62,7 +62,7 @@
       <textcolor>ff006698</textcolor>
       <font>mediastream11tc</font>
       <label>#OnlineVideos.length</label>
-      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
@@ -79,7 +79,7 @@
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
       <label>#OnlineVideos.desc</label>
-      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
