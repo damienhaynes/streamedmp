@@ -25,7 +25,7 @@ namespace StreamedMPEditor
     int numOfImages = 0;
     Image workingImage = null;
 
-    private bool IsSplashScreensInstalled
+    private bool splashScreensInstalled
     {
       get
       {
@@ -42,7 +42,7 @@ namespace StreamedMPEditor
 
     private void checkSplashScreens()
     {
-      if (!IsSplashScreensInstalled)
+      if (!splashScreensInstalled)
       {
         spashscreenPreview.Visible = false;
         gbSplashDL.Visible = true;
@@ -62,7 +62,7 @@ namespace StreamedMPEditor
 
     private void GetSplashScreens()
     {
-      if (!IsSplashScreensInstalled) return;
+      if (!splashScreensInstalled) return;
 
       showActiveSplashScreen();
       displayImage(fileList[imagePos]);

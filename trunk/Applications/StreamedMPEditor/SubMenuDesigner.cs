@@ -351,6 +351,7 @@ namespace StreamedMPEditor
 
     private void btEditItemSubMenu1_Click(object sender, EventArgs e)
     {
+      formStreamedMpEditor.changeOutstanding = false;
       if (lboxSubMenuLevel1.SelectedIndex != -1)
       {
         int index = lboxSubMenuLevel1.SelectedIndex;
@@ -392,7 +393,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.tvseriesHypelinkParameter) || itemProperties.tvseriesHypelinkParameter == "false")
             {
               subMenuLevel1[index].hyperlinkParameter = "false";
-              subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
@@ -407,7 +409,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
             {
               subMenuLevel1[index].hyperlinkParameter = "false";
-              subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
@@ -422,7 +425,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
             {
               subMenuLevel1[index].hyperlinkParameter = "false";
-              subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
@@ -447,6 +451,7 @@ namespace StreamedMPEditor
 
     private void btEditSubMenu2_Click(object sender, EventArgs e)
     {
+      formStreamedMpEditor.changeOutstanding = false;
       if (lboxSubMenuLevel2.SelectedIndex != -1)
       {
         int index = lboxSubMenuLevel2.SelectedIndex;
@@ -473,6 +478,7 @@ namespace StreamedMPEditor
 
         if (itemProperties.DisplayName != subMenuLevel2[index].displayName)
         {
+              if (!formStreamedMpEditor.changeOutstanding)
           subMenuLevel2[index].displayName = itemProperties.DisplayName;
           formStreamedMpEditor.changeOutstanding = true;
         }
@@ -487,7 +493,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.tvseriesHypelinkParameter) || itemProperties.tvseriesHypelinkParameter == "false")
             {
               subMenuLevel2[index].hyperlinkParameter = "false";
-              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
@@ -502,7 +509,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
             {
               subMenuLevel2[index].hyperlinkParameter = "false";
-              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
@@ -517,7 +525,8 @@ namespace StreamedMPEditor
             if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
             {
               subMenuLevel2[index].hyperlinkParameter = "false";
-              subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
               formStreamedMpEditor.changeOutstanding = true;
             }
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))

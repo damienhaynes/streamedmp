@@ -1130,6 +1130,8 @@ namespace StreamedMPConfig
 
     public static void RestartMediaPortal()
     {
+      MediaPortal.Profile.Settings.SaveCache();
+      SkinInfo skInfo = new SkinInfo();
       string restartExe = Path.Combine(SkinInfo.mpPaths.sMPbaseDir, "SMPMediaPortalRestart.exe");
       ProcessStartInfo processStart = new ProcessStartInfo(restartExe);
       processStart.Arguments = @"/restartmp ";

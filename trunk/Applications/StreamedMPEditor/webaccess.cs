@@ -164,6 +164,7 @@ namespace StreamedMPEditor
         FastZip fz = new FastZip();
         fz.ExtractZip(optionDownloadPath, destinationPath, "");
         System.IO.File.Delete(optionDownloadPath);
+        updateBackgroundFolders();
       }
 
       downloadForm.Hide();
@@ -196,7 +197,7 @@ namespace StreamedMPEditor
         installWeatherBackgrounds.Visible = false;
       }
 
-      if (!IsSplashScreensInstalled)
+      if (!splashScreensInstalled)
       {
         spashscreenPreview.Visible = false;
         gbSplashDL.Visible = true;
