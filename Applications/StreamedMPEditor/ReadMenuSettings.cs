@@ -873,6 +873,7 @@ namespace StreamedMPEditor
       // Up the location of of the background folders
       // Move from sub folders of animations folder to new background folder.
       // get list of folders to move
+      foldersToMove.Clear();
       string[] directories = Directory.GetDirectories(SkinInfo.mpPaths.streamedMPpath + "media\\animations");
       foreach (string folder in directories)
       {
