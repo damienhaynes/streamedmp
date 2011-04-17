@@ -1311,7 +1311,7 @@ namespace StreamedMPEditor
 
     private bool weatherBackgoundsInstalled()
     {
-      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\ + bgFolderName + \\linkedweather"))
+      if (Directory.Exists(SkinInfo.mpPaths.streamedMPpath + "media\\" + bgFolderName + "\\linkedweather"))
         return true;
       else
         return false;
