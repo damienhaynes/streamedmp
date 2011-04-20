@@ -2140,6 +2140,8 @@ namespace StreamedMPEditor
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_TVSeries.jpg");
         case 16001:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_News.jpg");
+        case 82341:
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Pandora.jpg");
         case 96742:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_MovingPictures.jpg");
         case 25650:
@@ -2148,16 +2150,16 @@ namespace StreamedMPEditor
         case 47286:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Rockstar.jpg");
         case 711992:
-          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_OnlineVideos.jpg");
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Showtimes.jpg");
         default:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\default.jpg");
       }
     }
 
-    private string setBGFolder(string folder)
+    private string setBGFolder(string selectedBG)
     {
-      if (File.Exists(Path.Combine(SkinInfo.mpPaths.streamedMPpath + "\\media\\" + bgFolderName, folder)))
-        return "\\" + folder;
+      if (File.Exists(Path.Combine(SkinInfo.mpPaths.streamedMPpath + "\\media\\" + bgFolderName, selectedBG)))
+        return "\\" + selectedBG;
       else
         return  "\\" + cboThemeSelection.Text + "\\default.jpg";
     }
