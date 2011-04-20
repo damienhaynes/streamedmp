@@ -2149,7 +2149,7 @@ namespace StreamedMPEditor
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_RadioTime.jpg");
         case 47286:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Rockstar.jpg");
-        case 711992:
+        case 7111992:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Showtimes.jpg");
         default:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\default.jpg");
