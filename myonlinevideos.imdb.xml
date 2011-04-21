@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
     <control>
@@ -24,8 +24,8 @@
       <width>400</width>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <visible>facadeview.list+!string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
     <control>
@@ -37,8 +37,8 @@
       <width>257</width>
       <height>380</height>
       <keepaspectratio>yes</keepaspectratio>
-      <texture>#OnlineVideos.Details.Poster</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <texture>#(iif(neq(#OnlineVideos.Details.Poster,''),#OnlineVideos.Details.Poster,#selectedthumb))</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
@@ -51,9 +51,9 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+Control.HasThumb(24)</visible>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+Control.HasThumb(26)</visible>
     </control>
     <control>
       <description>Movie Title Shadow</description>
@@ -126,48 +126,14 @@
       <textcolor>ffFFFFFF</textcolor>
       <seperator>---------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <label>#OnlineVideos.Details.Plot
+      <label>#(iif(neq(string.trim(#OnlineVideos.DetailsItem.Description),''),#OnlineVideos.DetailsItem.Description,#OnlineVideos.Details.Plot))
 	  
-	  #OnlineVideos.Translation.Actors.Label: #OnlineVideos.Details.Actors</label>
+	  #(iif(neq(string.trim(#OnlineVideos.Details.Actors),''),'#OnlineVideos.Translation.Actors.Label: #OnlineVideos.Details.Actors',''))</label>
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.Details.Plot,)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
-    </control>
-    <control>
-      <description>Summary (Only)</description>
-      <type>textboxscrollup</type>
-      <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>223</height>
-      <textcolor>ffFFFFFF</textcolor>
-      <seperator>-----------------------------------------------------------------------------------</seperator>
-      <font>mediastream11</font>
-      <label>#OnlineVideos.Details.Plot</label>
-      <scrollStartDelaySec>12</scrollStartDelaySec>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.Details.Plot,)+string.equals(#OnlineVideos.Details.Actors,)</visible>
-    </control>
-    <control>
-      <description>Actors (Only)</description>
-      <type>textboxscrollup</type>
-      <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>223</height>
-      <textcolor>ffFFFFFF</textcolor>
-      <seperator>-----------------------------------------------------------------------------------</seperator>
-      <font>mediastream11</font>
-      <label>#OnlineVideos.Details.Actors</label>
-      <scrollStartDelaySec>12</scrollStartDelaySec>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.Plot,)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
-    </control>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
+    </control>    
     <control Style="smallTitleB">
       <description>Release Date Label</description>
       <id>0</id>
@@ -179,7 +145,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
@@ -194,11 +160,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
-		<control Style="smallTitle">
+    <control Style="smallTitle">
       <description>Release Date N/A</description>
       <id>0</id>
       <type>label</type>
@@ -209,7 +175,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.ReleaseDate,)</visible>
     </control>
@@ -224,7 +190,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
@@ -239,11 +205,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
-			<control Style="smallTitle">
+    <control Style="smallTitle">
       <description>Director N/A</description>
       <id>0</id>
       <type>label</type>
@@ -254,7 +220,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.Directors,)</visible>
     </control>
@@ -268,7 +234,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff111111</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
@@ -282,11 +248,11 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
-		<control Style="smallTitle">
+    <control Style="smallTitle">
       <description>MPAA N/A</description>
       <id>0</id>
       <type>label</type>
@@ -296,9 +262,10 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.Certificate,)</visible>
-    </control>		
+    </control>
   </controls>
 </window>
+<!--Checksum:1153a0755b3669994a89e554dfbbc3df-->
