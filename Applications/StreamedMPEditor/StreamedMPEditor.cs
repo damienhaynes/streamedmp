@@ -1069,7 +1069,8 @@ namespace StreamedMPEditor
             break;
           pindex++;
         }
-        xmlFiles.SelectedIndex = pindex;
+        if (pindex < prettyItems.Count)
+          xmlFiles.SelectedIndex = pindex;
       }
 
       cboContextLabel.Text = mnuItem.contextLabel;
