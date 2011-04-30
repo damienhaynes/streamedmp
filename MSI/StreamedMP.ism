@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -691,7 +690,6 @@
 	<table name="CreateFolder">
 		<col key="yes" def="s72">Directory_</col>
 		<col key="yes" def="s72">Component_</col>
-		<row><td>DEFAULTWIDE1</td><td>defaultWideSkinMyLyrics</td></row>
 		<row><td>INSTALLDIR</td><td>ISRegistryComponent</td></row>
 	</table>
 
@@ -703,13 +701,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -2112,6 +2106,7 @@
 		<row><td>Fanart</td><td>&lt;StreamedMP&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.png,*.jpg,*.txt</td><td/><td>2</td></row>
 		<row><td>NowPlayingScreens</td><td>&lt;StreamedMP&gt;\nowplayingscreens</td><td>4</td><td>*.xml</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinMovingPictures</td><td>&lt;StreamedMP&gt;\defaultskins\movingpictures\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>defaultWideSkinMyLyrics</td><td>&lt;StreamedMP&gt;\defaultskins\mylyrics</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinTVSeries</td><td>&lt;StreamedMP&gt;\defaultskins\mp-tvseries\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesMovingPictures</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
@@ -4432,13 +4427,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
