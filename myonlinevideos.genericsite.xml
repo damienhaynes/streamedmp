@@ -28,7 +28,7 @@
       <posY>485</posY>
       <width>315</width>
       <textcolor>ff006698</textcolor>
-      <label>#OnlineVideos.length</label>
+      <label>#selecteditem2</label>
       <visible>facadeview.list+!control.isvisible(51)+!string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -61,7 +61,7 @@
       <width>315</width>
       <textcolor>ff006698</textcolor>
       <font>mediastream11tc</font>
-      <label>#OnlineVideos.length</label>
+      <label>#selecteditem2</label>
       <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
