@@ -413,6 +413,8 @@ namespace StreamedMPEditor
       }
 
       buildFHchoiceControls();
+      disableBGSharing.Location = new Point(10, 124);
+
       checkAndEnableOverlays();
     }
 
