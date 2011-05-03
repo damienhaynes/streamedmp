@@ -33,7 +33,7 @@
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-      <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
+      <visible>control.isvisible(50)+[!facadeview.list]</visible>
     </control>
     <control>
       <description>Thumbs Overlay</description>
@@ -45,18 +45,7 @@
       <height>722</height>
       <texture>fanartoverlaywidebanners.png</texture>
       <visible>control.isvisible(50)+[facadeview.smallicons|facadeview.largeicons]</visible>
-    </control>
-    <control>
-      <description>Filmstrip Top Bar</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
-      <texture>overlay_topbar.png</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
-    </control>
+    </control>   
     <control>
       <description>Filmstrip Bottom Overlay</description>
       <type>image</type>
@@ -66,7 +55,7 @@
       <width>1280</width>
       <height>320</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>[facadeview.filmstrip|facadeview.coverflow]+control.isvisible(50)</visible>
     </control>
   </controls>
 </window>

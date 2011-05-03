@@ -43,7 +43,7 @@
       <width>1280</width>
       <height>51</height>
       <texture>overlay_topbar.png</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>[facadeview.filmstrip|facadeview.coverflow]+control.isvisible(50)</visible>
     </control>
     <control>
       <description>Filmstrip Bottom Overlay</description>
@@ -54,7 +54,7 @@
       <width>1280</width>
       <height>320</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>[facadeview.filmstrip|facadeview.coverflow]+control.isvisible(50)</visible>
     </control>
   </controls>
 </window>
