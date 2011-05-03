@@ -57,6 +57,28 @@
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
     </control>
     <control>
+      <description>Topbar Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>50</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>facadeview.coverflow+[control.isvisible(50)|control.isvisible(51)]</visible>
+    </control>
+    <control>
+      <description>Coverflow Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>470</posY>
+      <width>1280</width>
+      <height>250</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>facadeview.coverflow+[control.isvisible(50)|control.isvisible(51)]</visible>
+    </control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
