@@ -16,6 +16,10 @@ using SQLite.NET;
 using MediaPortal.GUI.Music;
 using MediaPortal.GUI.View;
 using OnlineVideos;
+using Cornerstone.Database.Tables;
+using Cornerstone.GUI.Filtering;
+using MediaPortal.Plugins.MovingPictures;
+using MediaPortal.Plugins.MovingPictures.Database;
 
 namespace StreamedMPEditor
 {
@@ -158,7 +162,7 @@ namespace StreamedMPEditor
     public static List<string> theTVSeriesViews = new List<string>();
     public static List<string> theMusicViews = new List<string>();
     public static List<string> theOnlineVideosViews = new List<string>();
-
+    
     List<backgroundItem> bgItems = new List<backgroundItem>();
     List<string> ids = new List<string>();
     List<string> idsTemp = new List<string>();
@@ -404,6 +408,13 @@ namespace StreamedMPEditor
         }
       }
 
+      filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MovingPictures.dll");
+      if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 1, 0, 0), filename))
+      {
+        // load categories
+        LoadMovingPicturesCategories();
+      }
+
       Version fhVersion = new Version(helper.fileVersion(Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "process"), "FanartHandler.dll")));
 
       if (fhVersion.CompareTo(fhRelease2) >= 0)
@@ -517,7 +528,7 @@ namespace StreamedMPEditor
         return parametersValid[hyperLink];
       else
         return false;
-    }
+    }    
 
     #endregion
 
@@ -779,7 +790,7 @@ namespace StreamedMPEditor
           item.disableBGSharing = true;
 
         item.showMostRecent = getMostRecentDisplayOption();
-        if (pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1)
+        if ((pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1) || (movPicsCategoryCombo.Visible && movPicsCategoryCombo.SelectedIndex != -1))
         {
           switch (item.hyperlink)
           {
@@ -791,6 +802,19 @@ namespace StreamedMPEditor
               break;
             case onlineVideosSkinID:
               item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+              break;
+            case movingPicturesSkinID:
+              if (movPicsCategoryCombo.SelectedIndex != -1)
+              {
+                // store the ID of the selected node
+                if (item.hyperlink == movingPicturesSkinID)
+                {
+                  int? id = GetMovPicsCategoryNodeID(movPicsCategoryCombo.SelectedNode);
+                  if (id != null)
+                    item.hyperlinkParameter = id.ToString();
+                }
+                movPicsCategoryCombo.SelectedIndex = -1;
+              }
               break;
             default:
               break;
@@ -904,11 +928,19 @@ namespace StreamedMPEditor
           else
             cboParameterViews.Text = string.Empty;
           break;
+        case movingPicturesSkinID:
+          if (mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
+          {
+            int id = 0;
+            Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+            movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+          }
+          else
+            movPicsCategoryCombo.SelectedIndex = -1;
+          break;
         default:
           break;
       }
-
-
 
       if (cboFanartProperty.Text.ToLower() == "false")
         cboFanartProperty.Text = "";
@@ -970,6 +1002,18 @@ namespace StreamedMPEditor
           item.hyperlinkParameter = "false";
           cboParameterViews.Text = string.Empty;
         }
+
+        if (movPicsCategoryCombo.SelectedIndex != -1)
+        {
+          // store the ID of the selected node
+          if (item.hyperlink == movingPicturesSkinID)
+          { 
+            int? id = GetMovPicsCategoryNodeID(movPicsCategoryCombo.SelectedNode);
+            if (id != null)
+              item.hyperlinkParameter = id.ToString();
+          }
+        }
+
         item.disableBGSharing = disableBGSharing.Checked;
         // If using 3D backgrounds disable BG sharing for item.
         if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
@@ -1016,6 +1060,16 @@ namespace StreamedMPEditor
       }
     }
 
+    int? GetMovPicsCategoryNodeID(IDBNode node)
+    {
+      return ((DBNode<DBMovieInfo>)node).ID;
+    }
+
+    IDBNode GetMovPicsDBNodeFromID(int id)
+    {
+      return MovingPicturesCore.DatabaseManager.Get<DBNode<DBMovieInfo>>(id);
+    }
+
     void screenReset()
     {
       if (saveButton.Enabled)
@@ -1034,7 +1088,7 @@ namespace StreamedMPEditor
       cboParameterViews.Text = string.Empty;
       lbParameterView.Visible = false;
       cbOnlineVideosReturn.Visible = false;
-
+      movPicsCategoryCombo.SelectedIndex = -1;
     }
 
 
@@ -1082,6 +1136,13 @@ namespace StreamedMPEditor
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       cbOnlineVideosReturn.Visible = false;
+
+      if (movPicsCategoryCombo.Visible && mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
+      {
+        int id = 0;
+        Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+        movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+      }
 
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
@@ -2336,6 +2397,16 @@ namespace StreamedMPEditor
       }
 
       return onlineVideosViews;
+    }
+
+    /// <summary>
+    /// Loads the Custom Category list into a Cornerstone Filter Combo Box
+    /// </summary>
+    private void LoadMovingPicturesCategories()
+    {
+      // initialize filter combo to manage the default filter
+      movPicsCategoryCombo.TreePanel.TranslationParser = new TranslationParserDelegate(MediaPortal.Plugins.MovingPictures.MainUI.Translation.ParseString);
+      movPicsCategoryCombo.Menu = MovingPicturesCore.Settings.CategoriesMenu;
     }
 
     /// <summary>

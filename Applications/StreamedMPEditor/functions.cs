@@ -333,6 +333,9 @@ namespace StreamedMPEditor
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
       }
+      movPicsCategoryCombo.Visible = (selectedWindowID.Text == movingPicturesSkinID);
+      lbParameterView.Visible = movPicsCategoryCombo.Visible || lbParameterView.Visible;
+
       switch (selectedWindowID.Text)
       {
         case tvseriesSkinID:
