@@ -518,6 +518,7 @@ namespace StreamedMPEditor
       // List of plugin skinIDs that take parameters - all a bit manual and should add a file to store these at some point
       parametersValid.Add(tvseriesSkinID, true);
       parametersValid.Add(onlineVideosSkinID, true);
+      parametersValid.Add(movingPicturesSkinID, true);
 
       if (isBeta)
       {

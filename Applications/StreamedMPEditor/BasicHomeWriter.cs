@@ -2335,7 +2335,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
 
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"100\" time=\"400\" reversible=\"false\">Hidden</animation>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"100\" time=\"400\" reversible=\"false\">WindowClose</animation>");
 
@@ -2388,7 +2388,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"100\" time=\"400\" reversible=\"false\">Hidden</animation>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\" reversible=\"false\">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"100\" time=\"400\" reversible=\"false\">WindowClose</animation>");
 
@@ -3185,7 +3185,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
         rawXML.AppendLine("<visible>plugin.isenabled(InfoService)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       for (i = 0; i < 5; i++)
@@ -3209,7 +3209,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<description>GROUP: FULL WEATHER ICONS (Animated)</description>");
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
+      rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
       if (weatherId.ToString().Length == 5)

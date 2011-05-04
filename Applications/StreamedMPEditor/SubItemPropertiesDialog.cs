@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using Cornerstone.Database.Tables;
+using Cornerstone.GUI.Filtering;
+using MediaPortal.Plugins.MovingPictures;
+using MediaPortal.Plugins.MovingPictures.Database;
 
 namespace StreamedMPEditor
 {
@@ -27,6 +31,7 @@ namespace StreamedMPEditor
                 gbHyperlinkParameter.Enabled = true;
 
             cbOnlineVideosReturn.Visible = false;
+            movPicsCategoryCombo.Visible = false;
 
             switch (skinFileID)
             {
@@ -49,7 +54,22 @@ namespace StreamedMPEditor
                   cboViews.Items.Add(mvv.Value);
                 }
                 break;
+              case formStreamedMpEditor.movingPicturesSkinID:
+                movPicsCategoryCombo.Visible = true;
+                LoadMovingPicturesCategories();
+                break;
+
             }
+        }
+
+        /// <summary>
+        /// Loads the Custom Category list into a Cornerstone Filter Combo Box
+        /// </summary>
+        private void LoadMovingPicturesCategories()
+        {
+          // initialize filter combo to manage the default filter
+          movPicsCategoryCombo.TreePanel.TranslationParser = new TranslationParserDelegate(MediaPortal.Plugins.MovingPictures.MainUI.Translation.ParseString);
+          movPicsCategoryCombo.Menu = MovingPicturesCore.Settings.CategoriesMenu;
         }
 
         public string BaseName
@@ -209,6 +229,42 @@ namespace StreamedMPEditor
           }
         }
 
+        public string movingPicturesHyperlinkParmeter
+        {
+          get
+          {
+            if (movPicsCategoryCombo.SelectedIndex == -1)
+              return "false";
+
+            int? id = GetMovPicsCategoryNodeID(movPicsCategoryCombo.SelectedNode);
+            if (id != null)
+              return id.ToString();
+            else
+              return "false";
+          }
+          set
+          {
+          if (value != "false" && !string.IsNullOrEmpty(value))
+          {
+            int id = 0;
+            Int32.TryParse(value, out id);
+            movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+          }
+          else
+            movPicsCategoryCombo.SelectedIndex = -1;
+          }
+        }
+
+        int? GetMovPicsCategoryNodeID(IDBNode node)
+        {
+          return ((DBNode<DBMovieInfo>)node).ID;
+        }
+
+        IDBNode GetMovPicsDBNodeFromID(int id)
+        {
+          return MovingPicturesCore.DatabaseManager.Get<DBNode<DBMovieInfo>>(id);
+        }
+
         private void tbItemDisplayName_TextChanged(object sender, EventArgs e)
         {
             int start = tbItemDisplayName.SelectionStart;
@@ -247,7 +303,13 @@ namespace StreamedMPEditor
 
         private void btClearParameter_Click(object sender, EventArgs e)
         {
-            cboViews.Text = string.Empty;
+            if (movPicsCategoryCombo.Visible)
+            {
+              tbItemDisplayName.Text = baseName;
+              movPicsCategoryCombo.SelectedIndex = -1;
+            }
+            else
+              cboViews.Text = string.Empty;
         }
 
 
@@ -264,8 +326,16 @@ namespace StreamedMPEditor
             // OnlineVideos
             if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
               tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosViews[cboViews.SelectedIndex].Value;
-
             initialIndex = cboViews.SelectedIndex;
+          }
+        }
+
+        private void movPicsCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          if (movPicsCategoryCombo.SelectedIndex != -1)
+          {
+            tbItemDisplayName.Text = movPicsCategoryCombo.Text;
+
           }
         }
     }
