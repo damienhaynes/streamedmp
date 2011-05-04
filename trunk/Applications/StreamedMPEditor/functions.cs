@@ -326,6 +326,8 @@ namespace StreamedMPEditor
         lbParameterView.Visible = true;
         if (selectedWindowID.Text == onlineVideosSkinID)
           cbOnlineVideosReturn.Visible = true;
+        if (selectedWindowID.Text == movingPicturesSkinID)
+          movPicsCategoryCombo.Visible = true;
       }
       else
       {
@@ -333,8 +335,6 @@ namespace StreamedMPEditor
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
       }
-      movPicsCategoryCombo.Visible = (selectedWindowID.Text == movingPicturesSkinID);
-      lbParameterView.Visible = movPicsCategoryCombo.Visible || lbParameterView.Visible;
 
       switch (selectedWindowID.Text)
       {
@@ -521,6 +521,7 @@ namespace StreamedMPEditor
     private void disableItemControls()
     {
       itemProperties.Enabled = false;
+      itemProperties.Height = 153;
       backgroundImages.Enabled = false;
       addButton.Enabled = false;
       removeButton.Enabled = true;
@@ -534,6 +535,10 @@ namespace StreamedMPEditor
       backgroundImages.Enabled = true;
       addButton.Enabled = true;
       removeButton.Enabled = false;
+      if (movPicsCategoryCombo.Visible && itemProperties.Enabled)
+        itemProperties.Height = 253;
+      else
+        itemProperties.Height = 153;
     }
 
     private void reloadBackgroundItems()

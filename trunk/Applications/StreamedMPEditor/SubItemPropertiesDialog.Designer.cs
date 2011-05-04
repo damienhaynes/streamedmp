@@ -33,16 +33,17 @@
       this.cboViews = new System.Windows.Forms.ComboBox();
       this.btSaveAndClose = new System.Windows.Forms.Button();
       this.gbHyperlinkParameter = new System.Windows.Forms.GroupBox();
-      this.btClearParameter = new System.Windows.Forms.Button();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
+      this.btClearParameter = new System.Windows.Forms.Button();
+      this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.gbHyperlinkParameter.SuspendLayout();
       this.SuspendLayout();
       // 
       // tbItemDisplayName
       // 
-      this.tbItemDisplayName.Location = new System.Drawing.Point(148, 27);
+      this.tbItemDisplayName.Location = new System.Drawing.Point(148, 13);
       this.tbItemDisplayName.Name = "tbItemDisplayName";
-      this.tbItemDisplayName.Size = new System.Drawing.Size(200, 20);
+      this.tbItemDisplayName.Size = new System.Drawing.Size(247, 20);
       this.tbItemDisplayName.TabIndex = 0;
       this.tbItemDisplayName.TextChanged += new System.EventHandler(this.tbItemDisplayName_TextChanged);
       this.tbItemDisplayName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbItemDisplayName_KeyUp);
@@ -50,7 +51,7 @@
       // label1
       // 
       this.label1.AutoSize = true;
-      this.label1.Location = new System.Drawing.Point(17, 30);
+      this.label1.Location = new System.Drawing.Point(17, 16);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(128, 13);
       this.label1.TabIndex = 1;
@@ -61,13 +62,13 @@
       this.cboViews.FormattingEnabled = true;
       this.cboViews.Location = new System.Drawing.Point(6, 19);
       this.cboViews.Name = "cboViews";
-      this.cboViews.Size = new System.Drawing.Size(188, 21);
+      this.cboViews.Size = new System.Drawing.Size(241, 21);
       this.cboViews.TabIndex = 3;
       this.cboViews.SelectedIndexChanged += new System.EventHandler(this.cboViews_SelectedIndexChanged);
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(10, 140);
+      this.btSaveAndClose.Location = new System.Drawing.Point(10, 210);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(132, 23);
       this.btSaveAndClose.TabIndex = 5;
@@ -77,25 +78,16 @@
       // 
       // gbHyperlinkParameter
       // 
+      this.gbHyperlinkParameter.Controls.Add(this.movPicsCategoryCombo);
       this.gbHyperlinkParameter.Controls.Add(this.cbOnlineVideosReturn);
       this.gbHyperlinkParameter.Controls.Add(this.btClearParameter);
       this.gbHyperlinkParameter.Controls.Add(this.cboViews);
-      this.gbHyperlinkParameter.Location = new System.Drawing.Point(148, 56);
+      this.gbHyperlinkParameter.Location = new System.Drawing.Point(148, 39);
       this.gbHyperlinkParameter.Name = "gbHyperlinkParameter";
-      this.gbHyperlinkParameter.Size = new System.Drawing.Size(200, 107);
+      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 194);
       this.gbHyperlinkParameter.TabIndex = 6;
       this.gbHyperlinkParameter.TabStop = false;
       this.gbHyperlinkParameter.Text = "Hyperlink Parameter:";
-      // 
-      // btClearParameter
-      // 
-      this.btClearParameter.Location = new System.Drawing.Point(6, 75);
-      this.btClearParameter.Name = "btClearParameter";
-      this.btClearParameter.Size = new System.Drawing.Size(102, 23);
-      this.btClearParameter.TabIndex = 4;
-      this.btClearParameter.Text = "Clear Parameter";
-      this.btClearParameter.UseVisualStyleBackColor = true;
-      this.btClearParameter.Click += new System.EventHandler(this.btClearParameter_Click);
       // 
       // cbOnlineVideosReturn
       // 
@@ -107,11 +99,33 @@
       this.cbOnlineVideosReturn.Text = "Return to OnlineVideos root menu";
       this.cbOnlineVideosReturn.UseVisualStyleBackColor = true;
       // 
+      // btClearParameter
+      // 
+      this.btClearParameter.Location = new System.Drawing.Point(6, 75);
+      this.btClearParameter.Name = "btClearParameter";
+      this.btClearParameter.Size = new System.Drawing.Size(102, 23);
+      this.btClearParameter.TabIndex = 4;
+      this.btClearParameter.Text = "Clear Parameter";
+      this.btClearParameter.UseVisualStyleBackColor = true;
+      this.btClearParameter.Click += new System.EventHandler(this.btClearParameter_Click);
+      // 
+      // movPicsCategoryCombo
+      // 
+      this.movPicsCategoryCombo.DropDownHeight = 200;
+      this.movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.movPicsCategoryCombo.FormattingEnabled = true;
+      this.movPicsCategoryCombo.IntegralHeight = false;
+      this.movPicsCategoryCombo.Location = new System.Drawing.Point(6, 19);
+      this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
+      this.movPicsCategoryCombo.Size = new System.Drawing.Size(247, 21);
+      this.movPicsCategoryCombo.TabIndex = 107;
+      this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
+      // 
       // SubItemProperties
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(394, 170);
+      this.ClientSize = new System.Drawing.Size(424, 237);
       this.Controls.Add(this.gbHyperlinkParameter);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.label1);
@@ -136,5 +150,6 @@
     private System.Windows.Forms.GroupBox gbHyperlinkParameter;
     private System.Windows.Forms.Button btClearParameter;
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
+    private Cornerstone.GUI.Controls.FilterComboBox movPicsCategoryCombo;
   }
 }

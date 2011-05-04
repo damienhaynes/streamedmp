@@ -371,6 +371,9 @@ namespace StreamedMPEditor
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel1[index].hyperlinkParameterOption;
             break;
+          case formStreamedMpEditor.movingPicturesSkinID:
+            itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel1[index].hyperlinkParameter;
+            break;
         }
         itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
         itemProperties.initialIndex = index;
@@ -436,6 +439,22 @@ namespace StreamedMPEditor
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
+          //MovingPictures
+          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
+          {
+            if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
+            {
+              subMenuLevel1[index].hyperlinkParameter = "false";
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+            {
+              subMenuLevel1[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
         }
         // Refresh the listbox, only way to do this is clear re-populate.
         if (formStreamedMpEditor.changeOutstanding)
@@ -470,6 +489,9 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.onlineVideosSkinID:
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel2[index].hyperlinkParameterOption;
+            break;
+          case formStreamedMpEditor.movingPicturesSkinID:
+            itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel2[index].hyperlinkParameter;
             break;
         }      
         itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
@@ -534,6 +556,22 @@ namespace StreamedMPEditor
               subMenuLevel2[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
               subMenuLevel2[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
               formStreamedMpEditor.changeOutstanding = true;
+            }
+            //MovingPictures
+            if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
+            {
+              if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
+              {
+                subMenuLevel2[index].hyperlinkParameter = "false";
+                if (!formStreamedMpEditor.changeOutstanding)
+                  subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+                formStreamedMpEditor.changeOutstanding = true;
+              }
+              else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+              {
+                subMenuLevel2[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
+                formStreamedMpEditor.changeOutstanding = true;
+              }
             }
           }
           // Refresh the listbox, only way to do this is clear re-populate.
