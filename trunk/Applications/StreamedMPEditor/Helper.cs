@@ -57,6 +57,10 @@ namespace StreamedMPEditor
         if (innerNode != null)
           pItem.name = innerNode.InnerText;
 
+        innerNode = node.SelectSingleNode("name2");
+        if (innerNode != null)
+          pItem.nameExtension = innerNode.InnerText;
+
         innerNode = node.SelectSingleNode("context");
         if (innerNode != null)
           pItem.contextlabel = innerNode.InnerText;
