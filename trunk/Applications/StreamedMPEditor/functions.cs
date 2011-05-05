@@ -320,6 +320,7 @@ namespace StreamedMPEditor
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;
       buttonTexture.MenuItem = prettyItems[index].name;
+      linkClearCategories.Visible = false;
       if (pluginTakesParameter(selectedWindowID.Text))
       {
         cboParameterViews.Visible = true;
@@ -331,6 +332,7 @@ namespace StreamedMPEditor
         {
           cboParameterViews.Visible = false;
           movPicsCategoryCombo.Visible = true;
+          linkClearCategories.Visible = true;
         }
       }
       else

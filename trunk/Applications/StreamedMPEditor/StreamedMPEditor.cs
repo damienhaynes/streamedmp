@@ -817,7 +817,7 @@ namespace StreamedMPEditor
                   if (id != null)
                     item.hyperlinkParameter = id.ToString();
                 }
-                movPicsCategoryCombo.SelectedIndex = -1;
+                ClearMovingPicturesCategories();
               }
               break;
             default:
@@ -933,6 +933,7 @@ namespace StreamedMPEditor
             cboParameterViews.Text = string.Empty;
           break;
         case movingPicturesSkinID:
+          linkClearCategories.Visible = true;
           if (mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
           {
             int id = 0;
@@ -940,7 +941,7 @@ namespace StreamedMPEditor
             movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
           }
           else
-            movPicsCategoryCombo.SelectedIndex = -1;
+            ClearMovingPicturesCategories();
           break;
         default:
           break;
@@ -964,7 +965,7 @@ namespace StreamedMPEditor
       editButton.Enabled = false;
       enableItemControls();
       addButton.Enabled = false;
-      cancelCreateButton.Visible = false;
+      cancelCreateButton.Visible = false;      
     }
 
     void saveButton_Click(object sender, EventArgs e)
@@ -1059,6 +1060,7 @@ namespace StreamedMPEditor
         btGenerateMenu.Enabled = true;
         changeOutstanding = true;
         cboParameterViews.Visible = false;
+        linkClearCategories.Visible = false;
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
           displayMenuIcon(item.buttonTexture);
       }
@@ -1110,6 +1112,7 @@ namespace StreamedMPEditor
       setScreenProperties(itemsOnMenubar.SelectedIndex);
       disableItemControls();
       btGenerateMenu.Enabled = true;
+      linkClearCategories.Visible = false;
     }
 
     void setScreenProperties(int index)
@@ -2235,6 +2238,18 @@ namespace StreamedMPEditor
         return "\\" + selectedBG;
       else
         return  "\\" + cboThemeSelection.Text + "\\default.jpg";
+    }
+
+    private void linkClearCategories_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    {
+      ClearMovingPicturesCategories();
+    }
+
+    void ClearMovingPicturesCategories()
+    {
+      movPicsCategoryCombo.Text = string.Empty;
+      movPicsCategoryCombo.SelectedNode = null;
+      movPicsCategoryCombo.SelectedIndex = -1;
     }
 
     private void buildThemeScreen()
