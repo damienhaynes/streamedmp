@@ -986,7 +986,8 @@ namespace StreamedMPEditor
 
         item.xmlFileName = selectedWindow.Text;
         item.hyperlink = selectedWindowID.Text;
-
+        
+        item.hyperlinkParameter = "false";
         if (cboParameterViews.SelectedIndex != -1)
         {
           if (item.hyperlink == tvseriesSkinID)
@@ -1000,7 +1001,6 @@ namespace StreamedMPEditor
         }
         else
         {
-          item.hyperlinkParameter = "false";
           cboParameterViews.Text = string.Empty;
         }
 
