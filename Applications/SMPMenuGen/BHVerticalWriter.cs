@@ -66,6 +66,9 @@ namespace SMPMenuGen
               case onlineVideosSkinID:
                 rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
                 break;
+              case movingPicturesSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
+                break;
               default:
                 rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
                 break;
@@ -157,6 +160,9 @@ namespace SMPMenuGen
             {
               case onlineVideosSkinID:
                 rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                break;
+              case movingPicturesSkinID:
+                rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
                 break;
               default:
                 rawXML.AppendLine("<hyperlinkParameter>" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
