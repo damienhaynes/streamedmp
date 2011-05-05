@@ -33,9 +33,9 @@
       this.cboViews = new System.Windows.Forms.ComboBox();
       this.btSaveAndClose = new System.Windows.Forms.Button();
       this.gbHyperlinkParameter = new System.Windows.Forms.GroupBox();
+      this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btClearParameter = new System.Windows.Forms.Button();
-      this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.gbHyperlinkParameter.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -68,7 +68,7 @@
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(10, 210);
+      this.btSaveAndClose.Location = new System.Drawing.Point(10, 127);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(132, 23);
       this.btSaveAndClose.TabIndex = 5;
@@ -84,10 +84,22 @@
       this.gbHyperlinkParameter.Controls.Add(this.cboViews);
       this.gbHyperlinkParameter.Location = new System.Drawing.Point(148, 39);
       this.gbHyperlinkParameter.Name = "gbHyperlinkParameter";
-      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 194);
+      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 111);
       this.gbHyperlinkParameter.TabIndex = 6;
       this.gbHyperlinkParameter.TabStop = false;
       this.gbHyperlinkParameter.Text = "Hyperlink Parameter:";
+      // 
+      // movPicsCategoryCombo
+      // 
+      this.movPicsCategoryCombo.DropDownHeight = 200;
+      this.movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.movPicsCategoryCombo.FormattingEnabled = true;
+      this.movPicsCategoryCombo.IntegralHeight = false;
+      this.movPicsCategoryCombo.Location = new System.Drawing.Point(6, 19);
+      this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
+      this.movPicsCategoryCombo.Size = new System.Drawing.Size(247, 21);
+      this.movPicsCategoryCombo.TabIndex = 107;
+      this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
       // 
       // cbOnlineVideosReturn
       // 
@@ -109,23 +121,11 @@
       this.btClearParameter.UseVisualStyleBackColor = true;
       this.btClearParameter.Click += new System.EventHandler(this.btClearParameter_Click);
       // 
-      // movPicsCategoryCombo
-      // 
-      this.movPicsCategoryCombo.DropDownHeight = 200;
-      this.movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.movPicsCategoryCombo.FormattingEnabled = true;
-      this.movPicsCategoryCombo.IntegralHeight = false;
-      this.movPicsCategoryCombo.Location = new System.Drawing.Point(6, 19);
-      this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
-      this.movPicsCategoryCombo.Size = new System.Drawing.Size(247, 21);
-      this.movPicsCategoryCombo.TabIndex = 107;
-      this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
-      // 
       // SubItemProperties
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(424, 237);
+      this.ClientSize = new System.Drawing.Size(424, 160);
       this.Controls.Add(this.gbHyperlinkParameter);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.label1);

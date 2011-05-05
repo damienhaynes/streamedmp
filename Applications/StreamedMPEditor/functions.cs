@@ -528,7 +528,7 @@ namespace StreamedMPEditor
     private void disableItemControls()
     {
       itemProperties.Enabled = false;
-      itemProperties.Height = 153;
+      //itemProperties.Height = 153;
       backgroundImages.Enabled = false;
       addButton.Enabled = false;
       removeButton.Enabled = true;
@@ -542,10 +542,10 @@ namespace StreamedMPEditor
       backgroundImages.Enabled = true;
       addButton.Enabled = true;
       removeButton.Enabled = false;
-      if (movPicsCategoryCombo.Visible && itemProperties.Enabled)
-        itemProperties.Height = 253;
-      else
-        itemProperties.Height = 153;
+      //if (movPicsCategoryCombo.Visible && itemProperties.Enabled)
+      //  itemProperties.Height = 253;
+      //else
+      //  itemProperties.Height = 153;
     }
 
     private void reloadBackgroundItems()
