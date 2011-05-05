@@ -61,6 +61,7 @@
       this.enableFiveDayWeather = new System.Windows.Forms.CheckBox();
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
       this.itemProperties = new System.Windows.Forms.GroupBox();
+      this.linkClearCategories = new System.Windows.Forms.LinkLabel();
       this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btMenuIcon = new System.Windows.Forms.Button();
@@ -268,6 +269,8 @@
       this.groupBox5 = new System.Windows.Forms.GroupBox();
       this.lbActiveSplashScreen = new System.Windows.Forms.Label();
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
+      this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+      this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -715,6 +718,7 @@
       // 
       // itemProperties
       // 
+      this.itemProperties.Controls.Add(this.linkClearCategories);
       this.itemProperties.Controls.Add(this.movPicsCategoryCombo);
       this.itemProperties.Controls.Add(this.cbOnlineVideosReturn);
       this.itemProperties.Controls.Add(this.btMenuIcon);
@@ -732,6 +736,18 @@
       this.itemProperties.TabIndex = 8;
       this.itemProperties.TabStop = false;
       this.itemProperties.Text = "Item properties";
+      // 
+      // linkClearCategories
+      // 
+      this.linkClearCategories.AutoSize = true;
+      this.linkClearCategories.Location = new System.Drawing.Point(278, 101);
+      this.linkClearCategories.Name = "linkClearCategories";
+      this.linkClearCategories.Size = new System.Drawing.Size(30, 13);
+      this.linkClearCategories.TabIndex = 107;
+      this.linkClearCategories.TabStop = true;
+      this.linkClearCategories.Text = "clear";
+      this.linkClearCategories.Visible = false;
+      this.linkClearCategories.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkClearCategories_LinkClicked);
       // 
       // movPicsCategoryCombo
       // 
@@ -3348,6 +3364,9 @@
     private System.Windows.Forms.Panel panel3;
     private System.Windows.Forms.CheckBox cbContextLabelBelow;
     private Cornerstone.GUI.Controls.FilterComboBox movPicsCategoryCombo;
+    private System.Windows.Forms.LinkLabel linkClearCategories;
+    private System.ComponentModel.BackgroundWorker backgroundWorker1;
+    private System.ComponentModel.BackgroundWorker backgroundWorker2;
   }
 }
 
