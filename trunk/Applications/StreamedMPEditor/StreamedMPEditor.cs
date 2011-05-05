@@ -1138,15 +1138,12 @@ namespace StreamedMPEditor
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       cbOnlineVideosReturn.Visible = false;
 
-      if (movPicsCategoryCombo.Visible && mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
-      {
-        int id = 0;
-        Int32.TryParse(mnuItem.hyperlinkParameter, out id);
-        movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
-      }
-
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
+        cboParameterViews.Visible = true;
+        lbParameterView.Visible = true;
+        movPicsCategoryCombo.Visible = false;
+
         switch (mnuItem.hyperlink)
         {
           case tvseriesSkinID:
@@ -1186,17 +1183,25 @@ namespace StreamedMPEditor
             }
             cbOnlineVideosReturn.Visible = true;
             break;
+          case movingPicturesSkinID:
+            movPicsCategoryCombo.Visible = true;
+            cboParameterViews.Visible = false;
+            if (mnuItem.hyperlinkParameter != "false")
+            {
+              int id = 0;
+              Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+              movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+            }
+            break;
           default:
             break;
         }
-        cboParameterViews.Visible = true;
-        lbParameterView.Visible = true;
-
       }
       else
       {
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
+        movPicsCategoryCombo.Visible = false;
       }
 
       bgBox.Text = mnuItem.bgFolder;

@@ -323,17 +323,22 @@ namespace StreamedMPEditor
       if (pluginTakesParameter(selectedWindowID.Text))
       {
         cboParameterViews.Visible = true;
+        movPicsCategoryCombo.Visible = false;
         lbParameterView.Visible = true;
         if (selectedWindowID.Text == onlineVideosSkinID)
           cbOnlineVideosReturn.Visible = true;
         if (selectedWindowID.Text == movingPicturesSkinID)
+        {
+          cboParameterViews.Visible = false;
           movPicsCategoryCombo.Visible = true;
+        }
       }
       else
       {
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
+        movPicsCategoryCombo.Visible = false;
       }
 
       switch (selectedWindowID.Text)
