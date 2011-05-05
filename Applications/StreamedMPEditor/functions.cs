@@ -2172,6 +2172,7 @@ namespace StreamedMPEditor
     public class prettyItem
     {
       public string name;
+      public string nameExtension;
       public string folder;
       public string fanartProperty;
       public bool fanartHandlerEnabled;

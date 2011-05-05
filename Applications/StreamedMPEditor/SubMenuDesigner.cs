@@ -96,7 +96,10 @@ namespace StreamedMPEditor
       // Load Pretty filenames list
       foreach (formStreamedMpEditor.prettyItem p in formStreamedMpEditor.prettyItems)
       {
-        prettyFileNames.Add(p.name);
+        if (!String.IsNullOrEmpty(p.nameExtension))
+          prettyFileNames.Add(p.name + p.nameExtension);
+        else
+          prettyFileNames.Add(p.name);
       }
 
       // Default to displaying pretty names

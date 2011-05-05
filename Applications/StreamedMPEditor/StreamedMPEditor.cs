@@ -695,7 +695,10 @@ namespace StreamedMPEditor
         // Load Pretty filenames list
         foreach (prettyItem p in prettyItems)
         {
-          prettyFileNames.Add(p.name);
+          if (!String.IsNullOrEmpty(p.nameExtension))
+            prettyFileNames.Add(p.name + p.nameExtension);
+          else
+            prettyFileNames.Add(p.name);
         }
 
         // Default to displaying pretty names
