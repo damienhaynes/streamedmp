@@ -1095,6 +1095,7 @@ namespace StreamedMPEditor
       selectedWindow.Text = string.Empty;
       selectedWindowID.Text = string.Empty;
       cboParameterViews.Text = string.Empty;
+      ovTxtSearch.Text = string.Empty;
       lbParameterView.Visible = false;
       cbOnlineVideosReturn.Visible = false;
       ovTxtSearch.Visible = false;
@@ -1184,6 +1185,8 @@ namespace StreamedMPEditor
             if (mnuItem.hyperlinkParameter != "false")
             {
               cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
+              ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
+
               if (mnuItem.hyperlinkParameterOption == "Root")
                 cbOnlineVideosReturn.Checked = true;
                else
