@@ -36,6 +36,8 @@
       this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btClearParameter = new System.Windows.Forms.Button();
+      this.lblSearch = new System.Windows.Forms.Label();
+      this.txtSearch = new System.Windows.Forms.TextBox();
       this.gbHyperlinkParameter.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -68,7 +70,7 @@
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(10, 127);
+      this.btSaveAndClose.Location = new System.Drawing.Point(12, 131);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(132, 23);
       this.btSaveAndClose.TabIndex = 5;
@@ -78,13 +80,15 @@
       // 
       // gbHyperlinkParameter
       // 
+      this.gbHyperlinkParameter.Controls.Add(this.txtSearch);
+      this.gbHyperlinkParameter.Controls.Add(this.lblSearch);
       this.gbHyperlinkParameter.Controls.Add(this.movPicsCategoryCombo);
       this.gbHyperlinkParameter.Controls.Add(this.cbOnlineVideosReturn);
       this.gbHyperlinkParameter.Controls.Add(this.btClearParameter);
       this.gbHyperlinkParameter.Controls.Add(this.cboViews);
       this.gbHyperlinkParameter.Location = new System.Drawing.Point(148, 39);
       this.gbHyperlinkParameter.Name = "gbHyperlinkParameter";
-      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 111);
+      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 127);
       this.gbHyperlinkParameter.TabIndex = 6;
       this.gbHyperlinkParameter.TabStop = false;
       this.gbHyperlinkParameter.Text = "Hyperlink Parameter:";
@@ -104,7 +108,7 @@
       // cbOnlineVideosReturn
       // 
       this.cbOnlineVideosReturn.AutoSize = true;
-      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(6, 46);
+      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(11, 72);
       this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
       this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
       this.cbOnlineVideosReturn.TabIndex = 5;
@@ -113,7 +117,7 @@
       // 
       // btClearParameter
       // 
-      this.btClearParameter.Location = new System.Drawing.Point(6, 75);
+      this.btClearParameter.Location = new System.Drawing.Point(6, 92);
       this.btClearParameter.Name = "btClearParameter";
       this.btClearParameter.Size = new System.Drawing.Size(102, 23);
       this.btClearParameter.TabIndex = 4;
@@ -121,11 +125,27 @@
       this.btClearParameter.UseVisualStyleBackColor = true;
       this.btClearParameter.Click += new System.EventHandler(this.btClearParameter_Click);
       // 
+      // lblSearch
+      // 
+      this.lblSearch.AutoSize = true;
+      this.lblSearch.Location = new System.Drawing.Point(8, 49);
+      this.lblSearch.Name = "lblSearch";
+      this.lblSearch.Size = new System.Drawing.Size(44, 13);
+      this.lblSearch.TabIndex = 108;
+      this.lblSearch.Text = "Search:";
+      // 
+      // txtSearch
+      // 
+      this.txtSearch.Location = new System.Drawing.Point(59, 46);
+      this.txtSearch.Name = "txtSearch";
+      this.txtSearch.Size = new System.Drawing.Size(196, 20);
+      this.txtSearch.TabIndex = 109;      
+      // 
       // SubItemProperties
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(424, 160);
+      this.ClientSize = new System.Drawing.Size(424, 173);
       this.Controls.Add(this.gbHyperlinkParameter);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.label1);
@@ -151,5 +171,7 @@
     private System.Windows.Forms.Button btClearParameter;
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
     private Cornerstone.GUI.Controls.FilterComboBox movPicsCategoryCombo;
+    private System.Windows.Forms.TextBox txtSearch;
+    private System.Windows.Forms.Label lblSearch;
   }
 }

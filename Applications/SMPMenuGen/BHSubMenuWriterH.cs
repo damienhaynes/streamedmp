@@ -137,7 +137,7 @@ namespace SMPMenuGen
           switch (parentMenu.subMenuLevel1[j].hyperlink)
           {
             case onlineVideosSkinID:
-              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + parentMenu.subMenuLevel1[j].hyperlinkParameterSearch + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               break;
             case movingPicturesSkinID:
               localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
@@ -295,7 +295,7 @@ namespace SMPMenuGen
           switch (parentMenu.subMenuLevel2[j].hyperlink)
           {
             case onlineVideosSkinID:
-              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + parentMenu.subMenuLevel1[j].hyperlinkParameterSearch + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               break;
             case movingPicturesSkinID:
               localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";

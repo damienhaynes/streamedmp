@@ -33,6 +33,8 @@ namespace StreamedMPEditor
 
       cbOnlineVideosReturn.Visible = false;
       movPicsCategoryCombo.Visible = false;
+      lblSearch.Visible = false;
+      txtSearch.Visible = false;
 
       switch (skinFileID)
       {
@@ -50,6 +52,8 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.onlineVideosSkinID:
           cbOnlineVideosReturn.Visible = true;
+          lblSearch.Visible = true;
+          txtSearch.Visible = true;
           foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosViews)
           {
             cboViews.Items.Add(mvv.Value);
@@ -104,6 +108,18 @@ namespace StreamedMPEditor
       set
       {
         cboViews.Text = value;
+      }
+    }
+
+    public string onlineVideosSearchString
+    {
+      get
+      {
+        return txtSearch.Text;
+      }
+      set
+      {
+        txtSearch.Text = value;
       }
     }
 
@@ -311,12 +327,16 @@ namespace StreamedMPEditor
         movPicsCategoryCombo.SelectedIndex = -1;
       }
       else
+      {
         cboViews.Text = string.Empty;
+        txtSearch.Text = string.Empty;
+      }
     }
 
 
     private void cboViews_SelectedIndexChanged(object sender, EventArgs e)
     {
+      txtSearch.Text = string.Empty;
       if (initialIndex != -1 && (tbItemDisplayName.Text == baseName || initialIndex != cboViews.SelectedIndex))
       {
         //TVSeries
@@ -344,5 +364,6 @@ namespace StreamedMPEditor
         tbItemDisplayName.Text = movPicsCategoryCombo.Text;
 
     }
+
   }
 }
