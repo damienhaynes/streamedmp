@@ -316,7 +316,6 @@ namespace StreamedMPEditor
       bgBox.Text = prettyItems[index].folder;
       cboFanartProperty.Text = prettyItems[index].fanartProperty;
       cbItemFanartHandlerEnable.Checked = prettyItems[index].fanartHandlerEnabled;
-      isWeather.Checked = prettyItems[index].isweather;
       selectedWindow.Text = prettyItems[index].xmlfile;
       selectedWindowID.Text = prettyItems[index].id;
       buttonTexture.MenuItem = prettyItems[index].name;
@@ -327,7 +326,11 @@ namespace StreamedMPEditor
         movPicsCategoryCombo.Visible = false;
         lbParameterView.Visible = true;
         if (selectedWindowID.Text == onlineVideosSkinID)
+        {
           cbOnlineVideosReturn.Visible = true;
+          ovTxtSearch.Visible = true;
+          lbSearch.Visible = true;
+        }
         if (selectedWindowID.Text == movingPicturesSkinID)
         {
           cboParameterViews.Visible = false;
@@ -340,6 +343,8 @@ namespace StreamedMPEditor
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
+        ovTxtSearch.Visible = false;
+        lbSearch.Visible = false;
         movPicsCategoryCombo.Visible = false;
       }
 
@@ -375,8 +380,6 @@ namespace StreamedMPEditor
       cbItemFanartHandlerEnable.Checked = false;
       cbEnableMusicNowPlayingFanart.Checked = false;
       cboContextLabel.Text = "";
-      isWeather.Checked = false;
-
     }
 
     private void BasicHomeFromTemplate()
@@ -2112,6 +2115,7 @@ namespace StreamedMPEditor
       public string hyperlink;
       public string hyperlinkParameter;
       public string hyperlinkParameterOption;
+      public string hyperlinkParameterSearch;
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
