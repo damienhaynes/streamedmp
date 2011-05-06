@@ -10,7 +10,7 @@
     <xmlfile>TVSeries</xmlfile>
     <id>9811</id>
     <takesparmeter>true</takesparmeter>
-    <pluginparmeter>All</pluginparmeter>
+    <pluginparmeter></pluginparmeter>
   </item>
 
   <item>
@@ -57,13 +57,39 @@
   <item>
     <context>WATCH</context>
     <name>TRAILERS</name>
+    <name2> (ONLINE VIDEOS)</name2>
+    <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>myonlinevideos</xmlfile>
+    <id>4755</id>
+    <takesparmeter>true</takesparmeter>
+    <pluginparmeter>iTunes Movie Trailers</pluginparmeter>
+  </item>
+
+  <item>
+    <context>WATCH</context>
+    <name>YOUTUBE</name>
+    <name2> (ONLINE VIDEOS)</name2>
+    <folder>movies</folder>
+    <fanartproperty>movie</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>myonlinevideos</xmlfile>
+    <id>4755</id>
+    <takesparmeter>true</takesparmeter>
+    <pluginparmeter>YouTube</pluginparmeter>
+  </item>
+  
+  <!--<item>
+    <context>WATCH</context>
+    <name>TRAILERS</name>
     <name2> (MY TRAILERS)</name2>
     <folder>movies</folder>
     <fanartproperty>movie</fanartproperty>
     <fanarthandlerenabled>False</fanarthandlerenabled>
     <xmlfile>mytrailers</xmlfile>
     <id>5900</id>
-  </item>
+  </item>-->
 
   <item>
     <context>WATCH YOUR</context>
@@ -75,7 +101,7 @@
     <xmlfile>myonlinevideos</xmlfile>
     <id>4755</id>
     <takesparmeter>true</takesparmeter>
-    <pluginparmeter>All</pluginparmeter>
+    <pluginparmeter></pluginparmeter>
   </item>
   
   <item>

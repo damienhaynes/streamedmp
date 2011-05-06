@@ -358,6 +358,7 @@ namespace StreamedMPEditor
           cboParameterViews.Text = string.Empty;
           break;
       }
+      cboParameterViews.SelectedIndex = -1;
       if (prettyItems[index].takesParmeter)
         cboParameterViews.Text = prettyItems[index].pluginParmeter;
 
