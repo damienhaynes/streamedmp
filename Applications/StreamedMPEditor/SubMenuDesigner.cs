@@ -352,7 +352,30 @@ namespace StreamedMPEditor
       }
     }
 
+    
+    private void lboxSubMenuLevel1_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      if (((ListBox)sender).SelectedIndex == -1) return;
+      ItemOneProperties();
+    }
+
+    private void lboxSubMenuLevel2_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+      if (((ListBox)sender).SelectedIndex == -1) return;
+      ItemTwoProperties();
+    }
+
     private void btEditItemSubMenu1_Click(object sender, EventArgs e)
+    {
+      ItemOneProperties(); 
+    }
+
+    private void btEditSubMenu2_Click(object sender, EventArgs e)
+    {
+      ItemTwoProperties();
+    }
+
+    void ItemOneProperties()
     {
       formStreamedMpEditor.changeOutstanding = false;
       if (lboxSubMenuLevel1.SelectedIndex != -1)
@@ -473,7 +496,7 @@ namespace StreamedMPEditor
       }
     }
 
-    private void btEditSubMenu2_Click(object sender, EventArgs e)
+    void ItemTwoProperties()
     {
       formStreamedMpEditor.changeOutstanding = false;
       if (lboxSubMenuLevel2.SelectedIndex != -1)
@@ -499,15 +522,15 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel2[index].hyperlinkParameter;
             break;
-        }      
+        }
         itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
         itemProperties.initialIndex = index;
         itemProperties.ShowDialog();
 
         if (itemProperties.DisplayName != subMenuLevel2[index].displayName)
         {
-              if (!formStreamedMpEditor.changeOutstanding)
-          subMenuLevel2[index].displayName = itemProperties.DisplayName;
+          if (!formStreamedMpEditor.changeOutstanding)
+            subMenuLevel2[index].displayName = itemProperties.DisplayName;
           formStreamedMpEditor.changeOutstanding = true;
         }
         //
@@ -710,5 +733,6 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
   }
 }
