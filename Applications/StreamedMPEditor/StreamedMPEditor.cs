@@ -180,6 +180,7 @@ namespace StreamedMPEditor
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
     public const string onlineVideosSkinID = "4755";
+    public const string weatherSkinID = "2600";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
@@ -616,7 +617,6 @@ namespace StreamedMPEditor
           cboContextLabel.Text = null;
           tbItemName.Text = null;
           bgBox.Text = null;
-          isWeather.Checked = false;
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
 
@@ -786,7 +786,7 @@ namespace StreamedMPEditor
 
         item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
-        item.isWeather = isWeather.Checked;
+        item.isWeather = (item.hyperlink == weatherSkinID);
         item.disableBGSharing = disableBGSharing.Checked;
 
         // If using 3D backgrounds disable BG sharing for item.
@@ -806,6 +806,7 @@ namespace StreamedMPEditor
               break;
             case onlineVideosSkinID:
               item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+              item.hyperlinkParameterSearch = ovTxtSearch.Text;
               break;
             case movingPicturesSkinID:
               if (movPicsCategoryCombo.SelectedIndex != -1)
@@ -927,6 +928,7 @@ namespace StreamedMPEditor
           break;
         case onlineVideosSkinID:
           cboParameterViews.DataSource = theOnlineVideosViews;
+          ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
           if (mnuItem.hyperlinkParameter != "false")
             cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
           else
@@ -953,7 +955,6 @@ namespace StreamedMPEditor
       cbItemFanartHandlerEnable.Checked = mnuItem.fanartHandlerEnabled;
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
-      isWeather.Checked = mnuItem.isWeather;
       selectedWindow.Text = xmlFiles.Text;
       selectedWindowID.Text = mnuItem.hyperlink;
       setMostRecentDisplayOption(mnuItem.showMostRecent);
@@ -1001,7 +1002,10 @@ namespace StreamedMPEditor
             item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
 
           if (item.hyperlink == onlineVideosSkinID)
+          {
             item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+            item.hyperlinkParameterSearch = ovTxtSearch.Text;
+          }
         }
         else
         {
@@ -1024,7 +1028,7 @@ namespace StreamedMPEditor
         if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
           item.disableBGSharing = true;
 
-        item.isWeather = isWeather.Checked;
+        item.isWeather = (item.hyperlink == weatherSkinID);
         item.showMostRecent = getMostRecentDisplayOption();
 
         if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
@@ -1082,7 +1086,6 @@ namespace StreamedMPEditor
       {
         tbItemName.Text = string.Empty;
         cboContextLabel.Text = string.Empty;
-        isWeather.Checked = false;
         bgBox.SelectedIndex = -1;
         cboFanartProperty.SelectedIndex = -1;
         saveButton.Enabled = false;
@@ -1094,6 +1097,8 @@ namespace StreamedMPEditor
       cboParameterViews.Text = string.Empty;
       lbParameterView.Visible = false;
       cbOnlineVideosReturn.Visible = false;
+      ovTxtSearch.Visible = false;
+      lbSearch.Visible = false;
       movPicsCategoryCombo.SelectedIndex = -1;
     }
 
@@ -1143,6 +1148,8 @@ namespace StreamedMPEditor
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       cbOnlineVideosReturn.Visible = false;
+      ovTxtSearch.Visible = false;
+      lbSearch.Visible = false;
 
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
@@ -1179,7 +1186,7 @@ namespace StreamedMPEditor
               cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
               if (mnuItem.hyperlinkParameterOption == "Root")
                 cbOnlineVideosReturn.Checked = true;
-              else
+               else
                 cbOnlineVideosReturn.Checked = false;
             }
             else
@@ -1188,6 +1195,8 @@ namespace StreamedMPEditor
               cboParameterViews.SelectedIndex = -1;
             }
             cbOnlineVideosReturn.Visible = true;
+            ovTxtSearch.Visible = true;
+            lbSearch.Visible = true;
             break;
           case movingPicturesSkinID:
             movPicsCategoryCombo.Visible = true;
@@ -1266,11 +1275,17 @@ namespace StreamedMPEditor
         cboParameterViews.Visible = true;
         lbParameterView.Visible = true;
         if (selectedWindowID.Text == onlineVideosSkinID)
+        {
           cbOnlineVideosReturn.Visible = true;
+          ovTxtSearch.Visible = true;
+          lbSearch.Visible = true;
+        }
       }
       else
       {
         cboParameterViews.Visible = false;
+        ovTxtSearch.Visible = false;
+        lbSearch.Visible = false;
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
       }

@@ -70,7 +70,6 @@
       this.cancelCreateButton = new System.Windows.Forms.Button();
       this.cboContextLabel = new System.Windows.Forms.ComboBox();
       this.label18 = new System.Windows.Forms.Label();
-      this.isWeather = new System.Windows.Forms.CheckBox();
       this.label9 = new System.Windows.Forms.Label();
       this.tbItemName = new System.Windows.Forms.TextBox();
       this.btSwapListMain = new System.Windows.Forms.Button();
@@ -271,6 +270,8 @@
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+      this.lbSearch = new System.Windows.Forms.Label();
+      this.ovTxtSearch = new System.Windows.Forms.TextBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -718,6 +719,8 @@
       // 
       // itemProperties
       // 
+      this.itemProperties.Controls.Add(this.ovTxtSearch);
+      this.itemProperties.Controls.Add(this.lbSearch);
       this.itemProperties.Controls.Add(this.linkClearCategories);
       this.itemProperties.Controls.Add(this.movPicsCategoryCombo);
       this.itemProperties.Controls.Add(this.cbOnlineVideosReturn);
@@ -727,7 +730,6 @@
       this.itemProperties.Controls.Add(this.cancelCreateButton);
       this.itemProperties.Controls.Add(this.cboContextLabel);
       this.itemProperties.Controls.Add(this.label18);
-      this.itemProperties.Controls.Add(this.isWeather);
       this.itemProperties.Controls.Add(this.label9);
       this.itemProperties.Controls.Add(this.tbItemName);
       this.itemProperties.Location = new System.Drawing.Point(211, 6);
@@ -740,7 +742,7 @@
       // linkClearCategories
       // 
       this.linkClearCategories.AutoSize = true;
-      this.linkClearCategories.Location = new System.Drawing.Point(278, 101);
+      this.linkClearCategories.Location = new System.Drawing.Point(273, 130);
       this.linkClearCategories.Name = "linkClearCategories";
       this.linkClearCategories.Size = new System.Drawing.Size(30, 13);
       this.linkClearCategories.TabIndex = 107;
@@ -763,7 +765,7 @@
       // cbOnlineVideosReturn
       // 
       this.cbOnlineVideosReturn.AutoSize = true;
-      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(69, 101);
+      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(69, 130);
       this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
       this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
       this.cbOnlineVideosReturn.TabIndex = 105;
@@ -772,11 +774,11 @@
       // 
       // btMenuIcon
       // 
-      this.btMenuIcon.Location = new System.Drawing.Point(9, 124);
+      this.btMenuIcon.Location = new System.Drawing.Point(231, 46);
       this.btMenuIcon.Name = "btMenuIcon";
-      this.btMenuIcon.Size = new System.Drawing.Size(301, 23);
+      this.btMenuIcon.Size = new System.Drawing.Size(86, 23);
       this.btMenuIcon.TabIndex = 104;
-      this.btMenuIcon.Text = "Graphical Menu - Icon Selection";
+      this.btMenuIcon.Text = "Icon";
       this.btMenuIcon.UseVisualStyleBackColor = true;
       this.btMenuIcon.Click += new System.EventHandler(this.btMenuIcon_Click);
       // 
@@ -831,7 +833,7 @@
       this.cboContextLabel.Size = new System.Drawing.Size(148, 21);
       this.cboContextLabel.TabIndex = 10;
       this.toolTip1.SetToolTip(this.cboContextLabel, "The lable used above the menu item in the vertical default menu style.\r\n\r\nUsed in" +
-              ": Default Horizontal Menu");
+        ": Default Horizontal Menu");
       this.cboContextLabel.TextChanged += new System.EventHandler(this.cboContextLabels_TextChanged);
       // 
       // label18
@@ -842,16 +844,6 @@
       this.label18.Size = new System.Drawing.Size(36, 13);
       this.label18.TabIndex = 101;
       this.label18.Text = "La&bel:";
-      // 
-      // isWeather
-      // 
-      this.isWeather.AutoSize = true;
-      this.isWeather.Location = new System.Drawing.Point(233, 48);
-      this.isWeather.Name = "isWeather";
-      this.isWeather.Size = new System.Drawing.Size(78, 17);
-      this.isWeather.TabIndex = 12;
-      this.isWeather.Text = "Is Weather";
-      this.isWeather.UseVisualStyleBackColor = true;
       // 
       // label9
       // 
@@ -922,7 +914,7 @@
       this.richTextBox2.TabIndex = 122;
       this.richTextBox2.TabStop = false;
       this.richTextBox2.Text = "           To create new menu item\n  1. Select Menu Item from Dropdown.\n         " +
-          "                  OR\n  2. Select Skin file from List.";
+    "                  OR\n  2. Select Skin file from List.";
       // 
       // groupBox3
       // 
@@ -1404,7 +1396,7 @@
       this.cbOverlayFanart.TabIndex = 42;
       this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
       this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
-              "Music/Video overlay.");
+        "Music/Video overlay.");
       this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
       // cboLabelFont
@@ -1641,7 +1633,7 @@
       this.wrapString.TabIndex = 13;
       this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
       this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
-              " is not installed this option will be disabled.\r\n");
+        " is not installed this option will be disabled.\r\n");
       this.wrapString.UseVisualStyleBackColor = true;
       // 
       // noFocusAlpha
@@ -1742,7 +1734,7 @@
       this.txtFocusColour.TabIndex = 5;
       this.txtFocusColour.Text = "FFFFFF";
       this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
-              "olour choser.\r\n");
+        "olour choser.\r\n");
       // 
       // label16
       // 
@@ -3004,6 +2996,22 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
+      // lbSearch
+      // 
+      this.lbSearch.AutoSize = true;
+      this.lbSearch.Location = new System.Drawing.Point(19, 105);
+      this.lbSearch.Name = "lbSearch";
+      this.lbSearch.Size = new System.Drawing.Size(44, 13);
+      this.lbSearch.TabIndex = 108;
+      this.lbSearch.Text = "Search:";
+      // 
+      // ovTxtSearch
+      // 
+      this.ovTxtSearch.Location = new System.Drawing.Point(69, 102);
+      this.ovTxtSearch.Name = "ovTxtSearch";
+      this.ovTxtSearch.Size = new System.Drawing.Size(241, 20);
+      this.ovTxtSearch.TabIndex = 109;
+      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3146,7 +3154,6 @@
     private System.Windows.Forms.ComboBox bgBox;
     private System.Windows.Forms.Label labelImageFolder;
     private System.Windows.Forms.GroupBox itemProperties;
-    private System.Windows.Forms.CheckBox isWeather;
     private System.Windows.Forms.Label label9;
     private System.Windows.Forms.TextBox tbItemName;
     private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
@@ -3367,6 +3374,8 @@
     private System.Windows.Forms.LinkLabel linkClearCategories;
     private System.ComponentModel.BackgroundWorker backgroundWorker1;
     private System.ComponentModel.BackgroundWorker backgroundWorker2;
+    private System.Windows.Forms.TextBox ovTxtSearch;
+    private System.Windows.Forms.Label lbSearch;
   }
 }
 

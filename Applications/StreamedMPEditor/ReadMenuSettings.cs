@@ -512,10 +512,12 @@ namespace StreamedMPEditor
         mnuItem.hyperlink = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlink", nodelist);
         mnuItem.hyperlinkParameter = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlinkParameter", nodelist);
         mnuItem.hyperlinkParameterOption = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlinkParameterOption", nodelist);
+        mnuItem.hyperlinkParameterSearch = readEntryValue(menuTag, "menuitem" + i.ToString() + "hyperlinkParameterSearch", nodelist);
+        if (mnuItem.hyperlinkParameterSearch == "false")
+          mnuItem.hyperlinkParameterSearch = string.Empty;
         mnuItem.fanartHandlerEnabled = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanarthandlerenabled", nodelist));
         mnuItem.EnableMusicNowPlayingFanart = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "enablemusicnowplayingfanart", nodelist));
         mnuItem.isDefault = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isdefault", nodelist));
-        mnuItem.isWeather = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "isweather", nodelist));
         mnuItem.updateStatus = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "updatestatus", nodelist));
         mnuItem.disableBGSharing = bool.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "disableBGSharing", nodelist));
         mnuItem.id = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "id", nodelist));
@@ -527,6 +529,8 @@ namespace StreamedMPEditor
 
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
         mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
+        // If this is menu item is weather can be worked out from the hyperlink
+        mnuItem.isWeather = (mnuItem.hyperlink == weatherSkinID);      
         //
         // Graphical Menu Default Image Load
         //
@@ -534,9 +538,6 @@ namespace StreamedMPEditor
         {
           mnuItem.buttonTexture = setDefaultIcons(int.Parse(mnuItem.hyperlink),"Black");
         }
-
-
-
         //
         // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
         //
@@ -671,7 +672,6 @@ namespace StreamedMPEditor
 
         }
 
-        isWeather.Checked = mnuItem.isWeather;
         disableBGSharing.Checked = mnuItem.disableBGSharing;
 
         if (mnuItem.fanartHandlerEnabled)
