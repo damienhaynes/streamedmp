@@ -373,6 +373,7 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.onlineVideosSkinID:
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel1[index].hyperlinkParameterOption;
+            itemProperties.onlineVideosSearchString = subMenuLevel1[index].hyperlinkParameterSearch;
             break;
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel1[index].hyperlinkParameter;
@@ -439,6 +440,7 @@ namespace StreamedMPEditor
             {
               subMenuLevel1[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
               subMenuLevel1[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
+              subMenuLevel1[index].hyperlinkParameterSearch = itemProperties.onlineVideosSearchString;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
@@ -492,6 +494,7 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.onlineVideosSkinID:
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel2[index].hyperlinkParameterOption;
+            itemProperties.onlineVideosSearchString = subMenuLevel2[index].hyperlinkParameterSearch;
             break;
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel2[index].hyperlinkParameter;
@@ -558,6 +561,7 @@ namespace StreamedMPEditor
             {
               subMenuLevel2[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
               subMenuLevel2[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
+              subMenuLevel2[index].hyperlinkParameterSearch = itemProperties.onlineVideosSearchString;
               formStreamedMpEditor.changeOutstanding = true;
             }
             //MovingPictures

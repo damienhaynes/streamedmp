@@ -872,6 +872,7 @@ namespace SMPMenuGen
       public string hyperlink;
       public string hyperlinkParameter;
       public string hyperlinkParameterOption;
+      public string hyperlinkParameterSearch;
       public displayMostRecent showMostRecent;
     }
 
