@@ -397,6 +397,7 @@ namespace StreamedMPEditor
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel1[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel1[index].hyperlinkParameterOption;
             itemProperties.onlineVideosSearchString = subMenuLevel1[index].hyperlinkParameterSearch;
+            itemProperties.onlinevideosHyperlinkCategory = subMenuLevel1[index].hyperlinkParameterCategory;
             break;
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel1[index].hyperlinkParameter;
@@ -464,6 +465,7 @@ namespace StreamedMPEditor
               subMenuLevel1[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
               subMenuLevel1[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
               subMenuLevel1[index].hyperlinkParameterSearch = itemProperties.onlineVideosSearchString;
+              subMenuLevel1[index].hyperlinkParameterCategory = itemProperties.onlinevideosHyperlinkCategory;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
@@ -518,6 +520,7 @@ namespace StreamedMPEditor
             itemProperties.onlineVideosHypelinkParameter = subMenuLevel2[index].hyperlinkParameter;
             itemProperties.onlineVideosReturnOption = subMenuLevel2[index].hyperlinkParameterOption;
             itemProperties.onlineVideosSearchString = subMenuLevel2[index].hyperlinkParameterSearch;
+            itemProperties.onlinevideosHyperlinkCategory = subMenuLevel2[index].hyperlinkParameterCategory;
             break;
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel2[index].hyperlinkParameter;
@@ -585,6 +588,7 @@ namespace StreamedMPEditor
               subMenuLevel2[index].hyperlinkParameter = itemProperties.onlineVideosHypelinkParameter;
               subMenuLevel2[index].hyperlinkParameterOption = itemProperties.onlineVideosReturnOption;
               subMenuLevel2[index].hyperlinkParameterSearch = itemProperties.onlineVideosSearchString;
+              subMenuLevel2[index].hyperlinkParameterCategory = itemProperties.onlinevideosHyperlinkCategory;
               formStreamedMpEditor.changeOutstanding = true;
             }
             //MovingPictures
