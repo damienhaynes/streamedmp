@@ -93,8 +93,8 @@
       this.cboOnlineVideosCategories.FormattingEnabled = true;
       this.cboOnlineVideosCategories.Location = new System.Drawing.Point(74, 47);
       this.cboOnlineVideosCategories.Name = "cboOnlineVideosCategories";
-      this.cboOnlineVideosCategories.Size = new System.Drawing.Size(179, 21);
-      this.cboOnlineVideosCategories.TabIndex = 111;      
+      this.cboOnlineVideosCategories.Size = new System.Drawing.Size(173, 21);
+      this.cboOnlineVideosCategories.TabIndex = 111;
       // 
       // lblCategory
       // 
@@ -109,7 +109,7 @@
       // 
       this.txtSearch.Location = new System.Drawing.Point(74, 73);
       this.txtSearch.Name = "txtSearch";
-      this.txtSearch.Size = new System.Drawing.Size(179, 20);
+      this.txtSearch.Size = new System.Drawing.Size(173, 20);
       this.txtSearch.TabIndex = 109;
       // 
       // lblSearch
@@ -129,7 +129,7 @@
       this.movPicsCategoryCombo.IntegralHeight = false;
       this.movPicsCategoryCombo.Location = new System.Drawing.Point(18, 19);
       this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
-      this.movPicsCategoryCombo.Size = new System.Drawing.Size(235, 21);
+      this.movPicsCategoryCombo.Size = new System.Drawing.Size(229, 21);
       this.movPicsCategoryCombo.TabIndex = 107;
       this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
       // 

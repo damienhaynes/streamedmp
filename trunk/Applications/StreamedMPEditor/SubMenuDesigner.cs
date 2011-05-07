@@ -178,11 +178,11 @@ namespace StreamedMPEditor
           subItem.displayName = formStreamedMpEditor.prettyItems[index].name;
           subItem.xmlFileName = formStreamedMpEditor.prettyItems[index].xmlfile;
           subItem.hyperlink = formStreamedMpEditor.prettyItems[index].id;
+          subItem.hyperlinkParameter = formStreamedMpEditor.prettyItems[index].pluginParmeter;
         }
       }
       formStreamedMpEditor.changeOutstanding = true;
-      subItem.baseDisplayName = subItem.displayName;
-      subItem.hyperlinkParameter = "false";
+      subItem.baseDisplayName = subItem.displayName;      
       subMenuLevel1.Add(subItem);
       lboxSubMenuLevel1.Items.Add(subItem.displayName);
     }
@@ -211,11 +211,11 @@ namespace StreamedMPEditor
           subItem.displayName = formStreamedMpEditor.prettyItems[index].name;
           subItem.xmlFileName = formStreamedMpEditor.prettyItems[index].xmlfile;
           subItem.hyperlink = formStreamedMpEditor.prettyItems[index].id;
+          subItem.hyperlinkParameter = formStreamedMpEditor.prettyItems[index].pluginParmeter;
         }
       }
       formStreamedMpEditor.changeOutstanding = true;
-      subItem.baseDisplayName = subItem.displayName;
-      subItem.hyperlinkParameter = "false";
+      subItem.baseDisplayName = subItem.displayName;      
       subMenuLevel2.Add(subItem);
       lboxSubMenuLevel2.Items.Add(subItem.displayName);
     }
