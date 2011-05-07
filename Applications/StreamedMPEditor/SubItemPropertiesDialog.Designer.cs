@@ -131,6 +131,7 @@
       this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
       this.movPicsCategoryCombo.Size = new System.Drawing.Size(229, 21);
       this.movPicsCategoryCombo.TabIndex = 107;
+      this.movPicsCategoryCombo.DropDown += new System.EventHandler(this.movPicsCategoryCombo_DropDown);
       this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
       // 
       // cbOnlineVideosReturn
