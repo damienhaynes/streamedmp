@@ -570,6 +570,10 @@ namespace StreamedMPEditor
               subItem.hyperlinkParameterOption = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameterOption", nodelist);
               subItem.hyperlinkParameterSearch = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameterSearch", nodelist);
               subItem.hyperlinkParameterCategory = readEntryValue(menuTag, "submenu" + i.ToString() + "1subitem" + k.ToString() + "hyperlinkParameterCategory", nodelist);
+              if (subItem.hyperlinkParameterSearch == "false")
+                subItem.hyperlinkParameterSearch = string.Empty;
+              if (subItem.hyperlinkParameterCategory == "false")
+                subItem.hyperlinkParameterCategory = string.Empty;
               //
               // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
               //
@@ -629,6 +633,10 @@ namespace StreamedMPEditor
               subItem.hyperlinkParameterOption = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameterOption", nodelist);
               subItem.hyperlinkParameterSearch = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameterSearch", nodelist);
               subItem.hyperlinkParameterCategory = readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "hyperlinkParameterCategory", nodelist);
+              if (subItem.hyperlinkParameterSearch == "false")
+                subItem.hyperlinkParameterSearch = string.Empty;
+              if (subItem.hyperlinkParameterCategory == "false")
+                subItem.hyperlinkParameterCategory = string.Empty;
               //
               // Convert any 504 skinID's back to 501 (they will be converted back if there is a hyperlink parameter)
               //
