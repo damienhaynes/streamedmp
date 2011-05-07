@@ -2301,6 +2301,13 @@ namespace StreamedMPEditor
       ClearMovingPicturesCategories();
     }
 
+    private void movPicsCategoryCombo_DropDown(object sender, EventArgs e)
+    {
+      if (movPicsCategoryCombo.SelectedIndex == -1 && MovingPicturesCore.Settings.CategoriesEnabled)
+      {
+        movPicsCategoryCombo.SelectedNode = MovingPicturesCore.Settings.CategoriesMenu.RootNodes[0];
+      }
+    }
 
     void ClearMovingPicturesCategories()
     {

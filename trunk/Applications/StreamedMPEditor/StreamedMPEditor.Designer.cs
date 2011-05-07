@@ -755,12 +755,12 @@
       this.linkClearCategories.Visible = false;
       this.linkClearCategories.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkClearCategories_LinkClicked);
       // 
-      // cbOnlineVideosCategories
+      // cboOnlineVideosCategories
       // 
       this.cboOnlineVideosCategories.DropDownWidth = 150;
       this.cboOnlineVideosCategories.FormattingEnabled = true;
       this.cboOnlineVideosCategories.Location = new System.Drawing.Point(69, 101);
-      this.cboOnlineVideosCategories.Name = "cbOnlineVideosCategories";
+      this.cboOnlineVideosCategories.Name = "cboOnlineVideosCategories";
       this.cboOnlineVideosCategories.Size = new System.Drawing.Size(95, 21);
       this.cboOnlineVideosCategories.TabIndex = 111;
       // 
@@ -799,6 +799,7 @@
       this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
       this.movPicsCategoryCombo.Size = new System.Drawing.Size(241, 21);
       this.movPicsCategoryCombo.TabIndex = 106;
+      this.movPicsCategoryCombo.DropDown += new System.EventHandler(this.movPicsCategoryCombo_DropDown);
       // 
       // cbOnlineVideosReturn
       // 
