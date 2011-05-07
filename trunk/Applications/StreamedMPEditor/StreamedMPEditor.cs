@@ -2472,16 +2472,18 @@ namespace StreamedMPEditor
         OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
         onlineVideos.LoadSites();
 
-        foreach (SiteSettings site in onlineVideos.SiteSettingsList)
+        // just get a list of enabled sites
+        foreach (SiteSettings site in onlineVideos.SiteSettingsList.Where(s => s.IsEnabled))
         {
-          onlineVideosCategories.Add(site.Name, site.Categories.Select(c => c.Name).ToList());
+          // get any categories for site
+          List<string> categories = new List<string>();
+          if (site.Categories != null)
+            categories = site.Categories.Select(c => c.Name).ToList();            
+          onlineVideosCategories.Add(site.Name, categories);
 
-          // just get a list of enabled sites
-          if (site.IsEnabled)
-          {
-            KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Name, site.Name);
-            onlineVideosViews.Add(view);
-          }
+          // add to list of sites
+          KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Name, site.Name);
+          onlineVideosViews.Add(view);
         }
 
       }
