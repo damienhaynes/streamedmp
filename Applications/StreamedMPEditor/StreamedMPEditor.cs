@@ -298,6 +298,7 @@ namespace StreamedMPEditor
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
+    public static Dictionary<string, List<string>> onlineVideosCategories = new Dictionary<string, List<string>>();
 
     string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
     string menuThemeName = "3DBackgrounds";
@@ -807,6 +808,7 @@ namespace StreamedMPEditor
             case onlineVideosSkinID:
               item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
               item.hyperlinkParameterSearch = ovTxtSearch.Text;
+              item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
               break;
             case movingPicturesSkinID:
               if (movPicsCategoryCombo.SelectedIndex != -1)
@@ -854,6 +856,9 @@ namespace StreamedMPEditor
         tbItemName.Text = string.Empty;
         bgBox.Text = string.Empty;
         cboContextLabel.Text = string.Empty;
+        cboParameterViews.Text = string.Empty;
+        cboOnlineVideosCategories.Text = string.Empty;
+        ovTxtSearch.Text = string.Empty;
 
         if (itemsOnMenubar.Items.Count > 2)
           btGenerateMenu.Enabled = true;
@@ -895,6 +900,7 @@ namespace StreamedMPEditor
       buttonTexture.MenuItem = mnuItem.name;
       buttonTexture.menIndex = index;
       cbOnlineVideosReturn.Checked = false;
+      cboOnlineVideosCategories.Visible = false;
 
       if (mnuItem.hyperlinkParameterOption == "Root")
         cbOnlineVideosReturn.Checked = true;
@@ -928,6 +934,7 @@ namespace StreamedMPEditor
           break;
         case onlineVideosSkinID:
           cboParameterViews.DataSource = theOnlineVideosViews;
+          cboOnlineVideosCategories.Visible = true;
           ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
           if (mnuItem.hyperlinkParameter != "false")
             cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
@@ -1005,6 +1012,7 @@ namespace StreamedMPEditor
           {
             item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
             item.hyperlinkParameterSearch = ovTxtSearch.Text;
+            item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
           }
         }
         else
@@ -1065,6 +1073,8 @@ namespace StreamedMPEditor
         changeOutstanding = true;
         cboParameterViews.Visible = false;
         linkClearCategories.Visible = false;
+        lblCategories.Visible = false;
+        cboOnlineVideosCategories.Visible = false;
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
           displayMenuIcon(item.buttonTexture);
       }
@@ -1100,6 +1110,7 @@ namespace StreamedMPEditor
       cbOnlineVideosReturn.Visible = false;
       ovTxtSearch.Visible = false;
       lbSearch.Visible = false;
+      lblCategories.Visible = false;
       movPicsCategoryCombo.SelectedIndex = -1;
     }
 
@@ -1149,8 +1160,10 @@ namespace StreamedMPEditor
       cbEnableMusicNowPlayingFanart.Checked = mnuItem.EnableMusicNowPlayingFanart;
       disableBGSharing.Checked = mnuItem.disableBGSharing;
       cbOnlineVideosReturn.Visible = false;
+      cboOnlineVideosCategories.Visible = false;
       ovTxtSearch.Visible = false;
       lbSearch.Visible = false;
+      lblCategories.Visible = false;
 
       if (pluginTakesParameter(mnuItem.hyperlink))
       {
@@ -1185,7 +1198,9 @@ namespace StreamedMPEditor
             if (mnuItem.hyperlinkParameter != "false")
             {
               cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
+              cboOnlineVideosCategories.Text = mnuItem.hyperlinkParameterCategory;
               ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
+              cboOnlineVideosCategories.Text = mnuItem.hyperlinkParameterCategory;
 
               if (mnuItem.hyperlinkParameterOption == "Root")
                 cbOnlineVideosReturn.Checked = true;
@@ -1196,10 +1211,14 @@ namespace StreamedMPEditor
             {
               cboParameterViews.Text = string.Empty;
               cboParameterViews.SelectedIndex = -1;
+              cboOnlineVideosCategories.Text = string.Empty;
+              cboOnlineVideosCategories.SelectedIndex = -1;
             }
             cbOnlineVideosReturn.Visible = true;
+            cboOnlineVideosCategories.Visible = true;
             ovTxtSearch.Visible = true;
             lbSearch.Visible = true;
+            lblCategories.Visible = true;
             break;
           case movingPicturesSkinID:
             movPicsCategoryCombo.Visible = true;
@@ -1280,8 +1299,10 @@ namespace StreamedMPEditor
         if (selectedWindowID.Text == onlineVideosSkinID)
         {
           cbOnlineVideosReturn.Visible = true;
+          cboOnlineVideosCategories.Visible = true;
           ovTxtSearch.Visible = true;
           lbSearch.Visible = true;
+          lblCategories.Visible = true;
         }
       }
       else
@@ -1289,8 +1310,10 @@ namespace StreamedMPEditor
         cboParameterViews.Visible = false;
         ovTxtSearch.Visible = false;
         lbSearch.Visible = false;
+        lblCategories.Visible = false;
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
+        cboOnlineVideosCategories.Visible = false;
       }
     }
 
@@ -1890,7 +1913,22 @@ namespace StreamedMPEditor
 
     private void cboParameterViews_SelectedIndexChanged(object sender, EventArgs e)
     {
-      //cboContextLabel.Text = tvseriesViews[cboTvSeriesView.SelectedIndex].Value.ToUpper();
+      string siteName = ((ComboBox)sender).Text;
+      LoadOnlineVideosCategories(siteName);
+    }
+
+    void LoadOnlineVideosCategories(string site)
+    {
+      try
+      {
+        if (theOnlineVideosViews.Contains(site))
+        {
+          // load onlinevideo categories
+          cboOnlineVideosCategories.DataSource = onlineVideosCategories[site];
+        }
+        cboOnlineVideosCategories.SelectedIndex = -1;
+      }
+      catch { }
     }
 
     private void btConfigureFreeDriveSpace_Click(object sender, EventArgs e)
@@ -2263,6 +2301,7 @@ namespace StreamedMPEditor
       ClearMovingPicturesCategories();
     }
 
+
     void ClearMovingPicturesCategories()
     {
       movPicsCategoryCombo.Text = string.Empty;
@@ -2428,6 +2467,8 @@ namespace StreamedMPEditor
 
         foreach (SiteSettings site in onlineVideos.SiteSettingsList)
         {
+          onlineVideosCategories.Add(site.Name, site.Categories.Select(c => c.Name).ToList());
+
           // just get a list of enabled sites
           if (site.IsEnabled)
           {

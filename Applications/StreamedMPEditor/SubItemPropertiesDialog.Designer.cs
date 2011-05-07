@@ -28,27 +28,20 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.tbItemDisplayName = new System.Windows.Forms.TextBox();
       this.label1 = new System.Windows.Forms.Label();
       this.cboViews = new System.Windows.Forms.ComboBox();
       this.btSaveAndClose = new System.Windows.Forms.Button();
       this.gbHyperlinkParameter = new System.Windows.Forms.GroupBox();
+      this.cboOnlineVideosCategories = new System.Windows.Forms.ComboBox();
+      this.lblCategory = new System.Windows.Forms.Label();
+      this.txtSearch = new System.Windows.Forms.TextBox();
+      this.lblSearch = new System.Windows.Forms.Label();
       this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btClearParameter = new System.Windows.Forms.Button();
-      this.lblSearch = new System.Windows.Forms.Label();
-      this.txtSearch = new System.Windows.Forms.TextBox();
+      this.tbItemDisplayName = new System.Windows.Forms.TextBox();
       this.gbHyperlinkParameter.SuspendLayout();
       this.SuspendLayout();
-      // 
-      // tbItemDisplayName
-      // 
-      this.tbItemDisplayName.Location = new System.Drawing.Point(148, 13);
-      this.tbItemDisplayName.Name = "tbItemDisplayName";
-      this.tbItemDisplayName.Size = new System.Drawing.Size(247, 20);
-      this.tbItemDisplayName.TabIndex = 0;
-      this.tbItemDisplayName.TextChanged += new System.EventHandler(this.tbItemDisplayName_TextChanged);
-      this.tbItemDisplayName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbItemDisplayName_KeyUp);
       // 
       // label1
       // 
@@ -62,15 +55,15 @@
       // cboViews
       // 
       this.cboViews.FormattingEnabled = true;
-      this.cboViews.Location = new System.Drawing.Point(6, 19);
+      this.cboViews.Location = new System.Drawing.Point(18, 19);
       this.cboViews.Name = "cboViews";
-      this.cboViews.Size = new System.Drawing.Size(241, 21);
+      this.cboViews.Size = new System.Drawing.Size(229, 21);
       this.cboViews.TabIndex = 3;
       this.cboViews.SelectedIndexChanged += new System.EventHandler(this.cboViews_SelectedIndexChanged);
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(12, 131);
+      this.btSaveAndClose.Location = new System.Drawing.Point(10, 168);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(132, 23);
       this.btSaveAndClose.TabIndex = 5;
@@ -80,6 +73,8 @@
       // 
       // gbHyperlinkParameter
       // 
+      this.gbHyperlinkParameter.Controls.Add(this.cboOnlineVideosCategories);
+      this.gbHyperlinkParameter.Controls.Add(this.lblCategory);
       this.gbHyperlinkParameter.Controls.Add(this.txtSearch);
       this.gbHyperlinkParameter.Controls.Add(this.lblSearch);
       this.gbHyperlinkParameter.Controls.Add(this.movPicsCategoryCombo);
@@ -88,10 +83,43 @@
       this.gbHyperlinkParameter.Controls.Add(this.cboViews);
       this.gbHyperlinkParameter.Location = new System.Drawing.Point(148, 39);
       this.gbHyperlinkParameter.Name = "gbHyperlinkParameter";
-      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 127);
+      this.gbHyperlinkParameter.Size = new System.Drawing.Size(261, 158);
       this.gbHyperlinkParameter.TabIndex = 6;
       this.gbHyperlinkParameter.TabStop = false;
       this.gbHyperlinkParameter.Text = "Hyperlink Parameter:";
+      // 
+      // cboOnlineVideosCategories
+      // 
+      this.cboOnlineVideosCategories.FormattingEnabled = true;
+      this.cboOnlineVideosCategories.Location = new System.Drawing.Point(74, 47);
+      this.cboOnlineVideosCategories.Name = "cboOnlineVideosCategories";
+      this.cboOnlineVideosCategories.Size = new System.Drawing.Size(179, 21);
+      this.cboOnlineVideosCategories.TabIndex = 111;      
+      // 
+      // lblCategory
+      // 
+      this.lblCategory.AutoSize = true;
+      this.lblCategory.Location = new System.Drawing.Point(15, 51);
+      this.lblCategory.Name = "lblCategory";
+      this.lblCategory.Size = new System.Drawing.Size(52, 13);
+      this.lblCategory.TabIndex = 110;
+      this.lblCategory.Text = "Category:";
+      // 
+      // txtSearch
+      // 
+      this.txtSearch.Location = new System.Drawing.Point(74, 73);
+      this.txtSearch.Name = "txtSearch";
+      this.txtSearch.Size = new System.Drawing.Size(179, 20);
+      this.txtSearch.TabIndex = 109;
+      // 
+      // lblSearch
+      // 
+      this.lblSearch.AutoSize = true;
+      this.lblSearch.Location = new System.Drawing.Point(15, 76);
+      this.lblSearch.Name = "lblSearch";
+      this.lblSearch.Size = new System.Drawing.Size(44, 13);
+      this.lblSearch.TabIndex = 108;
+      this.lblSearch.Text = "Search:";
       // 
       // movPicsCategoryCombo
       // 
@@ -99,16 +127,16 @@
       this.movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
       this.movPicsCategoryCombo.FormattingEnabled = true;
       this.movPicsCategoryCombo.IntegralHeight = false;
-      this.movPicsCategoryCombo.Location = new System.Drawing.Point(6, 19);
+      this.movPicsCategoryCombo.Location = new System.Drawing.Point(18, 19);
       this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
-      this.movPicsCategoryCombo.Size = new System.Drawing.Size(247, 21);
+      this.movPicsCategoryCombo.Size = new System.Drawing.Size(235, 21);
       this.movPicsCategoryCombo.TabIndex = 107;
       this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
       // 
       // cbOnlineVideosReturn
       // 
       this.cbOnlineVideosReturn.AutoSize = true;
-      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(11, 72);
+      this.cbOnlineVideosReturn.Location = new System.Drawing.Point(18, 99);
       this.cbOnlineVideosReturn.Name = "cbOnlineVideosReturn";
       this.cbOnlineVideosReturn.Size = new System.Drawing.Size(185, 17);
       this.cbOnlineVideosReturn.TabIndex = 5;
@@ -117,7 +145,7 @@
       // 
       // btClearParameter
       // 
-      this.btClearParameter.Location = new System.Drawing.Point(6, 92);
+      this.btClearParameter.Location = new System.Drawing.Point(6, 129);
       this.btClearParameter.Name = "btClearParameter";
       this.btClearParameter.Size = new System.Drawing.Size(102, 23);
       this.btClearParameter.TabIndex = 4;
@@ -125,27 +153,20 @@
       this.btClearParameter.UseVisualStyleBackColor = true;
       this.btClearParameter.Click += new System.EventHandler(this.btClearParameter_Click);
       // 
-      // lblSearch
+      // tbItemDisplayName
       // 
-      this.lblSearch.AutoSize = true;
-      this.lblSearch.Location = new System.Drawing.Point(8, 49);
-      this.lblSearch.Name = "lblSearch";
-      this.lblSearch.Size = new System.Drawing.Size(44, 13);
-      this.lblSearch.TabIndex = 108;
-      this.lblSearch.Text = "Search:";
-      // 
-      // txtSearch
-      // 
-      this.txtSearch.Location = new System.Drawing.Point(59, 46);
-      this.txtSearch.Name = "txtSearch";
-      this.txtSearch.Size = new System.Drawing.Size(196, 20);
-      this.txtSearch.TabIndex = 109;      
+      this.tbItemDisplayName.Location = new System.Drawing.Point(154, 13);
+      this.tbItemDisplayName.Name = "tbItemDisplayName";
+      this.tbItemDisplayName.Size = new System.Drawing.Size(247, 20);
+      this.tbItemDisplayName.TabIndex = 0;
+      this.tbItemDisplayName.TextChanged += new System.EventHandler(this.tbItemDisplayName_TextChanged);
+      this.tbItemDisplayName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbItemDisplayName_KeyUp);
       // 
       // SubItemProperties
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(424, 173);
+      this.ClientSize = new System.Drawing.Size(417, 209);
       this.Controls.Add(this.gbHyperlinkParameter);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.label1);
@@ -163,7 +184,6 @@
 
     #endregion
 
-    private System.Windows.Forms.TextBox tbItemDisplayName;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.ComboBox cboViews;
     private System.Windows.Forms.Button btSaveAndClose;
@@ -173,5 +193,8 @@
     private Cornerstone.GUI.Controls.FilterComboBox movPicsCategoryCombo;
     private System.Windows.Forms.TextBox txtSearch;
     private System.Windows.Forms.Label lblSearch;
+    private System.Windows.Forms.Label lblCategory;
+    private System.Windows.Forms.TextBox tbItemDisplayName;
+    private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
   }
 }

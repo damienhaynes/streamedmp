@@ -32,8 +32,10 @@ namespace StreamedMPEditor
         gbHyperlinkParameter.Enabled = true;
 
       cbOnlineVideosReturn.Visible = false;
+      cboOnlineVideosCategories.Visible = false;
       movPicsCategoryCombo.Visible = false;
       lblSearch.Visible = false;
+      lblCategory.Visible = false;
       txtSearch.Visible = false;
 
       switch (skinFileID)
@@ -52,8 +54,10 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.onlineVideosSkinID:
           cbOnlineVideosReturn.Visible = true;
+          cboOnlineVideosCategories.Visible = true;
           lblSearch.Visible = true;
-          txtSearch.Visible = true;
+          lblCategory.Visible = true;
+          txtSearch.Visible = true;          
           foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosViews)
           {
             cboViews.Items.Add(mvv.Value);
@@ -246,6 +250,18 @@ namespace StreamedMPEditor
       }
     }
 
+    public string onlinevideosHyperlinkCategory
+    {
+      get
+      {
+        return cboOnlineVideosCategories.Text;
+      }
+      set
+      {
+        cboOnlineVideosCategories.Text = value;
+      }
+    }
+
     public string movingPicturesHyperlinkParmeter
     {
       get
@@ -330,12 +346,16 @@ namespace StreamedMPEditor
       {
         cboViews.Text = string.Empty;
         txtSearch.Text = string.Empty;
+        cboOnlineVideosCategories.Text = string.Empty;
       }
     }
 
 
     private void cboViews_SelectedIndexChanged(object sender, EventArgs e)
     {
+      if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
+        LoadOnlineVideosCategories(((ComboBox)sender).Text);
+
       txtSearch.Text = string.Empty;
       if (initialIndex != -1 && (tbItemDisplayName.Text == baseName || initialIndex != cboViews.SelectedIndex))
       {
@@ -348,21 +368,29 @@ namespace StreamedMPEditor
         // OnlineVideos
         if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
           tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosViews[cboViews.SelectedIndex].Value;
+         
         initialIndex = cboViews.SelectedIndex;
       }
     }
 
     private void movPicsCategoryCombo_SelectedIndexChanged(object sender, EventArgs e)
     {
-      //if ((initialMovPicIndex != -1 && (tbItemDisplayName.Text == baseName) || initialMovPicIndex != movPicsCategoryCombo.SelectedIndex))
-      //{
-      //  tbItemDisplayName.Text = movPicsCategoryCombo.Text;
-      //  initialMovPicIndex = movPicsCategoryCombo.SelectedIndex;
-      //}
-
       if (movPicsCategoryCombo.SelectedIndex != -1)
         tbItemDisplayName.Text = movPicsCategoryCombo.Text;
-
+    }
+   
+    void LoadOnlineVideosCategories(string site)
+    {
+      try
+      {
+        if (formStreamedMpEditor.theOnlineVideosViews.Contains(site))
+        {
+          // load onlinevideo categories
+          cboOnlineVideosCategories.DataSource = formStreamedMpEditor.onlineVideosCategories[site];
+        }
+        cboOnlineVideosCategories.SelectedIndex = -1;
+      }
+      catch { }
     }
 
   }

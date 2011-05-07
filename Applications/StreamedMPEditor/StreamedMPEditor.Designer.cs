@@ -62,6 +62,10 @@
       this.basicHomeDesign = new System.Windows.Forms.TabPage();
       this.itemProperties = new System.Windows.Forms.GroupBox();
       this.linkClearCategories = new System.Windows.Forms.LinkLabel();
+      this.cboOnlineVideosCategories = new System.Windows.Forms.ComboBox();
+      this.lblCategories = new System.Windows.Forms.Label();
+      this.ovTxtSearch = new System.Windows.Forms.TextBox();
+      this.lbSearch = new System.Windows.Forms.Label();
       this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btMenuIcon = new System.Windows.Forms.Button();
@@ -270,8 +274,6 @@
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-      this.lbSearch = new System.Windows.Forms.Label();
-      this.ovTxtSearch = new System.Windows.Forms.TextBox();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -719,9 +721,11 @@
       // 
       // itemProperties
       // 
+      this.itemProperties.Controls.Add(this.linkClearCategories);
+      this.itemProperties.Controls.Add(this.cboOnlineVideosCategories);
+      this.itemProperties.Controls.Add(this.lblCategories);
       this.itemProperties.Controls.Add(this.ovTxtSearch);
       this.itemProperties.Controls.Add(this.lbSearch);
-      this.itemProperties.Controls.Add(this.linkClearCategories);
       this.itemProperties.Controls.Add(this.movPicsCategoryCombo);
       this.itemProperties.Controls.Add(this.cbOnlineVideosReturn);
       this.itemProperties.Controls.Add(this.btMenuIcon);
@@ -742,7 +746,7 @@
       // linkClearCategories
       // 
       this.linkClearCategories.AutoSize = true;
-      this.linkClearCategories.Location = new System.Drawing.Point(273, 130);
+      this.linkClearCategories.Location = new System.Drawing.Point(277, 99);
       this.linkClearCategories.Name = "linkClearCategories";
       this.linkClearCategories.Size = new System.Drawing.Size(30, 13);
       this.linkClearCategories.TabIndex = 107;
@@ -750,6 +754,40 @@
       this.linkClearCategories.Text = "clear";
       this.linkClearCategories.Visible = false;
       this.linkClearCategories.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkClearCategories_LinkClicked);
+      // 
+      // cbOnlineVideosCategories
+      // 
+      this.cboOnlineVideosCategories.DropDownWidth = 150;
+      this.cboOnlineVideosCategories.FormattingEnabled = true;
+      this.cboOnlineVideosCategories.Location = new System.Drawing.Point(69, 101);
+      this.cboOnlineVideosCategories.Name = "cbOnlineVideosCategories";
+      this.cboOnlineVideosCategories.Size = new System.Drawing.Size(95, 21);
+      this.cboOnlineVideosCategories.TabIndex = 111;
+      // 
+      // lblCategories
+      // 
+      this.lblCategories.AutoSize = true;
+      this.lblCategories.Location = new System.Drawing.Point(14, 105);
+      this.lblCategories.Name = "lblCategories";
+      this.lblCategories.Size = new System.Drawing.Size(52, 13);
+      this.lblCategories.TabIndex = 110;
+      this.lblCategories.Text = "Category:";
+      // 
+      // ovTxtSearch
+      // 
+      this.ovTxtSearch.Location = new System.Drawing.Point(217, 102);
+      this.ovTxtSearch.Name = "ovTxtSearch";
+      this.ovTxtSearch.Size = new System.Drawing.Size(93, 20);
+      this.ovTxtSearch.TabIndex = 109;
+      // 
+      // lbSearch
+      // 
+      this.lbSearch.AutoSize = true;
+      this.lbSearch.Location = new System.Drawing.Point(167, 104);
+      this.lbSearch.Name = "lbSearch";
+      this.lbSearch.Size = new System.Drawing.Size(44, 13);
+      this.lbSearch.TabIndex = 108;
+      this.lbSearch.Text = "Search:";
       // 
       // movPicsCategoryCombo
       // 
@@ -833,7 +871,7 @@
       this.cboContextLabel.Size = new System.Drawing.Size(148, 21);
       this.cboContextLabel.TabIndex = 10;
       this.toolTip1.SetToolTip(this.cboContextLabel, "The lable used above the menu item in the vertical default menu style.\r\n\r\nUsed in" +
-        ": Default Horizontal Menu");
+              ": Default Horizontal Menu");
       this.cboContextLabel.TextChanged += new System.EventHandler(this.cboContextLabels_TextChanged);
       // 
       // label18
@@ -914,7 +952,7 @@
       this.richTextBox2.TabIndex = 122;
       this.richTextBox2.TabStop = false;
       this.richTextBox2.Text = "           To create new menu item\n  1. Select Menu Item from Dropdown.\n         " +
-    "                  OR\n  2. Select Skin file from List.";
+          "                  OR\n  2. Select Skin file from List.";
       // 
       // groupBox3
       // 
@@ -1396,7 +1434,7 @@
       this.cbOverlayFanart.TabIndex = 42;
       this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
       this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
-        "Music/Video overlay.");
+              "Music/Video overlay.");
       this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
       // cboLabelFont
@@ -1633,7 +1671,7 @@
       this.wrapString.TabIndex = 13;
       this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
       this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
-        " is not installed this option will be disabled.\r\n");
+              " is not installed this option will be disabled.\r\n");
       this.wrapString.UseVisualStyleBackColor = true;
       // 
       // noFocusAlpha
@@ -1734,7 +1772,7 @@
       this.txtFocusColour.TabIndex = 5;
       this.txtFocusColour.Text = "FFFFFF";
       this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
-        "olour choser.\r\n");
+              "olour choser.\r\n");
       // 
       // label16
       // 
@@ -2996,22 +3034,6 @@
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
       // 
-      // lbSearch
-      // 
-      this.lbSearch.AutoSize = true;
-      this.lbSearch.Location = new System.Drawing.Point(19, 105);
-      this.lbSearch.Name = "lbSearch";
-      this.lbSearch.Size = new System.Drawing.Size(44, 13);
-      this.lbSearch.TabIndex = 108;
-      this.lbSearch.Text = "Search:";
-      // 
-      // ovTxtSearch
-      // 
-      this.ovTxtSearch.Location = new System.Drawing.Point(69, 102);
-      this.ovTxtSearch.Name = "ovTxtSearch";
-      this.ovTxtSearch.Size = new System.Drawing.Size(241, 20);
-      this.ovTxtSearch.TabIndex = 109;
-      // 
       // formStreamedMpEditor
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3376,6 +3398,8 @@
     private System.ComponentModel.BackgroundWorker backgroundWorker2;
     private System.Windows.Forms.TextBox ovTxtSearch;
     private System.Windows.Forms.Label lbSearch;
+    private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
+    private System.Windows.Forms.Label lblCategories;
   }
 }
 

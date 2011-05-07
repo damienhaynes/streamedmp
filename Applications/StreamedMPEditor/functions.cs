@@ -328,8 +328,10 @@ namespace StreamedMPEditor
         if (selectedWindowID.Text == onlineVideosSkinID)
         {
           cbOnlineVideosReturn.Visible = true;
+          cboOnlineVideosCategories.Visible = true;
           ovTxtSearch.Visible = true;
           lbSearch.Visible = true;
+          lblCategories.Visible = true;
         }
         if (selectedWindowID.Text == movingPicturesSkinID)
         {
@@ -341,6 +343,8 @@ namespace StreamedMPEditor
       else
       {
         cboParameterViews.Visible = false;
+        cboOnlineVideosCategories.Visible = false;
+        lblCategories.Visible = false;
         lbParameterView.Visible = false;
         cbOnlineVideosReturn.Visible = false;
         ovTxtSearch.Visible = false;
@@ -2116,6 +2120,7 @@ namespace StreamedMPEditor
       public string hyperlinkParameter;
       public string hyperlinkParameterOption;
       public string hyperlinkParameterSearch;
+      public string hyperlinkParameterCategory;
       public bool isDefault;
       public bool isWeather;
       public string bgFolder;
@@ -2146,6 +2151,7 @@ namespace StreamedMPEditor
       public string hyperlinkParameter;
       public string hyperlinkParameterOption;
       public string hyperlinkParameterSearch;
+      public string hyperlinkParameterCategory;
       public displayMostRecent showMostRecent;
     }
 
