@@ -290,7 +290,7 @@ namespace StreamedMPEditor
     PictureBox pbThemePreview = new PictureBox();
     List<string> menuThemeFiles = new List<string>();
     int themeImageIndex = 0;
-    bool menuThemeActive = false;
+    //bool menuThemeActive = false;
     //QuickList Info
     Form formQlPopup = new Form();
     Label lbQlPopup = new Label();
