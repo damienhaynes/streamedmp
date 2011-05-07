@@ -68,7 +68,7 @@ namespace StreamedMPEditor
           LoadMovingPicturesCategories();
           break;
 
-      }
+      }      
     }
 
     /// <summary>
