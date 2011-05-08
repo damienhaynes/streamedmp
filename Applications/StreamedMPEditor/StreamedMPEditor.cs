@@ -2468,24 +2468,34 @@ namespace StreamedMPEditor
         // set path of config file, so we load user settings
         OnlineVideoSettings.Instance.ConfigDir = SkinInfo.mpPaths.configBasePath;
 
+        // set path of site utils
+        OnlineVideoSettings.Instance.DllsDir = Path.Combine(SkinInfo.mpPaths.pluginPath, @"Windows\OnlineVideos");
+
         // load list of sites
         OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
         onlineVideos.LoadSites();
+        
+        // build site utils list
+        OnlineVideoSettings.Instance.BuildSiteUtilsList();
 
-        // just get a list of enabled sites
-        foreach (SiteSettings site in onlineVideos.SiteSettingsList.Where(s => s.IsEnabled))
+        foreach (var site in OnlineVideoSettings.Instance.SiteUtilsList)
         {
           // get any categories for site
           List<string> categories = new List<string>();
-          if (site.Categories != null)
-            categories = site.Categories.Select(c => c.Name).ToList();            
-          onlineVideosCategories.Add(site.Name, categories);
+          if (site.Value.Settings.Categories != null)
+          {
+            // discover dynamic categories
+            if (site.Value.Settings.Categories.Count == 0)
+              site.Value.DiscoverDynamicCategories();
+
+            categories = site.Value.Settings.Categories.Select(c => c.Name).ToList();
+          }
+          onlineVideosCategories.Add(site.Value.Settings.Name, categories);
 
           // add to list of sites
-          KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Name, site.Name);
+          KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Value.Settings.Name, site.Value.Settings.Name);
           onlineVideosViews.Add(view);
         }
-
       }
 
       return onlineVideosViews;
