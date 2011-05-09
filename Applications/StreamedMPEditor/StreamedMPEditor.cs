@@ -2496,6 +2496,28 @@ namespace StreamedMPEditor
           KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Value.Settings.Name, site.Value.Settings.Name);
           onlineVideosViews.Add(view);
         }
+       
+        // Add Downloaded Videos and Favourite sites
+        // names are localized so read from respective language file        
+        string languageCode = GUILocalizeStrings.GetCultureName(configuredLanguage);
+        string languageFile = Path.Combine(Path.Combine(SkinInfo.mpPaths.langBasePath, "OnlineVideos"), languageCode + ".xml");
+        
+        // default values - en-US
+        // these dont get localized if using the exe editor.
+        string downloadedVideos = OnlineVideos.Translation.DownloadedVideos;
+        string favourites = OnlineVideos.Translation.Favourites;
+
+        // load language file
+        XmlDocument doc = Helper.LoadXMLDocument(languageFile);
+        if (doc != null)
+        {
+          XmlNode node = doc.SelectSingleNode("/strings");
+          downloadedVideos = Helper.ReadEntryValue("string[@Field=\"DownloadedVideos\"]", node, downloadedVideos);
+          favourites = Helper.ReadEntryValue("string[@Field=\"Favourites\"]", node, favourites);          
+        }
+        // add the special sites
+        onlineVideosViews.Add(new KeyValuePair<string, string>(downloadedVideos, downloadedVideos));
+        onlineVideosViews.Add(new KeyValuePair<string, string>(favourites, favourites));
       }
 
       return onlineVideosViews;

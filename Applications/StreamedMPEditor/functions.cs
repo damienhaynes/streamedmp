@@ -9,6 +9,7 @@ using System.Reflection;
 using Microsoft.Win32;
 using System.Diagnostics;
 using MediaPortal.Configuration;
+using MediaPortal.GUI.Library;
 
 namespace StreamedMPEditor
 {
@@ -170,6 +171,13 @@ namespace StreamedMPEditor
       return path;
     }
 
+    private string configuredLanguage
+    {
+      get
+      {
+        return helper.readMPConfiguration("gui", "language", "en");
+      }
+    }
 
     private string configuredSkin
     {

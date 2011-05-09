@@ -199,17 +199,21 @@ namespace StreamedMPEditor
 
     public string readMPConfiguration(string sectionName, string entryName)
     {
+      return readMPConfiguration(sectionName, entryName, string.Empty);
+    }
+    public string readMPConfiguration(string sectionName, string entryName, string defaultValue)
+    {
       try
       {
         using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "MediaPortal.xml")))
         {
-          return xmlreader.GetValueAsString(sectionName, entryName, "");
+          return xmlreader.GetValueAsString(sectionName, entryName, defaultValue);
         }
       }
       catch (Exception e)
       {
         showError("Error reading MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);
-        return string.Empty;
+        return defaultValue;
       }
     }
 
@@ -227,6 +231,45 @@ namespace StreamedMPEditor
         showError("Error writing MediaPortal.xml : " + e.Message, formStreamedMpEditor.errorCode.readError);
       }
       MediaPortal.Profile.Settings.SaveCache();
+    }
+
+    /// <summary>
+    /// Loads and returns an XML Document
+    /// </summary>
+    /// <param name="file"></param>    
+    public static XmlDocument LoadXMLDocument(string file)
+    {
+      // Check if File Exist
+      if (!File.Exists(file))
+        return null;
+
+      XmlDocument doc = new XmlDocument();
+      try
+      {
+        doc.Load(file);
+      }
+      catch (XmlException e)
+      {
+        return null;
+      }
+      return doc;
+    }
+
+    /// <summary>
+    /// Gets an elements value from a xml node
+    /// </summary>   
+    public static string ReadEntryValue(string xPath, XmlNode node, string defaultValue)
+    {
+      string entryValue = string.Empty;
+
+      XmlNode path = node.SelectSingleNode(xPath);
+      if (path != null)
+      {
+        entryValue = path.InnerText;
+        return entryValue;
+      }
+
+      return defaultValue;
     }
 
     #region Assembly Helpers
