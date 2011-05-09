@@ -1921,6 +1921,7 @@ namespace StreamedMPEditor
     {
       try
       {
+        cboOnlineVideosCategories.DataSource = null;
         if (theOnlineVideosViews.Contains(site))
         {
           // load onlinevideo categories
