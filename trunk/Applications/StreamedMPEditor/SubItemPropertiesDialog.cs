@@ -391,9 +391,22 @@ namespace StreamedMPEditor
     {
       try
       {
+        cboOnlineVideosCategories.DataSource = null;
         if (formStreamedMpEditor.theOnlineVideosViews.Contains(site))
         {
-          // load onlinevideo categories
+          // load online video categories
+          if (formStreamedMpEditor.onlineVideosCategories[site].Count == 0)
+          {
+            cboOnlineVideosCategories.Enabled = false;
+            cboOnlineVideosCategories.Text = "Searching...";
+            cboOnlineVideosCategories.Update();
+
+            // load dynamic categories
+            formStreamedMpEditor.LoadOnlineVideosDynamicCategories(site);
+
+            cboOnlineVideosCategories.Enabled = true;
+            cboOnlineVideosCategories.Text = string.Empty;
+          }
           cboOnlineVideosCategories.DataSource = formStreamedMpEditor.onlineVideosCategories[site];
         }
         cboOnlineVideosCategories.SelectedIndex = -1;

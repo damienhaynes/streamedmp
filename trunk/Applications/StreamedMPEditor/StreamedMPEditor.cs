@@ -1924,7 +1924,19 @@ namespace StreamedMPEditor
         cboOnlineVideosCategories.DataSource = null;
         if (theOnlineVideosViews.Contains(site))
         {
-          // load onlinevideo categories
+          // load online video categories
+          if (onlineVideosCategories[site].Count == 0)
+          {
+            cboOnlineVideosCategories.Enabled = false;
+            cboOnlineVideosCategories.Text = "Searching...";
+            cboOnlineVideosCategories.Update();
+
+            // load dynamic categories
+            LoadOnlineVideosDynamicCategories(site);
+
+            cboOnlineVideosCategories.Enabled = true;
+            cboOnlineVideosCategories.Text = string.Empty;
+          }
           cboOnlineVideosCategories.DataSource = onlineVideosCategories[site];
         }
         cboOnlineVideosCategories.SelectedIndex = -1;
@@ -2478,21 +2490,18 @@ namespace StreamedMPEditor
         
         // build site utils list
         OnlineVideoSettings.Instance.BuildSiteUtilsList();
-
+        
         foreach (var site in OnlineVideoSettings.Instance.SiteUtilsList)
         {
           // get any categories for site
+          // get dynamic categories later when site is selected as takes too long!
           List<string> categories = new List<string>();
           if (site.Value.Settings.Categories != null)
           {
-            // discover dynamic categories
-            if (site.Value.Settings.Categories.Count == 0)
-              site.Value.DiscoverDynamicCategories();
-
             categories = site.Value.Settings.Categories.Select(c => c.Name).ToList();
           }
           onlineVideosCategories.Add(site.Value.Settings.Name, categories);
-
+          
           // add to list of sites
           KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Value.Settings.Name, site.Value.Settings.Name);
           onlineVideosViews.Add(view);
@@ -2522,6 +2531,22 @@ namespace StreamedMPEditor
       }
 
       return onlineVideosViews;
+    }
+
+    public static void LoadOnlineVideosDynamicCategories(string site)
+    {
+      var siteUtil = OnlineVideoSettings.Instance.SiteUtilsList.SingleOrDefault(s => s.Key == site);
+
+      if (siteUtil.Value.Settings.Categories != null)
+      {
+        try
+        {
+          siteUtil.Value.DiscoverDynamicCategories();
+        }
+        catch { }
+        List<string> categories = new List<string>();
+        onlineVideosCategories[site] = siteUtil.Value.Settings.Categories.Select(c => c.Name).ToList();
+      }
     }
 
     /// <summary>
