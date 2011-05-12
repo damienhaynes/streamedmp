@@ -253,7 +253,7 @@ namespace StreamedMPEditor
 
       foreach (formStreamedMpEditor.subMenuItem sItem in subMenuLevel2)
       {
-        if (str == sItem.xmlFileName && sItem.hyperlink != formStreamedMpEditor.tvseriesSkinID)
+        if (str == sItem.xmlFileName && !formStreamedMpEditor.pluginTakesParameter(sItem.hyperlink))
           e.Effect = DragDropEffects.None;
       }
     }
@@ -539,10 +539,10 @@ namespace StreamedMPEditor
         //
         // Only do this part if we care about hyperlink parameters
         //
-        if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+        if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
         {
           //TvSeries
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.tvseriesSkinID)
+          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.tvseriesSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.tvseriesHypelinkParameter) || itemProperties.tvseriesHypelinkParameter == "false")
             {
@@ -558,7 +558,7 @@ namespace StreamedMPEditor
             }
           }
           //Music
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.musicSkinID)
+          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.musicSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
             {
@@ -591,33 +591,33 @@ namespace StreamedMPEditor
               subMenuLevel2[index].hyperlinkParameterCategory = itemProperties.onlinevideosHyperlinkCategory;
               formStreamedMpEditor.changeOutstanding = true;
             }
-            //MovingPictures
-            if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
-            {
-              if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
-              {
-                subMenuLevel2[index].hyperlinkParameter = "false";
-                if (!formStreamedMpEditor.changeOutstanding)
-                  subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
-                formStreamedMpEditor.changeOutstanding = true;
-              }
-              else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
-              {
-                subMenuLevel2[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
-                formStreamedMpEditor.changeOutstanding = true;
-              }
-            }
           }
-          // Refresh the listbox, only way to do this is clear re-populate.
-          if (formStreamedMpEditor.changeOutstanding)
+          //MovingPictures
+          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
           {
-            lboxSubMenuLevel2.Items.Clear();
-            for (int i = 0; i < subMenuLevel2.Count; i++)
+            if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
             {
-              lboxSubMenuLevel2.Items.Add(subMenuLevel1[i].displayName);
+              subMenuLevel2[index].hyperlinkParameter = "false";
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+            {
+              subMenuLevel2[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
+              formStreamedMpEditor.changeOutstanding = true;
             }
           }
         }
+        // Refresh the listbox, only way to do this is clear re-populate.
+        if (formStreamedMpEditor.changeOutstanding)
+        {
+          lboxSubMenuLevel2.Items.Clear();
+          for (int i = 0; i < subMenuLevel2.Count; i++)
+          {
+            lboxSubMenuLevel2.Items.Add(subMenuLevel2[i].displayName);
+          }
+        }        
       }
     }
 
