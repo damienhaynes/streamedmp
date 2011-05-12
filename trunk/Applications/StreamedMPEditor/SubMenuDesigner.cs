@@ -574,7 +574,7 @@ namespace StreamedMPEditor
             }
           }
           //Onlinevideos
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
+          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
             {
