@@ -2484,6 +2484,9 @@ namespace StreamedMPEditor
         // set path of site utils
         OnlineVideoSettings.Instance.DllsDir = Path.Combine(SkinInfo.mpPaths.pluginPath, @"Windows\OnlineVideos");
 
+        // set path to Downloads Folder
+        OnlineVideoSettings.Instance.DownloadDir = helper.readMPConfiguration("onlinevideos", "downloadDir", string.Empty);
+
         // load list of sites
         OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
         onlineVideos.LoadSites();
@@ -2507,26 +2510,23 @@ namespace StreamedMPEditor
           onlineVideosViews.Add(view);
         }
        
-        // Add Downloaded Videos and Favourite sites
+        // Add Favourite sites
         // names are localized so read from respective language file        
         string languageCode = GUILocalizeStrings.GetCultureName(configuredLanguage);
         string languageFile = Path.Combine(Path.Combine(SkinInfo.mpPaths.langBasePath, "OnlineVideos"), languageCode + ".xml");
         
         // default values - en-US
-        // these dont get localized if using the exe editor.
-        string downloadedVideos = OnlineVideos.Translation.DownloadedVideos;
+        // these dont get localized if using the exe editor.        
         string favourites = OnlineVideos.Translation.Favourites;
 
         // load language file
         XmlDocument doc = Helper.LoadXMLDocument(languageFile);
         if (doc != null)
         {
-          XmlNode node = doc.SelectSingleNode("/strings");
-          downloadedVideos = Helper.ReadEntryValue("string[@Field=\"DownloadedVideos\"]", node, downloadedVideos);
+          XmlNode node = doc.SelectSingleNode("/strings");          
           favourites = Helper.ReadEntryValue("string[@Field=\"Favourites\"]", node, favourites);          
         }
         // add the special sites
-        onlineVideosViews.Add(new KeyValuePair<string, string>(downloadedVideos, downloadedVideos));
         onlineVideosViews.Add(new KeyValuePair<string, string>(favourites, favourites));
       }
 

@@ -248,7 +248,7 @@ namespace StreamedMPEditor
       {
         doc.Load(file);
       }
-      catch (XmlException e)
+      catch (XmlException)
       {
         return null;
       }
