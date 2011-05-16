@@ -297,7 +297,7 @@ namespace StreamedMPEditor
     //Most Recent
     public static List<KeyValuePair<string, string>> tvseriesViews = new List<KeyValuePair<string, string>>();
     public static List<KeyValuePair<string, string>> musicViews = new List<KeyValuePair<string, string>>();
-    public static List<KeyValuePair<string, string>> onlineVideosViews = new List<KeyValuePair<string, string>>();
+    public static List<KeyValuePair<string, string>> onlineVideosSites = new List<KeyValuePair<string, string>>();
     public static Dictionary<string, List<string>> onlineVideosCategories = new Dictionary<string, List<string>>();
 
     string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
@@ -322,6 +322,13 @@ namespace StreamedMPEditor
       randomFanart.fanartScoreCenter = false;
       randomFanart.fanartMoviesScraperFanart = false;
       randomFanart.fanartMusicScraperFanart = false;
+
+      try
+      {
+        // Initialize MediaPortal translations
+        GUILocalizeStrings.Load(configuredLanguage);
+      }
+      catch { }
 
       disableBGSharing.Location = new Point(10, 104);
 
@@ -399,12 +406,12 @@ namespace StreamedMPEditor
       filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows\\OnlineVideos"), "OnlineVideos.dll");
       if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(0, 27, 0, 0), filename))
       {
-        onlineVideosViews = GetOnlineVideosViews();
+        onlineVideosSites = GetOnlineVideosSites();
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
         cboParameterViews.Items.Clear();
         theOnlineVideosViews.Clear();
-        foreach (KeyValuePair<string, string> ovv in onlineVideosViews)
+        foreach (KeyValuePair<string, string> ovv in onlineVideosSites)
         {
           theOnlineVideosViews.Add(ovv.Value);
         }
@@ -488,7 +495,7 @@ namespace StreamedMPEditor
     //
     public string getOnlineVideosViewKey(string value)
     {
-      foreach (KeyValuePair<string, string> mvv in onlineVideosViews)
+      foreach (KeyValuePair<string, string> mvv in onlineVideosSites)
       {
         if (mvv.Value.ToLower() == value.ToLower())
           return mvv.Key;
@@ -499,7 +506,7 @@ namespace StreamedMPEditor
     //
     public string getOnlineVideosViewValue(string key)
     {
-      foreach (KeyValuePair<string, string> mvv in onlineVideosViews)
+      foreach (KeyValuePair<string, string> mvv in onlineVideosSites)
       {
         if (mvv.Key.ToLower() == key.ToLower())
           return mvv.Value;
@@ -1919,29 +1926,36 @@ namespace StreamedMPEditor
 
     void LoadOnlineVideosCategories(string site)
     {
-      try
-      {
-        cboOnlineVideosCategories.DataSource = null;
-        if (theOnlineVideosViews.Contains(site))
+        try
         {
-          // load online video categories
-          if (onlineVideosCategories[site].Count == 0)
-          {
-            cboOnlineVideosCategories.Enabled = false;
-            cboOnlineVideosCategories.Text = "Searching...";
-            cboOnlineVideosCategories.Update();
+            cboOnlineVideosCategories.DataSource = null;
 
-            // load dynamic categories
-            LoadOnlineVideosDynamicCategories(site);
+            // load online video categories
+            if (theOnlineVideosViews.Contains(site))
+            {
+                cboOnlineVideosCategories.Enabled = false;
+                cboOnlineVideosCategories.Text = "Searching...";
 
-            cboOnlineVideosCategories.Enabled = true;
+                // update UI 
+                cboOnlineVideosCategories.Update();
+                cboParameterViews.Update();
+                lblCategories.Update();
+                lbSearch.Update();
+                lbParameterView.Update();
+                ovTxtSearch.Update();
+                cbOnlineVideosReturn.Update();
+
+                // load dynamic categories
+                LoadOnlineVideosDynamicCategories(site);
+                cboOnlineVideosCategories.Enabled = true;
+
+                if (onlineVideosCategories[site].Count > 0)
+                    cboOnlineVideosCategories.DataSource = onlineVideosCategories[site];
+            }
             cboOnlineVideosCategories.Text = string.Empty;
-          }
-          cboOnlineVideosCategories.DataSource = onlineVideosCategories[site];
+            cboOnlineVideosCategories.SelectedIndex = -1;
         }
-        cboOnlineVideosCategories.SelectedIndex = -1;
-      }
-      catch { }
+        catch { }
     }
 
     private void btConfigureFreeDriveSpace_Click(object sender, EventArgs e)
@@ -2473,11 +2487,14 @@ namespace StreamedMPEditor
       return tvseriesViews;
     }
 
-    private List<KeyValuePair<string, string>> GetOnlineVideosViews()
+    private List<KeyValuePair<string, string>> GetOnlineVideosSites()
     {
       // check if we have already got them
-      if (onlineVideosViews.Count == 0)
+      if (onlineVideosSites.Count == 0)
       {
+        // init translator class
+        string x = OnlineVideos.MediaPortal1.Translator.Lang;
+
         // set path of config file, so we load user settings
         OnlineVideoSettings.Instance.ConfigDir = SkinInfo.mpPaths.configBasePath;
 
@@ -2486,6 +2503,9 @@ namespace StreamedMPEditor
 
         // set path to Downloads Folder
         OnlineVideoSettings.Instance.DownloadDir = helper.readMPConfiguration("onlinevideos", "downloadDir", string.Empty);
+        
+        // set path of favourites database
+        OnlineVideoSettings.Instance.FavDB = OnlineVideos.MediaPortal1.FavoritesDatabase.Instance;
 
         // load list of sites
         OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
@@ -2507,30 +2527,11 @@ namespace StreamedMPEditor
           
           // add to list of sites
           KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Value.Settings.Name, site.Value.Settings.Name);
-          onlineVideosViews.Add(view);
+          onlineVideosSites.Add(view);
         }
-       
-        // Add Favourite sites
-        // names are localized so read from respective language file        
-        string languageCode = GUILocalizeStrings.GetCultureName(configuredLanguage);
-        string languageFile = Path.Combine(Path.Combine(SkinInfo.mpPaths.langBasePath, "OnlineVideos"), languageCode + ".xml");
-        
-        // default values - en-US
-        // these dont get localized if using the exe editor.        
-        string favourites = OnlineVideos.Translation.Favourites;
-
-        // load language file
-        XmlDocument doc = Helper.LoadXMLDocument(languageFile);
-        if (doc != null)
-        {
-          XmlNode node = doc.SelectSingleNode("/strings");          
-          favourites = Helper.ReadEntryValue("string[@Field=\"Favourites\"]", node, favourites);          
-        }
-        // add the special sites
-        onlineVideosViews.Add(new KeyValuePair<string, string>(favourites, favourites));
       }
 
-      return onlineVideosViews;
+      return onlineVideosSites;
     }
 
     public static void LoadOnlineVideosDynamicCategories(string site)
@@ -2539,13 +2540,16 @@ namespace StreamedMPEditor
 
       if (siteUtil.Value.Settings.Categories != null)
       {
-        try
-        {
-          siteUtil.Value.DiscoverDynamicCategories();
-        }
-        catch { }
-        List<string> categories = new List<string>();
-        onlineVideosCategories[site] = siteUtil.Value.Settings.Categories.Select(c => c.Name).ToList();
+          if (!siteUtil.Value.Settings.DynamicCategoriesDiscovered)
+          {
+              try
+              {
+                  siteUtil.Value.DiscoverDynamicCategories();
+              }
+              catch { }
+              List<string> categories = new List<string>();
+              onlineVideosCategories[site] = siteUtil.Value.Settings.Categories.Select(c => c.Name).ToList();
+          }
       }
     }
 
