@@ -58,7 +58,7 @@ namespace StreamedMPEditor
           lblSearch.Visible = true;
           lblCategory.Visible = true;
           txtSearch.Visible = true;          
-          foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosViews)
+          foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosSites)
           {
             cboViews.Items.Add(mvv.Value);
           }
@@ -221,10 +221,10 @@ namespace StreamedMPEditor
     {
       get
       {
-        if (formStreamedMpEditor.onlineVideosViews.Count == 0)
+        if (formStreamedMpEditor.onlineVideosSites.Count == 0)
           return cboViews.Text;
 
-        foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosViews)
+        foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosSites)
         {
           if (tvv.Value == cboViews.Text)
             return tvv.Key;
@@ -234,10 +234,10 @@ namespace StreamedMPEditor
 
       set
       {
-        if (formStreamedMpEditor.onlineVideosViews.Count == 0)
+        if (formStreamedMpEditor.onlineVideosSites.Count == 0)
           cboViews.Text = value;
         int i = 0;
-        foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosViews)
+        foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.onlineVideosSites)
         {
           if (value == tvv.Key)
           {
@@ -367,7 +367,7 @@ namespace StreamedMPEditor
           tbItemDisplayName.Text = formStreamedMpEditor.musicViews[cboViews.SelectedIndex].Value;
         // OnlineVideos
         if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
-          tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosViews[cboViews.SelectedIndex].Value;
+          tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosSites[cboViews.SelectedIndex].Value;
          
         initialIndex = cboViews.SelectedIndex;
       }
@@ -389,29 +389,30 @@ namespace StreamedMPEditor
 
     void LoadOnlineVideosCategories(string site)
     {
-      try
-      {
-        cboOnlineVideosCategories.DataSource = null;
-        if (formStreamedMpEditor.theOnlineVideosViews.Contains(site))
+        try
         {
-          // load online video categories
-          if (formStreamedMpEditor.onlineVideosCategories[site].Count == 0)
-          {
-            cboOnlineVideosCategories.Enabled = false;
-            cboOnlineVideosCategories.Text = "Searching...";
-            cboOnlineVideosCategories.Update();
+            cboOnlineVideosCategories.DataSource = null;
 
-            // load dynamic categories
-            formStreamedMpEditor.LoadOnlineVideosDynamicCategories(site);
+            // load online video categories
+            if (formStreamedMpEditor.theOnlineVideosViews.Contains(site))
+            {
+                cboOnlineVideosCategories.Enabled = false;
+                cboOnlineVideosCategories.Text = "Searching...";
 
-            cboOnlineVideosCategories.Enabled = true;
+                // update UI 
+                cboOnlineVideosCategories.Update();                
+                
+                // load dynamic categories
+                formStreamedMpEditor.LoadOnlineVideosDynamicCategories(site);
+                cboOnlineVideosCategories.Enabled = true;
+
+                if (formStreamedMpEditor.onlineVideosCategories[site].Count > 0)
+                    cboOnlineVideosCategories.DataSource = formStreamedMpEditor.onlineVideosCategories[site];
+            }
             cboOnlineVideosCategories.Text = string.Empty;
-          }
-          cboOnlineVideosCategories.DataSource = formStreamedMpEditor.onlineVideosCategories[site];
+            cboOnlineVideosCategories.SelectedIndex = -1;
         }
-        cboOnlineVideosCategories.SelectedIndex = -1;
-      }
-      catch { }
+        catch { }
     }
 
   }
