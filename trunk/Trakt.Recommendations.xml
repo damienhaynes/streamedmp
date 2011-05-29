@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87261</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#Trakt.Translation.Recommendations.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9993</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>Recommended Movies</description>
+        <id>2</id>
+        <label>#Trakt.Translation.RecommendedMovies.Label</label>
+				<hyperlink>87263</hyperlink>
+        <onup>17</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Recommended Shows</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#Trakt.Translation.RecommendedShows.Label</label>
+				<hyperlink>87262</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+      </control>      
+    </control>
+  </controls>
+</window>

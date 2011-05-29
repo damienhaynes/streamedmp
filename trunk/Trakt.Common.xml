@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>798</posX>
+      <posY>0</posY>
+      <width>305</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>209</posX>
+      <posY>0</posY>
+      <width>631</width>
+      <height>720</height>
+      <texture>settingsbg.png</texture>
+      <animation effect="slide" time="200" start="-840,0">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>-620</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+    </control>
+    <control>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
+      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>850</posX>
+      <posY>100</posY>
+      <width>100</width>
+			<height>100</height>
+			<keepaspectratio>yes</keepaspectratio>
+      <texture>Logos\Trakt.png</texture>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
+    </control>	
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
+      <posX>834</posX>
+      <posY>201</posY>
+      <width>255</width>
+      <height>379</height>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <control Style="settingsbutton">
+        <description>Trakt Calendar</description>
+        <type>button</type>
+        <id>9991</id>
+				<width>255</width>
+        <label>#Trakt.Translation.Calendar.Label</label>
+        <hyperlink>87259</hyperlink>
+        <onup>9996</onup>
+        <onleft>#defaultcontrol</onleft>
+      </control>      
+      <control Style="settingsbutton">
+        <description>Friends</description>
+        <type>button</type>
+        <id>9992</id>
+				<width>255</width>
+        <label>#Trakt.Translation.Friends.Label</label>
+        <hyperlink>87260</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Recommendations</description>
+        <type>button</type>
+        <id>9993</id>
+				<width>255</width>
+        <label>#Trakt.Translation.Recommendations.Label</label>
+        <hyperlink>87261</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Trending</description>
+        <type>button</type>
+        <id>9994</id>
+				<width>255</width>
+        <label>#Trakt.Translation.Trending.Label</label>
+        <hyperlink>87264</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Watch List</description>
+        <type>button</type>
+        <id>9995</id>
+				<width>255</width>
+        <label>#Trakt.Translation.WatchList.Label</label>
+        <hyperlink>87267</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Settings</description>
+        <type>button</type>
+        <id>9996</id>
+				<width>255</width>
+        <label>#Trakt.Translation.Settings.Label</label>
+        <hyperlink>87271</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+    </control>
+    <control>
+      <description>Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>25</posY>
+      <label>#header.label</label>
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+  </controls>
+</window>
