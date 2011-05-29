@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87258</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:Trakt</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#selecteditem:#highlightedbutton</define>
+  <controls>	
+    <control>
+      <type>image</type>
+      <description>BG</description>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>178</posX>
+      <posY>0</posY>
+      <width>300</width>
+      <height>720</height>
+      <texture>homebladesub.png</texture>
+      <animation effect="slide" time="200" start="-434,0">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>-620</posX>
+      <posY>0</posY>
+      <width>846</width>
+      <height>720</height>
+      <texture>homebladeleft.png</texture>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+    </control>
+    <control>
+      <description>right overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1045</posX>
+      <posY>0</posY>
+      <width>235</width>
+      <height>720</height>
+      <texture>homerightoverlay.png</texture>
+      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>230</posX>
+      <posY>100</posY>
+      <width>100</width>
+			<height>100</height>
+			<keepaspectratio>yes</keepaspectratio>
+      <texture>logos\trakt.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>    
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>201</posY>
+      <width>255</width>
+      <height>379</height>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <control Style="settingsbutton">
+        <description>Calendar</description>
+        <type>button</type>
+				<width>255</width>
+        <id>10</id>        
+        <label>#Trakt.Translation.Calendar.Label</label>
+				<hyperlink>87259</hyperlink>
+				<onup>15</onup>
+      </control>      
+      <control Style="settingsbutton">
+        <description>Friends</description>
+        <type>button</type>
+				<width>255</width>
+        <id>11</id>
+				<hyperlink>87260</hyperlink>
+        <label>#Trakt.Translation.Friends.Label</label>
+      </control>
+      <control Style="settingsbutton">
+        <description>Recommendations</description>
+        <type>button</type>
+				<width>255</width>
+        <id>12</id>
+				<hyperlink>87261</hyperlink>
+        <label>#Trakt.Translation.Recommendations.Label</label>        
+      </control>
+      <control Style="settingsbutton">
+        <description>Trending</description>
+        <type>button</type>
+				<width>255</width>
+        <id>13</id>
+				<hyperlink>87264</hyperlink>
+        <label>#Trakt.Translation.Trending.Label</label>        
+      </control>
+      <control Style="settingsbutton">
+        <description>Watch List</description>
+        <type>button</type>
+				<width>255</width>
+        <id>14</id>
+				<hyperlink>87267</hyperlink>
+        <label>#Trakt.Translation.WatchList.Label</label>        
+      </control>
+      <control Style="settingsbutton">
+        <description>Settings</description>
+        <type>button</type>
+				<width>255</width>
+        <id>15</id>
+        <label>#Trakt.Translation.Settings.Label</label>
+				<hyperlink>87271</hyperlink>
+				<ondown>10</ondown>
+      </control>
+		</control>
+		<import>common.time.xml</import>
+  </controls>
+</window>

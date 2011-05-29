@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87264</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#Trakt.Translation.Trending.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9994</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>Trending Movies</description>
+        <id>2</id>
+        <label>#Trakt.Translation.TrendingMovies.Label</label>
+				<hyperlink>87266</hyperlink>
+        <onup>17</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Trending Shows</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#Trakt.Translation.TrendingShows.Label</label>
+				<hyperlink>87265</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+      </control>      
+    </control>
+  </controls>
+</window>
