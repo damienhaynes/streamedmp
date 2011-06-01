@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
+  <!-- #Trakt.Settings.Account.Dialog.Visible is true when account controls are visible -->
   <controls>
     <control>
       <type>image</type>
@@ -68,6 +69,7 @@
 			<keepaspectratio>yes</keepaspectratio>
       <texture>Logos\Trakt.png</texture>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
+      <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>	
     <control>
       <type>group</type>
@@ -78,6 +80,7 @@
       <width>255</width>
       <height>379</height>
       <layout>StackLayout(0, Vertical, true)</layout>
+      <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
       <control Style="settingsbutton">
         <description>Trakt Calendar</description>
         <type>button</type>

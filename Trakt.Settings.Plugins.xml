@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87273</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#Trakt.Translation.Plugins.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9996</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <control Style="settingsmaintogglebutton">
+        <description>MP-TVSeries</description>
+        <type>togglebutton</type>
+        <id>2</id>
+        <label>MP-TVSeries</label>
+        <onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>17</onup>
+      </control>
+      <control Style="settingsmaintogglebutton">
+        <description>MovingPictures</description>
+        <type>togglebutton</type>
+        <id>3</id>
+        <label>MovingPictures</label>
+        <onleft>3</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaintogglebutton">
+        <description>My Videos</description>
+        <type>togglebutton</type>
+        <id>4</id>
+        <label>My Videos</label>
+        <onleft>4</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>2</ondown>        
+      </control>
+    </control>
+  </controls>
+</window>

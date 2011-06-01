@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87272</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#Trakt.Translation.AccountSetup.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9996</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>251</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>Create New Account</description>
+        <id>2</id>
+        <label>#Trakt.Translation.CreateNewAccount.Label</label>
+        <onup>17</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Login to Existing Account</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#Trakt.Translation.LoginExistingAccount.Label</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Disconnect Current Account</description>
+        <type>button</type>
+        <id>4</id>
+        <label></label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+    <import>Trakt.AccountDialog.xml</import>
+  </controls>
+</window>
