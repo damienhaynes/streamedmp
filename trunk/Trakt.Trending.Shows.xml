@@ -6,6 +6,9 @@
   <define>#header.hover:hover_trakt.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#Fanart.1:#Trakt.TrendingShows.Fanart.1</define>
+  <define>#Fanart.2:#Trakt.TrendingShows.Fanart.2</define>
   <controls>    
 		
 		<control>
@@ -20,6 +23,9 @@
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
 			<animation effect="fade" time="300">WindowOpen</animation>
     </control>
+    
+    <import>Trakt.Common.Fanart.xml</import>
+    
     <control>
       <id>1</id>
       <description>Overlay Image</description>      
