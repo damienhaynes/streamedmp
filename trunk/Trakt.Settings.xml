@@ -3,7 +3,7 @@
   <id>87271</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#Trakt.Translation.Settings.Label</define>
+  <define>#header.label:Trakt #Trakt.Translation.Settings.Label</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9996</define>
@@ -33,8 +33,17 @@
         <description>Plugin Setup</description>
         <id>3</id>
         <label>#Trakt.Translation.Plugins.Label</label>
-				<hyperlink>87273</hyperlink>        
+				<hyperlink>87273</hyperlink>
         <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>General Settings</description>
+        <id>4</id>
+        <label>#Trakt.Translation.General.Label</label>
+				<hyperlink>87274</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>2</ondown>
       </control>
     </control>
   </controls>
