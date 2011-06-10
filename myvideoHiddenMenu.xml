@@ -86,7 +86,7 @@ This file should contain the details view
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
-        <layout>StackLayout</layout>
+        <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>View-As</description>
           <type>button</type>
@@ -108,13 +108,14 @@ This file should contain the details view
           <id>5</id>
           <label>457</label>
           <onleft>50</onleft>
+          <ondown>20</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Current Playlist</description>
@@ -122,6 +123,7 @@ This file should contain the details view
           <id>20</id>
           <label>4555</label>
           <action>33</action>
+          <onup>5</onup>
           <onleft>50</onleft>
         </control>
         <control>
@@ -130,58 +132,105 @@ This file should contain the details view
           <id>9</id>
           <label>983</label>
           <onleft>50</onleft>
+          <onup>20</onup>
+          <ondown>99989</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
-          <description>My Videos</description>
+          <description>Trailers (IMDB)</description>
           <type>button</type>
-          <id>66601</id>
-          <label>100006</label>
-          <hyperlink>703</hyperlink>
+          <id>99989</id>
+          <label>#(L(5900)) IMDB</label>
+          <ondown>99990</ondown>
+          <onup>9</onup>
           <onleft>50</onleft>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:IMDb Movie Trailers|return:Locked</hyperlinkParameter>
+          <visible>plugin.isenabled(OnlineVideos)</visible>
         </control>
         <control>
-          <description>Moving Pictures</description>
+          <description>Trailers (iTunes)</description>
           <type>button</type>
-          <id>66602</id>
-          <label>Moving Pictures</label>
-          <hyperlink>96742</hyperlink>
-          <visible>plugin.isenabled(Moving Pictures)</visible>
+          <id>99990</id>
+          <label>#(L(5900)) iTUNES</label>
+          <ondown>99991</ondown>
+          <onup>99989</onup>
           <onleft>50</onleft>
-        </control>
-        <control>
-          <description>My TVSeries</description>
-          <type>button</type>
-          <id>66603</id>
-          <hyperlink>9811</hyperlink>
-          <label>1300</label>
-          <visible>plugin.isenabled(MP-TV Series)</visible>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>My Trailers</description>
-          <type>button</type>
-          <id>66604</id>
-          <label>5906</label>
-          <hyperlink>5900</hyperlink>
-          <visible>plugin.isenabled(My Trailers)</visible>
-          <onleft>50</onleft>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
+          <visible>plugin.isenabled(OnlineVideos)</visible>
         </control>
         <control>
           <description>SubCentral</description>
           <type>button</type>
-          <id>66605</id>
+          <id>99991</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-          <ondown>2</ondown>
+          <onup>99990</onup>
+          <ondown>99992</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)</visible>
+        </control>
+        <control>
+          <description>Trakt Recommendations</description>
+          <type>button</type>
+          <id>99992</id>
+          <label>#Trakt.Translation.Recommendations.Label</label>
+          <hyperlink>87263</hyperlink>
+          <onup>99991</onup>
+          <ondown>99993</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Trending</description>
+          <type>button</type>
+          <id>99993</id>
+          <label>#Trakt.Translation.Trending.Label</label>
+          <hyperlink>87266</hyperlink>
+          <onup>99992</onup>
+          <ondown>99994</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Watch List</description>
+          <type>button</type>
+          <id>99994</id>
+          <label>#Trakt.Translation.WatchList.Label</label>
+          <hyperlink>87270</hyperlink>
+          <onup>99993</onup>
+          <ondown>99995</ondown>          
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Moving Pictures</description>
+          <type>button</type>
+          <id>99995</id>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
+          <visible>plugin.isenabled(Moving Pictures)</visible>
+          <onleft>50</onleft>
+          <onup>99994</onup>
+          <ondown>99996</ondown>
+        </control>
+        <control>
+          <description>My TVSeries</description>
+          <type>button</type>
+          <id>99996</id>
+          <hyperlink>9811</hyperlink>
+          <label>1300</label>
+          <visible>plugin.isenabled(MP-TV Series)</visible>
+          <onleft>50</onleft>
+          <onup>99995</onup>
+          <ondown>2</ondown>
         </control>
       </control>
     </control>
