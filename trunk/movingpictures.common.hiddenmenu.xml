@@ -105,7 +105,7 @@
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
-        <layout>StackLayout</layout>
+        <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>Cycle Layout/View</description>
           <type>button</type>
@@ -136,13 +136,14 @@
           <onleft>50</onleft>
           <scrollStartDelaySec>1</scrollStartDelaySec>
           <scrollWrapString> | </scrollWrapString>
+          <ondown>66610</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Video Settings</description>
@@ -150,15 +151,16 @@
           <id>66610</id>
           <label>100006</label>
           <hyperlink>703</hyperlink>
+          <onup>15</onup>
           <ondown>66611</ondown>
           <onleft>50</onleft>
-        </control>
+        </control>        
         <control>
           <description>Skin Settings</description>
           <type>button</type>
           <id>66611</id>
           <label>#StreamedMP.SkinSettings</label>
-          <ondown>176</ondown>
+          <ondown>99989</ondown>
           <onup>66610</onup>
           <onleft>50</onleft>
           <hyperlink>196206</hyperlink>
@@ -168,62 +170,78 @@
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
-          <description>My TVSeries</description>
+          <description>Trailers (IMDB)</description>
           <type>button</type>
-          <id>176</id>
-          <label>My TVSeries</label>
+          <id>99989</id>
+          <label>#(L(5900)) IMDB</label>
+          <ondown>99990</ondown>
           <onup>66611</onup>
-          <ondown>177</ondown>
           <onleft>50</onleft>
-          <hyperlink>9811</hyperlink>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:IMDb Movie Trailers|return:Locked</hyperlinkParameter>
+          <visible>plugin.isenabled(OnlineVideos)</visible>
         </control>
         <control>
-          <description>My Videos</description>
+          <description>Trailers (iTunes)</description>
           <type>button</type>
-          <id>177</id>
-          <label>100006</label>
-          <ondown>178</ondown>
-          <onup>176</onup>
+          <id>99990</id>
+          <label>#(L(5900)) iTUNES</label>
+          <ondown>99991</ondown>
+          <onup>99989</onup>
           <onleft>50</onleft>
-          <hyperlink>6</hyperlink>
-        </control>
-        <control>
-          <description>My Trailers</description>
-          <type>button</type>
-          <id>178</id>
-          <label>5900</label>
-          <ondown>179</ondown>
-          <onup>177</onup>
-          <onleft>50</onleft>
-          <hyperlink>5900</hyperlink>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
+          <visible>plugin.isenabled(OnlineVideos)</visible>
         </control>
         <control>
           <description>SubCentral</description>
           <type>button</type>
-          <id>179</id>
+          <id>99991</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-          <onup>178</onup>
-          <ondown>181966</ondown>
+          <onup>99990</onup>
+          <ondown>99992</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)</visible>
         </control>
-		<control>
-          <description>Download Central</description>
+        <control>
+          <description>Trakt Recommendations</description>
           <type>button</type>
-          <id>181966</id>
-          <label>Download</label>
-          <hyperlink>181966</hyperlink>
-          <onup>179</onup>
+          <id>99992</id>
+          <label>#Trakt.Translation.Recommendations.Label</label>
+          <hyperlink>87263</hyperlink>
+          <onup>99991</onup>
+          <ondown>99993</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Trending</description>
+          <type>button</type>
+          <id>99993</id>
+          <label>#Trakt.Translation.Trending.Label</label>
+          <hyperlink>87266</hyperlink>
+          <onup>99992</onup>
+          <ondown>99994</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Watch List</description>
+          <type>button</type>
+          <id>99994</id>
+          <label>#Trakt.Translation.WatchList.Label</label>
+          <hyperlink>87270</hyperlink>
+          <onup>99993</onup>
           <ondown>2</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(dlCentral)</visible>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
-      </control>
-    </control>
+      </control>      
+    </control>    
   </controls>
 </window>
 <!--Checksum:af5037267ed8e4535810f597454bdd83-->
