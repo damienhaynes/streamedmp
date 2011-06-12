@@ -381,6 +381,23 @@
       <visible>!string.equals(#Trakt.View.Level,WatchedHistory)</visible>
     </control>
 		
+		<control>
+      <description>Episode Plot</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>18</posX>
+      <posY>540</posY>
+      <width>620</width>
+      <height>110</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.User.About</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>!string.equals(#Trakt.User.About,)+!string.equals(#Trakt.User.About,N/A)+!string.equals(#Trakt.View.Level,WatchedHistory)</visible>
+    </control>
+		
     <!-- Trakt Episodes -->
     <control>
       <description>Big Episode Thumb</description>
