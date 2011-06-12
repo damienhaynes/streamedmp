@@ -53,7 +53,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>223</posY>
+        <posY>183</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -65,7 +65,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>362</posY>
+        <posY>322</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -77,7 +77,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>446</posY>
+        <posY>406</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -89,7 +89,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>530</posY>
+        <posY>490</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -101,10 +101,10 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
-        <posY>245</posY>
+        <posY>205</posY>
         <width>220</width>
         <height>720</height>
-        <layout>StackLayout</layout>
+        <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>Switch View</description>
           <type>button</type>
@@ -134,13 +134,14 @@
           <id>4</id>
           <label>496</label>
           <onleft>50</onleft>
+					<ondown>20</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Current Playlist</description>
@@ -148,6 +149,7 @@
           <id>20</id>
           <label>4555</label>
           <action>33</action>
+					<onup>4</onup>
           <onleft>50</onleft>
         </control>
         <control>
@@ -156,13 +158,14 @@
           <id>9</id>
           <label>983</label>
           <onleft>50</onleft>
+					<ondown>66608</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Video Settings</description>
@@ -170,6 +173,7 @@
           <id>66608</id>
           <label>100006</label>
           <hyperlink>703</hyperlink>
+					<onup>9</onup>
           <onleft>50</onleft>
         </control>
         <control>
@@ -179,13 +183,14 @@
           <label>#StreamedMP.SkinSettings</label>
           <hyperlink>196205</hyperlink>
           <onleft>50</onleft>
+					<ondown>66610</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>MovingPictures</description>
@@ -194,15 +199,9 @@
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <onleft>50</onleft>
-        </control>
-        <control>
-          <description>My Videos</description>
-          <type>button</type>
-          <id>66611</id>
-          <label>100006</label>
-          <onleft>50</onleft>
-          <hyperlink>6</hyperlink>
-          <ondown>66612</ondown>
+					<onup>66609</onup>
+					<ondown>66612</ondown>
+					<visible>plugin.isenabled(Moving Pictures)</visible>
         </control>
         <control>
           <description>SubCentral</description>
@@ -210,19 +209,54 @@
           <id>66612</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-          <ondown>181966</ondown>
+					<onup>66610</onup>
+          <ondown>99991</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
-        </control>
-		<control>
-          <description>Download Central</description>
+        </control>				
+				<control>
+          <description>Trakt Calendar</description>
           <type>button</type>
-          <id>181966</id>
-          <label>Download</label>
-          <hyperlink>181966</hyperlink>
-          <ondown>2</ondown>		  
+          <id>99991</id>
+          <label>#Trakt.Translation.Calendar.Label</label>
+          <hyperlink>87259</hyperlink>
+          <onup>66612</onup>
+          <ondown>99992</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(dlCentral)+control.isvisible(1239)</visible>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+				<control>
+          <description>Trakt Recommendations</description>
+          <type>button</type>
+          <id>99992</id>
+          <label>#Trakt.Translation.Recommendations.Label</label>
+          <hyperlink>87262</hyperlink>
+          <onup>99991</onup>
+          <ondown>99993</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Trending</description>
+          <type>button</type>
+          <id>99993</id>
+          <label>#Trakt.Translation.Trending.Label</label>
+          <hyperlink>87265</hyperlink>
+          <onup>99992</onup>
+          <ondown>99994</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Watch List</description>
+          <type>button</type>
+          <id>99994</id>
+          <label>#Trakt.Translation.WatchList.Label</label>
+          <hyperlink>87268</hyperlink>
+          <onup>99993</onup>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
       </control>
     </control>

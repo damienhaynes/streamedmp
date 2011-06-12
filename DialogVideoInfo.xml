@@ -377,7 +377,7 @@
       <description>Button Group</description>
       <posX>900</posX>
       <posY>320</posY>      
-      <layout>StackLayout</layout>
+      <layout>StackLayout(0, Vertical, true)</layout>
       <control>
         <description>Play Button</description>
         <type>button</type>
@@ -502,7 +502,8 @@
         <id>4755</id>
         <label>#StreamedMP.Trailer</label>
         <onleft>10</onleft>
-        <ondown>2</ondown>
+				<onup>6</onup>
+        <ondown>97259</ondown>
 				<hyperlink>4755</hyperlink>
 				<hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
@@ -515,6 +516,27 @@
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
 				<visible>plugin.isenabled(OnlineVideos)</visible>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+			<control>
+        <description>Trakt Rate Movie</description>
+        <type>button</type>
+        <id>97259</id>
+        <label>#Trakt.Translation.Rate.Label</label>
+        <onleft>10</onleft>
+				<onup>4755</onup>
+        <ondown>2</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+				<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<visible>plugin.isenabled(Trakt)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
