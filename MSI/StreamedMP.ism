@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -382,7 +383,7 @@
 		<row><td>pluginStreamedMPConfigDLL</td><td>{32CECD94-93BC-4ECC-8511-3E6E3C3AAADE}</td><td>WINDOWS1</td><td>8</td><td/><td>streamedmpconfig.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginStreamedMPEditorDLL</td><td>{C447E455-0E1C-431F-BA09-9F10545ED6AC}</td><td>PROCESS</td><td>0</td><td/><td>streamedmpeditor.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>pluginTraktDLL</td><td>{5905BDB6-D409-4928-A6B2-71D3FA41D027}</td><td>WINDOWS1</td><td>8</td><td/><td>traktplugin.dll</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginTraktDLL</td><td>{5905BDB6-D409-4928-A6B2-71D3FA41D027}</td><td>WINDOWS1</td><td>8</td><td/><td>traktplugin.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -702,9 +703,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1571,7 +1576,7 @@
 		<row><td>TVSeriesMainPlugin</td><td>TVSeries</td><td>##ID_STRING129##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Trakt</td><td>Plugins</td><td>##ID_STRING152##</td><td>##ID_STRING153##</td><td>8</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TraktDefaultWideSkin</td><td>Trakt</td><td>##ID_STRING155##</td><td>##ID_STRING156##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>TraktMainPlugin</td><td>Trakt</td><td>##ID_STRING154##</td><td/><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>TraktMainPlugin</td><td>Trakt</td><td>##ID_STRING154##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td>Germany</td><td>##ID_STRING98##</td><td>##ID_STRING101##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td>Main</td><td>##ID_STRING53##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
@@ -4446,9 +4451,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
