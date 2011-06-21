@@ -102,7 +102,7 @@
 #define MYLYRICS_MIN_VERSION						"1.6.0.0"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.2.0"
 #define INFOSERVICE_MIN_VERSION						"1.6.5.210"
-#define TRAKT_MIN_VERSION							"0.9.5.0"
+#define TRAKT_MIN_VERSION							"1.0.0.1"
 
 
 // XML Path Defines
@@ -209,6 +209,7 @@
 #define XML_TRAKT_MOVPICS				"MovingPictures"
 #define XML_TRAKT_TVSERIES				"TVSeries"
 #define XML_TRAKT_MYVIDEOS				"MyVideos"
+#define XML_TRAKT_MYFILMS				"MyFilms"
          
 // Prototype Functions         
 prototype VOID 		CleanCache(STRING);
@@ -319,6 +320,7 @@ STRING g_sTraktPassword;
 STRING g_sTraktTVSeries;
 STRING g_sTraktMovingPictures;
 STRING g_sTraktMyVideos;
+STRING g_sTraktMyFilms;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -590,6 +592,7 @@ begin
 	g_sTraktUserName = "";
 	g_sTraktPassword = "";
 	g_sTraktMyVideos = "-1";
+	g_sTraktMyFilms = "-1";
 	g_sTraktTVSeries = "0";
 	if (Is(FILE_EXISTS, g_sPluginsDir ^ "Windows\\MovingPictures.dll")) then
 		g_sTraktMovingPictures = "1";
@@ -904,6 +907,13 @@ function OnFirstUIAfter()
     STRING szTitle, szMsg1, szMsg2, szOption1, szOption2, szCmdLine, szSite, szFile;
     NUMBER bOpt1, bOpt2;
 begin
+	
+	// Delete old Trakt Process plugin if it still exists
+	if (Is(FILE_EXISTS, g_sPluginsDir ^ "windows\\TraktPlugin.dll")) then
+		if (Is(FILE_EXISTS, g_sPluginsDir ^ "process\\TraktPlugin.dll")) then
+			DeleteFile(g_sPluginsDir ^ "process\\TraktPlugin.dll");
+		endif;
+	endif;
 	
  	// Update Settings
 	UpdateSettings();
@@ -2426,7 +2436,7 @@ begin
             szFileName = g_sPluginsDir^"process\\FanartHandler.dll";  
             
         case "TRAKT": 
-            szFileName = g_sPluginsDir^"process\\TraktPlugin.dll";    
+            szFileName = g_sPluginsDir^"windows\\TraktPlugin.dll";    
 
     endswitch; 
 
@@ -3320,6 +3330,11 @@ begin
 		if (sResult != "") then
 			g_sTraktMyVideos = sResult;
 		endif;
+		
+		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MYFILMS);
+		if (sResult != "") then
+			g_sTraktMyFilms = sResult;
+		endif;
 						
 		if (g_sTraktUserName = "" && g_sTraktPassword = "") then 
 			
@@ -3376,9 +3391,10 @@ begin
         xmlWriter.SetEntry("Trakt", XML_TRAKT_TVSERIES, g_sTraktTVSeries);  
         xmlWriter.SetEntry("Trakt", XML_TRAKT_MOVPICS, g_sTraktMovingPictures);  
         xmlWriter.SetEntry("Trakt", XML_TRAKT_MYVIDEOS, g_sTraktMyVideos);    
+        xmlWriter.SetEntry("Trakt", XML_TRAKT_MYFILMS, g_sTraktMyFilms);
         
         // Enable plugin on mediaportal startup
-        if (Is(FILE_EXISTS, g_sPluginsDir ^ "process\\TraktPlugin.dll")) then
+        if (Is(FILE_EXISTS, g_sPluginsDir ^ "windows\\TraktPlugin.dll")) then
         	xmlWriter.SetEntry("plugins", "Trakt", "yes");
         	xmlWriter.SetEntry("pluginsdlls", "TraktPlugin.dll", "yes");
         endif;
