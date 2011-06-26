@@ -174,7 +174,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>337</posY>
+        <posY>310</posY>
         <visible>!control.hasfocus(10)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -196,7 +196,9 @@
           <type>button</type>
           <label>264</label>
           <onleft>10</onleft>
-          <onright>10</onright>
+          <onright>10</onright>		
+					<ondown>3</ondown>
+					<onup>17</onup>					
         </control>
         <control>
           <description>Advanced Record</description>
@@ -205,7 +207,26 @@
           <label>1038</label>
           <onleft>10</onleft>
           <onright>10</onright>
-        </control>       
+					<ondown>4</ondown>
+					<onup>2</onup>
+        </control>
+				<control>
+          <id>0</id>
+          <type>button</type>
+          <label></label>
+          <onleft>10</onleft>
+          <onright>10</onright>
+        </control>
+				<control>
+          <description>Keep</description>
+          <id>4</id>
+          <type>button</type>
+          <label>1042</label>
+          <onleft>10</onleft>
+          <onright>10</onright>
+					<onup>3</onup>
+					<ondown>6</ondown>
+        </control>
         <control>
           <description>Quality</description>
           <type>button</type>
@@ -213,15 +234,8 @@
           <label>882</label>
           <onleft>19</onleft>
           <onright>10</onright>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>Keep</description>
-          <id>4</id>
-          <type>button</type>
-          <label>1042</label>
-          <onleft>10</onleft>
-          <onright>10</onright>
+					<ondown>7</ondown>
+					<onup>4</onup>
         </control>
         <control>
           <description>Episodes</description>
@@ -230,6 +244,8 @@
           <label>888</label>
           <onleft>10</onleft>
           <onright>10</onright>
+					<ondown>8</ondown>
+					<onup>6</onup>
         </control>
         <control>
           <description>PreRecord</description>
@@ -238,6 +254,8 @@
           <label>1444</label>
           <onleft>10</onleft>
           <onright>10</onright>
+					<ondown>9</ondown>
+					<onup>7</onup>
         </control>
         <control>
           <description>PostRecord</description>
@@ -247,6 +265,7 @@
           <onleft>10</onleft>
           <onright>10</onright>
           <ondown>2</ondown>
+					<onup>8</onup>
         </control>
       </control>
     </control>
