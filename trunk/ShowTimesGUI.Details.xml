@@ -96,7 +96,7 @@
       <description>Star Rating Value</description>
       <id>0</id>
       <type>label</type>
-      <label>#st_userrating / 10</label>
+      <label>#(string.format('{0:0.0} / 10', cflt(#st_userrating)))</label>
       <posX>490</posX>
       <posY>450</posY>
       <width>200</width>
@@ -179,7 +179,7 @@
     <control>
       <description>MPAA Rating</description>
       <type>label</type>
-      <label>#StreamedMP.Rated: #st_rating</label>
+      <label>#st_rating</label>
       <id>0</id>
       <posX>488</posX>
       <posY>584</posY>
