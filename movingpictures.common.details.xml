@@ -20,7 +20,7 @@ This file should contain the details view
     <control>
       <description>Cover Art</description>
       <type>image</type>
-      <id>60</id>
+      <id>601</id>
       <posX>47</posX>
       <posY>309</posY>
       <width>257</width>
@@ -32,13 +32,13 @@ This file should contain the details view
     <control>
       <description>Rounded cover edges</description>
       <type>image</type>
-      <id>61</id>
+      <id>610</id>
       <posX>25</posX>
       <posY>292</posY>
       <width>297</width>
       <height>414</height>
       <texture>#StreamedMP.RoundedPosters.Image</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -50,7 +50,7 @@ This file should contain the details view
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+!Control.HasThumb(61)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!Control.HasThumb(610)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -62,7 +62,7 @@ This file should contain the details view
       <width>32</width>
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -74,7 +74,7 @@ This file should contain the details view
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+control.isvisible(9)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+control.isvisible(9)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -86,7 +86,7 @@ This file should contain the details view
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(60)+!control.isvisible(9)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Buttons -->
