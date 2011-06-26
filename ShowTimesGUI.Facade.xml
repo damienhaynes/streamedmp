@@ -10,7 +10,7 @@
       <width>1280</width>
       <height>47</height>
       <texture>imagestreamtitle.png</texture>
-      <visible>!Control.IsVisible(24)+!facadeview.coverflow</visible>
+      <visible>!control.isvisible(24)+!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -23,7 +23,7 @@
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
-      <visible>!Control.IsVisible(24)+!facadeview.coverflow</visible>
+      <visible>!control.isvisible(24)+!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Facade Spin Background -->
@@ -123,8 +123,8 @@
         <onright>2</onright>
         <width>590</width>
         <posX>686</posX>
-        <posY>317</posY>
-        <height>390</height>
+        <posY>240</posY>
+        <height>475</height>
         <textXOff>0</textXOff>
         <!-- Spin Controls -->
         <spinWidth>50</spinWidth>
