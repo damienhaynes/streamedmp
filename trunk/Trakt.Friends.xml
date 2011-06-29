@@ -162,7 +162,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-			<visible>string.equals(#Trakt.View.Level,Friends)</visible>
+			<visible>!string.equals(#Trakt.View.Level,WatchedTypes)</visible>
     </control>
     <control>
       <description>Page Count Label</description>
@@ -177,7 +177,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-			<visible>string.equals(#Trakt.View.Level,Friends)</visible>
+			<visible>!string.equals(#Trakt.View.Level,WatchedTypes)</visible>
     </control>
     <control>
       <description>Selected item Label</description>
