@@ -57,7 +57,7 @@
       <posY>14</posY>
       <width>220</width>
       <font>mediastream12c</font>
-      <label>#(iif(eq(#Trakt.Calendar.Type,'MyShows'),'#Trakt.Translation.CalendarMyShows.Label','#Trakt.Translation.CalendarPremieres.Label'))</label>
+      <label>#(switch(eq(#Trakt.Calendar.Type,'MyShows'),'#Trakt.Translation.CalendarMyShows.Label',eq(#Trakt.Calendar.Type,'Premieres'),'#Trakt.Translation.CalendarPremieres.Label',eq(#Trakt.Calendar.Type,'AllShows'),'#Trakt.Translation.CalendarAllShows.Label'))</label>
       <align>right</align>			
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
