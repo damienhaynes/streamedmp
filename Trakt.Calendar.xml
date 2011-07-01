@@ -304,7 +304,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>280</posY>
+        <posY>305</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -326,16 +326,22 @@
           <id>2</id>
 					<label>-</label>
           <onup>21</onup>
-          <!-- Top Bar -->
           <onleft>50</onleft>
-        </control>        
+        </control>
+        <control>
+          <description>Start Date</description>
+          <type>button</type>
+          <id>3</id>
+					<label>-</label>
+          <onleft>50</onleft>
+        </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
-        </control>        
+        </control>
         <control>
           <description>MovingPictures</description>
           <id>66610</id>
