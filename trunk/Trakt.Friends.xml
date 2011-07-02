@@ -557,7 +557,7 @@
 		<control>
       <description>Cover Art</description>
       <type>image</type>
-      <id>60</id>
+      <id>6007</id>
       <posX>31</posX>
       <posY>254</posY>
       <width>257</width>
@@ -576,7 +576,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>string.equals(#Trakt.View.Level,WatchedHistory)+string.equals(#Trakt.Selected.Type,movie)+Control.HasThumb(60)</visible>
+      <visible>string.equals(#Trakt.View.Level,WatchedHistory)+string.equals(#Trakt.Selected.Type,movie)+Control.HasThumb(6007)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
