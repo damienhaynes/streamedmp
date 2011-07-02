@@ -4,6 +4,7 @@ copy ..\..\..\Plugins\process\FanartHandler.dll .\ /Y
 copy ..\..\..\Plugins\process\StreamedMPEditor.dll .\ /Y
 copy ..\..\..\Plugins\windows\StreamedMPConfig.dll .\ /Y
 copy ..\..\..\Plugins\windows\MP-TVSeries.dll .\ /Y
+copy ..\..\..\Plugins\windows\TraktPlugin.dll .\ /Y
 rem copy ..\..\..\Plugins\windows\MovingPictures.dll .\ /Y
 rem copy ..\..\..\Plugins\windows\Cornerstone.dll .\ /Y
 rem copy ..\..\..\Plugins\windows\Cornerstone.MP.dll .\ /Y
