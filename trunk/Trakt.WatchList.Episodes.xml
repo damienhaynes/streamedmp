@@ -59,6 +59,33 @@
       <visible>facadeview.filmstrip</visible>
     </control>
 		
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>386</width>
+      <height>35</height>
+      <texture>tvtitlebgshort.png</texture>
+      <animation effect="fade" time="100" delay="0">visiblechange</animation>
+			<animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Current User</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>14</posY>
+      <width>220</width>
+      <font>mediastream12c</font>
+      <label>#Trakt.WatchList.CurrentUser</label>
+      <align>right</align> 
+			<animation effect="fade" time="100" delay="0">visiblechange</animation>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
 		<control>
       <description>Title Background</description>
       <type>image</type>
