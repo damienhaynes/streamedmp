@@ -41,8 +41,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
-		<control>
+    <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
@@ -52,7 +51,7 @@
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
@@ -92,14 +91,14 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Star Rating Image</description>
       <type>imagelist</type>
       <id>0</id>
       <width>115</width>
       <height>22</height>
       <posX>309</posX>
-      <posY>305</posY>      
+      <posY>305</posY>
       <textureWidth>24</textureWidth>
       <textureHeight>24</textureHeight>
       <subitems>
@@ -111,7 +110,9 @@
       <imagesToDraw>5</imagesToDraw>
       <percentage>#st_userrating</percentage>
       <visible>facadeview.list+!control.isvisible(24)+control.isvisible(50)</visible>
-    </control>   
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
     <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
@@ -127,7 +128,7 @@
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>        
+    </control>
     <control Style="smallTitleB">
       <description>Certification Label</description>
       <id>0</id>
@@ -147,11 +148,11 @@
       <label>#(iif(neq(#st_rating,''),#st_rating,'N/A'))</label>
       <posX>520</posX>
       <posY>573</posY>
-      <width>200</width>      
+      <width>200</width>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Runtime Label</description>
       <id>0</id>
@@ -171,11 +172,11 @@
       <label>#(iif(neq(#st_runtime,''),#st_runtime,'N/A'))</label>
       <posX>520</posX>
       <posY>595</posY>
-      <width>200</width>      
+      <width>200</width>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>        
+    </control>
     <control Style="smallTitleB">
       <description>Release Date Label</description>
       <type>label</type>
@@ -193,12 +194,11 @@
       <type>label</type>
       <label>#(iif(neq(#st_releasedate,''),#st_releasedate,'N/A'))</label>
       <posX>520</posX>
-      <posY>617</posY>      
+      <posY>617</posY>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
   </controls>
 </window>
-<!--Checksum:7139c820da9d9a119bc49e5b94ed223b-->
+<!--Checksum:53c3f5b81b09de094f0eed19b4092c92-->
