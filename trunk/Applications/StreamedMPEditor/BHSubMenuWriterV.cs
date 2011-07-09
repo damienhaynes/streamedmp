@@ -13,6 +13,7 @@ namespace StreamedMPEditor
     string onup;
     string ondown;
     string subArrowVisible;
+    string rightArrowValue;
 
     string bhSubMenuWriterV()
     {
@@ -144,8 +145,14 @@ namespace StreamedMPEditor
           }
         }
 
+        // Right arrow to 2nd level menu or exit/shutdown/restart.. menu
+        if (cbExitStyleNew.Checked || parentMenu.subMenuLevel2.Count > 0)
+          rightArrowValue = (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString();
+        else
+          rightArrowValue = "7777";
+
        localxml += "<onleft>" + (parentMenu.id + 900).ToString() + "</onleft>" +
-                    "<onright>" + (parentMenu.subMenuLevel1ID + (1 + isSecondLevel)).ToString() + "</onright>" +
+                    "<onright>" + rightArrowValue + "</onright>" +
                     "<ondown>" + ondown + "</ondown>" +
                     "<onup>" + onup + "</onup>" +
                     "<visible allowhiddenfocus=\"true\">control.isvisible(" + parentMenu.subMenuLevel1ID.ToString() + ")</visible>" +
@@ -297,10 +304,15 @@ namespace StreamedMPEditor
               localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
               break;
           }
-        } 
+        }
+
+        if (cbExitStyleNew.Checked)
+          rightArrowValue = (parentMenu.subMenuLevel1ID + (j + 101)).ToString();
+        else
+          rightArrowValue = "7777";
 
         localxml += "<onleft>" + (parentMenu.subMenuLevel1ID + (1)).ToString() + "</onleft>" +
-                     "<onright>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</onright>" +
+                     "<onright>" + rightArrowValue + "</onright>" +
                      "<ondown>" + ondown + "</ondown>" +
                      "<onup>" + onup + "</onup>" +
                      "<visible allowhiddenfocus=\"true\">control.isvisible(" + (parentMenu.subMenuLevel1ID + 100).ToString() + ")</visible>" +
