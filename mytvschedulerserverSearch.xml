@@ -1,39 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>747</id>
-  <defaultcontrol>51</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-  <define>#header.image:-</define>
+  <defaultcontrol>7</defaultcontrol>
+  <allowoverlay>no</allowoverlay>  
   <define>#header.label:Search</define>
-  <define>#header.hover:-</define>
-  <define>#selecteditem:-</define>
-  <define>#itemcount:-</define>
   <define>#useRandomTVSeriesFanart:No</define>
   <controls>
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>182</posX>
-      <posY>315</posY>
-      <width>256</width>
-      <height>256</height>
-      <texture>keyboard.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>status</description>
-      <type>label</type>
-      <id>2</id>
-      <posX>28</posX>
-      <posY>240</posY>
-      <font>mediastream13</font>
-      <textcolor>ff626d73</textcolor>
-      <align>right</align>
-      <label>6035</label>
-    </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
@@ -60,6 +34,71 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
+		<control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>80</posX>
+      <posY>250</posY>		
+      <layout>StackLayout</layout>
+      <control>
+        <description>Search title</description>
+        <type>button</type>
+        <id>7</id>
+        <label>6032</label>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <width>300</width>
+				<height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+        <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
+        <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
+      </control>
+      <control>
+        <description>Search by keyword</description>
+        <type>button</type>
+        <id>8</id>
+        <label>6033</label>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+				<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+        <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
+        <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
+      </control>
+      <control>
+        <description>Search by genre</description>
+        <type>button</type>
+        <id>9</id>
+        <label>6034</label>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+				<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+				<ondown>7</ondown>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+        <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
+        <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
+      </control>      
+    </control>		
     <control>
       <description>listcontrol</description>
       <type>listcontrol</type>
@@ -68,24 +107,24 @@
       <posY>240</posY>
       <height>450</height>
       <width>660</width>
-      <onleft>51</onleft>
-      <onright>51</onright>
-      <scrollOffset>2</scrollOffset>
+      <onleft>7</onleft>
+      <onright>7</onright>
+      <scrollOffset>3</scrollOffset>
       <PinIconWidth>15</PinIconWidth>
       <PinIconHeight>15</PinIconHeight>
       <PinIconXOff>57</PinIconXOff>
       <PinIconYOff>13</PinIconYOff>
       <itemWidth>32</itemWidth>
       <itemHeight>32</itemHeight>
-      <IconXOff>12</IconXOff>
+      <IconXOff>0</IconXOff>
       <IconYOff>4</IconYOff>
-      <textXOff>48</textXOff>
+      <textXOff>10</textXOff>
       <textYOff>5</textYOff>
       <textXOff2>0</textXOff2>
       <textYOff2>5</textYOff2>
-      <font2>mediastream11</font2>
+      <font>mediastream11c</font>
+			<font2>mediastream10c</font2>
       <keepaspectratio>yes</keepaspectratio>
-      <!--<unfocusedAlpha>0xFF</unfocusedAlpha>-->
       <spinPosX>1175</spinPosX>
       <spinPosY>682</spinPosY>
       <spinAlign>Right</spinAlign>
@@ -101,31 +140,7 @@
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
-    <control>
-      <description>sms input</description>
-      <type>smsinput</type>
-      <id>51</id>
-      <posX>0</posX>
-      <posY>520</posY>
-      <width>400</width>
-      <height>125</height>
-      <font>font14</font>
-      <font>font14</font>
-      <textcolor2>ff222222</textcolor2>
-      <textboxFont>mediastream16c</textboxFont>
-      <textboxXpos>10</textboxXpos>
-      <textboxYpos>618</textboxYpos>
-      <textboxWidth>600</textboxWidth>
-      <textboxHeight>37</textboxHeight>
-      <textboxColor>FFFFFF00</textboxColor>
-      <textboxBgColor>00ffffff</textboxBgColor>
-      <onleft>51</onleft>
-      <onright>51</onright>
-      <onup>50</onup>
-      <ondown>50</ondown>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+		<import>common.overlays.xml</import>
   </controls>
 </window>
 <!--Checksum:0361f72a5f647a2ea4db729d119d5507-->
