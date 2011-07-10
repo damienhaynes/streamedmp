@@ -26,6 +26,7 @@ namespace StreamedMPEditor
       rbSubStocks.Checked = false;
       rbSubHtpcInfo.Checked = false;
       rbSubUpdateControl.Checked = false;
+      rbMyMailManager.Checked = false;
 
     }
 
@@ -72,6 +73,10 @@ namespace StreamedMPEditor
             case formStreamedMpEditor.displayMostRecent.updateControl:
                 rbSubUpdateControl.Enabled = state;
                 rbSubUpdateControl.Checked = state;
+                break;
+            case formStreamedMpEditor.displayMostRecent.mymailmanager:
+                rbMyMailManager.Enabled = state;
+                rbMyMailManager.Checked = state;
                 break;
             default:
                 rbSubOff.Checked = true;
@@ -133,47 +138,53 @@ namespace StreamedMPEditor
       if (rbSubUpdateControl.Checked)
           return formStreamedMpEditor.displayMostRecent.updateControl;
 
+      if (rbMyMailManager.Checked)
+        return formStreamedMpEditor.displayMostRecent.mymailmanager;
+
       return formStreamedMpEditor.displayMostRecent.off;
     
     }
     private void setMostRecent(formStreamedMpEditor.displayMostRecent rbSetting)
     {
-        switch (rbSetting)
-        {
-            case formStreamedMpEditor.displayMostRecent.off:
-                rbSubOff.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.tvSeries:
-                rbSubTVSeries.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.movies:
-                rbSubMovies.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.music:
-                rbSubMusic.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.recordedTV:
-                rbSubTV.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
-                rbSubFreeDriveSpace.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.powerControl:
-                rbSubPowerControl.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.sleepControl:
-                rbSubSleepControl.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.stocks:
-                rbSubStocks.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.htpcInfo:
-                rbSubHtpcInfo.Checked = true;
-                break;
-            case formStreamedMpEditor.displayMostRecent.updateControl:
-                rbSubUpdateControl.Checked = true;
-                break;
-        }
+      switch (rbSetting)
+      {
+        case formStreamedMpEditor.displayMostRecent.off:
+          rbSubOff.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.tvSeries:
+          rbSubTVSeries.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.movies:
+          rbSubMovies.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.music:
+          rbSubMusic.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.recordedTV:
+          rbSubTV.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
+          rbSubFreeDriveSpace.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.powerControl:
+          rbSubPowerControl.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.sleepControl:
+          rbSubSleepControl.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.stocks:
+          rbSubStocks.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.htpcInfo:
+          rbSubHtpcInfo.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.updateControl:
+          rbSubUpdateControl.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.mymailmanager:
+          rbMyMailManager.Checked = true;
+          break;
+      }
 
     }
 

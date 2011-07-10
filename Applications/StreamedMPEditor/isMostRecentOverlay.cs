@@ -56,6 +56,10 @@
           updateControlOverlay();
           writeXMLFile("basichome.UpdateControl.Overlay.xml");
           break;
+        case isOverlayType.mymailmanager:
+          myMailManagerOverlay();
+          writeXMLFile("basichome.MyMailManager.Overlay.xml");
+          break;
         default:
           break;
       }
@@ -4471,6 +4475,47 @@
 
     #endregion
 
+    #region MyMailManager
+
+
+    void myMailManagerOverlay()
+    {
+      xml = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
+              "<window>" +
+                "<controls>" +
+                    "<control>" +
+                      "<description>New Email</description>" +
+                      "<type>label</type>" +
+                      "<posX>1250</posX>" +
+                      "<posY>75</posY>" +
+                      "<label>#newEmail</label>" +
+                      "<align>right</align>" +
+                      "<font>mediastream13</font>" +
+                      "<textcolor>aefafa</textcolor>" +
+                      "<visible>" + mostRecentVisibleControls(isOverlayType.mymailmanager) + "</visible>" +
+                      "<animation effect=\"slide\" start=\"400,400\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                      "<animation effect=\"slide\" end=\"400,400\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                    "</control>" +
+                      "<control>" +
+                      "<description>New Email</description>" +
+                      "<type>image</type>" +
+                      "<id>0</id>" +
+                      "<posX>1020</posX>" +
+                      "<posY>72</posY>" +
+                      "<width>40</width>" +
+                      "<height>30</height>" +
+                      "<texture>#new_mail</texture>" +
+                      "<visible>" + mostRecentVisibleControls(isOverlayType.mymailmanager) + "</visible>" +
+                      "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+                      "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                    "</control>" +
+                  "</controls>" +
+                "</window>";
+
+    }
+
+    #endregion
+
     #region Private Methods
 
     string mostRecentVisibleControls(isOverlayType isOverlay)
@@ -4962,6 +5007,50 @@
         }
       }
 
+      //Controls to display MyeMailManger Control overlay
+      //
+      if (isOverlay == isOverlayType.mymailmanager)
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.mymailmanager)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+          // Check Sunmenu Level 1
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.mymailmanager)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          // Check Sunmenu Level 2
+          if (item.subMenuLevel2.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel2.Count; i++)
+            {
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.mymailmanager)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+          }
+        }
+      }
+
       if ((isOverlay == isOverlayType.Music ||
            isOverlay == isOverlayType.RecordedTV ||
            isOverlay == isOverlayType.freeDriveSpace ||
@@ -4970,6 +5059,7 @@
            isOverlay == isOverlayType.powerControl ||
            isOverlay == isOverlayType.htpcInfo ||
            isOverlay == isOverlayType.updateControl ||
+           isOverlay == isOverlayType.mymailmanager ||
            isOverlay == isOverlayType.freeDriveSpace) && visibleOn == null)
       {
         visibleOn = "No";

@@ -178,6 +178,7 @@
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.groupBox6 = new System.Windows.Forms.GroupBox();
+      this.cbMyMailManager = new System.Windows.Forms.CheckBox();
       this.cbUpdateControlOverlay = new System.Windows.Forms.CheckBox();
       this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
       this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
@@ -797,6 +798,7 @@
       this.movPicsCategoryCombo.IntegralHeight = false;
       this.movPicsCategoryCombo.Location = new System.Drawing.Point(69, 73);
       this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
+      this.movPicsCategoryCombo.RestrictSelectionToLeafNodes = false;
       this.movPicsCategoryCombo.Size = new System.Drawing.Size(241, 21);
       this.movPicsCategoryCombo.TabIndex = 106;
       this.movPicsCategoryCombo.DropDown += new System.EventHandler(this.movPicsCategoryCombo_DropDown);
@@ -872,7 +874,7 @@
       this.cboContextLabel.Size = new System.Drawing.Size(148, 21);
       this.cboContextLabel.TabIndex = 10;
       this.toolTip1.SetToolTip(this.cboContextLabel, "The lable used above the menu item in the vertical default menu style.\r\n\r\nUsed in" +
-              ": Default Horizontal Menu");
+        ": Default Horizontal Menu");
       this.cboContextLabel.TextChanged += new System.EventHandler(this.cboContextLabels_TextChanged);
       // 
       // label18
@@ -953,7 +955,7 @@
       this.richTextBox2.TabIndex = 122;
       this.richTextBox2.TabStop = false;
       this.richTextBox2.Text = "           To create new menu item\n  1. Select Menu Item from Dropdown.\n         " +
-          "                  OR\n  2. Select Skin file from List.";
+    "                  OR\n  2. Select Skin file from List.";
       // 
       // groupBox3
       // 
@@ -1435,7 +1437,7 @@
       this.cbOverlayFanart.TabIndex = 42;
       this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
       this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
-              "Music/Video overlay.");
+        "Music/Video overlay.");
       this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
       // cboLabelFont
@@ -1672,7 +1674,7 @@
       this.wrapString.TabIndex = 13;
       this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
       this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
-              " is not installed this option will be disabled.\r\n");
+        " is not installed this option will be disabled.\r\n");
       this.wrapString.UseVisualStyleBackColor = true;
       // 
       // noFocusAlpha
@@ -1773,7 +1775,7 @@
       this.txtFocusColour.TabIndex = 5;
       this.txtFocusColour.Text = "FFFFFF";
       this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
-              "olour choser.\r\n");
+        "olour choser.\r\n");
       // 
       // label16
       // 
@@ -2034,6 +2036,7 @@
       // 
       // groupBox6
       // 
+      this.groupBox6.Controls.Add(this.cbMyMailManager);
       this.groupBox6.Controls.Add(this.cbUpdateControlOverlay);
       this.groupBox6.Controls.Add(this.cbSocksOverlay);
       this.groupBox6.Controls.Add(this.btConfigureFreeDriveSpace);
@@ -2048,6 +2051,18 @@
       this.groupBox6.Size = new System.Drawing.Size(709, 141);
       this.groupBox6.TabIndex = 19;
       this.groupBox6.TabStop = false;
+      // 
+      // cbMyMailManager
+      // 
+      this.cbMyMailManager.AutoSize = true;
+      this.cbMyMailManager.Enabled = false;
+      this.cbMyMailManager.Location = new System.Drawing.Point(306, 84);
+      this.cbMyMailManager.Name = "cbMyMailManager";
+      this.cbMyMailManager.Size = new System.Drawing.Size(170, 17);
+      this.cbMyMailManager.TabIndex = 19;
+      this.cbMyMailManager.Text = "Enable MyMailManger Overlay";
+      this.cbMyMailManager.UseVisualStyleBackColor = true;
+      this.cbMyMailManager.CheckedChanged += new System.EventHandler(this.cbMyMailManager_CheckedChanged);
       // 
       // cbUpdateControlOverlay
       // 
@@ -3401,6 +3416,7 @@
     private System.Windows.Forms.Label lbSearch;
     private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
     private System.Windows.Forms.Label lblCategories;
+    private System.Windows.Forms.CheckBox cbMyMailManager;
   }
 }
 
