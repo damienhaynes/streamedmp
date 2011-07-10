@@ -265,6 +265,7 @@ namespace StreamedMPEditor
         cbPowerControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "powerControlEnabled", nodelist));
         cbHtpcInfoOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "htpcinfoControlEnabled", nodelist));
         cbUpdateControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "updateControlEnabled", nodelist));
+        cbMyMailManager.Checked = bool.Parse(readEntryValue(optionsTag, "myMailManagerEnabled", nodelist));
         cbDisableExitMenu.Checked = bool.Parse(readEntryValue(optionsTag, "disableExitMenu", nodelist));
         cbContextLabelBelow.Checked = bool.Parse(readEntryValue(optionsTag, "contextLabelBelow", nodelist));      
       }
@@ -797,6 +798,8 @@ namespace StreamedMPEditor
           return displayMostRecent.stocks;
       else if (mrOption == displayMostRecent.updateControl.ToString())
           return displayMostRecent.updateControl;
+      else if (mrOption == displayMostRecent.mymailmanager.ToString())
+        return displayMostRecent.mymailmanager;
       else
           return displayMostRecent.off;
     }

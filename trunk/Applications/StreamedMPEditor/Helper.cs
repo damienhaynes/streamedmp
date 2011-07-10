@@ -341,7 +341,8 @@ namespace StreamedMPEditor
         MovingPictures,
         MPTVSeries,
         ForTheRecord,
-        UpdateControl
+        UpdateControl,
+        eMail
     }
 
     class PluginDetails
@@ -397,6 +398,11 @@ namespace StreamedMPEditor
             this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\UpdateControl.dll");
             this.name = "Update Control";
             break;
+          case Plugins.eMail:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\email.dll");
+            this.name = "MyeMailManager";
+            break;
+ 
         }
       }
     }
