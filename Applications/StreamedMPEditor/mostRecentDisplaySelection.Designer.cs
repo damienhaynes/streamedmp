@@ -41,13 +41,11 @@
       this.rbSubMovies = new System.Windows.Forms.RadioButton();
       this.rbSubTVSeries = new System.Windows.Forms.RadioButton();
       this.btSaveAndClose = new System.Windows.Forms.Button();
-      this.rbMyMailManager = new System.Windows.Forms.RadioButton();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
-      this.groupBox1.Controls.Add(this.rbMyMailManager);
       this.groupBox1.Controls.Add(this.rbSubUpdateControl);
       this.groupBox1.Controls.Add(this.rbSubHtpcInfo);
       this.groupBox1.Controls.Add(this.rbSubStocks);
@@ -91,7 +89,7 @@
       // rbSubStocks
       // 
       this.rbSubStocks.AutoSize = true;
-      this.rbSubStocks.Location = new System.Drawing.Point(249, 92);
+      this.rbSubStocks.Location = new System.Drawing.Point(249, 69);
       this.rbSubStocks.Name = "rbSubStocks";
       this.rbSubStocks.Size = new System.Drawing.Size(116, 17);
       this.rbSubStocks.TabIndex = 9;
@@ -197,17 +195,6 @@
       this.btSaveAndClose.UseVisualStyleBackColor = true;
       this.btSaveAndClose.Click += new System.EventHandler(this.btSaveAndClose_Click);
       // 
-      // rbMyMailManager
-      // 
-      this.rbMyMailManager.AutoSize = true;
-      this.rbMyMailManager.Location = new System.Drawing.Point(249, 68);
-      this.rbMyMailManager.Name = "rbMyMailManager";
-      this.rbMyMailManager.Size = new System.Drawing.Size(100, 17);
-      this.rbMyMailManager.TabIndex = 12;
-      this.rbMyMailManager.TabStop = true;
-      this.rbMyMailManager.Text = "MyMailManager";
-      this.rbMyMailManager.UseVisualStyleBackColor = true;
-      // 
       // mostRecentDisplaySelection
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +227,5 @@
     private System.Windows.Forms.RadioButton rbSubPowerControl;
     private System.Windows.Forms.RadioButton rbSubFreeDriveSpace;
     private System.Windows.Forms.RadioButton rbSubUpdateControl;
-    private System.Windows.Forms.RadioButton rbMyMailManager;
   }
 }

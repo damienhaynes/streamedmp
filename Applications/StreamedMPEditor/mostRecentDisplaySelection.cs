@@ -26,8 +26,6 @@ namespace StreamedMPEditor
       rbSubStocks.Checked = false;
       rbSubHtpcInfo.Checked = false;
       rbSubUpdateControl.Checked = false;
-      rbMyMailManager.Checked = false;
-
     }
 
     public void setEnableState(formStreamedMpEditor.displayMostRecent overlayType, bool state)
@@ -73,10 +71,6 @@ namespace StreamedMPEditor
             case formStreamedMpEditor.displayMostRecent.updateControl:
                 rbSubUpdateControl.Enabled = state;
                 rbSubUpdateControl.Checked = state;
-                break;
-            case formStreamedMpEditor.displayMostRecent.mymailmanager:
-                rbMyMailManager.Enabled = state;
-                rbMyMailManager.Checked = state;
                 break;
             default:
                 rbSubOff.Checked = true;
@@ -138,9 +132,6 @@ namespace StreamedMPEditor
       if (rbSubUpdateControl.Checked)
           return formStreamedMpEditor.displayMostRecent.updateControl;
 
-      if (rbMyMailManager.Checked)
-        return formStreamedMpEditor.displayMostRecent.mymailmanager;
-
       return formStreamedMpEditor.displayMostRecent.off;
     
     }
@@ -180,9 +171,6 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.displayMostRecent.updateControl:
           rbSubUpdateControl.Checked = true;
-          break;
-        case formStreamedMpEditor.displayMostRecent.mymailmanager:
-          rbMyMailManager.Checked = true;
           break;
       }
 

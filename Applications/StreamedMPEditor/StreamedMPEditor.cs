@@ -120,7 +120,7 @@ namespace StreamedMPEditor
       stocks,
       htpcInfo,
       updateControl,
-      mymailmanager
+      myemailmanager
     }
 
     enum isOverlayType
@@ -135,7 +135,7 @@ namespace StreamedMPEditor
       stocks,
       htpcInfo,
       updateControl,
-      mymailmanager
+      myemailmanager
     }
 
     public enum fanartSource
@@ -1781,8 +1781,8 @@ namespace StreamedMPEditor
         if (cbUpdateControlOverlay.Checked)
           generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 976, 50, 0, 0);
 
-        if (cbMyMailManager.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.mymailmanager, 0, 0, 0, 0);
+        if (cbMyeMailManager.Checked)
+          generateMostRecentOverlay(menuStyle, isOverlayType.myemailmanager, 0, 0, 0, 0);
       }
       //
       // Add the imports to basichome
@@ -1825,8 +1825,8 @@ namespace StreamedMPEditor
         if (cbUpdateControlOverlay.Checked)
           generateMostRecentInclude(isOverlayType.updateControl);
 
-        if (cbMyMailManager.Checked)
-          generateMostRecentInclude(isOverlayType.mymailmanager);
+        if (cbMyeMailManager.Checked)
+          generateMostRecentInclude(isOverlayType.myemailmanager);
       }
     }
     //
@@ -2033,9 +2033,9 @@ namespace StreamedMPEditor
     }
 
 
-    private void cbMyMailManager_CheckedChanged(object sender, EventArgs e)
+    private void cbMyeMailManager_CheckedChanged(object sender, EventArgs e)
     {
-      mrDisplaySelection.setEnableState(displayMostRecent.mymailmanager, cbMyMailManager.Checked);
+      mrDisplaySelection.setEnableState(displayMostRecent.myemailmanager, cbMyeMailManager.Checked);
     }
 
     private void btMenuIcon_Click(object sender, EventArgs e)
