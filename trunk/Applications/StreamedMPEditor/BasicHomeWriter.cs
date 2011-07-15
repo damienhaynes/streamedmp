@@ -3845,10 +3845,10 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<import>basichome.UpdateControl.Overlay.xml</import>");
       }
 
-      if (overlayType == isOverlayType.mymailmanager)
+      if (overlayType == isOverlayType.myemailmanager)
       {
-        replaceString = "<!-- BEGIN MYMAILMANAGER OVERLAY CODE-->";
-        rawXML.AppendLine("<import>basichome.MyMailManager.Overlay.xml</import>");
+        replaceString = "<!-- BEGIN MYEMAILMANAGER OVERLAY CODE-->";
+        rawXML.AppendLine("<import>basichome.MYEMAILMANAGER.Overlay.xml</import>");
       }
 
       if (!string.IsNullOrEmpty(replaceString))
@@ -4033,7 +4033,7 @@ namespace StreamedMPEditor
       string powerControlEnabled = cbPowerControlOverlay.Checked ? "true" : "false";
       string htpcinfoControlEnabled = cbHtpcInfoOverlay.Checked ? "true" : "false";
       string updateControlEnabled = cbUpdateControlOverlay.Checked ? "true" : "false";
-      string myMailManagerEnabled = cbMyMailManager.Checked ? "true" : "false";
+      string MyeMailManagerEnabled = cbMyeMailManager.Checked ? "true" : "false";
       string disableExitMenu = cbDisableExitMenu.Checked ? "true" : "false";
       string contextLabelBelow = cbContextLabelBelow.Checked ? "true" : "false";
 
@@ -4179,7 +4179,7 @@ namespace StreamedMPEditor
                 + generateEntry("powerControlEnabled", powerControlEnabled, 3, true)
                 + generateEntry("htpcinfoControlEnabled", htpcinfoControlEnabled, 3, true)
                 + generateEntry("updateControlEnabled", updateControlEnabled, 3, true)
-                + generateEntry("myMailManagerEnabled", myMailManagerEnabled, 3, true)
+                + generateEntry("myeMailManagerEnabled", MyeMailManagerEnabled, 3, true)
                 + generateEntry("disableExitMenu", disableExitMenu, 3, true)
                 + generateEntry("contextLabelBelow", contextLabelBelow, 3, true)
                 + "\t\t</section>");

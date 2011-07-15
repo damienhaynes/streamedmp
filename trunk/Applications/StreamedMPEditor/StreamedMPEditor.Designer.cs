@@ -178,7 +178,7 @@
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.groupBox6 = new System.Windows.Forms.GroupBox();
-      this.cbMyMailManager = new System.Windows.Forms.CheckBox();
+      this.cbMyeMailManager = new System.Windows.Forms.CheckBox();
       this.cbUpdateControlOverlay = new System.Windows.Forms.CheckBox();
       this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
       this.btConfigureFreeDriveSpace = new System.Windows.Forms.Button();
@@ -2036,7 +2036,7 @@
       // 
       // groupBox6
       // 
-      this.groupBox6.Controls.Add(this.cbMyMailManager);
+      this.groupBox6.Controls.Add(this.cbMyeMailManager);
       this.groupBox6.Controls.Add(this.cbUpdateControlOverlay);
       this.groupBox6.Controls.Add(this.cbSocksOverlay);
       this.groupBox6.Controls.Add(this.btConfigureFreeDriveSpace);
@@ -2054,15 +2054,15 @@
       // 
       // cbMyMailManager
       // 
-      this.cbMyMailManager.AutoSize = true;
-      this.cbMyMailManager.Enabled = false;
-      this.cbMyMailManager.Location = new System.Drawing.Point(306, 84);
-      this.cbMyMailManager.Name = "cbMyMailManager";
-      this.cbMyMailManager.Size = new System.Drawing.Size(170, 17);
-      this.cbMyMailManager.TabIndex = 19;
-      this.cbMyMailManager.Text = "Enable MyMailManger Overlay";
-      this.cbMyMailManager.UseVisualStyleBackColor = true;
-      this.cbMyMailManager.CheckedChanged += new System.EventHandler(this.cbMyMailManager_CheckedChanged);
+      this.cbMyeMailManager.AutoSize = true;
+      this.cbMyeMailManager.Enabled = false;
+      this.cbMyeMailManager.Location = new System.Drawing.Point(306, 84);
+      this.cbMyeMailManager.Name = "cbMyeMailManager";
+      this.cbMyeMailManager.Size = new System.Drawing.Size(170, 17);
+      this.cbMyeMailManager.TabIndex = 19;
+      this.cbMyeMailManager.Text = "Enable MyeMailManger Overlay";
+      this.cbMyeMailManager.UseVisualStyleBackColor = true;
+      this.cbMyeMailManager.CheckedChanged += new System.EventHandler(this.cbMyeMailManager_CheckedChanged);
       // 
       // cbUpdateControlOverlay
       // 
@@ -3416,7 +3416,7 @@
     private System.Windows.Forms.Label lbSearch;
     private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
     private System.Windows.Forms.Label lblCategories;
-    private System.Windows.Forms.CheckBox cbMyMailManager;
+    private System.Windows.Forms.CheckBox cbMyeMailManager;
   }
 }
 

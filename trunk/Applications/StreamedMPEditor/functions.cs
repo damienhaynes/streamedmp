@@ -1931,9 +1931,9 @@ namespace StreamedMPEditor
           cbUpdateControlOverlay.Text += " (Not Installed)";
 
       if (helper.pluginEnabled(Helper.Plugins.eMail))
-          cbMyMailManager.Enabled = true;
+          cbMyeMailManager.Enabled = true;
       else
-        cbMyMailManager.Text += " (Not Installed)";
+        cbMyeMailManager.Text += " (Not Installed)";
       
     }
 
