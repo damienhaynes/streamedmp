@@ -3728,7 +3728,13 @@ namespace StreamedMPEditor
       if (menuStyle == chosenMenuStyle.verticalStyle)
         rawXML.AppendLine("<import>common.fanart.scraperv.xml</import>");
       else
-        rawXML.AppendLine("<import>common.fanart.scraper.xml</import>");
+      {
+        if (cbMyeMailManager.Checked)
+          rawXML.AppendLine("<import>common.fanart.scraperv.xml</import>");
+        else
+          rawXML.AppendLine("<import>common.fanart.scraper.xml</import>");
+
+      }
       xml = xml.Replace("<!-- BEGIN FANART SCRAPER CODE-->", rawXML.ToString());
     }
 
