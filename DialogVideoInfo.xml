@@ -526,6 +526,27 @@
         <label>#Trakt.Translation.Rate.Label</label>
         <onleft>10</onleft>
 				<onup>4755</onup>
+        <ondown>97260</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+				<width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<visible>plugin.isenabled(Trakt)</visible>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+			<control>
+        <description>Trakt Shouts</description>
+        <type>button</type>
+        <id>97260</id>
+        <label>#Trakt.Translation.Shouts.Label</label>
+        <onleft>10</onleft>
+				<onup>97259</onup>
         <ondown>2</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>

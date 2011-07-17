@@ -98,8 +98,8 @@ This file should contain the details view
       <label>2553</label>
       <onup>6</onup>
       <ondown>6</ondown>
-      <onright>6</onright>
-      <onleft>4755</onleft>
+      <onright>10000</onright>
+      <onleft>10000</onleft>
       <posX>1075</posX>
       <posY>665</posY>
       <width>150</width>
@@ -115,58 +115,162 @@ This file should contain the details view
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+		<!-- Movie Details Hidden Menu -->
     <control>
-      <description>Trailer (Online Videos)</description>
-      <type>button</type>
-      <id>4755</id>
-      <label>#StreamedMP.Trailer</label>
-      <hyperlink>4755</hyperlink>
-			<hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#MovingPictures.SelectedMovie.imdb_id,''),#MovingPictures.SelectedMovie.imdb_id,#MovingPictures.SelectedMovie.title))|return:Locked</hyperlinkParameter>
-      <onup>4755</onup>
-      <ondown>4755</ondown>
-      <onright>6</onright>
-      <onleft>69999</onleft>
-      <posX>925</posX>
-      <posY>665</posY>
-      <width>150</width>
-      <height>32</height>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream12tc</font>
-      <textYOff>0</textYOff>
-      <textXOff>0</textXOff>
-      <textalign>center</textalign>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Subtitles</description>
-      <type>button</type>
-      <id>69999</id>
-      <label>287</label>
-      <hyperlink>84623</hyperlink>
-      <onup>69999</onup>
-      <ondown>69999</ondown>
-      <onright>4755</onright>
-      <onleft>6</onleft>
-      <onright>4755</onright>
-      <posX>777</posX>
-      <posY>665</posY>
-      <width>150</width>
-      <height>32</height>
-      <textcolor>ffffffff</textcolor>
-      <font>mediastream12tc</font>
-      <textYOff>0</textYOff>
-      <textXOff>0</textXOff>
-      <textalign>center</textalign>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible allowhiddenfocus="false">!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>10000</defaultcontrol>
+      <onexit>6</onexit>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
+			<visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97259)|control.hasfocus(97260)]</visible>
+      <animation effect="slide" time="100" start="300,0">visible</animation>
+      <animation effect="slide" time="0" end="300,0">hidden</animation>
+			<control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>        
+      </control>
+      <control>
+        <id>0</id>
+        <description>Trailers</description>
+        <type>label</type>
+        <label>5900</label>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>226</posY>
+      </control>
+			<control>
+        <id>0</id>
+        <description>Subtitle</description>
+        <type>label</type>
+        <label>287</label>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>340</posY>
+      </control>
+			<control>
+        <id>0</id>
+        <description>Trakt</description>
+        <type>label</type>
+        <label>Trakt</label>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>395</posY>
+				<visible>plugin.isenabled(Trakt)</visible>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout(0, Vertical, true)</layout>
+        <control>
+          <description>Trailer Search (IMDB)</description>
+          <type>button</type>
+          <id>10000</id>
+          <label>IMDb</label>
+          <ondown>10001</ondown>
+          <onup>17</onup>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#MovingPictures.SelectedMovie.imdb_id,''),#MovingPictures.SelectedMovie.imdb_id,#MovingPictures.SelectedMovie.title))|return:Locked</hyperlinkParameter>
+        </control>
+        <control>
+          <description>Trailer Search (iTunes)</description>
+          <type>button</type>
+          <id>10001</id>
+          <label>iTUNES</label>
+          <ondown>10002</ondown>
+          <onup>10000</onup>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
+        </control>
+				<control>
+          <description>Trailer Search (YouTube)</description>
+          <type>button</type>
+          <id>10002</id>
+          <label>YouTube</label>
+          <ondown>10003</ondown>
+          <onup>10001</onup>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <hyperlink>4755</hyperlink>
+          <hyperlinkParameter>site:YouTube|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
+        </control>
+				<control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>true</visible>
+        </control>
+        <control>
+          <description>Subtitles</description>
+          <type>button</type>
+          <id>10003</id>
+          <label>287</label>
+          <hyperlink>84623</hyperlink>
+          <onup>10002</onup>
+          <ondown>97259</ondown>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <visible>plugin.isenabled(SubCentral)</visible>
+        </control>
+				<control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>true</visible>
+        </control>
+        <control>
+          <description>Trakt Rate</description>
+          <type>button</type>
+          <id>97259</id>
+          <label>#Trakt.Translation.Rate.Label</label>          
+          <onup>10003</onup>
+          <ondown>97260</ondown>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+				<control>
+          <description>Trakt Shouts</description>
+          <type>button</type>
+          <id>97260</id>
+          <label>#Trakt.Translation.Shouts.Label</label>
+          <onup>97259</onup>
+          <ondown>10000</ondown>
+          <onleft>6</onleft>
+					<onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+      </control>
+    </control>		
     <!-- Details Box -->
     <control>
       <description>details background</description>
@@ -423,4 +527,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:0f8413300c3b090d632eb7e46e87c1ee-->
+<!--Checksum:2ba6546b2340904798553ebf0350d2a5-->
