@@ -15,7 +15,7 @@
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
+      <defaultcontrol>3</defaultcontrol>
       <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
       <buttonX>1231</buttonX>
@@ -107,10 +107,10 @@
         <height>720</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
-          <description>Cycle Layout/View</description>
+          <description>Change Layout</description>
           <type>button</type>
-          <id>2</id>
-          <label>#MovingPictures.Translation.CycleView.Label</label>
+          <id>3</id>
+          <label>#MovingPictures.Translation.ChangeView.Label</label>
           <onleft>50</onleft>
           <onup>21</onup>
         </control>
@@ -236,7 +236,7 @@
           <label>#Trakt.Translation.WatchList.Label</label>
           <hyperlink>87270</hyperlink>
           <onup>99993</onup>
-          <ondown>2</ondown>
+          <ondown>3</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
