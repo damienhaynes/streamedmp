@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <description>Movie Title</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>20</posX>
+      <posY>660</posY>
+      <width>1280</width>
+      <align>center</align>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(34)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>    
+    <control>
+      <description>User Item 3 (Default: Genres)</description>
+      <type>label</type>
+      <label>#myfilms.user.item3.value</label>
+      <id>0</id>
+      <posX>20</posX>
+      <posY>680</posY>
+      <width>1280</width>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+			<shadowAngle>45</shadowAngle>
+			<shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#myfilms.db.category.value,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+  </controls>
+</window>

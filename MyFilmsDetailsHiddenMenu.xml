@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+			<description>Hidden Menu Indicator</description>
+      <type>image</type>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(10004)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>3</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>Menu</description>
+        <id>0</id>
+        <label>Menu</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>201</posY>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>Settings</description>
+        <id>0</id>
+        <label>897</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>315</posY>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>JUMP TO</description>
+        <type>label</type>
+        <label>1065</label>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>370</posY>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!control.hasfocus(10000)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout(0, Vertical, true)</layout>
+        <control>
+					<type>button</type>
+					<description>Options</description>
+					<id>107</id>
+					<onup>17</onup>
+          <onright>107</onright>
+					<ondown>109</ondown>
+					<onleft>10000</onleft>
+					<label>496</label>
+				</control>
+        <control>
+					<type>button</type>
+					<description>Trailers</description>
+					<id>109</id>
+          <onright>109</onright>
+					<onup>107</onup>
+					<ondown>102</ondown>
+					<onleft>10000</onleft>
+					<label>5906</label>
+				</control>
+        <control>
+					<type>button</type>
+					<description>Back</description>
+					<id>102</id>
+          <onright>102</onright>
+					<onup>109</onup>
+					<ondown>66610</ondown>
+					<onleft>10000</onleft>
+					<label>712</label>
+				</control>
+				<control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>true</visible>
+        </control>
+        <control>
+          <description>Video Settings</description>
+          <type>button</type>
+          <id>66610</id>
+          <label>100006</label>
+          <hyperlink>703</hyperlink>
+          <onright>66610</onright>
+          <onup>102</onup>
+          <ondown>104</ondown>
+          <onleft>10000</onleft>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>true</visible>
+        </control>
+        <control>
+					<type>button</type>
+					<description>previous</description>
+					<id>104</id>
+          <onright>104</onright>
+					<onleft>10000</onleft>
+					<onup>66610</onup>
+					<ondown>103</ondown>
+					<label>210</label>
+				</control>
+				<control>
+					<type>button</type>
+					<description>next</description>
+					<id>103</id>
+          <onright>103</onright>
+					<onleft>10000</onleft>
+					<onup>104</onup>
+					<ondown>106</ondown>
+					<label>209</label>
+				</control>
+				<control>
+					<type>button</type>
+					<description>First</description>
+					<id>106</id>
+          <onright>106</onright>
+					<onleft>10000</onleft>
+					<onup>103</onup>
+					<ondown>105</ondown>
+				</control>
+				<control>
+					<type>button</type>
+					<description>Last</description>
+					<id>105</id>
+          <onright>105</onright>
+					<onleft>10000</onleft>
+					<onup>106</onup>
+					<ondown>107</ondown>
+				</control>
+      </control>      
+    </control>    
+  </controls>
+</window>

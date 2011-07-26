@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- Facade Spin Background -->
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.coverflow+!facadeview.filmstrip+control.isvisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>!facadeview.coverflow+!facadeview.filmstrip+control.isvisible(50)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- Movie Counts -->
+    <control>
+      <description>Movie Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>10</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Movie Count Label</description>
+      <type>label</type>
+      <label>342</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>14</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1246</posX>
+      <posY>12</posY>
+      <width>350</width>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <label>#itemcount</label>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+      <control>
+				<type>facadeview</type>
+				<id>50</id>
+				<animation effect="fade" time="250" delay="0">WindowClose</animation>
+				<control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>700</posX>
+          <posY>240</posY>
+          <height>480</height>
+          <width>580</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <scrollOffset>5</scrollOffset>
+          <itemWidth>32</itemWidth>
+          <itemHeight>32</itemHeight>
+          <IconXOff>1225</IconXOff>
+          <IconYOff>4</IconYOff>
+          <textXOff>-25</textXOff>
+          <textYOff>5</textYOff>
+          <textXOff2>0</textXOff2>
+          <textYOff2>5</textYOff2>
+          <textXOff3>75</textXOff3>
+          <textYOff3>10</textYOff3>
+          <font>mediastream12c</font>
+          <font2>mediastream10c</font2>
+          <font3>mediastream12tc</font3>
+          <keepaspectratio>yes</keepaspectratio>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <suffix>|</suffix>
+				</control>
+				<control>
+					<visible>control.isvisible(50)</visible>
+					<description>Filmstrip</description>
+					<type>filmstrip</type>
+					<id>50</id>
+					<onup>2</onup>
+					<posX>40</posX>
+					<posY>255</posY>
+					<width>1280</width>
+					<height>220</height>
+					<scrollOffset>4</scrollOffset>
+					<thumbWidth>230</thumbWidth>
+          <thumbHeight>340</thumbHeight>
+          <thumbPosX>4</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <itemWidth>245</itemWidth>
+          <itemHeight>185</itemHeight>
+          <textureWidth>250</textureWidth>
+          <textureHeight>152</textureHeight>
+					<thumbPosX>7</thumbPosX>
+					<thumbPosY>7</thumbPosY>
+					<thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+					<InfoImage>
+					</InfoImage>
+					<imageFolder>-</imageFolder>
+					<imageFolderFocus>-</imageFolderFocus>
+					<frame>-</frame>
+					<frameFocus>-</frameFocus>
+					<showFrame>no</showFrame>
+					<showFolder>yes</showFolder>
+					<showBackGround>no</showBackGround>
+					<showInfoImage>no</showInfoImage>
+					<thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
+					<!-- Spin Controls -->
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>
+					<spinPosX>585</spinPosX>
+          <spinPosY>685</spinPosY>
+					<spinAlign>center</spinAlign>
+					<spinColor>ff006698</spinColor>
+					<textureUp>arrow_round_up_nofocus.png</textureUp>
+					<textureDown>arrow_round_down_nofocus.png</textureDown>
+					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				</control>
+				<control>
+					<description>Thumbnail Panel</description>
+					<type>thumbnailpanel</type>
+					<id>50</id>
+					<onleft>2</onleft>
+					<onright>2</onright>
+					<posX>530</posX>
+					<posY>230</posY>
+					<width>750</width>
+					<height>480</height>
+					<!-- Small Icons 0.66 aspect ratio -->
+					<itemWidth>100</itemWidth>
+					<itemHeight>145</itemHeight>
+					<textureWidth>100</textureWidth>
+					<textureHeight>144</textureHeight>
+					<thumbWidth>90</thumbWidth>
+					<thumbHeight>135</thumbHeight>
+					<thumbPosX>5</thumbPosX>
+					<thumbPosY>5</thumbPosY>
+					<!-- Large Icons 0.66 aspect ratio -->
+					<textureWidthBig>148</textureWidthBig>
+					<textureHeightBig>217</textureHeightBig>
+					<itemWidthBig>147</itemWidthBig>
+					<itemHeightBig>215</itemHeightBig>
+					<thumbWidthBig>132</thumbWidthBig>
+					<thumbHeightBig>200</thumbHeightBig>
+					<thumbPosXBig>8</thumbPosXBig>
+					<thumbPosYBig>8</thumbPosYBig>
+					<imageFolderFocus>thumbborder3.png</imageFolderFocus>
+					<font>font12</font>
+					<suffix>|</suffix>
+					<thumbZoom>yes</thumbZoom>
+					<enableFocusZoom>no</enableFocusZoom>
+					<!-- Spin Controls -->
+					<spinWidth>50</spinWidth>
+					<spinHeight>37</spinHeight>
+					<spinPosX>1175</spinPosX>
+					<spinPosY>681</spinPosY>
+					<spinAlign>Right</spinAlign>
+					<spinColor>ff006698</spinColor>
+					<textureUp>arrow_round_up_nofocus.png</textureUp>
+					<textureDown>arrow_round_down_nofocus.png</textureDown>
+					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				</control>
+        <control>
+          <description>Cover Flow</description>
+          <type>coverflow</type>
+          <colordiffuse>90ffffff</colordiffuse>
+          <dimColor>90ffffff</dimColor>
+          <id>50</id>
+          <posX>0</posX>
+          <posY>240</posY>
+          <width>1280</width>
+          <height>720</height>
+          <onup>2</onup>
+          <onright>50</onright>
+          <selectedCard>0</selectedCard>
+          <cardWidth>250</cardWidth>
+          <cardHeight>375</cardHeight>
+          <angle>45</angle>
+          <sideShift>220</sideShift>
+          <sideGap>100</sideGap>
+          <sideDepth>250</sideDepth>
+          <offsetY>0</offsetY>
+          <selectedOffsetY>0</selectedOffsetY>
+          <thumbZoom>yes</thumbZoom>
+          <speed>4</speed>
+          <backgroundHeight>250</backgroundHeight>
+          <backgroundWidth>1280</backgroundWidth>
+          <backgroundX>0</backgroundX>
+          <backgroundY>470</backgroundY>
+          <backgroundDiffuse>FF000000</backgroundDiffuse>
+          <background>filmstrip_overlay.png</background>
+          <showBackground>no</showBackground>
+          <foregroundHeight>724</foregroundHeight>
+          <foregroundWidth>1284</foregroundWidth>
+          <foregroundX>-2</foregroundX>
+          <foregroundY>-2</foregroundY>
+          <foregroundDiffuse>FF000000</foregroundDiffuse>
+          <foreground>-</foreground>
+          <showForeground>no</showForeground>
+          <showFrame>yes</showFrame>
+          <frame>coverflow.poster.square.glass.png</frame>
+          <frameFocus>coverflow.poster.square.glass.png</frameFocus>
+          <frameWidth>250</frameWidth>
+          <frameHeight>375</frameHeight>
+          <spinSpeed>8</spinSpeed>
+          <unfocusedAlpha>FF</unfocusedAlpha>
+          <folderPrefix>[</folderPrefix>
+          <folderSuffix>]</folderSuffix>
+          <font1>mediastream14tc</font1>
+          <font2>mediastream12tc</font2>
+          <label1>#selecteditem</label1>
+          <label2>#myfilms.db.category.value</label2>
+          <textColor>FFFFFFFF</textColor>
+          <remoteColor>FFFF0000</remoteColor>
+          <playedColor>FFFFFFFF</playedColor>
+          <downloadColor>FF00FF00</downloadColor>
+          <selectedColor>FFFFFFFF</selectedColor>
+          <shadowAngle>45</shadowAngle>
+          <shadowDistance>2</shadowDistance>
+          <shadowColor>FF222222</shadowColor>
+          <label1YOff>395</label1YOff>
+          <label2YOff>420</label2YOff>
+          <pageSize>5</pageSize>
+          <scrollbarBackground>bar_hor.png</scrollbarBackground>
+          <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
+          <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
+          <scrollbarYOff>442</scrollbarYOff>
+          <showScrollbar>yes</showScrollbar>
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
+          <subitems>
+            <subitem><![CDATA[
+                <controls>
+                  <control>
+                    <description>background</description>
+                    <type>image</type>
+                    <posX>0</posX>
+                    <posY>0</posY>
+                    <width>250</width>
+                    <height>360</height>
+                    <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png">black.png</texture>
+                  </control>
+                  <control>
+                    <description>Movie Details</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>10</posY>
+                    <width>210</width>
+                    <label>1020</label>
+                    <font>mediastream10tc</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>User Item 3 (Default: Genre)</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>30</posY>
+                    <width>210</width>
+                    <label>#myfilms.user.item3.value</label>
+                    <font>mediastream10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>User Item 1</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>50</posY>
+                    <width>210</width>
+                    <label>#myfilms.user.item1.value</label>
+                    <font>mediastream10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>User Item 2</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>70</posY>
+                    <width>210</width>
+                    <label>#myfilms.user.item2.value</label>
+                    <font>mediastream10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>rating</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>90</posY>
+                    <width>210</width>
+                    <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value)))</label>
+                    <font>mediastream10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>                 
+                  <control>
+                    <description>Director Label</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>115</posY>
+                    <width>210</width>
+                    <label>#StreamedMP.Director</label>
+                    <font>mediastream10tc</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>director</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>132</posY>
+                    <width>210</width>
+                    <label>#(iif(neq(#myfilms.db.director.value,''),#myfilms.db.director.value,'N/A'))</label>
+                    <font>mediastream10</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>Plot Label</description>
+                    <type>label</type>
+                    <posX>20</posX>
+                    <posY>155</posY>
+                    <width>210</width>
+                    <label>#(string.rtrim(L(203),':'))</label>
+                    <font>mediastream10tc</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                  </control>
+                  <control>
+                    <description>plot</description>
+                    <type>textboxscrollup</type>
+                    <posX>20</posX>
+                    <posY>173</posY>
+                    <width>220</width>
+                    <height>80</height>
+                    <label>#myfilms.db.description.value</label>
+                    <font>mediastream10</font>
+                    <lineSpacing>2</lineSpacing>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <scrollStartDelaySec>10</scrollStartDelaySec>
+                  </control>
+                </controls>
+              ]]></subitem>
+          </subitems>		  
+        </control>
+			</control>
+		</control>       
+  </controls>
+</window>
