@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>-2</posY>
+      <width>1284</width>
+      <height>724</height>
+      <texture>mainoverlay.png</texture>
+      <visible>!facadeview.coverflow+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Coverflow Topbar Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>50</height>
+      <texture>overlay_topbar.png</texture>
+      <visible>facadeview.coverflow+control.isvisible(50)</visible>
+    </control>
+    <control>
+      <description>Coverflow Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>470</posY>
+      <width>1280</width>
+      <height>250</height>
+      <texture>filmstrip_overlay.png</texture>
+      <visible>facadeview.coverflow+control.isvisible(50)</visible>
+    </control>
+  </controls>
+</window>
