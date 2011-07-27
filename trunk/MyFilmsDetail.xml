@@ -277,7 +277,7 @@
       <posY>95</posY>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
-      <width>730</width>
+      <width>420</width>
       <font>mediastream16tc</font>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
@@ -325,6 +325,72 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
+        
+    <control>
+      <description>Certification (PG-13)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>90</posY>
+      <width>259</width>
+      <height>57</height>
+      <texture>Logos\Certification\PG-13.png</texture>
+      <visible>!control.hasfocus(10099)+string.contains(#myfilms.db.certification.value,Rated PG-13)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Certification (PG)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>90</posY>
+      <width>259</width>
+      <height>57</height>
+      <texture>Logos\Certification\PG.png</texture>
+      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated PG)+!string.contains(#myfilms.db.certification.value,Rated PG-13)]</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Certification (R)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>90</posY>
+      <width>259</width>
+      <height>57</height>
+      <texture>Logos\Certification\R.png</texture>
+      <visible>!control.hasfocus(10099)+string.contains(#myfilms.db.certification.value,Rated R)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Certification (G)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>90</posY>
+      <width>259</width>
+      <height>57</height>
+      <texture>Logos\Certification\G.png</texture>
+      <visible>!control.hasfocus(10099)+string.contains(#myfilms.db.certification.value,Rated G)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Certification (NC-17)</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>90</posY>
+      <width>259</width>
+      <height>57</height>
+      <texture>Logos\Certification\NC-17.png</texture>
+      <visible>!control.hasfocus(10099)+string.contains(#myfilms.db.certification.value,Rated NC-17)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
     
     <control>
       <description>Director Label</description>
@@ -354,11 +420,38 @@
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
     <control>
-      <description>User Display Item 1 Label</description>
+      <description>Runtime Label</description>
       <type>label</type>
       <id>1</id>
       <posX>520</posX>
       <posY>220</posY>
+      <label>#myfilms.db.length.label:</label>
+      <textcolor>90ffffff</textcolor>
+      <font>font12</font>
+      <width>200</width>
+      <visible>string.equals(#myfilms.user.item1.value)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Runtime Value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>730</posX>
+      <posY>220</posY>
+      <label>#myfilms.db.length.value #myfilms.db.length.unit</label>
+      <width>520</width>
+      <font>font12</font>
+      <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>User Display Item 1 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>520</posX>
+      <posY>250</posY>
       <label>#myfilms.user.item1.label:</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
@@ -372,7 +465,7 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>730</posX>
-      <posY>220</posY>
+      <posY>250</posY>
       <label>#myfilms.user.item1.value</label>
       <width>520</width>
       <font>font12</font>
@@ -385,7 +478,7 @@
       <type>label</type>
       <id>1</id>
       <posX>520</posX>
-      <posY>250</posY>
+      <posY>280</posY>
       <label>#myfilms.user.item2.label:</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
@@ -399,7 +492,7 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>730</posX>
-      <posY>250</posY>
+      <posY>280</posY>
       <label>#myfilms.user.item2.value</label>
       <width>520</width>
       <font>font12</font>
@@ -412,7 +505,7 @@
       <type>label</type>
       <id>1</id>
       <posX>520</posX>
-      <posY>280</posY>
+      <posY>310</posY>
       <label>#myfilms.user.item3.label:</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
@@ -426,7 +519,7 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>730</posX>
-      <posY>280</posY>
+      <posY>310</posY>
       <label>#myfilms.user.item3.value</label>
       <width>520</width>
       <font>font12</font>
@@ -439,7 +532,7 @@
       <type>label</type>
       <id>1</id>
       <posX>520</posX>
-      <posY>310</posY>
+      <posY>340</posY>
       <label>#myfilms.user.item4.label:</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
@@ -453,7 +546,7 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>730</posX>
-      <posY>310</posY>
+      <posY>340</posY>
       <label>#myfilms.user.item4.value</label>
       <width>520</width>
       <textcolor>ffffffff</textcolor>
@@ -467,7 +560,7 @@
       <type>label</type>
       <id>1</id>
       <posX>520</posX>
-      <posY>340</posY>
+      <posY>370</posY>
       <label>#myfilms.user.item5.label:</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
@@ -481,7 +574,7 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>730</posX>
-      <posY>340</posY>
+      <posY>370</posY>
       <label>#myfilms.user.item5.value</label>
       <width>520</width>
       <textcolor>ffffffff</textcolor>
@@ -495,9 +588,9 @@
       <type>textboxscrollup</type>
       <id>1</id>
       <posX>520</posX>
-      <posY>380</posY>
+      <posY>410</posY>
       <width>740</width>
-      <height>248</height>
+      <height>218</height>
       <textcolor>FFFFFFFF</textcolor>
       <label>#myfilms.db.description.value</label>
       <seperator>&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;</seperator>
