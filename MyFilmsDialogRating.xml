@@ -47,11 +47,11 @@
     <control>
       <description>dialog Heading</description>
       <type>label</type>
-      <id>1</id>
+      <id>2</id>
       <posX>405</posX>
       <posY>250</posY>
       <width>470</width>
-      <label>931</label>
+      <label>934</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
       <align>left</align>
@@ -61,10 +61,11 @@
       <description>Rating value</description>
       <type>label</type>
       <id>4</id>
-      <posX>600</posX>
-      <posY>300</posY>
-      <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.rating)))</label>
-      <font>font12</font>
+      <posX>795</posX>
+      <posY>348</posY>
+      <label>#(string.format('{0}: {1:0.0} / 10', L(931), cflt(#myfilms.rating)))</label>
+      <font>mediastream10c</font>
+      <align>right</align>
       <colordiffuse>ffffffff</colordiffuse>
       <textcolor>ffffffff</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -76,7 +77,7 @@
       <type>button</type>
       <id>10</id>
       <posX>810</posX>
-      <posY>332</posY>
+      <posY>312</posY>
       <width>28</width>
       <height>29</height>
       <textureFocus>arrow_round_right_focus.png</textureFocus>
@@ -94,7 +95,7 @@
       <type>button</type>
       <id>11</id>
       <posX>445</posX>
-      <posY>332</posY>
+      <posY>312</posY>
       <width>28</width>
       <height>29</height>
       <textureFocus>arrow_round_left_focus.png</textureFocus>
@@ -104,6 +105,26 @@
       <onright>10</onright>
       <onup>12</onup>
       <ondown>12</ondown>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+   
+    <control>
+      <type>imagelist</type>
+      <id>100</id>
+      <posX>480</posX>
+      <posY>310</posY>
+      <width>42</width>
+      <height>320</height>
+      <textureWidth>32</textureWidth>
+      <textureHeight>32</textureHeight>
+      <subitems>
+        <subitem>UserRatingStarOff.png</subitem>
+        <subitem>UserRatingStarOn.png</subitem>        
+      </subitems>
+      <orientation>horizontal</orientation>
+      <percentage>#myfilms.rating</percentage>
+      <imagesToDraw>10</imagesToDraw>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -128,24 +149,5 @@
       <ondown>10</ondown>
     </control>
     
-    <control>
-      <type>imagelist</type>
-      <id>100</id>
-      <posX>480</posX>
-      <posY>330</posY>
-      <width>42</width>
-      <height>320</height>
-      <textureWidth>32</textureWidth>
-      <textureHeight>32</textureHeight>
-      <subitems>
-        <subitem>UserRatingStarOff.png</subitem>
-        <subitem>UserRatingStarOn.png</subitem>        
-      </subitems>
-      <orientation>horizontal</orientation>
-      <percentage>#myfilms.rating</percentage>
-      <imagesToDraw>10</imagesToDraw>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
   </controls>
 </window>
