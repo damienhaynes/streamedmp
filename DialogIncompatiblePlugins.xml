@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>2021</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <controls>
+    <control>
+      <id>0</id>
+      <type>image</type>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+    </control>
+    <control>
+      <id>0</id>
+      <type>label</type>
+      <posX>60</posX>
+      <posY>27</posY>
+      <font>mediastream16tc</font>
+      <label>1910</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <width>1160</width>
+    </control>
+    <control>
+      <id>0</id>
+      <type>image</type>
+      <posX>512</posX>
+      <posY>232</posY>
+      <colordiffuse>d0d0d0d0</colordiffuse>
+      <texture>warning-icon.png</texture>
+    </control>
+    <control>
+      <id>0</id>
+      <type>textbox</type>
+      <posX>60</posX>
+      <posY>66</posY>
+      <width>1160</width>
+      <height>88</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <font>mediastream11</font>
+      <label>#(L(1911))</label>
+    </control>
+    <control>
+      <id>2</id>
+      <description>List of Incompatible Plugins</description>
+      <type>listcontrol</type>
+      <onright>3</onright>
+      <ondown>3</ondown>
+      <posX>80</posX>
+      <posY>169</posY>
+      <width>785</width>
+      <height>439</height>
+    </control>
+    <control>
+      <id>3</id>
+      <description>Continue button</description>
+      <type>button</type>
+      <onleft>2</onleft>
+      <onup>2</onup>
+      <posX>826</posX>
+      <posY>632</posY>
+      <textcolor>ffffffff</textcolor>
+      <textcolorNoFocus>bfffffff</textcolorNoFocus>
+      <font>mediastream12tc</font>
+      <width>300</width>
+      <height>40</height>
+      <textYOff>0</textYOff>
+      <textXOff>0</textXOff>
+      <textureFocus>tv_button_focus.png</textureFocus>
+      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+      <label>#(string.formatcount(iif(eq(#countdownseconds,''),0,#countdownseconds),1912))</label>
+      <textalign>center</textalign>
+    </control>
+  </controls>
+</window>
