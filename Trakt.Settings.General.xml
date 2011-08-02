@@ -41,8 +41,25 @@
         <type>togglebutton</type>
         <id>4</id>
         <label>#Trakt.Translation.GetFriendRequestsOnStartup.Label</label>
-        <onleft>3</onleft>
+        <onleft>4</onleft>
         <onright>#defaultcontrol.onright</onright>
+      </control>
+			<control Style="settingsmaintogglebutton">
+        <description>Create Moving Pictures Categories</description>
+        <type>togglebutton</type>
+        <id>5</id>
+        <label>#Trakt.Translation.CreateMovingPicturesCategories.Label</label>
+        <onleft>5</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaintogglebutton">
+        <description>Create Moving Pictures Filters</description>
+        <type>togglebutton</type>
+        <id>6</id>
+        <label>#Trakt.Translation.CreateMovingPicturesFilters.Label</label>
+        <onleft>6</onleft>
+        <onright>#defaultcontrol.onright</onright>
+				<ondown>2</ondown>
       </control>
     </control>
   </controls>
