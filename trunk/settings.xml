@@ -89,7 +89,7 @@
         <description>StreamedMP Settings</description>
         <type>button</type>
         <id>12</id>
-        <onup>13</onup>
+        <onup>14</onup>
         <label>#StreamedMP.SkinMenu</label>
         <hyperlink>196200</hyperlink>
       </control>      
@@ -159,8 +159,18 @@
         <label> I.F.C. </label>
         <hyperlink>240782</hyperlink>
         <onup>11</onup>
-        <ondown>12</ondown>
+        <ondown>14</ondown>
         <visible>plugin.isenabled(Intelligent Frame Correction)</visible>
+      </control>
+			<control Style="settingsbutton">
+        <description>Trakt Settings</description>
+        <type>button</type>
+        <id>14</id>
+        <label>Trakt</label>
+        <hyperlink>87271</hyperlink>
+        <onup>13</onup>
+        <ondown>12</ondown>
+        <visible>plugin.isenabled(Trakt)</visible>
       </control>
     </control>
     <import>common.time.xml</import>
