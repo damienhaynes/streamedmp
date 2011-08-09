@@ -1,7 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- 
-This file should contain the details view
--->
 <window>
   <controls>
     <!--            :: Artwork ::            -->
@@ -115,7 +112,7 @@ This file should contain the details view
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-		<!-- Movie Details Hidden Menu -->
+    <!-- Movie Details Hidden Menu -->
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
@@ -126,10 +123,10 @@ This file should contain the details view
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
       <buttonheight>253</buttonheight>
-			<visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97259)|control.hasfocus(97260)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)]</visible>
       <animation effect="slide" time="100" start="300,0">visible</animation>
       <animation effect="slide" time="0" end="300,0">hidden</animation>
-			<control>
+      <control>
         <type>image</type>
         <posX>1002</posX>
         <posY>0</posY>
@@ -145,7 +142,7 @@ This file should contain the details view
         <posX>1002</posX>
         <posY>0</posY>
         <width>278</width>
-        <height>720</height>        
+        <height>720</height>
       </control>
       <control>
         <id>0</id>
@@ -156,7 +153,7 @@ This file should contain the details view
         <posX>1040</posX>
         <posY>226</posY>
       </control>
-			<control>
+      <control>
         <id>0</id>
         <description>Subtitle</description>
         <type>label</type>
@@ -164,9 +161,9 @@ This file should contain the details view
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>340</posY>
-				<!--<visible>plugin.isenabled(SubCentral)</visible>-->
+        <!--<visible>plugin.isenabled(SubCentral)</visible>-->
       </control>
-			<control>
+      <control>
         <id>0</id>
         <description>Trakt</description>
         <type>label</type>
@@ -174,7 +171,7 @@ This file should contain the details view
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>395</posY>
-				<visible>plugin.isenabled(Trakt)</visible>
+        <visible>plugin.isenabled(Trakt)</visible>
       </control>
       <control>
         <type>group</type>
@@ -194,7 +191,7 @@ This file should contain the details view
           <ondown>10001</ondown>
           <onup>17</onup>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <hyperlink>4755</hyperlink>
           <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#MovingPictures.SelectedMovie.imdb_id,''),#MovingPictures.SelectedMovie.imdb_id,#MovingPictures.SelectedMovie.title))|return:Locked</hyperlinkParameter>
         </control>
@@ -206,11 +203,11 @@ This file should contain the details view
           <ondown>10002</ondown>
           <onup>10000</onup>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <hyperlink>4755</hyperlink>
           <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
         </control>
-				<control>
+        <control>
           <description>Trailer Search (YouTube)</description>
           <type>button</type>
           <id>10002</id>
@@ -218,11 +215,11 @@ This file should contain the details view
           <ondown>10003</ondown>
           <onup>10001</onup>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <hyperlink>4755</hyperlink>
           <hyperlinkParameter>site:YouTube|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
         </control>
-				<control>
+        <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
@@ -238,10 +235,10 @@ This file should contain the details view
           <onup>10002</onup>
           <ondown>97259</ondown>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <!--<visible>plugin.isenabled(SubCentral)</visible>-->
         </control>
-				<control>
+        <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
@@ -252,26 +249,37 @@ This file should contain the details view
           <description>Trakt Rate</description>
           <type>button</type>
           <id>97259</id>
-          <label>#Trakt.Translation.Rate.Label</label>          
+          <label>#Trakt.Translation.Rate.Label</label>
           <onup>10003</onup>
           <ondown>97260</ondown>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
-				<control>
+        <control>
           <description>Trakt Shouts</description>
           <type>button</type>
           <id>97260</id>
           <label>#Trakt.Translation.Shouts.Label</label>
           <onup>97259</onup>
+          <ondown>97258</ondown>
+          <onleft>6</onleft>
+          <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Add to Watch List</description>
+          <type>button</type>
+          <id>97258</id>
+          <label>#Trakt.Translation.AddToWatchList.Label</label>
+          <onup>97260</onup>
           <ondown>10000</ondown>
           <onleft>6</onleft>
-					<onright>6</onright>
+          <onright>6</onright>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
       </control>
-    </control>		
+    </control>
     <!-- Details Box -->
     <control>
       <description>details background</description>
@@ -528,4 +536,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:2ba6546b2340904798553ebf0350d2a5-->
+<!--Checksum:f86ec5b0c659a034592b5028dce5e53a-->

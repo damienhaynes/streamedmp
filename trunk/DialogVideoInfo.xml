@@ -94,7 +94,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
@@ -173,23 +173,23 @@
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>   
+    </control>
     <control>
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
       <posX>308</posX>
       <posY>251</posY>
-      <width>900</width>
+      <width>550</width>
       <font>mediastream16tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Genres</description>
       <type>label</type>
@@ -197,10 +197,10 @@
       <id>0</id>
       <posX>309</posX>
       <posY>282</posY>
-      <width>900</width>
+      <width>550</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -221,10 +221,10 @@
       <orientation>horizontal</orientation>
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
-      <percentage>#rating</percentage>      
+      <percentage>#rating</percentage>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Rating Label</description>
       <id>0</id>
@@ -234,7 +234,7 @@
       <posY>306</posY>
       <width>400</width>
       <font>mediastream10</font>
-			<visible>!string.equals(#rating,0)</visible>
+      <visible>!string.equals(#rating,0)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -268,7 +268,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Review</description>
       <type>textboxscrollup</type>
       <id>23</id>
@@ -282,7 +282,7 @@
       <label>#userreview</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Runtime Label</description>
       <id>0</id>
@@ -293,7 +293,7 @@
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitle">
       <description>Runtime</description>
       <id>1000</id>
@@ -304,7 +304,7 @@
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Directors Label</description>
       <id>0</id>
@@ -315,7 +315,7 @@
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitle">
       <description>Directors</description>
       <id>1001</id>
@@ -326,7 +326,7 @@
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>Year Label</description>
       <id>0</id>
@@ -337,7 +337,7 @@
       <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitle">
       <description>Year</description>
       <id>1002</id>
@@ -348,7 +348,7 @@
       <width>200</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>        
+    </control>
     <control Style="smallTitleB">
       <description>MPAA Label</description>
       <id>0</id>
@@ -376,7 +376,7 @@
       <type>group</type>
       <description>Button Group</description>
       <posX>900</posX>
-      <posY>320</posY>      
+      <posY>250</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control>
         <description>Play Button</description>
@@ -405,7 +405,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <onleft>10</onleft>
         <textYOff>8</textYOff>
@@ -426,7 +426,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -437,7 +437,7 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Review</description>
         <type>togglebutton</type>
         <id>7</id>
@@ -446,7 +446,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -466,7 +466,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -485,7 +485,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -496,73 +496,94 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Trailer</description>
         <type>button</type>
         <id>4755</id>
         <label>#StreamedMP.Trailer</label>
         <onleft>10</onleft>
-				<onup>6</onup>
+        <onup>6</onup>
         <ondown>97259</ondown>
-				<hyperlink>4755</hyperlink>
-				<hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
+        <hyperlink>4755</hyperlink>
+        <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<visible>plugin.isenabled(OnlineVideos)</visible>
+        <visible>plugin.isenabled(OnlineVideos)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Trakt Rate Movie</description>
         <type>button</type>
         <id>97259</id>
         <label>#Trakt.Translation.Rate.Label</label>
         <onleft>10</onleft>
-				<onup>4755</onup>
+        <onup>4755</onup>
         <ondown>97260</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<visible>plugin.isenabled(Trakt)</visible>
+        <visible>plugin.isenabled(Trakt)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Trakt Shouts</description>
         <type>button</type>
         <id>97260</id>
         <label>#Trakt.Translation.Shouts.Label</label>
         <onleft>10</onleft>
-				<onup>97259</onup>
-        <ondown>2</ondown>
+        <onup>97259</onup>
+        <ondown>97258</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-				<visible>plugin.isenabled(Trakt)</visible>
+        <visible>plugin.isenabled(Trakt)</visible>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Trakt Add To Watch List</description>
+        <type>button</type>
+        <id>97258</id>
+        <label>#Trakt.Translation.AddToWatchList.Label</label>
+        <onleft>10</onleft>
+        <onup>97260</onup>
+        <ondown>2</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>plugin.isenabled(Trakt)</visible>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
-		<import>common.overlays2.xml</import>
+    <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:75f60573c9f940617b95a237d6b1b985-->
+<!--Checksum:a7de40dd28638fa04f51dae323fd97b7-->
