@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
     <control>
@@ -30,6 +31,7 @@
       <id>850</id>
       <posX>908</posX>
       <posY>64</posY>
+      <font>mediastream10tc</font>
       <label>303</label>
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -61,9 +63,25 @@
       <MarkHeight>20</MarkHeight>
       <label>305</label>
       <onup>800</onup>
-      <ondown>802</ondown>
+      <ondown>803</ondown>
       <onleft>801</onleft>
       <onright>801</onright>
+      <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
+      <description>SubTitles Forced On/Off Checkbox</description>
+      <type>checkmark</type>
+      <id>803</id>
+      <posX>908</posX>
+      <posY>174</posY>
+      <MarkWidth>20</MarkWidth>
+      <MarkHeight>20</MarkHeight>
+      <label>200092</label>
+      <onup>801</onup>
+      <ondown>802</ondown>
+      <onleft>803</onleft>
+      <onright>803</onright>
       <visible>no</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
@@ -72,13 +90,13 @@
       <type>listcontrol</type>
       <id>802</id>
       <posX>908</posX>
-      <posY>174</posY>
+      <posY>209</posY>
       <width>350</width>
       <textXOff>0</textXOff>
       <height>500</height>
       <onleft>802</onleft>
       <onright>802</onright>
-      <onup>801</onup>
+      <onup>803</onup>
       <ondown>800</ondown>
       <visible>no</visible>
       <spinPosX>1300</spinPosX>
