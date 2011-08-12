@@ -44,11 +44,11 @@
     <!-- Do not mix and match different styles (fanart/default) -->
     <!-- Chosen style should match in users StreamedMPConfig.xml -->
     <!-- Facade and SeriesWideBanners imports need to reflect widebanner mods -->
-    <import tag="Facade">TVSeries.Default.Facade.xml</import>
+    <import tag="Facade">TVSeries.Default.WideBannerMod.5x3.Facade.xml</import>
     <import tag="SeriesAndSeasonListPosters">TVSeries.Default.SeriesAndSeasonListPosters.xml</import>
     <import tag="SeriesAndSeasonFilmstrip">TVSeries.Default.SeriesAndSeasonFilmstrip.xml</import>
     <import tag="SeriesListBanners">TVSeries.Default.SeriesListBanners.xml</import>
-    <import tag="SeriesWideBanners">TVSeries.Default.SeriesWideBanners.xml</import>
+    <import tag="SeriesWideBanners">TVSeries.Common.WideBannerMod.5x3.SeriesWideBanners.xml</import>
     <import tag="EpisodeList">TVSeries.Default.EpisodeList.xml</import>
     <import tag="GroupList">TVSeries.Default.GroupList.xml</import>
     <!-- Common Imports -->
@@ -57,6 +57,7 @@
     <import>common.time.xml</import>
     <import>common.overlays2.xml</import>
     <import>TVSeries.Common.TopBar.xml</import>
+    <import>common.scrollingpopup.xml</import>
     <!-- IMPORT PROCESS ANIMATION -->
     <control>
       <description>Import Animation</description>
@@ -72,4 +73,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:13558338c37eb3932ed68c988d7e12b3-->
+<!--Checksum:450dd1fafe86216783ea3c7eb2691e08-->

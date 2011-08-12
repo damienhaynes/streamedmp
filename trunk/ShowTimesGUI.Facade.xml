@@ -226,7 +226,7 @@
         <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
         <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
       </control>
-			<control>
+      <control>
         <description>Cover Flow</description>
         <type>coverflow</type>
         <colordiffuse>90ffffff</colordiffuse>
@@ -400,10 +400,10 @@
                 </control>
               </controls>
             ]]></subitem>
-        </subitems>		  
+        </subitems>
       </control>
     </control>
-		<control>
+    <control>
       <description>Rating Stars - Coverflow</description>
       <type>imagelist</type>
       <id>1</id>
@@ -422,9 +422,9 @@
       <imagesToDraw>5</imagesToDraw>
       <percentage>#st_userrating</percentage>
       <visible>!control.isvisible(24)+facadeview.coverflow</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>		
+    </control>
   </controls>
 </window>
-<!--Checksum:6374543c3724a9c09c40ea17fde9b2ab-->
+<!--Checksum:302d8785874e1a68858634a29d1d1ae0-->
